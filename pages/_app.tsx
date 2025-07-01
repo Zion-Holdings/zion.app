@@ -1,38 +1,289 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import type { AppProps } from 'next/app';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
 import '../src/index.css';
 
-// Emergency minimal app component
-function MyApp({ Component, pageProps }: AppProps) {
-  const [isClient, setIsClient] = React.useState(false);
+// Import all providers synchronously for reliability
+import { WhitelabelProvider } from '../src/context/WhitelabelContext';
+import { WalletProvider } from '../src/context/WalletContext';
+import { AnalyticsProvider } from '../src/context/AnalyticsContext';
+import { CartProvider } from '../src/context/CartContext';
+import { FeedbackProvider } from '../src/context/FeedbackContext';
+import { ThemeProvider } from '../src/context/ThemeContext';
+// import AppLayout from '../src/components/AppLayout';
 
-  React.useEffect(() => {
-    setIsClient(true);
-    console.log('✅ Emergency app component loaded successfully');
+// Error boundary component
+class AppErrorBoundary extends React.Component<
+  { children: React.ReactNode },
+  { hasError: boolean; error?: Error }
+> {
+  constructor(props: { children: React.ReactNode }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error: Error) {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+    console.error('App Error Boundary caught an error:', error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{ 
+          padding: '2rem', 
+          textAlign: 'center',
+          maxWidth: '600px',
+          margin: '0 auto',
+          fontFamily: 'Arial, sans-serif'
+        }}>
+          <h2>⚠️ Application Error</h2>
+          <p>Something went wrong while loading the application.</p>
+          <button 
+            onClick={() => window.location.reload()}
+            style={{
+              padding: '10px 20px',
+              backgroundColor: '#007bff',
+              color: 'white',
+              border: 'none',
+              borderRadius: '5px',
+              cursor: 'pointer',
+              marginTop: '1rem'
+            }}
+          >
+            Reload Page
+          </button>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
+
+// Loading screen component
+const LoadingScreen: React.FC<{ progress: number }> = ({ progress }) => (
+  <div style={{
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: '#f8f9fa',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 9999,
+    fontFamily: 'Arial, sans-serif'
+  }}>
+    <div style={{
+      width: '120px',
+      height: '120px',
+      border: '8px solid #e9ecef',
+      borderTop: '8px solid #007bff',
+      borderRadius: '50%',
+      animation: 'spin 2s linear infinite'
+    }} />
+    <h2 style={{ marginTop: '2rem', color: '#495057' }}>
+      Initializing Zion App...
+    </h2>
+    <p style={{ color: '#6c757d', marginTop: '0.5rem' }}>
+      Loading components ({progress}%)
+    </p>
+    <div style={{
+      width: '200px',
+      height: '6px',
+      backgroundColor: '#e9ecef',
+      borderRadius: '3px',
+      marginTop: '1rem'
+    }}>
+      <div style={{
+        width: `${progress}%`,
+        height: '100%',
+        backgroundColor: '#007bff',
+        borderRadius: '3px',
+        transition: 'width 0.3s ease'
+      }} />
+    </div>
+    <style jsx>{`
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    `}</style>
+  </div>
+);
+
+// Provider wrapper with error handling
+const ProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  return (
+    <AppErrorBoundary>
+      <WhitelabelProvider>
+        <WalletProvider>
+          <AnalyticsProvider>
+            <CartProvider>
+              <FeedbackProvider>
+                <ThemeProvider>
+                  {children}
+                </ThemeProvider>
+              </FeedbackProvider>
+            </CartProvider>
+          </AnalyticsProvider>
+        </WalletProvider>
+      </WhitelabelProvider>
+    </AppErrorBoundary>
+  );
+};
+
+function MyApp({ Component, pageProps }: AppProps) {
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadingProgress, setLoadingProgress] = useState(0);
+  const [initializationError, setInitializationError] = useState<string | null>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    const initializeApp = async () => {
+      try {
+        // Simulate progressive loading with realistic steps
+        const steps = [
+          { name: 'Loading Core Components', duration: 300 },
+          { name: 'Initializing Providers', duration: 400 },
+          { name: 'Setting up Analytics', duration: 200 },
+          { name: 'Configuring Theme', duration: 200 },
+          { name: 'Final Setup', duration: 300 }
+        ];
+
+        let currentProgress = 0;
+        const progressStep = 100 / steps.length;
+
+        for (let i = 0; i < steps.length; i++) {
+          const step = steps[i];
+          if (!step) continue;
+          
+          // Update progress
+          currentProgress = (i + 1) * progressStep;
+          setLoadingProgress(Math.min(currentProgress, 95));
+
+          // Simulate async work
+          await new Promise(resolve => setTimeout(resolve, step.duration));
+        }
+
+        // Final progress update
+        setLoadingProgress(100);
+        
+        // Small delay to show completion
+        await new Promise(resolve => setTimeout(resolve, 200));
+        
+        setIsLoading(false);
+      } catch (error) {
+        console.error('App initialization error:', error);
+        setInitializationError('Failed to initialize application. Please refresh the page.');
+        setIsLoading(false);
+      }
+    };
+
+    // Force initialization completion after maximum 3 seconds
+    const forceInitTimeout = setTimeout(() => {
+      console.warn('Force completing app initialization due to timeout');
+      setLoadingProgress(100);
+      setIsLoading(false);
+    }, 3000);
+
+    initializeApp().finally(() => {
+      clearTimeout(forceInitTimeout);
+    });
+
+    return () => {
+      clearTimeout(forceInitTimeout);
+    };
   }, []);
 
-  if (!isClient) {
+  // Handle router events for page transitions
+  useEffect(() => {
+    const handleRouteChangeStart = () => {
+      // Could add route change loading if needed
+    };
+
+    const handleRouteChangeComplete = () => {
+      // Route change completed
+    };
+
+    const handleRouteChangeError = () => {
+      console.error('Route change error');
+    };
+
+    router.events.on('routeChangeStart', handleRouteChangeStart);
+    router.events.on('routeChangeComplete', handleRouteChangeComplete);
+    router.events.on('routeChangeError', handleRouteChangeError);
+
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChangeStart);
+      router.events.off('routeChangeComplete', handleRouteChangeComplete);
+      router.events.off('routeChangeError', handleRouteChangeError);
+    };
+  }, [router]);
+
+  // Show loading screen during initialization
+  if (isLoading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-900 to-purple-900">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-2 border-cyan-400 border-t-transparent mx-auto mb-4"></div>
-          <p className="text-white text-lg font-medium">Loading Zion App...</p>
-          <p className="text-blue-200 text-sm mt-2">Emergency mode activated</p>
-        </div>
+      <>
+        <Head>
+          <title>Loading - Zion App</title>
+          <meta name="description" content="Zion App is loading..." />
+        </Head>
+        <LoadingScreen progress={loadingProgress} />
+      </>
+    );
+  }
+
+  // Show error screen if initialization failed
+  if (initializationError) {
+    return (
+      <div style={{ 
+        padding: '2rem', 
+        textAlign: 'center',
+        maxWidth: '600px',
+        margin: '0 auto',
+        fontFamily: 'Arial, sans-serif'
+      }}>
+        <h2>🚫 Initialization Error</h2>
+        <p>{initializationError}</p>
+        <button 
+          onClick={() => window.location.reload()}
+          style={{
+            padding: '10px 20px',
+            backgroundColor: '#dc3545',
+            color: 'white',
+            border: 'none',
+            borderRadius: '5px',
+            cursor: 'pointer',
+            marginTop: '1rem'
+          }}
+        >
+          Reload Application
+        </button>
       </div>
     );
   }
 
+  // Main app render with all providers
   return (
-    <div className="min-h-screen bg-white">
-      <header className="bg-blue-600 text-white p-4">
-        <h1 className="text-2xl font-bold">Zion App - Emergency Mode</h1>
-        <p className="text-blue-100">The app is running in emergency mode. Core functionality available.</p>
-      </header>
-      <main className="container mx-auto p-4">
-        <Component {...pageProps} />
-      </main>
-    </div>
+    <ProviderWrapper>
+      <Head>
+        <title>Zion App - AI Marketplace & DAO Platform</title>
+        <meta name="description" content="Zion App - The ultimate AI marketplace and DAO platform for the future of work" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+             <div>
+         <Component {...pageProps} />
+       </div>
+    </ProviderWrapper>
   );
 }
 
