@@ -66,13 +66,13 @@ const tsHelpers = {
     if (typeof b !== "function" && b !== null)
       throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
     
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new (__ as any)());
+    function __constructor(this: any) { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__constructor.prototype = b.prototype, new (__constructor as any)());
   },
   
   __assign: function() {
     return Object.assign || function (t: any) {
-      for (var s, i = 1, n = arguments.length; i < n; i++) {
+      for (let s: any, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
         for (let p in s) if (Object.prototype.hasOwnProperty.call(s, p))
           t[p] = s[p];
@@ -89,18 +89,21 @@ const tsHelpers = {
       const symbols = Object.getOwnPropertySymbols(s);
       for (let i = 0; i < symbols.length; i++) {
         const symbol = symbols[i];
-        if (e.indexOf(symbol as any) < 0 && Object.prototype.propertyIsEnumerable.call(s, symbol))
+        if (symbol && e.indexOf(symbol as any) < 0 && Object.prototype.propertyIsEnumerable.call(s, symbol)) {
           t[symbol] = s[symbol];
+        }
       }
     }
     return t;
   },
   
   __decorate: function (decorators: any[], target: any, key?: string | symbol, desc?: any) {
-    let c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    let c = arguments.length;
+    let r = c < 3 ? target : desc === null ? (desc = Object.getOwnPropertyDescriptor(target, key!)) : desc;
+    let d: any;
     if (typeof Reflect === "object" && typeof (Reflect as any).decorate === "function") r = (Reflect as any).decorate(decorators, target, key, desc);
-    else for (let i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
+    else for (let i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key!, r) : d(target, key!)) || r;
+    return c > 3 && r && Object.defineProperty(target, key!, r), r;
   },
   
   __awaiter: function (thisArg: any, _arguments: any, P: any, generator: any) {
@@ -159,7 +162,7 @@ if (typeof window !== 'undefined') {
     
     // Call original error handler for other errors
     if (originalOnError) {
-      return originalOnError.call(this, message, source, lineno, colno, error);
+      return originalOnError.call(this as any, message, source, lineno, colno, error);
     }
     return false;
   };
@@ -178,7 +181,7 @@ if (typeof window !== 'undefined') {
     
     // Call original handler for other rejections
     if (originalOnUnhandledRejection) {
-      return originalOnUnhandledRejection.call(this, event);
+      return originalOnUnhandledRejection.call(this as any, event);
     }
   };
 }
@@ -186,12 +189,12 @@ if (typeof window !== 'undefined') {
 // Node.js environment polyfills (for SSR/build time)
 if (typeof global !== 'undefined' && typeof window === 'undefined') {
   // Ensure Node.js global has necessary polyfills
-  if (typeof global.self === 'undefined') {
-    global.self = global;
+  if (typeof (global as any).self === 'undefined') {
+    (global as any).self = global;
   }
   
-  if (typeof global.webpackChunk_N_E === 'undefined') {
-    global.webpackChunk_N_E = [];
+  if (typeof (global as any).webpackChunk_N_E === 'undefined') {
+    (global as any).webpackChunk_N_E = [];
   }
   
   // TypeScript helpers for Node.js
