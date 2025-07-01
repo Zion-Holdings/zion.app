@@ -89,7 +89,6 @@ const nextConfig = {
 
     // Enable CSS optimization for production
     optimizeCss: process.env.NODE_ENV === 'production', 
-    esmExternals: 'loose',
     // Memory and performance optimizations for 176+ pages
     largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
     workerThreads: false, // Disable worker threads to reduce memory usage
@@ -646,6 +645,13 @@ const nextConfig = {
       if (config.cache && config.cache.cacheUnaffected !== undefined) {
         delete config.cache.cacheUnaffected;
       }
+      
+      // Ensure optimization settings are properly configured for production
+      config.optimization = {
+        ...config.optimization,
+        usedExports: true,
+        sideEffects: false,
+      };
     }
 
     // CRITICAL FIX: Remove cacheUnaffected in ALL cases to prevent webpack conflicts
@@ -825,10 +831,6 @@ const nextConfig = {
         },
       };
     }
-
-    // PERFORMANCE: Tree shaking optimization
-    config.optimization.usedExports = true;
-    config.optimization.sideEffects = false;
 
     return config;
   },
