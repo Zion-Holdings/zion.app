@@ -318,7 +318,7 @@
     "@babel/preset-env": "^7.27.2",
     "@babel/preset-react": "^7.27.1",
     "@babel/preset-typescript": "^7.27.1",
-    "@eslint/js": "^8.57.0",
+    "@eslint/js": "^8.57.1",
     "@modelcontextprotocol/sdk": "^1.13.2",
     "@next/bundle-analyzer": "^15.3.4",
     "@pact-foundation/pact": "^15.0.1",
