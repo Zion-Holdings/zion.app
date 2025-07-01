@@ -1,6 +1,16 @@
 // CRITICAL: Import environment polyfill FIRST to prevent process.env errors
 import '../src/utils/env-polyfill';
 
+// Add global error handling for undefined components
+if (typeof window !== 'undefined') {
+  window.addEventListener('unhandledrejection', (event) => {
+    if (event.reason?.message?.includes('getInitialProps')) {
+      console.error('Component loading error caught:', event.reason);
+      event.preventDefault(); // Prevent the error from crashing the app
+    }
+  });
+}
+
 import React, { useEffect, useState } from 'react';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
