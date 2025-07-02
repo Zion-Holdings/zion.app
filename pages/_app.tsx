@@ -37,6 +37,7 @@ import Head from 'next/head';
 import '../src/index.css';
 import { Provider as ReduxProvider } from 'react-redux';
 import { store } from '@/store';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 // Import all providers synchronously for reliability
 import { WhitelabelProvider } from '../src/context/WhitelabelContext';
@@ -162,25 +163,28 @@ const LoadingScreen: React.FC<{ progress: number }> = ({ progress }) => (
 
 // Provider wrapper with error handling
 const ProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [queryClient] = useState(() => new QueryClient());
   return (
     <AppErrorBoundary>
-      <ReduxProvider store={store}>
-        <AuthProvider>
-          <WhitelabelProvider>
-            <WalletProvider>
-              <AnalyticsProvider>
-                <CartProvider>
-                  <FeedbackProvider>
-                    <ThemeProvider>
-                      {children}
-                    </ThemeProvider>
-                  </FeedbackProvider>
-                </CartProvider>
-              </AnalyticsProvider>
-            </WalletProvider>
-          </WhitelabelProvider>
-        </AuthProvider>
-      </ReduxProvider>
+      <QueryClientProvider client={queryClient}>
+        <ReduxProvider store={store}>
+          <AuthProvider>
+            <WhitelabelProvider>
+              <WalletProvider>
+                <AnalyticsProvider>
+                  <CartProvider>
+                    <FeedbackProvider>
+                      <ThemeProvider>
+                        {children}
+                      </ThemeProvider>
+                    </FeedbackProvider>
+                  </CartProvider>
+                </AnalyticsProvider>
+              </WalletProvider>
+            </WhitelabelProvider>
+          </AuthProvider>
+        </ReduxProvider>
+      </QueryClientProvider>
     </AppErrorBoundary>
   );
 };
