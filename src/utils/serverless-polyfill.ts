@@ -55,10 +55,11 @@ if (!selfRef.webpackChunk_N_E) {
   selfRef.webpackChunk_N_E = [];
 }
 
-// Ensure webpack chunk array is properly initialized
-if (typeof webpackChunk_N_E === 'undefined') {
-  (globalThis as any).webpackChunk_N_E = selfRef.webpackChunk_N_E;
-}
+  // Ensure webpack chunk array is properly initialized
+  if (typeof webpackChunk_N_E === 'undefined') {
+    // Initialize global webpack chunk array
+    (globalThis as any).webpackChunk_N_E = selfRef.webpackChunk_N_E;
+  }
 
 // TypeScript helper polyfills for runtime
 const tsHelpers = {
@@ -136,6 +137,7 @@ try {
       try {
         return originalPush.call(this, chunk);
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.warn('Webpack chunk loading error prevented:', error);
         return 0;
       }
@@ -217,11 +219,12 @@ if (typeof global !== 'undefined' && typeof window === 'undefined') {
 export const verifyPolyfills = () => {
   const checks = {
     selfDefined: typeof self !== 'undefined',
-    webpackChunkDefined: typeof webpackChunk_N_E !== 'undefined' || (typeof self !== 'undefined' && typeof self.webpackChunk_N_E !== 'undefined'),
+    webpackChunkDefined: typeof webpackChunk_N_E !== 'undefined' || (typeof self !== 'undefined' && typeof (self as any).webpackChunk_N_E !== 'undefined'),
     tsHelpersDefined: typeof __extends !== 'undefined' && typeof __assign !== 'undefined',
     errorHandlersSet: typeof window !== 'undefined' && window.onerror !== null
   };
   
+  // eslint-disable-next-line no-console
   console.log('Serverless polyfill verification:', checks);
   return Object.values(checks).every(Boolean);
 };

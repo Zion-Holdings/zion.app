@@ -14,7 +14,7 @@ import { TextEncoder, TextDecoder } from 'util';
 
 // Polyfill TextEncoder and TextDecoder for JSDOM environment
 global.TextEncoder = TextEncoder;
-// @ts-expect-error - Node's TextDecoder might not perfectly match DOM's, but it's usually sufficient for tests
+// @ts-expect-error: Node's TextDecoder might not perfectly match DOM's, but it's usually sufficient for tests
 global.TextDecoder = TextDecoder;
 
 
@@ -205,10 +205,10 @@ if (typeof URL.revokeObjectURL === 'undefined') {
 
 // Polyfill for BroadcastChannel
 if (typeof BroadcastChannel === 'undefined') {
-  // @ts-expect-error - BroadcastChannel polyfill for test environment
+  // @ts-expect-error: BroadcastChannel polyfill for test environment - native interface doesn't exist in Node.js
   global.BroadcastChannel = class BroadcastChannelMock {
     constructor(name: string) {
-      // @ts-expect-error - Mock name property assignment
+      // @ts-expect-error: Mock name property assignment - TypeScript doesn't know about our custom mock class properties
       this.name = name;
     }
     postMessage = jest.fn();
@@ -228,8 +228,7 @@ if (typeof window.scrollTo === 'undefined') {
 
 // Mock axios.create to return axios itself
 import axios from 'axios';
-// @ts-expect-error
-axios.create = jest.fn(() => axios);
+(axios as any).create = jest.fn(() => axios);
 
 // -----------------------------
 // Vitest Compatibility Layer for Jest
@@ -390,13 +389,11 @@ if (typeof window.IntersectionObserver === 'undefined') {
 // Ensure all code paths use the mock implementation
 // Some services import the global fetch reference before jest-fetch-mock is enabled.
 // Override it explicitly so those modules receive the mocked version.
-// @ts-expect-error
-global.fetch = fetchMock;
+(global as any).fetch = fetchMock;
 
 // Polyfill performance.getEntriesByType for JSDOM (used in productionLogger)
 if (typeof performance.getEntriesByType !== 'function') {
-  // @ts-expect-error
-  performance.getEntriesByType = () => [];
+  (performance as any).getEntriesByType = () => [];
 }
 
 jest.mock('@supabase/ssr', () => ({
@@ -423,10 +420,10 @@ jest.mock('@/context', () => {
 });
 
 // Extend Vitest shim with restoreAllMocks for suites that call it
-// @ts-expect-error - vi is added by the vitest mock above
+  // @ts-expect-error: vi is added by the vitest mock above - TypeScript doesn't see the mock declaration
 if (global.vi && !global.vi.restoreAllMocks) {
-  // @ts-expect-error
-  global.vi.restoreAllMocks = jest.restoreAllMocks;
+  // @ts-expect-error: global.vi property extension - TypeScript doesn't expect vitest globals in Jest environment
+  (global.vi as any).restoreAllMocks = jest.restoreAllMocks;
 }
 
 // Mock @supabase/ssr createBrowserClient so components don't crash in tests
@@ -450,12 +447,12 @@ jest.mock('msw/node', () => ({ setupServer: () => ({ listen: jest.fn(), resetHan
 jest.mock('@/components/search/FilterSidebar', () => ({ FilterSidebar: () => null }));
 
 // Extend Vitest shim with timer helpers if not present
-// @ts-expect-error - vi is added by the vitest mock above
+// @ts-expect-error: vi is added by the vitest mock above - TypeScript doesn't see the mock declaration
 if (global.vi) {
-  // @ts-expect-error
-  if (!global.vi.useFakeTimers) global.vi.useFakeTimers = jest.useFakeTimers.bind(jest);
-  // @ts-expect-error
-  if (!global.vi.runAllTimers) global.vi.runAllTimers = jest.runAllTimers.bind(jest);
-  // @ts-expect-error
-  if (!global.vi.advanceTimersByTime) global.vi.advanceTimersByTime = jest.advanceTimersByTime.bind(jest);
+  // @ts-expect-error: global.vi timer methods extension - TypeScript doesn't expect vitest timer APIs in Jest
+  if (!(global.vi as any).useFakeTimers) (global.vi as any).useFakeTimers = jest.useFakeTimers.bind(jest);
+  // @ts-expect-error: global.vi timer methods extension - TypeScript doesn't expect vitest timer APIs in Jest
+  if (!(global.vi as any).runAllTimers) (global.vi as any).runAllTimers = jest.runAllTimers.bind(jest);
+  // @ts-expect-error: global.vi timer methods extension - TypeScript doesn't expect vitest timer APIs in Jest
+  if (!(global.vi as any).advanceTimersByTime) (global.vi as any).advanceTimersByTime = jest.advanceTimersByTime.bind(jest);
 }
