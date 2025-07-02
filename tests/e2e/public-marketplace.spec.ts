@@ -12,7 +12,7 @@ async function isServerRunning(url: string): Promise<boolean> {
   }
 }
 
-test.beforeEach(async ({}, testInfo) => {
+test.beforeEach(async ({ page }, testInfo) => {
   if (!(await isServerRunning(baseURL))) {
     testInfo.skip(`Server not running at ${baseURL}`);
   }
