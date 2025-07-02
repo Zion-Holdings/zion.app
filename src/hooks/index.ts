@@ -23,3 +23,4 @@ export * from './useCurrency';
 export * from './useSessionDuration';
 export * from './useNavigationGestures';
 export * from './useFollowedCategories';
+export * from './useToggle';
