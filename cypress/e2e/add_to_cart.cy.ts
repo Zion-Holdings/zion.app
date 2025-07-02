@@ -1,3 +1,4 @@
+/* eslint-env cypress/globals */
 describe('add to cart', () => {
   beforeEach(() => {
     // Clear the cart from localStorage before each test
@@ -41,6 +42,8 @@ describe('add to cart', () => {
         timeout: 5000,
         interval: 500,
         errorMsg: 'Cart in localStorage was not updated in time'
+      }).then(() => {
+        // Continue with validation after wait completes
       });
       const cart = JSON.parse(win.localStorage.getItem('zion_cart') || '[]');
       expect(cart.length).to.be.greaterThan(0);

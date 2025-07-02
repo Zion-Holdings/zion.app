@@ -1,3 +1,4 @@
+/* eslint-env cypress/globals */
 describe('API Health Check', () => {
   it('should return a 200 OK status and correct body for /api/health', () => {
     cy.request('GET', '/api/health')
@@ -8,7 +9,7 @@ describe('API Health Check', () => {
         // Optional: Check if timestamp is a valid ISO string
         if (response.body.timestamp) {
           const parsedTimestamp = Date.parse(response.body.timestamp);
-          expect(isNaN(parsedTimestamp)).to.be.false;
+          expect(parsedTimestamp).to.not.be.NaN;
         }
       });
   });

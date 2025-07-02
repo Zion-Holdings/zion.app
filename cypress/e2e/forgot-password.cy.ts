@@ -1,3 +1,4 @@
+/* eslint-env cypress/globals */
 describe('Forgot Password Page', () => {
   beforeEach(() => {
     // Visit the page before each test

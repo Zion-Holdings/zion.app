@@ -226,7 +226,8 @@ export const verifyPolyfills = () => {
   
   // eslint-disable-next-line no-console
   console.log('Serverless polyfill verification:', checks);
-  return Object.values(checks).every(Boolean);
+  const result = Object.values(checks).every(Boolean);
+  return result;
 };
 
 // Auto-verify in development

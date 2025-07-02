@@ -1,3 +1,4 @@
+/* eslint-env cypress/globals */
 describe('Temporary Login Test', () => {
   it('should successfully login via API', () => {
     cy.loginByApi('test@example.com', 'password')
