@@ -22,13 +22,24 @@ class ProductionMonitor {
     return new Promise((resolve) => {
       const url = `${this.baseUrl}${endpoint}`;
       const startTime = Date.now();
-      
+
       https.get(url, (res) => {
         const responseTime = Date.now() - startTime;
-        resolve({
-          status: res.statusCode,
-          responseTime,
-          success: res.statusCode >= 200 && res.statusCode < 400
+        let body = '';
+
+        res.on('data', (chunk) => {
+          if (body.length < 1000) {
+            body += chunk.toString();
+          }
+        });
+
+        res.on('end', () => {
+          resolve({
+            status: res.statusCode,
+            responseTime,
+            success: res.statusCode >= 200 && res.statusCode < 400,
+            body: body.trim()
+          });
         });
       }).on('error', (err) => {
         resolve({
