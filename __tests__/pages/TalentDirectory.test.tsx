@@ -4,7 +4,7 @@ import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
 import TalentDirectory from '@/pages/TalentDirectory';
 
 // Mock child components and hooks
-jest.mock('@/components/talent/FilterSidebar', () => ({ FilterSidebar: (props: any) => <div data-testid="filter-sidebar">Filter Sidebar</div> }));
+jest.mock('@/components/talent/FilterSidebar', () => ({ FilterSidebar: (_props: any) => <div data-testid="filter-sidebar">Filter Sidebar</div> }));
 jest.mock('@/components/talent/TalentResults', () => ({
   TalentResults: (props: any) => (
     <div data-testid="talent-results">

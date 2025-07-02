@@ -4,6 +4,7 @@ let Sentry: any = null;
 // Skip Sentry import during CI builds or when explicitly disabled
 if (process.env.SKIP_SENTRY_BUILD !== 'true' && process.env.CI !== 'true') {
   try {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     Sentry = require("@sentry/nextjs");
   } catch (error) {
     console.warn('Sentry import failed, using mock functionality:', error);
