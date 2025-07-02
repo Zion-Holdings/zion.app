@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExportPanel } from "@/components/analytics/ExportPanel";
-import { AnalyticsChart } from "@/components/analytics/AnalyticsChart";
+import { DynamicAnalyticsChart as AnalyticsChart } from "@/utils/dynamicComponents";
 import AdminLayout from "@/components/admin/AdminLayout";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 

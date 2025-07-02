@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { AnalyticsChart } from "@/components/analytics/AnalyticsChart";
+import { DynamicAnalyticsChart as AnalyticsChart } from "@/utils/dynamicComponents";
 
 interface FeatureUsageChartProps {
   data: Array<Record<string, any>>;

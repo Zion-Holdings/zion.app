@@ -107,7 +107,7 @@ function classifyLogLine(line) {
       return 'critical';
     }
   }
-  
+
   // Check for suppressible warnings
   for (const pattern of patterns.suppressible) {
     if (pattern.test(line)) {

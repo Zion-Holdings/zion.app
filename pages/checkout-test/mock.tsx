@@ -6,13 +6,30 @@ import { CheckCircle, ArrowRight } from 'lucide-react';
 
 
 
+import { useEffect, useState } from 'react';
+
 export default function MockCheckoutPage() {
   const router = useRouter();
-  const { mock } = router.query;
+  const [showMockContent, setShowMockContent] = useState(false);
 
-  if (!mock) {
-    router.push('/checkout');
-    return <div>Redirecting...</div>;
+  useEffect(() => {
+    if (!router.isReady) {
+      return; // Router not ready yet, wait for next effect run
+    }
+
+    const { mock } = router.query;
+
+    if (!mock) {
+      router.push('/checkout');
+    } else {
+      setShowMockContent(true);
+    }
+  }, [router, router.isReady, router.query]); // Add router.isReady and router.query to dependencies
+
+  if (!showMockContent) {
+    // You can return a loading spinner or a simple "Redirecting..." message
+    // until the client-side check is complete.
+    return <div>Loading mock checkout...</div>;
   }
 
   return (

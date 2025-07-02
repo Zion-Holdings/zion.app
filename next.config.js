@@ -301,6 +301,9 @@ const nextConfig = {
     'ajv-keywords',
     '@ungap/structured-clone',
     'axios-retry',
+    // i18next and related packages for transpilation
+    'i18next',
+    'i18next-browser-languagedetector',
     // Fix dynamic import errors for these ESM-only packages
     'react-hot-toast',
     'sonner',
@@ -499,6 +502,12 @@ const nextConfig = {
     }
     
     // Development optimizations to prevent memory leaks with 176+ pages
+    // Define the '@' alias outside the if (dev) block
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': path.resolve(__dirname, 'src'),
+    };
+
     if (dev) {
       if (!isServer) {
         config.watchOptions = {
@@ -511,6 +520,7 @@ const nextConfig = {
       // Alias react-router-dom to a lightweight stub to avoid build errors
       config.resolve.alias = {
         ...config.resolve.alias,
+        // '@' alias is now defined globally
         'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
       };
 

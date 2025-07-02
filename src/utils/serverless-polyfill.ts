@@ -159,10 +159,12 @@ if (typeof window !== 'undefined') {
         'Cannot destructure property',
         'self is not defined',
         '__extends',
-        'getInitialProps'
+        // 'getInitialProps' // Allowing this error to propagate
       ];
       
       if (suppressedMessages.some(msg => message.includes(msg))) {
+        // Log that we are suppressing an error, for debugging purposes
+        console.warn(`[serverless-polyfill] Suppressing known error: "${message}" from ${source}:${lineno}`);
         return true; // Suppress error
       }
     }

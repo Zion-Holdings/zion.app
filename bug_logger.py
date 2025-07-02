@@ -4,7 +4,8 @@ import os
 import traceback
 
 # Allow customizing the log file location via environment variable
-LOG_FILE = os.environ.get("BUG_LOG_FILE", "bug_log.json")
+# Default to storing bug logs under logs/bug/bug_log.json so logs remain organized
+LOG_FILE = os.environ.get("BUG_LOG_FILE", os.path.join("logs", "bug", "bug_log.json"))
 
 def log_bug(
     error_message: str,

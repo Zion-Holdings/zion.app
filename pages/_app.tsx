@@ -33,10 +33,17 @@ if (typeof window !== 'undefined') {
 import React, { useEffect, useState } from 'react';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'; // Added
 import Head from 'next/head';
 import '../src/index.css';
+import { Provider as ReduxProvider } from 'react-redux';
+import { store } from '@/store';
+
+import { I18nextProvider } from 'react-i18next'; // Import I18nextProvider
+import i18n from '../src/i18n'; // Import your i18n instance
 
 // Import all providers synchronously for reliability
+import { AuthProvider } from '../src/context/auth/AuthProvider'; // Added AuthProvider
 import { WhitelabelProvider } from '../src/context/WhitelabelContext';
 import { WalletProvider } from '../src/context/WalletContext';
 import { AnalyticsProvider } from '../src/context/AnalyticsContext';
@@ -161,28 +168,36 @@ const LoadingScreen: React.FC<{ progress: number }> = ({ progress }) => (
 const ProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <AppErrorBoundary>
-      <WhitelabelProvider>
-        <WalletProvider>
-          <AnalyticsProvider>
-            <CartProvider>
-              <FeedbackProvider>
-                <ThemeProvider>
-                  {children}
-                </ThemeProvider>
-              </FeedbackProvider>
-            </CartProvider>
-          </AnalyticsProvider>
-        </WalletProvider>
-      </WhitelabelProvider>
+      <ReduxProvider store={store}>
+        <I18nextProvider i18n={i18n}> {/* Added I18nextProvider */}
+          <AuthProvider> {/* Added AuthProvider Wrapper */}
+            <WhitelabelProvider>
+              <WalletProvider>
+                <AnalyticsProvider>
+                <CartProvider>
+                  <FeedbackProvider>
+                    <ThemeProvider>
+                      {children}
+                    </ThemeProvider>
+                  </FeedbackProvider>
+                </CartProvider>
+              </AnalyticsProvider>
+            </WalletProvider>
+          </WhitelabelProvider>
+        </AuthProvider> {/* Closed AuthProvider Wrapper */}
+        </I18nextProvider> {/* Closed I18nextProvider */}
+      </ReduxProvider>
     </AppErrorBoundary>
   );
 };
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [isLoading, setIsLoading] = useState(true); // Reverted to true
+  // Start with loading false to avoid blank screen if initialization stalls
+  const [isLoading, setIsLoading] = useState(false);
   const [loadingProgress, setLoadingProgress] = useState(0); // Reverted to 0
   const [initializationError, setInitializationError] = useState<string | null>(null);
   const router = useRouter();
+  const [queryClient] = useState(() => new QueryClient()); // Added QueryClient instance
 
   useEffect(() => {
     const initializeApp = async () => {
@@ -350,9 +365,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   // Main app render with all providers
   return (
-    <ProviderWrapper>
-      <Head>
-        <title>Zion App - AI Marketplace & DAO Platform</title>
+    <QueryClientProvider client={queryClient}> {/* Added QueryClientProvider */}
+      <ProviderWrapper>
+        <Head>
+          <title>Zion App - AI Marketplace & DAO Platform</title>
         <meta name="description" content="Zion App - The ultimate AI marketplace and DAO platform for the future of work" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -360,7 +376,8 @@ function MyApp({ Component, pageProps }: AppProps) {
              <div>
          <Component {...pageProps} />
        </div>
-    </ProviderWrapper>
+      </ProviderWrapper>
+    </QueryClientProvider>
   );
 }
 
