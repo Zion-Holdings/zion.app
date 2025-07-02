@@ -519,15 +519,10 @@ jest.mock('next/navigation', () => ({
 
 // Mock mongoose to avoid heavy BSON/ESM issues in tests that import it indirectly
 jest.mock('mongoose', () => {
-  const schemaFn = function() {
-    return {
-      pre: jest.fn(),
-      post: jest.fn(),
-    };
-  };
+  const schemaStub = function() { return { index: jest.fn(), methods: {}, statics: {} }; };
   return {
-    Schema: schemaFn,
-    model: jest.fn(() => ({})),
+    Schema: schemaStub,
+    model: jest.fn().mockReturnValue({}),
     connect: jest.fn(),
     connection: { on: jest.fn() },
   };
@@ -556,4 +551,32 @@ if (typeof global.vi === 'undefined') {
     mockResolvedValue: (val) => jest.fn().mockResolvedValue(val),
     mockRejectedValue: (val) => jest.fn().mockRejectedValue(val),
   };
+}
+
+// -----------------------------
+// Provide bcrypt lightweight mock to avoid installing native dep
+// -----------------------------
+jest.mock('bcrypt', () => {
+  return {
+    __esModule: true,
+    hash: jest.fn(async (pw: string) => `hashed:${pw}`),
+    compare: jest.fn(async (pw: string, hash: string) => hash === `hashed:${pw}`),
+  };
+});
+
+// Ensure matchMedia is defined for tests that rely on it
+if (typeof window !== 'undefined' && !window.matchMedia) {
+  Object.defineProperty(window, 'matchMedia', {
+    writable: true,
+    value: jest.fn().mockImplementation((query) => ({
+      matches: false,
+      media: query,
+      onchange: null,
+      addListener: jest.fn(),
+      removeListener: jest.fn(),
+      addEventListener: jest.fn(),
+      removeEventListener: jest.fn(),
+      dispatchEvent: jest.fn(),
+    })),
+  });
 }

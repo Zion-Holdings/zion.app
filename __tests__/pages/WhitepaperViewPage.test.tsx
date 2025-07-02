@@ -3,13 +3,13 @@ import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { useRouter } from 'next/router';
 import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
-import nextRouterMock from 'next-router-mock';
+import mockNextRouter from 'next-router-mock';
 import WhitepaperViewPage from '@/pages/WhitepaperViewPage';
 import { supabase } from '@/integrations/supabase/client';
 import WhitepaperPreviewPanel from '@/components/WhitepaperPreviewPanel';
 
 // Mock dependencies
-jest.mock('next/router', () => nextRouterMock);
+jest.mock('next/router', () => mockNextRouter);
 jest.mock('next/link', () => ({
   __esModule: true,
   default: ({ children, href }: { children: React.ReactNode; href: string }) => <a href={href}>{children}</a>,

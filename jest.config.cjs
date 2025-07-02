@@ -19,7 +19,9 @@ module.exports = {
     // Fix path mappings with more specific ordering
     '^@/pages/api/(.*)$': '<rootDir>/pages/api/$1',
     '^@/pages/(.*)$': ['<rootDir>/pages/$1', '<rootDir>/src/pages/$1'],
+    '^@/components/ui/(.*)$': '<rootDir>/src/components/ui/$1',
     '^@/components/(.*)$': '<rootDir>/src/components/$1',
+    '^@/i18n$': '<rootDir>/src/i18n/index.ts',
     '^@/utils/(?!devtools)(.*)$': '<rootDir>/src/utils/$1',
     '^@/context$': '<rootDir>/src/context/index.ts',
     '^@/context/(.*)$': '<rootDir>/src/context/$1',
@@ -63,7 +65,8 @@ module.exports = {
     '^os-utils$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/pages/api/points/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/pages/api/users/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
-    '^@/pages/Login.jsx$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/pages/Login\.jsx$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/App$': '<rootDir>/src/App.tsx',
   },
   
   // Test file patterns

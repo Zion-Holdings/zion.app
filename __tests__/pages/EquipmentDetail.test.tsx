@@ -5,7 +5,7 @@ import '@testing-library/jest-dom';
 import EquipmentDetail, { SAMPLE_EQUIPMENT } from '@/pages/EquipmentDetail';
 import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
 import { useRouter } from 'next/router';
-import nextRouterMock from 'next-router-mock';
+import mockNextRouter from 'next-router-mock';
 import { useAuth } from '@/hooks/useAuth';
 import { useCart } from '@/context/CartContext';
 
@@ -17,7 +17,7 @@ const mockInfoFnForToast = jest.fn();
 const mockSuccessFnForToast = jest.fn();
 
 // Mock dependencies
-jest.mock('next/router', () => nextRouterMock);
+jest.mock('next/router', () => mockNextRouter);
 
 // Mock useAuth and useCart - we'll access these via jest.mocked later
 jest.mock('@/hooks/useAuth', () => ({
