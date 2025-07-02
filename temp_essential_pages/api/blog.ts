@@ -12,11 +12,14 @@ export default function handler(
   }
 
   try {
-    const query = String(((req.query as any).query || '')).toLowerCase();
-    const match = (text?: string) => text?.toLowerCase().includes(query);
+    interface BlogQuery { query?: string | string[] }
+    const { query = '' } = req.query as BlogQuery;
+    const q = Array.isArray(query) ? query.join(' ') : query;
+    const lower = q.toLowerCase();
+    const match = (text?: string) => text?.toLowerCase().includes(lower);
     const results = BLOG_POSTS.filter(
       p =>
-        !query ||
+        !lower ||
         match(p.title) ||
         match(p.excerpt) ||
         match(p.content) ||
