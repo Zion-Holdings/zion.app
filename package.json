@@ -196,6 +196,7 @@
     "@hookform/resolvers": "3.10.0",
     "@libp2p/identify": "^3.0.37",
     "@libp2p/tcp": "^10.1.17",
+    "@opentelemetry/core": "^2.0.1",
     "@orbitdb/core": "^3.0.2",
     "@prisma/client": "^6.10.1",
     "@radix-ui/react-accordion": "^1.2.11",
