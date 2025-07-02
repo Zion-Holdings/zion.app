@@ -596,3 +596,5 @@ jest.mock('axios-retry', () => {
     default: jest.fn(),
   };
 });
+
+jest.mock('@ungap/structured-clone', () => ({ __esModule: true, default: (val: any) => JSON.parse(JSON.stringify(val)) }));
