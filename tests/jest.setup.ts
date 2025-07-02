@@ -447,7 +447,7 @@ jest.mock('msw', () => ({ rest: { get: jest.fn(), post: jest.fn(), put: jest.fn(
 jest.mock('msw/node', () => ({ setupServer: () => ({ listen: jest.fn(), resetHandlers: jest.fn(), close: jest.fn() }) }));
 
 // Provide mock for missing component
-jest.mock('@/components/search/FilterSidebar', () => ({ FilterSidebar: () => null }));
+jest.mock('@/components/talent/FilterSidebar', () => ({ FilterSidebar: () => null }));
 
 // Extend Vitest shim with timer helpers if not present
 if (global.vi) {
