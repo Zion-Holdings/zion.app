@@ -14,7 +14,7 @@ import { TextEncoder, TextDecoder } from 'util';
 
 // Polyfill TextEncoder and TextDecoder for JSDOM environment
 global.TextEncoder = TextEncoder;
-// @ts-expect-error: Node's TextDecoder might not perfectly match DOM's, but it's usually sufficient for tests
+// @ts-expect-error Node's TextDecoder might not perfectly match DOM's, but it's usually sufficient for tests
 global.TextDecoder = TextDecoder;
 
 
@@ -205,10 +205,10 @@ if (typeof URL.revokeObjectURL === 'undefined') {
 
 // Polyfill for BroadcastChannel
 if (typeof BroadcastChannel === 'undefined') {
-  // @ts-expect-error: BroadcastChannel polyfill for test environment - native interface doesn't exist in Node.js
+  // @ts-expect-error BroadcastChannel polyfill for test environment - native interface doesn't exist in Node.js
   global.BroadcastChannel = class BroadcastChannelMock {
     constructor(name: string) {
-      // @ts-expect-error: Mock name property assignment - TypeScript doesn't know about our custom mock class properties
+      // @ts-expect-error Mock name property assignment - TypeScript doesn't know about our custom mock class properties
       this.name = name;
     }
     postMessage = jest.fn();
@@ -380,9 +380,9 @@ if (typeof window.IntersectionObserver === 'undefined') {
     disconnect() {}
     takeRecords() { return []; }
   }
-  // @ts-expect-error: IntersectionObserver polyfill for test environment - JSDOM doesn't include this API by default
+  // @ts-expect-error IntersectionObserver polyfill for test environment - JSDOM doesn't include this API by default
   window.IntersectionObserver = MockIntersectionObserver;
-  // @ts-expect-error: IntersectionObserver polyfill for global scope - ensuring both window and global have the mock
+  // @ts-expect-error IntersectionObserver polyfill for global scope - ensuring both window and global have the mock
   global.IntersectionObserver = MockIntersectionObserver;
 }
 
@@ -420,9 +420,9 @@ jest.mock('@/context', () => {
 });
 
 // Extend Vitest shim with restoreAllMocks for suites that call it
-  // @ts-expect-error: vi is added by the vitest mock above - TypeScript doesn't see the mock declaration
+  // @ts-expect-error vi is added by the vitest mock above - TypeScript doesn't see the mock declaration
 if (global.vi && !global.vi.restoreAllMocks) {
-  // @ts-expect-error: global.vi property extension - TypeScript doesn't expect vitest globals in Jest environment
+  // @ts-expect-error global.vi property extension - TypeScript doesn't expect vitest globals in Jest environment
   (global.vi as any).restoreAllMocks = jest.restoreAllMocks;
 }
 
@@ -447,12 +447,12 @@ jest.mock('msw/node', () => ({ setupServer: () => ({ listen: jest.fn(), resetHan
 jest.mock('@/components/search/FilterSidebar', () => ({ FilterSidebar: () => null }));
 
 // Extend Vitest shim with timer helpers if not present
-// @ts-expect-error: vi is added by the vitest mock above - timer helpers added for compatibility
+// @ts-expect-error vi is added by the vitest mock above - timer helpers added for compatibility
 if (global.vi) {
-  // @ts-expect-error: global.vi timer methods extension - TypeScript doesn't expect vitest timer APIs in Jest
+  // @ts-expect-error global.vi timer methods extension - TypeScript doesn't expect vitest timer APIs in Jest
   if (!(global.vi as any).useFakeTimers) (global.vi as any).useFakeTimers = jest.useFakeTimers.bind(jest);
-  // @ts-expect-error: global.vi timer methods extension - TypeScript doesn't expect vitest timer APIs in Jest
+  // @ts-expect-error global.vi timer methods extension - TypeScript doesn't expect vitest timer APIs in Jest
   if (!(global.vi as any).runAllTimers) (global.vi as any).runAllTimers = jest.runAllTimers.bind(jest);
-  // @ts-expect-error: global.vi timer methods extension - TypeScript doesn't expect vitest timer APIs in Jest
+  // @ts-expect-error global.vi timer methods extension - TypeScript doesn't expect vitest timer APIs in Jest
   if (!(global.vi as any).advanceTimersByTime) (global.vi as any).advanceTimersByTime = jest.advanceTimersByTime.bind(jest);
 }

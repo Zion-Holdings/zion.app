@@ -126,7 +126,6 @@ Object.keys(tsHelpers).forEach(helper => {
   if (typeof (selfRef as any)[helper] === 'undefined') {
     (selfRef as any)[helper] = (tsHelpers as any)[helper];
   }
-  return true; // Ensure return value for forEach
 });
 
 // Error prevention for common webpack issues
