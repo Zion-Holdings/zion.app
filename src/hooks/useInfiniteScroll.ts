@@ -165,7 +165,7 @@ export function useInfiniteScrollPagination<T>(
       }
     } catch (err) {
       logErrorToProduction('Error loading items:', { data: err });
-      setError(err instanceof Error ? err.message : 'Failed to load more items');
+      setError(getErrorMessage(err));
     } finally {
       setLoading(false);
     }
@@ -211,7 +211,7 @@ export function useInfiniteScrollPagination<T>(
       setIsInitialized(true);
     } catch (err) {
       logErrorToProduction('Error refreshing items:', { data: err });
-      setError(err instanceof Error ? err.message : 'Failed to refresh items');
+      setError(getErrorMessage(err));
     } finally {
       setLoading(false);
       hideLoader(); // Hide global loader after initial fetch attempt
@@ -243,4 +243,11 @@ export function useInfiniteScrollPagination<T>(
     refresh,
     ...infiniteScrollProps
   };
+}
+
+function getErrorMessage(err: any): string {
+  if (err instanceof Error) return err.message;
+  if (typeof err === 'string') return err;
+  if (err && typeof err === 'object' && 'message' in err && typeof err.message === 'string') return err.message;
+  return 'Unknown error';
 } 
