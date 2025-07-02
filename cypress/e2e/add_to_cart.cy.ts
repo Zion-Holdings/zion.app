@@ -46,7 +46,7 @@ describe('add to cart', () => {
         const cart = JSON.parse(win.localStorage.getItem('zion_cart') || '[]');
         expect(cart.length).to.be.greaterThan(0);
         // We don't know the exact ID of the first product, so just check that something was added
-        expect(cart[0].id).to.exist;
+        expect(cart[0]).to.have.property('id');
         expect(cart[0].quantity).to.eq(1);
       });
     });

@@ -255,8 +255,7 @@ async function main(projectRoot = '.') {
     console.log(chalk.yellow('No links found in any files.'));
     return;
   }
-  console.log(chalk.green(`
-Found ${allLinks.length} total links. Checking status (this might take a while)...`));
+  console.log(chalk.green(`Found ${allLinks.length} total links. Checking status (this might take a while)...`));
 
   const CONCURRENT_CHECKS = 5;
   let results = [];
@@ -294,8 +293,7 @@ Found ${allLinks.length} total links. Checking status (this might take a while).
     });
   }
 
-  console.log("
---- Summary ---");
+  console.log("\n--- Summary ---");
   if (brokenInternal > 0) {
     console.log(chalk.red.bold(`Found ${brokenInternal} broken internal link(s).`));
   } else {
@@ -314,14 +312,12 @@ Found ${allLinks.length} total links. Checking status (this might take a while).
   if (totalBroken > 0) {
     process.exitCode = 1;
   } else {
-    console.log(chalk.green.bold("
-Overall: No definitively broken links detected!"));
+    console.log(chalk.green.bold("\nOverall: No definitively broken links detected!"));
   }
 }
 
 main('.').catch(error => {
-  console.error(chalk.red.bold(`
-An unexpected error occurred in the script: ${error.message}`));
+  console.error(chalk.red.bold(`\nAn unexpected error occurred in the script: ${error.message}`));
   console.error(error.stack);
   process.exitCode = 1;
 });

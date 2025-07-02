@@ -9,8 +9,9 @@ describe('API Health Check', () => {
         // Optional: Check if timestamp is a valid ISO string
         const timestamp = response.body.timestamp;
         if (timestamp) {
-          const parsedTimestamp = Date.parse(timestamp);
-          expect(parsedTimestamp).not.to.be.NaN;
+          const parsedTime = Date.parse(timestamp);
+          expect(parsedTime).to.be.a('number');
+          expect(parsedTime).to.be.greaterThan(0);
         }
       });
   });
