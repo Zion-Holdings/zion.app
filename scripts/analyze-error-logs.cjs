@@ -9,6 +9,7 @@ const path = require('path');
 
 const args = process.argv.slice(2);
 const LOG_DIR = args[0] && !args[0].startsWith('--') ? args[0] : 'logs';
+const LOCALES_DIR = path.join('src', 'i18n', 'locales');
 // Error patterns to flag. Expanded to detect missing modules and network issues
 const PATTERNS = [
   /error/i,
@@ -26,6 +27,43 @@ const PATTERNS = [
 const LEVELS = ['debug', 'info', 'warn', 'error'];
 const DEDUPE = args.includes('--dedupe');
 const SUMMARY = args.includes('--summary');
+
+function collectTranslationKeys(dir) {
+  const keys = new Set();
+  if (!fs.existsSync(dir)) return keys;
+
+  function flatten(obj, prefix = '') {
+    Object.entries(obj).forEach(([k, v]) => {
+      const key = prefix ? `${prefix}.${k}` : k;
+      if (typeof v === 'object' && v !== null) {
+        flatten(v, key);
+      } else {
+        keys.add(key);
+      }
+    });
+  }
+
+  const files = fs.readdirSync(dir, { withFileTypes: true });
+  files.forEach((entry) => {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      const nestedFiles = fs.readdirSync(full).filter((f) => f.endsWith('translation.json'));
+      if (nestedFiles.length) {
+        nestedFiles.forEach((f) => {
+          const json = JSON.parse(fs.readFileSync(path.join(full, f), 'utf8'));
+          flatten(json);
+        });
+      }
+    } else if (entry.isFile() && entry.name.endsWith('translation.json')) {
+      const json = JSON.parse(fs.readFileSync(full, 'utf8'));
+      flatten(json);
+    }
+  });
+
+  return keys;
+}
+
+const TRANSLATION_KEYS = collectTranslationKeys(LOCALES_DIR);
 
 function parseLine(line) {
   line = line.trim();
@@ -166,7 +204,8 @@ function main() {
     const header = '\n=== Missing Translation Keys ===';
     console.log(header);
     summaryLines.push(header);
-    Array.from(allMissingKeys).forEach(key => {
+    const unknown = Array.from(allMissingKeys).filter(key => !TRANSLATION_KEYS.has(key));
+    unknown.forEach(key => {
       console.log('- ' + key);
       summaryLines.push('- ' + key);
     });
