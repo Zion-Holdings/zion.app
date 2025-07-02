@@ -65,17 +65,6 @@ const nextConfig = {
       transform: '@radix-ui/react-icons/dist/{{member}}',
     },
   },
-  outputFileTracingExcludes: {
-    '*': [
-      'node_modules/@swc/core-linux-x64-gnu',
-      'node_modules/@swc/core-linux-x64-musl',
-      'node_modules/@esbuild/linux-x64',
-      'node_modules/@chainsafe/**/*',
-      'node_modules/three/**/*',
-      'node_modules/@google/model-viewer/**/*',
-    ],
-  },
-
   experimental: {
     optimizePackageImports: [
       'lucide-react', 
@@ -94,10 +83,7 @@ const nextConfig = {
     // Bundle analysis optimizations moved to root level
     // Disable profiling for faster builds
     swcTraceProfiling: false,
-    // Enable ESM externals for better module resolution
-    esmExternals: 'loose',
-    // Enable experimental node middleware support
-    nodeMiddleware: true
+    // Removed esmExternals to prevent external module dynamic import issues
   },
 
   images: {
@@ -295,6 +281,16 @@ const nextConfig = {
     'micromark-util-subtokenize',
     'micromark-util-symbol',
     'micromark-util-types',
+    // Add missing micromark factory packages
+    'micromark-factory-destination',
+    'micromark-factory-label',
+    'micromark-factory-space',
+    'micromark-factory-title',
+    'micromark-factory-whitespace',
+    // Character entities packages
+    'character-entities',
+    'character-entities-html4',
+    'character-entities-legacy',
     // lodash is installed for Formik compatibility; lodash-es is used directly in our code.
     'helia',
     '@helia/json',
@@ -305,6 +301,16 @@ const nextConfig = {
     'ajv-keywords',
     '@ungap/structured-clone',
     'axios-retry',
+    // Fix dynamic import errors for these ESM-only packages
+    'react-hot-toast',
+    'sonner',
+    'stripe',
+    'swr',
+    'trim-lines',
+    'trough',
+    'unist-util-visit-parents',
+    'usehooks-ts',
+    'vfile-message',
     // UI libraries that need transpilation
     '@chakra-ui/react',
     '@radix-ui/react-accordion',
@@ -887,7 +893,8 @@ const nextConfig = {
       },
     });
 
-    // Additional rule to handle lodash ESM imports specifically in formik
+    // Disabled problematic string-replace-loader rule that caused invalid regex errors
+    /*
     config.module.rules.push({
       test: /\.js$/,
       include: /node_modules\/formik/,
@@ -901,6 +908,7 @@ const nextConfig = {
         }
       }
     });
+    */
 
     // Additional ESM handling for Next.js 15 compatibility
     if (!isServer) {
