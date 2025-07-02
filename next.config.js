@@ -80,8 +80,6 @@ const nextConfig = {
     largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
     workerThreads: false, // Disable worker threads to reduce memory usage
     cpus: Math.min(2, os.cpus().length), // Adaptive CPU limit
-    // Disable cacheUnaffected to prevent webpack optimization conflicts
-    cacheUnaffected: false,
     // Bundle analysis optimizations moved to root level
     // Disable profiling for faster builds
     swcTraceProfiling: false,
@@ -655,15 +653,12 @@ const nextConfig = {
       config.cache = {
         type: 'memory',
         maxGenerations: dev ? 1 : 5,
-        // Explicitly disable cacheUnaffected to avoid "usedExports" conflicts
-        cacheUnaffected: false,
       };
     } else {
       // Ensure memory cache is properly configured
       config.cache = {
         type: 'memory',
         maxGenerations: dev ? 1 : 5,
-        cacheUnaffected: false,
       };
     }
 
