@@ -47,7 +47,8 @@ echo "Configuring environment files..."
 node scripts/setup-environment.cjs
 
 echo "Validating environment configuration..."
-npx ts-node --transpile-only scripts/check-env.ts || true
+# Changed from ts-node to tsx for better ESM compatibility
+npx tsx scripts/check-env.ts || true
 
 # Development message
 echo ""

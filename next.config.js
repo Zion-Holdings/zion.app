@@ -499,6 +499,12 @@ const nextConfig = {
     }
     
     // Development optimizations to prevent memory leaks with 176+ pages
+    // Define the '@' alias outside the if (dev) block
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': path.resolve(__dirname, 'src'),
+    };
+
     if (dev) {
       if (!isServer) {
         config.watchOptions = {
@@ -511,7 +517,7 @@ const nextConfig = {
       // Alias react-router-dom to a lightweight stub to avoid build errors
       config.resolve.alias = {
         ...config.resolve.alias,
-        '@': path.resolve(__dirname, 'src'),
+        // '@' alias is now defined globally
         'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
       };
 
