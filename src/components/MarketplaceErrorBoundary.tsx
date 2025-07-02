@@ -11,7 +11,7 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface MarketplaceErrorFallbackProps extends FallbackProps {
-  // Additional props if needed
+  // Additional props can be added here if needed in the future
 }
 
 function MarketplaceErrorFallback({ error, resetErrorBoundary }: MarketplaceErrorFallbackProps) {

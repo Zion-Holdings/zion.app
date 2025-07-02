@@ -34,7 +34,10 @@ describe('add to cart', () => {
     // Verify item in localStorage (using 'zion_cart' as per cartSlice.ts)
     cy.window().then((win) => {
       // Wait for localStorage to update
-      cy.waitUntil(() => win.localStorage.getItem('zion_cart') && JSON.parse(win.localStorage.getItem('zion_cart')!).length > 0, {
+      cy.waitUntil(() => {
+        const cartData = win.localStorage.getItem('zion_cart');
+        return cartData && JSON.parse(cartData).length > 0;
+      }, {
         timeout: 5000,
         interval: 500,
         errorMsg: 'Cart in localStorage was not updated in time'
