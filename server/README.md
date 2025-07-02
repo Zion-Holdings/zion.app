@@ -47,11 +47,13 @@ Based on `server/app.js`:
     *   If root `package.json`: Dependencies should already be installed via `npm install` in the root.
 
 3.  **Configure Environment Variables:**
-    *   This server likely requires environment variables for:
-        *   `MONGO_URI` (MongoDB connection string, see `server/config/index.js`)
-        *   Potentially API keys for services it integrates with.
+    *   This server requires several environment variables:
+        *   `MONGO_URI` - MongoDB connection string (see `server/config/index.js`).
+        *   `JWT_SECRET` - used to sign authentication tokens.
+        *   `SENDGRID_API_KEY` - enables email alerts.
+        *   `ALERT_EMAIL` - destination for alert emails.
         *   Passport.js strategy secrets (e.g., OAuth client IDs/secrets).
-    *   Check for a `.env.example` in this directory or the root. Create a `.env` file and populate it.
+    *   Check for a `.env.example` in this directory or the root. Create a `.env` file and populate it with these values.
 
 4.  **Running the Development Server:**
     *   There might be an npm script in the root `package.json` or this directory's `package.json` (if it exists) to start this server.
