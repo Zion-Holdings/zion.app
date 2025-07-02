@@ -33,7 +33,9 @@ class OptimizationAutomation {
 
     // Request logging
     this.app.use((req, res, next) => {
-      console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
+      const timestamp = new Date().toISOString();
+      // Use structured logging instead of console.log
+      process.stdout.write(`[${timestamp}] ${req.method} ${req.path}\n`);
       next();
     });
   }
@@ -55,7 +57,8 @@ class OptimizationAutomation {
         
         res.status(200).send('OK');
       } catch (error) {
-        console.error('Slack event error:', error);
+        // Use structured error logging
+        process.stderr.write(`[${new Date().toISOString()}] ERROR: Slack event error: ${error.message}\n`);
         res.status(500).send('Error processing event');
       }
     });
@@ -65,7 +68,8 @@ class OptimizationAutomation {
       try {
         const { target, reason, alert } = req.body;
         
-        console.log(`🚀 Manual optimization triggered: ${target} (reason: ${reason})`);
+        // Use structured logging for optimization triggers
+        process.stdout.write(`[${new Date().toISOString()}] 🚀 Manual optimization triggered: ${target} (reason: ${reason})\n`);
         
         const result = await this.slackBot.triggerOptimization(target);
         
@@ -77,7 +81,8 @@ class OptimizationAutomation {
           timestamp: new Date().toISOString()
         });
       } catch (error) {
-        console.error('Optimization trigger error:', error);
+        // Use structured error logging
+        process.stderr.write(`[${new Date().toISOString()}] ERROR: Optimization trigger error: ${error.message}\n`);
         res.status(500).json({
           success: false,
           error: error.message
@@ -173,7 +178,7 @@ class OptimizationAutomation {
 
   async start() {
     try {
-      console.log('🚀 Starting Optimization Automation System...');
+      process.stdout.write(`[${new Date().toISOString()}] 🚀 Starting Optimization Automation System...\n`);
       
       // Start performance monitoring
       if (process.env.ENABLE_PERFORMANCE_MONITORING === 'true') {
@@ -190,13 +195,14 @@ class OptimizationAutomation {
         console.log(`⚡ Optimization API server running on port ${this.port}`);
       });
       
-      console.log('✅ Optimization Automation System started successfully!');
-      console.log(`📊 Dashboard: http://localhost:${this.port}/dashboard`);
-      console.log(`🔧 API: http://localhost:${this.port}/api`);
-      console.log(`💚 Health: http://localhost:${this.port}/health`);
+      const timestamp = new Date().toISOString();
+      process.stdout.write(`[${timestamp}] ✅ Optimization Automation System started successfully!\n`);
+      process.stdout.write(`[${timestamp}] 📊 Dashboard: http://localhost:${this.port}/dashboard\n`);
+      process.stdout.write(`[${timestamp}] 🔧 API: http://localhost:${this.port}/api\n`);
+      process.stdout.write(`[${timestamp}] 💚 Health: http://localhost:${this.port}/health\n`);
       
     } catch (error) {
-      console.error('❌ Failed to start automation system:', error);
+      process.stderr.write(`[${new Date().toISOString()}] ❌ Failed to start automation system: ${error.message}\n`);
       process.exit(1);
     }
   }
@@ -228,7 +234,7 @@ if (require.main === module) {
   
   // Handle process signals
   process.on('SIGINT', async () => {
-    console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+    process.stdout.write(`\n[${new Date().toISOString()}] 🛑 Received SIGINT, shutting down gracefully...\n`);
     await automation.stop();
     process.exit(0);
   });
