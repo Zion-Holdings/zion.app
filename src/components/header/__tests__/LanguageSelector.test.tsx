@@ -1,17 +1,18 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { vi } from 'vitest';
 import { LanguageSelector } from '../LanguageSelector';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslation } from 'react-i18next';
 
-jest.mock('@/context/LanguageContext');
-jest.mock('react-i18next', () => ({
-  useTranslation: jest.fn(),
+vi.mock('@/context/LanguageContext');
+vi.mock('react-i18next', () => ({
+  useTranslation: vi.fn(),
 }));
 
-const mockedUseLanguage = useLanguage as jest.MockedFunction<typeof useLanguage>;
-const mockedUseTranslation = useTranslation as jest.MockedFunction<typeof useTranslation>;
+const mockedUseLanguage = useLanguage as vi.MockedFunction<typeof useLanguage>;
+const mockedUseTranslation = useTranslation as vi.MockedFunction<typeof useTranslation>;
 
 const supportedLanguages = [
   { code: 'en', name: 'English', flag: '🇺🇸' },
@@ -19,7 +20,7 @@ const supportedLanguages = [
   { code: 'fr', name: 'Français', flag: '🇫🇷' },
 ];
 
-const mockChangeLanguage = jest.fn().mockResolvedValue(undefined);
+const mockChangeLanguage = vi.fn().mockResolvedValue(undefined);
 
 beforeEach(() => {
   mockedUseLanguage.mockReturnValue({
