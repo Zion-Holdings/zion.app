@@ -142,6 +142,9 @@ export function getThemeColors(preset: ThemePreset, primaryColorInput: string): 
         popoverForeground: '#00ffbb', // neon teal/mint
         card: '#000000',        // black
         cardForeground: '#e0f2fe',   // light sky blue
+        secondary: '#111827', // restore intended neon secondary
+        muted: '#1f2937',
+        mutedForeground: '#6b7280',
       };
       primary = primaryColorInput || '#3b82f6'; // User-defined or a fallback blue
       primaryForeground = '#ffffff'; // Assuming primary will be dark enough for white text
