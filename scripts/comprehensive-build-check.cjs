@@ -101,17 +101,17 @@ function log(level, message, ...args) {
 }
 
 function classifyLogLine(line) {
-  // Check for critical errors first
-  for (const pattern of patterns.critical) {
-    if (pattern.test(line)) {
-      return 'critical';
-    }
-  }
-  
-  // Check for suppressible warnings
+  // Check for suppressible warnings first to avoid false positives
   for (const pattern of patterns.suppressible) {
     if (pattern.test(line)) {
       return 'suppressible';
+    }
+  }
+
+  // Check for critical errors
+  for (const pattern of patterns.critical) {
+    if (pattern.test(line)) {
+      return 'critical';
     }
   }
   
