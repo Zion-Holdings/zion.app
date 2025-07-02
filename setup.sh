@@ -32,7 +32,11 @@ rm -f src/types/offline-shims.d.ts
 
 # Install dependencies
 echo "Installing dependencies..."
-$PM install
+if [ "$PM" = "npm" ]; then
+  npm install --legacy-peer-deps
+else
+  $PM install
+fi
 
 # Generate Prisma client after dependencies are installed
 if command -v npx >/dev/null 2>&1; then
