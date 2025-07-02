@@ -57,6 +57,12 @@ module.exports = {
     '^@/pages/(.*)\.jsx$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/pages/Signup$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/pages/signup$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/utils/devtools$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^scripts/watchdog$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^os-utils$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/pages/api/points/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/pages/api/users/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/pages/Login.jsx$': '<rootDir>/tests/__mocks__/emptyModule.js',
   },
   
   // Test file patterns

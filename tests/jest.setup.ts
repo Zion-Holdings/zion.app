@@ -502,6 +502,15 @@ jest.mock('next/link', () => {
 // Ensure axios has a default baseURL to avoid undefined property assignment
 if (!axios.defaults.baseURL) axios.defaults.baseURL = 'http://localhost';
 
+// Provide stub interceptor chains so code that registers interceptors doesn't crash
+if (!axios.interceptors?.request?.use) {
+  // @ts-ignore
+  axios.interceptors = {
+    request: { use: jest.fn() },
+    response: { use: jest.fn() }
+  };
+}
+
 // Mock next/navigation to avoid unresolved module errors
 jest.mock('next/navigation', () => ({
   useRouter: () => ({ push: jest.fn(), replace: jest.fn(), refresh: jest.fn(), back: jest.fn(), forward: jest.fn() })
@@ -509,10 +518,15 @@ jest.mock('next/navigation', () => ({
 
 // Mock mongoose to avoid heavy BSON/ESM issues in tests that import it indirectly
 jest.mock('mongoose', () => {
-  const schemaStub = function() { return {}; };
+  const schemaFn = function() {
+    return {
+      pre: jest.fn(),
+      post: jest.fn(),
+    };
+  };
   return {
-    Schema: schemaStub,
-    model: jest.fn().mockReturnValue({}),
+    Schema: schemaFn,
+    model: jest.fn(() => ({})),
     connect: jest.fn(),
     connection: { on: jest.fn() },
   };
@@ -525,3 +539,20 @@ jest.mock('@/context/auth/AuthContext', () => {
   const AuthContext = React.createContext(defaultValue);
   return { __esModule: true, AuthContext, default: AuthContext };
 });
+
+// ---------------------------------------------------------------------------
+// Simple Vitest global shim for suites still using `vi`
+// ---------------------------------------------------------------------------
+// @ts-expect-error Add vi globally for legacy tests
+if (typeof global.vi === 'undefined') {
+  // @ts-expect-error assign
+  global.vi = {
+    fn: jest.fn,
+    spyOn: jest.spyOn.bind(jest),
+    mock: jest.mock.bind(jest),
+    clearAllMocks: jest.clearAllMocks,
+    resetAllMocks: jest.resetAllMocks,
+    mockResolvedValue: (val) => jest.fn().mockResolvedValue(val),
+    mockRejectedValue: (val) => jest.fn().mockRejectedValue(val),
+  };
+}
