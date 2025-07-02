@@ -380,9 +380,9 @@ if (typeof window.IntersectionObserver === 'undefined') {
     disconnect() {}
     takeRecords() { return []; }
   }
-  // @ts-expect-error
+  // @ts-expect-error: IntersectionObserver polyfill for test environment - JSDOM doesn't include this API by default
   window.IntersectionObserver = MockIntersectionObserver;
-  // @ts-expect-error
+  // @ts-expect-error: IntersectionObserver polyfill for global scope - ensuring both window and global have the mock
   global.IntersectionObserver = MockIntersectionObserver;
 }
 
