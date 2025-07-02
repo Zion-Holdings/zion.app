@@ -66,7 +66,7 @@ class OptimizationAutomation {
     // Manual optimization trigger
     this.app.post('/api/optimization/trigger', async (req, res) => {
       try {
-        const { target, reason, alert } = req.body;
+        const { target, reason, alert: _alert } = req.body;
         
         // Use structured logging for optimization triggers
         process.stdout.write(`[${new Date().toISOString()}] 🚀 Manual optimization triggered: ${target} (reason: ${reason})\n`);
@@ -96,7 +96,7 @@ class OptimizationAutomation {
         const status = await this.slackBot.getPerformanceStatus();
         res.json(status);
       } catch (error) {
-        console.error('Performance status error:', error);
+        process.stderr.write(`[${new Date().toISOString()}] ERROR: Performance status error: ${error.message}\n`);
         res.status(500).json({ error: error.message });
       }
     });
@@ -107,7 +107,7 @@ class OptimizationAutomation {
         const metrics = await this.performanceMonitor.getMetrics();
         res.json(metrics);
       } catch (error) {
-        console.error('Performance metrics error:', error);
+        process.stderr.write(`[${new Date().toISOString()}] ERROR: Performance metrics error: ${error.message}\n`);
         res.status(500).json({ error: error.message });
       }
     });
@@ -119,7 +119,7 @@ class OptimizationAutomation {
         const history = await this.performanceMonitor.getHistory(hours);
         res.json(history);
       } catch (error) {
-        console.error('Performance history error:', error);
+        process.stderr.write(`[${new Date().toISOString()}] ERROR: Performance history error: ${error.message}\n`);
         res.status(500).json({ error: error.message });
       }
     });
@@ -172,7 +172,7 @@ class OptimizationAutomation {
         await this.slackBot.app.client.emit('optimization_complete', { event });
         break;
       default:
-        console.log(`Unhandled event type: ${event.type}`);
+        process.stdout.write(`[${new Date().toISOString()}] ⚠️ Unhandled event type: ${event.type}\n`);
     }
   }
 
@@ -192,7 +192,7 @@ class OptimizationAutomation {
       
       // Start Express server for API endpoints
       this.server = this.app.listen(this.port, () => {
-        console.log(`⚡ Optimization API server running on port ${this.port}`);
+        process.stdout.write(`[${new Date().toISOString()}] ⚡ Optimization API server running on port ${this.port}\n`);
       });
       
       const timestamp = new Date().toISOString();
@@ -209,7 +209,7 @@ class OptimizationAutomation {
 
   async stop() {
     try {
-      console.log('⏹️ Stopping Optimization Automation System...');
+      process.stdout.write(`[${new Date().toISOString()}] ⏹️ Stopping Optimization Automation System...\n`);
       
       if (this.performanceMonitor) {
         await this.performanceMonitor.stop();
@@ -221,9 +221,9 @@ class OptimizationAutomation {
         });
       }
       
-      console.log('✅ Automation system stopped');
+              process.stdout.write(`[${new Date().toISOString()}] ✅ Automation system stopped\n`);
     } catch (error) {
-      console.error('❌ Error stopping automation system:', error);
+              process.stderr.write(`[${new Date().toISOString()}] ❌ Error stopping automation system: ${error.message}\n`);
     }
   }
 }
@@ -240,14 +240,14 @@ if (require.main === module) {
   });
 
   process.on('SIGTERM', async () => {
-    console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+    process.stdout.write(`\n[${new Date().toISOString()}] 🛑 Received SIGTERM, shutting down gracefully...\n`);
     await automation.stop();
     process.exit(0);
   });
 
   // Start the system
   automation.start().catch(error => {
-    console.error('❌ Failed to start automation:', error);
+    process.stderr.write(`[${new Date().toISOString()}] ❌ Failed to start automation: ${error.message}\n`);
     process.exit(1);
   });
 }

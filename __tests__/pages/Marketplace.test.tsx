@@ -342,7 +342,7 @@ describe('Marketplace Page', () => {
     ];
 
     server.use(
-      http.get('/api/products', ({ request }) => {
+      http.get('/api/products', ({ request: _request }) => {
         // The Marketplace component fetches all and then filters client-side
         // So, we return all mock products for the initial fetch.
         return HttpResponse.json({
@@ -408,7 +408,7 @@ describe('Marketplace Page', () => {
     ];
 
     server.use(
-      http.get('/api/products', ({ request }) => {
+      http.get('/api/products', ({ request: _request }) => {
         return HttpResponse.json({
           items: mockProductsForSort,
           hasMore: false,
