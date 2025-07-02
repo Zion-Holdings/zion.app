@@ -1,6 +1,6 @@
 /** @jest-environment node */
-import { test, expect } from '@playwright/test';
-import { createClient } from '@supabase/supabase-js';
+import { expect } from '@playwright/test';
+// Note: test and createClient are imported but not used in this specific test file
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const jwt = require('jsonwebtoken');
 // eslint-disable-next-line @typescript-eslint/no-require-imports
