@@ -96,6 +96,22 @@ export const safeStorage = {
       delete inMemoryStore[key];
     }
   },
+  clear: () => {
+    if (typeof window === 'undefined') {
+      for (const key in inMemoryStore) {
+        delete inMemoryStore[key];
+      }
+      return;
+    }
+    try {
+      localStorage.clear();
+    } catch (e) {
+      safeConsoleError('safeStorage.clear: Error clearing localStorage. Falling back to in-memory.', e);
+      for (const key in inMemoryStore) {
+        delete inMemoryStore[key];
+      }
+    }
+  },
   get isAvailable(): boolean {
     return isLocalStorageAvailable();
   }
@@ -127,6 +143,21 @@ export const safeSessionStorage = {
       sessionStorage.removeItem(key);
     } catch (e) {
       delete sessionMemoryStore[key];
+    }
+  },
+  clear: () => {
+    if (typeof window === 'undefined') {
+      for (const key in sessionMemoryStore) {
+        delete sessionMemoryStore[key];
+      }
+      return;
+    }
+    try {
+      sessionStorage.clear();
+    } catch {
+      for (const key in sessionMemoryStore) {
+        delete sessionMemoryStore[key];
+      }
     }
   },
   get isAvailable(): boolean {
