@@ -35,8 +35,6 @@ declare global {
   interface Window {
     webpackChunk_N_E?: any;
   }
-  
-  var self: Window & typeof globalThis;
 }
 
 // CRITICAL: Self polyfill - must be first
@@ -113,9 +111,19 @@ const tsHelpers = {
     let c = arguments.length;
     let r = c < 3 ? target : desc === null ? (desc = Object.getOwnPropertyDescriptor(target, key!)) : desc;
     let d: any;
-    if (typeof Reflect === "object" && typeof (Reflect as any).decorate === "function") r = (Reflect as any).decorate(decorators, target, key, desc);
-    else for (let i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key!, r) : d(target, key!)) || r;
-    return c > 3 && r && Object.defineProperty(target, key!, r), r;
+    if (typeof Reflect === "object" && typeof (Reflect as any).decorate === "function") {
+      r = (Reflect as any).decorate(decorators, target, key, desc);
+    } else {
+      for (let i = decorators.length - 1; i >= 0; i--) {
+        if ((d = decorators[i])) {
+          r = (c < 3 ? d(r) : c > 3 ? d(target, key!, r) : d(target, key!)) || r;
+        }
+      }
+    }
+    if (c > 3 && r) {
+      Object.defineProperty(target, key!, r);
+    }
+    return r;
   },
   
   __awaiter: function (thisArg: any, _arguments: any, P: any, generator: any) {
