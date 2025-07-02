@@ -33,7 +33,6 @@ expect.extend(toHaveNoViolations);
 
 // Ensure global window exists for Node test environments
 if (typeof global.window === 'undefined') {
-  // @ts-ignore
   global.window = {} as any;
 }
 
@@ -196,7 +195,10 @@ jest.mock('firebase/storage', () => ({
 jest.mock('axios', () => {
   const axiosMock: any = {
     defaults: { baseURL: 'http://localhost' },
-    interceptors: { request: { use: jest.fn() }, response: { use: jest.fn() } },
+    interceptors: { 
+      request: { use: jest.fn(), eject: jest.fn(), clear: jest.fn() }, 
+      response: { use: jest.fn(), eject: jest.fn(), clear: jest.fn() } 
+    },
     get: jest.fn(() => Promise.resolve({ data: {} })),
     post: jest.fn(() => Promise.resolve({ data: {} })),
     put: jest.fn(() => Promise.resolve({ data: {} })),
@@ -513,10 +515,9 @@ if (!axios.defaults.baseURL) axios.defaults.baseURL = 'http://localhost';
 
 // Provide stub interceptor chains so code that registers interceptors doesn't crash
 if (!axios.interceptors?.request?.use) {
-  // @ts-ignore
   axios.interceptors = {
-    request: { use: jest.fn() },
-    response: { use: jest.fn() }
+    request: { use: jest.fn(), eject: jest.fn(), clear: jest.fn() },
+    response: { use: jest.fn(), eject: jest.fn(), clear: jest.fn() }
   };
 }
 
@@ -556,21 +557,12 @@ if (typeof global.vi === 'undefined') {
     mock: jest.mock.bind(jest),
     clearAllMocks: jest.clearAllMocks,
     resetAllMocks: jest.resetAllMocks,
-    mockResolvedValue: (val) => jest.fn().mockResolvedValue(val),
-    mockRejectedValue: (val) => jest.fn().mockRejectedValue(val),
+          mockResolvedValue: (val: unknown) => jest.fn().mockResolvedValue(val),
+      mockRejectedValue: (val: unknown) => jest.fn().mockRejectedValue(val),
   };
 }
 
-// -----------------------------
-// Provide bcrypt lightweight mock to avoid installing native dep
-// -----------------------------
-jest.mock('bcrypt', () => {
-  return {
-    __esModule: true,
-    hash: jest.fn(async (pw: string) => `hashed:${pw}`),
-    compare: jest.fn(async (pw: string, hash: string) => hash === `hashed:${pw}`),
-  };
-});
+// Note: bcrypt mock removed - only mock if actually used in tests to avoid module resolution errors
 
 // Ensure matchMedia is defined for tests that rely on it
 if (typeof window !== 'undefined' && !window.matchMedia) {
