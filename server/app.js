@@ -229,13 +229,15 @@ app.use((err, req, res, next) => {
 
 // Global unhandled error logging
 process.on('unhandledRejection', (reason) => {
-  console.error('Unhandled Rejection:', reason);
-  logAndAlert(`Unhandled Rejection: ${reason instanceof Error ? reason.stack || reason.message : reason}`);
+  const message = reason instanceof Error ? reason.stack || reason.message : JSON.stringify(reason);
+  console.error('Unhandled Rejection:', message);
+  logAndAlert(`Unhandled Rejection: ${message}`);
 });
 
 process.on('uncaughtException', (error) => {
-  console.error('Uncaught Exception:', error);
-  logAndAlert(`Uncaught Exception: ${error.stack || error.message}`);
+  const message = error.stack || error.message;
+  console.error('Uncaught Exception:', message);
+  logAndAlert(`Uncaught Exception: ${message}`);
 });
 
 module.exports = app;
