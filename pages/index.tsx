@@ -1,9 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import dynamic from 'next/dynamic';
-const Home = dynamic(() => import('@/pages/Home'), {
-  loading: () => <div className="animate-pulse">Loading...</div>,
-});
+import { createSafeComponent } from '../src/utils/safe-component-loader';
+const Home = createSafeComponent('../src/pages/Home');
 import type { GetStaticProps } from 'next';
 import * as Sentry from '@sentry/nextjs';
 import { ErrorBanner } from '@/components/talent/ErrorBanner';
