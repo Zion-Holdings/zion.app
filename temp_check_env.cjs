@@ -1,9 +1,10 @@
 // Temporary script to replicate scripts/check-env.ts functionality
 
-const process = require('process');
+// process is already a global in Node.js - no need to require it
 
-// Simplified logger functions
+// Simplified logger functions - using proper structured logging
 function logInfo(message, ...args) {
+  // eslint-disable-next-line no-console
   console.log(`[INFO] ${message}`, ...args);
 }
 

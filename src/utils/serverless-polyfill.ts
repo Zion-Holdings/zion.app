@@ -16,15 +16,15 @@
 
 // Type declarations for global augmentation
 declare global {
-  var webpackChunk_N_E: any[];
-  var __webpack_require__: any;
-  var __webpack_exports__: any;
-  var __non_webpack_require__: any;
-  var __extends: any;
-  var __assign: any;
-  var __rest: any;
-  var __decorate: any;
-  var __awaiter: any;
+  const webpackChunk_N_E: any[];
+  const __webpack_require__: any;
+  const __webpack_exports__: any;
+  const __non_webpack_require__: any;
+  const __extends: any;
+  const __assign: any;
+  const __rest: any;
+  const __decorate: any;
+  const __awaiter: any;
 }
 
 // CRITICAL: Self polyfill - must be first
@@ -71,9 +71,9 @@ const tsHelpers = {
   },
   
   __assign: function() {
-    return Object.assign || function (t: any) {
-      for (let s: any, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
+    return Object.assign || function (t: any, ...sources: any[]) {
+      for (let i = 0; i < sources.length; i++) {
+        const s = sources[i];
         for (let p in s) if (Object.prototype.hasOwnProperty.call(s, p))
           t[p] = s[p];
       }
@@ -151,11 +151,15 @@ if (typeof window !== 'undefined') {
   window.onerror = function(message, source, lineno, colno, error) {
     // Suppress specific known errors that don't affect functionality
     if (typeof message === 'string') {
-      if (message.includes('Cannot read properties of undefined (reading \'env\')') ||
-          message.includes('Cannot destructure property') ||
-          message.includes('self is not defined') ||
-          message.includes('__extends') ||
-          message.includes('getInitialProps')) {
+      const suppressedMessages = [
+        'Cannot read properties of undefined (reading \'env\')',
+        'Cannot destructure property',
+        'self is not defined',
+        '__extends',
+        'getInitialProps'
+      ];
+      
+      if (suppressedMessages.some(msg => message.includes(msg))) {
         return true; // Suppress error
       }
     }
@@ -171,9 +175,13 @@ if (typeof window !== 'undefined') {
   window.onunhandledrejection = function(event) {
     // Suppress specific promise rejection errors
     if (event.reason && typeof event.reason.message === 'string') {
-      if (event.reason.message.includes('Cannot read properties of undefined (reading \'env\')') ||
-          event.reason.message.includes('Cannot destructure property') ||
-          event.reason.message.includes('self is not defined')) {
+      const suppressedMessages = [
+        'Cannot read properties of undefined (reading \'env\')',
+        'Cannot destructure property',
+        'self is not defined'
+      ];
+      
+      if (suppressedMessages.some(msg => event.reason.message.includes(msg))) {
         event.preventDefault();
         return;
       }

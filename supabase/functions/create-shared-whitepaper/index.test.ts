@@ -11,9 +11,9 @@ const mockInsert = sinon.stub();
 const mockSelect_CreateShared = sinon.stub();
 const mockSingle_CreateShared = sinon.stub();
 
-// @ts-ignore: Deno test global
+// @ts-expect-error: Deno test global
 globalThis.Deno = globalThis.Deno || {};
-// @ts-ignore
+// @ts-expect-error
 globalThis.Deno.env = {
     get: (key: string) => {
         if (key === 'SUPABASE_URL') return 'http://localhost:54321';
@@ -25,12 +25,12 @@ globalThis.Deno.env = {
 // Mock uuid - important to control the generated ID for assertions
 const fixedUuid = "fixed-uuid-1234";
 const originalUuidGenerate = uuidv4.generate;
-// @ts-ignore
+// @ts-expect-error
 uuidv4.generate = () => fixedUuid;
 
 
 const originalCreateClient_CreateShared = createClient;
-// @ts-ignore
+// @ts-expect-error
 globalThis.createClient = (url: string, key: string, _options?: any) => {
     // Ensure this mock is specific enough if different clients (anon vs service) are used across tests
     if (key === Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')) {
@@ -157,6 +157,6 @@ Deno.test("create-shared-whitepaper: handles no data returned from insert", asyn
 
 
 // Restore original uuid generate
-// @ts-ignore
+// @ts-expect-error
 // uuidv4.generate = originalUuidGenerate;
 // globalThis.createClient = originalCreateClient_CreateShared;

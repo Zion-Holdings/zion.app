@@ -228,7 +228,7 @@ if (typeof window.scrollTo === 'undefined') {
 
 // Mock axios.create to return axios itself
 import axios from 'axios';
-// @ts-ignore
+// @ts-expect-error
 axios.create = jest.fn(() => axios);
 
 // -----------------------------
@@ -381,21 +381,21 @@ if (typeof window.IntersectionObserver === 'undefined') {
     disconnect() {}
     takeRecords() { return []; }
   }
-  // @ts-ignore
+  // @ts-expect-error
   window.IntersectionObserver = MockIntersectionObserver;
-  // @ts-ignore
+  // @ts-expect-error
   global.IntersectionObserver = MockIntersectionObserver;
 }
 
 // Ensure all code paths use the mock implementation
 // Some services import the global fetch reference before jest-fetch-mock is enabled.
 // Override it explicitly so those modules receive the mocked version.
-// @ts-ignore
+// @ts-expect-error
 global.fetch = fetchMock;
 
 // Polyfill performance.getEntriesByType for JSDOM (used in productionLogger)
 if (typeof performance.getEntriesByType !== 'function') {
-  // @ts-ignore
+  // @ts-expect-error
   performance.getEntriesByType = () => [];
 }
 
@@ -423,9 +423,9 @@ jest.mock('@/context', () => {
 });
 
 // Extend Vitest shim with restoreAllMocks for suites that call it
-// @ts-ignore - vi is added by the vitest mock above
+// @ts-expect-error - vi is added by the vitest mock above
 if (global.vi && !global.vi.restoreAllMocks) {
-  // @ts-ignore
+  // @ts-expect-error
   global.vi.restoreAllMocks = jest.restoreAllMocks;
 }
 
@@ -450,12 +450,12 @@ jest.mock('msw/node', () => ({ setupServer: () => ({ listen: jest.fn(), resetHan
 jest.mock('@/components/search/FilterSidebar', () => ({ FilterSidebar: () => null }));
 
 // Extend Vitest shim with timer helpers if not present
-// @ts-ignore - vi is added by the vitest mock above
+// @ts-expect-error - vi is added by the vitest mock above
 if (global.vi) {
-  // @ts-ignore
+  // @ts-expect-error
   if (!global.vi.useFakeTimers) global.vi.useFakeTimers = jest.useFakeTimers.bind(jest);
-  // @ts-ignore
+  // @ts-expect-error
   if (!global.vi.runAllTimers) global.vi.runAllTimers = jest.runAllTimers.bind(jest);
-  // @ts-ignore
+  // @ts-expect-error
   if (!global.vi.advanceTimersByTime) global.vi.advanceTimersByTime = jest.advanceTimersByTime.bind(jest);
 }

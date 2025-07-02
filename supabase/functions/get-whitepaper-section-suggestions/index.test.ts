@@ -6,9 +6,9 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 let mockSupabaseClientSuggestions: any;
 const mockInvokeSuggestions = sinon.stub();
 
-// @ts-ignore: Deno test global
+// @ts-expect-error: Deno test global
 globalThis.Deno = globalThis.Deno || {}; // Ensure Deno object exists
-// @ts-ignore
+// @ts-expect-error
 globalThis.Deno.env = {
     get: (key: string) => {
         if (key === 'SUPABASE_URL') return 'http://localhost:54321';
@@ -18,7 +18,7 @@ globalThis.Deno.env = {
 };
 
 const originalCreateClientSuggestions = createClient;
-// @ts-ignore: Assigning to read-only property
+// @ts-expect-error: Assigning to read-only property
 globalThis.createClient = (_url: string, _key: string, _options?: any) => {
     mockSupabaseClientSuggestions = {
         functions: { invoke: mockInvokeSuggestions }

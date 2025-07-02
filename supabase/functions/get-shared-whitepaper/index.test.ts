@@ -10,9 +10,9 @@ const mockEq_GetShared = sinon.stub();
 const mockSingle_GetShared = sinon.stub();
 
 
-// @ts-ignore: Deno test global
+// @ts-expect-error: Deno test global
 globalThis.Deno = globalThis.Deno || {};
-// @ts-ignore
+// @ts-expect-error
 globalThis.Deno.env = {
     get: (key: string) => {
         if (key === 'SUPABASE_URL') return 'http://localhost:54321';
@@ -22,7 +22,7 @@ globalThis.Deno.env = {
 };
 
 const originalCreateClient_GetShared = createClient;
-// @ts-ignore
+// @ts-expect-error
 globalThis.createClient = (url: string, key: string, _options?: any) => {
     if (key === Deno.env.get('SUPABASE_ANON_KEY')) {
         mockEq_GetShared.returns({ single: mockSingle_GetShared });

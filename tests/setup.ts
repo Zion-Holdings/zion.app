@@ -26,7 +26,7 @@ afterEach(() => {
 // (`vi`).  The shim only runs in the test environment and has no effect on
 // production bundles.
 
-// @ts-ignore – deliberately attaching to global
+// @ts-expect-error – deliberately attaching to global
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment, @typescript-eslint/no-explicit-any
 (globalThis as any).jest = {
   // Core mocking utilities

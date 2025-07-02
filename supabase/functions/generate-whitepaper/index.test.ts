@@ -7,7 +7,7 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 let mockSupabaseClient: any;
 const mockInvoke = sinon.stub();
 
-// @ts-ignore: Deno test global
+// @ts-expect-error: Deno test global
 globalThis.Deno = {
     env: {
         get: (key: string) => {
@@ -17,14 +17,14 @@ globalThis.Deno = {
             return undefined;
         }
     },
-    // @ts-ignore
+    // @ts-expect-error
     readFile: sinon.stub(), // if any file reading was involved
 };
 
 
 // This is a simplified way to mock. In reality, you might need import maps for full control.
 const originalCreateClient = createClient;
-// @ts-ignore: Assigning to read-only property
+// @ts-expect-error: Assigning to read-only property
 globalThis.createClient = (_url: string, _key: string, _options?: any) => {
     mockSupabaseClient = {
         functions: { invoke: mockInvoke }

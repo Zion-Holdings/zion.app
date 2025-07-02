@@ -39,7 +39,7 @@ if (typeof window === 'undefined') {
     addEventListener: () => {},
     removeEventListener: () => {},
     dispatchEvent: () => {},
-    requestAnimationFrame: (callback: Function) => setTimeout(callback, 16),
+    requestAnimationFrame: (callback: () => void) => setTimeout(callback, 16),
     cancelAnimationFrame: (id: any) => clearTimeout(id),
     localStorage: {
       getItem: () => null,

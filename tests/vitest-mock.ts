@@ -5,7 +5,7 @@ export const vi = {
   clearAllMocks: jest.clearAllMocks.bind(jest),
   restoreAllMocks: jest.restoreAllMocks.bind(jest),
   stubGlobal: (key: string, value: any) => {
-    // @ts-ignore
+    // @ts-expect-error
     global[key] = value;
   },
 };

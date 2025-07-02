@@ -14,7 +14,7 @@ const mockSentry = {
   captureEvent: noop,
   addBreadcrumb: noop,
   configureScope: noop,
-  withScope: (callback: Function) => callback(mockScope),
+  withScope: (callback: (scope: typeof mockScope) => void) => callback(mockScope),
   setUser: noop,
   setTag: noop,
   setTags: noop,
@@ -35,13 +35,13 @@ const mockSentry = {
   
   // Browser-specific methods
   onLoad: noop,
-  wrap: (fn: Function) => fn,
+  wrap: <T extends (...args: any[]) => any>(fn: T) => fn,
   
   // Server-specific methods (Node.js)
   Handlers: {
-    requestHandler: () => (_req: any, _res: any, next: Function) => next(),
-    errorHandler: () => (_err: any, _req: any, _res: any, next: Function) => next(),
-    tracingHandler: () => (_req: any, _res: any, next: Function) => next(),
+    requestHandler: () => (_req: any, _res: any, next: () => void) => next(),
+    errorHandler: () => (_err: any, _req: any, _res: any, next: () => void) => next(),
+    tracingHandler: () => (_req: any, _res: any, next: () => void) => next(),
   },
   
   // Next.js specific
@@ -134,7 +134,7 @@ const mockHub = {
   setExtras: noop,
   setContext: noop,
   configureScope: noop,
-  withScope: (callback: Function) => callback(mockScope),
+  withScope: (callback: (scope: typeof mockScope) => void) => callback(mockScope),
   startTransaction: () => mockTransaction,
 };
 

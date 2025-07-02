@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 // tests/__mocks__/@stripe/stripe-js.js
 const mockStripeInstance = {
   elements: jest.fn(options => {
