@@ -459,3 +459,44 @@ if (global.vi) {
   // @ts-expect-error global.vi timer methods extension - TypeScript doesn't expect vitest timer APIs in Jest
   if (!(global.vi as any).advanceTimersByTime) (global.vi as any).advanceTimersByTime = jest.advanceTimersByTime.bind(jest);
 }
+
+// -----------------------------
+// Mock react-i18next so that translation keys are human-readable during tests.
+// This avoids the need to load i18n resources and keeps unit expectations simple.
+// -----------------------------
+jest.mock('react-i18next', () => {
+  const t = (key: string) => {
+    // Return substring after last dot to convert 'categories.services' => 'services'
+    if (key.includes('.')) {
+      return key.split('.').pop();
+    }
+    return key;
+  };
+
+  return {
+    __esModule: true,
+    // Preserve the hook signature
+    useTranslation: () => ({ t, i18n: { changeLanguage: jest.fn() } }),
+    Trans: ({ children }: { children: React.ReactNode }) => children,
+    // Provide a dummy init to satisfy i18next import side-effects
+    initReactI18next: { type: '3rdParty', init: jest.fn() },
+  };
+});
+
+// Mock Next.js Link to work with React Router in tests
+jest.mock('next/link', () => {
+  const React = require('react');
+  const forwardRef = React.forwardRef;
+  const LinkMock = ({ href, children, ...rest }: any, ref: any) => {
+    // Lazy load to avoid circular deps
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const { useNavigate } = require('react-router-dom');
+    const navigate = typeof useNavigate === 'function' ? useNavigate() : null;
+    const handleClick = (e: any) => {
+      e.preventDefault();
+      if (navigate) navigate(href);
+    };
+    return React.createElement('a', { href, onClick: handleClick, ref, ...rest }, children);
+  };
+  return { __esModule: true, default: forwardRef(LinkMock) };
+});

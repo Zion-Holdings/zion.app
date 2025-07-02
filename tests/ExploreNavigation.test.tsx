@@ -33,7 +33,11 @@ describe('Explore navigation from categories', () => {
     { label: /innovation/i, heading: /innovation/i },
   ])('navigates to $label page', async ({ label, heading }) => {
     renderWithRouter();
-    fireEvent.click(screen.getByRole('link', { name: label }));
-    expect(await screen.findByRole('heading', { name: heading })).toBeInTheDocument();
+    // Click the first link that matches the label to avoid duplicate name collisions
+    const links = screen.getAllByRole('link', { name: label });
+    fireEvent.click(links[0]);
+    // Use findAllByRole and ensure at least one heading matches
+    const headings = await screen.findAllByRole('heading', { name: heading });
+    expect(headings.length).toBeGreaterThan(0);
   });
 });
