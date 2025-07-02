@@ -368,6 +368,10 @@ const nextConfig = {
     'multiformats',
     'libp2p',
     '@libp2p/identify',
+    'ajv',
+    'ajv-keywords',
+    '@ungap/structured-clone',
+    'axios-retry',
   ],
 
   webpack: (config, { dev, isServer, webpack }) => {
