@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { vi } from 'vitest';
 import { ChatAssistant, Message } from '../ChatAssistant';
 import { AuthContext } from '../../../context/auth/AuthContext';
 import * as UseLocalStorageHook from '../../../hooks/useLocalStorage';
@@ -8,30 +9,30 @@ import * as UseDebounceHook from '../../../hooks/useDebounce'; // Assuming path
 import Image from 'next/image'; // Import next/image
 
 // Mock dependencies
-jest.mock('../../../hooks/useLocalStorage');
-jest.mock('../../../hooks/useDebounce');
+vi.mock('../../../hooks/useLocalStorage');
+vi.mock('../../../hooks/useDebounce');
 
 // Mock UI sub-components if they cause issues or to simplify tests
-jest.mock('@/components/ui/avatar', () => ({
+vi.mock('@/components/ui/avatar', () => ({
   Avatar: ({ children }: { children: React.ReactNode }) => <div data-testid="avatar">{children}</div>,
   AvatarImage: ({ src, alt }: { src?: string, alt?: string }) => (
     <Image src={src || '/default-avatar.png'} alt={alt || 'avatar'} width={40} height={40} data-testid="avatar-image" />
   ),
   AvatarFallback: ({ children }: { children: React.ReactNode }) => <div data-testid="avatar-fallback">{children}</div>,
 }));
-jest.mock('@/components/ui/button', () => ({
+vi.mock('@/components/ui/button', () => ({
   Button: ({ children, onClick, variant, size, className }: { children: React.ReactNode, onClick?: () => void, variant?: string, size?: string, className?: string }) => (
     <button onClick={onClick} data-variant={variant} data-size={size} className={className}>
       {children}
     </button>
   ),
 }));
-jest.mock('../ChatMessage', () => ({
+vi.mock('../ChatMessage', () => ({
   ChatMessage: ({ role, message }: { role: string, message: string }) => (
     <div data-testid={`chat-message-${role}`}>{message}</div>
   ),
 }));
-jest.mock('../ChatInput', () => ({
+vi.mock('../ChatInput', () => ({
   ChatInput: ({ onSend }: { onSend: (message: string) => void }) => (
     <input type="text" data-testid="chat-input" onChange={(e) => e.target.value} onKeyDown={(e) => { if (e.key === 'Enter') onSend((e.target as HTMLInputElement).value); }} />
   ),
@@ -45,11 +46,11 @@ const mockRecipient = {
   role: 'Tester',
 };
 
-const mockOnSendMessage = jest.fn();
+const mockOnSendMessage = vi.fn();
 
 // Default mock implementations
-const mockUseLocalStorage = UseLocalStorageHook.useLocalStorage as jest.Mock;
-const mockUseDebounce = UseDebounceHook.useDebounce as jest.Mock;
+const mockUseLocalStorage = UseLocalStorageHook.useLocalStorage as unknown as vi.Mock;
+const mockUseDebounce = UseDebounceHook.useDebounce as unknown as vi.Mock;
 
 // Helper to provide context
 const renderWithAuth = (ui: React.ReactElement, { providerProps, ...renderOptions }: { providerProps: any, [key: string]: any }) => {
@@ -61,16 +62,16 @@ const renderWithAuth = (ui: React.ReactElement, { providerProps, ...renderOption
 
 describe('ChatAssistant', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     // Default debounce mock: returns value immediately for most tests unless timers are used
     mockUseDebounce.mockImplementation((value, delay) => value);
     // Default localStorage mock: basic pass-through or specific setup per test
-    mockUseLocalStorage.mockReturnValue([[], jest.fn()]);
+    mockUseLocalStorage.mockReturnValue([[], vi.fn()]);
   });
 
   describe('Debounce Functionality', () => {
     beforeEach(() => {
-      jest.useFakeTimers();
+      vi.useFakeTimers();
       // For debounce tests, we need useDebounce to respect timers
       mockUseDebounce.mockImplementation((value, delay) => {
         const [debouncedValue, setDebouncedValue] = React.useState(null);
@@ -91,8 +92,8 @@ describe('ChatAssistant', () => {
     });
 
     afterEach(() => {
-      jest.runOnlyPendingTimers();
-      jest.useRealTimers();
+      vi.runOnlyPendingTimers();
+      vi.useRealTimers();
     });
 
     test('onSendMessage is called only once after multiple rapid inputs within debounce window', async () => {
@@ -100,7 +101,7 @@ describe('ChatAssistant', () => {
       renderWithAuth(
         <ChatAssistant
           isOpen={true}
-          onClose={jest.fn()}
+          onClose={vi.fn()}
           recipient={mockRecipient}
           onSendMessage={mockOnSendMessage}
           initialMessages={[]}
@@ -122,7 +123,7 @@ describe('ChatAssistant', () => {
       expect(mockOnSendMessage).not.toHaveBeenCalled();
 
       act(() => {
-        jest.advanceTimersByTime(3000);
+        vi.advanceTimersByTime(3000);
       });
 
       await waitFor(() => {
@@ -137,7 +138,7 @@ describe('ChatAssistant', () => {
         renderWithAuth(
           <ChatAssistant
             isOpen={true}
-            onClose={jest.fn()}
+            onClose={vi.fn()}
             recipient={mockRecipient}
             onSendMessage={mockOnSendMessage}
             initialMessages={[]}
@@ -152,12 +153,12 @@ describe('ChatAssistant', () => {
         expect(mockOnSendMessage).not.toHaveBeenCalled();
 
         act(() => {
-          jest.advanceTimersByTime(2999);
+          vi.advanceTimersByTime(2999);
         });
         expect(mockOnSendMessage).not.toHaveBeenCalled();
 
         act(() => {
-          jest.advanceTimersByTime(1);
+          vi.advanceTimersByTime(1);
         });
 
         await waitFor(() => {
@@ -174,7 +175,7 @@ describe('ChatAssistant', () => {
       renderWithAuth(
         <ChatAssistant
           isOpen={true}
-          onClose={jest.fn()}
+          onClose={vi.fn()}
           recipient={mockRecipient}
           onSendMessage={mockOnSendMessage}
         />,
@@ -193,7 +194,7 @@ describe('ChatAssistant', () => {
       renderWithAuth(
         <ChatAssistant
           isOpen={true}
-          onClose={jest.fn()}
+          onClose={vi.fn()}
           recipient={mockRecipient}
           onSendMessage={mockOnSendMessage}
         />,
@@ -207,7 +208,7 @@ describe('ChatAssistant', () => {
       fireEvent.click(screen.getByText('Send'));
 
       // Debounce logic is still in play
-      act(() => { jest.advanceTimersByTime(3000); });
+      act(() => { vi.advanceTimersByTime(3000); });
 
       await waitFor(() => {
         expect(mockOnSendMessage).toHaveBeenCalledWith('Guest Send', undefined);
@@ -219,7 +220,7 @@ describe('ChatAssistant', () => {
       renderWithAuth(
         <ChatAssistant
           isOpen={true}
-          onClose={jest.fn()}
+          onClose={vi.fn()}
           recipient={mockRecipient}
           onSendMessage={mockOnSendMessage}
         />,
@@ -232,7 +233,7 @@ describe('ChatAssistant', () => {
 
       fireEvent.click(screen.getByText('Cancel'));
 
-      act(() => { jest.advanceTimersByTime(3000); }); // Advance timers just in case
+      act(() => { vi.advanceTimersByTime(3000); }); // Advance timers just in case
 
       expect(mockOnSendMessage).not.toHaveBeenCalled();
       expect(screen.queryByText('Confirm Message')).not.toBeInTheDocument();
@@ -242,10 +243,10 @@ describe('ChatAssistant', () => {
   describe('Guest Chat History Persistence', () => {
     const guestAuthProviderProps = { isAuthenticated: false, user: null, isLoading: false };
     const localStorageKey = `chatHistory-${mockRecipient.id}`;
-    let mockSetStoredValue: jest.Mock;
+    let mockSetStoredValue: vi.Mock;
 
     beforeEach(() => {
-      mockSetStoredValue = jest.fn();
+      mockSetStoredValue = vi.fn();
       // Reset to a version of useLocalStorage that uses the mockSetStoredValue for set
       mockUseLocalStorage.mockImplementation((key, initialValue) => {
         // Simulate initial load: if initialValue from prop is present, use it, else use what test provides for "stored"
@@ -269,7 +270,7 @@ describe('ChatAssistant', () => {
       renderWithAuth(
         <ChatAssistant
           isOpen={true}
-          onClose={jest.fn()}
+          onClose={vi.fn()}
           recipient={mockRecipient}
           onSendMessage={mockOnSendMessage}
         />,
@@ -302,7 +303,7 @@ describe('ChatAssistant', () => {
       renderWithAuth(
         <ChatAssistant
           isOpen={true}
-          onClose={jest.fn()}
+          onClose={vi.fn()}
           recipient={mockRecipient}
           onSendMessage={mockOnSendMessage}
         />,
@@ -339,7 +340,7 @@ describe('ChatAssistant', () => {
       renderWithAuth(
         <ChatAssistant
           isOpen={true}
-          onClose={jest.fn()}
+          onClose={vi.fn()}
           recipient={mockRecipient}
           onSendMessage={mockOnSendMessage}
           initialMessages={messagesFromProp} // These should take precedence

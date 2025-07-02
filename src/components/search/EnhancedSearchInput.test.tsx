@@ -4,23 +4,24 @@ import userEvent from '@testing-library/user-event';
 import { EnhancedSearchInput } from './EnhancedSearchInput';
 import { AutocompleteSuggestions } from './AutocompleteSuggestions';
 import { SearchSuggestion } from '@/types/search';
+import { vi } from 'vitest';
 
 // Mock AutocompleteSuggestions to check its props and avoid its internal rendering logic
-jest.mock('./AutocompleteSuggestions', () => ({
+vi.mock('./AutocompleteSuggestions', () => ({
   __esModule: true,
-  AutocompleteSuggestions: jest.fn(() => null),
+  AutocompleteSuggestions: vi.fn(() => null),
 }));
 
 // Mock lodash.debounce
 // We want to use fake timers to control the execution of the debounced function.
 // The mock will allow us to spy on the cancel method.
-const actualLodashDebounce = jest.requireActual('lodash.debounce');
+const actualLodashDebounce = vi.requireActual('lodash.debounce');
 let lastDebouncedFn: { cancel: () => void } | null = null;
 
-jest.mock('lodash.debounce', () => (fn: (...args: any[]) => any, delay: number) => {
+vi.mock('lodash.debounce', () => (fn: (...args: any[]) => any, delay: number) => {
   // Use actual debounce logic which works with Jest's fake timers
   const debouncedFn = actualLodashDebounce(fn, delay);
-  const mockCancel = jest.fn(debouncedFn.cancel);
+  const mockCancel = vi.fn(debouncedFn.cancel);
   (debouncedFn as any).cancel = mockCancel;
   lastDebouncedFn = { cancel: mockCancel }; // Store the cancel for cleanup assertion
   return debouncedFn;
@@ -34,24 +35,24 @@ const mockSearchSuggestions: SearchSuggestion[] = [
   { text: 'Recent Search 1', type: 'recent' },
 ];
 
-const mockOnChange = jest.fn();
-const mockOnSelectSuggestion = jest.fn();
+const mockOnChange = vi.fn();
+const mockOnSelectSuggestion = vi.fn();
 
 describe('EnhancedSearchInput', () => {
   beforeEach(() => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
     mockOnChange.mockClear();
     mockOnSelectSuggestion.mockClear();
-    (AutocompleteSuggestions as jest.Mock).mockClear();
+    (AutocompleteSuggestions as unknown as vi.Mock).mockClear();
     if (lastDebouncedFn) {
-      (lastDebouncedFn.cancel as jest.Mock).mockClear();
+      (lastDebouncedFn.cancel as unknown as vi.Mock).mockClear();
     }
     // Reset any module-level state in mocks if necessary
   });
 
   afterEach(() => {
-    jest.runOnlyPendingTimers(); // Clear any remaining timers
-    jest.useRealTimers();
+    vi.runOnlyPendingTimers(); // Clear any remaining timers
+    vi.useRealTimers();
   });
 
   const renderComponent = (initialValue = "") => {
@@ -87,7 +88,7 @@ describe('EnhancedSearchInput', () => {
       const input = screen.getByPlaceholderText('Search...');
 
       // Initial state: recent suggestions
-      act(() => {jest.advanceTimersByTime(300);}); // Advance for initial debounce if any
+      act(() => {vi.advanceTimersByTime(300);}); // Advance for initial debounce if any
       expect(AutocompleteSuggestions).toHaveBeenLastCalledWith(
         expect.objectContaining({
           suggestions: expect.arrayContaining([
@@ -109,10 +110,10 @@ describe('EnhancedSearchInput', () => {
       // AutocompleteSuggestions should not have updated filtered suggestions immediately
       // It might show recent or no suggestions if value is present but debounce not fired
       // Let's check the last call before advancing timers
-      const callsBeforeTimer = (AutocompleteSuggestions as jest.Mock).mock.calls.length;
+      const callsBeforeTimer = (AutocompleteSuggestions as unknown as vi.Mock).mock.calls.length;
 
       act(() => {
-        jest.advanceTimersByTime(299); // Just before debounce timeout
+        vi.advanceTimersByTime(299); // Just before debounce timeout
       });
       // Check that no new filtering has happened based on 'App'
       // The number of calls to AutocompleteSuggestions might increase due to focus/value change,
@@ -130,12 +131,12 @@ describe('EnhancedSearchInput', () => {
       // Before timer fully advances, suggestions for "App" should not be there.
       // Depending on exact timing and state updates, it might show recents or an empty array.
       // For simplicity, let's check that "Apple" is not there.
-      const lastCallArgsBeforeAdvance = (AutocompleteSuggestions as jest.Mock).mock.lastCall[0];
+      const lastCallArgsBeforeAdvance = (AutocompleteSuggestions as unknown as vi.Mock).mock.lastCall[0];
       expect(lastCallArgsBeforeAdvance.suggestions.some((s: SearchSuggestion) => s.text.startsWith('Apple'))).toBe(false);
 
 
       act(() => {
-        jest.advanceTimersByTime(1); // Total 300ms
+        vi.advanceTimersByTime(1); // Total 300ms
       });
 
       // Now AutocompleteSuggestions should have received the filtered suggestions
@@ -151,12 +152,12 @@ describe('EnhancedSearchInput', () => {
           {}
         );
       });
-      expect((AutocompleteSuggestions as jest.Mock).mock.lastCall[0].suggestions).toHaveLength(2);
+      expect((AutocompleteSuggestions as unknown as vi.Mock).mock.lastCall[0].suggestions).toHaveLength(2);
     });
 
     test('cancels debounce on unmount', () => {
       const { unmount } = render(
-        <EnhancedSearchInput value="" onChange={jest.fn()} searchSuggestions={[]} />
+        <EnhancedSearchInput value="" onChange={vi.fn()} searchSuggestions={[]} />
       );
       unmount();
       expect(lastDebouncedFn?.cancel).toHaveBeenCalledTimes(1);
@@ -166,13 +167,13 @@ describe('EnhancedSearchInput', () => {
   describe('Keyboard Navigation', () => {
     test('ArrowDown cycles through suggestions', async () => {
       renderComponent("Apple"); // Initial value to get some suggestions
-      act(() => { jest.advanceTimersByTime(300); }); // Fire debounce
+      act(() => { vi.advanceTimersByTime(300); }); // Fire debounce
 
       const input = screen.getByPlaceholderText('Search...');
       await userEvent.click(input); // Focus
 
       // Assuming 'Apple iPhone' (index 0) and 'Apple MacBook' (index 1) are shown
-      await waitFor(() => expect((AutocompleteSuggestions as jest.Mock).mock.lastCall[0].suggestions.length).toBeGreaterThan(0));
+      await waitFor(() => expect((AutocompleteSuggestions as unknown as vi.Mock).mock.lastCall[0].suggestions.length).toBeGreaterThan(0));
 
       await userEvent.keyboard('{ArrowDown}');
       expect(screen.getByRole('textbox')).toHaveAttribute('aria-activedescendant', 'suggestion-item-0');
@@ -186,10 +187,10 @@ describe('EnhancedSearchInput', () => {
 
     test('ArrowUp cycles through suggestions', async () => {
       renderComponent("Apple");
-      act(() => { jest.advanceTimersByTime(300); });
+      act(() => { vi.advanceTimersByTime(300); });
       const input = screen.getByPlaceholderText('Search...');
       await userEvent.click(input);
-      await waitFor(() => expect((AutocompleteSuggestions as jest.Mock).mock.lastCall[0].suggestions.length).toBeGreaterThan(0));
+      await waitFor(() => expect((AutocompleteSuggestions as unknown as vi.Mock).mock.lastCall[0].suggestions.length).toBeGreaterThan(0));
 
       await userEvent.keyboard('{ArrowUp}');
       // Wraps around to the last item: 'Apple MacBook' (index 1 of 2)
@@ -201,10 +202,10 @@ describe('EnhancedSearchInput', () => {
 
     test('Enter selects highlighted suggestion', async () => {
       renderComponent("Apple");
-      act(() => { jest.advanceTimersByTime(300); });
+      act(() => { vi.advanceTimersByTime(300); });
       const input = screen.getByPlaceholderText('Search...');
       await userEvent.click(input);
-      await waitFor(() => expect((AutocompleteSuggestions as jest.Mock).mock.lastCall[0].suggestions.length).toBeGreaterThan(0));
+      await waitFor(() => expect((AutocompleteSuggestions as unknown as vi.Mock).mock.lastCall[0].suggestions.length).toBeGreaterThan(0));
 
       await userEvent.keyboard('{ArrowDown}'); // Highlight 'Apple iPhone'
       await userEvent.keyboard('{Enter}');
@@ -213,18 +214,18 @@ describe('EnhancedSearchInput', () => {
       // Input value should also be updated via onChange
       expect(mockOnChange).toHaveBeenCalledWith('Apple iPhone');
       // Suggestions should hide
-      await waitFor(() => expect((AutocompleteSuggestions as jest.Mock).mock.lastCall[0].visible).toBe(false));
+      await waitFor(() => expect((AutocompleteSuggestions as unknown as vi.Mock).mock.lastCall[0].visible).toBe(false));
     });
 
     test('Enter does nothing if no suggestion highlighted and allows form submission', async () => {
       renderComponent("NonExistent");
-      act(() => { jest.advanceTimersByTime(300); }); // Ensure filtering (empty) happened
+      act(() => { vi.advanceTimersByTime(300); }); // Ensure filtering (empty) happened
       const input = screen.getByPlaceholderText('Search...');
       await userEvent.click(input); // Focus
 
       // Make sure no suggestions are available or highlightedIndex is -1
       await waitFor(() => {
-        const lastCallArgs = (AutocompleteSuggestions as jest.Mock).mock.lastCall[0];
+        const lastCallArgs = (AutocompleteSuggestions as unknown as vi.Mock).mock.lastCall[0];
         expect(lastCallArgs.suggestions.length).toBe(0); // Or highlightedIndex is -1
         expect(lastCallArgs.highlightedIndex).toBe(-1);
       });
@@ -236,14 +237,14 @@ describe('EnhancedSearchInput', () => {
 
     test('Escape hides suggestions and blurs input', async () => {
         renderComponent("Apple");
-        act(() => { jest.advanceTimersByTime(300); });
+        act(() => { vi.advanceTimersByTime(300); });
         const input = screen.getByPlaceholderText('Search...') as HTMLInputElement;
         await userEvent.click(input); // Focus
-        await waitFor(() => expect((AutocompleteSuggestions as jest.Mock).mock.lastCall[0].visible).toBe(true));
+        await waitFor(() => expect((AutocompleteSuggestions as unknown as vi.Mock).mock.lastCall[0].visible).toBe(true));
 
         await userEvent.keyboard('{Escape}');
 
-        await waitFor(() => expect((AutocompleteSuggestions as jest.Mock).mock.lastCall[0].visible).toBe(false));
+        await waitFor(() => expect((AutocompleteSuggestions as unknown as vi.Mock).mock.lastCall[0].visible).toBe(false));
         expect(document.activeElement).not.toBe(input); // Check if blurred
     });
   });
@@ -260,14 +261,14 @@ describe('EnhancedSearchInput', () => {
 
   test('Suggestions hide on blur (simulated by click outside)', async () => {
     renderComponent("Apple");
-    act(() => { jest.advanceTimersByTime(300); });
+    act(() => { vi.advanceTimersByTime(300); });
     const input = screen.getByPlaceholderText('Search...');
     await userEvent.click(input); // Focus to show suggestions
-    await waitFor(() => expect((AutocompleteSuggestions as jest.Mock).mock.lastCall[0].visible).toBe(true));
+    await waitFor(() => expect((AutocompleteSuggestions as unknown as vi.Mock).mock.lastCall[0].visible).toBe(true));
 
     // Simulate click outside
     await userEvent.click(document.body);
-    await waitFor(() => expect((AutocompleteSuggestions as jest.Mock).mock.lastCall[0].visible).toBe(false));
+    await waitFor(() => expect((AutocompleteSuggestions as unknown as vi.Mock).mock.lastCall[0].visible).toBe(false));
   });
 
   test('shows recent suggestions when input is empty and focused', async () => {
@@ -275,7 +276,7 @@ describe('EnhancedSearchInput', () => {
     const input = screen.getByPlaceholderText('Search...');
     await userEvent.click(input); // Focus
 
-    act(() => { jest.advanceTimersByTime(300); }); // Allow debounce to fire
+    act(() => { vi.advanceTimersByTime(300); }); // Allow debounce to fire
 
     await waitFor(() => {
       expect(AutocompleteSuggestions).toHaveBeenLastCalledWith(
