@@ -511,6 +511,7 @@ const nextConfig = {
       // Alias react-router-dom to a lightweight stub to avoid build errors
       config.resolve.alias = {
         ...config.resolve.alias,
+        '@': path.resolve(__dirname, 'src'),
         'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
       };
 
