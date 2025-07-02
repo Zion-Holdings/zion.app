@@ -354,8 +354,7 @@ const nextConfig = {
     'micromark-util-subtokenize',
     'micromark-util-symbol',
     'micromark-util-types',
-    // lodash-es is already ESM, lodash (CJS) is not directly installed or needed for transpilation here
-    // as formik's usage of it is handled by webpack aliases and replacements.
+    // lodash is installed for Formik compatibility; lodash-es is used directly in our code.
     'helia',
     '@helia/json',
     'multiformats',
@@ -437,8 +436,6 @@ const nextConfig = {
       config.resolve.alias = {
         ...config.resolve.alias,
         'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
-        'lodash/toPath': 'lodash-es/toPath',
-        'lodash': 'lodash-es',
       };
       
       // Optimize memory usage in development
@@ -674,7 +671,7 @@ const nextConfig = {
             
             // Utilities bundle
             utils: {
-              test: /[\\/]node_modules[\\/](lodash-es|date-fns|axios|zod|yup)[\\/]/,
+              test: /[\\/]node_modules[\\/](lodash|lodash-es|date-fns|axios|zod|yup)[\\/]/,
               name: 'utils-vendor',
               chunks: 'all',
               priority: 20,
@@ -772,17 +769,6 @@ const nextConfig = {
       })
     );
 
-    // Replace problematic lodash imports with lodash-es equivalents
-    config.plugins.push(
-      new webpack.NormalModuleReplacementPlugin(
-        /^lodash\//,
-        (resource) => {
-          const request = resource.request.replace('lodash/', 'lodash-es/');
-          resource.request = request;
-        }
-      )
-    );
-
     // Note: Sentry replacement is handled via resolve.alias above for CI builds
 
     // Handle date-fns ESM import issues
@@ -801,21 +787,7 @@ const nextConfig = {
       },
     });
 
-    // COMPREHENSIVE ESM FIX for Next.js 15 + React 19
-    // Handle formik and lodash ESM issues with multiple strategies
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      'lodash/isPlainObject': 'lodash-es/isPlainObject',
-      'lodash/cloneDeep': 'lodash-es/cloneDeep', 
-      'lodash/clone': 'lodash-es/clone',
-      'lodash/toPath': 'lodash-es/toPath',
-      'lodash/isEqual': 'lodash-es/isEqual',
-      'lodash/isFunction': 'lodash-es/isFunction',
-      'lodash/isString': 'lodash-es/isString',
-      'lodash/isArray': 'lodash-es/isArray',
-      'lodash/isObject': 'lodash-es/isObject',
-      'lodash': 'lodash-es',
-    };
+    // Comprehensive ESM handling for Next.js 15 + React 19
 
     // Override module resolution for problematic packages
     config.resolve.extensionAlias = {
@@ -882,16 +854,6 @@ const nextConfig = {
     if (!dev) {
       config.resolve.alias = {
         ...config.resolve.alias,
-        'lodash': 'lodash-es',
-        'lodash/isPlainObject': 'lodash-es/isPlainObject',
-        'lodash/cloneDeep': 'lodash-es/cloneDeep', 
-        'lodash/clone': 'lodash-es/clone',
-        'lodash/toPath': 'lodash-es/toPath',
-        'lodash/isEqual': 'lodash-es/isEqual',
-        'lodash/isFunction': 'lodash-es/isFunction',
-        'lodash/isString': 'lodash-es/isString',
-        'lodash/isArray': 'lodash-es/isArray',
-        'lodash/isObject': 'lodash-es/isObject',
         'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
       };
 
