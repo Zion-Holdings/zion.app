@@ -80,22 +80,30 @@ function checkFile(filePath) {
 
 function main() {
   if (!fs.existsSync(LOG_DIR)) {
-    console.error(`Log directory not found: ${LOG_DIR}`);
+    console.error(`Log path not found: ${LOG_DIR}`);
     process.exit(1);
   }
 
-  const dirs = [LOG_DIR];
-  if (LOG_DIR !== '.') {
-    dirs.push('.'); // also check root logs like build.log
-  }
+  const stat = fs.statSync(LOG_DIR);
+  let files = [];
 
-  const files = [];
-  dirs.forEach(dir => {
-    if (fs.existsSync(dir)) {
-      const dirFiles = fs.readdirSync(dir).filter(f => f.endsWith('.log')).map(f => path.join(dir, f));
-      files.push(...dirFiles);
+  if (stat.isFile()) {
+    files.push(LOG_DIR);
+  } else if (stat.isDirectory()) {
+    const dirs = [LOG_DIR];
+    if (LOG_DIR !== '.') {
+      dirs.push('.'); // also check root logs like build.log
     }
-  });
+
+    dirs.forEach(dir => {
+      if (fs.existsSync(dir)) {
+        const dirFiles = fs.readdirSync(dir)
+          .filter(f => f.endsWith('.log'))
+          .map(f => path.join(dir, f));
+        files.push(...dirFiles);
+      }
+    });
+  }
 
   if (!files.length) {
     console.log('No log files found');
