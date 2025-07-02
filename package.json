@@ -387,6 +387,7 @@
     "redux-mock-store": "^1.5.5",
     "rollup-plugin-visualizer": "^5.14.0",
     "sass": "^1.89.2",
+    "string-replace-loader": "^3.2.0",
     "supertest": "^6.3.4",
     "ts-jest": "^29.4.0",
     "ts-node": "^10.9.2",

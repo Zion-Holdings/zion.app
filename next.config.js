@@ -718,6 +718,8 @@ const nextConfig = {
       'lodash/isArray': 'lodash-es/isArray',
       'lodash/isObject': 'lodash-es/isObject',
       'lodash': 'lodash-es',
+      // Force date-fns to use ESM version
+      'date-fns': 'date-fns/esm',
     };
 
     // Override module resolution for problematic packages
@@ -734,6 +736,21 @@ const nextConfig = {
       resolve: {
         fullySpecified: false,
       },
+    });
+
+    // Additional rule to handle lodash ESM imports specifically in formik
+    config.module.rules.push({
+      test: /\.js$/,
+      include: /node_modules\/formik/,
+      use: {
+        loader: 'string-replace-loader',
+        options: {
+          multiple: [
+            { search: "require('lodash/", replace: "require('lodash-es/", flags: 'g' },
+            { search: 'require("lodash/', replace: 'require("lodash-es/', flags: 'g' },
+          ]
+        }
+      }
     });
 
     // Additional ESM handling for Next.js 15 compatibility
