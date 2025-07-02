@@ -367,7 +367,7 @@ function EquipmentPageContent() {
       };
     } catch (error) {
       logErrorToProduction('Error in fetchEquipment:', { data: error });
-      throw new Error('Failed to load equipment data. Please try again.');
+      throw error;
     }
   }, [sortBy, filterCategory, showRecommended, dataSeed]);
 
@@ -413,7 +413,7 @@ function EquipmentPageContent() {
   // Loading state
   if (loading && equipment.length === 0) {
     return (
-      <div className="container py-8" data-testid="loading-state-equipment">
+      <div className="container py-8" data-testid="loading-state-equipment-container">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-8">
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             Datacenter Equipment

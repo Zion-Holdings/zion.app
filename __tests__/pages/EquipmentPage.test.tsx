@@ -112,7 +112,7 @@ describe('EquipmentPage', () => {
     renderWithProviders(<EquipmentPage />);
 
     // Check for the main loading state container first
-    expect(screen.getByTestId('loading-state-equipment')).toBeInTheDocument();
+    expect(screen.getByTestId('loading-state-equipment-container')).toBeInTheDocument();
     // Then check for specific skeletons within it
     expect(screen.getAllByTestId('skeleton-card').length).toBeGreaterThan(0);
     expect(screen.getByTestId('filter-sidebar-skeleton')).toBeInTheDocument();
@@ -128,7 +128,7 @@ describe('EquipmentPage', () => {
 
     await waitFor(() => {
       // Check that the specific loading state for equipment is gone
-      expect(screen.queryByTestId('loading-state-equipment')).not.toBeInTheDocument();
+      expect(screen.queryByTestId('loading-state-equipment-container')).not.toBeInTheDocument();
       // Check that skeleton cards are no longer rendered
       expect(screen.queryAllByTestId('skeleton-card')).toHaveLength(0);
     });
