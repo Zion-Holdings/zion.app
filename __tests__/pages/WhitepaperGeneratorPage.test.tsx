@@ -190,7 +190,8 @@ describe('WhitepaperGeneratorPage', () => {
 
         fireEvent.click(downloadPdfButton);
 
-        const jsPDFMockInstance = (require('jspdf') as jest.Mock).mock.instances[0];
+        const jsPDF = await import('jspdf');
+        const jsPDFMockInstance = (jsPDF.default as any).mock?.instances?.[0] || jest.mocked(jsPDF.default).mock.instances[0];
 
         await waitFor(() => expect(html2canvas).toHaveBeenCalled());
         await waitFor(() => expect(jsPDFMockInstance.addImage).toHaveBeenCalledWith('mockImageDataUri', 'PNG', 0, 0, expect.any(Number), expect.any(Number)));
