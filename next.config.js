@@ -674,8 +674,15 @@ const nextConfig = {
         concatenateModules: false, // Disable module concatenation which can cause TDZ issues
         minimize: false, // Disable minimization on server side to preserve variable names
         mangleExports: false,
+        usedExports: false, // Prevent cacheUnaffected conflicts on server build
       };
     }
+
+    // Ensure usedExports is disabled for all builds to avoid cacheUnaffected conflicts
+    config.optimization = {
+      ...config.optimization,
+      usedExports: false,
+    };
 
     // Suppress warnings in both dev and production
     config.ignoreWarnings = [
