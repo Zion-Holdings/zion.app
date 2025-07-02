@@ -93,9 +93,7 @@ const nextConfig = {
     cpus: Math.min(2, os.cpus().length), // Adaptive CPU limit
     // Bundle analysis optimizations moved to root level
     // Disable profiling for faster builds
-    swcTraceProfiling: false
-    // The esmExternals option caused noisy build warnings.
-    // Rely on Next.js defaults for better module resolution.
+    swcTraceProfiling: false,
     
   },
 
@@ -265,9 +263,15 @@ const nextConfig = {
   },
 
   transpilePackages: [
+    // ESM packages that need transpilation
+    'lodash-es',
     'react-markdown',
     'date-fns',
     'react-day-picker',
+    'sonner',
+    'stripe',
+    'swr',
+    'trough',
     'bail',
     'is-plain-obj',
     'mdast-util-from-markdown',
@@ -558,7 +562,18 @@ const nextConfig = {
         '@chainsafe/bls',
         'node-datachannel',
         'classic-level',
-        'level'
+        'level',
+        // Add modules that require dynamic imports
+        '@ungap/structured-clone',
+        'decode-named-character-reference',
+        'mdast-util-to-hast',
+        'mdast-util-from-markdown',
+        'remark-rehype',
+        'remark-parse',
+        'sonner',
+        'stripe',
+        'swr',
+        'trough'
       ];
       
       // Add as external with commonjs type instead of module type
@@ -810,6 +825,9 @@ const nextConfig = {
       'lodash': 'lodash-es',
       // Force date-fns to use ESM version
       'date-fns': 'date-fns/esm',
+      // Fix react-day-picker date-fns locale issues
+      'date-fns/esm/locale/enUS': 'date-fns/locale/enUS',
+      'date-fns/esm/locale/en-US': 'date-fns/locale/enUS',
     };
 
     // Override module resolution for problematic packages
@@ -828,6 +846,22 @@ const nextConfig = {
       },
     });
 
+    // Enhanced rule for react-day-picker date-fns compatibility
+    config.module.rules.push({
+      test: /node_modules\/react-day-picker.*\.js$/,
+      use: {
+        loader: 'string-replace-loader',
+        options: {
+          multiple: [
+            { search: "require\\('date-fns/", replace: "require('date-fns/esm/", flags: 'g' },
+            { search: 'require\\("date-fns/', replace: 'require("date-fns/esm/', flags: 'g' },
+            { search: "/esm/locale/en-US", replace: "/locale/enUS", flags: 'g' },
+            { search: "/esm/locale/", replace: "/locale/", flags: 'g' },
+          ]
+        }
+      }
+    });
+
     // Additional rule to handle lodash ESM imports specifically in formik
     config.module.rules.push({
       test: /\.js$/,
@@ -836,8 +870,8 @@ const nextConfig = {
         loader: 'string-replace-loader',
         options: {
           multiple: [
-            { search: "require('lodash/", replace: "require('lodash-es/", flags: 'g' },
-            { search: 'require("lodash/', replace: 'require("lodash-es/', flags: 'g' },
+            { search: "require\\('lodash/", replace: "require('lodash-es/", flags: 'g' },
+            { search: 'require\\("lodash/', replace: 'require("lodash-es/', flags: 'g' },
           ]
         }
       }

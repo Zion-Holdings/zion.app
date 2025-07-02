@@ -506,8 +506,16 @@ if (!axios.defaults.baseURL) axios.defaults.baseURL = 'http://localhost';
 if (!axios.interceptors?.request?.use) {
   // @ts-ignore
   axios.interceptors = {
-    request: { use: jest.fn() },
-    response: { use: jest.fn() }
+    request: { 
+      use: jest.fn(),
+      eject: jest.fn(),
+      clear: jest.fn()
+    },
+    response: { 
+      use: jest.fn(),
+      eject: jest.fn(),
+      clear: jest.fn()
+    }
   };
 }
 
@@ -552,7 +560,7 @@ if (typeof global.vi === 'undefined') {
     mock: jest.mock.bind(jest),
     clearAllMocks: jest.clearAllMocks,
     resetAllMocks: jest.resetAllMocks,
-    mockResolvedValue: (val) => jest.fn().mockResolvedValue(val),
-    mockRejectedValue: (val) => jest.fn().mockRejectedValue(val),
+    mockResolvedValue: (val: any) => jest.fn().mockResolvedValue(val),
+    mockRejectedValue: (val: any) => jest.fn().mockRejectedValue(val),
   };
 }
