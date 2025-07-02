@@ -479,15 +479,14 @@ const nextConfig = {
       config.cache = {
         type: 'memory',
         maxGenerations: dev ? 1 : 5,
-        // Disable cacheUnaffected to prevent webpack conflicts
-        cacheUnaffected: false,
+        // Remove cacheUnaffected entirely to prevent conflicts with usedExports
       };
     } else {
       // Ensure memory cache is properly configured
       config.cache = {
         type: 'memory',
         maxGenerations: dev ? 1 : 5,
-        cacheUnaffected: false,
+        // Remove cacheUnaffected entirely to prevent conflicts with usedExports
       };
     }
 
@@ -648,12 +647,8 @@ const nextConfig = {
         delete config.cache.cacheUnaffected;
       }
       
-      // Ensure optimization settings are properly configured for production
-      config.optimization = {
-        ...config.optimization,
-        usedExports: true,
-        sideEffects: false,
-      };
+      // Note: usedExports is already configured above in the splitChunks section
+      // Avoid duplicate configuration that can cause conflicts
     }
 
     // CRITICAL FIX: Remove cacheUnaffected in ALL cases to prevent webpack conflicts
