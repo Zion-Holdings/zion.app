@@ -163,5 +163,19 @@ export default [
     rules: {
       "@typescript-eslint/no-explicit-any": "off"
     }
+  },
+
+  // Chrome Extension files
+  {
+    files: ["extension/**/*.{js,ts}"],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        chrome: "readonly"
+      }
+    },
+    rules: {
+      "no-console": "off"
+    }
   }
 ];

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-this-alias */
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable prefer-const */
 /**
  * Serverless Environment Polyfill
@@ -233,7 +234,7 @@ export const verifyPolyfills = () => {
 // Auto-verify in development
 if (process.env.NODE_ENV === 'development') {
   setTimeout(() => {
-    void verifyPolyfills();
+    verifyPolyfills();
   }, 100);
 }
 

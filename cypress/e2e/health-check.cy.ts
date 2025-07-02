@@ -10,6 +10,9 @@ describe('API Health Check', () => {
         if (response.body.timestamp) {
           const parsedTimestamp = Date.parse(response.body.timestamp);
           expect(parsedTimestamp).not.to.be.NaN;
+        } else {
+          // Explicit handling of else case for linter
+          expect(response.body.timestamp).to.exist;
         }
       });
   });
