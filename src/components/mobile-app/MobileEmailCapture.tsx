@@ -3,7 +3,8 @@ import React, { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useEnqueueSnackbar } from '@/context';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
+import { isValidEmail } from '@/utils/email';
 
 export const MobileEmailCapture: React.FC = () => {
 
@@ -12,7 +13,6 @@ export const MobileEmailCapture: React.FC = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const enqueueSnackbar = useEnqueueSnackbar();
 
-  const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const lastSubmit = useRef(0);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -24,7 +24,7 @@ export const MobileEmailCapture: React.FC = () => {
     lastSubmit.current = now;
 
     const trimmed = email.trim();
-    if (!EMAIL_REGEX.test(trimmed)) {
+    if (!isValidEmail(trimmed)) {
       enqueueSnackbar('Invalid email', { variant: 'error' });
       return;
     }

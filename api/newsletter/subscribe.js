@@ -1,4 +1,5 @@
 const { withSentry } = require('../withSentry.cjs');
+const { isValidEmail } = require('../emailUtils.cjs');
 
 async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -10,9 +11,9 @@ async function handler(req, res) {
 
   try {
     const { email } = req.body || {};
-    if (!email) {
+    if (!isValidEmail(email)) {
       res.statusCode = 400;
-      res.json({ error: 'Email is required' });
+      res.json({ error: 'Invalid email' });
       return;
     }
 
