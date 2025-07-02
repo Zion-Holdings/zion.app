@@ -27,7 +27,7 @@ serve(async (req) => {
 
     await supabase.functions.invoke('send-email', {
       body: {
-        to: 'kleber@ziontechgroup.com',
+        to: Deno.env.get('ALERT_EMAIL') ?? 'kleber@ziontechgroup.com',
         subject: 'New Onsite Service Request',
         html: `
           <h1>New Onsite Service Request</h1>
