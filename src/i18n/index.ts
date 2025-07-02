@@ -58,7 +58,7 @@ if (!i18n) {
       escapeValue: false, // React already escapes by default
     },
     // Performance optimizations
-    load: 'currentOnly', // Only load current language instead of all fallbacks
+    load: 'languageOnly',
     cleanCode: true, // Clean up language codes
     nonExplicitSupportedLngs: false, // Don't auto-detect non-explicit languages
     initImmediate: false, // Initialize synchronously to avoid missing key warnings
