@@ -179,14 +179,15 @@ const ProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) 
 };
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [isLoading, setIsLoading] = useState(true);
-  const [loadingProgress, setLoadingProgress] = useState(0);
+  const [isLoading, setIsLoading] = useState(true); // Reverted to true
+  const [loadingProgress, setLoadingProgress] = useState(0); // Reverted to 0
   const [initializationError, setInitializationError] = useState<string | null>(null);
   const router = useRouter();
 
   useEffect(() => {
     const initializeApp = async () => {
       try {
+        console.log('Test 2.2: Uncommenting simulated loading steps');
         // Simulate progressive loading with realistic steps
         const steps = [
           { name: 'Loading Core Components', duration: 300 },
@@ -221,40 +222,41 @@ function MyApp({ Component, pageProps }: AppProps) {
         if (typeof window !== 'undefined' && process.env.NODE_ENV === 'production') {
           try {
             const { onCLS, onFCP, onINP, onLCP, onTTFB } = await import('web-vitals');
-            const reportWebVitals = (metric: any) => {
-              // Report metrics to analytics service
-              if (typeof window !== 'undefined' && (window as any).gtag) {
-                (window as any).gtag('event', metric.name, {
-                  value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
-                  event_label: metric.id,
-                  non_interaction: true,
-                });
-              }
-              
-              // Initialize comprehensive performance monitoring on first metric
-              if (!(global as any).performanceMonitorInitialized) {
-                (global as any).performanceMonitorInitialized = true;
-                import('@/utils/performance-monitor').then(({ default: performanceMonitor }) => {
-                  if (process.env.NODE_ENV === 'development') {
-                    console.log('🔧 Performance monitoring initialized');
-                  }
-                }).catch((error) => {
-                  console.warn('Failed to initialize performance monitoring:', error);
-                });
+
+            const reportWebVitalsSafely = (metric: any) => {
+              try { // Add specific try-catch within the callback
+                if (typeof window !== 'undefined' && (window as any).gtag) {
+                  (window as any).gtag('event', metric.name, {
+                    value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+                    event_label: metric.id,
+                    non_interaction: true,
+                  });
+                }
+
+                // Initialize comprehensive performance monitoring on first metric (still keeping the actual import commented for now as per previous step)
+                if (!(global as any).performanceMonitorInitialized) {
+                  (global as any).performanceMonitorInitialized = true;
+                  // import('@/utils/performance-monitor').then(...).catch(...);
+                  console.log('Performance monitor import is currently skipped.');
+                }
+              } catch (reportError) {
+                console.warn('Error during Web Vitals reporting:', reportError);
               }
             };
             
-            onCLS(reportWebVitals);
-            onFCP(reportWebVitals);
-            onINP(reportWebVitals);
-            onLCP(reportWebVitals);
-            onTTFB(reportWebVitals);
+            // Wrap each listener setup in a try-catch as well, just in case
+            try { onCLS(reportWebVitalsSafely); } catch (e) { console.warn('Failed to setup onCLS:', e); }
+            try { onFCP(reportWebVitalsSafely); } catch (e) { console.warn('Failed to setup onFCP:', e); }
+            try { onINP(reportWebVitalsSafely); } catch (e) { console.warn('Failed to setup onINP:', e); }
+            try { onLCP(reportWebVitalsSafely); } catch (e) { console.warn('Failed to setup onLCP:', e); }
+            try { onTTFB(reportWebVitalsSafely); } catch (e) { console.warn('Failed to setup onTTFB:', e); }
+
           } catch (webVitalsError) {
-            // Silently fail if web-vitals is not available
+            console.warn('Web Vitals main initialization failed:', webVitalsError);
           }
         }
         
-        setIsLoading(false);
+        setIsLoading(false); // Crucial: ensure isLoading is set to false
       } catch (error) {
         console.error('App initialization error:', error);
         setInitializationError('Failed to initialize application. Please refresh the page.');
@@ -265,7 +267,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     // Force initialization completion after maximum 3 seconds
     const forceInitTimeout = setTimeout(() => {
       console.warn('Force completing app initialization due to timeout');
-      setLoadingProgress(100);
+      setLoadingProgress(100); // Ensure progress is full on timeout
       setIsLoading(false);
     }, 3000);
 
