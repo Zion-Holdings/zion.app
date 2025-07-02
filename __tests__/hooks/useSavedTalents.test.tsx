@@ -4,7 +4,7 @@ import { useSavedTalents } from '@/hooks/talent/useSavedTalents';
 import { supabase } from '@/integrations/supabase/client';
 import { showApiError } from '@/utils/apiErrorHandler';
 import { toast } from '@/hooks/use-toast'; // Assuming direct toast usage for non-error cases
-import { useRouter } from 'next/router';
+// Removed unused useRouter import
 
 import { supabase as supabaseClientModule } from '@/integrations/supabase/client';
 

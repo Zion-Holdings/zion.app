@@ -32,7 +32,9 @@ async function handler(req, res) {
     try {
       existing = JSON.parse(fs.readFileSync(file, 'utf8'));
       if (!Array.isArray(existing)) existing = [];
-    } catch {}
+    } catch {
+      // File doesn't exist or is invalid, use empty array
+    }
     existing.push(newEntry);
     fs.writeFileSync(file, JSON.stringify(existing, null, 2));
     res.statusCode = 200;

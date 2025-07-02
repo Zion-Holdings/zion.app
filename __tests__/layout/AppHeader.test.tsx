@@ -34,6 +34,7 @@ jest.mock('react-i18next', () => ({
 
 // Mock lucide-react icons
 jest.mock('lucide-react', () => {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const React = require('react');
   return {
     Menu: () => React.createElement('div', { 'data-testid': 'menu-icon' }),

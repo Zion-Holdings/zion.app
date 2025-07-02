@@ -1,11 +1,11 @@
-import { vi, describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { renderHook, act } from '@testing-library/react';
 import { useAuthOperations } from '@/hooks/useAuthOperations';
 import { supabase as supabaseClientModule } from '@/integrations/supabase/client';
 import { showApiError } from '@/utils/apiErrorHandler';
 import { toast } from '@/hooks/use-toast';
 import * as referralUtils from '@/utils/referralUtils';
-import * as authUtils from '@/utils/authUtils';
+// Removed unused authUtils import
 
 // Mock Supabase
 jest.mock('@/integrations/supabase/client', () => ({ // Changed vi.mock to jest.mock

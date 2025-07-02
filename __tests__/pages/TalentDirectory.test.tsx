@@ -17,7 +17,11 @@ jest.mock('@/components/talent/TalentResults', () => ({
 }));
 jest.mock('@/components/talent/TalentSkeleton', () => ({ TalentSkeleton: () => <div data-testid="talent-skeleton">Loading...</div> }));
 jest.mock('@/components/talent/ErrorBanner', () => ({ ErrorBanner: (props: any) => <div data-testid="error-banner">{props.msg}</div> }));
-jest.mock('@/components/GlobalErrorBoundary', () => ({ children }: { children: React.ReactNode }) => <>{children}</>);
+jest.mock('@/components/GlobalErrorBoundary', () => {
+  const MockGlobalErrorBoundary = ({ children }: { children: React.ReactNode }) => <>{children}</>;
+  MockGlobalErrorBoundary.displayName = 'MockGlobalErrorBoundary';
+  return MockGlobalErrorBoundary;
+});
 jest.mock('@/hooks/useAuth', () => ({
   useAuth: () => ({ user: { id: 'test-user' }, isAuthenticated: true }),
 }));
