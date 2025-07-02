@@ -51,6 +51,14 @@ class ErrorMonitor {
         fs.mkdirSync(CONFIG.logsDir, { recursive: true });
         console.log('📁 Created logs directory');
       }
+      // Ensure expected subdirectories exist for organizing logs
+      for (const sub of ['perf', 'security']) {
+        const subDir = path.join(CONFIG.logsDir, sub);
+        if (!fs.existsSync(subDir)) {
+          fs.mkdirSync(subDir, { recursive: true });
+          console.log(`📁 Created ${sub} logs directory`);
+        }
+      }
       return true;
     } catch (error) {
       console.error('❌ Failed to initialize error monitor:', error.message);
