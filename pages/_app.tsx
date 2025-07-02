@@ -45,6 +45,7 @@ import { AnalyticsProvider } from '../src/context/AnalyticsContext';
 import { CartProvider } from '../src/context/CartContext';
 import { FeedbackProvider } from '../src/context/FeedbackContext';
 import { ThemeProvider } from '../src/context/ThemeContext';
+import { AuthProvider } from '@/context';
 // import AppLayout from '../src/components/AppLayout';
 
 // Error boundary component
@@ -164,19 +165,21 @@ const ProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) 
   return (
     <AppErrorBoundary>
       <ReduxProvider store={store}>
-        <WhitelabelProvider>
-          <WalletProvider>
-            <AnalyticsProvider>
-              <CartProvider>
-                <FeedbackProvider>
-                  <ThemeProvider>
-                    {children}
-                  </ThemeProvider>
-                </FeedbackProvider>
-              </CartProvider>
-            </AnalyticsProvider>
-          </WalletProvider>
-        </WhitelabelProvider>
+        <AuthProvider>
+          <WhitelabelProvider>
+            <WalletProvider>
+              <AnalyticsProvider>
+                <CartProvider>
+                  <FeedbackProvider>
+                    <ThemeProvider>
+                      {children}
+                    </ThemeProvider>
+                  </FeedbackProvider>
+                </CartProvider>
+              </AnalyticsProvider>
+            </WalletProvider>
+          </WhitelabelProvider>
+        </AuthProvider>
       </ReduxProvider>
     </AppErrorBoundary>
   );
