@@ -7,7 +7,7 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 let mockSupabaseClient: any;
 const mockInvoke = sinon.stub();
 
-// @ts-expect-error: Deno test global
+// @ts-expect-error Deno test global - mocking Deno environment for test setup
 globalThis.Deno = {
     env: {
         get: (key: string) => {
@@ -17,7 +17,7 @@ globalThis.Deno = {
             return undefined;
         }
     },
-    // @ts-expect-error
+    // @ts-expect-error Deno readFile mock - providing mock file reading capability for tests
     readFile: sinon.stub(), // if any file reading was involved
 };
 

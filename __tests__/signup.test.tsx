@@ -18,6 +18,7 @@ vi.mock('@/hooks/useAuth', () => ({
 
 vi.mock('@/hooks/use-toast');
 
+/* eslint-disable @typescript-eslint/no-require-imports */
 vi.mock('next/router', () => require('next-router-mock'));
 
 function mockFetch(responses: { status: number; body: any }[]) {

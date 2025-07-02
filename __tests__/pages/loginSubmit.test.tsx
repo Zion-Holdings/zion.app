@@ -2,6 +2,7 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Login from '@/pages/Login';
 import { useRouter } from 'next/router';
 
+/* eslint-disable @typescript-eslint/no-require-imports */
 jest.mock('next/router', () => require('next-router-mock'));
 
 // Mock Sentry and toast to avoid network / UI noise
