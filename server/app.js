@@ -58,6 +58,7 @@ const alertsRoutes = require('./routes/alerts'); // Add this
 const equipmentRoutes = require('./routes/items');
 const stripeRoutes = require('./routes/stripe'); // Add this for Stripe webhooks
 const { logAndAlert } = require('./utils/alertLogger');
+const { logBug } = require('./utils/bugLogger');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const OpenAI = require('openai');
@@ -232,12 +233,24 @@ process.on('unhandledRejection', (reason) => {
   const message = reason instanceof Error ? reason.stack || reason.message : JSON.stringify(reason);
   console.error('Unhandled Rejection:', message);
   logAndAlert(`Unhandled Rejection: ${message}`);
+  logBug({
+    errorMessage: 'Unhandled Promise Rejection',
+    stackTrace: message,
+    severity: 'High',
+    module: 'server',
+  });
 });
 
 process.on('uncaughtException', (error) => {
   const message = error.stack || error.message;
   console.error('Uncaught Exception:', message);
   logAndAlert(`Uncaught Exception: ${message}`);
+  logBug({
+    errorMessage: 'Uncaught Exception',
+    stackTrace: message,
+    severity: 'Critical',
+    module: 'server',
+  });
 });
 
 module.exports = app;
