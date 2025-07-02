@@ -128,7 +128,9 @@ export default [
       "scripts/**/*.js",
       "api/**/*.js",
       "server/**/*.js",
-      "backend/**/*.js"
+      "backend/**/*.js",
+      "token/**/*.js",
+      "hardhat.config.js"
     ],
     languageOptions: {
       sourceType: "commonjs",
