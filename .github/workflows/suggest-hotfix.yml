@@ -102,4 +102,3 @@ jobs:
             ai-suggestion
             hotfix-candidate
           draft: false
-```
