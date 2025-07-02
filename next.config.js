@@ -864,17 +864,7 @@ const nextConfig = {
     // Handle formik and lodash ESM issues with multiple strategies
     config.resolve.alias = {
       ...config.resolve.alias,
-      'lodash/isPlainObject': 'lodash-es/isPlainObject',
-      'lodash/cloneDeep': 'lodash-es/cloneDeep', 
-      'lodash/clone': 'lodash-es/clone',
-      'lodash/toPath': 'lodash-es/toPath',
-      'lodash/isEqual': 'lodash-es/isEqual',
-      'lodash/isFunction': 'lodash-es/isFunction',
-      'lodash/isString': 'lodash-es/isString',
-      'lodash/isArray': 'lodash-es/isArray',
-      'lodash/isObject': 'lodash-es/isObject',
-      'lodash': 'lodash-es',
-      // date-fns alias removed to avoid missing locale exports on Netlify
+      // Removed lodash-es aliases to prevent ESM/CJS conflicts
     };
 
     // Override module resolution for problematic packages
