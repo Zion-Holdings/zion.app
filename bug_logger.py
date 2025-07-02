@@ -3,7 +3,8 @@ import datetime
 import os
 import traceback
 
-LOG_FILE = "bug_log.json"
+# Allow customizing the log file location via environment variable
+LOG_FILE = os.environ.get("BUG_LOG_FILE", "bug_log.json")
 
 def log_bug(
     error_message: str,
@@ -59,6 +60,9 @@ def log_bug(
     }
 
     try:
+        # Ensure the directory for the log file exists
+        os.makedirs(os.path.dirname(LOG_FILE) or ".", exist_ok=True)
+
         if os.path.exists(LOG_FILE):
             with open(LOG_FILE, "r") as f:
                 try:

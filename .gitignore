@@ -65,3 +65,4 @@ yarn.lock
 
 # Media kit zip
 public/toolkit_assets/media_kit.zip
+__pycache__/
