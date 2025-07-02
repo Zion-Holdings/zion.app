@@ -87,9 +87,9 @@ describe('Marketplace Page', () => {
     // The component fetches with /api/products?page=1&limit=16 by default.
     // The MSW handler uses a 'scenario' query param. We can override the handler for this test.
     server.use(
-      http.get('/api/products', ({ request }) => {
+      http.get('/api/products', ({ request: _request }) => {
         // Check if it's the initial fetch
-        const url = new URL(request.url);
+        const url = new URL(_request.url);
         if (url.searchParams.get('page') === '1' && url.searchParams.get('limit') === '16') {
           return HttpResponse.json([
             { id: 'prod-1', title: 'Product Alpha', description: 'Desc Alpha', category: 'AI Models', price: 100, currency: 'USD', tags: [], author: { name: 'Auth1', id: 'a1' }, images: [], createdAt: new Date().toISOString(), rating: 4.5, reviewCount: 10, aiScore: 92 },
@@ -276,8 +276,8 @@ describe('Marketplace Page', () => {
     // MSW handler for the initial fetch from the component's perspective via /api/products
     // This is what the component's internal useInfiniteScrollPagination will trigger.
     server.use(
-      http.get('/api/products', ({ request }) => {
-        const url = new URL(request.url);
+      http.get('/api/products', ({ request: _request }) => {
+        const url = new URL(_request.url);
         // Ensure this matches the component's initial fetch parameters
         if (url.searchParams.get('page') === '1' && url.searchParams.get('limit') === '16') {
           // The fetchProducts hook in Marketplace.tsx expects { items, hasMore, total }

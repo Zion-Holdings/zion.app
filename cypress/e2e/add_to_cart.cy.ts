@@ -35,7 +35,7 @@ describe('add to cart', () => {
     // Verify item in localStorage (using 'zion_cart' as per cartSlice.ts)
     cy.window().then((win) => {
       // Wait for localStorage to update
-      void cy.waitUntil(() => {
+      cy.waitUntil(() => {
         const cartData = win.localStorage.getItem('zion_cart');
         return cartData && JSON.parse(cartData).length > 0;
       }, {

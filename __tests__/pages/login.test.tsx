@@ -1,17 +1,13 @@
 import React from 'react';
-import { render, screen, waitFor, RenderResult } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Login from '@/pages/auth/login'; // Assuming Login page is now at pages/auth/login.tsx
-import { AuthProvider } from '@/context/auth/AuthProvider'; // For a more integrated test (optional here if useAuth is fully mocked)
 import { useRouter } from 'next/router';
 import { useAuth } from '@/hooks/useAuth'; // To be mocked
 import { safeStorage } from '@/utils/safeStorage'; // To be mocked
 import * as Sentry from '@sentry/nextjs'; // To be mocked
 import { fireEvent as fireAnalyticsEvent } from '@/lib/analytics'; // To be mocked
 import '@testing-library/jest-dom';
-import { AuthProvider as _AuthProvider } from '@/context/AuthContext';
-import LoginPage from '@/pages/login';
-import { useAuth as _useAuth } from '@/hooks/useAuth';
 
 // Mock next/router
 jest.mock('next/router', () => ({
