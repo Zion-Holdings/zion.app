@@ -7,12 +7,10 @@ describe('API Health Check', () => {
         expect(response.body).to.have.property('status', 'ok');
         expect(response.body).to.have.property('timestamp'); // Check if timestamp exists
         // Optional: Check if timestamp is a valid ISO string
-        if (response.body.timestamp) {
-          const parsedTimestamp = Date.parse(response.body.timestamp);
+        const timestamp = response.body.timestamp;
+        if (timestamp) {
+          const parsedTimestamp = Date.parse(timestamp);
           expect(parsedTimestamp).not.to.be.NaN;
-        } else {
-          // Explicit handling of else case for linter
-          expect(response.body.timestamp).to.exist;
         }
       });
   });

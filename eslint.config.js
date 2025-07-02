@@ -177,5 +177,20 @@ export default [
     rules: {
       "no-console": "off"
     }
+  },
+
+  // Service Worker files
+  {
+    files: ["public/service-worker.js", "**/sw.js", "**/*service-worker*.js"],
+    languageOptions: {
+      globals: {
+        ...globals.serviceworker,
+        workbox: "readonly",
+        importScripts: "readonly"
+      }
+    },
+    rules: {
+      "no-console": "off"
+    }
   }
 ];
