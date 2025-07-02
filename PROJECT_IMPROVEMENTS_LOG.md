@@ -111,3 +111,7 @@ Based on `logs/self-heal.log`:
 
 ---
 *This log represents a comprehensive fix of critical build and configuration issues, resulting in a fully functional production build.* 
+### 4. ✅ **Webpack CacheUnaffected Issue Resolved**
+- **Issue**: Development server log showed 'optimization.usedExports can't be used with cacheUnaffected'
+- **Fix**: Explicitly set `cacheUnaffected: false` in `next.config.js`
+- **Impact**: Removes Webpack cache warning during `npm run dev`

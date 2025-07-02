@@ -80,6 +80,8 @@ const nextConfig = {
     largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
     workerThreads: false, // Disable worker threads to reduce memory usage
     cpus: Math.min(2, os.cpus().length), // Adaptive CPU limit
+    // Disable cacheUnaffected to prevent webpack optimization conflicts
+    cacheUnaffected: false,
     // Bundle analysis optimizations moved to root level
     // Disable profiling for faster builds
     swcTraceProfiling: false,
