@@ -713,7 +713,8 @@ const nextConfig = {
         // Optimization settings for better performance
         moduleIds: 'deterministic',
         chunkIds: 'deterministic',
-        usedExports: !dev,
+        // Disable usedExports to avoid conflicts with cacheUnaffected
+        usedExports: false,
         sideEffects: false,
         concatenateModules: !dev,
         minimize: !dev,
