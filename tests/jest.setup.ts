@@ -185,11 +185,17 @@ jest.mock('firebase/storage', () => ({
 }));
 
 // Mock axios
-jest.mock('axios', () => ({
-  get: jest.fn(() => Promise.resolve({ data: {} })),
-  post: jest.fn(() => Promise.resolve({ data: {} })),
-  // Add other axios methods if used (e.g., put, delete, request)
-}));
+jest.mock('axios', () => {
+  const axiosMock: any = {
+    defaults: { baseURL: 'http://localhost' },
+    get: jest.fn(() => Promise.resolve({ data: {} })),
+    post: jest.fn(() => Promise.resolve({ data: {} })),
+    put: jest.fn(() => Promise.resolve({ data: {} })),
+    delete: jest.fn(() => Promise.resolve({ data: {} })),
+  };
+  axiosMock.create = jest.fn(() => axiosMock);
+  return axiosMock;
+});
 
 // Mock ResizeObserver for Radix UI components and other libraries that might use it
 global.ResizeObserver = jest.fn().mockImplementation(() => ({
@@ -488,15 +494,7 @@ jest.mock('next/link', () => {
   const React = require('react');
   const forwardRef = React.forwardRef;
   const LinkMock = ({ href, children, ...rest }: any, ref: any) => {
-    // Lazy load to avoid circular deps
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const { useNavigate } = require('react-router-dom');
-    const navigate = typeof useNavigate === 'function' ? useNavigate() : null;
-    const handleClick = (e: any) => {
-      e.preventDefault();
-      if (navigate) navigate(href);
-    };
-    return React.createElement('a', { href, onClick: handleClick, ref, ...rest }, children);
+    return React.createElement('a', { href, ref, ...rest }, children);
   };
   return { __esModule: true, default: forwardRef(LinkMock) };
 });

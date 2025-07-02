@@ -21,19 +21,19 @@ jest.mock('@/hooks/useAuth', () => ({ // Changed vi.mock to jest.mock
 jest.mock('@/hooks/use-toast'); // Changed vi.mock to jest.mock
 
 // Mock react-router-dom
-const navigateMock = jest.fn(); // Changed vi.fn to jest.fn
-jest.mock('react-router-dom', async (importOriginal) => { // Changed vi.mock to jest.mock
-  const actual = await importOriginal<typeof router>();
+const mockNavigate = jest.fn();
+jest.mock('react-router-dom', () => {
+  const actual = jest.requireActual<typeof router>('react-router-dom');
   return {
     ...actual,
-    useNavigate: () => navigateMock,
+    useNavigate: () => mockNavigate,
   };
 });
 
 describe('RegistrationForm', () => {
   beforeEach(() => {
     jest.clearAllMocks(); // Changed vi.clearAllMocks to jest.clearAllMocks
-    navigateMock.mockClear();
+    mockNavigate.mockClear();
   });
 
   it('renders form fields', () => {
@@ -76,8 +76,8 @@ describe('RegistrationForm', () => {
     await waitFor(() => { // Changed vi.waitFor to waitFor
       expect(toastHook.toast.success).toHaveBeenCalledWith('Account created');
     });
-    await waitFor(() => { // Changed vi.waitFor to waitFor
-      expect(navigateMock).toHaveBeenCalledWith('/dashboard');
+    await waitFor(() => {
+      expect(mockNavigate).toHaveBeenCalledWith('/dashboard');
     });
   });
 
