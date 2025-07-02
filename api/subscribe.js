@@ -16,8 +16,8 @@ async function handler(req, res) {
       return;
     }
 
-    // Placeholder for subscription logic (e.g., store in DB or send to service)
-    console.log('New newsletter subscriber:', email);
+    // TODO: Implement newsletter subscription logic (store in DB or send to service)
+    // console.log('New newsletter subscriber:', email); // Removed for production
 
     res.statusCode = 200;
     res.json({ success: true });

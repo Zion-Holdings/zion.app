@@ -8,14 +8,16 @@ async function handler(req, res) {
     return;
   }
 
-  const { name, email, phone, details } = req.body || {};
+  const { name, email, phone, details: _details } = req.body || {};
   if (!name || !email || !phone) {
     res.statusCode = 400;
     res.json({ error: 'Missing required fields' });
     return;
   }
 
-  console.log('Service request:', { name, email, phone, details });
+  // TODO: Implement service request processing
+  // TODO: Use details parameter for request processing
+  // console.log('Service request:', { name, email, phone, details }); // Removed for production
 
   res.statusCode = 200;
   res.json({ success: true });
