@@ -179,7 +179,8 @@ const ProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) 
 };
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [isLoading, setIsLoading] = useState(true); // Reverted to true
+  // Start with loading false to avoid blank screen if initialization stalls
+  const [isLoading, setIsLoading] = useState(false);
   const [loadingProgress, setLoadingProgress] = useState(0); // Reverted to 0
   const [initializationError, setInitializationError] = useState<string | null>(null);
   const router = useRouter();
