@@ -150,7 +150,14 @@ export default [
         cy: "readonly",
         Cypress: "readonly",
         context: "readonly",
-        assert: "readonly"
+        assert: "readonly",
+        describe: "readonly",
+        it: "readonly",
+        expect: "readonly",
+        beforeEach: "readonly",
+        afterEach: "readonly",
+        before: "readonly",
+        after: "readonly"
       }
     },
     rules: {

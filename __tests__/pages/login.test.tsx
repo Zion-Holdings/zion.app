@@ -281,4 +281,6 @@ describe('Login Page', () => {
     // Let's assume mockLogin resolving with an error object is the standard flow for handled errors.
     // If the task implies that the form submission itself should lead to Sentry call,
     // then mockLogin should reject.
-    // For now, let's assume the `error`
+    // For now, let's assume the error object pattern is correct.
+  });
+});
