@@ -42,7 +42,9 @@ jest.mock('@/components/WhitepaperPreviewPanel', () => {
 });
 
 // Mock Recharts ResponsiveContainer as it can cause issues in JSDOM
-jest.spyOn(recharts, 'ResponsiveContainer').mockImplementation(({ children }) => <div data-testid="mock-responsive-container">{children}</div>);
+jest.spyOn(recharts, 'ResponsiveContainer').mockImplementation(function MockResponsiveContainer({ children }) { 
+  return <div data-testid="mock-responsive-container">{children}</div>;
+});
 
 
 // Mock html2canvas and jsPDF

@@ -17,8 +17,8 @@ function withSentry(handler) {
     } finally {
       try {
         await Sentry.flush(2000);
-      } catch (_error) {
-        // ignore flush errors - variable prefixed to satisfy linter
+      } catch {
+        // ignore flush errors
       }
     }
   };
