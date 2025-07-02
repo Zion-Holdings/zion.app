@@ -22,7 +22,9 @@ const PATTERNS = [
   /Invalid or placeholder project ID/i,
   /Environment variable.*missing/i,
   /Missing translation key/i,
-  /map is not a function/i
+  /map is not a function/i,
+  /cacheUnaffected/i,
+  /useNavigate\(\) may be used only in the context of a <Router>/i
 ];
 const LEVELS = ['debug', 'info', 'warn', 'error'];
 const DEDUPE = args.includes('--dedupe');
