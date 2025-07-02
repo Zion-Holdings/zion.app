@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor, act } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Marketplace from '@/pages/Marketplace'; // Adjust path as necessary
 import { server } from '@/mocks/server'; // MSW server
