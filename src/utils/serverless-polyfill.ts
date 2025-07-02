@@ -14,6 +14,13 @@
  * This runs as the VERY FIRST script before any other code loads.
  */
 
+// Global type declarations
+declare global {
+  interface Window {
+    webpackChunk_N_E?: any;
+  }
+}
+
 // Type declarations for global augmentation
 declare global {
   const webpackChunk_N_E: any[];
@@ -25,6 +32,11 @@ declare global {
   const __rest: any;
   const __decorate: any;
   const __awaiter: any;
+  interface Window {
+    webpackChunk_N_E?: any;
+  }
+  
+  var self: Window & typeof globalThis;
 }
 
 // CRITICAL: Self polyfill - must be first
@@ -217,7 +229,7 @@ if (typeof global !== 'undefined' && typeof window === 'undefined') {
 export const verifyPolyfills = () => {
   const checks = {
     selfDefined: typeof self !== 'undefined',
-    webpackChunkDefined: typeof webpackChunk_N_E !== 'undefined' || (typeof self !== 'undefined' && typeof self.webpackChunk_N_E !== 'undefined'),
+    webpackChunkDefined: typeof window !== 'undefined' && typeof window.webpackChunk_N_E !== 'undefined' || (typeof self !== 'undefined' && typeof (self as any).webpackChunk_N_E !== 'undefined'),
     tsHelpersDefined: typeof __extends !== 'undefined' && typeof __assign !== 'undefined',
     errorHandlersSet: typeof window !== 'undefined' && window.onerror !== null
   };

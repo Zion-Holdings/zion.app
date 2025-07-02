@@ -228,7 +228,6 @@ if (typeof window.scrollTo === 'undefined') {
 
 // Mock axios.create to return axios itself
 import axios from 'axios';
-// @ts-expect-error
 axios.create = jest.fn(() => axios);
 
 // -----------------------------
@@ -395,7 +394,6 @@ global.fetch = fetchMock;
 
 // Polyfill performance.getEntriesByType for JSDOM (used in productionLogger)
 if (typeof performance.getEntriesByType !== 'function') {
-  // @ts-expect-error
   performance.getEntriesByType = () => [];
 }
 
@@ -445,9 +443,6 @@ jest.mock('@/hooks/use-toast', () => {
 // Minimal MSW mocks to satisfy tests without parsing ESM bundles
 jest.mock('msw', () => ({ rest: { get: jest.fn(), post: jest.fn(), put: jest.fn(), delete: jest.fn() } }));
 jest.mock('msw/node', () => ({ setupServer: () => ({ listen: jest.fn(), resetHandlers: jest.fn(), close: jest.fn() }) }));
-
-// Provide mock for missing component
-jest.mock('@/components/search/FilterSidebar', () => ({ FilterSidebar: () => null }));
 
 // Extend Vitest shim with timer helpers if not present
 // @ts-expect-error - vi is added by the vitest mock above
