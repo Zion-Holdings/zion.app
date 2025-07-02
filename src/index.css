@@ -266,7 +266,7 @@ body {
   /* Dark theme fallback for prefers-color-scheme if JS is disabled/fails */
   /* Aligns with the 'dark' preset from themeUtils.ts */
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]):not([data-theme="corporate"]):not([data-theme="zionDefault"]) {
+    :root:not([data-theme]) {
       --background: hsl(222 47% 8%);    /* #030712 slate-950 */
       --foreground: hsl(210 40% 98%);   /* #f8fafc slate-50 */
       --card: hsl(222 47% 11%);         /* #0f172a slate-900 */
