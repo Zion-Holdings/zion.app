@@ -500,3 +500,22 @@ jest.mock('next/link', () => {
   };
   return { __esModule: true, default: forwardRef(LinkMock) };
 });
+
+// Ensure axios has a default baseURL to avoid undefined property assignment
+if (!axios.defaults.baseURL) axios.defaults.baseURL = 'http://localhost';
+
+// Mock next/navigation to avoid unresolved module errors
+jest.mock('next/navigation', () => ({
+  useRouter: () => ({ push: jest.fn(), replace: jest.fn(), refresh: jest.fn(), back: jest.fn(), forward: jest.fn() })
+}));
+
+// Mock mongoose to avoid heavy BSON/ESM issues in tests that import it indirectly
+jest.mock('mongoose', () => {
+  const schemaStub = function() { return {}; };
+  return {
+    Schema: schemaStub,
+    model: jest.fn().mockReturnValue({}),
+    connect: jest.fn(),
+    connection: { on: jest.fn() },
+  };
+});
