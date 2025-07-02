@@ -25,7 +25,13 @@ global.TextDecoder = TextDecoder;
 process.env.VITE_REOWN_PROJECT_ID = 'test_project_id_from_jest_setup';
 process.env.NEXT_PUBLIC_SUPABASE_URL = 'http://localhost:54321';
 process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'test_anon_key';
+process.env.NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.ziontechgroup.com/v1';
 
+// Provide sensible defaults for environment variables expected by tests / Cypress stubs
+process.env.TEST_USER_NAME = process.env.TEST_USER_NAME || 'Test User';
+process.env.EXISTING_USER_EMAIL = process.env.EXISTING_USER_EMAIL || 'existing@test.com';
+process.env.EXISTING_USER_PASSWORD = process.env.EXISTING_USER_PASSWORD || 'password123';
+process.env.STRIPE_TEST_CARD = process.env.STRIPE_TEST_CARD || '4242424242424242';
 
 // Jest-axe matchers for accessibility
 import { toHaveNoViolations } from 'jest-axe';
@@ -469,6 +475,7 @@ jest.mock('@/components/talent/FilterSidebar', () => ({ FilterSidebar: () => nul
 // Extend Vitest shim with timer helpers if not present
 // @ts-expect-error vi is added by the vitest mock above - timer helpers added for compatibility
 if (global.vi) {
+<<<<<<< HEAD
   // @ts-expect-error global.vi timer methods extension - TypeScript doesn't expect vitest timer APIs in Jest
   if (!(global.vi as any).useFakeTimers) (global.vi as any).useFakeTimers = jest.useFakeTimers.bind(jest);
   // @ts-expect-error global.vi timer methods extension - TypeScript doesn't expect vitest timer APIs in Jest
@@ -488,10 +495,36 @@ jest.mock('react-i18next', () => {
       return key.split('.').pop();
     }
     return key;
+=======
+  if (!global.vi.useFakeTimers) global.vi.useFakeTimers = jest.useFakeTimers.bind(jest);
+  if (!global.vi.runAllTimers) global.vi.runAllTimers = jest.runAllTimers.bind(jest);
+  if (!global.vi.advanceTimersByTime) global.vi.advanceTimersByTime = jest.advanceTimersByTime.bind(jest);
+}
+
+// ---------------------------------------------------------------------------
+// react-i18next mock – returns English translations so tests receive readable
+// text instead of raw keys (fixes many expectations).
+// ---------------------------------------------------------------------------
+jest.mock('react-i18next', () => {
+  const en = require('@/i18n/locales/en-US/translation.json');
+
+  const translate = (key: string): string => {
+    if (!key) return '';
+    const parts = key.split('.');
+    let curr = en;
+    for (const p of parts) {
+      curr = curr && curr[p];
+      if (!curr) {
+        return key; // fallback to key when not found
+      }
+    }
+    return typeof curr === 'string' ? curr : key;
+>>>>>>> f23d96de9595444025c73b6fe31e611c0f3f880f
   };
 
   return {
     __esModule: true,
+<<<<<<< HEAD
     // Preserve the hook signature
     useTranslation: () => ({ t, i18n: { changeLanguage: jest.fn() } }),
     Trans: ({ children }: { children: React.ReactNode }) => children,
@@ -590,3 +623,9 @@ jest.mock('axios-retry', () => {
 });
 
 jest.mock('@ungap/structured-clone', () => ({ __esModule: true, default: (val: any) => JSON.parse(JSON.stringify(val)) }));
+=======
+    useTranslation: () => ({ t: translate, i18n: { changeLanguage: jest.fn() } }),
+    Trans: ({ children }: { children: any }) => children,
+  };
+});
+>>>>>>> f23d96de9595444025c73b6fe31e611c0f3f880f
