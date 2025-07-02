@@ -809,8 +809,7 @@ const nextConfig = {
       'lodash/isArray': 'lodash-es/isArray',
       'lodash/isObject': 'lodash-es/isObject',
       'lodash': 'lodash-es',
-      // Force date-fns to use ESM version
-      'date-fns': 'date-fns/esm',
+      // date-fns alias removed to avoid missing locale exports on Netlify
     };
 
     // Override module resolution for problematic packages
