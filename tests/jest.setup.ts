@@ -473,11 +473,11 @@ jest.mock('msw/node', () => ({ setupServer: () => ({ listen: jest.fn(), resetHan
 jest.mock('@/components/talent/FilterSidebar', () => ({ FilterSidebar: () => null }));
 
 // Extend Vitest shim with timer helpers if not present
-// @ts-expect-error vi is added by the vitest mock above - timer helpers added for compatibility
-if (global.vi) {
-  if (!global.vi.useFakeTimers) global.vi.useFakeTimers = jest.useFakeTimers.bind(jest);
-  if (!global.vi.runAllTimers) global.vi.runAllTimers = jest.runAllTimers.bind(jest);
-  if (!global.vi.advanceTimersByTime) global.vi.advanceTimersByTime = jest.advanceTimersByTime.bind(jest);
+const g: any = global as any;
+if (g.vi) {
+  if (!g.vi.useFakeTimers) g.vi.useFakeTimers = jest.useFakeTimers.bind(jest);
+  if (!g.vi.runAllTimers) g.vi.runAllTimers = jest.runAllTimers.bind(jest);
+  if (!g.vi.advanceTimersByTime) g.vi.advanceTimersByTime = jest.advanceTimersByTime.bind(jest);
 }
 
 // -----------------------------
