@@ -115,6 +115,7 @@ self.addEventListener('message', event => {
         .catch(err => console.error('Background sync replay failed', err))
     );
   }
+});
 
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
