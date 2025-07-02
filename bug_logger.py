@@ -2,7 +2,6 @@ import json
 import datetime
 import os
 import traceback
-import argparse
 
 # Allow customizing the log file location via environment variable
 # Default to storing bug logs under logs/bug/bug_log.json so logs remain organized
@@ -88,48 +87,8 @@ def log_bug(
     except Exception as e:
         print(f"An unexpected error occurred during logging: {e}")
 
-
-def read_bug_logs(severity: str | None = None):
-    """Read bug logs from LOG_FILE. Optionally filter by severity."""
-    if not os.path.exists(LOG_FILE):
-        return []
-    try:
-        with open(LOG_FILE, "r") as f:
-            logs = json.load(f)
-            if not isinstance(logs, list):
-                return []
-    except (IOError, json.JSONDecodeError):
-        return []
-
-    if severity:
-        severity = severity.lower()
-        logs = [log for log in logs if log.get("severity", "").lower() == severity]
-    return logs
-
-
-def bug_summary() -> dict:
-    """Return a summary count of bugs per severity."""
-    summary: dict[str, int] = {}
-    for entry in read_bug_logs():
-        sev = entry.get("severity", "Unknown")
-        summary[sev] = summary.get(sev, 0) + 1
-    return summary
-
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Bug logger utility")
-    parser.add_argument("--summary", action="store_true", help="Print bug log summary and exit")
-    parser.add_argument("--list", action="store_true", help="List all logged bugs and exit")
-    args = parser.parse_args()
-
-    if args.summary:
-        print(json.dumps(bug_summary(), indent=2))
-        raise SystemExit
-
-    if args.list:
-        print(json.dumps(read_bug_logs(), indent=2))
-        raise SystemExit
-
-    # Example usage when run without flags
+    # Example usage:
     print("Running example logging...")
 
     # Example 1: Basic error

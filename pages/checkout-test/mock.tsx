@@ -4,20 +4,32 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 
-// Skip prerendering – this page is only meaningful in the browser
-export const dynamic = 'force-dynamic';
+
+
+import { useEffect, useState } from 'react';
 
 export default function MockCheckoutPage() {
   const router = useRouter();
-  const { mock } = router.query;
+  const [showMockContent, setShowMockContent] = useState(false);
 
-  if (typeof window === 'undefined') {
-    return null; // Avoid next/router usage during static export
-  }
+  useEffect(() => {
+    if (!router.isReady) {
+      return; // Router not ready yet, wait for next effect run
+    }
 
-  if (!mock) {
-    router.push('/checkout');
-    return <div>Redirecting...</div>;
+    const { mock } = router.query;
+
+    if (!mock) {
+      router.push('/checkout');
+    } else {
+      setShowMockContent(true);
+    }
+  }, [router, router.isReady, router.query]); // Add router.isReady and router.query to dependencies
+
+  if (!showMockContent) {
+    // You can return a loading spinner or a simple "Redirecting..." message
+    // until the client-side check is complete.
+    return <div>Loading mock checkout...</div>;
   }
 
   return (

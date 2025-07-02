@@ -80,8 +80,6 @@ const nextConfig = {
     largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
     workerThreads: false, // Disable worker threads to reduce memory usage
     cpus: Math.min(2, os.cpus().length), // Adaptive CPU limit
-    // Disable cacheUnaffected to prevent webpack optimization conflicts
-    cacheUnaffected: false,
     // Bundle analysis optimizations moved to root level
     // Disable profiling for faster builds
     swcTraceProfiling: false,
@@ -303,6 +301,9 @@ const nextConfig = {
     'ajv-keywords',
     '@ungap/structured-clone',
     'axios-retry',
+    // i18next and related packages for transpilation
+    'i18next',
+    'i18next-browser-languagedetector',
     // Fix dynamic import errors for these ESM-only packages
     'react-hot-toast',
     'sonner',
@@ -655,15 +656,12 @@ const nextConfig = {
       config.cache = {
         type: 'memory',
         maxGenerations: dev ? 1 : 5,
-        // Explicitly disable cacheUnaffected to avoid "usedExports" conflicts
-        cacheUnaffected: false,
       };
     } else {
       // Ensure memory cache is properly configured
       config.cache = {
         type: 'memory',
         maxGenerations: dev ? 1 : 5,
-        cacheUnaffected: false,
       };
     }
 
@@ -674,15 +672,8 @@ const nextConfig = {
         concatenateModules: false, // Disable module concatenation which can cause TDZ issues
         minimize: false, // Disable minimization on server side to preserve variable names
         mangleExports: false,
-        usedExports: false, // Prevent cacheUnaffected conflicts on server build
       };
     }
-
-    // Ensure usedExports is disabled for all builds to avoid cacheUnaffected conflicts
-    config.optimization = {
-      ...config.optimization,
-      usedExports: false,
-    };
 
     // Suppress warnings in both dev and production
     config.ignoreWarnings = [
