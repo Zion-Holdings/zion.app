@@ -20,7 +20,7 @@ module.exports = {
     '^@/pages/api/(.*)$': '<rootDir>/pages/api/$1',
     '^@/pages/(.*)$': ['<rootDir>/pages/$1', '<rootDir>/src/pages/$1'],
     '^@/components/(.*)$': '<rootDir>/src/components/$1',
-    '^@/utils/(.*)$': '<rootDir>/src/utils/$1',
+    '^@/utils/(?!devtools)(.*)$': '<rootDir>/src/utils/$1',
     '^@/context$': '<rootDir>/src/context/index.ts',
     '^@/context/(.*)$': '<rootDir>/src/context/$1',
     '^@/hooks/(.*)$': '<rootDir>/src/hooks/$1',

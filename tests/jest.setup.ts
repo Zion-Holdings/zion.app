@@ -188,6 +188,7 @@ jest.mock('firebase/storage', () => ({
 jest.mock('axios', () => {
   const axiosMock: any = {
     defaults: { baseURL: 'http://localhost' },
+    interceptors: { request: { use: jest.fn() }, response: { use: jest.fn() } },
     get: jest.fn(() => Promise.resolve({ data: {} })),
     post: jest.fn(() => Promise.resolve({ data: {} })),
     put: jest.fn(() => Promise.resolve({ data: {} })),
