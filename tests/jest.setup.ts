@@ -488,3 +488,25 @@ jest.mock('react-i18next', () => {
     Trans: ({ children }: { children: any }) => children,
   };
 });
+
+// ---------------------------------------------------------------------------
+// Global mocks for common libraries
+// ---------------------------------------------------------------------------
+
+// Use next-router-mock for all tests so individual suites don't need to re-mock
+jest.mock('next/router', () => require('next-router-mock'));
+
+// Provide a lightweight supabase-js mock so suites can rely on default stubs
+jest.mock('@supabase/supabase-js', () => {
+  const authStub = {
+    signUp: jest.fn(() => Promise.resolve({ data: { user: { id: 'user-1' } }, error: null })),
+    signInWithPassword: jest.fn(() => Promise.resolve({ data: { user: { id: 'user-1' } }, error: null })),
+    signOut: jest.fn(() => Promise.resolve({ error: null })),
+    onAuthStateChange: jest.fn(() => ({ data: { subscription: { unsubscribe: jest.fn() } }, error: null })),
+  };
+
+  return {
+    __esModule: true,
+    createClient: jest.fn(() => ({ auth: authStub })),
+  };
+});
