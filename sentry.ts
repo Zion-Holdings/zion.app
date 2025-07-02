@@ -1,13 +1,5 @@
 // Conditional Sentry import for React 19 + Next.js 15 compatibility
 let Sentry: any = null;
-import { Integrations } from "@sentry/tracing";
-
-// Ensure Http integration constructor exists in test environments where the real implementation may be absent
-if (Integrations && typeof Integrations.Http !== 'function') {
-  (Integrations as any).Http = function HttpMock(this: any, opts: any) {
-    Object.assign(this, opts);
-  };
-}
 
 // Skip Sentry import during CI builds or when explicitly disabled
 if (process.env.SKIP_SENTRY_BUILD !== 'true' && process.env.CI !== 'true') {
@@ -82,7 +74,8 @@ export function register() {
     const initOptions: any = {
       dsn: SENTRY_DSN,
       tracesSampleRate: process.env.NODE_ENV === 'development' ? 1.0 : 1.0, // Keep at 1.0 for tests
-      integrations: [new Integrations.Http({ tracing: true })],
+      // Remove deprecated Http integration - modern Sentry handles HTTP tracing automatically
+      integrations: [],
     };
 
     if (SENTRY_RELEASE) {

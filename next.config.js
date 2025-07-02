@@ -65,17 +65,18 @@ const nextConfig = {
       transform: '@radix-ui/react-icons/dist/{{member}}',
     },
   },
+  outputFileTracingExcludes: {
+    '*': [
+      'node_modules/@swc/core-linux-x64-gnu',
+      'node_modules/@swc/core-linux-x64-musl',
+      'node_modules/@esbuild/linux-x64',
+      'node_modules/@chainsafe/**/*',
+      'node_modules/three/**/*',
+      'node_modules/@google/model-viewer/**/*',
+    ],
+  },
+
   experimental: {
-    outputFileTracingExcludes: {
-      '*': [
-        'node_modules/@swc/core-linux-x64-gnu',
-        'node_modules/@swc/core-linux-x64-musl',
-        'node_modules/@esbuild/linux-x64',
-        'node_modules/@chainsafe/**/*',
-        'node_modules/three/**/*',
-        'node_modules/@google/model-viewer/**/*',
-      ],
-    },
     optimizePackageImports: [
       'lucide-react', 
       '@radix-ui/react-icons',
@@ -267,6 +268,13 @@ const nextConfig = {
     'react-markdown',
     'date-fns',
     'react-day-picker',
+    'bail',
+    'is-plain-obj',
+    'mdast-util-from-markdown',
+    'mdast-util-to-hast',
+    'unified',
+    'remark-parse',
+    'remark-rehype',
     'formik',
     // UI libraries that need transpilation
     '@chakra-ui/react',
@@ -572,15 +580,12 @@ const nextConfig = {
       config.cache = {
         type: 'memory',
         maxGenerations: dev ? 1 : 5,
-        // Disable cacheUnaffected to prevent webpack conflicts
-        cacheUnaffected: false,
       };
     } else {
       // Ensure memory cache is properly configured
       config.cache = {
         type: 'memory',
         maxGenerations: dev ? 1 : 5,
-        cacheUnaffected: false,
       };
     }
 
