@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent } from "@/components/ui/card";
 import Skeleton from "@/components/ui/skeleton";
 import { useState } from "react";
-import { AnalyticsChart } from "./AnalyticsChart";
+import { DynamicAnalyticsChart as AnalyticsChart } from "@/utils/dynamicComponents";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
