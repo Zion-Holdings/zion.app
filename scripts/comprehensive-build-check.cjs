@@ -37,6 +37,7 @@ const patterns = {
   suppressible: [
     /unhandledRejection.*ReferenceError.*self is not defined/,
     /unhandledRejection.*TypeError.*Cannot read properties of undefined.*reading 'length'/,
+    /unhandledRejection.*TypeError.*map is not a function/,
     /TypeError.*Cannot read properties of undefined.*reading 'length'/,
     /webpack-runtime\.js.*installChunk/,
     /experimental\.esmExternals.*modified/,
