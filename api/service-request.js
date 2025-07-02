@@ -1,4 +1,5 @@
 const { withSentry } = require('./withSentry.cjs');
+const fs = require('fs');
 
 async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -15,9 +16,18 @@ async function handler(req, res) {
     return;
   }
 
-  // TODO: Implement service request processing
-  // TODO: Use details parameter for request processing
-  // console.log('Service request:', { name, email, phone, details }); // Removed for production
+
+  // Store service request locally for review
+  const entry = {
+    timestamp: new Date().toISOString(),
+    name,
+    email,
+    phone,
+    details: _details,
+  };
+  fs.appendFileSync('service_requests.log', JSON.stringify(entry) + '\n');
+
+  // Placeholder for future request processing logic
 
   res.statusCode = 200;
   res.json({ success: true });
