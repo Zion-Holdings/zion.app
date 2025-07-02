@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-require-imports
+/* eslint-disable @typescript-eslint/no-require-imports */
 /**
  * Test suite for Auth0 Signup Fix (Critical Issue #1)
  * Validates that Auth0 configuration resolves signup failures
