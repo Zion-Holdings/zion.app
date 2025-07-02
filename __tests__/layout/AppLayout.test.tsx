@@ -9,7 +9,11 @@ jest.mock('@/hooks/useAuth');
 jest.mock('@/context/GlobalLoaderContext');
 jest.mock('@/layout/PrimaryNav', () => ({ PrimaryNav: () => <div data-testid="header" /> }));
 jest.mock('@/components/Footer', () => ({ Footer: () => <div data-testid="footer" /> }));
-jest.mock('@/components/EmailVerificationBanner', () => (props: any) => <div data-testid="verify-banner">{props.userEmail}</div>);
+jest.mock('@/components/EmailVerificationBanner', () => {
+  const MockBanner = (props: any) => <div data-testid="verify-banner">{props.userEmail}</div>;
+  MockBanner.displayName = 'MockEmailVerificationBanner';
+  return MockBanner;
+});
 
 const mockUseAuth = useAuth as jest.Mock;
 const mockUseGlobalLoader = useGlobalLoader as jest.Mock;

@@ -1,9 +1,13 @@
 /** @jest-environment node */
 import { test, expect } from '@playwright/test';
 import { createClient } from '@supabase/supabase-js';
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const jwt = require('jsonwebtoken');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const bcrypt = require('bcryptjs');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const { registerUser, loginUser } = require('../../server/controllers/authController');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const User = require('../../server/models/User');
 
 jest.mock('../../server/models/User');

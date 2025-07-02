@@ -1,13 +1,21 @@
 /** @jest-environment node */
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const express = require('express');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const request = require('supertest');
 
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const authRoutes = require('../../server/routes/auth');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const syncRoutes = require('../../server/routes/sync');
 
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const User = require('../../server/models/User');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const bcrypt = require('bcryptjs');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const jwt = require('jsonwebtoken');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const syncStore = require('../../server/utils/syncStore');
 
 jest.mock('../../server/models/User');

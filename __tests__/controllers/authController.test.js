@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import { createClient } from '@supabase/supabase-js';
+// Removed unused import: createClient
 import User from '../models/User';
 import { loginUser, registerUser } from '../../server/controllers/authController';
 
