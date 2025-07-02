@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import Home from '@/pages/Home';
+import { createSafeComponent } from '../src/utils/safe-component-loader';
+const Home = createSafeComponent('../src/pages/Home');
 import type { GetStaticProps } from 'next';
 import * as Sentry from '@sentry/nextjs';
 import { ErrorBanner } from '@/components/talent/ErrorBanner';
