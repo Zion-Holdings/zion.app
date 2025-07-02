@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { AppHeader } from '@/layout/AppHeader'; // Adjust path as necessary
 import { AuthProviderValue } from '@/context/auth/AuthContext'; // Adjust path
 import { useAuth } from '@/hooks/useAuth'; // Adjust path
@@ -33,14 +33,10 @@ jest.mock('react-i18next', () => ({
 }));
 
 // Mock lucide-react icons
-jest.mock('lucide-react', () => {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const React = require('react');
-  return {
-    Menu: () => React.createElement('div', { 'data-testid': 'menu-icon' }),
-    X: () => React.createElement('div', { 'data-testid': 'x-icon' }),
-  };
-});
+jest.mock('lucide-react', () => ({
+  Menu: () => React.createElement('div', { 'data-testid': 'menu-icon' }),
+  X: () => React.createElement('div', { 'data-testid': 'x-icon' }),
+}));
 
 describe('AppHeader', () => {
   const mockPush = jest.fn();
