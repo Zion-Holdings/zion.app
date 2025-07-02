@@ -35,6 +35,8 @@ import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import '../src/index.css';
+import { Provider as ReduxProvider } from 'react-redux';
+import { store } from '@/store';
 
 // Import all providers synchronously for reliability
 import { WhitelabelProvider } from '../src/context/WhitelabelContext';
@@ -161,19 +163,21 @@ const LoadingScreen: React.FC<{ progress: number }> = ({ progress }) => (
 const ProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <AppErrorBoundary>
-      <WhitelabelProvider>
-        <WalletProvider>
-          <AnalyticsProvider>
-            <CartProvider>
-              <FeedbackProvider>
-                <ThemeProvider>
-                  {children}
-                </ThemeProvider>
-              </FeedbackProvider>
-            </CartProvider>
-          </AnalyticsProvider>
-        </WalletProvider>
-      </WhitelabelProvider>
+      <ReduxProvider store={store}>
+        <WhitelabelProvider>
+          <WalletProvider>
+            <AnalyticsProvider>
+              <CartProvider>
+                <FeedbackProvider>
+                  <ThemeProvider>
+                    {children}
+                  </ThemeProvider>
+                </FeedbackProvider>
+              </CartProvider>
+            </AnalyticsProvider>
+          </WalletProvider>
+        </WhitelabelProvider>
+      </ReduxProvider>
     </AppErrorBoundary>
   );
 };
