@@ -4,6 +4,7 @@ import Signup from '@/pages/Signup';
 import * as toastHook from '@/hooks/use-toast';
 import { useRouter } from 'next/router';
 import { vi, expect, test } from 'vitest';
+import nextRouterMock from 'next-router-mock';
 
 vi.mock('@/hooks/useAuth', () => ({
   useAuth: () => ({
@@ -18,8 +19,7 @@ vi.mock('@/hooks/useAuth', () => ({
 
 vi.mock('@/hooks/use-toast');
 
-/* eslint-disable @typescript-eslint/no-require-imports */
-vi.mock('next/router', () => require('next-router-mock'));
+vi.mock('next/router', () => nextRouterMock);
 
 function mockFetch(responses: { status: number; body: any }[]) {
   global.fetch = vi.fn();

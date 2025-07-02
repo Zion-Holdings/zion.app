@@ -16,14 +16,15 @@ async function handler(req, res) {
       return;
     }
 
-    console.log('New quote request:', {
-      name,
-      email,
-      phone,
-      details,
-      country,
-      service,
-    });
+    // TODO: Store quote request and send confirmation email
+    // console.log('New quote request:', {
+    //   name,
+    //   email,
+    //   phone,
+    //   details,
+    //   country,
+    //   service,
+    // }); // Removed for production
 
     // In a real application you would store the quote and send a confirmation email here
 

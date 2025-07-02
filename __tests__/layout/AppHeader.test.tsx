@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor as _waitFor } from '@testing-library/react';
 import { AppHeader } from '@/layout/AppHeader'; // Adjust path as necessary
 import { AuthProviderValue } from '@/context/auth/AuthContext'; // Adjust path
 import { useAuth } from '@/hooks/useAuth'; // Adjust path

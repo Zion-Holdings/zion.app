@@ -15,7 +15,8 @@ async function handler(req, res) {
     return;
   }
 
-  console.log('Onsite service request:', { name, email, phone, company, location, details });
+  // TODO: Implement actual onsite service request processing
+  // console.log('Onsite service request:', { name, email, phone, company, location, details }); // Removed for production
 
   res.statusCode = 200;
   res.json({ success: true });

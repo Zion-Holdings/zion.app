@@ -4,12 +4,18 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { vi } from 'vitest';
 import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
 import SignUpForm from '@/components/onboarding/SignUpForm';
+import { useAuth as _useAuth } from '@/hooks/useAuth';
+
+// Create mock functions that can be accessed in tests
+const mockLoginWithGoogle = jest.fn();
+const mockSignup = jest.fn().mockResolvedValue({});
+const mockLogin = jest.fn().mockResolvedValue({});
 
 jest.mock('@/hooks/useAuth', () => ({
   useAuth: () => ({
-    signup: jest.fn().mockResolvedValue({}),
-    login: jest.fn().mockResolvedValue({}),
-    loginWithGoogle: jest.fn(),
+    signup: mockSignup,
+    login: mockLogin,
+    loginWithGoogle: mockLoginWithGoogle,
   }),
 }));
 
@@ -17,8 +23,6 @@ vi.mock('next/router', () => import('next-router-mock'));
 
 describe('SignUpForm', () => {
   test('calls loginWithGoogle when Google button is clicked', () => {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    const { loginWithGoogle } = require('@/hooks/useAuth').useAuth();
     render(
       <MemoryRouterProvider>
         <SignUpForm />
@@ -26,7 +30,7 @@ describe('SignUpForm', () => {
     );
 
     fireEvent.click(screen.getByRole('button', { name: /continue with google/i }));
-    expect(loginWithGoogle).toHaveBeenCalled();
+    expect(mockLoginWithGoogle).toHaveBeenCalled();
   });
 
   test('updates form fields', () => {
