@@ -74,7 +74,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   const [retries, setRetries] = useState(0);
   const [loadProgress, setLoadProgress] = useState(0);
   const imgRef = useRef<HTMLImageElement>(null);
-  const observerRef = useRef<IntersectionObserver>(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
   const [metrics, setMetrics] = useState<ImageMetrics | null>(null);
   const loadStartTime = useRef<number>(0);
 
@@ -82,12 +82,12 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   useEffect(() => {
     if (!lazy || priority || isInView) return;
 
-    observerRef.current = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
         if (entry && entry.isIntersecting) {
           setIsInView(true);
-          observerRef.current?.disconnect();
+          observer.disconnect();
         }
       },
       {
@@ -96,12 +96,14 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
       }
     );
 
+    observerRef.current = observer;
+
     if (imgRef.current) {
-      observerRef.current.observe(imgRef.current);
+      observer.observe(imgRef.current);
     }
 
     return () => {
-      observerRef.current?.disconnect();
+      observer.disconnect();
     };
   }, [lazy, priority, isInView]);
 
