@@ -239,6 +239,10 @@ process.on('unhandledRejection', (reason) => {
     severity: 'High',
     module: 'server',
   });
+  if (process.env.NODE_ENV !== 'development') {
+    // Exit to avoid running in an undefined state
+    process.exit(1);
+  }
 });
 
 process.on('uncaughtException', (error) => {
@@ -251,6 +255,9 @@ process.on('uncaughtException', (error) => {
     severity: 'Critical',
     module: 'server',
   });
+  if (process.env.NODE_ENV !== 'development') {
+    process.exit(1);
+  }
 });
 
 module.exports = app;
