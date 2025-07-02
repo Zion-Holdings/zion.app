@@ -73,7 +73,7 @@ Ensure all variables marked as required in `.env.example` or in specific documen
 - **[Optional Two-Factor Authentication](TWO_FACTOR_AUTHENTICATION_SUMMARY.md)** - Overview of enabling 2FA in the IPO portal
 - **[Logging Guidelines](docs/LOGGING_GUIDELINES.md)** - Usage instructions for the project logger
 - **Collect Logs** - `npm run logs:collect` bundles recent logs under `logs/archive/`
-- **Analyze Logs** - `npm run logs:summary` scans collected logs and reports missing translation keys
+  - **Analyze Logs** - `npm run logs:summary` scans collected logs, reports missing translation keys, and flags router context errors like `useNavigate()` without a `<Router>`
 - **Health Check** - `npm run logs:health` prints a quick system status report
 - **Missing Key Log** - Any translation keys not found at runtime are appended to `logs/missing-keys.log`
 
