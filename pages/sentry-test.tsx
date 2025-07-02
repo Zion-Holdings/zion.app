@@ -24,7 +24,7 @@ const SentryTestPage = () => {
     } catch (error) {
       // This catch is for the fetch failing, not Sentry capturing the API's error directly here.
       // Sentry should capture it on the API route side.
-      Sentry.captureException(new Error('Failed to fetch /api/sentry-test-error-api or API did not throw as expected.'));
+      Sentry.captureException(error);
       alert('Error trying to trigger server-side API error. Check your Sentry dashboard or console.');
     }
   };
