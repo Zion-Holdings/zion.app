@@ -76,6 +76,7 @@ Ensure all variables marked as required in `.env.example` or in specific documen
 - **Analyze Logs** - `npm run logs:summary` scans collected logs and reports missing translation keys
 - **Health Check** - `npm run logs:health` prints a quick system status report
 - **Missing Key Log** - Any translation keys not found at runtime are appended to `logs/missing-keys.log`
+- **Bug Logging** - Run `python3 main_app.py` to generate sample bug logs in `logs/bug/bug_log.json`. Use `python3 bug_logger.py --summary` to view a summary of logged issues.
 
 ### CDN for Static Assets
 
