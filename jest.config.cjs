@@ -83,7 +83,11 @@ module.exports = {
     '^mongodb(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^bson(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/components/search/(.*)$': '<rootDir>/src/components/talent/$1',
+<<<<<<< HEAD
 >>>>>>> f23d96de9595444025c73b6fe31e611c0f3f880f
+=======
+    '^scripts/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
+>>>>>>> 9ee51355f57ac94925b3b52dccbf6e1f836962f7
   },
   
   // Test file patterns

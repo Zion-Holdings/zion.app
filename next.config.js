@@ -311,6 +311,7 @@ const nextConfig = {
     'unist-util-visit-parents',
     'usehooks-ts',
     'vfile-message',
+    'unist-util-is',
     // UI libraries that need transpilation
     '@chakra-ui/react',
     '@radix-ui/react-accordion',
