@@ -425,24 +425,28 @@ const nextConfig = {
     }
     
     // Development optimizations to prevent memory leaks with 176+ pages
-    if (dev && !isServer) {
-      config.watchOptions = {
-        ignored: /node_modules/,
-        aggregateTimeout: 300,
-        poll: false, // Use native file watching instead of polling
-      };
+    if (dev) {
+      if (!isServer) {
+        config.watchOptions = {
+          ignored: /node_modules/,
+          aggregateTimeout: 300,
+          poll: false, // Use native file watching instead of polling
+        };
+      }
 
       // Alias react-router-dom to a lightweight stub to avoid build errors
       config.resolve.alias = {
         ...config.resolve.alias,
         'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
       };
-      
-      // Optimize memory usage in development
-      config.stats = 'errors-warnings';
-      config.infrastructureLogging = {
-        level: 'error',
-      };
+
+      if (!isServer) {
+        // Optimize memory usage in development
+        config.stats = 'errors-warnings';
+        config.infrastructureLogging = {
+          level: 'error',
+        };
+      }
     }
     
     // For Netlify deployment, exclude problematic files temporarily
