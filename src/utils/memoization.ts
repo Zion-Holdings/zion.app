@@ -31,7 +31,7 @@ export function useExpensiveMemo<T>(
 }
 
 // Stable callback memoization
-export function useStableCallback<T extends (...args: any[]) => any>(
+export function useStableCallback<T extends (...args: unknown[]) => unknown>(
   callback: T,
   deps: React.DependencyList
 ): T {
@@ -50,7 +50,7 @@ export function useObjectMemo<T extends object>(
 export function PerformanceWrapper<T extends object>({
   children,
   name = 'Component',
-  ...props
+  ..._props
 }: T & { children: React.ReactNode; name?: string }) {
   const renderStart = useMemo(() => performance.now(), []);
   

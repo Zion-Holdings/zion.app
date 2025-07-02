@@ -1,5 +1,5 @@
-const { createMocks } = require('node-mocks-http');
-const handler = require('../../api/newsletter/subscribe');
+import { createMocks } from 'node-mocks-http';
+import handler from '../../api/newsletter/subscribe';
 
 describe('/api/newsletter/subscribe', () => {
   it('rejects invalid email', async () => {
