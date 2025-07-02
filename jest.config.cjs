@@ -58,36 +58,27 @@ module.exports = {
     '^uint8arrays/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^multiformats/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^react-markdown$': '<rootDir>/tests/__mocks__/reactMarkdown.js',
-<<<<<<< HEAD
     '^@/pages/(.*)\.jsx$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/pages/Signup$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/pages/signup$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/utils/devtools$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^scripts/watchdog$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^scripts/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^os-utils$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/pages/api/points/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/pages/api/users/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/pages/Login\.jsx$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/App$': '<rootDir>/src/App.tsx',
     '^@/pages/api/auth/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
-=======
-    // Fix for unresolved "@/hooks" barrel import in tests
+    // Additional aliases for Jest environment
     '^@/hooks$': '<rootDir>/src/hooks/index.ts',
-    // Additional aliases required by failing tests
-    '^@/layout$': '<rootDir>/src/layout/index.ts',
-    '^@/store$': '<rootDir>/src/store/index.ts',
-    '^@/middleware/(.*)$': '<rootDir>/src/middleware/$1',
     '^@/i18n/(.*)$': '<rootDir>/src/i18n/$1',
-    // Stub problematic ESM-only dependencies that Jest cannot parse
     '^mongoose(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^mongodb(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^bson(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/components/search/(.*)$': '<rootDir>/src/components/talent/$1',
-<<<<<<< HEAD
->>>>>>> f23d96de9595444025c73b6fe31e611c0f3f880f
-=======
-    '^scripts/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
->>>>>>> 9ee51355f57ac94925b3b52dccbf6e1f836962f7
+    // Retain original mocks for middleware to avoid heavy imports in Jest
+    '^@/middleware/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
   },
   
   // Test file patterns
