@@ -130,7 +130,7 @@ export function QuoteRequestForm() {
       
       // Redirect to confirmation page or homepage
       router.push("/");
-    } catch (error) {
+    } catch (_error) {
       toast({
         title: "Submission Failed",
         description: "There was an error submitting your request. Please try again.",
