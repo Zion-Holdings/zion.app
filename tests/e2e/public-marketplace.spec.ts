@@ -1,14 +1,19 @@
 import { test, expect } from '@playwright/test';
+import fetch from 'node-fetch';
 
 const baseURL = process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:3000';
 
-test.beforeEach(async ({}, testInfo) => {
+async function isServerRunning(url: string): Promise<boolean> {
   try {
-    const res = await fetch(baseURL, { method: 'HEAD' });
-    if (!res.ok) {
-      testInfo.skip(`Server not running at ${baseURL}`);
-    }
+    const res = await fetch(url, { method: 'HEAD' });
+    return res.ok;
   } catch {
+    return false;
+  }
+}
+
+test.beforeEach(async ({}, testInfo) => {
+  if (!(await isServerRunning(baseURL))) {
     testInfo.skip(`Server not running at ${baseURL}`);
   }
 });
