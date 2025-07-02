@@ -122,7 +122,7 @@ export function useInfiniteScrollPagination<T>(
   const [items, setItems] = useState<T[]>([]);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [total, setTotal] = useState<number | undefined>();
   const [isInitialized, setIsInitialized] = useState(false);
@@ -176,7 +176,7 @@ export function useInfiniteScrollPagination<T>(
     setItems([]);
     setPage(1);
     setHasMore(true);
-    setLoading(false);
+    setLoading(true);
     setError(null);
     setTotal(undefined);
     setIsInitialized(false);
