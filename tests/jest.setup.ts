@@ -475,13 +475,9 @@ jest.mock('@/components/talent/FilterSidebar', () => ({ FilterSidebar: () => nul
 // Extend Vitest shim with timer helpers if not present
 // @ts-expect-error vi is added by the vitest mock above - timer helpers added for compatibility
 if (global.vi) {
-<<<<<<< HEAD
-  // @ts-expect-error global.vi timer methods extension - TypeScript doesn't expect vitest timer APIs in Jest
-  if (!(global.vi as any).useFakeTimers) (global.vi as any).useFakeTimers = jest.useFakeTimers.bind(jest);
-  // @ts-expect-error global.vi timer methods extension - TypeScript doesn't expect vitest timer APIs in Jest
-  if (!(global.vi as any).runAllTimers) (global.vi as any).runAllTimers = jest.runAllTimers.bind(jest);
-  // @ts-expect-error global.vi timer methods extension - TypeScript doesn't expect vitest timer APIs in Jest
-  if (!(global.vi as any).advanceTimersByTime) (global.vi as any).advanceTimersByTime = jest.advanceTimersByTime.bind(jest);
+  if (!global.vi.useFakeTimers) global.vi.useFakeTimers = jest.useFakeTimers.bind(jest);
+  if (!global.vi.runAllTimers) global.vi.runAllTimers = jest.runAllTimers.bind(jest);
+  if (!global.vi.advanceTimersByTime) global.vi.advanceTimersByTime = jest.advanceTimersByTime.bind(jest);
 }
 
 // -----------------------------
@@ -491,44 +487,16 @@ if (global.vi) {
 jest.mock('react-i18next', () => {
   const t = (key: string) => {
     // Return substring after last dot to convert 'categories.services' => 'services'
-    if (key.includes('.')) {
+    if (key && key.includes('.')) {
       return key.split('.').pop();
     }
     return key;
-=======
-  if (!global.vi.useFakeTimers) global.vi.useFakeTimers = jest.useFakeTimers.bind(jest);
-  if (!global.vi.runAllTimers) global.vi.runAllTimers = jest.runAllTimers.bind(jest);
-  if (!global.vi.advanceTimersByTime) global.vi.advanceTimersByTime = jest.advanceTimersByTime.bind(jest);
-}
-
-// ---------------------------------------------------------------------------
-// react-i18next mock – returns English translations so tests receive readable
-// text instead of raw keys (fixes many expectations).
-// ---------------------------------------------------------------------------
-jest.mock('react-i18next', () => {
-  const en = require('@/i18n/locales/en-US/translation.json');
-
-  const translate = (key: string): string => {
-    if (!key) return '';
-    const parts = key.split('.');
-    let curr = en;
-    for (const p of parts) {
-      curr = curr && curr[p];
-      if (!curr) {
-        return key; // fallback to key when not found
-      }
-    }
-    return typeof curr === 'string' ? curr : key;
->>>>>>> f23d96de9595444025c73b6fe31e611c0f3f880f
   };
 
   return {
     __esModule: true,
-<<<<<<< HEAD
-    // Preserve the hook signature
     useTranslation: () => ({ t, i18n: { changeLanguage: jest.fn() } }),
     Trans: ({ children }: { children: React.ReactNode }) => children,
-    // Provide a dummy init to satisfy i18next import side-effects
     initReactI18next: { type: '3rdParty', init: jest.fn() },
   };
 });
@@ -623,14 +591,6 @@ jest.mock('axios-retry', () => {
 });
 
 jest.mock('@ungap/structured-clone', () => ({ __esModule: true, default: (val: any) => JSON.parse(JSON.stringify(val)) }));
-=======
-    useTranslation: () => ({ t: translate, i18n: { changeLanguage: jest.fn() } }),
-    Trans: ({ children }: { children: any }) => children,
-  };
-});
-<<<<<<< HEAD
->>>>>>> f23d96de9595444025c73b6fe31e611c0f3f880f
-=======
 
 // ---------------------------------------------------------------------------
 // Global mocks for common libraries
@@ -653,4 +613,3 @@ jest.mock('@supabase/supabase-js', () => {
     createClient: jest.fn(() => ({ auth: authStub })),
   };
 });
->>>>>>> 9ee51355f57ac94925b3b52dccbf6e1f836962f7
