@@ -11,7 +11,7 @@ import WhitepaperPreviewPanel from '@/components/WhitepaperPreviewPanel';
 jest.mock('next/router', () => require('next-router-mock'));
 jest.mock('next/link', () => ({
   __esModule: true,
-  default: ({ children, href }) => <a href={href}>{children}</a>,
+  default: ({ children, href }: { children: React.ReactNode; href: string }) => <a href={href}>{children}</a>,
 }));
 
 jest.mock('@/integrations/supabase/client', () => ({
@@ -25,40 +25,30 @@ jest.mock('@/integrations/supabase/client', () => ({
 jest.mock('@/components/WhitepaperPreviewPanel', () => jest.fn(() => <div data-testid="mock-preview-panel">Preview Panel</div>));
 
 // Mock the useAuth hook used in WhitepaperViewPage
+const mockUseAuth = jest.fn();
 jest.mock('@/pages/WhitepaperViewPage', () => {
-  const ActualPage = jest.requireActual('@/pages/WhitepaperViewPage');
+  const ActualPageModule = jest.requireActual('@/pages/WhitepaperViewPage');
   return {
-    ...ActualPage, // Spread original exports
+    ...ActualPageModule, // Spread original exports
     __esModule: true, // This is important for modules with default exports
     default: (props: any) => { // Mock the default export (the page component)
       // Mock useAuth inline for this test file's scope
-      ActualPage.useAuth = jest.fn();
-      return <ActualPage.default {...props} />;
+      ActualPageModule.useAuth = mockUseAuth;
+      return <ActualPageModule.default {...props} />;
     },
   };
 });
-// A more direct way to mock useAuth if the above doesn't work due to module system intricacies:
-// jest.mock('@/hooks/useAuth', () => ({ // Assuming useAuth is in a hook file
-//   useAuth: jest.fn(),
-// }));
-// Then in tests: import { useAuth } from '@/hooks/useAuth'; (useAuth as jest.Mock).mockReturnValue(...)
-
 
 const mockSupabaseInvoke = supabase.functions.invoke as jest.Mock;
 const mockUseRouter = useRouter as jest.Mock;
 const mockPreviewPanel = WhitepaperPreviewPanel as jest.Mock;
-// const mockUseAuth = useAuth as jest.Mock; // If useAuth is a separate, imported hook
 
 describe('WhitepaperViewPage', () => {
   beforeEach(() => {
     mockSupabaseInvoke.mockReset();
     mockUseRouter.mockReset();
     mockPreviewPanel.mockClear();
-     // Reset useAuth mock before each test if it's directly part of WhitepaperViewPage's module (as per current mock)
-    const PageWithMockedAuth = require('@/pages/WhitepaperViewPage');
-    if (PageWithMockedAuth.useAuth) {
-        (PageWithMockedAuth.useAuth as jest.Mock).mockReset();
-    }
+    mockUseAuth.mockReset();
   });
 
   const mockWhitepaperData = {
@@ -75,7 +65,7 @@ describe('WhitepaperViewPage', () => {
       pathname: '/share/test-id',
       asPath: '/share/test-id',
     });
-    // (require('@/pages/WhitepaperViewPage').useAuth as jest.Mock).mockReturnValue({ isAdmin: false });
+    mockUseAuth.mockReturnValue({ isAdmin: false });
     render(
       <MemoryRouterProvider>
         <WhitepaperViewPage />
@@ -91,7 +81,7 @@ describe('WhitepaperViewPage', () => {
       pathname: '/share/public-id',
       asPath: '/share/public-id',
     });
-    (require('@/pages/WhitepaperViewPage').useAuth as jest.Mock).mockReturnValue({ isAdmin: false });
+    mockUseAuth.mockReturnValue({ isAdmin: false });
     mockSupabaseInvoke.mockResolvedValue({
       data: { whitepaper_data: mockWhitepaperData, is_public: true, created_at: new Date().toISOString() },
       error: null,
@@ -115,7 +105,7 @@ describe('WhitepaperViewPage', () => {
       pathname: '/share/error-id',
       asPath: '/share/error-id',
     });
-    (require('@/pages/WhitepaperViewPage').useAuth as jest.Mock).mockReturnValue({ isAdmin: false });
+    mockUseAuth.mockReturnValue({ isAdmin: false });
     mockSupabaseInvoke.mockResolvedValue({
       data: null,
       error: { message: 'Fetch error' },
@@ -135,7 +125,7 @@ describe('WhitepaperViewPage', () => {
       pathname: '/share/not-found-id',
       asPath: '/share/not-found-id',
     });
-    (require('@/pages/WhitepaperViewPage').useAuth as jest.Mock).mockReturnValue({ isAdmin: false });
+    mockUseAuth.mockReturnValue({ isAdmin: false });
     mockSupabaseInvoke.mockResolvedValue({
       data: null, // Or { data: { whitepaper_data: null } }
       error: null,
@@ -156,7 +146,7 @@ describe('WhitepaperViewPage', () => {
         pathname: '/share/private-id',
         asPath: '/share/private-id',
       });
-      (require('@/pages/WhitepaperViewPage').useAuth as jest.Mock).mockReturnValue({ isAdmin: false });
+      mockUseAuth.mockReturnValue({ isAdmin: false });
       mockSupabaseInvoke.mockResolvedValue({
         data: { whitepaper_data: mockWhitepaperData, is_public: false, created_at: new Date().toISOString() },
         error: null,
@@ -178,7 +168,7 @@ describe('WhitepaperViewPage', () => {
         pathname: '/share/private-id-admin',
         asPath: '/share/private-id-admin',
       });
-      (require('@/pages/WhitepaperViewPage').useAuth as jest.Mock).mockReturnValue({ isAdmin: true }); // User is admin
+      mockUseAuth.mockReturnValue({ isAdmin: true }); // User is admin
       mockSupabaseInvoke.mockResolvedValue({
         data: { whitepaper_data: mockWhitepaperData, is_public: false, created_at: new Date().toISOString() },
         error: null,
@@ -200,7 +190,7 @@ describe('WhitepaperViewPage', () => {
           pathname: '/share/public-id-non-admin',
           asPath: '/share/public-id-non-admin',
         });
-        (require('@/pages/WhitepaperViewPage').useAuth as jest.Mock).mockReturnValue({ isAdmin: false });
+        mockUseAuth.mockReturnValue({ isAdmin: false });
         mockSupabaseInvoke.mockResolvedValue({
           data: { whitepaper_data: mockWhitepaperData, is_public: true, created_at: new Date().toISOString() },
           error: null,

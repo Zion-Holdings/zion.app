@@ -1,3 +1,4 @@
+/* eslint-env webextensions */
 
 const OPENAI_API_KEY = '';
 // Base URL for opening Zion pages in a new tab

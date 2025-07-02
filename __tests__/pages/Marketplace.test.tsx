@@ -11,7 +11,7 @@ import { SERVICES as allStaticServiceData } from '@/data/servicesData';
 
 
 // Combine all static data sources for link checking
-const allKnownProductsForTest = [
+const _allKnownProductsForTest = [
   ...allStaticMarketplaceData,
   ...INITIAL_MARKETPLACE_PRODUCTS,
   ...allStaticServiceData,
