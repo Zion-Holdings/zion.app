@@ -3,7 +3,6 @@ import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { useRouter } from 'next/router';
 import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
-import Link from 'next/link';
 import WhitepaperViewPage from '@/pages/WhitepaperViewPage';
 import { supabase } from '@/integrations/supabase/client';
 import WhitepaperPreviewPanel from '@/components/WhitepaperPreviewPanel';
