@@ -203,7 +203,7 @@ const EquipmentFilterControls = ({
 const EquipmentCard = ({ equipment, onViewDetails }: { equipment: ProductListing; onViewDetails: () => void }) => {
   const { formatPrice } = useCurrency();
   return (
-    <Card className="h-full hover:shadow-lg transition-shadow">
+    <Card data-testid="equipment-item" className="h-full hover:shadow-lg transition-shadow">
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between">
           <div className="flex-1 min-w-0">
@@ -244,7 +244,7 @@ const EquipmentCard = ({ equipment, onViewDetails }: { equipment: ProductListing
 
 // Loading grid
 const EquipmentLoadingGrid = ({ count = 8 }: { count?: number }) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+  <div data-testid="loading-state-equipment" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
     {Array.from({ length: count }).map((_, i) => <SkeletonCard key={i} />)}
   </div>
 );
@@ -427,13 +427,14 @@ function EquipmentPageContent() {
 
   // Error state
   if (error && equipment.length === 0) {
+    const errorMessage = typeof error === 'string' ? error : (error as any)?.message || String(error);
     // Notify toast once for visibility (supports unit tests expectations)
-    toast({ title: String(error), variant: 'destructive' });
+    toast({ title: errorMessage, variant: 'destructive' });
     return (
       <div className="container py-8">
         <div className="text-center space-y-4">
           <AlertTriangle className="mx-auto h-12 w-12 text-red-500" />
-          <h2 className="text-2xl font-bold">Failed to load equipment: {error}</h2>
+          <h2 className="text-2xl font-bold">Failed to load equipment: {errorMessage}</h2>
           <p className="text-muted-foreground max-w-md mx-auto">Please try again later.</p>
           <div className="flex gap-2 justify-center">
             <Button onClick={refresh} variant="outline">
