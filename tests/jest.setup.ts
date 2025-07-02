@@ -185,11 +185,17 @@ jest.mock('firebase/storage', () => ({
 }));
 
 // Mock axios
-jest.mock('axios', () => ({
-  get: jest.fn(() => Promise.resolve({ data: {} })),
-  post: jest.fn(() => Promise.resolve({ data: {} })),
-  // Add other axios methods if used (e.g., put, delete, request)
-}));
+jest.mock('axios', () => {
+  const axiosMock: any = {
+    defaults: { baseURL: 'http://localhost' },
+    get: jest.fn(() => Promise.resolve({ data: {} })),
+    post: jest.fn(() => Promise.resolve({ data: {} })),
+    put: jest.fn(() => Promise.resolve({ data: {} })),
+    delete: jest.fn(() => Promise.resolve({ data: {} })),
+  };
+  axiosMock.create = jest.fn(() => axiosMock);
+  return axiosMock;
+});
 
 // Mock ResizeObserver for Radix UI components and other libraries that might use it
 global.ResizeObserver = jest.fn().mockImplementation(() => ({
@@ -458,4 +464,95 @@ if (global.vi) {
   if (!(global.vi as any).runAllTimers) (global.vi as any).runAllTimers = jest.runAllTimers.bind(jest);
   // @ts-expect-error global.vi timer methods extension - TypeScript doesn't expect vitest timer APIs in Jest
   if (!(global.vi as any).advanceTimersByTime) (global.vi as any).advanceTimersByTime = jest.advanceTimersByTime.bind(jest);
+}
+
+// -----------------------------
+// Mock react-i18next so that translation keys are human-readable during tests.
+// This avoids the need to load i18n resources and keeps unit expectations simple.
+// -----------------------------
+jest.mock('react-i18next', () => {
+  const t = (key: string) => {
+    // Return substring after last dot to convert 'categories.services' => 'services'
+    if (key.includes('.')) {
+      return key.split('.').pop();
+    }
+    return key;
+  };
+
+  return {
+    __esModule: true,
+    // Preserve the hook signature
+    useTranslation: () => ({ t, i18n: { changeLanguage: jest.fn() } }),
+    Trans: ({ children }: { children: React.ReactNode }) => children,
+    // Provide a dummy init to satisfy i18next import side-effects
+    initReactI18next: { type: '3rdParty', init: jest.fn() },
+  };
+});
+
+// Mock Next.js Link to work with React Router in tests
+jest.mock('next/link', () => {
+  const React = require('react');
+  const forwardRef = React.forwardRef;
+  const LinkMock = ({ href, children, ...rest }: any, ref: any) => {
+    return React.createElement('a', { href, ref, ...rest }, children);
+  };
+  return { __esModule: true, default: forwardRef(LinkMock) };
+});
+
+// Ensure axios has a default baseURL to avoid undefined property assignment
+if (!axios.defaults.baseURL) axios.defaults.baseURL = 'http://localhost';
+
+// Provide stub interceptor chains so code that registers interceptors doesn't crash
+if (!axios.interceptors?.request?.use) {
+  // @ts-ignore
+  axios.interceptors = {
+    request: { use: jest.fn() },
+    response: { use: jest.fn() }
+  };
+}
+
+// Mock next/navigation to avoid unresolved module errors
+jest.mock('next/navigation', () => ({
+  useRouter: () => ({ push: jest.fn(), replace: jest.fn(), refresh: jest.fn(), back: jest.fn(), forward: jest.fn() })
+}));
+
+// Mock mongoose to avoid heavy BSON/ESM issues in tests that import it indirectly
+jest.mock('mongoose', () => {
+  const schemaFn = function() {
+    return {
+      pre: jest.fn(),
+      post: jest.fn(),
+    };
+  };
+  return {
+    Schema: schemaFn,
+    model: jest.fn(() => ({})),
+    connect: jest.fn(),
+    connection: { on: jest.fn() },
+  };
+});
+
+// Provide mock AuthContext to allow Consumer access
+jest.mock('@/context/auth/AuthContext', () => {
+  const React = require('react');
+  const defaultValue = { login: jest.fn(), logout: jest.fn(), user: null };
+  const AuthContext = React.createContext(defaultValue);
+  return { __esModule: true, AuthContext, default: AuthContext };
+});
+
+// ---------------------------------------------------------------------------
+// Simple Vitest global shim for suites still using `vi`
+// ---------------------------------------------------------------------------
+// @ts-expect-error Add vi globally for legacy tests
+if (typeof global.vi === 'undefined') {
+  // @ts-expect-error assign
+  global.vi = {
+    fn: jest.fn,
+    spyOn: jest.spyOn.bind(jest),
+    mock: jest.mock.bind(jest),
+    clearAllMocks: jest.clearAllMocks,
+    resetAllMocks: jest.resetAllMocks,
+    mockResolvedValue: (val) => jest.fn().mockResolvedValue(val),
+    mockRejectedValue: (val) => jest.fn().mockRejectedValue(val),
+  };
 }

@@ -45,8 +45,6 @@ const nextConfig = {
   poweredByHeader: false,
   trailingSlash: false,
   reactStrictMode: true,
-  bundlePagesRouterDependencies: true,
-
   // Optimized for fast builds (hanging issue SOLVED)
   // outputFileTracing: false, // Intentionally disabled via env vars in build scripts and netlify.toml to prevent hanging.
   productionBrowserSourceMaps: false, // Disable for faster builds
@@ -58,7 +56,6 @@ const nextConfig = {
     NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
   },
 
-  serverExternalPackages: ['@prisma/client'],
   modularizeImports: {
     'lucide-react': {
       transform: 'lucide-react/dist/esm/icons/{{kebabCase member}}',
@@ -78,6 +75,7 @@ const nextConfig = {
       'node_modules/@google/model-viewer/**/*',
     ],
   },
+
   experimental: {
     optimizePackageImports: [
       'lucide-react', 
@@ -270,9 +268,101 @@ const nextConfig = {
     'react-markdown',
     'date-fns',
     'react-day-picker',
+    'bail',
+    'is-plain-obj',
+    'mdast-util-from-markdown',
+    'mdast-util-to-hast',
+    'unified',
+    'remark-parse',
+    'remark-rehype',
     'formik',
-    // lodash-es is already ESM, lodash (CJS) is not directly installed or needed for transpilation here
-    // as formik's usage of it is handled by webpack aliases and replacements.
+    // UI libraries that need transpilation
+    '@chakra-ui/react',
+    '@radix-ui/react-accordion',
+    '@radix-ui/react-alert-dialog',
+    '@radix-ui/react-aspect-ratio',
+    '@radix-ui/react-avatar',
+    '@radix-ui/react-checkbox',
+    '@radix-ui/react-dialog',
+    '@radix-ui/react-dropdown-menu',
+    '@radix-ui/react-label',
+    '@radix-ui/react-popover',
+    '@radix-ui/react-progress',
+    '@radix-ui/react-scroll-area',
+    '@radix-ui/react-select',
+    '@radix-ui/react-separator',
+    '@radix-ui/react-slider',
+    '@radix-ui/react-slot',
+    '@radix-ui/react-switch',
+    '@radix-ui/react-tabs',
+    '@radix-ui/react-toast',
+    '@radix-ui/react-toggle',
+    '@radix-ui/react-tooltip',
+    '@radix-ui/react-hover-card',
+    '@radix-ui/react-navigation-menu',
+    '@hookform/resolvers',
+    '@google/model-viewer',
+    '@reduxjs/toolkit',
+    '@reown/appkit-adapter-ethers',
+    '@reown/appkit',
+    '@coinbase/wallet-sdk',
+    '@reown/appkit-common',
+    '@reown/appkit-controllers',
+    '@reown/appkit-pay',
+    '@reown/appkit-ui',
+    '@reown/appkit-wallet',
+    '@reown/appkit-utils',
+    'ethers',
+    'viem',
+    '@wagmi/core',
+    '@wagmi/connectors',
+    '@tanstack/react-query',
+    'axios',
+    'class-variance-authority',
+    'clsx',
+    'devlop',
+    'tailwind-merge',
+    'embla-carousel-react',
+    'framer-motion',
+    'hast-util-to-jsx-runtime',
+    'html-url-attributes',
+    'jspdf-autotable',
+    'jspdf',
+    'recharts',
+    'comma-separated-tokens',
+    'estree-util-is-identifier-name',
+    'hast-util-whitespace',
+    'property-information',
+    'react-hook-form',
+    'space-separated-tokens',
+    'style-to-object',
+    'unist-util-position',
+    'unist-util-stringify-position',
+    'unist-util-visit',
+    'vfile',
+    'zod',
+    'react-i18next',
+    'react-loading-skeleton',
+    'react-redux',
+    'remark-parse',
+    'remark-rehype',
+    'unified',
+    'micromark',
+    'micromark-util-character',
+    'micromark-util-chunked',
+    'micromark-util-classify-character',
+    'micromark-util-combine-extensions',
+    'micromark-util-decode-numeric-character-reference',
+    'micromark-util-decode-string',
+    'micromark-util-encode',
+    'micromark-util-html-tag-name',
+    'micromark-util-normalize-identifier',
+    'micromark-util-resolve-all',
+    'micromark-util-sanitize-uri',
+    'micromark-util-subtokenize',
+    'micromark-util-symbol',
+    'micromark-util-types',
+    // lodash is installed for Formik compatibility; lodash-es is used directly in our code.
     'helia',
     '@helia/json',
     'multiformats',
@@ -343,26 +433,28 @@ const nextConfig = {
     }
     
     // Development optimizations to prevent memory leaks with 176+ pages
-    if (dev && !isServer) {
-      config.watchOptions = {
-        ignored: /node_modules/,
-        aggregateTimeout: 300,
-        poll: false, // Use native file watching instead of polling
-      };
+    if (dev) {
+      if (!isServer) {
+        config.watchOptions = {
+          ignored: /node_modules/,
+          aggregateTimeout: 300,
+          poll: false, // Use native file watching instead of polling
+        };
+      }
 
       // Alias react-router-dom to a lightweight stub to avoid build errors
       config.resolve.alias = {
         ...config.resolve.alias,
         'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
-        'lodash/toPath': 'lodash-es/toPath',
-        'lodash': 'lodash-es',
       };
-      
-      // Optimize memory usage in development
-      config.stats = 'errors-warnings';
-      config.infrastructureLogging = {
-        level: 'error',
-      };
+
+      if (!isServer) {
+        // Optimize memory usage in development
+        config.stats = 'errors-warnings';
+        config.infrastructureLogging = {
+          level: 'error',
+        };
+      }
     }
     
     // For Netlify deployment, exclude problematic files temporarily
@@ -446,7 +538,7 @@ const nextConfig = {
 
     // Exclude native modules from server-side bundling to prevent build errors
     if (isServer) {
-      // Add all problematic native modules as externals
+      // Add all problematic native modules as externals with commonjs type
       config.externals = config.externals || [];
       const nativeModules = [
         '@chainsafe/libp2p-noise',
@@ -469,8 +561,17 @@ const nextConfig = {
         'level'
       ];
       
-      config.externals.push(...nativeModules);
+      // Add as external with commonjs type instead of module type
+      nativeModules.forEach(module => {
+        config.externals.push({
+          [module]: `commonjs ${module}`
+        });
+      });
       console.log('🚫 Native modules externalized for server build:', nativeModules.length);
+    } else {
+      // For client-side, bundle problematic UI libraries instead of externalizing
+      config.externals = config.externals || [];
+      // Don't externalize UI libraries on client side
     }
 
     // Fix webpack cache configuration to prevent build errors and warnings
@@ -581,7 +682,7 @@ const nextConfig = {
             
             // Utilities bundle
             utils: {
-              test: /[\\/]node_modules[\\/](lodash-es|date-fns|axios|zod|yup)[\\/]/,
+              test: /[\\/]node_modules[\\/](lodash|lodash-es|date-fns|axios|zod|yup)[\\/]/,
               name: 'utils-vendor',
               chunks: 'all',
               priority: 20,
@@ -673,17 +774,6 @@ const nextConfig = {
         __SENTRY_DEBUG__: false,
         __SENTRY_TRACING__: true,
       })
-    );
-
-    // Replace problematic lodash imports with lodash-es equivalents
-    config.plugins.push(
-      new webpack.NormalModuleReplacementPlugin(
-        /^lodash\//,
-        (resource) => {
-          const request = resource.request.replace('lodash/', 'lodash-es/');
-          resource.request = request;
-        }
-      )
     );
 
     // Note: Sentry replacement is handled via resolve.alias above for CI builds
@@ -802,16 +892,6 @@ const nextConfig = {
     if (!dev) {
       config.resolve.alias = {
         ...config.resolve.alias,
-        'lodash': 'lodash-es',
-        'lodash/isPlainObject': 'lodash-es/isPlainObject',
-        'lodash/cloneDeep': 'lodash-es/cloneDeep', 
-        'lodash/clone': 'lodash-es/clone',
-        'lodash/toPath': 'lodash-es/toPath',
-        'lodash/isEqual': 'lodash-es/isEqual',
-        'lodash/isFunction': 'lodash-es/isFunction',
-        'lodash/isString': 'lodash-es/isString',
-        'lodash/isArray': 'lodash-es/isArray',
-        'lodash/isObject': 'lodash-es/isObject',
         'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
       };
 

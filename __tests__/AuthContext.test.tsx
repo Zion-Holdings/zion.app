@@ -12,9 +12,9 @@ jest.mock('@/utils/safeStorage', () => ({
   safeSessionStorage: { setItem: jest.fn(), getItem: jest.fn(), removeItem: jest.fn() }
 }));
 
-const replace = jest.fn();
+const mockReplace = jest.fn();
 jest.mock('next/router', () => ({
-  useRouter: () => ({ replace, asPath: '/', isReady: true })
+  useRouter: () => ({ replace: mockReplace, asPath: '/', isReady: true })
 }));
 
 describe('AuthContext login', () => {
@@ -49,6 +49,6 @@ describe('AuthContext login', () => {
     await waitFor(() => {
       expect(safeStorage.setItem).toHaveBeenCalledWith('zion_token', 'jwt');
     });
-    expect(replace).toHaveBeenCalledWith('/dashboard');
+    expect(mockReplace).toHaveBeenCalledWith('/dashboard');
   });
 });

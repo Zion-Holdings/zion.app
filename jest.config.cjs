@@ -32,18 +32,21 @@ module.exports = {
     '^@/data/(.*)$': '<rootDir>/src/data/$1',
     '^@/integrations/(.*)$': '<rootDir>/src/integrations/$1',
     '^@/types/(.*)$': '<rootDir>/src/types/$1',
+    '^@/store$': '<rootDir>/src/store/index.ts',
     '^@/store/(.*)$': '<rootDir>/src/store/$1',
-    '^@/routes/(.*)$': '<rootDir>/src/routes/$1',
+    '^@/layout$': '<rootDir>/src/layout/index.ts',
     '^@/layout/(.*)$': '<rootDir>/src/layout/$1',
+    '^@/routes/(.*)$': '<rootDir>/src/routes/$1',
     '^@/mobile/(.*)$': '<rootDir>/src/mobile/$1',
     '^@/sdk/(.*)$': '<rootDir>/sdk/$1',
     '^@/mocks/(.*)$': '<rootDir>/src/mocks/$1',
     '^@/config/(.*)$': '<rootDir>/src/config/$1',
+    '^@/middleware/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     
     // Special module mocks
     '^msw/node$': require.resolve('msw/node'),
     '^next/router$': 'next-router-mock',
-    '^next/navigation$': 'next-router-mock/next-navigation',
+    '^next/navigation$': '<rootDir>/tests/__mocks__/emptyModule.js',
     
     // Mock heavy libraries not needed for unit tests
     '^@reown/appkit(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
@@ -51,6 +54,15 @@ module.exports = {
     '^uint8arrays/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^multiformats/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^react-markdown$': '<rootDir>/tests/__mocks__/reactMarkdown.js',
+    '^@/pages/(.*)\.jsx$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/pages/Signup$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/pages/signup$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/utils/devtools$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^scripts/watchdog$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^os-utils$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/pages/api/points/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/pages/api/users/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/pages/Login.jsx$': '<rootDir>/tests/__mocks__/emptyModule.js',
   },
   
   // Test file patterns

@@ -24,17 +24,27 @@ jest.mock('sonner', () => ({
 
 jest.mock('react-markdown', () => (props: { children: React.ReactNode }) => <div data-testid="mock-markdown">{props.children}</div>);
 
-jest.mock('@/components/WhitepaperSectionEditor', () => jest.fn(({ title, content, onContentChange }) => (
-  <div data-testid={`mock-section-editor-${title.toLowerCase().replace(/\s+/g, '-')}`}>
-    <h3>{title}</h3>
-    <textarea value={content} onChange={(e) => onContentChange(e.target.value)} />
-  </div>
-)));
+jest.mock('@/components/WhitepaperSectionEditor', () => {
+  const MockWhitepaperSectionEditor = ({ title, content, onContentChange }: any) => (
+    <div data-testid={`mock-section-editor-${title.toLowerCase().replace(/\s+/g, '-')}`}>
+      <h3>{title}</h3>
+      <textarea value={content} onChange={(e) => onContentChange(e.target.value)} />
+    </div>
+  );
+  MockWhitepaperSectionEditor.displayName = 'MockWhitepaperSectionEditor';
+  return MockWhitepaperSectionEditor;
+});
 
-jest.mock('@/components/WhitepaperPreviewPanel', () => jest.fn(() => <div data-testid="mock-preview-panel" />));
+jest.mock('@/components/WhitepaperPreviewPanel', () => {
+  const MockWhitepaperPreviewPanel = () => <div data-testid="mock-preview-panel" />;
+  MockWhitepaperPreviewPanel.displayName = 'MockWhitepaperPreviewPanel';
+  return MockWhitepaperPreviewPanel;
+});
 
 // Mock Recharts ResponsiveContainer as it can cause issues in JSDOM
-jest.spyOn(recharts, 'ResponsiveContainer').mockImplementation(({ children }) => <div data-testid="mock-responsive-container">{children}</div>);
+jest.spyOn(recharts, 'ResponsiveContainer').mockImplementation(function MockResponsiveContainer({ children }) { 
+  return <div data-testid="mock-responsive-container">{children}</div>;
+});
 
 
 // Mock html2canvas and jsPDF

@@ -61,7 +61,7 @@ describe('useTalentQuotes', () => {
       await act(async () => {
         try {
           await result.current.markAsViewed(mutationArgs.id);
-        } catch (_e) {
+        } catch {
           // Expected to throw if not handled by react-query's error boundary
         }
       });
@@ -97,7 +97,7 @@ describe('useTalentQuotes', () => {
       await act(async () => {
         try {
           await result.current.toggleArchive(mutationArgs.id, mutationArgs.isArchived);
-        } catch (_e) {
+        } catch {
           // Expected
         }
       });

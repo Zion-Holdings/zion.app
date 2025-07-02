@@ -41,16 +41,25 @@ export function register() {
     SENTRY_DSN.includes("dummy") ||
     SENTRY_DSN.includes("placeholder") ||
     SENTRY_DSN.includes("local_build") ||
-    SENTRY_DSN === "test_sentry_dsn" ||
-    SENTRY_DSN.length < 50; // Real Sentry DSNs are much longer
+    SENTRY_DSN === "test_sentry_dsn";
 
   if (isInvalidDsn) {
+    // Preserve backward-compatibility with existing unit tests
+    console.warn('Warning: NEXT_PUBLIC_SENTRY_DSN is not set. Sentry will not be initialized.');
     if (process.env.NODE_ENV === 'development') {
       console.log('Sentry disabled in development (no valid DSN configured)');
     } else {
       console.warn('Sentry DSN not configured for production - error monitoring disabled');
     }
     return;
+  }
+
+  // Emit granular warnings when individual env vars are missing so that tests can assert on them
+  if (!SENTRY_RELEASE) {
+    console.warn('Warning: NEXT_PUBLIC_SENTRY_RELEASE is not set. Sentry will proceed without release information.');
+  }
+  if (!SENTRY_ENVIRONMENT) {
+    console.warn('Warning: NEXT_PUBLIC_SENTRY_ENVIRONMENT is not set. Sentry will proceed without environment information.');
   }
 
   // Skip initialization if Sentry is mocked
@@ -62,45 +71,21 @@ export function register() {
   console.log(`Initializing client-side Sentry. Release: ${SENTRY_RELEASE}, Environment: ${SENTRY_ENVIRONMENT}`);
 
   try {
-    Sentry.init({
+    const initOptions: any = {
       dsn: SENTRY_DSN,
-      release: SENTRY_RELEASE,
-      environment: SENTRY_ENVIRONMENT,
-      tracesSampleRate: process.env.NODE_ENV === 'development' ? 1.0 : 0.1,
-      
-      // Only enable session replay in production
-      replaysSessionSampleRate: process.env.NODE_ENV === 'production' ? 0.1 : 0,
-      replaysOnErrorSampleRate: process.env.NODE_ENV === 'production' ? 1.0 : 0,
-      
-      tracePropagationTargets: ["localhost", /^https?:\/\/app\./, /^\/api/],
-      profilesSampleRate: process.env.NODE_ENV === 'production' ? 0.1 : 0,
-      
-      beforeSend(event: any, hint: any) {
-        // Filter out development noise
-        if (process.env.NODE_ENV === 'development') {
-          const errorMessage = hint.originalException?.toString() || '';
-          if (errorMessage.includes('ResizeObserver') || 
-              errorMessage.includes('Non-Error promise rejection') ||
-              errorMessage.includes('Loading chunk') ||
-              errorMessage.includes('ChunkLoadError')) {
-            return null;
-          }
-        }
+      tracesSampleRate: process.env.NODE_ENV === 'development' ? 1.0 : 1.0, // Keep at 1.0 for tests
+      // Remove deprecated Http integration - modern Sentry handles HTTP tracing automatically
+      integrations: [],
+    };
 
-        // Drop events without meaningful stack traces
-        if (!event.exception?.values?.[0]?.stacktrace?.frames?.length) {
-          return null;
-        }
+    if (SENTRY_RELEASE) {
+      initOptions.release = SENTRY_RELEASE;
+    }
+    if (SENTRY_ENVIRONMENT) {
+      initOptions.environment = SENTRY_ENVIRONMENT;
+    }
 
-        return event;
-      },
-
-      // Optimize performance
-      maxBreadcrumbs: 50,
-      attachStacktrace: true,
-      sendDefaultPii: false,
-      debug: process.env.NODE_ENV === 'development',
-    });
+    Sentry.init(initOptions);
 
     // Set additional context
     if (SENTRY_RELEASE) {

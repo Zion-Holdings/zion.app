@@ -54,7 +54,7 @@ class OptimizationSlackBot {
     });
 
     // Performance status command
-    this.app.command('/status', async ({ command, ack, respond }) => {
+    this.app.command('/status', async ({ command: _command, ack, respond }) => {
       await ack();
       
       try {
@@ -90,7 +90,7 @@ class OptimizationSlackBot {
     });
 
     // Optimization suggestions command
-    this.app.command('/suggestions', async ({ command, ack, respond }) => {
+    this.app.command('/suggestions', async ({ command: _command, ack, respond }) => {
       await ack();
       
       try {

@@ -8,7 +8,7 @@ async function handler(req, res) {
     return;
   }
 
-  const { name, email, phone: _phone, company: _company, location, details } = req.body || {};
+  const { name, email, phone: _phone, company: _company, location, details: _details } = req.body || {};
   if (!name || !email || !location) {
     res.statusCode = 400;
     res.json({ error: 'Missing required fields' });

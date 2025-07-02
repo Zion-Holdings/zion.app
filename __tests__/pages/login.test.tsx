@@ -3,7 +3,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Login from '@/pages/auth/login'; // Assuming Login page is now at pages/auth/login.tsx
 import { useRouter } from 'next/router';
-import { useAuth } from '@/hooks/useAuth'; // To be mocked
+// useAuth hook is mocked below - no import needed
 import { safeStorage } from '@/utils/safeStorage'; // To be mocked
 import * as Sentry from '@sentry/nextjs'; // To be mocked
 import { fireEvent as fireAnalyticsEvent } from '@/lib/analytics'; // To be mocked
@@ -82,7 +82,11 @@ jest.mock('@/lib/analytics', () => ({
 // If pages/auth/login.tsx directly renders LoginForm or similar, adjust mocks accordingly.
 // For now, assuming Login.jsx/LoginContent/LoginCard/LoginForm structure.
 // If LoginErrorFallback is used by an ErrorBoundary within Login.jsx:
-jest.mock('@/components/auth/login/LoginErrorFallback', () => () => <div data-testid="login-error-fallback">Fallback</div>);
+jest.mock('@/components/auth/login/LoginErrorFallback', () => {
+  const MockLoginErrorFallback = () => <div data-testid="login-error-fallback">Fallback</div>;
+  MockLoginErrorFallback.displayName = 'MockLoginErrorFallback';
+  return MockLoginErrorFallback;
+});
 
 // Mock toast if it's called directly in Login.jsx or children and causes issues
 jest.mock('@/hooks/use-toast', () => ({

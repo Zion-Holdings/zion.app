@@ -71,6 +71,9 @@
       "./node_modules/@types",
       "./types"
     ],
+    "types": [
+      "node"
+    ],
     "jsx": "preserve",
     "allowImportingTsExtensions": true,
     "noEmit": true,

@@ -1,4 +1,5 @@
 const { withSentry } = require('./withSentry.cjs');
+const fs = require('fs');
 
 async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -16,15 +17,17 @@ async function handler(req, res) {
       return;
     }
 
-    // TODO: Store quote request and send confirmation email
-    // console.log('New quote request:', {
-    //   name,
-    //   email,
-    //   phone,
-    //   details,
-    //   country,
-    //   service,
-    // }); // Removed for production
+    // Store quote request locally for review
+    const logEntry = {
+      timestamp: new Date().toISOString(),
+      name,
+      email,
+      phone,
+      details,
+      country: _country,
+      service: _service,
+    };
+    fs.appendFileSync('quote_requests.log', JSON.stringify(logEntry) + '\n');
 
     // In a real application you would store the quote and send a confirmation email here
 
