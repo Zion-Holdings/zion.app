@@ -195,9 +195,9 @@ jest.mock('firebase/storage', () => ({
 jest.mock('axios', () => {
   const axiosMock: any = {
     defaults: { baseURL: 'http://localhost' },
-    interceptors: { 
-      request: { use: jest.fn(), eject: jest.fn(), clear: jest.fn() }, 
-      response: { use: jest.fn(), eject: jest.fn(), clear: jest.fn() } 
+    interceptors: {
+      request: { use: jest.fn(), eject: jest.fn(), clear: jest.fn() },
+      response: { use: jest.fn(), eject: jest.fn(), clear: jest.fn() },
     },
     get: jest.fn(() => Promise.resolve({ data: {} })),
     post: jest.fn(() => Promise.resolve({ data: {} })),
@@ -516,16 +516,8 @@ if (!axios.defaults.baseURL) axios.defaults.baseURL = 'http://localhost';
 // Provide stub interceptor chains so code that registers interceptors doesn't crash
 if (!axios.interceptors?.request?.use) {
   axios.interceptors = {
-    request: { 
-      use: jest.fn(),
-      eject: jest.fn(),
-      clear: jest.fn()
-    },
-    response: { 
-      use: jest.fn(),
-      eject: jest.fn(),
-      clear: jest.fn()
-    }
+    request: { use: jest.fn(), eject: jest.fn(), clear: jest.fn() },
+    response: { use: jest.fn(), eject: jest.fn(), clear: jest.fn() },
   };
 }
 
