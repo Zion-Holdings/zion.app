@@ -188,11 +188,47 @@ export default [
       globals: {
         ...globals.serviceworker,
         workbox: "readonly",
-        importScripts: "readonly"
+        importScripts: "readonly",
+        self: "readonly",
+        clients: "readonly",
+        caches: "readonly"
       }
     },
     rules: {
-      "no-console": "off"
+      "no-console": "off",
+      "no-redeclare": "off" // Allow workbox to be redeclared in service worker context
+    }
+  },
+
+  // Jest setup files
+  {
+    files: ["tests/jest.setup.ts", "**/*jest.setup*"],
+    languageOptions: {
+      globals: {
+        ...globals.jest,
+        ...globals.node,
+        jest: "readonly",
+        global: "readonly"
+      }
+    },
+    rules: {
+      "@typescript-eslint/no-require-imports": "off",
+      "@typescript-eslint/no-explicit-any": "off"
+    }
+  },
+
+  // Mock files in scripts directory
+  {
+    files: ["scripts/__mocks__/**/*.js"],
+    languageOptions: {
+      globals: {
+        ...globals.jest,
+        ...globals.node,
+        jest: "readonly"
+      }
+    },
+    rules: {
+      "@typescript-eslint/no-require-imports": "off"
     }
   }
 ];

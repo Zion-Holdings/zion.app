@@ -5,6 +5,9 @@ const noop = () => {};
 const noopReturn = () => null;
 const noopPromise = () => Promise.resolve();
 
+// Mock onRequestError function for instrumentation compatibility
+export const onRequestError = noop;
+
 // Mock Sentry instance with all common methods
 const mockSentry = {
   // Core Sentry methods

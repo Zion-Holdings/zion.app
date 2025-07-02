@@ -125,6 +125,7 @@ async function handleGet(
           timestamp
         });
       } catch (error) {
+        // Log and handle dashboard data retrieval errors gracefully
         logErrorToProduction('Error getting dashboard data:', error);
         res.status(500).json({
           success: false,
