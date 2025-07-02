@@ -139,6 +139,7 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
 9.  **Cleaning caches and logs:**
     - Run `npm run clean:cache` to remove temporary log files and common build caches.
     - Regenerate the sitemap with `npm run sitemap` whenever routes change.
+    - Fix any accidental `react-router` links by running `node scripts/fix-link-hrefs.cjs`.
 
 10. **Generate Press Kit Archive:**
     - The downloadable press kit is not stored in the repository.
