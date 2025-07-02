@@ -31,20 +31,28 @@ process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'test_anon_key';
 import { toHaveNoViolations } from 'jest-axe';
 expect.extend(toHaveNoViolations);
 
+// Ensure global window exists for Node test environments
+if (typeof global.window === 'undefined') {
+  // @ts-ignore
+  global.window = {} as any;
+}
+
 // Mock window.matchMedia for Jest
-Object.defineProperty(window, 'matchMedia', {
-  writable: true,
-  value: jest.fn().mockImplementation(query => ({
-    matches: false, // Default to false (light theme)
-    media: query,
-    onchange: null,
-    addListener: jest.fn(), // deprecated
-    removeListener: jest.fn(), // deprecated
-    addEventListener: jest.fn(),
-    removeEventListener: jest.fn(),
-    dispatchEvent: jest.fn(),
-  })),
-});
+if (!window.matchMedia) {
+  Object.defineProperty(window, 'matchMedia', {
+    writable: true,
+    value: jest.fn().mockImplementation(query => ({
+      matches: false, // Default to false (light theme)
+      media: query,
+      onchange: null,
+      addListener: jest.fn(), // deprecated
+      removeListener: jest.fn(), // deprecated
+      addEventListener: jest.fn(),
+      removeEventListener: jest.fn(),
+      dispatchEvent: jest.fn(),
+    })),
+  });
+}
 
 // Mock import.meta.env for Jest - This was ineffective for the SyntaxError
 // global.import = {

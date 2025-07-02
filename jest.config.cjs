@@ -19,6 +19,7 @@ module.exports = {
     // Fix path mappings with more specific ordering
     '^@/pages/api/(.*)$': '<rootDir>/pages/api/$1',
     '^@/pages/(.*)$': ['<rootDir>/pages/$1', '<rootDir>/src/pages/$1'],
+    '^@/components/ui/CategoryCard$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/components/ui/(.*)$': '<rootDir>/src/components/ui/$1',
     '^@/components/(.*)$': '<rootDir>/src/components/$1',
     '^@/i18n$': '<rootDir>/src/i18n/index.ts',
