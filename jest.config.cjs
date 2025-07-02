@@ -41,11 +41,12 @@ module.exports = {
     '^@/sdk/(.*)$': '<rootDir>/sdk/$1',
     '^@/mocks/(.*)$': '<rootDir>/src/mocks/$1',
     '^@/config/(.*)$': '<rootDir>/src/config/$1',
+    '^@/middleware/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     
     // Special module mocks
     '^msw/node$': require.resolve('msw/node'),
     '^next/router$': 'next-router-mock',
-    '^next/navigation$': 'next-router-mock/next-navigation',
+    '^next/navigation$': '<rootDir>/tests/__mocks__/emptyModule.js',
     
     // Mock heavy libraries not needed for unit tests
     '^@reown/appkit(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
@@ -53,6 +54,9 @@ module.exports = {
     '^uint8arrays/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^multiformats/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^react-markdown$': '<rootDir>/tests/__mocks__/reactMarkdown.js',
+    '^@/pages/(.*)\.jsx$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/pages/Signup$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/pages/signup$': '<rootDir>/tests/__mocks__/emptyModule.js',
   },
   
   // Test file patterns

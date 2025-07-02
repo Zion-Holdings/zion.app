@@ -517,3 +517,11 @@ jest.mock('mongoose', () => {
     connection: { on: jest.fn() },
   };
 });
+
+// Provide mock AuthContext to allow Consumer access
+jest.mock('@/context/auth/AuthContext', () => {
+  const React = require('react');
+  const defaultValue = { login: jest.fn(), logout: jest.fn(), user: null };
+  const AuthContext = React.createContext(defaultValue);
+  return { __esModule: true, AuthContext, default: AuthContext };
+});
