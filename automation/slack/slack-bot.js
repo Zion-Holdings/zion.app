@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const { App } = require('@slack/bolt');
 const axios = require('axios');
 const fs = require('fs').promises;
