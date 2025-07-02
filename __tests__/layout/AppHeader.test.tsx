@@ -33,10 +33,14 @@ jest.mock('react-i18next', () => ({
 }));
 
 // Mock lucide-react icons
-jest.mock('lucide-react', () => ({
-  Menu: () => React.createElement('div', { 'data-testid': 'menu-icon' }),
-  X: () => React.createElement('div', { 'data-testid': 'x-icon' }),
-}));
+jest.mock('lucide-react', () => {
+  // Require React inside the factory to avoid "Cannot access 'React' before initialization" caused by jest hoisting.
+  const React = require('react');
+  return {
+    Menu: () => React.createElement('div', { 'data-testid': 'menu-icon' }),
+    X: () => React.createElement('div', { 'data-testid': 'x-icon' }),
+  };
+});
 
 describe('AppHeader', () => {
   const mockPush = jest.fn();

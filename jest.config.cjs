@@ -42,6 +42,7 @@ module.exports = {
     '^@/mocks/(.*)$': '<rootDir>/src/mocks/$1',
     '^@/config/(.*)$': '<rootDir>/src/config/$1',
     '^@/middleware/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^vitest$': '<rootDir>/tests/__mocks__/vitestMock.js',
     
     // Special module mocks
     '^msw/node$': require.resolve('msw/node'),
