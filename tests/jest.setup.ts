@@ -26,6 +26,11 @@ process.env.VITE_REOWN_PROJECT_ID = 'test_project_id_from_jest_setup';
 process.env.NEXT_PUBLIC_SUPABASE_URL = 'http://localhost:54321';
 process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'test_anon_key';
 
+// Provide sensible defaults for environment variables expected by tests / Cypress stubs
+process.env.TEST_USER_NAME = process.env.TEST_USER_NAME || 'Test User';
+process.env.EXISTING_USER_EMAIL = process.env.EXISTING_USER_EMAIL || 'existing@test.com';
+process.env.EXISTING_USER_PASSWORD = process.env.EXISTING_USER_PASSWORD || 'password123';
+process.env.STRIPE_TEST_CARD = process.env.STRIPE_TEST_CARD || '4242424242424242';
 
 // Jest-axe matchers for accessibility
 import { toHaveNoViolations } from 'jest-axe';
@@ -455,3 +460,30 @@ if (global.vi) {
   if (!global.vi.runAllTimers) global.vi.runAllTimers = jest.runAllTimers.bind(jest);
   if (!global.vi.advanceTimersByTime) global.vi.advanceTimersByTime = jest.advanceTimersByTime.bind(jest);
 }
+
+// ---------------------------------------------------------------------------
+// react-i18next mock – returns English translations so tests receive readable
+// text instead of raw keys (fixes many expectations).
+// ---------------------------------------------------------------------------
+jest.mock('react-i18next', () => {
+  const en = require('@/i18n/locales/en-US/translation.json');
+
+  const translate = (key: string): string => {
+    if (!key) return '';
+    const parts = key.split('.');
+    let curr = en;
+    for (const p of parts) {
+      curr = curr && curr[p];
+      if (!curr) {
+        return key; // fallback to key when not found
+      }
+    }
+    return typeof curr === 'string' ? curr : key;
+  };
+
+  return {
+    __esModule: true,
+    useTranslation: () => ({ t: translate, i18n: { changeLanguage: jest.fn() } }),
+    Trans: ({ children }: { children: any }) => children,
+  };
+});

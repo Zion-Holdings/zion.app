@@ -51,6 +51,8 @@ module.exports = {
     '^uint8arrays/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^multiformats/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^react-markdown$': '<rootDir>/tests/__mocks__/reactMarkdown.js',
+    // Fix for unresolved "@/hooks" barrel import in tests
+    '^@/hooks$': '<rootDir>/src/hooks/index.ts',
   },
   
   // Test file patterns
