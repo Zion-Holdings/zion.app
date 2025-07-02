@@ -20,7 +20,8 @@ const PATTERNS = [
   /EAI_AGAIN/i,
   /Invalid or placeholder project ID/i,
   /Environment variable.*missing/i,
-  /Missing translation key/i
+  /Missing translation key/i,
+  /map is not a function/i
 ];
 const LEVELS = ['debug', 'info', 'warn', 'error'];
 const DEDUPE = args.includes('--dedupe');
@@ -147,6 +148,9 @@ function main() {
   }
   if (/Environment variable.*missing/i.test(allText)) {
     hints.push('Some environment variables are missing. Review your .env files.');
+  }
+  if (/map is not a function/i.test(allText)) {
+    hints.push('Detected \"map is not a function\" errors. Verify array values before using .map().');
   }
   if (hints.length) {
     const header = '\n=== Suggestions ===';
