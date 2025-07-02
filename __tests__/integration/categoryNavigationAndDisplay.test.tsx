@@ -22,6 +22,7 @@ jest.mock('next/router', () => ({
 
 // Mock next/link to simplify testing navigation behavior without actual page reloads
 jest.mock('next/link', () => {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const React = require('react');
   const MockLink = ({ children, href }: { children: React.ReactNode; href: string }) => {
     return React.createElement('a', { href, onClick: (e: any) => {

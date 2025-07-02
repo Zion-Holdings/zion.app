@@ -23,7 +23,7 @@ interface AnalyticsChartProps {
   height?: number;
 }
 
-export function AnalyticsChart({ 
+export default function AnalyticsChart({ 
   title, 
   description, 
   data, 
@@ -143,3 +143,6 @@ export function AnalyticsChart({
     </Card>
   );
 }
+
+// Export both named and default for compatibility
+export { AnalyticsChart };
