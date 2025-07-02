@@ -99,9 +99,11 @@ const ProductListingCardComponent = ({
     dispatch(
       addItem({ id: listing.id, title: listing.title, price: listing.price ?? 0 })
     );
-    toast.success(`1× ${listing.title} added`, {
+    toast({
+      title: "Added to Cart",
+      description: `1× ${listing.title} added`,
       action: {
-        label: 'View Cart',
+        label: "View Cart",
         onClick: () => router.push('/cart'),
       },
     });

@@ -188,7 +188,7 @@
     "ai_talent_matching": "AI Talent Matching",
     "ai_talent_matching_desc": "Our AI-powered matching algorithm connects you with the perfect talent or job based on skills, experience, and preferences.",
     "ai_talent_matching_details": "Leveraging advanced machine learning, our matching system analyzes over 100+ data points to create perfect connections between talents and opportunities.",
-    "ai_talent_matching_summary": "Zion’s AI Matcher quickly analyzes your project requirements and talent profiles to deliver the most relevant connections. Save hours of searching and start collaborating with the right experts in moments.",
+    "ai_talent_matching_summary": "Zion's AI Matcher quickly analyzes your project requirements and talent profiles to deliver the most relevant connections. Save hours of searching and start collaborating with the right experts in moments.",
     "ai_talent_matching_benefit1": "Automated matching saves research time.",
     "ai_talent_matching_benefit2": "Improves fit with smart filtering.",
     "ai_talent_matching_benefit3": "Adapts recommendations as needs change.",
@@ -233,7 +233,7 @@
     "mobile_app": "Mobile App",
     "mobile_app_desc": "Take Zion with you on the go with our mobile app for iOS and Android devices.",
     "mobile_app_details": "Manage your projects, communicate with clients or talents, and receive real-time updates wherever you are.",
-    "mobile_app_summary": "Manage your projects and messages on the go with Zion’s mobile app. Get real-time alerts and easily browse listings from any device.",
+    "mobile_app_summary": "Manage your projects and messages on the go with Zion's mobile app. Get real-time alerts and easily browse listings from any device.",
     "mobile_app_benefit1": "Full marketplace access.",
     "mobile_app_benefit2": "Push notifications for updates.",
     "mobile_app_benefit3": "Simple, intuitive interface.",
@@ -303,9 +303,9 @@
   "newsletter": {
     "subject1": "Welcome to Zion: Let's Innovate Together",
     "subject2": "Thanks for Joining the Zion Community!",
-    "subject3": "You’re in! Discover AI Opportunities",
+    "subject3": "You're in! Discover AI Opportunities",
     "subject4": "Ready for Weekly Tech Inspiration?",
-    "welcome_email": "Hello and welcome to Zion! Thank you for subscribing to our newsletter. Each week, we share the latest marketplace listings, expert tips, and community events designed to accelerate your success. Whether you’re hiring talent, offering services, or exploring new tools, our goal is to keep you informed and inspired. Be on the lookout for special member perks and early access to upcoming features. If you ever have questions or suggestions, simply reply to this email—we love hearing from our community. Plus, you'll receive exclusive invites to webinars and product launches. Our team is committed to empowering you with the insights you need to stay ahead in the fast-moving AI industry. Welcome aboard!"
+    "welcome_email": "Hello and welcome to Zion! Thank you for subscribing to our newsletter. Each week, we share the latest marketplace listings, expert tips, and community events designed to accelerate your success. Whether you're hiring talent, offering services, or exploring new tools, our goal is to keep you informed and inspired. Be on the lookout for special member perks and early access to upcoming features. If you ever have questions or suggestions, simply reply to this email—we love hearing from our community. Plus, you'll receive exclusive invites to webinars and product launches. Our team is committed to empowering you with the insights you need to stay ahead in the fast-moving AI industry. Welcome aboard!"
   },
   "benefits": {
     "ai_matchmaking": "AI-Powered Matchmaking",
@@ -341,8 +341,8 @@
     "go_to_dashboard": "Go to Dashboard",
     "go_to_marketplace": "Go to Marketplace",
     "go_back": "Go Back",
-    "forbidden_title": "403 \u2013 Forbidden",
-    "server_error_title": "500 \u2013 Server Error",
+    "forbidden_title": "403 – Forbidden",
+    "server_error_title": "500 – Server Error",
     "server_error": "Server Error",
     "page_lost_message": "The page you're looking for seems to have vanished into the digital void. Let's get you back on track to explore the future of AI and technology.",
     "explore_marketplace": "Explore Our Marketplace",
@@ -440,7 +440,7 @@
     },
     "earnings_title": "Earnings & Payouts",
     "earnings_desc": "Track your earnings and manage payouts",
-  "earnings_placeholder": "Earnings tracking and payout requests will be available soon."
+    "earnings_placeholder": "Earnings tracking and payout requests will be available soon."
   },
   "quote_form": {
     "title": "Get a Quote Now",
@@ -467,5 +467,5 @@
     "submit": "Get Your Free Commercial Proposal"
   },
   "login": "Login",
-  "signup": "Sign up"
+  "signup": "Sign Up"
 }
