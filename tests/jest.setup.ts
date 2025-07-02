@@ -447,7 +447,7 @@ jest.mock('msw/node', () => ({ setupServer: () => ({ listen: jest.fn(), resetHan
 jest.mock('@/components/search/FilterSidebar', () => ({ FilterSidebar: () => null }));
 
 // Extend Vitest shim with timer helpers if not present
-// @ts-expect-error: vi is added by the vitest mock above - TypeScript doesn't see the mock declaration
+// @ts-expect-error: vi is added by the vitest mock above - timer helpers added for compatibility
 if (global.vi) {
   // @ts-expect-error: global.vi timer methods extension - TypeScript doesn't expect vitest timer APIs in Jest
   if (!(global.vi as any).useFakeTimers) (global.vi as any).useFakeTimers = jest.useFakeTimers.bind(jest);
