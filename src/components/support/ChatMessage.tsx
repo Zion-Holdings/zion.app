@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
@@ -59,21 +58,37 @@ export function ChatMessage({ message, isUser, timestamp }: ChatMessageProps) {
   );
 }
 
-// Function to convert URLs and help links to actual clickable links
+// A lightweight HTML escaping utility to prevent XSS. We avoid adding a heavy
+// dependency like DOMPurify for now and instead escape the five critical
+// characters. This ensures any user-supplied string is rendered harmless
+// before we perform our link replacements below.
+function escapeHtml(unsafe: string): string {
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 function formatMessageWithLinks(message: string): string {
+  // First, escape any HTML so that user input cannot break out of the intended
+  // markup.
+  const safeText = escapeHtml(message);
+
   // Replace URLs
   const urlRegex = /(https?:\/\/[^\s]+)/g;
-  let formattedMessage = message.replace(
-    urlRegex, 
+  let formattedMessage = safeText.replace(
+    urlRegex,
     '<a href="$1" target="_blank" rel="noopener noreferrer" class="text-zion-cyan underline hover:text-zion-cyan/80">$1</a>'
   );
-  
-  // Replace help center references like [Getting Started]
+
+  // Replace help-center references like [Getting Started]
   const helpCenterRegex = /\[([^\]]+)\]/g;
   formattedMessage = formattedMessage.replace(
-    helpCenterRegex, 
+    helpCenterRegex,
     '<a href="/help/$1" class="text-zion-cyan underline hover:text-zion-cyan/80">$1</a>'
   );
-  
+
   return formattedMessage;
 }

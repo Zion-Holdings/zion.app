@@ -15,11 +15,25 @@ class ApiKey(models.Model):
 
     @staticmethod
     def generate_key():
-        """Return a tuple of (prefix, secret) for a new API key."""
+        """Return a tuple of **(unique prefix, secret)** for a new API key.
+
+        Although the odds of a collision are low (8-byte hex string), it *can*
+        still raise an `IntegrityError` if two keys are created at roughly the
+        same time. We make the operation idempotent by looping until we find a
+        prefix that does **not** already exist in the database. This keeps the
+        method self-contained so callers don't need to worry about catching and
+        retrying integrity errors themselves.
+        """
         import secrets
 
-        prefix = secrets.token_hex(4)
-        secret = secrets.token_hex(16)
+        # Keep generating until we hit a unique prefix. Given the 32-bit entropy
+        # space the loop will rarely iterate more than once.
+        while True:
+            prefix = secrets.token_hex(4)  # 8-char / 32-bit random prefix
+            if not ApiKey.objects.filter(prefix=prefix).exists():
+                break
+
+        secret = secrets.token_hex(16)  # 32-byte secret
         return prefix, secret
 
     @staticmethod
