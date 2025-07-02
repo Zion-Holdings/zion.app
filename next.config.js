@@ -92,8 +92,9 @@ const nextConfig = {
     cpus: Math.min(2, os.cpus().length), // Adaptive CPU limit
     // Bundle analysis optimizations moved to root level
     // Disable profiling for faster builds
-    swcTraceProfiling: false,
-    esmExternals: 'loose',
+    swcTraceProfiling: false
+    // The esmExternals option caused noisy build warnings.
+    // Rely on Next.js defaults for better module resolution.
     
   },
 
