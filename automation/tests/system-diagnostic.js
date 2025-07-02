@@ -88,10 +88,10 @@ class SystemDiagnostic {
       try {
         require.resolve(dep);
         this.results.dependencies[dep] = { status: 'installed' };
-      } catch (error) {
+      } catch (_error) {
         this.results.dependencies[dep] = { 
           status: 'missing',
-          error: error.message 
+          error: 'Module not found' 
         };
       }
     }
@@ -120,11 +120,11 @@ class SystemDiagnostic {
       try {
         await fs.access(file);
         this.results.files[file] = { status: 'exists', required: true };
-      } catch (error) {
+      } catch (_error) {
         this.results.files[file] = { 
           status: 'missing', 
           required: true,
-          error: error.message 
+          error: 'File not found' 
         };
       }
     }
@@ -133,7 +133,7 @@ class SystemDiagnostic {
       try {
         await fs.access(file);
         this.results.files[file] = { status: 'exists', required: false };
-      } catch (error) {
+      } catch (_error) {
         this.results.files[file] = { 
           status: 'missing', 
           required: false 

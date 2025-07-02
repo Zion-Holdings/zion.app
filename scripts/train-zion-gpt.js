@@ -22,8 +22,8 @@ async function collectData() {
     try {
       const data = await readFile(src, 'utf8');
       combined += `\n\n# Source: ${src}\n` + data;
-    } catch {
-      // ignore missing files
+    } catch (_err) {
+      // ignore missing files during training data collection
     }
   }
   const datasetPath = path.join('reports', `zion-gpt-dataset-${Date.now()}.txt`);

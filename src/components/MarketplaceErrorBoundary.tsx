@@ -10,9 +10,7 @@ import { RefreshCcw, AlertCircle } from 'lucide-react';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
-interface MarketplaceErrorFallbackProps extends FallbackProps {
-  // Additional props can be added here if needed in the future
-}
+type MarketplaceErrorFallbackProps = FallbackProps;
 
 function MarketplaceErrorFallback({ error, resetErrorBoundary }: MarketplaceErrorFallbackProps) {
   const handleRetry = async () => {
