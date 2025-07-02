@@ -3,6 +3,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
+import { isValidEmail } from '@/utils/email';
 
 import {logErrorToProduction} from '@/utils/productionLogger';
 
@@ -13,7 +14,6 @@ export function FooterNewsletter(): React.ReactElement {
   const [emailError, setEmailError] = useState('');
   const { toast } = useToast();
 
-  const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const lastSubmit = useRef(0);
 
@@ -25,7 +25,7 @@ export function FooterNewsletter(): React.ReactElement {
     lastSubmit.current = now;
 
     const trimmedEmail = email.trim();
-    if (!EMAIL_REGEX.test(trimmedEmail)) {
+    if (!isValidEmail(trimmedEmail)) {
       setEmailError("Please enter a valid email address.");
       return;
     } else {

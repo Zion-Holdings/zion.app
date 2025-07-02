@@ -1,14 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { subscribeToNewsletter } from '@/services/newsletterService';
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { logErrorToProduction } from '@/utils/productionLogger';
+import { isValidEmail } from '@/utils/email';
 
 type ResponseData =
   | { status: string }
   | { error: string; details?: string };
-
-// Email validation regex (same as used in FooterNewsletter component)
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default async function handler(
   req: NextApiRequest,
@@ -31,7 +28,7 @@ export default async function handler(
       });
     }
 
-    if (!EMAIL_REGEX.test(email.trim())) {
+    if (!isValidEmail(email)) {
       return res.status(400).json({ 
         error: 'Invalid email format',
         details: 'Please check your email address and try again'
