@@ -93,10 +93,11 @@ const nextConfig = {
     cpus: Math.min(2, os.cpus().length), // Adaptive CPU limit
     // Bundle analysis optimizations moved to root level
     // Disable profiling for faster builds
-    swcTraceProfiling: false
-    // The esmExternals option caused noisy build warnings.
-    // Rely on Next.js defaults for better module resolution.
-    
+    swcTraceProfiling: false,
+    // Enable ESM externals for better module resolution
+    esmExternals: 'loose',
+    // Enable experimental node middleware support
+    nodeMiddleware: true
   },
 
   images: {
@@ -276,6 +277,34 @@ const nextConfig = {
     'remark-parse',
     'remark-rehype',
     'formik',
+    'decode-named-character-reference',
+    'mdast-util-to-string',
+    'micromark-core-commonmark',
+    'micromark',
+    'micromark-util-character',
+    'micromark-util-chunked',
+    'micromark-util-classify-character',
+    'micromark-util-combine-extensions',
+    'micromark-util-decode-numeric-character-reference',
+    'micromark-util-decode-string',
+    'micromark-util-encode',
+    'micromark-util-html-tag-name',
+    'micromark-util-normalize-identifier',
+    'micromark-util-resolve-all',
+    'micromark-util-sanitize-uri',
+    'micromark-util-subtokenize',
+    'micromark-util-symbol',
+    'micromark-util-types',
+    // lodash is installed for Formik compatibility; lodash-es is used directly in our code.
+    'helia',
+    '@helia/json',
+    'multiformats',
+    'libp2p',
+    '@libp2p/identify',
+    'ajv',
+    'ajv-keywords',
+    '@ungap/structured-clone',
+    'axios-retry',
     // UI libraries that need transpilation
     '@chakra-ui/react',
     '@radix-ui/react-accordion',
@@ -404,21 +433,49 @@ const nextConfig = {
         return entries;
       };
 
-      // DISABLED: FINAL NUCLEAR OPTION BannerPlugin causing module resolution issues
-      // The BannerPlugin was injecting absolute paths '/opt/build/repo/src/utils/tslib-polyfill.js'
-      // into third-party node_modules like @walletconnect, @peculiar, etc.
-      // This caused webpack module resolution failures in the Netlify build environment
-      //
-      // Document-level polyfills in _document.tsx will handle runtime errors instead
-
-      // DISABLED: All webpack-level polyfill injection causing module resolution issues
-      // The following approaches were causing third-party node_modules to import absolute paths:
-      // - resolve.alias for tslib
-      // - ProvidePlugin for TypeScript helpers  
-      // - NormalModuleReplacementPlugin for tslib replacement
-      // - BannerPlugin injection into chunks
-      //
-      // Solution: Rely only on document-level and runtime polyfills without webpack interference
+      // PERFORMANCE OPTIMIZATION: Advanced code splitting for smaller chunks
+      config.optimization = {
+        ...config.optimization,
+        splitChunks: {
+          chunks: 'all',
+          minSize: 20000,
+          maxSize: 250000, // Smaller chunks for better loading
+          cacheGroups: {
+            vendor: {
+              test: /[\\/]node_modules[\\/]/,
+              name: 'vendors',
+              chunks: 'all',
+              priority: 20,
+              reuseExistingChunk: true,
+            },
+            common: {
+              name: 'common',
+              minChunks: 2,
+              chunks: 'all',
+              priority: 10,
+              reuseExistingChunk: true,
+            },
+            ui: {
+              test: /[\\/]node_modules[\\/](@radix-ui|lucide-react|@chakra-ui)[\\/]/,
+              name: 'ui-components',
+              chunks: 'all',
+              priority: 30,
+            },
+            charts: {
+              test: /[\\/]node_modules[\\/](recharts|react-chartjs-2|chart\.js)[\\/]/,
+              name: 'charts',
+              chunks: 'async',
+              priority: 40,
+            },
+            blockchain: {
+              test: /[\\/]node_modules[\\/](@reown|ethers|@wagmi|viem)[\\/]/,
+              name: 'blockchain',
+              chunks: 'async',
+              priority: 35,
+            },
+          },
+        },
+      };
 
       // SIMPLIFIED DefinePlugin 
       config.plugins.push(
@@ -432,8 +489,6 @@ const nextConfig = {
           }),
         })
       );
-
-
     }
     
     // Development optimizations to prevent memory leaks with 176+ pages

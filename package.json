@@ -25,9 +25,10 @@
     "build:fast": "NEXT_DISABLE_CSS_INLINE=true SKIP_TYPE_CHECK=true NODE_OPTIONS='--no-deprecation --max-old-space-size=6144' npx next build --no-lint",
     "build:react19": "REACT_19_MODE=true npm run build",
     "build:production": "NODE_ENV=production npm run typecheck && npm run build",
-    "build:analyze": "ANALYZE=true npm run build && node scripts/analyze-build.cjs",
-    "bundle:analyze": "node scripts/bundle-analyzer.cjs",
+    "build:analyze": "node scripts/analyze-bundle.js",
+    "bundle:analyze": "node scripts/analyze-bundle.js",
     "bundle:optimize": "node scripts/bundle-optimizer.cjs",
+    "bundle:report": "node scripts/bundle-analysis.cjs",
     "bundle:chunks": "node scripts/large-chunk-analyzer.cjs",
     "bundle:monitor": "node scripts/bundle-monitor.cjs",
     "perf:audit": "node scripts/performance-audit.cjs",
@@ -136,11 +137,9 @@
     "logs:security": "node scripts/security-log-monitor.cjs",
     "monitor:enhanced": "npm run logs:realtime",
     "monitor:all": "concurrently \"npm run logs:realtime\" \"npm run logs:performance\" \"npm run logs:security\"",
-    "analyze:bundle": "node scripts/analyze-bundle.js",
     "analyze:react19": "node scripts/react19-bundle-analysis.cjs",
     "monitor:health": "curl -s https://ziontechgroup.netlify.app/api/health && echo ' - API Health: OK'",
     "monitor:build": "npm run bundle:analyze && npm run monitor:health",
-    "bundle:report": "node scripts/bundle-analysis.cjs",
     "perf:monitor": "node -e \"console.log('Enable with: localStorage.setItem(\\\"performance-monitoring\\\", \\\"true\\\"); window.location.reload();')\"",
     "performance:check": "node scripts/performance-monitor.cjs",
     "optimize:images": "find public -name '*.jpg' -o -name '*.png' | head -5",
@@ -179,7 +178,8 @@
     "automation:diagnose": "node automation/tests/system-diagnostic.js",
     "automation:test-slack": "node automation/tests/test-slack-connection.js",
     "automation:test-cursor": "node automation/tests/test-cursor-connection.js",
-    "automation:test-monitoring": "node automation/tests/test-performance-monitoring.js"
+    "automation:test-monitoring": "node automation/tests/test-performance-monitoring.js",
+    "optimize:bundle": "node scripts/optimize-bundle.cjs"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

@@ -515,8 +515,16 @@ if (!axios.defaults.baseURL) axios.defaults.baseURL = 'http://localhost';
 if (!axios.interceptors?.request?.use) {
   // @ts-ignore
   axios.interceptors = {
-    request: { use: jest.fn() },
-    response: { use: jest.fn() }
+    request: { 
+      use: jest.fn(),
+      eject: jest.fn(),
+      clear: jest.fn()
+    },
+    response: { 
+      use: jest.fn(),
+      eject: jest.fn(),
+      clear: jest.fn()
+    }
   };
 }
 
