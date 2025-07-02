@@ -25,6 +25,7 @@ global.TextDecoder = TextDecoder;
 process.env.VITE_REOWN_PROJECT_ID = 'test_project_id_from_jest_setup';
 process.env.NEXT_PUBLIC_SUPABASE_URL = 'http://localhost:54321';
 process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'test_anon_key';
+process.env.NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.ziontechgroup.com/v1';
 
 // Provide sensible defaults for environment variables expected by tests / Cypress stubs
 process.env.TEST_USER_NAME = process.env.TEST_USER_NAME || 'Test User';

@@ -53,6 +53,16 @@ module.exports = {
     '^react-markdown$': '<rootDir>/tests/__mocks__/reactMarkdown.js',
     // Fix for unresolved "@/hooks" barrel import in tests
     '^@/hooks$': '<rootDir>/src/hooks/index.ts',
+    // Additional aliases required by failing tests
+    '^@/layout$': '<rootDir>/src/layout/index.ts',
+    '^@/store$': '<rootDir>/src/store/index.ts',
+    '^@/middleware/(.*)$': '<rootDir>/src/middleware/$1',
+    '^@/i18n/(.*)$': '<rootDir>/src/i18n/$1',
+    // Stub problematic ESM-only dependencies that Jest cannot parse
+    '^mongoose(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^mongodb(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^bson(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/components/search/(.*)$': '<rootDir>/src/components/talent/$1',
   },
   
   // Test file patterns
