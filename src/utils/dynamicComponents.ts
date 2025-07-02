@@ -37,9 +37,18 @@ export const DynamicPieChart = dynamic(
 
 export const DynamicBarChart = dynamic(
   () => import('recharts').then(mod => ({ default: mod.BarChart })),
-  { 
+  {
     loading: LoadingSkeleton,
-    ssr: false 
+    ssr: false
+  }
+);
+
+// Analytics components
+export const DynamicAnalyticsChart = dynamic(
+  () => import('../components/analytics/AnalyticsChart'),
+  {
+    loading: LoadingSkeleton,
+    ssr: false
   }
 );
 
