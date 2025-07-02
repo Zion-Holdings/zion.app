@@ -1,3 +1,4 @@
+/* eslint-env cypress/globals */
 const viewports = ['macbook-15', 'iphone-6'];
 
 viewports.forEach(viewport => {
