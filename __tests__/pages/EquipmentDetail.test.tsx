@@ -14,6 +14,7 @@ const mockInfoFnForToast = jest.fn();
 const mockSuccessFnForToast = jest.fn();
 
 // Mock dependencies
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 jest.mock('next/router', () => require('next-router-mock'));
 
 jest.mock('@/hooks/useAuth', () => ({
@@ -78,6 +79,7 @@ describe('EquipmentDetail - Add To Cart', () => {
       asPath: `/equipment/${testProductId}?from=test`,
       query: { id: testProductId }
     });
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     require('@/context/CartContext').useCart.mockReturnValue({
       items: [],
       dispatch: mockDispatch
@@ -85,6 +87,7 @@ describe('EquipmentDetail - Add To Cart', () => {
   });
 
   test('unauthenticated user clicking "Add to Cart" adds item locally and shows info toast', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     require('@/hooks/useAuth').useAuth.mockReturnValue({
       isAuthenticated: false,
       user: null,
@@ -122,6 +125,7 @@ describe('EquipmentDetail - Add To Cart', () => {
   });
 
   test('authenticated user clicking "Add to Cart" adds item and shows success toast', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     require('@/hooks/useAuth').useAuth.mockReturnValue({
       isAuthenticated: true,
       user: { id: 'test-user' },
