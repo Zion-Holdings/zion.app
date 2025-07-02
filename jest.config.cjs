@@ -51,6 +51,7 @@ module.exports = {
     '^msw/node$': require.resolve('msw/node'),
     '^next/router$': 'next-router-mock',
     '^next/navigation$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    'react-router-dom$': '<rootDir>/src/stubs/react-router-dom.tsx',
     
     // Mock heavy libraries not needed for unit tests
     '^@reown/appkit(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
