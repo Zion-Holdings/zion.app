@@ -75,6 +75,7 @@ Ensure all variables marked as required in `.env.example` or in specific documen
 - **Collect Logs** - `npm run logs:collect` bundles recent logs under `logs/archive/`
 - **Analyze Logs** - `npm run logs:summary` scans collected logs and reports missing translation keys
 - **Health Check** - `npm run logs:health` prints a quick system status report
+- **Automated Alerts** - `npm run logs:alerts` enables real-time log monitoring and sends alerts to the configured webhook
 - **Missing Key Log** - Any translation keys not found at runtime are appended to `logs/missing-keys.log`
 
 ### CDN for Static Assets
