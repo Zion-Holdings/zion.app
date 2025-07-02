@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
@@ -12,9 +12,20 @@ interface ChatMessageProps {
   timestamp: Date;
 }
 
-export function ChatMessage({ message, isUser, timestamp }: ChatMessageProps) {
+export const ChatMessage: React.FC<ChatMessageProps> = ({
+  message,
+  isUser,
+  timestamp,
+}: ChatMessageProps) => {
   const { theme } = useTheme();
   
+  // Memoise the sanitized + formatted HTML so we don't create a new object on every render –
+  // this avoids the `react/jsx-no-constructed-context-values` & `react/jsx-no-bind` warnings.
+  const sanitizedHtml = useMemo<{ __html: string}>(
+    () => ({ __html: formatMessageWithLinks(message) }),
+    [message]
+  );
+
   return (
     <div className={cn("flex items-start gap-3", isUser && "flex-row-reverse")}>
       <Avatar className="h-8 w-8">
@@ -42,7 +53,7 @@ export function ChatMessage({ message, isUser, timestamp }: ChatMessageProps) {
             ? "bg-zion-blue-light text-white"
             : "bg-gray-100 text-gray-800"
       )}>
-        <div dangerouslySetInnerHTML={{ __html: formatMessageWithLinks(message) }} />
+        <div dangerouslySetInnerHTML={sanitizedHtml} />
         <div className={cn(
           "text-xs mt-1",
           isUser 
@@ -56,7 +67,7 @@ export function ChatMessage({ message, isUser, timestamp }: ChatMessageProps) {
       </div>
     </div>
   );
-}
+};
 
 // A lightweight HTML escaping utility to prevent XSS. We avoid adding a heavy
 // dependency like DOMPurify for now and instead escape the five critical
