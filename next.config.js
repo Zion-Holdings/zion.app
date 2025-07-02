@@ -646,16 +646,12 @@ const nextConfig = {
       config.cache = {
         type: 'memory',
         maxGenerations: dev ? 1 : 5,
-        // Explicitly disable cacheUnaffected to avoid usedExports conflicts
-        cacheUnaffected: false,
       };
     } else {
       // Ensure memory cache is properly configured
       config.cache = {
         type: 'memory',
         maxGenerations: dev ? 1 : 5,
-        // Explicitly disable cacheUnaffected to avoid usedExports conflicts
-        cacheUnaffected: false,
       };
     }
 
