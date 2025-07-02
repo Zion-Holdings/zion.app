@@ -22,7 +22,7 @@ module.exports = {
     '^@/components/ui/CategoryCard$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/components/ui/(.*)$': '<rootDir>/src/components/ui/$1',
     '^@/components/(.*)$': '<rootDir>/src/components/$1',
-    '^@/i18n$': '<rootDir>/src/i18n/index.ts',
+    '^@/i18n$': '<rootDir>/tests/__mocks__/i18n.js',
     '^@/utils/(?!devtools)(.*)$': '<rootDir>/src/utils/$1',
     '^@/context$': '<rootDir>/src/context/index.ts',
     '^@/context/(.*)$': '<rootDir>/src/context/$1',
@@ -68,6 +68,7 @@ module.exports = {
     '^@/pages/api/users/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/pages/Login\.jsx$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/App$': '<rootDir>/src/App.tsx',
+    '^@/pages/api/auth/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
   },
   
   // Test file patterns

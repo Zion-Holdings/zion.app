@@ -588,3 +588,11 @@ if (typeof window !== 'undefined' && !window.matchMedia) {
     })),
   });
 }
+
+// Mock axios-retry to no-op
+jest.mock('axios-retry', () => {
+  return {
+    __esModule: true,
+    default: jest.fn(),
+  };
+});
