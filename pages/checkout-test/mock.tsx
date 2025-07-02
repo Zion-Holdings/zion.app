@@ -4,11 +4,16 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 
-
+// Skip prerendering – this page is only meaningful in the browser
+export const dynamic = 'force-dynamic';
 
 export default function MockCheckoutPage() {
   const router = useRouter();
   const { mock } = router.query;
+
+  if (typeof window === 'undefined') {
+    return null; // Avoid next/router usage during static export
+  }
 
   if (!mock) {
     router.push('/checkout');
