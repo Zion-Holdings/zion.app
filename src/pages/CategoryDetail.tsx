@@ -1,7 +1,15 @@
 import { GradientHeading } from "@/components/GradientHeading";
 import { ProductListingCard } from "@/components/ProductListingCard";
 import { useState, useEffect, useRef, Suspense } from "react";
-import { Brain, PenLine, BarChart, Eye, Bot, Mic, Code, Briefcase } from "lucide-react";
+import { Brain, PenLine, BarChart, Eye, Bot, Mic, Code, Briefcase } from 'lucide-react';
+
+
+
+
+
+
+
+
 import { MARKETPLACE_LISTINGS } from "@/data/listingData";
 import { ProductListing } from "@/types/listings";
 import { useRouter } from 'next/router';
@@ -69,7 +77,7 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
   }
   const [isLoading, setIsLoading] = useState(true);
   const [listings, setListings] = useState(MARKETPLACE_LISTINGS);
-  const [category, setCategory] = useState<{title: string, description: string, icon: JSX.Element}>({
+  const [category, setCategory] = useState<{title: string, description: string, icon: React.JSX.Element}>({
     title: "",
     description: "",
     icon: <Bot className="w-6 h-6" />

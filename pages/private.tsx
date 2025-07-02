@@ -3,7 +3,11 @@ import { createServerSideClient } from '../src/utils/supabase/server'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { User, Mail, Calendar, Shield } from 'lucide-react'
+import { User, Mail, Calendar, Shield } from 'lucide-react';
+
+
+
+
 import Link from 'next/link'
 import Head from 'next/head'
 import type { User as SupabaseUser } from '@supabase/supabase-js'

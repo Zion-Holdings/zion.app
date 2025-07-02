@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable @typescript-eslint/no-require-imports */
 
 /**
  * Fix TypeScript errors in production logger calls
@@ -57,7 +58,7 @@ class LoggerTypeFixer {
       try {
         const content = fs.readFileSync(path.join(PROJECT_ROOT, file), 'utf8');
         return content.includes('productionLogger');
-      } catch (error) {
+      } catch (_error) {
         return false;
       }
     });

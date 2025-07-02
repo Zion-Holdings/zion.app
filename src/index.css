@@ -216,78 +216,83 @@ body {
 
 @layer base {
   :root {
-    --font-sans: 'Inter', system-ui, sans-serif;
-    --font-heading: 'Poppins', 'Inter', sans-serif;
+    --font-sans: 'Inter', system-ui, sans-serif; /* Matches tailwind.config.js */
+    /* font-heading is applied via theme('fontFamily.heading') which uses Orbitron from tailwind.config.js */
 
-    --background: hsl(222 47% 8%);
-    --foreground: hsl(0 0% 95%);
+    /* Default to zionDefault preset values (light theme) */
+    --background: hsl(210 40% 98%);      /* #f8fafc slate-50 */
+    --foreground: hsl(222 47% 11%);      /* #0f172a slate-900 */
 
-    --card: hsl(220 30% 11%);
-    --card-foreground: hsl(0 0% 95%);
+    --card: hsl(0 0% 100%);              /* #ffffff white */
+    --card-foreground: hsl(222 47% 11%); /* #0f172a slate-900 */
 
-    --popover: hsl(0 0% 100%); /* Kept existing */
-    --popover-foreground: hsl(224 71% 4%); /* Kept existing */
+    --popover: hsl(0 0% 100%);           /* #ffffff white */
+    --popover-foreground: hsl(222 47% 11%);/* #0f172a slate-900 */
 
-    --primary: hsl(221 83% 53%);
-    --primary-foreground: hsl(0 0% 100%);
+    --primary: hsl(224 76% 58%);         /* #2563eb blue-600 */
+    --primary-foreground: hsl(0 0% 100%);/* #ffffff white */
 
-    --secondary: hsl(14 80% 60%);
-    --secondary-foreground: hsl(0 0% 100%);
+    --secondary: hsl(215 20% 91%);       /* #e2e8f0 slate-200 */
+    --secondary-foreground: hsl(222 47% 18%);/* #1e293b slate-800 */
 
-    --muted: hsl(210 40% 96%); /* Kept existing */
-    --muted-foreground: hsl(215 20% 45%); /* Kept existing */
+    --muted: hsl(215 20% 91%);           /* #e2e8f0 slate-200 */
+    --muted-foreground: hsl(215 25% 34%); /* #475569 slate-600 */
 
-    --accent: hsl(286 63% 55%);
-    --accent-foreground: hsl(222 47% 8%);
+    --accent: hsl(224 76% 58%);          /* #2563eb blue-600 */
+    --accent-foreground: hsl(0 0% 100%); /* #ffffff white */
 
-    --destructive: hsl(0 84% 60%); /* Kept existing */
-    --destructive-foreground: hsl(210 40% 98%); /* Kept existing */
+    --destructive: hsl(0 72% 51%);       /* #dc2626 red-600 */
+    --destructive-foreground: hsl(0 100% 99%);/* #fef2f2 red-50 */
 
-    --border: hsl(222 39% 17%);
-    --input: hsl(222 39% 17%);
-    --ring: hsl(221 83% 53%);
-
-    /* Accessible primary text/background pair */
-    --bg-primary: hsl(222 47% 8%);
-    --text-primary: hsl(0 0% 100%);
+    --border: hsl(215 28% 85%);          /* #cbd5e1 slate-300 */
+    --input: hsl(0 0% 100%);             /* #ffffff white (input field background) */
+                                         /* border for input will be --border */
+    --ring: hsl(224 76% 58%);            /* #2563eb blue-600 */
 
     --radius: 0.5rem;
 
-    --sidebar-background: hsl(210 40% 96%);
-
-    --sidebar-foreground: hsl(224 71% 4%);
-
-    --sidebar-primary: hsl(262 83% 58%);
-
-    --sidebar-primary-foreground: hsl(210 40% 98%);
-
-    --sidebar-accent: hsl(210 40% 96%);
-
-    --sidebar-accent-foreground: hsl(224 71% 4%);
-
-    --sidebar-border: hsl(214 32% 91%);
-
-    --sidebar-ring: hsl(262 83% 58%);
-
-    /* Variables to be set by themeUtils.ts
-    --primary-color: #3b82f6; (example)
-    --background-color: #ffffff; (example)
-    --text-color: #000000; (example)
-    --accent-color: #3b82f6; (example)
-    --button-color: #3b82f6; (example)
-    --card-background: #f8fafc; (example)
-    */
+    /* Sidebar variables - kept as existing, review if they need to be part of presets */
+    /* These might need adjustment if they clash with the zionDefault light theme */
+    --sidebar-background: hsl(210 40% 96%);   /* current: light gray */
+    --sidebar-foreground: hsl(224 71% 4%);    /* current: very dark blue */
+    --sidebar-primary: hsl(262 83% 58%);      /* current: purple */
+    --sidebar-primary-foreground: hsl(210 40% 98%); /* current: very light gray */
+    --sidebar-accent: hsl(210 40% 96%);       /* current: light gray */
+    --sidebar-accent-foreground: hsl(224 71% 4%); /* current: very dark blue */
+    --sidebar-border: hsl(214 32% 91%);       /* current: light gray border */
+    --sidebar-ring: hsl(262 83% 58%);         /* current: purple */
   }
 
-  /*
-    The .dark and .light classes in :root are no longer needed here
-    as theme colors are applied dynamically via JavaScript using CSS custom properties
-    set on the :root element (document.documentElement).
-    The ThemeProvider component now handles applying these styles.
-    The `document.documentElement.classList.add('dark')` or `document.documentElement.classList.add('light')`
-    is still managed by ThemeProvider for any CSS that might directly depend on these classes,
-    but the color variable definitions themselves are dynamic.
-  */
+  /* Dark theme fallback for prefers-color-scheme if JS is disabled/fails */
+  /* Aligns with the 'dark' preset from themeUtils.ts */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+      --background: hsl(222 47% 8%);    /* #030712 slate-950 */
+      --foreground: hsl(210 40% 98%);   /* #f8fafc slate-50 */
+      --card: hsl(222 47% 11%);         /* #0f172a slate-900 */
+      --card-foreground: hsl(210 40% 98%); /* #f8fafc slate-50 */
+      --popover: hsl(222 47% 8%);       /* #030712 slate-950 */
+      --popover-foreground: hsl(210 40% 98%); /* #f8fafc slate-50 */
+      --primary: hsl(217 91% 60%);      /* #60a5fa blue-400 */
+      --primary-foreground: hsl(222 47% 8%); /* #030712 slate-950 */
+      --secondary: hsl(222 47% 11%);    /* #0f172a slate-900 */
+      --secondary-foreground: hsl(220 13% 91%); /* #f1f5f9 slate-100 */
+      --muted: hsl(222 47% 11%);        /* #0f172a slate-900 */
+      --muted-foreground: hsl(215 25% 65%); /* #94a3b8 slate-400 */
+      --accent: hsl(217 91% 60%);       /* #60a5fa blue-400 */
+      --accent-foreground: hsl(222 47% 8%); /* #030712 slate-950 */
+      --destructive: hsl(0 63% 30%);    /* #7f1d1d red-900 */
+      --destructive-foreground: hsl(0 95% 89%); /* #fecaca red-200 */
+      --border: hsl(222 47% 18%);       /* #1e293b slate-800 */
+      --input: hsl(222 47% 18%);        /* #1e293b slate-800 */
+      --ring: hsl(217 91% 60%);         /* #60a5fa blue-400 */
+
+      /* Consider dark theme sidebar variables if needed */
+      /* --sidebar-background: hsl(222 47% 11%); e.g. slate-900 */
+      /* --sidebar-foreground: hsl(210 40% 98%); e.g. slate-50 */
+      /* ... and so on for other sidebar colors */
+    }
+  }
 }
 
 @layer base {
@@ -411,11 +416,13 @@ body {
   }
 
   /* Improved placeholder contrast */
+  /* Removed fixed color to allow Tailwind's placeholder:text-muted-foreground to take precedence */
+  /*
   input::placeholder,
   textarea::placeholder {
-    color: #b3b3b3;
     opacity: 1;
   }
+  */
 }
 
 @layer components {

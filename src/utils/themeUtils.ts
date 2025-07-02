@@ -1,4 +1,4 @@
-export type ThemePreset = 'light' | 'dark' | 'neon' | 'corporate' | 'startup';
+export type ThemePreset = 'light' | 'dark' | 'neon' | 'corporate' | 'startup' | 'zionDefault'; // Added zionDefault
 
 export interface ThemeColors {
   // Core Tailwind variables
@@ -46,61 +46,84 @@ export interface ThemeColors {
   sidebarBorder?: string;
   sidebarRing?: string;
 
-  // Custom/alias (can be deprecated or mapped if covered by above)
-  // For example, 'buttonColor' could map to 'primary'
-  // 'textColor' maps to 'foreground'
-  // 'primaryColor' maps to 'primary'
-  // 'accentColor' maps to 'accent'
-  // 'cardBackground' maps to 'card'
-  // 'backgroundColor' maps to 'background'
-  buttonColor?: string; // Example: could be primary or a specific button color
+  buttonColor?: string;
 }
 
 // Define theme presets
 export function getThemeColors(preset: ThemePreset, primaryColorInput: string): ThemeColors {
-  // Default light theme structure
-  let baseColors: Omit<ThemeColors, 'primary' | 'primaryForeground' | 'accent' | 'accentForeground' | 'ring' | 'buttonColor' | 'sidebarBackground'| 'sidebarForeground'| 'sidebarPrimary'| 'sidebarPrimaryForeground'| 'sidebarAccent'| 'sidebarAccentForeground'| 'sidebarBorder'| 'sidebarRing'> = {
+  // Base for light themes
+  let baseLightColors: Omit<ThemeColors, 'primary' | 'primaryForeground' | 'accent' | 'accentForeground' | 'ring' | 'buttonColor' | 'sidebarBackground'| 'sidebarForeground'| 'sidebarPrimary'| 'sidebarPrimaryForeground'| 'sidebarAccent'| 'sidebarAccentForeground'| 'sidebarBorder'| 'sidebarRing'> = {
     background: '#ffffff', // white
-    foreground: '#030712', // near black
+    foreground: '#030712', // near black (slate-950)
     border: '#e2e8f0',     // slate-200
-    input: '#e2e8f0',       // slate-200
+    input: '#e2e8f0',       // slate-200 for inputs, can be different from border
     secondary: '#f1f5f9',  // slate-100
     secondaryForeground: '#0f172a', // slate-900
     destructive: '#ef4444', // red-500
     destructiveForeground: '#f8fafc', // slate-50
     muted: '#f1f5f9',       // slate-100
-    mutedForeground: '#64748b', // slate-500
+    mutedForeground: '#475569', // slate-600 (Improved from slate-500 for better contrast)
     popover: '#ffffff',     // white
-    popoverForeground: '#030712', // near black
+    popoverForeground: '#030712', // slate-950
     card: '#ffffff',        // white
-    cardForeground: '#030712',   // near black
+    cardForeground: '#030712',   // slate-950
   };
 
+  // Base for dark themes
+  let baseDarkColors: Omit<ThemeColors, 'primary' | 'primaryForeground' | 'accent' | 'accentForeground' | 'ring' | 'buttonColor' | 'sidebarBackground'| 'sidebarForeground'| 'sidebarPrimary'| 'sidebarPrimaryForeground'| 'sidebarAccent'| 'sidebarAccentForeground'| 'sidebarBorder'| 'sidebarRing'> = {
+    background: '#030712', // slate-950
+    foreground: '#f8fafc', // slate-50
+    border: '#1e293b',     // slate-800
+    input: '#1e293b',       // slate-800
+    secondary: '#0f172a',  // slate-900
+    secondaryForeground: '#f1f5f9', // slate-100
+    destructive: '#7f1d1d', // red-900
+    destructiveForeground: '#fecaca', // red-200
+    muted: '#0f172a',       // slate-900
+    mutedForeground: '#94a3b8', // slate-400
+    popover: '#030712',     // slate-950
+    popoverForeground: '#f8fafc', // slate-50
+    card: '#0f172a',        // slate-900
+    cardForeground: '#f8fafc',   // slate-50
+  };
+
+  let currentBaseColors = baseLightColors; // Default to light base
+
   // Base primary color (can be overridden by primaryColorInput)
-  let primary = primaryColorInput || '#3b82f6'; // blue-500
+  let primary = primaryColorInput || '#3b82f6'; // blue-500 (default for light)
   let primaryForeground = '#f8fafc'; // slate-50 (high contrast for blue-500)
-  let accent = primary; // Default accent to primary
-  let accentForeground = primaryForeground; // Default accent foreground
-  let ring = primary; // Default ring to primary
+
+  // Default accent to primary, ring to primary
+  let accent = primary;
+  let accentForeground = primaryForeground;
+  let ring = primary;
 
   switch (preset) {
-    case 'dark':
-      baseColors = {
-        background: '#030712', // slate-950
-        foreground: '#f8fafc', // slate-50
-        border: '#1e293b',     // slate-800
-        input: '#1e293b',       // slate-800
-        secondary: '#0f172a',  // slate-900
-        secondaryForeground: '#f1f5f9', // slate-100
-        destructive: '#7f1d1d', // red-900
-        destructiveForeground: '#fecaca', // red-200
-        muted: '#0f172a',       // slate-900
-        mutedForeground: '#94a3b8', // slate-400
-        popover: '#030712',     // slate-950
-        popoverForeground: '#f8fafc', // slate-50
-        card: '#0f172a',        // slate-900
-        cardForeground: '#f8fafc',   // slate-50
+    case 'zionDefault':
+      currentBaseColors = {
+        background: '#f8fafc', // slate-50 (slightly off-white)
+        foreground: '#0f172a', // slate-900 (softer black)
+        border: '#cbd5e1',     // slate-300
+        input: '#ffffff',       // white inputs for a cleaner look, with slate-300 border
+        secondary: '#e2e8f0',  // slate-200
+        secondaryForeground: '#1e293b', // slate-800
+        destructive: '#dc2626', // red-600
+        destructiveForeground: '#fef2f2', // red-50
+        muted: '#e2e8f0',       // slate-200
+        mutedForeground: '#475569', // slate-600
+        popover: '#ffffff',     // white
+        popoverForeground: '#0f172a', // slate-900
+        card: '#ffffff',        // white
+        cardForeground: '#0f172a',   // slate-900
       };
+      primary = primaryColorInput || '#2563eb'; // blue-600 (default primary for zionDefault)
+      primaryForeground = '#ffffff'; // white
+      accent = primary;
+      accentForeground = primaryForeground;
+      ring = primary;
+      break;
+    case 'dark':
+      currentBaseColors = baseDarkColors;
       primary = primaryColorInput || '#60a5fa'; // blue-400
       primaryForeground = '#030712'; // slate-950
       accent = primary;
@@ -108,53 +131,48 @@ export function getThemeColors(preset: ThemePreset, primaryColorInput: string): 
       ring = primary;
       break;
     case 'neon':
-      baseColors = {
-        background: '#030712', // slate-950 (very dark blue)
+      currentBaseColors = { // Based on dark but with specific neon overrides
+        ...baseDarkColors,
         foreground: '#e0f2fe', // light sky blue
         border: '#00ffbb',     // neon teal/mint border
-        input: '#1e293b',       // slate-800
-        secondary: '#111827',  // gray-900
         secondaryForeground: '#00ffbb', // neon teal/mint
         destructive: '#ff00ff', // neon pink/magenta
-        destructiveForeground: '#030712', // slate-950
-        muted: '#1f2937',       // gray-800
-        mutedForeground: '#6b7280', // gray-500
+        destructiveForeground: '#030712',
         popover: '#000000',     // black
         popoverForeground: '#00ffbb', // neon teal/mint
         card: '#000000',        // black
         cardForeground: '#e0f2fe',   // light sky blue
+        secondary: '#111827', // restore intended neon secondary
+        muted: '#1f2937',
+        mutedForeground: '#6b7280',
       };
-      primary = primaryColorInput || '#3b82f6'; // keep a potentially more 'normal' primary for buttons etc.
-      primaryForeground = '#ffffff';
+      primary = primaryColorInput || '#3b82f6'; // User-defined or a fallback blue
+      primaryForeground = '#ffffff'; // Assuming primary will be dark enough for white text
       accent = '#00ffbb'; // Strong neon accent
       accentForeground = '#030712'; // Dark text on neon accent
       ring = '#00ffbb';
       break;
     case 'corporate':
-      baseColors = { // Already light, mostly default values
-        background: '#ffffff',
+      currentBaseColors = { // Based on light
+        ...baseLightColors,
         foreground: '#334155', // slate-700
         border: '#cbd5e1',     // slate-300
-        input: '#cbd5e1',       // slate-300
-        secondary: '#f1f5f9',  // slate-100
+        input: '#ffffff',       // white inputs, border from currentBaseColors.border
         secondaryForeground: '#1e293b', // slate-800
         destructive: '#dc2626', // red-600
         destructiveForeground: '#fef2f2', // red-50
-        muted: '#f1f5f9',       // slate-100
-        mutedForeground: '#64748b', // slate-500
-        popover: '#ffffff',
         popoverForeground: '#334155',
-        card: '#ffffff',
         cardForeground: '#334155',
       };
-      primary = primaryColorInput || '#2563eb'; // slightly deeper blue (blue-600)
+      primary = primaryColorInput || '#2563eb'; // blue-600
       primaryForeground = '#ffffff';
       accent = primary;
       accentForeground = primaryForeground;
       ring = primary;
       break;
-    case 'startup': // Often dark themes with vibrant accents
-      baseColors = {
+    case 'startup':
+      currentBaseColors = { // Based on dark
+        ...baseDarkColors,
         background: '#000000', // black
         foreground: '#ffffff', // white
         border: '#374151',     // gray-700
@@ -162,29 +180,33 @@ export function getThemeColors(preset: ThemePreset, primaryColorInput: string): 
         secondary: '#111827',  // gray-900
         secondaryForeground: '#e5e7eb', // gray-200
         destructive: '#ef4444', // red-500
-        destructiveForeground: '#111827', // gray-900 (dark text on red)
-        muted: '#1f2937',       // gray-800
+        destructiveForeground: '#111827', // gray-900
         mutedForeground: '#9ca3af', // gray-400
         popover: '#111827',     // gray-900
         popoverForeground: '#ffffff',
         card: '#0a0a0a',        // very dark gray / near black
         cardForeground: '#ffffff',
       };
-      primary = primaryColorInput || '#3b82f6'; // default blue
+      primary = primaryColorInput || '#3b82f6';
       primaryForeground = '#ffffff';
-      accent = '#10b981'; // emerald-500 (a common startup accent)
-      accentForeground = '#ffffff';
+      accent = '#10b981'; // emerald-500
+      accentForeground = '#ffffff'; // white text on emerald
       ring = accent;
       break;
     case 'light':
     default:
-      // primary, accent, ring already set to defaults for light
-      // baseColors already set to light defaults
+      // currentBaseColors is already baseLightColors
+      // primary, accent, ring already set to defaults for light based on primaryColorInput or #3b82f6
+      primary = primaryColorInput || '#3b82f6';
+      primaryForeground = '#f8fafc';
+      accent = primary;
+      accentForeground = primaryForeground;
+      ring = primary;
       break;
   }
 
   return {
-    ...baseColors,
+    ...currentBaseColors,
     primary,
     primaryForeground,
     accent,

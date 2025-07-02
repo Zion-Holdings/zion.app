@@ -401,7 +401,7 @@ test('AppHeader has no accessibility violations (if exists)', async () => {
 // - The errors on Marketplace, Home, Blog regarding discernible text and heading order
 //   are actual accessibility issues in the source code of those components/pages, not the test setup.
 //   These cannot be fixed by only modifying the test file.
-// - The `themePreset` in MockWhitelabelProvider was @ts-ignore'd as a quick fix if its type is complex or not perfectly matched.
+// - The `themePreset` in MockWhitelabelProvider was @ts-expect-error'd as a quick fix if its type is complex or not perfectly matched.
 //   Ideally, this would align with the actual type.
 // - The current strategy for Checkbox & RadioGroup is to use aria-labelledby. If this fails, the next step would be to try a direct aria-label on the input elements, though less ideal if a visible label exists.
 //   The test output showed these still failing; the change to aria-labelledby for checkbox and direct aria-label for radio items is an attempt to fix that.

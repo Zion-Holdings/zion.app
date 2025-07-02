@@ -1,6 +1,9 @@
 
 import React from "react";
-import { Handshake, MessageSquare, Star } from "lucide-react";
+import { Handshake, MessageSquare, Star } from 'lucide-react';
+
+
+
 import { Button } from "@/components/ui/button";
 
 import { HireNowCTA } from "./HireNowCTA";

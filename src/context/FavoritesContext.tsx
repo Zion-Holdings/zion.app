@@ -28,8 +28,8 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
       try {
         const parsed: Array<string | number> = JSON.parse(stored);
         setFavorites(parsed);
-      } catch {
-        // ignore invalid JSON
+      } catch (_err) {
+        // ignore invalid JSON in localStorage
       }
     }
   }, []);

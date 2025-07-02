@@ -1,13 +1,4 @@
-
-import { LucideIcon } from "lucide-react";
-import {
-  BadgeCheck, // publishing a listing
-  Award,      // top contributor
-  Star,       // profile complete
-  Trophy,     // featured creator
-  BadgePlus,  // first action
-  BadgeDollarSign // monetization
-} from "lucide-react";
+import { LucideIcon, BadgeCheck, Award, Star, Trophy, BadgePlus, BadgeDollarSign } from 'lucide-react';
 
 export type BadgeKey =
   | "first_listing"

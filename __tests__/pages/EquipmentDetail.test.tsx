@@ -5,6 +5,9 @@ import '@testing-library/jest-dom';
 import EquipmentDetail, { SAMPLE_EQUIPMENT } from '@/pages/EquipmentDetail';
 import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
 import { useRouter } from 'next/router';
+import mockNextRouter from 'next-router-mock';
+import { useAuth } from '@/hooks/useAuth';
+import { useCart } from '@/context/CartContext';
 
 // Mock functions need to be declared before they are used in mock factories
 const mockNavigate = jest.fn();
@@ -14,8 +17,9 @@ const mockInfoFnForToast = jest.fn();
 const mockSuccessFnForToast = jest.fn();
 
 // Mock dependencies
-jest.mock('next/router', () => require('next-router-mock'));
+jest.mock('next/router', () => mockNextRouter);
 
+// Mock useAuth and useCart - we'll access these via jest.mocked later
 jest.mock('@/hooks/useAuth', () => ({
   useAuth: jest.fn(),
 }));
@@ -35,6 +39,9 @@ jest.mock('@/hooks/use-toast', () => ({
 describe('EquipmentDetail - Add To Cart', () => {
   const testProductId = 'pro-camera-x1000';
   const originalSampleEquipment = JSON.parse(JSON.stringify(SAMPLE_EQUIPMENT));
+  
+  const mockUseAuth = useAuth as jest.MockedFunction<typeof useAuth>;
+  const mockUseCart = useCart as jest.MockedFunction<typeof useCart>;
 
   beforeEach(() => {
     // Clear all general mocks
@@ -78,14 +85,14 @@ describe('EquipmentDetail - Add To Cart', () => {
       asPath: `/equipment/${testProductId}?from=test`,
       query: { id: testProductId }
     });
-    require('@/context/CartContext').useCart.mockReturnValue({
+    mockUseCart.mockReturnValue({
       items: [],
       dispatch: mockDispatch
     });
   });
 
   test('unauthenticated user clicking "Add to Cart" adds item locally and shows info toast', async () => {
-    require('@/hooks/useAuth').useAuth.mockReturnValue({
+    mockUseAuth.mockReturnValue({
       isAuthenticated: false,
       user: null,
       isLoading: false
@@ -122,7 +129,7 @@ describe('EquipmentDetail - Add To Cart', () => {
   });
 
   test('authenticated user clicking "Add to Cart" adds item and shows success toast', async () => {
-    require('@/hooks/useAuth').useAuth.mockReturnValue({
+    mockUseAuth.mockReturnValue({
       isAuthenticated: true,
       user: { id: 'test-user' },
       isLoading: false

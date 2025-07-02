@@ -4,7 +4,8 @@ import { useRouter } from 'next/router';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, ControllerRenderProps } from "react-hook-form";
 import { z } from "zod";
-import { LockKeyhole } from "lucide-react";
+import { LockKeyhole } from 'lucide-react';
+
 
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";

@@ -5,6 +5,8 @@ import { ResponsiveNavigation } from '@/components/navigation/ResponsiveNavigati
 import { Logo } from '@/components/header/Logo';
 import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
+
+
 import { MobileMenu } from '@/components/header/MobileMenu';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { MobileBottomNav } from '@/components/header/MobileBottomNav';

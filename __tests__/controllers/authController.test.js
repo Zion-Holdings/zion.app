@@ -1,7 +1,8 @@
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
-const { loginUser, registerUser } = require('../../server/controllers/authController');
-const User = require('../../server/models/User');
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+// Removed unused import: createClient
+import User from '../models/User';
+import { loginUser, registerUser } from '../../server/controllers/authController';
 
 jest.mock('../../server/models/User');
 jest.mock('bcryptjs');

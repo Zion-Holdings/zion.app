@@ -1,7 +1,49 @@
 const express = require('express');
 const Sentry = require('@sentry/node');
 const Tracing = require('@sentry/tracing');
-const tracer = require('dd-trace').init();
+
+// Conditionally initialize dd-trace only in production environments where native modules are available
+let tracer;
+try {
+  // Check if we're in a CI/build environment where native modules might not be available
+  const isCI = process.env.CI === 'true' || process.env.NODE_ENV === 'production' && process.env.NETLIFY === 'true';
+  const skipDatadog = process.env.SKIP_DATADOG === 'true' || isCI;
+  
+  if (skipDatadog) {
+    console.log('🚫 Datadog tracing disabled for CI/build environment');
+    // Provide a mock tracer for CI environments
+    tracer = {
+      init: () => tracer,
+      scope: () => ({
+        active: () => null
+      }),
+      trace: (name, fn) => fn ? fn() : Promise.resolve(),
+      setUser: () => {},
+      addTags: () => {},
+      // Add other commonly used methods as no-ops
+      wrap: (name, fn) => fn,
+      plugin: () => tracer
+    };
+  } else {
+    tracer = require('dd-trace').init();
+    console.log('✅ Datadog tracing initialized');
+  }
+} catch (error) {
+  console.warn('⚠️ Failed to initialize dd-trace, using mock implementation:', error.message);
+  // Fallback mock tracer
+  tracer = {
+    init: () => tracer,
+    scope: () => ({
+      active: () => null
+    }),
+    trace: (name, fn) => fn ? fn() : Promise.resolve(),
+    setUser: () => {},
+    addTags: () => {},
+    wrap: (name, fn) => fn,
+    plugin: () => tracer
+  };
+}
+
 const { exec } = require('child_process'); // Make sure this is imported
 const mongoose = require('mongoose');
 const morgan = require('morgan');
@@ -16,6 +58,7 @@ const alertsRoutes = require('./routes/alerts'); // Add this
 const equipmentRoutes = require('./routes/items');
 const stripeRoutes = require('./routes/stripe'); // Add this for Stripe webhooks
 const { logAndAlert } = require('./utils/alertLogger');
+const { logBug } = require('./utils/bugLogger');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const OpenAI = require('openai');
@@ -187,13 +230,34 @@ app.use((err, req, res, next) => {
 
 // Global unhandled error logging
 process.on('unhandledRejection', (reason) => {
-  console.error('Unhandled Rejection:', reason);
-  logAndAlert(`Unhandled Rejection: ${reason instanceof Error ? reason.stack || reason.message : reason}`);
+  const message = reason instanceof Error ? reason.stack || reason.message : JSON.stringify(reason);
+  console.error('Unhandled Rejection:', message);
+  logAndAlert(`Unhandled Rejection: ${message}`);
+  logBug({
+    errorMessage: 'Unhandled Promise Rejection',
+    stackTrace: message,
+    severity: 'High',
+    module: 'server',
+  });
+  if (process.env.NODE_ENV !== 'development') {
+    // Exit to avoid running in an undefined state
+    process.exit(1);
+  }
 });
 
 process.on('uncaughtException', (error) => {
-  console.error('Uncaught Exception:', error);
-  logAndAlert(`Uncaught Exception: ${error.stack || error.message}`);
+  const message = error.stack || error.message;
+  console.error('Uncaught Exception:', message);
+  logAndAlert(`Uncaught Exception: ${message}`);
+  logBug({
+    errorMessage: 'Uncaught Exception',
+    stackTrace: message,
+    severity: 'Critical',
+    module: 'server',
+  });
+  if (process.env.NODE_ENV !== 'development') {
+    process.exit(1);
+  }
 });
 
 module.exports = app;

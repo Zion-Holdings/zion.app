@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X } from 'lucide-react';
+
+
 import { useIsMobile } from "@/hooks/use-mobile";
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';
 

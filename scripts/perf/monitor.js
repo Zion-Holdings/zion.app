@@ -6,9 +6,8 @@ const { exec } = require('child_process');
 
 const BASE_URL = process.env.BACKEND_BASE_URL || 'http://localhost:3001';
 const ENDPOINTS = (process.env.MONITOR_ENDPOINTS
-  ? process.env.MONITOR_ENDPOINTS.split(',')
-  : ['/healthz', '/recommendations', '/sync/status'])
-  .map((p) => p.trim());
+  ? process.env.MONITOR_ENDPOINTS.split(',').map((p) => p.trim()).filter(Boolean)
+  : ['/healthz', '/recommendations', '/sync/status']);
 
 const BASE_LOG_DIR = process.env.WATCHDOG_LOG_PATH || path.join(__dirname, '..', '..', 'logs');
 const LOG_DIR = path.join(BASE_LOG_DIR, 'perf');

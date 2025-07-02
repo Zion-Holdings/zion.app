@@ -11,7 +11,8 @@ export function useFollowedCategories() {
     if (raw) {
       try {
         setFollowed(JSON.parse(raw));
-      } catch {
+      } catch (_err) {
+        // Invalid JSON in localStorage, reset to empty array
         setFollowed([]);
       }
     }

@@ -8,12 +8,12 @@ fetchMock.enableMocks();
 // --- Mocks Setup ---
 
 // Mock localStorage
-let store: { [key: string]: string } = {};
+let mockStoreObj: { [key: string]: string } = {};
 const mockLocalStorage = {
-  getItem: jest.fn((key: string): string | null => store[key] || null),
-  setItem: jest.fn((key: string, value: string) => { store[key] = value; }),
-  removeItem: jest.fn((key: string) => { delete store[key]; }),
-  clear: jest.fn(() => { store = {}; })
+  getItem: jest.fn((key: string): string | null => mockStoreObj[key] || null),
+  setItem: jest.fn((key: string, value: string) => { mockStoreObj[key] = value; }),
+  removeItem: jest.fn((key: string) => { delete mockStoreObj[key]; }),
+  clear: jest.fn(() => { mockStoreObj = {}; })
 };
 Object.defineProperty(global, 'localStorage', { value: mockLocalStorage, configurable: true });
 // Support for environments where 'window' is the global context for localStorage
@@ -25,9 +25,9 @@ if (typeof window !== 'undefined') {
 // Mock safeStorage (used in Signup.tsx)
 jest.mock('@/utils/safeStorage', () => ({
   safeStorage: {
-    getItem: jest.fn((key: string) => store[key] || null), // delegate to the same store for simplicity
-    setItem: jest.fn((key: string, value: string) => { store[key] = value; }),
-    removeItem: jest.fn((key: string) => { delete store[key]; }),
+    getItem: jest.fn((key: string) => mockStoreObj[key] || null), // delegate to the same store for simplicity
+    setItem: jest.fn((key: string, value: string) => { mockStoreObj[key] = value; }),
+    removeItem: jest.fn((key: string) => { delete mockStoreObj[key]; }),
   }
 }));
 
@@ -60,7 +60,7 @@ jest.mock('axios', () => ({
 describe('Integration Test: Signup and Authenticated Call', () => {
   beforeEach(() => {
     fetchMock.resetMocks();
-    store = {}; // Clear localStorage mock store
+    mockStoreObj = {}; // Clear localStorage mock store
     // Clear all mock function call counts and implementations
     jest.clearAllMocks();
     // Reset axios defaults for headers specifically for this test, if necessary

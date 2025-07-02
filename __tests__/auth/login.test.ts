@@ -1,26 +1,20 @@
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { loginUser } from '@/services/authService';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-// Use Jest syntax
-const mockSignInWithPassword = jest.fn();
+const mockSignInWithPassword = vi.fn();
 
-jest.mock('@supabase/supabase-js', () => {
-  // This inner mockSignInWithPassword is what the mock factory will use.
-  // It needs to be the same instance as the one tests will interact with.
-  // So, we assign the top-level mockSignInWithPassword here.
-  const actualCreateClient = jest.requireActual('@supabase/supabase-js').createClient;
-  return {
-    createClient: jest.fn(() => ({
-      auth: {
-        signInWithPassword: mockSignInWithPassword,
-        signUp: jest.fn(), // Add other mocked methods if needed by loginHandler or its setup
-        onAuthStateChange: jest.fn(() => ({ data: { subscription: { unsubscribe: jest.fn() } } })),
-        getSession: jest.fn().mockResolvedValue({ data: { session: null }, error: null }),
-      },
-      from: jest.fn().mockReturnThis(),
-    })),
-  };
-});
+vi.mock('@supabase/supabase-js', () => ({
+  createClient: vi.fn(() => ({
+    auth: {
+      signInWithPassword: mockSignInWithPassword,
+      signUp: vi.fn(),
+      onAuthStateChange: vi.fn(() => ({ data: { subscription: { unsubscribe: vi.fn() } } })),
+      getSession: vi.fn().mockResolvedValue({ data: { session: null }, error: null }),
+    },
+    from: vi.fn().mockReturnThis(),
+  }))
+}));
 
 // Import the handler AFTER setting up the mock
 import loginHandler from '../../pages/api/auth/login';
@@ -35,10 +29,10 @@ const mockApiReq = (body: any, method: string = 'POST') => ({
 // Helper to create mock NextApiResponse
 const mockApiRes = () => {
   const res: Partial<NextApiResponse> = {
-    status: jest.fn().mockReturnThis(),
-    json: jest.fn().mockReturnThis(),
-    setHeader: jest.fn().mockReturnThis(),
-    end: jest.fn().mockReturnThis(),
+    status: vi.fn().mockReturnThis(),
+    json: vi.fn().mockReturnThis(),
+    setHeader: vi.fn().mockReturnThis(),
+    end: vi.fn().mockReturnThis(),
   };
   return res as NextApiResponse;
 };
@@ -212,7 +206,7 @@ describe('loginUser Service', () => {
 
   afterEach(() => {
     global.fetch = originalFetch;
-    jest.restoreAllMocks(); // Use jest.restoreAllMocks for Jest
+    vi.restoreAllMocks();
   });
 
   it('should handle successful login', async () => {
@@ -221,7 +215,7 @@ describe('loginUser Service', () => {
       accessToken: 'mock-access-token',
       refreshToken: 'mock-refresh-token'
     };
-    global.fetch = jest.fn().mockResolvedValue({ // Use jest.fn()
+    global.fetch = vi.fn().mockResolvedValue({
       ok: true,
       status: 200,
       json: async () => mockSuccessResponse,
@@ -239,7 +233,7 @@ describe('loginUser Service', () => {
       error: 'Email not confirmed. Please check your inbox to verify your email.',
       code: 'EMAIL_NOT_CONFIRMED',
     };
-    global.fetch = jest.fn().mockResolvedValue({ // Use jest.fn()
+    global.fetch = vi.fn().mockResolvedValue({
       ok: false,
       status: 403,
       json: async () => mockErrorResponse,
@@ -253,7 +247,7 @@ describe('loginUser Service', () => {
 
   it('should handle "Invalid credentials" (401) from API', async () => {
     const mockErrorResponse = { error: 'Invalid credentials', code: 'INVALID_CREDENTIALS' };
-    global.fetch = jest.fn().mockResolvedValue({ // Use jest.fn()
+    global.fetch = vi.fn().mockResolvedValue({
       ok: false,
       status: 401,
       json: async () => mockErrorResponse,
@@ -267,7 +261,7 @@ describe('loginUser Service', () => {
 
   it('should handle other errors (e.g., 500) from API', async () => {
     const mockErrorResponse = { error: 'Server error', code: 'LOGIN_FAILED' };
-     global.fetch = jest.fn().mockResolvedValue({ // Use jest.fn()
+    global.fetch = vi.fn().mockResolvedValue({
       ok: false,
       status: 500,
       json: async () => mockErrorResponse,
@@ -279,7 +273,7 @@ describe('loginUser Service', () => {
   });
 
   it('should handle network errors during fetch', async () => {
-    global.fetch = jest.fn().mockRejectedValue(new Error('Network failed')); // Use jest.fn()
+    global.fetch = vi.fn().mockRejectedValue(new Error('Network failed'));
     try {
       await loginUser('test@example.com', 'password');
     } catch (e: any) {

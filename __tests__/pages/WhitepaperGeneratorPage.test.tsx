@@ -24,17 +24,27 @@ jest.mock('sonner', () => ({
 
 jest.mock('react-markdown', () => (props: { children: React.ReactNode }) => <div data-testid="mock-markdown">{props.children}</div>);
 
-jest.mock('@/components/WhitepaperSectionEditor', () => jest.fn(({ title, content, onContentChange }) => (
-  <div data-testid={`mock-section-editor-${title.toLowerCase().replace(/\s+/g, '-')}`}>
-    <h3>{title}</h3>
-    <textarea value={content} onChange={(e) => onContentChange(e.target.value)} />
-  </div>
-)));
+jest.mock('@/components/WhitepaperSectionEditor', () => {
+  const MockWhitepaperSectionEditor = ({ title, content, onContentChange }: any) => (
+    <div data-testid={`mock-section-editor-${title.toLowerCase().replace(/\s+/g, '-')}`}>
+      <h3>{title}</h3>
+      <textarea value={content} onChange={(e) => onContentChange(e.target.value)} />
+    </div>
+  );
+  MockWhitepaperSectionEditor.displayName = 'MockWhitepaperSectionEditor';
+  return MockWhitepaperSectionEditor;
+});
 
-jest.mock('@/components/WhitepaperPreviewPanel', () => jest.fn(() => <div data-testid="mock-preview-panel" />));
+jest.mock('@/components/WhitepaperPreviewPanel', () => {
+  const MockWhitepaperPreviewPanel = () => <div data-testid="mock-preview-panel" />;
+  MockWhitepaperPreviewPanel.displayName = 'MockWhitepaperPreviewPanel';
+  return MockWhitepaperPreviewPanel;
+});
 
 // Mock Recharts ResponsiveContainer as it can cause issues in JSDOM
-jest.spyOn(recharts, 'ResponsiveContainer').mockImplementation(({ children }) => <div data-testid="mock-responsive-container">{children}</div>);
+jest.spyOn(recharts, 'ResponsiveContainer').mockImplementation(function MockResponsiveContainer({ children }) { 
+  return <div data-testid="mock-responsive-container">{children}</div>;
+});
 
 
 // Mock html2canvas and jsPDF
@@ -134,14 +144,14 @@ describe('WhitepaperGeneratorPage', () => {
 
   describe('Download Buttons', () => {
     // Simulate that sections have been generated
-    const setupPageWithSections = () => {
+    const _setupPageWithSections = () => {
         render(<WhitepaperGeneratorPage />);
         // Simulate generation and section rendering
         act(() => {
             // Directly set sections state for testing purposes
             // This is a bit of a hack, ideally we'd trigger generation
             // but that makes the test more complex. For isolated download tests, this is fine.
-            const setSections = jest.requireActual('react').useState()[1]; // Get the setState function
+            const _setSections = jest.requireActual('react').useState()[1]; // Get the setState function
             // This part is tricky as we don't have direct access to page's internal setState.
             // A better way would be to have a helper function or refactor the component for testability.
             // For now, we'll assume sections are present by testing after a simulated generation.
@@ -190,7 +200,8 @@ describe('WhitepaperGeneratorPage', () => {
 
         fireEvent.click(downloadPdfButton);
 
-        const jsPDFMockInstance = (require('jspdf') as jest.Mock).mock.instances[0];
+        const jsPDF = await import('jspdf');
+        const jsPDFMockInstance = (jsPDF.default as any).mock?.instances?.[0] || jest.mocked(jsPDF.default).mock.instances[0];
 
         await waitFor(() => expect(html2canvas).toHaveBeenCalled());
         await waitFor(() => expect(jsPDFMockInstance.addImage).toHaveBeenCalledWith('mockImageDataUri', 'PNG', 0, 0, expect.any(Number), expect.any(Number)));

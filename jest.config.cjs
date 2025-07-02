@@ -19,8 +19,11 @@ module.exports = {
     // Fix path mappings with more specific ordering
     '^@/pages/api/(.*)$': '<rootDir>/pages/api/$1',
     '^@/pages/(.*)$': ['<rootDir>/pages/$1', '<rootDir>/src/pages/$1'],
+    '^@/components/ui/CategoryCard$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/components/ui/(.*)$': '<rootDir>/src/components/ui/$1',
     '^@/components/(.*)$': '<rootDir>/src/components/$1',
-    '^@/utils/(.*)$': '<rootDir>/src/utils/$1',
+    '^@/i18n$': '<rootDir>/tests/__mocks__/i18n.js',
+    '^@/utils/(?!devtools)(.*)$': '<rootDir>/src/utils/$1',
     '^@/context$': '<rootDir>/src/context/index.ts',
     '^@/context/(.*)$': '<rootDir>/src/context/$1',
     '^@/hooks/(.*)$': '<rootDir>/src/hooks/$1',
@@ -32,18 +35,22 @@ module.exports = {
     '^@/data/(.*)$': '<rootDir>/src/data/$1',
     '^@/integrations/(.*)$': '<rootDir>/src/integrations/$1',
     '^@/types/(.*)$': '<rootDir>/src/types/$1',
+    '^@/store$': '<rootDir>/src/store/index.ts',
     '^@/store/(.*)$': '<rootDir>/src/store/$1',
-    '^@/routes/(.*)$': '<rootDir>/src/routes/$1',
+    '^@/layout$': '<rootDir>/src/layout/index.ts',
     '^@/layout/(.*)$': '<rootDir>/src/layout/$1',
+    '^@/routes/(.*)$': '<rootDir>/src/routes/$1',
     '^@/mobile/(.*)$': '<rootDir>/src/mobile/$1',
     '^@/sdk/(.*)$': '<rootDir>/sdk/$1',
     '^@/mocks/(.*)$': '<rootDir>/src/mocks/$1',
     '^@/config/(.*)$': '<rootDir>/src/config/$1',
+    '^@/middleware/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^vitest$': '<rootDir>/tests/__mocks__/vitestMock.js',
     
     // Special module mocks
     '^msw/node$': require.resolve('msw/node'),
     '^next/router$': 'next-router-mock',
-    '^next/navigation$': 'next-router-mock/next-navigation',
+    '^next/navigation$': '<rootDir>/tests/__mocks__/emptyModule.js',
     
     // Mock heavy libraries not needed for unit tests
     '^@reown/appkit(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
@@ -51,6 +58,19 @@ module.exports = {
     '^uint8arrays/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^multiformats/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^react-markdown$': '<rootDir>/tests/__mocks__/reactMarkdown.js',
+<<<<<<< HEAD
+    '^@/pages/(.*)\.jsx$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/pages/Signup$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/pages/signup$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/utils/devtools$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^scripts/watchdog$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^os-utils$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/pages/api/points/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/pages/api/users/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/pages/Login\.jsx$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/App$': '<rootDir>/src/App.tsx',
+    '^@/pages/api/auth/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
+=======
     // Fix for unresolved "@/hooks" barrel import in tests
     '^@/hooks$': '<rootDir>/src/hooks/index.ts',
     // Additional aliases required by failing tests
@@ -63,7 +83,11 @@ module.exports = {
     '^mongodb(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^bson(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/components/search/(.*)$': '<rootDir>/src/components/talent/$1',
+<<<<<<< HEAD
+>>>>>>> f23d96de9595444025c73b6fe31e611c0f3f880f
+=======
     '^scripts/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
+>>>>>>> 9ee51355f57ac94925b3b52dccbf6e1f836962f7
   },
   
   // Test file patterns

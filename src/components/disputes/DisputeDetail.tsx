@@ -3,8 +3,9 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import { useDisputes } from "@/hooks/useDisputes";
 import {logErrorToProduction} from '@/utils/productionLogger';
+import { ArrowDown, Check, MessageSquare, Download } from 'lucide-react';
 import {
- Dispute, disputeReasonLabels, DisputeMessage, DisputeStatus, ResolutionType
+  Dispute, disputeReasonLabels, DisputeMessage, DisputeStatus, ResolutionType
 } from "@/types/disputes";
 
 import { Button } from "@/components/ui/button";
@@ -16,7 +17,10 @@ import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { format, formatDistanceToNow } from "date-fns";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { ArrowDown, Check, MessageSquare, Download } from "lucide-react";
+
+
+
+
 import { useAuth } from "@/hooks/useAuth";
 import { toast } from "sonner";
 

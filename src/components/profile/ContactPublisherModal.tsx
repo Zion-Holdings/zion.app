@@ -1,11 +1,12 @@
 import React from 'react';
 import FocusLock from 'react-focus-lock';
+import { SendIcon, Mail } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
   DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog';
+  DialogTitle
+} from "@/components/ui/dialog";
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -20,7 +21,8 @@ import {
 import { useForm, type Resolver } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { SendIcon, Mail } from 'lucide-react';
+
+
 import api from '@/services/apiClient';
 import { toast } from '@/hooks/use-toast';
 import { useAuth } from '@/hooks/useAuth';

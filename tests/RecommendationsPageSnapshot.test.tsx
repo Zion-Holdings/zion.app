@@ -1,8 +1,14 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import RecommendationsPage from '@/pages/RecommendationsPage.jsx';
 
-jest.mock('@/hooks/useAuth', () => ({ useAuth: () => ({ user: { id: '1' } }) }));
+jest.mock('@/hooks/useAuth', () => ({ 
+  useAuth: () => ({ user: { id: '1' } }) 
+}));
+
+jest.mock('@/hooks/useDelayedError', () => ({
+  useDelayedError: (error) => error
+}));
 
 beforeEach(() => {
   global.fetch = jest.fn().mockResolvedValue({
@@ -18,6 +24,10 @@ test('RecommendationsPage renders header', async () => {
     </MemoryRouter>
   );
 
-  expect(await screen.findByRole('heading', { name: /ai equipment recommendations/i })).toBeInTheDocument();
+  // Wait for the loading state to complete and the header to appear
+  await waitFor(() => {
+    expect(screen.getByRole('heading', { name: /ai equipment recommendations/i })).toBeInTheDocument();
+  }, { timeout: 3000 });
+  
   expect(asFragment()).toMatchSnapshot();
 });

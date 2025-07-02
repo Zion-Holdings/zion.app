@@ -1,374 +1,245 @@
 #!/usr/bin/env node
 
+/**
+ * Bundle Optimizer - Phase 2 Implementation
+ * 
+ * Tracks bundle size improvements and validates optimization targets
+ */
+
 const fs = require('fs');
 const path = require('path');
 
-// Bundle Optimizer for Next.js 14 with 177 pages
-class BundleOptimizer {
-  constructor() {
-    this.buildDir = path.join(process.cwd(), '.next');
-    this.staticDir = path.join(this.buildDir, 'static');
-    this.analysis = {
-      timestamp: new Date().toISOString(),
-      totalSize: 0,
-      chunks: [],
-      pages: [],
-      assets: [],
-      recommendations: [],
-      performance: {
-        score: 0,
-        metrics: {}
-      }
-    };
-  }
+console.log('🎯 BUNDLE OPTIMIZATION TRACKER');
+console.log('===============================\n');
 
-  async optimize() {
-    console.log('🚀 Bundle Optimizer for Next.js 14 (177+ pages)');
-    console.log('================================================\n');
+// Target metrics from Phase 2 plan
+const TARGETS = {
+  mainBundle: 1000000,    // 1MB target (down from 4.97MB)
+  maxChunkSize: 244000,   // 244KB max chunk size
+  totalBundleReduction: 0.5, // 50% total reduction target
+};
 
-    if (!fs.existsSync(this.buildDir)) {
-      console.log('❌ Build directory not found. Run `npm run build` first.');
-      return;
-    }
+const BASELINE = {
+  mainBundle: 4978000,    // 4.97MB baseline
+  totalBundleSize: 8000000, // ~8MB estimated total
+};
 
-    // Run analysis
-    await this.analyzeBundle();
-    await this.analyzePages();
-    await this.analyzeAssets();
-    await this.generateRecommendations();
-    
-    // Display results
-    this.displayResults();
-    
-    // Save detailed report
-    await this.saveReport();
-    
-    console.log('\n✅ Bundle optimization analysis complete!');
-  }
+// Check if build output exists
+const buildStatsPath = path.join(process.cwd(), '.next');
+if (!fs.existsSync(buildStatsPath)) {
+  console.log('❌ No build output found. Run `npm run build` first.');
+  process.exit(1);
+}
 
-  async analyzeBundle() {
-    console.log('📊 Analyzing bundle composition...');
-    
-    const chunksDir = path.join(this.staticDir, 'chunks');
-    if (!fs.existsSync(chunksDir)) return;
+// Calculate improvements
+function calculateImprovement(baseline, current) {
+  const reduction = baseline - current;
+  const percentage = (reduction / baseline) * 100;
+  return { reduction, percentage };
+}
 
-    const chunkFiles = fs.readdirSync(chunksDir);
+// Format bytes to human readable
+function formatBytes(bytes) {
+  if (bytes === 0) return '0 Bytes';
+  const k = 1024;
+  const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+}
+
+// Analyze current bundle state
+function analyzeBundles() {
+  const results = {
+    mainBundle: null,
+    largeChunks: [],
+    totalSize: 0,
+    chunkCount: 0,
+  };
+
+  // Analyze static chunks
+  const staticPath = path.join(buildStatsPath, 'static', 'chunks');
+  if (fs.existsSync(staticPath)) {
+    const chunks = fs.readdirSync(staticPath);
     
-    for (const file of chunkFiles) {
-      if (!file.endsWith('.js')) continue;
-      
-      const filePath = path.join(chunksDir, file);
-      const stats = fs.statSync(filePath);
+    chunks.forEach(chunk => {
+      const chunkPath = path.join(staticPath, chunk);
+      const stats = fs.statSync(chunkPath);
       const size = stats.size;
       
-      this.analysis.totalSize += size;
+      results.totalSize += size;
+      results.chunkCount++;
       
-      const chunkInfo = {
-        name: file,
-        size,
-        sizeKB: Math.round(size / 1024),
-        type: this.categorizeChunk(file),
-        isLarge: size > 500 * 1024, // > 500KB
-        recommendations: []
-      };
-
-      // Add specific recommendations for large chunks
-      if (chunkInfo.isLarge) {
-        chunkInfo.recommendations.push('Consider code splitting or lazy loading');
+      if (size > TARGETS.maxChunkSize) {
+        results.largeChunks.push({ name: chunk, size });
       }
-
-      this.analysis.chunks.push(chunkInfo);
-    }
-
-    // Sort chunks by size
-    this.analysis.chunks.sort((a, b) => b.size - a.size);
-    
-    console.log(`   📦 Total bundle size: ${(this.analysis.totalSize / 1024 / 1024).toFixed(2)} MB`);
-    console.log(`   🧩 JavaScript chunks: ${this.analysis.chunks.length}`);
-  }
-
-  categorizeChunk(filename) {
-    if (filename.includes('framework')) return 'framework';
-    if (filename.includes('vendor') || filename.includes('node_modules')) return 'vendor';
-    if (filename.includes('pages')) return 'page';
-    if (filename.includes('common')) return 'common';
-    if (filename.includes('runtime')) return 'runtime';
-    if (filename.includes('webpack')) return 'webpack';
-    return 'application';
-  }
-
-  async analyzePages() {
-    console.log('\n📄 Analyzing page optimization...');
-    
-    const buildManifestPath = path.join(this.buildDir, 'build-manifest.json');
-    if (!fs.existsSync(buildManifestPath)) return;
-
-    const manifest = JSON.parse(fs.readFileSync(buildManifestPath, 'utf8'));
-    const pages = Object.keys(manifest.pages || {});
-    
-    this.analysis.pages = pages.map(page => ({
-      route: page,
-      chunks: manifest.pages[page] || [],
-      chunkCount: (manifest.pages[page] || []).length,
-      estimatedSize: this.calculatePageSize(manifest.pages[page] || [])
-    }));
-
-    console.log(`   📋 Total pages: ${pages.length}`);
-    console.log(`   📊 Average chunks per page: ${(this.analysis.pages.reduce((sum, p) => sum + p.chunkCount, 0) / pages.length).toFixed(1)}`);
-  }
-
-  calculatePageSize(chunks) {
-    return chunks.reduce((total, chunk) => {
-      const chunkInfo = this.analysis.chunks.find(c => chunk.includes(c.name.replace('.js', '')));
-      return total + (chunkInfo ? chunkInfo.size : 0);
-    }, 0);
-  }
-
-  async analyzeAssets() {
-    console.log('\n🖼️  Analyzing static assets...');
-    
-    const mediaDir = path.join(this.staticDir, 'media');
-    const cssDir = path.join(this.staticDir, 'css');
-    
-    // Analyze CSS
-    if (fs.existsSync(cssDir)) {
-      const cssFiles = fs.readdirSync(cssDir);
-      for (const file of cssFiles) {
-        const filePath = path.join(cssDir, file);
-        const stats = fs.statSync(filePath);
-        this.analysis.assets.push({
-          name: file,
-          type: 'css',
-          size: stats.size,
-          sizeKB: Math.round(stats.size / 1024)
-        });
-      }
-    }
-
-    // Analyze media files
-    if (fs.existsSync(mediaDir)) {
-      const mediaFiles = fs.readdirSync(mediaDir);
-      for (const file of mediaFiles) {
-        const filePath = path.join(mediaDir, file);
-        const stats = fs.statSync(filePath);
-        this.analysis.assets.push({
-          name: file,
-          type: this.getAssetType(file),
-          size: stats.size,
-          sizeKB: Math.round(stats.size / 1024)
-        });
-      }
-    }
-
-    console.log(`   🎨 CSS files: ${this.analysis.assets.filter(a => a.type === 'css').length}`);
-    console.log(`   🖼️  Media files: ${this.analysis.assets.filter(a => a.type !== 'css').length}`);
-  }
-
-  getAssetType(filename) {
-    const ext = path.extname(filename).toLowerCase();
-    if (['.jpg', '.jpeg', '.png', '.gif', '.webp', '.avif'].includes(ext)) return 'image';
-    if (['.mp4', '.webm', '.mov'].includes(ext)) return 'video';
-    if (['.woff', '.woff2', '.ttf', '.otf'].includes(ext)) return 'font';
-    if (['.svg'].includes(ext)) return 'svg';
-    return 'other';
-  }
-
-  async generateRecommendations() {
-    console.log('\n💡 Generating optimization recommendations...');
-    
-    const recommendations = [];
-
-    // Bundle size recommendations
-    if (this.analysis.totalSize > 3 * 1024 * 1024) { // > 3MB
-      recommendations.push({
-        priority: 'high',
-        category: 'bundle-size',
-        title: 'Large Bundle Size',
-        description: `Total bundle size is ${(this.analysis.totalSize / 1024 / 1024).toFixed(2)}MB`,
-        action: 'Implement aggressive code splitting and lazy loading',
-        impact: 'High - reduces initial load time',
-        effort: 'Medium'
-      });
-    }
-
-    // Large chunk recommendations
-    const largeChunks = this.analysis.chunks.filter(c => c.size > 500 * 1024);
-    if (largeChunks.length > 0) {
-      recommendations.push({
-        priority: 'high',
-        category: 'code-splitting',
-        title: 'Large Chunks Detected',
-        description: `${largeChunks.length} chunks are larger than 500KB`,
-        action: 'Split large chunks using dynamic imports',
-        impact: 'High - improves initial load performance',
-        effort: 'Medium',
-        chunks: largeChunks.map(c => ({ name: c.name, size: c.sizeKB }))
-      });
-    }
-
-    // Framework chunk optimization
-    const frameworkChunk = this.analysis.chunks.find(c => c.type === 'framework');
-    if (frameworkChunk && frameworkChunk.size > 300 * 1024) {
-      recommendations.push({
-        priority: 'medium',
-        category: 'framework',
-        title: 'Large Framework Chunk',
-        description: `Framework chunk is ${frameworkChunk.sizeKB}KB`,
-        action: 'Optimize React/Next.js imports and remove unused features',
-        impact: 'Medium - affects all pages',
-        effort: 'Low'
-      });
-    }
-
-    // Vendor chunk optimization
-    const vendorChunks = this.analysis.chunks.filter(c => c.type === 'vendor');
-    const totalVendorSize = vendorChunks.reduce((sum, c) => sum + c.size, 0);
-    if (totalVendorSize > 1 * 1024 * 1024) { // > 1MB
-      recommendations.push({
-        priority: 'medium',
-        category: 'vendor',
-        title: 'Large Vendor Dependencies',
-        description: `Vendor chunks total ${Math.round(totalVendorSize / 1024)}KB`,
-        action: 'Review and optimize third-party dependencies',
-        impact: 'Medium - reduces bundle size',
-        effort: 'High'
-      });
-    }
-
-    // Page optimization
-    const heavyPages = this.analysis.pages.filter(p => p.estimatedSize > 1 * 1024 * 1024);
-    if (heavyPages.length > 0) {
-      recommendations.push({
-        priority: 'medium',
-        category: 'pages',
-        title: 'Heavy Pages Detected',
-        description: `${heavyPages.length} pages have large bundle sizes`,
-        action: 'Implement page-level code splitting',
-        impact: 'Medium - improves specific page performance',
-        effort: 'Medium'
-      });
-    }
-
-    // Asset optimization
-    const largeAssets = this.analysis.assets.filter(a => a.size > 100 * 1024);
-    if (largeAssets.length > 0) {
-      recommendations.push({
-        priority: 'low',
-        category: 'assets',
-        title: 'Large Static Assets',
-        description: `${largeAssets.length} assets are larger than 100KB`,
-        action: 'Optimize images and compress assets',
-        impact: 'Low - improves overall page weight',
-        effort: 'Low'
-      });
-    }
-
-    // Performance optimizations
-    recommendations.push({
-      priority: 'medium',
-      category: 'performance',
-      title: 'Runtime Performance',
-      description: 'Implement performance monitoring and optimization',
-      action: 'Add bundle monitoring and tree shaking',
-      impact: 'Medium - ongoing performance insights',
-      effort: 'Low'
     });
-
-    this.analysis.recommendations = recommendations;
   }
 
-  calculatePerformanceScore() {
-    let score = 100;
+  // Analyze pages (including _app)
+  const pagesPath = path.join(buildStatsPath, 'static', 'chunks', 'pages');
+  if (fs.existsSync(pagesPath)) {
+    const pages = fs.readdirSync(pagesPath);
     
-    // Bundle size penalties
-    if (this.analysis.totalSize > 3 * 1024 * 1024) score -= 20;
-    else if (this.analysis.totalSize > 2 * 1024 * 1024) score -= 10;
-    
-    // Large chunk penalties
-    const largeChunks = this.analysis.chunks.filter(c => c.size > 500 * 1024);
-    score -= largeChunks.length * 5;
-    
-    // Too many chunks penalty
-    if (this.analysis.chunks.length > 50) score -= 10;
-    
-    return Math.max(0, score);
-  }
-
-  displayResults() {
-    console.log('\n📊 OPTIMIZATION RESULTS');
-    console.log('========================');
-    
-    const score = this.calculatePerformanceScore();
-    const scoreEmoji = score >= 80 ? '🟢' : score >= 60 ? '🟡' : '🔴';
-    
-    console.log(`${scoreEmoji} Performance Score: ${score}/100`);
-    console.log(`📦 Total Bundle Size: ${(this.analysis.totalSize / 1024 / 1024).toFixed(2)} MB`);
-    console.log(`🧩 Total Chunks: ${this.analysis.chunks.length}`);
-    console.log(`📄 Total Pages: ${this.analysis.pages.length}`);
-    
-    // Top 5 largest chunks
-    console.log('\n🔥 Largest Chunks:');
-    this.analysis.chunks.slice(0, 5).forEach((chunk, i) => {
-      const typeEmoji = {
-        framework: '⚛️',
-        vendor: '📦',
-        page: '📄',
-        common: '🔗',
-        runtime: '⚙️'
-      }[chunk.type] || '📜';
+    pages.forEach(page => {
+      const pagePath = path.join(pagesPath, page);
+      const stats = fs.statSync(pagePath);
+      const size = stats.size;
       
-      console.log(`   ${i + 1}. ${typeEmoji} ${chunk.name} (${chunk.sizeKB}KB)`);
+      results.totalSize += size;
+      results.chunkCount++;
+      
+      if (page.includes('_app')) {
+        results.mainBundle = { name: page, size };
+      }
+      
+      if (size > TARGETS.maxChunkSize) {
+        results.largeChunks.push({ name: page, size });
+      }
     });
+  }
 
-    // Priority recommendations
-    console.log('\n🎯 Priority Recommendations:');
-    const highPriority = this.analysis.recommendations.filter(r => r.priority === 'high');
-    if (highPriority.length === 0) {
-      console.log('   ✅ No high-priority optimizations needed!');
+  return results;
+}
+
+// Generate optimization report
+function generateReport() {
+  const analysis = analyzeBundles();
+  
+  console.log('📊 CURRENT BUNDLE STATE:');
+  console.log('========================');
+  
+  // Main bundle analysis
+  if (analysis.mainBundle) {
+    const current = analysis.mainBundle.size;
+    const target = TARGETS.mainBundle;
+    const improvement = calculateImprovement(BASELINE.mainBundle, current);
+    
+    console.log(`📦 Main Bundle (_app):`);
+    console.log(`   Current: ${formatBytes(current)}`);
+    console.log(`   Baseline: ${formatBytes(BASELINE.mainBundle)}`);
+    console.log(`   Target: ${formatBytes(target)}`);
+    console.log(`   Improvement: ${formatBytes(improvement.reduction)} (${improvement.percentage.toFixed(1)}%)`);
+    
+    if (current <= target) {
+      console.log(`   ✅ TARGET ACHIEVED!`);
     } else {
-      highPriority.forEach((rec, i) => {
-        console.log(`   ${i + 1}. ${rec.title}`);
-        console.log(`      📋 ${rec.description}`);
-        console.log(`      💡 ${rec.action}`);
-        console.log(`      📈 Impact: ${rec.impact}`);
-        console.log('');
-      });
+      const remaining = current - target;
+      const remainingPercent = ((remaining / current) * 100).toFixed(1);
+      console.log(`   ⚠️  Still ${formatBytes(remaining)} (${remainingPercent}%) over target`);
     }
+    console.log();
   }
-
-  async saveReport() {
-    const reportPath = path.join(process.cwd(), 'bundle-optimization-report.json');
-    
-    const report = {
-      ...this.analysis,
-      performance: {
-        score: this.calculatePerformanceScore(),
-        metrics: {
-          bundleSizeMB: Math.round(this.analysis.totalSize / 1024 / 1024 * 100) / 100,
-          chunkCount: this.analysis.chunks.length,
-          pageCount: this.analysis.pages.length,
-          averageChunkSize: Math.round(this.analysis.totalSize / this.analysis.chunks.length / 1024),
-          largeChunkCount: this.analysis.chunks.filter(c => c.size > 500 * 1024).length
-        }
-      },
-      nextSteps: [
-        'Review high-priority recommendations',
-        'Implement dynamic imports for large components',
-        'Monitor bundle size in CI/CD pipeline',
-        'Set up performance budgets',
-        'Regular bundle analysis and optimization'
-      ]
-    };
-
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(`\n📋 Detailed report saved to: ${reportPath}`);
+  
+  // Total bundle analysis
+  const totalImprovement = calculateImprovement(BASELINE.totalBundleSize, analysis.totalSize);
+  console.log(`📊 Total Bundle Size:`);
+  console.log(`   Current: ${formatBytes(analysis.totalSize)}`);
+  console.log(`   Baseline: ${formatBytes(BASELINE.totalBundleSize)}`);
+  console.log(`   Improvement: ${formatBytes(totalImprovement.reduction)} (${totalImprovement.percentage.toFixed(1)}%)`);
+  console.log(`   Chunks: ${analysis.chunkCount} total`);
+  console.log();
+  
+  // Large chunks analysis
+  if (analysis.largeChunks.length > 0) {
+    console.log(`⚠️  CHUNKS OVER ${formatBytes(TARGETS.maxChunkSize)}:`);
+    console.log('================================');
+    analysis.largeChunks
+      .sort((a, b) => b.size - a.size)
+      .slice(0, 10) // Show top 10
+      .forEach(chunk => {
+        const overTarget = chunk.size - TARGETS.maxChunkSize;
+        console.log(`   📄 ${chunk.name}: ${formatBytes(chunk.size)} (+${formatBytes(overTarget)})`);
+      });
+    console.log();
+  } else {
+    console.log(`✅ All chunks under ${formatBytes(TARGETS.maxChunkSize)} target!`);
+    console.log();
   }
+  
+  // Optimization suggestions
+  console.log('🎯 OPTIMIZATION PROGRESS:');
+  console.log('=========================');
+  
+  const mainBundleProgress = analysis.mainBundle ? 
+    ((BASELINE.mainBundle - analysis.mainBundle.size) / (BASELINE.mainBundle - TARGETS.mainBundle)) * 100 : 0;
+  
+  console.log(`📈 Main Bundle Optimization: ${Math.min(100, mainBundleProgress).toFixed(1)}% complete`);
+  console.log(`📈 Total Size Reduction: ${totalImprovement.percentage.toFixed(1)}% achieved`);
+  console.log();
+  
+  // Next steps
+  console.log('� NEXT OPTIMIZATION STEPS:');
+  console.log('============================');
+  
+  if (analysis.mainBundle && analysis.mainBundle.size > TARGETS.mainBundle) {
+    console.log('1. 📦 Continue _app bundle optimization:');
+    console.log('   - Move more providers to page-level');
+    console.log('   - Implement additional dynamic imports');
+    console.log('   - Review heavy dependency usage');
+    console.log();
+  }
+  
+  if (analysis.largeChunks.length > 3) {
+    console.log('2. � Address remaining large chunks:');
+    console.log('   - Implement page-level code splitting');
+    console.log('   - Optimize vendor bundle groupings');
+    console.log('   - Use React.lazy for heavy components');
+    console.log();
+  }
+  
+  console.log('3. 📊 Monitor and validate:');
+  console.log('   - Run bundle analysis after changes');
+  console.log('   - Test loading performance');
+  console.log('   - Validate user experience impact');
+  console.log();
+  
+  // Success criteria
+  const isMainBundleOptimized = analysis.mainBundle && analysis.mainBundle.size <= TARGETS.mainBundle;
+  const isTotalSizeGood = totalImprovement.percentage >= (TARGETS.totalBundleReduction * 100);
+  const areChunksOptimized = analysis.largeChunks.length <= 2;
+  
+  if (isMainBundleOptimized && isTotalSizeGood && areChunksOptimized) {
+    console.log('🎉 PHASE 2 OPTIMIZATION COMPLETE!');
+    console.log('All bundle size targets achieved.');
+  } else {
+    console.log('⚡ PHASE 2 OPTIMIZATION IN PROGRESS');
+    console.log('Continue implementing optimization strategies.');
+  }
+  
+  return {
+    success: isMainBundleOptimized && isTotalSizeGood,
+    mainBundleSize: analysis.mainBundle?.size || 0,
+    totalSize: analysis.totalSize,
+    largeChunksCount: analysis.largeChunks.length,
+    improvement: totalImprovement.percentage,
+  };
 }
 
-// CLI execution
-if (require.main === module) {
-  const optimizer = new BundleOptimizer();
-  optimizer.optimize().catch(console.error);
+// Save results for tracking
+function saveResults(results) {
+  const reportPath = path.join(process.cwd(), 'bundle-optimization-results.json');
+  const timestamp = new Date().toISOString();
+  
+  const report = {
+    timestamp,
+    phase: 'Phase 2',
+    results,
+    targets: TARGETS,
+    baseline: BASELINE,
+  };
+  
+  fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+  console.log(`\n� Results saved to: ${reportPath}`);
 }
 
-module.exports = BundleOptimizer; 
+// Main execution
+try {
+  const results = generateReport();
+  saveResults(results);
+  
+  // Exit with appropriate code
+  process.exit(results.success ? 0 : 1);
+} catch (error) {
+  console.error('❌ Error during bundle optimization analysis:', error.message);
+  process.exit(1);
+} 

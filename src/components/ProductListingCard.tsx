@@ -4,7 +4,8 @@ import { useRouter } from 'next/router';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ProductListing } from "@/types/listings";
-import { DollarSign } from "lucide-react";
+import { DollarSign } from 'lucide-react';
+
 import { RatingStars } from "@/components/RatingStars";
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { useDispatch } from 'react-redux';
@@ -98,9 +99,11 @@ const ProductListingCardComponent = ({
     dispatch(
       addItem({ id: listing.id, title: listing.title, price: listing.price ?? 0 })
     );
-    toast.success(`1× ${listing.title} added`, {
+    toast({
+      title: "Added to Cart",
+      description: `1× ${listing.title} added`,
       action: {
-        label: 'View Cart',
+        label: "View Cart",
         onClick: () => router.push('/cart'),
       },
     });

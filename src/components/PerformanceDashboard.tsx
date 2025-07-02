@@ -4,6 +4,12 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, AlertCircle, TrendingUp, Zap, Shield, Search } from 'lucide-react';
 
+
+
+
+
+
+
 interface PerformanceMetrics {
   buildSize: string;
   pageCount: number;

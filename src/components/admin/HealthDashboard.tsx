@@ -5,6 +5,12 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { AlertTriangle, CheckCircle, XCircle, Clock, TrendingUp, Activity } from 'lucide-react';
 
+
+
+
+
+
+
 interface HealthData {
   status: 'healthy' | 'warning' | 'critical';
   timestamp: string;

@@ -14,7 +14,9 @@ import { BudgetStep } from "@/components/QuoteRequestForm/BudgetStep";
 import { SummaryStep } from "@/components/QuoteRequestForm/SummaryStep";
 import { AutoFillModal } from "@/components/QuoteRequestForm/AutoFillModal";
 import { QuoteFormData } from "@/types/quotes";
-import { Sparkles, Loader2 } from "lucide-react";
+import { Sparkles, Loader2 } from 'lucide-react';
+
+
 import { z } from "zod";
 
 export type QuoteRequestSteps = "service" | "details" | "timeline" | "budget" | "summary";
@@ -128,7 +130,7 @@ export function QuoteRequestForm() {
       
       // Redirect to confirmation page or homepage
       router.push("/");
-    } catch (error) {
+    } catch (_error) {
       toast({
         title: "Submission Failed",
         description: "There was an error submitting your request. Please try again.",

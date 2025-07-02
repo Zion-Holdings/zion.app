@@ -4,6 +4,7 @@ import { supabase } from '@/integrations/supabase/client';
 import WhitepaperPreviewPanel from '@/components/WhitepaperPreviewPanel'; // Re-use the preview panel
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
+
 import Link from 'next/link'; // For a back button, changed from react-router-dom
 import {logErrorToProduction} from '@/utils/productionLogger';
 

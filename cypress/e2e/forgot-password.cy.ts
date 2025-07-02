@@ -1,3 +1,4 @@
+/* eslint-env cypress/globals */
 describe('Forgot Password Page', () => {
   beforeEach(() => {
     // Visit the page before each test
@@ -75,7 +76,7 @@ describe('Forgot Password Page', () => {
     cy.get('button[type="submit"]').contains('Send Reset Link').should('be.visible');
 
     cy.then(() => {
-      expect(errorStub).not.to.be.called;
+      void expect(errorStub).not.to.have.been.called;
     });
   });
 

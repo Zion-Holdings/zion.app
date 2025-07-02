@@ -1,13 +1,68 @@
 // @/instrumentation.ts
-import * as Sentry from "@sentry/nextjs";
 
-// Re-export client-specific Sentry utilities if they are intended to be callable from server components
-// or if sentry.ts also contains utility functions used by both client and server.
-// For now, only exporting onRequestError as the client-side register should not be called here.
-export { onRequestError } from './sentry';
+// Import server polyfills FIRST to handle client-side globals in server context
+// Immediately define self for webpack chunk loading
+if (typeof global !== 'undefined' && typeof (global as any).self === 'undefined') {
+  (global as any).self = global;
+}
+if (typeof globalThis !== 'undefined' && typeof (globalThis as any).self === 'undefined') {
+  (globalThis as any).self = globalThis;
+}
+
+import './src/utils/server-polyfill';
+
+// Conditionally import Sentry to avoid Node.js dependencies in browser
+let Sentry: any = null;
+
+// Conditional re-export to avoid build errors
+let onRequestError: any = null;
+
+if (typeof window === 'undefined') {
+  try {
+    // Smart Sentry detection: Use same logic as next.config.js
+    const shouldDisableSentry = process.env.SKIP_SENTRY_BUILD === 'true' || 
+                               process.env.CI === 'true' ||
+                               process.env.NODE_ENV === 'production' ||
+                               !process.env.SENTRY_DSN ||
+                               process.env.SENTRY_DSN?.includes('dummy') ||
+                               process.env.SENTRY_DSN?.includes('placeholder');
+    
+    if (shouldDisableSentry) {
+      // Use mock during production builds or when DSN not configured
+      const mockSentry = await import('./src/utils/sentry-mock');
+      Sentry = mockSentry.default;
+      onRequestError = mockSentry.onRequestError;
+      console.log('Using Sentry mock (Smart Detection)');
+    } else {
+      // Dynamic imports to replace require() calls
+      const sentryModule = await import("@sentry/nextjs");
+      Sentry = sentryModule;
+      const sentryConfig = await import('./sentry');
+      onRequestError = sentryConfig.onRequestError;
+    }
+  } catch (error) {
+    console.warn('Sentry import failed, using mock:', error);
+    // Fallback to mock if import fails
+    try {
+      const mockSentry = await import('./src/utils/sentry-mock');
+      Sentry = mockSentry.default;
+      onRequestError = mockSentry.onRequestError;
+    } catch (mockError) {
+      console.error('Mock Sentry also failed:', mockError);
+    }
+  }
+}
+
+export { onRequestError };
 
 export async function register() {
   console.log("instrumentation.ts: register() called");
+
+  // Skip if Sentry not available (e.g., client-side)
+  if (!Sentry) {
+    console.log("instrumentation.ts: Sentry not available, skipping initialization");
+    return;
+  }
 
   const SENTRY_DSN = process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
   const SENTRY_RELEASE = process.env.SENTRY_RELEASE || process.env.NEXT_PUBLIC_SENTRY_RELEASE;
@@ -42,7 +97,7 @@ export async function register() {
       environment: SENTRY_ENVIRONMENT,
       tracesSampleRate: process.env.NODE_ENV === 'development' ? 1.0 : 0.1,
 
-      beforeSend(event, hint) {
+      beforeSend(event: any, hint: any) {
         // Drop events without meaningful exception messages
         if (event.exception?.values?.[0]?.value === '' || event.exception?.values?.[0]?.value === undefined) {
           console.log("instrumentation.ts: Sentry event dropped due to empty exception value.");
@@ -62,7 +117,7 @@ export async function register() {
         return event;
       },
       
-      initialScope: (scope) => {
+      initialScope: (scope: any) => {
         if (SENTRY_RELEASE) {
           scope.setTag("release", SENTRY_RELEASE);
         }

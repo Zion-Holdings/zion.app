@@ -9,6 +9,8 @@
     ],
     "module": "ESNext",
     "skipLibCheck": true,
+    "importHelpers": false,
+    "noEmitHelpers": false,
     "baseUrl": ".",
     "paths": {
       "@/*": [
@@ -41,7 +43,7 @@
         "./src/services/*"
       ],
       "react-router-dom": [
-        "./src/stubs/react-router-dom.ts"
+        "./src/stubs/react-router-dom.tsx"
       ],
       "next-cloudinary": [
         "./types/next-cloudinary.d.ts"
@@ -68,6 +70,9 @@
     "typeRoots": [
       "./node_modules/@types",
       "./types"
+    ],
+    "types": [
+      "node"
     ],
     "jsx": "preserve",
     "allowImportingTsExtensions": true,

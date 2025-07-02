@@ -1,1 +1,3 @@
-export { default } from '@/pages/TalentsPage';
+import { createSafeComponent } from '../src/utils/safe-component-loader';
+
+export default createSafeComponent('../src/pages/TalentsPage');

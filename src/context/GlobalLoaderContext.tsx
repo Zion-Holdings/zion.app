@@ -35,7 +35,7 @@ export function AppLoaderProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<any>(null);
   const router = useRouter(); // Changed from useLocation
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const showLoader = () => setLoading(true);
   const hideLoader = () => setLoading(false);
@@ -83,10 +83,14 @@ export function AppLoaderProvider({ children }: { children: ReactNode }) {
   // Auto-dismiss loader after 15 seconds
   useEffect(() => {
     if (loading) {
-      timeoutRef.current = setTimeout(hideLoader, 15000);
+      const timeout = setTimeout(hideLoader, 15000);
+      timeoutRef.current = timeout;
     }
     return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
     };
   }, [loading]);
 

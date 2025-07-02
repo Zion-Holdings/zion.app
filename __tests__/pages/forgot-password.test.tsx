@@ -11,9 +11,11 @@ jest.mock('../../src/services/auth', () => ({
 
 // Mock next/link
 jest.mock('next/link', () => {
-  return ({ children, href }: { children: React.ReactNode; href: string }) => {
+  const MockLink = ({ children, href }: { children: React.ReactNode; href: string }) => {
     return <a href={href}>{children}</a>;
   };
+  MockLink.displayName = 'MockLink';
+  return MockLink;
 });
 
 describe('ForgotPasswordPage', () => {
@@ -109,10 +111,10 @@ describe('ForgotPasswordPage', () => {
     });
   });
 
-  test('Link to the login page points to /login', () => {
+  test('Link to the login page points to /auth/login', () => {
     render(<ForgotPasswordPage />);
     const loginLink = screen.getByText(/login/i); // Assuming the link text is "Login"
     expect(loginLink).toBeInTheDocument();
-    expect(loginLink.closest('a')).toHaveAttribute('href', '/login');
+    expect(loginLink.closest('a')).toHaveAttribute('href', '/auth/login');
   });
 });

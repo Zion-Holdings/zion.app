@@ -1,4 +1,5 @@
 const { withSentry } = require('./withSentry.cjs');
+const fs = require('fs');
 
 async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -9,21 +10,24 @@ async function handler(req, res) {
   }
 
   try {
-    const { name, email, phone, details, country, service } = req.body || {};
+    const { name, email, phone, details, country: _country, service: _service } = req.body || {};
     if (!name || !email || !phone || !details) {
       res.statusCode = 400;
       res.json({ error: 'Missing required fields' });
       return;
     }
 
-    console.log('New quote request:', {
+    // Store quote request locally for review
+    const logEntry = {
+      timestamp: new Date().toISOString(),
       name,
       email,
       phone,
       details,
-      country,
-      service,
-    });
+      country: _country,
+      service: _service,
+    };
+    fs.appendFileSync('quote_requests.log', JSON.stringify(logEntry) + '\n');
 
     // In a real application you would store the quote and send a confirmation email here
 

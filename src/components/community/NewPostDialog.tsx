@@ -30,7 +30,7 @@ export function NewPostDialog({ open, onOpenChange, initialCategory }: NewPostDi
       }
       onOpenChange(false);
       router.push(`/community/category/${values.categoryId}`);
-    } catch (error) {
+    } catch (_error) {
       toast({ title: "Error", description: "There was a problem creating your post", variant: "destructive" });
     }
   };

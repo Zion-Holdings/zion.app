@@ -1,23 +1,9 @@
 // src/config/env.ts
-import getConfig from 'next/config';
 import { logWarn } from '@/utils/productionLogger';
 
-// Provide a safe wrapper for next/config in case it's unavailable during
-// certain build or test environments.
-const safeGetConfig = (): { publicRuntimeConfig?: any } => {
-  try {
-    return getConfig() || {};
-  } catch (err) {
-    // When next/config cannot be resolved, fall back to an empty object
-    logWarn('Warning: next/config not available, using empty runtime config.');
-    return {};
-  }
-};
-
 export const getAppKitProjectId = (): string => {
-
-  const { publicRuntimeConfig } = safeGetConfig();
-  const projectId = process.env.NEXT_PUBLIC_REOWN_PROJECT_ID || publicRuntimeConfig?.NEXT_PUBLIC_REOWN_PROJECT_ID;
+  // Use environment variables directly instead of runtime config
+  const projectId = process.env.NEXT_PUBLIC_REOWN_PROJECT_ID;
 
   if (projectId && projectId !== 'YOUR_DEFAULT_PROJECT_ID_ENV_MISSING' && projectId !== 'YOUR_DEFAULT_PROJECT_ID_FALLBACK') {
     return projectId;
@@ -30,8 +16,8 @@ export const getAppKitProjectId = (): string => {
 };
 
 export const getSupportEmail = (): string => {
-  const { publicRuntimeConfig } = safeGetConfig();
-  const supportEmail = publicRuntimeConfig.NEXT_PUBLIC_SUPPORT_EMAIL;
+  // Use environment variables directly instead of runtime config
+  const supportEmail = process.env.NEXT_PUBLIC_SUPPORT_EMAIL;
 
   if (supportEmail && supportEmail !== 'YOUR_SUPPORT_EMAIL_ENV_MISSING' && supportEmail !== 'YOUR_SUPPORT_EMAIL_FALLBACK') {
     return supportEmail;

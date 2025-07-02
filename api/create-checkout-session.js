@@ -79,7 +79,9 @@ async function handler(req, res) {
     let orders = [];
     try {
       orders = JSON.parse(fs.readFileSync(file, 'utf8'));
-    } catch {}
+    } catch {
+      // File doesn't exist or is invalid, use empty array
+    }
     orders.push({ id: orderId, items: cartItems, status: 'pending', sandbox: useTest });
     fs.writeFileSync(file, JSON.stringify(orders, null, 2));
 

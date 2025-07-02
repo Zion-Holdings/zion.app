@@ -5,12 +5,12 @@ import { mutate } from 'swr';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { RefreshCcw, AlertCircle } from 'lucide-react';
+
+
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
-interface MarketplaceErrorFallbackProps extends FallbackProps {
-  // Additional props if needed
-}
+type MarketplaceErrorFallbackProps = FallbackProps;
 
 function MarketplaceErrorFallback({ error, resetErrorBoundary }: MarketplaceErrorFallbackProps) {
   const handleRetry = async () => {

@@ -8,18 +8,17 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  MapPin, 
-  Clock, 
-  Link as LinkIcon, 
-  Github, 
-  Twitter, 
-  Linkedin,
-  CheckCircle2,
-  Mail,
-  Phone,
-  Globe
-} from "lucide-react";
+import { MapPin, Clock, Link as LinkIcon, Github, Twitter, Linkedin, CheckCircle2, Mail, Phone, Globe } from 'lucide-react';
+
+
+
+
+
+
+
+
+
+
 import { HireNowCTA } from "@/components/profile/HireNowCTA";
 
 export default function ProfileDetail() {

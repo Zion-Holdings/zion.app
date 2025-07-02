@@ -8,7 +8,8 @@ function getLogFilePath() {
   const date = new Date().toISOString().slice(0, 10); // yyyy-mm-dd
   return path.join(logDir, `errors-${date}.log`);
 }
-const alertEmail = 'kleber@ziontechgroup.com';
+// Allow overriding alert recipient via environment variable
+const alertEmail = process.env.ALERT_EMAIL || 'kleber@ziontechgroup.com';
 
 if (process.env.SENDGRID_API_KEY) {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);

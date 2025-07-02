@@ -1,6 +1,5 @@
 import { toast } from '@/hooks/use-toast';
-import { toast as sonnerToastImport } from 'sonner'; // Renamed import
-import React from 'react';
+// Removed unused imports: sonnerToastImport, React
 
 // Mock sonner
 jest.mock('sonner', () => ({ // Changed vi.mock to jest.mock

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import {
-  Gift,
-  Star,
-  Users,
-  ShoppingBag,
-  MessageSquare,
-  TrendingUp,
-  History,
-} from 'lucide-react';
+import { Gift, Star, Users, ShoppingBag, MessageSquare, TrendingUp, History } from 'lucide-react';
+
+
+
+
+
+
+
+
 import { useAuth } from '@/hooks/useAuth';
 import { usePoints } from '@/hooks/usePoints';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';

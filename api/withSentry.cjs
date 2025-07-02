@@ -17,7 +17,7 @@ function withSentry(handler) {
     } finally {
       try {
         await Sentry.flush(2000);
-      } catch (_) {
+      } catch {
         // ignore flush errors
       }
     }

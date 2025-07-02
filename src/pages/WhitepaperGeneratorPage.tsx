@@ -4,7 +4,11 @@ import WhitepaperSectionEditor from '@/components/WhitepaperSectionEditor';
 import WhitepaperPreviewPanel from '@/components/WhitepaperPreviewPanel'; // Import the new preview panel
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Trash2, Download, Share2, Send } from 'lucide-react'; // Added Send icon
+import { Trash2, Download, Share2, Send } from 'lucide-react';
+
+
+
+ // Added Send icon
 import { toast } from "sonner";
 import { logErrorToProduction } from '@/utils/productionLogger';
 

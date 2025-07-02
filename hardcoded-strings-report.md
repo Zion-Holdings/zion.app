@@ -2824,7 +2824,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 2. Add `const { t } = useTranslation();` in the component
 3. Replace hardcoded strings with `t('key')` calls
 
-### scripts/deploy-optimization.js
+### scripts/deploy-optimization.cjs
 
 **Hardcoded strings found:**
 - "Consider code splitting"

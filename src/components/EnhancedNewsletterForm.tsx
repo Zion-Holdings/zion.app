@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState, useRef } from "react";
-import { Mail } from "lucide-react";
+import { Mail } from 'lucide-react';
+
 import { useToast } from "@/hooks/use-toast";
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
+import { isValidEmail } from '@/utils/email';
 
 export function EnhancedNewsletterForm() {
 
@@ -11,7 +13,6 @@ export function EnhancedNewsletterForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
-  const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const lastSubmit = useRef(0);
 
@@ -22,7 +23,7 @@ export function EnhancedNewsletterForm() {
     lastSubmit.current = now;
 
     const trimmed = email.trim();
-    if (!EMAIL_REGEX.test(trimmed)) {
+    if (!isValidEmail(trimmed)) {
       toast.error("Invalid email");
       return;
     }

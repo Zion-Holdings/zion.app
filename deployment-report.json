@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-07-01T20:31:21.568Z",
+  "version": "0.0.0",
+  "environment": "production",
+  "optimizations": [],
+  "bundleSize": 0,
+  "bundleSizeFormatted": "0 Bytes",
+  "warnings": [],
+  "recommendations": [
+    {
+      "type": "monitoring",
+      "priority": "medium",
+      "title": "Setup production monitoring",
+      "description": "Enable performance monitoring in production.",
+      "action": "Configure Sentry alerts and performance budgets"
+    }
+  ],
+  "deploymentChecklist": [
+    {
+      "item": "Environment variables configured",
+      "status": "pending",
+      "required": true
+    },
+    {
+      "item": "Production build successful",
+      "status": "complete",
+      "required": true
+    },
+    {
+      "item": "Bundle size optimized",
+      "status": "complete",
+      "required": false
+    },
+    {
+      "item": "Security audit passed",
+      "status": "complete",
+      "required": false
+    },
+    {
+      "item": "Performance monitoring ready",
+      "status": "manual-check",
+      "required": false
+    }
+  ]
+}

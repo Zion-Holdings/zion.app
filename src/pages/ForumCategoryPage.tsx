@@ -16,14 +16,13 @@ import { useCommunity } from "@/context";
 import { useToast } from "@/hooks/use-toast";
 import { useFollowedCategories } from "@/hooks/useFollowedCategories";
 import { logInfo } from '@/utils/productionLogger';
-import {
-  MessageSquare,
-  Briefcase,
-  Code,
-  FileText,
-  Megaphone,
-  Search
-} from "lucide-react";
+import { MessageSquare, Briefcase, Code, FileText, Megaphone, Search } from 'lucide-react';
+
+
+
+
+
+
 
 // Mock category data
 const categoriesInfo: Record<string, ForumCategoryInfo> = {

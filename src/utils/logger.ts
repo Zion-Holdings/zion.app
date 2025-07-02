@@ -9,12 +9,13 @@ interface LogLevel {
   ERROR: 'error';
 }
 
-const LOG_LEVELS: LogLevel = {
-  DEBUG: 'debug',
-  INFO: 'info',
-  WARN: 'warn',
-  ERROR: 'error'
-};
+// Remove unused LOG_LEVELS constant
+// const LOG_LEVELS: LogLevel = {
+//   DEBUG: 'debug',
+//   INFO: 'info',
+//   WARN: 'warn',
+//   ERROR: 'error'
+// };
 
 class Logger {
   private isDevelopment = process.env.NODE_ENV === 'development';
@@ -64,13 +65,15 @@ class Logger {
   // Performance timing
   time(label: string): void {
     if (this.isDevelopment) {
-      console.time(label);
+      // Use structured logging instead of console.time
+      logInfo(`[TIMER] Starting: ${label}`);
     }
   }
 
   timeEnd(label: string): void {
     if (this.isDevelopment) {
-      console.timeEnd(label);
+      // Use structured logging instead of console.timeEnd
+      logInfo(`[TIMER] Completed: ${label}`);
     }
   }
 }

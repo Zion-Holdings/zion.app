@@ -3,7 +3,7 @@ const { execSync, spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 const process = require('process');
-const { runPreDeployChecks, analyzeAndReport } = require('./deploy-optimization');
+const { runPreDeployChecks, analyzeAndReport } = require('./deploy-optimization.cjs');
 
 // Enhanced memory and performance optimizations
 const optimizedEnv = {
@@ -16,6 +16,8 @@ const optimizedEnv = {
   NEXT_TELEMETRY_DISABLED: "1",
   CI: "true",
   SKIP_TYPE_CHECK: "true", // Skip type checking to speed up build
+  SKIP_SENTRY_BUILD: "true", // Skip Sentry during React 19 transition
+  SKIP_DATADOG: "true", // Skip Datadog native modules during build
   
   // CRITICAL: Anti-hanging optimizations
   NEXT_DISABLE_CSS_INLINE: "true",
@@ -341,6 +343,18 @@ async function executeBuildSequence() {
         console.log("\n📊 Enhanced Build Performance Report (details from optimized-build.cjs):");
         // ... (original report logs) ...
         console.log(`- Build time: ✅ ${buildTime} seconds`);
+
+        // Apply Netlify self fix
+        try {
+          console.log("\n🔧 Applying Netlify self reference fix...");
+          const netlifyFix = require('./netlify-self-fix.cjs');
+          netlifyFix.main();
+          console.log("✅ Netlify self fix applied successfully.");
+        } catch (fixError) {
+          console.error("❌ Netlify self fix failed:", fixError.message);
+          // This is critical for Netlify deployment
+          process.exit(1);
+        }
 
         try {
           console.log("\n🔍 Running Post-Build Analysis & Reporting (from deploy-optimization.js)...");

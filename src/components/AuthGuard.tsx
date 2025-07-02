@@ -4,6 +4,8 @@ import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
 import { Loader2, Shield } from 'lucide-react';
 
+
+
 interface AuthGuardProps {
   children: React.ReactNode;
   requireAuth?: boolean;

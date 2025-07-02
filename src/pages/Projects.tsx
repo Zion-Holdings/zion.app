@@ -5,7 +5,9 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { Clock, Briefcase } from "lucide-react";
+import { Clock, Briefcase } from 'lucide-react';
+
+
 
 function ProjectsContent() {
   const { projects, isLoading } = useProjects();

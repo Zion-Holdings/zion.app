@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import * as Sentry from '@sentry/nextjs';
 import IndexPage, { getServerSideProps, fetchHomeData } from '../../pages/index';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';
 import { useRouter } from 'next/router';

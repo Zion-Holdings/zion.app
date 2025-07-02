@@ -128,7 +128,9 @@ export default [
       "scripts/**/*.js",
       "api/**/*.js",
       "server/**/*.js",
-      "backend/**/*.js"
+      "backend/**/*.js",
+      "token/**/*.js",
+      "hardhat.config.js"
     ],
     languageOptions: {
       sourceType: "commonjs",
@@ -150,11 +152,83 @@ export default [
         cy: "readonly",
         Cypress: "readonly",
         context: "readonly",
-        assert: "readonly"
+        assert: "readonly",
+        describe: "readonly",
+        it: "readonly",
+        expect: "readonly",
+        beforeEach: "readonly",
+        afterEach: "readonly",
+        before: "readonly",
+        after: "readonly"
       }
     },
     rules: {
       "@typescript-eslint/no-explicit-any": "off"
+    }
+  },
+
+  // Chrome Extension files
+  {
+    files: ["extension/**/*.{js,ts}"],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        chrome: "readonly"
+      }
+    },
+    rules: {
+      "no-console": "off"
+    }
+  },
+
+  // Service Worker files
+  {
+    files: ["public/service-worker.js", "**/sw.js", "**/*service-worker*.js"],
+    languageOptions: {
+      globals: {
+        ...globals.serviceworker,
+        workbox: "readonly",
+        importScripts: "readonly",
+        self: "readonly",
+        clients: "readonly",
+        caches: "readonly"
+      }
+    },
+    rules: {
+      "no-console": "off",
+      "no-redeclare": "off" // Allow workbox to be redeclared in service worker context
+    }
+  },
+
+  // Jest setup files
+  {
+    files: ["tests/jest.setup.ts", "**/*jest.setup*"],
+    languageOptions: {
+      globals: {
+        ...globals.jest,
+        ...globals.node,
+        jest: "readonly",
+        global: "readonly"
+      }
+    },
+    rules: {
+      "@typescript-eslint/no-require-imports": "off",
+      "@typescript-eslint/no-explicit-any": "off"
+    }
+  },
+
+  // Mock files in scripts directory
+  {
+    files: ["scripts/__mocks__/**/*.js"],
+    languageOptions: {
+      globals: {
+        ...globals.jest,
+        ...globals.node,
+        jest: "readonly"
+      }
+    },
+    rules: {
+      "@typescript-eslint/no-require-imports": "off"
     }
   }
 ];

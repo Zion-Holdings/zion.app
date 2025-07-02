@@ -1,7 +1,11 @@
 
 import { GradientHeading } from "./GradientHeading";
 import { FeatureCard } from "./FeatureCard";
-import { Bot, Clock, Globe, TrendingDown } from "lucide-react";
+import { Bot, Clock, Globe, TrendingDown } from 'lucide-react';
+
+
+
+
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
 

@@ -1,3 +1,4 @@
+/* eslint-env cypress/globals */
 describe('add to cart', () => {
   beforeEach(() => {
     // Clear the cart from localStorage before each test
@@ -34,16 +35,20 @@ describe('add to cart', () => {
     // Verify item in localStorage (using 'zion_cart' as per cartSlice.ts)
     cy.window().then((win) => {
       // Wait for localStorage to update
-      cy.waitUntil(() => win.localStorage.getItem('zion_cart') && JSON.parse(win.localStorage.getItem('zion_cart')!).length > 0, {
+      return cy.waitUntil(() => {
+        const cartData = win.localStorage.getItem('zion_cart');
+        return cartData && JSON.parse(cartData).length > 0;
+      }, {
         timeout: 5000,
         interval: 500,
         errorMsg: 'Cart in localStorage was not updated in time'
+      }).then(() => {
+        const cart = JSON.parse(win.localStorage.getItem('zion_cart') || '[]');
+        expect(cart.length).to.be.greaterThan(0);
+        // We don't know the exact ID of the first product, so just check that something was added
+        expect(cart[0]).to.have.property('id');
+        expect(cart[0].quantity).to.eq(1);
       });
-      const cart = JSON.parse(win.localStorage.getItem('zion_cart') || '[]');
-      expect(cart.length).to.be.greaterThan(0);
-      // We don't know the exact ID of the first product, so just check that something was added
-      expect(cart[0].id).to.exist;
-      expect(cart[0].quantity).to.eq(1);
     });
 
     // Ensure the URL is still /marketplace

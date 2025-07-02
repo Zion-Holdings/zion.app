@@ -25,9 +25,9 @@ This document provides an overview of the automated workflows and processes impl
 **Frontend (Netlify & GitHub Actions):**
 - **How it works:**
     - Netlify automatically handles the build and deployment of the `main` branch to production, configured via `netlify.toml`.
-    - The Netlify build process now incorporates pre-deploy checks (env vars, TypeScript, security audit) and post-build analysis (bundle size, report generation) by leveraging `scripts/deploy-optimization.js` through the `scripts/optimized-build.cjs` script (defined in `package.json` as `build:netlify:prepare`).
+    - The Netlify build process now incorporates pre-deploy checks (env vars, TypeScript, security audit) and post-build analysis (bundle size, report generation) by leveraging `scripts/deploy-optimization.cjs` through the `scripts/optimized-build.cjs` script (defined in `package.json` as `build:netlify:prepare`).
     - The `.github/workflows/deploy.yml` workflow, triggered on pushes to `main`, is now primarily responsible for creating Sentry releases. It rebuilds the application to ensure sourcemaps are available for Sentry.
-- **Configuration:** `netlify.toml`, `scripts/optimized-build.cjs`, `scripts/deploy-optimization.js`, `.github/workflows/deploy.yml`.
+- **Configuration:** `netlify.toml`, `scripts/optimized-build.cjs`, `scripts/deploy-optimization.cjs`, `.github/workflows/deploy.yml`.
 
 **Backend (Django on Kubernetes):**
 - **How it works:** The `.github/workflows/django-cd.yml` workflow handles production deployments for the backend.

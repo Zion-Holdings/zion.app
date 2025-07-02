@@ -6,7 +6,8 @@ import { LoadingSpinner } from "@/components/ui/enhanced-loading-states";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useAuth } from "@/context/auth/AuthProvider";
-import { AlertCircle } from "lucide-react";
+import { AlertCircle } from 'lucide-react';
+
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { PasswordStrengthMeter } from "@/components/PasswordStrengthMeter";
 import {logErrorToProduction} from '@/utils/productionLogger';

@@ -1,4 +1,4 @@
-import { vi, describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import React from 'react';
 import { renderHook, act } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -61,7 +61,7 @@ describe('useTalentQuotes', () => {
       await act(async () => {
         try {
           await result.current.markAsViewed(mutationArgs.id);
-        } catch (e) {
+        } catch {
           // Expected to throw if not handled by react-query's error boundary
         }
       });
@@ -97,7 +97,7 @@ describe('useTalentQuotes', () => {
       await act(async () => {
         try {
           await result.current.toggleArchive(mutationArgs.id, mutationArgs.isArchived);
-        } catch (e) {
+        } catch {
           // Expected
         }
       });

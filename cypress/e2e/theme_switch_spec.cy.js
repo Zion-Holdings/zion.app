@@ -1,3 +1,4 @@
+/* eslint-env cypress/globals */
 describe('Theme Toggle', () => {
   it('Switches from light to dark and persists', () => {
     cy.visit('/');

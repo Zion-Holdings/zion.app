@@ -2,6 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
 import { AlertTriangle, Home, RefreshCw, Settings } from 'lucide-react';
+
+
+
+
 import {logErrorToProduction} from '@/utils/productionLogger';
 import { logInfo, logErrorToProduction as prodLogError } from '@/utils/productionLogger';
 

@@ -5,7 +5,17 @@ import { useRequireAuth } from "@/hooks/useAuthGuard";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Badge } from "@/components/ui/badge";
-import { UserCheck, Bell, MessageSquare, LogOut, Send, Settings, FileText, Heart, Key, ShoppingBag } from "lucide-react";
+import { UserCheck, Bell, MessageSquare, LogOut, Send, Settings, FileText, Heart, Key, ShoppingBag } from 'lucide-react';
+
+
+
+
+
+
+
+
+
+
 import { useGetOrdersQuery } from '@/hooks/useOrders';
 import { useFavorites } from '@/hooks/useFavorites';
 import { useToast } from "@/hooks/use-toast";

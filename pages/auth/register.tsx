@@ -42,11 +42,7 @@ const RegisterPage = () => {
               alt="Zion Tech"
               width={48}
               height={48}
-              onError={(e) => {
-                const target = e.currentTarget as HTMLImageElement;
-                // Attempt to load from a more generic path if the specific one fails or hide
-                target.style.display = 'none';
-              }}
+              fallback="/logos/zion-logo-fallback.png"
             />
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
               Create your account

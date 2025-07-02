@@ -116,7 +116,8 @@ export function useMarketplaceSearch() {
         } else {
           setSearchSuggestions(staticSearchSuggestions);
         }
-      } catch {
+      } catch (_err) {
+        // Failed to fetch suggestions, fallback to static ones
         setSearchSuggestions(staticSearchSuggestions);
       }
     };

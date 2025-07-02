@@ -11,6 +11,7 @@ import ErrorBoundary from '@/components/GlobalErrorBoundary'; // Import ErrorBou
 import { useTalentDirectory } from '@/hooks/useTalentDirectory';
 import { SORT_OPTIONS } from '@/data/sortOptions';
 import { X } from 'lucide-react';
+
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { TalentProfile } from '@/types/talent';

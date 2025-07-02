@@ -4,6 +4,13 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Mail, AlertCircle, CheckCircle, Clock, RefreshCw, ArrowLeft, Eye } from 'lucide-react';
+
+
+
+
+
+
+
 import { AuthLayout } from '@/layout';
 import { supabase } from '@/integrations/supabase/client'; // Import Supabase client
 import { useAuth } from '@/hooks/useAuth'; // Import useAuth to access user state

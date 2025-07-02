@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/router'; // Changed from useNavigate
 import { CheckCircle2 } from 'lucide-react';
+
 import { useTranslation } from 'react-i18next';
 
 export default function PaymentSuccess() {

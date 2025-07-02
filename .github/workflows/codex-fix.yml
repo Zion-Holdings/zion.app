@@ -47,7 +47,7 @@ jobs:
         with:
           token: ${{ env.GITHUB_TOKEN }} # Use from job env
           branch: ${{ steps.run_codex_script.outputs.branch_name }}
-          title: Autofix: ${{ env.ISSUE_TITLE }}
+          title: Autofix:${{ env.ISSUE_TITLE }}"
           body: |
             This PR was automatically created by Codex to address issue #${{ env.ISSUE_NUMBER }}.
 

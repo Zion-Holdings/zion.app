@@ -1,5 +1,4 @@
-/// <reference types="vitest" />
-import type { TestAPI, expectTypeOf } from 'vitest'
+import type { TestAPI } from 'vitest'
 
 declare global {
   const vi: typeof import('vitest').vi;

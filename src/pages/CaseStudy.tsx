@@ -4,6 +4,7 @@ import { CASE_STUDIES } from '@/data/case-studies';
 import { SEO } from '@/components/SEO';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
+
 import {
   Breadcrumb,
   BreadcrumbList,

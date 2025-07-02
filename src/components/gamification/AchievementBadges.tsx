@@ -1,5 +1,6 @@
-import { BadgeCheck } from "lucide-react";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { BadgeCheck } from 'lucide-react';
 
 export interface Achievement {
   id: string;

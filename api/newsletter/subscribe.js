@@ -1,4 +1,5 @@
 const { withSentry } = require('../withSentry.cjs');
+const { isValidEmail } = require('../emailUtils.cjs');
 
 async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -10,14 +11,15 @@ async function handler(req, res) {
 
   try {
     const { email } = req.body || {};
-    if (!email) {
+    if (!isValidEmail(email)) {
       res.statusCode = 400;
-      res.json({ error: 'Email is required' });
+      res.json({ error: 'Invalid email' });
       return;
     }
 
     // Placeholder for subscription logic (e.g., store in DB or send to service)
-    console.log('New newsletter subscriber:', email);
+    // TODO: Implement actual newsletter subscription logic
+    // console.log('New newsletter subscriber:', email); // Removed for production
 
     res.statusCode = 200;
     res.json({ success: true });

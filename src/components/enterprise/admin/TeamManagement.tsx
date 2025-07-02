@@ -1,5 +1,6 @@
 
 import React, { useState } from "react";
+import { Trash, Mail, UserPlus } from 'lucide-react';
 import {
   Table,
   TableBody,
@@ -21,7 +22,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
-import { Trash, Mail, UserPlus } from "lucide-react";
+
+
+
 import { toast } from "@/hooks/use-toast";
 
 export function TeamManagement() {

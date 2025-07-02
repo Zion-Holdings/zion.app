@@ -3,15 +3,19 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import { User, Mail, MapPin, CreditCard } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog';
-import { User, Mail, MapPin, CreditCard } from 'lucide-react';
+  DialogTitle
+} from "@/components/ui/dialog";
+
+
+
+
 import { isProdDomain } from '@/utils/getStripe';
 
 interface GuestCheckoutModalProps {

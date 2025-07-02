@@ -8,6 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/router";
 import Image from 'next/image'; // Import next/image
 import {logErrorToProduction} from '@/utils/productionLogger';
+import { Sparkles } from 'lucide-react';
 
 import {
   Form,
@@ -24,7 +25,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { AIListingGenerator } from "@/components/listing/AIListingGenerator";
-import { Sparkles } from "lucide-react";
+
 
 // Define the form schema with zod
 const productSchema = z.object({

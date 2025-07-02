@@ -4,7 +4,10 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 export interface SkeletonProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
+  extends React.HTMLAttributes<HTMLDivElement> {
+  // This interface extends HTMLDivElement attributes for skeleton components
+  // Additional skeleton-specific props can be added here in the future
+}
 
 const Skeleton = React.forwardRef<HTMLDivElement, SkeletonProps>(
   ({ className, ...props }, ref) => {

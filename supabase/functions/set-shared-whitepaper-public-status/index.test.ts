@@ -10,9 +10,9 @@ const mockEq_SetStatus = sinon.stub();
 const mockSelect_SetStatus = sinon.stub();
 const mockSingle_SetStatus = sinon.stub();
 
-// @ts-ignore: Deno test global
+// @ts-expect-error: Deno test global setup for testing environment
 globalThis.Deno = globalThis.Deno || {};
-// @ts-ignore
+// @ts-expect-error: Mocking Deno.env for test environment configuration
 globalThis.Deno.env = {
     get: (key: string) => {
         if (key === 'SUPABASE_URL') return 'http://localhost:54321';
@@ -22,7 +22,7 @@ globalThis.Deno.env = {
 };
 
 const originalCreateClient_SetStatus = createClient;
-// @ts-ignore
+// @ts-expect-error: Assigning to read-only property for test mocking
 globalThis.createClient = (url: string, key: string, _options?: any) => {
     if (key === Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')) {
         mockSelect_SetStatus.returns({ single: mockSingle_SetStatus });

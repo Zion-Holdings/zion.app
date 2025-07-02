@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 import path from 'path';
 import { Pact, Matchers } from '@pact-foundation/pact';
 import fetch from 'node-fetch';

@@ -9,7 +9,16 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { ThumbsUp, ThumbsDown, Calendar, Flag, Edit, Trash2, Pin, Lock, CheckCircle } from "lucide-react";
+import { ThumbsUp, ThumbsDown, Calendar, Flag, Edit, Trash2, Pin, Lock, CheckCircle } from 'lucide-react';
+
+
+
+
+
+
+
+
+
 import { formatDistanceToNow, format } from "date-fns";
 import { ForumPost, ForumReply } from "@/types/community";
 import { useAuth } from "@/hooks/useAuth";

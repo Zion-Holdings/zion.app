@@ -5,20 +5,19 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { 
-  ArrowRight, 
-  Users, 
-  Zap, 
-  Settings, 
-  Search, 
-  MessageSquare, 
-  Smartphone, 
-  Calendar,
-  BookOpen,
-  Code,
-  Building,
-  Clock
-} from "lucide-react";
+import { ArrowRight, Users, Zap, Settings, Search, MessageSquare, Smartphone, Calendar, BookOpen, Code, Building, Clock } from 'lucide-react';
+
+
+
+
+
+
+
+
+
+
+
+
 import { cn } from "@/lib/utils";
 
 interface FeatureCTAsProps {

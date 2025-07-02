@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import { FileText } from 'lucide-react';
 import {
   Form,
   FormControl,
@@ -24,7 +25,7 @@ import { Input } from "@/components/ui/input";
 import { disputeReasonLabels } from "@/types/disputes";
 import { useDisputes } from "@/hooks/useDisputes";
 import { toast } from "sonner";
-import { FileText } from "lucide-react";
+
 
 const formSchema = z.object({
   reason_code: z.string()

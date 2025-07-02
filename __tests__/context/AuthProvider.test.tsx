@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { render, act, screen, waitFor } from '@testing-library/react';
 import { AuthProvider, useAuth } from '@/context/auth/AuthProvider';
 import * as authService from '@/services/authService';
@@ -56,7 +56,7 @@ const TestConsumer: React.FC<{loginPayload?: {email: string, pass: string}}> = (
         if (result && result.error) {
           // Error already toasted by AuthProvider
         }
-      } catch (error) {
+      } catch {
         // Error already toasted
       }
     }

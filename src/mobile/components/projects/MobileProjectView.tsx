@@ -4,7 +4,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { CheckCircle, ChevronRight, FileText, MessageSquare, Video } from "lucide-react";
+import { CheckCircle, ChevronRight, FileText, MessageSquare, Video } from 'lucide-react';
+
+
+
+
+
 import { Progress } from "@/components/ui/progress";
 import { SeverityIndicator } from "../common/SeverityIndicator";
 import { useRouter } from 'next/router';

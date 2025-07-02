@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Command as CommandPrimitive } from "cmdk"
-import { Search } from "lucide-react"
+import { Search } from 'lucide-react';
+
 
 import { cn } from "@/lib/utils"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
@@ -21,7 +22,10 @@ const Command = React.forwardRef<
 Command.displayName = CommandPrimitive.displayName
 
 interface CommandDialogProps
-  extends React.ComponentPropsWithoutRef<typeof Dialog> {}
+  extends React.ComponentPropsWithoutRef<typeof Dialog> {
+  // This interface extends Dialog props without additional properties
+  // Additional command dialog specific props can be added here in the future
+}
 
 const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
   return (

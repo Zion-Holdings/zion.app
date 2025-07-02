@@ -8,6 +8,28 @@
 const fs = require('fs');
 const path = require('path');
 
+// Load environment variables from .env.local if it exists
+function loadEnvFile(envPath) {
+  if (fs.existsSync(envPath)) {
+    const envContent = fs.readFileSync(envPath, 'utf8');
+    const lines = envContent.split('\n');
+    
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (trimmed && !trimmed.startsWith('#')) {
+        const [key, ...valueParts] = trimmed.split('=');
+        if (key && valueParts.length > 0) {
+          const value = valueParts.join('=');
+          process.env[key] = value;
+        }
+      }
+    }
+  }
+}
+
+// Load from .env.local for development
+loadEnvFile('.env.local');
+
 class DeploymentChecker {
   constructor() {
     this.results = {
@@ -68,17 +90,35 @@ class DeploymentChecker {
     console.log('🔍 Checking security configuration...');
     
     try {
-      const configContent = fs.readFileSync('next.config.js', 'utf8');
-      const hasSecurityHeaders = configContent.includes('X-Frame-Options');
+      let hasSecurityHeaders = false;
+      let securityLocation = '';
+      
+      // Check next.config.js
+      if (fs.existsSync('next.config.js')) {
+        const nextConfigContent = fs.readFileSync('next.config.js', 'utf8');
+        if (nextConfigContent.includes('X-Frame-Options')) {
+          hasSecurityHeaders = true;
+          securityLocation = 'next.config.js';
+        }
+      }
+      
+      // Check netlify.toml
+      if (!hasSecurityHeaders && fs.existsSync('netlify.toml')) {
+        const netlifyContent = fs.readFileSync('netlify.toml', 'utf8');
+        if (netlifyContent.includes('X-Frame-Options')) {
+          hasSecurityHeaders = true;
+          securityLocation = 'netlify.toml';
+        }
+      }
       
       this.results.checks.push({
         name: 'Security Configuration',
         status: hasSecurityHeaders ? 'pass' : 'warn',
-        details: hasSecurityHeaders ? 'Security headers configured' : 'Basic security headers missing'
+        details: hasSecurityHeaders ? `Enterprise security headers configured in ${securityLocation}` : 'Basic security headers missing'
       });
       
       if (!hasSecurityHeaders) {
-        this.results.recommendations.push('Add security headers to next.config.js');
+        this.results.recommendations.push('Add security headers to next.config.js or netlify.toml');
       }
     } catch (error) {
       this.results.checks.push({

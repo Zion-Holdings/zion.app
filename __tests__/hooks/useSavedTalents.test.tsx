@@ -4,7 +4,7 @@ import { useSavedTalents } from '@/hooks/talent/useSavedTalents';
 import { supabase } from '@/integrations/supabase/client';
 import { showApiError } from '@/utils/apiErrorHandler';
 import { toast } from '@/hooks/use-toast'; // Assuming direct toast usage for non-error cases
-import { useRouter } from 'next/router';
+// Removed unused useRouter import
 
 import { supabase as supabaseClientModule } from '@/integrations/supabase/client';
 
@@ -72,7 +72,7 @@ describe('useSavedTalents', () => {
       // Mock supabase to return an error for the first call (fetching IDs)
       supabase.eq.mockResolvedValueOnce({ data: null, error: mockError });
 
-      const { result } = renderHook(() => useSavedTalents());
+      const { result: _result } = renderHook(() => useSavedTalents());
 
       // Wait for the useEffect to run and operations to settle
       await act(async () => {
@@ -113,7 +113,7 @@ describe('useSavedTalents', () => {
       supabase.eq.mockResolvedValueOnce({ data: [{ talent_id: 'talent1' }], error: null }); // For saved_talents IDs
       supabase.in.mockResolvedValueOnce({ data: null, error: mockError }); // For talent_profiles
 
-      const { result } = renderHook(() => useSavedTalents());
+      const { result: _result } = renderHook(() => useSavedTalents());
 
       await act(async () => {
         await new Promise(resolve => setTimeout(resolve, 0));

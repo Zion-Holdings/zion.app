@@ -1,28 +1,29 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { vi } from 'vitest';
 import UserProfileDropdown from '../UserProfileDropdown';
 import { useAuth } from '@/hooks/useAuth';
 import type { AuthContextType } from '@/types/auth';
 
 // Mock react-router-dom
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'), // import and retain default behavior
+vi.mock('react-router-dom', () => ({
+  ...vi.requireActual('react-router-dom'), // import and retain default behavior
   Link: ({ to, children, ...props }) => <a href={to} {...props}>{children}</a>, // Simple mock for Link
-  useNavigate: jest.fn(), // Mock useNavigate if logout uses it
+  useNavigate: vi.fn(), // Mock useNavigate if logout uses it
 }));
 
 
 // Mock useAuth hook
-jest.mock('@/hooks/useAuth');
-const mockedUseAuth = useAuth as jest.MockedFunction<typeof useAuth>;
+vi.mock('@/hooks/useAuth');
+const mockedUseAuth = useAuth as vi.MockedFunction<typeof useAuth>;
 
 describe('UserProfileDropdown', () => {
-  const mockLogout = jest.fn();
+  const mockLogout = vi.fn();
 
   afterEach(() => {
     mockLogout.mockClear();
-    // Clear all mocks if necessary, e.g., (useNavigate as jest.Mock).mockClear();
+    // Clear all mocks if necessary, e.g., (useNavigate as vi.Mock).mockClear();
   });
 
   it('renders the avatar icon when user is logged in', () => {

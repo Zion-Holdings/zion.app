@@ -43,7 +43,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     let orders: any[] = [];
     try {
       orders = JSON.parse(fs.readFileSync(file, 'utf8'));
-    } catch {}
+    } catch (_err) {
+      // File doesn't exist or is invalid, use empty array
+    }
     orders.push({ id: orderId, items: cart, status: 'pending' });
     fs.writeFileSync(file, JSON.stringify(orders, null, 2));
 

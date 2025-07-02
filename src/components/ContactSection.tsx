@@ -6,7 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
 import z from "zod";
-import { Mail } from "lucide-react";
+import { Mail } from 'lucide-react';
+
 
 export function ContactSection() {
   const [formData, setFormData] = useState({

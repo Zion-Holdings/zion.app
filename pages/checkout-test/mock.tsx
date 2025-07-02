@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 
+
+
 export default function MockCheckoutPage() {
   const router = useRouter();
   const { mock } = router.query;

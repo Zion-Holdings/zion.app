@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor as _waitFor } from '@testing-library/react';
 import { AppHeader } from '@/layout/AppHeader'; // Adjust path as necessary
 import { AuthProviderValue } from '@/context/auth/AuthContext'; // Adjust path
 import { useAuth } from '@/hooks/useAuth'; // Adjust path
@@ -34,6 +34,8 @@ jest.mock('react-i18next', () => ({
 
 // Mock lucide-react icons
 jest.mock('lucide-react', () => {
+  // Import React inside the factory to avoid "Cannot access 'React' before initialization" caused by jest hoisting.
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const React = require('react');
   return {
     Menu: () => React.createElement('div', { 'data-testid': 'menu-icon' }),

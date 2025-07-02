@@ -10,7 +10,13 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { toast } from "@/hooks/use-toast";
-import { Check, Flag, Search, Settings, X, Users } from "lucide-react";
+import { Check, Flag, Search, Settings, X, Users } from 'lucide-react';
+
+
+
+
+
+
 import { supabase } from "@/integrations/supabase/client";
 import { logErrorToProduction } from '@/utils/productionLogger';
 import { EmptyState } from "@/components/ui/empty-state";
@@ -612,8 +618,8 @@ interface PartnerTableProps {
   onViewDetails: (partner: PartnerProfile) => void;
   onUpdateStatus: (partnerId: string, status: 'approved' | 'rejected') => void;
   onOpenSettings: (partner: PartnerProfile) => void;
-  getStatusBadge: (status: string) => JSX.Element;
-  getFraudFlagBadge: (flags?: number) => JSX.Element | null;
+  getStatusBadge: (status: string) => React.JSX.Element;
+  getFraudFlagBadge: (flags?: number) => React.JSX.Element | null;
 }
 
 function PartnerTable({ 

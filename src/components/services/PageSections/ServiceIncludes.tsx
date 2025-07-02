@@ -1,5 +1,6 @@
+import { Check } from 'lucide-react';
 
-import { Check } from "lucide-react";
+
 
 export function ServiceIncludes() {
   return (

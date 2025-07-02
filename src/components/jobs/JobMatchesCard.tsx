@@ -3,7 +3,11 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { DollarSign, Calendar, CheckCircle, XCircle } from "lucide-react";
+import { DollarSign, Calendar, CheckCircle, XCircle } from 'lucide-react';
+
+
+
+
 import { format } from "date-fns";
 import { JobMatch } from "@/types/jobs";
 

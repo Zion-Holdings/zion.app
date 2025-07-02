@@ -5,6 +5,7 @@ import { logErrorToProduction, logInfo, logWarn } from '@/utils/productionLogger
 
 /**
  * Authentication middleware using Supabase Auth
+ * Optimized for production deployment
  */
 export async function updateSession(request: NextRequest) {
   let response = NextResponse.next({
@@ -13,11 +14,20 @@ export async function updateSession(request: NextRequest) {
     },
   });
 
+  // Validate environment variables
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (!supabaseUrl || !supabaseAnonKey) {
+    console.warn('Supabase environment variables not configured, skipping auth middleware');
+    return response;
+  }
+
   let supabase;
   try {
     supabase = createServerClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      supabaseUrl,
+      supabaseAnonKey,
       {
         cookies: {
           get(name: string) {
@@ -45,11 +55,7 @@ export async function updateSession(request: NextRequest) {
       }
     );
   } catch (initError) {
-    logErrorToProduction('CRITICAL: Failed to initialize Supabase client in middleware', initError, {
-      url: request.nextUrl.pathname,
-      userAgent: request.headers.get('user-agent'),
-      context: 'middleware-init'
-    });
+    console.error('Failed to initialize Supabase client in middleware:', initError);
     return response;
   }
 
@@ -65,10 +71,6 @@ export async function updateSession(request: NextRequest) {
   });
 
   if (isPublicRoute) {
-    logInfo('Middleware: Public route accessed', { 
-      path: request.nextUrl.pathname,
-      userAgent: request.headers.get('user-agent')?.substring(0, 100)
-    });
     return response;
   }
 
@@ -76,30 +78,14 @@ export async function updateSession(request: NextRequest) {
     const { data: { user }, error } = await supabase.auth.getUser();
 
     if (error || !user) {
-      logInfo('Middleware: No user found or error, redirecting to login', {
-        from: request.nextUrl.pathname,
-        error: error ? error.message : 'No user found',
-        userAgent: request.headers.get('user-agent')?.substring(0, 100)
-      });
-      
       const redirectUrl = new URL('/auth/login', request.url);
       redirectUrl.searchParams.set('redirectTo', request.nextUrl.pathname);
       return NextResponse.redirect(redirectUrl);
     }
-
-    logInfo('Middleware: User authenticated, allowing access', {
-      path: request.nextUrl.pathname,
-      userId: user.id,
-      userEmail: user.email
-    });
     
     return response;
   } catch (authError) {
-    logErrorToProduction('Middleware: Error during authentication check', authError, {
-      path: request.nextUrl.pathname,
-      userAgent: request.headers.get('user-agent')?.substring(0, 100),
-      context: 'auth-check'
-    });
+    console.error('Error during authentication check:', authError);
     
     // Redirect to login on authentication errors
     const redirectUrl = new URL('/auth/login', request.url);

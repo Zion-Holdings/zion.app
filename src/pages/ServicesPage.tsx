@@ -2,6 +2,15 @@ import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/router';
 import { ArrowUp, Filter, SortAsc, Zap, TrendingUp, Star, ShoppingCart, Clock, Award } from 'lucide-react';
+
+
+
+
+
+
+
+
+
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
 import { generateITServices, getServicesMarketStats, getRecommendedServices } from '@/utils/servicesAutoFeedAlgorithm';
 import { ProductListing } from '@/types/listings';

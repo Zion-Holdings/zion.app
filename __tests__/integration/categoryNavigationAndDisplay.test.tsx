@@ -22,7 +22,8 @@ jest.mock('next/router', () => ({
 
 // Mock next/link to simplify testing navigation behavior without actual page reloads
 jest.mock('next/link', () => {
-  return ({ children, href }: { children: React.ReactNode; href: string }) => {
+  const React = require('react');
+  const MockLink = ({ children, href }: { children: React.ReactNode; href: string }) => {
     return React.createElement('a', { href, onClick: (e: any) => {
       e.preventDefault(); // Prevent actual navigation
       // Simulate router push behavior for testing purposes
@@ -31,6 +32,8 @@ jest.mock('next/link', () => {
       mockRouterPush(href); // Call the mocked push
     }}, children);
   };
+  MockLink.displayName = 'MockLink';
+  return MockLink;
 });
 
 

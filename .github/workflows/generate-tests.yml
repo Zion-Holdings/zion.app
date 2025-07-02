@@ -77,7 +77,7 @@ jobs:
             fi
           done
 
-      - name: Commit and push generated tests (Optional: Create PR instead)
+      - name: Commit and push generated tests (Optional: Create PR instead)"Commit and push generated tests (Optional: Create PR instead)"
         if: steps.changed_files.outputs.changed_files_list != '' # Only run if files were processed
         run: |
           git config --global user.name 'github-actions[bot]'

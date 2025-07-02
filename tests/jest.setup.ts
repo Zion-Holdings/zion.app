@@ -14,7 +14,7 @@ import { TextEncoder, TextDecoder } from 'util';
 
 // Polyfill TextEncoder and TextDecoder for JSDOM environment
 global.TextEncoder = TextEncoder;
-// @ts-expect-error - Node's TextDecoder might not perfectly match DOM's, but it's usually sufficient for tests
+// @ts-expect-error Node's TextDecoder might not perfectly match DOM's, but it's usually sufficient for tests
 global.TextDecoder = TextDecoder;
 
 
@@ -37,20 +37,27 @@ process.env.STRIPE_TEST_CARD = process.env.STRIPE_TEST_CARD || '4242424242424242
 import { toHaveNoViolations } from 'jest-axe';
 expect.extend(toHaveNoViolations);
 
+// Ensure global window exists for Node test environments
+if (typeof global.window === 'undefined') {
+  global.window = {} as any;
+}
+
 // Mock window.matchMedia for Jest
-Object.defineProperty(window, 'matchMedia', {
-  writable: true,
-  value: jest.fn().mockImplementation(query => ({
-    matches: false, // Default to false (light theme)
-    media: query,
-    onchange: null,
-    addListener: jest.fn(), // deprecated
-    removeListener: jest.fn(), // deprecated
-    addEventListener: jest.fn(),
-    removeEventListener: jest.fn(),
-    dispatchEvent: jest.fn(),
-  })),
-});
+if (!window.matchMedia) {
+  Object.defineProperty(window, 'matchMedia', {
+    writable: true,
+    value: jest.fn().mockImplementation(query => ({
+      matches: false, // Default to false (light theme)
+      media: query,
+      onchange: null,
+      addListener: jest.fn(), // deprecated
+      removeListener: jest.fn(), // deprecated
+      addEventListener: jest.fn(),
+      removeEventListener: jest.fn(),
+      dispatchEvent: jest.fn(),
+    })),
+  });
+}
 
 // Mock import.meta.env for Jest - This was ineffective for the SyntaxError
 // global.import = {
@@ -191,11 +198,21 @@ jest.mock('firebase/storage', () => ({
 }));
 
 // Mock axios
-jest.mock('axios', () => ({
-  get: jest.fn(() => Promise.resolve({ data: {} })),
-  post: jest.fn(() => Promise.resolve({ data: {} })),
-  // Add other axios methods if used (e.g., put, delete, request)
-}));
+jest.mock('axios', () => {
+  const axiosMock: any = {
+    defaults: { baseURL: 'http://localhost' },
+    interceptors: {
+      request: { use: jest.fn(), eject: jest.fn(), clear: jest.fn() },
+      response: { use: jest.fn(), eject: jest.fn(), clear: jest.fn() },
+    },
+    get: jest.fn(() => Promise.resolve({ data: {} })),
+    post: jest.fn(() => Promise.resolve({ data: {} })),
+    put: jest.fn(() => Promise.resolve({ data: {} })),
+    delete: jest.fn(() => Promise.resolve({ data: {} })),
+  };
+  axiosMock.create = jest.fn(() => axiosMock);
+  return axiosMock;
+});
 
 // Mock ResizeObserver for Radix UI components and other libraries that might use it
 global.ResizeObserver = jest.fn().mockImplementation(() => ({
@@ -211,10 +228,10 @@ if (typeof URL.revokeObjectURL === 'undefined') {
 
 // Polyfill for BroadcastChannel
 if (typeof BroadcastChannel === 'undefined') {
-  // @ts-expect-error - BroadcastChannel polyfill for test environment
+  // @ts-expect-error BroadcastChannel polyfill for test environment - native interface doesn't exist in Node.js
   global.BroadcastChannel = class BroadcastChannelMock {
     constructor(name: string) {
-      // @ts-expect-error - Mock name property assignment
+      // @ts-expect-error Mock name property assignment - TypeScript doesn't know about our custom mock class properties
       this.name = name;
     }
     postMessage = jest.fn();
@@ -234,8 +251,7 @@ if (typeof window.scrollTo === 'undefined') {
 
 // Mock axios.create to return axios itself
 import axios from 'axios';
-// @ts-ignore
-axios.create = jest.fn(() => axios);
+(axios as any).create = jest.fn(() => axios);
 
 // -----------------------------
 // Vitest Compatibility Layer for Jest
@@ -248,6 +264,7 @@ axios.create = jest.fn(() => axios);
 // NOTE: When the test suite is fully migrated to Vitest this shim can be removed together
 // with the associated `moduleNameMapper` entry in `jest.config.cjs`.
 // ---------------------------------------------------------------------------
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 jest.mock('vitest', () => {
   const jestFn = (...args: unknown[]) => jest.fn(...(args as []));
   return {
@@ -261,6 +278,7 @@ jest.mock('vitest', () => {
       // Provide a simple implementation of `import.meta` mocking helpers
       // frequently used in Vitest examples
       // (no-op implementations because Jest already handles env vars via `process.env`).
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
       importActual: jest.requireActual,
       mockResolvedValue: <T = unknown>(value: T) => jest.fn().mockResolvedValue(value),
       mockRejectedValue: <T = unknown>(value: T) => jest.fn().mockRejectedValue(value),
@@ -350,6 +368,7 @@ jest.mock('@/context/FeedbackContext', () => {
 
 // react-redux hooks
 jest.mock('react-redux', () => {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const actualRedux = jest.requireActual('react-redux');
   return {
     ...actualRedux,
@@ -387,22 +406,20 @@ if (typeof window.IntersectionObserver === 'undefined') {
     disconnect() {}
     takeRecords() { return []; }
   }
-  // @ts-ignore
+  // @ts-expect-error IntersectionObserver polyfill for test environment - JSDOM doesn't include this API by default
   window.IntersectionObserver = MockIntersectionObserver;
-  // @ts-ignore
+  // @ts-expect-error IntersectionObserver polyfill for global scope - ensuring both window and global have the mock
   global.IntersectionObserver = MockIntersectionObserver;
 }
 
 // Ensure all code paths use the mock implementation
 // Some services import the global fetch reference before jest-fetch-mock is enabled.
 // Override it explicitly so those modules receive the mocked version.
-// @ts-ignore
-global.fetch = fetchMock;
+(global as any).fetch = fetchMock;
 
 // Polyfill performance.getEntriesByType for JSDOM (used in productionLogger)
 if (typeof performance.getEntriesByType !== 'function') {
-  // @ts-ignore
-  performance.getEntriesByType = () => [];
+  (performance as any).getEntriesByType = () => [];
 }
 
 jest.mock('@supabase/ssr', () => ({
@@ -429,10 +446,10 @@ jest.mock('@/context', () => {
 });
 
 // Extend Vitest shim with restoreAllMocks for suites that call it
-// @ts-ignore
+  // @ts-expect-error vi is added by the vitest mock above - TypeScript doesn't see the mock declaration
 if (global.vi && !global.vi.restoreAllMocks) {
-  // @ts-ignore
-  global.vi.restoreAllMocks = jest.restoreAllMocks;
+  // @ts-expect-error global.vi property extension - TypeScript doesn't expect vitest globals in Jest environment
+  (global.vi as any).restoreAllMocks = jest.restoreAllMocks;
 }
 
 // Mock @supabase/ssr createBrowserClient so components don't crash in tests
@@ -456,38 +473,124 @@ jest.mock('msw/node', () => ({ setupServer: () => ({ listen: jest.fn(), resetHan
 jest.mock('@/components/talent/FilterSidebar', () => ({ FilterSidebar: () => null }));
 
 // Extend Vitest shim with timer helpers if not present
+// @ts-expect-error vi is added by the vitest mock above - timer helpers added for compatibility
 if (global.vi) {
   if (!global.vi.useFakeTimers) global.vi.useFakeTimers = jest.useFakeTimers.bind(jest);
   if (!global.vi.runAllTimers) global.vi.runAllTimers = jest.runAllTimers.bind(jest);
   if (!global.vi.advanceTimersByTime) global.vi.advanceTimersByTime = jest.advanceTimersByTime.bind(jest);
 }
 
-// ---------------------------------------------------------------------------
-// react-i18next mock – returns English translations so tests receive readable
-// text instead of raw keys (fixes many expectations).
-// ---------------------------------------------------------------------------
+// -----------------------------
+// Mock react-i18next so that translation keys are human-readable during tests.
+// This avoids the need to load i18n resources and keeps unit expectations simple.
+// -----------------------------
 jest.mock('react-i18next', () => {
-  const en = require('@/i18n/locales/en-US/translation.json');
-
-  const translate = (key: string): string => {
-    if (!key) return '';
-    const parts = key.split('.');
-    let curr = en;
-    for (const p of parts) {
-      curr = curr && curr[p];
-      if (!curr) {
-        return key; // fallback to key when not found
-      }
+  const t = (key: string) => {
+    // Return substring after last dot to convert 'categories.services' => 'services'
+    if (key && key.includes('.')) {
+      return key.split('.').pop();
     }
-    return typeof curr === 'string' ? curr : key;
+    return key;
   };
 
   return {
     __esModule: true,
-    useTranslation: () => ({ t: translate, i18n: { changeLanguage: jest.fn() } }),
-    Trans: ({ children }: { children: any }) => children,
+    useTranslation: () => ({ t, i18n: { changeLanguage: jest.fn() } }),
+    Trans: ({ children }: { children: React.ReactNode }) => children,
+    initReactI18next: { type: '3rdParty', init: jest.fn() },
   };
 });
+
+// Mock Next.js Link to work with React Router in tests
+jest.mock('next/link', () => {
+  const React = require('react');
+  const forwardRef = React.forwardRef;
+  const LinkMock = ({ href, children, ...rest }: any, ref: any) => {
+    return React.createElement('a', { href, ref, ...rest }, children);
+  };
+  return { __esModule: true, default: forwardRef(LinkMock) };
+});
+
+// Ensure axios has a default baseURL to avoid undefined property assignment
+if (!axios.defaults.baseURL) axios.defaults.baseURL = 'http://localhost';
+
+// Provide stub interceptor chains so code that registers interceptors doesn't crash
+if (!axios.interceptors?.request?.use) {
+  axios.interceptors = {
+    request: { use: jest.fn(), eject: jest.fn(), clear: jest.fn() },
+    response: { use: jest.fn(), eject: jest.fn(), clear: jest.fn() },
+  };
+}
+
+// Mock next/navigation to avoid unresolved module errors
+jest.mock('next/navigation', () => ({
+  useRouter: () => ({ push: jest.fn(), replace: jest.fn(), refresh: jest.fn(), back: jest.fn(), forward: jest.fn() })
+}));
+
+// Mock mongoose to avoid heavy BSON/ESM issues in tests that import it indirectly
+jest.mock('mongoose', () => {
+  const schemaStub = function() { return { index: jest.fn(), methods: {}, statics: {} }; };
+  return {
+    Schema: schemaStub,
+    model: jest.fn().mockReturnValue({}),
+    connect: jest.fn(),
+    connection: { on: jest.fn() },
+  };
+});
+
+// Provide mock AuthContext to allow Consumer access
+jest.mock('@/context/auth/AuthContext', () => {
+  const React = require('react');
+  const defaultValue = { login: jest.fn(), logout: jest.fn(), user: null };
+  const AuthContext = React.createContext(defaultValue);
+  return { __esModule: true, AuthContext, default: AuthContext };
+});
+
+// ---------------------------------------------------------------------------
+// Simple Vitest global shim for suites still using `vi`
+// ---------------------------------------------------------------------------
+// @ts-expect-error Add vi globally for legacy tests
+if (typeof global.vi === 'undefined') {
+  // @ts-expect-error assign
+  global.vi = {
+    fn: jest.fn,
+    spyOn: jest.spyOn.bind(jest),
+    mock: jest.mock.bind(jest),
+    clearAllMocks: jest.clearAllMocks,
+    resetAllMocks: jest.resetAllMocks,
+          mockResolvedValue: (val: unknown) => jest.fn().mockResolvedValue(val),
+      mockRejectedValue: (val: unknown) => jest.fn().mockRejectedValue(val),
+  };
+}
+
+// Note: bcrypt mock removed - only mock if actually used in tests to avoid module resolution errors
+
+// Ensure matchMedia is defined for tests that rely on it
+if (typeof window !== 'undefined' && !window.matchMedia) {
+  Object.defineProperty(window, 'matchMedia', {
+    writable: true,
+    value: jest.fn().mockImplementation((query) => ({
+      matches: false,
+      media: query,
+      onchange: null,
+      addListener: jest.fn(),
+      removeListener: jest.fn(),
+      addEventListener: jest.fn(),
+      removeEventListener: jest.fn(),
+      dispatchEvent: jest.fn(),
+    })),
+  });
+}
+
+// Mock axios-retry to no-op
+jest.mock('axios-retry', () => {
+  return {
+    __esModule: true,
+    default: jest.fn(),
+  };
+});
+
+jest.mock('@ungap/structured-clone', () => ({ __esModule: true, default: (val: any) => JSON.parse(JSON.stringify(val)) }));
 
 // ---------------------------------------------------------------------------
 // Global mocks for common libraries

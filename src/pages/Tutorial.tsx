@@ -3,7 +3,8 @@ import { useRouter } from "next/router";
 import { TUTORIALS } from "@/data/tutorials";
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft } from 'lucide-react';
+
 import ReactMarkdown from "react-markdown";
 import type { Tutorial as TutorialType } from "@/types/tutorial";
 
