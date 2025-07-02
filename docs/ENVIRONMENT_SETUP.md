@@ -68,6 +68,7 @@ For production deployments:
 - `STRIPE_*` (payments disabled)
 - `SENDGRID_*` (email disabled)
 - `OPENAI_*` (AI features disabled)
+- `ALERT_EMAIL` (alert notifications disabled)
 
 ## Troubleshooting
 
