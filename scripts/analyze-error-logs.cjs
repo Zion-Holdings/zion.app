@@ -8,7 +8,8 @@ const fs = require('fs');
 const path = require('path');
 
 const args = process.argv.slice(2);
-const LOG_DIR = args[0] && !args[0].startsWith('--') ? args[0] : 'logs';
+// First positional argument can be a log directory or a single log file.
+const LOG_PATH = args[0] && !args[0].startsWith('--') ? args[0] : 'logs';
 // Error patterns to flag. Expanded to detect missing modules and network issues
 const PATTERNS = [
   /error/i,
@@ -80,23 +81,30 @@ function checkFile(filePath) {
 }
 
 function main() {
-  if (!fs.existsSync(LOG_DIR)) {
-    console.error(`Log directory not found: ${LOG_DIR}`);
+  if (!fs.existsSync(LOG_PATH)) {
+    console.error(`Log file or directory not found: ${LOG_PATH}`);
     process.exit(1);
   }
 
-  const dirs = [LOG_DIR];
-  if (LOG_DIR !== '.') {
-    dirs.push('.'); // also check root logs like build.log
-  }
-
-  const files = [];
-  dirs.forEach(dir => {
-    if (fs.existsSync(dir)) {
-      const dirFiles = fs.readdirSync(dir).filter(f => f.endsWith('.log')).map(f => path.join(dir, f));
-      files.push(...dirFiles);
+  let files = [];
+  const stat = fs.lstatSync(LOG_PATH);
+  if (stat.isFile()) {
+    files = [LOG_PATH];
+  } else {
+    const dirs = [LOG_PATH];
+    if (LOG_PATH !== '.') {
+      dirs.push('.'); // also check root logs like build.log
     }
-  });
+
+    dirs.forEach(dir => {
+      if (fs.existsSync(dir)) {
+        const dirFiles = fs.readdirSync(dir)
+          .filter(f => f.endsWith('.log'))
+          .map(f => path.join(dir, f));
+        files.push(...dirFiles);
+      }
+    });
+  }
 
   if (!files.length) {
     console.log('No log files found');
@@ -177,7 +185,10 @@ function main() {
   }
 
   if (SUMMARY) {
-    const summaryDir = path.join(LOG_DIR, 'summary');
+    const baseDir = fs.lstatSync(LOG_PATH).isFile()
+      ? path.dirname(LOG_PATH)
+      : LOG_PATH;
+    const summaryDir = path.join(baseDir, 'summary');
     fs.mkdirSync(summaryDir, { recursive: true });
     const summaryFile = path.join(summaryDir, `summary-${Date.now()}.log`);
     fs.writeFileSync(summaryFile, summaryLines.join('\n') + '\n');
