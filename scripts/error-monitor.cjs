@@ -170,6 +170,11 @@ class ErrorMonitor {
    */
   detectLogLevel(text) {
     const upperText = text.toUpperCase();
+
+    // Treat recommendation lines as informational only
+    if (upperText.includes('CONSIDER SETTING UP AUTOMATED ALERTS') || upperText.startsWith('[ALERT]')) {
+      return 'info';
+    }
     
     // Enhanced success indicators (these override error/fail keywords)
     const successIndicators = [

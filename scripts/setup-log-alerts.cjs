@@ -13,7 +13,7 @@ async function main() {
     e => e.level === 'critical' || monitor.containsCriticalKeyword(e.message)
   );
   if (criticals.length > 0) {
-    const alertMsg = `[${new Date().toISOString()}] CRITICAL ERRORS DETECTED: ${criticals.length}\n`;
+    const alertMsg = `[ALERT] [${new Date().toISOString()}] CRITICAL ERRORS DETECTED: ${criticals.length}\n`;
     const alertFile = path.join(CONFIG.logsDir, 'alerts.log');
     fs.appendFileSync(alertFile, alertMsg);
     console.log(alertMsg.trim());
