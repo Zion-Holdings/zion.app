@@ -656,21 +656,19 @@ const nextConfig = {
       // Use memory cache to prevent filesystem cache issues and "Serializing big strings" warnings
       config.cache = {
         type: 'memory',
-        cacheUnaffected: false,
         maxGenerations: dev ? 1 : 5,
       };
     } else {
       // Ensure memory cache is properly configured
       config.cache = {
         type: 'memory',
-        cacheUnaffected: false,
         maxGenerations: dev ? 1 : 5,
       };
     }
 
-    // Explicitly disable cacheUnaffected to avoid "usedExports" conflicts
-    config.experiments = { ...(config.experiments || {}), cacheUnaffected: false };
-    if (config.cache && config.cache.cacheUnaffected !== undefined) {
+    // Ensure webpack cache does not enable cacheUnaffected
+    config.experiments = { ...(config.experiments || {}) };
+    if (config.cache && 'cacheUnaffected' in config.cache) {
       delete config.cache.cacheUnaffected;
     }
 
@@ -796,8 +794,6 @@ const nextConfig = {
         // Optimization settings for better performance
         moduleIds: 'deterministic',
         chunkIds: 'deterministic',
-        // Disable usedExports to avoid conflicts with cacheUnaffected
-        usedExports: false,
         sideEffects: false,
         concatenateModules: !dev,
         minimize: !dev,
@@ -1004,7 +1000,6 @@ const nextConfig = {
     // Ensure consistent optimization settings in all environments
     config.optimization = {
       ...config.optimization,
-      usedExports: false,
     };
 
     // Remove cacheUnaffected in case any plugin re-added it
