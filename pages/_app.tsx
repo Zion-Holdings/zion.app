@@ -39,6 +39,7 @@ import dynamic from 'next/dynamic'; // Import dynamic
 import '../src/index.css';
 import { Provider as ReduxProvider } from 'react-redux';
 import { store } from '@/store';
+import { checkEssentialEnvVars } from '../src/utils/validateEnv';
 
 import { I18nextProvider } from 'react-i18next';
 import i18n from '../src/i18n';
@@ -224,6 +225,15 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     const initializeApp = async () => {
       try {
+        // Validate essential environment variables early
+        try {
+          checkEssentialEnvVars();
+        } catch (envError: any) {
+          console.error('Environment validation failed:', envError);
+          setInitializationError(envError.message);
+          setIsLoading(false);
+          return;
+        }
         // Simulate progressive loading with realistic steps
         const steps = [
           { name: 'Loading Core Components', duration: 300 },
