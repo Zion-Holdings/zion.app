@@ -651,27 +651,19 @@ const nextConfig = {
     }
 
     // Fix webpack cache configuration to prevent build errors and warnings
-    if (config.cache) {
-      // Use memory cache to prevent filesystem cache issues and "Serializing big strings" warnings
-      config.cache = {
-        type: 'memory',
-        cacheUnaffected: false,
-        maxGenerations: dev ? 1 : 5,
-      };
-    } else {
-      // Ensure memory cache is properly configured
-      config.cache = {
-        type: 'memory',
-        cacheUnaffected: false,
-        maxGenerations: dev ? 1 : 5,
-      };
-    }
-
-    // Explicitly disable cacheUnaffected to avoid "usedExports" conflicts
-    config.experiments = { ...(config.experiments || {}), cacheUnaffected: false };
-    if (config.cache && config.cache.cacheUnaffected !== undefined) {
-      delete config.cache.cacheUnaffected;
-    }
+      if (config.cache) {
+        // Use memory cache to prevent filesystem cache issues and "Serializing big strings" warnings
+        config.cache = {
+          type: 'memory',
+          maxGenerations: dev ? 1 : 5,
+        };
+      } else {
+        // Ensure memory cache is properly configured
+        config.cache = {
+          type: 'memory',
+          maxGenerations: dev ? 1 : 5,
+        };
+      }
 
     // Add optimization to prevent temporal dead zone issues
     if (!dev && isServer) {
