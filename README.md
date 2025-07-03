@@ -44,7 +44,9 @@ The application uses Supabase for all authentication functionality:
 
 ### Required Environment Variables
 
-A comprehensive list of environment variables can be found in the `.env.example` file. For local development, create a `.env.local` file and populate it with the necessary values based on `.env.example`. For production deployment (e.g., on Netlify), these variables must be configured in your hosting provider's UI.
+A comprehensive list of environment variables can be found in the `.env.example` file. For local development, copy this file to `.env.local` and populate it with the necessary values. **Do not commit `.env.local` to version control.**
+
+For production deployments, all variables are configured directly in Netlify's UI, so the repository no longer contains a `.env.local` file with secrets.
 
 **Key variables include:**
 
@@ -73,9 +75,10 @@ Ensure all variables marked as required in `.env.example` or in specific documen
 - **[Optional Two-Factor Authentication](TWO_FACTOR_AUTHENTICATION_SUMMARY.md)** - Overview of enabling 2FA in the IPO portal
 - **[Logging Guidelines](docs/LOGGING_GUIDELINES.md)** - Usage instructions for the project logger
 - **Collect Logs** - `npm run logs:collect` bundles recent logs under `logs/archive/`
-  - **Analyze Logs** - `npm run logs:summary` scans collected logs, reports missing translation keys, and flags router context errors like `useNavigate()` without a `<Router>`
+  - **Analyze Logs** - `npm run logs:summary` scans collected `.log` and `.txt` files, reports missing translation keys, and flags router context errors like `useNavigate()` without a `<Router>`
 - **Health Check** - `npm run logs:health` prints a quick system status report
 - **Missing Key Log** - Any translation keys not found at runtime are appended to `logs/missing-keys.log`
+- **Check for Missing Translations** - `npm run i18n:missing` verifies that all locales contain the same translation keys
 
 ### CDN for Static Assets
 
@@ -112,6 +115,7 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
 
 4.  **Configure environment variables:**
     - For **local development**: Create `.env.local` based on environment variable requirements above
+    - Set `NEXT_PUBLIC_REOWN_PROJECT_ID` to your Reown AppKit project ID (see `docs/ENVIRONMENT_SAFEGUARDS.md`)
     - For **production**: Set variables in Netlify UI (see deployment guide)
     - Ensure `INTERNAL_AUTH_SERVICE_URL` points to your authentication service
     - **Enable DevTools**: Set `NEXT_PUBLIC_DEVTOOLS=true` in `.env.local` if you want browser DevTools enabled
@@ -191,6 +195,9 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
 3. **Build failures on Netlify**
    - Verify all required environment variables are set in Netlify UI
    - Check build logs for specific TypeScript or dependency errors
+4. **Blank screen when starting the app**
+   - Ensure dependencies are installed by running `./setup.sh npm`
+   - If the issue persists, run `npm run fix:loading` for diagnostics
 
 For detailed troubleshooting, see the [Supabase Authentication Setup Guide](docs/SUPABASE_AUTHENTICATION_SETUP.md).
 

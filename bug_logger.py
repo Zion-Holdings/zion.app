@@ -37,7 +37,13 @@ def log_bug(
                                              If provided, stack_trace will be formatted from it.
                                              Defaults to None.
     """
-    timestamp = datetime.datetime.utcnow().isoformat() + "Z"
+    # Use timezone-aware UTC timestamps to avoid deprecation warnings
+    # datetime.datetime.utcnow() is deprecated in Python 3.12+
+    timestamp = (
+        datetime.datetime.now(datetime.timezone.utc)
+        .isoformat()
+        .replace("+00:00", "Z")
+    )
 
     if exc_info and not stack_trace:
         # Format the traceback from exception info
@@ -79,6 +85,7 @@ def log_bug(
 
         with open(LOG_FILE, "w") as f:
             json.dump(logs, f, indent=4)
+            f.write("\n")
 
         print(f"Bug logged successfully to {LOG_FILE}")
 

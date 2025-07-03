@@ -52,7 +52,7 @@ export interface ThemeColors {
 // Define theme presets
 export function getThemeColors(preset: ThemePreset, primaryColorInput: string): ThemeColors {
   // Base for light themes
-  let baseLightColors: Omit<ThemeColors, 'primary' | 'primaryForeground' | 'accent' | 'accentForeground' | 'ring' | 'buttonColor' | 'sidebarBackground'| 'sidebarForeground'| 'sidebarPrimary'| 'sidebarPrimaryForeground'| 'sidebarAccent'| 'sidebarAccentForeground'| 'sidebarBorder'| 'sidebarRing'> = {
+  const baseLightColors: Omit<ThemeColors, 'primary' | 'primaryForeground' | 'accent' | 'accentForeground' | 'ring' | 'buttonColor' | 'sidebarBackground'| 'sidebarForeground'| 'sidebarPrimary'| 'sidebarPrimaryForeground'| 'sidebarAccent'| 'sidebarAccentForeground'| 'sidebarBorder'| 'sidebarRing'> = {
     background: '#ffffff', // white
     foreground: '#030712', // near black (slate-950)
     border: '#e2e8f0',     // slate-200
@@ -70,7 +70,7 @@ export function getThemeColors(preset: ThemePreset, primaryColorInput: string): 
   };
 
   // Base for dark themes
-  let baseDarkColors: Omit<ThemeColors, 'primary' | 'primaryForeground' | 'accent' | 'accentForeground' | 'ring' | 'buttonColor' | 'sidebarBackground'| 'sidebarForeground'| 'sidebarPrimary'| 'sidebarPrimaryForeground'| 'sidebarAccent'| 'sidebarAccentForeground'| 'sidebarBorder'| 'sidebarRing'> = {
+  const baseDarkColors: Omit<ThemeColors, 'primary' | 'primaryForeground' | 'accent' | 'accentForeground' | 'ring' | 'buttonColor' | 'sidebarBackground'| 'sidebarForeground'| 'sidebarPrimary'| 'sidebarPrimaryForeground'| 'sidebarAccent'| 'sidebarAccentForeground'| 'sidebarBorder'| 'sidebarRing'> = {
     background: '#030712', // slate-950
     foreground: '#f8fafc', // slate-50
     border: '#1e293b',     // slate-800

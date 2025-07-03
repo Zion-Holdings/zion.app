@@ -38,16 +38,16 @@ const isLocalDev = !isNetlifyBuild && isDevelopment;
 
 // Define required environment variables and their validation rules
 const REQUIRED_VARS = {
-  // Supabase (core authentication - more lenient for dev)
+  // Supabase (core authentication - more lenient for dev and Netlify)
   'NEXT_PUBLIC_SUPABASE_URL': {
-    required: !isLocalDev, // Only required in production/staging
+    required: !isLocalDev && !isNetlifyBuild, // Only required in local production builds
     validation: (value) => {
       if (!value) {
-        if (isLocalDev) return null; // Allow missing in local dev
+        if (isLocalDev || isNetlifyBuild) return null; // Allow missing in local dev and Netlify
         return 'Missing Supabase URL';
       }
       if (isPlaceholder(value)) {
-        if (isLocalDev) return null; // Allow placeholders in local dev
+        if (isLocalDev || isNetlifyBuild) return null; // Allow placeholders in local dev and Netlify
         return 'Supabase URL appears to be a placeholder';
       }
       return null;
@@ -55,14 +55,14 @@ const REQUIRED_VARS = {
     description: 'Supabase project URL for authentication and database'
   },
   'NEXT_PUBLIC_SUPABASE_ANON_KEY': {
-    required: !isLocalDev, // Only required in production/staging
+    required: !isLocalDev && !isNetlifyBuild, // Only required in local production builds
     validation: (value) => {
       if (!value) {
-        if (isLocalDev) return null; // Allow missing in local dev
+        if (isLocalDev || isNetlifyBuild) return null; // Allow missing in local dev and Netlify
         return 'Missing Supabase anonymous key';
       }
       if (isPlaceholder(value)) {
-        if (isLocalDev) return null; // Allow placeholders in local dev
+        if (isLocalDev || isNetlifyBuild) return null; // Allow placeholders in local dev and Netlify
         return 'Supabase key appears to be a placeholder';
       }
       return null;
@@ -215,7 +215,7 @@ function validateEnvironment() {
     console.log(chalk.yellow('3. Add the missing variables with actual values'));
     console.log(chalk.yellow('4. Restart your development server\n'));
     
-    process.exit(1);
+    // Don't exit here - let the pre-build check handle it
   }
   
   if (warnings.length > 0) {

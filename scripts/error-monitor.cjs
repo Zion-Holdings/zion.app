@@ -6,6 +6,7 @@ const path = require('path');
 // Configuration
 const CONFIG = {
   logsDir: path.join(__dirname, '..', 'logs'),
+  additionalDirs: [path.join(__dirname, '..')],
   maxLogEntries: 1000,
   retentionDays: 30,
   criticalKeywords: [
@@ -63,13 +64,23 @@ class ErrorMonitor {
    */
   async readLogs() {
     try {
-      const files = fs.readdirSync(CONFIG.logsDir);
-      const logFiles = files.filter(file => file.endsWith('.log'));
-      
+      const dirs = [CONFIG.logsDir, ...CONFIG.additionalDirs];
+      let logFiles = [];
+      for (const dir of dirs) {
+        try {
+          const files = fs.readdirSync(dir);
+          const found = files.filter(f => f.endsWith('.log'))
+            .map(f => path.join(dir, f));
+          logFiles = logFiles.concat(found);
+        } catch {
+          // ignore directory read errors
+        }
+      }
+
       console.log(`📋 Found ${logFiles.length} log files`);
-      
-      for (const file of logFiles) {
-        const filePath = path.join(CONFIG.logsDir, file);
+
+      for (const filePath of logFiles) {
+        const file = path.basename(filePath);
         const content = fs.readFileSync(filePath, 'utf-8');
         const lines = content.split('\n').filter(line => line.trim());
         
@@ -170,6 +181,11 @@ class ErrorMonitor {
    */
   detectLogLevel(text) {
     const upperText = text.toUpperCase();
+
+    // Treat recommendation lines as informational only
+    if (upperText.includes('CONSIDER SETTING UP AUTOMATED ALERTS') || upperText.startsWith('[ALERT]')) {
+      return 'info';
+    }
     
     // Enhanced success indicators (these override error/fail keywords)
     const successIndicators = [

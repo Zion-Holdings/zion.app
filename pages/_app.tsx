@@ -30,27 +30,44 @@ if (typeof window !== 'undefined') {
   });
 }
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react'; // Added Suspense
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'; // Added
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Head from 'next/head';
+import dynamic from 'next/dynamic'; // Import dynamic
 import '../src/index.css';
 import { Provider as ReduxProvider } from 'react-redux';
 import { store } from '@/store';
+import { HydrationErrorBoundary } from '@/components/HydrationErrorBoundary';
 
-import { I18nextProvider } from 'react-i18next'; // Import I18nextProvider
-import i18n from '../src/i18n'; // Import your i18n instance
+import { I18nextProvider } from 'react-i18next';
+import i18n from '../src/i18n';
 
-// Import all providers synchronously for reliability
-import { AuthProvider } from '../src/context/auth/AuthProvider'; // Added AuthProvider
+// Synchronously import core providers
+import { AuthProvider } from '../src/context/auth/AuthProvider';
 import { WhitelabelProvider } from '../src/context/WhitelabelContext';
-import { WalletProvider } from '../src/context/WalletContext';
-import { AnalyticsProvider } from '../src/context/AnalyticsContext';
 import { CartProvider } from '../src/context/CartContext';
 import { FeedbackProvider } from '../src/context/FeedbackContext';
 import { ThemeProvider } from '../src/context/ThemeContext';
-// import AppLayout from '../src/components/AppLayout';
+
+// Dynamically import potentially heavy providers
+const DynamicWalletProvider = dynamic(() =>
+  import('../src/context/WalletContext').then(mod => mod.WalletProvider),
+  { ssr: false, loading: () => <DynamicProviderFallback providerName="Wallet System" /> }
+);
+
+const DynamicAnalyticsProvider = dynamic(() =>
+  import('../src/context/AnalyticsContext').then(mod => mod.AnalyticsProvider),
+  { ssr: false, loading: () => <DynamicProviderFallback providerName="Analytics" /> }
+);
+
+// Fallback component for dynamic providers
+const DynamicProviderFallback: React.FC<{ providerName: string }> = ({ providerName }) => (
+  <div style={{ display: 'none' }} data-provider-loading={providerName}>
+    Loading {providerName}...
+  </div>
+);
 
 // Error boundary component
 class AppErrorBoundary extends React.Component<
@@ -166,43 +183,48 @@ const LoadingScreen: React.FC<{ progress: number }> = ({ progress }) => (
 
 // Provider wrapper with error handling
 const ProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  // Note: Suspense for dynamic imports is handled individually by next/dynamic.
+  // A top-level Suspense here could be added if there are other suspense-using components.
   return (
     <AppErrorBoundary>
       <ReduxProvider store={store}>
-        <I18nextProvider i18n={i18n}> {/* Added I18nextProvider */}
-          <AuthProvider> {/* Added AuthProvider Wrapper */}
+        <I18nextProvider i18n={i18n}>
+          <AuthProvider>
             <WhitelabelProvider>
-              <WalletProvider>
-                <AnalyticsProvider>
-                <CartProvider>
-                  <FeedbackProvider>
-                    <ThemeProvider>
-                      {children}
-                    </ThemeProvider>
-                  </FeedbackProvider>
-                </CartProvider>
-              </AnalyticsProvider>
-            </WalletProvider>
-          </WhitelabelProvider>
-        </AuthProvider> {/* Closed AuthProvider Wrapper */}
-        </I18nextProvider> {/* Closed I18nextProvider */}
+              <DynamicWalletProvider> {/* Use dynamic import */}
+                <DynamicAnalyticsProvider> {/* Use dynamic import */}
+                  <CartProvider>
+                    <FeedbackProvider>
+                      <ThemeProvider>
+                        {children}
+                      </ThemeProvider>
+                    </FeedbackProvider>
+                  </CartProvider>
+                </DynamicAnalyticsProvider>
+              </DynamicWalletProvider>
+            </WhitelabelProvider>
+          </AuthProvider>
+        </I18nextProvider>
       </ReduxProvider>
     </AppErrorBoundary>
   );
 };
 
 function MyApp({ Component, pageProps }: AppProps) {
-  // Start with loading false to avoid blank screen if initialization stalls
-  const [isLoading, setIsLoading] = useState(false);
-  const [loadingProgress, setLoadingProgress] = useState(0); // Reverted to 0
+  // Start with isLoading true to show the loading screen immediately.
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadingProgress, setLoadingProgress] = useState(0);
   const [initializationError, setInitializationError] = useState<string | null>(null);
   const router = useRouter();
-  const [queryClient] = useState(() => new QueryClient()); // Added QueryClient instance
+  const [queryClient] = useState(() => new QueryClient());
 
   useEffect(() => {
+    // Ensure loading screen is shown at the very start
+    setIsLoading(true);
+    setLoadingProgress(5); // Initial small progress
+
     const initializeApp = async () => {
       try {
-        console.log('Test 2.2: Uncommenting simulated loading steps');
         // Simulate progressive loading with realistic steps
         const steps = [
           { name: 'Loading Core Components', duration: 300 },
@@ -373,9 +395,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-             <div>
-         <Component {...pageProps} />
-       </div>
+            <HydrationErrorBoundary>
+              <div>
+                <Component {...pageProps} />
+              </div>
+            </HydrationErrorBoundary>
       </ProviderWrapper>
     </QueryClientProvider>
   );

@@ -221,7 +221,7 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
             <div>
               <h3 className="text-sm font-medium text-zion-slate-light mb-2">Tags</h3>
               <div className="flex flex-wrap gap-2">
-                {generatedContent.tags.map((tag, index) => (
+                {generatedContent.tags?.map((tag, index) => (
                   <Badge key={index}>{tag}</Badge>
                 ))}
               </div>

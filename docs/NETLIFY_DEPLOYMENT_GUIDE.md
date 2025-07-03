@@ -26,7 +26,7 @@ This guide covers the complete setup for deploying the Zion Tech Marketplace to 
 
 ### 2. Configure Environment Variables
 
-⚠️ **CRITICAL**: Set these environment variables in Netlify UI **BEFORE** first deployment.
+⚠️ **CRITICAL**: Set these environment variables in Netlify UI **BEFORE** first deployment. The repository no longer defines them in `netlify.toml`, so the UI values will be used for all builds.
 
 #### Navigate to Environment Variables
 1. Go to **Site Settings** → **Environment Variables**

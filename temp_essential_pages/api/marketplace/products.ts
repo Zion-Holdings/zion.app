@@ -1,4 +1,4 @@
-import { PrismaClient, type Product as ProductModel } from '@prisma/client';
+import { PrismaClient, type Product as ProductModel, Prisma } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import * as Sentry from '@sentry/nextjs';
@@ -25,7 +25,16 @@ type ProductWithStats = ProductModel & {
 
 async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<ProductWithStats[] | { error: string; details?: string }>
+  res: NextApiResponse<
+    | {
+        products: ProductWithStats[];
+        totalCount: number;
+        page: number;
+        limit: number;
+        hasMore: boolean;
+      }
+    | { error: string; details?: string }
+  >
 ) {
   console.log('Marketplace products API handler started.');
   // DATABASE_URL is essential for Prisma Client to connect to the database.
@@ -54,7 +63,7 @@ async function handler(
     };
 
     // Build where clause
-    const where: any = {};
+    const where: Prisma.ProductWhereInput = {};
     
     if (filters.category) {
       where.category = filters.category;

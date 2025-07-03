@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { createSafeComponent } from '../src/utils/safe-component-loader';
-const Home = createSafeComponent('../src/pages/Home');
+// Import Home directly to avoid dynamic import issues that can lead to a blank screen
+import Home from '../src/pages/Home';
 import type { GetStaticProps } from 'next';
 import * as Sentry from '@sentry/nextjs';
 import { ErrorBanner } from '@/components/talent/ErrorBanner';

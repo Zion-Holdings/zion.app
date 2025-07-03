@@ -84,6 +84,8 @@ const nextConfig = {
     // Disable profiling for faster builds
     swcTraceProfiling: false,
     // Removed esmExternals to prevent external module dynamic import issues
+    // Explicitly disable cacheUnaffected to avoid webpack conflicts
+    cacheUnaffected: false,
   },
 
   images: {
@@ -232,7 +234,7 @@ const nextConfig = {
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 31536000, // 1 year
     dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    contentSecurityPolicy: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com https://*.launchdarkly.com https://www.googletagmanager.com https://widget.intercom.io https://*.googleapis.com https://*.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.supabase.co https://*.stripe.com https://*.sentry.io; object-src 'none'; base-uri 'self';",
     // Add error handling for Netlify
     ...(isNetlify && {
       // For Netlify, use more conservative settings
@@ -521,7 +523,7 @@ const nextConfig = {
       config.resolve.alias = {
         ...config.resolve.alias,
         // '@' alias is now defined globally
-        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
+        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.tsx'),
       };
 
       if (!isServer) {
@@ -652,18 +654,24 @@ const nextConfig = {
 
     // Fix webpack cache configuration to prevent build errors and warnings
     if (config.cache) {
-      // Use memory cache to prevent filesystem cache issues and "Serializing big strings" warnings
-      config.cache = {
-        type: 'memory',
-        maxGenerations: dev ? 1 : 5,
-      };
-    } else {
-      // Ensure memory cache is properly configured
-      config.cache = {
-        type: 'memory',
-        maxGenerations: dev ? 1 : 5,
-      };
-    }
+        // Use memory cache to prevent filesystem cache issues and "Serializing big strings" warnings
+        config.cache = {
+          type: 'memory',
+          maxGenerations: dev ? 1 : 5,
+        };
+      } else {
+        // Ensure memory cache is properly configured
+        config.cache = {
+          type: 'memory',
+          maxGenerations: dev ? 1 : 5,
+        };
+      }
+
+    // Explicitly disable cacheUnaffected to avoid conflicts with usedExports
+    config.experiments = {
+      ...(config.experiments || {}),
+      cacheUnaffected: false,
+    };
 
     // Add optimization to prevent temporal dead zone issues
     if (!dev && isServer) {
@@ -787,8 +795,7 @@ const nextConfig = {
         // Optimization settings for better performance
         moduleIds: 'deterministic',
         chunkIds: 'deterministic',
-        // Disable usedExports to avoid conflicts with cacheUnaffected
-        usedExports: false,
+        // usedExports disabled to avoid cacheUnaffected conflicts in older builds
         sideEffects: false,
         concatenateModules: !dev,
         minimize: !dev,
@@ -958,7 +965,7 @@ const nextConfig = {
     if (!dev) {
       config.resolve.alias = {
         ...config.resolve.alias,
-        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
+        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.tsx'),
       };
 
       // Note: Compression is handled by Netlify and other deployment platforms
@@ -990,6 +997,17 @@ const nextConfig = {
           },
         },
       };
+    }
+
+    // Ensure consistent optimization settings in all environments
+  config.optimization = {
+    ...config.optimization,
+    usedExports: false, // Disable to prevent cacheUnaffected conflicts
+  };
+
+    // Remove cacheUnaffected in case any plugin re-added it
+    if (config.cache && config.cache.cacheUnaffected !== undefined) {
+      delete config.cache.cacheUnaffected;
     }
 
     return config;

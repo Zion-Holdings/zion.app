@@ -110,3 +110,13 @@ npm run logs:purge
 ```
 
 This command deletes any `.log` files older than 30 days (configurable via the `LOG_RETENTION_DAYS` environment variable) from the `logs/` folder and its subdirectories.
+
+## Bug Log Summary
+
+Python utilities are available for manual log inspection. After running `main_app.py` or any script that uses `bug_logger.py`, you can generate a quick overview of the collected bug reports:
+
+```bash
+python bug_log_summary.py
+```
+
+This script reads `logs/bug/bug_log.json` (or the path set in `BUG_LOG_FILE`) and prints the number of entries per severity along with the most frequent error messages.

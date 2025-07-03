@@ -15,6 +15,8 @@ export default defineConfig({
       '@/services': path.resolve(__dirname, './src/services'),
       '@/integrations': path.resolve(__dirname, './src/integrations'),
       '@/types': path.resolve(__dirname, './src/types'),
+      // Use lightweight React Router stubs to avoid Router context errors in tests
+      'react-router-dom': path.resolve(__dirname, './src/stubs/react-router-dom.ts'),
     },
   },
   define: {

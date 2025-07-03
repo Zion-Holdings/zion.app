@@ -9,6 +9,52 @@ const path = require('path');
 
 const args = process.argv.slice(2);
 const LOG_DIR = args[0] && !args[0].startsWith('--') ? args[0] : 'logs';
+// Load translation keys to filter false positives for "missingKey" log entries
+const localesDir = path.join(__dirname, '..', 'src', 'i18n', 'locales');
+let allLocaleKeys = null;
+
+function loadLocaleKeys() {
+  if (allLocaleKeys) return allLocaleKeys;
+  allLocaleKeys = new Set();
+
+  if (fs.existsSync(localesDir)) {
+    const localeDirs = fs.readdirSync(localesDir).filter(d =>
+      fs.statSync(path.join(localesDir, d)).isDirectory()
+    );
+
+    for (const dir of localeDirs) {
+      const file = path.join(localesDir, dir, 'translation.json');
+      if (fs.existsSync(file)) {
+        try {
+          const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+          flattenKeys(data).forEach(k => allLocaleKeys.add(k));
+        } catch {
+          // ignore JSON parse errors
+        }
+      }
+    }
+  }
+
+  return allLocaleKeys;
+}
+
+function flattenKeys(obj, prefix = '') {
+  const keys = [];
+  for (const [k, v] of Object.entries(obj)) {
+    const newKey = prefix ? `${prefix}.${k}` : k;
+    if (typeof v === 'object' && v !== null) {
+      keys.push(...flattenKeys(v, newKey));
+    } else {
+      keys.push(newKey);
+    }
+  }
+  return keys;
+}
+
+function translationKeyExists(key) {
+  const keys = loadLocaleKeys();
+  return keys.has(key);
+}
 // Error patterns to flag. Expanded to detect missing modules and network issues
 const PATTERNS = [
   /error/i,
@@ -22,7 +68,10 @@ const PATTERNS = [
   /Environment variable.*missing/i,
   /Missing translation key/i,
   /map is not a function/i,
-  /useNavigate\(\).*Router/i
+  /useNavigate\(\).*Router/i,
+  /cacheUnaffected|usedExports/i,
+  /unhandledRejection/i,
+  /Uncaught Exception/i
 ];
 const LEVELS = ['debug', 'info', 'warn', 'error'];
 const DEDUPE = args.includes('--dedupe');
@@ -72,7 +121,9 @@ function checkFile(filePath) {
     }
 
     if (parsed.missingKey) {
-      missingKeys.push(parsed.missingKey);
+      if (!translationKeyExists(parsed.missingKey)) {
+        missingKeys.push(parsed.missingKey);
+      }
     }
   }
 
@@ -91,9 +142,12 @@ function main() {
   }
 
   const files = [];
+  const LOG_EXT_REGEX = /\.(log|txt)$/i;
   dirs.forEach(dir => {
     if (fs.existsSync(dir)) {
-      const dirFiles = fs.readdirSync(dir).filter(f => f.endsWith('.log')).map(f => path.join(dir, f));
+      const dirFiles = fs.readdirSync(dir)
+        .filter(f => LOG_EXT_REGEX.test(f))
+        .map(f => path.join(dir, f));
       files.push(...dirFiles);
     }
   });
@@ -153,14 +207,20 @@ function main() {
   if (/map is not a function/i.test(allText)) {
     hints.push('Detected \"map is not a function\" errors. Verify array values before using .map().');
   }
+  if (/useNavigate\(\).*Router/i.test(allText)) {
+    hints.push('React Router "useNavigate" hook used outside of a Router. Wrap components with <MemoryRouter> or use Next.js routing.');
+  }
+  if (/cacheUnaffected|usedExports/i.test(allText)) {
+    hints.push('Webpack cache/usedExports conflict detected. Remove cacheUnaffected or disable usedExports in your config.');
+  }
   if (hints.length) {
     const header = '\n=== Suggestions ===';
     console.log(header);
     summaryLines.push(header);
     hints.forEach(msg => {
       console.log('- ' + msg);
-    summaryLines.push('- ' + msg);
-  });
+      summaryLines.push('- ' + msg);
+    });
   }
 
   if (allMissingKeys.size) {

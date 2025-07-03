@@ -1,6 +1,20 @@
 const fs = require('fs');
 const path = require('path');
-const glob = require('glob');
+
+// Simple recursive file walker to avoid glob dependency
+function walk(dir) {
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  const files = [];
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...walk(fullPath));
+    } else if (/\.(ts|tsx|js|jsx)$/.test(entry.name)) {
+      files.push(fullPath);
+    }
+  }
+  return files;
+}
 
 function fixFile(filePath) {
   const content = fs.readFileSync(filePath, 'utf8');
@@ -9,8 +23,7 @@ function fixFile(filePath) {
   // Replace <Link to="..." with <Link href="..."
   updated = updated.replace(/<Link\s+to=/g, '<Link href=');
 
-  // Replace react-router-dom Link import with next/link
-  updated = updated.replace(/from ['"]react-router-dom['"]/g, "from 'next/link'");
+  // Only modify Link component props; do not alter imports
 
   if (updated !== content) {
     fs.writeFileSync(filePath, updated, 'utf8');
@@ -20,7 +33,7 @@ function fixFile(filePath) {
   return false;
 }
 
-const files = glob.sync('src/**/*.{ts,tsx,js,jsx}');
+const files = walk(path.join(process.cwd(), 'src'));
 let count = 0;
 files.forEach(f => {
   if (fixFile(f)) count++;

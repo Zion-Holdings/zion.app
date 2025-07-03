@@ -1,11 +1,14 @@
 import { test, expect } from '@playwright/test';
-import fetch from 'node-fetch';
+// Use the global fetch provided by modern versions of Node.js so we don't
+// rely on the optional `node-fetch` dependency which may not be installed in
+// minimal environments.
+const fetchFn: typeof fetch = (global as any).fetch;
 
 const baseURL = process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:3000';
 
 async function isServerRunning(url: string): Promise<boolean> {
   try {
-    const res = await fetch(url, { method: 'HEAD' });
+    const res = await fetchFn(url, { method: 'HEAD' });
     return res.ok;
   } catch {
     return false;
