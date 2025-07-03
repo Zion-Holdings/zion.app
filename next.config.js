@@ -697,7 +697,11 @@ const nextConfig = {
       /memory.*cache/i,
     ];
 
-
+    // CRITICAL FIX: Ensure usedExports is disabled globally to avoid conflicts with cacheUnaffected
+    config.optimization = {
+      ...config.optimization,
+      usedExports: false,
+    };
 
     // PHASE 2: Enhanced Bundle Splitting for Performance Optimization
     if (!isServer) {
