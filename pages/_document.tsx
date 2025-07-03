@@ -19,6 +19,16 @@ export default function Document() {
     if (el) el.style.display = 'none';
   }, 10000);`;
 
+  // Detect blank screen after hydration
+  const blankScreenDetectScript = `window.addEventListener('load', function () {
+    setTimeout(function () {
+      var root = document.getElementById('__next');
+      if (root && root.innerText.trim() === '') {
+        root.innerHTML = '<div style="padding:2rem;text-align:center;font-family:sans-serif;"><h2>Application failed to load.</h2><p>Please refresh the page.</p></div>';
+      }
+    }, 3000);
+  });`;
+
   return (
     <Html lang="en">
       <Head>
@@ -32,6 +42,7 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+        <script dangerouslySetInnerHTML={{ __html: blankScreenDetectScript }} />
       </body>
     </Html>
   );
