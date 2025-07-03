@@ -315,7 +315,8 @@
     "web-push": "^3.6.7",
     "web-vitals": "^5.0.3",
     "yup": "^1.6.1",
-    "zod": "^3.25.67"
+    "zod": "^3.25.67",
+    "prisma": "^6.10.1"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.27.4",
@@ -388,7 +389,6 @@
     "node-mocks-http": "^1.17.2",
     "npm-check-updates": "^18.0.1",
     "prettier": "^3.6.1",
-    "prisma": "^6.10.1",
     "puppeteer": "^24.10.2",
     "redux-mock-store": "^1.5.5",
     "rollup-plugin-visualizer": "^5.14.0",
