@@ -75,7 +75,7 @@ export default function RoadmapFeaturePage() {
             <CardContent className="space-y-4">
               <p className="text-muted-foreground text-sm">{feature.description}</p>
               <div className="flex flex-wrap gap-2">
-                {feature.tags.map((t) => (
+                {feature.tags?.map((t) => (
                   <Badge key={t} variant="outline">{t}</Badge>
                 ))}
               </div>
