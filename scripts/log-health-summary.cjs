@@ -25,6 +25,15 @@ class LogHealthSummary {
     };
   }
 
+  async hasNetwork() {
+    try {
+      await execAsync('ping -c 1 registry.npmjs.org >/dev/null 2>&1');
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
   async generateSummary() {
     console.log('🔍 Generating comprehensive health summary...\n');
 
@@ -139,8 +148,16 @@ class LogHealthSummary {
 
   async checkDependencyHealth() {
     console.log('📦 Checking dependency health...');
-    
+
     try {
+      const online = await this.hasNetwork();
+      if (!online) {
+        console.log('  ⚠️  No network connection - skipping npm audit/outdated checks');
+        this.results.dependencies.vulnerabilities = 0;
+        this.results.dependencies.outdated = 0;
+        return;
+      }
+
       // Check for vulnerabilities
       const { stdout: auditOutput } = await execAsync('npm audit --json 2>/dev/null || echo "{}"');
       try {
