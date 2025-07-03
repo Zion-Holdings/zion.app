@@ -230,6 +230,8 @@
     "@sendgrid/mail": "^8.1.5",
     "@sentry/nextjs": "^9.33.0",
     "@sentry/tracing": "^7.120.3",
+    "@opentelemetry/api": "^1.8.0",
+    "@opentelemetry/core": "^1.8.0",
     "@stripe/react-stripe-js": "^3.7.0",
     "@stripe/stripe-js": "^7.4.0",
     "@supabase/ssr": "^0.6.1",
