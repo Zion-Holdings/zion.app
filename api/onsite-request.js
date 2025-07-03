@@ -8,19 +8,30 @@ async function handler(req, res) {
     return;
   }
 
-  const { name, email, phone: _phone, company: _company, location, details: _details } = req.body || {};
+  const { name, email, phone, company, location, details } = req.body || {};
   if (!name || !email || !location) {
     res.statusCode = 400;
     res.json({ error: 'Missing required fields' });
     return;
   }
 
-  // TODO: Implement actual onsite service request processing
-  // TODO: Use phone, company, and details in processing logic
-  // console.log('Onsite service request:', { name, email, phone, company, location, details }); // Removed for production
+  try {
+    const response = await fetch('/functions/v1/onsite-service-request', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ name, email, phone, company, location, details })
+    });
 
-  res.statusCode = 200;
-  res.json({ success: true });
+    const data = await response.json().catch(() => ({}));
+    res.statusCode = response.status;
+    res.json(data);
+  } catch (err) {
+    console.error('Onsite request API error:', err);
+    res.statusCode = 500;
+    res.json({ error: 'Failed to process request' });
+  }
 }
 
 module.exports = withSentry(handler);
