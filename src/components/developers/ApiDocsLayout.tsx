@@ -1,3 +1,4 @@
+'use client'
 
 import { SearchSuggestion } from "@/types/search";
 import React, { useState } from "react";
