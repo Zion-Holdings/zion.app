@@ -22,7 +22,9 @@ const PATTERNS = [
   /Environment variable.*missing/i,
   /Missing translation key/i,
   /map is not a function/i,
-  /useNavigate\(\).*Router/i
+  /useNavigate\(\).*Router/i,
+  /unhandledRejection/i,
+  /Uncaught Exception/i
 ];
 const LEVELS = ['debug', 'info', 'warn', 'error'];
 const DEDUPE = args.includes('--dedupe');
