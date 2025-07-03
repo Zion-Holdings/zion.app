@@ -8,7 +8,7 @@ import {
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
-const ReactPlayer = React.lazy(() => import('react-player').then(mod => ({ default: mod.default })));
+const ReactPlayer = React.lazy(() => import('react-player'));
 const ModelViewer = React.lazy(async () => {
   await import('@google/model-viewer');
   return {
