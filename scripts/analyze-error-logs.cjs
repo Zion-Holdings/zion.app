@@ -153,6 +153,9 @@ function main() {
   if (/map is not a function/i.test(allText)) {
     hints.push('Detected \"map is not a function\" errors. Verify array values before using .map().');
   }
+  if (/useNavigate\(\).*Router/i.test(allText)) {
+    hints.push('React Router "useNavigate" hook used outside of a Router. Wrap components with <MemoryRouter> or use Next.js routing.');
+  }
   if (hints.length) {
     const header = '\n=== Suggestions ===';
     console.log(header);
