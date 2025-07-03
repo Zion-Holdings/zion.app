@@ -1,11 +1,11 @@
-from bug_logger import log_bug
+from bug_logger import log_bug, LOG_FILE
 import sys # Required for sys.exc_info()
 import os
 
-# Ensure bug_log.json is clean for this example run
-# In a real app, you wouldn't typically delete it like this every time.
-if os.path.exists("bug_log.json"):
-    os.remove("bug_log.json")
+# Ensure the bug log is clean for this example run
+# In a real application you wouldn't typically delete the log each time.
+if os.path.exists(LOG_FILE):
+    os.remove(LOG_FILE)
 
 def risky_division(a, b):
     """Performs division and logs an error if division by zero occurs."""
@@ -94,12 +94,12 @@ if __name__ == "__main__":
     simulate_unexpected_error()
 
     print("\n--- Example Application Finished ---")
-    print(f"Check 'bug_log.json' for the logged errors.")
+    print(f"Check '{LOG_FILE}' for the logged errors.")
 
-    # Optionally, print the content of bug_log.json to console
-    if os.path.exists("bug_log.json"):
+    # Optionally, print the content of the bug log to console
+    if os.path.exists(LOG_FILE):
         try:
-            with open("bug_log.json", "r") as f:
+            with open(LOG_FILE, "r") as f:
                 print("\n--- Content of bug_log.json ---")
                 print(f.read())
                 print("--- End of bug_log.json ---")
