@@ -68,6 +68,17 @@ const DynamicProviderFallback: React.FC<{ providerName: string }> = ({ providerN
   </div>
 );
 
+// Simple local Error Boundary for specific components
+class SimpleBoundary extends React.Component<{ children: React.ReactNode, fallbackUI: React.ReactNode }, { hasError: boolean }> {
+  constructor(props: any) { super(props); this.state = { hasError: false }; }
+  static getDerivedStateFromError(error: any) { console.error("SimpleBoundary derived error:", error); return { hasError: true }; }
+  componentDidCatch(error: any, errorInfo: any) { console.error("SimpleBoundary caught:", error, errorInfo); }
+  render() {
+    if (this.state.hasError) { return this.props.fallbackUI; }
+    return this.props.children;
+  }
+}
+
 // Error boundary component
 class AppErrorBoundary extends React.Component<
   { children: React.ReactNode },
@@ -190,17 +201,19 @@ const ProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) 
         <I18nextProvider i18n={i18n}>
           <AuthProvider>
             <WhitelabelProvider>
-              <DynamicWalletProvider> {/* Use dynamic import */}
-                <DynamicAnalyticsProvider> {/* Use dynamic import */}
-                  <CartProvider>
-                    <FeedbackProvider>
-                      <ThemeProvider>
-                        {children}
-                      </ThemeProvider>
-                    </FeedbackProvider>
-                  </CartProvider>
-                </DynamicAnalyticsProvider>
-              </DynamicWalletProvider>
+              <SimpleBoundary fallbackUI={<div style={{ textAlign: 'center', padding: '20px', color: 'red' }}>Wallet Provider Failed to Load. Some features might be unavailable.</div>}>
+                <DynamicWalletProvider> {/* Use dynamic import */}
+                  <DynamicAnalyticsProvider> {/* Use dynamic import */}
+                    <CartProvider>
+                      <FeedbackProvider>
+                        <ThemeProvider>
+                          {children}
+                        </ThemeProvider>
+                      </FeedbackProvider>
+                    </CartProvider>
+                  </DynamicAnalyticsProvider>
+                </DynamicWalletProvider>
+              </SimpleBoundary>
             </WhitelabelProvider>
           </AuthProvider>
         </I18nextProvider>
@@ -225,6 +238,73 @@ function MyApp({ Component, pageProps }: AppProps) {
     const initializeApp = async () => {
       try {
         // Simulate progressive loading with realistic steps
+        // const steps = [
+        //   { name: 'Loading Core Components', duration: 300 },
+        //   { name: 'Initializing Providers', duration: 400 },
+        //   { name: 'Setting up Analytics', duration: 200 },
+        //   { name: 'Configuring Theme', duration: 200 },
+        //   { name: 'Final Setup', duration: 300 }
+        // ];
+
+        // let currentProgress = 0;
+        // const progressStep = 100 / steps.length;
+
+        // for (let i = 0; i < steps.length; i++) {
+        //   const step = steps[i];
+        //   if (!step) continue;
+
+        //   // Update progress
+        //   currentProgress = (i + 1) * progressStep;
+        //   setLoadingProgress(Math.min(currentProgress, 95));
+
+        //   // Simulate async work
+        //   await new Promise(resolve => setTimeout(resolve, step.duration));
+        // }
+
+        // // Final progress update
+        // setLoadingProgress(100);
+
+        // // Small delay to show completion
+        // await new Promise(resolve => setTimeout(resolve, 200));
+
+        // // PERFORMANCE: Initialize Web Vitals monitoring in production
+        // if (typeof window !== 'undefined' && process.env.NODE_ENV === 'production') {
+        //   try {
+        //     const { onCLS, onFCP, onINP, onLCP, onTTFB } = await import('web-vitals');
+
+        //     const reportWebVitalsSafely = (metric: any) => {
+        //       try { // Add specific try-catch within the callback
+        //         if (typeof window !== 'undefined' && (window as any).gtag) {
+        //           (window as any).gtag('event', metric.name, {
+        //             value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+        //             event_label: metric.id,
+        //             non_interaction: true,
+        //           });
+        //         }
+
+        //         // Initialize comprehensive performance monitoring on first metric (still keeping the actual import commented for now as per previous step)
+        //         if (!(global as any).performanceMonitorInitialized) {
+        //           (global as any).performanceMonitorInitialized = true;
+        //           // import('@/utils/performance-monitor').then(...).catch(...);
+        //           console.log('Performance monitor import is currently skipped.');
+        //         }
+        //       } catch (reportError) {
+        //         console.warn('Error during Web Vitals reporting:', reportError);
+        //       }
+        //     };
+
+        //     // Wrap each listener setup in a try-catch as well, just in case
+        //     try { onCLS(reportWebVitalsSafely); } catch (e) { console.warn('Failed to setup onCLS:', e); }
+        //     try { onFCP(reportWebVitalsSafely); } catch (e) { console.warn('Failed to setup onFCP:', e); }
+        //     try { onINP(reportWebVitalsSafely); } catch (e) { console.warn('Failed to setup onINP:', e); }
+        //     try { onLCP(reportWebVitalsSafely); } catch (e) { console.warn('Failed to setup onLCP:', e); }
+        //     try { onTTFB(reportWebVitalsSafely); } catch (e) { console.warn('Failed to setup onTTFB:', e); }
+
+        //   } catch (webVitalsError) {
+        //     console.warn('Web Vitals main initialization failed:', webVitalsError);
+        //   }
+        // }
+
         const steps = [
           { name: 'Loading Core Components', duration: 300 },
           { name: 'Initializing Providers', duration: 400 },
@@ -299,6 +379,21 @@ function MyApp({ Component, pageProps }: AppProps) {
         setIsLoading(false);
       }
     };
+
+    // Force initialization completion after maximum 3 seconds
+    // const forceInitTimeout = setTimeout(() => {
+    //   console.warn('Force completing app initialization due to timeout');
+    //   setLoadingProgress(100); // Ensure progress is full on timeout
+    //   setIsLoading(false);
+    // }, 3000);
+
+    // initializeApp().finally(() => {
+    //   clearTimeout(forceInitTimeout);
+    // });
+
+    // return () => {
+    //   clearTimeout(forceInitTimeout);
+    // };
 
     // Force initialization completion after maximum 3 seconds
     const forceInitTimeout = setTimeout(() => {

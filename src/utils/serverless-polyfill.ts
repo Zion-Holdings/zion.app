@@ -164,8 +164,8 @@ if (typeof window !== 'undefined') {
       
       if (suppressedMessages.some(msg => message.includes(msg))) {
         // Log that we are suppressing an error, for debugging purposes
-        console.warn(`[serverless-polyfill] Suppressing known error: "${message}" from ${source}:${lineno}`);
-        return true; // Suppress error
+        console.error(`[serverless-polyfill] Previously suppressed error: "${message}" from ${source}:${lineno}`, error);
+        // return true; // Suppress error -- Now allowing it to propagate
       }
     }
     
@@ -173,7 +173,7 @@ if (typeof window !== 'undefined') {
     if (originalOnError) {
       return originalOnError.call(this as any, message, source, lineno, colno, error);
     }
-    return false;
+    return false; // Allow default browser handling
   };
 
   const originalOnUnhandledRejection = window.onunhandledrejection;
@@ -187,8 +187,9 @@ if (typeof window !== 'undefined') {
       ];
       
       if (suppressedMessages.some(msg => event.reason.message.includes(msg))) {
-        event.preventDefault();
-        return;
+        console.error(`[serverless-polyfill] Previously suppressed unhandled rejection:`, event.reason);
+        // event.preventDefault(); // -- Now allowing it to propagate
+        // return;
       }
     }
     
@@ -196,6 +197,8 @@ if (typeof window !== 'undefined') {
     if (originalOnUnhandledRejection) {
       return originalOnUnhandledRejection.call(this as any, event);
     }
+    // Allow default browser handling if no original handler
+    return false;
   };
 }
 

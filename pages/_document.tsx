@@ -23,7 +23,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-        <script dangerouslySetInnerHTML={{ __html: loaderTimeoutScript }} />
+        {/* <script dangerouslySetInnerHTML={{ __html: loaderTimeoutScript }} /> */}
       </Head>
       <body>
         <Main />
