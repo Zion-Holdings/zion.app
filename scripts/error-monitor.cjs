@@ -6,6 +6,7 @@ const path = require('path');
 // Configuration
 const CONFIG = {
   logsDir: path.join(__dirname, '..', 'logs'),
+  rootDir: path.join(__dirname, '..'),
   maxLogEntries: 1000,
   retentionDays: 30,
   criticalKeywords: [
@@ -65,11 +66,22 @@ class ErrorMonitor {
     try {
       const files = fs.readdirSync(CONFIG.logsDir);
       const logFiles = files.filter(file => file.endsWith('.log'));
-      
-      console.log(`📋 Found ${logFiles.length} log files`);
-      
-      for (const file of logFiles) {
-        const filePath = path.join(CONFIG.logsDir, file);
+
+      // Also include root-level .log files for completeness
+      const rootFiles = fs
+        .readdirSync(CONFIG.rootDir)
+        .filter(
+          file => file.endsWith('.log') && !logFiles.includes(file)
+        );
+
+      const allLogFiles = [...logFiles, ...rootFiles];
+
+      console.log(`📋 Found ${allLogFiles.length} log files`);
+
+      for (const file of allLogFiles) {
+        const filePath = fs.existsSync(path.join(CONFIG.logsDir, file))
+          ? path.join(CONFIG.logsDir, file)
+          : path.join(CONFIG.rootDir, file);
         const content = fs.readFileSync(filePath, 'utf-8');
         const lines = content.split('\n').filter(line => line.trim());
         

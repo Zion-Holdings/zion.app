@@ -156,6 +156,9 @@ npm run logs:health
 # View detailed monitoring
 npm run logs:monitor
 
+# The monitor now also scans root-level `.log` files in addition to
+# files under `logs/`, so a single run covers all build and runtime logs.
+
 # Export comprehensive report
 npm run logs:monitor:export
 ```
