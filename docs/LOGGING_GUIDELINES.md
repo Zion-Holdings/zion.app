@@ -110,3 +110,20 @@ npm run logs:purge
 ```
 
 This command deletes any `.log` files older than 30 days (configurable via the `LOG_RETENTION_DAYS` environment variable) from the `logs/` folder and its subdirectories.
+
+## Advanced Log Monitoring
+
+For a deeper analysis of recent logs you can run:
+
+```bash
+npm run logs:monitor
+```
+
+This generates a detailed report and prints a system health score. To save the
+report to a file for later review, use:
+
+```bash
+npm run logs:monitor:export
+```
+
+The exported report will be written to `logs/error-report-<timestamp>.json`.
