@@ -1,8 +1,8 @@
 import * as React from "react";
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import dynamic from 'next/dynamic';
 
-
-import { DayPicker } from "react-day-picker";
+const DayPicker = dynamic(() => import('react-day-picker').then(mod => mod.DayPicker), { ssr: false });
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
