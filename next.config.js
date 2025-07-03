@@ -87,6 +87,9 @@ const nextConfig = {
     esmExternals: undefined,
     // Enable React 19 streaming features
     reactRoot: true,
+    // Enable React Compiler for automatic memoization optimizations (experimental)
+    reactCompiler: true,
+    // Partial Prerendering currently requires canary – disabled for now
   },
 
   images: {
