@@ -1,4 +1,3 @@
-import { type EmailOtpType } from '@supabase/supabase-js'
 import { type NextApiRequest, type NextApiResponse } from 'next'
 import { createClient } from '../../../src/utils/supabase/server'
 
@@ -18,7 +17,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const supabase = createClient(req, res)
 
     const { error } = await supabase.auth.verifyOtp({
-      type: type as EmailOtpType,
+      type: type as any,
       token_hash: token_hash as string,
     })
 
