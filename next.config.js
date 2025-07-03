@@ -486,6 +486,7 @@ const nextConfig = {
             },
           },
         },
+        usedExports: false,
       };
 
       // SIMPLIFIED DefinePlugin 
@@ -652,19 +653,22 @@ const nextConfig = {
     }
 
     // Fix webpack cache configuration to prevent build errors and warnings
-      if (config.cache) {
-        // Use memory cache to prevent filesystem cache issues and "Serializing big strings" warnings
-        config.cache = {
-          type: 'memory',
-          maxGenerations: dev ? 1 : 5,
-        };
-      } else {
-        // Ensure memory cache is properly configured
-        config.cache = {
-          type: 'memory',
-          maxGenerations: dev ? 1 : 5,
-        };
-      }
+    if (config.cache) {
+      // Use memory cache and explicitly disable cacheUnaffected to avoid
+      // "usedExports/cacheUnaffected" conflicts in development
+      config.cache = {
+        type: 'memory',
+        maxGenerations: dev ? 1 : 5,
+        cacheUnaffected: false,
+      };
+    } else {
+      // Ensure memory cache is properly configured
+      config.cache = {
+        type: 'memory',
+        maxGenerations: dev ? 1 : 5,
+        cacheUnaffected: false,
+      };
+    }
 
     // Add optimization to prevent temporal dead zone issues
     if (!dev && isServer) {
