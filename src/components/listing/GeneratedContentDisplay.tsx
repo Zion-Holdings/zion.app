@@ -36,7 +36,7 @@ export function GeneratedContentDisplay({ content, onApply }: GeneratedContentDi
         <div>
           <h3 className="text-sm font-medium text-zion-slate-light mb-2">Tags</h3>
           <div className="flex flex-wrap gap-2">
-            {content.tags.map((tag, index) => (
+            {content.tags?.map((tag, index) => (
               <Badge key={index} className="bg-zion-purple/20 text-zion-purple hover:bg-zion-purple/30">
                 {tag}
               </Badge>

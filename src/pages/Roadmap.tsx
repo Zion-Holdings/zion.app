@@ -75,7 +75,7 @@ export default function RoadmapPage() {
                           {f.description}
                         </p>
                         <div className="flex flex-wrap gap-2">
-                          {f.tags.map((t) => (
+                          {f.tags?.map((t) => (
                             <Badge key={t} variant="outline">
                               {t}
                             </Badge>

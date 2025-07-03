@@ -316,7 +316,7 @@ export default function ForumPostPage() {
             <h1 className="text-2xl font-bold mb-2">{post.title}</h1>
             
             <div className="flex flex-wrap gap-2 mb-6">
-              {post.tags.map(tag => (
+              {post.tags?.map(tag => (
                 <Badge key={tag} variant="outline" className="bg-zion-purple/10 hover:bg-zion-purple/20">
                   {tag}
                 </Badge>

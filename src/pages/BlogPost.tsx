@@ -273,9 +273,9 @@ export default function BlogPost() {
             
             {/* Tags */}
             <div className="flex flex-wrap gap-2 mt-12">
-              {post.tags.map(tag => (
-                <span 
-                  key={tag} 
+              {post.tags?.map(tag => (
+                <span
+                  key={tag}
                   className="text-xs text-zion-slate-light bg-zion-blue-dark px-3 py-1 rounded-full"
                 >
                   #{tag}
