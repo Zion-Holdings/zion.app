@@ -68,39 +68,40 @@ if (process.env.NETLIFY === 'true') {
 // Run the validation
 const result = validateEnvironment();
 
-if (!result.isValid) {
-  console.log('\n🚨 NETLIFY SETUP INSTRUCTIONS:');
-  console.log('==============================\n');
+  if (!result.isValid) {
+    console.log('\n🚨 NETLIFY SETUP INSTRUCTIONS:');
+    console.log('==============================\n');
 
-  console.log('1. 🌐 Go to your Netlify dashboard:');
-  console.log('   https://app.netlify.com/sites/[your-site-name]/settings/deploys#environment\n');
+    console.log('1. 🌐 Go to your Netlify dashboard:');
+    console.log('   https://app.netlify.com/sites/[your-site-name]/settings/deploys#environment\n');
 
-  console.log('2. 📝 Click "Edit variables" and add these required variables:\n');
+    console.log('2. 📝 Click "Edit variables" and add these required variables:\n');
 
-  result.errors.forEach(error => {
-    console.log(`   ✏️  ${error.variable}`);
-    console.log(`       Description: ${error.description}`);
-    console.log(`       Current: ${error.current}\n`);
-  });
+    result.errors.forEach(error => {
+      console.log(`   ✏️  ${error.variable}`);
+      console.log(`       Description: ${error.description}`);
+      console.log(`       Current: ${error.current}\n`);
+    });
 
-  console.log('3. 🔧 Get your Auth0 credentials:');
-  console.log('   - Go to https://manage.auth0.com/dashboard/');
-  console.log('   - Select your application');
-  console.log('   - Copy the Domain, Client ID, and Client Secret');
-  console.log('   - Generate a random 32-character secret for AUTH0_SECRET\n');
+    console.log('3. 🔧 Get your Supabase credentials:');
+    console.log('   - Go to https://supabase.com/dashboard');
+    console.log('   - Select your project');
+    console.log('   - Go to Settings > API');
+    console.log('   - Copy the Project URL and anon/public key\n');
 
-  console.log('4. 💾 Click "Save" and then "Deploy site"\n');
+    console.log('4. 💾 Click "Save" and then "Deploy site"\n');
 
-  console.log('5. 🔍 Verify the setup by visiting:');
-  console.log('   https://your-site.netlify.app/api/health/environment\n');
+    console.log('5. 🔍 Verify the setup by visiting:');
+    console.log('   https://your-site.netlify.app/api/health/environment\n');
 
-  if (process.env.NETLIFY === 'true') {
-    console.log('⚠️  Continuing build on Netlify despite missing configuration.');
-  } else {
-    console.log('❌ Build stopped to prevent deployment with missing configuration.');
-    console.log('Please fix the environment variables and try again.\n');
-    process.exit(1);
-  }
+    if (process.env.NETLIFY === 'true') {
+      console.log('⚠️  Continuing build on Netlify despite missing configuration.');
+      console.log('   Environment variables should be set in Netlify dashboard for production.\n');
+    } else {
+      console.log('❌ Build stopped to prevent deployment with missing configuration.');
+      console.log('Please fix the environment variables and try again.\n');
+      process.exit(1);
+    }
 } else {
   console.log('✅ Pre-build check passed! Proceeding with build...\n');
 }
