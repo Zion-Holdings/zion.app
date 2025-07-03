@@ -16,10 +16,11 @@ const isPreviewBuild = process.env.CONTEXT !== 'production';
 // 3. Not a Netlify preview build (unless it's the main domain)
 // 4. CDN URL is a valid HTTPS URL
 const cdnUrl = process.env.NEXT_PUBLIC_CDN_URL;
-const isValidCDN = cdnUrl && 
-  cdnUrl.startsWith('https://') && 
-  !cdnUrl.includes('yourdomain.com') && 
-  !cdnUrl.includes('example.com') && 
+const isValidCDN =
+  cdnUrl &&
+  cdnUrl.startsWith('https://') &&
+  !cdnUrl.includes('yourdomain.com') &&
+  !cdnUrl.includes('example.com') &&
   !cdnUrl.includes('localhost');
 
 const shouldUseCDN = isProd && isValidCDN && (!isNetlify || !isPreviewBuild);
@@ -36,7 +37,9 @@ if (process.env.NODE_ENV === 'development') {
     isValidCDN,
     shouldUseCDN,
     assetPrefix: assetPrefix || 'Disabled (serving from origin)',
-    imageOptimization: !(isNetlify && isPreviewBuild) ? 'Enabled' : 'Disabled for Netlify preview'
+    imageOptimization: !(isNetlify && isPreviewBuild)
+      ? 'Enabled'
+      : 'Disabled for Netlify preview',
   });
 }
 /** @type {import('next').NextConfig} */
@@ -48,10 +51,11 @@ const nextConfig = {
   // Optimized for fast builds (hanging issue SOLVED)
   // outputFileTracing: false, // Intentionally disabled via env vars in build scripts and netlify.toml to prevent hanging.
   productionBrowserSourceMaps: false, // Disable for faster builds
-  
+
   // Environment configuration
   env: {
-    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
+    NEXT_PUBLIC_APP_URL:
+      process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
     NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
     NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
   },
@@ -67,15 +71,15 @@ const nextConfig = {
   },
   experimental: {
     optimizePackageImports: [
-      'lucide-react', 
+      'lucide-react',
       '@radix-ui/react-icons',
       'recharts',
       'react-window',
-      'fuse.js'
+      'fuse.js',
     ],
 
     // Enable CSS optimization for production
-    optimizeCss: process.env.NODE_ENV === 'production', 
+    optimizeCss: process.env.NODE_ENV === 'production',
     // Memory and performance optimizations for 176+ pages
     largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
     workerThreads: false, // Disable worker threads to reduce memory usage
@@ -233,7 +237,8 @@ const nextConfig = {
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 31536000, // 1 year
     dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com https://*.launchdarkly.com https://www.googletagmanager.com https://widget.intercom.io https://*.googleapis.com https://*.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.supabase.co https://*.stripe.com https://*.sentry.io; object-src 'none'; base-uri 'self';",
+    contentSecurityPolicy:
+      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com https://*.launchdarkly.com https://www.googletagmanager.com https://widget.intercom.io https://*.googleapis.com https://*.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.supabase.co https://*.stripe.com https://*.sentry.io; object-src 'none'; base-uri 'self';",
     // Add error handling for Netlify
     ...(isNetlify && {
       // For Netlify, use more conservative settings
@@ -243,11 +248,17 @@ const nextConfig = {
   },
 
   compiler: {
-    removeConsole: process.env.NODE_ENV === 'production' ? {
-      exclude: ['error', 'warn'],
-    } : false,
+    removeConsole:
+      process.env.NODE_ENV === 'production'
+        ? {
+            exclude: ['error', 'warn'],
+          }
+        : false,
     // Remove React DevTools in production
-    reactRemoveProperties: process.env.NODE_ENV === 'production' ? { properties: ['data-testid'] } : false,
+    reactRemoveProperties:
+      process.env.NODE_ENV === 'production'
+        ? { properties: ['data-testid'] }
+        : false,
     // Enable SWC minification optimizations
     styledComponents: false, // Disable if not using styled-components
   },
@@ -417,30 +428,30 @@ const nextConfig = {
   webpack: (config, { dev, isServer, webpack }) => {
     // Fix EventEmitter memory leak by increasing max listeners
     // events.EventEmitter.defaultMaxListeners = 20; // Will be set by build script
-    
+
     // CRITICAL: Add comprehensive polyfills as the very first entry point
     if (!isServer) {
       const originalEntry = config.entry;
       config.entry = async () => {
         const entries = await originalEntry();
-        
+
         // Create comprehensive polyfill array
         const polyfills = [
-          './src/utils/serverless-polyfill.ts',  // New serverless polyfill
-          './src/utils/env-polyfill.ts'         // Existing env polyfill
+          './src/utils/serverless-polyfill.ts', // New serverless polyfill
+          './src/utils/env-polyfill.ts', // Existing env polyfill
         ];
-        
+
         // Add polyfills to every entry point
-        Object.keys(entries).forEach(entryName => {
+        Object.keys(entries).forEach((entryName) => {
           if (Array.isArray(entries[entryName])) {
-            polyfills.forEach(polyfill => {
+            polyfills.forEach((polyfill) => {
               if (!entries[entryName].includes(polyfill)) {
                 entries[entryName].unshift(polyfill);
               }
             });
           }
         });
-        
+
         return entries;
       };
 
@@ -488,20 +499,24 @@ const nextConfig = {
         },
       };
 
-      // SIMPLIFIED DefinePlugin 
+      // SIMPLIFIED DefinePlugin
       config.plugins.push(
         new webpack.DefinePlugin({
-          'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
+          'process.env.NODE_ENV': JSON.stringify(
+            process.env.NODE_ENV || 'production',
+          ),
           'process.env': JSON.stringify({
             NODE_ENV: process.env.NODE_ENV || 'production',
             NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || '',
-            NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-            NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
+            NEXT_PUBLIC_SUPABASE_URL:
+              process.env.NEXT_PUBLIC_SUPABASE_URL || '',
+            NEXT_PUBLIC_SUPABASE_ANON_KEY:
+              process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
           }),
-        })
+        }),
       );
     }
-    
+
     // Development optimizations to prevent memory leaks with 176+ pages
     // Define the '@' alias outside the if (dev) block
     config.resolve.alias = {
@@ -518,11 +533,18 @@ const nextConfig = {
         };
       }
 
-      // Alias react-router-dom to a lightweight stub to avoid build errors
+      // Alias react-router-dom and react-router to lightweight stubs to avoid build errors
       config.resolve.alias = {
         ...config.resolve.alias,
         // '@' alias is now defined globally
-        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.tsx'),
+        'react-router-dom': path.resolve(
+          __dirname,
+          'src/stubs/react-router-dom.tsx',
+        ),
+        'react-router': path.resolve(
+          __dirname,
+          'src/stubs/react-router-dom.tsx',
+        ),
       };
 
       if (!isServer) {
@@ -533,13 +555,13 @@ const nextConfig = {
         };
       }
     }
-    
+
     // For Netlify deployment, exclude problematic files temporarily
     if (process.env.SKIP_TYPE_CHECK === 'true') {
       config.externals = config.externals || [];
       config.externals.push({
         './src/context/FavoritesContext.tsx': 'empty',
-        './src/context/LanguageContext.tsx': 'empty', 
+        './src/context/LanguageContext.tsx': 'empty',
         './src/context/RequestQuoteWizard.tsx': 'empty',
         './src/context/WhitelabelContext.tsx': 'empty',
         './src/hooks/useApiKeys.ts': 'empty',
@@ -547,16 +569,19 @@ const nextConfig = {
     }
 
     // Smart Sentry detection: Disable automatically if would cause build issues
-    const shouldDisableSentry = process.env.SKIP_SENTRY_BUILD === 'true' || 
-                                process.env.CI === 'true' ||
-                                process.env.NODE_ENV === 'production' ||
-                                !process.env.SENTRY_DSN ||
-                                process.env.SENTRY_DSN?.includes('dummy') ||
-                                process.env.SENTRY_DSN?.includes('placeholder');
-    
+    const shouldDisableSentry =
+      process.env.SKIP_SENTRY_BUILD === 'true' ||
+      process.env.CI === 'true' ||
+      process.env.NODE_ENV === 'production' ||
+      !process.env.SENTRY_DSN ||
+      process.env.SENTRY_DSN?.includes('dummy') ||
+      process.env.SENTRY_DSN?.includes('placeholder');
+
     if (shouldDisableSentry) {
-      console.log('🚫 Sentry disabled - using mock implementation (Smart Detection)');
-      
+      console.log(
+        '🚫 Sentry disabled - using mock implementation (Smart Detection)',
+      );
+
       // Use webpack aliases to completely replace all Sentry imports with mocks
       config.resolve.alias = {
         ...config.resolve.alias,
@@ -568,10 +593,12 @@ const nextConfig = {
       };
     }
 
-    // Completely exclude dd-trace during CI builds to prevent native module issues  
+    // Completely exclude dd-trace during CI builds to prevent native module issues
     if (process.env.SKIP_DATADOG === 'true' || process.env.CI === 'true') {
-      console.log('🚫 DD-Trace disabled for CI build - using mock implementation');
-      
+      console.log(
+        '🚫 DD-Trace disabled for CI build - using mock implementation',
+      );
+
       // Use webpack alias to replace dd-trace with mock implementation
       config.resolve.alias = {
         ...config.resolve.alias,
@@ -588,26 +615,30 @@ const nextConfig = {
       if (typeof global !== 'undefined') {
         // Only set properties that are safe to assign
         try {
-          Object.defineProperty(global, 'self', { 
-            value: global.self || global, 
-            writable: true, 
-            configurable: true 
+          Object.defineProperty(global, 'self', {
+            value: global.self || global,
+            writable: true,
+            configurable: true,
           });
-        } catch (e) { /* ignore if already defined */ }
-        
+        } catch (e) {
+          /* ignore if already defined */
+        }
+
         try {
-          Object.defineProperty(global, 'webpackChunk_N_E', { 
-            value: global.webpackChunk_N_E || [], 
-            writable: true, 
-            configurable: true 
+          Object.defineProperty(global, 'webpackChunk_N_E', {
+            value: global.webpackChunk_N_E || [],
+            writable: true,
+            configurable: true,
           });
-        } catch (e) { /* ignore if already defined */ }
+        } catch (e) {
+          /* ignore if already defined */
+        }
       }
-      
+
       // Add serverless-specific webpack configuration
       config.target = 'node';
       config.externalsPresets = { node: true };
-      
+
       // Ensure proper module resolution in serverless
       config.resolve.conditionNames = ['node', 'require', 'default'];
       config.resolve.mainFields = ['main', 'module'];
@@ -619,7 +650,7 @@ const nextConfig = {
       config.externals = config.externals || [];
       const nativeModules = [
         '@chainsafe/libp2p-noise',
-        '@chainsafe/libp2p-gossipsub', 
+        '@chainsafe/libp2p-gossipsub',
         '@libp2p/tcp',
         'libp2p',
         '@orbitdb/core',
@@ -635,16 +666,19 @@ const nextConfig = {
         '@chainsafe/bls',
         'node-datachannel',
         'classic-level',
-        'level'
+        'level',
       ];
-      
+
       // Add as external with commonjs type instead of module type
-      nativeModules.forEach(module => {
+      nativeModules.forEach((module) => {
         config.externals.push({
-          [module]: `commonjs ${module}`
+          [module]: `commonjs ${module}`,
         });
       });
-      console.log('🚫 Native modules externalized for server build:', nativeModules.length);
+      console.log(
+        '🚫 Native modules externalized for server build:',
+        nativeModules.length,
+      );
     } else {
       // For client-side, bundle problematic UI libraries instead of externalizing
       config.externals = config.externals || [];
@@ -653,18 +687,18 @@ const nextConfig = {
 
     // Fix webpack cache configuration to prevent build errors and warnings
     if (config.cache) {
-        // Use memory cache to prevent filesystem cache issues and "Serializing big strings" warnings
-        config.cache = {
-          type: 'memory',
-          maxGenerations: dev ? 1 : 5,
-        };
-      } else {
-        // Ensure memory cache is properly configured
-        config.cache = {
-          type: 'memory',
-          maxGenerations: dev ? 1 : 5,
-        };
-      }
+      // Use memory cache to prevent filesystem cache issues and "Serializing big strings" warnings
+      config.cache = {
+        type: 'memory',
+        maxGenerations: dev ? 1 : 5,
+      };
+    } else {
+      // Ensure memory cache is properly configured
+      config.cache = {
+        type: 'memory',
+        maxGenerations: dev ? 1 : 5,
+      };
+    }
 
     // Explicitly disable cacheUnaffected to avoid conflicts with usedExports
     config.experiments = {
@@ -704,18 +738,16 @@ const nextConfig = {
       /memory.*cache/i,
     ];
 
-
-
     // PHASE 2: Enhanced Bundle Splitting for Performance Optimization
     if (!isServer) {
       config.optimization = {
         ...config.optimization,
-        
+
         // Advanced splitChunks configuration for bundle optimization
         splitChunks: {
           chunks: 'all',
-          minSize: 20000,     // 20KB minimum chunk size
-          maxSize: 244000,    // 244KB maximum chunk size (target from plan)
+          minSize: 20000, // 20KB minimum chunk size
+          maxSize: 244000, // 244KB maximum chunk size (target from plan)
           minChunks: 1,
           maxAsyncRequests: 30,
           maxInitialRequests: 30,
@@ -729,7 +761,7 @@ const nextConfig = {
               maxSize: 200000,
               enforce: true,
             },
-            
+
             // Vendor libraries bundle (optimized)
             vendor: {
               test: /[\\/]node_modules[\\/]/,
@@ -737,10 +769,10 @@ const nextConfig = {
               chunks: 'all',
               priority: 10,
               maxSize: 200000, // Reduced from 244KB
-              minSize: 10000,  // Prevent tiny chunks
+              minSize: 10000, // Prevent tiny chunks
               enforce: true,
             },
-            
+
             // React ecosystem bundle
             react: {
               test: /[\\/]node_modules[\\/](react|react-dom|react-router|@tanstack)[\\/]/,
@@ -750,7 +782,7 @@ const nextConfig = {
               maxSize: 244000,
               enforce: true,
             },
-            
+
             // UI libraries bundle
             ui: {
               test: /[\\/]node_modules[\\/](@radix-ui|@chakra-ui|framer-motion|lucide-react)[\\/]/,
@@ -760,7 +792,7 @@ const nextConfig = {
               maxSize: 244000,
               enforce: true,
             },
-            
+
             // Utilities bundle
             utils: {
               test: /[\\/]node_modules[\\/](lodash|lodash-es|date-fns|axios|zod|yup)[\\/]/,
@@ -770,7 +802,7 @@ const nextConfig = {
               maxSize: 244000,
               enforce: true,
             },
-            
+
             // Common application code
             common: {
               name: 'common',
@@ -780,7 +812,7 @@ const nextConfig = {
               maxSize: 244000,
               enforce: true,
             },
-            
+
             // Default vendor chunk for everything else
             default: {
               minChunks: 2,
@@ -788,9 +820,9 @@ const nextConfig = {
               reuseExistingChunk: true,
               maxSize: 244000,
             },
-          }
+          },
         },
-        
+
         // Optimization settings for better performance
         moduleIds: 'deterministic',
         chunkIds: 'deterministic',
@@ -798,18 +830,18 @@ const nextConfig = {
         sideEffects: false,
         concatenateModules: !dev,
         minimize: !dev,
-        
+
         // Runtime chunk optimization
         runtimeChunk: {
           name: 'runtime',
         },
       };
-      
+
       // Updated performance hints with stricter budgets
       config.performance = {
         hints: dev ? false : 'warning',
         maxEntrypointSize: 1000000, // 1MB for main entrypoint (down from 4.97MB)
-        maxAssetSize: 244000,       // 244KB for individual assets
+        maxAssetSize: 244000, // 244KB for individual assets
         assetFilter: (assetFilename) => {
           return /\.(js|css)$/.test(assetFilename);
         },
@@ -828,7 +860,7 @@ const nextConfig = {
       if (config.cache && config.cache.cacheUnaffected !== undefined) {
         delete config.cache.cacheUnaffected;
       }
-      
+
       // Note: usedExports is already configured above in the splitChunks section
       // Avoid duplicate configuration that can cause conflicts
     }
@@ -838,12 +870,12 @@ const nextConfig = {
     if (config.cache && config.cache.cacheUnaffected !== undefined) {
       delete config.cache.cacheUnaffected;
     }
-    
+
     // Also ensure that cache.type is properly configured when filesystem caching is used
     if (config.cache && config.cache.type === 'filesystem') {
       // Remove any potentially conflicting cache options
       delete config.cache.cacheUnaffected;
-      
+
       // Set safe cache options
       config.cache.allowCollectingMemory = false;
       config.cache.managedPaths = [path.resolve(__dirname, 'node_modules')];
@@ -854,7 +886,7 @@ const nextConfig = {
       new webpack.DefinePlugin({
         __SENTRY_DEBUG__: false,
         __SENTRY_TRACING__: true,
-      })
+      }),
     );
 
     // Note: Sentry replacement is handled via resolve.alias above for CI builds
@@ -863,7 +895,7 @@ const nextConfig = {
     config.plugins.push(
       new webpack.ProvidePlugin({
         'date-fns': 'date-fns',
-      })
+      }),
     );
 
     // Force certain packages to use ESM - Enhanced for Next.js 15
@@ -964,7 +996,14 @@ const nextConfig = {
     if (!dev) {
       config.resolve.alias = {
         ...config.resolve.alias,
-        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.tsx'),
+        'react-router-dom': path.resolve(
+          __dirname,
+          'src/stubs/react-router-dom.tsx',
+        ),
+        'react-router': path.resolve(
+          __dirname,
+          'src/stubs/react-router-dom.tsx',
+        ),
       };
 
       // Note: Compression is handled by Netlify and other deployment platforms
@@ -999,10 +1038,10 @@ const nextConfig = {
     }
 
     // Ensure consistent optimization settings in all environments
-  config.optimization = {
-    ...config.optimization,
-    // usedExports removed to prevent cacheUnaffected conflicts
-  };
+    config.optimization = {
+      ...config.optimization,
+      // usedExports removed to prevent cacheUnaffected conflicts
+    };
 
     // Remove cacheUnaffected in case any plugin re-added it
     if (config.cache && config.cache.cacheUnaffected !== undefined) {
@@ -1019,13 +1058,11 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: process.env.SKIP_TYPE_CHECK === 'true',
   },
-  
-  // Skip ESLint during build for faster deployment  
+
+  // Skip ESLint during build for faster deployment
   eslint: {
     ignoreDuringBuilds: true,
   },
-
-
 };
 
 export default nextConfig;
