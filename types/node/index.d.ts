@@ -1,9 +1,24 @@
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface Buffer {}
+
 declare const __dirname: string;
 declare const __filename: string;
-declare const process: {
-  env: Record<string, string | undefined>;
-};
+
+declare namespace NodeJS {
+  interface ProcessEnv {
+    [key: string]: string | undefined;
+  }
+
+  interface Process {
+    env: ProcessEnv;
+  }
+
+  /** Minimal representation of NodeJS.Timeout used in our codebase */
+  interface Timeout {}
+}
+
+declare const process: NodeJS.Process;
+
 declare const Buffer: typeof globalThis extends { Buffer: infer B } ? B : any;
+
 export {};
