@@ -232,7 +232,8 @@ const nextConfig = {
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 31536000, // 1 year
     dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com https://*.launchdarkly.com https://www.googletagmanager.com https://widget.intercom.io; object-src 'none'; base-uri 'self';",
+    // Temporarily disable CSP for debugging
+    // contentSecurityPolicy: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com https://*.launchdarkly.com https://www.googletagmanager.com https://widget.intercom.io; object-src 'none'; base-uri 'self';",
     // Add error handling for Netlify
     ...(isNetlify && {
       // For Netlify, use more conservative settings
