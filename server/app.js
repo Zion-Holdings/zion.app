@@ -93,9 +93,20 @@ Sentry.init({
 app.use(Sentry.Handlers.requestHandler());
 app.use(Sentry.Handlers.tracingHandler());
 
-// Use Helmet to apply various security headers with CSP disabled for debugging
+// Use Helmet to apply various security headers with custom CSP
 app.use(helmet({
-  contentSecurityPolicy: false, // Temporarily disable CSP to confirm it's the issue
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://js.stripe.com", "https://*.launchdarkly.com", "https://www.googletagmanager.com", "https://widget.intercom.io", "https://*.googleapis.com", "https://*.gstatic.com"],
+      styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+      fontSrc: ["'self'", "https://fonts.gstatic.com"],
+      imgSrc: ["'self'", "data:", "https:"],
+      connectSrc: ["'self'", "https://*.supabase.co", "https://*.stripe.com", "https://*.sentry.io"],
+      objectSrc: ["'none'"],
+      baseUri: ["'self'"],
+    },
+  },
 }));
 
 // Enable CORS for allowed origins
