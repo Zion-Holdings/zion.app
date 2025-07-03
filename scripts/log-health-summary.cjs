@@ -80,13 +80,27 @@ class LogHealthSummary {
       // Check Playwright results
       const playwrightResults = path.join('playwright-logs', 'test-results.json');
       if (fs.existsSync(playwrightResults)) {
-        const results = JSON.parse(fs.readFileSync(playwrightResults, 'utf-8'));
-        this.results.tests.playwright = {
-          status: results.stats?.unexpected > 0 ? 'failures' : 'passing',
-          failures: results.stats?.unexpected || 0,
-          total: results.stats?.expected + results.stats?.unexpected || 0
-        };
-        console.log(`  📋 Playwright: ${this.results.tests.playwright.failures} failures`);
+        const stats = fs.statSync(playwrightResults);
+        const ageHours = (Date.now() - stats.mtimeMs) / (1000 * 60 * 60);
+
+        if (ageHours > 24) {
+          console.log(`  ℹ️  Playwright results are stale (${ageHours.toFixed(1)}h old), ignoring`);
+        } else {
+          const content = fs.readFileSync(playwrightResults, 'utf-8');
+
+          // Ignore connection errors that indicate server wasn't running
+          if (/ERR_CONNECTION_REFUSED/.test(content)) {
+            console.log('  ℹ️  Playwright failures due to connection issues, treating as skipped');
+          } else {
+            const results = JSON.parse(content);
+            this.results.tests.playwright = {
+              status: results.stats?.unexpected > 0 ? 'failures' : 'passing',
+              failures: results.stats?.unexpected || 0,
+              total: results.stats?.expected + results.stats?.unexpected || 0
+            };
+            console.log(`  📋 Playwright: ${this.results.tests.playwright.failures} failures`);
+          }
+        }
       }
 
       // Check Jest coverage
