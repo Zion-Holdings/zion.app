@@ -29,7 +29,11 @@ export function setupRouterErrorHandlers(router: NextRouter) {
   const originalReplace = router.replace;
 
   // Wrap router.push with error handling
-  router.push = async (url, as, options) => {
+  router.push = async (
+    url: Parameters<NextRouter['push']>[0],
+    as?: Parameters<NextRouter['push']>[1],
+    options?: Parameters<NextRouter['push']>[2]
+  ) => {
     try {
       return await originalPush.call(router, url, as, options);
     } catch (error) {
@@ -40,7 +44,11 @@ export function setupRouterErrorHandlers(router: NextRouter) {
   };
 
   // Wrap router.replace with error handling
-  router.replace = async (url, as, options) => {
+  router.replace = async (
+    url: Parameters<NextRouter['replace']>[0],
+    as?: Parameters<NextRouter['replace']>[1],
+    options?: Parameters<NextRouter['replace']>[2]
+  ) => {
     try {
       return await originalReplace.call(router, url, as, options);
     } catch (error) {
