@@ -652,7 +652,7 @@ const nextConfig = {
     }
 
     // Fix webpack cache configuration to prevent build errors and warnings
-      if (config.cache) {
+    if (config.cache) {
         // Use memory cache to prevent filesystem cache issues and "Serializing big strings" warnings
         config.cache = {
           type: 'memory',
@@ -665,6 +665,12 @@ const nextConfig = {
           maxGenerations: dev ? 1 : 5,
         };
       }
+
+    // Explicitly disable cacheUnaffected to avoid conflicts with usedExports
+    config.experiments = {
+      ...(config.experiments || {}),
+      cacheUnaffected: false,
+    };
 
     // Add optimization to prevent temporal dead zone issues
     if (!dev && isServer) {
