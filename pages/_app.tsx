@@ -39,6 +39,7 @@ import dynamic from 'next/dynamic'; // Import dynamic
 import '../src/index.css';
 import { Provider as ReduxProvider } from 'react-redux';
 import { store } from '@/store';
+import ProductionErrorBoundary from '@/components/ProductionErrorBoundary';
 
 import { I18nextProvider } from 'react-i18next';
 import i18n from '../src/i18n';
@@ -386,8 +387,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   // Main app render with all providers
   return (
-    <QueryClientProvider client={queryClient}> {/* Added QueryClientProvider */}
-      <ProviderWrapper>
+    <ProductionErrorBoundary>
+      <QueryClientProvider client={queryClient}> {/* Added QueryClientProvider */}
+        <ProviderWrapper>
         <Head>
           <title>Zion App - AI Marketplace & DAO Platform</title>
         <meta name="description" content="Zion App - The ultimate AI marketplace and DAO platform for the future of work" />
@@ -397,8 +399,9 @@ function MyApp({ Component, pageProps }: AppProps) {
              <div>
          <Component {...pageProps} />
        </div>
-      </ProviderWrapper>
-    </QueryClientProvider>
+        </ProviderWrapper>
+      </QueryClientProvider>
+    </ProductionErrorBoundary>
   );
 }
 
