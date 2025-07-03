@@ -93,12 +93,12 @@ Sentry.init({
 app.use(Sentry.Handlers.requestHandler());
 app.use(Sentry.Handlers.tracingHandler());
 
-// Use Helmet to apply various security headers with custom CSP
+// Use Helmet to apply various security headers with strict CSP
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       defaultSrc: ["'self'"],
-      scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://js.stripe.com", "https://*.launchdarkly.com", "https://www.googletagmanager.com", "https://widget.intercom.io", "https://*.googleapis.com", "https://*.gstatic.com"],
+      scriptSrc: ["'self'", "'unsafe-inline'", "https://js.stripe.com", "https://*.launchdarkly.com", "https://www.googletagmanager.com", "https://widget.intercom.io", "https://*.googleapis.com", "https://*.gstatic.com"],
       styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
       fontSrc: ["'self'", "https://fonts.gstatic.com"],
       imgSrc: ["'self'", "data:", "https:"],
