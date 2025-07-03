@@ -78,6 +78,7 @@ Ensure all variables marked as required in `.env.example` or in specific documen
   - **Analyze Logs** - `npm run logs:summary` scans collected `.log` and `.txt` files, reports missing translation keys, and flags router context errors like `useNavigate()` without a `<Router>`
 - **Health Check** - `npm run logs:health` prints a quick system status report
 - **Missing Key Log** - Any translation keys not found at runtime are appended to `logs/missing-keys.log`
+- **Check for Missing Translations** - `npm run i18n:missing` verifies that all locales contain the same translation keys
 
 ### CDN for Static Assets
 
