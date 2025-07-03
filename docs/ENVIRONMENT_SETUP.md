@@ -4,7 +4,7 @@ This guide provides detailed instructions for setting up environment variables f
 
 ## Quick Setup
 
-Create a `.env.local` file in the project root with the following configuration:
+Create a `.env.local` file in the project root with the following configuration for **local development**. All production variables are configured in Netlify's UI.
 
 ```bash
 # =============================================================================
@@ -91,7 +91,7 @@ npm run dev  # runs env:dev automatically
 
 ## Security Notes
 
-- Never commit `.env.local` to version control
+- Never commit `.env.local` to version control. Production secrets are stored in Netlify and should not appear in the repository.
 - Use different secrets for each environment
 - Rotate secrets regularly
 - Use strong, unique values for AUTH0_SECRET and JWT_SECRET 
