@@ -24,8 +24,14 @@ function checkAppStatus() {
   // Test if the main app file exists and is readable
   try {
     const appContent = fs.readFileSync('pages/_app.tsx', 'utf8');
-    
-    if (appContent.includes('Force initializing after timeout')) {
+
+    const loadingFixMarkers = [
+      'Force initializing after timeout',
+      'Force completing app initialization due to timeout',
+      'Force initialization completion'
+    ];
+
+    if (loadingFixMarkers.some(marker => appContent.includes(marker))) {
       console.log('✅ Latest loading fix is already applied');
       return true;
     } else {
@@ -168,19 +174,19 @@ async function main() {
     console.log('');
     console.log('💡 The app has timeout protection - it should load within 3 seconds');
     console.log('💡 If still stuck, check browser developer tools console');
+  } else {
+    createMinimalApp();
+    runDiagnostics();
+
+    console.log('\n🎯 IMMEDIATE FIXES TO TRY:');
+    console.log('==========================');
+    console.log('1. Hard refresh: Ctrl+Shift+R (Chrome/Firefox)');
+    console.log('2. Clear cache: F12 → Application → Storage → Clear site data');
+    console.log('3. Check console: F12 → Console tab for errors');
+    console.log('4. Rebuild: npm run build && npm run start');
+    console.log('');
+    console.log('✅ App should now load within 3 seconds max!');
   }
-  
-  createMinimalApp();
-  runDiagnostics();
-  
-  console.log('\n🎯 IMMEDIATE FIXES TO TRY:');
-  console.log('==========================');
-  console.log('1. Hard refresh: Ctrl+Shift+R (Chrome/Firefox)');
-  console.log('2. Clear cache: F12 → Application → Storage → Clear site data');
-  console.log('3. Check console: F12 → Console tab for errors');
-  console.log('4. Rebuild: npm run build && npm run start');
-  console.log('');
-  console.log('✅ App should now load within 3 seconds max!');
 }
 
 if (require.main === module) {
