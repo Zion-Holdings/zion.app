@@ -13,10 +13,17 @@ export const Outlet = () => null;
 // "useNavigate() may be used only in the context of a <Router>" errors when
 // components relying on React Router are used in the Next.js environment.
 export const useNavigate = () => {
-  const router = useRouter();
-  return (url: string) => {
-    if (url) router.push(url);
-  };
+  // Return a simple navigation function that delegates to Next.js router
+  // when available. In test environments where `useRouter` isn't mounted,
+  // fall back to a no-op to avoid context errors.
+  try {
+    const router = useRouter();
+    return (url: string) => {
+      if (url) router.push(url);
+    };
+  } catch {
+    return () => {};
+  }
 };
 export const useLocation = () => ({ pathname: '/' });
 export const useParams = () => ({ });
