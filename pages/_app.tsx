@@ -39,6 +39,7 @@ import dynamic from 'next/dynamic'; // Import dynamic
 import '../src/index.css';
 import { Provider as ReduxProvider } from 'react-redux';
 import { store } from '@/store';
+import { HydrationErrorBoundary } from '@/components/HydrationErrorBoundary';
 
 import { I18nextProvider } from 'react-i18next';
 import i18n from '../src/i18n';
@@ -394,9 +395,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-             <div>
-         <Component {...pageProps} />
-       </div>
+            <HydrationErrorBoundary>
+              <div>
+                <Component {...pageProps} />
+              </div>
+            </HydrationErrorBoundary>
       </ProviderWrapper>
     </QueryClientProvider>
   );
