@@ -84,6 +84,7 @@ const nextConfig = {
     // Disable profiling for faster builds
     swcTraceProfiling: false,
     // Removed esmExternals to prevent external module dynamic import issues
+    esmExternals: undefined,
   },
 
   images: {
@@ -515,6 +516,9 @@ const nextConfig = {
           aggregateTimeout: 300,
           poll: false, // Use native file watching instead of polling
         };
+
+        // Disable source maps in development for faster HMR startup
+        config.devtool = false;
       }
 
       // Alias react-router-dom to a lightweight stub to avoid build errors
