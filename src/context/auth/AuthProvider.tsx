@@ -190,9 +190,19 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       return;
     }
 
+    // Timeout for initial auth state check
+    const authInitTimeoutMs = 10000; // 10 seconds
+    const authInitTimer = setTimeout(() => {
+      if (isLoading) { // Check if still loading
+        logWarn(`[AuthProvider] Initial auth state check timed out after ${authInitTimeoutMs}ms. Forcing loading to false.`);
+        setIsLoading(false);
+      }
+    }, authInitTimeoutMs);
+
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       // Inside the onAuthStateChange callback
       async (event: any, session: any) => {
+        clearTimeout(authInitTimer); // Clear the timeout as we received an auth event
         if (process.env.NODE_ENV === 'development') {
             logDebug('AuthProvider: onAuthStateChange entered', { isLoading, event, sessionExists: !!session });
         }
