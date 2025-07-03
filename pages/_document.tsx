@@ -19,6 +19,16 @@ export default function Document() {
     if (el) el.style.display = 'none';
   }, 10000);`;
 
+  // Detect blank screen and show helpful message
+  const blankScreenScript = `setTimeout(function(){
+    try {
+      var root = document.getElementById('__next');
+      if (root && root.innerHTML.trim() === '') {
+        root.innerHTML = '<div style="padding:2rem;text-align:center;font-family:Arial,sans-serif;color:red">App failed to load. Check console errors and run <code>./setup.sh npm</code>.</div>';
+      }
+    } catch(e) { console.warn('Blank screen check failed', e); }
+  }, 8000);`;
+
   return (
     <Html lang="en">
       <Head>
@@ -28,6 +38,7 @@ export default function Document() {
         />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script dangerouslySetInnerHTML={{ __html: loaderTimeoutScript }} />
+        <script dangerouslySetInnerHTML={{ __html: blankScreenScript }} />
       </Head>
       <body>
         <Main />
