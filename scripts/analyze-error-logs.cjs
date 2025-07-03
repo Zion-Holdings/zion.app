@@ -93,9 +93,12 @@ function main() {
   }
 
   const files = [];
+  const LOG_EXT_REGEX = /\.(log|txt)$/i;
   dirs.forEach(dir => {
     if (fs.existsSync(dir)) {
-      const dirFiles = fs.readdirSync(dir).filter(f => f.endsWith('.log')).map(f => path.join(dir, f));
+      const dirFiles = fs.readdirSync(dir)
+        .filter(f => LOG_EXT_REGEX.test(f))
+        .map(f => path.join(dir, f));
       files.push(...dirFiles);
     }
   });
@@ -164,8 +167,8 @@ function main() {
     summaryLines.push(header);
     hints.forEach(msg => {
       console.log('- ' + msg);
-    summaryLines.push('- ' + msg);
-  });
+      summaryLines.push('- ' + msg);
+    });
   }
 
   if (allMissingKeys.size) {
