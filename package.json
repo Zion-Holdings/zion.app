@@ -128,6 +128,7 @@
     "logs:health:summary": "node scripts/log-health-summary.cjs",
     "logs:monitor:realtime": "node scripts/realtime-log-monitor.cjs",
     "logs:monitor:dashboard": "node scripts/realtime-log-monitor.cjs",
+    "logs:summary:csv": "node scripts/log-summary-csv.cjs",
     "logs:enhanced": "node -e \"require('./src/utils/enhanced-logger.ts').logger.info('Enhanced logging test', 'system')\"",
     "monitor:resources": "echo 'CPU:' && ps -A -o %cpu | awk '{sum+=$1} END {print sum\"%\"}' && echo 'Memory:' && free -h || vm_stat",
     "logs:realtime": "node scripts/enhanced-log-monitoring.cjs",
