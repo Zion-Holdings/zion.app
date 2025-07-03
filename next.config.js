@@ -1001,7 +1001,8 @@ const nextConfig = {
     // Ensure consistent optimization settings in all environments
   config.optimization = {
     ...config.optimization,
-    // usedExports removed to prevent cacheUnaffected conflicts
+    // Explicitly disable usedExports to avoid cacheUnaffected conflict
+    usedExports: false,
   };
 
     // Remove cacheUnaffected in case any plugin re-added it
