@@ -397,7 +397,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
         try {
           const filePath = path.join(logsDir, file);
           const content = fs.readFileSync(filePath, 'utf-8');
-          const lines = content.split('\n').filter(line => line.trim());
+          const lines = (typeof content === 'string' ? content : String(content)).split('\n').filter(line => line.trim());
 
           for (const line of lines) {
             try {
