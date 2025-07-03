@@ -66,7 +66,7 @@ export default async function handler(
       entries.forEach((entry) => {
         if (entry.level === 'error' || entry.level === 'warn') {
           // Map our log levels to Sentry's SeverityLevel
-          const sentryLevel: Sentry.SeverityLevel = entry.level === 'warn' ? 'warning' : entry.level;
+          const sentryLevel = entry.level === 'warn' ? 'warning' : entry.level;
           Sentry.captureMessage(entry.message, {
             level: sentryLevel,
             extra: {
