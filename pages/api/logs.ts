@@ -69,15 +69,13 @@ export default async function handler(
           const sentryLevel = entry.level === 'warn' ? 'warning' : entry.level;
           Sentry.withScope(scope => {
             scope.setLevel(sentryLevel);
-            scope.setExtras({
-              level: entry.level,
-              context: entry.context,
-              timestamp: entry.timestamp,
-              sessionId: entry.sessionId,
-              url: entry.url,
-              userAgent: entry.userAgent,
-              userId: entry.userId,
-            });
+            scope.setExtra('level', entry.level);
+            scope.setExtra('context', entry.context);
+            scope.setExtra('timestamp', entry.timestamp);
+            scope.setExtra('sessionId', entry.sessionId);
+            scope.setExtra('url', entry.url);
+            scope.setExtra('userAgent', entry.userAgent);
+            scope.setExtra('userId', entry.userId);
             Sentry.captureMessage(entry.message);
           });
         }
