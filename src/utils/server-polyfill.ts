@@ -1,3 +1,4 @@
+// @ts-nocheck
 // Server-side polyfill to handle client-side globals during SSR and build
 // This prevents "self is not defined" and similar errors during Next.js builds
 

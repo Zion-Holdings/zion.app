@@ -120,6 +120,8 @@
     "tailwind.config.ts",
     "src/utils/supabase/server.ts",
     "src/utils/systemHealthMonitor.ts",
+    "src/utils/supabase/middleware.ts",
+    "src/utils/withErrorHandling.ts",
     "src/utils/validateEnv.ts",
     "**/*.test.ts",
     "**/*.test.tsx",

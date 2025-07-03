@@ -1,11 +1,18 @@
 from bug_logger import log_bug, LOG_FILE
-import sys # Required for sys.exc_info()
+import sys  # Required for sys.exc_info()
 import os
+import datetime
 
-# Ensure the bug log is clean for this example run
-# In a real application you wouldn't typically delete the log each time.
+# Rotate existing log instead of deleting so history is preserved
 if os.path.exists(LOG_FILE):
-    os.remove(LOG_FILE)
+    timestamp = (
+        datetime.datetime.now(datetime.timezone.utc)
+        .isoformat()
+        .replace(":", "-")
+        .replace("+00:00", "Z")
+    )
+    archived_log = LOG_FILE.replace(".json", f"_{timestamp}.json")
+    os.rename(LOG_FILE, archived_log)
 
 def risky_division(a, b):
     """Performs division and logs an error if division by zero occurs."""

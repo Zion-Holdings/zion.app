@@ -84,7 +84,7 @@ const nextConfig = {
     // Disable profiling for faster builds
     swcTraceProfiling: false,
     // Removed esmExternals to prevent external module dynamic import issues
-    cacheUnaffected: false,
+    // cacheUnaffected option removed to avoid usedExports conflict
   },
 
   images: {
@@ -522,7 +522,7 @@ const nextConfig = {
       config.resolve.alias = {
         ...config.resolve.alias,
         // '@' alias is now defined globally
-        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
+        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.tsx'),
       };
 
       if (!isServer) {
@@ -958,7 +958,7 @@ const nextConfig = {
     if (!dev) {
       config.resolve.alias = {
         ...config.resolve.alias,
-        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
+        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.tsx'),
       };
 
       // Note: Compression is handled by Netlify and other deployment platforms
