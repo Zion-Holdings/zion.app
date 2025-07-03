@@ -1,5 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-interface Buffer {}
+interface Buffer {
+  // Buffer interface for Node.js compatibility
+}
 
 declare const __dirname: string;
 declare const __filename: string;
@@ -14,7 +16,9 @@ declare namespace NodeJS {
   }
 
   /** Minimal representation of NodeJS.Timeout used in our codebase */
-  interface Timeout {}
+  interface Timeout {
+    // Timeout interface for Node.js compatibility
+  }
 }
 
 declare const process: NodeJS.Process;
