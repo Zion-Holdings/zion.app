@@ -1,5 +1,6 @@
 import { GetServerSideProps, GetStaticProps } from 'next';
 import * as Sentry from '@sentry/nextjs';
+import type { Scope } from '@sentry/types';
 import { ENV_CONFIG } from './environmentConfig';
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
@@ -68,7 +69,7 @@ export function withServerSideErrorHandling<P extends Record<string, any>>(
         
         // Log each attempt to Sentry if configured
         if (ENV_CONFIG.sentry.isConfigured) {
-          Sentry.withScope((scope) => {
+          Sentry.withScope((scope: Scope) => {
             scope.setTag('attempt', attempt + 1);
             scope.setTag('maxRetries', config.maxRetries);
             scope.setTag('route', context.resolvedUrl);
@@ -112,7 +113,7 @@ export function withServerSideErrorHandling<P extends Record<string, any>>(
       
       // Log final failure to Sentry
       if (ENV_CONFIG.sentry.isConfigured) {
-        Sentry.withScope((scope) => {
+        Sentry.withScope((scope: Scope) => {
           scope.setTag('finalFailure', true);
           scope.setTag('route', context.resolvedUrl);
           scope.setTag('errorType', getErrorType(lastError));
@@ -194,7 +195,7 @@ export function withStaticErrorHandling<P extends Record<string, any>>(
         
         // Log each attempt to Sentry if configured
         if (ENV_CONFIG.sentry.isConfigured) {
-          Sentry.withScope((scope) => {
+          Sentry.withScope((scope: Scope) => {
             scope.setTag('attempt', attempt + 1);
             scope.setTag('maxRetries', config.maxRetries);
             scope.setTag('staticGeneration', true);
@@ -234,7 +235,7 @@ export function withStaticErrorHandling<P extends Record<string, any>>(
       
       // Log final failure to Sentry
       if (ENV_CONFIG.sentry.isConfigured) {
-        Sentry.withScope((scope) => {
+        Sentry.withScope((scope: Scope) => {
           scope.setTag('finalFailure', true);
           scope.setTag('staticGeneration', true);
           scope.setTag('errorType', getErrorType(lastError));
