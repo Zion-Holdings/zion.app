@@ -85,7 +85,7 @@ export default async function handler(
     // 3. Optional: Forward to external webhook if configured via env
     if (process.env.NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL) {
       try {
-        const doFetch = typeof fetch !== 'undefined' ? fetch : (await import('node-fetch')).then(mod => mod.default) as unknown as typeof fetch;
+        const doFetch = typeof fetch !== 'undefined' ? fetch : (await import('node-fetch')).default as typeof fetch;
         await doFetch(process.env.NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
