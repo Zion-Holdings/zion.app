@@ -85,6 +85,7 @@ def log_bug(
 
         with open(LOG_FILE, "w") as f:
             json.dump(logs, f, indent=4)
+            f.write("\n")
 
         print(f"Bug logged successfully to {LOG_FILE}")
 
