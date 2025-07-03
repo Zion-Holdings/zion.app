@@ -1,83 +1,69 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import dynamic from 'next/dynamic';
+import safeDynamicImport from '@/utils/safeDynamicImport';
 import { useAuth } from '@/hooks/useAuth';
 import { NextSeo } from '@/components/NextSeo';
 
-const CategoriesSection = dynamic(() =>
-  import('@/components/CategoriesSection').then((mod) => ({
-    default: mod.CategoriesSection,
-  })),
+const CategoriesSection = safeDynamicImport(
+  () => import('@/components/CategoriesSection').then((mod) => ({ default: mod.CategoriesSection })),
+  { name: 'CategoriesSection' }
 );
-const BenefitsSection = dynamic(() =>
-  import('@/components/BenefitsSection').then((mod) => ({
-    default: mod.BenefitsSection,
-  })),
+const BenefitsSection = safeDynamicImport(
+  () => import('@/components/BenefitsSection').then((mod) => ({ default: mod.BenefitsSection })),
+  { name: 'BenefitsSection' }
 );
-const HowItWorksSection = dynamic(() =>
-  import('@/components/HowItWorksSection').then((mod) => ({
-    default: mod.HowItWorksSection,
-  })),
+const HowItWorksSection = safeDynamicImport(
+  () => import('@/components/HowItWorksSection').then((mod) => ({ default: mod.HowItWorksSection })),
+  { name: 'HowItWorksSection' }
 );
-const NewsletterSection = dynamic(() =>
-  import('@/components/NewsletterSection').then((mod) => ({
-    default: mod.NewsletterSection,
-  })),
+const NewsletterSection = safeDynamicImport(
+  () => import('@/components/NewsletterSection').then((mod) => ({ default: mod.NewsletterSection })),
+  { name: 'NewsletterSection' }
 );
-const FeaturedListingsSection = dynamic(() =>
-  import('@/components/FeaturedListingsSection').then((mod) => ({
-    default: mod.FeaturedListingsSection,
-  })),
+const FeaturedListingsSection = safeDynamicImport(
+  () => import('@/components/FeaturedListingsSection').then((mod) => ({ default: mod.FeaturedListingsSection })),
+  { name: 'FeaturedListingsSection' }
 );
-const HeroSection = dynamic(() =>
-  import('@/components/HeroSection').then((mod) => ({
-    default: mod.HeroSection,
-  })),
+const HeroSection = safeDynamicImport(
+  () => import('@/components/HeroSection').then((mod) => ({ default: mod.HeroSection })),
+  { name: 'HeroSection' }
 );
-const QuickAccess = dynamic(() =>
-  import('@/components/home/QuickAccess').then((mod) => ({
-    default: mod.QuickAccess,
-  })),
+const QuickAccess = safeDynamicImport(
+  () => import('@/components/home/QuickAccess').then((mod) => ({ default: mod.QuickAccess })),
+  { name: 'QuickAccess' }
 );
-const FeatureCTAs = dynamic(() =>
-  import('@/components/home/FeatureCTAs').then((mod) => ({
-    default: mod.FeatureCTAs,
-  })),
+const FeatureCTAs = safeDynamicImport(
+  () => import('@/components/home/FeatureCTAs').then((mod) => ({ default: mod.FeatureCTAs })),
+  { name: 'FeatureCTAs' }
 );
-const FeatureHighlights = dynamic(() =>
-  import('@/components/home/FeatureHighlights').then((mod) => ({
-    default: mod.FeatureHighlights,
-  })),
+const FeatureHighlights = safeDynamicImport(
+  () => import('@/components/home/FeatureHighlights').then((mod) => ({ default: mod.FeatureHighlights })),
+  { name: 'FeatureHighlights' }
 );
-const InteractiveFeatures = dynamic(() =>
-  import('@/components/home/InteractiveFeatures').then((mod) => ({
-    default: mod.InteractiveFeatures,
-  })),
+const InteractiveFeatures = safeDynamicImport(
+  () => import('@/components/home/InteractiveFeatures').then((mod) => ({ default: mod.InteractiveFeatures })),
+  { name: 'InteractiveFeatures' }
 );
-const ITServiceRequestHero = dynamic(() =>
-  import('@/components/home/ITServiceRequestHero').then((mod) => ({
-    default: mod.ITServiceRequestHero,
-  })),
+const ITServiceRequestHero = safeDynamicImport(
+  () => import('@/components/home/ITServiceRequestHero').then((mod) => ({ default: mod.ITServiceRequestHero })),
+  { name: 'ITServiceRequestHero' }
 );
-const AllFeaturesSection = dynamic(() =>
-  import('@/components/home/AllFeaturesSection').then((mod) => ({
-    default: mod.AllFeaturesSection,
-  })),
+const AllFeaturesSection = safeDynamicImport(
+  () => import('@/components/home/AllFeaturesSection').then((mod) => ({ default: mod.AllFeaturesSection })),
+  { name: 'AllFeaturesSection' }
 );
-const ProductVideoSection = dynamic(() =>
-  import('@/components/home/ProductVideoSection').then((mod) => ({
-    default: mod.ProductVideoSection,
-  })),
+const ProductVideoSection = safeDynamicImport(
+  () => import('@/components/home/ProductVideoSection').then((mod) => ({ default: mod.ProductVideoSection })),
+  { name: 'ProductVideoSection' }
 );
-const EnterpriseTestimonials = dynamic(() =>
-  import('@/components/enterprise/EnterpriseTestimonials').then((mod) => ({
-    default: mod.EnterpriseTestimonials,
-  })),
+const EnterpriseTestimonials = safeDynamicImport(
+  () => import('@/components/enterprise/EnterpriseTestimonials').then((mod) => ({ default: mod.EnterpriseTestimonials })),
+  { name: 'EnterpriseTestimonials' }
 );
-const FaqSection = dynamic(() =>
-  import('@/components/FaqSection').then((mod) => ({
-    default: mod.FaqSection,
-  })),
+const FaqSection = safeDynamicImport(
+  () => import('@/components/FaqSection').then((mod) => ({ default: mod.FaqSection })),
+  { name: 'FaqSection' }
 );
 
 export default function Home() {
