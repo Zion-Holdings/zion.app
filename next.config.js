@@ -992,6 +992,17 @@ const nextConfig = {
       };
     }
 
+    // Ensure consistent optimization settings in all environments
+    config.optimization = {
+      ...config.optimization,
+      usedExports: false,
+    };
+
+    // Remove cacheUnaffected in case any plugin re-added it
+    if (config.cache && config.cache.cacheUnaffected !== undefined) {
+      delete config.cache.cacheUnaffected;
+    }
+
     return config;
   },
 
