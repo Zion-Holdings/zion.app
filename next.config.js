@@ -655,12 +655,14 @@ const nextConfig = {
       // Use memory cache to prevent filesystem cache issues and "Serializing big strings" warnings
       config.cache = {
         type: 'memory',
+        cacheUnaffected: false,
         maxGenerations: dev ? 1 : 5,
       };
     } else {
       // Ensure memory cache is properly configured
       config.cache = {
         type: 'memory',
+        cacheUnaffected: false,
         maxGenerations: dev ? 1 : 5,
       };
     }
