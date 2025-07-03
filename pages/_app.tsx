@@ -49,6 +49,7 @@ import { WhitelabelProvider } from '../src/context/WhitelabelContext';
 import { CartProvider } from '../src/context/CartContext';
 import { FeedbackProvider } from '../src/context/FeedbackContext';
 import { ThemeProvider } from '../src/context/ThemeContext';
+import GlobalErrorBoundary from '../src/components/GlobalErrorBoundary';
 
 // Dynamically import potentially heavy providers
 const DynamicWalletProvider = dynamic(() =>
@@ -388,15 +389,17 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}> {/* Added QueryClientProvider */}
       <ProviderWrapper>
-        <Head>
-          <title>Zion App - AI Marketplace & DAO Platform</title>
-        <meta name="description" content="Zion App - The ultimate AI marketplace and DAO platform for the future of work" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-             <div>
-         <Component {...pageProps} />
-       </div>
+        <GlobalErrorBoundary>
+          <Head>
+            <title>Zion App - AI Marketplace & DAO Platform</title>
+            <meta name="description" content="Zion App - The ultimate AI marketplace and DAO platform for the future of work" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="icon" href="/favicon.ico" />
+          </Head>
+          <div>
+            <Component {...pageProps} />
+          </div>
+        </GlobalErrorBoundary>
       </ProviderWrapper>
     </QueryClientProvider>
   );
