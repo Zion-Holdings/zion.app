@@ -795,8 +795,7 @@ const nextConfig = {
         // Optimization settings for better performance
         moduleIds: 'deterministic',
         chunkIds: 'deterministic',
-        // Disable usedExports to avoid conflicts with cacheUnaffected
-        usedExports: false,
+        // usedExports disabled to avoid cacheUnaffected conflicts in older builds
         sideEffects: false,
         concatenateModules: !dev,
         minimize: !dev,
@@ -1001,10 +1000,10 @@ const nextConfig = {
     }
 
     // Ensure consistent optimization settings in all environments
-    config.optimization = {
-      ...config.optimization,
-      usedExports: false,
-    };
+  config.optimization = {
+    ...config.optimization,
+    // usedExports removed to prevent cacheUnaffected conflicts
+  };
 
     // Remove cacheUnaffected in case any plugin re-added it
     if (config.cache && config.cache.cacheUnaffected !== undefined) {
