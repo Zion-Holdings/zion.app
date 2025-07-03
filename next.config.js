@@ -84,7 +84,7 @@ const nextConfig = {
     // Disable profiling for faster builds
     swcTraceProfiling: false,
     // Removed esmExternals to prevent external module dynamic import issues
-    cacheUnaffected: false,
+    // cacheUnaffected option removed to avoid usedExports conflict
   },
 
   images: {
