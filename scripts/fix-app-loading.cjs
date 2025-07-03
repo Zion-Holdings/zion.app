@@ -13,7 +13,14 @@ console.log('============================\n');
 // Check if we need to apply emergency fixes
 function checkAppStatus() {
   console.log('🔍 Checking app loading status...');
-  
+
+  // Ensure dependencies are installed
+  if (!fs.existsSync('node_modules')) {
+    console.log('❌ node_modules directory is missing');
+    console.log('   -> Run "./setup.sh npm" to install project dependencies');
+    return false;
+  }
+
   // Test if the main app file exists and is readable
   try {
     const appContent = fs.readFileSync('pages/_app.tsx', 'utf8');
@@ -142,7 +149,8 @@ function runDiagnostics() {
   console.log('  2. Clear browser cache');
   console.log('  3. Check browser console for JavaScript errors');
   console.log('  4. Run: npm run build && npm run start');
-  console.log('  5. If still stuck, use emergency app component');
+  console.log('  5. Ensure dependencies are installed: ./setup.sh npm');
+  console.log('  6. If still stuck, use emergency app component');
 }
 
 // Main execution
