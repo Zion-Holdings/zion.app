@@ -67,9 +67,9 @@ export default async function handler(
         if (entry.level === 'error' || entry.level === 'warn') {
           // Map our log levels to Sentry's SeverityLevel
           const sentryLevel = entry.level === 'warn' ? 'warning' : entry.level;
-          Sentry.captureMessage(entry.message, {
-            level: sentryLevel,
-            extra: {
+          Sentry.withScope(scope => {
+            scope.setLevel(sentryLevel);
+            scope.setExtras({
               level: entry.level,
               context: entry.context,
               timestamp: entry.timestamp,
@@ -77,7 +77,8 @@ export default async function handler(
               url: entry.url,
               userAgent: entry.userAgent,
               userId: entry.userId,
-            },
+            });
+            Sentry.captureMessage(entry.message);
           });
         }
       });
