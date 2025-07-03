@@ -6,6 +6,7 @@
  */
 
 const fs = require('fs');
+const { execSync } = require('child_process');
 
 console.log('🚨 EMERGENCY APP LOADING FIX');
 console.log('============================\n');
@@ -17,8 +18,15 @@ function checkAppStatus() {
   // Ensure dependencies are installed
   if (!fs.existsSync('node_modules')) {
     console.log('❌ node_modules directory is missing');
-    console.log('   -> Run "./setup.sh npm" to install project dependencies');
-    return false;
+    console.log('   -> Attempting to install dependencies via "./setup.sh npm"');
+    try {
+      execSync('./setup.sh npm', { stdio: 'inherit' });
+    } catch (installErr) {
+      console.error('Failed to install dependencies:', installErr.message);
+      console.log('   -> Please run "./setup.sh npm" manually.');
+      return false;
+    }
+    return true;
   }
 
   // Test if the main app file exists and is readable
