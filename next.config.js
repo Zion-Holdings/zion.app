@@ -656,20 +656,17 @@ const nextConfig = {
       // Use memory cache to prevent filesystem cache issues and "Serializing big strings" warnings
       config.cache = {
         type: 'memory',
-        cacheUnaffected: false,
         maxGenerations: dev ? 1 : 5,
       };
     } else {
       // Ensure memory cache is properly configured
       config.cache = {
         type: 'memory',
-        cacheUnaffected: false,
         maxGenerations: dev ? 1 : 5,
       };
     }
 
-    // Explicitly disable cacheUnaffected to avoid "usedExports" conflicts
-    config.experiments = { ...(config.experiments || {}), cacheUnaffected: false };
+    // Ensure cacheUnaffected is removed to avoid usedExports conflicts
     if (config.cache && config.cache.cacheUnaffected !== undefined) {
       delete config.cache.cacheUnaffected;
     }
