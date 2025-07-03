@@ -23,6 +23,7 @@ const INVALID_PROJECT_ID_FALLBACKS: string[] = [
   'YOUR_DEFAULT_PROJECT_ID_ENV_MISSING', // From src/config/env.ts and WalletContext
   'YOUR_DEFAULT_PROJECT_ID_FALLBACK', // From src/config/env.ts and WalletContext
   'your_reown_project_id', // From .env.example
+  'your_project_id_here', // Another common placeholder from examples
 ];
 
 // Placeholder/default values that are considered invalid for Supabase URL and Key
@@ -65,7 +66,7 @@ export const checkEssentialEnvVars = (): void => {
   if (missingOrInvalidVars.length > 0) {
     const errorMessage = `Critical environment variable(s) missing or invalid:
 ${missingOrInvalidVars.join('\n')}
-Please check your .env file or environment configuration. Application cannot start.`;
+Please check your .env file or environment configuration. See docs/ENVIRONMENT_SAFEGUARDS.md for setup details.`;
     throw new Error(errorMessage);
   }
 
