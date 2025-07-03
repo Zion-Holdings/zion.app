@@ -95,7 +95,9 @@ class EnhancedLogAnalytics {
       timestamp: now,
       errorCount: analysis.criticalIssues.length,
       errorRate: analysis.errorRate,
-      topErrors: analysis.patterns.slice(0, 5).map(p => p.pattern),
+      topErrors: Array.isArray(analysis.patterns)
+        ? analysis.patterns.slice(0, 5).map(p => p.pattern)
+        : [],
       severity: this.calculateTrendSeverity(analysis.errorRate)
     };
 
