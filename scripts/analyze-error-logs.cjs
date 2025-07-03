@@ -162,8 +162,8 @@ function main() {
     summaryLines.push(header);
     hints.forEach(msg => {
       console.log('- ' + msg);
-    summaryLines.push('- ' + msg);
-  });
+      summaryLines.push('- ' + msg);
+    });
   }
 
   if (allMissingKeys.size) {
