@@ -114,6 +114,7 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
 
 4.  **Configure environment variables:**
     - For **local development**: Create `.env.local` based on environment variable requirements above
+    - Set `NEXT_PUBLIC_REOWN_PROJECT_ID` to your Reown AppKit project ID (see `docs/ENVIRONMENT_SAFEGUARDS.md`)
     - For **production**: Set variables in Netlify UI (see deployment guide)
     - Ensure `INTERNAL_AUTH_SERVICE_URL` points to your authentication service
     - **Enable DevTools**: Set `NEXT_PUBLIC_DEVTOOLS=true` in `.env.local` if you want browser DevTools enabled
