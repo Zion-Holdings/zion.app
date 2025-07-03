@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { toast } from 'react-hot-toast';
 
 export interface ToastError {

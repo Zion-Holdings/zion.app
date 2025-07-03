@@ -70,8 +70,8 @@ export function withServerSideErrorHandling<P extends Record<string, any>>(
         // Log each attempt to Sentry if configured
         if (ENV_CONFIG.sentry.isConfigured) {
           Sentry.withScope((scope: Scope) => {
-            scope.setTag('attempt', attempt + 1);
-            scope.setTag('maxRetries', config.maxRetries);
+            scope.setTag('attempt', String(attempt + 1));
+            scope.setTag('maxRetries', String(config.maxRetries));
             scope.setTag('route', context.resolvedUrl);
             scope.setTag('errorType', getErrorType(error));
             scope.setLevel(attempt < config.maxRetries ? 'warning' : 'error');
@@ -114,7 +114,7 @@ export function withServerSideErrorHandling<P extends Record<string, any>>(
       // Log final failure to Sentry
       if (ENV_CONFIG.sentry.isConfigured) {
         Sentry.withScope((scope: Scope) => {
-          scope.setTag('finalFailure', true);
+          scope.setTag('finalFailure', String(true));
           scope.setTag('route', context.resolvedUrl);
           scope.setTag('errorType', getErrorType(lastError));
           scope.setLevel('error');
@@ -196,9 +196,9 @@ export function withStaticErrorHandling<P extends Record<string, any>>(
         // Log each attempt to Sentry if configured
         if (ENV_CONFIG.sentry.isConfigured) {
           Sentry.withScope((scope: Scope) => {
-            scope.setTag('attempt', attempt + 1);
-            scope.setTag('maxRetries', config.maxRetries);
-            scope.setTag('staticGeneration', true);
+            scope.setTag('attempt', String(attempt + 1));
+            scope.setTag('maxRetries', String(config.maxRetries));
+            scope.setTag('staticGeneration', String(true));
             scope.setTag('errorType', getErrorType(error));
             scope.setLevel(attempt < config.maxRetries ? 'warning' : 'error');
             scope.setContext('staticProps', {
@@ -236,8 +236,8 @@ export function withStaticErrorHandling<P extends Record<string, any>>(
       // Log final failure to Sentry
       if (ENV_CONFIG.sentry.isConfigured) {
         Sentry.withScope((scope: Scope) => {
-          scope.setTag('finalFailure', true);
-          scope.setTag('staticGeneration', true);
+          scope.setTag('finalFailure', String(true));
+          scope.setTag('staticGeneration', String(true));
           scope.setTag('errorType', getErrorType(lastError));
           scope.setLevel('error');
           Sentry.captureException(lastError);

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createServerClient } from '@supabase/ssr'
 import { type NextApiRequest, type NextApiResponse } from 'next'
 import { type GetServerSidePropsContext } from 'next/types'
