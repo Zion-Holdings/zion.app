@@ -85,6 +85,8 @@ const nextConfig = {
     swcTraceProfiling: false,
     // Removed esmExternals to prevent external module dynamic import issues
     esmExternals: undefined,
+    // Enable React 19 streaming features
+    reactRoot: true,
   },
 
   images: {
@@ -1016,6 +1018,8 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
 
+  // Enable SWC minification explicitly (already default in Next 15)
+  swcMinify: true,
 
 };
 
