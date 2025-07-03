@@ -263,11 +263,12 @@ function MyApp({ Component, pageProps }: AppProps) {
     };
 
     // Force initialization completion after maximum 3 seconds
+    // MODIFIED: Increased timeout to 15 seconds for debugging
     const forceInitTimeout = setTimeout(() => {
-      console.warn('Force completing app initialization due to timeout');
+      console.warn('Force completing app initialization due to timeout (15s)');
       setLoadingProgress(100);
       setIsLoading(false);
-    }, 3000);
+    }, 15000); // Increased from 3000ms
 
     initializeApp().finally(() => {
       clearTimeout(forceInitTimeout);

@@ -152,48 +152,52 @@ try {
 if (typeof window !== 'undefined') {
   const originalOnError = window.onerror;
   window.onerror = function(message, source, lineno, colno, error) {
-    // Suppress specific known errors that don't affect functionality
-    if (typeof message === 'string') {
-      const suppressedMessages = [
-        'Cannot read properties of undefined (reading \'env\')',
-        'Cannot destructure property',
-        'self is not defined',
-        '__extends',
-        'getInitialProps'
-      ];
-      
-      if (suppressedMessages.some(msg => message.includes(msg))) {
-        return true; // Suppress error
-      }
-    }
+    // MODIFIED: Log errors instead of fully suppressing them to aid debugging
+    // eslint-disable-next-line no-console
+    console.warn('[serverless-polyfill] window.onerror caught:', { message, source, lineno, colno, error });
+
+    // Suppress specific known errors that are truly benign (example, adjust as needed)
+    // For now, let most errors through for diagnostics.
+    // if (typeof message === 'string') {
+    //   const benignMessages = [
+    //     // 'Example benign error message to suppress',
+    //   ];
+    //   if (benignMessages.some(msg => message.includes(msg))) {
+    //     return true; // Suppress only truly benign errors
+    //   }
+    // }
     
     // Call original error handler for other errors
     if (originalOnError) {
       return originalOnError.call(this as any, message, source, lineno, colno, error);
     }
+    // Default browser behavior if no original handler
     return false;
   };
 
   const originalOnUnhandledRejection = window.onunhandledrejection;
   window.onunhandledrejection = function(event) {
-    // Suppress specific promise rejection errors
-    if (event.reason && typeof event.reason.message === 'string') {
-      const suppressedMessages = [
-        'Cannot read properties of undefined (reading \'env\')',
-        'Cannot destructure property',
-        'self is not defined'
-      ];
-      
-      if (suppressedMessages.some(msg => event.reason.message.includes(msg))) {
-        event.preventDefault();
-        return;
-      }
-    }
+    // MODIFIED: Log unhandled rejections instead of fully suppressing
+    // eslint-disable-next-line no-console
+    console.warn('[serverless-polyfill] window.onunhandledrejection caught:', event.reason);
+
+    // Suppress specific known benign rejections (example, adjust as needed)
+    // For now, let most rejections through for diagnostics.
+    // if (event.reason && typeof event.reason.message === 'string') {
+    //   const benignRejectionMessages = [
+    //     // 'Example benign rejection message to suppress',
+    //   ];
+    //   if (benignRejectionMessages.some(msg => event.reason.message.includes(msg))) {
+    //     event.preventDefault(); // Suppress only truly benign rejections
+    //     return;
+    //   }
+    // }
     
     // Call original handler for other rejections
     if (originalOnUnhandledRejection) {
       return originalOnUnhandledRejection.call(this as any, event);
     }
+    // Default browser behavior if no original handler (which is to log it)
   };
 }
 
