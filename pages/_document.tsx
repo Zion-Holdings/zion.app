@@ -24,7 +24,7 @@ export default function Document() {
     setTimeout(function () {
       var root = document.getElementById('__next');
       if (root && root.innerText.trim() === '') {
-        root.innerHTML = '<div style="padding:2rem;text-align:center;font-family:sans-serif;"><h2>Application failed to load.</h2><p>Please refresh the page.</p></div>';
+        root.innerHTML = '<div style="padding:2rem;text-align:center;font-family:sans-serif;"><h2>Application failed to load.</h2><p>Please refresh the page.</p><p>If the problem persists, run <code>./setup.sh npm</code> to reinstall dependencies.</p></div>';
       }
     }, 3000);
   });`;
