@@ -665,6 +665,12 @@ const nextConfig = {
       };
     }
 
+    // Explicitly disable cacheUnaffected to avoid "usedExports" conflicts
+    config.experiments = { ...(config.experiments || {}), cacheUnaffected: false };
+    if (config.cache && config.cache.cacheUnaffected !== undefined) {
+      delete config.cache.cacheUnaffected;
+    }
+
     // Add optimization to prevent temporal dead zone issues
     if (!dev && isServer) {
       config.optimization = {
