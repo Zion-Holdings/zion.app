@@ -29,6 +29,8 @@ export default function OfflineToast() {
         toast.success('Offline actions synchronized');
       } else if (event.data?.type === 'SYNC_FAILED') {
         console.warn('Background sync failed:', event.data.error);
+      } else if (event.data?.type === 'SYNC_TIMEOUT') {
+        console.warn('Background sync timed out:', event.data.error);
       }
     };
 

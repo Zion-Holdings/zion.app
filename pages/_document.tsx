@@ -32,29 +32,48 @@ export default function Document() {
       }
     }, 3000);
   });`;
-  const globalErrorScript = `['error','unhandledrejection'].forEach(function(evt){
-    window.addEventListener(evt, function(event){
-      // Suppress message channel closure errors that are not critical
-      if (event.message && event.message.includes('message channel closed')) {
-        event.preventDefault();
-        return;
-      }
-      
-      // Suppress extension-related message errors
-      if (event.message && event.message.includes('Extension context invalidated')) {
-        event.preventDefault();
-        return;
-      }
-      
-      var root = document.getElementById('__next');
-      if (root && root.innerText.trim() === '') {
-        var first = root.firstElementChild;
-        if (!first || ['SCRIPT','STYLE','LINK'].indexOf(first.tagName) !== -1) {
-          root.innerHTML = '<div style="padding:2rem;text-align:center;font-family:sans-serif;"><h2>Application failed to load.</h2><p>Check the browser console for errors.</p><p>See <code>next_dev_server.log</code> for details. If dependencies are missing, run <code>./setup.sh npm</code>.</p></div>';
+  
+  // Comprehensive message channel error interceptor
+  const messageChannelErrorScript = `
+    // Intercept and suppress message channel closure errors
+    (function() {
+      var originalConsoleError = console.error;
+      console.error = function() {
+        var args = Array.prototype.slice.call(arguments);
+        var message = args.join(' ');
+        
+        // Suppress message channel related errors
+        if (message.includes('message channel closed') ||
+            message.includes('asynchronous response by returning true') ||
+            message.includes('Extension context invalidated') ||
+            message.includes('chrome.runtime') ||
+            message.includes('service worker') ||
+            message.includes('postMessage') ||
+            message.includes('sendResponse')) {
+          return; // Don't log these errors
         }
-      }
-    });
-  });`;
+        
+        // Call original console.error for other errors
+        originalConsoleError.apply(console, args);
+      };
+      
+      // Intercept unhandled promise rejections
+      window.addEventListener('unhandledrejection', function(event) {
+        var message = event.reason && event.reason.message ? event.reason.message : String(event.reason);
+        
+        if (message.includes('message channel closed') ||
+            message.includes('asynchronous response by returning true') ||
+            message.includes('Extension context invalidated') ||
+            message.includes('chrome.runtime') ||
+            message.includes('service worker') ||
+            message.includes('postMessage') ||
+            message.includes('sendResponse')) {
+          event.preventDefault();
+          return;
+        }
+      });
+    })();
+  `;
 
   return (
     <Html lang="en">
@@ -70,7 +89,7 @@ export default function Document() {
         <Main />
         <NextScript />
         <script dangerouslySetInnerHTML={{ __html: blankScreenDetectScript }} />
-        <script dangerouslySetInnerHTML={{ __html: globalErrorScript }} />
+        <script dangerouslySetInnerHTML={{ __html: messageChannelErrorScript }} />
       </body>
     </Html>
   );

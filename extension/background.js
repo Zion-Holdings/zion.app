@@ -8,6 +8,10 @@ async function askZionGPT(prompt) {
   if (!OPENAI_API_KEY) return { answer: 'Model key missing' };
 
   try {
+    // Add timeout to prevent hanging requests
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 25000); // 25 second timeout
+    
     const res = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -17,8 +21,11 @@ async function askZionGPT(prompt) {
       body: JSON.stringify({
         model: 'gpt-3.5-turbo',
         messages: [{ role: 'user', content: prompt }]
-      })
+      }),
+      signal: controller.signal
     });
+
+    clearTimeout(timeoutId);
 
     if (!res.ok) {
       console.error('OpenAI request failed', res.status, await res.text());
@@ -28,6 +35,10 @@ async function askZionGPT(prompt) {
     const data = await res.json();
     return { answer: data.choices?.[0]?.message?.content || '' };
   } catch (err) {
+    if (err.name === 'AbortError') {
+      console.error('OpenAI request timed out');
+      return { answer: 'Request timed out. Please try again.' };
+    }
     console.error('OpenAI request error', err);
     return { answer: 'Error contacting model' };
   }

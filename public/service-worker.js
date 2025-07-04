@@ -100,18 +100,37 @@ self.addEventListener('notificationclick', event => {
 // Manually trigger replay of the Background Sync queue
 self.addEventListener('message', event => {
   if (event.data && event.data.type === 'SYNC_QUEUE' && bgSyncPlugin) {
+    // Add timeout to prevent hanging operations
+    const timeoutPromise = new Promise((_, reject) => 
+      setTimeout(() => reject(new Error('Sync timeout')), 30000)
+    );
+    
+    const syncPromise = bgSyncPlugin.queue
+      .replayRequests()
+      .catch(err => {
+        console.error('Background sync replay failed', err);
+        // Try to notify clients about the failure
+        return self.clients.matchAll().then(clients => {
+          clients.forEach(client => {
+            try {
+              client.postMessage({ type: 'SYNC_FAILED', error: err.message });
+            } catch (postError) {
+              console.error('Failed to post sync failure message:', postError);
+            }
+          });
+        });
+      });
+    
     event.waitUntil(
-      bgSyncPlugin.queue
-        .replayRequests()
-        .catch(err => {
-          console.error('Background sync replay failed', err);
-          // Try to notify clients about the failure
-          self.clients.matchAll().then(clients => {
+      Promise.race([syncPromise, timeoutPromise])
+        .catch(timeoutError => {
+          console.error('Background sync timed out:', timeoutError);
+          return self.clients.matchAll().then(clients => {
             clients.forEach(client => {
               try {
-                client.postMessage({ type: 'SYNC_FAILED', error: err.message });
+                client.postMessage({ type: 'SYNC_TIMEOUT', error: 'Sync operation timed out' });
               } catch (postError) {
-                console.error('Failed to post sync failure message:', postError);
+                console.error('Failed to post sync timeout message:', postError);
               }
             });
           });
