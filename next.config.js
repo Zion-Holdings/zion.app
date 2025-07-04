@@ -84,8 +84,6 @@ const nextConfig = {
     // Disable profiling for faster builds
     swcTraceProfiling: false,
     // Removed esmExternals to prevent external module dynamic import issues
-    // Explicitly disable cacheUnaffected to avoid webpack conflicts
-    cacheUnaffected: false,
   },
 
   images: {
@@ -667,10 +665,10 @@ const nextConfig = {
         };
       }
 
-    // Explicitly disable cacheUnaffected to avoid conflicts with usedExports
+    // Ensure webpack doesn't enable cacheUnaffected which conflicts with
+    // Next.js default usedExports setting
     config.experiments = {
       ...(config.experiments || {}),
-      cacheUnaffected: false,
     };
 
     // Add optimization to prevent temporal dead zone issues
