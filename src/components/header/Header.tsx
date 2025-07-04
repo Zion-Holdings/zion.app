@@ -154,15 +154,18 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
           {/* User Actions */}
           {!user && !hideLogin ? (
             <div className="hidden sm:flex items-center gap-3">
-              <Button variant="ghost" size="sm" asChild>
-                <Link href="/auth/login">
-                  {t('auth.login')}
-                </Link>
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                onClick={() => router.push('/auth/login')}
+              >
+                {t('auth.login')}
               </Button>
-              <Button size="sm" asChild>
-                <Link href="/signup">
-                  {t('auth.signup')}
-                </Link>
+              <Button 
+                size="sm" 
+                onClick={() => router.push('/signup')}
+              >
+                {t('auth.signup')}
               </Button>
             </div>
           ) : (
@@ -236,15 +239,22 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
             {/* Mobile Auth Buttons */}
             {!user && !hideLogin && (
               <div className="flex flex-col gap-2 pt-4 border-t border-border/50">
-                <Button variant="outline" asChild>
-                  <Link href="/auth/login" onClick={() => setIsMobileMenuOpen(false)}>
-                    {t('auth.login')}
-                  </Link>
+                <Button 
+                  variant="outline" 
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    router.push('/auth/login');
+                  }}
+                >
+                  {t('auth.login')}
                 </Button>
-                <Button asChild>
-                  <Link href="/signup" onClick={() => setIsMobileMenuOpen(false)}>
-                    {t('auth.signup')}
-                  </Link>
+                <Button 
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    router.push('/signup');
+                  }}
+                >
+                  {t('auth.signup')}
                 </Button>
               </div>
             )}
