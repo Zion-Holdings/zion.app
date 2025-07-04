@@ -197,7 +197,8 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
    - Check build logs for specific TypeScript or dependency errors
 4. **Blank screen when starting the app**
    - Ensure dependencies are installed by running `./setup.sh npm`
-   - If the issue persists, run `npm run fix:loading` for diagnostics
+   - Run `npm run fix:loading` to diagnose and apply the emergency loader
+   - A fail-safe message will now appear if the page stays blank for a few seconds
 
 For detailed troubleshooting, see the [Supabase Authentication Setup Guide](docs/SUPABASE_AUTHENTICATION_SETUP.md).
 
