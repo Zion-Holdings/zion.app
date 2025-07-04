@@ -191,208 +191,39 @@ const LoadingScreen: React.FC<{ progress: number }> = ({ progress }) => (
 
 // Provider wrapper with error handling
 const ProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Note: Suspense for dynamic imports is handled individually by next/dynamic.
-  // A top-level Suspense here could be added if there are other suspense-using components.
   return (
     <AppErrorBoundary>
-      <ReduxProvider store={store}>
-        <I18nextProvider i18n={i18n}>
-          <AuthProvider>
-            <WhitelabelProvider>
-              <SimpleBoundary fallbackUI={<div style={{ textAlign: 'center', padding: '20px', color: 'red' }}>Wallet Provider Failed to Load. Some features might be unavailable.</div>}>
-                <DynamicWalletProvider> {/* Use dynamic import */}
-                  <DynamicAnalyticsProvider> {/* Use dynamic import */}
+      <I18nextProvider i18n={i18n}>
+        <ReduxProvider store={store}>
+          <QueryClientProvider client={queryClient}>
+            <HydrationErrorBoundary>
+              <ThemeProvider>
+                <WhitelabelProvider>
+                  <AuthProvider>
                     <CartProvider>
                       <FeedbackProvider>
-                        <ThemeProvider>
-                          {children}
-                        </ThemeProvider>
+                        <DynamicWalletProvider>
+                          <DynamicAnalyticsProvider>
+                            {children}
+                            <EnvironmentCheck />
+                          </DynamicAnalyticsProvider>
+                        </DynamicWalletProvider>
                       </FeedbackProvider>
                     </CartProvider>
-                  </DynamicAnalyticsProvider>
-                </DynamicWalletProvider>
-              </SimpleBoundary>
-            </WhitelabelProvider>
-          </AuthProvider>
-        </I18nextProvider>
-      </ReduxProvider>
+                  </AuthProvider>
+                </WhitelabelProvider>
+              </ThemeProvider>
+            </HydrationErrorBoundary>
+          </QueryClientProvider>
+        </ReduxProvider>
+      </I18nextProvider>
     </AppErrorBoundary>
   );
 };
 
 function MyApp({ Component, pageProps }: AppProps) {
-  // Start with isLoading true to show the loading screen immediately.
-  const [isLoading, setIsLoading] = useState(true);
-  const [loadingProgress, setLoadingProgress] = useState(0);
-  const [initializationError, setInitializationError] = useState<string | null>(null);
-  const router = useRouter();
   const [queryClient] = useState(() => new QueryClient());
-
-  useEffect(() => {
-    // Ensure loading screen is shown at the very start
-    setIsLoading(true);
-    setLoadingProgress(5); // Initial small progress
-
-    const initializeApp = async () => {
-      try {
-        // Simulate progressive loading with realistic steps
-        // const steps = [
-        //   { name: 'Loading Core Components', duration: 300 },
-        //   { name: 'Initializing Providers', duration: 400 },
-        //   { name: 'Setting up Analytics', duration: 200 },
-        //   { name: 'Configuring Theme', duration: 200 },
-        //   { name: 'Final Setup', duration: 300 }
-        // ];
-
-        // let currentProgress = 0;
-        // const progressStep = 100 / steps.length;
-
-        // for (let i = 0; i < steps.length; i++) {
-        //   const step = steps[i];
-        //   if (!step) continue;
-
-        //   // Update progress
-        //   currentProgress = (i + 1) * progressStep;
-        //   setLoadingProgress(Math.min(currentProgress, 95));
-
-        //   // Simulate async work
-        //   await new Promise(resolve => setTimeout(resolve, step.duration));
-        // }
-
-        // // Final progress update
-        // setLoadingProgress(100);
-
-        // // Small delay to show completion
-        // await new Promise(resolve => setTimeout(resolve, 200));
-
-        // PERFORMANCE: Initialize Web Vitals monitoring in production
-        // if (typeof window !== 'undefined' && process.env.NODE_ENV === 'production') {
-        //   try {
-        //     const { onCLS, onFCP, onINP, onLCP, onTTFB } = await import('web-vitals');
-
-        //     const reportWebVitalsSafely = (metric: any) => {
-        //       try { // Add specific try-catch within the callback
-        //         if (typeof window !== 'undefined' && (window as any).gtag) {
-        //           (window as any).gtag('event', metric.name, {
-        //             value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
-        //             event_label: metric.id,
-        //             non_interaction: true,
-        //           });
-        //         }
-
-        //         // Initialize comprehensive performance monitoring on first metric (still keeping the actual import commented for now as per previous step)
-        //         if (!(global as any).performanceMonitorInitialized) {
-        //           (global as any).performanceMonitorInitialized = true;
-        //           // import('@/utils/performance-monitor').then(...).catch(...);
-        //           console.log('Performance monitor import is currently skipped.');
-        //         }
-        //       } catch (reportError) {
-        //         console.warn('Error during Web Vitals reporting:', reportError);
-        //       }
-        //     };
-
-        //     // Wrap each listener setup in a try-catch as well, just in case
-        //     try { onCLS(reportWebVitalsSafely); } catch (e) { console.warn('Failed to setup onCLS:', e); }
-        //     try { onFCP(reportWebVitalsSafely); } catch (e) { console.warn('Failed to setup onFCP:', e); }
-        //     try { onINP(reportWebVitalsSafely); } catch (e) { console.warn('Failed to setup onINP:', e); }
-        //     try { onLCP(reportWebVitalsSafely); } catch (e) { console.warn('Failed to setup onLCP:', e); }
-        //     try { onTTFB(reportWebVitalsSafely); } catch (e) { console.warn('Failed to setup onTTFB:', e); }
-
-        //   } catch (webVitalsError) {
-        //     console.warn('Web Vitals main initialization failed:', webVitalsError);
-        //   }
-        // }
-
-        const steps = [
-          { name: 'Loading Core Components', duration: 300 },
-          { name: 'Initializing Providers', duration: 400 },
-          { name: 'Setting up Analytics', duration: 200 },
-          { name: 'Configuring Theme', duration: 200 },
-          { name: 'Final Setup', duration: 300 }
-        ];
-
-        let currentProgress = 0;
-        const progressStep = 100 / steps.length;
-
-        for (let i = 0; i < steps.length; i++) {
-          const step = steps[i];
-          if (!step) continue;
-          
-          // Update progress
-          currentProgress = (i + 1) * progressStep;
-          setLoadingProgress(Math.min(currentProgress, 95));
-
-          // Simulate async work
-          await new Promise(resolve => setTimeout(resolve, step.duration));
-        }
-
-        // Final progress update
-        setLoadingProgress(100);
-        
-        // Small delay to show completion
-        await new Promise(resolve => setTimeout(resolve, 200));
-
-        // PERFORMANCE: Initialize Web Vitals monitoring in production
-        if (typeof window !== 'undefined' && process.env.NODE_ENV === 'production') {
-          try {
-            const { onCLS, onFCP, onINP, onLCP, onTTFB } = await import('web-vitals');
-
-            const reportWebVitalsSafely = (metric: any) => {
-              try { // Add specific try-catch within the callback
-                if (typeof window !== 'undefined' && (window as any).gtag) {
-                  (window as any).gtag('event', metric.name, {
-                    value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
-                    event_label: metric.id,
-                    non_interaction: true,
-                  });
-                }
-
-                // Initialize comprehensive performance monitoring on first metric (still keeping the actual import commented for now as per previous step)
-                if (!(global as any).performanceMonitorInitialized) {
-                  (global as any).performanceMonitorInitialized = true;
-                  // import('@/utils/performance-monitor').then(...).catch(...);
-                  console.log('Performance monitor import is currently skipped.');
-                }
-              } catch (reportError) {
-                console.warn('Error during Web Vitals reporting:', reportError);
-              }
-            };
-            
-            // Wrap each listener setup in a try-catch as well, just in case
-            try { onCLS(reportWebVitalsSafely); } catch (e) { console.warn('Failed to setup onCLS:', e); }
-            try { onFCP(reportWebVitalsSafely); } catch (e) { console.warn('Failed to setup onFCP:', e); }
-            try { onINP(reportWebVitalsSafely); } catch (e) { console.warn('Failed to setup onINP:', e); }
-            try { onLCP(reportWebVitalsSafely); } catch (e) { console.warn('Failed to setup onLCP:', e); }
-            try { onTTFB(reportWebVitalsSafely); } catch (e) { console.warn('Failed to setup onTTFB:', e); }
-
-          } catch (webVitalsError) {
-            console.warn('Web Vitals main initialization failed:', webVitalsError);
-          }
-        }
-        
-        setIsLoading(false); // Crucial: ensure isLoading is set to false
-      } catch (error) {
-        console.error('App initialization error:', error);
-        setInitializationError('Failed to initialize application. Please refresh the page.');
-        setIsLoading(false);
-      }
-    };
-
-    // Force initialization completion after maximum 3 seconds
-    const forceInitTimeout = setTimeout(() => {
-      console.warn('Force completing app initialization due to timeout');
-      setLoadingProgress(100); // Ensure progress is full on timeout
-      setIsLoading(false);
-    }, 3000);
-
-    initializeApp().finally(() => {
-      clearTimeout(forceInitTimeout);
-    });
-
-    return () => {
-      clearTimeout(forceInitTimeout);
-    };
-  }, []);
+  const router = useRouter();
 
   // Handle router events for page transitions
   useEffect(() => {
@@ -419,79 +250,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     };
   }, [router]);
 
-  // Show loading screen during initialization
-  if (isLoading) {
-    return (
-      <>
-        <Head>
-          <title>Loading - Zion App</title>
-          <meta name="description" content="Zion App is loading..." />
-        </Head>
-        <LoadingScreen progress={loadingProgress} />
-      </>
-    );
-  }
-
-  // Show error screen if initialization failed
-  if (initializationError) {
-    return (
-      <div style={{ 
-        padding: '2rem', 
-        textAlign: 'center',
-        maxWidth: '600px',
-        margin: '0 auto',
-        fontFamily: 'Arial, sans-serif'
-      }}>
-        <h2>🚫 Initialization Error</h2>
-        <p>{initializationError}</p>
-        <button 
-          onClick={() => window.location.reload()}
-          style={{
-            padding: '10px 20px',
-            backgroundColor: '#dc3545',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-            marginTop: '1rem'
-          }}
-        >
-          Reload Application
-        </button>
-      </div>
-    );
-  }
-
   // Main app render with all providers
   return (
-    <AppErrorBoundary>
-      <ProviderWrapper>
-        <I18nextProvider i18n={i18n}>
-          <ReduxProvider store={store}>
-            <QueryClientProvider client={queryClient}>
-              <HydrationErrorBoundary>
-                <ThemeProvider>
-                  <WhitelabelProvider>
-                    <AuthProvider>
-                      <CartProvider>
-                        <FeedbackProvider>
-                          <DynamicWalletProvider>
-                            <DynamicAnalyticsProvider>
-                              <Component {...pageProps} />
-                              <EnvironmentCheck />
-                            </DynamicAnalyticsProvider>
-                          </DynamicWalletProvider>
-                        </FeedbackProvider>
-                      </CartProvider>
-                    </AuthProvider>
-                  </WhitelabelProvider>
-                </ThemeProvider>
-              </HydrationErrorBoundary>
-            </QueryClientProvider>
-          </ReduxProvider>
-        </I18nextProvider>
-      </ProviderWrapper>
-    </AppErrorBoundary>
+    <ProviderWrapper>
+      <Component {...pageProps} />
+    </ProviderWrapper>
   );
 }
 
