@@ -107,6 +107,17 @@ self.addEventListener('message', event => {
     
     const syncPromise = bgSyncPlugin.queue
       .replayRequests()
+      .then(() => {
+        console.log('Background sync completed successfully');
+        // Send success response if there's a port
+        if (event.ports && event.ports[0]) {
+          try {
+            event.ports[0].postMessage({ type: 'SYNC_SUCCESS' });
+          } catch (postError) {
+            console.error('Failed to post sync success message:', postError);
+          }
+        }
+      })
       .catch(err => {
         console.error('Background sync replay failed', err);
         // Try to notify clients about the failure
@@ -136,6 +147,15 @@ self.addEventListener('message', event => {
           });
         })
     );
+  } else {
+    // Handle other message types or send error response
+    if (event.ports && event.ports[0]) {
+      try {
+        event.ports[0].postMessage({ type: 'UNKNOWN_MESSAGE_TYPE' });
+      } catch (postError) {
+        console.error('Failed to post error message:', postError);
+      }
+    }
   }
 });
 

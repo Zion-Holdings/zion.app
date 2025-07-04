@@ -55,7 +55,9 @@ export default function Document() {
             message.includes('chrome.runtime') ||
             message.includes('service worker') ||
             message.includes('postMessage') ||
-            message.includes('sendResponse')) {
+            message.includes('sendResponse') ||
+            message.includes('SYNC_FAILED') ||
+            message.includes('SYNC_TIMEOUT')) {
           return; // Don't log these errors
         }
         
@@ -73,7 +75,9 @@ export default function Document() {
             message.includes('chrome.runtime') ||
             message.includes('service worker') ||
             message.includes('postMessage') ||
-            message.includes('sendResponse')) {
+            message.includes('sendResponse') ||
+            message.includes('SYNC_FAILED') ||
+            message.includes('SYNC_TIMEOUT')) {
           event.preventDefault();
           return;
         }
