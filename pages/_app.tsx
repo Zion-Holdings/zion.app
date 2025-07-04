@@ -68,6 +68,9 @@ import { SimpleLoading } from '@/components/SimpleLoading';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '../src/i18n';
 
+// Create a single QueryClient instance for the entire app
+const queryClient = new QueryClient();
+
 // Synchronously import core providers
 import { AuthProvider } from '../src/context/auth/AuthProvider';
 import { WhitelabelProvider } from '../src/context/WhitelabelContext';
@@ -224,7 +227,6 @@ const ProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) 
 };
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [queryClient] = useState(() => new QueryClient());
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
 
