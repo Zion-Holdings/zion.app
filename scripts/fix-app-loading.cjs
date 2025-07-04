@@ -23,6 +23,10 @@ function checkAppStatus() {
       execSync('./setup.sh npm', { stdio: 'inherit' });
     } catch (installErr) {
       console.error('Failed to install dependencies:', installErr.message);
+      if (/EAI_AGAIN|ENOTFOUND|403 Forbidden/.test(installErr.message)) {
+        console.error('Network access appears to be restricted.');
+        console.error('Ensure internet connectivity or configure a proxy before running the setup script.');
+      }
       console.log('   -> Please run "./setup.sh npm" manually.');
       return false;
     }
