@@ -1006,13 +1006,20 @@ const nextConfig = {
     // Ensure consistent optimization settings in all environments
   config.optimization = {
     ...config.optimization,
-    usedExports: false, // Disable to prevent cacheUnaffected conflicts
   };
 
-    // Remove cacheUnaffected in case any plugin re-added it
-    if (config.cache && config.cache.cacheUnaffected !== undefined) {
-      delete config.cache.cacheUnaffected;
-    }
+  // Disable usedExports to avoid cacheUnaffected conflicts
+  if (config.optimization && 'usedExports' in config.optimization) {
+    config.optimization.usedExports = false;
+  }
+
+  // Remove cacheUnaffected in case any plugin re-added it
+  if (config.cache && config.cache.cacheUnaffected !== undefined) {
+    delete config.cache.cacheUnaffected;
+  }
+  if (config.experiments && 'cacheUnaffected' in config.experiments) {
+    config.experiments.cacheUnaffected = false;
+  }
 
     return config;
   },
