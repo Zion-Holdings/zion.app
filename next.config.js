@@ -83,6 +83,8 @@ const nextConfig = {
     // Bundle analysis optimizations moved to root level
     // Disable profiling for faster builds
     swcTraceProfiling: false,
+    // Required for Node.js runtime middleware support
+    nodeMiddleware: true,
     // Removed esmExternals to prevent external module dynamic import issues
   },
 
