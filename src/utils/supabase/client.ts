@@ -50,9 +50,6 @@ export function createClient() {
   }
 
   const { supabaseUrl, supabaseAnonKey } = getSupabaseCredentials();
-  // Check if environment variables are available
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
   if (!supabaseUrl || !supabaseAnonKey) {
     // Return a mock client for build-time to prevent errors
