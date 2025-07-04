@@ -241,6 +241,19 @@ The application includes built-in monitoring for:
 - Environment configuration validation
 - Error reporting and analytics
 
+### Troubleshooting Blank Screens
+If the application loads with a completely empty page, it usually means
+the required `node_modules` directory is missing. Check `next_dev_server.log`
+for errors and reinstall dependencies:
+
+```bash
+./setup.sh npm
+npm run build && npm run dev
+```
+
+If you don't have network connectivity, run `./offline-dev.sh` to start a
+minimal offline server until you can reinstall the packages.
+
 ### Self-Maintenance Automation
 The project includes several automations that help it heal itself and stay up to date:
 
