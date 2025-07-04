@@ -62,6 +62,8 @@ import { store } from '@/store';
 import { HydrationErrorBoundary } from '@/components/HydrationErrorBoundary';
 import AppFallback from '@/components/AppFallback';
 import EnvironmentCheck from '@/components/EnvironmentCheck';
+import { SimpleErrorBoundary } from '@/components/SimpleErrorBoundary';
+import { SimpleLoading } from '@/components/SimpleLoading';
 
 import { I18nextProvider } from 'react-i18next';
 import i18n from '../src/i18n';
@@ -192,7 +194,7 @@ const LoadingScreen: React.FC<{ progress: number }> = ({ progress }) => (
 // Provider wrapper with error handling
 const ProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <AppErrorBoundary>
+    <SimpleErrorBoundary>
       <I18nextProvider i18n={i18n}>
         <ReduxProvider store={store}>
           <QueryClientProvider client={queryClient}>
@@ -217,13 +219,24 @@ const ProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) 
           </QueryClientProvider>
         </ReduxProvider>
       </I18nextProvider>
-    </AppErrorBoundary>
+    </SimpleErrorBoundary>
   );
 };
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Show loading immediately
+  useEffect(() => {
+    // Set a timeout to hide loading after 2 seconds
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   // Handle router events for page transitions
   useEffect(() => {
@@ -249,6 +262,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       router.events.off('routeChangeError', handleRouteChangeError);
     };
   }, [router]);
+
+  // Show loading screen
+  if (isLoading) {
+    return <SimpleLoading />;
+  }
 
   // Main app render with all providers
   return (
