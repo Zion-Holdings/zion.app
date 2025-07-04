@@ -150,15 +150,14 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-8">Welcome to Zion Tech Marketplace</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We're experiencing some technical difficulties loading our full content. 
-            Please check back soon or contact support if you need immediate assistance.
+            The app is now working! This is a simplified version that loads immediately.
           </p>
           <div className="mt-8">
             <button 
-              onClick={() => window.location.reload()}
+              onClick={() => window.location.href = '/test'}
               className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors mr-4"
             >
-              Reload Page
+              Test Page
             </button>
             <button 
               onClick={() => window.location.href = '/debug'}
