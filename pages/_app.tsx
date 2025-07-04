@@ -192,7 +192,7 @@ const LoadingScreen: React.FC<{ progress: number }> = ({ progress }) => (
 );
 
 // Provider wrapper with error handling
-const ProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const ProviderWrapper: React.FC<{ children: React.ReactNode; queryClient: QueryClient }> = ({ children, queryClient }) => {
   return (
     <SimpleErrorBoundary>
       <I18nextProvider i18n={i18n}>
@@ -270,7 +270,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   // Main app render with all providers
   return (
-    <ProviderWrapper>
+    <ProviderWrapper queryClient={queryClient}>
       <Component {...pageProps} />
     </ProviderWrapper>
   );
