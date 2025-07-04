@@ -301,11 +301,12 @@ body {
 
 @layer base {
   * {
-    @apply border-border; /* Uses the updated --border variable */
+    border-color: hsl(var(--border)); /* Uses the updated --border variable */
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
     font-family: 'Inter', sans-serif; /* Using Inter as base sans-serif */
     -webkit-font-smoothing: antialiased; /* Smoother fonts on WebKit */
     -moz-osx-font-smoothing: grayscale; /* Smoother fonts on Firefox */
@@ -447,7 +448,8 @@ body {
 
   /* Input styling enhancements */
   input, textarea, select {
-    @apply bg-input border border-border rounded-md px-3 py-2 text-foreground placeholder-muted-foreground;
+    @apply bg-input border rounded-md px-3 py-2 text-foreground placeholder-muted-foreground;
+    border-color: hsl(var(--border));
     @apply focus:ring-2 focus:ring-ring focus:border-transparent focus:outline-none;
     transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   }
@@ -540,7 +542,8 @@ body {
   @apply button-modern-primary; /* Apply modern primary button style */
 }
 .request-textarea {
-  @apply bg-input border border-border rounded-md p-3 text-foreground placeholder-muted-foreground;
+  @apply bg-input border rounded-md p-3 text-foreground placeholder-muted-foreground;
+  border-color: hsl(var(--border));
   /* color: hsl(var(--foreground)); Already handled by text-foreground */
 }
 .request-textarea::placeholder {

@@ -16,7 +16,7 @@ function parseMarkdown(filePath: string): BlogPost | null {
   if (!fs.existsSync(filePath)) {
     return null;
   }
-  const raw = fs.readFileSync(filePath, 'utf8');
+  const raw = fs.readFileSync(filePath, 'utf8') as string;
   const match = raw.match(/---\n([\s\S]+?)\n---\n([\s\S]*)/);
   if (!match || !match[1] || !match[2]) return null;
   const meta = JSON.parse(match[1]);
