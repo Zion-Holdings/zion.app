@@ -116,59 +116,71 @@ self.addEventListener('notificationclick', event => {
 
 // Manually trigger replay of the Background Sync queue
 self.addEventListener('message', event => {
-  if (event.data && event.data.type === 'SYNC_QUEUE' && bgSyncPlugin) {
-    // Add timeout to prevent hanging operations
-    const timeoutPromise = new Promise((_, reject) => 
-      setTimeout(() => reject(new Error('Sync timeout')), 30000)
-    );
-    
-    const syncPromise = bgSyncPlugin.queue
-      .replayRequests()
-      .then(() => {
-        console.log('Background sync completed successfully');
-        // Send success response if there's a port
-        if (event.ports && event.ports[0]) {
-          try {
-            event.ports[0].postMessage({ type: 'SYNC_SUCCESS' });
-          } catch (postError) {
-            console.error('Failed to post sync success message:', postError);
-          }
-        }
-      })
-      .catch(err => {
-        console.error('Background sync replay failed', err);
-        // Try to notify clients about the failure
-        return self.clients.matchAll().then(clients => {
-          clients.forEach(client => {
+  try {
+    if (event.data && event.data.type === 'SYNC_QUEUE' && bgSyncPlugin) {
+      // Add timeout to prevent hanging operations
+      const timeoutPromise = new Promise((_, reject) => 
+        setTimeout(() => reject(new Error('Sync timeout')), 30000)
+      );
+      
+      const syncPromise = bgSyncPlugin.queue
+        .replayRequests()
+        .then(() => {
+          console.log('Background sync completed successfully');
+          // Send success response if there's a port
+          if (event.ports && event.ports[0]) {
             try {
-              client.postMessage({ type: 'SYNC_FAILED', error: err.message });
+              event.ports[0].postMessage({ type: 'SYNC_SUCCESS' });
             } catch (postError) {
-              console.error('Failed to post sync failure message:', postError);
+              console.error('Failed to post sync success message:', postError);
             }
-          });
-        });
-      });
-    
-    event.waitUntil(
-      Promise.race([syncPromise, timeoutPromise])
-        .catch(timeoutError => {
-          console.error('Background sync timed out:', timeoutError);
+          }
+        })
+        .catch(err => {
+          console.error('Background sync replay failed', err);
+          // Try to notify clients about the failure
           return self.clients.matchAll().then(clients => {
             clients.forEach(client => {
               try {
-                client.postMessage({ type: 'SYNC_TIMEOUT', error: 'Sync operation timed out' });
+                client.postMessage({ type: 'SYNC_FAILED', error: err.message });
               } catch (postError) {
-                console.error('Failed to post sync timeout message:', postError);
+                console.error('Failed to post sync failure message:', postError);
               }
             });
           });
-        })
-    );
-  } else {
-    // Handle other message types or send error response
+        });
+      
+      event.waitUntil(
+        Promise.race([syncPromise, timeoutPromise])
+          .catch(timeoutError => {
+            console.error('Background sync timed out:', timeoutError);
+            return self.clients.matchAll().then(clients => {
+              clients.forEach(client => {
+                try {
+                  client.postMessage({ type: 'SYNC_TIMEOUT', error: 'Sync operation timed out' });
+                } catch (postError) {
+                  console.error('Failed to post sync timeout message:', postError);
+                }
+              });
+            });
+          })
+      );
+    } else {
+      // Handle other message types or send error response
+      if (event.ports && event.ports[0]) {
+        try {
+          event.ports[0].postMessage({ type: 'UNKNOWN_MESSAGE_TYPE' });
+        } catch (postError) {
+          console.error('Failed to post error message:', postError);
+        }
+      }
+    }
+  } catch (error) {
+    console.error('Error handling service worker message:', error);
+    // Try to send error response if possible
     if (event.ports && event.ports[0]) {
       try {
-        event.ports[0].postMessage({ type: 'UNKNOWN_MESSAGE_TYPE' });
+        event.ports[0].postMessage({ type: 'MESSAGE_ERROR', error: error.message });
       } catch (postError) {
         console.error('Failed to post error message:', postError);
       }

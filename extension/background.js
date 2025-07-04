@@ -52,7 +52,11 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       `Sender ID: ${sender.id || 'N/A (sender.id is undefined, possibly a webpage)'}, ` +
       `Extension ID: ${chrome.runtime.id}`;
     console.error(errorMessage);
-    sendResponse({ error: 'Unauthorized sender' });
+    try {
+      sendResponse({ error: 'Unauthorized sender' });
+    } catch (error) {
+      console.error('Failed to send unauthorized response:', error);
+    }
     return false; // Don't keep the message channel open
   }
 
@@ -85,7 +89,11 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       sendResponse({ ok: true });
     } catch (error) {
       console.error('Post job error:', error);
-      sendResponse({ error: 'Failed to open job posting page' });
+      try {
+        sendResponse({ error: 'Failed to open job posting page' });
+      } catch (sendError) {
+        console.error('Error sending post-job error response:', sendError);
+      }
     }
     return false; // Synchronous response
   }
@@ -96,7 +104,11 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       sendResponse({ ok: true });
     } catch (error) {
       console.error('Resume search error:', error);
-      sendResponse({ error: 'Failed to open talent page' });
+      try {
+        sendResponse({ error: 'Failed to open talent page' });
+      } catch (sendError) {
+        console.error('Error sending resume-search error response:', sendError);
+      }
     }
     return false; // Synchronous response
   }
@@ -107,12 +119,20 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       sendResponse({ ok: true });
     } catch (error) {
       console.error('View notifications error:', error);
-      sendResponse({ error: 'Failed to open notifications page' });
+      try {
+        sendResponse({ error: 'Failed to open notifications page' });
+      } catch (sendError) {
+        console.error('Error sending view-notifications error response:', sendError);
+      }
     }
     return false; // Synchronous response
   }
 
   // Unknown message type
-  sendResponse({ error: 'Unknown message type' });
+  try {
+    sendResponse({ error: 'Unknown message type' });
+  } catch (error) {
+    console.error('Error sending unknown message type response:', error);
+  }
   return false; // Don't keep the message channel open
 });

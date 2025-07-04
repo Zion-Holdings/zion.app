@@ -44,6 +44,8 @@ export default function Document() {
     // Intercept and suppress message channel closure errors
     (function() {
       var originalConsoleError = console.error;
+      var originalConsoleWarn = console.warn;
+      
       console.error = function() {
         var args = Array.prototype.slice.call(arguments);
         var message = args.join(' ');
@@ -57,12 +59,37 @@ export default function Document() {
             message.includes('postMessage') ||
             message.includes('sendResponse') ||
             message.includes('SYNC_FAILED') ||
-            message.includes('SYNC_TIMEOUT')) {
+            message.includes('SYNC_TIMEOUT') ||
+            message.includes('Could not establish connection') ||
+            message.includes('Receiving end does not exist') ||
+            message.includes('Extension context invalidated') ||
+            message.includes('A listener indicated an asynchronous response')) {
           return; // Don't log these errors
         }
         
         // Call original console.error for other errors
         originalConsoleError.apply(console, args);
+      };
+      
+      console.warn = function() {
+        var args = Array.prototype.slice.call(arguments);
+        var message = args.join(' ');
+        
+        // Suppress extension-related warnings
+        if (message.includes('message channel closed') ||
+            message.includes('asynchronous response by returning true') ||
+            message.includes('Extension context invalidated') ||
+            message.includes('chrome.runtime') ||
+            message.includes('service worker') ||
+            message.includes('postMessage') ||
+            message.includes('sendResponse') ||
+            message.includes('Could not establish connection') ||
+            message.includes('Receiving end does not exist')) {
+          return; // Don't log these warnings
+        }
+        
+        // Call original console.warn for other warnings
+        originalConsoleWarn.apply(console, args);
       };
       
       // Intercept unhandled promise rejections
@@ -77,11 +104,43 @@ export default function Document() {
             message.includes('postMessage') ||
             message.includes('sendResponse') ||
             message.includes('SYNC_FAILED') ||
-            message.includes('SYNC_TIMEOUT')) {
+            message.includes('SYNC_TIMEOUT') ||
+            message.includes('Could not establish connection') ||
+            message.includes('Receiving end does not exist') ||
+            message.includes('A listener indicated an asynchronous response')) {
           event.preventDefault();
           return;
         }
       });
+      
+      // Intercept global errors
+      window.addEventListener('error', function(event) {
+        var message = event.message || '';
+        
+        if (message.includes('message channel closed') ||
+            message.includes('asynchronous response by returning true') ||
+            message.includes('Extension context invalidated') ||
+            message.includes('chrome.runtime') ||
+            message.includes('service worker') ||
+            message.includes('postMessage') ||
+            message.includes('sendResponse') ||
+            message.includes('Could not establish connection') ||
+            message.includes('Receiving end does not exist') ||
+            message.includes('A listener indicated an asynchronous response')) {
+          event.preventDefault();
+          return;
+        }
+      });
+      
+      // Suppress extension-related errors in the global scope
+      if (typeof window !== 'undefined') {
+        window.addEventListener('error', function(event) {
+          if (event.filename && event.filename.includes('chrome-extension')) {
+            event.preventDefault();
+            return;
+          }
+        });
+      }
     })();
   `;
 

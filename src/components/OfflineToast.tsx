@@ -24,6 +24,8 @@ export default function OfflineToast() {
               console.log('Background sync completed successfully');
             } else if (event.data?.type === 'UNKNOWN_MESSAGE_TYPE') {
               console.warn('Service worker received unknown message type');
+            } else if (event.data?.type === 'MESSAGE_ERROR') {
+              console.warn('Service worker message error:', event.data.error);
             }
             channel.port1.close();
           };
