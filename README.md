@@ -253,7 +253,9 @@ npm run build && npm run dev
 ```
 
 If you don't have network connectivity, run `./offline-dev.sh` to start a
-minimal offline server until you can reinstall the packages.
+minimal offline server until you can reinstall the packages. This script
+provides a basic interface so you can continue working in a limited mode
+until dependencies can be installed.
 
 ### Self-Maintenance Automation
 The project includes several automations that help it heal itself and stay up to date:
