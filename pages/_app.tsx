@@ -228,14 +228,26 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
 
-  // Show loading immediately
+  // Show loading immediately with timeout
   useEffect(() => {
-    // Set a timeout to hide loading after 2 seconds
+    // Set a timeout to hide loading after 3 seconds maximum
     const timer = setTimeout(() => {
+      console.log('App loading timeout reached - showing content');
       setIsLoading(false);
-    }, 2000);
+    }, 3000);
 
-    return () => clearTimeout(timer);
+    // Also try to hide loading after 1 second if everything is ready
+    const quickTimer = setTimeout(() => {
+      if (document.readyState === 'complete') {
+        console.log('Document ready - showing content early');
+        setIsLoading(false);
+      }
+    }, 1000);
+
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(quickTimer);
+    };
   }, []);
 
   // Handle router events for page transitions
@@ -265,7 +277,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   // Show loading screen
   if (isLoading) {
-    return <SimpleLoading />;
+    return <SimpleLoading message="Initializing Zion Tech Marketplace..." />;
   }
 
   // Main app render with all providers

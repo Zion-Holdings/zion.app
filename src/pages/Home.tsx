@@ -114,8 +114,17 @@ const SimpleCTA = () => (
 export default function Home() {
   const { t } = useTranslation();
   const { user } = useAuth();
-  const firstName =
-    user?.displayName?.split(' ')[0] || user?.name?.split(' ')[0];
+  const firstName = user?.displayName?.split(' ')[0] || user?.name?.split(' ')[0];
+  
+  // CRITICAL FIX: Add fallback for translation issues
+  const safeTranslate = (key: string, defaultValue: string) => {
+    try {
+      return t(key) || defaultValue;
+    } catch (error) {
+      console.warn('Translation error:', error);
+      return defaultValue;
+    }
+  };
   
   return (
     <main className="min-h-screen bg-background">
@@ -128,11 +137,8 @@ export default function Home() {
       />
 
       {user && (
-        <div
-          className="bg-primary/10 text-primary text-center p-2"
-          data-testid="home-greeting"
-        >
-          {t('general.greeting_user', { name: firstName })}
+        <div className="bg-primary/10 text-primary text-center p-2" data-testid="home-greeting">
+          {safeTranslate('general.greeting_user', `Welcome back, ${firstName || 'User'}!`)}
         </div>
       )}
 
