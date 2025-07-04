@@ -32,7 +32,7 @@ export default function Document() {
   const globalErrorScript = `['error','unhandledrejection'].forEach(function(evt){
     window.addEventListener(evt, function(){
       var root = document.getElementById('__next');
-      if (root && root.innerText.trim() === '') {
+      if (root) {
         root.innerHTML = '<div style="padding:2rem;text-align:center;font-family:sans-serif;'><h2>Application failed to load.</h2><p>Check the browser console for errors.</p><p>If dependencies are missing, run <code>./setup.sh npm</code>.</p></div>';
       }
     });
