@@ -25,9 +25,9 @@ export default function UserProfile({ onUserChange }: UserProfileProps) {
     // Get initial session
     const getInitialSession = async () => {
       const { data: { session } } = await supabase.auth.getSession()
-      setUser(session?.user ?? null)
+      setUser((session as any)?.user ?? null)
       setLoading(false)
-      onUserChange?.(session?.user ?? null)
+      onUserChange?.((session as any)?.user ?? null)
     }
 
     getInitialSession()
@@ -35,9 +35,9 @@ export default function UserProfile({ onUserChange }: UserProfileProps) {
     // Listen for auth changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (event: AuthChangeEvent, session: Session | null) => {
-        setUser(session?.user ?? null)
+        setUser((session as any)?.user ?? null)
         setLoading(false)
-        onUserChange?.(session?.user ?? null)
+        onUserChange?.((session as any)?.user ?? null)
       }
     )
 
@@ -96,18 +96,18 @@ export default function UserProfile({ onUserChange }: UserProfileProps) {
         <div className="space-y-2">
           <div className="flex items-center gap-2">
             <span className="text-sm font-medium">Email:</span>
-            <span className="text-sm">{user.email}</span>
+            <span className="text-sm">{(user as any).email}</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-sm font-medium">Status:</span>
-            <Badge variant={user.email_confirmed_at ? "default" : "secondary"}>
-              {user.email_confirmed_at ? "Verified" : "Unverified"}
+            <Badge variant={(user as any).email_confirmed_at ? "default" : "secondary"}>
+              {(user as any).email_confirmed_at ? "Verified" : "Unverified"}
             </Badge>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-sm font-medium">Joined:</span>
             <span className="text-sm">
-              {new Date(user.created_at).toLocaleDateString()}
+              {new Date((user as any).created_at).toLocaleDateString()}
             </span>
           </div>
         </div>
