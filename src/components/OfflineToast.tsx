@@ -14,13 +14,21 @@ export default function OfflineToast() {
     const handleOnline = () => {
       toast.success('Back online. Syncing queued actions...');
       navigator.serviceWorker.ready.then(reg => {
-        reg.active?.postMessage({ type: 'SYNC_QUEUE' });
+        try {
+          reg.active?.postMessage({ type: 'SYNC_QUEUE' });
+        } catch (error) {
+          console.warn('Failed to send sync message to service worker:', error);
+        }
+      }).catch(error => {
+        console.warn('Service worker not ready:', error);
       });
     };
 
     const handleMessage = (event: MessageEvent) => {
       if (event.data?.type === 'QUEUE_SYNCED') {
         toast.success('Offline actions synchronized');
+      } else if (event.data?.type === 'SYNC_FAILED') {
+        console.warn('Background sync failed:', event.data.error);
       }
     };
 

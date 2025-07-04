@@ -47,12 +47,23 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
   // Handle different message types
   if (message.type === 'ask') {
-    // Handle async operation properly
+    // Handle async operation properly with error handling
     askZionGPT(message.prompt)
-      .then(response => sendResponse(response))
+      .then(response => {
+        try {
+          sendResponse(response);
+        } catch (error) {
+          console.error('Error sending response:', error);
+          // If sendResponse fails, we can't do much more
+        }
+      })
       .catch(error => {
         console.error('Ask ZionGPT error:', error);
-        sendResponse({ error: error.message || 'Failed to process request' });
+        try {
+          sendResponse({ error: error.message || 'Failed to process request' });
+        } catch (sendError) {
+          console.error('Error sending error response:', sendError);
+        }
       });
     return true; // Keep the message channel open for async response
   }

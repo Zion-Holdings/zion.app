@@ -33,12 +33,24 @@ export default function Document() {
     }, 3000);
   });`;
   const globalErrorScript = `['error','unhandledrejection'].forEach(function(evt){
-    window.addEventListener(evt, function(){
+    window.addEventListener(evt, function(event){
+      // Suppress message channel closure errors that are not critical
+      if (event.message && event.message.includes('message channel closed')) {
+        event.preventDefault();
+        return;
+      }
+      
+      // Suppress extension-related message errors
+      if (event.message && event.message.includes('Extension context invalidated')) {
+        event.preventDefault();
+        return;
+      }
+      
       var root = document.getElementById('__next');
       if (root && root.innerText.trim() === '') {
         var first = root.firstElementChild;
         if (!first || ['SCRIPT','STYLE','LINK'].indexOf(first.tagName) !== -1) {
-          root.innerHTML = '<div style="padding:2rem;text-align:center;font-family:sans-serif;'><h2>Application failed to load.</h2><p>Check the browser console for errors.</p><p>See <code>next_dev_server.log</code> for details. If dependencies are missing, run <code>./setup.sh npm</code>.</p></div>';
+          root.innerHTML = '<div style="padding:2rem;text-align:center;font-family:sans-serif;"><h2>Application failed to load.</h2><p>Check the browser console for errors.</p><p>See <code>next_dev_server.log</code> for details. If dependencies are missing, run <code>./setup.sh npm</code>.</p></div>';
         }
       }
     });

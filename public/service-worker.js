@@ -103,7 +103,19 @@ self.addEventListener('message', event => {
     event.waitUntil(
       bgSyncPlugin.queue
         .replayRequests()
-        .catch(err => console.error('Background sync replay failed', err))
+        .catch(err => {
+          console.error('Background sync replay failed', err);
+          // Try to notify clients about the failure
+          self.clients.matchAll().then(clients => {
+            clients.forEach(client => {
+              try {
+                client.postMessage({ type: 'SYNC_FAILED', error: err.message });
+              } catch (postError) {
+                console.error('Failed to post sync failure message:', postError);
+              }
+            });
+          });
+        })
     );
   }
 });
