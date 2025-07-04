@@ -35,3 +35,16 @@ npm run dev
 The application should load normally instead of showing a blank screen.
 
 If the issue persists, clear your browser cache and check the console for additional errors.
+
+## 4. Offline Development Mode
+
+If you're unable to install dependencies due to network restrictions,
+you can still work in a limited offline environment:
+
+```bash
+./offline-dev.sh
+```
+
+This script generates temporary shims and starts a simple local server on
+port `8080`. It allows you to view static pages and continue editing
+TypeScript code until full installation is possible.
