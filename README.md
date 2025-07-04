@@ -200,6 +200,7 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
    - Run `npm run fix:loading` to diagnose and apply the emergency loader
    - A fail-safe message will now appear if the page stays blank for a few seconds
    - Detection logic improved to catch cases where only stylesheets or scripts are rendered
+   - See [docs/BLANK_SCREEN_FIX_GUIDE.md](docs/BLANK_SCREEN_FIX_GUIDE.md) for detailed instructions
 
 For detailed troubleshooting, see the [Supabase Authentication Setup Guide](docs/SUPABASE_AUTHENTICATION_SETUP.md).
 
