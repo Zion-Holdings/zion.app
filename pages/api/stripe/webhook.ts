@@ -54,7 +54,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const file = path.join(process.cwd(), 'data', 'points.json');
         let ledger: any[] = [];
         try {
-          ledger = JSON.parse(fs.readFileSync(file, 'utf8'));
+          const fileContent = fs.readFileSync(file, 'utf8');
+          ledger = JSON.parse(String(fileContent));
         } catch (readError) {
           // Log the error for debugging but continue with empty ledger
           logErrorToProduction('Failed to read points file:', { data: readError });

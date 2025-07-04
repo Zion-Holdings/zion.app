@@ -306,7 +306,7 @@ body {
 
   body {
     @apply bg-background text-foreground;
-    font-family: theme('fontFamily.sans'); /* Using Inter as base sans-serif */
+    font-family: 'Inter', sans-serif; /* Using Inter as base sans-serif */
     -webkit-font-smoothing: antialiased; /* Smoother fonts on WebKit */
     -moz-osx-font-smoothing: grayscale; /* Smoother fonts on Firefox */
   }
@@ -317,7 +317,7 @@ body {
   h4,
   h5,
   h6 {
-    font-family: theme('fontFamily.heading'); /* Orbitron for headings */
+    font-family: 'Orbitron', sans-serif; /* Orbitron for headings */
     letter-spacing: -0.025em; /* Slightly tighter letter spacing for headings */
   }
 
@@ -405,7 +405,7 @@ body {
   img {
     max-width: 100%;
     height: auto;
-    border-radius: theme('borderRadius.md'); /* Consistent rounded corners for images */
+    border-radius: 0.5rem; /* Consistent rounded corners for images */
   }
 
   /* LiveKit UI overrides - can be updated if LiveKit is themed */
@@ -427,7 +427,7 @@ body {
     padding: 0.5rem 1rem;
     z-index: 9999; /* Ensure it's on top */
     transition: top 0.3s ease-in-out;
-    border-bottom-right-radius: theme('borderRadius.md');
+    border-bottom-right-radius: 0.5rem;
   }
 
   .skip-link:focus {
@@ -487,7 +487,7 @@ body {
   }
   .interactive-hover:hover {
     transform: translateY(-2px);
-    box-shadow: theme('boxShadow.modern-md');
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   }
 
 
