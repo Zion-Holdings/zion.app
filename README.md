@@ -200,6 +200,7 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
    - Run `npm run fix:loading` to diagnose and apply the emergency loader
    - A fail-safe message will now appear if the page stays blank for a few seconds
    - Detection logic improved to catch cases where only stylesheets or scripts are rendered
+   - See [docs/BLANK_SCREEN_FIX_GUIDE.md](docs/BLANK_SCREEN_FIX_GUIDE.md) for detailed instructions
 
 For detailed troubleshooting, see the [Supabase Authentication Setup Guide](docs/SUPABASE_AUTHENTICATION_SETUP.md).
 
@@ -240,6 +241,19 @@ The application includes built-in monitoring for:
 - File system integrity
 - Environment configuration validation
 - Error reporting and analytics
+
+### Troubleshooting Blank Screens
+If the application loads with a completely empty page, it usually means
+the required `node_modules` directory is missing. Check `next_dev_server.log`
+for errors and reinstall dependencies:
+
+```bash
+./setup.sh npm
+npm run build && npm run dev
+```
+
+If you don't have network connectivity, run `./offline-dev.sh` to start a
+minimal offline server until you can reinstall the packages.
 
 ### Self-Maintenance Automation
 The project includes several automations that help it heal itself and stay up to date:

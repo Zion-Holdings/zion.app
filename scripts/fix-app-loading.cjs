@@ -26,8 +26,9 @@ function checkAppStatus() {
       if (/EAI_AGAIN|ENOTFOUND|403 Forbidden/.test(installErr.message)) {
         console.error('Network access appears to be restricted.');
         console.error('Ensure internet connectivity or configure a proxy before running the setup script.');
+        console.error('You can still work in a limited offline mode by running "./offline-dev.sh".');
       }
-      console.log('   -> Please run "./setup.sh npm" manually.');
+      console.log('   -> Please run "./setup.sh npm" manually when connectivity is restored.');
       return false;
     }
     return true;

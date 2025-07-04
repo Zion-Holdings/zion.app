@@ -1,7 +1,7 @@
 /* eslint-env serviceworker */
 /* global workbox */
 
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.5.4/workbox-sw.js');
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.1.5/workbox-sw-no-eval.js');
 
 self.skipWaiting();
 workbox.core.clientsClaim();

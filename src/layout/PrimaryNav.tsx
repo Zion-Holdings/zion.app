@@ -57,7 +57,7 @@ export function PrimaryNav() {
   return (
     <>
       <header
-        className="sticky top-0 z-70 w-full border-b border-primary/20 bg-card/90 backdrop-blur-md"
+        className="sticky top-0 z-70 w-full border-b border-primary/20 bg-gradient-to-r from-zion-blue via-zion-purple to-zion-cyan text-white backdrop-blur-md"
         role="navigation"
         aria-label="Primary"
         data-testid="header"
