@@ -1,7 +1,24 @@
 /* eslint-env serviceworker */
 /* global workbox */
 
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.1.5/workbox-sw-no-eval.js');
+// Try multiple CDNs for Workbox
+try {
+  importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.1.5/workbox-sw-no-eval.js');
+} catch (e) {
+  try {
+    importScripts('https://cdn.jsdelivr.net/npm/workbox-sw@6.1.5/build/workbox-sw.js');
+  } catch (e2) {
+    try {
+      importScripts('https://unpkg.com/workbox-sw@6.1.5/build/workbox-sw.js');
+    } catch (e3) {
+      console.error('Failed to load Workbox from all CDNs:', e3);
+      // Fallback to basic service worker without Workbox
+      self.skipWaiting();
+      self.clientsClaim();
+      return;
+    }
+  }
+}
 
 self.skipWaiting();
 workbox.core.clientsClaim();
