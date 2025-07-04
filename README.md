@@ -255,6 +255,9 @@ npm run build && npm run dev
 If you don't have network connectivity, run `./offline-dev.sh` to start a
 minimal offline server until you can reinstall the packages.
 
+Refer to the more detailed [Blank Screen Troubleshooting Guide](docs/BLANK_SCREEN_FIX_GUIDE.md)
+for additional steps and diagnostics if the issue persists.
+
 ### Self-Maintenance Automation
 The project includes several automations that help it heal itself and stay up to date:
 
