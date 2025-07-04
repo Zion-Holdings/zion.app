@@ -1031,4 +1031,9 @@ const nextConfig = {
 
 };
 
+// Remove deprecated experimental.esmExternals if present
+if (nextConfig.experimental && 'esmExternals' in nextConfig.experimental) {
+  delete nextConfig.experimental.esmExternals;
+}
+
 export default nextConfig;
