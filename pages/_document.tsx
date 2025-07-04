@@ -20,18 +20,18 @@ export default function Document() {
   }, 10000);`;
 
   // Detect blank screen after hydration
-  const blankScreenDetectScript = `window.addEventListener('load', function () {
-    setTimeout(function () {
-      var root = document.getElementById('__next');
-      if (root && root.innerText.trim() === '') {
-        var first = root.firstElementChild;
-        if (!first || ['SCRIPT','STYLE','LINK'].indexOf(first.tagName) !== -1) {
-          console.error("Blank screen detected - replacing content");
-          root.innerHTML = '<div style="padding:2rem;text-align:center;font-family:sans-serif;"><h2>Application failed to load.</h2><p>Please refresh the page.</p><p>If the issue persists, run <code>./setup.sh npm</code> and <code>npm run fix:loading</code>.</p></div>';
-        }
+  const blankScreenDetectScript = `(function(){
+    function showFallback(){
+      var root=document.getElementById('__next');
+      if(!root)return;
+      var first=root.firstElementChild;
+      if(root.innerText.trim()===''||root.children.length===0||!first||['SCRIPT','STYLE','LINK'].indexOf(first.tagName)!==-1){
+        console.error('Blank screen detected - showing fallback');
+        root.innerHTML='<div style="padding:2rem;text-align:center;font-family:sans-serif;"><h2>Application failed to load.</h2><p>Please refresh the page.</p><p>If the issue persists, run <code>./setup.sh npm</code> and <code>npm run fix:loading</code>.</p></div>';
       }
-    }, 3000);
-  });`;
+    }
+    window.addEventListener('load',function(){setTimeout(showFallback,3000);});
+  })();`;
   const globalErrorScript = `['error','unhandledrejection'].forEach(function(evt){
     window.addEventListener(evt, function(){
       var root = document.getElementById('__next');
