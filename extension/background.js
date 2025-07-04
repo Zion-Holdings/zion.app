@@ -33,7 +33,7 @@ async function askZionGPT(prompt) {
   }
 }
 
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener(async (message, sender) => {
   // Validate sender to prevent unauthorized access
   if (sender.id !== chrome.runtime.id) {
     const errorMessage =
@@ -41,56 +41,33 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       `Sender ID: ${sender.id || 'N/A (sender.id is undefined, possibly a webpage)'}, ` +
       `Extension ID: ${chrome.runtime.id}`;
     console.error(errorMessage);
-    sendResponse({ error: 'Unauthorized sender' });
-    return false; // Don't keep the message channel open
+    return { error: 'Unauthorized sender' };
   }
 
-  // Handle different message types
-  if (message.type === 'ask') {
-    // Handle async operation properly
-    askZionGPT(message.prompt)
-      .then(response => sendResponse(response))
-      .catch(error => {
-        console.error('Ask ZionGPT error:', error);
-        sendResponse({ error: error.message || 'Failed to process request' });
-      });
-    return true; // Keep the message channel open for async response
-  }
+  try {
+    if (message.type === 'ask') {
+      return await askZionGPT(message.prompt);
+    }
 
-  if (message.type === 'post-job') {
-    try {
-      chrome.tabs.create({ url: `${BASE_URL}/jobs/new` });
-      sendResponse({ ok: true });
-    } catch (error) {
-      console.error('Post job error:', error);
-      sendResponse({ error: 'Failed to open job posting page' });
+    if (message.type === 'post-job') {
+      await chrome.tabs.create({ url: `${BASE_URL}/jobs/new` });
+      return { ok: true };
     }
-    return false; // Synchronous response
-  }
-  
-  if (message.type === 'resume-search') {
-    try {
-      chrome.tabs.create({ url: `${BASE_URL}/talent` });
-      sendResponse({ ok: true });
-    } catch (error) {
-      console.error('Resume search error:', error);
-      sendResponse({ error: 'Failed to open talent page' });
-    }
-    return false; // Synchronous response
-  }
-  
-  if (message.type === 'view-notifications') {
-    try {
-      chrome.tabs.create({ url: `${BASE_URL}/notifications` });
-      sendResponse({ ok: true });
-    } catch (error) {
-      console.error('View notifications error:', error);
-      sendResponse({ error: 'Failed to open notifications page' });
-    }
-    return false; // Synchronous response
-  }
 
-  // Unknown message type
-  sendResponse({ error: 'Unknown message type' });
-  return false; // Don't keep the message channel open
+    if (message.type === 'resume-search') {
+      await chrome.tabs.create({ url: `${BASE_URL}/talent` });
+      return { ok: true };
+    }
+
+    if (message.type === 'view-notifications') {
+      await chrome.tabs.create({ url: `${BASE_URL}/notifications` });
+      return { ok: true };
+    }
+
+    // Unknown message type
+    return { error: 'Unknown message type' };
+  } catch (error) {
+    console.error('Background script error:', error);
+    return { error: error.message || 'Failed to process request' };
+  }
 });
