@@ -461,7 +461,7 @@ export default function Marketplace() {
   // Loading state with skeleton
   if (loading && products.length === 0) {
     return (
-      <div className="container py-8" data-testid="marketplace-loading">
+      <main className="container py-8" data-testid="marketplace-loading">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -479,28 +479,28 @@ export default function Marketplace() {
             <SkeletonCard key={i} />
           ))}
         </div>
-      </div>
+      </main>
     );
   }
 
   // Error state with retry
   if (error && products.length === 0) {
     return (
-      <div className="container py-8">
+      <main className="container py-8">
         <div className="text-center space-y-4">
           <ErrorState error={error} />
           <Button onClick={refresh}>
             Try Again
           </Button>
         </div>
-      </div>
+      </main>
     );
   }
 
   // Empty state (only show when not loading and no products)
   if (!loading && products.length === 0 && !error) {
     return (
-      <div className="container py-8">
+      <main className="container py-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -513,15 +513,15 @@ export default function Marketplace() {
             {t('marketplace.hero_subtitle')}
           </p>
         </motion.div>
-        
+
         <ProductsEmptyState />
-      </div>
+      </main>
     );
   }
 
   // Main marketplace render
   return (
-    <div className="container py-8">
+    <main className="container py-8">
       <AuthModal
         isOpen={isAuthModalOpen}
         onClose={() => setIsAuthModalOpen(false)}
@@ -708,6 +708,6 @@ export default function Marketplace() {
           </motion.button>
         )}
       </AnimatePresence>
-    </div>
+    </main>
   );
 }

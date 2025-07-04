@@ -72,7 +72,7 @@ export default function Home() {
   const firstName =
     user?.displayName?.split(' ')[0] || user?.name?.split(' ')[0];
   return (
-    <div className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background">
       <NextSeo
         title="Zion Tech Marketplace - Discover Innovative Tech Solutions"
         description="Explore Zion Tech Marketplace for game-changing solutions. Join now to connect, shop, and grow with leading innovators. Get started today for free resources and exclusive offers!"
@@ -149,6 +149,6 @@ export default function Home() {
           style: { animationDelay: '0.8s' },
         } as { className?: string; style?: React.CSSProperties })}
       />
-    </div>
+    </main>
   );
 }
