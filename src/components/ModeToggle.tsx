@@ -1,19 +1,17 @@
-
-
 import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { toast } from "@/hooks/use-toast"
 import { darkModeMessages, lightModeMessages } from "@/utils/themeToggleMessages"
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 import { Moon, Sun } from 'lucide-react';
-// Use the ThemeProvider hook directly to ensure no conflicts
-import { useTheme } from "@/components/ThemeProvider"
+// Use the correct ThemeProvider hook from context
+import { useThemePreset } from "@/context/ThemeContext"
 import { logIssue } from "@/utils/logIssue"
 import { useEffect, useState } from "react"
 
 export function ModeToggle() {
 
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useThemePreset();
   const [isClient, setIsClient] = useState(false);
 
   // Ensure we're on the client side to avoid hydration mismatches
