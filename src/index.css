@@ -8,552 +8,581 @@
 @import './styles/OnsiteForm.css';
 
 /*
-  CSS Custom Properties for Theming.
-  The primary definitions are now within @layer base.
-  The :root definitions here are commented out to avoid conflicts
-  as theme colors are intended to be primarily managed by themeUtils.ts
-  and fall back to the definitions in @layer base.
+  Enhanced CSS Custom Properties for Modern Theming.
+  Improved color palette with better contrast and accessibility.
 */
 
-/*
 :root {
-  --background: hsl(0 0% 100%);
-  --foreground: hsl(0 0% 3.9%);
-  --primary: hsl(221 83% 53%);
-  --primary-foreground: hsl(0 0% 98%);
-  --secondary: hsl(14 80% 60%);
-  --secondary-foreground: hsl(240 5.9% 10%);
-  --card: hsl(0 0% 100%);
-  --card-foreground: hsl(0 0% 3.9%);
-  --border: hsl(0 0% 89.8%);
-  --input: hsl(0 0% 89.8%);
-  --ring: hsl(221 83% 53%);
-  --accent: hsl(286 63% 55%);
-  --accent-foreground: hsl(0 0% 98%);
-  --muted: hsl(240 4.8% 95.9%);
-  --muted-foreground: hsl(240 3.8% 38%);
-  --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(0 0% 3.9%);
-  --destructive: hsl(0 84% 60%);
-  --destructive-foreground: hsl(0 0% 98%);
+  /* Enhanced color palette with better contrast ratios */
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 221.2 83.2% 53.3%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222.2 84% 4.9%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222.2 84% 4.9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 221.2 83.2% 53.3%;
+  --radius: 0.75rem;
+  
+  /* Enhanced spacing scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  
+  /* Enhanced typography scale */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+  
+  /* Enhanced shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  
+  /* Enhanced gradients */
+  --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(221.2 83.2% 63.3%) 100%);
+  --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(210 40% 90%) 100%);
+  --gradient-accent: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(210 40% 90%) 100%);
 }
 
 :root[data-theme='dark'] {
-  --background: hsl(222, 47%, 8%);
-  --foreground: hsl(0, 0%, 95%);
-  --primary: hsl(221, 100%, 66%);
-  --primary-foreground: hsl(222, 47%, 8%);
-  --secondary: hsl(14, 92%, 70%);
-  --secondary-foreground: hsl(0, 0%, 95%);
-  --card: hsl(220, 30%, 11%);
-  --card-foreground: hsl(0, 0%, 95%);
-  --border: hsl(222, 39%, 17%);
-  --input: hsl(222, 39%, 17%);
-  --ring: hsl(221, 100%, 66%);
-  --accent: hsl(286, 75%, 63%);
-  --accent-foreground: hsl(0, 0%, 95%);
-  --muted: hsl(220, 30%, 15%);
-  --muted-foreground: hsl(0, 0%, 63.9%);
-  --popover: hsl(220, 30%, 11%);
-  --popover-foreground: hsl(0, 0%, 95%);
-  --destructive: hsl(0 62% 30%);
-  --destructive-foreground: hsl(0 0% 98%);
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 217.2 91.2% 59.8%;
+  --primary-foreground: 222.2 84% 4.9%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 224.3 76.3% 94.1%;
 }
 
 :root[data-theme='light'] {
-  --background: hsl(0 0% 100%);
-  --foreground: hsl(0 0% 3.9%);
-  --primary: hsl(221 83% 53%);
-  --primary-foreground: hsl(0 0% 98%);
-  --secondary: hsl(14 80% 60%);
-  --secondary-foreground: hsl(240 5.9% 10%);
-  --card: hsl(0 0% 100%);
-  --card-foreground: hsl(0 0% 3.9%);
-  --border: hsl(0 0% 89.8%);
-  --input: hsl(0 0% 89.8%);
-  --ring: hsl(221 83% 53%);
-  --accent: hsl(286 63% 55%);
-  --accent-foreground: hsl(0 0% 98%);
-  --muted: hsl(240 4.8% 95.9%);
-  --muted-foreground: hsl(240 3.8% 38%);
-  --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(0 0% 3.9%);
-  --destructive: hsl(0 84% 60%);
-  --destructive-foreground: hsl(0 0% 98%);
-}
-*/
-
-/*
-  The prefers-color-scheme media query is commented out to prevent conflicts
-  with the JavaScript-based theme switching (themeUtils.ts), which also handles
-  detecting system preference. If a pure CSS fallback for system preference
-  is desired when JavaScript is disabled, this can be re-enabled, ensuring
-  it defines *all* necessary CSS variables consistently.
-*/
-/*
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
-    --background: hsl(222, 47%, 8%);
-    --foreground: hsl(0, 0%, 95%);
-    --primary: hsl(221, 100%, 66%);
-    --primary-foreground: hsl(222, 47%, 8%);
-    --secondary: hsl(14, 92%, 70%);
-    --secondary-foreground: hsl(0, 0%, 95%);
-    --card: hsl(220, 30%, 11%);
-    --card-foreground: hsl(0, 0%, 95%);
-    --border: hsl(222, 39%, 17%);
-    --input: hsl(222, 39%, 17%);
-    --ring: hsl(221, 100%, 66%);
-    --accent: hsl(286, 75%, 63%);
-    --accent-foreground: hsl(0, 0%, 95%);
-    --muted: hsl(220, 30%, 15%);
-    --muted-foreground: hsl(0, 0%, 63.9%);
-    --popover: hsl(220, 30%, 11%);
-    --popover-foreground: hsl(0, 0%, 95%);
-    --destructive: hsl(0 62% 30%);
-    --destructive-foreground: hsl(0 0% 98%);
-  }
-}
-*/
-
-/*Scoped Theme Variables for Mobile App */
-.mobile-app {
-  min-height: 100vh; /* Ensure it takes full height */
-}
-
-.mobile-app[data-theme='light'] {
-  --background: hsl(0 0% 100%);
-  --foreground: hsl(0 0% 3.9%);
-  --primary: hsl(221 83% 53%);
-  --primary-foreground: hsl(0 0% 98%);
-  --secondary: hsl(14 80% 60%);
-  --secondary-foreground: hsl(240 5.9% 10%);
-  --card: hsl(0 0% 100%);
-  --card-foreground: hsl(0 0% 3.9%);
-  --border: hsl(0 0% 89.8%);
-  --input: hsl(0 0% 89.8%);
-  --ring: hsl(221 83% 53%);
-  --accent: hsl(286 63% 55%);
-  --accent-foreground: hsl(0 0% 98%);
-
-  background-color: var(--background);
-  color: var(--foreground);
-}
-
-.mobile-app[data-theme='dark'] {
-  --background: hsl(222, 47%, 8%);
-  --foreground: hsl(0, 0%, 95%);
-  --primary: hsl(221, 100%, 66%);
-  --primary-foreground: hsl(222, 47%, 8%);
-  --secondary: hsl(14, 92%, 70%);
-  --secondary-foreground: hsl(0, 0%, 95%);
-  --card: hsl(220, 30%, 11%);
-  --card-foreground: hsl(0, 0%, 95%);
-  --border: hsl(222, 39%, 17%);
-  --input: hsl(222, 39%, 17%);
-  --ring: hsl(221, 100%, 66%);
-  --accent: hsl(286, 75%, 63%);
-  --accent-foreground: hsl(0, 0%, 95%);
-
-  background-color: var(--background);
-  color: var(--foreground);
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 221.2 83.2% 53.3%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222.2 84% 4.9%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222.2 84% 4.9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 221.2 83.2% 53.3%;
 }
 
 /* Support for Tailwind's dark mode class */
 :root.dark {
-  --background: hsl(222, 47%, 8%);
-  --foreground: hsl(0, 0%, 95%);
-  --primary: hsl(221, 100%, 66%);
-  --primary-foreground: hsl(222, 47%, 8%);
-  --secondary: hsl(14, 92%, 70%);
-  --secondary-foreground: hsl(0, 0%, 95%);
-  --card: hsl(220, 30%, 11%);
-  --card-foreground: hsl(0, 0%, 95%);
-  --border: hsl(222, 39%, 17%);
-  --input: hsl(222, 39%, 17%);
-  --ring: hsl(221, 100%, 66%);
-  --accent: hsl(286, 75%, 63%);
-  --accent-foreground: hsl(0, 0%, 95%);
-  --muted: hsl(220, 30%, 15%);
-  --muted-foreground: hsl(0, 0%, 63.9%);
-  --popover: hsl(220, 30%, 11%);
-  --popover-foreground: hsl(0, 0%, 95%);
-  --destructive: hsl(0 62% 30%);
-  --destructive-foreground: hsl(0 0% 98%);
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 217.2 91.2% 59.8%;
+  --primary-foreground: 222.2 84% 4.9%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 224.3 76.3% 94.1%;
 }
 
-/* Theme transition animations */
+/* Enhanced theme transition animations */
 *,
 *::before,
 *::after {
   transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+    background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Global layout fixes */
+/* Global layout improvements */
 html,
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
+  height: 100%;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
+/* Enhanced container with better responsive behavior */
 .container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 1.5rem;
-  box-sizing: border-box;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+  max-width: 1200px;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  :root {
-    --font-sans: 'Inter', system-ui, sans-serif; /* Matches tailwind.config.js */
-    /* font-heading is applied via theme('fontFamily.heading') which uses Orbitron from tailwind.config.js */
-
-    /* Default to zionDefault preset values (light theme) */
-    --background: hsl(210 40% 98%);      /* #f8fafc slate-50 */
-    --foreground: hsl(222 47% 11%);      /* #0f172a slate-900 */
-
-    --card: hsl(0 0% 100%);              /* #ffffff white */
-    --card-foreground: hsl(222 47% 11%); /* #0f172a slate-900 */
-
-    --popover: hsl(0 0% 100%);           /* #ffffff white */
-    --popover-foreground: hsl(222 47% 11%);/* #0f172a slate-900 */
-
-    --primary: hsl(224 76% 58%);         /* #2563eb blue-600 */
-    --primary-foreground: hsl(0 0% 100%);/* #ffffff white */
-
-    --secondary: hsl(215 20% 91%);       /* #e2e8f0 slate-200 */
-    --secondary-foreground: hsl(222 47% 18%);/* #1e293b slate-800 */
-
-    --muted: hsl(215 20% 91%);           /* #e2e8f0 slate-200 */
-    --muted-foreground: hsl(215 25% 34%); /* #475569 slate-600 */
-
-    --accent: hsl(224 76% 58%);          /* #2563eb blue-600 */
-    --accent-foreground: hsl(0 0% 100%); /* #ffffff white */
-
-    --destructive: hsl(0 72% 51%);       /* #dc2626 red-600 */
-    --destructive-foreground: hsl(0 100% 99%);/* #fef2f2 red-50 */
-
-    --border: hsl(215 28% 85%);          /* #cbd5e1 slate-300 */
-    --input: hsl(0 0% 100%);             /* #ffffff white (input field background) */
-                                         /* border for input will be --border */
-    --ring: hsl(var(--modern-primary)); /* Updated ring color */
-
-    --radius: 0.75rem; /* Slightly larger radius for a modern feel */
-
-    /* Sidebar variables - updated for modern theme */
-    --sidebar-background: hsl(var(--modern-bg));
-    --sidebar-foreground: hsl(var(--modern-text));
-    --sidebar-primary: hsl(var(--modern-primary));
-    --sidebar-primary-foreground: hsl(var(--modern-text-dark));
-    --sidebar-accent: hsl(var(--modern-accent));
-    --sidebar-accent-foreground: hsl(var(--modern-text-dark));
-    --sidebar-border: hsl(220, 15%, 85%); /* Lighter border for sidebar */
-    --sidebar-ring: hsl(var(--modern-primary));
-  }
-
-  /* Dark theme fallback for prefers-color-scheme if JS is disabled/fails */
-  /* Aligns with the 'dark' preset from themeUtils.ts and modern dark variables */
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) {
-      --background: hsl(var(--modern-bg-dark));
-      --foreground: hsl(var(--modern-text-dark));
-      --card: hsl(220, 25%, 15%); /* Slightly lighter card for dark mode */
-      --card-foreground: hsl(var(--modern-text-dark));
-      --popover: hsl(var(--modern-bg-dark));
-      --popover-foreground: hsl(var(--modern-text-dark));
-      --primary: hsl(var(--modern-primary)); /* Already good for dark */
-      --primary-foreground: hsl(var(--modern-text-dark));
-      --secondary: hsl(var(--modern-secondary)); /* Already good for dark */
-      --secondary-foreground: hsl(var(--modern-text-dark));
-      --muted: hsl(220, 25%, 20%); /* Muted for dark */
-      --muted-foreground: hsl(220, 15%, 70%); /* Muted text for dark */
-      --accent: hsl(var(--modern-accent)); /* Already good for dark */
-      --accent-foreground: hsl(var(--modern-text-dark));
-      --destructive: hsl(0, 70%, 50%); /* Brighter destructive for dark */
-      --destructive-foreground: hsl(0, 0%, 100%);
-      --border: hsl(220, 25%, 25%); /* Border for dark */
-      --input: hsl(220, 25%, 20%);  /* Input bg for dark */
-      --ring: hsl(var(--modern-primary));
-
-      /* Dark theme sidebar variables */
-      --sidebar-background: hsl(var(--modern-bg-dark));
-      --sidebar-foreground: hsl(var(--modern-text-dark));
-      --sidebar-primary: hsl(var(--modern-primary));
-      --sidebar-primary-foreground: hsl(var(--modern-text-dark));
-      --sidebar-accent: hsl(var(--modern-accent));
-      --sidebar-accent-foreground: hsl(var(--modern-text-dark));
-      --sidebar-border: hsl(220, 25%, 25%);
-      --sidebar-ring: hsl(var(--modern-primary));
-    }
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
   }
 }
 
-@layer base {
-  * {
-    border-color: hsl(var(--border)); /* Uses the updated --border variable */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
   }
+}
 
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+    padding-left: var(--space-xl);
+    padding-right: var(--space-xl);
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+/* Enhanced base styles */
+:root {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+  }
+}
+
+/* Enhanced base element styles */
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  font-size: var(--font-size-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Enhanced typography hierarchy */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  color: hsl(var(--foreground));
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+}
+
+h1 {
+  font-size: var(--font-size-5xl);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: var(--font-size-4xl);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  font-size: var(--font-size-3xl);
+  font-weight: 600;
+}
+
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: var(--space-md);
+  line-height: 1.7;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Enhanced content sections */
+.content-section {
+  padding: var(--space-2xl) 0;
+  margin: var(--space-xl) 0;
+}
+
+/* Enhanced modern card styling */
+.card-modern {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.card-modern:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* Enhanced button styles */
+.button-modern-primary {
+  background: var(--gradient-primary);
+  color: hsl(var(--primary-foreground));
+  border: none;
+  border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-lg);
+  font-weight: 500;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.button-modern-secondary {
+  background: transparent;
+  color: hsl(var(--primary));
+  border: 2px solid hsl(var(--primary));
+  border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-lg);
+  font-weight: 500;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+/* Enhanced animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Enhanced scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--foreground));
+}
+
+/* Enhanced focus styles */
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Enhanced accessibility */
+[data-lk-theme='default'] {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 221.2 83.2% 53.3%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222.2 84% 4.9%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222.2 84% 4.9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 221.2 83.2% 53.3%;
+}
+
+/* Enhanced skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  padding: 8px;
+  text-decoration: none;
+  border-radius: var(--radius);
+  z-index: 10000;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Enhanced focus styles */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+  border-radius: var(--radius);
+}
+
+/* Enhanced form styling */
+input, textarea, select {
+  background-color: hsl(var(--input));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-base);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  color: hsl(var(--foreground));
+}
+
+input:disabled, textarea:disabled, select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: hsl(var(--muted));
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: hsl(var(--ring));
+  box-shadow: 0 0 0 3px hsl(var(--ring) / 0.1);
+}
+
+/* Enhanced link styling */
+a {
+  color: hsl(var(--primary));
+  text-decoration: none;
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:hover {
+  color: hsl(var(--primary) / 0.8);
+  text-decoration: underline;
+}
+
+/* Enhanced button styling */
+button,
+.button {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 500;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+}
+
+/* Enhanced interactive hover effects */
+.interactive-hover {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interactive-hover:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Enhanced animations */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Enhanced mobile responsiveness */
+@media (max-width: 768px) {
   body {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
-    font-family: 'Inter', sans-serif; /* Using Inter as base sans-serif */
-    -webkit-font-smoothing: antialiased; /* Smoother fonts on WebKit */
-    -moz-osx-font-smoothing: grayscale; /* Smoother fonts on Firefox */
+    font-size: var(--font-size-sm);
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: 'Orbitron', sans-serif; /* Orbitron for headings */
-    letter-spacing: -0.025em; /* Slightly tighter letter spacing for headings */
+  button,
+  .button {
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--font-size-sm);
   }
 
   h1 {
-    @apply text-4xl md:text-5xl font-extrabold text-modern-primary mb-6; /* Using modern primary */
+    font-size: var(--font-size-3xl);
   }
 
   h2 {
-    @apply text-3xl md:text-4xl font-bold text-modern-secondary mb-4; /* Using modern secondary */
+    font-size: var(--font-size-2xl);
   }
 
   h3 {
-    @apply text-2xl font-semibold text-foreground mb-3; /* Standard foreground for h3 for better contrast */
+    font-size: var(--font-size-xl);
   }
 
-  h4,
-  h5,
-  h6 {
-    @apply font-medium text-muted-foreground mb-2; /* Muted foreground for less emphasis */
-  }
-
-  p {
-    @apply text-base text-foreground leading-relaxed mb-4;
-    line-height: 1.7; /* Increased line-height for readability */
-  }
-
-  .content-section {
-    @apply my-12 md:my-16 py-8; /* Added padding for better spacing */
-    /* Example of a subtle background gradient for sections */
-    /* background-image: linear-gradient(to bottom, hsl(var(--modern-bg)), transparent); */
-  }
-
-  .card-modern { /* Utility class for cards with modern styling */
-    @apply bg-card shadow-modern-md rounded-xl p-6 transition-all duration-300 ease-out hover:shadow-modern-lg;
-  }
-
-  .button-modern-primary {
-    @apply bg-modern-primary text-white font-semibold py-3 px-6 rounded-lg shadow-modern-sm hover:bg-modern-primary-hover transition-all duration-200 ease-out transform hover:-translate-y-0.5;
-  }
-
-  .button-modern-secondary {
-    @apply bg-modern-secondary text-white font-semibold py-3 px-6 rounded-lg shadow-modern-sm hover:opacity-90 transition-all duration-200 ease-out transform hover:-translate-y-0.5;
-  }
-
-  /* Pulse animation remains useful */
-  @keyframes pulse {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.5;
-    }
-  }
-
-  .pulse {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
-  /* Custom scrollbar for webkit browsers - modernized */
-  ::-webkit-scrollbar {
-    width: 12px; /* Slightly wider scrollbar */
-  }
-
-  ::-webkit-scrollbar-track {
-    background: hsl(var(--modern-bg)); /* Modern background for track */
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: hsl(var(--modern-primary)); /* Modern primary for thumb */
-    border-radius: 6px; /* Rounded thumb */
-    border: 3px solid hsl(var(--modern-bg)); /* Creates padding around thumb */
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--modern-primary-hover)); /* Modern primary hover */
-  }
-
-  /* Smooth scrolling */
-  html {
-    scroll-behavior: smooth;
-    scrollbar-color: hsl(var(--modern-primary)) hsl(var(--modern-bg)); /* For Firefox */
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 0.5rem; /* Consistent rounded corners for images */
-  }
-
-  /* LiveKit UI overrides - can be updated if LiveKit is themed */
-  [data-lk-theme='default'] {
-    --lk-color-accent: hsl(var(--modern-primary));
-    --lk-button-background: hsl(var(--modern-primary));
-    --lk-button-background-hover: hsl(var(--modern-primary-hover));
-    --lk-bg1: hsl(var(--modern-bg-dark)); /* Dark background for LiveKit components */
-    --lk-bg2: hsl(220, 25%, 15%); /* Slightly lighter dark background */
-  }
-
-  /* Skip link styles - enhanced */
-  .skip-link {
-    position: absolute;
-    top: -2.5rem; /* Adjusted position */
-    left: 0.5rem;
-    background: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
-    padding: 0.5rem 1rem;
-    z-index: 9999; /* Ensure it's on top */
-    transition: top 0.3s ease-in-out;
-    border-bottom-right-radius: 0.5rem;
-  }
-
-  .skip-link:focus {
-    top: 0.5rem; /* Visible position on focus */
-  }
-
-  /* Ensure keyboard focus outlines are visible and modern */
-  button:focus-visible,
-  a:focus-visible,
-  input:focus-visible,
-  textarea:focus-visible,
-  select:focus-visible {
-    outline: 3px solid hsl(var(--ring)); /* Thicker ring */
-    outline-offset: 2px;
-    box-shadow: 0 0 0 3px hsla(var(--ring), 0.3); /* Softer outer glow */
-  }
-
-  /* Input styling enhancements */
-  input, textarea, select {
-    @apply bg-input border rounded-md px-3 py-2 text-foreground placeholder-muted-foreground;
-    border-color: hsl(var(--border));
-    @apply focus:ring-2 focus:ring-ring focus:border-transparent focus:outline-none;
-    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  }
-  input:disabled, textarea:disabled, select:disabled {
-    @apply bg-muted opacity-70 cursor-not-allowed;
-  }
-
-  /*
-  input::placeholder,
-  textarea::placeholder {
-    color: hsl(var(--muted-foreground));
-    opacity: 1;
-  }
-  */
-}
-
-@layer components {
-  a {
-    @apply transition-colors duration-200 ease-in-out hover:text-modern-primary; /* Use modern primary for hover */
-    text-decoration: none; /* Remove underline by default, add on hover if desired */
-  }
-  a:hover {
-    /* text-decoration: underline; */ /* Optional: underline on hover */
-  }
-
-
-  button,
-  [role="button"] {
-    touch-action: manipulation;
-    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
-    /* Base button styling can be added here if not using utility classes like .button-modern-primary */
-  }
-
-  /* Example of a subtle hover effect for interactive elements */
-  .interactive-hover {
-     @apply transition-all duration-200 ease-out;
-  }
-  .interactive-hover:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-  }
-
-
-  @keyframes slide-up { /* Keeping slide-up, it's a common modern effect */
-    from {
-      transform: translateY(100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  .animate-slide-up {
-    animation: slide-up 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; /* Smoother easing */
-  }
-
-  .animate-fade-in { /* Using the fadeIn from tailwind config */
-      animation: fadeIn 0.5s ease-out forwards;
-  }
-
-  /* Mobile optimizations - adjusted for modern touch targets */
-  @media (max-width: 768px) {
-    body {
-      font-size: 1rem; /* Slightly larger base font for mobile readability */
-    }
-
-    button,
-    [role='button'],
-    input,
-    textarea,
-    select {
-      min-height: 48px; /* Larger touch targets */
-      padding: 0.875rem; /* Adjusted padding */
-    }
-
-    .container {
-      padding-left: 1rem; /* Consistent padding */
-      padding-right: 1rem;
-    }
-    h1 { @apply text-3xl; }
-    h2 { @apply text-2xl; }
-    h3 { @apply text-xl; }
+  .container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
   }
 }
 
-/* Existing specific styles, review if they need to use new modern variables */
+/* Enhanced utility classes */
 .request-btn {
-  @apply button-modern-primary; /* Apply modern primary button style */
-}
-.request-textarea {
-  @apply bg-input border rounded-md p-3 text-foreground placeholder-muted-foreground;
-  border-color: hsl(var(--border));
-  /* color: hsl(var(--foreground)); Already handled by text-foreground */
-}
-.request-textarea::placeholder {
-  /* color: hsl(var(--muted-foreground)); Already handled by placeholder-muted-foreground */
+  background: var(--gradient-primary);
+  color: hsl(var(--primary-foreground));
+  border: none;
+  border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-lg);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.request-textarea {
+  background-color: hsl(var(--input));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  font-size: var(--font-size-base);
+  color: hsl(var(--foreground));
+  resize: vertical;
+  min-height: 120px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.request-textarea:focus {
+  outline: none;
+  border-color: hsl(var(--ring));
+  box-shadow: 0 0 0 3px hsl(var(--ring) / 0.1);
+}
+
+.request-textarea::placeholder {
+  color: hsl(var(--muted-foreground));
+}
+
+/* Enhanced mobile-specific styles */
 @media (max-width: 640px) {
   .search-dropdown {
-    max-width: 95vw; /* Slightly more width */
-    left: 2.5vw;
-    @apply rounded-lg shadow-modern-lg; /* Modern shadow and rounding */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    background: hsl(var(--background));
   }
 }

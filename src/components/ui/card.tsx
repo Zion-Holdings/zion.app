@@ -1,27 +1,46 @@
-
 import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
+import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
-export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
-  asChild?: boolean
-}
-const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  ({ className, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "div"
-    return (
-      <Comp
-        ref={ref}
-        className={cn(
-          "rounded-lg border bg-card text-card-foreground shadow-sm",
-          className
-        )}
-        {...props}
-      />
-    )
+const cardVariants = cva(
+  "rounded-lg border bg-card text-card-foreground shadow-sm transition-all duration-200",
+  {
+    variants: {
+      variant: {
+        default: "border-border",
+        elevated: "border-border shadow-md hover:shadow-lg hover:-translate-y-1",
+        outline: "border-border bg-transparent",
+        ghost: "border-transparent bg-transparent shadow-none",
+        modern: "border-border shadow-lg hover:shadow-xl hover:-translate-y-2 bg-gradient-to-br from-card to-card/50",
+        glass: "border-border/50 bg-card/80 backdrop-blur-sm shadow-lg",
+        gradient: "border-transparent bg-gradient-to-br from-primary/10 to-secondary/10 shadow-lg",
+      },
+      padding: {
+        none: "p-0",
+        sm: "p-3",
+        default: "p-6",
+        lg: "p-8",
+        xl: "p-10",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      padding: "default",
+    },
   }
 )
+
+const Card = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof cardVariants>
+>(({ className, variant, padding, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(cardVariants({ variant, padding, className }))}
+    {...props}
+  />
+))
 Card.displayName = "Card"
 
 const CardHeader = React.forwardRef<
@@ -83,4 +102,4 @@ const CardFooter = React.forwardRef<
 ))
 CardFooter.displayName = "CardFooter"
 
-export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent, cardVariants }

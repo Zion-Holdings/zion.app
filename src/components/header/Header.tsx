@@ -9,11 +9,13 @@ import { useWhitelabel } from '@/context/WhitelabelContext';
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { generateSearchSuggestions } from "@/data/marketplaceData";
 import { slugify } from "@/lib/slugify";
-import { useRouter } from "next/router"; // Changed from react-router-dom
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import { useTranslation } from 'react-i18next';
 import { logInfo } from '@/utils/productionLogger';
+import { Button } from '@/components/ui/button';
+import { Search, Menu, X, Bell, ShoppingCart } from 'lucide-react';
 
 export interface HeaderProps {
   hideLogin?: boolean;
@@ -31,8 +33,9 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
     (user && typeof user !== 'boolean' ? (user.displayName?.split(' ')[0] || user.name?.split(' ')[0]) : undefined) || '';
   const { isWhitelabel, primaryColor } = useWhitelabel();
   const { t } = useTranslation();
-  const router = useRouter(); // Changed from useNavigate
+  const router = useRouter();
   const [query, setQuery] = useState("");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const searchSuggestions = generateSearchSuggestions();
   
   // If we have a white-label tenant and no specific customTheme is provided,
@@ -42,12 +45,6 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
     backgroundColor: '#000000', // Default dark background
     textColor: '#ffffff', // Default light text
   } : undefined);
-  
-  // const headerStyle = effectiveTheme ? {
-  //   backgroundColor: effectiveTheme.backgroundColor,
-  //   color: effectiveTheme.textColor,
-  //   borderColor: `${effectiveTheme.primaryColor}20`
-  // } : {};
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -60,81 +57,200 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
         .catch((err) => logInfo('Search navigation failed', { data: err }));
     }
   };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
   
   return (
     <header 
-      className="sticky top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-md text-foreground"
-      // style={headerStyle} // Removed inline style
+      className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur-md text-foreground shadow-sm"
     >
-      <div className="container flex h-16 items-center px-4 sm:px-6">
-        <Logo customLogo={customLogo}  />
-
-        <div className="ml-6 flex-1">
-          <MainNavigation />
+      <div className="container flex h-16 items-center justify-between px-4 sm:px-6">
+        {/* Logo and Navigation */}
+        <div className="flex items-center gap-6">
+          <Logo customLogo={customLogo} />
+          
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-6">
+            <MainNavigation />
+          </nav>
         </div>
-        <form onSubmit={handleSubmit} className="hidden md:block w-64 mx-4">
-          <EnhancedSearchInput
-            value={query}
-            onChange={setQuery}
-            onSelectSuggestion={(suggestion) => {
-              logInfo('Header search suggestion selected:', { data: suggestion });
-              // Navigate to specific item if slug and type indicate direct link, otherwise search by text
-              if (suggestion.slug && (suggestion.type === 'product' || suggestion.type === 'doc' || suggestion.type === 'blog')) {
-                // Assuming product slugs are like /marketplace/listing/id
-                // doc slugs are like /docs/path
-                // blog slugs are like /blog/post-slug
-                let path = suggestion.slug;
-                if (suggestion.type === 'product' && !suggestion.slug.startsWith('/marketplace/listing/')) {
-                    path = `/marketplace/listing/${suggestion.slug}`;
-                } else if (suggestion.type === 'doc' && !suggestion.slug.startsWith('/docs')) {
-                    // This case might need refinement based on actual doc slug structure
-                    path = `/docs/${suggestion.slug}`;
-                } else if (suggestion.type === 'blog' && !suggestion.slug.startsWith('/blog/')) {
-                    path = `/blog/${suggestion.slug}`;
-                }
-                router.push(path);
-              } else {
-                router.push(`/search?q=${encodeURIComponent(suggestion.text)}`);
-              }
-              setQuery("");
-            }}
-            searchSuggestions={searchSuggestions}
-          />
-        </form>
 
-        <div className="flex items-center gap-2">
+        {/* Search Bar - Desktop */}
+        <div className="hidden lg:flex flex-1 max-w-md mx-8">
+          <form onSubmit={handleSubmit} className="w-full">
+            <EnhancedSearchInput
+              value={query}
+              onChange={setQuery}
+              onSelectSuggestion={(suggestion) => {
+                logInfo('Header search suggestion selected:', { data: suggestion });
+                // Navigate to specific item if slug and type indicate direct link, otherwise search by text
+                if (suggestion.slug && (suggestion.type === 'product' || suggestion.type === 'doc' || suggestion.type === 'blog')) {
+                  // Assuming product slugs are like /marketplace/listing/id
+                  // doc slugs are like /docs/path
+                  // blog slugs are like /blog/post-slug
+                  let path = suggestion.slug;
+                  if (suggestion.type === 'product' && !suggestion.slug.startsWith('/marketplace/listing/')) {
+                      path = `/marketplace/listing/${suggestion.slug}`;
+                  } else if (suggestion.type === 'doc' && !suggestion.slug.startsWith('/docs')) {
+                      // This case might need refinement based on actual doc slug structure
+                      path = `/docs/${suggestion.slug}`;
+                  } else if (suggestion.type === 'blog' && !suggestion.slug.startsWith('/blog/')) {
+                      path = `/blog/${suggestion.slug}`;
+                  }
+                  router.push(path);
+                } else {
+                  router.push(`/search?q=${encodeURIComponent(suggestion.text)}`);
+                }
+                setQuery("");
+              }}
+              searchSuggestions={searchSuggestions}
+            />
+          </form>
+        </div>
+
+        {/* Right Side Actions */}
+        <div className="flex items-center gap-3">
+          {/* Points Badge */}
           <PointsBadge />
-          {!user && !hideLogin && (
-            <>
-              <Link
-                href="/auth/login"
-                className="text-sm text-foreground hover:text-primary"
-                aria-label="Login"
-              >
-                Login
-              </Link>
-              <Link
-                href="/signup"
-                className="ml-2 text-sm text-foreground hover:text-primary"
-                aria-label="Sign up"
-              >
-                Sign up
-              </Link>
-            </>
-          )}
+          
+          {/* Search Button - Mobile */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="lg:hidden"
+            onClick={() => {/* Toggle mobile search */}}
+            aria-label="Search"
+          >
+            <Search className="h-4 w-4" />
+          </Button>
+
+          {/* Notifications */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="relative"
+            aria-label="Notifications"
+          >
+            <Bell className="h-4 w-4" />
+            <span className="absolute -top-1 -right-1 h-2 w-2 bg-red-500 rounded-full"></span>
+          </Button>
+
+          {/* Cart */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="relative"
+            aria-label="Shopping Cart"
+          >
+            <ShoppingCart className="h-4 w-4" />
+            <span className="absolute -top-1 -right-1 h-2 w-2 bg-primary rounded-full"></span>
+          </Button>
+
+          {/* Language Selector */}
           <LanguageSelector />
-          {user && (
-            <span
-              className="hidden sm:block text-sm text-foreground mr-2"
-              data-testid="header-greeting"
-            >
-              {t('general.greeting_user', { name: firstName })}
-            </span>
+
+          {/* User Actions */}
+          {!user && !hideLogin ? (
+            <div className="hidden sm:flex items-center gap-3">
+              <Button variant="ghost" size="sm" asChild>
+                <Link href="/auth/login">
+                  {t('auth.login')}
+                </Link>
+              </Button>
+              <Button size="sm" asChild>
+                <Link href="/signup">
+                  {t('auth.signup')}
+                </Link>
+              </Button>
+            </div>
+          ) : (
+            <div className="flex items-center gap-3">
+              {user && (
+                <span
+                  className="hidden sm:block text-sm text-muted-foreground"
+                  data-testid="header-greeting"
+                >
+                  {t('general.greeting_user', { name: firstName })}
+                </span>
+              )}
+              {/* User avatar menu */}
+              {!hideLogin && user && <AvatarMenu />}
+            </div>
           )}
-          {/* User avatar menu */}
-          {!hideLogin && user && <AvatarMenu />}
+
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
+          </Button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-md">
+          <div className="container px-4 py-4 space-y-4">
+            {/* Mobile Search */}
+            <form onSubmit={handleSubmit}>
+              <EnhancedSearchInput
+                value={query}
+                onChange={setQuery}
+                onSelectSuggestion={(suggestion) => {
+                  logInfo('Mobile search suggestion selected:', { data: suggestion });
+                  if (suggestion.slug && (suggestion.type === 'product' || suggestion.type === 'doc' || suggestion.type === 'blog')) {
+                    let path = suggestion.slug;
+                    if (suggestion.type === 'product' && !suggestion.slug.startsWith('/marketplace/listing/')) {
+                        path = `/marketplace/listing/${suggestion.slug}`;
+                    } else if (suggestion.type === 'doc' && !suggestion.slug.startsWith('/docs')) {
+                        path = `/docs/${suggestion.slug}`;
+                    } else if (suggestion.type === 'blog' && !suggestion.slug.startsWith('/blog/')) {
+                        path = `/blog/${suggestion.slug}`;
+                    }
+                    router.push(path);
+                  } else {
+                    router.push(`/search?q=${encodeURIComponent(suggestion.text)}`);
+                  }
+                  setQuery("");
+                  setIsMobileMenuOpen(false);
+                }}
+                searchSuggestions={searchSuggestions}
+              />
+            </form>
+
+            {/* Mobile Navigation */}
+            <nav className="space-y-2">
+              <MainNavigation />
+            </nav>
+
+            {/* Mobile Auth Buttons */}
+            {!user && !hideLogin && (
+              <div className="flex flex-col gap-2 pt-4 border-t border-border/50">
+                <Button variant="outline" asChild>
+                  <Link href="/auth/login" onClick={() => setIsMobileMenuOpen(false)}>
+                    {t('auth.login')}
+                  </Link>
+                </Button>
+                <Button asChild>
+                  <Link href="/signup" onClick={() => setIsMobileMenuOpen(false)}>
+                    {t('auth.signup')}
+                  </Link>
+                </Button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </header>
   );
 }
