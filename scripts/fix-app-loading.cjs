@@ -26,7 +26,14 @@ function checkAppStatus() {
       if (/EAI_AGAIN|ENOTFOUND|403 Forbidden/.test(installErr.message)) {
         console.error('Network access appears to be restricted.');
         console.error('Ensure internet connectivity or configure a proxy before running the setup script.');
-        console.error('You can still work in a limited offline mode by running "./offline-dev.sh".');
+        console.error('Attempting to start offline development mode...');
+        try {
+          execSync('bash offline-dev.sh', { stdio: 'inherit' });
+          console.log('✅ Offline development mode started.');
+        } catch (offlineErr) {
+          console.error('Failed to start offline mode:', offlineErr.message);
+          console.error('You can still run "./offline-dev.sh" manually.');
+        }
       }
       console.log('   -> Please run "./setup.sh npm" manually when connectivity is restored.');
       return false;
