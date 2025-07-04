@@ -35,11 +35,12 @@ if (typeof window !== 'undefined') {
       const root = document.getElementById('__next');
       if (root && root.innerText.trim() === '') {
         console.error('Blank screen detected - attempting recovery');
-        // Try to show a fallback UI
+        // Show a basic fallback with additional instructions
         root.innerHTML = `
           <div style="padding: 2rem; text-align: center; font-family: sans-serif; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
             <h1 style="color: #333; margin-bottom: 1rem;">Zion Tech Marketplace</h1>
-            <p style="color: #666; margin-bottom: 2rem;">Loading application...</p>
+            <p style="color: #666; margin-bottom: 1rem;">Loading application...</p>
+            <p style="color: #666; margin-bottom: 1rem;">If refreshing doesn't work, visit <a href='/offline.html'>offline mode</a> for troubleshooting steps.</p>
             <button onclick="window.location.reload()" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
               Reload Page
             </button>
