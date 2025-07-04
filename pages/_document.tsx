@@ -23,8 +23,9 @@ export default function Document() {
   const blankScreenDetectScript = `window.addEventListener('load', function () {
     setTimeout(function () {
       var root = document.getElementById('__next');
-      if (root && root.innerText.trim() === '') {
-        var first = root.firstElementChild;
+      var isEmpty = !root || root.innerText.trim() === '' || root.children.length === 0;
+      if (isEmpty) {
+        var first = root && root.firstElementChild;
         if (!first || ['SCRIPT','STYLE','LINK'].indexOf(first.tagName) !== -1) {
           console.error("Blank screen detected - replacing content");
           root.innerHTML = '<div style="padding:2rem;text-align:center;font-family:sans-serif;">\
