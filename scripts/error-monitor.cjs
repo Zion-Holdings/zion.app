@@ -236,13 +236,18 @@ class ErrorMonitor {
     
     // Only flag as error if it matches error patterns and doesn't contain success context
     const hasErrorPattern = errorPatterns.some(pattern => pattern.test(upperText));
-    const hasSuccessContext = upperText.includes('FIX') || upperText.includes('RESOLV') || 
+    const hasSuccessContext = upperText.includes('FIX') || upperText.includes('RESOLV') ||
                              upperText.includes('SUCCESS') || upperText.includes('COMPLET');
-    
+
     if (hasErrorPattern && !hasSuccessContext) {
       return 'error';
     }
-    
+
+    // Handle common deprecation noise as informational only
+    if (upperText.includes("THE CJS BUILD OF VITE'S NODE API IS DEPRECATED")) {
+      return 'info';
+    }
+
     // Check for warnings
     const warningIndicators = [
       'WARNING:', 'WARN:', 'DEPRECATED', 'OUTDATED', 'SLOW PERFORMANCE',
