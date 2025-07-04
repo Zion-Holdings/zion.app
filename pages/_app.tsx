@@ -238,6 +238,18 @@ function MyApp({ Component, pageProps }: AppProps) {
     return () => clearTimeout(timer);
   }, []);
 
+  // Failsafe: ensure loading state resolves even if initialization hangs
+  useEffect(() => {
+    const forceTimer = setTimeout(() => {
+      if (isLoading) {
+        console.warn('Force completing app initialization due to timeout');
+        setIsLoading(false);
+      }
+    }, 3000);
+
+    return () => clearTimeout(forceTimer);
+  }, [isLoading]);
+
   // Handle router events for page transitions
   useEffect(() => {
     const handleRouteChangeStart = () => {
