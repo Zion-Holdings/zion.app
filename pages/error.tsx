@@ -4,8 +4,11 @@ import { AlertTriangle } from 'lucide-react';
 
 import Link from 'next/link'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 export default function ErrorPage() {
+  const router = useRouter();
+  
   return (
     <>
       <Head>
@@ -37,15 +40,18 @@ export default function ErrorPage() {
               </ul>
               
               <div className="pt-4 space-y-2">
-                <Button asChild className="w-full">
-                  <Link href="/auth/login">
-                    Try Again
-                  </Link>
+                <Button 
+                  onClick={() => router.push('/auth/login')}
+                  className="w-full"
+                >
+                  Try Again
                 </Button>
-                <Button asChild variant="outline" className="w-full">
-                  <Link href="/">
-                    Go to Homepage
-                  </Link>
+                <Button 
+                  onClick={() => router.push('/')}
+                  variant="outline" 
+                  className="w-full"
+                >
+                  Go to Homepage
                 </Button>
               </div>
               
