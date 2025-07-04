@@ -669,6 +669,7 @@ const nextConfig = {
     // Next.js default usedExports setting
     config.experiments = {
       ...(config.experiments || {}),
+      cacheUnaffected: false,
     };
 
     // Add optimization to prevent temporal dead zone issues
