@@ -33,10 +33,14 @@ if (typeof window !== 'undefined') {
   window.addEventListener('load', () => {
     setTimeout(() => {
       const root = document.getElementById('__next');
-      if (root && root.innerText.trim() === '') {
-        console.error('Blank screen detected - attempting recovery');
-        // Show a basic fallback with additional instructions
-        root.innerHTML = `
+      if (root) {
+        const hasVisible = Array.from(root.children || []).some(
+          (el) => !['SCRIPT', 'STYLE', 'LINK'].includes(el.tagName)
+        );
+        if (!hasVisible && root.innerText.trim() === '') {
+          console.error('Blank screen detected - attempting recovery');
+          // Show a basic fallback with additional instructions
+          root.innerHTML = `
           <div style="padding: 2rem; text-align: center; font-family: sans-serif; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
             <h1 style="color: #333; margin-bottom: 1rem;">Zion Tech Marketplace</h1>
             <p style="color: #666; margin-bottom: 1rem;">Loading application...</p>
@@ -46,6 +50,7 @@ if (typeof window !== 'undefined') {
             </button>
           </div>
         `;
+        }
       }
     }, 3000);
   });

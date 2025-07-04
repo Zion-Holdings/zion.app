@@ -23,10 +23,12 @@ export default function Document() {
   const blankScreenDetectScript = `window.addEventListener('load', function () {
     setTimeout(function () {
       var root = document.getElementById('__next');
-      var isEmpty = !root || root.innerText.trim() === '' || root.children.length === 0;
-      if (isEmpty) {
-        var first = root && root.firstElementChild;
-        if (!first || ['SCRIPT','STYLE','LINK'].indexOf(first.tagName) !== -1) {
+      if (root) {
+        var hasVisible = Array.from(root.children || []).some(function (el) {
+          return ['SCRIPT','STYLE','LINK'].indexOf(el.tagName) === -1;
+        });
+        var isBlank = !hasVisible && root.innerText.trim() === '';
+        if (isBlank) {
           console.error("Blank screen detected - replacing content");
           root.innerHTML = '<div style="padding:2rem;text-align:center;font-family:sans-serif;">\
             <h2>Application failed to load.</h2>\
