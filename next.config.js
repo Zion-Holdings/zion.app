@@ -535,17 +535,18 @@ const nextConfig = {
       }
     }
     
-    // For Netlify deployment, exclude problematic files temporarily
-    if (process.env.SKIP_TYPE_CHECK === 'true') {
-      config.externals = config.externals || [];
-      config.externals.push({
-        './src/context/FavoritesContext.tsx': 'empty',
-        './src/context/LanguageContext.tsx': 'empty', 
-        './src/context/RequestQuoteWizard.tsx': 'empty',
-        './src/context/WhitelabelContext.tsx': 'empty',
-        './src/hooks/useApiKeys.ts': 'empty',
-      });
-    }
+    // // For Netlify deployment, exclude problematic files temporarily
+    // if (process.env.SKIP_TYPE_CHECK === 'true') {
+    //   console.warn("SKIP_TYPE_CHECK is true, but context externalization hack is currently disabled for debugging.");
+    //   // config.externals = config.externals || [];
+    //   // config.externals.push({
+    //   //   './src/context/FavoritesContext.tsx': 'empty',
+    //   //   './src/context/LanguageContext.tsx': 'empty',
+    //   //   './src/context/RequestQuoteWizard.tsx': 'empty',
+    //   //   './src/context/WhitelabelContext.tsx': 'empty',
+    //   //   './src/hooks/useApiKeys.ts': 'empty',
+    //   // });
+    // }
 
     // Smart Sentry detection: Disable automatically if would cause build issues
     const shouldDisableSentry = process.env.SKIP_SENTRY_BUILD === 'true' || 
