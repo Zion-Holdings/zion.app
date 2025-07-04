@@ -51,48 +51,21 @@ if (typeof window !== 'undefined') {
   });
 }
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Provider as ReduxProvider } from 'react-redux';
-import { store } from '@/store';
-import { SimpleErrorBoundary } from '@/components/SimpleErrorBoundary';
-import { SimpleLoading } from '@/components/SimpleLoading';
-import '../src/index.css';
 
-// Minimal app without complex providers
+// Ultra-minimal app - no providers, no complex logic
 function MyApp({ Component, pageProps }: AppProps) {
-  const [queryClient] = useState(() => new QueryClient());
-  const router = useRouter();
-  const [isLoading, setIsLoading] = useState(true);
-
-  // CRITICAL: Force content to show after 2 seconds maximum
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      console.log('App timeout - forcing content display');
-      setIsLoading(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Show loading screen
-  if (isLoading) {
-    return <SimpleLoading message="Loading Zion Tech Marketplace..." />;
-  }
-
-  // Minimal app render - just the component without complex providers
   return (
-    <SimpleErrorBoundary>
+    <>
       <Head>
         <title>Zion Tech Marketplace</title>
         <meta name="description" content="Discover innovative tech solutions" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Component {...pageProps} />
-    </SimpleErrorBoundary>
+    </>
   );
 }
 
