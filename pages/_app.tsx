@@ -28,6 +28,26 @@ if (typeof window !== 'undefined') {
       event.preventDefault();
     }
   });
+  
+  // Add blank screen detection
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const root = document.getElementById('__next');
+      if (root && root.innerText.trim() === '') {
+        console.error('Blank screen detected - attempting recovery');
+        // Try to show a fallback UI
+        root.innerHTML = `
+          <div style="padding: 2rem; text-align: center; font-family: sans-serif; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <h1 style="color: #333; margin-bottom: 1rem;">Zion Tech Marketplace</h1>
+            <p style="color: #666; margin-bottom: 2rem;">Loading application...</p>
+            <button onclick="window.location.reload()" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+              Reload Page
+            </button>
+          </div>
+        `;
+      }
+    }, 3000);
+  });
 }
 
 import React, { useEffect, useState, Suspense } from 'react'; // Added Suspense
@@ -40,6 +60,8 @@ import '../src/index.css';
 import { Provider as ReduxProvider } from 'react-redux';
 import { store } from '@/store';
 import { HydrationErrorBoundary } from '@/components/HydrationErrorBoundary';
+import AppFallback from '@/components/AppFallback';
+import EnvironmentCheck from '@/components/EnvironmentCheck';
 
 import { I18nextProvider } from 'react-i18next';
 import i18n from '../src/i18n';
@@ -106,32 +128,7 @@ class AppErrorBoundary extends React.Component<
 
   render() {
     if (this.state.hasError) {
-      return (
-        <div style={{ 
-          padding: '2rem', 
-          textAlign: 'center',
-          maxWidth: '600px',
-          margin: '0 auto',
-          fontFamily: 'Arial, sans-serif'
-        }}>
-          <h2>⚠️ Application Error</h2>
-          <p>Something went wrong while loading the application.</p>
-          <button 
-            onClick={() => window.location.reload()}
-            style={{
-              padding: '10px 20px',
-              backgroundColor: '#007bff',
-              color: 'white',
-              border: 'none',
-              borderRadius: '5px',
-              cursor: 'pointer',
-              marginTop: '1rem'
-            }}
-          >
-            Reload Page
-          </button>
-        </div>
-      );
+      return <AppFallback error={this.state.error} retry={() => window.location.reload()} />;
     }
 
     return this.props.children;
@@ -268,7 +265,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         // // Small delay to show completion
         // await new Promise(resolve => setTimeout(resolve, 200));
 
-        // // PERFORMANCE: Initialize Web Vitals monitoring in production
+        // PERFORMANCE: Initialize Web Vitals monitoring in production
         // if (typeof window !== 'undefined' && process.env.NODE_ENV === 'production') {
         //   try {
         //     const { onCLS, onFCP, onINP, onLCP, onTTFB } = await import('web-vitals');
@@ -382,21 +379,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     };
 
     // Force initialization completion after maximum 3 seconds
-    // const forceInitTimeout = setTimeout(() => {
-    //   console.warn('Force completing app initialization due to timeout');
-    //   setLoadingProgress(100); // Ensure progress is full on timeout
-    //   setIsLoading(false);
-    // }, 3000);
-
-    // initializeApp().finally(() => {
-    //   clearTimeout(forceInitTimeout);
-    // });
-
-    // return () => {
-    //   clearTimeout(forceInitTimeout);
-    // };
-
-    // Force initialization completion after maximum 3 seconds
     const forceInitTimeout = setTimeout(() => {
       console.warn('Force completing app initialization due to timeout');
       setLoadingProgress(100); // Ensure progress is full on timeout
@@ -482,21 +464,34 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   // Main app render with all providers
   return (
-    <QueryClientProvider client={queryClient}> {/* Added QueryClientProvider */}
+    <AppErrorBoundary>
       <ProviderWrapper>
-        <Head>
-          <title>Zion App - AI Marketplace & DAO Platform</title>
-        <meta name="description" content="Zion App - The ultimate AI marketplace and DAO platform for the future of work" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-            <HydrationErrorBoundary>
-              <div>
-                <Component {...pageProps} />
-              </div>
-            </HydrationErrorBoundary>
+        <I18nextProvider i18n={i18n}>
+          <ReduxProvider store={store}>
+            <QueryClientProvider client={queryClient}>
+              <HydrationErrorBoundary>
+                <ThemeProvider>
+                  <WhitelabelProvider>
+                    <AuthProvider>
+                      <CartProvider>
+                        <FeedbackProvider>
+                          <DynamicWalletProvider>
+                            <DynamicAnalyticsProvider>
+                              <Component {...pageProps} />
+                              <EnvironmentCheck />
+                            </DynamicAnalyticsProvider>
+                          </DynamicWalletProvider>
+                        </FeedbackProvider>
+                      </CartProvider>
+                    </AuthProvider>
+                  </WhitelabelProvider>
+                </ThemeProvider>
+              </HydrationErrorBoundary>
+            </QueryClientProvider>
+          </ReduxProvider>
+        </I18nextProvider>
       </ProviderWrapper>
-    </QueryClientProvider>
+    </AppErrorBoundary>
   );
 }
 
