@@ -1017,6 +1017,9 @@ const nextConfig = {
   if (config.cache && config.cache.cacheUnaffected !== undefined) {
     delete config.cache.cacheUnaffected;
   }
+  if (config.optimization && 'cacheUnaffected' in config.optimization) {
+    delete config.optimization.cacheUnaffected;
+  }
   if (config.experiments && 'cacheUnaffected' in config.experiments) {
     config.experiments.cacheUnaffected = false;
   }
