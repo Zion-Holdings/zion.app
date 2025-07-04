@@ -23,9 +23,12 @@ export default function Document() {
   const blankScreenDetectScript = `window.addEventListener('load', function () {
     setTimeout(function () {
       var root = document.getElementById('__next');
-      if (root && root.innerText.trim() === '' && (!root.firstElementChild || root.firstElementChild.tagName === 'SCRIPT')) {
-        console.error("Blank screen detected - replacing content");
-        root.innerHTML = '<div style="padding:2rem;text-align:center;font-family:sans-serif;"><h2>Application failed to load.</h2><p>Please refresh the page.</p><p>If the issue persists, run <code>./setup.sh npm</code> and <code>npm run fix:loading</code>.</p></div>';
+      if (root && root.innerText.trim() === '') {
+        var first = root.firstElementChild;
+        if (!first || ['SCRIPT','STYLE','LINK'].indexOf(first.tagName) !== -1) {
+          console.error("Blank screen detected - replacing content");
+          root.innerHTML = '<div style="padding:2rem;text-align:center;font-family:sans-serif;"><h2>Application failed to load.</h2><p>Please refresh the page.</p><p>If the issue persists, run <code>./setup.sh npm</code> and <code>npm run fix:loading</code>.</p></div>';
+        }
       }
     }, 3000);
   });`;
@@ -33,7 +36,10 @@ export default function Document() {
     window.addEventListener(evt, function(){
       var root = document.getElementById('__next');
       if (root && root.innerText.trim() === '') {
-        root.innerHTML = '<div style="padding:2rem;text-align:center;font-family:sans-serif;'><h2>Application failed to load.</h2><p>Check the browser console for errors.</p><p>If dependencies are missing, run <code>./setup.sh npm</code>.</p></div>';
+        var first = root.firstElementChild;
+        if (!first || ['SCRIPT','STYLE','LINK'].indexOf(first.tagName) !== -1) {
+          root.innerHTML = '<div style="padding:2rem;text-align:center;font-family:sans-serif;'><h2>Application failed to load.</h2><p>Check the browser console for errors.</p><p>If dependencies are missing, run <code>./setup.sh npm</code>.</p></div>';
+        }
       }
     });
   });`;
