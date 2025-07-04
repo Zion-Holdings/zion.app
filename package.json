@@ -434,5 +434,8 @@
   "bugs": {
     "url": "https://github.com/Zion-Holdings/zion.app/issues"
   },
-  "homepage": "https://github.com/Zion-Holdings/zion.app#readme"
+  "homepage": "https://github.com/Zion-Holdings/zion.app#readme",
+  "overrides": {
+    "superagent": "^9.0.0"
+  }
 }
