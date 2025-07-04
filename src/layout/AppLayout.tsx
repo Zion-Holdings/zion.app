@@ -12,6 +12,7 @@ import { ScrollProgressBar } from "@/components/ScrollProgressBar";
 import { Footer } from "@/components/Footer";
 import { AnalyticsConsentBanner } from "@/components/AnalyticsConsentBanner";
 import { SkipLink } from "@/components/SkipLink";
+import { Container } from '@/components/Container';
 import { useGlobalLoader } from '@/context/GlobalLoaderContext';
 import LoaderOverlay from '@/components/LoaderOverlay';
 import ErrorOverlay from '@/components/ErrorOverlay';
@@ -112,7 +113,7 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
         aria-label="Main content"
         className="flex-grow"
       >
-        {children}
+        <Container className="py-6">{children}</Container>
       </main>
       <BackToTopButton />
       <FeedbackWidget />

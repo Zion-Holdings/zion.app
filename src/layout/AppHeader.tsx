@@ -3,6 +3,7 @@ import { useMessaging } from '@/context/MessagingContext';
 import Link from 'next/link';
 import { ResponsiveNavigation } from '@/components/navigation/ResponsiveNavigation';
 import { Logo } from '@/components/header/Logo';
+import { Container } from '@/components/Container';
 import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
 
@@ -50,7 +51,7 @@ export function AppHeader() {
           { "bg-red-500": mobileMenuOpen }
         )}
       >
-        <div className="container flex h-16 items-center px-4 sm:px-6">
+        <Container className="flex h-16 items-center">
           <Logo />
           {showTagline && (
             <span className="ml-4 hidden text-sm text-muted-foreground md:inline">
@@ -115,7 +116,7 @@ export function AppHeader() {
               <UserMenu />
             </div>
           )}
-        </div>
+        </Container>
       </header>
       
       {/* Mobile menu - positioned outside of header to prevent overlap issues */}
