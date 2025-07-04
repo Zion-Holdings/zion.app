@@ -247,62 +247,68 @@ body {
     --border: hsl(215 28% 85%);          /* #cbd5e1 slate-300 */
     --input: hsl(0 0% 100%);             /* #ffffff white (input field background) */
                                          /* border for input will be --border */
-    --ring: hsl(224 76% 58%);            /* #2563eb blue-600 */
+    --ring: hsl(var(--modern-primary)); /* Updated ring color */
 
-    --radius: 0.5rem;
+    --radius: 0.75rem; /* Slightly larger radius for a modern feel */
 
-    /* Sidebar variables - kept as existing, review if they need to be part of presets */
-    /* These might need adjustment if they clash with the zionDefault light theme */
-    --sidebar-background: hsl(210 40% 96%);   /* current: light gray */
-    --sidebar-foreground: hsl(224 71% 4%);    /* current: very dark blue */
-    --sidebar-primary: hsl(262 83% 58%);      /* current: purple */
-    --sidebar-primary-foreground: hsl(210 40% 98%); /* current: very light gray */
-    --sidebar-accent: hsl(210 40% 96%);       /* current: light gray */
-    --sidebar-accent-foreground: hsl(224 71% 4%); /* current: very dark blue */
-    --sidebar-border: hsl(214 32% 91%);       /* current: light gray border */
-    --sidebar-ring: hsl(262 83% 58%);         /* current: purple */
+    /* Sidebar variables - updated for modern theme */
+    --sidebar-background: hsl(var(--modern-bg));
+    --sidebar-foreground: hsl(var(--modern-text));
+    --sidebar-primary: hsl(var(--modern-primary));
+    --sidebar-primary-foreground: hsl(var(--modern-text-dark));
+    --sidebar-accent: hsl(var(--modern-accent));
+    --sidebar-accent-foreground: hsl(var(--modern-text-dark));
+    --sidebar-border: hsl(220, 15%, 85%); /* Lighter border for sidebar */
+    --sidebar-ring: hsl(var(--modern-primary));
   }
 
   /* Dark theme fallback for prefers-color-scheme if JS is disabled/fails */
-  /* Aligns with the 'dark' preset from themeUtils.ts */
+  /* Aligns with the 'dark' preset from themeUtils.ts and modern dark variables */
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme]) {
-      --background: hsl(222 47% 8%);    /* #030712 slate-950 */
-      --foreground: hsl(210 40% 98%);   /* #f8fafc slate-50 */
-      --card: hsl(222 47% 11%);         /* #0f172a slate-900 */
-      --card-foreground: hsl(210 40% 98%); /* #f8fafc slate-50 */
-      --popover: hsl(222 47% 8%);       /* #030712 slate-950 */
-      --popover-foreground: hsl(210 40% 98%); /* #f8fafc slate-50 */
-      --primary: hsl(217 91% 60%);      /* #60a5fa blue-400 */
-      --primary-foreground: hsl(222 47% 8%); /* #030712 slate-950 */
-      --secondary: hsl(222 47% 11%);    /* #0f172a slate-900 */
-      --secondary-foreground: hsl(220 13% 91%); /* #f1f5f9 slate-100 */
-      --muted: hsl(222 47% 11%);        /* #0f172a slate-900 */
-      --muted-foreground: hsl(215 25% 65%); /* #94a3b8 slate-400 */
-      --accent: hsl(217 91% 60%);       /* #60a5fa blue-400 */
-      --accent-foreground: hsl(222 47% 8%); /* #030712 slate-950 */
-      --destructive: hsl(0 63% 30%);    /* #7f1d1d red-900 */
-      --destructive-foreground: hsl(0 95% 89%); /* #fecaca red-200 */
-      --border: hsl(222 47% 18%);       /* #1e293b slate-800 */
-      --input: hsl(222 47% 18%);        /* #1e293b slate-800 */
-      --ring: hsl(217 91% 60%);         /* #60a5fa blue-400 */
+      --background: hsl(var(--modern-bg-dark));
+      --foreground: hsl(var(--modern-text-dark));
+      --card: hsl(220, 25%, 15%); /* Slightly lighter card for dark mode */
+      --card-foreground: hsl(var(--modern-text-dark));
+      --popover: hsl(var(--modern-bg-dark));
+      --popover-foreground: hsl(var(--modern-text-dark));
+      --primary: hsl(var(--modern-primary)); /* Already good for dark */
+      --primary-foreground: hsl(var(--modern-text-dark));
+      --secondary: hsl(var(--modern-secondary)); /* Already good for dark */
+      --secondary-foreground: hsl(var(--modern-text-dark));
+      --muted: hsl(220, 25%, 20%); /* Muted for dark */
+      --muted-foreground: hsl(220, 15%, 70%); /* Muted text for dark */
+      --accent: hsl(var(--modern-accent)); /* Already good for dark */
+      --accent-foreground: hsl(var(--modern-text-dark));
+      --destructive: hsl(0, 70%, 50%); /* Brighter destructive for dark */
+      --destructive-foreground: hsl(0, 0%, 100%);
+      --border: hsl(220, 25%, 25%); /* Border for dark */
+      --input: hsl(220, 25%, 20%);  /* Input bg for dark */
+      --ring: hsl(var(--modern-primary));
 
-      /* Consider dark theme sidebar variables if needed */
-      /* --sidebar-background: hsl(222 47% 11%); e.g. slate-900 */
-      /* --sidebar-foreground: hsl(210 40% 98%); e.g. slate-50 */
-      /* ... and so on for other sidebar colors */
+      /* Dark theme sidebar variables */
+      --sidebar-background: hsl(var(--modern-bg-dark));
+      --sidebar-foreground: hsl(var(--modern-text-dark));
+      --sidebar-primary: hsl(var(--modern-primary));
+      --sidebar-primary-foreground: hsl(var(--modern-text-dark));
+      --sidebar-accent: hsl(var(--modern-accent));
+      --sidebar-accent-foreground: hsl(var(--modern-text-dark));
+      --sidebar-border: hsl(220, 25%, 25%);
+      --sidebar-ring: hsl(var(--modern-primary));
     }
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border; /* Uses the updated --border variable */
   }
 
   body {
     @apply bg-background text-foreground;
-    font-family: theme('fontFamily.sans');
+    font-family: theme('fontFamily.sans'); /* Using Inter as base sans-serif */
+    -webkit-font-smoothing: antialiased; /* Smoother fonts on WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Smoother fonts on Firefox */
   }
 
   h1,
@@ -311,35 +317,52 @@ body {
   h4,
   h5,
   h6 {
-    font-family: theme('fontFamily.heading');
+    font-family: theme('fontFamily.heading'); /* Orbitron for headings */
+    letter-spacing: -0.025em; /* Slightly tighter letter spacing for headings */
   }
 
   h1 {
-    @apply text-4xl md:text-5xl font-extrabold text-secondary mb-6;
+    @apply text-4xl md:text-5xl font-extrabold text-modern-primary mb-6; /* Using modern primary */
   }
 
   h2 {
-    @apply text-3xl md:text-4xl font-bold text-primary mb-4;
+    @apply text-3xl md:text-4xl font-bold text-modern-secondary mb-4; /* Using modern secondary */
   }
 
   h3 {
-    @apply text-2xl font-semibold text-secondary mb-3;
+    @apply text-2xl font-semibold text-foreground mb-3; /* Standard foreground for h3 for better contrast */
   }
 
   h4,
   h5,
   h6 {
-    @apply font-medium text-foreground mb-2;
+    @apply font-medium text-muted-foreground mb-2; /* Muted foreground for less emphasis */
   }
 
   p {
     @apply text-base text-foreground leading-relaxed mb-4;
+    line-height: 1.7; /* Increased line-height for readability */
   }
 
   .content-section {
-    @apply my-12 md:my-16;
+    @apply my-12 md:my-16 py-8; /* Added padding for better spacing */
+    /* Example of a subtle background gradient for sections */
+    /* background-image: linear-gradient(to bottom, hsl(var(--modern-bg)), transparent); */
   }
 
+  .card-modern { /* Utility class for cards with modern styling */
+    @apply bg-card shadow-modern-md rounded-xl p-6 transition-all duration-300 ease-out hover:shadow-modern-lg;
+  }
+
+  .button-modern-primary {
+    @apply bg-modern-primary text-white font-semibold py-3 px-6 rounded-lg shadow-modern-sm hover:bg-modern-primary-hover transition-all duration-200 ease-out transform hover:-translate-y-0.5;
+  }
+
+  .button-modern-secondary {
+    @apply bg-modern-secondary text-white font-semibold py-3 px-6 rounded-lg shadow-modern-sm hover:opacity-90 transition-all duration-200 ease-out transform hover:-translate-y-0.5;
+  }
+
+  /* Pulse animation remains useful */
   @keyframes pulse {
     0%,
     100% {
@@ -354,72 +377,88 @@ body {
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
-  /* Custom scrollbar for webkit browsers */
+  /* Custom scrollbar for webkit browsers - modernized */
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 12px; /* Slightly wider scrollbar */
   }
 
   ::-webkit-scrollbar-track {
-    background: var(--card);
+    background: hsl(var(--modern-bg)); /* Modern background for track */
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--accent);
-    border-radius: 5px;
+    background: hsl(var(--modern-primary)); /* Modern primary for thumb */
+    border-radius: 6px; /* Rounded thumb */
+    border: 3px solid hsl(var(--modern-bg)); /* Creates padding around thumb */
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--accent);
+    background: hsl(var(--modern-primary-hover)); /* Modern primary hover */
   }
 
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
-    scrollbar-color: var(--accent) var(--card);
+    scrollbar-color: hsl(var(--modern-primary)) hsl(var(--modern-bg)); /* For Firefox */
   }
 
   img {
     max-width: 100%;
     height: auto;
+    border-radius: theme('borderRadius.md'); /* Consistent rounded corners for images */
   }
 
-  /* LiveKit UI overrides */
+  /* LiveKit UI overrides - can be updated if LiveKit is themed */
   [data-lk-theme='default'] {
-    --lk-color-accent: #06b6d4;
-    --lk-button-background: #06b6d4;
-    --lk-button-background-hover: #0891b2;
-    --lk-bg1: #0b1120;
-    --lk-bg2: #0f172a;
+    --lk-color-accent: hsl(var(--modern-primary));
+    --lk-button-background: hsl(var(--modern-primary));
+    --lk-button-background-hover: hsl(var(--modern-primary-hover));
+    --lk-bg1: hsl(var(--modern-bg-dark)); /* Dark background for LiveKit components */
+    --lk-bg2: hsl(220, 25%, 15%); /* Slightly lighter dark background */
   }
 
-  /* Skip link styles */
+  /* Skip link styles - enhanced */
   .skip-link {
     position: absolute;
-    top: -40px;
-    left: 0;
-    background: #ffffff;
-    color: #000000;
+    top: -2.5rem; /* Adjusted position */
+    left: 0.5rem;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
     padding: 0.5rem 1rem;
-    z-index: 1000;
-    transition: top 0.3s;
+    z-index: 9999; /* Ensure it's on top */
+    transition: top 0.3s ease-in-out;
+    border-bottom-right-radius: theme('borderRadius.md');
   }
 
   .skip-link:focus {
-    top: 0;
+    top: 0.5rem; /* Visible position on focus */
   }
 
-  /* Ensure keyboard focus outlines are visible */
+  /* Ensure keyboard focus outlines are visible and modern */
   button:focus-visible,
-  a:focus-visible {
-    outline: 2px solid hsl(var(--ring));
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 3px solid hsl(var(--ring)); /* Thicker ring */
     outline-offset: 2px;
+    box-shadow: 0 0 0 3px hsla(var(--ring), 0.3); /* Softer outer glow */
   }
 
-  /* Improved placeholder contrast */
-  /* Removed fixed color to allow Tailwind's placeholder:text-muted-foreground to take precedence */
+  /* Input styling enhancements */
+  input, textarea, select {
+    @apply bg-input border border-border rounded-md px-3 py-2 text-foreground placeholder-muted-foreground;
+    @apply focus:ring-2 focus:ring-ring focus:border-transparent focus:outline-none;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  input:disabled, textarea:disabled, select:disabled {
+    @apply bg-muted opacity-70 cursor-not-allowed;
+  }
+
   /*
   input::placeholder,
   textarea::placeholder {
+    color: hsl(var(--muted-foreground));
     opacity: 1;
   }
   */
@@ -427,32 +466,54 @@ body {
 
 @layer components {
   a {
-    @apply transition-colors duration-200 hover:text-primary;
-    touch-action: manipulation;
+    @apply transition-colors duration-200 ease-in-out hover:text-modern-primary; /* Use modern primary for hover */
+    text-decoration: none; /* Remove underline by default, add on hover if desired */
   }
+  a:hover {
+    /* text-decoration: underline; */ /* Optional: underline on hover */
+  }
+
 
   button,
   [role="button"] {
     touch-action: manipulation;
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+    /* Base button styling can be added here if not using utility classes like .button-modern-primary */
   }
 
-  @keyframes slide-up {
+  /* Example of a subtle hover effect for interactive elements */
+  .interactive-hover {
+     @apply transition-all duration-200 ease-out;
+  }
+  .interactive-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: theme('boxShadow.modern-md');
+  }
+
+
+  @keyframes slide-up { /* Keeping slide-up, it's a common modern effect */
     from {
       transform: translateY(100%);
+      opacity: 0;
     }
     to {
       transform: translateY(0);
+      opacity: 1;
     }
   }
 
   .animate-slide-up {
-    animation: slide-up 0.3s ease-out;
+    animation: slide-up 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; /* Smoother easing */
   }
 
-  /* Mobile optimizations */
+  .animate-fade-in { /* Using the fadeIn from tailwind config */
+      animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  /* Mobile optimizations - adjusted for modern touch targets */
   @media (max-width: 768px) {
     body {
-      font-size: 0.875rem;
+      font-size: 1rem; /* Slightly larger base font for mobile readability */
     }
 
     button,
@@ -460,31 +521,36 @@ body {
     input,
     textarea,
     select {
-      min-height: 44px;
-      padding: 0.75rem;
+      min-height: 48px; /* Larger touch targets */
+      padding: 0.875rem; /* Adjusted padding */
     }
 
     .container {
-      padding-left: 1.25rem;
-      padding-right: 1.25rem;
+      padding-left: 1rem; /* Consistent padding */
+      padding-right: 1rem;
     }
+    h1 { @apply text-3xl; }
+    h2 { @apply text-2xl; }
+    h3 { @apply text-xl; }
   }
 }
 
+/* Existing specific styles, review if they need to use new modern variables */
 .request-btn {
-  background: #00bcd4;
-  color: #fff;
+  @apply button-modern-primary; /* Apply modern primary button style */
 }
 .request-textarea {
-  color: #000;
+  @apply bg-input border border-border rounded-md p-3 text-foreground placeholder-muted-foreground;
+  /* color: hsl(var(--foreground)); Already handled by text-foreground */
 }
 .request-textarea::placeholder {
-  color: #777;
+  /* color: hsl(var(--muted-foreground)); Already handled by placeholder-muted-foreground */
 }
 
 @media (max-width: 640px) {
   .search-dropdown {
-    max-width: 90vw;
-    left: 5vw;
+    max-width: 95vw; /* Slightly more width */
+    left: 2.5vw;
+    @apply rounded-lg shadow-modern-lg; /* Modern shadow and rounding */
   }
 }
