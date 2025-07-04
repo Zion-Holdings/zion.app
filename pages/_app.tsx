@@ -51,6 +51,13 @@ import { CartProvider } from '../src/context/CartContext';
 import { FeedbackProvider } from '../src/context/FeedbackContext';
 import { ThemeProvider } from '../src/context/ThemeContext';
 
+// Fallback component for dynamic providers
+const DynamicProviderFallback: React.FC<{ providerName: string }> = ({ providerName }) => (
+  <div style={{ display: 'none' }} data-provider-loading={providerName}>
+    Loading {providerName}...
+  </div>
+);
+
 // Dynamically import potentially heavy providers
 const DynamicWalletProvider = dynamic(() =>
   import('../src/context/WalletContext').then(mod => mod.WalletProvider),
@@ -60,13 +67,6 @@ const DynamicWalletProvider = dynamic(() =>
 const DynamicAnalyticsProvider = dynamic(() =>
   import('../src/context/AnalyticsContext').then(mod => mod.AnalyticsProvider),
   { ssr: false, loading: () => <DynamicProviderFallback providerName="Analytics" /> }
-);
-
-// Fallback component for dynamic providers
-const DynamicProviderFallback: React.FC<{ providerName: string }> = ({ providerName }) => (
-  <div style={{ display: 'none' }} data-provider-loading={providerName}>
-    Loading {providerName}...
-  </div>
 );
 
 // Simple local Error Boundary for specific components
