@@ -27,7 +27,13 @@ export default function Document() {
         var first = root.firstElementChild;
         if (!first || ['SCRIPT','STYLE','LINK'].indexOf(first.tagName) !== -1) {
           console.error("Blank screen detected - replacing content");
-          root.innerHTML = '<div style="padding:2rem;text-align:center;font-family:sans-serif;"><h2>Application failed to load.</h2><p>Please refresh the page.</p><p>If the issue persists, run <code>./setup.sh npm</code> and <code>npm run fix:loading</code>.</p><p>Check <code>next_dev_server.log</code> for errors. If you do not have internet access, install dependencies when connectivity is restored.</p></div>';
+          root.innerHTML = '<div style="padding:2rem;text-align:center;font-family:sans-serif;">\
+            <h2>Application failed to load.</h2>\
+            <p>Please refresh the page.</p>\
+            <p>If the issue persists, run <code>./setup.sh npm</code> and <code>npm run fix:loading</code>.</p>\
+            <p>Check <code>next_dev_server.log</code> for errors. If you do not have internet access, install dependencies when connectivity is restored.</p>\
+          </div>';
+          setTimeout(function(){ window.location.href = '/offline.html'; }, 1000);
         }
       }
     }, 3000);
