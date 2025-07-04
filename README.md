@@ -199,6 +199,7 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
    - Ensure dependencies are installed by running `./setup.sh npm`
    - Run `npm run fix:loading` to diagnose and apply the emergency loader
    - A fail-safe message will now appear if the page stays blank for a few seconds
+   - Detection logic improved to catch cases where only stylesheets or scripts are rendered
 
 For detailed troubleshooting, see the [Supabase Authentication Setup Guide](docs/SUPABASE_AUTHENTICATION_SETUP.md).
 
