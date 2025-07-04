@@ -53,20 +53,45 @@ if (typeof window !== 'undefined') {
 
 import React from 'react';
 import type { AppProps } from 'next/app';
-import Head from 'next/head';
+import { Provider as ReduxProvider } from 'react-redux';
+import { store } from '@/store';
+import { I18nextProvider } from 'react-i18next';
+import i18n from '@/i18n';
+import { AuthProvider } from '@/context/auth/AuthProvider';
+import { WhitelabelProvider } from '@/context/WhitelabelContext';
+import { CartProvider } from '@/context/CartContext';
+import { FeedbackProvider } from '@/context/FeedbackContext';
+import { ThemeProvider } from '@/context/ThemeContext';
+import { WalletProvider } from '@/context/WalletContext';
+import { AnalyticsProvider } from '@/context/AnalyticsContext';
+import { ErrorProvider } from '@/context/ErrorContext';
+import { LanguageProvider } from '@/context/LanguageContext';
+import '../src/index.css';
 
-// Ultra-minimal app - no providers, no complex logic
-function MyApp({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Head>
-        <title>Zion Tech Marketplace</title>
-        <meta name="description" content="Discover innovative tech solutions" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
-      <Component {...pageProps} />
-    </>
+    <ErrorProvider>
+      <ReduxProvider store={store}>
+        <I18nextProvider i18n={i18n}>
+          <LanguageProvider>
+            <AuthProvider>
+              <WhitelabelProvider>
+                <WalletProvider>
+                  <AnalyticsProvider>
+                    <CartProvider>
+                      <FeedbackProvider>
+                        <ThemeProvider>
+                          <Component {...pageProps} />
+                        </ThemeProvider>
+                      </FeedbackProvider>
+                    </CartProvider>
+                  </AnalyticsProvider>
+                </WalletProvider>
+              </WhitelabelProvider>
+            </AuthProvider>
+          </LanguageProvider>
+        </I18nextProvider>
+      </ReduxProvider>
+    </ErrorProvider>
   );
 }
-
-export default MyApp;
