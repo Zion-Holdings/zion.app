@@ -95,7 +95,7 @@ const IndexPage: React.FC<HomePageProps> = (props) => {
   const showButton = process.env.NODE_ENV === 'development' || showDebug;
 
   return (
-    <>
+    <main>
       {props.hasError && (
         <div className="container mx-auto px-4 py-4">
           <ErrorBanner msg={props.errorMessage || "Failed to load home page."} />
@@ -103,7 +103,7 @@ const IndexPage: React.FC<HomePageProps> = (props) => {
       )}
       <Home />
       {showButton && <ErrorTestButton />}
-    </>
+    </main>
   );
 };
 

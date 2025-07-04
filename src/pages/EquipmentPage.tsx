@@ -252,7 +252,7 @@ const EquipmentLoadingGrid = ({ count = 8 }: { count?: number }) => (
 // Error fallback component
 function EquipmentErrorFallback({ error, resetErrorBoundary }: { error: Error; resetErrorBoundary: () => void }) {
   return (
-    <div className="container py-8">
+    <main className="container py-8">
       <Card className="border-red-200 bg-red-50">
         <CardContent className="p-8 text-center">
           <AlertTriangle className="mx-auto mb-4 h-12 w-12 text-red-600" />
@@ -271,7 +271,7 @@ function EquipmentErrorFallback({ error, resetErrorBoundary }: { error: Error; r
           </div>
         </CardContent>
       </Card>
-    </div>
+    </main>
   );
 }
 
@@ -413,7 +413,7 @@ function EquipmentPageContent() {
   // Loading state
   if (loading && equipment.length === 0) {
     return (
-      <div className="container py-8" data-testid="loading-state-equipment-container">
+      <main className="container py-8" data-testid="loading-state-equipment-container">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-8">
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             Datacenter Equipment
@@ -421,7 +421,7 @@ function EquipmentPageContent() {
           <p className="text-muted-foreground text-lg">Professional hardware for modern IT infrastructure</p>
         </motion.div>
         <EquipmentLoadingGrid />
-      </div>
+      </main>
     );
   }
 
@@ -431,7 +431,7 @@ function EquipmentPageContent() {
     // Notify toast once for visibility (supports unit tests expectations)
     toast({ title: errorMessage, variant: 'destructive' });
     return (
-      <div className="container py-8">
+      <main className="container py-8">
         <div className="text-center space-y-4">
           <AlertTriangle className="mx-auto h-12 w-12 text-red-500" />
           <h2 className="text-2xl font-bold">Failed to load equipment: {errorMessage}</h2>
@@ -446,22 +446,22 @@ function EquipmentPageContent() {
             </Button>
           </div>
         </div>
-      </div>
+      </main>
     );
   }
 
   // Empty state when no equipment after load
   if (!loading && !error && equipment.length === 0) {
     return (
-      <div className="container py-8 text-center">
+      <main className="container py-8 text-center">
         <h2 className="text-2xl font-bold mb-4">Equipment Catalog Currently Empty</h2>
         <p className="text-muted-foreground mb-6">Check back later for new listings.</p>
-      </div>
+      </main>
     );
   }
 
   return (
-    <div className="container py-8">
+    <main className="container py-8">
       <motion.div className="text-center mb-8" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
         <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
           Datacenter Equipment
@@ -563,7 +563,7 @@ function EquipmentPageContent() {
           </motion.button>
         )}
       </AnimatePresence>
-    </div>
+    </main>
   );
 }
 

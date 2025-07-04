@@ -98,7 +98,7 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
         keywords="AI blog, tech trends, IT services blog, artificial intelligence news, technology innovation, digital transformation, sustainable IT"
         canonical="https://app.ziontechgroup.com/blog"
       />
-      <div className="min-h-screen bg-zion-blue pt-12 pb-20 px-4">
+      <main className="min-h-screen bg-zion-blue pt-12 pb-20 px-4">
         <h1>Blog</h1>
         <div className="container mx-auto">
           <div className="text-center mb-12">
@@ -279,7 +279,7 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
             </div>
           )}
         </div>
-      </div>
+      </main>
     </>
   );
 }
