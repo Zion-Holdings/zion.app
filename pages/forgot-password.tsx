@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import * as Sentry from '@sentry/nextjs';
-import { Alert, AlertDescription, AlertIcon } from '@chakra-ui/react';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { AuthLayout } from '@/layout';
@@ -96,8 +96,7 @@ const ForgotPassword = () => {
             <p className="mt-4 text-center text-sm text-green-600">{message}</p>
           )}
           {error && (
-            <Alert status="error" mt={4}>
-              <AlertIcon />
+            <Alert variant="destructive" className="mt-4">
               <AlertDescription>{error}</AlertDescription>
             </Alert>
           )}
