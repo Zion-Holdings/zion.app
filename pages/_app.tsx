@@ -192,12 +192,12 @@ const LoadingScreen: React.FC<{ progress: number }> = ({ progress }) => (
 );
 
 // Provider wrapper with error handling
-const ProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const ProviderWrapper: React.FC<{ children: React.ReactNode; client: QueryClient }> = ({ children, client }) => {
   return (
     <SimpleErrorBoundary>
       <I18nextProvider i18n={i18n}>
         <ReduxProvider store={store}>
-          <QueryClientProvider client={queryClient}>
+          <QueryClientProvider client={client}>
             <HydrationErrorBoundary>
               <ThemeProvider>
                 <WhitelabelProvider>
@@ -270,7 +270,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   // Main app render with all providers
   return (
-    <ProviderWrapper>
+    <ProviderWrapper client={queryClient}>
       <Component {...pageProps} />
     </ProviderWrapper>
   );
