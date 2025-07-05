@@ -62,6 +62,8 @@ import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import { Provider as ReduxProvider } from 'react-redux';
 import { store } from '@/store';
+import { I18nextProvider } from 'react-i18next';
+import i18n from '@/i18n';
 import dynamic from 'next/dynamic';
 import '../src/index.css';
 
@@ -136,7 +138,7 @@ const ErrorBoundary: React.FC<{ children: React.ReactNode; name: string }> = ({ 
   return <>{children}</>;
 };
 
-// Provider wrapper with Redux and React Query
+// Provider wrapper with Redux, React Query, and i18n
 const ProviderWrapper: React.FC<{ children: React.ReactNode; queryClient: QueryClient }> = ({ children, queryClient }) => {
   return (
     <ErrorBoundary name="BasicWrapper">
@@ -144,7 +146,11 @@ const ProviderWrapper: React.FC<{ children: React.ReactNode; queryClient: QueryC
         <QueryClientProvider client={queryClient}>
           <ErrorBoundary name="ReduxProvider">
             <ReduxProvider store={store}>
-              {children}
+              <ErrorBoundary name="I18nextProvider">
+                <I18nextProvider i18n={i18n}>
+                  {children}
+                </I18nextProvider>
+              </ErrorBoundary>
             </ReduxProvider>
           </ErrorBoundary>
         </QueryClientProvider>
@@ -198,7 +204,7 @@ export default function App({ Component, pageProps }: AppProps) {
     return <SimpleLoading />;
   }
 
-  // Main app render with Redux and React Query
+  // Main app render with Redux, React Query, and i18n
   return (
     <ProviderWrapper queryClient={queryClient}>
       <Component {...pageProps} />
