@@ -29,7 +29,7 @@ const educationSchema = z.object({
   field_of_study: z.string().optional(),
   start_date: z.string().min(1, 'Start date is required'),
   end_date: z.string().optional(),
-  is_current: z.boolean().default(false),
+  is_current: z.boolean().optional(), // Make optional, defaultValues will handle initial state
   description: z.string().optional(),
   location: z.string().optional(),
 });

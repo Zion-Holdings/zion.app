@@ -25,33 +25,63 @@ const initialState: ThemeContextState = {
 const ThemeContext = createContext<ThemeContextState>(initialState)
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useLocalStorage<Theme>('theme', 'light') // Keep for now for compatibility
-  const [themePreset, setThemePresetState] = useLocalStorage<ThemePreset>('themePreset', 'light')
-  const [primaryColor, setPrimaryColorState] = useLocalStorage<string>('primaryColor', '#3b82f6')
+  // Default to 'system' for themePreset, allow localStorage to override.
+  // 'theme' will be derived client-side if preset is 'system'.
+  const [themePreset, setThemePresetState] = useLocalStorage<ThemePreset>('themePreset', 'system');
+  const [theme, setTheme] = useLocalStorage<Theme>('theme', 'light'); // Actual 'light' or 'dark'
+  const [primaryColor, setPrimaryColorState] = useLocalStorage<string>('primaryColor', '#3b82f6');
 
   // Apply theme based on preset and primary color
   useEffect(() => {
-    const colors = getThemeColors(themePreset, primaryColor)
-    applyThemeColors(colors)
-    // Update body class for compatibility with existing CSS if needed
+    let currentTheme: Theme = 'light'; // Default for SSR or if system preference can't be determined initially
+
+    if (themePreset === 'system') {
+      if (typeof window !== 'undefined') {
+        currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      // For SSR when themePreset is 'system', 'theme' remains its default ('light' or last explicit value)
+      // The actual switch happens client-side.
+    } else if (themePreset === 'dark' || themePreset === 'neon' || themePreset === 'startup') {
+      currentTheme = 'dark';
+    } else { // 'light', 'corporate', 'zionDefault'
+      currentTheme = 'light';
+    }
+
+    setTheme(currentTheme); // Update the derived theme state
+
+    // Apply colors based on the preset that determines the mode (light/dark) for getThemeColors
+    // If preset is 'system', use the resolved currentTheme to pick the base for getThemeColors
+    const basePresetForColors = themePreset === 'system' ? currentTheme : themePreset;
+    const colors = getThemeColors(basePresetForColors, primaryColor);
+    applyThemeColors(colors);
+
     document.documentElement.classList.remove('light', 'dark');
-    if (themePreset === 'dark' || themePreset === 'neon' || themePreset === 'startup') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.add('light');
+    document.documentElement.classList.add(currentTheme);
+
+  }, [themePreset, primaryColor, setTheme]); // setTheme added to dependency array
+
+  // Effect for handling system theme changes
+  useEffect(() => {
+    if (themePreset !== 'system' || typeof window === 'undefined') {
+      return;
     }
-    // Synchronize 'theme' state with 'themePreset'
-    // This ensures 'theme' is 'dark' for specific presets, 'light' otherwise.
-    if (themePreset === 'dark' || themePreset === 'neon' || themePreset === 'startup') {
-      setTheme('dark');
-    } else {
-      setTheme('light');
-    }
-  }, [themePreset, primaryColor, setTheme])
+
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = () => {
+      setTheme(mediaQuery.matches ? 'dark' : 'light');
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, [themePreset, setTheme]);
+
 
   const toggleTheme = () => {
-    // This function can now cycle through presets or be removed if a preset selector is implemented
-    setThemePresetState((prev) => (prev === 'light' ? 'dark' : 'light'))
+    setThemePresetState((prev) => {
+      if (prev === 'light') return 'dark';
+      if (prev === 'dark') return 'system';
+      return 'light'; // system maps back to light
+    });
   }
 
   const handleSetThemePreset = (preset: ThemePreset) => {

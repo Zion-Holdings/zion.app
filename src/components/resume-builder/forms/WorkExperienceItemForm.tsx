@@ -26,7 +26,7 @@ const formSchema = z.object({
     required_error: "Start date is required",
   }),
   end_date: z.date().optional(),
-  is_current: z.boolean().default(false),
+  is_current: z.boolean().optional(), // Make optional, defaultValues will handle initial state
   description: z.string().optional(),
   location: z.string().optional(),
 });
@@ -73,7 +73,7 @@ export function WorkExperienceItemForm({
       role_title: values.role_title,      // Required
       start_date: values.start_date,      // Required
       end_date: values.end_date,          // Optional
-      is_current: values.is_current,      // Required
+      is_current: values.is_current ?? false, // Default undefined to false
       description: values.description,    // Optional
       location: values.location,          // Optional
     };
