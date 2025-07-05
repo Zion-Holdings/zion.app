@@ -81,10 +81,10 @@ async function handler(
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { email, password } = req.body as { email?: unknown, password?: unknown };
+  const { email, password } = req.body as { email?: string, password?: string };
 
-  if (!email || !password) {
-    return res.status(400).json({ error: 'Email and password are required' });
+  if (!email || !password || typeof email !== 'string' || typeof password !== 'string') {
+    return res.status(400).json({ error: 'Email and password are required and must be strings' });
   }
 
   // Check if Supabase is configured
