@@ -317,6 +317,12 @@ class ProductionMonitor {
     for (const check of this.healthChecks) {
       console.log(\`Checking \${check.name}...\`);
       const result = await this.checkEndpoint(check.endpoint);
+      if (check.name === 'Authentication' && result.status === 401) {
+        // 401 indicates no active session but the endpoint is reachable
+        // Treat this as a successful health check so production monitoring
+        // does not report a failure when no user is logged in
+        result.success = true;
+      }
       results.push({ ...check, ...result });
       
       const emoji = result.success ? '✅' : '❌';
