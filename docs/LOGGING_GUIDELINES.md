@@ -120,3 +120,11 @@ python bug_log_summary.py
 ```
 
 This script reads `logs/bug/bug_log.json` (or the path set in `BUG_LOG_FILE`) and prints the number of entries per severity along with the most frequent error messages.
+
+Alternatively, use the provided npm scripts:
+
+```bash
+npm run bug:demo      # generate example bug entries
+npm run bug:summary   # print the summary report
+```
+

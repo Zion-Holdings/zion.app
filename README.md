@@ -80,6 +80,8 @@ Ensure all variables marked as required in `.env.example` or in specific documen
 - **Health Check** - `npm run logs:health` prints a quick system status report
 - You can skip external connectivity tests by setting `DISABLE_EXTERNAL_SERVICE_CHECKS=true` when running
   the health check (useful for offline environments)
+- **Demo Bug Logger** - `npm run bug:demo` generates sample bug reports
+- **Bug Log Summary** - `npm run bug:summary` shows a quick breakdown of logged bugs
 - **Missing Key Log** - Any translation keys not found at runtime are appended to `logs/missing-keys.log`
 - **Check for Missing Translations** - `npm run i18n:missing` verifies that all locales contain the same translation keys
 
