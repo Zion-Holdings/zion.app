@@ -133,3 +133,9 @@ python bug_log_summary.py --since "2025-07-01T00:00:00Z" --until "2025-07-05T23:
 ```
 
 Timestamps should be in ISO format. The `--since` and `--until` flags can be combined with `--severity` and `--output` as needed.
+
+To export a CSV summary of counts per severity, use the `--csv` option:
+
+```bash
+python bug_log_summary.py --csv bug_summary.csv
+```
