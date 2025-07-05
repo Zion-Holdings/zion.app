@@ -57,6 +57,7 @@ if (typeof window !== 'undefined') {
 }
 
 import React, { useState, useEffect } from 'react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import { Provider as ReduxProvider } from 'react-redux';
@@ -135,20 +136,25 @@ const ErrorBoundary: React.FC<{ children: React.ReactNode; name: string }> = ({ 
   return <>{children}</>;
 };
 
-// Provider wrapper with Redux
-const ProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+// Provider wrapper with Redux and React Query
+const ProviderWrapper: React.FC<{ children: React.ReactNode; queryClient: QueryClient }> = ({ children, queryClient }) => {
   return (
     <ErrorBoundary name="BasicWrapper">
-      <ErrorBoundary name="ReduxProvider">
-        <ReduxProvider store={store}>
-          {children}
-        </ReduxProvider>
+      <ErrorBoundary name="QueryClientProvider">
+        <QueryClientProvider client={queryClient}>
+          <ErrorBoundary name="ReduxProvider">
+            <ReduxProvider store={store}>
+              {children}
+            </ReduxProvider>
+          </ErrorBoundary>
+        </QueryClientProvider>
       </ErrorBoundary>
     </ErrorBoundary>
   );
 };
 
 export default function App({ Component, pageProps }: AppProps) {
+  const [queryClient] = useState(() => new QueryClient());
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -192,9 +198,9 @@ export default function App({ Component, pageProps }: AppProps) {
     return <SimpleLoading />;
   }
 
-  // Main app render with Redux
+  // Main app render with Redux and React Query
   return (
-    <ProviderWrapper>
+    <ProviderWrapper queryClient={queryClient}>
       <Component {...pageProps} />
       <Toaster richColors position="top-right" />
     </ProviderWrapper>
