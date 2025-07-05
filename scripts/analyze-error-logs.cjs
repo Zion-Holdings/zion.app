@@ -71,7 +71,8 @@ const PATTERNS = [
   /useNavigate\(\).*Router/i,
   /cacheUnaffected|usedExports/i,
   /unhandledRejection/i,
-  /Uncaught Exception/i
+  /Uncaught Exception/i,
+  /CreatePlatformSocket\(\).*Address family not supported by protocol/i
 ];
 const LEVELS = ['debug', 'info', 'warn', 'error'];
 const DEDUPE = args.includes('--dedupe');
@@ -206,6 +207,9 @@ function main() {
   }
   if (/map is not a function/i.test(allText)) {
     hints.push('Detected \"map is not a function\" errors. Verify array values before using .map().');
+  }
+  if (/CreatePlatformSocket\(\).*Address family not supported by protocol/i.test(allText)) {
+    hints.push("Detected IPv6 socket errors. Configure tests to prefer IPv4 or disable IPv6 features.");
   }
   if (/useNavigate\(\).*Router/i.test(allText)) {
     hints.push('React Router "useNavigate" hook used outside of a Router. Wrap components with <MemoryRouter> or use Next.js routing.');

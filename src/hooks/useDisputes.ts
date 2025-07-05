@@ -40,8 +40,9 @@ export function useDisputes() {
       
       if (fetchError) throw fetchError;
       
-      // Transform data if needed
-      const transformedData = data.map((dispute: any) => ({
+      // Transform data if needed. Use an empty array if `data` is null to avoid
+      // "map is not a function" errors when the request fails
+      const transformedData = (data ?? []).map((dispute: any) => ({
         ...dispute,
         client_profile: dispute.client_profile?.client_profile,
         talent_profile: dispute.talent_profile?.talent_profile,
