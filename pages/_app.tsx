@@ -57,6 +57,7 @@ if (typeof window !== 'undefined') {
 }
 
 import React from 'react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
 import { Provider as ReduxProvider } from 'react-redux';
 import { store } from '@/store';
@@ -73,30 +74,35 @@ import { ErrorProvider } from '@/context/ErrorContext';
 import { LanguageProvider } from '@/context/LanguageContext';
 import '../src/index.css';
 
+// Create a client
+const queryClient = new QueryClient();
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ErrorProvider>
-      <ReduxProvider store={store}>
-        <I18nextProvider i18n={i18n}>
-          <LanguageProvider>
-            <AuthProvider>
-              <WhitelabelProvider>
-                <WalletProvider>
-                  <AnalyticsProvider>
-                    <CartProvider>
-                      <FeedbackProvider>
-                        <ThemeProvider>
-                          <Component {...pageProps} />
-                        </ThemeProvider>
-                      </FeedbackProvider>
-                    </CartProvider>
-                  </AnalyticsProvider>
-                </WalletProvider>
-              </WhitelabelProvider>
-            </AuthProvider>
-          </LanguageProvider>
-        </I18nextProvider>
-      </ReduxProvider>
-    </ErrorProvider>
+    <QueryClientProvider client={queryClient}>
+      <ErrorProvider>
+        <ReduxProvider store={store}>
+          <I18nextProvider i18n={i18n}>
+            <LanguageProvider>
+              <AuthProvider>
+                <WhitelabelProvider>
+                  <WalletProvider>
+                    <AnalyticsProvider>
+                      <CartProvider>
+                        <FeedbackProvider>
+                          <ThemeProvider>
+                            <Component {...pageProps} />
+                          </ThemeProvider>
+                        </FeedbackProvider>
+                      </CartProvider>
+                    </AnalyticsProvider>
+                  </WalletProvider>
+                </WhitelabelProvider>
+              </AuthProvider>
+            </LanguageProvider>
+          </I18nextProvider>
+        </ReduxProvider>
+      </ErrorProvider>
+    </QueryClientProvider>
   );
 }
