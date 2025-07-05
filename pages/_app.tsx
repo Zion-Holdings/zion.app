@@ -64,15 +64,6 @@ import { Provider as ReduxProvider } from 'react-redux';
 import { store } from '@/store';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
-import { AuthProvider } from '@/context/auth/AuthProvider';
-import { WhitelabelProvider } from '@/context/WhitelabelContext';
-import { CartProvider } from '@/context/CartContext';
-import { FeedbackProvider } from '@/context/FeedbackContext';
-import { ThemeProvider } from '@/context/ThemeContext';
-import { WalletProvider } from '@/context/WalletContext';
-import { AnalyticsProvider } from '@/context/AnalyticsContext';
-import { ErrorProvider } from '@/context/ErrorContext';
-import { LanguageProvider } from '@/context/LanguageContext';
 import { ChakraProvider } from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
 import '../src/index.css';
@@ -148,59 +139,23 @@ const ErrorBoundary: React.FC<{ children: React.ReactNode; name: string }> = ({ 
   return <>{children}</>;
 };
 
-// Provider wrapper with individual error boundaries
+// Minimal provider wrapper with only essential providers
 const ProviderWrapper: React.FC<{ children: React.ReactNode; queryClient: QueryClient }> = ({ children, queryClient }) => {
   return (
     <ErrorBoundary name="QueryClientProvider">
       <QueryClientProvider client={queryClient}>
-        <ErrorBoundary name="ErrorProvider">
-          <ErrorProvider>
-            <ErrorBoundary name="ReduxProvider">
-              <ReduxProvider store={store}>
-                <ErrorBoundary name="I18nextProvider">
-                  <I18nextProvider i18n={i18n}>
-                    <ErrorBoundary name="LanguageProvider">
-                      <LanguageProvider>
-                        <ErrorBoundary name="AuthProvider">
-                          <AuthProvider>
-                            <ErrorBoundary name="WhitelabelProvider">
-                              <WhitelabelProvider>
-                                <ErrorBoundary name="WalletProvider">
-                                  <WalletProvider>
-                                    <ErrorBoundary name="AnalyticsProvider">
-                                      <AnalyticsProvider>
-                                        <ErrorBoundary name="CartProvider">
-                                          <CartProvider>
-                                            <ErrorBoundary name="FeedbackProvider">
-                                              <FeedbackProvider>
-                                                <ErrorBoundary name="ThemeProvider">
-                                                  <ThemeProvider>
-                                                    <ErrorBoundary name="ChakraProvider">
-                                                      <ChakraProvider>
-                                                        {children}
-                                                      </ChakraProvider>
-                                                    </ErrorBoundary>
-                                                  </ThemeProvider>
-                                                </ErrorBoundary>
-                                              </FeedbackProvider>
-                                            </ErrorBoundary>
-                                          </CartProvider>
-                                        </ErrorBoundary>
-                                      </AnalyticsProvider>
-                                    </ErrorBoundary>
-                                  </WalletProvider>
-                                </ErrorBoundary>
-                              </WhitelabelProvider>
-                            </ErrorBoundary>
-                          </AuthProvider>
-                        </ErrorBoundary>
-                      </LanguageProvider>
-                    </ErrorBoundary>
-                  </I18nextProvider>
+        <ErrorBoundary name="ReduxProvider">
+          <ReduxProvider store={store}>
+            <ErrorBoundary name="I18nextProvider">
+              <I18nextProvider i18n={i18n}>
+                <ErrorBoundary name="ChakraProvider">
+                  <ChakraProvider>
+                    {children}
+                  </ChakraProvider>
                 </ErrorBoundary>
-              </ReduxProvider>
+              </I18nextProvider>
             </ErrorBoundary>
-          </ErrorProvider>
+          </ReduxProvider>
         </ErrorBoundary>
       </QueryClientProvider>
     </ErrorBoundary>
@@ -252,7 +207,7 @@ export default function App({ Component, pageProps }: AppProps) {
     return <SimpleLoading />;
   }
 
-  // Main app render with all providers
+  // Main app render with minimal providers
   return (
     <ProviderWrapper queryClient={queryClient}>
       <Component {...pageProps} />
