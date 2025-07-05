@@ -1,4 +1,5 @@
 import React, { useState, Suspense } from 'react';
+import type ReactPlayerProps from 'react-player'; // Changed to default import
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import {
   Dialog,
@@ -8,7 +9,7 @@ import {
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
-const ReactPlayer = React.lazy(() => import('react-player'));
+const ReactPlayer = React.lazy(() => import('react-player').then(module => ({ default: module.default })));
 const ModelViewer = React.lazy(async () => {
   await import('@google/model-viewer');
   return {

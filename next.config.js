@@ -84,8 +84,8 @@ const nextConfig = {
     // Disable profiling for faster builds
     swcTraceProfiling: false,
     // Enable Node.js runtime for middleware to avoid Next.js warnings
-    nodeMiddleware: false, // Explicitly disable, was causing build issues
-    // Removed esmExternals to prevent external module dynamic import issues
+    nodeMiddleware: false, // Explicitly disable, was causing build issues (requires canary)
+    // Removed esmExternals to prevent external module dynamic import issues (already handled by deleting the property below)
   },
 
   images: {
@@ -303,6 +303,7 @@ const nextConfig = {
     'ajv-keywords',
     '@ungap/structured-clone',
     'axios-retry',
+    'react-error-boundary', // Add react-error-boundary
     // i18next and related packages for transpilation
     'i18next',
     'i18next-browser-languagedetector',

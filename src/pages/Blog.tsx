@@ -209,7 +209,6 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
               {filteredPosts.map((post) => (
                 <Card
                   key={post.id}
-                  asChild
                   className="bg-zion-blue-dark border border-zion-blue-light hover:border-zion-purple transition-all duration-300 group-hover:shadow-lg"
                 >
                   <Link href={`/blog/${post.slug}`} className="block group">

@@ -61,7 +61,6 @@ export function BlogSection() {
           {recentPosts.map((post, index) => (
             <Card
               key={post.id}
-              asChild
               className="bg-zion-blue-light border border-zion-purple/20 hover:border-zion-purple/50 transition-all duration-300 overflow-hidden group-hover:shadow-lg"
             >
               <Link href={`/blog/${post.slug}`} className="block group">
