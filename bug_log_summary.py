@@ -23,6 +23,7 @@ def summarize_bug_log(
     log_file: str = LOG_FILE,
     top_n: int = 5,
     output: str | None = None,
+    csv: str | None = None,
     severity: str | None = None,
     since: str | None = None,
     until: str | None = None,
@@ -79,15 +80,25 @@ def summarize_bug_log(
     for msg, count in common_errors.most_common(top_n):
         print(f"- {msg} ({count})")
 
+    summary = {
+        "total": total,
+        "severities": severities,
+        "top_errors": common_errors.most_common(top_n),
+    }
+
     if output:
         with open(output, "w") as out_f:
-            summary = {
-                "total": total,
-                "severities": severities,
-                "top_errors": common_errors.most_common(top_n),
-            }
             json.dump(summary, out_f, indent=4)
         print(f"Summary written to {output}")
+
+    if csv:
+        import csv as _csv
+        with open(csv, "w", newline="") as csvfile:
+            writer = _csv.writer(csvfile)
+            writer.writerow(["Severity", "Count"])
+            for level, count in severities.items():
+                writer.writerow([level, count])
+        print(f"CSV summary written to {csv}")
 
 
 if __name__ == "__main__":
@@ -99,6 +110,7 @@ if __name__ == "__main__":
         "--top", type=int, default=5, help="Number of top errors to display"
     )
     parser.add_argument("--output", help="Optional output file to save JSON summary")
+    parser.add_argument("--csv", help="Optional output file to save CSV summary")
     parser.add_argument("--severity", help="Filter results by severity level")
     parser.add_argument("--since", help="Only include logs after this ISO timestamp")
     parser.add_argument("--until", help="Only include logs before this ISO timestamp")
@@ -108,6 +120,7 @@ if __name__ == "__main__":
         args.log_file,
         args.top,
         args.output,
+        args.csv,
         args.severity,
         args.since,
         args.until,
