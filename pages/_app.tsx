@@ -60,12 +60,13 @@ import React, { useState, useEffect } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
-import { Provider as ReduxProvider } from 'react-redux';
+import { Provider } from 'react-redux';
 import { store } from '@/store';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
-import { AuthProvider } from '@/context/auth/AuthProvider';
+import { AuthProvider } from '@/context/AuthContext';
 import { CartProvider } from '@/context/CartContext';
+import { ThemeProvider } from '@/context/ThemeContext';
 import dynamic from 'next/dynamic';
 import '../src/index.css';
 
@@ -147,21 +148,25 @@ const ProviderWrapper: React.FC<{ children: React.ReactNode; queryClient: QueryC
       <ErrorBoundary name="QueryClientProvider">
         <QueryClientProvider client={queryClient}>
           <ErrorBoundary name="ReduxProvider">
-            <ReduxProvider store={store}>
+            <Provider store={store}>
               <ErrorBoundary name="I18nextProvider">
                 <I18nextProvider i18n={i18n}>
                   <ErrorBoundary name="AuthProvider">
                     <AuthProvider>
                       <ErrorBoundary name="CartProvider">
                         <CartProvider>
-                          {children}
+                          <ErrorBoundary name="ThemeProvider">
+                            <ThemeProvider>
+                              {children}
+                            </ThemeProvider>
+                          </ErrorBoundary>
                         </CartProvider>
                       </ErrorBoundary>
                     </AuthProvider>
                   </ErrorBoundary>
                 </I18nextProvider>
               </ErrorBoundary>
-            </ReduxProvider>
+            </Provider>
           </ErrorBoundary>
         </QueryClientProvider>
       </ErrorBoundary>
