@@ -69,7 +69,9 @@ const PATTERNS = [
   /Missing translation key/i,
   /map is not a function/i,
   /useNavigate\(\).*Router/i,
-  /cacheUnaffected|usedExports/i,
+  /usedExports.*cacheUnaffected/i,
+  /cacheUnaffected.*usedExports/i,
+  /usedExports can't/i,
   /unhandledRejection/i,
   /Uncaught Exception/i,
   /CreatePlatformSocket\(\).*Address family not supported by protocol/i
@@ -214,7 +216,7 @@ function main() {
   if (/useNavigate\(\).*Router/i.test(allText)) {
     hints.push('React Router "useNavigate" hook used outside of a Router. Wrap components with <MemoryRouter> or use Next.js routing.');
   }
-  if (/cacheUnaffected|usedExports/i.test(allText)) {
+  if (/usedExports.*cacheUnaffected|cacheUnaffected.*usedExports|usedExports can't/i.test(allText)) {
     hints.push('Webpack cache/usedExports conflict detected. Remove cacheUnaffected or disable usedExports in your config.');
   }
   if (hints.length) {
