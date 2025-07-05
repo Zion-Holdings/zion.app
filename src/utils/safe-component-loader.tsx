@@ -101,7 +101,7 @@ export function createSafeComponent(
           }
           
           // Wrap component to ensure it has proper structure
-          const WrappedComponent: React.FC<any> = (props) => {
+          const WrappedComponent: React.FC<any> = (props: any) => {
             try {
               return React.createElement(Component, props);
             } catch (error) {
@@ -144,7 +144,7 @@ export function createSafeComponent(
   );
 
   // Return component wrapped in error boundary
-  const BoundedComponent: React.FC<any> = (props) => {
+  const BoundedComponent: React.FC<any> = (props: any) => {
     return React.createElement(
       ComponentErrorBoundary,
       { fallback: fallbackComponent },
