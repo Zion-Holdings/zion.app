@@ -65,6 +65,7 @@ import { store } from '@/store';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
 import { AuthProvider } from '@/context/auth/AuthProvider';
+import { CartProvider } from '@/context/CartContext';
 import dynamic from 'next/dynamic';
 import '../src/index.css';
 
@@ -139,7 +140,7 @@ const ErrorBoundary: React.FC<{ children: React.ReactNode; name: string }> = ({ 
   return <>{children}</>;
 };
 
-// Provider wrapper with Redux, React Query, i18n, and Auth
+// Provider wrapper with Redux, React Query, i18n, Auth, and Cart
 const ProviderWrapper: React.FC<{ children: React.ReactNode; queryClient: QueryClient }> = ({ children, queryClient }) => {
   return (
     <ErrorBoundary name="BasicWrapper">
@@ -151,7 +152,11 @@ const ProviderWrapper: React.FC<{ children: React.ReactNode; queryClient: QueryC
                 <I18nextProvider i18n={i18n}>
                   <ErrorBoundary name="AuthProvider">
                     <AuthProvider>
-                      {children}
+                      <ErrorBoundary name="CartProvider">
+                        <CartProvider>
+                          {children}
+                        </CartProvider>
+                      </ErrorBoundary>
                     </AuthProvider>
                   </ErrorBoundary>
                 </I18nextProvider>
@@ -209,7 +214,7 @@ export default function App({ Component, pageProps }: AppProps) {
     return <SimpleLoading />;
   }
 
-  // Main app render with Redux, React Query, i18n, and Auth
+  // Main app render with Redux, React Query, i18n, Auth, and Cart
   return (
     <ProviderWrapper queryClient={queryClient}>
       <Component {...pageProps} />
