@@ -60,8 +60,9 @@ export const useJobApplications = (jobId?: string) => {
       
       if (fetchError) throw fetchError;
       
-      // Transform the data to match our application types
-      const transformedData = data.map((app: any) => ({
+      // Transform the data to match our application types. Default to an empty
+      // array to avoid "map is not a function" errors when no data is returned
+      const transformedData = (data ?? []).map((app: any) => ({
         ...app,
         talent_profile: app.talent_profile ? {
           ...app.talent_profile,

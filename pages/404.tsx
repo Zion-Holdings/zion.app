@@ -70,18 +70,20 @@ export default function Custom404() {
               {t('errors.go_back')}
             </Button>
 
-            <Button asChild className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white min-w-[180px]">
-              <Link href="/">
-                <Home className="w-4 h-4 mr-2" aria-hidden="true" />
-                {t('errors.return_home')}
-              </Link>
+            <Button 
+              onClick={() => router.push('/')}
+              className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white min-w-[180px]"
+            >
+              <Home className="w-4 h-4 mr-2" aria-hidden="true" />
+              {t('errors.return_home')}
             </Button>
 
-            <Button asChild className="bg-gradient-to-r from-zion-cyan to-zion-cyan-light hover:from-zion-cyan-light hover:to-zion-cyan text-white min-w-[180px]">
-              <Link href="/marketplace">
-                <ShoppingCart className="w-4 h-4 mr-2" aria-hidden="true" />
-                {t('errors.go_to_marketplace')}
-              </Link>
+            <Button 
+              onClick={() => router.push('/marketplace')}
+              className="bg-gradient-to-r from-zion-cyan to-zion-cyan-light hover:from-zion-cyan-light hover:to-zion-cyan text-white min-w-[180px]"
+            >
+              <ShoppingCart className="w-4 h-4 mr-2" aria-hidden="true" />
+              {t('errors.go_to_marketplace')}
             </Button>
           </div>
 

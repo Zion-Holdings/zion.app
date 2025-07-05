@@ -8,15 +8,17 @@ import { User, Mail, Calendar, Shield } from 'lucide-react';
 
 
 
-import Link from 'next/link'
 import Head from 'next/head'
 import type { User as SupabaseUser } from '@supabase/supabase-js'
+import { useRouter } from 'next/router'
 
 interface PrivatePageProps {
   user: SupabaseUser
 }
 
 export default function PrivatePage({ user }: PrivatePageProps) {
+  const router = useRouter();
+  
   return (
     <>
       <Head>
@@ -86,15 +88,11 @@ export default function PrivatePage({ user }: PrivatePageProps) {
             </div>
 
             <div className="flex gap-2">
-              <Button asChild>
-                <Link href="/dashboard">
-                  Go to Dashboard
-                </Link>
+              <Button onClick={() => router.push('/dashboard')}>
+                Go to Dashboard
               </Button>
-              <Button asChild variant="outline">
-                <Link href="/">
-                  Back to Home
-                </Link>
+              <Button onClick={() => router.push('/')} variant="outline">
+                Back to Home
               </Button>
             </div>
           </CardContent>

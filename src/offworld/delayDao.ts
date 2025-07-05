@@ -21,13 +21,25 @@ export interface Vote {
 // Check if we're in a build environment
 const isBuildEnv = process.env.CI === 'true' || process.env.NODE_ENV === 'production' && typeof window === 'undefined';
 
+export interface IpfsModule {
+  saveJSON(data: unknown): Promise<string>;
+  fetchJSON(cid: string): Promise<unknown>;
+  stopIpfsNode(): Promise<void>;
+}
+
+export interface OrbitDbModule {
+  getLog(name: string): Promise<any>;
+  initOrbit(repoPath?: string): Promise<void>;
+  stopOrbit(): Promise<void>;
+}
+
 export class DelayTolerantDAO {
   private proposals: Proposal[] = [];
   private votes: Vote[] = [];
   private ready = false;
   private logPromise: Promise<any> | null = null;
-  private ipfsModule: any = null;
-  private orbitdbModule: any = null;
+  private ipfsModule: IpfsModule | null = null;
+  private orbitdbModule: OrbitDbModule | null = null;
 
   async connect() {
     if (isBuildEnv) {

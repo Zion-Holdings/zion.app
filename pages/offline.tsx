@@ -155,27 +155,23 @@ export default function OfflinePage() {
             </Button>
             
           <Button
-            asChild
+            onClick={() => router.push('/')}
             variant="outline"
             size="lg"
             className="flex items-center gap-2"
           >
-            <Link href="/">
-              <Home className="w-5 h-5" />
-              Go to Homepage
-            </Link>
+            <Home className="w-5 h-5" />
+            Go to Homepage
           </Button>
 
           <Button
-            asChild
+            onClick={() => router.push('/marketplace')}
             variant="outline"
             size="lg"
             className="flex items-center gap-2"
           >
-            <Link href="/marketplace">
-              <ShoppingCart className="w-5 h-5" />
-              Go to Marketplace
-            </Link>
+            <ShoppingCart className="w-5 h-5" />
+            Go to Marketplace
           </Button>
         </div>
 
@@ -217,10 +213,13 @@ export default function OfflinePage() {
                     <CardContent className="text-center">
                       <p className="text-muted-foreground mb-4">{action.description}</p>
                       {action.available ? (
-                        <Button asChild variant="outline" size="sm" className="w-full">
-                          <Link href={action.href}>
-                            Access
-                          </Link>
+                        <Button 
+                          onClick={() => router.push(action.href)}
+                          variant="outline" 
+                          size="sm" 
+                          className="w-full"
+                        >
+                          Access
                         </Button>
                       ) : (
                         <Button disabled size="sm" className="w-full">

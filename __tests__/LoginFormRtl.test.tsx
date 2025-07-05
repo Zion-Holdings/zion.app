@@ -1,13 +1,14 @@
+import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { LoginForm } from '@/components/auth/login';
 import { useAuth } from '@/hooks/useAuth';
 
-jest.mock('@/hooks/useAuth');
+vi.mock('@/hooks/useAuth');
 
 describe('LoginForm error handling', () => {
   it('shows inline error message when login fails', async () => {
-    const loginMock = jest.fn().mockResolvedValue({ error: 'Invalid email or password' });
-    (useAuth as jest.Mock).mockReturnValue({ isLoading: false, login: loginMock });
+    const loginMock = vi.fn().mockResolvedValue({ error: 'Invalid email or password' });
+    (useAuth as any).mockReturnValue({ isLoading: false, login: loginMock });
 
     render(<LoginForm />);
 

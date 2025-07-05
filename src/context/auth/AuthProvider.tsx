@@ -24,6 +24,43 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   if (process.env.NODE_ENV === 'development') {
     logInfo('[AuthProvider] Initializing...');
   }
+  
+  // CRITICAL FIX: Add immediate fallback if Supabase is not configured
+  if (!isSupabaseConfigured) {
+    logWarn('[AuthProvider] Supabase not configured - using fallback auth state');
+    const fallbackContext: AuthContextType = {
+      user: null,
+      isLoading: false,
+      isAuthenticated: false,
+      onboardingStep: null,
+      setOnboardingStep: () => {},
+      login: async () => ({ error: "Authentication not available" }),
+      signup: async () => ({ error: "Authentication not available" }),
+      register: async () => ({ error: "Authentication not available" }),
+      logout: async () => {},
+      resetPassword: async () => ({ error: "Authentication not available" }),
+      updateProfile: async () => ({ error: "Authentication not available" }),
+      loginWithGoogle: async () => {},
+      loginWithGitHub: async () => {},
+      loginWithFacebook: async () => {},
+      loginWithTwitter: async () => {},
+      loginWithWeb3: async () => {},
+      signIn: async () => ({ error: "Authentication not available" }),
+      signOut: async () => {},
+      signUp: async () => ({ error: "Authentication not available" }),
+      setUser: () => {},
+      tokens: null,
+      avatarUrl: null,
+      setAvatarUrl: () => {},
+    };
+    
+    return (
+      <AuthContext.Provider value={fallbackContext}>
+        {children}
+      </AuthContext.Provider>
+    );
+  }
+  
   const {
     user, setUser,
     isLoading, setIsLoading,

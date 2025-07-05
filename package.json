@@ -13,6 +13,7 @@
     "dev:monitor": "npm run env:dev && node scripts/performance-monitor.cjs && next dev",
     "dev:react19": "npm run env:dev && REACT_19_MODE=true next dev --experimental-app",
     "dev:turbo": "npm run env:dev && next dev --turbo",
+    "dev:offline": "bash offline-dev.sh",
     "generate": "prisma generate",
     "build": "NODE_OPTIONS='--no-deprecation --require ./scripts/fix-self-global.js' node scripts/pre-build-check.cjs && NODE_OPTIONS='--no-deprecation --require ./scripts/fix-self-global.js' npx next build --no-lint",
     "build:monitored": "node scripts/comprehensive-build-check.cjs",
@@ -53,8 +54,8 @@
     "lint:fix": "npx eslint . --fix",
     "lint:nextjs": "next lint",
     "preview": "NODE_ENV=production vite preview",
-    "test": "jest",
-    "test:jest": "jest",
+    "test": "node scripts/pre-test-check.cjs",
+    "test:jest": "node scripts/pre-test-check.cjs",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "test:vitest": "vitest run",
@@ -405,7 +406,8 @@
     "whatwg-fetch": "^3.6.20"
   },
   "overrides": {
-    "superagent": "^9.0.0"
+    "superagent": "^9.0.0",
+    "valtio": "^2.1.5"
   },
   "engines": {
     "node": ">=18.17.0"
