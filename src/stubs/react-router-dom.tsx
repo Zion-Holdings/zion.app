@@ -1,11 +1,33 @@
+import React, { createContext, useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-export const BrowserRouter = ({ children }: { children: any }) => children;
+// Minimal router context so React Router hooks don't throw errors
+const RouterContext = createContext<{ navigate: (url: string) => void }>({
+  navigate: () => {},
+});
+
+export const BrowserRouter = ({ children }: { children: any }) => {
+  const nextRouter = useRouter();
+  const navigate = (url: string) => {
+    if (url) nextRouter.push(url);
+  };
+  return (
+    <RouterContext.Provider value={{ navigate }}>
+      {children}
+    </RouterContext.Provider>
+  );
+};
 export const Routes = ({ children }: { children: any }) => children;
 export const Route = ({ element }: { element: any }) => element;
 export const Link = (props: any) => { return <a {...props} />; };
 export const NavLink = Link;
-export const Navigate = ({ to }: { to: string }) => null;
+export const Navigate = ({ to }: { to: string }) => {
+  const nextRouter = useRouter();
+  useEffect(() => {
+    if (to) nextRouter.push(to);
+  }, [to, nextRouter]);
+  return null;
+};
 export const MemoryRouter = BrowserRouter;
 export const Outlet = () => null;
 
@@ -13,16 +35,8 @@ export const Outlet = () => null;
 // "useNavigate() may be used only in the context of a <Router>" errors when
 // components relying on React Router are used in the Next.js environment.
 export const useNavigate = () => {
-  // Provide a very lightweight navigation function that avoids relying on
-  // Next.js routing internals. This prevents "useNavigate" errors in test or
-  // non-router environments while still allowing simple navigation when
-  // running in the browser.
-  if (typeof window !== 'undefined') {
-    return (url: string) => {
-      if (url) window.location.assign(url);
-    };
-  }
-  return () => {};
+  const context = useContext(RouterContext);
+  return context.navigate;
 };
 export const useLocation = () => ({ pathname: '/' });
 export const useParams = () => ({ });
