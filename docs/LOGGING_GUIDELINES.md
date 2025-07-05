@@ -120,3 +120,8 @@ python bug_log_summary.py
 ```
 
 This script reads `logs/bug/bug_log.json` (or the path set in `BUG_LOG_FILE`) and prints the number of entries per severity along with the most frequent error messages.
+You can filter by severity using the optional `--severity` flag, e.g.:
+
+```bash
+python bug_log_summary.py --severity High
+```
