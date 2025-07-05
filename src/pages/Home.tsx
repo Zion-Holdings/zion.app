@@ -1,230 +1,129 @@
-import React from 'react';
+import { Header } from "@/components/Header";
+import { TrustedBySection } from "@/components/TrustedBySection";
+import { TestimonialCarousel } from "@/components/TestimonialCarousel";
+import { FloatingCTA } from "@/components/FloatingCTA";
+import { HeroSection } from "@/components/HeroSection";
+import { CategoriesSection } from "@/components/CategoriesSection";
+import { BenefitsSection } from "@/components/BenefitsSection";
+import { HowItWorksSection } from "@/components/HowItWorksSection";
+import { WaitlistSection } from "@/components/WaitlistSection";
+import { BlogSection } from "@/components/BlogSection";
+import { SEO } from "@/components/SEO";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
+import { FeaturesGuideSection } from "@/components/FeaturesGuideSection";
+import { SocialShareSection } from "@/components/SocialShareSection";
+import { useTranslation } from "react-i18next";
+import { useLanguage } from "@/context/LanguageContext";
+import { ArrowRight, Users, Zap, Settings, Search, MessageSquare, Sparkles, BarChart3, Smartphone } from 'lucide-react';
 
 export default function Home() {
+  const { t } = useTranslation();
+  const { isRTL } = useLanguage();
+  
+  // Tools and features showcase
+  const toolsFeatures = [
+    {
+      title: t("home.tool_ai_matcher"),
+      description: t("home.tool_ai_matcher_desc"),
+      icon: <Sparkles className="h-6 w-6 text-zion-cyan" />,
+      link: "/match"
+    },
+    {
+      title: t("home.tool_talent"),
+      description: t("home.tool_talent_desc"),
+      icon: <Users className="h-6 w-6 text-zion-purple" />,
+      link: "/talent"
+    },
+    {
+      title: t("home.tool_services"),
+      description: t("home.tool_services_desc"),
+      icon: <Zap className="h-6 w-6 text-zion-cyan" />,
+      link: "/services"
+    },
+    {
+      title: t("home.tool_equipment"),
+      description: t("home.tool_equipment_desc"),
+      icon: <Settings className="h-6 w-6 text-zion-purple" />,
+      link: "/equipment"
+    },
+    {
+      title: t("home.tool_analytics"),
+      description: t("home.tool_analytics_desc"),
+      icon: <BarChart3 className="h-6 w-6 text-zion-cyan" />,
+      link: "/analytics"
+    },
+    {
+      title: "Mobile App",
+      description: "Take Zion with you on the go with our mobile app for iOS and Android",
+      icon: <Smartphone className="h-6 w-6 text-zion-purple" />,
+      link: "/mobile-launch"
+    }
+  ];
+
   return (
-    <div style={{
-      minHeight: '100vh',
-      fontFamily: 'Arial, sans-serif',
-      backgroundColor: '#f8f9fa'
-    }}>
-      {/* Hero Section */}
-      <section style={{
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        color: 'white',
-        padding: '5rem 1rem',
-        textAlign: 'center'
-      }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <h1 style={{
-            fontSize: '3rem',
-            fontWeight: 'bold',
-            marginBottom: '1.5rem'
-          }}>
-            Zion Tech Marketplace
-          </h1>
-          <p style={{
-            fontSize: '1.5rem',
-            marginBottom: '2rem',
-            opacity: 0.9
-          }}>
-            Discover Innovative Tech Solutions
-          </p>
-          <button style={{
-            backgroundColor: 'white',
-            color: '#667eea',
-            padding: '1rem 2rem',
-            border: 'none',
-            borderRadius: '0.5rem',
-            fontSize: '1.1rem',
-            fontWeight: '600',
-            cursor: 'pointer'
-          }}>
-            Get Started
-          </button>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section style={{
-        padding: '4rem 1rem',
-        backgroundColor: 'white'
-      }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <h2 style={{
-            fontSize: '2.5rem',
-            fontWeight: 'bold',
-            textAlign: 'center',
-            marginBottom: '3rem',
-            color: '#333'
-          }}>
-            Why Choose Zion?
-          </h2>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '2rem'
-          }}>
-            <div style={{ textAlign: 'center', padding: '2rem' }}>
-              <div style={{
-                width: '4rem',
-                height: '4rem',
-                backgroundColor: '#667eea',
-                borderRadius: '50%',
-                margin: '0 auto 1rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '2rem'
-              }}>
-                🚀
-              </div>
-              <h3 style={{ fontSize: '1.5rem', fontWeight: '600', marginBottom: '1rem' }}>
-                Fast & Reliable
-              </h3>
-              <p style={{ color: '#666', lineHeight: '1.6' }}>
-                Quick access to cutting-edge technology solutions
-              </p>
-            </div>
-            <div style={{ textAlign: 'center', padding: '2rem' }}>
-              <div style={{
-                width: '4rem',
-                height: '4rem',
-                backgroundColor: '#10b981',
-                borderRadius: '50%',
-                margin: '0 auto 1rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '2rem'
-              }}>
-                🔒
-              </div>
-              <h3 style={{ fontSize: '1.5rem', fontWeight: '600', marginBottom: '1rem' }}>
-                Secure
-              </h3>
-              <p style={{ color: '#666', lineHeight: '1.6' }}>
-                Enterprise-grade security for your business
-              </p>
-            </div>
-            <div style={{ textAlign: 'center', padding: '2rem' }}>
-              <div style={{
-                width: '4rem',
-                height: '4rem',
-                backgroundColor: '#8b5cf6',
-                borderRadius: '50%',
-                margin: '0 auto 1rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '2rem'
-              }}>
-                💡
-              </div>
-              <h3 style={{ fontSize: '1.5rem', fontWeight: '600', marginBottom: '1rem' }}>
-                Innovative
-              </h3>
-              <p style={{ color: '#666', lineHeight: '1.6' }}>
-                Latest AI and technology innovations
-              </p>
-            </div>
+    <div className="min-h-screen bg-zion-blue text-white">
+      <SEO 
+        title={t("home.seo_title")} 
+        description={t("home.seo_description")} 
+        keywords={t("home.seo_keywords")}
+        canonical="https://app.ziontechgroup.com/"
+      />
+      <Header />
+      <HeroSection />
+      
+      {/* Quick Access Tools Section */}
+      <section className="py-16 bg-zion-blue-dark">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent mb-4">
+              {t("home.explore_tools")}
+            </h2>
+            <p className="text-zion-slate-light text-xl max-w-3xl mx-auto">
+              {t("home.tools_description")}
+            </p>
+          </div>
+          
+          <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto ${isRTL ? 'rtl' : ''}`}>
+            {toolsFeatures.map((feature, index) => (
+              <Link 
+                key={index} 
+                href={feature.link} 
+                className="bg-zion-blue border border-zion-blue-light hover:border-zion-purple/50 rounded-lg p-6 transition-all duration-300"
+              >
+                <div className="bg-zion-blue-dark rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
+                <p className="text-zion-slate-light mb-4">{feature.description}</p>
+                <div className={`flex items-center text-zion-cyan ${isRTL ? 'flex-row-reverse' : ''}`}>
+                  <span>{t("general.explore")}</span>
+                  <ArrowRight className={`${isRTL ? 'ml-0 mr-2 rotate-180' : 'ml-2'} h-4 w-4`} />
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section style={{
-        padding: '4rem 1rem',
-        backgroundColor: '#667eea',
-        color: 'white',
-        textAlign: 'center'
-      }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <h2 style={{
-            fontSize: '2.5rem',
-            fontWeight: 'bold',
-            marginBottom: '1rem'
-          }}>
-            Ready to Get Started?
-          </h2>
-          <p style={{
-            fontSize: '1.25rem',
-            marginBottom: '2rem',
-            opacity: 0.9
-          }}>
-            Join thousands of businesses using Zion Tech Marketplace
-          </p>
-          <button style={{
-            backgroundColor: 'white',
-            color: '#667eea',
-            padding: '1rem 2rem',
-            border: 'none',
-            borderRadius: '0.5rem',
-            fontSize: '1.1rem',
-            fontWeight: '600',
-            cursor: 'pointer'
-          }}>
-            Explore Solutions
-          </button>
-        </div>
-      </section>
-
-      {/* Status Section */}
-      <section style={{
-        padding: '4rem 1rem',
-        backgroundColor: '#f8f9fa',
-        textAlign: 'center'
-      }}>
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <h2 style={{
-            fontSize: '2.5rem',
-            fontWeight: 'bold',
-            marginBottom: '2rem',
-            color: '#333'
-          }}>
-            ✅ App is Working!
-          </h2>
-          <p style={{
-            fontSize: '1.25rem',
-            color: '#666',
-            marginBottom: '2rem',
-            lineHeight: '1.6'
-          }}>
-            The Zion Tech Marketplace is now loading successfully. This is a simplified version that works immediately.
-          </p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <button 
-              onClick={() => window.location.href = '/test'}
-              style={{
-                backgroundColor: '#667eea',
-                color: 'white',
-                padding: '0.75rem 1.5rem',
-                border: 'none',
-                borderRadius: '0.5rem',
-                cursor: 'pointer',
-                fontSize: '1rem',
-                fontWeight: '600'
-              }}
-            >
-              Test Page
-            </button>
-            <button 
-              onClick={() => window.location.href = '/debug'}
-              style={{
-                backgroundColor: '#6b7280',
-                color: 'white',
-                padding: '0.75rem 1.5rem',
-                border: 'none',
-                borderRadius: '0.5rem',
-                cursor: 'pointer',
-                fontSize: '1rem',
-                fontWeight: '600'
-              }}
-            >
-              Debug Info
-            </button>
-          </div>
-        </div>
-      </section>
+      
+      <CategoriesSection />
+      <BenefitsSection />
+      
+      {/* Add the comprehensive features guide section */}
+      <FeaturesGuideSection />
+      
+      <HowItWorksSection />
+      <FeaturedListingsSection />
+      <TestimonialCarousel />
+      <TrustedBySection />
+      <BlogSection />
+      
+      {/* Add social share section to encourage users to spread the word */}
+      <SocialShareSection />
+      
+      <WaitlistSection />
+      <FloatingCTA />
     </div>
   );
 }
