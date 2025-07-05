@@ -73,7 +73,7 @@ import { WalletProvider } from '@/context/WalletContext';
 import { AnalyticsProvider } from '@/context/AnalyticsContext';
 import { ErrorProvider } from '@/context/ErrorContext';
 import { LanguageProvider } from '@/context/LanguageContext';
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, theme as chakraTheme } from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
 import '../src/index.css';
 
@@ -124,7 +124,7 @@ const ProviderWrapper: React.FC<{ children: React.ReactNode; queryClient: QueryC
                       <CartProvider>
                         <FeedbackProvider>
                           <ThemeProvider>
-                            <ChakraProvider>
+                            <ChakraProvider theme={chakraTheme}>
                               {children}
                             </ChakraProvider>
                           </ThemeProvider>
