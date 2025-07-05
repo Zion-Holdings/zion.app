@@ -1,11 +1,19 @@
 import React from 'react';
 import { useTranslation } from "react-i18next";
+import { SEO } from "@/components/SEO";
 
 export default function Home() {
   const { t } = useTranslation();
 
   return (
     <div className="min-h-screen bg-zion-blue text-white">
+      <SEO 
+        title={t("home.seo_title")} 
+        description={t("home.seo_description")} 
+        keywords={t("home.seo_keywords")}
+        canonical="https://app.ziontechgroup.com/"
+      />
+      
       {/* Minimal Header */}
       <header className="bg-zion-blue-dark p-4">
         <div className="container mx-auto">
@@ -66,7 +74,7 @@ export default function Home() {
             ✅ App is Working!
           </h2>
           <p className="text-xl text-zion-slate-light mb-8">
-            The Zion Tech Marketplace is now loading successfully with i18n and styling.
+            The Zion Tech Marketplace is now loading successfully with SEO, i18n, and styling.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <button 
