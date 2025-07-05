@@ -1007,6 +1007,15 @@ const nextConfig = {
     usedExports: false, // Disable to prevent cacheUnaffected conflicts
   };
 
+    // Ensure webpack doesn't try to enable cacheUnaffected/usedExports combo
+    if (config.experiments) {
+      config.experiments.cacheUnaffected = false;
+    }
+
+    if (config.cache) {
+      config.cache.cacheUnaffected = false;
+    }
+
     // Remove cacheUnaffected in case any plugin re-added it
     if (config.cache && config.cache.cacheUnaffected !== undefined) {
       delete config.cache.cacheUnaffected;
