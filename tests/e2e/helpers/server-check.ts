@@ -4,9 +4,15 @@ const baseURL = process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:3000';
 const fallbackURL = baseURL.replace('3000', '3001');
 let cachedURL: string | null = null;
 
+function fetchWithTimeout(url: string, options: RequestInit = {}, timeout = 2000) {
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), timeout);
+  return fetchFn(url, { ...options, signal: controller.signal }).finally(() => clearTimeout(id));
+}
+
 async function isServerRunning(url: string): Promise<boolean> {
   try {
-    const res = await fetchFn(url, { method: 'HEAD' });
+    const res = await fetchWithTimeout(url, { method: 'HEAD' });
     return res.ok;
   } catch {
     return false;
