@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from "react-i18next";
 import { SEO } from "@/components/SEO";
+import { Header } from "@/components/Header";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -13,13 +14,7 @@ export default function Home() {
         keywords={t("home.seo_keywords")}
         canonical="https://app.ziontechgroup.com/"
       />
-      
-      {/* Minimal Header */}
-      <header className="bg-zion-blue-dark p-4">
-        <div className="container mx-auto">
-          <h1 className="text-2xl font-bold">Zion Tech Marketplace</h1>
-        </div>
-      </header>
+      <Header />
       
       {/* Simple Hero Section */}
       <section className="py-20 bg-zion-blue-dark">
@@ -74,7 +69,7 @@ export default function Home() {
             ✅ App is Working!
           </h2>
           <p className="text-xl text-zion-slate-light mb-8">
-            The Zion Tech Marketplace is now loading successfully with SEO, i18n, and styling.
+            The Zion Tech Marketplace is now loading successfully with Header, SEO, i18n, and styling.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <button 
