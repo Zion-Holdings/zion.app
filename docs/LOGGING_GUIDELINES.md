@@ -125,3 +125,11 @@ You can filter by severity using the optional `--severity` flag, e.g.:
 ```bash
 python bug_log_summary.py --severity High
 ```
+
+Additional filtering options allow you to only include log entries within a date range:
+
+```bash
+python bug_log_summary.py --since "2025-07-01T00:00:00Z" --until "2025-07-05T23:59:59Z"
+```
+
+Timestamps should be in ISO format. The `--since` and `--until` flags can be combined with `--severity` and `--output` as needed.
