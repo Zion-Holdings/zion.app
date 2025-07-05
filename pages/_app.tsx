@@ -59,6 +59,7 @@ if (typeof window !== 'undefined') {
 import React, { useState, useEffect } from 'react';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
+import { ChakraProvider } from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
 import '../src/index.css';
 
@@ -133,11 +134,15 @@ const ErrorBoundary: React.FC<{ children: React.ReactNode; name: string }> = ({ 
   return <>{children}</>;
 };
 
-// Ultra-minimal provider wrapper with no external providers
+// Provider wrapper with ChakraProvider added back
 const ProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <ErrorBoundary name="BasicWrapper">
-      {children}
+      <ErrorBoundary name="ChakraProvider">
+        <ChakraProvider>
+          {children}
+        </ChakraProvider>
+      </ErrorBoundary>
     </ErrorBoundary>
   );
 };
@@ -186,7 +191,7 @@ export default function App({ Component, pageProps }: AppProps) {
     return <SimpleLoading />;
   }
 
-  // Main app render with no external providers
+  // Main app render with ChakraProvider
   return (
     <ProviderWrapper>
       <Component {...pageProps} />
