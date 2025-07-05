@@ -70,6 +70,7 @@ const PATTERNS = [
   /map is not a function/i,
   /useNavigate\(\).*Router/i,
   /cacheUnaffected|usedExports/i,
+  /Cannot find package '@eslint\/js'/i,
   /unhandledRejection/i,
   /Uncaught Exception/i
 ];
@@ -194,6 +195,9 @@ function main() {
   const hints = [];
   if (/Module not found|Can't resolve|Cannot find module/i.test(allText)) {
     hints.push('Missing dependencies detected. Run "./setup.sh npm" to reinstall packages.');
+  }
+  if (/Cannot find package '@eslint\/js'/i.test(allText)) {
+    hints.push('ESLint dependencies missing. Run "./setup.sh npm" to install them.');
   }
   if (/EAI_AGAIN|network.*disabled/i.test(allText)) {
     hints.push('Network errors detected. Ensure internet access before running the setup script.');
