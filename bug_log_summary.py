@@ -8,10 +8,25 @@ import argparse
 LOG_FILE = os.environ.get("BUG_LOG_FILE", os.path.join("logs", "bug", "bug_log.json"))
 
 
-def summarize_bug_log(log_file: str = LOG_FILE,
-                      top_n: int = 5,
-                      output: str | None = None,
-                      severity: str | None = None) -> None:
+from datetime import datetime
+
+
+def _parse_timestamp(ts: str) -> datetime | None:
+    """Parse ISO timestamp into a datetime object."""
+    try:
+        return datetime.fromisoformat(ts.replace("Z", "+00:00"))
+    except Exception:
+        return None
+
+
+def summarize_bug_log(
+    log_file: str = LOG_FILE,
+    top_n: int = 5,
+    output: str | None = None,
+    severity: str | None = None,
+    since: str | None = None,
+    until: str | None = None,
+) -> None:
     if not os.path.exists(log_file):
         print(f"No bug log found at {log_file}")
         return
@@ -28,7 +43,30 @@ def summarize_bug_log(log_file: str = LOG_FILE,
         return
 
     if severity:
-        logs = [entry for entry in logs if entry.get("severity") == severity]
+        severity = severity.lower()
+        logs = [
+            entry for entry in logs if entry.get("severity", "").lower() == severity
+        ]
+
+    if since:
+        since_dt = _parse_timestamp(since)
+        if since_dt:
+            logs = [
+                e
+                for e in logs
+                if _parse_timestamp(e.get("timestamp", ""))
+                and _parse_timestamp(e.get("timestamp")) >= since_dt
+            ]
+
+    if until:
+        until_dt = _parse_timestamp(until)
+        if until_dt:
+            logs = [
+                e
+                for e in logs
+                if _parse_timestamp(e.get("timestamp", ""))
+                and _parse_timestamp(e.get("timestamp")) <= until_dt
+            ]
 
     severities = Counter(entry.get("severity", "Unknown") for entry in logs)
     total = len(logs)
@@ -53,10 +91,23 @@ def summarize_bug_log(log_file: str = LOG_FILE,
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Summarize bug log entries")
-    parser.add_argument("log_file", nargs="?", default=LOG_FILE, help="Path to bug log JSON file")
-    parser.add_argument("--top", type=int, default=5, help="Number of top errors to display")
+    parser.add_argument(
+        "log_file", nargs="?", default=LOG_FILE, help="Path to bug log JSON file"
+    )
+    parser.add_argument(
+        "--top", type=int, default=5, help="Number of top errors to display"
+    )
     parser.add_argument("--output", help="Optional output file to save JSON summary")
     parser.add_argument("--severity", help="Filter results by severity level")
+    parser.add_argument("--since", help="Only include logs after this ISO timestamp")
+    parser.add_argument("--until", help="Only include logs before this ISO timestamp")
     args = parser.parse_args()
 
-    summarize_bug_log(args.log_file, args.top, args.output, args.severity)
+    summarize_bug_log(
+        args.log_file,
+        args.top,
+        args.output,
+        args.severity,
+        args.since,
+        args.until,
+    )
