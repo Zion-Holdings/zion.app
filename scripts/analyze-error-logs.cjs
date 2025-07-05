@@ -66,6 +66,7 @@ const PATTERNS = [
   /Module not found/i,
   /Can't resolve/i,
   /Cannot find module/i,
+  /Cannot find name/i,
   /EAI_AGAIN/i,
   /Invalid or placeholder project ID/i,
   /Environment variable.*missing/i,
