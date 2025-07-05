@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { renderHook, act } from '@testing-library/react';
 import { useAuthOperations } from '@/hooks/useAuthOperations';
 import { supabase as supabaseClientModule } from '@/integrations/supabase/client';
@@ -8,72 +8,72 @@ import * as referralUtils from '@/utils/referralUtils';
 // Removed unused authUtils import
 
 // Mock Supabase
-jest.mock('@/integrations/supabase/client', () => ({ // Changed vi.mock to jest.mock
+vi.mock('@/integrations/supabase/client', () => ({ // Changed vi.mock to vi.mock
   supabase: {
     auth: {
-      signInWithPassword: jest.fn(), // Changed vi.fn to jest.fn
-      signUp: jest.fn(), // Changed vi.fn to jest.fn
-      signOut: jest.fn(), // Changed vi.fn to jest.fn
-      resetPasswordForEmail: jest.fn(), // Changed vi.fn to jest.fn
-      signInWithOAuth: jest.fn(), // Changed vi.fn to jest.fn
+      signInWithPassword: vi.fn(), // Changed vi.fn to vi.fn
+      signUp: vi.fn(), // Changed vi.fn to vi.fn
+      signOut: vi.fn(), // Changed vi.fn to vi.fn
+      resetPasswordForEmail: vi.fn(), // Changed vi.fn to vi.fn
+      signInWithOAuth: vi.fn(), // Changed vi.fn to vi.fn
     },
-    from: jest.fn(), // Changed vi.fn to jest.fn
-    rpc: jest.fn(), // Changed vi.fn to jest.fn
+    from: vi.fn(), // Changed vi.fn to vi.fn
+    rpc: vi.fn(), // Changed vi.fn to vi.fn
   },
 }));
 const supabase = supabaseClientModule as unknown as {
   auth: {
-    signInWithPassword: jest.Mock; // Changed vi.Mock to jest.Mock
-    signUp: jest.Mock; // Changed vi.Mock to jest.Mock
-    signOut: jest.Mock; // Changed vi.Mock to jest.Mock
-    resetPasswordForEmail: jest.Mock; // Changed vi.Mock to jest.Mock
-    signInWithOAuth: jest.Mock; // Changed vi.Mock to jest.Mock
+    signInWithPassword: vi.Mock; // Changed vi.Mock to vi.Mock
+    signUp: vi.Mock; // Changed vi.Mock to vi.Mock
+    signOut: vi.Mock; // Changed vi.Mock to vi.Mock
+    resetPasswordForEmail: vi.Mock; // Changed vi.Mock to vi.Mock
+    signInWithOAuth: vi.Mock; // Changed vi.Mock to vi.Mock
   };
-  from: jest.Mock; // Changed vi.Mock to jest.Mock
-  rpc: jest.Mock; // Changed vi.Mock to jest.Mock
+  from: vi.Mock; // Changed vi.Mock to vi.Mock
+  rpc: vi.Mock; // Changed vi.Mock to vi.Mock
 };
 
 // Mock other utilities
-jest.mock('@/utils/apiErrorHandler', () => ({ // Changed vi.mock to jest.mock
-  showApiError: jest.fn(), // Changed vi.fn to jest.fn
+vi.mock('@/utils/apiErrorHandler', () => ({ // Changed vi.mock to vi.mock
+  showApiError: vi.fn(), // Changed vi.fn to vi.fn
 }));
-jest.mock('@/hooks/use-toast', () => ({ // Changed vi.mock to jest.mock
-  toast: jest.fn(), // Changed vi.fn to jest.fn
+vi.mock('@/hooks/use-toast', () => ({ // Changed vi.mock to vi.mock
+  toast: vi.fn(), // Changed vi.fn to vi.fn
 }));
-jest.mock('@/utils/referralUtils', async (importOriginal) => { // Changed vi.mock to jest.mock
+vi.mock('@/utils/referralUtils', async (importOriginal) => { // Changed vi.mock to vi.mock
     const actual = await importOriginal<typeof referralUtils>();
     return {
         ...actual,
-        trackReferral: jest.fn().mockResolvedValue(false), // Changed vi.fn to jest.fn
-        checkUrlForReferralCode: jest.fn(), // Changed vi.fn to jest.fn
+        trackReferral: vi.fn().mockResolvedValue(false), // Changed vi.fn to vi.fn
+        checkUrlForReferralCode: vi.fn(), // Changed vi.fn to vi.fn
     };
 });
-jest.mock('@/utils/authUtils', () => ({ // Changed vi.mock to jest.mock
-  cleanupAuthState: jest.fn(), // Changed vi.fn to jest.fn
+vi.mock('@/utils/authUtils', () => ({ // Changed vi.mock to vi.mock
+  cleanupAuthState: vi.fn(), // Changed vi.fn to vi.fn
 }));
 
 // Mock SWR mutate (if needed, though not directly tested here for calls)
-jest.mock('swr', () => ({ // Changed vi.mock to jest.mock
-  mutate: jest.fn(), // Changed vi.fn to jest.fn
+vi.mock('swr', () => ({ // Changed vi.mock to vi.mock
+  mutate: vi.fn(), // Changed vi.fn to vi.fn
 }));
 
 // Mock fetch for points API
-global.fetch = jest.fn(); // Changed vi.fn to jest.fn
+global.fetch = vi.fn(); // Changed vi.fn to vi.fn
 
 
 describe('useAuthOperations', () => {
-  let setUser: jest.Mock; // Changed vi.Mock to jest.Mock
-  let setIsLoading: jest.Mock; // Changed vi.Mock to jest.Mock
-  let setAvatarUrl: jest.Mock; // Changed vi.Mock to jest.Mock
+  let setUser: vi.Mock; // Changed vi.Mock to vi.Mock
+  let setIsLoading: vi.Mock; // Changed vi.Mock to vi.Mock
+  let setAvatarUrl: vi.Mock; // Changed vi.Mock to vi.Mock
 
   beforeEach(() => {
-    jest.clearAllMocks(); // Changed vi.clearAllMocks to jest.clearAllMocks
-    setUser = jest.fn(); // Changed vi.fn to jest.fn
-    setIsLoading = jest.fn(); // Changed vi.fn to jest.fn
-    setAvatarUrl = jest.fn(); // Changed vi.fn to jest.fn
+    vi.clearAllMocks(); // Changed vi.clearAllMocks to vi.clearAllMocks
+    setUser = vi.fn(); // Changed vi.fn to vi.fn
+    setIsLoading = vi.fn(); // Changed vi.fn to vi.fn
+    setAvatarUrl = vi.fn(); // Changed vi.fn to vi.fn
 
     // Default successful fetch for points
-    (fetch as jest.Mock).mockResolvedValue({ // Changed vi.Mock to jest.Mock
+    (fetch as vi.Mock).mockResolvedValue({ // Changed vi.Mock to vi.Mock
         ok: true,
         json: async () => ({ success: true }),
     });
@@ -99,7 +99,7 @@ describe('useAuthOperations', () => {
       });
 
       expect(showApiError).toHaveBeenCalledTimes(1);
-      const [errorArg, messageArg, retryCallback] = (showApiError as jest.Mock).mock.calls[0]; // Changed vi.Mock to jest.Mock
+      const [errorArg, messageArg, retryCallback] = (showApiError as vi.Mock).mock.calls[0]; // Changed vi.Mock to vi.Mock
 
       expect(errorArg).toEqual(mockError);
       expect(messageArg).toBe('Error during signup');
@@ -125,7 +125,7 @@ describe('useAuthOperations', () => {
       });
 
       expect(showApiError).toHaveBeenCalledTimes(1);
-      const [errorArg, messageArg, retryCallback] = (showApiError as jest.Mock).mock.calls[0]; // Changed vi.Mock to jest.Mock
+      const [errorArg, messageArg, retryCallback] = (showApiError as vi.Mock).mock.calls[0]; // Changed vi.Mock to vi.Mock
 
       expect(errorArg).toBe(mockGenericError);
       expect(messageArg).toBe('Failed to sign up. Please try again.');
@@ -143,7 +143,7 @@ describe('useAuthOperations', () => {
     it('should call trackReferral and increment points on successful signup', async () => {
       const mockUser = { id: 'user-123', email: signUpParams.email };
       supabase.auth.signUp.mockResolvedValueOnce({ data: { user: mockUser }, error: null });
-      (referralUtils.trackReferral as jest.Mock).mockResolvedValueOnce(true); // Simulate referral was used, changed vi.Mock
+      (referralUtils.trackReferral as vi.Mock).mockResolvedValueOnce(true); // Simulate referral was used, changed vi.Mock
 
       const { result } = renderHook(() => useAuthOperations(setUser, setIsLoading, setAvatarUrl));
 

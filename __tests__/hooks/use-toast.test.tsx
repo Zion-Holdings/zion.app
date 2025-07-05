@@ -1,38 +1,38 @@
 import { toast } from '@/hooks/use-toast';
-// Removed unused imports: sonnerToastImport, React
+import { vi } from 'vitest';
 
 // Mock sonner
-jest.mock('sonner', () => ({ // Changed vi.mock to jest.mock
+vi.mock('sonner', () => ({
   toast: {
-    error: jest.fn(), // Changed vi.fn to jest.fn
-    success: jest.fn(), // Changed vi.fn to jest.fn
-    info: jest.fn(), // Changed vi.fn to jest.fn
-    warning: jest.fn(), // Changed vi.fn to jest.fn
-    loading: jest.fn(), // Changed vi.fn to jest.fn
-    custom: jest.fn(), // Changed vi.fn to jest.fn
-    dismiss: jest.fn(), // Changed vi.fn to jest.fn
+    error: vi.fn(),
+    success: vi.fn(),
+    info: vi.fn(),
+    warning: vi.fn(),
+    loading: vi.fn(),
+    custom: vi.fn(),
+    dismiss: vi.fn(),
   },
 }));
 
 // Mock logError as it's called by the destructive toast
-jest.mock('@/utils/logError', () => ({ // Changed vi.mock to jest.mock
-  logError: jest.fn(() => 'mocked-trace-id'), // Changed vi.fn to jest.fn
+vi.mock('@/utils/logError', () => ({
+  logError: vi.fn(() => 'mocked-trace-id'),
 }));
 
 describe('useToast', () => {
-  const sonnerToast = jest.requireMock('sonner').toast as { // Use renamed import for requireMock
-    error: jest.Mock;
-    success: jest.Mock;
-    info: jest.Mock;
-    warning: jest.Mock;
-    loading: jest.Mock;
-    custom: jest.Mock;
-    dismiss: jest.Mock;
+  const sonnerToast = vi.mocked(require('sonner').toast) as {
+    error: vi.Mock;
+    success: vi.Mock;
+    info: vi.Mock;
+    warning: vi.Mock;
+    loading: vi.Mock;
+    custom: vi.Mock;
+    dismiss: vi.Mock;
   };
 
 
   beforeEach(() => {
-    jest.clearAllMocks(); // Changed vi.clearAllMocks to jest.clearAllMocks
+    vi.clearAllMocks();
     // Reset the deduplication internal state for each test
     toast.dismiss(); // Clears sonner's internal state if any, effectively resetting lastKey/lastShown for shouldShow
     // const now = Date.now(); // Date.now() is already mocked by fake timers
@@ -41,7 +41,7 @@ describe('useToast', () => {
   });
 
   it('should call sonnerToast.error with a Retry button when onRetry is provided for destructive variant', () => {
-    const mockOnRetry = jest.fn(); // Changed vi.fn to jest.fn
+    const mockOnRetry = vi.fn(); // Changed vi.fn to vi.fn
     const title = 'Error Title';
     const description = 'Something went wrong.';
 
@@ -53,7 +53,7 @@ describe('useToast', () => {
     });
 
     expect(sonnerToast.error).toHaveBeenCalledTimes(1);
-    const [message, options] = (sonnerToast.error as jest.Mock).mock.calls[0]; // Changed vi.Mock to jest.Mock
+    const [message, options] = (sonnerToast.error as vi.Mock).mock.calls[0]; // Changed vi.Mock to vi.Mock
 
     expect(message).toBe(`${title} (Trace ID: mocked-trace-id)`);
     expect(options).toBeDefined();
@@ -74,13 +74,13 @@ describe('useToast', () => {
     });
 
     expect(sonnerToast.error).toHaveBeenCalledTimes(1);
-    const [message, options] = (sonnerToast.error as jest.Mock).mock.calls[0]; // Changed vi.Mock to jest.Mock
+    const [message, options] = (sonnerToast.error as vi.Mock).mock.calls[0]; // Changed vi.Mock to vi.Mock
     expect(message).toBe(`${title} (Trace ID: mocked-trace-id)`);
     expect(options.action).toBeUndefined();
   });
 
    it('should call sonnerToast.error with a generic action when action prop is provided and onRetry is not', () => {
-    const mockActionOnClick = jest.fn(); // Changed vi.fn to jest.fn
+    const mockActionOnClick = vi.fn(); // Changed vi.fn to vi.fn
     const title = 'Error With Generic Action';
     const actionLabel = 'Custom Action';
 
@@ -91,7 +91,7 @@ describe('useToast', () => {
     });
 
     expect(sonnerToast.error).toHaveBeenCalledTimes(1);
-    const [message, options] = (sonnerToast.error as jest.Mock).mock.calls[0]; // Changed vi.Mock to jest.Mock
+    const [message, options] = (sonnerToast.error as vi.Mock).mock.calls[0]; // Changed vi.Mock to vi.Mock
 
     expect(message).toBe(`${title} (Trace ID: mocked-trace-id)`);
     expect(options).toBeDefined();
@@ -105,8 +105,8 @@ describe('useToast', () => {
   });
 
   it('should prioritize onRetry over generic action for destructive toasts', () => {
-    const mockOnRetry = jest.fn(); // Changed vi.fn to jest.fn
-    const mockActionOnClick = jest.fn(); // Changed vi.fn to jest.fn
+    const mockOnRetry = vi.fn(); // Changed vi.fn to vi.fn
+    const mockActionOnClick = vi.fn(); // Changed vi.fn to vi.fn
     const title = 'Error With Both Actions';
     const actionLabel = 'Generic Action';
 
@@ -118,7 +118,7 @@ describe('useToast', () => {
     });
 
     expect(sonnerToast.error).toHaveBeenCalledTimes(1);
-    const [message, options] = (sonnerToast.error as jest.Mock).mock.calls[0]; // Changed vi.Mock to jest.Mock
+    const [message, options] = (sonnerToast.error as vi.Mock).mock.calls[0]; // Changed vi.Mock to vi.Mock
 
     expect(message).toBe(`${title} (Trace ID: mocked-trace-id)`);
     expect(options).toBeDefined();
@@ -143,7 +143,7 @@ describe('useToast', () => {
     expect(sonnerToast.error).toHaveBeenCalledTimes(1);
 
     // Advance time by more than DEDUPE_DELAY (3000ms)
-    jest.advanceTimersByTime(3100); // Changed vi.advanceTimersByTime to jest.advanceTimersByTime
+    vi.advanceTimersByTime(3100); // Changed vi.advanceTimersByTime to vi.advanceTimersByTime
 
     toast({ title, variant: 'destructive' });
     expect(sonnerToast.error).toHaveBeenCalledTimes(2);
@@ -160,9 +160,9 @@ describe('useToast', () => {
 
 // Setup timers for deduplication tests
 beforeAll(() => {
-  jest.useFakeTimers(); // Changed vi.useFakeTimers to jest.useFakeTimers
+  vi.useFakeTimers(); // Changed vi.useFakeTimers to vi.useFakeTimers
 });
 
 afterAll(() => {
-  jest.useRealTimers(); // Changed vi.useRealTimers to jest.useRealTimers
+  vi.useRealTimers(); // Changed vi.useRealTimers to vi.useRealTimers
 });
