@@ -6,6 +6,10 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  // If NEXTAUTH_SECRET is not configured, gracefully indicate auth is disabled
+  if (!process.env.NEXTAUTH_SECRET) {
+    return res.status(200).json({ message: 'Authentication not configured' });
+  }
   try {
     const session = await getServerSession(req, res, authOptions);
     if (!session) {
