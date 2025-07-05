@@ -8,7 +8,10 @@ const fs = require('fs');
 const path = require('path');
 
 const args = process.argv.slice(2);
-const LOG_DIR = args[0] && !args[0].startsWith('--') ? args[0] : 'logs';
+// Allow passing one or more files or directories. Default to "logs" directory
+const inputPaths = args.filter(a => !a.startsWith('--'));
+const DEFAULT_DIR = 'logs';
+const TARGET_PATHS = inputPaths.length ? inputPaths : [DEFAULT_DIR];
 // Load translation keys to filter false positives for "missingKey" log entries
 const localesDir = path.join(__dirname, '..', 'src', 'i18n', 'locales');
 let allLocaleKeys = null;
@@ -132,24 +135,19 @@ function checkFile(filePath) {
 }
 
 function main() {
-  if (!fs.existsSync(LOG_DIR)) {
-    console.error(`Log directory not found: ${LOG_DIR}`);
-    process.exit(1);
-  }
-
-  const dirs = [LOG_DIR];
-  if (LOG_DIR !== '.') {
-    dirs.push('.'); // also check root logs like build.log
-  }
-
   const files = [];
   const LOG_EXT_REGEX = /\.(log|txt)$/i;
-  dirs.forEach(dir => {
-    if (fs.existsSync(dir)) {
-      const dirFiles = fs.readdirSync(dir)
+
+  TARGET_PATHS.forEach(p => {
+    if (!fs.existsSync(p)) return;
+    const stat = fs.statSync(p);
+    if (stat.isDirectory()) {
+      const dirFiles = fs.readdirSync(p)
         .filter(f => LOG_EXT_REGEX.test(f))
-        .map(f => path.join(dir, f));
+        .map(f => path.join(p, f));
       files.push(...dirFiles);
+    } else if (stat.isFile()) {
+      files.push(p);
     }
   });
 
@@ -238,7 +236,7 @@ function main() {
   }
 
   if (SUMMARY) {
-    const summaryDir = path.join(LOG_DIR, 'summary');
+    const summaryDir = path.join(DEFAULT_DIR, 'summary');
     fs.mkdirSync(summaryDir, { recursive: true });
     const summaryFile = path.join(summaryDir, `summary-${Date.now()}.log`);
     fs.writeFileSync(summaryFile, summaryLines.join('\n') + '\n');
