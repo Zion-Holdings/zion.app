@@ -1,5 +1,5 @@
 import React from 'react';
-import { toast as sonnerToast } from 'sonner';
+// Remove direct import of sonnerToast, rely on globalToastManager
 import { globalToastManager, showToast, ToastType, ToastPriority } from '@/utils/globalToastManager';
 
 const variantStyles = {

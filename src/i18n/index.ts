@@ -21,6 +21,7 @@ if (!i18n) {
     .use(LanguageDetector) // Detect user language
     .use(initReactI18next) // Initialize react-i18next
     .init({
+      lng: 'en', // Explicitly set initial language to bypass detection issues during server start
       resources: {
       en: {
         translation: enTranslation

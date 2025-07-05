@@ -1,6 +1,24 @@
-import { toast as sonnerToast } from 'sonner';
+import type { toast as SonnerToastType } from 'sonner';
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
+let sonnerToast: typeof SonnerToastType;
+
+if (typeof window !== 'undefined') {
+  // Dynamically require sonner only on the client-side
+  sonnerToast = require('sonner').toast;
+} else {
+  // Provide a mock/stub for server-side to prevent crashes
+  const noop = () => {};
+  sonnerToast = noop as any;
+  sonnerToast.success = noop as any;
+  sonnerToast.error = noop as any;
+  sonnerToast.warning = noop as any;
+  sonnerToast.info = noop as any;
+  sonnerToast.message = noop as any;
+  sonnerToast.custom = noop as any;
+  sonnerToast.dismiss = noop as any;
+  // Ensure all methods used by the manager are mocked if necessary
+}
 
 // Toast configuration constants
 const TOAST_CONFIG = {
@@ -246,31 +264,36 @@ class GlobalToastManager {
     const message = toast.title ? toast.title : toast.message;
     const description = toast.title ? toast.message : undefined;
 
-    switch (toast.type) {
-      case ToastType.SUCCESS:
-        sonnerToast.success(message, { ...options, description });
-        break;
-      case ToastType.ERROR:
-      case ToastType.NETWORK_ERROR:
-      case ToastType.AUTH_ERROR:
-      case ToastType.CRITICAL_ERROR:
-        sonnerToast.error(message, { 
-          ...options, 
-          description,
-          style: { background: '#7f1d1d', color: '#fff' }
-        });
-        break;
-      case ToastType.WARNING:
-      case ToastType.VALIDATION_ERROR:
-        sonnerToast.warning(message, { ...options, description });
-        break;
-      default:
-        sonnerToast(message, { ...options, description });
-        break;
-    }
+    if (typeof window !== 'undefined') {
+      switch (toast.type) {
+        case ToastType.SUCCESS:
+          sonnerToast.success(message, { ...options, description });
+          break;
+        case ToastType.ERROR:
+        case ToastType.NETWORK_ERROR:
+        case ToastType.AUTH_ERROR:
+        case ToastType.CRITICAL_ERROR:
+          sonnerToast.error(message, {
+            ...options,
+            description,
+            style: { background: '#7f1d1d', color: '#fff' }
+          });
+          break;
+        case ToastType.WARNING:
+        case ToastType.VALIDATION_ERROR:
+          sonnerToast.warning(message, { ...options, description });
+          break;
+        default:
+          sonnerToast(message, { ...options, description });
+          break;
+      }
 
-    // Set up auto-dismissal
-    this.setupAutoDismissal(toast);
+      // Set up auto-dismissal only on client-side as it involves setTimeout
+      this.setupAutoDismissal(toast);
+    } else {
+      // Log to console or a server-side logger if attempting to show toast on server
+      console.warn(`[SSR Toast Attempt]: ${toast.type} - ${message} (Sonner UI not rendered on server)`);
+    }
 
     // Log error toasts for debugging
     if (toast.type.includes('error')) {

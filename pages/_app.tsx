@@ -74,7 +74,13 @@ import { AnalyticsProvider } from '@/context/AnalyticsContext';
 import { ErrorProvider } from '@/context/ErrorContext';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { ChakraProvider } from '@chakra-ui/react';
+import dynamic from 'next/dynamic';
 import '../src/index.css';
+
+// Dynamically import the Toaster component from sonner for client-side rendering only
+const Toaster = dynamic(() => import('sonner').then((mod) => mod.Toaster), {
+  ssr: false,
+});
 
 // Simple loading component
 const SimpleLoading = () => (
@@ -185,6 +191,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ProviderWrapper queryClient={queryClient}>
       <Component {...pageProps} />
+      <Toaster richColors position="top-right" />
     </ProviderWrapper>
   );
 }
