@@ -86,6 +86,7 @@ const nextConfig = {
     // Enable Node.js runtime for middleware to avoid Next.js warnings
     nodeMiddleware: false, // Explicitly disable, was causing build issues (requires canary)
     // Removed esmExternals to prevent external module dynamic import issues (already handled by deleting the property below)
+    // instrumentationHook is deprecated and automatically handled by presence of instrumentation.ts
   },
 
   images: {
