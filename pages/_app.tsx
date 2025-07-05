@@ -57,14 +57,8 @@ if (typeof window !== 'undefined') {
 }
 
 import React, { useState, useEffect } from 'react';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
-import { Provider as ReduxProvider } from 'react-redux';
-import { store } from '@/store';
-import { I18nextProvider } from 'react-i18next';
-import i18n from '@/i18n';
-import { ChakraProvider } from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
 import '../src/index.css';
 
@@ -139,31 +133,16 @@ const ErrorBoundary: React.FC<{ children: React.ReactNode; name: string }> = ({ 
   return <>{children}</>;
 };
 
-// Minimal provider wrapper with only essential providers
-const ProviderWrapper: React.FC<{ children: React.ReactNode; queryClient: QueryClient }> = ({ children, queryClient }) => {
+// Ultra-minimal provider wrapper with no external providers
+const ProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <ErrorBoundary name="QueryClientProvider">
-      <QueryClientProvider client={queryClient}>
-        <ErrorBoundary name="ReduxProvider">
-          <ReduxProvider store={store}>
-            <ErrorBoundary name="I18nextProvider">
-              <I18nextProvider i18n={i18n}>
-                <ErrorBoundary name="ChakraProvider">
-                  <ChakraProvider>
-                    {children}
-                  </ChakraProvider>
-                </ErrorBoundary>
-              </I18nextProvider>
-            </ErrorBoundary>
-          </ReduxProvider>
-        </ErrorBoundary>
-      </QueryClientProvider>
+    <ErrorBoundary name="BasicWrapper">
+      {children}
     </ErrorBoundary>
   );
 };
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [queryClient] = useState(() => new QueryClient());
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -207,9 +186,9 @@ export default function App({ Component, pageProps }: AppProps) {
     return <SimpleLoading />;
   }
 
-  // Main app render with minimal providers
+  // Main app render with no external providers
   return (
-    <ProviderWrapper queryClient={queryClient}>
+    <ProviderWrapper>
       <Component {...pageProps} />
       <Toaster richColors position="top-right" />
     </ProviderWrapper>
