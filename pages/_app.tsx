@@ -66,7 +66,7 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
 import { AuthProvider } from '@/context/AuthContext';
 import { CartProvider } from '@/context/CartContext';
-import { ThemeProvider } from '@/context/ThemeContext';
+
 import dynamic from 'next/dynamic';
 import '../src/index.css';
 
@@ -155,11 +155,7 @@ const ProviderWrapper: React.FC<{ children: React.ReactNode; queryClient: QueryC
                     <AuthProvider>
                       <ErrorBoundary name="CartProvider">
                         <CartProvider>
-                          <ErrorBoundary name="ThemeProvider">
-                            <ThemeProvider>
-                              {children}
-                            </ThemeProvider>
-                          </ErrorBoundary>
+                                                  {children}
                         </CartProvider>
                       </ErrorBoundary>
                     </AuthProvider>
