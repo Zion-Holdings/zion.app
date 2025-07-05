@@ -3,10 +3,12 @@
 // NOTE: DO NOT add a static import for checkEssentialEnvVars here.
 // It needs to be dynamically imported within each test after mocks are applied.
 
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
+
 // Store original process.env
 const ORIGINAL_ENV = process.env;
 
-// Helper to set and reset process.env for Jest tests
+// Helper to set and reset process.env for Vitest tests
 const mockProcessEnv = (envValues: Record<string, string | boolean | undefined>) => {
   process.env = { ...ORIGINAL_ENV }; // Start with a fresh copy of original env
 
@@ -23,13 +25,13 @@ const mockProcessEnv = (envValues: Record<string, string | boolean | undefined>)
 
 describe('checkEssentialEnvVars', () => {
   beforeEach(() => {
-    jest.resetModules(); // Clears the cache for modules, useful when env vars change
+    vi.resetModules(); // Clears the cache for modules, useful when env vars change
     // process.env will be set by mockProcessEnv in each test
   });
 
   afterEach(() => {
     process.env = ORIGINAL_ENV; // Restore original environment
-    jest.restoreAllMocks(); // Restores all spies
+    vi.restoreAllMocks();
   });
 
   it('should not throw an error when all essential environment variables are set correctly', () => {
@@ -125,7 +127,7 @@ describe('checkEssentialEnvVars', () => {
       NEXT_PUBLIC_SUPABASE_URL: 'https://valid.supabase.co',
       NEXT_PUBLIC_SUPABASE_ANON_KEY: 'valid_supabase_key',
     });
-    const consoleLogSpy = jest.spyOn(console, 'log');
+    const consoleLogSpy = vi.spyOn(console, 'log');
     return import('@/utils/validateEnv').then(module => {
       module.checkEssentialEnvVars();
       // Note: The original test checked for 'Essential environment variables validated successfully.'
@@ -143,7 +145,7 @@ describe('checkEssentialEnvVars', () => {
       NEXT_PUBLIC_SUPABASE_ANON_KEY: 'valid_supabase_key',
     });
 
-    const consoleLogSpy = jest.spyOn(console, 'log');
+    const consoleLogSpy = vi.spyOn(console, 'log');
 
     return import('@/utils/validateEnv').then(module => {
       module.checkEssentialEnvVars();
@@ -159,13 +161,13 @@ describe('validateProductionEnvironment', () => {
   // ORIGINAL_ENV is already defined at the top of the file
 
   beforeEach(() => {
-    jest.resetModules();
+    vi.resetModules();
     // process.env is managed by mockProcessEnv in each test for this suite too
   });
 
   afterEach(() => {
     process.env = ORIGINAL_ENV;
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
   });
 
   it('should not throw an error in development even if INTERNAL_AUTH_SERVICE_URL is missing, and should log a warning', () => {
@@ -176,7 +178,7 @@ describe('validateProductionEnvironment', () => {
       INTERNAL_AUTH_SERVICE_URL: undefined, // Explicitly undefined
     });
 
-    const consoleWarnSpy = jest.spyOn(console, 'warn');
+    const consoleWarnSpy = vi.spyOn(console, 'warn');
 
     return import('@/utils/environmentConfig').then(configModule => {
       expect(() => configModule.validateProductionEnvironment()).not.toThrow();
