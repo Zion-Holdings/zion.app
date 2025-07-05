@@ -19,7 +19,14 @@ export const BrowserRouter = ({ children }: { children: any }) => {
 };
 export const Routes = ({ children }: { children: any }) => children;
 export const Route = ({ element }: { element: any }) => element;
-export const Link = (props: any) => { return <a {...props} />; };
+export interface LinkProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  to?: string;
+}
+
+export const Link = ({ to, href, ...props }: LinkProps) => {
+  return <a href={href ?? to} {...props} />;
+};
 export const NavLink = Link;
 export const Navigate = ({ to }: { to: string }) => {
   const nextRouter = useRouter();
