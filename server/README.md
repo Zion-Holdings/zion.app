@@ -16,7 +16,7 @@ This directory contains a standalone Express.js server used for specific backend
 
 ## Key Features / Endpoints (Inferred)
 
-Based on `server/app.js`:
+Based on `server/app.cjs`:
 
 -   **Authentication:**
     -   Routes under `/auth` and `/api/auth` using Passport.js.
@@ -57,11 +57,11 @@ Based on `server/app.js`:
 
 4.  **Running the Development Server:**
     *   There might be an npm script in the root `package.json` or this directory's `package.json` (if it exists) to start this server.
-    *   A common way to run it directly (if `server/index.js` or `server/app.js` is the entry point):
+    *   A common way to run it directly (if `server/index.cjs` or `server/app.cjs` is the entry point):
         ```bash
-        node server/index.js
+        node server/index.cjs
         ```
-    *   The server's port will be defined in its configuration (e.g., `server/index.js` or via an environment variable).
+    *   The server's port will be defined in its configuration (e.g., `server/index.cjs` or via an environment variable).
 
 ## Running Tests
 
@@ -104,7 +104,7 @@ The project plans to integrate `swagger-jsdoc` and `swagger-ui-express` so that 
 
 ## Deployment
 
-This service can be deployed as a standalone Docker container. The root repository contains a `Dockerfile` that installs dependencies and starts the Express server via `node server/index.js`. In production it can be built and run with:
+This service can be deployed as a standalone Docker container. The root repository contains a `Dockerfile` that installs dependencies and starts the Express server via `node server/index.cjs`. In production it can be built and run with:
 
 ```bash
 docker build -t zion-express ./server

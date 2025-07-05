@@ -5,7 +5,7 @@ const { EventEmitter } = require('events');
 // the limit under typical workloads.
 EventEmitter.defaultMaxListeners = 50;
 
-const app = require('./app');
+const app = require('./app.cjs');
 const PORT = process.env.PORT || 3001;
 
 if (process.env.ENABLE_HTTP2 === 'true') {
