@@ -8,7 +8,10 @@ async function isServerRunning(url: string): Promise<boolean> {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 2000);
   try {
-    const res = await fetchFn(url, { method: 'HEAD', signal: controller.signal });
+    const res = await fetchFn(`${url}/api/health`, {
+      method: 'GET',
+      signal: controller.signal,
+    });
     return res.ok;
   } catch {
     return false;
