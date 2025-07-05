@@ -1,27 +1,30 @@
 // Conditional Sentry import for React 19 + Next.js 15 compatibility
 let Sentry: any = null;
 
-// Skip Sentry import during CI builds or when explicitly disabled
-if (process.env.SKIP_SENTRY_BUILD !== 'true' && process.env.CI !== 'true') {
-  try {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    Sentry = require("@sentry/nextjs");
-  } catch (error) {
-    console.warn('Sentry import failed, using mock functionality:', error);
-    // Use basic mock functionality
-    Sentry = {
-      init: () => console.log('Sentry mock: init called'),
-      captureException: (error: any) => console.log('Sentry mock: captureException', error),
-      setTag: (key: string, value: string) => console.log('Sentry mock: setTag', key, value),
-    };
+// Attempt to load Sentry or its alias.
+// Webpack (via next.config.js) is responsible for aliasing @sentry/nextjs
+// to src/utils/sentry-mock.ts if mocking is intended for CI/SKIP_SENTRY_BUILD, etc.
+try {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  Sentry = require("@sentry/nextjs");
+  // Check if the loaded Sentry is the comprehensive mock from src/utils/sentry-mock.ts
+  // The mock has a specific SDK_VERSION
+  if (Sentry && Sentry.SDK_VERSION === '7.0.0-mock') {
+    console.log('Comprehensive Sentry mock (src/utils/sentry-mock.ts) loaded via webpack alias.');
+  } else if (Sentry) {
+    console.log('Real Sentry SDK loaded.');
+  } else {
+    throw new Error('@sentry/nextjs require returned null/undefined');
   }
-} else {
-  console.log('Sentry disabled for CI/React 19 compatibility');
-  // Use mock functionality
+} catch (error) {
+  console.error('CRITICAL: Failed to require "@sentry/nextjs" (real SDK or webpack alias). Falling back to emergency inline mock.', error);
+  // Emergency fallback to a very basic inline mock if require itself fails catastrophically.
+  // This should ideally not be reached if webpack aliasing is working correctly.
   Sentry = {
-    init: () => console.log('Sentry mock: init called'),
-    captureException: (error: any) => console.log('Sentry mock: captureException', error),
-    setTag: (key: string, value: string) => console.log('Sentry mock: setTag', key, value),
+    init: () => console.warn('Sentry emergency inline mock: init called. Sentry is NOT operational.'),
+    captureException: (err: any) => console.warn('Sentry emergency inline mock: captureException', err),
+    setTag: (key: string, value: string) => console.warn('Sentry emergency inline mock: setTag', key, value),
+    SDK_VERSION: 'emergency-inline-mock', // Identifier for this mock
   };
 }
 
