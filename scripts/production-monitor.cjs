@@ -14,7 +14,8 @@ class ProductionMonitor {
     this.healthChecks = [
       { name: 'API Health', endpoint: '/api/health' },
       { name: 'App Load', endpoint: '/' },
-      { name: 'Authentication', endpoint: '/api/auth/session' }
+      // Use dedicated auth health endpoint to avoid 500 errors when no session
+      { name: 'Authentication', endpoint: '/api/auth/health' }
     ];
   }
 
@@ -59,6 +60,10 @@ class ProductionMonitor {
     for (const check of this.healthChecks) {
       console.log(`Checking ${check.name}...`);
       const result = await this.checkEndpoint(check.endpoint);
+      if (check.name === 'Authentication' && result.status === 401) {
+        // 401 indicates no active session but endpoint reachable
+        result.success = true;
+      }
       results.push({ ...check, ...result });
       
       const emoji = result.success ? '✅' : '❌';

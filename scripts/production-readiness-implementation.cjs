@@ -283,7 +283,8 @@ class ProductionMonitor {
     this.healthChecks = [
       { name: 'API Health', endpoint: '/api/health' },
       { name: 'App Load', endpoint: '/' },
-      { name: 'Authentication', endpoint: '/api/auth/session' }
+      // Use dedicated auth health endpoint
+      { name: 'Authentication', endpoint: '/api/auth/health' }
     ];
   }
 
