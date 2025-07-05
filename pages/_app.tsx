@@ -72,6 +72,7 @@ import { WalletProvider } from '@/context/WalletContext';
 import { AnalyticsProvider } from '@/context/AnalyticsContext';
 import { ErrorProvider } from '@/context/ErrorContext';
 import { LanguageProvider } from '@/context/LanguageContext';
+import { ChakraProvider } from '@chakra-ui/react';
 import '../src/index.css';
 
 // Create a client
@@ -91,7 +92,9 @@ export default function App({ Component, pageProps }: AppProps) {
                       <CartProvider>
                         <FeedbackProvider>
                           <ThemeProvider>
-                            <Component {...pageProps} />
+                            <ChakraProvider>
+                              <Component {...pageProps} />
+                            </ChakraProvider>
                           </ThemeProvider>
                         </FeedbackProvider>
                       </CartProvider>
