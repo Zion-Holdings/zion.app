@@ -41,6 +41,7 @@ def summarize_bug_log(log_file: str = LOG_FILE, top_n: int = 5, output: str | No
                 "top_errors": common_errors.most_common(top_n),
             }
             json.dump(summary, out_f, indent=4)
+        print(f"Summary written to {output}")
 
 
 if __name__ == "__main__":
