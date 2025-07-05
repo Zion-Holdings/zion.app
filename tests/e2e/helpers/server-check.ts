@@ -6,8 +6,8 @@ let cachedURL: string | null = null;
 
 async function isServerRunning(url: string): Promise<boolean> {
   try {
-    const res = await fetchFn(url, { method: 'HEAD' });
-    return res.ok;
+    const res = await fetchFn(`${url}/api/health`, { method: 'HEAD' });
+    return res.status < 500;
   } catch {
     return false;
   }
