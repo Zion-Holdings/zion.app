@@ -56,9 +56,10 @@ if (typeof window !== 'undefined') {
   });
 }
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
+import { useRouter } from 'next/router';
 import { Provider as ReduxProvider } from 'react-redux';
 import { store } from '@/store';
 import { I18nextProvider } from 'react-i18next';
@@ -72,15 +73,39 @@ import { WalletProvider } from '@/context/WalletContext';
 import { AnalyticsProvider } from '@/context/AnalyticsContext';
 import { ErrorProvider } from '@/context/ErrorContext';
 import { LanguageProvider } from '@/context/LanguageContext';
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import chakraTheme from '@chakra-ui/theme';
 import '../src/index.css';
 
-// Create a client
-const queryClient = new QueryClient();
+// Simple loading component
+const SimpleLoading = () => (
+  <div style={{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100vh',
+    fontFamily: 'sans-serif',
+    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    color: 'white'
+  }}>
+    <div style={{ textAlign: 'center' }}>
+      <h1>Zion Tech Marketplace</h1>
+      <p>Loading...</p>
+    </div>
+  </div>
+);
+
+// Simple error boundary
+const SimpleErrorBoundary: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  return (
+    <div>
+      {children}
+    </div>
+  );
+};
 
 // Provider wrapper with error handling
 const ProviderWrapper: React.FC<{ children: React.ReactNode; queryClient: QueryClient }> = ({ children, queryClient }) => {
-export default function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <ErrorProvider>
@@ -94,8 +119,8 @@ export default function App({ Component, pageProps }: AppProps) {
                       <CartProvider>
                         <FeedbackProvider>
                           <ThemeProvider>
-                            <ChakraProvider>
-                              <Component {...pageProps} />
+                            <ChakraProvider theme={chakraTheme}>
+                              {children}
                             </ChakraProvider>
                           </ThemeProvider>
                         </FeedbackProvider>
@@ -107,12 +132,12 @@ export default function App({ Component, pageProps }: AppProps) {
             </LanguageProvider>
           </I18nextProvider>
         </ReduxProvider>
-      </I18nextProvider>
-    </SimpleErrorBoundary>
+      </ErrorProvider>
+    </QueryClientProvider>
   );
 };
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
@@ -162,7 +187,5 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ProviderWrapper queryClient={queryClient}>
       <Component {...pageProps} />
     </ProviderWrapper>
-      </ErrorProvider>
-    </QueryClientProvider>
   );
 }
