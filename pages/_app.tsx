@@ -59,7 +59,8 @@ if (typeof window !== 'undefined') {
 import React, { useState, useEffect } from 'react';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
-import { ChakraProvider } from '@chakra-ui/react';
+import { Provider as ReduxProvider } from 'react-redux';
+import { store } from '@/store';
 import dynamic from 'next/dynamic';
 import '../src/index.css';
 
@@ -134,14 +135,14 @@ const ErrorBoundary: React.FC<{ children: React.ReactNode; name: string }> = ({ 
   return <>{children}</>;
 };
 
-// Provider wrapper with ChakraProvider added back
+// Provider wrapper with Redux
 const ProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <ErrorBoundary name="BasicWrapper">
-      <ErrorBoundary name="ChakraProvider">
-        <ChakraProvider>
+      <ErrorBoundary name="ReduxProvider">
+        <ReduxProvider store={store}>
           {children}
-        </ChakraProvider>
+        </ReduxProvider>
       </ErrorBoundary>
     </ErrorBoundary>
   );
@@ -191,7 +192,7 @@ export default function App({ Component, pageProps }: AppProps) {
     return <SimpleLoading />;
   }
 
-  // Main app render with ChakraProvider
+  // Main app render with Redux
   return (
     <ProviderWrapper>
       <Component {...pageProps} />
