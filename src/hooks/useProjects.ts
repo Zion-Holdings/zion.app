@@ -44,8 +44,9 @@ export function useProjects() {
       
       if (fetchError) throw fetchError;
       
-      // Transform the data to match our project types
-      const transformedData = data.map((project: any) => ({
+      // Transform the data to match our project types. Default to an empty array
+      // to prevent "map is not a function" errors when `data` is null
+      const transformedData = (data ?? []).map((project: any) => ({
         ...project,
         talent_profile: project.talent_profile ? {
           ...project.talent_profile,
