@@ -137,6 +137,8 @@
     "logs:alerts": "node scripts/setup-log-alerts.cjs",
     "logs:performance": "node scripts/performance-log-analyzer.cjs",
     "logs:security": "node scripts/security-log-monitor.cjs",
+    "bug:demo": "python main_app.py",
+    "bug:summary": "python bug_log_summary.py",
     "monitor:enhanced": "npm run logs:realtime",
     "monitor:all": "concurrently \"npm run logs:realtime\" \"npm run logs:performance\" \"npm run logs:security\"",
     "analyze:react19": "node scripts/react19-bundle-analysis.cjs",
