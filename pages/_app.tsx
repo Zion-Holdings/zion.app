@@ -100,45 +100,110 @@ const SimpleLoading = () => (
   </div>
 );
 
-// Simple error boundary
-const SimpleErrorBoundary: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return (
-    <div>
-      {children}
-    </div>
-  );
+// Enhanced error boundary with detailed logging
+const ErrorBoundary: React.FC<{ children: React.ReactNode; name: string }> = ({ children, name }) => {
+  const [hasError, setHasError] = React.useState(false);
+  const [error, setError] = React.useState<Error | null>(null);
+
+  React.useEffect(() => {
+    const handleError = (event: ErrorEvent) => {
+      console.error(`Error in ${name}:`, event.error);
+      setError(event.error);
+      setHasError(true);
+    };
+
+    window.addEventListener('error', handleError);
+    return () => window.removeEventListener('error', handleError);
+  }, [name]);
+
+  if (hasError) {
+    return (
+      <div style={{
+        padding: '1rem',
+        border: '2px solid #ff4444',
+        borderRadius: '8px',
+        backgroundColor: '#fff5f5',
+        color: '#cc0000',
+        margin: '1rem'
+      }}>
+        <h3>Error in {name}</h3>
+        <p>{error?.message || 'Unknown error occurred'}</p>
+        <button 
+          onClick={() => window.location.reload()}
+          style={{
+            backgroundColor: '#ff4444',
+            color: 'white',
+            border: 'none',
+            padding: '0.5rem 1rem',
+            borderRadius: '4px',
+            cursor: 'pointer'
+          }}
+        >
+          Reload Page
+        </button>
+      </div>
+    );
+  }
+
+  return <>{children}</>;
 };
 
-// Provider wrapper with error handling
+// Provider wrapper with individual error boundaries
 const ProviderWrapper: React.FC<{ children: React.ReactNode; queryClient: QueryClient }> = ({ children, queryClient }) => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <ErrorProvider>
-        <ReduxProvider store={store}>
-          <I18nextProvider i18n={i18n}>
-            <LanguageProvider>
-              <AuthProvider>
-                <WhitelabelProvider>
-                  <WalletProvider>
-                    <AnalyticsProvider>
-                      <CartProvider>
-                        <FeedbackProvider>
-                          <ThemeProvider>
-                            <ChakraProvider>
-                              {children}
-                            </ChakraProvider>
-                          </ThemeProvider>
-                        </FeedbackProvider>
-                      </CartProvider>
-                    </AnalyticsProvider>
-                  </WalletProvider>
-                </WhitelabelProvider>
-              </AuthProvider>
-            </LanguageProvider>
-          </I18nextProvider>
-        </ReduxProvider>
-      </ErrorProvider>
-    </QueryClientProvider>
+    <ErrorBoundary name="QueryClientProvider">
+      <QueryClientProvider client={queryClient}>
+        <ErrorBoundary name="ErrorProvider">
+          <ErrorProvider>
+            <ErrorBoundary name="ReduxProvider">
+              <ReduxProvider store={store}>
+                <ErrorBoundary name="I18nextProvider">
+                  <I18nextProvider i18n={i18n}>
+                    <ErrorBoundary name="LanguageProvider">
+                      <LanguageProvider>
+                        <ErrorBoundary name="AuthProvider">
+                          <AuthProvider>
+                            <ErrorBoundary name="WhitelabelProvider">
+                              <WhitelabelProvider>
+                                <ErrorBoundary name="WalletProvider">
+                                  <WalletProvider>
+                                    <ErrorBoundary name="AnalyticsProvider">
+                                      <AnalyticsProvider>
+                                        <ErrorBoundary name="CartProvider">
+                                          <CartProvider>
+                                            <ErrorBoundary name="FeedbackProvider">
+                                              <FeedbackProvider>
+                                                <ErrorBoundary name="ThemeProvider">
+                                                  <ThemeProvider>
+                                                    <ErrorBoundary name="ChakraProvider">
+                                                      <ChakraProvider>
+                                                        {children}
+                                                      </ChakraProvider>
+                                                    </ErrorBoundary>
+                                                  </ThemeProvider>
+                                                </ErrorBoundary>
+                                              </FeedbackProvider>
+                                            </ErrorBoundary>
+                                          </CartProvider>
+                                        </ErrorBoundary>
+                                      </AnalyticsProvider>
+                                    </ErrorBoundary>
+                                  </WalletProvider>
+                                </ErrorBoundary>
+                              </WhitelabelProvider>
+                            </ErrorBoundary>
+                          </AuthProvider>
+                        </ErrorBoundary>
+                      </LanguageProvider>
+                    </ErrorBoundary>
+                  </I18nextProvider>
+                </ErrorBoundary>
+              </ReduxProvider>
+            </ErrorBoundary>
+          </ErrorProvider>
+        </ErrorBoundary>
+      </QueryClientProvider>
+    </ErrorBoundary>
   );
 };
 
