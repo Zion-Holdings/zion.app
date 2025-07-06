@@ -1,11 +1,18 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import SEO from '@/components/SEO';
 
 export default function Home() {
   const { t } = useTranslation();
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO 
+        title={t('home.meta.title', 'Welcome to Zion')}
+        description={t('home.meta.description', 'The world\'s first free marketplace dedicated to high-tech and artificial intelligence')}
+        keywords={t('home.meta.keywords', 'AI marketplace, tech services, artificial intelligence')}
+      />
+      
       <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur-md text-foreground shadow-sm">
         <div className="container flex h-16 items-center justify-between px-4 sm:px-6">
           <div className="flex items-center gap-6">
@@ -28,8 +35,8 @@ export default function Home() {
             {t('home.hero.subtitle', 'The Future of Tech & AI Marketplace')}
           </p>
           <div className="space-y-4">
-            <p>This is a test page with useTranslation added back.</p>
-            <p>If you see this page without errors, useTranslation is working fine.</p>
+            <p>This is a test page with SEO component added back.</p>
+            <p>If you see this page without errors, SEO component is working fine.</p>
           </div>
         </div>
       </main>
