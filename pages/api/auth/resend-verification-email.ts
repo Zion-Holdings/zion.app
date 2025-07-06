@@ -23,6 +23,13 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   try {
+    if (!supabase) {
+      return res.status(503).json({ 
+        message: 'Authentication service unavailable',
+        details: 'Supabase client is not properly initialized'
+      });
+    }
+
     const { error } = await supabase.auth.resend({ type: 'signup', email });
     
     if (error) {

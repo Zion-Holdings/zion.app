@@ -59,6 +59,11 @@ const LoginPage = () => {
 
       setIsCheckingSession(true);
       try {
+        if (!supabase) {
+          logErrorToProduction('LoginPage: Supabase client not available');
+          return;
+        }
+        
         logInfo('LoginPage: Calling supabase.auth.getSession()');
         const { data: { session }, error: sessionError } = await supabase.auth.getSession();
         clearTimeout(sessionTimeoutId); // Clear timeout once getSession completes
@@ -85,6 +90,11 @@ const LoginPage = () => {
       }
 
       // Listener for auth state changes
+      if (!supabase) {
+        logErrorToProduction('LoginPage: Supabase client not available for auth listener');
+        return;
+      }
+      
       logInfo('LoginPage: Setting up onAuthStateChange listener.');
       const { data: authListener } = supabase.auth.onAuthStateChange((event: AuthChangeEvent, session: any) => {
         if (!mounted) return;
@@ -229,6 +239,12 @@ const LoginPage = () => {
     setVerificationEmailSent(false);
     
     try {
+      if (!supabase) {
+        logErrorToProduction('LoginPage: Supabase client not available for login');
+        setError({ name: 'AuthServiceError', message: 'Authentication service unavailable. Please try again later.' });
+        return;
+      }
+      
       logInfo('Attempting Supabase login with email:', { data: email });
       const { data, error: signInError } = await supabase.auth.signInWithPassword({
         email,

@@ -54,6 +54,14 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     logInfo('Attempting to create user with Supabase:', { email, name, userType });
 
+    if (!supabase) {
+      logErrorToProduction('Supabase client not available for registration');
+      return res.status(503).json({ 
+        error: 'Authentication service unavailable',
+        details: 'Supabase client is not properly initialized'
+      });
+    }
+
     // Create user with Supabase Auth
     const { data, error } = await supabase.auth.signUp({
       email,

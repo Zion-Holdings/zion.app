@@ -1,4 +1,5 @@
-import { createBrowserClient, type SupabaseClient } from '@supabase/ssr';
+import { createBrowserClient } from '@supabase/ssr';
+import type { SupabaseClient } from '@supabase/supabase-js';
 import { logDebug, logError } from '@/utils/productionLogger'; // Assuming logger is available and logError is added
 
 // Singleton client instance to prevent multiple GoTrueClient instances

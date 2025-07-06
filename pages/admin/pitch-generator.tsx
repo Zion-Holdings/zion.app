@@ -80,6 +80,10 @@ const PitchGeneratorPage: React.FC = () => {
       let token = null;
       
       try {
+        if (!supabase) {
+          logWarn('Supabase client not available, proceeding without authentication');
+          return;
+        }
         const sessionResult = await supabase.auth.getSession();
         // Handle mock client response where session is always null - use type assertion
         token = (sessionResult?.data?.session as any)?.access_token || null;
@@ -189,14 +193,9 @@ const PitchGeneratorPage: React.FC = () => {
 
     try {
       // Handle mock Supabase client - session is always null
-      const sessionResult = await supabase.auth.getSession();
-      const token = (sessionResult?.data?.session as any)?.access_token || null;
-
-      if (!token) {
-        // Since Supabase is disabled, generate mock slides instead of making API calls
-        logWarn('Supabase auth disabled - generating mock pitch deck slides');
-        
-        // Generate mock slides for demonstration
+      if (!supabase) {
+        logWarn('Supabase client not available, proceeding without authentication');
+        // Generate mock slides since Supabase is disabled
         const mockSlides: Slide[] = [
           {
             id: '1',
@@ -235,6 +234,11 @@ const PitchGeneratorPage: React.FC = () => {
         setIsGenerating(false);
         return;
       }
+      
+      const sessionResult = await supabase.auth.getSession();
+      const token = (sessionResult?.data?.session as any)?.access_token || null;
+
+
 
       const response = await fetch('/api/admin/generate-pitch-deck', {
         method: 'POST',

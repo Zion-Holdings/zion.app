@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -41,10 +40,20 @@ export default function FounderBackupVault() {
     if (!password) return alert('Set a password');
     const encryptedData = await encryptData(JSON.stringify(data), password);
     setEncrypted(encryptedData);
-    const zip = new JSZip();
-    zip.file('vault.enc', encryptedData);
-    const blob = await zip.generateAsync({ type: 'blob' });
-    saveAs(blob, 'zion_backup.zip');
+    
+    try {
+      // Dynamic import to avoid bundling JSZip on the server
+      const JSZip = (await import('jszip')).default;
+      const zip = new JSZip();
+      zip.file('vault.enc', encryptedData);
+      const blob = await zip.generateAsync({ type: 'blob' });
+      saveAs(blob, 'zion_backup.zip');
+    } catch (error) {
+      console.error('Failed to create ZIP:', error);
+      // Fallback: save as encrypted file directly
+      const blob = new Blob([encryptedData], { type: 'application/octet-stream' });
+      saveAs(blob, 'zion_backup.enc');
+    }
   };
 
   const handleExportPdf = async () => {

@@ -24,6 +24,11 @@ export default function UserProfile({ onUserChange }: UserProfileProps) {
   useEffect(() => {
     // Get initial session
     const getInitialSession = async () => {
+      if (!supabase) {
+        setLoading(false);
+        return;
+      }
+      
       const { data: { session } } = await supabase.auth.getSession()
       setUser((session as any)?.user ?? null)
       setLoading(false)
@@ -33,6 +38,10 @@ export default function UserProfile({ onUserChange }: UserProfileProps) {
     getInitialSession()
 
     // Listen for auth changes
+    if (!supabase) {
+      return;
+    }
+    
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (event: AuthChangeEvent, session: Session | null) => {
         setUser((session as any)?.user ?? null)
@@ -45,6 +54,10 @@ export default function UserProfile({ onUserChange }: UserProfileProps) {
   }, [onUserChange])
 
   const handleSignOut = async () => {
+    if (!supabase) {
+      return;
+    }
+    
     await supabase.auth.signOut()
   }
 

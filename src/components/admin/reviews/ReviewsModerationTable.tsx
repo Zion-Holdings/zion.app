@@ -59,6 +59,10 @@ export function ReviewsModerationTable({
       reviewId: string;
       status: ReviewStatus;
     }) => {
+      if (!supabase) {
+        throw new Error('Supabase client not available');
+      }
+      
       const { error } = await supabase
         .from("reviews")
         .update({ status })

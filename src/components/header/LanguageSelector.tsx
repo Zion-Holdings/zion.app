@@ -62,7 +62,6 @@ export function LanguageSelector() {
           <span className="text-lg" aria-hidden="true">
             {currentFlag}
           </span>
-          <span className="sr-only">{t('general.select_language')}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent 

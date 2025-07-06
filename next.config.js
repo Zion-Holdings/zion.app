@@ -990,6 +990,60 @@ const nextConfig = {
       'node:diagnostics_channel': false,
     };
 
+    // Externalize compression libraries to prevent Z_SYNC_FLUSH errors
+    if (!isServer) {
+      config.externals = {
+        ...config.externals,
+        'pako': 'pako',
+        'zlib': 'zlib',
+        'buffer': 'buffer',
+        'stream': 'stream',
+        'util': 'util',
+        'events': 'events',
+        'assert': 'assert',
+        'constants': 'constants',
+        'path': 'path',
+        'fs': 'fs',
+        'os': 'os',
+        'crypto': 'crypto',
+        'http': 'http',
+        'https': 'https',
+        'url': 'url',
+        'querystring': 'querystring',
+        'punycode': 'punycode',
+        'string_decoder': 'string_decoder',
+        'timers': 'timers',
+        'tty': 'tty',
+        'vm': 'vm',
+        'zlib': 'zlib',
+        'tls': 'tls',
+        'net': 'net',
+        'dgram': 'dgram',
+        'dns': 'dns',
+        'readline': 'readline',
+        'repl': 'repl',
+        'cluster': 'cluster',
+        'child_process': 'child_process',
+        'worker_threads': 'worker_threads',
+        'async_hooks': 'async_hooks',
+        'inspector': 'inspector',
+        'trace_events': 'trace_events',
+        'perf_hooks': 'perf_hooks',
+        'v8': 'v8',
+        'domain': 'domain',
+        'module': 'module',
+        'process': 'process',
+        'querystring': 'querystring',
+        'string_decoder': 'string_decoder',
+        'timers': 'timers',
+        'tty': 'tty',
+        'url': 'url',
+        'util': 'util',
+        'vm': 'vm',
+        'zlib': 'zlib',
+      };
+    }
+
     // Optimize bundle size
     if (!dev) {
       config.resolve.alias = {
