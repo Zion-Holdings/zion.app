@@ -1,17 +1,20 @@
 import React from 'react';
-import SEO from '@/components/SEO';
-import { Header } from '@/components/Header';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <SEO 
-        title="Welcome to Zion"
-        description="The world's first free marketplace dedicated to high-tech and artificial intelligence"
-        keywords="AI marketplace, tech services, artificial intelligence"
-      />
-      
-      <Header />
+      <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur-md text-foreground shadow-sm">
+        <div className="container flex h-16 items-center justify-between px-4 sm:px-6">
+          <div className="flex items-center gap-6">
+            <a href="/" className="flex items-center">
+              <span className="text-xl font-bold">Zion</span>
+            </a>
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="text-sm text-muted-foreground">Welcome</span>
+          </div>
+        </div>
+      </header>
       
       <main className="container mx-auto px-4 py-8">
         <div className="text-center">
@@ -22,9 +25,8 @@ export default function Home() {
             The Future of Tech & AI Marketplace
           </p>
           <div className="space-y-4">
-            <p className="text-lg">
-              Publish, connect, and thrive — all in one place.
-            </p>
+            <p>This is a minimal test page to isolate the React error #130.</p>
+            <p>If you see this page without errors, we know the issue is in one of the removed components.</p>
           </div>
         </div>
       </main>

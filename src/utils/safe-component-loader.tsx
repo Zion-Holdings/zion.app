@@ -147,8 +147,7 @@ export function createSafeComponent(
   const BoundedComponent: React.FC<any> = (props: any) => {
     return React.createElement(
       ComponentErrorBoundary,
-      { fallback: fallbackComponent },
-      React.createElement(SafeComponent, props)
+      { fallback: fallbackComponent, children: React.createElement(SafeComponent, props) }
     );
   };
 

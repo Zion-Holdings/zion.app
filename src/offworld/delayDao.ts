@@ -116,11 +116,11 @@ export class DelayTolerantDAO {
   }
 
   private async saveVote(vote: Vote) {
-    if (isBuildEnv || !this.orbitdbModule) return;
+    if (isBuildEnv || !this.ipfsModule || !this.logPromise) return;
     
     try {
       const cid = await this.ipfsModule.saveJSON(vote);
-      const log = await this.logPromise!;
+      const log = await this.logPromise;
       await log.add({ type: 'vote', cid, proposalId: vote.proposalId, voter: vote.voter, support: vote.support });
     } catch (error: any) {
       console.warn('⚠️ Failed to save vote:', error.message);
