@@ -3,7 +3,7 @@ import { fileURLToPath } from 'url';
 import os from 'os';
 import { PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_BUILD } from 'next/constants';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import { ProvidePlugin } from 'webpack';
+import { ProvidePlugin, DefinePlugin } from 'webpack';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -562,7 +562,7 @@ const nextConfig = {
           }),
         }),
         // ProvidePlugin to ensure process is always available (only for client-side)
-        new webpack.ProvidePlugin({
+        new ProvidePlugin({
           process: path.resolve(__dirname, 'src/utils/immediate-process-polyfill.ts'),
         })
       );
@@ -950,7 +950,7 @@ const nextConfig = {
 
     // Define feature flags for tree shaking
     config.plugins.push(
-      new webpack.DefinePlugin({
+      new DefinePlugin({
         __SENTRY_DEBUG__: false,
         __SENTRY_TRACING__: true,
       })
@@ -960,7 +960,7 @@ const nextConfig = {
 
     // Handle date-fns ESM import issues
     config.plugins.push(
-      new webpack.ProvidePlugin({
+      new ProvidePlugin({
         'date-fns': 'date-fns',
       })
     );
