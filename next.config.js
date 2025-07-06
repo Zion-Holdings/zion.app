@@ -1,7 +1,7 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 import os from 'os';
-import { PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_BUILD } from 'next/constants';
+import { PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_BUILD } from 'next/constants.js';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { ProvidePlugin, DefinePlugin } from 'webpack';
 
