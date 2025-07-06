@@ -127,13 +127,22 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ initialPost }) => {
 export default BlogPostPage;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const dir = path.join(process.cwd(), 'content', 'blog');
-  const files = fs.readdirSync(dir).filter((f) => f.endsWith('.md'));
-  const paths = files.map((f) => ({
-    params: { slug: f.replace(/\.md$/, '') },
-  }));
-  // Use `blocking` so new posts added after build can be generated on demand
-  return { paths, fallback: 'blocking' };
+  try {
+    const dir = path.join(process.cwd(), 'content', 'blog');
+    if (!fs.existsSync(dir)) {
+      console.warn(`Blog directory not found: ${dir}`);
+      return { paths: [], fallback: 'blocking' };
+    }
+    const files = fs.readdirSync(dir).filter((f) => f.endsWith('.md'));
+    const paths = files.map((f) => ({
+      params: { slug: f.replace(/\.md$/, '') },
+    }));
+    // Use `blocking` so new posts added after build can be generated on demand
+    return { paths, fallback: 'blocking' };
+  } catch (error) {
+    console.error('Error reading blog directory:', error);
+    return { paths: [], fallback: 'blocking' };
+  }
 };
 
 export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({
@@ -141,15 +150,20 @@ export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({
 }: {
   params?: { slug?: string };
 }) => {
-  const slug = params?.slug as string;
-  // Validate slug to prevent malformed paths
-  if (!/^[a-z0-9-]+$/.test(slug)) {
+  try {
+    const slug = params?.slug as string;
+    // Validate slug to prevent malformed paths
+    if (!/^[a-z0-9-]+$/.test(slug)) {
+      return { notFound: true };
+    }
+    const filePath = path.join(process.cwd(), 'content', 'blog', `${slug}.md`);
+    const post = parseMarkdown(filePath);
+    if (!post) {
+      return { notFound: true };
+    }
+    return { props: { initialPost: post }, revalidate: 60 };
+  } catch (error) {
+    console.error('Error in getStaticProps for blog post:', error);
     return { notFound: true };
   }
-  const filePath = path.join(process.cwd(), 'content', 'blog', `${slug}.md`);
-  const post = parseMarkdown(filePath);
-  if (!post) {
-    return { notFound: true };
-  }
-  return { props: { initialPost: post }, revalidate: 60 };
 };
