@@ -808,7 +808,7 @@ const nextConfig = {
 
     // Provide global polyfills for browser environment
     config.plugins.push(
-      new ProvidePlugin({
+      new webpack.ProvidePlugin({
         process: 'process/browser',
         Buffer: ['buffer', 'Buffer'],
       })
@@ -959,7 +959,7 @@ const nextConfig = {
 
     // Define feature flags for tree shaking
     config.plugins.push(
-      new DefinePlugin({
+      new webpack.DefinePlugin({
         __SENTRY_DEBUG__: false,
         __SENTRY_TRACING__: true,
       })
@@ -969,7 +969,7 @@ const nextConfig = {
 
     // Handle date-fns ESM import issues
     config.plugins.push(
-      new ProvidePlugin({
+      new webpack.ProvidePlugin({
         'date-fns': 'date-fns',
       })
     );
