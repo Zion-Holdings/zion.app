@@ -9,7 +9,7 @@ import { useAuthEventHandlers } from "./useAuthEventHandlers";
 import { mapProfileToUser } from "./profileMapper";
 import { loginUser, registerUser } from "@/services/authService";
 import { safeStorage, safeSessionStorage } from "@/utils/safeStorage";
-import { UserDetails } from "@/types/auth";
+import { UserDetails, AuthContextType } from "@/types/auth";
 import { toast } from "@/hooks/use-toast"; // Import toast
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
