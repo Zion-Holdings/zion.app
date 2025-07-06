@@ -571,7 +571,7 @@ const nextConfig = {
           }),
         }),
         // ProvidePlugin to ensure process is always available (only for client-side)
-        new ProvidePlugin({
+        new webpack.ProvidePlugin({
           process: path.resolve(__dirname, 'src/utils/immediate-process-polyfill.ts'),
         })
       );
