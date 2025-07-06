@@ -2,6 +2,69 @@ import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
   // Simple theme script without complex polyfills
+  // CRITICAL: Process polyfill script - inline fallback
+  const processPolyfillScript = `(function() {
+    'use strict';
+    if (typeof process === 'undefined') {
+      var processObj = {
+        env: {
+          NODE_ENV: 'production',
+          NEXT_PUBLIC_APP_URL: '',
+          NEXT_PUBLIC_SUPABASE_URL: '',
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: '',
+          NEXT_PUBLIC_SENTRY_DSN: '',
+          NEXT_PUBLIC_REOWN_PROJECT_ID: '',
+          NEXT_PUBLIC_DD_CLIENT_TOKEN: '',
+          NEXT_PUBLIC_LOGROCKET_ID: '',
+          NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: '',
+          NEXT_PUBLIC_STRIPE_TEST_MODE: '',
+          NEXT_PUBLIC_INTERCOM_APP_ID: '',
+          NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: '',
+          NEXT_PUBLIC_API_URL: '',
+          NEXT_PUBLIC_STATUS_PAGE_URL: '',
+          NEXT_PUBLIC_SITE_URL: '',
+          NEXT_PUBLIC_APP_ENV: '',
+          NEXT_PUBLIC_APP_VERSION: '',
+          NEXT_PUBLIC_BUILD_TIME: '',
+          NEXT_PUBLIC_SOCIAL_TWITTER_URL: '',
+          NEXT_PUBLIC_SOCIAL_LINKEDIN_URL: '',
+          NEXT_PUBLIC_SOCIAL_FACEBOOK_URL: '',
+          NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL: '',
+          NEXT_PUBLIC_SOCIAL_GITHUB_URL: '',
+        },
+        versions: {},
+        platform: 'browser',
+        arch: 'x64',
+        version: '18.0.0',
+        browser: true,
+        cwd: function() { return '/'; },
+        nextTick: function(fn) { setTimeout(fn, 0); },
+        exit: function(code) { console.warn('process.exit called with code:', code); },
+        on: function() {},
+        once: function() {},
+        emit: function() {},
+        addListener: function() {},
+        removeListener: function() {},
+        removeAllListeners: function() {},
+        setMaxListeners: function() {},
+        getMaxListeners: function() { return 10; },
+        listeners: function() { return []; },
+        rawListeners: function() { return []; },
+        listenerCount: function() { return 0; },
+        prependListener: function() {},
+        prependOnceListener: function() {},
+        eventNames: function() { return []; },
+      };
+      
+      if (typeof globalThis !== 'undefined') globalThis.process = processObj;
+      if (typeof global !== 'undefined') global.process = processObj;
+      if (typeof window !== 'undefined') window.process = processObj;
+      if (typeof self !== 'undefined') self.process = processObj;
+      if (typeof this !== 'undefined') this.process = processObj;
+      if (typeof module !== 'undefined' && module.exports) module.exports.process = processObj;
+    }
+  })();`;
+
   const themeScript = `(() => {
     try {
       var theme = localStorage.getItem('theme');
@@ -152,6 +215,9 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <meta httpEquiv="Content-Security-Policy" content={cspContent} />
+        {/* CRITICAL: Process polyfill script - must load before any other scripts */}
+        <script src="/process-polyfill.js" />
+        <script dangerouslySetInnerHTML={{ __html: processPolyfillScript }} />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         {/* <script dangerouslySetInnerHTML={{ __html: loaderTimeoutScript }} /> */}
       </Head>
