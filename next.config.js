@@ -418,6 +418,41 @@ const nextConfig = {
   ],
 
   webpack: (config, { dev, isServer, webpack }) => {
+    // Prevent Node.js core modules from being polyfilled in the client bundle
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        http: false,
+        https: false,
+        zlib: false,
+        stream: false,
+        buffer: false,
+        util: false,
+        process: false,
+        path: false,
+        os: false,
+        fs: false,
+        child_process: false,
+        net: false,
+        tls: false,
+        crypto: false,
+        assert: false,
+        url: false,
+        querystring: false,
+        constants: false,
+        domain: false,
+        events: false,
+        punycode: false,
+        readline: false,
+        string_decoder: false,
+        sys: false,
+        timers: false,
+        tty: false,
+        vm: false,
+        worker_threads: false,
+      };
+    }
+    
     // Fix EventEmitter memory leak by increasing max listeners
     // events.EventEmitter.defaultMaxListeners = 20; // Will be set by build script
     
