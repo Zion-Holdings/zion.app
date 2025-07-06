@@ -649,9 +649,32 @@ const nextConfig = {
       });
       console.log('🚫 Native modules externalized for server build:', nativeModules.length);
     } else {
-      // For client-side, bundle problematic UI libraries instead of externalizing
+      // For client-side, completely exclude libp2p modules to prevent Z_SYNC_FLUSH errors
       config.externals = config.externals || [];
-      // Don't externalize UI libraries on client side
+      
+      // Add libp2p modules as externals for client-side to prevent bundling
+      const clientExternals = [
+        'libp2p',
+        '@libp2p/identify',
+        '@libp2p/tcp',
+        '@chainsafe/libp2p-noise',
+        '@chainsafe/libp2p-gossipsub',
+        '@chainsafe/libp2p-yamux',
+        '@orbitdb/core',
+        'helia',
+        '@helia/json',
+        'blockstore-core',
+        'datastore-core',
+        'multiformats'
+      ];
+      
+      clientExternals.forEach(module => {
+        config.externals.push({
+          [module]: `commonjs ${module}`
+        });
+      });
+      
+      console.log('🚫 Libp2p modules externalized for client build to prevent Z_SYNC_FLUSH errors');
     }
 
     // Fix webpack cache configuration to prevent build errors and warnings

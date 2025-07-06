@@ -45,7 +45,7 @@ if (isBuildEnv || isBrowserEnv) {
   MemoryDatastore = class {};
 } else {
   try {
-    // Dynamic imports for production environment
+    // Dynamic imports for production environment - only executed in server environment
     const helia = require('helia');
     createHelia = helia.createHelia;
     

@@ -51,7 +51,7 @@ if (isBuildEnv || isBrowserEnv) {
   MemoryDatastore = class {};
 } else {
   try {
-    // Dynamic imports for production environment
+    // Dynamic imports for production environment - only executed in server environment
     const orbitdbCore = require('@orbitdb/core');
     createOrbitDB = orbitdbCore.createOrbitDB;
     
