@@ -10,6 +10,16 @@
 (function() {
   'use strict';
   
+  // Only run in browser environments, not in Node.js
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return; // Exit if not in browser
+  }
+  
+  // Check if we're already in a Node.js environment
+  if (typeof process !== 'undefined' && process.versions && process.versions.node) {
+    return; // Exit if already in Node.js environment
+  }
+  
   // Create the process object with all necessary properties
   var processObj = {
     env: {

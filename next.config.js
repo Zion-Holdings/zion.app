@@ -558,7 +558,7 @@ const nextConfig = {
             NEXT_PUBLIC_SOCIAL_GITHUB_URL: process.env.NEXT_PUBLIC_SOCIAL_GITHUB_URL || '',
           }),
         }),
-        // ProvidePlugin to ensure process is always available
+        // ProvidePlugin to ensure process is always available (only for client-side)
         new webpack.ProvidePlugin({
           process: path.resolve(__dirname, 'src/utils/immediate-process-polyfill.ts'),
         })
