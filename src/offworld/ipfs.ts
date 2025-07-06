@@ -6,67 +6,15 @@ const isBuildEnv = process.env.CI === 'true' || process.env.NODE_ENV === 'produc
 const isBrowserEnv = typeof window !== 'undefined';
 
 // Mock implementations for browser environment
-let createHelia: any;
-let heliaJson: any;
+const createHelia = () => Promise.resolve({
+  stop: () => Promise.resolve(),
+  libp2p: { getConnections: () => [] }
+});
 
-if (isBuildEnv || isBrowserEnv) {
-  console.log('🚫 IPFS/Helia/LibP2P disabled for CI/build/browser environment');
-  
-  // Mock implementations
-  createHelia = () => Promise.resolve({
-    stop: () => Promise.resolve(),
-    libp2p: { getConnections: () => [] }
-  });
-  
-  heliaJson = () => ({
-    add: () => Promise.resolve('mock-cid'),
-    get: () => Promise.resolve({ mock: true })
-  });
-} else {
-  // Server-side only - dynamic imports to prevent bundling
-  try {
-    // Only load modules in server environment
-    if (typeof window === 'undefined') {
-      // Dynamic imports for server-side only
-      const helia = await import('helia');
-      createHelia = helia.createHelia;
-      
-      const heliaJsonModule = await import('@helia/json');
-      heliaJson = heliaJsonModule.json;
-      
-      // Note: These imports are only for server-side and won't be bundled for client
-      // const libp2pGossipsub = await import('@chainsafe/libp2p-gossipsub');
-      // const libp2pIdentify = await import('@libp2p/identify');
-      // const libp2pTcp = await import('@libp2p/tcp');
-      // const libp2pNoise = await import('@chainsafe/libp2p-noise');
-      // const libp2pYamux = await import('@chainsafe/libp2p-yamux');
-    } else {
-      // Browser environment - use mocks
-      createHelia = () => Promise.resolve({
-        stop: () => Promise.resolve(),
-        libp2p: { getConnections: () => [] }
-      });
-      
-      heliaJson = () => ({
-        add: () => Promise.resolve('mock-cid'),
-        get: () => Promise.resolve({ mock: true })
-      });
-    }
-  } catch (error: any) {
-    console.warn('⚠️ Failed to load IPFS modules:', error.message);
-    
-    // Fallback to mocks
-    createHelia = () => Promise.resolve({
-      stop: () => Promise.resolve(),
-      libp2p: { getConnections: () => [] }
-    });
-    
-    heliaJson = () => ({
-      add: () => Promise.resolve('mock-cid'),
-      get: () => Promise.resolve({ mock: true })
-    });
-  }
-}
+const heliaJson = () => ({
+  add: () => Promise.resolve('mock-cid'),
+  get: () => Promise.resolve({ mock: true })
+});
 
 // Browser-safe logging
 function logInfo(message: string) {
@@ -140,11 +88,7 @@ async function getHelia(): Promise<any> {
     try {
       logInfo('Initializing Helia for general IPFS operations...');
       
-      heliaNode = await createHelia({
-        blockstore: new MemoryBlockstore(),
-        datastore: new MemoryDatastore(),
-        libp2p: libp2pOptions
-      });
+      heliaNode = await createHelia();
       
       logInfo('Helia Initialized for IPFS.');
     } catch (error: any) {

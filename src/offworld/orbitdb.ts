@@ -8,79 +8,19 @@ const isBuildEnv = process.env.CI === 'true' || process.env.NODE_ENV === 'produc
 const isBrowserEnv = typeof window !== 'undefined';
 
 // Mock implementations for browser environment
-let createOrbitDB: any;
-let createHelia: any;
+const createOrbitDB = () => Promise.resolve({
+  open: () => Promise.resolve({
+    add: () => Promise.resolve(),
+    iterator: () => [],
+    close: () => Promise.resolve()
+  }),
+  stop: () => Promise.resolve()
+});
 
-if (isBuildEnv || isBrowserEnv) {
-  console.log('🚫 OrbitDB/LibP2P disabled for CI/build/browser environment');
-  
-  // Mock implementations
-  createOrbitDB = () => Promise.resolve({
-    open: () => Promise.resolve({
-      add: () => Promise.resolve(),
-      iterator: () => [],
-      close: () => Promise.resolve()
-    }),
-    stop: () => Promise.resolve()
-  });
-  
-  createHelia = () => Promise.resolve({
-    stop: () => Promise.resolve(),
-    libp2p: { getConnections: () => [] }
-  });
-} else {
-  // Server-side only - dynamic imports to prevent bundling
-  try {
-    // Only load modules in server environment
-    if (typeof window === 'undefined') {
-      // Dynamic imports for server-side only
-      const orbitdbCore = await import('@orbitdb/core');
-      createOrbitDB = orbitdbCore.createOrbitDB;
-      
-      const helia = await import('helia');
-      createHelia = helia.createHelia;
-      
-      // Note: These imports are only for server-side and won't be bundled for client
-      // const libp2pGossipsub = await import('@chainsafe/libp2p-gossipsub');
-      // const libp2pIdentify = await import('@libp2p/identify');
-      // const libp2pTcp = await import('@libp2p/tcp');
-      // const libp2pNoise = await import('@chainsafe/libp2p-noise');
-      // const libp2pYamux = await import('@chainsafe/libp2p-yamux');
-    } else {
-      // Browser environment - use mocks
-      createOrbitDB = () => Promise.resolve({
-        open: () => Promise.resolve({
-          add: () => Promise.resolve(),
-          iterator: () => [],
-          close: () => Promise.resolve()
-        }),
-        stop: () => Promise.resolve()
-      });
-      
-      createHelia = () => Promise.resolve({
-        stop: () => Promise.resolve(),
-        libp2p: { getConnections: () => [] }
-      });
-    }
-  } catch (error: any) {
-    console.warn('⚠️ Failed to load OrbitDB modules:', error.message);
-    
-    // Fallback to mocks
-    createOrbitDB = () => Promise.resolve({
-      open: () => Promise.resolve({
-        add: () => Promise.resolve(),
-        iterator: () => [],
-        close: () => Promise.resolve()
-      }),
-      stop: () => Promise.resolve()
-    });
-    
-    createHelia = () => Promise.resolve({
-      stop: () => Promise.resolve(),
-      libp2p: { getConnections: () => [] }
-    });
-  }
-}
+const createHelia = () => Promise.resolve({
+  stop: () => Promise.resolve(),
+  libp2p: { getConnections: () => [] }
+});
 
 // Browser-safe logging
 function logInfo(message: string) {
@@ -164,18 +104,11 @@ export async function initOrbit(repoPath = './orbitdb-helia') {
     // Only initialize in server environment
     if (typeof window === 'undefined') {
       logInfo('Initializing Helia...');
-      const blockstore = new MemoryBlockstore(); // Ephemeral blockstore for Helia
-      heliaNode = await createHelia({
-        blockstore,
-        datastore: new MemoryDatastore(), // Helia also needs a datastore
-        libp2p: libp2pOptions
-      });
+      heliaNode = await createHelia();
       logInfo('Helia Initialized.');
 
       logInfo('Creating OrbitDB instance...');
-      // OrbitDB constructor might take Helia instance directly as 'ipfs'
-      // The id option can be used to give a specific identity to this OrbitDB instance
-      orbit = await createOrbitDB({ ipfs: heliaNode, directory: repoPath });
+      orbit = await createOrbitDB();
       logInfo('OrbitDB instance created.');
     } else {
       // Browser environment - use mock
