@@ -74,6 +74,77 @@ if (isBrowser && !isNode) {
   if (typeof window !== 'undefined') {
     (window as any).process = processObj;
   }
+
+  // CRITICAL: Buffer polyfill for browser environment
+  if (typeof Buffer === 'undefined') {
+    // Simple Buffer polyfill
+    class BufferPolyfill extends Uint8Array {
+      constructor(input?: any, encoding?: any, offset?: any) {
+        if (typeof input === 'string') {
+          // Convert string to Uint8Array
+          const encoder = new TextEncoder();
+          const bytes = encoder.encode(input);
+          super(bytes);
+        } else if (input instanceof ArrayBuffer) {
+          super(input);
+        } else if (Array.isArray(input)) {
+          super(new Uint8Array(input));
+        } else if (input instanceof Uint8Array) {
+          super(input);
+        } else {
+          super(input || 0);
+        }
+      }
+
+      static from(input: any, encoding?: any): BufferPolyfill {
+        return new BufferPolyfill(input, encoding);
+      }
+
+      static alloc(size: number, fill?: any, encoding?: any): BufferPolyfill {
+        const buffer = new BufferPolyfill(size);
+        if (fill !== undefined) {
+          if (typeof fill === 'string') {
+            const encoder = new TextEncoder();
+            const fillBytes = encoder.encode(fill);
+            buffer.set(fillBytes, 0);
+          } else {
+            buffer.fill(fill);
+          }
+        }
+        return buffer;
+      }
+
+      static allocUnsafe(size: number): BufferPolyfill {
+        return new BufferPolyfill(size);
+      }
+
+      static isBuffer(obj: any): boolean {
+        return obj instanceof BufferPolyfill;
+      }
+
+      toString(encoding?: string, start?: number, end?: number): string {
+        const decoder = new TextDecoder(encoding || 'utf8');
+        const slice = this.slice(start, end);
+        return decoder.decode(slice);
+      }
+
+      toJSON(): { type: string; data: number[] } {
+        return {
+          type: 'Buffer',
+          data: Array.from(this)
+        };
+      }
+    }
+
+    // Define Buffer in global scope
+    if (typeof globalThis !== 'undefined') {
+      (globalThis as any).Buffer = BufferPolyfill;
+    }
+    
+    if (typeof window !== 'undefined') {
+      (window as any).Buffer = BufferPolyfill;
+    }
+  }
 }
 
 // Export a safe process accessor

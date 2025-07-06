@@ -110,9 +110,114 @@
       self.process = processObj;
     }
   }
+
+  // CRITICAL: Buffer polyfill for browser environment
+  if (typeof Buffer === 'undefined') {
+    // Simple Buffer polyfill
+    function BufferPolyfill(input, encoding, offset) {
+      if (!(this instanceof BufferPolyfill)) {
+        return new BufferPolyfill(input, encoding, offset);
+      }
+      
+      var bytes;
+      if (typeof input === 'string') {
+        // Convert string to Uint8Array
+        var encoder = new TextEncoder();
+        bytes = encoder.encode(input);
+      } else if (input instanceof ArrayBuffer) {
+        bytes = new Uint8Array(input);
+      } else if (Array.isArray(input)) {
+        bytes = new Uint8Array(input);
+      } else if (input instanceof Uint8Array) {
+        bytes = input;
+      } else {
+        bytes = new Uint8Array(input || 0);
+      }
+      
+      // Copy bytes to this object
+      for (var i = 0; i < bytes.length; i++) {
+        this[i] = bytes[i];
+      }
+      this.length = bytes.length;
+    }
+
+    // Static methods
+    BufferPolyfill.from = function(input, encoding) {
+      return new BufferPolyfill(input, encoding);
+    };
+
+    BufferPolyfill.alloc = function(size, fill, encoding) {
+      var buffer = new BufferPolyfill(size);
+      if (fill !== undefined) {
+        if (typeof fill === 'string') {
+          var encoder = new TextEncoder();
+          var fillBytes = encoder.encode(fill);
+          for (var i = 0; i < Math.min(fillBytes.length, size); i++) {
+            buffer[i] = fillBytes[i];
+          }
+        } else {
+          for (var i = 0; i < size; i++) {
+            buffer[i] = fill;
+          }
+        }
+      }
+      return buffer;
+    };
+
+    BufferPolyfill.allocUnsafe = function(size) {
+      return new BufferPolyfill(size);
+    };
+
+    BufferPolyfill.isBuffer = function(obj) {
+      return obj instanceof BufferPolyfill;
+    };
+
+    // Instance methods
+    BufferPolyfill.prototype.toString = function(encoding, start, end) {
+      var decoder = new TextDecoder(encoding || 'utf8');
+      var slice = this.slice(start, end);
+      return decoder.decode(slice);
+    };
+
+    BufferPolyfill.prototype.toJSON = function() {
+      var data = [];
+      for (var i = 0; i < this.length; i++) {
+        data.push(this[i]);
+      }
+      return {
+        type: 'Buffer',
+        data: data
+      };
+    };
+
+    BufferPolyfill.prototype.slice = function(start, end) {
+      var newBuffer = new BufferPolyfill(end - start);
+      for (var i = start; i < end; i++) {
+        newBuffer[i - start] = this[i];
+      }
+      return newBuffer;
+    };
+
+    // Define Buffer in global scope
+    if (typeof globalThis !== 'undefined') {
+      globalThis.Buffer = BufferPolyfill;
+    }
+    
+    if (typeof global !== 'undefined') {
+      global.Buffer = BufferPolyfill;
+    }
+    
+    if (typeof window !== 'undefined') {
+      window.Buffer = BufferPolyfill;
+    }
+    
+    if (typeof self !== 'undefined') {
+      self.Buffer = BufferPolyfill;
+    }
+  }
   
   // Log that the polyfill has been applied (only in development)
   if (typeof console !== 'undefined' && console.log) {
-    console.log('[Process Polyfill] Global process object initialized');
+    console.log('[Process Polyfill] Global process and Buffer objects initialized');
   }
 })(); 

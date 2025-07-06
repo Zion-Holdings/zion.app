@@ -243,6 +243,7 @@
     "axios": "^1.10.0",
     "axios-retry": "^4.5.0",
     "blockstore-core": "^5.0.4",
+    "buffer": "^6.0.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
