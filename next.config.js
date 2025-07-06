@@ -1,9 +1,9 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 import os from 'os';
-const { PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_BUILD } = require('next/constants');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const { ProvidePlugin } = require('webpack');
+import { PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_BUILD } from 'next/constants';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import { ProvidePlugin } from 'webpack';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
