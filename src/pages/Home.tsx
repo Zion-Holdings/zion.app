@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { SEO } from '@/components/SEO';
+import { Header } from '@/components/Header';
 
 export default function Home() {
   const { t } = useTranslation();
@@ -13,18 +14,7 @@ export default function Home() {
         keywords={t('home.meta.keywords', 'AI marketplace, tech services, artificial intelligence')}
       />
       
-      <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur-md text-foreground shadow-sm">
-        <div className="container flex h-16 items-center justify-between px-4 sm:px-6">
-          <div className="flex items-center gap-6">
-            <a href="/" className="flex items-center">
-              <span className="text-xl font-bold">Zion</span>
-            </a>
-          </div>
-          <div className="flex items-center gap-3">
-            <span className="text-sm text-muted-foreground">Welcome</span>
-          </div>
-        </div>
-      </header>
+      <Header />
       
       <main className="container mx-auto px-4 py-8">
         <div className="text-center">
@@ -35,8 +25,8 @@ export default function Home() {
             {t('home.hero.subtitle', 'The Future of Tech & AI Marketplace')}
           </p>
           <div className="space-y-4">
-            <p>This is a test page with SEO component added back.</p>
-            <p>If you see this page without errors, SEO component is working fine.</p>
+            <p>This is a test page with the new modern Header component added back.</p>
+            <p>If you see this page without errors, the Header component is working fine.</p>
           </div>
         </div>
       </main>
