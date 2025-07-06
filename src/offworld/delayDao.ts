@@ -18,8 +18,9 @@ export interface Vote {
   support: boolean;
 }
 
-// Check if we're in a build environment
+// Check if we're in a build environment or browser environment where libp2p might cause issues
 const isBuildEnv = process.env.CI === 'true' || process.env.NODE_ENV === 'production' && typeof window === 'undefined';
+const isBrowserEnv = typeof window !== 'undefined';
 
 export interface IpfsModule {
   saveJSON(data: unknown): Promise<string>;
@@ -42,14 +43,14 @@ export class DelayTolerantDAO {
   private orbitdbModule: OrbitDbModule | null = null;
 
   async connect() {
-    if (isBuildEnv) {
-      console.log('🚫 DelayTolerantDAO: Native modules disabled for CI/build environment');
+    if (isBuildEnv || isBrowserEnv) {
+      console.log('🚫 DelayTolerantDAO: Native modules disabled for CI/build/browser environment');
       this.ready = true;
       return;
     }
 
     try {
-      // Dynamic imports only when not in CI/build environment
+      // Dynamic imports only when not in CI/build/browser environment
       const [ipfs, orbitdb] = await Promise.all([
         import('./ipfs'),
         import('./orbitdb')
@@ -78,7 +79,7 @@ export class DelayTolerantDAO {
       forVotes: 0,
       againstVotes: 0,
     };
-    if (this.ready && !isBuildEnv) {
+    if (this.ready && !isBuildEnv && !isBrowserEnv) {
       await this.saveProposal(proposal);
     } else {
       this.proposals.push(proposal);
@@ -87,7 +88,7 @@ export class DelayTolerantDAO {
   }
 
   async submitVote(vote: Vote) {
-    if (this.ready && !isBuildEnv) {
+    if (this.ready && !isBuildEnv && !isBrowserEnv) {
       await this.saveVote(vote);
     } else {
       this.votes.push(vote);
@@ -95,7 +96,7 @@ export class DelayTolerantDAO {
   }
 
   private async flushQueues() {
-    if (isBuildEnv) return;
+    if (isBuildEnv || isBrowserEnv) return;
     
     for (const p of this.proposals) await this.saveProposal(p);
     this.proposals = [];
@@ -104,7 +105,7 @@ export class DelayTolerantDAO {
   }
 
   private async saveProposal(proposal: Proposal) {
-    if (isBuildEnv || !this.ipfsModule) return;
+    if (isBuildEnv || isBrowserEnv || !this.ipfsModule) return;
     
     try {
       const cid = await this.ipfsModule.saveJSON(proposal);
@@ -116,7 +117,7 @@ export class DelayTolerantDAO {
   }
 
   private async saveVote(vote: Vote) {
-    if (isBuildEnv || !this.ipfsModule || !this.logPromise) return;
+    if (isBuildEnv || isBrowserEnv || !this.ipfsModule || !this.logPromise) return;
     
     try {
       const cid = await this.ipfsModule.saveJSON(vote);

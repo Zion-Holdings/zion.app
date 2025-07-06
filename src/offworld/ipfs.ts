@@ -10,11 +10,12 @@ let yamux: any;
 let MemoryBlockstore: any;
 let MemoryDatastore: any;
 
-// Check if we're in a build environment
+// Check if we're in a build environment or browser environment where libp2p might cause issues
 const isBuildEnv = process.env.CI === 'true' || process.env.NODE_ENV === 'production' && typeof window === 'undefined';
+const isBrowserEnv = typeof window !== 'undefined';
 
-if (isBuildEnv) {
-  console.log('🚫 IPFS/Helia/LibP2P disabled for CI/build environment');
+if (isBuildEnv || isBrowserEnv) {
+  console.log('🚫 IPFS/Helia/LibP2P disabled for CI/build/browser environment');
   
   // Provide mock implementations
   createHelia = () => Promise.resolve({
@@ -125,6 +126,14 @@ const libp2pOptions = {
 };
 
 async function getHelia(): Promise<any> {
+  if (isBuildEnv || isBrowserEnv) {
+    logInfo('IPFS operations not available in CI/build/browser environment, returning mock');
+    return {
+      stop: () => Promise.resolve(),
+      libp2p: { peerId: { toString: () => 'mock-peer-id' } }
+    };
+  }
+
   if (!heliaNode) {
     logInfo('Initializing Libp2p for general IPFS operations...');
     libp2pNode = await createLibp2p(libp2pOptions);
@@ -143,6 +152,11 @@ async function getHelia(): Promise<any> {
 }
 
 export async function saveJSON(data: unknown): Promise<string> {
+  if (isBuildEnv || isBrowserEnv) {
+    logInfo('IPFS saveJSON not available in CI/build/browser environment, returning mock CID');
+    return 'mock-cid-' + Date.now();
+  }
+
   const helia = await getHelia();
   const jsonService = heliaJson(helia);
   const cid = await jsonService.add(data);
@@ -150,6 +164,11 @@ export async function saveJSON(data: unknown): Promise<string> {
 }
 
 export async function fetchJSON(cidString: string): Promise<any> {
+  if (isBuildEnv || isBrowserEnv) {
+    logInfo('IPFS fetchJSON not available in CI/build/browser environment, returning mock data');
+    return { mock: true, cid: cidString };
+  }
+
   const helia = await getHelia();
   const jsonService = heliaJson(helia);
 

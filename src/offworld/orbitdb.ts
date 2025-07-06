@@ -12,11 +12,12 @@ let yamux: any;
 let MemoryBlockstore: any;
 let MemoryDatastore: any;
 
-// Check if we're in a build environment
+// Check if we're in a build environment or browser environment where libp2p might cause issues
 const isBuildEnv = process.env.CI === 'true' || process.env.NODE_ENV === 'production' && typeof window === 'undefined';
+const isBrowserEnv = typeof window !== 'undefined';
 
-if (isBuildEnv) {
-  console.log('🚫 OrbitDB/LibP2P disabled for CI/build environment');
+if (isBuildEnv || isBrowserEnv) {
+  console.log('🚫 OrbitDB/LibP2P disabled for CI/build/browser environment');
   
   // Provide mock implementations
   createOrbitDB = () => Promise.resolve({
@@ -143,6 +144,11 @@ export async function initOrbit(repoPath = './orbitdb-helia') {
     return;
   }
 
+  if (isBuildEnv || isBrowserEnv) {
+    logInfo('OrbitDB initialization skipped for CI/build/browser environment');
+    return;
+  }
+
   try {
     logInfo('Initializing Libp2p...');
     libp2pNode = await createLibp2p(libp2pOptions);
@@ -180,6 +186,14 @@ export async function initOrbit(repoPath = './orbitdb-helia') {
 
 export async function getLog(name: string): Promise<any> { // Replace 'any' with specific OrbitDB LogStore type
   if (!orbit) {
+    if (isBuildEnv || isBrowserEnv) {
+      logInfo('OrbitDB not available in CI/build/browser environment, returning mock log');
+      return {
+        add: () => Promise.resolve(),
+        iterator: () => [],
+        close: () => Promise.resolve()
+      };
+    }
     logInfo('OrbitDB not initialized. Initializing now...');
     await initOrbit();
   }
