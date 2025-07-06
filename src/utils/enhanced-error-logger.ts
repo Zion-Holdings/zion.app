@@ -192,7 +192,7 @@ class EnhancedErrorLogger {
       this.trimErrors();
 
       // Log to console in development
-      if (process.env.NODE_ENV === 'development') {
+      if (typeof process !== 'undefined' && process.env?.NODE_ENV === 'development') {
         console.group(`🚨 Enhanced Error [${enhancedError.severity}]`);
         console.error(enhancedError.message);
         console.log('Context:', enhancedError.context);

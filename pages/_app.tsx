@@ -1,13 +1,13 @@
+// CRITICAL: Import immediate process polyfill FIRST to prevent process.env errors
+import '../src/utils/immediate-process-polyfill';
+
 // CRITICAL: Runtime check - polyfills should be loaded from document script and webpack banner
-if (process.env.NODE_ENV === 'development') {
+if (typeof process !== 'undefined' && process.env?.NODE_ENV === 'development') {
   console.log('🚨 APP.TSX RUNTIME CHECK - Polyfills should be active');
   console.log('- globalThis.__extends:', !!(globalThis as any).__extends);
   console.log('- globalThis.__assign:', !!(globalThis as any).__assign);
   console.log('- globalThis.process:', !!(globalThis as any).process);
 }
-
-// CRITICAL: Import environment polyfill FIRST to prevent process.env errors
-import '../src/utils/env-polyfill';
 
 // Enhanced error logging - import early for comprehensive coverage
 import enhancedErrorLogger from '../src/utils/enhanced-error-logger';

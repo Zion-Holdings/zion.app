@@ -464,8 +464,9 @@ const nextConfig = {
         
         // Create comprehensive polyfill array
         const polyfills = [
-          './src/utils/serverless-polyfill.ts',  // New serverless polyfill
-          './src/utils/env-polyfill.ts'         // Existing env polyfill
+          './src/utils/immediate-process-polyfill.ts',  // Immediate process polyfill
+          './src/utils/serverless-polyfill.ts',        // Serverless polyfill
+          './src/utils/env-polyfill.ts'                // Existing env polyfill
         ];
         
         // Add polyfills to every entry point
