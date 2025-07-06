@@ -404,6 +404,7 @@
     "typescript-eslint": "^8.35.1",
     "vite": "^7.0.2",
     "vitest": "^3.2.4",
+    "webpack": "^5.99.9",
     "whatwg-fetch": "^3.6.20"
   },
   "overrides": {
