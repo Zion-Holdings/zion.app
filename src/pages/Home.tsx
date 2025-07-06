@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import SEO from '@/components/SEO';
+import { SEO } from '@/components/SEO';
 
 export default function Home() {
   const { t } = useTranslation();
