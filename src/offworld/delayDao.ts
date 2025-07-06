@@ -21,18 +21,6 @@ export interface Vote {
 const isBuildEnv = process.env.CI === 'true' || process.env.NODE_ENV === 'production' && typeof window === 'undefined';
 const isBrowserEnv = typeof window !== 'undefined';
 
-export interface IpfsModule {
-  saveJSON(data: unknown): Promise<string>;
-  fetchJSON(cid: string): Promise<unknown>;
-  stopIpfsNode(): Promise<void>;
-}
-
-export interface OrbitDbModule {
-  getLog(name: string): Promise<any>;
-  initOrbit(repoPath?: string): Promise<void>;
-  stopOrbit(): Promise<void>;
-}
-
 export class DelayTolerantDAO {
   private proposals: Proposal[] = [];
   private votes: Vote[] = [];
@@ -46,26 +34,9 @@ export class DelayTolerantDAO {
       return;
     }
 
-    // Only attempt server-side operations in server environment
-    if (typeof window === 'undefined') {
-      try {
-        // Server-side only - dynamic imports
-        const [ipfs, orbitdb] = await Promise.all([
-          import('./ipfs'),
-          import('./orbitdb')
-        ]);
-        
-        // Use the imported modules
-        this.ready = true;
-        console.log('✅ DelayTolerantDAO: Server-side modules loaded successfully');
-      } catch (error: any) {
-        console.warn('⚠️ Failed to load native modules for DelayTolerantDAO:', error.message);
-        this.ready = true; // Continue with mock functionality
-      }
-    } else {
-      // Browser environment - always use mock
-      this.ready = true;
-    }
+    // Server-side only - but we'll use mocks for now to prevent any native module loading
+    console.log('🚫 DelayTolerantDAO: Using mock implementation for server environment');
+    this.ready = true;
   }
 
   async submitProposal(description: string, ttlMs = 5 * 24 * 60 * 60 * 1000): Promise<Proposal> {
@@ -92,10 +63,8 @@ export class DelayTolerantDAO {
       } catch (error) {
         console.warn('Failed to store proposal in localStorage:', error);
       }
-    } else if (this.ready && !isBuildEnv) {
-      // Server-side implementation would go here
-      this.proposals.push(proposal);
     } else {
+      // Server-side implementation - use mock for now
       this.proposals.push(proposal);
     }
     
@@ -115,10 +84,8 @@ export class DelayTolerantDAO {
       } catch (error) {
         console.warn('Failed to store vote in localStorage:', error);
       }
-    } else if (this.ready && !isBuildEnv) {
-      // Server-side implementation would go here
-      this.votes.push(vote);
     } else {
+      // Server-side implementation - use mock for now
       this.votes.push(vote);
     }
   }
