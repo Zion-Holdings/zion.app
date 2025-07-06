@@ -1,6 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function Home() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur-md text-foreground shadow-sm">
@@ -19,14 +22,14 @@ export default function Home() {
       <main className="container mx-auto px-4 py-8">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">
-            Welcome to Zion
+            {t('home.hero.title', 'Welcome to Zion')}
           </h1>
           <p className="text-xl text-muted-foreground mb-8">
-            The Future of Tech & AI Marketplace
+            {t('home.hero.subtitle', 'The Future of Tech & AI Marketplace')}
           </p>
           <div className="space-y-4">
-            <p>This is a minimal test page to isolate the React error #130.</p>
-            <p>If you see this page without errors, we know the issue is in one of the removed components.</p>
+            <p>This is a test page with useTranslation added back.</p>
+            <p>If you see this page without errors, useTranslation is working fine.</p>
           </div>
         </div>
       </main>
