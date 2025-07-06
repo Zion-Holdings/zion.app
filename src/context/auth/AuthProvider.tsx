@@ -35,8 +35,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       onboardingStep: null,
       setOnboardingStep: () => {},
       login: async () => ({ error: "Authentication not available" }),
-      signup: async () => ({ error: "Authentication not available" }),
-      register: async () => ({ error: "Authentication not available" }),
+      signup: async () => ({ error: "Authentication not available", emailVerificationRequired: false }),
+      register: async () => ({ error: "Authentication not available", emailVerificationRequired: false }),
       logout: async () => {},
       resetPassword: async () => ({ error: "Authentication not available" }),
       updateProfile: async () => ({ error: "Authentication not available" }),
@@ -47,7 +47,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       loginWithWeb3: async () => {},
       signIn: async () => ({ error: "Authentication not available" }),
       signOut: async () => {},
-      signUp: async () => ({ error: "Authentication not available" }),
+      signUp: async () => ({ error: "Authentication not available", emailVerificationRequired: false }),
       setUser: () => {},
       tokens: null,
       avatarUrl: null,
@@ -450,58 +450,30 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     };
   }, [router, dispatch, handleSignedIn, handleSignedOut, setOnboardingStep, setUser, setAvatarUrl, setTokens]); // Added router and other dependencies
 
-  const authContextValue = {
+  const authContextValue: AuthContextType = {
     user,
     isLoading,
     isAuthenticated: !!user,
-    login: login, // Use the custom login function instead of signInImpl
-    // register, // Removed as signup now covers its functionality
-    signUp: signup, // Use the custom signup function instead of signUpImpl
+    onboardingStep,
+    setOnboardingStep,
+    login,
+    signup,
+    register: signup, // alias for now
     logout,
-    resetPassword: async (email: string) => {
-      setIsLoading(true);
-      try {
-        const { error } = await supabase.auth.resetPasswordForEmail(email, {
-          redirectTo: `${window.location.origin}/auth/verify-email`,
-        });
-        if (error) {
-          logErrorToProduction('Supabase password reset error:', { data: error });
-          toast({
-            title: "Password Reset Failed",
-            description: error.message || "Failed to send password reset email.",
-            variant: "destructive",
-          });
-          setIsLoading(false);
-          return { error: error.message || "Password reset failed" };
-        }
-        toast({
-          title: "Password Reset Email Sent",
-          description: "Please check your email to reset your password.",
-        });
-        setIsLoading(false);
-        return { error: null };
-      } catch (err: any) {
-        logErrorToProduction('Password reset exception:', { data: err });
-        toast({
-          title: "Password Reset Failed",
-          description: err.message || "An unexpected error occurred during password reset.",
-          variant: "destructive",
-        });
-        setIsLoading(false);
-        return { error: err.message || "Password reset failed" };
-      }
-    },
+    resetPassword,
     updateProfile,
     loginWithGoogle,
     loginWithGitHub,
     loginWithFacebook,
     loginWithTwitter,
     loginWithWeb3,
+    signIn: login, // alias for now
+    signOut: logout, // alias for now
+    signUp: signup, // alias for now
     setUser,
-    onboardingStep,
     tokens,
     avatarUrl,
-    setAvatarUrl
+    setAvatarUrl,
   };
   return (
     <AuthContext.Provider value={authContextValue}>
