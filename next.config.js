@@ -3,7 +3,6 @@ import { fileURLToPath } from 'url';
 import os from 'os';
 import { PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_BUILD } from 'next/constants.js';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import { ProvidePlugin, DefinePlugin } from 'webpack';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
