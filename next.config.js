@@ -1139,6 +1139,7 @@ const nextConfig = {
     config.resolve.fallback = {
       ...config.resolve.fallback,
       buffer: 'buffer', // Ensure Buffer polyfill is available
+      stream: 'stream-browserify', // Polyfill for stream
       fs: false,
       net: false,
       tls: false,

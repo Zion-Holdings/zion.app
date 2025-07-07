@@ -302,6 +302,7 @@
     "recharts": "^3.0.2",
     "socket.io-client": "^4.8.1",
     "sonner": "^2.0.6",
+    "stream-browserify": "^3.0.0",
     "stripe": "^18.3.0",
     "swr": "^2.3.4",
     "tailwind-merge": "^3.3.1",
