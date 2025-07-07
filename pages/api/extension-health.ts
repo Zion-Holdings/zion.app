@@ -11,12 +11,12 @@ export default async function handler(
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
   // Handle preflight requests
-  if (req.method === 'OPTIONS') {
+  if (req['method'] === 'OPTIONS') {
     return res.status(200).end();
   }
 
   // Only allow GET requests for health check
-  if (req.method !== 'GET') {
+  if (req['method'] !== 'GET') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
