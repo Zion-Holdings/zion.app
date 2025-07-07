@@ -1,10 +1,5 @@
 /* Fonts are now loaded via Next.js font optimization in _app.tsx */
 
-/*
-  Enhanced CSS Custom Properties for Modern Theming.
-  Improved color palette with better contrast and accessibility.
-*/
-
 :root {
   /* Enhanced color palette with better contrast ratios */
   --background: 0 0% 100%;
