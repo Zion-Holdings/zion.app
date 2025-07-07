@@ -55,7 +55,7 @@ async function handleGet(
   res: NextApiResponse<ErrorMonitoringResponse>,
   action: string
 ) {
-  const { timeRange = 'day' } = req.query as any;
+  const { timeRange = 'day' } = req.query as { timeRange?: string };
   const timestamp = new Date().toISOString();
 
   switch (action) {
