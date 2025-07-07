@@ -262,7 +262,7 @@ async function handlePost(
 
     case 'clear-old-logs':
       try {
-        const { days = 30 } = req.body as any;
+        const { days = 30 } = req['body'] as any;
         const clearedCount = await logDashboard.clearOldLogs(Number(days));
         
         logInfo('Old logs cleared', { days, clearedCount });
