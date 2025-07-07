@@ -813,6 +813,16 @@ const nextConfig = {
         Buffer: ['buffer', 'Buffer'],
       })
     );
+    
+    // CRITICAL: Ensure Buffer is available globally for all modules
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        'global.Buffer': 'Buffer',
+        'globalThis.Buffer': 'Buffer',
+        'window.Buffer': 'Buffer',
+        'self.Buffer': 'Buffer',
+      })
+    );
 
     // PHASE 2: Enhanced Bundle Splitting for Performance Optimization
     if (!isServer) {
@@ -982,6 +992,12 @@ const nextConfig = {
         fullySpecified: false,
       },
     });
+    
+    // CRITICAL: Add Buffer fallback for any module that might need it
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      buffer: require.resolve('buffer'),
+    };
 
     // COMPREHENSIVE ESM FIX for Next.js 15 + React 19
     // Handle formik and lodash ESM issues with multiple strategies
