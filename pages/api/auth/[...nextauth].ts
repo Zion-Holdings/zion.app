@@ -122,7 +122,7 @@ const WalletConnectProvider = CredentialsProvider({
             logInfo(`WalletConnectProvider: User profile created and linked for ${authUserId}`);
             return {
               id: authUserId,
-              name: signUpData.user.user_metadata?.display_name || `User ${recoveredAddress.substring(0, 6)}...`,
+              name: signUpData.user.user_metadata?.['display_name'] || `User ${recoveredAddress.substring(0, 6)}...`,
               email: signUpData.user.email, // The dummy email
               walletAddress: recoveredAddress.toLowerCase(), // Ensure this is the original mixed-case address if needed, but usually stored lowercase.
             };
@@ -145,12 +145,12 @@ const WalletConnectProvider = CredentialsProvider({
 export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID || "",
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
+      clientId: process.env['GOOGLE_CLIENT_ID'] || "",
+      clientSecret: process.env['GOOGLE_CLIENT_SECRET'] || "",
     }),
     GitHubProvider({ // Added GitHubProvider configuration
-      clientId: process.env.GITHUB_CLIENT_ID || "",
-      clientSecret: process.env.GITHUB_CLIENT_SECRET || "",
+      clientId: process.env['GITHUB_CLIENT_ID'] || "",
+      clientSecret: process.env['GITHUB_CLIENT_SECRET'] || "",
     }),
     FacebookProvider({
       clientId: process.env.FACEBOOK_CLIENT_ID || "",
