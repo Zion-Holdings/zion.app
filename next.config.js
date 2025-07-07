@@ -449,8 +449,8 @@ const nextConfig = {
         http: false,
         https: false,
         zlib: false,
-        stream: false,
-        buffer: false,
+        stream: require.resolve('stream-browserify'),
+        buffer: require.resolve('buffer'),
         util: false,
         process: false,
         path: false,
@@ -582,9 +582,10 @@ const nextConfig = {
             NEXT_PUBLIC_SOCIAL_GITHUB_URL: process.env.NEXT_PUBLIC_SOCIAL_GITHUB_URL || '',
           }),
         }),
-        // ProvidePlugin to ensure process is always available (only for client-side)
+        // ProvidePlugin to ensure process and Buffer are always available (only for client-side)
         new webpack.ProvidePlugin({
           process: path.resolve(__dirname, 'src/utils/immediate-process-polyfill.ts'),
+          Buffer: ['buffer', 'Buffer'],
         })
       );
     }
