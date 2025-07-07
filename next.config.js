@@ -823,6 +823,87 @@ const nextConfig = {
         'self.Buffer': 'Buffer',
       })
     );
+    
+    // CRITICAL: Add Buffer polyfill as webpack banner to ensure it loads first
+    config.plugins.push(
+      new webpack.BannerPlugin({
+        banner: `
+          // CRITICAL: Buffer polyfill - must be first
+          if (typeof Buffer === 'undefined') {
+            function BufferPolyfill(input, encoding, offset) {
+              if (typeof input === 'string') {
+                var encoder = new TextEncoder();
+                var bytes = encoder.encode(input);
+                return new Uint8Array(bytes);
+              } else if (input instanceof ArrayBuffer) {
+                return new Uint8Array(input);
+              } else if (Array.isArray(input)) {
+                return new Uint8Array(input);
+              } else if (input instanceof Uint8Array) {
+                return input;
+              } else {
+                return new Uint8Array(input || 0);
+              }
+            }
+            
+            BufferPolyfill.from = function(input, encoding) {
+              return new BufferPolyfill(input, encoding);
+            };
+            
+            BufferPolyfill.alloc = function(size, fill, encoding) {
+              var buffer = new BufferPolyfill(size);
+              if (fill !== undefined) {
+                if (typeof fill === 'string') {
+                  var encoder = new TextEncoder();
+                  var fillBytes = encoder.encode(fill);
+                  buffer.set(fillBytes, 0);
+                } else {
+                  buffer.fill(fill);
+                }
+              }
+              return buffer;
+            };
+            
+            BufferPolyfill.allocUnsafe = function(size) {
+              return new BufferPolyfill(size);
+            };
+            
+            BufferPolyfill.isBuffer = function(obj) {
+              return obj instanceof Uint8Array;
+            };
+            
+            // Add toString method to Uint8Array prototype for Buffer compatibility
+            if (!Uint8Array.prototype.toString) {
+              Uint8Array.prototype.toString = function(encoding, start, end) {
+                var decoder = new TextDecoder(encoding || 'utf8');
+                var slice = this.slice(start, end);
+                return decoder.decode(slice);
+              };
+            }
+            
+            // Add toJSON method to Uint8Array prototype for Buffer compatibility
+            if (!Uint8Array.prototype.toJSON) {
+              Uint8Array.prototype.toJSON = function() {
+                return {
+                  type: 'Buffer',
+                  data: Array.from(this)
+                };
+              };
+            }
+            
+            // Define Buffer in global scope
+            if (typeof globalThis !== 'undefined') globalThis.Buffer = BufferPolyfill;
+            if (typeof global !== 'undefined') global.Buffer = BufferPolyfill;
+            if (typeof window !== 'undefined') window.Buffer = BufferPolyfill;
+            if (typeof self !== 'undefined') self.Buffer = BufferPolyfill;
+            if (typeof this !== 'undefined') this.Buffer = BufferPolyfill;
+            if (typeof module !== 'undefined' && module.exports) module.exports.Buffer = BufferPolyfill;
+          }
+        `,
+        raw: true,
+        entryOnly: false,
+      })
+    );
 
     // PHASE 2: Enhanced Bundle Splitting for Performance Optimization
     if (!isServer) {
