@@ -63,7 +63,7 @@ const config: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
-        // Custom Zion colors (updated palette)
+        // Custom Zion colors
         'zion-blue': {
           DEFAULT: '#2e73ea',
           light: '#8ab1f3',

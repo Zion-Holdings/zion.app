@@ -430,5 +430,8 @@
   "bugs": {
     "url": "https://github.com/Zion-Holdings/zion.app/issues"
   },
-  "homepage": "https://github.com/Zion-Holdings/zion.app#readme"
+  "homepage": "https://github.com/Zion-Holdings/zion.app#readme",
+  "resolutions": {
+    "postcss": "8.5.6"
+  }
 }
