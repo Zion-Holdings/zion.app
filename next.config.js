@@ -76,8 +76,8 @@ const nextConfig = {
       'fuse.js'
     ],
 
-    // Enable CSS optimization for production
-    optimizeCss: process.env.NODE_ENV === 'production', 
+    // Disable CSS optimization temporarily to debug CSS issues
+    optimizeCss: false, 
     // Memory and performance optimizations for 176+ pages
     largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
     workerThreads: false, // Disable worker threads to reduce memory usage
@@ -430,20 +430,6 @@ const nextConfig = {
   ],
 
   webpack: (config, { dev, isServer, webpack }) => {
-    // Ensure CSS files are processed as CSS, not SCSS
-    config.module.rules.forEach((rule) => {
-      if (rule.test && rule.test.toString().includes('css')) {
-        rule.use.forEach((use) => {
-          if (use.loader && use.loader.includes('postcss-loader')) {
-            use.options = use.options || {};
-            use.options.postcssOptions = use.options.postcssOptions || {};
-            use.options.postcssOptions.parser = 'css';
-            // Force CSS syntax instead of SCSS
-            use.options.postcssOptions.syntax = 'css';
-          }
-        });
-      }
-    });
     // Prevent Node.js core modules from being polyfilled in the client bundle
     if (!isServer) {
       config.resolve.fallback = {
