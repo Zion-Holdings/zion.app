@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { GetServerSideProps } from 'next';
+import type { GetServerSideProps } from 'next';
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 
