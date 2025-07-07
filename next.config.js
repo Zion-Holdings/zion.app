@@ -582,10 +582,11 @@ const nextConfig = {
             NEXT_PUBLIC_SOCIAL_GITHUB_URL: process.env.NEXT_PUBLIC_SOCIAL_GITHUB_URL || '',
           }),
         }),
-        // ProvidePlugin to ensure process and Buffer are always available (only for client-side)
+        // ProvidePlugin to ensure process, Buffer, and stream are always available (only for client-side)
         new webpack.ProvidePlugin({
           process: path.resolve(__dirname, 'src/utils/immediate-process-polyfill.ts'),
           Buffer: ['buffer', 'Buffer'],
+          stream: ['stream-browserify', 'stream'],
         })
       );
     }
