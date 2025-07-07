@@ -25,11 +25,11 @@ async function initializeSentryOrMock() {
     console.log('instrumentation.ts: Node.js runtime detected.');
     try {
       const shouldDisableSentry =
-        process.env.SKIP_SENTRY_BUILD === 'true' ||
-        process.env.CI === 'true' ||
-        !process.env.SENTRY_DSN ||
-        process.env.SENTRY_DSN.includes('dummy') ||
-        process.env.SENTRY_DSN.includes('placeholder');
+        process.env['SKIP_SENTRY_BUILD'] === 'true' ||
+        process.env['CI'] === 'true' ||
+        !process.env['SENTRY_DSN'] ||
+        process.env['SENTRY_DSN']?.includes('dummy') ||
+        process.env['SENTRY_DSN']?.includes('placeholder');
 
       if (shouldDisableSentry) {
         console.log('instrumentation.ts: Sentry DSN invalid or disabled by env var, using Sentry mock for Node.js.');
@@ -74,9 +74,9 @@ export async function register() {
     return;
   }
 
-  const SENTRY_DSN = process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
-  const SENTRY_RELEASE = process.env.SENTRY_RELEASE || process.env.NEXT_PUBLIC_SENTRY_RELEASE;
-  const SENTRY_ENVIRONMENT = process.env.SENTRY_ENVIRONMENT || process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT;
+  const SENTRY_DSN = process.env['SENTRY_DSN'] || process.env['NEXT_PUBLIC_SENTRY_DSN'];
+  const SENTRY_RELEASE = process.env['SENTRY_RELEASE'] || process.env['NEXT_PUBLIC_SENTRY_RELEASE'];
+  const SENTRY_ENVIRONMENT = process.env['SENTRY_ENVIRONMENT'] || process.env['NEXT_PUBLIC_SENTRY_ENVIRONMENT'];
 
   // Enhanced validation for development placeholders and dummy values
   const isInvalidDsn = !SENTRY_DSN || 

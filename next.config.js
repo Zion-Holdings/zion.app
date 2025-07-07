@@ -1086,11 +1086,7 @@ const nextConfig = {
       },
     });
     
-    // CRITICAL: Add Buffer fallback for any module that might need it
-    config.resolve.fallback = {
-      ...config.resolve.fallback,
-      buffer: 'buffer',
-    };
+    // CRITICAL: Buffer fallback is now handled in the main fallback configuration below
 
     // COMPREHENSIVE ESM FIX for Next.js 15 + React 19
     // Handle formik and lodash ESM issues with multiple strategies
@@ -1142,6 +1138,7 @@ const nextConfig = {
     // Add polyfills for Node.js APIs
     config.resolve.fallback = {
       ...config.resolve.fallback,
+      buffer: 'buffer', // Ensure Buffer polyfill is available
       fs: false,
       net: false,
       tls: false,
@@ -1183,7 +1180,7 @@ const nextConfig = {
         ...config.externals,
         'pako': 'pako',
         'zlib': 'zlib',
-        'buffer': 'buffer',
+        // Removed 'buffer': 'buffer' to allow Buffer polyfill to work
         'stream': 'stream',
         'util': 'util',
         'events': 'events',
