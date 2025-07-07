@@ -996,7 +996,7 @@ const nextConfig = {
     // CRITICAL: Add Buffer fallback for any module that might need it
     config.resolve.fallback = {
       ...config.resolve.fallback,
-      buffer: require.resolve('buffer'),
+      buffer: 'buffer',
     };
 
     // COMPREHENSIVE ESM FIX for Next.js 15 + React 19
