@@ -68,7 +68,7 @@ import { AuthProvider } from '@/context/auth/AuthProvider';
 import { CartProvider } from '@/context/CartContext';
 
 import dynamic from 'next/dynamic';
-import '../src/index.css';
+// import '../src/index.css'; // Temporarily disabled for debugging
 
 // Dynamically import the Toaster component from sonner for client-side rendering only
 const Toaster = dynamic(() => import('sonner').then((mod) => mod.Toaster), {

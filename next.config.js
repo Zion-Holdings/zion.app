@@ -438,6 +438,8 @@ const nextConfig = {
             use.options = use.options || {};
             use.options.postcssOptions = use.options.postcssOptions || {};
             use.options.postcssOptions.parser = 'css';
+            // Force CSS syntax instead of SCSS
+            use.options.postcssOptions.syntax = 'css';
           }
         });
       }
