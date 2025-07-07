@@ -7,6 +7,9 @@
  * CRITICAL: This must be imported FIRST in any file that might access process.env
  */
 
+// Import stream polyfill to prevent "stream is not defined" errors
+import './stream-polyfill';
+
 // Only define process in browser environments, not in Node.js
 const isBrowser = typeof window !== 'undefined' || typeof document !== 'undefined';
 const isNode = typeof process !== 'undefined' && process.versions && process.versions.node;
@@ -145,6 +148,8 @@ if (isBrowser && !isNode) {
       (window as any).Buffer = BufferPolyfill;
     }
   }
+
+
 }
 
 // Export a safe process accessor

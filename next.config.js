@@ -449,7 +449,7 @@ const nextConfig = {
         http: false,
         https: false,
         zlib: false,
-        stream: require.resolve('stream-browserify'),
+        stream: path.resolve(__dirname, 'src/utils/stream-polyfill.ts'),
         buffer: require.resolve('buffer'),
         util: false,
         process: false,
@@ -586,7 +586,7 @@ const nextConfig = {
         new webpack.ProvidePlugin({
           process: path.resolve(__dirname, 'src/utils/immediate-process-polyfill.ts'),
           Buffer: ['buffer', 'Buffer'],
-          stream: ['stream-browserify', 'stream'],
+          stream: path.resolve(__dirname, 'src/utils/stream-polyfill.ts'),
         })
       );
     }
@@ -1141,7 +1141,7 @@ const nextConfig = {
     config.resolve.fallback = {
       ...config.resolve.fallback,
       buffer: 'buffer', // Ensure Buffer polyfill is available
-      stream: 'stream-browserify', // Polyfill for stream
+      stream: path.resolve(__dirname, 'src/utils/stream-polyfill.ts'), // Custom stream polyfill
       fs: false,
       net: false,
       tls: false,
@@ -1155,7 +1155,6 @@ const nextConfig = {
       https: false,
       os: false,
       path: false,
-      stream: false,
       util: false,
       zlib: false,
       url: false,
@@ -1184,7 +1183,7 @@ const nextConfig = {
         'pako': 'pako',
         'zlib': 'zlib',
         // Removed 'buffer': 'buffer' to allow Buffer polyfill to work
-        'stream': 'stream',
+        // Removed 'stream': 'stream' to allow stream polyfill to work
         'util': 'util',
         'events': 'events',
         'assert': 'assert',

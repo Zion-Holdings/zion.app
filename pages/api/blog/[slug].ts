@@ -8,12 +8,12 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<BlogPost | { error: string }>
 ) {
-  if (req.method !== 'GET') {
+  if (req['method'] !== 'GET') {
     res.setHeader('Allow', 'GET');
-    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+    return res.status(405).json({ error: `Method ${req['method']} Not Allowed` });
   }
 
-  const { slug } = req.query as { slug: string };
+  const { slug } = req['query'] as { slug: string };
   if (!slug || typeof slug !== 'string') {
     return res.status(400).json({ error: 'Slug is required' });
   }

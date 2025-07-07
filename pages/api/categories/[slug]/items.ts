@@ -79,12 +79,12 @@ const MOCK_CATEGORIES = {
 const prisma = new PrismaClient();
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'GET') {
+  if (req['method'] !== 'GET') {
     res.setHeader('Allow', ['GET']);
-    return res.status(405).json({ message: `Method ${req.method} Not Allowed` });
+    return res.status(405).json({ message: `Method ${req['method']} Not Allowed` });
   }
 
-  const { slug } = req.query as { slug: string | string[] };
+  const { slug } = req['query'] as { slug: string | string[] };
 
   if (typeof slug !== 'string') {
     return res.status(400).json({ message: 'Invalid slug provided.' });
@@ -272,7 +272,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     // Ensure we always return JSON, never HTML
     try {
       captureException(error as Error, {
-        extra: { slug, path: req.url },
+        extra: { slug, path: req['url'] },
         user: (req as any).user ? { id: (req as any).user.id, email: (req as any).user.email } : undefined,
       });
     } catch (sentryError) {

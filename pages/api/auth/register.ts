@@ -12,12 +12,12 @@ import {
 
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
+  if (req['method'] !== 'POST') {
     res.setHeader('Allow', 'POST');
-    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+    return res.status(405).json({ error: `Method ${req['method']} Not Allowed` });
   }
 
-  const { name, email, password, userType, source, metadata } = req.body as {
+  const { name, email, password, userType, source, metadata } = req['body'] as {
     name?: string;
     email?: string;
     password?: string;
@@ -109,7 +109,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
     // Check if email verification is required
     let emailVerificationRequired = !data.session && data.user && !data.user.email_confirmed_at;
-    const appEnv = process.env.NEXT_PUBLIC_APP_ENV || 'production';
+    const appEnv = process.env['NEXT_PUBLIC_APP_ENV'] || 'production';
 
     if (emailVerificationRequired && data.user && (appEnv === 'development' || appEnv === 'staging')) {
       logInfo(`Auto-verifying email for user ${data.user.id} in ${appEnv} environment.`);

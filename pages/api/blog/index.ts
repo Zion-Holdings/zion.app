@@ -32,13 +32,13 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<BlogPost[] | { error: string }>
 ) {
-  if (req.method !== 'GET') {
+  if (req['method'] !== 'GET') {
     res.setHeader('Allow', 'GET');
-    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+    return res.status(405).json({ error: `Method ${req['method']} Not Allowed` });
   }
 
   try {
-    const query = String((req.query as any).query || '').toLowerCase().trim();
+    const query = String((req['query'] as any).query || '').toLowerCase().trim();
     
     // Create cache key based on query
     const cacheKey = query 
