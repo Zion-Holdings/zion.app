@@ -1,4 +1,6 @@
-/* Minimal CSS for testing */
+@import "tailwindcss";
+
+/* Custom styles */
 
 :root[data-theme='dark'] {
   --background: 222.2 84% 4.9%;
