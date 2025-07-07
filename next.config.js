@@ -430,6 +430,18 @@ const nextConfig = {
   ],
 
   webpack: (config, { dev, isServer, webpack }) => {
+    // Ensure CSS files are processed as CSS, not SCSS
+    config.module.rules.forEach((rule) => {
+      if (rule.test && rule.test.toString().includes('css')) {
+        rule.use.forEach((use) => {
+          if (use.loader && use.loader.includes('postcss-loader')) {
+            use.options = use.options || {};
+            use.options.postcssOptions = use.options.postcssOptions || {};
+            use.options.postcssOptions.parser = 'css';
+          }
+        });
+      }
+    });
     // Prevent Node.js core modules from being polyfilled in the client bundle
     if (!isServer) {
       config.resolve.fallback = {
