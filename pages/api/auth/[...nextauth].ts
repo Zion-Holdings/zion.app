@@ -107,7 +107,7 @@ const WalletConnectProvider = CredentialsProvider({
               .insert({
                 user_id: authUserId, // Link to auth.users table
                 wallet_address: recoveredAddress.toLowerCase(),
-                display_name: signUpData.user.user_metadata?.display_name || `User ${recoveredAddress.substring(0, 6)}...`,
+                display_name: signUpData.user.user_metadata?.['display_name'] || `User ${recoveredAddress.substring(0, 6)}...`,
                 // email: signUpData.user.email, // email is already in auth.users, no need to duplicate unless denormalizing
               });
 
