@@ -3,6 +3,7 @@ import { fileURLToPath } from 'url';
 import os from 'os';
 import { PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_BUILD } from 'next/constants.js';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import { createRequire } from 'module';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -434,6 +435,13 @@ const nextConfig = {
   ],
 
   webpack: (config, { dev, isServer, webpack }) => {
+    // Ignore react-loading-skeleton CSS to prevent PostCSS/SCSS errors
+    const require = createRequire(import.meta.url);
+    config.module.rules.unshift({
+      test: /react-loading-skeleton[\\/]dist[\\/]skeleton\.css$/,
+      use: [require.resolve('null-loader')],
+    });
+    
     // Prevent Node.js core modules from being polyfilled in the client bundle
     if (!isServer) {
       config.resolve.fallback = {

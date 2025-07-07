@@ -1,6 +1,6 @@
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import Skeleton from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css';
+import Head from 'next/head';
 
 export const PostCardSkeleton = () => (
   <Card data-testid="post-card-skeleton">

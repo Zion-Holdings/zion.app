@@ -68,6 +68,7 @@ import { AuthProvider } from '@/context/auth/AuthProvider';
 import { CartProvider } from '@/context/CartContext';
 
 import dynamic from 'next/dynamic';
+import Head from 'next/head';
 // import '../src/index.css'; // Temporarily disabled for debugging
 
 // Dynamically import the Toaster component from sonner for client-side rendering only
@@ -218,6 +219,9 @@ export default function App({ Component, pageProps }: AppProps) {
   // Main app render with Redux, React Query, i18n, Auth, and Cart
   return (
     <ProviderWrapper queryClient={queryClient}>
+      <Head>
+        <link rel="stylesheet" href="/skeleton.css" />
+      </Head>
       <Component {...pageProps} />
       <Toaster richColors position="top-right" />
     </ProviderWrapper>
