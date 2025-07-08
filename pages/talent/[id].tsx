@@ -75,11 +75,10 @@ const TalentPage: React.FC = () => {
     <>
       <NextSeo
         title={data?.full_name}
-        description={data?.bio ?? undefined}
+        description={data?.bio ?? ''}
         openGraph={{
-          images: undefined,
           title: data?.full_name,
-          description: data?.bio ?? undefined
+          description: data?.bio ?? ''
         }}
       />
       <main className="min-h-screen bg-zion-blue py-8 text-white" data-testid="talent-details">

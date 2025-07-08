@@ -412,12 +412,12 @@ export default function SearchResultsPage({
                 user_id: result.id,
                 full_name: result.title,
                 professional_title: result.description || '',
-                profile_picture_url: result.image,
-                average_rating: result.rating,
+                profile_picture_url: result.image ?? '',
+                average_rating: result.rating ?? 0,
                 skills: result.tags || [],
-                location: result.category,
-                bio: result.description,
-                summary: result.description,
+                location: result.category || '',
+                bio: result.description || '',
+                summary: result.description || '',
                 is_verified: false,
                 availability_type: 'available',
               }}
@@ -461,4 +461,9 @@ export default function SearchResultsPage({
     <>
       <SEO
         title={`Search Results for "${query}" - Zion Marketplace`}
-        description={`
+        description={`Find ${query} and more in the Zion marketplace. Discover products, talent, and services.`}
+      />
+      {/* ...rest of the component rendering... */}
+    </>
+  );
+}
