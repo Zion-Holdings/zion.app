@@ -61,7 +61,7 @@ const MOCK_TALENT = [
 
 // Authentication middleware for demo purposes (same as jobs API)
 function validateApiKey(req: NextApiRequest): boolean {
-  const authHeader = req.headers.authorization;
+  const authHeader = req['headers'].authorization;
   if (!authHeader) return false;
   
   const authHeaderString = Array.isArray(authHeader) ? authHeader[0] : authHeader;
@@ -79,11 +79,11 @@ function validateApiKey(req: NextApiRequest): boolean {
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   // CORS is handled by the withApiDocsCors wrapper
 
-  if (req.method !== 'GET') {
+  if (req['method'] !== 'GET') {
     res.setHeader('Allow', 'GET');
     return res.status(405).json({ 
       error: 'method_not_allowed',
-      message: `Method ${req.method} Not Allowed` 
+      message: `Method ${req['method']} Not Allowed` 
     });
   }
 
@@ -106,7 +106,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       limit = '20',
       offset = '0',
       sort = 'rating'
-    } = req.query as { 
+    } = req['query'] as { 
       skills?: string | string[];
       category?: string | string[];
       rate_min?: string | string[];

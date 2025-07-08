@@ -465,7 +465,7 @@ const nextConfig = {
         querystring: false,
         constants: false,
         domain: false,
-        events: false,
+        events: require.resolve('events'),
         punycode: false,
         readline: false,
         string_decoder: false,

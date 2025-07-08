@@ -27,17 +27,17 @@ export default async function handler(
   // Apply CORS headers
   applyCorsHeaders(req, res as NextApiResponse<unknown>);
 
-  if (req.method === 'OPTIONS') {
+  if (req['method'] === 'OPTIONS') {
     return res.status(200).end();
   }
 
-  if (req.method !== 'POST') {
+  if (req['method'] !== 'POST') {
     res.setHeader('Allow', 'POST');
-    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+    return res.status(405).json({ error: `Method ${req['method']} Not Allowed` });
   }
 
   try {
-    const { messages } = req.body as { messages?: unknown };
+    const { messages } = req['body'] as { messages?: unknown };
 
     if (!messages || !Array.isArray(messages)) {
       return res.status(400).json({ error: 'Messages array is required' });

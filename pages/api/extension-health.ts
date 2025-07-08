@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 export default async function handler(
@@ -25,7 +25,7 @@ export default async function handler(
       status: 'healthy',
       timestamp: new Date().toISOString(),
       version: '1.0.0',
-      environment: process.env.NODE_ENV,
+      environment: process.env['NODE_ENV'],
     });
   } catch (error) {
     logErrorToProduction('Extension health check error:', error);

@@ -74,9 +74,9 @@ const MOCK_JOBS = [
 
 // Simple demo API key validation
 function validateApiKey(req: NextApiRequest): boolean {
-  const authHeader = req.headers.authorization;
+  const authHeader = req['headers'].authorization;
   const authHeaderString = Array.isArray(authHeader) ? authHeader[0] : authHeader;
-  const apiKey = authHeaderString?.replace('Bearer ', '') || (req.query as any).api_key;
+  const apiKey = authHeaderString?.replace('Bearer ', '') || (req['query'] as any).api_key;
   return apiKey === 'demo_key_123' || apiKey === 'test_key_456';
 }
 
@@ -123,11 +123,11 @@ function filterAndSortJobs(jobs: any[], params: {
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   // CORS is handled by the withApiDocsCors wrapper
 
-  if (req.method !== 'GET') {
+  if (req['method'] !== 'GET') {
     res.setHeader('Allow', 'GET');
     return res.status(405).json({ 
       error: 'method_not_allowed',
-      message: `Method ${req.method} Not Allowed` 
+      message: `Method ${req['method']} Not Allowed` 
     });
   }
 
@@ -147,7 +147,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       limit = '20',
       offset = '0',
       sort = 'created_at'
-    } = req.query as { 
+    } = req['query'] as { 
       status?: string | string[];
       category?: string | string[];
       limit?: string | string[];
