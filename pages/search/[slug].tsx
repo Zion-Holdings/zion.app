@@ -116,13 +116,28 @@ function offlineSearch(
     return result;
   });
 
-  type StrictTalentProfile = Omit<TalentProfile, 'profile_picture_url'> & { profile_picture_url: string };
-  const talentResults: StrictTalentProfile[] = TALENT_PROFILES.filter(
+  type MappedTalentProfile = {
+    id: string;
+    user_id: string;
+    full_name: string;
+    professional_title: string;
+    profile_picture_url: string;
+    average_rating: number;
+    skills: string[];
+    location: string;
+    bio: string;
+    summary: string;
+    is_verified: boolean;
+    availability_type: string;
+  };
+  const talentResults: MappedTalentProfile[] = TALENT_PROFILES.filter(
     (t) =>
       match(t.full_name) ||
       match(t.professional_title) ||
+      match(t.location) ||
       match(t.bio) ||
-      t.skills?.some((s) => match(s)),
+      match(t.summary) ||
+      (t.skills ?? []).some((s) => match(s)),
   ).map((t) => ({
     id: t.id,
     user_id: t.user_id,
