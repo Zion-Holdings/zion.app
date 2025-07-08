@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { addComment, getComments, CommentEntry } from '@/services/commentService';
+import { addComment, getComments } from '@/services/commentService';
+import type { CommentEntry } from '@/services/commentService';
 
 interface CommentsSectionProps {
   slug: string;
