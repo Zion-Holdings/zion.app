@@ -37,16 +37,9 @@ const WalletConnectProvider = CredentialsProvider({
         let authUserId = null;
 
         if (!supabase) {
-<<<<<<< HEAD
           logErrorToProduction('Supabase client is null in WalletConnectProvider authorize. Cannot query profiles.');
           return null;
         }
-=======
-          logErrorToProduction('WalletConnectProvider: Supabase client not available');
-          return null;
-        }
-
->>>>>>> 19bd38d5057ba9b9866c341bdd0e4a70f24468f1
         const { data: existingProfile, error: lookupError } = await supabase
           .from('profiles') // Assuming 'profiles' table
           .select('*, user_id (id, email)') // Adjust based on your actual table and foreign key to auth.users
@@ -183,19 +176,10 @@ export const authOptions: NextAuthOptions = {
         }
 
         logInfo('Attempting Supabase sign-in for:', { data: credentials.email });
-<<<<<<< HEAD
         if (!supabase) {
           logErrorToProduction('Supabase client is null in CredentialsProvider authorize. Cannot sign in user.');
           return null;
         }
-=======
-        
-        if (!supabase) {
-          logErrorToProduction('Supabase client not available for credentials sign-in');
-          throw new Error('Authentication service unavailable');
-        }
-        
->>>>>>> 19bd38d5057ba9b9866c341bdd0e4a70f24468f1
         const { data, error } = await supabase.auth.signInWithPassword({
           email: credentials.email,
           password: credentials.password,

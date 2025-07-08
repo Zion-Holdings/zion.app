@@ -89,7 +89,7 @@
     /* Modern TypeScript Features */
     "exactOptionalPropertyTypes": true,
     "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
+    "noPropertyAccessFromIndexSignature": false,
     "useUnknownInCatchVariables": true,
     "allowUnusedLabels": false,
     "allowUnreachableCode": false,

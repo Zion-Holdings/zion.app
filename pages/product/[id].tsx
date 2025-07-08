@@ -32,8 +32,8 @@ const ProductDetailPage = ({ product }: ProductPageProps) => {
         type="product"
         image={product.images ? product.images[0]?.url : undefined}
         product={{
-          price: product.price || undefined,
-          currency: product.currency || undefined,
+          ...(typeof product.price === 'number' ? { price: product.price } : {}),
+          ...(typeof product.currency === 'string' ? { currency: product.currency } : {}),
           availability: 'in_stock',
           sku: product.id,
         }}

@@ -69,11 +69,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       name: profile.full_name,
       title: profile.professional_title,
       skills: profile.skills || [],
-      hourlyRate: profile.hourly_rate,
-      avatar: profile.profile_picture_url,
-      rating: profile.average_rating,
-      reviewCount: profile.rating_count || 0,
-      availability: profile.availability_type
+      ...(profile.hourly_rate !== undefined ? { hourlyRate: profile.hourly_rate } : {}),
+      ...(profile.profile_picture_url !== undefined ? { avatar: profile.profile_picture_url } : {}),
+      ...(profile.average_rating !== undefined ? { rating: profile.average_rating } : {}),
+      ...(profile.rating_count !== undefined ? { reviewCount: profile.rating_count } : {}),
+      ...(profile.availability_type !== undefined ? { availability: profile.availability_type } : {}),
     }));
 
     logInfo(`Returning ${mappedProfiles.length} talent profiles (page ${page}, limit ${limit})`);
