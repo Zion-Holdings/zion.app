@@ -1,5 +1,5 @@
 // API endpoint for performance metrics collection
-import { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next';
 import { PerformanceReport } from '@/utils/performance-monitor';
 
 interface PerformanceMetricsRequest extends NextApiRequest {
@@ -10,13 +10,13 @@ export default async function handler(
   req: PerformanceMetricsRequest,
   res: NextApiResponse
 ): Promise<void> {
-  if (req.method !== 'POST') {
+  if (req['method'] !== 'POST') {
     res.status(405).json({ error: 'Method not allowed' });
     return;
   }
 
   try {
-    const performanceReport = req.body;
+    const performanceReport = req['body'];
     
     // Validate the report structure
     if (!performanceReport.metrics || !Array.isArray(performanceReport.metrics)) {
@@ -25,7 +25,7 @@ export default async function handler(
     }
 
     // Log performance metrics (in production, you would store these in a database)
-    if (process.env.NODE_ENV === 'development') {
+    if (process.env['NODE_ENV'] === 'development') {
       console.log('🔧 Performance Report:', {
         sessionId: performanceReport.sessionId,
         timestamp: new Date(performanceReport.timestamp).toISOString(),
@@ -51,13 +51,13 @@ export default async function handler(
     // 4. Aggregate metrics for performance dashboards
 
     // Example: Send to external analytics service
-    if (process.env.NODE_ENV === 'production' && process.env.ANALYTICS_ENDPOINT) {
+    if (process.env['NODE_ENV'] === 'production' && process.env['ANALYTICS_ENDPOINT']) {
       try {
-        await fetch(process.env.ANALYTICS_ENDPOINT, {
+        await fetch(process.env['ANALYTICS_ENDPOINT'], {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${process.env.ANALYTICS_API_KEY}`
+            'Authorization': `Bearer ${process.env['ANALYTICS_API_KEY']}`
           },
           body: JSON.stringify({
             type: 'performance',

@@ -49,6 +49,10 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
     setIsLoading(true);
     
     try {
+      if (!supabase) {
+        throw new Error('Supabase client not available');
+      }
+      
       const { data, error } = await supabase.functions.invoke('ai-listing-generator', {
         body: { title, category, keyFeatures, targetAudience }
       });

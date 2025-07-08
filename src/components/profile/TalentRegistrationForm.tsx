@@ -124,6 +124,15 @@ export function TalentRegistrationForm() {
 
   // Generate enhanced profile with AI
   const generateEnhancedProfile = async () => {
+    if (!supabase) {
+      toast({
+        title: "Error",
+        description: "Supabase client not initialized",
+        variant: "destructive",
+      });
+      return;
+    }
+
     const formData = form.getValues();
     if (!formData.bio || formData.bio.length < 20) {
       toast({
@@ -233,6 +242,11 @@ export function TalentRegistrationForm() {
 
   // Send notification email
   const sendEnhancementNotification = async (userId: string, email: string) => {
+    if (!supabase) {
+      logErrorToProduction('Supabase client not initialized for email notification');
+      return;
+    }
+    
     try {
       await supabase.functions.invoke('send-email', {
         body: {
@@ -262,6 +276,15 @@ export function TalentRegistrationForm() {
       toast({
         title: "Skills required",
         description: "Please add at least one skill to your profile.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!supabase) {
+      toast({
+        title: "Error",
+        description: "Supabase client not initialized",
         variant: "destructive",
       });
       return;

@@ -55,7 +55,7 @@ async function handleGet(
   res: NextApiResponse<ErrorMonitoringResponse>,
   action: string
 ) {
-  const { timeRange = 'day' } = req.query as any;
+  const { timeRange = 'day' } = req['query'] as { timeRange?: string };
   const timestamp = new Date().toISOString();
 
   switch (action) {
@@ -262,7 +262,7 @@ async function handlePost(
 
     case 'clear-old-logs':
       try {
-        const { days = 30 } = req.body as any;
+        const { days = 30 } = req['body'] as any;
         const clearedCount = await logDashboard.clearOldLogs(Number(days));
         
         logInfo('Old logs cleared', { days, clearedCount });

@@ -1,5 +1,5 @@
 import React from 'react';
-import { GetServerSideProps } from 'next';
+import type { GetServerSideProps } from 'next';
 import { SEO } from '@/components/SEO';
 import YoutubeEmbed from '@/components/YoutubeEmbed';
 

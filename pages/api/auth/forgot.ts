@@ -39,9 +39,9 @@ function checkRateLimit(key: string): boolean {
 }
 
 async function getAuth0ManagementToken() {
-  const domain = process.env.AUTH0_ISSUER_BASE_URL;
-  const clientId = process.env.AUTH0_CLIENT_ID;
-  const clientSecret = process.env.AUTH0_CLIENT_SECRET;
+  const domain = process.env['AUTH0_ISSUER_BASE_URL'];
+  const clientId = process.env['AUTH0_CLIENT_ID'];
+  const clientSecret = process.env['AUTH0_CLIENT_SECRET'];
 
   if (!domain || !clientId || !clientSecret) {
     throw new Error('Auth0 configuration missing');
@@ -70,7 +70,7 @@ async function getAuth0ManagementToken() {
 }
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
+  if (req['method'] !== 'POST') {
     res.setHeader('Allow', 'POST');
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -85,7 +85,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   // Validate input
-  const result = schema.safeParse(req.body);
+  const result = schema.safeParse(req['body']);
   if (!result.success) {
     const errorMessage = result.error.errors[0]?.message || 'Invalid input';
     return res.status(400).json({ 
@@ -95,7 +95,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   const { email } = result.data;
-  const domain = process.env.AUTH0_ISSUER_BASE_URL;
+  const domain = process.env['AUTH0_ISSUER_BASE_URL'];
 
   if (!domain) {
     return res.status(500).json({
@@ -118,8 +118,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       body: JSON.stringify({
         email: email.toLowerCase(),
                   connection: 'Username-Password-Authentication', // Default Auth0 database connection
-        client_id: process.env.AUTH0_CLIENT_ID,
-        result_url: `${process.env.AUTH0_BASE_URL || process.env.NEXT_PUBLIC_APP_URL}/login?reset=success`,
+        client_id: process.env['AUTH0_CLIENT_ID'],
+        result_url: `${process.env['AUTH0_BASE_URL'] || process.env['NEXT_PUBLIC_APP_URL']}/login?reset=success`,
         includeEmailInRedirect: false,
         ttl_sec: 432000, // 5 days (as per Auth0 default)
         mark_email_as_verified: false

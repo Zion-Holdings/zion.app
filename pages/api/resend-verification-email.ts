@@ -4,17 +4,24 @@ import { withErrorLogging } from '@/utils/withErrorLogging';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
+  if (req['method'] !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  const { email } = req.body as { email?: string };
+  const { email } = req['body'] as { email?: string };
 
   if (!email || typeof email !== 'string') {
     return res.status(400).json({ message: 'Email is required' });
   }
 
   try {
+    if (!supabase) {
+      return res.status(503).json({ 
+        message: 'Authentication service unavailable',
+        details: 'Supabase client is not properly initialized'
+      });
+    }
+
     const { error } = await supabase.auth.resend({
       type: 'signup',
       email,
@@ -34,7 +41,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     logErrorToProduction('Unexpected error resending verification email:', { data: error });
     return res.status(500).json({ 
       message: 'Internal server error',
-      details: process.env.NODE_ENV === 'development' ? error.message : undefined
+      details: process.env['NODE_ENV'] === 'development' ? error.message : undefined
     });
   }
 }

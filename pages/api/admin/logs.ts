@@ -36,7 +36,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
-  if (req.method !== 'GET') {
+  if (req['method'] !== 'GET') {
     res.setHeader('Allow', 'GET');
     return res.status(405).json({ message: 'Method Not Allowed' });
   }
@@ -75,7 +75,7 @@ export default async function handler(
 
     // Apply query filters
     let filtered = logs;
-    const query = req.query as { level?: string; category?: string; source?: string; limit?: string };
+    const query = req['query'] as { level?: string; category?: string; source?: string; limit?: string };
     const level = query.level;
     const category = query.category;
     const source = query.source;

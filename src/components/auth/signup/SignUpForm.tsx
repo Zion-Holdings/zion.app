@@ -34,6 +34,10 @@ export function SignUpForm({ onSignInClick }: SignUpFormProps) {
     setIsLoading(true);
 
     try {
+      if (!supabase) {
+        throw new Error('Supabase client not available');
+      }
+      
       const { data, error: signUpError } = await supabase.auth.signUp({
         email,
         password,

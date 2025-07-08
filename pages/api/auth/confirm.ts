@@ -2,11 +2,11 @@ import { type NextApiRequest, type NextApiResponse } from 'next'
 import { createClient } from '../../../src/utils/supabase/server'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'GET') {
+  if (req['method'] !== 'GET') {
     return res.status(405).json({ error: 'Method not allowed' })
   }
 
-  const { token_hash, type, next } = req.query as {
+  const { token_hash, type, next } = req['query'] as {
     token_hash?: string;
     type?: string;
     next?: string;

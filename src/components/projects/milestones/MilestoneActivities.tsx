@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -36,6 +35,11 @@ export function MilestoneActivities({ projectId }: MilestoneActivitiesProps) {
 
   useEffect(() => {
     async function fetchActivities() {
+      if (!supabase) {
+        logErrorToProduction('Supabase client not initialized for milestone activities');
+        return;
+      }
+      
       try {
         setIsLoading(true);
         

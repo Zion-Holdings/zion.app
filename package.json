@@ -243,6 +243,7 @@
     "axios": "^1.10.0",
     "axios-retry": "^4.5.0",
     "blockstore-core": "^5.0.4",
+    "buffer": "^6.0.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
@@ -254,6 +255,7 @@
     "dotenv": "^17.0.1",
     "embla-carousel-react": "^8.6.0",
     "ethers": "^6.15.0",
+    "events": "^3.3.0",
     "file-saver": "^2.0.5",
     "firebase": "^11.10.0",
     "formik": "^2.4.6",
@@ -301,6 +303,7 @@
     "recharts": "^3.0.2",
     "socket.io-client": "^4.8.1",
     "sonner": "^2.0.6",
+    "stream-browserify": "^3.0.0",
     "stripe": "^18.3.0",
     "swr": "^2.3.4",
     "tailwind-merge": "^3.3.1",
@@ -387,6 +390,7 @@
     "next-router-mock": "^1.0.2",
     "node-mocks-http": "^1.17.2",
     "npm-check-updates": "^18.0.1",
+    "null-loader": "^4.0.1",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "puppeteer": "^24.11.2",
@@ -403,6 +407,7 @@
     "typescript-eslint": "^8.35.1",
     "vite": "^7.0.2",
     "vitest": "^3.2.4",
+    "webpack": "^5.99.9",
     "whatwg-fetch": "^3.6.20"
   },
   "overrides": {
@@ -428,5 +433,8 @@
   "bugs": {
     "url": "https://github.com/Zion-Holdings/zion.app/issues"
   },
-  "homepage": "https://github.com/Zion-Holdings/zion.app#readme"
+  "homepage": "https://github.com/Zion-Holdings/zion.app#readme",
+  "resolutions": {
+    "postcss": "8.5.6"
+  }
 }

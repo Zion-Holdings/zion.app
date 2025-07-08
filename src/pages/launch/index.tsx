@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 import { AppLayout } from '@/layout/AppLayout';
 import { NextSeo } from '@/components/NextSeo';
@@ -63,9 +62,12 @@ const LaunchToolkitPage = () => {
   const handleDownloadAll = async () => {
     setIsZipping(true);
     setZipError('');
-    const zip = new JSZip();
-
+    
     try {
+      // Dynamic import to avoid bundling JSZip on the server
+      const JSZip = (await import('jszip')).default;
+      const zip = new JSZip();
+
       for (const assetPath of toolkitAssets) {
         const response = await fetch(`/${assetPath}`); // Fetch from public directory
         if (!response.ok) {

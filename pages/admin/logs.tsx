@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { GetServerSideProps } from 'next';
+import type { GetServerSideProps } from 'next';
 import fs from 'fs';
 import path from 'path';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';

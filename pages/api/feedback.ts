@@ -6,7 +6,7 @@ import { withErrorLogging } from '@/utils/withErrorLogging';
 import {logErrorToProduction} from '@/utils/productionLogger';
 import { sendFeedbackEmail } from '@/lib/email';
 
-const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/zion';
+const mongoUri = process.env['MONGO_URI'] || 'mongodb://localhost:27017/zion';
 
 const feedbackSchema = new mongoose.Schema({
   rating: { type: Number, required: true, min: 1, max: 5 },
@@ -25,7 +25,7 @@ interface FeedbackDoc extends Document {
 }
 
 const Feedback: Model<FeedbackDoc> =
-  mongoose.models.Feedback ||
+  mongoose.models['Feedback'] ||
   mongoose.model<FeedbackDoc>('Feedback', feedbackSchema);
 
 async function connect() {
@@ -42,12 +42,12 @@ const FeedbackValidator = z.object({
 });
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
+  if (req['method'] !== 'POST') {
     res.setHeader('Allow', 'POST');
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
+    return res.status(405).end(`Method ${req['method']} Not Allowed`);
   }
 
-  const parsed = FeedbackValidator.safeParse(req.body);
+  const parsed = FeedbackValidator.safeParse(req['body']);
   if (!parsed.success) {
     return res.status(400).json({
       error: parsed.error?.errors[0]?.message || 'Invalid feedback data',

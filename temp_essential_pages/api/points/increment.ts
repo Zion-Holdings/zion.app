@@ -12,7 +12,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     return res.status(405).end();
   }
 
-  const { userId, amount, reason } = req.body || {};
+  const { userId, amount, reason } = req['body'] || {};
   if (!userId || typeof amount !== 'number') {
     return res.status(400).json({ error: 'userId and amount required' });
   }

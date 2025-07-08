@@ -10,7 +10,7 @@ const prisma = new PrismaClient({
   log: ['error'],
   datasources: {
     db: {
-      url: process.env.DATABASE_URL,
+      url: process.env['DATABASE_URL'] || '',
     },
   },
 });
@@ -45,9 +45,9 @@ async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method !== 'GET') {
+  if (req['method'] !== 'GET') {
     res.setHeader('Allow', 'GET');
-    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+    return res.status(405).json({ error: `Method ${req['method']} Not Allowed` });
   }
 
   try {

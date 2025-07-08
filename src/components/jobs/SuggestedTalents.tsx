@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
@@ -21,6 +20,16 @@ export function SuggestedTalents({ jobId, jobTitle }: SuggestedTalentsProps) {
   const fetchSuggestedTalents = async () => {
     setIsLoading(true);
     try {
+      if (!supabase) {
+        logErrorToProduction('Supabase client not available for fetching suggested talents');
+        toast({
+          title: "Error",
+          description: "Database connection not available. Please try again later.",
+          variant: "destructive",
+        });
+        return;
+      }
+      
       const { data, error } = await supabase
         .from("suggested_talents")
         .select(`

@@ -76,7 +76,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   console.log('Received error report request');
-  const errorDetails = req.body as ErrorDetails; // Type assertion for req.body
+  const errorDetails = req['body'] as ErrorDetails; // Type assertion for req.body
 
   if (!errorDetails || typeof errorDetails !== 'object' || !errorDetails.message || !errorDetails.stack) {
     console.error('Invalid error report: Missing body, message, or stack.', errorDetails);

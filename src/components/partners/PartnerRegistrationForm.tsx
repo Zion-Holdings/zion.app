@@ -50,6 +50,10 @@ export function PartnerRegistrationForm() {
   });
 
   const checkExistingPartner = async () => {
+    if (!supabase) {
+      throw new Error('Supabase client not available');
+    }
+    
     const { data: existingPartner } = await supabase
       .from('partner_profiles')
       .select('id')
@@ -73,6 +77,15 @@ export function PartnerRegistrationForm() {
       toast({
         title: "Authentication required",
         description: "You must be logged in to register as a partner.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!supabase) {
+      toast({
+        title: "Database connection error",
+        description: "Unable to connect to the database. Please try again later.",
         variant: "destructive",
       });
       return;

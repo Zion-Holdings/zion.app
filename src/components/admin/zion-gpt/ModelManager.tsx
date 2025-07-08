@@ -32,6 +32,10 @@ export function ZionGPTModelManager() {
   const fetchModels = async () => {
     try {
       setIsLoading(true);
+      if (!supabase) {
+        throw new Error('Supabase client not available');
+      }
+      
       const { data, error } = await supabase
         .from('model_versions')
         .select('*')
@@ -60,6 +64,10 @@ export function ZionGPTModelManager() {
 
   const checkTrainingStatus = async (modelId: string) => {
     try {
+      if (!supabase) {
+        throw new Error('Supabase client not available');
+      }
+      
       setActiveJobs(prev => ({ ...prev, [modelId]: true }));
       
       // Call an edge function that checks the OpenAI fine-tuning job status
@@ -98,6 +106,10 @@ export function ZionGPTModelManager() {
 
   const toggleModelActive = async (modelId: string, currentActive: boolean, purpose: string) => {
     try {
+      if (!supabase) {
+        throw new Error('Supabase client not available');
+      }
+      
       // If activating, deactivate all other models with the same purpose
       if (!currentActive) {
         await supabase

@@ -176,33 +176,33 @@ async function handler(
   // Apply CORS headers first
   applyCorsHeaders(req, res as NextApiResponse<unknown>);
 
-  if (req.method === 'OPTIONS') {
+  if (req['method'] === 'OPTIONS') {
     return res.status(200).end();
   }
 
-  if (req.method !== 'GET') {
+  if (req['method'] !== 'GET') {
     res.setHeader('Allow', 'GET');
-    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+    return res.status(405).json({ error: `Method ${req['method']} Not Allowed` });
   }
 
   const startTime = Date.now();
 
   try {
-    const q = String(((req.query as any).query ?? ((req.query as any).q ?? '')))
+    const q = String(((req['query'] as any).query ?? ((req['query'] as any).q ?? '')))
       .toLowerCase()
       .trim();
-    const page = parseInt(String(((req.query as any).page ?? '1')), 10);
-    const limit = Math.min(parseInt(String(((req.query as any).limit ?? '20')), 10), 100); // Cap at 100
+    const page = parseInt(String(((req['query'] as any).page ?? '1')), 10);
+    const limit = Math.min(parseInt(String(((req['query'] as any).limit ?? '20')), 10), 100); // Cap at 100
 
-    const typesParam = String((req.query as any).type ?? '')
+    const typesParam = String((req['query'] as any).type ?? '')
       .split(',')
       .map((t: string) => t.trim())
       .filter(Boolean) as SearchFilters['types'];
-    const category = (req.query as any).category as string | undefined;
-    const minPrice = (req.query as any).minPrice ? parseFloat(String((req.query as any).minPrice)) : undefined;
-    const maxPrice = (req.query as any).maxPrice ? parseFloat(String((req.query as any).maxPrice)) : undefined;
-    const minRating = (req.query as any).minRating ? parseFloat(String((req.query as any).minRating)) : undefined;
-    const sort = (req.query as any).sort as SearchFilters['sort'] | undefined;
+    const category = (req['query'] as any).category as string | undefined;
+    const minPrice = (req['query'] as any).minPrice ? parseFloat(String((req['query'] as any).minPrice)) : undefined;
+    const maxPrice = (req['query'] as any).maxPrice ? parseFloat(String((req['query'] as any).maxPrice)) : undefined;
+    const minRating = (req['query'] as any).minRating ? parseFloat(String((req['query'] as any).minRating)) : undefined;
+    const sort = (req['query'] as any).sort as SearchFilters['sort'] | undefined;
 
     // Return empty results for empty query
     if (!q) {
@@ -271,7 +271,7 @@ async function handler(
       totalCount: 0,
       page: 1,
       limit: 20,
-      query: String(((req.query as any).query ?? ((req.query as any).q ?? ''))),
+      query: String(((req['query'] as any).query ?? ((req['query'] as any).q ?? ''))),
       hasMore: false,
     });
   }

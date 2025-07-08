@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import {logErrorToProduction} from '@/utils/productionLogger';
 import {
@@ -67,6 +66,15 @@ export function HireConfirmationModal({
       toast({
         title: 'Missing talent data',
         description: 'Talent information is missing.',
+        variant: 'destructive',
+      });
+      return;
+    }
+
+    if (!supabase) {
+      toast({
+        title: 'Database connection error',
+        description: 'Unable to connect to database. Please try again.',
         variant: 'destructive',
       });
       return;

@@ -243,7 +243,7 @@ const PitchGeneratorPage: React.FC = () => {
         setIsGenerating(false);
         return;
       }
-
+      
       const response = await fetch('/api/admin/generate-pitch-deck', {
         method: 'POST',
         headers: {
@@ -268,10 +268,8 @@ const PitchGeneratorPage: React.FC = () => {
       // alert(`New deck generated for Version ${deckVersion}. Save if you want to keep it.`);
 
     } catch (e: any) {
-      logErrorToProduction('Failed to generate pitch deck:', { data:  e });
-      setError(e.message || 'Failed to generate pitch deck. Check console for details.');
-      setGeneratedSlides([]);
-    } finally {
+      logErrorToProduction('Failed to generate deck:', { data: e });
+      setError(e.message || 'Failed to generate deck.');
       setIsGenerating(false);
     }
   };

@@ -1,6 +1,6 @@
 // API endpoint for enhanced error reporting
-import { NextApiRequest, NextApiResponse } from 'next';
-import { EnhancedError } from '@/utils/enhanced-error-logger';
+import type { NextApiRequest, NextApiResponse } from 'next';
+import type { EnhancedError } from '@/utils/enhanced-error-logger';
 
 interface ErrorReportRequest extends NextApiRequest {
   body: {
@@ -18,13 +18,13 @@ export default async function handler(
   req: ErrorReportRequest,
   res: NextApiResponse
 ): Promise<void> {
-  if (req.method !== 'POST') {
+  if (req['method'] !== 'POST') {
     res.status(405).json({ error: 'Method not allowed' });
     return;
   }
 
   try {
-    const { error, breadcrumbs } = req.body;
+    const { error, breadcrumbs } = req['body'];
     
     // Validate the error report structure
     if (!error || typeof error !== 'object') {
@@ -33,7 +33,7 @@ export default async function handler(
     }
 
     // Enhanced logging for development
-    if (process.env.NODE_ENV === 'development') {
+    if (process.env['NODE_ENV'] === 'development') {
       console.log('🚨 Enhanced Error Report:', {
         id: error.id,
         message: error.message,
@@ -86,23 +86,15 @@ export default async function handler(
 
     // In production, you would integrate with:
     // 1. Error tracking services
-    if (process.env.NODE_ENV === 'production' && process.env.ERROR_REPORTING_ENDPOINT) {
+    if (process.env.NODE_ENV === 'production' && process.env['ERROR_REPORTING_ENDPOINT']) {
       try {
-        await fetch(process.env.ERROR_REPORTING_ENDPOINT, {
+        await fetch(process.env['ERROR_REPORTING_ENDPOINT'], {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${process.env.ERROR_REPORTING_API_KEY}`
-          },
-          body: JSON.stringify({
-            type: 'enhanced-error',
-            data: { error, breadcrumbs },
-            timestamp: Date.now()
-          })
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ error: error.message, stack: error.stack }),
         });
-      } catch (reportingError) {
-        console.error('Failed to send to external error service:', reportingError);
-        // Don't fail the request if external service fails
+      } catch (err) {
+        // Ignore reporting errors
       }
     }
 

@@ -69,7 +69,7 @@ async function handler(
   if (isDevelopment) {
     console.log('🔧 LOGIN TRACE: Starting login attempt');
     console.log('🔧 LOGIN TRACE: Request method:', req.method);
-    console.log('🔧 LOGIN TRACE: Request body keys:', Object.keys(req.body || {}));
+    console.log('🔧 LOGIN TRACE: Request body keys:', Object.keys(req['body'] || {}));
     console.log('🔧 LOGIN TRACE: Environment config status:', {
       supabaseConfigured: ENV_CONFIG.supabase.isConfigured,
       sentryConfigured: ENV_CONFIG.sentry.isConfigured,
@@ -81,7 +81,7 @@ async function handler(
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { email, password } = req.body as { email?: unknown, password?: unknown };
+  const { email, password } = req['body'] as { email?: unknown, password?: unknown };
 
   if (!email || !password) {
     return res.status(400).json({ error: 'Email and password are required' });

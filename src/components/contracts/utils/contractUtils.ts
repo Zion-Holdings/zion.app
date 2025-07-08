@@ -10,6 +10,10 @@ export async function generateContract(
   clientName: string,
   generatedMilestones: GeneratedMilestone[]
 ): Promise<string> {
+  if (!supabase) {
+    throw new Error('Supabase client not available');
+  }
+  
   const additionalClauses = values.additionalClauses || [];
   
   // Prepare milestone data if we have AI-generated milestones

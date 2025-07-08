@@ -8,6 +8,10 @@ export function AnalyticsSummary() {
   const { data: stats, isLoading } = useQuery({
     queryKey: ['analytics-summary'],
     queryFn: async () => {
+      if (!supabase) {
+        throw new Error('Supabase client not available');
+      }
+      
       // Get total page views
       const { data: pageViewsData, error: pageViewsError } = await supabase
         .from('analytics_events')

@@ -1,13 +1,13 @@
+// CRITICAL: Import immediate process polyfill FIRST to prevent process.env errors
+import '../src/utils/immediate-process-polyfill';
+
 // CRITICAL: Runtime check - polyfills should be loaded from document script and webpack banner
-if (process.env.NODE_ENV === 'development') {
+if (typeof process !== 'undefined' && process.env?.NODE_ENV === 'development') {
   console.log('🚨 APP.TSX RUNTIME CHECK - Polyfills should be active');
   console.log('- globalThis.__extends:', !!(globalThis as any).__extends);
   console.log('- globalThis.__assign:', !!(globalThis as any).__assign);
   console.log('- globalThis.process:', !!(globalThis as any).process);
 }
-
-// CRITICAL: Import environment polyfill FIRST to prevent process.env errors
-import '../src/utils/env-polyfill';
 
 // Enhanced error logging - import early for comprehensive coverage
 import enhancedErrorLogger from '../src/utils/enhanced-error-logger';
@@ -68,7 +68,8 @@ import { AuthProvider } from '@/context/auth/AuthProvider';
 import { CartProvider } from '@/context/CartContext';
 
 import dynamic from 'next/dynamic';
-import '../src/index.css';
+import Head from 'next/head';
+// import '../src/index.css'; // Temporarily disabled for debugging
 
 // Dynamically import the Toaster component from sonner for client-side rendering only
 const Toaster = dynamic(() => import('sonner').then((mod) => mod.Toaster), {
@@ -218,6 +219,9 @@ export default function App({ Component, pageProps }: AppProps) {
   // Main app render with Redux, React Query, i18n, Auth, and Cart
   return (
     <ProviderWrapper queryClient={queryClient}>
+      <Head>
+        <link rel="stylesheet" href="/skeleton.css" />
+      </Head>
       <Component {...pageProps} />
       <Toaster richColors position="top-right" />
     </ProviderWrapper>
