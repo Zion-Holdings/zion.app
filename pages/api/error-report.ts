@@ -1,5 +1,5 @@
 // API endpoint for enhanced error reporting
-import { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next';
 import { EnhancedError } from '@/utils/enhanced-error-logger';
 
 interface ErrorReportRequest extends NextApiRequest {
