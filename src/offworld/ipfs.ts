@@ -12,8 +12,8 @@ const createHelia = () => Promise.resolve({
 });
 
 const heliaJson = () => ({
-  add: () => Promise.resolve('mock-cid'),
-  get: () => Promise.resolve({ mock: true })
+  add: (_data: unknown) => Promise.resolve('mock-cid'),
+  get: (_cid: string) => Promise.resolve({ mock: true })
 });
 
 // Browser-safe logging
@@ -108,7 +108,7 @@ export async function saveJSON(data: unknown): Promise<string> {
   
   try {
     const helia = await getHelia();
-    const jsonService = heliaJson(helia);
+    const jsonService = heliaJson();
     const cid = await jsonService.add(data);
     return cid.toString();
   } catch (error: any) {
@@ -125,7 +125,7 @@ export async function fetchJSON(cidString: string): Promise<any> {
   
   try {
     const helia = await getHelia();
-    const jsonService = heliaJson(helia);
+    const jsonService = heliaJson();
     const data = await jsonService.get(cidString);
     return data;
   } catch (error: any) {

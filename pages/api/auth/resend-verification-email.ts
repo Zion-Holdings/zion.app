@@ -22,6 +22,13 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     return res.status(503).json({ message: 'Auth provider not configured' });
   }
 
+  if (!supabase) {
+    logErrorToProduction('Supabase client is null in resend-verification-email API. Cannot resend verification email.');
+    return res.status(503).json({
+      message: 'Authentication service not configured',
+      details: 'Supabase client is null. Credentials may be missing.'
+    });
+  }
   try {
     const { error } = await supabase.auth.resend({ type: 'signup', email });
     

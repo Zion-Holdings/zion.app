@@ -36,6 +36,10 @@ const WalletConnectProvider = CredentialsProvider({
         let userProfile = null;
         let authUserId = null;
 
+        if (!supabase) {
+          logErrorToProduction('Supabase client is null in WalletConnectProvider authorize. Cannot query profiles.');
+          return null;
+        }
         const { data: existingProfile, error: lookupError } = await supabase
           .from('profiles') // Assuming 'profiles' table
           .select('*, user_id (id, email)') // Adjust based on your actual table and foreign key to auth.users
@@ -72,6 +76,10 @@ const WalletConnectProvider = CredentialsProvider({
           const dummyPassword = Math.random().toString(36).slice(-16) + Math.random().toString(36).slice(-16);
 
 
+          if (!supabase) {
+            logErrorToProduction('Supabase client is null in WalletConnectProvider authorize. Cannot sign up user.');
+            return null;
+          }
           const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
             email: dummyEmail,
             password: dummyPassword,
@@ -97,6 +105,10 @@ const WalletConnectProvider = CredentialsProvider({
 
             // Now, create a corresponding profile in your public 'profiles' table
             // linking it to the new auth.users.id and storing the wallet_address.
+            if (!supabase) {
+              logErrorToProduction('Supabase client is null in WalletConnectProvider authorize. Cannot create profile.');
+              return null;
+            }
             const { error: profileCreateError } = await supabase
               .from('profiles')
               .insert({
@@ -164,6 +176,10 @@ export const authOptions: NextAuthOptions = {
         }
 
         logInfo('Attempting Supabase sign-in for:', { data: credentials.email });
+        if (!supabase) {
+          logErrorToProduction('Supabase client is null in CredentialsProvider authorize. Cannot sign in user.');
+          return null;
+        }
         const { data, error } = await supabase.auth.signInWithPassword({
           email: credentials.email,
           password: credentials.password,

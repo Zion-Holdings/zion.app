@@ -80,9 +80,15 @@ const PitchGeneratorPage: React.FC = () => {
       let token = null;
       
       try {
-        const sessionResult = await supabase.auth.getSession();
-        // Handle mock client response where session is always null - use type assertion
-        token = (sessionResult?.data?.session as any)?.access_token || null;
+        if (supabase) {
+          const sessionResult = await supabase.auth.getSession();
+          // Handle mock client response where session is always null - use type assertion
+          token = (sessionResult?.data?.session as any)?.access_token || null;
+        } else {
+          logWarn('Supabase client is null, using Auth0 fallback for admin operations');
+          // In a real scenario, we'd get the Auth0 token here
+          // For now, we'll proceed without a token since this is an admin operation
+        }
       } catch (authError) {
         logWarn('Supabase auth disabled, using Auth0 fallback for admin operations');
         // In a real scenario, we'd get the Auth0 token here
@@ -188,9 +194,11 @@ const PitchGeneratorPage: React.FC = () => {
     setError(null);
 
     try {
-      // Handle mock Supabase client - session is always null
-      const sessionResult = await supabase.auth.getSession();
-      const token = (sessionResult?.data?.session as any)?.access_token || null;
+      let token = null;
+      if (supabase) {
+        const sessionResult = await supabase.auth.getSession();
+        token = (sessionResult?.data?.session as any)?.access_token || null;
+      }
 
       if (!token) {
         // Since Supabase is disabled, generate mock slides instead of making API calls
