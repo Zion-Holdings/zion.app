@@ -1,5 +1,5 @@
 
-import { UseFormReturn, ControllerRenderProps } from "react-hook-form";
+import type { UseFormReturn, ControllerRenderProps } from "react-hook-form";
 import { 
   FormField, 
   FormItem, 
@@ -17,8 +17,8 @@ import {
   SelectValue 
 } from "@/components/ui/select";
 import { MilestoneSuggestions } from "@/components/projects/milestones/MilestoneSuggestions";
-import { GeneratedMilestone } from "@/hooks/useMilestoneGenerator";
-import { ContractFormValues } from "./ContractForm";
+import type { GeneratedMilestone } from "@/hooks/useMilestoneGenerator";
+import type { ContractFormValues } from "./ContractForm";
 
 interface PaymentTermsFieldsProps {
   form: UseFormReturn<ContractFormValues>;
@@ -84,9 +84,13 @@ export function PaymentTermsFields({
             projectName={form.getValues("projectName") || "Project"}
             scopeSummary={form.getValues("scopeSummary") || ""}
             startDate={form.getValues("startDate") || new Date()}
-            endDate={form.getValues("endDate")}
-            projectType={form.getValues("projectName").includes("AI") ? "AI/ML" : 
-                        form.getValues("projectName").includes("Web") ? "Web Development" : "Other"}
+            endDate={form.getValues("endDate") || new Date()}
+            projectType={(() => {
+              const name = form.getValues("projectName") || "";
+              if (name.includes("AI")) return "AI/ML";
+              if (name.includes("Web")) return "Web Development";
+              return "Other";
+            })()}
             onMilestonesGenerated={handleMilestonesGenerated}
           />
         </div>
