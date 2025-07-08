@@ -19,19 +19,19 @@ async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ProductWithStats | { error: string }>
 ) {
-  if (req.method !== 'GET') {
+  if (req['method'] !== 'GET') {
     res.setHeader('Allow', 'GET');
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
+    return res.status(405).end(`Method ${req['method']} Not Allowed`);
   }
 
-  if (!process.env.DATABASE_URL) {
+  if (!process.env['DATABASE_URL']) {
     logErrorToProduction('DATABASE_URL is not set or empty.');
     return res
       .status(503)
       .json({ error: 'Service Unavailable: Database configuration is missing.' });
   }
 
-  const { productId } = req.query as { productId: string | string[] };
+  const { productId } = req['query'] as { productId: string | string[] };
 
   if (!productId || typeof productId !== 'string') {
     return res.status(400).json({ error: 'Product ID is required and must be a string.' });

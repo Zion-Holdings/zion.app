@@ -84,13 +84,13 @@ const MOCK_EQUIPMENT: Equipment[] = [
 ];
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'GET') {
+  if (req['method'] !== 'GET') {
     res.setHeader('Allow', 'GET');
-    return res.status(405).json({ error: `Method ${req.method} not allowed` });
+    return res.status(405).json({ error: `Method ${req['method']} not allowed` });
   }
 
   try {
-    logInfo('Marketplace equipment API called with query:', { data: req.query });
+    logInfo('Marketplace equipment API called with query:', { data: req['query'] });
     
     // Add CORS headers
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -98,10 +98,10 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
     // Get query parameters
-    const page = parseInt(((req.query as any).page as string), 10) || 1;
-    const limit = parseInt(((req.query as any).limit as string), 10) || 20;
-    const search = ((req.query as any).search as string);
-    const category = ((req.query as any).category as string);
+    const page = parseInt(((req['query'] as any).page as string), 10) || 1;
+    const limit = parseInt(((req['query'] as any).limit as string), 10) || 20;
+    const search = ((req['query'] as any).search as string);
+    const category = ((req['query'] as any).category as string);
 
     // Start with all equipment
     let equipment = MOCK_EQUIPMENT;

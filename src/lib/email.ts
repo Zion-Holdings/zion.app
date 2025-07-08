@@ -85,9 +85,9 @@ export async function sendResetEmail(
 
 export async function sendFeedbackEmail(data: {
   rating: number;
-  comment?: string;
-  url?: string;
-  userAgent?: string;
+  comment?: string | undefined;
+  url?: string | undefined;
+  userAgent?: string | undefined;
 }): Promise<void> {
   const apiKey = process.env.SENDGRID_API_KEY;
   const to =

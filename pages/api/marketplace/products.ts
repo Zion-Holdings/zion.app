@@ -30,19 +30,19 @@ async function handler(
   logInfo('Marketplace products API handler started.');
   // DATABASE_URL is essential for Prisma Client to connect to the database.
   // This check ensures the service is not attempting to run without proper configuration.
-  if (!process.env.DATABASE_URL) {
+  if (!process.env['DATABASE_URL']) {
     logErrorToProduction("DATABASE_URL is not set or empty.");
     return res.status(503).json({ error: 'Service Unavailable: Database configuration is missing.' });
   }
-  if (req.method !== 'GET') {
+  if (req['method'] !== 'GET') {
     res.setHeader('Allow', 'GET');
-    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+    return res.status(405).json({ error: `Method ${req['method']} Not Allowed` });
   }
 
   res.setHeader('Access-Control-Allow-Origin', '*');
 
-  const page = parseInt(((req.query as any).page as string), 10) || 1;
-  const limit = parseInt(((req.query as any).limit as string), 10) || 20;
+  const page = parseInt(((req['query'] as any).page as string), 10) || 1;
+  const limit = parseInt(((req['query'] as any).limit as string), 10) || 20;
   const skip = (page - 1) * limit;
 
   try {

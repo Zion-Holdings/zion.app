@@ -8,21 +8,21 @@ interface TalentProfile {
   name: string;
   title: string;
   skills: string[];
-  hourlyRate?: number;
-  avatar?: string;
-  rating?: number;
-  reviewCount?: number;
-  availability?: string;
+  hourlyRate?: number | undefined;
+  avatar?: string | undefined;
+  rating?: number | undefined;
+  reviewCount?: number | undefined;
+  availability?: string | undefined;
 }
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'GET') {
+  if (req['method'] !== 'GET') {
     res.setHeader('Allow', 'GET');
-    return res.status(405).json({ error: `Method ${req.method} not allowed` });
+    return res.status(405).json({ error: `Method ${req['method']} not allowed` });
   }
 
   try {
-    logInfo('Marketplace talent API called with query:', { data: req.query });
+    logInfo('Marketplace talent API called with query:', { data: req['query'] });
     
     // Add CORS headers
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -30,10 +30,10 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
     // Get query parameters
-    const page = parseInt(((req.query as any).page as string), 10) || 1;
-    const limit = parseInt(((req.query as any).limit as string), 10) || 20;
-    const search = ((req.query as any).search as string);
-    const skills = ((req.query as any).skills as string | string[]);
+    const page = parseInt(((req['query'] as any).page as string), 10) || 1;
+    const limit = parseInt(((req['query'] as any).limit as string), 10) || 20;
+    const search = ((req['query'] as any).search as string);
+    const skills = ((req['query'] as any).skills as string | string[]);
 
     // Start with all talent profiles
     let profiles = TALENT_PROFILES || [];
