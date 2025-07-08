@@ -13,7 +13,7 @@ type EnhancementType =
 
 export interface AIEnhancementOptions {
   enhancementType: EnhancementType;
-  content?: string;
+  content: string;
   context?: string;
   instructions?: string;
 }
@@ -32,6 +32,9 @@ export function useAIContentEnhancer() {
     setError(null);
     
     try {
+      if (!supabase) {
+        throw new Error('Supabase client not available');
+      }
       const { data, error } = await supabase.functions.invoke('ai-content-enhancer', {
         body: { 
           content,

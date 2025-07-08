@@ -117,16 +117,16 @@ export default async function handler(
       supabase: {
         configured: !!supabaseConfigured,
         status: supabaseStatus,
-        details: supabaseDetails || undefined
+        ...(supabaseDetails ? { details: supabaseDetails } : {})
       },
       sentry: {
         configured: sentryConfigured,
         status: sentryStatus,
-        details: sentryDetails || undefined
+        ...(sentryDetails ? { details: sentryDetails } : {})
       },
       authentication: {
         status: authStatus,
-        details: authDetails || undefined
+        ...(authDetails ? { details: authDetails } : {})
       }
     },
     warnings,

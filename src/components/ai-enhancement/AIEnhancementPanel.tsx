@@ -9,7 +9,8 @@ import { Sparkles, Loader2, Copy, Check } from 'lucide-react';
 
 
 
-import { useAIContentEnhancer, AIEnhancementOptions } from '@/hooks/useAIContentEnhancer';
+import { useAIContentEnhancer } from '@/hooks/useAIContentEnhancer';
+import type { AIEnhancementOptions } from '@/hooks/useAIContentEnhancer';
 
 interface AIEnhancementPanelProps {
   title: string;

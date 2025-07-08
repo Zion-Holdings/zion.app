@@ -1,4 +1,5 @@
-import React, { Component, ReactNode } from 'react';
+import React, { Component } from 'react';
+import type { ReactNode } from 'react';
 import { QueryClient } from '@tanstack/react-query';
 import * as Sentry from '@sentry/nextjs';
 import { Button } from '@/components/ui/button';
@@ -44,7 +45,7 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
     };
   }
 
-  componentDidCatch(error: Error, errorInfo: any) {
+  override componentDidCatch(error: Error, errorInfo: any) {
     // Log to Sentry
     Sentry.withScope((scope) => {
       scope.setTag('errorBoundary', 'ApiErrorBoundary');
@@ -61,7 +62,7 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
     logErrorToProduction('ApiErrorBoundary caught an error:', error, errorInfo);
   }
 
-  componentDidMount() {
+  override componentDidMount() {
     // Listen for online/offline events
     if (typeof window !== 'undefined') {
       window.addEventListener('online', this.handleOnline);
@@ -69,7 +70,7 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
     }
   }
 
-  componentWillUnmount() {
+  override componentWillUnmount() {
     if (typeof window !== 'undefined') {
       window.removeEventListener('online', this.handleOnline);
       window.removeEventListener('offline', this.handleOffline);
@@ -117,7 +118,7 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
     }
   };
 
-  render() {
+  override render() {
     if (this.state.hasError) {
       // Check if it's a network-related error
       const isNetworkError = this.state.error?.message?.includes('fetch') ||

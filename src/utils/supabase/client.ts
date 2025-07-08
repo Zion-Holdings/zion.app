@@ -1,6 +1,10 @@
 import { createBrowserClient } from '@supabase/ssr';
 import type { SupabaseClient } from '@supabase/supabase-js';
+<<<<<<< HEAD
+import { logDebug, logErrorToProduction } from '@/utils/productionLogger'; // Assuming logger is available and logError is added
+=======
 import { logDebug, logError } from '@/utils/productionLogger'; // Assuming logger is available and logError is added
+>>>>>>> 19bd38d5057ba9b9866c341bdd0e4a70f24468f1
 
 // Singleton client instance to prevent multiple GoTrueClient instances
 let supabaseClient: SupabaseClient | null = null;
@@ -53,7 +57,7 @@ export function createClient(): SupabaseClient | null {
   // This check is vital. If, despite fallbacks, credentials are truly missing or invalid,
   // we should not attempt to create a client.
   if (!supabaseUrl || !supabaseAnonKey || supabaseUrl.trim() === '' || supabaseAnonKey.trim() === '') {
-    logError('Supabase client creation: supabaseUrl or supabaseAnonKey is missing or empty even after fallback.', {
+    logErrorToProduction('Supabase client creation: supabaseUrl or supabaseAnonKey is missing or empty even after fallback.', {
         urlProvided: !!supabaseUrl,
         keyProvided: !!supabaseAnonKey,
     });
@@ -103,7 +107,7 @@ export function createClient(): SupabaseClient | null {
     );
     logDebug('Supabase client successfully initialized.');
   } catch (error) {
-    logError('Supabase client initialization failed catastrophically:', {
+    logErrorToProduction('Supabase client initialization failed catastrophically:', {
       error,
       urlUsed: supabaseUrl.substring(0, 20) + '...', // Avoid logging full key
     });

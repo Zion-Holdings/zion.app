@@ -8,7 +8,7 @@ async function main() {
     id: item.id,
     name: item.title,
     description: item.description,
-    price: item.price ?? undefined,
+    price: typeof item.price === 'number' ? item.price : null,
     currency: item.currency === '$' ? 'USD' : item.currency,
     images: item.images,
     category: item.category,

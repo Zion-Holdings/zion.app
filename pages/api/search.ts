@@ -52,19 +52,19 @@ export function performSearch(query: string, page: number, limit: number, filter
     item.description?.toLowerCase().includes(searchTerm) ||
     item.category?.toLowerCase().includes(searchTerm) ||
     item.tags?.some(tag => tag.toLowerCase().includes(searchTerm))
-  ).map(item => ({
-    id: item.id,
-    title: item.title,
-    description: item.description,
+  ).map(product => ({
+    id: product.id,
+    title: product.title,
+    description: product.description,
     type: 'product' as const,
-    category: item.category,
-    url: `/marketplace/products/${item.id}`,
-    image: item.images?.[0],
-    price: item.price ?? undefined,
-    currency: item.currency || 'USD',
-    rating: item.rating,
-    tags: item.tags,
-    date: item.createdAt
+    category: product.category,
+    url: `/products/${product.id}`,
+    image: (product.images?.[0]) ?? "",
+    price: product.price ?? 0,
+    currency: product.currency,
+    ...(product.rating !== undefined ? { rating: product.rating } : {}),
+    tags: product.tags,
+    date: product.createdAt ?? ""
   }));
 
   // Search talent profiles
@@ -76,16 +76,16 @@ export function performSearch(query: string, page: number, limit: number, filter
   ).map(profile => ({
     id: profile.id,
     title: profile.full_name,
-    description: `${profile.professional_title} - ${profile.bio || ''}`,
+    description: profile.professional_title,
     type: 'talent' as const,
     category: 'Talent',
     url: `/marketplace/talent/${profile.id}`,
-    image: profile.profile_picture_url,
-    price: profile.hourly_rate,
+    ...(profile.profile_picture_url !== undefined ? { image: profile.profile_picture_url } : {}),
+    ...(profile.hourly_rate !== undefined ? { price: profile.hourly_rate } : {}),
     currency: 'USD',
-    rating: profile.average_rating,
-    tags: profile.skills,
-    date: undefined
+    ...(profile.average_rating !== undefined ? { rating: profile.average_rating } : {}),
+    tags: profile.skills ?? [],
+    date: ""
   }));
 
   // Search blog posts
@@ -101,9 +101,9 @@ export function performSearch(query: string, page: number, limit: number, filter
     type: 'blog' as const,
     category: 'Blog',
     url: `/blog/${post.slug}`,
-    image: post.featuredImage,
-    tags: post.tags,
-    date: post.publishedDate
+    ...(post.featuredImage !== undefined ? { image: post.featuredImage } : {}),
+    tags: post.tags ?? [],
+    date: post.publishedDate ?? ""
   }));
 
   // Combine all results
@@ -226,12 +226,12 @@ async function handler(
       async () => {
         logInfo(`Performing search for: "${q}" (page ${page}, limit ${limit})`);
         return performSearch(q, page, limit, {
-          types: (typesParam && typesParam.length) ? typesParam : undefined,
-          category,
-          minPrice,
-          maxPrice,
-          minRating,
-          sort,
+          ...(typesParam && typesParam.length ? { types: typesParam } : {}),
+          ...(category ? { category } : {}),
+          ...(typeof minPrice === 'number' ? { minPrice } : {}),
+          ...(typeof maxPrice === 'number' ? { maxPrice } : {}),
+          ...(typeof minRating === 'number' ? { minRating } : {}),
+          ...(sort ? { sort } : {}),
         });
       },
       CacheCategory.SHORT, // 5 minutes cache for search results

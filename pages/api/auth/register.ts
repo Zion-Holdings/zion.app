@@ -63,6 +63,13 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     }
 
     // Create user with Supabase Auth
+    if (!supabase) {
+      logErrorToProduction('Supabase client is null in register API. Cannot sign up user.');
+      return res.status(503).json({
+        error: 'Authentication service not configured',
+        details: 'Supabase client is null. Credentials may be missing.'
+      });
+    }
     const { data, error } = await supabase.auth.signUp({
       email,
       password,

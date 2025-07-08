@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
-import { ModerationLog } from '@/types/moderation';
+import type { ModerationLog } from '@/types/moderation';
 
 interface Props {
   logs: ModerationLog[];

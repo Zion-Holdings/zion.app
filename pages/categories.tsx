@@ -1,4 +1,5 @@
-import Categories, { CategoriesProps } from '@/pages/Categories';
+import Categories from '@/pages/Categories';
+import type { CategoriesProps } from '@/pages/Categories';
 import type { GetStaticProps } from 'next';
 import { CATEGORIES } from '@/data/categories'; // Import CATEGORIES
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';

@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
-import { useEffect, useState, FormEvent } from 'react';
+import { useEffect, useState } from 'react';
+import type { FormEvent } from 'react';
 import Link from 'next/link';
 import { Mail, Clock, RefreshCw } from 'lucide-react';
 

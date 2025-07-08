@@ -3,7 +3,7 @@ import path from 'path';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import type { GetStaticPaths, GetStaticProps } from 'next';
-import { ParsedUrlQuery } from 'querystring';
+import type { ParsedUrlQuery } from 'querystring';
 
 interface DocProps {
   content: string | null;

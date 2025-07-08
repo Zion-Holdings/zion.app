@@ -42,9 +42,9 @@ const FeedbackValidator = z.object({
 });
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req['method'] !== 'POST') {
+  if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
-    return res.status(405).end(`Method ${req['method']} Not Allowed`);
+    return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
   const parsed = FeedbackValidator.safeParse(req['body']);
@@ -57,7 +57,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     await connect();
     await Feedback.create(parsed.data);
-    await sendFeedbackEmail(parsed.data).catch(() => undefined);
+    await sendFeedbackEmail({ ...parsed.data, comment: parsed.data.comment ?? "" }).catch(() => undefined);
     return res.status(201).json({ success: true });
   } catch (err) {
     logErrorToProduction('Error saving feedback:', { data: err });

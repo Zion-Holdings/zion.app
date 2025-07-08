@@ -1,4 +1,5 @@
-import BlogPage, { BlogProps } from '../../src/pages/Blog';
+import BlogPage from '../../src/pages/Blog';
+import type { BlogProps } from '../../src/pages/Blog';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import type { GetServerSideProps } from 'next';
 import * as Sentry from '@sentry/nextjs';

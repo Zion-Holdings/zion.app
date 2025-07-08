@@ -19,7 +19,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Badge } from '@/components/ui/badge';
 import { toast } from '@/hooks/use-toast';
-import { WhitelabelTenant } from '@/hooks/useWhitelabelTenant';
+import type { WhitelabelTenant } from '@/hooks/useWhitelabelTenant';
 import { format } from 'date-fns';
 
 export function TenantsList() {

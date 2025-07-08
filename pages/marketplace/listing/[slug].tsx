@@ -89,7 +89,11 @@ const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
         ) : null}
         {typeof listing.rating === 'number' && (
           <div className="mb-2">
-            <RatingStars value={listing.rating} count={listing.reviewCount} />
+            {typeof listing.reviewCount === 'number' ? (
+              <RatingStars value={listing.rating} count={listing.reviewCount} />
+            ) : (
+              <RatingStars value={listing.rating} />
+            )}
           </div>
         )}
         <div className="font-bold mb-2">
