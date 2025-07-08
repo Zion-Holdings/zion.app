@@ -14,11 +14,14 @@ export default function ErrorResetOnRouteChange() {
       dismiss();
     };
 
-    router.events.on('routeChangeStart', handleRouteChange);
-    return () => {
-      router.events.off('routeChangeStart', handleRouteChange);
-    };
-  }, [router.events, resetError]);
+    // Only add event listeners if router.events exists
+    if (router.events) {
+      router.events.on('routeChangeStart', handleRouteChange);
+      return () => {
+        router.events.off('routeChangeStart', handleRouteChange);
+      };
+    }
+  }, [resetError, dismiss]); // Removed router.events from dependencies
 
   return null;
 }

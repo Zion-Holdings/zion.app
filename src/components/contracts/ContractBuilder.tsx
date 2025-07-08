@@ -4,8 +4,9 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Save } from 'lucide-react';
 
-import { TalentProfile } from "@/types/talent";
-import { ContractForm, ContractFormValues } from "./components/ContractForm";
+import type { TalentProfile } from "@/types/talent";
+import { ContractForm } from "./components/ContractForm";
+import type { ContractFormValues } from "./components/ContractForm";
 import { ContractPreview } from "./components/ContractPreview";
 import { TemplateManager } from "./templates/TemplateManager";
 import { SmartContractBuilder } from "./SmartContractBuilder";
@@ -55,7 +56,7 @@ export function ContractBuilder({
         }}
         talent={talent}
         clientName={clientName}
-        onContractGenerated={onContractGenerated}
+        onContractGenerated={onContractGenerated || (() => {})}
       />
     );
   }
@@ -98,7 +99,14 @@ export function ContractBuilder({
             <ContractForm 
               talent={talent}
               clientName={clientName}
-              initialValues={formValues}
+              initialValues={formValues || {
+                projectName: "",
+                scopeSummary: "",
+                startDate: new Date(),
+                paymentTerms: talent.hourly_rate ? "hourly" : "fixed",
+                paymentAmount: talent.hourly_rate ? `$${talent.hourly_rate}/hour` : "",
+                additionalClauses: ["nda", "ip"],
+              }}
               onFormValuesChange={setFormValues}
               onContractGenerated={handleContractGenerated}
             />
@@ -120,7 +128,14 @@ export function ContractBuilder({
           isOpen={templateManagerOpen}
           onClose={() => setTemplateManagerOpen(false)}
           onSelectTemplate={handleLoadTemplate}
-          currentValues={formValues}
+          currentValues={formValues || {
+            projectName: "",
+            scopeSummary: "",
+            startDate: new Date(),
+            paymentTerms: talent.hourly_rate ? "hourly" : "fixed",
+            paymentAmount: talent.hourly_rate ? `$${talent.hourly_rate}/hour` : "",
+            additionalClauses: ["nda", "ip"],
+          }}
         />
       </DialogContent>
     </Dialog>

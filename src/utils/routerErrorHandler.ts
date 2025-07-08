@@ -64,12 +64,17 @@ export function setupRouterErrorHandlers(router: NextRouter) {
     handleRouterError(err as Error, router);
   };
 
-  router.events.on('routeChangeError', routeChangeErrorHandler);
+  // Only add event listeners if router.events exists
+  if (router.events) {
+    router.events.on('routeChangeError', routeChangeErrorHandler);
+  }
 
   return () => {
     // Cleanup
     router.push = originalPush;
     router.replace = originalReplace;
-    router.events.off('routeChangeError', routeChangeErrorHandler);
+    if (router.events) {
+      router.events.off('routeChangeError', routeChangeErrorHandler);
+    }
   };
 } 

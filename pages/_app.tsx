@@ -200,16 +200,22 @@ export default function App({ Component, pageProps }: AppProps) {
       console.error('Route change error');
     };
 
-    router.events.on('routeChangeStart', handleRouteChangeStart);
-    router.events.on('routeChangeComplete', handleRouteChangeComplete);
-    router.events.on('routeChangeError', handleRouteChangeError);
+    // Only add event listeners if router.events exists
+    if (router.events) {
+      router.events.on('routeChangeStart', handleRouteChangeStart);
+      router.events.on('routeChangeComplete', handleRouteChangeComplete);
+      router.events.on('routeChangeError', handleRouteChangeError);
 
-    return () => {
-      router.events.off('routeChangeStart', handleRouteChangeStart);
-      router.events.off('routeChangeComplete', handleRouteChangeComplete);
-      router.events.off('routeChangeError', handleRouteChangeError);
-    };
-  }, [router]);
+      return () => {
+        router.events.off('routeChangeStart', handleRouteChangeStart);
+        router.events.off('routeChangeComplete', handleRouteChangeComplete);
+        router.events.off('routeChangeError', handleRouteChangeError);
+      };
+    }
+
+    // Return empty cleanup function if router.events doesn't exist
+    return () => {};
+  }, [router]); // Keep router in dependencies but add safety check
 
   // Show loading screen
   if (isLoading) {

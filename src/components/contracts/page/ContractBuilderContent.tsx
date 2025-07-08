@@ -5,7 +5,7 @@ import { ContractBuilder } from '@/components/contracts/ContractBuilder';
 import { ContractHeader } from './ContractHeader';
 import { ContractTypeCards } from './ContractTypeCards';
 import { RecentContractsTable } from './RecentContractsTable';
-import { TalentProfile } from '@/types/talent';
+import type { TalentProfile } from '@/types/talent';
 import { useAuth } from '@/hooks/useAuth';
 import { logDebug } from '@/utils/productionLogger';
 

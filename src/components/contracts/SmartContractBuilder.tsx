@@ -4,8 +4,9 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Save } from 'lucide-react';
 
-import { TalentProfile } from "@/types/talent";
-import { ContractForm, ContractFormValues } from "./components/ContractForm";
+import type { TalentProfile } from "@/types/talent";
+import { ContractForm } from "./components/ContractForm";
+import type { ContractFormValues } from "./components/ContractForm";
 import { ContractPreview } from "./components/ContractPreview";
 import { TemplateManager } from "./templates/TemplateManager";
 import { DeploymentOptions, SmartContractInfo } from "@/types/smart-contracts";
