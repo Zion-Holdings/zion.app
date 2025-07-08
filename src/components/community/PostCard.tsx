@@ -14,7 +14,7 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { ForumPost } from "@/types/community";
+import type { ForumPost } from "@/types/community";
 import { logInfo } from '@/utils/productionLogger';
 
 

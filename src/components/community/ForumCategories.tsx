@@ -7,7 +7,7 @@ import { MessageSquare, Briefcase, Code, FileText, Megaphone } from 'lucide-reac
 
 
 
-import { ForumCategoryInfo } from "@/types/community";
+import type { ForumCategoryInfo } from "@/types/community";
 
 const categories: ForumCategoryInfo[] = [
   {
