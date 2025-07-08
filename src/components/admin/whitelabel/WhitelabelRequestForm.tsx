@@ -1,5 +1,6 @@
 import React from 'react';
-import { useForm, ControllerRenderProps } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
+import type { ControllerRenderProps } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Input } from '@/components/ui/input';
