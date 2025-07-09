@@ -69,6 +69,32 @@ if (isBrowser && !isNode) {
     eventNames: () => [],
   };
 
+  // Provide minimal http/https stubs to avoid ReferenceError if Node builds of
+  // dependencies accidentally execute in the browser. These stubs only expose
+  // the methods used by common libraries like axios when a Node adapter is
+  // bundled by mistake.
+  if (typeof (globalThis as any).http === 'undefined') {
+    (globalThis as any).http = {
+      request: () => {
+        throw new Error('http.request is not available in the browser');
+      },
+      get: () => {
+        throw new Error('http.get is not available in the browser');
+      },
+    };
+  }
+
+  if (typeof (globalThis as any).https === 'undefined') {
+    (globalThis as any).https = {
+      request: () => {
+        throw new Error('https.request is not available in the browser');
+      },
+      get: () => {
+        throw new Error('https.get is not available in the browser');
+      },
+    };
+  }
+
   // Define process in global scope only
   if (typeof globalThis !== 'undefined') {
     (globalThis as any).process = processObj;
