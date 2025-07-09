@@ -12,13 +12,9 @@ const createHelia = () => Promise.resolve({
 });
 
 const heliaJson = () => ({
-<<<<<<< HEAD
+  // Use generic parameters but ignore values in this mock implementation
   add: (_data: unknown) => Promise.resolve('mock-cid'),
-  get: (_cid: string) => Promise.resolve({ mock: true })
-=======
-  add: (data: any) => Promise.resolve('mock-cid'),
   get: (cid: string) => Promise.resolve({ mock: true, cid })
->>>>>>> 19bd38d5057ba9b9866c341bdd0e4a70f24468f1
 });
 
 // Browser-safe logging
