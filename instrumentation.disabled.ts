@@ -67,10 +67,14 @@ export { onRequestError }; // This might be null if not set by mock/actual
 export async function register() {
   await sentryInitializationPromise; // Ensure initialization is complete
 
-  console.log("instrumentation.ts: register() called");
+  if (process.env.NODE_ENV === 'development') {
+    console.log("instrumentation.ts: register() called");
+  }
 
   if (!Sentry || typeof Sentry.init !== 'function') {
-    console.log("instrumentation.ts: Sentry SDK not available or not correctly initialized, skipping Sentry.init().");
+    if (process.env.NODE_ENV === 'development') {
+      console.log("instrumentation.ts: Sentry SDK not available or not correctly initialized, skipping Sentry.init().");
+    }
     return;
   }
 
@@ -98,7 +102,9 @@ export async function register() {
     return;
   }
 
-  console.log(`instrumentation.ts: Initializing Sentry for server-side. Release: ${SENTRY_RELEASE}, Env: ${SENTRY_ENVIRONMENT}`);
+  if (process.env.NODE_ENV === 'development') {
+    console.log(`instrumentation.ts: Initializing Sentry for server-side. Release: ${SENTRY_RELEASE}, Env: ${SENTRY_ENVIRONMENT}`);
+  }
 
   try {
     Sentry.init({
