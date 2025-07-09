@@ -15,8 +15,8 @@ function pushLog(entry: ConsoleLogEntry) {
 }
 
 function wrap(level: 'log' | 'warn' | 'error') {
-  const original = console[level] as (...args: any[]) => void;
-  console[level] = (...args: any[]) => {
+  const original = console[level] as (...args: unknown[]) => void;
+  console[level] = (...args: unknown[]) => {
     try {
       const message = args
         .map((a) => {
@@ -38,8 +38,8 @@ function wrap(level: 'log' | 'warn' | 'error') {
 
 export function initConsoleLogCapture() {
   if (typeof window === 'undefined') return;
-  if ((window as any).__logCaptureInitialized) return;
-  (window as any).__logCaptureInitialized = true;
+  if ((window as unknown as { __logCaptureInitialized?: boolean }).__logCaptureInitialized) return;
+  (window as unknown as { __logCaptureInitialized?: boolean }).__logCaptureInitialized = true;
   wrap('log');
   wrap('warn');
   wrap('error');
