@@ -1,7 +1,7 @@
 // @ts-nocheck
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-this-alias */
+ 
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable prefer-const */
 /**
@@ -139,7 +139,7 @@ try {
       try {
         return originalPush.call(this, chunk);
       } catch (error) {
-        // eslint-disable-next-line no-console
+         
         console.warn('Webpack chunk loading error prevented:', error);
         return 0;
       }
