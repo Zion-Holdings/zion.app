@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import { ProductListing } from '@/types/listings';
+import type { ProductListing } from '@/types/listings';
 import { ProductListingCard } from '@/components/ProductListingCard';
 import ErrorBoundary from '@/components/GlobalErrorBoundary';
 import { SkeletonCard } from '@/components/ui';

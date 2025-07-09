@@ -15,7 +15,7 @@ import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from '
 
 
 
-import { Resume } from '@/types/resume';
+import type { Resume } from '@/types/resume';
 import { useResume } from '@/hooks/useResume';
 
 interface ResumeVersionSelectorProps {

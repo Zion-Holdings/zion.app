@@ -10,7 +10,7 @@ import { AlertCircle, FilePlus, Loader2 } from 'lucide-react';
 
 
 import { Button } from '@/components/ui/button';
-import { Resume } from '@/types/resume';
+import type { Resume } from '@/types/resume';
 
 // Import components
 import { ResumeProgress } from './ResumeProgress';

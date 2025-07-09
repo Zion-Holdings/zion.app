@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
-import { Certification } from '@/types/resume';
+import type { Certification } from '@/types/resume';
 import { Loader2 } from 'lucide-react';
 
 import { useResume } from '@/hooks/useResume';

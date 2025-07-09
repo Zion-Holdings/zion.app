@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Education } from '@/types/resume';
+import type { Education } from '@/types/resume';
 import { useResume } from '@/hooks/useResume';
 import { format } from 'date-fns';
 import { EducationFormProps } from './types';

@@ -5,7 +5,7 @@ import { ArrowLeft, FileText, Link } from 'lucide-react';
 
 
 import { PdfExportButton } from '../PdfExportButton';
-import { Resume } from '@/types/resume';
+import type { Resume } from '@/types/resume';
 import { useState } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
