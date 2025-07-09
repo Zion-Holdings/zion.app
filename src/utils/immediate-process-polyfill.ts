@@ -149,6 +149,32 @@ if (isBrowser && !isNode) {
     }
   }
 
+  // Minimal util polyfill for browser environments
+  if (typeof (globalThis as any).util === 'undefined') {
+    const utilPolyfill: any = {
+      TextEncoder: globalThis.TextEncoder,
+      TextDecoder: globalThis.TextDecoder,
+      promisify:
+        (fn: any) =>
+          (...args: any[]) =>
+            new Promise((resolve, reject) => {
+              fn(...args, (err: any, res: any) => (err ? reject(err) : resolve(res)));
+            }),
+      inherits: (ctor: any, superCtor: any) => {
+        if (superCtor) {
+          Object.setPrototypeOf(ctor.prototype, superCtor.prototype);
+          Object.setPrototypeOf(ctor, superCtor);
+        }
+      },
+      deprecate: (fn: any) => fn,
+      types: {},
+    };
+
+    (globalThis as any).util = utilPolyfill;
+    if (typeof window !== 'undefined') {
+      (window as any).util = utilPolyfill;
+    }
+  }
 
 }
 
