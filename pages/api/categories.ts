@@ -41,17 +41,12 @@ async function getCategoriesFromDB() {
   }
 }
 
-// Change handler type to match ApiHandler
-type ApiHandler = (req: unknown, res: unknown) => unknown;
-
-const handler: ApiHandler = async (req, res) => {
-  // Type assertions for Next.js types
-  const request = req as NextApiRequest;
-  const response = res as NextApiResponse;
-
-  if (request.method !== 'GET') {
-    response.setHeader('Allow', 'GET');
-    return response.status(405).json({ error: `Method ${request.method} Not Allowed` });
+// Remove custom ApiHandler type and ensure correct handler signature
+const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
+  if (req.method !== 'GET') {
+    res.setHeader('Allow', 'GET');
+    res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+    return;
   }
 
   try {
@@ -60,10 +55,8 @@ const handler: ApiHandler = async (req, res) => {
       cacheKeys.categories,
       async () => {
         logInfo('Fetching categories from database...');
-        
         try {
           const dbCategories = await getCategoriesFromDB();
-          
           if (dbCategories && dbCategories.length > 0) {
             logInfo(`Successfully fetched ${dbCategories.length} categories from DB`);
             return dbCategories;
@@ -71,13 +64,11 @@ const handler: ApiHandler = async (req, res) => {
         } catch (dbError) {
           logWarn('Database query failed, using fallback:', { data: dbError });
         }
-
         // Fallback to static data if DB fails
         if (CATEGORIES && CATEGORIES.length > 0) {
           logInfo(`Using ${CATEGORIES.length} fallback categories`);
           return CATEGORIES;
         }
-
         // Return empty array if no data available
         logWarn('No categories data available');
         return [];
@@ -85,29 +76,26 @@ const handler: ApiHandler = async (req, res) => {
       CacheCategory.MEDIUM, // 30 minutes cache
       1800 // 30 minutes TTL
     );
-
     // Apply appropriate cache headers
-    applyCacheHeaders(response, CacheCategory.MEDIUM);
-    
+    applyCacheHeaders(res, CacheCategory.MEDIUM);
     // Add performance headers
-    response.setHeader('X-Response-Time', Date.now().toString());
-    response.setHeader('X-Data-Source', categories.length > 0 ? 'cached' : 'computed');
-
-    return response.status(200).json(categories);
-
+    res.setHeader('X-Response-Time', Date.now().toString());
+    res.setHeader('X-Data-Source', categories.length > 0 ? 'cached' : 'computed');
+    res.status(200).json(categories);
+    return;
   } catch (error: any) {
     logErrorToProduction('Categories API error:', { data: error });
-    
     // Return fallback data even on error
     if (CATEGORIES && CATEGORIES.length > 0) {
-      applyCacheHeaders(response, CacheCategory.SHORT); // Shorter cache for fallback
-      response.setHeader('X-Data-Source', 'fallback');
-      return response.status(200).json(CATEGORIES);
+      applyCacheHeaders(res, CacheCategory.SHORT); // Shorter cache for fallback
+      res.setHeader('X-Data-Source', 'fallback');
+      res.status(200).json(CATEGORIES);
+      return;
     }
-
-    return response.status(500).json({ 
+    res.status(500).json({ 
       error: 'Categories temporarily unavailable. Please try again later.' 
     });
+    return;
   }
 };
 
