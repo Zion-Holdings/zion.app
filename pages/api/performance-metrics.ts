@@ -25,23 +25,14 @@ export default async function handler(
     }
 
     // Log performance metrics (in production, you would store these in a database)
-    if (process.env['NODE_ENV'] === 'development') {
-      console.log('🔧 Performance Report:', {
-        sessionId: performanceReport.sessionId,
-        timestamp: new Date(performanceReport.timestamp).toISOString(),
-        metricsCount: performanceReport.metrics.length,
-        pageLoadTime: performanceReport.pageLoadTime,
-        timeToInteractive: performanceReport.timeToInteractive,
-        userAgent: performanceReport.userAgent.substring(0, 50) + '...'
-      });
+    // Removed console.log('🔧 Performance Report:', { ... });
 
-      // Log critical performance issues
-      const poorMetrics = performanceReport.metrics.filter(m => m.rating === 'poor');
-      if (poorMetrics.length > 0) {
-        console.warn('⚠️ Poor Performance Metrics Detected:', poorMetrics.map(m => 
-          `${m.name}: ${m.value}ms`
-        ));
-      }
+    // Log critical performance issues
+    const poorMetrics = performanceReport.metrics.filter(m => m.rating === 'poor');
+    if (poorMetrics.length > 0) {
+      console.warn('⚠️ Poor Performance Metrics Detected:', poorMetrics.map(m => 
+        `${m.name}: ${m.value}ms`
+      ));
     }
 
     // In production, you would:

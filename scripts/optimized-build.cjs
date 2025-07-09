@@ -62,7 +62,9 @@ console.log("🔧 Source maps: disabled");
 console.log("💾 Build cache: disabled");  
 console.log("⚙️  Static optimization: disabled");
 console.log("🚫 Output file tracing: Plugin managed");
-console.log("🚫 Turbotrace: COMPLETELY DISABLED (critical fix)");
+if (process.env.NODE_ENV === 'development') {
+  console.log("Turbotrace: enabled in development mode");
+}
 console.log("🧠 Thread pool: limited to 4 threads");
 console.log("📦 Output mode: standard Next.js");
 console.log("🔌 Plugin: Auto-detected Netlify Next.js (supports ISR & API)");

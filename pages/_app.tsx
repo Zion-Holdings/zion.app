@@ -113,12 +113,21 @@ import { CartProvider } from '@/context/CartContext';
 
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
-// import '../src/index.css'; // Temporarily disabled for debugging
+import '../src/index.css'; // Restored main CSS import
 
 // Dynamically import the Toaster component from sonner for client-side rendering only
-const Toaster = dynamic(() => import('sonner').then((mod) => mod.Toaster), {
-  ssr: false,
-});
+const Toaster = dynamic(
+  async () => {
+    try {
+      const mod = await import('sonner');
+      return mod.Toaster;
+    } catch (err) {
+      console.warn('Toaster dependency missing:', err);
+      return () => null;
+    }
+  },
+  { ssr: false }
+);
 
 // Simple loading component
 const SimpleLoading = () => (

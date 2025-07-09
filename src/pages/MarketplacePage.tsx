@@ -14,7 +14,7 @@ import { ArrowUp, Filter, SortAsc, Sparkles, TrendingUp, Star, ShoppingCart, Ale
 
 import { NextSeo } from '@/components/NextSeo';
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
-import { ProductListing } from '@/types/listings';
+import type { ProductListing } from '@/types/listings';
 import { SkeletonCard } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -25,9 +25,26 @@ import { INITIAL_MARKETPLACE_PRODUCTS } from '@/data/initialMarketplaceProducts'
 import { useCurrency } from '@/hooks/useCurrency';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
+interface MarketplaceStats {
+  averagePrice: number;
+  averageRating: number;
+  totalProducts: number;
+  availableCount: number;
+}
+
+interface MarketplaceFilterControlsProps {
+  sortBy: string;
+  setSortBy: (value: string) => void;
+  filterCategory: string;
+  setFilterCategory: (value: string) => void;
+  categories: string[];
+  showRecommended: boolean;
+  setShowRecommended: (value: boolean) => void;
+  loading: boolean;
+}
 
 // Market insights component
-const MarketplaceInsights = ({ stats }: { stats: any }) => (
+const MarketplaceInsights = ({ stats }: { stats: MarketplaceStats }) => (
   <Card className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-blue-700/30 mb-6">
     <CardContent className="p-6">
       <div className="flex items-center gap-2 mb-4">
@@ -59,7 +76,7 @@ const MarketplaceInsights = ({ stats }: { stats: any }) => (
 // Filter controls
 const MarketplaceFilterControls = ({
   sortBy, setSortBy, filterCategory, setFilterCategory, categories, showRecommended, setShowRecommended, loading
-}: any) => (
+}: MarketplaceFilterControlsProps) => (
   <div className="flex flex-wrap gap-4 mb-6 p-4 bg-muted/30 rounded-lg relative">
     {loading && <Spinner className="absolute right-4 top-4 h-4 w-4 text-primary" />}
     <div className="flex items-center gap-2">

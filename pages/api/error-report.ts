@@ -34,28 +34,17 @@ export default async function handler(
 
     // Enhanced logging for development
     if (process.env['NODE_ENV'] === 'development') {
-      console.log('🚨 Enhanced Error Report:', {
-        id: error.id,
-        message: error.message,
-        severity: error.severity,
-        source: error.source,
-        count: error.count,
-        environment: error.context.environment,
-        url: error.context.url,
-        timestamp: new Date(error.context.timestamp).toISOString()
-      });
-
       // Log breadcrumbs for context
       if (breadcrumbs && breadcrumbs.length > 0) {
-        console.log('📋 Error Breadcrumbs:');
+        // console.log('📋 Error Breadcrumbs:');
         breadcrumbs.forEach((breadcrumb, index) => {
-          console.log(`  ${index + 1}. [${breadcrumb.level}] ${breadcrumb.category}: ${breadcrumb.message}`);
+          // console.log(`  ${index + 1}. [${breadcrumb.level}] ${breadcrumb.category}: ${breadcrumb.message}`);
         });
       }
 
       // Log stack trace for critical errors
       if (error.severity === 'critical' && error.stack) {
-        console.log('🔍 Stack Trace:', error.stack);
+        // console.log('🔍 Stack Trace:', error.stack);
       }
     }
 
@@ -65,7 +54,7 @@ export default async function handler(
       // 1. Send to error tracking service (Sentry, Bugsnag, etc.)
       // 2. Send Slack/email notifications
       // 3. Create incident tickets
-      console.error('🔥 CRITICAL ERROR DETECTED:', error.message);
+      // console.error('🔥 CRITICAL ERROR DETECTED:', error.message);
     }
 
     // Store error in memory for development (replace with database in production)
@@ -121,7 +110,7 @@ export default async function handler(
     res.status(200).json(response);
 
   } catch (processingError) {
-    console.error('Error processing error report:', processingError);
+    // console.error('Error processing error report:', processingError);
     res.status(500).json({ 
       error: 'Internal server error',
       message: 'Failed to process error report'

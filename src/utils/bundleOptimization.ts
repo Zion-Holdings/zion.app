@@ -79,12 +79,7 @@ export const monitorBundlePerformance = () => {
     const loadTime = perfData.loadEventEnd - perfData.fetchStart;
     
     // Log performance metrics
-    console.log('Bundle Performance Metrics:', {
-      loadTime: `${loadTime}ms`,
-      domContentLoaded: `${perfData.domContentLoadedEventEnd - perfData.fetchStart}ms`,
-      firstPaint: performance.getEntriesByName('first-paint')[0]?.startTime || 'N/A',
-      firstContentfulPaint: performance.getEntriesByName('first-contentful-paint')[0]?.startTime || 'N/A'
-    });
+    // Removed console.log('Bundle Performance Metrics:', { ... });
 
     // Report to analytics if available
     if ((window as any).gtag) {

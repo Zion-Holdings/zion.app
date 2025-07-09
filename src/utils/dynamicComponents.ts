@@ -18,7 +18,6 @@ const LoadingSkeleton = () => React.createElement('div',
 );
 
 // Chart components (heavy - only load when needed)
-// TODO: Uncomment when Chart component is available
 // export const DynamicChart = dynamic(
 //   () => import('../components/charts/Chart'),
 //   { 
@@ -43,6 +42,15 @@ export const DynamicBarChart = dynamic(
   }
 );
 
+// Developer tools
+export const DynamicApiLogsChart = dynamic(
+  () => import('../components/developers/ApiLogsChart').then(mod => ({ default: mod.ApiLogsChart })),
+  {
+    loading: LoadingSkeleton,
+    ssr: false
+  }
+);
+
 // Analytics components
 export const DynamicAnalyticsChart = dynamic(
   () => import('../components/analytics/AnalyticsChart'),
@@ -52,38 +60,27 @@ export const DynamicAnalyticsChart = dynamic(
   }
 );
 
-// TODO: Uncomment when these components are available
-// export const DynamicPDFGenerator = dynamic(
-//   () => import('../components/pdf/PDFGenerator'),
-//   { 
-//     loading: LoadingSpinner,
-//     ssr: false 
-//   }
-// );
+// PDFGenerator and RichEditor components do not exist, so remove their dynamic imports
 
-// export const DynamicVideoPlayer = dynamic(
-//   () => import('../components/video/VideoPlayer'),
-//   { 
-//     loading: LoadingSkeleton,
-//     ssr: false 
-//   }
-// );
+// Use ReactPlayer for video player
+export const DynamicVideoPlayer = dynamic(
+  () => import('react-player').then(mod => ({ default: mod.default })),
+  {
+    loading: LoadingSkeleton,
+    ssr: false
+  }
+);
 
-// export const DynamicModelViewer = dynamic(
-//   () => import('../components/ar/ModelViewer'),
-//   { 
-//     loading: LoadingSpinner,
-//     ssr: false 
-//   }
-// );
-
-// export const DynamicRichEditor = dynamic(
-//   () => import('../components/editor/RichTextEditor'),
-//   { 
-//     loading: LoadingSpinner,
-//     ssr: false 
-//   }
-// );
+// Use ModelViewer as defined in ProductGallery
+const ModelViewer = React.lazy(async () => {
+  await import('@google/model-viewer');
+  return {
+    default: (props: any) => (
+      React.createElement('model-viewer', props)
+    ),
+  };
+});
+export { ModelViewer as DynamicModelViewer };
 
 // Virtual list for large datasets
 export const DynamicVirtualList = dynamic(

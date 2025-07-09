@@ -59,31 +59,20 @@ const getDevUsers = () => {
   return devUsers;
 };
 
-async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+// Ensure correct handler signature and returns
+async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
   // 🔧 Enable verbose logging (only in development)
   const isDevelopment = process.env.NODE_ENV === 'development';
-  
-  if (isDevelopment) {
-    console.log('🔧 LOGIN TRACE: Request method:', req['method']);
-    console.log('🔧 LOGIN TRACE: Request body keys:', Object.keys(req['body'] || {}));
-    console.log('🔧 LOGIN TRACE: Environment config status:', {
-      supabaseConfigured: ENV_CONFIG.supabase.isConfigured,
-      sentryConfigured: ENV_CONFIG.sentry.isConfigured,
-      environment: ENV_CONFIG.app.environment
-    });
+  if (req.method !== 'POST') {
+    res.status(405).json({ error: 'Method not allowed' });
+    return;
   }
 
-  if (req['method'] !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
-
-  const { email, password } = req['body'] as { email?: string, password?: string };
+  const { email, password } = req.body as { email?: string, password?: string };
 
   if (!email || !password || typeof email !== 'string' || typeof password !== 'string') {
-    return res.status(400).json({ error: 'Email and password are required and must be strings' });
+    res.status(400).json({ error: 'Email and password are required and must be strings' });
+    return;
   }
 
   // Check if Supabase is configured
@@ -91,16 +80,14 @@ async function handler(
     if (isDevelopment) {
       console.log('🔧 LOGIN TRACE: Supabase not configured - using development authentication');
     }
-    
     // 🔐 SECURITY: Use environment-based development authentication
     const devUsers = getDevUsers();
     const user = devUsers.find(u => u.email === email && u.password === password);
-    
     if (user) {
       if (isDevelopment) {
         console.log('🔧 LOGIN TRACE: Development user authenticated successfully');
       }
-      return res.status(200).json({
+      res.status(200).json({
         user: {
           id: user.id,
           email: user.email,
@@ -110,12 +97,14 @@ async function handler(
         },
         message: 'Development authentication successful'
       });
+      return;
     } else {
       if (isDevelopment) {
         console.log('🔧 LOGIN TRACE: Development authentication failed');
         console.log('🔧 LOGIN TRACE: Available dev users:', devUsers.map(u => u.email));
       }
-      return res.status(401).json({ error: 'Invalid credentials' });
+      res.status(401).json({ error: 'Invalid credentials' });
+      return;
     }
   }
 
@@ -125,65 +114,58 @@ async function handler(
       ENV_CONFIG.supabase.url,
       ENV_CONFIG.supabase.serviceRoleKey || ENV_CONFIG.supabase.anonKey
     );
-
     if (isDevelopment) {
       console.log('🔧 LOGIN TRACE: Attempting Supabase authentication');
     }
-
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password,
     });
-
     if (error) {
       if (isDevelopment) {
         console.error('🔧 LOGIN TRACE: Supabase authentication error:', error);
       }
-      
       if (ENV_CONFIG.sentry.isConfigured) {
         Sentry.captureException(error, {
           tags: { context: 'login_api' },
           extra: { email }
         });
       }
-      
-      return res.status(401).json({ error: error.message });
+      res.status(401).json({ error: error.message });
+      return;
     }
-
     if (!data.user) {
       if (isDevelopment) {
         console.error('🔧 LOGIN TRACE: No user data returned from Supabase');
       }
-      return res.status(401).json({ error: 'Authentication failed' });
+      res.status(401).json({ error: 'Authentication failed' });
+      return;
     }
-
     if (isDevelopment) {
       console.log('🔧 LOGIN TRACE: Supabase authentication successful');
     }
-    
-    return res.status(200).json({
+    res.status(200).json({
       user: data.user,
       session: data.session,
       message: 'Authentication successful'
     });
-
+    return;
   } catch (error: any) {
     if (isDevelopment) {
       console.error('🔧 LOGIN TRACE: Unexpected error during authentication:', error);
     }
-    
     if (ENV_CONFIG.sentry.isConfigured) {
       Sentry.captureException(error, {
         tags: { context: 'login_api_unexpected' },
         extra: { email }
       });
     }
-    
-    return res.status(500).json({ 
+    res.status(500).json({ 
       error: 'Internal server error',
       details: ENV_CONFIG.app.isDevelopment ? error.message : undefined
     });
+    return;
   }
-}
+};
 
 export default withErrorLogging(handler);
