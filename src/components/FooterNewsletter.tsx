@@ -58,7 +58,7 @@ export function FooterNewsletter(): React.ReactElement {
         const errorMessage = data.error || 'Subscription failed. Please try again.';
         toast.error(errorMessage, { id: `${uniqueToastIdBase}-api-error` });
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Newsletter subscription error:', { data: err });
       toast.error('Unable to subscribe right now. Please try again later.', { id: `${uniqueToastIdBase}-catch-error` });
     } finally {

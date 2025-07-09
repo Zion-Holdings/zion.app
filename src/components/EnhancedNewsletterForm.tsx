@@ -52,7 +52,7 @@ export function EnhancedNewsletterForm() {
         logErrorToProduction('Newsletter subscription failed:', { data: data });
         toast.error(data.error || "Subscription failed. Please try again.");
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Newsletter subscription error:', { data: err });
       toast.error("Unable to subscribe right now. Please try again later.");
     } finally {
