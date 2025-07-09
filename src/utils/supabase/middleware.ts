@@ -8,7 +8,7 @@ import { logErrorToProduction, logInfo, logWarn } from '@/utils/productionLogger
  * Optimized for production deployment
  */
 export async function updateSession(request: NextRequest) {
-  let response = NextResponse.next();
+  const response = NextResponse.next();
 
   // Validate environment variables
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
