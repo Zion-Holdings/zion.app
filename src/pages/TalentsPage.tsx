@@ -21,7 +21,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Spinner from '@/components/ui/spinner';
 
 // Market insights component for talents
-const TalentMarketInsights: React.FC<{ stats: any }> = ({ stats }) => (
+const TalentMarketInsights: React.FC<{ stats: unknown }> = ({ stats }) => (
   <Card className="bg-gradient-to-r from-green-900/20 to-blue-900/20 border-green-700/30 mb-6">
     <CardContent className="p-6">
       <div className="flex items-center gap-2 mb-4">
