@@ -59,21 +59,25 @@ const getDevUsers = () => {
   return devUsers;
 };
 
-async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+// Change handler type to match ApiHandler
+type ApiHandler = (req: unknown, res: unknown) => unknown;
+
+const handler: ApiHandler = async (req, res) => {
+  // Type assertions for Next.js types
+  const request = req as NextApiRequest;
+  const response = res as NextApiResponse;
+
   // 🔧 Enable verbose logging (only in development)
   const isDevelopment = process.env.NODE_ENV === 'development';
   
-  if (req['method'] !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+  if (request.method !== 'POST') {
+    return response.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { email, password } = req['body'] as { email?: string, password?: string };
+  const { email, password } = request.body as { email?: string, password?: string };
 
   if (!email || !password || typeof email !== 'string' || typeof password !== 'string') {
-    return res.status(400).json({ error: 'Email and password are required and must be strings' });
+    return response.status(400).json({ error: 'Email and password are required and must be strings' });
   }
 
   // Check if Supabase is configured
@@ -90,7 +94,7 @@ async function handler(
       if (isDevelopment) {
         console.log('🔧 LOGIN TRACE: Development user authenticated successfully');
       }
-      return res.status(200).json({
+      return response.status(200).json({
         user: {
           id: user.id,
           email: user.email,
@@ -105,7 +109,7 @@ async function handler(
         console.log('🔧 LOGIN TRACE: Development authentication failed');
         console.log('🔧 LOGIN TRACE: Available dev users:', devUsers.map(u => u.email));
       }
-      return res.status(401).json({ error: 'Invalid credentials' });
+      return response.status(401).json({ error: 'Invalid credentials' });
     }
   }
 
@@ -137,21 +141,21 @@ async function handler(
         });
       }
       
-      return res.status(401).json({ error: error.message });
+      return response.status(401).json({ error: error.message });
     }
 
     if (!data.user) {
       if (isDevelopment) {
         console.error('🔧 LOGIN TRACE: No user data returned from Supabase');
       }
-      return res.status(401).json({ error: 'Authentication failed' });
+      return response.status(401).json({ error: 'Authentication failed' });
     }
 
     if (isDevelopment) {
       console.log('🔧 LOGIN TRACE: Supabase authentication successful');
     }
     
-    return res.status(200).json({
+    return response.status(200).json({
       user: data.user,
       session: data.session,
       message: 'Authentication successful'
@@ -169,11 +173,11 @@ async function handler(
       });
     }
     
-    return res.status(500).json({ 
+    return response.status(500).json({ 
       error: 'Internal server error',
       details: ENV_CONFIG.app.isDevelopment ? error.message : undefined
     });
   }
-}
+};
 
 export default withErrorLogging(handler);
