@@ -1,27 +1,29 @@
-export type ApiHandler = (req: any, res: any) => any;
+export type ApiHandler = (req: unknown, res: unknown) => unknown;
 
 import { logErrorToProduction } from '@/utils/productionLogger';
 
 export function withErrorLogging(handler: ApiHandler): ApiHandler {
-  return async (req, res) => {
+  return async (req: unknown, res: unknown) => {
     try {
       return await handler(req, res);
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const reqUrl = (typeof req === 'object' && req !== null && 'url' in req) ? (req as { url?: string }).url : undefined;
       logErrorToProduction(err instanceof Error ? err.message : String(err), err instanceof Error ? err : undefined, {
-        route: req.url,
-        method: req.method,
-        errorSourceContext: 'withErrorLogging',
+        route: reqUrl,
       });
-      if (res && !res.headersSent) {
-        if (typeof res.status === 'function') {
-          res.status(500);
-        } else {
-          res.statusCode = 500;
-        }
-        if (typeof res.json === 'function') {
-          res.json({ error: 'Internal server error' });
-        } else if (typeof res.end === 'function') {
-          res.end('Internal server error');
+      if (typeof res === 'object' && res !== null) {
+        const r = res as { headersSent?: boolean; status?: (code: number) => any; statusCode?: number; json?: (body: any) => any; end?: (data?: any) => any };
+        if (!r.headersSent) {
+          if (typeof r.status === 'function') {
+            r.status(500);
+          } else if (typeof r.statusCode === 'number') {
+            r.statusCode = 500;
+          }
+          if (typeof r.json === 'function') {
+            r.json({ error: 'Internal Server Error' });
+          } else if (typeof r.end === 'function') {
+            r.end('Internal Server Error');
+          }
         }
       }
     }
