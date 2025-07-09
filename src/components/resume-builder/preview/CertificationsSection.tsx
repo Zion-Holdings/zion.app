@@ -1,5 +1,5 @@
 
-import { Certification } from '@/types/resume';
+import type { Certification } from '@/types/resume';
 import { format } from 'date-fns';
 
 interface CertificationsSectionProps {

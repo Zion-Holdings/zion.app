@@ -20,7 +20,7 @@ import {
 
 
 
-import { PortfolioProject } from '@/types/resume';
+import type { PortfolioProject } from '@/types/resume';
 import { usePortfolio } from '@/hooks/usePortfolio';
 import { useAuth } from '@/hooks/useAuth';
 

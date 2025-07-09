@@ -7,7 +7,7 @@ import { FilePlus, Loader2 } from 'lucide-react';
 
 import { ProjectCard } from './ProjectCard';
 import { ProjectForm } from './ProjectForm';
-import { PortfolioProject } from '@/types/resume';
+import type { PortfolioProject } from '@/types/resume';
 import { usePortfolio } from '@/hooks/usePortfolio';
 
 export function PortfolioBuilder() {

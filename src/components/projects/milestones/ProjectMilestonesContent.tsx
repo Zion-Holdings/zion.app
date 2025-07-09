@@ -1,4 +1,4 @@
-import { Project } from '@/types/projects';
+import type { Project } from '@/types/projects';
 
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
