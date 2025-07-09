@@ -81,18 +81,20 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
   if (req['method'] !== 'GET') {
     res.setHeader('Allow', 'GET');
-    return res.status(405).json({ 
+    res.status(405).json({ 
       error: 'method_not_allowed',
       message: `Method ${req['method']} Not Allowed` 
     });
+    return;
   }
 
   // Validate API key
   if (!validateApiKey(req)) {
-    return res.status(401).json({
+    res.status(401).json({
       error: 'invalid_token',
       message: 'The provided API key is invalid or missing. Use "demo_key_123" for testing.'
     });
+    return;
   }
 
   try {
@@ -175,20 +177,22 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     // Set cache headers
     res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600');
 
-    return res.status(200).json({
+    res.status(200).json({
       talent: paginatedTalent,
       count: filteredTalent.length,
       limit: limitNum,
       offset: offsetNum,
       total: MOCK_TALENT.length
     });
+    return;
 
   } catch (error) {
     logErrorToProduction('Talent API error:', { data: error });
-    return res.status(500).json({ 
+    res.status(500).json({ 
       error: 'internal_server_error',
       message: 'An internal server error occurred while fetching talent profiles' 
     });
+    return;
   }
 }
 

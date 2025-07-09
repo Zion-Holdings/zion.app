@@ -21,14 +21,16 @@ function handler(
 ) {
   if (req.method !== 'GET') {
     res.setHeader('Allow', 'GET');
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
+    return;
   }
 
   const q = String(((req.query as any).q ?? '')).toLowerCase().trim();
   const limit = parseInt(String(((req.query as any).limit ?? '5')), 10);
 
   if (!q) {
-    return res.status(200).json([]);
+    res.status(200).json([]);
+    return;
   }
 
   // Helper function to create slug from title
@@ -141,7 +143,7 @@ function handler(
   });
 
   // Return limited and sorted suggestions
-  return res.status(200).json(
+  res.status(200).json(
     suggestions
       .slice(0, limit)
       .sort((a, b) => {
@@ -155,6 +157,7 @@ function handler(
         return a.text.length - b.text.length;
       })
   );
+  return;
 }
 
 export default withErrorLogging(handler); 

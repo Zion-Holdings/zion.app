@@ -41,7 +41,7 @@ const FeedbackValidator = z.object({
   userAgent: z.string(),
 });
 
-async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
+const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
     res.status(405).end(`Method ${req.method} Not Allowed`);
@@ -67,6 +67,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
     res.status(500).json({ error: 'Failed to save feedback' });
     return;
   }
-}
+};
 
-export default withErrorLogging(handler as (req: NextApiRequest, res: NextApiResponse) => Promise<void>);
+export default withErrorLogging(handler);

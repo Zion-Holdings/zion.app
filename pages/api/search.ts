@@ -169,20 +169,20 @@ export function performSearch(query: string, page: number, limit: number, filter
   };
 }
 
-async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<SearchResponse | { error: string }>,
-) {
+// Ensure correct handler signature and returns
+async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
   // Apply CORS headers first
   applyCorsHeaders(req, res as NextApiResponse<unknown>);
 
   if (req['method'] === 'OPTIONS') {
-    return res.status(200).end();
+    res.status(200).end();
+    return;
   }
 
   if (req['method'] !== 'GET') {
     res.setHeader('Allow', 'GET');
-    return res.status(405).json({ error: `Method ${req['method']} Not Allowed` });
+    res.status(405).json({ error: `Method ${req['method']} Not Allowed` });
+    return;
   }
 
   const startTime = Date.now();
@@ -207,13 +207,14 @@ async function handler(
     // Return empty results for empty query
     if (!q) {
       applyCacheHeaders(res, CacheCategory.SHORT);
-      return res.status(200).json({
+      res.status(200).json({
         results: [],
         totalCount: 0,
         page,
         limit,
         query: q,
       });
+      return;
     }
 
     // Create cache key
@@ -257,7 +258,8 @@ async function handler(
     res.setHeader('X-Query-Length', q.length.toString());
     res.setHeader('X-Has-More', searchResult.hasMore.toString());
 
-    return res.status(200).json(searchResponse);
+    res.status(200).json(searchResponse);
+    return;
 
   } catch (error) {
     logErrorToProduction('Search query failed:', { data: error });
@@ -266,7 +268,7 @@ async function handler(
     applyCacheHeaders(res, CacheCategory.SHORT);
     res.setHeader('X-Data-Source', 'fallback');
     
-    return res.status(200).json({
+    res.status(200).json({
       results: [],
       totalCount: 0,
       page: 1,
@@ -274,6 +276,7 @@ async function handler(
       query: String(((req['query'] as any).query ?? ((req['query'] as any).q ?? ''))),
       hasMore: false,
     });
+    return;
   }
 }
 

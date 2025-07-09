@@ -23,10 +23,10 @@ type ProductWithStats = ProductModel & {
   title: string;
 };
 
-async function handler(
+const handler = async (
   req: NextApiRequest,
   res: NextApiResponse<ProductWithStats[] | { error: string; details?: string }>
-) {
+): Promise<void> => {
   logInfo('Marketplace products API handler started.');
   // DATABASE_URL is essential for Prisma Client to connect to the database.
   // This check ensures the service is not attempting to run without proper configuration.
@@ -140,6 +140,6 @@ async function handler(
     logInfo('Marketplace products API handler finished.');
     await prisma.$disconnect();
   }
-}
+};
 
 export default withErrorLogging(handler);
