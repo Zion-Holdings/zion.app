@@ -45,7 +45,9 @@ export function NewsletterForm() {
       } else {
         toast.error(data.error || "Subscription failed. Please try again.");
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
+      // Optionally log the error if needed
+      // if (err instanceof Error) console.error(err);
       toast.error("Unable to subscribe right now. Please try again later.");
     } finally {
       setIsSubmitting(false);
