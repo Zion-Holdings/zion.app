@@ -69,26 +69,33 @@ async function getAuth0ManagementToken() {
   return data.access_token;
 }
 
-async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req['method'] !== 'POST') {
-    res.setHeader('Allow', 'POST');
-    return res.status(405).json({ error: 'Method not allowed' });
+// Change handler type to match ApiHandler
+type ApiHandler = (req: unknown, res: unknown) => unknown;
+
+const handler: ApiHandler = async (req, res) => {
+  // Type assertions for Next.js types
+  const request = req as NextApiRequest;
+  const response = res as NextApiResponse;
+
+  if (request.method !== 'POST') {
+    response.setHeader('Allow', 'POST');
+    return response.status(405).json({ error: 'Method not allowed' });
   }
 
   // Rate limiting
-  const rateLimitKey = getRateLimitKey(req);
+  const rateLimitKey = getRateLimitKey(request);
   if (!checkRateLimit(rateLimitKey)) {
-    return res.status(429).json({
+    return response.status(429).json({
       error: 'Too many requests. Please try again later.',
       message: 'Too many requests. Please try again later.'
     });
   }
 
   // Validate input
-  const result = schema.safeParse(req['body']);
+  const result = schema.safeParse(request.body);
   if (!result.success) {
     const errorMessage = result.error.errors[0]?.message || 'Invalid input';
-    return res.status(400).json({ 
+    return response.status(400).json({ 
       error: errorMessage,
       message: errorMessage
     });
@@ -98,7 +105,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   const domain = process.env['AUTH0_ISSUER_BASE_URL'];
 
   if (!domain) {
-    return res.status(500).json({
+    return response.status(500).json({
       error: 'Authentication service not configured',
       message: 'Authentication service not configured'
     });
@@ -117,7 +124,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       },
       body: JSON.stringify({
         email: email.toLowerCase(),
-                  connection: 'Username-Password-Authentication', // Default Auth0 database connection
+        connection: 'Username-Password-Authentication', // Default Auth0 database connection
         client_id: process.env['AUTH0_CLIENT_ID'],
         result_url: `${process.env['AUTH0_BASE_URL'] || process.env['NEXT_PUBLIC_APP_URL']}/login?reset=success`,
         includeEmailInRedirect: false,
@@ -133,19 +140,19 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       // Handle specific Auth0 errors
       if (errorData.statusCode === 404 || errorData.message?.includes('user does not exist')) {
         // For security, don't reveal if user exists or not
-        return res.status(200).json({
+        return response.status(200).json({
           message: 'If your email address is registered, you will receive a password reset link shortly.'
         });
       }
       
       if (errorData.statusCode === 429) {
-        return res.status(429).json({
+        return response.status(429).json({
           error: 'Too many requests. Please try again later.',
           message: 'Too many requests. Please try again later.'
         });
       }
 
-      return res.status(500).json({
+      return response.status(500).json({
         error: 'Failed to send reset link. Please try again.',
         message: 'Failed to send reset link. Please try again.'
       });
@@ -155,18 +162,18 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     logInfo('Password reset ticket created successfully for:', { data: email });
     
     // Always return the same message for security (don't reveal if user exists)
-    return res.status(200).json({
+    return response.status(200).json({
       message: 'If your email address is registered, you will receive a password reset link shortly.',
       success: true
     });
 
   } catch (err: any) {
     logErrorToProduction('Password reset error:', { data: err });
-    return res.status(500).json({
+    return response.status(500).json({
       error: 'Failed to send reset link. Please try again.',
       message: 'Failed to send reset link. Please try again.'
     });
   }
-}
+};
 
 export default withErrorLogging(handler); 

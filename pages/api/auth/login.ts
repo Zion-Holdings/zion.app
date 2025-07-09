@@ -66,16 +66,6 @@ async function handler(
   // 🔧 Enable verbose logging (only in development)
   const isDevelopment = process.env.NODE_ENV === 'development';
   
-  if (isDevelopment) {
-    console.log('🔧 LOGIN TRACE: Request method:', req['method']);
-    console.log('🔧 LOGIN TRACE: Request body keys:', Object.keys(req['body'] || {}));
-    console.log('🔧 LOGIN TRACE: Environment config status:', {
-      supabaseConfigured: ENV_CONFIG.supabase.isConfigured,
-      sentryConfigured: ENV_CONFIG.sentry.isConfigured,
-      environment: ENV_CONFIG.app.environment
-    });
-  }
-
   if (req['method'] !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
