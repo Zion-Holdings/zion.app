@@ -119,6 +119,12 @@ Python utilities are available for manual log inspection. After running `main_ap
 python bug_log_summary.py
 ```
 
+To simply print all recorded entries in the log file, use the `--list` option provided by `bug_logger.py`:
+
+```bash
+python bug_logger.py --list
+```
+
 This script reads `logs/bug/bug_log.json` (or the path set in `BUG_LOG_FILE`) and prints the number of entries per severity along with the most frequent error messages.
 You can filter by severity using the optional `--severity` flag, e.g.:
 
