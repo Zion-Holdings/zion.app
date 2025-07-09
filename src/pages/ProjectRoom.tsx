@@ -73,6 +73,51 @@ export default function ProjectRoom() {
       toast(`${randomUser.name} joined the call`);
     }
   };
+
+  const [chatMessages, setChatMessages] = useState<{user: string, text: string}[]>([]);
+  const [chatInput, setChatInput] = useState('');
+  const handleSendMessage = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!chatInput.trim()) return;
+    setChatMessages(msgs => [...msgs, { user: 'You', text: chatInput }]);
+    setChatInput('');
+  };
+
+  const [files, setFiles] = useState<File[]>([]);
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setFiles(prev => [...prev, ...Array.from(e.target.files)]);
+    }
+  };
+
+  const [events, setEvents] = useState<{title: string, date: string}[]>([]);
+  const [eventTitle, setEventTitle] = useState('');
+  const [eventDate, setEventDate] = useState('');
+  const handleAddEvent = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!eventTitle.trim() || !eventDate) return;
+    setEvents(evts => [...evts, { title: eventTitle, date: eventDate }]);
+    setEventTitle('');
+    setEventDate('');
+  };
+
+  const [team, setTeam] = useState<string[]>([]);
+  const [teamInput, setTeamInput] = useState('');
+  const handleAddTeamMember = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!teamInput.trim()) return;
+    setTeam(t => [...t, teamInput]);
+    setTeamInput('');
+  };
+
+  const [settingsName, setSettingsName] = useState('');
+  const [settingsDesc, setSettingsDesc] = useState('');
+  const [settingsSaved, setSettingsSaved] = useState(false);
+  const handleSaveSettings = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSettingsSaved(true);
+    setTimeout(() => setSettingsSaved(false), 2000);
+  };
   
   return (
     <>
@@ -132,10 +177,26 @@ export default function ProjectRoom() {
                 <CardTitle>Project Chat</CardTitle>
                 <CardDescription>Communicate with your team members</CardDescription>
               </CardHeader>
-              <CardContent className="h-[400px]">
-                <div className="flex items-center justify-center h-full">
-                  <p className="text-muted-foreground">Chat functionality will be implemented soon</p>
+              <CardContent className="h-[400px] flex flex-col">
+                <div className="flex-1 overflow-y-auto mb-2" id="chat-messages">
+                  {/* Minimal chat: local state only */}
+                  {chatMessages.length === 0 ? (
+                    <div className="flex items-center justify-center h-full text-muted-foreground">No messages yet</div>
+                  ) : (
+                    chatMessages.map((msg, idx) => (
+                      <div key={idx} className="mb-2"><b>{msg.user}:</b> {msg.text}</div>
+                    ))
+                  )}
                 </div>
+                <form className="flex gap-2" onSubmit={handleSendMessage}>
+                  <input
+                    className="flex-1 border rounded px-2 py-1"
+                    placeholder="Type a message..."
+                    value={chatInput}
+                    onChange={e => setChatInput(e.target.value)}
+                  />
+                  <Button type="submit" disabled={!chatInput.trim()}>Send</Button>
+                </form>
               </CardContent>
             </Card>
           </TabsContent>
@@ -146,10 +207,18 @@ export default function ProjectRoom() {
                 <CardTitle>Project Files</CardTitle>
                 <CardDescription>Manage documents and files</CardDescription>
               </CardHeader>
-              <CardContent className="h-[400px]">
-                <div className="flex items-center justify-center h-full">
-                  <p className="text-muted-foreground">File management will be implemented soon</p>
-                </div>
+              <CardContent className="h-[400px] flex flex-col">
+                <div className="mb-2">Uploaded files:</div>
+                <ul className="flex-1 overflow-y-auto mb-2">
+                  {files.length === 0 ? (
+                    <li className="text-muted-foreground">No files uploaded</li>
+                  ) : (
+                    files.map((file, idx) => (
+                      <li key={idx}>{file.name}</li>
+                    ))
+                  )}
+                </ul>
+                <input type="file" onChange={handleFileUpload} />
               </CardContent>
             </Card>
           </TabsContent>
@@ -201,10 +270,32 @@ export default function ProjectRoom() {
                 <CardTitle>Project Calendar</CardTitle>
                 <CardDescription>Schedule and manage events</CardDescription>
               </CardHeader>
-              <CardContent className="h-[400px]">
-                <div className="flex items-center justify-center h-full">
-                  <p className="text-muted-foreground">Calendar will be implemented soon</p>
-                </div>
+              <CardContent className="h-[400px] flex flex-col">
+                <div className="mb-2">Events:</div>
+                <ul className="flex-1 overflow-y-auto mb-2">
+                  {events.length === 0 ? (
+                    <li className="text-muted-foreground">No events scheduled</li>
+                  ) : (
+                    events.map((event, idx) => (
+                      <li key={idx}>{event.title} ({event.date})</li>
+                    ))
+                  )}
+                </ul>
+                <form className="flex gap-2" onSubmit={handleAddEvent}>
+                  <input
+                    className="flex-1 border rounded px-2 py-1"
+                    placeholder="Event title"
+                    value={eventTitle}
+                    onChange={e => setEventTitle(e.target.value)}
+                  />
+                  <input
+                    type="date"
+                    className="border rounded px-2 py-1"
+                    value={eventDate}
+                    onChange={e => setEventDate(e.target.value)}
+                  />
+                  <Button type="submit" disabled={!eventTitle.trim() || !eventDate}>Add</Button>
+                </form>
               </CardContent>
             </Card>
           </TabsContent>
@@ -215,10 +306,26 @@ export default function ProjectRoom() {
                 <CardTitle>Team Members</CardTitle>
                 <CardDescription>Manage project participants</CardDescription>
               </CardHeader>
-              <CardContent className="h-[400px]">
-                <div className="flex items-center justify-center h-full">
-                  <p className="text-muted-foreground">Team management will be implemented soon</p>
-                </div>
+              <CardContent className="h-[400px] flex flex-col">
+                <div className="mb-2">Team:</div>
+                <ul className="flex-1 overflow-y-auto mb-2">
+                  {team.length === 0 ? (
+                    <li className="text-muted-foreground">No team members yet</li>
+                  ) : (
+                    team.map((member, idx) => (
+                      <li key={idx}>{member}</li>
+                    ))
+                  )}
+                </ul>
+                <form className="flex gap-2" onSubmit={handleAddTeamMember}>
+                  <input
+                    className="flex-1 border rounded px-2 py-1"
+                    placeholder="Team member name"
+                    value={teamInput}
+                    onChange={e => setTeamInput(e.target.value)}
+                  />
+                  <Button type="submit" disabled={!teamInput.trim()}>Add</Button>
+                </form>
               </CardContent>
             </Card>
           </TabsContent>
@@ -229,10 +336,23 @@ export default function ProjectRoom() {
                 <CardTitle>Project Settings</CardTitle>
                 <CardDescription>Configure project parameters</CardDescription>
               </CardHeader>
-              <CardContent className="h-[400px]">
-                <div className="flex items-center justify-center h-full">
-                  <p className="text-muted-foreground">Settings will be implemented soon</p>
-                </div>
+              <CardContent className="h-[400px] flex flex-col">
+                <form className="flex flex-col gap-2" onSubmit={handleSaveSettings}>
+                  <label className="font-medium">Project Name</label>
+                  <input
+                    className="border rounded px-2 py-1"
+                    value={settingsName}
+                    onChange={e => setSettingsName(e.target.value)}
+                  />
+                  <label className="font-medium">Description</label>
+                  <textarea
+                    className="border rounded px-2 py-1"
+                    value={settingsDesc}
+                    onChange={e => setSettingsDesc(e.target.value)}
+                  />
+                  <Button type="submit" className="mt-2">Save Settings</Button>
+                  {settingsSaved && <div className="text-green-600 text-sm mt-2">Settings saved!</div>}
+                </form>
               </CardContent>
             </Card>
           </TabsContent>
