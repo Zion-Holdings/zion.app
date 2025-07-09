@@ -65,7 +65,7 @@ export function FeedbackWidget() {
       await postFeedback({
         rating,
         comment,
-        screenshot: screenshot ?? undefined,
+        ...(screenshot ? { screenshot } : {}),
         url: window.location.pathname,
         userAgent: navigator.userAgent,
       });

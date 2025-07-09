@@ -1,5 +1,6 @@
 import React from 'react';
-import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
+import { ErrorBoundary } from 'react-error-boundary';
+import type { FallbackProps } from 'react-error-boundary';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 function PageFallback({ error }: FallbackProps) {

@@ -1,6 +1,7 @@
 'use client'
 
-import React, { Component, ErrorInfo, ReactNode } from 'react'
+import React, { Component } from 'react'
+import type { ErrorInfo, ReactNode } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { AlertTriangle, RefreshCw, Home, Bug, Send, Clipboard } from 'lucide-react';
 
@@ -60,7 +61,7 @@ export class GlobalErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoun
     }
   }
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+  override componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     const errorId = this.generateErrorId()
     
     // Enhanced error logging
@@ -107,7 +108,7 @@ export class GlobalErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoun
     })
   }
 
-  componentWillUnmount() {
+  override componentWillUnmount() {
     // Clear any pending retry timeouts
     this.retryTimeouts.forEach(timeout => clearTimeout(timeout))
   }
@@ -259,11 +260,11 @@ export class GlobalErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoun
     }
   }
 
-  render() {
+  override render() {
     if (this.state.hasError && this.state.error) {
       // Use custom fallback if provided
       if (this.props.fallback) {
-        return this.props.fallback
+        return this.props.fallback;
       }
 
       const severity = this.getErrorSeverity(this.state.error)

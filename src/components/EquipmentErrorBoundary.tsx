@@ -26,39 +26,19 @@ export class EquipmentErrorBoundary extends React.Component<Props, State> {
     return { hasError: true, error };
   }
 
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+  override componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     logErrorToProduction('Equipment page error:', error, { componentStack: errorInfo.componentStack });
   }
 
-  render() {
+  override render() {
     if (this.state.hasError) {
       return (
         <div className="container py-8">
-          <Card className="border-red-200 bg-red-50">
-            <CardContent className="p-8 text-center">
-              <AlertTriangle className="mx-auto mb-4 h-12 w-12 text-red-600" />
-              <h2 className="text-2xl font-bold text-red-900 mb-2">Something went wrong</h2>
-              <p className="text-red-700 mb-4">
-                We're having trouble loading the equipment listings. This might be a temporary issue.
-              </p>
-              <div className="flex gap-2 justify-center">
-                <Button 
-                  onClick={() => this.setState({ hasError: false, error: undefined })} 
-                  variant="outline"
-                >
-                  <RefreshCw className="h-4 w-4 mr-2" />
-                  Try Again
-                </Button>
-                <Button onClick={() => window.location.reload()} variant="default">
-                  Refresh Page
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+          <h2>Something went wrong.</h2>
+          <p>Please try refreshing the page or contact support if the problem persists.</p>
         </div>
       );
     }
-
     return this.props.children;
   }
 } 
