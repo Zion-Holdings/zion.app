@@ -45,11 +45,15 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
     };
   }
 
-  override componentDidCatch(error: Error, errorInfo: any) {
+  override componentDidCatch(error: Error, errorInfo: unknown) {
     // Log to Sentry
     Sentry.withScope((scope) => {
       scope.setTag('errorBoundary', 'ApiErrorBoundary');
-      scope.setContext('errorInfo', errorInfo);
+      if (typeof errorInfo === 'object' && errorInfo !== null) {
+        scope.setContext('errorInfo', errorInfo as Record<string, unknown>);
+      } else {
+        scope.setContext('errorInfo', null);
+      }
       scope.setLevel('error');
       Sentry.captureException(error);
     });
@@ -59,7 +63,11 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
       errorInfo,
     });
 
-    logErrorToProduction('ApiErrorBoundary caught an error:', error, errorInfo);
+    if (typeof errorInfo === 'object' && errorInfo !== null) {
+      logErrorToProduction('ApiErrorBoundary caught an error:', error, errorInfo as Record<string, unknown>);
+    } else {
+      logErrorToProduction('ApiErrorBoundary caught an error:', error);
+    }
   }
 
   override componentDidMount() {
