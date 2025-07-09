@@ -12,9 +12,8 @@ export async function enableDevToolsInStaging() {
     try {
       // The /* @vite-ignore */ comment might still be useful if we want to avoid
       // Vite trying to be too clever with this dynamic import even in dev.
-      // await import(/* @vite-ignore */ 'react-devtools');
-      // logInfo('DevTools enabled');
-      logInfo('React DevTools import temporarily commented out for build troubleshooting.');
+      await import(/* @vite-ignore */ 'react-devtools');
+      logInfo('DevTools enabled');
     } catch (err) {
       logErrorToProduction('Failed to load react-devtools (import is commented out)', { data: err });
     }
