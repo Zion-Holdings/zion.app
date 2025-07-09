@@ -9,7 +9,7 @@
 class EventEmitter {
   private events: { [key: string]: Function[] } = {};
 
-  on(event: string, listener: Function): this {
+  on(event: string, listener: (...args: unknown[]) => unknown): this {
     if (!this.events[event]) {
       this.events[event] = [];
     }
@@ -17,7 +17,7 @@ class EventEmitter {
     return this;
   }
 
-  emit(event: string, ...args: any[]): boolean {
+  emit(event: string, ...args: unknown[]): boolean {
     if (!this.events[event]) {
       return false;
     }
@@ -25,7 +25,7 @@ class EventEmitter {
     return true;
   }
 
-  removeListener(event: string, listener: Function): this {
+  removeListener(event: string, listener: (...args: unknown[]) => unknown): this {
     if (this.events[event]) {
       this.events[event] = this.events[event].filter(l => l !== listener);
     }
@@ -52,7 +52,7 @@ class Stream extends EventEmitter {
 // Readable Stream
 class Readable extends Stream {
   private _readableState: any;
-  private _read: Function;
+  private _read: (size?: number) => unknown;
 
   constructor(options: any = {}) {
     super();
@@ -76,11 +76,11 @@ class Readable extends Stream {
     this._read = options.read || (() => {});
   }
 
-  read(size?: number): any {
+  read(size?: number): unknown {
     return this._read(size);
   }
 
-  push(chunk: any, encoding?: string): boolean {
+  push(chunk: unknown, encoding?: string): boolean {
     this.emit('data', chunk);
     return true;
   }
@@ -117,7 +117,7 @@ class Readable extends Stream {
 // Writable Stream
 class Writable extends Stream {
   private _writableState: any;
-  private _write: Function;
+  private _write: (chunk: unknown, encoding?: string, cb?: (err?: Error) => unknown) => unknown;
 
   constructor(options: any = {}) {
     super();
@@ -149,12 +149,12 @@ class Writable extends Stream {
     this._write = options.write || (() => {});
   }
 
-  write(chunk: any, encoding?: string, cb?: Function): boolean {
+  write(chunk: unknown, encoding?: string, cb?: (err?: Error) => unknown): boolean {
     this._write(chunk, encoding, cb);
     return true;
   }
 
-  end(chunk?: any, encoding?: string, cb?: Function): this {
+  end(chunk?: unknown, encoding?: string, cb?: (err?: Error) => unknown): this {
     this._writableState.ending = true;
     this._writableState.finished = true;
     this.emit('finish');
@@ -177,11 +177,11 @@ class Duplex extends Readable {
     this._writable = new Writable(options);
   }
 
-  write(chunk: any, encoding?: string, cb?: Function): boolean {
+  write(chunk: unknown, encoding?: string, cb?: (err?: Error) => unknown): boolean {
     return this._writable.write(chunk, encoding, cb);
   }
 
-  end(chunk?: any, encoding?: string, cb?: Function): this {
+  end(chunk?: unknown, encoding?: string, cb?: (err?: Error) => unknown): this {
     this._writable.end(chunk, encoding, cb);
     return this;
   }
@@ -189,25 +189,25 @@ class Duplex extends Readable {
 
 // Transform Stream
 class Transform extends Duplex {
-  private _transform: Function;
-  private _flush: Function;
+  private _internalTransform: (chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown) => unknown;
+  private _internalFlush: (callback: (err?: Error) => unknown) => unknown;
 
   constructor(options: any = {}) {
     super(options);
-    this._transform = options.transform || ((chunk: any, encoding: string, callback: Function) => {
-      callback(null, chunk);
+    this._internalTransform = options.transform || ((chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown) => {
+      callback(undefined, chunk);
     });
-    this._flush = options.flush || ((callback: Function) => {
+    this._internalFlush = options.flush || ((callback: (err?: Error) => unknown) => {
       callback();
     });
   }
 
-  _transform(chunk: any, encoding: string, callback: Function): void {
-    this._transform(chunk, encoding, callback);
+  _transform(chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown): void {
+    this._internalTransform(chunk, encoding, callback);
   }
 
-  _flush(callback: Function): void {
-    this._flush(callback);
+  _flush(callback: (err?: Error) => unknown): void {
+    this._internalFlush(callback);
   }
 }
 
@@ -231,7 +231,7 @@ const streamModule = {
   WritableState: class {},
   Buffer: typeof Buffer !== 'undefined' ? Buffer : null,
   // Add utility functions
-  finished: (stream: any, callback: Function) => {
+  finished: (stream: any, callback: (err?: Error) => unknown) => {
     stream.on('end', callback);
     stream.on('finish', callback);
     stream.on('close', callback);
