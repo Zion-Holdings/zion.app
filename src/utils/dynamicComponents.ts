@@ -60,37 +60,27 @@ export const DynamicAnalyticsChart = dynamic(
   }
 );
 
-// export const DynamicPDFGenerator = dynamic(
-//   () => import('../components/pdf/PDFGenerator'),
-//   { 
-//     loading: LoadingSpinner,
-//     ssr: false 
-//   }
-// );
+// PDFGenerator and RichEditor components do not exist, so remove their dynamic imports
 
-// export const DynamicVideoPlayer = dynamic(
-//   () => import('../components/video/VideoPlayer'),
-//   { 
-//     loading: LoadingSkeleton,
-//     ssr: false 
-//   }
-// );
+// Use ReactPlayer for video player
+export const DynamicVideoPlayer = dynamic(
+  () => import('react-player').then(mod => ({ default: mod.default })),
+  {
+    loading: LoadingSkeleton,
+    ssr: false
+  }
+);
 
-// export const DynamicModelViewer = dynamic(
-//   () => import('../components/ar/ModelViewer'),
-//   { 
-//     loading: LoadingSpinner,
-//     ssr: false 
-//   }
-// );
-
-// export const DynamicRichEditor = dynamic(
-//   () => import('../components/editor/RichTextEditor'),
-//   { 
-//     loading: LoadingSpinner,
-//     ssr: false 
-//   }
-// );
+// Use ModelViewer as defined in ProductGallery
+const ModelViewer = React.lazy(async () => {
+  await import('@google/model-viewer');
+  return {
+    default: (props: any) => (
+      React.createElement('model-viewer', props)
+    ),
+  };
+});
+export { ModelViewer as DynamicModelViewer };
 
 // Virtual list for large datasets
 export const DynamicVirtualList = dynamic(
