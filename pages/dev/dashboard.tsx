@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 
+interface CacheStats {
+  keys: number;
+  hits: number;
+  misses: number;
+}
+
 interface DashboardData {
   status: 'healthy' | 'warning' | 'error';
   metrics: {
     cache: {
-      short: any;
-      medium: any;
-      long: any;
+      short: CacheStats;
+      medium: CacheStats;
+      long: CacheStats;
     };
     build: {
       timestamp: string;
