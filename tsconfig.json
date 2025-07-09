@@ -74,9 +74,7 @@
       "./types"
     ],
     "types": [
-      "node",
-      "jest",
-      "vitest"
+      "node"
     ],
     "jsx": "preserve",
     "allowImportingTsExtensions": true,
