@@ -18,12 +18,12 @@ export const devConsole = {
   timeEnd: isDevelopment ? console.timeEnd : () => {},
   
   // Conditional logging
-  logIf: (condition: boolean, ...args: any[]) => {
+  logIf: (condition: boolean, ...args: unknown[]) => {
     if (isDevelopment && condition) console.log(...args);
   },
   
   // Performance measurement
-  measure: (name: string, fn: () => any) => {
+  measure: (name: string, fn: () => unknown) => {
     if (isDevelopment) {
       const start = performance.now();
       const result = fn();
