@@ -48,17 +48,18 @@ const WhitepaperViewPage: React.FC = () => {
       setLoading(true);
       setError(null);
       try {
-        const { data: responseData, error: funcError } = await supabase.functions.invoke('get-shared-whitepaper', {
+        if (!supabase) throw new Error('Supabase client not initialized');
+        const { data, error: funcError } = await (supabase!).functions.invoke('get-shared-whitepaper', {
           body: { id },
         });
 
         if (funcError) throw new Error(`Supabase function error: ${funcError.message}`);
-        if (responseData && (responseData as any).error) throw new Error((responseData as any).error);
-        if (!responseData || !(responseData as any).whitepaper_data) {
+        if (data && typeof data === 'object' && 'error' in data && (data as { error?: string }).error) throw new Error((data as { error?: string }).error!);
+        if (!data || typeof data !== 'object' || !('whitepaper_data' in data)) {
           throw new Error('Shared whitepaper not found or data is invalid.');
         }
 
-        setSharedData(responseData as SharedWhitepaper);
+        setSharedData(data as SharedWhitepaper);
 
       } catch (e: any) {
         logErrorToProduction('Error fetching shared whitepaper:', { data:  e });
