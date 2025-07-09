@@ -9,7 +9,7 @@ import { DollarSign, Calendar, CheckCircle, XCircle } from 'lucide-react';
 
 
 import { format } from "date-fns";
-import { JobMatch } from "@/types/jobs";
+import type { JobMatch } from "@/types/jobs";
 
 interface JobMatchCardProps {
   match: JobMatch;

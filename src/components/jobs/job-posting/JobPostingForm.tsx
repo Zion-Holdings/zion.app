@@ -10,14 +10,13 @@ import { BasicInfoFields } from './BasicInfoFields';
 import { DateFields } from './DateFields';
 import { DescriptionFields } from './DescriptionFields';
 import { useJobs } from "@/hooks/useJobs";
-import { JobSchemaType } from './validation';
+import type { JobSchemaType } from './validation';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface JobPostingFormProps {
-  jobId?: string;
-  
-  onSuccess?: () => void;
+  jobId: string | undefined;
+  onSuccess: (() => void) | undefined;
 }
 
 export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {

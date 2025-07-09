@@ -1,10 +1,10 @@
 
 import React from 'react';
-import { ControllerRenderProps } from 'react-hook-form';
-import { Control } from 'react-hook-form';
+import type { ControllerRenderProps } from 'react-hook-form';
+import type { Control } from 'react-hook-form';
 import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from "@/components/ui/form";
 import { Textarea } from "@/components/ui/textarea";
-import { JobSchemaType } from './validation';
+import type { JobSchemaType } from './validation';
 
 interface DescriptionFieldsProps {
   control: Control<JobSchemaType>;
