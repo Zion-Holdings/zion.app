@@ -1,7 +1,7 @@
 import { supabase } from "@/integrations/supabase/client";
-import { TalentProfile } from "@/types/talent";
-import { GeneratedMilestone } from "@/hooks/useMilestoneGenerator";
-import { ContractFormValues } from "../components/ContractForm";
+import type { TalentProfile } from "@/types/talent";
+import type { GeneratedMilestone } from "@/hooks/useMilestoneGenerator";
+import type { ContractFormValues } from "../components/ContractForm";
 
 
 export async function generateContract(

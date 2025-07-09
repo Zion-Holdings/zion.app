@@ -58,7 +58,7 @@ export function RaiseDisputeButton({
           
           <DisputeForm 
             projectId={projectId}
-            milestoneId={milestoneId}
+            {...(milestoneId ? { milestoneId } : {})}
             onDisputeCreated={handleDisputeCreated}
             onCancel={() => setIsDialogOpen(false)}
           />

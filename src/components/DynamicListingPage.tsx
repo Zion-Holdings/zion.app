@@ -17,7 +17,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import Skeleton from "react-loading-skeleton";
 import Head from 'next/head';
 import { Slider } from "@/components/ui/slider";
-import { ProductListing, ListingView } from "@/types/listings";
+import type { ProductListing, ListingView } from "@/types/listings";
 
 import { toast } from "@/hooks/use-toast";
 import { captureException } from "@/utils/sentry";
