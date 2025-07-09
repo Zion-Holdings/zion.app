@@ -4,7 +4,7 @@ import { runMonitoring } from './monitor'; // Import the exported function
 import path from 'path';
 
 logger.info(`Cron job process starting. Current working directory: ${process.cwd()}`);
-// eslint-disable-next-line @typescript-eslint/no-require-imports
+ 
 logger.info(`Log files are expected at: ${path.join(__dirname, '..', 'logs', 'perf')}`);
 
 logger.info('Performing initial monitoring run on startup...');
