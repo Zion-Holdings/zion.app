@@ -78,16 +78,19 @@ const MOCK_CATEGORIES = {
 
 const prisma = new PrismaClient();
 
-async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req['method'] !== 'GET') {
-    res.setHeader('Allow', ['GET']);
-    return res.status(405).json({ message: `Method ${req['method']} Not Allowed` });
+// Remove custom ApiHandler type and use correct types
+const handler = async (request: NextApiRequest, response: NextApiResponse): Promise<void> => {
+  if (request['method'] !== 'GET') {
+    response.setHeader('Allow', ['GET']);
+    response.status(405).json({ message: `Method ${request['method']} Not Allowed` });
+    return;
   }
 
-  const { slug } = req['query'] as { slug: string | string[] };
+  const { slug } = request['query'] as { slug: string | string[] };
 
   if (typeof slug !== 'string') {
-    return res.status(400).json({ message: 'Invalid slug provided.' });
+    response.status(400).json({ message: 'Invalid slug provided.' });
+    return;
   }
 
   try {
@@ -137,7 +140,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         items: talentItems,
       };
 
-      return res.status(200).json(responseData);
+      response.status(200).json(responseData);
+      return;
     }
 
     try {
@@ -193,10 +197,11 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       const mockCategory = MOCK_CATEGORIES[slug as keyof typeof MOCK_CATEGORIES];
       
       if (!mockCategory) {
-        return res.status(404).json({ 
+        response.status(404).json({ 
           message: `Category with slug '${slug}' not found.`,
           available_categories: Object.keys(MOCK_CATEGORIES)
         });
+        return;
       }
 
       // Enhanced category matching for better results
@@ -265,24 +270,26 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       items: products,
     };
 
-    return res.status(200).json(responseData);
+    response.status(200).json(responseData);
+    return;
   } catch (error) {
     logErrorToProduction('Failed to fetch items for category ${slug}:', { data: error });
     
     // Ensure we always return JSON, never HTML
     try {
       captureException(error as Error, {
-        extra: { slug, path: req['url'] },
-        user: (req as any).user ? { id: (req as any).user.id, email: (req as any).user.email } : undefined,
+        extra: { slug, path: request['url'] },
+        user: (request as any).user ? { id: (request as any).user.id, email: (request as any).user.email } : undefined,
       });
     } catch (sentryError) {
       logErrorToProduction('Sentry capture failed:', { data: sentryError });
     }
     
-    return res.status(500).json({ 
+    response.status(500).json({ 
       message: 'Internal Server Error while fetching category items.',
       error: process.env.NODE_ENV === 'development' ? (error as Error).message : undefined
     });
+    return;
   } finally {
     try {
       await prisma.$disconnect();
@@ -290,6 +297,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       logErrorToProduction('Prisma disconnect error:', { data: disconnectError });
     }
   }
-}
+};
 
 export default withErrorLogging(handler);
