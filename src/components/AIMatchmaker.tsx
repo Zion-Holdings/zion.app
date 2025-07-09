@@ -14,7 +14,7 @@ import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 interface AIMatchmakerProps {
   serviceType?: string;
-  onMatchSelect?: (match: any) => void;
+  onMatchSelect?: (match: unknown) => void;
   className?: string;
 }
 
@@ -68,14 +68,8 @@ export function AIMatchmaker({ serviceType = "", onMatchSelect, className }: AIM
     }
   };
   
-  const handleItemSelect = (item: any) => {
-    if (onMatchSelect) {
-      // Find the original MatchResult that contains this item
-      const matchResult = matches.find(match => match.item.id === item.id);
-      if (matchResult) {
-        onMatchSelect(matchResult);
-      }
-    }
+  const handleItemSelect = (item: unknown) => {
+    if (onMatchSelect) onMatchSelect(item);
   };
   
   // Extract just the items from each MatchResult
