@@ -4,7 +4,8 @@ import { User } from 'lucide-react';
 
 import type { Conversation } from '@/types/messaging';
 import { ConversationItem } from './ConversationItem';
-import { FixedSizeList as List, ListChildComponentProps } from 'react-window';
+import { FixedSizeList as List } from 'react-window';
+import type { ListChildComponentProps } from 'react-window';
 
 interface ConversationsListProps {
   conversations: Conversation[];
