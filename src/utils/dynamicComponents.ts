@@ -76,13 +76,13 @@ export const DynamicAnalyticsChart = dynamic(
 //   }
 // );
 
-export const DynamicModelViewer = dynamic(
-  () => import('../components/ar/ModelViewer'),
-  { 
-    loading: LoadingSpinner,
-    ssr: false 
-  }
-);
+// export const DynamicModelViewer = dynamic(
+//   () => import('../components/ar/ModelViewer'),
+//   { 
+//     loading: LoadingSpinner,
+//     ssr: false 
+//   }
+// );
 
 // export const DynamicRichEditor = dynamic(
 //   () => import('../components/editor/RichTextEditor'),
