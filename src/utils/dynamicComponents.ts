@@ -18,7 +18,6 @@ const LoadingSkeleton = () => React.createElement('div',
 );
 
 // Chart components (heavy - only load when needed)
-// TODO: Uncomment when Chart component is available
 // export const DynamicChart = dynamic(
 //   () => import('../components/charts/Chart'),
 //   { 
@@ -45,7 +44,7 @@ export const DynamicBarChart = dynamic(
 
 // Developer tools
 export const DynamicApiLogsChart = dynamic(
-  () => import('../components/developers/ApiLogsChart'),
+  () => import('../components/developers/ApiLogsChart').then(mod => ({ default: mod.ApiLogsChart })),
   {
     loading: LoadingSkeleton,
     ssr: false
@@ -61,38 +60,37 @@ export const DynamicAnalyticsChart = dynamic(
   }
 );
 
-// TODO: Uncomment when these components are available
-// export const DynamicPDFGenerator = dynamic(
-//   () => import('../components/pdf/PDFGenerator'),
-//   { 
-//     loading: LoadingSpinner,
-//     ssr: false 
-//   }
-// );
+export const DynamicPDFGenerator = dynamic(
+  () => import('../components/pdf/PDFGenerator'),
+  { 
+    loading: LoadingSpinner,
+    ssr: false 
+  }
+);
 
-// export const DynamicVideoPlayer = dynamic(
-//   () => import('../components/video/VideoPlayer'),
-//   { 
-//     loading: LoadingSkeleton,
-//     ssr: false 
-//   }
-// );
+export const DynamicVideoPlayer = dynamic(
+  () => import('../components/video/VideoPlayer'),
+  { 
+    loading: LoadingSkeleton,
+    ssr: false 
+  }
+);
 
-// export const DynamicModelViewer = dynamic(
-//   () => import('../components/ar/ModelViewer'),
-//   { 
-//     loading: LoadingSpinner,
-//     ssr: false 
-//   }
-// );
+export const DynamicModelViewer = dynamic(
+  () => import('../components/ar/ModelViewer'),
+  { 
+    loading: LoadingSpinner,
+    ssr: false 
+  }
+);
 
-// export const DynamicRichEditor = dynamic(
-//   () => import('../components/editor/RichTextEditor'),
-//   { 
-//     loading: LoadingSpinner,
-//     ssr: false 
-//   }
-// );
+export const DynamicRichEditor = dynamic(
+  () => import('../components/editor/RichTextEditor'),
+  { 
+    loading: LoadingSpinner,
+    ssr: false 
+  }
+);
 
 // Virtual list for large datasets
 export const DynamicVirtualList = dynamic(
