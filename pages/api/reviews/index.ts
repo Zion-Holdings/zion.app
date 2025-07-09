@@ -4,16 +4,18 @@ import { withErrorLogging } from '@/utils/withErrorLogging';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
-async function handler(req: NextApiRequest, res: NextApiResponse) {
+async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
   if (!supabase) {
-    return res.status(503).json({ error: 'Supabase not configured' });
+    res.status(503).json({ error: 'Supabase not configured' });
+    return;
   }
 
   if (req.method === 'GET') {
     const { productId } = req.query as { productId: string | string[] };
 
     if (!productId || typeof productId !== 'string') {
-      return res.status(400).json({ error: 'productId is required as query parameter' });
+      res.status(400).json({ error: 'productId is required as query parameter' });
+      return;
     }
 
     try {
@@ -25,13 +27,16 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
       if (error) {
         logErrorToProduction('Error fetching reviews:', { data: error });
-        return res.status(500).json({ error: 'Failed to fetch reviews' });
+        res.status(500).json({ error: 'Failed to fetch reviews' });
+        return;
       }
 
-      return res.status(200).json(data || []);
+      res.status(200).json(data || []);
+      return;
     } catch (error) {
       logErrorToProduction('Error fetching reviews:', { data: error });
-      return res.status(500).json({ error: 'Failed to fetch reviews' });
+      res.status(500).json({ error: 'Failed to fetch reviews' });
+      return;
     }
   }
 
@@ -40,16 +45,19 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       const { productId, rating, comment, userId } = (req.body as { productId?: string; rating?: number; comment?: string; userId?: string }) || {};
 
       if (!productId || typeof productId !== 'string') {
-        return res.status(400).json({ error: 'productId is required' });
+        res.status(400).json({ error: 'productId is required' });
+        return;
       }
 
       const parsedRating = Number(rating);
       if (!rating || isNaN(parsedRating) || parsedRating < 1 || parsedRating > 5) {
-        return res.status(400).json({ error: 'Rating must be a number between 1 and 5' });
+        res.status(400).json({ error: 'Rating must be a number between 1 and 5' });
+        return;
       }
 
       if (!userId || typeof userId !== 'string') {
-        return res.status(400).json({ error: 'userId is required' });
+        res.status(400).json({ error: 'userId is required' });
+        return;
       }
 
       const { data, error } = await supabase
@@ -60,18 +68,22 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
       if (error) {
         logErrorToProduction('Error creating review:', { data: error });
-        return res.status(500).json({ error: 'Failed to create review' });
+        res.status(500).json({ error: 'Failed to create review' });
+        return;
       }
 
-      return res.status(201).json(data);
+      res.status(201).json(data);
+      return;
     } catch (error) {
       logErrorToProduction('Error creating review:', { data: error });
-      return res.status(500).json({ error: 'Failed to create review' });
+      res.status(500).json({ error: 'Failed to create review' });
+      return;
     }
   }
 
   res.setHeader('Allow', ['GET', 'POST']);
-  return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+  res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+  return;
 }
 
 export default withErrorLogging(handler);
