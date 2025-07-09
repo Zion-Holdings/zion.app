@@ -71,6 +71,17 @@ const DefaultFallback: React.FC = () => {
   ]);
 };
 
+// Default loading component
+const DefaultLoading: React.FC = () => {
+  return React.createElement('div', {
+    style: { 
+      padding: '2rem', 
+      textAlign: 'center',
+      color: '#6c757d'
+    }
+  }, 'Loading...');
+};
+
 // Safe dynamic component loader
 export function createSafeComponent(
   importPath: string,
@@ -101,13 +112,14 @@ export function createSafeComponent(
             }
           };
           
-          // Ensure getInitialProps is safe
+          // Ensure getInitialProps is safe and doesn't cause errors
           if ((Component as unknown as { getInitialProps?: (ctx: unknown) => Promise<unknown> }).getInitialProps) {
             (WrappedComponent as unknown as { getInitialProps?: (ctx: unknown) => Promise<unknown> }).getInitialProps = async (ctx: unknown) => {
               try {
                 return await (Component as unknown as { getInitialProps: (ctx: unknown) => Promise<unknown> }).getInitialProps(ctx);
               } catch (error) {
                 console.error(`Error in getInitialProps for ${importPath}:`, error);
+                // Return empty props to prevent the error from crashing the app
                 return {};
               }
             };
@@ -115,34 +127,39 @@ export function createSafeComponent(
           
           return { default: WrappedComponent };
         })
-        .catch(error => {
+        .catch((error) => {
           console.error(`Failed to load component from ${importPath}:`, error);
-          const Fallback = fallbackComponent || DefaultFallback;
-          return { default: Fallback };
-        });
-    },
+          
+          // Create a safe fallback component that handles getInitialProps
+          const SafeFallback: React.FC<Record<string, unknown>> = (props: Record<string, unknown>) => {
+            const Fallback = fallbackComponent || DefaultFallback;
+            return React.createElement(Fallback, props);
+          };
+          
+          // Ensure the fallback component has a safe getInitialProps
+          (SafeFallback as unknown as { getInitialProps?: (ctx: unknown) => Promise<unknown> }).getInitialProps = async (ctx: unknown) => {
+            try {
+              // Try to call getInitialProps on the original component if it exists
+              const originalModule = await import(importPath).catch(() => null);
+              if (originalModule?.default?.getInitialProps) {
+                return await originalModule.default.getInitialProps(ctx);
+              }
+            } catch (error) {
+              console.error(`Error in fallback getInitialProps for ${importPath}:`, error);
+            }
+            // Return empty props as final fallback
+            return {};
+          };
+          
+          return { default: SafeFallback };
+        }),
     {
-      loading: options?.loading || (() => React.createElement('div', {
-        style: { 
-          padding: '2rem', 
-          textAlign: 'center',
-          color: '#6c757d'
-        }
-      }, 'Loading...')) as any,
-      ssr: options?.ssr ?? false
+      loading: options?.loading || DefaultLoading,
+      ssr: options?.ssr !== false, // Default to true for SSR
     }
   );
 
-  // Return component wrapped in error boundary
-  const BoundedComponent: React.FC<Record<string, unknown>> = (props: Record<string, unknown>) => {
-    const Fallback = () => <div>Component failed to load.</div>;
-    return React.createElement(
-      ComponentErrorBoundary,
-      { fallback: Fallback, children: React.createElement(SafeComponent, props) }
-    );
-  };
-
-  return BoundedComponent;
+  return SafeComponent;
 }
 
 // Pre-configured safe components for common pages

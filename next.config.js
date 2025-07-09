@@ -553,7 +553,7 @@ const nextConfig = {
 
       // CRITICAL: Enhanced process polyfill configuration
       config.plugins.push(
-        // DefinePlugin for environment variables
+        // DefinePlugin for environment variables and TypeScript helpers
         new webpack.DefinePlugin({
           'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
           'process.env': JSON.stringify({
@@ -581,12 +581,123 @@ const nextConfig = {
             NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL: process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL || '',
             NEXT_PUBLIC_SOCIAL_GITHUB_URL: process.env.NEXT_PUBLIC_SOCIAL_GITHUB_URL || '',
           }),
+          // TypeScript helpers
+          '__extends': `(function(d, b) { 
+            if (typeof b !== "function" && b !== null) 
+              throw new TypeError("Class extends value " + String(b) + " is not a constructor or null"); 
+            function __constructor() { this.constructor = d; } 
+            d.prototype = b === null ? Object.create(b) : (__constructor.prototype = b.prototype, new __constructor()); 
+          })`,
+          '__assign': `(Object.assign || function(t) { 
+            for (var i = 1; i < arguments.length; i++) { 
+              var s = arguments[i]; 
+              for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p]; 
+            } 
+            return t; 
+          })`,
+          '__rest': `(function(s, e) { 
+            var t = {}; 
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p]; 
+            if (s != null && typeof Object.getOwnPropertySymbols === "function") { 
+              var symbols = Object.getOwnPropertySymbols(s); 
+              for (var i = 0; i < symbols.length; i++) { 
+                var symbol = symbols[i]; 
+                if (symbol && e.indexOf(symbol) < 0 && Object.prototype.propertyIsEnumerable.call(s, symbol)) { 
+                  t[symbol] = s[symbol]; 
+                } 
+              } 
+            } 
+            return t; 
+          })`,
+          '__decorate': `(function(decorators, target, key, desc) { 
+            var c = arguments.length; 
+            var r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc; 
+            var d; 
+            if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc); 
+            else for (var i = decorators.length - 1; i >= 0; i--) if ((d = decorators[i])) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r; 
+            return c > 3 && r && Object.defineProperty(target, key, r), r; 
+          })`,
+          '__awaiter': `(function(thisArg, _arguments, P, generator) { 
+            function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); } 
+            return new (P || (P = Promise))(function (resolve, reject) { 
+              function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } } 
+              function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } } 
+              function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); } 
+              step((generator = generator.apply(thisArg, _arguments || [])).next()); 
+            }); 
+          })`,
+          // HTTP/HTTPS polyfills to prevent "http is not defined" errors
+          'http': `({ 
+            request: function() { throw new Error('http.request is not available in the browser'); },
+            get: function() { throw new Error('http.get is not available in the browser'); }
+          })`,
+          'https': `({ 
+            request: function() { throw new Error('https.request is not available in the browser'); },
+            get: function() { throw new Error('https.get is not available in the browser'); }
+          })`,
         }),
         // ProvidePlugin to ensure process, Buffer, and stream are always available (only for client-side)
         new webpack.ProvidePlugin({
           process: path.resolve(__dirname, 'src/utils/immediate-process-polyfill.ts'),
           Buffer: ['buffer', 'Buffer'],
           stream: path.resolve(__dirname, 'src/utils/stream-polyfill.ts'),
+        }),
+        // BannerPlugin to inject polyfills at the very beginning of every chunk
+        new webpack.BannerPlugin({
+          banner: `/* EMERGENCY POLYFILL INJECTION */
+(function() {
+  'use strict';
+  var g = typeof globalThis !== 'undefined' ? globalThis : 
+          typeof global !== 'undefined' ? global : 
+          typeof window !== 'undefined' ? window : 
+          typeof self !== 'undefined' ? self : {};
+  
+  // TypeScript helpers
+  var e = function(d, b) { 
+    if (typeof b !== "function" && b !== null) 
+      throw new TypeError("Class extends value " + String(b) + " is not a constructor or null"); 
+    function __constructor() { this.constructor = d; } 
+    d.prototype = b === null ? Object.create(b) : (__constructor.prototype = b.prototype, new __constructor()); 
+  };
+  
+  var a = Object.assign || function(t) { 
+    for (var i = 1; i < arguments.length; i++) { 
+      var s = arguments[i]; 
+      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p]; 
+    } 
+    return t; 
+  };
+  
+  // Process polyfill
+  var p = { env: { NODE_ENV: 'production' }, browser: true };
+  
+  // HTTP/HTTPS polyfills
+  var h = { 
+    request: function() { throw new Error('http.request is not available in the browser'); },
+    get: function() { throw new Error('http.get is not available in the browser'); }
+  };
+  
+  var s = { 
+    request: function() { throw new Error('https.request is not available in the browser'); },
+    get: function() { throw new Error('https.get is not available in the browser'); }
+  };
+  
+  // Inject into all possible global contexts
+  var contexts = [g, typeof window !== 'undefined' ? window : null, typeof global !== 'undefined' ? global : null, typeof self !== 'undefined' ? self : null];
+  for (var i = 0; i < contexts.length; i++) {
+    var ctx = contexts[i];
+    if (ctx) {
+      ctx.__extends = ctx.__extends || e;
+      ctx.__assign = ctx.__assign || a;
+      ctx.process = ctx.process || p;
+      ctx.http = ctx.http || h;
+      ctx.https = ctx.https || s;
+    }
+  }
+})();`,
+          test: /\.js$/,
+          entryOnly: false,
+          raw: true
         })
       );
     }

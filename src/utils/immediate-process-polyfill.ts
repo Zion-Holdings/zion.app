@@ -81,6 +81,32 @@ if (isBrowser && !isNode) {
       get: () => {
         throw new Error('http.get is not available in the browser');
       },
+      createServer: () => {
+        throw new Error('http.createServer is not available in the browser');
+      },
+      Server: class {
+        constructor() {
+          throw new Error('http.Server is not available in the browser');
+        }
+      },
+      IncomingMessage: class {
+        constructor() {
+          throw new Error('http.IncomingMessage is not available in the browser');
+        }
+      },
+      ServerResponse: class {
+        constructor() {
+          throw new Error('http.ServerResponse is not available in the browser');
+        }
+      },
+      Agent: class {
+        constructor() {
+          throw new Error('http.Agent is not available in the browser');
+        }
+      },
+      METHODS: [],
+      STATUS_CODES: {},
+      globalAgent: null,
     };
   }
 
@@ -92,6 +118,20 @@ if (isBrowser && !isNode) {
       get: () => {
         throw new Error('https.get is not available in the browser');
       },
+      createServer: () => {
+        throw new Error('https.createServer is not available in the browser');
+      },
+      Server: class {
+        constructor() {
+          throw new Error('https.Server is not available in the browser');
+        }
+      },
+      Agent: class {
+        constructor() {
+          throw new Error('https.Agent is not available in the browser');
+        }
+      },
+      globalAgent: null,
     };
   }
 

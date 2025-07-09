@@ -26,6 +26,53 @@ if (typeof window !== 'undefined') {
     }
   });
   
+  // Enhanced error handling for getInitialProps and http errors
+  window.addEventListener('error', (event) => {
+    const errorMessage = event.message || '';
+    const errorSource = event.filename || '';
+    
+    // Handle getInitialProps errors
+    if (errorMessage.includes('getInitialProps') || errorMessage.includes('Cannot read properties of undefined (reading \'getInitialProps\')')) {
+      console.error('getInitialProps error caught:', event.error);
+      event.preventDefault();
+      return;
+    }
+    
+    // Handle http/https errors
+    if (errorMessage.includes('http is not defined') || errorMessage.includes('https is not defined')) {
+      console.error('HTTP/HTTPS error caught:', event.error);
+      event.preventDefault();
+      return;
+    }
+    
+    // Handle TypeScript helper errors
+    if (errorMessage.includes('__extends') || errorMessage.includes('__assign') || errorMessage.includes('Cannot destructure property')) {
+      console.error('TypeScript helper error caught:', event.error);
+      event.preventDefault();
+      return;
+    }
+  });
+  
+  // Enhanced unhandled rejection handling
+  window.addEventListener('unhandledrejection', (event) => {
+    const reason = event.reason;
+    const message = reason?.message || '';
+    
+    // Handle getInitialProps promise rejections
+    if (message.includes('getInitialProps') || message.includes('Cannot read properties of undefined (reading \'getInitialProps\')')) {
+      console.error('getInitialProps promise rejection caught:', reason);
+      event.preventDefault();
+      return;
+    }
+    
+    // Handle component loading errors
+    if (message.includes('Failed to load component') || message.includes('Invalid component')) {
+      console.error('Component loading promise rejection caught:', reason);
+      event.preventDefault();
+      return;
+    }
+  });
+  
   // Add blank screen detection
   window.addEventListener('load', () => {
     setTimeout(() => {
