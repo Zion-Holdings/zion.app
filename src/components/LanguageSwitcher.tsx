@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import {
   useLanguage,
-  SupportedLanguage,
   SUPPORTED_LANGUAGES
 } from '@/context/LanguageContext';
+import type { SupportedLanguage } from '@/context/LanguageContext';
 import { safeStorage } from '@/utils/safeStorage';
 import { setCookie } from '@/utils/cookies';
 

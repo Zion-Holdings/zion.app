@@ -1,5 +1,6 @@
 import React from 'react';
-import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
+import { ErrorBoundary } from 'react-error-boundary';
+import type { FallbackProps } from 'react-error-boundary';
 import * as Sentry from '@sentry/nextjs';
 import { mutate } from 'swr';
 import { Button } from '@/components/ui/button';
