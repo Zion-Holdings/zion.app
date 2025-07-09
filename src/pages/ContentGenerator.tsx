@@ -28,7 +28,7 @@ export default function ContentGenerator() {
   const [autoPublish, setAutoPublish] = useState(false);
   const [includeImage, setIncludeImage] = useState(true);
   const [isGenerating, setIsGenerating] = useState(false);
-  const [previewContent, setPreviewContent] = useState<any>(null);
+  const [previewContent, setPreviewContent] = useState<unknown>(null);
   const [testEmail, setTestEmail] = useState('');
 
   useEffect(() => {
