@@ -7,7 +7,7 @@
 
 // EventEmitter polyfill (simplified)
 class EventEmitter {
-  private events: { [key: string]: Function[] } = {};
+  private events: { [key: string]: Array<(...args: unknown[]) => unknown> } = {};
 
   on(event: string, listener: (...args: unknown[]) => unknown): this {
     if (!this.events[event]) {
