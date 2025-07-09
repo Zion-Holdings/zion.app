@@ -11,13 +11,20 @@ import {
 } from '@/utils/productionLogger';
 
 
-async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req['method'] !== 'POST') {
-    res.setHeader('Allow', 'POST');
-    return res.status(405).json({ error: `Method ${req['method']} Not Allowed` });
+// Change handler type to match ApiHandler
+type ApiHandler = (req: unknown, res: unknown) => unknown;
+
+const handler: ApiHandler = async (req, res) => {
+  // Type assertions for Next.js types
+  const request = req as NextApiRequest;
+  const response = res as NextApiResponse;
+
+  if (request.method !== 'POST') {
+    response.setHeader('Allow', 'POST');
+    return response.status(405).json({ error: `Method ${request.method} Not Allowed` });
   }
 
-  const { name, email, password, userType, source, metadata } = req['body'] as {
+  const { name, email, password, userType, source, metadata } = request.body as {
     name?: string;
     email?: string;
     password?: string;
@@ -28,7 +35,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
   // Validate required fields
   if (!name || !email || !password) {
-    return res.status(400).json({ 
+    return response.status(400).json({ 
       error: 'Missing required fields: name, email, and password are required' 
     });
   }
@@ -36,16 +43,16 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   // Validate email format
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
-    return res.status(400).json({ error: 'Invalid email format' });
+    return response.status(400).json({ error: 'Invalid email format' });
   }
 
   // Validate password strength
   if (password.length < 8) {
-    return res.status(400).json({ error: 'Password must be at least 8 characters long' });
+    return response.status(400).json({ error: 'Password must be at least 8 characters long' });
   }
 
   if (!ENV_CONFIG.supabase.isConfigured) {
-    return res.status(503).json({ 
+    return response.status(503).json({ 
       error: 'Authentication service not configured',
       details: 'Supabase credentials are not properly set up'
     });
@@ -56,7 +63,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
     if (!supabase) {
       logErrorToProduction('Supabase client not available for registration');
-      return res.status(503).json({ 
+      return response.status(503).json({ 
         error: 'Authentication service unavailable',
         details: 'Supabase client is not properly initialized'
       });
@@ -65,7 +72,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     // Create user with Supabase Auth
     if (!supabase) {
       logErrorToProduction('Supabase client is null in register API. Cannot sign up user.');
-      return res.status(503).json({
+      return response.status(503).json({
         error: 'Authentication service not configured',
         details: 'Supabase client is null. Credentials may be missing.'
       });
@@ -89,20 +96,20 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       
       // Handle specific Supabase errors
       if (error.message?.includes('already registered')) {
-        return res.status(409).json({ 
+        return response.status(409).json({ 
           error: 'An account with this email already exists. Please try logging in instead.',
           code: 'EMAIL_ALREADY_EXISTS'
         });
       }
       
       if (error.message?.includes('Password should be')) {
-        return res.status(400).json({ 
+        return response.status(400).json({ 
           error: error.message,
           code: 'WEAK_PASSWORD'
         });
       }
       
-      return res.status(400).json({ 
+      return response.status(400).json({ 
         error: error.message || 'Failed to create account',
         code: error.status || 'SIGNUP_ERROR'
       });
@@ -125,7 +132,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       if (!ENV_CONFIG.supabase.serviceRoleKey) {
         logErrorToProduction('SUPABASE_SERVICE_ROLE_KEY is not configured. Cannot auto-verify email.');
         // Proceed without auto-verification, standard flow
-        return res.status(201).json({
+        return response.status(201).json({
           message: 'Registration successful. Please check your email to verify your account. (Auto-verification skipped due to missing service key)',
           emailVerificationRequired: true,
           user: {
@@ -147,7 +154,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       if (adminUpdateError) {
         logErrorToProduction('Error auto-verifying email:', { data: adminUpdateError });
         // If auto-verification fails, fall back to requiring manual verification
-        return res.status(201).json({
+        return response.status(201).json({
           message: 'Registration successful. Please check your email to verify your account. (Auto-verification failed)',
           emailVerificationRequired: true,
           user: {
@@ -168,7 +175,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
     if (emailVerificationRequired && data.user) {
       // This block will now only be reached if not auto-verified (e.g., in prod or if auto-verification failed)
-      return res.status(201).json({
+      return response.status(201).json({
         message: 'Registration successful. Please check your email to verify your account.',
         emailVerificationRequired: true,
         user: {
@@ -180,7 +187,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     }
 
     // Account created and (potentially auto-verified) ready to use
-    return res.status(201).json({
+    return response.status(201).json({
       message: `Account created successfully!${!emailVerificationRequired ? ' (Email auto-verified)' : ''}`,
       emailVerificationRequired: false, // This will be false if auto-verified, true otherwise (handled above)
       user: {
@@ -198,11 +205,11 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
   } catch (error: any) {
     logErrorToProduction('Registration error:', { data: error });
-    return res.status(500).json({ 
+    return response.status(500).json({ 
       error: 'Internal server error during registration',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
-}
+};
 
 export default withErrorLogging(handler); 
