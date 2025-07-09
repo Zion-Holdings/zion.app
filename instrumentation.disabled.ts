@@ -2,18 +2,18 @@
 
 // Import server polyfills FIRST to handle client-side globals in server context
 // Immediately define self for webpack chunk loading
-if (typeof global !== 'undefined' && typeof (global as any).self === 'undefined') {
-  (global as any).self = global;
+if (typeof global !== 'undefined' && typeof (global as Record<string, unknown>).self === 'undefined') {
+  (global as Record<string, unknown>).self = global;
 }
-if (typeof globalThis !== 'undefined' && typeof (globalThis as any).self === 'undefined') {
-  (globalThis as any).self = globalThis;
+if (typeof globalThis !== 'undefined' && typeof (globalThis as Record<string, unknown>).self === 'undefined') {
+  (globalThis as Record<string, unknown>).self = globalThis;
 }
 
 import './src/utils/server-polyfill';
 
 // Conditionally import Sentry to avoid Node.js dependencies in browser
-let Sentry: any = null;
-let onRequestError: any = null;
+let Sentry: { init?: Function } | null = null;
+let onRequestError: Function | null = null;
 
 async function initializeSentryOrMock() {
   if (process.env['NEXT_RUNTIME'] === 'edge') {
@@ -107,16 +107,21 @@ export async function register() {
       environment: SENTRY_ENVIRONMENT,
       tracesSampleRate: process.env.NODE_ENV === 'development' ? 1.0 : 0.1,
 
-      beforeSend(event: any, hint: any) {
-        // Drop events without meaningful exception messages
-        if (event.exception?.values?.[0]?.value === '' || event.exception?.values?.[0]?.value === undefined) {
-          console.log("instrumentation.ts: Sentry event dropped due to empty exception value.");
-          return null;
+      beforeSend(event: unknown, _hint: unknown) {
+        if (typeof event === 'object' && event !== null && 'exception' in event) {
+          // @ts-expect-error: event may not have exception property
+          if (event.exception?.values?.[0]?.value === '' || event.exception?.values?.[0]?.value === undefined) {
+            console.log("instrumentation.ts: Sentry event dropped due to empty exception value.");
+            return null;
+          }
         }
 
         // Filter out common development noise
         if (process.env.NODE_ENV === 'development') {
-          const errorMessage = hint.originalException?.toString() || '';
+          let errorMessage = '';
+          if (typeof _hint === 'object' && _hint !== null && 'originalException' in _hint) {
+            errorMessage = (_hint as { originalException?: unknown }).originalException?.toString() || '';
+          }
           if (errorMessage.includes('ResizeObserver') || 
               errorMessage.includes('Non-Error promise rejection captured') ||
               errorMessage.includes('Loading chunk')) {
@@ -127,15 +132,18 @@ export async function register() {
         return event;
       },
       
-      initialScope: (scope: any) => {
-        if (SENTRY_RELEASE) {
-          scope.setTag("release", SENTRY_RELEASE);
+      initialScope: (scope: unknown) => {
+        if (typeof scope === 'object' && scope !== null && 'setTag' in scope && typeof (scope as any).setTag === 'function') {
+          if (SENTRY_RELEASE) {
+            (scope as any).setTag("release", SENTRY_RELEASE);
+          }
+          if (process.env.NEXT_PUBLIC_VERCEL_ENV) {
+            (scope as any).setTag("vercel_env", process.env.NEXT_PUBLIC_VERCEL_ENV);
+          }
+          if (process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA) {
+            (scope as any).setTag("commit", process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA);
+          }
         }
-        if (SENTRY_ENVIRONMENT) {
-          scope.setTag("environment", SENTRY_ENVIRONMENT);
-        }
-        scope.setTag("runtime", "server-side");
-        return scope;
       },
 
       // Enable debug logging only in development
