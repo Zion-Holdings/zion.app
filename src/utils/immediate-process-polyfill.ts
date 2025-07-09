@@ -49,7 +49,7 @@ if (isBrowser && !isNode) {
     version: '18.0.0',
     browser: true,
     cwd: () => '/',
-    nextTick: (fn: Function) => setTimeout(fn, 0),
+    nextTick: (fn: (...args: unknown[]) => void) => setTimeout(fn, 0),
     exit: (code?: number) => {
       console.warn('process.exit called with code:', code);
     },

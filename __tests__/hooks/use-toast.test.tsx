@@ -20,7 +20,7 @@ vi.mock('@/utils/logError', () => ({
 }));
 
 describe('useToast', () => {
-  const sonnerToast = vi.mocked(require('sonner').toast) as {
+  const sonnerToast = vi.mocked(vi.importMock('sonner').toast) as {
     error: vi.Mock;
     success: vi.Mock;
     info: vi.Mock;

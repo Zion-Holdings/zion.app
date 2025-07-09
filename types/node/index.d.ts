@@ -1,6 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface Buffer {
   // Buffer interface for Node.js compatibility
+  readonly length: number;
+  toString(encoding?: string): string;
 }
 
 declare const __dirname: string;

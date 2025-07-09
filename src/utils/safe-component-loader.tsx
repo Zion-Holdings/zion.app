@@ -5,7 +5,7 @@
  * to prevent getInitialProps and other runtime errors.
  */
 
-import React, { Component } from 'react';
+import React from 'react';
 import dynamic from 'next/dynamic';
 
 // Error boundary for component loading
@@ -22,9 +22,11 @@ class ComponentErrorBoundary extends React.Component<BoundaryProps, BoundaryStat
   static getDerivedStateFromError(error: Error): BoundaryState {
     return { hasError: true };
   }
+  
   override componentDidCatch(error: Error, info: React.ErrorInfo) {
     console.error('Component loading error:', error);
   }
+  
   override render() {
     if (this.state.hasError) {
       const Fallback = this.props.fallback;
@@ -152,7 +154,8 @@ export function createSafeComponent(
           };
           
           return { default: SafeFallback };
-        }),
+        });
+    },
     {
       loading: options?.loading || DefaultLoading,
       ssr: options?.ssr !== false, // Default to true for SSR
