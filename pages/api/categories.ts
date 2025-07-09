@@ -41,13 +41,17 @@ async function getCategoriesFromDB() {
   }
 }
 
-async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  if (req['method'] !== 'GET') {
-    res.setHeader('Allow', 'GET');
-    return res.status(405).json({ error: `Method ${req['method']} Not Allowed` });
+// Change handler type to match ApiHandler
+type ApiHandler = (req: unknown, res: unknown) => unknown;
+
+const handler: ApiHandler = async (req, res) => {
+  // Type assertions for Next.js types
+  const request = req as NextApiRequest;
+  const response = res as NextApiResponse;
+
+  if (request.method !== 'GET') {
+    response.setHeader('Allow', 'GET');
+    return response.status(405).json({ error: `Method ${request.method} Not Allowed` });
   }
 
   try {
@@ -83,28 +87,28 @@ async function handler(
     );
 
     // Apply appropriate cache headers
-    applyCacheHeaders(res, CacheCategory.MEDIUM);
+    applyCacheHeaders(response, CacheCategory.MEDIUM);
     
     // Add performance headers
-    res.setHeader('X-Response-Time', Date.now().toString());
-    res.setHeader('X-Data-Source', categories.length > 0 ? 'cached' : 'computed');
+    response.setHeader('X-Response-Time', Date.now().toString());
+    response.setHeader('X-Data-Source', categories.length > 0 ? 'cached' : 'computed');
 
-    return res.status(200).json(categories);
+    return response.status(200).json(categories);
 
   } catch (error: any) {
     logErrorToProduction('Categories API error:', { data: error });
     
     // Return fallback data even on error
     if (CATEGORIES && CATEGORIES.length > 0) {
-      applyCacheHeaders(res, CacheCategory.SHORT); // Shorter cache for fallback
-      res.setHeader('X-Data-Source', 'fallback');
-      return res.status(200).json(CATEGORIES);
+      applyCacheHeaders(response, CacheCategory.SHORT); // Shorter cache for fallback
+      response.setHeader('X-Data-Source', 'fallback');
+      return response.status(200).json(CATEGORIES);
     }
 
-    return res.status(500).json({ 
+    return response.status(500).json({ 
       error: 'Categories temporarily unavailable. Please try again later.' 
     });
   }
-}
+};
 
 export default withErrorLogging(handler);
