@@ -6,12 +6,10 @@ export async function enableDevToolsInStaging() {
   const isDev =
     (typeof import.meta !== 'undefined' &&
       (import.meta as any).env &&
-      (import.meta as any).env.DEV) ||
+      ((import.meta as any).env.DEV || (import.meta as any).env.REACT_APP_DEVTOOLS === 'true')) ||
     process.env.NEXT_PUBLIC_DEVTOOLS === 'true';
   if (isDev) {
     try {
-      // The /* @vite-ignore */ comment might still be useful if we want to avoid
-      // Vite trying to be too clever with this dynamic import even in dev.
       await import(/* @vite-ignore */ 'react-devtools');
       logInfo('DevTools enabled');
     } catch (err) {
