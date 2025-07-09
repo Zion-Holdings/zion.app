@@ -1,9 +1,8 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
-import { ComponentType } from 'react';
-import {logErrorToProduction} from './productionLogger';
+import type { ComponentType, PropsWithChildren } from 'react';
+import { logErrorToProduction } from './productionLogger';
 import { logInfo } from '@/utils/productionLogger';
-
 
 // Loading component for dynamic imports
 const LoadingSpinner = () => (
@@ -20,12 +19,14 @@ const ErrorFallback = ({ error }: { error: Error }) => (
 );
 
 // Enhanced dynamic import with error handling
-export function createDynamicImport<T extends ComponentType<any>>(
+type ErrorFallbackComponent = ComponentType<{ error: Error }>;
+
+export function createDynamicImport<P = unknown, T extends ComponentType<P> = ComponentType<P>>(
   importFn: () => Promise<{ default: T }>,
   options: {
     loading?: () => React.JSX.Element;
     ssr?: boolean;
-    errorFallback?: ComponentType<{ error: Error }>;
+    errorFallback?: ErrorFallbackComponent;
   } = {}
 ) {
   const DynamicComponent = dynamic(importFn, {
@@ -34,7 +35,7 @@ export function createDynamicImport<T extends ComponentType<any>>(
   });
 
   // Wrap with error handling
-  const WrappedComponent = (props: any) => {
+  const WrappedComponent: React.FC<PropsWithChildren<P>> = (props) => {
     try {
       return <DynamicComponent {...props} />;
     } catch (error) {
@@ -62,9 +63,9 @@ export function createDynamicImport<T extends ComponentType<any>>(
 // };
 
 // Utility for preloading components
-export function preloadComponent(component: ComponentType) {
-  if (typeof window !== 'undefined' && 'preload' in component) {
-    (component as any).preload();
+export function preloadComponent(component: unknown) {
+  if (typeof window !== 'undefined' && typeof component === 'object' && component !== null && 'preload' in component && typeof (component as { preload: unknown }).preload === 'function') {
+    (component as { preload: () => void }).preload();
   }
 }
 
