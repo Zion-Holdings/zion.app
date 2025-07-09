@@ -11,7 +11,7 @@ import { Edit, Trash2, Github, Link, FileText } from 'lucide-react';
 
 
 import Image from 'next/image';
-import { PortfolioProject } from '@/types/resume';
+import type { PortfolioProject } from '@/types/resume';
 
 interface ProjectCardProps {
   project: PortfolioProject;

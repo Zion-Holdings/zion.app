@@ -26,8 +26,13 @@ export class ErrorBoundary extends Component<Props, State> {
     return { hasError: true, error };
   }
 
-  override componentDidCatch(error: Error, errorInfo: any) {
-    logErrorToProduction('ErrorBoundary caught an error:', error, errorInfo);
+  override componentDidCatch(error: Error, errorInfo: unknown) {
+    // Only pass errorInfo if it's an object
+    if (typeof errorInfo === 'object' && errorInfo !== null) {
+      logErrorToProduction('ErrorBoundary caught an error:', error, errorInfo as Record<string, unknown>);
+    } else {
+      logErrorToProduction('ErrorBoundary caught an error:', error);
+    }
   }
 
   override render() {

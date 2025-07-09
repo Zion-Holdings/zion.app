@@ -67,7 +67,6 @@ async function handler(
   const isDevelopment = process.env.NODE_ENV === 'development';
   
   if (isDevelopment) {
-    console.log('🔧 LOGIN TRACE: Starting login attempt');
     console.log('🔧 LOGIN TRACE: Request method:', req['method']);
     console.log('🔧 LOGIN TRACE: Request body keys:', Object.keys(req['body'] || {}));
     console.log('🔧 LOGIN TRACE: Environment config status:', {

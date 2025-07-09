@@ -156,29 +156,34 @@ class PerformanceOptimizer {
   }
 
   private processFIDEntry(entry: PerformanceEntry): void {
-    const fidEntry = entry as any;
-    this.metrics.firstInputDelay = fidEntry.processingStart - entry.startTime;
-    logPerformance('First Input Delay', this.metrics.firstInputDelay);
+    if ('processingStart' in entry && typeof (entry as { processingStart: number }).processingStart === 'number') {
+      const fidEntry = entry as { processingStart: number };
+      this.metrics.firstInputDelay = fidEntry.processingStart - entry.startTime;
+      logPerformance('First Input Delay', this.metrics.firstInputDelay);
 
-    if (this.metrics.firstInputDelay > this.config.performanceThresholds.fid) {
-      logWarn('High First Input Delay', {
-        fid: this.metrics.firstInputDelay,
-        threshold: this.config.performanceThresholds.fid
-      });
+      if (this.metrics.firstInputDelay > this.config.performanceThresholds.fid) {
+        logWarn('High First Input Delay', {
+          fid: this.metrics.firstInputDelay,
+          threshold: this.config.performanceThresholds.fid
+        });
+      }
     }
   }
 
   private processCLSEntry(entry: PerformanceEntry): void {
-    const clsEntry = entry as any;
-    if (!clsEntry.hadRecentInput) {
-      this.metrics.cumulativeLayoutShift = 
-        (this.metrics.cumulativeLayoutShift || 0) + clsEntry.value;
+    if ('hadRecentInput' in entry && typeof (entry as { hadRecentInput: boolean }).hadRecentInput === 'boolean' &&
+        'value' in entry && typeof (entry as { value: number }).value === 'number') {
+      const clsEntry = entry as { hadRecentInput: boolean; value: number };
+      if (!clsEntry.hadRecentInput) {
+        this.metrics.cumulativeLayoutShift = 
+          (this.metrics.cumulativeLayoutShift || 0) + clsEntry.value;
 
-      if (this.metrics.cumulativeLayoutShift && this.metrics.cumulativeLayoutShift > this.config.performanceThresholds.cls) {
-        logWarn('High Cumulative Layout Shift', {
-          cls: this.metrics.cumulativeLayoutShift,
-          threshold: this.config.performanceThresholds.cls
-        });
+        if (this.metrics.cumulativeLayoutShift && this.metrics.cumulativeLayoutShift > this.config.performanceThresholds.cls) {
+          logWarn('High Cumulative Layout Shift', {
+            cls: this.metrics.cumulativeLayoutShift,
+            threshold: this.config.performanceThresholds.cls
+          });
+        }
       }
     }
   }

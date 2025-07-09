@@ -124,7 +124,16 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
 
       // Check if the error object might be from an HTTP request (e.g., Axios error)
       // Axios errors often have a `response` object with a `status`.
-      const httpStatus = (error as any)?.response?.status;
+      let httpStatus: number | undefined = undefined;
+      if (typeof error === 'object' && error !== null && 'response' in error) {
+        const response = (error as { response?: unknown }).response;
+        if (typeof response === 'object' && response !== null && 'status' in response) {
+          const status = (response as { status?: unknown }).status;
+          if (typeof status === 'number') {
+            httpStatus = status;
+          }
+        }
+      }
 
       if (httpStatus) {
         if (httpStatus === 404) {

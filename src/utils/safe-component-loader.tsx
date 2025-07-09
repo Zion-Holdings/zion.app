@@ -10,36 +10,26 @@ import dynamic from 'next/dynamic';
 
 // Error boundary for component loading
 interface BoundaryProps {
+  fallback: React.ComponentType<{}>;
   children: React.ReactNode;
-  fallback?: React.ComponentType;
 }
 
 interface BoundaryState {
   hasError: boolean;
 }
 
-class ComponentErrorBoundary extends Component<BoundaryProps, BoundaryState> {
-  declare props: Readonly<BoundaryProps>;
-  state: BoundaryState = { hasError: false };
-
-  constructor(props: BoundaryProps) {
-    super(props);
-  }
-
-  static getDerivedStateFromError(): { hasError: boolean } {
+class ComponentErrorBoundary extends React.Component<BoundaryProps, BoundaryState> {
+  static getDerivedStateFromError(error: Error): BoundaryState {
     return { hasError: true };
   }
-
-  componentDidCatch(error: Error) {
+  override componentDidCatch(error: Error, info: React.ErrorInfo) {
     console.error('Component loading error:', error);
   }
-
-  render() {
+  override render() {
     if (this.state.hasError) {
-      const Fallback = this.props.fallback || DefaultFallback;
+      const Fallback = this.props.fallback;
       return React.createElement(Fallback);
     }
-
     return this.props.children;
   }
 }
@@ -101,7 +91,7 @@ export function createSafeComponent(
           }
           
           // Wrap component to ensure it has proper structure
-          const WrappedComponent: React.FC<any> = (props: any) => {
+          const WrappedComponent: React.FC<Record<string, unknown>> = (props: Record<string, unknown>) => {
             try {
               return React.createElement(Component, props);
             } catch (error) {
@@ -112,10 +102,10 @@ export function createSafeComponent(
           };
           
           // Ensure getInitialProps is safe
-          if ((Component as any).getInitialProps) {
-            (WrappedComponent as any).getInitialProps = async (ctx: any) => {
+          if ((Component as unknown as { getInitialProps?: (ctx: unknown) => Promise<unknown> }).getInitialProps) {
+            (WrappedComponent as unknown as { getInitialProps?: (ctx: unknown) => Promise<unknown> }).getInitialProps = async (ctx: unknown) => {
               try {
-                return await (Component as any).getInitialProps(ctx);
+                return await (Component as unknown as { getInitialProps: (ctx: unknown) => Promise<unknown> }).getInitialProps(ctx);
               } catch (error) {
                 console.error(`Error in getInitialProps for ${importPath}:`, error);
                 return {};
@@ -144,10 +134,11 @@ export function createSafeComponent(
   );
 
   // Return component wrapped in error boundary
-  const BoundedComponent: React.FC<any> = (props: any) => {
+  const BoundedComponent: React.FC<Record<string, unknown>> = (props: Record<string, unknown>) => {
+    const Fallback = () => <div>Component failed to load.</div>;
     return React.createElement(
       ComponentErrorBoundary,
-      { fallback: fallbackComponent, children: React.createElement(SafeComponent, props) }
+      { fallback: Fallback, children: React.createElement(SafeComponent, props) }
     );
   };
 

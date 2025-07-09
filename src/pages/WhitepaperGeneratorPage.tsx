@@ -154,6 +154,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
         apiPayload.distributionData = processedDistData;
       }
 
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error: funcError } = await supabase.functions.invoke('generate-whitepaper', {
         body: apiPayload,
       });
@@ -161,14 +162,14 @@ const WhitepaperGeneratorPage: React.FC = () => {
       if (funcError) {
         throw new Error(`Supabase function error: ${funcError.message}`);
       }
-      if (data && (data as any).error) {
-        throw new Error(`Generation error: ${(data as any).error}`);
+      if (data && typeof data === 'object' && 'error' in data && (data as { error?: string }).error) {
+        throw new Error(`Generation error: ${(data as { error?: string }).error}`);
       }
-      if (!data || !(data as any).whitepaperDraft) {
-        throw new Error('No whitepaper draft received from the function.');
+      if (!data || typeof data !== 'object' || !('whitepaperDraft' in data)) {
+        throw new Error('No whitepaper draft returned from API.');
       }
-      setRawDraft((data as any).whitepaperDraft);
-      setSections(parseWhitepaperDraft((data as any).whitepaperDraft));
+      setRawDraft((data as { whitepaperDraft: string }).whitepaperDraft);
+      setSections(parseWhitepaperDraft((data as { whitepaperDraft: string }).whitepaperDraft));
     } catch (e: any) {
       logErrorToProduction(e instanceof Error ? e.message : String(e), e instanceof Error ? e : undefined, { message: 'Error generating whitepaper' });
       setError(e.message || 'An unexpected error occurred.');
@@ -307,6 +308,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
         distributionChartData,
         distributionBreakdown,
       };
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data: response, error: funcError } = await supabase.functions.invoke('create-shared-whitepaper', {
         body: whitepaperPayload,
       });
@@ -342,6 +344,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
     // setCurrentSharedWhitepaperIsPublic(newPublicStatus);
 
     try {
+        if (!supabase) throw new Error('Supabase client not initialized');
         const { data: response, error: funcError } = await supabase.functions.invoke('set-shared-whitepaper-public-status', {
             body: { whitepaperId: currentSharedWhitepaperId, isPublic: newPublicStatus },
         });
@@ -375,6 +378,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
         if (!linkToSubmit || !whitepaperIdToSubmit) {
             toast.info("Generating a shareable link first to submit to counsel...");
             const whitepaperPayload = { tokenName, tokenSupply, sections, distributionChartData, distributionBreakdown };
+            if (!supabase) throw new Error('Supabase client not initialized');
             const { data: linkResponse, error: linkFuncError } = await supabase.functions.invoke('create-shared-whitepaper', {
                 body: whitepaperPayload,
             });
@@ -393,6 +397,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
         // Ensure it's public before submitting, or handle as per requirements
         if (currentSharedWhitepaperIsPublic === false) {
             toast.info("Making whitepaper public before submitting to counsel...");
+            if (!supabase) throw new Error('Supabase client not initialized');
             const { data: statusResponse, error: statusError } = await supabase.functions.invoke('set-shared-whitepaper-public-status', {
                 body: { whitepaperId: whitepaperIdToSubmit, isPublic: true },
             });
@@ -403,6 +408,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
         }
 
 
+        if (!supabase) throw new Error('Supabase client not initialized');
         const { data: notifyResponse, error: notifyError } = await supabase.functions.invoke('notify-legal-team', {
             body: {
                 whitepaperId: whitepaperIdToSubmit,

@@ -16,7 +16,7 @@ import {
   FormLabel,
   FormMessage
 } from "@/components/ui/form";
-import { WorkExperience } from '@/types/resume';
+import type { WorkExperience } from '@/types/resume';
 
 
 

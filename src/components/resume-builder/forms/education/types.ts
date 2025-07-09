@@ -1,5 +1,5 @@
 
-import { Education } from '@/types/resume';
+import type { Education } from '@/types/resume';
 
 export interface EducationFormProps {
   resumeId: string;

@@ -17,7 +17,7 @@ import apiClient from '@/services/apiClient';
 
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
 import { generateDatacenterEquipment, getEquipmentMarketStats, getRecommendedEquipment } from '@/utils/equipmentAutoFeedAlgorithm';
-import { ProductListing } from '@/types/listings';
+import type { ProductListing } from '@/types/listings';
 import { SkeletonCard } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -427,7 +427,14 @@ function EquipmentPageContent() {
 
   // Error state
   if (error && equipment.length === 0) {
-    const errorMessage = typeof error === 'string' ? error : (error as any)?.message || String(error);
+    let errorMessage: string;
+    if (typeof error === 'string') {
+      errorMessage = error;
+    } else if (typeof error === 'object' && error && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+      errorMessage = (error as { message: string }).message;
+    } else {
+      errorMessage = String(error);
+    }
     // Notify toast once for visibility (supports unit tests expectations)
     toast({ title: errorMessage, variant: 'destructive' });
     return (

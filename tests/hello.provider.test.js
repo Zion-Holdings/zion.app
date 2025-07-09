@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-require-imports
+ 
 import path from 'path';
 import http from 'http';
 import { Verifier } from '@pact-foundation/pact';
