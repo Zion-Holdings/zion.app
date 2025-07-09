@@ -1142,6 +1142,7 @@ const nextConfig = {
       ...config.resolve.fallback,
       buffer: 'buffer', // Ensure Buffer polyfill is available
       stream: path.resolve(__dirname, 'src/utils/stream-polyfill.ts'), // Custom stream polyfill
+      events: path.resolve(__dirname, 'src/utils/events-polyfill.ts'), // Events polyfill for client-side
       fs: false,
       net: false,
       tls: false,
@@ -1185,6 +1186,8 @@ const nextConfig = {
         // Removed 'buffer': 'buffer' to allow Buffer polyfill to work
         // Removed 'stream': 'stream' to allow stream polyfill to work
         'util': 'util',
+        // Removed 'events': 'events' to prevent client-side errors
+
         'assert': 'assert',
         'constants': 'constants',
         'path': 'path',
