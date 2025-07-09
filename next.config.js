@@ -438,6 +438,12 @@ const nextConfig = {
       use: [require.resolve('null-loader')],
     });
     
+    // Ignore problematic CSS files that cause SCSS parsing errors
+    config.module.rules.unshift({
+      test: /static[\\/]css[\\/].*\.css$/,
+      use: [require.resolve('null-loader')],
+    });
+    
     // Prevent Node.js core modules from being polyfilled in the client bundle
     if (!isServer) {
       config.resolve.fallback = {
