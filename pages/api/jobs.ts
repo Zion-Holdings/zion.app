@@ -125,18 +125,20 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
   if (req['method'] !== 'GET') {
     res.setHeader('Allow', 'GET');
-    return res.status(405).json({ 
+    res.status(405).json({ 
       error: 'method_not_allowed',
       message: `Method ${req['method']} Not Allowed` 
     });
+    return;
   }
 
   // Validate API key
   if (!validateApiKey(req)) {
-    return res.status(401).json({
+    res.status(401).json({
       error: 'invalid_token',
       message: 'The provided API key is invalid or missing. Use "demo_key_123" for testing.'
     });
+    return;
   }
 
   try {
@@ -188,13 +190,14 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     res.setHeader('X-Filtered-Count', result.totalFiltered.toString());
     res.setHeader('X-Page-Size', limitNum.toString());
 
-    return res.status(200).json({
+    res.status(200).json({
       jobs: result.jobs,
       count: result.totalFiltered,
       limit: limitNum,
       offset: offsetNum,
       total: result.totalAll
     });
+    return;
 
   } catch (error: any) {
     logErrorToProduction('Jobs API error:', { data: error });
@@ -203,14 +206,15 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     applyCacheHeaders(res, CacheCategory.SHORT);
     res.setHeader('X-Data-Source', 'fallback');
     
-    return res.status(200).json({
+    res.status(200).json({
       jobs: MOCK_JOBS.slice(0, 20), // Return first 20 jobs as fallback
       count: MOCK_JOBS.length,
       limit: 20,
       offset: 0,
       total: MOCK_JOBS.length
     });
+    return;
   }
 }
 
-export default withApiDocsCors(withErrorLogging(handler)); 
+export default withApiDocsCors(withErrorLogging(handler as (req: NextApiRequest, res: NextApiResponse) => Promise<void>)); 

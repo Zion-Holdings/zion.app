@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface FilterSidebarProps {
   className?: string;
@@ -11,12 +11,56 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
   filters = {},
   onFilterChange 
 }) => {
+  const [category, setCategory] = useState(filters.category || '');
+  const [minPrice, setMinPrice] = useState(filters.minPrice || '');
+  const [maxPrice, setMaxPrice] = useState(filters.maxPrice || '');
+
+  const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setCategory(e.target.value);
+    onFilterChange?.({ ...filters, category: e.target.value });
+  };
+  const handleMinPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setMinPrice(e.target.value);
+    onFilterChange?.({ ...filters, minPrice: e.target.value });
+  };
+  const handleMaxPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setMaxPrice(e.target.value);
+    onFilterChange?.({ ...filters, maxPrice: e.target.value });
+  };
+
   return (
     <div className={`filter-sidebar ${className}`}>
       <h3 className="font-semibold text-lg mb-4">Filters</h3>
-      {/* Placeholder filter content */}
       <div className="space-y-4">
-        <p className="text-sm text-gray-600">Filter options will be implemented here</p>
+        <div>
+          <label className="block text-sm font-medium mb-1">Category</label>
+          <select className="w-full border rounded px-2 py-1" value={category} onChange={handleCategoryChange}>
+            <option value="">All</option>
+            <option value="electronics">Electronics</option>
+            <option value="books">Books</option>
+            <option value="fashion">Fashion</option>
+            <option value="services">Services</option>
+          </select>
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Price Range</label>
+          <div className="flex gap-2">
+            <input
+              type="number"
+              className="w-1/2 border rounded px-2 py-1"
+              placeholder="Min"
+              value={minPrice}
+              onChange={handleMinPriceChange}
+            />
+            <input
+              type="number"
+              className="w-1/2 border rounded px-2 py-1"
+              placeholder="Max"
+              value={maxPrice}
+              onChange={handleMaxPriceChange}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
