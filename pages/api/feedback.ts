@@ -41,28 +41,32 @@ const FeedbackValidator = z.object({
   userAgent: z.string(),
 });
 
-async function handler(req: NextApiRequest, res: NextApiResponse) {
+async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
+    return;
   }
 
   const parsed = FeedbackValidator.safeParse(req['body']);
   if (!parsed.success) {
-    return res.status(400).json({
+    res.status(400).json({
       error: parsed.error?.errors[0]?.message || 'Invalid feedback data',
     });
+    return;
   }
 
   try {
     await connect();
     await Feedback.create(parsed.data);
     await sendFeedbackEmail({ ...parsed.data, comment: parsed.data.comment ?? "" }).catch(() => undefined);
-    return res.status(201).json({ success: true });
+    res.status(201).json({ success: true });
+    return;
   } catch (err) {
     logErrorToProduction('Error saving feedback:', { data: err });
-    return res.status(500).json({ error: 'Failed to save feedback' });
+    res.status(500).json({ error: 'Failed to save feedback' });
+    return;
   }
 }
 
-export default withErrorLogging(handler);
+export default withErrorLogging(handler as (req: NextApiRequest, res: NextApiResponse) => Promise<void>);
