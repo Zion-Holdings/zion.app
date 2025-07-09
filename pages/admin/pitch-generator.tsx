@@ -75,8 +75,6 @@ const PitchGeneratorPage: React.FC = () => {
     setIsSavingVersion(true);
     setError(null);
     try {
-      // Since Supabase is disabled, use Auth0 for authentication instead
-      // For now, we'll simulate the save operation without requiring a token
       let token = null;
       
       try {
@@ -96,22 +94,21 @@ const PitchGeneratorPage: React.FC = () => {
       }
 
       logInfo('Simulating API call to /api/admin/pitch-decks/save with slides data.');
-      // const response = await fetch('/api/admin/pitch-decks/save', {
-      //   method: 'POST',
-      //   headers: { 
-      //     'Content-Type': 'application/json', 
-      //     ...(token && { 'Authorization': `Bearer ${token}` })
-      //   },
-      //   body: JSON.stringify({ slides: generatedSlides, parentVersion: deckVersion }),
-      // });
-      // if (!response.ok) {
-      //   const errorData = await response.json();
-      //   throw new Error(errorData.message || 'Failed to save version');
-      // }
-      // const savedVersionData = await response.json();
+      const response = await fetch('/api/admin/pitch-decks/save', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json', 
+          ...(token && { 'Authorization': `Bearer ${token}` })
+        },
+        body: JSON.stringify({ slides: generatedSlides, parentVersion: deckVersion }),
+      });
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to save version');
+      }
+      const savedVersionData = await response.json();
 
-      await new Promise(resolve => setTimeout(resolve, 700));
-      const newVersionNumber = deckVersion; // Current version is saved, next one will be +1
+      const newVersionNumber = savedVersionData.version || deckVersion;
       const newVersionEntry = {
         version: newVersionNumber,
         savedAt: new Date().toISOString(),
@@ -201,45 +198,7 @@ const PitchGeneratorPage: React.FC = () => {
       }
 
       if (!token) {
-        // Since Supabase is disabled, generate mock slides instead of making API calls
-        logWarn('Supabase auth disabled - generating mock pitch deck slides');
-        
-        // Generate mock slides for demonstration
-        const mockSlides: Slide[] = [
-          {
-            id: '1',
-            title: 'Problem Statement',
-            content: 'Businesses struggle to find reliable AI talent and services in a fragmented marketplace.',
-            type: 'text'
-          },
-          {
-            id: '2', 
-            title: 'Solution',
-            content: 'Zion.app provides a unified AI services marketplace connecting businesses with verified AI professionals.',
-            type: 'text'
-          },
-          {
-            id: '3',
-            title: 'Market Opportunity',
-            content: 'The global AI services market is valued at $150B and growing at 25% annually.',
-            type: 'text'
-          },
-          {
-            id: '4',
-            title: 'Traction',
-            content: `Active Users: ${syncedData.activeUsers30d}\nGMV: ${syncedData.gmv}\nMRR: ${syncedData.mrr}\nYoY Growth: ${syncedData.yoyGrowth}`,
-            type: 'text'
-          },
-          {
-            id: '5',
-            title: 'Business Model',
-            content: 'Revenue streams: marketplace fees (3%), subscription plans ($99-$999/mo), and premium services.',
-            type: 'text'
-          }
-        ];
-
-        await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate API delay
-        setGeneratedSlides(mockSlides);
+        setError('Authentication token missing. Please log in again.');
         setIsGenerating(false);
         return;
       }
