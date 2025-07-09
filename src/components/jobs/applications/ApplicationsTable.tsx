@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { JobApplication } from "@/types/jobs";
+import type { JobApplication } from "@/types/jobs";
 import { Avatar as AvatarPrimitive } from "@/components/ui/avatar"; // Renamed
 import { ClickableBadge } from "@/components/ui/clickable-badge";
 import { Briefcase, User } from 'lucide-react';
@@ -145,12 +145,14 @@ export function ApplicationsTable({
         </Table>
       </div>
       
-      <HireConfirmationModal
-        isOpen={hireModalOpen}
-        onClose={() => setHireModalOpen(false)}
-        application={selectedApplication || undefined}
-        onConfirm={handleHireConfirmed}
-      />
+      {selectedApplication && (
+        <HireConfirmationModal
+          isOpen={hireModalOpen}
+          onClose={() => setHireModalOpen(false)}
+          application={selectedApplication}
+          onConfirm={handleHireConfirmed}
+        />
+      )}
     </>
   );
 }

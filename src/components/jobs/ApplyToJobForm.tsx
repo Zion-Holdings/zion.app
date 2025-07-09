@@ -13,7 +13,7 @@ import { AlertCircle, FileText, Loader2 } from 'lucide-react';
 
 
 import { formatDistanceToNow } from "date-fns";
-import { Job } from "@/types/jobs";
+import type { Job } from "@/types/jobs";
 import { toast } from "sonner";
 
 interface ApplyToJobFormProps {

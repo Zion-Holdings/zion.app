@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Control, ControllerRenderProps } from "react-hook-form";
+import type { Control, ControllerRenderProps } from "react-hook-form";
 import {
   FormField,
   FormItem, 

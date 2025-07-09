@@ -7,7 +7,7 @@ import { Calendar, User, FileText, BarChart } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Avatar as AvatarPrimitive } from "@/components/ui/avatar"; // Renamed to avoid conflict
 import { TableRow, TableCell } from "@/components/ui/table";
-import { JobApplication, ApplicationStatus } from "@/types/jobs";
+import type { JobApplication, ApplicationStatus } from "@/types/jobs";
 import { StatusBadge } from "./StatusBadge";
 import { ScoreBadge } from "./ScoreBadge";
 import { ApplicationActions } from "./ApplicationActions";

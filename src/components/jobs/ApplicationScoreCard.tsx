@@ -5,7 +5,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2, Star, BarChart2, Lightbulb } from 'lucide-react';
 import { toast } from "sonner";
-import { JobApplication } from "@/types/jobs";
+import type { JobApplication } from "@/types/jobs";
 
 interface ApplicationScoreCardProps {
   application: JobApplication;

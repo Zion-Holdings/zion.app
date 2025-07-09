@@ -1,5 +1,5 @@
 
-import { ApplicationStatus } from "@/types/jobs";
+import type { ApplicationStatus } from "@/types/jobs";
 import { Progress } from "@/components/ui/progress";
 import { CheckCircle2, Circle, CircleDot } from 'lucide-react';
 

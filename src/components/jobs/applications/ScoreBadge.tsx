@@ -1,5 +1,5 @@
 
-import { JobApplication } from "@/types/jobs";
+import type { JobApplication } from "@/types/jobs";
 
 interface ScoreBadgeProps {
   application: JobApplication;

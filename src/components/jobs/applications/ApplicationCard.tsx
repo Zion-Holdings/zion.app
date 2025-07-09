@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { formatDistanceToNow } from "date-fns";
-import { JobApplication } from "@/types/jobs";
+import type { JobApplication } from "@/types/jobs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, MessageSquare, HelpCircle, Calendar, ExternalLink, Download } from 'lucide-react';
