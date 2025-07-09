@@ -60,21 +60,21 @@ export const DynamicAnalyticsChart = dynamic(
   }
 );
 
-export const DynamicPDFGenerator = dynamic(
-  () => import('../components/pdf/PDFGenerator'),
-  { 
-    loading: LoadingSpinner,
-    ssr: false 
-  }
-);
+// export const DynamicPDFGenerator = dynamic(
+//   () => import('../components/pdf/PDFGenerator'),
+//   { 
+//     loading: LoadingSpinner,
+//     ssr: false 
+//   }
+// );
 
-export const DynamicVideoPlayer = dynamic(
-  () => import('../components/video/VideoPlayer'),
-  { 
-    loading: LoadingSkeleton,
-    ssr: false 
-  }
-);
+// export const DynamicVideoPlayer = dynamic(
+//   () => import('../components/video/VideoPlayer'),
+//   { 
+//     loading: LoadingSkeleton,
+//     ssr: false 
+//   }
+// );
 
 export const DynamicModelViewer = dynamic(
   () => import('../components/ar/ModelViewer'),
@@ -84,13 +84,13 @@ export const DynamicModelViewer = dynamic(
   }
 );
 
-export const DynamicRichEditor = dynamic(
-  () => import('../components/editor/RichTextEditor'),
-  { 
-    loading: LoadingSpinner,
-    ssr: false 
-  }
-);
+// export const DynamicRichEditor = dynamic(
+//   () => import('../components/editor/RichTextEditor'),
+//   { 
+//     loading: LoadingSpinner,
+//     ssr: false 
+//   }
+// );
 
 // Virtual list for large datasets
 export const DynamicVirtualList = dynamic(
