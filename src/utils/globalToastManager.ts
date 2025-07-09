@@ -1,24 +1,5 @@
-import type { toast as SonnerToastType } from 'sonner';
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
-
-let sonnerToast: typeof SonnerToastType;
-
-if (typeof window !== 'undefined') {
-  // Dynamically require sonner only on the client-side
-  sonnerToast = require('sonner').toast;
-} else {
-  // Provide a mock/stub for server-side to prevent crashes
-  const noop = () => {};
-  sonnerToast = noop as any;
-  sonnerToast.success = noop as any;
-  sonnerToast.error = noop as any;
-  sonnerToast.warning = noop as any;
-  sonnerToast.info = noop as any;
-  sonnerToast.message = noop as any;
-  sonnerToast.custom = noop as any;
-  sonnerToast.dismiss = noop as any;
-  // Ensure all methods used by the manager are mocked if necessary
-}
+import { toast as sonnerToast } from 'sonner';
 
 // Toast configuration constants
 const TOAST_CONFIG = {
@@ -345,14 +326,14 @@ class GlobalToastManager {
     const toast: GlobalToast = {
       id: `toast-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
       message,
-      title,
+      title: title ?? '',
       type,
-      priority: priority || this.priorityMap[type],
-      duration,
+      priority: priority !== undefined ? priority : this.priorityMap[type],
+      duration: duration !== undefined ? duration : 0,
       persistent,
-      action,
-      onRetry,
-      metadata,
+      action: action ?? { label: '', onClick: () => {} },
+      onRetry: onRetry ?? (() => {}),
+      metadata: metadata ?? {},
       createdAt: Date.now(),
     };
 
@@ -496,13 +477,13 @@ export class EnhancedGlobalErrorHandler {
     if (actualShowToastFlag) {
       const toastId = globalToastManager.showToast({
         message: this.getErrorMessage(errorMessage),
-        title: this.getErrorTitle(type),
+        title: this.getErrorTitle(type) ?? '',
         type,
-        priority,
+        priority: priority !== undefined ? priority : ToastPriority.HIGH,
         onRetry: retryAction ? () => {
           this.retryCount.set(errorKey, currentRetries + 1);
           retryAction();
-        } : undefined,
+        } : (() => {}),
         metadata: {
           ...metadata,
           originalError: error,
