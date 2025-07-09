@@ -38,11 +38,18 @@ async function listProducts(options = {}) {
     }
   }
 
-  const response = await fetch(`/api/marketplace/products?${queryParams.toString()}`);
+  const response = await fetch(
+    `/api/marketplace/products?${queryParams.toString()}`,
+  );
 
   if (!response.ok) {
-    const errorData = await response.json().catch(() => ({ message: 'Failed to list products' }));
-    throw new Error(errorData.message || `Failed to list products. Status: ${response.status}`);
+    const errorData = await response
+      .json()
+      .catch(() => ({ message: 'Failed to list products' }));
+    throw new Error(
+      errorData.message ||
+        `Failed to list products. Status: ${response.status}`,
+    );
   }
 
   return response.json();
@@ -68,8 +75,15 @@ async function getProductDetails(productId) {
   }
 
   if (!response.ok) {
-    const errorData = await response.json().catch(() => ({ message: `Failed to get product details for ID ${productId}` }));
-    throw new Error(errorData.message || `Failed to get product details. Status: ${response.status}`);
+    const errorData = await response
+      .json()
+      .catch(() => ({
+        message: `Failed to get product details for ID ${productId}`,
+      }));
+    throw new Error(
+      errorData.message ||
+        `Failed to get product details. Status: ${response.status}`,
+    );
   }
 
   return response.json();
@@ -91,8 +105,16 @@ async function getProductDetails(productId) {
 async function submitQuoteRequest(quoteDetails) {
   console.log('submitQuoteRequest called with:', quoteDetails);
 
-  if (!quoteDetails || !quoteDetails.name || !quoteDetails.email || !quoteDetails.phone || !quoteDetails.details) {
-    throw new Error('Missing required fields in quoteDetails: name, email, phone, details are required.');
+  if (
+    !quoteDetails ||
+    !quoteDetails.name ||
+    !quoteDetails.email ||
+    !quoteDetails.phone ||
+    !quoteDetails.details
+  ) {
+    throw new Error(
+      'Missing required fields in quoteDetails: name, email, phone, details are required.',
+    );
   }
 
   const response = await fetch('/api/quotes', {
@@ -107,7 +129,11 @@ async function submitQuoteRequest(quoteDetails) {
 
   if (!response.ok || !responseData.success) {
     // If responseData.success is false but response.ok is true, it's a business logic error from the API
-    throw new Error(responseData.error || responseData.message || `Failed to submit quote request. Status: ${response.status}`);
+    throw new Error(
+      responseData.error ||
+        responseData.message ||
+        `Failed to submit quote request. Status: ${response.status}`,
+    );
   }
 
   return responseData; // e.g., { success: true, ... }
@@ -134,8 +160,13 @@ async function getQuoteStatus(quoteId) {
   }
 
   if (!response.ok) {
-    const errorData = await response.json().catch(() => ({ message: `Failed to get status for quote ${quoteId}` }));
-    throw new Error(errorData.message || `Failed to get quote status. Status: ${response.status}`);
+    const errorData = await response
+      .json()
+      .catch(() => ({ message: `Failed to get status for quote ${quoteId}` }));
+    throw new Error(
+      errorData.message ||
+        `Failed to get quote status. Status: ${response.status}`,
+    );
   }
 
   return response.json();
@@ -170,8 +201,12 @@ async function listJobs(options = {}) {
   const response = await fetch(`/api/marketplace/jobs?${params.toString()}`);
 
   if (!response.ok) {
-    const errorData = await response.json().catch(() => ({ message: 'Failed to list jobs' }));
-    throw new Error(errorData.message || `Failed to list jobs. Status: ${response.status}`);
+    const errorData = await response
+      .json()
+      .catch(() => ({ message: 'Failed to list jobs' }));
+    throw new Error(
+      errorData.message || `Failed to list jobs. Status: ${response.status}`,
+    );
   }
 
   return response.json();
@@ -196,8 +231,13 @@ async function getJobDetails(jobId) {
   }
 
   if (!response.ok) {
-    const errorData = await response.json().catch(() => ({ message: `Failed to get job details for ID ${jobId}` }));
-    throw new Error(errorData.message || `Failed to get job details. Status: ${response.status}`);
+    const errorData = await response
+      .json()
+      .catch(() => ({ message: `Failed to get job details for ID ${jobId}` }));
+    throw new Error(
+      errorData.message ||
+        `Failed to get job details. Status: ${response.status}`,
+    );
   }
 
   return response.json();
@@ -232,8 +272,12 @@ async function listTalent(options = {}) {
   const response = await fetch(`/api/marketplace/talent?${params.toString()}`);
 
   if (!response.ok) {
-    const errorData = await response.json().catch(() => ({ message: 'Failed to list talent' }));
-    throw new Error(errorData.message || `Failed to list talent. Status: ${response.status}`);
+    const errorData = await response
+      .json()
+      .catch(() => ({ message: 'Failed to list talent' }));
+    throw new Error(
+      errorData.message || `Failed to list talent. Status: ${response.status}`,
+    );
   }
 
   return response.json();
@@ -258,8 +302,15 @@ async function getTalentDetails(talentId) {
   }
 
   if (!response.ok) {
-    const errorData = await response.json().catch(() => ({ message: `Failed to get talent details for ID ${talentId}` }));
-    throw new Error(errorData.message || `Failed to get talent details. Status: ${response.status}`);
+    const errorData = await response
+      .json()
+      .catch(() => ({
+        message: `Failed to get talent details for ID ${talentId}`,
+      }));
+    throw new Error(
+      errorData.message ||
+        `Failed to get talent details. Status: ${response.status}`,
+    );
   }
 
   return response.json();
@@ -273,5 +324,5 @@ export {
   listJobs,
   getJobDetails,
   listTalent,
-  getTalentDetails
+  getTalentDetails,
 };

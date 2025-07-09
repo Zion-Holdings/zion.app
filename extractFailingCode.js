@@ -4,7 +4,9 @@ const fs = require('fs');
 
 // Check if the file path is provided
 if (process.argv.length < 3) {
-  console.error('Usage: node extractFailingCode.js <path_to_eslint_report.json>');
+  console.error(
+    'Usage: node extractFailingCode.js <path_to_eslint_report.json>',
+  );
   process.exit(1);
 }
 
@@ -15,7 +17,8 @@ try {
   const report = JSON.parse(reportContent);
 
   // Extract the first error message or a default message
-  const firstErrorMessage = report[0]?.messages?.[0]?.message || 'No error found in ESLint report.';
+  const firstErrorMessage =
+    report[0]?.messages?.[0]?.message || 'No error found in ESLint report.';
 
   // For now, log the error message and a placeholder function as per the issue.
   // A more sophisticated approach would involve reading the actual file and line number
@@ -27,7 +30,6 @@ function bug() {
   // Placeholder for the actual failing code snippet
   console.log("This is a placeholder for the failing code.");
 }`);
-
 } catch (error) {
   console.error(`Error processing ESLint report: ${error.message}`);
   process.exit(1);

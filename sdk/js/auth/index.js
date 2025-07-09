@@ -36,7 +36,9 @@ async function loginWithEmail(email, password) {
   const csrfToken = await getCsrfToken(); // Simplistic CSRF fetch
   if (!csrfToken) {
     // In a real scenario, might not proceed or use a previously stored token
-    console.warn('CSRF token not found, proceeding without it for demo purposes.');
+    console.warn(
+      'CSRF token not found, proceeding without it for demo purposes.',
+    );
   }
 
   const body = new URLSearchParams();
@@ -56,11 +58,17 @@ async function loginWithEmail(email, password) {
   });
 
   if (!response.ok) {
-    const errorData = await response.json().catch(() => ({ message: 'Login failed with status: ' + response.status }));
+    const errorData = await response
+      .json()
+      .catch(() => ({
+        message: 'Login failed with status: ' + response.status,
+      }));
     // if (response.url.includes('error=CredentialsSignin')) {
     //   throw new Error('Invalid credentials.');
     // }
-    throw new Error(errorData.message || `Login failed. Status: ${response.status}`);
+    throw new Error(
+      errorData.message || `Login failed. Status: ${response.status}`,
+    );
   }
 
   // Successful login via next-auth's credentials provider usually results in a redirect
@@ -78,9 +86,9 @@ async function loginWithEmail(email, password) {
     // If redirect:false, it should return { ok: true, url: "..."}
     const loginResponseData = await response.json().catch(() => null);
     if (loginResponseData && loginResponseData.ok && loginResponseData.url) {
-        // Login was accepted by NextAuth, session should be available
-        const updatedSession = await getUser();
-        if (updatedSession && updatedSession.user) return updatedSession.user;
+      // Login was accepted by NextAuth, session should be available
+      const updatedSession = await getUser();
+      if (updatedSession && updatedSession.user) return updatedSession.user;
     }
     throw new Error('Login succeeded but session data could not be retrieved.');
   }
@@ -108,7 +116,7 @@ async function signupWithEmail(email, password, otherDetails = {}) {
 
   if (!response.ok) {
     throw new Error(
-      data.error || data.message || `Signup failed. Status: ${response.status}`
+      data.error || data.message || `Signup failed. Status: ${response.status}`,
     );
   }
   // data typically contains { message, emailVerificationRequired, user } or { user, session }
@@ -132,7 +140,9 @@ async function loginWithWallet(walletProvider) {
 
   try {
     // 1. Request accounts
-    const accounts = await walletProvider.request({ method: 'eth_requestAccounts' });
+    const accounts = await walletProvider.request({
+      method: 'eth_requestAccounts',
+    });
     if (!accounts || accounts.length === 0) {
       throw new Error('No accounts found. Please connect your wallet.');
     }
@@ -155,7 +165,9 @@ async function loginWithWallet(walletProvider) {
     const csrfToken = await getCsrfToken();
     if (!csrfToken) {
       // This is a simplified CSRF handling for demo.
-      console.warn('CSRF token not found for wallet login, proceeding without it. This is NOT secure for production.');
+      console.warn(
+        'CSRF token not found for wallet login, proceeding without it. This is NOT secure for production.',
+      );
     }
 
     // NextAuth Credentials provider expects form data or specific JSON structure.
@@ -177,8 +189,14 @@ async function loginWithWallet(walletProvider) {
     });
 
     if (!response.ok) {
-      const errorData = await response.json().catch(() => ({ message: 'Wallet login failed with status: ' + response.status }));
-      throw new Error(errorData.message || `Wallet login failed. Status: ${response.status}`);
+      const errorData = await response
+        .json()
+        .catch(() => ({
+          message: 'Wallet login failed with status: ' + response.status,
+        }));
+      throw new Error(
+        errorData.message || `Wallet login failed. Status: ${response.status}`,
+      );
     }
 
     // Similar to email login, successful NextAuth sign-in should update the session.
@@ -188,29 +206,33 @@ async function loginWithWallet(walletProvider) {
       // Notify listeners about auth state change
       if (authListeners.length > 0) {
         currentUserState = session.user;
-        authListeners.forEach(listener => listener(currentUserState));
+        authListeners.forEach((listener) => listener(currentUserState));
       }
       return session.user;
     } else {
       const loginResponseData = await response.json().catch(() => null);
       if (loginResponseData && loginResponseData.ok && loginResponseData.url) {
-          const updatedSession = await getUser();
-          if (updatedSession && updatedSession.user) {
-            if (authListeners.length > 0) {
-                currentUserState = updatedSession.user;
-                authListeners.forEach(listener => listener(currentUserState));
-            }
-            return updatedSession.user;
+        const updatedSession = await getUser();
+        if (updatedSession && updatedSession.user) {
+          if (authListeners.length > 0) {
+            currentUserState = updatedSession.user;
+            authListeners.forEach((listener) => listener(currentUserState));
           }
+          return updatedSession.user;
+        }
       }
-      throw new Error('Wallet login succeeded but session data could not be retrieved.');
+      throw new Error(
+        'Wallet login succeeded but session data could not be retrieved.',
+      );
     }
-
   } catch (error) {
     console.error('loginWithWallet error:', error);
     // More specific error handling can be added here
-    if (error.code === 4001) { // Standard EIP-1193 user rejected request error
-      throw new Error('Wallet connection or signature request rejected by user.');
+    if (error.code === 4001) {
+      // Standard EIP-1193 user rejected request error
+      throw new Error(
+        'Wallet connection or signature request rejected by user.',
+      );
     }
     throw error; // Re-throw other errors
   }
@@ -230,7 +252,9 @@ async function logout() {
   if (!csrfToken) {
     // This might occur if /api/auth/csrf fails or returns no token.
     // Depending on server config, proceeding might fail.
-    console.warn('CSRF token not found for logout. Proceeding, but this may fail if CSRF is strictly enforced.');
+    console.warn(
+      'CSRF token not found for logout. Proceeding, but this may fail if CSRF is strictly enforced.',
+    );
   }
 
   const body = new URLSearchParams();
@@ -247,13 +271,15 @@ async function logout() {
 
   if (!response.ok) {
     const errorData = await response.json().catch(() => null);
-    throw new Error(errorData?.message || `Logout failed. Status: ${response.status}`);
+    throw new Error(
+      errorData?.message || `Logout failed. Status: ${response.status}`,
+    );
   }
   // Logout successful, session should be cleared by NextAuth
   // Call a local state update if onAuthStateChanged is not based on polling getUser
   if (authListeners.length > 0) {
     currentUserState = null;
-    authListeners.forEach(listener => listener(null));
+    authListeners.forEach((listener) => listener(null));
   }
   return response.json(); // Contains info about where to redirect, etc.
 }
@@ -274,7 +300,7 @@ async function getUser() {
     const session = await response.json();
     // An empty object {} means no session
     if (Object.keys(session).length === 0) {
-        return null;
+      return null;
     }
     return session; // session object contains { user: { name, email, image }, expires: "..." }
   } catch (error) {
@@ -299,14 +325,15 @@ function onAuthStateChanged(callback) {
   // Immediately call with current (potentially null) state
   // Fetch initial state if not already fetched or if polling isn't active
   if (!pollingInterval && authListeners.length === 1) {
-    getUser().then(session => {
-      currentUserState = session ? session.user : null;
-      callback(currentUserState);
-    }).catch(() => callback(null)); // Call with null on error
+    getUser()
+      .then((session) => {
+        currentUserState = session ? session.user : null;
+        callback(currentUserState);
+      })
+      .catch(() => callback(null)); // Call with null on error
   } else {
-      callback(currentUserState);
+    callback(currentUserState);
   }
-
 
   // Start polling if this is the first listener
   if (!pollingInterval && authListeners.length > 0) {
@@ -316,24 +343,24 @@ function onAuthStateChanged(callback) {
         const newUserState = session ? session.user : null;
         if (JSON.stringify(currentUserState) !== JSON.stringify(newUserState)) {
           currentUserState = newUserState;
-          authListeners.forEach(listener => listener(currentUserState));
+          authListeners.forEach((listener) => listener(currentUserState));
         }
       } catch (error) {
         // If fetching session fails (e.g. network error), notify listeners with null
         // or maintain last known state, depending on desired behavior.
         // For now, assume error means user is logged out or session is inaccessible.
         if (currentUserState !== null) {
-            currentUserState = null;
-            authListeners.forEach(listener => listener(null));
+          currentUserState = null;
+          authListeners.forEach((listener) => listener(null));
         }
-        console.error("Error polling auth state:", error);
+        console.error('Error polling auth state:', error);
       }
     }, 5000); // Poll every 5 seconds
     console.log('Auth polling started.');
   }
 
   return () => {
-    authListeners = authListeners.filter(listener => listener !== callback);
+    authListeners = authListeners.filter((listener) => listener !== callback);
     if (authListeners.length === 0 && pollingInterval) {
       clearInterval(pollingInterval);
       pollingInterval = null;
@@ -348,5 +375,5 @@ export {
   signupWithEmail,
   logout,
   getUser,
-  onAuthStateChanged
+  onAuthStateChanged,
 };

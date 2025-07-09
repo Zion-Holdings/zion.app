@@ -2,10 +2,13 @@ module.exports = {
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/tests/jest.setup.ts'],
   transform: {
-    '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { 
-      presets: ['next/babel'],
-      plugins: []
-    }],
+    '^.+\\.(js|jsx|ts|tsx)$': [
+      'babel-jest',
+      {
+        presets: ['next/babel'],
+        plugins: [],
+      },
+    ],
   },
   transformIgnorePatterns: [
     '/node_modules/(?!(@supabase|@sentry|@reown|@walletconnect|msw|bson|fetch-mock|react-markdown|d3-\\w+|internmap|delaunator|robust-predicates|@babel|next|uint8arrays|multiformats|axios|isows|devlop|micromark|mdast-util|unist-util|zwitch|longest-streak|markdown-table|mdurl|uc.micro|linkify-it|argparse)).+\\.(js|jsx|ts|tsx)$',
@@ -14,12 +17,14 @@ module.exports = {
     // Handle CSS imports
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
     // Handle image imports
-    '\\.(gif|ttf|eot|svg|png|jpg|jpeg)$': '<rootDir>/tests/__mocks__/fileMock.js',
-    
+    '\\.(gif|ttf|eot|svg|png|jpg|jpeg)$':
+      '<rootDir>/tests/__mocks__/fileMock.js',
+
     // Fix path mappings with more specific ordering
     '^@/pages/api/(.*)$': '<rootDir>/pages/api/$1',
     '^@/pages/(.*)$': ['<rootDir>/pages/$1', '<rootDir>/src/pages/$1'],
-    '^@/components/ui/CategoryCard$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/components/ui/CategoryCard$':
+      '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/components/ui/(.*)$': '<rootDir>/src/components/ui/$1',
     '^@/components/(.*)$': '<rootDir>/src/components/$1',
     '^@/i18n$': '<rootDir>/tests/__mocks__/i18n.js',
@@ -46,20 +51,20 @@ module.exports = {
     '^@/config/(.*)$': '<rootDir>/src/config/$1',
     '^@/middleware/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^vitest$': '<rootDir>/tests/__mocks__/vitestMock.js',
-    
+
     // Special module mocks
     '^msw/node$': require.resolve('msw/node'),
     '^next/router$': 'next-router-mock',
     '^next/navigation$': '<rootDir>/tests/__mocks__/emptyModule.js',
     'react-router-dom$': '<rootDir>/src/stubs/react-router-dom.tsx',
-    
+
     // Mock heavy libraries not needed for unit tests
     '^@reown/appkit(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@walletconnect/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^uint8arrays/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^multiformats/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^react-markdown$': '<rootDir>/tests/__mocks__/reactMarkdown.js',
-    '^@/pages/(.*)\.jsx$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/pages/(.*).jsx$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/pages/Signup$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/pages/signup$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/utils/devtools$': '<rootDir>/tests/__mocks__/emptyModule.js',
@@ -68,7 +73,7 @@ module.exports = {
     '^os-utils$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/pages/api/points/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/pages/api/users/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
-    '^@/pages/Login\.jsx$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@/pages/Login.jsx$': '<rootDir>/tests/__mocks__/emptyModule.js',
     '^@/App$': '<rootDir>/src/App.tsx',
     '^@/pages/api/auth/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
     // Additional aliases for Jest environment
@@ -81,24 +86,21 @@ module.exports = {
     // Retain original mocks for middleware to avoid heavy imports in Jest
     '^@/middleware/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
   },
-  
+
   // Test file patterns
-  testMatch: [
-    "**/__tests__/**/*.[jt]s?(x)",
-    "**/?(*.)+(spec|test).[tj]s?(x)"
-  ],
-  
+  testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)'],
+
   testPathIgnorePatterns: [
-    "<rootDir>/node_modules/",
-    "<rootDir>/.next/",
-    "<rootDir>/tests/e2e/",
-    "<rootDir>/tests/storybook/",
-    "<rootDir>/supabase/functions/",
-    "<rootDir>/plugins/wallet-connector/cypress/",
-    "<rootDir>/pact/",
-    "<rootDir>/tests/visual-regression.test.ts"
+    '<rootDir>/node_modules/',
+    '<rootDir>/.next/',
+    '<rootDir>/tests/e2e/',
+    '<rootDir>/tests/storybook/',
+    '<rootDir>/supabase/functions/',
+    '<rootDir>/plugins/wallet-connector/cypress/',
+    '<rootDir>/pact/',
+    '<rootDir>/tests/visual-regression.test.ts',
   ],
-  
+
   // Coverage configuration
   collectCoverage: false,
   coverageDirectory: 'coverage',
@@ -110,20 +112,20 @@ module.exports = {
     '<rootDir>/src/types/',
     '<rootDir>/temp_essential_pages/',
   ],
-  
+
   // Global configuration
   globals: {
     'ts-jest': {
       useESM: true,
     },
   },
-  
+
   // Module file extensions
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
-  
+
   // Test timeout
   testTimeout: 30000,
-  
+
   // Clear mocks between tests
   clearMocks: true,
   restoreMocks: true,

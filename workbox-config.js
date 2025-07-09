@@ -4,5 +4,5 @@ module.exports = {
   swDest: 'public/service-worker.js',
   navigateFallback: '/index.html',
   // Prevent auth routes from falling back to index.html
-  navigateFallbackDenylist: [/^\/auth\//]
+  navigateFallbackDenylist: [/^\/auth\//],
 };

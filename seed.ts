@@ -74,13 +74,40 @@ async function main() {
   await prisma.talent.createMany({ data: talents, skipDuplicates: true });
 
   const categories = [
-    { id: 'services', name: 'Services', slug: 'services', icon: 'Briefcase', active: true },
-    { id: 'talents', name: 'Talents', slug: 'talents', icon: 'Users', active: true },
-    { id: 'equipment', name: 'Equipment', slug: 'equipment', icon: 'HardDrive', active: true },
-    { id: 'innovation', name: 'Innovation', slug: 'innovation', icon: 'Lightbulb', active: true },
+    {
+      id: 'services',
+      name: 'Services',
+      slug: 'services',
+      icon: 'Briefcase',
+      active: true,
+    },
+    {
+      id: 'talents',
+      name: 'Talents',
+      slug: 'talents',
+      icon: 'Users',
+      active: true,
+    },
+    {
+      id: 'equipment',
+      name: 'Equipment',
+      slug: 'equipment',
+      icon: 'HardDrive',
+      active: true,
+    },
+    {
+      id: 'innovation',
+      name: 'Innovation',
+      slug: 'innovation',
+      icon: 'Lightbulb',
+      active: true,
+    },
   ];
 
-  await (prisma as any).category.createMany({ data: categories, skipDuplicates: true });
+  await (prisma as any).category.createMany({
+    data: categories,
+    skipDuplicates: true,
+  });
 }
 
 main()

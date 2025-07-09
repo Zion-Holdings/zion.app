@@ -24,7 +24,9 @@ app.get('/flaky', (req, res) => {
   flakyCounter++;
   if (flakyCounter % 2 === 0) {
     setTimeout(() => {
-      res.status(200).send(`Flaky response (Attempt ${flakyCounter}): Slow (1s)`);
+      res
+        .status(200)
+        .send(`Flaky response (Attempt ${flakyCounter}): Slow (1s)`);
     }, 1000);
   } else {
     res.status(200).send(`Flaky response (Attempt ${flakyCounter}): Fast`);
@@ -36,13 +38,13 @@ app.get('/error', (req, res) => {
 });
 
 app.get('/random-error', (req, res) => {
-  if (Math.random() < 0.3) { // 30% chance of error
+  if (Math.random() < 0.3) {
+    // 30% chance of error
     res.status(502).send('Random Bad Gateway error.');
   } else {
     res.status(200).send('Randomly OK response.');
   }
 });
-
 
 app.listen(port, () => {
   console.log(`Test server listening at http://localhost:${port}`);

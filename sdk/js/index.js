@@ -4,5 +4,5 @@ import * as marketplace from './marketplace/index.js'; // Import the new module
 
 export {
   auth,
-  marketplace // Export marketplace
+  marketplace, // Export marketplace
 };
