@@ -5,7 +5,7 @@ import { MessageSquare, User, FileText, MoreVertical, Calendar, AlertTriangle, B
 import { Draggable } from "@/lib/dnd-stub";
 import { formatDistanceToNow } from "date-fns";
 import Link from "next/link";
-import { JobApplication } from "@/types/jobs";
+import type { JobApplication } from "@/types/jobs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar as AvatarPrimitive } from "@/components/ui/avatar"; // Renamed to avoid conflict
 import { Button } from "@/components/ui/button";

@@ -13,9 +13,9 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { TalentProfile } from "@/types/talent";
+import type { TalentProfile } from "@/types/talent";
 import { useAuth } from "@/hooks/useAuth";
-import { JobApplication } from "@/types/jobs";
+import type { JobApplication } from "@/types/jobs";
 
 export interface HireConfirmationModalProps {
   isOpen: boolean;
