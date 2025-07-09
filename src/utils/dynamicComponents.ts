@@ -43,6 +43,15 @@ export const DynamicBarChart = dynamic(
   }
 );
 
+// Developer tools
+export const DynamicApiLogsChart = dynamic(
+  () => import('../components/developers/ApiLogsChart'),
+  {
+    loading: LoadingSkeleton,
+    ssr: false
+  }
+);
+
 // Analytics components
 export const DynamicAnalyticsChart = dynamic(
   () => import('../components/analytics/AnalyticsChart'),
