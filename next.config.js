@@ -465,7 +465,7 @@ const nextConfig = {
         querystring: false,
         constants: false,
         domain: false,
-        events: false,
+        events: require.resolve('events/'),
         punycode: false,
         readline: false,
         string_decoder: false,
@@ -1185,7 +1185,6 @@ const nextConfig = {
         // Removed 'buffer': 'buffer' to allow Buffer polyfill to work
         // Removed 'stream': 'stream' to allow stream polyfill to work
         'util': 'util',
-        'events': 'events',
         'assert': 'assert',
         'constants': 'constants',
         'path': 'path',
