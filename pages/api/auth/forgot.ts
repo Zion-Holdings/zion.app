@@ -69,7 +69,7 @@ async function getAuth0ManagementToken() {
   return data.access_token;
 }
 
-async function handler(req: NextApiRequest, res: NextApiResponse) {
+async function handler(req: NextApiRequest, res: NextApiResponse): Promise<NextApiResponse> {
   if (req['method'] !== 'POST') {
     res.setHeader('Allow', 'POST');
     return res.status(405).json({ error: 'Method not allowed' });
