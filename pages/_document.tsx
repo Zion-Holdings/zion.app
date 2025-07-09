@@ -497,8 +497,28 @@ export default function Document() {
         <script dangerouslySetInnerHTML={{ __html: loaderTimeoutScript }} />
       </Head>
       <body>
+        <div
+          id="preload-message"
+          style={{
+            padding: '2rem',
+            textAlign: 'center',
+            fontFamily: 'sans-serif',
+          }}
+        >
+          <h2 style={{ marginBottom: '0.5rem' }}>Zion Tech Marketplace</h2>
+          <p style={{ marginBottom: '0.25rem' }}>Loading...</p>
+          <p style={{ fontSize: '0.9rem' }}>
+            If the app stays blank, run <code>./setup.sh npm</code> then
+            <code> npm run build && npm run dev</code>.
+          </p>
+        </div>
         <Main />
         <NextScript />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.getElementById('preload-message')?.remove();",
+          }}
+        />
         <script dangerouslySetInnerHTML={{ __html: blankScreenDetectScript }} />
         <script dangerouslySetInnerHTML={{ __html: messageChannelErrorScript }} />
       </body>
