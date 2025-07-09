@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
+import { ErrorBoundary } from 'react-error-boundary';
+import type { FallbackProps } from 'react-error-boundary';
 import { logInfo } from '@/utils/productionLogger';
 import {logErrorToProduction} from '@/utils/productionLogger';
 // Removed: import { useRouter } from 'next/router';
@@ -23,14 +24,14 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
     const id = traceId || generateTraceId();
     await sendErrorToBackend({
       message: error.message,
-      stack: error.stack,
-      componentStack,
+      ...(error.stack ? { stack: error.stack } : {}),
+      ...(componentStack ? { componentStack } : {}),
       url: typeof window !== 'undefined' ? window.location.href : '',
       userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
       timestamp: new Date().toISOString(),
       traceId: id,
       logs,
-      source: 'GlobalErrorBoundaryReport',
+      source: 'GlobalErrorBoundary',
     });
     try {
       const enqueueSnackbar = getEnqueueSnackbar();

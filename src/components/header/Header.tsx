@@ -69,7 +69,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
       <div className="container flex h-16 items-center justify-between px-4 sm:px-6">
         {/* Logo and Navigation */}
         <div className="flex items-center gap-6">
-          <Logo customLogo={customLogo} />
+          {customLogo ? <Logo customLogo={customLogo} /> : <Logo />}
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
