@@ -1,7 +1,5 @@
-// @ts-nocheck
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
- 
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable prefer-const */
 /**
@@ -32,17 +30,17 @@ declare global {
 // CRITICAL: Self polyfill - must be first
 if (typeof self === 'undefined') {
   if (typeof global !== 'undefined') {
-    (global as any).self = global;
+    (global as unknown as { self: typeof global }).self = global;
     if (typeof globalThis !== 'undefined') {
-      (globalThis as any).self = global;
+      (globalThis as unknown as { self: typeof global }).self = global;
     }
   } else if (typeof globalThis !== 'undefined') {
-    (globalThis as any).self = globalThis;
+    (globalThis as unknown as { self: typeof globalThis }).self = globalThis;
   } else if (typeof window !== 'undefined') {
-    (window as any).self = window;
+    (window as unknown as { self: typeof window }).self = window;
   } else {
     // Last resort - create minimal self object
-    (globalThis as any).self = {};
+    (globalThis as unknown as { self: object }).self = {};
   }
 }
 
@@ -53,24 +51,23 @@ const selfRef: any = typeof self !== 'undefined' ? self :
                     typeof window !== 'undefined' ? window : {};
 
 // CRITICAL: Webpack chunk array polyfill
-if (!selfRef.webpackChunk_N_E) {
-  selfRef.webpackChunk_N_E = [];
+if (!(selfRef as any).webpackChunk_N_E) {
+  (selfRef as any).webpackChunk_N_E = [];
 }
 
   // Ensure webpack chunk array is properly initialized
   if (typeof webpackChunk_N_E === 'undefined') {
-    // Initialize global webpack chunk array
-    (globalThis as any).webpackChunk_N_E = selfRef.webpackChunk_N_E;
+    (globalThis as any).webpackChunk_N_E = (selfRef as any).webpackChunk_N_E;
   }
 
 // TypeScript helper polyfills for runtime
 const tsHelpers = {
-  __extends: function(d: any, b: any) {
+  __extends: function(d: unknown, b: unknown) {
     if (typeof b !== "function" && b !== null)
       throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
     
-    function __constructor(this: any) { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__constructor.prototype = b.prototype, new (__constructor as any)());
+    function __constructor(this: unknown) { (this as any).constructor = d; }
+    (d as any).prototype = b === null ? Object.create(b) : (__constructor.prototype = (b as any).prototype, new (__constructor as any)());
   },
   
   __assign: function() {
@@ -133,19 +130,18 @@ Object.keys(tsHelpers).forEach(helper => {
 // Error prevention for common webpack issues
 try {
   // Prevent webpack chunk loading errors
-  if (selfRef.webpackChunk_N_E && typeof selfRef.webpackChunk_N_E.push === 'function') {
-    const originalPush = selfRef.webpackChunk_N_E.push;
-    selfRef.webpackChunk_N_E.push = function(chunk: any) {
+  if ((selfRef as any).webpackChunk_N_E && typeof (selfRef as any).webpackChunk_N_E.push === 'function') {
+    const originalPush = (selfRef as any).webpackChunk_N_E.push;
+    (selfRef as any).webpackChunk_N_E.push = function(chunk: unknown) {
       try {
         return originalPush.call(this, chunk);
-      } catch (error) {
-         
+      } catch (error: unknown) {
         console.warn('Webpack chunk loading error prevented:', error);
         return 0;
       }
     };
   }
-} catch (e) {
+} catch (e: unknown) {
   // Silently handle any errors in error prevention setup
 }
 
@@ -198,8 +194,6 @@ if (typeof window !== 'undefined') {
     if (originalOnUnhandledRejection) {
       return originalOnUnhandledRejection.call(this as any, event);
     }
-    // Allow default browser handling if no original handler
-    return false;
   };
 }
 
