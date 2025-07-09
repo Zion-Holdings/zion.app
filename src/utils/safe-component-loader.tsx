@@ -155,7 +155,8 @@ export function createSafeComponent(
           
           return { default: SafeFallback };
         });
-    },
+    }
+    ,
     {
       loading: options?.loading || DefaultLoading,
       ssr: options?.ssr !== false, // Default to true for SSR
