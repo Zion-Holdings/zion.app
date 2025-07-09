@@ -140,8 +140,26 @@ const INITIAL_EQUIPMENT: ProductListing[] = [
   }
 ];
 
+interface EquipmentStats {
+  averagePrice: number;
+  averageRating: number;
+  totalProducts: number;
+  availableCount: number;
+}
+
+interface EquipmentFilterControlsProps {
+  sortBy: string;
+  setSortBy: (value: string) => void;
+  filterCategory: string;
+  setFilterCategory: (value: string) => void;
+  categories: string[];
+  showRecommended: boolean;
+  setShowRecommended: (value: boolean) => void;
+  loading: boolean;
+}
+
 // Market insights component
-const EquipmentMarketInsights = ({ stats }: { stats: any }) => (
+const EquipmentMarketInsights = ({ stats }: { stats: EquipmentStats }) => (
   <Card className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-blue-700/30 mb-6">
     <CardContent className="p-6">
       <div className="flex items-center gap-2 mb-4">
@@ -158,11 +176,11 @@ const EquipmentMarketInsights = ({ stats }: { stats: any }) => (
           <div className="text-sm text-muted-foreground">Avg Rating</div>
         </div>
         <div className="text-center">
-          <div className="text-2xl font-bold text-purple-400">{stats.totalEquipment}</div>
+          <div className="text-2xl font-bold text-purple-400">{stats.totalProducts}</div>
           <div className="text-sm text-muted-foreground">Total Items</div>
         </div>
         <div className="text-center">
-          <div className="text-2xl font-bold text-orange-400">{stats.inStockCount}</div>
+          <div className="text-2xl font-bold text-orange-400">{stats.availableCount}</div>
           <div className="text-sm text-muted-foreground">In Stock</div>
         </div>
       </div>
@@ -173,7 +191,7 @@ const EquipmentMarketInsights = ({ stats }: { stats: any }) => (
 // Filter controls
 const EquipmentFilterControls = ({
   sortBy, setSortBy, filterCategory, setFilterCategory, categories, showRecommended, setShowRecommended, loading
-}: any) => (
+}: EquipmentFilterControlsProps) => (
   <div className="flex flex-wrap gap-4 mb-6 p-4 bg-muted/30 rounded-lg relative">
     {loading && <Spinner className="absolute right-4 top-4 h-4 w-4 text-primary" />}
     <div className="flex items-center gap-2">
@@ -393,10 +411,16 @@ function EquipmentPageContent() {
     return () => clearTimeout(timeoutId);
   }, [sortBy, filterCategory, showRecommended, refresh]);
 
-  const marketStats = useMemo(() => {
-    if (equipment.length === 0) return null;
-    return getEquipmentMarketStats(equipment);
-  }, [equipment]);
+  const stats: EquipmentStats = useMemo(() => ({
+    averagePrice: Math.round(
+      (equipment.reduce((sum, e) => sum + (e.price || 0), 0) / (equipment.length || 1))
+    ),
+    averageRating: equipment.length ? (
+      equipment.reduce((sum, e) => sum + (e.rating || 0), 0) / equipment.length
+    ) : 0,
+    totalProducts: equipment.length,
+    availableCount: equipment.filter(e => e.availability === 'In Stock').length,
+  }), [equipment]);
 
   const categories = useMemo(() => {
     // Use all possible categories, not just from current items
@@ -476,9 +500,9 @@ function EquipmentPageContent() {
         <p className="text-muted-foreground text-lg">Professional hardware for modern IT infrastructure and AI workloads</p>
       </motion.div>
 
-      {marketStats && (
+      {stats && (
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-          <EquipmentMarketInsights stats={marketStats} />
+          <EquipmentMarketInsights stats={stats} />
         </motion.div>
       )}
 
@@ -491,7 +515,7 @@ function EquipmentPageContent() {
           categories={categories}
           showRecommended={showRecommended}
           setShowRecommended={setShowRecommended}
-          loading={isFetching}
+          loading={loading}
         />
       </motion.div>
 
