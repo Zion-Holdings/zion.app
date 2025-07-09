@@ -79,10 +79,6 @@ const nextConfig = {
 
     // Disable CSS optimization and CSS processing to debug CSS issues
     optimizeCss: false,
-    experimental: {
-      // Disable CSS processing to isolate the issue
-      optimizePackageImports: false,
-    }, 
     // Memory and performance optimizations for 176+ pages
     largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
     workerThreads: false, // Disable worker threads to reduce memory usage

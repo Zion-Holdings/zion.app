@@ -69,13 +69,8 @@ async function getAuth0ManagementToken() {
   return data.access_token;
 }
 
-<<<<<<< HEAD
-async function handler(req: NextApiRequest, res: NextApiResponse): Promise<NextApiResponse> {
-  if (req['method'] !== 'POST') {
-=======
 const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
   if (req.method !== 'POST') {
->>>>>>> bb6a20ce953810b5f2bb644fe518bcc54f4e46a5
     res.setHeader('Allow', 'POST');
     res.status(405).json({ error: 'Method not allowed' });
     return;
@@ -83,35 +78,35 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
 
   // Rate limiting
   const rateLimitKey = getRateLimitKey(req);
-  if (!checkRateLimit(rateLimitKey)) {
-    res.status(429).json({
-      error: 'Too many requests. Please try again later.',
-      message: 'Too many requests. Please try again later.'
-    });
-    return;
-  }
+      if (!checkRateLimit(rateLimitKey)) {
+      res.status(429).json({
+        error: 'Too many requests. Please try again later.',
+        message: 'Too many requests. Please try again later.'
+      });
+      return;
+    }
 
   // Validate input
   const result = schema.safeParse(req.body);
-  if (!result.success) {
-    const errorMessage = result.error.errors[0]?.message || 'Invalid input';
-    res.status(400).json({ 
-      error: errorMessage,
-      message: errorMessage
-    });
-    return;
-  }
+      if (!result.success) {
+      const errorMessage = result.error.errors[0]?.message || 'Invalid input';
+      res.status(400).json({ 
+        error: errorMessage,
+        message: errorMessage
+      });
+      return;
+    }
 
   const { email } = result.data;
   const domain = process.env['AUTH0_ISSUER_BASE_URL'];
 
-  if (!domain) {
-    res.status(500).json({
-      error: 'Authentication service not configured',
-      message: 'Authentication service not configured'
-    });
-    return;
-  }
+      if (!domain) {
+      res.status(500).json({
+        error: 'Authentication service not configured',
+        message: 'Authentication service not configured'
+      });
+      return;
+    }
 
   try {
     // Get management API token
@@ -138,24 +133,22 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
     if (!createTicketResponse.ok) {
       const errorData = await createTicketResponse.json();
       logErrorToProduction('Auth0 password reset ticket creation failed:', { data: errorData });
-      if (errorData.statusCode === 404 || errorData.message?.includes('user does not exist')) {
-        res.status(200).json({
-          message: 'If your email address is registered, you will receive a password reset link shortly.'
+              if (errorData.statusCode === 404 || errorData.message?.includes('user does not exist')) {
+          res.status(200).json({
+            message: 'If your email address is registered, you will receive a password reset link shortly.'
+          });
+        }
+        if (errorData.statusCode === 429) {
+          res.status(429).json({
+            error: 'Too many requests. Please try again later.',
+            message: 'Too many requests. Please try again later.'
+          });
+        }
+        res.status(500).json({
+          error: 'Failed to send reset link. Please try again.',
+          message: 'Failed to send reset link. Please try again.'
         });
         return;
-      }
-      if (errorData.statusCode === 429) {
-        res.status(429).json({
-          error: 'Too many requests. Please try again later.',
-          message: 'Too many requests. Please try again later.'
-        });
-        return;
-      }
-      res.status(500).json({
-        error: 'Failed to send reset link. Please try again.',
-        message: 'Failed to send reset link. Please try again.'
-      });
-      return;
     }
 
     logInfo('Password reset ticket created successfully for:', { data: email });

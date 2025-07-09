@@ -36,14 +36,12 @@ Error boundaries catch error →
 ### Evidence in .env.local (Before Fix)
 ```bash
 # Corrupted file with merge conflicts:
-<<<<<<< HEAD
 # Supabase Configuration (old system)
 NEXT_PUBLIC_SUPABASE_URL=https://gnwtggeptzkqnduuthto.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIs...
-=======
+
 # More Supabase configuration (conflicting)
 NEXT_PUBLIC_SUPABASE_URL="https://dev-projectid.supabase.co"
->>>>>>> 5af139b13e3ebfcdf7d0430d44044a7030ef950e
 
 # NO AUTH0 CONFIGURATION PRESENT
 ```
