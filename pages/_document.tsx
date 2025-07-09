@@ -17,7 +17,7 @@ export default function Document() {
     }
     
     if (typeof process === 'undefined') {
-      var processObj = {
+      const processObj = {
         env: {
           NODE_ENV: 'production',
           NEXT_PUBLIC_APP_URL: '',
@@ -79,8 +79,8 @@ export default function Document() {
     if (typeof Buffer === 'undefined') {
       function BufferPolyfill(input, encoding, offset) {
         if (typeof input === 'string') {
-          var encoder = new TextEncoder();
-          var bytes = encoder.encode(input);
+          const encoder = new TextEncoder();
+          const bytes = encoder.encode(input);
           return new Uint8Array(bytes);
         } else if (input instanceof ArrayBuffer) {
           return new Uint8Array(input);
@@ -98,11 +98,11 @@ export default function Document() {
       };
       
       BufferPolyfill.alloc = function(size, fill, encoding) {
-        var buffer = new BufferPolyfill(size);
+        const buffer = new BufferPolyfill(size);
         if (fill !== undefined) {
           if (typeof fill === 'string') {
-            var encoder = new TextEncoder();
-            var fillBytes = encoder.encode(fill);
+            const encoder = new TextEncoder();
+            const fillBytes = encoder.encode(fill);
             buffer.set(fillBytes, 0);
           } else {
             buffer.fill(fill);
@@ -122,8 +122,8 @@ export default function Document() {
       // Add toString method to Uint8Array prototype for Buffer compatibility
       if (!Uint8Array.prototype.toString) {
         Uint8Array.prototype.toString = function(encoding, start, end) {
-          var decoder = new TextDecoder(encoding || 'utf8');
-          var slice = this.slice(start, end);
+          const decoder = new TextDecoder(encoding || 'utf8');
+          const slice = this.slice(start, end);
           return decoder.decode(slice);
         };
       }
@@ -150,10 +150,10 @@ export default function Document() {
 
   const themeScript = `(() => {
     try {
-      var theme = localStorage.getItem('theme');
-      var isDark = theme === 'dark' || (theme === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
-      var className = isDark ? 'dark' : 'light';
-      var root = document.documentElement;
+      const theme = localStorage.getItem('theme');
+      const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      const className = isDark ? 'dark' : 'light';
+      const root = document.documentElement;
       root.classList.add(className);
       root.setAttribute('data-theme', className);
     } catch(e) {}
@@ -161,19 +161,19 @@ export default function Document() {
   
   // Simple loader timeout without complex error handling
   const loaderTimeoutScript = `setTimeout(function(){
-    var el = document.getElementById('initial-loader');
+    const el = document.getElementById('initial-loader');
     if (el) el.style.display = 'none';
   }, 10000);`;
 
   // Detect blank screen after hydration
   const blankScreenDetectScript = `window.addEventListener('load', function () {
     setTimeout(function () {
-      var root = document.getElementById('__next');
+      const root = document.getElementById('__next');
       if (root) {
-        var hasVisible = Array.from(root.children || []).some(function (el) {
+        const hasVisible = Array.from(root.children || []).some(function (el) {
           return ['SCRIPT','STYLE','LINK'].indexOf(el.tagName) === -1;
         });
-        var isBlank = !hasVisible && root.innerText.trim() === '';
+        const isBlank = !hasVisible && root.innerText.trim() === '';
         if (isBlank) {
           console.error("Blank screen detected - replacing content");
           root.innerHTML = '<div style="padding:2rem;text-align:center;font-family:sans-serif;">\
@@ -192,12 +192,12 @@ export default function Document() {
   const messageChannelErrorScript = `
     // Intercept and suppress message channel closure errors
     (function() {
-      var originalConsoleError = console.error;
-      var originalConsoleWarn = console.warn;
+      const originalConsoleError = console.error;
+      const originalConsoleWarn = console.warn;
       
       console.error = function() {
-        var args = Array.prototype.slice.call(arguments);
-        var message = args.join(' ');
+        const args = Array.prototype.slice.call(arguments);
+        const message = args.join(' ');
         
         // Suppress message channel related errors
         if (message.includes('message channel closed') ||
@@ -221,8 +221,8 @@ export default function Document() {
       };
       
       console.warn = function() {
-        var args = Array.prototype.slice.call(arguments);
-        var message = args.join(' ');
+        const args = Array.prototype.slice.call(arguments);
+        const message = args.join(' ');
         
         // Suppress extension-related warnings
         if (message.includes('message channel closed') ||
@@ -243,7 +243,7 @@ export default function Document() {
       
       // Intercept unhandled promise rejections
       window.addEventListener('unhandledrejection', function(event) {
-        var message = event.reason && event.reason.message ? event.reason.message : String(event.reason);
+        const message = event.reason && event.reason.message ? event.reason.message : String(event.reason);
         
         if (message.includes('message channel closed') ||
             message.includes('asynchronous response by returning true') ||
@@ -264,7 +264,7 @@ export default function Document() {
       
       // Intercept global errors
       window.addEventListener('error', function(event) {
-        var message = event.message || '';
+        const message = event.message || '';
         
         if (message.includes('message channel closed') ||
             message.includes('asynchronous response by returning true') ||
@@ -318,7 +318,7 @@ export default function Document() {
                 }
                 
                 // Create minimal process object
-                var processObj = {
+                const processObj = {
                   env: {
                     NODE_ENV: 'production',
                     NEXT_PUBLIC_APP_URL: '',
@@ -391,10 +391,10 @@ export default function Document() {
                       return new BufferPolyfill(input, encoding, offset);
                     }
                     
-                    var bytes;
+                    let bytes;
                     if (typeof input === 'string') {
                       // Convert string to Uint8Array
-                      var encoder = new TextEncoder();
+                      const encoder = new TextEncoder();
                       bytes = encoder.encode(input);
                     } else if (input instanceof ArrayBuffer) {
                       bytes = new Uint8Array(input);
@@ -407,7 +407,7 @@ export default function Document() {
                     }
                     
                     // Copy bytes to this object
-                    for (var i = 0; i < bytes.length; i++) {
+                    for (let i = 0; i < bytes.length; i++) {
                       this[i] = bytes[i];
                     }
                     this.length = bytes.length;
@@ -419,16 +419,16 @@ export default function Document() {
                   };
 
                   BufferPolyfill.alloc = function(size, fill, encoding) {
-                    var buffer = new BufferPolyfill(size);
+                    const buffer = new BufferPolyfill(size);
                     if (fill !== undefined) {
                       if (typeof fill === 'string') {
-                        var encoder = new TextEncoder();
-                        var fillBytes = encoder.encode(fill);
-                        for (var i = 0; i < Math.min(fillBytes.length, size); i++) {
+                        const encoder = new TextEncoder();
+                        const fillBytes = encoder.encode(fill);
+                        for (let i = 0; i < Math.min(fillBytes.length, size); i++) {
                           buffer[i] = fillBytes[i];
                         }
                       } else {
-                        for (var i = 0; i < size; i++) {
+                        for (let i = 0; i < size; i++) {
                           buffer[i] = fill;
                         }
                       }
@@ -446,14 +446,14 @@ export default function Document() {
 
                   // Instance methods
                   BufferPolyfill.prototype.toString = function(encoding, start, end) {
-                    var decoder = new TextDecoder(encoding || 'utf8');
-                    var slice = this.slice(start, end);
+                    const decoder = new TextDecoder(encoding || 'utf8');
+                    const slice = this.slice(start, end);
                     return decoder.decode(slice);
                   };
 
                   BufferPolyfill.prototype.toJSON = function() {
-                    var data = [];
-                    for (var i = 0; i < this.length; i++) {
+                    const data = [];
+                    for (let i = 0; i < this.length; i++) {
                       data.push(this[i]);
                     }
                     return {
@@ -463,8 +463,8 @@ export default function Document() {
                   };
 
                   BufferPolyfill.prototype.slice = function(start, end) {
-                    var newBuffer = new BufferPolyfill(end - start);
-                    for (var i = start; i < end; i++) {
+                    const newBuffer = new BufferPolyfill(end - start);
+                    for (let i = start; i < end; i++) {
                       newBuffer[i - start] = this[i];
                     }
                     return newBuffer;
