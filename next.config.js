@@ -91,7 +91,7 @@ const nextConfig = {
     // Disable profiling for faster builds
     swcTraceProfiling: false,
     // Enable Node.js runtime for middleware to avoid Next.js warnings
-    nodeMiddleware: false, // Explicitly disable, was causing build issues (requires canary)
+    nodeMiddleware: true,
     // Removed esmExternals to prevent external module dynamic import issues (already handled by deleting the property below)
     // instrumentationHook is deprecated and automatically handled by presence of instrumentation.ts
   },
