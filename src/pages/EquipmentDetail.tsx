@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import { NextSeo } from '@/components/NextSeo';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ShoppingCart, Star, Truck, Shield, RotateCcw, Clock, AlertTriangle, ArrowLeft } from 'lucide-react';
 
@@ -16,7 +15,6 @@ import { ShoppingCart, Star, Truck, Shield, RotateCcw, Clock, AlertTriangle, Arr
 
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
-import { getStripe } from "@/utils/getStripe";
 import { useCart } from '@/context/CartContext';
 import { ImageWithRetry } from '@/components/ui/ImageWithRetry';
 import { equipmentListings } from '@/data/equipmentData';
@@ -87,7 +85,7 @@ export const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } =
 export default function EquipmentDetail() {
   const router = useRouter();
   const { id } = router.query as { id?: string };
-  const { isAuthenticated, user } = useAuth();
+  const { isAuthenticated, user: _user } = useAuth();
   const { items, dispatch } = useCart();
   const { formatPrice } = useCurrency();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -147,8 +145,8 @@ export default function EquipmentDetail() {
         // If not found anywhere, set error
         setError('Equipment not found');
         setLoading(false);
-      } catch (error) {
-        logErrorToProduction('Error loading equipment:', { data: error });
+      } catch (_error) {
+        logErrorToProduction('Error loading equipment:', { data: _error });
         setError('Failed to load equipment details');
         setLoading(false);
       }
@@ -168,30 +166,21 @@ export default function EquipmentDetail() {
     }
 
     setIsAdding(true);
-    try {
-      dispatch({
-        type: 'ADD_ITEM',
-        payload: {
-          id: equipment.id,
-          name: equipment.name,
-          price: equipment.price,
-          quantity,
-        },
-      });
+    dispatch({
+      type: 'ADD_ITEM',
+      payload: {
+        id: equipment.id,
+        name: equipment.name,
+        price: equipment.price,
+        quantity,
+      },
+    });
 
-      toast({
-        title: "Added to Cart",
-        description: `${equipment.name} has been added to your cart.`,
-      });
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to add item to cart. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsAdding(false);
-    }
+    toast({
+      title: "Added to Cart",
+      description: `${equipment.name} has been added to your cart.`,
+    });
+    setIsAdding(false);
   };
 
   const inCart = items.some(item => item.id === equipment?.id);
