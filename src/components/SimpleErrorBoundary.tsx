@@ -2,7 +2,7 @@ import React from 'react';
 
 interface ErrorBoundaryState {
   hasError: boolean;
-  error?: Error;
+  error: Error | undefined;
 }
 
 interface ErrorBoundaryProps {
@@ -13,7 +13,7 @@ interface ErrorBoundaryProps {
 export class SimpleErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
   constructor(props: ErrorBoundaryProps) {
     super(props);
-    this.state = { hasError: false };
+    this.state = { hasError: false, error: undefined };
   }
 
   static getDerivedStateFromError(error: Error): ErrorBoundaryState {
