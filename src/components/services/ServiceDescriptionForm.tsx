@@ -44,6 +44,7 @@ export function ServiceDescriptionForm({ onDescriptionGenerated }: ServiceDescri
     setIsLoading(true);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data: response, error } = await supabase.functions.invoke('generate-service-description', {
         body: { 
           title: data.title, 

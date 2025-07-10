@@ -33,6 +33,8 @@ export function PaymentButton({
   const { isAuthenticated, user } = useAuth();
   const router = useRouter();
   
+  if (!supabase) throw new Error('Supabase client not initialized');
+
   const handlePaymentClick = async () => {
     if (!isAuthenticated) {
       toast({
