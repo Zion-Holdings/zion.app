@@ -3,6 +3,16 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 import { isPublicRoute } from '../config/publicRoutes';
 import { logDebug } from '@/utils/productionLogger';
 
+interface ApiError {
+  response?: {
+    status?: number;
+    data?: { error?: string; message?: string };
+  };
+  config?: {
+    method?: string;
+    url?: string;
+  };
+}
 
 /**
  * Enhanced API Error Handler
@@ -27,9 +37,15 @@ export class EnhancedApiErrorHandler {
   }): void {
     const { retryAction, showToast = true, context } = options || {};
 
-    const status = (error as any).response?.status;
-    const method = (error as any).config?.method?.toUpperCase() || 'UNKNOWN';
-    const url = (error as any).config?.url || '';
+    let status: number | undefined;
+    let method: string = 'UNKNOWN';
+    let url: string = '';
+    if (typeof error === 'object' && error !== null) {
+      const apiError = error as ApiError;
+      status = apiError.response?.status;
+      method = apiError.config?.method?.toUpperCase() || 'UNKNOWN';
+      url = apiError.config?.url || '';
+    }
 
     // Skip certain URLs that shouldn't show user-facing errors
     const silentPatterns = [
@@ -38,9 +54,14 @@ export class EnhancedApiErrorHandler {
       'supabase.co', 'googleapis.com', 'github.com/api'
     ];
 
-    const shouldFailSilently = silentPatterns.some(pattern => url.includes(pattern));
+    const shouldFailSilently = url && silentPatterns.some(pattern => url.includes(pattern));
     if (shouldFailSilently) {
-      logDebug('Silent API error (${status} ${method}): ${url}', { data: (error as any).response?.data });
+      let data: unknown = undefined;
+      if (typeof error === 'object' && error !== null) {
+        const apiError = error as ApiError;
+        data = apiError.response?.data;
+      }
+      logDebug(`Silent API error (${status} ${method}): ${url}`, { data });
       return;
     }
 
@@ -120,13 +141,24 @@ export class EnhancedApiErrorHandler {
 
     // Try to get more specific error message from response
     try {
-      const responseData = (error as any).response?.data;
-      if (responseData?.error && typeof responseData.error === 'string') {
-        message = responseData.error;
-      } else if (responseData?.message && typeof responseData.message === 'string') {
-        message = responseData.message;
+      let responseData: unknown = undefined;
+      if (typeof error === 'object' && error !== null) {
+        const apiError = error as ApiError;
+        responseData = apiError.response?.data;
       }
-    } catch (e) {
+      if (
+        responseData &&
+        typeof responseData === 'object' &&
+        ('error' in responseData || 'message' in responseData)
+      ) {
+        const dataObj = responseData as { error?: string; message?: string };
+        if (dataObj.error && typeof dataObj.error === 'string') {
+          message = dataObj.error;
+        } else if (dataObj.message && typeof dataObj.message === 'string') {
+          message = dataObj.message;
+        }
+      }
+    } catch (_e) {
       // Use default message
     }
 

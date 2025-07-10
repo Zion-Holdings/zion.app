@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { DynamicListingPage } from "@/components/DynamicListingPage";
-import { ProductListing } from "@/types/listings";
+import type { ProductListing } from "@/types/listings";
 
 const MORE_TALENT_LISTINGS: ProductListing[] = [
   {

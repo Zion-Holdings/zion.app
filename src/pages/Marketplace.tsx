@@ -19,7 +19,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import Spinner from '@/components/ui/spinner';
-import { ProductListing } from '@/types/listings';
+import type { ProductListing } from '@/types/listings';
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
 import { useToast } from '@/hooks/use-toast';
 import { useAuth } from '@/context/auth/AuthProvider';
