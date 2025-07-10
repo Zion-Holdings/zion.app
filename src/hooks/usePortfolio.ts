@@ -34,9 +34,10 @@ export function usePortfolio() {
       
       setProjects(data || []);
       return data || [];
-    } catch (e: any) {
+    } catch (e: unknown) {
+      const message = e instanceof Error ? e.message : String(e);
       logErrorToProduction('Error fetching portfolio projects:', { data:  e });
-      setError(e.message);
+      setError(message);
       return [];
     } finally {
       setIsLoading(false);
@@ -78,12 +79,13 @@ export function usePortfolio() {
       
       await fetchProjects();
       return data.id;
-    } catch (e: any) {
+    } catch (e: unknown) {
+      const message = e instanceof Error ? e.message : String(e);
       logErrorToProduction('Error adding portfolio project:', { data:  e });
-      setError(e.message);
+      setError(message);
       toast({
         title: "Error",
-        description: `Could not add project: ${e.message}`,
+        description: `Could not add project: ${message}`,
         variant: "destructive"
       });
       return null;
@@ -126,12 +128,13 @@ export function usePortfolio() {
       
       await fetchProjects();
       return true;
-    } catch (e: any) {
+    } catch (e: unknown) {
+      const message = e instanceof Error ? e.message : String(e);
       logErrorToProduction('Error updating portfolio project:', { data:  e });
-      setError(e.message);
+      setError(message);
       toast({
         title: "Error",
-        description: `Could not update project: ${e.message}`,
+        description: `Could not update project: ${message}`,
         variant: "destructive"
       });
       return false;
@@ -166,12 +169,13 @@ export function usePortfolio() {
       
       setProjects(projects.filter(p => p.id !== projectId));
       return true;
-    } catch (e: any) {
+    } catch (e: unknown) {
+      const message = e instanceof Error ? e.message : String(e);
       logErrorToProduction('Error deleting portfolio project:', { data:  e });
-      setError(e.message);
+      setError(message);
       toast({
         title: "Error",
-        description: `Could not delete project: ${e.message}`,
+        description: `Could not delete project: ${message}`,
         variant: "destructive"
       });
       return false;
