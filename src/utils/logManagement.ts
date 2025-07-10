@@ -275,12 +275,12 @@ class LogManagement {
   async exportSystemReport(): Promise<{
     timestamp: string;
     analysis: LogAnalysisResult;
-    predictions: any[];
+    predictions: unknown[];
     recommendations: string[];
     raw_data: {
-      recent_logs: any[];
-      metrics: any;
-      alerts: any[];
+      recent_logs: unknown[];
+      metrics: unknown;
+      alerts: unknown[];
     };
   }> {
     try {
