@@ -27,6 +27,7 @@ export default function TokenManager() {
   }, [isAdmin]);
 
   const fetchTransactions = async () => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     const { data, error } = await supabase
       .from('token_transactions')
       .select('*')

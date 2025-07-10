@@ -64,6 +64,7 @@ export default function PartnerManager() {
       setIsLoading(true);
       // In a real application, check admin permissions here
       
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from('partner_profiles')
         .select('*')

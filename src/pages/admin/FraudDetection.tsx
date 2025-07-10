@@ -37,6 +37,7 @@ export default function FraudDetection() {
   const fetchFraudFlags = async () => {
     setIsLoading(true);
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from("fraud_flags")
         .select("*")
@@ -109,6 +110,7 @@ export default function FraudDetection() {
 
   const handleAction = async (flagId: string, action: 'warning' | 'suspension' | 'ban' | 'ignore') => {
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const status = action === 'ignore' ? 'ignored' : 'actioned';
       const actionTaken = action === 'ignore' ? 'none' : action;
       

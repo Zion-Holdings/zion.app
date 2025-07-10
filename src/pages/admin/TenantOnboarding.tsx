@@ -67,6 +67,7 @@ export default function TenantOnboarding() {
       };
       
       // Submit to Supabase
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from('whitelabel_tenants')
         .insert({
