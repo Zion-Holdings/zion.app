@@ -20,6 +20,8 @@ export function useDisputeCheck(projectId?: string, milestoneId?: string) {
       try {
         setIsLoading(true);
         
+        if (!supabase) throw new Error('Supabase client not initialized');
+
         let query = supabase
           .from("disputes")
           .select("id, status")

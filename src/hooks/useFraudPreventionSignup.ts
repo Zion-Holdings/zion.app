@@ -34,6 +34,7 @@ export function useFraudPreventionSignup() {
         logInfo('Suspicious signup detected:', { data: fraudCheck.reasons });
         
         // Create a fraud flag for admin review
+        if (!supabase) throw new Error('Supabase client not initialized');
         const { error } = await supabase.from('fraud_flags').insert({
           user_email: email,
           content_type: 'signup',
