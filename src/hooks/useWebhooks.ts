@@ -111,7 +111,7 @@ export function useWebhooks() {
       const response = await fetch(`${getWebhookUrl()}/create`, {
         method: 'POST',
         headers: {
-          'Authorization': authHeader,
+          ...(authHeader ? { 'Authorization': authHeader } : {}),
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -172,7 +172,7 @@ export function useWebhooks() {
       const response = await fetch(`${getWebhookUrl()}/toggle`, {
         method: 'POST',
         headers: {
-          'Authorization': authHeader,
+          ...(authHeader ? { 'Authorization': authHeader } : {}),
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ webhookId, isActive })
@@ -230,7 +230,7 @@ export function useWebhooks() {
       const response = await fetch(`${getWebhookUrl()}/delete`, {
         method: 'POST',
         headers: {
-          'Authorization': authHeader,
+          ...(authHeader ? { 'Authorization': authHeader } : {}),
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ webhookId })
@@ -287,7 +287,7 @@ export function useWebhooks() {
       const response = await fetch(`${getWebhookUrl()}/test`, {
         method: 'POST',
         headers: {
-          'Authorization': authHeader,
+          ...(authHeader ? { 'Authorization': authHeader } : {}),
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ webhookId, eventType })
