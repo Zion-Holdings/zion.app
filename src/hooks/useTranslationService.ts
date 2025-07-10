@@ -102,7 +102,7 @@ export function useTranslationService() {
       }
       
       // Handle mock response with fallback
-      if (!data || !(data as any)?.translations) {
+      if (!data || typeof data !== 'object' || !('translations' in data)) {
         const initialTranslations: Record<SupportedLanguage, string> = {
           en: content,
           es: '',
@@ -114,7 +114,7 @@ export function useTranslationService() {
         return { translations: initialTranslations };
       }
       
-      return { translations: (data as any).translations };
+      return { translations: typeof data === 'object' && data && 'translations' in data ? (data as { translations: unknown }).translations : undefined };
     } catch (err) {
       setIsTranslating(false);
       logErrorToProduction('Translation service error:', { data: err });
