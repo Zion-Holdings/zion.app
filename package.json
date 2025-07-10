@@ -237,7 +237,7 @@
     "@stripe/stripe-js": "^7.4.0",
     "@supabase/ssr": "0.7.0-rc.2",
     "@supabase/supabase-js": "^2.50.3",
-    "@tanstack/react-query": "^5.81.5",
+    "@tanstack/react-query": "^5.82.0",
     "@types/lodash.debounce": "^4.0.9",
     "@types/react-redux": "^7.1.34",
     "axios": "^1.10.0",
