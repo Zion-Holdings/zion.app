@@ -64,7 +64,7 @@ export const quoteRequestService = {
     
     return {
       ...data,
-      talent_name: (data as any).talent?.display_name || 'Unknown Talent',
+      talent_name: typeof data === 'object' && data && 'talent' in data && (data as { talent?: unknown }).talent && typeof (data as { talent?: { display_name?: string } }).talent === 'object' && (data as { talent?: { display_name?: string } }).talent !== null && 'display_name' in (data as { talent?: { display_name?: string } }).talent ? ((data as { talent: { display_name?: string } }).talent.display_name || 'Unknown Talent') : 'Unknown Talent',
     } as QuoteRequest;
   },
   
@@ -86,7 +86,7 @@ export const quoteRequestService = {
         .eq('id', id)
         .single();
       
-      if (data && !(data as any).viewed_at) {
+      if (data && typeof data === 'object' && !('viewed_at' in data)) {
         updates.viewed_at = new Date().toISOString();
       }
     }

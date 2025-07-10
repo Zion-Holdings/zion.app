@@ -27,23 +27,23 @@ function mapStatusMessage(status?: number, fallback = ''): string {
 
 // Define the global error handler (exported for testing purposes)
 export const globalAxiosErrorHandler = (error: unknown) => {
-  const contentType = (error as any).response?.headers?.['content-type'];
+  const contentType = typeof error === 'object' && error && 'response' in error && error.response && 'headers' in error.response ? (error.response as { headers?: Record<string, unknown> }).headers?.['content-type'] : undefined;
   if (contentType?.includes('text/html')) {
     showError('html-error', 'Server returned HTML instead of JSON');
   }
 
-  const config = (error as any).config || {};
+  const config = typeof error === 'object' && error && 'config' in error ? (error as { config?: unknown }).config || {} : {};
   const axiosRetryState = config['axios-retry']; // Standard property used by axios-retry
 
   const isRetryingAndNotFinalConfiguredRetry = axiosRetryState && axiosRetryState.attemptNumber <= axiosRetryState.retryCount;
 
-  const status = (error as any).response?.status;
+  const status = typeof error === 'object' && error && 'response' in error && error.response && 'status' in error.response ? (error.response as { status?: number }).status : undefined;
   const method = (config.method || '').toUpperCase();
   const url = config.url || '';
 
   // Handle DELETE 404 as success (item already removed)
   if (status === 404 && method === 'DELETE') {
-    return Promise.resolve((error as any).response);
+    return Promise.resolve(typeof error === 'object' && error && 'response' in error ? (error as { response?: unknown }).response : undefined);
   }
 
   // Suppress 404 toast if retries are pending
@@ -104,7 +104,7 @@ export const globalAxiosErrorHandler = (error: unknown) => {
     showApiError(error);
   } else {
     // Log background errors without showing toast
-    logDebug('Background API request failed (${status} ${method}): ${url}', { data: (error as any).response?.data });
+    logDebug(`Background API request failed (${status} ${method}): ${url}`, { data: typeof error === 'object' && error && 'response' in error && error.response && 'data' in error.response ? (error.response as { data?: unknown }).data : undefined });
   }
 
   return Promise.reject(error);
@@ -121,10 +121,10 @@ const apiClient = axios.create({
   baseURL: `${API_BASE}/api/v1/services`,
 });
 
-apiClient.interceptors.request.use((config: any) => {
+apiClient.interceptors.request.use((config: unknown) => {
   return {
-    ...config,
-    headers: { ...(config.headers || {}), Accept: 'application/json' },
+    ...(config as any),
+    headers: { ...((config as any).headers || {}), Accept: 'application/json' },
   };
 });
 
@@ -141,7 +141,7 @@ axiosRetry(apiClient, {
 apiClient.interceptors.response.use(
   (response: AxiosResponse) => response,
   async (error: unknown) => {
-    const status = (error as any).response?.status;
+    const status = typeof error === 'object' && error && 'response' in error && error.response && 'status' in error.response ? (error.response as { status?: number }).status : undefined;
 
     if (status === 401) {
       try {

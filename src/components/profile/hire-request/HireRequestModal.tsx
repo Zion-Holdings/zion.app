@@ -3,7 +3,7 @@ import React from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { HireRequestForm } from "./HireRequestForm";
 import type { TalentProfile } from "@/types/talent";
-import { UserProfile } from "@/types/auth";
+import type { UserProfile } from "@/types/auth";
 
 interface HireRequestModalProps {
   talent: TalentProfile | null;
