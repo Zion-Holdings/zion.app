@@ -121,7 +121,19 @@ export function useInterviews() {
         clients?: { display_name?: string; avatar_url?: string };
         talents?: { full_name?: string; profile_picture_url?: string };
       };
+      const validStatuses = ['requested', 'confirmed', 'declined', 'rescheduled', 'completed', 'cancelled'] as const;
+      const validPlatforms = ['zoom', 'google-meet', 'teams', 'other', 'in-app'] as const;
+      const validTypes = ['video', 'phone', 'in-person'] as const;
       const formattedInterviews = (data ?? []).map((interview: InterviewRaw): Interview => {
+        const status = validStatuses.includes(interview.status as typeof validStatuses[number])
+          ? (interview.status as typeof validStatuses[number])
+          : 'requested';
+        const meeting_platform = interview.meeting_platform && validPlatforms.includes(interview.meeting_platform as typeof validPlatforms[number])
+          ? (interview.meeting_platform as typeof validPlatforms[number])
+          : undefined;
+        const interview_type = validTypes.includes(interview.interview_type as typeof validTypes[number])
+          ? (interview.interview_type as typeof validTypes[number])
+          : 'video';
         return {
           id: interview.id,
           client_id: interview.client_id,
@@ -129,14 +141,14 @@ export function useInterviews() {
           scheduled_date: interview.scheduled_date,
           end_time: interview.end_time || '',
           duration_minutes: interview.duration_minutes,
-          status: interview.status,
+          status,
           notes: interview.notes,
           meeting_link: interview.meeting_link,
-          meeting_platform: interview.meeting_platform,
+          meeting_platform,
           created_at: interview.created_at,
           updated_at: interview.updated_at,
           title: interview.title,
-          interview_type: interview.interview_type,
+          interview_type,
           client_name: interview.clients?.display_name,
           talent_name: interview.talents?.full_name,
           client_avatar: interview.clients?.avatar_url,
