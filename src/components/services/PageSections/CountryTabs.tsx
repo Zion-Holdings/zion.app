@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/pagination';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { CountryServiceCard } from '@/components/services/CountryServiceCard';
-import { CountryPricing } from '@/data/onsiteServicePricing';
+import type { CountryPricing } from '@/data/onsiteServicePricing';
 
 interface CountryTabsProps {
   popularCountries: string[];
