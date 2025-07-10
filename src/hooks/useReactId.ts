@@ -10,8 +10,8 @@ export function useReactId(): string {
 
   // If the built-in useId is available (React 18+), prefer it for
   // consistency with React's own identifier generation.
-  if (typeof (React as any).useId === "function") {
-    return (React as any).useId()
+  if (typeof (React as unknown) === 'object' && React !== null && 'useId' in React && typeof (React as { useId?: unknown }).useId === 'function') {
+    return (React as { useId: () => string }).useId();
   }
 
   // Fallback for React < 18 – generate a persistent random id once per hook
