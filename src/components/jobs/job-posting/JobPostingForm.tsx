@@ -189,3 +189,4 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
   );
 }
 
+
