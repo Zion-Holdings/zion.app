@@ -49,7 +49,7 @@ function generateInnovationListing(index: number): ProductListing {
     author: {
       name: "AutoGen Solutions",
       id: "autogen",
-      avatarUrl: undefined,
+      avatarUrl: '',
     },
     images: ["https://source.unsplash.com/random/800x500?technology"],
     createdAt: new Date().toISOString(),
@@ -189,7 +189,7 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
                   author: {
                     name: `Provider ${index + 1}`,
                     id: `author-${index + 1}`,
-                    avatarUrl: undefined,
+                    avatarUrl: '',
                   },
                   images: [`/placeholder.svg`],
                   createdAt: new Date().toISOString(),
