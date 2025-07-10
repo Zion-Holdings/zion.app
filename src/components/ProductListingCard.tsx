@@ -185,8 +185,8 @@ const ProductListingCardComponent = ({
             <Badge variant="outline" className="bg-background text-foreground/80 border-primary/10">
               {listing.category}
             </Badge>
-            {listing.rating && typeof listing.reviewCount === 'number' && (
-              <RatingStars value={listing.rating} count={listing.reviewCount} />
+            {listing.rating && (
+              <RatingStars value={listing.rating} count={listing.reviewCount ?? 0} />
             )}
           </div>
           
