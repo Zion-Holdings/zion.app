@@ -159,9 +159,9 @@ class EnhancedErrorCollector {
     if (typeof window === 'undefined' || !('memory' in performance)) return;
 
     setInterval(() => {
-      const memory = (performance as any).memory;
-      if (memory) {
-        const memoryPressure = memory.usedJSHeapSize / memory.jsHeapSizeLimit;
+      const perf: Performance & { memory?: { usedJSHeapSize: number; jsHeapSizeLimit: number } } = performance as any;
+      if (perf.memory) {
+        const memoryPressure = perf.memory.usedJSHeapSize / perf.memory.jsHeapSizeLimit;
         this.healthMetrics.memoryPressure = memoryPressure;
 
         if (memoryPressure > 0.9) {
@@ -172,8 +172,8 @@ class EnhancedErrorCollector {
               category: 'performance',
               tags: ['memory-pressure', 'performance'],
               context: {
-                memoryUsage: memory.usedJSHeapSize,
-                memoryLimit: memory.jsHeapSizeLimit,
+                memoryUsage: perf.memory.usedJSHeapSize,
+                memoryLimit: perf.memory.jsHeapSizeLimit,
                 memoryPressure,
               },
             }

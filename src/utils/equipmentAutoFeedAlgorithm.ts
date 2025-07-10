@@ -1,4 +1,4 @@
-import { ProductListing } from "@/types/listings";
+import type { ProductListing } from "@/types/listings";
 
 // Deterministic datacenter equipment generation for IT and AI hardware
 export function generateDatacenterEquipment(count: number, startId: number = 1, seed: string = 'default'): ProductListing[] {
