@@ -196,14 +196,6 @@ class Transform extends Duplex {
     super(options);
     // Type guard for options
     const opts = typeof options === 'object' && options !== null ? options as Record<string, unknown> : {};
-<<<<<<< HEAD
-    this._internalTransform = typeof opts.transform === 'function'
-      ? opts.transform as (chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown)
-      : defaultTransform;
-    this._internalFlush = typeof opts.flush === 'function'
-      ? opts.flush as (callback: (err?: Error) => unknown) => unknown
-      : defaultFlush;
-=======
     if (typeof opts.transform === 'function') {
       this._internalTransform = opts.transform as (chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown) => unknown;
     } else {
@@ -214,7 +206,6 @@ class Transform extends Duplex {
     } else {
       this._internalFlush = (callback) => { callback(); };
     }
->>>>>>> 8a67bff44c79f9591d14830dbaf4a0b5c8b76731
   }
 
   _transform(chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown): void {
