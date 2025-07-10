@@ -58,6 +58,7 @@ export function TransactionHistory() {
     queryKey: ['transactions', user?.id, filter],
     queryFn: async () => {
       if (!user) return [];
+      if (!supabase) return [];
       
       // Build the query based on filters
       let query = supabase
