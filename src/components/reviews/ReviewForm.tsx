@@ -284,7 +284,7 @@ export function ReviewForm({
                         <div className="flex items-center space-x-2">
                           <Switch
                             aria-label="Would work again"
-                            checked={(field as { value?: boolean }).value}
+                            checked={(field as { value?: boolean }).value ?? false}
                             onCheckedChange={(field as { onChange: (v: boolean) => void }).onChange}
                           />
                           <span className="text-sm text-muted-foreground">
@@ -313,7 +313,7 @@ export function ReviewForm({
                   <FormControl>
                     <Switch
                       aria-label="Submit anonymously"
-                      checked={(field as { value?: boolean }).value}
+                      checked={(field as { value?: boolean }).value ?? false}
                       onCheckedChange={(field as { onChange: (v: boolean) => void }).onChange}
                     />
                   </FormControl>
