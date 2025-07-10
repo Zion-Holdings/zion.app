@@ -77,8 +77,8 @@ const nextConfig = {
       'fuse.js'
     ],
 
-    // Reactivate CSS optimization for better performance
-    optimizeCss: true,
+    // Temporarily disable CSS optimization to bypass static/css error
+    optimizeCss: false,
     // Memory and performance optimizations for 176+ pages
     largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
     workerThreads: true, // Reactivate worker threads for better performance
@@ -97,7 +97,7 @@ const nextConfig = {
   skipMiddlewareUrlNormalize: true,
 
   images: {
-    unoptimized: false, // Reactivate image optimization for better performance
+    unoptimized: true, // Temporarily disable image optimization to bypass CSS issues
     loader: 'default',
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
@@ -435,24 +435,15 @@ const nextConfig = {
   ],
 
   webpack: (config, { dev, isServer, webpack }) => {
-    // Ignore react-loading-skeleton CSS to prevent PostCSS/SCSS errors
+    // Simplified webpack configuration to bypass CSS issues
     const require = createRequire(import.meta.url);
-    config.module.rules.unshift({
-      test: /react-loading-skeleton[\\/]dist[\\/]skeleton\.css$/,
-      use: [require.resolve('null-loader')],
-    });
     
-    // Ignore problematic CSS files that cause SCSS parsing errors
-    config.module.rules.unshift({
-      test: /static[\\/]css[\\/].*\.css$/,
-      use: [require.resolve('null-loader')],
-    });
-    
-    // Ignore zion_academy static CSS files that cause build errors
-    config.module.rules.unshift({
-      test: /zion_academy[\\/]static[\\/]css[\\/].*\.css$/,
-      use: [require.resolve('null-loader')],
-    });
+    // Completely disable CSS minimizer plugin to prevent static/css processing errors
+    if (config.optimization && config.optimization.minimizer) {
+      config.optimization.minimizer = config.optimization.minimizer.filter(
+        minimizer => !minimizer.constructor.name.includes('CssMinimizer')
+      );
+    }
     
     // Prevent Node.js core modules from being polyfilled in the client bundle
     if (!isServer) {

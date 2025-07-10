@@ -199,12 +199,12 @@ class Transform extends Duplex {
     if (typeof opts.transform === 'function') {
       this._internalTransform = opts.transform as (chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown) => unknown;
     } else {
-      this._internalTransform = (chunk, encoding, callback) => callback();
+      this._internalTransform = (chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown) => callback();
     }
     if (typeof opts.flush === 'function') {
       this._internalFlush = opts.flush as (callback: (err?: Error) => unknown) => unknown;
     } else {
-      this._internalFlush = (callback) => { callback(); };
+      this._internalFlush = (callback: (err?: Error) => unknown) => { callback(); };
     }
   }
 
