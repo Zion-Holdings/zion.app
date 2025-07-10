@@ -84,12 +84,13 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
     setIsFormLoading(true);
 
     try {
-      const jobDataRaw = await submitJob(values);
-      if (!jobDataRaw) {
+      const jobData: JobSchemaType & { user_id: string } = await submitJob(values);
+      if (!jobData) {
         toast.error("Failed to process job data");
         setIsFormLoading(false);
         return;
       }
+<<<<<<< HEAD
       // Construct a Job object with all required fields
       const now = new Date().toISOString();
       // Parse budget from salary_range or use default
@@ -118,6 +119,8 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
         created_at: now,
         updated_at: now,
       };
+=======
+>>>>>>> be220706 (Fix TypeScript errors: job posting service and review form validation)
       if (jobId) {
         // For updates, we only need to pass the form data since the service handles the update
         await updateJob(jobId, jobData);

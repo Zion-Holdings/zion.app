@@ -53,11 +53,20 @@ export function LeaveReviewModal({
       }
       return success;
     } else {
-      // Create new review
+      // Create new review - ensure required fields are provided
+      if (!formValues.rating || !formValues.review_text) {
+        return false;
+      }
+      
       const success = await submitReview({
         ...formValues,
+<<<<<<< HEAD
         rating: formValues.rating ?? 0,
         review_text: formValues.review_text ?? "",
+=======
+        rating: formValues.rating,
+        review_text: formValues.review_text,
+>>>>>>> be220706 (Fix TypeScript errors: job posting service and review form validation)
         project_id: projectId,
         reviewee_id: revieweeId,
         is_anonymous: formValues.is_anonymous ?? false,

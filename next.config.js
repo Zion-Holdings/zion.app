@@ -2,7 +2,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import os from 'os';
 import { PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_BUILD } from 'next/constants.js';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+// import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { createRequire } from 'module';
 
 const __filename = fileURLToPath(import.meta.url);
