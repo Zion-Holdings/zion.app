@@ -10,7 +10,7 @@ import dynamic from 'next/dynamic';
 
 // Error boundary for component loading
 interface BoundaryProps {
-  fallback: React.ComponentType<{}>;
+  fallback: React.ComponentType<object>;
   children: React.ReactNode;
 }
 
@@ -37,7 +37,7 @@ class ComponentErrorBoundary extends React.Component<BoundaryProps, BoundaryStat
 }
 
 // Default fallback component
-const DefaultFallback: React.FC = () => {
+const DefaultFallback: React.FC<object> = () => {
   return React.createElement('div', {
     style: {
       padding: '2rem',
@@ -155,10 +155,9 @@ export function createSafeComponent(
           
           return { default: SafeFallback };
         });
-    }
-    ,
+    },
     {
-      loading: options?.loading || DefaultLoading,
+      loading: options?.loading ? () => React.createElement(options.loading!) : () => <DefaultLoading />, 
       ssr: options?.ssr !== false, // Default to true for SSR
     }
   );
@@ -184,24 +183,4 @@ export function SafeComponentLoader({ loader, fallback }: SafeComponentLoaderPro
       <LazyComponent />
     </React.Suspense>
   );
-}
-
-// Error boundary for lazy loaded components
-class ComponentErrorBoundary extends React.Component<{ children: React.ReactNode }, { hasError: boolean }> {
-  constructor(props: { children: React.ReactNode }) {
-    super(props);
-    this.state = { hasError: false };
-  }
-  static getDerivedStateFromError(_error: unknown) {
-    return { hasError: true };
-  }
-  override componentDidCatch(_error: unknown, _info: unknown) {
-    // Optionally log error
-  }
-  override render() {
-    if (this.state.hasError) {
-      return <div>Something went wrong.</div>;
-    }
-    return this.props.children;
-  }
 }
