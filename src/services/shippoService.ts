@@ -15,6 +15,34 @@ export interface ShippoTrackingEvent {
   timestamp: string;
 }
 
+export interface ShippoAddress {
+  name: string;
+  company?: string;
+  street1: string;
+  street2?: string;
+  street3?: string;
+  city: string;
+  state: string;
+  zip: string;
+  country: string;
+  phone?: string;
+  email?: string;
+  is_residential?: boolean;
+  metadata?: string;
+}
+
+export interface ShippoParcel {
+  length: string;
+  width: string;
+  height: string;
+  distance_unit: 'cm' | 'in' | 'ft' | 'mm' | 'm' | 'yd';
+  weight: string;
+  mass_unit: 'g' | 'oz' | 'lb' | 'kg';
+  template?: string;
+  metadata?: string;
+  extra?: Record<string, unknown>;
+}
+
 const SHIPPO_TOKEN = process.env.SHIPPO_TOKEN || '';
 const FROM_ADDRESS = {
   name: process.env.SHIPPO_FROM_NAME || 'Sender',
@@ -25,7 +53,7 @@ const FROM_ADDRESS = {
   country: process.env.SHIPPO_FROM_COUNTRY || 'US'
 };
 
-export async function createShipment(addressTo: unknown, parcels: unknown[]): Promise<ShippoShipment> {
+export async function createShipment(addressTo: ShippoAddress, parcels: ShippoParcel[]): Promise<ShippoShipment> {
   try {
     const res = await axios.post('https://api.goshippo.com/shipments/', {
       address_from: FROM_ADDRESS,
