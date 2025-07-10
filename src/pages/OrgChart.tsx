@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Switch } from '@/components/ui/switch';
 import { orgMembers } from '@/data/orgMembers';
-import { OrgMember, RoleType } from '@/types/org';
+import type { OrgMember, RoleType } from '@/types/org';
 
 const sections = ['Founders', 'Core Team', 'Contributors', 'DAO Delegates'] as const;
 

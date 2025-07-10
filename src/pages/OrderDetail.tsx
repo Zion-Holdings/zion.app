@@ -100,7 +100,7 @@ export default function OrderDetailPage() {
 
       <div>
         <h2 className="font-semibold mb-2">Tracking</h2>
-        <OrderTimeline events={order.trackingEvents} />
+        <OrderTimeline events={order.trackingEvents ?? []} />
       </div>
 
       <div className="flex gap-3">

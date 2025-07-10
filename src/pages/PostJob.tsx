@@ -35,7 +35,7 @@ export default function PostJob() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <JobPostingForm />
+            <JobPostingForm jobId={null} onSuccess={() => {}} />
           </CardContent>
         </Card>
       </main>
