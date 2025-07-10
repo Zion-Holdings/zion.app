@@ -98,8 +98,10 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
         title: jobDataRaw.title || '',
         description: jobDataRaw.description || '',
         category: (jobDataRaw.category as any) || 'other',
-        skills: Array.isArray(jobDataRaw.skills) ? jobDataRaw.skills : (typeof jobDataRaw.skills === 'string' ? jobDataRaw.skills.split(',').map((s: string) => s.trim()).filter(Boolean) : []),
-        budget: jobDataRaw.budget || { min: 0, max: 0, currency: 'USD' },
+        skills: [], // No skills in form, provide empty array
+        budget: jobDataRaw.budget && typeof jobDataRaw.budget === 'object'
+          ? jobDataRaw.budget
+          : { min: 0, max: 0, currency: 'USD' },
         deadline: jobDataRaw.expiry_date || now,
         status: jobDataRaw.status || 'new',
         created_at: jobDataRaw.created_at || now,
