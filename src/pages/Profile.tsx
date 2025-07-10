@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { GetServerSideProps } from 'next';
-import { ProfileForm, ProfileValues } from '@/components/profile/ProfileForm';
+import { ProfileForm } from '@/components/profile/ProfileForm';
+import type { ProfileValues } from '@/components/profile/ProfileForm';
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import type { Order } from '@/hooks/useOrders';
 import Link from 'next/link';

@@ -7,7 +7,8 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link'; // Changed from react-router-dom
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
-import { ROADMAP_ITEMS, RoadmapItem } from '@/data/roadmap';
+import { ROADMAP_ITEMS } from '@/data/roadmap';
+import type { RoadmapItem } from '@/data/roadmap';
 import { safeStorage } from '@/utils/safeStorage';
 
 const STATUSES: RoadmapItem['status'][] = ['Planned', 'In Progress', 'Completed'];

@@ -73,8 +73,8 @@ if (isBrowser && !isNode) {
   // dependencies accidentally execute in the browser. These stubs only expose
   // the methods used by common libraries like axios when a Node adapter is
   // bundled by mistake.
-  if (typeof (globalThis as any).http === 'undefined') {
-    (globalThis as any).http = {
+  if (typeof (globalThis as unknown as { http?: any }).http === 'undefined') {
+    (globalThis as unknown as { http: any }).http = {
       request: () => {
         throw new Error('http.request is not available in the browser');
       },
@@ -110,8 +110,8 @@ if (isBrowser && !isNode) {
     };
   }
 
-  if (typeof (globalThis as any).https === 'undefined') {
-    (globalThis as any).https = {
+  if (typeof (globalThis as unknown as { https?: any }).https === 'undefined') {
+    (globalThis as unknown as { https: any }).https = {
       request: () => {
         throw new Error('https.request is not available in the browser');
       },
@@ -137,11 +137,11 @@ if (isBrowser && !isNode) {
 
   // Define process in global scope only
   if (typeof globalThis !== 'undefined') {
-    (globalThis as any).process = processObj;
+    (globalThis as unknown as { process: any }).process = processObj;
   }
   
   if (typeof window !== 'undefined') {
-    (window as any).process = processObj;
+    (window as unknown as { process: any }).process = processObj;
   }
 
   // CRITICAL: Buffer polyfill for browser environment
@@ -191,13 +191,13 @@ if (isBrowser && !isNode) {
         return obj instanceof BufferPolyfill;
       }
 
-      toString(encoding?: string, start?: number, end?: number): string {
+      override toString(encoding?: string, start?: number, end?: number): string {
         const decoder = new TextDecoder(encoding || 'utf8');
         const slice = this.slice(start, end);
         return decoder.decode(slice);
       }
 
-      toJSON(): { type: string; data: number[] } {
+      override toJSON(): { type: string; data: number[] } {
         return {
           type: 'Buffer',
           data: Array.from(this)
@@ -207,16 +207,16 @@ if (isBrowser && !isNode) {
 
     // Define Buffer in global scope
     if (typeof globalThis !== 'undefined') {
-      (globalThis as any).Buffer = BufferPolyfill;
+      (globalThis as unknown as { Buffer: any }).Buffer = BufferPolyfill;
     }
     
     if (typeof window !== 'undefined') {
-      (window as any).Buffer = BufferPolyfill;
+      (window as unknown as { Buffer: any }).Buffer = BufferPolyfill;
     }
   }
 
   // Minimal util polyfill for browser environments
-  if (typeof (globalThis as any).util === 'undefined') {
+  if (typeof (globalThis as unknown as { util?: any }).util === 'undefined') {
     const utilPolyfill: any = {
       TextEncoder: globalThis.TextEncoder,
       TextDecoder: globalThis.TextDecoder,
@@ -236,16 +236,16 @@ if (isBrowser && !isNode) {
       types: {},
     };
 
-    (globalThis as any).util = utilPolyfill;
+    (globalThis as unknown as { util: any }).util = utilPolyfill;
     if (typeof window !== 'undefined') {
-      (window as any).util = utilPolyfill;
+      (window as unknown as { util: any }).util = utilPolyfill;
     }
   }
 
 }
 
 // Export a safe process accessor
-export const safeProcess = typeof process !== 'undefined' ? process : (globalThis as any).process;
+export const safeProcess = typeof process !== 'undefined' ? process : (globalThis as unknown as { process: any }).process;
 
 // Export safe environment accessors
 export const safeEnv = {

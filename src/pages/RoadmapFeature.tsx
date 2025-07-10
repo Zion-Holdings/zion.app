@@ -8,7 +8,8 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
-import { ROADMAP_ITEMS, RoadmapItem } from '@/data/roadmap';
+import { ROADMAP_ITEMS } from '@/data/roadmap';
+import type { RoadmapItem } from '@/data/roadmap';
 import { safeStorage } from '@/utils/safeStorage';
 
 export default function RoadmapFeaturePage() {
