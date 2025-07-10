@@ -17,6 +17,7 @@ export interface ApiKey {
   last_used_at?: string;
   revoked: boolean;
   key_prefix: string;
+  is_active: boolean;
 }
 
 export interface ApiLog {
