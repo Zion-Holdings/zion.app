@@ -75,7 +75,14 @@ export function SignUpForm() {
         });
 
         if (result?.error) {
-          const errorMsg = typeof result.error === 'string' ? result.error : (result.error && typeof result.error.message === 'string' ? result.error.message : 'Signup failed. Please try again.');
+          let errorMsg: string;
+          if (typeof result.error === 'string') {
+            errorMsg = result.error;
+          } else if (typeof result.error === 'object' && result.error !== null && 'message' in result.error && typeof (result.error as { message?: unknown }).message === 'string') {
+            errorMsg = (result.error as { message: string }).message;
+          } else {
+            errorMsg = 'Signup failed. Please try again.';
+          }
           throw new Error(errorMsg);
         }
 
