@@ -2,7 +2,8 @@
 import { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm, ControllerRenderProps } from "react-hook-form";
+import { useForm } from "react-hook-form";
+import type { ControllerRenderProps } from "react-hook-form";
 import { z } from "zod";
 import { LockKeyhole } from 'lucide-react';
 
