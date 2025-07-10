@@ -111,7 +111,7 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
         budget,
         deadline: jobDataRaw.expiry_date || now,
         status: jobDataRaw.status || 'new',
-        created_at: jobDataRaw.created_at || now,
+        created_at: now,
         updated_at: now,
       };
       if (jobId) {
