@@ -50,7 +50,7 @@ const nextConfig = {
   reactStrictMode: true,
   // Optimized for fast builds (hanging issue SOLVED)
   // outputFileTracing: false, // Intentionally disabled via env vars in build scripts and netlify.toml to prevent hanging.
-  productionBrowserSourceMaps: false, // Disable for faster builds
+  productionBrowserSourceMaps: true, // Reactivate for better debugging
   
   // Environment configuration
   env: {
@@ -77,15 +77,15 @@ const nextConfig = {
       'fuse.js'
     ],
 
-    // Disable CSS optimization and CSS processing to debug CSS issues
-    optimizeCss: false,
+    // Reactivate CSS optimization for better performance
+    optimizeCss: true,
     // Memory and performance optimizations for 176+ pages
     largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
-    workerThreads: false, // Disable worker threads to reduce memory usage
-    cpus: Math.min(2, os.cpus().length), // Adaptive CPU limit
+    workerThreads: true, // Reactivate worker threads for better performance
+    cpus: Math.min(4, os.cpus().length), // Increase CPU limit for better performance
     // Bundle analysis optimizations moved to root level
-    // Disable profiling for faster builds
-    swcTraceProfiling: false,
+    // Reactivate profiling for better debugging
+    swcTraceProfiling: true,
     // Enable Node.js runtime for middleware to avoid Next.js warnings
     nodeMiddleware: false, // Explicitly disable, was causing build issues (requires canary)
     // Removed esmExternals to prevent external module dynamic import issues (already handled by deleting the property below)
@@ -97,7 +97,7 @@ const nextConfig = {
   skipMiddlewareUrlNormalize: true,
 
   images: {
-    unoptimized: isNetlify, // Disable optimization on Netlify to prevent 404s
+    unoptimized: false, // Reactivate image optimization for better performance
     loader: 'default',
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
@@ -1389,12 +1389,12 @@ const nextConfig = {
 
   // Skip TypeScript checking during build if SKIP_TYPE_CHECK is set
   typescript: {
-    ignoreBuildErrors: process.env.SKIP_TYPE_CHECK === 'true',
+    ignoreBuildErrors: false, // Reactivate TypeScript checking for better code quality
   },
   
   // Skip ESLint during build for faster deployment  
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false, // Reactivate ESLint for better code quality
   },
 
 
