@@ -35,7 +35,7 @@ const formSchema = z.object({
   amount: z.coerce.number().min(0, 'Amount must be greater than or equal to 0'),
 });
 
-type MilestoneFormValues = z.infer<typeof formSchema>;
+export type MilestoneFormValues = z.infer<typeof formSchema>;
 
 interface AddMilestoneFormProps {
   onSubmit: (data: MilestoneFormValues) => void;
