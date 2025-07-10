@@ -33,9 +33,10 @@ export function useResumeEnhancer() {
       }
       
       // Handle mock response with fallback
-      return data ? (data as any).enhancedContent : content;
-    } catch (err: any) {
-      setError(err.message || 'Failed to enhance content');
+      return data && typeof data === 'object' && 'enhancedContent' in data ? (data as { enhancedContent: string }).enhancedContent : content;
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      setError(message || 'Failed to enhance content');
       logErrorToProduction('Enhancement error:', { data: err });
       return null;
     } finally {
