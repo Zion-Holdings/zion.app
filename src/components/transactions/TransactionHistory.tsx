@@ -90,6 +90,14 @@ export function TransactionHistory() {
 
   const handleManageTransaction = async (transactionId: string, action: 'release' | 'refund' | 'cancel') => {
     try {
+      if (!supabase) {
+        toast({
+          title: "Error",
+          description: "Supabase client not initialized.",
+          variant: "destructive",
+        });
+        return;
+      }
       const { data, error } = await supabase.functions.invoke('manage-transaction', {
         body: { transactionId, action }
       });
