@@ -21,13 +21,11 @@ export default function ProductsList() {
             reviewCount: typeof p.reviewCount === 'number' ? p.reviewCount : 0,
             created_at: p.createdAt ?? '',
             updated_at: p.createdAt ?? '',
-            stock: p.stock ?? 0,
-            in_stock: (p.stock ?? 0) > 0,
+            stock: typeof p.stock === 'number' ? p.stock : 0,
+            in_stock: (typeof p.stock === 'number' ? p.stock : 0) > 0,
             specifications: Array.isArray(p.specifications)
               ? Object.fromEntries(p.specifications.map((v, i) => [i.toString(), v]))
               : (p.specifications ?? {}),
-            author: p.author ?? { name: '', id: '' },
-            uspHeadline: p.uspHeadline ?? '',
           }} />
         ))}
       </div>
