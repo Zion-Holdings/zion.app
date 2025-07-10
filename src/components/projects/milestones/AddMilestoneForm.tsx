@@ -193,6 +193,7 @@ export function AddMilestoneForm({
                           onSelect={(field as { onChange?: (date: Date) => void }).onChange}
                           disabled={(date) => date < new Date()}
                           initialFocus
+                          required={false}
                         />
                       </PopoverContent>
                     </Popover>
@@ -253,3 +254,4 @@ export function AddMilestoneForm({
     </div>
   );
 }
+
