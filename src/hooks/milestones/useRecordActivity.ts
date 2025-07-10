@@ -8,6 +8,8 @@ export const useRecordActivity = () => {
 
   const { user } = useAuth();
   
+  if (!supabase) throw new Error('Supabase client not initialized');
+
   const recordMilestoneActivity = async (
     milestoneId: string, 
     action: string, 
