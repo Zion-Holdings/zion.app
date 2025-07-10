@@ -30,7 +30,7 @@ function logInfo(message: string) {
 }
 
 // Browser-safe memory stores
-class MemoryBlockstore {
+class _MemoryBlockstore {
   private store = new Map<string, unknown>();
   
   async put(key: unknown, value: unknown) {
@@ -50,7 +50,7 @@ class MemoryBlockstore {
   }
 }
 
-class MemoryDatastore {
+class _MemoryDatastore {
   private store = new Map<string, unknown>();
   
   async put(key: unknown, value: unknown) {
@@ -78,7 +78,7 @@ let heliaNode: unknown | null = null;
 
 // Simplified libp2p options for this Helia instance
 // Depending on use case, might share libp2p from ipfs.ts or have more transports
-const libp2pOptions = {
+const _libp2pOptions = {
   addresses: {
     listen: ['/ip4/0.0.0.0/tcp/0']
   },
