@@ -13,7 +13,6 @@ export default function ProductsList() {
             title: p.title ?? '',
             description: p.description ?? '',
             category: p.category ?? '',
-            subcategory: p.subcategory ?? '',
             price: typeof p.price === 'number' ? p.price : 0,
             currency: p.currency ?? '',
             tags: p.tags ?? [],
