@@ -102,8 +102,9 @@ export default function TokenIntegrations() {
       const estimatedFee = await mockGetLayerZeroFee(fromChain, toChain, amount);
       setFee(estimatedFee);
       setStatus('Fee estimated.');
-    } catch (e: any) {
-      setError(`Fee estimation failed: ${e.message}`);
+    } catch (e: unknown) {
+      const message = typeof e === 'object' && e !== null && 'message' in e ? (e as { message?: string }).message : undefined;
+      setError(`Fee estimation failed: ${message ?? 'Unknown error'}`);
       setStatus(null);
     }
   };
@@ -142,9 +143,10 @@ export default function TokenIntegrations() {
       const result = await mockSendTokenViaLayerZero(fromChain, toChain, amount, address);
       setTxHash(result.transactionHash);
       setStatus(`Transaction submitted! ZION$ expected on ${toChain} in approx. ${result.arrivalTimeEstimate}. Tx: ${result.transactionHash}`);
-    } catch (e: any) {
-      logErrorToProduction('Bridging error:', { data:  e });
-      setError(`Bridging failed: ${e.message}`);
+    } catch (e: unknown) {
+      logErrorToProduction('Bridging error:', { data: e });
+      const message = typeof e === 'object' && e !== null && 'message' in e ? (e as { message?: string }).message : undefined;
+      setError(`Bridging failed: ${message ?? 'Unknown error'}`);
       setStatus(null);
     }
   };
