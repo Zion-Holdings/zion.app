@@ -2,7 +2,7 @@
 import React from 'react';
 import { FileText } from 'lucide-react';
 
-import { ResumeOption } from '../resume-selector/types';
+import type { ResumeOption } from '../resume-selector/types';
 import { ResumePreviewCard } from './ResumePreviewCard';
 import type { Resume } from '@/types/resume';
 

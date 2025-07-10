@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { ResumeSelector, ResumeOption } from "../resume-selector";
+import { ResumeSelector } from "../resume-selector/index";
+import type { ResumeOption } from "../resume-selector/index";
 import { Button } from "@/components/ui/button";
 
 export interface ResumeTabProps {

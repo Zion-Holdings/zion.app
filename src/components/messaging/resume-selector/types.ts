@@ -1,5 +1,5 @@
 
-import { Resume } from "@/types/resume";
+import type { Resume } from "@/types/resume";
 
 export interface ResumeOption {
   id: string;
