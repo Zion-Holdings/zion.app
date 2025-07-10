@@ -105,6 +105,9 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
         id: jobId || '',
         client_id: jobDataRaw.user_id || '',
         title: jobDataRaw.title || '',
+        location: jobDataRaw.location || '',
+        company: jobDataRaw.company || '',
+        job_type: jobDataRaw.job_type || '',
         description: jobDataRaw.description || '',
         category: (jobDataRaw.category as any) || 'other',
         skills: [], // No skills in form, provide empty array
