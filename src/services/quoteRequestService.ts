@@ -21,10 +21,16 @@ export const quoteRequestService = {
     // Format the data to include talent_name
     // Ensure `data` is an array to avoid runtime errors like "map is not a function"
     // when the Supabase response is null
-    return (data ?? []).map((item: any) => ({
-      ...item,
-      talent_name: item.talent?.display_name || 'Unknown Talent',
-    })) as QuoteRequest[];
+    return (data ?? []).map((item: unknown) => {
+      if (typeof item === 'object' && item !== null) {
+        return {
+          ...item,
+          talent_name: (item as { talent?: { display_name?: string } }).talent?.display_name || 'Unknown Talent',
+        };
+      } else {
+        return { talent_name: 'Unknown Talent' };
+      }
+    }) as QuoteRequest[];
   },
   
   // Get quote requests for a specific talent
@@ -58,14 +64,14 @@ export const quoteRequestService = {
     
     return {
       ...data,
-      talent_name: data.talent?.display_name || 'Unknown Talent',
+      talent_name: (data as any).talent?.display_name || 'Unknown Talent',
     } as QuoteRequest;
   },
   
   // Update quote request status
   updateStatus: async (id: string, status: QuoteStatus) => {
     if (!supabase) throw new Error('Supabase client not initialized');
-    const updates: any = { status };
+    const updates: Record<string, unknown> = { status };
     
     // If marking as responded, set replied_at
     if (status === 'responded') {
@@ -80,7 +86,7 @@ export const quoteRequestService = {
         .eq('id', id)
         .single();
       
-      if (data && !data.viewed_at) {
+      if (data && !(data as any).viewed_at) {
         updates.viewed_at = new Date().toISOString();
       }
     }
