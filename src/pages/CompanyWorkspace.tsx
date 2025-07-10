@@ -12,7 +12,7 @@ import { useWhitelabel } from "@/context/WhitelabelContext";
 export default function CompanyWorkspace() {
   const router = useRouter();
   const companySlug = router.query.companySlug as string;
-  const { user } = useAuth();
+  const { user: _user } = useAuth();
   const { company, isLoading, error } = useCompanyWorkspace(companySlug);
   const { isWhitelabel, tenant, brandName } = useWhitelabel();
   
