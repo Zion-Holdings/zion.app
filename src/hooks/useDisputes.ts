@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import type { Dispute, DisputeMessage, DisputeAttachment, DisputeStatus } from '@/types/disputes';
+import type { ResolutionType } from "@/types/disputes";
 import { toast } from "sonner";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
