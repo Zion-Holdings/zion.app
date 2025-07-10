@@ -105,7 +105,26 @@ export function useInterviews() {
       // avoid "map is not a function" errors when no interviews are returned
       const formattedInterviews = (data ?? []).map((interview: unknown): Interview => {
         if (typeof interview !== 'object' || interview === null) throw new Error('Invalid interview data');
-        const i = interview as Record<string, any>;
+        // Define a minimal type for the expected shape
+        type InterviewRaw = {
+          id: string;
+          client_id: string;
+          talent_id: string;
+          scheduled_date: string;
+          end_time?: string;
+          duration_minutes: number;
+          status: string;
+          notes?: string;
+          meeting_link?: string;
+          meeting_platform?: string;
+          created_at: string;
+          updated_at: string;
+          title: string;
+          interview_type: string;
+          clients?: { display_name?: string; avatar_url?: string };
+          talents?: { full_name?: string; profile_picture_url?: string };
+        };
+        const i = interview as InterviewRaw;
         return {
           id: i.id,
           client_id: i.client_id,
