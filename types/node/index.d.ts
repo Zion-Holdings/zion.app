@@ -18,9 +18,7 @@ declare namespace NodeJS {
   }
 
   /** Minimal representation of NodeJS.Timeout used in our codebase */
-  interface Timeout {
-    // Timeout interface for Node.js compatibility
-  }
+  type Timeout = object;
 }
 
 declare const process: NodeJS.Process;
