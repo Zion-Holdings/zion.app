@@ -10,7 +10,7 @@ export interface SignupPayload {
 
 // TODO: Define the actual session structure if possible
 export interface SignupSession {
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 export interface SignupApiResponse {
