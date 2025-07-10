@@ -15,15 +15,13 @@ interface MetricsDashboardProps {
 export default function MetricsDashboard({ adminView = false }: MetricsDashboardProps) {
   const [internalOnly, setInternalOnly] = useState(adminView);
 
-  if (!supabase) throw new Error('Supabase client not initialized');
-
   const { data: marketplace } = useQuery({
     queryKey: ['marketplace-metrics'],
     queryFn: async () => {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const now = new Date();
       const dayAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
       const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
-
       const jobs24h = await supabase
         .from('jobs')
         .select('*', { count: 'exact', head: true })
@@ -38,7 +36,6 @@ export default function MetricsDashboard({ adminView = false }: MetricsDashboard
       const talentTotal = await supabase
         .from('talent_profiles')
         .select('*', { count: 'exact', head: true });
-
       return {
         jobs24h: jobs24h.count || 0,
         jobs7d: jobs7d.count || 0,
@@ -49,11 +46,10 @@ export default function MetricsDashboard({ adminView = false }: MetricsDashboard
     refetchInterval: 30000,
   });
 
-  if (!supabase) throw new Error('Supabase client not initialized');
-
   const { data: token } = useQuery({
     queryKey: ['token-metrics'],
     queryFn: async () => {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const supply = await supabase
         .from('wallets')
         .select('balance', { count: 'exact' });
@@ -65,7 +61,6 @@ export default function MetricsDashboard({ adminView = false }: MetricsDashboard
         .select('amount')
         .gte('created_at', new Date(Date.now() - 24*60*60*1000).toISOString());
       const totalVolume = volume.data?.reduce((t: number, v: any) => t + (v.amount || 0), 0) || 0;
-
       return {
         supply: supply.data?.reduce((t:number,c:any)=>t+(c.balance||0),0) || 0,
         activeWallets: activeWallets.count || 0,

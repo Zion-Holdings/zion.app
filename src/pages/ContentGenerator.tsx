@@ -42,6 +42,7 @@ export default function ContentGenerator() {
     setPreviewContent(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const keywordsArray = keywords.split(',').map(k => k.trim()).filter(k => k.length > 0);
       const { data, error } = await supabase.functions.invoke('generate-seo-content', {
         body: {
@@ -79,6 +80,7 @@ export default function ContentGenerator() {
     }
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase.functions.invoke('send-newsletter', {
         body: {
           subject: previewContent.subject,
