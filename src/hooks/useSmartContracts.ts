@@ -14,13 +14,12 @@ export function useSmartContracts() {
   const [isLoading, setIsLoading] = useState(false);
   const [deploymentStatus, setDeploymentStatus] = useState<'idle' | 'deploying' | 'success' | 'error'>('idle');
   
-  if (!supabase) throw new Error('Supabase client not initialized');
-
   const generateSolidityContract = async (
     values: ContractFormValues, 
     talent: TalentProfile, 
     clientName: string
   ): Promise<string> => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     try {
       setIsLoading(true);
       
