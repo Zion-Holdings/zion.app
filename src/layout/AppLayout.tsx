@@ -107,7 +107,7 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
       {!isAuthPage && <PrimaryNav />}
       <ScrollProgressBar />
       <ScrollToTop />
-      {Boolean(loading) && (LoaderOverlay as unknown as ReactElement)}
+      {loading && <LoaderOverlay />}
       {error && <ErrorOverlay error={error} onClose={() => setError(null)} />}
       <main
         id="main-content"
