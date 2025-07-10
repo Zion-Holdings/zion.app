@@ -410,8 +410,10 @@ ${this.generateRecommendations(metrics, activeAlerts)}
       
       // Browser environment - estimate based on performance API
       if (typeof performance !== 'undefined' && 'memory' in performance) {
-        const memory = (performance as any).memory;
-        return (memory.usedJSHeapSize / memory.totalJSHeapSize) * 100;
+        const memory = (performance as unknown as { memory: { usedJSHeapSize: number; totalJSHeapSize: number } })?.memory;
+        if (memory) {
+          return (memory.usedJSHeapSize / memory.totalJSHeapSize) * 100;
+        }
       }
       
       return 0;
