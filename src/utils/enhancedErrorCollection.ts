@@ -61,6 +61,13 @@ export interface SystemHealthMetrics {
   lastHealthCheck: string;
 }
 
+interface PerformanceWithMemory extends Performance {
+  memory?: {
+    usedJSHeapSize: number;
+    jsHeapSizeLimit: number;
+  };
+}
+
 class EnhancedErrorCollector {
   private errors: Map<string, ErrorDetails> = new Map();
   private sessionId: string;
@@ -159,7 +166,7 @@ class EnhancedErrorCollector {
     if (typeof window === 'undefined' || !('memory' in performance)) return;
 
     setInterval(() => {
-      const perf: Performance & { memory?: { usedJSHeapSize: number; jsHeapSizeLimit: number } } = performance as any;
+      const perf = performance as PerformanceWithMemory;
       if (perf.memory) {
         const memoryPressure = perf.memory.usedJSHeapSize / perf.memory.jsHeapSizeLimit;
         this.healthMetrics.memoryPressure = memoryPressure;
