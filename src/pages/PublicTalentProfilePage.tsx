@@ -250,10 +250,10 @@ export default function ProfilePage() {
           <div className="col-span-12 lg:col-span-4 space-y-6">
             <HireNowCTA
               talentProfile={{
-                id: (pd as any).id || '',
-                full_name: (pd as any).full_name || '',
-                professional_title: (pd as any).professional_title || '',
-                hourly_rate: (pd as any).hourly_rate || 0
+                id: pd.id || '',
+                full_name: pd.full_name || '',
+                professional_title: pd.professional_title || '',
+                hourly_rate: pd.hourly_rate || 0
               }}
             />
             {/* Placeholder for other sidebar elements */}
