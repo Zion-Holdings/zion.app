@@ -1,10 +1,11 @@
 import apiClient from './apiClient';
 import { apiHelper } from './apiHelper';
+import type { TokenTransaction } from '@/types/tokens';
 
 export interface Wallet {
   id: string;
   balance: number;
-  transactions: unknown[]; // Replace 'unknown' with a specific type if available
+  transactions: TokenTransaction[];
 }
 
 export const getWalletData = async (): Promise<{ data: Wallet | null; error: string | null }> => {
