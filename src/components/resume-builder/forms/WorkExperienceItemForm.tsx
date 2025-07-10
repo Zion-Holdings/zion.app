@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { WorkExperience } from "@/types/resume";
+import type { WorkExperience } from "@/types/resume";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -68,14 +68,14 @@ export function WorkExperienceItemForm({
   const handleFormSubmit = async (values: FormValues) => {
     // Create a properly typed WorkExperience object with all required fields
     const workExperience: WorkExperience = {
-      id: initialData?.id,
+      ...(initialData?.id && { id: initialData.id }),
       company_name: values.company_name,  // Required
       role_title: values.role_title,      // Required
       start_date: values.start_date,      // Required
-      end_date: values.end_date,          // Optional
-      is_current: values.is_current ?? false, // Default undefined to false
-      description: values.description,    // Optional
-      location: values.location,          // Optional
+      ...(values.end_date && { end_date: values.end_date }),
+      is_current: values.is_current ?? false,
+      ...(values.description && { description: values.description }),
+      ...(values.location && { location: values.location }),
     };
     
     await onSubmit(workExperience);

@@ -70,7 +70,7 @@ export function PortfolioBuilder() {
             </h2>
             
             <ProjectForm 
-              project={editingProject || undefined}
+              {...(editingProject ? { project: editingProject } : {})}
               onSuccess={editingProject ? handleEditSuccess : handleAddSuccess}
               onCancel={() => {
                 setShowAddProject(false);

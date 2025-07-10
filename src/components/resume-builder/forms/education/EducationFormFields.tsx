@@ -19,7 +19,7 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { useState } from 'react';
-import { EducationFormFieldsProps } from './types';
+import type { EducationFormFieldsProps } from './types';
 import type { Education } from '@/types/resume';
 
 // Define schema for form validation

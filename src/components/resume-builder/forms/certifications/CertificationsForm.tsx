@@ -55,10 +55,10 @@ export function CertificationsForm({ resumeId, certifications, onComplete, onBac
       const certData: Certification = {
         name: data.name,
         issuing_organization: data.issuing_organization,
-        issue_date: data.issue_date || undefined,
-        expiration_date: data.expiration_date || undefined,
-        credential_id: data.credential_id,
-        credential_url: data.credential_url,
+        issue_date: data.issue_date || '',
+        expiration_date: data.expiration_date || '',
+        ...(data.credential_id && { credential_id: data.credential_id }),
+        ...(data.credential_url && { credential_url: data.credential_url }),
       };
 
       if (editingId) {
