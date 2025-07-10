@@ -106,7 +106,7 @@ export default function Dashboard() {
           variant: "destructive",
         });
       }
-    } catch (_error) {
+    } catch {
       toast({
         title: "Error loading notification system",
         description: "Please try again",
@@ -202,7 +202,7 @@ export default function Dashboard() {
                             title: "Onboarding notification sent",
                             description: "Check your notification center"
                           });
-                        } catch (_error) {
+                        } catch {
                           toast({
                             title: "Error sending notification",
                             description: "Please try again",
@@ -232,7 +232,7 @@ export default function Dashboard() {
                             title: "System notification sent",
                             description: "Check your notification center"
                           });
-                        } catch (_error) {
+                        } catch {
                           toast({
                             title: "Error sending notification",
                             description: "Please try again",
