@@ -4,6 +4,7 @@ import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
 import type { ProductListing } from '@/types/listings';
 import type { TalentProfile as TalentProfileType } from '@/types/talent';
 import type { ApiResponse, PaginatedResponse, SearchFilters } from '@/types/common';
+import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 
 // TypeScript interfaces
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
@@ -96,7 +97,7 @@ export interface Product {
 }
 
 // Use internal Next.js API routes instead of external URLs
-const createMarketplaceClient = (): unknown => {
+const createMarketplaceClient = () => {
   const client = axios.create({
     baseURL: '', // Use relative URLs for internal API routes
     withCredentials: false,
@@ -104,7 +105,7 @@ const createMarketplaceClient = (): unknown => {
 
   // Request interceptor for debugging
   client.interceptors.request.use(
-    async (config: unknown) => {
+    async (config: InternalAxiosRequestConfig) => {
       if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
         logInfo(`Marketplace API Request: ${config.method?.toUpperCase() || 'UNKNOWN'} ${config.url || 'UNKNOWN_URL'}`);
       }
@@ -120,7 +121,7 @@ const createMarketplaceClient = (): unknown => {
 
   // Response interceptor with error logging
   client.interceptors.response.use(
-    (response: unknown) => {
+    (response: AxiosResponse) => {
       if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
         logInfo(`Marketplace API Response: ${response.status}`);
       }
@@ -128,11 +129,14 @@ const createMarketplaceClient = (): unknown => {
     },
     (error: unknown) => {
       if (process.env.NODE_ENV === 'development') {
+        const status = typeof error === 'object' && error !== null && 'response' in error && error.response && typeof error.response === 'object' && error.response !== null && 'status' in error.response ? (error.response as { status?: number }).status : undefined;
+        const url = typeof error === 'object' && error !== null && 'config' in error && error.config && typeof error.config === 'object' && error.config !== null && 'url' in error.config ? (error.config as { url?: string }).url : undefined;
+        const method = typeof error === 'object' && error !== null && 'config' in error && error.config && typeof error.config === 'object' && error.config !== null && 'method' in error.config ? (error.config as { method?: string }).method : undefined;
         logErrorToProduction('Marketplace API Error:', {
-          message: error.message,
-          status: error.response?.status,
-          url: error.config?.url,
-          method: error.config?.method,
+          message: (error as { message?: string }).message,
+          status,
+          url,
+          method,
         });
       }
       return Promise.reject(error);
@@ -230,13 +234,15 @@ const getFallbackTalent = (): TalentProfile[] => {
 
 // Helper function to get error message for UI display
 export const getMarketplaceErrorMessage = (error: unknown): string => {
-  if (error.response?.status === 404) {
+  const status = typeof error === 'object' && error !== null && 'response' in error && error.response && typeof error.response === 'object' && error.response !== null && 'status' in error.response ? (error.response as { status?: number }).status : undefined;
+  const code = typeof error === 'object' && error !== null && 'code' in error ? (error as { code?: string }).code : undefined;
+  if (status === 404) {
     return 'The requested marketplace data was not found.';
-  } else if (error.response?.status === 500) {
+  } else if (status === 500) {
     return 'Our servers are experiencing issues. Please try again later.';
-  } else if (error.response?.status === 401) {
+  } else if (status === 401) {
     return 'Please log in to access marketplace data.';
-  } else if (error.code === 'ECONNABORTED') {
+  } else if (code === 'ECONNABORTED') {
     return 'Request timeout. Please check your connection and try again.';
   } else if (typeof navigator !== 'undefined' && !navigator.onLine) {
     return 'No internet connection. Please check your network.';
@@ -250,8 +256,9 @@ export { marketplaceClient };
 
 // Add product validation and auto-generation utilities
 export const validateProductData = (product: unknown): boolean => {
+  if (typeof product !== 'object' || product === null) return false;
   const requiredFields = ['id', 'title', 'description', 'category'];
-  return requiredFields.every(field => product[field] && product[field].toString().trim() !== '');
+  return requiredFields.every(field => typeof product === 'object' && product !== null && field in product && (product as Record<string, unknown>)[field] && (product as Record<string, unknown>)[field]?.toString().trim() !== '');
 };
 
 export const generateProductId = (name: string): string => {
