@@ -79,6 +79,7 @@ export function useAuthOperations(
   const signUp = async ({ email, password, display_name }: SignupParams) => {
     setIsLoading(true);
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase.auth.signUp({
         email,
         password,
@@ -117,6 +118,7 @@ export function useAuthOperations(
           }
 
           // Generate a referral code for the new user
+          if (!supabase) throw new Error('Supabase client not initialized');
           await supabase.rpc('generate_referral_code', { user_id: (data as any).user.id });
         } catch (err) {
           logErrorToProduction('Failed to complete signup rewards', { data: err });
@@ -141,6 +143,7 @@ export function useAuthOperations(
   const logout = async () => {
     setIsLoading(true);
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { error } = await supabase.auth.signOut();
 
       if (error) {
@@ -178,6 +181,7 @@ export function useAuthOperations(
   const resetPassword = async (email: string) => {
     setIsLoading(true);
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
         redirectTo: `${window.location.origin}/update-password`,
       });
