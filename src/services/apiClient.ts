@@ -4,6 +4,7 @@ import { showApiError } from '@/utils/apiErrorHandler';
 import { supabase } from '@/integrations/supabase/client';
 import axiosRetry from 'axios-retry';
 import { logErrorToProduction, logDebug } from '@/utils/productionLogger';
+import type { AxiosResponse } from 'axios';
 
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL || 'https://api.ziontechgroup.com/v1';
@@ -25,24 +26,24 @@ function mapStatusMessage(status?: number, fallback = ''): string {
 }
 
 // Define the global error handler (exported for testing purposes)
-export const globalAxiosErrorHandler = (error: any) => {
-  const contentType = error.response?.headers?.['content-type'];
+export const globalAxiosErrorHandler = (error: unknown) => {
+  const contentType = (error as any).response?.headers?.['content-type'];
   if (contentType?.includes('text/html')) {
     showError('html-error', 'Server returned HTML instead of JSON');
   }
 
-  const config = error.config || {};
+  const config = (error as any).config || {};
   const axiosRetryState = config['axios-retry']; // Standard property used by axios-retry
 
   const isRetryingAndNotFinalConfiguredRetry = axiosRetryState && axiosRetryState.attemptNumber <= axiosRetryState.retryCount;
 
-  const status = error.response?.status;
+  const status = (error as any).response?.status;
   const method = (config.method || '').toUpperCase();
   const url = config.url || '';
 
   // Handle DELETE 404 as success (item already removed)
   if (status === 404 && method === 'DELETE') {
-    return Promise.resolve(error.response);
+    return Promise.resolve((error as any).response);
   }
 
   // Suppress 404 toast if retries are pending
@@ -103,7 +104,7 @@ export const globalAxiosErrorHandler = (error: any) => {
     showApiError(error);
   } else {
     // Log background errors without showing toast
-    logDebug('Background API request failed (${status} ${method}): ${url}', { data: error.response?.data });
+    logDebug('Background API request failed (${status} ${method}): ${url}', { data: (error as any).response?.data });
   }
 
   return Promise.reject(error);
@@ -111,7 +112,7 @@ export const globalAxiosErrorHandler = (error: any) => {
 
 // Apply the global interceptor
 axios.interceptors.response.use(
-  (response: any) => response,
+  (response: AxiosResponse) => response,
   globalAxiosErrorHandler
 );
 
@@ -138,9 +139,9 @@ axiosRetry(apiClient, {
 });
 
 apiClient.interceptors.response.use(
-  (response: any) => response,
-  async (error: any) => {
-    const status = error.response?.status;
+  (response: AxiosResponse) => response,
+  async (error: unknown) => {
+    const status = (error as any).response?.status;
 
     if (status === 401) {
       try {
