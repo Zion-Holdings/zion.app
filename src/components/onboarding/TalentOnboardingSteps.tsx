@@ -7,7 +7,8 @@ import { UserCheck, Star, CalendarCheck, BriefcaseIcon } from 'lucide-react';
 
 
 
-import { OnboardingTracker, OnboardingStep } from "./OnboardingTracker";
+import { OnboardingTracker } from "./OnboardingTracker";
+import type { OnboardingStep } from "./OnboardingTracker";
 
 export function TalentOnboardingSteps() {
   const { user } = useAuth();
