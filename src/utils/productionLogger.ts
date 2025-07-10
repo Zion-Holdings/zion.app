@@ -79,8 +79,8 @@ class ProductionLogger {
       timestamp: new Date().toISOString(),
       sessionId: this.config.sessionId,
       url: typeof window !== 'undefined' ? window.location.href : '',
-      userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : undefined,
-      userId: this.config.userId,
+      userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
+      userId: this.config.userId ?? '',
     };
   }
 
@@ -125,8 +125,8 @@ class ProductionLogger {
 
     try {
       // Send to Sentry or other monitoring service
-      if (typeof window !== 'undefined' && (window as unknown as { Sentry?: { captureException?: Function; captureMessage?: Function } }).Sentry) {
-        const sentry = (window as unknown as { Sentry?: { captureException?: Function; captureMessage?: Function } }).Sentry;
+      if (typeof window !== 'undefined' && (window as unknown as { Sentry?: { captureException?: (error: unknown, context?: unknown) => void; captureMessage?: (message: string, level?: string) => void } }).Sentry) {
+        const sentry = (window as unknown as { Sentry?: { captureException?: (error: unknown, context?: unknown) => void; captureMessage?: (message: string, level?: string) => void } }).Sentry;
         if (sentry) {
           entries.forEach(entry => {
             if (entry.level === 'error' && typeof sentry.captureException === 'function') {
