@@ -47,14 +47,8 @@ export function useProjects() {
       
       // Transform the data to match our project types. Default to an empty array
       // to prevent "map is not a function" errors when `data` is null
-      const transformedData = (data ?? []).map((project: unknown) => {
-        if (typeof project === 'object' && project !== null) {
-          return project as Project;
-        }
-        return {} as Project;
-      });
-      
-      setProjects(transformedData as Project[]);
+      const transformedData = (data ?? []) as Project[];
+      setProjects(transformedData);
       setError(null);
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : String(err);
