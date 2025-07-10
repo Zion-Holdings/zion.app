@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from '@/integrations/supabase/client';
-import { Interview, InterviewRequest, InterviewResponse } from '@/types/interview';
+import type { Interview, InterviewRequest, InterviewResponse } from '@/types/interview';
 import { toast } from '@/components/ui/use-toast';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
@@ -13,10 +13,9 @@ export function useInterviews() {
   const [error, setError] = useState<string | null>(null);
   const { user } = useAuth();
 
-  if (!supabase) throw new Error('Supabase client not initialized');
-
   // Request an interview as a client
   const requestInterview = async (interviewRequest: InterviewRequest): Promise<Interview | null> => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     if (!user) {
       toast({
         title: "Authentication required",
@@ -75,6 +74,7 @@ export function useInterviews() {
 
   // Fetch interviews for the current user (as client or talent)
   const fetchInterviews = async (): Promise<Interview[]> => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     if (!user?.id) {
       setInterviews([]);
       return [];
@@ -140,6 +140,7 @@ export function useInterviews() {
     interviewId: string,
     response: InterviewResponse
   ): Promise<boolean> => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     if (!user?.id) {
       toast({
         title: "Authentication required",
@@ -224,6 +225,7 @@ export function useInterviews() {
     message: string,
     relatedId: string
   ) => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     try {
       await supabase.from('notifications').insert({
         user_id: userId,
@@ -239,6 +241,7 @@ export function useInterviews() {
 
   // Cancel an interview (either client or talent can cancel)
   const cancelInterview = async (interviewId: string): Promise<boolean> => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     if (!user?.id) return false;
 
     setIsLoading(true);
