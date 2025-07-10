@@ -253,7 +253,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
         scale: 2, // Increase scale for better resolution
         useCORS: true, // If there are any external images/fonts (though unlikely here)
         logging: true, // For debugging
-        onclone: (documentClone) => {
+        onclone: (_documentClone) => {
             // You might need to re-apply some styles here if they don't transfer well
             // For example, ensure SVGs from recharts are fully rendered.
             // This is advanced usage of html2canvas.
@@ -321,8 +321,8 @@ const WhitepaperGeneratorPage: React.FC = () => {
 
       const link = `${window.location.origin}/whitepaper/view/${(response as unknown as { id?: string }).id}`;
       setShareableLink(link);
-      setCurrentSharedWhitepaperId((response as unknown as { id?: string }).id);
-      setCurrentSharedWhitepaperIsPublic((response as unknown as { is_public?: boolean }).is_public);
+      setCurrentSharedWhitepaperId((response as unknown as { id?: string }).id ?? null);
+      setCurrentSharedWhitepaperIsPublic((response as unknown as { is_public?: boolean }).is_public ?? null);
       toast.success("Shareable link generated!");
     } catch (e: unknown) {
       const err = e as Error;
@@ -354,7 +354,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
         if (!response) throw new Error('No response received from set-shared-whitepaper-public-status function');
         if ((response as unknown as { error?: string }).error) throw new Error(`Error from set-shared-whitepaper-public-status: ${(response as unknown as { error?: string }).error}`);
 
-        setCurrentSharedWhitepaperIsPublic((response as unknown as { is_public?: boolean }).is_public); // Update with actual status from DB
+        setCurrentSharedWhitepaperIsPublic((response as unknown as { is_public?: boolean }).is_public ?? null); // Update with actual status from DB
         toast.success(`Whitepaper is now ${(response as unknown as { is_public?: boolean }).is_public ? 'public' : 'private'}.`);
 
     } catch (e: unknown) {
@@ -392,9 +392,9 @@ const WhitepaperGeneratorPage: React.FC = () => {
 
             linkToSubmit = `${window.location.origin}/whitepaper/view/${(linkResponse as unknown as { id?: string }).id}`;
             whitepaperIdToSubmit = (linkResponse as unknown as { id?: string }).id;
-            setShareableLink(linkToSubmit);
-            setCurrentSharedWhitepaperId(whitepaperIdToSubmit);
-            setCurrentSharedWhitepaperIsPublic((linkResponse as unknown as { is_public?: boolean }).is_public);
+            setShareableLink(typeof linkToSubmit === 'string' ? linkToSubmit : null);
+            setCurrentSharedWhitepaperId(typeof whitepaperIdToSubmit === 'string' ? whitepaperIdToSubmit : null);
+            setCurrentSharedWhitepaperIsPublic((linkResponse as unknown as { is_public?: boolean }).is_public ?? null);
         }
 
         // Ensure it's public before submitting, or handle as per requirements
