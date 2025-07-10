@@ -1,8 +1,7 @@
 
 import { SEO } from "@/components/SEO";
-import { ReviewsModerationTable } from "@/components/admin/reviews/ReviewsModerationTable";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Star, AlertTriangle } from 'lucide-react';
@@ -10,7 +9,6 @@ import { Button } from "@/components/ui/button";
 
 
 import { toast } from "@/components/ui/use-toast";
-import { logErrorToProduction } from '@/utils/productionLogger';
 
 function ReviewsModerationContent() {
   const [activeTab, setActiveTab] = useState("pending");
@@ -19,7 +17,6 @@ function ReviewsModerationContent() {
     { id: 2, user: "Bob", content: "Not what I expected.", status: "pending" },
     { id: 3, user: "Carla", content: "Excellent support.", status: "pending" },
   ]);
-  const [isLoading, setIsLoading] = useState(false);
 
   const handleApprove = (id: number) => {
     setReviews(reviews => reviews.map(r => r.id === id ? { ...r, status: "approved" } : r));
@@ -28,9 +25,6 @@ function ReviewsModerationContent() {
   const handleReject = (id: number) => {
     setReviews(reviews => reviews.map(r => r.id === id ? { ...r, status: "rejected" } : r));
     toast({ title: "Review rejected", variant: "destructive" });
-  };
-  const handleRefresh = () => {
-    // No-op for dummy data
   };
 
   return (
