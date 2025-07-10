@@ -1,10 +1,10 @@
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from "next/link";
 import { SEO } from "@/components/SEO";
-import { BriefcaseIcon, UserIcon, MessageSquare, Star, PlusCircle, FileText, Inbox, Video } from 'lucide-react';
+import { BriefcaseIcon, UserIcon, MessageSquare, Star, Inbox } from 'lucide-react';
 
 
 
@@ -28,7 +28,7 @@ import { UpcomingInterviewsCard } from "@/components/interviews/UpcomingIntervie
 
 function TalentDashboardContent() {
   const { user } = useAuth();
-  const [activeTab, setActiveTab] = useState("job-matches");
+  const [, setActiveTab] = useState("job-matches");
   const onboardingStatus = useOnboardingStatus();
   const showAdvanced =
     onboardingStatus.profileCompleted &&
