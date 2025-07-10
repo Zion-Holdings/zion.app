@@ -17,6 +17,8 @@ export function useResumeEnhancer() {
     setIsEnhancing(true);
     setError(null);
     
+    if (!supabase) throw new Error('Supabase client not initialized');
+
     try {
       const { data, error } = await supabase.functions.invoke('resume-enhancer', {
         body: { 
