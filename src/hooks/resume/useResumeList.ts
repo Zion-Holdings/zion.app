@@ -22,6 +22,7 @@ export function useResumeList() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       // Fetch resume list with basic info for the current user
       const { data: resumeData, error: resumeError } = await supabase
         .from('talent_resumes')
