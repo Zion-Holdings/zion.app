@@ -4,7 +4,7 @@ import path from 'path';
 import { PrismaClient, ErrorAnalysisStatus } from '@prisma/client';
 import { captureException } from '../../src/utils/sentry'; // Adjusted path
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { withErrorLogging } from '@/utils/withErrorLogging';
+import { withErrorLogging } from '../../src/utils/withErrorLogging';
 
 const prisma = new PrismaClient();
 const CODEX_SCRIPT_PATH = path.resolve(process.cwd(), 'scripts/codex-bug-fix.js');
@@ -164,8 +164,12 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
           let scriptErrorOutput = { error: "Unknown error from script stderr." };
           try {
             scriptErrorOutput = JSON.parse(stderr);
-          } catch (parseError: any) {
-            console.error(`Failed to parse stderr JSON from Codex script (ID: ${dbRecordId}): ${parseError.message}`);
+          } catch (parseError) {
+            let parseErrorMessage = 'Unknown error';
+            if (parseError && typeof parseError === 'object' && 'message' in parseError && typeof (parseError as { message?: unknown }).message === 'string') {
+              parseErrorMessage = (parseError as { message: string }).message;
+            }
+            console.error(`Failed to parse stderr JSON from Codex script (ID: ${dbRecordId}): ${parseErrorMessage}`);
             scriptErrorOutput.error = `Non-JSON stderr: ${stderr.substring(0,1000)}`;
           }
           await prisma.errorAnalysisSuggestion.update({
@@ -224,7 +228,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
   } catch (error) {
     let message = 'Unknown error';
-    let stack = undefined;
+    let stack: string | undefined = undefined;
     if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
       message = (error as { message: string }).message;
     }
