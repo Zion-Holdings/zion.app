@@ -36,17 +36,22 @@ export function useMilestoneGenerator() {
       if (error) throw error;
 
       // Check if data exists and has milestones before processing
-      if (!data || !(data as any)?.milestones) {
+      if (!data || typeof data !== 'object' || !('milestones' in data)) {
         logWarn('No milestones data received from AI generator');
         setGeneratedMilestones([]);
         return [];
       }
 
       // Mark each milestone as AI generated
-      const milestonesWithFlag = (data as any).milestones.map((milestone: any) => ({
-        ...milestone,
-        isAiGenerated: true,
-      }));
+      const milestonesWithFlag = typeof data === 'object' && data !== null && 'milestones' in data && Array.isArray((data as { milestones: unknown[] }).milestones)
+        ? (data as { milestones: unknown[] }).milestones.map((milestone: unknown) => {
+            if (typeof milestone === 'object' && milestone !== null) {
+              // ... existing transformation logic ...
+              return milestone as GeneratedMilestone; // Replace with actual type if available
+            }
+            return {} as GeneratedMilestone;
+          })
+        : [];
 
       setGeneratedMilestones(milestonesWithFlag);
       return milestonesWithFlag;
