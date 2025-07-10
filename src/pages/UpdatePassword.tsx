@@ -114,23 +114,26 @@ export default function UpdatePassword() {
       setTimeout(() => {
         router.push("/login");
       }, 3000);
-    } catch (error: any) {
-      logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Password update error' });
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      logErrorToProduction(errorMessage, error instanceof Error ? error : undefined, { message: 'Password update error' });
       toast({
         title: "Password update failed",
-        description: error.message || "An unexpected error occurred",
+        description: errorMessage || "An unexpected error occurred",
         variant: "destructive",
       });
-      setError(error.message || "An unexpected error occurred");
+      setError(errorMessage || "An unexpected error occurred");
     } finally {
       setIsLoading(false);
     }
   };
 
-  const onInvalid = (errors: any) => {
-    const firstError = Object.keys(errors)[0] as keyof UpdatePasswordFormValues;
-    if (firstError) {
-      form.setFocus(firstError);
+  const onInvalid = (errors: unknown) => {
+    if (typeof errors === 'object' && errors !== null) {
+      const firstError = Object.keys(errors)[0] as keyof UpdatePasswordFormValues;
+      if (firstError) {
+        form.setFocus(firstError);
+      }
     }
   };
 
