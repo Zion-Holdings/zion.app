@@ -211,11 +211,9 @@ export default function ServicesPage() {
     const startIndex = (page - 1) * limit;
     const endIndex = startIndex + limit;
     const items = filteredServices.slice(startIndex, endIndex);
-    const _total = filteredServices.length;
     return {
       items,
-      hasMore: endIndex < filteredServices.length || page < 10,
-      _total
+      hasMore: endIndex < filteredServices.length || page < 10
     };
   }, [sortBy, filterCategory, showRecommended, totalGenerated]);
 
@@ -227,8 +225,7 @@ export default function ServicesPage() {
     isFetching,
     lastElementRef,
     scrollToTop,
-    refresh,
-    total
+    refresh
   } = useInfiniteScrollPagination(fetchServices, 12);
 
   useEffect(() => {
