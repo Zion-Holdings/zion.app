@@ -20,7 +20,7 @@ import { ThumbsUp, ThumbsDown, Calendar, Flag, Edit, Trash2, Pin, Lock, CheckCir
 
 
 import { formatDistanceToNow, format } from "date-fns";
-import { ForumPost, ForumReply } from "@/types/community";
+import type { ForumPost, ForumReply } from "@/types/community";
 import { useAuth } from "@/hooks/useAuth";
 import ReplyCard from "@/components/community/ReplyCard";
 import ReplyForm from "@/components/community/ReplyForm";

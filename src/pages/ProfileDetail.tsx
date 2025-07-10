@@ -96,11 +96,13 @@ export default function ProfileDetail() {
     );
   }
 
+  const typedProfileData = profileData as { full_name?: string; bio?: string };
+
   return (
     <>
       <SEO
-        title={`${profileData.full_name} | Zion AI Marketplace`}
-        description={profileData.bio || "Check out this talent's profile on Zion!"}
+        title={`${typedProfileData.full_name || ''} | Zion AI Marketplace`}
+        description={typedProfileData.bio || "Check out this talent's profile on Zion!"}
       />
       <Header />
       <div className="container mx-auto px-4 py-8">

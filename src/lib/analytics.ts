@@ -6,6 +6,7 @@ async function logEventToSupabase(
   eventParams?: Record<string, any>
 ) {
   if (!isSupabaseConfigured) return;
+  if (!supabase) throw new Error('Supabase client not initialized');
 
   try {
     await supabase.from('analytics_events').insert([

@@ -1,4 +1,4 @@
-import { ProductListing } from "@/types/listings";
+import type { ProductListing } from "@/types/listings";
 
 const EQUIPMENT_POOL: ProductListing[] = [
   {

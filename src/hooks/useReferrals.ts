@@ -31,6 +31,7 @@ export function useReferrals() {
   const fetchReferralCode = async () => {
     try {
       setIsLoading(true);
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from('referral_codes')
         .select('*')
@@ -53,6 +54,7 @@ export function useReferrals() {
   const fetchReferrals = async () => {
     try {
       if (!user) return;
+      if (!supabase) throw new Error('Supabase client not initialized');
       
       const { data, error } = await supabase
         .from('referrals')
@@ -71,6 +73,7 @@ export function useReferrals() {
   const fetchRewards = async () => {
     try {
       if (!user) return;
+      if (!supabase) throw new Error('Supabase client not initialized');
       
       const { data, error } = await supabase
         .from('referral_rewards')
@@ -89,6 +92,7 @@ export function useReferrals() {
   const fetchReferralStats = async () => {
     try {
       if (!user) return;
+      if (!supabase) throw new Error('Supabase client not initialized');
       
       // Get total referrals
       const { data: referrals, error: refError } = await supabase
@@ -138,6 +142,7 @@ export function useReferrals() {
         return;
       }
 
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase.rpc('generate_referral_code', {
         user_id: user.id
       });

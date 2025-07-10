@@ -3,19 +3,9 @@ import { useAuth } from "@/hooks/useAuth";
 import {logErrorToProduction} from "@/utils/productionLogger";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
+import type { ApiKey } from '@/types/apiKeys';
 
 export type ApiKeyScope = 'jobs:read' | 'jobs:write' | 'talent:read' | 'quotes:write' | 'webhooks:manage';
-
-export interface ApiKey {
-  id: string;
-  name: string;
-  key_prefix: string;
-  scopes: ApiKeyScope[];
-  created_at: string;
-  last_used_at: string | null;
-  expires_at: string | null;
-  is_active: boolean;
-}
 
 export interface ApiLog {
   id: string;

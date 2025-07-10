@@ -1,4 +1,4 @@
-import { ProductListing } from '@/types/listings';
+import type { ProductListing } from '@/types/listings';
 
 // IT and AI Service Categories with market data
 const SERVICE_CATEGORIES = {

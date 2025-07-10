@@ -7,7 +7,7 @@ const originalConsoleError = console.error;
 // Add recursion prevention
 let isProcessingError = false;
 
-console.error = (...args: any[]) => {
+console.error = (...args: unknown[]) => {
   // Prevent infinite recursion
   if (isProcessingError) {
     originalConsoleError(...args);

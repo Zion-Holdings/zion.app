@@ -11,7 +11,7 @@ import { Brain, PenLine, BarChart, Eye, Bot, Mic, Code, Briefcase } from 'lucide
 
 
 import { MARKETPLACE_LISTINGS } from "@/data/listingData";
-import { ProductListing } from "@/types/listings";
+import type { ProductListing } from "@/types/listings";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { toast } from "@/hooks/use-toast";
@@ -48,7 +48,8 @@ function generateInnovationListing(index: number): ProductListing {
     tags: ["innovation", "ai", "service"],
     author: {
       name: "AutoGen Solutions",
-      id: "autogen"
+      id: "autogen",
+      avatarUrl: '',
     },
     images: ["https://source.unsplash.com/random/800x500?technology"],
     createdAt: new Date().toISOString(),
@@ -188,7 +189,7 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
                   author: {
                     name: `Provider ${index + 1}`,
                     id: `author-${index + 1}`,
-                    avatarUrl: undefined,
+                    avatarUrl: '',
                   },
                   images: [`/placeholder.svg`],
                   createdAt: new Date().toISOString(),

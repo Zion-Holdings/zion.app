@@ -2,23 +2,23 @@
 // This provides a minimal EventEmitter implementation for client-side use
 
 class EventEmitter {
-  private events: { [key: string]: Function[] } = {};
+  private events: { [key: string]: Array<(...args: unknown[]) => void> } = {};
 
-  on(event: string, listener: Function): void {
+  on(event: string, listener: (...args: unknown[]) => void): void {
     if (!this.events[event]) {
       this.events[event] = [];
     }
     this.events[event].push(listener);
   }
 
-  emit(event: string, ...args: any[]): void {
+  emit(event: string, ...args: unknown[]): void {
     if (!this.events[event]) {
       return;
     }
     this.events[event].forEach(listener => listener(...args));
   }
 
-  off(event: string, listener: Function): void {
+  off(event: string, listener: (...args: unknown[]) => void): void {
     if (this.events[event]) {
       this.events[event] = this.events[event].filter(l => l !== listener);
     }

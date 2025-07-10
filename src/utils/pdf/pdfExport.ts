@@ -1,9 +1,10 @@
 
-import { Resume } from '@/types/resume';
+import type { Resume } from '@/types/resume';
 import { jsPDF } from 'jspdf';
 import 'jspdf-autotable';
 import { getPdfThemeColors } from './themeConfig';
-import { loadCustomFonts, FontFamily } from './fontConfig';
+import { loadCustomFonts } from './fontConfig';
+import type { FontFamily } from './fontConfig';
 import { addBasicInfoSection } from './sections/basicInfoSection';
 import { addSkillsSection } from './sections/skillsSection';
 import { addWorkExperienceSection } from './sections/workExperienceSection';

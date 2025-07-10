@@ -3,7 +3,7 @@ import { JobsList } from "@/components/jobs/JobsList";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from "next/link";
-import { JobStatus } from "@/types/jobs";
+import type { JobStatus } from "@/types/jobs";
 import { SEO } from "@/components/SEO";
 import { BriefcaseIcon, UserIcon, MessageSquare, Star, PlusCircle, Kanban, Video } from 'lucide-react';
 

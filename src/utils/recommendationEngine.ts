@@ -1,7 +1,8 @@
 import { SupabaseClient } from '@supabase/supabase-js';
-import { ProductListing } from '@/types/listings';
+import type { ProductListing } from '@/types/listings';
 import { generateRandomEquipment } from './generateRandomEquipment';
-import { ALL_FEATURES, Feature } from '@/data/features';
+import { ALL_FEATURES } from '@/data/features';
+import type { Feature } from '@/data/features';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 export async function recommendEquipment(

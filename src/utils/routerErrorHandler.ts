@@ -1,4 +1,4 @@
-import { NextRouter } from 'next/router';
+import type { NextRouter } from 'next/router';
 import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 export function handleRouterError(error: Error, router: NextRouter) {

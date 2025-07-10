@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
-import { BlockchainNetwork, DeploymentOptions, SmartContractInfo } from '@/types/smart-contracts';
-import { TalentProfile } from '@/types/talent';
-import { ContractFormValues } from "@/components/contracts/components/ContractForm";
+import type { BlockchainNetwork, DeploymentOptions } from '@/types/smart-contracts';
+import type { SmartContractInfo } from '@/types/smart-contracts';
+import type { TalentProfile } from '@/types/talent';
+import type { ContractFormValues } from "@/components/contracts/components/ContractForm";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useSmartContracts() {
@@ -18,6 +19,7 @@ export function useSmartContracts() {
     talent: TalentProfile, 
     clientName: string
   ): Promise<string> => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     try {
       setIsLoading(true);
       

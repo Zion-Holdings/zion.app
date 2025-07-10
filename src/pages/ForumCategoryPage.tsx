@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { SEO } from "@/components/SEO";
 import PostCard from "@/components/community/PostCard";
 import { PostListSkeleton } from "@/components/community/PostCardSkeleton";
-import { ForumCategoryInfo, ForumPost } from "@/types/community";
+import type { ForumCategoryInfo, ForumPost } from "@/types/community";
 import { usePostsByCategory } from "@/hooks/usePostsByCategory";
 import NotFound from "./NotFound";
 import { useAuth } from "@/hooks/useAuth";

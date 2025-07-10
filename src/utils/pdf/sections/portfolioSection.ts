@@ -1,7 +1,7 @@
 
 import { jsPDF } from 'jspdf';
-import { PortfolioProject } from '@/types/resume';
-import { PdfThemeColors } from '@/utils/pdf/themeConfig';
+import type { PortfolioProject } from '@/types/resume';
+import type { PdfThemeColors } from '@/utils/pdf/themeConfig';
 
 export function addPortfolioSection(
   doc: jsPDF,

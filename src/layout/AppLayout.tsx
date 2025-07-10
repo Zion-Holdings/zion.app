@@ -1,4 +1,5 @@
-import React, { ReactNode, useState } from "react"; // Added useState
+import React, { useState } from "react";
+import type { ReactNode } from "react";
 import { useRouter } from 'next/router';
 // Assume useAuth hook exists and provides user object with emailVerified status and email
 import { useAuth } from '@/hooks/useAuth';

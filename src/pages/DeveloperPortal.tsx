@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
-import { BookOpen, Code, Key, List, LucideIcon, Terminal, Webhook } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 
 
 

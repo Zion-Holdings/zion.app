@@ -1,7 +1,8 @@
 import React from 'react';
 import { NextSeo } from '@/components/NextSeo';
 import { Button } from '@/components/ui/button';
-import { generateStorybookPdf, StoryPage } from '@/utils/generateStorybookPdf';
+import { generateStorybookPdf } from '@/utils/generateStorybookPdf';
+import type { StoryPage } from '@/utils/generateStorybookPdf';
 import { generateStorybookEpub } from '@/utils/generateStorybookEpub';
 
 const pages: (StoryPage & { prompt: string })[] = [

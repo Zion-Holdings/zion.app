@@ -5,7 +5,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
-import { getInvestorMatches, InvestorMatch, generatePitchEmail } from '@/lib/investor-matching';
+import { getInvestorMatches, generatePitchEmail } from '@/lib/investor-matching';
+import type { InvestorMatch } from '@/lib/investor-matching';
 
 export default function InvestorMatchPage() {
   const [form, setForm] = useState({

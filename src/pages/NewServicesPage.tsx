@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { DynamicListingPage } from "@/components/DynamicListingPage";
-import { ProductListing } from "@/types/listings";
+import type { ProductListing } from "@/types/listings";
 import { NEW_SERVICES } from "@/data/newServicesData";
 
 const CATEGORY_FILTERS = Array.from(new Set(NEW_SERVICES.map(p => p.category))).map(c => ({ label: c, value: c }));

@@ -1,6 +1,6 @@
 
 import { createNotification } from './createNotification';
-import { OnboardingNotificationParams } from './types';
+import type { OnboardingNotificationParams } from './types';
 
 /**
  * Creates an onboarding notification for a user

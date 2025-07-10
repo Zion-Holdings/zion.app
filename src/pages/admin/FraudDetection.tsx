@@ -5,7 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { FraudFlag, FraudStats } from "@/types/fraud";
+import type { FraudFlag, FraudStats } from "@/types/fraud";
 import { logErrorToProduction } from '@/utils/productionLogger';
 
 // Import refactored components

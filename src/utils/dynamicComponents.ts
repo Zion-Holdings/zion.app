@@ -75,7 +75,7 @@ export const DynamicVideoPlayer = dynamic(
 const ModelViewer = React.lazy(async () => {
   await import('@google/model-viewer');
   return {
-    default: (props: any) => (
+    default: (props: Record<string, unknown>) => (
       React.createElement('model-viewer', props)
     ),
   };
