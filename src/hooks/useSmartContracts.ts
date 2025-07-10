@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
-import { BlockchainNetwork, DeploymentOptions, SmartContractInfo } from '@/types/smart-contracts';
+import type { BlockchainNetwork, DeploymentOptions } from '@/types/smart-contracts';
+import type { SmartContractInfo } from '@/types/smart-contracts';
 import type { TalentProfile } from '@/types/talent';
 import type { ContractFormValues } from "@/components/contracts/components/ContractForm";
 import {logErrorToProduction} from '@/utils/productionLogger';
@@ -13,6 +14,8 @@ export function useSmartContracts() {
   const [isLoading, setIsLoading] = useState(false);
   const [deploymentStatus, setDeploymentStatus] = useState<'idle' | 'deploying' | 'success' | 'error'>('idle');
   
+  if (!supabase) throw new Error('Supabase client not initialized');
+
   const generateSolidityContract = async (
     values: ContractFormValues, 
     talent: TalentProfile, 
