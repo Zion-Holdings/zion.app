@@ -10,13 +10,12 @@ export function useWorkExperience() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   
-  if (!supabase) throw new Error('Supabase client not initialized');
-
   const addWorkExperience = async (resumeId: string, work: WorkExperience): Promise<boolean> => {
     if (!user) {
       setError('You must be logged in to update work experience');
       return false;
     }
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     setIsLoading(true);
     setError(null);
@@ -51,6 +50,7 @@ export function useWorkExperience() {
       setError('You must be logged in to update work experience');
       return false;
     }
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     setIsLoading(true);
     setError(null);
@@ -85,6 +85,7 @@ export function useWorkExperience() {
       setError('You must be logged in to delete work experience');
       return false;
     }
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     setIsLoading(true);
     setError(null);
