@@ -16,7 +16,7 @@ import { ProfileContact } from "./ProfileContact";
 import { ProfileRatings } from "./ProfileRatings";
 import type { TalentProfile as TalentProfileType } from "@/types/talent";
 import { useAuth } from "@/hooks/useAuth";
-import { Availability } from "@/types/profile";
+import type { Availability } from "@/types/profile";
 
 interface TalentProfileProps {
   profile: TalentProfileType;
