@@ -166,7 +166,7 @@ export class EnhancedApiErrorHandler {
     enhancedGlobalErrorHandler.reportError(error as Error, {
       type,
       priority,
-      retryAction,
+      ...(retryAction ? { retryAction } : {}),
       showToast,
       metadata: {
         context: context || 'apiRequest',
