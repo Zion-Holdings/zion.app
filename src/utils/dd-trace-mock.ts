@@ -8,51 +8,56 @@
 // Mock implementation for DD-Trace to prevent native module import issues during build
 // This mock provides all the necessary DD-Trace APIs without importing any native modules
 
-const noop = () => {};
-const noopReturn = () => null;
-const noopReturnThis = function(this: any) { return this; };
+const noop = (): void => {};
+const noopReturn = (): null => null;
+const noopReturnThis = function(this: unknown): unknown { return this; };
 
 // Mock tracer with all common DD-Trace methods
 const mockTracer = {
   // Core tracing methods
-  trace: (name: string, options?: any, callback?: Function) => {
+  trace: (
+    name: string,
+    options?: unknown,
+    callback?: (...args: unknown[]) => unknown
+  ): Promise<unknown> | unknown => {
+    let cb = callback;
     if (typeof options === 'function') {
-      callback = options;
+      cb = options as (...args: unknown[]) => unknown;
     }
-    if (callback) {
-      return callback();
+    if (cb) {
+      return cb();
     }
     return Promise.resolve();
   },
-  
+
   // Span management
-  startSpan: () => mockSpan,
-  scope: () => mockScope,
-  
+  startSpan: (): typeof mockSpan => mockSpan,
+  scope: (): typeof mockScope => mockScope,
+
   // Configuration
   init: noop,
   use: noopReturnThis,
-  
+
   // Context management
   setUser: noop,
   setTag: noop,
-  
+
   // Export methods
   exportTracer: noopReturn,
-  
+
   // Utilities
   getRumData: noopReturn,
   setUrl: noop,
-  
+
   // Plugin management
   plugin: noopReturnThis,
-  
+
   // Sampling
   setSamplingRules: noop,
-  
+
   // Custom methods for compatibility
-  wrap: (name: string, fn: Function) => fn,
-  bind: (fn: Function) => fn,
+  wrap: (name: string, fn: (...args: unknown[]) => unknown): typeof fn => fn,
+  bind: (fn: (...args: unknown[]) => unknown): typeof fn => fn,
 };
 
 // Mock span
@@ -78,8 +83,8 @@ const mockSpanContext = {
 // Mock scope
 const mockScope = {
   active: noopReturn,
-  activate: (span: any, callback: Function) => callback(),
-  bind: (fn: Function) => fn,
+  activate: (span: unknown, callback: (...args: unknown[]) => unknown): unknown => callback(),
+  bind: (fn: (...args: unknown[]) => unknown): typeof fn => fn,
 };
 
 // Export the mock tracer as default export
