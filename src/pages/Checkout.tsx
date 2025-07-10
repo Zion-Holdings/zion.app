@@ -12,7 +12,6 @@ import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import type { ControllerRenderProps } from 'react-hook-form';
 import { getBreadcrumbsForPath } from '@/utils/routeUtils';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 import { fireEvent } from '@/lib/analytics';
