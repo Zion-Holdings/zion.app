@@ -84,9 +84,13 @@ export default function CartPage() {
 
       const { error } = await stripe.redirectToCheckout({ sessionId });
       if (error) logErrorToProduction('Stripe redirect error:', { data: error.message });
-    } catch (err: any) {
+    } catch (err) {
       logErrorToProduction('Checkout error:', { data: err });
-      alert(err.message || 'Checkout failed');
+      let message = 'Checkout failed';
+      if (err && typeof err === 'object' && 'message' in err && typeof (err as { message?: unknown }).message === 'string') {
+        message = (err as { message: string }).message;
+      }
+      alert(message);
     } finally {
       setLoading(false);
     }

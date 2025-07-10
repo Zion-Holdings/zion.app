@@ -18,7 +18,7 @@ export async function loginUser(email: string, password: string) {
       store.dispatch(setToken(token));
     }
     return { res, data: res.data };
-  } catch (err: unknown) {
+  } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
     // Optional: you can still prepare or log the error here if needed, but don't toast.
     // For example, you might want to ensure the error object has a specific structure
@@ -35,7 +35,7 @@ export async function registerUser(name: string, email: string, password: string
     logDebug('Register API Response Status:', { status: res.status });
     logDebug('Register API Response Body:', { body: res.data });
     return { res, data: res.data };
-  } catch (err: unknown) {
+  } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
     logErrorToProduction('Register API error', err as Error, { endpoint, email });
     throw err;

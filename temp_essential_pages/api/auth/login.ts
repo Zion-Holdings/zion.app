@@ -168,21 +168,23 @@ async function handler(
       message: 'Authentication successful'
     });
 
-  } catch (error: any) {
+  } catch (error) {
     if (isDevelopment) {
       console.error('🔧 LOGIN TRACE: Unexpected error during authentication:', error);
     }
-    
     if (ENV_CONFIG.sentry.isConfigured) {
       Sentry.captureException(error, {
         tags: { context: 'login_api_unexpected' },
         extra: { email }
       });
     }
-    
+    let details: string | undefined = undefined;
+    if (ENV_CONFIG.app.isDevelopment && error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+      details = (error as { message: string }).message;
+    }
     return res.status(500).json({ 
       error: 'Internal server error',
-      details: ENV_CONFIG.app.isDevelopment ? error.message : undefined
+      details
     });
   }
 }

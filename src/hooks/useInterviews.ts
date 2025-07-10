@@ -103,47 +103,44 @@ export function useInterviews() {
 
       // Transform the data to match Interview type. Default to an empty array to
       // avoid "map is not a function" errors when no interviews are returned
-      const formattedInterviews = (data ?? []).map((interview: unknown): Interview => {
-        if (typeof interview !== 'object' || interview === null) throw new Error('Invalid interview data');
-        // Define a minimal type for the expected shape
-        type InterviewRaw = {
-          id: string;
-          client_id: string;
-          talent_id: string;
-          scheduled_date: string;
-          end_time?: string;
-          duration_minutes: number;
-          status: string;
-          notes?: string;
-          meeting_link?: string;
-          meeting_platform?: string;
-          created_at: string;
-          updated_at: string;
-          title: string;
-          interview_type: string;
-          clients?: { display_name?: string; avatar_url?: string };
-          talents?: { full_name?: string; profile_picture_url?: string };
-        };
-        const i = interview as InterviewRaw;
+      type InterviewRaw = {
+        id: string;
+        client_id: string;
+        talent_id: string;
+        scheduled_date: string;
+        end_time?: string;
+        duration_minutes: number;
+        status: string;
+        notes?: string;
+        meeting_link?: string;
+        meeting_platform?: string;
+        created_at: string;
+        updated_at: string;
+        title: string;
+        interview_type: string;
+        clients?: { display_name?: string; avatar_url?: string };
+        talents?: { full_name?: string; profile_picture_url?: string };
+      };
+      const formattedInterviews = (data ?? []).map((interview: InterviewRaw): Interview => {
         return {
-          id: i.id,
-          client_id: i.client_id,
-          talent_id: i.talent_id,
-          scheduled_date: i.scheduled_date,
-          end_time: i.end_time || '',
-          duration_minutes: i.duration_minutes,
-          status: i.status,
-          notes: i.notes,
-          meeting_link: i.meeting_link,
-          meeting_platform: i.meeting_platform,
-          created_at: i.created_at,
-          updated_at: i.updated_at,
-          title: i.title,
-          interview_type: i.interview_type,
-          client_name: i.clients?.display_name,
-          talent_name: i.talents?.full_name,
-          client_avatar: i.clients?.avatar_url,
-          talent_avatar: i.talents?.profile_picture_url,
+          id: interview.id,
+          client_id: interview.client_id,
+          talent_id: interview.talent_id,
+          scheduled_date: interview.scheduled_date,
+          end_time: interview.end_time || '',
+          duration_minutes: interview.duration_minutes,
+          status: interview.status,
+          notes: interview.notes,
+          meeting_link: interview.meeting_link,
+          meeting_platform: interview.meeting_platform,
+          created_at: interview.created_at,
+          updated_at: interview.updated_at,
+          title: interview.title,
+          interview_type: interview.interview_type,
+          client_name: interview.clients?.display_name,
+          talent_name: interview.talents?.full_name,
+          client_avatar: interview.clients?.avatar_url,
+          talent_avatar: interview.talents?.profile_picture_url,
         };
       });
 

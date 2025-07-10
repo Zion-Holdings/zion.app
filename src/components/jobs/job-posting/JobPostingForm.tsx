@@ -85,7 +85,11 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
 
     try {
       const jobData = await submitJob(values);
-      
+      if (!jobData) {
+        toast.error("Failed to process job data");
+        setIsFormLoading(false);
+        return;
+      }
       if (jobId) {
         await updateJob(jobId, jobData);
         toast.success("Job updated successfully!");

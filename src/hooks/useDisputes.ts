@@ -44,12 +44,7 @@ export function useDisputes() {
       
       // Transform data if needed. Use an empty array if `data` is null to avoid
       // "map is not a function" errors when the request fails
-      const transformedData = (data ?? []).map((dispute: unknown) => {
-        if (typeof dispute === 'object' && dispute !== null) {
-          return dispute as Dispute;
-        }
-        return {} as Dispute;
-      });
+      const transformedData = (data ?? []).map((dispute: Dispute) => dispute);
       
       setDisputes(transformedData as Dispute[]);
       setError(null);

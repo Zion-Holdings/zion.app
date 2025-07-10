@@ -33,8 +33,22 @@ const InputOTPSlot = React.forwardRef<
   React.ElementRef<"div">,
   React.ComponentPropsWithoutRef<"div"> & { index: number }
 >(({ index, className, ...props }, ref) => {
-  const inputOTPContext = React.useContext(OTPInputContext) as any
-  const { char, hasFakeCaret, isActive } = inputOTPContext.slots[index]
+  const inputOTPContext = React.useContext(OTPInputContext) as unknown;
+  let char, hasFakeCaret, isActive;
+  if (
+    inputOTPContext &&
+    typeof inputOTPContext === 'object' &&
+    'slots' in inputOTPContext &&
+    Array.isArray((inputOTPContext as { slots: unknown[] }).slots) &&
+    (inputOTPContext as { slots: unknown[] }).slots.length > index
+  ) {
+    const slot = (inputOTPContext as { slots: unknown[] }).slots[index];
+    if (slot && typeof slot === 'object') {
+      char = (slot as { char?: unknown }).char;
+      hasFakeCaret = (slot as { hasFakeCaret?: unknown }).hasFakeCaret;
+      isActive = (slot as { isActive?: unknown }).isActive;
+    }
+  }
 
   return (
     <div
@@ -53,7 +67,7 @@ const InputOTPSlot = React.forwardRef<
         </div>
       )}
     </div>
-  )
+  );
 })
 InputOTPSlot.displayName = "InputOTPSlot"
 

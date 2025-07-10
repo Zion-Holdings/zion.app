@@ -1,7 +1,8 @@
 
 import { supabase } from "@/integrations/supabase/client";
+import type { Job } from "@/types/jobs";
 
-export async function createJob(jobData: unknown) {
+export async function createJob(jobData: Job) {
   if (!supabase) throw new Error('Supabase client is not initialized');
   const { data, error } = await supabase
     .from('jobs')
@@ -13,7 +14,7 @@ export async function createJob(jobData: unknown) {
   return data;
 }
 
-export async function updateJob(jobId: string, jobData: unknown) {
+export async function updateJob(jobId: string, jobData: Job) {
   if (!supabase) throw new Error('Supabase client is not initialized');
   const { data, error } = await supabase
     .from('jobs')
