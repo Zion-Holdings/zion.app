@@ -60,7 +60,7 @@ export function TalentProfile({
         title={profile.professional_title}
         avatarUrl={profile.profile_picture_url ?? ""}
         profileType="talent"
-        rating={profile.average_rating}
+        rating={profile.average_rating ?? 0}
         reviewCount={profile.rating_count}
       />
       
