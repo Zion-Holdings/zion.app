@@ -47,6 +47,7 @@ export const cleanupAuthState = () => {
  * Utility function to check new user registration and schedule welcome emails
  */
 export const checkNewRegistration = async (user: UserDetails) => {
+  if (!supabase) throw new Error('Supabase client not initialized');
   try {
     // Check if user has received welcome email already
     const { data: existingCampaign } = await supabase

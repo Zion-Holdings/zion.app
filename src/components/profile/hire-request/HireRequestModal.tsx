@@ -31,7 +31,7 @@ export function HireRequestModal({ talent, isOpen, onClose, userDetails }: HireR
         <HireRequestForm 
           talent={talent}
           onClose={handleClose}
-          userDetails={userDetails}
+          {...(userDetails ? { userDetails: { name: userDetails.name, email: userDetails.email, id: userDetails.id } } : {})}
         />
       </DialogContent>
     </Dialog>

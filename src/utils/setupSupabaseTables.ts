@@ -8,6 +8,7 @@ import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger
  * This is a utility function that can be called when the app starts
  */
 export const ensureProfilesTableExists = async () => {
+  if (!supabase) throw new Error('Supabase client not initialized');
   try {
     // Try to execute a simple query to check if the table exists
     const { error } = await supabase.rpc('exec', { 
@@ -109,5 +110,6 @@ export const ensureProfilesTableExists = async () => {
 
 // Call this when the app starts to ensure the table exists
 export const initializeDatabase = async () => {
+  if (!supabase) throw new Error('Supabase client not initialized');
   await ensureProfilesTableExists();
 };

@@ -5,6 +5,7 @@ import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger
 export async function ensureAnalyticsTablesExist() {
 
   try {
+    if (!supabase) throw new Error('Supabase client not initialized');
     // Check if analytics_events table exists
     const { error } = await supabase
       .from('analytics_events')
@@ -23,6 +24,7 @@ export async function ensureAnalyticsTablesExist() {
 
 async function createAnalyticsTables() {
   try {
+    if (!supabase) throw new Error('Supabase client not initialized');
     // Create analytics_events table
     await supabase.rpc('exec', {
       sql: `
