@@ -90,6 +90,9 @@ const nextConfig = {
     nodeMiddleware: false, // Explicitly disable, was causing build issues (requires canary)
     // Removed esmExternals to prevent external module dynamic import issues (already handled by deleting the property below)
     // instrumentationHook is deprecated and automatically handled by presence of instrumentation.ts
+    // Disable polyfill copying to prevent build errors
+    skipTrailingSlashRedirect: true,
+    skipMiddlewareUrlNormalize: true,
   },
 
   images: {
