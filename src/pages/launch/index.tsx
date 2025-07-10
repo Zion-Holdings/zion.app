@@ -473,9 +473,6 @@ const LaunchToolkitPage = () => {
             >
               Generate & Download PDF Kit
             </Button>
-            <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">
-              Full PDF generation capabilities are under development.
-            </p>
           </div>
         </section>
       </div>
