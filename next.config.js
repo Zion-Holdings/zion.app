@@ -448,6 +448,12 @@ const nextConfig = {
       use: [require.resolve('null-loader')],
     });
     
+    // Ignore zion_academy static CSS files that cause build errors
+    config.module.rules.unshift({
+      test: /zion_academy[\\/]static[\\/]css[\\/].*\.css$/,
+      use: [require.resolve('null-loader')],
+    });
+    
     // Prevent Node.js core modules from being polyfilled in the client bundle
     if (!isServer) {
       config.resolve.fallback = {
