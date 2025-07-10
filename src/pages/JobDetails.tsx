@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/router'; // Changed from useParams, useNavigate
 import { Header } from '@/components/Header';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, Clock, DollarSign, Tag, Users, Briefcase } from 'lucide-react';
+import { Calendar, Clock, DollarSign, Briefcase } from 'lucide-react';
 
 
 
@@ -37,16 +37,19 @@ export default function JobDetails() {
   const router = useRouter(); // Init router
   const { jobId: rawJobId } = router.query; // Get jobId from query
   const jobId = typeof rawJobId === 'string' ? rawJobId : undefined;
-  const { job, isLoading, error } = useJobDetails(jobId) as { job: Job | undefined, isLoading: boolean, error: any };
+  const { job, isLoading, error } = useJobDetails(jobId) as { job: Job | undefined, isLoading: boolean, error: unknown };
   const { user, isAuthenticated } = useAuth();
   // navigate is now router
   const { isWhitelabel, brandName } = useWhitelabel();
   
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
 
-  const formatBudget = (budget: any) => {
-    if (!budget) return "Not specified";
-    return `$${budget.min} - $${budget.max}`;
+  const formatBudget = (budget: unknown) => {
+    if (!budget || typeof budget !== 'object' || budget === null || !('min' in budget) || !('max' in budget)) {
+      return "Not specified";
+    }
+    const b = budget as { min: number; max: number };
+    return `$${b.min} - $${b.max}`;
   };
 
   if (isLoading) {

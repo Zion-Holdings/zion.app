@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router'; // Changed from useNavigate
 import Link from 'next/link';
 import { useAuth } from '@/hooks/useAuth';
 import { useRouterReady, useRouteChange } from '@/hooks/useRouterReady';
@@ -54,9 +53,9 @@ export default function TalentDirectory() {
     setSortOption,
     isMobileFilterOpen,
     setIsMobileFilterOpen,
-    isHireModalOpen,
+    _isHireModalOpen: _isHireModalOpen,
     setIsHireModalOpen,
-    selectedTalent,
+    _selectedTalent: _selectedTalent,
     setSelectedTalent,
     expandedSections,
     error,

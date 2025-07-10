@@ -31,12 +31,16 @@ import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 /**
  * Marketplace component props
  */
-export interface MarketplaceProps {
-  // All props removed - component now fetches data independently
-}
+export type MarketplaceProps = Record<string, never>;
 
 // Market insights component
-const MarketInsights: React.FC<{ stats: any }> = ({ stats }) => (
+interface MarketStats {
+  averagePrice: number;
+  averageRating: number;
+  totalProducts: number;
+  categoriesCount: number;
+}
+const MarketInsights: React.FC<{ stats: MarketStats }> = ({ stats }) => (
   <Card className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-blue-700/30 mb-6">
     <CardContent className="p-6">
       <div className="flex items-center gap-2 mb-4">
@@ -250,10 +254,10 @@ export default function Marketplace() {
   const [minRating, setMinRating] = useState(0);
   const [filterAvailability, setFilterAvailability] = useState('');
   const [filterLocation, setFilterLocation] = useState('');
-  const { handleApiError, retryQuery } = useApiErrorHandling();
+  const { handleApiError, retryQuery: _retryQuery } = useApiErrorHandling();
 
   // Handle Add Product button with authentication check
-  const handleAddProduct = useCallback(() => {
+  const _handleAddProduct = useCallback(() => {
     if (!isAuthenticated) {
       setIsAuthModalOpen(true); // Use the new auth modal
       return;
@@ -331,7 +335,7 @@ export default function Marketplace() {
           case 'ai-score':
             return (b.aiScore || 0) - (a.aiScore || 0);
           case 'newest':
-          default:
+          default: {
             // Ensure createdAt exists and is a valid date string before parsing
             const timeA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
             const timeB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
@@ -342,6 +346,7 @@ export default function Marketplace() {
             if (isNaN(timeA)) return 1;  // a is invalid, b comes first
 
             return timeB - timeA; // Both valid, sort by time
+          }
         }
       });
 
@@ -355,15 +360,16 @@ export default function Marketplace() {
         hasMore: endIndex < items.length,
         total: items.length
       };
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const errorObj = err instanceof Error ? err : new Error(String(err));
       // Log the error and allow useInfiniteScrollPagination to handle it
-      logErrorToProduction('Error in Marketplace fetchProducts:', { data: err });
+      logErrorToProduction('Error in Marketplace fetchProducts:', { data: errorObj });
       
       // Show more specific error messages based on the error type
-      if (err.response?.status === 403) {
+      if (typeof err === 'object' && err !== null && 'response' in err && (err as { response?: { status?: number } }).response?.status === 403) {
         logErrorToProduction("403 Forbidden error - authentication issue");
         // Don't show toast here, let the AuthModal handle it or rely on ProductCard's tooltip
-      } else if (err.response?.status === 500) {
+      } else if (typeof err === 'object' && err !== null && 'response' in err && (err as { response?: { status?: number } }).response?.status === 500) {
         logErrorToProduction("500 Server error");
         toast({
           title: "Server Error", 
@@ -371,10 +377,10 @@ export default function Marketplace() {
           variant: "destructive",
         });
       } else {
-        handleApiError(err); // This might show a toast or log to Sentry
+        handleApiError(errorObj); // This might show a toast or log to Sentry
       }
       
-      throw err; // Re-throw to let useInfiniteScrollPagination know about the failure
+      throw errorObj; // Re-throw to let useInfiniteScrollPagination know about the failure
     }
   }, [filterCategory, sortBy, showRecommended, priceRange, minAiScore, minRating, filterAvailability, filterLocation, handleApiError, toast]);
 

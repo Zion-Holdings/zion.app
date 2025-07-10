@@ -40,7 +40,7 @@ export default function EditPostPage() {
   const { postId } = router.query as { postId?: string };
   const { toast } = useToast();
   const { user } = useAuth();
-  const [post, setPost] = useState<ForumPost | null>(mockPost);
+  const [post, _setPost] = useState<ForumPost | null>(mockPost);
   const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {
@@ -93,7 +93,7 @@ export default function EditPostPage() {
     tags: post.tags.join(", ")
   };
 
-  const handleSubmit = async (values: PostFormValues) => {
+  const handleSubmit = async (_values: PostFormValues) => {
     try {
       // Here we would normally update the post in the database
       // For now, we'll just simulate a successful update
@@ -105,7 +105,7 @@ export default function EditPostPage() {
       
       // Redirect back to the post
       router.push(`/community/post/${postId}`);
-    } catch (error) {
+    } catch {
       toast({
         title: "Error",
         description: "There was a problem updating your post",

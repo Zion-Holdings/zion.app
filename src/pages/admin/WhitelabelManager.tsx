@@ -6,7 +6,6 @@ import { WhitelabelRequestForm } from "@/components/admin/whitelabel/WhitelabelR
 import { TenantsList } from "@/components/admin/whitelabel/TenantsList";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useAuth } from "@/hooks/useAuth";
-import { useRouter } from "next/router";
 
 export default function WhitelabelManager() {
   const { user } = useAuth();

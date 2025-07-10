@@ -56,9 +56,11 @@ export const NotificationProvider = ({ children }: { children: ReactNode }): Rea
             table: 'notifications',
             filter: `user_id=eq.${user.id}`
           },
-          (payload: any) => {
-            logInfo('Notification change received:', { data: payload });
-            notificationOps.fetchNotifications();
+          (payload: unknown) => {
+            if (typeof payload === 'object' && payload !== null) {
+              logInfo('Notification change received:', { data: payload });
+              notificationOps.fetchNotifications();
+            }
           }
         )
         .subscribe();

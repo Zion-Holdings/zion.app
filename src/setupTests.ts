@@ -53,7 +53,7 @@ Object.defineProperty(window, 'scrollTo', {
 
 // Mock Shoplocket if it's used and causes issues - this is a placeholder
 if (typeof window.Shoplocket === 'undefined') {
-  (window as any).Shoplocket = {
+  (window as unknown as { Shoplocket: { open: () => void; close: () => void; on: () => void; off: () => void } }).Shoplocket = {
     open: vi.fn(),
     close: vi.fn(),
     on: vi.fn(),
@@ -71,17 +71,17 @@ if (typeof window.Shoplocket === 'undefined') {
 // Mock safeStorage and safeSessionStorage to prevent actual storage operations during tests
 // and allow assertions on their usage.
 vi.mock('@/utils/safeStorage', async (importOriginal) => {
-  const actual = await importOriginal() as any;
+  const actual = (await importOriginal()) as Record<string, unknown>;
   return {
     ...actual,
     safeStorage: {
-      getItem: vi.fn((key) => null), // Default to returning null
+      getItem: vi.fn((key: string) => null), // Default to returning null
       setItem: vi.fn(),
       removeItem: vi.fn(),
       clear: vi.fn(),
     },
     safeSessionStorage: {
-      getItem: vi.fn((key) => null),
+      getItem: vi.fn((key: string) => null),
       setItem: vi.fn(),
       removeItem: vi.fn(),
       clear: vi.fn(),

@@ -177,7 +177,7 @@ function MarketplacePageContent() {
   const router = useRouter();
   const { t } = useTranslation();
   const dispatch = useDispatch<AppDispatch>();
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated: _isAuthenticated } = useAuth();
   const [sortBy, setSortBy] = useState('newest');
   const [filterCategory, setFilterCategory] = useState('');
   const [showRecommended, setShowRecommended] = useState(false);

@@ -5,7 +5,6 @@ import { ServiceDescriptionForm } from "@/components/services/ServiceDescription
 import { GeneratedDescriptionDisplay } from "@/components/services/GeneratedDescriptionDisplay";
 import { SEO } from "@/components/SEO";
 import { useAuth } from "@/hooks/useAuth";
-import { useRouter } from "next/router";
 
 export default function ServiceDescriptionGenerator() {
   const { isAuthenticated, isLoading } = useAuth();

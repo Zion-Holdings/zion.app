@@ -1,16 +1,17 @@
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Elements } from '@stripe/react-stripe-js';
 import { getStripe } from '@/utils/getStripe';
 import CardForm from '@/components/checkout/CardForm';
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/store';
 import Link from 'next/link';
+import type { PaymentIntent } from '@stripe/stripe-js';
 
 export default function CheckoutPage() {
-  const router = useRouter();
+  // const router = useRouter(); // Unused, remove to resolve linter warning
   const items = useSelector((s: RootState) => s.cart.items);
-  const [intent, setIntent] = useState<any | null>(null);
+  // Stripe.PaymentIntent type is available from @stripe/stripe-js
+  const [intent, setIntent] = useState<PaymentIntent | null>(null);
   // Removed isLoading and error states related to single product fetching for now
   // As per plan, prioritize cart checkout. Single product logic will be reviewed in step 3.
 

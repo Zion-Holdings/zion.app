@@ -30,8 +30,6 @@ interface DistributionChartItem {
     value: number;
 }
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#AA00FF', '#FF00AA', '#00AAAA', '#AAAA00'];
-
 // Helper for slugifying filenames
 const slugify = (text: string): string => {
   return text.toString().toLowerCase()
@@ -140,7 +138,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
     }
 
     try {
-      const apiPayload: any = {
+      const apiPayload: Record<string, unknown> = {
         tokenName,
         tokenSupply: tokenSupply.toString(),
         useCases,
@@ -170,9 +168,10 @@ const WhitepaperGeneratorPage: React.FC = () => {
       }
       setRawDraft((data as { whitepaperDraft: string }).whitepaperDraft);
       setSections(parseWhitepaperDraft((data as { whitepaperDraft: string }).whitepaperDraft));
-    } catch (e: any) {
-      logErrorToProduction(e instanceof Error ? e.message : String(e), e instanceof Error ? e : undefined, { message: 'Error generating whitepaper' });
-      setError(e.message || 'An unexpected error occurred.');
+    } catch (e: unknown) {
+      const err = e as Error;
+      logErrorToProduction(err.message, err, { message: 'Error generating whitepaper' });
+      setError(err.message || 'An unexpected error occurred.');
       setSections([]);
     } finally {
       setIsLoading(false);
@@ -222,9 +221,10 @@ const WhitepaperGeneratorPage: React.FC = () => {
       document.body.removeChild(link);
       URL.revokeObjectURL(url);
       setError(null);
-    } catch (e: any) {
-        logErrorToProduction(e instanceof Error ? e.message : String(e), e instanceof Error ? e : undefined, { message: 'Error downloading Markdown' });
-        setError("Failed to download Markdown file. " + e.message);
+    } catch (e: unknown) {
+        const err = e as Error;
+        logErrorToProduction(err.message, err, { message: 'Error downloading Markdown' });
+        setError("Failed to download Markdown file. " + err.message);
     } finally {
         setIsDownloading(false);
     }
@@ -253,7 +253,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
         scale: 2, // Increase scale for better resolution
         useCORS: true, // If there are any external images/fonts (though unlikely here)
         logging: true, // For debugging
-        onclone: (documentClone) => {
+        onclone: (_documentClone) => {
             // You might need to re-apply some styles here if they don't transfer well
             // For example, ensure SVGs from recharts are fully rendered.
             // This is advanced usage of html2canvas.
@@ -282,9 +282,10 @@ const WhitepaperGeneratorPage: React.FC = () => {
 
       pdf.save(`${slugify(tokenName || 'whitepaper')}_whitepaper.pdf`);
 
-    } catch (e: any) {
-      logErrorToProduction(e instanceof Error ? e.message : String(e), e instanceof Error ? e : undefined, { message: 'Error downloading PDF' });
-      setError("Failed to download PDF file. " + e.message);
+    } catch (e: unknown) {
+      const err = e as Error;
+      logErrorToProduction(err.message, err, { message: 'Error downloading PDF' });
+      setError("Failed to download PDF file. " + err.message);
     } finally {
       setIsDownloading(false);
     }
@@ -315,17 +316,18 @@ const WhitepaperGeneratorPage: React.FC = () => {
 
       if (funcError) throw new Error(`Supabase function error: ${funcError.message}`);
       if (!response) throw new Error('No response received from create-shared-whitepaper function');
-      if ((response as any).error) throw new Error(`Error from create-shared-whitepaper: ${(response as any).error}`);
-      if (!(response as any).id) throw new Error('Failed to get ID for shareable link.');
+      if ((response as unknown as { error?: string }).error) throw new Error(`Error from create-shared-whitepaper: ${(response as unknown as { error?: string }).error}`);
+      if (!(response as unknown as { id?: string }).id) throw new Error('Failed to get ID for shareable link.');
 
-      const link = `${window.location.origin}/whitepaper/view/${(response as any).id}`;
+      const link = `${window.location.origin}/whitepaper/view/${(response as unknown as { id?: string }).id}`;
       setShareableLink(link);
-      setCurrentSharedWhitepaperId((response as any).id);
-      setCurrentSharedWhitepaperIsPublic((response as any).is_public);
+      setCurrentSharedWhitepaperId((response as unknown as { id?: string }).id ?? null);
+      setCurrentSharedWhitepaperIsPublic((response as unknown as { is_public?: boolean }).is_public ?? null);
       toast.success("Shareable link generated!");
-    } catch (e: any) {
-      logErrorToProduction(e instanceof Error ? e.message : String(e), e instanceof Error ? e : undefined, { message: 'Error generating shareable link' });
-      setError("Failed to generate shareable link: " + e.message);
+    } catch (e: unknown) {
+      const err = e as Error;
+      logErrorToProduction(err.message, err, { message: 'Error generating shareable link' });
+      setError("Failed to generate shareable link: " + err.message);
       toast.error("Failed to generate shareable link.");
     } finally {
       setIsSharing(false);
@@ -350,14 +352,15 @@ const WhitepaperGeneratorPage: React.FC = () => {
         });
         if (funcError) throw new Error(`Supabase function error: ${funcError.message}`);
         if (!response) throw new Error('No response received from set-shared-whitepaper-public-status function');
-        if ((response as any).error) throw new Error(`Error from set-shared-whitepaper-public-status: ${(response as any).error}`);
+        if ((response as unknown as { error?: string }).error) throw new Error(`Error from set-shared-whitepaper-public-status: ${(response as unknown as { error?: string }).error}`);
 
-        setCurrentSharedWhitepaperIsPublic((response as any).is_public); // Update with actual status from DB
-        toast.success(`Whitepaper is now ${(response as any).is_public ? 'public' : 'private'}.`);
+        setCurrentSharedWhitepaperIsPublic((response as unknown as { is_public?: boolean }).is_public ?? null); // Update with actual status from DB
+        toast.success(`Whitepaper is now ${(response as unknown as { is_public?: boolean }).is_public ? 'public' : 'private'}.`);
 
-    } catch (e: any) {
-        logErrorToProduction(e instanceof Error ? e.message : String(e), e instanceof Error ? e : undefined, { message: 'Error toggling public status' });
-        setError("Failed to update public status: " + e.message);
+    } catch (e: unknown) {
+        const err = e as Error;
+        logErrorToProduction(err.message, err, { message: 'Error toggling public status' });
+        setError("Failed to update public status: " + err.message);
         toast.error("Failed to update public status.");
         // Revert optimistic update if it failed:
         // setCurrentSharedWhitepaperIsPublic(!newPublicStatus);
@@ -384,14 +387,14 @@ const WhitepaperGeneratorPage: React.FC = () => {
             });
             if (linkFuncError) throw new Error(`Failed to create link for counsel: ${linkFuncError.message}`);
             if (!linkResponse) throw new Error('No response received from create-shared-whitepaper function for counsel');
-            if ((linkResponse as any).error) throw new Error(`Error from create-shared-whitepaper function: ${(linkResponse as any).error}`);
-            if (!(linkResponse as any).id) throw new Error('Failed to get ID for shareable link for counsel.');
+            if ((linkResponse as unknown as { error?: string }).error) throw new Error(`Error from create-shared-whitepaper function: ${(linkResponse as unknown as { error?: string }).error}`);
+            if (!(linkResponse as unknown as { id?: string }).id) throw new Error('Failed to get ID for shareable link for counsel.');
 
-            linkToSubmit = `${window.location.origin}/whitepaper/view/${(linkResponse as any).id}`;
-            whitepaperIdToSubmit = (linkResponse as any).id;
-            setShareableLink(linkToSubmit);
-            setCurrentSharedWhitepaperId(whitepaperIdToSubmit);
-            setCurrentSharedWhitepaperIsPublic((linkResponse as any).is_public);
+            linkToSubmit = `${window.location.origin}/whitepaper/view/${(linkResponse as unknown as { id?: string }).id}`;
+            whitepaperIdToSubmit = (linkResponse as unknown as { id?: string }).id;
+            setShareableLink(typeof linkToSubmit === 'string' ? linkToSubmit : null);
+            setCurrentSharedWhitepaperId(typeof whitepaperIdToSubmit === 'string' ? whitepaperIdToSubmit : null);
+            setCurrentSharedWhitepaperIsPublic((linkResponse as unknown as { is_public?: boolean }).is_public ?? null);
         }
 
         // Ensure it's public before submitting, or handle as per requirements
@@ -403,7 +406,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
             });
             if (statusError) throw new Error(`Failed to make whitepaper public: ${statusError.message}`);
             if (!statusResponse) throw new Error('No response received from set-shared-whitepaper-public-status function');
-            if ((statusResponse as any).error) throw new Error((statusResponse as any).error);
+            if ((statusResponse as unknown as { error?: string }).error) throw new Error((statusResponse as unknown as { error?: string }).error);
             setCurrentSharedWhitepaperIsPublic(true);
         }
 
@@ -418,14 +421,15 @@ const WhitepaperGeneratorPage: React.FC = () => {
         });
         if (notifyError) throw new Error(`Failed to notify counsel: ${notifyError.message}`);
         if (!notifyResponse) throw new Error('No response received from notify-legal-team function');
-        if ((notifyResponse as any).error) throw new Error(`Error from notify-legal-team: ${(notifyResponse as any).error}`);
+        if ((notifyResponse as unknown as { error?: string }).error) throw new Error(`Error from notify-legal-team: ${(notifyResponse as unknown as { error?: string }).error}`);
 
         toast.success("Whitepaper submitted to counsel successfully!");
 
-    } catch (e: any) {
-        logErrorToProduction(e instanceof Error ? e.message : String(e), e instanceof Error ? e : undefined, { message: 'Error submitting to counsel' });
-        setError("Failed to submit to counsel: " + e.message);
-        toast.error("Failed to submit to counsel: " + e.message);
+    } catch (e: unknown) {
+        const err = e as Error;
+        logErrorToProduction(err.message, err, { message: 'Error submitting to counsel' });
+        setError("Failed to submit to counsel: " + err.message);
+        toast.error("Failed to submit to counsel: " + err.message);
     } finally {
         setIsSubmittingToCounsel(false);
     }

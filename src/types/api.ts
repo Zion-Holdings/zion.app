@@ -13,7 +13,7 @@ export interface TypedNextApiRequest<
 export type ApiHandler<
   TQuery = Record<string, string | string[]>,
   TBody = Record<string, unknown>,
-  TResponse = any
+  TResponse = unknown
 > = (
   req: TypedNextApiRequest<TQuery, TBody>,
   res: NextApiResponse<TResponse>
@@ -26,7 +26,7 @@ export interface ApiErrorResponse {
   code?: string | number;
 }
 
-export interface ApiSuccessResponse<T = any> {
+export interface ApiSuccessResponse<T = unknown> {
   success: boolean;
   data?: T;
   message?: string;
@@ -82,7 +82,7 @@ export interface ErrorReportBody {
     stack?: string;
     name: string;
   };
-  errorInfo?: any;
+  errorInfo?: unknown;
   userFeedback?: string;
   context?: string;
   timestamp: string;

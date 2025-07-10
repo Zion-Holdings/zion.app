@@ -80,7 +80,7 @@ export default function SearchResultsPage() {
         <select
           value={typeFilter}
           onChange={(e) => {
-            setTypeFilter(e.target.value as any);
+            setTypeFilter(e.target.value as 'all' | 'product' | 'service' | 'talent');
             setPage(1);
           }}
           className="border border-gray-300 rounded px-3 py-1"
@@ -94,7 +94,7 @@ export default function SearchResultsPage() {
         <select
           value={sortBy}
           onChange={(e) => {
-            setSortBy(e.target.value as any);
+            setSortBy(e.target.value as 'relevance' | 'titleAsc' | 'titleDesc');
             setPage(1);
           }}
           className="border border-gray-300 rounded px-3 py-1"

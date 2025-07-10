@@ -14,7 +14,7 @@ export const React19Optimizations = {
   /**
    * Enhanced memoization helpers using React 19 improvements
    */
-  optimizedMemoComponent: <T extends React.ComponentType<any>>(Component: T) => {
+  optimizedMemoComponent: <T extends React.ComponentType<unknown>>(Component: T) => {
     return memo(Component, (prevProps, nextProps) => {
       // Use React 19's improved shallow comparison
       return Object.keys(prevProps).every(
@@ -26,7 +26,7 @@ export const React19Optimizations = {
   /**
    * Create optimized callbacks with React 19 performance improvements
    */
-  createOptimizedCallback: <T extends (...args: any[]) => any>(
+  createOptimizedCallback: <T extends (...args: unknown[]) => unknown>(
     callback: T,
     deps: React.DependencyList
   ) => {

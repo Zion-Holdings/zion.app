@@ -157,7 +157,7 @@ export default function GrantsPage() {
                  return (
                   <FormItem>
                     <FormLabel>Category</FormLabel>
-                    <Select value={categoryValue} onValueChange={(value) => field.onChange({ target: { value } } as any)}>
+                    <Select value={categoryValue} onValueChange={(value) => field.onChange({ target: { value } } as unknown)}>
                       <FormControl>
                         <SelectTrigger>
                           <SelectValue />

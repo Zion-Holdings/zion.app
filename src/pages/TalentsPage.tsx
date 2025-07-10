@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUp, Filter, SortAsc, Users, TrendingUp, Star, Verified, MapPin } from 'lucide-react';
+import { ArrowUp, Filter, SortAsc, Users, Star, Verified, MapPin } from 'lucide-react';
 
 
 
@@ -17,7 +17,7 @@ import type { TalentProfile } from '@/types/talent';
 import { SkeletonCard } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import Spinner from '@/components/ui/spinner';
 
 // Add or import TalentStats type

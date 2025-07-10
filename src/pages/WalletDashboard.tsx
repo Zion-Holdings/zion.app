@@ -20,8 +20,8 @@ const WalletDashboard = () => {
 
   // Navigate to login on unauthorized error
   useEffect(() => {
-    if (isError && (error as any)?.response?.status === 401) {
-      router.push('/login'); // Changed to router.push
+    if (isError && isUnauthorizedError(error)) {
+      router.push('/login');
     }
   }, [isError, error, router]); // Changed navigate to router in dependencies
 
@@ -75,5 +75,16 @@ const WalletDashboard = () => {
     </div>
   );
 };
+
+// Type guard for error with response.status
+function isUnauthorizedError(error: unknown): boolean {
+  return (
+    typeof error === 'object' &&
+    error !== null &&
+    'response' in error &&
+    typeof (error as { response?: { status?: number } }).response === 'object' &&
+    (error as { response?: { status?: number } }).response?.status === 401
+  );
+}
 
 export default WalletDashboard;

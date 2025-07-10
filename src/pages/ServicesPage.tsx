@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/router';
-import { ArrowUp, Filter, SortAsc, Zap, TrendingUp, Star, ShoppingCart, Clock, Award } from 'lucide-react';
+import { ArrowUp, Filter, SortAsc, Star, ShoppingCart } from 'lucide-react';
 
 
 
@@ -17,7 +17,7 @@ import type { ProductListing } from '@/types/listings';
 import { SkeletonCard } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import Spinner from '@/components/ui/spinner';
 import { SERVICES } from '@/data/servicesData';
 import { useCurrency } from '@/hooks/useCurrency';
@@ -26,7 +26,15 @@ import { useCurrency } from '@/hooks/useCurrency';
 const INITIAL_SERVICES: ProductListing[] = SERVICES;
 
 // Market insights component
-const ServicesMarketInsights = ({ stats }: { stats: any }) => (
+interface Stats {
+  averagePrice: number;
+  averageRating: number;
+  totalServices: number;
+  availableServices: number;
+  premiumServices: number;
+  averageAIScore: number;
+}
+const ServicesMarketInsights = ({ stats }: { stats: Stats }) => (
   <Card className="bg-gradient-to-r from-green-900/20 to-blue-900/20 border-green-700/30 mb-6">
     <CardContent className="p-6">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -55,6 +63,16 @@ const ServicesMarketInsights = ({ stats }: { stats: any }) => (
 );
 
 // Filter controls
+interface ServiceFilterControlsProps {
+  sortBy: string;
+  setSortBy: (value: string) => void;
+  filterCategory: string;
+  setFilterCategory: (value: string) => void;
+  categories: string[];
+  showRecommended: boolean;
+  setShowRecommended: (value: boolean) => void;
+  loading: boolean;
+}
 const ServiceFilterControls = ({
   sortBy,
   setSortBy,
@@ -64,7 +82,7 @@ const ServiceFilterControls = ({
   showRecommended,
   setShowRecommended,
   loading
-}: any) => (
+}: ServiceFilterControlsProps) => (
   <div className="flex flex-wrap gap-4 mb-6 p-4 bg-muted/30 rounded-lg relative">
     {loading && <Spinner className="absolute right-4 top-4 h-4 w-4 text-primary" />}
     <div className="flex items-center gap-2">
@@ -193,11 +211,9 @@ export default function ServicesPage() {
     const startIndex = (page - 1) * limit;
     const endIndex = startIndex + limit;
     const items = filteredServices.slice(startIndex, endIndex);
-    
     return {
       items,
-      hasMore: endIndex < filteredServices.length || page < 10,
-      total: filteredServices.length
+      hasMore: endIndex < filteredServices.length || page < 10
     };
   }, [sortBy, filterCategory, showRecommended, totalGenerated]);
 
@@ -209,8 +225,7 @@ export default function ServicesPage() {
     isFetching,
     lastElementRef,
     scrollToTop,
-    refresh,
-    total
+    refresh
   } = useInfiniteScrollPagination(fetchServices, 12);
 
   useEffect(() => {

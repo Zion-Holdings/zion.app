@@ -35,6 +35,7 @@ export default function OrderDetailPage() {
   const handleResend = async () => {
     if (!order || !user?.email) return;
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       await supabase.functions.invoke('send-email', {
         body: {
           to: user.email,
@@ -43,8 +44,12 @@ export default function OrderDetailPage() {
         }
       });
       toast({ title: 'Receipt sent!' });
-    } catch (err) {
-      toast({ title: 'Failed to send receipt', variant: 'destructive' });
+    } catch (err: unknown) {
+      let message = 'Failed to send receipt';
+      if (typeof err === 'object' && err !== null && 'message' in err) {
+        message = (err as { message?: string }).message || message;
+      }
+      toast({ title: message, variant: 'destructive' });
     }
   };
 

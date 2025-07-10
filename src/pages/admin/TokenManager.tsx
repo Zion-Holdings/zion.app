@@ -54,11 +54,11 @@ export default function TokenManager() {
         description: 'Transaction processed'
       });
       fetchTransactions();
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Failed to process transaction:', { data: err });
       toast({
         title: 'Error',
-        description: err.message || 'Failed',
+        description: (typeof err === 'object' && err && 'message' in err ? (err as { message?: string }).message : 'Failed'),
         variant: 'destructive'
       });
     } finally {

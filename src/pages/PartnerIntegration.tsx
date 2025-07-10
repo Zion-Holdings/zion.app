@@ -99,7 +99,7 @@ export default function PartnerIntegration() {
                   render={({ field }: { field: UseFormRegisterReturn }) => (
                     <FormItem>
                       <FormLabel>Entity Type</FormLabel>
-                      <Select onValueChange={(value) => field.onChange({ target: { value } } as any)} value={form.watch('entityType')}>
+                      <Select onValueChange={(value) => field.onChange({ target: { value } } as { target: { value: string } })} value={form.watch('entityType')}>
                         <FormControl>
                           <SelectTrigger>
                             <SelectValue placeholder="Select type" />
@@ -137,7 +137,7 @@ export default function PartnerIntegration() {
                   render={({ field }: { field: UseFormRegisterReturn }) => (
                     <FormItem>
                       <FormLabel>Use Case</FormLabel>
-                      <Select onValueChange={(value) => field.onChange({ target: { value } } as any)} value={form.watch('useCase')}>
+                      <Select onValueChange={(value) => field.onChange({ target: { value } } as { target: { value: string } })} value={form.watch('useCase')}>
                         <FormControl>
                           <SelectTrigger>
                             <SelectValue placeholder="Select use case" />

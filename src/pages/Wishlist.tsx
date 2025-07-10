@@ -11,6 +11,8 @@ import { toast } from '@/hooks/use-toast';
 import { useAuth } from '@/hooks/useAuth';
 import { useRouter } from 'next/router'; // Changed from useNavigate
 import { useEffect } from 'react'; // Added useEffect
+import type { Product } from '@/types/product';
+import type { TalentProfile } from '@/types/talent';
 
 export default function WishlistPage() {
   const { favorites, loading, toggleFavorite } = useFavorites();
@@ -44,11 +46,11 @@ export default function WishlistPage() {
     toast.success(`1× ${item.title || 'Item'} added`);
   };
 
-  const productMap = MARKETPLACE_LISTINGS.reduce<Record<string, any>>((acc, p) => {
+  const productMap = MARKETPLACE_LISTINGS.reduce<Record<string, Product>>((acc, p) => {
     acc[p.id] = p;
     return acc;
   }, {});
-  const talentMap = TALENT_PROFILES.reduce<Record<string, any>>((acc, t) => {
+  const talentMap = TALENT_PROFILES.reduce<Record<string, TalentProfile>>((acc, t) => {
     acc[t.id] = t;
     return acc;
   }, {});

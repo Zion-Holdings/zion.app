@@ -13,7 +13,7 @@ export interface ProductDetailsData {
   currency: string | null;
   category: string | null;
   tags: string[];
-  images: any | null;
+  images: string[] | { url: string; alt?: string }[] | null;
   averageRating: number | null;
   reviewCount: number;
   specifications?: string[] | null;

@@ -41,12 +41,15 @@ function Account({ user: initialUser, orders }: AccountProps) {
       });
       const data = await res.json();
       setUser(data);
-    } catch (error: any) {
+    } catch (error: unknown) {
       logErrorToProduction('Error updating profile:', { data: error });
+      let message = 'Failed to update profile. Please try again.';
+      if (typeof error === 'object' && error !== null && 'message' in error) {
+        message = (error as { message?: string }).message || message;
+      }
       toast({
         title: 'Error updating profile',
-        description:
-          error.message || 'Failed to update profile. Please try again.',
+        description: message,
         variant: 'destructive',
       });
     }

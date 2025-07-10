@@ -7,9 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { ThumbsUp, ThumbsDown, Calendar, Flag, Edit, Trash2, Pin, Lock, CheckCircle } from 'lucide-react';
+import { ThumbsUp, ThumbsDown, Calendar, Flag, Edit, Pin, Lock, CheckCircle } from 'lucide-react';
 
 
 
@@ -103,7 +102,7 @@ export default function ForumPostPage() {
   // can't determine the generic type for the helper from React Router.
   // Cast the result instead to provide the expected shape.
   const router = useRouter();
-  const postId = router.query.postId as string;
+  const _postId = router.query.postId as string;
   const { user } = useAuth();
   const { toast } = useToast();
   const [post, setPost] = useState(mockPost);
@@ -181,12 +180,14 @@ export default function ForumPostPage() {
       content,
       authorId: user.id || 'unknown',
       authorName: user.displayName || 'Anonymous',
-      authorAvatar: user.avatarUrl,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
       upvotes: 0,
       downvotes: 0
     };
+    if (user.avatarUrl) {
+      (newReply as any).authorAvatar = user.avatarUrl;
+    }
     
     setReplies([...replies, newReply]);
     setPost({ ...post, replyCount: post.replyCount + 1 });

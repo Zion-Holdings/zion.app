@@ -21,7 +21,7 @@ const SignupSchema = Yup.object({
 
 export default function SimpleSignup() {
   const router = useRouter(); // Changed from navigate
-  const { setUser } = useAuth();
+  const { setUser: _setUser } = useAuth();
 
   const formik = useFormik({
     initialValues: { email: '', password: '' },
@@ -43,10 +43,11 @@ export default function SimpleSignup() {
           toast.success('Account created successfully!');
           router.push('/login');
         }
-      } catch (err: any) {
-        logErrorToProduction('Signup error:', { data: err.message });
-        setErrors({ email: err.message });
-        toast.error(err.message || 'Signup failed');
+      } catch (err: unknown) {
+        const message = typeof err === 'object' && err !== null && 'message' in err ? (err as { message?: string }).message : undefined;
+        logErrorToProduction('Signup error:', { data: message });
+        setErrors({ email: message });
+        toast.error(message || 'Signup failed');
       } finally {
         setSubmitting(false);
       }

@@ -28,7 +28,7 @@ declare global {
     withResolvers<T>(): {
       promise: Promise<T>;
       resolve: (value: T | PromiseLike<T>) => void;
-      reject: (reason?: any) => void;
+      reject: (reason?: unknown) => void;
     };
   }
 
@@ -360,7 +360,7 @@ declare global {
     withResolvers<T>(): {
       promise: Promise<T>;
       resolve: (value: T | PromiseLike<T>) => void;
-      reject: (reason?: any) => void;
+      reject: (reason?: unknown) => void;
     };
   }
 
@@ -406,9 +406,9 @@ declare global {
     [P in K]: NonNullable<T[P]>;
   };
 
-  type AsyncReturnType<T extends (...args: any) => Promise<any>> = Awaited<ReturnType<T>>;
+  type AsyncReturnType<T extends (...args: unknown[]) => Promise<unknown>> = Awaited<ReturnType<T>>;
 
-  type ComponentProps<T extends React.ComponentType<any>> = T extends React.ComponentType<infer P> ? P : never;
+  type ComponentProps<T extends React.ComponentType<unknown>> = T extends React.ComponentType<infer P> ? P : never;
 
   type EventHandler<T extends Event = Event> = (event: T) => void;
 

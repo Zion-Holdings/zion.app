@@ -1,4 +1,4 @@
-import { GetServerSideProps, GetStaticProps } from 'next';
+import { GetServerSideProps, GetStaticProps, GetServerSidePropsContext, GetStaticPropsContext, GetServerSidePropsResult, GetStaticPropsResult } from 'next';
 import * as Sentry from '@sentry/nextjs';
 import type { Scope } from '@sentry/types';
 import { ENV_CONFIG } from './environmentConfig';
@@ -34,18 +34,18 @@ const defaultRetryConfig: RetryConfig = {
 /**
  * Enhanced error handling wrapper for getServerSideProps
  */
-export function withServerSideErrorHandling<P extends Record<string, any>>(
+export function withServerSideErrorHandling<P extends Record<string, unknown>>(
   getServerSideProps: GetServerSideProps<P>,
   retryConfig: Partial<RetryConfig> = {}
 ): GetServerSideProps<P | ErrorPageProps> {
   const config = { ...defaultRetryConfig, ...retryConfig };
 
-  return async (context: any) => {
+  return async (context: GetServerSidePropsContext): Promise<GetServerSidePropsResult<P | ErrorPageProps>> => {
     let lastError: Error | null = null;
     
     for (let attempt = 0; attempt <= config.maxRetries; attempt++) {
       try {
-        const result = await (getServerSideProps as any)(context);
+        const result = await getServerSideProps(context);
         
         // If we succeeded after retries, log the recovery
         if (attempt > 0) {
@@ -62,10 +62,10 @@ export function withServerSideErrorHandling<P extends Record<string, any>>(
         }
         
         return result;
-      } catch (error: any) {
-        lastError = error;
+      } catch (error: unknown) {
+        lastError = error instanceof Error ? error : new Error(String(error));
         
-        logWarn('⚠️ getServerSideProps attempt ${attempt + 1}/${config.maxRetries + 1} failed for ${context.resolvedUrl}:', { data: error.message });
+        logWarn('⚠️ getServerSideProps attempt ${attempt + 1}/${config.maxRetries + 1} failed for ${context.resolvedUrl}:', { data: lastError.message });
         
         // Log each attempt to Sentry if configured
         if (ENV_CONFIG.sentry.isConfigured) {
@@ -73,28 +73,28 @@ export function withServerSideErrorHandling<P extends Record<string, any>>(
             scope.setTag('attempt', String(attempt + 1));
             scope.setTag('maxRetries', String(config.maxRetries));
             scope.setTag('route', context.resolvedUrl);
-            scope.setTag('errorType', getErrorType(error));
+            scope.setTag('errorType', getErrorType(lastError));
             scope.setLevel(attempt < config.maxRetries ? 'warning' : 'error');
             scope.setContext('serverSideProps', {
-              query: context.query,
-              params: context.params,
+              query: (context as any).query,
+              params: (context as any).params,
               req: {
-                url: context.req?.url,
-                method: context.req?.method,
+                url: (context as any).req?.url,
+                method: (context as any).req?.method,
                 headers: {
-                  'user-agent': context.req?.headers['user-agent'],
-                  'referer': context.req?.headers['referer']
+                  'user-agent': (context as any).req?.headers['user-agent'],
+                  'referer': (context as any).req?.headers['referer']
                 }
               }
             });
-            Sentry.captureException(error);
+            Sentry.captureException(lastError);
           });
         }
 
         // Check if we should retry
         const shouldRetry = attempt < config.maxRetries && 
                           config.retryCondition && 
-                          config.retryCondition(error);
+                          config.retryCondition(lastError);
 
         if (shouldRetry) {
           logInfo(`🔄 Retrying in ${config.retryDelay}ms...`);
@@ -119,8 +119,8 @@ export function withServerSideErrorHandling<P extends Record<string, any>>(
           scope.setTag('errorType', getErrorType(lastError));
           scope.setLevel('error');
           scope.setContext('serverSideProps', {
-            query: context.query,
-            params: context.params,
+            query: (context as any).query,
+            params: (context as any).params,
             environmentConfig: {
               supabaseConfigured: ENV_CONFIG.supabase.isConfigured,
               sentryConfigured: ENV_CONFIG.sentry.isConfigured,
@@ -138,8 +138,8 @@ export function withServerSideErrorHandling<P extends Record<string, any>>(
       const statusCode = errorType === 'config' ? 503 : 
                         errorType === 'network' ? 502 : 500;
 
-      if (context.res) {
-        context.res.statusCode = statusCode;
+      if ((context as any).res) {
+        (context as any).res.statusCode = statusCode;
       }
 
       return {
@@ -160,18 +160,18 @@ export function withServerSideErrorHandling<P extends Record<string, any>>(
 /**
  * Enhanced error handling wrapper for getStaticProps
  */
-export function withStaticErrorHandling<P extends Record<string, any>>(
+export function withStaticErrorHandling<P extends Record<string, unknown>>(
   getStaticProps: GetStaticProps<P>,
   retryConfig: Partial<RetryConfig> = {}
 ): GetStaticProps<P> {
   const config = { ...defaultRetryConfig, ...retryConfig };
 
-  return async (context: any) => {
+  return async (context: GetStaticPropsContext): Promise<GetStaticPropsResult<P>> => {
     let lastError: Error | null = null;
     
     for (let attempt = 0; attempt <= config.maxRetries; attempt++) {
       try {
-        const result = await (getStaticProps as any)(context);
+        const result = await getStaticProps(context);
         
         // If we succeeded after retries, log the recovery
         if (attempt > 0) {
@@ -188,10 +188,10 @@ export function withStaticErrorHandling<P extends Record<string, any>>(
         }
         
         return result;
-      } catch (error: any) {
-        lastError = error;
+      } catch (error: unknown) {
+        lastError = error instanceof Error ? error : new Error(String(error));
         
-        logWarn('⚠️ getStaticProps attempt ${attempt + 1}/${config.maxRetries + 1} failed:', { data: error.message });
+        logWarn('⚠️ getStaticProps attempt ${attempt + 1}/${config.maxRetries + 1} failed:', { data: lastError.message });
         
         // Log each attempt to Sentry if configured
         if (ENV_CONFIG.sentry.isConfigured) {
@@ -199,24 +199,24 @@ export function withStaticErrorHandling<P extends Record<string, any>>(
             scope.setTag('attempt', String(attempt + 1));
             scope.setTag('maxRetries', String(config.maxRetries));
             scope.setTag('staticGeneration', String(true));
-            scope.setTag('errorType', getErrorType(error));
+            scope.setTag('errorType', getErrorType(lastError));
             scope.setLevel(attempt < config.maxRetries ? 'warning' : 'error');
             scope.setContext('staticProps', {
-              params: context.params,
+              params: (context as any).params,
               environmentConfig: {
                 supabaseConfigured: ENV_CONFIG.supabase.isConfigured,
                 sentryConfigured: ENV_CONFIG.sentry.isConfigured,
                 environment: ENV_CONFIG.app.environment
               }
             });
-            Sentry.captureException(error);
+            Sentry.captureException(lastError);
           });
         }
 
         // Check if we should retry
         const shouldRetry = attempt < config.maxRetries && 
                           config.retryCondition && 
-                          config.retryCondition(error);
+                          config.retryCondition(lastError);
 
         if (shouldRetry) {
           logInfo(`🔄 Retrying in ${config.retryDelay}ms...`);
@@ -340,15 +340,15 @@ export async function safeFetch(
       }
 
       return response;
-    } catch (error: any) {
-      lastError = error;
+    } catch (error: unknown) {
+      lastError = error instanceof Error ? error : new Error(String(error));
 
       const shouldRetry = attempt < config.maxRetries && 
                         config.retryCondition && 
-                        config.retryCondition(error);
+                        config.retryCondition(lastError);
 
       if (shouldRetry) {
-        logWarn('🔄 Fetch attempt ${attempt + 1} failed, retrying in ${config.retryDelay}ms:', { data: error.message });
+        logWarn('🔄 Fetch attempt ${attempt + 1} failed, retrying in ${config.retryDelay}ms:', { data: lastError.message });
         await new Promise(resolve => setTimeout(resolve, config.retryDelay));
         continue;
       }

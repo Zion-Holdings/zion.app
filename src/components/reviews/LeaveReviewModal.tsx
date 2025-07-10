@@ -11,6 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ReviewForm } from "./ReviewForm";
+import type { ReviewFormValues } from "./ReviewForm";
 import { useReviews } from "@/hooks/useReviews";
 
 interface LeaveReviewModalProps {
@@ -42,7 +43,7 @@ export function LeaveReviewModal({
     }
   };
   
-  const handleSubmit = async (formValues: any) => {
+  const handleSubmit = async (formValues: ReviewFormValues) => {
     if (userReview) {
       // Update existing review
       const { project_id, reviewee_id, ...updates } = formValues;

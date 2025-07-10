@@ -381,16 +381,17 @@ class PerformanceOptimizer {
     if (!this.config.enableCodeSplitting) return;
 
     // Report bundle size if available
-    if (typeof window !== 'undefined' && (window as any).__BUNDLE_SIZE__) {
-      const bundleSize = (window as any).__BUNDLE_SIZE__;
-      logPerformance('Bundle Size', bundleSize);
-
-      if (bundleSize > this.config.bundleSizeLimit * 1024) {
-        logWarn('Large bundle size detected', {
-          size: `${(bundleSize / 1024).toFixed(2)}KB`,
-          limit: `${this.config.bundleSizeLimit}KB`,
-          recommendation: 'Consider implementing more aggressive code splitting'
-        });
+    if (typeof window !== 'undefined') {
+      const bundleSize = (window as unknown as { __BUNDLE_SIZE__?: number }).__BUNDLE_SIZE__;
+      if (typeof bundleSize === 'number') {
+        logPerformance('Bundle Size', bundleSize);
+        if (bundleSize > this.config.bundleSizeLimit * 1024) {
+          logWarn('Large bundle size detected', {
+            size: `${(bundleSize / 1024).toFixed(2)}KB`,
+            limit: `${this.config.bundleSizeLimit}KB`,
+            recommendation: 'Consider implementing more aggressive code splitting'
+          });
+        }
       }
     }
 

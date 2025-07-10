@@ -62,11 +62,16 @@ export function LoginForm() {
       const result = await login(data.email, data.password, data.rememberMe);
       if (result?.error) {
         let errorMessage = "Login failed. Please try again."; // Default generic error
-        if (result?.error && result?.error?.message) {
-          if (result.error.message.toLowerCase().includes("email not confirmed")) {
+        if (
+          typeof result.error === 'object' &&
+          result.error !== null &&
+          'message' in result.error &&
+          typeof (result.error as any).message === 'string'
+        ) {
+          if ((result.error as any).message.toLowerCase().includes("email not confirmed")) {
             errorMessage = "Your email is not confirmed. Please check your inbox for a confirmation link.";
           } else {
-            errorMessage = result.error.message;
+            errorMessage = (result.error as any).message;
           }
         }
         form.setError("root", { message: errorMessage });

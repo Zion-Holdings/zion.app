@@ -34,7 +34,8 @@ export function FeaturedListingsSection({
       author: {
         name: "Zion Academy",
         id: "zion-academy"
-      }
+      },
+      stock: 10
     },
     {
       id: "freelance-ai-engineer",
@@ -53,7 +54,8 @@ export function FeaturedListingsSection({
       author: {
         name: "TopTalent",
         id: "toptalent"
-      }
+      },
+      stock: 0
     },
     {
       id: "cloud-gpu-rental",
@@ -72,7 +74,8 @@ export function FeaturedListingsSection({
       author: {
         name: "ComputeHub",
         id: "computehub"
-      }
+      },
+      stock: 10
     },
     {
       id: "ai-optimized-cloud-storage",
@@ -91,7 +94,8 @@ export function FeaturedListingsSection({
       author: {
         name: "DataCloud",
         id: "datacloud"
-      }
+      },
+      stock: 10
     }
   ];
 

@@ -1,13 +1,15 @@
 // Comprehensive Performance Monitoring System for Zion App
 // Tracks Core Web Vitals, User Experience Metrics, and Performance Issues
 
+import type { Metric } from 'web-vitals';
+
 interface PerformanceMetric {
   name: string;
   value: number;
   rating: 'good' | 'needs-improvement' | 'poor';
   timestamp: number;
   id: string;
-  navigationType?: string;
+  navigationType?: string | undefined;
   url?: string;
 }
 
@@ -77,7 +79,10 @@ class PerformanceMonitor {
     }
   }
 
-  private recordMetric(name: string, metric: any): void {
+  // Overload signatures
+  private recordMetric(name: string, metric: Metric): void;
+  private recordMetric(name: string, metric: { name?: string; value: number; id?: string; rating?: PerformanceMetric['rating']; navigationType?: string }): void;
+  private recordMetric(name: string, metric: Metric | { name?: string; value: number; id?: string; rating?: PerformanceMetric['rating']; navigationType?: string }): void {
     const performanceMetric: PerformanceMetric = {
       name: metric.name || name,
       value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
@@ -85,23 +90,23 @@ class PerformanceMonitor {
       timestamp: Date.now(),
       id: metric.id || this.generateId(),
       navigationType: metric.navigationType,
-      url: window.location.href
+      url: typeof window !== 'undefined' ? window.location.href : ''
     };
 
     this.metrics.push(performanceMetric);
     
     // Send to analytics if available
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', metric.name, {
+    if (typeof window !== 'undefined' && (window as unknown as { gtag?: (event: string, action: string, params: Record<string, unknown>) => void }).gtag) {
+      (window as unknown as { gtag?: (event: string, action: string, params: Record<string, unknown>) => void }).gtag!('event', metric.name || name, {
         value: performanceMetric.value,
-        event_label: metric.id,
+        event_label: performanceMetric.id,
         non_interaction: true,
       });
     }
 
     // Log significant performance issues
     if (performanceMetric.rating === 'poor') {
-      console.warn(`Performance issue detected: ${name} = ${performanceMetric.value}ms`);
+      console.warn(`Performance issue detected: ${performanceMetric.name} = ${performanceMetric.value}ms`);
     }
   }
 
@@ -231,10 +236,11 @@ class PerformanceMonitor {
   }
 
   private monitorMemoryUsage(): void {
-    if (typeof window === 'undefined' || !(performance as any).memory) return;
+    if (typeof window === 'undefined' || !(performance as Performance & { memory?: { usedJSHeapSize: number; totalJSHeapSize: number } }).memory) return;
 
     setInterval(() => {
-      const memory = (performance as any).memory;
+      const memory = (performance as Performance & { memory?: { usedJSHeapSize: number; totalJSHeapSize: number } }).memory;
+      if (!memory) return;
       const usedMemory = memory.usedJSHeapSize;
       const totalMemory = memory.totalJSHeapSize;
       const memoryUsagePercent = (usedMemory / totalMemory) * 100;
@@ -252,7 +258,7 @@ class PerformanceMonitor {
   private setupErrorCorrelation(): void {
     if (typeof window === 'undefined') return;
 
-    window.addEventListener('error', (event) => {
+    window.addEventListener('error', (event: ErrorEvent) => {
       this.recordMetric('JavaScriptError', {
         name: 'JavaScriptError',
         value: 1,
@@ -260,7 +266,7 @@ class PerformanceMonitor {
       });
     });
 
-    window.addEventListener('unhandledrejection', (event) => {
+    window.addEventListener('unhandledrejection', (event: PromiseRejectionEvent) => {
       this.recordMetric('UnhandledPromiseRejection', {
         name: 'UnhandledPromiseRejection',
         value: 1,

@@ -29,7 +29,7 @@ export default function Login() {
     try {
       await fetch('/api/auth/resend-verification-email', { method: 'POST' });
       toast({ title: 'Verification email sent' });
-    } catch (err) {
+    } catch (_err) {
       toast({ title: 'Failed to resend email', variant: 'destructive' });
     }
   };

@@ -1,4 +1,4 @@
 declare module 'stripe' {
-  const Stripe: any;
+  const Stripe: unknown;
   export default Stripe;
 }
