@@ -56,8 +56,11 @@ export function LeaveReviewModal({
       // Create new review
       const success = await submitReview({
         ...formValues,
+        rating: formValues.rating ?? 0,
+        review_text: formValues.review_text ?? "",
         project_id: projectId,
         reviewee_id: revieweeId,
+        is_anonymous: formValues.is_anonymous ?? false,
       });
       if (success) {
         handleOpenChange(false);
