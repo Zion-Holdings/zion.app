@@ -29,8 +29,8 @@ export function HireRequestForm({ talent, onClose, initialJobTitle, userDetails,
   const { form, isSubmitting, onSubmit } = useHireRequestForm({ 
     talent, 
     onClose: onSubmitSuccess || onClose, 
-    initialJobTitle: initialJobTitle as string | undefined,
-    userDetails 
+    ...(typeof initialJobTitle === 'string' ? { initialJobTitle } : {}),
+    ...(userDetails !== undefined ? { userDetails } : {})
   });
   
   return (
