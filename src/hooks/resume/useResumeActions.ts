@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
-import { Resume, ResumeBasicInfo } from '@/types/resume';
+import type { Resume, ResumeBasicInfo } from '@/types/resume';
 import { useAuth } from '@/hooks/useAuth';
 import { formatDateForDB, handleResumeError, showSuccessToast } from './useResumeUtils';
 

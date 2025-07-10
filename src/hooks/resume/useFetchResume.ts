@@ -21,6 +21,7 @@ export function useFetchResume() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       // If resumeId is provided, fetch that specific resume
       // Otherwise, fetch the user's active resume or most recent resume
       let resumeQuery = supabase.from('talent_resumes').select('*');
