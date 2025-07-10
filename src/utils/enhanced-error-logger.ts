@@ -228,7 +228,10 @@ class EnhancedErrorLogger {
       'Network request failed'
     ];
 
-    const message = error.message || (errorData as any)?.message || '';
+    let message = error.message;
+    if (!message && isErrorDataWithContext(errorData) && typeof errorData.message === 'string') {
+      message = errorData.message;
+    }
     return ignoredMessages.some(ignored => message.includes(ignored));
   }
 
@@ -237,15 +240,15 @@ class EnhancedErrorLogger {
     if (error.name === 'TypeError' && error.message.includes('Cannot read properties')) {
       return 'critical';
     }
-    if ((errorData as any).source === 'render') {
+    if (isErrorDataWithContext(errorData) && errorData.source === 'render') {
       return 'high';
     }
-    if (error.message.includes('Network Error') && (errorData as any).context?.status >= 500) {
+    if (error.message.includes('Network Error') && isErrorDataWithContext(errorData) && typeof errorData.context === 'object' && errorData.context && 'status' in errorData.context && (errorData.context as { status?: number }).status && (errorData.context as { status?: number }).status! >= 500) {
       return 'high';
     }
     
     // Medium severity
-    if ((errorData as any).source === 'promise') {
+    if (isErrorDataWithContext(errorData) && errorData.source === 'promise') {
       return 'medium';
     }
     if (error.message.includes('Network Error')) {
@@ -278,16 +281,17 @@ class EnhancedErrorLogger {
       
       // Performance metrics
       if ('memory' in performance) {
-        const memory = (performance as any).memory;
-        context.performanceMetrics = {
-          memory: memory.usedJSHeapSize,
-          timing: performance.now()
-        };
+        const memory = (performance as Performance & { memory?: { usedJSHeapSize: number } }).memory;
+        if (memory) {
+          context.performanceMetrics = {
+            memory: memory.usedJSHeapSize,
+            timing: performance.now()
+          };
+        }
       }
-      
       // Connection info
-      if ('connection' in navigator) {
-        const connection = (navigator as any).connection;
+      if (hasConnection(navigator)) {
+        const connection = navigator.connection;
         context.performanceMetrics = {
           ...context.performanceMetrics,
           connectionType: connection.effectiveType
@@ -296,8 +300,8 @@ class EnhancedErrorLogger {
     }
 
     // Add any custom context
-    if ((errorData as any).context) {
-      Object.assign(context, (errorData as any).context);
+    if (isErrorDataWithContext(errorData) && errorData.context && typeof errorData.context === 'object') {
+      Object.assign(context, errorData.context);
     }
 
     return context;
@@ -393,6 +397,18 @@ class EnhancedErrorLogger {
       }
     });
   }
+}
+
+// Type guard for errorData
+function isErrorDataWithContext(obj: unknown): obj is { message?: string; source?: string; context?: unknown } {
+  return typeof obj === 'object' && obj !== null && (
+    'message' in obj || 'source' in obj || 'context' in obj
+  );
+}
+
+// Type guard for navigator.connection
+function hasConnection(obj: unknown): obj is { connection: { effectiveType: string } } {
+  return typeof obj === 'object' && obj !== null && 'connection' in obj;
 }
 
 // Singleton instance
