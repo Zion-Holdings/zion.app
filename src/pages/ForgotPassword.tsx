@@ -25,13 +25,14 @@ export default function ForgotPassword() {
         throw new Error('Request failed')
       }
     } catch (err: unknown) {
-      logErrorToProduction(err);
+      logErrorToProduction('Forgot password error', err);
       let msg = 'Failed to send reset link';
       if (typeof err === 'object' && err !== null) {
-        if ('response' in err && typeof (err as any).response?.data?.message === 'string') {
-          msg = (err as any).response.data.message;
-        } else if ('message' in err && typeof (err as any).message === 'string') {
-          msg = (err as any).message;
+        // Check for axios error shape
+        if ('response' in err && typeof (err as { response?: { data?: { message?: string } } }).response?.data?.message === 'string') {
+          msg = (err as { response: { data: { message: string } } }).response.data.message;
+        } else if ('message' in err && typeof (err as { message?: string }).message === 'string') {
+          msg = (err as { message: string }).message;
         }
       }
       setError(msg);
