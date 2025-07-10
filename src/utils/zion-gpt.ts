@@ -24,6 +24,9 @@ export interface ModelConfig {
   active: boolean;
 }
 
+// Add null checks for 'supabase' before usage
+if (!supabase) throw new Error('Supabase client is not initialized');
+
 // Get the latest active model ID for a specific purpose
 export async function getActiveModelId(purpose: 'job' | 'resume' | 'support'): Promise<ModelVersion> {
   try {
@@ -120,7 +123,7 @@ export async function callZionGPT({
     if (error) throw error;
     
     // Log usage for analytics
-    if (data && (data as any).tokensUsed) {
+    if (data && typeof data === 'object' && 'tokensUsed' in data) {
       await logModelUsage(
         modelId, 
         (data as any).tokensUsed,
