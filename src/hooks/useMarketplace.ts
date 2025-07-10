@@ -169,7 +169,9 @@ export function useMarketplaceOverview() {
 export function useMarketplaceErrorHandler() {
   const [lastError, setLastError] = useState<string | null>(null);
 
-  const handleError = useCallback((error: any) => {
+  const handleError = useCallback((error: unknown) => {
+    // Add type guard and handle error appropriately
+    const message = error instanceof Error ? error.message : String(error);
     const errorMessage = getMarketplaceErrorMessage(error);
     setLastError(errorMessage);
     logErrorToProduction('Marketplace Error:', { data: { error, message: errorMessage } });
