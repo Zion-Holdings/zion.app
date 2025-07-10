@@ -23,7 +23,7 @@ export interface CreateNotificationParams {
 export interface CreateNotificationResult {
   success: boolean;
   notificationId?: string | null;
-  error?: any;
+  error?: unknown;
 }
 
 export interface HireRequestNotificationParams {
