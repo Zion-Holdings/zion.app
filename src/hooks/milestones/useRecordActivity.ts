@@ -1,7 +1,7 @@
 
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
-import { MilestoneActivity } from './types';
+import type { MilestoneActivity } from './types';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 export const useRecordActivity = () => {
