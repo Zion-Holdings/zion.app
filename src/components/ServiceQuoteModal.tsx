@@ -12,7 +12,7 @@ import { format } from "date-fns";
 import { CalendarIcon } from 'lucide-react';
 
 import { cn } from "@/lib/utils";
-import { ProductListing } from "@/types/listings";
+import type { ProductListing } from "@/types/listings";
 import { toast } from '@/hooks/use-toast';
 import { supabase } from "@/integrations/supabase/client";
 import {logErrorToProduction} from '@/utils/productionLogger';
