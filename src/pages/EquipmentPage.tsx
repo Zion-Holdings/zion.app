@@ -274,7 +274,7 @@ const EquipmentLoadingGrid = ({ count = 8 }: { count?: number }) => (
 );
 
 // Error fallback component
-function EquipmentErrorFallback({ error, resetErrorBoundary }: { error: Error; resetErrorBoundary: () => void }) {
+function _EquipmentErrorFallback({ error: _error, resetErrorBoundary }: { error: Error; resetErrorBoundary: () => void }) {
   return (
     <main className="container py-8">
       <Card className="border-red-200 bg-red-50">
@@ -315,84 +315,83 @@ function EquipmentPageContent() {
     // Simulate realistic API delay
     await new Promise(resolve => setTimeout(resolve, 300));
 
-    try {
-      // Prefer real API if stubbed/mocked in tests
-      if (page === 1) {
-        try {
-          const res = await apiClient.get('/equipment');
-          if (Array.isArray(res?.data)) {
-            return {
-              items: res.data,
-              hasMore: false,
-              total: res.data.length,
-            };
-          }
-        } catch (apiErr: any) {
-          // Bubble up so error state can render
-          throw apiErr;
+    // Prefer real API if stubbed/mocked in tests
+    if (page === 1) {
+      try {
+        const res = await apiClient.get('/equipment');
+        if (Array.isArray(res?.data)) {
+          return {
+            items: res.data,
+            hasMore: false,
+            total: res.data.length,
+          };
         }
-      }
-
-      // Generate consistent virtual dataset using the seed
-      const VIRTUAL_DATASET_SIZE = 150;
-      const baseVirtualEquipment = generateDatacenterEquipment(
-        VIRTUAL_DATASET_SIZE,
-        INITIAL_EQUIPMENT.length,
-        dataSeed
-      );
-      let fullVirtualDataset: ProductListing[] = [
-        ...INITIAL_EQUIPMENT,
-        ...baseVirtualEquipment
-      ];
-
-      // Deduplicate by ID in case of overlaps
-      const dedupMap = new Map<string, ProductListing>();
-      for (const item of fullVirtualDataset) {
-        if (!dedupMap.has(item.id)) {
-          dedupMap.set(item.id, item);
+      } catch (apiErr: unknown) {
+        if (apiErr instanceof Error) {
+          logErrorToProduction('Error in fetchEquipment:', { data: apiErr.message });
+        } else {
+          logErrorToProduction('Error in fetchEquipment:', { data: String(apiErr) });
         }
+        throw apiErr;
       }
-      fullVirtualDataset = Array.from(dedupMap.values());
-
-      // Apply category filtering
-      let processedDataset = fullVirtualDataset;
-      if (filterCategory) {
-        processedDataset = processedDataset.filter(e => e.category === filterCategory);
-      }
-
-      // Apply recommended filtering
-      if (showRecommended) {
-        processedDataset = getRecommendedEquipment(processedDataset);
-      }
-
-      // Sort the processed dataset
-      processedDataset.sort((a, b) => {
-        switch (sortBy) {
-          case 'price-low':
-            return (a.price || 0) - (b.price || 0);
-          case 'price-high':
-            return (b.price || 0) - (a.price || 0);
-          case 'rating':
-            return (b.rating || 0) - (a.rating || 0);
-          default: // 'newest'
-            return new Date(b.createdAt || '').getTime() - new Date(a.createdAt || '').getTime();
-        }
-      });
-
-      // Slice for pagination
-      const startIndex = (page - 1) * limit;
-      const endIndex = startIndex + limit;
-      const items = processedDataset.slice(startIndex, endIndex);
-
-      return {
-        items,
-        hasMore: endIndex < processedDataset.length,
-        total: processedDataset.length
-      };
-    } catch (error) {
-      logErrorToProduction('Error in fetchEquipment:', { data: error });
-      throw error;
     }
+
+    // Generate consistent virtual dataset using the seed
+    const VIRTUAL_DATASET_SIZE = 150;
+    const baseVirtualEquipment = generateDatacenterEquipment(
+      VIRTUAL_DATASET_SIZE,
+      INITIAL_EQUIPMENT.length,
+      dataSeed
+    );
+    let fullVirtualDataset: ProductListing[] = [
+      ...INITIAL_EQUIPMENT,
+      ...baseVirtualEquipment
+    ];
+
+    // Deduplicate by ID in case of overlaps
+    const dedupMap = new Map<string, ProductListing>();
+    for (const item of fullVirtualDataset) {
+      if (!dedupMap.has(item.id)) {
+        dedupMap.set(item.id, item);
+      }
+    }
+    fullVirtualDataset = Array.from(dedupMap.values());
+
+    // Apply category filtering
+    let processedDataset = fullVirtualDataset;
+    if (filterCategory) {
+      processedDataset = processedDataset.filter(e => e.category === filterCategory);
+    }
+
+    // Apply recommended filtering
+    if (showRecommended) {
+      processedDataset = getRecommendedEquipment(processedDataset);
+    }
+
+    // Sort the processed dataset
+    processedDataset.sort((a, b) => {
+      switch (sortBy) {
+        case 'price-low':
+          return (a.price || 0) - (b.price || 0);
+        case 'price-high':
+          return (b.price || 0) - (a.price || 0);
+        case 'rating':
+          return (b.rating || 0) - (a.rating || 0);
+        default: // 'newest'
+          return new Date(b.createdAt || '').getTime() - new Date(a.createdAt || '').getTime();
+      }
+    });
+
+    // Slice for pagination
+    const startIndex = (page - 1) * limit;
+    const endIndex = startIndex + limit;
+    const items = processedDataset.slice(startIndex, endIndex);
+
+    return {
+      items,
+      hasMore: endIndex < processedDataset.length,
+      total: processedDataset.length
+    };
   }, [sortBy, filterCategory, showRecommended, dataSeed]);
 
   const {
