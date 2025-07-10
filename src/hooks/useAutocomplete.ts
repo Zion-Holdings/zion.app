@@ -1,7 +1,7 @@
 import { useState, useMemo, useCallback, useEffect } from 'react';
 import Fuse from 'fuse.js';
 import debounce from 'lodash.debounce';
-import { ProductListing } from '@/types/listings';
+import type { ProductListing } from '@/types/listings';
 
 export function useAutocomplete(products: ProductListing[]) {
   const [suggestions, setSuggestions] = useState<ProductListing[]>([]);

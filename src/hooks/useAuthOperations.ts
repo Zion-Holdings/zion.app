@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import type { UserDetails } from "@/types/auth";
 import { mutate } from 'swr';
-import { SignupParams } from "@/types/auth";
+import type { SignupParams } from "@/types/auth";
 import { supabase } from "@/integrations/supabase/client";
 import type { UserProfile } from "@/types/auth";
 import { toast } from "@/hooks/use-toast";
