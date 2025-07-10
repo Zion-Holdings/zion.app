@@ -14,6 +14,7 @@ export function useMessagingRealtime(
   setActiveMessages: (updater: (prev: Message[]) => Message[]) => void,
   fetchConversations: () => Promise<void>
 ) {
+  if (!supabase) throw new Error('Supabase client not initialized');
   // Setup real-time subscription when user is logged in
   useEffect(() => {
     if (!user) return;
