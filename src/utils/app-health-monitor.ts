@@ -61,10 +61,17 @@ class AppHealthMonitor {
         let status: 'pass' | 'warn' | 'fail' = 'pass';
         let message = 'Memory usage is normal';
 
-        if ('memory' in performance) {
-          const memory = (performance as any).memory;
+        interface PerformanceMemory {
+          usedJSHeapSize: number;
+          totalJSHeapSize: number;
+          jsHeapSizeLimit: number;
+        }
+        function hasMemory(perf: Performance): perf is Performance & { memory: PerformanceMemory } {
+          return 'memory' in perf && typeof (perf as { memory?: unknown }).memory === 'object';
+        }
+        if (hasMemory(performance)) {
+          const memory = performance.memory;
           memoryUsage = memory.usedJSHeapSize / 1024 / 1024; // MB
-          
           if (memoryUsage > 100) {
             status = 'fail';
             message = `High memory usage: ${memoryUsage.toFixed(2)}MB`;
@@ -191,13 +198,19 @@ class AppHealthMonitor {
       const startTime = performance.now();
       
       try {
-        if ('connection' in navigator) {
-          const connection = (navigator as any).connection;
+        interface NetworkInformation {
+          effectiveType: string;
+          downlink: number;
+          rtt: number;
+        }
+        function hasConnection(nav: Navigator): nav is Navigator & { connection: NetworkInformation } {
+          return 'connection' in nav && typeof (nav as { connection?: unknown }).connection === 'object';
+        }
+        if (hasConnection(navigator)) {
+          const connection = navigator.connection;
           const effectiveType = connection.effectiveType;
-          
           let status: 'pass' | 'warn' | 'fail' = 'pass';
           let message = `Connection: ${effectiveType}`;
-
           if (effectiveType === 'slow-2g') {
             status = 'fail';
             message = 'Very slow connection detected';
@@ -205,7 +218,6 @@ class AppHealthMonitor {
             status = 'warn';
             message = 'Slow connection detected';
           }
-
           return {
             name: 'connectivity',
             status,
