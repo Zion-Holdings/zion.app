@@ -44,8 +44,9 @@ export function useReferrals() {
       }
 
       setReferralCode(data);
-    } catch (error) {
-      logErrorToProduction('Error in fetchReferralCode:', { data: error });
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : String(error);
+      logErrorToProduction('Error in fetchReferralCode:', { data: message });
     } finally {
       setIsLoading(false);
     }
@@ -65,8 +66,9 @@ export function useReferrals() {
       if (error) throw error;
       
       setReferrals(data || []);
-    } catch (error) {
-      logErrorToProduction('Error fetching referrals:', { data: error });
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : String(error);
+      logErrorToProduction('Error fetching referrals:', { data: message });
     }
   };
 
@@ -84,8 +86,9 @@ export function useReferrals() {
       if (error) throw error;
       
       setRewards(data || []);
-    } catch (error) {
-      logErrorToProduction('Error fetching rewards:', { data: error });
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : String(error);
+      logErrorToProduction('Error fetching rewards:', { data: message });
     }
   };
 
@@ -112,12 +115,10 @@ export function useReferrals() {
       
       // Calculate stats
       const totalReferrals = referrals ? referrals.length : 0;
-      const pendingReferrals = referrals ? referrals.filter((r: any) => r.status === 'pending').length : 0;
-      const completedReferrals = referrals ? referrals.filter((r: any) => r.status === 'completed').length : 0;
+      const pendingReferrals = referrals ? referrals.filter((r: unknown) => typeof r === 'object' && r !== null && 'status' in r && (r as { status?: string }).status === 'pending').length : 0;
+      const completedReferrals = referrals ? referrals.filter((r: unknown) => typeof r === 'object' && r !== null && 'status' in r && (r as { status?: string }).status === 'completed').length : 0;
       
-      const totalRewards = rewards ? rewards.reduce((sum: number, item: any) => {
-        return sum + (item.amount || 0);
-      }, 0) : 0;
+      const totalRewards = rewards ? rewards.reduce((sum: number, item: unknown) => sum + (typeof item === 'object' && item !== null && 'amount' in item ? Number((item as { amount?: number }).amount) : 0), 0) : 0;
       
       setStats({
         totalReferrals,
@@ -126,8 +127,9 @@ export function useReferrals() {
         totalRewards
       });
       
-    } catch (error) {
-      logErrorToProduction('Error fetching referral stats:', { data: error });
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : String(error);
+      logErrorToProduction('Error fetching referral stats:', { data: message });
     }
   };
 
@@ -159,11 +161,12 @@ export function useReferrals() {
       fetchReferralCode();
       
       return data;
-    } catch (error: any) {
-      logErrorToProduction('Error generating referral code:', { data: error });
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : String(error);
+      logErrorToProduction('Error generating referral code:', { data: message });
       toast({
         title: "Error generating code",
-        description: error.message || "There was a problem generating your referral code",
+        description: message || "There was a problem generating your referral code",
         variant: "destructive",
       });
       return null;
