@@ -30,8 +30,6 @@ export function useWebhooks() {
   const [error, setError] = useState<string | null>(null);
   const [testResult, setTestResult] = useState<TestWebhookResult | null>(null);
 
-  if (!supabase) throw new Error('Supabase client not initialized');
-
   // Helper to get the base URL for webhook functions
   const getWebhookUrl = () => {
     // import.meta may be undefined when this hook is executed in a Node
@@ -47,6 +45,7 @@ export function useWebhooks() {
   // Fetch user's webhooks
   const fetchWebhooks = async () => {
     if (!user) return;
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     setLoading(true);
     setError(null);
@@ -89,6 +88,7 @@ export function useWebhooks() {
   // Create new webhook
   const createWebhook = async (name: string, url: string, eventTypes: WebhookEventType[], secret?: string) => {
     if (!user) return;
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     setLoading(true);
     setError(null);
@@ -145,6 +145,7 @@ export function useWebhooks() {
   // Toggle webhook active status
   const toggleWebhook = async (webhookId: string, isActive: boolean) => {
     if (!user) return;
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     setLoading(true);
     setError(null);
@@ -198,6 +199,7 @@ export function useWebhooks() {
   // Delete webhook
   const deleteWebhook = async (webhookId: string) => {
     if (!user) return;
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     setLoading(true);
     setError(null);
@@ -249,6 +251,7 @@ export function useWebhooks() {
   // Test webhook
   const testWebhook = async (webhookId: string, eventType: WebhookEventType) => {
     if (!user) return;
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     setLoading(true);
     setError(null);
