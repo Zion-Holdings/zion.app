@@ -222,8 +222,16 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       }
     });
 
-  } catch (error: any) {
-    console.error('log-error API critical error during initial processing:', error.message, error.stack);
+  } catch (error) {
+    let message = 'Unknown error';
+    let stack = undefined;
+    if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+      message = (error as { message: string }).message;
+    }
+    if (error && typeof error === 'object' && 'stack' in error && typeof (error as { stack?: unknown }).stack === 'string') {
+      stack = (error as { stack: string }).stack;
+    }
+    console.error('log-error API critical error during initial processing:', message, stack);
     const resWithHeaders = res as NextApiResponse & { headersSent?: boolean };
     if (!resWithHeaders.headersSent) {
       resWithHeaders.status(500).json({ error: 'Server error during error processing.' });
