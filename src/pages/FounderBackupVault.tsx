@@ -84,7 +84,7 @@ export default function FounderBackupVault() {
       logInfo('Decrypted:', { data: decrypted });
       alert('Recovery successful');
       setFailCount(0);
-    } catch (err) {
+    } catch (_err) {
       const attempts = failCount + 1;
       setFailCount(attempts);
       if (attempts >= 3) {
