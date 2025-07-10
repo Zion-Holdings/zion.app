@@ -43,14 +43,8 @@ export function useMilestoneGenerator() {
       }
 
       // Mark each milestone as AI generated
-      const milestonesWithFlag = typeof data === 'object' && data !== null && 'milestones' in data && Array.isArray((data as { milestones: unknown[] }).milestones)
-        ? (data as { milestones: unknown[] }).milestones.map((milestone: unknown) => {
-            if (typeof milestone === 'object' && milestone !== null) {
-              // ... existing transformation logic ...
-              return milestone as GeneratedMilestone; // Replace with actual type if available
-            }
-            return {} as GeneratedMilestone;
-          })
+      const milestonesWithFlag = typeof data === 'object' && data !== null && 'milestones' in data && Array.isArray((data as { milestones: GeneratedMilestone[] }).milestones)
+        ? (data as { milestones: GeneratedMilestone[] }).milestones.map((milestone: GeneratedMilestone) => milestone)
         : [];
 
       setGeneratedMilestones(milestonesWithFlag);
