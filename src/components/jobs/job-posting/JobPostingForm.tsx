@@ -86,7 +86,7 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
     try {
       const jobData = await submitJob(values);
       if (!jobData) {
-        toast.error("Job data is missing.");
+        toast.error("Failed to process job data");
         setIsFormLoading(false);
         return;
       }
