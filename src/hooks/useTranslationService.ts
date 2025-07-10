@@ -5,7 +5,8 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 // Only use the public client-side OpenAI key - never reference server-side secrets
 const openAiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
-import { useLanguage, SupportedLanguage } from '@/context/LanguageContext';
+import { useLanguage } from '@/context/LanguageContext';
+import type { SupportedLanguage } from '@/context/LanguageContext';
 
 type ContentType = 'job' | 'profile' | 'service' | 'general';
 

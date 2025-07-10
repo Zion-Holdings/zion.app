@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
-import { TalentProfile as TalentProfileType } from "@/types/talent";
-import { ProfileData } from "@/types/profile";
+import type { TalentProfile as TalentProfileType } from "@/types/talent";
+import type { ProfileData } from "@/types/profile";
 import { MOCK_TALENTS } from "@/data/mockTalents";
 import { MOCK_PROFILES } from "@/data/mockProfiles";
 import { convertProfileToTalentProfile } from "@/utils/profileConverter";
