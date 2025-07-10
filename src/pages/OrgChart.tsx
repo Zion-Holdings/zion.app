@@ -55,7 +55,7 @@ export default function OrgChart() {
       <main className="container mx-auto py-8 space-y-6">
         <h1 className="text-3xl font-bold">Organization Chart</h1>
         <div className="flex flex-wrap gap-4 items-center">
-          <Select value={role} onValueChange={v => setRole(v as any)}>
+          <Select value={role} onValueChange={v => setRole(v as RoleType | "ALL")}>
             <SelectTrigger className="w-36">
               <SelectValue placeholder="Role" />
             </SelectTrigger>
