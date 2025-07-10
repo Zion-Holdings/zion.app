@@ -85,9 +85,8 @@ export default function ProjectRoom() {
 
   const [files, setFiles] = useState<File[]>([]);
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
-      setFiles(prev => [...prev, ...Array.from(e.target.files)]);
-    }
+    const filesArray = e.target.files ? Array.from(e.target.files) : [];
+    setFiles(prev => [...prev, ...filesArray]);
   };
 
   const [events, setEvents] = useState<{title: string, date: string}[]>([]);

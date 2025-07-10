@@ -46,7 +46,7 @@ export interface GlobalToast {
     onClick: () => void;
   };
   onRetry?: () => void;
-  metadata?: Record<string, any>;
+  metadata?: Record<string, unknown>;
   createdAt: number;
   expiresAt?: number;
 }
@@ -223,7 +223,7 @@ class GlobalToastManager {
   private showToastInternal(toast: GlobalToast): void {
     this.activeToasts.set(toast.id, toast);
 
-    const options: any = {
+    const options: Record<string, unknown> = {
       id: toast.id,
       duration: toast.persistent ? Infinity : (toast.duration || this.durationMap[toast.type]),
     };
@@ -303,7 +303,7 @@ class GlobalToastManager {
     persistent?: boolean;
     action?: { label: string; onClick: () => void };
     onRetry?: () => void;
-    metadata?: Record<string, any>;
+    metadata?: Record<string, unknown>;
   }): string {
     const {
       message,
@@ -422,7 +422,7 @@ export class EnhancedGlobalErrorHandler {
     type?: ToastType;
     priority?: ToastPriority;
     retryAction?: () => void;
-    metadata?: Record<string, any>;
+    metadata?: Record<string, unknown>;
     showToast?: boolean;
   }): string | null {
     const {

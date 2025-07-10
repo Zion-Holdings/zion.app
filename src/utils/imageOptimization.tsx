@@ -184,7 +184,7 @@ export function withImageOptimization<P extends { src: string; alt: string }>(
       <OptimizedImage
         src={src}
         alt={alt}
-        {...(otherProps as any)}
+        {...(otherProps as unknown as OptimizedImageProps)}
       />
     );
   };
