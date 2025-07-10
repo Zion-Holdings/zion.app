@@ -62,7 +62,7 @@ export default function RoadmapFeaturePage() {
 
   return (
     <>
-      <NextSeo title={feature.title} description={feature.description} />
+      <NextSeo title={feature.title} description={feature.description ?? ''} />
       <Header />
       <main className="min-h-screen bg-background py-24">
         <div className="container mx-auto space-y-6">
