@@ -10,6 +10,8 @@ export function useCertifications() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   
+  if (!supabase) throw new Error('Supabase client not initialized');
+
   const addCertification = async (resumeId: string, cert: Certification): Promise<boolean> => {
     if (!user) {
       setError('You must be logged in to add certifications');
@@ -42,6 +44,8 @@ export function useCertifications() {
     }
   };
   
+  if (!supabase) throw new Error('Supabase client not initialized');
+
   const updateCertification = async (certId: string, cert: Certification): Promise<boolean> => {
     if (!user) {
       setError('You must be logged in to update certifications');
@@ -74,6 +78,8 @@ export function useCertifications() {
     }
   };
   
+  if (!supabase) throw new Error('Supabase client not initialized');
+
   const deleteCertification = async (certId: string): Promise<boolean> => {
     if (!user) {
       setError('You must be logged in to delete certifications');

@@ -10,13 +10,12 @@ export function useEducation() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   
-  if (!supabase) throw new Error('Supabase client not initialized');
-
   const addEducation = async (resumeId: string, education: Education): Promise<boolean> => {
     if (!user) {
       setError('You must be logged in to add education');
       return false;
     }
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     setIsLoading(true);
     setError(null);
@@ -52,6 +51,7 @@ export function useEducation() {
       setError('You must be logged in to update education');
       return false;
     }
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     setIsLoading(true);
     setError(null);
@@ -87,6 +87,7 @@ export function useEducation() {
       setError('You must be logged in to delete education');
       return false;
     }
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     setIsLoading(true);
     setError(null);
