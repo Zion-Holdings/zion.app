@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUp, Filter, SortAsc, Zap, TrendingUp, Star, ShoppingCart, MapPin, Package, AlertTriangle, RefreshCw } from 'lucide-react';
+import { ArrowUp, Filter, SortAsc, TrendingUp, Star, ShoppingCart, AlertTriangle, RefreshCw } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import apiClient from '@/services/apiClient';
 
@@ -16,12 +16,12 @@ import apiClient from '@/services/apiClient';
 
 
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
-import { generateDatacenterEquipment, getEquipmentMarketStats, getRecommendedEquipment } from '@/utils/equipmentAutoFeedAlgorithm';
+import { generateDatacenterEquipment, getRecommendedEquipment } from '@/utils/equipmentAutoFeedAlgorithm';
 import type { ProductListing } from '@/types/listings';
 import { SkeletonCard } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import Spinner from '@/components/ui/spinner';
 import { EquipmentErrorBoundary } from '@/components/EquipmentErrorBoundary';
 import { useCurrency } from '@/hooks/useCurrency';
@@ -46,7 +46,8 @@ const INITIAL_EQUIPMENT: ProductListing[] = [
     rating: 4.9,
     reviewCount: 27,
     location: "Santa Clara, CA",
-    availability: "In Stock"
+    availability: "In Stock",
+    stock: 10
   },
   {
     id: "dell-poweredge-r750",
@@ -64,7 +65,8 @@ const INITIAL_EQUIPMENT: ProductListing[] = [
     rating: 4.7,
     reviewCount: 34,
     location: "Austin, TX",
-    availability: "In Stock"
+    availability: "In Stock",
+    stock: 10
   },
   {
     id: "cisco-nexus-9k",
@@ -82,7 +84,8 @@ const INITIAL_EQUIPMENT: ProductListing[] = [
     rating: 4.8,
     reviewCount: 19,
     location: "San Jose, CA",
-    availability: "In Stock"
+    availability: "In Stock",
+    stock: 10
   },
   {
     id: "hpe-proliant-dl380",
@@ -100,7 +103,8 @@ const INITIAL_EQUIPMENT: ProductListing[] = [
     rating: 4.6,
     reviewCount: 21,
     location: "Houston, TX",
-    availability: "In Stock"
+    availability: "In Stock",
+    stock: 10
   },
   {
     id: "netapp-aff-a250",
@@ -118,7 +122,8 @@ const INITIAL_EQUIPMENT: ProductListing[] = [
     rating: 4.7,
     reviewCount: 18,
     location: "Chicago, IL",
-    availability: "2-3 Weeks"
+    availability: "2-3 Weeks",
+    stock: 10
   },
   {
     id: "arista-7050x",
@@ -136,7 +141,8 @@ const INITIAL_EQUIPMENT: ProductListing[] = [
     rating: 4.5,
     reviewCount: 16,
     location: "Sunnyvale, CA",
-    availability: "In Stock"
+    availability: "In Stock",
+    stock: 10
   }
 ];
 
