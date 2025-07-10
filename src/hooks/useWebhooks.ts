@@ -30,6 +30,8 @@ export function useWebhooks() {
   const [error, setError] = useState<string | null>(null);
   const [testResult, setTestResult] = useState<TestWebhookResult | null>(null);
 
+  if (!supabase) throw new Error('Supabase client not initialized');
+
   // Helper to get the base URL for webhook functions
   const getWebhookUrl = () => {
     // import.meta may be undefined when this hook is executed in a Node

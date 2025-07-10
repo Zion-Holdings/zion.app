@@ -36,6 +36,7 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
       setError(null);
 
       try {
+        if (!supabase) throw new Error('Supabase client not initialized');
         // Get the current hostname, fallback to localhost if not available
         const hostname = window.location.hostname || 'localhost';
         
