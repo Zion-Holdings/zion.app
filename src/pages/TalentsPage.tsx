@@ -13,46 +13,53 @@ import { ArrowUp, Filter, SortAsc, Users, TrendingUp, Star, Verified, MapPin } f
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
 import { generateAITalents, getTalentMarketStats, getRecommendedTalents } from '@/utils/talentAutoFeedAlgorithm';
 import { TALENT_PROFILES } from '@/data/talentData';
-import { TalentProfile } from '@/types/talent';
+import type { TalentProfile } from '@/types/talent';
 import { SkeletonCard } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Spinner from '@/components/ui/spinner';
 
+// Add or import TalentStats type
+type TalentStats = {
+  averageHourlyRate: number;
+  averageMonthlySalary: number;
+  averageRating: number;
+  averageExperience: number;
+  totalTalents: number;
+};
+
 // Market insights component for talents
-const TalentMarketInsights: React.FC<{ stats: unknown }> = ({ stats }) => (
-  <Card className="bg-gradient-to-r from-green-900/20 to-blue-900/20 border-green-700/30 mb-6">
-    <CardContent className="p-6">
-      <div className="flex items-center gap-2 mb-4">
-        <TrendingUp className="h-5 w-5 text-green-400" />
-        <h3 className="text-lg font-semibold">Talent Market Insights</h3>
-      </div>
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-        <div className="text-center">
-          <div className="text-2xl font-bold text-green-400">${Math.round(stats.averageHourlyRate)}/hr</div>
-          <div className="text-sm text-muted-foreground">Avg Hourly Rate</div>
+const TalentMarketInsights: React.FC<{ stats: TalentStats }> = ({ stats }) => {
+  return (
+    <Card className="bg-gradient-to-r from-green-900/20 to-blue-900/20 border-green-700/30 mb-6">
+      <CardContent className="p-6">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="text-center">
+            <div className="text-2xl font-bold text-green-400">${Math.round(stats.averageHourlyRate)}/hr</div>
+            <div className="text-sm text-muted-foreground">Avg Hourly Rate</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-blue-400">${Math.round(stats.averageMonthlySalary / 1000)}k/mo</div>
+            <div className="text-sm text-muted-foreground">Avg Monthly</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-yellow-400">{stats.averageRating.toFixed(1)}</div>
+            <div className="text-sm text-muted-foreground">Avg Rating</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-purple-400">{Math.round(stats.averageExperience)}yr</div>
+            <div className="text-sm text-muted-foreground">Avg Experience</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-orange-400">{stats.totalTalents}</div>
+            <div className="text-sm text-muted-foreground">Total Talents</div>
+          </div>
         </div>
-        <div className="text-center">
-          <div className="text-2xl font-bold text-blue-400">${Math.round(stats.averageMonthlySalary / 1000)}k/mo</div>
-          <div className="text-sm text-muted-foreground">Avg Monthly</div>
-        </div>
-        <div className="text-center">
-          <div className="text-2xl font-bold text-yellow-400">{stats.averageRating.toFixed(1)}</div>
-          <div className="text-sm text-muted-foreground">Avg Rating</div>
-        </div>
-        <div className="text-center">
-          <div className="text-2xl font-bold text-purple-400">{Math.round(stats.averageExperience)}yr</div>
-          <div className="text-sm text-muted-foreground">Avg Experience</div>
-        </div>
-        <div className="text-center">
-          <div className="text-2xl font-bold text-orange-400">{stats.totalTalents}</div>
-          <div className="text-sm text-muted-foreground">Total Talents</div>
-        </div>
-      </div>
-    </CardContent>
-  </Card>
-);
+      </CardContent>
+    </Card>
+  );
+};
 
 // Filter and sort controls for talents
 const TalentFilterControls: React.FC<{

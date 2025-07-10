@@ -81,6 +81,7 @@ export default function UpdatePassword() {
     setIsLoading(true);
     try {
       // Set the session with the access token
+      if (!supabase) throw new Error('Supabase client not initialized');
       await supabase.auth.setSession({
         access_token: accessToken,
         refresh_token: '',

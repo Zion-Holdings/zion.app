@@ -14,7 +14,7 @@ import { X } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import { TalentProfile } from '@/types/talent';
+import type { TalentProfile } from '@/types/talent';
 import {
   Pagination,
   PaginationContent,
