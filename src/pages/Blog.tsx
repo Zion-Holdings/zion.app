@@ -10,7 +10,6 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectValue, SelectTrigger, SelectContent, SelectItem } from "@/components/ui/select";
 import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import type { BlogPost } from "@/types/blog";
-import { generateRandomBlogPost } from "@/utils/generateRandomBlogPost";
 import { BLOG_POSTS } from "@/data/blog-posts";
 import { Search } from 'lucide-react';
 
