@@ -3,8 +3,8 @@ import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { BlockchainNetwork, DeploymentOptions, SmartContractInfo } from '@/types/smart-contracts';
-import { TalentProfile } from '@/types/talent';
-import { ContractFormValues } from "@/components/contracts/components/ContractForm";
+import type { TalentProfile } from '@/types/talent';
+import type { ContractFormValues } from "@/components/contracts/components/ContractForm";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useSmartContracts() {
