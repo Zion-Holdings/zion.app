@@ -32,6 +32,7 @@ export function useOnboardingStatus() {
       if (!user) return;
       
       try {
+        if (!supabase) throw new Error('Supabase client not initialized');
         // Get user onboarding progress from database
         const { data, error } = await supabase
           .from('user_onboarding')

@@ -36,6 +36,7 @@ export function usePricingSuggestionAnalytics(days = 30) {
   useEffect(() => {
     const fetchAnalytics = async () => {
       try {
+        if (!supabase) throw new Error('Supabase client not initialized');
         const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString();
         const { data, error } = await supabase
           .from('pricing_suggestions')

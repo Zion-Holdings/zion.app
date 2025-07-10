@@ -27,6 +27,8 @@ export function useMilestoneGenerator() {
     try {
       setIsGenerating(true);
 
+      if (!supabase) throw new Error('Supabase client not initialized');
+
       const { data, error } = await supabase.functions.invoke('generate-milestones', {
         body: input
       });
