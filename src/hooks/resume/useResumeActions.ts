@@ -10,8 +10,6 @@ export function useResumeActions() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   
-  if (!supabase) throw new Error('Supabase client not initialized');
-
   const createResume = async (basicInfo: ResumeBasicInfo): Promise<string | null> => {
     if (!user) {
       setError('You must be logged in to create a resume');
@@ -22,6 +20,7 @@ export function useResumeActions() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from('talent_resumes')
         .insert({
@@ -55,6 +54,7 @@ export function useResumeActions() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { error } = await supabase
         .from('talent_resumes')
         .update({
@@ -85,6 +85,7 @@ export function useResumeActions() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       // First, set all user's resumes to inactive
       const { error: resetError } = await supabase
         .from('talent_resumes')
