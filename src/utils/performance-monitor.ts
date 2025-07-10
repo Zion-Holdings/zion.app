@@ -82,16 +82,7 @@ class PerformanceMonitor {
   // Overload signatures
   private recordMetric(name: string, metric: Metric): void;
   private recordMetric(name: string, metric: { name?: string; value: number; id?: string; rating?: PerformanceMetric['rating']; navigationType?: string }): void;
-  private recordMetric(name: string, metric: any): void {
-    // If metric is a web-vitals Metric (has 'rating' and 'navigationType' and 'id' and 'name')
-    const isWebVitalsMetric =
-      metric &&
-      typeof metric.name === 'string' &&
-      typeof metric.value === 'number' &&
-      'rating' in metric &&
-      'navigationType' in metric &&
-      'id' in metric;
-
+  private recordMetric(name: string, metric: Metric | { name?: string; value: number; id?: string; rating?: PerformanceMetric['rating']; navigationType?: string }): void {
     const performanceMetric: PerformanceMetric = {
       name: metric.name || name,
       value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
@@ -245,10 +236,11 @@ class PerformanceMonitor {
   }
 
   private monitorMemoryUsage(): void {
-    if (typeof window === 'undefined' || !(performance as any).memory) return;
+    if (typeof window === 'undefined' || !(performance as Performance & { memory?: { usedJSHeapSize: number; totalJSHeapSize: number } }).memory) return;
 
     setInterval(() => {
-      const memory = (performance as any).memory;
+      const memory = (performance as Performance & { memory?: { usedJSHeapSize: number; totalJSHeapSize: number } }).memory;
+      if (!memory) return;
       const usedMemory = memory.usedJSHeapSize;
       const totalMemory = memory.totalJSHeapSize;
       const memoryUsagePercent = (usedMemory / totalMemory) * 100;
@@ -266,7 +258,7 @@ class PerformanceMonitor {
   private setupErrorCorrelation(): void {
     if (typeof window === 'undefined') return;
 
-    window.addEventListener('error', (event) => {
+    window.addEventListener('error', (event: ErrorEvent) => {
       this.recordMetric('JavaScriptError', {
         name: 'JavaScriptError',
         value: 1,
@@ -274,7 +266,7 @@ class PerformanceMonitor {
       });
     });
 
-    window.addEventListener('unhandledrejection', (event) => {
+    window.addEventListener('unhandledrejection', (event: PromiseRejectionEvent) => {
       this.recordMetric('UnhandledPromiseRejection', {
         name: 'UnhandledPromiseRejection',
         value: 1,
