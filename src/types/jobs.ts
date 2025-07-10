@@ -61,7 +61,7 @@ export interface JobMatch {
     hourly_rate?: number;
     bio: string;
     years_experience: number;
-    key_projects: any[];
+    key_projects: { title: string; description: string }[];
     skills: string[];
     location?: string;
     category?: string;
