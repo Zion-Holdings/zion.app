@@ -13,7 +13,7 @@ import { ArrowUp, Filter, SortAsc, Zap, TrendingUp, Star, ShoppingCart, Clock, A
 
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
 import { generateITServices, getServicesMarketStats, getRecommendedServices } from '@/utils/servicesAutoFeedAlgorithm';
-import { ProductListing } from '@/types/listings';
+import type { ProductListing } from '@/types/listings';
 import { SkeletonCard } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
