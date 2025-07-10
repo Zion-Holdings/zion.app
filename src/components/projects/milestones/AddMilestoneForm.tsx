@@ -26,7 +26,7 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { AIMilestoneGenerator } from './AIMilestoneGenerator';
-import { GeneratedMilestone } from '@/hooks/useMilestoneGenerator';
+import type { GeneratedMilestone } from '@/hooks/useMilestoneGenerator';
 
 const formSchema = z.object({
   title: z.string().min(1, 'Title is required'),
