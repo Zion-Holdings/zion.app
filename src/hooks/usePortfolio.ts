@@ -1,6 +1,6 @@
 
 import { useState, useCallback } from 'react';
-import { PortfolioProject } from '@/types/resume';
+import type { PortfolioProject } from '@/types/resume';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
@@ -23,6 +23,7 @@ export function usePortfolio() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from('portfolio_projects')
         .select('*')
@@ -52,6 +53,7 @@ export function usePortfolio() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from('portfolio_projects')
         .insert({
@@ -100,6 +102,7 @@ export function usePortfolio() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { error } = await supabase
         .from('portfolio_projects')
         .update({
@@ -147,6 +150,7 @@ export function usePortfolio() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { error } = await supabase
         .from('portfolio_projects')
         .delete()

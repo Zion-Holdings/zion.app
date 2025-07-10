@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
-import { ProductListing } from "@/types/listings";
-import { SearchSuggestion, FilterOptions } from "@/types/search";
+import type { ProductListing } from "@/types/listings";
+import type { SearchSuggestion, FilterOptions } from "@/types/search";
 // import { generateSearchSuggestions, generateFilterOptions, MARKETPLACE_LISTINGS } from "@/data/marketplaceData";
 import { useDebounce } from "./useDebounce"; // Import the debounce hook
 import {logErrorToProduction} from '@/utils/productionLogger';
