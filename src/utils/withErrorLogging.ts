@@ -7,12 +7,12 @@ export function withErrorLogging(handler: ApiHandler): ApiHandler {
   return async (req: NextApiRequest, res: NextApiResponse) => {
     try {
       await handler(req, res);
-    } catch (err: unknown) {
+    } catch (err) {
       const reqUrl = req.url;
       logErrorToProduction(err instanceof Error ? err.message : String(err), err instanceof Error ? err : undefined, {
         route: reqUrl,
       });
-      if (!res.headersSent) {
+      if (!res.hasHeader("content-type")) {
         res.status(500).json({ error: 'Internal Server Error' });
       }
     }
