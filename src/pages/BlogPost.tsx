@@ -5,7 +5,7 @@ import { SEO } from "@/components/SEO";
 import JsonLd from "@/components/JsonLd";
 import { Button } from "@/components/ui/button";
 import ImageWithRetry from '@/components/ui/ImageWithRetry';
-import { ArrowLeft, Calendar, Clock, ChevronLeft, ChevronRight, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, ChevronLeft, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
 
 
 
