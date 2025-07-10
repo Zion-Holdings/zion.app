@@ -57,7 +57,8 @@ function generateInnovationListing(index: number): ProductListing {
     reviewCount,
     location: "Global",
     availability: "Immediate",
-    aiScore: Math.floor(Math.random() * 20) + 80
+    aiScore: Math.floor(Math.random() * 20) + 80,
+    stock: 10,
   };
 }
 
