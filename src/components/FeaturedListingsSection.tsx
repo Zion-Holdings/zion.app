@@ -16,7 +16,7 @@ export function FeaturedListingsSection({
   className,
   style,
 }: FeaturedListingsSectionProps) {
-  const featuredListings = [
+  const featuredListings: import("@/types/listings").ProductListing[] = [
     {
       id: "ai-innovation-bootcamp",
       title: "AI Innovation Bootcamp",
