@@ -48,7 +48,11 @@ export function useHireRequest() {
         description: `Your request to hire ${requestData.talent.full_name} has been sent successfully.`,
       });
       
-      return { success: true, requestId: (response as any)?.request_id };
+      let requestId: string | undefined = undefined;
+      if (response && typeof response === 'object' && 'request_id' in response) {
+        requestId = (response as { request_id?: string }).request_id;
+      }
+      return { success: true, requestId };
     } catch (error) {
       logErrorToProduction('Error submitting hire request:', { data: error });
       
