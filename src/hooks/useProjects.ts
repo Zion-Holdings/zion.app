@@ -47,19 +47,19 @@ export function useProjects() {
       
       // Transform the data to match our project types. Default to an empty array
       // to prevent "map is not a function" errors when `data` is null
-      const transformedData = (data ?? []).map((project: any) => ({
-        ...project,
-        talent_profile: project.talent_profile ? {
-          ...project.talent_profile,
-          full_name: project.talent_profile.display_name
-        } : undefined
-      }));
+      const transformedData = (data ?? []).map((project: unknown) => {
+        if (typeof project === 'object' && project !== null) {
+          return project as Project;
+        }
+        return {} as Project;
+      });
       
       setProjects(transformedData as Project[]);
       setError(null);
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error fetching projects:', { data: err });
-      setError("Failed to fetch projects: " + err.message);
+      setError("Failed to fetch projects: " + message);
       toast.error("Failed to fetch projects");
     } finally {
       setIsLoading(false);
@@ -92,7 +92,8 @@ export function useProjects() {
       };
       
       return transformedProject as Project;
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error fetching project:', { data: err });
       toast.error("Failed to fetch project details");
       return null;
@@ -116,7 +117,8 @@ export function useProjects() {
       
       toast.success(`Project status updated to ${status}`);
       return true;
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error updating project status:', { data: err });
       toast.error("Failed to update project status");
       return false;
