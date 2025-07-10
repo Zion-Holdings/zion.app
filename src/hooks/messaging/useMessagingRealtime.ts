@@ -1,7 +1,7 @@
 
 import { useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
-import { UserProfile, UserDetails } from '@/types/auth';
+import type { UserProfile, UserDetails } from '@/types/auth';
 import type { Message, Conversation } from '@/types/messaging';
 import { toast } from '@/hooks/use-toast';
 
