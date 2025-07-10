@@ -71,9 +71,9 @@ export function usePricingSuggestionAnalytics(days = 30) {
           if (!Object.prototype.hasOwnProperty.call(categoryMap, cat) || !categoryMap[cat]) {
             categoryMap[cat] = { count: 0, accepted: 0 };
           }
-          categoryMap[cat].count += 1;
+          categoryMap[cat]!.count += 1;
           if (typeof d === 'object' && d !== null && 'accepted' in d && (d as { accepted: boolean }).accepted) {
-            categoryMap[cat].accepted += 1;
+            categoryMap[cat]!.accepted += 1;
           }
         });
         const suggestionsByCategory = Object.entries(categoryMap).map(([category, val]) => ({
@@ -94,6 +94,11 @@ export function usePricingSuggestionAnalytics(days = 30) {
           })
           .slice(0, 10)
           .map((d: unknown) => {
+            let type: 'client' | 'talent' = 'client';
+            if (typeof d === 'object' && d !== null && 'suggestion_type' in d) {
+              const t = (d as { suggestion_type?: string }).suggestion_type;
+              if (t === 'client' || t === 'talent') type = t;
+            }
             if (typeof d === 'object' && d !== null) {
               return {
                 id: (d as { id?: string }).id ?? '',
@@ -103,7 +108,7 @@ export function usePricingSuggestionAnalytics(days = 30) {
                 actualValue: (d as { actual_value?: number }).actual_value ?? 0,
                 accepted: (d as { accepted?: boolean }).accepted ?? false,
                 createdAt: (d as { created_at?: string }).created_at ?? '',
-                type: (d as { suggestion_type?: 'client' | 'talent' }).suggestion_type ?? 'client',
+                type: type as 'client' | 'talent',
               };
             }
             return {
