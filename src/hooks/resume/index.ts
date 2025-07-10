@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Resume } from '@/types/resume';
+import type { Resume } from '@/types/resume';
 import { useFetchResume } from './useFetchResume';
 import { useResumeActions } from './useResumeActions';
 import { useWorkExperience } from './useWorkExperience';
