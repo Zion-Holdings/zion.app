@@ -134,7 +134,7 @@ export function useInterviews() {
         const interview_type = validTypes.includes(interview.interview_type as typeof validTypes[number])
           ? (interview.interview_type as typeof validTypes[number])
           : 'video';
-        return {
+        const result: Interview = {
           id: interview.id,
           client_id: interview.client_id,
           talent_id: interview.talent_id,
@@ -142,18 +142,19 @@ export function useInterviews() {
           end_time: interview.end_time || '',
           duration_minutes: interview.duration_minutes,
           status,
-          notes: interview.notes,
           meeting_link: interview.meeting_link,
           meeting_platform,
           created_at: interview.created_at,
           updated_at: interview.updated_at,
-          title: interview.title,
           interview_type,
-          client_name: interview.clients?.display_name,
-          talent_name: interview.talents?.full_name,
-          client_avatar: interview.clients?.avatar_url,
-          talent_avatar: interview.talents?.profile_picture_url,
         };
+        if (interview.notes !== undefined) result.notes = interview.notes;
+        if (interview.title !== undefined) result.title = interview.title;
+        if (interview.clients?.display_name !== undefined) result.client_name = interview.clients.display_name;
+        if (interview.talents?.full_name !== undefined) result.talent_name = interview.talents.full_name;
+        if (interview.clients?.avatar_url !== undefined) result.client_avatar = interview.clients.avatar_url;
+        if (interview.talents?.profile_picture_url !== undefined) result.talent_avatar = interview.talents.profile_picture_url;
+        return result;
       });
 
       setInterviews(formattedInterviews);
