@@ -154,8 +154,8 @@ export async function stopIpfsNode(): Promise<void> {
   
   try {
     logInfo('Stopping general IPFS Helia node...');
-    if (heliaNode) {
-      await (heliaNode as any).stop(); // Cast to any to avoid type error, as heliaNode is unknown
+    if (heliaNode && typeof (heliaNode as { stop?: unknown }).stop === 'function') {
+      await (heliaNode as { stop: () => Promise<void> }).stop();
       heliaNode = null;
       logInfo('General IPFS Helia node stopped.');
     }

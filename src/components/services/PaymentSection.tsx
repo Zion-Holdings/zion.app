@@ -1,7 +1,7 @@
 
 
 import { PaymentButton } from "@/components/transactions/PaymentButton";
-import { CountryPricing } from "@/data/onsiteServicePricing";
+import type { CountryPricing } from "@/data/onsiteServicePricing";
 import { toast } from "@/hooks/use-toast";
 import { MapPin } from 'lucide-react';
 

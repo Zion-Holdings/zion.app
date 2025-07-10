@@ -16,6 +16,7 @@ import { SkipLink } from "@/components/SkipLink";
 import { Container } from '@/components/Container';
 import { useGlobalLoader } from '@/context/GlobalLoaderContext';
 import LoaderOverlay from '@/components/LoaderOverlay';
+import type { ReactElement } from 'react';
 import ErrorOverlay from '@/components/ErrorOverlay';
 import {logErrorToProduction} from '@/utils/productionLogger';
 import { useSessionDuration } from '@/hooks/useSessionDuration';
