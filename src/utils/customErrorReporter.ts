@@ -51,7 +51,7 @@ export async function sendErrorToBackend(errorDetails: ErrorDetails): Promise<vo
   }
 }
 
-export function reportError(error: Error | string, context?: Record<string, any>) {
+export function reportError(error: Error | string, context?: Record<string, unknown>) {
   const webhookUrl = process.env.NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL;
   
   if (!webhookUrl || webhookUrl.trim() === '') {
