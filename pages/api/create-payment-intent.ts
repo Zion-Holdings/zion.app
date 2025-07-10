@@ -47,7 +47,7 @@ async function handler(req: any, res: any) {
     // This route uses the official Stripe Node.js SDK for server-to-server communication.
     // The getStripe() client-side helper (from src/utils/getStripe.ts) and its
     // advancedFraudSignals option are not applicable to this server-side implementation.
-    const stripe = new Stripe(useTest ? testKey : liveKey, {
+    const stripe = new (Stripe as any)(useTest ? testKey : liveKey, {
       apiVersion: '2023-10-16',
     });
     const intent = await stripe.paymentIntents.create({
