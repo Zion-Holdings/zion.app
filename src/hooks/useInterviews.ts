@@ -13,6 +13,8 @@ export function useInterviews() {
   const [error, setError] = useState<string | null>(null);
   const { user } = useAuth();
 
+  if (!supabase) throw new Error('Supabase client not initialized');
+
   // Request an interview as a client
   const requestInterview = async (interviewRequest: InterviewRequest): Promise<Interview | null> => {
     if (!user) {
