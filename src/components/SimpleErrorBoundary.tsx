@@ -32,7 +32,10 @@ export class SimpleErrorBoundary extends React.Component<ErrorBoundaryProps, Err
     if (this.state.hasError) {
       if (this.props.fallback) {
         const FallbackComponent = this.props.fallback;
-        return <FallbackComponent error={this.state.error} retry={this.retry} />;
+        const fallbackProps = this.state.error !== undefined
+          ? { error: this.state.error, retry: this.retry }
+          : { retry: this.retry };
+        return <FallbackComponent {...fallbackProps} />;
       }
       return (
         <div>
