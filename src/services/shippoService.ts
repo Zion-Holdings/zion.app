@@ -25,7 +25,7 @@ const FROM_ADDRESS = {
   country: process.env.SHIPPO_FROM_COUNTRY || 'US'
 };
 
-export async function createShipment(addressTo: any, parcels: any[]): Promise<ShippoShipment> {
+export async function createShipment(addressTo: unknown, parcels: unknown[]): Promise<ShippoShipment> {
   try {
     const res = await axios.post('https://api.goshippo.com/shipments/', {
       address_from: FROM_ADDRESS,
@@ -45,9 +45,9 @@ export async function createShipment(addressTo: any, parcels: any[]): Promise<Sh
   }
 }
 
-export function parseShippoWebhook(payload: any) {
-  const trackingNumber = payload?.tracking_number;
-  const trackingStatus = payload?.tracking_status?.status;
-  const events = payload?.tracking_history as ShippoTrackingEvent[] | undefined;
+export function parseShippoWebhook(payload: unknown) {
+  const trackingNumber = (payload as { tracking_number?: string })?.tracking_number;
+  const trackingStatus = (payload as { tracking_status?: { status?: string } })?.tracking_status?.status;
+  const events = (payload as { tracking_history?: ShippoTrackingEvent[] })?.tracking_history as ShippoTrackingEvent[] | undefined;
   return { trackingNumber, trackingStatus, events };
 }
