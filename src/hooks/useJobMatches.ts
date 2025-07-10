@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
-import { JobMatch } from "@/types/jobs";
+import type { JobMatch } from "@/types/jobs";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useJobMatches(jobId: string) {
@@ -13,6 +13,7 @@ export function useJobMatches(jobId: string) {
   const fetchMatches = async () => {
     setIsLoading(true);
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from("job_talent_matches")
         .select(`
@@ -50,6 +51,7 @@ export function useJobMatches(jobId: string) {
   const triggerAIMatching = async () => {
     setIsProcessing(true);
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const response = await supabase.functions.invoke('job-talent-matcher', {
         body: { jobId },
       });
