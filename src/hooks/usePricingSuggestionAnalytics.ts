@@ -124,7 +124,16 @@ export function usePricingSuggestionAnalytics(days = 30) {
               actualValue: 0,
               accepted: false,
               createdAt: '',
-              type: 'client' as 'client',
+              type: 'client',
+            } as {
+              id: string;
+              userId: string;
+              suggestedMin: number;
+              suggestedMax: number;
+              actualValue?: number;
+              accepted: boolean;
+              createdAt: string;
+              type: 'client' | 'talent';
             };
           });
 
