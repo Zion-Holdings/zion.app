@@ -28,7 +28,7 @@ export interface ProductListing {
   reviewCount?: number;
   featured?: boolean;
   aiScore?: number; // Added aiScore as optional property
-  location?: string; // Adding location property to fix TypeScript errors
+  location: string; // Location is required for all ProductListing
   availability?: string; // Adding availability property to fix TypeScript errors
   stock: number; // Inventory count
   brand?: string; // Brand of the equipment
