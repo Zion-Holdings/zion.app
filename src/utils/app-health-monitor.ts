@@ -463,7 +463,7 @@ class AppHealthMonitor {
     }
     setInterval(() => {
       this.performHealthCheck().then(report => {
-        setWindowProperty<HealthReport>('latestHealthReport', report);
+        window.latestHealthReport = report;
         // Log warnings and critical issues
         if (report.status !== 'healthy') {
           console.warn('🏥 Health issue detected:', report);
@@ -473,13 +473,12 @@ class AppHealthMonitor {
       });
     }, 30000);
     // Expose health monitor globally for debugging
-    setWindowProperty<AppHealthMonitor>('appHealthMonitor', this);
+    window.appHealthMonitor = this;
   }
 
   public getLatestReport(): HealthReport | null {
-    if (typeof window !== 'undefined' && 'latestHealthReport' in window) {
-      const report = (window as unknown as { latestHealthReport?: HealthReport }).latestHealthReport;
-      return report || null;
+    if (typeof window !== 'undefined' && window.latestHealthReport) {
+      return window.latestHealthReport;
     }
     return null;
   }
@@ -497,6 +496,14 @@ class AppHealthMonitor {
       status: report.status,
       issues
     };
+  }
+}
+
+// Type-safe augmentation for window globals
+declare global {
+  interface Window {
+    latestHealthReport?: HealthReport;
+    appHealthMonitor?: AppHealthMonitor;
   }
 }
 
