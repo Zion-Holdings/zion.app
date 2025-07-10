@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
-import { Dispute, DisputeMessage, DisputeAttachment, DisputeStatus } from "@/types/disputes";
+import type { Dispute, DisputeMessage, DisputeAttachment, DisputeStatus } from '@/types/disputes';
 import { toast } from "sonner";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
@@ -14,6 +14,7 @@ export function useDisputes() {
   const [error, setError] = useState<string | null>(null);
 
   const fetchDisputes = async () => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     if (!user) {
       setIsLoading(false);
       return;
@@ -64,6 +65,7 @@ export function useDisputes() {
   };
 
   const getDisputeById = async (disputeId: string): Promise<Dispute | null> => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     try {
       const { data, error } = await supabase
         .from("disputes")
@@ -106,6 +108,7 @@ export function useDisputes() {
     reason_code: string;
     description: string;
   }): Promise<Dispute | null> => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     if (!user) {
       toast.error("You must be logged in to create a dispute");
       return null;
@@ -135,6 +138,7 @@ export function useDisputes() {
   };
 
   const updateDisputeStatus = async (disputeId: string, status: DisputeStatus): Promise<boolean> => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     try {
       const { error } = await supabase
         .from("disputes")
@@ -163,6 +167,7 @@ export function useDisputes() {
     disputeId: string, 
     resolution: { summary: string; resolution_type: string; }
   ): Promise<boolean> => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     try {
       const { error } = await supabase
         .from("disputes")
@@ -201,6 +206,7 @@ export function useDisputes() {
   };
 
   const getDisputeMessages = async (disputeId: string): Promise<DisputeMessage[]> => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     try {
       const { data, error } = await supabase
         .from("dispute_messages")
@@ -222,6 +228,7 @@ export function useDisputes() {
   };
 
   const addDisputeMessage = async (disputeId: string, message: string, isAdminNote = false): Promise<boolean> => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     if (!user) {
       toast.error("You must be logged in to send a message");
       return false;

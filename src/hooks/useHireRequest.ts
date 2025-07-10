@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
-import { TalentProfile } from "@/types/talent";
+import type { TalentProfile } from "@/types/talent";
 
 import {logErrorToProduction} from "@/utils/productionLogger";
 
@@ -34,6 +34,7 @@ export function useHireRequest() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       // Call the edge function to process the hire request
       const { data: response, error } = await supabase.functions.invoke('process-hire-request', {
         body: requestData
