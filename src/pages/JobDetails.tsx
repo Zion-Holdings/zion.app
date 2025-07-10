@@ -84,7 +84,7 @@ export default function JobDetails() {
     setIsApplyModalOpen(true);
   };
 
-  const handleApplySuccess = async (appliedJobId: string) => {
+  const _handleApplySuccess = async (_appliedJobId: string) => {
     toast.success("Application submitted successfully!");
     setIsApplyModalOpen(false);
   };
