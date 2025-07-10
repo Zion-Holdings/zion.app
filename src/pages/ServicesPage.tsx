@@ -211,11 +211,11 @@ export default function ServicesPage() {
     const startIndex = (page - 1) * limit;
     const endIndex = startIndex + limit;
     const items = filteredServices.slice(startIndex, endIndex);
-    
+    const _total = filteredServices.length;
     return {
       items,
       hasMore: endIndex < filteredServices.length || page < 10,
-      _total: filteredServices.length
+      _total
     };
   }, [sortBy, filterCategory, showRecommended, totalGenerated]);
 
