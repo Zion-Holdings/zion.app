@@ -11,7 +11,7 @@ import { ApiKeysManager } from '@/components/developers/ApiKeysManager';
 import { SEO } from '@/components/SEO';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import type { Order } from '@/hooks/useOrders';
-import { NextApiRequest } from 'next';
+import type { NextApiRequest } from 'next';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 

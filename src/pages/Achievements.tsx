@@ -1,6 +1,8 @@
-import { AchievementBadges, Achievement } from "@/components/gamification/AchievementBadges";
+import { AchievementBadges } from "@/components/gamification/AchievementBadges";
+import type { Achievement } from "@/components/gamification/AchievementBadges";
 import { UserProgress } from "@/components/gamification/UserProgress";
-import { UserLeaderboard, LeaderboardEntry } from "@/components/gamification/UserLeaderboard";
+import { UserLeaderboard } from "@/components/gamification/UserLeaderboard";
+import type { LeaderboardEntry } from "@/components/gamification/UserLeaderboard";
 
 const ACHIEVEMENTS: Achievement[] = [
   {
