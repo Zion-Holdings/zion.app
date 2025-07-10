@@ -174,7 +174,7 @@ export function ReviewForm({
                     <FormControl>
                       <RadioGroup
                         onValueChange={(value) => (field as { onChange: (v: number) => void }).onChange(parseInt(value))}
-                        defaultValue={(field as { value?: number }).value?.toString()}
+                        defaultValue={(field as { value?: number }).value !== undefined ? (field as { value?: number }).value!.toString() : ""}
                         className="flex flex-wrap gap-4"
                       >
                         {[1, 2, 3, 4, 5].map((value) => (
@@ -210,7 +210,7 @@ export function ReviewForm({
                     <FormControl>
                       <RadioGroup
                         onValueChange={(value) => (field as { onChange: (v: number) => void }).onChange(parseInt(value))}
-                        defaultValue={(field as { value?: number }).value?.toString()}
+                        defaultValue={(field as { value?: number }).value !== undefined ? (field as { value?: number }).value!.toString() : ""}
                         className="flex flex-wrap gap-4"
                       >
                         {[1, 2, 3, 4, 5].map((value) => (
@@ -246,7 +246,7 @@ export function ReviewForm({
                     <FormControl>
                       <RadioGroup
                         onValueChange={(value) => (field as { onChange: (v: number) => void }).onChange(parseInt(value))}
-                        defaultValue={(field as { value?: number }).value?.toString()}
+                        defaultValue={(field as { value?: number }).value !== undefined ? (field as { value?: number }).value!.toString() : ""}
                         className="flex flex-wrap gap-4"
                       >
                         {[1, 2, 3, 4, 5].map((value) => (
