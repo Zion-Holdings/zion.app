@@ -181,6 +181,7 @@ export async function trackPricingSuggestion(data: {
   accepted: boolean;
 }) {
   try {
+    if (!supabase) throw new Error('Supabase client not initialized');
     const { error } = await supabase
       .from('pricing_suggestions')
       .insert({
