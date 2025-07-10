@@ -1,4 +1,5 @@
-import { OnboardingTracker, OnboardingStep } from './OnboardingTracker';
+import { OnboardingTracker } from './OnboardingTracker';
+import type { OnboardingStep } from './OnboardingTracker';
 import { useAdvancedOnboardingStatus } from '@/hooks/useAdvancedOnboardingStatus';
 
 export function AdvancedOnboardingSteps() {
