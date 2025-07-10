@@ -8,6 +8,7 @@ import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 
 // TypeScript interfaces
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import type { Product } from './marketplace';
 
 export interface MarketplaceItem {
 
@@ -255,10 +256,12 @@ export const getMarketplaceErrorMessage = (error: unknown): string => {
 export { marketplaceClient };
 
 // Add product validation and auto-generation utilities
-export const validateProductData = (product: unknown): boolean => {
-  if (typeof product !== 'object' || product === null) return false;
-  const requiredFields = ['id', 'title', 'description', 'category'];
-  return requiredFields.every(field => typeof product === 'object' && product !== null && field in product && (product as Record<string, unknown>)[field] && (product as Record<string, unknown>)[field]?.toString().trim() !== '');
+export const validateProductData = (product: Product): boolean => {
+  const requiredFields: (keyof Product)[] = ['id', 'title', 'description', 'category'];
+  return requiredFields.every(field => {
+    const value = product[field];
+    return typeof value === 'string' && value.trim() !== '';
+  });
 };
 
 export const generateProductId = (name: string): string => {
