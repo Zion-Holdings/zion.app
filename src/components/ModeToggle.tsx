@@ -49,7 +49,7 @@ export function ModeToggle() {
       }
 
       const messages = (nextPresetDisplay === 'dark' || (nextPresetDisplay === 'system' && window.matchMedia("(prefers-color-scheme: dark)").matches)) ? darkModeMessages : lightModeMessages;
-      const title = messages[Math.floor(Math.random() * messages.length)];
+      const title: string = messages && messages.length > 0 ? (messages[Math.floor(Math.random() * messages.length)] || "Theme changed") : "Theme changed";
 
       toast({
         title,
