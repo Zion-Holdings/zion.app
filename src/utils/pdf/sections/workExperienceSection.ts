@@ -1,7 +1,7 @@
 
 import { jsPDF } from 'jspdf';
-import { WorkExperience } from '@/types/resume';
-import { PdfThemeColors } from '@/utils/pdf/themeConfig';
+import type { WorkExperience } from '@/types/resume';
+import type { PdfThemeColors } from '@/utils/pdf/themeConfig';
 import { formatDate } from '@/utils/pdf/formatters';
 
 export function addWorkExperienceSection(
