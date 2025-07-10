@@ -8,6 +8,11 @@ export interface SignupPayload {
   name?: string;
 }
 
+// TODO: Define the actual session structure if possible
+export interface SignupSession {
+  [key: string]: any;
+}
+
 export interface SignupApiResponse {
   message: string;
   user?: {
@@ -15,13 +20,8 @@ export interface SignupApiResponse {
     email: string;
     display_name?: string;
   };
-  session?: unknown;
+  session?: SignupSession;
   emailVerificationRequired?: boolean;
-}
-
-interface SignupSession {
-  // Define the actual structure if possible, otherwise use unknown
-  [key: string]: unknown;
 }
 
 export async function signupUser(email: string, password: string, name: string, session?: SignupSession) {
