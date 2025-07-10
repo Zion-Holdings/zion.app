@@ -247,39 +247,50 @@ if (isBrowser && !isNode) {
 // Export a safe process accessor
 export const safeProcess = typeof process !== 'undefined' ? process : (globalThis as unknown as { process: any }).process;
 
-// Export safe environment accessors
-export const safeEnv = {
-  NODE_ENV: (safeProcess as any).env?.NODE_ENV || 'production',
-  NEXT_PUBLIC_APP_URL: (safeProcess as any).env?.NEXT_PUBLIC_APP_URL || '',
-  NEXT_PUBLIC_SUPABASE_URL: (safeProcess as any).env?.NEXT_PUBLIC_SUPABASE_URL || '',
-  NEXT_PUBLIC_SUPABASE_ANON_KEY: (safeProcess as any).env?.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
-  NEXT_PUBLIC_SENTRY_DSN: (safeProcess as any).env?.NEXT_PUBLIC_SENTRY_DSN || '',
-  NEXT_PUBLIC_REOWN_PROJECT_ID: (safeProcess as any).env?.NEXT_PUBLIC_REOWN_PROJECT_ID || '',
-  NEXT_PUBLIC_DD_CLIENT_TOKEN: (safeProcess as any).env?.NEXT_PUBLIC_DD_CLIENT_TOKEN || '',
-  NEXT_PUBLIC_LOGROCKET_ID: (safeProcess as any).env?.NEXT_PUBLIC_LOGROCKET_ID || '',
-  NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: (safeProcess as any).env?.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '',
-  NEXT_PUBLIC_STRIPE_TEST_MODE: (safeProcess as any).env?.NEXT_PUBLIC_STRIPE_TEST_MODE || '',
-  NEXT_PUBLIC_INTERCOM_APP_ID: (safeProcess as any).env?.NEXT_PUBLIC_INTERCOM_APP_ID || '',
-  NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: (safeProcess as any).env?.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || '',
-  NEXT_PUBLIC_API_URL: (safeProcess as any).env?.NEXT_PUBLIC_API_URL || '',
-  NEXT_PUBLIC_STATUS_PAGE_URL: (safeProcess as any).env?.NEXT_PUBLIC_STATUS_PAGE_URL || '',
-  NEXT_PUBLIC_SITE_URL: (safeProcess as any).env?.NEXT_PUBLIC_SITE_URL || '',
-  NEXT_PUBLIC_APP_ENV: (safeProcess as any).env?.NEXT_PUBLIC_APP_ENV || '',
-  NEXT_PUBLIC_APP_VERSION: (safeProcess as any).env?.NEXT_PUBLIC_APP_VERSION || '',
-  NEXT_PUBLIC_BUILD_TIME: (safeProcess as any).env?.NEXT_PUBLIC_BUILD_TIME || '',
-  NEXT_PUBLIC_SOCIAL_TWITTER_URL: (safeProcess as any).env?.NEXT_PUBLIC_SOCIAL_TWITTER_URL || '',
-  NEXT_PUBLIC_SOCIAL_LINKEDIN_URL: (safeProcess as any).env?.NEXT_PUBLIC_SOCIAL_LINKEDIN_URL || '',
-  NEXT_PUBLIC_SOCIAL_FACEBOOK_URL: (safeProcess as any).env?.NEXT_PUBLIC_SOCIAL_FACEBOOK_URL || '',
-  NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL: (safeProcess as any).env?.NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL || '',
-  NEXT_PUBLIC_SOCIAL_GITHUB_URL: (safeProcess as any).env?.NEXT_PUBLIC_SOCIAL_GITHUB_URL || '',
-} as const;
+// Helper to safely access process.env variables with type safety
+function getProcessEnvVar(key: string): string | undefined {
+  if (typeof safeProcess === 'object' && safeProcess && 'env' in safeProcess) {
+    const env = (safeProcess as { env?: Record<string, string | undefined> }).env;
+    if (env && typeof env === 'object') {
+      return env[key];
+    }
+  }
+  return undefined;
+}
 
 // Safe environment getter function
 export function getEnv(key: string, defaultValue = ''): string {
-  return (safeProcess as any).env?.[key] || defaultValue;
+  return getProcessEnvVar(key) || defaultValue;
 }
 
-// Environment check functions
+// Export safe environment accessors
+export const safeEnv = {
+  NODE_ENV: getProcessEnvVar('NODE_ENV') || 'production',
+  NEXT_PUBLIC_APP_URL: getProcessEnvVar('NEXT_PUBLIC_APP_URL') || '',
+  NEXT_PUBLIC_SUPABASE_URL: getProcessEnvVar('NEXT_PUBLIC_SUPABASE_URL') || '',
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: getProcessEnvVar('NEXT_PUBLIC_SUPABASE_ANON_KEY') || '',
+  NEXT_PUBLIC_SENTRY_DSN: getProcessEnvVar('NEXT_PUBLIC_SENTRY_DSN') || '',
+  NEXT_PUBLIC_REOWN_PROJECT_ID: getProcessEnvVar('NEXT_PUBLIC_REOWN_PROJECT_ID') || '',
+  NEXT_PUBLIC_DD_CLIENT_TOKEN: getProcessEnvVar('NEXT_PUBLIC_DD_CLIENT_TOKEN') || '',
+  NEXT_PUBLIC_LOGROCKET_ID: getProcessEnvVar('NEXT_PUBLIC_LOGROCKET_ID') || '',
+  NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: getProcessEnvVar('NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY') || '',
+  NEXT_PUBLIC_STRIPE_TEST_MODE: getProcessEnvVar('NEXT_PUBLIC_STRIPE_TEST_MODE') || '',
+  NEXT_PUBLIC_INTERCOM_APP_ID: getProcessEnvVar('NEXT_PUBLIC_INTERCOM_APP_ID') || '',
+  NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: getProcessEnvVar('NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME') || '',
+  NEXT_PUBLIC_API_URL: getProcessEnvVar('NEXT_PUBLIC_API_URL') || '',
+  NEXT_PUBLIC_STATUS_PAGE_URL: getProcessEnvVar('NEXT_PUBLIC_STATUS_PAGE_URL') || '',
+  NEXT_PUBLIC_SITE_URL: getProcessEnvVar('NEXT_PUBLIC_SITE_URL') || '',
+  NEXT_PUBLIC_APP_ENV: getProcessEnvVar('NEXT_PUBLIC_APP_ENV') || '',
+  NEXT_PUBLIC_APP_VERSION: getProcessEnvVar('NEXT_PUBLIC_APP_VERSION') || '',
+  NEXT_PUBLIC_BUILD_TIME: getProcessEnvVar('NEXT_PUBLIC_BUILD_TIME') || '',
+  NEXT_PUBLIC_SOCIAL_TWITTER_URL: getProcessEnvVar('NEXT_PUBLIC_SOCIAL_TWITTER_URL') || '',
+  NEXT_PUBLIC_SOCIAL_LINKEDIN_URL: getProcessEnvVar('NEXT_PUBLIC_SOCIAL_LINKEDIN_URL') || '',
+  NEXT_PUBLIC_SOCIAL_FACEBOOK_URL: getProcessEnvVar('NEXT_PUBLIC_SOCIAL_FACEBOOK_URL') || '',
+  NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL: getProcessEnvVar('NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL') || '',
+  NEXT_PUBLIC_SOCIAL_GITHUB_URL: getProcessEnvVar('NEXT_PUBLIC_SOCIAL_GITHUB_URL') || '',
+} as const;
+
+// Safe environment getter function
 export function isDevelopment(): boolean {
   return getEnv('NODE_ENV') === 'development';
 }
@@ -289,6 +300,8 @@ export function isProduction(): boolean {
 }
 
 // Export the polyfilled process object
-export const processEnv = (safeProcess as any).env;
+export const processEnv = (typeof safeProcess === 'object' && safeProcess && 'env' in safeProcess)
+  ? (safeProcess as { env?: Record<string, string | undefined> }).env
+  : undefined;
 
 export default safeEnv; 
