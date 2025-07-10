@@ -1,6 +1,8 @@
 // Comprehensive Performance Monitoring System for Zion App
 // Tracks Core Web Vitals, User Experience Metrics, and Performance Issues
 
+import type { Metric } from 'web-vitals';
+
 interface PerformanceMetric {
   name: string;
   value: number;
@@ -77,7 +79,19 @@ class PerformanceMonitor {
     }
   }
 
+  // Overload signatures
+  private recordMetric(name: string, metric: Metric): void;
+  private recordMetric(name: string, metric: { name?: string; value: number; id?: string; rating?: PerformanceMetric['rating']; navigationType?: string }): void;
   private recordMetric(name: string, metric: any): void {
+    // If metric is a web-vitals Metric (has 'rating' and 'navigationType' and 'id' and 'name')
+    const isWebVitalsMetric =
+      metric &&
+      typeof metric.name === 'string' &&
+      typeof metric.value === 'number' &&
+      'rating' in metric &&
+      'navigationType' in metric &&
+      'id' in metric;
+
     const performanceMetric: PerformanceMetric = {
       name: metric.name || name,
       value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
@@ -85,23 +99,23 @@ class PerformanceMonitor {
       timestamp: Date.now(),
       id: metric.id || this.generateId(),
       navigationType: metric.navigationType,
-      url: window.location.href
+      url: typeof window !== 'undefined' ? window.location.href : ''
     };
 
     this.metrics.push(performanceMetric);
     
     // Send to analytics if available
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', metric.name, {
+    if (typeof window !== 'undefined' && (window as unknown as { gtag?: Function }).gtag) {
+      (window as unknown as { gtag?: Function }).gtag!('event', metric.name || name, {
         value: performanceMetric.value,
-        event_label: metric.id,
+        event_label: performanceMetric.id,
         non_interaction: true,
       });
     }
 
     // Log significant performance issues
     if (performanceMetric.rating === 'poor') {
-      console.warn(`Performance issue detected: ${name} = ${performanceMetric.value}ms`);
+      console.warn(`Performance issue detected: ${performanceMetric.name} = ${performanceMetric.value}ms`);
     }
   }
 
