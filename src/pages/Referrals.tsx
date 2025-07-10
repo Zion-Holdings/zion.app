@@ -8,7 +8,7 @@ import { ReferralTable } from '@/components/referrals/ReferralTable';
 import { RewardsCard } from '@/components/referrals/RewardsCard';
 import { ReferralGuide } from '@/components/referrals/ReferralGuide';
 import { ReferralLeaderboard } from '@/components/referrals/ReferralLeaderboard';
-import { Tabs, TabsList, TabsContent, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList as _TabsList, TabsContent, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from '@/components/ui/button';
 import { toast } from '@/hooks/use-toast';
 import { Share, Users } from 'lucide-react';
