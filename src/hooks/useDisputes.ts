@@ -192,9 +192,9 @@ export function useDisputes() {
                 resolved_at: new Date().toISOString(),
                 resolution_summary: resolution.summary,
                 resolution_type: resolution.resolution_type as DisputeStatus
-              } 
-            : dispute
-        )
+              } as Dispute
+            : dispute as Dispute
+        ) as Dispute[]
       );
       
       toast.success("Dispute resolved successfully");
