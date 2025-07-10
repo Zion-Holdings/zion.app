@@ -1,6 +1,6 @@
 
 import { Progress } from "@/components/ui/progress";
-import { ResumeProgressProps } from "./types";
+import type { ResumeProgressProps } from "./types";
 
 export const ResumeProgress = ({ resume, progress }: ResumeProgressProps) => {
   return (

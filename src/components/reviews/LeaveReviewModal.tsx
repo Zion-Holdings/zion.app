@@ -46,7 +46,7 @@ export function LeaveReviewModal({
   const handleSubmit = async (formValues: ReviewFormValues) => {
     if (userReview) {
       // Update existing review
-      const { project_id, reviewee_id, ...updates } = formValues;
+      const updates = formValues;
       const success = await updateReview(userReview.id, updates);
       if (success) {
         handleOpenChange(false);
@@ -54,7 +54,11 @@ export function LeaveReviewModal({
       return success;
     } else {
       // Create new review
-      const success = await submitReview(formValues);
+      const success = await submitReview({
+        ...formValues,
+        project_id: projectId,
+        reviewee_id: revieweeId,
+      });
       if (success) {
         handleOpenChange(false);
       }

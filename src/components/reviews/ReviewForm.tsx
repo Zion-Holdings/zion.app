@@ -20,7 +20,7 @@ import {
 import { Switch } from "@/components/ui/switch";
 import { Review } from "@/types/reviews";
 
-interface ReviewFormValues {
+export interface ReviewFormValues {
   rating?: number;
   review_text?: string;
   communication_rating?: number;

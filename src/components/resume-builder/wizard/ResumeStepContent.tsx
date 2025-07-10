@@ -1,6 +1,6 @@
 
 import { TabsContent } from "@/components/ui/tabs";
-import { Resume } from "@/types/resume";
+import type { Resume } from "@/types/resume";
 import { BasicInfoForm } from '../forms/basic-info';
 import { WorkExperienceForm } from '../forms/WorkExperienceForm';
 import { EducationForm } from '../forms/EducationForm';
