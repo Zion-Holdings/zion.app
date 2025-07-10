@@ -14,6 +14,7 @@ import WishlistPage from './Wishlist';
 import { SEO } from '@/components/SEO';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import type { Order } from '@/hooks/useOrders';
+import type { NextApiRequest } from 'next';
 
 interface User {
   id: string;
@@ -106,8 +107,6 @@ export default function ProtectedAccount(props: AccountProps) {
     </ProtectedRoute>
   );
 }
-
-import { NextApiRequest } from 'next';
 
 export const getServerSideProps: GetServerSideProps<AccountProps> = async ({
   req,
