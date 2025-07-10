@@ -51,29 +51,20 @@ class Stream extends EventEmitter {
 
 // Readable Stream
 class Readable extends Stream {
-  private _readableState: any;
+  private _readableState: unknown;
   private _read: (size?: number) => unknown;
 
-  constructor(options: any = {}) {
+  constructor(options: unknown = {}) {
     super();
+    // Type guard for options
+    const opts = typeof options === 'object' && options !== null ? options as Record<string, unknown> : {};
     this._readableState = {
-      flowing: null,
+      ...opts,
+      buffer: [],
       ended: false,
-      endEmitted: false,
       reading: false,
-      sync: true,
-      needReadable: false,
-      emittedReadable: false,
-      readableListening: false,
-      resumeScheduled: false,
-      destroyed: false,
-      defaultEncoding: 'utf8',
-      awaitDrain: 0,
-      readingMore: false,
-      decoder: null,
-      encoding: null
     };
-    this._read = options.read || (() => {});
+    this._read = opts.read as ((size?: number) => unknown) || (() => {});
   }
 
   read(size?: number): unknown {
@@ -85,30 +76,42 @@ class Readable extends Stream {
     return true;
   }
 
-  pipe(dest: any, options?: any): any {
+  pipe(dest: unknown, options?: unknown): unknown {
+    // Type guard for dest
+    if (typeof dest !== 'object' || dest === null) return undefined;
+    const writable = dest as { write?: (chunk: unknown) => boolean; on?: (event: string, cb: (...args: unknown[]) => void) => void };
     this.on('data', (chunk) => {
-      if (dest.write && !dest.write(chunk)) {
-        this.pause();
+      if (writable.write && !writable.write(chunk)) {
+        // Pause if backpressure
+        if (this.pause) this.pause();
       }
     });
-    this.on('end', () => {
-      if (dest.end) dest.end();
-    });
+    if (writable.on) {
+      writable.on('drain', () => {
+        if (this.resume) this.resume();
+      });
+    }
     return dest;
   }
 
   pause(): this {
-    this._readableState.flowing = false;
+    if (typeof this._readableState === 'object' && this._readableState !== null) {
+      (this._readableState as Record<string, unknown>).flowing = false;
+    }
     return this;
   }
 
   resume(): this {
-    this._readableState.flowing = true;
+    if (typeof this._readableState === 'object' && this._readableState !== null) {
+      (this._readableState as Record<string, unknown>).flowing = true;
+    }
     return this;
   }
 
   destroy(): this {
-    this._readableState.destroyed = true;
+    if (typeof this._readableState === 'object' && this._readableState !== null) {
+      (this._readableState as Record<string, unknown>).destroyed = true;
+    }
     this.emit('close');
     return this;
   }
@@ -116,37 +119,20 @@ class Readable extends Stream {
 
 // Writable Stream
 class Writable extends Stream {
-  private _writableState: any;
+  private _writableState: unknown;
   private _write: (chunk: unknown, encoding?: string, cb?: (err?: Error) => unknown) => unknown;
 
-  constructor(options: any = {}) {
+  constructor(options: unknown = {}) {
     super();
+    // Type guard for options
+    const opts = typeof options === 'object' && options !== null ? options as Record<string, unknown> : {};
     this._writableState = {
+      ...opts,
+      buffer: [],
       ended: false,
-      ending: false,
-      finished: false,
-      destroyed: false,
-      decodeStrings: true,
-      defaultEncoding: 'utf8',
-      length: 0,
       writing: false,
-      corked: 0,
-      sync: true,
-      bufferProcessing: false,
-      onwrite: () => {},
-      writecb: () => {},
-      writelen: 0,
-      bufferedRequest: null,
-      lastBufferedRequest: null,
-      pendingcb: 0,
-      prefinished: false,
-      errorEmitted: false,
-      emitClose: true,
-      autoDestroy: true,
-      bufferedRequestCount: 0,
-      corkedRequestsFree: null
     };
-    this._write = options.write || (() => {});
+    this._write = opts.write as ((chunk: unknown, encoding?: string, cb?: (err?: Error) => unknown) => unknown) || (() => {});
   }
 
   write(chunk: unknown, encoding?: string, cb?: (err?: Error) => unknown): boolean {
@@ -155,14 +141,18 @@ class Writable extends Stream {
   }
 
   end(chunk?: unknown, encoding?: string, cb?: (err?: Error) => unknown): this {
-    this._writableState.ending = true;
-    this._writableState.finished = true;
+    if (typeof this._writableState === 'object' && this._writableState !== null) {
+      (this._writableState as Record<string, unknown>).ending = true;
+      (this._writableState as Record<string, unknown>).finished = true;
+    }
     this.emit('finish');
     return this;
   }
 
   destroy(): this {
-    this._writableState.destroyed = true;
+    if (typeof this._writableState === 'object' && this._writableState !== null) {
+      (this._writableState as Record<string, unknown>).destroyed = true;
+    }
     this.emit('close');
     return this;
   }
@@ -172,7 +162,7 @@ class Writable extends Stream {
 class Duplex extends Readable {
   private _writable: Writable;
 
-  constructor(options: any = {}) {
+  constructor(options: unknown = {}) {
     super(options);
     this._writable = new Writable(options);
   }
@@ -192,14 +182,12 @@ class Transform extends Duplex {
   private _internalTransform: (chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown) => unknown;
   private _internalFlush: (callback: (err?: Error) => unknown) => unknown;
 
-  constructor(options: any = {}) {
+  constructor(options: unknown = {}) {
     super(options);
-    this._internalTransform = options.transform || ((chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown) => {
-      callback(undefined, chunk);
-    });
-    this._internalFlush = options.flush || ((callback: (err?: Error) => unknown) => {
-      callback();
-    });
+    // Type guard for options
+    const opts = typeof options === 'object' && options !== null ? options as Record<string, unknown> : {};
+    this._internalTransform = opts.transform as (chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown) || ((chunk, encoding, callback) => callback());
+    this._internalFlush = typeof opts.flush === 'function' ? opts.flush as (callback: (err?: Error) => unknown) => unknown : (callback: (err?: Error) => unknown) => { callback(); };
   }
 
   _transform(chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown): void {
@@ -213,7 +201,7 @@ class Transform extends Duplex {
 
 // PassThrough Stream
 class PassThrough extends Transform {
-  constructor(options: any = {}) {
+  constructor(options: unknown = {}) {
     super(options);
   }
 }
@@ -231,16 +219,20 @@ const streamModule = {
   WritableState: class {},
   Buffer: typeof Buffer !== 'undefined' ? Buffer : null,
   // Add utility functions
-  finished: (stream: any, callback: (err?: Error) => unknown) => {
-    stream.on('end', callback);
-    stream.on('finish', callback);
-    stream.on('close', callback);
+  finished: (stream: unknown, callback: (err?: Error) => unknown) => {
+    if (typeof stream === 'object' && stream !== null && 'on' in stream && typeof (stream as { on: unknown }).on === 'function') {
+      (stream as { on: (event: string, cb: (err?: Error) => unknown) => void }).on('end', callback);
+      (stream as { on: (event: string, cb: (err?: Error) => unknown) => void }).on('finish', callback);
+      (stream as { on: (event: string, cb: (err?: Error) => unknown) => void }).on('close', callback);
+    }
   },
-  pipeline: (...streams: any[]) => {
+  pipeline: (...streams: unknown[]) => {
     // Simple pipeline implementation
     let current = streams[0];
     for (let i = 1; i < streams.length; i++) {
-      current = current.pipe(streams[i]);
+      if (typeof current === 'object' && current !== null && 'pipe' in current && typeof (current as { pipe: unknown }).pipe === 'function') {
+        current = (current as { pipe: (dest: unknown) => unknown }).pipe(streams[i]);
+      }
     }
     return current;
   }
@@ -251,9 +243,9 @@ export default streamModule;
 
 // Also make it available globally
 if (typeof globalThis !== 'undefined') {
-  (globalThis as any).stream = streamModule;
+  (globalThis as unknown as { stream?: typeof streamModule }).stream = streamModule;
 }
 
 if (typeof window !== 'undefined') {
-  (window as any).stream = streamModule;
+  (window as unknown as { stream?: typeof streamModule }).stream = streamModule;
 } 

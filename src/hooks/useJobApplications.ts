@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
-import { JobApplication, ApplicationStatus } from "@/types/jobs";
+import type { JobApplication, ApplicationStatus } from "@/types/jobs";
 import { toast } from "sonner";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
@@ -14,6 +14,7 @@ export const useJobApplications = (jobId?: string) => {
   const [error, setError] = useState<string | null>(null);
 
   const fetchApplications = async () => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     if (!user) {
       setIsLoading(false);
       return;
@@ -89,6 +90,7 @@ export const useJobApplications = (jobId?: string) => {
     resumeId?: string,
     resumeFile?: File
   ) => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     if (!user) {
       toast.error("You must be logged in to apply for jobs");
       return false;
@@ -156,6 +158,7 @@ export const useJobApplications = (jobId?: string) => {
   };
   
   const updateApplicationStatus = async (applicationId: string, status: ApplicationStatus) => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     try {
       const { error } = await supabase
         .from("job_applications")
@@ -179,6 +182,7 @@ export const useJobApplications = (jobId?: string) => {
   };
   
   const markApplicationAsViewed = async (applicationId: string) => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     try {
       const { error } = await supabase
         .from("job_applications")

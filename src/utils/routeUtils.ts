@@ -30,7 +30,8 @@ export const canAccessRoute = (
   // If route requires specific roles and user doesn't have one
   if (route.requiredRoles && route.requiredRoles.length > 0) {
     if (!userType) return false;
-    return route.requiredRoles.includes(userType as any);
+    // Replace 'as any' with a type guard for string
+    return route.requiredRoles.includes(userType);
   }
   
   return true;
