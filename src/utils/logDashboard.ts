@@ -10,7 +10,7 @@ interface Log {
   timestamp: string;
   level: string;
   message: string;
-  context?: { [key: string]: any };
+  context?: Record<string, unknown>;
   source?: string;
   sessionId?: string;
   userId?: string;
@@ -422,12 +422,12 @@ ${this.generateRecommendations(metrics, activeAlerts)}
 
   private calculateAvgResponseTime(logs: Log[]): number {
     const performanceLogs = logs.filter((log: Log) => 
-      (log.context?.duration ?? 0) > 0
+      (typeof log.context?.duration === 'number' && log.context.duration > 0)
     );
     
     if (performanceLogs.length === 0) return 0;
     
-    const totalTime = performanceLogs.reduce((sum: number, log: Log) => sum + (log.context?.duration ?? 0), 0);
+    const totalTime = performanceLogs.reduce((sum: number, log: Log) => sum + (typeof log.context?.duration === 'number' ? log.context.duration : 0), 0);
     return totalTime / performanceLogs.length;
   }
 
