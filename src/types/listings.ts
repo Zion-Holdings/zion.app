@@ -30,7 +30,7 @@ export interface ProductListing {
   aiScore?: number; // Added aiScore as optional property
   location?: string; // Adding location property to fix TypeScript errors
   availability?: string; // Adding availability property to fix TypeScript errors
-  stock?: number; // Inventory count
+  stock: number; // Inventory count
   brand?: string; // Brand of the equipment
   specifications?: string[]; // Key specifications for filtering
   uspHeadline?: string; // Short unique selling point headline
