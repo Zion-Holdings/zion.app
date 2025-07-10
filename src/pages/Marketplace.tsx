@@ -366,10 +366,10 @@ export default function Marketplace() {
       logErrorToProduction('Error in Marketplace fetchProducts:', { data: errorObj });
       
       // Show more specific error messages based on the error type
-      if ((err as any)?.response?.status === 403) {
+      if (typeof err === 'object' && err !== null && 'response' in err && (err as { response?: { status?: number } }).response?.status === 403) {
         logErrorToProduction("403 Forbidden error - authentication issue");
         // Don't show toast here, let the AuthModal handle it or rely on ProductCard's tooltip
-      } else if ((err as any)?.response?.status === 500) {
+      } else if (typeof err === 'object' && err !== null && 'response' in err && (err as { response?: { status?: number } }).response?.status === 500) {
         logErrorToProduction("500 Server error");
         toast({
           title: "Server Error", 
