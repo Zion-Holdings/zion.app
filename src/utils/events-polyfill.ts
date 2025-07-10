@@ -4,7 +4,7 @@
 class EventEmitter {
   private events: { [key: string]: Function[] } = {};
 
-  on(event: string, listener: Function): void {
+  on(event: string, listener: (...args: unknown[]) => void): void {
     if (!this.events[event]) {
       this.events[event] = [];
     }
@@ -18,7 +18,7 @@ class EventEmitter {
     this.events[event].forEach(listener => listener(...args));
   }
 
-  off(event: string, listener: Function): void {
+  off(event: string, listener: (...args: unknown[]) => void): void {
     if (this.events[event]) {
       this.events[event] = this.events[event].filter(l => l !== listener);
     }
