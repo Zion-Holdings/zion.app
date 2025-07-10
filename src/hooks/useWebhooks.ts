@@ -64,9 +64,9 @@ export function useWebhooks() {
       const response = await fetch(`${getWebhookUrl()}/webhooks`, {
         method: 'GET',
         headers: {
-          'Authorization': authHeader,
+          ...(authHeader ? { 'Authorization': authHeader } : {}),
           'Content-Type': 'application/json'
-        }
+        } as HeadersInit,
       });
 
       const result = await response.json();
