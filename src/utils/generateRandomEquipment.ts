@@ -27,6 +27,7 @@ const EQUIPMENT_POOL: ProductListing[] = [
     reviewCount: 21,
     location: "Global",
     availability: "In Stock",
+    stock: 10,
   },
   {
     id: "edge-ai-camera",
@@ -52,6 +53,7 @@ const EQUIPMENT_POOL: ProductListing[] = [
     reviewCount: 8,
     location: "Global",
     availability: "Preorder",
+    stock: 10,
   },
   {
     id: "robot-arm",
@@ -76,6 +78,7 @@ const EQUIPMENT_POOL: ProductListing[] = [
     reviewCount: 14,
     location: "Global",
     availability: "In Stock",
+    stock: 10,
   },
   {
     id: "ai-inference-appliance",
@@ -100,6 +103,7 @@ const EQUIPMENT_POOL: ProductListing[] = [
     reviewCount: 9,
     location: "Global",
     availability: "In Stock",
+    stock: 10,
   },
   {
     id: "autonomous-drone-kit",
@@ -124,6 +128,7 @@ const EQUIPMENT_POOL: ProductListing[] = [
     reviewCount: 11,
     location: "Global",
     availability: "In Stock",
+    stock: 10,
   },
   {
     id: "hpc-cluster-node",
@@ -148,6 +153,7 @@ const EQUIPMENT_POOL: ProductListing[] = [
     reviewCount: 6,
     location: "Global",
     availability: "Built to Order",
+    stock: 10,
   },
 ];
 
@@ -168,6 +174,7 @@ export function generateRandomEquipment(): ProductListing {
       author: { name: 'Unknown', id: 'unknown' },
       images: ['/placeholder.svg'],
       createdAt: new Date(timestamp).toISOString(),
+      stock: 10,
     } as ProductListing;
   }
   
@@ -178,5 +185,6 @@ export function generateRandomEquipment(): ProductListing {
     description: base.description || 'Professional equipment',
     category: base.category || 'Equipment',
     createdAt: new Date(timestamp).toISOString(),
+    stock: 10,
   } as ProductListing;
 }
