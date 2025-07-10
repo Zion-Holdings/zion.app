@@ -6,7 +6,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { useProjects } from "@/hooks/useProjects";
 import { SEO } from "@/components/SEO";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
-import { Project, ProjectStatus } from "@/types/projects";
+import type { Project, ProjectStatus } from "@/types/projects";
 import { Button } from "@/components/ui/button";
 import {logErrorToProduction} from '@/utils/productionLogger';
 import { AlertCircle, Calendar, CheckCircle2, Clock, FileText, Layers, MessageSquare, Video, User, XCircle } from 'lucide-react';
@@ -97,6 +97,7 @@ function ProjectDetailsContent() {
   
   const fetchProjectNotes = async (projectId: string) => {
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from("project_notes")
         .select(`
@@ -125,6 +126,7 @@ function ProjectDetailsContent() {
     setIsSubmittingNote(true);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from("project_notes")
         .insert({

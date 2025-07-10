@@ -166,12 +166,12 @@ if (typeof window !== "undefined" && window.fetch) {
         }
       }
       return response;
-    } catch (err: any) {
+    } catch (err: unknown) {
       // Only show network errors for user-initiated requests
       const url = typeof args[0] === 'string' ? args[0] : '';
       
       if (!shouldFailSilently(url)) {
-        const data = err?.response?.data;
+        const data = (err as any)?.response?.data;
         const code = data?.code || data?.error;
         const message = data?.message || data?.error || 'Network error – please retry';
         const text = code ? `${code}: ${message}` : message;
