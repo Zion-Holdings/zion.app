@@ -10,13 +10,12 @@ export function useSkills() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   
-  if (!supabase) throw new Error('Supabase client not initialized');
-
   const addSkill = async (resumeId: string, skill: Skill): Promise<boolean> => {
     if (!user) {
-      setError('You must be logged in to add skills');
+      setError('You must be logged in to update skills');
       return false;
     }
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     setIsLoading(true);
     setError(null);
@@ -47,6 +46,7 @@ export function useSkills() {
       setError('You must be logged in to delete skills');
       return false;
     }
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     setIsLoading(true);
     setError(null);
