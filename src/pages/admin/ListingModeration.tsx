@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { SEO } from '@/components/SEO';
 import { Card, CardContent } from '@/components/ui/card';
 import { supabase } from '@/integrations/supabase/client';
-import { ModerationLog } from '@/types/moderation';
+import type { ModerationLog } from '@/types/moderation';
 import { FlaggedListingsTable } from '@/components/admin/moderation/FlaggedListingsTable';
 import AdminLayout from '@/components/admin/AdminLayout';
 import { toast } from '@/hooks/use-toast';
