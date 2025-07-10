@@ -43,7 +43,8 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
     let socket: any;
 
     async function setup() {
-      const { default: io } = await import('socket.io-client');
+      const mod = await import('socket.io-client');
+      const io = mod.default as typeof import('socket.io-client').default;
       if (!isMounted) return;
       socket = (io as any)({ path: '/api/socket', transports: ['websocket'] });
       socketRef.current = socket;
