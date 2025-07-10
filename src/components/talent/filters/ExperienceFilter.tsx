@@ -2,7 +2,7 @@
 
 
 import { Slider } from "@/components/ui/slider";
-import { ExperienceFilterProps } from "@/types/filters";
+import type { ExperienceFilterProps } from "@/types/filters";
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
 export function ExperienceFilter({ experienceRange, setExperienceRange, expanded, toggleSection, isMobileFilterOpen }: ExperienceFilterProps) {
