@@ -25,10 +25,11 @@ export interface ModelConfig {
 }
 
 // Add null checks for 'supabase' before usage
-if (!supabase) throw new Error('Supabase client is not initialized');
+// if (!supabase) throw new Error('Supabase client is not initialized');
 
 // Get the latest active model ID for a specific purpose
 export async function getActiveModelId(purpose: 'job' | 'resume' | 'support'): Promise<ModelVersion> {
+  if (!supabase) throw new Error('Supabase client is not initialized');
   try {
     const { data, error } = await supabase
       .from('model_versions')
@@ -65,6 +66,7 @@ export async function logModelUsage(
   feature: string,
   userId?: string
 ): Promise<void> {
+  if (!supabase) throw new Error('Supabase client is not initialized');
   try {
     const cost = calculateCost(modelId, tokensUsed);
     
@@ -106,6 +108,7 @@ export async function callZionGPT({
   temperature?: number;
   userId?: string;
 }): Promise<string> {
+  if (!supabase) throw new Error('Supabase client is not initialized');
   try {
     // Dynamically get the proper model ID based on purpose
     const modelId = await getActiveModelId(purpose);
