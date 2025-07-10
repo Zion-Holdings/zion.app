@@ -6,7 +6,7 @@ import { Upload, Trash2, Plus } from 'lucide-react';
 
 
 
-import { AppPlatform } from "./MetadataManager";
+import type { AppPlatform } from "./MetadataManager";
 import { toast } from "sonner";
 
 interface ScreenshotManagerProps {

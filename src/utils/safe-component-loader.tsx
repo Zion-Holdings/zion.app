@@ -171,3 +171,37 @@ export const SafeWalletComponent = createSafeComponent('../pages/Wallet');
 export const SafeWishlistComponent = createSafeComponent('../pages/Wishlist');
 export const SafeTeamComponent = createSafeComponent('../pages/OrgChart');
 export const SafeTalentsComponent = createSafeComponent('../pages/TalentsPage');
+
+interface SafeComponentLoaderProps {
+  loader: () => Promise<{ default: React.ComponentType<object> }>;
+  fallback?: React.ReactNode;
+}
+
+export function SafeComponentLoader({ loader, fallback }: SafeComponentLoaderProps) {
+  const LazyComponent = React.lazy(loader) as React.ComponentType<object>;
+  return (
+    <React.Suspense fallback={fallback || null}>
+      <LazyComponent />
+    </React.Suspense>
+  );
+}
+
+// Error boundary for lazy loaded components
+class ComponentErrorBoundary extends React.Component<{ children: React.ReactNode }, { hasError: boolean }> {
+  constructor(props: { children: React.ReactNode }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  static getDerivedStateFromError(_error: unknown) {
+    return { hasError: true };
+  }
+  override componentDidCatch(_error: unknown, _info: unknown) {
+    // Optionally log error
+  }
+  override render() {
+    if (this.state.hasError) {
+      return <div>Something went wrong.</div>;
+    }
+    return this.props.children;
+  }
+}
