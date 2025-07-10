@@ -26,6 +26,7 @@ export function useSavedTalents() {
       setIsLoading(true);
       
       try {
+        if (!supabase) throw new Error('Supabase client not initialized');
         // Get saved talent IDs
         const { data: savedData, error: savedError } = await supabase
           .from('saved_talents')
@@ -39,6 +40,7 @@ export function useSavedTalents() {
           setSavedTalentIds(talentIds);
           
           if (talentIds.length > 0) {
+            if (!supabase) throw new Error('Supabase client not initialized');
             // Fetch full talent profiles for saved talents
             const { data: talentData, error: talentError } = await supabase
               .from('talent_profiles')
@@ -83,6 +85,7 @@ export function useSavedTalents() {
     const isSaved = savedTalentIds.includes(talent.id);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       if (isSaved) {
         // Remove from saved_talents
         const { error } = await supabase
