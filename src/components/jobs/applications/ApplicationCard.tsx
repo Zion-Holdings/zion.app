@@ -5,7 +5,6 @@ import type { JobApplication } from "@/types/jobs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, MessageSquare, HelpCircle, Calendar, ExternalLink, Download } from 'lucide-react';
-import { Modal } from '@/components/ui/modal'; // If not present, replace with a simple inline modal
 
 
 import Link from "next/link";
@@ -153,19 +152,13 @@ export function ApplicationCard({ application }: ApplicationCardProps) {
         </Button>
       </CardFooter>
       {showFeedback && (
-        <Modal open={showFeedback} onOpenChange={setShowFeedback}>
-          <Modal.Content>
-            <Modal.Header>
-              <Modal.Title>Feedback</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <p>Thank you for your application. Unfortunately, you were not selected for this role. Please keep applying to other opportunities!</p>
-            </Modal.Body>
-            <Modal.Footer>
-              <Button onClick={() => setShowFeedback(false)}>Close</Button>
-            </Modal.Footer>
-          </Modal.Content>
-        </Modal>
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40 z-50">
+          <div className="bg-white rounded-lg p-6 max-w-sm w-full shadow-lg">
+            <h3 className="text-lg font-bold mb-2">Feedback</h3>
+            <p className="mb-4 text-sm text-gray-700">Thank you for your application. Unfortunately, you were not selected for this role. Please keep applying to other opportunities!</p>
+            <Button onClick={() => setShowFeedback(false)} className="w-full">Close</Button>
+          </div>
+        </div>
       )}
     </Card>
   );
