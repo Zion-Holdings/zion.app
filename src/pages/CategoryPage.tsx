@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { CategoryListingPage } from '@/components/CategoryListingPage'; // Ensure this path is correct
+import type { Listing } from '@/components/CategoryListingPage';
 import ListingGridSkeleton from '@/components/skeletons/ListingGridSkeleton';
 import { useRouterReady } from '@/hooks/useRouterReady';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
@@ -15,7 +16,7 @@ interface CategoryData {
 
 interface ApiResponse {
   category: CategoryData;
-  items: any[]; // Define a more specific type for items if possible
+  items: Listing[];
   message?: string; // For API error messages
   available_categories?: string[];
 }
