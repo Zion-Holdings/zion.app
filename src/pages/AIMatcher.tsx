@@ -6,7 +6,7 @@ import { AIMatchmaker } from "@/components/AIMatchmaker";
 import { Select, SelectValue, SelectTrigger, SelectContent, SelectItem } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
 import { useFeatureUsage } from "@/hooks/useFeatureUsage";
-import { MatchResult } from "@/lib/ai-matchmaking";
+import type { MatchResult } from "@/lib/ai-matchmaking";
 
 export default function AIMatcherPage() {
   const router = useRouter();

@@ -73,8 +73,8 @@ if (isBrowser && !isNode) {
   // dependencies accidentally execute in the browser. These stubs only expose
   // the methods used by common libraries like axios when a Node adapter is
   // bundled by mistake.
-  if (typeof (globalThis as unknown as { http?: any }).http === 'undefined') {
-    (globalThis as unknown as { http: any }).http = {
+  if (typeof (globalThis as { http?: unknown }).http === 'undefined') {
+    (globalThis as { http: unknown }).http = {
       request: () => {
         throw new Error('http.request is not available in the browser');
       },
@@ -110,8 +110,8 @@ if (isBrowser && !isNode) {
     };
   }
 
-  if (typeof (globalThis as unknown as { https?: any }).https === 'undefined') {
-    (globalThis as unknown as { https: any }).https = {
+  if (typeof (globalThis as { https?: unknown }).https === 'undefined') {
+    (globalThis as { https: unknown }).https = {
       request: () => {
         throw new Error('https.request is not available in the browser');
       },
@@ -137,18 +137,18 @@ if (isBrowser && !isNode) {
 
   // Define process in global scope only
   if (typeof globalThis !== 'undefined') {
-    (globalThis as unknown as { process: any }).process = processObj;
+    (globalThis as { process: unknown }).process = processObj;
   }
   
   if (typeof window !== 'undefined') {
-    (window as unknown as { process: any }).process = processObj;
+    (window as { process: unknown }).process = processObj;
   }
 
   // CRITICAL: Buffer polyfill for browser environment
   if (typeof Buffer === 'undefined') {
     // Simple Buffer polyfill
     class BufferPolyfill extends Uint8Array {
-      constructor(input?: any, encoding?: any, offset?: any) {
+      constructor(input?: string | ArrayBuffer | ArrayLike<number> | Uint8Array | number, encoding?: string | number, offset?: number) {
         if (typeof input === 'string') {
           // Convert string to Uint8Array
           const encoder = new TextEncoder();
@@ -165,11 +165,11 @@ if (isBrowser && !isNode) {
         }
       }
 
-      static from(input: any, encoding?: any): BufferPolyfill {
+      static from(input: string | ArrayBuffer | ArrayLike<number> | Uint8Array | number, encoding?: string | number): BufferPolyfill {
         return new BufferPolyfill(input, encoding);
       }
 
-      static alloc(size: number, fill?: any, encoding?: any): BufferPolyfill {
+      static alloc(size: number, fill?: string | number, encoding?: string | number): BufferPolyfill {
         const buffer = new BufferPolyfill(size);
         if (fill !== undefined) {
           if (typeof fill === 'string') {
@@ -187,7 +187,7 @@ if (isBrowser && !isNode) {
         return new BufferPolyfill(size);
       }
 
-      static isBuffer(obj: any): boolean {
+      static isBuffer(obj: unknown): boolean {
         return obj instanceof BufferPolyfill;
       }
 
@@ -207,45 +207,45 @@ if (isBrowser && !isNode) {
 
     // Define Buffer in global scope
     if (typeof globalThis !== 'undefined') {
-      (globalThis as unknown as { Buffer: any }).Buffer = BufferPolyfill;
+      (globalThis as { Buffer: unknown }).Buffer = BufferPolyfill;
     }
     
     if (typeof window !== 'undefined') {
-      (window as unknown as { Buffer: any }).Buffer = BufferPolyfill;
+      (window as { Buffer: unknown }).Buffer = BufferPolyfill;
     }
   }
 
   // Minimal util polyfill for browser environments
-  if (typeof (globalThis as unknown as { util?: any }).util === 'undefined') {
-    const utilPolyfill: any = {
+  if (typeof (globalThis as { util?: unknown }).util === 'undefined') {
+    const utilPolyfill = {
       TextEncoder: globalThis.TextEncoder,
       TextDecoder: globalThis.TextDecoder,
       promisify:
-        (fn: any) =>
-          (...args: any[]) =>
+        (fn: (...args: unknown[]) => void) =>
+          (...args: unknown[]) =>
             new Promise((resolve, reject) => {
-              fn(...args, (err: any, res: any) => (err ? reject(err) : resolve(res)));
+              fn(...args, (err: unknown, res: unknown) => (err ? reject(err) : resolve(res)));
             }),
-      inherits: (ctor: any, superCtor: any) => {
-        if (superCtor) {
+      inherits: (ctor: unknown, superCtor: unknown) => {
+        if (superCtor && typeof ctor === 'function' && typeof superCtor === 'function') {
           Object.setPrototypeOf(ctor.prototype, superCtor.prototype);
           Object.setPrototypeOf(ctor, superCtor);
         }
       },
-      deprecate: (fn: any) => fn,
+      deprecate: <T>(fn: T) => fn,
       types: {},
     };
 
-    (globalThis as unknown as { util: any }).util = utilPolyfill;
+    (globalThis as { util: unknown }).util = utilPolyfill;
     if (typeof window !== 'undefined') {
-      (window as unknown as { util: any }).util = utilPolyfill;
+      (window as { util: unknown }).util = utilPolyfill;
     }
   }
 
 }
 
 // Export a safe process accessor
-export const safeProcess = typeof process !== 'undefined' ? process : (globalThis as unknown as { process: any }).process;
+export const safeProcess = typeof process !== 'undefined' ? process : (globalThis as { process: unknown }).process;
 
 // Export safe environment accessors
 export const safeEnv = {
