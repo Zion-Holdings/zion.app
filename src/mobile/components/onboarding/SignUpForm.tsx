@@ -89,7 +89,14 @@ export function SignUpForm() {
         const { error } = await login(formData.email, formData.password);
         
         if (error) {
-          const errorMsg = typeof error === 'string' ? error : (error && typeof error.message === 'string' ? error.message : 'Login failed. Please try again.');
+          let errorMsg: string;
+          if (typeof error === 'string') {
+            errorMsg = error;
+          } else if (typeof error === 'object' && error !== null && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+            errorMsg = (error as { message: string }).message;
+          } else {
+            errorMsg = 'Login failed. Please try again.';
+          }
           throw new Error(errorMsg);
         }
         
