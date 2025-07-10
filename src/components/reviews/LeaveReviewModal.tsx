@@ -91,7 +91,7 @@ export function LeaveReviewModal({
           revieweeName={revieweeName}
           onSubmit={handleSubmit}
           isSubmitting={isSubmitting}
-          {...(userReview ? { defaultValues: userReview } : {})}
+          defaultValues={userReview ?? undefined}
         />
       </DialogContent>
     </Dialog>
