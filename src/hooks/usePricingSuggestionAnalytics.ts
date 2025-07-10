@@ -94,14 +94,8 @@ export function usePricingSuggestionAnalytics(days = 30) {
           })
           .slice(0, 10)
           .map((d: unknown) => {
-            let type: 'client' | 'talent' = 'client';
-            if (typeof d === 'object' && d !== null && 'suggestion_type' in d) {
-              const t = (d as { suggestion_type?: unknown }).suggestion_type;
-              if (t === 'client' || t === 'talent') {
-                type = t;
-              }
-            }
             if (typeof d === 'object' && d !== null) {
+              const t = (d as { suggestion_type?: unknown }).suggestion_type;
               return {
                 id: (d as { id?: string }).id ?? '',
                 userId: (d as { user_id?: string }).user_id ?? '',
@@ -110,7 +104,7 @@ export function usePricingSuggestionAnalytics(days = 30) {
                 actualValue: (d as { actual_value?: number }).actual_value ?? 0,
                 accepted: (d as { accepted?: boolean }).accepted ?? false,
                 createdAt: (d as { created_at?: string }).created_at ?? '',
-                type: type as 'client' | 'talent',
+                type: toSuggestionType(t),
               };
             }
             return {
@@ -148,4 +142,8 @@ export function usePricingSuggestionAnalytics(days = 30) {
   }, [days]);
 
   return analytics;
+}
+
+function toSuggestionType(t: unknown): 'client' | 'talent' {
+  return t === 'client' || t === 'talent' ? t : 'client';
 }
