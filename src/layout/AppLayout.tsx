@@ -16,6 +16,7 @@ import { SkipLink } from "@/components/SkipLink";
 import { Container } from '@/components/Container';
 import { useGlobalLoader } from '@/context/GlobalLoaderContext';
 import LoaderOverlay from '@/components/LoaderOverlay';
+import type { ReactElement } from 'react';
 import ErrorOverlay from '@/components/ErrorOverlay';
 import {logErrorToProduction} from '@/utils/productionLogger';
 import { useSessionDuration } from '@/hooks/useSessionDuration';
@@ -106,7 +107,7 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
       {!isAuthPage && <PrimaryNav />}
       <ScrollProgressBar />
       <ScrollToTop />
-      {loading && <LoaderOverlay />}
+      {Boolean(loading) && (LoaderOverlay as unknown as ReactElement)}
       {error && <ErrorOverlay error={error} onClose={() => setError(null)} />}
       <main
         id="main-content"
