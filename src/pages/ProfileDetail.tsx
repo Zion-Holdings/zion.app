@@ -5,7 +5,6 @@ import { toast } from "@/hooks/use-toast";
 import { SEO } from "@/components/SEO";
 import { Header } from "@/components/Header";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Clock, Link as LinkIcon, Github, Twitter, Linkedin, CheckCircle2, Mail, Phone, Globe } from 'lucide-react';
@@ -57,11 +56,12 @@ export default function ProfileDetail() {
         }
 
         setProfileData(data);
-      } catch (err: any) {
-        setError(err.message || "Failed to fetch profile.");
+      } catch (err: unknown) {
+        const message = typeof err === 'object' && err !== null && 'message' in err ? (err as { message?: string }).message : undefined;
+        setError(message || "Failed to fetch profile.");
         toast({
           title: "Error",
-          description: err.message || "Failed to fetch profile.",
+          description: message || "Failed to fetch profile.",
           variant: "destructive",
         });
       } finally {
