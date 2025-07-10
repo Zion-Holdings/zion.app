@@ -14,7 +14,8 @@ import {
 
 
 import { format, parseISO } from 'date-fns';
-import { MilestoneInput, GeneratedMilestone, useMilestoneGenerator } from '@/hooks/useMilestoneGenerator';
+import type { MilestoneInput, GeneratedMilestone } from '@/hooks/useMilestoneGenerator';
+import { useMilestoneGenerator } from '@/hooks/useMilestoneGenerator';
 import { Badge } from '@/components/ui/badge';
 
 interface AIMilestoneGeneratorProps {

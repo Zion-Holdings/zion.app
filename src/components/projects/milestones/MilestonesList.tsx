@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Milestone, MilestoneStatus, MilestoneActivity } from '@/hooks/useMilestones';
+import type { Milestone, MilestoneStatus, MilestoneActivity } from '@/hooks/useMilestones';
 import { useAuth } from '@/hooks/useAuth';
 import { MilestoneCard } from './MilestoneCard';
 import { AddMilestoneForm } from './AddMilestoneForm';
@@ -9,7 +9,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Plus } from 'lucide-react';
 // lucide-react doesn't export PlusIcon, use our icon wrapper
 
-import { EmptyState } from '@/components/ui/empty-state';
+import { EmptyState } from '@/components/ui/EmptyState';
 
 interface MilestonesListProps {
   milestones: Milestone[];
@@ -65,16 +65,11 @@ export const MilestonesList: React.FC<MilestonesListProps> = ({
     return (
       <EmptyState
         icon={<span className="text-3xl">📊</span>}
-        title="No Milestones Yet"
+        text="No Milestones Yet"
         description={isClient ? 
           "Break down the project into manageable milestones to track progress and payments." : 
           "No milestones have been created for this project yet."}
-        action={isClient ? 
-          {
-            text: "Create First Milestone",
-            onClick: () => setShowAddForm(true)
-          } : undefined
-        }
+        {...(isClient ? { onRetry: () => setShowAddForm(true) } : {})}
       />
     );
   }
@@ -110,12 +105,12 @@ export const MilestonesList: React.FC<MilestonesListProps> = ({
             id={milestone.id}
             projectId={milestone.project_id}
             title={milestone.title}
-            description={milestone.description}
+            description={milestone.description ?? ""}
             amount={parseFloat(milestone.amount.toString())}
             status={milestone.status}
-            dueDate={milestone.due_date}
-            onApprove={onApprove}
-            onReject={onReject}
+            dueDate={milestone.due_date ?? ""}
+            {...(onApprove ? { onApprove } : {})}
+            {...(onReject ? { onReject } : {})}
           />
         ))}
       </div>

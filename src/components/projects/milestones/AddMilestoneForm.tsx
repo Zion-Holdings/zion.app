@@ -26,7 +26,7 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { AIMilestoneGenerator } from './AIMilestoneGenerator';
-import { GeneratedMilestone } from '@/hooks/useMilestoneGenerator';
+import type { GeneratedMilestone } from '@/hooks/useMilestoneGenerator';
 
 const formSchema = z.object({
   title: z.string().min(1, 'Title is required'),
@@ -41,10 +41,10 @@ interface AddMilestoneFormProps {
   onSubmit: (data: MilestoneFormValues) => void;
   isSubmitting: boolean;
   onCancel?: () => void;
-  projectScope?: string;
-  projectStartDate?: string;
-  projectEndDate?: string;
-  projectType?: string;
+  projectScope?: string | undefined;
+  projectStartDate?: string | undefined;
+  projectEndDate?: string | undefined;
+  projectType?: string | undefined;
 }
 
 export function AddMilestoneForm({

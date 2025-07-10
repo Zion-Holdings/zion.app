@@ -9,7 +9,7 @@ type QuoteRequestsListProps = {
   isLoading: boolean;
   isArchived: boolean;
   onViewDetails: (quote: QuoteRequest) => void;
-  onMarkAsResponded: (id: string) => void;
+  onMarkAsResponded?: (id: string) => void;
   onToggleArchive: (id: string, isArchived: boolean) => void;
 };
 
@@ -35,15 +35,19 @@ export const QuoteRequestsList: React.FC<QuoteRequestsListProps> = ({
   
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      {quotes.map(quote => (
-        <QuoteRequestCard
-          key={quote.id}
-          quote={quote}
-          onViewDetails={onViewDetails}
-          onMarkAsResponded={!isArchived ? onMarkAsResponded : undefined}
-          onToggleArchive={onToggleArchive}
-        />
-      ))}
+      {quotes.map(quote => {
+        const cardProps = {
+          key: quote.id,
+          quote,
+          onViewDetails,
+          onToggleArchive
+        };
+        if (!isArchived && onMarkAsResponded) {
+          // Only include the prop if defined
+          (cardProps as any).onMarkAsResponded = onMarkAsResponded;
+        }
+        return <QuoteRequestCard {...cardProps} />;
+      })}
     </div>
   );
 };

@@ -61,7 +61,7 @@ export function TalentProfile({
         avatarUrl={profile.profile_picture_url !== undefined ? profile.profile_picture_url : ""}
         profileType="talent"
         rating={profile.average_rating ?? 0}
-        reviewCount={profile.rating_count}
+        reviewCount={profile.rating_count ?? 0}
       />
       
       {/* Main content area */}
@@ -98,8 +98,8 @@ export function TalentProfile({
             </h2>
             <ProfileRatings 
               userId={profile.id}
-              averageRating={profile.average_rating}
-              ratingCount={profile.rating_count}
+              averageRating={profile.average_rating ?? 0}
+              ratingCount={profile.rating_count ?? 0}
             />
           </div>
           

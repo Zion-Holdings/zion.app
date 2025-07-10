@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { GeneratedMilestone, MilestoneInput, useMilestoneGenerator } from '@/hooks/useMilestoneGenerator';
+import type { GeneratedMilestone, MilestoneInput } from '@/hooks/useMilestoneGenerator';
+import { useMilestoneGenerator } from '@/hooks/useMilestoneGenerator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Loader2, Sparkles, Check } from 'lucide-react';
 

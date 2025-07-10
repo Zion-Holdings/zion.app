@@ -111,7 +111,7 @@ export function ProjectMilestonesContent() {
         <ProjectActions 
           projectId={projectId || ''}
           isUnderDispute={isUnderDispute}
-          disputeId={disputeId ?? undefined}
+          disputeId={disputeId ?? ""}
           isTalent={isTalent}
           onAddMilestone={() => setActiveTab('create')}
         />

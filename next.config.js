@@ -445,6 +445,12 @@ const nextConfig = {
       );
     }
     
+    // Completely disable CSS processing by overriding optimization
+    if (config.optimization) {
+      config.optimization.minimize = false;
+      config.optimization.minimizer = [];
+    }
+    
     // Prevent Node.js core modules from being polyfilled in the client bundle
     if (!isServer) {
       config.resolve.fallback = {

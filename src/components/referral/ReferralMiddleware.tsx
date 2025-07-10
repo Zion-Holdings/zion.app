@@ -23,6 +23,7 @@ export function ReferralMiddleware({ children }: Props) {
       const code = safeStorage.getItem('referralCode');
       if (!code || !user?.id) return;
       try {
+        if (!supabase) return;
         await supabase.functions.invoke('track-referral', {
           body: { refCode: code, userId: user.id, email: user.email },
         });

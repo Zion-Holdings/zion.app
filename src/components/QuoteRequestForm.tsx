@@ -13,7 +13,7 @@ import { TimelineStep } from "@/components/QuoteRequestForm/TimelineStep";
 import { BudgetStep } from "@/components/QuoteRequestForm/BudgetStep";
 import { SummaryStep } from "@/components/QuoteRequestForm/SummaryStep";
 import { AutoFillModal } from "@/components/QuoteRequestForm/AutoFillModal";
-import { QuoteFormData } from "@/types/quotes";
+import type { QuoteFormData } from "@/types/quotes";
 import { Sparkles, Loader2 } from 'lucide-react';
 
 

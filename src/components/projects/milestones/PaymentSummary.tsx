@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Milestone } from '@/hooks/useMilestones';
+import type { Milestone } from '@/hooks/useMilestones';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CreditCard } from 'lucide-react';
 

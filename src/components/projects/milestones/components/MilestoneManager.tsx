@@ -2,7 +2,7 @@
 import React from 'react';
 import { MilestonesList } from '../MilestonesList';
 import { PaymentSummary } from '../PaymentSummary';
-import { Milestone, MilestoneStatus, MilestoneActivity } from '@/hooks/useMilestones';
+import type { Milestone, MilestoneStatus, MilestoneActivity } from '@/hooks/useMilestones';
 import { useEnqueueSnackbar } from '@/context';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
@@ -74,8 +74,8 @@ export function MilestoneManager({
           onDeleteMilestone={onDeleteMilestone}
           onUploadDeliverable={onUploadDeliverable}
           isSubmitting={isSubmitting}
-          onApprove={isClient ? handleMilestoneApproved : undefined}
-          onReject={isClient ? handleMilestoneRejected : undefined}
+          onApprove={isClient ? handleMilestoneApproved : async () => {}}
+          onReject={isClient ? handleMilestoneRejected : async () => {}}
         />
       </div>
       <div>

@@ -1,8 +1,8 @@
 
 import { FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { UseFormReturn } from 'react-hook-form';
-import { CertificationFormValues } from './types';
+import type { UseFormReturn } from 'react-hook-form';
+import type { CertificationFormValues } from './types';
 
 interface CertificationFormFieldsProps {
   form: UseFormReturn<CertificationFormValues>;

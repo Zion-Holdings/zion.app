@@ -13,7 +13,8 @@ import { format } from 'date-fns';
 
 import { CertificationsList } from './CertificationsList';
 import { CertificationFormFields } from './CertificationFormFields';
-import { CertificationFormValues, certificationSchema } from './types';
+import { certificationSchema } from './types';
+import type { CertificationFormValues } from './types';
 
 interface CertificationsFormProps {
   resumeId: string;
