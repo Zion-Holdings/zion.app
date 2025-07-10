@@ -6,6 +6,7 @@ import { getAppKitProjectId } from '@/config/env';
 // Use getAppKitProjectId from shared env config
 
 import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect, useRef } from 'react';
+import type { ReactNode } from 'react';
 
 // Temporarily disable wallet imports to fix build
 // import { ethers } from 'ethers';
@@ -19,19 +20,19 @@ import { ZION_TOKEN_NETWORK_ID } from '@/config/governanceConfig';
 interface AppKitInstanceInterface {
   open: () => Promise<void>;
   disconnect: () => Promise<void>;
-  getState: () => any;
+  getState: () => unknown;
   getAddress: () => string | null;
   getChainId: () => number | null;
-  getWalletProvider: () => any;
-  subscribeProvider?: (callback: (provider?: any) => void) => () => void;
+  getWalletProvider: () => unknown;
+  subscribeProvider?: (callback: (provider?: unknown) => void) => () => void;
 }
 
 const ethers = {
   BrowserProvider: class MockBrowserProvider {
-    constructor(provider: any) {}
+    constructor(provider: unknown) {}
     async getSigner() { return null; }
   }
-} as any;
+} as unknown;
 
 // Mock network constants
 const mainnet = { id: 1, name: 'Ethereum' };
@@ -42,7 +43,7 @@ const arbitrum = { id: 42161, name: 'Arbitrum' };
 const base = { id: 8453, name: 'Base' };
 
 // Mock createAppKit function
-const createAppKit = (config: any): AppKitInstanceInterface => {
+const createAppKit = (config: unknown): AppKitInstanceInterface => {
   return {
     open: async () => { console.warn('Wallet functionality disabled during build'); },
     disconnect: async () => { console.warn('Wallet functionality disabled during build'); },
@@ -56,7 +57,7 @@ const createAppKit = (config: any): AppKitInstanceInterface => {
 
 // Mock EthersAdapter
 const EthersAdapter = class {
-  constructor(config: any) {}
+  constructor(config: unknown) {}
 };
 
 // Some injected wallet providers implement the EIP-1193 interface but also
@@ -64,15 +65,15 @@ const EthersAdapter = class {
 // `Eip1193Provider` does not include these, so we define a helper interface with
 // optional definitions so we can safely check for them.
 interface Eip1193ProviderWithEvents {
-  on?: (event: string, listener: (...args: any[]) => void) => void;
-  removeListener?: (event: string, listener: (...args: any[]) => void) => void;
-  request?: (args: { method: string; params?: any[] }) => Promise<any>;
+  on?: (event: string, listener: (...args: unknown[]) => void) => void;
+  removeListener?: (event: string, listener: (...args: unknown[]) => void) => void;
+  request?: (args: { method: string; params?: unknown[] }) => Promise<unknown>;
 }
 
 // Define the shape of the wallet state and context
 export interface WalletState { // Added export
-  provider: any | null; // Updated to BrowserProvider for ethers v6
-  signer: any | null;
+  provider: unknown | null; // Updated to BrowserProvider for ethers v6
+  signer: unknown | null;
   address: string | null;
   chainId: number | null;
   isConnected: boolean;
@@ -166,7 +167,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     icons: ['https://avatars.githubusercontent.com/u/37784886'],
   };
 
-  const ZION_CHAIN_MAP: Record<number, any> = {
+  const ZION_CHAIN_MAP: Record<number, unknown> = {
     1: mainnet,
     5: goerli,
     137: polygon,
@@ -284,19 +285,28 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       if (currentAppKit.getState().isConnected && currentAddress && currentProvider && currentChainId) {
         try {
           // currentProvider is already the EIP-1193 provider from AppKit
-          const ethersProvider = new ethers.BrowserProvider(
-            currentProvider as Eip1193ProviderWithEvents
-          );
-          const ethersSigner = await ethersProvider.getSigner();
-          setWallet(prev => ({
-            ...prev,
-            provider: ethersProvider,
-            signer: ethersSigner,
-            address: currentAddress, // Use currentAddress from AppKit
-            chainId: Number(currentChainId), // Use currentChainId from AppKit
-            isConnected: true,
-            isWalletSystemAvailable: true, // System is available and connected
-          }));
+          if (typeof ethers === 'object' && ethers !== null && 'BrowserProvider' in ethers && typeof (ethers as any).BrowserProvider === 'function') {
+            const EthersBrowserProvider = (ethers as any).BrowserProvider;
+            const ethersProvider = new EthersBrowserProvider(
+              currentProvider as Eip1193ProviderWithEvents
+            );
+            const ethersSigner = await ethersProvider.getSigner();
+            setWallet(prev => ({
+              ...prev,
+              provider: ethersProvider,
+              signer: ethersSigner,
+              address: currentAddress, // Use currentAddress from AppKit
+              chainId: Number(currentChainId), // Use currentChainId from AppKit
+              isConnected: true,
+              isWalletSystemAvailable: true, // System is available and connected
+            }));
+          } else {
+            setWallet(prev => ({
+              ...initialWalletState,
+              isConnected: false,
+              isWalletSystemAvailable: true,
+            }));
+          }
         } catch (error) {
           captureException(error);
           logErrorToProduction('WalletContext: Error getting signer or updating wallet state:', { data: error });
@@ -337,16 +347,20 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     const subscribeProviderSafe =
       typeof targetAppKit.subscribeProvider === 'function'
         ? targetAppKit.subscribeProvider.bind(targetAppKit)
-        : (callback: (provider?: any) => void) => {
+        : (callback: (provider?: unknown) => void) => {
             const provider = targetAppKit.getWalletProvider?.();
             callback(provider);
 
             if (typeof window !== 'undefined') {
-              const eth: any = (window as any).ethereum;
-              if (eth?.on) {
+              const ethRaw = (window as any).ethereum;
+              if (typeof ethRaw === 'object' && ethRaw !== null && 'on' in ethRaw && typeof ethRaw.on === 'function') {
                 const handler = () => callback(targetAppKit.getWalletProvider?.());
-                eth.on('accountsChanged', handler);
-                return () => eth.removeListener?.('accountsChanged', handler);
+                ethRaw.on('accountsChanged', handler);
+                return () => {
+                  if ('removeListener' in ethRaw && typeof ethRaw.removeListener === 'function') {
+                    ethRaw.removeListener('accountsChanged', handler);
+                  }
+                };
               }
             }
             return () => {};
