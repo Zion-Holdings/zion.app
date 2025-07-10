@@ -245,7 +245,7 @@ if (isBrowser && !isNode) {
 }
 
 // Export a safe process accessor
-export const safeProcess = typeof process !== 'undefined' ? process : (globalThis as unknown as { process: any }).process;
+export const safeProcess = typeof process !== 'undefined' ? process : (globalThis as unknown as { process: unknown }).process;
 
 // Helper to safely access process.env variables with type safety
 function getProcessEnvVar(key: string): string | undefined {
