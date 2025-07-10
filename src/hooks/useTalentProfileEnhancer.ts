@@ -47,8 +47,9 @@ export function useTalentProfileEnhancer() {
       }
       
       return data as EnhancedProfile;
-    } catch (err: any) {
-      setError(err.message || 'Failed to enhance profile');
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      setError(message || 'Failed to enhance profile');
       return null;
     } finally {
       setIsGenerating(false);
