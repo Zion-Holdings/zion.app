@@ -105,6 +105,15 @@ export function usePricingSuggestionAnalytics(days = 30) {
                 accepted: (d as { accepted?: boolean }).accepted ?? false,
                 createdAt: (d as { created_at?: string }).created_at ?? '',
                 type: toSuggestionType(t),
+              } as {
+                id: string;
+                userId: string;
+                suggestedMin: number;
+                suggestedMax: number;
+                actualValue?: number;
+                accepted: boolean;
+                createdAt: string;
+                type: 'client' | 'talent';
               };
             }
             return {
@@ -115,7 +124,7 @@ export function usePricingSuggestionAnalytics(days = 30) {
               actualValue: 0,
               accepted: false,
               createdAt: '',
-              type: 'client',
+              type: 'client' as 'client',
             };
           });
 
