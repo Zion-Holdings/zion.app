@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label';
 
 export default function VerifyIdentity() {
   const [name, setName] = useState('');
-  const [idFile, setIdFile] = useState<File | null>(null);
+  const [_idFile, setIdFile] = useState<File | null>(null);
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
