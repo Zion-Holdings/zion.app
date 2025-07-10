@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import PostForm from "@/components/community/PostForm";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
-import { ForumCategory } from "@/types/community";
+import type { ForumCategory } from "@/types/community";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 

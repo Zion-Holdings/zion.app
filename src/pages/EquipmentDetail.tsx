@@ -20,7 +20,7 @@ import { getStripe } from "@/utils/getStripe";
 import { useCart } from '@/context/CartContext';
 import { ImageWithRetry } from '@/components/ui/ImageWithRetry';
 import { equipmentListings } from '@/data/equipmentData';
-import { ProductListing } from '@/types/listings';
+import type { ProductListing } from '@/types/listings';
 import { motion } from 'framer-motion';
 import { useCurrency } from '@/hooks/useCurrency';
 import {logErrorToProduction} from '@/utils/productionLogger';
@@ -59,12 +59,12 @@ function convertProductListingToEquipmentDetails(item: ProductListing): Equipmen
     description: item.description,
     brand: item.brand || 'Unknown',
     category: item.category,
-    subcategory: item.subcategory,
+    subcategory: item.subcategory ?? '',
     images: item.images || ['https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500'],
     price: item.price || 0,
     currency: item.currency || '$',
-    rating: item.rating,
-    reviewCount: item.reviewCount,
+    rating: typeof item.rating === 'number' ? item.rating : 0,
+    reviewCount: typeof item.reviewCount === 'number' ? item.reviewCount : 0,
     inStock: item.availability === 'In Stock' || !item.availability,
     expectedShipping: item.availability || 'In Stock',
     specifications: (item.specifications || []).map((spec) => ({ 
@@ -267,9 +267,9 @@ export default function EquipmentDetail() {
         title={`${equipment.name} - Zion Marketplace`}
         description={equipment.description}
         openGraph={{
-          title: `${equipment.name} - Zion Marketplace`,
+          title: equipment.name,
           description: equipment.description,
-          images: equipment.images.length > 0 && equipment.images[0] ? [{ url: equipment.images[0] }] : undefined
+          images: equipment.images ? equipment.images.map((url) => ({ url })) : [],
         }}
       />
       <div className="min-h-screen bg-zion-blue py-8 px-4">
