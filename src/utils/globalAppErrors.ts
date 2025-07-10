@@ -1,5 +1,5 @@
 import { enhancedGlobalErrorHandler } from './globalToastManager';
-import { apiErrorHandler, consoleErrorHandler, fetchErrorHandler } from './enhancedErrorHandlers';
+import { consoleErrorHandler, fetchErrorHandler } from './enhancedErrorHandlers';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
@@ -54,8 +54,8 @@ export function initializeGlobalErrorHandlers(): void {
 /**
  * Determine if an error should be ignored (not shown to user)
  */
-function shouldIgnoreError(error: any): boolean {
-  const message = error?.message || String(error);
+function shouldIgnoreError(error: unknown): boolean {
+  const message = (error as Error)?.message || String(error);
   
   const ignorePatterns = [
     'Script error',
