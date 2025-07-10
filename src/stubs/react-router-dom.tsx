@@ -6,7 +6,7 @@ const RouterContext = createContext<{ navigate: (url: string) => void }>({
   navigate: () => {},
 });
 
-export const BrowserRouter = ({ children }: { children: any }) => {
+export const BrowserRouter = ({ children }: { children: React.ReactNode }) => {
   const nextRouter = useRouter();
   const navigate = (url: string) => {
     if (url) nextRouter.push(url);
@@ -17,8 +17,8 @@ export const BrowserRouter = ({ children }: { children: any }) => {
     </RouterContext.Provider>
   );
 };
-export const Routes = ({ children }: { children: any }) => children;
-export const Route = ({ element }: { element: any }) => element;
+export const Routes = ({ children }: { children: React.ReactNode }) => children;
+export const Route = ({ element }: { element: React.ReactNode }) => element;
 export interface LinkProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   to?: string;
@@ -47,7 +47,7 @@ export const useNavigate = () => {
 };
 export const useLocation = () => ({ pathname: '/' });
 export const useParams = () => ({ });
-export const useSearchParams = () => [new URLSearchParams(), () => {}] as any;
+export const useSearchParams = () => [new URLSearchParams(), () => {}] as [URLSearchParams, () => void];
 export default {
   BrowserRouter,
   Routes,
