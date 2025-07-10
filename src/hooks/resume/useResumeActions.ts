@@ -10,6 +10,8 @@ export function useResumeActions() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   
+  if (!supabase) throw new Error('Supabase client not initialized');
+
   const createResume = async (basicInfo: ResumeBasicInfo): Promise<string | null> => {
     if (!user) {
       setError('You must be logged in to create a resume');

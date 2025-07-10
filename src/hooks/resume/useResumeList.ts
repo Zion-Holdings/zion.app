@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
-import type { Resume } from '@/types/resume';
+import type { ResumeBasicInfo } from '@/types/resume';
 import { useAuth } from '@/hooks/useAuth';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
@@ -10,7 +10,7 @@ export function useResumeList() {
   const { user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [resumes, setResumes] = useState<Resume[]>([]);
+  const [resumes, setResumes] = useState<ResumeBasicInfo[]>([]);
   
   const fetchResumes = async () => {
     if (!user) {
@@ -39,20 +39,12 @@ export function useResumeList() {
       }
       
       // Transform data to match Resume type
-      const transformedResumes: Resume[] = resumeData.map((resume: any) => ({
+      const transformedResumes: ResumeBasicInfo[] = resumeData.map((resume: any) => ({
         id: resume.id,
         user_id: resume.user_id,
-        basic_info: {
-          id: resume.id,
-          title: resume.title,
-          headline: resume.headline,
-          summary: resume.summary
-        },
-        work_experience: [],
-        education: [],
-        skills: [],
-        certifications: [],
-        is_active: resume.is_active
+        title: resume.title,
+        headline: resume.headline,
+        summary: resume.summary
       }));
       
       setResumes(transformedResumes);
