@@ -2,7 +2,7 @@
 // Signup checking functionality
 import { supabase } from '@/integrations/supabase/client';
 import { analyzeEmail } from './analyzeEmail';
-import { SignupCheckResult } from './types';
+import type { SignupCheckResult } from './types';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
@@ -24,6 +24,7 @@ export const checkSignupPatterns = async (
   // If IP address is provided, check for rapid signups from same IP
   if (ipAddress) {
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data: recentSignups, error } = await supabase
         .from('profiles')
         .select('created_at')
