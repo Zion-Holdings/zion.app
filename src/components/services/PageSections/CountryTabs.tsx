@@ -76,8 +76,8 @@ export function CountryTabs({
                 key={country.country}
                 country={country}
                 onSelect={handleCountrySelect}
-                onQuote={onQuote}
                 isPopular={true}
+                {...(onQuote ? { onQuote } : {})}
               />
             ))}
         </div>
@@ -103,8 +103,8 @@ export function CountryTabs({
               key={country.country}
               country={country}
               onSelect={handleCountrySelect}
-              onQuote={onQuote}
               isPopular={popularCountries.includes(country.country)}
+              {...(onQuote ? { onQuote } : {})}
             />
           ))}
         </div>
