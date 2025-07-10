@@ -57,10 +57,14 @@ export function useWebhooks() {
         return;
       }
 
+      const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
+        ? `Bearer ${(session as { access_token: string }).access_token}`
+        : undefined;
+
       const response = await fetch(`${getWebhookUrl()}/webhooks`, {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${(session as any)?.access_token}`,
+          'Authorization': authHeader,
           'Content-Type': 'application/json'
         }
       });
@@ -100,10 +104,14 @@ export function useWebhooks() {
         return;
       }
 
+      const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
+        ? `Bearer ${(session as { access_token: string }).access_token}`
+        : undefined;
+
       const response = await fetch(`${getWebhookUrl()}/create`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${(session as any)?.access_token}`,
+          'Authorization': authHeader,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -157,10 +165,14 @@ export function useWebhooks() {
         return;
       }
 
+      const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
+        ? `Bearer ${(session as { access_token: string }).access_token}`
+        : undefined;
+
       const response = await fetch(`${getWebhookUrl()}/toggle`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${(session as any)?.access_token}`,
+          'Authorization': authHeader,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ webhookId, isActive })
@@ -211,10 +223,14 @@ export function useWebhooks() {
         return;
       }
 
+      const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
+        ? `Bearer ${(session as { access_token: string }).access_token}`
+        : undefined;
+
       const response = await fetch(`${getWebhookUrl()}/delete`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${(session as any)?.access_token}`,
+          'Authorization': authHeader,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ webhookId })
@@ -264,10 +280,14 @@ export function useWebhooks() {
         return;
       }
 
+      const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
+        ? `Bearer ${(session as { access_token: string }).access_token}`
+        : undefined;
+
       const response = await fetch(`${getWebhookUrl()}/test`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${(session as any)?.access_token}`,
+          'Authorization': authHeader,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ webhookId, eventType })
