@@ -20,16 +20,16 @@ export class EnhancedApiErrorHandler {
   /**
    * Handle API errors with intelligent toast management
    */
-  handleApiError(error: any, options?: {
+  handleApiError(error: unknown, options?: {
     retryAction?: () => void;
     showToast?: boolean;
     context?: string;
   }): void {
     const { retryAction, showToast = true, context } = options || {};
 
-    const status = error.response?.status;
-    const method = error.config?.method?.toUpperCase() || 'UNKNOWN';
-    const url = error.config?.url || '';
+    const status = (error as any).response?.status;
+    const method = (error as any).config?.method?.toUpperCase() || 'UNKNOWN';
+    const url = (error as any).config?.url || '';
 
     // Skip certain URLs that shouldn't show user-facing errors
     const silentPatterns = [
@@ -40,7 +40,7 @@ export class EnhancedApiErrorHandler {
 
     const shouldFailSilently = silentPatterns.some(pattern => url.includes(pattern));
     if (shouldFailSilently) {
-      logDebug('Silent API error (${status} ${method}): ${url}', { data: error.response?.data });
+      logDebug('Silent API error (${status} ${method}): ${url}', { data: (error as any).response?.data });
       return;
     }
 
@@ -50,7 +50,7 @@ export class EnhancedApiErrorHandler {
       (status === 401 || status === 403) &&
       typeof window !== 'undefined' && isPublicRoute(window.location.pathname)
     ) {
-      logErrorToProduction(`Auth error (${status}) for API ${url} on public page ${window.location.pathname} suppressed.`, error instanceof Error ? error : undefined, {
+      logErrorToProduction(`Auth error (${status}) for API ${url} on public page ${window.location.pathname} suppressed.`, (error as Error) ? (error as Error) : undefined, {
         context: context || 'apiRequestPublicPageContext',
         status,
         method,
@@ -120,7 +120,7 @@ export class EnhancedApiErrorHandler {
 
     // Try to get more specific error message from response
     try {
-      const responseData = error.response?.data;
+      const responseData = (error as any).response?.data;
       if (responseData?.error && typeof responseData.error === 'string') {
         message = responseData.error;
       } else if (responseData?.message && typeof responseData.message === 'string') {
@@ -131,7 +131,7 @@ export class EnhancedApiErrorHandler {
     }
 
     // Report error with enhanced handler
-    enhancedGlobalErrorHandler.reportError(error, {
+    enhancedGlobalErrorHandler.reportError(error as Error, {
       type,
       priority,
       retryAction,
@@ -149,7 +149,7 @@ export class EnhancedApiErrorHandler {
   /**
    * Handle network errors specifically
    */
-  handleNetworkError(error: any, options?: {
+  handleNetworkError(error: unknown, options?: {
     retryAction?: () => void;
     context?: string;
   }): void {
@@ -181,7 +181,7 @@ export class EnhancedConsoleErrorHandler {
   }
 
   private overrideConsoleError(): void {
-    console.error = (...args: any[]) => {
+    console.error = (...args: unknown[]) => {
       // Prevent infinite recursion
       if (this.isProcessingError) {
         this.originalConsoleError(...args);
@@ -226,7 +226,7 @@ export class EnhancedConsoleErrorHandler {
 
         // Show toast for critical user-facing errors
         if (shouldShowErrorToUser) {
-          enhancedGlobalErrorHandler.reportError(message, {
+          enhancedGlobalErrorHandler.reportError(message as string, {
             type: ToastType.CRITICAL_ERROR,
             priority: ToastPriority.HIGH,
             showToast: true,
@@ -341,7 +341,7 @@ export class EnhancedFetchErrorHandler {
         }
 
         return response;
-      } catch (err: any) {
+      } catch (err: unknown) {
         const url = typeof args[0] === 'string' ? args[0] : '';
 
         // Only show network errors for user-initiated requests
@@ -355,13 +355,13 @@ export class EnhancedFetchErrorHandler {
             metadata: {
               context: 'fetchNetworkError',
               url,
-              originalError: err.message,
+              originalError: (err as Error)?.message,
               timestamp: new Date().toISOString(),
             },
           });
         }
 
-        logErrorToProduction(err instanceof Error ? err.message : String(err), err instanceof Error ? err : undefined, { context: 'fetchInterceptor', url });
+        logErrorToProduction((err as Error)?.message || String(err), (err as Error) ? (err as Error) : undefined, { context: 'fetchInterceptor', url });
         throw err;
       }
     };
