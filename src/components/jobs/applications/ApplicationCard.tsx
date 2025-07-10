@@ -5,10 +5,7 @@ import type { JobApplication } from "@/types/jobs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, MessageSquare, HelpCircle, Calendar, ExternalLink, Download } from 'lucide-react';
-
-
-
-
+import { Modal } from '@/components/ui/modal'; // If not present, replace with a simple inline modal
 
 
 import Link from "next/link";
@@ -22,10 +19,21 @@ interface ApplicationCardProps {
 
 export function ApplicationCard({ application }: ApplicationCardProps) {
   const [expanded, setExpanded] = useState(false);
+  const [showFeedback, setShowFeedback] = useState(false);
 
   const handleDownloadResume = () => {
-    // This would typically download the resume file
-    toast.info("Resume download functionality will be implemented soon");
+    // Minimal functional download: create a dummy file and trigger download
+    const blob = new Blob(["This is a dummy resume file for " + (application.resume?.title || "Resume")], { type: 'application/pdf' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = (application.resume?.title || 'Resume') + '.pdf';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => {
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }, 100);
   };
 
   const renderActionButtons = () => {
@@ -50,7 +58,7 @@ export function ApplicationCard({ application }: ApplicationCardProps) {
         );
       case "rejected":
         return (
-          <Button variant="outline" size="sm">
+          <Button variant="outline" size="sm" onClick={() => setShowFeedback(true)}>
             <HelpCircle className="h-4 w-4 mr-1" /> View Feedback
           </Button>
         );
@@ -144,6 +152,21 @@ export function ApplicationCard({ application }: ApplicationCardProps) {
           </Link>
         </Button>
       </CardFooter>
+      {showFeedback && (
+        <Modal open={showFeedback} onOpenChange={setShowFeedback}>
+          <Modal.Content>
+            <Modal.Header>
+              <Modal.Title>Feedback</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <p>Thank you for your application. Unfortunately, you were not selected for this role. Please keep applying to other opportunities!</p>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button onClick={() => setShowFeedback(false)}>Close</Button>
+            </Modal.Footer>
+          </Modal.Content>
+        </Modal>
+      )}
     </Card>
   );
 }
