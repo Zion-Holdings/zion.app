@@ -60,7 +60,7 @@ export function useJobMatches(jobId: string) {
       
       toast({
         title: "AI Matching Complete",
-        description: `Found ${(response.data as any)?.matches || 0} potential talent matches for this job.`,
+        description: `Found ${typeof response.data === 'object' && response.data && 'matches' in response.data ? (response.data as { matches?: number }).matches || 0 : 0} potential talent matches for this job.`,
       });
       
       // Refresh the matches list
