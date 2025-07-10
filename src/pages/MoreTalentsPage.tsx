@@ -19,6 +19,7 @@ const MORE_TALENT_LISTINGS: ProductListing[] = [
     aiScore: 90,
     rating: 4.8,
     reviewCount: 25,
+    stock: 10,
   },
   {
     id: "talent-8",
@@ -36,6 +37,7 @@ const MORE_TALENT_LISTINGS: ProductListing[] = [
     aiScore: 92,
     rating: 4.7,
     reviewCount: 18,
+    stock: 10,
   },
   {
     id: "talent-9",
@@ -53,6 +55,7 @@ const MORE_TALENT_LISTINGS: ProductListing[] = [
     aiScore: 95,
     rating: 4.9,
     reviewCount: 32,
+    stock: 10,
   },
   {
     id: "talent-10",
@@ -70,6 +73,7 @@ const MORE_TALENT_LISTINGS: ProductListing[] = [
     aiScore: 93,
     rating: 4.8,
     reviewCount: 22,
+    stock: 10,
   },
   {
     id: "talent-11",
@@ -87,6 +91,7 @@ const MORE_TALENT_LISTINGS: ProductListing[] = [
     aiScore: 89,
     rating: 4.6,
     reviewCount: 17,
+    stock: 10,
   },
   {
     id: "talent-12",
@@ -104,6 +109,7 @@ const MORE_TALENT_LISTINGS: ProductListing[] = [
     aiScore: 94,
     rating: 4.8,
     reviewCount: 30,
+    stock: 10,
   },
   {
     id: "talent-13",
@@ -121,6 +127,7 @@ const MORE_TALENT_LISTINGS: ProductListing[] = [
     aiScore: 91,
     rating: 4.7,
     reviewCount: 27,
+    stock: 10,
   },
   {
     id: "talent-14",
@@ -138,6 +145,7 @@ const MORE_TALENT_LISTINGS: ProductListing[] = [
     aiScore: 96,
     rating: 4.9,
     reviewCount: 34,
+    stock: 10,
   },
   {
     id: "talent-15",
@@ -155,6 +163,7 @@ const MORE_TALENT_LISTINGS: ProductListing[] = [
     aiScore: 90,
     rating: 4.6,
     reviewCount: 20,
+    stock: 10,
   },
   {
     id: "talent-16",
@@ -172,6 +181,7 @@ const MORE_TALENT_LISTINGS: ProductListing[] = [
     aiScore: 93,
     rating: 4.8,
     reviewCount: 28,
+    stock: 10,
   },
 ];
 

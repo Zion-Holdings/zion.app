@@ -111,6 +111,7 @@ export function generateRandomListing(): ProductListing {
     featured: Math.random() < 0.3,
     location: REGIONS[Math.floor(Math.random() * REGIONS.length)],
     availability: availabilityOptions[Math.floor(Math.random() * availabilityOptions.length)],
-    aiScore: Math.floor(80 + Math.random() * 20)
+    aiScore: Math.floor(80 + Math.random() * 20),
+    stock: 10,
   };
 }

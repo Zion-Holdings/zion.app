@@ -63,7 +63,8 @@ export function generateRandomTalentListing(): ProductListing {
     createdAt: new Date(timestamp).toISOString(),
     aiScore: Math.floor(Math.random() * 20) + 80,
     rating,
-    reviewCount: Math.floor(Math.random() * 50) + 1
+    reviewCount: Math.floor(Math.random() * 50) + 1,
+    stock: 10,
   };
 }
 

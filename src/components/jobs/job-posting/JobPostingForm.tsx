@@ -84,12 +84,38 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
     setIsFormLoading(true);
 
     try {
-      const jobData = await submitJob(values);
-      if (!jobData) {
+      const jobDataRaw = await submitJob(values);
+      if (!jobDataRaw) {
         toast.error("Failed to process job data");
         setIsFormLoading(false);
         return;
       }
+      // Construct a Job object with all required fields
+      const now = new Date().toISOString();
+      // Parse budget from salary_range or use default
+      let budget = { min: 0, max: 0, currency: 'USD' };
+      if (jobDataRaw.budget && typeof jobDataRaw.budget === 'object') {
+        budget = jobDataRaw.budget;
+      } else if (typeof jobDataRaw.salary_range === 'string' && jobDataRaw.salary_range.trim() !== '') {
+        const match = jobDataRaw.salary_range.match(/(\d+)/g);
+        if (match && match.length >= 2) {
+          budget.min = parseInt(match[0], 10);
+          budget.max = parseInt(match[1], 10);
+        }
+      }
+      const jobData = {
+        id: jobId || '',
+        client_id: jobDataRaw.user_id || '',
+        title: jobDataRaw.title || '',
+        description: jobDataRaw.description || '',
+        category: (jobDataRaw.category as any) || 'other',
+        skills: [], // No skills in form, provide empty array
+        budget: { min: 0, max: 0, currency: 'USD' },
+        deadline: jobDataRaw.expiry_date || now,
+        status: jobDataRaw.status || 'new',
+        created_at: jobDataRaw.created_at || now,
+        updated_at: now,
+      };
       if (jobId) {
         // For updates, we only need to pass the form data since the service handles the update
         await updateJob(jobId, jobData);
@@ -161,3 +187,4 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
     </Form>
   );
 }
+
