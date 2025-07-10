@@ -16,7 +16,7 @@ export interface ApiKey {
   scopes: ApiKeyScope[];
   last_used_at?: string;
   revoked: boolean;
-  key_prefix: string;
+  key_prefix?: string;
   is_active: boolean;
 }
 
