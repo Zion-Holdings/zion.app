@@ -565,7 +565,7 @@ class LogManagement {
     return (n * sumXY - sumX * sumY) / (n * sumXX - sumX * sumX);
   }
 
-  private calculateMemoryTrend(logs: unknown[]): { trend: number; current: number } {
+  private calculateMemoryTrend(_logs: unknown[]): { trend: number; current: number } {
     // Simplified - in reality would track actual memory metrics
     return { trend: 0.02, current: 65 };
   }
@@ -624,7 +624,7 @@ class LogManagement {
     };
   }
 
-  private generatePatternRecommendation(pattern: string, logs: unknown): string {
+  private generatePatternRecommendation(pattern: string, _logs: unknown): string {
     if (pattern.includes('timeout')) {
       return 'Investigate timeout issues - check network connectivity and service dependencies';
     }
@@ -637,7 +637,7 @@ class LogManagement {
     return 'Monitor this pattern and investigate if frequency increases';
   }
 
-  private analyzeHourlyDistribution(logs: unknown): { anomaly: boolean; description: string; confidence: number } {
+  private analyzeHourlyDistribution(_logs: unknown): { anomaly: boolean; description: string; confidence: number } {
     // Simplified hourly analysis
     return {
       anomaly: false,
@@ -646,7 +646,7 @@ class LogManagement {
     };
   }
 
-  private findErrorCorrelations(logs: unknown): Array<{ description: string; confidence: number; actionable: boolean }> {
+  private findErrorCorrelations(_logs: unknown): Array<{ description: string; confidence: number; actionable: boolean }> {
     // Simplified correlation analysis
     return [];
   }
