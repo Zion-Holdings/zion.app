@@ -130,6 +130,7 @@ export function useTenantAdminStatus(tenantId?: string) {
       }
 
       try {
+        if (!supabase) throw new Error('Supabase client not initialized');
         const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
         if (sessionError) {
           logWarn('Session error:', { data: sessionError });
@@ -143,6 +144,7 @@ export function useTenantAdminStatus(tenantId?: string) {
         }
 
         const userId = (sessionData as any).session?.user?.id;
+        if (!supabase) throw new Error('Supabase client not initialized');
         const { data, error } = await supabase
           .from('tenant_administrators')
           .select('*')
