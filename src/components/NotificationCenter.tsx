@@ -13,7 +13,7 @@ import {
   NotificationList, 
   NotificationFooter 
 } from '@/components/notifications';
-import { FilterType } from '@/components/notifications/NotificationFilter';
+import type { FilterType } from '@/components/notifications/NotificationFilter';
 
 export const NotificationCenter: React.FC = () => {
   const { 
@@ -64,7 +64,7 @@ export const NotificationCenter: React.FC = () => {
   };
 
   const handleFilterChange = (newFilter: FilterType) => {
-    setFilter(newFilter as any);
+    setFilter(newFilter as FilterType);
   };
 
   return (
