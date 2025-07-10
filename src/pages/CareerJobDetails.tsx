@@ -7,7 +7,7 @@ import { LoadingSpinner } from '@/components/ui/enhanced-loading-states';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import Link from 'next/link';
-import type { CareerJob } from '@/data/careersJobs';
+import type { CareerJob as _CareerJob } from '@/data/careersJobs';
 import { findCareerJob } from '@/data/careersJobs';
 
 export default function CareerJobDetails() {
