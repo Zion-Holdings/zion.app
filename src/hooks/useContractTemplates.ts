@@ -219,7 +219,7 @@ export function useContractTemplates() {
           .update({ is_default: false })
           .eq('user_id', user.id)
           .eq('is_default', true);
-        
+        if (!supabase) throw new Error('Supabase client not initialized');
         // Then set the new default
         const { error } = await supabase
           .from('contract_templates')
