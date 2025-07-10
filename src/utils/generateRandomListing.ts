@@ -109,7 +109,7 @@ export function generateRandomListing(): ProductListing {
     rating: Math.round((4 + Math.random()) * 10) / 10,
     reviewCount: Math.floor(Math.random() * 50) + 1,
     featured: Math.random() < 0.3,
-    location: REGIONS[Math.floor(Math.random() * REGIONS.length)],
+    location: REGIONS.length > 0 ? REGIONS[Math.floor(Math.random() * REGIONS.length)] : 'Global',
     availability: availabilityOptions[Math.floor(Math.random() * availabilityOptions.length)],
     aiScore: Math.floor(80 + Math.random() * 20),
     stock: 10,
