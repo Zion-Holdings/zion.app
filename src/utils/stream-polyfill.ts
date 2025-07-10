@@ -177,6 +177,16 @@ class Duplex extends Readable {
   }
 }
 
+// Top-level default transform and flush functions
+function defaultTransform(chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown): unknown {
+  callback();
+  return undefined;
+}
+function defaultFlush(callback: (err?: Error) => unknown): unknown {
+  callback();
+  return undefined;
+}
+
 // Transform Stream
 class Transform extends Duplex {
   private _internalTransform: (chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown) => unknown;
@@ -186,12 +196,6 @@ class Transform extends Duplex {
     super(options);
     // Type guard for options
     const opts = typeof options === 'object' && options !== null ? options as Record<string, unknown> : {};
-    function defaultTransform(chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown) {
-      return callback();
-    }
-    function defaultFlush(callback: (err?: Error) => unknown) {
-      callback();
-    }
     this._internalTransform = typeof opts.transform === 'function'
       ? opts.transform as (chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown)
       : defaultTransform;
