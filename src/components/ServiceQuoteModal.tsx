@@ -61,6 +61,7 @@ export function ServiceQuoteModal({ open, onOpenChange, service }: ServiceQuoteM
     setIsSubmitting(true);
 
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       // Call Supabase function to process the quote
       const { data, error } = await supabase.functions.invoke('process-quote', {
         body: {
