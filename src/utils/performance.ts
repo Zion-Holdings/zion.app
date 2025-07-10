@@ -37,11 +37,11 @@ export function observeCLS(callback: (cls: number) => void): void {
 
   const observer = new PerformanceObserver((entryList) => {
     for (const entry of entryList.getEntries()) {
-      const layoutShiftEntry = entry as any;
+      const layoutShiftEntry = entry as unknown;
       // Only count layout shifts without recent user input
-      if (layoutShiftEntry.hadRecentInput) continue;
+      if ((layoutShiftEntry as CLSEntry).hadRecentInput) continue;
 
-      clsValue += layoutShiftEntry.value;
+      clsValue += (layoutShiftEntry as CLSEntry).value;
       clsEntries.push(entry);
     }
     
@@ -101,7 +101,10 @@ export function observeFID(callback: (fid: number) => void): void {
   const observer = new PerformanceObserver((entryList) => {
     for (const entry of entryList.getEntries()) {
       // Only report FID for the first input
-      callback((entry as any).processingStart - entry.startTime);
+      // Use type guard for PerformanceEventTiming
+      if ('processingStart' in entry) {
+        callback((entry as PerformanceEventTiming).processingStart - entry.startTime);
+      }
       observer.disconnect();
     }
   });
@@ -225,15 +228,19 @@ export function observeFontLoading(): void {
 
   // Monitor font loading
   document.fonts.addEventListener('loadingstart', (event) => {
-    logInfo(`🔤 Font loading started: ${(event as any).fontface.family}`);
+    // Some browsers may not support event.fontface, fallback to (event as any)['fontface']
+    const fontface = (event as any)['fontface'];
+    logInfo(`🔤 Font loading started: ${fontface ? fontface.family : 'unknown'}`);
   });
 
   document.fonts.addEventListener('loadingdone', (event) => {
-    logInfo(`✅ Font loaded: ${(event as any).fontface.family}`);
+    const fontface = (event as any)['fontface'];
+    logInfo(`✅ Font loaded: ${fontface ? fontface.family : 'unknown'}`);
   });
 
   document.fonts.addEventListener('loadingerror', (event) => {
-    logErrorToProduction(`❌ Font loading error: ${(event as any).fontface.family}`);
+    const fontface = (event as any)['fontface'];
+    logErrorToProduction(`❌ Font loading error: ${fontface ? fontface.family : 'unknown'}`);
   });
 
   // Check if fonts are ready
@@ -455,7 +462,7 @@ export const bundleOptimization = {
 // Memory optimization utilities
 export const memoryOptimization = {
   // Debounce function calls
-  debounce<T extends (...args: any[]) => any>(
+  debounce<T extends (...args: unknown[]) => unknown>(
     func: T,
     wait: number
   ): (...args: Parameters<T>) => void {
@@ -467,7 +474,7 @@ export const memoryOptimization = {
   },
 
   // Throttle function calls
-  throttle<T extends (...args: any[]) => any>(
+  throttle<T extends (...args: unknown[]) => unknown>(
     func: T,
     limit: number
   ): (...args: Parameters<T>) => void {
