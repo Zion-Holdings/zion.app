@@ -173,7 +173,7 @@ export class ProductionOptimizer {
         if (hasZionDebug(window)) {
           (window as { __ZION_DEBUG__?: boolean }).__ZION_DEBUG__ = true;
         } else {
-          (window as Record<string, unknown>).__ZION_DEBUG__ = true;
+          ((window as unknown) as Record<string, unknown>).__ZION_DEBUG__ = true;
         }
       },
     };
