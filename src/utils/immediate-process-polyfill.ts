@@ -197,7 +197,7 @@ if (isBrowser && !isNode) {
         return decoder.decode(slice);
       }
 
-      override toJSON(): { type: string; data: number[] } {
+      toJSON(): { type: string; data: number[] } {
         return {
           type: 'Buffer',
           data: Array.from(this)
