@@ -50,8 +50,9 @@ export function useReviews(projectId?: string) {
           setUserReview(userReviewData);
         }
       }
-    } catch (err: any) {
-      logErrorToProduction('Error fetching reviews:', { data: err });
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      logErrorToProduction('Error fetching reviews:', { data: message });
       toast({
         title: "Error",
         description: "Failed to load reviews",
@@ -84,8 +85,9 @@ export function useReviews(projectId?: string) {
       if (error) throw error;
       
       setReviews(data || []);
-    } catch (err: any) {
-      logErrorToProduction('Error fetching user reviews:', { data: err });
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      logErrorToProduction('Error fetching user reviews:', { data: message });
       toast({
         title: "Error",
         description: "Failed to load reviews",
@@ -139,11 +141,12 @@ export function useReviews(projectId?: string) {
       
       setUserReview(data);
       return true;
-    } catch (err: any) {
-      logErrorToProduction('Error submitting review:', { data: err });
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      logErrorToProduction('Error submitting review:', { data: message });
       
       // Check for unique constraint violation
-      if (err.code === "23505") {
+      if (message.includes("23505")) {
         toast({
           title: "Error",
           description: "You have already submitted a review for this project",
@@ -189,8 +192,9 @@ export function useReviews(projectId?: string) {
       }
       
       return true;
-    } catch (err: any) {
-      logErrorToProduction('Error updating review:', { data: err });
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      logErrorToProduction('Error updating review:', { data: message });
       toast({
         title: "Error",
         description: "Failed to update review",
@@ -234,8 +238,9 @@ export function useReviews(projectId?: string) {
         });
         return true;
       }
-    } catch (err: any) {
-      logErrorToProduction('Error reporting review:', { data: err });
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      logErrorToProduction('Error reporting review:', { data: message });
       toast({
         title: "Error",
         description: "Failed to report review",
