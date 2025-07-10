@@ -18,7 +18,7 @@ import {
   RadioGroupItem,
 } from "@/components/ui/radio-group";
 import { Switch } from "@/components/ui/switch";
-import { Review } from "@/types/reviews";
+import type { Review } from "@/types/reviews";
 
 export interface ReviewFormValues {
   rating?: number;
