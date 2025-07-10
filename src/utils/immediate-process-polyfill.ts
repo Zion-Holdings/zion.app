@@ -73,8 +73,8 @@ if (isBrowser && !isNode) {
   // dependencies accidentally execute in the browser. These stubs only expose
   // the methods used by common libraries like axios when a Node adapter is
   // bundled by mistake.
-  if (typeof (globalThis as { http?: unknown }).http === 'undefined') {
-    (globalThis as { http: unknown }).http = {
+  if (typeof (globalThis as unknown as { http?: unknown }).http === 'undefined') {
+    (globalThis as unknown as { http: unknown }).http = {
       request: () => {
         throw new Error('http.request is not available in the browser');
       },
@@ -110,8 +110,8 @@ if (isBrowser && !isNode) {
     };
   }
 
-  if (typeof (globalThis as { https?: unknown }).https === 'undefined') {
-    (globalThis as { https: unknown }).https = {
+  if (typeof (globalThis as unknown as { https?: unknown }).https === 'undefined') {
+    (globalThis as unknown as { https: unknown }).https = {
       request: () => {
         throw new Error('https.request is not available in the browser');
       },
@@ -137,11 +137,11 @@ if (isBrowser && !isNode) {
 
   // Define process in global scope only
   if (typeof globalThis !== 'undefined') {
-    (globalThis as { process: unknown }).process = processObj;
+    (globalThis as unknown as { process: unknown }).process = processObj;
   }
   
   if (typeof window !== 'undefined') {
-    (window as { process: unknown }).process = processObj;
+    (window as unknown as { process: unknown }).process = processObj;
   }
 
   // CRITICAL: Buffer polyfill for browser environment
@@ -161,11 +161,11 @@ if (isBrowser && !isNode) {
         } else if (input instanceof Uint8Array) {
           super(input);
         } else {
-          super(input || 0);
+          super(typeof input === 'number' ? input : 0);
         }
       }
 
-      static from(input: string | ArrayBuffer | ArrayLike<number> | Uint8Array | number, encoding?: string | number): BufferPolyfill {
+      static fromPolyfill(input: string | ArrayBuffer | ArrayLike<number> | Uint8Array | number, encoding?: string | number): BufferPolyfill {
         return new BufferPolyfill(input, encoding);
       }
 
@@ -177,7 +177,7 @@ if (isBrowser && !isNode) {
             const fillBytes = encoder.encode(fill);
             buffer.set(fillBytes, 0);
           } else {
-            buffer.fill(fill);
+            buffer.fill(fill as number);
           }
         }
         return buffer;
@@ -207,16 +207,16 @@ if (isBrowser && !isNode) {
 
     // Define Buffer in global scope
     if (typeof globalThis !== 'undefined') {
-      (globalThis as { Buffer: unknown }).Buffer = BufferPolyfill;
+      (globalThis as unknown as { Buffer: unknown }).Buffer = BufferPolyfill;
     }
     
     if (typeof window !== 'undefined') {
-      (window as { Buffer: unknown }).Buffer = BufferPolyfill;
+      (window as unknown as { Buffer: unknown }).Buffer = BufferPolyfill;
     }
   }
 
   // Minimal util polyfill for browser environments
-  if (typeof (globalThis as { util?: unknown }).util === 'undefined') {
+  if (typeof (globalThis as unknown as { util?: unknown }).util === 'undefined') {
     const utilPolyfill = {
       TextEncoder: globalThis.TextEncoder,
       TextDecoder: globalThis.TextDecoder,
@@ -236,47 +236,47 @@ if (isBrowser && !isNode) {
       types: {},
     };
 
-    (globalThis as { util: unknown }).util = utilPolyfill;
+    (globalThis as unknown as { util: unknown }).util = utilPolyfill;
     if (typeof window !== 'undefined') {
-      (window as { util: unknown }).util = utilPolyfill;
+      (window as unknown as { util: unknown }).util = utilPolyfill;
     }
   }
 
 }
 
 // Export a safe process accessor
-export const safeProcess = typeof process !== 'undefined' ? process : (globalThis as { process: unknown }).process;
+export const safeProcess = typeof process !== 'undefined' ? process : (globalThis as unknown as { process: any }).process;
 
 // Export safe environment accessors
 export const safeEnv = {
-  NODE_ENV: safeProcess.env?.NODE_ENV || 'production',
-  NEXT_PUBLIC_APP_URL: safeProcess.env?.NEXT_PUBLIC_APP_URL || '',
-  NEXT_PUBLIC_SUPABASE_URL: safeProcess.env?.NEXT_PUBLIC_SUPABASE_URL || '',
-  NEXT_PUBLIC_SUPABASE_ANON_KEY: safeProcess.env?.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
-  NEXT_PUBLIC_SENTRY_DSN: safeProcess.env?.NEXT_PUBLIC_SENTRY_DSN || '',
-  NEXT_PUBLIC_REOWN_PROJECT_ID: safeProcess.env?.NEXT_PUBLIC_REOWN_PROJECT_ID || '',
-  NEXT_PUBLIC_DD_CLIENT_TOKEN: safeProcess.env?.NEXT_PUBLIC_DD_CLIENT_TOKEN || '',
-  NEXT_PUBLIC_LOGROCKET_ID: safeProcess.env?.NEXT_PUBLIC_LOGROCKET_ID || '',
-  NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: safeProcess.env?.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '',
-  NEXT_PUBLIC_STRIPE_TEST_MODE: safeProcess.env?.NEXT_PUBLIC_STRIPE_TEST_MODE || '',
-  NEXT_PUBLIC_INTERCOM_APP_ID: safeProcess.env?.NEXT_PUBLIC_INTERCOM_APP_ID || '',
-  NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: safeProcess.env?.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || '',
-  NEXT_PUBLIC_API_URL: safeProcess.env?.NEXT_PUBLIC_API_URL || '',
-  NEXT_PUBLIC_STATUS_PAGE_URL: safeProcess.env?.NEXT_PUBLIC_STATUS_PAGE_URL || '',
-  NEXT_PUBLIC_SITE_URL: safeProcess.env?.NEXT_PUBLIC_SITE_URL || '',
-  NEXT_PUBLIC_APP_ENV: safeProcess.env?.NEXT_PUBLIC_APP_ENV || '',
-  NEXT_PUBLIC_APP_VERSION: safeProcess.env?.NEXT_PUBLIC_APP_VERSION || '',
-  NEXT_PUBLIC_BUILD_TIME: safeProcess.env?.NEXT_PUBLIC_BUILD_TIME || '',
-  NEXT_PUBLIC_SOCIAL_TWITTER_URL: safeProcess.env?.NEXT_PUBLIC_SOCIAL_TWITTER_URL || '',
-  NEXT_PUBLIC_SOCIAL_LINKEDIN_URL: safeProcess.env?.NEXT_PUBLIC_SOCIAL_LINKEDIN_URL || '',
-  NEXT_PUBLIC_SOCIAL_FACEBOOK_URL: safeProcess.env?.NEXT_PUBLIC_SOCIAL_FACEBOOK_URL || '',
-  NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL: safeProcess.env?.NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL || '',
-  NEXT_PUBLIC_SOCIAL_GITHUB_URL: safeProcess.env?.NEXT_PUBLIC_SOCIAL_GITHUB_URL || '',
+  NODE_ENV: (safeProcess as any).env?.NODE_ENV || 'production',
+  NEXT_PUBLIC_APP_URL: (safeProcess as any).env?.NEXT_PUBLIC_APP_URL || '',
+  NEXT_PUBLIC_SUPABASE_URL: (safeProcess as any).env?.NEXT_PUBLIC_SUPABASE_URL || '',
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: (safeProcess as any).env?.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
+  NEXT_PUBLIC_SENTRY_DSN: (safeProcess as any).env?.NEXT_PUBLIC_SENTRY_DSN || '',
+  NEXT_PUBLIC_REOWN_PROJECT_ID: (safeProcess as any).env?.NEXT_PUBLIC_REOWN_PROJECT_ID || '',
+  NEXT_PUBLIC_DD_CLIENT_TOKEN: (safeProcess as any).env?.NEXT_PUBLIC_DD_CLIENT_TOKEN || '',
+  NEXT_PUBLIC_LOGROCKET_ID: (safeProcess as any).env?.NEXT_PUBLIC_LOGROCKET_ID || '',
+  NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: (safeProcess as any).env?.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '',
+  NEXT_PUBLIC_STRIPE_TEST_MODE: (safeProcess as any).env?.NEXT_PUBLIC_STRIPE_TEST_MODE || '',
+  NEXT_PUBLIC_INTERCOM_APP_ID: (safeProcess as any).env?.NEXT_PUBLIC_INTERCOM_APP_ID || '',
+  NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: (safeProcess as any).env?.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || '',
+  NEXT_PUBLIC_API_URL: (safeProcess as any).env?.NEXT_PUBLIC_API_URL || '',
+  NEXT_PUBLIC_STATUS_PAGE_URL: (safeProcess as any).env?.NEXT_PUBLIC_STATUS_PAGE_URL || '',
+  NEXT_PUBLIC_SITE_URL: (safeProcess as any).env?.NEXT_PUBLIC_SITE_URL || '',
+  NEXT_PUBLIC_APP_ENV: (safeProcess as any).env?.NEXT_PUBLIC_APP_ENV || '',
+  NEXT_PUBLIC_APP_VERSION: (safeProcess as any).env?.NEXT_PUBLIC_APP_VERSION || '',
+  NEXT_PUBLIC_BUILD_TIME: (safeProcess as any).env?.NEXT_PUBLIC_BUILD_TIME || '',
+  NEXT_PUBLIC_SOCIAL_TWITTER_URL: (safeProcess as any).env?.NEXT_PUBLIC_SOCIAL_TWITTER_URL || '',
+  NEXT_PUBLIC_SOCIAL_LINKEDIN_URL: (safeProcess as any).env?.NEXT_PUBLIC_SOCIAL_LINKEDIN_URL || '',
+  NEXT_PUBLIC_SOCIAL_FACEBOOK_URL: (safeProcess as any).env?.NEXT_PUBLIC_SOCIAL_FACEBOOK_URL || '',
+  NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL: (safeProcess as any).env?.NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL || '',
+  NEXT_PUBLIC_SOCIAL_GITHUB_URL: (safeProcess as any).env?.NEXT_PUBLIC_SOCIAL_GITHUB_URL || '',
 } as const;
 
 // Safe environment getter function
 export function getEnv(key: string, defaultValue = ''): string {
-  return safeProcess.env?.[key] || defaultValue;
+  return (safeProcess as any).env?.[key] || defaultValue;
 }
 
 // Environment check functions
@@ -289,6 +289,6 @@ export function isProduction(): boolean {
 }
 
 // Export the polyfilled process object
-export const processEnv = safeProcess.env;
+export const processEnv = (safeProcess as any).env;
 
 export default safeEnv; 
