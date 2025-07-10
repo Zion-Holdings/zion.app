@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from 'sonner';
-import { Milestone, MilestoneActivity } from './types';
+import type { Milestone, MilestoneActivity } from './types';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 export const useLoadMilestones = (projectId?: string) => {
@@ -13,6 +13,8 @@ export const useLoadMilestones = (projectId?: string) => {
   const [activities, setActivities] = useState<Record<string, MilestoneActivity[]>>({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  if (!supabase) throw new Error('Supabase client not initialized');
 
   const fetchMilestones = async () => {
     if (!projectId) {
