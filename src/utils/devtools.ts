@@ -1,13 +1,17 @@
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
-export async function enableDevToolsInStaging() {
+function hasEnv(obj: unknown): obj is { env: Record<string, unknown> } {
+  return typeof obj === 'object' && obj !== null && 'env' in obj;
+}
 
+export async function enableDevToolsInStaging() {
   // Only attempt to load in development, or if explicitly enabled via NEXT_PUBLIC_DEVTOOLS
-  const isDev =
-    (typeof import.meta !== 'undefined' &&
-      (import.meta as any).env &&
-      ((import.meta as any).env.DEV || (import.meta as any).env.REACT_APP_DEVTOOLS === 'true')) ||
-    process.env.NEXT_PUBLIC_DEVTOOLS === 'true';
+  let isDev = false;
+  if (typeof import.meta !== 'undefined' && hasEnv(import.meta)) {
+    const env = import.meta.env as Record<string, unknown>;
+    isDev = Boolean(env.DEV) || env.REACT_APP_DEVTOOLS === 'true';
+  }
+  isDev = isDev || process.env.NEXT_PUBLIC_DEVTOOLS === 'true';
   if (isDev) {
     try {
       await import(/* @vite-ignore */ 'react-devtools');
