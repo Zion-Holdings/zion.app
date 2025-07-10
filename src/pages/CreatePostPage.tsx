@@ -69,7 +69,7 @@ export default function CreatePostPage() {
       
       // Redirect to the forum category
       router.push(`/community/category/${values.categoryId}`);
-    } catch (_error) {
+    } catch {
       toast({
         title: "Error",
         description: "There was a problem creating your post",
