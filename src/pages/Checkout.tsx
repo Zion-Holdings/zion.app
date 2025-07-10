@@ -112,13 +112,16 @@ function CheckoutInner() {
       }
 
       window.location.href = responseData.url;
-    } catch (err: any) {
+    } catch (err) {
       logDevError('Checkout error:', err);
-      fireEvent('checkout_error', { message: err.message });
-      
+      let message = 'Failed to process checkout. Please try again.';
+      if (err && typeof err === 'object' && 'message' in err && typeof (err as { message?: unknown }).message === 'string') {
+        message = (err as { message: string }).message;
+      }
+      fireEvent('checkout_error', { message });
       toast({
         title: 'Checkout failed',
-        description: err.message || 'Failed to process checkout. Please try again.',
+        description: message,
         variant: 'destructive',
       });
     } finally {
@@ -209,7 +212,7 @@ function CheckoutInner() {
           <FormField
             control={form.control}
             name="name"
-            render={({ field }: { field: any }) => (
+            render={({ field }) => (
               <FormItem>
                 <FormLabel>Full Name *</FormLabel>
                 <FormControl>
@@ -223,7 +226,7 @@ function CheckoutInner() {
           <FormField
             control={form.control}
             name="email"
-            render={({ field }: { field: any }) => (
+            render={({ field }) => (
               <FormItem>
                 <FormLabel>Email Address *</FormLabel>
                 <FormControl>
@@ -237,7 +240,7 @@ function CheckoutInner() {
           <FormField
             control={form.control}
             name="address"
-            render={({ field }: { field: any }) => (
+            render={({ field }) => (
               <FormItem>
                 <FormLabel>Address *</FormLabel>
                 <FormControl>
@@ -251,7 +254,7 @@ function CheckoutInner() {
           <FormField
             control={form.control}
             name="city"
-            render={({ field }: { field: any }) => (
+            render={({ field }) => (
               <FormItem>
                 <FormLabel>City *</FormLabel>
                 <FormControl>
@@ -265,7 +268,7 @@ function CheckoutInner() {
           <FormField
             control={form.control}
             name="country"
-            render={({ field }: { field: any }) => (
+            render={({ field }) => (
               <FormItem>
                 <FormLabel>Country *</FormLabel>
                 <FormControl>
