@@ -47,6 +47,14 @@ export function PaymentButton({
       return;
     }
     
+    if (!supabase) {
+      toast({
+        title: "Payment error",
+        description: "Supabase client not initialized.",
+        variant: "destructive",
+      });
+      return;
+    }
     try {
       setIsProcessing(true);
       
