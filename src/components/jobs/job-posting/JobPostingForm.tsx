@@ -84,12 +84,27 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
     setIsFormLoading(true);
 
     try {
-      const jobData = await submitJob(values);
-      if (!jobData) {
+      const jobDataRaw = await submitJob(values);
+      if (!jobDataRaw) {
         toast.error("Failed to process job data");
         setIsFormLoading(false);
         return;
       }
+      // Construct a Job object with all required fields
+      const now = new Date().toISOString();
+      const jobData = {
+        id: jobId || '',
+        client_id: jobDataRaw.user_id || '',
+        title: jobDataRaw.title || '',
+        description: jobDataRaw.description || '',
+        category: (jobDataRaw.category as any) || 'other',
+        skills: Array.isArray(jobDataRaw.skills) ? jobDataRaw.skills : (typeof jobDataRaw.skills === 'string' ? jobDataRaw.skills.split(',').map((s: string) => s.trim()).filter(Boolean) : []),
+        budget: jobDataRaw.budget || { min: 0, max: 0, currency: 'USD' },
+        deadline: jobDataRaw.expiry_date || now,
+        status: jobDataRaw.status || 'new',
+        created_at: jobDataRaw.created_at || now,
+        updated_at: now,
+      };
       if (jobId) {
         await updateJob(jobId, jobData);
         toast.success("Job updated successfully!");
@@ -160,3 +175,39 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
     </Form>
   );
 }
+
+        
+        <DateFields 
+          startDate={startDate} 
+          setStartDate={setStartDate}
+          endDate={endDate}
+          setEndDate={setEndDate}
+        />
+
+        <div>
+          <Label htmlFor="isRemote">
+            <Input
+              type="checkbox"
+              id="isRemote"
+              checked={isRemote}
+              className="mr-2"
+              onChange={(e) => setIsRemote(e.target.checked)}
+            />
+            Remote
+          </Label>
+        </div>
+
+        <DescriptionFields 
+          control={form.control} 
+          handleEditorChange={handleEditorChange}
+          editorContent={editorContent}
+        />
+
+        <Button type="submit" disabled={isSubmitting || isFormLoading}>
+          {isSubmitting || isFormLoading ? "Submitting..." : jobId ? "Update Job" : "Post Job"}
+        </Button>
+      </form>
+    </Form>
+  );
+}
+
