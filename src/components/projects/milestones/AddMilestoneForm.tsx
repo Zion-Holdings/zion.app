@@ -190,12 +190,10 @@ export function AddMilestoneForm({
                         <Calendar
                           mode="single"
                           selected={(field as { value?: Date }).value}
-                          onSelect={((field as { onChange?: (date: Date | undefined) => void }).onChange)
-                            ? (date => (field as { onChange: (date: Date | undefined) => void }).onChange(date))
-                            : undefined}
+                          onSelect={(date: Date | undefined) => { if (typeof (field as any).onChange === 'function') { (field as { onChange: (date: Date | undefined) => void }).onChange(date); } }}
                           disabled={(date) => date < new Date()}
                           initialFocus
-                          required={false}
+                          required={undefined}
                         />
                       </PopoverContent>
                     </Popover>
@@ -256,4 +254,5 @@ export function AddMilestoneForm({
     </div>
   );
 }
+
 
