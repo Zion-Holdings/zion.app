@@ -172,7 +172,7 @@ export function useContractTemplates() {
   const deleteTemplate = useMutation({
     mutationFn: async (templateId: string) => {
       if (!user) throw new Error("User not authenticated");
-      
+      if (!supabase) throw new Error('Supabase client not initialized');
       setIsLoading(true);
       
       try {

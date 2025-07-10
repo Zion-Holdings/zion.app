@@ -20,7 +20,7 @@ export interface WhitelabelTenant {
   updated_at: string;
   account_manager_id: string | null;
   dns_verified: boolean;
-  email_template_override: Record<string, any> | null;
+  email_template_override: Record<string, unknown> | null;
 }
 
 export function useWhitelabelTenant(externalSubdomain?: string) {
@@ -80,15 +80,16 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
           return;
         }
 
-        if ((data as any)?.tenant) {
-          setTenant((data as any).tenant);
+        if (typeof data === 'object' && data !== null && 'tenant' in data) {
+          setTenant((data as { tenant: unknown }).tenant);
           setRetryCount(0); // Reset retry count on success
         } else {
           setTenant(null);
         }
-      } catch (err: any) {
+      } catch (err: unknown) {
+        const message = err instanceof Error ? err.message : String(err);
         logWarn('Error loading tenant:', {
-          error: err,
+          error: message,
           retryCount,
           timestamp: new Date().toISOString(),
         });
@@ -143,7 +144,7 @@ export function useTenantAdminStatus(tenantId?: string) {
           return;
         }
 
-        const userId = (sessionData as any).session?.user?.id;
+        const userId = typeof sessionData === 'object' && sessionData !== null && 'session' in sessionData && (sessionData as { session?: { user?: { id?: string } } }).session?.user?.id;
         if (!supabase) throw new Error('Supabase client not initialized');
         const { data, error } = await supabase
           .from('tenant_administrators')
