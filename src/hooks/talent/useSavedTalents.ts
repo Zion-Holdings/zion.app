@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { TalentProfile } from "@/types/talent";
+import type { TalentProfile } from "@/types/talent";
 import { toast } from "@/hooks/use-toast";
 import { showApiError } from "@/utils/apiErrorHandler";
 import { useAuthStatus } from "@/hooks/talent";
