@@ -1,4 +1,4 @@
-import { NotificationType } from './types';
+import type { NotificationType } from './types';
 import { createNotification } from './createNotification';
 
 /**

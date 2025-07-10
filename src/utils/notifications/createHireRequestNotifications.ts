@@ -1,6 +1,6 @@
 
 import { createNotification } from './createNotification';
-import { HireRequestNotificationParams } from './types';
+import type { HireRequestNotificationParams } from './types';
 
 /**
  * Creates a hire request notification for admin and talent
