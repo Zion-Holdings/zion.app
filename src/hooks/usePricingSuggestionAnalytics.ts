@@ -96,8 +96,10 @@ export function usePricingSuggestionAnalytics(days = 30) {
           .map((d: unknown) => {
             let type: 'client' | 'talent' = 'client';
             if (typeof d === 'object' && d !== null && 'suggestion_type' in d) {
-              const t = (d as { suggestion_type?: string }).suggestion_type;
-              if (t === 'client' || t === 'talent') type = t;
+              const t = (d as { suggestion_type?: unknown }).suggestion_type;
+              if (t === 'client' || t === 'talent') {
+                type = t;
+              }
             }
             if (typeof d === 'object' && d !== null) {
               return {
