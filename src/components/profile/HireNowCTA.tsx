@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { HireRequestModal } from "./hire-request";
 import { useState } from "react";
-import { TalentProfile } from "@/types/talent";
+import type { TalentProfile } from "@/types/talent";
 
 interface HireNowCTAProps {
   talentProfile: {
