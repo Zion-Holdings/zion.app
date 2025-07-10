@@ -186,10 +186,25 @@ class Transform extends Duplex {
     super(options);
     // Type guard for options
     const opts = typeof options === 'object' && options !== null ? options as Record<string, unknown> : {};
+<<<<<<< HEAD
     this._internalTransform = typeof opts.transform === 'function'
       ? opts.transform as (chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown)
       : (chunk, encoding, callback) => callback();
     this._internalFlush = typeof opts.flush === 'function' ? opts.flush as (callback: (err?: Error) => unknown) => unknown : (callback: (err?: Error) => unknown) => { callback(); };
+=======
+    function defaultTransform(chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown) {
+      return callback();
+    }
+    function defaultFlush(callback: (err?: Error) => unknown) {
+      callback();
+    }
+    this._internalTransform = typeof opts.transform === 'function'
+      ? opts.transform as (chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown)
+      : defaultTransform;
+    this._internalFlush = typeof opts.flush === 'function'
+      ? opts.flush as (callback: (err?: Error) => unknown) => unknown
+      : defaultFlush;
+>>>>>>> b5c243d1ea2cbab5b570edfa10cd3e05fd5cafaa
   }
 
   _transform(chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown): void {
@@ -247,6 +262,10 @@ export default streamModule;
 if (typeof globalThis !== 'undefined') {
   (globalThis as unknown as { stream?: typeof streamModule }).stream = streamModule;
 }
+
+if (typeof window !== 'undefined') {
+  (window as unknown as { stream?: typeof streamModule }).stream = streamModule;
+} 
 
 if (typeof window !== 'undefined') {
   (window as unknown as { stream?: typeof streamModule }).stream = streamModule;
