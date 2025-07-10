@@ -202,7 +202,7 @@ export default function Dashboard() {
                             title: "Onboarding notification sent",
                             description: "Check your notification center"
                           });
-                        } catch (error) {
+                        } catch (_error) {
                           toast({
                             title: "Error sending notification",
                             description: "Please try again",
@@ -232,7 +232,7 @@ export default function Dashboard() {
                             title: "System notification sent",
                             description: "Check your notification center"
                           });
-                        } catch (error) {
+                        } catch (_error) {
                           toast({
                             title: "Error sending notification",
                             description: "Please try again",
