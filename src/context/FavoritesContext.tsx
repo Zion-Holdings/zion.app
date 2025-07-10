@@ -41,7 +41,10 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
   const toggleFavorite = async (productId: string) => {
     try {
       const result = await toggleFavoriteRequest(productId);
-      if ((result as any)?.needsAuth) {
+      if (
+        typeof result === 'object' && result !== null &&
+        'needsAuth' in result && (result as { needsAuth?: unknown }).needsAuth === true
+      ) {
         toast.info('Login required to save favorites');
         setFavorites(prev =>
           prev.includes(productId)
