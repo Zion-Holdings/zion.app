@@ -35,7 +35,8 @@ export function FeaturedListingsSection({
         name: "Zion Academy",
         id: "zion-academy"
       },
-      stock: 10
+      stock: 10,
+      location: "Remote"
     },
     {
       id: "freelance-ai-engineer",
@@ -55,7 +56,8 @@ export function FeaturedListingsSection({
         name: "TopTalent",
         id: "toptalent"
       },
-      stock: 0
+      stock: 0,
+      location: "Remote"
     },
     {
       id: "cloud-gpu-rental",
@@ -75,7 +77,8 @@ export function FeaturedListingsSection({
         name: "ComputeHub",
         id: "computehub"
       },
-      stock: 10
+      stock: 10,
+      location: "San Francisco, CA"
     },
     {
       id: "ai-optimized-cloud-storage",
@@ -95,7 +98,8 @@ export function FeaturedListingsSection({
         name: "DataCloud",
         id: "datacloud"
       },
-      stock: 10
+      stock: 10,
+      location: "New York, NY"
     }
   ];
 
@@ -140,3 +144,7 @@ export function FeaturedListingsSection({
     </section>
   );
 }
+
+  );
+}
+
