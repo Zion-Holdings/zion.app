@@ -15,7 +15,6 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { formatDistanceToNow } from 'date-fns';
-import Link from 'next/link';
 import { LoginModal } from '@/components/auth/LoginModal';
 
 export default function PointsPage() {
@@ -150,7 +149,7 @@ export default function PointsPage() {
                 Try out our new rewards system! Earn points and redeem them for exclusive rewards below.
               </p>
               <div className="grid md:grid-cols-2 gap-4 mb-4">
-                {upcomingRewards.map((reward, idx) => (
+                {upcomingRewards.map((reward, _idx) => (
                   <Card key={reward.id} className="p-4 flex flex-col items-center">
                     <div className="font-bold text-lg mb-1">{reward.title}</div>
                     <div className="text-zion-cyan mb-1">{reward.category}</div>
