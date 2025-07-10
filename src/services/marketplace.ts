@@ -1,9 +1,9 @@
 import axios from 'axios';
 import * as Sentry from '@sentry/nextjs';
 import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
-import { ProductListing } from '@/types/listings';
-import { TalentProfile as TalentProfileType } from '@/types/talent';
-import { ApiResponse, PaginatedResponse, SearchFilters } from '@/types/common';
+import type { ProductListing } from '@/types/listings';
+import type { TalentProfile as TalentProfileType } from '@/types/talent';
+import type { ApiResponse, PaginatedResponse, SearchFilters } from '@/types/common';
 
 // TypeScript interfaces
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
