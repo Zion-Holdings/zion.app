@@ -186,18 +186,16 @@ class Transform extends Duplex {
     super(options);
     // Type guard for options
     const opts = typeof options === 'object' && options !== null ? options as Record<string, unknown> : {};
-    function defaultTransform(chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown) {
-      return callback();
+    if (typeof opts.transform === 'function') {
+      this._internalTransform = opts.transform as (chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown) => unknown;
+    } else {
+      this._internalTransform = (chunk, encoding, callback) => callback();
     }
-    function defaultFlush(callback: (err?: Error) => unknown) {
-      callback();
+    if (typeof opts.flush === 'function') {
+      this._internalFlush = opts.flush as (callback: (err?: Error) => unknown) => unknown;
+    } else {
+      this._internalFlush = (callback) => { callback(); };
     }
-    this._internalTransform = typeof opts.transform === 'function'
-      ? opts.transform as (chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown)
-      : defaultTransform;
-    this._internalFlush = typeof opts.flush === 'function'
-      ? opts.flush as (callback: (err?: Error) => unknown) => unknown
-      : defaultFlush;
   }
 
   _transform(chunk: unknown, encoding: string, callback: (err?: Error, data?: unknown) => unknown): void {
