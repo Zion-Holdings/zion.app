@@ -130,8 +130,8 @@ export async function initializeServices(): Promise<void> {
     try {
       const { datadogLogs } = await import('@datadog/browser-logs');
       datadogLogs.init({
-        clientToken: config.datadog.clientToken!,
-        site: config.datadog.site as any,
+        clientToken: config.datadog.clientToken,
+        site: config.datadog.site,
         service: config.datadog.service,
         env: config.datadog.env,
         forwardErrorsToLogs: true,
@@ -223,7 +223,7 @@ export function getEnvironmentConfig(): EnvironmentConfig {
     supabase: {
       url: supabaseUrl,
       anonKey: supabaseAnonKey,
-      serviceRoleKey: supabaseServiceRoleKey,
+      serviceRoleKey: supabaseServiceRoleKey === undefined ? undefined : supabaseServiceRoleKey,
       isConfigured: supabaseConfigured
     },
     sentry: {
@@ -237,14 +237,14 @@ export function getEnvironmentConfig(): EnvironmentConfig {
       isConfigured: reownConfigured
     },
     datadog: {
-      clientToken: ddClientToken,
-      site: ddSite,
-      service: ddService,
-      env: ddEnv,
+      clientToken: ddClientToken === undefined ? undefined : ddClientToken,
+      site: ddSite === undefined ? undefined : ddSite,
+      service: ddService === undefined ? undefined : ddService,
+      env: ddEnv === undefined ? undefined : ddEnv,
       enabled: datadogEnabled
     },
     logRocket: {
-      id: logRocketId,
+      id: logRocketId === undefined ? undefined : logRocketId,
       enabled: logRocketEnabled
     },
     app: {

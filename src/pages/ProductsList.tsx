@@ -9,20 +9,26 @@ export default function ProductsList() {
         {MARKETPLACE_LISTINGS.map(p => (
           <ProductCard key={p.id} product={{
             id: p.id,
-            name: p.title,
-            title: p.title,
-            description: p.description || '',
-            price: p.price || 0,
-            currency: p.currency,
-            category: p.category,
-            tags: p.tags,
-            images: p.images,
-            rating: p.rating || 0,
-            reviewCount: p.reviewCount || 0,
-            created_at: p.createdAt,
-            updated_at: p.createdAt, // Use createdAt for both
-            stock: p.stock,
-            in_stock: (p.stock || 0) > 0
+            name: p.title ?? '',
+            title: p.title ?? '',
+            description: p.description ?? '',
+            category: p.category ?? '',
+            subcategory: p.subcategory ?? '',
+            price: typeof p.price === 'number' ? p.price : 0,
+            currency: p.currency ?? '',
+            tags: p.tags ?? [],
+            images: p.images ?? [],
+            rating: typeof p.rating === 'number' ? p.rating : 0,
+            reviewCount: typeof p.reviewCount === 'number' ? p.reviewCount : 0,
+            created_at: p.createdAt ?? '',
+            updated_at: p.createdAt ?? '',
+            stock: p.stock ?? 0,
+            in_stock: (p.stock ?? 0) > 0,
+            specifications: Array.isArray(p.specifications)
+              ? Object.fromEntries(p.specifications.map((v, i) => [i.toString(), v]))
+              : (p.specifications ?? {}),
+            author: p.author ?? { name: '', id: '' },
+            uspHeadline: p.uspHeadline ?? '',
           }} />
         ))}
       </div>
