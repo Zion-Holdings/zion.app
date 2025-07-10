@@ -286,24 +286,6 @@ export default function PointsPage() {
           )}
         </CardContent>
       </Card>
-
-      <Card className="text-center">
-        <CardContent className="pt-6">
-          <Star className="h-12 w-12 text-primary mx-auto mb-4" />
-          <h3 className="text-2xl font-bold mb-2">Full Rewards System Coming Soon</h3>
-          <p className="text-muted-foreground mb-4">
-            We're finalizing the redemption system. Keep earning points - they'll be ready to spend soon!
-          </p>
-          <div className="flex gap-4 justify-center">
-            <Button variant="outline" asChild>
-              <Link href="/marketplace">Browse Marketplace</Link>
-            </Button>
-            <Button variant="outline" asChild>
-              <Link href="/community">Join Community</Link>
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }
