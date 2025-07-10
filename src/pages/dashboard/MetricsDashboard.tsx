@@ -15,6 +15,8 @@ interface MetricsDashboardProps {
 export default function MetricsDashboard({ adminView = false }: MetricsDashboardProps) {
   const [internalOnly, setInternalOnly] = useState(adminView);
 
+  if (!supabase) throw new Error('Supabase client not initialized');
+
   const { data: marketplace } = useQuery({
     queryKey: ['marketplace-metrics'],
     queryFn: async () => {
@@ -46,6 +48,8 @@ export default function MetricsDashboard({ adminView = false }: MetricsDashboard
     },
     refetchInterval: 30000,
   });
+
+  if (!supabase) throw new Error('Supabase client not initialized');
 
   const { data: token } = useQuery({
     queryKey: ['token-metrics'],

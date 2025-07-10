@@ -14,6 +14,7 @@ const VerifyEmailPage = () => {
   useEffect(() => {
     const confirmVerification = async () => {
       try {
+        if (!supabase) throw new Error('Supabase client not initialized');
         // Supabase client automatically handles session from URL fragment or cookie after redirect
         // We need to ensure a session is active, which implies Supabase confirmed the email.
         const { data: { session }, error: sessionError } = await supabase.auth.getSession();

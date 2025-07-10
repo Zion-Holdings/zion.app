@@ -33,6 +33,7 @@ export default function ProfilePage() {
       setIsLoading(true);
       setIsError(false);
       try {
+        if (!supabase) throw new Error('Supabase client not initialized');
         const { data, error } = await supabase
           .from("talent_profiles")
           .select("*")

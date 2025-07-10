@@ -17,6 +17,8 @@ export default function OrderDetailPage() {
   const { user } = useAuth();
   const { data: order, isLoading } = useGetOrderQuery(orderId);
 
+  if (!supabase) throw new Error('Supabase client not initialized');
+
   const handleDownload = async () => {
     if (!order) return;
     const blob = await generateInvoicePdf(order);

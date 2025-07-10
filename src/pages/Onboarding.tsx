@@ -142,6 +142,8 @@ export default function Onboarding() {
     return <div>Loading...</div>;
   }
 
+  if (!supabase) throw new Error('Supabase client not initialized');
+
   return (
     <>
       <Header />
