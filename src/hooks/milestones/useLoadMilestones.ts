@@ -14,9 +14,8 @@ export const useLoadMilestones = (projectId?: string) => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  if (!supabase) throw new Error('Supabase client not initialized');
-
-  const fetchMilestones = async () => {
+  const loadMilestones = async () => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     if (!projectId) {
       setIsLoading(false);
       return;
@@ -64,10 +63,32 @@ export const useLoadMilestones = (projectId?: string) => {
     }
   };
 
+  const loadActivities = async () => {
+    if (!supabase) throw new Error('Supabase client not initialized');
+    const activitiesMap: Record<string, MilestoneActivity[]> = {};
+    
+    for (const milestone of milestones) {
+      const { data: activitiesData, error: activitiesError } = await supabase
+        .from('milestone_activities')
+        .select(`
+          *,
+          created_by_profile:profiles!user_id(display_name, avatar_url)
+        `)
+        .eq('milestone_id', milestone.id)
+        .order('created_at', { ascending: false });
+        
+      if (activitiesError) throw activitiesError;
+      
+      activitiesMap[milestone.id] = activitiesData || [];
+    }
+    
+    setActivities(activitiesMap);
+  };
+
   // Fetch milestones when component mounts or projectId changes
   useEffect(() => {
     if (projectId) {
-      fetchMilestones();
+      loadMilestones();
     }
   }, [projectId]);
 
@@ -76,6 +97,6 @@ export const useLoadMilestones = (projectId?: string) => {
     activities,
     isLoading,
     error,
-    refetch: fetchMilestones
+    refetch: loadMilestones
   };
 };
