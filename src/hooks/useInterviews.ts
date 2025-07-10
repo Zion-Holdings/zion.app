@@ -142,12 +142,12 @@ export function useInterviews() {
           end_time: interview.end_time || '',
           duration_minutes: interview.duration_minutes,
           status,
-          meeting_link: interview.meeting_link,
           meeting_platform,
           created_at: interview.created_at,
           updated_at: interview.updated_at,
           interview_type,
         };
+        if (interview.meeting_link !== undefined) result.meeting_link = interview.meeting_link;
         if (interview.notes !== undefined) result.notes = interview.notes;
         if (interview.title !== undefined) result.title = interview.title;
         if (interview.clients?.display_name !== undefined) result.client_name = interview.clients.display_name;
