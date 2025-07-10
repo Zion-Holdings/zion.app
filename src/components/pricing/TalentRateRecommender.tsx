@@ -5,10 +5,9 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 import { Sparkles } from 'lucide-react';
 import {
   getTalentRateSuggestion,
-  PricingSuggestion,
-  TalentRateParams,
   trackPricingSuggestion
 } from "@/services/pricingSuggestionService";
+import type { PricingSuggestion, TalentRateParams } from "@/services/pricingSuggestionService";
 import { PricingSuggestionBox } from "./PricingSuggestionBox";
 import { useAuth } from "@/hooks/useAuth";
 
