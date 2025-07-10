@@ -80,7 +80,7 @@ export const monitorBundlePerformance = () => {
 
     // Report to analytics if available
     function hasGtag(obj: unknown): obj is { gtag: (...args: unknown[]) => void } {
-      return typeof obj === 'object' && obj !== null && 'gtag' in obj && typeof (obj as any).gtag === 'function';
+      return typeof obj === 'object' && obj !== null && 'gtag' in obj && typeof (obj as { gtag?: unknown }).gtag === 'function';
     }
     if (hasGtag(window)) {
       window.gtag('event', 'page_load_time', {
@@ -187,7 +187,7 @@ export const optimizeMemoryUsage = () => {
         console.warn('High memory usage detected, triggering cleanup');
         // Force garbage collection if available
         function hasGc(obj: unknown): obj is { gc: () => void } {
-          return typeof obj === 'object' && obj !== null && 'gc' in obj && typeof (obj as any).gc === 'function';
+          return typeof obj === 'object' && obj !== null && 'gc' in obj && typeof (obj as { gc?: unknown }).gc === 'function';
         }
         if (hasGc(window)) {
           window.gc();
