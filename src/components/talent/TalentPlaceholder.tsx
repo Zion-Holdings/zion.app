@@ -12,7 +12,7 @@ const DUMMY_TALENTS = [
 
 const SKILLS = ["All", "AI/ML", "Web Development", "Data Science", "Blockchain"];
 
-export function TalentPlaceholder() {
+export function TalentDirectory() {
   const [filter, setFilter] = useState("All");
   const filteredTalents = filter === "All" ? DUMMY_TALENTS : DUMMY_TALENTS.filter(t => t.skill === filter);
 
