@@ -30,20 +30,35 @@ export function useMessagingRealtime(
           table: 'messages', 
           filter: `recipient_id=eq.${user.id}` 
         }, 
-        (payload: any) => {
-          // Update messages if the conversation is selected
-          if (activeConversation && payload.new.sender_id === activeConversation.other_user.id) {
-            setActiveMessages(prev => [...prev, payload.new as Message]);
+        (payload: unknown) => {
+          // Type guard for payload shape
+          if (
+            typeof payload === 'object' && payload !== null &&
+            'new' in payload &&
+            typeof (payload as { new: unknown }).new === 'object' &&
+            (payload as { new: unknown }).new !== null
+          ) {
+            const newMessage = (payload as { new: unknown }).new;
+            // Type guard for newMessage shape
+            if (
+              typeof newMessage === 'object' && newMessage !== null &&
+              'sender_id' in newMessage &&
+              'content' in newMessage &&
+              'sender_name' in newMessage
+            ) {
+              if (
+                activeConversation &&
+                (newMessage as any).sender_id === activeConversation.other_user.id
+              ) {
+                setActiveMessages(prev => [...prev, newMessage as Message]);
+              }
+              fetchConversations();
+              toast({
+                title: `New message from ${(newMessage as any).sender_name || 'Someone'}`,
+                description: (newMessage as any).content.substring(0, 50) + ((newMessage as any).content.length > 50 ? '...' : '')
+              });
+            }
           }
-          
-          // Update conversations
-          fetchConversations();
-          
-          // Show toast notification for new message
-          toast({
-            title: `New message from ${payload.new.sender_name || 'Someone'}`,
-            description: payload.new.content.substring(0, 50) + (payload.new.content.length > 50 ? '...' : '')
-          });
         }
       )
       .subscribe();
