@@ -94,7 +94,9 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
       const now = new Date().toISOString();
       // Parse budget from salary_range or use default
       let budget = { min: 0, max: 0, currency: 'USD' };
-      if (typeof jobDataRaw.salary_range === 'string' && jobDataRaw.salary_range.trim() !== '') {
+      if (jobDataRaw.budget && typeof jobDataRaw.budget === 'object') {
+        budget = jobDataRaw.budget;
+      } else if (typeof jobDataRaw.salary_range === 'string' && jobDataRaw.salary_range.trim() !== '') {
         const match = jobDataRaw.salary_range.match(/(\d+)/g);
         if (match && match.length >= 2) {
           budget.min = parseInt(match[0], 10);
