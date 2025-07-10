@@ -87,7 +87,8 @@ export function generateDatacenterEquipment(count: number, startId: number = 1, 
       rating: Math.round(rating * 10) / 10,
       reviewCount,
       location: locations[Math.floor(rand3 * locations.length)],
-      availability: rand6 > 0.3 ? "In Stock" : "2-4 Weeks"
+      availability: rand6 > 0.3 ? "In Stock" : "2-4 Weeks",
+      stock: 10,
     };
     
     equipment.push(equipmentItem);
