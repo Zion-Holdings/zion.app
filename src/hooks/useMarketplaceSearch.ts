@@ -73,7 +73,7 @@ export function useMarketplaceSearch() {
         const responseData = await response.json(); // Get the full response object
         if (responseData && responseData.results && Array.isArray(responseData.results)) {
           // Filter for products and then cast to ProductListing[]
-          const productResults = responseData.results.filter((item: any) => item.type === 'product');
+          const productResults = responseData.results.filter((item: unknown) => typeof item === 'object' && item !== null && 'type' in item && (item as { type: string }).type === 'product');
           setListings(productResults as ProductListing[]); // Use the 'results' array
         } else {
           setListings([]); // Default to empty if structure is wrong
