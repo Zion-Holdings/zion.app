@@ -2,7 +2,7 @@
 
 
 import { Checkbox } from "@/components/ui/checkbox";
-import { AvailabilityFilterProps } from "@/types/filters";
+import type { AvailabilityFilterProps } from "@/types/filters";
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const AVAILABILITY_OPTIONS = [
