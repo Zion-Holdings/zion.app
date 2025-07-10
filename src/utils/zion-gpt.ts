@@ -129,13 +129,12 @@ export async function callZionGPT({
     if (data && typeof data === 'object' && 'tokensUsed' in data) {
       await logModelUsage(
         modelId, 
-        (data as any).tokensUsed,
+        (data as { tokensUsed: number }).tokensUsed,
         `${purpose}-generation`,
         userId
       );
     }
-    
-    return (data as any)?.completion || '';
+    return (typeof data === 'object' && data && 'completion' in data) ? (data as { completion: string }).completion : '';
   } catch (error) {
     logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { context: 'callZionGPT' });
     throw error;
