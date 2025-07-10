@@ -139,15 +139,19 @@ export async function register() {
       },
       
       initialScope: (scope: unknown) => {
-        if (typeof scope === 'object' && scope !== null && 'setTag' in scope && typeof (scope as any).setTag === 'function') {
+        if (
+          typeof scope === 'object' && scope !== null &&
+          'setTag' in scope && typeof (scope as { setTag?: unknown }).setTag === 'function'
+        ) {
+          const setTag = (scope as { setTag: (key: string, value: string) => void }).setTag;
           if (SENTRY_RELEASE) {
-            (scope as any).setTag("release", SENTRY_RELEASE);
+            setTag("release", SENTRY_RELEASE);
           }
           if (process.env.NEXT_PUBLIC_VERCEL_ENV) {
-            (scope as any).setTag("vercel_env", process.env.NEXT_PUBLIC_VERCEL_ENV);
+            setTag("vercel_env", process.env.NEXT_PUBLIC_VERCEL_ENV);
           }
           if (process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA) {
-            (scope as any).setTag("commit", process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA);
+            setTag("commit", process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA);
           }
         }
       },
