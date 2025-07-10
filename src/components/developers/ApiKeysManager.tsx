@@ -253,7 +253,7 @@ export function ApiKeysManager() {
                 </div>
                 
                 <div className="mt-3 flex flex-wrap gap-2">
-                  {key.scopes.map((scope) => (
+                  {key.scopes.map((scope: ApiKeyScope) => (
                     <Badge 
                       key={scope} 
                       variant="secondary"
