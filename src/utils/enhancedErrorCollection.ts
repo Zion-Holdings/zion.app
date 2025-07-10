@@ -281,8 +281,8 @@ class EnhancedErrorCollector {
     
     const context: ErrorContext = {
       sessionId: this.sessionId,
-      route: typeof window !== 'undefined' ? window.location.pathname : undefined,
-      userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : undefined,
+      route: typeof window !== 'undefined' && window.location.pathname ? window.location.pathname : '',
+      userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
       timestamp,
       buildVersion: process.env.NEXT_PUBLIC_BUILD_VERSION || 'unknown',
       ...options.context,
@@ -307,7 +307,7 @@ class EnhancedErrorCollector {
       errorDetails = {
         id: traceId,
         message: errorObj.message,
-        stack: errorObj.stack,
+        stack: errorObj.stack || '',
         name: errorObj.name,
         cause: errorObj.cause,
         severity: options.severity || categorization.severity,
