@@ -9,7 +9,7 @@ interface PerformanceMetric {
   rating: 'good' | 'needs-improvement' | 'poor';
   timestamp: number;
   id: string;
-  navigationType?: string;
+  navigationType?: string | undefined;
   url?: string;
 }
 
@@ -96,8 +96,8 @@ class PerformanceMonitor {
     this.metrics.push(performanceMetric);
     
     // Send to analytics if available
-    if (typeof window !== 'undefined' && (window as unknown as { gtag?: Function }).gtag) {
-      (window as unknown as { gtag?: Function }).gtag!('event', metric.name || name, {
+    if (typeof window !== 'undefined' && (window as unknown as { gtag?: (event: string, action: string, params: Record<string, unknown>) => void }).gtag) {
+      (window as unknown as { gtag?: (event: string, action: string, params: Record<string, unknown>) => void }).gtag!('event', metric.name || name, {
         value: performanceMetric.value,
         event_label: performanceMetric.id,
         non_interaction: true,
