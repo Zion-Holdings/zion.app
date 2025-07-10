@@ -5,7 +5,6 @@ import { ChatWidget } from "@/components/ChatWidget";
 import { useRouter } from "next/router";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import Skeleton from "@/components/ui/skeleton";
 import ImageWithRetry from '@/components/ui/ImageWithRetry';
 import { Star, MessageSquare, Brain, Shield } from 'lucide-react';
 
@@ -27,7 +26,7 @@ export default function ListingDetail() {
   const router = useRouter();
   const id = router.query.id as string;
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, _setIsLoading] = useState(false);
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
   const { user } = useAuth();
