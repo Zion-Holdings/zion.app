@@ -103,7 +103,7 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
       }
       const jobData = {
         id: jobId || '',
-        client_id: jobDataRaw.user_id || '',
+        user_id: jobDataRaw.user_id || '',
         title: jobDataRaw.title || '',
         location: jobDataRaw.location || '',
         company: jobDataRaw.company || '',
