@@ -38,7 +38,7 @@ export function CountrySelector({ onCountryChange, selectedCountry }: CountrySel
       
       <Select 
         onValueChange={handleCountryChange} 
-        value={selectedCountry?.country}
+        value={selectedCountry?.country ?? ""}
       >
         <SelectTrigger className="bg-zion-blue border-zion-blue-light text-white">
           <SelectValue placeholder="Select a country" />
