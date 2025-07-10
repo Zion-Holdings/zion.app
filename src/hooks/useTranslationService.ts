@@ -76,6 +76,7 @@ export function useTranslationService() {
         return { translations };
       }
 
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase.functions.invoke('translate-content', {
         body: {
           content,

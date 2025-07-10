@@ -458,10 +458,12 @@ class AppHealthMonitor {
 
   private startContinuousMonitoring(): void {
     // Update metrics every 30 seconds
+    function setWindowProperty<T>(key: string, value: T) {
+      (window as unknown as Record<string, unknown>)[key] = value;
+    }
     setInterval(() => {
       this.performHealthCheck().then(report => {
-        // Store latest report for quick access
-        (window as unknown as { latestHealthReport?: HealthReport }).latestHealthReport = report;
+        setWindowProperty<HealthReport>('latestHealthReport', report);
         // Log warnings and critical issues
         if (report.status !== 'healthy') {
           console.warn('🏥 Health issue detected:', report);
@@ -471,7 +473,7 @@ class AppHealthMonitor {
       });
     }, 30000);
     // Expose health monitor globally for debugging
-    (window as unknown as { appHealthMonitor?: AppHealthMonitor }).appHealthMonitor = this;
+    setWindowProperty<AppHealthMonitor>('appHealthMonitor', this);
   }
 
   public getLatestReport(): HealthReport | null {

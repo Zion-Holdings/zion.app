@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
-import { Review, ReviewReport } from "@/types/reviews";
+import type { Review, ReviewReport } from '@/types/reviews';
 import { toast } from "@/hooks/use-toast";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
@@ -21,6 +21,7 @@ export function useReviews(projectId?: string) {
     setIsLoading(true);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from("reviews")
         .select(`
@@ -37,6 +38,7 @@ export function useReviews(projectId?: string) {
       
       // Check if current user has already submitted a review
       if (user) {
+        if (!supabase) throw new Error('Supabase client not initialized');
         const { data: userReviewData, error: userReviewError } = await supabase
           .from("reviews")
           .select("*")
@@ -67,6 +69,7 @@ export function useReviews(projectId?: string) {
     setIsLoading(true);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from("reviews")
         .select(`
@@ -117,6 +120,7 @@ export function useReviews(projectId?: string) {
     setIsSubmitting(true);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from("reviews")
         .insert({
@@ -165,6 +169,7 @@ export function useReviews(projectId?: string) {
     setIsSubmitting(true);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { error } = await supabase
         .from("reviews")
         .update(updates)
@@ -202,6 +207,7 @@ export function useReviews(projectId?: string) {
     if (!user) return false;
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { error } = await supabase
         .from("review_reports")
         .insert({
