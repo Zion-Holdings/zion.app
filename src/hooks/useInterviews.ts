@@ -63,9 +63,9 @@ export function useInterviews() {
       );
 
       return data;
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Error in requestInterview:', { data: err });
-      setError(err.message);
+      setError(err instanceof Error ? err.message : String(err));
       return null;
     } finally {
       setIsLoading(false);
@@ -103,32 +103,36 @@ export function useInterviews() {
 
       // Transform the data to match Interview type. Default to an empty array to
       // avoid "map is not a function" errors when no interviews are returned
-      const formattedInterviews = (data ?? []).map((interview: any): Interview => ({
-        id: interview.id,
-        client_id: interview.client_id,
-        talent_id: interview.talent_id,
-        scheduled_date: interview.scheduled_date,
-        end_time: interview.end_time || '',
-        duration_minutes: interview.duration_minutes,
-        status: interview.status,
-        notes: interview.notes,
-        meeting_link: interview.meeting_link,
-        meeting_platform: interview.meeting_platform,
-        created_at: interview.created_at,
-        updated_at: interview.updated_at,
-        title: interview.title,
-        interview_type: interview.interview_type,
-        client_name: interview.clients?.display_name,
-        talent_name: interview.talents?.full_name,
-        client_avatar: interview.clients?.avatar_url,
-        talent_avatar: interview.talents?.profile_picture_url,
-      }));
+      const formattedInterviews = (data ?? []).map((interview: unknown): Interview => {
+        if (typeof interview !== 'object' || interview === null) throw new Error('Invalid interview data');
+        const i = interview as Record<string, any>;
+        return {
+          id: i.id,
+          client_id: i.client_id,
+          talent_id: i.talent_id,
+          scheduled_date: i.scheduled_date,
+          end_time: i.end_time || '',
+          duration_minutes: i.duration_minutes,
+          status: i.status,
+          notes: i.notes,
+          meeting_link: i.meeting_link,
+          meeting_platform: i.meeting_platform,
+          created_at: i.created_at,
+          updated_at: i.updated_at,
+          title: i.title,
+          interview_type: i.interview_type,
+          client_name: i.clients?.display_name,
+          talent_name: i.talents?.full_name,
+          client_avatar: i.clients?.avatar_url,
+          talent_avatar: i.talents?.profile_picture_url,
+        };
+      });
 
       setInterviews(formattedInterviews);
       return formattedInterviews;
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Error in fetchInterviews:', { data: err });
-      setError(err.message);
+      setError(err instanceof Error ? err.message : String(err));
       return [];
     } finally {
       setIsLoading(false);
@@ -208,9 +212,9 @@ export function useInterviews() {
       // Refresh the interviews list
       await fetchInterviews();
       return true;
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Error in respondToInterview:', { data: err });
-      setError(err.message);
+      setError(err instanceof Error ? err.message : String(err));
       return false;
     } finally {
       setIsLoading(false);
@@ -297,9 +301,9 @@ export function useInterviews() {
       // Refresh the interviews list
       await fetchInterviews();
       return true;
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Error in cancelInterview:', { data: err });
-      setError(err.message);
+      setError(err instanceof Error ? err.message : String(err));
       return false;
     } finally {
       setIsLoading(false);
