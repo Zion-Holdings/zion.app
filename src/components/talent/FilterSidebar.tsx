@@ -10,7 +10,7 @@ import { AvailabilityFilter } from "./filters/AvailabilityFilter";
 import { RegionFilter } from "./filters/RegionFilter";
 import { ExperienceFilter } from "./filters/ExperienceFilter";
 import { PriceFilter } from "./filters/PriceFilter";
-import { FilterSidebarProps } from "@/types/filters";
+import type { FilterSidebarProps } from "@/types/filters";
 
 export function FilterSidebar({
   searchTerm,
