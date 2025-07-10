@@ -32,7 +32,7 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
   const poster = images[0];
 
   return (
-    <Dialog open={zoomOpen} onOpenChange={(o) => { setZoomOpen(o); if (!o) setZoomed(false); }}>
+    <Dialog open={zoomOpen} onOpenChange={(o: boolean) => { setZoomOpen(o); if (!o) setZoomed(false); }}>
       <Tabs defaultValue="images" className="w-full">
       <TabsList className="grid grid-cols-3 bg-zion-blue-dark border border-zion-blue-light">
         <TabsTrigger value="images">Images</TabsTrigger>
