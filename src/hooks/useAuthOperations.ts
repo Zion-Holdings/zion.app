@@ -219,7 +219,7 @@ export function useAuthOperations(
       if (!profileData || !profileData.id) {
         throw new Error("Profile data or user ID is missing.");
       }
-
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { error } = await supabase
         .from("profiles")
         .update({
