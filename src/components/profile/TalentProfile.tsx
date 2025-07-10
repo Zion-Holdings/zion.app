@@ -98,8 +98,8 @@ export function TalentProfile({
             </h2>
             <ProfileRatings 
               userId={profile.id}
-              averageRating={profile.average_rating}
-              ratingCount={profile.rating_count}
+              averageRating={profile.average_rating ?? 0}
+              ratingCount={profile.rating_count ?? 0}
             />
           </div>
           
