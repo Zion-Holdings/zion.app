@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { SearchSuggestion, SearchHighlight } from "@/types/search";
+import type { SearchSuggestion, SearchHighlight } from "@/types/search";
 import { logInfo } from '@/utils/productionLogger';
 
 

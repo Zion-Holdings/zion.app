@@ -67,6 +67,7 @@ export function RouteChangeHandler({
         router.events.off('routeChangeError', handleRouteChangeError);
       };
     }
+    return undefined;
   }, [onRouteChange, resetScrollOnChange, forceRerender]); // Removed router.events from dependencies
 
   return null;

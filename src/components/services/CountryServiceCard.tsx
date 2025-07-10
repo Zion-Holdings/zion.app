@@ -9,7 +9,7 @@ import { Globe, Server, Clock, MapPin, Check } from 'lucide-react';
 
 
 
-import { CountryPricing } from "@/data/onsiteServicePricing";
+import type { CountryPricing } from "@/data/onsiteServicePricing";
 
 interface CountryServiceCardProps {
   country: CountryPricing;

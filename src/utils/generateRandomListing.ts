@@ -109,8 +109,8 @@ export function generateRandomListing(): ProductListing {
     rating: Math.round((4 + Math.random()) * 10) / 10,
     reviewCount: Math.floor(Math.random() * 50) + 1,
     featured: Math.random() < 0.3,
-    location: REGIONS.length > 0 ? REGIONS[Math.floor(Math.random() * REGIONS.length)] : 'Global',
-    availability: availabilityOptions[Math.floor(Math.random() * availabilityOptions.length)],
+    location: REGIONS.length > 0 ? (REGIONS[Math.floor(Math.random() * REGIONS.length)] ?? 'Global') : 'Global',
+    availability: availabilityOptions.length > 0 ? (availabilityOptions[Math.floor(Math.random() * availabilityOptions.length)] ?? 'Immediate') : 'Immediate',
     aiScore: Math.floor(80 + Math.random() * 20),
     stock: 10,
   };

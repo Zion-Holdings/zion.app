@@ -75,7 +75,15 @@ export function SignUpForm() {
         });
 
         if (result?.error) {
-          throw new Error(result.error);
+          let errorMsg: string;
+          if (typeof result.error === 'string') {
+            errorMsg = result.error;
+          } else if (typeof result.error === 'object' && result.error !== null && 'message' in result.error && typeof (result.error as { message?: unknown }).message === 'string') {
+            errorMsg = (result.error as { message: string }).message;
+          } else {
+            errorMsg = 'Signup failed. Please try again.';
+          }
+          throw new Error(errorMsg);
         }
 
         if (result?.emailVerificationRequired) {
@@ -88,7 +96,15 @@ export function SignUpForm() {
         const { error } = await login(formData.email, formData.password);
         
         if (error) {
-          throw new Error(error);
+          let errorMsg: string;
+          if (typeof error === 'string') {
+            errorMsg = error;
+          } else if (typeof error === 'object' && error !== null && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+            errorMsg = (error as { message: string }).message;
+          } else {
+            errorMsg = 'Login failed. Please try again.';
+          }
+          throw new Error(errorMsg);
         }
         
         router.push("/mobile");

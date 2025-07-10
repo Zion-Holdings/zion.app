@@ -30,55 +30,55 @@ function logInfo(message: string) {
 }
 
 // Browser-safe memory stores
-class MemoryBlockstore {
-  private store = new Map();
+class _MemoryBlockstore {
+  private store = new Map<string, unknown>();
   
-  async put(key: any, value: any) {
-    this.store.set(key.toString(), value);
+  async put(key: unknown, value: unknown) {
+    this.store.set(String(key), value);
   }
   
-  async get(key: any) {
-    return this.store.get(key.toString());
+  async get(key: unknown) {
+    return this.store.get(String(key));
   }
   
-  async has(key: any) {
-    return this.store.has(key.toString());
+  async has(key: unknown) {
+    return this.store.has(String(key));
   }
   
-  async delete(key: any) {
-    this.store.delete(key.toString());
+  async delete(key: unknown) {
+    this.store.delete(String(key));
   }
 }
 
-class MemoryDatastore {
-  private store = new Map();
+class _MemoryDatastore {
+  private store = new Map<string, unknown>();
   
-  async put(key: any, value: any) {
-    this.store.set(key.toString(), value);
+  async put(key: unknown, value: unknown) {
+    this.store.set(String(key), value);
   }
   
-  async get(key: any) {
-    return this.store.get(key.toString());
+  async get(key: unknown) {
+    return this.store.get(String(key));
   }
   
-  async has(key: any) {
-    return this.store.has(key.toString());
+  async has(key: unknown) {
+    return this.store.has(String(key));
   }
   
-  async delete(key: any) {
-    this.store.delete(key.toString());
+  async delete(key: unknown) {
+    this.store.delete(String(key));
   }
 }
 
 // Types for OrbitDB and its stores might be needed from @orbitdb/core if used directly
 // import { LogStore } from '@orbitdb/core';
 
-let orbit: any = null; // Using 'any' for now, replace with OrbitDB type from @orbitdb/core if available
-let heliaNode: any | null = null;
+let orbit: unknown = null; // Using 'unknown' for now, replace with OrbitDB type from @orbitdb/core if available
+let heliaNode: unknown | null = null;
 
 // Simplified libp2p options for this Helia instance
 // Depending on use case, might share libp2p from ipfs.ts or have more transports
-const libp2pOptions = {
+const _libp2pOptions = {
   addresses: {
     listen: ['/ip4/0.0.0.0/tcp/0']
   },
@@ -114,14 +114,18 @@ export async function initOrbit(repoPath = './orbitdb-helia') {
       // Browser environment - use mock
       orbit = await createOrbitDB();
     }
-  } catch (error: any) {
-    console.warn('⚠️ Failed to initialize OrbitDB:', error.message);
+  } catch (error) {
+    let message = 'Unknown error';
+    if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+      message = (error as { message: string }).message;
+    }
+    console.warn('⚠️ Failed to initialize OrbitDB:', message);
     // Fallback to mock
     orbit = await createOrbitDB();
   }
 }
 
-export async function getLog(name: string): Promise<any> {
+export async function getLog(name: string): Promise<unknown> {
   if (isBuildEnv || isBrowserEnv) {
     console.log('🚫 OrbitDB getLog not available in browser environment');
     return {
@@ -139,8 +143,12 @@ export async function getLog(name: string): Promise<any> {
     // Open a log store with the given name
     const log = await orbit.open(name, { type: 'log' });
     return log;
-  } catch (error: any) {
-    console.warn('⚠️ Failed to open OrbitDB log:', error.message);
+  } catch (error) {
+    let message = 'Unknown error';
+    if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+      message = (error as { message: string }).message;
+    }
+    console.warn('⚠️ Failed to open OrbitDB log:', message);
     // Return mock log
     return {
       add: () => Promise.resolve(),
@@ -168,8 +176,12 @@ export async function stopOrbit(): Promise<void> {
       heliaNode = null;
       logInfo('Helia for OrbitDB stopped.');
     }
-  } catch (error: any) {
-    console.warn('⚠️ Failed to stop OrbitDB:', error.message);
+  } catch (error) {
+    let message = 'Unknown error';
+    if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+      message = (error as { message: string }).message;
+    }
+    console.warn('⚠️ Failed to stop OrbitDB:', message);
   }
 }
 

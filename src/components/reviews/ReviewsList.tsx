@@ -1,5 +1,5 @@
 
-import { Review } from "@/types/reviews";
+import type { Review } from "@/types/reviews";
 import { ReviewCard } from "./ReviewCard";
 
 interface ReviewsListProps {

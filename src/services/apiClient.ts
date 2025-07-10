@@ -26,13 +26,13 @@ function mapStatusMessage(status?: number, fallback = ''): string {
 }
 
 // Define the global error handler (exported for testing purposes)
-export const globalAxiosErrorHandler = (error: any) => {
+export const globalAxiosErrorHandler = (error: unknown) => {
   const contentType = typeof error === 'object' && error && 'response' in error && error.response && 'headers' in error.response ? (error.response as { headers?: Record<string, unknown> }).headers?.['content-type'] : undefined;
   if (typeof contentType === 'string' && contentType.includes('text/html')) {
     showError('html-error', 'Server returned HTML instead of JSON');
   }
 
-  const config = typeof error === 'object' && error && 'config' in error ? (error as { config?: any }).config || {} : {};
+  const config = typeof error === 'object' && error && 'config' in error ? (error as { config?: unknown }).config || {} : {};
   const axiosRetryState = config['axios-retry']; // Standard property used by axios-retry
 
   const isRetryingAndNotFinalConfiguredRetry = axiosRetryState && axiosRetryState.attemptNumber <= axiosRetryState.retryCount;
@@ -43,7 +43,7 @@ export const globalAxiosErrorHandler = (error: any) => {
 
   // Handle DELETE 404 as success (item already removed)
   if (status === 404 && method === 'DELETE') {
-    return Promise.resolve(typeof error === 'object' && error && 'response' in error ? (error as { response?: any }).response : undefined);
+    return Promise.resolve(typeof error === 'object' && error && 'response' in error ? (error as { response?: unknown }).response : undefined);
   }
 
   // Suppress 404 toast if retries are pending
@@ -104,7 +104,7 @@ export const globalAxiosErrorHandler = (error: any) => {
     showApiError(error);
   } else {
     // Log background errors without showing toast
-    logDebug(`Background API request failed (${status} ${method}): ${url}`, { data: typeof error === 'object' && error && 'response' in error && error.response && 'data' in error.response ? (error.response as { data?: any }).data : undefined });
+    logDebug(`Background API request failed (${status} ${method}): ${url}`, { data: typeof error === 'object' && error && 'response' in error && error.response && 'data' in error.response ? (error.response as { data?: unknown }).data : undefined });
   }
 
   return Promise.reject(error);
@@ -121,12 +121,12 @@ const apiClient = axios.create({
   baseURL: `${API_BASE}/api/v1/services`,
 });
 
-apiClient.interceptors.request.use((config: any) => {
+apiClient.interceptors.request.use((config: unknown) => {
   if (typeof config !== 'object' || config === null) {
     return { headers: { Accept: 'application/json' } };
   }
-  const headers = 'headers' in config && typeof (config as { headers?: any }).headers === 'object' && (config as { headers?: any }).headers !== null
-    ? { ...(config as { headers: Record<string, any> }).headers, Accept: 'application/json' }
+  const headers = 'headers' in config && typeof (config as { headers?: unknown }).headers === 'object' && (config as { headers?: unknown }).headers !== null
+    ? { ...(config as { headers: Record<string, unknown> }).headers, Accept: 'application/json' }
     : { Accept: 'application/json' };
   return {
     ...config,
@@ -146,7 +146,7 @@ axiosRetry(apiClient, {
 
 apiClient.interceptors.response.use(
   (response: AxiosResponse) => response,
-  async (error: any) => {
+  async (error: unknown) => {
     const status = typeof error === 'object' && error && 'response' in error && error.response && 'status' in error.response ? (error.response as { status?: number }).status : undefined;
 
     if (status === 401) {

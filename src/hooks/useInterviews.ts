@@ -121,27 +121,40 @@ export function useInterviews() {
         clients?: { display_name?: string; avatar_url?: string };
         talents?: { full_name?: string; profile_picture_url?: string };
       };
+      const validStatuses = ['requested', 'confirmed', 'declined', 'rescheduled', 'completed', 'cancelled'] as const;
+      const validPlatforms = ['zoom', 'google-meet', 'teams', 'other', 'in-app'] as const;
+      const validTypes = ['video', 'phone', 'in-person'] as const;
       const formattedInterviews = (data ?? []).map((interview: InterviewRaw): Interview => {
-        return {
+        const status = validStatuses.includes(interview.status as typeof validStatuses[number])
+          ? (interview.status as typeof validStatuses[number])
+          : 'requested';
+        const meeting_platform = interview.meeting_platform && validPlatforms.includes(interview.meeting_platform as typeof validPlatforms[number])
+          ? (interview.meeting_platform as typeof validPlatforms[number])
+          : undefined;
+        const interview_type = validTypes.includes(interview.interview_type as typeof validTypes[number])
+          ? (interview.interview_type as typeof validTypes[number])
+          : 'video';
+        const result: Interview = {
           id: interview.id,
           client_id: interview.client_id,
           talent_id: interview.talent_id,
           scheduled_date: interview.scheduled_date,
-          end_time: interview.end_time || '',
+          end_time: interview.end_time !== undefined ? interview.end_time : '',
           duration_minutes: interview.duration_minutes,
-          status: interview.status,
-          notes: interview.notes,
-          meeting_link: interview.meeting_link,
-          meeting_platform: interview.meeting_platform,
+          status,
+          meeting_platform,
           created_at: interview.created_at,
           updated_at: interview.updated_at,
-          title: interview.title,
-          interview_type: interview.interview_type,
-          client_name: interview.clients?.display_name,
-          talent_name: interview.talents?.full_name,
-          client_avatar: interview.clients?.avatar_url,
-          talent_avatar: interview.talents?.profile_picture_url,
+          interview_type,
         };
+        if (interview.meeting_link !== undefined) result.meeting_link = interview.meeting_link;
+        if (interview.notes !== undefined) result.notes = interview.notes;
+        if (typeof interview.title === 'string') result.title = interview.title;
+        if (interview.clients?.display_name !== undefined) result.client_name = interview.clients.display_name;
+        if (interview.talents?.full_name !== undefined) result.talent_name = interview.talents.full_name;
+        if (interview.clients?.avatar_url !== undefined) result.client_avatar = interview.clients.avatar_url;
+        if (interview.talents?.profile_picture_url !== undefined) result.talent_avatar = interview.talents.profile_picture_url;
+        return result;
       });
 
       setInterviews(formattedInterviews);

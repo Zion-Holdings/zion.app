@@ -1,5 +1,5 @@
 
-import { CountryPricing } from "@/data/onsiteServicePricing";
+import type { CountryPricing } from "@/data/onsiteServicePricing";
 import { CountryServiceSelector } from "../CountryServiceSelector";
 
 interface ServiceDetailsSectionProps {

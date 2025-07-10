@@ -1,8 +1,7 @@
 import { GetServerSideProps, GetStaticProps, GetServerSidePropsContext, GetStaticPropsContext, GetServerSidePropsResult, GetStaticPropsResult } from 'next';
 import * as Sentry from '@sentry/nextjs';
-import type { Scope } from '@sentry/types';
 import { ENV_CONFIG } from './environmentConfig';
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from './productionLogger';
 
 
 interface ErrorPageProps {
@@ -65,25 +64,25 @@ export function withServerSideErrorHandling<P extends Record<string, unknown>>(
       } catch (error: unknown) {
         lastError = error instanceof Error ? error : new Error(String(error));
         
-        logWarn('⚠️ getServerSideProps attempt ${attempt + 1}/${config.maxRetries + 1} failed for ${context.resolvedUrl}:', { data: lastError.message });
+        logWarn('⚠️ getServerSideProps attempt ${attempt + 1}/${config.maxRetries + 1} failed for ${context.resolvedUrl}:', { data: lastError ? lastError.message : 'Unknown error' });
         
         // Log each attempt to Sentry if configured
         if (ENV_CONFIG.sentry.isConfigured) {
-          Sentry.withScope((scope: Scope) => {
+          Sentry.withScope((scope) => {
             scope.setTag('attempt', String(attempt + 1));
             scope.setTag('maxRetries', String(config.maxRetries));
             scope.setTag('route', context.resolvedUrl);
-            scope.setTag('errorType', getErrorType(lastError));
+            scope.setTag('errorType', lastError instanceof Error ? getErrorType(lastError) : 'unknown');
             scope.setLevel(attempt < config.maxRetries ? 'warning' : 'error');
             scope.setContext('serverSideProps', {
-              query: (context as any).query,
-              params: (context as any).params,
+              query: (context as unknown as { query?: unknown }).query,
+              params: (context as unknown as { params?: unknown }).params,
               req: {
-                url: (context as any).req?.url,
-                method: (context as any).req?.method,
+                url: (context as unknown as { req?: { url?: string } }).req?.url,
+                method: (context as unknown as { req?: { method?: string } }).req?.method,
                 headers: {
-                  'user-agent': (context as any).req?.headers['user-agent'],
-                  'referer': (context as any).req?.headers['referer']
+                  'user-agent': (context as unknown as { req?: { headers?: Record<string, string> } }).req?.headers?.['user-agent'],
+                  'referer': (context as unknown as { req?: { headers?: Record<string, string> } }).req?.headers?.['referer']
                 }
               }
             });
@@ -113,14 +112,14 @@ export function withServerSideErrorHandling<P extends Record<string, unknown>>(
       
       // Log final failure to Sentry
       if (ENV_CONFIG.sentry.isConfigured) {
-        Sentry.withScope((scope: Scope) => {
+        Sentry.withScope((scope) => {
           scope.setTag('finalFailure', String(true));
           scope.setTag('route', context.resolvedUrl);
-          scope.setTag('errorType', getErrorType(lastError));
+          scope.setTag('errorType', lastError instanceof Error ? getErrorType(lastError) : 'unknown');
           scope.setLevel('error');
           scope.setContext('serverSideProps', {
-            query: (context as any).query,
-            params: (context as any).params,
+            query: (context as unknown as { query?: unknown }).query,
+            params: (context as unknown as { params?: unknown }).params,
             environmentConfig: {
               supabaseConfigured: ENV_CONFIG.supabase.isConfigured,
               sentryConfigured: ENV_CONFIG.sentry.isConfigured,
@@ -132,20 +131,20 @@ export function withServerSideErrorHandling<P extends Record<string, unknown>>(
       }
 
       // Determine error type for better user messaging
-      const errorType = getErrorType(lastError);
+      const errorType = lastError instanceof Error ? getErrorType(lastError) : 'unknown';
 
       // Set appropriate status code
       const statusCode = errorType === 'config' ? 503 : 
                         errorType === 'network' ? 502 : 500;
 
-      if ((context as any).res) {
-        (context as any).res.statusCode = statusCode;
+      if ((context as unknown as { res?: { statusCode?: number } }).res) {
+        (context as unknown as { res?: { statusCode?: number } }).res!.statusCode = statusCode;
       }
 
       return {
         props: {
           hasError: true,
-          errorMessage: ENV_CONFIG.app.isDevelopment ? lastError.message : 'An error occurred while loading the page',
+          errorMessage: ENV_CONFIG.app.isDevelopment && lastError ? lastError.message : 'An error occurred while loading the page',
           errorType,
           statusCode
         } as unknown as P
@@ -195,14 +194,14 @@ export function withStaticErrorHandling<P extends Record<string, unknown>>(
         
         // Log each attempt to Sentry if configured
         if (ENV_CONFIG.sentry.isConfigured) {
-          Sentry.withScope((scope: Scope) => {
+          Sentry.withScope((scope) => {
             scope.setTag('attempt', String(attempt + 1));
             scope.setTag('maxRetries', String(config.maxRetries));
             scope.setTag('staticGeneration', String(true));
-            scope.setTag('errorType', getErrorType(lastError));
+            scope.setTag('errorType', lastError instanceof Error ? getErrorType(lastError) : 'unknown');
             scope.setLevel(attempt < config.maxRetries ? 'warning' : 'error');
             scope.setContext('staticProps', {
-              params: (context as any).params,
+              params: (context as unknown as { params?: unknown }).params,
               environmentConfig: {
                 supabaseConfigured: ENV_CONFIG.supabase.isConfigured,
                 sentryConfigured: ENV_CONFIG.sentry.isConfigured,
@@ -231,14 +230,14 @@ export function withStaticErrorHandling<P extends Record<string, unknown>>(
 
     // All attempts failed - for static props, we should return empty data rather than crash the build
     if (lastError) {
-      logErrorToProduction('❌ getStaticProps failed after all retries:', { data: lastError });
+      if (lastError) logErrorToProduction('❌ getStaticProps failed after all retries:', { data: lastError });
       
       // Log final failure to Sentry
-      if (ENV_CONFIG.sentry.isConfigured) {
-        Sentry.withScope((scope: Scope) => {
+      if (lastError && ENV_CONFIG.sentry.isConfigured) {
+        Sentry.withScope((scope) => {
           scope.setTag('finalFailure', String(true));
           scope.setTag('staticGeneration', String(true));
-          scope.setTag('errorType', getErrorType(lastError));
+          scope.setTag('errorType', lastError instanceof Error ? getErrorType(lastError) : 'unknown');
           scope.setLevel('error');
           Sentry.captureException(lastError);
         });

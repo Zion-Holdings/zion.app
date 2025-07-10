@@ -18,7 +18,7 @@ import {
   RadioGroupItem,
 } from "@/components/ui/radio-group";
 import { Switch } from "@/components/ui/switch";
-import { Review } from "@/types/reviews";
+import type { Review } from "@/types/reviews";
 
 export interface ReviewFormValues {
   rating?: number;
@@ -50,23 +50,21 @@ export function ReviewForm({
   const [hoveredStar, setHoveredStar] = useState<number>(0);
   
   const form = useForm<ReviewFormValues>({
-    defaultValues: defaultValues ? {
-      rating: defaultValues.rating,
-      review_text: defaultValues.review_text,
-      communication_rating: defaultValues.communication_rating,
-      quality_rating: defaultValues.quality_rating,
-      timeliness_rating: defaultValues.timeliness_rating,
-      would_work_again: defaultValues.would_work_again,
-      is_anonymous: defaultValues.is_anonymous,
-    } : {
-      rating: 0,
-      review_text: "",
-      communication_rating: undefined,
-      quality_rating: undefined,
-      timeliness_rating: undefined,
-      would_work_again: undefined,
-      is_anonymous: false,
-    }
+    defaultValues: defaultValues
+      ? {
+          ...(defaultValues.rating !== undefined ? { rating: defaultValues.rating } : {}),
+          ...(defaultValues.review_text !== undefined ? { review_text: defaultValues.review_text } : {}),
+          ...(defaultValues.communication_rating !== undefined ? { communication_rating: defaultValues.communication_rating } : {}),
+          ...(defaultValues.quality_rating !== undefined ? { quality_rating: defaultValues.quality_rating } : {}),
+          ...(defaultValues.timeliness_rating !== undefined ? { timeliness_rating: defaultValues.timeliness_rating } : {}),
+          ...(defaultValues.would_work_again !== undefined ? { would_work_again: defaultValues.would_work_again } : {}),
+          ...(defaultValues.is_anonymous !== undefined ? { is_anonymous: defaultValues.is_anonymous } : {}),
+        }
+      : {
+          rating: 0,
+          review_text: "",
+          is_anonymous: false,
+        },
   });
   
   const handleSubmit = async (values: ReviewFormValues) => {
@@ -176,7 +174,7 @@ export function ReviewForm({
                     <FormControl>
                       <RadioGroup
                         onValueChange={(value) => (field as { onChange: (v: number) => void }).onChange(parseInt(value))}
-                        defaultValue={(field as { value?: number }).value?.toString()}
+                        defaultValue={(field as { value?: number }).value !== undefined ? (field as { value?: number }).value!.toString() : ""}
                         className="flex flex-wrap gap-4"
                       >
                         {[1, 2, 3, 4, 5].map((value) => (
@@ -212,7 +210,7 @@ export function ReviewForm({
                     <FormControl>
                       <RadioGroup
                         onValueChange={(value) => (field as { onChange: (v: number) => void }).onChange(parseInt(value))}
-                        defaultValue={(field as { value?: number }).value?.toString()}
+                        defaultValue={(field as { value?: number }).value !== undefined ? (field as { value?: number }).value!.toString() : ""}
                         className="flex flex-wrap gap-4"
                       >
                         {[1, 2, 3, 4, 5].map((value) => (
@@ -248,7 +246,7 @@ export function ReviewForm({
                     <FormControl>
                       <RadioGroup
                         onValueChange={(value) => (field as { onChange: (v: number) => void }).onChange(parseInt(value))}
-                        defaultValue={(field as { value?: number }).value?.toString()}
+                        defaultValue={(field as { value?: number }).value !== undefined ? (field as { value?: number }).value!.toString() : ""}
                         className="flex flex-wrap gap-4"
                       >
                         {[1, 2, 3, 4, 5].map((value) => (
@@ -286,7 +284,7 @@ export function ReviewForm({
                         <div className="flex items-center space-x-2">
                           <Switch
                             aria-label="Would work again"
-                            checked={(field as { value?: boolean }).value}
+                            checked={(field as { value?: boolean }).value ?? false}
                             onCheckedChange={(field as { onChange: (v: boolean) => void }).onChange}
                           />
                           <span className="text-sm text-muted-foreground">
@@ -315,7 +313,7 @@ export function ReviewForm({
                   <FormControl>
                     <Switch
                       aria-label="Submit anonymously"
-                      checked={(field as { value?: boolean }).value}
+                      checked={(field as { value?: boolean }).value ?? false}
                       onCheckedChange={(field as { onChange: (v: boolean) => void }).onChange}
                     />
                   </FormControl>
