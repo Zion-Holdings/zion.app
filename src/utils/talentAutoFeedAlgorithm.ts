@@ -1,4 +1,4 @@
-import { TalentProfile } from "@/types/talent";
+import type { TalentProfile } from "@/types/talent";
 
 // Simple talent generation for IT and AI professionals
 export function generateAITalents(count: number, startId: number = 1): TalentProfile[] {
