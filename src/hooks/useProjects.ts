@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
-import { Project, ProjectStatus } from "@/types/projects";
+import type { Project, ProjectStatus } from "@/types/projects";
 import { toast } from "sonner";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
@@ -17,6 +17,7 @@ export function useProjects() {
       setIsLoading(false);
       return;
     }
+    if (!supabase) throw new Error('Supabase client not initialized');
 
     try {
       setIsLoading(true);
@@ -66,6 +67,7 @@ export function useProjects() {
   };
 
   const getProjectById = async (projectId: string): Promise<Project | null> => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     try {
       const { data, error } = await supabase
         .from("projects")
@@ -98,6 +100,7 @@ export function useProjects() {
   };
 
   const updateProjectStatus = async (projectId: string, status: ProjectStatus): Promise<boolean> => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     try {
       const { error } = await supabase
         .from("projects")

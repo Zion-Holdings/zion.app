@@ -69,7 +69,6 @@ console.error = (...args: unknown[]) => {
              message.includes('initialization');
     };
 
-    let traceId: string | undefined;
     try {
       logErrorToProduction(first instanceof Error ? first.message : message, first instanceof Error ? first : undefined);
     } catch (sentryError) {

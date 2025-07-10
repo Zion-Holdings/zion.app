@@ -6,7 +6,22 @@ export interface ParsedApiError {
   message: string;
 }
 
-export function parseApiError(error: any): ParsedApiError {
+export function parseApiError(error: unknown): ParsedApiError {
+  // Type guard for error shape
+  function isApiError(obj: unknown): obj is {
+    response?: {
+      status?: number;
+      data?: { code?: string | number; error?: string; message?: string };
+    };
+    status?: number;
+    code?: string | number;
+    message?: string;
+  } {
+    return typeof obj === 'object' && obj !== null;
+  }
+  if (!isApiError(error)) {
+    return { message: 'An unexpected error occurred.' };
+  }
   const status = error?.response?.status ?? error?.status;
   const backendCode =
     error?.response?.data?.code ?? error?.response?.data?.error ?? error?.code;
@@ -58,7 +73,6 @@ export function parseApiError(error: any): ParsedApiError {
         break;
     }
   }
-
 
   // If a specific error code is provided by the API (and it's not the HTTP status), append it for context if desired,
   // but the primary message `msg` should be user-friendly.

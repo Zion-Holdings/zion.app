@@ -22,6 +22,7 @@ export function useWallet() {
 
     try {
       setLoading(true);
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from('wallets')
         .select('*')
@@ -47,6 +48,7 @@ export function useWallet() {
       return;
     }
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from('token_transactions')
         .select('*')
