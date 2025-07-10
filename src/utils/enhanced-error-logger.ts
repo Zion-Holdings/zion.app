@@ -11,7 +11,7 @@ interface ErrorContext {
   environment: string;
   errorBoundary?: boolean;
   componentStack?: string;
-  errorInfo?: any;
+  errorInfo?: unknown;
   performanceMetrics?: {
     memory?: number;
     timing?: number;
@@ -120,9 +120,16 @@ class EnhancedErrorLogger {
 
   private startPerformanceMonitoring(): void {
     // Monitor memory usage
+    interface PerformanceWithMemory extends Performance {
+      memory: {
+        usedJSHeapSize: number;
+        totalJSHeapSize: number;
+        jsHeapSizeLimit: number;
+      };
+    }
     if ('memory' in performance) {
       setInterval(() => {
-        const memory = (performance as any).memory;
+        const memory = (performance as PerformanceWithMemory).memory;
         if (memory.usedJSHeapSize > memory.totalJSHeapSize * 0.9) {
           this.addBreadcrumb('performance', 'High memory usage detected', 'warn');
         }
@@ -153,7 +160,7 @@ class EnhancedErrorLogger {
     filename?: string;
     lineno?: number;
     colno?: number;
-    context?: any;
+    context?: unknown;
   }): void {
     if (!this.isEnabled) return;
 
@@ -177,7 +184,7 @@ class EnhancedErrorLogger {
       const enhancedError: EnhancedError = {
         id: this.generateId(),
         message: error.message || errorData.message,
-        stack: error.stack,
+        stack: error.stack || '',
         name: error.name || 'Error',
         source: errorData.source,
         severity: this.calculateSeverity(error, errorData),
@@ -210,7 +217,7 @@ class EnhancedErrorLogger {
     }
   }
 
-  private shouldIgnoreError(error: Error, errorData: any): boolean {
+  private shouldIgnoreError(error: Error, errorData: unknown): boolean {
     const ignoredMessages = [
       'ResizeObserver loop limit exceeded',
       'Script error',
@@ -221,24 +228,24 @@ class EnhancedErrorLogger {
       'Network request failed'
     ];
 
-    const message = error.message || errorData.message || '';
+    const message = error.message || (errorData as any)?.message || '';
     return ignoredMessages.some(ignored => message.includes(ignored));
   }
 
-  private calculateSeverity(error: Error, errorData: any): EnhancedError['severity'] {
+  private calculateSeverity(error: Error, errorData: unknown): EnhancedError['severity'] {
     // Critical errors
     if (error.name === 'TypeError' && error.message.includes('Cannot read properties')) {
       return 'critical';
     }
-    if (errorData.source === 'render') {
+    if ((errorData as any).source === 'render') {
       return 'high';
     }
-    if (error.message.includes('Network Error') && errorData.context?.status >= 500) {
+    if (error.message.includes('Network Error') && (errorData as any).context?.status >= 500) {
       return 'high';
     }
     
     // Medium severity
-    if (errorData.source === 'promise') {
+    if ((errorData as any).source === 'promise') {
       return 'medium';
     }
     if (error.message.includes('Network Error')) {
@@ -257,7 +264,7 @@ class EnhancedErrorLogger {
     return `${source}-${name}-${message}-${stackLine}`.replace(/[^\w-]/g, '').substring(0, 100);
   }
 
-  private gatherContext(errorData: any): ErrorContext {
+  private gatherContext(errorData: unknown): ErrorContext {
     const context: ErrorContext = {
       timestamp: Date.now(),
       environment: process.env.NODE_ENV || 'unknown',
@@ -289,8 +296,8 @@ class EnhancedErrorLogger {
     }
 
     // Add any custom context
-    if (errorData.context) {
-      Object.assign(context, errorData.context);
+    if ((errorData as any).context) {
+      Object.assign(context, (errorData as any).context);
     }
 
     return context;
@@ -374,7 +381,7 @@ class EnhancedErrorLogger {
   }
 
   // React Error Boundary integration
-  public captureReactError(error: Error, errorInfo: any, componentStack?: string): void {
+  public captureReactError(error: Error, errorInfo: unknown, componentStack?: string): void {
     this.captureError({
       message: `React Error: ${error.message}`,
       error,
