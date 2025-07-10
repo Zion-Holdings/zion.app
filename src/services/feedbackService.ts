@@ -48,8 +48,9 @@ export async function postFeedback(entry: Omit<FeedbackEntry, 'id' | 'createdAt'
       throw new Error(data?.error || `Error ${res.status}: Failed to submit feedback`);
     }
     return data;
-  } catch (err: any) {
-    throw new Error(err.message || 'Failed to submit feedback');
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : String(err);
+    throw new Error(message || 'Failed to submit feedback');
   }
 }
 
