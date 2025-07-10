@@ -19,18 +19,10 @@ export const quoteRequestService = {
     if (error) throw error;
     
     // Format the data to include talent_name
-    // Ensure `data` is an array to avoid runtime errors like "map is not a function"
-    // when the Supabase response is null
-    return (data ?? []).map((item: unknown) => {
-      if (typeof item === 'object' && item !== null) {
-        return {
-          ...item,
-          talent_name: (item as { talent?: { display_name?: string } }).talent?.display_name || 'Unknown Talent',
-        };
-      } else {
-        return { talent_name: 'Unknown Talent' };
-      }
-    }) as QuoteRequest[];
+    return (data ?? []).map((item: QuoteRequest & { talent?: { display_name?: string } }) => ({
+      ...item,
+      talent_name: item.talent?.display_name || 'Unknown Talent',
+    })) as QuoteRequest[];
   },
   
   // Get quote requests for a specific talent
@@ -64,7 +56,7 @@ export const quoteRequestService = {
     
     return {
       ...data,
-      talent_name: typeof data === 'object' && data && 'talent' in data && (data as { talent?: unknown }).talent && typeof (data as { talent?: { display_name?: string } }).talent === 'object' && (data as { talent?: { display_name?: string } }).talent !== null && 'display_name' in (data as { talent?: { display_name?: string } }).talent ? ((data as { talent: { display_name?: string } }).talent.display_name || 'Unknown Talent') : 'Unknown Talent',
+      talent_name: (data as { talent?: { display_name?: string } }).talent?.display_name || 'Unknown Talent',
     } as QuoteRequest;
   },
   
