@@ -269,6 +269,7 @@ export function useAuthOperations(
   const loginWithGoogle = async () => {
     setIsLoading(true);
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider: "google",
       });
@@ -288,6 +289,7 @@ export function useAuthOperations(
   const loginWithGitHub = async () => {
     setIsLoading(true);
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider: "github",
       });
@@ -307,6 +309,7 @@ export function useAuthOperations(
   const loginWithFacebook = async () => {
     setIsLoading(true);
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider: "facebook",
       });
@@ -326,6 +329,7 @@ export function useAuthOperations(
   const loginWithTwitter = async () => {
     setIsLoading(true);
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider: "twitter",
       });
