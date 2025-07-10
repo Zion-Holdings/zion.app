@@ -10,14 +10,12 @@ export function useCertifications() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   
-  if (!supabase) throw new Error('Supabase client not initialized');
-
-  const addCertification = async (resumeId: string, cert: Certification): Promise<boolean> => {
+  const addCertification = async (resumeId: string, certification: Certification): Promise<boolean> => {
     if (!user) {
-      setError('You must be logged in to add certifications');
+      setError('You must be logged in to update certifications');
       return false;
     }
-    
+    if (!supabase) throw new Error('Supabase client not initialized');
     setIsLoading(true);
     setError(null);
     
@@ -26,12 +24,12 @@ export function useCertifications() {
         .from('certifications')
         .insert({
           resume_id: resumeId,
-          name: cert.name,
-          issuing_organization: cert.issuing_organization,
-          issue_date: cert.issue_date ? formatDateForDB(cert.issue_date) : null,
-          expiration_date: cert.expiration_date ? formatDateForDB(cert.expiration_date) : null,
-          credential_id: cert.credential_id,
-          credential_url: cert.credential_url
+          name: certification.name,
+          issuing_organization: certification.issuing_organization,
+          issue_date: certification.issue_date ? formatDateForDB(certification.issue_date) : null,
+          expiration_date: certification.expiration_date ? formatDateForDB(certification.expiration_date) : null,
+          credential_id: certification.credential_id,
+          credential_url: certification.credential_url
         });
       
       if (error) throw error;
@@ -44,14 +42,12 @@ export function useCertifications() {
     }
   };
   
-  if (!supabase) throw new Error('Supabase client not initialized');
-
-  const updateCertification = async (certId: string, cert: Certification): Promise<boolean> => {
+  const updateCertification = async (certificationId: string, certification: Certification): Promise<boolean> => {
     if (!user) {
       setError('You must be logged in to update certifications');
       return false;
     }
-    
+    if (!supabase) throw new Error('Supabase client not initialized');
     setIsLoading(true);
     setError(null);
     
@@ -59,14 +55,14 @@ export function useCertifications() {
       const { error } = await supabase
         .from('certifications')
         .update({
-          name: cert.name,
-          issuing_organization: cert.issuing_organization,
-          issue_date: cert.issue_date ? formatDateForDB(cert.issue_date) : null,
-          expiration_date: cert.expiration_date ? formatDateForDB(cert.expiration_date) : null,
-          credential_id: cert.credential_id,
-          credential_url: cert.credential_url
+          name: certification.name,
+          issuing_organization: certification.issuing_organization,
+          issue_date: certification.issue_date ? formatDateForDB(certification.issue_date) : null,
+          expiration_date: certification.expiration_date ? formatDateForDB(certification.expiration_date) : null,
+          credential_id: certification.credential_id,
+          credential_url: certification.credential_url
         })
-        .eq('id', certId);
+        .eq('id', certificationId);
       
       if (error) throw error;
       
@@ -78,14 +74,12 @@ export function useCertifications() {
     }
   };
   
-  if (!supabase) throw new Error('Supabase client not initialized');
-
-  const deleteCertification = async (certId: string): Promise<boolean> => {
+  const deleteCertification = async (certificationId: string): Promise<boolean> => {
     if (!user) {
       setError('You must be logged in to delete certifications');
       return false;
     }
-    
+    if (!supabase) throw new Error('Supabase client not initialized');
     setIsLoading(true);
     setError(null);
     
@@ -93,7 +87,7 @@ export function useCertifications() {
       const { error } = await supabase
         .from('certifications')
         .delete()
-        .eq('id', certId);
+        .eq('id', certificationId);
       
       if (error) throw error;
       
