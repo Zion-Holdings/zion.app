@@ -41,7 +41,7 @@ export function useAuthOperations(
     try {
       // Clean up any stale auth state before login
       cleanupAuthState();
-      
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
