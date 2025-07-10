@@ -68,7 +68,9 @@ export function usePricingSuggestionAnalytics(days = 30) {
           if (typeof d === 'object' && d !== null && 'category' in d) {
             cat = (d as { category?: string }).category || 'other';
           }
-          if (!categoryMap[cat]) categoryMap[cat] = { count: 0, accepted: 0 };
+          if (!Object.prototype.hasOwnProperty.call(categoryMap, cat) || !categoryMap[cat]) {
+            categoryMap[cat] = { count: 0, accepted: 0 };
+          }
           categoryMap[cat].count += 1;
           if (typeof d === 'object' && d !== null && 'accepted' in d && (d as { accepted: boolean }).accepted) {
             categoryMap[cat].accepted += 1;
@@ -94,14 +96,14 @@ export function usePricingSuggestionAnalytics(days = 30) {
           .map((d: unknown) => {
             if (typeof d === 'object' && d !== null) {
               return {
-                id: (d as { id: string }).id,
-                userId: (d as { user_id: string }).user_id,
-                suggestedMin: (d as { suggested_min: number }).suggested_min,
-                suggestedMax: (d as { suggested_max: number }).suggested_max,
-                actualValue: (d as { actual_value?: number }).actual_value,
-                accepted: (d as { accepted: boolean }).accepted,
-                createdAt: (d as { created_at: string }).created_at,
-                type: (d as { suggestion_type: 'client' | 'talent' }).suggestion_type,
+                id: (d as { id?: string }).id ?? '',
+                userId: (d as { user_id?: string }).user_id ?? '',
+                suggestedMin: (d as { suggested_min?: number }).suggested_min ?? 0,
+                suggestedMax: (d as { suggested_max?: number }).suggested_max ?? 0,
+                actualValue: (d as { actual_value?: number }).actual_value ?? 0,
+                accepted: (d as { accepted?: boolean }).accepted ?? false,
+                createdAt: (d as { created_at?: string }).created_at ?? '',
+                type: (d as { suggestion_type?: 'client' | 'talent' }).suggestion_type ?? 'client',
               };
             }
             return {
@@ -109,7 +111,7 @@ export function usePricingSuggestionAnalytics(days = 30) {
               userId: '',
               suggestedMin: 0,
               suggestedMax: 0,
-              actualValue: undefined,
+              actualValue: 0,
               accepted: false,
               createdAt: '',
               type: 'client',
