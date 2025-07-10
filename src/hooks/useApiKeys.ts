@@ -46,6 +46,7 @@ export function useApiKeys() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) {
         setError("Authentication required");
@@ -89,6 +90,7 @@ export function useApiKeys() {
     setNewApiKey(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) {
         setError("Authentication required");
@@ -148,6 +150,7 @@ export function useApiKeys() {
     setNewApiKey(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) {
         setError("Authentication required");
@@ -204,6 +207,7 @@ export function useApiKeys() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) {
         setError("Authentication required");
@@ -257,6 +261,7 @@ export function useApiKeys() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) {
         setError("Authentication required");
