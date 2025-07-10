@@ -122,9 +122,15 @@ const apiClient = axios.create({
 });
 
 apiClient.interceptors.request.use((config: unknown) => {
+  if (typeof config !== 'object' || config === null) {
+    return { headers: { Accept: 'application/json' } };
+  }
+  const headers = 'headers' in config && typeof (config as { headers?: unknown }).headers === 'object' && (config as { headers?: unknown }).headers !== null
+    ? { ...(config as { headers: Record<string, unknown> }).headers, Accept: 'application/json' }
+    : { Accept: 'application/json' };
   return {
-    ...(config as any),
-    headers: { ...((config as any).headers || {}), Accept: 'application/json' },
+    ...config,
+    headers,
   };
 });
 
