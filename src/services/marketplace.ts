@@ -96,7 +96,7 @@ export interface Product {
 }
 
 // Use internal Next.js API routes instead of external URLs
-const createMarketplaceClient = (): any => {
+const createMarketplaceClient = (): unknown => {
   const client = axios.create({
     baseURL: '', // Use relative URLs for internal API routes
     withCredentials: false,
@@ -104,13 +104,13 @@ const createMarketplaceClient = (): any => {
 
   // Request interceptor for debugging
   client.interceptors.request.use(
-    async (config: any) => {
+    async (config: unknown) => {
       if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
         logInfo(`Marketplace API Request: ${config.method?.toUpperCase() || 'UNKNOWN'} ${config.url || 'UNKNOWN_URL'}`);
       }
       return config;
     },
-    (error: any) => {
+    (error: unknown) => {
       if (process.env.NODE_ENV === 'development') {
         logErrorToProduction('Marketplace request interceptor error:', error);
       }
@@ -120,13 +120,13 @@ const createMarketplaceClient = (): any => {
 
   // Response interceptor with error logging
   client.interceptors.response.use(
-    (response: any) => {
+    (response: unknown) => {
       if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
         logInfo(`Marketplace API Response: ${response.status}`);
       }
       return response;
     },
-    (error: any) => {
+    (error: unknown) => {
       if (process.env.NODE_ENV === 'development') {
         logErrorToProduction('Marketplace API Error:', {
           message: error.message,
@@ -229,7 +229,7 @@ const getFallbackTalent = (): TalentProfile[] => {
 };
 
 // Helper function to get error message for UI display
-export const getMarketplaceErrorMessage = (error: any): string => {
+export const getMarketplaceErrorMessage = (error: unknown): string => {
   if (error.response?.status === 404) {
     return 'The requested marketplace data was not found.';
   } else if (error.response?.status === 500) {
@@ -249,7 +249,7 @@ export const getMarketplaceErrorMessage = (error: any): string => {
 export { marketplaceClient };
 
 // Add product validation and auto-generation utilities
-export const validateProductData = (product: any): boolean => {
+export const validateProductData = (product: unknown): boolean => {
   const requiredFields = ['id', 'title', 'description', 'category'];
   return requiredFields.every(field => product[field] && product[field].toString().trim() !== '');
 };
