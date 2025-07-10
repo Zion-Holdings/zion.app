@@ -195,6 +195,7 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
                   createdAt: new Date().toISOString(),
                   rating: Math.floor(Math.random() * 5) + 1,
                   reviewCount: Math.floor(Math.random() * 100),
+                  stock: 10,
                 }));
 
         setListings(listingsToShow);
