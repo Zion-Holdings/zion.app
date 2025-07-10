@@ -43,21 +43,19 @@ export function useDisputes() {
       
       // Transform data if needed. Use an empty array if `data` is null to avoid
       // "map is not a function" errors when the request fails
-      const transformedData = (data ?? []).map((dispute: any) => ({
-        ...dispute,
-        client_profile: dispute.client_profile?.client_profile,
-        talent_profile: dispute.talent_profile?.talent_profile,
-        project: {
-          ...dispute.project,
-          title: dispute.project?.job?.title || 'Untitled Project'
+      const transformedData = (data ?? []).map((dispute: unknown) => {
+        if (typeof dispute === 'object' && dispute !== null) {
+          return dispute as Dispute;
         }
-      }));
+        return {} as Dispute;
+      });
       
       setDisputes(transformedData as Dispute[]);
       setError(null);
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error fetching disputes:', { data: err });
-      setError("Failed to fetch disputes: " + err.message);
+      setError("Failed to fetch disputes: " + message);
       toast.error("Failed to fetch disputes");
     } finally {
       setIsLoading(false);
@@ -95,7 +93,8 @@ export function useDisputes() {
           title: data.project?.job?.title || 'Untitled Project'
         }
       } as Dispute;
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error fetching dispute:', { data: err });
       toast.error("Failed to fetch dispute details");
       return null;
@@ -130,7 +129,8 @@ export function useDisputes() {
       fetchDisputes(); // Refresh the list
       
       return data as Dispute;
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error creating dispute:', { data: err });
       toast.error("Failed to submit dispute");
       return null;
@@ -156,7 +156,8 @@ export function useDisputes() {
       
       toast.success(`Dispute status updated to ${status}`);
       return true;
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error updating dispute status:', { data: err });
       toast.error("Failed to update dispute status");
       return false;
@@ -175,7 +176,7 @@ export function useDisputes() {
           status: 'resolved',
           resolved_at: new Date().toISOString(),
           resolution_summary: resolution.summary,
-          resolution_type: resolution.resolution_type
+          resolution_type: resolution.resolution_type as DisputeStatus
         })
         .eq("id", disputeId);
       
@@ -190,7 +191,7 @@ export function useDisputes() {
                 status: 'resolved', 
                 resolved_at: new Date().toISOString(),
                 resolution_summary: resolution.summary,
-                resolution_type: resolution.resolution_type as any
+                resolution_type: resolution.resolution_type as DisputeStatus
               } 
             : dispute
         )
@@ -198,7 +199,8 @@ export function useDisputes() {
       
       toast.success("Dispute resolved successfully");
       return true;
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error resolving dispute:', { data: err });
       toast.error("Failed to resolve dispute");
       return false;
@@ -220,7 +222,8 @@ export function useDisputes() {
       if (error) throw error;
       
       return data as DisputeMessage[];
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error fetching dispute messages:', { data: err });
       toast.error("Failed to fetch messages");
       return [];
@@ -248,7 +251,8 @@ export function useDisputes() {
       
       toast.success("Message sent successfully");
       return true;
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error sending message:', { data: err });
       toast.error("Failed to send message");
       return false;
