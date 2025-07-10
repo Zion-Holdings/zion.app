@@ -27,7 +27,9 @@ export function useAutocomplete(products: ProductListing[]) {
   useEffect(() => {
     return () => {
       // cancel pending debounced calls on unmount
-      (getSuggestions as any).cancel?.();
+      if (typeof (getSuggestions as { cancel?: unknown }).cancel === 'function') {
+        (getSuggestions as { cancel: () => void }).cancel();
+      }
     };
   }, [getSuggestions]);
 
