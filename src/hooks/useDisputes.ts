@@ -176,7 +176,7 @@ export function useDisputes() {
           status: 'resolved',
           resolved_at: new Date().toISOString(),
           resolution_summary: resolution.summary,
-          resolution_type: resolution.resolution_type as DisputeStatus
+          resolution_type: resolution.resolution_type as ResolutionType
         })
         .eq("id", disputeId);
       
@@ -191,7 +191,7 @@ export function useDisputes() {
                 status: 'resolved', 
                 resolved_at: new Date().toISOString(),
                 resolution_summary: resolution.summary,
-                resolution_type: resolution.resolution_type as DisputeStatus
+                resolution_type: resolution.resolution_type as ResolutionType
               } as Dispute
             : dispute as Dispute
         ) as Dispute[]
