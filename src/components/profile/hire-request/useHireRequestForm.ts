@@ -11,12 +11,12 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 interface UseHireRequestFormProps {
   talent: TalentProfile;
   onClose: () => void;
-  initialJobTitle?: string;
-  userDetails?: {
+  initialJobTitle: string | undefined;
+  userDetails: {
     name?: string;
     email?: string;
     id?: string;
-  };
+  } | undefined;
 }
 
 // Define the base schema first
