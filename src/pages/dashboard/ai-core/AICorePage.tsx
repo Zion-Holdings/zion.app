@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AICorePage = () => {
-  const [status, setStatus] = React.useState('Online');
+  const [status, _setStatus] = React.useState('Online');
   return (
     <div className="max-w-xl mx-auto py-12 px-4">
       <h1 className="text-3xl font-bold mb-4">AI Core</h1>
