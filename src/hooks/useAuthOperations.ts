@@ -51,9 +51,9 @@ export function useAuthOperations(
         toast({
           variant: "destructive",
           title: "Oh no! Something went wrong.",
-          description: error.message,
+          description: error instanceof Error ? error.message : String(error),
         });
-        return { data: null, error: error.message };
+        return { data: null, error: error instanceof Error ? error.message : String(error) };
       }
 
       toast({
@@ -62,7 +62,7 @@ export function useAuthOperations(
       });
 
       return { data, error: null };
-    } catch (error) {
+    } catch (error: unknown) {
       toast({
         variant: "destructive",
         title: "Oh no! Something went wrong.",
@@ -92,20 +92,20 @@ export function useAuthOperations(
 
       if (error) {
         showApiError(error, "Error during signup", () => signUp({ email, password, display_name }));
-        return { data: null, error: error.message };
+        return { data: null, error: error instanceof Error ? error.message : String(error) };
       }
 
       // Add this after successful signup
-      if ((data as any)?.user) {
+      if (data && typeof data === 'object' && 'user' in data && (data as { user?: { id: string } }).user) {
         let usedReferral = false;
         // Track referral if there was a referral code
-        usedReferral = await trackReferral((data as any).user.id, email);
+        usedReferral = await trackReferral((data as { user: { id: string } }).user.id, email);
 
         try {
           await fetch('/api/points/increment', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ userId: (data as any).user.id, amount: 10, reason: 'signup' })
+            body: JSON.stringify({ userId: (data as { user: { id: string } }).user.id, amount: 10, reason: 'signup' })
           });
 
           // Bonus points when signing up with a referral code
@@ -113,13 +113,13 @@ export function useAuthOperations(
             await fetch('/api/points/increment', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ userId: (data as any).user.id, amount: 20, reason: 'referral_signup' })
+              body: JSON.stringify({ userId: (data as { user: { id: string } }).user.id, amount: 20, reason: 'referral_signup' })
             });
           }
 
           // Generate a referral code for the new user
           if (!supabase) throw new Error('Supabase client not initialized');
-          await supabase.rpc('generate_referral_code', { user_id: (data as any).user.id });
+          await supabase.rpc('generate_referral_code', { user_id: (data as { user: { id: string } }).user.id });
         } catch (err) {
           logErrorToProduction('Failed to complete signup rewards', { data: err });
         }
@@ -132,7 +132,7 @@ export function useAuthOperations(
       });
 
       return { data, error: null };
-    } catch (error) {
+    } catch (error: unknown) {
       showApiError(error, "Failed to sign up. Please try again.", () => signUp({ email, password, display_name }));
       return { data: null, error: "Failed to sign up." };
     } finally {
@@ -150,7 +150,7 @@ export function useAuthOperations(
         toast({
           variant: "destructive",
           title: "Oh no! Something went wrong.",
-          description: (error as any)?.message,
+          description: error instanceof Error ? error.message : String(error),
         });
       } else {
         setUser(null); // Clear the user state upon successful logout
@@ -166,12 +166,12 @@ export function useAuthOperations(
           description: "You have been successfully logged out.",
         });
       }
-    } catch (error) {
+    } catch (error: unknown) {
       logErrorToProduction('Logout failed:', { data: error });
       toast({
         variant: "destructive",
         title: "Logout failed",
-        description: "There was an issue logging you out. Please try again.",
+        description: error instanceof Error ? error.message : String(error),
       });
     } finally {
       setIsLoading(false);
@@ -190,9 +190,9 @@ export function useAuthOperations(
         toast({
           variant: "destructive",
           title: "Oh no! Something went wrong.",
-          description: error.message,
+          description: error instanceof Error ? error.message : String(error),
         });
-        return { data: null, error: error.message };
+        return { data: null, error: error instanceof Error ? error.message : String(error) };
       }
 
       toast({
@@ -201,11 +201,11 @@ export function useAuthOperations(
       });
 
       return { data, error: null };
-    } catch (error) {
+    } catch (error: unknown) {
       toast({
         variant: "destructive",
         title: "Oh no! Something went wrong.",
-        description: "Failed to send reset password email. Please try again.",
+        description: error instanceof Error ? error.message : String(error),
       });
       return { data: null, error: "Failed to send reset password email." };
     } finally {
@@ -238,9 +238,9 @@ export function useAuthOperations(
         toast({
           variant: "destructive",
           title: "Failed to update profile",
-          description: error.message,
+          description: error instanceof Error ? error.message : String(error),
         });
-        return { error: error.message };
+        return { error: error instanceof Error ? error.message : String(error) };
       }
 
       // Optimistically update the local user state
@@ -257,12 +257,12 @@ export function useAuthOperations(
       });
 
       return { error: null };
-    } catch (error) {
+    } catch (error: unknown) {
       logErrorToProduction('Profile update failed:', { data: error });
       toast({
         variant: "destructive",
         title: "Profile update failed",
-        description: "There was an issue updating your profile. Please try again.",
+        description: error instanceof Error ? error.message : String(error),
       });
       return { error: "Failed to update profile." };
     } finally {
@@ -282,7 +282,7 @@ export function useAuthOperations(
         toast({
           variant: "destructive",
           title: "Oh no! Something went wrong.",
-          description: error.message,
+          description: error instanceof Error ? error.message : String(error),
         });
       }
     } finally {
@@ -302,7 +302,7 @@ export function useAuthOperations(
         toast({
           variant: "destructive",
           title: "Oh no! Something went wrong.",
-          description: error.message,
+          description: error instanceof Error ? error.message : String(error),
         });
       }
     } finally {
@@ -322,7 +322,7 @@ export function useAuthOperations(
         toast({
           variant: "destructive",
           title: "Oh no! Something went wrong.",
-          description: error.message,
+          description: error instanceof Error ? error.message : String(error),
         });
       }
     } finally {
@@ -342,7 +342,7 @@ export function useAuthOperations(
         toast({
           variant: "destructive",
           title: "Oh no! Something went wrong.",
-          description: error.message,
+          description: error instanceof Error ? error.message : String(error),
         });
       }
     } finally {
@@ -353,8 +353,8 @@ export function useAuthOperations(
   const loginWithWeb3 = async () => {
     setIsLoading(true);
     try {
-      const ethereum = (window as any).ethereum;
-      if (!ethereum) {
+      const ethereum = (window as unknown as { ethereum?: unknown }).ethereum;
+      if (!ethereum || typeof ethereum !== 'object') {
         throw new Error("Web3 wallet not found");
       }
       const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
@@ -381,11 +381,11 @@ export function useAuthOperations(
      });
       
       toast({ title: 'Wallet connected', description: address });
-    } catch (error: any) {
+    } catch (error: unknown) {
       toast({
         variant: 'destructive',
         title: 'Web3 login failed',
-        description: error?.message || 'Unable to connect wallet'
+        description: error instanceof Error ? error.message : 'Unable to connect wallet'
       });
     } finally {
       setIsLoading(false);
