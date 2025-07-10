@@ -178,38 +178,3 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
   );
 }
 
-        
-        <DateFields 
-          startDate={startDate} 
-          setStartDate={setStartDate}
-          endDate={endDate}
-          setEndDate={setEndDate}
-        />
-
-        <div>
-          <Label htmlFor="isRemote">
-            <Input
-              type="checkbox"
-              id="isRemote"
-              checked={isRemote}
-              className="mr-2"
-              onChange={(e) => setIsRemote(e.target.checked)}
-            />
-            Remote
-          </Label>
-        </div>
-
-        <DescriptionFields 
-          control={form.control} 
-          handleEditorChange={handleEditorChange}
-          editorContent={editorContent}
-        />
-
-        <Button type="submit" disabled={isSubmitting || isFormLoading}>
-          {isSubmitting || isFormLoading ? "Submitting..." : jobId ? "Update Job" : "Post Job"}
-        </Button>
-      </form>
-    </Form>
-  );
-}
-
