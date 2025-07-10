@@ -145,6 +145,3 @@ export function FeaturedListingsSection({
   );
 }
 
-  );
-}
-
