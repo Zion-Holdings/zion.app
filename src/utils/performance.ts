@@ -202,7 +202,7 @@ export function reportPerformanceMetrics(metrics: Partial<PerformanceMetrics>): 
 
   // Report to your analytics service
   if (typeof window !== 'undefined' && 'gtag' in window) {
-    (window as any).gtag('event', 'web_vitals', {
+    (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag?.('event', 'web_vitals', {
       custom_parameter_cls: metrics.cls,
       custom_parameter_fcp: metrics.fcp,
       custom_parameter_lcp: metrics.lcp,
@@ -229,17 +229,17 @@ export function observeFontLoading(): void {
   // Monitor font loading
   document.fonts.addEventListener('loadingstart', (event) => {
     // Some browsers may not support event.fontface, fallback to (event as any)['fontface']
-    const fontface = (event as any)['fontface'];
+    const fontface = (event as { fontface?: { family?: string } }).fontface;
     logInfo(`🔤 Font loading started: ${fontface ? fontface.family : 'unknown'}`);
   });
 
   document.fonts.addEventListener('loadingdone', (event) => {
-    const fontface = (event as any)['fontface'];
+    const fontface = (event as { fontface?: { family?: string } }).fontface;
     logInfo(`✅ Font loaded: ${fontface ? fontface.family : 'unknown'}`);
   });
 
   document.fonts.addEventListener('loadingerror', (event) => {
-    const fontface = (event as any)['fontface'];
+    const fontface = (event as { fontface?: { family?: string } }).fontface;
     logErrorToProduction(`❌ Font loading error: ${fontface ? fontface.family : 'unknown'}`);
   });
 
@@ -345,8 +345,8 @@ export class PerformanceMonitor {
 
   private sendToAnalytics(name: string, value: number): void {
     // Send to your analytics service
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', name, {
+    if (typeof window !== 'undefined' && (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
+      (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag!('event', name, {
         event_category: 'Web Vitals',
         value: Math.round(value),
         non_interaction: true,
