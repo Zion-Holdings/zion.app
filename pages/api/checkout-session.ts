@@ -103,7 +103,7 @@ export default async function handler(
       });
     }
     
-    const stripe: Stripe = new Stripe(stripeKey, {
+    const stripe = new (Stripe as any)(stripeKey, {
       apiVersion: '2024-06-20',
     });
 
