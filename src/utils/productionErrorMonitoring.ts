@@ -24,7 +24,7 @@ interface ErrorReport {
   };
   performanceMetrics?: {
     loadTime?: number;
-    memoryUsage?: any;
+    memoryUsage?: { used?: number; total?: number; limit?: number };
   };
 }
 
@@ -80,7 +80,7 @@ export class ProductionErrorMonitor {
     Sentry.setUser({ id: userId });
   }
 
-  public reportError(error: Error | unknown, context: Record<string, any> = {}): void {
+  public reportError(error: Error | unknown, context: Record<string, unknown> = {}): void {
     const errorReport = this.buildErrorReport(error, context);
     
     // Send to Sentry
@@ -116,7 +116,7 @@ export class ProductionErrorMonitor {
     }
   }
 
-  private buildErrorReport(error: Error | unknown, context: Record<string, any>): ErrorReport {
+  private buildErrorReport(error: Error | unknown, context: Record<string, unknown>): ErrorReport {
     const actualError = error instanceof Error ? error : new Error(String(error));
     
     return {
@@ -127,7 +127,7 @@ export class ProductionErrorMonitor {
       sessionId: this.sessionId,
       error: {
         message: actualError.message,
-        stack: actualError.stack,
+        stack: actualError.stack ?? '',
         name: actualError.name
       },
       context: {
@@ -137,7 +137,7 @@ export class ProductionErrorMonitor {
           cookiesEnabled: navigator.cookieEnabled,
           onLine: navigator.onLine,
           language: navigator.language
-        } : {} as any,
+        } : { cookiesEnabled: false, onLine: false, language: '' },
         ...context
       },
       performanceMetrics: this.getPerformanceMetrics()
@@ -145,19 +145,26 @@ export class ProductionErrorMonitor {
   }
 
   private getPerformanceMetrics() {
-    if (typeof window === 'undefined' || !window.performance) return {};
+    if (typeof window === 'undefined' || !window.performance) {
+      return { loadTime: undefined, memoryUsage: undefined };
+    }
 
     const timing = performance.timing;
     const loadTime = timing.loadEventEnd - timing.navigationStart;
-    
+    const perfWithMemory = performance as Performance & { memory?: { usedJSHeapSize: number; totalJSHeapSize: number; jsHeapSizeLimit: number } };
+    let memoryUsage: { used?: number; total?: number; limit?: number } = {};
+    if (perfWithMemory.memory) {
+      memoryUsage = {
+        used: perfWithMemory.memory.usedJSHeapSize,
+        total: perfWithMemory.memory.totalJSHeapSize,
+        limit: perfWithMemory.memory.jsHeapSizeLimit
+      };
+    } else {
+      memoryUsage = undefined;
+    }
     return {
       loadTime,
-      domContentLoaded: timing.domContentLoadedEventEnd - timing.navigationStart,
-      memory: (performance as any).memory ? {
-        used: (performance as any).memory.usedJSHeapSize,
-        total: (performance as any).memory.totalJSHeapSize,
-        limit: (performance as any).memory.jsHeapSizeLimit
-      } : undefined
+      memoryUsage
     };
   }
 
@@ -192,7 +199,7 @@ export class ProductionErrorMonitor {
 export const errorMonitor = ProductionErrorMonitor.getInstance();
 
 // Convenience functions
-export const reportError = (error: Error | unknown, context?: Record<string, any>) => {
+export const reportError = (error: Error | unknown, context?: Record<string, unknown>) => {
   errorMonitor.reportError(error, context);
 };
 
