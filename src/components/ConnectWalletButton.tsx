@@ -8,7 +8,8 @@ import { ethers } from 'ethers';
 const ConnectWalletButton: React.FC = () => {
   const { isConnected, connectWallet, disconnectWallet, displayAddress, address, provider } = useWallet();
 
-  const zionBalance = useTokenBalance(address, ZION_TOKEN_CONTRACT_ADDRESS, provider as ethers.Provider | null);
+  const validProvider = provider && typeof provider === 'object' ? (provider as ethers.Provider) : null;
+  const zionBalance = useTokenBalance(address, ZION_TOKEN_CONTRACT_ADDRESS, validProvider);
 
   if (isConnected) {
     return (
