@@ -14,7 +14,7 @@ import { ProfileProjects } from "./ProfileProjects";
 import { ProfileAvailability } from "./ProfileAvailability";
 import { ProfileContact } from "./ProfileContact";
 import { ProfileRatings } from "./ProfileRatings";
-import { TalentProfile as TalentProfileType } from "@/types/talent";
+import type { TalentProfile as TalentProfileType } from "@/types/talent";
 import { useAuth } from "@/hooks/useAuth";
 import { Availability } from "@/types/profile";
 
