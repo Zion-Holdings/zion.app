@@ -36,7 +36,18 @@ export function useSavedTalents() {
         if (savedError) throw savedError;
 
         if (savedData) {
-          const talentIds = savedData.map((item: any) => item.talent_id);
+          // Type guard for savedData items
+          const talentIds = savedData
+            .map((item: unknown) => {
+              if (
+                typeof item === 'object' && item !== null &&
+                'talent_id' in item && typeof (item as { talent_id: unknown }).talent_id === 'string'
+              ) {
+                return (item as { talent_id: string }).talent_id;
+              }
+              return undefined;
+            })
+            .filter((id): id is string => typeof id === 'string');
           setSavedTalentIds(talentIds);
           
           if (talentIds.length > 0) {
