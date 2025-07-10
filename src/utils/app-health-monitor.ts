@@ -458,9 +458,6 @@ class AppHealthMonitor {
 
   private startContinuousMonitoring(): void {
     // Update metrics every 30 seconds
-    function setWindowProperty<T>(key: string, value: T) {
-      (window as unknown as Record<string, unknown>)[key] = value;
-    }
     setInterval(() => {
       this.performHealthCheck().then(report => {
         window.latestHealthReport = report;
