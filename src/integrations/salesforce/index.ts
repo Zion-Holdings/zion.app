@@ -1,4 +1,5 @@
-import { SalesforceService, SalesforceLead } from './SalesforceService';
+import { SalesforceService } from './SalesforceService';
+import type { SalesforceLead } from './SalesforceService';
 
 const instanceUrl =
   process.env.NEXT_PUBLIC_SALESFORCE_URL ||
