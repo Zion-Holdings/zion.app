@@ -26,7 +26,15 @@ import { useCurrency } from '@/hooks/useCurrency';
 const INITIAL_SERVICES: ProductListing[] = SERVICES;
 
 // Market insights component
-const ServicesMarketInsights = ({ stats }: { stats: any }) => (
+interface Stats {
+  averagePrice: number;
+  averageRating: number;
+  totalServices: number;
+  availableServices: number;
+  premiumServices: number;
+  averageAIScore: number;
+}
+const ServicesMarketInsights = ({ stats }: { stats: Stats }) => (
   <Card className="bg-gradient-to-r from-green-900/20 to-blue-900/20 border-green-700/30 mb-6">
     <CardContent className="p-6">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -55,6 +63,16 @@ const ServicesMarketInsights = ({ stats }: { stats: any }) => (
 );
 
 // Filter controls
+interface ServiceFilterControlsProps {
+  sortBy: string;
+  setSortBy: (value: string) => void;
+  filterCategory: string;
+  setFilterCategory: (value: string) => void;
+  categories: string[];
+  showRecommended: boolean;
+  setShowRecommended: (value: boolean) => void;
+  loading: boolean;
+}
 const ServiceFilterControls = ({
   sortBy,
   setSortBy,
@@ -64,7 +82,7 @@ const ServiceFilterControls = ({
   showRecommended,
   setShowRecommended,
   loading
-}: any) => (
+}: ServiceFilterControlsProps) => (
   <div className="flex flex-wrap gap-4 mb-6 p-4 bg-muted/30 rounded-lg relative">
     {loading && <Spinner className="absolute right-4 top-4 h-4 w-4 text-primary" />}
     <div className="flex items-center gap-2">
@@ -197,7 +215,7 @@ export default function ServicesPage() {
     return {
       items,
       hasMore: endIndex < filteredServices.length || page < 10,
-      total: filteredServices.length
+      _total: filteredServices.length
     };
   }, [sortBy, filterCategory, showRecommended, totalGenerated]);
 
