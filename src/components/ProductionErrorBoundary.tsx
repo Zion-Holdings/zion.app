@@ -1,4 +1,5 @@
-import React, { Component, ReactNode } from 'react';
+import React, { Component } from 'react';
+import type { ReactNode } from 'react';
 import * as Sentry from '@sentry/nextjs';
 import { ENV_CONFIG } from '@/utils/environmentConfig';
 import {logErrorToProduction} from '@/utils/productionLogger';
@@ -56,7 +57,7 @@ class ProductionErrorBoundary extends Component<Props, State> {
     };
   }
 
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+  override componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     logErrorToProduction('ProductionErrorBoundary caught an error:', error, { componentStack: errorInfo.componentStack });
     
     if (ENV_CONFIG.sentry.isConfigured) {
@@ -84,7 +85,7 @@ class ProductionErrorBoundary extends Component<Props, State> {
     }
   };
 
-  componentDidUpdate(_prevProps: Props, prevState: State) {
+  override componentDidUpdate(_prevProps: Props, prevState: State) {
     if (this.state.hasError && !prevState.hasError && this.state.errorType === 'network') {
       this.retryTimeoutId = setTimeout(() => {
         this.handleRetry();
@@ -92,7 +93,7 @@ class ProductionErrorBoundary extends Component<Props, State> {
     }
   }
 
-  componentWillUnmount() {
+  override componentWillUnmount() {
     if (this.retryTimeoutId) {
       clearTimeout(this.retryTimeoutId);
     }
@@ -136,7 +137,7 @@ class ProductionErrorBoundary extends Component<Props, State> {
     }
   }
 
-  render() {
+  override render() {
     if (this.state.hasError) {
       const { title, description, actionText } = this.getErrorMessage();
 

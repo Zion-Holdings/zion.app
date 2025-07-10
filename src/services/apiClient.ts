@@ -144,6 +144,7 @@ apiClient.interceptors.response.use(
 
     if (status === 401) {
       try {
+        if (!supabase) throw new Error('Supabase client not initialized');
         await supabase.auth.signOut({ scope: 'global' });
       } catch (e) {
         logErrorToProduction('Failed to logout after 401', { data:  e });

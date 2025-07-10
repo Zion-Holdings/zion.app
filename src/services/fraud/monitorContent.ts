@@ -1,6 +1,6 @@
 
 // Content monitoring functionality
-import { FraudFlag, FraudSeverity } from '@/types/fraud';
+import type { FraudFlag, FraudSeverity } from '@/types/fraud';
 import { analyzeContent } from './analyzeContent';
 import { flagContent } from './flagContent';
 import { logDebug } from '@/utils/productionLogger';

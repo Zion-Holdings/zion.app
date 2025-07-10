@@ -1,10 +1,11 @@
 
 import { supabase } from "@/integrations/supabase/client";
-import type { QuoteRequest, QuoteStatus } from "@/types/quotes";
+import type { QuoteRequest, QuoteStatus } from '@/types/quotes';
 
 export const quoteRequestService = {
   // Get all quote requests (for admin)
   getAll: async () => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     const { data, error } = await supabase
       .from('quote_requests')
       .select(`
@@ -28,6 +29,7 @@ export const quoteRequestService = {
   
   // Get quote requests for a specific talent
   getByTalentId: async (talentId: string) => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     const { data, error } = await supabase
       .from('quote_requests')
       .select('*')
@@ -40,6 +42,7 @@ export const quoteRequestService = {
   
   // Get a single quote request by id
   getById: async (id: string) => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     const { data, error } = await supabase
       .from('quote_requests')
       .select(`
@@ -61,6 +64,7 @@ export const quoteRequestService = {
   
   // Update quote request status
   updateStatus: async (id: string, status: QuoteStatus) => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     const updates: any = { status };
     
     // If marking as responded, set replied_at
@@ -93,6 +97,7 @@ export const quoteRequestService = {
   
   // Archive/Unarchive a quote request
   toggleArchive: async (id: string, isArchived: boolean) => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     const { data, error } = await supabase
       .from('quote_requests')
       .update({ is_archived: isArchived })
@@ -105,6 +110,7 @@ export const quoteRequestService = {
   
   // Delete a quote request
   delete: async (id: string) => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     const { error } = await supabase
       .from('quote_requests')
       .delete()

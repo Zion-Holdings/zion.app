@@ -1,6 +1,8 @@
 import { supabase } from '@/integrations/supabase/client';
-import { ForumPost } from '@/types/community';
+import type { ForumPost } from '@/types/community';
 import {logErrorToProduction} from '@/utils/productionLogger';
+
+if (!supabase) throw new Error('Supabase client not initialized');
 
 export async function fetchPostsByCategory(
   categoryId: string,

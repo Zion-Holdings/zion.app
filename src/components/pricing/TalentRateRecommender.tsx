@@ -41,7 +41,7 @@ export const TalentRateRecommender: React.FC<TalentRateRecommenderProps> = ({
       const params: TalentRateParams = {
         skills,
         yearsExperience,
-        location,
+        ...(typeof location === 'string' ? { location } : {})
       };
 
       const result = await getTalentRateSuggestion(params);

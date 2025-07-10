@@ -1,8 +1,8 @@
 
 // Content flagging functionality
 import { supabase } from '@/integrations/supabase/client';
-import { FraudSeverity, FraudFlag } from '@/types/fraud';
-import { FlagResult } from './types';
+import type { FraudSeverity, FraudFlag } from '@/types/fraud';
+import type { FlagResult } from './types';
 import { logDebug, logErrorToProduction } from '@/utils/productionLogger';
 
 /**
@@ -27,6 +27,9 @@ export const flagContent = async (
       severity
     });
     
+    // Add null check for supabase before usage
+    if (!supabase) throw new Error('Supabase client not initialized');
+
     const { error } = await supabase.from('fraud_flags').insert({
       user_id: userId,
       user_email: userEmail,
