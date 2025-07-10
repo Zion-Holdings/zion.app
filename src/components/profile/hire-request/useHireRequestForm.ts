@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useHireRequest } from "@/hooks/useHireRequest";
-import { TalentProfile } from "@/types/talent";
+import type { TalentProfile } from "@/types/talent";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
@@ -69,7 +69,7 @@ export function useHireRequestForm({ talent, onClose, initialJobTitle, userDetai
         requester: {
           name: values.requesterName,
           email: values.requesterEmail,
-          id: userDetails?.id
+          id: userDetails?.id || ""
         },
         project: {
           overview: values.projectOverview,
