@@ -274,7 +274,7 @@ export const calculateSearchMetrics = (results: SearchResult[], searchTime: numb
 /**
  * Debounce function for search input
  */
-export const debounce = <T extends (...args: any[]) => any>(
+export const debounce = <T extends (...args: unknown[]) => unknown>(
   func: T,
   wait: number
 ): ((...args: Parameters<T>) => void) => {
