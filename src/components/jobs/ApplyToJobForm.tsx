@@ -125,7 +125,7 @@ export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
                   if (resume.id) {
                     return (
                       <SelectItem key={resume.id} value={resume.id}>
-                        {resume.basic_info.title || "Untitled Resume"}
+                        {resume.title || "Untitled Resume"}
                       </SelectItem>
                     );
                   }
