@@ -14,8 +14,6 @@ export function useContractTemplates() {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
 
-  if (!supabase) throw new Error('Supabase client not initialized');
-
   // Fetch templates for the current user
   const { 
     data: templates = [], 
@@ -24,6 +22,7 @@ export function useContractTemplates() {
   } = useQuery({
     queryKey: ['contractTemplates', user?.id],
     queryFn: async () => {
+      if (!supabase) throw new Error('Supabase client not initialized');
       if (!isAuthenticated || !user) {
         return [];
       }
@@ -55,6 +54,7 @@ export function useContractTemplates() {
       isDefault?: boolean;
     }) => {
       if (!user) throw new Error("User not authenticated");
+      if (!supabase) throw new Error('Supabase client not initialized');
       
       setIsLoading(true);
       
@@ -117,6 +117,7 @@ export function useContractTemplates() {
       isDefault?: boolean;
     }) => {
       if (!user) throw new Error("User not authenticated");
+      if (!supabase) throw new Error('Supabase client not initialized');
       
       setIsLoading(true);
       
