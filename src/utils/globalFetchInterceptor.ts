@@ -171,9 +171,15 @@ if (typeof window !== "undefined" && window.fetch) {
       const url = typeof args[0] === 'string' ? args[0] : '';
       
       if (!shouldFailSilently(url)) {
-        const data = (err as any)?.response?.data;
-        const code = data?.code || data?.error;
-        const message = data?.message || data?.error || 'Network error – please retry';
+        let data: unknown = undefined;
+        if (typeof err === 'object' && err !== null && 'response' in err && typeof (err as { response?: unknown }).response === 'object') {
+          const response = (err as { response?: { data?: unknown } }).response;
+          if (response && 'data' in response) {
+            data = response.data;
+          }
+        }
+        const code = (data as { code?: string; error?: string })?.code || (data as { error?: string })?.error;
+        const message = (data as { message?: string; error?: string })?.message || (data as { error?: string })?.error || 'Network error – please retry';
         const text = code ? `${code}: ${message}` : message;
         if (text !== lastMessage || Date.now() - lastTime > 5000) {
           toast({
