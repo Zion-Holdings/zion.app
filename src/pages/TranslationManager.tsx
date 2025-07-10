@@ -29,7 +29,7 @@ export default function TranslationManager() {
   
   const [selectedNamespace, setSelectedNamespace] = useState("translation");
   const [searchQuery, setSearchQuery] = useState("");
-  const [translations, setTranslations] = useState<Record<string, any>>({});
+  const [translations, setTranslations] = useState<Record<string, unknown>>({});
   const [filteredKeys, setFilteredKeys] = useState<string[]>([]);
   const [editingKey, setEditingKey] = useState<string | null>(null);
   const [editedTranslations, setEditedTranslations] = useState<Record<string, Record<SupportedLanguage, string>>>({});
@@ -38,19 +38,21 @@ export default function TranslationManager() {
   // Simulated translation data - in a real app, this would come from your backend
   useEffect(() => {
     // For demo purposes, we're using the loaded translations from i18next
-    const currentTranslations: Record<string, any> = {};
+    const currentTranslations: Record<string, unknown> = {};
     
     supportedLanguages.forEach(lang => {
       const res = i18n.getResourceBundle(lang.code, selectedNamespace);
       if (res) {
         // Flatten nested objects for easier management
-        const flattenObject = (obj: any, prefix = '') => {
+        const flattenObject = (obj: unknown, prefix = ''): Record<string, string> => {
+          if (typeof obj !== 'object' || obj === null) return {};
           return Object.keys(obj).reduce((acc, key) => {
             const pre = prefix.length ? `${prefix}.` : '';
-            if (typeof obj[key] === 'object' && obj[key] !== null) {
-              Object.assign(acc, flattenObject(obj[key], `${pre}${key}`));
-            } else {
-              acc[`${pre}${key}`] = obj[key];
+            const value = (obj as Record<string, unknown>)[key];
+            if (typeof value === 'object' && value !== null) {
+              Object.assign(acc, flattenObject(value, `${pre}${key}`));
+            } else if (typeof value === 'string') {
+              acc[`${pre}${key}`] = value;
             }
             return acc;
           }, {} as Record<string, string>);
