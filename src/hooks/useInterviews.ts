@@ -139,7 +139,7 @@ export function useInterviews() {
           client_id: interview.client_id,
           talent_id: interview.talent_id,
           scheduled_date: interview.scheduled_date,
-          end_time: interview.end_time || '',
+          end_time: interview.end_time !== undefined ? interview.end_time : '',
           duration_minutes: interview.duration_minutes,
           status,
           meeting_platform,
@@ -149,7 +149,7 @@ export function useInterviews() {
         };
         if (interview.meeting_link !== undefined) result.meeting_link = interview.meeting_link;
         if (interview.notes !== undefined) result.notes = interview.notes;
-        if (interview.title !== undefined) result.title = interview.title;
+        if (typeof interview.title === 'string') result.title = interview.title;
         if (interview.clients?.display_name !== undefined) result.client_name = interview.clients.display_name;
         if (interview.talents?.full_name !== undefined) result.talent_name = interview.talents.full_name;
         if (interview.clients?.avatar_url !== undefined) result.client_avatar = interview.clients.avatar_url;
