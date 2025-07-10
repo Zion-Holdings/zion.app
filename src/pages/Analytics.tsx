@@ -81,7 +81,20 @@ export default function Analytics() {
       data?.forEach((item: unknown) => {
         if (typeof item === 'object' && item !== null && 'created_at' in item) {
           const date = new Date((item as { created_at: string }).created_at).toISOString().split('T')[0] || 'unknown';
-          const conversionType = (item as any)?.metadata?.conversionType || 'unknown';
+          let conversionType = 'unknown';
+          if (
+            typeof item === 'object' &&
+            item !== null &&
+            'metadata' in item &&
+            typeof (item as { metadata?: unknown }).metadata === 'object' &&
+            (item as { metadata?: { conversionType?: unknown } }).metadata &&
+            'conversionType' in (item as { metadata: { conversionType?: unknown } }).metadata
+          ) {
+            const meta = (item as { metadata: { conversionType?: unknown } }).metadata;
+            if (typeof meta.conversionType === 'string') {
+              conversionType = meta.conversionType;
+            }
+          }
           
           if (!conversionsByType[conversionType]) {
             conversionsByType[conversionType] = {};
@@ -143,7 +156,20 @@ export default function Analytics() {
         manual?.forEach((ev: unknown) => {
           if (typeof ev === 'object' && ev !== null && 'created_at' in ev) {
             const date = new Date((ev as { created_at: string }).created_at).toISOString().split('T')[0] || 'unknown';
-            const feature = (ev as any)?.metadata?.feature || 'unknown';
+            let feature = 'unknown';
+            if (
+              typeof ev === 'object' &&
+              ev !== null &&
+              'metadata' in ev &&
+              typeof (ev as { metadata?: unknown }).metadata === 'object' &&
+              (ev as { metadata?: { feature?: unknown } }).metadata &&
+              'feature' in (ev as { metadata: { feature?: unknown } }).metadata
+            ) {
+              const meta = (ev as { metadata: { feature?: unknown } }).metadata;
+              if (typeof meta.feature === 'string') {
+                feature = meta.feature;
+              }
+            }
             if (!usageByDate[date]) usageByDate[date] = {};
             if (!usageByDate[date][feature]) usageByDate[date][feature] = 0;
             usageByDate[date][feature] += 1;
