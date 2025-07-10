@@ -1,5 +1,5 @@
 import * as Sentry from '@sentry/nextjs';
-import { ProductListing } from '@/types/listings';
+import type { ProductListing } from '@/types/listings';
 import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
