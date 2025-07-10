@@ -5,7 +5,7 @@ import { useAuth } from './useAuth';
 
 export interface FirestoreFavorite {
   id: string;
-  created?: any;
+  created?: unknown;
 }
 
 export function useFirestoreFavorites() {
@@ -20,9 +20,9 @@ export function useFirestoreFavorites() {
         setLoading(false);
         return;
       }
-      const favCol = collection(db, 'users', (user as any).uid || (user as any).id, 'favorites');
+      const favCol = collection(db, 'users', typeof user === 'object' && user !== null && 'uid' in user ? (user as { uid?: string }).uid : (typeof user === 'object' && user !== null && 'id' in user ? (user as { id?: string }).id : undefined), 'favorites');
       const snapshot = await getDocs(favCol);
-      setFavorites(snapshot.docs.map(doc => ({ id: doc.id, ...(doc.data() as any) })));
+      setFavorites(snapshot.docs.map(doc => ({ id: doc.id, ...(doc.data() as Record<string, unknown>) })));
       setLoading(false);
     };
     fetchFavorites();
@@ -30,7 +30,7 @@ export function useFirestoreFavorites() {
 
   const toggleFavorite = async (listingId: string) => {
     if (!user) return;
-    const uid = (user as any).uid || (user as any).id;
+    const uid = typeof user === 'object' && user !== null && 'uid' in user ? (user as { uid?: string }).uid : (typeof user === 'object' && user !== null && 'id' in user ? (user as { id?: string }).id : undefined);
     const favRef = doc(db, 'users', uid, 'favorites', listingId);
     const exists = (await getDoc(favRef)).exists();
     if (exists) {
