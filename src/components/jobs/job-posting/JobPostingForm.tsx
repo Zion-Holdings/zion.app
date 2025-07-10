@@ -92,6 +92,17 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
       }
       // Construct a Job object with all required fields
       const now = new Date().toISOString();
+      // Parse budget from salary_range if not present
+      let budget = { min: 0, max: 0, currency: 'USD' };
+      if (jobDataRaw.budget && typeof jobDataRaw.budget === 'object') {
+        budget = jobDataRaw.budget;
+      } else if (typeof jobDataRaw.salary_range === 'string' && jobDataRaw.salary_range.trim() !== '') {
+        const match = jobDataRaw.salary_range.match(/(\d+)/g);
+        if (match && match.length >= 2) {
+          budget.min = parseInt(match[0], 10);
+          budget.max = parseInt(match[1], 10);
+        }
+      }
       const jobData = {
         id: jobId || '',
         client_id: jobDataRaw.user_id || '',
@@ -99,9 +110,7 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
         description: jobDataRaw.description || '',
         category: (jobDataRaw.category as any) || 'other',
         skills: [], // No skills in form, provide empty array
-        budget: jobDataRaw.budget && typeof jobDataRaw.budget === 'object'
-          ? jobDataRaw.budget
-          : { min: 0, max: 0, currency: 'USD' },
+        budget,
         deadline: jobDataRaw.expiry_date || now,
         status: jobDataRaw.status || 'new',
         created_at: jobDataRaw.created_at || now,
