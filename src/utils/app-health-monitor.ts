@@ -436,12 +436,18 @@ class AppHealthMonitor {
 
   private getRecentErrorCount(): number {
     // Try to get error count from enhanced error logger if available
+    interface EnhancedErrorLogger {
+      getErrors: () => Array<{ lastSeen: number }>;
+    }
+    function hasEnhancedErrorLogger(obj: unknown): obj is { enhancedErrorLogger: EnhancedErrorLogger } {
+      return typeof obj === 'object' && obj !== null && 'enhancedErrorLogger' in obj;
+    }
     try {
-      if (typeof window !== 'undefined' && (window as any).enhancedErrorLogger) {
-        const errorLogger = (window as any).enhancedErrorLogger;
+      if (typeof window !== 'undefined' && hasEnhancedErrorLogger(window)) {
+        const errorLogger = window.enhancedErrorLogger;
         const errors = errorLogger.getErrors();
         const fiveMinutesAgo = Date.now() - (5 * 60 * 1000);
-        return errors.filter((error: any) => error.lastSeen > fiveMinutesAgo).length;
+        return errors.filter((error) => typeof error === 'object' && error !== null && 'lastSeen' in error && typeof (error as { lastSeen: unknown }).lastSeen === 'number' && (error as { lastSeen: number }).lastSeen > fiveMinutesAgo).length;
       }
     } catch {
       // Fallback to simple error counting
@@ -455,8 +461,7 @@ class AppHealthMonitor {
     setInterval(() => {
       this.performHealthCheck().then(report => {
         // Store latest report for quick access
-        (window as any).latestHealthReport = report;
-        
+        (window as unknown as { latestHealthReport?: HealthReport }).latestHealthReport = report;
         // Log warnings and critical issues
         if (report.status !== 'healthy') {
           console.warn('🏥 Health issue detected:', report);
@@ -465,14 +470,14 @@ class AppHealthMonitor {
         console.error('Health monitoring error:', error);
       });
     }, 30000);
-
     // Expose health monitor globally for debugging
-    (window as any).appHealthMonitor = this;
+    (window as unknown as { appHealthMonitor?: AppHealthMonitor }).appHealthMonitor = this;
   }
 
   public getLatestReport(): HealthReport | null {
-    if (typeof window !== 'undefined') {
-      return (window as any).latestHealthReport || null;
+    if (typeof window !== 'undefined' && 'latestHealthReport' in window) {
+      const report = (window as unknown as { latestHealthReport?: HealthReport }).latestHealthReport;
+      return report || null;
     }
     return null;
   }
