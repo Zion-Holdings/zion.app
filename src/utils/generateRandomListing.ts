@@ -1,4 +1,4 @@
-import { ProductListing } from "@/types/listings";
+import type { ProductListing } from "@/types/listings";
 import { REGIONS } from "@/data/filterConstants";
 
 // Category definitions with average price ranges
