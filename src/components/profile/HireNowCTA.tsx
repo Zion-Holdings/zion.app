@@ -74,7 +74,7 @@ export function HireNowCTA({ talentProfile }: HireNowCTAProps) {
           skills: [],
           availability_type: 'full_time',
           timezone: '',
-          hourly_rate: talentProfile.hourly_rate
+          hourly_rate: talentProfile.hourly_rate ?? 0
         } : null}
       />
     </div>
