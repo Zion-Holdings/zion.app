@@ -75,7 +75,8 @@ export function SignUpForm() {
         });
 
         if (result?.error) {
-          throw new Error(result.error);
+          const errorMsg = typeof result.error === 'string' ? result.error : (result.error && typeof result.error.message === 'string' ? result.error.message : 'Signup failed. Please try again.');
+          throw new Error(errorMsg);
         }
 
         if (result?.emailVerificationRequired) {
@@ -88,7 +89,8 @@ export function SignUpForm() {
         const { error } = await login(formData.email, formData.password);
         
         if (error) {
-          throw new Error(error);
+          const errorMsg = typeof error === 'string' ? error : (error && typeof error.message === 'string' ? error.message : 'Login failed. Please try again.');
+          throw new Error(errorMsg);
         }
         
         router.push("/mobile");
