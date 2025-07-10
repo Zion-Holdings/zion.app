@@ -31,11 +31,11 @@ const ProductDetailPage = ({ product }: ProductPageProps) => {
         description={product.description || `Details for ${product.name}`}
         type="product"
         image={
-          product.images
+          product.images && product.images.length > 0
             ? typeof product.images[0] === 'string'
               ? product.images[0]
-              : product.images[0]?.url
-            : undefined
+              : product.images[0]?.url || ''
+            : ''
         }
         product={{
           ...(typeof product.price === 'number' ? { price: product.price } : {}),
