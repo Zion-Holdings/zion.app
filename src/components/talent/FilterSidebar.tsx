@@ -62,7 +62,7 @@ export function FilterSidebar({
         toggleSkill={toggleSkill} 
         expanded={expandedSections.skills} 
         toggleSection={() => toggleSection('skills')}
-        isMobileFilterOpen={isMobileFilterOpen}
+        isMobileFilterOpen={isMobileFilterOpen ?? false}
       />
       
       {/* Availability */}
@@ -71,7 +71,7 @@ export function FilterSidebar({
         toggleAvailability={toggleAvailability} 
         expanded={expandedSections.availability} 
         toggleSection={() => toggleSection('availability')}
-        isMobileFilterOpen={isMobileFilterOpen}
+        isMobileFilterOpen={isMobileFilterOpen ?? false}
       />
       
       {/* Region */}
@@ -80,7 +80,7 @@ export function FilterSidebar({
         toggleRegion={toggleRegion} 
         expanded={expandedSections.region} 
         toggleSection={() => toggleSection('region')}
-        isMobileFilterOpen={isMobileFilterOpen}
+        isMobileFilterOpen={isMobileFilterOpen ?? false}
       />
       
       {/* Years of Experience */}
@@ -89,7 +89,7 @@ export function FilterSidebar({
         setExperienceRange={setExperienceRange} 
         expanded={expandedSections.experience} 
         toggleSection={() => toggleSection('experience')}
-        isMobileFilterOpen={isMobileFilterOpen}
+        isMobileFilterOpen={isMobileFilterOpen ?? false}
       />
       
       {/* Price Range */}
@@ -98,7 +98,7 @@ export function FilterSidebar({
         setPriceRange={setPriceRange} 
         expanded={expandedSections.price} 
         toggleSection={() => toggleSection('price')}
-        isMobileFilterOpen={isMobileFilterOpen}
+        isMobileFilterOpen={isMobileFilterOpen ?? false}
       />
       
       {isMobileFilterOpen && (
