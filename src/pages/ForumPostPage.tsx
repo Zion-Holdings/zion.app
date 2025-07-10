@@ -180,14 +180,12 @@ export default function ForumPostPage() {
       content,
       authorId: user.id || 'unknown',
       authorName: user.displayName || 'Anonymous',
+      ...(user.avatarUrl ? { authorAvatar: user.avatarUrl } : {}),
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
       upvotes: 0,
       downvotes: 0
     };
-    if (user.avatarUrl) {
-      (newReply as any).authorAvatar = user.avatarUrl;
-    }
     
     setReplies([...replies, newReply]);
     setPost({ ...post, replyCount: post.replyCount + 1 });
