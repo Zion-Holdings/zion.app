@@ -44,7 +44,6 @@ class BuildPerformanceOptimizer {
   }
 
   public async analyzeBuildOutput(buildDir: string = '.next'): Promise<PerformanceMetrics> {
-    console.log('🔍 Starting build performance analysis...');
     
     try {
       // Analyze static chunks
@@ -59,7 +58,6 @@ class BuildPerformanceOptimizer {
       // Generate recommendations
       this.generateRecommendations();
       
-      console.log('✅ Build performance analysis complete');
       return this.performanceMetrics;
       
     } catch (error) {
@@ -136,10 +134,6 @@ class BuildPerformanceOptimizer {
     const vendorSize = vendorChunks.reduce((total, chunk) => total + chunk.size, 0);
     const pageSize = pageChunks.reduce((total, chunk) => total + chunk.size, 0);
 
-    console.log(`📊 Bundle composition:`);
-    console.log(`  Vendor chunks: ${this.formatSize(vendorSize)} (${vendorChunks.length} files)`);
-    console.log(`  Page chunks: ${this.formatSize(pageSize)} (${pageChunks.length} files)`);
-    console.log(`  Total: ${this.formatSize(this.performanceMetrics.totalBundleSize)}`);
   }
 
   private identifyOptimizations(): void {
