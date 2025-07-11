@@ -7,13 +7,6 @@ export type ConsoleLogEntry = {
 const logBuffer: ConsoleLogEntry[] = [];
 const MAX_LOGS = 50;
 
-function pushLog(entry: ConsoleLogEntry) {
-  logBuffer.push(entry);
-  if (logBuffer.length > MAX_LOGS) {
-    logBuffer.shift();
-  }
-}
-
 export function initConsoleLogCapture() {
   if (typeof window === 'undefined') return;
   if ((window as unknown as { __logCaptureInitialized?: boolean }).__logCaptureInitialized) return;
