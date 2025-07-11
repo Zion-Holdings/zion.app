@@ -438,6 +438,11 @@ const nextConfig = {
     'ajv-keywords',
     '@ungap/structured-clone',
     'axios-retry',
+    '@reown/appkit',
+    '@reown/appkit-adapter-ethers',
+    '@reown/appkit-scaffold-ui',
+    '@noble/hashes',
+    '@coinbase/wallet-sdk',
   ],
 
   webpack: (config, { dev, isServer, webpack }) => {
