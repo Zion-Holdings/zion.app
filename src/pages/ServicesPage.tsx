@@ -373,7 +373,7 @@ export default function ServicesPage() {
 
       <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
         <AnimatePresence mode="popLayout">
-          {services.map((item, index) => (
+          {services.map((item: ProductListing, index) => (
             <motion.div
               key={item.id} ref={index === services.length - 1 ? lastElementRef : null}
               initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }}
