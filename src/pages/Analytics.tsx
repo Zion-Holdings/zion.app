@@ -34,7 +34,7 @@ export default function Analytics() {
       
       // Group by date
       const viewsByDate: Record<string, { date: string; views: number }> = {};
-      data?.forEach((item: unknown) => {
+      (data ?? []).forEach((item: unknown) => {
         if (typeof item === 'object' && item !== null && 'created_at' in item) {
           const date = new Date((item as { created_at: string }).created_at).toISOString().split('T')[0] || 'unknown';
           if (!viewsByDate[date]) viewsByDate[date] = { date: date, views: 0 };
@@ -99,12 +99,12 @@ export default function Analytics() {
           if (!conversionsByType[conversionType]) {
             conversionsByType[conversionType] = {};
           }
-          
-          if (!conversionsByType[conversionType][date]) {
-            conversionsByType[conversionType][date] = 0;
+          if (conversionsByType[conversionType]) {
+            if (!conversionsByType[conversionType][date]) {
+              conversionsByType[conversionType][date] = 0;
+            }
+            conversionsByType[conversionType][date]! += 1;
           }
-          
-          conversionsByType[conversionType][date] += 1;
         }
       });
       
@@ -122,7 +122,7 @@ export default function Analytics() {
         const result: Record<string, unknown> = { date };
         
         Object.keys(conversionsByType).forEach(type => {
-          result[type] = conversionsByType[type]?.[date] || 0;
+          result[type] = conversionsByType[type] && conversionsByType[type][date] ? conversionsByType[type][date] : 0;
         });
         
         return result;
@@ -153,7 +153,7 @@ export default function Analytics() {
         if (manualError) throw manualError;
 
         const usageByDate: Record<string, Record<string, number>> = {};
-        manual?.forEach((ev: unknown) => {
+        (manual ?? []).forEach((ev: unknown) => {
           if (typeof ev === 'object' && ev !== null && 'created_at' in ev) {
             const date = new Date((ev as { created_at: string }).created_at).toISOString().split('T')[0] || 'unknown';
             let feature = 'unknown';
@@ -176,7 +176,7 @@ export default function Analytics() {
           }
         });
 
-        return Object.entries(usageByDate).map(([date, feats]) => ({
+        return Object.entries(usageByDate ?? {}).map(([date, feats]) => ({
           date,
           ...feats,
         }));
@@ -192,7 +192,7 @@ export default function Analytics() {
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         <PageViewsChart
-          data={pageViewTrends || []}
+          data={pageViewTrends ?? []}
           timeRange={timeRange}
           onTimeRangeChange={setTimeRange}
         />
@@ -205,12 +205,12 @@ export default function Analytics() {
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         <ConversionAnalysisChart
-          data={conversionData || []}
+          data={conversionData ?? []}
           timeRange={timeRange}
           onTimeRangeChange={setTimeRange}
         />
         <FeatureUsageChart
-          data={featureUsageData || []}
+          data={featureUsageData ?? []}
           timeRange={timeRange}
           onTimeRangeChange={setTimeRange}
         />
