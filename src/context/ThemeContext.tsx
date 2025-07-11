@@ -1,6 +1,8 @@
-import { createContext, useContext, useEffect, ReactNode } from 'react'
+import { createContext, useContext, useEffect } from 'react'
+import type { ReactNode } from 'react'
 import { useLocalStorage } from '@/hooks'
-import { ThemePreset, getThemeColors, applyThemeColors } from '@/utils/themeUtils'
+import { getThemeColors, applyThemeColors } from '@/utils/themeUtils'
+import type { ThemePreset } from '@/utils/themeUtils'
 
 export type Theme = 'light' | 'dark' // This can be deprecated if presets cover these
 
