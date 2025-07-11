@@ -114,6 +114,7 @@ import { CartProvider } from '@/context/CartContext';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import '../src/index.css'; // Restored main CSS import
+import '../src/components/video/video-call.css';
 
 // Dynamically import the Toaster component from sonner for client-side rendering only
 const Toaster = dynamic(

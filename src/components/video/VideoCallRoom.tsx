@@ -14,8 +14,6 @@ import { Video, VideoOff, Mic, MicOff, Phone, ScreenShare, ScreenShareOff, Volum
 
 
 
-import './video-call.css';
-
 interface Participant {
   id: string;
   name: string;
