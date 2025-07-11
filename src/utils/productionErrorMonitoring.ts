@@ -131,7 +131,7 @@ export class ProductionErrorMonitor {
       },
       context: {
         route: typeof window !== 'undefined' ? window.location.pathname : '',
-        component: typeof context.component === 'string' ? context.component : undefined,
+        component: typeof context.component === 'string' ? context.component : '',
         browserInfo: typeof window !== 'undefined' ? {
           cookiesEnabled: navigator.cookieEnabled,
           onLine: navigator.onLine,
@@ -139,7 +139,10 @@ export class ProductionErrorMonitor {
         } : { cookiesEnabled: false, onLine: false, language: '' },
         ...context
       },
-      performanceMetrics: this.getPerformanceMetrics() || undefined
+      performanceMetrics: {
+        loadTime: typeof this.getPerformanceMetrics().loadTime === 'number' ? this.getPerformanceMetrics().loadTime : undefined,
+        memoryUsage: this.getPerformanceMetrics().memoryUsage
+      }
     };
   }
 
