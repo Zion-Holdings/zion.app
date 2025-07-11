@@ -152,12 +152,10 @@ export function ProjectMilestonesContent() {
 
         <TabsContent value="milestones">
           <MilestoneManager
-            projectId={projectId || ''}
             milestones={milestones}
             activities={activities}
             isLoading={milestonesLoading}
             isClient={isClient}
-            isTalent={isTalent}
             paymentTerms={project.payment_terms}
             isSubmitting={isSubmitting}
             onCreateMilestone={handleCreateMilestone}
