@@ -4,7 +4,8 @@ import { showApiError } from '@/utils/apiErrorHandler';
 import { supabase } from '@/integrations/supabase/client';
 import axiosRetry from 'axios-retry';
 import { logErrorToProduction, logDebug } from '@/utils/productionLogger';
-import type { AxiosResponse, AxiosRequestConfig } from 'axios';
+import type { AxiosResponse, InternalAxiosRequestConfig, AxiosHeaders } from 'axios';
+import { AxiosHeaders as AxiosHeadersClass } from 'axios';
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL || 'https://api.ziontechgroup.com/v1';
 
@@ -106,17 +107,15 @@ const apiClient = axios.create({
   baseURL: `${API_BASE}/api/v1/services`,
 });
 
-apiClient.interceptors.request.use((config: AxiosRequestConfig) => {
+apiClient.interceptors.request.use((config: InternalAxiosRequestConfig) => {
   if (typeof config !== 'object' || config === null) {
-    return { headers: { Accept: 'application/json' } };
+    return config;
   }
-  const headers = config.headers && typeof config.headers === 'object'
-    ? { ...config.headers, Accept: 'application/json' }
-    : { Accept: 'application/json' };
-  return {
-    ...config,
-    headers,
-  };
+  if (!(config.headers instanceof AxiosHeadersClass)) {
+    config.headers = new AxiosHeadersClass(config.headers ?? {});
+  }
+  (config.headers as AxiosHeaders).set('Accept', 'application/json');
+  return config;
 });
 
 axiosRetry(apiClient, {
