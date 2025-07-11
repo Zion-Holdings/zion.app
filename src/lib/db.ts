@@ -6,7 +6,7 @@ const CART_STORE = 'cart';
 const WISHLIST_STORE = 'wishlist';
 
 let indexedDBAvailable = true;
-const memoryStore: Record<string, any[]> = {
+const memoryStore: Record<string, unknown[]> = {
   [CART_STORE]: [],
   [WISHLIST_STORE]: []
 };
@@ -42,7 +42,7 @@ function openDB(): Promise<IDBDatabase | null> {
   });
 }
 
-async function getList(storeName: string): Promise<any[]> {
+async function getList(storeName: string): Promise<unknown[]> {
   const db = await openDB();
   if (!db) {
     return memoryStore[storeName] || [];
@@ -56,7 +56,7 @@ async function getList(storeName: string): Promise<any[]> {
   });
 }
 
-async function setList(storeName: string, items: any[]): Promise<void> {
+async function setList(storeName: string, items: unknown[]): Promise<void> {
   const db = await openDB();
   if (!db) {
     memoryStore[storeName] = items;
@@ -70,15 +70,15 @@ async function setList(storeName: string, items: any[]): Promise<void> {
   });
 }
 
-export async function getCart() {
+export async function getCart(): Promise<unknown[]> {
   return getList(CART_STORE);
 }
-export async function saveCart(items: any[]) {
+export async function saveCart(items: unknown[]): Promise<void> {
   await setList(CART_STORE, items);
 }
-export async function getWishlist() {
+export async function getWishlist(): Promise<unknown[]> {
   return getList(WISHLIST_STORE);
 }
-export async function saveWishlist(items: any[]) {
+export async function saveWishlist(items: unknown[]): Promise<void> {
   await setList(WISHLIST_STORE, items);
 }
