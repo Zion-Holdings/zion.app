@@ -13,7 +13,7 @@ import ListingGridSkeleton from "@/components/skeletons/ListingGridSkeleton";
 import { safeStorage } from "@/utils/safeStorage";
 
 // Example listing type
-interface Listing {
+export interface Listing {
   id: string;
   title: string;
   description: string;

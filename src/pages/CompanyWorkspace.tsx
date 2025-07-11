@@ -50,7 +50,11 @@ export default function CompanyWorkspace() {
       />
       <Header
         customLogo={(isWhitelabel ? tenant?.logo_url : company.logoUrl) ?? ""}
-        customTheme={effectiveTheme}
+        customTheme={effectiveTheme || {
+          primaryColor: "",
+          backgroundColor: "var(--background)",
+          textColor: "var(--foreground)"
+        }}
       />
       <main className="min-h-screen" style={{ backgroundColor: effectiveTheme?.backgroundColor || 'var(--background)' }}>
         <CompanyDashboard company={company} />
