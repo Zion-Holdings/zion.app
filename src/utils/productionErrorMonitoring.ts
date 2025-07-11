@@ -140,7 +140,7 @@ export class ProductionErrorMonitor {
         ...context
       },
       performanceMetrics: {
-        loadTime: typeof this.getPerformanceMetrics().loadTime === 'number' ? this.getPerformanceMetrics().loadTime ?? 0 : 0,
+        loadTime: this.getPerformanceMetrics().loadTime,
         memoryUsage: this.getPerformanceMetrics().memoryUsage
       }
     };

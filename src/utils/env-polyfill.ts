@@ -10,12 +10,12 @@ declare global {
   // eslint-disable-next-line no-var
   var process: {
     env: Record<string, string>;
-  };
+  } | undefined;
 }
 
 // Define the global process object if it doesn't exist
-if (typeof globalThis !== 'undefined' && typeof globalThis.process === 'undefined') {
-  globalThis.process = {
+if (typeof globalThis !== 'undefined' && !('process' in globalThis)) {
+  (globalThis as any).process = {
     env: {
       NODE_ENV: 'production', // Default to production for safety
       NEXT_PUBLIC_APP_URL: '',
