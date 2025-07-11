@@ -28,9 +28,9 @@ export async function updateSession(request: NextRequest) {
       {
         cookies: {
           get(name: string) {
-            const cookies = (request as any).cookies;
-            if (cookies && typeof cookies.get === 'function') {
-              const cookie = cookies.get(name);
+            const cookiesAny = request.cookies as any;
+            if (typeof cookiesAny.get === 'function') {
+              const cookie = cookiesAny.get(name);
               return typeof cookie === 'object' && cookie !== null && 'value' in cookie ? (cookie as { value: string }).value : undefined;
             }
             return undefined;
