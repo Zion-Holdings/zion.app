@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
-import * as _fs from 'fs';
-import * as _path from 'path';
+import * as fs from 'fs';
+import * as path from 'path';
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 
@@ -221,9 +221,14 @@ export default async function handler(
     }
 
     // Handle missing Stripe key
-    if (error && typeof error === 'object' && 'message' in error && 
-        typeof (error as { message?: string }).message === 'string' && 
-        (error as { message?: string }).message.includes('No API key provided')) {
+    if (
+      error &&
+      typeof error === 'object' &&
+      'message' in error &&
+      typeof (error as { message?: string }).message === 'string' &&
+      (error as { message?: string }).message &&
+      (error as { message?: string }).message.includes('No API key provided')
+    ) {
       return res.status(500).json({
         error: 'Payment system configuration error',
         details: process.env['NODE_ENV'] === 'development' 
@@ -241,3 +246,4 @@ export default async function handler(
     });
   }
 }
+
