@@ -117,11 +117,10 @@ export class ProductionErrorMonitor {
 
   private buildErrorReport(error: Error | unknown, context: Record<string, unknown>): ErrorReport {
     const actualError = error instanceof Error ? error : new Error(String(error));
-    
     const perf = this.getPerformanceMetrics();
-    const loadTime = typeof perf.loadTime === 'number' && !isNaN(perf.loadTime) ? perf.loadTime : undefined;
-    const memoryUsage = perf.memoryUsage !== undefined ? perf.memoryUsage : undefined;
-    return {
+    const hasLoadTime = typeof perf.loadTime === 'number';
+    const hasMemoryUsage = perf.memoryUsage !== undefined;
+    const baseReport = {
       timestamp: new Date().toISOString(),
       url: typeof window !== 'undefined' ? window.location.href : '',
       userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
@@ -141,6 +140,7 @@ export class ProductionErrorMonitor {
           language: navigator.language
         } : { cookiesEnabled: false, onLine: false, language: '' },
         ...context
+<<<<<<< HEAD
       },
       performanceMetrics: {
         ...(typeof loadTime === 'number' ? { loadTime } : {}),
@@ -148,8 +148,20 @@ export class ProductionErrorMonitor {
       } as {
         loadTime?: number;
         memoryUsage?: { used?: number; total?: number; limit?: number };
+=======
+>>>>>>> 85559ee4ff5b1e4bcf1b7b07f3985adaf3b11849
       }
     };
+    if (hasLoadTime || hasMemoryUsage) {
+      const metrics: { loadTime?: number; memoryUsage?: { used?: number; total?: number; limit?: number } } = {};
+      if (hasLoadTime) metrics.loadTime = perf.loadTime as number;
+      if (hasMemoryUsage) metrics.memoryUsage = perf.memoryUsage as { used?: number; total?: number; limit?: number };
+      return {
+        ...baseReport,
+        performanceMetrics: metrics
+      };
+    }
+    return baseReport;
   }
 
   private getPerformanceMetrics() {
