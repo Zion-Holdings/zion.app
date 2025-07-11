@@ -5,45 +5,12 @@
  * It prevents the "Cannot read properties of undefined (reading 'env')" error.
  */
 
-// Define the global process object if it doesn't exist
+// Remove any 'var process' block
+// Only polyfill process on globalThis if it does not exist
 if (typeof globalThis !== 'undefined' && typeof (globalThis as any).process === 'undefined') {
   (globalThis as any).process = {
     env: {
       NODE_ENV: 'production', // Default to production for safety
-      NEXT_PUBLIC_APP_URL: '',
-      NEXT_PUBLIC_SUPABASE_URL: '',
-      NEXT_PUBLIC_SUPABASE_ANON_KEY: '',
-    },
-    // Add other process properties that might be accessed
-    versions: {
-      node: '',
-      v8: '',
-      uv: '',
-      zlib: '',
-      ares: '',
-      modules: '',
-      nghttp2: '',
-      napi: '',
-      llhttp: '',
-      http_parser: '',
-      openssl: '',
-      icu: '',
-      unicode: '',
-      cldr: '',
-      tz: '',
-    },
-    platform: 'darwin',
-    arch: 'x64',
-    version: '18.0.0',
-    browser: true,
-  } as unknown as NodeJS.Process;
-}
-
-// Also handle the window object for older browsers
-if (typeof window !== 'undefined' && typeof (window as any).process === 'undefined') {
-  (window as any).process = {
-    env: {
-      NODE_ENV: 'production',
       NEXT_PUBLIC_APP_URL: '',
       NEXT_PUBLIC_SUPABASE_URL: '',
       NEXT_PUBLIC_SUPABASE_ANON_KEY: '',
@@ -66,7 +33,7 @@ if (typeof window !== 'undefined' && typeof (window as any).process === 'undefin
       tz: '2021a',
       unicode: '13.0',
     },
-    platform: 'browser',
+    platform: 'darwin',
     arch: 'x64',
     version: '18.0.0',
     browser: true,
