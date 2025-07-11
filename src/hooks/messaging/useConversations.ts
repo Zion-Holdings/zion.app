@@ -18,8 +18,6 @@ export function useConversations(
   setUnreadCount: (count: number) => void,
   setIsLoading: (loading: boolean) => void
 ) {
-  if (!supabase) throw new Error('Supabase client not initialized');
-
   /**
    * Fetch conversations for the current user
    */
@@ -30,7 +28,7 @@ export function useConversations(
     
     try {
       // Fetch conversations from the database
-      const { data, error } = await supabase.from('conversations').select('*').eq('user_one_id', user.id).or(`user_two_id.eq.${user.id}`);
+      const { data, error } = await supabase!.from('conversations').select('*').eq('user_one_id', user.id).or(`user_two_id.eq.${user.id}`);
         
       if (error) throw error;
       
@@ -92,8 +90,7 @@ export function useConversations(
     
     try {
       // Check if conversation already exists
-      if (!supabase) throw new Error('Supabase client not initialized');
-      const { data: existingConversations, error: fetchError } = await supabase
+      const { data: existingConversations, error: fetchError } = await supabase!
         .from('conversations')
         .select('*')
         .or(`user_one_id.eq.${user.id},user_two_id.eq.${user.id}`)
@@ -110,7 +107,7 @@ export function useConversations(
         
         // Update context if provided
         if (contextType || contextId || contextData) {
-          await supabase
+          await supabase!
             .from('conversations')
             .update({
               context_type: contextType,
@@ -122,14 +119,14 @@ export function useConversations(
         }
       } else {
         // Get recipient information
-        const { data: recipientData, error: recipientError } = await supabase
+        const { data: recipientData, error: recipientError } = await supabase!
           .from('users')
           .select('*')
           .eq('id', recipientId)
           .single();
         if (recipientError) throw recipientError;
         // Create a new conversation
-        const { data: newConversation, error: createError } = await supabase
+        const { data: newConversation, error: createError } = await supabase!
           .from('conversations')
           .insert({
             user_one_id: user.id,
@@ -151,8 +148,7 @@ export function useConversations(
       }
       
       // Send the initial message
-      if (!supabase) throw new Error('Supabase client not initialized');
-      await supabase
+      await supabase!
         .from('messages')
         .insert({
           conversation_id: conversationId,
