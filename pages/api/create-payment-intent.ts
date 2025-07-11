@@ -21,7 +21,7 @@ function isProdDomain() {
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req['method'] !== 'POST') {
-    res.statusCode = 405;
+    res.status(405);
     res.setHeader('Allow', 'POST');
     res.end('Method Not Allowed');
     return;
@@ -29,8 +29,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
   const { amount, userId } = (req['body'] as { amount?: number; userId?: string }) || {};
   if (typeof amount !== 'number') {
-    res.statusCode = 400;
-    res.json({ error: 'Invalid amount' });
+    res.status(400).json({ error: 'Invalid amount' });
     return;
   }
 
@@ -57,8 +56,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       metadata: userId ? { userId } : undefined,
       automatic_payment_methods: { enabled: true },
     });
-    res.statusCode = 200;
-    res.json({ clientSecret: intent.client_secret, id: intent.id });
+    res.status(200).json({ clientSecret: intent.client_secret, id: intent.id });
   } catch (err) {
     logErrorToProduction('Create payment intent error:', { data: err });
     res.statusCode = 500;

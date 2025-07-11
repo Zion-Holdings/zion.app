@@ -149,7 +149,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
     }
     res.status(500).json({ 
       error: 'Internal server error',
-      details: ENV_CONFIG.app.isDevelopment ? error.message : undefined
+      details: ENV_CONFIG.app.isDevelopment && typeof error === 'object' && error !== null && 'message' in error ? (error as { message?: string }).message : undefined
     });
     return;
   }
