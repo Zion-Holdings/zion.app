@@ -122,14 +122,6 @@ class BuildPerformanceOptimizer {
 
   private async analyzeBundleComposition(): Promise<void> {
     // Analyze common patterns that indicate optimization opportunities
-    const vendorChunks = this.bundleAnalysis.filter(chunk => 
-      chunk.file.includes('vendor') || chunk.file.includes('node_modules')
-    );
-    
-    const pageChunks = this.bundleAnalysis.filter(chunk => 
-      chunk.route && !['vendor', 'common', 'runtime'].includes(chunk.route)
-    );
-
   }
 
   private identifyOptimizations(): void {
