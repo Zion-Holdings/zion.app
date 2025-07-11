@@ -158,7 +158,7 @@ export class EnhancedApiErrorHandler {
           message = dataObj.message;
         }
       }
-    } catch (_e) {
+    } catch {
       // Use default message
     }
 
