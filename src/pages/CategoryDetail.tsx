@@ -19,6 +19,7 @@ import { NextSeo } from '@/components/NextSeo';
 import { Header } from "@/components/Header";
 import ListingGridSkeleton from '@/components/skeletons/ListingGridSkeleton';
 import {logErrorToProduction} from '@/utils/productionLogger';
+import apiClient from '@/lib/apiClient';
 
 
 const AUTO_SERVICE_TITLES = [
@@ -167,19 +168,11 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
         setCategory(currentCategory);
         innovationCounterRef.current = 0;
 
-        // Filter listings by category
-        const categoryTitle = currentCategory.title;
-        const filteredListings = MARKETPLACE_LISTINGS.filter(
-          (listing) => listing.category.toLowerCase() === categoryTitle.toLowerCase()
-        );
+        // Fetch real listings for this category from API
+        const response = await apiClient.get('/products', { params: { category: currentCategory.title } });
+        const filteredListings = response.data?.items || [];
 
-        // If we don't have real listings for this category, generate placeholder listings
-        const listingsToShow =
-          filteredListings.length > 0
-            ? filteredListings
-            : [];
-
-        setListings(listingsToShow);
+        setListings(filteredListings);
       } catch (err) {
         logErrorToProduction('Category load error:', { data: err });
         toast({ title: 'Error', description: 'Failed to load category' });
