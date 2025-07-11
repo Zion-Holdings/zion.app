@@ -1,4 +1,4 @@
-import { useForm } from 'react-hook-form';
+import { useForm, type ControllerRenderProps } from 'react-hook-form';
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/store';
 import { useRouter } from 'next/router';
@@ -212,7 +212,7 @@ function CheckoutInner() {
           <FormField
             control={form.control}
             name="name"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<CheckoutFormData, 'name'> }) => (
               <FormItem>
                 <FormLabel>Full Name *</FormLabel>
                 <FormControl>
@@ -226,7 +226,7 @@ function CheckoutInner() {
           <FormField
             control={form.control}
             name="email"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<CheckoutFormData, 'email'> }) => (
               <FormItem>
                 <FormLabel>Email Address *</FormLabel>
                 <FormControl>
@@ -240,7 +240,7 @@ function CheckoutInner() {
           <FormField
             control={form.control}
             name="address"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<CheckoutFormData, 'address'> }) => (
               <FormItem>
                 <FormLabel>Address *</FormLabel>
                 <FormControl>
@@ -254,7 +254,7 @@ function CheckoutInner() {
           <FormField
             control={form.control}
             name="city"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<CheckoutFormData, 'city'> }) => (
               <FormItem>
                 <FormLabel>City *</FormLabel>
                 <FormControl>
@@ -268,7 +268,7 @@ function CheckoutInner() {
           <FormField
             control={form.control}
             name="country"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<CheckoutFormData, 'country'> }) => (
               <FormItem>
                 <FormLabel>Country *</FormLabel>
                 <FormControl>
