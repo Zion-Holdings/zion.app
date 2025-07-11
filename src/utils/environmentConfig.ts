@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { logInfo, logWarn } from '@/utils/productionLogger';
+import type { Site } from '@datadog/browser-core';
 
 
 interface EnvironmentConfig {
@@ -131,8 +132,7 @@ export async function initializeServices(): Promise<void> {
       const { datadogLogs } = await import('@datadog/browser-logs');
       datadogLogs.init({
         clientToken: config.datadog.clientToken,
-        site: (config.datadog.site as any) || 'datadoghq.com',
-        site: config.datadog.site || 'datadoghq.com',
+        site: (config.datadog.site as Site) || 'datadoghq.com',
         service: config.datadog.service || 'zion-app',
         env: config.datadog.env || nodeEnv,
         forwardErrorsToLogs: true,
