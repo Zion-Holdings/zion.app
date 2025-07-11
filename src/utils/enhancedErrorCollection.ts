@@ -216,7 +216,7 @@ class EnhancedErrorCollector {
       errorCount,
       memoryPressure: Math.round(this.healthMetrics.memoryPressure * 100),
       networkStatus: this.healthMetrics.networkStatus,
-    });
+    }});
   }
 
   private generateFingerprint(error: Error, context: ErrorContext): string {
