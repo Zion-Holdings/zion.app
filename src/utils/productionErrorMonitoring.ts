@@ -117,8 +117,10 @@ export class ProductionErrorMonitor {
 
   private buildErrorReport(error: Error | unknown, context: Record<string, unknown>): ErrorReport {
     const actualError = error instanceof Error ? error : new Error(String(error));
-    
-    return {
+    const perf = this.getPerformanceMetrics();
+    const hasLoadTime = typeof perf.loadTime === 'number';
+    const hasMemoryUsage = perf.memoryUsage !== undefined;
+    const baseReport = {
       timestamp: new Date().toISOString(),
       url: typeof window !== 'undefined' ? window.location.href : '',
       userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
@@ -138,26 +140,18 @@ export class ProductionErrorMonitor {
           language: navigator.language
         } : { cookiesEnabled: false, onLine: false, language: '' },
         ...context
-      },
-      performanceMetrics: {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        ...(typeof this.getPerformanceMetrics().loadTime === 'number' && !isNaN(this.getPerformanceMetrics().loadTime)
-          ? { loadTime: this.getPerformanceMetrics().loadTime as number }
-          : {}),
-        ...(this.getPerformanceMetrics().memoryUsage !== undefined
-          ? { memoryUsage: this.getPerformanceMetrics().memoryUsage as { used?: number; total?: number; limit?: number; } }
-          : {})
-=======
-        ...(typeof this.getPerformanceMetrics().loadTime === 'number' ? { loadTime: this.getPerformanceMetrics().loadTime } : {}),
-        ...(this.getPerformanceMetrics().memoryUsage ? { memoryUsage: this.getPerformanceMetrics().memoryUsage } : {})
->>>>>>> Stashed changes
-=======
-        ...(typeof this.getPerformanceMetrics().loadTime === 'number' ? { loadTime: this.getPerformanceMetrics().loadTime } : {}),
-        ...(this.getPerformanceMetrics().memoryUsage ? { memoryUsage: this.getPerformanceMetrics().memoryUsage } : {})
->>>>>>> Stashed changes
       }
     };
+    if (hasLoadTime || hasMemoryUsage) {
+      const perfMetrics: { loadTime?: number; memoryUsage?: { used?: number; total?: number; limit?: number } } = {};
+      if (hasLoadTime && perf.loadTime !== undefined) perfMetrics.loadTime = perf.loadTime;
+      if (hasMemoryUsage && perf.memoryUsage !== undefined) perfMetrics.memoryUsage = perf.memoryUsage;
+      return {
+        ...baseReport,
+        performanceMetrics: perfMetrics
+      };
+    }
+    return baseReport;
   }
 
   private getPerformanceMetrics() {
