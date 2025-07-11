@@ -6,9 +6,9 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 interface SystemMetrics {
   cache: {
-    short: any;
-    medium: any;
-    long: any;
+    short: unknown;
+    medium: unknown;
+    long: unknown;
   };
   build: {
     timestamp: string;
@@ -119,7 +119,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
 
     res.status(200).json(dashboardData);
     return;
-  } catch (error: any) {
+  } catch (error: unknown) {
     logErrorToProduction('Dashboard metrics error:', { data: error });
     res.status(500).json({ error: 'Failed to gather system metrics' });
     return;
