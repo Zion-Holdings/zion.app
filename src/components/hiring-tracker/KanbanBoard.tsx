@@ -119,6 +119,20 @@ export function KanbanBoard({ jobId }: KanbanBoardProps) {
       });
     }
   };
+
+  // Synchronous wrapper for DragDropContext
+  const handleDragEndSync = (...args: unknown[]) => {
+    const result = args[0];
+    if (
+      result &&
+      typeof result === 'object' &&
+      'draggableId' in result &&
+      'source' in result &&
+      'destination' in result
+    ) {
+      void handleDragEnd(result as DropResult);
+    }
+  };
   
   if (isLoading) {
     return (
@@ -151,7 +165,7 @@ export function KanbanBoard({ jobId }: KanbanBoardProps) {
   }
   
   return (
-    <DragDropContext onDragEnd={handleDragEnd}>
+    <DragDropContext onDragEnd={handleDragEndSync}>
       <div className={`grid ${isMobile ? 'grid-cols-1 gap-y-6' : 'grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4'} overflow-x-auto`}>
         {COLUMNS.map(column => (
           <KanbanColumn
