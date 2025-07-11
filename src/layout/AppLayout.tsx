@@ -44,8 +44,7 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
   useNavigationGestures();
   const [isResendingEmail, setIsResendingEmail] = useState(false);
   const [resendStatusMessage, setResendStatusMessage] = useState('');
-  const globalLoader = useGlobalLoader();
-  const { loading, error, setError } = globalLoader;
+  const { loading, error, setError } = useGlobalLoader();
   const pathname = useSafePathname();
   const isAuthPage = /^\/auth|\/login|\/register|\/signup|\/forgot-password|\/reset-password|\/update-password/.test(pathname);
 
