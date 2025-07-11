@@ -9,7 +9,7 @@ const prisma = new PrismaClient();
 
 // Ensure this type is consistent with the one in products.ts
 // Or centralize it in a types file.
-type ProductWithStats = ProductModel & {
+type _ProductWithStats = ProductModel & {
   averageRating: number | null;
   reviewCount: number;
   title: string; // Added title for consistency with list endpoint

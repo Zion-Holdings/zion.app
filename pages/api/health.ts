@@ -26,7 +26,7 @@ export default async function handler(
   res: NextApiResponse<SystemHealth | { error: string }>
 ): Promise<void> {
   try {
-    const startTime = Date.now();
+    const _startTime = Date.now();
     
     // Basic health checks
     const healthChecks = await performHealthChecks();
@@ -57,8 +57,8 @@ export default async function handler(
     
     res.status(statusCode).json(healthReport);
 
-  } catch (error) {
-    console.error('Health check failed:', error);
+  } catch (_error) {
+    console.error('Health check failed:', _error);
     
     res.status(503).json({
       error: 'Health check failed',
@@ -71,9 +71,9 @@ async function performHealthChecks(): Promise<SystemHealth['checks']> {
 
   // Memory check
   try {
-    const memoryUsage = process.memoryUsage();
-    const totalMemoryMB = memoryUsage.heapTotal / 1024 / 1024;
-    const usedMemoryMB = memoryUsage.heapUsed / 1024 / 1024;
+    const _memoryUsage = process.memoryUsage();
+    const totalMemoryMB = _memoryUsage.heapTotal / 1024 / 1024;
+    const usedMemoryMB = _memoryUsage.heapUsed / 1024 / 1024;
     const memoryUsagePercent = (usedMemoryMB / totalMemoryMB) * 100;
 
     checks.memory = {
@@ -81,7 +81,7 @@ async function performHealthChecks(): Promise<SystemHealth['checks']> {
       usage: Math.round(usedMemoryMB),
       limit: Math.round(totalMemoryMB)
     };
-  } catch (error) {
+  } catch (_error) {
     checks.memory = {
       status: 'unhealthy',
       usage: 0,
@@ -117,10 +117,10 @@ async function performHealthChecks(): Promise<SystemHealth['checks']> {
         message: 'No database configuration found'
       };
     }
-  } catch (error) {
+  } catch (_error) {
     checks.database = {
       status: 'unhealthy',
-      message: `Database connection failed: ${error}`,
+      message: `Database connection failed: ${_error}`,
       responseTime: 5000
     };
   }
@@ -143,7 +143,7 @@ async function performHealthChecks(): Promise<SystemHealth['checks']> {
       usage: 0, // Not available in serverless
       available: 0 // Not available in serverless
     };
-  } catch (error) {
+  } catch (_error) {
     checks.disk = {
       status: 'unhealthy',
       usage: 0,
@@ -171,10 +171,10 @@ async function performHealthChecks(): Promise<SystemHealth['checks']> {
         status: failedServices === 0 ? 'healthy' : failedServices < serviceChecks.length ? 'degraded' : 'unhealthy',
         message: `${serviceChecks.length - failedServices}/${serviceChecks.length} external services accessible`
       };
-    } catch (error) {
+    } catch (_error) {
       checks.services = {
         status: 'unhealthy',
-        message: `Service checks failed: ${error}`
+        message: `Service checks failed: ${_error}`
       };
     }
   }
@@ -187,7 +187,7 @@ async function gatherMetrics(): Promise<SystemHealth['metrics']> {
 
   try {
     // Basic process metrics
-    const memoryUsage = process.memoryUsage();
+    const _memoryUsage = process.memoryUsage();
     
     // In a real application, these would come from monitoring systems
     // For now, we'll provide basic information
@@ -202,8 +202,8 @@ async function gatherMetrics(): Promise<SystemHealth['metrics']> {
     // - Load balancer metrics
     // - Database connection pool metrics
 
-  } catch (error) {
-    console.error('Failed to gather metrics:', error);
+  } catch (_error) {
+    console.error('Failed to gather metrics:', _error);
   }
 
   return metrics;

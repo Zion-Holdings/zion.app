@@ -1,7 +1,7 @@
 import { supabase } from '@/utils/supabase/client'; // Use centralized client
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { withErrorLogging } from '@/utils/withErrorLogging';
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import { withErrorLogging as _withErrorLogging } from '@/utils/withErrorLogging';
+import { logInfo as _logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -47,7 +47,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     return res
       .status(200)
       .json({ message: 'Verification email resent successfully' });
-  } catch (error: unknown) {
+  } catch (_error: unknown) {
     return res
       .status(500)
       .json({ message: 'Failed to resend verification email' });
