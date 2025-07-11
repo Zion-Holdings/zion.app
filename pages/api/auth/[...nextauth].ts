@@ -7,6 +7,7 @@ import { withErrorLogging } from '@/utils/withErrorLogging';
 import { supabase } from '@/utils/supabase/client'; // Use centralized client
 import { verifyMessage } from 'ethers'; // Assuming ethers v6+
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 // WalletConnect isn't natively supported by next-auth. We'll mock a basic credentials
 // provider that handles an address signature check. In a real app you'd verify
@@ -251,6 +252,6 @@ export const authOptions: NextAuthOptions = {
 };
 
 const handler = NextAuth(authOptions);
-const wrappedHandler = withErrorLogging(handler as unknown);
+const wrappedHandler = withErrorLogging(handler as (req: NextApiRequest, res: NextApiResponse) => Promise<void>);
 export { wrappedHandler as GET, wrappedHandler as POST };
 export default wrappedHandler;
