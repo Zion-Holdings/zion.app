@@ -77,7 +77,7 @@ const nextConfig = {
       'fuse.js'
     ],
 
-    // Temporarily disable CSS optimization to bypass static/css error
+    // Ensure CSS optimization is disabled to prevent static/css errors
     optimizeCss: false,
     // Memory and performance optimizations for 176+ pages
     largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
