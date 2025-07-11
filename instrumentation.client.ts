@@ -9,6 +9,6 @@ export { register } from './sentry';
 // build warnings like the one logged in `build-test-2.log` about missing
 // onRouterTransitionStart export.
 export const onRouterTransitionStart =
-  typeof (Sentry as any)?.captureRouterTransitionStart === 'function'
-    ? (Sentry as any).captureRouterTransitionStart
+  typeof (Sentry as Record<string, unknown>)?.captureRouterTransitionStart === 'function'
+    ? (Sentry as { captureRouterTransitionStart: () => void }).captureRouterTransitionStart
     : () => {};
