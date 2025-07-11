@@ -3,7 +3,6 @@ import { createServerClient, type CookieOptions } from '@supabase/ssr';
 import { NextResponse, type NextRequest } from 'next/server';
 // Import proper logging instead of using console directly
 import { logErrorToProduction, logInfo, logWarn } from '@/utils/productionLogger';
-import type { CookieOptions } from '@supabase/ssr';
 
 /**
  * Authentication middleware using Supabase Auth
