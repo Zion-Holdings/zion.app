@@ -103,7 +103,7 @@ export default async function handler(
       });
     }
     
-    const stripe = new (Stripe as any)(stripeKey, {
+    const stripe = new (Stripe as typeof Stripe)(stripeKey, {
       apiVersion: '2024-06-20',
     });
 
@@ -139,7 +139,7 @@ export default async function handler(
     const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     
     // Check if any items require physical shipping
-    const hasPhysicalItems = cartItems.some((item: any) => 
+    const hasPhysicalItems = cartItems.some((item: Stripe.SubscriptionItem) => 
       !item.type || item.type === 'physical' // Default to physical if type not specified
     );
     const needsShipping = hasPhysicalItems && subtotal <= 100;
@@ -200,7 +200,7 @@ export default async function handler(
       url: session.url,
     });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     logErrorToProduction('Checkout session creation error:', { data: error });
     
     // Handle specific Stripe errors
