@@ -147,7 +147,7 @@ class EnhancedErrorLogger {
           }
         });
         observer.observe({ entryTypes: ['longtask'] });
-      } catch (error) {
+      } catch {
         // PerformanceObserver not supported
       }
     }
