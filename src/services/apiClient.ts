@@ -4,28 +4,27 @@ import { showApiError } from '@/utils/apiErrorHandler';
 import { supabase } from '@/integrations/supabase/client';
 import axiosRetry from 'axios-retry';
 import { logErrorToProduction, logDebug } from '@/utils/productionLogger';
-import type { AxiosResponse } from 'axios';
-
+import type { AxiosResponse, AxiosRequestConfig } from 'axios';
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL || 'https://api.ziontechgroup.com/v1';
 
 // Global interceptor for all axios instances
 
 // Define the global error handler (exported for testing purposes)
-export const globalAxiosErrorHandler = (error: unknown) => {
-  const contentType = typeof error === 'object' && error && 'response' in error && error.response && 'headers' in error.response ? (error.response as { headers?: Record<string, unknown> }).headers?.['content-type'] : undefined;
+export const globalAxiosErrorHandler = (error: any) => {
+  const contentType = typeof error === 'object' && error && 'response' in error && error.response && typeof error.response === 'object' && error.response !== null && 'headers' in error.response ? (error.response as { headers?: Record<string, unknown> }).headers?.['content-type'] : undefined;
   if (typeof contentType === 'string' && contentType.includes('text/html')) {
     showError('html-error', 'Server returned HTML instead of JSON');
   }
 
-  const config = typeof error === 'object' && error && 'config' in error ? (error as { config?: unknown }).config || {} : {};
-  const axiosRetryState = config['axios-retry']; // Standard property used by axios-retry
+  const config = typeof error === 'object' && error && 'config' in error ? (error as { config?: any }).config || {} : {};
+  const axiosRetryState = config && typeof config === 'object' && 'axios-retry' in config ? config['axios-retry'] : undefined;
 
   const isRetryingAndNotFinalConfiguredRetry = axiosRetryState && axiosRetryState.attemptNumber <= axiosRetryState.retryCount;
 
-  const status = typeof error === 'object' && error && 'response' in error && error.response && 'status' in error.response ? (error.response as { status?: number }).status : undefined;
-  const method = (config.method || '').toUpperCase();
-  const url = config.url || '';
+  const status = typeof error === 'object' && error && 'response' in error && error.response && typeof error.response === 'object' && error.response !== null && 'status' in error.response ? (error.response as { status?: number }).status : undefined;
+  const method = typeof config === 'object' && config !== null && 'method' in config ? (config.method || '').toUpperCase() : '';
+  const url = typeof config === 'object' && config !== null && 'url' in config ? config.url || '' : '';
 
   // Handle DELETE 404 as success (item already removed)
   if (status === 404 && method === 'DELETE') {
@@ -90,7 +89,7 @@ export const globalAxiosErrorHandler = (error: unknown) => {
     showApiError(error);
   } else {
     // Log background errors without showing toast
-    logDebug(`Background API request failed (${status} ${method}): ${url}`, { data: typeof error === 'object' && error && 'response' in error && error.response && 'data' in error.response ? (error.response as { data?: unknown }).data : undefined });
+    logDebug(`Background API request failed (${status} ${method}): ${url}`, { data: typeof error === 'object' && error && 'response' in error && error.response && typeof error.response === 'object' && error.response !== null && 'data' in error.response ? (error.response as { data?: unknown }).data : undefined });
   }
 
   return Promise.reject(error);
@@ -107,12 +106,12 @@ const apiClient = axios.create({
   baseURL: `${API_BASE}/api/v1/services`,
 });
 
-apiClient.interceptors.request.use((config: unknown) => {
+apiClient.interceptors.request.use((config: AxiosRequestConfig) => {
   if (typeof config !== 'object' || config === null) {
     return { headers: { Accept: 'application/json' } };
   }
-  const headers = 'headers' in config && typeof (config as { headers?: unknown }).headers === 'object' && (config as { headers?: unknown }).headers !== null
-    ? { ...(config as { headers: Record<string, unknown> }).headers, Accept: 'application/json' }
+  const headers = config.headers && typeof config.headers === 'object'
+    ? { ...config.headers, Accept: 'application/json' }
     : { Accept: 'application/json' };
   return {
     ...config,
@@ -132,8 +131,8 @@ axiosRetry(apiClient, {
 
 apiClient.interceptors.response.use(
   (response: AxiosResponse) => response,
-  async (error: unknown) => {
-    const status = typeof error === 'object' && error && 'response' in error && error.response && 'status' in error.response ? (error.response as { status?: number }).status : undefined;
+  async (error: any) => {
+    const status = typeof error === 'object' && error && 'response' in error && error.response && typeof error.response === 'object' && error.response !== null && 'status' in error.response ? (error.response as { status?: number }).status : undefined;
 
     if (status === 401) {
       try {
