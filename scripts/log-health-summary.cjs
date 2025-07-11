@@ -107,6 +107,9 @@ class LogHealthSummary {
           // Ignore connection errors that indicate server wasn't running
           if (/ERR_CONNECTION_REFUSED/.test(content)) {
             console.log('  ℹ️  Playwright failures due to connection issues, treating as skipped');
+          } else if (/browserType\.launch: Executable doesn\'t exist/.test(content)) {
+            console.log('  ❌ Playwright browsers missing. Run `npx playwright install`');
+            this.results.tests.playwright = { status: 'error', failures: 'browsers missing' };
           } else {
             const results = JSON.parse(content);
             this.results.tests.playwright = {
