@@ -77,6 +77,7 @@ export default function ProjectRoom() {
       }, 2000);
       return () => clearTimeout(joinTimeout);
     }
+    return undefined; // Explicit return for when isInCall is false
   }, [isInCall]);
 
   const [chatMessages, setChatMessages] = useState<{user: string, text: string}[]>([]);
