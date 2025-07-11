@@ -45,7 +45,7 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
   const params = router.query as { slug?: string };
   const slug = slugProp ?? params.slug;
 
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [listings, setListings] = useState<ProductListing[]>([]);
   const [category, setCategory] = useState<{title: string, description: string, icon: React.JSX.Element}>({
     title: "",
@@ -53,12 +53,6 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
     icon: <Bot className="w-6 h-6" />
   });
   const innovationCounterRef = useRef(0);
-
-  // Redirect to categories list if slug is missing
-  if (!slug) {
-    router.push('/categories');
-    return null;
-  }
 
   // Map of category slugs to their display data
   const categoryData = {
@@ -159,14 +153,14 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
 
   useEffect(() => {
     if (slug !== 'innovation') return;
-
-    // Remove simulated innovation listing interval
-    // Only display real listings from the API
-    // If no listings, show empty state or message
-    // (No-op)
-    
+    // No-op
     return undefined;
   }, [slug]);
+
+  if (!slug) {
+    router.push('/categories');
+    return null;
+  }
 
   // Handle requesting a quote
   const handleRequestQuote = (listingId: string) => {
