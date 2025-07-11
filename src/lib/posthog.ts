@@ -44,14 +44,14 @@ export const initPostHog = () => {
     };
   })(document, (window as any).posthog || []);
 
-  window.posthog.init(key, { api_host: host });
+  (window.posthog as any).init(key, { api_host: host });
 };
 
 export const captureEvent = (name: string, properties?: Record<string, unknown>) => {
   if (typeof window === 'undefined') return;
-  if (!window.posthog?.capture) {
+  if (!(window.posthog as any)?.capture) {
     logErrorToProduction('PostHog not initialized. Call initPostHog() first.', new Error('PostHog not initialized'), { eventName: name });
     return;
   }
-  window.posthog.capture(name, properties);
+  (window.posthog as any).capture(name, properties);
 };

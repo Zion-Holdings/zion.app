@@ -1,26 +1,19 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, Prisma } from '@prisma/client';
 import { logInfo, logErrorToProduction, logDebug } from '@/utils/productionLogger';
 
 // Global Prisma instance for connection reuse
 let prisma: PrismaClient | null = null;
 
-// Database connection options
-const DB_OPTIONS = {
+// Database connection options (only valid PrismaClientOptions)
+const DB_OPTIONS: Prisma.PrismaClientOptions = {
   log: process.env.NODE_ENV === 'development' ? ['error', 'warn'] : ['error'],
   datasources: {
     db: {
-      url: process.env.DATABASE_URL,
+      url: process.env.DATABASE_URL || '',
     },
   },
-  // Connection pool settings
-  __internal: {
-    engine: {
-      connectTimeout: 5000,      // 5 seconds connection timeout
-      queryTimeout: 10000,       // 10 seconds query timeout
-      poolTimeout: 10000,        // 10 seconds pool timeout
-    },
-  },
-} as unknown;
+  // Remove __internal, as it's not a valid PrismaClientOptions property
+};
 
 /**
  * Get or create a Prisma client instance with connection pooling
