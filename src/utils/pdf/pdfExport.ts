@@ -54,15 +54,16 @@ export async function exportResumeToPDF(
   doc.setTextColor(colors.text);
   
   // Add each section of the resume
-  let currentY = addBasicInfoSection(doc, resume.basic_info, colors);
-  currentY = addSkillsSection(doc, resume.skills, colors, currentY);
-  currentY = addWorkExperienceSection(doc, resume.work_experience, colors, currentY);
-  currentY = addEducationSection(doc, resume.education, colors, currentY);
-  currentY = addCertificationsSection(doc, resume.certifications, colors, currentY);
+  let _currentY = 20;
+  _currentY = addBasicInfoSection(doc, resume.basic_info, colors);
+  _currentY = addSkillsSection(doc, resume.skills, colors, _currentY);
+  _currentY = addWorkExperienceSection(doc, resume.work_experience, colors, _currentY);
+  _currentY = addEducationSection(doc, resume.education, colors, _currentY);
+  _currentY = addCertificationsSection(doc, resume.certifications, colors, _currentY);
   
   // Add portfolio projects if needed
   if (includePortfolio && resume.portfolio_projects && resume.portfolio_projects.length > 0) {
-    currentY = addPortfolioSection(doc, resume.portfolio_projects, colors, currentY, maxProjects);
+    _currentY = addPortfolioSection(doc, resume.portfolio_projects, colors, _currentY, maxProjects);
   }
   
   return doc.output('blob');

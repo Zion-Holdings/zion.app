@@ -187,11 +187,11 @@ class PerformanceMonitor {
     if (typeof window === 'undefined') return;
 
     // Simple TTI approximation based on long tasks
-    let longTaskCount = 0;
+    let _longTaskCount = 0;
     const observer = new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
         if (entry.duration > 50) {
-          longTaskCount++;
+          _longTaskCount++;
         }
       }
     });
@@ -208,7 +208,7 @@ class PerformanceMonitor {
           id: this.generateId()
         });
       }, 5000);
-    } catch (error) {
+    } catch (_error) {
       // Long task API not supported
     }
   }
