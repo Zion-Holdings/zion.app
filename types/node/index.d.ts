@@ -24,5 +24,3 @@ declare namespace NodeJS {
 declare const process: NodeJS.Process;
 
 declare const Buffer: typeof globalThis extends { Buffer: infer B } ? B : unknown;
-
-export {};
