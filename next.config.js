@@ -1467,9 +1467,9 @@ const nextConfig = {
     }
     // Remove any other known non-serializable properties if present
     // (Add more cleanup here if needed)
-    // Deep clone config to ensure no non-cloneable objects are returned
-    const serializableConfig = JSON.parse(JSON.stringify(config));
-    return serializableConfig;
+    
+    // Return config directly instead of trying to serialize it
+    return config;
   },
 
   // Note: headers, redirects, and rewrites don't work with output: 'export'

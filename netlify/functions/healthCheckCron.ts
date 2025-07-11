@@ -1,6 +1,6 @@
 import type { Handler, HandlerEvent, HandlerContext } from "@netlify/functions";
 
-const handler: Handler = async (event: HandlerEvent, context: HandlerContext) => {
+const handler: Handler = async (_event: HandlerEvent, _context: HandlerContext) => {
   const siteUrl = process.env.URL;
   if (!siteUrl) {
     console.error("Base URL (process.env.URL) is not set. Cannot perform health check.");
@@ -23,7 +23,7 @@ const handler: Handler = async (event: HandlerEvent, context: HandlerContext) =>
         `Health check failed for ${healthEndpoint}: Status code ${response.status}. Response: ${responseText.substring(0, 100)}... (truncated)`
       );
     } else {
-      console.log(`Health check successful for ${healthEndpoint}: Status ${response.status}, Duration ${duration}ms`);
+      console.warn(`Health check successful for ${healthEndpoint}: Status ${response.status}, Duration ${duration}ms`);
     }
 
     if (duration > 1000) {
