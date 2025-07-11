@@ -5,6 +5,7 @@ import { supabase } from '@/integrations/supabase/client';
 import axiosRetry from 'axios-retry';
 import { logErrorToProduction, logDebug } from '@/utils/productionLogger';
 import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
+import { AxiosHeaders as AxiosHeadersClass } from 'axios';
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL || 'https://api.ziontechgroup.com/v1';
 
@@ -110,27 +111,10 @@ apiClient.interceptors.request.use((config: InternalAxiosRequestConfig) => {
   if (typeof config !== 'object' || config === null) {
     return config;
   }
-<<<<<<< HEAD
-  // Ensure headers are properly set
-  if (!config.headers) {
-    config.headers = {};
+  if (!(config.headers instanceof AxiosHeadersClass)) {
+    config.headers = new AxiosHeadersClass(config.headers ?? {});
   }
-=======
-
-  // Ensure headers are properly set
-  if (!config.headers) {
-    config.headers = new AxiosHeadersClass() as unknown as InternalAxiosRequestConfig['headers'];
-  }
-
->>>>>>> bfaa2d57 (fix: enhance type safety in apiClient interceptor and update environment polyfill for platform details)
-  // Add Accept header if not present
-  if (config.headers && typeof config.headers === 'object' && !('Accept' in config.headers)) {
-    (config.headers as any).Accept = 'application/json';
-  }
-<<<<<<< HEAD
-=======
-
->>>>>>> bfaa2d57 (fix: enhance type safety in apiClient interceptor and update environment polyfill for platform details)
+  (config.headers as any).set('Accept', 'application/json');
   return config;
 });
 
