@@ -14,7 +14,7 @@ import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 interface AIMatchmakerProps {
   serviceType?: string;
-  onMatchSelect?: (match: unknown) => void;
+  onMatchSelect?: (match: MatchResult) => void;
   className?: string;
 }
 
@@ -69,7 +69,7 @@ export function AIMatchmaker({ serviceType = "", onMatchSelect, className }: AIM
   };
   
   const handleItemSelect = (item: unknown) => {
-    if (onMatchSelect) onMatchSelect(item);
+    if (onMatchSelect) onMatchSelect(item as MatchResult);
   };
   
   // Extract just the items from each MatchResult
