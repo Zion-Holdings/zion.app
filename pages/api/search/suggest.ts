@@ -11,8 +11,8 @@ const _SERVICES: ServiceSuggestion[] = RAW_SERVICES.map(service => ({
   id: service.id,
   title: service.title || '',
   description: service.description || '',
-  image: (service as { image?: string }).image,
-  category: service.category || ''
+  image: service.image || '', // Ensure image is always a string
+  category: service.category || '',
 }));
 
 interface SearchSuggestion {
