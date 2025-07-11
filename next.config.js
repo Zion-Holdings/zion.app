@@ -372,6 +372,8 @@ const nextConfig = {
     '@reown/appkit-ui',
     '@reown/appkit-wallet',
     '@reown/appkit-utils',
+    '@lit/reactive-element',
+    'lit',
     'ethers',
     'viem',
     '@wagmi/core',
@@ -883,7 +885,37 @@ const nextConfig = {
         });
       });
       
+      // Fix @reown/appkit and Lit dependencies to prevent dynamic import errors
+      const reownModules = [
+        '@reown/appkit',
+        '@reown/appkit-adapter-ethers',
+        '@reown/appkit-common',
+        '@reown/appkit-controllers',
+        '@reown/appkit-pay',
+        '@reown/appkit-ui',
+        '@reown/appkit-wallet',
+        '@reown/appkit-utils',
+        '@lit/reactive-element',
+        '@lit/reactive-element/decorators/custom-element.js',
+        '@lit/reactive-element/decorators/event-options.js',
+        '@lit/reactive-element/decorators/property.js',
+        '@lit/reactive-element/decorators/query-all.js',
+        '@lit-labs/ssr-dom-shim',
+        'lit',
+        'lit-element/lit-element.js',
+        'lit-html',
+        'big.js',
+        'bs58'
+      ];
+      
+      reownModules.forEach(module => {
+        config.externals.push({
+          [module]: `module ${module}`
+        });
+      });
+      
       console.log('🚫 Libp2p modules externalized for client build to prevent Z_SYNC_FLUSH errors');
+      console.log('🚫 @reown/appkit and Lit modules externalized as ESM to prevent dynamic import errors');
     }
 
     // Fix webpack cache configuration to prevent build errors and warnings
@@ -1321,6 +1353,18 @@ const nextConfig = {
         'vm': 'vm',
         'zlib': 'zlib',
       };
+    }
+
+    // Externalize @lit/reactive-element modules to prevent dynamic import errors
+    if (isServer) {
+      config.externals = config.externals || [];
+      config.externals.push({
+        '@lit/reactive-element': 'commonjs @lit/reactive-element',
+        '@lit/reactive-element/decorators/custom-element.js': 'commonjs @lit/reactive-element/decorators/custom-element.js',
+        '@lit/reactive-element/decorators/event-options.js': 'commonjs @lit/reactive-element/decorators/event-options.js',
+        '@lit/reactive-element/decorators/property.js': 'commonjs @lit/reactive-element/decorators/property.js',
+        '@lit/reactive-element/decorators/query-all.js': 'commonjs @lit/reactive-element/decorators/query-all.js',
+      });
     }
 
     // Optimize bundle size
