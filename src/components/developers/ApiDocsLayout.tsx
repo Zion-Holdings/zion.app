@@ -2,8 +2,9 @@
 
 import type { SearchSuggestion } from "@/types/search";
 import React, { useState } from "react";
-// Next.js Link is required for navigation; using the wrong import caused
-// build errors logged in `build-test-2.log`
+// Build-test logs showed a missing `Link` name error when this component used
+// the react-router version. Switching to Next.js `Link` resolves the TypeScript
+// error and ensures proper navigation.
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import { Search } from 'lucide-react';
