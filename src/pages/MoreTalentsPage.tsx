@@ -20,6 +20,7 @@ const MORE_TALENT_LISTINGS: ProductListing[] = [
     rating: 4.8,
     reviewCount: 25,
     stock: 10,
+    location: "Remote",
   },
   {
     id: "talent-8",
@@ -38,6 +39,7 @@ const MORE_TALENT_LISTINGS: ProductListing[] = [
     rating: 4.7,
     reviewCount: 18,
     stock: 10,
+    location: "Remote",
   },
   {
     id: "talent-9",
@@ -56,6 +58,7 @@ const MORE_TALENT_LISTINGS: ProductListing[] = [
     rating: 4.9,
     reviewCount: 32,
     stock: 10,
+    location: "Remote",
   },
   {
     id: "talent-10",
@@ -74,6 +77,7 @@ const MORE_TALENT_LISTINGS: ProductListing[] = [
     rating: 4.8,
     reviewCount: 22,
     stock: 10,
+    location: "Remote",
   },
   {
     id: "talent-11",
@@ -92,6 +96,7 @@ const MORE_TALENT_LISTINGS: ProductListing[] = [
     rating: 4.6,
     reviewCount: 17,
     stock: 10,
+    location: "Remote",
   },
   {
     id: "talent-12",
@@ -110,6 +115,7 @@ const MORE_TALENT_LISTINGS: ProductListing[] = [
     rating: 4.8,
     reviewCount: 30,
     stock: 10,
+    location: "Remote",
   },
   {
     id: "talent-13",
@@ -128,6 +134,7 @@ const MORE_TALENT_LISTINGS: ProductListing[] = [
     rating: 4.7,
     reviewCount: 27,
     stock: 10,
+    location: "Remote",
   },
   {
     id: "talent-14",
@@ -146,6 +153,7 @@ const MORE_TALENT_LISTINGS: ProductListing[] = [
     rating: 4.9,
     reviewCount: 34,
     stock: 10,
+    location: "Remote",
   },
   {
     id: "talent-15",
@@ -164,6 +172,7 @@ const MORE_TALENT_LISTINGS: ProductListing[] = [
     rating: 4.6,
     reviewCount: 20,
     stock: 10,
+    location: "Remote",
   },
   {
     id: "talent-16",
@@ -182,6 +191,7 @@ const MORE_TALENT_LISTINGS: ProductListing[] = [
     rating: 4.8,
     reviewCount: 28,
     stock: 10,
+    location: "Remote",
   },
 ];
 
