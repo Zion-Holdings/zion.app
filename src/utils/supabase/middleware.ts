@@ -3,6 +3,7 @@ import { createServerClient, type CookieOptions } from '@supabase/ssr';
 import { NextResponse, type NextRequest } from 'next/server';
 // Import proper logging instead of using console directly
 import { logErrorToProduction, logInfo, logWarn } from '@/utils/productionLogger';
+import type { CookieOptions } from '@supabase/ssr';
 
 /**
  * Authentication middleware using Supabase Auth
@@ -28,8 +29,11 @@ export async function updateSession(request: NextRequest) {
       {
         cookies: {
           get(name: string) {
-            const cookie = request.cookies.get(name);
-            return typeof cookie === 'object' && cookie !== null && 'value' in cookie ? (cookie as { value: string }).value : undefined;
+            if (typeof request.cookies.get === 'function') {
+              const cookie = request.cookies.get(name);
+              return typeof cookie === 'object' && cookie !== null && 'value' in cookie ? (cookie as { value: string }).value : undefined;
+            }
+            return undefined;
           },
           set(name: string, value: string, options: CookieOptions) {
             const cookies = (response as any).cookies;
