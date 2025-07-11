@@ -1429,23 +1429,22 @@ const nextConfig = {
     }
 
     // Ensure consistent optimization settings in all environments
-  config.optimization = {
-    ...config.optimization,
-    // Explicitly disable usedExports to prevent cacheUnaffected conflicts
-    usedExports: false,
-  };
+    config.optimization = {
+      ...config.optimization,
+      // Explicitly disable usedExports to prevent cacheUnaffected conflicts
+      usedExports: false,
+    };
 
-
-  // Remove cacheUnaffected in case any plugin re-added it
-  if (config.cache && config.cache.cacheUnaffected !== undefined) {
-    delete config.cache.cacheUnaffected;
-  }
-  if (config.optimization && 'cacheUnaffected' in config.optimization) {
-    delete config.optimization.cacheUnaffected;
-  }
-  if (config.experiments && 'cacheUnaffected' in config.experiments) {
-    config.experiments.cacheUnaffected = false;
-  }
+    // Remove cacheUnaffected in case any plugin re-added it
+    if (config.cache && config.cache.cacheUnaffected !== undefined) {
+      delete config.cache.cacheUnaffected;
+    }
+    if (config.optimization && 'cacheUnaffected' in config.optimization) {
+      delete config.optimization.cacheUnaffected;
+    }
+    if (config.experiments && 'cacheUnaffected' in config.experiments) {
+      config.experiments.cacheUnaffected = false;
+    }
 
     return config;
   },
@@ -1476,29 +1475,8 @@ export default nextConfig;
 
 
 
-    ignoreDuringBuilds: false, // Reactivate ESLint for better code quality
-  },
 
 
-};
-
-// Remove deprecated experimental.esmExternals if present
-if (nextConfig.experimental && 'esmExternals' in nextConfig.experimental) {
-  delete nextConfig.experimental.esmExternals;
-}
-
-export default nextConfig;
-
-
-
-
-
-
-if (nextConfig.experimental && 'esmExternals' in nextConfig.experimental) {
-  delete nextConfig.experimental.esmExternals;
-}
-
-export default nextConfig;
 
 
 
