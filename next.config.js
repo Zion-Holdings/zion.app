@@ -907,14 +907,14 @@ const nextConfig = {
     };
 
     // Add optimization to prevent temporal dead zone issues
-    if (!dev && isServer) {
-      config.optimization = {
-        ...config.optimization,
-        concatenateModules: false, // Disable module concatenation which can cause TDZ issues
-        minimize: false, // Disable minimization on server side to preserve variable names
-        mangleExports: false,
-      };
-    }
+    // if (!dev && isServer) {
+    //   config.optimization = {
+    //     ...config.optimization,
+    //     concatenateModules: false, // Disable module concatenation which can cause TDZ issues
+    //     minimize: false, // Disable minimization on server side to preserve variable names
+    //     mangleExports: false,
+    //   };
+    // }
 
     // Suppress warnings in both dev and production
     config.ignoreWarnings = [
