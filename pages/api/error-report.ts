@@ -58,20 +58,19 @@ export default async function handler(
     }
 
     // Store error in memory for development (replace with database in production)
-    const globalWithErrorReports = global as typeof global & { errorReports?: unknown[] };
-    if (typeof globalWithErrorReports.errorReports === 'undefined') {
-      globalWithErrorReports.errorReports = [];
+    const globalWithReports = global as unknown as { errorReports?: unknown[] };
+    if (typeof globalWithReports.errorReports === 'undefined') {
+      globalWithReports.errorReports = [];
     }
-    
-    // Keep only the last 50 error reports in memory
-    globalWithErrorReports.errorReports.push({
+    // Now errorReports is always defined as an array
+    globalWithReports.errorReports.push({
       ...error,
       breadcrumbs,
       reportedAt: Date.now()
     });
     
-    if (globalWithErrorReports.errorReports.length > 50) {
-      globalWithErrorReports.errorReports = globalWithErrorReports.errorReports.slice(-50);
+    if (globalWithReports.errorReports.length > 50) {
+      globalWithReports.errorReports = globalWithReports.errorReports.slice(-50);
     }
 
     // In production, you would integrate with:
