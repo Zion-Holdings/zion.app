@@ -86,17 +86,7 @@ export class GlobalErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoun
 
     // Report to Sentry only on the server
     if (typeof window === 'undefined') {
-      const Sentry = await import('@sentry/nextjs');
-      Sentry.withScope((scope) => {
-        scope.setTag('errorBoundary', this.props.context || 'GlobalErrorBoundary')
-        scope.setLevel('error')
-        scope.setContext('errorInfo', {
-          componentStack: errorInfo.componentStack,
-          retryCount: this.state.retryCount
-        })
-        
-        Sentry.captureException(error)
-      })
+      // Remove all dynamic imports of @sentry/nextjs from this file.
     }
 
     // Custom error handler

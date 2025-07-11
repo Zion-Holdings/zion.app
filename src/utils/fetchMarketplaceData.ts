@@ -1,4 +1,3 @@
-import * as Sentry from '@sentry/nextjs';
 import type { ProductListing } from '@/types/listings';
 import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
 import {logErrorToProduction} from '@/utils/productionLogger';
@@ -55,16 +54,19 @@ export async function fetchMarketplaceData(
     logErrorToProduction('Error fetching marketplace data:', { data: error });
     
     // Log to Sentry with context
-    Sentry.withScope((scope) => {
-      scope.setTag('function', 'fetchMarketplaceData');
-      scope.setContext('options', {
-        limit: options.limit?.toString(),
-        category: options.category || '',
-        sortBy: options.sortBy || ''
+    if (typeof window === 'undefined') {
+      const Sentry = await import('@sentry/nextjs');
+      Sentry.withScope((scope) => {
+        scope.setTag('function', 'fetchMarketplaceData');
+        scope.setContext('options', {
+          limit: options.limit?.toString(),
+          category: options.category || '',
+          sortBy: options.sortBy || ''
+        });
+        scope.setLevel('error');
+        Sentry.captureException(error);
       });
-      scope.setLevel('error');
-      Sentry.captureException(error);
-    });
+    }
     
     // Return sample listings as a fallback when the API call fails
     const sample =

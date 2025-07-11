@@ -1348,20 +1348,7 @@ const nextConfig = {
       url: false,
       // Handle native modules
       'dd-trace': false,
-      // Handle node: imports
-      'node:http': false,
-      'node:https': false,
-      'node:fs': false,
-      'node:path': false,
-      'node:stream': false,
-      'node:util': false,
-      'node:crypto': false,
-      'node:os': false,
-      'node:url': false,
-      'node:worker_threads': false,
-      'node:async_hooks': false,
-      'node:child_process': false,
-      'node:diagnostics_channel': false,
+      // Remove all node: protocol module assignments
     };
 
     // Externalize compression libraries to prevent Z_SYNC_FLUSH errors
