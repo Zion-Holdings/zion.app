@@ -19,7 +19,7 @@ export default function CommunityProfilePage() {
   const userId = router.query.userId as string;
   const [user, setUser] = useState<CommunityUser | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [posts, setPosts] = useState<ForumPost[]>([]);
+  const [posts, _setPosts] = useState<ForumPost[]>([]);
   
   useEffect(() => {
     const fetchUser = async () => {
