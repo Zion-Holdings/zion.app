@@ -1,5 +1,4 @@
 
-import { TALENT_CATEGORIES } from "@/types/talent";
 import type { TalentProfile } from "@/types/talent";
 
 // Sample talent profiles with realistic data for the talent directory

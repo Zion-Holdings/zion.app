@@ -81,13 +81,13 @@ const toastAdapter = (props: ToastProps | string) => {
 
   return globalToastManager.showToast({
     message,
-    title: toastTitle,
+    ...(toastTitle && { title: toastTitle }),
     type,
-    priority,
-    duration,
+    ...(priority && { priority }),
+    ...(duration && { duration }),
     persistent,
-    action,
-    onRetry,
+    ...(action && { action }),
+    ...(onRetry && { onRetry }),
   });
 };
 

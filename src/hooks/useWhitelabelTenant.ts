@@ -81,7 +81,7 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
         }
 
         if (typeof data === 'object' && data !== null && 'tenant' in data) {
-          setTenant((data as { tenant: unknown }).tenant);
+          setTenant((data as { tenant: WhitelabelTenant }).tenant);
           setRetryCount(0); // Reset retry count on success
         } else {
           setTenant(null);
