@@ -57,8 +57,9 @@ export default function TokenIntegrations() {
   //    - fee (obtained from `estimateFee` or similar LayerZero SDK function)
 
   const estimateFee = async (sourceChain: string, destinationChain: string, tokenAmount: string): Promise<string> => {
-    // TODO: Implement real fee estimation using LayerZero SDK
-    throw new Error('LayerZero fee estimation not yet implemented');
+    // Reactivate: Mock fee estimation logic
+    await new Promise(resolve => setTimeout(resolve, 300));
+    return (0.001 * parseFloat(tokenAmount || '1')).toFixed(4) + ' ZION$';
   };
 
   const sendTokenViaLayerZero = async (
@@ -67,8 +68,12 @@ export default function TokenIntegrations() {
     tokenAmount: string,
     userAddress: string | null
   ): Promise<{ transactionHash: string; arrivalTimeEstimate: string }> => {
-    // TODO: Implement real token bridging using LayerZero SDK
-    throw new Error('LayerZero bridging not yet implemented');
+    // Reactivate: Mock token bridging logic
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    return {
+      transactionHash: '0x' + Math.random().toString(16).slice(2, 18),
+      arrivalTimeEstimate: '2-3 minutes',
+    };
   };
   // --- End LayerZero Bridge Integration Point ---
 
