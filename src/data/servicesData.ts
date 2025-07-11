@@ -5,6 +5,8 @@ export interface Service {
   description: string;
   category?: string;
   image?: string;
+  price?: number;
+  currency?: string;
 }
 
 export const SERVICES: Service[] = [
@@ -14,5 +16,7 @@ export const SERVICES: Service[] = [
     description: 'A sample service for search suggestions.',
     category: 'Sample Category',
     image: '',
+    price: 0,
+    currency: 'USD',
   },
 ];
