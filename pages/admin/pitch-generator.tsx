@@ -25,14 +25,19 @@ const PitchGeneratorPage: React.FC = () => {
   const router = useRouter();
 
   const [currentStep, setCurrentStep] = useState<'inputs' | 'data' | 'editor'>('inputs');
-  const [inputData, setInputData] = useState<any>(null);
-  const [syncedData, setSyncedData] = useState<any>(null);
+  const [inputData, setInputData] = useState<Record<string, unknown> | null>(null);
+  const [syncedData, setSyncedData] = useState<Record<string, unknown> | null>(null);
   const [generatedSlides, setGeneratedSlides] = useState<Slide[]>([]);
   const [isGenerating, setIsGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isExporting, setIsExporting] = useState(false);
   const [deckVersion, setDeckVersion] = useState<number>(1);
-  const [versionHistory, setVersionHistory] = useState<any[]>([]);
+  const [versionHistory, setVersionHistory] = useState<Array<{
+    version: number;
+    savedAt: string;
+    slideCount: number;
+    notes: string;
+  }>>([]);
   const [isSavingVersion, setIsSavingVersion] = useState(false);
 
   useEffect(() => {
@@ -81,7 +86,7 @@ const PitchGeneratorPage: React.FC = () => {
         if (supabase) {
           const sessionResult = await supabase.auth.getSession();
           // Handle mock client response where session is always null - use type assertion
-          token = (sessionResult?.data?.session as any)?.access_token || null;
+          token = (sessionResult?.data?.session as { access_token?: string })?.access_token || null;
         } else {
           logWarn('Supabase client is null, using Auth0 fallback for admin operations');
           // In a real scenario, we'd get the Auth0 token here
@@ -120,9 +125,10 @@ const PitchGeneratorPage: React.FC = () => {
       setVersionHistory(prev => [newVersionEntry, ...prev].sort((a,b) => b.version - a.version));
       alert(`Version ${newVersionNumber} saved successfully (mocked). Now working on v${newVersionNumber + 1}.`);
 
-    } catch (e: any) {
-      logErrorToProduction('Failed to save version:', { data:  e });
-      setError(e.message || 'Failed to save version.');
+    } catch (e: unknown) {
+      const errorMessage = e instanceof Error ? e.message : 'Failed to save version.';
+      logErrorToProduction('Failed to save version:', { data: e });
+      setError(errorMessage);
     } finally {
       setIsSavingVersion(false);
     }
@@ -157,9 +163,10 @@ const PitchGeneratorPage: React.FC = () => {
         } else {
             setDeckVersion(1); // Start with v1 if no history
         }
-    } catch (e:any) {
-        logErrorToProduction('Failed to fetch version history:', { data:  e });
-        setError(e.message || 'Failed to fetch version history.');
+    } catch (e: unknown) {
+        const errorMessage = e instanceof Error ? e.message : 'Failed to fetch version history.';
+        logErrorToProduction('Failed to fetch version history:', { data: e });
+        setError(errorMessage);
     }
   };
 
@@ -170,7 +177,7 @@ const PitchGeneratorPage: React.FC = () => {
   }, [user, fetchVersionHistory]);
 
 
-  const handleInputSubmit = (data: any) => {
+  const handleInputSubmit = (data: Record<string, unknown>) => {
     setInputData(data);
     setCurrentStep('data');
   };
@@ -194,7 +201,7 @@ const PitchGeneratorPage: React.FC = () => {
       let token = null;
       if (supabase) {
         const sessionResult = await supabase.auth.getSession();
-        token = (sessionResult?.data?.session as any)?.access_token || null;
+        token = (sessionResult?.data?.session as { access_token?: string })?.access_token || null;
       }
 
       if (!token) {
@@ -226,9 +233,10 @@ const PitchGeneratorPage: React.FC = () => {
        // When a new deck is generated, it's based on the current deckVersion being edited.
       // alert(`New deck generated for Version ${deckVersion}. Save if you want to keep it.`);
 
-    } catch (e: any) {
+    } catch (e: unknown) {
+      const errorMessage = e instanceof Error ? e.message : 'Failed to generate deck.';
       logErrorToProduction('Failed to generate deck:', { data: e });
-      setError(e.message || 'Failed to generate deck.');
+      setError(errorMessage);
       setIsGenerating(false);
     }
   };
@@ -306,9 +314,10 @@ const PitchGeneratorPage: React.FC = () => {
         pdf.addImage(imgData, 'PNG', xOffset, yOffset, newImgWidth, newImgHeight);
       }
       pdf.save(`pitch-deck-v${deckVersion -1}.pdf`); // Save with the version number that was just saved
-    } catch (e: any) {
-      logErrorToProduction('Failed to export PDF:', { data:  e });
-      setError(e.message || 'Failed to export PDF.');
+    } catch (e: unknown) {
+      const errorMessage = e instanceof Error ? e.message : 'Failed to export PDF.';
+      logErrorToProduction('Failed to export PDF:', { data: e });
+      setError(errorMessage);
     } finally {
       setIsExporting(false);
     }
