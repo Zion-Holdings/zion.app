@@ -11,7 +11,6 @@ import { ArrowUp, Filter, SortAsc, Users, Star, Verified, MapPin } from 'lucide-
 
 
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
-import { generateAITalents, getTalentMarketStats, getRecommendedTalents } from '@/utils/talentAutoFeedAlgorithm';
 import { TALENT_PROFILES } from '@/data/talentData';
 import type { TalentProfile } from '@/types/talent';
 import { SkeletonCard } from '@/components/ui/skeleton';
@@ -252,7 +251,7 @@ export default function TalentsPage() {
     
     // Generate new AI/IT talents using the auto-feed algorithm
     const startId = TALENT_PROFILES.length + (page - 1) * limit + totalGenerated;
-    const newTalents = generateAITalents(limit, startId);
+    const newTalents = TALENT_PROFILES.slice(startId, startId + limit);
     setTotalGenerated(prev => prev + newTalents.length);
     
     allTalents = [...allTalents, ...newTalents];
@@ -271,7 +270,9 @@ export default function TalentsPage() {
     }
     
     if (showRecommended) {
-      filteredTalents = getRecommendedTalents(filteredTalents);
+      // This part of the logic is removed as per the edit hint.
+      // The original code had getRecommendedTalents(filteredTalents) here.
+      // Since getRecommendedTalents is no longer imported, this line is removed.
     }
     
     // Apply sorting
@@ -328,7 +329,13 @@ export default function TalentsPage() {
   // Calculate market stats
   const marketStats = useMemo(() => {
     if (talents.length === 0) return null;
-    return getTalentMarketStats(talents);
+    return {
+      averageHourlyRate: talents.reduce((sum, t) => sum + (t.hourly_rate || 0), 0) / talents.length,
+      averageMonthlySalary: talents.reduce((sum, t) => sum + (t.hourly_rate || 0) * 160, 0) / talents.length,
+      averageRating: talents.reduce((sum, t) => sum + (t.average_rating || 0), 0) / talents.length,
+      averageExperience: talents.reduce((sum, t) => sum + (t.years_experience || 0), 0) / talents.length,
+      totalTalents: talents.length
+    };
   }, [talents]);
 
   // Get unique specializations

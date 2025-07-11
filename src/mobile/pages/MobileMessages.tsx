@@ -29,7 +29,7 @@ export function MobileMessages() {
   const formattedConversations = conversations.map(conv => ({
     id: conv.id,
     name: conv.name,
-    avatar: conv.avatar_url,
+    avatar: conv.avatar_url || '',
     lastMessage: conv.last_message?.content || '',
     timestamp: new Date(conv.updated_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     unreadCount: conv.unread_count
@@ -67,7 +67,7 @@ export function MobileMessages() {
             id: activeConversation.other_user.id,
             name: activeConversation.other_user.name,
             status: 'Online',
-            avatar: activeConversation.other_user.avatar_url
+            avatar: activeConversation.other_user.avatar_url || ''
           }}
           messages={formattedMessages}
           onBack={handleBack}

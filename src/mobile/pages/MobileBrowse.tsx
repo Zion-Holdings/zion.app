@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MobileHeader } from "@/mobile/components/common/MobileHeader";
 import { BottomNavigation } from "@/mobile/components/common/BottomNavigation";
 import { BrowseFilters } from "@/mobile/components/browse/BrowseFilters";
@@ -9,42 +9,28 @@ import { useAuth } from "@/hooks/useAuth";
 import { logInfo } from '@/utils/productionLogger';
 
 
-// Mock data for demonstration
-const jobsData = [
-  {
-    id: "1",
-    title: "Senior React Developer",
-    subtitle: "TechCorp Inc.",
-    description: "Looking for a skilled React developer to join our team for a long-term project. Experience with TypeScript and GraphQL required.",
-    location: "Remote",
-    badges: ["React", "TypeScript", "GraphQL"],
-    price: "$70-90/hr",
-    timePosted: "2 days ago",
-    match: 92
-  },
-  {
-    id: "2",
-    title: "UX/UI Designer",
-    subtitle: "Creative Studios",
-    description: "Seeking a creative UI/UX designer with experience in mobile app design. Portfolio must include at least 3 shipped applications.",
-    location: "New York, US (Hybrid)",
-    badges: ["Figma", "Design System", "Mobile Apps"],
-    price: "$60-80/hr",
-    timePosted: "4 hours ago",
-    match: 87
-  },
-  {
-    id: "3",
-    title: "Full Stack Engineer",
-    subtitle: "StartupXYZ",
-    description: "Looking for a full stack engineer who can work with React, Node.js and AWS. Must have experience building scalable applications.",
-    location: "San Francisco, CA",
-    badges: ["React", "Node.js", "AWS"],
-    price: "$75-100/hr",
-    timePosted: "1 week ago",
-    match: 78
-  }
-];
+// Remove jobsData mock array and replace with real API call
+const [jobs, setJobs] = useState([]);
+const [loading, setLoading] = useState(true);
+const [error, setError] = useState<string | null>(null);
+
+useEffect(() => {
+  (async () => {
+    try {
+      // TODO: Replace with real API endpoint
+      const response = await fetch('/api/jobs');
+      if (!response.ok) throw new Error('Failed to fetch jobs');
+      const data = await response.json();
+      setJobs(data);
+      setError(null);
+    } catch (err) {
+      setJobs([]);
+      setError('Error fetching jobs');
+    } finally {
+      setLoading(false);
+    }
+  })();
+}, []);
 
 const talentsData = [
   {
@@ -122,7 +108,7 @@ export function MobileBrowse() {
       
       <div className="py-4 px-4">
         <BrowseCards
-          items={browseType === "jobs" ? jobsData : talentsData}
+          items={browseType === "jobs" ? jobs : talentsData}
           type={browseType}
           onViewDetails={handleViewDetails}
         />

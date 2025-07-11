@@ -9,7 +9,7 @@ import { format } from "date-fns";
 export const formatDate = (dateString: string): string => {
   try {
     return format(new Date(dateString), 'PP');
-  } catch (e) {
+  } catch {
     return dateString;
   }
 };

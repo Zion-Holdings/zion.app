@@ -25,6 +25,10 @@ function getAuthToken() {
   return null;
 }
 
+interface EthereumProvider {
+  request: (args: { method: string; params?: unknown[] }) => Promise<unknown>;
+}
+
 export function useAuthOperations(
   setUser: React.Dispatch<React.SetStateAction<UserDetails | null>>,
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>,
@@ -353,11 +357,11 @@ export function useAuthOperations(
   const loginWithWeb3 = async () => {
     setIsLoading(true);
     try {
-      const ethereum = (window as unknown as { ethereum?: unknown }).ethereum;
-      if (!ethereum || typeof ethereum !== 'object') {
+      const ethereum = (window as unknown as { ethereum?: EthereumProvider }).ethereum;
+      if (!ethereum || typeof ethereum.request !== 'function') {
         throw new Error("Web3 wallet not found");
       }
-      const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+      const accounts = await ethereum.request({ method: 'eth_requestAccounts' }) as string[];
       const address = accounts[0];
       await ethereum.request({
         method: 'personal_sign',

@@ -335,7 +335,7 @@ Estimated Gzipped: ${this.formatSize(this.performanceMetrics.totalBundleSize * 0
     
     try {
       await optimizer.analyzeBuildOutput(buildDir);
-      const report = optimizer.generateReport();
+      optimizer.generateReport();
       
       // Remove all non-error/warn console statements at and after line 340
       // Remove console.log(report);

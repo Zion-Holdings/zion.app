@@ -14,10 +14,16 @@ export function captureException(error: unknown, context?: unknown): string | un
   // The @sentry/nextjs SDK handles initialization.
   // We can directly call captureException.
   if (context && (typeof context === 'object' || typeof context === 'function')) {
+<<<<<<< HEAD
     // Sentry.captureException(error, context); // This line was removed as per the edit hint
     return;
   }
   // Sentry.captureException(error); // This line was removed as per the edit hint
+=======
+    return Sentry.captureException(error, context);
+  }
+  return Sentry.captureException(error);
+>>>>>>> 5a1fb6e9e32b43e3b543580768caa07a52ba665c
 }
 
 // It's good practice to also export Sentry itself if you need to use other Sentry methods elsewhere.
