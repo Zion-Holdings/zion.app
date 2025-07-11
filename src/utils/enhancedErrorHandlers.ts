@@ -224,7 +224,7 @@ export class EnhancedConsoleErrorHandler {
 
       try {
         const first = args[0];
-        const message = first instanceof Error ? first.message : String(first);
+        const _message = first instanceof Error ? first.message : String(first);
 
         // Patterns that should not trigger user-facing toasts
         const silentPatterns = [
@@ -236,19 +236,19 @@ export class EnhancedConsoleErrorHandler {
         ];
 
         const shouldShowErrorToUser = !silentPatterns.some(pattern =>
-          message.toLowerCase().includes(pattern.toLowerCase())
+          _message.toLowerCase().includes(pattern.toLowerCase())
         ) && (
-          message.includes('Uncaught') ||
-          message.includes('TypeError') ||
-          message.includes('ReferenceError') ||
-          message.includes('critical') ||
-          message.includes('failed to load') ||
-          message.includes('initialization')
+          _message.includes('Uncaught') ||
+          _message.includes('TypeError') ||
+          _message.includes('ReferenceError') ||
+          _message.includes('critical') ||
+          _message.includes('failed to load') ||
+          _message.includes('initialization')
         );
 
         // Log error for debugging
         try {
-          logErrorToProduction(first instanceof Error ? first.message : message, first instanceof Error ? first : undefined, {
+          logErrorToProduction(first instanceof Error ? first.message : _message, first instanceof Error ? first : undefined, {
             context: 'consoleError',
             args: args.slice(1),
           });
@@ -258,7 +258,7 @@ export class EnhancedConsoleErrorHandler {
 
         // Show toast for critical user-facing errors
         if (shouldShowErrorToUser) {
-          enhancedGlobalErrorHandler.reportError(message as string, {
+          enhancedGlobalErrorHandler.reportError(_message as string, {
             type: ToastType.CRITICAL_ERROR,
             priority: ToastPriority.HIGH,
             showToast: true,
