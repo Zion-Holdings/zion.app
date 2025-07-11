@@ -34,7 +34,7 @@ async function getCategoriesFromDB() {
 
   try {
     const result = await Promise.race([queryPromise, timeoutPromise]);
-    return result as any[];
+    return result as Array<{ id: number; name: string; slug: string; icon: string }>;
   } finally {
     // Ensure connection is closed
     await prisma.$disconnect().catch(() => {});
@@ -83,7 +83,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
     res.setHeader('X-Data-Source', categories.length > 0 ? 'cached' : 'computed');
     res.status(200).json(categories);
     return;
-  } catch (error: any) {
+  } catch (error: unknown) {
     logErrorToProduction('Categories API error:', { data: error });
     // Return fallback data even on error
     if (CATEGORIES && CATEGORIES.length > 0) {
