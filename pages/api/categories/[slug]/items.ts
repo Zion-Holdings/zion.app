@@ -83,12 +83,12 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
       // Reduce timeout and add better error handling
       const dbQueryPromise = Promise.race([
         (async () => {
-          const categoryDetails = await prisma.category.findUnique({
+          const categoryDetails = await (prisma as any).category.findUnique({
             where: { slug: slug, active: true },
             select: {
               name: true,
               slug: true,
-              description: true,
+              // icon: true, // Uncomment if needed
             },
           });
 
