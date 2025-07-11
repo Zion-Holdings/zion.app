@@ -5,7 +5,7 @@ import { supabase } from '@/integrations/supabase/client';
 import axiosRetry from 'axios-retry';
 import { logErrorToProduction, logDebug } from '@/utils/productionLogger';
 import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
-import { AxiosHeaders as AxiosHeadersClass } from 'axios';
+import { AxiosHeaders } from 'axios';
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL || 'https://api.ziontechgroup.com/v1';
 
@@ -108,13 +108,14 @@ const apiClient = axios.create({
 });
 
 apiClient.interceptors.request.use((config: InternalAxiosRequestConfig) => {
-  if (typeof config !== 'object' || config === null) {
-    return config;
+  // Ensure headers is an AxiosHeaders instance
+  if (!(config.headers instanceof AxiosHeaders)) {
+    config.headers = new AxiosHeaders(config.headers);
   }
-  if (!(config.headers instanceof AxiosHeadersClass)) {
-    config.headers = new AxiosHeadersClass(config.headers ?? {});
+  // Add Accept header if not present
+  if (!config.headers.has('Accept')) {
+    config.headers.set('Accept', 'application/json');
   }
-  (config.headers as any).set('Accept', 'application/json');
   return config;
 });
 
