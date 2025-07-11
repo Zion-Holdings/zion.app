@@ -59,8 +59,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     res.status(200).json({ clientSecret: intent.client_secret, id: intent.id });
   } catch (err) {
     logErrorToProduction('Create payment intent error:', { data: err });
-    res.statusCode = 500;
-    res.json({ error: err instanceof Error ? err.message : 'An error occurred' });
+    res.status(500).json({ error: err instanceof Error ? err.message : 'An error occurred' });
   }
 }
 
