@@ -200,8 +200,8 @@ class BundleMonitor {
 
     // Log significant changes
     if (Math.abs(sizeChange) > 50 * 1024) { // > 50KB change
-      const changeType = sizeChange > 0 ? 'increased' : 'decreased';
-      logInfo('Bundle size ${changeType}:', { data:  {
+      const _changeType = sizeChange > 0 ? 'increased' : 'decreased';
+      logInfo('Bundle size ${_changeType}:', { data:  {
         change: `${(Math.abs(sizeChange) / 1024).toFixed(2)}KB`,
         current: `${(current.totalBundleSize / 1024).toFixed(2)}KB`,
         score: current.performanceScore
@@ -209,8 +209,8 @@ class BundleMonitor {
     }
 
     if (Math.abs(scoreChange) > 5) {
-      const changeType = scoreChange > 0 ? 'improved' : 'declined';
-      logInfo(`Performance score ${changeType}:`, {
+      const _changeType = scoreChange > 0 ? 'improved' : 'declined';
+      logInfo(`Performance score ${_changeType}:`, {
         change: scoreChange,
         current: current.performanceScore,
         recommendations: current.recommendations
