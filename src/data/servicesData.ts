@@ -23,6 +23,7 @@ export const SERVICES: ProductListing[] = [
     aiScore: 95,
     rating: 4.9,
     reviewCount: 124,
+    location: "Global",
   },
   {
     id: "service-2",
@@ -44,6 +45,7 @@ export const SERVICES: ProductListing[] = [
     aiScore: 88,
     rating: 4.7,
     reviewCount: 92,
+    location: "Global",
   },
   {
     id: "service-3",
@@ -67,6 +69,7 @@ export const SERVICES: ProductListing[] = [
     aiScore: 92,
     rating: 4.8,
     reviewCount: 78,
+    location: "Global",
   },
   {
     id: "service-4",
@@ -88,6 +91,7 @@ export const SERVICES: ProductListing[] = [
     aiScore: 89,
     rating: 4.9,
     reviewCount: 103,
+    location: "Global",
   },
   {
     id: "service-5",
@@ -109,6 +113,7 @@ export const SERVICES: ProductListing[] = [
     aiScore: 86,
     rating: 4.6,
     reviewCount: 67,
+    location: "Global",
   },
   {
     id: "service-6",
@@ -132,6 +137,7 @@ export const SERVICES: ProductListing[] = [
     aiScore: 94,
     rating: 4.8,
     reviewCount: 85,
+    location: "Global",
   },
   {
     id: "service-7",
@@ -153,6 +159,7 @@ export const SERVICES: ProductListing[] = [
     aiScore: 90,
     rating: 4.7,
     reviewCount: 58,
+    location: "Global",
   },
   {
     id: "service-8",
@@ -174,6 +181,7 @@ export const SERVICES: ProductListing[] = [
     aiScore: 91,
     rating: 4.6,
     reviewCount: 42,
+    location: "Global",
   },
   {
     id: "service-9",
@@ -195,6 +203,7 @@ export const SERVICES: ProductListing[] = [
     aiScore: 93,
     rating: 4.8,
     reviewCount: 69,
+    location: "Global",
   },
   {
     id: "service-10",
@@ -216,5 +225,6 @@ export const SERVICES: ProductListing[] = [
     aiScore: 89,
     rating: 4.5,
     reviewCount: 36,
+    location: "Global",
   },
 ];
