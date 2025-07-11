@@ -130,7 +130,7 @@ export function useInterviews() {
           : 'requested';
         const meeting_platform = interview.meeting_platform && validPlatforms.includes(interview.meeting_platform as typeof validPlatforms[number])
           ? (interview.meeting_platform as typeof validPlatforms[number])
-          : undefined;
+          : 'zoom'; // Default to 'zoom' instead of undefined
         const interview_type = validTypes.includes(interview.interview_type as typeof validTypes[number])
           ? (interview.interview_type as typeof validTypes[number])
           : 'video';

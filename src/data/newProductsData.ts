@@ -21,8 +21,13 @@ export const NEW_PRODUCTS: ProductListing[] = [
     reviewCount: 12,
     location: "Global",
     availability: "Immediate",
+<<<<<<< HEAD
     aiScore: 90,
     stock: 10,
+=======
+    stock: 10,
+    aiScore: 83,
+>>>>>>> a894b2924dec7793c392cd14441d175ae2315178
   },
   {
     id: "np-voice-translate",
@@ -44,6 +49,7 @@ export const NEW_PRODUCTS: ProductListing[] = [
     reviewCount: 8,
     location: "Global",
     availability: "Immediate",
+    stock: 15,
     aiScore: 88,
     stock: 10,
   },
@@ -67,8 +73,13 @@ export const NEW_PRODUCTS: ProductListing[] = [
     reviewCount: 10,
     location: "North America",
     availability: "1-2 Weeks",
+<<<<<<< HEAD
     aiScore: 86,
     stock: 10,
+=======
+    stock: 8,
+    aiScore: 92,
+>>>>>>> a894b2924dec7793c392cd14441d175ae2315178
   },
   {
     id: "np-iot-hub",
@@ -90,8 +101,13 @@ export const NEW_PRODUCTS: ProductListing[] = [
     reviewCount: 6,
     location: "Europe",
     availability: "2-4 Weeks",
+<<<<<<< HEAD
     aiScore: 84,
     stock: 10,
+=======
+    stock: 10,
+    aiScore: 83,
+>>>>>>> a894b2924dec7793c392cd14441d175ae2315178
   },
   {
     id: "np-code-review",
@@ -113,8 +129,13 @@ export const NEW_PRODUCTS: ProductListing[] = [
     reviewCount: 14,
     location: "Global",
     availability: "Immediate",
+<<<<<<< HEAD
     aiScore: 87,
     stock: 10,
+=======
+    stock: 15,
+    aiScore: 88,
+>>>>>>> a894b2924dec7793c392cd14441d175ae2315178
   },
   {
     id: "np-social-sentiment",
@@ -136,8 +157,13 @@ export const NEW_PRODUCTS: ProductListing[] = [
     reviewCount: 9,
     location: "Global",
     availability: "Immediate",
+<<<<<<< HEAD
     aiScore: 85,
     stock: 10,
+=======
+    stock: 8,
+    aiScore: 92,
+>>>>>>> a894b2924dec7793c392cd14441d175ae2315178
   },
   {
     id: "np-video-edit-suite",
@@ -159,8 +185,13 @@ export const NEW_PRODUCTS: ProductListing[] = [
     reviewCount: 11,
     location: "Global",
     availability: "1-2 Weeks",
+<<<<<<< HEAD
     aiScore: 89,
     stock: 10,
+=======
+    stock: 10,
+    aiScore: 83,
+>>>>>>> a894b2924dec7793c392cd14441d175ae2315178
   },
   {
     id: "np-ar-vr-generator",
@@ -182,8 +213,13 @@ export const NEW_PRODUCTS: ProductListing[] = [
     reviewCount: 7,
     location: "North America",
     availability: "2-4 Weeks",
+<<<<<<< HEAD
     aiScore: 83,
     stock: 10,
+=======
+    stock: 15,
+    aiScore: 88,
+>>>>>>> a894b2924dec7793c392cd14441d175ae2315178
   },
   {
     id: "np-ml-experiment",
@@ -205,8 +241,13 @@ export const NEW_PRODUCTS: ProductListing[] = [
     reviewCount: 10,
     location: "Global",
     availability: "Immediate",
+<<<<<<< HEAD
     aiScore: 88,
     stock: 10,
+=======
+    stock: 8,
+    aiScore: 92,
+>>>>>>> a894b2924dec7793c392cd14441d175ae2315178
   },
   {
     id: "np-chatbot-platform",
@@ -228,7 +269,12 @@ export const NEW_PRODUCTS: ProductListing[] = [
     reviewCount: 13,
     location: "Global",
     availability: "Immediate",
+<<<<<<< HEAD
     aiScore: 92,
     stock: 10,
+=======
+    stock: 10,
+    aiScore: 83,
+>>>>>>> a894b2924dec7793c392cd14441d175ae2315178
   }
 ];
