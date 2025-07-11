@@ -13,9 +13,10 @@ export const useJobPostings = () => {
       const result = await createJobPosting(jobData);
       toast.success('Job posting created successfully!');
       return result;
-    } catch (error: any) {
+    } catch (error: unknown) {
       logErrorToProduction('Error creating job posting:', { data: error });
-      toast.error(error.message || 'Failed to create job posting');
+      const message = error instanceof Error ? error.message : 'Failed to create job posting';
+      toast.error(message);
       throw error;
     } finally {
       setIsLoading(false);
@@ -28,9 +29,10 @@ export const useJobPostings = () => {
       const result = await updateJobPosting(jobId, jobData);
       toast.success('Job posting updated successfully!');
       return result;
-    } catch (error: any) {
+    } catch (error: unknown) {
       logErrorToProduction('Error updating job posting:', { data: error });
-      toast.error(error.message || 'Failed to update job posting');
+      const message = error instanceof Error ? error.message : 'Failed to update job posting';
+      toast.error(message);
       throw error;
     } finally {
       setIsLoading(false);
@@ -42,9 +44,10 @@ export const useJobPostings = () => {
     try {
       const result = await getJobPostingById(jobId);
       return result;
-    } catch (error: any) {
+    } catch (error: unknown) {
       logErrorToProduction('Error fetching job posting:', { data: error });
-      toast.error(error.message || 'Failed to fetch job posting');
+      const message = error instanceof Error ? error.message : 'Failed to fetch job posting';
+      toast.error(message);
       throw error;
     } finally {
       setIsLoading(false);
@@ -56,9 +59,10 @@ export const useJobPostings = () => {
     try {
       const result = await getJobPostingsByUserId(userId);
       return result;
-    } catch (error: any) {
+    } catch (error: unknown) {
       logErrorToProduction('Error fetching job postings:', { data: error });
-      toast.error(error.message || 'Failed to fetch job postings');
+      const message = error instanceof Error ? error.message : 'Failed to fetch job postings';
+      toast.error(message);
       throw error;
     } finally {
       setIsLoading(false);
