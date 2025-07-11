@@ -56,7 +56,7 @@ if (process.env.NODE_ENV === 'development' && process.env.DEBUG_ENV_CONFIG === '
     envUrlActuallyProvided: !!envSupabaseUrl,
     envKeyActuallyProvided: !!envSupabaseAnonKey,
     actualClientAuthExists: typeof actualSupabaseClientFromUtils?.auth !== 'undefined'
-  });
+  }});
 }
 
 

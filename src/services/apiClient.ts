@@ -90,7 +90,7 @@ export const globalAxiosErrorHandler = (error: unknown) => {
     showApiError(error);
   } else {
     // Log background errors without showing toast
-    logDebug('Background API request failed (${status} ${method}): ${url}', { data:  { data: typeof error === 'object' && error && 'response' in error && error.response && 'data' in error.response ? (error.response as { data?: unknown } }).data : undefined });
+    logDebug(`Background API request failed (${status} ${method}): ${url}`, { data: typeof error === 'object' && error && 'response' in error && error.response && 'data' in error.response ? (error.response as { data?: unknown }).data : undefined });
   }
 
   return Promise.reject(error);
@@ -140,7 +140,7 @@ apiClient.interceptors.response.use(
         if (!supabase) throw new Error('Supabase client not initialized');
         await supabase.auth.signOut({ scope: 'global' });
       } catch (e) {
-        logErrorToProduction('Failed to logout after 401', { data:  e });
+        logErrorToProduction('Failed to logout after 401', { data: e });
       }
       if (typeof window !== 'undefined') {
         window.location.assign('/login');

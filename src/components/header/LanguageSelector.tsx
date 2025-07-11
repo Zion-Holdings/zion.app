@@ -32,7 +32,7 @@ export function LanguageSelector() {
     availableLanguages.find((l) => l.code === currentLanguage)?.flag || '🌐';
 
   const handleLanguageChange = async (langCode: SupportedLanguage) => {
-    logInfo('LanguageSelector: Language item clicked:', { data:  { data: langCode } });
+    logInfo('LanguageSelector: Language item clicked:', { data: langCode });
     try {
       await changeLanguage(langCode);
       setIsOpen(false);
