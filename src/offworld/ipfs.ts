@@ -106,7 +106,7 @@ async function getHelia(): Promise<unknown> {
 
 export async function saveJSON(data: unknown): Promise<string> {
   if (isBuildEnv || isBrowserEnv) {
-    console.log('🚫 IPFS saveJSON not available in browser environment');
+          // console.log('🚫 IPFS saveJSON not available in browser environment');
     return 'mock-cid-' + Date.now();
   }
   
@@ -127,7 +127,7 @@ export async function saveJSON(data: unknown): Promise<string> {
 
 export async function fetchJSON(cidString: string): Promise<unknown> {
   if (isBuildEnv || isBrowserEnv) {
-    console.log('🚫 IPFS fetchJSON not available in browser environment');
+          // console.log('🚫 IPFS fetchJSON not available in browser environment');
     return { mock: true, cid: cidString };
   }
   
@@ -148,7 +148,7 @@ export async function fetchJSON(cidString: string): Promise<unknown> {
 
 export async function stopIpfsNode(): Promise<void> {
   if (isBuildEnv || isBrowserEnv) {
-    console.log('🚫 IPFS stopIpfsNode not available in browser environment');
+          // console.log('🚫 IPFS stopIpfsNode not available in browser environment');
     return;
   }
   
