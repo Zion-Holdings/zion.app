@@ -177,30 +177,7 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
         const listingsToShow =
           filteredListings.length > 0
             ? filteredListings
-            : Array(4)
-                .fill(null)
-                .map((_, index) => ({
-                  id: `${slug}-${index}`,
-                  title: `${currentCategory.title} Product ${index + 1}`,
-                  description: `A great ${currentCategory.title.toLowerCase()} solution for your needs.`,
-                  category: currentCategory.title,
-                  price: Math.floor(Math.random() * 500) + 50,
-                  currency: '$',
-                  tags: [`${slug}`, 'ai', 'tool'],
-                  author: {
-                    name: `Provider ${index + 1}`,
-                    id: `author-${index + 1}`,
-                    avatarUrl: '',
-                  },
-                  images: [`/placeholder.svg`],
-                  createdAt: new Date().toISOString(),
-                  rating: Math.floor(Math.random() * 5) + 1,
-                  reviewCount: Math.floor(Math.random() * 100),
-                  location: 'Global',
-                  availability: 'Immediate',
-                  aiScore: 80,
-                  stock: 10,
-                }));
+            : [];
 
         setListings(listingsToShow);
       } catch (err) {
