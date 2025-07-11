@@ -47,8 +47,8 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
   override async componentDidCatch(error: Error, errorInfo: unknown) {
     // Log to Sentry
     if (typeof window === 'undefined') {
-      const SentryMod = await import('@sentry/nextjs');
-      SentryMod.withScope((scope) => {
+      const Sentry = (await import('@sentry/nextjs')).default;
+      Sentry.withScope((scope) => {
         scope.setTag('errorBoundary', 'ApiErrorBoundary');
         if (typeof errorInfo === 'object' && errorInfo !== null) {
           scope.setContext('errorInfo', errorInfo as Record<string, unknown>);
@@ -56,7 +56,7 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
           scope.setContext('errorInfo', null);
         }
         scope.setLevel('error');
-        SentryMod.captureException(error);
+        Sentry.captureException(error);
       });
     }
 
@@ -124,7 +124,7 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
     } catch (retryError) {
       logErrorToProduction('Retry failed:', { data: retryError });
       if (typeof window === 'undefined') {
-        const Sentry = await import('@sentry/nextjs');
+        const Sentry = (await import('@sentry/nextjs')).default;
         Sentry.captureException(retryError);
       }
       this.setState({ isRetrying: false });
@@ -230,11 +230,12 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
 export const useApiErrorHandler = () => {
   const handleApiError = (error: Error) => {
     if (typeof window === 'undefined') {
-      import('@sentry/nextjs').then(SentryMod => {
-        SentryMod.withScope((scope) => {
+      import('@sentry/nextjs').then(mod => {
+        const Sentry = mod.default;
+        Sentry.withScope((scope) => {
           scope.setTag('source', 'useApiErrorHandler');
           scope.setLevel('error');
-          SentryMod.captureException(error);
+          Sentry.captureException(error);
         });
       });
     }
