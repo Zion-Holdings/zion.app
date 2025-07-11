@@ -55,15 +55,15 @@ function handler(
   suggestions.push(...productSuggestions);
 
   // Add service suggestions
-  const serviceSuggestions = RAW_SERVICES
-    .filter((s) => match(s.name) || match(s.description))
+  const serviceSuggestions = SERVICES
+    .filter((s) => match(s.title) || match(s.description))
     .slice(0, 2)
     .map((s) => ({
       id: s.id ? String(s.id) : 'unknown',
-      text: s.name,
-      slug: createSlug(s.name),
+      text: s.title,
+      slug: createSlug(s.title),
       type: 'service' as const,
-      iconUrl: s.images?.[0]?.url,
+      iconUrl: s.image,
       category: s.category || 'Uncategorized',
     }));
 
