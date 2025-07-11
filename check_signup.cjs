@@ -71,7 +71,7 @@ async function checkSignupPage() {
 
   // Output results as JSON for easier parsing
   console.warn('---RESULTS_START---');
-  console.log(JSON.stringify(results, null, 2));
+  console.warn(JSON.stringify(results, null, 2));
   console.warn('---RESULTS_END---');
 }
 
