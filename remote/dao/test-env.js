@@ -9,7 +9,7 @@ async function main() {
   const proposal = await dao.submitProposal(
     'Deploy comms beacon to geosync orbit'
   );
-  console.log('Queued proposal:', proposal.id);
+  // console.log('Queued proposal:', proposal.id);
 
   await dao.submitVote({
     proposalId: proposal.id,
@@ -17,7 +17,7 @@ async function main() {
     support: true,
   });
   await dao.connect();
-  console.log('Synced proposals and votes over satellite link');
+  // console.log('Synced proposals and votes over satellite link');
 }
 
 main().catch((err) => {
