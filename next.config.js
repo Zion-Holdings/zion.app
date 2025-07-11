@@ -445,257 +445,258 @@ const nextConfig = {
     '@coinbase/wallet-sdk',
   ],
 
-  webpack: (config, { dev, isServer, webpack }) => {
-    // Use the 'require' from the top of the file, do not redeclare it here
-    
-    // Skip CSS processing for static directories
-    config.module.rules.forEach(rule => {
-      if (rule.test && rule.test.toString().includes('css')) {
-        if (!rule.exclude) {
-          rule.exclude = [];
-        }
-        rule.exclude.push(/static\/css/);
-      }
-    });
-
-    // Externalize problematic modules
-    config.externals = config.externals || [];
-    config.externals.push({
-      '@reown/appkit/react': 'commonjs @reown/appkit/react',
-      '@reown/appkit/networks': 'commonjs @reown/appkit/networks',
-      'lit': 'commonjs lit'
-    });
-
-    // Externalize node: modules to prevent UnhandledSchemeError
-    const nodeModules = [
-      'node:child_process',
-      'node:fs',
-      'node:http',
-      'node:https',
-      'node:diagnostics_channel'
-    ];
-    nodeModules.forEach(module => {
-      config.externals.push({
-        [module]: `commonjs ${module}`
-      });
-    });
-
-    // Simplified webpack configuration to bypass CSS issues
-    
-    // Disable CSS minimization to prevent syntax errors
-    if (config.optimization && config.optimization.minimizer) {
-      config.optimization.minimizer = config.optimization.minimizer.filter(
-        minimizer => !minimizer.constructor.name.includes('CssMinimizer')
-      );
-    }
-    if (config.optimization) {
-      config.optimization.minimize = false;
-      config.optimization.minimizer = [];
-    }
-    
-    // Prevent Node.js core modules from being polyfilled in the client bundle
-    if (!isServer) {
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        http: false,
-        https: false,
-        zlib: false,
-        stream: false,
-        buffer: false,
-        util: false,
-        process: false,
-        path: false,
-        os: false,
-        fs: false,
-        child_process: false,
-        net: false,
-        tls: false,
-        crypto: false,
-        assert: false,
-        url: false,
-        querystring: false,
-        constants: false,
-        domain: false,
-        events: false,
-        punycode: false,
-        readline: false,
-        string_decoder: false,
-        sys: false,
-        timers: false,
-        tty: false,
-        vm: false,
-        worker_threads: false,
-      };
-    }
-    
-    // Fix EventEmitter memory leak by increasing max listeners
-    // events.EventEmitter.defaultMaxListeners = 20; // Will be set by build script
-    
-    // CRITICAL: Add comprehensive polyfills as the very first entry point
-    if (!isServer) {
-      const originalEntry = config.entry;
-      config.entry = async () => {
-        const entries = await originalEntry();
-        
-        // Create comprehensive polyfill array
-        const polyfills = [
-          './src/utils/immediate-process-polyfill.ts',  // Immediate process polyfill
-          './src/utils/serverless-polyfill.ts',        // Serverless polyfill
-          './src/utils/env-polyfill.ts'                // Existing env polyfill
-        ];
-        
-        // Add polyfills to every entry point
-        Object.keys(entries).forEach(entryName => {
-          if (Array.isArray(entries[entryName])) {
-            polyfills.forEach(polyfill => {
-              if (!entries[entryName].includes(polyfill)) {
-                entries[entryName].unshift(polyfill);
-              }
-            });
+  ...(process.env.NETLIFY !== 'true' && process.env.NEXT_EXPORT !== 'true' ? {
+    webpack(config, { dev, isServer, webpack }) {
+      // Use the 'require' from the top of the file, do not redeclare it here
+      
+      // Skip CSS processing for static directories
+      config.module.rules.forEach(rule => {
+        if (rule.test && rule.test.toString().includes('css')) {
+          if (!rule.exclude) {
+            rule.exclude = [];
           }
-        });
-        
-        return entries;
-      };
+          rule.exclude.push(/static\/css/);
+        }
+      });
 
-      // PERFORMANCE OPTIMIZATION: Advanced code splitting for smaller chunks
-      config.optimization = {
-        ...config.optimization,
-        splitChunks: {
-          chunks: 'all',
-          minSize: 20000,
-          maxSize: 250000, // Smaller chunks for better loading
-          cacheGroups: {
-            vendor: {
-              test: /[\\/]node_modules[\\/]/,
-              name: 'vendors',
-              chunks: 'all',
-              priority: 20,
-              reuseExistingChunk: true,
-            },
-            common: {
-              name: 'common',
-              minChunks: 2,
-              chunks: 'all',
-              priority: 10,
-              reuseExistingChunk: true,
-            },
-            ui: {
-              test: /[\\/]node_modules[\\/](@radix-ui|lucide-react|@chakra-ui)[\\/]/,
-              name: 'ui-components',
-              chunks: 'all',
-              priority: 30,
-            },
-            charts: {
-              test: /[\\/]node_modules[\\/](recharts|react-chartjs-2|chart\.js)[\\/]/,
-              name: 'charts',
-              chunks: 'async',
-              priority: 40,
-            },
-            blockchain: {
-              test: /[\\/]node_modules[\\/](@reown|ethers|@wagmi|viem)[\\/]/,
-              name: 'blockchain',
-              chunks: 'async',
-              priority: 35,
+      // Externalize problematic modules
+      config.externals = config.externals || [];
+      config.externals.push({
+        '@reown/appkit/react': 'commonjs @reown/appkit/react',
+        '@reown/appkit/networks': 'commonjs @reown/appkit/networks',
+        'lit': 'commonjs lit'
+      });
+
+      // Externalize node: modules to prevent UnhandledSchemeError
+      const nodeModules = [
+        'node:child_process',
+        'node:fs',
+        'node:http',
+        'node:https',
+        'node:diagnostics_channel'
+      ];
+      nodeModules.forEach(module => {
+        config.externals.push({
+          [module]: `commonjs ${module}`
+        });
+      });
+
+      // Simplified webpack configuration to bypass CSS issues
+      
+      // Disable CSS minimization to prevent syntax errors
+      if (config.optimization && config.optimization.minimizer) {
+        config.optimization.minimizer = config.optimization.minimizer.filter(
+          minimizer => !minimizer.constructor.name.includes('CssMinimizer')
+        );
+      }
+      if (config.optimization) {
+        config.optimization.minimize = false;
+        config.optimization.minimizer = [];
+      }
+      
+      // Prevent Node.js core modules from being polyfilled in the client bundle
+      if (!isServer) {
+        config.resolve.fallback = {
+          ...config.resolve.fallback,
+          http: false,
+          https: false,
+          zlib: false,
+          stream: false,
+          buffer: false,
+          util: false,
+          process: false,
+          path: false,
+          os: false,
+          fs: false,
+          child_process: false,
+          net: false,
+          tls: false,
+          crypto: false,
+          assert: false,
+          url: false,
+          querystring: false,
+          constants: false,
+          domain: false,
+          events: false,
+          punycode: false,
+          readline: false,
+          string_decoder: false,
+          sys: false,
+          timers: false,
+          tty: false,
+          vm: false,
+          worker_threads: false,
+        };
+      }
+      
+      // Fix EventEmitter memory leak by increasing max listeners
+      // events.EventEmitter.defaultMaxListeners = 20; // Will be set by build script
+      
+      // CRITICAL: Add comprehensive polyfills as the very first entry point
+      if (!isServer) {
+        const originalEntry = config.entry;
+        config.entry = async () => {
+          const entries = await originalEntry();
+          
+          // Create comprehensive polyfill array
+          const polyfills = [
+            './src/utils/immediate-process-polyfill.ts',  // Immediate process polyfill
+            './src/utils/serverless-polyfill.ts',        // Serverless polyfill
+            './src/utils/env-polyfill.ts'                // Existing env polyfill
+          ];
+          
+          // Add polyfills to every entry point
+          Object.keys(entries).forEach(entryName => {
+            if (Array.isArray(entries[entryName])) {
+              polyfills.forEach(polyfill => {
+                if (!entries[entryName].includes(polyfill)) {
+                  entries[entryName].unshift(polyfill);
+                }
+              });
+            }
+          });
+          
+          return entries;
+        };
+
+        // PERFORMANCE OPTIMIZATION: Advanced code splitting for smaller chunks
+        config.optimization = {
+          ...config.optimization,
+          splitChunks: {
+            chunks: 'all',
+            minSize: 20000,
+            maxSize: 250000, // Smaller chunks for better loading
+            cacheGroups: {
+              vendor: {
+                test: /[\\/]node_modules[\\/]/,
+                name: 'vendors',
+                chunks: 'all',
+                priority: 20,
+                reuseExistingChunk: true,
+              },
+              common: {
+                name: 'common',
+                minChunks: 2,
+                chunks: 'all',
+                priority: 10,
+                reuseExistingChunk: true,
+              },
+              ui: {
+                test: /[\\/]node_modules[\\/](@radix-ui|lucide-react|@chakra-ui)[\\/]/,
+                name: 'ui-components',
+                chunks: 'all',
+                priority: 30,
+              },
+              charts: {
+                test: /[\\/]node_modules[\\/](recharts|react-chartjs-2|chart\.js)[\\/]/,
+                name: 'charts',
+                chunks: 'async',
+                priority: 40,
+              },
+              blockchain: {
+                test: /[\\/]node_modules[\\/](@reown|ethers|@wagmi|viem)[\\/]/,
+                name: 'blockchain',
+                chunks: 'async',
+                priority: 35,
+              },
             },
           },
-        },
-      };
+        };
 
-      // CRITICAL: Enhanced process polyfill configuration
-      config.plugins.push(
-        // DefinePlugin for environment variables and TypeScript helpers
-        new webpack.DefinePlugin({
-          'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
-          'process.env': JSON.stringify({
-            NODE_ENV: process.env.NODE_ENV || 'production',
-            NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || '',
-            NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-            NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
-            NEXT_PUBLIC_SENTRY_DSN: process.env.NEXT_PUBLIC_SENTRY_DSN || '',
-            NEXT_PUBLIC_REOWN_PROJECT_ID: process.env.NEXT_PUBLIC_REOWN_PROJECT_ID || '',
-            NEXT_PUBLIC_DD_CLIENT_TOKEN: process.env.NEXT_PUBLIC_DD_CLIENT_TOKEN || '',
-            NEXT_PUBLIC_LOGROCKET_ID: process.env.NEXT_PUBLIC_LOGROCKET_ID || '',
-            NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '',
-            NEXT_PUBLIC_STRIPE_TEST_MODE: process.env.NEXT_PUBLIC_STRIPE_TEST_MODE || '',
-            NEXT_PUBLIC_INTERCOM_APP_ID: process.env.NEXT_PUBLIC_INTERCOM_APP_ID || '',
-            NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || '',
-            NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || '',
-            NEXT_PUBLIC_STATUS_PAGE_URL: process.env.NEXT_PUBLIC_STATUS_PAGE_URL || '',
-            NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || '',
-            NEXT_PUBLIC_APP_ENV: process.env.NEXT_PUBLIC_APP_ENV || '',
-            NEXT_PUBLIC_APP_VERSION: process.env.NEXT_PUBLIC_APP_VERSION || '',
-            NEXT_PUBLIC_BUILD_TIME: process.env.NEXT_PUBLIC_BUILD_TIME || '',
-            NEXT_PUBLIC_SOCIAL_TWITTER_URL: process.env.NEXT_PUBLIC_SOCIAL_TWITTER_URL || '',
-            NEXT_PUBLIC_SOCIAL_LINKEDIN_URL: process.env.NEXT_PUBLIC_SOCIAL_LINKEDIN_URL || '',
-            NEXT_PUBLIC_SOCIAL_FACEBOOK_URL: process.env.NEXT_PUBLIC_SOCIAL_FACEBOOK_URL || '',
-            NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL: process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL || '',
-            NEXT_PUBLIC_SOCIAL_GITHUB_URL: process.env.NEXT_PUBLIC_SOCIAL_GITHUB_URL || '',
-          }, (key, value) => typeof value === 'bigint' ? value.toString() : value),
-          // TypeScript helpers
-          '__extends': `(function(d, b) { 
-            if (typeof b !== "function" && b !== null) 
-              throw new TypeError("Class extends value " + String(b) + " is not a constructor or null"); 
-            function __constructor() { this.constructor = d; } 
-            d.prototype = b === null ? Object.create(b) : (__constructor.prototype = b.prototype, new __constructor()); 
-          })`,
-          '__assign': `(Object.assign || function(t) { 
-            for (var i = 1; i < arguments.length; i++) { 
-              var s = arguments[i]; 
-              for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p]; 
-            } 
-            return t; 
-          })`,
-          '__rest': `(function(s, e) { 
-            var t = {}; 
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p]; 
-            if (s != null && typeof Object.getOwnPropertySymbols === "function") { 
-              var symbols = Object.getOwnPropertySymbols(s); 
-              for (var i = 0; i < symbols.length; i++) { 
-                var symbol = symbols[i]; 
-                if (symbol && e.indexOf(symbol) < 0 && Object.prototype.propertyIsEnumerable.call(s, symbol)) { 
-                  t[symbol] = s[symbol]; 
+        // CRITICAL: Enhanced process polyfill configuration
+        config.plugins.push(
+          // DefinePlugin for environment variables and TypeScript helpers
+          new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
+            'process.env': JSON.stringify({
+              NODE_ENV: process.env.NODE_ENV || 'production',
+              NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || '',
+              NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL || '',
+              NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
+              NEXT_PUBLIC_SENTRY_DSN: process.env.NEXT_PUBLIC_SENTRY_DSN || '',
+              NEXT_PUBLIC_REOWN_PROJECT_ID: process.env.NEXT_PUBLIC_REOWN_PROJECT_ID || '',
+              NEXT_PUBLIC_DD_CLIENT_TOKEN: process.env.NEXT_PUBLIC_DD_CLIENT_TOKEN || '',
+              NEXT_PUBLIC_LOGROCKET_ID: process.env.NEXT_PUBLIC_LOGROCKET_ID || '',
+              NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '',
+              NEXT_PUBLIC_STRIPE_TEST_MODE: process.env.NEXT_PUBLIC_STRIPE_TEST_MODE || '',
+              NEXT_PUBLIC_INTERCOM_APP_ID: process.env.NEXT_PUBLIC_INTERCOM_APP_ID || '',
+              NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || '',
+              NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || '',
+              NEXT_PUBLIC_STATUS_PAGE_URL: process.env.NEXT_PUBLIC_STATUS_PAGE_URL || '',
+              NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || '',
+              NEXT_PUBLIC_APP_ENV: process.env.NEXT_PUBLIC_APP_ENV || '',
+              NEXT_PUBLIC_APP_VERSION: process.env.NEXT_PUBLIC_APP_VERSION || '',
+              NEXT_PUBLIC_BUILD_TIME: process.env.NEXT_PUBLIC_BUILD_TIME || '',
+              NEXT_PUBLIC_SOCIAL_TWITTER_URL: process.env.NEXT_PUBLIC_SOCIAL_TWITTER_URL || '',
+              NEXT_PUBLIC_SOCIAL_LINKEDIN_URL: process.env.NEXT_PUBLIC_SOCIAL_LINKEDIN_URL || '',
+              NEXT_PUBLIC_SOCIAL_FACEBOOK_URL: process.env.NEXT_PUBLIC_SOCIAL_FACEBOOK_URL || '',
+              NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL: process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL || '',
+              NEXT_PUBLIC_SOCIAL_GITHUB_URL: process.env.NEXT_PUBLIC_SOCIAL_GITHUB_URL || '',
+            }, (key, value) => typeof value === 'bigint' ? value.toString() : value),
+            // TypeScript helpers
+            '__extends': `(function(d, b) { 
+              if (typeof b !== "function" && b !== null) 
+                throw new TypeError("Class extends value " + String(b) + " is not a constructor or null"); 
+              function __constructor() { this.constructor = d; } 
+              d.prototype = b === null ? Object.create(b) : (__constructor.prototype = b.prototype, new __constructor()); 
+            })`,
+            '__assign': `(Object.assign || function(t) { 
+              for (var i = 1; i < arguments.length; i++) { 
+                var s = arguments[i]; 
+                for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p]; 
+              } 
+              return t; 
+            })`,
+            '__rest': `(function(s, e) { 
+              var t = {}; 
+              for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p]; 
+              if (s != null && typeof Object.getOwnPropertySymbols === "function") { 
+                var symbols = Object.getOwnPropertySymbols(s); 
+                for (var i = 0; i < symbols.length; i++) { 
+                  var symbol = symbols[i]; 
+                  if (symbol && e.indexOf(symbol) < 0 && Object.prototype.propertyIsEnumerable.call(s, symbol)) { 
+                    t[symbol] = s[symbol]; 
+                  } 
                 } 
               } 
-            } 
-            return t; 
-          })`,
-          '__decorate': `(function(decorators, target, key, desc) { 
-            var c = arguments.length; 
-            var r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc; 
-            var d; 
-            if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc); 
-            else for (var i = decorators.length - 1; i >= 0; i--) if ((d = decorators[i])) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r; 
-            return c > 3 && r && Object.defineProperty(target, key, r), r; 
-          })`,
-          '__awaiter': `(function(thisArg, _arguments, P, generator) { 
-            function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); } 
-            return new (P || (P = Promise))(function (resolve, reject) { 
-              function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } } 
-              function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } } 
-              function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); } 
-              step((generator = generator.apply(thisArg, _arguments || [])).next()); 
-            }); 
-          })`,
-          // HTTP/HTTPS polyfills to prevent "http is not defined" errors
-          'http': `({ 
-            request: function() { throw new Error('http.request is not available in the browser'); },
-            get: function() { throw new Error('http.get is not available in the browser'); }
-          })`,
-          'https': `({ 
-            request: function() { throw new Error('https.request is not available in the browser'); },
-            get: function() { throw new Error('https.get is not available in the browser'); }
-          })`,
-        }),
-        // ProvidePlugin to ensure process, Buffer, and stream are always available (only for client-side)
-        new webpack.ProvidePlugin({
-          process: path.resolve(__dirname, 'src/utils/immediate-process-polyfill.ts'),
-          Buffer: ['buffer', 'Buffer'],
-          stream: path.resolve(__dirname, 'src/utils/stream-polyfill.ts'),
-        }),
-        // BannerPlugin to inject polyfills at the very beginning of every chunk
-        new webpack.BannerPlugin({
-          banner: `/* EMERGENCY POLYFILL INJECTION */
+              return t; 
+            })`,
+            '__decorate': `(function(decorators, target, key, desc) { 
+              var c = arguments.length; 
+              var r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc; 
+              var d; 
+              if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc); 
+              else for (var i = decorators.length - 1; i >= 0; i--) if ((d = decorators[i])) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r; 
+              return c > 3 && r && Object.defineProperty(target, key, r), r; 
+            })`,
+            '__awaiter': `(function(thisArg, _arguments, P, generator) { 
+              function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); } 
+              return new (P || (P = Promise))(function (resolve, reject) { 
+                function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } } 
+                function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } } 
+                function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); } 
+                step((generator = generator.apply(thisArg, _arguments || [])).next()); 
+              }); 
+            })`,
+            // HTTP/HTTPS polyfills to prevent "http is not defined" errors
+            'http': `({ 
+              request: function() { throw new Error('http.request is not available in the browser'); },
+              get: function() { throw new Error('http.get is not available in the browser'); }
+            })`,
+            'https': `({ 
+              request: function() { throw new Error('https.request is not available in the browser'); },
+              get: function() { throw new Error('https.get is not available in the browser'); }
+            })`,
+          }),
+          // ProvidePlugin to ensure process, Buffer, and stream are always available (only for client-side)
+          new webpack.ProvidePlugin({
+            process: path.resolve(__dirname, 'src/utils/immediate-process-polyfill.ts'),
+            Buffer: ['buffer', 'Buffer'],
+            stream: path.resolve(__dirname, 'src/utils/stream-polyfill.ts'),
+          }),
+          // BannerPlugin to inject polyfills at the very beginning of every chunk
+          new webpack.BannerPlugin({
+            banner: `/* EMERGENCY POLYFILL INJECTION */
 (function() {
   'use strict';
   var g = typeof globalThis !== 'undefined' ? globalThis : 
@@ -746,731 +747,732 @@ const nextConfig = {
     }
   }
 })();`,
-          test: /\.js$/,
-          entryOnly: false,
-          raw: true
+            test: /\.js$/,
+            entryOnly: false,
+            raw: true
+          })
+        );
+      }
+      
+      // Development optimizations to prevent memory leaks with 176+ pages
+      // Define the '@' alias outside the if (dev) block
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        '@': path.resolve(__dirname, 'src'),
+      };
+
+      if (dev) {
+        if (!isServer) {
+          config.watchOptions = {
+            ignored: /node_modules/,
+            aggregateTimeout: 300,
+            poll: false, // Use native file watching instead of polling
+          };
+        }
+
+        // Alias react-router-dom to a lightweight stub to avoid build errors
+        config.resolve.alias = {
+          ...config.resolve.alias,
+          // '@' alias is now defined globally
+          'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.tsx'),
+        };
+
+        if (!isServer) {
+          // Optimize memory usage in development
+          config.stats = 'errors-warnings';
+          config.infrastructureLogging = {
+            level: 'error',
+          };
+        }
+      }
+      
+      // For Netlify deployment, exclude problematic files temporarily
+      if (process.env.SKIP_TYPE_CHECK === 'true') {
+        config.externals = config.externals || [];
+        config.externals.push({
+          './src/context/FavoritesContext.tsx': 'empty',
+          './src/context/LanguageContext.tsx': 'empty', 
+          './src/context/RequestQuoteWizard.tsx': 'empty',
+          './src/context/WhitelabelContext.tsx': 'empty',
+          './src/hooks/useApiKeys.ts': 'empty',
+        });
+      }
+
+      // Always use real Sentry SDK unless in CI or SKIP_SENTRY_BUILD is set
+      if (!(process.env.SKIP_SENTRY_BUILD === 'true' || process.env.CI === 'true')) {
+        if (config.resolve.alias) {
+          delete config.resolve.alias['@sentry/nextjs'];
+          delete config.resolve.alias['@sentry/node'];
+          delete config.resolve.alias['@sentry/tracing'];
+          delete config.resolve.alias['@sentry/react'];
+          delete config.resolve.alias['@sentry/browser'];
+          delete config.resolve.alias['@sentry/node-core'];
+        }
+      }
+
+      // Only mock dd-trace in CI or if SKIP_DATADOG is set
+      if (!(process.env.SKIP_DATADOG === 'true' || process.env.CI === 'true')) {
+        if (config.resolve.alias) {
+          delete config.resolve.alias['dd-trace'];
+        }
+      }
+
+      // PHASE 3: Advanced Performance Optimizations and Error Handling
+      // Enhanced bundle optimization and monitoring capabilities
+
+      // CRITICAL: Minimal serverless environment protection (avoiding read-only property issues)
+      if (isServer) {
+        // Only essential polyfills to avoid property assignment errors
+        if (typeof global !== 'undefined') {
+          // Only set properties that are safe to assign
+          try {
+            Object.defineProperty(global, 'self', { 
+              value: global.self || global, 
+              writable: true, 
+              configurable: true 
+            });
+          } catch (e) { /* ignore if already defined */ }
+          
+          try {
+            Object.defineProperty(global, 'webpackChunk_N_E', { 
+              value: global.webpackChunk_N_E || [], 
+              writable: true, 
+              configurable: true 
+            });
+          } catch (e) { /* ignore if already defined */ }
+        }
+        
+        // Add serverless-specific webpack configuration
+        config.target = 'node';
+        config.externalsPresets = { node: true };
+        
+        // Ensure proper module resolution in serverless
+        config.resolve.conditionNames = ['node', 'require', 'default'];
+        config.resolve.mainFields = ['main', 'module'];
+      }
+
+      // Exclude native modules from server-side bundling to prevent build errors
+      if (isServer) {
+        // Add all problematic native modules as externals with commonjs type
+        config.externals = config.externals || [];
+        const nativeModules = [
+          '@chainsafe/libp2p-noise',
+          '@chainsafe/libp2p-gossipsub', 
+          '@libp2p/tcp',
+          'libp2p',
+          '@orbitdb/core',
+          'helia',
+          '@helia/json',
+          'blockstore-level',
+          'datastore-level',
+          'multiformats',
+          'dd-trace',
+          // Add any other native modules that might cause issues
+          '@chainsafe/as-sha256',
+          '@chainsafe/as-chacha20poly1305',
+          '@chainsafe/bls',
+          'node-datachannel',
+          'classic-level',
+          'level'
+        ];
+        
+        // Add as external with commonjs type instead of module type
+        nativeModules.forEach(module => {
+          config.externals.push({
+            [module]: `commonjs ${module}`
+          });
+        });
+        console.log('🚫 Native modules externalized for server build:', nativeModules.length);
+      } else {
+        // For client-side, completely exclude libp2p modules to prevent Z_SYNC_FLUSH errors
+        config.externals = config.externals || [];
+        
+        // Add libp2p modules as externals for client-side to prevent bundling
+        const clientExternals = [
+          'libp2p',
+          '@libp2p/identify',
+          '@libp2p/tcp',
+          '@chainsafe/libp2p-noise',
+          '@chainsafe/libp2p-gossipsub',
+          '@chainsafe/libp2p-yamux',
+          '@orbitdb/core',
+          'helia',
+          '@helia/json',
+          'blockstore-core',
+          'datastore-core',
+          'multiformats'
+        ];
+        
+        clientExternals.forEach(module => {
+          config.externals.push({
+            [module]: `commonjs ${module}`
+          });
+        });
+        
+        // Fix @reown/appkit and Lit dependencies to prevent dynamic import errors
+        const reownModules = [
+          '@reown/appkit',
+          '@reown/appkit-adapter-ethers',
+          '@reown/appkit-common',
+          '@reown/appkit-controllers',
+          '@reown/appkit-pay',
+          '@reown/appkit-ui',
+          '@reown/appkit-wallet',
+          '@reown/appkit-utils',
+          '@lit/reactive-element',
+          '@lit/reactive-element/decorators/custom-element.js',
+          '@lit/reactive-element/decorators/event-options.js',
+          '@lit/reactive-element/decorators/property.js',
+          '@lit/reactive-element/decorators/query-all.js',
+          '@lit-labs/ssr-dom-shim',
+          'lit',
+          'lit-element/lit-element.js',
+          'lit-html',
+          'big.js',
+          'bs58'
+        ];
+        
+        reownModules.forEach(module => {
+          config.externals.push({
+            [module]: `commonjs ${module}`
+          });
+        });
+        
+        console.log('🚫 Libp2p modules externalized for client build to prevent Z_SYNC_FLUSH errors');
+        console.log('🚫 @reown/appkit and Lit modules externalized as ESM to prevent dynamic import errors');
+      }
+
+      // Fix webpack cache configuration to prevent build errors and warnings
+      if (config.cache) {
+          // Use memory cache to prevent filesystem cache issues and "Serializing big strings" warnings
+          config.cache = {
+            type: 'memory',
+            maxGenerations: dev ? 1 : 5,
+            // Disable cacheUnaffected to avoid Webpack usedExports conflict
+            cacheUnaffected: false,
+          };
+        }
+
+      // Ensure webpack doesn't enable cacheUnaffected which conflicts with
+      // Next.js default usedExports setting
+      config.experiments = {
+        ...(config.experiments || {}),
+        cacheUnaffected: false,
+      };
+
+      // Add optimization to prevent temporal dead zone issues
+      // if (!dev && isServer) {
+      //   config.optimization = {
+      //     ...config.optimization,
+      //     concatenateModules: false, // Disable module concatenation which can cause TDZ issues
+      //     minimize: false, // Disable minimization on server side to preserve variable names
+      //     mangleExports: false,
+      //   };
+      // }
+
+      // Suppress warnings in both dev and production
+      config.ignoreWarnings = [
+        /punycode.*deprecated/i,
+        /DEP0040/,
+        /Critical dependency/,
+        /Serializing big strings/i,
+        /PackFileCacheStrategy/,
+        // Suppress common Next.js warnings that don't affect functionality
+        /Module not found.*can't resolve/i,
+        /export.*was not found in/i,
+        // Additional Next.js 14 warnings
+        /images\.domains.*deprecated/i,
+        /Fast Refresh/i,
+        /webpack performance recommendations/i,
+        // Suppress optimization warnings
+        /optimization\.usedExports/i,
+        /cacheUnaffected/i,
+        // Suppress cache-related warnings
+        /cache.*filesystem/i,
+        /memory.*cache/i,
+      ];
+
+      // Provide global polyfills for browser environment
+      config.plugins.push(
+        new webpack.ProvidePlugin({
+          process: 'process/browser',
+          Buffer: ['buffer', 'Buffer'],
         })
       );
-    }
-    
-    // Development optimizations to prevent memory leaks with 176+ pages
-    // Define the '@' alias outside the if (dev) block
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '@': path.resolve(__dirname, 'src'),
-    };
-
-    if (dev) {
-      if (!isServer) {
-        config.watchOptions = {
-          ignored: /node_modules/,
-          aggregateTimeout: 300,
-          poll: false, // Use native file watching instead of polling
-        };
-      }
-
-      // Alias react-router-dom to a lightweight stub to avoid build errors
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        // '@' alias is now defined globally
-        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.tsx'),
-      };
-
-      if (!isServer) {
-        // Optimize memory usage in development
-        config.stats = 'errors-warnings';
-        config.infrastructureLogging = {
-          level: 'error',
-        };
-      }
-    }
-    
-    // For Netlify deployment, exclude problematic files temporarily
-    if (process.env.SKIP_TYPE_CHECK === 'true') {
-      config.externals = config.externals || [];
-      config.externals.push({
-        './src/context/FavoritesContext.tsx': 'empty',
-        './src/context/LanguageContext.tsx': 'empty', 
-        './src/context/RequestQuoteWizard.tsx': 'empty',
-        './src/context/WhitelabelContext.tsx': 'empty',
-        './src/hooks/useApiKeys.ts': 'empty',
-      });
-    }
-
-    // Always use real Sentry SDK unless in CI or SKIP_SENTRY_BUILD is set
-    if (!(process.env.SKIP_SENTRY_BUILD === 'true' || process.env.CI === 'true')) {
-      if (config.resolve.alias) {
-        delete config.resolve.alias['@sentry/nextjs'];
-        delete config.resolve.alias['@sentry/node'];
-        delete config.resolve.alias['@sentry/tracing'];
-        delete config.resolve.alias['@sentry/react'];
-        delete config.resolve.alias['@sentry/browser'];
-        delete config.resolve.alias['@sentry/node-core'];
-      }
-    }
-
-    // Only mock dd-trace in CI or if SKIP_DATADOG is set
-    if (!(process.env.SKIP_DATADOG === 'true' || process.env.CI === 'true')) {
-      if (config.resolve.alias) {
-        delete config.resolve.alias['dd-trace'];
-      }
-    }
-
-    // PHASE 3: Advanced Performance Optimizations and Error Handling
-    // Enhanced bundle optimization and monitoring capabilities
-
-    // CRITICAL: Minimal serverless environment protection (avoiding read-only property issues)
-    if (isServer) {
-      // Only essential polyfills to avoid property assignment errors
-      if (typeof global !== 'undefined') {
-        // Only set properties that are safe to assign
-        try {
-          Object.defineProperty(global, 'self', { 
-            value: global.self || global, 
-            writable: true, 
-            configurable: true 
-          });
-        } catch (e) { /* ignore if already defined */ }
-        
-        try {
-          Object.defineProperty(global, 'webpackChunk_N_E', { 
-            value: global.webpackChunk_N_E || [], 
-            writable: true, 
-            configurable: true 
-          });
-        } catch (e) { /* ignore if already defined */ }
-      }
       
-      // Add serverless-specific webpack configuration
-      config.target = 'node';
-      config.externalsPresets = { node: true };
+      // CRITICAL: Ensure Buffer is available globally for all modules
+      config.plugins.push(
+        new webpack.DefinePlugin({
+          'global.Buffer': 'Buffer',
+          'globalThis.Buffer': 'Buffer',
+          'window.Buffer': 'Buffer',
+          'self.Buffer': 'Buffer',
+        })
+      );
       
-      // Ensure proper module resolution in serverless
-      config.resolve.conditionNames = ['node', 'require', 'default'];
-      config.resolve.mainFields = ['main', 'module'];
-    }
-
-    // Exclude native modules from server-side bundling to prevent build errors
-    if (isServer) {
-      // Add all problematic native modules as externals with commonjs type
-      config.externals = config.externals || [];
-      const nativeModules = [
-        '@chainsafe/libp2p-noise',
-        '@chainsafe/libp2p-gossipsub', 
-        '@libp2p/tcp',
-        'libp2p',
-        '@orbitdb/core',
-        'helia',
-        '@helia/json',
-        'blockstore-level',
-        'datastore-level',
-        'multiformats',
-        'dd-trace',
-        // Add any other native modules that might cause issues
-        '@chainsafe/as-sha256',
-        '@chainsafe/as-chacha20poly1305',
-        '@chainsafe/bls',
-        'node-datachannel',
-        'classic-level',
-        'level'
-      ];
-      
-      // Add as external with commonjs type instead of module type
-      nativeModules.forEach(module => {
-        config.externals.push({
-          [module]: `commonjs ${module}`
-        });
-      });
-      console.log('🚫 Native modules externalized for server build:', nativeModules.length);
-    } else {
-      // For client-side, completely exclude libp2p modules to prevent Z_SYNC_FLUSH errors
-      config.externals = config.externals || [];
-      
-      // Add libp2p modules as externals for client-side to prevent bundling
-      const clientExternals = [
-        'libp2p',
-        '@libp2p/identify',
-        '@libp2p/tcp',
-        '@chainsafe/libp2p-noise',
-        '@chainsafe/libp2p-gossipsub',
-        '@chainsafe/libp2p-yamux',
-        '@orbitdb/core',
-        'helia',
-        '@helia/json',
-        'blockstore-core',
-        'datastore-core',
-        'multiformats'
-      ];
-      
-      clientExternals.forEach(module => {
-        config.externals.push({
-          [module]: `commonjs ${module}`
-        });
-      });
-      
-      // Fix @reown/appkit and Lit dependencies to prevent dynamic import errors
-      const reownModules = [
-        '@reown/appkit',
-        '@reown/appkit-adapter-ethers',
-        '@reown/appkit-common',
-        '@reown/appkit-controllers',
-        '@reown/appkit-pay',
-        '@reown/appkit-ui',
-        '@reown/appkit-wallet',
-        '@reown/appkit-utils',
-        '@lit/reactive-element',
-        '@lit/reactive-element/decorators/custom-element.js',
-        '@lit/reactive-element/decorators/event-options.js',
-        '@lit/reactive-element/decorators/property.js',
-        '@lit/reactive-element/decorators/query-all.js',
-        '@lit-labs/ssr-dom-shim',
-        'lit',
-        'lit-element/lit-element.js',
-        'lit-html',
-        'big.js',
-        'bs58'
-      ];
-      
-      reownModules.forEach(module => {
-        config.externals.push({
-          [module]: `commonjs ${module}`
-        });
-      });
-      
-      console.log('🚫 Libp2p modules externalized for client build to prevent Z_SYNC_FLUSH errors');
-      console.log('🚫 @reown/appkit and Lit modules externalized as ESM to prevent dynamic import errors');
-    }
-
-    // Fix webpack cache configuration to prevent build errors and warnings
-    if (config.cache) {
-        // Use memory cache to prevent filesystem cache issues and "Serializing big strings" warnings
-        config.cache = {
-          type: 'memory',
-          maxGenerations: dev ? 1 : 5,
-          // Disable cacheUnaffected to avoid Webpack usedExports conflict
-          cacheUnaffected: false,
-        };
-      }
-
-    // Ensure webpack doesn't enable cacheUnaffected which conflicts with
-    // Next.js default usedExports setting
-    config.experiments = {
-      ...(config.experiments || {}),
-      cacheUnaffected: false,
-    };
-
-    // Add optimization to prevent temporal dead zone issues
-    // if (!dev && isServer) {
-    //   config.optimization = {
-    //     ...config.optimization,
-    //     concatenateModules: false, // Disable module concatenation which can cause TDZ issues
-    //     minimize: false, // Disable minimization on server side to preserve variable names
-    //     mangleExports: false,
-    //   };
-    // }
-
-    // Suppress warnings in both dev and production
-    config.ignoreWarnings = [
-      /punycode.*deprecated/i,
-      /DEP0040/,
-      /Critical dependency/,
-      /Serializing big strings/i,
-      /PackFileCacheStrategy/,
-      // Suppress common Next.js warnings that don't affect functionality
-      /Module not found.*can't resolve/i,
-      /export.*was not found in/i,
-      // Additional Next.js 14 warnings
-      /images\.domains.*deprecated/i,
-      /Fast Refresh/i,
-      /webpack performance recommendations/i,
-      // Suppress optimization warnings
-      /optimization\.usedExports/i,
-      /cacheUnaffected/i,
-      // Suppress cache-related warnings
-      /cache.*filesystem/i,
-      /memory.*cache/i,
-    ];
-
-    // Provide global polyfills for browser environment
-    config.plugins.push(
-      new webpack.ProvidePlugin({
-        process: 'process/browser',
-        Buffer: ['buffer', 'Buffer'],
-      })
-    );
-    
-    // CRITICAL: Ensure Buffer is available globally for all modules
-    config.plugins.push(
-      new webpack.DefinePlugin({
-        'global.Buffer': 'Buffer',
-        'globalThis.Buffer': 'Buffer',
-        'window.Buffer': 'Buffer',
-        'self.Buffer': 'Buffer',
-      })
-    );
-    
-    // CRITICAL: Add Buffer polyfill as webpack banner to ensure it loads first
-    config.plugins.push(
-      new webpack.BannerPlugin({
-        banner: `
-          // CRITICAL: Buffer polyfill - must be first
-          if (typeof Buffer === 'undefined') {
-            function BufferPolyfill(input, encoding, offset) {
-              if (typeof input === 'string') {
-                var encoder = new TextEncoder();
-                var bytes = encoder.encode(input);
-                return new Uint8Array(bytes);
-              } else if (input instanceof ArrayBuffer) {
-                return new Uint8Array(input);
-              } else if (Array.isArray(input)) {
-                return new Uint8Array(input);
-              } else if (input instanceof Uint8Array) {
-                return input;
-              } else {
-                return new Uint8Array(input || 0);
-              }
-            }
-            
-            BufferPolyfill.from = function(input, encoding) {
-              return new BufferPolyfill(input, encoding);
-            };
-            
-            BufferPolyfill.alloc = function(size, fill, encoding) {
-              var buffer = new BufferPolyfill(size);
-              if (fill !== undefined) {
-                if (typeof fill === 'string') {
+      // CRITICAL: Add Buffer polyfill as webpack banner to ensure it loads first
+      config.plugins.push(
+        new webpack.BannerPlugin({
+          banner: `
+            // CRITICAL: Buffer polyfill - must be first
+            if (typeof Buffer === 'undefined') {
+              function BufferPolyfill(input, encoding, offset) {
+                if (typeof input === 'string') {
                   var encoder = new TextEncoder();
-                  var fillBytes = encoder.encode(fill);
-                  buffer.set(fillBytes, 0);
+                  var bytes = encoder.encode(input);
+                  return new Uint8Array(bytes);
+                } else if (input instanceof ArrayBuffer) {
+                  return new Uint8Array(input);
+                } else if (Array.isArray(input)) {
+                  return new Uint8Array(input);
+                } else if (input instanceof Uint8Array) {
+                  return input;
                 } else {
-                  buffer.fill(fill);
+                  return new Uint8Array(input || 0);
                 }
               }
-              return buffer;
-            };
-            
-            BufferPolyfill.allocUnsafe = function(size) {
-              return new BufferPolyfill(size);
-            };
-            
-            BufferPolyfill.isBuffer = function(obj) {
-              return obj instanceof Uint8Array;
-            };
-            
-            // Add toString method to Uint8Array prototype for Buffer compatibility
-            if (!Uint8Array.prototype.toString) {
-              Uint8Array.prototype.toString = function(encoding, start, end) {
-                var decoder = new TextDecoder(encoding || 'utf8');
-                var slice = this.slice(start, end);
-                return decoder.decode(slice);
+              
+              BufferPolyfill.from = function(input, encoding) {
+                return new BufferPolyfill(input, encoding);
               };
-            }
-            
-            // Add toJSON method to Uint8Array prototype for Buffer compatibility
-            if (!Uint8Array.prototype.toJSON) {
-              Uint8Array.prototype.toJSON = function() {
-                return {
-                  type: 'Buffer',
-                  data: Array.from(this)
+              
+              BufferPolyfill.alloc = function(size, fill, encoding) {
+                var buffer = new BufferPolyfill(size);
+                if (fill !== undefined) {
+                  if (typeof fill === 'string') {
+                    var encoder = new TextEncoder();
+                    var fillBytes = encoder.encode(fill);
+                    buffer.set(fillBytes, 0);
+                  } else {
+                    buffer.fill(fill);
+                  }
+                }
+                return buffer;
+              };
+              
+              BufferPolyfill.allocUnsafe = function(size) {
+                return new BufferPolyfill(size);
+              };
+              
+              BufferPolyfill.isBuffer = function(obj) {
+                return obj instanceof Uint8Array;
+              };
+              
+              // Add toString method to Uint8Array prototype for Buffer compatibility
+              if (!Uint8Array.prototype.toString) {
+                Uint8Array.prototype.toString = function(encoding, start, end) {
+                  var decoder = new TextDecoder(encoding || 'utf8');
+                  var slice = this.slice(start, end);
+                  return decoder.decode(slice);
                 };
-              };
+              }
+              
+              // Add toJSON method to Uint8Array prototype for Buffer compatibility
+              if (!Uint8Array.prototype.toJSON) {
+                Uint8Array.prototype.toJSON = function() {
+                  return {
+                    type: 'Buffer',
+                    data: Array.from(this)
+                  };
+                };
+              }
+              
+              // Define Buffer in global scope
+              if (typeof globalThis !== 'undefined') globalThis.Buffer = BufferPolyfill;
+              if (typeof global !== 'undefined') global.Buffer = BufferPolyfill;
+              if (typeof window !== 'undefined') window.Buffer = BufferPolyfill;
+              if (typeof self !== 'undefined') self.Buffer = BufferPolyfill;
+              if (typeof this !== 'undefined') this.Buffer = BufferPolyfill;
+              if (typeof module !== 'undefined' && module.exports) module.exports.Buffer = BufferPolyfill;
             }
-            
-            // Define Buffer in global scope
-            if (typeof globalThis !== 'undefined') globalThis.Buffer = BufferPolyfill;
-            if (typeof global !== 'undefined') global.Buffer = BufferPolyfill;
-            if (typeof window !== 'undefined') window.Buffer = BufferPolyfill;
-            if (typeof self !== 'undefined') self.Buffer = BufferPolyfill;
-            if (typeof this !== 'undefined') this.Buffer = BufferPolyfill;
-            if (typeof module !== 'undefined' && module.exports) module.exports.Buffer = BufferPolyfill;
-          }
-        `,
-        raw: true,
-        entryOnly: false,
-      })
-    );
+          `,
+          raw: true,
+          entryOnly: false,
+        })
+      );
 
-    // PHASE 2: Enhanced Bundle Splitting for Performance Optimization
-    if (!isServer) {
-      config.optimization = {
-        ...config.optimization,
+      // PHASE 2: Enhanced Bundle Splitting for Performance Optimization
+      if (!isServer) {
+        config.optimization = {
+          ...config.optimization,
+          
+          // Advanced splitChunks configuration for bundle optimization
+          splitChunks: {
+            chunks: 'all',
+            minSize: 20000,     // 20KB minimum chunk size
+            maxSize: 244000,    // 244KB maximum chunk size (target from plan)
+            minChunks: 1,
+            maxAsyncRequests: 30,
+            maxInitialRequests: 30,
+            cacheGroups: {
+              // Heavy libraries that need special handling
+              heavy: {
+                test: /[\\/]node_modules[\\/](@libp2p|helia|orbitdb|blockstore|datastore|multiformats)[\\/]/,
+                name: 'heavy-vendor',
+                chunks: 'async', // Only load when needed
+                priority: 30,
+                maxSize: 200000,
+                enforce: true,
+              },
+              
+              // Vendor libraries bundle (optimized)
+              vendor: {
+                test: /[\\/]node_modules[\\/]/,
+                name: 'vendors',
+                chunks: 'all',
+                priority: 10,
+                maxSize: 200000, // Reduced from 244KB
+                minSize: 10000,  // Prevent tiny chunks
+                enforce: true,
+              },
+              
+              // React ecosystem bundle
+              react: {
+                test: /[\\/]node_modules[\\/](react|react-dom|react-router|@tanstack)[\\/]/,
+                name: 'react-vendor',
+                chunks: 'all',
+                priority: 20,
+                maxSize: 244000,
+                enforce: true,
+              },
+              
+              // UI libraries bundle
+              ui: {
+                test: /[\\/]node_modules[\\/](@radix-ui|@chakra-ui|framer-motion|lucide-react)[\\/]/,
+                name: 'ui-vendor',
+                chunks: 'all',
+                priority: 20,
+                maxSize: 244000,
+                enforce: true,
+              },
+              
+              // Utilities bundle
+              utils: {
+                test: /[\\/]node_modules[\\/](lodash|lodash-es|date-fns|axios|zod|yup)[\\/]/,
+                name: 'utils-vendor',
+                chunks: 'all',
+                priority: 20,
+                maxSize: 244000,
+                enforce: true,
+              },
+              
+              // Common application code
+              common: {
+                name: 'common',
+                minChunks: 2,
+                chunks: 'all',
+                priority: 5,
+                maxSize: 244000,
+                enforce: true,
+              },
+              
+              // Default vendor chunk for everything else
+              default: {
+                minChunks: 2,
+                priority: -20,
+                reuseExistingChunk: true,
+                maxSize: 244000,
+              },
+            }
+          },
+          
+          // Optimization settings for better performance
+          moduleIds: 'deterministic',
+          chunkIds: 'deterministic',
+          // usedExports disabled to avoid cacheUnaffected conflicts in older builds
+          sideEffects: false,
+          concatenateModules: !dev,
+          minimize: !dev,
+          
+          // Runtime chunk optimization
+          runtimeChunk: {
+            name: 'runtime',
+          },
+        };
         
-        // Advanced splitChunks configuration for bundle optimization
-        splitChunks: {
-          chunks: 'all',
-          minSize: 20000,     // 20KB minimum chunk size
-          maxSize: 244000,    // 244KB maximum chunk size (target from plan)
-          minChunks: 1,
-          maxAsyncRequests: 30,
-          maxInitialRequests: 30,
-          cacheGroups: {
-            // Heavy libraries that need special handling
-            heavy: {
-              test: /[\\/]node_modules[\\/](@libp2p|helia|orbitdb|blockstore|datastore|multiformats)[\\/]/,
-              name: 'heavy-vendor',
-              chunks: 'async', // Only load when needed
-              priority: 30,
-              maxSize: 200000,
-              enforce: true,
-            },
-            
-            // Vendor libraries bundle (optimized)
-            vendor: {
-              test: /[\\/]node_modules[\\/]/,
-              name: 'vendors',
-              chunks: 'all',
-              priority: 10,
-              maxSize: 200000, // Reduced from 244KB
-              minSize: 10000,  // Prevent tiny chunks
-              enforce: true,
-            },
-            
-            // React ecosystem bundle
-            react: {
-              test: /[\\/]node_modules[\\/](react|react-dom|react-router|@tanstack)[\\/]/,
-              name: 'react-vendor',
-              chunks: 'all',
-              priority: 20,
-              maxSize: 244000,
-              enforce: true,
-            },
-            
-            // UI libraries bundle
-            ui: {
-              test: /[\\/]node_modules[\\/](@radix-ui|@chakra-ui|framer-motion|lucide-react)[\\/]/,
-              name: 'ui-vendor',
-              chunks: 'all',
-              priority: 20,
-              maxSize: 244000,
-              enforce: true,
-            },
-            
-            // Utilities bundle
-            utils: {
-              test: /[\\/]node_modules[\\/](lodash|lodash-es|date-fns|axios|zod|yup)[\\/]/,
-              name: 'utils-vendor',
-              chunks: 'all',
-              priority: 20,
-              maxSize: 244000,
-              enforce: true,
-            },
-            
-            // Common application code
-            common: {
-              name: 'common',
-              minChunks: 2,
-              chunks: 'all',
-              priority: 5,
-              maxSize: 244000,
-              enforce: true,
-            },
-            
-            // Default vendor chunk for everything else
-            default: {
-              minChunks: 2,
-              priority: -20,
-              reuseExistingChunk: true,
-              maxSize: 244000,
-            },
-          }
-        },
-        
-        // Optimization settings for better performance
-        moduleIds: 'deterministic',
-        chunkIds: 'deterministic',
-        // usedExports disabled to avoid cacheUnaffected conflicts in older builds
-        sideEffects: false,
-        concatenateModules: !dev,
-        minimize: !dev,
-        
-        // Runtime chunk optimization
-        runtimeChunk: {
-          name: 'runtime',
-        },
-      };
-      
-      // Updated performance hints with stricter budgets
-      config.performance = {
-        hints: dev ? false : 'warning',
-        maxEntrypointSize: 1000000, // 1MB for main entrypoint (down from 4.97MB)
-        maxAssetSize: 244000,       // 244KB for individual assets
-        assetFilter: (assetFilename) => {
-          return /\.(js|css)$/.test(assetFilename);
-        },
-      };
-    }
+        // Updated performance hints with stricter budgets
+        config.performance = {
+          hints: dev ? false : 'warning',
+          maxEntrypointSize: 1000000, // 1MB for main entrypoint (down from 4.97MB)
+          maxAssetSize: 244000,       // 244KB for individual assets
+          assetFilter: (assetFilename) => {
+            return /\.(js|css)$/.test(assetFilename);
+          },
+        };
+      }
 
-    // Only apply optimizations in production
-    if (!dev && !isServer) {
-      // Sentry webpack plugin optimizations
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        '@sentry/tracing': '@sentry/tracing/esm',
-      };
+      // Only apply optimizations in production
+      if (!dev && !isServer) {
+        // Sentry webpack plugin optimizations
+        config.resolve.alias = {
+          ...config.resolve.alias,
+          '@sentry/tracing': '@sentry/tracing/esm',
+        };
 
-      // Remove cacheUnaffected when usedExports is enabled to prevent conflicts
+        // Remove cacheUnaffected when usedExports is enabled to prevent conflicts
+        if (config.cache && config.cache.cacheUnaffected !== undefined) {
+          delete config.cache.cacheUnaffected;
+        }
+        
+        // Note: usedExports is already configured above in the splitChunks section
+        // Avoid duplicate configuration that can cause conflicts
+      }
+
+      // CRITICAL FIX: Remove cacheUnaffected in ALL cases to prevent webpack conflicts
+      // The cacheUnaffected option conflicts with usedExports optimization
       if (config.cache && config.cache.cacheUnaffected !== undefined) {
         delete config.cache.cacheUnaffected;
       }
       
-      // Note: usedExports is already configured above in the splitChunks section
-      // Avoid duplicate configuration that can cause conflicts
-    }
-
-    // CRITICAL FIX: Remove cacheUnaffected in ALL cases to prevent webpack conflicts
-    // The cacheUnaffected option conflicts with usedExports optimization
-    if (config.cache && config.cache.cacheUnaffected !== undefined) {
-      delete config.cache.cacheUnaffected;
-    }
-    
-    // Also ensure that cache.type is properly configured when filesystem caching is used
-    if (config.cache && config.cache.type === 'filesystem') {
-      // Remove any potentially conflicting cache options
-      delete config.cache.cacheUnaffected;
-      
-      // Set safe cache options
-      config.cache.allowCollectingMemory = false;
-      config.cache.managedPaths = [path.resolve(__dirname, 'node_modules')];
-    }
-
-    // Define feature flags for tree shaking
-    config.plugins.push(
-      new webpack.DefinePlugin({
-        __SENTRY_DEBUG__: false,
-        __SENTRY_TRACING__: true,
-      })
-    );
-
-    // Note: Sentry replacement is handled via resolve.alias above for CI builds
-
-    // Handle date-fns ESM import issues
-    config.plugins.push(
-      new webpack.ProvidePlugin({
-        'date-fns': 'date-fns',
-      })
-    );
-
-    // Force certain packages to use ESM - Enhanced for Next.js 15
-    config.module.rules.push({
-      test: /\.m?js$/,
-      type: 'javascript/auto',
-      resolve: {
-        fullySpecified: false,
-      },
-    });
-    
-    // CRITICAL: Buffer fallback is now handled in the main fallback configuration below
-
-    // COMPREHENSIVE ESM FIX for Next.js 15 + React 19
-    // Handle formik and lodash ESM issues with multiple strategies
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      // Removed lodash-es aliases to prevent ESM/CJS conflicts
-    };
-
-    // Override module resolution for problematic packages
-    config.resolve.extensionAlias = {
-      '.js': ['.js', '.ts', '.jsx', '.tsx'],
-      '.mjs': ['.mjs', '.mts'],
-      '.cjs': ['.cjs', '.cts'],
-    };
-
-    // Add webpack rules to force ESM handling
-    config.module.rules.push({
-      test: /node_modules\/(formik|date-fns|lodash|react-day-picker|@reown|@lit|lit)/,
-      type: 'javascript/auto',
-      resolve: {
-        fullySpecified: false,
-      },
-    });
-
-    // Disabled problematic string-replace-loader rule that caused invalid regex errors
-    /*
-    config.module.rules.push({
-      test: /\.js$/,
-      include: /node_modules\/formik/,
-      use: {
-        loader: 'string-replace-loader',
-        options: {
-          multiple: [
-            { search: "require('lodash/", replace: "require('lodash-es/", flags: 'g' },
-            { search: 'require("lodash/', replace: 'require("lodash-es/', flags: 'g' },
-          ]
-        }
+      // Also ensure that cache.type is properly configured when filesystem caching is used
+      if (config.cache && config.cache.type === 'filesystem') {
+        // Remove any potentially conflicting cache options
+        delete config.cache.cacheUnaffected;
+        
+        // Set safe cache options
+        config.cache.allowCollectingMemory = false;
+        config.cache.managedPaths = [path.resolve(__dirname, 'node_modules')];
       }
-    });
-    */
 
-    // Additional ESM handling for Next.js 15 compatibility
-    if (!isServer) {
-      // Ensure ESM modules are properly resolved
-      config.resolve.mainFields = ['module', 'main'];
-      config.resolve.conditionNames = ['import', 'require', 'default'];
-    }
+      // Define feature flags for tree shaking
+      config.plugins.push(
+        new webpack.DefinePlugin({
+          __SENTRY_DEBUG__: false,
+          __SENTRY_TRACING__: true,
+        })
+      );
 
-    // Add polyfills for Node.js APIs
-    config.resolve.fallback = {
-      ...config.resolve.fallback,
-      buffer: 'buffer', // Ensure Buffer polyfill is available
-      stream: path.resolve(__dirname, 'src/utils/stream-polyfill.ts'), // Custom stream polyfill
-      events: path.resolve(__dirname, 'src/utils/events-polyfill.ts'), // Events polyfill for client-side
-      fs: false,
-      net: false,
-      tls: false,
-      crypto: false,
-      async_hooks: false,
-      diagnostics_channel: false,
-      worker_threads: false,
-      module: false,
-      child_process: false,
-      http: false,
-      https: false,
-      os: false,
-      path: false,
-      util: false,
-      zlib: false,
-      url: false,
-      // Handle native modules
-      'dd-trace': false,
-      // Remove all node: protocol module assignments
-    };
+      // Note: Sentry replacement is handled via resolve.alias above for CI builds
 
-    // Externalize compression libraries to prevent Z_SYNC_FLUSH errors
-    if (!isServer) {
-      config.externals = {
-        ...config.externals,
-        'pako': 'pako',
-        'zlib': 'zlib',
-        // Removed 'buffer': 'buffer' to allow Buffer polyfill to work
-        // Removed 'stream': 'stream' to allow stream polyfill to work
-        'util': 'util',
-        // Removed 'events': 'events' to prevent client-side errors
+      // Handle date-fns ESM import issues
+      config.plugins.push(
+        new webpack.ProvidePlugin({
+          'date-fns': 'date-fns',
+        })
+      );
 
-        'assert': 'assert',
-        'constants': 'constants',
-        'path': 'path',
-        'fs': 'fs',
-        'os': 'os',
-        'crypto': 'crypto',
-        'http': 'http',
-        'https': 'https',
-        'url': 'url',
-        'querystring': 'querystring',
-        'punycode': 'punycode',
-        'string_decoder': 'string_decoder',
-        'timers': 'timers',
-        'tty': 'tty',
-        'vm': 'vm',
-        'zlib': 'zlib',
-      };
-    }
-
-    // Externalize @lit/reactive-element modules to prevent dynamic import errors
-    if (isServer) {
-      config.externals = config.externals || [];
-      config.externals.push({
-        '@lit/reactive-element': 'commonjs @lit/reactive-element',
-        '@lit/reactive-element/decorators/custom-element.js': 'commonjs @lit/reactive-element/decorators/custom-element.js',
-        '@lit/reactive-element/decorators/event-options.js': 'commonjs @lit/reactive-element/decorators/event-options.js',
-        '@lit/reactive-element/decorators/property.js': 'commonjs @lit/reactive-element/decorators/property.js',
-        '@lit/reactive-element/decorators/query-all.js': 'commonjs @lit/reactive-element/decorators/query-all.js',
+      // Force certain packages to use ESM - Enhanced for Next.js 15
+      config.module.rules.push({
+        test: /\.m?js$/,
+        type: 'javascript/auto',
+        resolve: {
+          fullySpecified: false,
+        },
       });
-    }
+      
+      // CRITICAL: Buffer fallback is now handled in the main fallback configuration below
 
-    // Optimize bundle size
-    if (!dev) {
+      // COMPREHENSIVE ESM FIX for Next.js 15 + React 19
+      // Handle formik and lodash ESM issues with multiple strategies
       config.resolve.alias = {
         ...config.resolve.alias,
-        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.tsx'),
+        // Removed lodash-es aliases to prevent ESM/CJS conflicts
       };
 
-      // Note: Compression is handled by Netlify and other deployment platforms
-      // Removed compression-webpack-plugin to avoid dependency conflicts
-    }
+      // Override module resolution for problematic packages
+      config.resolve.extensionAlias = {
+        '.js': ['.js', '.ts', '.jsx', '.tsx'],
+        '.mjs': ['.mjs', '.mts'],
+        '.cjs': ['.cjs', '.cts'],
+      };
 
-    // PERFORMANCE: Add bundle optimization
-    if (!dev) {
-      config.optimization = {
-        ...config.optimization,
-        moduleIds: 'deterministic',
-        chunkIds: 'deterministic',
-        splitChunks: {
-          chunks: 'all',
-          cacheGroups: {
-            vendor: {
-              test: /[\\/]node_modules[\\/]/,
-              name: 'vendors',
-              chunks: 'all',
-              priority: 10,
-            },
-            common: {
-              name: 'common',
-              minChunks: 2,
-              chunks: 'all',
-              priority: 5,
-              reuseExistingChunk: true,
+      // Add webpack rules to force ESM handling
+      config.module.rules.push({
+        test: /node_modules\/(formik|date-fns|lodash|react-day-picker|@reown|@lit|lit)/,
+        type: 'javascript/auto',
+        resolve: {
+          fullySpecified: false,
+        },
+      });
+
+      // Disabled problematic string-replace-loader rule that caused invalid regex errors
+      /*
+      config.module.rules.push({
+        test: /\.js$/,
+        include: /node_modules\/formik/,
+        use: {
+          loader: 'string-replace-loader',
+          options: {
+            multiple: [
+              { search: "require('lodash/", replace: "require('lodash-es/", flags: 'g' },
+              { search: 'require("lodash/', replace: 'require("lodash-es/', flags: 'g' },
+            ]
+          }
+        }
+      });
+      */
+
+      // Additional ESM handling for Next.js 15 compatibility
+      if (!isServer) {
+        // Ensure ESM modules are properly resolved
+        config.resolve.mainFields = ['module', 'main'];
+        config.resolve.conditionNames = ['import', 'require', 'default'];
+      }
+
+      // Add polyfills for Node.js APIs
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        buffer: 'buffer', // Ensure Buffer polyfill is available
+        stream: path.resolve(__dirname, 'src/utils/stream-polyfill.ts'), // Custom stream polyfill
+        events: path.resolve(__dirname, 'src/utils/events-polyfill.ts'), // Events polyfill for client-side
+        fs: false,
+        net: false,
+        tls: false,
+        crypto: false,
+        async_hooks: false,
+        diagnostics_channel: false,
+        worker_threads: false,
+        module: false,
+        child_process: false,
+        http: false,
+        https: false,
+        os: false,
+        path: false,
+        util: false,
+        zlib: false,
+        url: false,
+        // Handle native modules
+        'dd-trace': false,
+        // Remove all node: protocol module assignments
+      };
+
+      // Externalize compression libraries to prevent Z_SYNC_FLUSH errors
+      if (!isServer) {
+        config.externals = {
+          ...config.externals,
+          'pako': 'pako',
+          'zlib': 'zlib',
+          // Removed 'buffer': 'buffer' to allow Buffer polyfill to work
+          // Removed 'stream': 'stream' to allow stream polyfill to work
+          'util': 'util',
+          // Removed 'events': 'events' to prevent client-side errors
+
+          'assert': 'assert',
+          'constants': 'constants',
+          'path': 'path',
+          'fs': 'fs',
+          'os': 'os',
+          'crypto': 'crypto',
+          'http': 'http',
+          'https': 'https',
+          'url': 'url',
+          'querystring': 'querystring',
+          'punycode': 'punycode',
+          'string_decoder': 'string_decoder',
+          'timers': 'timers',
+          'tty': 'tty',
+          'vm': 'vm',
+          'zlib': 'zlib',
+        };
+      }
+
+      // Externalize @lit/reactive-element modules to prevent dynamic import errors
+      if (isServer) {
+        config.externals = config.externals || [];
+        config.externals.push({
+          '@lit/reactive-element': 'commonjs @lit/reactive-element',
+          '@lit/reactive-element/decorators/custom-element.js': 'commonjs @lit/reactive-element/decorators/custom-element.js',
+          '@lit/reactive-element/decorators/event-options.js': 'commonjs @lit/reactive-element/decorators/event-options.js',
+          '@lit/reactive-element/decorators/property.js': 'commonjs @lit/reactive-element/decorators/property.js',
+          '@lit/reactive-element/decorators/query-all.js': 'commonjs @lit/reactive-element/decorators/query-all.js',
+        });
+      }
+
+      // Optimize bundle size
+      if (!dev) {
+        config.resolve.alias = {
+          ...config.resolve.alias,
+          'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.tsx'),
+        };
+
+        // Note: Compression is handled by Netlify and other deployment platforms
+        // Removed compression-webpack-plugin to avoid dependency conflicts
+      }
+
+      // PERFORMANCE: Add bundle optimization
+      if (!dev) {
+        config.optimization = {
+          ...config.optimization,
+          moduleIds: 'deterministic',
+          chunkIds: 'deterministic',
+          splitChunks: {
+            chunks: 'all',
+            cacheGroups: {
+              vendor: {
+                test: /[\\/]node_modules[\\/]/,
+                name: 'vendors',
+                chunks: 'all',
+                priority: 10,
+              },
+              common: {
+                name: 'common',
+                minChunks: 2,
+                chunks: 'all',
+                priority: 5,
+                reuseExistingChunk: true,
+              },
             },
           },
-        },
+        };
+      }
+
+      // Ensure consistent optimization settings in all environments
+      config.optimization = {
+        ...config.optimization,
+        // Explicitly disable usedExports to prevent cacheUnaffected conflicts
+        usedExports: false,
       };
-    }
 
-    // Ensure consistent optimization settings in all environments
-    config.optimization = {
-      ...config.optimization,
-      // Explicitly disable usedExports to prevent cacheUnaffected conflicts
-      usedExports: false,
-    };
+      // Remove cacheUnaffected in case any plugin re-added it
+      if (config.cache && config.cache.cacheUnaffected !== undefined) {
+        delete config.cache.cacheUnaffected;
+      }
+      if (config.optimization && 'cacheUnaffected' in config.optimization) {
+        delete config.optimization.cacheUnaffected;
+      }
+      if (config.experiments && 'cacheUnaffected' in config.experiments) {
+        config.experiments.cacheUnaffected = false;
+      }
 
-    // Remove cacheUnaffected in case any plugin re-added it
-    if (config.cache && config.cache.cacheUnaffected !== undefined) {
-      delete config.cache.cacheUnaffected;
-    }
-    if (config.optimization && 'cacheUnaffected' in config.optimization) {
-      delete config.optimization.cacheUnaffected;
-    }
-    if (config.experiments && 'cacheUnaffected' in config.experiments) {
-      config.experiments.cacheUnaffected = false;
-    }
+      // Remove node: protocol module fallbacks and aliases
+      // Remove the nodeCoreModules array and its forEach logic for alias and fallback
+      // Only keep standard fallbacks and aliases, do not reference node: protocol modules anywhere.
 
-    // Remove node: protocol module fallbacks and aliases
-    // Remove the nodeCoreModules array and its forEach logic for alias and fallback
-    // Only keep standard fallbacks and aliases, do not reference node: protocol modules anywhere.
-
-    // Add problematic ESM modules as externals for both server and client
-    const problematicESMModules = [
-      '@safe-global/safe-apps-sdk',
-      'eventemitter3',
-      'preact',
-      'preact/hooks',
-      'valtio/vanilla',
-    ];
-    if (Array.isArray(config.externals)) {
-      problematicESMModules.forEach(module => {
-        config.externals.push({
-          [module]: `commonjs ${module}`
+      // Add problematic ESM modules as externals for both server and client
+      const problematicESMModules = [
+        '@safe-global/safe-apps-sdk',
+        'eventemitter3',
+        'preact',
+        'preact/hooks',
+        'valtio/vanilla',
+      ];
+      if (Array.isArray(config.externals)) {
+        problematicESMModules.forEach(module => {
+          config.externals.push({
+            [module]: `commonjs ${module}`
+          });
         });
-      });
-    } else if (typeof config.externals === 'object' && config.externals !== null) {
-      problematicESMModules.forEach(module => {
-        config.externals[module] = `commonjs ${module}`;
-      });
-    }
+      } else if (typeof config.externals === 'object' && config.externals !== null) {
+        problematicESMModules.forEach(module => {
+          config.externals[module] = `commonjs ${module}`;
+        });
+      }
 
-    // Remove any non-serializable properties before returning config
-    // For example, delete any properties that are functions or complex objects
-    if (config.cache && typeof config.cache !== 'object') {
-      delete config.cache;
+      // Remove any non-serializable properties before returning config
+      // For example, delete any properties that are functions or complex objects
+      if (config.cache && typeof config.cache !== 'object') {
+        delete config.cache;
+      }
+      if (config.optimization && typeof config.optimization !== 'object') {
+        delete config.optimization;
+      }
+      // Remove any other known non-serializable properties if present
+      // (Add more cleanup here if needed)
+      
+      // Return config directly (required by Next.js/webpack)
+      return config;
     }
-    if (config.optimization && typeof config.optimization !== 'object') {
-      delete config.optimization;
-    }
-    // Remove any other known non-serializable properties if present
-    // (Add more cleanup here if needed)
-    
-    // Return config directly instead of trying to serialize it
-    return config;
-  },
+  } : {}),
 
   // Note: headers, redirects, and rewrites don't work with output: 'export'
   // These are handled by Netlify via _headers and _redirects files

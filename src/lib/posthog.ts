@@ -52,7 +52,7 @@ export const initPostHog = () => {
       a.people = a.people || {};
       for (let i = 0; i < methods.length; i++) {
         const method = methods[i]!; // Non-null assertion since we're within array bounds
-        (a as Record<string, unknown>)[method] = p(method);
+        (a as any)[method] = p(method);
       }
       a._i.push([k, opts]);
       const script = c.createElement('script');
