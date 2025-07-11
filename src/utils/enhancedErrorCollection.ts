@@ -210,8 +210,8 @@ class EnhancedErrorCollector {
     };
 
     // Log health summary
-    logInfo('System health check', { data:  {
-      uptime: Math.round(uptime / 1000 / 60 }), // minutes
+    logInfo('System health check', { data: {
+      uptime: Math.round(uptime / 1000 / 60), // minutes
       errorRate: Math.round(errorRate * 100) / 100,
       errorCount,
       memoryPressure: Math.round(this.healthMetrics.memoryPressure * 100),

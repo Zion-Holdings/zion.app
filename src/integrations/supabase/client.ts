@@ -47,8 +47,8 @@ export const isSupabaseConfigured = !!(
 
 // Only log in development and when debug is enabled
 if (process.env.NODE_ENV === 'development' && process.env.DEBUG_ENV_CONFIG === 'true') {
-  logDebug('Supabase integration details (src/integrations/supabase/client.ts):', { data:  {
-    activeUrlUsed: `${(activeSupabaseUrl ?? '' }).substring(0, 30)}...`,
+  logDebug('Supabase integration details (src/integrations/supabase/client.ts):', { data: {
+    activeUrlUsed: `${(activeSupabaseUrl ?? '').substring(0, 30)}...`,
     isSupabaseConfiguredFinal: isSupabaseConfigured,
     credentialsAppearValid: !!(activeSupabaseUrl && activeSupabaseAnonKey && activeSupabaseUrl.includes('supabase.co') && activeSupabaseAnonKey.startsWith('eyJ')),
     clientInstanceInitialized: clientInstanceSuccessfullyInitialized,
