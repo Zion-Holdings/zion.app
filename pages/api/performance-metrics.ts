@@ -63,14 +63,14 @@ export default async function handler(
     }
 
     // Store in memory for development (replace with database in production)
-    if (typeof (global as any).performanceMetrics === 'undefined') {
-      (global as any).performanceMetrics = [];
+    if (typeof (global as Record<string, unknown>).performanceMetrics === 'undefined') {
+      (global as Record<string, unknown>).performanceMetrics = [];
     }
     
     // Keep only the last 100 reports in memory
-    (global as any).performanceMetrics.push(performanceReport);
-    if ((global as any).performanceMetrics.length > 100) {
-      (global as any).performanceMetrics = (global as any).performanceMetrics.slice(-100);
+    (global as Record<string, unknown>).performanceMetrics.push(performanceReport);
+    if ((global as Record<string, unknown>).performanceMetrics.length > 100) {
+      (global as Record<string, unknown>).performanceMetrics = (global as Record<string, unknown>).performanceMetrics.slice(-100);
     }
 
     res.status(200).json({ 
