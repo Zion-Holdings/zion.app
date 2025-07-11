@@ -61,9 +61,9 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
     const fetchPosts = async () => {
       setIsLoading(true);
       try {
-        const data: BlogPost[] = await fetchWithRetry(
+        const data = await fetchWithRetry(
           `/api/blog?query=${encodeURIComponent(query)}`
-        );
+        ) as BlogPost[];
         setPosts(data);
       } catch (err) {
         logErrorToProduction('Failed to fetch blog posts', { data: err });
