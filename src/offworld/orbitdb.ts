@@ -114,7 +114,7 @@ export async function initOrbit(repoPath = './orbitdb-helia') {
     if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
       message = (error as { message: string }).message;
     }
-    console.warn('⚠️ Failed to initialize OrbitDB:', message);
+    logErrorToProduction('⚠️ Failed to initialize OrbitDB:', { data: message });
   }
 }
 
@@ -153,7 +153,7 @@ export async function getLog(name: string): Promise<unknown> {
 
 export async function stopOrbit(): Promise<void> {
   if (isBuildEnv || isBrowserEnv) {
-    console.log('🚫 OrbitDB stopOrbit not available in browser environment');
+    logInfo('🚫 OrbitDB stopOrbit not available in browser environment');
     return;
   }
 
@@ -174,7 +174,7 @@ export async function stopOrbit(): Promise<void> {
     if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
       message = (error as { message: string }).message;
     }
-    console.warn('⚠️ Failed to stop OrbitDB:', message);
+    logErrorToProduction('⚠️ Failed to stop OrbitDB:', { data: message });
   }
 }
 
