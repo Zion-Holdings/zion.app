@@ -79,6 +79,8 @@ const nextConfig = {
 
     // Ensure CSS optimization is disabled to prevent static/css errors
     optimizeCss: false,
+    // Disable CSS minimization to prevent syntax errors
+    swcMinify: false,
     // Memory and performance optimizations for 176+ pages
     largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
     workerThreads: true, // Reactivate worker threads for better performance
@@ -374,6 +376,11 @@ const nextConfig = {
     '@reown/appkit-utils',
     '@lit/reactive-element',
     'lit',
+    '@lit-labs/ssr-dom-shim',
+    'lit-element',
+    'lit-html',
+    'big.js',
+    'bs58',
     'ethers',
     'viem',
     '@wagmi/core',
@@ -437,19 +444,39 @@ const nextConfig = {
   ],
 
   webpack: (config, { dev, isServer, webpack }) => {
+    // Use the 'require' from the top of the file, do not redeclare it here
+    
+    // Skip CSS processing for static directories
+    config.module.rules.forEach(rule => {
+      if (rule.test && rule.test.toString().includes('css')) {
+        if (!rule.exclude) {
+          rule.exclude = [];
+        }
+        rule.exclude.push(/static\/css/);
+      }
+    });
+
+    // Externalize problematic modules
+    config.externals = config.externals || [];
+    config.externals.push({
+      '@reown/appkit/react': 'commonjs @reown/appkit/react',
+      '@reown/appkit/networks': 'commonjs @reown/appkit/networks',
+      'lit': 'commonjs lit'
+    });
+
     // Simplified webpack configuration to bypass CSS issues
     const require = createRequire(import.meta.url);
     
-    // Remove the following block to reactivate CSS minimization and processing:
-    // if (config.optimization && config.optimization.minimizer) {
-    //   config.optimization.minimizer = config.optimization.minimizer.filter(
-    //     minimizer => !minimizer.constructor.name.includes('CssMinimizer')
-    //   );
-    // }
-    // if (config.optimization) {
-    //   config.optimization.minimize = false;
-    //   config.optimization.minimizer = [];
-    // }
+    // Disable CSS minimization to prevent syntax errors
+    if (config.optimization && config.optimization.minimizer) {
+      config.optimization.minimizer = config.optimization.minimizer.filter(
+        minimizer => !minimizer.constructor.name.includes('CssMinimizer')
+      );
+    }
+    if (config.optimization) {
+      config.optimization.minimize = false;
+      config.optimization.minimizer = [];
+    }
     
     // Prevent Node.js core modules from being polyfilled in the client bundle
     if (!isServer) {
@@ -910,7 +937,7 @@ const nextConfig = {
       
       reownModules.forEach(module => {
         config.externals.push({
-          [module]: `module ${module}`
+          [module]: `commonjs ${module}`
         });
       });
       
@@ -1254,7 +1281,7 @@ const nextConfig = {
 
     // Add webpack rules to force ESM handling
     config.module.rules.push({
-      test: /node_modules\/(formik|date-fns|lodash|react-day-picker)/,
+      test: /node_modules\/(formik|date-fns|lodash|react-day-picker|@reown|@lit|lit)/,
       type: 'javascript/auto',
       resolve: {
         fullySpecified: false,
@@ -1449,3 +1476,6 @@ if (nextConfig.experimental && 'esmExternals' in nextConfig.experimental) {
 }
 
 export default nextConfig;
+
+
+

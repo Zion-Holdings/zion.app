@@ -12,15 +12,29 @@ import type { ReactNode } from 'react';
 const isBuildEnv = process.env.CI === 'true';
 
 let ethers: typeof import('ethers');
-let createAppKit: typeof import('@reown/appkit/react').createAppKit;
-let mainnet, goerli, polygon, optimism, arbitrum, base;
 
-if (!isBuildEnv) {
-  (async () => {
-    ethers = await import('ethers');
-    ({ createAppKit } = await import('@reown/appkit/react'));
-    ({ mainnet, polygon, goerli, optimism, arbitrum, base } = await import('@reown/appkit/networks'));
-  })();
+// Dynamic imports for ESM compatibility
+let createAppKit: any;
+let mainnet: any, goerli: any, polygon: any, optimism: any, arbitrum: any, base: any;
+
+// Load AppKit modules dynamically to avoid ESM issues
+if (typeof window !== 'undefined' && !isBuildEnv) {
+  import('@reown/appkit/react').then(module => {
+    createAppKit = module.createAppKit;
+  }).catch(err => {
+    console.warn('Failed to load @reown/appkit/react:', err);
+  });
+  
+  import('@reown/appkit/networks').then(module => {
+    mainnet = module.mainnet;
+    goerli = module.goerli;
+    polygon = module.polygon;
+    optimism = module.optimism;
+    arbitrum = module.arbitrum;
+    base = module.base;
+  }).catch(err => {
+    console.warn('Failed to load @reown/appkit/networks:', err);
+  });
 } else {
   // Mock types for build compatibility
   ethers = {
