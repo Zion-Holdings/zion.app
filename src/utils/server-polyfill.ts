@@ -13,7 +13,7 @@ if (typeof globalThis !== 'undefined' && typeof self === 'undefined') {
 // Additional client-side globals that might be accessed server-side
 if (typeof window === 'undefined') {
   // Mock window object for server-side execution
-  (global as unknown as { window: any }).window = {
+  (global as unknown as { window: Record<string, unknown> }).window = {
     location: {
       href: '',
       origin: '',
@@ -58,7 +58,7 @@ if (typeof window === 'undefined') {
       key: () => null
     },
     console: console,
-    fetch: (global as any).fetch || (() => Promise.reject(new Error('Fetch not available on server'))),
+    fetch: (global as Record<string, unknown>).fetch || (() => Promise.reject(new Error('Fetch not available on server'))),
     URL: (global as any).URL || class URL {
       href: string;
       constructor(href: string) { this.href = href; }
