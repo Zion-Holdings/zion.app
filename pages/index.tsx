@@ -64,13 +64,11 @@ const ErrorTestButton = () => {
       throw new Error("This is a test error from the homepage button!");
     } catch (error) {
       if (isSentryActive) {
-        try {
-          if (typeof window === 'undefined') {
-            const Sentry = (await import('@sentry/nextjs')).default;
+        if (typeof window === 'undefined') {
+          import('@sentry/nextjs').then(mod => {
+            const Sentry = mod.default;
             Sentry.captureException(error);
-          }
-        } catch (sentryError) {
-          logWarn('Failed to log to Sentry:', { data: sentryError });
+          });
         }
       }
       logErrorToProduction('Button error test:', { error });
