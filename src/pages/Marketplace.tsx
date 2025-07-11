@@ -23,7 +23,7 @@ import type { ProductListing } from '@/types/listings';
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
 import { useToast } from '@/hooks/use-toast';
 import { useAuth } from '@/context/auth/AuthProvider';
-import { MARKETPLACE_LISTINGS } from '@/data/listingData';
+import { fetchProducts } from '@/services/marketplace';
 import { MAX_PRICE, MIN_PRICE } from '@/data/marketplaceData';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
@@ -279,33 +279,19 @@ export default function Marketplace() {
 
   // Fetch function for infinite scroll with AI product generation
   const fetchProducts = useCallback(async (page: number, limit: number) => {
-    await new Promise((resolve) => setTimeout(resolve, 200));
-
     try {
-      // Use static marketplace listings data for now (compatible with ProductListing type)
       const params = {
         page,
         limit,
         ...(filterCategory && { category: filterCategory }),
         sort: sortBy
       };
-
-      logInfo('Marketplace.tsx: Fetching products using static data with params:', { data: params });
-      
-      // Use static data that's already of type ProductListing[]
-      let items: ProductListing[] = [...MARKETPLACE_LISTINGS];
-      
-      // Apply category filter from params
-      if (filterCategory) {
-        items = items.filter((p) => p.category.toLowerCase() === filterCategory.toLowerCase());
-      }
-      
-      logInfo('Marketplace.tsx: Raw items from static data before filtering/sorting:', { data: JSON.stringify(items.slice(0, 5), null, 2) });
-
+      logInfo('Marketplace.tsx: Fetching products from API with params:', { data: params });
+      const response = await fetchProducts(params);
+      let items: ProductListing[] = response.items || [];
       if (showRecommended) {
         items = items.filter((p) => p.rating != null && p.rating >= 4.3);
       }
-
       items = items.filter((p) => {
         const price = p.price || 0;
         const ai = p.aiScore || 0;
@@ -321,68 +307,12 @@ export default function Marketplace() {
           (!filterAvailability || availability === filterAvailability.toLowerCase())
         );
       });
-
-      items.sort((a, b) => {
-        switch (sortBy) {
-          case 'price-low':
-            return (a.price || 0) - (b.price || 0);
-          case 'price-high':
-            return (b.price || 0) - (a.price || 0);
-          case 'rating':
-            return (b.rating || 0) - (a.rating || 0);
-          case 'popular':
-            return (b.reviewCount || 0) - (a.reviewCount || 0);
-          case 'ai-score':
-            return (b.aiScore || 0) - (a.aiScore || 0);
-          case 'newest':
-          default: {
-            // Ensure createdAt exists and is a valid date string before parsing
-            const timeA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
-            const timeB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
-
-            // Handle NaN cases that might arise from invalid date strings
-            if (isNaN(timeB) && isNaN(timeA)) return 0; // Both invalid, treat as equal
-            if (isNaN(timeB)) return -1; // b is invalid, a comes first (appears newer)
-            if (isNaN(timeA)) return 1;  // a is invalid, b comes first
-
-            return timeB - timeA; // Both valid, sort by time
-          }
-        }
-      });
-
-      // Apply pagination
-      const startIndex = (page - 1) * limit;
-      const endIndex = startIndex + limit;
-      const paginatedItems = items.slice(startIndex, endIndex);
-      
-      return {
-        items: paginatedItems,
-        hasMore: endIndex < items.length,
-        total: items.length
-      };
-    } catch (err: unknown) {
-      const errorObj = err instanceof Error ? err : new Error(String(err));
-      // Log the error and allow useInfiniteScrollPagination to handle it
-      logErrorToProduction('Error in Marketplace fetchProducts:', { data: errorObj });
-      
-      // Show more specific error messages based on the error type
-      if (typeof err === 'object' && err !== null && 'response' in err && (err as { response?: { status?: number } }).response?.status === 403) {
-        logErrorToProduction("403 Forbidden error - authentication issue");
-        // Don't show toast here, let the AuthModal handle it or rely on ProductCard's tooltip
-      } else if (typeof err === 'object' && err !== null && 'response' in err && (err as { response?: { status?: number } }).response?.status === 500) {
-        logErrorToProduction("500 Server error");
-        toast({
-          title: "Server Error", 
-          description: "The marketplace is temporarily unavailable. Please try again later.",
-          variant: "destructive",
-        });
-      } else {
-        handleApiError(errorObj); // This might show a toast or log to Sentry
-      }
-      
-      throw errorObj; // Re-throw to let useInfiniteScrollPagination know about the failure
+      return { items };
+    } catch (error) {
+      logErrorToProduction('Marketplace.tsx: Error fetching products from API', { data: error });
+      return { items: [] };
     }
-  }, [filterCategory, sortBy, showRecommended, priceRange, minAiScore, minRating, filterAvailability, filterLocation, handleApiError, toast]);
+  }, [filterCategory, sortBy, showRecommended, priceRange, minAiScore, minRating, filterLocation, filterAvailability]);
 
   // useInfiniteScrollPagination hook
   const {
@@ -445,14 +375,14 @@ export default function Marketplace() {
 
   // Get unique categories and other filter values
   const categories = useMemo(() => {
-    return Array.from(new Set(MARKETPLACE_LISTINGS.map((p) => p.category)));
-  }, []);
+    return Array.from(new Set(products.map((p) => p.category)));
+  }, [products]);
   const locations = useMemo(() => {
-    return Array.from(new Set(MARKETPLACE_LISTINGS.map((p) => p.location).filter(Boolean)));
-  }, []).filter(Boolean) as string[];
+    return Array.from(new Set(products.map((p) => p.location).filter(Boolean)));
+  }, [products]).filter(Boolean) as string[];
   const availabilityOptions = useMemo(() => {
-    return Array.from(new Set(MARKETPLACE_LISTINGS.map((p) => p.availability).filter(Boolean)));
-  }, []).filter(Boolean) as string[];
+    return Array.from(new Set(products.map((p) => p.availability).filter(Boolean)));
+  }, [products]).filter(Boolean) as string[];
 
   // Show scroll to top button
   const [showScrollTop, setShowScrollTop] = useState(false);
