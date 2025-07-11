@@ -30,15 +30,14 @@ interface ListingPageProps {
 }
 
 const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
-  const router = useRouter();
-  
+  const dispatch = useDispatch<AppDispatch>();
+
   if (!listing) {
     return <div className="max-w-3xl mx-auto py-8 px-4">Listing not found.</div>;
   }
 
   const canonicalUrl = `/marketplace/listing/${listing.id}`;
   const breadcrumbs = getBreadcrumbsForPath(canonicalUrl);
-  const dispatch = useDispatch<AppDispatch>();
 
   const handleAddToCart = () => {
     dispatch(

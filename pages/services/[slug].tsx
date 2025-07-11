@@ -9,13 +9,16 @@ import Custom404 from '../404';
 const ServicePage: React.FC = () => {
   const router = useRouter();
   const { slug } = router.query as { slug?: string };
+  
+  const service = React.useMemo(
+    () => slug ? SERVICES.find((s) => slugify(s.title) === slug) || null : null,
+    [slug]
+  );
+
   if (!slug) {
     return <Custom404 />;
   }
-  const service = React.useMemo(
-    () => SERVICES.find((s) => slugify(s.title) === slug) || null,
-    [slug]
-  );
+  
   if (!service) {
     return <Custom404 />;
   }

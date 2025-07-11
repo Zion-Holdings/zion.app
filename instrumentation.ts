@@ -12,8 +12,8 @@ if (typeof globalThis !== 'undefined' && typeof (globalThis as Record<string, un
 import './src/utils/server-polyfill';
 
 // Conditionally import Sentry to avoid Node.js dependencies in browser
-let Sentry: { init?: Function } | null = null;
-let onRequestError: Function | null = null;
+let Sentry: { init?: (config: any) => void } | null = null;
+let onRequestError: ((error: Error) => void) | null = null;
 
 async function initializeSentryOrMock() {
   if (process.env['NEXT_RUNTIME'] === 'edge') {
@@ -38,7 +38,8 @@ async function initializeSentryOrMock() {
         return;
       } else {
         // Always use the real Sentry SDK
-        Sentry = require('@sentry/nextjs');
+        const sentryModule = await import('@sentry/nextjs');
+        Sentry = sentryModule;
         onRequestError = null;
         console.log('instrumentation.ts: Actual Sentry SDK loaded for Node.js.');
       }
