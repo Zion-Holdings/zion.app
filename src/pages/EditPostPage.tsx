@@ -46,7 +46,7 @@ export default function EditPostPage() {
         updatedAt: '2024-07-01T10:00:00.000Z',
         upvotes: 12,
         downvotes: 0,
-        categoryId: 'general',
+        categoryId: 'project-help',
         tags: ['ziongpt', 'project-management'],
         replyCount: 2,
       });
