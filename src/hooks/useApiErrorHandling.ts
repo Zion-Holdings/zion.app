@@ -2,6 +2,7 @@ import { useQueryClient } from '@tanstack/react-query';
 import { useCallback } from 'react';
 import { toast } from '@/hooks/use-toast';
 import {logErrorToProduction} from '@/utils/productionLogger';
+import * as Sentry from '@sentry/nextjs';
 
 
 interface ApiErrorHandlingOptions {
@@ -40,7 +41,7 @@ export const useApiErrorHandling = () => {
 
       // Log to Sentry
       if (logToSentry) {
-        Sentry.withScope((scope) => {
+        Sentry.withScope((scope: any) => {
           scope.setTag('source', 'useApiErrorHandling');
           scope.setLevel('error');
           scope.setContext('errorDetails', {
