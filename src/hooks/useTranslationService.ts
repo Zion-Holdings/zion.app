@@ -113,8 +113,28 @@ export function useTranslationService() {
         initialTranslations[sourceLanguage] = content;
         return { translations: initialTranslations };
       }
-      
-      return { translations: typeof data === 'object' && data && 'translations' in data ? (data as { translations: unknown }).translations : undefined };
+
+      // Type guard for translations
+      const maybeTranslations = (data as { translations: unknown }).translations;
+      if (
+        maybeTranslations &&
+        typeof maybeTranslations === 'object' &&
+        ['en', 'es', 'fr', 'pt', 'ar'].every(
+          lang => typeof (maybeTranslations as Record<string, unknown>)[lang] === 'string'
+        )
+      ) {
+        return { translations: maybeTranslations as Record<SupportedLanguage, string> };
+      } else {
+        const initialTranslations: Record<SupportedLanguage, string> = {
+          en: content,
+          es: '',
+          fr: '',
+          pt: '',
+          ar: ''
+        };
+        initialTranslations[sourceLanguage] = content;
+        return { translations: initialTranslations };
+      }
     } catch (err) {
       setIsTranslating(false);
       logErrorToProduction('Translation service error:', { data: err });
