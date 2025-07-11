@@ -52,18 +52,23 @@ export async function recommendEquipment(
   }
 
   // Fallback to random equipment
-  return Array.from({ length: limit }, () => {
-    // TODO: Replace with valid data source or fallback logic
+  return Array.from({ length: limit }, (_, idx) => {
     return {
-      id: 'fallback-equipment-id',
-      name: 'Fallback Equipment',
+      id: `fallback-equipment-id-${idx}`,
+      title: 'Fallback Equipment',
       description: 'This is a fallback for equipment recommendation.',
-      price: 0,
       category: 'Fallback',
-      image_url: 'https://via.placeholder.com/150',
-      seller_id: 'fallback-seller-id',
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString(),
+      price: 0,
+      currency: '$',
+      tags: ['Fallback'],
+      author: { name: 'Fallback Seller', id: 'fallback-seller-id' },
+      images: ['https://via.placeholder.com/150'],
+      createdAt: new Date().toISOString(),
+      aiScore: 0,
+      rating: 0,
+      reviewCount: 0,
+      stock: 0,
+      location: 'Unknown',
     };
   });
 }
