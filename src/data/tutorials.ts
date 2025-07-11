@@ -1,4 +1,4 @@
-import { Tutorial } from '@/types/tutorial';
+import type { Tutorial } from '@/types/tutorial';
 export const TUTORIALS: Tutorial[] = [
   {
     "title": "Setting Up a Private GPT Model",

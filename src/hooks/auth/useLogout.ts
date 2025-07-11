@@ -12,7 +12,7 @@ export const useLogout = (setUser: (user: UserDetails | null) => void) => {
       cleanupAuthState();
 
       // Sign out
-      await supabase.auth.signOut({ scope: 'global' });
+      await supabase!.auth.signOut({ scope: 'global' });
 
       // Inform backend to clear authToken cookie
       try {

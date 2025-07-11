@@ -1,4 +1,4 @@
-import { OrgMember } from '@/types/org';
+import type { OrgMember } from '@/types/org';
 
 export const orgMembers: OrgMember[] = [
   {
