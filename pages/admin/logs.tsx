@@ -403,11 +403,11 @@ export const getServerSideProps: GetServerSideProps = async () => {
             try {
               const logEntry = JSON.parse(line);
               logs.push(logEntry);
-            } catch (parseError) {
+            } catch (_parseError) {
               // Skip malformed log entries
             }
           }
-        } catch (fileError) {
+        } catch (_fileError) {
           // Skip problematic files
         }
       }

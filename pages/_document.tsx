@@ -3,7 +3,7 @@ import { Html, Head, Main, NextScript } from 'next/document';
 export default function Document() {
   // Simple theme script without complex polyfills
   // CRITICAL: Process and Buffer polyfill script - inline fallback
-  const processPolyfillScript = `(function() {
+  const _processPolyfillScript = `(function() {
     'use strict';
     
     // Only run in browser environments, not in Node.js
