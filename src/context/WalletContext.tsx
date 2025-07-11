@@ -18,10 +18,7 @@ import { ethers } from 'ethers';
 // Use real wallet imports except in CI/build environments
 const isBuildEnv = process.env.CI === 'true';
 
-let ethers: typeof import('ethers');
-
 // Dynamic imports for ESM compatibility
-let mainnet: any, goerli: any, polygon: any, optimism: any, arbitrum: any, base: any;
 
 // Load AppKit modules dynamically to avoid ESM issues
 import { EthersAdapter } from '@reown/appkit/ethers';
