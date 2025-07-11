@@ -51,7 +51,7 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
     return null;
   }
   const [isLoading, setIsLoading] = useState(true);
-  const [listings, setListings] = useState(MARKETPLACE_LISTINGS);
+  const [listings, setListings] = useState([]);
   const [category, setCategory] = useState<{title: string, description: string, icon: React.JSX.Element}>({
     title: "",
     description: "",
