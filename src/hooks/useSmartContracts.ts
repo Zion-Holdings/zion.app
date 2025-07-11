@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
-import type { BlockchainNetwork, DeploymentOptions } from '@/types/smart-contracts';
+import type { BlockchainNetwork as _BlockchainNetwork, DeploymentOptions } from '@/types/smart-contracts';
 import type { SmartContractInfo } from '@/types/smart-contracts';
 import type { TalentProfile } from '@/types/talent';
 import type { ContractFormValues } from "@/components/contracts/components/ContractForm";
