@@ -16,7 +16,8 @@ export const NEW_SERVICES: ProductListing[] = [
     createdAt: "2024-04-11T10:00:00.000Z",
     aiScore: 90,
     rating: 4.7,
-    reviewCount: 12
+    reviewCount: 12,
+    location: "Global",
   },
   {
     id: "ns-security-audit",
@@ -33,7 +34,8 @@ export const NEW_SERVICES: ProductListing[] = [
     createdAt: "2024-04-12T11:30:00.000Z",
     aiScore: 92,
     rating: 4.8,
-    reviewCount: 15
+    reviewCount: 15,
+    location: "Global",
   },
   {
     id: "ns-data-warehouse",
@@ -50,7 +52,8 @@ export const NEW_SERVICES: ProductListing[] = [
     createdAt: "2024-04-13T09:45:00.000Z",
     aiScore: 89,
     rating: 4.6,
-    reviewCount: 9
+    reviewCount: 9,
+    location: "Global",
   },
   {
     id: "ns-cloud-optimization",
@@ -67,7 +70,8 @@ export const NEW_SERVICES: ProductListing[] = [
     createdAt: "2024-04-14T13:20:00.000Z",
     aiScore: 91,
     rating: 4.7,
-    reviewCount: 11
+    reviewCount: 11,
+    location: "Global",
   },
   {
     id: "ns-process-automation",
@@ -84,7 +88,8 @@ export const NEW_SERVICES: ProductListing[] = [
     createdAt: "2024-04-15T08:10:00.000Z",
     aiScore: 88,
     rating: 4.5,
-    reviewCount: 8
+    reviewCount: 8,
+    location: "Global",
   },
   {
     id: "ns-chatbot-integration",
@@ -101,7 +106,8 @@ export const NEW_SERVICES: ProductListing[] = [
     createdAt: "2024-04-16T12:00:00.000Z",
     aiScore: 93,
     rating: 4.6,
-    reviewCount: 14
+    reviewCount: 14,
+    location: "Global",
   },
   {
     id: "ns-disaster-recovery",
@@ -118,7 +124,8 @@ export const NEW_SERVICES: ProductListing[] = [
     createdAt: "2024-04-17T07:55:00.000Z",
     aiScore: 90,
     rating: 4.7,
-    reviewCount: 10
+    reviewCount: 10,
+    location: "Global",
   },
   {
     id: "ns-ux-consulting",
@@ -135,7 +142,8 @@ export const NEW_SERVICES: ProductListing[] = [
     createdAt: "2024-04-18T10:40:00.000Z",
     aiScore: 87,
     rating: 4.5,
-    reviewCount: 7
+    reviewCount: 7,
+    location: "Global",
   },
   {
     id: "ns-network-setup",
@@ -152,7 +160,8 @@ export const NEW_SERVICES: ProductListing[] = [
     createdAt: "2024-04-19T14:30:00.000Z",
     aiScore: 89,
     rating: 4.6,
-    reviewCount: 9
+    reviewCount: 9,
+    location: "Global",
   },
   {
     id: "ns-threat-monitoring",
@@ -169,6 +178,7 @@ export const NEW_SERVICES: ProductListing[] = [
     createdAt: "2024-04-20T16:15:00.000Z",
     aiScore: 94,
     rating: 4.8,
-    reviewCount: 13
+    reviewCount: 13,
+    location: "Global",
   }
 ];
