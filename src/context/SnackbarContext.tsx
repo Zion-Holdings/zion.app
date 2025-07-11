@@ -1,4 +1,5 @@
-import React, { createContext, useContext, ReactNode } from 'react';
+import React, { createContext, useContext } from 'react';
+import type { ReactNode } from 'react';
 import { SnackbarProvider, useSnackbar, OptionsObject, SnackbarKey } from 'notistack';
 
 export type EnqueueSnackbar = (message: string, options?: OptionsObject) => SnackbarKey;

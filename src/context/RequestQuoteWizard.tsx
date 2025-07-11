@@ -3,8 +3,8 @@ import React, {
   useContext,
   useState,
   useEffect,
-  ReactNode,
 } from "react";
+import type { ReactNode } from "react";
 import { useRouter } from 'next/router';
 import {logErrorToProduction} from '@/utils/productionLogger';
 import { toast } from "@/hooks/use-toast";
