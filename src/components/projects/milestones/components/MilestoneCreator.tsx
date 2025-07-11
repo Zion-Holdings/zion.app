@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { AddMilestoneForm } from '../AddMilestoneForm';
 import type { MilestoneFormValues } from '../AddMilestoneForm';
@@ -20,10 +19,10 @@ export function MilestoneCreator({
   projectScope,
   projectStartDate,
   projectEndDate,
-  projectType
+  projectType,
 }: MilestoneCreatorProps) {
   return (
-    <AddMilestoneForm 
+    <AddMilestoneForm
       onSubmit={onSubmit}
       isSubmitting={isSubmitting}
       onCancel={onCancel}
