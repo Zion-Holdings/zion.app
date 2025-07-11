@@ -140,8 +140,13 @@ export class ProductionErrorMonitor {
         ...context
       },
       performanceMetrics: {
+<<<<<<< HEAD
         loadTime: this.getPerformanceMetrics().loadTime,
         memoryUsage: this.getPerformanceMetrics().memoryUsage
+=======
+        loadTime: typeof this.getPerformanceMetrics().loadTime === 'number' ? this.getPerformanceMetrics().loadTime ?? 0 : 0,
+        memoryUsage: this.getPerformanceMetrics().memoryUsage || {}
+>>>>>>> 555fc55bd2b966d85436f235d30ac056dae24d99
       }
     };
   }
