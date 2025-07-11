@@ -202,5 +202,3 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
 };
 
 export default withErrorLogging(handler); 
-
-export default withErrorLogging(handler); 

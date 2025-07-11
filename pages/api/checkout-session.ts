@@ -208,7 +208,7 @@ export default async function handler(
       if (error.type === 'StripeCardError') {
         return res.status(400).json({
           error: 'Payment processing error',
-          details: (error as any).message,
+          details: (error as { message?: string }).message,
         });
       }
 
