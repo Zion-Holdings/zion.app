@@ -3,6 +3,8 @@
  * Provides consistent error tracking across the application
  */
 
+import { logErrorToProduction } from '@/utils/productionLogger';
+
 interface ErrorContext {
   userId?: string;
   page?: string;
@@ -52,9 +54,9 @@ class ErrorMonitor {
   captureError(error: Error, context: Partial<ErrorContext> = {}) {
     const fullContext: ErrorContext = {
       timestamp: Date.now(),
-      page: typeof window !== 'undefined' ? window.location.pathname : undefined,
-      url: typeof window !== 'undefined' ? window.location.href : undefined,
-      userAgent: typeof window !== 'undefined' ? navigator.userAgent : undefined,
+      page: typeof window !== 'undefined' ? window.location.pathname || '' : '',
+      url: typeof window !== 'undefined' ? window.location.href || '' : '',
+      userAgent: typeof window !== 'undefined' ? navigator.userAgent || '' : '',
       ...context,
     };
 
@@ -68,7 +70,7 @@ class ErrorMonitor {
     if (this.isProduction) {
       this.reportToService(error, fullContext);
     } else {
-      console.error('Error captured:', error, fullContext);
+      logErrorToProduction('Error captured:', error, fullContext as unknown as Record<string, unknown>);
     }
   }
 
