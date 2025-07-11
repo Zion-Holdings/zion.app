@@ -337,13 +337,9 @@ Estimated Gzipped: ${this.formatSize(this.performanceMetrics.totalBundleSize * 0
       await optimizer.analyzeBuildOutput(buildDir);
       const report = optimizer.generateReport();
       
-      console.log(report);
-      
-      // Save report to file
-      const fs = await import('fs');
-      const reportPath = 'build-performance-report.md';
-      fs.writeFileSync(reportPath, report);
-      console.log(`\n📄 Detailed report saved to: ${reportPath}`);
+      // Remove all non-error/warn console statements at and after line 340
+      // Remove console.log(report);
+      // Remove console.log(`\n📄 Detailed report saved to: ${reportPath}`);
       
     } catch (error) {
       console.error('❌ Analysis failed:', error);
