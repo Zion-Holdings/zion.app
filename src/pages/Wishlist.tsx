@@ -11,8 +11,7 @@ import { toast } from '@/hooks/use-toast';
 import { useAuth } from '@/hooks/useAuth';
 import { useRouter } from 'next/router'; // Changed from useNavigate
 import { useEffect } from 'react'; // Added useEffect
-// import type { Product } from '@/types/product';
-type Product = any; // TODO: Replace with correct type from '@/types/product' if available
+import type { Product } from '@/types/product';
 import type { TalentProfile } from '@/types/talent';
 
 export default function WishlistPage() {
