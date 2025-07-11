@@ -20,7 +20,7 @@ const DB_OPTIONS = {
       poolTimeout: 10000,        // 10 seconds pool timeout
     },
   },
-} as any;
+} as unknown;
 
 /**
  * Get or create a Prisma client instance with connection pooling

@@ -8,7 +8,7 @@ interface EmailOptions {
     orderId?: string;
     downloadLinks?: string[]; // Assuming download links are an array of strings
     supportContact?: string;
-    [key: string]: any; // Allow other dynamic data
+    [key: string]: unknown; // Allow other dynamic data
   };
 }
 
@@ -37,12 +37,12 @@ export async function sendEmailWithSendGrid({
   try {
     await sgMail.send(msg);
     logInfo(`Email sent to ${to} using template ${templateId}`);
-  } catch (error: any) {
-    logErrorToProduction('Error sending email with SendGrid:', { data: error.toString() });
+  } catch (error: unknown) {
+    logErrorToProduction('Error sending email with SendGrid:', { data: error && typeof error === 'object' ? error.toString() : String(error) });
     // Optionally, rethrow the error or handle it as needed by your application's error handling strategy
     // For example, if the error response from SendGrid is available:
-    if (error.response) {
-      logErrorToProduction('SendGrid error response:', { data: error.response.body });
+    if (typeof error === 'object' && error && 'response' in error && (error as { response?: { body?: unknown } }).response) {
+      logErrorToProduction('SendGrid error response:', { data: (error as { response?: { body?: unknown } }).response?.body });
     }
     // Consider logging this to a more persistent error tracking service in production
   }
@@ -75,10 +75,10 @@ export async function sendResetEmail(
   try {
     await sgMail.send(msg);
     logInfo(`Password reset email sent to ${email}`);
-  } catch (error: any) {
-    logErrorToProduction('Error sending password reset email:', { data: error.toString() });
-    if (error.response) {
-      logErrorToProduction('SendGrid error response:', { data: error.response.body });
+  } catch (error: unknown) {
+    logErrorToProduction('Error sending password reset email:', { data: error && typeof error === 'object' ? error.toString() : String(error) });
+    if (typeof error === 'object' && error && 'response' in error && (error as { response?: { body?: unknown } }).response) {
+      logErrorToProduction('SendGrid error response:', { data: (error as { response?: { body?: unknown } }).response?.body });
     }
   }
 }
@@ -111,10 +111,10 @@ export async function sendFeedbackEmail(data: {
   try {
     await sgMail.send(msg);
     logInfo(`Feedback email sent to ${to}`);
-  } catch (error: any) {
-    logErrorToProduction('Error sending feedback email:', { data: error.toString() });
-    if (error.response) {
-      logErrorToProduction('SendGrid error response:', { data: error.response.body });
+  } catch (error: unknown) {
+    logErrorToProduction('Error sending feedback email:', { data: error && typeof error === 'object' ? error.toString() : String(error) });
+    if (typeof error === 'object' && error && 'response' in error && (error as { response?: { body?: unknown } }).response) {
+      logErrorToProduction('SendGrid error response:', { data: (error as { response?: { body?: unknown } }).response?.body });
     }
   }
 }

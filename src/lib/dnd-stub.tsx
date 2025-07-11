@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 interface DragDropContextProps {
   children: ReactNode;
-  onDragEnd?: (...args: any[]) => void;
+  onDragEnd?: (...args: unknown[]) => void;
 }
 export function DragDropContext({ children }: DragDropContextProps) {
   return <>{children}</>;
