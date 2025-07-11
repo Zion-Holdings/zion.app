@@ -391,7 +391,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
             if (!(linkResponse as unknown as { id?: string }).id) throw new Error('Failed to get ID for shareable link for counsel.');
 
             linkToSubmit = `${window.location.origin}/whitepaper/view/${(linkResponse as unknown as { id?: string }).id}`;
-            whitepaperIdToSubmit = (linkResponse as unknown as { id?: string }).id;
+            whitepaperIdToSubmit = (linkResponse as unknown as { id?: string }).id || null;
             setShareableLink(typeof linkToSubmit === 'string' ? linkToSubmit : null);
             setCurrentSharedWhitepaperId(typeof whitepaperIdToSubmit === 'string' ? whitepaperIdToSubmit : null);
             setCurrentSharedWhitepaperIsPublic((linkResponse as unknown as { is_public?: boolean }).is_public ?? null);
