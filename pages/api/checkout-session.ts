@@ -204,22 +204,26 @@ export default async function handler(
     logErrorToProduction('Checkout session creation error:', { data: error });
     
     // Handle specific Stripe errors
-    if (error.type === 'StripeCardError') {
-      return res.status(400).json({
-        error: 'Payment processing error',
-        details: error.message,
-      });
-    }
+    if (error && typeof error === 'object' && 'type' in error) {
+      if (error.type === 'StripeCardError') {
+        return res.status(400).json({
+          error: 'Payment processing error',
+          details: (error as any).message,
+        });
+      }
 
-    if (error.type === 'StripeInvalidRequestError') {
-      return res.status(400).json({
-        error: 'Invalid checkout request',
-        details: error.message,
-      });
+      if (error.type === 'StripeInvalidRequestError') {
+        return res.status(400).json({
+          error: 'Invalid checkout request',
+          details: (error as any).message,
+        });
+      }
     }
 
     // Handle missing Stripe key
-    if (error.message?.includes('No API key provided')) {
+    if (error && typeof error === 'object' && 'message' in error && 
+        typeof (error as any).message === 'string' && 
+        (error as any).message.includes('No API key provided')) {
       return res.status(500).json({
         error: 'Payment system configuration error',
         details: process.env['NODE_ENV'] === 'development' 
@@ -231,7 +235,9 @@ export default async function handler(
     // Generic error response
     return res.status(500).json({
       error: 'Failed to create checkout session',
-      details: process.env['NODE_ENV'] === 'development' ? error.message : 'Internal server error',
+      details: process.env['NODE_ENV'] === 'development' ? 
+        (error instanceof Error ? error.message : 'Unknown error') : 
+        'Internal server error',
     });
   }
 }

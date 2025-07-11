@@ -19,7 +19,7 @@ const heliaJson = () => ({
 // Browser-safe logging
 function logInfo(message: string) {
   if (!isBuildEnv) {
-    console.log(`[IPFS] ${message}`);
+    console.warn(`[IPFS] ${message}`);
   }
 }
 
