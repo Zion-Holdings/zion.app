@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { safeStorage } from '@/utils/safeStorage';
-import type { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
+import type { AxiosInstance, AxiosResponse, AxiosError, InternalAxiosRequestConfig } from 'axios';
 
 // Create and configure axios instance
 const createAxiosInstance = (): AxiosInstance => {
@@ -14,7 +14,7 @@ const createAxiosInstance = (): AxiosInstance => {
 
   // Request interceptor
   instance.interceptors.request.use(
-    (config: AxiosRequestConfig) => {
+    (config: InternalAxiosRequestConfig) => {
       // Add auth token if available
       if (typeof window !== 'undefined') {
         const token = safeStorage.getItem('auth-token');
