@@ -222,8 +222,8 @@ export const authOptions: NextAuthOptions = {
       if (account && user) {
         token['accessToken'] = account.access_token; // For OAuth
         token['id'] = user.id; // For all users
-        if ((user as any).walletAddress) { // For wallet users
-            token['walletAddress'] = (user as any).walletAddress;
+        if ((user as { walletAddress?: string }).walletAddress) { // For wallet users
+            token['walletAddress'] = (user as { walletAddress?: string }).walletAddress;
         }
       }
       return token;
@@ -231,9 +231,9 @@ export const authOptions: NextAuthOptions = {
     async session({ session, token }) {
       // Send properties to the client, like an access_token and user id from the token
       if (session.user) {
-         (session.user as any).id = token['id'] as string;
+         (session.user as { id?: string }).id = token['id'] as string;
         if (token['walletAddress']) {
-                 (session.user as any).walletAddress = token['walletAddress'] as string;
+                 (session.user as { walletAddress?: string }).walletAddress = token['walletAddress'] as string;
         }
       }
       // session.accessToken = token.accessToken; // If using OAuth and need token client-side
