@@ -40,15 +40,6 @@ export async function fetchMarketplaceData(
       throw new Error('Invalid response format: expected array');
     }
 
-    // Fallback to sample listings if API returns no products
-    if (data.length === 0) {
-      const sample =
-        typeof limit === 'number'
-          ? MARKETPLACE_LISTINGS.slice(0, limit)
-          : MARKETPLACE_LISTINGS;
-      return sample;
-    }
-
     return data;
   } catch (error) {
     logErrorToProduction('Error fetching marketplace data:', { data: error });
@@ -58,11 +49,6 @@ export async function fetchMarketplaceData(
       // Remove all imports of @sentry/nextjs from this file.
     }
     
-    // Return sample listings as a fallback when the API call fails
-    const sample =
-      typeof limit === 'number'
-        ? MARKETPLACE_LISTINGS.slice(0, limit)
-        : MARKETPLACE_LISTINGS;
-    return sample;
+    return [];
   }
 }
