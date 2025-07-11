@@ -17,7 +17,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const supabase = createClient(req, res)
 
     const { error } = await supabase.auth.verifyOtp({
-      type: type as any,
+      type: type as 'email' | 'phone' | 'recovery' | 'signup',
       token_hash: token_hash as string,
     })
 

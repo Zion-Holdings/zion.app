@@ -17,7 +17,7 @@ const WINDOW_MS = 15 * 60 * 1000; // 15 minutes
 function getRateLimitKey(req: NextApiRequest): string {
   const headers = req.headers as Record<string, string | string[] | undefined>;
   const forwarded = headers['x-forwarded-for'];
-  const ip = forwarded ? String(forwarded).split(',')[0] : (req as any).connection?.remoteAddress || 'unknown';
+  const ip = forwarded ? String(forwarded).split(',')[0] : (req as { connection?: { remoteAddress?: string } }).connection?.remoteAddress || 'unknown';
   return `forgot_password:${ip}`;
 }
 
@@ -160,7 +160,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
       success: true
     });
     return;
-  } catch (err: any) {
+  } catch (err: unknown) {
     logErrorToProduction('Password reset error:', { data: err });
     res.status(500).json({
       error: 'Failed to send reset link. Please try again.',

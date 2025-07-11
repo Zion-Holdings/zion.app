@@ -223,7 +223,7 @@ export const authOptions: NextAuthOptions = {
         token['accessToken'] = account.access_token; // For OAuth
         token['id'] = user.id; // For all users
         if ((user as { walletAddress?: string }).walletAddress) { // For wallet users
-            token['walletAddress'] = (user as { walletAddress?: string }).walletAddress;
+            token['walletAddress'] = (user as { walletAddress: string }).walletAddress;
         }
       }
       return token;
@@ -249,6 +249,6 @@ export const authOptions: NextAuthOptions = {
 };
 
 const handler = NextAuth(authOptions);
-const wrappedHandler = withErrorLogging(handler as any);
+const wrappedHandler = withErrorLogging(handler as unknown);
 export { wrappedHandler as GET, wrappedHandler as POST };
 export default wrappedHandler;
