@@ -16,7 +16,7 @@ interface Options {
  * If the import fails, a simple fallback component is rendered and the error
  * is logged via `logErrorToProduction`.
  */
-export function safeDynamicImport<T extends React.ComponentType<any>>(
+export function safeDynamicImport<T extends React.ComponentType<unknown>>(
   importer: () => Promise<{ default: T }>,
   options: Options
 ) {
