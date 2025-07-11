@@ -4,7 +4,7 @@ import fs from 'fs';
 const filePath = './app/componentWithBug.js';
 const code = fs.readFileSync(filePath, 'utf8');
 
-const prompt = `You are a senior React developer. Fix the following code. Annotate all changes.
+const fixPrompt = `You are a senior React developer. Fix the following code. Annotate all changes.
 
 \`\`\`jsx
 ${code}
@@ -14,7 +14,7 @@ ${code}
 async function runFixer() {
   const response = await openai.createCompletion({
     model: 'code-davinci-002',
-    prompt,
+    prompt: fixPrompt,
     temperature: 0.2,
     max_tokens: 1000
   });

@@ -12,9 +12,9 @@ const {
   ISSUE_TITLE,
   ISSUE_BODY,
   ISSUE_LABELS_JSON
-} = process.env;
+} = processEnv.env;
 
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const OPENAI_API_KEY = processEnv.env.OPENAI_API_KEY;
 const MODEL_TO_USE = 'gpt-4o';
 
 function printErrorAndExit(errorMessage, details = null, exitCode = 1) {
