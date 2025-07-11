@@ -38,7 +38,7 @@ export function ProjectMilestonesContent() {
   const [project, setProject] = useState<Project | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('milestones');
-  const { job, isLoading: jobLoading } = useJobDetails(project?.job_id);
+  const { job } = useJobDetails(project?.job_id);
 
   const { isUnderDispute, disputeId } = useDisputeCheck(projectId);
 
@@ -84,7 +84,12 @@ export function ProjectMilestonesContent() {
     );
   }
 
-  const handleMilestoneSubmit = async (data: any) => {
+  const handleMilestoneSubmit = async (data: {
+    title: string;
+    amount: number;
+    description?: string;
+    due_date?: Date;
+  }) => {
     if (!projectId) return;
 
     // Ensure all required fields are present

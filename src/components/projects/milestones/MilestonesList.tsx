@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import type { Milestone, MilestoneStatus } from '@/hooks/useMilestones';
-import type { MilestoneFormValues } from './AddMilestoneForm';
 import { MilestoneCard } from './MilestoneCard';
 import { AddMilestoneForm } from './AddMilestoneForm';
 import { Button } from '@/components/ui/button';
@@ -12,10 +11,15 @@ import { EmptyState } from '@/components/ui/EmptyState';
 
 interface MilestonesListProps {
   milestones: Milestone[];
-  activities: Record<string, unknown>;
+  // activities: Record<string, unknown>;
   isLoading: boolean;
   isClient: boolean;
-  onCreateMilestone: (data: any) => Promise<Milestone | null>;
+  onCreateMilestone: (data: {
+    title: string;
+    amount: number;
+    description?: string;
+    due_date?: Date;
+  }) => Promise<Milestone | null>;
   onUpdateStatus: (
     id: string,
     status: MilestoneStatus,
@@ -30,7 +34,7 @@ interface MilestonesListProps {
 
 export const MilestonesList: React.FC<MilestonesListProps> = ({
   milestones,
-  activities,
+  // activities,
   isLoading,
   isClient,
   onCreateMilestone,
@@ -42,8 +46,13 @@ export const MilestonesList: React.FC<MilestonesListProps> = ({
   onReject,
 }) => {
   const [showAddForm, setShowAddForm] = useState(false);
-  
-  const handleSubmit = async (data: { title: string; amount: number; description?: string; due_date?: Date }) => {
+
+  const handleSubmit = async (data: {
+    title: string;
+    amount: number;
+    description?: string;
+    due_date?: Date;
+  }) => {
     await onCreateMilestone(data);
     setShowAddForm(false);
   };
