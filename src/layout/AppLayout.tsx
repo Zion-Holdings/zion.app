@@ -107,7 +107,7 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
       {!isAuthPage && <PrimaryNav />}
       <ScrollProgressBar />
       <ScrollToTop />
-      {loading && <LoaderOverlay />}
+      {loading === true && <LoaderOverlay />}
       {error && <ErrorOverlay error={typeof error === 'string' ? error : (error instanceof Error ? error.message : JSON.stringify(error))} onClose={() => setError(null)} />}
       <main
         id="main-content"
