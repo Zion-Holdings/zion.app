@@ -461,6 +461,20 @@ const nextConfig = {
       'lit': 'commonjs lit'
     });
 
+    // Externalize node: modules to prevent UnhandledSchemeError
+    const nodeModules = [
+      'node:child_process',
+      'node:fs',
+      'node:http',
+      'node:https',
+      'node:diagnostics_channel'
+    ];
+    nodeModules.forEach(module => {
+      config.externals.push({
+        [module]: `commonjs ${module}`
+      });
+    });
+
     // Simplified webpack configuration to bypass CSS issues
     
     // Disable CSS minimization to prevent syntax errors
@@ -789,6 +803,7 @@ const nextConfig = {
         '@sentry/tracing': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
         '@sentry/react': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
         '@sentry/browser': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
+        '@sentry/node-core': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
       };
     } else {
       // Remove any Sentry mock aliases so real SDK is used
@@ -798,6 +813,7 @@ const nextConfig = {
         delete config.resolve.alias['@sentry/tracing'];
         delete config.resolve.alias['@sentry/react'];
         delete config.resolve.alias['@sentry/browser'];
+        delete config.resolve.alias['@sentry/node-core'];
       }
     }
 
