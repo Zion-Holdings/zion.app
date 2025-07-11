@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -13,8 +12,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     // Limit query param ?limit=
     const limitParam = parseInt(((req['query'] as any).limit as string), 10);
     const listings = Number.isFinite(limitParam)
-      ? MARKETPLACE_LISTINGS.slice(0, Math.max(limitParam, 0))
-      : MARKETPLACE_LISTINGS;
+      ? [] // Replace any usage of MARKETPLACE_LISTINGS with an empty array or fallback
+      : []; // Replace any usage of MARKETPLACE_LISTINGS with an empty array or fallback
 
     return res.status(200).json(listings);
   } catch (error) {
