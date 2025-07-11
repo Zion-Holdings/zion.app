@@ -21,11 +21,11 @@ try {
   // A more sophisticated approach would involve reading the actual file and line number
   // (from report[0]?.filePath and report[0]?.messages?.[0]?.line)
   // to extract the surrounding code. This is a placeholder for that.
-  console.log(`// Extracted problem:
+  console.warn(`// Extracted problem:
 // ${firstErrorMessage}
 function bug() {
   // Placeholder for the actual failing code snippet
-  console.log("This is a placeholder for the failing code.");
+  console.warn("This is a placeholder for the failing code.");
 }`);
 
 } catch (error) {
