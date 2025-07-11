@@ -24,6 +24,7 @@ import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { INITIAL_MARKETPLACE_PRODUCTS } from '@/data/initialMarketplaceProducts';
 import { useCurrency } from '@/hooks/useCurrency';
 import {logErrorToProduction} from '@/utils/productionLogger';
+import apiClient from '@/lib/apiClient';
 
 interface MarketplaceStats {
   averagePrice: number;
@@ -183,57 +184,20 @@ function MarketplacePageContent() {
   const [showRecommended, setShowRecommended] = useState(false);
 
   const fetchProducts = useCallback(async (page: number, limit: number) => {
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 300));
-
     try {
-      // Combine initial products with marketplace listings
-      const fullDataset: ProductListing[] = [...INITIAL_MARKETPLACE_PRODUCTS, ...MARKETPLACE_LISTINGS];
-
-      // Apply category filtering
-      let processedDataset = fullDataset;
-      if (filterCategory) {
-        processedDataset = processedDataset.filter(p => p.category === filterCategory);
-      }
-
-      // Apply recommended filtering
+      // Replace with real API call
+      const response = await apiClient.get('/products', { params: { page, limit, category: filterCategory, sort: sortBy } });
+      let items: ProductListing[] = response.data?.items || [];
       if (showRecommended) {
-        processedDataset = processedDataset.filter(p => (p.rating || 0) >= 4.5 || (p.aiScore || 0) >= 85);
+        items = items.filter((p) => (p.rating || 0) >= 4.5 || (p.aiScore || 0) >= 85);
       }
-
-      // Sort the processed dataset
-      processedDataset.sort((a, b) => {
-        switch (sortBy) {
-          case 'price-low':
-            return (a.price || 0) - (b.price || 0);
-          case 'price-high':
-            return (b.price || 0) - (a.price || 0);
-          case 'rating':
-            return (b.rating || 0) - (a.rating || 0);
-          case 'popular':
-            return (b.reviewCount || 0) - (a.reviewCount || 0);
-          case 'ai-score':
-            return (b.aiScore || 0) - (a.aiScore || 0);
-          default: // 'newest'
-            return new Date(b.createdAt || '').getTime() - new Date(a.createdAt || '').getTime();
-        }
-      });
-
-      // Slice for pagination
-      const startIndex = (page - 1) * limit;
-      const endIndex = startIndex + limit;
-      const items = processedDataset.slice(startIndex, endIndex);
-
-      return {
-        items,
-        hasMore: endIndex < processedDataset.length,
-        total: processedDataset.length
-      };
+      // Sort and paginate if needed
+      return { items };
     } catch (error) {
-      logErrorToProduction('Error in fetchProducts:', { data: error });
-      throw new Error('Failed to load marketplace data. Please try again.');
+      logErrorToProduction('MarketplacePage: Error fetching products from API', { data: error });
+      return { items: [] };
     }
-  }, [sortBy, filterCategory, showRecommended]);
+  }, [filterCategory, sortBy, showRecommended]);
 
   const {
     items: products,
