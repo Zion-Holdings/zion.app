@@ -14,10 +14,9 @@ export function useMessagingRealtime(
   setActiveMessages: (updater: (prev: Message[]) => Message[]) => void,
   fetchConversations: () => Promise<void>
 ) {
-  if (!supabase) throw new Error('Supabase client not initialized');
   // Setup real-time subscription when user is logged in
   useEffect(() => {
-    if (!user) return;
+    if (!user || !supabase) return;
 
     // Subscribe to new messages
     const subscription = supabase
@@ -64,7 +63,9 @@ export function useMessagingRealtime(
       .subscribe();
 
     return () => {
-      supabase.removeChannel(subscription);
+      if (supabase) {
+        supabase.removeChannel(subscription);
+      }
     };
   }, [user, activeConversation, fetchConversations, setActiveMessages]);
 }
