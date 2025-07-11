@@ -23,26 +23,26 @@ export const initPostHog = () => {
   }
 
   (function(c, a){
-    (window as unknown as { posthog?: unknown }).posthog = a;
-    a._i = [];
-    a.init = function(k: string, opts: { api_host: string }) {
+    (window as any).posthog = a;
+    (a as any)._i = [];
+    (a as any).init = function(k: string, opts: { api_host: string }) {
       function p(method: string) {
-        return function(...args: string[]) { a.push([method, ...args]); };
+        return function(...args: string[]) { (a as any).push([method, ...args]); };
       }
       const methods = ['capture','identify','alias','people.set','people.set_once','people.unset','people.increment','people.append','people.delete_property','people.remove'];
-      a.people = a.people || {};
+      (a as any).people = (a as any).people || {};
       for (let i = 0; i < methods.length; i++) {
         const method = methods[i]!; // Non-null assertion since we're within array bounds
-        a[method] = p(method);
+        (a as any)[method] = p(method);
       }
-      a._i.push([k, opts]);
+      (a as any)._i.push([k, opts]);
       const script = c.createElement('script');
       script.type = 'text/javascript';
       script.async = true;
       script.src = opts.api_host + '/static/array.js';
       c.head.appendChild(script);
     };
-  })(document, window.posthog || []);
+  })(document, (window as any).posthog || []);
 
   window.posthog.init(key, { api_host: host });
 };

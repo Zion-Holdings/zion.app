@@ -12,7 +12,7 @@ if (typeof globalThis !== 'undefined' && typeof (globalThis as Record<string, un
 import './src/utils/server-polyfill';
 
 // Conditionally import Sentry to avoid Node.js dependencies in browser
-let Sentry: { init?: (config: any) => void } | null = null;
+let Sentry: { init?: (config: Record<string, unknown>) => void } | null = null;
 let onRequestError: ((error: Error) => void) | null = null;
 
 async function initializeSentryOrMock() {
@@ -23,7 +23,7 @@ async function initializeSentryOrMock() {
     return;
   }
   if (typeof window === 'undefined') { // Node.js server environment
-    console.log('instrumentation.ts: Node.js runtime detected.');
+    console.warn('instrumentation.ts: Node.js runtime detected.');
     try {
       const shouldDisableSentry =
         process.env['SKIP_SENTRY_BUILD'] === 'true' ||
@@ -41,7 +41,7 @@ async function initializeSentryOrMock() {
         const sentryModule = await import('@sentry/nextjs');
         Sentry = sentryModule;
         onRequestError = null;
-        console.log('instrumentation.ts: Actual Sentry SDK loaded for Node.js.');
+        console.warn('instrumentation.ts: Actual Sentry SDK loaded for Node.js.');
       }
     } catch (error) {
       console.warn('instrumentation.ts: Sentry SDK import/init failed for Node.js:', error);
@@ -51,7 +51,7 @@ async function initializeSentryOrMock() {
   } else {
     // Client-side environment, Sentry is typically handled by _app.tsx or similar client-specific setup.
     // The instrumentation hook (register function) primarily runs server-side (Node or Edge).
-    console.log('instrumentation.ts: Client-side context detected, Sentry init deferred to client-specific logic.');
+    console.warn('instrumentation.ts: Client-side context detected, Sentry init deferred to client-specific logic.');
   }
 }
 
@@ -66,12 +66,12 @@ export async function register() {
   await sentryInitializationPromise; // Ensure initialization is complete
 
   if (process.env.NODE_ENV === 'development') {
-    console.log("instrumentation.ts: register() called");
+    console.warn("instrumentation.ts: register() called");
   }
 
   if (!Sentry || typeof Sentry.init !== 'function') {
     if (process.env.NODE_ENV === 'development') {
-      console.log("instrumentation.ts: Sentry SDK not available or not correctly initialized, skipping Sentry.init().");
+      console.warn("instrumentation.ts: Sentry SDK not available or not correctly initialized, skipping Sentry.init().");
     }
     return;
   }
@@ -93,7 +93,7 @@ export async function register() {
 
   if (isInvalidDsn) {
     if (process.env.NODE_ENV === 'development') {
-      console.log("instrumentation.ts: Sentry disabled in development (no valid DSN configured)");
+      console.warn("instrumentation.ts: Sentry disabled in development (no valid DSN configured)");
     } else {
       console.warn("instrumentation.ts: Sentry DSN not configured for production environment");
     }
@@ -101,7 +101,7 @@ export async function register() {
   }
 
   if (process.env.NODE_ENV === 'development') {
-    console.log(`instrumentation.ts: Initializing Sentry for server-side. Release: ${SENTRY_RELEASE}, Env: ${SENTRY_ENVIRONMENT}`);
+    console.warn(`instrumentation.ts: Initializing Sentry for server-side. Release: ${SENTRY_RELEASE}, Env: ${SENTRY_ENVIRONMENT}`);
   }
 
   try {
@@ -115,7 +115,7 @@ export async function register() {
         if (typeof event === 'object' && event !== null && 'exception' in event) {
           // @ts-expect-error: event may not have exception property
           if (event.exception?.values?.[0]?.value === '' || event.exception?.values?.[0]?.value === undefined) {
-            console.log("instrumentation.ts: Sentry event dropped due to empty exception value.");
+            console.warn("instrumentation.ts: Sentry event dropped due to empty exception value.");
             return null;
           }
         }
@@ -163,7 +163,7 @@ export async function register() {
       sendDefaultPii: false, // Don't send personally identifiable information
     });
     
-    console.log("instrumentation.ts: Server-side Sentry initialized successfully");
+    console.warn("instrumentation.ts: Server-side Sentry initialized successfully");
   } catch (error) {
     console.error("instrumentation.ts: Failed to initialize Sentry:", error);
   }
