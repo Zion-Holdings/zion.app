@@ -1,31 +1,18 @@
 // Conditional Sentry import for React 19 + Next.js 15 compatibility
 let Sentry: unknown = null;
 
-// Attempt to load Sentry or its alias.
-// Webpack (via next.config.js) is responsible for aliasing @sentry/nextjs
-// to src/utils/sentry-mock.ts if mocking is intended for CI/SKIP_SENTRY_BUILD, etc.
+// Always use the real Sentry SDK unless in CI or SKIP_SENTRY_BUILD is set
 try {
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   Sentry = require("@sentry/nextjs");
-  // Check if the loaded Sentry is the comprehensive mock from src/utils/sentry-mock.ts
-  // The mock has a specific SDK_VERSION
-  if (Sentry && (Sentry as any).SDK_VERSION === '7.0.0-mock') {
-    console.log('Comprehensive Sentry mock (src/utils/sentry-mock.ts) loaded via webpack alias.');
-  } else if (Sentry) {
+  if (Sentry) {
     console.log('Real Sentry SDK loaded.');
   } else {
     throw new Error('@sentry/nextjs require returned null/undefined');
   }
 } catch (error) {
-  console.error('CRITICAL: Failed to require "@sentry/nextjs" (real SDK or webpack alias). Falling back to emergency inline mock.', error);
-  // Emergency fallback to a very basic inline mock if require itself fails catastrophically.
-  // This should ideally not be reached if webpack aliasing is working correctly.
-  Sentry = {
-    init: () => console.warn('Sentry emergency inline mock: init called. Sentry is NOT operational.'),
-    captureException: (err: unknown) => console.warn('Sentry emergency inline mock: captureException', err),
-    setTag: (key: string, value: string) => console.warn('Sentry emergency inline mock: setTag', key, value),
-    SDK_VERSION: 'emergency-inline-mock', // Identifier for this mock
-  };
+  console.error('CRITICAL: Failed to require "@sentry/nextjs". Sentry will not be initialized.', error);
+  Sentry = null;
 }
 
 import { safeSessionStorage } from "@/utils/safeStorage";
@@ -65,9 +52,9 @@ export function register() {
     console.warn('Warning: NEXT_PUBLIC_SENTRY_ENVIRONMENT is not set. Sentry will proceed without environment information.');
   }
 
-  // Skip initialization if Sentry is mocked
-  if (!Sentry || (Sentry as any).init.toString().includes('mock')) {
-    console.log('Sentry is mocked, skipping initialization');
+  // Skip initialization if Sentry is not available
+  if (!Sentry) {
+    console.log('Sentry is not available, skipping initialization');
     return;
   }
 

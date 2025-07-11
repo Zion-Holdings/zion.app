@@ -17,11 +17,12 @@ let onRequestError: Function | null = null;
 
 async function initializeSentryOrMock() {
   if (process.env['NEXT_RUNTIME'] === 'edge') {
-    console.log('instrumentation.ts: Edge runtime detected. Forcing Sentry mock.');
-    const mockSentry = await import('./src/utils/sentry-mock'); // Ensure this path is correct
-    Sentry = mockSentry.default;
-    onRequestError = mockSentry.onRequestError; // Ensure mock provides this if used
-  } else if (typeof window === 'undefined') { // Node.js server environment
+    // Edge runtime: skip Sentry initialization (not supported)
+    Sentry = null;
+    onRequestError = null;
+    return;
+  }
+  if (typeof window === 'undefined') { // Node.js server environment
     console.log('instrumentation.ts: Node.js runtime detected.');
     try {
       const shouldDisableSentry =
@@ -32,21 +33,19 @@ async function initializeSentryOrMock() {
         process.env['SENTRY_DSN']?.includes('placeholder');
 
       if (shouldDisableSentry) {
-        console.log('instrumentation.ts: Sentry DSN invalid or disabled by env var, using Sentry mock for Node.js.');
-        const mockSentry = await import('./src/utils/sentry-mock');
-        Sentry = mockSentry.default;
-        onRequestError = mockSentry.onRequestError;
+        Sentry = null;
+        onRequestError = null;
+        return;
       } else {
-        console.log('instrumentation.ts: Valid Sentry DSN found, attempting to load actual @sentry/nextjs for Node.js.');
-        // Remove all imports and dynamic imports of @sentry/nextjs from this file.
-        // The instrumentation hook (register function) primarily runs server-side (Node or Edge).
+        // Always use the real Sentry SDK
+        Sentry = require('@sentry/nextjs');
+        onRequestError = null;
         console.log('instrumentation.ts: Actual Sentry SDK loaded for Node.js.');
       }
     } catch (error) {
-      console.warn('instrumentation.ts: Sentry SDK import/init failed for Node.js, falling back to mock:', error);
-      const mockSentry = await import('./src/utils/sentry-mock');
-      Sentry = mockSentry.default;
-      onRequestError = mockSentry.onRequestError;
+      console.warn('instrumentation.ts: Sentry SDK import/init failed for Node.js:', error);
+      Sentry = null;
+      onRequestError = null;
     }
   } else {
     // Client-side environment, Sentry is typically handled by _app.tsx or similar client-specific setup.
