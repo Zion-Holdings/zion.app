@@ -122,7 +122,7 @@ export class ProductionErrorMonitor {
       timestamp: new Date().toISOString(),
       url: typeof window !== 'undefined' ? window.location.href : '',
       userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
-      userId: this.userId,
+      userId: this.userId || '',
       sessionId: this.sessionId,
       error: {
         message: actualError.message,
