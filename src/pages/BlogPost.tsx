@@ -24,7 +24,7 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 import { BLOG_POSTS } from "@/data/blog-posts";
 import { useSkeletonTimeout } from '@/hooks/useSkeletonTimeout';
 import { fetchWithRetry } from '@/utils/fetchWithRetry';
-import { BlogPost } from "@/types/blog";
+import type { BlogPost } from "@/types/blog";
 
 export default function BlogPost() {
 
