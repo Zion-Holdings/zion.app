@@ -97,8 +97,6 @@ export const logDevWarn = devLogger.warn.bind(devLogger);
 export const logDevError = devLogger.error.bind(devLogger);
 export const logApi = devLogger.api.bind(devLogger);
 export const logComponent = devLogger.component.bind(devLogger);
-export const timeLog = devLogger.time.bind(devLogger);
-export const timeEndLog = devLogger.timeEnd.bind(devLogger);
 
 // Type augmentation for global access
 declare global {
