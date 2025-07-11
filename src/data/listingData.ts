@@ -1,3 +1,5 @@
-import type { ProductListing } from './servicesData';
+import { ProductListing } from "@/types/listings";
+import { NEW_PRODUCTS } from "./newProductsData";
 
-export const MARKETPLACE_LISTINGS: ProductListing[] = []; 
+// Export marketplace listings from new products data
+export const MARKETPLACE_LISTINGS: ProductListing[] = NEW_PRODUCTS; 

@@ -1,7 +1,6 @@
 import type { GetServerSideProps } from 'next';
 import type { ProductListing } from '@/types/listings';
 import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
-import { INITIAL_MARKETPLACE_PRODUCTS } from '@/data/initialMarketplaceProducts';
 import { SERVICES } from '@/data/servicesData';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -176,7 +175,6 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
         Sentry.addBreadcrumb({ message: `Product ${slug} not found via API ID match. Trying static data.` });
       }
       const staticListing =
-        INITIAL_MARKETPLACE_PRODUCTS.find((l) => l.id === slug) ||
         MARKETPLACE_LISTINGS.find((l) => l.id === slug) ||
         SERVICES.find((s) => s.id === slug) ||
         null;
@@ -204,7 +202,6 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
         Sentry.addBreadcrumb({ message: `Product ${slug} not found by ID (API or static). Trying title match on static data.` });
       }
       const allListings = [
-        ...INITIAL_MARKETPLACE_PRODUCTS,
         ...MARKETPLACE_LISTINGS,
         ...SERVICES,
       ];
