@@ -39,7 +39,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
     if (isSentryActive) {
       try {
         if (typeof window === 'undefined') {
-          const Sentry = await import('@sentry/nextjs');
+          const Sentry = (await import('@sentry/nextjs')).default;
           Sentry.captureException(error);
         }
       } catch (sentryError) {
@@ -65,8 +65,10 @@ const ErrorTestButton = () => {
     } catch (error) {
       if (isSentryActive) {
         if (typeof window === 'undefined') {
-          const Sentry = import('@sentry/nextjs');
-          Sentry.captureException(error);
+          import('@sentry/nextjs').then(mod => {
+            const Sentry = mod.default;
+            Sentry.captureException(error);
+          });
         }
       }
       logErrorToProduction('Button error test:', { error });
