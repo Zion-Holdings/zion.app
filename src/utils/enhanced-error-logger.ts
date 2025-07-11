@@ -200,11 +200,8 @@ class EnhancedErrorLogger {
 
       // Log to console in development
       if (typeof process !== 'undefined' && process.env?.NODE_ENV === 'development') {
-        console.group(`🚨 Enhanced Error [${enhancedError.severity}]`);
+        // Only keep console.error for lint compliance
         console.error(enhancedError.message);
-        console.log('Context:', enhancedError.context);
-        console.log('Breadcrumbs:', this.breadcrumbs.slice(-5));
-        console.groupEnd();
       }
 
       // Report critical errors immediately
