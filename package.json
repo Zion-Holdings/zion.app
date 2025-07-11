@@ -230,7 +230,7 @@
     "@radix-ui/react-tooltip": "^1.2.7",
     "@reduxjs/toolkit": "^2.8.2",
     "@reown/appkit": "^1.7.12",
-    "@reown/appkit-adapter-ethers": "1.7.12",
+    "@reown/appkit-adapter-ethers": "^1.7.12",
     "@sendgrid/mail": "^8.1.5",
     "@sentry/nextjs": "^9.35.0",
     "@sentry/tracing": "^7.120.3",
