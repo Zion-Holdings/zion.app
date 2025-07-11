@@ -111,9 +111,11 @@ apiClient.interceptors.request.use((config: InternalAxiosRequestConfig) => {
   if (typeof config !== 'object' || config === null) {
     return config;
   }
+  
   if (!(config.headers instanceof AxiosHeadersClass)) {
     config.headers = new AxiosHeadersClass(config.headers ?? {});
   }
+  
   (config.headers as AxiosHeaders).set('Accept', 'application/json');
   return config;
 });
