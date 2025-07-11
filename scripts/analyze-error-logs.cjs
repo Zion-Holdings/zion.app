@@ -217,7 +217,7 @@ function main() {
     hints.push('Some environment variables are missing. Review your .env files.');
   }
   if (/map is not a function/i.test(allText)) {
-    hints.push('Detected \"map is not a function\" errors. Verify array values before using .map().');
+    hints.push('Detected map is not a function errors. Verify array values before using .map().');
   }
   if (/CreatePlatformSocket\(\).*Address family not supported by protocol/i.test(allText)) {
     hints.push("Detected IPv6 socket errors. Configure tests to prefer IPv4 or disable IPv6 features.");
