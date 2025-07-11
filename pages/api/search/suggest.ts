@@ -1,10 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
-import { SERVICES } from '@/data/servicesData';
+import { SERVICES as RAW_SERVICES } from '@/data/servicesData';
 import { TALENT_PROFILES } from '@/data/talentData';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import { DOCS_SEARCH_ITEMS } from '@/data/docsSearchData';
+
+type ServiceSuggestion = { id?: string; title: string; description?: string; image?: string; category?: string };
+const SERVICES: ServiceSuggestion[] = RAW_SERVICES as ServiceSuggestion[];
 
 interface SearchSuggestion {
   id?: string;
