@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { safeStorage } from '@/utils/safeStorage';
 import type { AxiosInstance, AxiosResponse, AxiosError, InternalAxiosRequestConfig } from 'axios';
-import { AxiosHeaders as AxiosHeadersClass } from 'axios';
 
 // Create and configure axios instance
 const createAxiosInstance = (): AxiosInstance => {
@@ -16,14 +15,11 @@ const createAxiosInstance = (): AxiosInstance => {
   // Request interceptor
   instance.interceptors.request.use(
     (config: InternalAxiosRequestConfig) => {
-      if (!(config.headers instanceof AxiosHeadersClass)) {
-        config.headers = new AxiosHeadersClass(config.headers ?? {});
-      }
       // Add auth token if available
       if (typeof window !== 'undefined') {
         const token = safeStorage.getItem('auth-token');
         if (token && config.headers) {
-          (config.headers as any).set('Authorization', `Bearer ${token}`);
+          config.headers.Authorization = `Bearer ${token}`;
         }
       }
       return config;

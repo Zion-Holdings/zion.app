@@ -1,8 +1,8 @@
 import { toast } from '@/hooks/use-toast';
 
 export interface ParsedApiError {
-  status?: number;
-  code?: string | number;
+  status?: number | undefined;
+  code?: string | number | undefined;
   message: string;
 }
 
