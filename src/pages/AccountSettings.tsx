@@ -66,6 +66,10 @@ export default function AccountSettings() {
       });
       
       // Auto-set DID handle if ENS is available
+      if (!address) {
+        toast.error('Wallet address not found.');
+        return;
+      }
       try {
         const ethers = (window as unknown as { ethers?: unknown }).ethers;
         if (ethers && typeof ethers === 'object' && 'providers' in ethers && typeof (ethers as { providers: unknown }).providers === 'object') {
@@ -79,7 +83,6 @@ export default function AccountSettings() {
       } catch (error) {
         logErrorToProduction('ENS lookup error:', { data: error });
       }
-      
       toast.success(`Wallet connected: ${address.slice(0, 6)}...${address.slice(-4)}`);
     } catch (error) {
       if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
