@@ -27,7 +27,7 @@ export const initPostHog = () => {
     a._i = [];
     a.init = function(k: string, opts: { api_host: string }) {
       function p(method: string) {
-        return function(...args: unknown[]) { a.push([method].concat(args)); };
+        return function(...args: unknown[]) { a.push([method].concat(args as string[])); };
       }
       const methods = ['capture','identify','alias','people.set','people.set_once','people.unset','people.increment','people.append','people.delete_property','people.remove'];
       a.people = a.people || {};
