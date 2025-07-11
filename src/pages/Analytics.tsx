@@ -99,12 +99,11 @@ export default function Analytics() {
           if (!conversionsByType[conversionType]) {
             conversionsByType[conversionType] = {};
           }
-          if (conversionsByType[conversionType]) {
-            if (!conversionsByType[conversionType][date]) {
-              conversionsByType[conversionType][date] = 0;
-            }
-            conversionsByType[conversionType][date]! += 1;
+          const typeMap = conversionsByType[conversionType];
+          if (!typeMap[date]) {
+            typeMap[date] = 0;
           }
+          typeMap[date] += 1;
         }
       });
       
@@ -171,8 +170,9 @@ export default function Analytics() {
               }
             }
             if (!usageByDate[date]) usageByDate[date] = {};
-            if (!usageByDate[date][feature]) usageByDate[date][feature] = 0;
-            usageByDate[date][feature] += 1;
+            const featureMap = usageByDate[date];
+            if (!featureMap[feature]) featureMap[feature] = 0;
+            featureMap[feature] += 1;
           }
         });
 
