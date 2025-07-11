@@ -28,19 +28,20 @@ export async function updateSession(request: NextRequest) {
       {
         cookies: {
           get(name: string) {
-            if (typeof request.cookies.get === 'function') {
-              const cookie = request.cookies.get(name);
+            const cookies = (request as any).cookies;
+            if (cookies && typeof cookies.get === 'function') {
+              const cookie = cookies.get(name);
               return typeof cookie === 'object' && cookie !== null && 'value' in cookie ? (cookie as { value: string }).value : undefined;
             }
             return undefined;
           },
-          set(name: string, value: string, options: CookieOptions) {
+          set(name: string, value: string, options: any) {
             const cookies = (response as any).cookies;
             if (cookies && typeof cookies.set === 'function') {
               cookies.set(name, value, options);
             }
           },
-          remove(name: string, options: CookieOptions) {
+          remove(name: string, options: any) {
             const cookies = (response as any).cookies;
             if (cookies && typeof cookies.set === 'function') {
               cookies.set(name, '', options);
