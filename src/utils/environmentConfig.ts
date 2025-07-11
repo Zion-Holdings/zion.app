@@ -125,11 +125,13 @@ export async function initializeServices(): Promise<void> {
   }
 
   // Initialize Datadog logs in the browser if configured
+  const nodeEnv = process.env.NODE_ENV || 'development';
   if (config.datadog.enabled && typeof window !== 'undefined' && config.datadog.clientToken) {
     try {
       const { datadogLogs } = await import('@datadog/browser-logs');
       datadogLogs.init({
         clientToken: config.datadog.clientToken,
+        site: (config.datadog.site as any) || 'datadoghq.com',
         site: config.datadog.site || 'datadoghq.com',
         service: config.datadog.service || 'zion-app',
         env: config.datadog.env || nodeEnv,
