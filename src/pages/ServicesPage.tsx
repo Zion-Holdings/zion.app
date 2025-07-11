@@ -171,30 +171,77 @@ export default function ServicesPage() {
   const fetchServices = useCallback(async (page: number, limit: number) => {
     await new Promise(resolve => setTimeout(resolve, 400));
 
-    let allServices: ProductListing[] = [];
-    
-    // This section was removed as per the edit hint.
-    // If you need to fetch services from a real data source,
-    // you would replace this with an actual API call.
-    // For now, it will return an empty array or show a loading/error state.
-    
-    const startId = INITIAL_SERVICES.length + (page - 1) * limit + totalGenerated;
-    const newServices = INITIAL_SERVICES.slice(startId, startId + limit);
+    // Reactivate: Use a mock data source for services
+    const MOCK_SERVICES = [
+      {
+        id: 'service-1',
+        title: 'AI Consulting',
+        description: 'Expert advice on AI strategy and implementation.',
+        category: 'Consulting',
+        price: 200,
+        currency: 'USD',
+        tags: ['ai', 'consulting'],
+        author: { name: 'AI Experts', id: 'ai-experts' },
+        images: ['/images/ai-consulting.svg'],
+        createdAt: '2024-01-01T00:00:00.000Z',
+        rating: 4.9,
+        reviewCount: 42,
+        location: 'Global',
+        availability: 'Available',
+        stock: 100,
+      },
+      {
+        id: 'service-2',
+        title: 'Custom Chatbot Development',
+        description: 'Build a tailored chatbot for your business.',
+        category: 'Development',
+        price: 500,
+        currency: 'USD',
+        tags: ['chatbot', 'development'],
+        author: { name: 'BotMakers', id: 'botmakers' },
+        images: ['/images/chatbot-pro.svg'],
+        createdAt: '2024-01-02T00:00:00.000Z',
+        rating: 4.7,
+        reviewCount: 30,
+        location: 'Global',
+        availability: 'Available',
+        stock: 50,
+      },
+      {
+        id: 'service-3',
+        title: 'Data Labeling Service',
+        description: 'Accurate and scalable data labeling for ML projects.',
+        category: 'Data',
+        price: 100,
+        currency: 'USD',
+        tags: ['data', 'labeling'],
+        author: { name: 'LabelPro', id: 'labelpro' },
+        images: ['/images/data-insights.svg'],
+        createdAt: '2024-01-03T00:00:00.000Z',
+        rating: 4.8,
+        reviewCount: 25,
+        location: 'Global',
+        availability: 'Available',
+        stock: 200,
+      },
+    ];
+
+    let allServices: ProductListing[] = [...MOCK_SERVICES];
+    const startId = (page - 1) * limit;
+    const newServices = allServices.slice(startId, startId + limit);
     setTotalGenerated(prev => prev + newServices.length);
     allServices = [...allServices, ...newServices];
-    
+
     let filteredServices = allServices;
-    
+
     if (filterCategory) {
       filteredServices = filteredServices.filter(s => s.category === filterCategory);
     }
-    
+
     if (showRecommended) {
-      // This logic was removed from utils, so it's removed here.
-      // If you need to filter for recommended services, you'll need to implement it here.
-      // For now, it will just return all services if showRecommended is true.
+      filteredServices = filteredServices.filter(s => s.rating && s.rating >= 4.7);
     }
-    
+
     filteredServices.sort((a, b) => {
       switch (sortBy) {
         case 'price-low':
@@ -209,15 +256,8 @@ export default function ServicesPage() {
           return new Date(b.createdAt || '').getTime() - new Date(a.createdAt || '').getTime();
       }
     });
-    
-    const startIndex = (page - 1) * limit;
-    const endIndex = startIndex + limit;
-    const items = filteredServices.slice(startIndex, endIndex);
-    return {
-      items,
-      hasMore: endIndex < filteredServices.length || page < 10
-    };
-  }, [sortBy, filterCategory, showRecommended, totalGenerated]);
+    // Add logic to update state or return filteredServices as needed
+  }, [filterCategory, showRecommended, sortBy, totalGenerated]);
 
   const {
     items: services,

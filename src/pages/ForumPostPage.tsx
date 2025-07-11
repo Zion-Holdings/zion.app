@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { SEO } from "@/components/SEO";
@@ -39,6 +39,51 @@ export default function ForumPostPage() {
   const { toast } = useToast();
   const [post, setPost] = useState<ForumPost | null>(null);
   const [replies, setReplies] = useState<ForumReply[]>([]);
+  
+  // Reactivate: Use a mock API integration for forum post and replies
+  useEffect(() => {
+    // Simulate API call
+    setTimeout(() => {
+      setPost({
+        id: _postId,
+        title: 'How to use ZionGPT for project management?',
+        content: 'I am interested in using ZionGPT for managing my project milestones. Any tips or best practices?',
+        authorId: 'user-1',
+        authorName: 'Alice',
+        createdAt: '2024-07-01T10:00:00.000Z',
+        updatedAt: '2024-07-01T10:00:00.000Z',
+        upvotes: 12,
+        downvotes: 0,
+        categoryId: 'general',
+        tags: ['ziongpt', 'project-management'],
+        replyCount: 2,
+      });
+      setReplies([
+        {
+          id: 'reply-1',
+          postId: _postId,
+          authorId: 'user-2',
+          authorName: 'Bob',
+          content: 'I recommend breaking your project into clear milestones and using the AI milestone generator.',
+          createdAt: '2024-07-01T11:00:00.000Z',
+          updatedAt: '2024-07-01T11:00:00.000Z',
+          upvotes: 3,
+          downvotes: 0,
+        },
+        {
+          id: 'reply-2',
+          postId: _postId,
+          authorId: 'user-3',
+          authorName: 'Carol',
+          content: 'Don\'t forget to set due dates and review progress regularly!',
+          createdAt: '2024-07-01T12:00:00.000Z',
+          updatedAt: '2024-07-01T12:00:00.000Z',
+          upvotes: 2,
+          downvotes: 0,
+        },
+      ]);
+    }, 500);
+  }, [_postId]);
   
   // Check if this is the user's own post
   const isAuthor = user?.id === post?.authorId;

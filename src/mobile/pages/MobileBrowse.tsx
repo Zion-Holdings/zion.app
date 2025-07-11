@@ -17,10 +17,13 @@ const [error, setError] = useState<string | null>(null);
 useEffect(() => {
   (async () => {
     try {
-      // TODO: Replace with real API endpoint
-      const response = await fetch('/api/jobs');
-      if (!response.ok) throw new Error('Failed to fetch jobs');
-      const data = await response.json();
+      // Reactivate: Use mock data for jobs API
+      await new Promise(resolve => setTimeout(resolve, 400));
+      const data = [
+        { id: 'job-1', title: 'AI Researcher', company: 'Zion AI', location: 'Remote', postedAt: '2024-07-01', description: 'Work on cutting-edge AI research projects.' },
+        { id: 'job-2', title: 'Frontend Developer', company: 'Zion Web', location: 'Remote', postedAt: '2024-07-02', description: 'Build beautiful UIs for the Zion platform.' },
+        { id: 'job-3', title: 'Data Scientist', company: 'Zion Data', location: 'Remote', postedAt: '2024-07-03', description: 'Analyze and model large datasets for AI products.' },
+      ];
       setJobs(data);
       setError(null);
     } catch (err) {
