@@ -25,7 +25,7 @@ export default function CommunityPage() {
   const [loginOpen, setLoginOpen] = useState(false);
   const { markCommunityVisited } = useAdvancedOnboardingStatus();
 
-  // Only return after all hooks are called
+  // Early returns after all hooks, before useEffect
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
