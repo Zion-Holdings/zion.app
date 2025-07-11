@@ -30,10 +30,8 @@ interface LoggerConfig {
 
 // Internal console methods to avoid circular dependencies
 const internalConsole = {
-  log: console.log.bind(console),
   warn: console.warn.bind(console),
   error: console.error.bind(console),
-  info: console.info.bind(console),
 };
 
 class ProductionLogger {
@@ -91,12 +89,6 @@ class ProductionLogger {
     const message = `${prefix} ${entry.message}`;
 
     switch (entry.level) {
-      case 'debug':
-        internalConsole.info(message, entry.context || '');
-        break;
-      case 'info':
-        internalConsole.info(message, entry.context || '');
-        break;
       case 'warn':
         internalConsole.warn(message, entry.context || '');
         break;
