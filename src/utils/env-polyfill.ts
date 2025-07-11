@@ -6,8 +6,8 @@
  */
 
 // Define the global process object if it doesn't exist
-if (typeof globalThis !== 'undefined' && typeof globalThis.process === 'undefined') {
-  globalThis.process = {
+if (typeof globalThis !== 'undefined' && typeof (globalThis as any).process === 'undefined') {
+  (globalThis as any).process = {
     env: {
       NODE_ENV: 'production', // Default to production for safety
       NEXT_PUBLIC_APP_URL: '',
