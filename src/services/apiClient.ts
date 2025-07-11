@@ -107,7 +107,7 @@ const apiClient = axios.create({
   baseURL: `${API_BASE}/api/v1/services`,
 });
 
-apiClient.interceptors.request.use((config: InternalAxiosRequestConfig) => {
+apiClient.interceptors.request.use((config: InternalAxiosRequestConfig): InternalAxiosRequestConfig => {
   if (typeof config !== 'object' || config === null) {
     return config;
   }
