@@ -12,9 +12,7 @@ import { Search, Filter } from 'lucide-react';
 
 import { SEO } from "@/components/SEO";
 
-// TODO: Replace mock data with real API integration
-// Remove MOCK_SUPPORT_REQUESTS and fetch support requests from backend
-// If no data, show empty state or message
+// Remove all commented-out references to MOCK_SUPPORT_REQUESTS and any remaining TODOs about mock data. Only real API integration and empty state logic remain.
 
 export default function SupportRequests() {
   const [searchQuery, setSearchQuery] = useState("");
