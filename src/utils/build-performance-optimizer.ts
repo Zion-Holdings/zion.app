@@ -89,7 +89,7 @@ class BuildPerformanceOptimizer {
           size: stats.size,
           type: 'js',
           isChunk: true,
-          route: this.extractRouteFromChunk(file)
+          route: this.extractRouteFromChunk(file) || '', // ensure route is always a string
         };
 
         // Estimate gzipped size (roughly 30% of original)
@@ -129,10 +129,6 @@ class BuildPerformanceOptimizer {
     const pageChunks = this.bundleAnalysis.filter(chunk => 
       chunk.route && !['vendor', 'common', 'runtime'].includes(chunk.route)
     );
-
-    // Calculate vendor bundle size
-    const vendorSize = vendorChunks.reduce((total, chunk) => total + chunk.size, 0);
-    const pageSize = pageChunks.reduce((total, chunk) => total + chunk.size, 0);
 
   }
 
