@@ -193,10 +193,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
     logErrorToProduction('Registration error:', { data: error });
     res.status(500).json({ 
       error: 'Internal server error during registration',
-      details: process.env.NODE_ENV === 'development' ? error.message : undefined
+      details: process.env.NODE_ENV === 'development' ? 
+        (error instanceof Error ? error.message : 'Unknown error') : 
+        undefined
     });
     return;
   }
 };
+
+export default withErrorLogging(handler); 
 
 export default withErrorLogging(handler); 
