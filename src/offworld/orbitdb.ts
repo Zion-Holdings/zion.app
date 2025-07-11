@@ -86,7 +86,7 @@ const _libp2pOptions = {
   services: {} // Will be populated server-side if needed
 };
 
-export async function initOrbit(repoPath = './orbitdb-helia') {
+export async function initOrbit(_repoPath = './orbitdb-helia') {
   if (orbit) {
     logInfo('OrbitDB already initialized.');
     return;
