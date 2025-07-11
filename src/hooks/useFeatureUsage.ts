@@ -13,6 +13,7 @@ export function useFeatureUsage(feature: string) {
       trackEvent('feature_usage', { feature });
     }
     // we only want to run this once on mount
+    // If dependencies are correct, keep as is. Otherwise, add missing dependencies or disable the rule if still not recognized.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 }
