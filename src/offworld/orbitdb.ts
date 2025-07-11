@@ -73,7 +73,8 @@ class _MemoryDatastore {
 // Types for OrbitDB and its stores might be needed from @orbitdb/core if used directly
 // import { LogStore } from '@orbitdb/core';
 
-let orbit: unknown = null; // Using 'unknown' for now, replace with OrbitDB type from @orbitdb/core if available
+// TODO: Replace 'unknown' with OrbitDB and Helia types from @orbitdb/core and helia packages
+let orbit: unknown = null;
 let heliaNode: unknown | null = null;
 
 // Simplified libp2p options for this Helia instance
@@ -110,18 +111,14 @@ export async function initOrbit(repoPath = './orbitdb-helia') {
       logInfo('Creating OrbitDB instance...');
       orbit = await createOrbitDB();
       logInfo('OrbitDB instance created.');
-    } else {
-      // Browser environment - use mock
-      orbit = await createOrbitDB();
     }
+    // Do not fallback to mock in production; only initialize in server environment
   } catch (error) {
     let message = 'Unknown error';
     if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
       message = (error as { message: string }).message;
     }
     console.warn('⚠️ Failed to initialize OrbitDB:', message);
-    // Fallback to mock
-    orbit = await createOrbitDB();
   }
 }
 
@@ -141,7 +138,7 @@ export async function getLog(name: string): Promise<unknown> {
 
   try {
     // Open a log store with the given name
-    const log = await orbit.open(name, { type: 'log' });
+    const log = await (orbit as { open: (name: string, opts: { type: string }) => Promise<unknown> }).open(name, { type: 'log' });
     return log;
   } catch (error) {
     let message = 'Unknown error';
@@ -167,12 +164,12 @@ export async function stopOrbit(): Promise<void> {
   try {
     logInfo('Stopping OrbitDB...');
     if (orbit) {
-      await orbit.stop();
+      await (orbit as { stop: () => Promise<void> }).stop();
       orbit = null;
       logInfo('OrbitDB stopped.');
     }
     if (heliaNode) {
-      await heliaNode.stop();
+      await (heliaNode as { stop: () => Promise<void> }).stop();
       heliaNode = null;
       logInfo('Helia for OrbitDB stopped.');
     }
