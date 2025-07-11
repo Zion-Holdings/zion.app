@@ -7,11 +7,11 @@ import { DOCS_SEARCH_ITEMS } from '@/data/docsSearchData';
 
 type ServiceSuggestion = { id?: string; title: string; description?: string; image?: string; category?: string };
 // Fix the type casting to ensure SERVICES has the correct type
-const SERVICES: ServiceSuggestion[] = RAW_SERVICES.map(service => ({
+const _SERVICES: ServiceSuggestion[] = RAW_SERVICES.map(service => ({
   id: service.id,
   title: service.title || '',
   description: service.description || '',
-  image: (service as any).image,
+  image: (service as { image?: string }).image,
   category: service.category || ''
 }));
 
@@ -34,8 +34,8 @@ function handler(
     return;
   }
 
-  const q = String(((req.query as any).q ?? '')).toLowerCase().trim();
-  const limit = parseInt(String(((req.query as any).limit ?? '5')), 10);
+  const q = String(((req.query as Record<string, string | string[]>).q ?? '')).toLowerCase().trim();
+  const limit = parseInt(String(((req.query as Record<string, string | string[]>).limit ?? '5')), 10);
 
   if (!q) {
     res.status(200).json([]);
@@ -55,7 +55,7 @@ function handler(
   suggestions.push(...productSuggestions);
 
   // Add service suggestions
-  const serviceSuggestions = RAW_SERVICES
+  const serviceSuggestions = _SERVICES
     .filter((s) => match(s.title) || match(s.description))
     .slice(0, 2)
     .map((s) => ({
@@ -78,7 +78,7 @@ function handler(
       text: t.full_name,
       slug: createSlug(t.full_name),
       type: 'talent' as const,
-      iconUrl: (t as any).avatar,
+      iconUrl: (t as { avatar?: string }).avatar,
     }));
 
   suggestions.push(...talentSuggestions);
