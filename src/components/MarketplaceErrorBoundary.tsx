@@ -1,7 +1,6 @@
 import React from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import type { FallbackProps } from 'react-error-boundary';
-import * as Sentry from '@sentry/nextjs';
 import { mutate } from 'swr';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
@@ -21,7 +20,11 @@ function MarketplaceErrorFallback({ error, resetErrorBoundary }: MarketplaceErro
       resetErrorBoundary();
     } catch (retryError) {
       logErrorToProduction('Error during retry:', { data: retryError });
-      Sentry.captureException(retryError);
+      // Report to Sentry only on the server
+      if (typeof window === 'undefined') {
+        const Sentry = await import('@sentry/nextjs');
+        Sentry.captureException(retryError);
+      }
     }
   };
 
@@ -78,14 +81,18 @@ export function MarketplaceErrorBoundary({ children }: MarketplaceErrorBoundaryP
     // Log boundary errors to Sentry
     logErrorToProduction('MarketplaceErrorBoundary caught an error:', error, { componentStack: errorInfo.componentStack });
     
-    Sentry.withScope((scope) => {
-      scope.setTag('errorBoundary', 'marketplace');
-      scope.setContext('errorInfo', {
-        componentStack: errorInfo.componentStack || undefined,
+    // Report to Sentry only on the server
+    if (typeof window === 'undefined') {
+      const Sentry = await import('@sentry/nextjs');
+      Sentry.withScope((scope) => {
+        scope.setTag('errorBoundary', 'marketplace');
+        scope.setContext('errorInfo', {
+          componentStack: errorInfo.componentStack || undefined,
+        });
+        scope.setLevel('error');
+        Sentry.captureException(error);
       });
-      scope.setLevel('error');
-      Sentry.captureException(error);
-    });
+    }
   };
 
   return (
