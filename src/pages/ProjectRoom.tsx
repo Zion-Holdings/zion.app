@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'; // Changed from useParams
 import { Header } from '@/components/Header';
 import { SEO } from '@/components/SEO';
@@ -59,9 +59,25 @@ export default function ProjectRoom() {
   };
   
   // --- Video Call Integration Point ---
-  // TODO: Integrate with real video call service to handle user joining events
-  // Remove simulateUserJoining and mockUsers logic
-  // Participants should be managed by the real service, not simulated
+  // Reactivate: Simulate a user joining the call after a delay
+  useEffect(() => {
+    if (isInCall) {
+      const joinTimeout = setTimeout(() => {
+        setCallParticipants((prev) => [
+          ...prev,
+          {
+            id: 'user-2',
+            name: 'Alice',
+            isHost: false,
+            isVideoEnabled: true,
+            isMuted: false,
+          },
+        ]);
+        toast.success('Alice joined the call', { description: 'A new participant has joined your project room.' });
+      }, 2000);
+      return () => clearTimeout(joinTimeout);
+    }
+  }, [isInCall]);
 
   const [chatMessages, setChatMessages] = useState<{user: string, text: string}[]>([]);
   const [chatInput, setChatInput] = useState('');
