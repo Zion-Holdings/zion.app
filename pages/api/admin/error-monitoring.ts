@@ -1,12 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import { logInfo, _logWarn, logErrorToProduction } from '@/utils/productionLogger';
 import { enhancedErrorCollector } from '@/utils/enhancedErrorCollection';
 import { systemHealthMonitor } from '@/utils/systemHealthMonitor';
 import { logDashboard } from '@/utils/logDashboard';
 
 interface ErrorMonitoringResponse {
   success: boolean;
-  data?: any;
+  data?: Record<string, unknown>;
   error?: string;
   timestamp: string;
 }
@@ -19,7 +19,7 @@ export default async function handler(
 
   try {
     const { method, query } = req;
-    const action = (query as any).action as string;
+    const action = (query as Record<string, unknown>).action as string;
 
     logInfo('Error monitoring API called', { method, action });
 
@@ -55,7 +55,7 @@ async function handleGet(
   res: NextApiResponse<ErrorMonitoringResponse>,
   action: string
 ) {
-  const { timeRange = 'day' } = req['query'] as { timeRange?: string };
+  const _timeRange = (req['query'] as { timeRange?: string }).timeRange || 'day';
   const timestamp = new Date().toISOString();
 
   switch (action) {
@@ -262,7 +262,7 @@ async function handlePost(
 
     case 'clear-old-logs':
       try {
-        const { days = 30 } = req['body'] as any;
+        const { days = 30 } = req['body'] as { days?: number };
         const clearedCount = await logDashboard.clearOldLogs(Number(days));
         
         logInfo('Old logs cleared', { days, clearedCount });

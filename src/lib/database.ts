@@ -105,7 +105,7 @@ export async function testDatabaseConnection(): Promise<boolean> {
  */
 export async function getDatabaseStats() {
   try {
-    const client = getDatabaseClient();
+    const _client = getDatabaseClient();
     
     // These might not be available in all Prisma versions
     const stats = {
