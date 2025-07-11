@@ -4,7 +4,6 @@ import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 
 // TypeScript interfaces
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
-import type { Product } from './marketplace';
 
 export interface MarketplaceItem {
 

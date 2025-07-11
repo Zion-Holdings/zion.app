@@ -487,11 +487,14 @@ if (typeof window !== 'undefined') {
     const originalLogError = logErrorModule.logError;
     if (originalLogError) {
       (window as unknown as { logError?: (...args: unknown[]) => unknown }).logError = (...args: unknown[]) => {
-        const result = originalLogError(args[0], args[1]);
         // Type guards for args
         const message = typeof args[0] === 'string' ? args[0] : 'Unknown error';
-        const stackTrace = args[1] instanceof Error && typeof args[1].stack === 'string' ? args[1].stack : '';
+        const error = args[1] instanceof Error ? args[1] : undefined;
         const context = (args[2] && typeof args[2] === 'object') ? args[2] as Record<string, unknown> : undefined;
+        
+        const result = originalLogError(error || message, context);
+        
+        const stackTrace = error?.stack || '';
         advancedLogCollector.collectLog({
           id: advancedLogCollector['generateLogId'](),
           timestamp: new Date().toISOString(),
