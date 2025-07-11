@@ -1437,6 +1437,20 @@ const nextConfig = {
     // Remove the nodeCoreModules array and its forEach logic for alias and fallback
     // Only keep standard fallbacks and aliases, do not reference node: protocol modules anywhere.
 
+    // Add problematic ESM modules as externals for both server and client
+    const problematicESMModules = [
+      '@safe-global/safe-apps-sdk',
+      'eventemitter3',
+      'preact',
+      'preact/hooks',
+      'valtio/vanilla',
+    ];
+    problematicESMModules.forEach(module => {
+      config.externals.push({
+        [module]: `commonjs ${module}`
+      });
+    });
+
     return config;
   },
 
