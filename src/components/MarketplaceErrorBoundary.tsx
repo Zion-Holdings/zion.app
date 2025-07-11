@@ -83,6 +83,7 @@ export function MarketplaceErrorBoundary({ children }: MarketplaceErrorBoundaryP
     
     // Report to Sentry only on the server
     if (typeof window === 'undefined') {
+<<<<<<< HEAD
       try {
         const Sentry = (await import('@sentry/nextjs')).default;
         Sentry.withScope((scope) => {
@@ -92,6 +93,13 @@ export function MarketplaceErrorBoundary({ children }: MarketplaceErrorBoundaryP
           });
           scope.setLevel('error');
           Sentry.captureException(error);
+=======
+      const Sentry = (await import('@sentry/nextjs')).default;
+      Sentry.withScope((scope: any) => {
+        scope.setTag('errorBoundary', 'marketplace');
+        scope.setContext('errorInfo', {
+          componentStack: errorInfo.componentStack || undefined,
+>>>>>>> f21567bffd098e623c9a927edcb74896bc021795
         });
       } catch (sentryError) {
         logErrorToProduction('Failed to report to Sentry:', { data: sentryError });

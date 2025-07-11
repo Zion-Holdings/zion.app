@@ -7,7 +7,6 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 // Removed: import { useRouter } from 'next/router';
 import { getEnqueueSnackbar } from '@/context/SnackbarContext';
 import { sendErrorToBackend } from '@/utils/customErrorReporter';
-import { getCapturedLogs } from '@/utils/consoleLogCapture';
 import { generateTraceId } from '@/utils/generateTraceId';
 
 // Fallback is defined inside GlobalErrorBoundary to access state
@@ -18,9 +17,11 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
   const [componentStack, setComponentStack] = useState<string | undefined>(undefined);
 
   const handleReportIssue = async (error: Error) => {
-    const logs = getCapturedLogs().map(
-      (l) => `[${l.timestamp}] [${l.level}] ${l.message}`
-    );
+<<<<<<< HEAD
+    const logs: string[] = [];
+=======
+    const logs = []; // Replaced getCapturedLogs() with empty array
+>>>>>>> 29a7c3a1 (chore: stage all unstaged files for rebase and push)
     const id = traceId || generateTraceId();
     await sendErrorToBackend({
       message: error.message,

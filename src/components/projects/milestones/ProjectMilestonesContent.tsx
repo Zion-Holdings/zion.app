@@ -76,12 +76,16 @@ export function ProjectMilestonesContent() {
   const projectType = job?.category || 'Other';
 
   // Handler to adapt form data to createMilestone's expected shape
-  const handleCreateMilestone: (data: {
+  const handleCreateMilestone = async (data: {
     title: string;
     amount: number;
     description?: string | undefined;
     due_date?: Date | undefined;
+<<<<<<< HEAD
   }) => Promise<Milestone | null> = async (data) => {
+=======
+  }): Promise<Milestone | null> => {
+>>>>>>> f21567bffd098e623c9a927edcb74896bc021795
     if (!projectId) return null;
     const milestoneData = {
       project_id: projectId,
@@ -94,6 +98,18 @@ export function ProjectMilestonesContent() {
     return await createMilestone(milestoneData);
   };
 
+  // Wrapper for MilestoneCreator to match its expected onSubmit signature (Promise<void>)
+  const handleMilestoneSubmit = async (data: {
+    title: string;
+    amount: number;
+    description?: string | undefined;
+    due_date?: Date | undefined;
+  }): Promise<void> => {
+    await handleCreateMilestone(data);
+    setActiveTab('milestones');
+    await handleMilestoneCreated();
+  };
+
   if (isLoading || !project) {
     return (
       <div className="container mx-auto py-8 px-4">
@@ -104,6 +120,7 @@ export function ProjectMilestonesContent() {
     );
   }
 
+<<<<<<< HEAD
   const handleMilestoneSubmit = async (data: {
     title: string;
     amount: number;
@@ -127,6 +144,8 @@ export function ProjectMilestonesContent() {
     await handleMilestoneCreated();
   };
 
+=======
+>>>>>>> f21567bffd098e623c9a927edcb74896bc021795
   return (
     <div className="container mx-auto py-8 px-4">
       <ProjectHeader title={project.job?.title || 'Untitled Project'} />
