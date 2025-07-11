@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { applyCorsHeaders } from '@/middleware/cors';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 

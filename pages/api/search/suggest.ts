@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
-import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { SERVICES as RAW_SERVICES } from '@/data/servicesData';
 import { TALENT_PROFILES } from '@/data/talentData';
 import { BLOG_POSTS } from '@/data/blog-posts';
@@ -45,7 +44,10 @@ function handler(
   const suggestions: SearchSuggestion[] = [];
 
   // Add product suggestions
-  const productSuggestions = MARKETPLACE_LISTINGS
+  const productSuggestions = [
+    { id: 'product-1', text: 'Example Product 1', slug: 'example-product-1', type: 'product' as const, iconUrl: 'https://via.placeholder.com/50', category: 'Category A' },
+    { id: 'product-2', text: 'Example Product 2', slug: 'example-product-2', type: 'product' as const, iconUrl: 'https://via.placeholder.com/50', category: 'Category B' },
+  ]
     .filter((p) => match(p.title) || match(p.description))
     .slice(0, 2) // Limit to 2 product suggestions
     .map((p) => ({

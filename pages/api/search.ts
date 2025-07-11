@@ -1,7 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { applyCorsHeaders } from '@/middleware/cors';
 import { withErrorLogging } from '@/utils/withErrorLogging';
-import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { TALENT_PROFILES } from '@/data/talentData';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';
@@ -46,27 +45,6 @@ export function performSearch(query: string, page: number, limit: number, filter
   const searchTerm = query.toLowerCase().trim();
   let allResults: SearchResult[] = [];
 
-  // Search marketplace listings
-  const productResults = MARKETPLACE_LISTINGS.filter(item =>
-    item.title?.toLowerCase().includes(searchTerm) ||
-    item.description?.toLowerCase().includes(searchTerm) ||
-    item.category?.toLowerCase().includes(searchTerm) ||
-    item.tags?.some(tag => tag.toLowerCase().includes(searchTerm))
-  ).map(product => ({
-    id: product.id,
-    title: product.title,
-    description: product.description,
-    type: 'product' as const,
-    category: product.category,
-    url: `/products/${product.id}`,
-    image: (product.images?.[0]) ?? "",
-    price: product.price ?? 0,
-    currency: product.currency,
-    ...(product.rating !== undefined ? { rating: product.rating } : {}),
-    tags: product.tags,
-    date: product.createdAt ?? ""
-  }));
-
   // Search talent profiles
   const talentResults = TALENT_PROFILES.filter(profile =>
     profile.full_name?.toLowerCase().includes(searchTerm) ||
@@ -107,7 +85,7 @@ export function performSearch(query: string, page: number, limit: number, filter
   }));
 
   // Combine all results
-  allResults.push(...productResults, ...talentResults, ...blogResults);
+  allResults.push(...talentResults, ...blogResults);
 
   // Filter by type
   if (filters.types && filters.types.length > 0) {
