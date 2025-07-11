@@ -18,10 +18,10 @@ async function main() {
   const dao = await ZionDAO.deploy(voteToken.address, quorum.address, registry.address);
   await dao.deployed();
 
-  console.log("VoteToken deployed to:", voteToken.address);
-  console.log("QuorumEngine deployed to:", quorum.address);
-  console.log("DelegateRegistry deployed to:", registry.address);
-  console.log("ZionDAO deployed to:", dao.address);
+  console.warn("VoteToken deployed to:", voteToken.address);
+  console.warn("QuorumEngine deployed to:", quorum.address);
+  console.warn("DelegateRegistry deployed to:", registry.address);
+  console.warn("ZionDAO deployed to:", dao.address);
 }
 
 main().catch((error) => {
