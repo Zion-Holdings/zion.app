@@ -18,11 +18,11 @@ declare namespace NodeJS {
   }
 
   /** Minimal representation of NodeJS.Timeout used in our codebase */
-  type Timeout = object;
+  type Timeout = number | object;
 }
 
 declare const process: NodeJS.Process;
 
 declare const Buffer: typeof globalThis extends { Buffer: infer B } ? B : unknown;
 
-export {};
+declare var global: any;
