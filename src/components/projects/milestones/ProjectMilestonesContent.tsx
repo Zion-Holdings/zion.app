@@ -74,6 +74,25 @@ export function ProjectMilestonesContent() {
   // Determine project type based on job category or default to "Other"
   const projectType = job?.category || 'Other';
 
+  // Handler to adapt form data to createMilestone's expected shape
+  const handleCreateMilestone = async (data: {
+    title: string;
+    amount: number;
+    description?: string | undefined;
+    due_date?: Date | undefined;
+  }) => {
+    if (!projectId) return null;
+    const milestoneData = {
+      project_id: projectId,
+      title: data.title,
+      description: data.description || '',
+      amount: data.amount,
+      status: 'pending' as const,
+      due_date: data.due_date ? data.due_date.toISOString() : '',
+    };
+    return await createMilestone(milestoneData);
+  };
+
   if (isLoading || !project) {
     return (
       <div className="container mx-auto py-8 px-4">
@@ -141,7 +160,7 @@ export function ProjectMilestonesContent() {
             isTalent={isTalent}
             paymentTerms={project.payment_terms}
             isSubmitting={isSubmitting}
-            onCreateMilestone={createMilestone}
+            onCreateMilestone={handleCreateMilestone}
             onUpdateStatus={updateMilestoneStatus}
             onDeleteMilestone={deleteMilestone}
             onUploadDeliverable={uploadDeliverable}
