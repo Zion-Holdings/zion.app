@@ -229,28 +229,28 @@ class SystemDiagnostic {
     let score = 100;
     
     // Check required environment variables
-    for (const [key, config] of Object.entries(this.results.environment)) {
+    for (const [_key, config] of Object.entries(this.results.environment)) {
       if (config.required && config.status === 'missing') {
         score -= 20;
       }
     }
     
     // Check required files
-    for (const [key, config] of Object.entries(this.results.files)) {
+    for (const [_key, config] of Object.entries(this.results.files)) {
       if (config.required && config.status === 'missing') {
         score -= 15;
       }
     }
     
     // Check dependencies
-    for (const [key, config] of Object.entries(this.results.dependencies)) {
+    for (const [_key, config] of Object.entries(this.results.dependencies)) {
       if (config.status === 'missing') {
         score -= 10;
       }
     }
     
     // Check connections
-    for (const [key, config] of Object.entries(this.results.connections)) {
+    for (const [_key, config] of Object.entries(this.results.connections)) {
       if (config.status === 'failed') {
         score -= 5;
       }
