@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import type { ReactNode } from 'react';
-import * as Sentry from '@sentry/nextjs';
 import { ENV_CONFIG } from '@/utils/environmentConfig';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
@@ -57,10 +56,12 @@ class ProductionErrorBoundary extends Component<Props, State> {
     };
   }
 
-  override componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+  override async componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     logErrorToProduction('ProductionErrorBoundary caught an error:', error, { componentStack: errorInfo.componentStack });
     
-    if (ENV_CONFIG.sentry.isConfigured) {
+    // Report to Sentry only on the server
+    if (typeof window === 'undefined') {
+      const Sentry = await import('@sentry/nextjs');
       Sentry.withScope((scope) => {
         scope.setTag('errorBoundary', 'ProductionErrorBoundary');
         scope.setTag('errorType', this.state.errorType);

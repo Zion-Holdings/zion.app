@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import type { ReactNode } from 'react';
 import { QueryClient } from '@tanstack/react-query';
-import * as Sentry from '@sentry/nextjs';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { RefreshCw, WifiOff } from 'lucide-react';
@@ -45,18 +44,21 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
     };
   }
 
-  override componentDidCatch(error: Error, errorInfo: unknown) {
+  override async componentDidCatch(error: Error, errorInfo: unknown) {
     // Log to Sentry
-    Sentry.withScope((scope) => {
-      scope.setTag('errorBoundary', 'ApiErrorBoundary');
-      if (typeof errorInfo === 'object' && errorInfo !== null) {
-        scope.setContext('errorInfo', errorInfo as Record<string, unknown>);
-      } else {
-        scope.setContext('errorInfo', null);
-      }
-      scope.setLevel('error');
-      Sentry.captureException(error);
-    });
+    if (typeof window === 'undefined') {
+      const Sentry = await import('@sentry/nextjs');
+      Sentry.withScope((scope) => {
+        scope.setTag('errorBoundary', 'ApiErrorBoundary');
+        if (typeof errorInfo === 'object' && errorInfo !== null) {
+          scope.setContext('errorInfo', errorInfo as Record<string, unknown>);
+        } else {
+          scope.setContext('errorInfo', null);
+        }
+        scope.setLevel('error');
+        Sentry.captureException(error);
+      });
+    }
 
     this.setState({
       error,
@@ -121,7 +123,10 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
       }, 500);
     } catch (retryError) {
       logErrorToProduction('Retry failed:', { data: retryError });
-      Sentry.captureException(retryError);
+      if (typeof window === 'undefined') {
+        const Sentry = await import('@sentry/nextjs');
+        Sentry.captureException(retryError);
+      }
       this.setState({ isRetrying: false });
     }
   };
@@ -224,11 +229,14 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
 // Hook for accessing query client in function components
 export const useApiErrorHandler = () => {
   const handleApiError = (error: Error) => {
-    Sentry.withScope((scope) => {
-      scope.setTag('source', 'useApiErrorHandler');
-      scope.setLevel('error');
-      Sentry.captureException(error);
-    });
+    if (typeof window === 'undefined') {
+      const Sentry = import('@sentry/nextjs');
+      Sentry.withScope((scope) => {
+        scope.setTag('source', 'useApiErrorHandler');
+        scope.setLevel('error');
+        Sentry.captureException(error);
+      });
+    }
   };
 
   return { handleApiError };

@@ -13,7 +13,6 @@ import { AlertTriangle, RefreshCw, Home, Bug, Send, Clipboard } from 'lucide-rea
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import * as Sentry from '@sentry/nextjs'
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
@@ -61,7 +60,7 @@ export class GlobalErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoun
     }
   }
 
-  override componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+  override async componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     const errorId = this.generateErrorId()
     
     // Enhanced error logging
@@ -85,17 +84,20 @@ export class GlobalErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoun
       console.groupEnd()
     }
 
-    // Report to Sentry
-    Sentry.withScope((scope) => {
-      scope.setTag('errorBoundary', this.props.context || 'GlobalErrorBoundary')
-      scope.setLevel('error')
-      scope.setContext('errorInfo', {
-        componentStack: errorInfo.componentStack,
-        retryCount: this.state.retryCount
+    // Report to Sentry only on the server
+    if (typeof window === 'undefined') {
+      const Sentry = await import('@sentry/nextjs');
+      Sentry.withScope((scope) => {
+        scope.setTag('errorBoundary', this.props.context || 'GlobalErrorBoundary')
+        scope.setLevel('error')
+        scope.setContext('errorInfo', {
+          componentStack: errorInfo.componentStack,
+          retryCount: this.state.retryCount
+        })
+        
+        Sentry.captureException(error)
       })
-      
-      Sentry.captureException(error)
-    })
+    }
 
     // Custom error handler
     if (this.props.onError) {
