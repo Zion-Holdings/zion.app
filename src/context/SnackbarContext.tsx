@@ -1,6 +1,11 @@
 import React, { createContext, useContext } from 'react';
 import type { ReactNode } from 'react';
+<<<<<<< HEAD
 import { SnackbarProvider, useSnackbar, OptionsObject, SnackbarKey } from 'notistack';
+=======
+import { SnackbarProvider, useSnackbar } from 'notistack';
+import type { OptionsObject, SnackbarKey } from 'notistack';
+>>>>>>> 0dfaed41 (fix: use type-only imports for ReactNode, OptionsObject, SnackbarKey in SnackbarContext for verbatimModuleSyntax)
 
 export type EnqueueSnackbar = (message: string, options?: OptionsObject) => SnackbarKey;
 
