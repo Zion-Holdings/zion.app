@@ -11,13 +11,15 @@ import { toast } from '@/hooks/use-toast';
 import { useAuth } from '@/hooks/useAuth';
 import { useRouter } from 'next/router'; // Changed from useNavigate
 import { useEffect } from 'react'; // Added useEffect
-import type { Product } from '@/types/product';
+// import type { Product } from '@/types/product';
+type Product = any; // TODO: Replace with correct type from '@/types/product' if available
 import type { TalentProfile } from '@/types/talent';
 
 export default function WishlistPage() {
   const { favorites, loading, toggleFavorite } = useFavorites();
   const { user, isLoading: isAuthLoading } = useAuth(); // Added isAuthLoading
   const router = useRouter(); // Changed from navigate
+  const { items, dispatch } = useCart();
 
   useEffect(() => {
     // Redirect if not authenticated and auth loading is complete
@@ -29,8 +31,6 @@ export default function WishlistPage() {
   if (isAuthLoading || !user) { // Show loading or null while auth check or redirect happens
     return null; // Or a loading spinner
   }
-
-  const { items, dispatch } = useCart();
 
   const addToCart = (item: { id: string; title?: string; price?: number }) => {
     if (items.some(i => i.id === item.id)) return;
