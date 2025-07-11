@@ -21,7 +21,6 @@ const isBuildEnv = process.env.CI === 'true';
 let ethers: typeof import('ethers');
 
 // Dynamic imports for ESM compatibility
-let createAppKit: any;
 let mainnet: any, goerli: any, polygon: any, optimism: any, arbitrum: any, base: any;
 
 // Load AppKit modules dynamically to avoid ESM issues

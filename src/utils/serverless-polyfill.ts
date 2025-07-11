@@ -70,7 +70,7 @@ const tsHelpers = {
     return Object.assign || function (t: any, ...sources: any[]) {
       for (let i = 0; i < sources.length; i++) {
         const s = sources[i];
-        for (let p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+        for (const p in s) if (Object.prototype.hasOwnProperty.call(s, p))
           t[p] = s[p];
       }
       return t;
@@ -78,8 +78,8 @@ const tsHelpers = {
   }(),
   
   __rest: function (s: any, e: string[]) {
-    let t: any = {};
-    for (let p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+    const t: any = {};
+    for (const p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
       t[p] = s[p];
     if (s != null && typeof Object.getOwnPropertySymbols === "function") {
       const symbols = Object.getOwnPropertySymbols(s);
@@ -94,7 +94,7 @@ const tsHelpers = {
   },
   
   __decorate: function (decorators: any[], target: any, key?: string | symbol, desc?: any) {
-    let c = arguments.length;
+    const c = arguments.length;
     let r = c < 3 ? target : desc === null ? (desc = Object.getOwnPropertyDescriptor(target, key!)) : desc;
     let d: any;
     if (typeof Reflect === "object" && typeof (Reflect as any).decorate === "function") r = (Reflect as any).decorate(decorators, target, key, desc);
