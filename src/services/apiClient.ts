@@ -107,14 +107,14 @@ const apiClient = axios.create({
   baseURL: `${API_BASE}/api/v1/services`,
 });
 
-apiClient.interceptors.request.use((config: AxiosRequestConfig) => {
+apiClient.interceptors.request.use((config: InternalAxiosRequestConfig) => {
   if (typeof config !== 'object' || config === null) {
     return config;
   }
   
   // Ensure headers are properly set
   if (!config.headers) {
-    config.headers = {};
+    config.headers = new AxiosHeadersClass();
   }
   
   // Add Accept header if not present
