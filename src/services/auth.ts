@@ -7,7 +7,6 @@ export async function register(name: string, email: string, password: string) {
     const res = await axios.post('/api/auth/register', { name, email, password });
     return { res, data: res.data };
   } catch (err) {
-    const message = err instanceof Error ? err.message : String(err);
     logErrorToProduction('Register error:', { data: err });
     throw err;
   }
@@ -19,7 +18,6 @@ export async function forgotPassword(email: string) {
     const res = await axios.post(`${API_URL}/auth/forgot`, { email });
     return { res, data: res.data };
   } catch (err) {
-    const message = err instanceof Error ? err.message : String(err);
     logErrorToProduction('Forgot password error:', { data: err });
     throw err;
   }
@@ -31,7 +29,6 @@ export async function resetPassword(token: string, newPassword: string) {
     const res = await axios.post(`${API_URL}/auth/reset-password`, { token, newPassword });
     return { res, data: res.data };
   } catch (err) {
-    const message = err instanceof Error ? err.message : String(err);
     logErrorToProduction('Reset password error:', { data: err });
     throw err;
   }

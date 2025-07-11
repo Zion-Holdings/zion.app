@@ -6,7 +6,6 @@ import {
   fetchTalent,
   fetchEquipment,
   getMarketplaceErrorMessage,
-  marketplaceClient,
 } from '../marketplace';
 
 // Mock Supabase

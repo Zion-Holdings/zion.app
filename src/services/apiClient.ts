@@ -10,20 +10,6 @@ import type { AxiosResponse } from 'axios';
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL || 'https://api.ziontechgroup.com/v1';
 
 // Global interceptor for all axios instances
-function mapStatusMessage(status?: number, fallback = ''): string {
-  switch (status) {
-    case 400:
-      return 'Validation error';
-    case 401:
-      return 'Authentication required';
-    case 404:
-      return 'Not found';
-    case 500:
-      return 'Server error';
-    default:
-      return fallback;
-  }
-}
 
 // Define the global error handler (exported for testing purposes)
 export const globalAxiosErrorHandler = (error: unknown) => {
