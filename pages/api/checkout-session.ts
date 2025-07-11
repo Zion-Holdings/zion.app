@@ -238,7 +238,7 @@ export default async function handler(
       'message' in error &&
       typeof (error as { message?: string }).message === 'string' &&
       (error as { message?: string }).message &&
-      (error as { message?: string }).message.includes('No API key provided')
+      (error as { message?: string }).message?.includes('No API key provided')
     ) {
       return res.status(500).json({
         error: 'Payment system configuration error',
@@ -252,9 +252,12 @@ export default async function handler(
     // Generic error response
     return res.status(500).json({
       error: 'Failed to create checkout session',
-      details: process.env['NODE_ENV'] === 'development' ? 
-        (error instanceof Error ? error.message : 'Unknown error') : 
-        'Internal server error',
+      details:
+        process.env['NODE_ENV'] === 'development'
+          ? error && error instanceof Error && error.message
+            ? error.message
+            : 'Unknown error'
+          : 'Internal server error',
     });
   }
 }
