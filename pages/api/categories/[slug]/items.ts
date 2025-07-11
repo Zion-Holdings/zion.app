@@ -7,75 +7,6 @@ import { TALENT_PROFILES } from '@/data/talentData';
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 
-// Mock category data for fallback
-const MOCK_CATEGORIES = {
-  services: {
-    name: 'AI Services',
-    slug: 'services',
-    description: 'Professional AI and IT services for your business needs'
-  },
-  equipment: {
-    name: 'Equipment',
-    slug: 'equipment',
-    description: 'High-quality equipment and hardware solutions'
-  },
-  hardware: {
-    name: 'Hardware',
-    slug: 'hardware',
-    description: 'Servers, networking gear and other hardware'
-  },
-  consulting: {
-    name: 'AI Consulting',
-    slug: 'consulting',
-    description: 'Expert AI consulting and strategy services'
-  },
-  'ai-models-apis': {
-    name: 'AI Models & APIs',
-    slug: 'ai-models-apis',
-    description: 'Ready to use AI models, endpoints and APIs'
-  },
-  'content-creation': {
-    name: 'Content Creation',
-    slug: 'content-creation',
-    description: 'Tools for generating and managing content'
-  },
-  'data-analysis': {
-    name: 'Data Analysis',
-    slug: 'data-analysis',
-    description: 'Analytics and business intelligence solutions'
-  },
-  'computer-vision': {
-    name: 'Computer Vision',
-    slug: 'computer-vision',
-    description: 'Visual recognition and imaging tools'
-  },
-  'cloud-services': {
-    name: 'Cloud Services',
-    slug: 'cloud-services',
-    description: 'Hosted platforms and SaaS offerings'
-  },
-  security: {
-    name: 'Security',
-    slug: 'security',
-    description: 'Security monitoring and protection tools'
-  },
-  marketing: {
-    name: 'Marketing',
-    slug: 'marketing',
-    description: 'Marketing and advertising solutions'
-  },
-  talents: {
-    name: 'AI Talent Directory',
-    slug: 'talents',
-    description: 'Discover and connect with skilled AI professionals and experts'
-  },
-  innovation: {
-    name: 'Innovation',
-    slug: 'innovation',
-    description: 'Cutting-edge innovations and research'
-  }
-};
-
 const prisma = new PrismaClient();
 
 // Remove custom ApiHandler type and use correct types
@@ -100,7 +31,11 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
 
     // Special handling for talent directory
     if (slug === 'talents') {
-      const talentCategory = MOCK_CATEGORIES.talents;
+      const talentCategory = {
+        name: 'AI Talent Directory',
+        slug: 'talents',
+        description: 'Discover and connect with skilled AI professionals and experts'
+      };
       
       // Convert talent profiles to match the expected Listing interface format
       const talentItems = TALENT_PROFILES.map(profile => ({
@@ -153,6 +88,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
             select: {
               name: true,
               slug: true,
+              description: true,
             },
           });
 
@@ -194,70 +130,18 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
 
     // Use fallback data if database query failed or no category found
     if (!categoryDetails || usingFallback) {
-      const mockCategory = MOCK_CATEGORIES[slug as keyof typeof MOCK_CATEGORIES];
-      
-      if (!mockCategory) {
-        response.status(404).json({ 
-          message: `Category with slug '${slug}' not found.`,
-          available_categories: Object.keys(MOCK_CATEGORIES)
-        });
-        return;
-      }
-
-      // Enhanced category matching for better results
-      const normalizeString = (str: string) => 
-        str.toLowerCase().replace(/[^a-z0-9]/g, '').trim();
-      
-      const normalizedSlug = normalizeString(slug);
-      
-      const filteredListings = MARKETPLACE_LISTINGS.filter(item => {
-        const normalizedCategory = item.category ? normalizeString(item.category) : '';
-        const normalizedTags = item.tags?.map(tag => normalizeString(tag)) || [];
-        
-        // Direct category match
-        if (normalizedCategory === normalizedSlug) return true;
-        
-        // Category contains slug or slug contains category
-        if (normalizedCategory.includes(normalizedSlug) || normalizedSlug.includes(normalizedCategory)) return true;
-        
-        // Tag matches
-        if (normalizedTags.some(tag => tag === normalizedSlug || tag.includes(normalizedSlug) || normalizedSlug.includes(tag))) return true;
-        
-        // Special mapping for common category aliases
-        const categoryMappings: Record<string, string[]> = {
-          services: ['service', 'consulting', 'support'],
-          equipment: ['hardware', 'device', 'computer'],
-          hardware: ['hardware', 'device', 'computer', 'equipment'],
-          aimodelsapis: ['ai', 'model', 'api', 'artificial', 'intelligence'],
-          contentcreation: ['content', 'creative', 'writing', 'generation'],
-          dataanalysis: ['data', 'analytics', 'analysis', 'intelligence', 'bi'],
-          computervision: ['vision', 'image', 'visual', 'recognition'],
-          cloudservices: ['cloud', 'saas', 'platform', 'hosting'],
-          security: ['secure', 'protection', 'safety', 'monitoring'],
-          marketing: ['promotion', 'advertising', 'campaign', 'social'],
-          talents: ['talent', 'freelancer', 'expert'],
-          innovation: ['innovation', 'research', 'future']
-        };
-        
-        if (categoryMappings[normalizedSlug]) {
-          return categoryMappings[normalizedSlug].some(alias => 
-            normalizedCategory.includes(alias) || 
-            normalizedTags.some(tag => tag.includes(alias))
-          );
-        }
-        
-        return false;
+      // If category not found in database, return 404 with available categories
+      const availableCategories = await prisma.category.findMany({
+        where: { active: true },
+        select: { slug: true, name: true },
+        orderBy: { name: 'asc' },
       });
 
-      categoryDetails = mockCategory;
-      products = filteredListings.map(item => ({
-        id: item.id,
-        name: item.title,
-        description: item.description,
-        price: item.price,
-        currency: 'USD',
-        images: item.images ? [{ url: item.images[0], alt: item.title }] : null,
-      }));
+      response.status(404).json({ 
+        message: `Category with slug '${slug}' not found.`,
+        available_categories: availableCategories.map(cat => ({ name: cat.name, slug: cat.slug }))
+      });
+      return;
     }
 
     // Construct the response data in the format expected by CategoryPage.tsx
@@ -265,7 +149,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
       category: {
         name: categoryDetails.name,
         slug: categoryDetails.slug,
-        description: MOCK_CATEGORIES[slug as keyof typeof MOCK_CATEGORIES]?.description || '',
+        description: categoryDetails.description || '',
       },
       items: products,
     };
