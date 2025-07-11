@@ -15,10 +15,6 @@ interface PostFormValues {
   tags: string;
 }
 
-// TODO: Replace mockPost with real API integration
-// Remove mock data and fetch post from backend for editing
-// If no data, show empty state or error message
-
 export default function EditPostPage() {
   const router = useRouter();
   const { postId } = router.query as { postId?: string };
