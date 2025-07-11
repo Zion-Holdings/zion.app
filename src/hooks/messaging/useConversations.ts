@@ -28,10 +28,7 @@ export function useConversations(
     
     try {
       // Fetch conversations from the database
-      const { data, error } = await supabase
-        .from('conversations')
-        .select('*')
-        .or(`user_one_id.eq.${user.id},user_two_id.eq.${user.id}`);
+      const { data, error } = await (supabase ?? (() => { throw new Error('Supabase client not initialized'); })());
         
       if (error) throw error;
       
@@ -55,7 +52,7 @@ export function useConversations(
           last_message: conv.last_message ? {
             content: conv.last_message,
             created_at: conv.last_message_time
-          } : undefined,
+          } : { content: '', created_at: '' },
           updated_at: conv.updated_at || conv.created_at,
           unread_count: conv.unread_count || 0,
           context_type: conv.context_type,
@@ -93,10 +90,7 @@ export function useConversations(
     
     try {
       // Check if conversation already exists
-      const { data: existingConversations, error: fetchError } = await supabase
-        .from('conversations')
-        .select('id')
-        .or(`and(user_one_id.eq.${user.id},user_two_id.eq.${recipientId}),and(user_one_id.eq.${recipientId},user_two_id.eq.${user.id})`);
+      const { data: existingConversations, error: fetchError } = await (supabase ?? (() => { throw new Error('Supabase client not initialized'); })());
         
       if (fetchError) throw fetchError;
       
@@ -108,7 +102,7 @@ export function useConversations(
         
         // Update context if provided
         if (contextType || contextId || contextData) {
-          await supabase
+          await (supabase ?? (() => { throw new Error('Supabase client not initialized'); })());
             .from('conversations')
             .update({
               context_type: contextType,
@@ -120,36 +114,12 @@ export function useConversations(
         }
       } else {
         // Get recipient information
-        const { data: recipientData, error: recipientError } = await supabase
-          .from('profiles')
-          .select('display_name, avatar_url, user_type')
-          .eq('id', recipientId)
-          .single();
+        const { data: recipientData, error: recipientError } = await (supabase ?? (() => { throw new Error('Supabase client not initialized'); })());
           
         if (recipientError) throw recipientError;
         
         // Create a new conversation
-        const { data: newConversation, error: createError } = await supabase
-          .from('conversations')
-          .insert({
-            user_one_id: user.id,
-            user_one_name: user.name || user.email,
-            user_one_avatar: user.avatarUrl,
-            user_one_type: user.userType,
-            user_two_id: recipientId,
-            user_two_name: recipientData?.display_name || 'User',
-            user_two_avatar: recipientData?.avatar_url,
-            user_two_type: recipientData?.user_type,
-            created_at: new Date().toISOString(),
-            updated_at: new Date().toISOString(),
-            last_message: initialMessage,
-            last_message_time: new Date().toISOString(),
-            context_type: contextType,
-            context_id: contextId,
-            context_data: contextData
-          })
-          .select('id')
-          .single();
+        const { data: newConversation, error: createError } = await (supabase ?? (() => { throw new Error('Supabase client not initialized'); })());
           
         if (createError) throw createError;
         
@@ -157,7 +127,7 @@ export function useConversations(
       }
       
       // Send the initial message
-      await supabase
+      await (supabase ?? (() => { throw new Error('Supabase client not initialized'); })());
         .from('messages')
         .insert({
           conversation_id: conversationId,
