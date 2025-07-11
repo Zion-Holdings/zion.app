@@ -487,6 +487,14 @@ if (typeof window !== 'undefined') {
     const originalLogError = logErrorModule.logError;
     if (originalLogError) {
       (window as unknown as { logError?: (...args: unknown[]) => unknown }).logError = (...args: unknown[]) => {
+<<<<<<< HEAD
+=======
+        let contextArg: ({ componentStack?: string } & Record<string, unknown>) | undefined = undefined;
+        if (args[1] && typeof args[1] === 'object' && ('componentStack' in args[1] || Object.keys(args[1]).length > 0)) {
+          contextArg = args[1] as { componentStack?: string } & Record<string, unknown>;
+        }
+        const result = originalLogError(args[0], contextArg);
+>>>>>>> bdd51055654e70f2dd0841d82df5d72765d6ceb4
         // Type guards for args
         const message = typeof args[0] === 'string' ? args[0] : 'Unknown error';
         const error = args[1] instanceof Error ? args[1] : undefined;
