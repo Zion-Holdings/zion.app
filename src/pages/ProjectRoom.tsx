@@ -58,21 +58,10 @@ export default function ProjectRoom() {
     });
   };
   
-  const simulateUserJoining = () => {
-    // This is just for demo purposes - in a real app, this would be handled by the video call service
-    const mockUsers = [
-      { id: 'user-2', name: 'Alex Chen', isVideoEnabled: true, isMuted: false },
-      { id: 'user-3', name: 'Taylor Kim', isVideoEnabled: false, isMuted: true },
-      { id: 'user-4', name: 'Jordan Smith', isVideoEnabled: true, isMuted: false, isScreenSharing: true }
-    ];
-    
-    const randomUser = mockUsers[Math.floor(Math.random() * mockUsers.length)];
-    
-    if (randomUser && !callParticipants.find(p => p.id === randomUser.id)) {
-      setCallParticipants(prev => [...prev, randomUser]);
-      toast(`${randomUser.name} joined the call`);
-    }
-  };
+  // --- Video Call Integration Point ---
+  // TODO: Integrate with real video call service to handle user joining events
+  // Remove simulateUserJoining and mockUsers logic
+  // Participants should be managed by the real service, not simulated
 
   const [chatMessages, setChatMessages] = useState<{user: string, text: string}[]>([]);
   const [chatInput, setChatInput] = useState('');
@@ -238,11 +227,11 @@ export default function ProjectRoom() {
                     />
                     
                     {/* This button is just for demo/testing purposes */}
-                    <div className="flex justify-center mt-4">
+                    {/* <div className="flex justify-center mt-4">
                       <Button variant="outline" onClick={simulateUserJoining} className="text-sm">
                         Simulate user joining (demo only)
                       </Button>
-                    </div>
+                    </div> */}
                   </div>
                 ) : (
                   <div className="flex flex-col items-center justify-center h-[400px] space-y-4">
