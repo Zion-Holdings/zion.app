@@ -1,4 +1,4 @@
-import { measureLatency, Endpoint, EndpointTestResult } from './latencyTester';
+import { measureLatency, Endpoint, _EndpointTestResult } from './latencyTester';
 import logger from './logger';
 import { triggerAlerts } from './alerter'; // Added this import
 

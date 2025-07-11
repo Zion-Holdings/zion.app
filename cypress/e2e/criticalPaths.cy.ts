@@ -51,7 +51,7 @@ describe('Critical user journeys', () => {
     cy.url().should('include', '/checkout');
     // The Stripe iframe interaction is inherently tricky.
     // This selector might be the best available if Stripe doesn't offer test-specific selectors.
-    cy.get('iframe[name^="__privateStripeFrame"]').then(($iframe) => {
+    cy.get('iframe[name^="__privateStripeFrame"]').then((_$iframe) => {
       // const stripeCardNumber = Cypress.env('STRIPE_TEST_CARD');
       // Further actions to fill the Stripe form would go here, using stripeCardNumber
       // For example (conceptual, actual Stripe field selectors needed):
