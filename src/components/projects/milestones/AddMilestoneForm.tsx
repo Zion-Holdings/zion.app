@@ -75,7 +75,7 @@ export function AddMilestoneForm({
       if (milestone) {
         onSubmit({
           title: milestone.title,
-          description: milestone.description,
+          description: milestone.description || '',
           due_date: milestone.dueDate ? new Date(milestone.dueDate) : undefined,
           amount: milestone.estimatedHours * 10, // Convert hours to a default payment amount
         });
@@ -87,7 +87,7 @@ export function AddMilestoneForm({
     milestones.forEach((milestone) => {
       onSubmit({
         title: milestone.title,
-        description: milestone.description,
+        description: milestone.description || '',
         due_date: milestone.dueDate ? new Date(milestone.dueDate) : undefined,
         amount: milestone.estimatedHours * 10, // Convert hours to a default payment amount
       });
@@ -97,7 +97,7 @@ export function AddMilestoneForm({
   const handleAddMilestone = (milestone: GeneratedMilestone) => {
     onSubmit({
       title: milestone.title,
-      description: milestone.description,
+      description: milestone.description || '',
       due_date: milestone.dueDate ? new Date(milestone.dueDate) : undefined,
       amount: milestone.estimatedHours * 10, // Convert hours to a default payment amount
     });
