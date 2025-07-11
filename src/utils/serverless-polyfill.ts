@@ -10,6 +10,8 @@
  * This runs as the VERY FIRST script before any other code loads.
  */
 
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
+
 // Type declarations for global augmentation
 declare global {
   const webpackChunk_N_E: unknown[];
@@ -44,7 +46,7 @@ if (typeof self === 'undefined') {
 const selfRef: Record<string, unknown> = typeof self !== 'undefined' ? self as Record<string, unknown> : 
                     typeof global !== 'undefined' ? global as Record<string, unknown> :
                     typeof globalThis !== 'undefined' ? (globalThis as unknown as Record<string, unknown>) :
-                    typeof window !== 'undefined' ? (window as unknown as Record<string, unknown>) : {};
+                    typeof window !== 'undefined' ? ((window as unknown) as Record<string, unknown>) : {};
 
 // CRITICAL: Webpack chunk array polyfill
 if (!selfRef.webpackChunk_N_E) {
@@ -132,7 +134,7 @@ try {
       try {
         return originalPush.call(this, chunk);
       } catch (error: unknown) {
-        console.warn('Webpack chunk loading error prevented:', error);
+        logWarn('Webpack chunk loading error prevented:', { data: error });
         return 0;
       }
     };
@@ -157,7 +159,7 @@ if (typeof window !== 'undefined') {
       
       if (suppressedMessages.some(msg => message.includes(msg))) {
         // Log that we are suppressing an error, for debugging purposes
-        console.error(`[serverless-polyfill] Previously suppressed error: "${message}" from ${source}:${lineno}`, error);
+        logErrorToProduction(`[serverless-polyfill] Previously suppressed error: "${message}" from ${source}:${lineno}`, error);
         // return true; // Suppress error -- Now allowing it to propagate
       }
     }
@@ -180,7 +182,7 @@ if (typeof window !== 'undefined') {
       ];
       
       if (suppressedMessages.some(msg => event.reason.message.includes(msg))) {
-        console.error(`[serverless-polyfill] Previously suppressed unhandled rejection:`, event.reason);
+        logErrorToProduction(`[serverless-polyfill] Previously suppressed unhandled rejection:`, event.reason);
         // event.preventDefault(); // -- Now allowing it to propagate
         // return;
       }
