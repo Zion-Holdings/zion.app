@@ -102,20 +102,32 @@ axios.interceptors.response.use(
   globalAxiosErrorHandler
 );
 
-const API_BASE = axios.defaults.baseURL;
+// Create axios instance with custom config
 const apiClient = axios.create({
-  baseURL: `${API_BASE}/api/v1/services`,
+  baseURL: process.env.NEXT_PUBLIC_API_URL || 'https://api.ziontechgroup.com/v1',
+  timeout: 30000,
+  headers: {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json',
+  },
 });
 
+// Request interceptor for authentication and headers
 apiClient.interceptors.request.use((config: InternalAxiosRequestConfig) => {
+  if (typeof config !== 'object' || config === null) {
+    return config;
+  }
+  
   // Ensure headers is an AxiosHeaders instance
   if (!(config.headers instanceof AxiosHeaders)) {
     config.headers = new AxiosHeaders(config.headers);
   }
+  
   // Add Accept header if not present
   if (!config.headers.has('Accept')) {
     config.headers.set('Accept', 'application/json');
   }
+  
   return config;
 });
 
