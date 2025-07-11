@@ -30,7 +30,7 @@ export default function TalentProfilePage() {
         if (!res.ok) throw new Error('Failed to load profile');
         const data = await res.json();
         setProfile(data.profile);
-      } catch (_err) {
+      } catch (__err) {
         setError('Profile not found');
       } finally {
         setLoading(false);
