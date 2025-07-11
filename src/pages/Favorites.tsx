@@ -2,6 +2,25 @@ import ProductCard from '@/components/ProductCard';
 import { useFavorites } from '@/context/FavoritesContext.jsx';
 import { NEW_PRODUCTS } from '@/data/newProductsData';
 import type { ProductListing } from '@/types/listings';
+import type { Product } from '@/services/marketplace';
+
+// Helper function to convert ProductListing to Product
+const convertToProduct = (listing: ProductListing): Product => ({
+  id: listing.id,
+  name: listing.title, // Use title as name
+  title: listing.title,
+  description: listing.description,
+  price: listing.price,
+  currency: listing.currency,
+  category: listing.category,
+  tags: listing.tags,
+  images: listing.images,
+  rating: listing.rating,
+  reviewCount: listing.reviewCount,
+  created_at: listing.createdAt, // Map createdAt to created_at
+  updated_at: listing.createdAt, // Use createdAt as updated_at since we don't have updated_at
+  stock: listing.stock,
+});
 
 export default function FavoritesPage() {
   const { favorites } = useFavorites();
@@ -21,7 +40,7 @@ export default function FavoritesPage() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map((p: ProductListing) => (
-            <ProductCard key={p.id} product={p} />
+            <ProductCard key={p.id} product={convertToProduct(p)} />
           ))}
         </div>
       )}
