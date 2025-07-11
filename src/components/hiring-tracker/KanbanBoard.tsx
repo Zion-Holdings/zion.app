@@ -120,18 +120,11 @@ export function KanbanBoard({ jobId }: KanbanBoardProps) {
     }
   };
 
-  // Synchronous wrapper for DragDropContext
+  // Synchronous wrapper for DragDropContext with correct type
   const handleDragEndSync = (...args: unknown[]) => {
-    const result = args[0];
-    if (
-      result &&
-      typeof result === 'object' &&
-      'draggableId' in result &&
-      'source' in result &&
-      'destination' in result
-    ) {
-      void handleDragEnd(result as DropResult);
-    }
+    // The first argument should be DropResult
+    const [result] = args;
+    void handleDragEnd(result as DropResult);
   };
   
   if (isLoading) {
