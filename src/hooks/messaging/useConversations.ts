@@ -102,7 +102,7 @@ export function useConversations(
         
         // Update context if provided
         if (contextType || contextId || contextData) {
-          await (supabase ?? (() => { throw new Error('Supabase client not initialized'); })());
+          await (supabase ?? (() => { throw new Error('Supabase client not initialized'); })())
             .from('conversations')
             .update({
               context_type: contextType,
