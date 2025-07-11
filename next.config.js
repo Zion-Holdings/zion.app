@@ -3,7 +3,6 @@ import { fileURLToPath } from 'url';
 import os from 'os';
 import { PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_BUILD } from 'next/constants.js';
 // import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import { createRequire } from 'module';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -79,8 +78,6 @@ const nextConfig = {
 
     // Ensure CSS optimization is disabled to prevent static/css errors
     optimizeCss: false,
-    // Disable CSS minimization to prevent syntax errors
-    swcMinify: false,
     // Memory and performance optimizations for 176+ pages
     largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
     workerThreads: true, // Reactivate worker threads for better performance
@@ -484,8 +481,8 @@ const nextConfig = {
         http: false,
         https: false,
         zlib: false,
-        stream: path.resolve(__dirname, 'src/utils/stream-polyfill.ts'),
-        buffer: require.resolve('buffer'),
+        stream: false,
+        buffer: false,
         util: false,
         process: false,
         path: false,
@@ -500,7 +497,7 @@ const nextConfig = {
         querystring: false,
         constants: false,
         domain: false,
-        events: require.resolve('events/'),
+        events: false,
         punycode: false,
         readline: false,
         string_decoder: false,
@@ -1470,6 +1467,33 @@ const nextConfig = {
 };
 
 // Remove deprecated experimental.esmExternals if present
+if (nextConfig.experimental && 'esmExternals' in nextConfig.experimental) {
+  delete nextConfig.experimental.esmExternals;
+}
+
+export default nextConfig;
+
+
+
+
+    ignoreDuringBuilds: false, // Reactivate ESLint for better code quality
+  },
+
+
+};
+
+// Remove deprecated experimental.esmExternals if present
+if (nextConfig.experimental && 'esmExternals' in nextConfig.experimental) {
+  delete nextConfig.experimental.esmExternals;
+}
+
+export default nextConfig;
+
+
+
+
+
+
 if (nextConfig.experimental && 'esmExternals' in nextConfig.experimental) {
   delete nextConfig.experimental.esmExternals;
 }
