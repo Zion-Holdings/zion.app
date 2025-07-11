@@ -2,8 +2,9 @@
 
 import type { SearchSuggestion } from "@/types/search";
 import React, { useState } from "react";
-// Next.js Link is required for navigation; using the wrong import caused
-// build errors logged in `build-test-2.log`
+// Next.js Link must be used with an `href` prop. Earlier revisions used
+// React Router's `to` attribute, resulting in the "Cannot find name 'Link'"
+// error in `build-test-2.log`.
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import { Search } from 'lucide-react';
