@@ -215,7 +215,7 @@ class OptimizationSlackBot {
   }
 
   async triggerOptimization(target, options = []) {
-    console.log(`Triggering optimization for: ${target}`);
+    console.warn(`Triggering optimization for: ${target}`);
     
     // Call Cursor agent API
     const cursorResponse = await this.callCursorAgent(target, options);
@@ -500,13 +500,13 @@ class OptimizationSlackBot {
 
   async updateConfiguration(setting, value) {
     // Implementation for updating configuration
-    console.log(`Updating configuration: ${setting} = ${value}`);
+    console.warn(`Updating configuration: ${setting} = ${value}`);
   }
 
   async start() {
     const port = process.env.PORT || 3001;
     await this.app.start(port);
-    console.log(`⚡ Optimization Slack Bot is running on port ${port}!`);
+    console.warn(`⚡ Optimization Slack Bot is running on port ${port}!`);
   }
 }
 
