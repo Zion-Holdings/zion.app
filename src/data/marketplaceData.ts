@@ -1,5 +1,5 @@
-import { ProductListing } from "@/types/listings";
-import { SearchSuggestion, FilterOptions } from "@/types/search";
+import type { ProductListing } from "@/types/listings";
+import type { SearchSuggestion, FilterOptions } from "@/types/search";
 import { docsSearchSuggestions } from './docsSearchData';
 import { BLOG_POSTS } from './blog-posts';
 import { slugify } from '@/lib/slugify';
