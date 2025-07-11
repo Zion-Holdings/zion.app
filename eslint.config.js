@@ -76,9 +76,9 @@ export default [
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off", // We use TypeScript
       "react/display-name": "warn",
-      // Disabled react-hooks rules due to ESLint v9 compatibility issues
-      // "react-hooks/rules-of-hooks": "error",
-      // "react-hooks/exhaustive-deps": "warn",
+      // Enable react-hooks rules for React 19 compatibility
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
       
       // Basic accessibility rules
       "jsx-a11y/alt-text": "error",
