@@ -4,8 +4,8 @@ import { logInfo, logWarn } from '@/utils/productionLogger';
 
 declare global {
   interface Window {
-    Intercom?: (...args: any[]) => void & { q?: any[]; c?: (args: any) => void };
-    intercomSettings?: Record<string, any>;
+    Intercom?: ((...args: unknown[]) => void) & { q?: unknown[]; c?: (args: unknown) => void };
+    intercomSettings?: Record<string, unknown>;
   }
 }
 
