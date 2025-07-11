@@ -631,7 +631,7 @@ const nextConfig = {
             NEXT_PUBLIC_SOCIAL_FACEBOOK_URL: process.env.NEXT_PUBLIC_SOCIAL_FACEBOOK_URL || '',
             NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL: process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL || '',
             NEXT_PUBLIC_SOCIAL_GITHUB_URL: process.env.NEXT_PUBLIC_SOCIAL_GITHUB_URL || '',
-          }),
+          }, (key, value) => typeof value === 'bigint' ? value.toString() : value),
           // TypeScript helpers
           '__extends': `(function(d, b) { 
             if (typeof b !== "function" && b !== null) 

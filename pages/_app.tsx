@@ -7,7 +7,7 @@ if (typeof process !== 'undefined' && process.env?.NODE_ENV === 'development') {
 }
 
 // Enhanced error logging - import early for comprehensive coverage
-import enhancedErrorLogger from '../src/utils/enhanced-error-logger';
+import _enhancedErrorLogger from '../src/utils/enhanced-error-logger';
 
 // Add global error handling for undefined components
 if (typeof window !== 'undefined') {
@@ -29,7 +29,7 @@ if (typeof window !== 'undefined') {
   // Enhanced error handling for getInitialProps and http errors
   window.addEventListener('error', (event) => {
     const errorMessage = event.message || '';
-    const errorSource = event.filename || '';
+    const _errorSource = event.filename || '';
     
     // Handle getInitialProps errors
     if (errorMessage.includes('getInitialProps') || errorMessage.includes('Cannot read properties of undefined (reading \'getInitialProps\')')) {
