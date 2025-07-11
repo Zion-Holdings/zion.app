@@ -115,7 +115,15 @@ export function MobileBrowse() {
       <BrowseFilters type={browseType} />
       <div className="py-4 px-4">
         <BrowseCards
-          items={browseType === "jobs" ? jobs : talentsData}
+          items={
+            browseType === "jobs"
+              ? jobs.map(job => ({
+                  ...job,
+                  subtitle: job.company,
+                  badges: [],
+                }))
+              : talentsData
+          }
           type={browseType}
           onViewDetails={handleViewDetails}
         />
