@@ -141,7 +141,7 @@ export class ProductionErrorMonitor {
       },
       performanceMetrics: {
         loadTime: typeof this.getPerformanceMetrics().loadTime === 'number' ? this.getPerformanceMetrics().loadTime ?? 0 : 0,
-        memoryUsage: this.getPerformanceMetrics().memoryUsage
+        memoryUsage: this.getPerformanceMetrics().memoryUsage || {}
       }
     };
   }
