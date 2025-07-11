@@ -5,11 +5,10 @@ interface LayoutIssue {
 }
 
 function logIssue(title: string, issues: LayoutIssue[]) {
-  console.group(title);
+  console.warn(title);
   issues.forEach(issue => {
     console.warn(issue);
   });
-  console.groupEnd();
 }
 
 window.addEventListener('load', () => {
