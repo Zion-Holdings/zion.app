@@ -44,7 +44,8 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
   useNavigationGestures();
   const [isResendingEmail, setIsResendingEmail] = useState(false);
   const [resendStatusMessage, setResendStatusMessage] = useState('');
-  const { loading, error, setError } = useGlobalLoader();
+  const globalLoader = useGlobalLoader();
+  const { loading, error, setError } = globalLoader;
   const pathname = useSafePathname();
   const isAuthPage = /^\/auth|\/login|\/register|\/signup|\/forgot-password|\/reset-password|\/update-password/.test(pathname);
 
@@ -107,7 +108,7 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
       {!isAuthPage && <PrimaryNav />}
       <ScrollProgressBar />
       <ScrollToTop />
-      {loading === true && <LoaderOverlay />}
+      {loading && <LoaderOverlay />}
       {error && <ErrorOverlay error={typeof error === 'string' ? error : (error instanceof Error ? error.message : JSON.stringify(error))} onClose={() => setError(null)} />}
       <main
         id="main-content"
