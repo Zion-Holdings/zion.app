@@ -17,7 +17,7 @@ import {
   ProjectActions,
   ProjectHeader,
 } from './components';
-import { Milestone } from '@/hooks/milestones/types';
+import type { Milestone } from '@/hooks/milestones/types';
 
 export function ProjectMilestonesContent() {
   const router = useRouter();
@@ -76,12 +76,12 @@ export function ProjectMilestonesContent() {
   const projectType = job?.category || 'Other';
 
   // Handler to adapt form data to createMilestone's expected shape
-  const handleCreateMilestone: (data: {
+  const handleCreateMilestone = async (data: {
     title: string;
     amount: number;
-    description?: string;
-    due_date?: Date;
-  }) => Promise<Milestone | null> = async (data) => {
+    description?: string | undefined;
+    due_date?: Date | undefined;
+  }): Promise<Milestone | null> => {
     if (!projectId) return null;
     const milestoneData = {
       project_id: projectId,
@@ -94,6 +94,18 @@ export function ProjectMilestonesContent() {
     return await createMilestone(milestoneData);
   };
 
+  // Wrapper for MilestoneCreator to match its expected onSubmit signature (Promise<void>)
+  const handleMilestoneSubmit = async (data: {
+    title: string;
+    amount: number;
+    description?: string | undefined;
+    due_date?: Date | undefined;
+  }): Promise<void> => {
+    await handleCreateMilestone(data);
+    setActiveTab('milestones');
+    await handleMilestoneCreated();
+  };
+
   if (isLoading || !project) {
     return (
       <div className="container mx-auto py-8 px-4">
@@ -103,30 +115,6 @@ export function ProjectMilestonesContent() {
       </div>
     );
   }
-
-  const handleMilestoneSubmit = async (data: {
-    title: string;
-    amount: number;
-    description?: string | undefined;
-    due_date?: Date | undefined;
-  }): Promise<Milestone | null> => {
-    if (!projectId) return null;
-
-    // Ensure all required fields are present
-    const milestoneData = {
-      project_id: projectId,
-      title: data.title,
-      description: data.description || '',
-      amount: data.amount,
-      status: 'pending' as const,
-      due_date: data.due_date ? data.due_date.toISOString() : '',
-    };
-
-    const result = await createMilestone(milestoneData);
-    setActiveTab('milestones');
-    await handleMilestoneCreated();
-    return result;
-  };
 
   return (
     <div className="container mx-auto py-8 px-4">

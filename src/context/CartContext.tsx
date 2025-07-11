@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect } from 'react';
-import { CartContextType, CartAction, CartItem } from '@/types/cart';
+import type { CartContextType, CartAction, CartItem } from '@/types/cart';
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState, AppDispatch } from '@/store';
 import { addItem, removeItem, clear, setItems } from '@/store/cartSlice';

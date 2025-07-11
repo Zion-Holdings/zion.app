@@ -3,11 +3,12 @@ import React, {
   useContext,
   useEffect,
   useState,
-  ReactNode,
   useRef,
 } from 'react';
+import type { ReactNode } from 'react';
 import { useRouter } from 'next/router'; // Changed from useLocation
 import axios from 'axios';
+import type { InternalAxiosRequestConfig, AxiosResponse } from 'axios';
 
 export interface GlobalLoaderContextType {
   loading: boolean;
@@ -41,11 +42,11 @@ export function AppLoaderProvider({ children }: { children: ReactNode }) {
   const hideLoader = () => setLoading(false);
 
   useEffect(() => {
-    const onRequest = (config: unknown) => {
+    const onRequest = (config: InternalAxiosRequestConfig) => {
       showLoader();
       return config;
     };
-    const onResponse = (response: unknown) => {
+    const onResponse = (response: AxiosResponse) => {
       hideLoader();
       return response;
     };
