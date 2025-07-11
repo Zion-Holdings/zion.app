@@ -55,7 +55,7 @@ export default async function handler(
         configured: true
       }
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     logErrorToProduction('Supabase health check error:', { data: error });
     return res.status(500).json({ 
       message: 'Authentication service is temporarily unavailable. Please try again later.' 
