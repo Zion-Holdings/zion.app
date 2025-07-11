@@ -143,12 +143,12 @@ export class ProductionErrorMonitor {
       }
     };
     if (hasLoadTime || hasMemoryUsage) {
-      const perfMetrics: { loadTime?: number; memoryUsage?: { used?: number; total?: number; limit?: number } } = {};
-      if (hasLoadTime && perf.loadTime !== undefined) perfMetrics.loadTime = perf.loadTime;
-      if (hasMemoryUsage && perf.memoryUsage !== undefined) perfMetrics.memoryUsage = perf.memoryUsage;
+      const metrics: { loadTime?: number; memoryUsage?: { used?: number; total?: number; limit?: number } } = {};
+      if (hasLoadTime) metrics.loadTime = perf.loadTime as number;
+      if (hasMemoryUsage) metrics.memoryUsage = perf.memoryUsage as { used?: number; total?: number; limit?: number };
       return {
         ...baseReport,
-        performanceMetrics: perfMetrics
+        performanceMetrics: metrics
       };
     }
     return baseReport;
