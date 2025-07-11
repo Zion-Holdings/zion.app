@@ -1,0 +1,47 @@
+// src/utils/sentry-mock.ts
+
+const mockSentry = {
+  captureException: (..._args: any[]) => {},
+  captureMessage: (..._args: any[]) => {},
+  withScope: (cb: Function) => cb(),
+  configureScope: (..._args: any[]) => {},
+  init: (..._args: any[]) => {},
+  addBreadcrumb: (..._args: any[]) => {},
+  setUser: (..._args: any[]) => {},
+  setContext: (..._args: any[]) => {},
+  setTag: (..._args: any[]) => {},
+  setExtra: (..._args: any[]) => {},
+  flush: async () => {},
+  close: async () => {},
+  getCurrentHub: () => ({ getScope: () => ({}) }),
+  Severity: {},
+  Integrations: {},
+  Handlers: {},
+  BrowserClient: function () {},
+  NodeClient: function () {},
+  ReactNativeClient: function () {},
+  Hub: function () {},
+  Scope: function () {},
+  SDK_VERSION: 'mock',
+  lastEventId: () => undefined,
+  showReportDialog: () => {},
+  startTransaction: () => ({ finish: () => {} }),
+  addGlobalEventProcessor: () => {},
+  getCurrentHub: () => ({ getScope: () => ({}) }),
+  setHubOnCarrier: () => {},
+  getHubFromCarrier: () => ({ getScope: () => ({}) }),
+  withScope: (cb: Function) => cb(),
+  captureEvent: (..._args: any[]) => {},
+  captureMinidump: (..._args: any[]) => {},
+  addBreadcrumb: (..._args: any[]) => {},
+  setUser: (..._args: any[]) => {},
+  setContext: (..._args: any[]) => {},
+  setTag: (..._args: any[]) => {},
+  setExtra: (..._args: any[]) => {},
+  flush: async () => {},
+  close: async () => {},
+};
+
+export function onRequestError(..._args: any[]) {}
+
+export default mockSentry; 
