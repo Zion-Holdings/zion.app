@@ -792,21 +792,8 @@ const nextConfig = {
       });
     }
 
-    // Smart Sentry detection: Only disable Sentry if SKIP_SENTRY_BUILD or CI is set
-    const shouldDisableSentry = process.env.SKIP_SENTRY_BUILD === 'true' || process.env.CI === 'true';
-    if (shouldDisableSentry) {
-      console.log('🚫 Sentry disabled - using mock implementation (Smart Detection)');
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        '@sentry/nextjs': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
-        '@sentry/node': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
-        '@sentry/tracing': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
-        '@sentry/react': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
-        '@sentry/browser': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
-        '@sentry/node-core': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
-      };
-    } else {
-      // Remove any Sentry mock aliases so real SDK is used
+    // Always use real Sentry SDK unless in CI or SKIP_SENTRY_BUILD is set
+    if (!(process.env.SKIP_SENTRY_BUILD === 'true' || process.env.CI === 'true')) {
       if (config.resolve.alias) {
         delete config.resolve.alias['@sentry/nextjs'];
         delete config.resolve.alias['@sentry/node'];
@@ -818,15 +805,7 @@ const nextConfig = {
     }
 
     // Only mock dd-trace in CI or if SKIP_DATADOG is set
-    const shouldDisableDatadog = process.env.SKIP_DATADOG === 'true' || process.env.CI === 'true';
-    if (shouldDisableDatadog) {
-      console.log('🚫 DD-Trace disabled for CI build - using mock implementation');
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        'dd-trace': path.resolve(__dirname, 'src/utils/dd-trace-mock.ts'),
-      };
-    } else {
-      // Remove dd-trace mock alias so real SDK is used
+    if (!(process.env.SKIP_DATADOG === 'true' || process.env.CI === 'true')) {
       if (config.resolve.alias) {
         delete config.resolve.alias['dd-trace'];
       }
