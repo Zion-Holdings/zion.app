@@ -55,16 +55,16 @@ function handler(
   suggestions.push(...productSuggestions);
 
   // Add service suggestions
-  const serviceSuggestions = SERVICES
-    .filter((s) => match(s.title) || match(s.description))
-    .slice(0, 2) // Limit to 2 service suggestions
+  const serviceSuggestions = RAW_SERVICES
+    .filter((s) => match(s.name) || match(s.description))
+    .slice(0, 2)
     .map((s) => ({
-      id: s.id ?? '',
-      text: s.title,
-      slug: createSlug(s.title),
+      id: s.id ? String(s.id) : 'unknown',
+      text: s.name,
+      slug: createSlug(s.name),
       type: 'service' as const,
-      iconUrl: (s as any).image,
-      category: s.category ?? ''
+      iconUrl: s.images?.[0]?.url,
+      category: s.category || 'Uncategorized',
     }));
 
   suggestions.push(...serviceSuggestions);
