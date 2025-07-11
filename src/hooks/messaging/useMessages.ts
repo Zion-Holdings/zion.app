@@ -1,7 +1,7 @@
 
-import { UserDetails } from '@/types/auth';
+import type { UserDetails } from '@/types/auth';
 import { supabase } from '@/integrations/supabase/client';
-import { Message, Conversation } from '@/types/messaging';
+import type { Message, Conversation } from '@/types/messaging';
 import { toast } from '@/hooks/use-toast';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
