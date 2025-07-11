@@ -306,43 +306,37 @@ function EquipmentPageContent() {
   const [filterCategory, setFilterCategory] = useState('');
   const [showRecommended, setShowRecommended] = useState(false);
 
-  // Generate a consistent seed based on current filters for deterministic data
-  const dataSeed = useMemo(() => {
-    return `equipment-${filterCategory}-${showRecommended}`;
-  }, [filterCategory, showRecommended]);
+  // Remove dataSeed and artificial API delay
+  // const dataSeed = useMemo(() => {
+  //   return `equipment-${filterCategory}-${showRecommended}`;
+  // }, [filterCategory, showRecommended]);
 
   const fetchEquipment = useCallback(async (page: number, limit: number) => {
-    // Simulate realistic API delay
-    await new Promise(resolve => setTimeout(resolve, 300));
-
-    // Prefer real API if stubbed/mocked in tests
-    if (page === 1) {
-      try {
-        const res = await apiClient.get('/equipment');
-        if (Array.isArray(res?.data)) {
-          return {
-            items: res.data,
-            hasMore: false,
-            total: res.data.length,
-          };
-        }
-      } catch (apiErr: unknown) {
-        if (apiErr instanceof Error) {
-          logErrorToProduction('Error in fetchEquipment:', { data: apiErr.message });
-        } else {
-          logErrorToProduction('Error in fetchEquipment:', { data: String(apiErr) });
-        }
-        throw apiErr;
+    // Only fetch real data from the API
+    try {
+      const res = await apiClient.get('/equipment');
+      if (Array.isArray(res?.data)) {
+        return {
+          items: res.data,
+          hasMore: false,
+          total: res.data.length,
+        };
       }
+    } catch (apiErr: unknown) {
+      if (apiErr instanceof Error) {
+        logErrorToProduction('Error in fetchEquipment:', { data: apiErr.message });
+      } else {
+        logErrorToProduction('Error in fetchEquipment:', { data: String(apiErr) });
+      }
+      throw apiErr;
     }
-
     // If no data, return empty
     return {
       items: [],
       hasMore: false,
       total: 0,
     };
-  }, [sortBy, filterCategory, showRecommended, dataSeed]);
+  }, [sortBy, filterCategory, showRecommended]);
 
   const {
     items: equipment,
