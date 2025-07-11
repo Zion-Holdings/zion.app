@@ -66,10 +66,8 @@ export default function TranslationManager() {
     
     // Get all unique keys across all languages
     const allKeys = new Set<string>();
-    Object.values(currentTranslations).forEach(langTranslations => {
-      if (typeof langTranslations === 'object' && langTranslations !== null) {
-        Object.keys(langTranslations as Record<string, string>).forEach(key => allKeys.add(key));
-      }
+    Object.values(currentTranslations).forEach((langTranslations: Record<string, string>) => {
+      Object.keys(langTranslations).forEach(key => allKeys.add(key));
     });
     
     setFilteredKeys(Array.from(allKeys));
