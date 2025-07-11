@@ -16,12 +16,12 @@ const SERVICES: ServiceSuggestion[] = RAW_SERVICES.map(service => ({
 }));
 
 interface SearchSuggestion {
-  id?: string;
+  id?: string | undefined;
   text: string;
   slug: string;
   type: 'product' | 'service' | 'talent' | 'category' | 'skill' | 'recent' | 'doc' | 'blog';
-  iconUrl?: string;
-  category?: string;
+  iconUrl?: string | undefined;
+  category?: string | undefined;
 }
 
 function handler(
@@ -73,7 +73,7 @@ function handler(
     .filter((s) => match(s.title) || match(s.description))
     .slice(0, 2) // Limit to 2 service suggestions
     .map((s) => ({
-      id: s.id,
+      id: s.id ?? '',
       text: s.title,
       slug: createSlug(s.title),
       type: 'service' as const,
