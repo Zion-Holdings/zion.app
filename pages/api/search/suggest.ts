@@ -6,7 +6,14 @@ import { BLOG_POSTS } from '@/data/blog-posts';
 import { DOCS_SEARCH_ITEMS } from '@/data/docsSearchData';
 
 type ServiceSuggestion = { id?: string; title: string; description?: string; image?: string; category?: string };
-const SERVICES: ServiceSuggestion[] = RAW_SERVICES as ServiceSuggestion[];
+// Fix the type casting to ensure SERVICES has the correct type
+const SERVICES: ServiceSuggestion[] = RAW_SERVICES.map(service => ({
+  id: service.id,
+  title: service.title || '',
+  description: service.description || '',
+  image: (service as any).image,
+  category: service.category || ''
+}));
 
 interface SearchSuggestion {
   id?: string;

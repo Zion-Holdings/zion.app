@@ -6,14 +6,12 @@ import { server } from '@/mocks/server'; // MSW server
 import { http, HttpResponse } from 'msw';
 import { ProductListing } from '@/types/listings';
 import { MARKETPLACE_LISTINGS as allStaticMarketplaceData } from '@/data/marketplaceData';
-import { INITIAL_MARKETPLACE_PRODUCTS } from '@/data/initialMarketplaceProducts';
 import { SERVICES as allStaticServiceData } from '@/data/servicesData';
 
 
 // Combine all static data sources for link checking
 const _allKnownProductsForTest = [
   ...allStaticMarketplaceData,
-  ...INITIAL_MARKETPLACE_PRODUCTS,
   ...allStaticServiceData,
 ];
 

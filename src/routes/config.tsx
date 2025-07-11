@@ -41,7 +41,6 @@ import MarketplaceLanding from '@/pages/MarketplaceLanding';
 import Categories from '@/pages/Categories';
 import Blog from '@/pages/Blog';
 import ServicesPage from '@/pages/ServicesPage';
-import ProductsList from '@/pages/ProductsList';
 import ErrorGuard from '@/components/ErrorGuard';
 
 function guardRoutes(routes: AppRouteObject[]): AppRouteObject[] {
@@ -106,7 +105,6 @@ export const primaryRoutes: AppRouteObject[] = guardRoutes([
   { path: '/categories', element: <Categories />, metaTitle: 'Categories - Zion' },
   { path: '/blog', element: <Blog />, metaTitle: 'Blog - Zion', requiresAuth: false },
   { path: '/services', element: <ServicesPage />, metaTitle: 'Services - Zion', requiresAuth: false },
-  { path: '/products', element: <ProductsList />, metaTitle: 'Products - Zion', requiresAuth: false },
 ]);
 
 export const allRoutes: AppRouteObject[] = guardRoutes([
@@ -139,7 +137,6 @@ export const allRoutes: AppRouteObject[] = guardRoutes([
   { path: '/checkout/:id', element: <CheckoutPage />, requiresAuth: true },
   { path: '/oauth', element: <OAuthCallback /> },
   { path: '/auth/*', element: <AuthRoutes /> },
-  { path: '/marketplace/products', element: <ProductsList /> },
   { path: '/marketplace/*', element: <MarketplaceRoutes /> },
   { path: '/talent/*', element: <TalentRoutes /> },
   { path: '/admin/*', element: <AdminRoutes /> },
