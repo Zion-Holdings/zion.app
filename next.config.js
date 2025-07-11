@@ -890,13 +890,6 @@ const nextConfig = {
           // Disable cacheUnaffected to avoid Webpack usedExports conflict
           cacheUnaffected: false,
         };
-      } else {
-        // Ensure memory cache is properly configured
-        config.cache = {
-          type: 'memory',
-          maxGenerations: dev ? 1 : 5,
-          cacheUnaffected: false,
-        };
       }
 
     // Ensure webpack doesn't enable cacheUnaffected which conflicts with
