@@ -13,7 +13,7 @@ import { useCommunity } from "@/context";
 import { useToast } from "@/hooks/use-toast";
 import { useFollowedCategories } from "@/hooks/useFollowedCategories";
 import { logInfo } from '@/utils/productionLogger';
-import { MessageSquare, Briefcase, Code, FileText, Megaphone, Search } from 'lucide-react';
+import { MessageSquare, Briefcase, Code, FileText, Megaphone, Search, type LucideIcon } from 'lucide-react';
 
 
 
@@ -76,7 +76,7 @@ function CategoryContent({
 }: {
   categoryId: string;
   category: ForumCategoryInfo;
-  IconComponent: React.ComponentType<unknown>;
+  IconComponent: LucideIcon;
   user: unknown;
 }) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -91,6 +91,11 @@ function CategoryContent({
     index === self.findIndex(p => p.id === post.id)
   );
 
+  // Type guard for user
+  function isAdminUser(u: unknown): u is { userType?: string; role?: string } {
+    return !!u && (typeof u === 'object') && ('userType' in u || 'role' in u);
+  }
+
   // Apply search filter
   const filteredPosts = searchQuery 
     ? categoryPosts.filter(post => 
@@ -100,7 +105,7 @@ function CategoryContent({
       )
     : categoryPosts;
 
-  const canCreatePost = user && (!category.adminOnly || user.userType === 'admin' || user.role === 'admin');
+  const canCreatePost = Boolean(user && (!category.adminOnly || (isAdminUser(user) && (user.userType === 'admin' || user.role === 'admin'))));
   const { isFollowed, follow, unfollow } = useFollowedCategories();
   const { toast } = useToast();
 
