@@ -5,9 +5,17 @@
  * It prevents the "Cannot read properties of undefined (reading 'env')" error.
  */
 
+// Add this at the top of the file to extend globalThis
+declare global {
+  // eslint-disable-next-line no-var
+  var process: {
+    env: Record<string, string>;
+  };
+}
+
 // Define the global process object if it doesn't exist
-if (typeof globalThis !== 'undefined' && typeof (globalThis as any).process === 'undefined') {
-  (globalThis as any).process = {
+if (typeof globalThis !== 'undefined' && typeof globalThis.process === 'undefined') {
+  globalThis.process = {
     env: {
       NODE_ENV: 'production', // Default to production for safety
       NEXT_PUBLIC_APP_URL: '',
