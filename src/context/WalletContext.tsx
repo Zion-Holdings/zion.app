@@ -5,7 +5,7 @@ import { getAppKitProjectId } from '@/config/env';
 
 // Use getAppKitProjectId from shared env config
 
-import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect, useRef } from 'react';
+import React, { createContext, useState, useContext, useCallback, useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
 
 // Use real wallet imports except in CI/build environments
