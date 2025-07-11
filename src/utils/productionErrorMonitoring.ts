@@ -141,12 +141,17 @@ export class ProductionErrorMonitor {
       },
       performanceMetrics: {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         ...(typeof this.getPerformanceMetrics().loadTime === 'number' && !isNaN(this.getPerformanceMetrics().loadTime)
           ? { loadTime: this.getPerformanceMetrics().loadTime as number }
           : {}),
         ...(this.getPerformanceMetrics().memoryUsage !== undefined
           ? { memoryUsage: this.getPerformanceMetrics().memoryUsage as { used?: number; total?: number; limit?: number; } }
           : {})
+=======
+        ...(typeof this.getPerformanceMetrics().loadTime === 'number' ? { loadTime: this.getPerformanceMetrics().loadTime } : {}),
+        ...(this.getPerformanceMetrics().memoryUsage ? { memoryUsage: this.getPerformanceMetrics().memoryUsage } : {})
+>>>>>>> Stashed changes
 =======
         ...(typeof this.getPerformanceMetrics().loadTime === 'number' ? { loadTime: this.getPerformanceMetrics().loadTime } : {}),
         ...(this.getPerformanceMetrics().memoryUsage ? { memoryUsage: this.getPerformanceMetrics().memoryUsage } : {})
