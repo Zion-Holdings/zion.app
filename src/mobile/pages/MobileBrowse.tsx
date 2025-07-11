@@ -11,11 +11,20 @@ import { logInfo } from '@/utils/productionLogger';
 // Remove jobsData mock array and replace with real API call
 // Move hooks inside the component
 
+type Job = {
+  id: string;
+  title: string;
+  company: string;
+  location: string;
+  postedAt: string;
+  description: string;
+};
+
 export function MobileBrowse() {
   const { user } = useAuth();
   const isClient = user?.userType === 'client' || user?.userType === 'admin';
   const [browseType, setBrowseType] = useState<"jobs" | "talents">(isClient ? "talents" : "jobs");
-  const [jobs, setJobs] = useState([]);
+  const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -24,7 +33,7 @@ export function MobileBrowse() {
       try {
         // Reactivate: Use mock data for jobs API
         await new Promise(resolve => setTimeout(resolve, 400));
-        const data = [
+        const data: Job[] = [
           { id: 'job-1', title: 'AI Researcher', company: 'Zion AI', location: 'Remote', postedAt: '2024-07-01', description: 'Work on cutting-edge AI research projects.' },
           { id: 'job-2', title: 'Frontend Developer', company: 'Zion Web', location: 'Remote', postedAt: '2024-07-02', description: 'Build beautiful UIs for the Zion platform.' },
           { id: 'job-3', title: 'Data Scientist', company: 'Zion Data', location: 'Remote', postedAt: '2024-07-03', description: 'Analyze and model large datasets for AI products.' },
