@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import type { TalentProfile as TalentProfileType } from "@/types/talent";
 import type { ProfileData } from "@/types/profile";
-// TODO: Replace with valid data source or fallback logic
 import { convertProfileToTalentProfile } from "@/utils/profileConverter";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
