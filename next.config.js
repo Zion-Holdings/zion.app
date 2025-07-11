@@ -438,18 +438,16 @@ const nextConfig = {
     // Simplified webpack configuration to bypass CSS issues
     const require = createRequire(import.meta.url);
     
-    // Completely disable CSS minimizer plugin to prevent static/css processing errors
-    if (config.optimization && config.optimization.minimizer) {
-      config.optimization.minimizer = config.optimization.minimizer.filter(
-        minimizer => !minimizer.constructor.name.includes('CssMinimizer')
-      );
-    }
-    
-    // Completely disable CSS processing by overriding optimization
-    if (config.optimization) {
-      config.optimization.minimize = false;
-      config.optimization.minimizer = [];
-    }
+    // Remove the following block to reactivate CSS minimization and processing:
+    // if (config.optimization && config.optimization.minimizer) {
+    //   config.optimization.minimizer = config.optimization.minimizer.filter(
+    //     minimizer => !minimizer.constructor.name.includes('CssMinimizer')
+    //   );
+    // }
+    // if (config.optimization) {
+    //   config.optimization.minimize = false;
+    //   config.optimization.minimizer = [];
+    // }
     
     // Prevent Node.js core modules from being polyfilled in the client bundle
     if (!isServer) {
