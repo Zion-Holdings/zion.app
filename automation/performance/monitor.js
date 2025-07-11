@@ -108,9 +108,9 @@ class PerformanceMonitor {
         status: stats.total > this.thresholds.bundleSize ? 'critical' : 
                 stats.total > this.thresholds.bundleSize * 0.8 ? 'warning' : 'good'
       };
-    } catch (error) {
-      console.error('Bundle size check failed:', error);
-      return { error: error.message };
+    } catch (_error) {
+      // Directory might not exist (e.g., not built yet)
+      return { total: 0 };
     }
   }
 
@@ -132,8 +132,7 @@ class PerformanceMonitor {
         }
       }
     } catch (_error) {
-      // Directory might not exist (e.g., not built yet)
-      return { total: 0 };
+      // Directory might not exist
     }
     
     return { total: totalSize };
@@ -151,11 +150,11 @@ class PerformanceMonitor {
           chunks: Object.keys(manifest.chunks || {}).length,
           buildTime: await this.getLastBuildTime()
         };
-      } catch {
+      } catch (_error) {
         return { status: 'no_build' };
       }
-    } catch (error) {
-      return { error: error.message };
+    } catch (_error) {
+      return { error: _error.message };
     }
   }
 
@@ -164,7 +163,7 @@ class PerformanceMonitor {
       const buildDir = path.join(process.cwd(), '.next');
       const stats = await fs.stat(buildDir);
       return stats.mtime;
-    } catch {
+    } catch (_error) {
       return null;
     }
   }
@@ -200,8 +199,8 @@ class PerformanceMonitor {
         heavy: this.identifyHeavyDependencies(deps),
         outdated: await this.checkOutdatedDependencies()
       };
-    } catch (error) {
-      return { error: error.message };
+    } catch (_error) {
+      return { error: _error.message };
     }
   }
 
@@ -235,8 +234,8 @@ class PerformanceMonitor {
         componentFiles: files.components,
         averageFileSize: files.averageSize
       };
-    } catch (error) {
-      return { error: error.message };
+    } catch (_error) {
+      return { error: _error.message };
     }
   }
 
@@ -286,7 +285,7 @@ class PerformanceMonitor {
       const metricsPath = path.join(process.cwd(), 'performance-metrics.json');
       const metrics = JSON.parse(await fs.readFile(metricsPath, 'utf8'));
       return metrics;
-    } catch {
+    } catch (_error) {
       return {
         loadTime: 0,
         renderTime: 0,
