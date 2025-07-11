@@ -25,9 +25,6 @@ import ReplyCard from "@/components/community/ReplyCard";
 import ReplyForm from "@/components/community/ReplyForm";
 import { useToast } from "@/hooks/use-toast";
 
-// TODO: Replace mockPost and mockReplies with real API integration
-// Remove mock data and fetch forum post and replies from backend
-// If no data, show empty state or error message
 
 export default function ForumPostPage() {
   // Using `useParams` without type arguments avoids issues when TypeScript
@@ -54,7 +51,7 @@ export default function ForumPostPage() {
         updatedAt: '2024-07-01T10:00:00.000Z',
         upvotes: 12,
         downvotes: 0,
-        categoryId: 'general',
+        categoryId: 'project-help',
         tags: ['ziongpt', 'project-management'],
         replyCount: 2,
       });
