@@ -25,6 +25,7 @@ import {
 } from '@/components/ui/popover';
 import { AIMilestoneGenerator } from './AIMilestoneGenerator';
 import type { GeneratedMilestone } from '@/hooks/useMilestoneGenerator';
+import type { ControllerRenderProps } from 'react-hook-form';
 
 const formSchema = z.object({
   title: z.string().min(1, 'Title is required'),
@@ -122,117 +123,97 @@ export function AddMilestoneForm({
           <FormField
             control={form.control}
             name="title"
-            render={({ field }: { field: unknown }) => {
-              if (typeof field !== 'object' || field === null) return null;
-              return (
-                <FormItem>
-                  <FormLabel>Title</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Milestone title"
-                      {...(field as object)}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              );
-            }}
+            render={({ field }: { field: ControllerRenderProps<MilestoneFormValues, 'title'> }) => (
+              <FormItem>
+                <FormLabel>Title</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Milestone title"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
           />
 
           <FormField
             control={form.control}
             name="description"
-            render={({ field }: { field: unknown }) => {
-              if (typeof field !== 'object' || field === null) return null;
-              return (
-                <FormItem>
-                  <FormLabel>Description (optional)</FormLabel>
-                  <FormControl>
-                    <Textarea
-                      placeholder="Describe what needs to be delivered"
-                      className="min-h-[100px]"
-                      {...(field as object)}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              );
-            }}
+            render={({ field }: { field: ControllerRenderProps<MilestoneFormValues, 'description'> }) => (
+              <FormItem>
+                <FormLabel>Description (optional)</FormLabel>
+                <FormControl>
+                  <Textarea
+                    placeholder="Describe what needs to be delivered"
+                    className="min-h-[100px]"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <FormField
               control={form.control}
               name="due_date"
-              render={({ field }: { field: unknown }) => {
-                if (typeof field !== 'object' || field === null) return null;
-                return (
-                  <FormItem className="flex flex-col">
-                    <FormLabel>Due Date (optional)</FormLabel>
-                    <Popover>
-                      <PopoverTrigger asChild>
-                        <FormControl>
-                          <Button
-                            variant="outline"
-                            className="w-full pl-3 text-left font-normal"
-                          >
-                            {(field as { value?: unknown }).value ? (
-                              format((field as { value: Date }).value, 'PPP')
-                            ) : (
-                              <span className="text-muted-foreground">
-                                Pick a date
-                              </span>
-                            )}
-                            <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                          </Button>
-                        </FormControl>
-                      </PopoverTrigger>
-                      <PopoverContent className="w-auto p-0" align="start">
-                        <Calendar
-                          mode="single"
-                          selected={
-                            (field as { value?: Date }).value || undefined
-                          }
-                          onSelect={
-                            (
-                              field as {
-                                onChange?: (date: Date | undefined) => void;
-                              }
-                            ).onChange || (() => {})
-                          }
-                          disabled={(date) => date < new Date()}
-                          initialFocus
-                          required={false}
-                        />
-                      </PopoverContent>
-                    </Popover>
-                    <FormMessage />
-                  </FormItem>
-                );
-              }}
+              render={({ field }: { field: ControllerRenderProps<MilestoneFormValues, 'due_date'> }) => (
+                <FormItem className="flex flex-col">
+                  <FormLabel>Due Date (optional)</FormLabel>
+                  <Popover>
+                    <PopoverTrigger asChild>
+                      <FormControl>
+                        <Button
+                          variant="outline"
+                          className="w-full pl-3 text-left font-normal"
+                        >
+                          {field.value ? (
+                            format(field.value, 'PPP')
+                          ) : (
+                            <span className="text-muted-foreground">
+                              Pick a date
+                            </span>
+                          )}
+                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                        </Button>
+                      </FormControl>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-auto p-0" align="start">
+                      <Calendar
+                        mode="single"
+                        selected={field.value || undefined}
+                        onSelect={field.onChange}
+                        disabled={(date) => date < new Date()}
+                        initialFocus
+                        required={false}
+                      />
+                    </PopoverContent>
+                  </Popover>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
 
             <FormField
               control={form.control}
               name="amount"
-              render={({ field }: { field: unknown }) => {
-                if (typeof field !== 'object' || field === null) return null;
-                return (
-                  <FormItem>
-                    <FormLabel>Amount ($)</FormLabel>
-                    <FormControl>
-                      <Input
-                        type="number"
-                        min="0"
-                        step="0.01"
-                        placeholder="0.00"
-                        {...(field as object)}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                );
-              }}
+              render={({ field }: { field: ControllerRenderProps<MilestoneFormValues, 'amount'> }) => (
+                <FormItem>
+                  <FormLabel>Amount ($)</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="number"
+                      min="0"
+                      step="0.01"
+                      placeholder="0.00"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
           </div>
 
