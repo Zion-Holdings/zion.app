@@ -18,6 +18,8 @@ export function useConversations(
   setUnreadCount: (count: number) => void,
   setIsLoading: (loading: boolean) => void
 ) {
+  if (!supabase) throw new Error('Supabase client not initialized');
+
   /**
    * Fetch conversations for the current user
    */
@@ -134,7 +136,7 @@ export function useConversations(
             user_two_id: recipientId,
             user_one_name: user.name,
             user_two_name: recipientData.name,
-            user_one_avatar: user.avatar_url,
+            user_one_avatar: user.avatarUrl,
             user_two_avatar: recipientData.avatar_url,
             context_type: contextType,
             context_id: contextId,
