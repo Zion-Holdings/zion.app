@@ -1,6 +1,8 @@
 // Enhanced Error Logging System for Production Debugging
 // Provides structured error collection, context gathering, and intelligent filtering
 
+import { logErrorToProduction } from '@/utils/productionLogger';
+
 interface ErrorContext {
   timestamp: number;
   url?: string;
@@ -200,8 +202,8 @@ class EnhancedErrorLogger {
 
       // Log to console in development
       if (typeof process !== 'undefined' && process.env?.NODE_ENV === 'development') {
-        // Only keep console.error for lint compliance
-        console.error(enhancedError.message);
+        // Only keep logErrorToProduction for lint compliance
+        logErrorToProduction(enhancedError.message);
       }
 
       // Report critical errors immediately
@@ -210,7 +212,7 @@ class EnhancedErrorLogger {
       }
 
     } catch (loggerError) {
-      console.error('Error in enhanced error logger:', loggerError);
+      logErrorToProduction('Error in enhanced error logger:', loggerError);
     }
   }
 
