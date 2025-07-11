@@ -387,10 +387,10 @@ class PerformanceOptimizer {
         logPerformance('Bundle Size', bundleSize);
         if (bundleSize > this.config.bundleSizeLimit * 1024) {
           logWarn('Large bundle size detected', { data:  {
-            size: `${(bundleSize / 1024 }).toFixed(2)}KB`,
+            size: `${(bundleSize / 1024).toFixed(2)}KB`,
             limit: `${this.config.bundleSizeLimit}KB`,
             recommendation: 'Consider implementing more aggressive code splitting'
-          });
+          }});
         }
       }
     }

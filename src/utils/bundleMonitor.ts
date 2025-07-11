@@ -202,10 +202,10 @@ class BundleMonitor {
     if (Math.abs(sizeChange) > 50 * 1024) { // > 50KB change
       const changeType = sizeChange > 0 ? 'increased' : 'decreased';
       logInfo('Bundle size ${changeType}:', { data:  {
-        change: `${(Math.abs(sizeChange }) / 1024).toFixed(2)}KB`,
+        change: `${(Math.abs(sizeChange) / 1024).toFixed(2)}KB`,
         current: `${(current.totalBundleSize / 1024).toFixed(2)}KB`,
         score: current.performanceScore
-      });
+      }});
     }
 
     if (Math.abs(scoreChange) > 5) {
