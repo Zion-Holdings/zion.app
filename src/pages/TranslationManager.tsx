@@ -82,7 +82,7 @@ export default function TranslationManager() {
       const allKeys = new Set<string>();
       Object.values(translations).forEach(langTranslations => {
         if (typeof langTranslations === 'object' && langTranslations !== null) {
-          Object.keys(langTranslations).forEach(key => allKeys.add(key));
+          Object.keys(langTranslations as Record<string, string>).forEach(key => allKeys.add(key));
         }
       });
       setFilteredKeys(Array.from(allKeys));
@@ -95,7 +95,7 @@ export default function TranslationManager() {
     // Search in keys and values
     Object.values(translations).forEach(langTranslations => {
       if (typeof langTranslations === 'object' && langTranslations !== null) {
-        Object.entries(langTranslations).forEach(([key, value]) => {
+        Object.entries(langTranslations as Record<string, string>).forEach(([key, value]) => {
           if (
             key.toLowerCase().includes(query) || 
             (typeof value === 'string' && value.toLowerCase().includes(query))
@@ -138,8 +138,8 @@ export default function TranslationManager() {
           updatedTranslations[lang.code] = {};
         }
         const editedKey = editedTranslations[key];
-        if (editedKey && typeof editedKey === 'object') {
-          updatedTranslations[lang.code][key] = editedKey[lang.code] || '';
+        if (editedKey && typeof editedKey === 'object' && editedKey[lang.code] !== undefined) {
+          updatedTranslations[lang.code][key] = editedKey[lang.code];
         }
       });
       
