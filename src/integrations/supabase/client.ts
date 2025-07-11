@@ -2,7 +2,6 @@
 // We also import the actual supabase instance (which might be null) to check its status.
 import { supabase as actualSupabaseClientFromUtils, createClient } from '@/utils/supabase/client';
 import { logWarn, logDebug } from '@/utils/productionLogger';
-import { checkOnline as _checkOnline } from '@/utils/network';
 
 // Export the createClient function directly for any part of the app that might need to call it.
 // However, direct usage of `supabase` instance is preferred.

@@ -82,8 +82,8 @@ class DevelopmentLogger {
   component(name: string, action: 'mount' | 'unmount' | 'update', props?: LogContext): void {
     if (!this.enabled) return;
     
-    const emoji = action === 'mount' ? '🟢' : action === 'unmount' ? '🔴' : '🔄';
-    logInfo('[COMPONENT] ${emoji} ${name} ${action}', { data: props });
+    const _emoji = getEmojiForLevel(level);
+    logInfo('[COMPONENT] ${_emoji} ${name} ${action}', { data: props });
   }
 }
 
