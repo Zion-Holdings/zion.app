@@ -41,14 +41,14 @@ import MarketplaceLanding from '@/pages/MarketplaceLanding';
 import Categories from '@/pages/Categories';
 import Blog from '@/pages/Blog';
 import ServicesPage from '@/pages/ServicesPage';
-import { ErrorGuard as _ErrorGuard } from '@/components/ErrorGuard';
+import ErrorGuard from '@/components/ErrorGuard';
 import { LoginForm } from '@/components/auth/login';
 import OAuthCallback from '@/pages/OAuthCallback';
-import { Dashboard as _Dashboard } from '@/pages/Dashboard';
-import { Profile as _Profile } from '@/pages/auth/Profile';
-import { ForgotPassword as _ForgotPassword } from '@/pages/auth/ForgotPassword';
-import { ResetPassword as _ResetPassword } from '@/pages/auth/ResetPassword';
-import { Wallet as _Wallet } from '@/pages/auth/Wallet';
+import Dashboard from '@/pages/Dashboard';
+import Profile from '@/pages/Profile';
+import ForgotPassword from '@/pages/ForgotPassword';
+import ResetPassword from '@/pages/ResetPassword';
+import WalletDashboard from '@/pages/WalletDashboard';
 import CheckoutPage from '@/pages/CheckoutPage';
 import AboutPage from '@/pages/About';
 import PartnersPage from '@/pages/Partners';
@@ -90,6 +90,20 @@ import {
  CommunityRoutes,   // Assuming CommunityRoutes is a group of routes
 } from '.'; // Importing from the same directory (src/routes)
 
+// Utility to wrap routes with ErrorGuard
+function guardRoutes(routes: AppRouteObject[]): AppRouteObject[] {
+  return routes.map((route: AppRouteObject) => {
+    const wrappedRoute = { ...route };
+    if (route.element) {
+      wrappedRoute.element = <ErrorGuard>{route.element}</ErrorGuard>;
+    }
+    if (route.children) {
+      wrappedRoute.children = guardRoutes(route.children);
+    }
+    return wrappedRoute;
+  });
+}
+
 export const primaryRoutes: AppRouteObject[] = guardRoutes([
   { path: '/', element: <RootPage /> },
   {
@@ -113,7 +127,7 @@ export const allRoutes: AppRouteObject[] = guardRoutes([
   { path: '/zion-global-2025', element: <SummitPage />, metaTitle: 'Zion Global Summit 2025' },
   {
     path: '/dashboard',
-    element: <_Dashboard />,
+    element: <Dashboard />,
     metaTitle: 'Dashboard - Zion',
     requiresAuth: true,
   },

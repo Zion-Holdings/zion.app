@@ -1,4 +1,4 @@
-import { Job as _Job } from './jobs';
+import type { Job } from './jobs';
 
 export type ProjectStatus = 
   | 'offer_sent'
