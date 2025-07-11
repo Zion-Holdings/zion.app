@@ -88,7 +88,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
             select: {
               name: true,
               slug: true,
-              description: true,
+              // description: true, // Removed as it does not exist in the type
             },
           });
 
