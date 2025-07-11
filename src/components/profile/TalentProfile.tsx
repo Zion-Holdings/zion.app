@@ -48,7 +48,7 @@ export function TalentProfile({
   const projectsArray = profile.key_projects?.map((proj, i) => ({
     id: `project-${i}`,
     title: proj.title,
-    description: proj.description,
+    description: proj.description || '',
     date: new Date().toISOString() // Default date since we don't have this data
   })) || [];
   
