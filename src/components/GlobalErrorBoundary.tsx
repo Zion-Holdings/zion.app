@@ -17,7 +17,11 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
   const [componentStack, setComponentStack] = useState<string | undefined>(undefined);
 
   const handleReportIssue = async (error: Error) => {
+<<<<<<< HEAD
     const logs: string[] = [];
+=======
+    const logs = []; // Replaced getCapturedLogs() with empty array
+>>>>>>> 29a7c3a1 (chore: stage all unstaged files for rebase and push)
     const id = traceId || generateTraceId();
     await sendErrorToBackend({
       message: error.message,
