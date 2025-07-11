@@ -44,50 +44,33 @@ export default function TokenIntegrations() {
   const [stake, setStake] = useState(0);
   const [suggested, setSuggested] = useState<string | null>(null);
 
-  // --- Mock LayerZero Functions ---
-  const mockGetLayerZeroFee = async (
-    sourceChain: string,
-    destinationChain: string,
-    tokenAmount: string
-  ): Promise<string> => {
-    logInfo(
-      `[Mock L0] Estimating fee for ${tokenAmount} ZION$ from ${sourceChain} to ${destinationChain}`
-    );
-    // Simulate network delay and fee calculation
-    await new Promise(resolve => setTimeout(resolve, 500));
-    const calculatedFee = (parseFloat(tokenAmount) * 0.001).toFixed(4); // Example fee: 0.1%
-    return `${calculatedFee} ZION$`;
+  // --- LayerZero Bridge Integration Point ---
+  // TODO: Replace the following with real LayerZero SDK integration
+  // Example steps:
+  // 1. Get signer from useWallet()
+  // 2. Instantiate LayerZero Endpoint contract
+  // 3. Call LayerZero's send() or equivalent function, passing parameters like:
+  //    - destination chain ID (LayerZero specific)
+  //    - recipient address (likely `address`)
+  //    - amount
+  //    - adapter parameters (for gas, etc.)
+  //    - fee (obtained from `estimateFee` or similar LayerZero SDK function)
+
+  const estimateFee = async (sourceChain: string, destinationChain: string, tokenAmount: string): Promise<string> => {
+    // TODO: Implement real fee estimation using LayerZero SDK
+    throw new Error('LayerZero fee estimation not yet implemented');
   };
 
-  const mockSendTokenViaLayerZero = async (
+  const sendTokenViaLayerZero = async (
     sourceChain: string,
     destinationChain: string,
     tokenAmount: string,
     userAddress: string | null
   ): Promise<{ transactionHash: string; arrivalTimeEstimate: string }> => {
-    logInfo(
-      `[Mock L0] Sending ${tokenAmount} ZION$ from ${sourceChain} to ${destinationChain} for address ${userAddress}`
-    );
-    // Simulate network delay for transaction
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    // Record onchain tx logs (placeholder)
-    logInfo(`[Mock L0] Recording on-chain tx log for source chain ${sourceChain}`);
-    // Enforce rate limits (placeholder)
-    logInfo(`[Mock L0] Checking rate limits for user ${userAddress}`);
-    // Use burn-and-mint model if tokens are wrapped (placeholder logic)
-    if (sourceChain !== 'ethereum' || destinationChain !== 'ethereum') {
-      logInfo('[Mock L0] Using burn-and-mint model for wrapped ZION$');
-    }
-
-    const randomHash = `0x${[...Array(64)].map(() => Math.floor(Math.random() * 16).toString(16)).join('')}`;
-    const arrivalTime = Math.floor(Math.random() * (45 - 10 + 1)) + 10; // Random time between 10-45 seconds
-
-    return {
-      transactionHash: randomHash,
-      arrivalTimeEstimate: `${arrivalTime}s`,
-    };
+    // TODO: Implement real token bridging using LayerZero SDK
+    throw new Error('LayerZero bridging not yet implemented');
   };
-  // --- End Mock LayerZero Functions ---
+  // --- End LayerZero Bridge Integration Point ---
 
   const handleEstimateFee = async () => {
     if (!fromChain || !toChain || !amount || parseFloat(amount) <= 0) {
@@ -99,7 +82,7 @@ export default function TokenIntegrations() {
     setStatus('Estimating fee...');
     setFee(null);
     try {
-      const estimatedFee = await mockGetLayerZeroFee(fromChain, toChain, amount);
+      const estimatedFee = await estimateFee(fromChain, toChain, amount);
       setFee(estimatedFee);
       setStatus('Fee estimated.');
     } catch (e: unknown) {
@@ -122,25 +105,13 @@ export default function TokenIntegrations() {
     setStatus(`Initiating bridge for ${amount} ZION$ from ${fromChain} to ${toChain}...`);
     setTxHash(null);
 
-    // Integration point for LayerZero bridge logic.
-    // Replace `mockSendTokenViaLayerZero` with real SDK calls when wiring up the production bridge.
-    // Example steps:
-    // 1. Get signer from useWallet()
-    // 2. Instantiate LayerZero Endpoint contract
-    // 3. Call LayerZero's send() or equivalent function, passing parameters like:
-    //    - destination chain ID (LayerZero specific)
-    //    - recipient address (likely `address`)
-    //    - amount
-    //    - adapter parameters (for gas, etc.)
-    //    - fee (obtained from `estimateFee` or similar LayerZero SDK function)
-
     try {
       // Optional: Re-estimate fee or use a pre-estimated one if UI supports it
-      const currentFee = fee || await mockGetLayerZeroFee(fromChain, toChain, amount);
+      const currentFee = fee || await estimateFee(fromChain, toChain, amount);
       setFee(currentFee); // Update fee display if it was re-estimated
       setStatus(`Bridging with fee: ${currentFee}. Please confirm in your wallet.`);
 
-      const result = await mockSendTokenViaLayerZero(fromChain, toChain, amount, address);
+      const result = await sendTokenViaLayerZero(fromChain, toChain, amount, address);
       setTxHash(result.transactionHash);
       setStatus(`Transaction submitted! ZION$ expected on ${toChain} in approx. ${result.arrivalTimeEstimate}. Tx: ${result.transactionHash}`);
     } catch (e: unknown) {
