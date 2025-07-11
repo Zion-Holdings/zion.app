@@ -95,16 +95,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     setIsLoading(true); // Set loading true at the start of login attempt
     try {
       // Production/Supabase mode - attempt to sign in with Supabase
-<<<<<<< HEAD
-      if (!supabase) {
-        throw new Error("Supabase client is not configured");
-      }
-      
-      const { error: supabaseError } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      });
-=======
       let supabaseError;
       if (supabase) {
         ({ error: supabaseError } = await supabase.auth.signInWithPassword({
@@ -114,7 +104,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       } else {
         supabaseError = { message: 'Supabase client not initialized.' };
       }
->>>>>>> f21567bffd098e623c9a927edcb74896bc021795
 
       if (supabaseError) {
         logErrorToProduction("AuthProvider: Supabase authentication failed", supabaseError, { context: 'Supabase Auth Login' });
@@ -275,26 +264,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 if (session?.user && (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED' || event === 'USER_UPDATED')) {
                     setIsLoading(true); // Set loading before starting async profile fetch
                     if (process.env.NODE_ENV === 'development') {
-<<<<<<< HEAD
-                        logInfo('[AuthProvider DEBUG] Attempting to fetch profile for user ID:', { data: session.user.id });
-                    }
-                    
-                    if (!supabase) {
-                        throw new Error("Supabase client is not available for profile fetch");
-                    }
-                    
-                    const { data: profile, error: profileError } = await supabase
-                        .from('profiles')
-                        .select('*')
-                        .eq('id', session.user.id)
-                        .single();
-
-                    if (process.env.NODE_ENV === 'development') {
-                        logInfo('[AuthProvider DEBUG] Raw profile data:', { data: JSON.stringify(profile, null, 2) });
-                        logInfo('[AuthProvider DEBUG] Profile fetch error (if any):', { data: JSON.stringify(profileError, null, 2) });
-=======
                         logInfo('[AuthProvider DEBUG] Session and user found, and event is appropriate. User ID:', { data: { userId: session.user.id, event: event } });
->>>>>>> f21567bffd098e623c9a927edcb74896bc021795
                     }
 
                     try {

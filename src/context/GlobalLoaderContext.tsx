@@ -42,19 +42,11 @@ export function AppLoaderProvider({ children }: { children: ReactNode }) {
   const hideLoader = () => setLoading(false);
 
   useEffect(() => {
-<<<<<<< HEAD
-    const onRequest = (config: any) => {
-      showLoader();
-      return config;
-    };
-    const onResponse = (response: any) => {
-=======
     const onRequest = (config: InternalAxiosRequestConfig) => {
       showLoader();
       return config;
     };
     const onResponse = (response: AxiosResponse) => {
->>>>>>> f21567bffd098e623c9a927edcb74896bc021795
       hideLoader();
       return response;
     };

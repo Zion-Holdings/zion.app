@@ -77,7 +77,9 @@ export const NotificationProvider = ({ children }: { children: ReactNode }): Rea
         .subscribe();
         
       return () => {
-        supabase.removeChannel(channel);
+        if (supabase) {
+          supabase.removeChannel(channel);
+        }
       };
     }
     return undefined;

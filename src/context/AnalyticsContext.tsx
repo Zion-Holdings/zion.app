@@ -70,11 +70,7 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
       type,
       path: router.pathname,
       timestamp: Date.now(),
-<<<<<<< HEAD
-      userId: user?.id || null,
-=======
       userId: user?.id ?? null,
->>>>>>> f21567bffd098e623c9a927edcb74896bc021795
       metadata
     };
     
@@ -91,10 +87,7 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
           metadata: metadata
         }]);
       }
-<<<<<<< HEAD
       
-=======
->>>>>>> f21567bffd098e623c9a927edcb74896bc021795
       if (process.env.NODE_ENV === 'development') {
         logInfo(`Analytics event tracked: ${type}`, { data: metadata });
       }

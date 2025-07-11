@@ -55,15 +55,7 @@ function handler(
   suggestions.push(...productSuggestions);
 
   // Add service suggestions
-<<<<<<< HEAD
   const serviceSuggestions = RAW_SERVICES
-=======
-<<<<<<< HEAD
-  const serviceSuggestions = SERVICES
-=======
-  const serviceSuggestions = RAW_SERVICES
->>>>>>> 29a7c3a1 (chore: stage all unstaged files for rebase and push)
->>>>>>> f21567bffd098e623c9a927edcb74896bc021795
     .filter((s) => match(s.title) || match(s.description))
     .slice(0, 2)
     .map((s) => ({
@@ -71,11 +63,7 @@ function handler(
       text: s.title,
       slug: createSlug(s.title),
       type: 'service' as const,
-<<<<<<< HEAD
       iconUrl: s.image,
-=======
-      iconUrl: (s as any).image,
->>>>>>> 29a7c3a1 (chore: stage all unstaged files for rebase and push)
       category: s.category || 'Uncategorized',
     }));
 

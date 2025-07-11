@@ -28,11 +28,7 @@ export function mapProfileToUser(user: SupabaseUser, profile: any): UserProfile 
     id: user.id,
     email: user.email || "",
     displayName: profile.display_name || "",
-<<<<<<< HEAD
-    userType: userType,
-=======
     userType: userType ?? null,
->>>>>>> f21567bffd098e623c9a927edcb74896bc021795
     profileComplete: Boolean(profile.profile_complete),
     created_at: (profile.created_at && !isNaN(new Date(profile.created_at).getTime())) ? new Date(profile.created_at).toISOString() : new Date().toISOString(),
     updated_at: (profile.updated_at && !isNaN(new Date(profile.updated_at).getTime())) ? new Date(profile.updated_at).toISOString() : new Date().toISOString(),

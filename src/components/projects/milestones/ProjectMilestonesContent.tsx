@@ -81,11 +81,7 @@ export function ProjectMilestonesContent() {
     amount: number;
     description?: string | undefined;
     due_date?: Date | undefined;
-<<<<<<< HEAD
-  }) => Promise<Milestone | null> = async (data) => {
-=======
   }): Promise<Milestone | null> => {
->>>>>>> f21567bffd098e623c9a927edcb74896bc021795
     if (!projectId) return null;
     const milestoneData = {
       project_id: projectId,
@@ -120,32 +116,6 @@ export function ProjectMilestonesContent() {
     );
   }
 
-<<<<<<< HEAD
-  const handleMilestoneSubmit = async (data: {
-    title: string;
-    amount: number;
-    description?: string | undefined;
-    due_date?: Date | undefined;
-  }): Promise<void> => {
-    if (!projectId) return;
-
-    // Ensure all required fields are present
-    const milestoneData = {
-      project_id: projectId,
-      title: data.title,
-      description: data.description || '',
-      amount: data.amount,
-      status: 'pending' as const,
-      due_date: data.due_date ? data.due_date.toISOString() : '',
-    };
-
-    await createMilestone(milestoneData);
-    setActiveTab('milestones');
-    await handleMilestoneCreated();
-  };
-
-=======
->>>>>>> f21567bffd098e623c9a927edcb74896bc021795
   return (
     <div className="container mx-auto py-8 px-4">
       <ProjectHeader title={project.job?.title || 'Untitled Project'} />

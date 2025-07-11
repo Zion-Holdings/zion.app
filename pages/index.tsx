@@ -59,7 +59,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
 };
 
 const ErrorTestButton = () => {
-  const handleClick = async () => {
+  const handleClick = () => {
     try {
       throw new Error("This is a test error from the homepage button!");
     } catch (error) {
