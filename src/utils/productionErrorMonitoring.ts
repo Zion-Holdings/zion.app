@@ -140,16 +140,6 @@ export class ProductionErrorMonitor {
           language: navigator.language
         } : { cookiesEnabled: false, onLine: false, language: '' },
         ...context
-<<<<<<< HEAD
-      },
-      performanceMetrics: {
-        ...(typeof loadTime === 'number' ? { loadTime } : {}),
-        ...(memoryUsage !== undefined ? { memoryUsage } : {})
-      } as {
-        loadTime?: number;
-        memoryUsage?: { used?: number; total?: number; limit?: number };
-=======
->>>>>>> 85559ee4ff5b1e4bcf1b7b07f3985adaf3b11849
       }
     };
     if (hasLoadTime || hasMemoryUsage) {
