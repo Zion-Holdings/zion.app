@@ -279,7 +279,7 @@ export default function Marketplace() {
   }, [isAuthenticated, user, router, toast]);
 
   // Fetch function for infinite scroll with AI product generation
-  const fetchProducts = useCallback(async (page: number, limit: number) => {
+  const _fetchProducts = useCallback(async (page: number, limit: number) => {
     try {
       const params = {
         page,
@@ -327,7 +327,7 @@ export default function Marketplace() {
     lastElementRef,   // Ref for the last element to trigger loading more
     refresh,          // Function to reload data from page 1
     scrollToTop       // Function to scroll to the top of the page
-  } = useInfiniteScrollPagination(fetchProducts, 16); // 16 items per page
+  } = useInfiniteScrollPagination(_fetchProducts, 16); // 16 items per page
 
   // Effect to refresh data when filters change
   useEffect(() => {
