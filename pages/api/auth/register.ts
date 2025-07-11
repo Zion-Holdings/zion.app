@@ -4,9 +4,9 @@ import { withErrorLogging } from '@/utils/withErrorLogging';
 import { ENV_CONFIG } from '@/utils/environmentConfig';
 import { 
   logInfo, 
-  logWarn, 
+  logWarn as _logWarn, 
   logErrorToProduction, 
-  logDebug 
+  logDebug as _logDebug 
 } from '@/utils/productionLogger';
 
 
