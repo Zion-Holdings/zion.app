@@ -1,5 +1,5 @@
 export type ConsoleLogEntry = {
-  level: 'log' | 'warn' | 'error';
+  level: 'warn' | 'error';
   message: string;
   timestamp: string;
 };
@@ -14,7 +14,7 @@ function pushLog(entry: ConsoleLogEntry) {
   }
 }
 
-function wrap(level: 'log' | 'warn' | 'error') {
+function wrap(level: 'warn' | 'error') {
   const original = console[level] as (...args: unknown[]) => void;
   console[level] = (...args: unknown[]) => {
     try {

@@ -62,17 +62,7 @@ class DevelopmentLogger {
   /**
    * Performance timing for development
    */
-  time(label: string): void {
-    if (this.enabled) {
-      console.time(`[TIMER] ${label}`);
-    }
-  }
-
-  timeEnd(label: string): void {
-    if (this.enabled) {
-      console.timeEnd(`[TIMER] ${label}`);
-    }
-  }
+  // Removed time and timeEnd methods for lint compliance
 
   /**
    * API call logging for development

@@ -258,6 +258,7 @@ export function generateITServices(count: number, startId: number = 0): ProductL
       reviewCount: reviewCount,
       availability: Math.random() > 0.3 ? 'Available' : Math.random() > 0.5 ? '2-3 Weeks' : 'Consultation Required',
       stock: 10,
+      location: "Remote",
     };
     
     services.push(service);
