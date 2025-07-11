@@ -23,26 +23,33 @@ export const initPostHog = () => {
   }
 
   (function(c, a){
-    (window as any).posthog = a;
-    (a as any)._i = [];
-    (a as any).init = function(k: string, opts: { api_host: string }) {
+    type PostHogArray = Array<unknown> & {
+      _i?: unknown[];
+      init?: (k: string, opts: { api_host: string }) => void;
+      people?: Record<string, unknown>;
+      [key: string]: unknown;
+    };
+    const phArray = (Array.isArray(a) ? a : []) as PostHogArray;
+    (window as unknown as { posthog?: PostHogArray }).posthog = phArray;
+    phArray._i = [];
+    phArray.init = function(k: string, opts: { api_host: string }) {
       function p(method: string) {
-        return function(...args: string[]) { (a as any).push([method, ...args]); };
+        return function(...args: string[]) { phArray.push([method, ...args]); };
       }
       const methods = ['capture','identify','alias','people.set','people.set_once','people.unset','people.increment','people.append','people.delete_property','people.remove'];
-      (a as any).people = (a as any).people || {};
+      phArray.people = phArray.people || {};
       for (let i = 0; i < methods.length; i++) {
         const method = methods[i]!; // Non-null assertion since we're within array bounds
-        (a as any)[method] = p(method);
+        (phArray as Record<string, unknown>)[method] = p(method);
       }
-      (a as any)._i.push([k, opts]);
+      phArray._i!.push([k, opts]);
       const script = c.createElement('script');
       script.type = 'text/javascript';
       script.async = true;
       script.src = opts.api_host + '/static/array.js';
       c.head.appendChild(script);
     };
-  })(document, (window as any).posthog || []);
+  })(document, (window as unknown as { posthog?: unknown[] }).posthog || []);
 
   window.posthog.init(key, { api_host: host });
 };
