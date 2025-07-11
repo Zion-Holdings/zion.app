@@ -30,7 +30,7 @@ const defaultState: GlobalLoaderContextType = {
 
 const GlobalLoaderContext = createContext<GlobalLoaderContextType>(defaultState);
 
-export const useGlobalLoader = () => useContext(GlobalLoaderContext);
+export const useGlobalLoader = (): GlobalLoaderContextType => useContext(GlobalLoaderContext);
 
 export function AppLoaderProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(false);
