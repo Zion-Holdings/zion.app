@@ -52,8 +52,8 @@ function handler(
 
   // Add product suggestions
   const productSuggestions = [
-    { id: 'product-1', text: 'Example Product 1', slug: 'example-product-1', type: 'product' as const, iconUrl: 'https://via.placeholder.com/50', category: 'Category A' },
-    { id: 'product-2', text: 'Example Product 2', slug: 'example-product-2', type: 'product' as const, iconUrl: 'https://via.placeholder.com/50', category: 'Category B' },
+    { id: 'product-1', title: 'Example Product 1', description: 'Description 1', image: 'https://via.placeholder.com/50', category: 'Category A' },
+    { id: 'product-2', title: 'Example Product 2', description: 'Description 2', image: 'https://via.placeholder.com/50', category: 'Category B' },
   ]
     .filter((p) => match(p.title) || match(p.description))
     .slice(0, 2) // Limit to 2 product suggestions
@@ -62,7 +62,7 @@ function handler(
       text: p.title,
       slug: createSlug(p.title),
       type: 'product' as const,
-      iconUrl: (p as any).image,
+      iconUrl: p.image,
       category: p.category
     }));
 
