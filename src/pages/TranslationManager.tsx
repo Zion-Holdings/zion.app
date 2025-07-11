@@ -113,8 +113,9 @@ export default function TranslationManager() {
     // Initialize edited translations for this key
     const initialEdits: Record<SupportedLanguage, string> = {} as Record<SupportedLanguage, string>;
     supportedLanguages.forEach(lang => {
-      const langTranslations = translations[lang.code];
-      initialEdits[lang.code] = (typeof langTranslations === 'object' && langTranslations !== null && langTranslations[key]) || '';
+      const langTranslations = (translations as Record<string, Record<string, string>>)[lang.code];
+      const value = langTranslations ? langTranslations[key] : undefined;
+      initialEdits[lang.code] = typeof value === 'string' ? value : '';
     });
     
     setEditedTranslations({
@@ -161,10 +162,10 @@ export default function TranslationManager() {
     let sourceText = '';
     
     for (const lang of supportedLanguages.map(l => l.code)) {
-      const langTranslations = translations[lang];
-      if (typeof langTranslations === 'object' && langTranslations !== null && langTranslations[key]) {
+      const langTranslations = (translations as Record<string, Record<string, string>>)[lang];
+      if (langTranslations && langTranslations[key]) {
         sourceLanguage = lang;
-        sourceText = langTranslations[key];
+        sourceText = langTranslations[key] ?? '';
         break;
       }
     }
@@ -197,18 +198,26 @@ export default function TranslationManager() {
       // Update edited translations with auto-translated content
       setEditedTranslations({
         ...editedTranslations,
-        [key]: translatedText
+        [key]: translatedText as Record<SupportedLanguage, string>
       });
       
       toast({
         title: t('translation.translation_success'),
         description: t('translation.content_translated'),
       });
-    } catch (error) {
-      logErrorToProduction('Error translating key ${key}:', { data: error });
+    } catch (error: unknown) {
+      if (typeof error === 'object' && error !== null) {
+        logErrorToProduction('Error translating key ${key}:', { data: error });
+      } else {
+        logErrorToProduction('Error translating key ${key}:', { data: String(error) });
+      }
+      let errorMessage = t('translation.unknown_error');
+      if (typeof error === 'object' && error !== null && 'message' in error && typeof (error as Record<string, unknown>).message === 'string') {
+        errorMessage = (error as Record<string, string>).message;
+      }
       toast({
         title: t('translation.translation_failed'),
-        description: error instanceof Error ? error.message : t('translation.unknown_error'),
+        description: errorMessage,
         variant: "destructive",
       });
     }
@@ -219,22 +228,27 @@ export default function TranslationManager() {
   };
   
   const handleChange = (lang: SupportedLanguage, key: string, value: string) => {
-    setEditedTranslations({
-      ...editedTranslations,
-      [key]: {
-        ...(editedTranslations[key] || {} as Record<SupportedLanguage, string>),
-        [lang]: value
-      }
-    } as Record<string, Record<SupportedLanguage, string>>);
+    if (!supportedLanguages || supportedLanguages.length === 0) return;
+    setEditedTranslations(prev => {
+      // Build prevKey with all supportedLanguages, defaulting to ''
+      const prevKey = supportedLanguages.reduce((acc, l) => {
+        acc[l.code] = String(prev[key]?.[l.code] ?? '');
+        return acc;
+      }, {} as Record<string, string>);
+      return {
+        ...prev,
+        [key]: supportedLanguages.reduce((acc, l) => {
+          acc[l.code] = l.code === lang ? String(value ?? '') : String(prevKey[l.code] ?? '');
+          return acc;
+        }, {} as Record<string, string>),
+      };
+    });
   };
   
   const getMissingLanguages = (key: string): SupportedLanguage[] => {
     return supportedLanguages
       .map(lang => lang.code)
-      .filter(lang => {
-        const langTranslations = translations[lang];
-        return !(typeof langTranslations === 'object' && langTranslations !== null && langTranslations[key]);
-      });
+      .filter(lang => !((translations as Record<string, Record<string, string>>)[lang]?.[key]));
   };
   
   return (
@@ -302,21 +316,27 @@ export default function TranslationManager() {
                                     <span>{lang.flag}</span>
                                     <span>{lang.name}</span>
                                   </div>
-                                  {editedTranslations[key]?.[lang.code]?.includes('\n') || 
-                                   (editedTranslations[key]?.[lang.code]?.length || 0) > 100 ? (
-                                    <Textarea
-                                      value={editedTranslations[key]?.[lang.code] || ''}
-                                      onChange={(e) => handleChange(lang.code, key, e.target.value)}
-                                      dir={lang.code === 'ar' ? 'rtl' : 'ltr'}
-                                      className="min-h-20"
-                                    />
-                                  ) : (
-                                    <Input
-                                      value={editedTranslations[key]?.[lang.code] || ''}
-                                      onChange={(e) => handleChange(lang.code, key, e.target.value)}
-                                      dir={lang.code === 'ar' ? 'rtl' : 'ltr'}
-                                    />
-                                  )}
+                                  {(() => {
+                                    const value = String((editedTranslations[key]?.[lang.code]) ?? '');
+                                    if (value.includes('\n') || value.length > 100) {
+                                      return (
+                                        <Textarea
+                                          value={value}
+                                          onChange={(e) => handleChange(lang.code, key, String(e.target.value))}
+                                          dir={lang.code === 'ar' ? 'rtl' : 'ltr'}
+                                          className="min-h-20"
+                                        />
+                                      );
+                                    } else {
+                                      return (
+                                        <Input
+                                          value={value}
+                                          onChange={(e) => handleChange(lang.code, key, String(e.target.value))}
+                                          dir={lang.code === 'ar' ? 'rtl' : 'ltr'}
+                                        />
+                                      );
+                                    }
+                                  })()}
                                 </div>
                               ))}
                             </div>
@@ -364,8 +384,9 @@ export default function TranslationManager() {
                           <div className="p-3">
                             <div className="space-y-2">
                               {supportedLanguages.slice(0, 2).map((lang) => {
-                                const langTranslations = translations[lang.code];
-                                const hasTranslation = typeof langTranslations === 'object' && langTranslations !== null && langTranslations[key];
+                                const langTranslations = (translations as Record<string, Record<string, string>>)[lang.code];
+                                const value = langTranslations ? langTranslations[key] : undefined;
+                                const hasTranslation = typeof value === 'string' && value.length > 0;
                                 return (
                                   <div key={lang.code} className="flex items-start gap-2">
                                     <span className="mt-0.5 flex-shrink-0">{lang.flag}</span>
@@ -373,7 +394,7 @@ export default function TranslationManager() {
                                       className={`${!hasTranslation ? 'text-zion-purple italic' : ''}`}
                                       dir={lang.code === 'ar' ? 'rtl' : 'ltr'}
                                     >
-                                      {hasTranslation ? langTranslations[key] : t('translation.missing')}
+                                      {hasTranslation ? value : t('translation.missing')}
                                     </span>
                                   </div>
                                 );
