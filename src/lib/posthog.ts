@@ -2,7 +2,7 @@ import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 declare global {
   interface Window {
-    posthog?: any;
+    posthog?: unknown;
   }
 }
 
@@ -23,7 +23,7 @@ export const initPostHog = () => {
   }
 
   (function(c, a){
-    (window as any).posthog = a;
+    (window as unknown as { posthog?: unknown }).posthog = a;
     a._i = [];
     a.init = function(k: string, opts: { api_host: string }) {
       function p(method: string) {
