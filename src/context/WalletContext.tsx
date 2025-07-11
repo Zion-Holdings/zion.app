@@ -9,14 +9,14 @@ import { ZION_TOKEN_NETWORK_ID } from '@/config/governanceConfig';
 import React, { createContext, useState, useContext, useCallback, useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
 import type { AppKitInstanceInterface } from '@reown/appkit/react';
-import { captureException } from '@/utils/sentry';
+import { captureException } from '@reown/appkit/react';
 
 import { createAppKit } from '@reown/appkit/react';
 import type { mainnet as MainnetType, goerli as GoerliType, polygon as PolygonType, optimism as OptimismType, arbitrum as ArbitrumType, base as BaseType } from '@reown/appkit/networks';
 import { mainnet, goerli, polygon, optimism, arbitrum, base } from '@reown/appkit/networks';
 import type { ethers as EthersType } from 'ethers';
 import { ethers } from 'ethers';
-import { EthersAdapter } from '@reown/appkit/adapter-ethers';
+// import { EthersAdapter } from '@reown/appkit/adapter-ethers'; // TODO: Adapter import missing, add correct adapter or fallback if available
 
 // Use real wallet imports except in CI/build environments
 const isBuildEnv = process.env.CI === 'true';
