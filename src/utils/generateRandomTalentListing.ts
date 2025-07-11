@@ -65,6 +65,7 @@ export function generateRandomTalentListing(): ProductListing {
     rating,
     reviewCount: Math.floor(Math.random() * 50) + 1,
     stock: 10,
+    location: "Remote",
   };
 }
 

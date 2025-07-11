@@ -172,7 +172,7 @@ export default function Analytics() {
             if (!usageByDate[date]) usageByDate[date] = {};
             const featureMap = usageByDate[date] as Record<string, number>;
             if (!featureMap[feature]) featureMap[feature] = 0;
-            featureMap[feature] += 1;
+            (featureMap as Record<string, number>)[feature] += 1;
           }
         });
 
