@@ -11,6 +11,10 @@ import type { ReactNode } from 'react';
 import type { AppKitInstanceInterface } from '@reown/appkit/react';
 import { captureException } from '@/utils/sentry';
 
+import { createAppKit } from '@reown/appkit/react';
+import { mainnet, goerli, polygon, optimism, arbitrum, base } from '@reown/appkit/networks';
+import { ethers } from 'ethers';
+
 // Use real wallet imports except in CI/build environments
 const isBuildEnv = process.env.CI === 'true';
 
@@ -21,52 +25,7 @@ let createAppKit: any;
 let mainnet: any, goerli: any, polygon: any, optimism: any, arbitrum: any, base: any;
 
 // Load AppKit modules dynamically to avoid ESM issues
-if (typeof window !== 'undefined' && !isBuildEnv) {
-  import('@reown/appkit/react').then(module => {
-    createAppKit = module.createAppKit;
-  }).catch(err => {
-    console.warn('Failed to load @reown/appkit/react:', err);
-  });
-  
-  import('@reown/appkit/networks').then(module => {
-    mainnet = module.mainnet;
-    goerli = module.goerli;
-    polygon = module.polygon;
-    optimism = module.optimism;
-    arbitrum = module.arbitrum;
-    base = module.base;
-  }).catch(err => {
-    console.warn('Failed to load @reown/appkit/networks:', err);
-  });
-} else {
-  // Mock types for build compatibility
-  ethers = {
-    BrowserProvider: class MockBrowserProvider {
-      constructor(provider: unknown) {}
-      async getSigner() { return null; }
-    }
-  } as unknown as typeof import('ethers');
-  createAppKit = (_config: unknown) => ({
-    open: async () => { console.warn('Wallet functionality disabled during build'); },
-    disconnect: async () => { console.warn('Wallet functionality disabled during build'); },
-    getState: () => ({ isConnected: false }),
-    getAddress: () => null,
-    getChainId: () => null,
-    getWalletProvider: () => null,
-    subscribeProvider: () => () => {}
-  });
-  mainnet = { id: 1, name: 'Ethereum' };
-  goerli = { id: 5, name: 'Goerli' };
-  polygon = { id: 137, name: 'Polygon' };
-  optimism = { id: 10, name: 'Optimism' };
-  arbitrum = { id: 42161, name: 'Arbitrum' };
-  base = { id: 8453, name: 'Base' };
-}
-
-// Mock EthersAdapter
-const EthersAdapter = class {
-  constructor(config: unknown) {}
-};
+import { EthersAdapter } from '@reown/appkit/ethers';
 
 // Some injected wallet providers implement the EIP-1193 interface but also
 // expose event methods like `on` and `removeListener`. The `ethers` type for
