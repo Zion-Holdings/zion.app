@@ -19,7 +19,7 @@ import { NextSeo } from '@/components/NextSeo';
 import { Header } from "@/components/Header";
 import ListingGridSkeleton from '@/components/skeletons/ListingGridSkeleton';
 import {logErrorToProduction} from '@/utils/productionLogger';
-import apiClient from '@/lib/apiClient';
+import apiClient from '@/services/apiClient';
 
 
 const AUTO_SERVICE_TITLES = [
