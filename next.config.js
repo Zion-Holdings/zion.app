@@ -1446,19 +1446,6 @@ const nextConfig = {
       config.experiments.cacheUnaffected = false;
     }
 
-    // Alias all node: core modules to false to prevent unhandled scheme errors
-    const nodeCoreModules = [
-      'child_process', 'fs', 'http', 'https', 'diagnostics_channel', 'os', 'path', 'stream', 'util', 'zlib', 'url', 'crypto', 'assert', 'constants', 'domain', 'events', 'punycode', 'readline', 'string_decoder', 'sys', 'timers', 'tty', 'vm', 'worker_threads', 'async_hooks', 'module'
-    ];
-    nodeCoreModules.forEach(m => {
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        [`node:${m}`]: false,
-      };
-      if (!config.externals) config.externals = [];
-      config.externals.push({ [`node:${m}`]: 'commonjs false' });
-    });
-
     return config;
   },
 
