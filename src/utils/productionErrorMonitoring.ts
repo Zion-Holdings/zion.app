@@ -145,6 +145,9 @@ export class ProductionErrorMonitor {
       performanceMetrics: {
         ...(typeof loadTime === 'number' ? { loadTime } : {}),
         ...(memoryUsage !== undefined ? { memoryUsage } : {})
+      } as {
+        loadTime?: number;
+        memoryUsage?: { used?: number; total?: number; limit?: number };
       }
     };
   }
