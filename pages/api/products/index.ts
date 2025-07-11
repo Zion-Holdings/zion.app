@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { applyCorsHeaders } from '@/middleware/cors';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
