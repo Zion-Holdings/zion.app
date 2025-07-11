@@ -8,9 +8,9 @@ export function withErrorLogging(handler: ApiHandler): ApiHandler {
   return async (req: NextApiRequest, res: NextApiResponse) => {
     try {
       await handler(req, res);
-    } catch (err) {
+    } catch (_error) {
       const reqUrl = req.url;
-      logErrorToProduction(err instanceof Error ? err.message : String(err), err instanceof Error ? err : undefined, {
+      logErrorToProduction(_error instanceof Error ? _error.message : String(_error), _error instanceof Error ? _error : undefined, {
         route: reqUrl,
       });
       if (!(res as any).headersSent) {
