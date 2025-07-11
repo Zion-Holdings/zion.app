@@ -18,7 +18,7 @@ export const initPostHog = () => {
     return;
   }
 
-  if (window.posthog?.__loaded) {
+  if ((window.posthog as any)?.__loaded) {
     return;
   }
 
