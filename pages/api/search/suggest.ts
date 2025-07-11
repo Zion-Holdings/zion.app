@@ -5,13 +5,13 @@ import { TALENT_PROFILES } from '@/data/talentData';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import { DOCS_SEARCH_ITEMS } from '@/data/docsSearchData';
 
-type ServiceSuggestion = { id?: string; title: string; description?: string; image?: string; category?: string };
+type ServiceSuggestion = { id?: string; title: string; description?: string; image: string; category?: string };
 // Fix the type casting to ensure SERVICES has the correct type
 const _SERVICES: ServiceSuggestion[] = RAW_SERVICES.map(service => ({
   id: service.id,
   title: service.title || '',
   description: service.description || '',
-  image: service.image || '', // Ensure image is always a string
+  image: service.image ?? '', // Ensure image is always a string
   category: service.category || '',
 }));
 
