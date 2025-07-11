@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { toast } from '@/hooks/use-toast';
 import { safeStorage } from '@/utils/safeStorage';
 import { store } from '@/store';
 import { setToken } from '@/store/authSlice';
@@ -19,11 +18,6 @@ export async function loginUser(email: string, password: string) {
     }
     return { res, data: res.data };
   } catch (err) {
-    const message = err instanceof Error ? err.message : String(err);
-    // Optional: you can still prepare or log the error here if needed, but don't toast.
-    // For example, you might want to ensure the error object has a specific structure
-    // if it doesn't already.
-    // Example: if (!err.response?.data?.message) { /* augment error if necessary */ }
     throw err; // Essential: re-throw the error for AuthProvider to handle
   }
 }
@@ -36,7 +30,6 @@ export async function registerUser(name: string, email: string, password: string
     logDebug('Register API Response Body:', { body: res.data });
     return { res, data: res.data };
   } catch (err) {
-    const message = err instanceof Error ? err.message : String(err);
     logErrorToProduction('Register API error', err as Error, { endpoint, email });
     throw err;
   }

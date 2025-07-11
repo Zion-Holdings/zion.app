@@ -1,4 +1,4 @@
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 
 import {logErrorToProduction} from "@/utils/productionLogger";
 
@@ -24,7 +24,7 @@ export interface SignupApiResponse {
   emailVerificationRequired?: boolean;
 }
 
-export async function signupUser(email: string, password: string, name: string, session?: SignupSession) {
+export async function signupUser(email: string, password: string, name: string) {
   if (!email || !password) {
     throw new Error('Email and password are required');
   }
