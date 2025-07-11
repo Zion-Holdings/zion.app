@@ -107,8 +107,8 @@ export function ProjectMilestonesContent() {
   const handleMilestoneSubmit = async (data: {
     title: string;
     amount: number;
-    description?: string;
-    due_date?: Date;
+    description?: string | undefined;
+    due_date?: Date | undefined;
   }) => {
     if (!projectId) return;
 
