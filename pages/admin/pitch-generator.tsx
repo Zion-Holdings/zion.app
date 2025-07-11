@@ -5,7 +5,7 @@ import SlideEditor from '@/components/admin/pitch-generator/SlideEditor';
 import { useAuth } from '@/hooks/useAuth';
 import { NextSeo } from '@/components/NextSeo';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import jsPDF from 'jspdf';
 // Dynamic import for html2canvas to reduce bundle size
@@ -134,7 +134,7 @@ const PitchGeneratorPage: React.FC = () => {
     }
   };
 
-  const fetchVersionHistory = async () => {
+  const fetchVersionHistory = useCallback(async () => {
     if (versionHistory.length > 0 && deckVersion > 1) return; // Avoid refetching if already populated unless it's initial load
 
     setError(null);
@@ -168,7 +168,7 @@ const PitchGeneratorPage: React.FC = () => {
         logErrorToProduction('Failed to fetch version history:', { data: e });
         setError(errorMessage);
     }
-  };
+  }, [versionHistory.length, deckVersion]);
 
   useEffect(() => {
     if (user) {
