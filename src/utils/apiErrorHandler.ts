@@ -22,10 +22,9 @@ export function parseApiError(error: unknown): ParsedApiError {
   if (!isApiError(error)) {
     return { message: 'An unexpected error occurred.' };
   }
-  const status = error?.response?.status ?? error?.status;
-  const backendCode =
-    error?.response?.data?.code ?? error?.response?.data?.error ?? error?.code;
-  const code = backendCode ?? status;
+  const status: number | undefined = typeof error?.response?.status === 'number' ? error.response.status : (typeof error?.status === 'number' ? error.status : undefined);
+  const backendCode = error?.response?.data?.code ?? error?.response?.data?.error ?? error?.code;
+  const code: string | number | undefined = backendCode !== undefined ? backendCode : status;
 
   // Prioritize backend message first
   let msg = error?.response?.data?.message;
@@ -77,7 +76,10 @@ export function parseApiError(error: unknown): ParsedApiError {
   // If a specific error code is provided by the API (and it's not the HTTP status), append it for context if desired,
   // but the primary message `msg` should be user-friendly.
   // For now, we'll rely on `text` in `showApiError` to combine them if `code` is present.
-  return { status, code, message: msg };
+  const result: ParsedApiError = { message: msg };
+  if (typeof status === 'number') result.status = status;
+  if (code !== undefined) result.code = code;
+  return result;
 }
 
 export function showApiError(
@@ -92,6 +94,6 @@ export function showApiError(
     title: 'Error',
     description: text,
     variant: 'destructive',
-    onRetry: retryCallback, // Pass the retry callback
+    ...(retryCallback ? { onRetry: retryCallback } : {}),
   });
 }
