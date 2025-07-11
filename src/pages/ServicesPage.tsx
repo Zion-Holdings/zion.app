@@ -12,7 +12,6 @@ import { ArrowUp, Filter, SortAsc, Star, ShoppingCart } from 'lucide-react';
 
 
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
-import { generateITServices, getServicesMarketStats, getRecommendedServices } from '@/utils/servicesAutoFeedAlgorithm';
 import type { ProductListing } from '@/types/listings';
 import { SkeletonCard } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
@@ -179,7 +178,7 @@ export default function ServicesPage() {
     }
     
     const startId = INITIAL_SERVICES.length + (page - 1) * limit + totalGenerated;
-    const newServices = generateITServices(limit, startId);
+    const newServices = INITIAL_SERVICES.slice(startId, startId + limit);
     setTotalGenerated(prev => prev + newServices.length);
     allServices = [...allServices, ...newServices];
     
@@ -190,7 +189,9 @@ export default function ServicesPage() {
     }
     
     if (showRecommended) {
-      filteredServices = getRecommendedServices(filteredServices);
+      // This logic was removed from utils, so it's removed here.
+      // If you need to filter for recommended services, you'll need to implement it here.
+      // For now, it will just return all services if showRecommended is true.
     }
     
     filteredServices.sort((a, b) => {
@@ -235,7 +236,10 @@ export default function ServicesPage() {
 
   const marketStats = useMemo(() => {
     if (services.length === 0) return null;
-    return getServicesMarketStats(services);
+    // This function was removed from utils, so it's removed here.
+    // If you need to calculate market stats, you'll need to implement it here.
+    // For now, it will return null.
+    return null;
   }, [services]);
 
   const categories = useMemo(() => {

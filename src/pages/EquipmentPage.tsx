@@ -16,7 +16,6 @@ import apiClient from '@/services/apiClient';
 
 
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
-import { generateDatacenterEquipment, getRecommendedEquipment } from '@/utils/equipmentAutoFeedAlgorithm';
 import type { ProductListing } from '@/types/listings';
 import { SkeletonCard } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
