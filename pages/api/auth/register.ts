@@ -4,9 +4,9 @@ import { withErrorLogging } from '@/utils/withErrorLogging';
 import { ENV_CONFIG } from '@/utils/environmentConfig';
 import { 
   logInfo, 
-  logWarn, 
+  logWarn as _logWarn, 
   logErrorToProduction, 
-  logDebug 
+  logDebug as _logDebug 
 } from '@/utils/productionLogger';
 
 
@@ -193,7 +193,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
     logErrorToProduction('Registration error:', { data: error });
     res.status(500).json({ 
       error: 'Internal server error during registration',
+<<<<<<< HEAD
       details: process.env.NODE_ENV === 'development' ? (error instanceof Error ? error.message : String(error)) : undefined
+=======
+      details: process.env.NODE_ENV === 'development' ? 
+        (error instanceof Error ? error.message : 'Unknown error') : 
+        undefined
+>>>>>>> dc2b520385a5181374631eb378c38f1f47e37beb
     });
     return;
   }

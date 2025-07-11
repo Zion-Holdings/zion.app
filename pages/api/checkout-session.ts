@@ -139,7 +139,7 @@ export default async function handler(
     const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     
     // Check if any items require physical shipping
-    const hasPhysicalItems = cartItems.some((item: any) => 
+    const hasPhysicalItems = cartItems.some((item: CartItem & { type?: string }) => 
       !item.type || item.type === 'physical' // Default to physical if type not specified
     );
     const needsShipping = hasPhysicalItems && subtotal <= 100;
@@ -208,7 +208,7 @@ export default async function handler(
       if (error.type === 'StripeCardError') {
         return res.status(400).json({
           error: 'Payment processing error',
-          details: (error as any).message,
+          details: (error as { message?: string }).message,
         });
       }
 
