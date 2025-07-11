@@ -5,7 +5,8 @@
  * It prevents the "Cannot read properties of undefined (reading 'env')" error.
  */
 
-// Add this at the top of the file to extend globalThis
+// TypeScript type augmentation for process on globalThis
+export {};
 declare global {
   // eslint-disable-next-line no-var
   var process: {
