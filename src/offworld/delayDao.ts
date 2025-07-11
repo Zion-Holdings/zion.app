@@ -41,7 +41,7 @@ export class DelayTolerantDAO {
       ]);
       // ... initialize modules
       this.ready = true;
-    } catch (_error) {
+    } catch (__error) {
       console.warn('⚠️ Failed to load native modules, using mocks');
       this.ready = true; // Continue with mock functionality
     }

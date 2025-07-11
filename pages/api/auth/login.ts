@@ -77,14 +77,14 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
   // Check if Supabase is configured
   if (!ENV_CONFIG.supabase.isConfigured) {
     if (isDevelopment) {
-      console.log('🔧 LOGIN TRACE: Supabase not configured - using development authentication');
+      // console.log('🔧 LOGIN TRACE: Supabase not configured - using development authentication');
     }
     // 🔐 SECURITY: Use environment-based development authentication
     const devUsers = getDevUsers();
     const user = devUsers.find(u => u.email === email && u.password === password);
     if (user) {
       if (isDevelopment) {
-        console.log('🔧 LOGIN TRACE: Development user authenticated successfully');
+        // console.log('🔧 LOGIN TRACE: Development user authenticated successfully');
       }
       res.status(200).json({
         user: {
@@ -99,8 +99,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
       return;
     } else {
       if (isDevelopment) {
-        console.log('🔧 LOGIN TRACE: Development authentication failed');
-        console.log('🔧 LOGIN TRACE: Available dev users:', devUsers.map(u => u.email));
+        // console.log('🔧 LOGIN TRACE: Development authentication failed');
+        // console.log('🔧 LOGIN TRACE: Available dev users:', devUsers.map(u => u.email));
       }
       res.status(401).json({ error: 'Invalid credentials' });
       return;
@@ -114,7 +114,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
       ENV_CONFIG.supabase.serviceRoleKey || ENV_CONFIG.supabase.anonKey
     );
     if (isDevelopment) {
-      console.log('🔧 LOGIN TRACE: Attempting Supabase authentication');
+      // console.log('🔧 LOGIN TRACE: Attempting Supabase authentication');
     }
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
@@ -135,7 +135,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
       return;
     }
     if (isDevelopment) {
-      console.log('🔧 LOGIN TRACE: Supabase authentication successful');
+      // console.log('🔧 LOGIN TRACE: Supabase authentication successful');
     }
     res.status(200).json({
       user: data.user,
@@ -143,13 +143,13 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
       message: 'Authentication successful'
     });
     return;
-  } catch (error: any) {
+  } catch (error: unknown) {
     if (isDevelopment) {
       console.error('🔧 LOGIN TRACE: Unexpected error during authentication:', error);
     }
     res.status(500).json({ 
       error: 'Internal server error',
-      details: ENV_CONFIG.app.isDevelopment ? error.message : undefined
+      details: ENV_CONFIG.app.isDevelopment && typeof error === 'object' && error !== null && 'message' in error ? (error as { message?: string }).message : undefined
     });
     return;
   }

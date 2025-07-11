@@ -160,7 +160,6 @@ if (typeof window !== 'undefined') {
       if (suppressedMessages.some(msg => message.includes(msg))) {
         // Log that we are suppressing an error, for debugging purposes
         logErrorToProduction(`[serverless-polyfill] Previously suppressed error: "${message}" from ${source}:${lineno}`, error);
-        // return true; // Suppress error -- Now allowing it to propagate
       }
     }
     

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { quoteRequestService } from '@/services/quoteRequestService';
 import { useAuth } from '@/hooks/useAuth';
-import type { QuoteRequest, QuoteStatus } from '@/types/quotes';
+import type { QuoteRequest as _QuoteRequest, QuoteStatus } from '@/types/quotes';
 import { useToast } from '@/hooks/use-toast';
 import { showApiError } from '@/utils/apiErrorHandler';
 

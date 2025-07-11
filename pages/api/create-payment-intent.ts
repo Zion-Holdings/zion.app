@@ -1,6 +1,7 @@
 import Stripe from 'stripe';
 import { withSentry } from '../../api/withSentry.cjs';
 import {logErrorToProduction} from '@/utils/productionLogger';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 
 const PROD_DOMAIN = 'app.ziontechgroup.com';
@@ -18,18 +19,17 @@ function isProdDomain() {
   }
 }
 
-async function handler(req: any, res: any) {
+async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req['method'] !== 'POST') {
-    res.statusCode = 405;
+    res.status(405);
     res.setHeader('Allow', 'POST');
     res.end('Method Not Allowed');
     return;
   }
 
-  const { amount, userId } = req['body'] || {};
+  const { amount, userId } = (req['body'] as { amount?: number; userId?: string }) || {};
   if (typeof amount !== 'number') {
-    res.statusCode = 400;
-    res.json({ error: 'Invalid amount' });
+    res.status(400).json({ error: 'Invalid amount' });
     return;
   }
 
@@ -47,7 +47,7 @@ async function handler(req: any, res: any) {
     // This route uses the official Stripe Node.js SDK for server-to-server communication.
     // The getStripe() client-side helper (from src/utils/getStripe.ts) and its
     // advancedFraudSignals option are not applicable to this server-side implementation.
-    const stripe = new (Stripe as any)(useTest ? testKey : liveKey, {
+    const stripe = new (Stripe as unknown as typeof Stripe)(useTest ? testKey : liveKey, {
       apiVersion: '2023-10-16',
     });
     const intent = await stripe.paymentIntents.create({
@@ -56,8 +56,7 @@ async function handler(req: any, res: any) {
       metadata: userId ? { userId } : undefined,
       automatic_payment_methods: { enabled: true },
     });
-    res.statusCode = 200;
-    res.json({ clientSecret: intent.client_secret, id: intent.id });
+    res.status(200).json({ clientSecret: intent.client_secret, id: intent.id });
   } catch (err) {
     logErrorToProduction('Create payment intent error:', { data: err });
     res.statusCode = 500;

@@ -22,7 +22,7 @@ import { SERVICES, type Service } from '@/data/servicesData';
 import { useCurrency } from '@/hooks/useCurrency';
 
 // Initial services from existing data - convert Service to ProductListing
-const INITIAL_SERVICES: ProductListing[] = SERVICES.map((service: Service) => ({
+const _INITIAL_SERVICES: ProductListing[] = SERVICES.map((service: Service) => ({
   id: service.id,
   title: service.title,
   description: service.description,

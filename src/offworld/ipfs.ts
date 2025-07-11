@@ -111,7 +111,7 @@ export async function saveJSON(data: unknown): Promise<string> {
   }
   
   try {
-    const helia = await getHelia();
+    const _helia = await getHelia();
     const jsonService = heliaJson();
     const cid = await jsonService.add(data);
     return cid.toString();
@@ -132,7 +132,7 @@ export async function fetchJSON(cidString: string): Promise<unknown> {
   }
   
   try {
-    const helia = await getHelia();
+    const _helia = await getHelia();
     const jsonService = heliaJson();
     const data = await jsonService.get(cidString);
     return data;

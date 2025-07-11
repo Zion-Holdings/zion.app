@@ -25,7 +25,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
 
   try {
     let categoryDetails = null;
-    let products: any[] = [];
+    let products: Array<{ id: number; name: string; description: string; price: number; currency: string; images: unknown }> = [];
     let usingFallback = false;
 
     // Special handling for talent directory
@@ -82,7 +82,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
       // Reduce timeout and add better error handling
       const dbQueryPromise = Promise.race([
         (async () => {
-          const categoryDetails = await (prisma as any).category.findUnique({
+          const categoryDetails = await (prisma as PrismaClient).category.findUnique({
             where: { slug: slug, active: true },
             select: {
               name: true,
@@ -112,7 +112,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
         new Promise((_, reject) => 
           setTimeout(() => reject(new Error('Database query timeout')), 8000) // Increased to 8s for better reliability
         )
-      ]) as Promise<{ categoryDetails: any, products: any[] }>;
+      ]) as Promise<{ categoryDetails: { name: string; slug: string; description?: string } | null, products: Array<{ id: number; name: string; description: string; price: number; currency: string; images: unknown }> }>;
 
       const result = await dbQueryPromise;
       categoryDetails = result.categoryDetails;
@@ -163,7 +163,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
     try {
       captureException(error as Error, {
         extra: { slug, path: request['url'] },
-        user: (request as any).user ? { id: (request as any).user.id, email: (request as any).user.email } : undefined,
+        user: (request as { user?: { id: string; email: string } }).user ? { id: (request as { user?: { id: string; email: string } }).user!.id, email: (request as { user?: { id: string; email: string } }).user!.email } : undefined,
       });
     } catch (sentryError) {
       logErrorToProduction('Sentry capture failed:', { data: sentryError });

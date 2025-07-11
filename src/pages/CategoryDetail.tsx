@@ -10,7 +10,7 @@ import { Brain, PenLine, BarChart, Eye, Bot, Mic, Code, Briefcase } from 'lucide
 
 
 
-import { MARKETPLACE_LISTINGS } from "@/data/listingData";
+import { MARKETPLACE_LISTINGS as _MARKETPLACE_LISTINGS } from "@/data/listingData";
 import type { ProductListing } from "@/types/listings";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -22,7 +22,7 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 import apiClient from '@/services/apiClient';
 
 
-const AUTO_SERVICE_TITLES = [
+const _AUTO_SERVICE_TITLES = [
   "AI-Powered Customer Support",
   "Cloud Infrastructure Management",
   "Predictive Analytics Consulting",

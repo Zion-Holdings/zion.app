@@ -1,18 +1,26 @@
-import { PrismaClient, Prisma } from '@prisma/client';
+import { PrismaClient, Prisma as _Prisma } from '@prisma/client';
 import { logInfo, logErrorToProduction, logDebug } from '@/utils/productionLogger';
 
 // Global Prisma instance for connection reuse
 let prisma: PrismaClient | null = null;
 
+<<<<<<< HEAD
 // Database connection options (only valid PrismaClientOptions)
 const DB_OPTIONS: Prisma.PrismaClientOptions = {
+=======
+// Database connection options
+const DB_OPTIONS: PrismaClientOptions = {
+>>>>>>> 0b7b5ee16e80f86d7b16852c51e4f050cb0f0df4
   log: process.env.NODE_ENV === 'development' ? ['error', 'warn'] : ['error'],
   datasources: {
     db: {
       url: process.env.DATABASE_URL || '',
     },
   },
+<<<<<<< HEAD
   // Remove __internal, as it's not a valid PrismaClientOptions property
+=======
+>>>>>>> 0b7b5ee16e80f86d7b16852c51e4f050cb0f0df4
 };
 
 /**

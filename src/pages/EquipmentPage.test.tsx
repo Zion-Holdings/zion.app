@@ -20,7 +20,7 @@ describe('fetchEquipment', () => {
   });
 
   it('should handle API errors gracefully, log details, and show a toast notification', async () => {
-    const errorMessage = 'Network Error';
+    const _errorMessage = 'Network Error';
     const errorResponseData = { detail: 'Something went wrong on the server' };
 
     server.use(
@@ -122,7 +122,7 @@ describe('fetchEquipment', () => {
     // Simulate an API error that results in an error object without a 'message' property
     // This is less common with Axios, as it usually creates a message.
     // However, if a non-Error object is thrown somehow:
-    const customErrorObject = { customField: 'no message here' };
+    const _customErrorObject = { message: 'Custom error' };
 
     server.use(
       http.get(EQUIPMENT_API_URL, () => {

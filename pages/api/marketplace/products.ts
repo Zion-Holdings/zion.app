@@ -43,8 +43,8 @@ const handler = async (
 
   res.setHeader('Access-Control-Allow-Origin', '*');
 
-  const page = parseInt(((req['query'] as any).page as string), 10) || 1;
-  const limit = parseInt(((req['query'] as any).limit as string), 10) || 20;
+  const page = parseInt(((req['query'] as { page?: string }).page as string), 10) || 1;
+  const limit = parseInt(((req['query'] as { limit?: string }).limit as string), 10) || 20;
   const skip = (page - 1) * limit;
 
   try {
@@ -55,15 +55,15 @@ const handler = async (
       products = await prisma.product.findMany({ skip, take: limit });
       logInfo('Successfully fetched products from database.');
       logInfo('Fetched products:', { data:  { data: products } });
-    } catch (e: any) {
+    } catch (e: unknown) {
       // Logging detailed Prisma error including message, code, meta, and stack for findMany operation.
       logErrorToProduction(
         'Error during database operation [prisma.product.findMany]:',
         {
-          message: e.message,
-          code: e.code, // Prisma-specific error code
-          meta: e.meta, // Additional metadata about the error
-          stack: e.stack, // Call stack
+          message: e instanceof Error ? e.message : 'Unknown error',
+          code: (e as { code?: string }).code, // Prisma-specific error code
+          meta: (e as { meta?: unknown }).meta, // Additional metadata about the error
+          stack: e instanceof Error ? e.stack : undefined, // Call stack
           fullError: e, // The complete error object
         },
         { queryParams: { skip, limit } } // Relevant query parameters for context
@@ -85,15 +85,15 @@ const handler = async (
       });
       logInfo('Successfully fetched product stats.');
       logInfo('Fetched product stats:', { data:  { data: stats } });
-    } catch (e: any) {
+    } catch (e: unknown) {
       // Logging detailed Prisma error including message, code, meta, and stack for groupBy operation.
       logErrorToProduction(
         'Error during database operation [prisma.productReview.groupBy]:',
         {
-          message: e.message,
-          code: e.code, // Prisma-specific error code
-          meta: e.meta, // Additional metadata about the error
-          stack: e.stack, // Call stack
+          message: e instanceof Error ? e.message : 'Unknown error',
+          code: (e as { code?: string }).code, // Prisma-specific error code
+          meta: (e as { meta?: unknown }).meta, // Additional metadata about the error
+          stack: e instanceof Error ? e.stack : undefined, // Call stack
           fullError: e, // The complete error object
         },
         { queryParams: { ids } } // Relevant query parameters for context
@@ -118,13 +118,13 @@ const handler = async (
 
     res.status(200).json(result);
     return;
-  } catch (e: any) {
+  } catch (e: unknown) {
     logErrorToProduction(
       'Generic error in products API handler (fallback catch):',
       {
-        message: e.message,
-        code: e.code,
-        stack: e.stack,
+        message: e instanceof Error ? e.message : 'Unknown error',
+        code: (e as { code?: string }).code,
+        stack: e instanceof Error ? e.stack : undefined,
         fullError: e,
       }
     );
@@ -132,7 +132,7 @@ const handler = async (
       e instanceof Error && e.message.includes('timed out')
         ? 'Service Unavailable: Database connection failed.'
         : 'Internal server error while fetching products.';
-    res.status(500).json({ error: message, details: e.message });
+    res.status(500).json({ error: message, details: e instanceof Error ? e.message : 'Unknown error' });
     return;
   } finally {
     // Ensures Prisma client is disconnected after the request is handled,

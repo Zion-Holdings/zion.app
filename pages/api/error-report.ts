@@ -37,7 +37,7 @@ export default async function handler(
       // Log breadcrumbs for context
       if (breadcrumbs && breadcrumbs.length > 0) {
         // console.log('📋 Error Breadcrumbs:');
-        breadcrumbs.forEach((breadcrumb, index) => {
+        breadcrumbs.forEach((_breadcrumb, _index) => {
           // console.log(`  ${index + 1}. [${breadcrumb.level}] ${breadcrumb.category}: ${breadcrumb.message}`);
         });
       }
@@ -58,19 +58,19 @@ export default async function handler(
     }
 
     // Store error in memory for development (replace with database in production)
-    if (typeof (global as any).errorReports === 'undefined') {
-      (global as any).errorReports = [];
+    if (typeof (global as { errorReports?: unknown[] }).errorReports === 'undefined') {
+      (global as { errorReports: unknown[] }).errorReports = [];
     }
     
     // Keep only the last 50 error reports in memory
-    (global as any).errorReports.push({
+    (global as { errorReports: unknown[] }).errorReports.push({
       ...error,
       breadcrumbs,
       reportedAt: Date.now()
     });
     
-    if ((global as any).errorReports.length > 50) {
-      (global as any).errorReports = (global as any).errorReports.slice(-50);
+    if ((global as { errorReports: unknown[] }).errorReports.length > 50) {
+      (global as { errorReports: unknown[] }).errorReports = (global as { errorReports: unknown[] }).errorReports.slice(-50);
     }
 
     // In production, you would integrate with:
@@ -82,7 +82,7 @@ export default async function handler(
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ error: error.message, stack: error.stack }),
         });
-      } catch (err) {
+      } catch (_err) {
         // Ignore reporting errors
       }
     }
@@ -109,7 +109,7 @@ export default async function handler(
 
     res.status(200).json(response);
 
-  } catch (processingError) {
+  } catch (_processingError) {
     // console.error('Error processing error report:', processingError);
     res.status(500).json({ 
       error: 'Internal server error',

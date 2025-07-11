@@ -195,7 +195,7 @@ function EquipmentPageContent() {
   //   return `equipment-${filterCategory}-${showRecommended}`;
   // }, [filterCategory, showRecommended]);
 
-  const fetchEquipment = useCallback(async (page: number, limit: number) => {
+  const fetchEquipment = useCallback(async (_page: number, _limit: number) => {
     // Only fetch real data from the API
     try {
       const res = await apiClient.get('/equipment');

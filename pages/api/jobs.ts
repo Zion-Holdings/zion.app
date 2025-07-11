@@ -11,12 +11,12 @@ import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 function validateApiKey(req: NextApiRequest): boolean {
   const authHeader = req['headers']['authorization'];
   const authHeaderString = Array.isArray(authHeader) ? authHeader[0] : authHeader;
-  const apiKey = authHeaderString?.replace('Bearer ', '') || (req['query'] as any).api_key;
+  const apiKey = authHeaderString?.replace('Bearer ', '') || (req['query'] as { api_key?: string }).api_key;
   return apiKey === 'demo_key_123' || apiKey === 'test_key_456';
 }
 
 // Optimized job filtering function
-function filterAndSortJobs(jobs: any[], params: {
+function _filterAndSortJobs(jobs: Array<{ status: string; category: string; created_at: string; budget: { max: number } }>, params: {
   status: string;
   category?: string;
   sort: string;
@@ -132,7 +132,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
     return;
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     logErrorToProduction('Jobs API error:', { data: error });
     
     // Return fallback data on error

@@ -7,6 +7,7 @@ import { withErrorLogging } from '@/utils/withErrorLogging';
 import { supabase } from '@/utils/supabase/client'; // Use centralized client
 import { verifyMessage } from 'ethers'; // Assuming ethers v6+
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 // WalletConnect isn't natively supported by next-auth. We'll mock a basic credentials
 // provider that handles an address signature check. In a real app you'd verify
@@ -222,8 +223,10 @@ export const authOptions: NextAuthOptions = {
       if (account && user) {
         token['accessToken'] = account.access_token; // For OAuth
         token['id'] = user.id; // For all users
-        if ((user as any).walletAddress) { // For wallet users
-            token['walletAddress'] = (user as any).walletAddress;
+        // Safely check for walletAddress property
+        const userWithWallet = user as { walletAddress?: string };
+        if (userWithWallet.walletAddress) {
+            token['walletAddress'] = userWithWallet.walletAddress;
         }
       }
       return token;
@@ -231,9 +234,9 @@ export const authOptions: NextAuthOptions = {
     async session({ session, token }) {
       // Send properties to the client, like an access_token and user id from the token
       if (session.user) {
-         (session.user as any).id = token['id'] as string;
+         (session.user as { id?: string }).id = token['id'] as string;
         if (token['walletAddress']) {
-                 (session.user as any).walletAddress = token['walletAddress'] as string;
+                 (session.user as { walletAddress?: string }).walletAddress = token['walletAddress'] as string;
         }
       }
       // session.accessToken = token.accessToken; // If using OAuth and need token client-side
@@ -249,6 +252,6 @@ export const authOptions: NextAuthOptions = {
 };
 
 const handler = NextAuth(authOptions);
-const wrappedHandler = withErrorLogging(handler as any);
+const wrappedHandler = withErrorLogging(handler as (req: NextApiRequest, res: NextApiResponse) => Promise<void>);
 export { wrappedHandler as GET, wrappedHandler as POST };
 export default wrappedHandler;
