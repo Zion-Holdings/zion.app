@@ -35,7 +35,7 @@ export function useFavorites() {
     }
   };
 
-  // eslint-disable-next-line
+   
   useEffect(() => {
     fetchFavorites();
   }, []);
