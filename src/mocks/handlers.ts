@@ -5,7 +5,7 @@ const API_URL = '/auth/login' // Assuming login endpoint is /auth/login
 export const handlers = [
   // Successful login
   http.post(API_URL, async ({ request }) => {
-    const body = await request.json() as any;
+    const body = await request.json() as { email: string; password: string };
     if (body.email === 'test@example.com' && body.password === 'password123') {
       return HttpResponse.json({
         token: 'mock-jwt-token',

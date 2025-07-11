@@ -29,19 +29,19 @@ export class DelayTolerantDAO {
   async connect() {
     // Only use mock implementation in CI/build environment
     if (isBuildEnv) {
-      console.log('🚫 DelayTolerantDAO: Using mock implementation for CI/build environment');
+      // console.log('🚫 DelayTolerantDAO: Using mock implementation for CI/build environment');
       this.ready = true;
       return;
     }
     // In browser, use real implementation with dynamic imports
     try {
-      const [ipfs, orbitdb] = await Promise.all([
+      const [_ipfs, _orbitdb] = await Promise.all([
         import('./ipfs'),
         import('./orbitdb')
       ]);
       // ... initialize modules
       this.ready = true;
-    } catch (error) {
+    } catch (_error) {
       console.warn('⚠️ Failed to load native modules, using mocks');
       this.ready = true; // Continue with mock functionality
     }
