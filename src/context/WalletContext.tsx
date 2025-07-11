@@ -9,14 +9,13 @@ import { ZION_TOKEN_NETWORK_ID } from '@/config/governanceConfig';
 import React, { createContext, useState, useContext, useCallback, useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
 import type { AppKitInstanceInterface } from '@reown/appkit/react';
-import { captureException } from '@reown/appkit/react';
+// import { captureException } from '@reown/appkit/react';
 
 import { createAppKit } from '@reown/appkit/react';
 import type { mainnet as MainnetType, goerli as GoerliType, polygon as PolygonType, optimism as OptimismType, arbitrum as ArbitrumType, base as BaseType } from '@reown/appkit/networks';
 import { mainnet, goerli, polygon, optimism, arbitrum, base } from '@reown/appkit/networks';
 import type { ethers as EthersType } from 'ethers';
 import { ethers } from 'ethers';
-// import { EthersAdapter } from '@reown/appkit/adapter-ethers'; // TODO: Adapter import missing, add correct adapter or fallback if available
 
 // Use real wallet imports except in CI/build environments
 const isBuildEnv = process.env.CI === 'true';
@@ -182,7 +181,6 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       }
       try {
         appKitRef.current = createAppKit({
-          // adapters: [new EthersAdapter({ ethers })], // TODO: Adapter not available, temporarily disabled
           adapters: [], // Empty adapters array for now
           networks: [targetNetwork],
           defaultNetwork: targetNetwork,
@@ -201,7 +199,6 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         }));
       } catch (error) {
         logErrorToProduction('WalletContext: CRITICAL error creating appKitInstance with valid Project ID:', { data: error });
-        captureException(error);
         appKitRef.current = null;
         setWallet(prev => ({
           ...initialWalletState,
@@ -274,7 +271,6 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             }));
           }
         } catch (error) {
-          captureException(error);
           logErrorToProduction('WalletContext: Error getting signer or updating wallet state:', { data: error });
           // AppKit exists, but failed to get signer or other error
           setWallet(prev => ({
@@ -352,7 +348,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
     const modalController = appKitRef.current;
     if (!modalController) { // Should be redundant due to isWalletSystemAvailable check
-      captureException(new Error('AppKit not initialized in connectWallet (modalController is null after availability check)'));
+      // captureException(new Error('AppKit not initialized in connectWallet (modalController is null after availability check)'));
 
       return;
     }
@@ -370,7 +366,6 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     try {
       await modalController.open();
     } catch (error: any) {
-      captureException(error);
       logErrorToProduction('WalletContext: Error opening wallet modal:', { data: error });
       if (error instanceof Error && /Coinbase Wallet SDK/i.test(error.message)) {
         logWarn(
@@ -396,7 +391,6 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         // State update is typically handled by the subscription to provider changes
       } catch (error) {
         logErrorToProduction('WalletContext: Error during disconnect.', { data: error });
-        captureException(error);
         logErrorToProduction('WalletContext: Error disconnecting wallet:', { data: error });
       }
     } else {
