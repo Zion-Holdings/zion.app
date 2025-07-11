@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
-import { Notification, FilterType, NotificationContextType } from './types';
+import type { Notification, FilterType, NotificationContextType } from './types';
 import createAxiosInstance from '@/lib/axios';
 import {logErrorToProduction} from '@/utils/productionLogger';
 

@@ -9,11 +9,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
 
   return (
     <Sonner
-<<<<<<< HEAD
-      theme={theme || "system"}
-=======
       theme={safeTheme}
->>>>>>> f21567bffd098e623c9a927edcb74896bc021795
       className="toaster group"
       toastOptions={{
         classNames: {
