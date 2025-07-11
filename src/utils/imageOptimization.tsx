@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
-import { Buffer } from 'buffer';
+import { Buffer as NodeBuffer } from 'buffer';
 
 interface OptimizedImageProps {
   src: string;
@@ -100,9 +100,19 @@ export function OptimizedImage({
       </defs>
       <rect width="100%" height="100%" fill="url(#grad)" />
     </svg>`;
-    const base64 = typeof window !== 'undefined'
-      ? btoa(unescape(encodeURIComponent(svg)))
-      : (typeof Buffer !== 'undefined' ? Buffer.from(svg).toString('base64') : '');
+    let base64 = '';
+    if (typeof window !== 'undefined') {
+      base64 = btoa(unescape(encodeURIComponent(svg)));
+    } else {
+      try {
+        // Dynamically require Buffer only on server
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        const { Buffer } = require('buffer');
+        base64 = Buffer.from(svg).toString('base64');
+      } catch {
+        base64 = '';
+      }
+    }
     return `data:image/svg+xml;base64,${base64}`;
   };
 
