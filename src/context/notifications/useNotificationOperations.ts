@@ -111,5 +111,6 @@ export const useNotificationOperations = (
     dismissNotification,
     setFilter,
     fetchNotifications,
+    setNotifications,
   };
 };

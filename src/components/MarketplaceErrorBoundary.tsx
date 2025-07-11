@@ -77,21 +77,25 @@ interface MarketplaceErrorBoundaryProps {
 }
 
 export function MarketplaceErrorBoundary({ children }: MarketplaceErrorBoundaryProps) {
-  const handleError = (error: Error, errorInfo: React.ErrorInfo) => {
+  const handleError = async (error: Error, errorInfo: React.ErrorInfo) => {
     // Log boundary errors to Sentry
     logErrorToProduction('MarketplaceErrorBoundary caught an error:', error, { componentStack: errorInfo.componentStack });
     
     // Report to Sentry only on the server
     if (typeof window === 'undefined') {
-      const Sentry = await import('@sentry/nextjs');
-      Sentry.withScope((scope) => {
-        scope.setTag('errorBoundary', 'marketplace');
-        scope.setContext('errorInfo', {
-          componentStack: errorInfo.componentStack || undefined,
+      try {
+        const Sentry = (await import('@sentry/nextjs')).default;
+        Sentry.withScope((scope) => {
+          scope.setTag('errorBoundary', 'marketplace');
+          scope.setContext('errorInfo', {
+            componentStack: errorInfo.componentStack || undefined,
+          });
+          scope.setLevel('error');
+          Sentry.captureException(error);
         });
-        scope.setLevel('error');
-        Sentry.captureException(error);
-      });
+      } catch (sentryError) {
+        logErrorToProduction('Failed to report to Sentry:', { data: sentryError });
+      }
     }
   };
 

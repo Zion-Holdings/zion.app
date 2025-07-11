@@ -9,7 +9,7 @@ import { useAuthEventHandlers } from "./useAuthEventHandlers";
 import { mapProfileToUser } from "./profileMapper";
 import { loginUser, registerUser } from "@/services/authService";
 import { safeStorage, safeSessionStorage } from "@/utils/safeStorage";
-import { UserDetails, AuthContextType } from "@/types/auth";
+import type { UserDetails, AuthContextType } from "@/types/auth";
 import { toast } from "@/hooks/use-toast"; // Import toast
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
@@ -95,6 +95,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     setIsLoading(true); // Set loading true at the start of login attempt
     try {
       // Production/Supabase mode - attempt to sign in with Supabase
+      if (!supabase) {
+        throw new Error("Supabase client is not configured");
+      }
+      
       const { error: supabaseError } = await supabase.auth.signInWithPassword({
         email,
         password,
@@ -227,6 +231,12 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       return;
     }
 
+    if (!supabase) {
+      logWarn('[AuthProvider] Supabase client is null - skipping auth state listener');
+      setIsLoading(false);
+      return;
+    }
+
     // Timeout for initial auth state check
     const authInitTimeoutMs = 10000; // 10 seconds
     const authInitTimer = setTimeout(() => {
@@ -259,6 +269,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 try {
                     if (process.env.NODE_ENV === 'development') {
                         logInfo('[AuthProvider DEBUG] Attempting to fetch profile for user ID:', { data: session.user.id });
+                    }
+                    
+                    if (!supabase) {
+                        throw new Error("Supabase client is not available for profile fetch");
                     }
                     
                     const { data: profile, error: profileError } = await supabase

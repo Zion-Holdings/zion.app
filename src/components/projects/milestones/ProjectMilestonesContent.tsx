@@ -17,7 +17,7 @@ import {
   ProjectActions,
   ProjectHeader,
 } from './components';
-import { Milestone } from '@/hooks/milestones/types';
+import type { Milestone } from '@/hooks/milestones/types';
 
 export function ProjectMilestonesContent() {
   const router = useRouter();
@@ -79,8 +79,8 @@ export function ProjectMilestonesContent() {
   const handleCreateMilestone: (data: {
     title: string;
     amount: number;
-    description?: string;
-    due_date?: Date;
+    description?: string | undefined;
+    due_date?: Date | undefined;
   }) => Promise<Milestone | null> = async (data) => {
     if (!projectId) return null;
     const milestoneData = {
@@ -109,8 +109,8 @@ export function ProjectMilestonesContent() {
     amount: number;
     description?: string | undefined;
     due_date?: Date | undefined;
-  }): Promise<Milestone | null> => {
-    if (!projectId) return null;
+  }): Promise<void> => {
+    if (!projectId) return;
 
     // Ensure all required fields are present
     const milestoneData = {
@@ -122,10 +122,9 @@ export function ProjectMilestonesContent() {
       due_date: data.due_date ? data.due_date.toISOString() : '',
     };
 
-    const result = await createMilestone(milestoneData);
+    await createMilestone(milestoneData);
     setActiveTab('milestones');
     await handleMilestoneCreated();
-    return result;
   };
 
   return (

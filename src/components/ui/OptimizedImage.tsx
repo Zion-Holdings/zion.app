@@ -91,8 +91,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
               <Image
         src={imgSrc}
         alt={alt}
-        width={fill ? undefined : width}
-        height={fill ? undefined : height}
+        {...(fill ? {} : { width: width || 400, height: height || 300 })}
         fill={fill}
         priority={actualPriority}
         loading={actualLoading}

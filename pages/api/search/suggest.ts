@@ -55,7 +55,7 @@ function handler(
   suggestions.push(...productSuggestions);
 
   // Add service suggestions
-  const serviceSuggestions = SERVICES
+  const serviceSuggestions = RAW_SERVICES
     .filter((s) => match(s.title) || match(s.description))
     .slice(0, 2)
     .map((s) => ({

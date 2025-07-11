@@ -3,9 +3,9 @@ import React, {
   useContext,
   useEffect,
   useState,
-  ReactNode,
   useRef,
 } from 'react';
+import type { ReactNode } from 'react';
 import { useRouter } from 'next/router'; // Changed from useLocation
 import axios from 'axios';
 
@@ -41,15 +41,15 @@ export function AppLoaderProvider({ children }: { children: ReactNode }) {
   const hideLoader = () => setLoading(false);
 
   useEffect(() => {
-    const onRequest = (config: unknown) => {
+    const onRequest = (config: any) => {
       showLoader();
       return config;
     };
-    const onResponse = (response: unknown) => {
+    const onResponse = (response: any) => {
       hideLoader();
       return response;
     };
-    const onError = (err: unknown) => {
+    const onError = (err: any) => {
       hideLoader();
       setError(err);
       return Promise.reject(err);

@@ -63,8 +63,8 @@ export function SafeImage({
     <Image
       src={currentSrc}
       alt={alt}
-      width={width}
-      height={height}
+      {...(width ? { width } : {})}
+      {...(height ? { height } : {})}
       className={className}
       onError={handleError}
       priority={priority}

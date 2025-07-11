@@ -1,3 +1,4 @@
+import React from 'react';
 import { Notification as BaseNotification } from '@/types/notifications';
 
 export type NotificationType =
@@ -36,4 +37,5 @@ export interface NotificationContextType {
   dismissNotification: (id: string) => Promise<void>;
   setFilter: (filter: FilterType) => void;
   fetchNotifications: () => Promise<void>;
+  setNotifications: React.Dispatch<React.SetStateAction<Notification[]>>;
 }

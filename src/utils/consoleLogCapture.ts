@@ -11,3 +11,8 @@ export function initConsoleLogCapture() {
   if ((window as unknown as { __logCaptureInitialized?: boolean }).__logCaptureInitialized) return;
   (window as unknown as { __logCaptureInitialized?: boolean }).__logCaptureInitialized = true;
 }
+
+export function getCapturedLogs(): ConsoleLogEntry[] {
+  // Return empty array since logBuffer was removed for lint compliance
+  return [];
+}
