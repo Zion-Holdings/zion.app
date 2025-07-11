@@ -380,7 +380,7 @@ export function useAuthOperations(
        created_at: new Date().toISOString(),
        updated_at: new Date().toISOString(),
        role: 'user',
-       displayName: address,
+       displayName: address || '',
        points: 0
      });
       
