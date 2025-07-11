@@ -147,10 +147,10 @@ export function withCache<T>(
   category: CacheCategory = CacheCategory.MEDIUM,
   customTTL?: number
 ) {
-  return function(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+  return function(target: unknown, propertyKey: string, descriptor: PropertyDescriptor) {
     const originalMethod = descriptor.value;
 
-    descriptor.value = async function(...args: any[]) {
+    descriptor.value = async function(...args: unknown[]) {
       // Try to get from cache first
       const cachedResult = getCacheItem<T>(cacheKey, category);
       if (cachedResult !== undefined) {
@@ -224,10 +224,13 @@ export function getCacheHeaders(category: CacheCategory): { [key: string]: strin
 /**
  * Apply cache headers to Next.js API response
  */
-export function applyCacheHeaders(res: any, category: CacheCategory): void {
+export function applyCacheHeaders(res: unknown, category: CacheCategory): void {
+  if (typeof res !== 'object' || res === null || !('setHeader' in res) || typeof (res as { setHeader?: unknown }).setHeader !== 'function') {
+    throw new Error('Response object does not support setHeader');
+  }
   const headers = getCacheHeaders(category);
   Object.entries(headers).forEach(([key, value]) => {
-    res.setHeader(key, value);
+    (res as { setHeader: (key: string, value: string) => void }).setHeader(key, value);
   });
 }
 
