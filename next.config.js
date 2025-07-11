@@ -269,7 +269,7 @@ const nextConfig = {
     } : false,
     // Remove React DevTools in production
     reactRemoveProperties: process.env.NODE_ENV === 'production' ? { properties: ['data-testid'] } : false,
-    // Enable SWC minification optimizations
+    // Disable SWC minification to prevent CSS parsing errors
     styledComponents: false, // Disable if not using styled-components
   },
 
@@ -465,7 +465,6 @@ const nextConfig = {
     });
 
     // Simplified webpack configuration to bypass CSS issues
-    const require = createRequire(import.meta.url);
     
     // Disable CSS minimization to prevent syntax errors
     if (config.optimization && config.optimization.minimizer) {
