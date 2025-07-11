@@ -17,6 +17,7 @@ import {
   ProjectActions,
   ProjectHeader,
 } from './components';
+import { Milestone } from '@/types/milestones';
 
 export function ProjectMilestonesContent() {
   const router = useRouter();
@@ -75,12 +76,12 @@ export function ProjectMilestonesContent() {
   const projectType = job?.category || 'Other';
 
   // Handler to adapt form data to createMilestone's expected shape
-  const handleCreateMilestone = async (data: {
+  const handleCreateMilestone: (data: {
     title: string;
     amount: number;
-    description?: string | undefined;
-    due_date?: Date | undefined;
-  }) => {
+    description?: string;
+    due_date?: Date;
+  }) => Promise<Milestone | null> = async (data) => {
     if (!projectId) return null;
     const milestoneData = {
       project_id: projectId,
