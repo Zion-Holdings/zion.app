@@ -5,53 +5,19 @@
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 
-// Optimized console that's removed in production
-export const devConsole: {
-  log: (...args: unknown[]) => void;
-  warn: (...args: unknown[]) => void;
-  error: (...args: unknown[]) => void;
-  info: (...args: unknown[]) => void;
-  debug: (...args: unknown[]) => void;
-  time: (label?: string) => void;
-  timeEnd: (label?: string) => void;
-  logIf: (condition: boolean, ...args: unknown[]) => void;
-  measure: (name: string, fn: () => unknown) => unknown;
-} = {
-  log: isDevelopment ? (...args: unknown[]) => { console.log(...args); } : () => {},
-  warn: isDevelopment ? (...args: unknown[]) => { console.warn(...args); } : () => {},
+// Remove all devConsole methods except warn and error
+export const devConsole = {
+  warn: (...args: unknown[]) => { console.warn(...args); },
   error: (...args: unknown[]) => { console.error(...args); },
-  info: isDevelopment ? (...args: unknown[]) => { console.info(...args); } : () => {},
-  debug: isDevelopment ? (...args: unknown[]) => { console.debug(...args); } : () => {},
-  time: isDevelopment ? (label?: string) => { console.time(label); } : () => {},
-  timeEnd: isDevelopment ? (label?: string) => { console.timeEnd(label); } : () => {},
-  logIf: (condition: boolean, ...args: unknown[]) => {
-    if (isDevelopment && condition) console.log(...args);
-  },
-  measure: (name: string, fn: () => unknown) => {
-    if (isDevelopment) {
-      const start = performance.now();
-      const result = fn();
-      const end = performance.now();
-      console.log(`${name}: ${(end - start).toFixed(2)}ms`);
-      return result;
-    }
-    return fn();
-  }
 };
 
-// Bundle size aware logging
-export const bundleLog: {
-  log: (...args: unknown[]) => void;
-  warnLargeComponent: (componentName: string, size: number) => void;
-} = {
-  log: (isDevelopment && localStorage?.getItem('bundle-monitoring') === 'true')
-    ? (...args: unknown[]) => { console.log(...args); }
-    : () => {},
+// Only keep warnLargeComponent if it uses console.warn
+export const bundleLog = {
   warnLargeComponent: (componentName: string, size: number) => {
-    if (isDevelopment && size > 100) {
+    if (process.env.NODE_ENV === 'development' && size > 100) {
       console.warn(`Large component: ${componentName} (${size}kb)`);
     }
-  }
+  },
 };
 
 export default devConsole;
