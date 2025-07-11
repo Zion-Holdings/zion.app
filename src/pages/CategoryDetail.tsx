@@ -187,15 +187,12 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
   useEffect(() => {
     if (slug !== 'innovation') return;
 
-    const interval = setInterval(() => {
-      innovationCounterRef.current += 1;
-      setListings((prev) => [
-        generateInnovationListing(innovationCounterRef.current),
-        ...prev,
-      ]);
-    }, 120000); // every 2 minutes
-
-    return () => clearInterval(interval);
+    // Remove simulated innovation listing interval
+    // Only display real listings from the API
+    // If no listings, show empty state or message
+    // (No-op)
+    
+    return undefined;
   }, [slug]);
 
   // Handle requesting a quote
