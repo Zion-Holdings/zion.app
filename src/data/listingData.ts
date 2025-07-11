@@ -1,4 +1,4 @@
-import { ProductListing } from "@/types/listings";
+import type { ProductListing } from "@/types/listings";
 import { NEW_PRODUCTS } from "./newProductsData";
 
 // Export marketplace listings from new products data
