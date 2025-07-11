@@ -212,8 +212,8 @@ export default function TranslationManager() {
         logErrorToProduction('Error translating key ${key}:', { data: String(error) });
       }
       let errorMessage = t('translation.unknown_error');
-      if (typeof error === 'object' && error !== null && 'message' in error && typeof (error as Record<string, unknown>).message === 'string') {
-        errorMessage = (error as Record<string, string>).message;
+      if (typeof error === 'object' && error !== null && 'message' in error) {
+        errorMessage = String((error as Record<string, unknown>).message ?? t('translation.unknown_error'));
       }
       toast({
         title: t('translation.translation_failed'),
