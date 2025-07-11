@@ -222,8 +222,10 @@ export const authOptions: NextAuthOptions = {
       if (account && user) {
         token['accessToken'] = account.access_token; // For OAuth
         token['id'] = user.id; // For all users
-        if ((user as { walletAddress?: string }).walletAddress) { // For wallet users
-            token['walletAddress'] = (user as { walletAddress: string }).walletAddress;
+        // Safely check for walletAddress property
+        const userWithWallet = user as { walletAddress?: string };
+        if (userWithWallet.walletAddress) {
+            token['walletAddress'] = userWithWallet.walletAddress;
         }
       }
       return token;
