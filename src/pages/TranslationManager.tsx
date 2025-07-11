@@ -201,24 +201,19 @@ export default function TranslationManager() {
         title: t('translation.translation_success'),
         description: t('translation.content_translated'),
       });
-<<<<<<< HEAD
     } catch (error: unknown) {
       if (typeof error === 'object' && error !== null) {
-        logErrorToProduction('Error translating key ${key}:', { data: error });
+        logErrorToProduction(`Error translating key ${key}:`, { data: error });
       } else {
-        logErrorToProduction('Error translating key ${key}:', { data: String(error) });
+        logErrorToProduction(`Error translating key ${key}:`, { data: String(error) });
       }
       let errorMessage = t('translation.unknown_error');
       if (typeof error === 'object' && error !== null && 'message' in error) {
         errorMessage = String((error as Record<string, unknown>).message ?? t('translation.unknown_error'));
       }
-=======
-    } catch (error) {
-      logErrorToProduction('Error translating key ${key}:', { data: error });
->>>>>>> 711bf6254ab8b781ccf48d4c2c20021a1f34757e
       toast({
         title: t('translation.translation_failed'),
-        description: error instanceof Error ? error.message : t('translation.unknown_error'),
+        description: errorMessage,
         variant: "destructive",
       });
     }
