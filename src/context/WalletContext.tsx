@@ -182,7 +182,8 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       }
       try {
         appKitRef.current = createAppKit({
-          adapters: [new EthersAdapter({ ethers })],
+          // adapters: [new EthersAdapter({ ethers })], // TODO: Adapter not available, temporarily disabled
+          adapters: [], // Empty adapters array for now
           networks: [targetNetwork],
           defaultNetwork: targetNetwork,
           projectId: rawProjectId,
