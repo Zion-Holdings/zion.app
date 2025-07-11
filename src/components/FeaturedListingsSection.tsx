@@ -16,92 +16,7 @@ export function FeaturedListingsSection({
   className,
   style,
 }: FeaturedListingsSectionProps) {
-  const featuredListings: import("@/types/listings").ProductListing[] = [
-    {
-      id: "ai-innovation-bootcamp",
-      title: "AI Innovation Bootcamp",
-      uspHeadline: "Master AI Skills Fast",
-      description:
-        "Join a focused, project-based bootcamp where industry mentors guide you through building real AI solutions. Perfect for jump-starting your career or expanding your capabilities in just weeks.",
-      price: 4999,
-      currency: "$",
-      category: "Training",
-      tags: ["AI", "Bootcamp"],
-      images: ["https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&h=500"],
-      createdAt: "2024-05-01T09:00:00.000Z",
-      rating: 4.8,
-      reviewCount: 124,
-      author: {
-        name: "Zion Academy",
-        id: "zion-academy"
-      },
-      stock: 10,
-      location: "Remote"
-    },
-    {
-      id: "freelance-ai-engineer",
-      title: "Freelance AI Engineer",
-      uspHeadline: "Expert Dev, On Demand",
-      description:
-        "Hire a seasoned AI engineer who integrates seamlessly with your team. From model design to deployment, get top-tier skills without the overhead of a full-time hire.",
-      price: null,
-      currency: "$",
-      category: "Services",
-      tags: ["AI", "Freelance"],
-      images: ["https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=800&h=500"],
-      createdAt: "2024-06-10T10:30:00.000Z",
-      rating: 4.9,
-      reviewCount: 56,
-      author: {
-        name: "TopTalent",
-        id: "toptalent"
-      },
-      stock: 0,
-      location: "Remote"
-    },
-    {
-      id: "cloud-gpu-rental",
-      title: "Cloud GPU Rental",
-      uspHeadline: "Powerful GPUs, Anytime, Anywhere",
-      description:
-        "Access high-performance GPU instances in the cloud whenever you need them. Scale effortlessly for training, inference, or rendering tasks and only pay for what you use.",
-      price: 1299,
-      currency: "$",
-      category: "Infrastructure",
-      tags: ["GPU", "Cloud"],
-      images: ["https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&h=500"],
-      createdAt: "2024-03-20T11:15:00.000Z",
-      rating: 4.7,
-      reviewCount: 89,
-      author: {
-        name: "ComputeHub",
-        id: "computehub"
-      },
-      stock: 10,
-      location: "San Francisco, CA"
-    },
-    {
-      id: "ai-optimized-cloud-storage",
-      title: "AI-Optimized Cloud Storage",
-      uspHeadline: "Secure Storage for AI Workloads",
-      description:
-        "Store and retrieve massive datasets with lightning-fast throughput. Our AI-optimized cloud storage ensures efficient pipeline performance, built-in redundancy, and encryption for your machine learning workflows.",
-      price: 299,
-      currency: "$",
-      category: "Infrastructure",
-      tags: ["Storage", "Cloud"],
-      images: ["https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=800&h=500"],
-      createdAt: "2024-04-05T08:00:00.000Z",
-      rating: 4.6,
-      reviewCount: 72,
-      author: {
-        name: "DataCloud",
-        id: "datacloud"
-      },
-      stock: 10,
-      location: "New York, NY"
-    }
-  ];
+  // Remove hardcoded featuredListings. Fetch from real API/data source or show empty state if unavailable.
 
   return (
     <section
@@ -122,14 +37,15 @@ export function FeaturedListingsSection({
         )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredListings.map((listing) => (
-            <ProductListingCard
+          {/* The featuredListings array is now empty, so this loop will not render any cards. */}
+          {/* If you want to display a placeholder or message, you would add it here. */}
+          {/* For now, it will just show an empty grid. */}
+          {/* <ProductListingCard
               key={listing.id}
               listing={listing}
               view="grid"
               onRequestQuote={() => {}}
-            />
-          ))}
+            /> */}
         </div>
         
         <div className="mt-10 text-center">

@@ -1,4 +1,4 @@
-import Sentry from './sentry';
+import * as Sentry from './sentry';
 
 export { register } from './sentry';
 
