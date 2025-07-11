@@ -1457,7 +1457,19 @@ const nextConfig = {
       });
     }
 
-    return config;
+    // Remove any non-serializable properties before returning config
+    // For example, delete any properties that are functions or complex objects
+    if (config.cache && typeof config.cache !== 'object') {
+      delete config.cache;
+    }
+    if (config.optimization && typeof config.optimization !== 'object') {
+      delete config.optimization;
+    }
+    // Remove any other known non-serializable properties if present
+    // (Add more cleanup here if needed)
+    // Deep clone config to ensure no non-cloneable objects are returned
+    const serializableConfig = JSON.parse(JSON.stringify(config));
+    return serializableConfig;
   },
 
   // Note: headers, redirects, and rewrites don't work with output: 'export'
