@@ -370,8 +370,8 @@ export function useAuthOperations(
       
       // Fix: Create a proper UserDetails object
      setUser({
-       id: address,
-       name: address,
+       id: address || '',
+       name: address || '',
        profileComplete: true,
        email: '', // Add required fields
        userType: 'talent', // Default user type
