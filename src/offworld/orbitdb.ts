@@ -23,11 +23,7 @@ const createHelia = () => Promise.resolve({
 });
 
 // Browser-safe logging
-function logInfo(message: string) {
-  if (!isBuildEnv) {
-    console.log(`[OrbitDB] ${message}`);
-  }
-}
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 // Browser-safe memory stores
 class _MemoryBlockstore {
@@ -124,7 +120,7 @@ export async function initOrbit(repoPath = './orbitdb-helia') {
 
 export async function getLog(name: string): Promise<unknown> {
   if (isBuildEnv || isBrowserEnv) {
-    console.log('🚫 OrbitDB getLog not available in browser environment');
+    logInfo('🚫 OrbitDB getLog not available in browser environment');
     return {
       add: () => Promise.resolve(),
       iterator: () => [],
@@ -145,7 +141,7 @@ export async function getLog(name: string): Promise<unknown> {
     if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
       message = (error as { message: string }).message;
     }
-    console.warn('⚠️ Failed to open OrbitDB log:', message);
+    logErrorToProduction('⚠️ Failed to open OrbitDB log:', { data: message });
     // Return mock log
     return {
       add: () => Promise.resolve(),
