@@ -137,7 +137,10 @@ export default function TranslationManager() {
         }
         const editedKey = editedTranslations[key];
         if (editedKey && typeof editedKey === 'object' && editedKey[lang.code] !== undefined) {
-          updatedTranslations[lang.code][key] = editedKey[lang.code];
+          const langTranslations = updatedTranslations[lang.code];
+          if (langTranslations) {
+            langTranslations[key] = editedKey[lang.code];
+          }
         }
       });
       
