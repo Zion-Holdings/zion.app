@@ -39,12 +39,12 @@ export function useSmartContracts() {
       
       if (error) throw error;
       
-      if (data && (data as any).solidityCode) {
-        return (data as any).solidityCode;
+      if (data && typeof data === 'object' && 'solidityCode' in data) {
+        return (data as { solidityCode: string }).solidityCode;
       } else {
         throw new Error("Failed to generate Solidity contract");
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Error generating Solidity contract:', { data: err });
       toast.error("Failed to generate smart contract");
       throw err;
@@ -90,7 +90,7 @@ export function useSmartContracts() {
       toast.success("Smart contract deployed successfully!");
       
       return mockSmartContractInfo;
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Error deploying smart contract:', { data: err });
       toast.error("Failed to deploy smart contract");
       setDeploymentStatus('error');
