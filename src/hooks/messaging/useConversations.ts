@@ -182,9 +182,5 @@ export function useConversations(
   };
 }
 
-    createConversation,
-  };
-}
-
 
 
