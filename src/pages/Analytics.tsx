@@ -99,7 +99,7 @@ export default function Analytics() {
           if (!conversionsByType[conversionType]) {
             conversionsByType[conversionType] = {};
           }
-          const typeMap = conversionsByType[conversionType];
+          const typeMap = conversionsByType[conversionType] as Record<string, number>;
           if (!typeMap[date]) {
             typeMap[date] = 0;
           }
@@ -170,7 +170,7 @@ export default function Analytics() {
               }
             }
             if (!usageByDate[date]) usageByDate[date] = {};
-            const featureMap = usageByDate[date];
+            const featureMap = usageByDate[date] as Record<string, number>;
             if (!featureMap[feature]) featureMap[feature] = 0;
             featureMap[feature] += 1;
           }
