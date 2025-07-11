@@ -127,7 +127,11 @@ const Carousel = React.forwardRef<
         value={{
           carouselRef,
           api: api,
+<<<<<<< HEAD
           opts: opts || {}, // Always provide an object
+=======
+          opts: opts ?? {}, // Always provide an object
+>>>>>>> 40bbe743 (fix(carousel): resolve merge conflict and ensure 'opts' is always defined for exactOptionalPropertyTypes compliance)
           orientation:
             orientation || (opts && opts.axis === "y" ? "vertical" : "horizontal"),
           scrollPrev,

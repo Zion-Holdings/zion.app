@@ -1,5 +1,5 @@
 // Conditional Sentry import for React 19 + Next.js 15 compatibility
-let Sentry: any = null;
+let Sentry: unknown = null;
 
 // Attempt to load Sentry or its alias.
 // Webpack (via next.config.js) is responsible for aliasing @sentry/nextjs
@@ -9,7 +9,7 @@ try {
   Sentry = require("@sentry/nextjs");
   // Check if the loaded Sentry is the comprehensive mock from src/utils/sentry-mock.ts
   // The mock has a specific SDK_VERSION
-  if (Sentry && Sentry.SDK_VERSION === '7.0.0-mock') {
+  if (Sentry && (Sentry as any).SDK_VERSION === '7.0.0-mock') {
     console.log('Comprehensive Sentry mock (src/utils/sentry-mock.ts) loaded via webpack alias.');
   } else if (Sentry) {
     console.log('Real Sentry SDK loaded.');
@@ -22,7 +22,7 @@ try {
   // This should ideally not be reached if webpack aliasing is working correctly.
   Sentry = {
     init: () => console.warn('Sentry emergency inline mock: init called. Sentry is NOT operational.'),
-    captureException: (err: any) => console.warn('Sentry emergency inline mock: captureException', err),
+    captureException: (err: unknown) => console.warn('Sentry emergency inline mock: captureException', err),
     setTag: (key: string, value: string) => console.warn('Sentry emergency inline mock: setTag', key, value),
     SDK_VERSION: 'emergency-inline-mock', // Identifier for this mock
   };
@@ -66,7 +66,7 @@ export function register() {
   }
 
   // Skip initialization if Sentry is mocked
-  if (!Sentry || Sentry.init.toString().includes('mock')) {
+  if (!Sentry || (Sentry as any).init.toString().includes('mock')) {
     console.log('Sentry is mocked, skipping initialization');
     return;
   }
@@ -74,7 +74,7 @@ export function register() {
   console.log(`Initializing client-side Sentry. Release: ${SENTRY_RELEASE}, Environment: ${SENTRY_ENVIRONMENT}`);
 
   try {
-    const initOptions: any = {
+    const initOptions: Record<string, unknown> = {
       dsn: SENTRY_DSN,
       tracesSampleRate: process.env.NODE_ENV === 'development' ? 1.0 : 1.0, // Keep at 1.0 for tests
       // Remove deprecated Http integration - modern Sentry handles HTTP tracing automatically
@@ -88,16 +88,16 @@ export function register() {
       initOptions.environment = SENTRY_ENVIRONMENT;
     }
 
-    Sentry.init(initOptions);
+    (Sentry as any).init(initOptions);
 
     // Set additional context
     if (SENTRY_RELEASE) {
-      Sentry.setTag("release", SENTRY_RELEASE);
+      (Sentry as any).setTag("release", SENTRY_RELEASE);
     }
     if (SENTRY_ENVIRONMENT) {
-      Sentry.setTag("environment", SENTRY_ENVIRONMENT);
+      (Sentry as any).setTag("environment", SENTRY_ENVIRONMENT);
     }
-    Sentry.setTag("runtime", "browser");
+    (Sentry as any).setTag("runtime", "browser");
 
     console.log(`Sentry initialized successfully. Release: ${SENTRY_RELEASE}, Environment: ${SENTRY_ENVIRONMENT}`);
   } catch (error) {
@@ -109,5 +109,7 @@ export function register() {
 // export const onRouterTransitionStart = captureRouterTransitionStart; // Removing this
 
 export function onRequestError(error: unknown) {
-  Sentry.captureException(error); // Use the standard captureException method
+  if (typeof Sentry === 'object' && Sentry !== null && 'captureException' in Sentry && typeof Sentry.captureException === 'function') {
+    (Sentry as any).captureException(error);
+  }
 }
