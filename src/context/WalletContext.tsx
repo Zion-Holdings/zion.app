@@ -1,5 +1,6 @@
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 import { getAppKitProjectId } from '@/config/env';
+import { ZION_TOKEN_NETWORK_ID } from '@/config/governanceConfig';
 
 // src/context/WalletContext.tsx
 
@@ -7,6 +8,8 @@ import { getAppKitProjectId } from '@/config/env';
 
 import React, { createContext, useState, useContext, useCallback, useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
+import type { AppKitInstanceInterface } from '@reown/appkit/react';
+import { captureException } from '@/utils/sentry';
 
 // Use real wallet imports except in CI/build environments
 const isBuildEnv = process.env.CI === 'true';
