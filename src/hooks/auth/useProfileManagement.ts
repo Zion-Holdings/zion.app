@@ -15,7 +15,7 @@ export const useProfileManagement = (setIsLoading: (loading: boolean) => void) =
       }
 
       // Update user metadata
-      const { error: authError } = await supabase.auth.updateUser({
+      const { error: authError } = await supabase!.auth.updateUser({
         data: {
           display_name: data.displayName,
           user_type: data.userType,
@@ -33,7 +33,7 @@ export const useProfileManagement = (setIsLoading: (loading: boolean) => void) =
       }
 
       // Update profiles table
-      const { error: profileError } = await supabase
+      const { error: profileError } = await supabase!
         .from("profiles")
         .update({
           display_name: data.displayName,

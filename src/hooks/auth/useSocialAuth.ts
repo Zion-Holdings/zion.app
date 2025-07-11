@@ -7,7 +7,7 @@ export const useSocialAuth = () => {
 
   const loginWithGoogle = async () => {
     try {
-      const { error } = await supabase.auth.signInWithOAuth({
+      const { error } = await supabase!.auth.signInWithOAuth({
         provider: "google",
       });
 
@@ -30,7 +30,7 @@ export const useSocialAuth = () => {
 
   const loginWithGitHub = async () => {
     try {
-      const { error } = await supabase.auth.signInWithOAuth({
+      const { error } = await supabase!.auth.signInWithOAuth({
         provider: "github",
       });
 
@@ -53,7 +53,7 @@ export const useSocialAuth = () => {
 
   const loginWithFacebook = async () => {
     try {
-      const { error } = await supabase.auth.signInWithOAuth({
+      const { error } = await supabase!.auth.signInWithOAuth({
         provider: "facebook",
       });
 
@@ -76,7 +76,7 @@ export const useSocialAuth = () => {
 
   const loginWithTwitter = async () => {
     try {
-      const { error } = await supabase.auth.signInWithOAuth({
+      const { error } = await supabase!.auth.signInWithOAuth({
         provider: "twitter",
       });
 
