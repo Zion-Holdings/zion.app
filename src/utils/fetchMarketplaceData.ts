@@ -55,17 +55,7 @@ export async function fetchMarketplaceData(
     
     // Log to Sentry with context
     if (typeof window === 'undefined') {
-      const Sentry = await import('@sentry/nextjs');
-      Sentry.withScope((scope) => {
-        scope.setTag('function', 'fetchMarketplaceData');
-        scope.setContext('options', {
-          limit: options.limit?.toString(),
-          category: options.category || '',
-          sortBy: options.sortBy || ''
-        });
-        scope.setLevel('error');
-        Sentry.captureException(error);
-      });
+      // Remove all imports of @sentry/nextjs from this file.
     }
     
     // Return sample listings as a fallback when the API call fails

@@ -37,8 +37,8 @@ export function GlobalErrorHandler({ children }: GlobalErrorHandlerProps) {
     // Report to Sentry for production
     if (process.env.NODE_ENV === 'production') {
       if (typeof window === 'undefined') {
-        const Sentry = await import('@sentry/nextjs');
-        Sentry.captureException(error);
+        // const Sentry = await import('@sentry/nextjs'); // This line was removed
+        // Sentry.captureException(error); // This line was removed
       }
     }
   }, []);

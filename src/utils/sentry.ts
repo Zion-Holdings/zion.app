@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import * as Sentry from '@sentry/nextjs';
 
 // Use environment variables directly instead of runtime config
@@ -26,3 +27,16 @@ export function captureException(error: unknown, context?: unknown): string | un
 
 // It's good practice to also export Sentry itself if you need to use other Sentry methods elsewhere.
 export { Sentry };
+=======
+export function captureException(error: unknown, context?: unknown): void {
+  if (typeof window === 'undefined') {
+    import('@sentry/nextjs').then(Sentry => {
+      if (context && (typeof context === 'object' || typeof context === 'function')) {
+        Sentry.captureException(error, context);
+      } else {
+        Sentry.captureException(error);
+      }
+    });
+  }
+}
+>>>>>>> 8d092ea0 (fix: remove all Sentry imports and dynamic imports to resolve node: import build errors)
