@@ -39,8 +39,13 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
     if (isSentryActive) {
       try {
         if (typeof window === 'undefined') {
+<<<<<<< HEAD
           const Sentry = await import('@sentry/nextjs');
           Sentry.default.captureException(error);
+=======
+          const Sentry = (await import('@sentry/nextjs')).default;
+          Sentry.captureException(error);
+>>>>>>> 320a2e85c62c62687d921c03267a039f5ead244e
         }
       } catch (sentryError) {
         logWarn('Failed to log to Sentry:', { data: sentryError });
@@ -65,8 +70,15 @@ const ErrorTestButton = () => {
     } catch (error) {
       if (isSentryActive) {
         if (typeof window === 'undefined') {
+<<<<<<< HEAD
           const Sentry = await import('@sentry/nextjs');
           Sentry.default.captureException(error);
+=======
+          import('@sentry/nextjs').then(mod => {
+            const Sentry = mod.default;
+            Sentry.captureException(error);
+          });
+>>>>>>> 320a2e85c62c62687d921c03267a039f5ead244e
         }
       }
       logErrorToProduction('Button error test:', { error });

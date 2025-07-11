@@ -73,5 +73,7 @@ export const generateFilterOptions = (
   };
 };
 
+export const MARKETPLACE_LISTINGS: ProductListing[] = [];
+
 export const MAX_PRICE = 0;
 export const MIN_PRICE = 0; 
