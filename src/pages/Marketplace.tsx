@@ -26,6 +26,7 @@ import { useAuth } from '@/context/auth/AuthProvider';
 import { fetchProducts } from '@/services/marketplace';
 import { MAX_PRICE, MIN_PRICE } from '@/data/marketplaceData';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import apiClient from '@/lib/apiClient';
 
 
 /**
@@ -287,8 +288,10 @@ export default function Marketplace() {
         sort: sortBy
       };
       logInfo('Marketplace.tsx: Fetching products from API with params:', { data: params });
-      const response = await fetchProducts(params);
-      let items: ProductListing[] = response.items || [];
+      const response = await apiClient.get('/products', { params });
+      let items: ProductListing[] = response.data?.items || [];
+      const total = response.data?.total ?? items.length;
+      const hasMore = (page * limit) < total;
       if (showRecommended) {
         items = items.filter((p) => p.rating != null && p.rating >= 4.3);
       }
@@ -307,10 +310,10 @@ export default function Marketplace() {
           (!filterAvailability || availability === filterAvailability.toLowerCase())
         );
       });
-      return { items };
+      return { items, hasMore, total };
     } catch (error) {
       logErrorToProduction('Marketplace.tsx: Error fetching products from API', { data: error });
-      return { items: [] };
+      return { items: [], hasMore: false, total: 0 };
     }
   }, [filterCategory, sortBy, showRecommended, priceRange, minAiScore, minRating, filterLocation, filterAvailability]);
 
