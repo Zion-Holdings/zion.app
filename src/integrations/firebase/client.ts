@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { memoryLocalCache, Firestore, getFirestore } from 'firebase/firestore';
+import { memoryLocalCache as _memoryLocalCache, Firestore, getFirestore } from 'firebase/firestore';
 import { getPerformance } from 'firebase/performance';
 import { logWarn } from '@/utils/productionLogger';
 
