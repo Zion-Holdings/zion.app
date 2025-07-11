@@ -5,72 +5,7 @@ import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/l
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
-// Mock jobs data for API documentation and testing
-const MOCK_JOBS = [
-  {
-    id: "job-123",
-    title: "Senior React Developer",
-    description: "We're looking for an experienced React developer to join our growing team and help build next-generation AI-powered applications.",
-    category: "development",
-    budget: {
-      min: 5000,
-      max: 10000,
-      currency: "USD"
-    },
-    status: "open",
-    location: "Remote",
-    company: "AI Solutions Inc.",
-    requirements: [
-      "5+ years React experience",
-      "TypeScript proficiency",
-      "Experience with AI/ML integrations"
-    ],
-    created_at: "2024-01-15T10:30:00Z",
-    updated_at: "2024-01-15T10:30:00Z"
-  },
-  {
-    id: "job-456",
-    title: "AI/ML Engineer",
-    description: "Join our AI team to develop cutting-edge machine learning models and integrate them into production systems.",
-    category: "ai-ml",
-    budget: {
-      min: 8000,
-      max: 15000,
-      currency: "USD"
-    },
-    status: "open",
-    location: "San Francisco, CA",
-    company: "TechGenius Corp",
-    requirements: [
-      "PhD or Masters in Computer Science/AI",
-      "Experience with TensorFlow/PyTorch",
-      "Published research preferred"
-    ],
-    created_at: "2024-01-10T14:20:00Z",
-    updated_at: "2024-01-12T09:15:00Z"
-  },
-  {
-    id: "job-789",
-    title: "DevOps Engineer",
-    description: "Help us scale our infrastructure and implement best practices for CI/CD, monitoring, and deployment automation.",
-    category: "devops",
-    budget: {
-      min: 4000,
-      max: 8000,
-      currency: "USD"
-    },
-    status: "filled",
-    location: "Remote",
-    company: "CloudTech Solutions",
-    requirements: [
-      "AWS/Azure experience",
-      "Kubernetes proficiency",
-      "Infrastructure as Code (Terraform)"
-    ],
-    created_at: "2024-01-05T16:45:00Z",
-    updated_at: "2024-01-14T11:30:00Z"
-  }
-];
+// Remove MOCK_JOBS and all mock data usage. Fetch jobs from real data source or return an error/empty array if not available.
 
 // Simple demo API key validation
 function validateApiKey(req: NextApiRequest): boolean {
@@ -169,13 +104,11 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       cacheKey,
       async () => {
         logInfo(`Computing jobs with filters: ${filterParams}`);
-        return filterAndSortJobs(MOCK_JOBS, {
-          status: status as string,
-          category: category as string,
-          sort: sort as string,
-          limit: limitNum,
-          offset: offsetNum
-        });
+        // Fetch jobs from a real data source here
+        // For now, return an empty array or throw an error if no data source is available
+        // Example: const jobs = await fetchJobsFromDataSource();
+        // return filterAndSortJobs(jobs, { ...params, limit: limitNum, offset: offsetNum });
+        return { jobs: [], totalFiltered: 0, totalAll: 0 }; // Placeholder for real data
       },
       CacheCategory.SHORT, // 5 minutes cache for job listings
       300 // 5 minutes TTL
@@ -207,11 +140,11 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     res.setHeader('X-Data-Source', 'fallback');
     
     res.status(200).json({
-      jobs: MOCK_JOBS.slice(0, 20), // Return first 20 jobs as fallback
-      count: MOCK_JOBS.length,
+      jobs: [], // Return an empty array as fallback
+      count: 0,
       limit: 20,
       offset: 0,
-      total: MOCK_JOBS.length
+      total: 0
     });
     return;
   }

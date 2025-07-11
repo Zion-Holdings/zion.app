@@ -4,60 +4,7 @@ import { withApiDocsCors } from '@/middleware/cors';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
-// Mock talent data for API documentation and testing
-const MOCK_TALENT = [
-  {
-    id: "talent-123",
-    full_name: "Jane Smith",
-    professional_title: "Full Stack Developer",
-    skills: ["React", "Node.js", "TypeScript", "Python", "AWS"],
-    hourly_rate: 75,
-    availability: "full-time",
-    years_experience: 5,
-    location: "Remote, US",
-    bio: "Experienced full stack developer with a focus on React and Node.js. Specialized in building scalable web applications and AI integrations.",
-    portfolio_url: "https://janesmith.dev",
-    email: "jane@example.com",
-    rating: 4.9,
-    completed_projects: 127,
-    created_at: "2023-08-15T10:30:00Z",
-    updated_at: "2024-01-15T14:20:00Z"
-  },
-  {
-    id: "talent-456", 
-    full_name: "Alex Chen",
-    professional_title: "AI/ML Engineer",
-    skills: ["Python", "TensorFlow", "PyTorch", "Kubernetes", "MLOps"],
-    hourly_rate: 95,
-    availability: "part-time",
-    years_experience: 7,
-    location: "San Francisco, CA",
-    bio: "ML engineer with PhD in Computer Science, specializing in computer vision and NLP. Published researcher with 15+ papers.",
-    portfolio_url: "https://alexchen.ai",
-    email: "alex@example.com",
-    rating: 4.8,
-    completed_projects: 89,
-    created_at: "2023-06-20T16:45:00Z",
-    updated_at: "2024-01-12T09:15:00Z"
-  },
-  {
-    id: "talent-789",
-    full_name: "Maria Garcia",
-    professional_title: "UX/UI Designer",
-    skills: ["Figma", "Adobe Creative Suite", "Prototyping", "User Research", "Design Systems"],
-    hourly_rate: 65,
-    availability: "full-time",
-    years_experience: 4,
-    location: "Remote, Spain",
-    bio: "Creative UX/UI designer passionate about creating intuitive and beautiful user experiences. Expert in design systems and accessibility.",
-    portfolio_url: "https://mariagarcia.design",
-    email: "maria@example.com",
-    rating: 4.7,
-    completed_projects: 156,
-    created_at: "2023-09-10T11:20:00Z",
-    updated_at: "2024-01-14T16:30:00Z"
-  }
-];
+// Remove MOCK_TALENT and all mock data usage. Fetch talent from real data source or return an error/empty array if not available.
 
 // Authentication middleware for demo purposes (same as jobs API)
 function validateApiKey(req: NextApiRequest): boolean {
@@ -125,64 +72,140 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     const rateMax = rate_max ? parseInt(rate_max as string, 10) : undefined;
 
     // Filter talent based on query parameters
-    let filteredTalent = [...MOCK_TALENT];
+    // let filteredTalent = [...MOCK_TALENT]; // This line is removed
 
     // Filter by skills
     if (skills) {
       const skillsList = (skills as string).toLowerCase().split(',').map(s => s.trim());
-      filteredTalent = filteredTalent.filter(talent => 
-        skillsList.some(skill => 
-          talent.skills.some(talentSkill => 
-            talentSkill.toLowerCase().includes(skill)
-          )
-        )
-      );
+      // filteredTalent = filteredTalent.filter(talent => 
+      //   skillsList.some(skill => 
+      //     talent.skills.some(talentSkill => 
+      //       talentSkill.toLowerCase().includes(skill)
+      //     )
+      //   )
+      // );
+      // The filtering logic for skills, category, rate, availability, and sorting
+      // needs to be implemented based on a real data source.
+      // For now, we'll return an empty array or a placeholder message.
+      res.status(501).json({
+        error: 'not_implemented',
+        message: 'Skills filtering is not yet implemented for real data.'
+      });
+      return;
     }
 
     // Filter by category (fuzzy match against professional title)
     if (category) {
       const categoryLower = (category as string).toLowerCase();
-      filteredTalent = filteredTalent.filter(talent => 
-        talent.professional_title.toLowerCase().includes(categoryLower)
-      );
+      // filteredTalent = filteredTalent.filter(talent => 
+      //   talent.professional_title.toLowerCase().includes(categoryLower)
+      // );
+      // The filtering logic for skills, category, rate, availability, and sorting
+      // needs to be implemented based on a real data source.
+      // For now, we'll return an empty array or a placeholder message.
+      res.status(501).json({
+        error: 'not_implemented',
+        message: 'Category filtering is not yet implemented for real data.'
+      });
+      return;
     }
 
     // Filter by rate range
     if (rateMin !== undefined) {
-      filteredTalent = filteredTalent.filter(talent => talent.hourly_rate >= rateMin);
+      // filteredTalent = filteredTalent.filter(talent => talent.hourly_rate >= rateMin);
+      // The filtering logic for skills, category, rate, availability, and sorting
+      // needs to be implemented based on a real data source.
+      // For now, we'll return an empty array or a placeholder message.
+      res.status(501).json({
+        error: 'not_implemented',
+        message: 'Rate filtering is not yet implemented for real data.'
+      });
+      return;
     }
     if (rateMax !== undefined) {
-      filteredTalent = filteredTalent.filter(talent => talent.hourly_rate <= rateMax);
+      // filteredTalent = filteredTalent.filter(talent => talent.hourly_rate <= rateMax);
+      // The filtering logic for skills, category, rate, availability, and sorting
+      // needs to be implemented based on a real data source.
+      // For now, we'll return an empty array or a placeholder message.
+      res.status(501).json({
+        error: 'not_implemented',
+        message: 'Rate filtering is not yet implemented for real data.'
+      });
+      return;
     }
 
     // Filter by availability
     if (availability !== 'all') {
-      filteredTalent = filteredTalent.filter(talent => talent.availability === availability);
+      // filteredTalent = filteredTalent.filter(talent => talent.availability === availability);
+      // The filtering logic for skills, category, rate, availability, and sorting
+      // needs to be implemented based on a real data source.
+      // For now, we'll return an empty array or a placeholder message.
+      res.status(501).json({
+        error: 'not_implemented',
+        message: 'Availability filtering is not yet implemented for real data.'
+      });
+      return;
     }
 
     // Sort talent
     if (sort === 'rating') {
-      filteredTalent.sort((a, b) => b.rating - a.rating);
+      // filteredTalent.sort((a, b) => b.rating - a.rating);
+      // The filtering logic for skills, category, rate, availability, and sorting
+      // needs to be implemented based on a real data source.
+      // For now, we'll return an empty array or a placeholder message.
+      res.status(501).json({
+        error: 'not_implemented',
+        message: 'Sorting by rating is not yet implemented for real data.'
+      });
+      return;
     } else if (sort === 'rate') {
-      filteredTalent.sort((a, b) => a.hourly_rate - b.hourly_rate);
+      // filteredTalent.sort((a, b) => a.hourly_rate - b.hourly_rate);
+      // The filtering logic for skills, category, rate, availability, and sorting
+      // needs to be implemented based on a real data source.
+      // For now, we'll return an empty array or a placeholder message.
+      res.status(501).json({
+        error: 'not_implemented',
+        message: 'Sorting by rate is not yet implemented for real data.'
+      });
+      return;
     } else if (sort === 'experience') {
-      filteredTalent.sort((a, b) => b.years_experience - a.years_experience);
+      // filteredTalent.sort((a, b) => b.years_experience - a.years_experience);
+      // The filtering logic for skills, category, rate, availability, and sorting
+      // needs to be implemented based on a real data source.
+      // For now, we'll return an empty array or a placeholder message.
+      res.status(501).json({
+        error: 'not_implemented',
+        message: 'Sorting by experience is not yet implemented for real data.'
+      });
+      return;
     } else if (sort === 'projects') {
-      filteredTalent.sort((a, b) => b.completed_projects - a.completed_projects);
+      // filteredTalent.sort((a, b) => b.completed_projects - a.completed_projects);
+      // The filtering logic for skills, category, rate, availability, and sorting
+      // needs to be implemented based on a real data source.
+      // For now, we'll return an empty array or a placeholder message.
+      res.status(501).json({
+        error: 'not_implemented',
+        message: 'Sorting by projects is not yet implemented for real data.'
+      });
+      return;
     }
 
     // Apply pagination
-    const paginatedTalent = filteredTalent.slice(offsetNum, offsetNum + limitNum);
+    // const paginatedTalent = filteredTalent.slice(offsetNum, offsetNum + limitNum); // This line is removed
 
     // Set cache headers
     res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600');
 
-    res.status(200).json({
-      talent: paginatedTalent,
-      count: filteredTalent.length,
-      limit: limitNum,
-      offset: offsetNum,
-      total: MOCK_TALENT.length
+    // res.status(200).json({ // This block is removed
+    //   talent: paginatedTalent,
+    //   count: filteredTalent.length,
+    //   limit: limitNum,
+    //   offset: offsetNum,
+    //   total: MOCK_TALENT.length
+    // });
+    res.status(501).json({
+      error: 'not_implemented',
+      message: 'Pagination and data fetching are not yet implemented for real data.'
     });
     return;
 
