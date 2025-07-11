@@ -118,6 +118,9 @@ export class ProductionErrorMonitor {
   private buildErrorReport(error: Error | unknown, context: Record<string, unknown>): ErrorReport {
     const actualError = error instanceof Error ? error : new Error(String(error));
     
+    const perf = this.getPerformanceMetrics();
+    const loadTime = typeof perf.loadTime === 'number' && !isNaN(perf.loadTime) ? perf.loadTime : undefined;
+    const memoryUsage = perf.memoryUsage !== undefined ? perf.memoryUsage : undefined;
     return {
       timestamp: new Date().toISOString(),
       url: typeof window !== 'undefined' ? window.location.href : '',
@@ -140,12 +143,8 @@ export class ProductionErrorMonitor {
         ...context
       },
       performanceMetrics: {
-        ...(typeof this.getPerformanceMetrics().loadTime === 'number' && !isNaN(this.getPerformanceMetrics().loadTime)
-          ? { loadTime: this.getPerformanceMetrics().loadTime as number }
-          : {}),
-        ...(this.getPerformanceMetrics().memoryUsage !== undefined
-          ? { memoryUsage: this.getPerformanceMetrics().memoryUsage as { used?: number; total?: number; limit?: number; } }
-          : {})
+        ...(typeof loadTime === 'number' ? { loadTime } : {}),
+        ...(memoryUsage !== undefined ? { memoryUsage } : {})
       }
     };
   }
