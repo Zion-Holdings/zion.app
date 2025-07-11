@@ -2,7 +2,7 @@ import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 declare global {
   interface Window {
-    posthog?: any;
+    posthog?: unknown;
   }
 }
 
@@ -23,7 +23,7 @@ export const initPostHog = () => {
   }
 
   (function(c, a){
-    (window as any).posthog = a;
+    (window as unknown as { posthog?: unknown }).posthog = a;
     a._i = [];
     a.init = function(k: string, opts: { api_host: string }) {
       function p(method: string) {
@@ -47,7 +47,7 @@ export const initPostHog = () => {
   window.posthog.init(key, { api_host: host });
 };
 
-export const captureEvent = (name: string, properties?: Record<string, any>) => {
+export const captureEvent = (name: string, properties?: Record<string, unknown>) => {
   if (typeof window === 'undefined') return;
   if (!window.posthog?.capture) {
     logErrorToProduction('PostHog not initialized. Call initPostHog() first.', new Error('PostHog not initialized'), { eventName: name });
