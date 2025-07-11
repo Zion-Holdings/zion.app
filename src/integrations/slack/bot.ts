@@ -98,8 +98,9 @@ app.command('/zion-rollback', async ({ ack, respond }: { ack: SlackAck, respond:
   try {
     await switchNetlifySite();
     await respond('Rollback complete. DNS switched to the previous site.');
-  } catch (err: any) {
-    await respond(`Rollback failed: ${err.message}`);
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : String(err);
+    await respond(`Rollback failed: ${message}`);
   }
 });
 
