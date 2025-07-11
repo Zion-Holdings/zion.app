@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import type { TalentProfile as TalentProfileType } from "@/types/talent";
-import { ProfileData as _ProfileData } from "@/types/profile";
+import type { ProfileData as _ProfileData } from "@/types/profile";
 import { convertProfileToTalentProfile } from "@/utils/profileConverter";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
