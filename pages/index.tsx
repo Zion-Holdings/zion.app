@@ -39,13 +39,8 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
     if (isSentryActive) {
       try {
         if (typeof window === 'undefined') {
-<<<<<<< HEAD
-          const Sentry = await import('@sentry/nextjs');
-          Sentry.default.captureException(error);
-=======
           const Sentry = (await import('@sentry/nextjs')).default;
           Sentry.captureException(error);
->>>>>>> 320a2e85c62c62687d921c03267a039f5ead244e
         }
       } catch (sentryError) {
         logWarn('Failed to log to Sentry:', { data: sentryError });
@@ -64,21 +59,18 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
 };
 
 const ErrorTestButton = () => {
-  const handleClick = () => {
+  const handleClick = async () => {
     try {
       throw new Error("This is a test error from the homepage button!");
     } catch (error) {
       if (isSentryActive) {
-        if (typeof window === 'undefined') {
-<<<<<<< HEAD
-          const Sentry = await import('@sentry/nextjs');
-          Sentry.default.captureException(error);
-=======
-          import('@sentry/nextjs').then(mod => {
-            const Sentry = mod.default;
+        try {
+          if (typeof window === 'undefined') {
+            const Sentry = (await import('@sentry/nextjs')).default;
             Sentry.captureException(error);
-          });
->>>>>>> 320a2e85c62c62687d921c03267a039f5ead244e
+          }
+        } catch (sentryError) {
+          logWarn('Failed to log to Sentry:', { data: sentryError });
         }
       }
       logErrorToProduction('Button error test:', { error });
