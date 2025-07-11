@@ -1,5 +1,5 @@
 // AI Matchmaking utility functions
-import {logErrorToProduction} from "@/utils/productionLogger";
+// import {logErrorToProduction} from "@/utils/productionLogger";
 
 export interface MatchResultItem {
   id: string;
@@ -34,7 +34,7 @@ export async function findMatches(
     if (!response.ok) throw new Error('Failed to fetch matches');
     const data = await response.json();
     return data;
-  } catch (error) {
+  } catch (_error) {
     return [];
   }
 }

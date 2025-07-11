@@ -2,8 +2,27 @@ import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 declare global {
   interface Window {
-    posthog?: unknown;
+    posthog?: PostHogInstance;
   }
+}
+
+interface PostHogInstance {
+  __loaded?: boolean;
+  _i: unknown[];
+  init: (key: string, opts: { api_host: string }) => void;
+  capture: (name: string, properties?: Record<string, unknown>) => void;
+  identify: (...args: unknown[]) => void;
+  alias: (...args: unknown[]) => void;
+  people: {
+    set: (...args: unknown[]) => void;
+    set_once: (...args: unknown[]) => void;
+    unset: (...args: unknown[]) => void;
+    increment: (...args: unknown[]) => void;
+    append: (...args: unknown[]) => void;
+    delete_property: (...args: unknown[]) => void;
+    remove: (...args: unknown[]) => void;
+  };
+  push: (args: unknown[]) => void;
 }
 
 export const initPostHog = () => {
@@ -18,31 +37,31 @@ export const initPostHog = () => {
     return;
   }
 
-  if (typeof window.posthog === 'object' && window.posthog !== null && '__loaded' in window.posthog && (window.posthog as { __loaded?: boolean }).__loaded) {
+  if (typeof window.posthog === 'object' && window.posthog !== null && '__loaded' in window.posthog && (window.posthog as PostHogInstance).__loaded) {
     return;
   }
 
-  (function(c, a){
-    (window as any).posthog = a;
-    (a as any)._i = [];
-    (a as any).init = function(k: string, opts: { api_host: string }) {
+  (function(c: Document, a: PostHogInstance){
+    (window as { posthog?: PostHogInstance }).posthog = a;
+    a._i = [];
+    a.init = function(k: string, opts: { api_host: string }) {
       function p(method: string) {
-        return function(...args: unknown[]) { (a as any).push([method].concat(args as string[])); };
+        return function(...args: unknown[]) { a.push([method].concat(args as string[])); };
       }
       const methods = ['capture','identify','alias','people.set','people.set_once','people.unset','people.increment','people.append','people.delete_property','people.remove'];
-      (a as any).people = (a as any).people || {};
+      a.people = a.people || {};
       for (let i = 0; i < methods.length; i++) {
         const method = methods[i]!; // Non-null assertion since we're within array bounds
-        (a as any)[method] = p(method);
+        (a as Record<string, unknown>)[method] = p(method);
       }
-      (a as any)._i.push([k, opts]);
+      a._i.push([k, opts]);
       const script = c.createElement('script');
       script.type = 'text/javascript';
       script.async = true;
       script.src = opts.api_host + '/static/array.js';
       c.head.appendChild(script);
     };
-  })(document, (window as any).posthog || []);
+  })(document, (window as { posthog?: PostHogInstance }).posthog || [] as unknown as PostHogInstance);
 
   window.posthog.init(key, { api_host: host });
 };
