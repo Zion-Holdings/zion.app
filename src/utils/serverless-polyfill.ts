@@ -1,7 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-unused-expressions */
-/* eslint-disable prefer-const */
 /**
  * Serverless Environment Polyfill
  * 
@@ -16,15 +12,15 @@
 
 // Type declarations for global augmentation
 declare global {
-  const webpackChunk_N_E: any[];
-  const __webpack_require__: any;
-  const __webpack_exports__: any;
-  const __non_webpack_require__: any;
-  const __extends: any;
-  const __assign: any;
-  const __rest: any;
-  const __decorate: any;
-  const __awaiter: any;
+  const webpackChunk_N_E: unknown[];
+  const __webpack_require__: unknown;
+  const __webpack_exports__: unknown;
+  const __non_webpack_require__: unknown;
+  const __extends: unknown;
+  const __assign: unknown;
+  const __rest: unknown;
+  const __decorate: unknown;
+  const __awaiter: unknown;
 }
 
 // CRITICAL: Self polyfill - must be first
@@ -45,14 +41,14 @@ if (typeof self === 'undefined') {
 }
 
 // Ensure self is properly referenced
-const selfRef: any = typeof self !== 'undefined' ? self : 
-                    typeof global !== 'undefined' ? global :
-                    typeof globalThis !== 'undefined' ? globalThis :
-                    typeof window !== 'undefined' ? window : {};
+const selfRef: Record<string, unknown> = typeof self !== 'undefined' ? self as Record<string, unknown> : 
+                    typeof global !== 'undefined' ? global as Record<string, unknown> :
+                    typeof globalThis !== 'undefined' ? (globalThis as unknown as Record<string, unknown>) :
+                    typeof window !== 'undefined' ? (window as unknown as Record<string, unknown>) : {};
 
 // CRITICAL: Webpack chunk array polyfill
-if (!(selfRef as any).webpackChunk_N_E) {
-  (selfRef as any).webpackChunk_N_E = [];
+if (!selfRef.webpackChunk_N_E) {
+  selfRef.webpackChunk_N_E = [];
 }
 
   // Ensure webpack chunk array is properly initialized
@@ -119,20 +115,20 @@ const tsHelpers = {
 
 // Inject TypeScript helpers into global scope
 Object.keys(tsHelpers).forEach(helper => {
-  if (typeof (globalThis as any)[helper] === 'undefined') {
-    (globalThis as any)[helper] = (tsHelpers as any)[helper];
+  if (typeof (globalThis as Record<string, unknown>)[helper] === 'undefined') {
+    (globalThis as Record<string, unknown>)[helper] = (tsHelpers as Record<string, unknown>)[helper];
   }
-  if (typeof (selfRef as any)[helper] === 'undefined') {
-    (selfRef as any)[helper] = (tsHelpers as any)[helper];
+  if (typeof (selfRef as Record<string, unknown>)[helper] === 'undefined') {
+    (selfRef as Record<string, unknown>)[helper] = (tsHelpers as Record<string, unknown>)[helper];
   }
 });
 
 // Error prevention for common webpack issues
 try {
   // Prevent webpack chunk loading errors
-  if ((selfRef as any).webpackChunk_N_E && typeof (selfRef as any).webpackChunk_N_E.push === 'function') {
-    const originalPush = (selfRef as any).webpackChunk_N_E.push;
-    (selfRef as any).webpackChunk_N_E.push = function(chunk: unknown) {
+  if (selfRef.webpackChunk_N_E && typeof (selfRef.webpackChunk_N_E as unknown[]).push === 'function') {
+    const originalPush = (selfRef.webpackChunk_N_E as unknown[]).push;
+    (selfRef.webpackChunk_N_E as unknown[]).push = function(chunk: unknown) {
       try {
         return originalPush.call(this, chunk);
       } catch (error: unknown) {
@@ -200,18 +196,18 @@ if (typeof window !== 'undefined') {
 // Node.js environment polyfills (for SSR/build time)
 if (typeof global !== 'undefined' && typeof window === 'undefined') {
   // Ensure Node.js global has necessary polyfills
-  if (typeof (global as any).self === 'undefined') {
-    (global as any).self = global;
+  if (typeof (global as Record<string, unknown>).self === 'undefined') {
+    (global as Record<string, unknown>).self = global;
   }
   
-  if (typeof (global as any).webpackChunk_N_E === 'undefined') {
-    (global as any).webpackChunk_N_E = [];
+  if (typeof (global as Record<string, unknown>).webpackChunk_N_E === 'undefined') {
+    (global as Record<string, unknown>).webpackChunk_N_E = [];
   }
   
   // TypeScript helpers for Node.js
   Object.keys(tsHelpers).forEach(helper => {
-    if (typeof (global as any)[helper] === 'undefined') {
-      (global as any)[helper] = (tsHelpers as any)[helper];
+    if (typeof (global as Record<string, unknown>)[helper] === 'undefined') {
+      (global as Record<string, unknown>)[helper] = (tsHelpers as Record<string, unknown>)[helper];
     }
   });
 }
