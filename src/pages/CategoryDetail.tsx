@@ -19,7 +19,7 @@ import { NextSeo } from '@/components/NextSeo';
 import { Header } from "@/components/Header";
 import ListingGridSkeleton from '@/components/skeletons/ListingGridSkeleton';
 import {logErrorToProduction} from '@/utils/productionLogger';
-import apiClient from '@/lib/apiClient';
+import apiClient from '@/services/apiClient';
 
 
 const AUTO_SERVICE_TITLES = [
@@ -45,19 +45,20 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
   const params = router.query as { slug?: string };
   const slug = slugProp ?? params.slug;
 
-  // Redirect to categories list if slug is missing
-  if (!slug) {
-    router.push('/categories');
-    return null;
-  }
   const [isLoading, setIsLoading] = useState(true);
-  const [listings, setListings] = useState([]);
+  const [listings, setListings] = useState<ProductListing[]>([]);
   const [category, setCategory] = useState<{title: string, description: string, icon: React.JSX.Element}>({
     title: "",
     description: "",
     icon: <Bot className="w-6 h-6" />
   });
   const innovationCounterRef = useRef(0);
+
+  // Redirect to categories list if slug is missing
+  if (!slug) {
+    router.push('/categories');
+    return null;
+  }
 
   // Map of category slugs to their display data
   const categoryData = {
