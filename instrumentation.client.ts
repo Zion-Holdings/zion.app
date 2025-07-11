@@ -10,5 +10,5 @@ export { register } from './sentry';
 // onRouterTransitionStart export.
 export const onRouterTransitionStart =
   typeof (Sentry as Record<string, unknown>)?.captureRouterTransitionStart === 'function'
-    ? (Sentry as { captureRouterTransitionStart: () => void }).captureRouterTransitionStart
+    ? ((Sentry as Record<string, unknown>).captureRouterTransitionStart as unknown as () => void)
     : () => {};
