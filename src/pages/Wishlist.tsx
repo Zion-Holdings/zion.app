@@ -11,7 +11,7 @@ import { toast } from '@/hooks/use-toast';
 import { useAuth } from '@/hooks/useAuth';
 import { useRouter } from 'next/router'; // Changed from useNavigate
 import { useEffect } from 'react'; // Added useEffect
-import type { Product } from '@/types/product';
+import type { ProductListing } from '@/types/listings';
 import type { TalentProfile } from '@/types/talent';
 
 export default function WishlistPage() {
@@ -31,7 +31,7 @@ export default function WishlistPage() {
     return null; // Or a loading spinner
   }
 
-  const addToCart = (item: { id: string; title?: string; price?: number }) => {
+  const addToCart = (item: ProductListing) => {
     if (items.some(i => i.id === item.id)) return;
     dispatch({
       type: 'ADD_ITEM',
@@ -45,7 +45,7 @@ export default function WishlistPage() {
     toast.success(`1× ${item.title || 'Item'} added`);
   };
 
-  const productMap = MARKETPLACE_LISTINGS.reduce<Record<string, Product>>((acc, p) => {
+  const productMap = MARKETPLACE_LISTINGS.reduce<Record<string, ProductListing>>((acc, p) => {
     acc[p.id] = p;
     return acc;
   }, {});
