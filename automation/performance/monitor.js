@@ -354,12 +354,12 @@ class PerformanceMonitor {
     if (this.alertCooldown.has(alertKey)) {
       const lastAlert = this.alertCooldown.get(alertKey);
       if (now - lastAlert < cooldownMinutes * 60 * 1000) {
-        console.log(`Alert ${alertKey} on cooldown, skipping`);
+        console.warn(`Alert ${alertKey} on cooldown, skipping`);
         return;
       }
     }
 
-    console.log(`🚨 Sending ${alert.severity} alert: ${alert.message}`);
+    console.warn(`🚨 Sending ${alert.severity} alert: ${alert.message}`);
     
     try {
       // Send to Slack
@@ -379,7 +379,7 @@ class PerformanceMonitor {
 
   async sendSlackAlert(alert) {
     if (!this.slackWebhook) {
-      console.log('Slack webhook not configured, skipping alert');
+      console.warn('Slack webhook not configured, skipping alert');
       return;
     }
 
@@ -426,7 +426,7 @@ class PerformanceMonitor {
   }
 
   async triggerAutoOptimization(alert) {
-    console.log(`🤖 Triggering auto-optimization for: ${alert.component}`);
+    console.warn(`🤖 Triggering auto-optimization for: ${alert.component}`);
     
     try {
       // This would trigger the Cursor agent optimization
@@ -456,7 +456,7 @@ class PerformanceMonitor {
   async updateDashboard(metrics) {
     // This would update a real-time dashboard
     // For now, just log summary
-    console.log('📊 Performance Summary:', {
+    console.warn('📊 Performance Summary:', {
       bundleSize: metrics.bundleSize ? `${(metrics.bundleSize.total / 1024 / 1024).toFixed(2)}MB` : 'N/A',
       status: metrics.bundleSize ? metrics.bundleSize.status : 'unknown',
       timestamp: metrics.timestamp
