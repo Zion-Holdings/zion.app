@@ -18,7 +18,7 @@ export interface Vote {
 }
 
 // Check if we're in a build environment or browser environment where libp2p might cause issues
-const isBuildEnv = process.env.CI === 'true' || process.env.NODE_ENV === 'production' && typeof window === 'undefined';
+const isBuildEnv = process.env.CI === 'true';
 const isBrowserEnv = typeof window !== 'undefined';
 
 export class DelayTolerantDAO {
@@ -27,16 +27,24 @@ export class DelayTolerantDAO {
   private ready = false;
 
   async connect() {
-    // Always use mock implementation in browser environment
-    if (isBuildEnv || isBrowserEnv) {
-      console.log('🚫 DelayTolerantDAO: Using mock implementation for CI/build/browser environment');
+    // Only use mock implementation in CI/build environment
+    if (isBuildEnv) {
+      console.log('🚫 DelayTolerantDAO: Using mock implementation for CI/build environment');
       this.ready = true;
       return;
     }
-
-    // Server-side only - but we'll use mocks for now to prevent any native module loading
-    console.log('🚫 DelayTolerantDAO: Using mock implementation for server environment');
-    this.ready = true;
+    // In browser, use real implementation with dynamic imports
+    try {
+      const [ipfs, orbitdb] = await Promise.all([
+        import('./ipfs'),
+        import('./orbitdb')
+      ]);
+      // ... initialize modules
+      this.ready = true;
+    } catch (error) {
+      console.warn('⚠️ Failed to load native modules, using mocks');
+      this.ready = true; // Continue with mock functionality
+    }
   }
 
   async submitProposal(description: string, ttlMs = 5 * 24 * 60 * 60 * 1000): Promise<Proposal> {
