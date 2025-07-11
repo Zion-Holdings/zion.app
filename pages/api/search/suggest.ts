@@ -51,21 +51,7 @@ function handler(
   const suggestions: SearchSuggestion[] = [];
 
   // Add product suggestions
-  const productSuggestions = [
-    { id: 'product-1', title: 'Example Product 1', description: 'Description 1', image: 'https://via.placeholder.com/50', category: 'Category A' },
-    { id: 'product-2', title: 'Example Product 2', description: 'Description 2', image: 'https://via.placeholder.com/50', category: 'Category B' },
-  ]
-    .filter((p) => match(p.title) || match(p.description))
-    .slice(0, 2) // Limit to 2 product suggestions
-    .map((p) => ({
-      id: p.id,
-      text: p.title,
-      slug: createSlug(p.title),
-      type: 'product' as const,
-      iconUrl: p.image,
-      category: p.category
-    }));
-
+  const productSuggestions: SearchSuggestion[] = [];
   suggestions.push(...productSuggestions);
 
   // Add service suggestions
@@ -73,12 +59,12 @@ function handler(
     .filter((s) => match(s.title) || match(s.description))
     .slice(0, 2) // Limit to 2 service suggestions
     .map((s) => ({
-      id: s.id,
+      id: s.id ?? '',
       text: s.title,
       slug: createSlug(s.title),
       type: 'service' as const,
       iconUrl: (s as any).image,
-      category: s.category
+      category: s.category ?? ''
     }));
 
   suggestions.push(...serviceSuggestions);
