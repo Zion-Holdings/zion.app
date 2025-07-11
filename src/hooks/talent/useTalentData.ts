@@ -11,7 +11,7 @@ async function fetchTalentProfiles(page = 1, limit = 12): Promise<TalentListResp
     3,
     500,
     10000
-  );
+  ) as Promise<TalentListResponse>;
 }
 
 export function useTalentData(page = 1, limit = 12) {
