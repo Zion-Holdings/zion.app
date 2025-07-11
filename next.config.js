@@ -1445,11 +1445,17 @@ const nextConfig = {
       'preact/hooks',
       'valtio/vanilla',
     ];
-    problematicESMModules.forEach(module => {
-      config.externals.push({
-        [module]: `commonjs ${module}`
+    if (Array.isArray(config.externals)) {
+      problematicESMModules.forEach(module => {
+        config.externals.push({
+          [module]: `commonjs ${module}`
+        });
       });
-    });
+    } else if (typeof config.externals === 'object' && config.externals !== null) {
+      problematicESMModules.forEach(module => {
+        config.externals[module] = `commonjs ${module}`;
+      });
+    }
 
     return config;
   },
