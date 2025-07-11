@@ -58,7 +58,7 @@ export default function TokenManager() {
       logErrorToProduction('Failed to process transaction:', { data: err });
       toast({
         title: 'Error',
-        description: (typeof err === 'object' && err && 'message' in err ? (err as { message?: string }).message : 'Failed'),
+        description: (typeof err === 'object' && err && 'message' in err ? (err as { message?: string }).message : 'Failed') || 'Unknown error occurred',
         variant: 'destructive'
       });
     } finally {
