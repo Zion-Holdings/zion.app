@@ -99,7 +99,7 @@ export function ProjectMilestonesContent() {
       description: data.description || '',
       amount: data.amount,
       status: 'pending' as const,
-      due_date: data.due_date ? data.due_date.toISOString() : undefined,
+      due_date: data.due_date ? data.due_date.toISOString() : '',
     };
 
     await createMilestone(milestoneData);

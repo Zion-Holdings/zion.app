@@ -11,14 +11,14 @@ import { EmptyState } from '@/components/ui/EmptyState';
 
 interface MilestonesListProps {
   milestones: Milestone[];
-  // activities: Record<string, unknown>;
+  activities: Record<string, import('@/hooks/milestones/types').MilestoneActivity[]>;
   isLoading: boolean;
   isClient: boolean;
   onCreateMilestone: (data: {
     title: string;
     amount: number;
-    description?: string;
-    due_date?: Date;
+    description?: string | undefined;
+    due_date?: Date | undefined;
   }) => Promise<Milestone | null>;
   onUpdateStatus: (
     id: string,
@@ -34,7 +34,7 @@ interface MilestonesListProps {
 
 export const MilestonesList: React.FC<MilestonesListProps> = ({
   milestones,
-  // activities,
+  activities,
   isLoading,
   isClient,
   onCreateMilestone,
@@ -50,8 +50,8 @@ export const MilestonesList: React.FC<MilestonesListProps> = ({
   const handleSubmit = async (data: {
     title: string;
     amount: number;
-    description?: string;
-    due_date?: Date;
+    description?: string | undefined;
+    due_date?: Date | undefined;
   }) => {
     await onCreateMilestone(data);
     setShowAddForm(false);

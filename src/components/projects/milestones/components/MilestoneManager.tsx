@@ -19,8 +19,8 @@ interface MilestoneManagerProps {
   onCreateMilestone: (data: {
     title: string;
     amount: number;
-    description?: string;
-    due_date?: Date;
+    description?: string | undefined;
+    due_date?: Date | undefined;
   }) => Promise<Milestone | null>;
   onUpdateStatus: (
     id: string,
