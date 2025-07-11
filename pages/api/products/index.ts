@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { applyCorsHeaders } from '@/middleware/cors';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
-import { MARKETPLACE_LISTINGS } from '@/data/listingData';
+import { MARKETPLACE_LISTINGS as _MARKETPLACE_LISTINGS } from '@/data/listingData';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
@@ -19,12 +19,19 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   try {
-    const page = parseInt(((req.query as any).page as string), 10) || 1;
-    const limit = parseInt(((req.query as any).limit as string), 10) || 20;
-    const category = (((req.query as any).category as string | undefined))?.toLowerCase();
-    const sort = (((req.query as any).sort as string | undefined))?.toLowerCase();
+    const page = parseInt(((req.query as Record<string, string | string[]>).page as string), 10) || 1;
+    const limit = parseInt(((req.query as Record<string, string | string[]>).limit as string), 10) || 20;
+    const category = (((req.query as Record<string, string | string[]>).category as string | undefined))?.toLowerCase();
+    const sort = (((req.query as Record<string, string | string[]>).sort as string | undefined))?.toLowerCase();
 
-    let products: any[] = []; // No MARKETPLACE_LISTINGS available, use empty array
+    let products: Array<{
+      category?: string;
+      price?: number;
+      rating?: number;
+      reviewCount?: number;
+      aiScore?: number;
+      createdAt?: string;
+    }> = []; // No MARKETPLACE_LISTINGS available, use empty array
 
     // Apply category filter if specified
     if (category) {

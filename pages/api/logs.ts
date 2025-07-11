@@ -65,9 +65,9 @@ export default async function handler(
       entries.forEach((entry) => {
         if (entry.level === 'error' || entry.level === 'warn') {
           // Map our log levels to Sentry's SeverityLevel
-          const sentryLevel = entry.level === 'warn' ? 'warning' : entry.level;
+          const _sentryLevel = entry.level === 'warn' ? 'warning' : entry.level;
           // Sentry.withScope(scope => {
-          //   scope.setLevel(sentryLevel);
+          //   scope.setLevel(_sentryLevel);
           //   scope.setExtra('level', entry.level);
           //   scope.setExtra('context', entry.context);
           //   scope.setExtra('timestamp', entry.timestamp);
@@ -84,7 +84,7 @@ export default async function handler(
     // 3. Optional: Forward to external webhook if configured via env
     if (process.env['NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL']) {
       try {
-        const doFetch = typeof fetch !== 'undefined' ? fetch : ((await import('node-fetch')).default as any as typeof fetch);
+        const doFetch = typeof fetch !== 'undefined' ? fetch : ((await import('node-fetch')).default as unknown as typeof fetch);
         await doFetch(process.env['NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL'], {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

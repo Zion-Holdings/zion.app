@@ -21,7 +21,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   const file = path.join(process.cwd(), 'data', 'points.json');
-  let ledger: any[] = [];
+  let ledger: Array<{
+    user_id: string;
+    delta: number;
+    reason?: string;
+    order_id?: string | null;
+    created_at?: string;
+  }> = [];
   try {
     const fileContent = fs.readFileSync(file, 'utf8');
     ledger = JSON.parse(typeof fileContent === 'string' ? fileContent : String(fileContent));

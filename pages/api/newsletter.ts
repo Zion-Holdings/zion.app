@@ -40,23 +40,26 @@ export default async function handler(
     try {
       await subscribeToNewsletter(trimmedEmail);
       return res.status(200).json({ status: 'subscribed' });
-    } catch (integrationError: any) {
+    } catch (integrationError: unknown) {
       logErrorToProduction('Newsletter integration error:', { data: integrationError });
-      if (integrationError.message && integrationError.message.includes('already a list member')) {
-        return res.status(200).json({ status: 'already_subscribed' });
-      }
-      if (integrationError.message && integrationError.message.includes('Invalid email')) {
-        return res.status(400).json({
-          error: 'Invalid email address',
-          details: 'Please check your email and try again'
-        });
+      if (integrationError && typeof integrationError === 'object' && 'message' in integrationError && typeof (integrationError as { message?: unknown }).message === 'string') {
+        const errorMessage = (integrationError as { message: string }).message;
+        if (errorMessage.includes('already a list member')) {
+          return res.status(200).json({ status: 'already_subscribed' });
+        }
+        if (errorMessage.includes('Invalid email')) {
+          return res.status(400).json({
+            error: 'Invalid email address',
+            details: 'Please check your email and try again'
+          });
+        }
       }
       return res.status(500).json({
         error: 'Subscription failed',
         details: 'Please try again later or contact support'
       });
     }
-  } catch (error: any) {
+  } catch (error: unknown) {
     logErrorToProduction('Newsletter subscription error:', { data: error });
     return res.status(500).json({
       error: 'Subscription failed',

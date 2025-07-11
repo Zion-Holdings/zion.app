@@ -166,21 +166,21 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
   const startTime = Date.now();
 
   try {
-    const q = String(((req['query'] as any).query ?? ((req['query'] as any).q ?? '')))
+    const q = String(((req['query'] as Record<string, string | string[]>).query ?? ((req['query'] as Record<string, string | string[]>).q ?? '')))
       .toLowerCase()
       .trim();
-    const page = parseInt(String(((req['query'] as any).page ?? '1')), 10);
-    const limit = Math.min(parseInt(String(((req['query'] as any).limit ?? '20')), 10), 100); // Cap at 100
+    const page = parseInt(String(((req['query'] as Record<string, string | string[]>).page ?? '1')), 10);
+    const limit = Math.min(parseInt(String(((req['query'] as Record<string, string | string[]>).limit ?? '20')), 10), 100); // Cap at 100
 
-    const typesParam = String((req['query'] as any).type ?? '')
+    const typesParam = String((req['query'] as Record<string, string | string[]>).type ?? '')
       .split(',')
       .map((t: string) => t.trim())
       .filter(Boolean) as SearchFilters['types'];
-    const category = (req['query'] as any).category as string | undefined;
-    const minPrice = (req['query'] as any).minPrice ? parseFloat(String((req['query'] as any).minPrice)) : undefined;
-    const maxPrice = (req['query'] as any).maxPrice ? parseFloat(String((req['query'] as any).maxPrice)) : undefined;
-    const minRating = (req['query'] as any).minRating ? parseFloat(String((req['query'] as any).minRating)) : undefined;
-    const sort = (req['query'] as any).sort as SearchFilters['sort'] | undefined;
+    const category = (req['query'] as Record<string, string | string[]>).category as string | undefined;
+    const minPrice = (req['query'] as Record<string, string | string[]>).minPrice ? parseFloat(String((req['query'] as Record<string, string | string[]>).minPrice)) : undefined;
+    const maxPrice = (req['query'] as Record<string, string | string[]>).maxPrice ? parseFloat(String((req['query'] as Record<string, string | string[]>).maxPrice)) : undefined;
+    const minRating = (req['query'] as Record<string, string | string[]>).minRating ? parseFloat(String((req['query'] as Record<string, string | string[]>).minRating)) : undefined;
+    const sort = (req['query'] as Record<string, string | string[]>).sort as SearchFilters['sort'] | undefined;
 
     // Return empty results for empty query
     if (!q) {
@@ -251,7 +251,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
       totalCount: 0,
       page: 1,
       limit: 20,
-      query: String(((req['query'] as any).query ?? ((req['query'] as any).q ?? ''))),
+      query: String(((req['query'] as Record<string, string | string[]>).query ?? ((req['query'] as Record<string, string | string[]>).q ?? ''))),
       hasMore: false,
     });
     return;

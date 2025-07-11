@@ -30,10 +30,10 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
     // Get query parameters
-    const page = parseInt(((req['query'] as any).page as string), 10) || 1;
-    const limit = parseInt(((req['query'] as any).limit as string), 10) || 20;
-    const search = ((req['query'] as any).search as string);
-    const skills = ((req['query'] as any).skills as string | string[]);
+    const page = parseInt(((req['query'] as Record<string, string | string[]>).page as string), 10) || 1;
+    const limit = parseInt(((req['query'] as Record<string, string | string[]>).limit as string), 10) || 20;
+    const search = ((req['query'] as Record<string, string | string[]>).search as string);
+    const skills = ((req['query'] as Record<string, string | string[]>).skills as string | string[]);
 
     // Start with all talent profiles
     let profiles = TALENT_PROFILES || [];

@@ -9,7 +9,7 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 export const config = { api: { bodyParser: false } };
 
 
-const stripe = new (Stripe as any)(process.env.STRIPE_TEST_SECRET_KEY || '', {
+const stripe = new (Stripe as typeof Stripe)(process.env.STRIPE_TEST_SECRET_KEY || '', {
   apiVersion: '2023-10-16',
 });
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || '';
@@ -21,23 +21,26 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   const sig = (req.headers as Record<string, string | string[] | undefined>)['stripe-signature'] as string;
-  let event: any;
+  let event: Stripe.Event;
   try {
-    const buf = await buffer(req as any);
+    const buf = await buffer(req as unknown as Request);
     event = stripe.webhooks.constructEvent(buf.toString(), sig, webhookSecret);
-  } catch (err: any) {
+  } catch (err: unknown) {
     logErrorToProduction('Webhook signature verification failed.', { data: err });
-    return res.status(400).end(`Webhook Error: ${err.message}`);
+    return res.status(400).end(`Webhook Error: ${err instanceof Error ? err.message : 'Unknown error'}`);
   }
 
   if (event.type === 'checkout.session.completed') {
-    const session = event.data.object as any;
+    const session = event.data.object as Stripe.Checkout.Session;
     const orderId = session.metadata?.orderId;
     if (orderId) {
       try {
         const file = path.join(process.cwd(), 'data', 'orders.json');
         const fileContent = fs.readFileSync(file, 'utf8');
-        const orders = JSON.parse(typeof fileContent === 'string' ? fileContent : String(fileContent)) as any[];
+        const orders = JSON.parse(typeof fileContent === 'string' ? fileContent : String(fileContent)) as Array<{
+          id: string;
+          status: string;
+        }>;
         const idx = orders.findIndex(o => o.id === orderId);
         if (idx !== -1) {
           orders[idx].status = 'paid';
@@ -52,7 +55,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const points = Math.floor(((session.amount_total || 0) / 10000)) * 10;
       if (points > 0) {
         const file = path.join(process.cwd(), 'data', 'points.json');
-        let ledger: any[] = [];
+        let ledger: Array<{
+          id: string;
+          user_id: string;
+          delta: number;
+          reason: string;
+          order_id: string | null;
+          created_at: string;
+        }> = [];
         try {
           const fileContent = fs.readFileSync(file, 'utf8');
           ledger = JSON.parse(String(fileContent));
