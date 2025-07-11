@@ -236,17 +236,18 @@ export default async function handler(
       error &&
       typeof error === 'object' &&
       'message' in error &&
-      typeof (error as { message?: string }).message === 'string' &&
-      (error as { message?: string }).message &&
-      (error as { message?: string }).message?.includes('No API key provided')
+      typeof (error as { message?: string }).message === 'string'
     ) {
-      return res.status(500).json({
-        error: 'Payment system configuration error',
-        details:
-          process.env['NODE_ENV'] === 'development'
-            ? 'Stripe secret key not configured'
-            : 'Payment system temporarily unavailable',
-      });
+      const message = (error as { message?: string }).message;
+      if (message && message.includes('No API key provided')) {
+        return res.status(500).json({
+          error: 'Payment system configuration error',
+          details:
+            process.env['NODE_ENV'] === 'development'
+              ? 'Stripe secret key not configured'
+              : 'Payment system temporarily unavailable',
+        });
+      }
     }
 
     // Generic error response
@@ -261,4 +262,5 @@ export default async function handler(
     });
   }
 }
+
 
