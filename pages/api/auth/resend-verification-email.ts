@@ -4,12 +4,12 @@ import { withErrorLogging } from '@/utils/withErrorLogging';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req['method'] !== 'POST') {
+  if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
     return res.status(405).end();
   }
 
-  const { email } = req['body'] as { email?: string };
+  const { email } = req.body as { email?: string };
   if (!email) {
     return res.status(400).json({ message: 'Email is required' });
   }
@@ -47,7 +47,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     return res
       .status(200)
       .json({ message: 'Verification email resent successfully' });
-  } catch (error: any) {
+  } catch (error: unknown) {
     return res
       .status(500)
       .json({ message: 'Failed to resend verification email' });
