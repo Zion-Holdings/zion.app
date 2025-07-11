@@ -131,7 +131,7 @@ export class ProductionErrorMonitor {
       },
       context: {
         route: typeof window !== 'undefined' ? window.location.pathname : '',
-        component: context.component,
+        component: typeof context.component === 'string' ? context.component : undefined,
         browserInfo: typeof window !== 'undefined' ? {
           cookiesEnabled: navigator.cookieEnabled,
           onLine: navigator.onLine,
@@ -139,7 +139,7 @@ export class ProductionErrorMonitor {
         } : { cookiesEnabled: false, onLine: false, language: '' },
         ...context
       },
-      performanceMetrics: this.getPerformanceMetrics()
+      performanceMetrics: this.getPerformanceMetrics() || undefined
     };
   }
 
@@ -151,7 +151,7 @@ export class ProductionErrorMonitor {
     const timing = performance.timing;
     const loadTime = timing.loadEventEnd - timing.navigationStart;
     const perfWithMemory = performance as Performance & { memory?: { usedJSHeapSize: number; totalJSHeapSize: number; jsHeapSizeLimit: number } };
-    let memoryUsage: { used?: number; total?: number; limit?: number } = {};
+    let memoryUsage: { used?: number; total?: number; limit?: number } | undefined = undefined;
     if (perfWithMemory.memory) {
       memoryUsage = {
         used: perfWithMemory.memory.usedJSHeapSize,
@@ -162,7 +162,7 @@ export class ProductionErrorMonitor {
       memoryUsage = undefined;
     }
     return {
-      loadTime,
+      loadTime: typeof loadTime === 'number' && !isNaN(loadTime) ? loadTime : undefined,
       memoryUsage
     };
   }

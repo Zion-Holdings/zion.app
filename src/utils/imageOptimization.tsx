@@ -127,7 +127,7 @@ export function OptimizedImage({
             'transition-opacity duration-300',
             isLoading ? 'opacity-0' : 'opacity-100'
           )}
-          {...props}
+          {...props as any}
         />
       )}
 
@@ -182,9 +182,7 @@ export function withImageOptimization<P extends { src: string; alt: string }>(
     
     return (
       <OptimizedImage
-        src={src}
-        alt={alt}
-        {...(otherProps as unknown as OptimizedImageProps)}
+        {...props as OptimizedImageProps}
       />
     );
   };

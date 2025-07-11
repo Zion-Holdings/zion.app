@@ -43,8 +43,8 @@ if (typeof self === 'undefined') {
 }
 
 // Ensure self is properly referenced
-const selfRef: Record<string, unknown> = typeof self !== 'undefined' ? self as Record<string, unknown> : 
-                    typeof global !== 'undefined' ? global as Record<string, unknown> :
+const selfRef: Record<string, unknown> = typeof self !== 'undefined' ? (self as unknown as Record<string, unknown>) : 
+                    typeof global !== 'undefined' ? (global as unknown as Record<string, unknown>) :
                     typeof globalThis !== 'undefined' ? (globalThis as unknown as Record<string, unknown>) :
                     typeof window !== 'undefined' ? ((window as unknown) as Record<string, unknown>) : {};
 

@@ -77,11 +77,11 @@ export const React19Optimizations = {
         return { hasError: true, error };
       }
 
-      componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+      override componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
         console.error('React 19 Error Boundary:', error, errorInfo);
       }
 
-      render() {
+      override render() {
         if (this.state.hasError && this.state.error) {
           return React.createElement(fallback, { error: this.state.error });
         }

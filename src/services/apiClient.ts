@@ -110,14 +110,27 @@ apiClient.interceptors.request.use((config: InternalAxiosRequestConfig) => {
   if (typeof config !== 'object' || config === null) {
     return config;
   }
+<<<<<<< HEAD
   // Ensure headers are properly set
   if (!config.headers) {
     config.headers = {};
   }
-  // Add Accept header if not present
-  if (!config.headers.Accept) {
-    config.headers.Accept = 'application/json';
+=======
+
+  // Ensure headers are properly set
+  if (!config.headers) {
+    config.headers = new AxiosHeadersClass() as unknown as InternalAxiosRequestConfig['headers'];
   }
+
+>>>>>>> bfaa2d57 (fix: enhance type safety in apiClient interceptor and update environment polyfill for platform details)
+  // Add Accept header if not present
+  if (config.headers && typeof config.headers === 'object' && !('Accept' in config.headers)) {
+    (config.headers as any).Accept = 'application/json';
+  }
+<<<<<<< HEAD
+=======
+
+>>>>>>> bfaa2d57 (fix: enhance type safety in apiClient interceptor and update environment polyfill for platform details)
   return config;
 });
 
