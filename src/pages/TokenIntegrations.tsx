@@ -45,30 +45,19 @@ export default function TokenIntegrations() {
   const [suggested, setSuggested] = useState<string | null>(null);
 
   // --- LayerZero Bridge Integration Point ---
-  // TODO: Replace the following with real LayerZero SDK integration
-  // Example steps:
-  // 1. Get signer from useWallet()
-  // 2. Instantiate LayerZero Endpoint contract
-  // 3. Call LayerZero's send() or equivalent function, passing parameters like:
-  //    - destination chain ID (LayerZero specific)
-  //    - recipient address (likely `address`)
-  //    - amount
-  //    - adapter parameters (for gas, etc.)
-  //    - fee (obtained from `estimateFee` or similar LayerZero SDK function)
-
+  // Reactivate: Mock fee estimation logic
   const estimateFee = async (sourceChain: string, destinationChain: string, tokenAmount: string): Promise<string> => {
-    // Reactivate: Mock fee estimation logic
     await new Promise(resolve => setTimeout(resolve, 300));
     return (0.001 * parseFloat(tokenAmount || '1')).toFixed(4) + ' ZION$';
   };
 
+  // Reactivate: Mock token bridging logic
   const sendTokenViaLayerZero = async (
     sourceChain: string,
     destinationChain: string,
     tokenAmount: string,
     userAddress: string | null
   ): Promise<{ transactionHash: string; arrivalTimeEstimate: string }> => {
-    // Reactivate: Mock token bridging logic
     await new Promise(resolve => setTimeout(resolve, 1000));
     return {
       transactionHash: '0x' + Math.random().toString(16).slice(2, 18),
