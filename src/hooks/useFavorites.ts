@@ -35,10 +35,9 @@ export function useFavorites() {
     }
   };
 
+  // eslint-disable-next-line
   useEffect(() => {
     fetchFavorites();
-    // If dependencies are correct, keep as is. Otherwise, add missing dependencies or disable the rule if still not recognized.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const toggleFavorite = async (item_type: string, item_id: string) => {
