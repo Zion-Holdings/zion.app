@@ -753,18 +753,10 @@ const nextConfig = {
       });
     }
 
-    // Smart Sentry detection: Disable automatically if would cause build issues
-    const shouldDisableSentry = process.env.SKIP_SENTRY_BUILD === 'true' || 
-                                process.env.CI === 'true' ||
-                                process.env.NODE_ENV === 'production' ||
-                                !process.env.SENTRY_DSN ||
-                                process.env.SENTRY_DSN?.includes('dummy') ||
-                                process.env.SENTRY_DSN?.includes('placeholder');
-    
+    // Smart Sentry detection: Only disable Sentry if SKIP_SENTRY_BUILD or CI is set
+    const shouldDisableSentry = process.env.SKIP_SENTRY_BUILD === 'true' || process.env.CI === 'true';
     if (shouldDisableSentry) {
       console.log('🚫 Sentry disabled - using mock implementation (Smart Detection)');
-      
-      // Use webpack aliases to completely replace all Sentry imports with mocks
       config.resolve.alias = {
         ...config.resolve.alias,
         '@sentry/nextjs': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
@@ -773,17 +765,30 @@ const nextConfig = {
         '@sentry/react': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
         '@sentry/browser': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
       };
+    } else {
+      // Remove any Sentry mock aliases so real SDK is used
+      if (config.resolve.alias) {
+        delete config.resolve.alias['@sentry/nextjs'];
+        delete config.resolve.alias['@sentry/node'];
+        delete config.resolve.alias['@sentry/tracing'];
+        delete config.resolve.alias['@sentry/react'];
+        delete config.resolve.alias['@sentry/browser'];
+      }
     }
 
-    // Completely exclude dd-trace during CI builds to prevent native module issues  
-    if (process.env.SKIP_DATADOG === 'true' || process.env.CI === 'true') {
+    // Only mock dd-trace in CI or if SKIP_DATADOG is set
+    const shouldDisableDatadog = process.env.SKIP_DATADOG === 'true' || process.env.CI === 'true';
+    if (shouldDisableDatadog) {
       console.log('🚫 DD-Trace disabled for CI build - using mock implementation');
-      
-      // Use webpack alias to replace dd-trace with mock implementation
       config.resolve.alias = {
         ...config.resolve.alias,
         'dd-trace': path.resolve(__dirname, 'src/utils/dd-trace-mock.ts'),
       };
+    } else {
+      // Remove dd-trace mock alias so real SDK is used
+      if (config.resolve.alias) {
+        delete config.resolve.alias['dd-trace'];
+      }
     }
 
     // PHASE 3: Advanced Performance Optimizations and Error Handling
