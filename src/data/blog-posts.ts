@@ -1,4 +1,4 @@
-import { BlogPost } from '@/types/blog';
+import type { BlogPost } from '@/types/blog';
 export const BLOG_POSTS: BlogPost[] = [
   {
     "title": "AI in Customer Support",
