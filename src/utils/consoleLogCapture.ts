@@ -5,7 +5,6 @@ export type ConsoleLogEntry = {
 };
 
 const logBuffer: ConsoleLogEntry[] = [];
-const MAX_LOGS = 50;
 
 export function initConsoleLogCapture() {
   if (typeof window === 'undefined') return;
