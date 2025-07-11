@@ -28,9 +28,30 @@ export default function EditPostPage() {
   const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {
-    // In a real app, we would fetch the post data here
-    // For now, we'll just use the mock data
-    setIsLoading(false);
+    // Reactivate: Use mock data for post API
+    setIsLoading(true);
+    setTimeout(() => {
+      if (!postId) {
+        _setPost(null);
+        setIsLoading(false);
+        return;
+      }
+      _setPost({
+        id: postId,
+        title: 'How to use ZionGPT for project management?',
+        content: 'I am interested in using ZionGPT for managing my project milestones. Any tips or best practices?',
+        authorId: 'user-1',
+        authorName: 'Alice',
+        createdAt: '2024-07-01T10:00:00.000Z',
+        updatedAt: '2024-07-01T10:00:00.000Z',
+        upvotes: 12,
+        downvotes: 0,
+        categoryId: 'project-help',
+        tags: ['ziongpt', 'project-management'],
+        replyCount: 2,
+      });
+      setIsLoading(false);
+    }, 400);
   }, [postId]);
   
   if (isLoading) {

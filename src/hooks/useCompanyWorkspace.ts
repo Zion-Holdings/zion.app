@@ -8,7 +8,7 @@ export function useCompanyWorkspace(companySlug?: string) {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Replace mock/simulated data with real API call
+    // Reactivate: Use mock data for company API
     setIsLoading(true);
     (async () => {
       try {
@@ -18,11 +18,17 @@ export function useCompanyWorkspace(companySlug?: string) {
           setIsLoading(false);
           return;
         }
-        // TODO: Replace with real API endpoint
-        const response = await fetch(`/api/companies/${companySlug}`);
-        if (!response.ok) throw new Error('Failed to fetch company data');
-        const data = await response.json();
-        setCompany(data);
+        await new Promise(resolve => setTimeout(resolve, 400));
+        setCompany({
+          id: 'company-1',
+          name: 'Zion AI',
+          logoUrl: '/images/zion-logo.svg',
+          plan: 'Pro',
+          teamSize: 2,
+          teamLimit: 10,
+          billingCycle: 'monthly',
+          workspaceUrl: `/workspace/${companySlug}`,
+        });
         setError(null);
       } catch (err) {
         setCompany(null);
