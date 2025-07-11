@@ -44,6 +44,7 @@ export function useRouteChange(callback?: () => void) {
         router.events.off('routeChangeComplete', handleRouteChange);
       };
     }
+    return undefined;
   }, [callback]); // Removed router.events from dependencies
 
   return routeKey;
