@@ -189,7 +189,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
       })
     });
     return;
-  } catch (error: any) {
+  } catch (error: unknown) {
     logErrorToProduction('Registration error:', { data: error });
     res.status(500).json({ 
       error: 'Internal server error during registration',

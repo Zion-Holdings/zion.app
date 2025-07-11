@@ -22,7 +22,11 @@ jest.mock('sonner', () => ({
   },
 }));
 
-jest.mock('react-markdown', () => (props: { children: React.ReactNode }) => <div data-testid="mock-markdown">{props.children}</div>);
+jest.mock('react-markdown', () => {
+  const MockReactMarkdown = (props: { children: React.ReactNode }) => <div data-testid="mock-markdown">{props.children}</div>;
+  MockReactMarkdown.displayName = 'MockReactMarkdown';
+  return MockReactMarkdown;
+});
 
 jest.mock('@/components/WhitepaperSectionEditor', () => {
   const MockWhitepaperSectionEditor = ({ title, content, onContentChange }: any) => (
