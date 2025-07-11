@@ -135,8 +135,8 @@
       }
       
       // Copy bytes to this object
-      for (var i = 0; i < bytes.length; i++) {
-        this[i] = bytes[i];
+      for (var j = 0; j < bytes.length; j++) {
+        this[j] = bytes[j];
       }
       this.length = bytes.length;
     }

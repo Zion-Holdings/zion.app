@@ -9,8 +9,9 @@ import { fileURLToPath } from 'url';
  * Removes compiled .js and .d.ts files where .tsx or .ts versions exist
  */
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// Use different variable names to avoid conflict with built-in globals
+const currentFilename = fileURLToPath(import.meta.url);
+const currentDirname = path.dirname(currentFilename);
 const pagesDir = path.join(path.dirname(__dirname), 'pages');
 
 function findDuplicates() {

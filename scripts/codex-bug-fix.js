@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import process from 'process';
+// Use different variable name to avoid conflict with built-in globals
+import processEnv from 'process';
 import { Octokit } from "@octokit/rest";
 import fs from 'fs';
 import { execSync } from 'child_process';
