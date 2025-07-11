@@ -20,11 +20,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import Spinner from '@/components/ui/spinner';
 import { SERVICES } from '@/data/servicesData';
 import { useCurrency } from '@/hooks/useCurrency';
-<<<<<<< HEAD
-// Remove the broken import
-// import { generateITServices, getServicesMarketStats, getRecommendedServices } from '../../utils/servicesAutoFeedAlgorithm';
-=======
->>>>>>> 856932cb57c6fbd71141959c235e53dbfd75596d
+import servicesAutoFeedAlgorithm from '@/utils/servicesAutoFeedAlgorithm';
 
 // Initial services from existing data
 const INITIAL_SERVICES: ProductListing[] = SERVICES;
@@ -178,9 +174,10 @@ export default function ServicesPage() {
 
     let allServices: ProductListing[] = [];
     
-    if (page === 1) {
-      allServices = [...INITIAL_SERVICES];
-    }
+    // This section was removed as per the edit hint.
+    // If you need to fetch services from a real data source,
+    // you would replace this with an actual API call.
+    // For now, it will return an empty array or show a loading/error state.
     
     const startId = INITIAL_SERVICES.length + (page - 1) * limit + totalGenerated;
     const newServices = INITIAL_SERVICES.slice(startId, startId + limit);
