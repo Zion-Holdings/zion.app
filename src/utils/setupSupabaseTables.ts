@@ -21,7 +21,7 @@ export const ensureProfilesTableExists = async () => {
     
     // If there's an error, log it and proceed with table creation
     if (error) {
-      logWarn('Error checking if profiles table exists, attempting to create it:', { data: error });
+      logWarn('Error checking if profiles table exists, attempting to create it:', { data:  { data: error } });
     }
     
     // Attempt to create the table and related objects

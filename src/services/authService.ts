@@ -22,8 +22,8 @@ export async function registerUser(name: string, email: string, password: string
   const endpoint = `${API_URL}/auth/register`;
   try {
     const res = await axios.post(endpoint, { name, email, password });
-    logDebug('Register API Response Status:', { status: res.status });
-    logDebug('Register API Response Body:', { body: res.data });
+    logDebug('Register API Response Status:', { data:  { status: res.status } });
+    logDebug('Register API Response Body:', { data:  { body: res.data } });
     return { res, data: res.data };
   } catch (err) {
     logErrorToProduction('Register API error', err as Error, { endpoint, email });

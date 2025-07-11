@@ -25,14 +25,14 @@ export function LanguageSelector() {
       : SUPPORTED_LANGUAGES;
   const [isOpen, setIsOpen] = useState(false);
 
-  logInfo('LanguageSelector: Rendered with currentLanguage:', { data: currentLanguage });
-  logInfo('LanguageSelector: Available languages:', { data: availableLanguages.map(l => l.code) });
+  logInfo('LanguageSelector: Rendered with currentLanguage:', { data:  { data: currentLanguage } });
+  logInfo('LanguageSelector: Available languages:', { data:  { data: availableLanguages.map(l => l.code }) });
 
   const currentFlag =
     availableLanguages.find((l) => l.code === currentLanguage)?.flag || '🌐';
 
   const handleLanguageChange = async (langCode: SupportedLanguage) => {
-    logInfo('LanguageSelector: Language item clicked:', { data: langCode });
+    logInfo('LanguageSelector: Language item clicked:', { data:  { data: langCode } });
     try {
       await changeLanguage(langCode);
       setIsOpen(false);

@@ -215,7 +215,7 @@ async function handlePost(
           }
         });
 
-        logInfo('Test error created for monitoring validation', { errorId });
+        logInfo('Test error created for monitoring validation', { data:  { errorId } });
 
         res.status(200).json({
           success: true,
@@ -240,7 +240,7 @@ async function handlePost(
       try {
         const healthStatus = await systemHealthMonitor.performHealthCheck();
         
-        logInfo('Manual health check triggered', { score: healthStatus.score });
+        logInfo('Manual health check triggered', { data:  { score: healthStatus.score } });
 
         res.status(200).json({
           success: true,

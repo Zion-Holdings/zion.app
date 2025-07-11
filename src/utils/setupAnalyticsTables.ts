@@ -17,7 +17,7 @@ export async function ensureAnalyticsTablesExist() {
       await createAnalyticsTables();
     }
   } catch (error) {
-    logWarn('Error checking if analytics tables exist:', { data: error });
+    logWarn('Error checking if analytics tables exist:', { data:  { data: error } });
     // No need to create tables here, as this could be a connection error
   }
 }

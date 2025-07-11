@@ -74,7 +74,7 @@ export function logError(
           }
         }
       }).catch(ddImportError => {
-        logWarn('Failed to import or use Datadog logger:', { data: ddImportError });
+        logWarn('Failed to import or use Datadog logger:', { data:  { data: ddImportError } });
       });
 
       // LogRocket logging
@@ -88,7 +88,7 @@ export function logError(
           }
         }
       }).catch(lrError => {
-        logWarn('Failed to log error to LogRocket:', { data: lrError });
+        logWarn('Failed to log error to LogRocket:', { data:  { data: lrError } });
       });
     }
   } catch (err) {

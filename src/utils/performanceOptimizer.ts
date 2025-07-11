@@ -79,7 +79,7 @@ class PerformanceOptimizer {
             this.performanceObserver.observe({ entryTypes: [type] });
           }
         } catch (error) {
-          logWarn('Failed to observe ${type} performance entries', { data:  { error } });
+          logWarn('Failed to observe ${type} performance entries', { data:  { data:  { error } } });
         }
       });
 
@@ -257,10 +257,10 @@ class PerformanceOptimizer {
 
     navigator.serviceWorker.register('/sw.js')
       .then(registration => {
-        logInfo('Service Worker registered', { data:  { scope: registration.scope } });
+        logInfo('Service Worker registered', { data:  { data:  { scope: registration.scope } } });
       })
       .catch(error => {
-        logWarn('Service Worker registration failed', { data:  { error } });
+        logWarn('Service Worker registration failed', { data:  { data:  { error } } });
       });
   }
 
@@ -355,7 +355,7 @@ class PerformanceOptimizer {
       
       cacheNames.forEach(cacheName => {
         caches.open(cacheName).catch(error => {
-          logWarn('Failed to open cache: ${cacheName}', { data:  { error } });
+          logWarn('Failed to open cache: ${cacheName}', { data:  { data:  { error } } });
         });
       });
     }
@@ -368,7 +368,7 @@ class PerformanceOptimizer {
       };
       localStorage.setItem('app-cache-info', JSON.stringify(cacheData));
     } catch (error) {
-      logWarn('Failed to set localStorage cache', { data:  { error } });
+      logWarn('Failed to set localStorage cache', { data:  { data:  { error } } });
     }
 
     logInfo('Advanced caching enabled');
@@ -386,8 +386,8 @@ class PerformanceOptimizer {
       if (typeof bundleSize === 'number') {
         logPerformance('Bundle Size', bundleSize);
         if (bundleSize > this.config.bundleSizeLimit * 1024) {
-          logWarn('Large bundle size detected', {
-            size: `${(bundleSize / 1024).toFixed(2)}KB`,
+          logWarn('Large bundle size detected', { data:  {
+            size: `${(bundleSize / 1024 }).toFixed(2)}KB`,
             limit: `${this.config.bundleSizeLimit}KB`,
             recommendation: 'Consider implementing more aggressive code splitting'
           });

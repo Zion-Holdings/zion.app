@@ -115,6 +115,6 @@ export function logConfigurationStatus(): void {
   logInfo(`  Sentry: ${config.sentry.isConfigured ? '✅' : '⚠️'} ${config.sentry.isConfigured ? 'Configured' : 'Disabled'}`);
   
   if (!validation.isValid) {
-    logWarn('⚠️ Missing environment variables:', { data: validation.missingVars });
+    logWarn('⚠️ Missing environment variables:', { data:  { data: validation.missingVars } });
   }
 } 

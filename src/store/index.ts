@@ -59,7 +59,7 @@ store.subscribe(() => {
       }
     }
   } catch (error) {
-    logWarn('Store subscription error (throttled):', { data: error });
+    logWarn('Store subscription error (throttled):', { data:  { data: error } });
   }
 });
 

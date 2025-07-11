@@ -129,7 +129,7 @@ class LogDashboard {
       };
 
       this.lastCacheUpdate = now;
-      logInfo('Dashboard metrics calculated successfully', { metricsCount: totalLogs });
+      logInfo('Dashboard metrics calculated successfully', { data:  { metricsCount: totalLogs } });
       
       return this.metricsCache;
     } catch (error) {
@@ -264,7 +264,7 @@ class LogDashboard {
     const alert = this.alerts.find(a => a.id === alertId);
     if (alert) {
       alert.resolved = true;
-      logInfo(`Alert resolved: ${alert.message}`, { alertId });
+      logInfo('Alert resolved: ${alert.message}', { data:  { alertId } });
       return true;
     }
     return false;
@@ -493,7 +493,7 @@ ${this.generateRecommendations(metrics, activeAlerts)}
       });
     }, intervalMinutes * 60 * 1000);
 
-    logInfo('Automated monitoring started', { intervalMinutes });
+    logInfo('Automated monitoring started', { data:  { intervalMinutes } });
   }
 }
 

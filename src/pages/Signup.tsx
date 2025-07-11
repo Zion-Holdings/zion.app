@@ -183,7 +183,7 @@ export default function Signup() {
         const response = typeof err === 'object' && err !== null && 'response' in err ? (err as { response?: { status?: number, data?: { error?: string, message?: string } } }).response : undefined;
         const status = response?.status;
         const errorMsg = response?.data?.error || response?.data?.message || 'Signup failed. Please try again.';
-        logInfo('Processed error message:', { data: errorMsg });
+        logInfo('Processed error message:', { data:  { data: errorMsg } });
         if (status === 409) {
           setErrorMessage(errorMsg);
           setErrors({ email: errorMsg });

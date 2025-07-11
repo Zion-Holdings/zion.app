@@ -157,7 +157,7 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
         }
       }
     } catch (apiError) {
-      logWarn('API fetch for product ${slug} (attempting ID match) failed:', { data: apiError });
+      logWarn('API fetch for product ${slug} (attempting ID match) failed:', { data:  { data: apiError } });
       if (typeof window === 'undefined') {
         const Sentry = await import('@sentry/nextjs');
         Sentry.captureMessage(`API fetch for product ${slug} (attempting ID match) failed`);

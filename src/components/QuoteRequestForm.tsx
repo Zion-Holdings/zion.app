@@ -118,7 +118,7 @@ export function QuoteRequestForm() {
     
     try {
       // In a real application, you would send the data to your backend
-      logDebug("Submitting form data:", { data: formData });
+      logDebug('Submitting form data:', { data:  { data: formData } });
       
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1500));

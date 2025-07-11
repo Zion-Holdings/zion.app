@@ -43,7 +43,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
           Sentry.captureException(error);
         }
       } catch (sentryError) {
-        logWarn('Failed to log to Sentry:', { data: sentryError });
+        logWarn('Failed to log to Sentry:', { data:  { data: sentryError } });
       }
     }
     

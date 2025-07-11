@@ -18,7 +18,7 @@ export const useLogout = (setUser: (user: UserDetails | null) => void) => {
       try {
         await fetch('/api/auth/logout', { method: 'POST' });
       } catch (cookieErr) {
-        logWarn('useLogout: Failed to clear auth cookie', { data: cookieErr });
+        logWarn('useLogout: Failed to clear auth cookie', { data:  { data: cookieErr } });
       }
 
       // Update state

@@ -124,7 +124,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
         usingFallback = true;
       }
     } catch (dbError) {
-      logWarn('Database query failed or timed out, using fallback data:', { data: dbError });
+      logWarn('Database query failed or timed out, using fallback data:', { data:  { data: dbError } });
       usingFallback = true;
     }
 

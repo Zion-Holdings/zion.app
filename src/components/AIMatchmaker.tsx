@@ -47,7 +47,7 @@ export function AIMatchmaker({ serviceType = "", onMatchSelect, className }: AIM
         3
       );
       
-      logInfo('AI matching results:', { data: results });
+      logInfo('AI matching results:', { data:  { data: results } });
       setMatches(results);
       
       toast({

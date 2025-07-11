@@ -163,7 +163,7 @@ export function useAuthOperations(
           // Clear authToken cookie on backend
           await fetch('/api/auth/logout', { method: 'POST' });
         } catch (cookieErr) {
-          logWarn('useAuthOperations.logout: failed to clear auth cookie', { data: cookieErr });
+          logWarn('useAuthOperations.logout: failed to clear auth cookie', { data:  { data: cookieErr } });
         }
         toast({
           title: "Logout successful!",

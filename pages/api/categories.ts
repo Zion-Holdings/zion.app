@@ -62,7 +62,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
             return dbCategories;
           }
         } catch (dbError) {
-          logWarn('Database query failed, using fallback:', { data: dbError });
+          logWarn('Database query failed, using fallback:', { data:  { data: dbError } });
         }
         // Fallback to static data if DB fails
         if (CATEGORIES && CATEGORIES.length > 0) {

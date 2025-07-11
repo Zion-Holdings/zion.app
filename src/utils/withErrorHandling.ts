@@ -67,7 +67,7 @@ export function withServerSideErrorHandling<P extends Record<string, unknown>>(
       } catch (error: unknown) {
         lastError = error instanceof Error ? error : new Error(String(error));
         
-        logWarn('⚠️ getServerSideProps attempt ${attempt + 1}/${config.maxRetries + 1} failed for ${context.resolvedUrl}:', { data: lastError ? lastError.message : 'Unknown error' });
+        logWarn('⚠️ getServerSideProps attempt ${attempt + 1}/${config.maxRetries + 1} failed for ${context.resolvedUrl}:', { data:  { data: lastError ? lastError.message : 'Unknown error' } });
         
         // Log each attempt to Sentry if configured
         if (ENV_CONFIG.sentry.isConfigured) {
@@ -205,7 +205,7 @@ export function withStaticErrorHandling<P extends Record<string, unknown>>(
       } catch (error: unknown) {
         lastError = error instanceof Error ? error : new Error(String(error));
         
-        logWarn('⚠️ getStaticProps attempt ${attempt + 1}/${config.maxRetries + 1} failed:', { data: lastError.message });
+        logWarn('⚠️ getStaticProps attempt ${attempt + 1}/${config.maxRetries + 1} failed:', { data:  { data: lastError.message } });
         
         // Log each attempt to Sentry if configured
         if (ENV_CONFIG.sentry.isConfigured) {
@@ -370,7 +370,7 @@ export async function safeFetch(
                         config.retryCondition(lastError);
 
       if (shouldRetry) {
-        logWarn('🔄 Fetch attempt ${attempt + 1} failed, retrying in ${config.retryDelay}ms:', { data: lastError.message });
+        logWarn('🔄 Fetch attempt ${attempt + 1} failed, retrying in ${config.retryDelay}ms:', { data:  { data: lastError.message } });
         await new Promise(resolve => setTimeout(resolve, config.retryDelay));
         continue;
       }

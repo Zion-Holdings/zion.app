@@ -71,7 +71,7 @@ export const FraudDetectionMiddleware: React.FC<FraudDetectionMiddlewareProps> =
       
       // For suspicious but not dangerous content, log but let it pass through
       if (quickCheck.severity === 'suspicious') {
-        logInfo('Suspicious content detected but allowed:', { data: content });
+        logInfo('Suspicious content detected but allowed:', { data:  { data: content } });
       }
       
       // For more complex analysis (in a real app), we would call the edge function

@@ -90,7 +90,7 @@ export default function SavedTalentsPage() {
   };
 
   const handleRequestHire = (talent: TalentProfile) => {
-    logInfo('Request to hire:', { data: talent });
+    logInfo('Request to hire:', { data:  { data: talent } });
     toast({
       title: "Hire Request Sent",
       description: `A hire request has been sent to ${talent.full_name}.`,

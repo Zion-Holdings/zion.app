@@ -121,7 +121,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
       async (event: AuthChangeEvent, session: Session | null) => {
         if (!mounted) return
 
-        logInfo('Auth guard: Auth state changed:', { data: event })
+        logInfo('Auth guard: Auth state changed:', { data:  { data: event } })
         
         let userState: User | null = null;
         if (session) {

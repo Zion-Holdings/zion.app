@@ -28,7 +28,7 @@ export const cleanupAuthState = () => {
       }
     });
   } catch (e) {
-    logWarn('Storage access error:', { data:  e });
+    logWarn('Storage access error:', { data:  { data:  e } });
   }
   
   // Remove from sessionStorage if in use
@@ -39,7 +39,7 @@ export const cleanupAuthState = () => {
       }
     });
   } catch (e) {
-    logWarn('Storage access error:', { data:  e });
+    logWarn('Storage access error:', { data:  { data:  e } });
   }
 };
 

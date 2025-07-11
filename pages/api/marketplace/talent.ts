@@ -22,7 +22,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   try {
-    logInfo('Marketplace talent API called with query:', { data: req['query'] });
+    logInfo('Marketplace talent API called with query:', { data:  { data: req['query'] } });
     
     // Add CORS headers
     res.setHeader('Access-Control-Allow-Origin', '*');

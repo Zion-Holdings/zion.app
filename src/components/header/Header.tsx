@@ -50,11 +50,11 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
     e.preventDefault();
     const trimmed = query.trim();
     if (trimmed) {
-      logInfo('Header search submit:', { data: trimmed });
+      logInfo('Header search submit:', { data:  { data: trimmed } });
       router
         .push(`/search?q=${encodeURIComponent(trimmed)}`)
         .then(() => setQuery(''))
-        .catch((err) => logInfo('Search navigation failed', { data: err }));
+        .catch((err) => logInfo('Search navigation failed', { data:  { data: err } }));
     }
   };
 
@@ -84,7 +84,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
               value={query}
               onChange={setQuery}
               onSelectSuggestion={(suggestion) => {
-                logInfo('Header search suggestion selected:', { data: suggestion });
+                logInfo('Header search suggestion selected:', { data:  { data: suggestion } });
                 // Navigate to specific item if slug and type indicate direct link, otherwise search by text
                 if (suggestion.slug && (suggestion.type === 'product' || suggestion.type === 'doc' || suggestion.type === 'blog')) {
                   // Assuming product slugs are like /marketplace/listing/id
@@ -210,7 +210,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
                 value={query}
                 onChange={setQuery}
                 onSelectSuggestion={(suggestion) => {
-                  logInfo('Mobile search suggestion selected:', { data: suggestion });
+                  logInfo('Mobile search suggestion selected:', { data:  { data: suggestion } });
                   if (suggestion.slug && (suggestion.type === 'product' || suggestion.type === 'doc' || suggestion.type === 'blog')) {
                     let path = suggestion.slug;
                     if (suggestion.type === 'product' && !suggestion.slug.startsWith('/marketplace/listing/')) {

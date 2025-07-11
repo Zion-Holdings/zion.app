@@ -105,7 +105,7 @@ class EnhancedErrorCollector {
     this.startHealthChecks();
     
     this.isInitialized = true;
-    logInfo('Enhanced Error Collector initialized', { sessionId: this.sessionId });
+    logInfo('Enhanced Error Collector initialized', { data:  { sessionId: this.sessionId } });
   }
 
   private setupPerformanceMonitoring(): void {
@@ -136,7 +136,7 @@ class EnhancedErrorCollector {
 
       this.performanceObserver.observe({ entryTypes: ['navigation', 'resource'] });
     } catch (error) {
-      logWarn('Failed to setup performance monitoring:', { data: error });
+      logWarn('Failed to setup performance monitoring:', { data:  { data: error } });
     }
   }
 
@@ -210,8 +210,8 @@ class EnhancedErrorCollector {
     };
 
     // Log health summary
-    logInfo('System health check', {
-      uptime: Math.round(uptime / 1000 / 60), // minutes
+    logInfo('System health check', { data:  {
+      uptime: Math.round(uptime / 1000 / 60 }), // minutes
       errorRate: Math.round(errorRate * 100) / 100,
       errorCount,
       memoryPressure: Math.round(this.healthMetrics.memoryPressure * 100),
@@ -429,7 +429,7 @@ class EnhancedErrorCollector {
 
   public clearErrors(): void {
     this.errors.clear();
-    logInfo('Error collection cleared', { sessionId: this.sessionId });
+    logInfo('Error collection cleared', { data:  { sessionId: this.sessionId } });
   }
 
   public getHealthScore(): number {
@@ -452,7 +452,7 @@ class EnhancedErrorCollector {
       this.performanceObserver.disconnect();
     }
     this.isInitialized = false;
-    logInfo('Enhanced Error Collector destroyed', { sessionId: this.sessionId });
+    logInfo('Enhanced Error Collector destroyed', { data:  { sessionId: this.sessionId } });
   }
 }
 

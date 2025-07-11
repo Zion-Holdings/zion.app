@@ -104,9 +104,9 @@ export default function CommunityPage() {
     }
   };
 
-  logInfo('CommunityPage featuredPosts:', { data: featuredPosts });
-  logInfo('CommunityPage recentPosts:', { data: recentPosts });
-  logInfo('CommunityPage activeTab:', { data: activeTab });
+  logInfo('CommunityPage featuredPosts:', { data:  { data: featuredPosts } });
+  logInfo('CommunityPage recentPosts:', { data:  { data: recentPosts } });
+  logInfo('CommunityPage activeTab:', { data:  { data: activeTab } });
   
   if (!featuredPosts || !recentPosts) {
     logErrorToProduction('CommunityPage: Posts data is missing from context!', undefined, { message: 'CommunityPage: Posts data is missing from context!' });

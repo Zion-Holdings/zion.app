@@ -121,9 +121,9 @@ function CategoryContent({
     }
   };
 
-  logInfo('CategoryContent - categoryId:', { data: categoryId });
-  logInfo('CategoryContent - categoryPosts:', { data: categoryPosts });
-  logInfo('CategoryContent - filteredPosts:', { data: filteredPosts });
+  logInfo('CategoryContent - categoryId:', { data:  { data: categoryId } });
+  logInfo('CategoryContent - categoryPosts:', { data:  { data: categoryPosts } });
+  logInfo('CategoryContent - filteredPosts:', { data:  { data: filteredPosts } });
 
   return (
     <div className="container py-8">
@@ -222,7 +222,7 @@ export default function ForumCategoryPage() {
   useEffect(() => {
     // Add a small delay to ensure router is ready
     if (categoryId && category) {
-      logInfo('ForumCategoryPage - categoryId changed:', { data: categoryId });
+      logInfo('ForumCategoryPage - categoryId changed:', { data:  { data: categoryId } });
     }
   }, [categoryId, category]);
 

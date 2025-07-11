@@ -92,7 +92,7 @@ export default async function handler(
         });
       } catch (err) {
         // swallow – do not break client logging on webhook failure
-        logWarn('Failed to forward logs to webhook:', { error: err });
+        logWarn('Failed to forward logs to webhook:', { data:  { error: err } });
       }
     }
 

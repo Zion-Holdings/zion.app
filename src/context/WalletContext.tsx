@@ -142,7 +142,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
   const rawProjectId = getAppKitProjectId();
   if (process.env.NODE_ENV === 'development') {
-    logInfo('WalletContext: Resolved rawProjectId from getAppKitProjectId():', { data: rawProjectId });
+    logInfo('WalletContext: Resolved rawProjectId from getAppKitProjectId():', { data:  { data: rawProjectId } });
   }
 
   // Check if the project ID is valid
@@ -218,7 +218,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     // Proceed with AppKit initialization only if client-side and project ID is valid
     if (!appKitRef.current) { // Check if already initialized
       if (process.env.NODE_ENV === 'development') {
-        logInfo('WalletContext: Client-side, valid project ID. Attempting AppKit init. ID:', { data: rawProjectId });
+        logInfo('WalletContext: Client-side, valid project ID. Attempting AppKit init. ID:', { data:  { data: rawProjectId } });
       }
       try {
         appKitRef.current = createAppKit({
@@ -230,7 +230,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
           features: { analytics: false },
         });
         if (process.env.NODE_ENV === 'development') {
-          logInfo('WalletContext: appKitInstance created successfully:', { data: appKitRef.current });
+          logInfo('WalletContext: appKitInstance created successfully:', { data:  { data: appKitRef.current } });
         }
         // On successful creation, system is available. Connection state will be updated by subscriptions.
         setWallet(prev => ({
@@ -251,7 +251,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       // AppKit already initialized. This block might be hit if dependencies change (e.g. projectId)
       // but AppKit instance was somehow preserved. Ensure state is consistent.
       if (process.env.NODE_ENV === 'development') {
-        logInfo('WalletContext: AppKit already initialized. Ensuring state consistency. ID:', { data: rawProjectId });
+        logInfo('WalletContext: AppKit already initialized. Ensuring state consistency. ID:', { data:  { data: rawProjectId } });
       }
       setWallet(prev => ({
         ...prev,
@@ -402,7 +402,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         window.open('https://metamask.io/download.html', '_blank');
         logInfo('WalletContext: No wallet provider detected. Opening MetaMask install page.');
       } catch (installError) {
-        logWarn('WalletContext: Failed to open MetaMask install page.', { data: installError });
+        logWarn('WalletContext: Failed to open MetaMask install page.', { data:  { data: installError } });
       }
     }
 

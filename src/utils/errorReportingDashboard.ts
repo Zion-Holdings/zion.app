@@ -253,7 +253,7 @@ class ErrorReportingDashboard {
       const alert = `⚠️ HIGH ERROR RATE: ${this.healthData.metrics.errorRate.toFixed(1)}%`;
       if (!alerts.includes(alert)) {
         alerts.push(alert);
-        logWarn('High error rate detected', { errorRate: this.healthData.metrics.errorRate });
+        logWarn('High error rate detected', { data:  { errorRate: this.healthData.metrics.errorRate } });
       }
     }
 

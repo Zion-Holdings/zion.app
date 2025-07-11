@@ -72,7 +72,7 @@ export default function Status() {
           setUptime(data.uptime);
         }
       } catch (err) {
-        logWarn('Failed to fetch uptime', { data: err });
+        logWarn('Failed to fetch uptime', { data:  { data: err } });
       }
     }
     fetchUptime();

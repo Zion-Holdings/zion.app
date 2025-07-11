@@ -42,7 +42,7 @@ export async function getActiveModelId(purpose: 'job' | 'resume' | 'support'): P
     
     if (error || !data) {
       logErrorToProduction(error?.message || 'No model data returned', error || undefined, { context: 'getActiveModelId' });
-      logWarn('Failed to fetch active model, falling back to default', { data: error });
+      logWarn('Failed to fetch active model, falling back to default', { data:  { data: error } });
       // Fallback to default models
       switch(purpose) {
         case 'job': return 'zion-job-generator-v1';

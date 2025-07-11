@@ -99,7 +99,7 @@ export default function VerifyStatus() {
       if (refreshError) {
         // Don't treat all refresh errors as critical for this check,
         // as user might not have a session yet or it might be invalid.
-        logWarn('Error during session refresh:', { data: refreshError.message });
+        logWarn('Error during session refresh:', { data:  { data: refreshError.message } });
       }
 
       // Get the current user details from Supabase

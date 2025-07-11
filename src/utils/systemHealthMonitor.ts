@@ -64,7 +64,7 @@ class SystemHealthMonitor {
       }
     }, intervalMs);
 
-    logInfo('System health monitoring started', { intervalMs });
+    logInfo('System health monitoring started', { data:  { intervalMs } });
   }
 
   /**
@@ -220,7 +220,7 @@ class SystemHealthMonitor {
     const alert = this.alerts.find(a => a.id === alertId);
     if (alert) {
       alert.resolved = true;
-      logInfo(`Alert resolved: ${alert.message}`, { alertId });
+      logInfo('Alert resolved: ${alert.message}', { data:  { alertId } });
       return true;
     }
     return false;

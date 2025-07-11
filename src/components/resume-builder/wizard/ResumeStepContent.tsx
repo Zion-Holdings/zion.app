@@ -31,7 +31,7 @@ export const ResumeStepContent = ({
           initialData={resume?.basic_info}
           onSave={(data) => {
             // Here you would typically save the data to your backend
-            logInfo('Saving basic info:', { data: data });
+            logInfo('Saving basic info:', { data:  { data: data } });
           }}
           onComplete={onNextStep} 
         />

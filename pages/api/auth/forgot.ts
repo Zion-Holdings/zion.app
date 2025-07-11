@@ -154,7 +154,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
       return;
     }
 
-    logInfo('Password reset ticket created successfully for:', { data: email });
+    logInfo('Password reset ticket created successfully for:', { data:  { data: email } });
     res.status(200).json({
       message: 'If your email address is registered, you will receive a password reset link shortly.',
       success: true

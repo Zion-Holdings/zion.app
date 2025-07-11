@@ -280,7 +280,7 @@ export default function SearchResultsPage({
       }
 
       const data = await response.json();
-      logInfo('Search results received:', { data: data });
+      logInfo('Search results received:', { data:  { data: data } });
 
       setTotalResults(data.totalCount || data.results?.length || 0);
 

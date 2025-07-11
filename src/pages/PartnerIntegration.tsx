@@ -49,7 +49,7 @@ export default function PartnerIntegration() {
   });
 
   const onSubmit = (values: FormValues) => {
-    logInfo('Partner API request', { data: values });
+    logInfo('Partner API request', { data:  { data: values } });
     setSubmitted(true);
   };
 

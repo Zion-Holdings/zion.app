@@ -19,7 +19,7 @@ export default function Custom500() {
       user: user ? { id: user.id, email: user.email } : undefined,
       extra: { path: window.location.pathname },
     });
-    logInfo('Reported 500 error', { data:  { errorId: eventId } });
+    logInfo('Reported 500 error', { data:  { data:  { errorId: eventId } } });
   }, [user]);
 
   return (

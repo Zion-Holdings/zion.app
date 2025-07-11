@@ -89,7 +89,7 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
       }
       
       if (process.env.NODE_ENV === 'development') {
-        logInfo(`Analytics event tracked: ${type}`, { data: metadata });
+        logInfo('Analytics event tracked: ${type}', { data:  { data: metadata } });
       }
     } catch (error) {
       if (process.env.NODE_ENV === 'development') {

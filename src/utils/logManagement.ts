@@ -138,9 +138,9 @@ class LogManagement {
       successRate: 92
     });
 
-    logInfo('Intelligent alerting configured', { 
+    logInfo('Intelligent alerting configured', { data:  { 
       actionsCount: this.autoHealActions.length 
-    });
+    } });
   }
 
   /**
@@ -261,7 +261,7 @@ class LogManagement {
         });
       }
 
-      logInfo('Predictive insights generated', { insightsCount: insights.length });
+      logInfo('Predictive insights generated', { data:  { insightsCount: insights.length } });
       return insights;
     } catch (error) {
       logErrorToProduction('Failed to generate predictive insights', error);
@@ -526,7 +526,7 @@ class LogManagement {
         await this.clearCache();
         break;
       default:
-        logWarn('Unknown auto-heal action type', { actionType: action.type });
+        logWarn('Unknown auto-heal action type', { data:  { actionType: action.type } });
     }
   }
 

@@ -90,7 +90,7 @@ export const globalAxiosErrorHandler = (error: unknown) => {
     showApiError(error);
   } else {
     // Log background errors without showing toast
-    logDebug(`Background API request failed (${status} ${method}): ${url}`, { data: typeof error === 'object' && error && 'response' in error && error.response && 'data' in error.response ? (error.response as { data?: unknown }).data : undefined });
+    logDebug('Background API request failed (${status} ${method}): ${url}', { data:  { data: typeof error === 'object' && error && 'response' in error && error.response && 'data' in error.response ? (error.response as { data?: unknown } }).data : undefined });
   }
 
   return Promise.reject(error);

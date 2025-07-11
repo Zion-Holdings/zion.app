@@ -32,7 +32,7 @@ export default function IntercomChat() {
     // Validate App ID before attempting to initialize
     if (!isValidIntercomAppId(appId)) {
       if (process.env.NODE_ENV === 'development') {
-        logWarn('Intercom: Invalid or placeholder App ID detected. Intercom chat disabled.', { data:  { appId } });
+        logWarn('Intercom: Invalid or placeholder App ID detected. Intercom chat disabled.', { data:  { data:  { appId } } });
       }
       return;
     }

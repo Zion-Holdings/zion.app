@@ -33,7 +33,7 @@ export interface BlogProps {
 }
 
 export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
-  logInfo('BlogPage rendering. Initial BLOG_POSTS:', { data: initialPosts });
+  logInfo('BlogPage rendering. Initial BLOG_POSTS:', { data:  { data: initialPosts } });
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
   const [posts, setPosts] = useState<BlogPost[]>([...initialPosts]);
@@ -87,7 +87,7 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
   // Get featured posts
   const featuredPosts = posts.filter(post => post.isFeatured);
 
-  logInfo('BlogPage filteredPosts:', { data: filteredPosts });
+  logInfo('BlogPage filteredPosts:', { data:  { data: filteredPosts } });
   
   return (
     <>

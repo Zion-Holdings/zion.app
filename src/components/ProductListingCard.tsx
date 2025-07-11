@@ -73,9 +73,9 @@ const ProductListingCardComponent = ({
   const handleViewListing = () => {
     // Debug logging for development
     if (process.env.NODE_ENV === 'development') {
-      logDebug('[ProductCard] Navigating to:', { path: `${detailBasePath}/${listing.id}` });
-      logDebug('[ProductCard] Listing ID:', { id: listing.id });
-      logDebug('[ProductCard] Listing Title:', { title: listing.title });
+      logDebug('[ProductCard] Navigating to:', { data:  { path: `${detailBasePath}/${listing.id}` } });
+      logDebug('[ProductCard] Listing ID:', { data:  { id: listing.id } });
+      logDebug('[ProductCard] Listing Title:', { data:  { title: listing.title } });
     }
     
     // Validate listing ID exists before navigation

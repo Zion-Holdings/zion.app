@@ -101,7 +101,7 @@ export const useEmailAuth = (
         await supabase.auth.signOut({ scope: 'global' });
       } catch (err) {
         // Continue even if signout fails
-        logInfo('Sign out before signup failed:', { data: err });
+        logInfo('Sign out before signup failed:', { data:  { data: err } });
       }
       
       // Create a proper options object

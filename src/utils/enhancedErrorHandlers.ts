@@ -61,7 +61,7 @@ export class EnhancedApiErrorHandler {
         const apiError = error as ApiError;
         data = apiError.response?.data;
       }
-      logDebug(`Silent API error (${status} ${method}): ${url}`, { data });
+      logDebug('Silent API error (${status} ${method}): ${url}', { data:  { data } });
       return;
     }
 

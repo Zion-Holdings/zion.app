@@ -68,7 +68,7 @@ export function SuggestedTalents({ jobId, jobTitle }: SuggestedTalentsProps) {
 
   const handleViewProfile = (talentId: string) => {
     // Implement logic to view talent profile
-    logInfo('View talent profile:', { data: talentId });
+    logInfo('View talent profile:', { data:  { data: talentId } });
     toast({
       title: "View Profile",
       description: `Navigating to talent profile: ${talentId}`,
@@ -77,7 +77,7 @@ export function SuggestedTalents({ jobId, jobTitle }: SuggestedTalentsProps) {
 
   const handleInvite = (talentId: string) => {
     // Implement logic to invite talent
-    logInfo('Invite talent:', { data: talentId });
+    logInfo('Invite talent:', { data:  { data: talentId } });
     toast({
       title: "Invite Talent",
       description: `Inviting talent: ${talentId}`,

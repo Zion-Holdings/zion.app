@@ -74,7 +74,7 @@ const LoginPage = () => {
           logErrorToProduction('LoginPage: Error getting session:', { data: sessionError });
           setError(sessionError as any); // Cast to any if type is too strict
         } else {
-          logInfo('LoginPage: getSession returned, user:', { data: session?.user?.id });
+          logInfo('LoginPage: getSession returned, user:', { data:  { data: session?.user?.id } });
           setUser(session?.user ?? null);
         }
       } catch (e) {
@@ -141,7 +141,7 @@ const LoginPage = () => {
         try {
           returnTo = decodeURIComponent(router.query.returnTo);
         } catch (e) {
-          logWarn('Failed to decode returnTo parameter:', { data: router.query.returnTo });
+          logWarn('Failed to decode returnTo parameter:', { data:  { data: router.query.returnTo } });
           returnTo = '/dashboard';
         }
       }
@@ -246,7 +246,7 @@ const LoginPage = () => {
         return;
       }
       
-      logInfo('Attempting Supabase login with email:', { data: email });
+      logInfo('Attempting Supabase login with email:', { data:  { data: email } });
       const { data, error: signInError } = await supabase.auth.signInWithPassword({
         email,
         password,
@@ -292,7 +292,7 @@ const LoginPage = () => {
           setError({ name: signInError.name || 'AuthApiError', message: displayMessage });
         }
       } else if (data.user) {
-        logInfo('Supabase sign-in successful, user:', { data: data.user });
+        logInfo('Supabase sign-in successful, user:', { data:  { data: data.user } });
         setUser(data.user); // setUser to trigger useEffect for redirection
         // Redirection is now handled by the useEffect hook
       } else {

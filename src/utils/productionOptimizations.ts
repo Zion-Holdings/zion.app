@@ -64,10 +64,10 @@ export class ProductionOptimizer {
       navigator.serviceWorker
         .register('/service-worker.js')
         .then((registration) => {
-          logInfo('Service Worker registered:', { data: registration });
+          logInfo('Service Worker registered:', { data:  { data: registration } });
         })
         .catch((error) => {
-          logInfo('Service Worker registration failed:', { data: error });
+          logInfo('Service Worker registration failed:', { data:  { data: error } });
         });
     }
   }

@@ -134,7 +134,7 @@ export function useTenantAdminStatus(tenantId?: string) {
         if (!supabase) throw new Error('Supabase client not initialized');
         const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
         if (sessionError) {
-          logWarn('Session error:', { data: sessionError });
+          logWarn('Session error:', { data:  { data: sessionError } });
           setIsAdmin(false);
           return;
         }
@@ -154,12 +154,12 @@ export function useTenantAdminStatus(tenantId?: string) {
           .single();
 
         if (error) {
-          logWarn('Error checking admin status:', { data: error });
+          logWarn('Error checking admin status:', { data:  { data: error } });
         }
 
         setIsAdmin(!!data && !error);
       } catch (err) {
-        logWarn('Error checking tenant admin status:', { data: err });
+        logWarn('Error checking tenant admin status:', { data:  { data: err } });
         setIsAdmin(false);
       } finally {
         setIsLoading(false);

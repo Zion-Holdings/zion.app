@@ -36,7 +36,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
       return;
     }
 
-    logInfo('Verification email resent successfully for:', { data: email });
+    logInfo('Verification email resent successfully for:', { data:  { data: email } });
     res.status(200).json({ 
       message: 'Verification email sent successfully' 
     });

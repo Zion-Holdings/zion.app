@@ -287,7 +287,7 @@ export default function Marketplace() {
         ...(filterCategory && { category: filterCategory }),
         sort: sortBy
       };
-      logInfo('Marketplace.tsx: Fetching products from API with params:', { data: params });
+      logInfo('Marketplace.tsx: Fetching products from API with params:', { data:  { data: params } });
       const response = await apiClient.get('/products', { params });
       let items: ProductListing[] = response.data?.items || [];
       const total = response.data?.total ?? items.length;

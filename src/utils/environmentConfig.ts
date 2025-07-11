@@ -120,7 +120,7 @@ export async function initializeServices(): Promise<void> {
       // });
       logInfo('✅ Sentry initialized successfully');
     } catch (error) {
-      logWarn('Failed to initialize Sentry:', { data: error });
+      logWarn('Failed to initialize Sentry:', { data:  { data: error } });
     }
   }
 
@@ -137,7 +137,7 @@ export async function initializeServices(): Promise<void> {
       });
       logInfo('✅ Datadog Logs initialized');
     } catch (error) {
-      logWarn('Failed to initialize Datadog Logs:', { data: error });
+      logWarn('Failed to initialize Datadog Logs:', { data:  { data: error } });
     }
   }
 
@@ -148,7 +148,7 @@ export async function initializeServices(): Promise<void> {
       LogRocket.init(config.logRocket.id!);
       logInfo('✅ LogRocket initialized');
     } catch (error) {
-      logWarn('Failed to initialize LogRocket:', { data: error });
+      logWarn('Failed to initialize LogRocket:', { data:  { data: error } });
     }
   }
 

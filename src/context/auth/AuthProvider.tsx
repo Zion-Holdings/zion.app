@@ -269,7 +269,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
                     try {
                         if (process.env.NODE_ENV === 'development') {
-                            logInfo('[AuthProvider DEBUG] Attempting to fetch profile for user ID:', { data: session.user.id });
+                            logInfo('[AuthProvider DEBUG] Attempting to fetch profile for user ID:', { data:  { data: session.user.id } });
                         }
                         
                         let profile, profileError;
@@ -357,14 +357,14 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                                         if (nextPathFromStorage) {
                                           redirectTo = decodeURIComponent(nextPathFromStorage);
                                           safeStorage.removeItem('nextPath');
-                                          logInfo('[AuthProvider DEBUG] Redirecting to (from storage):', { data: redirectTo });
+                                          logInfo('[AuthProvider DEBUG] Redirecting to (from storage):', { data:  { data: redirectTo } });
                                         } else if (nextFromUrl) {
                                           redirectTo = decodeURIComponent(nextFromUrl);
-                                          logInfo('[AuthProvider DEBUG] Redirecting to (from URL params):', { data: redirectTo });
+                                          logInfo('[AuthProvider DEBUG] Redirecting to (from URL params):', { data:  { data: redirectTo } });
                                         } else {
                                           logInfo('[AuthProvider DEBUG] Redirecting to default dashboard.');
                                         }
-                                        logInfo('[AuthProvider DEBUG] Attempting to redirect to:', { data: redirectTo });
+                                        logInfo('[AuthProvider DEBUG] Attempting to redirect to:', { data:  { data: redirectTo } });
                                         router.replace(redirectTo);
                                       } catch (redirectError) {
                                         logErrorToProduction('[AuthProvider DEBUG] Error during redirection:', { data: redirectError });
@@ -383,7 +383,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                                  setAvatarUrl(null);
                             }
                         } else { // Profile is null, but no error
-                            logWarn('[AuthProvider DEBUG] Profile not found for user (no error, but profile is null):', { data: session.user.id });
+                            logWarn('[AuthProvider DEBUG] Profile not found for user (no error, but profile is null):', { data:  { data: session.user.id } });
                             if (event === 'SIGNED_IN') { // Only toast if it was an active sign-in attempt
                                 toast({
                                     title: "Profile Not Found",
@@ -408,9 +408,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                         setAvatarUrl(null);
                         // Potentially call cleanupAuthState() or handleSignedOut() if appropriate
                     } finally {
-                        logInfo('[AuthProvider DEBUG] onAuthStateChange profile fetch: Entering finally block. Current isLoading:', { data: isLoading });
+                        logInfo('[AuthProvider DEBUG] onAuthStateChange profile fetch: Entering finally block. Current isLoading:', { data:  { data: isLoading } });
                         setIsLoading(false); // Stop loading after profile fetch attempt
-                        logInfo('[AuthProvider DEBUG] onAuthStateChange profile fetch: setIsLoading(false) called. New isLoading:', { data: isLoading });
+                        logInfo('[AuthProvider DEBUG] onAuthStateChange profile fetch: setIsLoading(false) called. New isLoading:', { data:  { data: isLoading } });
                     }
                 } else if (event === 'SIGNED_OUT') {
                     if (process.env.NODE_ENV === 'development') {
@@ -424,7 +424,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                     logInfo('[AuthProvider DEBUG] onAuthStateChange: Calling handleSignedOut for SIGNED_OUT event.');
                     handleSignedOut();
                     setIsLoading(false);
-                    logInfo('[AuthProvider DEBUG] onAuthStateChange SIGNED_OUT: setIsLoading(false) called. New isLoading:', { data: isLoading });
+                    logInfo('[AuthProvider DEBUG] onAuthStateChange SIGNED_OUT: setIsLoading(false) called. New isLoading:', { data:  { data: isLoading } });
                 } else {
                     // Handles cases like:
                     // - No session initially (e.g., anonymous user on first load)
@@ -444,7 +444,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                     // This is crucial for anonymous users on initial load.
                     if (isLoading) { // Only set if it's currently true
                         setIsLoading(false);
-                        logInfo('[AuthProvider DEBUG] onAuthStateChange fallback: setIsLoading(false) called. New isLoading:', { data: isLoading });
+                        logInfo('[AuthProvider DEBUG] onAuthStateChange fallback: setIsLoading(false) called. New isLoading:', { data:  { data: isLoading } });
                     }
                 }
             } catch (outerError) { // Catch errors from the main try block in onAuthStateChange
@@ -453,7 +453,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 setAvatarUrl(null);
                 setTokens(null);
                 setIsLoading(false); // Ensure loading is false on any error
-                logInfo('[AuthProvider DEBUG] onAuthStateChange outer catch: setIsLoading(false) called. New isLoading:', { data: isLoading });
+                logInfo('[AuthProvider DEBUG] onAuthStateChange outer catch: setIsLoading(false) called. New isLoading:', { data:  { data: isLoading } });
             }
             // Final check to ensure isLoading is false if we've reached the end of processing for this event
             // This is particularly important if an early exit or an unhandled case doesn't reset it.

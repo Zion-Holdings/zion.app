@@ -205,7 +205,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   
   const changeLanguage = async (lang: SupportedLanguage) => {
     if (lang === currentLanguage && i18n.language === lang) { // also check i18n.language
-      logInfo('LanguageContext: Language already selected and applied:', { data: lang });
+      logInfo('LanguageContext: Language already selected and applied:', { data:  { data: lang } });
       return;
     }
     
@@ -238,7 +238,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
           // Trigger a custom event to notify components about language change
           window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
           
-          logInfo('LanguageContext: DOM updated with new language:', { data: lang });
+          logInfo('LanguageContext: DOM updated with new language:', { data:  { data: lang } });
         }
       }, 50);
       

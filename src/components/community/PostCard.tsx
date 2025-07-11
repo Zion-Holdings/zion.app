@@ -24,7 +24,7 @@ interface PostCardProps {
 }
 
 const PostCardComponent = ({ post, compact = false }: PostCardProps) => {
-  logInfo('PostCardComponent rendering with post:', { data: post ? post.id : 'NO POST' });
+  logInfo('PostCardComponent rendering with post:', { data:  { data: post ? post.id : 'NO POST' } });
   const timeAgo = formatDistanceToNow(new Date(post.createdAt), { addSuffix: true });
 
   return (

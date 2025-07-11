@@ -175,7 +175,7 @@ export const authOptions: NextAuthOptions = {
           return null;
         }
 
-        logInfo('Attempting Supabase sign-in for:', { data: credentials.email });
+        logInfo('Attempting Supabase sign-in for:', { data:  { data: credentials.email } });
         if (!supabase) {
           logErrorToProduction('Supabase client is null in CredentialsProvider authorize. Cannot sign in user.');
           return null;
@@ -196,7 +196,7 @@ export const authOptions: NextAuthOptions = {
         }
 
         if (data && data.user) {
-          logInfo('Supabase sign-in successful for:', { data: data.user.email });
+          logInfo('Supabase sign-in successful for:', { data:  { data: data.user.email } });
           // Ensure the object returned conforms to NextAuth's User model expectations
           // It must have an `id`. `name` and `email` are common.
           return {

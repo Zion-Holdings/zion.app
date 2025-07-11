@@ -47,7 +47,7 @@ export function ContractBuilderContent() {
   };
 
   const handleViewContract = (contractId: string) => {
-    logDebug('Viewing contract:', { contractId });
+    logDebug('Viewing contract:', { data:  { contractId } });
     // Future implementation: View specific contract details
   };
 

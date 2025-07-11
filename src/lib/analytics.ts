@@ -30,7 +30,7 @@ export const initGA = () => {
 
   const doNotTrack = navigator.doNotTrack;
   if (doNotTrack === '1' || doNotTrack === 'yes') {
-    logInfo('Do Not Track is enabled. GA4 initialization skipped.', { context: 'GoogleAnalyticsInit' });
+    logInfo('Do Not Track is enabled. GA4 initialization skipped.', { data:  { context: 'GoogleAnalyticsInit' } });
     return;
   }
 
