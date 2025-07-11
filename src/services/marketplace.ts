@@ -1,6 +1,4 @@
 import axios from 'axios';
-import type { ProductListing } from '@/data/marketplaceData';
-import type { TalentProfile as TalentProfileType } from '@/types/talent';
 import type { ApiResponse, SearchFilters } from '@/types/common';
 import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 

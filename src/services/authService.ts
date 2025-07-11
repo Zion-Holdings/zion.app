@@ -7,19 +7,15 @@ import { logDebug, logErrorToProduction } from '@/utils/productionLogger';
 const API_URL = process.env.NEXT_PUBLIC_API_URL || '';
 
 export async function loginUser(email: string, password: string) {
-  try {
-    const endpoint = `${API_URL}/api/auth/login`;
-    const res = await axios.post(endpoint, { email, password }, { withCredentials: true });
-    const token = res.data?.accessToken;
-    if (token) {
-      safeStorage.setItem('authToken', token);
-      safeStorage.setItem('ztg_token', token); // For backward compatibility
-      store.dispatch(setToken(token));
-    }
-    return { res, data: res.data };
-  } catch (err) {
-    throw err; // Essential: re-throw the error for AuthProvider to handle
+  const endpoint = `${API_URL}/api/auth/login`;
+  const res = await axios.post(endpoint, { email, password }, { withCredentials: true });
+  const token = res.data?.accessToken;
+  if (token) {
+    safeStorage.setItem('authToken', token);
+    safeStorage.setItem('ztg_token', token); // For backward compatibility
+    store.dispatch(setToken(token));
   }
+  return { res, data: res.data };
 }
 
 export async function registerUser(name: string, email: string, password: string) {
