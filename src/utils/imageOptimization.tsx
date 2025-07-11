@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
+import { Buffer } from 'buffer';
 
 interface OptimizedImageProps {
   src: string;
@@ -101,7 +102,7 @@ export function OptimizedImage({
     </svg>`;
     const base64 = typeof window !== 'undefined'
       ? btoa(unescape(encodeURIComponent(svg)))
-      : Buffer.from(svg).toString('base64');
+      : (typeof Buffer !== 'undefined' ? Buffer.from(svg).toString('base64') : '');
     return `data:image/svg+xml;base64,${base64}`;
   };
 
