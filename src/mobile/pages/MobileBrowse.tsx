@@ -8,8 +8,6 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import { logInfo } from '@/utils/productionLogger';
 
-// Remove jobsData mock array and replace with real API call
-// Move hooks inside the component
 
 type Job = {
   id: string;
@@ -25,7 +23,7 @@ export function MobileBrowse() {
   const isClient = user?.userType === 'client' || user?.userType === 'admin';
   const [browseType, setBrowseType] = useState<"jobs" | "talents">(isClient ? "talents" : "jobs");
   const [jobs, setJobs] = useState<Job[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
