@@ -16,6 +16,19 @@ interface UserProfileProps {
   onUserChange?: (user: SupabaseUser | null) => void
 }
 
+function getUserEmail(user: SupabaseUser | null): string {
+  return user?.email ?? '';
+}
+
+function isEmailVerified(user: SupabaseUser | null): boolean {
+  // Supabase user has email_confirmed_at as string | null
+  return Boolean(user?.email_confirmed_at);
+}
+
+function getUserCreatedAt(user: SupabaseUser | null): string {
+  return user?.created_at ? new Date(user.created_at).toLocaleDateString() : '';
+}
+
 export default function UserProfile({ onUserChange }: UserProfileProps) {
   const [user, setUser] = useState<SupabaseUser | null>(null)
   const [loading, setLoading] = useState(true)
@@ -28,42 +41,39 @@ export default function UserProfile({ onUserChange }: UserProfileProps) {
         setLoading(false);
         return;
       }
-      
-      const { data: { session } } = await supabase.auth.getSession()
-      setUser((session as any)?.user ?? null)
-      setLoading(false)
-      onUserChange?.((session as any)?.user ?? null)
+      const { data: { session } } = await supabase.auth.getSession();
+      setUser(session?.user ?? null);
+      setLoading(false);
+      onUserChange?.(session?.user ?? null);
     }
 
-    getInitialSession()
+    getInitialSession();
 
     // Listen for auth changes
     if (!supabase) {
       return;
     }
-    
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (event: AuthChangeEvent, session: Session | null) => {
-        setUser((session as any)?.user ?? null)
-        setLoading(false)
-        onUserChange?.((session as any)?.user ?? null)
+        setUser(session?.user ?? null);
+        setLoading(false);
+        onUserChange?.(session?.user ?? null);
       }
-    )
+    );
 
-    return () => subscription.unsubscribe()
-  }, [onUserChange])
+    return () => subscription.unsubscribe();
+  }, [onUserChange]);
 
   const handleSignOut = async () => {
     if (!supabase) {
       return;
     }
-    
-    await supabase.auth.signOut()
-  }
+    await supabase.auth.signOut();
+  };
 
   const handleSignIn = () => {
-    router.push('/auth/login')
-  }
+    router.push('/auth/login');
+  };
 
   if (loading) {
     return (
@@ -75,7 +85,7 @@ export default function UserProfile({ onUserChange }: UserProfileProps) {
           </div>
         </CardContent>
       </Card>
-    )
+    );
   }
 
   if (!user) {
@@ -94,7 +104,7 @@ export default function UserProfile({ onUserChange }: UserProfileProps) {
           </Button>
         </CardContent>
       </Card>
-    )
+    );
   }
 
   return (
@@ -109,27 +119,24 @@ export default function UserProfile({ onUserChange }: UserProfileProps) {
         <div className="space-y-2">
           <div className="flex items-center gap-2">
             <span className="text-sm font-medium">Email:</span>
-            <span className="text-sm">{(user as any).email}</span>
+            <span className="text-sm">{getUserEmail(user)}</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-sm font-medium">Status:</span>
-            <Badge variant={(user as any).email_confirmed_at ? "default" : "secondary"}>
-              {(user as any).email_confirmed_at ? "Verified" : "Unverified"}
+            <Badge variant={isEmailVerified(user) ? "default" : "secondary"}>
+              {isEmailVerified(user) ? "Verified" : "Unverified"}
             </Badge>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-sm font-medium">Joined:</span>
-            <span className="text-sm">
-              {new Date((user as any).created_at).toLocaleDateString()}
-            </span>
+            <span className="text-sm">{getUserCreatedAt(user)}</span>
           </div>
         </div>
-        
         <Button onClick={handleSignOut} variant="outline" className="w-full">
           <LogOut className="h-4 w-4 mr-2" />
           Sign Out
         </Button>
       </CardContent>
     </Card>
-  )
+  );
 } 
