@@ -14,42 +14,6 @@ import PostCard from "@/components/community/PostCard";
 import UserBadges from "@/components/community/UserBadges";
 import ReputationDisplay from "@/components/community/ReputationDisplay";
 
-// Mock user data
-const mockUser: CommunityUser = {
-  id: "user1",
-  name: "Alex Johnson",
-  avatar: "https://i.pravatar.cc/150?img=3",
-  role: "Verified Talent",
-  reputation: 325,
-  postCount: 14,
-  replyCount: 47,
-  badges: [
-    {
-      id: "badge1",
-      name: "Answer Hero",
-      description: "Provided 10 accepted answers",
-      icon: "Award",
-      color: "#10B981"
-    },
-    {
-      id: "badge2",
-      name: "Top Contributor",
-      description: "Among the top 5% of contributors",
-      icon: "Trophy",
-      color: "#3b82f6"
-    },
-    {
-      id: "badge3",
-      name: "First Post",
-      description: "Created your first forum post",
-      icon: "Star",
-      color: "#6366F1"
-    }
-  ],
-  isVerified: true,
-  isModerator: false
-};
-
 export default function CommunityProfilePage() {
   const router = useRouter();
   const userId = router.query.userId as string;
@@ -58,11 +22,24 @@ export default function CommunityProfilePage() {
   const [posts, setPosts] = useState<ForumPost[]>([]);
   
   useEffect(() => {
-    // In a real app, we would fetch the user data here
-    // For now, we'll just use the mock data
-    setUser(mockUser);
-    // setPosts(userPosts); // This line is removed as per the edit hint
-    setIsLoading(false);
+    const fetchUser = async () => {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/community/users/${userId}`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data: CommunityUser = await response.json();
+        setUser(data);
+        // setPosts(userPosts); // This line is removed as per the edit hint
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error fetching user:", error);
+        setIsLoading(false);
+        setUser(null); // Clear user if fetch fails
+      }
+    };
+
+    fetchUser();
   }, [userId]);
   
   if (isLoading) {
