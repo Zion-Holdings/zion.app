@@ -41,18 +41,14 @@ import MarketplaceLanding from '@/pages/MarketplaceLanding';
 import Categories from '@/pages/Categories';
 import Blog from '@/pages/Blog';
 import ServicesPage from '@/pages/ServicesPage';
-import ErrorGuard from '@/components/ErrorGuard';
-
-function guardRoutes(routes: AppRouteObject[]): AppRouteObject[] {
-  return routes;
-}
+import { ErrorGuard as _ErrorGuard } from '@/components/ErrorGuard';
 import { LoginForm } from '@/components/auth/login';
 import OAuthCallback from '@/pages/OAuthCallback';
-import Dashboard from '@/pages/Dashboard';
-import Profile from '@/pages/Profile';
-import ForgotPassword from '@/pages/ForgotPassword';
-import ResetPassword from '@/pages/ResetPassword';
-import Wallet from '@/pages/Wallet';
+import { Dashboard as _Dashboard } from '@/pages/Dashboard';
+import { Profile as _Profile } from '@/pages/auth/Profile';
+import { ForgotPassword as _ForgotPassword } from '@/pages/auth/ForgotPassword';
+import { ResetPassword as _ResetPassword } from '@/pages/auth/ResetPassword';
+import { Wallet as _Wallet } from '@/pages/auth/Wallet';
 import CheckoutPage from '@/pages/CheckoutPage';
 import AboutPage from '@/pages/About';
 import PartnersPage from '@/pages/Partners';
@@ -82,7 +78,7 @@ const Signup = React.lazy(() => import('@/pages/Signup'));
 
 import {
  AuthRoutes,
- DashboardRoutes,
+ DashboardRoutes as _DashboardRoutes,
  AdminRoutes,
  MobileAppRoutes,
  ContentRoutes,
@@ -117,7 +113,7 @@ export const allRoutes: AppRouteObject[] = guardRoutes([
   { path: '/zion-global-2025', element: <SummitPage />, metaTitle: 'Zion Global Summit 2025' },
   {
     path: '/dashboard',
-    element: <Dashboard />,
+    element: <_Dashboard />,
     metaTitle: 'Dashboard - Zion',
     requiresAuth: true,
   },
