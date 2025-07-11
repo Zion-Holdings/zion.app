@@ -29,8 +29,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     : [];
 
   await Promise.all(
-    subs.map((sub: any) =>
-      webpush.sendNotification(sub, payload).catch((err: any) => {
+    subs.map((sub: { endpoint: string; keys: { p256dh: string; auth: string } }) =>
+      webpush.sendNotification(sub, payload).catch((err: unknown) => {
         logErrorToProduction('Push send failed', { data: err });
       })
     )

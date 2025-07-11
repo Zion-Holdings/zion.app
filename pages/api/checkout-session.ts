@@ -215,15 +215,15 @@ export default async function handler(
       if (error.type === 'StripeInvalidRequestError') {
         return res.status(400).json({
           error: 'Invalid checkout request',
-          details: (error as any).message,
+          details: (error as { message?: string }).message,
         });
       }
     }
 
     // Handle missing Stripe key
     if (error && typeof error === 'object' && 'message' in error && 
-        typeof (error as any).message === 'string' && 
-        (error as any).message.includes('No API key provided')) {
+        typeof (error as { message?: string }).message === 'string' && 
+        (error as { message?: string }).message.includes('No API key provided')) {
       return res.status(500).json({
         error: 'Payment system configuration error',
         details: process.env['NODE_ENV'] === 'development' 

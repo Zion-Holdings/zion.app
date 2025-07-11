@@ -42,11 +42,11 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
     });
     return;
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     logErrorToProduction('Unexpected error resending verification email:', { data: error });
     res.status(500).json({ 
       message: 'Internal server error',
-      details: process.env['NODE_ENV'] === 'development' ? error.message : undefined
+      details: process.env['NODE_ENV'] === 'development' && error instanceof Error ? error.message : undefined
     });
     return;
   }
