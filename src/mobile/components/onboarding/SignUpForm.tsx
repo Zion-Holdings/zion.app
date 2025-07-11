@@ -23,7 +23,7 @@ export function SignUpForm() {
     name: "",
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [signupMode, setSignupMode] = useState(true);
+  const [signupMode, _setSignupMode] = useState(true);
   const [error, setError] = useState("");
   const [fieldErrors, setFieldErrors] = useState<{ email?: string; password?: string; name?: string }>({});
   const [showVerificationMessage, setShowVerificationMessage] = useState(false);

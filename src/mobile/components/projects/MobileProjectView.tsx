@@ -11,7 +11,7 @@ import { CheckCircle, ChevronRight, FileText, MessageSquare, Video } from 'lucid
 
 
 import { Progress } from "@/components/ui/progress";
-import { SeverityIndicator } from "../common/SeverityIndicator";
+// import { SeverityIndicator } from "../common/SeverityIndicator";
 import { useRouter } from 'next/router';
 import { toast } from "sonner";
 

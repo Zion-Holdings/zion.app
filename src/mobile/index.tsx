@@ -1,5 +1,5 @@
 
-import React from 'react';
+// import React from 'react';
 import { MobileApp } from './MobileApp';
 
 export { MobileApp };

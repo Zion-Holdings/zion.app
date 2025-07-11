@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { ChevronRight, Plus, Zap, Trash2 } from 'lucide-react';
+import { Plus, Zap, Trash2 } from 'lucide-react';
 import {
   Select,
   SelectContent,

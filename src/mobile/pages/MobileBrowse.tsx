@@ -23,8 +23,8 @@ export function MobileBrowse() {
   const isClient = user?.userType === 'client' || user?.userType === 'admin';
   const [browseType, setBrowseType] = useState<"jobs" | "talents">(isClient ? "talents" : "jobs");
   const [jobs, setJobs] = useState<Job[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+  const [_loading, setLoading] = useState<boolean>(true);
+  const [_error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     (async () => {
@@ -38,7 +38,7 @@ export function MobileBrowse() {
         ];
         setJobs(data);
         setError(null);
-      } catch (err) {
+      } catch (_err) {
         setJobs([]);
         setError('Error fetching jobs');
       } finally {
