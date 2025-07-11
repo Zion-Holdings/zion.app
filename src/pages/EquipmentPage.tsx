@@ -336,61 +336,11 @@ function EquipmentPageContent() {
       }
     }
 
-    // Generate consistent virtual dataset using the seed
-    const VIRTUAL_DATASET_SIZE = 150;
-    const baseVirtualEquipment = generateDatacenterEquipment(
-      VIRTUAL_DATASET_SIZE,
-      INITIAL_EQUIPMENT.length,
-      dataSeed
-    );
-    let fullVirtualDataset: ProductListing[] = [
-      ...INITIAL_EQUIPMENT,
-      ...baseVirtualEquipment
-    ];
-
-    // Deduplicate by ID in case of overlaps
-    const dedupMap = new Map<string, ProductListing>();
-    for (const item of fullVirtualDataset) {
-      if (!dedupMap.has(item.id)) {
-        dedupMap.set(item.id, item);
-      }
-    }
-    fullVirtualDataset = Array.from(dedupMap.values());
-
-    // Apply category filtering
-    let processedDataset = fullVirtualDataset;
-    if (filterCategory) {
-      processedDataset = processedDataset.filter(e => e.category === filterCategory);
-    }
-
-    // Apply recommended filtering
-    if (showRecommended) {
-      processedDataset = getRecommendedEquipment(processedDataset);
-    }
-
-    // Sort the processed dataset
-    processedDataset.sort((a, b) => {
-      switch (sortBy) {
-        case 'price-low':
-          return (a.price || 0) - (b.price || 0);
-        case 'price-high':
-          return (b.price || 0) - (a.price || 0);
-        case 'rating':
-          return (b.rating || 0) - (a.rating || 0);
-        default: // 'newest'
-          return new Date(b.createdAt || '').getTime() - new Date(a.createdAt || '').getTime();
-      }
-    });
-
-    // Slice for pagination
-    const startIndex = (page - 1) * limit;
-    const endIndex = startIndex + limit;
-    const items = processedDataset.slice(startIndex, endIndex);
-
+    // If no data, return empty
     return {
-      items,
-      hasMore: endIndex < processedDataset.length,
-      total: processedDataset.length
+      items: [],
+      hasMore: false,
+      total: 0,
     };
   }, [sortBy, filterCategory, showRecommended, dataSeed]);
 
