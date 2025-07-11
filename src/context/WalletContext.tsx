@@ -16,9 +16,11 @@ let createAppKit: typeof import('@reown/appkit/react').createAppKit;
 let mainnet, goerli, polygon, optimism, arbitrum, base;
 
 if (!isBuildEnv) {
-  ethers = require('ethers');
-  ({ createAppKit } = require('@reown/appkit/react'));
-  ({ mainnet, polygon, goerli, optimism, arbitrum, base } = require('@reown/appkit/networks'));
+  (async () => {
+    ethers = await import('ethers');
+    ({ createAppKit } = await import('@reown/appkit/react'));
+    ({ mainnet, polygon, goerli, optimism, arbitrum, base } = await import('@reown/appkit/networks'));
+  })();
 } else {
   // Mock types for build compatibility
   ethers = {
