@@ -8,43 +8,26 @@ import { getAppKitProjectId } from '@/config/env';
 import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
 
-// Temporarily disable wallet imports to fix build
-// import { ethers } from 'ethers';
-import { captureException } from '@/utils/sentry';
-import { ZION_TOKEN_NETWORK_ID } from '@/config/governanceConfig';
-// import { createAppKit, AppKitInstanceInterface } from '@reown/appkit/react';
-// import { EthersAdapter } from '@reown/appkit-adapter-ethers';
-// import { mainnet, polygon, goerli, optimism, arbitrum, base } from '@reown/appkit/networks'; // Import necessary chain objects
+// Use real wallet imports except in CI/build environments
+const isBuildEnv = process.env.CI === 'true';
 
-// Mock types for build compatibility
-interface AppKitInstanceInterface {
-  open: () => Promise<void>;
-  disconnect: () => Promise<void>;
-  getState: () => unknown;
-  getAddress: () => string | null;
-  getChainId: () => number | null;
-  getWalletProvider: () => unknown;
-  subscribeProvider?: (callback: (provider?: unknown) => void) => () => void;
-}
+let ethers: typeof import('ethers');
+let createAppKit: typeof import('@reown/appkit/react').createAppKit;
+let mainnet, goerli, polygon, optimism, arbitrum, base;
 
-const ethers = {
-  BrowserProvider: class MockBrowserProvider {
-    constructor(provider: unknown) {}
-    async getSigner() { return null; }
-  }
-} as unknown;
-
-// Mock network constants
-const mainnet = { id: 1, name: 'Ethereum' };
-const goerli = { id: 5, name: 'Goerli' };
-const polygon = { id: 137, name: 'Polygon' };
-const optimism = { id: 10, name: 'Optimism' };
-const arbitrum = { id: 42161, name: 'Arbitrum' };
-const base = { id: 8453, name: 'Base' };
-
-// Mock createAppKit function
-const createAppKit = (config: unknown): AppKitInstanceInterface => {
-  return {
+if (!isBuildEnv) {
+  ethers = require('ethers');
+  ({ createAppKit } = require('@reown/appkit/react'));
+  ({ mainnet, polygon, goerli, optimism, arbitrum, base } = require('@reown/appkit/networks'));
+} else {
+  // Mock types for build compatibility
+  ethers = {
+    BrowserProvider: class MockBrowserProvider {
+      constructor(provider: unknown) {}
+      async getSigner() { return null; }
+    }
+  } as unknown as typeof import('ethers');
+  createAppKit = (_config: unknown) => ({
     open: async () => { console.warn('Wallet functionality disabled during build'); },
     disconnect: async () => { console.warn('Wallet functionality disabled during build'); },
     getState: () => ({ isConnected: false }),
@@ -52,8 +35,14 @@ const createAppKit = (config: unknown): AppKitInstanceInterface => {
     getChainId: () => null,
     getWalletProvider: () => null,
     subscribeProvider: () => () => {}
-  };
-};
+  });
+  mainnet = { id: 1, name: 'Ethereum' };
+  goerli = { id: 5, name: 'Goerli' };
+  polygon = { id: 137, name: 'Polygon' };
+  optimism = { id: 10, name: 'Optimism' };
+  arbitrum = { id: 42161, name: 'Arbitrum' };
+  base = { id: 8453, name: 'Base' };
+}
 
 // Mock EthersAdapter
 const EthersAdapter = class {
