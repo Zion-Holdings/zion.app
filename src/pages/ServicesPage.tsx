@@ -18,11 +18,11 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import Spinner from '@/components/ui/spinner';
-import { SERVICES } from '@/data/servicesData';
+import { SERVICES, type Service } from '@/data/servicesData';
 import { useCurrency } from '@/hooks/useCurrency';
 
 // Initial services from existing data - convert Service to ProductListing
-const INITIAL_SERVICES: ProductListing[] = SERVICES.map(service => ({
+const INITIAL_SERVICES: ProductListing[] = SERVICES.map((service: Service) => ({
   id: service.id,
   title: service.title,
   description: service.description,
