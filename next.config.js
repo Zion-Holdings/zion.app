@@ -438,18 +438,16 @@ const nextConfig = {
     // Simplified webpack configuration to bypass CSS issues
     const require = createRequire(import.meta.url);
     
-    // Completely disable CSS minimizer plugin to prevent static/css processing errors
-    if (config.optimization && config.optimization.minimizer) {
-      config.optimization.minimizer = config.optimization.minimizer.filter(
-        minimizer => !minimizer.constructor.name.includes('CssMinimizer')
-      );
-    }
-    
-    // Completely disable CSS processing by overriding optimization
-    if (config.optimization) {
-      config.optimization.minimize = false;
-      config.optimization.minimizer = [];
-    }
+    // Remove the following block to reactivate CSS minimization and processing:
+    // if (config.optimization && config.optimization.minimizer) {
+    //   config.optimization.minimizer = config.optimization.minimizer.filter(
+    //     minimizer => !minimizer.constructor.name.includes('CssMinimizer')
+    //   );
+    // }
+    // if (config.optimization) {
+    //   config.optimization.minimize = false;
+    //   config.optimization.minimizer = [];
+    // }
     
     // Prevent Node.js core modules from being polyfilled in the client bundle
     if (!isServer) {
@@ -755,18 +753,10 @@ const nextConfig = {
       });
     }
 
-    // Smart Sentry detection: Disable automatically if would cause build issues
-    const shouldDisableSentry = process.env.SKIP_SENTRY_BUILD === 'true' || 
-                                process.env.CI === 'true' ||
-                                process.env.NODE_ENV === 'production' ||
-                                !process.env.SENTRY_DSN ||
-                                process.env.SENTRY_DSN?.includes('dummy') ||
-                                process.env.SENTRY_DSN?.includes('placeholder');
-    
+    // Smart Sentry detection: Only disable Sentry if SKIP_SENTRY_BUILD or CI is set
+    const shouldDisableSentry = process.env.SKIP_SENTRY_BUILD === 'true' || process.env.CI === 'true';
     if (shouldDisableSentry) {
       console.log('🚫 Sentry disabled - using mock implementation (Smart Detection)');
-      
-      // Use webpack aliases to completely replace all Sentry imports with mocks
       config.resolve.alias = {
         ...config.resolve.alias,
         '@sentry/nextjs': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
@@ -775,17 +765,30 @@ const nextConfig = {
         '@sentry/react': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
         '@sentry/browser': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
       };
+    } else {
+      // Remove any Sentry mock aliases so real SDK is used
+      if (config.resolve.alias) {
+        delete config.resolve.alias['@sentry/nextjs'];
+        delete config.resolve.alias['@sentry/node'];
+        delete config.resolve.alias['@sentry/tracing'];
+        delete config.resolve.alias['@sentry/react'];
+        delete config.resolve.alias['@sentry/browser'];
+      }
     }
 
-    // Completely exclude dd-trace during CI builds to prevent native module issues  
-    if (process.env.SKIP_DATADOG === 'true' || process.env.CI === 'true') {
+    // Only mock dd-trace in CI or if SKIP_DATADOG is set
+    const shouldDisableDatadog = process.env.SKIP_DATADOG === 'true' || process.env.CI === 'true';
+    if (shouldDisableDatadog) {
       console.log('🚫 DD-Trace disabled for CI build - using mock implementation');
-      
-      // Use webpack alias to replace dd-trace with mock implementation
       config.resolve.alias = {
         ...config.resolve.alias,
         'dd-trace': path.resolve(__dirname, 'src/utils/dd-trace-mock.ts'),
       };
+    } else {
+      // Remove dd-trace mock alias so real SDK is used
+      if (config.resolve.alias) {
+        delete config.resolve.alias['dd-trace'];
+      }
     }
 
     // PHASE 3: Advanced Performance Optimizations and Error Handling
@@ -892,13 +895,6 @@ const nextConfig = {
           // Disable cacheUnaffected to avoid Webpack usedExports conflict
           cacheUnaffected: false,
         };
-      } else {
-        // Ensure memory cache is properly configured
-        config.cache = {
-          type: 'memory',
-          maxGenerations: dev ? 1 : 5,
-          cacheUnaffected: false,
-        };
       }
 
     // Ensure webpack doesn't enable cacheUnaffected which conflicts with
@@ -909,14 +905,14 @@ const nextConfig = {
     };
 
     // Add optimization to prevent temporal dead zone issues
-    if (!dev && isServer) {
-      config.optimization = {
-        ...config.optimization,
-        concatenateModules: false, // Disable module concatenation which can cause TDZ issues
-        minimize: false, // Disable minimization on server side to preserve variable names
-        mangleExports: false,
-      };
-    }
+    // if (!dev && isServer) {
+    //   config.optimization = {
+    //     ...config.optimization,
+    //     concatenateModules: false, // Disable module concatenation which can cause TDZ issues
+    //     minimize: false, // Disable minimization on server side to preserve variable names
+    //     mangleExports: false,
+    //   };
+    // }
 
     // Suppress warnings in both dev and production
     config.ignoreWarnings = [

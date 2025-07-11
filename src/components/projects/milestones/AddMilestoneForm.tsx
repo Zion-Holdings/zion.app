@@ -1,10 +1,8 @@
-
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { CalendarIcon, Loader2 } from 'lucide-react';
-
 
 import { format } from 'date-fns';
 
@@ -54,7 +52,7 @@ export function AddMilestoneForm({
   projectScope = '',
   projectStartDate = '',
   projectEndDate = '',
-  projectType = 'Other'
+  projectType = 'Other',
 }: AddMilestoneFormProps) {
   const form = useForm<MilestoneFormValues>({
     resolver: zodResolver(formSchema),
@@ -86,7 +84,7 @@ export function AddMilestoneForm({
     }
 
     // If there are multiple milestones, submit them one by one
-    milestones.forEach(milestone => {
+    milestones.forEach((milestone) => {
       onSubmit({
         title: milestone.title,
         description: milestone.description,
@@ -130,7 +128,10 @@ export function AddMilestoneForm({
                 <FormItem>
                   <FormLabel>Title</FormLabel>
                   <FormControl>
-                    <Input placeholder="Milestone title" {...(field as object)} />
+                    <Input
+                      placeholder="Milestone title"
+                      {...(field as object)}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -176,7 +177,7 @@ export function AddMilestoneForm({
                             className="w-full pl-3 text-left font-normal"
                           >
                             {(field as { value?: unknown }).value ? (
-                              format((field as { value: Date }).value, "PPP")
+                              format((field as { value: Date }).value, 'PPP')
                             ) : (
                               <span className="text-muted-foreground">
                                 Pick a date
@@ -189,8 +190,16 @@ export function AddMilestoneForm({
                       <PopoverContent className="w-auto p-0" align="start">
                         <Calendar
                           mode="single"
-                          selected={(field as { value?: Date }).value || undefined}
-                          onSelect={(field as { onChange?: (date: Date | undefined) => void }).onChange || (() => {})}
+                          selected={
+                            (field as { value?: Date }).value || undefined
+                          }
+                          onSelect={
+                            (
+                              field as {
+                                onChange?: (date: Date | undefined) => void;
+                              }
+                            ).onChange || (() => {})
+                          }
                           disabled={(date) => date < new Date()}
                           initialFocus
                           required={false}
@@ -245,7 +254,7 @@ export function AddMilestoneForm({
                   Saving...
                 </>
               ) : (
-                "Add Milestone"
+                'Add Milestone'
               )}
             </Button>
           </div>
@@ -254,5 +263,3 @@ export function AddMilestoneForm({
     </div>
   );
 }
-
-
