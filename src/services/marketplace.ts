@@ -145,90 +145,6 @@ const createMarketplaceClient = () => {
 
 const marketplaceClient = createMarketplaceClient();
 
-// Helper function to get fallback categories
-const getFallbackCategories = (): Category[] => {
-  return [
-    { id: '1', name: 'AI Models & APIs', description: 'Pre-trained models and API endpoints', product_count: 25 },
-    { id: '2', name: 'Services', description: 'Professional AI and tech services', product_count: 18 },
-    { id: '3', name: 'Equipment', description: 'Hardware and computing equipment', product_count: 12 },
-    { id: '4', name: 'Content Creation', description: 'AI-powered content tools', product_count: 15 },
-    { id: '5', name: 'Data Analysis', description: 'Analytics and BI solutions', product_count: 20 },
-  ];
-};
-
-// Helper function to get fallback equipment
-const getFallbackEquipment = (filters: SearchFilters = {}): Equipment[] => {
-  const fallbackEquipment: Equipment[] = [
-    {
-      id: 'eq-1',
-      name: 'AI Workstation Pro',
-      description: 'High-performance workstation optimized for AI development',
-      category: 'Hardware',
-      price: 4999,
-      currency: 'USD',
-      availability: 'In Stock',
-      location: 'San Francisco, CA',
-      specifications: ['NVIDIA RTX 4090', '128GB RAM', '2TB NVMe SSD'],
-      rating: 4.8,
-      reviewCount: 23
-    },
-    {
-      id: 'eq-2', 
-      name: 'Cloud GPU Cluster',
-      description: 'Scalable GPU cluster for machine learning training',
-      category: 'Cloud',
-      price: 2.50,
-      currency: 'USD',
-      availability: 'Available',
-      location: 'Global',
-      specifications: ['NVIDIA A100', 'Auto-scaling', 'Kubernetes'],
-      rating: 4.9,
-      reviewCount: 67
-    }
-  ];
-  
-  // Apply basic filtering
-  if (filters.category) {
-    return fallbackEquipment.filter(eq => 
-      eq.category.toLowerCase() === filters.category?.toLowerCase()
-    );
-  }
-  
-  return fallbackEquipment;
-};
-
-// Helper function to get fallback talent profiles
-const getFallbackTalent = (): TalentProfile[] => {
-  return [
-    {
-      id: 'talent-1',
-      full_name: 'Alex Chen',
-      professional_title: 'Senior AI Engineer',
-      description: 'Specialized in computer vision and deep learning with 8+ years experience',
-      skills: ['TensorFlow', 'PyTorch', 'Computer Vision', 'MLOps'],
-      hourly_rate: 150,
-      currency: 'USD',
-      availability: 'Available',
-      location: 'San Francisco, CA',
-      rating: 4.9,
-      reviewCount: 34
-    },
-    {
-      id: 'talent-2',
-      full_name: 'Sarah Rodriguez',
-      professional_title: 'ML Data Scientist',
-      description: 'Expert in NLP and recommendation systems with proven track record',
-      skills: ['Python', 'R', 'NLP', 'Recommendation Systems'],
-      hourly_rate: 120,
-      currency: 'USD',
-      availability: 'Available',
-      location: 'New York, NY',
-      rating: 4.7,
-      reviewCount: 28
-    }
-  ];
-};
-
 // Helper function to get error message for UI display
 export const getMarketplaceErrorMessage = (error: unknown): string => {
   const status = typeof error === 'object' && error !== null && 'response' in error && error.response && typeof error.response === 'object' && error.response !== null && 'status' in error.response ? (error.response as { status?: number }).status : undefined;
@@ -331,10 +247,10 @@ export async function fetchCategories(): Promise<Category[]> {
       throw new Error(data.error);
     }
 
-    return data.data || getFallbackCategories();
+    return data.data || [];
   } catch (error) {
     logErrorToProduction('Failed to fetch categories:', { data: error });
-    return getFallbackCategories();
+    return [];
   }
 }
 
@@ -358,10 +274,10 @@ export async function fetchTalent(filters: SearchFilters = {}): Promise<TalentPr
       throw new Error(data.error);
     }
 
-    return data.data || getFallbackTalent();
+    return data.data || [];
   } catch (error) {
     logErrorToProduction('Failed to fetch talent:', { data: error });
-    return getFallbackTalent();
+    return [];
   }
 }
 
@@ -385,9 +301,9 @@ export async function fetchEquipment(filters: SearchFilters = {}): Promise<Equip
       throw new Error(data.error);
     }
 
-    return data.data || getFallbackEquipment(filters);
+    return data.data || [];
   } catch (error) {
     logErrorToProduction('Failed to fetch equipment:', { data: error });
-    return getFallbackEquipment(filters);
+    return [];
   }
 }

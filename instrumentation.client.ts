@@ -1,3 +1,5 @@
+import Sentry from './sentry';
+
 export { register } from './sentry';
 
 // Export the onRouterTransitionStart hook as required by @sentry/nextjs

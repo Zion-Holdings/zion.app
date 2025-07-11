@@ -11,52 +11,33 @@ export function useTalentProfile(id: string | undefined) {
   const [profile, setProfile] = useState<TalentProfileType | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [mockProfileData, setMockProfileData] = useState<ProfileData | null>(null);
 
   useEffect(() => {
     const fetchProfile = async () => {
-      if (!id) {
-        setError("No profile ID provided");
-        setIsLoading(false);
-        return;
-      }
-
       setIsLoading(true);
-      setError(null);
-      
       try {
-        // In a real implementation, we would fetch from Supabase
-        // For now, we'll use mock data
-        setTimeout(() => {
-          // TODO: Replace with valid data source or fallback logic
-          const foundProfile = null; // Placeholder for actual data fetching
-          
-          if (foundProfile) {
-            setProfile(convertProfileToTalentProfile(foundProfile));
-          } else {
-            // Try fetching from ProfileData mock as fallback
-            // This is just for development purposes
-            const mockProfile = null; // Placeholder for actual data fetching
-            if (mockProfile) {
-              setMockProfileData(mockProfile);
-              // Convert the ProfileData to TalentProfileType
-              const convertedProfile = convertProfileToTalentProfile(mockProfile);
-              setProfile(convertedProfile);
-            } else {
-              setError("Profile not found");
-            }
-          }
+        if (!id) {
+          setProfile(null);
+          setError('No profile ID provided');
           setIsLoading(false);
-        }, 800);
+          return;
+        }
+        // Fetch from real API endpoint
+        const response = await fetch(`/api/talent/${id}`);
+        if (!response.ok) throw new Error('Failed to fetch profile');
+        const data = await response.json();
+        setProfile(convertProfileToTalentProfile(data));
+        setError(null);
       } catch (err) {
         logErrorToProduction('Error fetching profile:', { data: err });
-        setError("Failed to load profile data");
+        setError('Failed to load profile data');
+        setProfile(null);
+      } finally {
         setIsLoading(false);
       }
     };
-
     fetchProfile();
   }, [id]);
 
-  return { profile, isLoading, error, mockProfileData };
+  return { profile, isLoading, error };
 }
