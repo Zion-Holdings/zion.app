@@ -102,7 +102,7 @@ export function logError(
     let colno: number | null = null;
     // Basic stack parsing for filename, lineno, colno (optional, can be enhanced)
     if (errorToSend.stack) {
-      const stackLines = errorToSend.stack.split('\n');
+      const stackLines: string[] = errorToSend.stack.split('\n');
       const regex = /\(?(.+?):(\d+):(\d+)\)?$/;
       // Try to find a relevant line, skipping anonymous or internal calls if possible
       for (const line of stackLines) {
@@ -119,7 +119,7 @@ export function logError(
     const errorDetails = {
       message: errorToSend.message,
       stack: errorToSend.stack || '',
-      componentStack: (context?.componentStack as string | undefined) || '',
+      componentStack: typeof context?.componentStack === 'string' ? context.componentStack : '',
       filename,
       lineno,
       colno,
