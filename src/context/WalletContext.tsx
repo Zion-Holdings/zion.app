@@ -12,8 +12,11 @@ import type { AppKitInstanceInterface } from '@reown/appkit/react';
 import { captureException } from '@/utils/sentry';
 
 import { createAppKit } from '@reown/appkit/react';
+import type { mainnet as MainnetType, goerli as GoerliType, polygon as PolygonType, optimism as OptimismType, arbitrum as ArbitrumType, base as BaseType } from '@reown/appkit/networks';
 import { mainnet, goerli, polygon, optimism, arbitrum, base } from '@reown/appkit/networks';
+import type { ethers as EthersType } from 'ethers';
 import { ethers } from 'ethers';
+import { EthersAdapter } from '@reown/appkit/adapter-ethers';
 
 // Use real wallet imports except in CI/build environments
 const isBuildEnv = process.env.CI === 'true';
@@ -21,7 +24,6 @@ const isBuildEnv = process.env.CI === 'true';
 // Dynamic imports for ESM compatibility
 
 // Load AppKit modules dynamically to avoid ESM issues
-import { EthersAdapter } from '@reown/appkit/ethers';
 
 // Some injected wallet providers implement the EIP-1193 interface but also
 // expose event methods like `on` and `removeListener`. The `ethers` type for
