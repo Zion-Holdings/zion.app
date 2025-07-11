@@ -384,7 +384,7 @@ export function useAuthOperations(
        points: 0
      });
       
-      toast({ title: 'Wallet connected', description: address || '' });
+      toast({ title: 'Wallet connected', description: address ? address : '' });
     } catch (error: unknown) {
       toast({
         variant: 'destructive',

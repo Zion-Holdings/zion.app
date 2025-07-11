@@ -20,8 +20,11 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import Spinner from '@/components/ui/spinner';
 import { SERVICES } from '@/data/servicesData';
 import { useCurrency } from '@/hooks/useCurrency';
+<<<<<<< HEAD
 // Remove the broken import
 // import { generateITServices, getServicesMarketStats, getRecommendedServices } from '../../utils/servicesAutoFeedAlgorithm';
+=======
+>>>>>>> 856932cb57c6fbd71141959c235e53dbfd75596d
 
 // Initial services from existing data
 const INITIAL_SERVICES: ProductListing[] = SERVICES;
