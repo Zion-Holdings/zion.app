@@ -1,5 +1,12 @@
 #!/usr/bin/env node
 
+// Handle piping errors gracefully (e.g., when output is piped to `head`)
+process.stdout.on('error', err => {
+  if (err.code === 'EPIPE') {
+    process.exit(0);
+  }
+});
+
 /**
  * Log Health Summary Script
  * Provides a comprehensive overview of project health and logging infrastructure
