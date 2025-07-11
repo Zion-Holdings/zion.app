@@ -2,7 +2,6 @@ import { PrismaClient } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { captureException } from '@/utils/sentry';
-import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { TALENT_PROFILES } from '@/data/talentData';
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
