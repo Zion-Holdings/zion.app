@@ -1,6 +1,5 @@
 import { supabase } from '@/utils/supabase/client'; // Use centralized client
 import type { NextApiRequest, NextApiResponse } from 'next';
-import * as Sentry from '@sentry/nextjs';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { ENV_CONFIG } from '@/utils/environmentConfig';
 import { 

@@ -1462,6 +1462,10 @@ const nextConfig = {
       config.experiments.cacheUnaffected = false;
     }
 
+    // Remove node: protocol module fallbacks and aliases
+    // Remove the nodeCoreModules array and its forEach logic for alias and fallback
+    // Only keep standard fallbacks and aliases, do not reference node: protocol modules anywhere.
+
     return config;
   },
 

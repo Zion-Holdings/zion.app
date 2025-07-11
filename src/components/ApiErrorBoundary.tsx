@@ -47,8 +47,8 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
   override async componentDidCatch(error: Error, errorInfo: unknown) {
     // Log to Sentry
     if (typeof window === 'undefined') {
-      const Sentry = await import('@sentry/nextjs');
-      Sentry.withScope((scope) => {
+      const SentryMod = await import('@sentry/nextjs');
+      SentryMod.withScope((scope) => {
         scope.setTag('errorBoundary', 'ApiErrorBoundary');
         if (typeof errorInfo === 'object' && errorInfo !== null) {
           scope.setContext('errorInfo', errorInfo as Record<string, unknown>);
@@ -56,7 +56,7 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
           scope.setContext('errorInfo', null);
         }
         scope.setLevel('error');
-        Sentry.captureException(error);
+        SentryMod.captureException(error);
       });
     }
 
@@ -230,11 +230,12 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
 export const useApiErrorHandler = () => {
   const handleApiError = (error: Error) => {
     if (typeof window === 'undefined') {
-      const Sentry = import('@sentry/nextjs');
-      Sentry.withScope((scope) => {
-        scope.setTag('source', 'useApiErrorHandler');
-        scope.setLevel('error');
-        Sentry.captureException(error);
+      import('@sentry/nextjs').then(SentryMod => {
+        SentryMod.withScope((scope) => {
+          scope.setTag('source', 'useApiErrorHandler');
+          scope.setLevel('error');
+          SentryMod.captureException(error);
+        });
       });
     }
   };

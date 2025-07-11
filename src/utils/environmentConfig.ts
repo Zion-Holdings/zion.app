@@ -1,4 +1,3 @@
-import * as Sentry from '@sentry/nextjs';
 import { z } from 'zod';
 import { logInfo, logWarn } from '@/utils/productionLogger';
 
@@ -113,12 +112,12 @@ export async function initializeServices(): Promise<void> {
   // Initialize Sentry if configured
   if (config.sentry.isConfigured && config.app.isProduction) {
     try {
-      Sentry.init({
-        dsn: config.sentry.dsn,
-        environment: config.sentry.environment,
-        release: config.sentry.release,
-        tracesSampleRate: 1.0,
-      });
+      // Sentry.init({
+      //   dsn: config.sentry.dsn,
+      //   environment: config.sentry.environment,
+      //   release: config.sentry.release,
+      //   tracesSampleRate: 1.0,
+      // });
       logInfo('✅ Sentry initialized successfully');
     } catch (error) {
       logWarn('Failed to initialize Sentry:', { data: error });

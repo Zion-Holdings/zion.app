@@ -3,7 +3,6 @@ import type { ProductListing } from '@/types/listings';
 import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
 import { INITIAL_MARKETPLACE_PRODUCTS } from '@/data/initialMarketplaceProducts';
 import { SERVICES } from '@/data/servicesData';
-import * as Sentry from '@sentry/nextjs';
 import Head from 'next/head';
 import Link from 'next/link';
 import { RatingStars } from '@/components/RatingStars';
@@ -121,12 +120,6 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
   const slug = params?.slug as string;
   let listing: ProductListing | null = null;
 
-  Sentry.addBreadcrumb({
-    category: 'ssr',
-    message: `getServerSideProps for Marketplace Listing: ${slug}`,
-    level: 'info',
-  });
-
   try {
     // Step 1: Try to fetch directly by ID from API
     // Assuming fetchProducts can take an `id: slug` parameter or similar for direct lookup.
@@ -157,7 +150,6 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
             author: { name: 'Unknown', id: 'unknown' },
             availability: 'Available',
           } as ProductListing;
-          Sentry.addBreadcrumb({ message: `Found product ${slug} via API direct ID match.` });
         } else {
           // Handle case where product cannot be ensured
           return {
@@ -167,13 +159,22 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
       }
     } catch (apiError) {
       logWarn('API fetch for product ${slug} (attempting ID match) failed:', { data: apiError });
-      Sentry.captureMessage(`API fetch for product ${slug} (attempting ID match) failed`);
-      Sentry.addBreadcrumb({ message: `API error: ${apiError}` });
+      if (typeof window === 'undefined') {
+        const Sentry = await import('@sentry/nextjs');
+        Sentry.captureMessage(`API fetch for product ${slug} (attempting ID match) failed`);
+      }
+      if (typeof window === 'undefined') {
+        const Sentry = await import('@sentry/nextjs');
+        Sentry.addBreadcrumb({ message: `API error: ${apiError}` });
+      }
     }
 
     // Step 2: If not found via direct API ID lookup, try static data by ID
     if (!listing) {
-      Sentry.addBreadcrumb({ message: `Product ${slug} not found via API ID match. Trying static data.` });
+      if (typeof window === 'undefined') {
+        const Sentry = await import('@sentry/nextjs');
+        Sentry.addBreadcrumb({ message: `Product ${slug} not found via API ID match. Trying static data.` });
+      }
       const staticListing =
         INITIAL_MARKETPLACE_PRODUCTS.find((l) => l.id === slug) ||
         MARKETPLACE_LISTINGS.find((l) => l.id === slug) ||
@@ -182,7 +183,10 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
 
       if (staticListing) {
         listing = staticListing as ProductListing; // Assuming static data is already in correct format
-        Sentry.addBreadcrumb({ message: `Found product ${slug} in static data.` });
+        if (typeof window === 'undefined') {
+          const Sentry = await import('@sentry/nextjs');
+          Sentry.addBreadcrumb({ message: `Found product ${slug} in static data.` });
+        }
       }
     }
     
@@ -195,7 +199,10 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
 
     // Step 4: If still not found, try title-based fuzzy matching on static data
     if (!listing) {
-      Sentry.addBreadcrumb({ message: `Product ${slug} not found by ID (API or static). Trying title match on static data.` });
+      if (typeof window === 'undefined') {
+        const Sentry = await import('@sentry/nextjs');
+        Sentry.addBreadcrumb({ message: `Product ${slug} not found by ID (API or static). Trying title match on static data.` });
+      }
       const allListings = [
         ...INITIAL_MARKETPLACE_PRODUCTS,
         ...MARKETPLACE_LISTINGS,
@@ -208,21 +215,33 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
 
       if (matchedByTitle) {
         listing = matchedByTitle as ProductListing;
-        Sentry.addBreadcrumb({ message: `Found product ${slug} by title match in static data.` });
+        if (typeof window === 'undefined') {
+          const Sentry = await import('@sentry/nextjs');
+          Sentry.addBreadcrumb({ message: `Found product ${slug} by title match in static data.` });
+        }
       }
     }
     
     if (!listing) {
       logInfo(`Listing not found for slug: ${slug}`);
-      Sentry.captureMessage(`Listing not found for slug: ${slug}`);
-      Sentry.addBreadcrumb({ message: `Listing not found for slug: ${slug}` });
+      if (typeof window === 'undefined') {
+        const Sentry = await import('@sentry/nextjs');
+        Sentry.captureMessage(`Listing not found for slug: ${slug}`);
+      }
+      if (typeof window === 'undefined') {
+        const Sentry = await import('@sentry/nextjs');
+        Sentry.addBreadcrumb({ message: `Listing not found for slug: ${slug}` });
+      }
       return { notFound: true };
     }
     
     return { props: { listing } };
 
   } catch (error) {
-    Sentry.captureException(error);
+    if (typeof window === 'undefined') {
+      const Sentry = await import('@sentry/nextjs');
+      Sentry.captureException(error);
+    }
     logErrorToProduction('Critical error in getServerSideProps for marketplace listing ${slug}:', { data: error });
     return { notFound: true }; // Ensure 404 for any unhandled errors
   }

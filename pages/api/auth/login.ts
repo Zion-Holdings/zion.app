@@ -1,6 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import * as Sentry from '@sentry/nextjs';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { ENV_CONFIG } from '@/utils/environmentConfig';
 
@@ -125,12 +124,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
       if (isDevelopment) {
         console.error('🔧 LOGIN TRACE: Supabase authentication error:', error);
       }
-      if (ENV_CONFIG.sentry.isConfigured) {
-        Sentry.captureException(error, {
-          tags: { context: 'login_api' },
-          extra: { email }
-        });
-      }
       res.status(401).json({ error: error.message });
       return;
     }
@@ -153,12 +146,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
   } catch (error: any) {
     if (isDevelopment) {
       console.error('🔧 LOGIN TRACE: Unexpected error during authentication:', error);
-    }
-    if (ENV_CONFIG.sentry.isConfigured) {
-      Sentry.captureException(error, {
-        tags: { context: 'login_api_unexpected' },
-        extra: { email }
-      });
     }
     res.status(500).json({ 
       error: 'Internal server error',

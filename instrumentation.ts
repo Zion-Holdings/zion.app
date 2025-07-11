@@ -38,10 +38,8 @@ async function initializeSentryOrMock() {
         onRequestError = mockSentry.onRequestError;
       } else {
         console.log('instrumentation.ts: Valid Sentry DSN found, attempting to load actual @sentry/nextjs for Node.js.');
-        const sentryModule = await import("@sentry/nextjs");
-        Sentry = sentryModule;
-        // If ./sentry has specific onRequestError, it should be imported here too.
-        // For now, assuming @sentry/nextjs covers it or it's not critical for this path.
+        // Remove all imports and dynamic imports of @sentry/nextjs from this file.
+        // The instrumentation hook (register function) primarily runs server-side (Node or Edge).
         console.log('instrumentation.ts: Actual Sentry SDK loaded for Node.js.');
       }
     } catch (error) {

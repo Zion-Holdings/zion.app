@@ -1,6 +1,5 @@
 // pages/sentry-test.tsx
 import React from 'react';
-import * as Sentry from '@sentry/nextjs';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
@@ -9,7 +8,7 @@ const SentryTestPage = () => {
     try {
       throw new Error('Sentry Client Test Error - Button Clicked!');
     } catch (error) {
-      Sentry.captureException(error);
+      // Sentry.captureException(error); // Removed
       alert('Client-side error thrown and captured by Sentry. Check your Sentry dashboard (or console for DSN issues).');
     }
   };
@@ -24,7 +23,7 @@ const SentryTestPage = () => {
     } catch (error) {
       // This catch is for the fetch failing, not Sentry capturing the API's error directly here.
       // Sentry should capture it on the API route side.
-      Sentry.captureException(error);
+      // Sentry.captureException(error); // Removed
       alert('Error trying to trigger server-side API error. Check your Sentry dashboard or console.');
     }
   };
@@ -67,11 +66,11 @@ const SentryTestPage = () => {
 export const getServerSideProps = async (context: any) => { // Added type for context for clarity
   // The context object is passed here by Next.js and Sentry's HOC
   // You can add custom Sentry tags or breadcrumbs related to this specific SSR execution if needed
-  Sentry.addBreadcrumb({
-    category: 'testing',
-    message: 'getServerSideProps in sentry-test.tsx was called',
-    level: 'info',
-  });
+  // Sentry.addBreadcrumb({ // Removed
+  //   category: 'testing',
+  //   message: 'getServerSideProps in sentry-test.tsx was called',
+  //   level: 'info',
+  // });
 
   try {
     // Simulate an error occurring during server-side rendering
@@ -84,7 +83,7 @@ export const getServerSideProps = async (context: any) => { // Added type for co
     // However, since this is a test page, we might just log and return empty props
     // or props indicating an error occurred for the page to display.
     logErrorToProduction('Simulated error in getServerSideProps for sentry-test.tsx:', { data: error });
-    Sentry.captureException(error); // Manually capture exception
+    // Sentry.captureException(error); // Removed
 
     // Optionally, set status code on response if available in context
     if (context.res) {

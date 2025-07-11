@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
-import * as Sentry from '@sentry/nextjs';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -20,14 +19,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     return res.status(200).json(listings);
   } catch (error) {
     logErrorToProduction('Error in marketplace overview API:', { data: error });
-    
-    // Log to Sentry
-    Sentry.withScope((scope) => {
-      scope.setTag('api', 'marketplace-overview');
-      scope.setContext('query', req['query'] as Record<string, any>);
-      scope.setLevel('error');
-      Sentry.captureException(error);
-    });
     
     // Return fallback empty array instead of error
     return res.status(200).json([]);

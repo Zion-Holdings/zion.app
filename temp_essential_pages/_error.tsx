@@ -2,7 +2,6 @@ import React from 'react';
 import type { NextPageContext } from 'next/types';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import * as Sentry from '@sentry/nextjs';
 
 interface ErrorProps {
   statusCode: number;
@@ -144,6 +143,7 @@ ErrorPage.getInitialProps = async (context: NextPageContext) => {
     // Log the error to Sentry for non-static assets
     if (err && typeof window === 'undefined') {
       // Server-side error
+      const Sentry = await import('@sentry/nextjs');
       Sentry.withScope((scope) => {
         scope.setTag('errorType', 'server');
         scope.setTag('statusCode', statusCode);
@@ -159,6 +159,7 @@ ErrorPage.getInitialProps = async (context: NextPageContext) => {
       });
     } else if (err) {
       // Client-side error
+      const Sentry = await import('@sentry/nextjs');
       Sentry.withScope((scope) => {
         scope.setTag('errorType', 'client');
         scope.setTag('statusCode', statusCode);
@@ -179,6 +180,7 @@ ErrorPage.getInitialProps = async (context: NextPageContext) => {
         timestamp: new Date().toISOString()
       });
       
+      const Sentry = await import('@sentry/nextjs');
       Sentry.withScope((scope) => {
         scope.setTag('rootPath404', true);
         scope.setLevel('error');

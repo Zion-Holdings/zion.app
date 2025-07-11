@@ -1,7 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import path from 'path';
-import * as Sentry from '@sentry/nextjs';
 import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 
@@ -67,17 +66,17 @@ export default async function handler(
         if (entry.level === 'error' || entry.level === 'warn') {
           // Map our log levels to Sentry's SeverityLevel
           const sentryLevel = entry.level === 'warn' ? 'warning' : entry.level;
-          Sentry.withScope(scope => {
-            scope.setLevel(sentryLevel);
-            scope.setExtra('level', entry.level);
-            scope.setExtra('context', entry.context);
-            scope.setExtra('timestamp', entry.timestamp);
-            scope.setExtra('sessionId', entry.sessionId);
-            scope.setExtra('url', entry.url);
-            scope.setExtra('userAgent', entry.userAgent);
-            scope.setExtra('userId', entry.userId);
-            Sentry.captureMessage(entry.message);
-          });
+          // Sentry.withScope(scope => {
+          //   scope.setLevel(sentryLevel);
+          //   scope.setExtra('level', entry.level);
+          //   scope.setExtra('context', entry.context);
+          //   scope.setExtra('timestamp', entry.timestamp);
+          //   scope.setExtra('sessionId', entry.sessionId);
+          //   scope.setExtra('url', entry.url);
+          //   scope.setExtra('userAgent', entry.userAgent);
+          //   scope.setExtra('userId', entry.userId);
+          //   Sentry.captureMessage(entry.message);
+          // });
         }
       });
     }
@@ -101,7 +100,7 @@ export default async function handler(
   } catch (error) {
     // Log server-side failure
     logErrorToProduction('Error in /api/logs:', error);
-    Sentry.captureException(error);
+    // Sentry.captureException(error);
     return res.status(500).json({ message: 'Internal Server Error' });
   }
 } 

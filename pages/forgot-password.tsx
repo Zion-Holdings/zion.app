@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import * as Sentry from '@sentry/nextjs';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -55,7 +54,6 @@ const ForgotPassword = () => {
         variant: "default",
       });
     } catch (err: any) {
-      Sentry.captureException(err);
       const errorMessage =
         err.message || 'Failed to send reset link. Please try again.';
       setError(errorMessage);

@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 // Import Home directly to avoid dynamic import issues that can lead to a blank screen
 import Home from '../src/pages/Home';
 import type { GetStaticProps } from 'next';
-import * as Sentry from '@sentry/nextjs';
 import { ErrorBanner } from '@/components/talent/ErrorBanner';
 import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
@@ -39,7 +38,10 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
     // Log to Sentry if available, but don't block the page
     if (isSentryActive) {
       try {
-        Sentry.captureException(error);
+        if (typeof window === 'undefined') {
+          const Sentry = await import('@sentry/nextjs');
+          Sentry.captureException(error);
+        }
       } catch (sentryError) {
         logWarn('Failed to log to Sentry:', { data: sentryError });
       }
@@ -62,7 +64,10 @@ const ErrorTestButton = () => {
       throw new Error("This is a test error from the homepage button!");
     } catch (error) {
       if (isSentryActive) {
-        Sentry.captureException(error);
+        if (typeof window === 'undefined') {
+          const Sentry = import('@sentry/nextjs');
+          Sentry.captureException(error);
+        }
       }
       logErrorToProduction('Button error test:', { error });
     }

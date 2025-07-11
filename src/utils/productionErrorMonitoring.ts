@@ -1,4 +1,3 @@
-import * as Sentry from '@sentry/nextjs';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
@@ -77,35 +76,35 @@ export class ProductionErrorMonitor {
 
   public setUserId(userId: string): void {
     this.userId = userId;
-    Sentry.setUser({ id: userId });
+    // Sentry.setUser({ id: userId }); // Removed Sentry import, so this line is commented out
   }
 
   public reportError(error: Error | unknown, context: Record<string, unknown> = {}): void {
     const errorReport = this.buildErrorReport(error, context);
     
     // Send to Sentry
-    Sentry.withScope((scope) => {
-      scope.setTag('errorMonitor', 'ProductionErrorMonitor');
-      scope.setTag('sessionId', this.sessionId);
-      scope.setContext('errorReport', {
-        timestamp: errorReport.timestamp,
-        url: errorReport.url,
-        userAgent: errorReport.userAgent,
-        userId: errorReport.userId,
-        sessionId: errorReport.sessionId,
-        errorMessage: errorReport.error.message,
-        errorStack: errorReport.error.stack,
-        route: errorReport.context.route,
-        component: errorReport.context.component
-      });
-      scope.setLevel('error');
+    // Sentry.withScope((scope) => { // Removed Sentry import, so this block is commented out
+    //   scope.setTag('errorMonitor', 'ProductionErrorMonitor');
+    //   scope.setTag('sessionId', this.sessionId);
+    //   scope.setContext('errorReport', {
+    //     timestamp: errorReport.timestamp,
+    //     url: errorReport.url,
+    //     userAgent: errorReport.userAgent,
+    //     userId: errorReport.userId,
+    //     sessionId: errorReport.sessionId,
+    //     errorMessage: errorReport.error.message,
+    //     errorStack: errorReport.error.stack,
+    //     route: errorReport.context.route,
+    //     component: errorReport.context.component
+    //   });
+    //   scope.setLevel('error');
 
-      if (this.userId) {
-        scope.setUser({ id: this.userId });
-      }
+    //   if (this.userId) {
+    //     scope.setUser({ id: this.userId });
+    //   }
 
-      Sentry.captureException(error);
-    });
+    //   Sentry.captureException(error);
+    // });
 
     // Send to custom error reporting service
     this.sendToCustomService(errorReport);
@@ -191,7 +190,7 @@ export class ProductionErrorMonitor {
   }
 
   public captureMessage(message: string, level: 'info' | 'warning' | 'error' = 'info'): void {
-    Sentry.captureMessage(message, level);
+    // Sentry.captureMessage(message, level); // Removed Sentry import, so this line is commented out
   }
 }
 

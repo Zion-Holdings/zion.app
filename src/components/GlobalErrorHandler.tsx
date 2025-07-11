@@ -8,7 +8,6 @@ import { RefreshCw, AlertTriangle, Wifi, WifiOff, Shield } from 'lucide-react';
 
 
 
-import * as Sentry from '@sentry/nextjs';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
@@ -37,13 +36,10 @@ export function GlobalErrorHandler({ children }: GlobalErrorHandlerProps) {
 
     // Report to Sentry for production
     if (process.env.NODE_ENV === 'production') {
-      Sentry.withScope((scope) => {
-        if (context) {
-          scope.setContext('errorContext', context);
-        }
-        scope.setLevel('error');
+      if (typeof window === 'undefined') {
+        const Sentry = await import('@sentry/nextjs');
         Sentry.captureException(error);
-      });
+      }
     }
   }, []);
 
