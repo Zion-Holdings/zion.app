@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image'; // Import next/image
 
 interface InputFieldsProps {
-  onSubmit: (data: any) => void; // Define a more specific type for data
+  onSubmit: (data: unknown) => void; // TODO: Replace unknown with a specific type for data
 }
 
 const InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
