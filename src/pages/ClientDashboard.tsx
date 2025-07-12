@@ -156,3 +156,5 @@ export default function ClientDashboard() {
     </ProtectedRoute>
   );
 }
+
+ClientDashboard.displayName = 'ClientDashboard';

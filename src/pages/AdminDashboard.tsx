@@ -11,3 +11,5 @@ export default function AdminDashboard() {
     </AdminLayout>
   );
 }
+
+AdminDashboard.displayName = 'AdminDashboard';

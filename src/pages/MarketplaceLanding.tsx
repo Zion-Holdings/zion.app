@@ -53,3 +53,5 @@ export default function MarketplaceLanding() {
     </div>
   );
 }
+
+MarketplaceLanding.displayName = 'MarketplaceLanding';

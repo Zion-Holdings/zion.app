@@ -101,3 +101,5 @@ export default function Categories({ categories: initialCategories = [] }: Categ
     </>
   );
 }
+
+Categories.displayName = 'Categories';

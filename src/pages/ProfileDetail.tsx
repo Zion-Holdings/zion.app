@@ -317,3 +317,5 @@ export default function ProfileDetail() {
     </>
   );
 }
+
+ProfileDetail.displayName = 'ProfileDetail';

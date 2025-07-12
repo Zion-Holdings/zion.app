@@ -53,3 +53,5 @@ export default function PublishProduct() {
     </div>
   );
 }
+
+PublishProduct.displayName = 'PublishProduct';

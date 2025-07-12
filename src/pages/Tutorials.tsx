@@ -40,3 +40,5 @@ export default function Tutorials() {
     </>
   );
 }
+
+Tutorials.displayName = 'Tutorials';

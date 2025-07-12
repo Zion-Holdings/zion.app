@@ -179,3 +179,5 @@ export default function Careers() {
     </>
   );
 }
+
+Careers.displayName = 'Careers';

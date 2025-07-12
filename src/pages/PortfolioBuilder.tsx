@@ -44,3 +44,5 @@ export default function PortfolioBuilder() {
     </ProtectedRoute>
   );
 }
+
+PortfolioBuilder.displayName = 'PortfolioBuilder';
