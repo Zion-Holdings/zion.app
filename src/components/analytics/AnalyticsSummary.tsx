@@ -19,7 +19,7 @@ export function AnalyticsSummary() {
         .eq('event_type', 'page_view')
         .single();
 
-      if (pageViewsError && (pageViewsError as any).code !== 'PGRST116') throw pageViewsError;
+      if (pageViewsError && typeof (pageViewsError as { code?: string }).code === 'string' && (pageViewsError as { code: string }).code !== 'PGRST116') throw pageViewsError;
       
       // Get unique visitors (by counting distinct user IDs)
       const { data: uniqueVisitorsData, error: uniqueVisitorsError } = await supabase
@@ -30,7 +30,12 @@ export function AnalyticsSummary() {
         
       if (uniqueVisitorsError) throw uniqueVisitorsError;
       
-      const uniqueUserIds = new Set(uniqueVisitorsData?.map((item: any) => item.user_id) || []);
+      const uniqueUserIds = new Set((uniqueVisitorsData?.map((item: unknown) => {
+        if (item && typeof item === 'object' && 'user_id' in item) {
+          return (item as { user_id: string | number }).user_id;
+        }
+        return undefined;
+      }) || []).filter(Boolean));
       
       // Get conversion count
       const { data: conversionsData, error: conversionsError } = await supabase
@@ -39,7 +44,7 @@ export function AnalyticsSummary() {
         .eq('event_type', 'conversion')
         .single();
         
-      if (conversionsError && (conversionsError as any).code !== 'PGRST116') throw conversionsError;
+      if (conversionsError && typeof (conversionsError as { code?: string }).code === 'string' && (conversionsError as { code: string }).code !== 'PGRST116') throw conversionsError;
 
       // Average session duration from session_duration events
       const { data: sessionData, error: sessionError } = await supabase
@@ -47,7 +52,7 @@ export function AnalyticsSummary() {
         .select('metadata')
         .eq('event_type', 'session_duration');
 
-      if (sessionError && (sessionError as any).code !== 'PGRST116') throw sessionError;
+      if (sessionError && typeof (sessionError as { code?: string }).code === 'string' && (sessionError as { code: string }).code !== 'PGRST116') throw sessionError;
 
       const durations = sessionData?.map((s: any) => Number(s.metadata?.duration) || 0) || [];
       const avgDuration = durations.length ? durations.reduce((a: number, b: number) => a + b, 0) / durations.length : 0;
@@ -60,7 +65,7 @@ export function AnalyticsSummary() {
         .limit(1)
         .single();
         
-      if (lastEventError && (lastEventError as any).code !== 'PGRST116') throw lastEventError;
+      if (lastEventError && typeof (lastEventError as { code?: string }).code === 'string' && (lastEventError as { code: string }).code !== 'PGRST116') throw lastEventError;
         
       return {
         totalPageViews: pageViewsData?.count || 0,
