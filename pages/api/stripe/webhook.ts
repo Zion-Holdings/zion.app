@@ -6,6 +6,7 @@ import path from 'path';
 import { randomUUID } from 'crypto';
 import {logErrorToProduction} from '@/utils/productionLogger';
 import type { IncomingMessage } from 'http';
+import type { StripeWebhookRequest as _StripeWebhookRequest } from '@/types/stripe';
 
 interface StripeWebhookEvent {
   id: string;
@@ -22,11 +23,6 @@ interface StripeWebhookEvent {
     idempotency_key?: string;
   };
   type: string;
-}
-
-interface StripeWebhookRequest extends NextApiRequest {
-  body: string | Buffer;
-  rawBody?: Buffer;
 }
 
 export const config = { api: { bodyParser: false } };
@@ -54,7 +50,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   if (event.type === 'checkout.session.completed') {
-    const session = (event as any).data.object as any;
+    const session = (event as { data: { object: Stripe.Checkout.Session } }).data.object;
     const metadata = session.metadata ?? {};
     const orderId = metadata.orderId;
     if (orderId) {

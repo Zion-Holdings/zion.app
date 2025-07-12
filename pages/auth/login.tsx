@@ -326,7 +326,7 @@ const LoginPage = () => {
       return () => clearTimeout(timer);
     }
     return undefined; // Explicitly return undefined if condition is not met
-  }, [isEmailUnverified, verificationEmailSent, email, router]);
+  }, [email, router]); // Only depend on email and router
 
   // --- Rendering Logic ---
 
