@@ -6,7 +6,7 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 const stripe = new Stripe(process.env['STRIPE_TEST_SECRET_KEY'] || '', {
-  apiVersion: '2023-10-16',
+  apiVersion: '2025-06-30.basil',
 });
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -25,7 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       price_data: {
         currency: 'usd',
         unit_amount: Math.round((item.price || 0) * 100),
-        product_data: { name: item.title || item.name },
+        product_data: { name: item.title || item.name || '' },
       },
       quantity: item.quantity || 1,
     }));
