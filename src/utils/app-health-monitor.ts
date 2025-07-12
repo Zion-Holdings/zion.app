@@ -1,3 +1,5 @@
+import { logWarn, logError } from '@/utils/productionLogger';
+
 // Application Health Monitor
 // Comprehensive monitoring system for application health, performance, and reliability
 
@@ -463,10 +465,10 @@ class AppHealthMonitor {
         window.latestHealthReport = report;
         // Log warnings and critical issues
         if (report.status !== 'healthy') {
-          console.warn('🏥 Health issue detected:', report);
+          logWarn('🏥 Health issue detected:', report);
         }
       }).catch(error => {
-        console.error('Health monitoring error:', error);
+        logError('Health monitoring error:', error);
       });
     }, 30000);
     // Expose health monitor globally for debugging

@@ -5,6 +5,8 @@ import { useToast } from "@/hooks/use-toast";
 import { isValidEmail } from "@/utils/email";
 
 export function NewsletterForm() {
+import { logError } from '@/utils/productionLogger';
+
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -47,7 +49,7 @@ export function NewsletterForm() {
       }
     } catch (err: unknown) {
       // Optionally log the error if needed
-      // if (err instanceof Error) console.error(err);
+      // if (err instanceof Error) logError(err);
       toast.error("Unable to subscribe right now. Please try again later.");
     } finally {
       setIsSubmitting(false);

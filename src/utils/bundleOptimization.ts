@@ -1,3 +1,5 @@
+import { logWarn } from '@/utils/productionLogger';
+
 /**
  * Bundle optimization utilities for improved performance
  */
@@ -98,7 +100,7 @@ export const monitorBundlePerformance = () => {
     );
 
     if (largeResources.length > 0) {
-      console.warn('Large resources detected:', largeResources.map(r => ({
+      logWarn('Large resources detected:', largeResources.map(r => ({
         name: r.name,
         size: `${Math.round(r.transferSize / 1024)}KB`,
         loadTime: `${Math.round(r.duration)}ms`
@@ -184,7 +186,7 @@ export const optimizeMemoryUsage = () => {
       const usageRatio = memInfo.usedJSHeapSize / memInfo.jsHeapSizeLimit;
 
       if (usageRatio > 0.8) {
-        console.warn('High memory usage detected, triggering cleanup');
+        logWarn('High memory usage detected, triggering cleanup');
         // Force garbage collection if available
         function hasGc(obj: unknown): obj is { gc: () => void } {
           return typeof obj === 'object' && obj !== null && 'gc' in obj && typeof (obj as Record<string, unknown>)["gc"] === 'function';

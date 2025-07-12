@@ -3,6 +3,8 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from './[...nextauth]';
 
 export default async function handler(
+import { logError } from '@/utils/productionLogger';
+
   req: NextApiRequest,
   res: NextApiResponse
 ) {
@@ -17,7 +19,7 @@ export default async function handler(
     }
     return res.status(200).json(session);
   } catch (err) {
-    console.error('Session endpoint error:', err);
+    logError('Session endpoint error:', err);
     return res.status(500).json({ message: 'Internal server error' });
   }
 }

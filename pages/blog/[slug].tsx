@@ -11,6 +11,8 @@ import type { BlogPost } from '@/types/blog';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import fs from 'fs';
 import path from 'path';
+import { logWarn, logError } from '@/utils/productionLogger';
+
 
 function parseMarkdown(filePath: string): BlogPost | null {
   if (!fs.existsSync(filePath)) {
@@ -130,7 +132,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   try {
     const dir = path.join(process.cwd(), 'content', 'blog');
     if (!fs.existsSync(dir)) {
-      console.warn(`Blog directory not found: ${dir}`);
+      logWarn(`Blog directory not found: ${dir}`);
       return { paths: [], fallback: 'blocking' };
     }
     const files = fs.readdirSync(dir).filter((f) => f.endsWith('.md'));
@@ -140,7 +142,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     // Use `blocking` so new posts added after build can be generated on demand
     return { paths, fallback: 'blocking' };
   } catch (error) {
-    console.error('Error reading blog directory:', error);
+    logError('Error reading blog directory:', error);
     return { paths: [], fallback: 'blocking' };
   }
 };
@@ -163,7 +165,7 @@ export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({
     }
     return { props: { initialPost: post }, revalidate: 60 };
   } catch (error) {
-    console.error('Error in getStaticProps for blog post:', error);
+    logError('Error in getStaticProps for blog post:', error);
     return { notFound: true };
   }
 };

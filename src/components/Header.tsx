@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { 
+import { logError } from '@/utils/productionLogger';
+
   Menu, 
   X, 
   Search, 
@@ -54,7 +56,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
       await logout();
       router.push('/');
     } catch (error) {
-      console.error('Logout failed:', error);
+      logError('Logout failed:', error);
     }
   };
 

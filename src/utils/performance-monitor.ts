@@ -2,6 +2,8 @@
 // Tracks Core Web Vitals, User Experience Metrics, and Performance Issues
 
 import type { Metric } from 'web-vitals';
+import { logWarn } from '@/utils/productionLogger';
+
 
 interface PerformanceMetric {
   name: string;
@@ -75,7 +77,7 @@ class PerformanceMonitor {
       onLCP((metric) => this.recordMetric('LCP', metric));
       onTTFB((metric) => this.recordMetric('TTFB', metric));
     } catch (error) {
-      console.warn('Failed to initialize Core Web Vitals:', error);
+      logWarn('Failed to initialize Core Web Vitals:', error);
     }
   }
 
@@ -106,7 +108,7 @@ class PerformanceMonitor {
 
     // Log significant performance issues
     if (performanceMetric.rating === 'poor') {
-      console.warn(`Performance issue detected: ${performanceMetric.name} = ${performanceMetric.value}ms`);
+      logWarn(`Performance issue detected: ${performanceMetric.name} = ${performanceMetric.value}ms`);
     }
   }
 
@@ -321,7 +323,7 @@ class PerformanceMonitor {
       // Clear reported metrics
       this.metrics = [];
     } catch (error) {
-      console.warn('Failed to report performance metrics:', error);
+      logWarn('Failed to report performance metrics:', error);
     }
   }
 

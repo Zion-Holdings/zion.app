@@ -1,3 +1,5 @@
+import { logError } from '@/utils/productionLogger';
+
 /**
  * Safe Component Loader
  * 
@@ -24,7 +26,7 @@ class ComponentErrorBoundary extends React.Component<BoundaryProps, BoundaryStat
   }
   
   override componentDidCatch(error: Error, info: React.ErrorInfo) {
-    console.error('Component loading error:', error);
+    logError('Component loading error:', error);
   }
   
   override render() {
@@ -108,7 +110,7 @@ export function createSafeComponent(
             try {
               return React.createElement(Component, props);
             } catch (error) {
-              console.error(`Error rendering component from ${importPath}:`, error);
+              logError(`Error rendering component from ${importPath}:`, error);
               const Fallback = fallbackComponent || DefaultFallback;
               return React.createElement(Fallback);
             }
@@ -120,7 +122,7 @@ export function createSafeComponent(
               try {
                 return await (Component as unknown as { getInitialProps: (ctx: unknown) => Promise<unknown> }).getInitialProps(ctx);
               } catch (error) {
-                console.error(`Error in getInitialProps for ${importPath}:`, error);
+                logError(`Error in getInitialProps for ${importPath}:`, error);
                 // Return empty props to prevent the error from crashing the app
                 return {};
               }
@@ -130,7 +132,7 @@ export function createSafeComponent(
           return { default: WrappedComponent };
         })
         .catch((error) => {
-          console.error(`Failed to load component from ${importPath}:`, error);
+          logError(`Failed to load component from ${importPath}:`, error);
           
           // Create a safe fallback component that handles getInitialProps
           const SafeFallback: React.FC<Record<string, unknown>> = (props: Record<string, unknown>) => {
@@ -147,7 +149,7 @@ export function createSafeComponent(
                 return await originalModule.default.getInitialProps(ctx);
               }
             } catch (error) {
-              console.error(`Error in fallback getInitialProps for ${importPath}:`, error);
+              logError(`Error in fallback getInitialProps for ${importPath}:`, error);
             }
             // Return empty props as final fallback
             return {};
