@@ -71,7 +71,7 @@ export function RequestQuoteWizardProvider({ children }: { children: ReactNode }
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      (window as any).wizardState = { step, selectedService };
+      (window as Window & { wizardState?: { step: WizardStep; selectedService: string | null } }).wizardState = { step, selectedService };
     }
   }, [step, selectedService]);
 
