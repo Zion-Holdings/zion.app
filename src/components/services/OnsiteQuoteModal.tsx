@@ -39,8 +39,14 @@ export function OnsiteQuoteModal({ open, onOpenChange, country }: OnsiteQuoteMod
       enqueueSnackbar('Quote Requested', { variant: 'success' });
       onOpenChange(false);
       setFormData({ name: '', email: '', phone: '', details: '' });
-    } catch (err: any) {
-      enqueueSnackbar(err?.response?.data?.message || err.message, { variant: 'error' });
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        enqueueSnackbar(err.message, { variant: 'error' });
+      } else if (typeof err === 'object' && err !== null && 'response' in err && typeof (err as any).response?.data?.message === 'string') {
+        enqueueSnackbar((err as any).response.data.message, { variant: 'error' });
+      } else {
+        enqueueSnackbar('An unexpected error occurred.', { variant: 'error' });
+      }
     } finally {
       setIsSubmitting(false);
     }
