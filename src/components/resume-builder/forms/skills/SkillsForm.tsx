@@ -23,8 +23,8 @@ export function SkillsForm({ resumeId, skills, onComplete, onBack }: SkillsFormP
         await refreshSkills();
       }
       return success;
-    } catch (err: any) {
-      setError(err.message || 'An error occurred');
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : String(err));
       return false;
     }
   };
@@ -45,8 +45,8 @@ export function SkillsForm({ resumeId, skills, onComplete, onBack }: SkillsFormP
       if (resumeData && resumeData.skills) {
         setLocalSkills(resumeData.skills);
       }
-    } catch (err: any) {
-      setError(err.message || 'Failed to refresh skills');
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : String(err));
     }
   };
 

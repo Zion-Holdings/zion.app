@@ -1,23 +1,26 @@
 // Conditional Sentry import for React 19 + Next.js 15 compatibility
 let Sentry: unknown = null;
 
-// Always use the real Sentry SDK unless in CI or SKIP_SENTRY_BUILD is set
-try {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  Sentry = require("@sentry/nextjs");
-  if (Sentry) {
-    console.log('Real Sentry SDK loaded.');
-  } else {
-    throw new Error('@sentry/nextjs require returned null/undefined');
+export async function loadSentry() {
+  if (Sentry) return Sentry;
+  try {
+    Sentry = await import("@sentry/nextjs");
+    if (Sentry) {
+      console.log('Real Sentry SDK loaded.');
+    } else {
+      throw new Error('@sentry/nextjs import returned null/undefined');
+    }
+  } catch (error) {
+    console.error('CRITICAL: Failed to import "@sentry/nextjs". Sentry will not be initialized.', error);
+    Sentry = null;
   }
-} catch (error) {
-  console.error('CRITICAL: Failed to require "@sentry/nextjs". Sentry will not be initialized.', error);
-  Sentry = null;
+  return Sentry;
 }
 
 import { safeSessionStorage } from "@/utils/safeStorage";
 
-export function register() {
+export async function register() {
+  await loadSentry();
   // Use environment variables directly instead of runtime config
   const SENTRY_DSN = process.env.NEXT_PUBLIC_SENTRY_DSN;
   const SENTRY_RELEASE = process.env.NEXT_PUBLIC_SENTRY_RELEASE;

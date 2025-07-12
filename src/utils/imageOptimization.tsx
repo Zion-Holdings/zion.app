@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
-import type { NodeBuffer as _NodeBuffer } from 'buffer';
+import { Buffer } from 'buffer';
 
 interface OptimizedImageProps {
   src: string;
@@ -176,9 +176,9 @@ export function OptimizedImage({
 }
 
 // Higher-order component for easy migration from regular img tags
-export function withImageOptimization<_P extends object>(Component: React.ComponentType<_P>) {
+export function withImageOptimization<_P extends OptimizedImageProps>(Component: React.ComponentType<_P>) {
   return function OptimizedComponent(props: _P) {
-    const { src: _src, alt: _alt, ...otherProps: _otherProps } = props;
+    const { src, alt, ...otherProps } = props;
     
     return (
       <OptimizedImage

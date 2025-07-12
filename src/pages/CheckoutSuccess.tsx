@@ -60,3 +60,5 @@ export default function CheckoutSuccess() {
     </div>
   );
 }
+
+CheckoutSuccess.displayName = 'CheckoutSuccess';

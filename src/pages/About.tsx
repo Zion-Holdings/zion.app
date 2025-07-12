@@ -244,3 +244,5 @@ export default function About() {
     </>
   );
 }
+
+About.displayName = 'About';

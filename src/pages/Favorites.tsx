@@ -47,3 +47,5 @@ export default function FavoritesPage() {
     </div>
   );
 }
+
+FavoritesPage.displayName = 'FavoritesPage';

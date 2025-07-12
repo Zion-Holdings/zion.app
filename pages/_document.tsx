@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document';
+import { logWarn, logError } from '@/utils/productionLogger';
 
 export default function Document() {
   // Simple theme script without complex polyfills
@@ -50,7 +51,7 @@ export default function Document() {
         browser: true,
         cwd: function() { return '/'; },
         nextTick: function(fn) { setTimeout(fn, 0); },
-        exit: function(code) { console.warn('process.exit called with code:', code); },
+        exit: function(code) { logWarn('process.exit called with code:', code); },
         on: function() {},
         once: function() {},
         emit: function() {},
@@ -175,7 +176,7 @@ export default function Document() {
         });
         const isBlank = !hasVisible && root.innerText.trim() === '';
         if (isBlank) {
-          console.error("Blank screen detected - replacing content");
+          logError("Blank screen detected - replacing content");
           root.innerHTML = '<div style="padding:2rem;text-align:center;font-family:sans-serif;">\
             <h2>Application failed to load.</h2>\
             <p>Please refresh the page.</p>\
@@ -349,7 +350,7 @@ export default function Document() {
                   browser: true,
                   cwd: function() { return '/'; },
                   nextTick: function(fn) { setTimeout(fn, 0); },
-                  exit: function(code) { console.warn('process.exit called with code:', code); },
+                  exit: function(code) { logWarn('process.exit called with code:', code); },
                   on: function() {},
                   once: function() {},
                   emit: function() {},
@@ -488,7 +489,7 @@ export default function Document() {
                   }
                 }
                 
-                console.log('[Inline Polyfill] Global process and Buffer objects initialized');
+                logInfo('[Inline Polyfill] Global process and Buffer objects initialized');
               })();
             `,
           }}

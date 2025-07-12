@@ -1,7 +1,7 @@
 
 import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import type { Control } from "react-hook-form";
+import type { Control, ControllerRenderProps } from "react-hook-form";
 import type { BasicInfoFormData } from "./schema";
 
 interface ContactFieldsProps {
@@ -14,7 +14,7 @@ export function ContactFields({ control }: ContactFieldsProps) {
       <FormField
         control={control}
         name="location"
-        render={({ field }: { field: any }) => (
+        render={({ field }: { field: ControllerRenderProps<BasicInfoFormData, 'location'> }) => (
           <FormItem>
             <FormLabel>Location</FormLabel>
             <FormControl>
@@ -28,7 +28,7 @@ export function ContactFields({ control }: ContactFieldsProps) {
       <FormField
         control={control}
         name="website"
-        render={({ field }: { field: any }) => (
+        render={({ field }: { field: ControllerRenderProps<BasicInfoFormData, 'website'> }) => (
           <FormItem>
             <FormLabel>Website</FormLabel>
             <FormControl>
@@ -42,7 +42,7 @@ export function ContactFields({ control }: ContactFieldsProps) {
       <FormField
         control={control}
         name="linkedin"
-        render={({ field }: { field: any }) => (
+        render={({ field }: { field: ControllerRenderProps<BasicInfoFormData, 'linkedin'> }) => (
           <FormItem>
             <FormLabel>LinkedIn</FormLabel>
             <FormControl>
@@ -56,7 +56,7 @@ export function ContactFields({ control }: ContactFieldsProps) {
       <FormField
         control={control}
         name="github"
-        render={({ field }: { field: any }) => (
+        render={({ field }: { field: ControllerRenderProps<BasicInfoFormData, 'github'> }) => (
           <FormItem>
             <FormLabel>GitHub</FormLabel>
             <FormControl>

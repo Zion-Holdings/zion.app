@@ -16,12 +16,7 @@ interface PerformanceMetrics {
 export function PerformanceMonitor() {
   const { user } = useAuth();
   const isAdmin = user?.userType === 'admin' || user?.role === 'admin';
-  const isAllowed = process.env.NODE_ENV !== 'production' || isAdmin || localStorage.getItem('performance-monitoring') === 'true';
-
-  if (!isAllowed) {
-    return null;
-  }
-
+  // Always call hooks at the top
   const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [shouldShow, setShouldShow] = useState(false);
@@ -30,19 +25,18 @@ export function PerformanceMonitor() {
     // Only run in development or when explicitly enabled
     const show =
       process.env.NODE_ENV === 'development' ||
-      localStorage.getItem('performance-monitoring') === 'true';
-
+      localStorage.getItem('performance-monitoring') === 'true' ||
+      isAdmin;
     setShouldShow(show);
-
+    if (show) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
     if (!show) return;
-
-    setIsVisible(true);
-
     const collectMetrics = () => {
       if (typeof window === 'undefined') return;
-
       const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-      
       const newMetrics: PerformanceMetrics = {
         loadTime: navigation.loadEventEnd - navigation.loadEventStart,
         domContentLoaded: navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart,
@@ -51,7 +45,6 @@ export function PerformanceMonitor() {
         cumulativeLayoutShift: 0,
         firstInputDelay: 0,
       };
-
       // Get paint metrics
       const paintEntries = performance.getEntriesByType('paint');
       paintEntries.forEach((entry) => {
@@ -59,7 +52,6 @@ export function PerformanceMonitor() {
           newMetrics.firstContentfulPaint = entry.startTime;
         }
       });
-
       // Get LCP
       if ('LargestContentfulPaint' in window) {
         new PerformanceObserver((list) => {
@@ -71,35 +63,31 @@ export function PerformanceMonitor() {
           }
         }).observe({ entryTypes: ['largest-contentful-paint'] });
       }
-
       // Get CLS
       if ('LayoutShift' in window) {
         let clsValue = 0;
         new PerformanceObserver((list) => {
           for (const entry of list.getEntries()) {
-            if (!(entry as any).hadRecentInput) {
-              clsValue += (entry as any).value;
+            if (!(entry as PerformanceEntry & { hadRecentInput?: boolean }).hadRecentInput) {
+              clsValue += (entry as PerformanceEntry & { value?: number }).value ?? 0;
             }
           }
           newMetrics.cumulativeLayoutShift = clsValue;
           setMetrics({ ...newMetrics });
         }).observe({ entryTypes: ['layout-shift'] });
       }
-
       setMetrics(newMetrics);
     };
-
     // Collect metrics after page load
     if (document.readyState === 'complete') {
       collectMetrics();
     } else {
       window.addEventListener('load', collectMetrics);
     }
-
     return () => {
       window.removeEventListener('load', collectMetrics);
     };
-  }, []);
+  }, [isAdmin]);
 
   const getScoreColor = (value: number, good: number, poor: number) => {
     if (value <= good) return 'bg-green-500';

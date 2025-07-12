@@ -15,6 +15,20 @@ interface LogContext {
   [key: string]: unknown;
 }
 
+// Utility to get emoji for log level
+function getEmojiForLevel(level: 'debug' | 'info' | 'warn' | 'error' | 'mount' | 'unmount' | 'update'): string {
+  switch (level) {
+    case 'debug': return '🐛';
+    case 'info': return 'ℹ️';
+    case 'warn': return '⚠️';
+    case 'error': return '❌';
+    case 'mount': return '🟢';
+    case 'unmount': return '🔴';
+    case 'update': return '🔄';
+    default: return '';
+  }
+}
+
 class DevelopmentLogger {
   private enabled: boolean = isDevelopment;
 
@@ -79,11 +93,10 @@ class DevelopmentLogger {
   /**
    * Component lifecycle logging
    */
-  component(name: string, action: 'mount' | 'unmount' | 'update', props?: LogContext): void {
+  component(name: string, action: 'mount' | 'unmount' | 'update', props?: LogContext, level: 'debug' | 'info' | 'warn' | 'error' | 'mount' | 'unmount' | 'update' = 'info'): void {
     if (!this.enabled) return;
-    
     const _emoji = getEmojiForLevel(level);
-    logInfo('[COMPONENT] ${_emoji} ${name} ${action}', { data: props });
+    logInfo(`[COMPONENT] ${_emoji} ${name} ${action}`, { data: props });
   }
 }
 

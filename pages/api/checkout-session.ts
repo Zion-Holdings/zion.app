@@ -204,18 +204,29 @@ export default async function handler(
     logErrorToProduction('Checkout session creation error:', { data: error });
     
     // Handle specific Stripe errors
-    if (error && typeof error === 'object' && 'type' in error) {
-      if (error.type === 'StripeCardError') {
+    if (
+      error &&
+      typeof error === 'object' &&
+      'type' in error &&
+      typeof (error as { type?: string }).type === 'string'
+    ) {
+      if ((error as { type?: string }).type === 'StripeCardError') {
         return res.status(400).json({
           error: 'Payment processing error',
-          details: (error as { message?: string }).message,
+          details:
+            'message' in error && typeof (error as { message?: string }).message === 'string'
+              ? (error as { message?: string }).message
+              : undefined,
         });
       }
 
-      if (error.type === 'StripeInvalidRequestError') {
+      if ((error as { type?: string }).type === 'StripeInvalidRequestError') {
         return res.status(400).json({
           error: 'Invalid checkout request',
-          details: (error as { message?: string }).message,
+          details:
+            'message' in error && typeof (error as { message?: string }).message === 'string'
+              ? (error as { message?: string }).message
+              : undefined,
         });
       }
     }
@@ -235,9 +246,14 @@ export default async function handler(
     // Generic error response
     return res.status(500).json({
       error: 'Failed to create checkout session',
-      details: process.env['NODE_ENV'] === 'development' ? 
-        (error instanceof Error ? error.message : 'Unknown error') : 
-        'Internal server error',
+      details:
+        process.env['NODE_ENV'] === 'development'
+          ? error && error instanceof Error && error.message
+            ? error.message
+            : 'Unknown error'
+          : 'Internal server error',
     });
   }
 }
+
+

@@ -27,7 +27,7 @@ export const ResumeStepContent = ({
     <>
       <TabsContent value="basic-info">
         <BasicInfoForm 
-          resumeId={resume?.id!} 
+          resumeId={resume?.id ?? ''} 
           initialData={resume?.basic_info}
           onSave={(data) => {
             // Here you would typically save the data to your backend
@@ -39,8 +39,8 @@ export const ResumeStepContent = ({
       
       <TabsContent value="work-experience">
         <WorkExperienceForm 
-          resumeId={resume?.id!}
-          workExperiences={resume?.work_experience || []}
+          resumeId={resume?.id ?? ''}
+          workExperiences={resume?.work_experience ?? []}
           onComplete={onNextStep}
           onBack={onPrevStep}
         />
@@ -48,8 +48,8 @@ export const ResumeStepContent = ({
       
       <TabsContent value="education">
         <EducationForm 
-          resumeId={resume?.id!}
-          educationEntries={resume?.education || []}
+          resumeId={resume?.id ?? ''}
+          educationEntries={resume?.education ?? []}
           onComplete={onNextStep}
           onBack={onPrevStep}
         />
@@ -57,8 +57,8 @@ export const ResumeStepContent = ({
       
       <TabsContent value="skills">
         <SkillsForm
-          resumeId={resume?.id!}
-          skills={resume?.skills || []}
+          resumeId={resume?.id ?? ''}
+          skills={resume?.skills ?? []}
           onComplete={onNextStep}
           onBack={onPrevStep}
         />
@@ -66,8 +66,8 @@ export const ResumeStepContent = ({
       
       <TabsContent value="certifications">
         <CertificationsForm 
-          resumeId={resume?.id!}
-          certifications={resume?.certifications || []}
+          resumeId={resume?.id ?? ''}
+          certifications={resume?.certifications ?? []}
           onComplete={onNextStep}
           onBack={onPrevStep}
         />

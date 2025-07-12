@@ -29,9 +29,7 @@ interface InterviewRequestFormProps {
 }
 
 const formSchema = z.object({
-  date: z.date({
-    required_error: "Please select a date for the interview.",
-  }).refine(date => date > new Date(), {
+  date: z.date().refine(date => date > new Date(), {
     message: "Interview date must be in the future"
   }),
   time: z.string().min(1, "Please select a time for the interview."),
@@ -83,7 +81,7 @@ export function InterviewRequestForm({ talent, onClose, userDetails }: Interview
         scheduled_date: scheduledDate.toISOString(),
         duration_minutes: durationMinutes,
         ...(values.notes ? { notes: values.notes } : {}),
-        meeting_platform: values.platform as any,
+        meeting_platform: String(values.platform),
         ...(values.meetingLink ? { meeting_link: values.meetingLink } : {}),
         interview_type: "video",
         title: values.title,

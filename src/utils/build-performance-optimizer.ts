@@ -1,3 +1,5 @@
+import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+
 // Build Performance Optimizer
 // Analyzes bundle sizes, identifies optimization opportunities, and provides recommendations
 
@@ -61,7 +63,7 @@ class BuildPerformanceOptimizer {
       return this.performanceMetrics;
       
     } catch (error) {
-      console.error('❌ Error during build analysis:', error);
+      logError('❌ Error during build analysis:', error);
       throw error;
     }
   }
@@ -73,7 +75,7 @@ class BuildPerformanceOptimizer {
     const staticDir = path.join(buildDir, 'static', 'chunks');
     
     if (!fs.existsSync(staticDir)) {
-      console.warn('⚠️ Static chunks directory not found');
+      logWarn('⚠️ Static chunks directory not found');
       return;
     }
 
@@ -338,11 +340,11 @@ Estimated Gzipped: ${this.formatSize(this.performanceMetrics.totalBundleSize * 0
       optimizer.generateReport();
       
       // Remove all non-error/warn console statements at and after line 340
-      // Remove console.log(report);
-      // Remove console.log(`\n📄 Detailed report saved to: ${reportPath}`);
+      // Remove logInfo(report);
+      // Remove logInfo(`\n📄 Detailed report saved to: ${reportPath}`);
       
     } catch (error) {
-      console.error('❌ Analysis failed:', error);
+      logError('❌ Analysis failed:', error);
       process.exit(1);
     }
   }

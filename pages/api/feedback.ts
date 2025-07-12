@@ -51,7 +51,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
   const parsed = FeedbackValidator.safeParse(req['body']);
   if (!parsed.success) {
     res.status(400).json({
-      error: parsed.error?.errors[0]?.message || 'Invalid feedback data',
+      error: parsed.error?.issues[0]?.message || 'Invalid feedback data',
     });
     return;
   }

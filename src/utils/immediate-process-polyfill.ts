@@ -1,3 +1,5 @@
+import { logWarn } from '@/utils/productionLogger';
+
 /**
  * IMMEDIATE Process Polyfill
  * 
@@ -51,7 +53,7 @@ if (isBrowser && !isNode) {
     cwd: () => '/',
     nextTick: (fn: (...args: unknown[]) => void) => setTimeout(fn, 0),
     exit: (code?: number) => {
-      console.warn('process.exit called with code:', code);
+      logWarn('process.exit called with code:', code);
     },
     on: () => {},
     once: () => {},

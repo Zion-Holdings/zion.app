@@ -46,8 +46,8 @@ export async function generateContract(
   }
   
   // Type assertion needed for mock Supabase client compatibility
-  if (data && (data as any).success && (data as any).contract) {
-    return (data as any).contract;
+  if (data && typeof data === 'object' && 'success' in data && 'contract' in data) {
+    return (data as { contract: string }).contract;
   } else {
     throw new Error("Failed to generate contract");
   }

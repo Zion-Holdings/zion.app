@@ -12,20 +12,20 @@ axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL || 'https://api.ziontec
 // Global interceptor for all axios instances
 
 // Define the global error handler (exported for testing purposes)
-export const globalAxiosErrorHandler = (error: any) => {
+export const globalAxiosErrorHandler = (error: unknown) => {
   const contentType = typeof error === 'object' && error && 'response' in error && error.response && typeof error.response === 'object' && error.response !== null && 'headers' in error.response ? (error.response as { headers?: Record<string, unknown> }).headers?.['content-type'] : undefined;
   if (typeof contentType === 'string' && contentType.includes('text/html')) {
     showError('html-error', 'Server returned HTML instead of JSON');
   }
 
-  const config = typeof error === 'object' && error && 'config' in error ? (error as { config?: any }).config || {} : {};
-  const axiosRetryState = config && typeof config === 'object' && 'axios-retry' in config ? config['axios-retry'] : undefined;
+  const config = typeof error === 'object' && error && 'config' in error ? (error as { config?: unknown }).config || {} : {};
+  const axiosRetryState = config && typeof config === 'object' && 'axios-retry' in config ? (config as Record<string, unknown>)['axios-retry'] : undefined;
 
-  const isRetryingAndNotFinalConfiguredRetry = axiosRetryState && axiosRetryState.attemptNumber <= axiosRetryState.retryCount;
+  const isRetryingAndNotFinalConfiguredRetry = axiosRetryState && (axiosRetryState as { attemptNumber: number; retryCount: number }).attemptNumber <= (axiosRetryState as { retryCount: number }).retryCount;
 
   const status = typeof error === 'object' && error && 'response' in error && error.response && typeof error.response === 'object' && error.response !== null && 'status' in error.response ? (error.response as { status?: number }).status : undefined;
-  const method = typeof config === 'object' && config !== null && 'method' in config ? (config.method || '').toUpperCase() : '';
-  const url = typeof config === 'object' && config !== null && 'url' in config ? config.url || '' : '';
+  const method = typeof config === 'object' && config !== null && 'method' in config ? ((config as Record<string, unknown>).method || '').toString().toUpperCase() : '';
+  const url = typeof config === 'object' && config !== null && 'url' in config && typeof (config as Record<string, unknown>).url === 'string' ? (config as Record<string, unknown>).url : '';
 
   // Handle DELETE 404 as success (item already removed)
   if (status === 404 && method === 'DELETE') {
@@ -143,7 +143,7 @@ axiosRetry(apiClient, {
 
 apiClient.interceptors.response.use(
   (response: AxiosResponse) => response,
-  async (error: any) => {
+  async (error: unknown) => {
     const status = typeof error === 'object' && error && 'response' in error && error.response && typeof error.response === 'object' && error.response !== null && 'status' in error.response ? (error.response as { status?: number }).status : undefined;
 
     if (status === 401) {

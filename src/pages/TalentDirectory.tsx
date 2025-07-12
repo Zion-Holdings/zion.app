@@ -389,3 +389,5 @@ export default function TalentDirectory() {
     </div>
   );
 }
+
+TalentDirectory.displayName = 'TalentDirectory';

@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
+import { logError } from '@/utils/productionLogger';
 import { 
   Menu, 
   X, 
@@ -54,7 +55,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
       await logout();
       router.push('/');
     } catch (error) {
-      console.error('Logout failed:', error);
+      logError('Logout failed:', error);
     }
   };
 

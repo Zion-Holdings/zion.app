@@ -1,11 +1,13 @@
 // Common TypeScript interfaces to replace 'any' types throughout the application
 
+// Avoid using 'any' for index signatures. Use 'unknown' or a more specific type if possible.
 export interface ApiResponse<T = unknown> {
   success: boolean;
   data?: T;
   error?: string;
   message?: string;
   code?: string | number;
+  // [key: string]: unknown; // Avoid 'any' for extensibility
 }
 
 export interface ErrorResponse {

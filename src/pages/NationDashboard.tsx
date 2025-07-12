@@ -19,3 +19,5 @@ export default function NationDashboard() {
     </div>
   );
 }
+
+NationDashboard.displayName = 'NationDashboard';

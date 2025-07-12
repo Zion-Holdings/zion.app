@@ -90,7 +90,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
   // Validate input
   const result = schema.safeParse(req.body);
   if (!result.success) {
-    const errorMessage = result.error.errors[0]?.message || 'Invalid input';
+    const errorMessage = result.error.issues[0]?.message || 'Invalid input';
     res.status(400).json({ 
       error: errorMessage,
       message: errorMessage

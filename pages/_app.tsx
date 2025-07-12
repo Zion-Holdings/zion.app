@@ -1,9 +1,11 @@
 // CRITICAL: Import immediate process polyfill FIRST to prevent process.env errors
 import '../src/utils/immediate-process-polyfill';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
+
 
 // CRITICAL: Runtime check - polyfills should be loaded from document script and webpack banner
 if (typeof process !== 'undefined' && process.env?.NODE_ENV === 'development') {
-  // console.log('🚨 APP.TSX RUNTIME CHECK - Polyfills should be active');
+  // logInfo('🚨 APP.TSX RUNTIME CHECK - Polyfills should be active');
 }
 
 // Enhanced error logging - import early for comprehensive coverage
@@ -13,7 +15,7 @@ import _enhancedErrorLogger from '../src/utils/enhanced-error-logger';
 if (typeof window !== 'undefined') {
   window.addEventListener('unhandledrejection', (event) => {
     if (event.reason?.message?.includes('getInitialProps')) {
-      console.error('Component loading error caught:', event.reason);
+      logErrorToProduction('Component loading error caught: ' + String(event.reason));
       event.preventDefault(); // Prevent the error from crashing the app
     }
   });
@@ -21,7 +23,7 @@ if (typeof window !== 'undefined') {
   // Additional error handling for process.env errors
   window.addEventListener('error', (event) => {
     if (event.message?.includes('Cannot read properties of undefined')) {
-      console.error('Runtime error caught:', event.error);
+      logErrorToProduction('Runtime error caught: ' + String(event.error));
       event.preventDefault();
     }
   });
@@ -33,21 +35,21 @@ if (typeof window !== 'undefined') {
     
     // Handle getInitialProps errors
     if (errorMessage.includes('getInitialProps') || errorMessage.includes('Cannot read properties of undefined (reading \'getInitialProps\')')) {
-      console.error('getInitialProps error caught:', event.error);
+      logErrorToProduction('getInitialProps error caught: ' + String(event.error));
       event.preventDefault();
       return;
     }
     
     // Handle http/https errors
     if (errorMessage.includes('http is not defined') || errorMessage.includes('https is not defined')) {
-      console.error('HTTP/HTTPS error caught:', event.error);
+      logErrorToProduction('HTTP/HTTPS error caught: ' + String(event.error));
       event.preventDefault();
       return;
     }
     
     // Handle TypeScript helper errors
     if (errorMessage.includes('__extends') || errorMessage.includes('__assign') || errorMessage.includes('Cannot destructure property')) {
-      console.error('TypeScript helper error caught:', event.error);
+      logErrorToProduction('TypeScript helper error caught: ' + String(event.error));
       event.preventDefault();
       return;
     }
@@ -60,14 +62,14 @@ if (typeof window !== 'undefined') {
     
     // Handle getInitialProps promise rejections
     if (message.includes('getInitialProps') || message.includes('Cannot read properties of undefined (reading \'getInitialProps\')')) {
-      console.error('getInitialProps promise rejection caught:', reason);
+      logErrorToProduction('getInitialProps promise rejection caught: ' + String(reason));
       event.preventDefault();
       return;
     }
     
     // Handle component loading errors
     if (message.includes('Failed to load component') || message.includes('Invalid component')) {
-      console.error('Component loading promise rejection caught:', reason);
+      logErrorToProduction('Component loading promise rejection caught: ' + String(reason));
       event.preventDefault();
       return;
     }
@@ -82,7 +84,7 @@ if (typeof window !== 'undefined') {
           (el) => !['SCRIPT', 'STYLE', 'LINK'].includes(el.tagName)
         );
         if (!hasVisible && root.innerText.trim() === '') {
-          console.error('Blank screen detected - attempting recovery');
+          logErrorToProduction('Blank screen detected - attempting recovery');
           // Show a basic fallback with additional instructions
           root.innerHTML = `
           <div style="padding: 2rem; text-align: center; font-family: sans-serif; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
@@ -110,6 +112,7 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
 import { AuthProvider } from '@/context/auth/AuthProvider';
 import { CartProvider } from '@/context/CartContext';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
@@ -123,7 +126,7 @@ const Toaster = dynamic(
       const mod = await import('sonner');
       return mod.Toaster;
     } catch (err) {
-      console.warn('Toaster dependency missing:', err);
+      logWarn('Toaster dependency missing:', { error: err });
       return () => null;
     }
   },
@@ -155,7 +158,7 @@ const ErrorBoundary: React.FC<{ children: React.ReactNode; name: string }> = ({ 
 
   React.useEffect(() => {
     const handleError = (event: ErrorEvent) => {
-      console.error(`Error in ${name}:`, event.error);
+      logErrorToProduction(`Error in ${name}: ` + String(event.error));
       setError(event.error);
       setHasError(true);
     };
@@ -251,7 +254,7 @@ export default function App({ Component, pageProps }: AppProps) {
     };
 
     const handleRouteChangeError = () => {
-      console.error('Route change error');
+      logErrorToProduction('Route change error');
     };
 
     // Only add event listeners if router.events exists

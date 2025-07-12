@@ -38,14 +38,21 @@ const productSchema = z.object({
       message: "Price must be a valid number",
     }),
   category: z.string().min(1, "Please select a category"),
-  image: typeof window === 'undefined' ? z.any().optional() : z.instanceof(File).optional(),
-  video: typeof window === 'undefined' ? z.any().optional() : z.instanceof(File).optional(),
-  model: typeof window === 'undefined' ? z.any().optional() : z.instanceof(File).optional(),
+  image: typeof window === 'undefined' ? z.unknown().optional() : z.instanceof(File).optional(),
+  video: typeof window === 'undefined' ? z.unknown().optional() : z.instanceof(File).optional(),
+  model: typeof window === 'undefined' ? z.unknown().optional() : z.instanceof(File).optional(),
   tags: z.string().optional(),
 });
 
 // Type for our form values
 type ProductFormValues = z.infer<typeof productSchema>;
+
+// Define a type for AI-generated content
+interface GeneratedContent {
+  description: string;
+  tags: string[];
+  suggestedPrice: { min: number; max: number };
+}
 
 export function ProductSubmissionForm() {
   const { user } = useAuth();
@@ -97,12 +104,13 @@ export function ProductSubmissionForm() {
   };
 
   // Apply AI-generated content to the form
-  const handleApplyGenerated = (content: any) => {
-    form.setValue("description", content.description);
-    form.setValue("tags", content.tags.join(", "));
+  const handleApplyGenerated = (content: unknown) => {
+    const generated = content as GeneratedContent;
+    form.setValue("description", generated.description);
+    form.setValue("tags", generated.tags.join(", "));
     
     // Set a default price as the middle of the suggested range
-    const averagePrice = ((content.suggestedPrice.min + content.suggestedPrice.max) / 2).toFixed(2);
+    const averagePrice = ((generated.suggestedPrice.min + generated.suggestedPrice.max) / 2).toFixed(2);
     form.setValue("price", averagePrice);
     
     // Switch to the manual tab to show applied content

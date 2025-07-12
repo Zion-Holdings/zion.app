@@ -69,9 +69,12 @@ class _MemoryDatastore {
 // Types for OrbitDB and its stores might be needed from @orbitdb/core if used directly
 // import { LogStore } from '@orbitdb/core';
 
-// TODO: Replace 'unknown' with OrbitDB and Helia types from @orbitdb/core and helia packages in future refactor
-let orbit: /* OrbitDB */ unknown = null; // Replace 'unknown' with OrbitDB type in future
-let heliaNode: /* Helia */ unknown | null = null; // Replace 'unknown' with Helia type in future
+// Placeholder types for OrbitDB and Helia
+type OrbitDB = object;
+type Helia = object;
+
+let orbit: OrbitDB | null = null;
+let heliaNode: Helia | null = null;
 
 // Simplified libp2p options for this Helia instance
 // Depending on use case, might share libp2p from ipfs.ts or have more transports

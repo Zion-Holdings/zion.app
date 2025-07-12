@@ -41,8 +41,6 @@ export function AutocompleteSuggestions({
   highlightedIndex,
   listId
 }: AutocompleteSuggestionsProps) {
-  if (!visible || suggestions.length === 0) return null;
-  
   const listRef = useRef<HTMLUListElement>(null);
   const highlightedItemRef = useRef<HTMLLIElement>(null);
 
@@ -55,6 +53,8 @@ export function AutocompleteSuggestions({
     }
   }, [highlightedIndex]);
 
+  if (!visible || suggestions.length === 0) return null;
+  
   return (
     <div
       className="absolute z-50 top-full left-0 right-0 w-full mt-1 bg-zion-blue-dark border border-zion-blue-light rounded-lg shadow-lg max-h-64 overflow-y-auto search-dropdown"

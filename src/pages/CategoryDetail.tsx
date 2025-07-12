@@ -238,3 +238,5 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
     </>
   );
 }
+
+CategoryDetail.displayName = 'CategoryDetail';

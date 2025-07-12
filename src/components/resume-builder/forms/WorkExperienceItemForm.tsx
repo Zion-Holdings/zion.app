@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 import { Switch } from "@/components/ui/switch";
 import { format } from "date-fns";
 import { CalendarIcon, Loader2 } from 'lucide-react';
+import type { ControllerRenderProps } from 'react-hook-form';
 
 
 import { AIEnhancementButton } from "@/components/ai-enhancement/AIEnhancementButton";
@@ -22,9 +23,7 @@ import { AIEnhancementDialog } from "@/components/ai-enhancement/AIEnhancementDi
 const formSchema = z.object({
   company_name: z.string().min(1, "Company name is required"),
   role_title: z.string().min(1, "Role title is required"),
-  start_date: z.date({
-    required_error: "Start date is required",
-  }),
+  start_date: z.date(),
   end_date: z.date().optional(),
   is_current: z.boolean().optional(), // Make optional, defaultValues will handle initial state
   description: z.string().optional(),
@@ -94,7 +93,7 @@ export function WorkExperienceItemForm({
             <FormField
               control={form.control}
               name="company_name"
-              render={({ field }: { field: any }) => (
+              render={({ field }: { field: ControllerRenderProps<FormValues, 'company_name'> }) => (
                 <FormItem>
                   <FormLabel>Company Name</FormLabel>
                   <FormControl>
@@ -108,7 +107,7 @@ export function WorkExperienceItemForm({
             <FormField
               control={form.control}
               name="role_title"
-              render={({ field }: { field: any }) => (
+              render={({ field }: { field: ControllerRenderProps<FormValues, 'role_title'> }) => (
                 <FormItem>
                   <FormLabel>Role Title</FormLabel>
                   <FormControl>
@@ -124,7 +123,7 @@ export function WorkExperienceItemForm({
             <FormField
               control={form.control}
               name="location"
-              render={({ field }: { field: any }) => (
+              render={({ field }: { field: ControllerRenderProps<FormValues, 'location'> }) => (
                 <FormItem>
                   <FormLabel>Location</FormLabel>
                   <FormControl>
@@ -138,7 +137,7 @@ export function WorkExperienceItemForm({
             <FormField
               control={form.control}
               name="is_current"
-              render={({ field }: { field: any }) => (
+              render={({ field }: { field: ControllerRenderProps<FormValues, 'is_current'> }) => (
                 <FormItem className="flex flex-col">
                   <FormLabel>Current Position</FormLabel>
                   <div className="flex items-center gap-2 h-10">
@@ -162,7 +161,7 @@ export function WorkExperienceItemForm({
             <FormField
               control={form.control}
               name="start_date"
-              render={({ field }: { field: any }) => (
+              render={({ field }: { field: ControllerRenderProps<FormValues, 'start_date'> }) => (
                 <FormItem className="flex flex-col">
                   <FormLabel>Start Date</FormLabel>
                   <Popover>
@@ -205,7 +204,7 @@ export function WorkExperienceItemForm({
               <FormField
                 control={form.control}
                 name="end_date"
-                render={({ field }: { field: any }) => (
+                render={({ field }: { field: ControllerRenderProps<FormValues, 'end_date'> }) => (
                   <FormItem className="flex flex-col">
                     <FormLabel>End Date</FormLabel>
                     <Popover>
@@ -250,7 +249,7 @@ export function WorkExperienceItemForm({
           <FormField
             control={form.control}
             name="description"
-            render={({ field }: { field: any }) => (
+            render={({ field }: { field: ControllerRenderProps<FormValues, 'description'> }) => (
               <FormItem>
                 <div className="flex justify-between items-center">
                   <FormLabel>Description</FormLabel>

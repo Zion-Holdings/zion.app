@@ -2,6 +2,8 @@
 import React, { startTransition, useDeferredValue, memo, useCallback, useMemo } from 'react';
 
 export const React19Optimizations = {
+import { logInfo, logError } from '@/utils/productionLogger';
+
   /**
    * Use React 19's improved startTransition for non-urgent updates
    */
@@ -78,7 +80,7 @@ export const React19Optimizations = {
       }
 
       override componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-        console.error('React 19 Error Boundary:', error, errorInfo);
+        logError('React 19 Error Boundary:', error, errorInfo);
       }
 
       override render() {
@@ -109,7 +111,7 @@ export const React19Optimizations = {
    */
   enableStrictModeOptimizations: () => {
     if (process.env.NODE_ENV === 'development') {
-      // console.log('React 19 Strict Mode optimizations enabled');
+      // logInfo('React 19 Strict Mode optimizations enabled');
     }
   },
 };

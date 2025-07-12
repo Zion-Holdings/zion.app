@@ -154,3 +154,5 @@ export default function TalentProfilePage() {
     </>
   );
 }
+
+TalentProfilePage.displayName = 'TalentProfilePage';

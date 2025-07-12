@@ -29,12 +29,7 @@ interface ChunkInfo {
 export function BundleAnalyzer() {
   const { user } = useAuth();
   const isAdmin = user?.userType === 'admin' || user?.role === 'admin';
-  const isAllowed = process.env.NODE_ENV !== 'production' || isAdmin || localStorage.getItem('bundle-analyzer') === 'true';
-
-  if (!isAllowed) {
-    return null;
-  }
-
+  // Always call hooks at the top
   const [bundleInfo, setBundleInfo] = useState<BundleInfo | null>(null);
   const [chunks, setChunks] = useState<ChunkInfo[]>([]);
   const [isVisible, setIsVisible] = useState(false);
@@ -45,15 +40,16 @@ export function BundleAnalyzer() {
     // Only show in development or when explicitly enabled
     const show =
       process.env.NODE_ENV === 'development' ||
-      localStorage.getItem('bundle-analyzer') === 'true';
-
+      localStorage.getItem('bundle-analyzer') === 'true' ||
+      isAdmin;
     setShouldShow(show);
-
-    if (!show) return;
-
-    setIsVisible(true);
-    collectBundleInfo();
-  }, []);
+    if (show) {
+      setIsVisible(true);
+      collectBundleInfo();
+    } else {
+      setIsVisible(false);
+    }
+  }, [isAdmin]);
 
   const collectBundleInfo = async () => {
     if (typeof window === 'undefined') return;

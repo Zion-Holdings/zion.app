@@ -523,3 +523,5 @@ export default function TalentsPage() {
     </main>
   );
 }
+
+TalentsPage.displayName = 'TalentsPage';

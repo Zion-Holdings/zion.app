@@ -15,6 +15,8 @@ import UserBadges from "@/components/community/UserBadges";
 import ReputationDisplay from "@/components/community/ReputationDisplay";
 
 export default function CommunityProfilePage() {
+import { logError } from '@/utils/productionLogger';
+
   const router = useRouter();
   const userId = router.query.userId as string;
   const [user, setUser] = useState<CommunityUser | null>(null);
@@ -33,7 +35,7 @@ export default function CommunityProfilePage() {
         // setPosts(userPosts); // This line is removed as per the edit hint
         setIsLoading(false);
       } catch (error) {
-        console.error("Error fetching user:", error);
+        logError("Error fetching user:", error);
         setIsLoading(false);
         setUser(null); // Clear user if fetch fails
       }

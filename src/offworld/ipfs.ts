@@ -1,3 +1,5 @@
+import { logInfo, logWarn } from '@/utils/productionLogger';
+
 // Browser-safe IPFS implementation without any libp2p dependencies
 // This version never attempts to load native modules in the browser
 
@@ -19,7 +21,7 @@ const heliaJson = () => ({
 // Browser-safe logging
 function logInfo(message: string) {
   if (!isBuildEnv) {
-    console.warn(`[IPFS] ${message}`);
+    logWarn(`[IPFS] ${message}`);
   }
 }
 
@@ -96,7 +98,7 @@ async function getHelia(): Promise<unknown> {
       if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
         message = (error as { message: string }).message;
       }
-      console.warn('⚠️ Failed to initialize Helia:', message);
+      logWarn('⚠️ Failed to initialize Helia:', message);
       return createHelia(); // Return mock
     }
   }
@@ -106,7 +108,7 @@ async function getHelia(): Promise<unknown> {
 
 export async function saveJSON(data: unknown): Promise<string> {
   if (isBuildEnv || isBrowserEnv) {
-          // console.log('🚫 IPFS saveJSON not available in browser environment');
+          // logInfo('🚫 IPFS saveJSON not available in browser environment');
     return 'mock-cid-' + Date.now();
   }
   
@@ -120,14 +122,14 @@ export async function saveJSON(data: unknown): Promise<string> {
     if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
       message = (error as { message: string }).message;
     }
-    console.warn('⚠️ Failed to save JSON to IPFS:', message);
+    logWarn('⚠️ Failed to save JSON to IPFS:', message);
     return 'mock-cid-' + Date.now();
   }
 }
 
 export async function fetchJSON(cidString: string): Promise<unknown> {
   if (isBuildEnv || isBrowserEnv) {
-          // console.log('🚫 IPFS fetchJSON not available in browser environment');
+          // logInfo('🚫 IPFS fetchJSON not available in browser environment');
     return { mock: true, cid: cidString };
   }
   
@@ -141,14 +143,14 @@ export async function fetchJSON(cidString: string): Promise<unknown> {
     if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
       message = (error as { message: string }).message;
     }
-    console.warn('⚠️ Failed to fetch JSON from IPFS:', message);
+    logWarn('⚠️ Failed to fetch JSON from IPFS:', message);
     return { mock: true, cid: cidString };
   }
 }
 
 export async function stopIpfsNode(): Promise<void> {
   if (isBuildEnv || isBrowserEnv) {
-          // console.log('🚫 IPFS stopIpfsNode not available in browser environment');
+          // logInfo('🚫 IPFS stopIpfsNode not available in browser environment');
     return;
   }
   
@@ -164,7 +166,7 @@ export async function stopIpfsNode(): Promise<void> {
     if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
       message = (error as { message: string }).message;
     }
-    console.warn('⚠️ Failed to stop IPFS node:', message);
+    logWarn('⚠️ Failed to stop IPFS node:', message);
   }
 }
 

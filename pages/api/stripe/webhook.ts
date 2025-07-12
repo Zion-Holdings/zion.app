@@ -5,6 +5,7 @@ import fs from 'fs';
 import path from 'path';
 import { randomUUID } from 'crypto';
 import {logErrorToProduction} from '@/utils/productionLogger';
+import type { IncomingMessage } from 'http';
 
 export const config = { api: { bodyParser: false } };
 
@@ -21,9 +22,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   const sig = (req.headers as Record<string, string | string[] | undefined>)['stripe-signature'] as string;
-  let event: Stripe.Event;
+  let event: any;
   try {
-    const buf = await buffer(req as unknown as Request);
+    const buf = await buffer(req as unknown as IncomingMessage);
     event = stripe.webhooks.constructEvent(buf.toString(), sig, webhookSecret);
   } catch (err: unknown) {
     logErrorToProduction('Webhook signature verification failed.', { data: err });
@@ -31,8 +32,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   if (event.type === 'checkout.session.completed') {
-    const session = event.data.object as Stripe.Checkout.Session;
-    const orderId = session.metadata?.orderId;
+    const session = (event as any).data.object as any;
+    const metadata = session.metadata ?? {};
+    const orderId = metadata.orderId;
     if (orderId) {
       try {
         const file = path.join(process.cwd(), 'data', 'orders.json');
@@ -42,7 +44,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           status: string;
         }>;
         const idx = orders.findIndex(o => o.id === orderId);
-        if (idx !== -1) {
+        if (idx !== -1 && orders[idx]) {
           orders[idx].status = 'paid';
           fs.writeFileSync(file, JSON.stringify(orders, null, 2));
         }
@@ -50,9 +52,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         logErrorToProduction('Failed to update order', { data: err });
       }
     }
-    const userId = session.metadata?.userId;
+    const userId = metadata.userId;
     if (userId) {
-      const points = Math.floor(((session.amount_total || 0) / 10000)) * 10;
+      const points = Math.floor(((session.amount_total ?? 0) / 10000)) * 10;
       if (points > 0) {
         const file = path.join(process.cwd(), 'data', 'points.json');
         let ledger: Array<{

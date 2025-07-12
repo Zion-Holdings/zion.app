@@ -1,5 +1,5 @@
 import type { ProductListing } from '@/types/listings';
-import { MARKETPLACE_LISTINGS as _MARKETPLACE_LISTINGS } from '@/data/marketplace';
+import { MARKETPLACE_LISTINGS as _MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 

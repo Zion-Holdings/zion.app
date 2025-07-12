@@ -8,8 +8,11 @@ export interface SignupPayload {
   name?: string;
 }
 
-// TODO: Define the actual session structure if possible
-export interface SignupSession {
+// Session structure for signup API
+export interface Session {
+  id: string;
+  email: string;
+  token: string;
   [key: string]: unknown;
 }
 
@@ -20,7 +23,7 @@ export interface SignupApiResponse {
     email: string;
     display_name?: string;
   };
-  session?: SignupSession;
+  session?: Session;
   emailVerificationRequired?: boolean;
 }
 

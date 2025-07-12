@@ -39,19 +39,19 @@ export function useResumeList() {
       }
       
       // Transform data to match Resume type
-      const transformedResumes: ResumeBasicInfo[] = resumeData.map((resume: any) => ({
-        id: resume.id,
-        user_id: resume.user_id,
-        title: resume.title,
-        headline: resume.headline,
-        summary: resume.summary
+      const transformedResumes: ResumeBasicInfo[] = resumeData.map((resume: Record<string, unknown>) => ({
+        id: resume.id as string,
+        user_id: resume.user_id as string,
+        title: resume.title as string,
+        headline: resume.headline as string,
+        summary: resume.summary as string
       }));
       
       setResumes(transformedResumes);
       return transformedResumes;
-    } catch (e: any) {
+    } catch (e: unknown) {
       logErrorToProduction('Error fetching resumes:', { data:  e });
-      setError(e.message);
+      setError(e instanceof Error ? e.message : String(e));
       return [];
     } finally {
       setIsLoading(false);

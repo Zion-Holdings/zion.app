@@ -59,7 +59,8 @@ export function setupRouterErrorHandlers(router: NextRouter) {
   };
 
   // Handle router errors
-  // TODO: Use a more specific type if Next.js exposes a type for route change errors
+  // Use a more specific type for route change errors
+  // Type: Error | { cancelled?: boolean; message?: string }
   const routeChangeErrorHandler = (err: any, url: string) => {
     logErrorToProduction('Route change error', err, { url });
     handleRouterError(err as Error, router);

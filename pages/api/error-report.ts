@@ -1,6 +1,8 @@
 // API endpoint for enhanced error reporting
 import type { NextApiRequest, NextApiResponse } from 'next';
 import type { EnhancedError } from '@/utils/enhanced-error-logger';
+import { logInfo, logError } from '@/utils/productionLogger';
+
 
 interface ErrorReportRequest extends NextApiRequest {
   body: {
@@ -36,15 +38,15 @@ export default async function handler(
     if (process.env['NODE_ENV'] === 'development') {
       // Log breadcrumbs for context
       if (breadcrumbs && breadcrumbs.length > 0) {
-        // console.log('📋 Error Breadcrumbs:');
+        // logInfo('📋 Error Breadcrumbs:');
         breadcrumbs.forEach((_breadcrumb, _index) => {
-          // console.log(`  ${index + 1}. [${breadcrumb.level}] ${breadcrumb.category}: ${breadcrumb.message}`);
+          // logInfo(`  ${index + 1}. [${breadcrumb.level}] ${breadcrumb.category}: ${breadcrumb.message}`);
         });
       }
 
       // Log stack trace for critical errors
       if (error.severity === 'critical' && error.stack) {
-        // console.log('🔍 Stack Trace:', error.stack);
+        // logInfo('🔍 Stack Trace:', error.stack);
       }
     }
 
@@ -54,7 +56,7 @@ export default async function handler(
       // 1. Send to error tracking service (Sentry, Bugsnag, etc.)
       // 2. Send Slack/email notifications
       // 3. Create incident tickets
-      // console.error('🔥 CRITICAL ERROR DETECTED:', error.message);
+      // logError('🔥 CRITICAL ERROR DETECTED:', error.message);
     }
 
     // Store error in memory for development (replace with database in production)
@@ -110,7 +112,7 @@ export default async function handler(
     res.status(200).json(response);
 
   } catch (_processingError) {
-    // console.error('Error processing error report:', processingError);
+    // logError('Error processing error report:', processingError);
     res.status(500).json({ 
       error: 'Internal server error',
       message: 'Failed to process error report'

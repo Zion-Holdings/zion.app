@@ -63,3 +63,5 @@ export default function GPTLibraryPage() {
     </>
   );
 }
+
+GPTLibraryPage.displayName = 'GPTLibraryPage';

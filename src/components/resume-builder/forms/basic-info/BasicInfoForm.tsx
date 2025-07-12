@@ -48,7 +48,7 @@ export function BasicInfoForm({
     if (initialData) {
       Object.entries(initialData).forEach(([key, value]) => {
         if (value !== undefined) {
-          form.setValue(key as keyof BasicInfoFormData, value as any);
+          form.setValue(key as keyof BasicInfoFormData, value as BasicInfoFormData[keyof BasicInfoFormData]);
         }
       });
     }
