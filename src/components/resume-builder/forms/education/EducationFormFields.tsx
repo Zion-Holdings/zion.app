@@ -20,8 +20,8 @@ import {
 } from '@/components/ui/form';
 import { useState } from 'react';
 import type { ControllerRenderProps } from 'react-hook-form';
-import type { EducationFormValues } from './types';
 import type { Education } from '@/types/resume';
+import type { EducationFormFieldsProps } from './types';
 
 // Define schema for form validation
 const educationSchema = z.object({
@@ -62,7 +62,13 @@ export function EducationFormFields({
     setIsLoading(true);
     setError(null);
     try {
-      await onSubmit(data);
+      await onSubmit({
+        ...data,
+        field_of_study: data.field_of_study ?? '',
+        end_date: data.end_date ?? '',
+        description: data.description ?? '',
+        location: data.location ?? '',
+      } as Education);
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : String(err));
     } finally {
@@ -144,7 +150,7 @@ export function EducationFormFields({
                 <FormItem className="flex flex-row items-start space-x-3 space-y-0 py-2">
                   <FormControl>
                     <Checkbox
-                      checked={field.value}
+                      checked={!!field.value}
                       onCheckedChange={field.onChange}
                     />
                   </FormControl>
