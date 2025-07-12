@@ -397,18 +397,14 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
               logDebug('AuthProvider: Supabase authentication successful');
       // The onAuthStateChange event should now trigger automatically
       return { error: null }; // Successful login
-    } catch (error: any) {
+    } catch (error: unknown) {
+      const errorMessage = (error instanceof Error && error.message) ? error.message : "An unexpected error occurred during login. Please try again.";
       logErrorToProduction('[AuthProvider] login function error', error, { context: 'Login Exception' });
-      
-      // Handle unexpected errors with a fallback message
-      const errorMessage = error.message || "An unexpected error occurred during login. Please try again.";
-      
       toast({
         title: "Login Failed",
         description: errorMessage,
         variant: "destructive",
       });
-      
       setIsLoading(false);
       return { error: errorMessage };
     }
@@ -457,15 +453,16 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         emailVerificationRequired: data.emailVerificationRequired || true,
         user: data.user 
       };
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const errorMessage = (err instanceof Error && err.message) ? err.message : "An unexpected error occurred during signup.";
       logErrorToProduction('Signup exception:', { data: err });
       toast({
         title: "Signup Failed",
-        description: err.message || "An unexpected error occurred during signup.",
+        description: errorMessage,
         variant: "destructive",
       });
       setIsLoading(false);
-      return { error: err.message || "Signup failed", emailVerificationRequired: false };
+      return { error: errorMessage, emailVerificationRequired: false };
     }
   };
 
