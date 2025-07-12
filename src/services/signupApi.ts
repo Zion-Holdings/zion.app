@@ -23,7 +23,7 @@ export interface SignupApiResponse {
     email: string;
     display_name?: string;
   };
-  session?: SignupSession;
+  session?: Session;
   emailVerificationRequired?: boolean;
 }
 

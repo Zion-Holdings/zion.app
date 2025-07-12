@@ -1,12 +1,13 @@
 import { PrismaClient, Prisma as _Prisma } from '@prisma/client';
 import { logInfo, logErrorToProduction, logDebug } from '@/utils/productionLogger';
+import type { Prisma } from '@prisma/client';
 
 // Global Prisma instance for connection reuse
 let prisma: PrismaClient | null = null;
 
 // Minimal type for database options
 interface DatabaseOptions {
-  log: string[];
+  log: (Prisma.LogLevel | Prisma.LogDefinition)[];
   datasources: {
     db: {
       url: string;
@@ -15,7 +16,7 @@ interface DatabaseOptions {
 }
 
 const DB_OPTIONS: DatabaseOptions = {
-  log: process.env.NODE_ENV === 'development' ? ['error', 'warn'] : ['error'],
+  log: process.env.NODE_ENV === 'development' ? ['error', 'warn'] as Prisma.LogLevel[] : ['error'] as Prisma.LogLevel[],
   datasources: {
     db: {
       url: process.env.DATABASE_URL || '',
