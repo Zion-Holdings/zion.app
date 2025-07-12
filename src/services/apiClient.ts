@@ -86,7 +86,7 @@ export const globalAxiosErrorHandler = (error: unknown) => {
   };
 
   // Only show error toast if it's a user-facing error
-  if (typeof status === 'number' && shouldShowErrorToUser(status, method, url)) {
+  if (typeof status === 'number' && shouldShowErrorToUser(status, method, typeof url === 'string' ? url : '')) {
     showApiError(error);
   } else {
     // Log background errors without showing toast
