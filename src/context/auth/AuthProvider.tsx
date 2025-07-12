@@ -76,148 +76,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     logInfo('[AuthProvider] Initializing...');
   }
 
-  // Use fallback context if Supabase is not configured
-  if (!isSupabaseConfigured) {
-    logWarn('[AuthProvider] Supabase not configured - using fallback auth state');
-    return (
-      <AuthContext.Provider value={fallbackContext}>
-        {children}
-      </AuthContext.Provider>
-    );
-  }
-  
-  // Wrapper for login to match the AuthContextType interface
-  const login = async (
-    email: string,
-    password: string,
-    rememberMe = false
-  ) => {
-    setIsLoading(true); // Set loading true at the start of login attempt
-    try {
-      // Production/Supabase mode - attempt to sign in with Supabase
-      let supabaseError;
-      if (supabase) {
-        ({ error: supabaseError } = await supabase.auth.signInWithPassword({
-          email,
-          password,
-        }));
-      } else {
-        supabaseError = { message: 'Supabase client not initialized.' };
-      }
-
-      if (supabaseError) {
-        logErrorToProduction("AuthProvider: Supabase authentication failed", supabaseError, { context: 'Supabase Auth Login' });
-        
-        // Provide specific error messages based on error code
-        let errorMessage = "Authentication failed. Please try again.";
-        let toastTitle = "Authentication Error";
-        
-        if (supabaseError.message || (supabaseError as any).code) { // Check code as well
-          const messageIncludesEmailNotConfirmed = supabaseError.message?.toLowerCase().includes("email not confirmed") ||
-                                                 supabaseError.message?.toLowerCase().includes("email address is not confirmed");
-          const codeIsEmailNotVerified = (supabaseError as any).code === 'email_not_verified';
-
-          if (messageIncludesEmailNotConfirmed || codeIsEmailNotVerified) {
-            errorMessage = "Your email address needs to be verified. Please check your inbox for a verification link and click it to activate your account.";
-            toastTitle = "Email Verification Required";
-          } else if (supabaseError.message?.toLowerCase().includes("invalid login credentials") ||
-                     supabaseError.message?.toLowerCase().includes("invalid credentials")) {
-            errorMessage = "Invalid email or password. Please check your credentials and try again.";
-            toastTitle = "Invalid Credentials";
-          } else if (supabaseError.message?.toLowerCase().includes("too many requests")) {
-            errorMessage = "Too many login attempts. Please wait a moment before trying again.";
-            toastTitle = "Rate Limited";
-          } else {
-            errorMessage = supabaseError.message || "An unknown authentication error occurred.";
-          }
-        }
-        
-        // Show specific toast based on error type
-        toast({
-          title: toastTitle,
-          description: errorMessage,
-          variant: "destructive",
-        });
-        
-        setIsLoading(false);
-        return { error: errorMessage };
-      }
-
-              logDebug('AuthProvider: Supabase authentication successful');
-      // The onAuthStateChange event should now trigger automatically
-      return { error: null }; // Successful login
-    } catch (error: any) {
-      logErrorToProduction('[AuthProvider] login function error', error, { context: 'Login Exception' });
-      
-      // Handle unexpected errors with a fallback message
-      const errorMessage = error.message || "An unexpected error occurred during login. Please try again.";
-      
-      toast({
-        title: "Login Failed",
-        description: errorMessage,
-        variant: "destructive",
-      });
-      
-      setIsLoading(false);
-      return { error: errorMessage };
-    }
-  };
-
-  // Refactored signup method to use Auth0 API
-  const signup = async (email: string, password: string, userData: Partial<UserDetails> = {}) => {
-    setIsLoading(true);
-    try {
-      const { name = '' } = userData;
-      
-      // Use Auth0 API via our register endpoint instead of Supabase
-      const response = await fetch('/api/auth/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          password,
-          ...userData
-        }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        logErrorToProduction('Auth0 signup error:', { data: data });
-        toast({
-          title: "Signup Failed",
-          description: data.error || data.message || "An unexpected error occurred during signup.",
-          variant: "destructive",
-        });
-        setIsLoading(false);
-        return { error: data.error || data.message || "Signup failed", emailVerificationRequired: false };
-      }
-
-      toast({
-        title: "Signup Successful",
-        description: data.message || "Please check your email to verify your account.",
-      });
-      setIsLoading(false);
-      return { 
-        error: null, 
-        emailVerificationRequired: data.emailVerificationRequired || true,
-        user: data.user 
-      };
-    } catch (err: any) {
-      logErrorToProduction('Signup exception:', { data: err });
-      toast({
-        title: "Signup Failed",
-        description: err.message || "An unexpected error occurred during signup.",
-        variant: "destructive",
-      });
-      setIsLoading(false);
-      return { error: err.message || "Signup failed", emailVerificationRequired: false };
-    }
-  };
-
   useEffect(() => {
     if (process.env.NODE_ENV === 'development') {
       logInfo('[App] MyApp main useEffect hook started.');
@@ -469,6 +327,147 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       subscription.unsubscribe();
     };
   }, [router, dispatch, handleSignedIn, handleSignedOut, setOnboardingStep, setUser, setAvatarUrl, setTokens, isLoading]); // Added router and other dependencies
+
+  if (!isSupabaseConfigured) {
+    logWarn('[AuthProvider] Supabase not configured - using fallback auth state');
+    return (
+      <AuthContext.Provider value={fallbackContext}>
+        {children}
+      </AuthContext.Provider>
+    );
+  }
+  
+  // Wrapper for login to match the AuthContextType interface
+  const login = async (
+    email: string,
+    password: string,
+    rememberMe = false
+  ) => {
+    setIsLoading(true); // Set loading true at the start of login attempt
+    try {
+      // Production/Supabase mode - attempt to sign in with Supabase
+      let supabaseError;
+      if (supabase) {
+        ({ error: supabaseError } = await supabase.auth.signInWithPassword({
+          email,
+          password,
+        }));
+      } else {
+        supabaseError = { message: 'Supabase client not initialized.' };
+      }
+
+      if (supabaseError) {
+        logErrorToProduction("AuthProvider: Supabase authentication failed", supabaseError, { context: 'Supabase Auth Login' });
+        
+        // Provide specific error messages based on error code
+        let errorMessage = "Authentication failed. Please try again.";
+        let toastTitle = "Authentication Error";
+        
+        if (supabaseError.message || (supabaseError as any).code) { // Check code as well
+          const messageIncludesEmailNotConfirmed = supabaseError.message?.toLowerCase().includes("email not confirmed") ||
+                                                 supabaseError.message?.toLowerCase().includes("email address is not confirmed");
+          const codeIsEmailNotVerified = (supabaseError as any).code === 'email_not_verified';
+
+          if (messageIncludesEmailNotConfirmed || codeIsEmailNotVerified) {
+            errorMessage = "Your email address needs to be verified. Please check your inbox for a verification link and click it to activate your account.";
+            toastTitle = "Email Verification Required";
+          } else if (supabaseError.message?.toLowerCase().includes("invalid login credentials") ||
+                     supabaseError.message?.toLowerCase().includes("invalid credentials")) {
+            errorMessage = "Invalid email or password. Please check your credentials and try again.";
+            toastTitle = "Invalid Credentials";
+          } else if (supabaseError.message?.toLowerCase().includes("too many requests")) {
+            errorMessage = "Too many login attempts. Please wait a moment before trying again.";
+            toastTitle = "Rate Limited";
+          } else {
+            errorMessage = supabaseError.message || "An unknown authentication error occurred.";
+          }
+        }
+        
+        // Show specific toast based on error type
+        toast({
+          title: toastTitle,
+          description: errorMessage,
+          variant: "destructive",
+        });
+        
+        setIsLoading(false);
+        return { error: errorMessage };
+      }
+
+              logDebug('AuthProvider: Supabase authentication successful');
+      // The onAuthStateChange event should now trigger automatically
+      return { error: null }; // Successful login
+    } catch (error: any) {
+      logErrorToProduction('[AuthProvider] login function error', error, { context: 'Login Exception' });
+      
+      // Handle unexpected errors with a fallback message
+      const errorMessage = error.message || "An unexpected error occurred during login. Please try again.";
+      
+      toast({
+        title: "Login Failed",
+        description: errorMessage,
+        variant: "destructive",
+      });
+      
+      setIsLoading(false);
+      return { error: errorMessage };
+    }
+  };
+
+  // Refactored signup method to use Auth0 API
+  const signup = async (email: string, password: string, userData: Partial<UserDetails> = {}) => {
+    setIsLoading(true);
+    try {
+      const { name = '' } = userData;
+      
+      // Use Auth0 API via our register endpoint instead of Supabase
+      const response = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+          ...userData
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        logErrorToProduction('Auth0 signup error:', { data: data });
+        toast({
+          title: "Signup Failed",
+          description: data.error || data.message || "An unexpected error occurred during signup.",
+          variant: "destructive",
+        });
+        setIsLoading(false);
+        return { error: data.error || data.message || "Signup failed", emailVerificationRequired: false };
+      }
+
+      toast({
+        title: "Signup Successful",
+        description: data.message || "Please check your email to verify your account.",
+      });
+      setIsLoading(false);
+      return { 
+        error: null, 
+        emailVerificationRequired: data.emailVerificationRequired || true,
+        user: data.user 
+      };
+    } catch (err: any) {
+      logErrorToProduction('Signup exception:', { data: err });
+      toast({
+        title: "Signup Failed",
+        description: err.message || "An unexpected error occurred during signup.",
+        variant: "destructive",
+      });
+      setIsLoading(false);
+      return { error: err.message || "Signup failed", emailVerificationRequired: false };
+    }
+  };
 
   const authContextValue: AuthContextType = {
     user,
