@@ -57,13 +57,6 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
   const router = useRouter();
   const { user } = useAuth();
 
-  // Track page views when location changes
-  useEffect(() => {
-    trackEvent('page_view', { path: router.pathname });
-    setPageViews((prev) => prev + 1);
-     
-  }, [router.pathname]);
-
   // Function to track general analytics events
   const trackEvent = async (type: AnalyticsEventType, metadata: Record<string, unknown> = {}) => {
     const event: AnalyticsEvent = {
@@ -112,6 +105,12 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
     setEvents([]);
     setLastEvent(null);
   };
+
+  // Track page views when location changes
+  useEffect(() => {
+    trackEvent('page_view', { path: router.pathname });
+    setPageViews((prev) => prev + 1);
+  }, [router.pathname, trackEvent]);
 
   return (
     <AnalyticsContext.Provider
