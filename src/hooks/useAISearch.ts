@@ -33,8 +33,8 @@ export function useAISearch() {
         body: JSON.stringify({ query }),
       }
     );
-    const data = await response.json();
-      const filters: SearchFilters = data.filters || {};
+    const data: unknown = await response.json();
+      const filters: SearchFilters = (data as { filters?: SearchFilters }).filters || {};
 
       const items: SearchResult[] = [];
       const matchSkill = (skills: string[] | undefined) => {

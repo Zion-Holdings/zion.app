@@ -7,8 +7,8 @@
 
 // Remove any 'var process' block
 // Only polyfill process on globalThis if it does not exist
-if (typeof globalThis !== 'undefined' && typeof (globalThis as any).process === 'undefined') {
-  (globalThis as any).process = {
+if (typeof globalThis !== 'undefined' && typeof (globalThis as unknown as { process?: unknown }).process === 'undefined') {
+  (globalThis as unknown as { process?: unknown }).process = {
     env: {
       NODE_ENV: 'production', // Default to production for safety
       NEXT_PUBLIC_APP_URL: '',
@@ -42,16 +42,24 @@ if (typeof globalThis !== 'undefined' && typeof (globalThis as any).process === 
 
 // Export a safe environment accessor
 export const safeEnv = {
-  NODE_ENV: (typeof (globalThis as any).process !== 'undefined' && (globalThis as any).process.env?.NODE_ENV) || 'production',
-  NEXT_PUBLIC_APP_URL: (typeof (globalThis as any).process !== 'undefined' && (globalThis as any).process.env?.NEXT_PUBLIC_APP_URL) || '',
-  NEXT_PUBLIC_SUPABASE_URL: (typeof (globalThis as any).process !== 'undefined' && (globalThis as any).process.env?.NEXT_PUBLIC_SUPABASE_URL) || '',
-  NEXT_PUBLIC_SUPABASE_ANON_KEY: (typeof (globalThis as any).process !== 'undefined' && (globalThis as any).process.env?.NEXT_PUBLIC_SUPABASE_ANON_KEY) || '',
+  NODE_ENV: (typeof (globalThis as unknown as { process?: unknown }).process !== 'undefined' && typeof (globalThis as unknown as { process?: { env?: { NODE_ENV?: string } } }).process?.env?.NODE_ENV === 'string'
+    ? (globalThis as unknown as { process?: { env?: { NODE_ENV?: string } } }).process?.env?.NODE_ENV
+    : 'production'),
+  NEXT_PUBLIC_APP_URL: (typeof (globalThis as unknown as { process?: unknown }).process !== 'undefined' && typeof (globalThis as unknown as { process?: { env?: { NEXT_PUBLIC_APP_URL?: string } } }).process?.env?.NEXT_PUBLIC_APP_URL === 'string'
+    ? (globalThis as unknown as { process?: { env?: { NEXT_PUBLIC_APP_URL?: string } } }).process?.env?.NEXT_PUBLIC_APP_URL
+    : ''),
+  NEXT_PUBLIC_SUPABASE_URL: (typeof (globalThis as unknown as { process?: unknown }).process !== 'undefined' && typeof (globalThis as unknown as { process?: { env?: { NEXT_PUBLIC_SUPABASE_URL?: string } } }).process?.env?.NEXT_PUBLIC_SUPABASE_URL === 'string'
+    ? (globalThis as unknown as { process?: { env?: { NEXT_PUBLIC_SUPABASE_URL?: string } } }).process?.env?.NEXT_PUBLIC_SUPABASE_URL
+    : ''),
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: (typeof (globalThis as unknown as { process?: unknown }).process !== 'undefined' && typeof (globalThis as unknown as { process?: { env?: { NEXT_PUBLIC_SUPABASE_ANON_KEY?: string } } }).process?.env?.NEXT_PUBLIC_SUPABASE_ANON_KEY === 'string'
+    ? (globalThis as unknown as { process?: { env?: { NEXT_PUBLIC_SUPABASE_ANON_KEY?: string } } }).process?.env?.NEXT_PUBLIC_SUPABASE_ANON_KEY
+    : ''),
 } as const;
 
 // Safe environment getter function
 export function getEnv(key: string, defaultValue = ''): string {
-  if (typeof (globalThis as any).process !== 'undefined' && (globalThis as any).process.env && typeof (globalThis as any).process.env[key] === 'string') {
-    return (globalThis as any).process.env[key];
+  if (typeof (globalThis as unknown as { process?: unknown }).process !== 'undefined' && (globalThis as unknown as { process?: { env?: { [key: string]: string } } }).process?.env && typeof (globalThis as unknown as { process?: { env?: { [key: string]: string } } }).process?.env[key] === 'string') {
+    return (globalThis as unknown as { process?: { env?: { [key: string]: string } } }).process?.env[key];
   }
   return defaultValue;
 }
@@ -67,7 +75,7 @@ export function isProduction(): boolean {
 }
 
 // Export the polyfilled process object
-export const processEnv = typeof (globalThis as any).process !== 'undefined' ? (globalThis as any).process.env : {
+export const processEnv = typeof (globalThis as unknown as { process?: unknown }).process !== 'undefined' ? (globalThis as unknown as { process?: { env?: { [key: string]: string } } }).process?.env : {
   NODE_ENV: 'production',
   NEXT_PUBLIC_APP_URL: '',
   NEXT_PUBLIC_SUPABASE_URL: '',
