@@ -81,7 +81,7 @@ export function InterviewRequestForm({ talent, onClose, userDetails }: Interview
         scheduled_date: scheduledDate.toISOString(),
         duration_minutes: durationMinutes,
         ...(values.notes ? { notes: values.notes } : {}),
-        meeting_platform: values.platform as any,
+        meeting_platform: String(values.platform),
         ...(values.meetingLink ? { meeting_link: values.meetingLink } : {}),
         interview_type: "video",
         title: values.title,
