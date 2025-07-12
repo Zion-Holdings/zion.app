@@ -10,7 +10,7 @@ import { Mail as _Mail, Clock as _Clock, RefreshCw as _RefreshCw } from 'lucide-
 import Head from 'next/head';
 import { useSession as _useSession } from 'next-auth/react';
 import { supabase } from '@/utils/supabase/client';
-import { OptimizedImage as _OptimizedImage } from '@/components/OptimizedImage';
+import { OptimizedImage as _OptimizedImage } from '@/components/ui/optimized-image';
 import type { User, AuthChangeEvent, Session as _Session } from '@supabase/supabase-js';
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 import { useTranslation } from 'react-i18next';
@@ -205,7 +205,7 @@ const LoginPage = () => {
 
   const _handleProactiveResendVerification = async (e: FormEvent) => {
     e.preventDefault();
-    if (!proactiveResendEmail) {
+    if (!_proactiveResendEmail) {
       setProactiveResendMessage({ type: 'error', text: 'Please enter your email address.' });
       return;
     }
@@ -216,12 +216,12 @@ const LoginPage = () => {
       const response = await fetch('/api/resend-verification-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: proactiveResendEmail })
+        body: JSON.stringify({ email: _proactiveResendEmail })
       });
 
       const data = await response.json();
       if (response.ok) {
-        setProactiveResendMessage({ type: 'success', text: `Verification email sent to ${proactiveResendEmail}. Please check your inbox (and spam folder).` });
+        setProactiveResendMessage({ type: 'success', text: `Verification email sent to ${_proactiveResendEmail}. Please check your inbox (and spam folder).` });
       } else {
         setProactiveResendMessage({ type: 'error', text: data.message || 'Failed to resend verification email.' });
       }
@@ -319,7 +319,7 @@ const LoginPage = () => {
 
   // Auto-redirect to verification status page for unverified users after showing message
   useEffect(() => {
-    if (isEmailUnverified && verificationEmailSent && email) {
+    if (_isEmailUnverified && _verificationEmailSent && email) {
       const timer = setTimeout(() => {
         router.push(`/verify-status?email=${encodeURIComponent(email)}`);
       }, 3000);
@@ -421,8 +421,8 @@ const LoginPage = () => {
                 />
               </div>
               
-              <Button type="submit" className="w-full" disabled={isLoading || isEmailUnverified}>
-                {isLoading ? 'Signing in...' : isEmailUnverified ? t('auth.email_verification_required') : t('auth.sign_in')}
+              <Button type="submit" className="w-full" disabled={isLoading || _isEmailUnverified}>
+                {isLoading ? 'Signing in...' : _isEmailUnverified ? t('auth.email_verification_required') : t('auth.sign_in')}
               </Button>
             </form>
             
