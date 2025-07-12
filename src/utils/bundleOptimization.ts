@@ -100,11 +100,11 @@ export const monitorBundlePerformance = () => {
     );
 
     if (largeResources.length > 0) {
-      logWarn('Large resources detected:', largeResources.map(r => ({
+      logWarn('Large resources detected:', { resources: largeResources.map(r => ({
         name: r.name,
         size: `${Math.round(r.transferSize / 1024)}KB`,
         loadTime: `${Math.round(r.duration)}ms`
-      })));
+      })) });
     }
   });
 
