@@ -88,7 +88,7 @@ class SystemDiagnostic {
       try {
         require.resolve(dep);
         this.results.dependencies[dep] = { status: 'installed' };
-      } catch (_error) {
+      } catch {
         this.results.dependencies[dep] = { 
           status: 'missing',
           error: 'Module not found' 
@@ -120,7 +120,7 @@ class SystemDiagnostic {
       try {
         await fs.access(file);
         this.results.files[file] = { status: 'exists', required: true };
-      } catch (_error) {
+      } catch {
         this.results.files[file] = { 
           status: 'missing', 
           required: true,
@@ -133,7 +133,7 @@ class SystemDiagnostic {
       try {
         await fs.access(file);
         this.results.files[file] = { status: 'exists', required: false };
-      } catch (_error) {
+      } catch {
         this.results.files[file] = { 
           status: 'missing', 
           required: false 
@@ -152,10 +152,10 @@ class SystemDiagnostic {
       try {
         await this.testSlackWebhook();
         this.results.connections.slack_webhook = { status: 'connected' };
-      } catch (error) {
+      } catch {
         this.results.connections.slack_webhook = { 
           status: 'failed',
-          error: error.message 
+          error: 'Slack webhook test failed' 
         };
       }
     } else {
@@ -169,10 +169,10 @@ class SystemDiagnostic {
       try {
         await this.testCursorAPI();
         this.results.connections.cursor_api = { status: 'connected' };
-      } catch (error) {
+      } catch {
         this.results.connections.cursor_api = { 
           status: 'failed',
-          error: error.message 
+          error: 'Cursor API test failed' 
         };
       }
     } else {
@@ -185,10 +185,10 @@ class SystemDiagnostic {
     try {
       await this.testLocalServer();
       this.results.connections.local_server = { status: 'connected' };
-    } catch (error) {
+    } catch {
       this.results.connections.local_server = { 
         status: 'not_running',
-        error: error.message 
+        error: 'Automation server not running' 
       };
     }
     
@@ -220,7 +220,7 @@ class SystemDiagnostic {
       await axios.get('http://localhost:3001/health', {
         timeout: 3000
       });
-    } catch (error) {
+    } catch {
       throw new Error('Automation server not running');
     }
   }
