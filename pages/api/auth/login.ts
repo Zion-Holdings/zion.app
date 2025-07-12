@@ -2,7 +2,7 @@ import { createClient } from '@supabase/supabase-js';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { ENV_CONFIG } from '@/utils/environmentConfig';
-import { logWarn, logError } from '@/utils/productionLogger';
+import { logInfo, logWarn as _logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 
 // 🔐 SECURITY: Development users from environment variables
@@ -124,14 +124,14 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
     });
     if (error) {
       if (isDevelopment) {
-        logError('🔧 LOGIN TRACE: Supabase authentication error:', error);
+        logErrorToProduction('🔧 LOGIN TRACE: Supabase authentication error:', error);
       }
       res.status(401).json({ error: error.message });
       return;
     }
     if (!data.user) {
       if (isDevelopment) {
-        logError('🔧 LOGIN TRACE: No user data returned from Supabase');
+        logErrorToProduction('🔧 LOGIN TRACE: No user data returned from Supabase');
       }
       res.status(401).json({ error: 'Authentication failed' });
       return;
@@ -147,7 +147,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
     return;
   } catch (error: unknown) {
     if (isDevelopment) {
-      logError('🔧 LOGIN TRACE: Unexpected error during authentication:', error);
+      logErrorToProduction('🔧 LOGIN TRACE: Unexpected error during authentication:', error);
     }
     res.status(500).json({ 
       error: 'Internal server error',
