@@ -4,7 +4,6 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { X } from 'lucide-react';
 
 import { cn } from "@/lib/utils"
-import { logInfo } from '@/utils/productionLogger';
 
 
 const ToastProvider = ToastPrimitives.Provider
@@ -137,7 +136,6 @@ export {
 //     // Accept a loosely typed props object to allow custom fields like `description`
 //     toast: (props: any) => {
 //       // Implementation of toast functionality
-//       logInfo('Toast:', { data:  { data: props } })
 //     },
 //   }
 // }
