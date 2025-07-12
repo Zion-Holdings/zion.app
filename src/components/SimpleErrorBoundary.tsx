@@ -1,5 +1,5 @@
 import React from 'react';
-import { logError } from '@/utils/productionLogger';
+import { logError } from '@/utils/logError';
 
 
 interface ErrorBoundaryState {
@@ -23,7 +23,7 @@ export class SimpleErrorBoundary extends React.Component<ErrorBoundaryProps, Err
   }
 
   override componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    logError('SimpleErrorBoundary caught an error:', error, errorInfo);
+    logError('SimpleErrorBoundary caught an error:', { data: { error, errorInfo } });
   }
 
   retry = () => {
