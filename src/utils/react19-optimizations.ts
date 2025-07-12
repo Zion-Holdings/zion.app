@@ -1,6 +1,6 @@
 // React 19 Optimization Features
 import React, { startTransition, useDeferredValue, memo, useCallback, useMemo } from 'react';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 export const React19Optimizations = {
   /**
@@ -79,7 +79,7 @@ export const React19Optimizations = {
       }
 
       override componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-        logError('React 19 Error Boundary:', error, errorInfo);
+        logErrorToProduction('React 19 Error Boundary:', error);
       }
 
       override render() {
