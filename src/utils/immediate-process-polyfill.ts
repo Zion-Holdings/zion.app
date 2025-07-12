@@ -53,7 +53,7 @@ if (isBrowser && !isNode) {
     cwd: () => '/',
     nextTick: (fn: (...args: unknown[]) => void) => setTimeout(fn, 0),
     exit: (code?: number) => {
-      logWarn('process.exit called with code:', code);
+      logWarn('process.exit called with code:', { code });
     },
     on: () => {},
     once: () => {},
