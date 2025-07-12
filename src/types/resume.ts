@@ -22,7 +22,7 @@ export interface Education {
   id?: string;
   institution: string;
   degree: string;
-  field_of_study?: string;
+  field_of_study: string;
   start_date: Date | string;
   end_date?: Date | string;
   is_current: boolean;

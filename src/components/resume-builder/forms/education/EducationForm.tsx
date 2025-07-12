@@ -28,7 +28,7 @@ export function EducationForm({
     const educationData: Education = {
       institution: data.institution,
       degree: data.degree,
-      field_of_study: data.field_of_study,
+      field_of_study: data.field_of_study ?? '',
       start_date: data.start_date,
       end_date: data.is_current ? undefined : (data.end_date || undefined),
       is_current: data.is_current,
