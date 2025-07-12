@@ -1,7 +1,8 @@
 // API endpoint for performance metrics collection
 import type { NextApiRequest, NextApiResponse } from 'next';
 import type { PerformanceReport } from '@/utils/performance-monitor';
-import { logWarn, logError } from '@/utils/productionLogger';
+import { logWarn } from '@/utils/productionLogger';
+import { logError } from '@/utils/logError';
 
 
 interface PerformanceMetricsRequest extends NextApiRequest {
@@ -32,9 +33,7 @@ export default async function handler(
     // Log critical performance issues
     const poorMetrics = performanceReport.metrics.filter(m => m.rating === 'poor');
     if (poorMetrics.length > 0) {
-      logWarn('⚠️ Poor Performance Metrics Detected:', poorMetrics.map(m => 
-        `${m.name}: ${m.value}ms`
-      ));
+      logWarn('⚠️ Poor Performance Metrics Detected:', { poorMetrics: poorMetrics.map(m => `${m.name}: ${m.value}ms`) });
     }
 
     // In production, you would:
@@ -59,7 +58,7 @@ export default async function handler(
           })
         });
       } catch (analyticsError) {
-        logError('Failed to send to analytics service:', analyticsError);
+        logError('Failed to send to analytics service:', { data: analyticsError });
         // Don't fail the request if analytics fails
       }
     }
@@ -83,7 +82,7 @@ export default async function handler(
     });
 
   } catch (error) {
-    logError('Error processing performance metrics:', error);
+    logError('Error processing performance metrics:', { data: error });
     res.status(500).json({ 
       error: 'Internal server error',
       message: 'Failed to process performance metrics'
