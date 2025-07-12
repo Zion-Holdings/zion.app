@@ -51,9 +51,9 @@ export function useProjects() {
       setProjects(transformedData);
       setError(null);
     } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : String(err);
+      const _message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error fetching projects:', { data: err });
-      setError("Failed to fetch projects: " + message);
+      setError("Failed to fetch projects: " + _message);
       toast.error("Failed to fetch projects");
     } finally {
       setIsLoading(false);
@@ -87,7 +87,7 @@ export function useProjects() {
       
       return transformedProject as Project;
     } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : String(err);
+      const _message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error fetching project:', { data: err });
       toast.error("Failed to fetch project details");
       return null;
@@ -112,7 +112,7 @@ export function useProjects() {
       toast.success(`Project status updated to ${status}`);
       return true;
     } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : String(err);
+      const _message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error updating project status:', { data: err });
       toast.error("Failed to update project status");
       return false;

@@ -60,7 +60,7 @@ serve(async (req) => {
 
     // Log this interaction for analytics (in a real implementation)
     // This would track common questions, successful interactions, etc.
-    console.log('AI chat interaction logged');
+    console.warn('AI Chat function called with messages:', { messageCount: messages.length });
 
     return new Response(JSON.stringify({ message: assistantMessage }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },

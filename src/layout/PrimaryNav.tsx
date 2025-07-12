@@ -67,7 +67,7 @@ export function PrimaryNav() {
           
           {/* Navigation - hidden on mobile and tablets, shown on desktop */}
           <div className="hidden lg:block order-1 flex-shrink-0">
-            <ResponsiveNavigation openLoginModal={(returnToPath) => setLoginOpen(true)} />
+            <ResponsiveNavigation openLoginModal={(_returnToPath) => setLoginOpen(true)} />
           </div>
           
           {/* Actions container with responsive layout */}
@@ -193,7 +193,7 @@ export function PrimaryNav() {
             <MobileMenu
               unreadCount={unreadCount}
               onClose={() => setMobileMenuOpen(false)}
-              openLoginModal={(returnToPath) => setLoginOpen(true)}
+              openLoginModal={(_returnToPath) => setLoginOpen(true)}
             />
           </div>
         </div>

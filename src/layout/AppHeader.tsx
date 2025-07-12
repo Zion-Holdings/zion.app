@@ -26,7 +26,7 @@ export function AppHeader() {
   const [loginOpen, setLoginOpen] = useState(false);
   const isMobile = useIsMobile();
   const { t } = useTranslation();
-  const { user } = useAuth();
+  const _user = useAuth();
   const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
   const router = useRouter();
   const showTagline = router.pathname === '/';
@@ -34,7 +34,7 @@ export function AppHeader() {
   // Messaging context (unread message count)
   const { unreadCount } = useMessaging();
 
-  const openLoginModal = (returnToPath?: string) => {
+  const openLoginModal = (_returnToPath?: string) => {
     // The actual returnToPath is set in the URL by the child components (ResponsiveNavigation, MobileMenu)
     // using router.push with shallow:true before this function is called.
     // This function's main job is just to open the modal.

@@ -1,9 +1,8 @@
 // React 19 Optimization Features
 import React, { startTransition, useDeferredValue, memo, useCallback, useMemo } from 'react';
-
-export const React19Optimizations = {
 import { logInfo, logError } from '@/utils/productionLogger';
 
+export const React19Optimizations = {
   /**
    * Use React 19's improved startTransition for non-urgent updates
    */

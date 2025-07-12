@@ -95,7 +95,7 @@ const analyzeWithOpenAI = async (prompt: string, openaiApiKey: string): Promise<
     }
     
     const analysisText = data.choices[0]?.message?.content || "";
-    console.log("OpenAI analysis result:", analysisText);
+    console.warn("OpenAI analysis result:", analysisText);
     
     // Parse the result
     let classification = "SAFE";
@@ -142,7 +142,7 @@ const updateFraudFlag = async (
     throw new Error(`Error updating fraud flag: ${error.message}`);
   }
   
-  console.log(`Updated fraud flag ${flagId} with classification: ${classification}`);
+  console.warn(`Updated fraud flag ${flagId} with classification: ${classification}`);
 };
 
 // Main request handler
@@ -153,7 +153,7 @@ serve(async (req) => {
   }
 
   try {
-    console.log("Received content analysis request");
+    console.warn("Received content analysis request");
     
     // Initialize services
     const { supabase, openaiApiKey } = initializeServices();
@@ -165,7 +165,7 @@ serve(async (req) => {
     });
     
     const { content, contentType, flagId } = validateRequest(requestData);
-    console.log(`Analyzing ${contentType} content${flagId ? ` for flag ID ${flagId}` : ''}`);
+    console.warn(`Analyzing ${contentType} content${flagId ? ` for flag ID ${flagId}` : ''}`);
     
     // Create prompt and analyze with OpenAI
     const prompt = createAnalysisPrompt(contentType, content);
@@ -183,7 +183,7 @@ serve(async (req) => {
       success: true,
     };
     
-    console.log("Analysis completed successfully:", result);
+    console.warn("Analysis completed successfully:", result);
     return new Response(JSON.stringify(result), { 
       headers: { ...corsHeaders, "Content-Type": "application/json" } 
     });
