@@ -1470,11 +1470,7 @@ const nextConfig = {
       // (Add more cleanup here if needed)
       
       // Deep clone config to ensure no non-cloneable objects are returned
-      function replacer(key, value) {
-        return typeof value === 'bigint' ? value.toString() : value;
-      }
-      // Always use the replacer for JSON.stringify to handle BigInt
-      return JSON.parse(JSON.stringify(config, replacer));
+      return config;
     }
   } : {}),
 
