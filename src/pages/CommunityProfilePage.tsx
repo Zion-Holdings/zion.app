@@ -14,8 +14,8 @@ import PostCard from "@/components/community/PostCard";
 import UserBadges from "@/components/community/UserBadges";
 import ReputationDisplay from "@/components/community/ReputationDisplay";
 
-export default function CommunityProfilePage() {
 import { logError } from '@/utils/productionLogger';
+export default function CommunityProfilePage() {
 
   const router = useRouter();
   const userId = router.query.userId as string;
