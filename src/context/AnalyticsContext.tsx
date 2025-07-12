@@ -31,12 +31,12 @@ export interface AnalyticsEvent {
   elementId?: string;
   timestamp: number;
   userId?: string | null;
-  metadata?: Record<string, any>;
+  metadata?: Record<string, unknown>;
 }
 
 export interface AnalyticsContextType {
-  trackEvent: (type: AnalyticsEventType, metadata?: Record<string, any>) => void;
-  trackConversion: (conversionType: string, value?: number, metadata?: Record<string, any>) => void;
+  trackEvent: (type: AnalyticsEventType, metadata?: Record<string, unknown>) => void;
+  trackConversion: (conversionType: string, value?: number, metadata?: Record<string, unknown>) => void;
   pageViews: number;
   lastEvent: AnalyticsEvent | null;
   events: AnalyticsEvent[];
@@ -65,7 +65,7 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
   }, [router.pathname]);
 
   // Function to track general analytics events
-  const trackEvent = async (type: AnalyticsEventType, metadata: Record<string, any> = {}) => {
+  const trackEvent = async (type: AnalyticsEventType, metadata: Record<string, unknown> = {}) => {
     const event: AnalyticsEvent = {
       type,
       path: router.pathname,
@@ -99,7 +99,7 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
   };
 
   // Function to track conversion events
-  const trackConversion = (conversionType: string, value?: number, metadata: Record<string, any> = {}) => {
+  const trackConversion = (conversionType: string, value?: number, metadata: Record<string, unknown> = {}) => {
     trackEvent('conversion', { 
       conversionType, 
       value, 
