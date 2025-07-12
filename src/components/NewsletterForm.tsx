@@ -3,10 +3,9 @@ import { Input } from "@/components/ui/input";
 import { useState, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { isValidEmail } from "@/utils/email";
+import { logError } from '@/utils/logError';
 
 export function NewsletterForm() {
-import { logError } from '@/utils/productionLogger';
-
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
