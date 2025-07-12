@@ -45,6 +45,7 @@ export interface AvailabilityFilterProps extends FilterComponentProps {
 export interface RegionFilterProps extends FilterComponentProps {
   selectedRegions: string[];
   toggleRegion: (region: string) => void;
+  isMobileFilterOpen?: boolean;
 }
 
 export interface ExperienceFilterProps extends FilterComponentProps {
