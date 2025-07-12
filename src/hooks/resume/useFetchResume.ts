@@ -102,9 +102,10 @@ export function useFetchResume() {
       
       setResume(fullResume);
       return fullResume;
-    } catch (e: any) {
+    } catch (e: unknown) {
       logErrorToProduction('Error fetching resume:', { data:  e });
-      setError(e.message);
+      const errorMessage = (e instanceof Error && e.message) ? e.message : 'Unknown error';
+      setError(errorMessage);
       return null;
     } finally {
       setIsLoading(false);
