@@ -1,4 +1,4 @@
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 // Build Performance Optimizer
 // Analyzes bundle sizes, identifies optimization opportunities, and provides recommendations
@@ -63,7 +63,7 @@ class BuildPerformanceOptimizer {
       return this.performanceMetrics;
       
     } catch (error) {
-      logError('❌ Error during build analysis:', error);
+      logErrorToProduction('❌ Error during build analysis:', error);
       throw error;
     }
   }
@@ -344,7 +344,7 @@ Estimated Gzipped: ${this.formatSize(this.performanceMetrics.totalBundleSize * 0
       // Remove logInfo(`\n📄 Detailed report saved to: ${reportPath}`);
       
     } catch (error) {
-      logError('❌ Analysis failed:', error);
+      logErrorToProduction('❌ Analysis failed:', error);
       process.exit(1);
     }
   }
