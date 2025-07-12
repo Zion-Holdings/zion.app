@@ -38,9 +38,9 @@ const productSchema = z.object({
       message: "Price must be a valid number",
     }),
   category: z.string().min(1, "Please select a category"),
-  image: typeof window === 'undefined' ? z.any().optional() : z.instanceof(File).optional(),
-  video: typeof window === 'undefined' ? z.any().optional() : z.instanceof(File).optional(),
-  model: typeof window === 'undefined' ? z.any().optional() : z.instanceof(File).optional(),
+  image: typeof window === 'undefined' ? z.unknown().optional() : z.instanceof(File).optional(),
+  video: typeof window === 'undefined' ? z.unknown().optional() : z.instanceof(File).optional(),
+  model: typeof window === 'undefined' ? z.unknown().optional() : z.instanceof(File).optional(),
   tags: z.string().optional(),
 });
 
