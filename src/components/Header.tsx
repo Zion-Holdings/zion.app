@@ -55,7 +55,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
       await logout();
       router.push('/');
     } catch (error) {
-      logError('Logout failed:', error);
+      logError('Logout failed:', { data: error as unknown });
     }
   };
 
