@@ -24,7 +24,7 @@ interface SEOProps {
     brand?: string
     sku?: string
   }
-  jsonLd?: Record<string, any>
+  jsonLd?: Record<string, unknown>
   noindex?: boolean
   nofollow?: boolean
   canonical?: string
@@ -128,9 +128,15 @@ export default function AdvancedSEO({
 
     // Custom JSON-LD
     if (jsonLd) {
+      if (typeof jsonLd === 'object' && jsonLd !== null) {
+        return {
+          '@context': 'https://schema.org',
+          ...jsonLd
+        }
+      }
+      // fallback if jsonLd is not an object
       return {
-        '@context': 'https://schema.org',
-        ...jsonLd
+        '@context': 'https://schema.org'
       }
     }
 
