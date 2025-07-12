@@ -59,14 +59,15 @@ export const useProfileManagement = (setIsLoading: (loading: boolean) => void) =
       });
 
       return { success: true };
-    } catch (error: any) {
+    } catch (error: unknown) {
       logErrorToProduction('Profile update error:', { data: error });
+      const errorMessage = (error instanceof Error && error.message) ? error.message : "An unexpected error occurred";
       toast({
         title: "Profile update failed",
-        description: error.message || "An unexpected error occurred",
+        description: errorMessage,
         variant: "destructive",
       });
-      return { error };
+      return { error: errorMessage };
     } finally {
       setIsLoading(false);
     }
