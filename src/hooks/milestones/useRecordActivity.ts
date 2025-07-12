@@ -38,7 +38,7 @@ export const useRecordActivity = () => {
       if (error) throw error;
       
       return data;
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Error recording activity:', { data: err });
       return null;
     }
