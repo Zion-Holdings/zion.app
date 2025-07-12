@@ -1469,11 +1469,8 @@ const nextConfig = {
       // Remove any other known non-serializable properties if present
       // (Add more cleanup here if needed)
       
-      // Deep clone config to ensure no non-cloneable objects are returned
-      function replacer(key, value) {
-        return typeof value === 'bigint' ? value.toString() : value;
-      }
-      return JSON.parse(JSON.stringify(config, replacer));
+      // Return config directly to avoid serialization errors with BigInt
+      return config;
     }
   } : {}),
 
