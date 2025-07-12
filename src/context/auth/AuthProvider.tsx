@@ -363,10 +363,12 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         let errorMessage = "Authentication failed. Please try again.";
         let toastTitle = "Authentication Error";
         
-        if (supabaseError.message || (supabaseError as any).code) { // Check code as well
+        // Use type guard for code
+        const hasCode = (err: unknown): err is { code: string } => typeof err === 'object' && err !== null && 'code' in err && typeof (err as { code: unknown }).code === 'string';
+        if (supabaseError.message || hasCode(supabaseError)) {
           const messageIncludesEmailNotConfirmed = supabaseError.message?.toLowerCase().includes("email not confirmed") ||
                                                  supabaseError.message?.toLowerCase().includes("email address is not confirmed");
-          const codeIsEmailNotVerified = (supabaseError as any).code === 'email_not_verified';
+          const codeIsEmailNotVerified = hasCode(supabaseError) && supabaseError.code === 'email_not_verified';
 
           if (messageIncludesEmailNotConfirmed || codeIsEmailNotVerified) {
             errorMessage = "Your email address needs to be verified. Please check your inbox for a verification link and click it to activate your account.";
