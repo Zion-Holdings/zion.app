@@ -12,11 +12,11 @@ type CarouselOptions = {
   axis?: 'x' | 'y'
   [key: string]: any
 }
-type CarouselPlugin = any
+type CarouselPlugin = unknown;
 
 type CarouselProps = {
   opts?: CarouselOptions
-  plugins?: CarouselPlugin
+  plugins?: CarouselPlugin[]
   orientation?: "horizontal" | "vertical"
   setApi?: (api: CarouselApi) => void
 }
@@ -60,12 +60,13 @@ const Carousel = React.forwardRef<
     },
     ref
   ) => {
+    // Type workaround: cast plugins to 'any[]' to satisfy embla-carousel type
     const [carouselRef, api] = useEmblaCarousel(
       {
         ...(opts || {}),
         axis: orientation === "horizontal" ? "x" : "y",
       },
-      plugins
+      (Array.isArray(plugins) ? plugins : []) as any[]
     )
     const [canScrollPrev, setCanScrollPrev] = React.useState(false)
     const [canScrollNext, setCanScrollNext] = React.useState(false)

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 interface FilterSidebarProps {
   className?: string;
-  filters?: any;
-  onFilterChange?: (filters: any) => void;
+  filters?: Record<string, unknown>;
+  onFilterChange?: (filters: Record<string, unknown>) => void;
 }
 
 export const FilterSidebar: React.FC<FilterSidebarProps> = ({ 
