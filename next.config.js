@@ -608,31 +608,8 @@ const nextConfig = {
           // DefinePlugin for environment variables and TypeScript helpers
           new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
-            'process.env': JSON.stringify({
-              NODE_ENV: process.env.NODE_ENV || 'production',
-              NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || '',
-              NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-              NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
-              NEXT_PUBLIC_SENTRY_DSN: process.env.NEXT_PUBLIC_SENTRY_DSN || '',
-              NEXT_PUBLIC_REOWN_PROJECT_ID: process.env.NEXT_PUBLIC_REOWN_PROJECT_ID || '',
-              NEXT_PUBLIC_DD_CLIENT_TOKEN: process.env.NEXT_PUBLIC_DD_CLIENT_TOKEN || '',
-              NEXT_PUBLIC_LOGROCKET_ID: process.env.NEXT_PUBLIC_LOGROCKET_ID || '',
-              NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '',
-              NEXT_PUBLIC_STRIPE_TEST_MODE: process.env.NEXT_PUBLIC_STRIPE_TEST_MODE || '',
-              NEXT_PUBLIC_INTERCOM_APP_ID: process.env.NEXT_PUBLIC_INTERCOM_APP_ID || '',
-              NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || '',
-              NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || '',
-              NEXT_PUBLIC_STATUS_PAGE_URL: process.env.NEXT_PUBLIC_STATUS_PAGE_URL || '',
-              NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || '',
-              NEXT_PUBLIC_APP_ENV: process.env.NEXT_PUBLIC_APP_ENV || '',
-              NEXT_PUBLIC_APP_VERSION: process.env.NEXT_PUBLIC_APP_VERSION || '',
-              NEXT_PUBLIC_BUILD_TIME: process.env.NEXT_PUBLIC_BUILD_TIME || '',
-              NEXT_PUBLIC_SOCIAL_TWITTER_URL: process.env.NEXT_PUBLIC_SOCIAL_TWITTER_URL || '',
-              NEXT_PUBLIC_SOCIAL_LINKEDIN_URL: process.env.NEXT_PUBLIC_SOCIAL_LINKEDIN_URL || '',
-              NEXT_PUBLIC_SOCIAL_FACEBOOK_URL: process.env.NEXT_PUBLIC_SOCIAL_FACEBOOK_URL || '',
-              NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL: process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL || '',
-              NEXT_PUBLIC_SOCIAL_GITHUB_URL: process.env.NEXT_PUBLIC_SOCIAL_GITHUB_URL || '',
-            }, (key, value) => typeof value === 'bigint' ? value.toString() : value),
+            // Remove the problematic process.env block to avoid BigInt serialization error
+            // 'process.env': JSON.stringify({ ... }),
             // TypeScript helpers
             '__extends': `(function(d, b) { 
               if (typeof b !== "function" && b !== null) 
