@@ -39,9 +39,10 @@ export const useCreateMilestone = (projectId?: string) => {
       toast.success("Milestone created successfully");
       
       return data;
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Error creating milestone:', { data: err });
-      toast.error("Failed to create milestone: " + err.message);
+      const errorMessage = (err instanceof Error && err.message) ? err.message : 'Unknown error';
+      toast.error('Failed to create milestone: ' + errorMessage);
       return null;
     } finally {
       setIsSubmitting(false);
