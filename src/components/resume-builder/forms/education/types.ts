@@ -16,6 +16,6 @@ export interface EducationItemProps {
 
 export interface EducationFormFieldsProps {
   isEditing: boolean;
-  onSubmit: (data: any) => Promise<void>;
+  onSubmit: (data: Education) => Promise<void>;
   onCancel: () => void;
 }

@@ -24,7 +24,7 @@ export function EducationForm({
     return format(dateValue, 'yyyy-MM-dd');
   };
 
-  const handleAddOrUpdate = async (data: any) => {
+  const handleAddOrUpdate = async (data: Education) => {
     const educationData: Education = {
       institution: data.institution,
       degree: data.degree,
