@@ -34,7 +34,7 @@ export function useSkills() {
       if (error) throw error;
       
       return showSuccessToast("Skill added", "Your skill has been added to your resume");
-    } catch (e: any) {
+    } catch (e: unknown) {
       return handleResumeError(e, 'Could not add skill');
     } finally {
       setIsLoading(false);
@@ -60,7 +60,7 @@ export function useSkills() {
       if (error) throw error;
       
       return showSuccessToast("Skill deleted", "Your skill has been removed from your resume");
-    } catch (e: any) {
+    } catch (e: unknown) {
       return handleResumeError(e, 'Could not delete skill');
     } finally {
       setIsLoading(false);
