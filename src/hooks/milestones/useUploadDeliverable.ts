@@ -62,9 +62,10 @@ export const useUploadDeliverable = () => {
       toast.success("Deliverable added successfully");
       
       return newDeliverable;
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Error uploading deliverable:', { data: err });
-      toast.error("Failed to upload deliverable: " + err.message);
+      const errorMessage = (err instanceof Error && err.message) ? err.message : 'Unknown error';
+      toast.error('Failed to upload deliverable: ' + errorMessage);
       return null;
     } finally {
       setIsSubmitting(false);
