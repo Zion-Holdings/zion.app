@@ -1,6 +1,4 @@
 
-import * as React from "react"
-
 // Export all components from the sidebar subcomponents
 export * from "./sidebar-context"
 export * from "./sidebar-trigger"
