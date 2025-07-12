@@ -6,7 +6,7 @@ import React from 'react';
 export const SIDEBAR_REF_TYPE_FIX = true;
 
 // Define a type that makes the ref forwards compatible
-export type ForwardRefComponent<T, P = {}> = React.ForwardRefExoticComponent<React.PropsWithoutRef<P> & React.RefAttributes<T>>;
+export type ForwardRefComponent<T, P = object> = React.ForwardRefExoticComponent<React.PropsWithoutRef<P> & React.RefAttributes<T>>;
 
 // Helper type for component refs
 export type ElementRef<T extends React.ElementType> = React.ComponentPropsWithRef<T>['ref'];
@@ -18,7 +18,7 @@ export type PolymorphicRef<T extends keyof React.JSX.IntrinsicElements | React.C
     : React.Ref<React.ComponentRef<T extends React.ComponentType<any> ? T : never>>;
 
 // Helper for dealing with refs in complex situations
-export type PolymorphicComponentProp<T extends React.ElementType, Props = {}> = 
+export type PolymorphicComponentProp<T extends React.ElementType, Props = object> = 
   React.PropsWithChildren<Props & { as?: T }>;
 
 // Safe ref casting helper type - this is the key to fixing our issues
