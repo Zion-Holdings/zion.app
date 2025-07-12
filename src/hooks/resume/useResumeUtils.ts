@@ -11,11 +11,12 @@ export const formatDateForDB = (date: Date | string | undefined) => {
 };
 
 // Error handling with toast
-export const handleResumeError = (e: any, errorMessage: string) => {
-  logErrorToProduction('Error: ${errorMessage}', { data:  e });
+export const handleResumeError = (e: unknown, errorMessage: string) => {
+  logErrorToProduction(`Error: ${errorMessage}`, { data: e });
+  const message = (e instanceof Error && e.message) ? e.message : 'Unknown error';
   toast({
     title: "Error",
-    description: `${errorMessage}: ${e.message}`,
+    description: `${errorMessage}: ${message}`,
     variant: "destructive"
   });
   return false;

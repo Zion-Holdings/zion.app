@@ -35,7 +35,7 @@ export function useCertifications() {
       if (error) throw error;
       
       return showSuccessToast("Certification added", "Your certification has been added to your resume");
-    } catch (e: any) {
+    } catch (e: unknown) {
       return handleResumeError(e, 'Could not add certification');
     } finally {
       setIsLoading(false);
@@ -67,7 +67,7 @@ export function useCertifications() {
       if (error) throw error;
       
       return showSuccessToast("Certification updated", "Your certification has been updated");
-    } catch (e: any) {
+    } catch (e: unknown) {
       return handleResumeError(e, 'Could not update certification');
     } finally {
       setIsLoading(false);
@@ -92,7 +92,7 @@ export function useCertifications() {
       if (error) throw error;
       
       return showSuccessToast("Certification deleted", "Your certification has been removed from your resume");
-    } catch (e: any) {
+    } catch (e: unknown) {
       return handleResumeError(e, 'Could not delete certification');
     } finally {
       setIsLoading(false);
