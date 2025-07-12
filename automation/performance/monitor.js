@@ -131,7 +131,7 @@ class PerformanceMonitor {
           totalSize += stats.size;
         }
       }
-    } catch (_error) {
+    } catch {
       // Directory might not exist (e.g., not built yet)
       return { total: 0 };
     }
@@ -271,7 +271,7 @@ class PerformanceMonitor {
           }
         }
       }
-    } catch (_error) {
+    } catch {
       // Directory might not exist
     }
     
