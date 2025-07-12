@@ -27,9 +27,10 @@ export const useDeleteMilestone = () => {
       toast.success("Milestone deleted successfully");
       
       return true;
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Error deleting milestone:', { data: err });
-      toast.error("Failed to delete milestone: " + err.message);
+      const errorMessage = (err instanceof Error && err.message) ? err.message : 'Unknown error';
+      toast.error('Failed to delete milestone: ' + errorMessage);
       return false;
     } finally {
       setIsSubmitting(false);
