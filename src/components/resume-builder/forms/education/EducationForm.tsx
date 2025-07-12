@@ -30,7 +30,7 @@ export function EducationForm({
       degree: data.degree,
       field_of_study: data.field_of_study ?? '',
       start_date: data.start_date,
-      end_date: data.is_current ? undefined : (data.end_date || undefined),
+      end_date: data.is_current ? '' : (data.end_date || ''),
       is_current: data.is_current,
       description: data.description,
       location: data.location,
