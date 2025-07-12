@@ -107,7 +107,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
     const subscription = supabase
       ? supabase.auth.onAuthStateChange(
-          async (event: any, session: any) => {
+          async (event: string, session: import('@supabase/supabase-js').Session | null) => {
             clearTimeout(authInitTimer); // Clear the timeout as we received an auth event
             if (process.env.NODE_ENV === 'development') {
                 logDebug('AuthProvider: onAuthStateChange entered', { isLoading, event, sessionExists: !!session });
@@ -153,8 +153,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                             // Check for common indicators of auth failure in Supabase errors
                             // Supabase errors might have a __isAuthError boolean, or specific messages/status codes.
                             // Adjust these checks based on actual Supabase error object structure.
-                            const message = profileError.message?.toLowerCase() || "";
-                            const status = (profileError as any).status; // Supabase errors might not always have a 'status' directly
+                            const message = (profileError as Error | { message?: string }).message?.toLowerCase() || "";
+                            const status = (profileError as { status?: number }).status;
 
                             if (message.includes('jwt') || message.includes('unauthorized') || message.includes('invalid token') || status === 401) {
                                 shouldSignOut = true;
@@ -188,7 +188,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                                 logInfo('[AuthProvider DEBUG] Mapping profile to user. session.user:', { data: { sessionUser: JSON.stringify(session.user, null, 2), profile: JSON.stringify(profile, null, 2) } });
                                 mappedUser = mapProfileToUser(session.user, profile);
                                 logInfo('[AuthProvider DEBUG] Mapped user data:', { data: JSON.stringify(mappedUser, null, 2) });
-                            } catch (mappingError) {
+                            } catch (mappingError: unknown) {
                                 logErrorToProduction('[AuthProvider DEBUG] Error mapping profile to user:', { data: mappingError });
                                 mappedUser = null;
                             }
