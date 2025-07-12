@@ -44,7 +44,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           status: string;
         }>;
         const idx = orders.findIndex(o => o.id === orderId);
-        if (idx !== -1) {
+        if (idx !== -1 && orders[idx]) {
           orders[idx].status = 'paid';
           fs.writeFileSync(file, JSON.stringify(orders, null, 2));
         }
