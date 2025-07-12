@@ -8,9 +8,9 @@ import { Mail as _Mail, Clock as _Clock, RefreshCw as _RefreshCw } from 'lucide-
 
 
 import Head from 'next/head';
-import { useSession } from 'next-auth/react';
+import { useSession as _useSession } from 'next-auth/react';
 import { supabase } from '@/utils/supabase/client';
-import { OptimizedImage } from '@/components/ui/OptimizedImage';
+import { OptimizedImage as _OptimizedImage } from '@/components/OptimizedImage';
 import type { User, AuthChangeEvent, Session } from '@supabase/supabase-js';
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 import { useTranslation } from 'react-i18next';
@@ -28,16 +28,16 @@ const LoginPage = () => {
   const [user, setUser] = useState<User | null>(null);
   const [isCheckingSession, setIsCheckingSession] = useState(true); // For initial session check
   const [sessionChecked, setSessionChecked] = useState(false); // New state: true after initial getSession completes
-  const [sessionCheckTimedOut, setSessionCheckTimedOut] = useState(false);
-  const [isEmailUnverified, setIsEmailUnverified] = useState(false);
-  const [verificationEmailSent, setVerificationEmailSent] = useState(false);
-  const [isResendingVerification, setIsResendingVerification] = useState(false);
+  const [_sessionCheckTimedOut, setSessionCheckTimedOut] = useState(false);
+  const [_isEmailUnverified, setIsEmailUnverified] = useState(false);
+  const [_verificationEmailSent, setVerificationEmailSent] = useState(false);
+  const [_isResendingVerification, setIsResendingVerification] = useState(false);
 
   // States for the new proactive resend form
-  const [showProactiveResendForm, setShowProactiveResendForm] = useState(false);
-  const [proactiveResendEmail, setProactiveResendEmail] = useState('');
-  const [isProactivelyResending, setIsProactivelyResending] = useState(false);
-  const [proactiveResendMessage, setProactiveResendMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [_showProactiveResendForm, setShowProactiveResendForm] = useState(false);
+  const [_proactiveResendEmail, setProactiveResendEmail] = useState('');
+  const [_isProactivelyResending, setIsProactivelyResending] = useState(false);
+  const [_proactiveResendMessage, setProactiveResendMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
   // Using centralized Supabase client (imported at top)
 
@@ -140,7 +140,7 @@ const LoginPage = () => {
       if (router.query.returnTo && typeof router.query.returnTo === 'string') {
         try {
           returnTo = decodeURIComponent(router.query.returnTo);
-        } catch (e) {
+        } catch (_e) {
           logWarn('Failed to decode returnTo parameter:', { data:  { data: router.query.returnTo } });
           returnTo = '/dashboard';
         }
@@ -196,14 +196,14 @@ const LoginPage = () => {
         const data = await response.json();
         setError({ name: 'ResendError', message: data.message || 'Failed to resend verification email' });
       }
-    } catch (err) {
+    } catch (_err) {
       setError({ name: 'NetworkError', message: 'Failed to resend verification email. Please try again.' });
     } finally {
       setIsResendingVerification(false);
     }
   };
 
-  const handleProactiveResendVerification = async (e: FormEvent) => {
+  const _handleProactiveResendVerification = async (e: FormEvent) => {
     e.preventDefault();
     if (!proactiveResendEmail) {
       setProactiveResendMessage({ type: 'error', text: 'Please enter your email address.' });
@@ -225,7 +225,7 @@ const LoginPage = () => {
       } else {
         setProactiveResendMessage({ type: 'error', text: data.message || 'Failed to resend verification email.' });
       }
-    } catch (err) {
+    } catch (_err) {
       setProactiveResendMessage({ type: 'error', text: 'An unexpected error occurred. Please try again.' });
     } finally {
       setIsProactivelyResending(false);
