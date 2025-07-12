@@ -50,7 +50,7 @@ export function AppLoaderProvider({ children }: { children: ReactNode }) {
       hideLoader();
       return response;
     };
-    const onError = (err: any) => {
+    const onError = (err: unknown) => {
       hideLoader();
       setError(err);
       return Promise.reject(err);
