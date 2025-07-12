@@ -23,7 +23,7 @@ interface LoadingState {
 }
 
 interface DynamicLoaderProps {
-  importFn: () => Promise<{ default: ComponentType<any> }>
+  importFn: () => Promise<{ default: ComponentType<unknown> }>
   fallback?: React.ReactNode
   errorFallback?: React.ComponentType<{ error: Error; retry: () => void }>
   loadingComponent?: React.ComponentType
@@ -32,7 +32,7 @@ interface DynamicLoaderProps {
   prefetch?: boolean
   className?: string
   children?: React.ReactNode
-  [key: string]: any
+  [key: string]: unknown
 }
 
 // Enhanced Loading Component
@@ -307,7 +307,7 @@ export const DynamicComponentLoader: React.FC<DynamicLoaderProps> = ({
 }
 
 // HOC for creating dynamic components easily
-export const createDynamicComponent = <T extends ComponentType<any>>(
+export const createDynamicComponent = <T extends ComponentType<unknown>>(
   importFn: () => Promise<{ default: T }>,
   options?: Omit<DynamicLoaderProps, 'importFn' | 'children'>
 ) => {
@@ -315,7 +315,7 @@ export const createDynamicComponent = <T extends ComponentType<any>>(
     <DynamicComponentLoader
       importFn={importFn}
       {...(options || {})}
-      {...(props as any)}
+      {...(typeof props === 'object' && props !== null ? props : {})}
     />
   )
 }

@@ -95,21 +95,21 @@ const tsHelpers = {
     return t;
   },
   
-  __decorate: function (decorators: any[], target: any, key?: string | symbol, desc?: any) {
+  __decorate: function (decorators: unknown[], target: unknown, key?: string | symbol, desc?: unknown) {
     const c = arguments.length;
     let r = c < 3 ? target : desc === null ? (desc = Object.getOwnPropertyDescriptor(target, key!)) : desc;
-    let d: any;
-    if (typeof Reflect === "object" && typeof (Reflect as any).decorate === "function") r = (Reflect as any).decorate(decorators, target, key, desc);
-    else for (let i = decorators.length - 1; i >= 0; i--) if ((d = decorators[i])) r = (c < 3 ? d(r) : c > 3 ? d(target, key!, r) : d(target, key!)) || r;
+    let d: unknown;
+    if (typeof Reflect === "object" && typeof (Reflect as Record<string, unknown>).decorate === "function") r = (Reflect as Record<string, unknown>).decorate(decorators, target, key, desc);
+    else for (let i = decorators.length - 1; i >= 0; i--) if ((d = decorators[i])) r = (c < 3 ? (d as (arg: unknown) => unknown)(r) : c > 3 ? (d as (target: unknown, key: string | symbol, r: unknown) => unknown)(target, key!, r) : (d as (target: unknown, key: string | symbol) => unknown)(target, key!)) || r;
     return c > 3 && r && Object.defineProperty(target, key!, r), r;
   },
   
-  __awaiter: function (thisArg: any, _arguments: any, P: any, generator: any) {
-    function adopt(value: any) { return value instanceof P ? value : new P(function (resolve: any) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve: any, reject: any) {
-      function fulfilled(value: any) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-      function rejected(value: any) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-      function step(result: any) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+  __awaiter: function (thisArg: unknown, _arguments: unknown, P: unknown, generator: unknown) {
+    function adopt(value: unknown) { return value instanceof (P as { new (cb: (resolve: (value: unknown) => void) => void): unknown }) ? value : new (P as { new (cb: (resolve: (value: unknown) => void) => void): unknown })(function (resolve: (value: unknown) => void) { resolve(value); }); }
+    return new ((P as typeof Promise) || (P = Promise))(function (resolve: (value: unknown) => void, reject: (reason?: unknown) => void) {
+      function fulfilled(value: unknown) { try { step((generator as Generator).next(value)); } catch (e) { reject(e); } }
+      function rejected(value: unknown) { try { step((generator as Generator)["throw"](value)); } catch (e) { reject(e); } }
+      function step(result: IteratorResult<unknown>) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
       step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
   }
