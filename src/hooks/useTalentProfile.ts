@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import type { TalentProfile as TalentProfileType } from "@/types/talent";
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
-import type { _ProfileData } from '@/types/profiles';
+import type { ProfileData } from '@/types/profile';
 import { convertProfileToTalentProfile } from "@/utils/profileConverter";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
