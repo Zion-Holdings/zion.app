@@ -70,12 +70,8 @@ class _MemoryDatastore {
 // import { LogStore } from '@orbitdb/core';
 
 // Placeholder types for OrbitDB and Helia
-interface OrbitDB {
-  // Add properties as needed
-}
-interface Helia {
-  // Add properties as needed
-}
+type OrbitDB = object;
+type Helia = object;
 
 let orbit: OrbitDB | null = null;
 let heliaNode: Helia | null = null;
