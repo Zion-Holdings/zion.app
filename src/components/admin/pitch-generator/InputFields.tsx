@@ -16,7 +16,8 @@ const InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
     photos: null as File | null,
   });
 
-  const [errors, setErrors] = useState<any>({});
+  // Replace useState<any> with a safer type for errors
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const [logoPreview, setLogoPreview] = useState<string | null>(null);
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
 
@@ -54,7 +55,8 @@ const InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
   };
 
   const validate = () => {
-    const newErrors: any = {};
+    // Update newErrors to use the same type
+    const newErrors: Record<string, string> = {};
     if (!formData.companyMission) newErrors.companyMission = 'Company mission is required.';
     if (!formData.currentFundingStage) newErrors.currentFundingStage = 'Current funding stage is required.';
     if (!formData.visionGoals) newErrors.visionGoals = 'Vision/goals are required.';
