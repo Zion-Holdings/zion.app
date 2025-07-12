@@ -17,6 +17,11 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 
+// Define a minimal EthereumProvider interface
+interface EthereumProvider {
+  request: (args: { method: string; params?: unknown[] }) => Promise<unknown>;
+}
+
 export function OnChainExport() {
   const [isConnected, setIsConnected] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
@@ -27,7 +32,7 @@ export function OnChainExport() {
   const handleConnectWallet = async () => {
     try {
       // Check if wallet is available
-      const ethereum = (window as any).ethereum;
+      const ethereum = ((window as unknown) as Window & { ethereum?: EthereumProvider }).ethereum;
       if (!ethereum) {
         toast({
           title: "Wallet not detected",
@@ -39,6 +44,14 @@ export function OnChainExport() {
       
       // Request accounts
       const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+      if (!Array.isArray(accounts) || typeof accounts[0] !== 'string') {
+        toast({
+          title: "Wallet Error",
+          description: "Could not retrieve wallet address.",
+          variant: "destructive"
+        });
+        return;
+      }
       const address = accounts[0];
       
       // Sign message to verify ownership
@@ -53,10 +66,11 @@ export function OnChainExport() {
         title: "Wallet connected",
         description: `Wallet ${address.slice(0, 6)}...${address.slice(-4)} connected successfully`,
       });
-    } catch (error: any) {
+    } catch (error: unknown) {
+      const errorMessage = (error instanceof Error && error.message) ? error.message : "Could not connect to wallet";
       toast({
         title: "Connection failed",
-        description: error.message || "Could not connect to wallet",
+        description: errorMessage,
         variant: "destructive"
       });
     }
@@ -75,11 +89,12 @@ export function OnChainExport() {
         title: "Tokens exported",
         description: "Your ZION$ tokens have been exported to your wallet",
       });
-    } catch (error: any) {
+    } catch (error: unknown) {
       setExportStatus('error');
+      const errorMessage = (error instanceof Error && error.message) ? error.message : "Could not export tokens";
       toast({
         title: "Export failed",
-        description: error.message || "Could not export tokens",
+        description: errorMessage,
         variant: "destructive"
       });
     } finally {
