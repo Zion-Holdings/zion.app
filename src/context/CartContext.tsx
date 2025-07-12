@@ -30,22 +30,19 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       case 'ADD_ITEM':
         reduxDispatch(
           addItem({
-            // Assuming action.payload for ADD_ITEM includes id, name, and price
-            id: (action.payload as any).id,
-            title: (action.payload as any).name,
-            price: (action.payload as any).price,
+            id: (action.payload as CartItem).id,
+            title: (action.payload as CartItem).name,
+            price: (action.payload as CartItem).price,
           })
         );
         break;
       case 'REMOVE_ITEM':
-        // Assuming action.payload for REMOVE_ITEM is the item ID (string)
         reduxDispatch(removeItem(action.payload as string));
         break;
       case 'CLEAR_CART':
         reduxDispatch(clear());
         break;
       case 'SET_ITEMS':
-         // This case might still be used by other parts of the app via CartContext's dispatch
         reduxDispatch(setItems(action.payload as CartItem[]));
         break;
       default:
