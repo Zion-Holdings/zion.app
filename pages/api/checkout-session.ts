@@ -102,7 +102,7 @@ export default async function handler(
     }
     
     const stripe = new (Stripe as typeof Stripe)(stripeKey, {
-      apiVersion: '2024-06-20',
+      apiVersion: '2025-06-30.basil',
     });
 
     const { cartItems, customer_email, shipping_address }: CheckoutRequest = req['body'] as CheckoutRequest;
