@@ -29,9 +29,7 @@ interface InterviewRequestFormProps {
 }
 
 const formSchema = z.object({
-  date: z.date({
-    required_error: "Please select a date for the interview.",
-  }).refine(date => date > new Date(), {
+  date: z.date().refine(date => date > new Date(), {
     message: "Interview date must be in the future"
   }),
   time: z.string().min(1, "Please select a time for the interview."),

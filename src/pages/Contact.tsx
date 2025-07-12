@@ -62,13 +62,13 @@ export default function Contact() {
 
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
-      for (const err of result.error.errors) {
+      for (const err of result.error.issues) {
         if (err.path[0]) {
           fieldErrors[err.path[0] as string] = err.message;
         }
       }
       setErrors(fieldErrors);
-      const validationErrorMsg = result.error.errors[0]?.message || 'Please check your form and try again';
+      const validationErrorMsg = result.error.issues[0]?.message || 'Please check your form and try again';
       logWarn('[ContactForm] Validation failed:', { data: { validationErrorMsg, fieldErrors: result.error.flatten().fieldErrors } });
       toast({
         title: 'Form Validation Error',

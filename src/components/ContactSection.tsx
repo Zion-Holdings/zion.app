@@ -46,7 +46,7 @@ export function ContactSection() {
     const result = schema.safeParse(formData);
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
-      for (const err of result.error.errors) {
+      for (const err of result.error.issues) {
         if (err.path[0]) {
           fieldErrors[err.path[0] as string] = err.message;
         }
@@ -54,7 +54,7 @@ export function ContactSection() {
       setErrors(fieldErrors);
       toast({
         title: "Form Validation Error",
-        description: result.error.errors[0]?.message || "Please check your form and try again",
+        description: result.error.issues[0]?.message || "Please check your form and try again",
         variant: "destructive",
       });
       return;

@@ -31,7 +31,7 @@ const formSchema = z.object({
   title: z.string().min(1, 'Title is required'),
   description: z.string().optional(),
   due_date: z.date().optional(),
-  amount: z.coerce.number().min(0, 'Amount must be greater than or equal to 0'),
+  amount: z.number().min(0, 'Amount must be greater than or equal to 0'),
 });
 
 export type MilestoneFormValues = z.infer<typeof formSchema>;

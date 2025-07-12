@@ -22,9 +22,7 @@ import { AIEnhancementDialog } from "@/components/ai-enhancement/AIEnhancementDi
 const formSchema = z.object({
   company_name: z.string().min(1, "Company name is required"),
   role_title: z.string().min(1, "Role title is required"),
-  start_date: z.date({
-    required_error: "Start date is required",
-  }),
+  start_date: z.date(),
   end_date: z.date().optional(),
   is_current: z.boolean().optional(), // Make optional, defaultValues will handle initial state
   description: z.string().optional(),
