@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
-import { logError } from '@/utils/productionLogger';
+import { logError } from '@/utils/logError';
 import { 
   Menu, 
   X, 
