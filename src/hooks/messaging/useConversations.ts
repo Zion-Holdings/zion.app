@@ -34,30 +34,30 @@ export function useConversations(
       
       // Format conversations. Use an empty array if `data` is null to prevent
       // "map is not a function" runtime errors
-      const formattedConversations: Conversation[] = (data ?? []).map((conv: any) => {
+      const formattedConversations: Conversation[] = (data ?? []).map((conv: Record<string, unknown>) => {
         const isUserOne = conv.user_one_id === user.id;
         const otherUserId = isUserOne ? conv.user_two_id : conv.user_one_id;
         
         return {
-          id: conv.id,
-          user_id: otherUserId,
+          id: conv.id as string,
+          user_id: otherUserId as string,
           other_user: {
-            id: otherUserId,
-            name: isUserOne ? conv.user_two_name : conv.user_one_name,
-            avatar_url: isUserOne ? conv.user_two_avatar : conv.user_one_avatar,
-            user_type: isUserOne ? conv.user_two_type : conv.user_one_type
+            id: otherUserId as string,
+            name: (isUserOne ? conv.user_two_name : conv.user_one_name) as string,
+            avatar_url: (isUserOne ? conv.user_two_avatar : conv.user_one_avatar) as string,
+            user_type: (isUserOne ? conv.user_two_type : conv.user_one_type) as string
           },
-          name: isUserOne ? conv.user_two_name : conv.user_one_name,
-          avatar_url: isUserOne ? conv.user_two_avatar : conv.user_one_avatar,
+          name: (isUserOne ? conv.user_two_name : conv.user_one_name) as string,
+          avatar_url: (isUserOne ? conv.user_two_avatar : conv.user_one_avatar) as string,
           last_message: conv.last_message ? {
-            content: conv.last_message,
-            created_at: conv.last_message_time
+            content: conv.last_message as string,
+            created_at: conv.last_message_time as string
           } : { content: '', created_at: '' },
-          updated_at: conv.updated_at || conv.created_at,
-          unread_count: conv.unread_count || 0,
-          context_type: conv.context_type,
-          context_id: conv.context_id,
-          context_data: conv.context_data
+          updated_at: (conv.updated_at || conv.created_at) as string,
+          unread_count: (conv.unread_count || 0) as number,
+          context_type: (conv.context_type as Conversation["context_type"]) ?? "general",
+          context_id: conv.context_id as string,
+          context_data: conv.context_data as ConversationContextData
         };
       });
       
