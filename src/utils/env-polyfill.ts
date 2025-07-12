@@ -58,10 +58,11 @@ export const safeEnv = {
 
 // Safe environment getter function
 export function getEnv(key: string, defaultValue = ''): string {
-  if (typeof (globalThis as unknown as { process?: unknown }).process !== 'undefined' && (globalThis as unknown as { process?: { env?: { [key: string]: string } } }).process?.env && typeof (globalThis as unknown as { process?: { env?: { [key: string]: string } } }).process?.env[key] === 'string') {
-    return (globalThis as unknown as { process?: { env?: { [key: string]: string } } }).process?.env[key];
-  }
-  return defaultValue;
+  const env = (typeof (globalThis as unknown as { process?: unknown }).process !== 'undefined' && (globalThis as unknown as { process?: { env?: { [key: string]: string } } }).process?.env)
+    ? (globalThis as unknown as { process?: { env?: { [key: string]: string } } }).process?.env
+    : undefined;
+  const value = env && typeof env[key] === 'string' ? env[key] : undefined;
+  return value !== undefined ? value : defaultValue;
 }
 
 // Check if we're in development mode safely
@@ -75,12 +76,14 @@ export function isProduction(): boolean {
 }
 
 // Export the polyfilled process object
-export const processEnv = typeof (globalThis as unknown as { process?: unknown }).process !== 'undefined' ? (globalThis as unknown as { process?: { env?: { [key: string]: string } } }).process?.env : {
-  NODE_ENV: 'production',
-  NEXT_PUBLIC_APP_URL: '',
-  NEXT_PUBLIC_SUPABASE_URL: '',
-  NEXT_PUBLIC_SUPABASE_ANON_KEY: '',
-};
+export const processEnv = (typeof (globalThis as unknown as { process?: unknown }).process !== 'undefined' && (globalThis as unknown as { process?: { env?: { [key: string]: string } } }).process?.env)
+  ? (globalThis as unknown as { process?: { env?: { [key: string]: string } } }).process?.env
+  : {
+      NODE_ENV: 'production',
+      NEXT_PUBLIC_APP_URL: '',
+      NEXT_PUBLIC_SUPABASE_URL: '',
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: '',
+    };
 
 // Environment polyfill loaded
 
