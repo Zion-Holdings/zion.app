@@ -21,46 +21,7 @@ import { logInfo, logWarn, logErrorToProduction, logDebug } from '@/utils/produc
 const LOGIN_TIMEOUT_MS = 15000; // 15 seconds timeout
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  if (process.env.NODE_ENV === 'development') {
-    logInfo('[AuthProvider] Initializing...');
-  }
-  
-  // CRITICAL FIX: Add immediate fallback if Supabase is not configured
-  if (!isSupabaseConfigured) {
-    logWarn('[AuthProvider] Supabase not configured - using fallback auth state');
-    const fallbackContext: AuthContextType = {
-      user: null,
-      isLoading: false,
-      isAuthenticated: false,
-      onboardingStep: null,
-      setOnboardingStep: () => {},
-      login: async () => ({ error: "Authentication not available" }),
-      signup: async () => ({ error: "Authentication not available", emailVerificationRequired: false }),
-      register: async () => ({ error: "Authentication not available", emailVerificationRequired: false }),
-      logout: async () => {},
-      resetPassword: async () => ({ error: "Authentication not available" }),
-      updateProfile: async () => ({ error: "Authentication not available" }),
-      loginWithGoogle: async () => {},
-      loginWithGitHub: async () => {},
-      loginWithFacebook: async () => {},
-      loginWithTwitter: async () => {},
-      loginWithWeb3: async () => {},
-      signIn: async () => ({ error: "Authentication not available" }),
-      signOut: async () => {},
-      signUp: async () => ({ error: "Authentication not available", emailVerificationRequired: false }),
-      setUser: () => {},
-      tokens: null,
-      avatarUrl: null,
-      setAvatarUrl: () => {},
-    };
-    
-    return (
-      <AuthContext.Provider value={fallbackContext}>
-        {children}
-      </AuthContext.Provider>
-    );
-  }
-  
+  // Always call hooks at the top
   const {
     user, setUser,
     isLoading, setIsLoading,
@@ -68,11 +29,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     tokens, setTokens,
     avatarUrl, setAvatarUrl
   } = useAuthState();
-  
-  const router = useRouter(); // Changed from useNavigate and useLocation
+  const router = useRouter();
   const dispatch = useDispatch<AppDispatch>();
-  const { handleSignedIn, handleSignedOut } = useAuthEventHandlers(setUser, setOnboardingStep, router); // Pass router instance
-
+  const { handleSignedIn, handleSignedOut } = useAuthEventHandlers(setUser, setOnboardingStep, router);
   const {
     login: signInImpl,
     signUp: signUpImpl,
@@ -86,6 +45,47 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     loginWithWeb3
   } = useAuthOperations(setUser, setIsLoading, setAvatarUrl);
 
+  // Fallback context for when Supabase is not configured
+  const fallbackContext: AuthContextType = {
+    user: null,
+    isLoading: false,
+    isAuthenticated: false,
+    onboardingStep: null,
+    setOnboardingStep: () => {},
+    login: async () => ({ error: "Authentication not available" }),
+    signup: async () => ({ error: "Authentication not available", emailVerificationRequired: false }),
+    register: async () => ({ error: "Authentication not available", emailVerificationRequired: false }),
+    logout: async () => {},
+    resetPassword: async () => ({ error: "Authentication not available" }),
+    updateProfile: async () => ({ error: "Authentication not available" }),
+    loginWithGoogle: async () => {},
+    loginWithGitHub: async () => {},
+    loginWithFacebook: async () => {},
+    loginWithTwitter: async () => {},
+    loginWithWeb3: async () => {},
+    signIn: async () => ({ error: "Authentication not available" }),
+    signOut: async () => {},
+    signUp: async () => ({ error: "Authentication not available", emailVerificationRequired: false }),
+    setUser: () => {},
+    tokens: null,
+    avatarUrl: null,
+    setAvatarUrl: () => {},
+  };
+
+  if (process.env.NODE_ENV === 'development') {
+    logInfo('[AuthProvider] Initializing...');
+  }
+
+  // Use fallback context if Supabase is not configured
+  if (!isSupabaseConfigured) {
+    logWarn('[AuthProvider] Supabase not configured - using fallback auth state');
+    return (
+      <AuthContext.Provider value={fallbackContext}>
+        {children}
+      </AuthContext.Provider>
+    );
+  }
+  
   // Wrapper for login to match the AuthContextType interface
   const login = async (
     email: string,
@@ -229,13 +229,13 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     if (!isSupabaseConfigured) {
       logWarn('[AuthProvider] Supabase not configured - skipping auth state listener');
       setIsLoading(false);
-      return;
+      return; // Only exit the function inside the effect, not the effect itself
     }
 
     if (!supabase) {
       logWarn('[AuthProvider] Supabase client is null - skipping auth state listener');
       setIsLoading(false);
-      return;
+      return; // Only exit the function inside the effect, not the effect itself
     }
 
     // Timeout for initial auth state check
@@ -468,7 +468,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     return () => {
       subscription.unsubscribe();
     };
-  }, [router, dispatch, handleSignedIn, handleSignedOut, setOnboardingStep, setUser, setAvatarUrl, setTokens]); // Added router and other dependencies
+  }, [router, dispatch, handleSignedIn, handleSignedOut, setOnboardingStep, setUser, setAvatarUrl, setTokens, isLoading]); // Added router and other dependencies
 
   const authContextValue: AuthContextType = {
     user,
