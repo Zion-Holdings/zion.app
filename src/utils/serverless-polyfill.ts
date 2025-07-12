@@ -141,7 +141,8 @@ try {
       try {
         return originalPush.call(this, chunk);
       } catch (error: unknown) {
-        logWarn('Webpack chunk loading error prevented:', { data: error });
+        const errorObj = error instanceof Error ? error : { message: String(error) };
+        logWarn('Webpack chunk loading error prevented:', { data: errorObj });
         return 0;
       }
     };
@@ -152,8 +153,8 @@ try {
 
 // Global error suppression for common serverless issues
 if (typeof window !== 'undefined') {
-  const originalOnError = window.onerror;
-  window.onerror = function(message, source, lineno, colno, error) {
+  const originalOnError = (window as Window & typeof globalThis).onerror;
+  (window as Window & typeof globalThis).onerror = function(message, source, lineno, colno, error: unknown) {
     // Suppress specific known errors that don't affect functionality
     if (typeof message === 'string') {
       const suppressedMessages = [
@@ -165,35 +166,33 @@ if (typeof window !== 'undefined') {
       ];
       
       if (suppressedMessages.some(msg => message.includes(msg))) {
-        // Log that we are suppressing an error, for debugging purposes
-        logErrorToProduction(`[serverless-polyfill] Previously suppressed error: "${message}" from ${source}:${lineno}`, error);
+        const errorObj = error instanceof Error ? error : { message: String(error) };
+        logErrorToProduction(`[serverless-polyfill] Previously suppressed error: "${message}" from ${source}:${lineno}`, errorObj);
       }
     }
-    
     // Call original error handler for other errors
     if (originalOnError) {
-      return originalOnError.call(this as Window, message, source, lineno, colno, error);
+      return originalOnError.call(this as Window, message, source, lineno, colno, error instanceof Error ? error : undefined);
     }
     return false; // Allow default browser handling
   };
 
-  const originalOnUnhandledRejection = window.onunhandledrejection;
-  window.onunhandledrejection = function(event) {
+  const originalOnUnhandledRejection = (window as Window & typeof globalThis).onunhandledrejection;
+  (window as Window & typeof globalThis).onunhandledrejection = function(event: PromiseRejectionEvent) {
     // Suppress specific promise rejection errors
-    if (event.reason && typeof event.reason.message === 'string') {
+    if (event.reason && typeof (event.reason as { message?: string }).message === 'string') {
       const suppressedMessages = [
         'Cannot read properties of undefined (reading \'env\')',
         'Cannot destructure property',
         'self is not defined'
       ];
       
-      if (suppressedMessages.some(msg => event.reason.message.includes(msg))) {
-        logErrorToProduction(`[serverless-polyfill] Previously suppressed unhandled rejection:`, event.reason);
+      if (suppressedMessages.some(msg => (event.reason as { message: string }).message.includes(msg))) {
+        logErrorToProduction(`[serverless-polyfill] Previously suppressed unhandled rejection:`, event.reason instanceof Error ? event.reason : { message: String(event.reason) });
         // event.preventDefault(); // -- Now allowing it to propagate
         // return;
       }
     }
-    
     // Call original handler for other rejections
     if (originalOnUnhandledRejection) {
       return originalOnUnhandledRejection.call(this as Window, event);
@@ -243,6 +242,3 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 export default {}; // Ensure this can be imported as a module
-
-// eslint-disable-next-line @typescript-eslint/no-unused-expressions
-// [Line 114: No stray expressions. Linter false positive.]
