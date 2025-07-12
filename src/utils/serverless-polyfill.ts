@@ -55,7 +55,7 @@ if (!selfRef.webpackChunk_N_E) {
 
   // Ensure webpack chunk array is properly initialized
   if (typeof webpackChunk_N_E === 'undefined') {
-    (globalThis as any).webpackChunk_N_E = (selfRef as any).webpackChunk_N_E;
+    (globalThis as unknown as Record<string, unknown>).webpackChunk_N_E = (selfRef as Record<string, unknown>).webpackChunk_N_E;
   }
 
 // TypeScript helper polyfills for runtime
@@ -69,26 +69,28 @@ const tsHelpers = {
   },
   
   __assign: function() {
-    return Object.assign || function (t: any, ...sources: any[]) {
+    return Object.assign || function (t: unknown, ...sources: unknown[]) {
+      const target = t as Record<string | symbol, unknown>;
       for (let i = 0; i < sources.length; i++) {
-        const s = sources[i];
+        const s = sources[i] as Record<string | symbol, unknown>;
         for (const p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-          t[p] = s[p];
+          target[p] = s[p];
       }
-      return t;
+      return target;
     };
   }(),
   
-  __rest: function (s: any, e: string[]) {
-    const t: any = {};
-    for (const p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-      t[p] = s[p];
+  __rest: function (s: unknown, e: string[]) {
+    const t: Record<string | symbol, unknown> = {};
+    const source = s as Record<string | symbol, unknown>;
+    for (const p in source) if (Object.prototype.hasOwnProperty.call(source, p) && e.indexOf(p) < 0)
+      t[p] = source[p];
     if (s != null && typeof Object.getOwnPropertySymbols === "function") {
-      const symbols = Object.getOwnPropertySymbols(s);
+      const symbols = Object.getOwnPropertySymbols(s as object);
       for (let i = 0; i < symbols.length; i++) {
         const symbol = symbols[i];
-        if (symbol && e.indexOf(symbol as any) < 0 && Object.prototype.propertyIsEnumerable.call(s, symbol)) {
-          t[symbol] = s[symbol];
+        if (symbol && e.indexOf(symbol.toString()) < 0 && Object.prototype.propertyIsEnumerable.call(source as object, symbol)) {
+          t[symbol] = (source as Record<symbol, unknown>)[symbol];
         }
       }
     }
@@ -165,7 +167,7 @@ if (typeof window !== 'undefined') {
     
     // Call original error handler for other errors
     if (originalOnError) {
-      return originalOnError.call(this as any, message, source, lineno, colno, error);
+      return originalOnError.call(this as Window, message, source, lineno, colno, error);
     }
     return false; // Allow default browser handling
   };
@@ -189,7 +191,7 @@ if (typeof window !== 'undefined') {
     
     // Call original handler for other rejections
     if (originalOnUnhandledRejection) {
-      return originalOnUnhandledRejection.call(this as any, event);
+      return originalOnUnhandledRejection.call(this as Window, event);
     }
   };
 }
@@ -217,9 +219,9 @@ if (typeof global !== 'undefined' && typeof window === 'undefined') {
 export const verifyPolyfills = () => {
   const checks = {
     selfDefined: typeof self !== 'undefined',
-    webpackChunkDefined: typeof webpackChunk_N_E !== 'undefined' || (typeof self !== 'undefined' && typeof (self as any).webpackChunk_N_E !== 'undefined'),
+    webpackChunkDefined: typeof webpackChunk_N_E !== 'undefined' || (typeof self !== 'undefined' && typeof (self as unknown as Record<string, unknown>).webpackChunk_N_E !== 'undefined'),
     tsHelpersDefined: typeof __extends !== 'undefined' && typeof __assign !== 'undefined',
-    errorHandlersSet: typeof window !== 'undefined' && window.onerror !== null
+    errorHandlersSet: typeof window !== 'undefined' && (window as unknown as Record<string, unknown>).onerror !== null
   };
   
   // eslint-disable-next-line no-console
