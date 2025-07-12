@@ -48,12 +48,12 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     // The getStripe() client-side helper (from src/utils/getStripe.ts) and its
     // advancedFraudSignals option are not applicable to this server-side implementation.
     const stripe = new (Stripe as unknown as typeof Stripe)(useTest ? testKey : liveKey, {
-      apiVersion: '2023-10-16',
+      apiVersion: '2025-06-30.basil',
     });
     const intent = await stripe.paymentIntents.create({
       amount: Math.round(amount * 100),
       currency: 'usd',
-      metadata: userId ? { userId } : undefined,
+      metadata: userId ? { userId } : {},
       automatic_payment_methods: { enabled: true },
     });
     res.status(200).json({ clientSecret: intent.client_secret, id: intent.id });
