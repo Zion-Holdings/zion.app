@@ -143,7 +143,7 @@ axiosRetry(apiClient, {
 
 apiClient.interceptors.response.use(
   (response: AxiosResponse) => response,
-  async (error: any) => {
+  async (error: unknown) => {
     const status = typeof error === 'object' && error && 'response' in error && error.response && typeof error.response === 'object' && error.response !== null && 'status' in error.response ? (error.response as { status?: number }).status : undefined;
 
     if (status === 401) {
