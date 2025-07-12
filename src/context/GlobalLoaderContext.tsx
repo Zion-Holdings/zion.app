@@ -57,8 +57,8 @@ export function AppLoaderProvider({ children }: { children: ReactNode }) {
     };
 
     // Type guard for axios.interceptors
-    const reqInterceptors = (axios.interceptors as { request: { use: Function; eject: Function } }).request;
-    const resInterceptors = (axios.interceptors as { response: { use: Function; eject: Function } }).response;
+    const reqInterceptors = (axios.interceptors as { request: { use: (...args: unknown[]) => unknown; eject: (...args: unknown[]) => unknown } }).request;
+    const resInterceptors = (axios.interceptors as { response: { use: (...args: unknown[]) => unknown; eject: (...args: unknown[]) => unknown } }).response;
     const reqInterceptor = reqInterceptors.use(onRequest, onError);
     const resInterceptor = resInterceptors.use(onResponse, onError);
 
