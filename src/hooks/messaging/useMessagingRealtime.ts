@@ -8,6 +8,14 @@ import { toast } from '@/hooks/use-toast';
 // Allow either UserProfile or UserDetails
 type UserWithProfile = UserProfile | UserDetails | null;
 
+// Define NewMessage type for payload handler
+type NewMessage = {
+  sender_id: string;
+  content: string;
+  sender_name?: string;
+  [key: string]: unknown;
+};
+
 export function useMessagingRealtime(
   user: UserWithProfile,
   activeConversation: Conversation | null,
@@ -45,16 +53,17 @@ export function useMessagingRealtime(
               'content' in newMessage &&
               'sender_name' in newMessage
             ) {
+              const msg = newMessage as NewMessage;
               if (
                 activeConversation &&
-                (newMessage as any).sender_id === activeConversation.other_user.id
+                msg.sender_id === activeConversation.other_user.id
               ) {
-                setActiveMessages(prev => [...prev, newMessage as Message]);
+                setActiveMessages(prev => [...prev, msg as unknown as Message]);
               }
               fetchConversations();
               toast({
-                title: `New message from ${(newMessage as any).sender_name || 'Someone'}`,
-                description: (newMessage as any).content.substring(0, 50) + ((newMessage as any).content.length > 50 ? '...' : '')
+                title: `New message from ${msg.sender_name || 'Someone'}`,
+                description: msg.content.substring(0, 50) + (msg.content.length > 50 ? '...' : '')
               });
             }
           }
