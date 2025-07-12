@@ -1,9 +1,7 @@
 
 import * as React from "react";
-import { ChevronRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import type { SafeRef } from "@/types/ref-types";
 
 interface SidebarMenuItemProps extends React.HTMLAttributes<HTMLButtonElement> {
   icon?: React.ReactNode;
