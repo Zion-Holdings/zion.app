@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { toast } from '@/hooks/use-toast';
+import { logInfo, logWarn } from '@/utils/productionLogger';
 
 export default function OfflineToast() {
-import { logInfo, logWarn } from '@/utils/productionLogger';
 
   useEffect(() => {
     const handleOffline = () => {
@@ -35,10 +35,10 @@ import { logInfo, logWarn } from '@/utils/productionLogger';
           // Send message with port
           reg.active?.postMessage({ type: 'SYNC_QUEUE' }, [channel.port2]);
         } catch (error) {
-          logWarn('Failed to send sync message to service worker:', error);
+          logWarn('Failed to send sync message to service worker:', { data: typeof error === 'object' && error !== null ? error : {} });
         }
       }).catch(error => {
-        logWarn('Service worker not ready:', error);
+        logWarn('Service worker not ready:', { data: typeof error === 'object' && error !== null ? error : {} });
       });
     };
 
