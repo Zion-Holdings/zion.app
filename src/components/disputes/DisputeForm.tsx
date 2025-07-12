@@ -33,7 +33,7 @@ const formSchema = z.object({
     .min(1, { message: "Please select a reason for the dispute" }),
   description: z.string()
     .min(20, { message: "Description must be at least 20 characters" }),
-  attachments: z.array(z.any()).optional(),
+  attachments: z.array(z.unknown()).optional(),
 });
 
 type DisputeFormProps = {
