@@ -25,7 +25,7 @@ export function useExpensiveMemo<T>(
     const end = performance.now();
     
     if (process.env.NODE_ENV === 'development' && end - start > 50) {
-      logWarn(`Expensive calculation took ${(end - start).toFixed(2)}ms`, deps);
+      logWarn(`Expensive calculation took ${(end - start).toFixed(2)}ms`, { deps });
     }
     
     return result;
