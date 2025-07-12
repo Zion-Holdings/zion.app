@@ -18,7 +18,7 @@ interface OptimizedImageProps {
   placeholder?: 'blur' | 'empty';
   blurDataURL?: string;
   onLoad?: () => void;
-  onError?: (error?: any) => void;
+  onError?: (error?: unknown) => void;
   fallbackSrc?: string;
   // Backward compatibility props
   fallback?: string;
@@ -58,7 +58,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
     onLoad?.();
   }, [onLoad]);
 
-  const handleError = useCallback((error?: any) => {
+  const handleError = useCallback((error?: unknown) => {
     setHasError(true);
     setIsLoading(false);
     if (imgSrc !== actualFallback) {
