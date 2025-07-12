@@ -26,7 +26,7 @@ export interface Education {
   start_date: Date | string;
   end_date: Date | string;
   is_current: boolean;
-  description?: string;
+  description: string;
   institution_logo_url?: string;
   location?: string;
 }
