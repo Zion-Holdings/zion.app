@@ -130,16 +130,15 @@ Object.keys(tsHelpers).forEach(helper => {
 // Error prevention for common webpack issues
 try {
   // Prevent webpack chunk loading errors
-  const chunkArray = (selfRef as Record<string, unknown>).webpackChunk_N_E as unknown;
-  if (
-    chunkArray &&
-    Array.isArray(chunkArray) &&
-    typeof (chunkArray as unknown[]).push === 'function'
-  ) {
-    const originalPush = (chunkArray as unknown[]).push;
-    (chunkArray as unknown[]).push = function(chunk: unknown) {
+  const chunkArrayUnknown = (selfRef as Record<string, unknown>).webpackChunk_N_E;
+  if (Array.isArray(chunkArrayUnknown)) {
+    const chunkArray = chunkArrayUnknown as unknown[];
+    const originalPush = chunkArray.push as (...items: unknown[]) => number;
+    chunkArray.push = function(this: unknown[], chunk: unknown): number {
       try {
-        return originalPush.call(this, chunk);
+        const arr = this as unknown[];
+        const result = originalPush.call(arr, chunk);
+        return typeof result === 'number' ? result : 0;
       } catch (error: unknown) {
         const errorObj = error instanceof Error ? error : { message: String(error) };
         logWarn('Webpack chunk loading error prevented:', { data: errorObj });
@@ -241,4 +240,5 @@ if (process.env.NODE_ENV === 'development') {
   }, 100);
 }
 
+// Remove any stray or unused expressions at the end of the file
 export default {}; // Ensure this can be imported as a module
