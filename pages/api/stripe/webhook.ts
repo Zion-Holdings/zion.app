@@ -6,12 +6,11 @@ import path from 'path';
 import { randomUUID } from 'crypto';
 import {logErrorToProduction} from '@/utils/productionLogger';
 import type { IncomingMessage } from 'http';
-import type { StripeWebhookRequest as _StripeWebhookRequest } from '@/types/stripe';
 
 interface StripeWebhookEvent {
   id: string;
   object: string;
-  api_version: string;
+  api_version: string | null;
   created: number;
   data: {
     object: Record<string, unknown>;
@@ -29,7 +28,7 @@ export const config = { api: { bodyParser: false } };
 
 
 const stripe = new (Stripe as typeof Stripe)(process.env.STRIPE_TEST_SECRET_KEY || '', {
-  apiVersion: '2023-10-16',
+  apiVersion: '2025-06-30.basil',
 });
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || '';
 
@@ -40,7 +39,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   const sig = (req.headers as Record<string, string | string[] | undefined>)['stripe-signature'] as string;
-  let event: StripeWebhookEvent;
+  let event: any;
   try {
     const buf = await buffer(req as unknown as IncomingMessage);
     event = stripe.webhooks.constructEvent(buf.toString(), sig, webhookSecret);
