@@ -1,8 +1,7 @@
 import { Html, Head, Main, NextScript } from 'next/document';
+import { logWarn, logError } from '@/utils/productionLogger';
 
 export default function Document() {
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
-
   // Simple theme script without complex polyfills
   // CRITICAL: Process and Buffer polyfill script - inline fallback
   const _processPolyfillScript = `(function() {

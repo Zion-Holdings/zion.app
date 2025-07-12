@@ -4,9 +4,8 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
-import { 
 import { logError } from '@/utils/productionLogger';
-
+import { 
   Menu, 
   X, 
   Search, 

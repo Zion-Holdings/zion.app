@@ -1,9 +1,8 @@
 // Browser-safe implementation without any libp2p dependencies
 // This version never attempts to load native modules in the browser
-
-export interface Proposal {
 import { logInfo, logWarn } from '@/utils/productionLogger';
 
+export interface Proposal {
   id: string;
   description: string;
   created: number;

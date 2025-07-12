@@ -1,6 +1,6 @@
 // CRITICAL: Import immediate process polyfill FIRST to prevent process.env errors
 import '../src/utils/immediate-process-polyfill';
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 
 // CRITICAL: Runtime check - polyfills should be loaded from document script and webpack banner
