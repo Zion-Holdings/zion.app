@@ -20,6 +20,7 @@ import { CalendarIcon } from 'lucide-react';
 import { toast } from "@/components/ui/use-toast";
 import { useInterviews } from "@/hooks/useInterviews";
 import {logErrorToProduction} from '@/utils/productionLogger';
+import type { MeetingPlatform } from "@/types/interview";
 
 
 interface InterviewRequestFormProps {
@@ -81,7 +82,7 @@ export function InterviewRequestForm({ talent, onClose, userDetails }: Interview
         scheduled_date: scheduledDate.toISOString(),
         duration_minutes: durationMinutes,
         ...(values.notes ? { notes: values.notes } : {}),
-        meeting_platform: String(values.platform),
+        meeting_platform: ['zoom', 'google-meet', 'teams', 'other', 'in-app'].includes(values.platform) ? values.platform as MeetingPlatform : 'other',
         ...(values.meetingLink ? { meeting_link: values.meetingLink } : {}),
         interview_type: "video",
         title: values.title,
