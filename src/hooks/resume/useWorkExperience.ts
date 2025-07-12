@@ -38,7 +38,7 @@ export function useWorkExperience() {
       if (error) throw error;
       
       return showSuccessToast("Work experience added", "Your work experience has been added to your resume");
-    } catch (e: any) {
+    } catch (e: unknown) {
       return handleResumeError(e, 'Could not add work experience');
     } finally {
       setIsLoading(false);
@@ -73,7 +73,7 @@ export function useWorkExperience() {
       if (error) throw error;
       
       return showSuccessToast("Work experience updated", "Your work experience has been updated");
-    } catch (e: any) {
+    } catch (e: unknown) {
       return handleResumeError(e, 'Could not update work experience');
     } finally {
       setIsLoading(false);
@@ -99,7 +99,7 @@ export function useWorkExperience() {
       if (error) throw error;
       
       return showSuccessToast("Work experience deleted", "Your work experience has been removed from your resume");
-    } catch (e: any) {
+    } catch (e: unknown) {
       return handleResumeError(e, 'Could not delete work experience');
     } finally {
       setIsLoading(false);
