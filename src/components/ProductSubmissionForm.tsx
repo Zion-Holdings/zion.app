@@ -164,7 +164,7 @@ export function ProductSubmissionForm() {
       let imagePublicUrl: string | undefined;
 
       // If we have an image, upload it
-      if (values.image) {
+      if (values.image && values.image instanceof File) {
         const imagePath = `product_images/${productRecord.id}/${values.image.name}`;
         const { error: uploadError } = await supabase.storage
           .from('products')
