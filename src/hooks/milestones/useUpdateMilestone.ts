@@ -86,9 +86,10 @@ export const useUpdateMilestone = () => {
       toast.success(`Milestone status changed to ${newStatus}`);
       
       return true;
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Error updating milestone status:', { data: err });
-      toast.error("Failed to update status: " + err.message);
+      const errorMessage = (err instanceof Error && err.message) ? err.message : 'Unknown error';
+      toast.error('Failed to update status: ' + errorMessage);
       return false;
     } finally {
       setIsSubmitting(false);
@@ -115,9 +116,10 @@ export const useUpdateMilestone = () => {
       toast.success("Milestone updated successfully");
       
       return true;
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Error updating milestone:', { data: err });
-      toast.error("Failed to update milestone: " + err.message);
+      const errorMessage = (err instanceof Error && err.message) ? err.message : 'Unknown error';
+      toast.error('Failed to update milestone: ' + errorMessage);
       return false;
     } finally {
       setIsSubmitting(false);
