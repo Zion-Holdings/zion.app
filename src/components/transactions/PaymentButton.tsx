@@ -79,20 +79,29 @@ export function PaymentButton({
       }
       
       // Type assertion needed for mock Supabase client compatibility
-      if ((data as any)?.url) {
+      if ((data as unknown as { url: string })?.url) {
         // Open Stripe checkout in a new tab
-        window.open((data as any).url, '_blank');
+        window.open((data as unknown as { url: string }).url, '_blank');
       } else {
         throw new Error("No checkout URL returned");
       }
       
-    } catch (error) {
-      logErrorToProduction('Payment error:', { data: error });
-      toast({
-        title: "Payment error",
-        description: "There was a problem initiating your payment. Please try again.",
-        variant: "destructive",
-      });
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        logErrorToProduction('Payment error:', { data: error });
+        toast({
+          title: "Payment error",
+          description: "There was a problem initiating your payment. Please try again.",
+          variant: "destructive",
+        });
+      } else {
+        logErrorToProduction('Payment error:', { data: error });
+        toast({
+          title: "Payment error",
+          description: "There was a problem initiating your payment. Please try again.",
+          variant: "destructive",
+        });
+      }
     } finally {
       // Reset button state after a short delay
       setTimeout(() => {

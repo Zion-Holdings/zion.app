@@ -46,9 +46,14 @@ interface Transaction {
 export function TransactionHistory() {
   const { user } = useAuth();
   const { toast } = useToast();
-  const [filter, setFilter] = useState<'all' | 'pending' | 'completed' | 'escrow'>(
-    () => (safeStorage.getItem('transaction_filter') as any) || 'all'
-  );
+  const getInitialFilter = (): 'all' | 'pending' | 'completed' | 'escrow' => {
+    const value = safeStorage.getItem('transaction_filter');
+    if (value === 'all' || value === 'pending' || value === 'completed' || value === 'escrow') {
+      return value;
+    }
+    return 'all';
+  };
+  const [filter, setFilter] = useState<'all' | 'pending' | 'completed' | 'escrow'>(() => getInitialFilter());
 
   useEffect(() => {
     safeStorage.setItem('transaction_filter', filter);
@@ -106,7 +111,7 @@ export function TransactionHistory() {
       
       toast({
         title: "Success",
-        description: (data as any)?.message || "Transaction updated successfully",
+        description: (data as unknown as { message?: string })?.message || "Transaction updated successfully",
       });
       
       refetch();
