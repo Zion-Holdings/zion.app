@@ -177,8 +177,9 @@ const PitchGeneratorPage: React.FC = () => {
   }, [user, fetchVersionHistory]);
 
 
-  const handleInputSubmit = (data: Record<string, unknown>) => {
-    setInputData(data);
+  const handleInputSubmit = (data: unknown) => {
+    const typedData = data as Record<string, unknown>;
+    setInputData(typedData);
     setCurrentStep('data');
   };
 
