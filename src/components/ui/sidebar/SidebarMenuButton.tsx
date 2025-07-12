@@ -20,7 +20,7 @@ export const SidebarMenuButton = forwardRef<HTMLButtonElement, SidebarMenuButton
           "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
           className
         )}
-        ref={ref as any}
+        ref={ref as React.Ref<HTMLButtonElement>}
         {...props}
       >
         {children}
