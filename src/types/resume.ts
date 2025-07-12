@@ -28,7 +28,7 @@ export interface Education {
   is_current: boolean;
   description: string;
   institution_logo_url?: string;
-  location?: string;
+  location: string;
 }
 
 export interface Skill {
