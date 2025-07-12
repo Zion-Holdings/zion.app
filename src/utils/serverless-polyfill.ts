@@ -64,8 +64,8 @@ const tsHelpers = {
     if (typeof b !== "function" && b !== null)
       throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
     
-    function __constructor(this: unknown) { (this as any).constructor = d; }
-    (d as any).prototype = b === null ? Object.create(b) : (__constructor.prototype = (b as any).prototype, new (__constructor as any)());
+    function __constructor(this: unknown) { (this as { constructor?: unknown }).constructor = d; }
+    (d as { prototype?: unknown }).prototype = b === null ? Object.create(b) : (__constructor.prototype = (b as { prototype?: unknown }).prototype, new (__constructor as unknown as { new (): unknown }));
   },
   
   __assign: function() {
@@ -97,10 +97,10 @@ const tsHelpers = {
   
   __decorate: function (decorators: unknown[], target: unknown, key?: string | symbol, desc?: unknown) {
     const c = arguments.length;
-    let r = c < 3 ? target : desc === null ? (desc = Object.getOwnPropertyDescriptor(target, key!)) : desc;
+    let r = c < 3 ? target : desc === null ? (desc = (Object.getOwnPropertyDescriptor as (o: object, p: string | symbol) => PropertyDescriptor | undefined)(target as object, key!)) : desc;
     let d: unknown;
     if (typeof Reflect === "object" && typeof (Reflect as Record<string, unknown>).decorate === "function") r = (Reflect as Record<string, unknown>).decorate(decorators, target, key, desc);
-    else for (let i = decorators.length - 1; i >= 0; i--) if ((d = decorators[i])) r = (c < 3 ? (d as (arg: unknown) => unknown)(r) : c > 3 ? (d as (target: unknown, key: string | symbol, r: unknown) => unknown)(target, key!, r) : (d as (target: unknown, key: string | symbol) => unknown)(target, key!)) || r;
+    else for (let i = decorators.length - 1; i >= 0; i--) if ((d = decorators[i])) r = (c < 3 ? (typeof d === 'function' ? d(r) : r) : c > 3 ? (typeof d === 'function' ? d(target, key!, r) : r) : (typeof d === 'function' ? d(target, key!) : r)) || r;
     return c > 3 && r && Object.defineProperty(target, key!, r), r;
   },
   
@@ -108,9 +108,9 @@ const tsHelpers = {
     function adopt(value: unknown) { return value instanceof (P as { new (cb: (resolve: (value: unknown) => void) => void): unknown }) ? value : new (P as { new (cb: (resolve: (value: unknown) => void) => void): unknown })(function (resolve: (value: unknown) => void) { resolve(value); }); }
     return new ((P as typeof Promise) || (P = Promise))(function (resolve: (value: unknown) => void, reject: (reason?: unknown) => void) {
       function fulfilled(value: unknown) { try { step((generator as Generator).next(value)); } catch (e) { reject(e); } }
-      function rejected(value: unknown) { try { step((generator as Generator)["throw"](value)); } catch (e) { reject(e); } }
+      function rejected(value: unknown) { try { step(((generator as Generator)["throw"] as (arg: unknown) => IteratorResult<unknown>)(value)); } catch (e) { reject(e); } }
       function step(result: IteratorResult<unknown>) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-      step((generator = generator.apply(thisArg, _arguments || [])).next());
+      step(((generator = (typeof generator === 'function' ? generator.apply(thisArg, _arguments || []) : generator) as Generator).next()));
     });
   }
 };
@@ -236,4 +236,3 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 export default {}; // Ensure this can be imported as a module
-void 0;
