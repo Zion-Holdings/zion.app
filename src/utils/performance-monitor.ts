@@ -77,7 +77,7 @@ class PerformanceMonitor {
       onLCP((metric) => this.recordMetric('LCP', metric));
       onTTFB((metric) => this.recordMetric('TTFB', metric));
     } catch (error) {
-      logWarn('Failed to initialize Core Web Vitals:', error);
+      logWarn('Failed to initialize Core Web Vitals:', { error });
     }
   }
 
@@ -210,8 +210,8 @@ class PerformanceMonitor {
           id: this.generateId()
         });
       }, 5000);
-    } catch (_error) {
-      // Long task API not supported
+    } catch (error) {
+      logWarn('Long task API not supported:', { error });
     }
   }
 
@@ -323,7 +323,7 @@ class PerformanceMonitor {
       // Clear reported metrics
       this.metrics = [];
     } catch (error) {
-      logWarn('Failed to report performance metrics:', error);
+      logWarn('Failed to report performance metrics:', { error });
     }
   }
 
