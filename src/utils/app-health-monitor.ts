@@ -465,7 +465,7 @@ class AppHealthMonitor {
         window.latestHealthReport = report;
         // Log warnings and critical issues
         if (report.status !== 'healthy') {
-          logWarn('🏥 Health issue detected:', report);
+          logWarn('🏥 Health issue detected:', { report });
         }
       }).catch(error => {
         logErrorToProduction('Health monitoring error:', { error });
