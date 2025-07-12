@@ -11,7 +11,7 @@ import type { EmblaPluginType } from 'embla-carousel';
 type CarouselApi = ReturnType<typeof useEmblaCarousel>[1]
 type CarouselOptions = {
   axis?: 'x' | 'y'
-  [key: string]: any
+  [key: string]: unknown
 }
 type CarouselPlugin = unknown;
 
