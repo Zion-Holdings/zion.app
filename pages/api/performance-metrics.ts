@@ -1,7 +1,7 @@
 // API endpoint for performance metrics collection
 import type { NextApiRequest, NextApiResponse } from 'next';
 import type { PerformanceReport } from '@/utils/performance-monitor';
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { logWarn, logError } from '@/utils/productionLogger';
 
 
 interface PerformanceMetricsRequest extends NextApiRequest {

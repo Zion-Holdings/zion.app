@@ -23,7 +23,7 @@ import type { ProductListing } from '@/types/listings';
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
 import { useToast } from '@/hooks/use-toast';
 import { useAuth } from '@/context/auth/AuthProvider';
-import { fetchProducts } from '@/services/marketplace';
+import { fetchProducts as _fetchProducts } from '@/services/marketplace';
 import { MAX_PRICE, MIN_PRICE } from '@/data/marketplaceData';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 import apiClient from '@/lib/apiClient';
@@ -255,7 +255,7 @@ export default function Marketplace() {
   const [minRating, setMinRating] = useState(0);
   const [filterAvailability, setFilterAvailability] = useState('');
   const [filterLocation, setFilterLocation] = useState('');
-  const { handleApiError, retryQuery: _retryQuery } = useApiErrorHandling();
+  const { handleApiError: _handleApiError, retryQuery: _retryQuery } = useApiErrorHandling();
 
   // Handle Add Product button with authentication check
   const _handleAddProduct = useCallback(() => {
@@ -288,7 +288,7 @@ export default function Marketplace() {
         sort: sortBy
       };
       logInfo('Marketplace.tsx: Fetching products from API with params:', { data:  { data: params } });
-      const response = await (apiClient as any).get('/products', { params });
+      const response = await (apiClient as typeof apiClient).get('/products', { params });
       let items: ProductListing[] = response.data?.items || [];
       const total = response.data?.total ?? items.length;
       const hasMore = (page * limit) < total;

@@ -73,7 +73,7 @@ Format the response as a JSON object with the following structure:
       parsedResponse = JSON.parse(jsonString);
     } catch (error) {
       console.error("Failed to parse AI response as JSON:", error);
-      console.log("Raw response:", responseText);
+      console.warn("Raw response:", responseText);
       
       // Provide a fallback structured response
       parsedResponse = {

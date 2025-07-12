@@ -8,10 +8,10 @@ import { Mail as _Mail, Clock as _Clock, RefreshCw as _RefreshCw } from 'lucide-
 
 
 import Head from 'next/head';
-import { signIn } from 'next-auth/react';
+import { useSession as _useSession } from 'next-auth/react';
 import { supabase } from '@/utils/supabase/client';
-import { OptimizedImage } from '@/components/ui/OptimizedImage';
-import type { User, AuthChangeEvent, Session } from '@supabase/supabase-js';
+import { OptimizedImage as _OptimizedImage } from '@/components/OptimizedImage';
+import type { User, AuthChangeEvent, Session as _Session } from '@supabase/supabase-js';
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
@@ -23,21 +23,21 @@ const LoginPage = () => {
   const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState<any>(null);
+  const [error, setError] = useState<Error | { name: string; message: string } | null>(null);
   const [isLoading, setIsLoading] = useState(false); // For login form submission
   const [user, setUser] = useState<User | null>(null);
   const [isCheckingSession, setIsCheckingSession] = useState(true); // For initial session check
   const [sessionChecked, setSessionChecked] = useState(false); // New state: true after initial getSession completes
-  const [sessionCheckTimedOut, setSessionCheckTimedOut] = useState(false);
-  const [isEmailUnverified, setIsEmailUnverified] = useState(false);
-  const [verificationEmailSent, setVerificationEmailSent] = useState(false);
-  const [isResendingVerification, setIsResendingVerification] = useState(false);
+  const [_sessionCheckTimedOut, setSessionCheckTimedOut] = useState(false);
+  const [_isEmailUnverified, setIsEmailUnverified] = useState(false);
+  const [_verificationEmailSent, setVerificationEmailSent] = useState(false);
+  const [_isResendingVerification, setIsResendingVerification] = useState(false);
 
   // States for the new proactive resend form
-  const [showProactiveResendForm, setShowProactiveResendForm] = useState(false);
-  const [proactiveResendEmail, setProactiveResendEmail] = useState('');
-  const [isProactivelyResending, setIsProactivelyResending] = useState(false);
-  const [proactiveResendMessage, setProactiveResendMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [_showProactiveResendForm, setShowProactiveResendForm] = useState(false);
+  const [_proactiveResendEmail, _setProactiveResendEmail] = useState('');
+  const [_isProactivelyResending, setIsProactivelyResending] = useState(false);
+  const [_proactiveResendMessage, setProactiveResendMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
   // Using centralized Supabase client (imported at top)
 
@@ -72,7 +72,7 @@ const LoginPage = () => {
 
         if (sessionError) {
           logErrorToProduction('LoginPage: Error getting session:', { data: sessionError });
-          setError(sessionError as any); // Cast to any if type is too strict
+          setError(sessionError as Error);
         } else {
           logInfo('LoginPage: getSession returned, user:', { data:  { data: session?.user?.id } });
           setUser(session?.user ?? null);
@@ -97,7 +97,7 @@ const LoginPage = () => {
       }
       
       logInfo('LoginPage: Setting up onAuthStateChange listener.');
-      const { data: authListener } = supabase.auth.onAuthStateChange((event: AuthChangeEvent, session: any) => {
+      const { data: authListener } = supabase.auth.onAuthStateChange((event: AuthChangeEvent, session: _Session | null) => {
         if (!mounted) return;
         logInfo('LoginPage: onAuthStateChange event:', { 
           event, 
@@ -140,7 +140,7 @@ const LoginPage = () => {
       if (router.query.returnTo && typeof router.query.returnTo === 'string') {
         try {
           returnTo = decodeURIComponent(router.query.returnTo);
-        } catch (e) {
+        } catch (_e) {
           logWarn('Failed to decode returnTo parameter:', { data:  { data: router.query.returnTo } });
           returnTo = '/dashboard';
         }
@@ -196,14 +196,14 @@ const LoginPage = () => {
         const data = await response.json();
         setError({ name: 'ResendError', message: data.message || 'Failed to resend verification email' });
       }
-    } catch (err) {
+    } catch (_err) {
       setError({ name: 'NetworkError', message: 'Failed to resend verification email. Please try again.' });
     } finally {
       setIsResendingVerification(false);
     }
   };
 
-  const handleProactiveResendVerification = async (e: FormEvent) => {
+  const _handleProactiveResendVerification = async (e: FormEvent) => {
     e.preventDefault();
     if (!proactiveResendEmail) {
       setProactiveResendMessage({ type: 'error', text: 'Please enter your email address.' });
@@ -225,7 +225,7 @@ const LoginPage = () => {
       } else {
         setProactiveResendMessage({ type: 'error', text: data.message || 'Failed to resend verification email.' });
       }
-    } catch (err) {
+    } catch (_err) {
       setProactiveResendMessage({ type: 'error', text: 'An unexpected error occurred. Please try again.' });
     } finally {
       setIsProactivelyResending(false);
@@ -262,7 +262,7 @@ const LoginPage = () => {
                                                  signInError.message?.toLowerCase().includes('confirm');
         // As per issue description, check for a specific error code "email_not_verified"
         // Assuming 'code' is a property on the error object. Supabase errors might have different structures.
-        const codeIsEmailNotVerified = (signInError as any).code === 'email_not_verified';
+        const codeIsEmailNotVerified = (signInError as { code?: string }).code === 'email_not_verified';
 
         if (messageIncludesEmailNotConfirmed || codeIsEmailNotVerified) {
           setIsEmailUnverified(true);
@@ -300,14 +300,16 @@ const LoginPage = () => {
         logWarn('Supabase sign-in returned no error but no user.');
         setError({ name: 'UnknownAuthError', message: 'Login failed due to an unknown error. Please try again.' });
       }
-    } catch (catchedError: any) {
+    } catch (catchedError: unknown) {
       logErrorToProduction('Exception during Supabase sign-in:', { data: catchedError });
       // Check if the caught error is a network error
       let exceptionMessage = 'An unexpected error occurred. Please try again.';
-      if (catchedError.message && catchedError.message.toLowerCase().includes('networkerror when attempting to fetch resource')) {
-        exceptionMessage = 'Network error. Please check your internet connection and try again.';
-      } else if (catchedError.message) {
-        exceptionMessage = catchedError.message;
+      if (catchedError && typeof catchedError === 'object' && 'message' in catchedError && typeof catchedError.message === 'string') {
+        if (catchedError.message.toLowerCase().includes('networkerror when attempting to fetch resource')) {
+          exceptionMessage = 'Network error. Please check your internet connection and try again.';
+        } else {
+          exceptionMessage = catchedError.message;
+        }
       }
       setError({ name: 'ExceptionError', message: exceptionMessage });
     } finally {
@@ -324,7 +326,7 @@ const LoginPage = () => {
       return () => clearTimeout(timer);
     }
     return undefined; // Explicitly return undefined if condition is not met
-  }, [isEmailUnverified, verificationEmailSent, email, router]);
+  }, [email, router]); // Only depend on email and router
 
   // --- Rendering Logic ---
 

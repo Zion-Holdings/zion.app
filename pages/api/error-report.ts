@@ -1,7 +1,7 @@
 // API endpoint for enhanced error reporting
 import type { NextApiRequest, NextApiResponse } from 'next';
 import type { EnhancedError } from '@/utils/enhanced-error-logger';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logWarn } from '@/utils/productionLogger';
 
 
 interface ErrorReportRequest extends NextApiRequest {
@@ -84,7 +84,7 @@ export default async function handler(
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ error: error.message, stack: error.stack }),
         });
-      } catch (_err) {
+      } catch {
         // Ignore reporting errors
       }
     }
@@ -111,8 +111,8 @@ export default async function handler(
 
     res.status(200).json(response);
 
-  } catch (_processingError) {
-    // logError('Error processing error report:', processingError);
+  } catch {
+    logWarn('Failed to process error report:', { error: 'Unknown error' });
     res.status(500).json({ 
       error: 'Internal server error',
       message: 'Failed to process error report'

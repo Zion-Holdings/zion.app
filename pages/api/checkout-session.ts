@@ -1,7 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
-import fs from 'fs';
-import path from 'path';
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 
