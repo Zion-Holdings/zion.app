@@ -1,6 +1,6 @@
 // Health API endpoint for application monitoring
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { logError } from '@/utils/productionLogger';
+import { logError } from '@/utils/logError';
 
 
 interface SystemHealth {
@@ -60,7 +60,7 @@ export default async function handler(
     res.status(statusCode).json(healthReport);
 
   } catch (_error) {
-    logError('Health check failed:', _error);
+    logError('Health check failed:', { data: _error });
     
     res.status(503).json({
       error: 'Health check failed',
@@ -205,7 +205,7 @@ async function gatherMetrics(): Promise<SystemHealth['metrics']> {
     // - Database connection pool metrics
 
   } catch (_error) {
-    logError('Failed to gather metrics:', _error);
+    logError('Failed to gather metrics:', { data: _error });
   }
 
   return metrics;
