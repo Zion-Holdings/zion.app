@@ -253,7 +253,7 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
                     <FormItem className="flex flex-row items-start space-x-3 space-y-0 py-2">
                       <FormControl>
                         <Checkbox
-                          checked={field.value}
+                          checked={!!field.value}
                           onCheckedChange={field.onChange}
                         />
                       </FormControl>
