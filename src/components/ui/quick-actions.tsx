@@ -29,12 +29,12 @@ export function QuickActions() {
   const isAdmin = user?.userType === 'admin' || user?.role === 'admin';
   const isAllowed = process.env.NODE_ENV !== 'production' || isAdmin || localStorage.getItem('quick-actions') === 'true';
 
+  const [isVisible, setIsVisible] = useState(false);
+  const [isProcessing, setIsProcessing] = useState<string | null>(null);
+
   if (!isAllowed) {
     return null;
   }
-
-  const [isVisible, setIsVisible] = useState(false);
-  const [isProcessing, setIsProcessing] = useState<string | null>(null);
 
   const executeAction = async (actionId: string, action: () => void) => {
     setIsProcessing(actionId);
