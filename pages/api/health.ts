@@ -83,7 +83,7 @@ async function performHealthChecks(): Promise<SystemHealth['checks']> {
       usage: Math.round(usedMemoryMB),
       limit: Math.round(totalMemoryMB)
     };
-  } catch (_error) {
+  } catch {
     checks.memory = {
       status: 'unhealthy',
       usage: 0,
@@ -119,10 +119,10 @@ async function performHealthChecks(): Promise<SystemHealth['checks']> {
         message: 'No database configuration found'
       };
     }
-  } catch (_error) {
+  } catch {
     checks.database = {
       status: 'unhealthy',
-      message: `Database connection failed: ${_error}`,
+      message: `Database connection failed: Unknown error`,
       responseTime: 5000
     };
   }
@@ -145,7 +145,7 @@ async function performHealthChecks(): Promise<SystemHealth['checks']> {
       usage: 0, // Not available in serverless
       available: 0 // Not available in serverless
     };
-  } catch (_error) {
+  } catch {
     checks.disk = {
       status: 'unhealthy',
       usage: 0,
@@ -173,10 +173,10 @@ async function performHealthChecks(): Promise<SystemHealth['checks']> {
         status: failedServices === 0 ? 'healthy' : failedServices < serviceChecks.length ? 'degraded' : 'unhealthy',
         message: `${serviceChecks.length - failedServices}/${serviceChecks.length} external services accessible`
       };
-    } catch (_error) {
+    } catch {
       checks.services = {
         status: 'unhealthy',
-        message: `Service checks failed: ${_error}`
+        message: `Service checks failed: Unknown error`
       };
     }
   }

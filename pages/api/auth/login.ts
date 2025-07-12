@@ -2,7 +2,7 @@ import { createClient } from '@supabase/supabase-js';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { ENV_CONFIG } from '@/utils/environmentConfig';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logWarn, logError } from '@/utils/productionLogger';
 
 
 // 🔐 SECURITY: Development users from environment variables

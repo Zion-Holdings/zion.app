@@ -8,7 +8,7 @@ import { Mail as _Mail, Clock as _Clock, RefreshCw as _RefreshCw } from 'lucide-
 
 
 import Head from 'next/head';
-import { signIn } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import { supabase } from '@/utils/supabase/client';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import type { User, AuthChangeEvent, Session } from '@supabase/supabase-js';
