@@ -5,7 +5,7 @@ import { Slider } from "@/components/ui/slider";
 import type { PriceFilterProps } from "@/types/filters";
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
-export function PriceFilter({ priceRange, setPriceRange, expanded, toggleSection, isMobileFilterOpen }: PriceFilterProps) {
+export function PriceFilter({ priceRange, setPriceRange, expanded, toggleSection, _isMobileFilterOpen }: PriceFilterProps) {
   const handleChange = (values: number[]) => {
     setPriceRange([values[0] || 0, values[1] || 500]);
   };
