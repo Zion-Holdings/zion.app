@@ -194,7 +194,7 @@ export function ProductSubmissionForm() {
     }
 
       // Upload video if provided
-      if (values.video) {
+      if (values.video && values.video instanceof File) {
         const videoPath = `product_videos/${productRecord.id}/${values.video.name}`;
         const { error: uploadError } = await supabase.storage
           .from('products')
@@ -219,7 +219,7 @@ export function ProductSubmissionForm() {
       }
 
       // Upload model if provided
-      if (values.model) {
+      if (values.model && values.model instanceof File) {
         const modelPath = `product_models/${productRecord.id}/${values.model.name}`;
         const { error: uploadError } = await supabase.storage
           .from('products')
