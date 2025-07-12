@@ -26,7 +26,7 @@ import { useAuth } from '@/context/auth/AuthProvider';
 import { fetchProducts as _fetchProducts } from '@/services/marketplace';
 import { MAX_PRICE, MIN_PRICE } from '@/data/marketplaceData';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
-import apiClient from '@/lib/apiClient';
+import apiClient from '@/services/apiClient';
 
 
 /**
