@@ -12,7 +12,7 @@ const ReactPlayer = React.lazy(() => import('react-player').then(mod => ({ defau
 const ModelViewer = React.lazy(async () => {
   await import('@google/model-viewer');
   return {
-    default: (props: any) => (
+    default: (props: unknown) => (
       React.createElement('model-viewer', props)
     ),
   };
