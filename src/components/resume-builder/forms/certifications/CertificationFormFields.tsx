@@ -2,6 +2,7 @@
 import { FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import type { UseFormReturn } from 'react-hook-form';
+import type { ControllerRenderProps } from 'react-hook-form';
 import type { CertificationFormValues } from './types';
 
 interface CertificationFormFieldsProps {
@@ -15,7 +16,7 @@ export function CertificationFormFields({ form }: CertificationFormFieldsProps) 
         <FormField
           control={form.control}
           name="name"
-          render={({ field }: { field: any }) => (
+          render={({ field }: { field: ControllerRenderProps<CertificationFormValues, 'name'> }) => (
             <FormItem>
               <FormLabel>Certification Name</FormLabel>
               <FormControl>
@@ -29,7 +30,7 @@ export function CertificationFormFields({ form }: CertificationFormFieldsProps) 
         <FormField
           control={form.control}
           name="issuing_organization"
-          render={({ field }: { field: any }) => (
+          render={({ field }: { field: ControllerRenderProps<CertificationFormValues, 'issuing_organization'> }) => (
             <FormItem>
               <FormLabel>Issuing Organization</FormLabel>
               <FormControl>
@@ -45,7 +46,7 @@ export function CertificationFormFields({ form }: CertificationFormFieldsProps) 
         <FormField
           control={form.control}
           name="issue_date"
-          render={({ field }: { field: any }) => (
+          render={({ field }: { field: ControllerRenderProps<CertificationFormValues, 'issue_date'> }) => (
             <FormItem>
               <FormLabel>Issue Date</FormLabel>
               <FormControl>
@@ -63,7 +64,7 @@ export function CertificationFormFields({ form }: CertificationFormFieldsProps) 
         <FormField
           control={form.control}
           name="expiration_date"
-          render={({ field }: { field: any }) => (
+          render={({ field }: { field: ControllerRenderProps<CertificationFormValues, 'expiration_date'> }) => (
             <FormItem>
               <FormLabel>Expiration Date (Optional)</FormLabel>
               <FormControl>
@@ -83,7 +84,7 @@ export function CertificationFormFields({ form }: CertificationFormFieldsProps) 
         <FormField
           control={form.control}
           name="credential_id"
-          render={({ field }: { field: any }) => (
+          render={({ field }: { field: ControllerRenderProps<CertificationFormValues, 'credential_id'> }) => (
             <FormItem>
               <FormLabel>Credential ID (Optional)</FormLabel>
               <FormControl>
@@ -97,7 +98,7 @@ export function CertificationFormFields({ form }: CertificationFormFieldsProps) 
         <FormField
           control={form.control}
           name="credential_url"
-          render={({ field }: { field: any }) => (
+          render={({ field }: { field: ControllerRenderProps<CertificationFormValues, 'credential_url'> }) => (
             <FormItem>
               <FormLabel>Credential URL (Optional)</FormLabel>
               <FormControl>

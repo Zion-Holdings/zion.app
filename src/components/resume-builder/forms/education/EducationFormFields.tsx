@@ -19,7 +19,8 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { useState } from 'react';
-import type { EducationFormFieldsProps } from './types';
+import type { ControllerRenderProps } from 'react-hook-form';
+import type { EducationFormValues } from './types';
 import type { Education } from '@/types/resume';
 
 // Define schema for form validation
@@ -76,7 +77,7 @@ export function EducationFormFields({
           <FormField
             control={form.control}
             name="institution"
-            render={({ field }: { field: any }) => (
+            render={({ field }: { field: ControllerRenderProps<EducationFormValues, 'institution'> }) => (
               <FormItem>
                 <FormLabel>Institution</FormLabel>
                 <FormControl>
@@ -90,7 +91,7 @@ export function EducationFormFields({
           <FormField
             control={form.control}
             name="degree"
-            render={({ field }: { field: any }) => (
+            render={({ field }: { field: ControllerRenderProps<EducationFormValues, 'degree'> }) => (
               <FormItem>
                 <FormLabel>Degree</FormLabel>
                 <FormControl>
@@ -105,7 +106,7 @@ export function EducationFormFields({
         <FormField
           control={form.control}
           name="field_of_study"
-          render={({ field }: { field: any }) => (
+          render={({ field }: { field: ControllerRenderProps<EducationFormValues, 'field_of_study'> }) => (
             <FormItem>
               <FormLabel>Field of Study</FormLabel>
               <FormControl>
@@ -120,7 +121,7 @@ export function EducationFormFields({
           <FormField
             control={form.control}
             name="start_date"
-            render={({ field }: { field: any }) => (
+            render={({ field }: { field: ControllerRenderProps<EducationFormValues, 'start_date'> }) => (
               <FormItem>
                 <FormLabel>Start Date</FormLabel>
                 <FormControl>
@@ -139,7 +140,7 @@ export function EducationFormFields({
             <FormField
               control={form.control}
               name="is_current"
-              render={({ field }: { field: any }) => (
+              render={({ field }: { field: ControllerRenderProps<EducationFormValues, 'is_current'> }) => (
                 <FormItem className="flex flex-row items-start space-x-3 space-y-0 py-2">
                   <FormControl>
                     <Checkbox
@@ -158,7 +159,7 @@ export function EducationFormFields({
               <FormField
                 control={form.control}
                 name="end_date"
-                render={({ field }: { field: any }) => (
+                render={({ field }: { field: ControllerRenderProps<EducationFormValues, 'end_date'> }) => (
                   <FormItem>
                     <FormLabel>End Date</FormLabel>
                     <FormControl>
@@ -179,7 +180,7 @@ export function EducationFormFields({
         <FormField
           control={form.control}
           name="location"
-          render={({ field }: { field: any }) => (
+          render={({ field }: { field: ControllerRenderProps<EducationFormValues, 'location'> }) => (
             <FormItem>
               <FormLabel>Location (Optional)</FormLabel>
               <FormControl>
@@ -193,7 +194,7 @@ export function EducationFormFields({
         <FormField
           control={form.control}
           name="description"
-          render={({ field }: { field: any }) => (
+          render={({ field }: { field: ControllerRenderProps<EducationFormValues, 'description'> }) => (
             <FormItem>
               <FormLabel>Description (Optional)</FormLabel>
               <FormControl>
