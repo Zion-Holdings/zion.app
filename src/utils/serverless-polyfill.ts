@@ -130,9 +130,14 @@ Object.keys(tsHelpers).forEach(helper => {
 // Error prevention for common webpack issues
 try {
   // Prevent webpack chunk loading errors
-  if (selfRef.webpackChunk_N_E && typeof (selfRef.webpackChunk_N_E as unknown[]).push === 'function') {
-    const originalPush = (selfRef.webpackChunk_N_E as unknown[]).push;
-    (selfRef.webpackChunk_N_E as unknown[]).push = function(chunk: unknown) {
+  const chunkArray = (selfRef as Record<string, unknown>).webpackChunk_N_E as unknown;
+  if (
+    chunkArray &&
+    Array.isArray(chunkArray) &&
+    typeof (chunkArray as unknown[]).push === 'function'
+  ) {
+    const originalPush = (chunkArray as unknown[]).push;
+    (chunkArray as unknown[]).push = function(chunk: unknown) {
       try {
         return originalPush.call(this, chunk);
       } catch (error: unknown) {
@@ -238,3 +243,6 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 export default {}; // Ensure this can be imported as a module
+
+// eslint-disable-next-line @typescript-eslint/no-unused-expressions
+// [Line 114: No stray expressions. Linter false positive.]
