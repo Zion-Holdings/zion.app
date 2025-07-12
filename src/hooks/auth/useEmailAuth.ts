@@ -77,20 +77,21 @@ export const useEmailAuth = (
       }
 
       return { data: { user, token } };
-    } catch (error: any) {
+    } catch (error: unknown) {
       logErrorToProduction('Login error:', { data: error });
+      const errorMessage = (error instanceof Error && error.message) ? error.message : "An unexpected error occurred";
       toast({
         title: "Login failed",
-        description: error.message || "An unexpected error occurred",
+        description: errorMessage,
         variant: "destructive",
       });
-      return { error: { message: error.message || "An unexpected error occurred" } };
+      return { error: { message: errorMessage } };
     } finally {
       setIsLoading(false);
     }
   };
 
-  const signup = async (email: string, password: string, userData?: any) => {
+  const signup = async (email: string, password: string, userData?: Partial<UserDetails>) => {
     try {
       setIsLoading(true);
       // Clean up any stale auth state before signup
@@ -132,14 +133,15 @@ export const useEmailAuth = (
       // Determine if email verification is required based on the presence of user and absence of session
       const emailVerificationRequired = !!(data?.user && !data?.session);
       return { data, emailVerificationRequired };
-    } catch (error: any) {
+    } catch (error: unknown) {
       logErrorToProduction('Signup error:', { data: error });
+      const errorMessage = (error instanceof Error && error.message) ? error.message : "An unexpected error occurred";
       toast({
         title: "Signup failed",
-        description: error.message || "An unexpected error occurred",
+        description: errorMessage,
         variant: "destructive",
       });
-      return { error };
+      return { error: { message: errorMessage } };
     } finally {
       setIsLoading(false);
     }
@@ -166,14 +168,15 @@ export const useEmailAuth = (
         description: "Check your email for password reset instructions.",
       });
       return {};
-    } catch (error: any) {
+    } catch (error: unknown) {
       logErrorToProduction('Password reset error:', { data: error });
+      const errorMessage = (error instanceof Error && error.message) ? error.message : "An unexpected error occurred";
       toast({
         title: "Password reset failed",
-        description: error.message || "An unexpected error occurred",
+        description: errorMessage,
         variant: "destructive",
       });
-      return { error };
+      return { error: { message: errorMessage } };
     } finally {
       setIsLoading(false);
     }
