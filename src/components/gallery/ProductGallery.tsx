@@ -12,7 +12,7 @@ const ReactPlayer = React.lazy(() => import('react-player').then(mod => ({ defau
 const ModelViewer = React.lazy(async () => {
   await import('@google/model-viewer');
   return {
-    default: (props: unknown) => (
+    default: (props: Record<string, any>) => (
       React.createElement('model-viewer', props)
     ),
   };
@@ -102,7 +102,7 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
                 />
               }
             >
-              <ModelViewer src={modelUrl} alt="3d model" camera-controls style={{ width: '100%', height: '100%' }} />
+              <ModelViewer {...{ src: modelUrl, alt: '3d model', 'camera-controls': true, style: { width: '100%', height: '100%' } } as Record<string, any>} />
             </Suspense>
           </AspectRatio>
         </TabsContent>
