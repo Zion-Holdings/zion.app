@@ -18,11 +18,12 @@ export const useSocialAuth = () => {
           variant: "destructive",
         });
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       logErrorToProduction('Google login error:', { data: error });
+      const errorMessage = (error instanceof Error && error.message) ? error.message : "An unexpected error occurred";
       toast({
         title: "Google login failed",
-        description: error.message || "An unexpected error occurred",
+        description: errorMessage,
         variant: "destructive",
       });
     }
@@ -41,11 +42,12 @@ export const useSocialAuth = () => {
           variant: "destructive",
         });
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       logErrorToProduction('GitHub login error:', { data: error });
+      const errorMessage = (error instanceof Error && error.message) ? error.message : "An unexpected error occurred";
       toast({
         title: "GitHub login failed",
-        description: error.message || "An unexpected error occurred",
+        description: errorMessage,
         variant: "destructive",
       });
     }
@@ -64,11 +66,12 @@ export const useSocialAuth = () => {
           variant: "destructive",
         });
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       logErrorToProduction('Facebook login error:', { data: error });
+      const errorMessage = (error instanceof Error && error.message) ? error.message : "An unexpected error occurred";
       toast({
         title: "Facebook login failed",
-        description: error.message || "An unexpected error occurred",
+        description: errorMessage,
         variant: "destructive",
       });
     }
@@ -87,11 +90,12 @@ export const useSocialAuth = () => {
           variant: "destructive",
         });
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       logErrorToProduction('Twitter login error:', { data: error });
+      const errorMessage = (error instanceof Error && error.message) ? error.message : "An unexpected error occurred";
       toast({
         title: "Twitter login failed",
-        description: error.message || "An unexpected error occurred",
+        description: errorMessage,
         variant: "destructive",
       });
     }
