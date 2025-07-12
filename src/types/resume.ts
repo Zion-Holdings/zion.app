@@ -24,7 +24,7 @@ export interface Education {
   degree: string;
   field_of_study: string;
   start_date: Date | string;
-  end_date?: Date | string;
+  end_date: Date | string;
   is_current: boolean;
   description?: string;
   institution_logo_url?: string;
