@@ -248,8 +248,8 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       if (currentAppKit.getState().isConnected && currentAddress && currentProvider && currentChainId) {
         try {
           // currentProvider is already the EIP-1193 provider from AppKit
-          if (typeof ethers === 'object' && ethers !== null && 'BrowserProvider' in ethers && typeof (ethers as any).BrowserProvider === 'function') {
-            const EthersBrowserProvider = (ethers as any).BrowserProvider;
+          if (typeof ethers === 'object' && ethers !== null && 'BrowserProvider' in ethers && typeof (ethers as typeof import('ethers')).BrowserProvider === 'function') {
+            const EthersBrowserProvider = (ethers as typeof import('ethers')).BrowserProvider;
             const ethersProvider = new EthersBrowserProvider(
               currentProvider as Eip1193ProviderWithEvents
             );
@@ -314,7 +314,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             callback(provider);
 
             if (typeof window !== 'undefined') {
-              const ethRaw = (window as any).ethereum;
+              const ethRaw = (window as Window & { ethereum?: MinimalEthereumProvider }).ethereum;
               if (typeof ethRaw === 'object' && ethRaw !== null && 'on' in ethRaw && typeof ethRaw.on === 'function') {
                 const handler = () => callback(targetAppKit.getWalletProvider?.());
                 ethRaw.on('accountsChanged', handler);
@@ -365,7 +365,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
     try {
       await modalController.open();
-    } catch (error: any) {
+    } catch (error: unknown) {
       logErrorToProduction('WalletContext: Error opening wallet modal:', { data: error });
       if (error instanceof Error && /Coinbase Wallet SDK/i.test(error.message)) {
         logWarn(
