@@ -354,7 +354,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     }
 
     // Attempt to automatically open the MetaMask install page if no provider is detected
-    if (typeof window !== 'undefined' && !(window as any).ethereum) {
+    if (typeof window !== 'undefined' && !(window as Window & { ethereum?: MinimalEthereumProvider }).ethereum) {
       try {
         window.open('https://metamask.io/download.html', '_blank');
         logInfo('WalletContext: No wallet provider detected. Opening MetaMask install page.');

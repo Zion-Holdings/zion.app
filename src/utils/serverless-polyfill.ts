@@ -133,8 +133,8 @@ try {
   const chunkArrayUnknown = (selfRef as Record<string, unknown>).webpackChunk_N_E;
   if (Array.isArray(chunkArrayUnknown)) {
     const chunkArray = chunkArrayUnknown as unknown[];
-    const originalPush = chunkArray.push as (...items: unknown[]) => number;
-    chunkArray.push = function(this: unknown[], chunk: unknown): number {
+    const originalPush = (chunkArray as unknown[]).push as (...items: unknown[]) => number;
+    (chunkArray as unknown[]).push = function(this: unknown[], chunk: unknown): number {
       try {
         const arr = this as unknown[];
         const result = originalPush.call(arr, chunk);
@@ -240,5 +240,4 @@ if (process.env.NODE_ENV === 'development') {
   }, 100);
 }
 
-// Remove any stray or unused expressions at the end of the file
-export default {}; // Ensure this can be imported as a module
+export default {};
