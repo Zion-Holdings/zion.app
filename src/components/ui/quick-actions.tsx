@@ -138,7 +138,7 @@ export function QuickActions() {
           timestamp: new Date().toISOString(),
           performance: performance.getEntriesByType('navigation')[0],
           resources: performance.getEntriesByType('resource').slice(0, 20),
-          memory: (performance as any).memory || {},
+          memory: (performance as Performance & { memory?: Record<string, unknown> }).memory || {},
           userAgent: navigator.userAgent,
           screen: {
             width: screen.width,
