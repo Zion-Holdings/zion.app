@@ -26,6 +26,9 @@ export function useTokenBalance(
     async function fetchBalance() {
       try {
         const contract = new ethers.Contract(tokenAddress, ERC20_ABI, provider);
+        if (typeof contract.balanceOf !== 'function' || typeof contract.decimals !== 'function') {
+          throw new Error('Contract methods balanceOf or decimals are not functions');
+        }
         const [rawBalance, decimals] = await Promise.all([
           contract.balanceOf(address),
           contract.decimals()
