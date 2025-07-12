@@ -143,9 +143,9 @@ export function WorkExperienceItemForm({
                   <div className="flex items-center gap-2 h-10">
                     <Switch
                       aria-label="Current position"
-                      checked={field.value}
+                      checked={Boolean(field.value)}
                       onCheckedChange={field.onChange}
-                      id="current-position"
+                      id="current-position-switch"
                     />
                     <label htmlFor="current-position" className="text-sm text-muted-foreground">
                       I currently work here
