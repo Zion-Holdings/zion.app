@@ -11,7 +11,8 @@ import type { BlogPost } from '@/types/blog';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import fs from 'fs';
 import path from 'path';
-import { logWarn, logError } from '@/utils/productionLogger';
+import { logWarn } from '@/utils/productionLogger';
+import { logError } from '@/utils/logError';
 
 
 function parseMarkdown(filePath: string): BlogPost | null {
@@ -142,7 +143,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     // Use `blocking` so new posts added after build can be generated on demand
     return { paths, fallback: 'blocking' };
   } catch (error) {
-    logError('Error reading blog directory:', error);
+    logError('Failed to read blog directory:', { data: typeof error === 'object' && error !== null ? error : {} });
     return { paths: [], fallback: 'blocking' };
   }
 };
@@ -165,7 +166,7 @@ export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({
     }
     return { props: { initialPost: post }, revalidate: 60 };
   } catch (error) {
-    logError('Error in getStaticProps for blog post:', error);
+    logError('Failed to read blog post:', { data: typeof error === 'object' && error !== null ? error : {} });
     return { notFound: true };
   }
 };
