@@ -19,9 +19,9 @@ const heliaJson = () => ({
 });
 
 // Browser-safe logging
-function logInfo(message: string) {
+function browserLogInfo(message: string) {
   if (!isBuildEnv) {
-    logWarn(`[IPFS] ${message}`);
+    logWarn('[IPFS]', { message });
   }
 }
 
@@ -88,17 +88,17 @@ async function getHelia(): Promise<unknown> {
   
   if (!heliaNode) {
     try {
-      logInfo('Initializing Helia for general IPFS operations...');
+      browserLogInfo('Initializing Helia for general IPFS operations...');
       
       heliaNode = await createHelia();
       
-      logInfo('Helia Initialized for IPFS.');
+      browserLogInfo('Helia Initialized for IPFS.');
     } catch (error) {
       let message = 'Unknown error';
       if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
         message = (error as { message: string }).message;
       }
-      logWarn('⚠️ Failed to initialize Helia:', message);
+      logWarn('⚠️ Failed to initialize Helia', { message });
       return createHelia(); // Return mock
     }
   }
@@ -122,7 +122,7 @@ export async function saveJSON(data: unknown): Promise<string> {
     if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
       message = (error as { message: string }).message;
     }
-    logWarn('⚠️ Failed to save JSON to IPFS:', message);
+    logWarn('⚠️ Failed to save JSON to IPFS', { message });
     return 'mock-cid-' + Date.now();
   }
 }
@@ -143,7 +143,7 @@ export async function fetchJSON(cidString: string): Promise<unknown> {
     if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
       message = (error as { message: string }).message;
     }
-    logWarn('⚠️ Failed to fetch JSON from IPFS:', message);
+    logWarn('⚠️ Failed to fetch JSON from IPFS', { message });
     return { mock: true, cid: cidString };
   }
 }
@@ -155,18 +155,18 @@ export async function stopIpfsNode(): Promise<void> {
   }
   
   try {
-    logInfo('Stopping general IPFS Helia node...');
+    browserLogInfo('Stopping general IPFS Helia node...');
     if (heliaNode && typeof (heliaNode as { stop?: unknown }).stop === 'function') {
       await (heliaNode as { stop: () => Promise<void> }).stop();
       heliaNode = null;
-      logInfo('General IPFS Helia node stopped.');
+      browserLogInfo('General IPFS Helia node stopped.');
     }
   } catch (error) {
     let message = 'Unknown error';
     if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
       message = (error as { message: string }).message;
     }
-    logWarn('⚠️ Failed to stop IPFS node:', message);
+    logWarn('⚠️ Failed to stop IPFS node', { message });
   }
 }
 
