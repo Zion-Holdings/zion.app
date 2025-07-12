@@ -56,8 +56,8 @@ export const BulkAddSkills = ({ resumeId, onSuccess }: BulkAddSkillsProps) => {
           setError('Failed to parse categorized skills. Please try again.');
         }
       }
-    } catch (err: any) {
-      setError(err.message || 'Failed to categorize skills');
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : String(err));
     }
   };
 

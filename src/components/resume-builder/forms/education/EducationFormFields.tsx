@@ -63,8 +63,8 @@ export function EducationFormFields({
     setError(null);
     try {
       await onSubmit(data);
-    } catch (err: any) {
-      setError(err.message || 'An error occurred');
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : String(err));
     } finally {
       setIsLoading(false);
     }
