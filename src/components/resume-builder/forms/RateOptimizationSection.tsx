@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import type { Control } from "react-hook-form";
 import type { UseFormSetValue } from "react-hook-form";
+import type { ControllerRenderProps } from 'react-hook-form';
 import {
   FormField,
   FormItem,
@@ -40,7 +41,7 @@ export const RateOptimizationSection: React.FC<RateOptimizationSectionProps> = (
       <FormField
         control={control}
         name="hourlyRate"
-        render={({ field }: { field: any }) => (
+        render={({ field }: { field: ControllerRenderProps<any, 'hourlyRate'> }) => (
           <FormItem>
             <FormLabel>Your {rateType === "hourly" ? "Hourly Rate" : "Fixed Rate"} ($USD)</FormLabel>
             <FormControl>
