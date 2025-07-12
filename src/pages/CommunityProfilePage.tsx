@@ -14,7 +14,7 @@ import PostCard from "@/components/community/PostCard";
 import UserBadges from "@/components/community/UserBadges";
 import ReputationDisplay from "@/components/community/ReputationDisplay";
 
-import { logError } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 export default function CommunityProfilePage() {
 
   const router = useRouter();
@@ -35,7 +35,7 @@ export default function CommunityProfilePage() {
         // setPosts(userPosts); // This line is removed as per the edit hint
         setIsLoading(false);
       } catch (error) {
-        logError("Error fetching user:", error);
+        logErrorToProduction("Error fetching user:", error);
         setIsLoading(false);
         setUser(null); // Clear user if fetch fails
       }
