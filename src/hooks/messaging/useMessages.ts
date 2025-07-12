@@ -46,7 +46,7 @@ export function useMessages(
       
       // Mark messages as read
       const unreadMessages = data.filter(
-        (msg: any) => !msg.read && msg.recipient_id === user.id
+        (msg: Record<string, unknown>) => !msg.read && msg.recipient_id === user.id
       );
       
       if (unreadMessages.length > 0) {
