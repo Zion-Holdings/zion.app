@@ -66,7 +66,7 @@ const Carousel = React.forwardRef<
         ...(opts || {}),
         axis: orientation === "horizontal" ? "x" : "y",
       },
-      (Array.isArray(plugins) ? plugins : []) as any[]
+      (Array.isArray(plugins) ? plugins : []) as CreatePluginType<LoosePluginType, {}>[]
     )
     const [canScrollPrev, setCanScrollPrev] = React.useState(false)
     const [canScrollNext, setCanScrollNext] = React.useState(false)
