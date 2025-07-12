@@ -1,4 +1,4 @@
-import { logWarn, logError } from '@/utils/productionLogger';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 // Application Health Monitor
 // Comprehensive monitoring system for application health, performance, and reliability
@@ -468,7 +468,7 @@ class AppHealthMonitor {
           logWarn('🏥 Health issue detected:', report);
         }
       }).catch(error => {
-        logError('Health monitoring error:', error);
+        logErrorToProduction('Health monitoring error:', { error });
       });
     }, 30000);
     // Expose health monitor globally for debugging
