@@ -11,7 +11,7 @@ type TimeRange = '7d' | '30d' | '90d' | '365d';
 
 interface BehaviorDataItem {
   date: string;
-  [key: string]: any;
+  [key: string]: unknown; // Avoid 'any', use unknown or a specific type
 }
 
 export function UserBehaviorStats() {
@@ -94,7 +94,7 @@ export function UserBehaviorStats() {
           description="Button and link interactions"
           isLoading={isLoading}
           count={
-            behaviorData?.reduce((sum: number, day: BehaviorDataItem) => sum + (day.button_click || 0), 0) || 0
+            behaviorData?.reduce((sum: number, day: BehaviorDataItem) => Number(sum) + Number(day.button_click || 0), 0) || 0
           }
           icon={
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m14.5 12.5-4-4"/><path d="M8 6.2A3 3 0 1 0 6.2 8"/><circle cx="12" cy="12" r="10"/></svg>
@@ -105,7 +105,7 @@ export function UserBehaviorStats() {
           description="Completed forms and sign-ups"
           isLoading={isLoading}
           count={
-            behaviorData?.reduce((sum: number, day: BehaviorDataItem) => sum + (day.form_submit || 0), 0) || 0
+            behaviorData?.reduce((sum: number, day: BehaviorDataItem) => Number(sum) + Number(day.form_submit || 0), 0) || 0
           }
           icon={
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 17H7"/><path d="M17 17h-5"/><path d="M7 12h10"/><path d="M7 7h2"/><path d="M17 7h-5"/></svg>
@@ -116,7 +116,7 @@ export function UserBehaviorStats() {
           description="Goal completions"
           isLoading={isLoading}
           count={
-            behaviorData?.reduce((sum: number, day: BehaviorDataItem) => sum + (day.conversion || 0), 0) || 0
+            behaviorData?.reduce((sum: number, day: BehaviorDataItem) => Number(sum) + Number(day.conversion || 0), 0) || 0
           }
           icon={
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
