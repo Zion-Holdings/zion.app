@@ -10,7 +10,6 @@ import { FileText, MessageSquare, HelpCircle, Calendar, ExternalLink, Download }
 import Link from "next/link";
 import { StatusBadge } from "./StatusBadge";
 import { ApplicationProgress } from "./ApplicationProgress";
-import { toast } from "sonner";
 
 interface ApplicationCardProps {
   application: JobApplication;

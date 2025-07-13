@@ -29,7 +29,6 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   const { user } = useAuth();
   const firstName =
     (user && typeof user !== 'boolean' ? (user.displayName?.split(' ')[0] || user.name?.split(' ')[0]) : undefined) || '';
-  const { isWhitelabel, primaryColor } = useWhitelabel();
   const { t } = useTranslation();
   const router = useRouter();
   const [query, setQuery] = useState("");

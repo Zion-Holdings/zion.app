@@ -4,7 +4,7 @@ import type { ControllerRenderProps } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 import { FileText } from 'lucide-react';
 import {
   Form,

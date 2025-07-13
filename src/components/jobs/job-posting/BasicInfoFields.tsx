@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import type { Control, ControllerRenderProps } from "react-hook-form";
 import {
   FormField,
@@ -8,7 +8,6 @@ import {
   FormMessage 
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { ClientBudgetRecommender } from "@/components/pricing/ClientBudgetRecommender";
 import { Card, CardContent } from "@/components/ui/card";
 import type { JobSchemaType } from "./validation";
 

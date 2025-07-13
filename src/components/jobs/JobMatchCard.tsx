@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Building, MapPin, Clock, DollarSign, Star } from 'lucide-react';
+import { Building, MapPin, Star } from 'lucide-react';
 
 
 
@@ -30,7 +30,6 @@ interface JobMatchProps {
 
 export function JobMatchCard({ 
   matchId, 
-  talentId, 
   name, 
   title, 
   company, 
