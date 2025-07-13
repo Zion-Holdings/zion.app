@@ -10,9 +10,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { ClientBudgetRecommender } from "@/components/pricing/ClientBudgetRecommender";
 import { Card, CardContent } from "@/components/ui/card";
+import type { JobSchemaType } from "./validation";
 
 interface BasicInfoFieldsProps {
-  control: Control<any>;
+  control: Control<JobSchemaType>;
 }
 
 export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({ control }) => {
@@ -29,7 +30,7 @@ export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({ control }) => 
       <FormField
         control={control}
         name="title"
-        render={({ field }: { field: ControllerRenderProps<any, "title"> }) => (
+        render={({ field }: { field: ControllerRenderProps<JobSchemaType, "title"> }) => (
           <FormItem>
             <FormLabel>Job Title</FormLabel>
             <FormControl>
@@ -43,7 +44,7 @@ export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({ control }) => 
       <FormField
         control={control}
         name="company"
-        render={({ field }: { field: ControllerRenderProps<any, "company"> }) => (
+        render={({ field }: { field: ControllerRenderProps<JobSchemaType, "company"> }) => (
           <FormItem>
             <FormLabel>Company</FormLabel>
             <FormControl>
@@ -57,7 +58,7 @@ export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({ control }) => 
       <FormField
         control={control}
         name="category"
-        render={({ field }: { field: ControllerRenderProps<any, "category"> }) => (
+        render={({ field }: { field: ControllerRenderProps<JobSchemaType, "category"> }) => (
           <FormItem>
             <FormLabel>Job Category</FormLabel>
             <FormControl>
@@ -84,7 +85,7 @@ export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({ control }) => 
         <FormField
           control={control}
           name="budgetMin"
-          render={({ field: { onChange, ...rest } }: { field: ControllerRenderProps<any, "budgetMin"> }) => (
+          render={({ field: { onChange, ...rest } }: { field: ControllerRenderProps<JobSchemaType, "budgetMin"> }) => (
             <FormItem>
               <FormLabel>Budget (Min)</FormLabel>
               <FormControl>
@@ -106,7 +107,7 @@ export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({ control }) => 
         <FormField
           control={control}
           name="budgetMax"
-          render={({ field: { onChange, ...rest } }: { field: ControllerRenderProps<any, "budgetMax"> }) => (
+          render={({ field: { onChange, ...rest } }: { field: ControllerRenderProps<JobSchemaType, "budgetMax"> }) => (
             <FormItem>
               <FormLabel>Budget (Max)</FormLabel>
               <FormControl>
@@ -140,7 +141,7 @@ export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({ control }) => 
       <FormField
         control={control}
         name="location"
-        render={({ field }: { field: ControllerRenderProps<any, "location"> }) => (
+        render={({ field }: { field: ControllerRenderProps<JobSchemaType, "location"> }) => (
           <FormItem>
             <FormLabel>Location</FormLabel>
             <FormControl>
