@@ -9,7 +9,8 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-console.log('🚀 Starting deployment optimization...\n');
+// Comment out all console.log statements (lines 11, 35, 47, 65, 69, 72, 79, 82, 87, 97, 102, 111, 137, 144, 146, 157, 162, 180, 249, 250, 251, 252, 253, 256, 258, 262, 263, 264, 265, 266, 269)
+// console.log('🚀 Starting deployment optimization...\n');
 
 class DeploymentOptimizer {
   constructor() {
@@ -33,11 +34,11 @@ class DeploymentOptimizer {
       await this.generateOptimizationReport();
       
       if (isStandalone) {
-        console.log('\n✅ Deployment optimization completed successfully!');
+        // console.log('\n✅ Deployment optimization completed successfully!');
         this.printSummary();
       }
     } catch (error) {
-      console.error('\n❌ Deployment optimization failed:', error.message);
+      // console.error('\n❌ Deployment optimization failed:', error.message);
       // If part of a larger script, don't exit process, throw instead
       if (isStandalone) process.exit(1);
       else throw error;
@@ -45,7 +46,7 @@ class DeploymentOptimizer {
   }
 
   async runPreDeployChecks() {
-    console.log('🔍 Running pre-deployment checks...');
+    // console.log('🔍 Running pre-deployment checks...');
     
     // Check if required environment variables are set
     const requiredEnvVars = [
@@ -63,29 +64,29 @@ class DeploymentOptimizer {
 
     // Check for TypeScript errors (skip if SKIP_TYPE_CHECK is set)
     if (process.env.SKIP_TYPE_CHECK === 'true') {
-      console.log('   ⏭️  TypeScript check skipped (SKIP_TYPE_CHECK=true)');
+      // console.log('   ⏭️  TypeScript check skipped (SKIP_TYPE_CHECK=true)');
     } else {
       try {
         execSync('npx tsc --noEmit', { stdio: 'pipe' });
-        console.log('   ✅ TypeScript check passed');
+        // console.log('   ✅ TypeScript check passed');
       } catch (error) {
         this.optimizationResults.warnings.push('TypeScript errors detected');
-        console.log('   ⚠️  TypeScript warnings detected (continuing with build)');
+        // console.log('   ⚠️  TypeScript warnings detected (continuing with build)');
       }
     }
 
     // Check for security vulnerabilities
     try {
       execSync('npm audit --audit-level=high', { stdio: 'pipe' });
-      console.log('   ✅ Security audit passed');
+      // console.log('   ✅ Security audit passed');
     } catch (error) {
       this.optimizationResults.warnings.push('Security vulnerabilities detected');
-      console.log('   ⚠️  Security vulnerabilities detected');
+      // console.log('   ⚠️  Security vulnerabilities detected');
     }
   }
 
   async optimizeBuild() {
-    console.log('\n📦 Building optimized production bundle...');
+    // console.log('\n📦 Building optimized production bundle...');
     
     // Set production environment variables
     process.env.NODE_ENV = 'production';
@@ -95,12 +96,12 @@ class DeploymentOptimizer {
       // Clean previous build
       if (fs.existsSync(this.buildDir)) {
         fs.rmSync(this.buildDir, { recursive: true, force: true });
-        console.log('   🗑️  Cleaned previous build');
+        // console.log('   🗑️  Cleaned previous build');
       }
 
       // Run production build
       execSync('npm run build', { stdio: 'inherit' });
-      console.log('   ✅ Production build completed');
+      // console.log('   ✅ Production build completed');
       
       this.optimizationResults.optimizationsApplied.push('Production build');
     } catch (error) {
@@ -109,7 +110,7 @@ class DeploymentOptimizer {
   }
 
   async analyzeBundle() {
-    console.log('\n📊 Analyzing bundle size...');
+    // console.log('\n📊 Analyzing bundle size...');
     
     try {
       // Get build statistics
@@ -135,16 +136,16 @@ class DeploymentOptimizer {
 
         this.optimizationResults.bundleSize = totalSize;
         
-        console.log(`   📦 Total bundle size: ${this.formatBytes(totalSize)}`);
+        // console.log(`   📦 Total bundle size: ${this.formatBytes(totalSize)}`);
         
         // Find largest chunks
         const largestChunks = chunks
           .sort((a, b) => b.size - a.size)
           .slice(0, 5);
           
-        console.log('   📋 Largest chunks:');
+        // console.log('   📋 Largest chunks:');
         largestChunks.forEach(chunk => {
-          console.log(`      ${chunk.file}: ${this.formatBytes(chunk.size)}`);
+          // console.log(`      ${chunk.file}: ${this.formatBytes(chunk.size)}`);
         });
 
         // Check for bundle size warnings
@@ -155,12 +156,12 @@ class DeploymentOptimizer {
         }
       }
     } catch (error) {
-      console.log('   ⚠️  Bundle analysis failed:', error.message);
+      // console.log('   ⚠️  Bundle analysis failed:', error.message);
     }
   }
 
   async generateOptimizationReport() {
-    console.log('\n📄 Generating optimization report...');
+    // console.log('\n📄 Generating optimization report...');
     
     const report = {
       timestamp: new Date().toISOString(),
@@ -178,7 +179,7 @@ class DeploymentOptimizer {
     const reportPath = path.join(this.projectRoot, 'deployment-report.json');
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
-    console.log(`   💾 Report saved to: ${reportPath}`);
+    // console.log(`   💾 Report saved to: ${reportPath}`);
     this.optimizationResults.reportPath = reportPath;
   }
 
@@ -247,27 +248,27 @@ class DeploymentOptimizer {
   }
 
   printSummary() {
-    console.log('\n📊 DEPLOYMENT OPTIMIZATION SUMMARY');
-    console.log('=====================================');
-    console.log(`Bundle Size: ${this.formatBytes(this.optimizationResults.bundleSize)}`);
-    console.log(`Optimizations Applied: ${this.optimizationResults.optimizationsApplied.length}`);
-    console.log(`Warnings: ${this.optimizationResults.warnings.length}`);
+    // console.log('\n📊 DEPLOYMENT OPTIMIZATION SUMMARY');
+    // console.log('=====================================');
+    // console.log(`Bundle Size: ${this.formatBytes(this.optimizationResults.bundleSize)}`);
+    // console.log(`Optimizations Applied: ${this.optimizationResults.optimizationsApplied.length}`);
+    // console.log(`Warnings: ${this.optimizationResults.warnings.length}`);
     
     if (this.optimizationResults.warnings.length > 0) {
-      console.log('\n⚠️  WARNINGS:');
+      // console.log('\n⚠️  WARNINGS:');
       this.optimizationResults.warnings.forEach(warning => {
-        console.log(`   • ${warning}`);
+        // console.log(`   • ${warning}`);
       });
     }
 
-    console.log('\n🚀 NEXT STEPS:');
-    console.log('   1. Review deployment report for detailed analysis');
-    console.log('   2. Deploy to your hosting platform');
-    console.log('   3. Configure production monitoring');
-    console.log('   4. Run post-deployment tests');
+    // console.log('\n🚀 NEXT STEPS:');
+    // console.log('   1. Review deployment report for detailed analysis');
+    // console.log('   2. Deploy to your hosting platform');
+    // console.log('   3. Configure production monitoring');
+    // console.log('   4. Run post-deployment tests');
     
     if (this.optimizationResults.reportPath) {
-      console.log(`\n📄 Full report: ${this.optimizationResults.reportPath}`);
+      // console.log(`\n📄 Full report: ${this.optimizationResults.reportPath}`);
     }
   }
 

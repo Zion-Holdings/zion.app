@@ -266,35 +266,35 @@ function findFiles(dir, extensions, excludedDirs = []) {
 }
 
 function main() {
-  console.log('🔍 Scanning for hardcoded strings...');
+  // console.log('🔍 Scanning for hardcoded strings...');
   
   const extensions = ['.tsx', '.ts', '.jsx', '.js'];
   const files = findFiles('.', extensions, EXCLUDED_DIRS);
   
-  console.log(`📁 Found ${files.length} files to analyze`);
+  // console.log(`📁 Found ${files.length} files to analyze`);
   
   const results = files.map(analyzeFile).filter(Boolean);
-  console.log(`✅ Analyzed ${results.length} files`);
+  // console.log(`✅ Analyzed ${results.length} files`);
   
   const report = generateReport(results);
   fs.writeFileSync(OUTPUT_FILE, report);
   
-  console.log(`📝 Report saved to: ${OUTPUT_FILE}`);
+  // console.log(`📝 Report saved to: ${OUTPUT_FILE}`);
   
   // Console summary
   const filesWithHardcoded = results.filter(r => r.hardcodedStrings.length > 0);
   const filesWithTranslation = results.filter(r => r.hasTranslation);
   
-  console.log(`\n📊 Summary:`);
-  console.log(`   Files with translation: ${filesWithTranslation.length}`);
-  console.log(`   Files with hardcoded strings: ${filesWithHardcoded.length}`);
-  console.log(`   Translation coverage: ${Math.round((filesWithTranslation.length / results.length) * 100)}%`);
+  // console.log(`\n📊 Summary:`);
+  // console.log(`   Files with translation: ${filesWithTranslation.length}`);
+  // console.log(`   Files with hardcoded strings: ${filesWithHardcoded.length}`);
+  // console.log(`   Translation coverage: ${Math.round((filesWithTranslation.length / results.length) * 100)}%`);
   
   if (filesWithHardcoded.length > 0) {
-    console.log(`\n⚠️  Found hardcoded strings in ${filesWithHardcoded.length} files`);
-    console.log(`   Check ${OUTPUT_FILE} for details`);
+    // console.log(`\n⚠️  Found hardcoded strings in ${filesWithHardcoded.length} files`);
+    // console.log(`   Check ${OUTPUT_FILE} for details`);
   } else {
-    console.log(`\n🎉 No hardcoded strings found!`);
+    // console.log(`\n🎉 No hardcoded strings found!`);
   }
 }
 
