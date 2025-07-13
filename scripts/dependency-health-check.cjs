@@ -9,13 +9,13 @@ const { spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔍 Dependency Health Check\n');
+process.stdout.write('\ud83d\udd0d Dependency Health Check\n');
 
 /**
  * Check SWC dependencies
  */
 async function checkSWCDependencies() {
-  console.log('⚙️  SWC Dependencies Check:');
+  process.stdout.write('\u2699\ufe0f  SWC Dependencies Check:\n');
   
   return new Promise((resolve) => {
     const checkProcess = spawn('npm', ['ls', '@swc/core', '@swc/helpers'], {
@@ -29,24 +29,24 @@ async function checkSWCDependencies() {
     
     checkProcess.on('close', (code) => {
       if (output.includes('@swc/core') && output.includes('@swc/helpers')) {
-        console.log('   ✅ SWC dependencies are properly installed');
+        process.stdout.write('   \u2705 SWC dependencies are properly installed\n');
         
         // Check for version conflicts
         const coreMatches = output.match(/@swc\/core@(\d+\.\d+\.\d+)/g);
         const helperMatches = output.match(/@swc\/helpers@(\d+\.\d+\.\d+)/g);
         
         if (coreMatches && helperMatches) {
-          console.log(`   📦 Found SWC core versions: ${[...new Set(coreMatches)].join(', ')}`);
-          console.log(`   📦 Found SWC helper versions: ${[...new Set(helperMatches)].join(', ')}`);
+          process.stdout.write(`   \ud83d\udce6 Found SWC core versions: ${[...new Set(coreMatches)].join(', ')}\n`);
+          process.stdout.write(`   \ud83d\udce6 Found SWC helper versions: ${[...new Set(helperMatches)].join(', ')}\n`);
           
           if (new Set(coreMatches).size === 1 && new Set(helperMatches).size <= 2) {
-            console.log('   ✅ SWC versions are compatible');
+            process.stdout.write('   \u2705 SWC versions are compatible\n');
           } else {
-            console.log('   ⚠️  Multiple SWC versions detected (this is usually fine)');
+            process.stdout.write('   \u26a0\ufe0f  Multiple SWC versions detected (this is usually fine)\n');
           }
         }
       } else {
-        console.log('   ❌ SWC dependencies missing or not properly installed');
+        process.stdout.write('   \u274c SWC dependencies missing or not properly installed\n');
       }
       resolve(code === 0);
     });
@@ -57,7 +57,7 @@ async function checkSWCDependencies() {
  * Check punycode dependencies
  */
 async function checkPunycodeDependencies() {
-  console.log('\n🌐 Punycode Dependencies Check:');
+  process.stdout.write('\n\ud83c\udf10 Punycode Dependencies Check:\n');
   
   return new Promise((resolve) => {
     const checkProcess = spawn('npm', ['ls', 'punycode'], {
@@ -71,17 +71,17 @@ async function checkPunycodeDependencies() {
     
     checkProcess.on('close', (code) => {
       if (output.includes('punycode@2.3.1')) {
-        console.log('   ✅ Userland punycode package is installed (v2.3.1)');
-        console.log('   💡 This helps replace deprecated Node.js built-in punycode');
+        process.stdout.write('   \u2705 Userland punycode package is installed (v2.3.1)\n');
+        process.stdout.write('   \ud83d\udca1 This helps replace deprecated Node.js built-in punycode\n');
       } else {
-        console.log('   ⚠️  Userland punycode package not found');
+        process.stdout.write('   \u26a0\ufe0f  Userland punycode package not found\n');
       }
       
       // Count indirect punycode dependencies
       const matches = output.match(/punycode@\d+\.\d+\.\d+/g);
       if (matches) {
-        console.log(`   📊 Total punycode dependencies: ${matches.length}`);
-        console.log('   💡 These are from third-party packages (eslint, jsdom, mongoose, etc.)');
+        process.stdout.write(`   \ud83d\udcca Total punycode dependencies: ${matches.length}\n`);
+        process.stdout.write('   \ud83d\udca1 These are from third-party packages (eslint, jsdom, mongoose, etc.)\n');
       }
       
       resolve(true);
@@ -93,7 +93,7 @@ async function checkPunycodeDependencies() {
  * Test build with warning suppression
  */
 async function testBuildWithWarnings() {
-  console.log('\n🏗️  Build Test (with warning suppression):');
+  process.stdout.write('\n\ud83c\udfd7\ufe0f  Build Test (with warning suppression):\n');
   
   return new Promise((resolve) => {
     const buildProcess = spawn('npm', ['run', 'build'], {
@@ -114,35 +114,35 @@ async function testBuildWithWarnings() {
     
     buildProcess.on('close', (code) => {
       if (code === 0) {
-        console.log('   ✅ Build completed successfully');
+        process.stdout.write('   \u2705 Build completed successfully\n');
         
         // Check for deprecation warnings
         if (errorOutput.includes('DEP0040') || errorOutput.includes('punycode')) {
-          console.log('   ⚠️  Punycode deprecation warnings still present');
+          process.stdout.write('   \u26a0\ufe0f  Punycode deprecation warnings still present\n');
         } else {
-          console.log('   ✅ No punycode deprecation warnings detected');
+          process.stdout.write('   \u2705 No punycode deprecation warnings detected\n');
         }
         
         // Check for SWC-related messages
         if (output.includes('swc') || errorOutput.includes('swc')) {
-          console.log('   ℹ️  SWC-related messages found in build output');
+          process.stdout.write('\u2139\ufe0f  SWC-related messages found in build output\n');
         } else {
-          console.log('   ✅ No SWC issues detected in build');
+          process.stdout.write('   \u2705 No SWC issues detected in build\n');
         }
         
         // Extract build metrics
         const pagesMatch = output.match(/(\d+) pages/);
         if (pagesMatch) {
-          console.log(`   📄 Generated ${pagesMatch[1]} pages successfully`);
+          process.stdout.write(`   \ud83d\udcc4 Generated ${pagesMatch[1]} pages successfully\n`);
         }
         
       } else {
-        console.log(`   ❌ Build failed with exit code ${code}`);
+        process.stdout.write(`   \u274c Build failed with exit code ${code}\n`);
         if (errorOutput) {
-          console.log('   📝 Error summary:');
+          process.stdout.write('   \ud83d\udcdd Error summary:\n');
           const errorLines = errorOutput.split('\n').slice(0, 5);
           errorLines.forEach(line => {
-            if (line.trim()) console.log(`      ${line.trim()}`);
+            if (line.trim()) process.stdout.write(`      ${line.trim()}\n`);
           });
         }
       }
@@ -156,7 +156,7 @@ async function testBuildWithWarnings() {
  * Check package.json scripts
  */
 function checkPackageScripts() {
-  console.log('\n📋 Package Scripts Check:');
+  process.stdout.write('\n\ud83d\udccb Package Scripts Check:\n');
   
   try {
     const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
@@ -171,21 +171,21 @@ function checkPackageScripts() {
     
     requiredScripts.forEach(script => {
       if (scripts[script]) {
-        console.log(`   ✅ ${script}: ${scripts[script]}`);
+        process.stdout.write(`   \u2705 ${script}: ${scripts[script]}\n`);
       } else {
-        console.log(`   ❌ Missing script: ${script}`);
+        process.stdout.write(`   \u274c Missing script: ${script}\n`);
       }
     });
     
     // Check if build script includes warning suppression
     if (scripts.build && scripts.build.includes('suppress-warnings.cjs')) {
-      console.log('   ✅ Warning suppression integrated in build script');
+      process.stdout.write('   \u2705 Warning suppression integrated in build script\n');
     } else {
-      console.log('   ⚠️  Warning suppression not found in build script');
+      process.stdout.write('   \u26a0\ufe0f  Warning suppression not found in build script\n');
     }
     
   } catch (error) {
-    console.log('   ❌ Error reading package.json:', error.message);
+    process.stdout.write('   \u274c Error reading package.json:' + error.message + '\n');
   }
 }
 
@@ -193,33 +193,33 @@ function checkPackageScripts() {
  * Generate health report
  */
 function generateHealthReport(swcCheck, punycodeCheck, buildCheck) {
-  console.log('\n📊 Health Report Summary:');
-  console.log('=' .repeat(50));
+  process.stdout.write('\n\ud83d\udcca Health Report Summary:\n');
+  process.stdout.write('='.repeat(50) + '\n');
   
   const status = swcCheck && buildCheck ? 'HEALTHY' : 'NEEDS ATTENTION';
   const emoji = status === 'HEALTHY' ? '🟢' : '🟡';
   
-  console.log(`${emoji} Overall Status: ${status}`);
-  console.log(`✅ SWC Dependencies: ${swcCheck ? 'OK' : 'ISSUES'}`);
-  console.log(`✅ Punycode Handling: ${punycodeCheck ? 'OK' : 'ISSUES'}`);
-  console.log(`✅ Build Process: ${buildCheck ? 'OK' : 'ISSUES'}`);
+  process.stdout.write(`${emoji} Overall Status: ${status}\n`);
+  process.stdout.write(`\u2705 SWC Dependencies: ${swcCheck ? 'OK' : 'ISSUES'}\n`);
+  process.stdout.write(`\u2705 Punycode Handling: ${punycodeCheck ? 'OK' : 'ISSUES'}\n`);
+  process.stdout.write(`\u2705 Build Process: ${buildCheck ? 'OK' : 'ISSUES'}\n`);
   
-  console.log('\n🔧 Available Commands:');
-  console.log('   npm run deps:check    # Check for outdated packages');
-  console.log('   npm run deps:update   # Update dependencies');
-  console.log('   npm run deps:clean    # Clean reinstall');
-  console.log('   npm run build         # Build with warning suppression');
+  process.stdout.write('\n\ud83d\udd27 Available Commands:\n');
+  process.stdout.write('   npm run deps:check    # Check for outdated packages\n');
+  process.stdout.write('   npm run deps:update   # Update dependencies\n');
+  process.stdout.write('   npm run deps:clean    # Clean reinstall\n');
+  process.stdout.write('   npm run build         # Build with warning suppression\n');
   
-  console.log('\n💡 Recommendations:');
+  process.stdout.write('\n\ud83d\udca1 Recommendations:\n');
   if (status === 'HEALTHY') {
-    console.log('   • Dependencies are healthy');
-    console.log('   • Build process is working correctly');
-    console.log('   • Warning suppression is active');
-    console.log('   • Monitor dependency updates regularly');
+    process.stdout.write('   \u2022 Dependencies are healthy\n');
+    process.stdout.write('   \u2022 Build process is working correctly\n');
+    process.stdout.write('   \u2022 Warning suppression is active\n');
+    process.stdout.write('   \u2022 Monitor dependency updates regularly\n');
   } else {
-    console.log('   • Run npm run deps:clean if issues persist');
-    console.log('   • Check Node.js version compatibility');
-    console.log('   • Review dependency conflicts');
+    process.stdout.write('   \u2022 Run npm run deps:clean if issues persist\n');
+    process.stdout.write('   \u2022 Check Node.js version compatibility\n');
+    process.stdout.write('   \u2022 Review dependency conflicts\n');
   }
 }
 
@@ -227,7 +227,7 @@ function generateHealthReport(swcCheck, punycodeCheck, buildCheck) {
  * Main health check function
  */
 async function runHealthCheck() {
-  console.log('Starting comprehensive dependency health check...\n');
+  process.stdout.write('Starting comprehensive dependency health check...\n');
   
   const swcCheck = await checkSWCDependencies();
   const punycodeCheck = await checkPunycodeDependencies();
@@ -236,7 +236,7 @@ async function runHealthCheck() {
   
   generateHealthReport(swcCheck, punycodeCheck, buildCheck);
   
-  console.log('\n🎯 Dependency Health Check Complete!');
+  process.stdout.write('\n\ud83c\udfaf Dependency Health Check Complete!\n');
 }
 
 // Run the health check

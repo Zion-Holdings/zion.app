@@ -21,7 +21,7 @@ const colors = {
 };
 
 function log(message, color = 'white') {
-  console.log(`${colors[color]}${message}${colors.reset}`);
+  process.stdout.write(`${colors[color]}${message}${colors.reset}\n`);
 }
 
 // Load translation files

@@ -54,11 +54,11 @@ class ProductionMonitor {
   }
 
   async runHealthChecks() {
-    console.log('🔍 Running Production Health Checks...\n');
+    process.stdout.write('\ud83d\udd0d Running Production Health Checks...\n');
     
     const results = [];
     for (const check of this.healthChecks) {
-      console.log(`Checking ${check.name}...`);
+      process.stdout.write(`Checking ${check.name}...\n`);
       const result = await this.checkEndpoint(check.endpoint);
       if (check.name === 'Authentication' && result.status === 401) {
         // 401 indicates no active session but endpoint reachable
@@ -67,11 +67,11 @@ class ProductionMonitor {
       results.push({ ...check, ...result });
       
       const emoji = result.success ? '✅' : '❌';
-      console.log(`  ${emoji} ${check.name}: ${result.status} (${result.responseTime}ms)`);
+      process.stdout.write(`  ${emoji} ${check.name}: ${result.status} (${result.responseTime}ms)\n`);
     }
     
     const allHealthy = results.every(r => r.success);
-    console.log(`\n🏥 Overall Health: ${allHealthy ? '✅ HEALTHY' : '❌ UNHEALTHY'}`);
+    process.stdout.write(`\n\ud83c\udfe5 Overall Health: ${allHealthy ? '\u2705 HEALTHY' : '\u274c UNHEALTHY'}\n`);
     
     // Save results for monitoring
     const report = {

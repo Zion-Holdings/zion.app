@@ -8,22 +8,22 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔍 Performance Audit Report');
-console.log('===========================\n');
+process.stdout.write('\ud83d\udd0d Performance Audit Report\n');
+process.stdout.write('===========================\n');
 
 // Check if .env.local exists
 const envLocalPath = path.join(process.cwd(), '.env.local');
 const hasEnvLocal = fs.existsSync(envLocalPath);
 
-console.log('📋 Environment Configuration:');
-console.log(`   .env.local file: ${hasEnvLocal ? '✅ Present' : '❌ Missing'}`);
+process.stdout.write('\ud83d\udccb Environment Configuration:\n');
+process.stdout.write(`   .env.local file: ${hasEnvLocal ? '\u2705 Present' : '\u274c Missing'}\n`);
 
 if (!hasEnvLocal) {
-  console.log('   ⚠️  Create .env.local with:');
-  console.log('   NEXT_PUBLIC_SUPABASE_URL=https://gnwtggeptzkqnduuthto.supabase.co');
-  console.log('   NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...');
-  console.log('   PERFORMANCE_MONITORING=false');
-  console.log('   DEBUG_ENV_CONFIG=false\n');
+  process.stdout.write('   \u26a0\ufe0f  Create .env.local with:\n');
+  process.stdout.write('   NEXT_PUBLIC_SUPABASE_URL=https://gnwtggeptzkqnduuthto.supabase.co\n');
+  process.stdout.write('   NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\n');
+  process.stdout.write('   PERFORMANCE_MONITORING=false\n');
+  process.stdout.write('   DEBUG_ENV_CONFIG=false\n');
 }
 
 // Check package.json for performance scripts
@@ -32,10 +32,10 @@ let packageJson = {};
 try {
   packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
 } catch (error) {
-  console.log('❌ Could not read package.json');
+  process.stdout.write('\u274c Could not read package.json\n');
 }
 
-console.log('📦 Build Optimizations:');
+process.stdout.write('\ud83d\udce6 Build Optimizations:\n');
 
 // Check Next.js config optimizations
 const nextConfigPath = path.join(process.cwd(), 'next.config.js');
@@ -51,13 +51,13 @@ if (fs.existsSync(nextConfigPath)) {
   ];
 
   optimizations.forEach(opt => {
-    console.log(`   ${opt.check ? '✅' : '❌'} ${opt.name}`);
+    process.stdout.write(`   ${opt.check ? '\u2705' : '\u274c'} ${opt.name}\n`);
   });
 } else {
-  console.log('   ❌ next.config.js not found');
+  process.stdout.write('   \u274c next.config.js not found\n');
 }
 
-console.log('\n🎯 App Initialization Optimizations:');
+process.stdout.write('\n\ud83c\udfaf App Initialization Optimizations:\n');
 
 // Check _app.tsx optimizations
 const appPath = path.join(process.cwd(), 'pages/_app.tsx');
@@ -73,13 +73,13 @@ if (fs.existsSync(appPath)) {
   ];
 
   appOptimizations.forEach(opt => {
-    console.log(`   ${opt.check ? '✅' : '❌'} ${opt.name}`);
+    process.stdout.write(`   ${opt.check ? '\u2705' : '\u274c'} ${opt.name}\n`);
   });
 } else {
-  console.log('   ❌ pages/_app.tsx not found');
+  process.stdout.write('   \u274c pages/_app.tsx not found\n');
 }
 
-console.log('\n🛡️ Error Handling & Monitoring:');
+process.stdout.write('\n\ud83d\udee1\ufe0f Error Handling & Monitoring:\n');
 
 // Check Sentry configuration
 const sentryPath = path.join(process.cwd(), 'sentry.ts');
@@ -94,13 +94,13 @@ if (fs.existsSync(sentryPath)) {
   ];
 
   sentryOptimizations.forEach(opt => {
-    console.log(`   ${opt.check ? '✅' : '❌'} ${opt.name}`);
+    process.stdout.write(`   ${opt.check ? '\u2705' : '\u274c'} ${opt.name}\n`);
   });
 } else {
-  console.log('   ❌ sentry.ts not found');
+  process.stdout.write('   \u274c sentry.ts not found\n');
 }
 
-console.log('\n🔌 Supabase Optimizations:');
+process.stdout.write('\n\ud83d\udd0c Supabase Optimizations:\n');
 
 // Check Supabase client optimizations
 const supabasePath = path.join(process.cwd(), 'src/integrations/supabase/client.ts');
@@ -116,24 +116,24 @@ if (fs.existsSync(supabasePath)) {
   ];
 
   supabaseOptimizations.forEach(opt => {
-    console.log(`   ${opt.check ? '✅' : '❌'} ${opt.name}`);
+    process.stdout.write(`   ${opt.check ? '\u2705' : '\u274c'} ${opt.name}\n`);
   });
 } else {
-  console.log('   ❌ Supabase client file not found');
+  process.stdout.write('   \u274c Supabase client file not found\n');
 }
 
-console.log('\n📊 Performance Recommendations:');
-console.log('   💡 Run `npm run build` to test build performance');
-console.log('   💡 Use `npm run analyze` to analyze bundle size');
-console.log('   💡 Enable PERFORMANCE_MONITORING=true for debugging');
-console.log('   💡 Check Lighthouse scores after deployment');
-console.log('   💡 Monitor Core Web Vitals in production');
+process.stdout.write('\n\ud83d\udcca Performance Recommendations:\n');
+process.stdout.write('   \ud83d\udca1 Run `npm run build` to test build performance\n');
+process.stdout.write('   \ud83d\udca1 Use `npm run analyze` to analyze bundle size\n');
+process.stdout.write('   \ud83d\udca1 Enable PERFORMANCE_MONITORING=true for debugging\n');
+process.stdout.write('   \ud83d\udca1 Check Lighthouse scores after deployment\n');
+process.stdout.write('   \ud83d\udca1 Monitor Core Web Vitals in production\n');
 
-console.log('\n🎉 Audit Complete!');
-console.log('   The app has been optimized for better performance and reliability.');
-console.log('   Expected improvements:');
-console.log('   • Faster initial page load (reduced from 21+ seconds)');
-console.log('   • Better error handling and monitoring');
-console.log('   • Optimized Supabase configuration');
-console.log('   • Reduced bundle size and better code splitting');
-console.log('   • Improved font loading and CLS prevention'); 
+process.stdout.write('\n\ud83c\udf89 Audit Complete!\n');
+process.stdout.write('   The app has been optimized for better performance and reliability.\n');
+process.stdout.write('   Expected improvements:\n');
+process.stdout.write('   \u2022 Faster initial page load (reduced from 21+ seconds)\n');
+process.stdout.write('   \u2022 Better error handling and monitoring\n');
+process.stdout.write('   \u2022 Optimized Supabase configuration\n');
+process.stdout.write('   \u2022 Reduced bundle size and better code splitting\n');
+process.stdout.write('   \u2022 Improved font loading and CLS prevention\n'); 

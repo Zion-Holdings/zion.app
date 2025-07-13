@@ -8,7 +8,7 @@ const coverageThreshold = 80; // Minimum percentage
 
 try {
   if (!fs.existsSync(coverageSummaryPath)) {
-    console.error(`Coverage summary file not found at ${coverageSummaryPath}`);
+    process.stdout.write(`Coverage summary file not found at ${coverageSummaryPath}\n`);
     process.exit(1); // Exit with error if summary file doesn't exist
   }
 
@@ -19,31 +19,33 @@ try {
   const linesCoverage = coverageSummary.total && coverageSummary.total.lines && coverageSummary.total.lines.pct;
 
   if (linesCoverage === undefined || linesCoverage === null) {
-    console.error('Could not find total lines coverage percentage in the summary file.');
-    console.error('Please ensure your Jest coverage reporter is configured to output a `coverage-summary.json` with `total.lines.pct`.');
-    console.warn('Coverage summary content:', JSON.stringify(coverageSummary, null, 2));
+    process.stdout.write('Could not find total lines coverage percentage in the summary file.\n');
+    process.stdout.write('Please ensure your Jest coverage reporter is configured to output a `coverage-summary.json` with `total.lines.pct`.\n');
+    process.stdout.write('Coverage summary content:\n');
+    process.stdout.write(JSON.stringify(coverageSummary, null, 2) + '\n');
     process.exit(1);
   }
 
-  console.warn(`Current lines coverage: ${linesCoverage}%`);
+  process.stdout.write(`Current lines coverage: ${linesCoverage}%\n`);
 
   if (linesCoverage < coverageThreshold) {
-    console.warn(`Coverage (${linesCoverage}%) is below the threshold of ${coverageThreshold}%.`);
+    process.stdout.write(`Coverage (${linesCoverage}%) is below the threshold of ${coverageThreshold}%.`);
     // Outputting a specific value or setting an output for GitHub Actions
     // For simplicity, we'll rely on a log message and then check this in a later step,
     // or you can set an output variable like so:
-    // console.log(`::set-output name=coverage_below_threshold::true`);
+    // process.stdout.write(`::set-output name=coverage_below_threshold::true\n`);
     // For now, a distinct log message will be used for the issue creation step to check.
     // A more robust way would be to set an environment variable or output parameter.
     // We will refine this in the "Create GitHub Issue" step.
     // For now, let's make it fail the step if coverage is low to simplify the next step.
     process.exit(2); // Special exit code to indicate low coverage
   } else {
-    console.warn(`Coverage (${linesCoverage}%) meets or exceeds the threshold of ${coverageThreshold}%.`);
-    // console.log(`::set-output name=coverage_below_threshold::false`);
+    process.stdout.write(`Coverage (${linesCoverage}%) meets or exceeds the threshold of ${coverageThreshold}%.`);
+    // process.stdout.write(`::set-output name=coverage_below_threshold::false\n`);
   }
 
 } catch (error) {
-  console.error('Error checking coverage threshold:', error);
+  process.stdout.write('Error checking coverage threshold:\n');
+  process.stdout.write(error.message + '\n');
   process.exit(1);
 }
