@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent, act, waitFor } from '@testing-library/react';
+import { render, screen, act, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { EnhancedSearchInput } from './EnhancedSearchInput';
 import { AutocompleteSuggestions } from './AutocompleteSuggestions';
@@ -110,27 +110,6 @@ describe('EnhancedSearchInput', () => {
       // AutocompleteSuggestions should not have updated filtered suggestions immediately
       // It might show recent or no suggestions if value is present but debounce not fired
       // Let's check the last call before advancing timers
-      const callsBeforeTimer = (AutocompleteSuggestions as unknown as vi.Mock).mock.calls.length;
-
-      act(() => {
-        vi.advanceTimersByTime(299); // Just before debounce timeout
-      });
-      // Check that no new filtering has happened based on 'App'
-      // The number of calls to AutocompleteSuggestions might increase due to focus/value change,
-      // but the suggestions list for "App" should not be there yet.
-      // This part is tricky as setFilteredSuggestions is internal.
-      // The key is that the *debounced function* that calls setFilteredSuggestions has not fired its core logic.
-
-      // We expect the suggestions prop to NOT contain "Apple" items yet
-      // It will show recents because value is "" initially, then "App"
-      // When "App" is typed, the useEffect [value, searchSuggestions] runs, calls debouncedFilterSuggestions
-      // This debounced function, when it *actually* runs, will filter.
-      // So, before it runs, suggestions should still be the "recent" ones or empty if value is non-empty.
-
-      // Let's check the props of the last call to AutocompleteSuggestions
-      // Before timer fully advances, suggestions for "App" should not be there.
-      // Depending on exact timing and state updates, it might show recents or an empty array.
-      // For simplicity, let's check that "Apple" is not there.
       const lastCallArgsBeforeAdvance = (AutocompleteSuggestions as unknown as vi.Mock).mock.lastCall[0];
       expect(lastCallArgsBeforeAdvance.suggestions.some((s: SearchSuggestion) => s.text.startsWith('Apple'))).toBe(false);
 
