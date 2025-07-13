@@ -43,8 +43,9 @@ export function LazyLoad({
     }
 
     return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
+      const ref = containerRef.current;
+      if (ref) {
+        observer.unobserve(ref);
       }
     };
   }, []);
