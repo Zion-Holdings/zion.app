@@ -122,15 +122,15 @@ export default function TokenSimulator() {
   }, [forecast, inputs.activeWallets, months]);
 
   useEffect(() => {
-    // Chart.js is loaded dynamically at runtime, so we must use 'any' here for chart instance
-    let chart: any;
+    // Chart.js is loaded dynamically at runtime, so we must use 'unknown' here for chart instance
+    let chart: unknown;
     const id = 'chartjs-script2';
     const load = () => {
       if (!supplyChart.current || typeof window.Chart !== 'function') return;
-      const Chart: any = window.Chart;
+      const Chart = window.Chart as typeof import('chart.js');
       const labels = Array.from({ length: months }, (_, i) => `${i + 1}`);
-      if (chart) chart.destroy();
-      chart = new Chart(supplyChart.current as HTMLCanvasElement, {
+      if (chart && typeof (chart as { destroy?: () => void }).destroy === 'function') (chart as { destroy: () => void }).destroy();
+      chart = new (Chart as any)(supplyChart.current as HTMLCanvasElement, {
         type: 'line',
         data: {
           labels,
@@ -153,7 +153,7 @@ export default function TokenSimulator() {
       }
     }
     return () => {
-      if (chart) chart.destroy();
+      if (chart && typeof (chart as { destroy?: () => void }).destroy === 'function') (chart as { destroy: () => void }).destroy();
     };
   }, [forecast, months]);
 

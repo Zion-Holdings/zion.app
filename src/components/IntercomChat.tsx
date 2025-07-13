@@ -44,19 +44,19 @@ export default function IntercomChat() {
     window.intercomSettings = { app_id: appId };
 
     (function () {
-      const w = window as any;
+      const w = window as unknown as Window;
       const ic = w.Intercom;
       if (typeof ic === 'function') {
         ic('reattach_activator');
         ic('update', w.intercomSettings);
       } else {
         const d = document;
-        const i: any = function (...args: unknown[]) {
-          (i.q as any).push(args);
+        const i: unknown = function (...args: unknown[]) {
+          (i.q as unknown as unknown[]).push(args);
         };
         i.q = [];
-        i.c = function (args: any) {
-          (i.q as any).push(args);
+        i.c = function (args: unknown) {
+          (i.q as unknown as unknown[]).push(args);
         };
         w.Intercom = i;
         const l = function () {

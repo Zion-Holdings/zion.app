@@ -44,12 +44,12 @@ export function TenantsList() {
         
       if (error) throw error;
       setTenants(data as WhitelabelTenant[]);
-    } catch (error: any) {
+    } catch (error: unknown) {
       logErrorToProduction('Error loading tenants:', { data: error });
       toast({
         variant: 'destructive',
         title: 'Failed to load tenants',
-        description: error.message,
+        description: (error as Error).message,
       });
     } finally {
       setIsLoading(false);
@@ -64,26 +64,26 @@ export function TenantsList() {
       
       const { error } = await supabase
         .from('whitelabel_tenants')
-        .update({ is_active: !(tenant as any).is_active })
-        .eq('id', (tenant as any).id);
+        .update({ is_active: !(tenant as WhitelabelTenant).is_active })
+        .eq('id', (tenant as WhitelabelTenant).id);
         
       if (error) throw error;
       
       // Update local state
       setTenants(tenants.map(t => 
-        (t as any).id === (tenant as any).id ? { ...t, is_active: !(t as any).is_active } : t
+        (t as WhitelabelTenant).id === (tenant as WhitelabelTenant).id ? { ...t, is_active: !(t as WhitelabelTenant).is_active } : t
       ));
       
       toast({
-        title: `Tenant ${(tenant as any).is_active ? 'deactivated' : 'activated'}`,
-        description: `${(tenant as any).brand_name} has been ${(tenant as any).is_active ? 'deactivated' : 'activated'} successfully.`,
+        title: `Tenant ${(tenant as WhitelabelTenant).is_active ? 'deactivated' : 'activated'}`,
+        description: `${(tenant as WhitelabelTenant).brand_name} has been ${(tenant as WhitelabelTenant).is_active ? 'deactivated' : 'activated'} successfully.`,
       });
-    } catch (error: any) {
+    } catch (error: unknown) {
       logErrorToProduction('Error toggling tenant status:', { data: error });
       toast({
         variant: 'destructive',
         title: 'Failed to update tenant',
-        description: error.message,
+        description: (error as Error).message,
       });
     }
   };
@@ -99,25 +99,25 @@ export function TenantsList() {
       const { error } = await supabase
         .from('whitelabel_tenants')
         .update({ dns_verified: true })
-        .eq('id', (tenant as any).id);
+        .eq('id', (tenant as WhitelabelTenant).id);
         
       if (error) throw error;
       
       // Update local state
       setTenants(tenants.map(t => 
-        (t as any).id === (tenant as any).id ? { ...t, dns_verified: true } : t
+        (t as WhitelabelTenant).id === (tenant as WhitelabelTenant).id ? { ...t, dns_verified: true } : t
       ));
       
       toast({
         title: 'DNS verified',
-        description: `Custom domain for ${(tenant as any).brand_name} has been verified.`,
+        description: `Custom domain for ${(tenant as WhitelabelTenant).brand_name} has been verified.`,
       });
-    } catch (error: any) {
+    } catch (error: unknown) {
       logErrorToProduction('Error verifying DNS:', { data: error });
       toast({
         variant: 'destructive',
         title: 'Failed to verify DNS',
-        description: error.message,
+        description: (error as Error).message,
       });
     }
   };
