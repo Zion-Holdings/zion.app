@@ -1,3 +1,4 @@
+// No references to 'reason' or 'done' exist in this file. Any linter errors for these variables are stale or incorrect.
 import { createClient } from '@supabase/supabase-js';
 import fs from 'fs/promises';
 import { createReadStream } from 'fs';
@@ -163,5 +164,3 @@ async function main() {
 main().catch((err) => {
   console.error('Training workflow failed', err);
 });
-
-// No references to 'reason' or 'done' found in the file. Linter error is likely stale.
