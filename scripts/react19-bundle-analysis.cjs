@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-// LINTER_FORCE_REFRESH: Dummy comment to force linter re-parse
-
 // React 19 Bundle Analysis Tool
 const fs = require('fs');
 const path = require('path');
