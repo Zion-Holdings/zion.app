@@ -16,7 +16,7 @@ import { AlertCircle, CheckCircle, Mail } from 'lucide-react';
 
 import { toast } from '@/hooks/use-toast';
 import { AuthLayout } from '@/layout';
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import { logError, logWarn } from '@/utils/logger';
 
 
 const SignupSchema = Yup.object({
@@ -58,7 +58,7 @@ export default function Signup() {
         setHealthCheckError('Authentication service is experiencing issues');
       }
     } catch (err: unknown) {
-      logErrorToProduction('Auth service health check failed', { data: err });
+      logError('Auth service health check failed', { data: err });
       setAuthServiceAvailable(false);
       // Set a more specific error message based on the error type
       const code = typeof err === 'object' && err !== null && 'code' in err ? (err as { code?: string }).code : undefined;
@@ -90,7 +90,7 @@ export default function Signup() {
     },
     validationSchema: SignupSchema,
     onSubmit: async (values, { setErrors }) => {
-      logInfo('Form submission started with:', { 
+      logWarn('Form submission started with:', { 
         name: values.name, 
         email: values.email,
         hasPassword: !!values.password,
@@ -117,14 +117,14 @@ export default function Signup() {
           })
         };
         
-        logInfo('Making API request to /api/auth/register with:', { 
+        logWarn('Making API request to /api/auth/register with:', { 
           ...requestData, 
           password: '[REDACTED]' 
         });
         
         const res = await axios.post('/api/auth/register', requestData);
         
-        logInfo('API response received:', { 
+        logWarn('API response received:', { 
           status: res.status, 
           data: res.data 
         });
@@ -167,7 +167,7 @@ export default function Signup() {
           }
         }
       } catch (err: unknown) {
-        logErrorToProduction('Signup error details:', {
+        logError('Signup error details:', {
           message: typeof err === 'object' && err !== null && 'message' in err ? (err as { message?: string }).message : undefined,
           response: typeof err === 'object' && err !== null && 'response' in err && (err as { response?: unknown }).response ? {
             status: (err as { response?: { status?: number } }).response?.status,
@@ -183,7 +183,7 @@ export default function Signup() {
         const response = typeof err === 'object' && err !== null && 'response' in err ? (err as { response?: { status?: number, data?: { error?: string, message?: string } } }).response : undefined;
         const status = response?.status;
         const errorMsg = response?.data?.error || response?.data?.message || 'Signup failed. Please try again.';
-        logInfo('Processed error message:', { data:  { data: errorMsg } });
+        logWarn('Processed error message:', { data:  { data: errorMsg } });
         if (status === 409) {
           setErrorMessage(errorMsg);
           setErrors({ email: errorMsg });
@@ -214,7 +214,7 @@ export default function Signup() {
           });
         }
       } finally {
-        logInfo('Form submission completed, setting loading to false');
+        logWarn('Form submission completed, setting loading to false');
         setLoading(false);
       }
     }

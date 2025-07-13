@@ -1,4 +1,4 @@
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logError, logWarn } from '@/utils/logger';
 
 // In-memory storage for fallback with optimizations
 const inMemoryStore: Record<string, string> = {};
@@ -43,7 +43,7 @@ function safeConsoleError(message: string, error?: unknown) {
   isLoggingError = true;
   try {
     if (typeof process !== 'undefined' && process.env.NODE_ENV === 'development') {
-      logErrorToProduction(message, error);
+      logError(message, error);
     }
   } catch {
     // Silent fail if console.error causes recursion

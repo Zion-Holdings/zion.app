@@ -3,7 +3,7 @@ import type { ApiResponse, SearchFilters } from '@/types/common';
 import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 
 // TypeScript interfaces
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import { logError, logWarn } from '@/utils/logger';
 
 export interface MarketplaceItem {
 
@@ -103,13 +103,13 @@ const createMarketplaceClient = () => {
   client.interceptors.request.use(
     async (config: InternalAxiosRequestConfig) => {
       if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
-        logInfo(`Marketplace API Request: ${config.method?.toUpperCase() || 'UNKNOWN'} ${config.url || 'UNKNOWN_URL'}`);
+        logWarn(`Marketplace API Request: ${config.method?.toUpperCase() || 'UNKNOWN'} ${config.url || 'UNKNOWN_URL'}`);
       }
       return config;
     },
     (error: unknown) => {
       if (process.env.NODE_ENV === 'development') {
-        logErrorToProduction('Marketplace request interceptor error:', error);
+        logError('Marketplace request interceptor error:', error);
       }
       return Promise.reject(error);
     }
@@ -119,7 +119,7 @@ const createMarketplaceClient = () => {
   client.interceptors.response.use(
     (response: AxiosResponse) => {
       if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
-        logInfo(`Marketplace API Response: ${response.status}`);
+        logWarn(`Marketplace API Response: ${response.status}`);
       }
       return response;
     },
@@ -128,7 +128,7 @@ const createMarketplaceClient = () => {
         const status = typeof error === 'object' && error !== null && 'response' in error && error.response && typeof error.response === 'object' && error.response !== null && 'status' in error.response ? (error.response as { status?: number }).status : undefined;
         const url = typeof error === 'object' && error !== null && 'config' in error && error.config && typeof error.config === 'object' && error.config !== null && 'url' in error.config ? (error.config as { url?: string }).url : undefined;
         const method = typeof error === 'object' && error !== null && 'config' in error && error.config && typeof error.config === 'object' && error.config !== null && 'method' in error.config ? (error.config as { method?: string }).method : undefined;
-        logErrorToProduction('Marketplace API Error:', {
+        logError('Marketplace API Error:', {
           message: (error as { message?: string }).message,
           status,
           url,
@@ -227,7 +227,7 @@ export async function fetchProducts(filters: SearchFilters = {}): Promise<Produc
 
     return ensureProductIntegrity(data.data || []);
   } catch (error) {
-    logErrorToProduction('Failed to fetch products:', { data: error });
+    logError('Failed to fetch products:', { data: error });
     throw error;
   }
 }
@@ -248,7 +248,7 @@ export async function fetchCategories(): Promise<Category[]> {
 
     return data.data || [];
   } catch (error) {
-    logErrorToProduction('Failed to fetch categories:', { data: error });
+    logError('Failed to fetch categories:', { data: error });
     return [];
   }
 }
@@ -275,7 +275,7 @@ export async function fetchTalent(filters: SearchFilters = {}): Promise<TalentPr
 
     return data.data || [];
   } catch (error) {
-    logErrorToProduction('Failed to fetch talent:', { data: error });
+    logError('Failed to fetch talent:', { data: error });
     return [];
   }
 }
@@ -302,7 +302,7 @@ export async function fetchEquipment(filters: SearchFilters = {}): Promise<Equip
 
     return data.data || [];
   } catch (error) {
-    logErrorToProduction('Failed to fetch equipment:', { data: error });
+    logError('Failed to fetch equipment:', { data: error });
     return [];
   }
 }

@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { logInfo, logWarn } from '@/utils/productionLogger';
+import { logError, logWarn } from '@/utils/logger';
 import type { Site } from '@datadog/browser-core';
 
 
@@ -119,9 +119,9 @@ export async function initializeServices(): Promise<void> {
       //   release: config.sentry.release,
       //   tracesSampleRate: 1.0,
       // });
-      logInfo('✅ Sentry initialized successfully');
+      logWarn('✅ Sentry initialized successfully');
     } catch (error) {
-      logWarn('Failed to initialize Sentry:', { data:  { data: error } });
+      logError('Failed to initialize Sentry:', { data:  { data: error } });
     }
   }
 
@@ -137,9 +137,9 @@ export async function initializeServices(): Promise<void> {
         env: config.datadog.env || nodeEnv,
         forwardErrorsToLogs: true,
       });
-      logInfo('✅ Datadog Logs initialized');
+      logWarn('✅ Datadog Logs initialized');
     } catch (error) {
-      logWarn('Failed to initialize Datadog Logs:', { data:  { data: error } });
+      logError('Failed to initialize Datadog Logs:', { data:  { data: error } });
     }
   }
 
@@ -148,14 +148,14 @@ export async function initializeServices(): Promise<void> {
     try {
       const LogRocket = (await import('logrocket')).default;
       LogRocket.init(config.logRocket.id!);
-      logInfo('✅ LogRocket initialized');
+      logWarn('✅ LogRocket initialized');
     } catch (error) {
-      logWarn('Failed to initialize LogRocket:', { data:  { data: error } });
+      logError('Failed to initialize LogRocket:', { data:  { data: error } });
     }
   }
 
   if (config.app.isDevelopment) {
-    logInfo('🔧 Services initialized for development environment');
+    logWarn('🔧 Services initialized for development environment');
   }
 }
 
@@ -181,7 +181,7 @@ export function getEnvironmentConfig(): EnvironmentConfig {
   const anonKeyIsPlaceholder = isPlaceholderValue(supabaseAnonKey);
   
   if ((isDevelopment || process.env.DEBUG_ENV_CONFIG) && (urlIsPlaceholder || anonKeyIsPlaceholder)) {
-    logInfo('[ENV CONFIG] Supabase configuration check:', {
+    logWarn('[ENV CONFIG] Supabase configuration check:', {
       url: supabaseUrl ? `${supabaseUrl.substring(0, 30)}...` : 'undefined',
       urlIsPlaceholder,
       anonKeyPresent: !!supabaseAnonKey,

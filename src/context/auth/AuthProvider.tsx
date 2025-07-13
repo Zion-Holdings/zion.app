@@ -12,8 +12,8 @@ import type { UserDetails, AuthContextType } from "@/types/auth";
 import { toast } from "@/hooks/use-toast"; // Import toast
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
-// logger from '@/utils/logger' is removed
-import { logInfo, logWarn, logErrorToProduction, logDebug } from '@/utils/productionLogger';
+import logger from '@/utils/logger';
+import { logInfo, logDebug, logErrorToProduction } from '@/utils/productionLogger';
 
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
@@ -81,13 +81,13 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     cleanupAuthState();
 
     if (!isSupabaseConfigured) {
-      logWarn('[AuthProvider] Supabase not configured - skipping auth state listener');
+      logger.warn('[AuthProvider] Supabase not configured - skipping auth state listener');
       setIsLoading(false);
       return; // Only exit the function inside the effect, not the effect itself
     }
 
     if (!supabase) {
-      logWarn('[AuthProvider] Supabase client is null - skipping auth state listener');
+      logger.warn('[AuthProvider] Supabase client is null - skipping auth state listener');
       setIsLoading(false);
       return; // Only exit the function inside the effect, not the effect itself
     }
@@ -96,7 +96,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const authInitTimeoutMs = 10000; // 10 seconds
     const authInitTimer = setTimeout(() => {
       if (isLoading) { // Check if still loading
-        logWarn(`[AuthProvider] Initial auth state check timed out after ${authInitTimeoutMs}ms. Forcing loading to false.`);
+        logger.warn(`[AuthProvider] Initial auth state check timed out after ${authInitTimeoutMs}ms. Forcing loading to false.`);
         setIsLoading(false);
       }
     }, authInitTimeoutMs);
@@ -154,9 +154,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
                             if (message.includes('jwt') || message.includes('unauthorized') || message.includes('invalid token') || status === 401) {
                                 shouldSignOut = true;
-                                logWarn(`[AuthProvider] Profile fetch failed with auth-like error for user ${session.user.id} (event: ${event}). Message: ${profileError.message}. Attempting sign out.`);
+                                logger.warn(`[AuthProvider] Profile fetch failed with auth-like error for user ${session.user.id} (event: ${event}). Message: ${profileError.message}. Attempting sign out.`);
                             } else {
-                                 logWarn(`[AuthProvider] Profile fetch failed for user ${session.user.id} (event: ${event}). Message: ${profileError.message}. Not treated as auth error for immediate signout.`);
+                                 logger.warn(`[AuthProvider] Profile fetch failed for user ${session.user.id} (event: ${event}). Message: ${profileError.message}. Not treated as auth error for immediate signout.`);
                             }
 
                             // Only show toast if it's a genuine signed-in event, not for passive token refreshes if profile is missing
@@ -237,7 +237,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                                  setAvatarUrl(null);
                             }
                         } else { // Profile is null, but no error
-                            logWarn('[AuthProvider DEBUG] Profile not found for user (no error, but profile is null):', { data:  { data: session.user.id } });
+                            logger.warn('[AuthProvider DEBUG] Profile not found for user (no error, but profile is null):', { data:  { data: session.user.id } });
                             if (event === 'SIGNED_IN') { // Only toast if it was an active sign-in attempt
                                 toast({
                                     title: "Profile Not Found",
@@ -325,7 +325,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   }, [router, dispatch, handleSignedIn, handleSignedOut, setOnboardingStep, setUser, setAvatarUrl, setTokens, isLoading]); // Added router and other dependencies
 
   if (!isSupabaseConfigured) {
-    logWarn('[AuthProvider] Supabase not configured - using fallback auth state');
+    logger.warn('[AuthProvider] Supabase not configured - using fallback auth state');
     return (
       <AuthContext.Provider value={fallbackContext}>
         {children}
