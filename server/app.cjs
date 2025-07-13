@@ -177,22 +177,22 @@ app.post('/api/codex/suggest-fix', (req, res) => {
     // If filePath is provided, pass it as an environment variable to the operator
     // The pipeline YAML will need to be updated to use this.
     envVars.CODEX_TARGET_FILE_PATH = filePath;
-    console.log(`Received request to trigger Codex fix for file: ${filePath}`);
+    // console.log(`Received request to trigger Codex fix for file: ${filePath}`);
   } else if (route) {
     // Fallback or alternative context if route is provided
     envVars.CODEX_TARGET_ROUTE = route; // Example, if pipeline handles routes
-    console.log(`Received request to trigger Codex fix for route: ${route}`);
+    // console.log(`Received request to trigger Codex fix for route: ${route}`);
   }
 
   if (errorLog) {
     // Pass errorLog as an environment variable.
     // Pipelines can access env vars. This is often easier than complex CLI arg parsing.
     envVars.CODEX_ERROR_LOG_SNIPPET = errorLog;
-    console.log(`Error log snippet provided: ${errorLog.substring(0, 100)}...`);
+    // console.log(`Error log snippet provided: ${errorLog.substring(0, 100)}...`);
   }
 
   // Log the action with more details
-  console.log(`Executing Codex command: ${command} with context - File: ${filePath || 'N/A'}, Route: ${route || 'N/A'}, ErrorLog: ${errorLog ? 'Provided' : 'N/A'}`);
+  // console.log(`Executing Codex command: ${command} with context - File: ${filePath || 'N/A'}, Route: ${route || 'N/A'}, ErrorLog: ${errorLog ? 'Provided' : 'N/A'}`);
 
   exec(command, { env: envVars }, (error, stdout, stderr) => { // Pass envVars here
     if (error) {
@@ -203,7 +203,7 @@ app.post('/api/codex/suggest-fix', (req, res) => {
     if (stderr) {
       console.warn(`Codex execution stderr: ${stderr}`);
     }
-    console.log(`Codex execution stdout: ${stdout}`);
+    // console.log(`Codex execution stdout: ${stdout}`);
     res.status(200).json({ message: 'Codex fix process triggered successfully.', output: stdout });
   });
 });

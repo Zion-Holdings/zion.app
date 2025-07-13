@@ -45,12 +45,12 @@ const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
  */
 router.post('/webhook', express.raw({ type: 'application/json' }), (req, res) => {
   if (!stripeInstance) {
-    process.stdout.write('Stripe SDK not initialized. STRIPE_SECRET_KEY might be missing.');
+    // process.stdout.write('Stripe SDK not initialized. STRIPE_SECRET_KEY might be missing.');
     return res.status(500).send('Internal Server Error: Stripe SDK not initialized.');
   }
 
   if (!webhookSecret) {
-    process.stdout.write('Stripe webhook secret is not configured. Set STRIPE_WEBHOOK_SECRET.');
+    // process.stdout.write('Stripe webhook secret is not configured. Set STRIPE_WEBHOOK_SECRET.');
     return res.status(500).send('Internal Server Error: Webhook secret not configured.');
   }
 
@@ -62,7 +62,7 @@ router.post('/webhook', express.raw({ type: 'application/json' }), (req, res) =>
     // req.body is the raw Buffer from express.raw()
     event = stripeInstance.webhooks.constructEvent(req.body, sig, webhookSecret);
   } catch (err) {
-    process.stdout.write(`Webhook signature verification failed: ${err.message}`);
+    // process.stdout.write(`Webhook signature verification failed: ${err.message}`);
     return res.status(400).send(`Webhook Error: ${err.message}`);
   }
 
@@ -77,14 +77,14 @@ router.post('/webhook', express.raw({ type: 'application/json' }), (req, res) =>
           try {
             const subscription = await stripeInstance.subscriptions.retrieve(invoice.subscription);
             if (!subscription) {
-              process.stdout.write(`Webhook Error: Subscription ${invoice.subscription} not found in Stripe for invoice ${invoice.id}`);
+              // process.stdout.write(`Webhook Error: Subscription ${invoice.subscription} not found in Stripe for invoice ${invoice.id}`);
               // Still return 200 to Stripe to acknowledge receipt, but log the error
               return res.status(200).json({ received: true, error: "Subscription not found in Stripe" });
             }
 
             const user = await User.findOne({ stripeCustomerId: subscription.customer });
             if (!user) {
-              process.stdout.write(`Webhook Error: User not found for Stripe customer ID ${subscription.customer}`);
+              // process.stdout.write(`Webhook Error: User not found for Stripe customer ID ${subscription.customer}`);
               return res.status(200).json({ received: true, error: "User not found" });
             }
 
@@ -101,25 +101,25 @@ router.post('/webhook', express.raw({ type: 'application/json' }), (req, res) =>
               },
               { upsert: true, new: true, setDefaultsOnInsert: true }
             );
-            process.stdout.write(`Subscription ${updatedSubscription.stripeSubscriptionId} updated/created from invoice.payment_succeeded.`);
+            // process.stdout.write(`Subscription ${updatedSubscription.stripeSubscriptionId} updated/created from invoice.payment_succeeded.`);
 
             // Update user's plan status
             user.planStatus = subscription.status;
             user.stripeSubscriptionId = subscription.id; // Ensure this is linked on the user
             await user.save();
-            process.stdout.write(`User ${user.email} plan status updated to ${subscription.status}.`);
+            // process.stdout.write(`User ${user.email} plan status updated to ${subscription.status}.`);
 
           } catch (err) {
-            process.stdout.write(`Error processing invoice.payment_succeeded for subscription: ${err.message}`);
+            // process.stdout.write(`Error processing invoice.payment_succeeded for subscription: ${err.message}`);
             // Don't send 500 to Stripe, as it will retry. Log error and investigate.
             return res.status(200).json({ received: true, error: `Error processing: ${err.message}` });
           }
         } else {
-          process.stdout.write(`Invoice ${invoice.id} is not related to a subscription. Skipping subscription update.`);
+          // process.stdout.write(`Invoice ${invoice.id} is not related to a subscription. Skipping subscription update.`);
           // Handle non-subscription payments if necessary
         }
       } else {
-        process.stdout.write(`Invoice ${invoice.id} with reason ${invoice.billing_reason} not handled for subscription update.`);
+        // process.stdout.write(`Invoice ${invoice.id} with reason ${invoice.billing_reason} not handled for subscription update.`);
         // Handle other invoice reasons if necessary
       }
       break;
@@ -130,7 +130,7 @@ router.post('/webhook', express.raw({ type: 'application/json' }), (req, res) =>
       try {
         const user = await User.findOne({ stripeCustomerId: subscription.customer });
         if (!user) {
-          process.stdout.write(`Webhook Error: User not found for Stripe customer ID ${subscription.customer}`);
+          // process.stdout.write(`Webhook Error: User not found for Stripe customer ID ${subscription.customer}`);
           // If the user isn't found, it might be an issue with your user creation flow
           // or the webhook arrived before the user was fully set up with a stripeCustomerId.
           // Depending on your app's logic, you might retry later or create the user.
@@ -157,16 +157,16 @@ router.post('/webhook', express.raw({ type: 'application/json' }), (req, res) =>
           subscriptionData,
           { upsert: true, new: true, setDefaultsOnInsert: true }
         );
-        process.stdout.write(`Subscription ${updatedSubscription.stripeSubscriptionId} created/updated.`);
+        // process.stdout.write(`Subscription ${updatedSubscription.stripeSubscriptionId} created/updated.`);
 
         // Update user's plan status
         user.planStatus = subscription.status;
         user.stripeSubscriptionId = subscription.id; // Link current subscription to user
         await user.save();
-        process.stdout.write(`User ${user.email} plan status updated to ${subscription.status}.`);
+        // process.stdout.write(`User ${user.email} plan status updated to ${subscription.status}.`);
 
       } catch (err) {
-        process.stdout.write(`Error processing ${event.type}: ${err.message}`);
+        // process.stdout.write(`Error processing ${event.type}: ${err.message}`);
         return res.status(200).json({ received: true, error: `Error processing: ${err.message}` });
       }
       break;
@@ -176,7 +176,7 @@ router.post('/webhook', express.raw({ type: 'application/json' }), (req, res) =>
       try {
         const subInDb = await Subscription.findOne({ stripeSubscriptionId: subscription.id });
         if (!subInDb) {
-          process.stdout.write(`Webhook Warning: Subscription ${subscription.id} not found in DB for deletion.`);
+          // process.stdout.write(`Webhook Warning: Subscription ${subscription.id} not found in DB for deletion.`);
           return res.status(200).json({ received: true, warning: "Subscription not found in DB" });
         }
 
@@ -187,7 +187,7 @@ router.post('/webhook', express.raw({ type: 'application/json' }), (req, res) =>
         subInDb.canceledAt = subscription.canceled_at ? new Date(subscription.canceled_at * 1000) : new Date();
         subInDb.endedAt = subscription.ended_at ? new Date(subscription.ended_at * 1000) : new Date(); // if not present, means ended now
         await subInDb.save();
-        process.stdout.write(`Subscription ${subInDb.stripeSubscriptionId} status updated to ${subscription.status}.`);
+        // process.stdout.write(`Subscription ${subInDb.stripeSubscriptionId} status updated to ${subscription.status}.`);
 
         // Update the corresponding user's planStatus
         const user = await User.findById(subInDb.userId);
@@ -197,20 +197,20 @@ router.post('/webhook', express.raw({ type: 'application/json' }), (req, res) =>
             user.planStatus = null; // Or 'canceled', depending on desired state
             user.stripeSubscriptionId = null; // Remove link to this subscription
             await user.save();
-            process.stdout.write(`User ${user.email} plan status updated due to subscription deletion.`);
+            // process.stdout.write(`User ${user.email} plan status updated due to subscription deletion.`);
           }
         } else {
-            process.stdout.write(`Webhook Warning: User ${subInDb.userId} not found for deleted subscription ${subscription.id}`);
+            // process.stdout.write(`Webhook Warning: User ${subInDb.userId} not found for deleted subscription ${subscription.id}`);
         }
 
       } catch (err) {
-        process.stdout.write(`Error processing customer.subscription.deleted: ${err.message}`);
+        // process.stdout.write(`Error processing customer.subscription.deleted: ${err.message}`);
         return res.status(200).json({ received: true, error: `Error processing: ${err.message}` });
       }
       break;
     }
     default:
-      process.stdout.write(`Unhandled event type ${event.type}`);
+      // process.stdout.write(`Unhandled event type ${event.type}`);
   }
 
   // Acknowledge receipt of the event to Stripe
