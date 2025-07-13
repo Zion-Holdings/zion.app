@@ -337,7 +337,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const login = async (
     email: string,
     password: string,
-    rememberMe = false
   ) => {
     setIsLoading(true); // Set loading true at the start of login attempt
     try {
