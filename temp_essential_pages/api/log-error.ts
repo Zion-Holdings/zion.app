@@ -175,7 +175,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
           return;
         }
 
-        console.log(`Codex script STDOUT (ID: ${dbRecordId}, first 100 chars): ${stdout.substring(0, 100)}...`);
         let parsedOutput: CodexOutput;
         try {
           parsedOutput = JSON.parse(stdout) as CodexOutput;
