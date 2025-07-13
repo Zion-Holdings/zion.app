@@ -6,14 +6,6 @@ import { corsHeaders } from '../_shared/cors.ts'
 const FINE_TUNED_MODEL_ID = "gpt-3.5-turbo"; // Placeholder - Replace with actual fine-tuned model ID
 const OPENAI_API_KEY = Deno.env.get("OPENAI_API_KEY");
 
-console.log(JSON.stringify({
-  timestamp: new Date().toISOString(),
-  level: 'INFO',
-  message: 'Function "generate-seo-content" initializing.',
-  serviceName: 'generate-seo-content',
-  functionVersion: '1.0.0' // Example version
-}));
-
 serve(async (req) => {
   const requestTimestamp = new Date().toISOString();
   const errorLoggerPayload: Record<string, unknown> = { // For logging errors before returning response
@@ -32,15 +24,6 @@ serve(async (req) => {
     const { contentType, userPrompt, keywords } = body;
 
     errorLoggerPayload.body = { contentType, userPromptLength: userPrompt?.length, keywords };
-    console.log(JSON.stringify({
-      timestamp: requestTimestamp,
-      level: 'INFO',
-      type: 'request_received',
-      serviceName: 'generate-seo-content',
-      method: req.method,
-      url: req.url,
-      body: { contentType, userPromptLength: userPrompt?.length, keywords }
-    }));
 
     if (!contentType || !userPrompt) {
       console.warn(JSON.stringify({ ...errorLoggerPayload, level: 'WARN', type: 'validation_error', message: 'Missing contentType or userPrompt' }));
@@ -78,17 +61,6 @@ serve(async (req) => {
         });
     }
 
-    console.log(JSON.stringify({
-      timestamp: new Date().toISOString(),
-      level: 'INFO',
-      type: 'openai_request',
-      serviceName: 'generate-seo-content',
-      model: FINE_TUNED_MODEL_ID,
-      promptSystemMessage: systemMessage,
-      promptUserMessageLength: finalUserPrompt.length,
-      contentType: contentType
-    }));
-
     const chatCompletion = await openai.chat.completions.create({
       messages: [
         { role: 'system', content: systemMessage },
@@ -112,16 +84,6 @@ serve(async (req) => {
             status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' }
         });
     }
-
-    console.log(JSON.stringify({
-      timestamp: new Date().toISOString(),
-      level: 'INFO',
-      type: 'openai_success',
-      serviceName: 'generate-seo-content',
-      model: FINE_TUNED_MODEL_ID,
-      generatedContentLength: generatedContent.length,
-      contentType: contentType
-    }));
 
     return new Response(JSON.stringify({ generatedContent }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },

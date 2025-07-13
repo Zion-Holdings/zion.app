@@ -66,17 +66,6 @@ async function handler(
   // 🔧 Enable verbose logging (only in development)
   const isDevelopment = process.env.NODE_ENV === 'development';
   
-  if (isDevelopment) {
-    console.log('🔧 LOGIN TRACE: Starting login attempt');
-    console.log('🔧 LOGIN TRACE: Request method:', req.method);
-    console.log('🔧 LOGIN TRACE: Request body keys:', Object.keys(req['body'] || {}));
-    console.log('🔧 LOGIN TRACE: Environment config status:', {
-      supabaseConfigured: ENV_CONFIG.supabase.isConfigured,
-      sentryConfigured: ENV_CONFIG.sentry.isConfigured,
-      environment: ENV_CONFIG.app.environment
-    });
-  }
-
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -90,7 +79,7 @@ async function handler(
   // Check if Supabase is configured
   if (!ENV_CONFIG.supabase.isConfigured) {
     if (isDevelopment) {
-      console.log('🔧 LOGIN TRACE: Supabase not configured - using development authentication');
+      console.warn('🔧 LOGIN TRACE: Supabase not configured - using development authentication');
     }
     
     // 🔐 SECURITY: Use environment-based development authentication
@@ -99,7 +88,7 @@ async function handler(
     
     if (user) {
       if (isDevelopment) {
-        console.log('🔧 LOGIN TRACE: Development user authenticated successfully');
+        console.warn('🔧 LOGIN TRACE: Development user authenticated successfully');
       }
       return res.status(200).json({
         user: {
@@ -113,8 +102,8 @@ async function handler(
       });
     } else {
       if (isDevelopment) {
-        console.log('🔧 LOGIN TRACE: Development authentication failed');
-        console.log('🔧 LOGIN TRACE: Available dev users:', devUsers.map(u => u.email));
+        console.warn('🔧 LOGIN TRACE: Development authentication failed');
+        console.warn('🔧 LOGIN TRACE: Available dev users:', devUsers.map(u => u.email));
       }
       return res.status(401).json({ error: 'Invalid credentials' });
     }
@@ -128,7 +117,7 @@ async function handler(
     );
 
     if (isDevelopment) {
-      console.log('🔧 LOGIN TRACE: Attempting Supabase authentication');
+      console.warn('🔧 LOGIN TRACE: Attempting Supabase authentication');
     }
 
     const { data, error } = await supabase.auth.signInWithPassword({
@@ -159,7 +148,7 @@ async function handler(
     }
 
     if (isDevelopment) {
-      console.log('🔧 LOGIN TRACE: Supabase authentication successful');
+      console.warn('🔧 LOGIN TRACE: Supabase authentication successful');
     }
     
     return res.status(200).json({
