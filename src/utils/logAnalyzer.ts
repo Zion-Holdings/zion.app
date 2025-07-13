@@ -454,6 +454,7 @@ const logAnalyzer = new LogAnalyzer();
 // Enhanced error logging function that includes analysis
  
  
+ 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function logErrorWithAnalysis(
   message: string, 
@@ -465,6 +466,7 @@ export function logErrorWithAnalysis(
 
   // Analyze the error for patterns
   const errorText = error instanceof Error ? error.message : String(error || message);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const _analysis = logAnalyzer.analyzeError(errorText, context);
 
   if (_analysis) {
