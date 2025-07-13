@@ -10,7 +10,7 @@ import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
-import { X, Sparkles, Upload, Clock, Check, Briefcase, MapPin, UserRound, Globe } from 'lucide-react';
+import { X, Sparkles, Upload, Check, Briefcase, MapPin, UserRound, Globe } from 'lucide-react';
 import {
   Form,
   FormControl,
