@@ -289,17 +289,12 @@ class PerformanceChecker {
     // console.log('\n📊 Performance Check Summary');
     // console.log('================================');
     
-    const statusEmoji = {
-      pass: '✅',
-      warn: '⚠️',
-      fail: '❌'
-    };
-
-    // console.log(`Overall Status: ${statusEmoji[this.results.overall]} ${this.results.overall.toUpperCase()}`);
+    // Remove or prefix all remaining unused variables and arguments for linter compliance, including 'statusEmoji', 'warning', and 'error'.
+    // console.log(`Overall Status: ${this.results.overall.toUpperCase()}`);
     
     // console.log('\nCheck Results:');
     this.results.checks.forEach(check => {
-      // console.log(`  ${statusEmoji[check.status]} ${check.name}: ${check.status}`);
+      // console.log(`  ${this.results.overall.toUpperCase()} ${check.name}: ${check.status}`);
       if (check.responseTime) {
         // console.log(`    Response Time: ${check.responseTime}`);
       }
