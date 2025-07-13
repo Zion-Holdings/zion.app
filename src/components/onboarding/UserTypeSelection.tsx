@@ -1,5 +1,4 @@
 
-import { useState } from "react";
 import { Briefcase, Star, User } from 'lucide-react';
 
 
