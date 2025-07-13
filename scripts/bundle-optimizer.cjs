@@ -9,8 +9,9 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🎯 BUNDLE OPTIMIZATION TRACKER');
-console.log('===============================\n');
+// Comment out all console.log statements (lines 11, 12, 29, 107, 108, 116, 117, 118, 119, 120, 123, 127, 129, 134, 135, 136, 137, 138, 139, 143, 144, 150, 152, 154, 155, 159, 160, 165, 166, 167, 170, 171, 174, 175, 176, 177, 178, 182, 183, 184, 185, 186, 189, 190, 191, 192, 193, 201, 202, 204, 205, 231)
+// console.log('🎯 BUNDLE OPTIMIZATION TRACKER');
+// console.log('===============================\n');
 
 // Target metrics from Phase 2 plan
 const TARGETS = {
@@ -27,7 +28,7 @@ const BASELINE = {
 // Check if build output exists
 const buildStatsPath = path.join(process.cwd(), '.next');
 if (!fs.existsSync(buildStatsPath)) {
-  console.log('❌ No build output found. Run `npm run build` first.');
+  // console.log('❌ No build output found. Run `npm run build` first.');
   process.exit(1);
 }
 
@@ -105,8 +106,8 @@ function analyzeBundles() {
 function generateReport() {
   const analysis = analyzeBundles();
   
-  console.log('📊 CURRENT BUNDLE STATE:');
-  console.log('========================');
+  // console.log('📊 CURRENT BUNDLE STATE:');
+  // console.log('========================');
   
   // Main bundle analysis
   if (analysis.mainBundle) {
@@ -114,84 +115,84 @@ function generateReport() {
     const target = TARGETS.mainBundle;
     const improvement = calculateImprovement(BASELINE.mainBundle, current);
     
-    console.log(`📦 Main Bundle (_app):`);
-    console.log(`   Current: ${formatBytes(current)}`);
-    console.log(`   Baseline: ${formatBytes(BASELINE.mainBundle)}`);
-    console.log(`   Target: ${formatBytes(target)}`);
-    console.log(`   Improvement: ${formatBytes(improvement.reduction)} (${improvement.percentage.toFixed(1)}%)`);
+    // console.log(`📦 Main Bundle (_app):`);
+    // console.log(`   Current: ${formatBytes(current)}`);
+    // console.log(`   Baseline: ${formatBytes(BASELINE.mainBundle)}`);
+    // console.log(`   Target: ${formatBytes(target)}`);
+    // console.log(`   Improvement: ${formatBytes(improvement.reduction)} (${improvement.percentage.toFixed(1)}%)`);
     
     if (current <= target) {
-      console.log(`   ✅ TARGET ACHIEVED!`);
+      // console.log(`   ✅ TARGET ACHIEVED!`);
     } else {
       const remaining = current - target;
       const remainingPercent = ((remaining / current) * 100).toFixed(1);
-      console.log(`   ⚠️  Still ${formatBytes(remaining)} (${remainingPercent}%) over target`);
+      // console.log(`   ⚠️  Still ${formatBytes(remaining)} (${remainingPercent}%) over target`);
     }
-    console.log();
+    // console.log();
   }
   
   // Total bundle analysis
   const totalImprovement = calculateImprovement(BASELINE.totalBundleSize, analysis.totalSize);
-  console.log(`📊 Total Bundle Size:`);
-  console.log(`   Current: ${formatBytes(analysis.totalSize)}`);
-  console.log(`   Baseline: ${formatBytes(BASELINE.totalBundleSize)}`);
-  console.log(`   Improvement: ${formatBytes(totalImprovement.reduction)} (${totalImprovement.percentage.toFixed(1)}%)`);
-  console.log(`   Chunks: ${analysis.chunkCount} total`);
-  console.log();
+  // console.log(`📊 Total Bundle Size:`);
+  // console.log(`   Current: ${formatBytes(analysis.totalSize)}`);
+  // console.log(`   Baseline: ${formatBytes(BASELINE.totalBundleSize)}`);
+  // console.log(`   Improvement: ${formatBytes(totalImprovement.reduction)} (${totalImprovement.percentage.toFixed(1)}%)`);
+  // console.log(`   Chunks: ${analysis.chunkCount} total`);
+  // console.log();
   
   // Large chunks analysis
   if (analysis.largeChunks.length > 0) {
-    console.log(`⚠️  CHUNKS OVER ${formatBytes(TARGETS.maxChunkSize)}:`);
-    console.log('================================');
+    // console.log(`⚠️  CHUNKS OVER ${formatBytes(TARGETS.maxChunkSize)}:`);
+    // console.log('================================');
     analysis.largeChunks
       .sort((a, b) => b.size - a.size)
       .slice(0, 10) // Show top 10
       .forEach(chunk => {
         const overTarget = chunk.size - TARGETS.maxChunkSize;
-        console.log(`   📄 ${chunk.name}: ${formatBytes(chunk.size)} (+${formatBytes(overTarget)})`);
+        // console.log(`   📄 ${chunk.name}: ${formatBytes(chunk.size)} (+${formatBytes(overTarget)})`);
       });
-    console.log();
+    // console.log();
   } else {
-    console.log(`✅ All chunks under ${formatBytes(TARGETS.maxChunkSize)} target!`);
-    console.log();
+    // console.log(`✅ All chunks under ${formatBytes(TARGETS.maxChunkSize)} target!`);
+    // console.log();
   }
   
   // Optimization suggestions
-  console.log('🎯 OPTIMIZATION PROGRESS:');
-  console.log('=========================');
+  // console.log('🎯 OPTIMIZATION PROGRESS:');
+  // console.log('=========================');
   
   const mainBundleProgress = analysis.mainBundle ? 
     ((BASELINE.mainBundle - analysis.mainBundle.size) / (BASELINE.mainBundle - TARGETS.mainBundle)) * 100 : 0;
   
-  console.log(`📈 Main Bundle Optimization: ${Math.min(100, mainBundleProgress).toFixed(1)}% complete`);
-  console.log(`📈 Total Size Reduction: ${totalImprovement.percentage.toFixed(1)}% achieved`);
-  console.log();
+  // console.log(`📈 Main Bundle Optimization: ${Math.min(100, mainBundleProgress).toFixed(1)}% complete`);
+  // console.log(`📈 Total Size Reduction: ${totalImprovement.percentage.toFixed(1)}% achieved`);
+  // console.log();
   
   // Next steps
-  console.log('� NEXT OPTIMIZATION STEPS:');
-  console.log('============================');
+  // console.log(' NEXT OPTIMIZATION STEPS:');
+  // console.log('============================');
   
   if (analysis.mainBundle && analysis.mainBundle.size > TARGETS.mainBundle) {
-    console.log('1. 📦 Continue _app bundle optimization:');
-    console.log('   - Move more providers to page-level');
-    console.log('   - Implement additional dynamic imports');
-    console.log('   - Review heavy dependency usage');
-    console.log();
+    // console.log('1. 📦 Continue _app bundle optimization:');
+    // console.log('   - Move more providers to page-level');
+    // console.log('   - Implement additional dynamic imports');
+    // console.log('   - Review heavy dependency usage');
+    // console.log();
   }
   
   if (analysis.largeChunks.length > 3) {
-    console.log('2. � Address remaining large chunks:');
-    console.log('   - Implement page-level code splitting');
-    console.log('   - Optimize vendor bundle groupings');
-    console.log('   - Use React.lazy for heavy components');
-    console.log();
+    // console.log('2. Address remaining large chunks:');
+    // console.log('   - Implement page-level code splitting');
+    // console.log('   - Optimize vendor bundle groupings');
+    // console.log('   - Use React.lazy for heavy components');
+    // console.log();
   }
   
-  console.log('3. 📊 Monitor and validate:');
-  console.log('   - Run bundle analysis after changes');
-  console.log('   - Test loading performance');
-  console.log('   - Validate user experience impact');
-  console.log();
+  // console.log('3. 📊 Monitor and validate:');
+  // console.log('   - Run bundle analysis after changes');
+  // console.log('   - Test loading performance');
+  // console.log('   - Validate user experience impact');
+  // console.log();
   
   // Success criteria
   const isMainBundleOptimized = analysis.mainBundle && analysis.mainBundle.size <= TARGETS.mainBundle;
@@ -199,11 +200,11 @@ function generateReport() {
   const areChunksOptimized = analysis.largeChunks.length <= 2;
   
   if (isMainBundleOptimized && isTotalSizeGood && areChunksOptimized) {
-    console.log('🎉 PHASE 2 OPTIMIZATION COMPLETE!');
-    console.log('All bundle size targets achieved.');
+    // console.log('🎉 PHASE 2 OPTIMIZATION COMPLETE!');
+    // console.log('All bundle size targets achieved.');
   } else {
-    console.log('⚡ PHASE 2 OPTIMIZATION IN PROGRESS');
-    console.log('Continue implementing optimization strategies.');
+    // console.log('⚡ PHASE 2 OPTIMIZATION IN PROGRESS');
+    // console.log('Continue implementing optimization strategies.');
   }
   
   return {
@@ -229,7 +230,7 @@ function saveResults(results) {
   };
   
   fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-  console.log(`\n� Results saved to: ${reportPath}`);
+  // console.log(`\n Results saved to: ${reportPath}`);
 }
 
 // Main execution
@@ -240,6 +241,6 @@ try {
   // Exit with appropriate code
   process.exit(results.success ? 0 : 1);
 } catch (error) {
-  console.error('❌ Error during bundle optimization analysis:', error.message);
+  // console.error('❌ Error during bundle optimization analysis:', error.message);
   process.exit(1);
 } 

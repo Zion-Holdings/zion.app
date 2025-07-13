@@ -9,8 +9,9 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🚀 PHASE 3: PRODUCTION READINESS IMPLEMENTATION');
-console.log('==============================================\n');
+// Comment out all console.log statements (lines 11, 12, 26, 158, 164, 167, 170, 175, 178, 181, 186, 189, 192, 196, 198, 199, 202, 203, 205, 206, 223, 267, 314, 318, 329, 333, 361, 408)
+// console.log('🚀 PHASE 3: PRODUCTION READINESS IMPLEMENTATION');
+// console.log('==============================================\n');
 
 class ProductionReadinessImplementer {
   constructor() {
@@ -24,7 +25,7 @@ class ProductionReadinessImplementer {
 
   // 1. Environment Configuration Enhancement
   setupEnvironmentConfiguration() {
-    console.log('📋 1. Implementing Environment Configuration...');
+    // console.log('📋 1. Implementing Environment Configuration...');
     
     const envTemplate = `
 # ===========================================
@@ -156,55 +157,55 @@ const requiredEnvVars = {
 };
 
 function validateEnvironment() {
-  console.log('🔍 Validating Production Environment Variables\\n');
+  // console.log('🔍 Validating Production Environment Variables\\n');
   
   let hasErrors = false;
   let warnings = 0;
   
   // Check critical variables
-  console.log('🔴 CRITICAL (Required for basic functionality):');
+  // console.log('🔴 CRITICAL (Required for basic functionality):');
   requiredEnvVars.critical.forEach(envVar => {
     if (!process.env[envVar]) {
-      console.log(\`  ❌ \${envVar} - MISSING (CRITICAL)\`);
+      // console.log(\`  ❌ \${envVar} - MISSING (CRITICAL)\`);
       hasErrors = true;
     } else {
-      console.log(\`  ✅ \${envVar} - Configured\`);
+      // console.log(\`  ✅ \${envVar} - Configured\`);
     }
   });
   
   // Check authentication variables
-  console.log('\\n🟡 AUTHENTICATION (Required for user login):');
+  // console.log('\\n🟡 AUTHENTICATION (Required for user login):');
   requiredEnvVars.authentication.forEach(envVar => {
     if (!process.env[envVar]) {
-      console.log(\`  ❌ \${envVar} - MISSING (AUTH REQUIRED)\`);
+      // console.log(\`  ❌ \${envVar} - MISSING (AUTH REQUIRED)\`);
       hasErrors = true;
     } else {
-      console.log(\`  ✅ \${envVar} - Configured\`);
+      // console.log(\`  ✅ \${envVar} - Configured\`);
     }
   });
   
   // Check recommended variables
-  console.log('\\n🟢 RECOMMENDED (For optimal production experience):');
+  // console.log('\\n🟢 RECOMMENDED (For optimal production experience):');
   requiredEnvVars.recommended.forEach(envVar => {
     if (!process.env[envVar]) {
-      console.log(\`  ⚠️ \${envVar} - Missing (Recommended)\`);
+      // console.log(\`  ⚠️ \${envVar} - Missing (Recommended)\`);
       warnings++;
     } else {
-      console.log(\`  ✅ \${envVar} - Configured\`);
+      // console.log(\`  ✅ \${envVar} - Configured\`);
     }
   });
   
-  console.log('\\n' + '='.repeat(50));
+  // console.log('\\n' + '='.repeat(50));
   if (hasErrors) {
-    console.log('🚫 ENVIRONMENT VALIDATION FAILED');
-    console.log('Please configure the missing CRITICAL and AUTHENTICATION variables.');
+    // console.log('🚫 ENVIRONMENT VALIDATION FAILED');
+    // console.log('Please configure the missing CRITICAL and AUTHENTICATION variables.');
     process.exit(1);
   } else if (warnings > 0) {
-    console.log(\`⚠️ ENVIRONMENT VALIDATION PASSED WITH \${warnings} WARNINGS\`);
-    console.log('Consider configuring recommended variables for optimal experience.');
+    // console.log(\`⚠️ ENVIRONMENT VALIDATION PASSED WITH \${warnings} WARNINGS\`);
+    // console.log('Consider configuring recommended variables for optimal experience.');
   } else {
-    console.log('✅ ENVIRONMENT VALIDATION PASSED');
-    console.log('All required and recommended variables are configured!');
+    // console.log('✅ ENVIRONMENT VALIDATION PASSED');
+    // console.log('All required and recommended variables are configured!');
   }
 }
 
@@ -221,7 +222,7 @@ module.exports = { validateEnvironment };
 
   // 2. Security Headers Implementation
   implementSecurityHeaders() {
-    console.log('🔒 2. Implementing Security Headers...');
+    // console.log('🔒 2. Implementing Security Headers...');
     
     const securityHeadersCode = `
 // Enhanced Security Headers for Production
@@ -265,7 +266,7 @@ module.exports = { securityHeaders };
 
   // 3. Production Monitoring Setup
   setupProductionMonitoring() {
-    console.log('📊 3. Setting up Production Monitoring...');
+    // console.log('📊 3. Setting up Production Monitoring...');
     
     const monitoringCode = `#!/usr/bin/env node
 
@@ -312,11 +313,11 @@ class ProductionMonitor {
   }
 
   async runHealthChecks() {
-    console.log('🔍 Running Production Health Checks...\\n');
+    // console.log('🔍 Running Production Health Checks...\\n');
     
     const results = [];
     for (const check of this.healthChecks) {
-      console.log(\`Checking \${check.name}...\`);
+      // console.log(\`Checking \${check.name}...\`);
       const result = await this.checkEndpoint(check.endpoint);
       if (check.name === 'Authentication' && result.status === 401) {
         // 401 indicates no active session but the endpoint is reachable
@@ -327,11 +328,11 @@ class ProductionMonitor {
       results.push({ ...check, ...result });
       
       const emoji = result.success ? '✅' : '❌';
-      console.log(\`  \${emoji} \${check.name}: \${result.status} (\${result.responseTime}ms)\`);
+      // console.log(\`  \${emoji} \${check.name}: \${result.status} (\${result.responseTime}ms)\`);
     }
     
     const allHealthy = results.every(r => r.success);
-    console.log(\`\\n🏥 Overall Health: \${allHealthy ? '✅ HEALTHY' : '❌ UNHEALTHY'}\`);
+    // console.log(\`\\n🏥 Overall Health: \${allHealthy ? '✅ HEALTHY' : '❌ UNHEALTHY'}\`);
     
     // Save results for monitoring
     const report = {
@@ -359,7 +360,7 @@ module.exports = ProductionMonitor;
 
   // 4. Performance Optimization Implementation
   implementPerformanceOptimizations() {
-    console.log('⚡ 4. Implementing Performance Optimizations...');
+    // console.log('⚡ 4. Implementing Performance Optimizations...');
     
     const performanceCode = `/**
  * Production Performance Optimizations
@@ -406,7 +407,7 @@ export default productionOptimizations;
 
   // 5. Production Build Validation
   setupBuildValidation() {
-    console.log('🔨 5. Setting up Build Validation...');
+    // console.log('🔨 5. Setting up Build Validation...');
     
     const buildValidatorCode = `#!/usr/bin/env node
 
@@ -464,21 +465,21 @@ class BuildValidator {
   }
 
   run() {
-    console.log('🔍 Validating Production Build...\\n');
+    // console.log('🔍 Validating Production Build...\\n');
     
     this.validateBuildExists();
     this.validateStaticFiles();
     this.validateServerFiles();
     this.validateManifest();
     
-    console.log('Build Validation Results:');
+    // console.log('Build Validation Results:');
     this.checks.forEach(check => {
       const emoji = check.status === 'pass' ? '✅' : '❌';
-      console.log(\`  \${emoji} \${check.name}: \${check.details}\`);
+      // console.log(\`  \${emoji} \${check.name}: \${check.details}\`);
     });
     
     const allPassed = this.checks.every(check => check.status === 'pass');
-    console.log(\`\\n🏗️ Build Status: \${allPassed ? '✅ VALID' : '❌ INVALID'}\`);
+    // console.log(\`\\n🏗️ Build Status: \${allPassed ? '✅ VALID' : '❌ INVALID'}\`);
     
     return allPassed;
   }
@@ -499,7 +500,7 @@ module.exports = BuildValidator;
 
   // 6. Deployment Checklist Generator
   generateDeploymentChecklist() {
-    console.log('📋 6. Generating Deployment Checklist...');
+    // console.log('📋 6. Generating Deployment Checklist...');
     
     const checklist = `# 🚀 Production Deployment Checklist
 
@@ -625,28 +626,28 @@ Once these are set, the application is **100% production-ready** for enterprise 
   }
 
   printResults() {
-    console.log('\n🎉 PHASE 3 PRODUCTION READINESS - IMPLEMENTATION COMPLETE!');
-    console.log('='.repeat(60));
+    // console.log('\n🎉 PHASE 3 PRODUCTION READINESS - IMPLEMENTATION COMPLETE!');
+    // console.log('='.repeat(60));
     
-    console.log('\n✅ IMPLEMENTED FEATURES:');
+    // console.log('\n✅ IMPLEMENTED FEATURES:');
     this.results.implemented.forEach(item => {
-      console.log(`  ✅ ${item}`);
+      // console.log(`  ✅ ${item}`);
     });
     
-    console.log('\n🚀 NEXT STEPS:');
-    console.log('  1. Configure environment variables (see .env.production.example)');
-    console.log('  2. Run: npm run validate:env:production');
-    console.log('  3. Run: npm run build:production');
-    console.log('  4. Deploy to production');
-    console.log('  5. Run: npm run monitor:production');
+    // console.log('\n🚀 NEXT STEPS:');
+    // console.log('  1. Configure environment variables (see .env.production.example)');
+    // console.log('  2. Run: npm run validate:env:production');
+    // console.log('  3. Run: npm run build:production');
+    // console.log('  4. Deploy to production');
+    // console.log('  5. Run: npm run monitor:production');
     
-    console.log('\n📋 DOCUMENTATION CREATED:');
-    console.log('  📄 docs/PRODUCTION_DEPLOYMENT_CHECKLIST.md');
-    console.log('  📄 .env.production.example');
-    console.log('  🔧 scripts/validate-production-env.cjs');
-    console.log('  📊 scripts/production-monitor.cjs');
+    // console.log('\n📋 DOCUMENTATION CREATED:');
+    // console.log('  📄 docs/PRODUCTION_DEPLOYMENT_CHECKLIST.md');
+    // console.log('  📄 .env.production.example');
+    // console.log('  🔧 scripts/validate-production-env.cjs');
+    // console.log('  📊 scripts/production-monitor.cjs');
     
-    console.log('\n🎯 STATUS: ENTERPRISE PRODUCTION READY! 🚀');
+    // console.log('\n�� STATUS: ENTERPRISE PRODUCTION READY! 🚀');
   }
 }
 
