@@ -258,7 +258,7 @@ export function ValidatedFormField({
   if (type === 'checkbox') {
     return (
       <FormField
-        control={isReactHookForm(form) ? (form.control as import('react-hook-form').Control<any>) : undefined}
+        control={isReactHookForm(form) ? (form.control as import('react-hook-form').Control<unknown>) : undefined}
         name={name}
         render={() => (
           <FormItem className="flex flex-row items-start space-x-3 space-y-0">
@@ -285,7 +285,7 @@ export function ValidatedFormField({
 
   return (
     <FormField
-      control={isReactHookForm(form) ? (form.control as import('react-hook-form').Control<any>) : undefined}
+      control={isReactHookForm(form) ? (form.control as import('react-hook-form').Control<unknown>) : undefined}
       name={name}
       render={() => (
         <FormItem>
@@ -318,7 +318,7 @@ export function ValidatedFormField({
 // Validation helpers for common patterns
 export const validationPatterns = {
   email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-  phone: /^[\+]?[1-9][\d]{0,15}$/,
+  phone: /^[+]?([1-9][\d]{0,15})$/,
   url: /^https?:\/\/.+/,
   strongPassword: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
 };
