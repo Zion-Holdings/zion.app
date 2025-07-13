@@ -28,8 +28,6 @@ serve(async (req) => {
       throw new Error(`Failed to schedule retention emails: ${scheduleError.message}`);
     }
 
-    console.log(`Scheduled ${scheduledCount} retention emails`);
-
     // Fetch pending retention email jobs
     const { data: pendingJobs, error: jobsError } = await supabase
       .from("scheduled_jobs")

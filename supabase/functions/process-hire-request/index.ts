@@ -90,14 +90,11 @@ serve(async (req) => {
           const jsonMatch = responseText.match(/\{[\s\S]*\}/);
           if (jsonMatch) {
             enhancedContent = JSON.parse(jsonMatch[0]);
-            console.log("Enhanced content generated:", enhancedContent);
           }
         } catch (jsonError) {
-          console.error("Error parsing AI response:", jsonError);
           // Continue without enhanced content
         }
       } catch (aiError) {
-        console.error("Error generating enhanced content:", aiError);
         // Continue without enhanced content
       }
     }
@@ -191,7 +188,6 @@ serve(async (req) => {
         },
       });
       
-      console.log("Email sending result:", emailResponse);
     }
 
     return new Response(

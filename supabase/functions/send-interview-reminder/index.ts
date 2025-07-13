@@ -40,8 +40,6 @@ serve(async (req) => {
     
     if (error) throw error;
     
-    console.log(`Found ${interviews?.length || 0} interviews to send reminders for`);
-    
     const results = [];
     
     if (interviews && interviews.length > 0) {

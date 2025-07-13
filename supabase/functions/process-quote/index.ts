@@ -57,7 +57,6 @@ serve(async (req) => {
         }
       }
     } catch (authError) {
-      console.log("Auth error:", authError);
       // Continue without user identity
     }
 
