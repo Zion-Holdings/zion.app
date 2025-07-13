@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 /**
  * Serverless Environment Polyfill
  * 
@@ -140,7 +141,7 @@ try {
         const result = originalPush.call(arr, chunk);
         return typeof result === 'number' ? result : 0;
       } catch (error: unknown) {
-        const errorObj = error instanceof Error ? error : { message: String(error) };
+        const errorObj = (error instanceof Error || (typeof error === 'object' && error !== null && 'message' in error)) ? error : { message: String(error) };
         logWarn('Webpack chunk loading error prevented:', { data: errorObj });
         return 0;
       }
@@ -165,7 +166,7 @@ if (typeof window !== 'undefined') {
       ];
       
       if (suppressedMessages.some(msg => message.includes(msg))) {
-        const errorObj = error instanceof Error ? error : { message: String(error) };
+        const errorObj = (error instanceof Error || (typeof error === 'object' && error !== null && 'message' in error)) ? error : { message: String(error) };
         logErrorToProduction(`[serverless-polyfill] Previously suppressed error: "${message}" from ${source}:${lineno}`, errorObj);
       }
     }
@@ -187,7 +188,7 @@ if (typeof window !== 'undefined') {
       ];
       
       if (suppressedMessages.some(msg => (event.reason as { message: string }).message.includes(msg))) {
-        logErrorToProduction(`[serverless-polyfill] Previously suppressed unhandled rejection:`, event.reason instanceof Error ? event.reason : { message: String(event.reason) });
+        logErrorToProduction(`[serverless-polyfill] Previously suppressed unhandled rejection:`, event.reason instanceof Error ? event.reason : { message: String(event.reason as string) });
         // event.preventDefault(); // -- Now allowing it to propagate
         // return;
       }
