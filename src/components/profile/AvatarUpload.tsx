@@ -9,10 +9,17 @@ type Props = {
 export function AvatarUpload({ value, onChange }: Props) {
   const [url, setUrl] = useState(value);
   const handleUpload = (result: unknown) => {
-    const secure = (result as any)?.info?.secure_url as string | undefined;
-    if (secure) {
-      setUrl(secure);
-      onChange?.(secure);
+    if (
+      typeof result === 'object' &&
+      result !== null &&
+      'info' in result &&
+      typeof (result as { info?: { secure_url?: string } }).info?.secure_url === 'string'
+    ) {
+      const secure = (result as { info?: { secure_url?: string } }).info?.secure_url;
+      if (secure) {
+        setUrl(secure);
+        onChange?.(secure);
+      }
     }
   };
 
