@@ -396,7 +396,7 @@ async function main() {
 
 // Handle script termination
 process.on('SIGINT', () => {
-  console.log('\n');
+  console.warn('\n');
   logInfo('Setup cancelled by user');
   rl.close();
   process.exit(0);
