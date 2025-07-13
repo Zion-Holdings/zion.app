@@ -1,9 +1,8 @@
 
-import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { User, Mail, AtSign, GraduationCap } from 'lucide-react';
+import { User, GraduationCap } from 'lucide-react';
 
 
 
@@ -70,7 +69,7 @@ export function ProfileSetup({ onComplete, userType }: ProfileSetupProps) {
           <FormField
             control={form.control}
             name="displayName"
-            render={({ field, fieldState, formState }) => (
+            render={({ field, _fieldState, _formState }) => (
               <FormItem>
                 <FormLabel className="text-zion-slate-light">Full Name</FormLabel>
                 <FormControl>
@@ -91,7 +90,7 @@ export function ProfileSetup({ onComplete, userType }: ProfileSetupProps) {
           <FormField
             control={form.control}
             name="headline"
-            render={({ field, fieldState, formState }) => (
+            render={({ field, _fieldState, _formState }) => (
               <FormItem>
                 <FormLabel className="text-zion-slate-light">Professional Headline</FormLabel>
                 <FormControl>
@@ -116,7 +115,7 @@ export function ProfileSetup({ onComplete, userType }: ProfileSetupProps) {
           <FormField
             control={form.control}
             name="bio"
-            render={({ field, fieldState, formState }) => (
+            render={({ field, _fieldState, _formState }) => (
               <FormItem>
                 <FormLabel className="text-zion-slate-light">Bio</FormLabel>
                 <FormControl>
