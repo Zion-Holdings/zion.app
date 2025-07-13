@@ -55,7 +55,7 @@ export const MobileEmailCapture: React.FC = () => {
         logErrorToProduction('Newsletter subscription failed:', { data });
         enqueueSnackbar(data.error || 'Subscription failed. Please try again.', { variant: 'error' });
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       logErrorToProduction('Error subscribing:', { data: error });
       enqueueSnackbar('Unable to subscribe right now. Please try again later.', { variant: 'error' });
     } finally {
