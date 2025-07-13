@@ -20,5 +20,5 @@ process.emitWarning = (function(originalEmitWarning) {
   };
 })(process.emitWarning);
 
-console.log('✅ Deprecation warnings suppressed for known dependency issues');
+console.warn('✅ Deprecation warnings suppressed for known dependency issues');
 module.exports = {}; 

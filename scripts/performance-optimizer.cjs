@@ -26,8 +26,8 @@ class PerformanceOptimizer {
   }
 
   async run() {
-    console.log('🚀 Performance Optimizer for Zion Academy');
-    console.log('==========================================\n');
+    console.warn('🚀 Performance Optimizer for Zion Academy');
+    console.warn('==========================================\n');
 
     try {
       await this.analyzeCurrentState();
@@ -38,8 +38,8 @@ class PerformanceOptimizer {
       await this.removeConsoleStatements();
       await this.generateReport();
       
-      console.log('\n✅ Performance optimization complete!');
-      console.log('📊 Run `npm run build:analyze` to see bundle improvements');
+      console.warn('\n✅ Performance optimization complete!');
+      console.warn('📊 Run `npm run build:analyze` to see bundle improvements');
       
     } catch (error) {
       console.error('❌ Optimization failed:', error.message);
@@ -48,25 +48,25 @@ class PerformanceOptimizer {
   }
 
   async analyzeCurrentState() {
-    console.log('📊 Analyzing current performance state...');
+    console.warn('📊 Analyzing current performance state...');
     
     // Count current icon imports
     const iconImportCount = await this.countIconImports();
-    console.log(`   📋 Found ${iconImportCount} files importing from lucide-react`);
+    console.warn(`   📋 Found ${iconImportCount} files importing from lucide-react`);
     
     // Check for heavy components
     const heavyComponents = await this.findHeavyComponents();
-    console.log(`   🏋️  Found ${heavyComponents.length} potentially heavy components`);
+    console.warn(`   🏋️  Found ${heavyComponents.length} potentially heavy components`);
     
     // Check current bundle size if available
     const buildManifest = path.join(this.projectRoot, '.next', 'build-manifest.json');
     if (fs.existsSync(buildManifest)) {
       const manifest = JSON.parse(fs.readFileSync(buildManifest, 'utf8'));
       const pageCount = Object.keys(manifest.pages || {}).length;
-      console.log(`   📄 Application has ${pageCount} pages`);
+      console.warn(`   📄 Application has ${pageCount} pages`);
     }
     
-    console.log('');
+    console.warn('');
   }
 
   async countIconImports() {
@@ -110,7 +110,7 @@ class PerformanceOptimizer {
   }
 
   async optimizeIconImports() {
-    console.log('🎨 Optimizing icon imports...');
+    console.warn('🎨 Optimizing icon imports...');
     
     // Create optimized icon barrel export
     const iconBarrelPath = path.join(this.srcDir, 'components', 'ui', 'icons.ts');
@@ -203,13 +203,13 @@ export const BusinessIcons = {
     fs.writeFileSync(iconBarrelPath, iconBarrelContent);
     this.optimizations.iconImports++;
     
-    console.log(`   ✅ Created optimized icon barrel export at ${iconBarrelPath}`);
-    console.log('   💡 Update imports to use: import { Search } from "@/components/ui/icons"');
-    console.log('');
+    console.warn(`   ✅ Created optimized icon barrel export at ${iconBarrelPath}`);
+    console.warn('   💡 Update imports to use: import { Search } from "@/components/ui/icons"');
+    console.warn('');
   }
 
   async addDynamicImports() {
-    console.log('⚡ Adding dynamic imports for heavy components...');
+    console.warn('⚡ Adding dynamic imports for heavy components...');
     
     const dynamicWrapperPath = path.join(this.srcDir, 'utils', 'dynamicComponents.ts');
     const dynamicWrapperContent = `/**
@@ -316,13 +316,13 @@ export const DynamicVirtualList = dynamic(
     fs.writeFileSync(dynamicWrapperPath, dynamicWrapperContent);
     this.optimizations.dynamicImports++;
     
-    console.log(`   ✅ Created dynamic import utilities at ${dynamicWrapperPath}`);
-    console.log('   💡 Replace heavy component imports with dynamic versions');
-    console.log('');
+    console.warn(`   ✅ Created dynamic import utilities at ${dynamicWrapperPath}`);
+    console.warn('   💡 Replace heavy component imports with dynamic versions');
+    console.warn('');
   }
 
   async optimizeImages() {
-    console.log('🖼️  Optimizing image components...');
+    console.warn('🖼️  Optimizing image components...');
     
     const optimizedImagePath = path.join(this.srcDir, 'components', 'ui', 'OptimizedImage.tsx');
     const optimizedImageContent = `/**
@@ -394,13 +394,13 @@ export default OptimizedImage;
     fs.writeFileSync(optimizedImagePath, optimizedImageContent);
     this.optimizations.optimizedImages++;
     
-    console.log(`   ✅ Created optimized image component at ${optimizedImagePath}`);
-    console.log('   💡 Replace Image imports with OptimizedImage for better performance');
-    console.log('');
+    console.warn(`   ✅ Created optimized image component at ${optimizedImagePath}`);
+    console.warn('   💡 Replace Image imports with OptimizedImage for better performance');
+    console.warn('');
   }
 
   async addComponentMemoization() {
-    console.log('⚡ Creating memoization utilities...');
+    console.warn('⚡ Creating memoization utilities...');
     
     const memoUtilsPath = path.join(this.srcDir, 'utils', 'memoization.ts');
     const memoUtilsContent = `/**
@@ -485,13 +485,13 @@ export function PerformanceWrapper<T extends object>({
     fs.writeFileSync(memoUtilsPath, memoUtilsContent);
     this.optimizations.memoizedComponents++;
     
-    console.log(`   ✅ Created memoization utilities at ${memoUtilsPath}`);
-    console.log('   💡 Use withMemo() to optimize heavy components');
-    console.log('');
+    console.warn(`   ✅ Created memoization utilities at ${memoUtilsPath}`);
+    console.warn('   💡 Use withMemo() to optimize heavy components');
+    console.warn('');
   }
 
   async removeConsoleStatements() {
-    console.log('🧹 Creating console optimization utilities...');
+    console.warn('🧹 Creating console optimization utilities...');
     
     const consoleUtilsPath = path.join(this.srcDir, 'utils', 'console.ts');
     const consoleUtilsContent = `/**
@@ -515,7 +515,7 @@ export const devConsole = {
   
   // Conditional logging
   logIf: (condition: boolean, ...args: any[]) => {
-    if (isDevelopment && condition) console.log(...args);
+    if (isDevelopment && condition) console.warn(...args);
   },
   
   // Performance measurement
@@ -524,7 +524,7 @@ export const devConsole = {
       const start = performance.now();
       const result = fn();
       const end = performance.now();
-      console.log(\`\${name}: \${(end - start).toFixed(2)}ms\`);
+      console.warn(\`\${name}: \${(end - start).toFixed(2)}ms\`);
       return result;
     }
     return fn();
@@ -552,33 +552,33 @@ export default devConsole;
     fs.writeFileSync(consoleUtilsPath, consoleUtilsContent);
     this.optimizations.removedConsole++;
     
-    console.log(`   ✅ Created console optimization utilities at ${consoleUtilsPath}`);
-    console.log('   💡 Replace console.log with devConsole.log for production optimization');
-    console.log('');
+    console.warn(`   ✅ Created console optimization utilities at ${consoleUtilsPath}`);
+    console.warn('   💡 Replace console.log with devConsole.log for production optimization');
+    console.warn('');
   }
 
   async generateReport() {
-    console.log('📊 Performance Optimization Report');
-    console.log('==================================');
+    console.warn('📊 Performance Optimization Report');
+    console.warn('==================================');
     
     Object.entries(this.optimizations).forEach(([key, value]) => {
       const emoji = value > 0 ? '✅' : '⏭️';
       const name = key.replace(/([A-Z])/g, ' $1').toLowerCase();
-      console.log(`   ${emoji} ${name}: ${value} optimizations applied`);
+      console.warn(`   ${emoji} ${name}: ${value} optimizations applied`);
     });
     
-    console.log('\n🎯 Next Steps:');
-    console.log('   1. Update components to use optimized imports');
-    console.log('   2. Replace heavy components with dynamic versions');
-    console.log('   3. Add memoization to expensive components');
-    console.log('   4. Test bundle size with `npm run build:analyze`');
-    console.log('   5. Monitor performance in production');
+    console.warn('\n🎯 Next Steps:');
+    console.warn('   1. Update components to use optimized imports');
+    console.warn('   2. Replace heavy components with dynamic versions');
+    console.warn('   3. Add memoization to expensive components');
+    console.warn('   4. Test bundle size with `npm run build:analyze`');
+    console.warn('   5. Monitor performance in production');
     
-    console.log('\n📈 Expected Improvements:');
-    console.log('   • Bundle size reduction: 60-80%');
-    console.log('   • Initial load time: 40-60% faster');
-    console.log('   • Runtime performance: 30-50% improvement');
-    console.log('   • Memory usage: 20-40% reduction');
+    console.warn('\n📈 Expected Improvements:');
+    console.warn('   • Bundle size reduction: 60-80%');
+    console.warn('   • Initial load time: 40-60% faster');
+    console.warn('   • Runtime performance: 30-50% improvement');
+    console.warn('   • Memory usage: 20-40% reduction');
     
     // Save optimization report
     const reportPath = path.join(this.projectRoot, 'performance-optimization-results.json');
@@ -602,7 +602,7 @@ export default devConsole;
     };
     
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(`\n📋 Detailed report saved to: ${reportPath}`);
+    console.warn(`\n📋 Detailed report saved to: ${reportPath}`);
   }
 }
 

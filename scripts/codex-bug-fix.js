@@ -55,9 +55,9 @@ const octokit = new Octokit({ auth: GITHUB_TOKEN });
 
 function runGitCommand(command) {
   try {
-    console.log(`Executing: ${command}`);
+    console.warn(`Executing: ${command}`);
     const output = execSync(command, { stdio: 'pipe' }).toString();
-    if (output) console.log(output); // Only log if there's output
+    if (output) console.warn(output); // Only log if there's output
     return output;
   } catch (error) {
     const errDetails = {
@@ -72,14 +72,14 @@ function runGitCommand(command) {
 
 async function commentOnIssue(octokitInstance, owner, repo, issueNumber, commentBody) {
   try {
-    console.log(`Commenting on issue #${issueNumber}...`);
+    console.warn(`Commenting on issue #${issueNumber}...`);
     await octokitInstance.rest.issues.createComment({
       owner,
       repo,
       issue_number: issueNumber,
       body: commentBody,
     });
-    console.log("Successfully commented on issue.");
+    console.warn("Successfully commented on issue.");
   } catch (error) {
     console.error(`Failed to comment on issue #${issueNumber}: ${error.message}`);
     // Log the error but don't let it stop the script.
@@ -118,7 +118,7 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 }
 
 async function sendPromptToOpenAI(promptMessage) {
-  console.log("Sending prompt to OpenAI API...");
+  console.warn("Sending prompt to OpenAI API...");
   try {
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
@@ -166,36 +166,36 @@ function extractPatch(responseText) {
 }
 
 async function main() {
-  console.log("Starting codex-bug-fix.js script...");
+  console.warn("Starting codex-bug-fix.js script...");
   const owner = REPO_CONTEXT.owner.login;
   const repo = REPO_CONTEXT.name;
 
-  console.log(`Operating on repository: ${owner}/${repo}`);
-  console.log("Issue Number:", ISSUE_NUMBER);
-  console.log("Issue Title:", ISSUE_TITLE);
+  console.warn(`Operating on repository: ${owner}/${repo}`);
+  console.warn("Issue Number:", ISSUE_NUMBER);
+  console.warn("Issue Title:", ISSUE_TITLE);
 
   const filePaths = extractFilePaths(ISSUE_BODY);
-  console.log("Extracted file paths:", filePaths);
+  console.warn("Extracted file paths:", filePaths);
 
   const filesContent = [];
   if (filePaths.length > 0) {
-    console.log("Fetching content for file paths...");
+    console.warn("Fetching content for file paths...");
     for (const filePath of filePaths) {
       if (!filePath) { console.warn("Encountered an undefined/null filePath."); continue; }
       try {
         const content = await fetchFileContent(octokit, owner, repo, filePath.trim());
         if (content !== null) {
           filesContent.push({ path: filePath.trim(), content });
-          console.log(`Successfully fetched content for ${filePath.trim()}`);
+          console.warn(`Successfully fetched content for ${filePath.trim()}`);
         } else {
-          console.log(`No content returned for ${filePath.trim()}.`);
+          console.warn(`No content returned for ${filePath.trim()}.`);
         }
       } catch (error) {
         console.warn(`Skipping file ${filePath.trim()} due to error: ${error.message}`);
       }
     }
   } else {
-    console.log("No file paths found in issue body.");
+    console.warn("No file paths found in issue body.");
   }
 
   let promptForCodex = `Issue Title: ${ISSUE_TITLE}\nIssue Body: ${ISSUE_BODY || "No body provided."}\n\n`;
@@ -209,29 +209,29 @@ async function main() {
   }
   promptForCodex += "Based on the issue described and provided files, generate a code patch in standard diff format. Ensure the patch is clearly delimited by \`\`\`diff ... \`\`\` marks. If you cannot generate a patch, explain why. If multiple files need changes, provide separate diffs for each file.";
 
-  console.log("Constructed prompt for OpenAI. Length:", promptForCodex.length);
+  console.warn("Constructed prompt for OpenAI. Length:", promptForCodex.length);
   const codexResponseContent = await sendPromptToOpenAI(promptForCodex);
-  console.log("Raw response from Codex received.");
+  console.warn("Raw response from Codex received.");
 
   const patch = extractPatch(codexResponseContent);
 
   if (patch) {
-    console.log("Extracted patch:\n", patch);
+    console.warn("Extracted patch:\n", patch);
 
-    console.log("Configuring Git user...");
+    console.warn("Configuring Git user...");
     runGitCommand('git config user.name "github-actions[bot]"');
     runGitCommand('git config user.email "github-actions[bot]@users.noreply.github.com"');
 
     const branchName = `autofix/issue-${ISSUE_NUMBER}`;
-    console.log(`Creating and switching to new branch: ${branchName}`);
+    console.warn(`Creating and switching to new branch: ${branchName}`);
     runGitCommand(`git checkout -b ${branchName}`);
 
-    console.log("Applying patch...");
+    console.warn("Applying patch...");
     const patchFilePath = './temp.patch';
     try {
       fs.writeFileSync(patchFilePath, patch);
       runGitCommand(`git apply --whitespace=fix ${patchFilePath}`);
-      console.log("Patch applied successfully via git apply.");
+      console.warn("Patch applied successfully via git apply.");
     } catch (applyError) {
       // This catch is for fs.writeFileSync or if runGitCommand for git apply throws (which it will on failure)
       if (fs.existsSync(patchFilePath)) fs.unlinkSync(patchFilePath);
@@ -247,12 +247,12 @@ ${patch}
         if (fs.existsSync(patchFilePath)) fs.unlinkSync(patchFilePath); // Ensure cleanup
     }
 
-    console.log("Adding changes to staging area...");
+    console.warn("Adding changes to staging area...");
     runGitCommand('git add .');
 
     try {
       execSync('git diff --staged --quiet', { stdio: 'ignore' }); // Use ignore if no output is needed on success
-      console.log("No changes were staged after applying the patch. This might mean the patch was empty or did not apply correctly.");
+      console.warn("No changes were staged after applying the patch. This might mean the patch was empty or did not apply correctly.");
       const noChangeMessage = `Codex suggested a patch for issue #${ISSUE_NUMBER}, but it resulted in no actual changes to the files after \`git apply\`. This could be due to an empty patch, a patch that doesn't alter current file states, or an issue with how the patch was applied.
 Patch provided:
 \`\`\`diff
@@ -264,23 +264,23 @@ ${patch}
       process.exit(0);
     } catch (error) {
       // This error (non-zero exit code from `git diff --staged --quiet`) means there ARE staged changes.
-      console.log("Changes staged, proceeding to commit.");
+      console.warn("Changes staged, proceeding to commit.");
     }
 
     const commitMessage = `Autofix: ${ISSUE_TITLE}\n\nFixes #${ISSUE_NUMBER}`;
-    console.log("Committing changes...");
+    console.warn("Committing changes...");
     const escapedCommitMessage = commitMessage.replace(/"/g, '\\"'); // Escape for command line
     runGitCommand(`git commit -m "${escapedCommitMessage}"`);
 
-    console.log(`Pushing branch ${branchName} to origin...`);
+    console.warn(`Pushing branch ${branchName} to origin...`);
     runGitCommand(`git push origin ${branchName}`); // Removed --force
 
-    console.log(`Successfully created branch ${branchName}, applied patch, committed, and pushed.`);
-    console.log(`::set-output name=branch_name::${branchName}`); // Output for workflow
+    console.warn(`Successfully created branch ${branchName}, applied patch, committed, and pushed.`);
+    console.warn(`::set-output name=branch_name::${branchName}`); // Output for workflow
 
     // Next step in the workflow should be PR creation.
   } else {
-    console.log("No diff-formatted patch found in Codex response.");
+    console.warn("No diff-formatted patch found in Codex response.");
     const explanation = codexResponseContent || "No specific explanation content found.";
     const explanationMessage = `Codex analysis for issue #${ISSUE_NUMBER}:
 
@@ -288,7 +288,7 @@ ${explanation}
 
 No patch was automatically applied.`;
     await commentOnIssue(octokit, owner, repo, ISSUE_NUMBER, explanationMessage);
-    console.log("Exiting gracefully as no patch was generated. No branch created.");
+    console.warn("Exiting gracefully as no patch was generated. No branch created.");
     // Ensure no output is set for branch_name here
     process.exit(0); // Successful exit, as AI providing an explanation is a valid outcome.
   }
