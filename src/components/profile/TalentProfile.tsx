@@ -1,6 +1,7 @@
 
 import React from "react";
-import { Handshake, MessageSquare, Star } from "@/components/icons";
+import { Handshake } from 'lucide-react';
+import { MessageSquare, Star as _Star } from "@/components/icons";
 
 
 import { Button } from "@/components/ui/button";
@@ -90,7 +91,7 @@ export function TalentProfile({
           {/* Ratings Section */}
           <div className="bg-zion-purple/10 border border-zion-purple/30 rounded-lg p-6">
             <h2 className="text-xl font-bold text-white mb-4 flex items-center">
-              <Star className="mr-2 h-5 w-5 text-yellow-400" />
+              <_Star className="mr-2 h-5 w-5 text-yellow-400" />
               Reviews & Ratings
             </h2>
             <ProfileRatings 
