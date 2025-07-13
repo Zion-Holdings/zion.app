@@ -81,7 +81,19 @@ export function HireNowCTA({ talentProfile }: HireNowCTAProps) {
 }
 
 // Helper function to calculate profile completeness
-function calculateProfileCompleteness(profile: unknown) {
+interface Profile {
+  full_name?: string;
+  professional_title?: string;
+  bio?: string;
+  skills?: unknown;
+  hourly_rate?: number;
+  location?: string;
+  portfolio_links?: unknown;
+  experience?: unknown;
+  availability_type?: string;
+}
+
+function calculateProfileCompleteness(profile: Profile | null | undefined) {
   if (!profile) return 0;
   
   const fields = [
@@ -100,7 +112,7 @@ function calculateProfileCompleteness(profile: unknown) {
   let totalFields = 0;
   
   fields.forEach(field => {
-    if ((profile as any)[field]) {
+    if (profile[field as keyof Profile]) {
       completedFields++;
     }
     totalFields++;
