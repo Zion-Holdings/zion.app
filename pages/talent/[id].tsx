@@ -53,13 +53,13 @@ const TalentPage: React.FC = () => {
 
   // Other errors (non-404)
   if (error) {
-    const err = error as { status?: number; info?: { error?: string; message?: string } };
+    const err = error as { status?: number; info?: { error?: string; message?: string }; message?: string };
     return (
       <div className="flex flex-col items-center justify-center py-20 text-center">
         <h2 className="text-2xl font-semibold mb-2">Error</h2>
         <p>Failed to load talent profile.</p>
         {err.status && <p>Status: {err.status}</p>}
-        <p>Message: {err.info?.error || err.info?.message || err.message}</p>
+        <p>Message: {err.info?.error || err.info?.message || (typeof err.message === 'string' ? err.message : String(error))}</p>
       </div>
     );
   }
