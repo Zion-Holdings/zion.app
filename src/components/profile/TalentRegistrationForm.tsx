@@ -16,7 +16,8 @@ import {
   FormItem,
   FormLabel,
   FormControl,
-  FormMessage
+  FormMessage,
+  FormDescription
 } from "@/components/ui/form";
 import {
   Card,
@@ -29,6 +30,7 @@ import {
 import { User, Briefcase, MapPin, Upload, Sparkles, Check, X } from '@/components/icons';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Separator } from '@/components/ui/separator';
+import { Badge } from '@/components/ui/badge';
 
 // Define form schema
 const talentProfileSchema = z.object({
