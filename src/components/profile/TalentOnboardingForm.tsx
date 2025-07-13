@@ -4,16 +4,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useRouter } from 'next/router';
 import {logErrorToProduction} from '@/utils/productionLogger';
-import {
-  Form, FormControl, FormField, FormItem, FormLabel, FormMessage
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import {
-  Select, SelectContent, SelectItem, SelectTrigger, SelectValue 
-} from "@/components/ui/select";
-import { Separator } from "@/components/ui/separator";
 
 
 
@@ -77,16 +67,7 @@ type TalentFormValues = z.infer<typeof talentSchema>;
 
 export function TalentOnboardingForm() {
   const { user } = useAuth();
-  const router = useRouter();
-  const [currentStep, setCurrentStep] = useState(1);
-  const [profilePictureUrl, setProfilePictureUrl] = useState<string | null>(null);
-  const [cvFileName, setCvFileName] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSuccessScreen, setShowSuccessScreen] = useState(false);
-  
-  const { enhanceProfile, isGenerating } = useTalentProfileEnhancer();
-  
-  const totalSteps = 4;
   
   const form = useForm<TalentFormValues>({
     resolver: zodResolver(talentSchema),
@@ -116,18 +97,6 @@ export function TalentOnboardingForm() {
     mode: "onChange",
   });
   
-  const { fields: projectFields, append: appendProject, remove: removeProject } = 
-    useFieldArray({
-      name: "experience.keyProjects",
-      control: form.control,
-    });
-    
-  const { fields: linkFields, append: appendLink, remove: removeLink } = 
-    useFieldArray({
-      name: "availability.portfolioLinks",
-      control: form.control,
-    });
-
   // Handle profile picture upload
   const handleProfilePictureUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -136,7 +105,7 @@ export function TalentOnboardingForm() {
     // Preview the image
     const reader = new FileReader();
     reader.onloadend = () => {
-      setProfilePictureUrl(reader.result as string);
+      // setProfilePictureUrl(reader.result as string); // This line was removed
     };
     reader.readAsDataURL(file);
     
