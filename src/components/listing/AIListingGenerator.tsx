@@ -33,7 +33,7 @@ interface AIListingGeneratorProps {
 export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIListingGeneratorProps) {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
-  const [aiResponse, setAiResponse] = useState<unknown>(null);
+  const [aiResponse, setAiResponse] = useState<GeneratedContent | null>(null);
 
   const handleGenerate = async (values: Record<string, unknown>) => {
     setIsLoading(true);
@@ -44,18 +44,28 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
       }
       
       const { data, error } = await supabase.functions.invoke('ai-listing-generator', {
-        body: { title, category, keyFeatures, targetAudience }
+        body: {
+          title: values.title ?? initialValues.title ?? '',
+          category: values.category ?? initialValues.category ?? '',
+          keyFeatures: values.keyFeatures ?? initialValues.keyFeatures ?? '',
+          targetAudience: values.targetAudience ?? initialValues.targetAudience ?? ''
+        }
       });
 
       if (error) {
         throw new Error(error.message);
       }
       
-      if (data && (data as any).error) {
-        throw new Error((data as any).error);
+      if (data && typeof data === 'object' && 'error' in data) {
+        throw new Error((data as { error?: string }).error || 'Unknown error');
       }
 
-      setAiResponse((data as any)?.generated || null);
+      // Validate data shape before casting
+      if (data && typeof data === 'object' && 'description' in data && 'tags' in data && 'suggestedPrice' in data && 'keyPoints' in data) {
+        setAiResponse(data as GeneratedContent);
+      } else {
+        throw new Error('Invalid AI response format');
+      }
       toast({
         title: "Content Generated",
         description: "AI has created optimized listing content for you."
@@ -74,7 +84,7 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
 
   const handleApply = () => {
     if (aiResponse && onApplyGenerated) {
-      onApplyGenerated(aiResponse as GeneratedContent);
+      onApplyGenerated(aiResponse);
       toast({
         title: "Content Applied",
         description: "The generated content has been applied to your listing."
@@ -106,7 +116,7 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
       {isLoading && <LoadingContentSkeleton />}
 
       {aiResponse && !isLoading && (
-        <GeneratedContentDisplay content={aiResponse as GeneratedContent} onApply={handleApply} />
+        <GeneratedContentDisplay content={aiResponse} onApply={handleApply} />
       )}
     </div>
   );
