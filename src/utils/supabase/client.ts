@@ -72,7 +72,7 @@ export function createClient(): SupabaseClient | null {
                 // Add other methods if absolutely necessary for build to pass
             },
             from: (_table: string) => ({ /* mock query builder */ }),
-        } as any; // Cast to any to satisfy SupabaseClient type for mock
+        } as unknown as SupabaseClient; // Cast to unknown to satisfy SupabaseClient type for mock
     }
     // Client-side: return null. AuthProvider will use this to set isSupabaseConfigured to false.
     return null;
