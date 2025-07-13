@@ -64,7 +64,7 @@ if (typeof window === 'undefined') {
       constructor(href: string) { this.href = href; }
       toString() { return this.href; }
     },
-    crypto: (global as unknown as { crypto: { randomUUID: () => string; subtle: {}; getRandomValues: (arr: Uint8Array) => Uint8Array } }).crypto || {
+    crypto: (global as unknown as { crypto: { randomUUID: () => string; subtle: object; getRandomValues: (arr: Uint8Array) => Uint8Array } }).crypto || {
       randomUUID: () => Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
       subtle: {},
       getRandomValues: (arr: Uint8Array) => {
