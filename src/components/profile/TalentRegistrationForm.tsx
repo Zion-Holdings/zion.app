@@ -26,10 +26,6 @@ import {
   CardContent,
   CardFooter
 } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { Badge } from "@/components/ui/badge";
-import { UserRound, Briefcase, MapPin, Upload, Sparkles, Check, X } from "lucide-react";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 // Define form schema
 const talentProfileSchema = z.object({
