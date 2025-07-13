@@ -78,11 +78,15 @@ export function WhitelabelRequestForm() {
       
       // Reset form
       form.reset();
-    } catch (error: any) {
+    } catch (error: unknown) {
+      let message = 'Something went wrong';
+      if (typeof error === 'object' && error && 'message' in error && typeof (error as { message?: string }).message === 'string') {
+        message = (error as { message?: string }).message ?? message;
+      }
       toast({
         variant: 'destructive',
         title: 'Error creating tenant',
-        description: error.message || 'Something went wrong',
+        description: message,
       });
     }
   };
