@@ -1,9 +1,9 @@
 'use client'
 
-import React, { Suspense, lazy, useState, useEffect } from 'react'
+import React, { Suspense, useState, useEffect } from 'react'
 import type { ComponentType } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Loader2, AlertTriangle, Wifi, WifiOff, RefreshCw } from 'lucide-react';
+import { Loader2, AlertTriangle, WifiOff, RefreshCw } from 'lucide-react';
 
 
 
@@ -27,7 +27,6 @@ interface DynamicLoaderProps {
   fallback?: React.ReactNode
   errorFallback?: React.ComponentType<{ error: Error; retry: () => void }>
   loadingComponent?: React.ComponentType
-  enableRetry?: boolean
   maxRetries?: number
   prefetch?: boolean
   className?: string
@@ -150,7 +149,6 @@ export const DynamicComponentLoader: React.FC<DynamicLoaderProps> = ({
   fallback,
   errorFallback,
   loadingComponent,
-  enableRetry = true,
   maxRetries = 3,
   prefetch = false,
   className,

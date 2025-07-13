@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { Activity, Zap, Package, TrendingUp, TrendingDown, AlertTriangle, CheckCircle, RefreshCw, BarChart3, Clock, Globe } from 'lucide-react';
+import { Zap, Package, TrendingUp, AlertTriangle, CheckCircle, RefreshCw, BarChart3, Clock, Globe } from 'lucide-react';
 
 
 
@@ -15,7 +15,6 @@ import { Activity, Zap, Package, TrendingUp, TrendingDown, AlertTriangle, CheckC
 
 
 
-import { bundleMonitor } from '@/utils/bundleMonitor';
 import { logErrorToProduction, logInfo } from '@/utils/productionLogger';
 
 interface PerformanceMetrics {
@@ -47,7 +46,6 @@ export function PerformanceDashboard() {
   const collectMetrics = async () => {
     try {
       // Collect performance metrics
-      const memoryInfo = typeof (performance as unknown) === 'object' && performance && 'memory' in performance ? (performance as { memory?: unknown }).memory : undefined;
       const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
       const resourceCount = performance.getEntriesByType('resource').length;
 
@@ -88,90 +86,12 @@ export function PerformanceDashboard() {
     }
   };
 
-  const collectWebVitals = async (): Promise<Partial<PerformanceMetrics>> => {
-    if (typeof window === 'undefined') return {};
-    
-    const vitals: Partial<PerformanceMetrics> = {};
-    
-    // Collect navigation timing
-    const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-    if (navigation) {
-      vitals.fcp = navigation.loadEventEnd - navigation.loadEventStart;
-      vitals.lcp = navigation.loadEventEnd - navigation.fetchStart;
-    }
-    
-    // Use PerformanceObserver for more accurate metrics
-    if ('PerformanceObserver' in window) {
-      return new Promise((resolve) => {
-        const observer = new PerformanceObserver((list) => {
-          list.getEntries().forEach((entry) => {
-            if (entry.entryType === 'paint') {
-              if (entry.name === 'first-contentful-paint') {
-                vitals.fcp = entry.startTime;
-              }
-            }
-            if (entry.entryType === 'largest-contentful-paint') {
-              vitals.lcp = entry.startTime;
-            }
-            if (entry.entryType === 'layout-shift') {
-              vitals.cls = (vitals.cls || 0) + (typeof entry === 'object' && entry && 'value' in entry ? (entry as { value: number }).value : 0);
-            }
-            if (entry.entryType === 'first-input') {
-              vitals.fid = (typeof entry === 'object' && entry && 'processingStart' in entry ? (entry as { processingStart: number }).processingStart : 0) - entry.startTime;
-            }
-          });
-        });
-        
-        observer.observe({ entryTypes: ['paint', 'largest-contentful-paint', 'layout-shift', 'first-input'] });
-        
-        // Resolve after a short delay
-        setTimeout(() => {
-          observer.disconnect();
-          resolve(vitals);
-        }, 2000);
-      });
-    }
-    
-    return vitals;
-  };
-
-  const collectChunkData = async (): Promise<BundleChunk[]> => {
-    if (typeof window === 'undefined') return [];
-    
-    const resourceEntries = performance.getEntriesByType('resource') as PerformanceResourceTiming[];
-    const scriptEntries = resourceEntries.filter(entry => 
-      entry.name.includes('/_next/static/') && entry.name.endsWith('.js')
-    );
-
-    return scriptEntries.map(entry => ({
-      name: entry.name.split('/').pop()?.split('?')[0] || 'unknown',
-      size: entry.transferSize || entry.encodedBodySize || 0,
-      loadTime: entry.responseEnd - entry.requestStart,
-      cached: entry.transferSize === 0,
-      type: categorizeChunk(entry.name)
-    })).sort((a, b) => b.size - a.size);
-  };
-
-  const categorizeChunk = (filename: string): string => {
-    if (filename.includes('framework')) return 'framework';
-    if (filename.includes('vendor')) return 'vendor';
-    if (filename.includes('pages')) return 'page';
-    if (filename.includes('chunks')) return 'chunk';
-    return 'other';
-  };
-
   const formatSize = (bytes: number): string => {
     if (bytes === 0) return '0 B';
     const k = 1024;
     const sizes = ['B', 'KB', 'MB', 'GB'];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
     return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
-  };
-
-  const getScoreColor = (score: number): string => {
-    if (score >= 90) return 'text-green-600';
-    if (score >= 70) return 'text-yellow-600';
-    return 'text-red-600';
   };
 
   const getScoreIcon = (score: number) => {
