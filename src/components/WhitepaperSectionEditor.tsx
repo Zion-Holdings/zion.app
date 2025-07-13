@@ -54,4 +54,37 @@ const WhitepaperSectionEditor: React.FC<WhitepaperSectionEditorProps> = ({ title
       setShowSuggestions(true);
 
     } catch (e: any) {
-      logErrorToProduction(`
+      logErrorToProduction(`Error in handleGetSuggestions: ${e?.message || e}`);
+      setSuggestionsError(e?.message || 'An error occurred while getting suggestions.');
+      setIsLoadingSuggestions(false);
+    }
+  };
+
+  return (
+    <div>
+      <h2>{title}</h2>
+      <textarea
+        value={value}
+        onChange={(e) => set(e.target.value)}
+        rows={10}
+        cols={50}
+      />
+      <button onClick={handleGetSuggestions} disabled={isLoadingSuggestions}>
+        {isLoadingSuggestions ? 'Loading suggestions...' : 'Get Suggestions'}
+      </button>
+      {suggestionsError && <p style={{ color: 'red' }}>{suggestionsError}</p>}
+      {showSuggestions && suggestions && (
+        <div>
+          <h3>Suggestions:</h3>
+          <ul>
+            {suggestions.split('\n').map((suggestion, index) => (
+              <li key={index}>{suggestion}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default WhitepaperSectionEditor;
