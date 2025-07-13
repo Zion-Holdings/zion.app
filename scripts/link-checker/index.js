@@ -209,7 +209,7 @@ async function checkLink(link, projectRoot) {
 
 // --- Main Function ---
 async function main(projectRoot = '.') {
-  console.log(chalk.blue(`Scanning project at ${path.resolve(projectRoot)}...`));
+  // console.log(chalk.blue(`Scanning project at ${path.resolve(projectRoot)}...`));
   const absoluteProjectRoot = path.resolve(projectRoot);
 
   const filePatterns = [
@@ -227,10 +227,10 @@ async function main(projectRoot = '.') {
   files = [...new Set(files)];
 
   if (files.length === 0) {
-    console.log(chalk.yellow('No relevant files found. Check patterns/paths. Ensure script is run from project root.'));
+    // console.log(chalk.yellow('No relevant files found. Check patterns/paths. Ensure script is run from project root.'));
     return;
   }
-  console.log(chalk.green(`Found ${files.length} file(s) to scan.`));
+  // console.log(chalk.green(`Found ${files.length} file(s) to scan.`));
 
   let allLinks = [];
   files.forEach(filePath => {
@@ -246,16 +246,16 @@ async function main(projectRoot = '.') {
       extracted = extractLinksFromJson(content, relativeFilePath);
     }
     if (extracted.length > 0) {
-        console.log(chalk.cyan(`Found ${extracted.length} links in ${relativeFilePath}`));
+        // console.log(chalk.cyan(`Found ${extracted.length} links in ${relativeFilePath}`));
         allLinks = allLinks.concat(extracted);
     }
   });
 
   if (allLinks.length === 0) {
-    console.log(chalk.yellow('No links found in any files.'));
+    // console.log(chalk.yellow('No links found in any files.'));
     return;
   }
-  console.log(chalk.green(`Found ${allLinks.length} total links. Checking status (this might take a while)...`));
+  // console.log(chalk.green(`Found ${allLinks.length} total links. Checking status (this might take a while)...`));
 
   const CONCURRENT_CHECKS = 5;
   let results = [];
@@ -270,49 +270,49 @@ async function main(projectRoot = '.') {
     chunkResults.forEach(result => {
       const location = `${result.file}${result.line ? ':'+result.line : ''}`;
       if (result.status === 'skipped (special_protocol)') {
-        console.log(chalk.gray(`SKIPPED: ${result.url} (in ${location})`));
+        // console.log(chalk.gray(`SKIPPED: ${result.url} (in ${location})`));
       } else if (result.status === 'internal_ok') {
-        console.log(chalk.green(`OK (Internal): ${result.url} -> ${path.relative(absoluteProjectRoot,result.resolvedPath)} (in ${location})`));
+        // console.log(chalk.green(`OK (Internal): ${result.url} -> ${path.relative(absoluteProjectRoot,result.resolvedPath)} (in ${location})`));
       } else if (result.status === 'internal_dynamic_route_exists') {
-        console.log(chalk.cyan(`OK (Internal Dynamic): ${result.url} -> ${path.relative(absoluteProjectRoot,result.resolvedPath)} (in ${location})`));
+        // console.log(chalk.cyan(`OK (Internal Dynamic): ${result.url} -> ${path.relative(absoluteProjectRoot,result.resolvedPath)} (in ${location})`));
       } else if (result.status === 'internal_broken') {
         brokenInternal++;
-        console.log(chalk.red.bold(`BROKEN (Internal): ${result.url} (in ${location})`));
-        if (result.reason) console.log(chalk.red(`  Reason: ${result.reason}`));
+        // console.log(chalk.red.bold(`BROKEN (Internal): ${result.url} (in ${location})`));
+        if (result.reason) console.warn(chalk.red(`  Reason: ${result.reason}`));
       } else if (result.status === 200) {
-        console.log(chalk.green(`OK (200 External): ${result.url} (in ${location})`));
+        // console.log(chalk.green(`OK (200 External): ${result.url} (in ${location})`));
       } else if (typeof result.status === 'number' && result.status >= 400) {
         brokenExternal++;
-        console.log(chalk.red.bold(`BROKEN (${result.status} External): ${result.url} (in ${location})`));
-        if (result.error) console.log(chalk.red(`  Error: ${result.error}`));
+        // console.log(chalk.red.bold(`BROKEN (${result.status} External): ${result.url} (in ${location})`));
+        if (result.error) console.warn(chalk.red(`  Error: ${result.error}`));
       } else { // Operational errors for external links
         operationalErrors++;
-        console.log(chalk.yellow(`ERROR (${result.status} External): ${result.url} (in ${location})`));
-        if (result.error) console.log(chalk.yellow(`  Issue: ${result.error}`));
+        // console.log(chalk.yellow(`ERROR (${result.status} External): ${result.url} (in ${location})`));
+        if (result.error) console.warn(chalk.yellow(`  Issue: ${result.error}`));
       }
     });
   }
 
-  console.log("\n--- Summary ---");
+  // console.log("\n--- Summary ---");
   if (brokenInternal > 0) {
-    console.log(chalk.red.bold(`Found ${brokenInternal} broken internal link(s).`));
+    // console.log(chalk.red.bold(`Found ${brokenInternal} broken internal link(s).`));
   } else {
-    console.log(chalk.green('No broken internal links found!'));
+    // console.log(chalk.green('No broken internal links found!'));
   }
   if (brokenExternal > 0) {
-    console.log(chalk.red.bold(`Found ${brokenExternal} broken external link(s) (4xx/5xx status).`));
+    // console.log(chalk.red.bold(`Found ${brokenExternal} broken external link(s) (4xx/5xx status).`));
   } else {
-    console.log(chalk.green('No broken external links (4xx/5xx status) found!'));
+    // console.log(chalk.green('No broken external links (4xx/5xx status) found!'));
   }
   if (operationalErrors > 0) {
-    console.log(chalk.yellow.bold(`Encountered ${operationalErrors} operational issues (e.g., timeouts, DNS errors) for external links.`));
+    // console.log(chalk.yellow.bold(`Encountered ${operationalErrors} operational issues (e.g., timeouts, DNS errors) for external links.`));
   }
 
   const totalBroken = brokenInternal + brokenExternal;
   if (totalBroken > 0) {
     process.exitCode = 1;
   } else {
-    console.log(chalk.green.bold("\nOverall: No definitively broken links detected!"));
+    // console.log(chalk.green.bold("\nOverall: No definitively broken links detected!"));
   }
 }
 
