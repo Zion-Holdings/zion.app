@@ -13,7 +13,7 @@ export function withErrorLogging(handler: ApiHandler): ApiHandler {
       logErrorToProduction(_error instanceof Error ? _error.message : String(_error), _error instanceof Error ? _error : undefined, {
         route: reqUrl,
       });
-      if (!(res as any).headersSent) {
+      if (!(res as unknown as { headersSent: boolean }).headersSent) {
         res.status(500).json({ error: 'Internal Server Error' });
       }
     }
