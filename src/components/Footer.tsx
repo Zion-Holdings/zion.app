@@ -23,7 +23,6 @@ import {
 } from 'lucide-react';
 
 export function Footer() {
-  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   const scrollToTop = () => {
