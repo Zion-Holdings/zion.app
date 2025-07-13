@@ -44,7 +44,7 @@ function fixFile(filePath) {
 
     if (changed) {
       fs.writeFileSync(fullPath, content, 'utf8');
-      console.log(`✅ Fixed ${filePath}`);
+      // console.log(`✅ Fixed ${filePath}`);
       return true;
     }
     return false;
@@ -54,7 +54,7 @@ function fixFile(filePath) {
   }
 }
 
-console.log('🔧 Fixing final syntax issues...');
+// console.log('🔧 Fixing final syntax issues...');
 
 let fixedCount = 0;
 for (const file of filesToFix) {
@@ -63,5 +63,5 @@ for (const file of filesToFix) {
   }
 }
 
-console.log(`\n✅ Fixed ${fixedCount} files`);
-console.log('🎉 Final syntax fixes complete!'); 
+// console.log(`\n✅ Fixed ${fixedCount} files`);
+// console.log('🎉 Final syntax fixes complete!'); 
