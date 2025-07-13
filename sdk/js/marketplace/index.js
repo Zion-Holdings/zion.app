@@ -18,7 +18,6 @@
  */
 async function listProducts(options = {}) {
   const { page = 1, limit = 20, category, sortBy, ...otherFilters } = options;
-  console.log('listProducts called with:', options);
 
   const queryParams = new URLSearchParams({
     page: page.toString(),
@@ -55,7 +54,6 @@ async function listProducts(options = {}) {
  * @throws {Error} If the request fails.
  */
 async function getProductDetails(productId) {
-  console.log('getProductDetails called for productId:', productId);
 
   if (!productId) {
     throw new Error('Product ID is required.');
@@ -89,7 +87,6 @@ async function getProductDetails(productId) {
  * @throws {Error} If the quote submission fails.
  */
 async function submitQuoteRequest(quoteDetails) {
-  console.log('submitQuoteRequest called with:', quoteDetails);
 
   if (!quoteDetails || !quoteDetails.name || !quoteDetails.email || !quoteDetails.phone || !quoteDetails.details) {
     throw new Error('Missing required fields in quoteDetails: name, email, phone, details are required.');
@@ -122,7 +119,6 @@ async function submitQuoteRequest(quoteDetails) {
  * @throws {Error} If the request fails.
  */
 async function getQuoteStatus(quoteId) {
-  console.log('getQuoteStatus called for quoteId:', quoteId);
   if (!quoteId) {
     throw new Error('Quote ID is required.');
   }
@@ -153,7 +149,6 @@ async function getQuoteStatus(quoteId) {
  * @throws {Error} If the request fails.
  */
 async function listJobs(options = {}) {
-  console.log('listJobs called with options:', options);
   const { page = 1, limit = 20, ...filters } = options;
 
   const params = new URLSearchParams({
@@ -184,7 +179,6 @@ async function listJobs(options = {}) {
  * @throws {Error} If the request fails.
  */
 async function getJobDetails(jobId) {
-  console.log('getJobDetails called for jobId:', jobId);
   if (!jobId) {
     throw new Error('Job ID is required.');
   }
@@ -215,7 +209,6 @@ async function getJobDetails(jobId) {
  * @throws {Error} If the request fails.
  */
 async function listTalent(options = {}) {
-  console.log('listTalent called with options:', options);
   const { page = 1, limit = 20, ...filters } = options;
 
   const params = new URLSearchParams({
@@ -246,7 +239,6 @@ async function listTalent(options = {}) {
  * @throws {Error} If the request fails.
  */
 async function getTalentDetails(talentId) {
-  console.log('getTalentDetails called for talentId:', talentId);
   if (!talentId) {
     throw new Error('Talent ID is required.');
   }

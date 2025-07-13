@@ -27,7 +27,6 @@ async function getCsrfToken() {
  * @throws {Error} If login fails due to network issues or invalid credentials.
  */
 async function loginWithEmail(email, password) {
-  console.log('loginWithEmail called with:', email);
   // Note: For direct API calls to NextAuth.js POST endpoints,
   // CSRF token handling is crucial. This function fetches and includes it.
   // Using next-auth/react client's signIn() is generally preferred as it handles this automatically.
@@ -95,7 +94,6 @@ async function loginWithEmail(email, password) {
  * @throws {Error} If signup fails.
  */
 async function signupWithEmail(email, password, otherDetails = {}) {
-  console.log('signupWithEmail called with:', email, otherDetails);
   const response = await fetch('/api/auth/register', {
     method: 'POST',
     headers: {
@@ -124,7 +122,6 @@ async function signupWithEmail(email, password, otherDetails = {}) {
  * @throws {Error} If wallet connection, signing, or authentication fails.
  */
 async function loginWithWallet(walletProvider) {
-  console.log('loginWithWallet called');
 
   if (!walletProvider || typeof walletProvider.request !== 'function') {
     throw new Error('Invalid wallet provider provided.');
@@ -150,7 +147,6 @@ async function loginWithWallet(walletProvider) {
       params: [message, address], // Metamask expects (message, address) for personal_sign
     });
 
-    console.log(`Attempting NextAuth sign-in for address: ${address}`);
     // 4. Authenticate with the backend via NextAuth
     const csrfToken = await getCsrfToken();
     if (!csrfToken) {
@@ -222,7 +218,6 @@ async function loginWithWallet(walletProvider) {
  * @throws {Error} If logout fails.
  */
 async function logout() {
-  console.log('logout called');
   // Note: For direct API calls to NextAuth.js POST endpoints (like signout),
   // CSRF token handling is crucial. This function fetches and includes it.
   // Using next-auth/react client's signOut() is generally preferred as it handles this automatically.
@@ -263,7 +258,6 @@ async function logout() {
  * @returns {Promise<object|null>} A promise that resolves with the session object (which contains user) or null.
  */
 async function getUser() {
-  console.log('getUser called');
   try {
     const response = await fetch('/api/auth/session');
     if (!response.ok) {
@@ -293,7 +287,6 @@ let pollingInterval = null;
  * @returns {function():void} An unsubscribe function to remove the listener.
  */
 function onAuthStateChanged(callback) {
-  console.log('onAuthStateChanged registered');
   authListeners.push(callback);
 
   // Immediately call with current (potentially null) state
@@ -329,7 +322,6 @@ function onAuthStateChanged(callback) {
         console.error("Error polling auth state:", error);
       }
     }, 5000); // Poll every 5 seconds
-    console.log('Auth polling started.');
   }
 
   return () => {
@@ -337,7 +329,6 @@ function onAuthStateChanged(callback) {
     if (authListeners.length === 0 && pollingInterval) {
       clearInterval(pollingInterval);
       pollingInterval = null;
-      console.log('Auth polling stopped.');
     }
   };
 }

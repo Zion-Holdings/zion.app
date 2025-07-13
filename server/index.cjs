@@ -24,10 +24,10 @@ if (process.env.ENABLE_HTTP2 === 'true') {
       : http2.createServer({ allowHTTP1: true }, app);
 
   server.listen(PORT, () => {
-    console.log(`HTTP/2 server listening on port ${PORT}`);
+    console.warn(`HTTP/2 server listening on port ${PORT}`);
   });
 } else {
   app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
+    console.warn(`Server listening on port ${PORT}`);
   });
 }

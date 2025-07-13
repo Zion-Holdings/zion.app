@@ -10,7 +10,7 @@ try {
   const skipDatadog = process.env.SKIP_DATADOG === 'true' || isCI;
   
   if (skipDatadog) {
-    console.log('🚫 Datadog tracing disabled for CI/build environment');
+    console.warn('🚫 Datadog tracing disabled for CI/build environment');
     // Provide a mock tracer for CI environments
     tracer = {
       init: () => tracer,

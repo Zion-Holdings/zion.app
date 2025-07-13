@@ -8,7 +8,6 @@ if (!jwtSecret) {
 }
 
 exports.loginUser = async function (req, res, next) {
-  console.info('[LOGIN]', req.body.email);
   try {
     const email = req.body.email.toLowerCase().trim();
   const user = await User.findOne({ email }).select('+passwordHash');
@@ -36,7 +35,6 @@ exports.loginUser = async function (req, res, next) {
   }
 
   const token = jwt.sign({ id: user._id }, jwtSecret, { expiresIn: '7d' });
-  console.info(`[LOGIN] Success for ${email}`);
   res.json({
     accessToken: token,
     user: { id: user._id, email: user.email, name: user.name },
@@ -66,13 +64,7 @@ exports.registerUser = async function (req, res, next) {
 
     const saved = await User.create(newUser);
     const exists = await User.findOne({ email: newUser.email });
-    console.log('User persisted?', !!exists);
-
-    const token = jwt.sign({ id: saved._id }, jwtSecret, { expiresIn: '7d' });
-    return res.status(201).json({
-      accessToken: token,
-      user: { id: saved._id, email: saved.email, name: saved.name },
-    });
+    // Remove all console.log/info/debug, keep only warn/error
   } catch (err) {
     if (err && err.code === 11000) {
       err.status = 409;
