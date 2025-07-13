@@ -5,8 +5,6 @@
  * Tests key routes to ensure no global rendering failures
  */
 
-import fetch from 'node-fetch';
-
 const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
 
 const ROUTES_TO_TEST = [
