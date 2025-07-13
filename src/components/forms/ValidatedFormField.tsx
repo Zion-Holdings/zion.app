@@ -69,31 +69,6 @@ export function ValidatedFormField({
   const fieldError = isReactHookForm(form) ? form.formState.errors[name] : undefined;
   const isTouched = isReactHookForm(form) ? form.formState.touchedFields[name] : false;
 
-  // Debounced validation
-  useEffect(() => {
-    if (!fieldValue || !isTouched) {
-      setValidationState('idle');
-      return;
-    }
-
-    if (debounceTimer) {
-      clearTimeout(debounceTimer);
-    }
-
-    setValidationState('validating');
-
-    const timer = setTimeout(() => {
-      const error = validateField(fieldValue);
-      setValidationState(error ? 'invalid' : 'valid');
-    }, debounceMs);
-
-    setDebounceTimer(timer);
-
-    return () => {
-      if (timer) clearTimeout(timer);
-    };
-  }, [fieldValue, isTouched, debounceMs]);
-
   const validateField = (value: unknown): string | null => {
     if (validation.required && (!value || (typeof value === 'string' && value.trim() === ''))) {
       return `${label} is required`;
@@ -119,6 +94,30 @@ export function ValidatedFormField({
 
     return null;
   };
+
+  useEffect(() => {
+    if (!fieldValue || !isTouched) {
+      setValidationState('idle');
+      return;
+    }
+
+    if (debounceTimer) {
+      clearTimeout(debounceTimer);
+    }
+
+    setValidationState('validating');
+
+    const timer = setTimeout(() => {
+      const error = validateField(fieldValue);
+      setValidationState(error ? 'invalid' : 'valid');
+    }, debounceMs);
+
+    setDebounceTimer(timer);
+
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
+  }, [fieldValue, isTouched, debounceMs, debounceTimer, validateField]);
 
   const getValidationIcon = () => {
     if (!showValidIcon || !isTouched || validationState === 'idle') return null;
@@ -259,7 +258,7 @@ export function ValidatedFormField({
   if (type === 'checkbox') {
     return (
       <FormField
-        control={isReactHookForm(form) ? form.control : undefined}
+        control={isReactHookForm(form) ? (form.control as import('react-hook-form').Control<any>) : undefined}
         name={name}
         render={() => (
           <FormItem className="flex flex-row items-start space-x-3 space-y-0">
@@ -286,7 +285,7 @@ export function ValidatedFormField({
 
   return (
     <FormField
-      control={isReactHookForm(form) ? form.control : undefined}
+      control={isReactHookForm(form) ? (form.control as import('react-hook-form').Control<any>) : undefined}
       name={name}
       render={() => (
         <FormItem>
