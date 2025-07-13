@@ -23,7 +23,7 @@ export function TimelineField({ form }: TimelineFieldProps) {
     <FormField
       control={form.control}
       name="timeline"
-      render={({ field }: { field: unknown }) => (
+      render={({ field, fieldState, formState }) => (
         <FormItem>
           <FormLabel className="text-white">Project Timeline</FormLabel>
           <FormControl>
