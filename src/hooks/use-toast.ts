@@ -92,19 +92,19 @@ const toastAdapter = (props: ToastProps | string) => {
 };
 
 // Convenience methods that use the global toast manager
-toastAdapter.success = (message: string, options?: { id?: string; duration?: number } & Record<string, any>) => {
+toastAdapter.success = (message: string, options?: { id?: string; duration?: number } & Record<string, unknown>) => {
   return showToast.success(message, options);
 };
 
-toastAdapter.error = (message: string, options?: { id?: string; duration?: number } & Record<string, any>) => {
+toastAdapter.error = (message: string, options?: { id?: string; duration?: number } & Record<string, unknown>) => {
   return showToast.error(message, options);
 };
 
-toastAdapter.info = (message: string, options?: { id?: string; duration?: number } & Record<string, any>) => {
+toastAdapter.info = (message: string, options?: { id?: string; duration?: number } & Record<string, unknown>) => {
   return showToast.info(message, options);
 };
 
-toastAdapter.warning = (message: string, options?: { id?: string; duration?: number } & Record<string, any>) => {
+toastAdapter.warning = (message: string, options?: { id?: string; duration?: number } & Record<string, unknown>) => {
   return showToast.warning(message, options);
 };
 
