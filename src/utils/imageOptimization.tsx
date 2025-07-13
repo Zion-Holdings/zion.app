@@ -102,7 +102,7 @@ export function OptimizedImage({
     </svg>`;
     const base64 = typeof window !== 'undefined'
       ? btoa(unescape(encodeURIComponent(svg)))
-      : (typeof Buffer !== 'undefined' ? (Buffer as any).from(svg).toString('base64') : '');
+      : (typeof Buffer !== 'undefined' ? (Buffer as unknown as Buffer).from(svg).toString('base64') : '');
     return `data:image/svg+xml;base64,${base64}`;
   };
 
@@ -129,7 +129,7 @@ export function OptimizedImage({
             'transition-opacity duration-300',
             isLoading ? 'opacity-0' : 'opacity-100'
           )}
-          {...props as any}
+          {...props as unknown as OptimizedImageProps}
         />
       )}
 
