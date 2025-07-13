@@ -14,12 +14,12 @@ async function notifyLegalTeamHandler(req: Request): Promise<Response> {
 
     // In a real function, this is where email/notification logic would go.
     // We are testing the logging part for this basic version.
-    console.log(`Received request to notify legal team for whitepaper:
-      ID: ${whitepaperId}
-      Token Name: ${tokenName}
-      Link: ${sharableLink}
-      Submitted By: ${submittedBy || 'N/A'}
-    `);
+    // console.log(`Received request to notify legal team for whitepaper:
+    //   ID: ${whitepaperId}
+    //   Token Name: ${tokenName}
+    //   Link: ${sharableLink}
+    //   Submitted By: ${submittedBy || 'N/A'}
+    // `);
 
     return new Response(JSON.stringify({ message: "Notification request processed." }),
                         { headers: { "Content-Type": "application/json" }});

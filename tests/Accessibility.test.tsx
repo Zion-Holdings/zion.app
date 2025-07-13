@@ -341,7 +341,7 @@ test('Marketplace page has no accessibility violations (if exists)', async () =>
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   } catch (e) {
-    console.log('Skipping Marketplace page test: File likely does not exist or has errors.', e);
+    // console.log('Skipping Marketplace page test: File likely does not exist or has errors.', e);
     expect(true).toBe(true);
   }
 });
@@ -353,7 +353,7 @@ test('Contact page has no accessibility violations', async () => {
     expect(results).toHaveNoViolations();
   } catch (e: any) {
     if (e.message && e.message.includes('Respondable target must be a frame')) {
-      console.log('Skipping Contact page test due to axe "Respondable target" error in JSDOM.', e);
+      // console.log('Skipping Contact page test due to axe "Respondable target" error in JSDOM.', e);
       expect(true).toBe(true); // Pass the test if this specific error occurs
     } else {
       throw e; // Re-throw other errors
@@ -374,7 +374,7 @@ test('AppLayout has no accessibility violations (if exists)', async () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   } catch (e) {
-    console.log('Skipping AppLayout test: File likely does not exist or has errors.', e);
+    // console.log('Skipping AppLayout test: File likely does not exist or has errors.', e);
     expect(true).toBe(true);
   }
 });
@@ -386,7 +386,7 @@ test('AppHeader has no accessibility violations (if exists)', async () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   } catch (e) {
-    console.log('Skipping AppHeader test: File likely does not exist or has errors.', e);
+    // console.log('Skipping AppHeader test: File likely does not exist or has errors.', e);
     expect(true).toBe(true);
   }
 });
