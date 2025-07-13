@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable no-console -- All output uses only console.warn or console.error. This disables false positives. */
  
 
 /**
