@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ImageIcon, AlertTriangle } from 'lucide-react';
 
@@ -27,11 +26,6 @@ interface OptimizedImageProps {
   lazy?: boolean;
   retryCount?: number;
   showLoadingProgress?: boolean;
-  fill?: boolean;
-  blurDataURL?: string;
-  loading?: 'lazy' | 'eager';
-  style?: React.CSSProperties;
-  objectPosition?: string;
 }
 
 interface ImageMetrics {
@@ -60,12 +54,6 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   lazy = true,
   retryCount = 3,
   showLoadingProgress = false,
-  fill = false,
-  blurDataURL,
-  loading = 'lazy',
-  style,
-  objectPosition = 'center',
-  ...props
 }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
@@ -75,7 +63,6 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   const [loadProgress, setLoadProgress] = useState(0);
   const imgRef = useRef<HTMLImageElement>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
-  const [metrics, setMetrics] = useState<ImageMetrics | null>(null);
   const loadStartTime = useRef<number>(0);
 
   // Intersection Observer for lazy loading
@@ -123,13 +110,6 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
             const fileSize = resourceEntry.transferSize || resourceEntry.encodedBodySize || 0;
             const loadTime = resourceEntry.responseEnd - resourceEntry.requestStart;
             
-            setMetrics({
-              loadTime,
-              fileSize,
-              format: src.includes('.webp') ? 'webp' : src.includes('.avif') ? 'avif' : 'other',
-              wasOptimized: src.includes('/_next/image')
-            });
-
             // Log slow or large images
             if (loadTime > 2000) {
               logWarn('Slow image loading:', {
