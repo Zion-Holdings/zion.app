@@ -8,13 +8,23 @@ interface HiringAnalyticsProps {
   jobId?: string;
 }
 
+interface StatusDistributionEntry {
+  status: string;
+  count: number;
+}
+
+interface FunnelDataEntry {
+  name: string;
+  value: number;
+}
+
 export function HiringAnalytics({ jobId }: HiringAnalyticsProps) {
   const { applications, isLoading } = useJobApplications(jobId);
   const [analyticsData, setAnalyticsData] = useState<{
-    statusDistribution: any[];
+    statusDistribution: StatusDistributionEntry[];
     timeToHire: number;
     conversionRate: number;
-    funnelData: any[];
+    funnelData: FunnelDataEntry[];
   }>({
     statusDistribution: [],
     timeToHire: 0,
