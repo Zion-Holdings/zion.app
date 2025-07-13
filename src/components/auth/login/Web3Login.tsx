@@ -36,9 +36,13 @@ export function Web3Login() {
       
       await loginWithWeb3(); // This is from useAuth, assumed to be a separate flow
       
-    } catch (error: any) {
+    } catch (error: unknown) {
+      let message = "Failed to connect wallet. Please try again.";
+      if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+        message = (error as { message: string }).message;
+      }
       toast("Login failed", {
-        description: error.message || "Failed to connect wallet. Please try again.",
+        description: message,
       });
       logErrorToProduction('Web3 login error:', { data: error });
     } finally {
