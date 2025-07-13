@@ -35,14 +35,15 @@ interface ValidatedFormFieldProps {
   debounceMs?: number;
 }
 
-function isReactHookForm(form: unknown): form is { watch: (name: string) => unknown; formState: { errors: Record<string, unknown>; touchedFields: Record<string, boolean> }; register: (name: string) => unknown; setValue: (name: string, value: unknown) => void } {
+function isReactHookForm(form: unknown): form is { watch: (name: string) => unknown; formState: { errors: Record<string, unknown>; touchedFields: Record<string, boolean> }; register: (name: string) => unknown; setValue: (name: string, value: unknown) => void; control: unknown } {
   return (
     typeof form === 'object' &&
     form !== null &&
     'watch' in form && typeof (form as { watch?: unknown }).watch === 'function' &&
     'formState' in form && typeof (form as { formState?: unknown }).formState === 'object' &&
     'register' in form && typeof (form as { register?: unknown }).register === 'function' &&
-    'setValue' in form && typeof (form as { setValue?: unknown }).setValue === 'function'
+    'setValue' in form && typeof (form as { setValue?: unknown }).setValue === 'function' &&
+    'control' in form
   );
 }
 
@@ -193,7 +194,7 @@ export function ValidatedFormField({
           <div className="flex items-center space-x-2">
             <Checkbox
               id={name}
-              checked={!!fieldValue}
+              checked={typeof fieldValue === 'boolean' ? fieldValue : !!fieldValue}
               onCheckedChange={(checked) => isReactHookForm(form) && form.setValue(name, !!checked)}
               disabled={disabled}
             />
@@ -258,7 +259,7 @@ export function ValidatedFormField({
   if (type === 'checkbox') {
     return (
       <FormField
-        control={(form as any).control}
+        control={isReactHookForm(form) ? form.control : undefined}
         name={name}
         render={() => (
           <FormItem className="flex flex-row items-start space-x-3 space-y-0">
@@ -267,12 +268,12 @@ export function ValidatedFormField({
             </FormControl>
             {(fieldError || description) && (
               <div className="space-y-1">
-                {fieldError && (
+                {fieldError && typeof fieldError === 'object' && fieldError !== null && 'message' in fieldError && typeof (fieldError as { message?: unknown }).message === 'string' && (
                   <FormMessage className="text-sm text-red-500">
-                    {fieldError.message}
+                    {(fieldError as { message: string }).message}
                   </FormMessage>
                 )}
-                {description && !fieldError && (
+                {description && (!fieldError || !(typeof fieldError === 'object' && fieldError !== null && 'message' in fieldError && typeof (fieldError as { message?: unknown }).message === 'string')) && (
                   <p className="text-sm text-muted-foreground">{description}</p>
                 )}
               </div>
@@ -285,7 +286,7 @@ export function ValidatedFormField({
 
   return (
     <FormField
-      control={(form as any).control}
+      control={isReactHookForm(form) ? form.control : undefined}
       name={name}
       render={() => (
         <FormItem>
@@ -298,13 +299,13 @@ export function ValidatedFormField({
           </FormControl>
           {(fieldError || description) && (
             <div className="space-y-1">
-              {fieldError && (
+              {fieldError && typeof fieldError === 'object' && fieldError !== null && 'message' in fieldError && typeof (fieldError as { message?: unknown }).message === 'string' && (
                 <FormMessage className="text-sm text-red-500 flex items-center gap-1">
                   <AlertCircle className="h-3 w-3" />
-                  {fieldError.message}
+                  {(fieldError as { message: string }).message}
                 </FormMessage>
               )}
-              {description && !fieldError && (
+              {description && (!fieldError || !(typeof fieldError === 'object' && fieldError !== null && 'message' in fieldError && typeof (fieldError as { message?: unknown }).message === 'string')) && (
                 <p className="text-sm text-muted-foreground">{description}</p>
               )}
             </div>
