@@ -7,36 +7,36 @@
 
 // EventEmitter polyfill (simplified)
 class EventEmitter {
-  private events: { [key: string]: Array<(...args: unknown[]) => unknown> } = {};
+  private _events: { [key: string]: Array<(...args: unknown[]) => unknown> } = {};
 
   on(event: string, listener: (...args: unknown[]) => unknown): this {
-    if (!this.events[event]) {
-      this.events[event] = [];
+    if (!this._events[event]) {
+      this._events[event] = [];
     }
-    this.events[event].push(listener);
+    this._events[event].push(listener);
     return this;
   }
 
   emit(event: string, ...args: unknown[]): boolean {
-    if (!this.events[event]) {
+    if (!this._events[event]) {
       return false;
     }
-    this.events[event].forEach(listener => listener(...args));
+    this._events[event].forEach(listener => listener(...args));
     return true;
   }
 
   removeListener(event: string, listener: (...args: unknown[]) => unknown): this {
-    if (this.events[event]) {
-      this.events[event] = this.events[event].filter(l => l !== listener);
+    if (this._events[event]) {
+      this._events[event] = this._events[event].filter(l => l !== listener);
     }
     return this;
   }
 
   removeAllListeners(event?: string): this {
     if (event) {
-      delete this.events[event];
+      delete this._events[event];
     } else {
-      this.events = {};
+      this._events = {};
     }
     return this;
   }
