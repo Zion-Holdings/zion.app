@@ -49,7 +49,7 @@ export function PageViewsTable() {
   };
   
   // Calculate total views to determine percentages
-  const totalViews = pageViews?.reduce((sum: number, page: any) => sum + page.count, 0) || 0;
+  const totalViews = pageViews?.reduce((sum: number, page: Record<string, unknown>) => sum + (page.count as number), 0) || 0;
   
   return (
     <Card className="bg-zion-blue-dark border-zion-blue-light">
@@ -86,13 +86,13 @@ export function PageViewsTable() {
               </div>
             ))
           ) : pageViews && pageViews.length > 0 ? (
-            pageViews.map((page: any, index: number) => {
-              const percentage = totalViews > 0 ? (page.count / totalViews * 100).toFixed(1) : '0';
+            pageViews.map((page: Record<string, unknown>, index: number) => {
+              const percentage = totalViews > 0 ? ((page.count as number / totalViews) * 100).toFixed(1) : '0';
               
               return (
                 <div key={index} className="flex items-center justify-between">
                   <div className="text-zion-slate-light font-medium">
-                    {formatPathName(page.path)}
+                    {formatPathName(page.path as string)}
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="text-white font-medium">{page.count}</span>

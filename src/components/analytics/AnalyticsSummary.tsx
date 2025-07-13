@@ -54,7 +54,7 @@ export function AnalyticsSummary() {
 
       if (sessionError && typeof (sessionError as { code?: string }).code === 'string' && (sessionError as { code: string }).code !== 'PGRST116') throw sessionError;
 
-      const durations = sessionData?.map((s: any) => Number(s.metadata?.duration) || 0) || [];
+      const durations = sessionData?.map((s: Record<string, unknown>) => Number((s.metadata as { duration?: number })?.duration) || 0) || [];
       const avgDuration = durations.length ? durations.reduce((a: number, b: number) => a + b, 0) / durations.length : 0;
       
       // Get most recent event to calculate "last updated"

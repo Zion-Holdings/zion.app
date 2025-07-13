@@ -48,7 +48,7 @@ export function UserBehaviorStats() {
         
         // Process data to count events by type and date
         const eventsByDate: Record<string, Record<string, number>> = {};
-        manualData?.forEach((event: unknown) => {
+        manualData?.forEach((_event: unknown) => {
           // If needed, cast event to a specific type for property access
         });
         

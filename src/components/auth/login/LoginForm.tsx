@@ -45,7 +45,7 @@ export function LoginForm() {
   const router = useRouter();
   
   const form = useForm<LoginFormValues>({
-    resolver: zodResolver(loginSchema) as any,
+    resolver: zodResolver(loginSchema) as unknown as any,
     defaultValues: {
       email: "",
       password: "",
@@ -103,7 +103,7 @@ export function LoginForm() {
       } else {
         setVerificationMessage(data.message || 'Failed to resend verification email.');
       }
-    } catch (err) {
+    } catch (_err: unknown) {
       setVerificationMessage('Failed to resend verification email.');
     } finally {
       setIsResending(false);

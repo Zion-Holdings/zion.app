@@ -232,9 +232,9 @@ export default function SignupForm({ onSuccess, onError }: SignupFormProps) {
         emailVerificationRequired: result.emailVerificationRequired ?? false,
       });
 
-    } catch (error: any) {
-      logErrorToProduction('Unexpected signup error:', { data: error });
-      fireEvent('signup_error', { message: error.message || 'unexpected' });
+    } catch (err: unknown) {
+      logErrorToProduction('Unexpected signup error:', { data: err });
+      fireEvent('signup_error', { message: (err as Error).message || 'unexpected' });
       const errorMessage = 'An unexpected error occurred during signup. Please try again.';
       
       setError('root', { message: errorMessage });

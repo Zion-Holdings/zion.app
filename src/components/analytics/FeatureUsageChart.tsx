@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { DynamicAnalyticsChart as AnalyticsChart } from "@/utils/dynamicComponents";
 
 interface FeatureUsageChartProps {
-  data: Array<Record<string, any>>;
+  data: Array<Record<string, unknown>>;
   timeRange: string;
   onTimeRangeChange: (range: string) => void;
 }

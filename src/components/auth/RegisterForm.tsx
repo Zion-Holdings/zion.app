@@ -50,14 +50,19 @@ export default function RegisterForm() {
       if (res.status === 201) {
         router.push('/login'); // Changed from navigate
       }
-    } catch (err: any) {
-      const status = err.response?.status;
-      if (status === 409) {
-        toast.error('Email already exists');
-        form.setError('root', { message: 'Email already exists' });
+    } catch (err: unknown) {
+      if (axios.isAxiosError(err)) {
+        const status = err.response?.status;
+        if (status === 409) {
+          toast.error('Email already exists');
+          form.setError('root', { message: 'Email already exists' });
+        } else {
+          const message = err.response?.data?.message || err.message || 'Registration failed';
+          form.setError('root', { message });
+        }
       } else {
-        const message = err.response?.data?.message || err.message || 'Registration failed';
-        form.setError('root', { message });
+        toast.error('Registration failed');
+        form.setError('root', { message: 'Registration failed' });
       }
     } finally {
       setIsSubmitting(false);
