@@ -16,8 +16,6 @@ import type { AppDispatch } from '@/store';
 import { logInfo, logWarn, logErrorToProduction, logDebug } from '@/utils/productionLogger';
 
 
-const LOGIN_TIMEOUT_MS = 15000; // 15 seconds timeout
-
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   // Always call hooks at the top
   const {
