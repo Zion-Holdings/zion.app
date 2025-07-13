@@ -58,13 +58,13 @@ if (typeof window === 'undefined') {
       key: () => null
     },
     console: console,
-    fetch: (global as Record<string, unknown>).fetch || (() => Promise.reject(new Error('Fetch not available on server'))),
-    URL: (global as any).URL || class URL {
+    fetch: (global as unknown as Record<string, unknown>).fetch || (() => Promise.reject(new Error('Fetch not available on server'))),
+    URL: (global as unknown as { URL: new (href: string) => URL }).URL || class URL {
       href: string;
       constructor(href: string) { this.href = href; }
       toString() { return this.href; }
     },
-    crypto: (global as any).crypto || {
+    crypto: (global as unknown as { crypto: { randomUUID: () => string; subtle: {}; getRandomValues: (arr: Uint8Array) => Uint8Array } }).crypto || {
       randomUUID: () => Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
       subtle: {},
       getRandomValues: (arr: Uint8Array) => {
@@ -78,13 +78,13 @@ if (typeof window === 'undefined') {
 
   // Also assign to globalThis for broader compatibility
   if (typeof globalThis !== 'undefined') {
-    (globalThis as any).window = (global as any).window;
+    (globalThis as unknown as { window: Record<string, unknown> }).window = (global as unknown as { window: Record<string, unknown> }).window;
   }
 }
 
 // Mock document if not available
 if (typeof document === 'undefined') {
-  (global as any).document = (global as any).window?.document || {
+  (global as unknown as { document: Record<string, unknown> }).document = (global as unknown as { window: Record<string, unknown> }).window?.document || {
     createElement: () => ({}),
     getElementsByTagName: () => [],
     getElementById: () => null,
@@ -118,7 +118,7 @@ if (typeof document === 'undefined') {
 
 // Mock navigator if not available
 if (typeof navigator === 'undefined') {
-  (global as any).navigator = {
+  (global as unknown as { navigator: Record<string, unknown> }).navigator = {
     userAgent: 'Node.js Server',
     onLine: true,
     language: 'en-US',
@@ -133,7 +133,7 @@ if (typeof navigator === 'undefined') {
 
 // Prevent common client-side errors during server-side rendering
 if (typeof performance === 'undefined') {
-  (global as any).performance = {
+  (global as unknown as { performance: Record<string, unknown> }).performance = {
     now: () => Date.now(),
     mark: () => {},
     measure: () => {},
