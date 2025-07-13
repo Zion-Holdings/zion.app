@@ -462,20 +462,20 @@ export function logErrorWithAnalysis(
 
   // Analyze the error for patterns
   const errorText = error instanceof Error ? error.message : String(error || message);
-  const analysis = logAnalyzer.analyzeError(errorText, context);
+  const _analysis = logAnalyzer.analyzeError(errorText, context);
 
-  if (analysis) {
+  if (_analysis) {
     logInfo('Error analysis completed', {
-      pattern: analysis.patternId,
-      severity: analysis.severity,
-      occurrences: analysis.occurrences,
-      trend: analysis.trend,
-      impact: analysis.impact,
-      solution: analysis.solution
+      pattern: _analysis.patternId,
+      severity: _analysis.severity,
+      occurrences: _analysis.occurrences,
+      trend: _analysis.trend,
+      impact: _analysis.impact,
+      solution: _analysis.solution
     });
   }
 
-  return analysis;
+  return _analysis;
 }
 
 export { 
