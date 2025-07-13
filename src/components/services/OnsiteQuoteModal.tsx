@@ -42,8 +42,13 @@ export function OnsiteQuoteModal({ open, onOpenChange, country }: OnsiteQuoteMod
     } catch (err: unknown) {
       if (err instanceof Error) {
         enqueueSnackbar(err.message, { variant: 'error' });
-      } else if (typeof err === 'object' && err !== null && 'response' in err && typeof (err as any).response?.data?.message === 'string') {
-        enqueueSnackbar((err as any).response.data.message, { variant: 'error' });
+      } else if (
+        typeof err === 'object' &&
+        err !== null &&
+        'response' in err &&
+        typeof (err as { response?: { data?: { message?: string } } }).response?.data?.message === 'string'
+      ) {
+        enqueueSnackbar((err as { response?: { data?: { message?: string } } }).response?.data?.message ?? 'An unexpected error occurred.', { variant: 'error' });
       } else {
         enqueueSnackbar('An unexpected error occurred.', { variant: 'error' });
       }
