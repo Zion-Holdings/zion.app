@@ -190,13 +190,15 @@ export function TalentRegistrationForm() {
         });
       }
       
-    } catch (error: any) {
-      logErrorToProduction('Error generating enhanced profile:', { data: error });
-      toast({
-        title: "Generation failed",
-        description: error.message || "There was an error generating your enhanced profile. Please try again.",
-        variant: "destructive",
-      });
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        logErrorToProduction('Error generating enhanced profile:', { data: error });
+        toast({
+          title: "Generation failed",
+          description: error.message || "There was an error generating your enhanced profile. Please try again.",
+          variant: "destructive",
+        });
+      }
     } finally {
       setIsGenerating(false);
     }
@@ -265,8 +267,10 @@ export function TalentRegistrationForm() {
           `
         }
       });
-    } catch (error) {
-      logErrorToProduction('Failed to send notification email:', { data: error });
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        logErrorToProduction('Failed to send notification email:', { data: error });
+      }
     }
   };
 
@@ -336,10 +340,12 @@ export function TalentRegistrationForm() {
             // Create a unique set of skills
             finalSkills = [...new Set([...skillTags, ...aiSkills])];
           }
-        } catch (error) {
-          logErrorToProduction('Error enhancing profile:', { data: error });
-          // Continue with submission even if enhancement fails
-          finalSummary = "";
+        } catch (error: unknown) {
+          if (error instanceof Error) {
+            logErrorToProduction('Error enhancing profile:', { data: error });
+            // Continue with submission even if enhancement fails
+            finalSummary = "";
+          }
         }
       } else if (generatedContent) {
         finalSummary = generatedContent.summary;
@@ -347,7 +353,7 @@ export function TalentRegistrationForm() {
 
       // Get user email for notification
       const { data: userData } = await supabase.auth.getUser();
-      const userEmail = (userData as any).user?.email;
+      const userEmail = (userData as any)?.user?.email;
 
       // Create the talent profile
       // In a real implementation, this would save to Supabase
@@ -385,14 +391,16 @@ export function TalentRegistrationForm() {
       if (error) throw error;
       */
 
-    } catch (error: any) {
-      logErrorToProduction('Error creating profile:', { data: error });
-      toast({
-        title: "Error Creating Profile",
-        description: error.message || "There was an error creating your profile. Please try again.",
-        variant: "destructive",
-      });
-      setIsSubmitting(false);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        logErrorToProduction('Error creating profile:', { data: error });
+        toast({
+          title: "Error Creating Profile",
+          description: error.message || "There was an error creating your profile. Please try again.",
+          variant: "destructive",
+        });
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -417,7 +425,7 @@ export function TalentRegistrationForm() {
                     <FormField
                       control={form.control}
                       name="name"
-                      render={({ field }: { field: any }) => (
+                      render={({ field }) => (
                         <FormItem>
                           <FormLabel className="text-zion-slate-light">Full Name</FormLabel>
                           <FormControl>
@@ -440,7 +448,7 @@ export function TalentRegistrationForm() {
                     <FormField
                       control={form.control}
                       name="title"
-                      render={({ field }: { field: any }) => (
+                      render={({ field }) => (
                         <FormItem>
                           <FormLabel className="text-zion-slate-light">Professional Title</FormLabel>
                           <FormControl>
@@ -463,7 +471,7 @@ export function TalentRegistrationForm() {
                     <FormField
                       control={form.control}
                       name="location"
-                      render={({ field }: { field: any }) => (
+                      render={({ field }) => (
                         <FormItem>
                           <FormLabel className="text-zion-slate-light">Location</FormLabel>
                           <FormControl>
@@ -486,7 +494,7 @@ export function TalentRegistrationForm() {
                     <FormField
                       control={form.control}
                       name="hourlyRate"
-                      render={({ field }: { field: any }) => (
+                      render={({ field }) => (
                         <FormItem>
                           <FormLabel className="text-zion-slate-light">Hourly Rate (USD)</FormLabel>
                           <FormControl>
@@ -552,7 +560,7 @@ export function TalentRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="bio"
-                  render={({ field }: { field: any }) => (
+                  render={({ field }) => (
                     <FormItem>
                       <FormLabel className="text-zion-slate-light">About Yourself</FormLabel>
                       <FormControl>
@@ -574,7 +582,7 @@ export function TalentRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="enhancedProfile"
-                  render={({ field }: { field: any }) => (
+                  render={({ field }) => (
                     <FormItem className="flex flex-row items-center justify-between p-3 border border-zion-blue-light bg-zion-blue/30 rounded-md">
                       <div className="space-y-0.5">
                         <FormLabel className="text-white flex items-center">
@@ -677,7 +685,7 @@ export function TalentRegistrationForm() {
                   <FormField
                     control={form.control}
                     name="skills"
-                    render={({ field }: { field: any }) => (
+                    render={({ field }) => (
                       <FormItem>
                         <FormLabel className="text-zion-slate-light">Skills</FormLabel>
                         <div className="flex gap-2">
@@ -734,7 +742,7 @@ export function TalentRegistrationForm() {
                   <FormField
                     control={form.control}
                     name="availability"
-                    render={({ field }: { field: any }) => (
+                    render={({ field }) => (
                       <FormItem className="space-y-4">
                         <FormLabel className="text-zion-slate-light">Current Status</FormLabel>
                         <FormControl>
