@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import type { RootState, AppDispatch } from '@/store';
 import { addItem, removeItem, clear, setItems } from '@/store/cartSlice';
 import { safeStorage } from '@/utils/safeStorage'; // Import safeStorage
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
 const CartContext = createContext<CartContextType | undefined>(undefined);

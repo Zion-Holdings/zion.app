@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { useWhitelabelTenant } from '@/hooks/useWhitelabelTenant';
 import type { WhitelabelTenant } from '@/hooks/useWhitelabelTenant';
 
-import { logErrorToProduction, logInfo } from "@/utils/productionLogger";
+import { logInfo } from "@/utils/productionLogger";
 
 export interface WhitelabelContextType {
   isWhitelabel: boolean;

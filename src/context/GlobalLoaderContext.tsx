@@ -35,7 +35,6 @@ export const useGlobalLoader = (): GlobalLoaderContextType => useContext(GlobalL
 export function AppLoaderProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<unknown>(null);
-  const router = useRouter(); // Changed from useLocation
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const showLoader = () => setLoading(true);

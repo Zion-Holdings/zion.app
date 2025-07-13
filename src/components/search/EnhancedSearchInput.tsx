@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Search, X } from 'lucide-react';
 
@@ -9,7 +9,6 @@ import type { SearchSuggestion } from "@/types/search";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useRouter } from "next/router";
 import { slugify } from "@/lib/slugify";
-import { debounce } from "lodash";
 import { logInfo, logWarn } from '@/utils/productionLogger';
 
 

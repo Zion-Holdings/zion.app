@@ -28,7 +28,7 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
       try {
         const parsed: Array<string | number> = JSON.parse(stored);
         setFavorites(parsed);
-      } catch (_err) {
+      } catch {
         // ignore invalid JSON in localStorage
       }
     }

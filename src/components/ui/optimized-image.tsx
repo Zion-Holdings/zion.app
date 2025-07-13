@@ -28,13 +28,6 @@ interface OptimizedImageProps {
   showLoadingProgress?: boolean;
 }
 
-interface ImageMetrics {
-  loadTime: number;
-  fileSize: number;
-  format: string;
-  wasOptimized: boolean;
-}
-
 export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   src,
   alt,

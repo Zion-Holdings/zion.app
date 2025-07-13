@@ -54,7 +54,6 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   authState = { isAuthenticated: false, user: null } 
 }) => {
   const { i18n, t } = useTranslation();
-  const { isAuthenticated, user } = authState;
   // Initialize currentLanguage state with a value that reflects i18next's initial detection or fallback.
   // This will be refined by the useEffect hook below for initial load logic.
   const [currentLanguage, setCurrentLanguage] = useState<SupportedLanguage>(() => {

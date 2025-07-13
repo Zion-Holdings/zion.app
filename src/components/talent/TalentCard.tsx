@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { MapPin, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 
@@ -8,7 +8,6 @@ import { MapPin, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 import { FavoriteButton } from "@/components/FavoriteButton";
 import type { TalentProfile } from "@/types/talent";
-import { useCart } from '@/context/CartContext';
 
 export interface TalentCardProps {
   talent: TalentProfile;
