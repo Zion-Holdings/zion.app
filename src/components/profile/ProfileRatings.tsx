@@ -34,7 +34,7 @@ export function ProfileRatings({ userId, averageRating = 0, ratingCount = 0 }: P
   // Fetch reviews when component mounts
   useEffect(() => {
     fetchUserReviews(userId);
-  }, [userId]);
+  }, [userId, fetchUserReviews]);
   
   return (
     <div className="space-y-6">
