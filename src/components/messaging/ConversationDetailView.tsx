@@ -10,6 +10,7 @@ import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { useAuth } from '@/hooks/useAuth';
 import { MessageBubble } from './MessageBubble';
 import { DateDivider } from './DateDivider';
+import type { Message } from '@/types/messaging';
 
 export function ConversationDetailView() {
   const { user } = useAuth();
@@ -71,7 +72,7 @@ export function ConversationDetailView() {
   }
   
   // Group messages by date
-  const groupedMessages: { date: string; messages: any[] }[] = [];
+  const groupedMessages: { date: string; messages: Message[] }[] = [];
   
   activeMessages.forEach(message => {
     const messageDate = format(new Date(message.created_at), 'yyyy-MM-dd');
