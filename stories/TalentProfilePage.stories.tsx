@@ -26,7 +26,7 @@ export const Default: StoryObj<typeof TalentProfilePage> = {
       Promise.resolve({
         ok: true,
         json: () => Promise.resolve({ profile: sampleTalent }),
-      }) as any;
+      }) as unknown as Promise<Response>;
 
     return (
       <MemoryRouter initialEntries={[`/talent/${sampleTalent.id}`]}>
