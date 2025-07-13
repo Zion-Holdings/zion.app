@@ -24,5 +24,5 @@ const path = require('path');
     [path.resolve(__dirname, '..')]
   );
 
-  console.log(`Jest tests completed. Success: ${results.success}. Report written to ${outputFile}`);
+  console.warn(`Jest tests completed. Success: ${results.success}. Report written to ${outputFile}`);
 })(); 

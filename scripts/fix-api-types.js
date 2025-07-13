@@ -7,7 +7,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-console.log('🔧 Fixing API TypeScript errors...');
+console.warn('🔧 Fixing API TypeScript errors...');
 
 // Common patterns to fix
 const fixes = [
@@ -63,7 +63,7 @@ function processFile(filePath) {
 
     if (modified) {
       fs.writeFileSync(filePath, content);
-      console.log(`✅ Fixed: ${path.relative(process.cwd(), filePath)}`);
+      console.warn(`✅ Fixed: ${path.relative(process.cwd(), filePath)}`);
       return true;
     }
     return false;
@@ -108,7 +108,7 @@ let totalFixed = 0;
 
 apiDirs.forEach(apiDir => {
   if (fs.existsSync(apiDir)) {
-    console.log(`\n🔍 Processing ${apiDir}...`);
+    console.warn(`\n🔍 Processing ${apiDir}...`);
     const apiFiles = findApiFiles(apiDir);
     
     apiFiles.forEach(file => {
@@ -119,7 +119,7 @@ apiDirs.forEach(apiDir => {
   }
 });
 
-console.log(`\n🎯 Summary: Fixed ${totalFixed} API files`);
+console.warn(`\n🎯 Summary: Fixed ${totalFixed} API files`);
 
 // Also create a types import helper
 const helperContent = `// Auto-generated API type helpers
@@ -142,6 +142,6 @@ export function safeHeader(headers: NextApiRequest['headers'], key: string): str
 `;
 
 fs.writeFileSync(path.join(process.cwd(), 'src/utils/api-helpers.ts'), helperContent);
-console.log('✅ Created API helper utilities');
+console.warn('✅ Created API helper utilities');
 
 export default {}; 
