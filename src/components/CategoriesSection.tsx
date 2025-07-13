@@ -23,40 +23,43 @@ interface CategoryType {
 }
 
 // Default static categories with translation keys
-const getDefaultCategories = (t: unknown) => [
-  {
-    id: "services",
-    name: t('categories.services'),
-    description: t('categories.services_desc'),
-    iconName: "Briefcase", // Corresponds to lucide icon name
-    link: "/services",
-    color: "from-purple-500 to-indigo-600", // Keep color for styling
-  },
-  {
-    id: "talents",
-    name: t('categories.talents'),
-    description: t('categories.talents_desc'),
-    iconName: "Users",
-    link: "/talent",
-    color: "from-cyan-500 to-blue-600",
-  },
-  {
-    id: "equipment",
-    name: t('categories.equipment'),
-    description: t('categories.equipment_desc'),
-    iconName: "HardDrive",
-    link: "/equipment",
-    color: "from-amber-500 to-orange-600",
-  },
-  {
-    id: "innovation",
-    name: t('categories.innovation'),
-    description: t('categories.innovation_desc'),
-    iconName: "Lightbulb",
-    link: "/innovation",
-    color: "from-emerald-500 to-green-600",
-  },
-];
+const getDefaultCategories = (t: unknown) => {
+  const translate = typeof t === 'function' ? t : (x: string) => x;
+  return [
+    {
+      id: "services",
+      name: translate('categories.services'),
+      description: translate('categories.services_desc'),
+      iconName: "Briefcase", // Corresponds to lucide icon name
+      link: "/services",
+      color: "from-purple-500 to-indigo-600", // Keep color for styling
+    },
+    {
+      id: "talents",
+      name: translate('categories.talents'),
+      description: translate('categories.talents_desc'),
+      iconName: "Users",
+      link: "/talent",
+      color: "from-cyan-500 to-blue-600",
+    },
+    {
+      id: "equipment",
+      name: translate('categories.equipment'),
+      description: translate('categories.equipment_desc'),
+      iconName: "HardDrive",
+      link: "/equipment",
+      color: "from-amber-500 to-orange-600",
+    },
+    {
+      id: "innovation",
+      name: translate('categories.innovation'),
+      description: translate('categories.innovation_desc'),
+      iconName: "Lightbulb",
+      link: "/innovation",
+      color: "from-emerald-500 to-green-600",
+    },
+  ];
+};
 
 // Helper to get icon component from name
 const getIcon = (iconName?: string) => {
@@ -69,12 +72,15 @@ const getIcon = (iconName?: string) => {
   }
 };
 
-const getSpecialServices = (t: unknown) => [
-  {
-    title: t('categories.it_onsite_services'),
-    link: "/it-onsite-services"
-  }
-];
+const getSpecialServices = (t: unknown) => {
+  const translate = typeof t === 'function' ? t : (x: string) => x;
+  return [
+    {
+      title: translate('categories.it_onsite_services'),
+      link: "/it-onsite-services"
+    }
+  ];
+};
 
 interface CategoriesSectionProps {
   showTitle?: boolean;
