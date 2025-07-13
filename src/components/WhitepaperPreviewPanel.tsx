@@ -46,7 +46,7 @@ const WhitepaperPreviewPanel: React.FC<WhitepaperPreviewPanelProps> = ({
         if (section.title.toLowerCase().includes('token distribution')) {
           return (
             <div key={section.id} className="mb-8 break-words">
-              <ReactMarkdown components={{ h2: ({node, ...props}) => <h2 className="text-2xl font-semibold mt-6 mb-3" {...props} /> }}>
+              <ReactMarkdown components={{ h2: ({...props}) => <h2 className="text-2xl font-semibold mt-6 mb-3" {...props} /> }}>
                 {`## ${section.title}`}
               </ReactMarkdown>
               <div className="mb-4">
@@ -86,7 +86,7 @@ const WhitepaperPreviewPanel: React.FC<WhitepaperPreviewPanelProps> = ({
         return (
           <div key={section.id} className="mb-8 break-words">
             {/* Ensure section titles are also rendered via ReactMarkdown if they contain markdown */}
-            <ReactMarkdown components={{ h2: ({node, ...props}) => <h2 className="text-2xl font-semibold mt-6 mb-3" {...props} /> }}>
+            <ReactMarkdown components={{ h2: ({...props}) => <h2 className="text-2xl font-semibold mt-6 mb-3" {...props} /> }}>
               {`## ${section.title}`}
             </ReactMarkdown>
             {/* Assuming mb-4 was for the content block, not specific markdown elements */}

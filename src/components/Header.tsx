@@ -23,6 +23,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import Link from 'next/link';
 
 export interface HeaderProps {
   hideLogin?: boolean;
@@ -34,7 +35,7 @@ export interface HeaderProps {
   };
 }
 
-export function Header({ hideLogin = false, customLogo, customTheme }: HeaderProps) {
+export function Header({ hideLogin = false }: HeaderProps) {
   const { t } = useTranslation();
   const router = useRouter();
   const { user, isAuthenticated, logout } = useAuth();
