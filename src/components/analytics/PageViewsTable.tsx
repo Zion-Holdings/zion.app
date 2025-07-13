@@ -95,7 +95,7 @@ export function PageViewsTable() {
                     {formatPathName(page.path as string)}
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-white font-medium">{page.count}</span>
+                    <span className="text-white font-medium">{String(typeof page.count === 'number' ? page.count : 0)}</span>
                     <div className="w-32 flex items-center gap-2">
                       <div className="flex-1 h-2 bg-zion-blue-light rounded-full overflow-hidden">
                         <div 
