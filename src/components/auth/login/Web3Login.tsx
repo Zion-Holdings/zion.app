@@ -26,7 +26,7 @@ export function Web3Login() {
       setIsLoading(true);
       
       // Check if Ethereum provider (e.g., MetaMask) is available
-      const ethereum = (window as any).ethereum;
+      const ethereum = typeof window !== 'undefined' && 'ethereum' in window ? (window as typeof window & { ethereum?: unknown }).ethereum : undefined;
       if (!ethereum) {
         toast("Web3 wallet not found", {
           description: "Please install MetaMask or another compatible wallet.",
