@@ -104,9 +104,14 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
       if (onSuccess) {
         onSuccess();
       }
-    } catch (error: any) {
-      logErrorToProduction('Error creating/updating job:', { data: error });
-      toast.error(error.message || "Failed to post job");
+    } catch (error: unknown) {
+      if (typeof error === 'object' && error !== null && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+        logErrorToProduction('Error creating/updating job:', { data: error });
+        toast.error((error as { message: string }).message || "Failed to post job");
+      } else {
+        logErrorToProduction('Error creating/updating job:', { data: error });
+        toast.error("Failed to post job");
+      }
     } finally {
       setIsFormLoading(false);
     }
