@@ -35,6 +35,17 @@ interface ValidatedFormFieldProps {
   debounceMs?: number;
 }
 
+function isReactHookForm(form: unknown): form is { watch: (name: string) => unknown; formState: { errors: Record<string, any>; touchedFields: Record<string, boolean> }; register: (name: string) => unknown; setValue: (name: string, value: unknown) => void } {
+  return (
+    typeof form === 'object' &&
+    form !== null &&
+    'watch' in form && typeof (form as any).watch === 'function' &&
+    'formState' in form && typeof (form as any).formState === 'object' &&
+    'register' in form && typeof (form as any).register === 'function' &&
+    'setValue' in form && typeof (form as any).setValue === 'function'
+  );
+}
+
 export function ValidatedFormField({
   name,
   label,
@@ -53,9 +64,9 @@ export function ValidatedFormField({
   const [validationState, setValidationState] = useState<'idle' | 'validating' | 'valid' | 'invalid'>('idle');
   const [debounceTimer, setDebounceTimer] = useState<NodeJS.Timeout | null>(null);
 
-  const fieldValue = (form as any).watch(name);
-  const fieldError = (form as any).formState.errors[name];
-  const isTouched = (form as any).formState.touchedFields[name];
+  const fieldValue = isReactHookForm(form) ? form.watch(name) : undefined;
+  const fieldError = isReactHookForm(form) ? form.formState.errors[name] : undefined;
+  const isTouched = isReactHookForm(form) ? form.formState.touchedFields[name] : false;
 
   // Debounced validation
   useEffect(() => {
@@ -148,7 +159,7 @@ export function ValidatedFormField({
               disabled={disabled}
               className={baseClasses}
               rows={4}
-              {...(form as any).register(name)}
+              {...(isReactHookForm(form) ? form.register(name) : {})}
             />
             <div className="absolute top-2 right-2">
               {getValidationIcon()}
@@ -159,7 +170,7 @@ export function ValidatedFormField({
       case 'select':
         return (
           <div className="relative">
-            <Select onValueChange={(value) => (form as any).setValue(name, value)} disabled={disabled}>
+            <Select onValueChange={(value) => isReactHookForm(form) && form.setValue(name, value)} disabled={disabled}>
               <SelectTrigger className={baseClasses}>
                 <SelectValue placeholder={placeholder} />
               </SelectTrigger>
@@ -182,8 +193,8 @@ export function ValidatedFormField({
           <div className="flex items-center space-x-2">
             <Checkbox
               id={name}
-              checked={fieldValue}
-              onCheckedChange={(checked) => (form as any).setValue(name, checked)}
+              checked={!!fieldValue}
+              onCheckedChange={(checked) => isReactHookForm(form) && form.setValue(name, !!checked)}
               disabled={disabled}
             />
             <label
@@ -204,7 +215,7 @@ export function ValidatedFormField({
               placeholder={placeholder}
               disabled={disabled}
               className={cn(baseClasses, 'pr-20')}
-              {...(form as any).register(name)}
+              {...(isReactHookForm(form) ? form.register(name) : {})}
             />
             <div className="absolute inset-y-0 right-0 flex items-center gap-1 pr-3">
               {getValidationIcon()}
@@ -234,7 +245,7 @@ export function ValidatedFormField({
               placeholder={placeholder}
               disabled={disabled}
               className={baseClasses}
-              {...(form as any).register(name)}
+              {...(isReactHookForm(form) ? form.register(name) : {})}
             />
             <div className="absolute inset-y-0 right-0 flex items-center pr-3">
               {getValidationIcon()}
