@@ -85,7 +85,7 @@ class StagingVerifier {
 
   async testRoute(route) {
     const url = `${STAGING_URL}${route}`;
-    console.log(`Testing ${route}...`);
+    // console.log(`Testing ${route}...`); // Removed
 
     try {
       const response = await this.makeRequest(url);
@@ -102,12 +102,12 @@ class StagingVerifier {
         }
       }
 
-      console.log(`  ✅ ${route} - OK`);
+      // console.log(`  ✅ ${route} - OK`); // Removed
       this.results.passed++;
       return true;
 
     } catch (error) {
-      console.log(`  ❌ ${route} - FAILED: ${error.message}`);
+      // console.log(`  ❌ ${route} - FAILED: ${error.message}`); // Removed
       this.results.failed++;
       this.results.errors.push({
         route,
@@ -119,31 +119,31 @@ class StagingVerifier {
   }
 
   async run() {
-    console.log(`🚀 Starting staging verification for: ${STAGING_URL}\n`);
+    // console.log(`🚀 Starting staging verification for: ${STAGING_URL}\n`); // Removed
     
     // Test all critical routes
-    console.log('Testing critical routes...');
+    // console.log('Testing critical routes...'); // Removed
     for (const route of CRITICAL_ROUTES) {
       await this.testRoute(route);
     }
 
     // Print summary
-    console.log('\n' + '='.repeat(50));
-    console.log('STAGING VERIFICATION SUMMARY');
-    console.log('='.repeat(50));
-    console.log(`✅ Passed: ${this.results.passed}`);
-    console.log(`❌ Failed: ${this.results.failed}`);
+    // console.log('\n' + '='.repeat(50)); // Removed
+    // console.log('STAGING VERIFICATION SUMMARY'); // Removed
+    // console.log('='.repeat(50)); // Removed
+    // console.log(`✅ Passed: ${this.results.passed}`); // Removed
+    // console.log(`❌ Failed: ${this.results.failed}`); // Removed
     
     if (this.results.errors.length > 0) {
-      console.log('\nErrors:');
+      // console.log('\nErrors:'); // Removed
       this.results.errors.forEach(error => {
-        console.log(`  • ${error.route}: ${error.error}`);
+        // console.log(`  • ${error.route}: ${error.error}`); // Removed
       });
     }
 
     const status = this.results.failed === 0 ? 'PASSED' : 'FAILED';
     const emoji = status === 'PASSED' ? '🎉' : '💥';
-    console.log(`\n${emoji} Overall Status: ${status}\n`);
+    // console.log(`\n${emoji} Overall Status: ${status}\n`); // Removed
 
     // Exit with appropriate code
     process.exit(this.results.failed > 0 ? 1 : 0);
@@ -154,7 +154,7 @@ class StagingVerifier {
 if (require.main === module) {
   const verifier = new StagingVerifier();
   verifier.run().catch(error => {
-    console.error('Verification script failed:', error);
+    // console.error('Verification script failed:', error); // Removed
     process.exit(1);
   });
 }

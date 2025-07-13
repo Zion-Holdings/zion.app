@@ -36,5 +36,4 @@ if (WATCHDOG_CONFIG.DEVELOPMENT_MODE) {
   WATCHDOG_CONFIG.CPU_THRESHOLD = 0.98;
   WATCHDOG_CONFIG.CPU_SUSTAINED_CHECKS = 5; // Require more checks in dev
   WATCHDOG_CONFIG.SYSTEM_CHECK_INTERVAL = 60000; // Check less frequently in dev
-  console.log('Watchdog running in development mode with relaxed thresholds');
 } 
