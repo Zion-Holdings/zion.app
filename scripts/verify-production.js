@@ -42,8 +42,6 @@ const SUCCESS_PATTERNS = [
 
 async function testRoute(route) {
   try {
-    console.log(`🔍 Testing ${route}...`);
-    
     const response = await fetch(`${BASE_URL}${route}`, {
       headers: {
         'User-Agent': 'Production-Verification-Script/1.0',
@@ -119,87 +117,68 @@ async function testRoute(route) {
 
 async function checkServerHealth() {
   try {
-    console.log('🏥 Checking server health...');
     const response = await fetch(`${BASE_URL}/api/health`, {
       timeout: 5000
     });
     
     if (response.ok) {
       const data = await response.json();
-      console.log('✅ Server is healthy:', data.status);
       return true;
     } else {
-      console.log('⚠️ Health check failed, but server is responding');
       return true; // Server is up, health endpoint might not exist
     }
   } catch (error) {
-    console.log('❌ Server appears to be down:', error.message);
     return false;
   }
 }
 
 async function main() {
-  console.log('🚀 Starting production verification...');
-  console.log(`📍 Base URL: ${BASE_URL}`);
-  
-  // Check if server is running
   const serverHealthy = await checkServerHealth();
   if (!serverHealthy) {
-    console.log('🚨 Cannot proceed - server is not responding');
     process.exit(1);
   }
   
-  console.log(`📋 Testing ${ROUTES_TO_TEST.length} routes\n`);
-
-  const results = [];
-  
   for (const route of ROUTES_TO_TEST) {
     const result = await testRoute(route);
-    results.push(result);
     
     if (result.success) {
-      console.log(`✅ ${route} - ${result.message}`);
+      // console.log(`✅ ${route} - ${result.message}`); // Removed console.log
     } else {
-      console.log(`❌ ${route} - ${result.error}`);
+      // console.log(`❌ ${route} - ${result.error}`); // Removed console.log
     }
     
     // Add small delay between requests
     await new Promise(resolve => setTimeout(resolve, 100));
   }
 
-  console.log('\n📊 Verification Summary:');
-  
   const successful = results.filter(r => r.success);
   const failed = results.filter(r => !r.success);
   
-  console.log(`✅ Successful: ${successful.length}/${results.length}`);
-  
   if (failed.length > 0) {
-    console.log(`❌ Failed: ${failed.length}/${results.length}`);
-    console.log('\n🔍 Failed Routes:');
+    // console.log(`❌ Failed: ${failed.length}/${results.length}`); // Removed console.log
+    // console.log('\n🔍 Failed Routes:'); // Removed console.log
     
     failed.forEach(result => {
-      console.log(`  • ${result.route}: ${result.error} (${result.type})`);
+      // console.log(`  • ${result.route}: ${result.error} (${result.type})`); // Removed console.log
     });
     
     // Only fail if more than 50% of routes fail
     const failureRate = failed.length / results.length;
     if (failureRate > 0.5) {
-      console.log('\n🚨 Production verification FAILED (>50% failure rate)');
       process.exit(1);
     } else {
-      console.log('\n⚠️ Some routes failed but overall verification PASSED');
+      // console.log('\n⚠️ Some routes failed but overall verification PASSED'); // Removed console.log
     }
   } else {
-    console.log('\n🎉 All routes verified successfully!');
-    console.log('✅ Production verification PASSED');
+    // console.log('\n🎉 All routes verified successfully!'); // Removed console.log
+    // console.log('✅ Production verification PASSED'); // Removed console.log
   }
 }
 
 // Check if this script is being run directly
 if (import.meta.url === `file://${process.argv[1]}`) {
   main().catch(error => {
-    console.error('❌ Verification script failed:', error);
+    // console.error('❌ Verification script failed:', error); // Removed console.error
     process.exit(1);
   });
 } 
