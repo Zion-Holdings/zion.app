@@ -87,8 +87,8 @@ for (const link of links) {
   }
 }
 if (unmatched.length) {
-  console.log('Links without matching route:');
-  for (const l of unmatched) console.log('  ' + l);
+  console.warn('Links without matching route:');
+  for (const l of unmatched) console.warn('  ' + l);
 } else {
-  console.log('All links have matching routes');
+  console.warn('All links have matching routes');
 }

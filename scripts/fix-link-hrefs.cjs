@@ -27,7 +27,7 @@ function fixFile(filePath) {
 
   if (updated !== content) {
     fs.writeFileSync(filePath, updated, 'utf8');
-    console.log(`Fixed Link props in ${filePath}`);
+    console.warn(`Fixed Link props in ${filePath}`);
     return true;
   }
   return false;
@@ -39,4 +39,4 @@ files.forEach(f => {
   if (fixFile(f)) count++;
 });
 
-console.log(`\nProcessed ${files.length} files. Updated ${count} files.`);
+console.warn(`\nProcessed ${files.length} files. Updated ${count} files.`);
