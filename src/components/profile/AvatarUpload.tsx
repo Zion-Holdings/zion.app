@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { CldUploadButton } from 'next-cloudinary';
 
 type Props = {
