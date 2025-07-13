@@ -58,7 +58,7 @@ export function ITServiceRequestHero() {
         setLocation("");
         setDetails("");
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction(err);
       toast({
         title: "Submission Failed",
