@@ -1,7 +1,6 @@
 
 import React from "react";
-import { Handshake, MessageSquare, Star } from 'lucide-react';
-
+import { Handshake, MessageSquare, Star } from "@/components/icons";
 
 
 import { Button } from "@/components/ui/button";
