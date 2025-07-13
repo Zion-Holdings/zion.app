@@ -99,9 +99,13 @@ export function ApplicationScoreCard({ application, onScoreUpdated }: Applicatio
       
       setTimeout(checkScore, 3000);
       
-    } catch (error: any) {
+    } catch (error: unknown) {
       setIsScoring(false);
-      toast.error(`Failed to score resume: ${error.message}`);
+      if (typeof error === 'object' && error !== null && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+        toast.error(`Failed to score resume: ${(error as { message: string }).message}`);
+      } else {
+        toast.error('Failed to score resume');
+      }
     }
   };
 
