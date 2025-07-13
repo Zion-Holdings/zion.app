@@ -94,13 +94,16 @@ export default function TokenSimulator() {
           (inputs.activeWallets * (i + 1)) / (forecast[i] || inputs.circulating)
       );
       if (chart) (chart as { destroy?: () => void }).destroy();
-      chart = new (Chart as any)(velocityChart.current as HTMLCanvasElement, {
-        type: 'line',
-        data: {
-          labels,
-          datasets: [{ label: 'Token Velocity', data: velocities }],
-        },
-      });
+      // Instead of 'new (Chart as any)', use a type guard for Chart constructor
+      if (typeof Chart === 'function') {
+        chart = new (Chart as new (ctx: HTMLCanvasElement, config: unknown) => unknown)(velocityChart.current as HTMLCanvasElement, {
+          type: 'line',
+          data: {
+            labels,
+            datasets: [{ label: 'Token Velocity', data: velocities }],
+          },
+        });
+      }
     };
     if (typeof window.Chart !== 'undefined') {
       load();
@@ -130,13 +133,16 @@ export default function TokenSimulator() {
       const Chart = window.Chart as typeof import('chart.js');
       const labels = Array.from({ length: months }, (_, i) => `${i + 1}`);
       if (chart && typeof (chart as { destroy?: () => void }).destroy === 'function') (chart as { destroy: () => void }).destroy();
-      chart = new (Chart as any)(supplyChart.current as HTMLCanvasElement, {
-        type: 'line',
-        data: {
-          labels,
-          datasets: [{ label: 'Circulating Supply', data: forecast }],
-        },
-      });
+      // Instead of 'new (Chart as any)', use a type guard for Chart constructor
+      if (typeof Chart === 'function') {
+        chart = new (Chart as new (ctx: HTMLCanvasElement, config: unknown) => unknown)(supplyChart.current as HTMLCanvasElement, {
+          type: 'line',
+          data: {
+            labels,
+            datasets: [{ label: 'Circulating Supply', data: forecast }],
+          },
+        });
+      }
     };
     if (typeof window.Chart !== 'undefined') {
       load();
