@@ -10,12 +10,12 @@ interface WhitepaperSectionEditorProps {
   onContentChange: (newContent: string) => void;
 }
 
-const WhitepaperSectionEditor: React.FC<WhitepaperSectionEditorProps> = ({ title, content, onContentChange }) => {
+const WhitepaperSectionEditor: React.FC<WhitepaperSectionEditorProps> = ({ title, content }) => {
   const [isLoadingSuggestions, setIsLoadingSuggestions] = useState(false);
   const [suggestionsError, setSuggestionsError] = useState<string | null>(null);
   const [suggestions, setSuggestions] = useState<string | null>(null);
   const [showSuggestions, setShowSuggestions] = useState(false);
-  const { value, set, undo, redo, canUndo, canRedo } = useUndoRedo(content);
+  const { value, set } = useUndoRedo(content);
 
   // keep external content prop in sync if it changes
   useEffect(() => {
@@ -53,9 +53,9 @@ const WhitepaperSectionEditor: React.FC<WhitepaperSectionEditorProps> = ({ title
       setSuggestions((data as unknown as { suggestions: string }).suggestions);
       setShowSuggestions(true);
 
-    } catch (e: any) {
-      logErrorToProduction(`Error in handleGetSuggestions: ${e?.message || e}`);
-      setSuggestionsError(e?.message || 'An error occurred while getting suggestions.');
+    } catch (e: unknown) {
+      logErrorToProduction(`Error in handleGetSuggestions: ${e instanceof Error ? e.message : String(e)}`);
+      setSuggestionsError(e instanceof Error ? e.message : 'An error occurred while getting suggestions.');
       setIsLoadingSuggestions(false);
     }
   };
