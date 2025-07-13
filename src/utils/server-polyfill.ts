@@ -28,7 +28,7 @@ if (typeof window === 'undefined') {
       onLine: true
     },
     document: {
-      createElement: () => ({}),
+      createElement: (): Record<string, unknown> => ({ nodeType: 1 }),
       getElementsByTagName: () => [],
       getElementById: () => null,
       querySelector: () => null,
@@ -84,36 +84,7 @@ if (typeof window === 'undefined') {
 
 // Mock document if not available
 if (typeof document === 'undefined') {
-  (global as unknown as { document: Record<string, unknown> }).document = (global as unknown as { window: Record<string, unknown> }).window?.document || {
-    createElement: () => ({}),
-    getElementsByTagName: () => [],
-    getElementById: () => null,
-    querySelector: () => null,
-    querySelectorAll: () => [],
-    addEventListener: () => {},
-    removeEventListener: () => {},
-    documentElement: {
-      classList: {
-        add: () => {},
-        remove: () => {},
-        contains: () => false,
-        toggle: () => false
-      },
-      setAttribute: () => {},
-      getAttribute: () => null,
-      style: {}
-    },
-    head: {
-      appendChild: () => {},
-      removeChild: () => {},
-      insertBefore: () => {}
-    },
-    body: {
-      appendChild: () => {},
-      removeChild: () => {},
-      insertBefore: () => {}
-    }
-  };
+  (global as unknown as { document: Record<string, unknown> }).document = ((global as unknown as { window: Record<string, unknown> }).window?.document as Record<string, unknown>) || { fallback: true };
 }
 
 // Mock navigator if not available
