@@ -26,6 +26,7 @@ import {
   CardContent,
   CardFooter
 } from "@/components/ui/card";
+import { UserRound } from '@/components/icons';
 
 // Define form schema
 const talentProfileSchema = z.object({
