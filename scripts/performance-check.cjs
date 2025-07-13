@@ -289,7 +289,7 @@ class PerformanceChecker {
     // console.log('\n📊 Performance Check Summary');
     // console.log('================================');
     
-    // Remove or prefix all remaining unused variables and arguments for linter compliance, including 'statusEmoji', 'warning', and 'error'.
+    // Remove or prefix all remaining unused variables and arguments for linter compliance, including 'warning' and 'error'.
     // console.log(`Overall Status: ${this.results.overall.toUpperCase()}`);
     
     // console.log('\nCheck Results:');
