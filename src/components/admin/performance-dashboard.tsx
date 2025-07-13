@@ -29,14 +29,6 @@ interface PerformanceMetrics {
   fid: number; // First Input Delay
 }
 
-interface BundleChunk {
-  name: string;
-  size: number;
-  loadTime: number;
-  cached: boolean;
-  type: string;
-}
-
 export function PerformanceDashboard() {
   const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
 
