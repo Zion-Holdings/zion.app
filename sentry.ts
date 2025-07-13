@@ -18,6 +18,7 @@ export async function loadSentry() {
 }
 
 import { safeSessionStorage } from "@/utils/safeStorage";
+import type * as SentrySDK from '@sentry/nextjs';
 
 export async function register() {
   await loadSentry();
@@ -78,16 +79,16 @@ export async function register() {
       initOptions.environment = SENTRY_ENVIRONMENT;
     }
 
-    (Sentry as Record<string, unknown>).init(initOptions);
+    (Sentry as typeof SentrySDK).init(initOptions);
 
     // Set additional context
     if (SENTRY_RELEASE) {
-      (Sentry as Record<string, unknown>).setTag("release", SENTRY_RELEASE);
+      (Sentry as typeof SentrySDK).setTag("release", SENTRY_RELEASE);
     }
     if (SENTRY_ENVIRONMENT) {
-      (Sentry as Record<string, unknown>).setTag("environment", SENTRY_ENVIRONMENT);
+      (Sentry as typeof SentrySDK).setTag("environment", SENTRY_ENVIRONMENT);
     }
-    (Sentry as Record<string, unknown>).setTag("runtime", "browser");
+    (Sentry as typeof SentrySDK).setTag("runtime", "browser");
 
     console.log(`Sentry initialized successfully. Release: ${SENTRY_RELEASE}, Environment: ${SENTRY_ENVIRONMENT}`);
   } catch (error) {
@@ -100,6 +101,6 @@ export async function register() {
 
 export function onRequestError(error: unknown) {
   if (typeof Sentry === 'object' && Sentry !== null && 'captureException' in Sentry && typeof Sentry.captureException === 'function') {
-    (Sentry as Record<string, unknown>).captureException(error);
+    (Sentry as typeof SentrySDK).captureException(error);
   }
 }
