@@ -41,48 +41,9 @@ export function EnhancedSearchInput({
   const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [valueOnFocus, setValueOnFocus] = useState<string | null>(null);
-  const [enterHandledPostFocus, setEnterHandledPostFocus] = useState(false);
   const { t } = useTranslation();
-  const [apiSuggestions, setApiSuggestions] = useState<SearchSuggestion[]>([]);
-  const [loading, setLoading] = useState(false);
 
   const debounced = useDebounce(value, 200);
-
-  const debouncedFetchSuggestions = useMemo(
-    () =>
-      debounce(async (query: string) => {
-        if (!query.trim()) {
-          setApiSuggestions([]);
-          return;
-        }
-
-        setLoading(true);
-        try {
-          const response = await fetch(`/api/search/suggest?q=${encodeURIComponent(query)}`, {
-            signal: AbortSignal.timeout(5000) // 5 second timeout
-          });
-          
-          if (response.ok) {
-            const data = await response.json();
-            if (Array.isArray(data)) {
-              setApiSuggestions(data.slice(0, 5)); // Limit to 5 API suggestions
-            }
-          } else {
-            // Silently fail for search suggestions - don't show error toast
-            logWarn('Search suggestions API error:', { data:  { data: response.status } });
-            setApiSuggestions([]);
-          }
-        } catch (error) {
-          // Silently fail for search suggestions - don't show error toast
-          logWarn('Search suggestions fetch error:', { data:  { data: error } });
-          setApiSuggestions([]);
-        } finally {
-          setLoading(false);
-        }
-      }, 300),
-    []
-  );
 
   // Fetch suggestions from API when input value changes
   useEffect(() => {
@@ -190,12 +151,10 @@ export function EnhancedSearchInput({
         e.preventDefault();
         setIsFocused(false);
         setHighlightedIndex(-1);
-        setValueOnFocus(null);
         inputRef.current?.blur();
         break;
       default:
         // For other keys (character input), reset enterHandledPostFocus
-        setEnterHandledPostFocus(false);
         break;
     }
   };
@@ -222,14 +181,11 @@ export function EnhancedSearchInput({
           value={value}
           onChange={(e) => {
             onChange(e.target.value);
-            setEnterHandledPostFocus(false);
           }}
           onFocus={(e) => {
             setIsFocused(true);
             setHighlightedIndex(-1); // Explicitly reset on focus
             const currentVal = e.target.value;
-            setValueOnFocus(currentVal);
-            setEnterHandledPostFocus(false);
             e.target.setSelectionRange(currentVal.length, currentVal.length);
           }}
           onBlur={(e) => {
@@ -238,7 +194,6 @@ export function EnhancedSearchInput({
               setIsFocused(false);
               setHighlightedIndex(-1);
             }
-            setValueOnFocus(null);
           }}
           onKeyDown={handleKeyDown}
           placeholder={placeholder}
