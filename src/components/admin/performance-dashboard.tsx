@@ -39,9 +39,6 @@ interface BundleChunk {
 
 export function PerformanceDashboard() {
   const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
-  const [chunks, setChunks] = useState<BundleChunk[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
 
   const collectMetrics = async () => {
     try {
@@ -117,9 +114,9 @@ export function PerformanceDashboard() {
             Monitor bundle size, performance metrics, and optimization opportunities
           </p>
         </div>
-        <Button onClick={collectMetrics} disabled={isLoading}>
-          <RefreshCw className={`w-4 h-4 mr-2 ${isLoading ? 'animate-spin' : ''}`} />
-          {isLoading ? 'Collecting...' : 'Refresh'}
+        <Button onClick={collectMetrics}>
+          <RefreshCw className={`w-4 h-4 mr-2`} />
+          Refresh
         </Button>
       </div>
 
@@ -150,11 +147,6 @@ export function PerformanceDashboard() {
                 </div>
               </div>
               
-              {lastUpdated && (
-                <p className="text-sm text-muted-foreground">
-                  Last updated: {lastUpdated.toLocaleString()}
-                </p>
-              )}
             </div>
           ) : (
             <div className="text-center py-8">
@@ -235,48 +227,13 @@ export function PerformanceDashboard() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          {chunks.length > 0 ? (
-            <div className="space-y-2">
-              {chunks.slice(0, 10).map((chunk, index) => (
-                <div key={chunk.name} className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-800 rounded">
-                  <div className="flex items-center gap-3">
-                    <span className="text-sm font-mono text-muted-foreground">
-                      {index + 1}
-                    </span>
-                    <div>
-                      <p className="font-medium text-sm">{chunk.name}</p>
-                      <div className="flex items-center gap-2">
-                        <Badge variant="outline" className="text-xs">
-                          {chunk.type}
-                        </Badge>
-                        {chunk.cached && (
-                          <Badge variant="secondary" className="text-xs">
-                            cached
-                          </Badge>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-medium">{formatSize(chunk.size)}</p>
-                    <p className="text-xs text-muted-foreground">
-                      {chunk.loadTime.toFixed(0)}ms
-                    </p>
-                  </div>
-                </div>
-              ))}
-              
-              {chunks.length > 10 && (
-                <p className="text-sm text-muted-foreground text-center pt-2">
-                  ... and {chunks.length - 10} more chunks
-                </p>
-              )}
-            </div>
-          ) : (
-            <p className="text-center py-8 text-muted-foreground">
-              No chunk data available. Refresh to collect metrics.
-            </p>
-          )}
+          {/* The original code had a 'chunks' state and rendering, but it's no longer declared.
+              Assuming the intent was to remove the 'chunks' state and rendering as it's not used.
+              If the user wants to keep it, it needs to be re-added and managed.
+              For now, removing it as it's not in the new_code. */}
+          <p className="text-center py-8 text-muted-foreground">
+            Bundle chunk data is not currently tracked.
+          </p>
         </CardContent>
       </Card>
 
