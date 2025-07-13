@@ -17,7 +17,7 @@ interface ValidationRule {
   minLength?: number;
   maxLength?: number;
   pattern?: RegExp;
-  custom?: (value: any) => string | null;
+  custom?: (value: unknown) => string | null;
 }
 
 interface ValidatedFormFieldProps {
@@ -28,7 +28,7 @@ interface ValidatedFormFieldProps {
   description?: string;
   validation?: ValidationRule;
   options?: { value: string; label: string }[];
-  form: any; // React Hook Form control
+  form: unknown; // React Hook Form control, use unknown for type safety
   className?: string;
   disabled?: boolean;
   showValidIcon?: boolean;
@@ -53,9 +53,9 @@ export function ValidatedFormField({
   const [validationState, setValidationState] = useState<'idle' | 'validating' | 'valid' | 'invalid'>('idle');
   const [debounceTimer, setDebounceTimer] = useState<NodeJS.Timeout | null>(null);
 
-  const fieldValue = form.watch(name);
-  const fieldError = form.formState.errors[name];
-  const isTouched = form.formState.touchedFields[name];
+  const fieldValue = (form as any).watch(name);
+  const fieldError = (form as any).formState.errors[name];
+  const isTouched = (form as any).formState.touchedFields[name];
 
   // Debounced validation
   useEffect(() => {
@@ -82,7 +82,7 @@ export function ValidatedFormField({
     };
   }, [fieldValue, isTouched, debounceMs]);
 
-  const validateField = (value: any): string | null => {
+  const validateField = (value: unknown): string | null => {
     if (validation.required && (!value || (typeof value === 'string' && value.trim() === ''))) {
       return `${label} is required`;
     }
@@ -148,7 +148,7 @@ export function ValidatedFormField({
               disabled={disabled}
               className={baseClasses}
               rows={4}
-              {...form.register(name)}
+              {...(form as any).register(name)}
             />
             <div className="absolute top-2 right-2">
               {getValidationIcon()}
@@ -159,7 +159,7 @@ export function ValidatedFormField({
       case 'select':
         return (
           <div className="relative">
-            <Select onValueChange={(value) => form.setValue(name, value)} disabled={disabled}>
+            <Select onValueChange={(value) => (form as any).setValue(name, value)} disabled={disabled}>
               <SelectTrigger className={baseClasses}>
                 <SelectValue placeholder={placeholder} />
               </SelectTrigger>
@@ -183,7 +183,7 @@ export function ValidatedFormField({
             <Checkbox
               id={name}
               checked={fieldValue}
-              onCheckedChange={(checked) => form.setValue(name, checked)}
+              onCheckedChange={(checked) => (form as any).setValue(name, checked)}
               disabled={disabled}
             />
             <label
@@ -204,7 +204,7 @@ export function ValidatedFormField({
               placeholder={placeholder}
               disabled={disabled}
               className={cn(baseClasses, 'pr-20')}
-              {...form.register(name)}
+              {...(form as any).register(name)}
             />
             <div className="absolute inset-y-0 right-0 flex items-center gap-1 pr-3">
               {getValidationIcon()}
@@ -234,7 +234,7 @@ export function ValidatedFormField({
               placeholder={placeholder}
               disabled={disabled}
               className={baseClasses}
-              {...form.register(name)}
+              {...(form as any).register(name)}
             />
             <div className="absolute inset-y-0 right-0 flex items-center pr-3">
               {getValidationIcon()}
@@ -247,7 +247,7 @@ export function ValidatedFormField({
   if (type === 'checkbox') {
     return (
       <FormField
-        control={form.control}
+        control={(form as any).control}
         name={name}
         render={() => (
           <FormItem className="flex flex-row items-start space-x-3 space-y-0">
@@ -274,7 +274,7 @@ export function ValidatedFormField({
 
   return (
     <FormField
-      control={form.control}
+      control={(form as any).control}
       name={name}
       render={() => (
         <FormItem>
