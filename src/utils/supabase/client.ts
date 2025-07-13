@@ -68,7 +68,7 @@ export function createClient(): SupabaseClient | null {
         return {
             auth: {
                 getSession: async () => ({ data: { session: null }, error: { name: 'MockAuthError', message: 'SSR Mock: Supabase not configured' } }),
-                onAuthStateChange: (_callback: any) => ({ data: { subscription: { unsubscribe: () => {} } } }),
+                onAuthStateChange: (_callback: unknown) => ({ data: { subscription: { unsubscribe: () => {} } } }),
                 // Add other methods if absolutely necessary for build to pass
             },
             from: (_table: string) => ({ /* mock query builder */ }),
