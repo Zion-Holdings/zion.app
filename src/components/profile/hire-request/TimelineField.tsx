@@ -23,9 +23,9 @@ export function TimelineField({ form }: TimelineFieldProps) {
     <FormField
       control={form.control}
       name="timeline"
-      render={({ field, fieldState, formState }) => (
+      render={({ field }) => (
         <FormItem>
-          <FormLabel className="text-white">Project Timeline</FormLabel>
+          <FormLabel className="text-white">Timeline</FormLabel>
           <FormControl>
             <Select 
               onValueChange={field.onChange} 
