@@ -103,7 +103,7 @@ export function LoginForm() {
       } else {
         setVerificationMessage(data.message || 'Failed to resend verification email.');
       }
-    } catch (err: unknown) {
+    } catch {
       setVerificationMessage('Failed to resend verification email.');
     } finally {
       setIsResending(false);
