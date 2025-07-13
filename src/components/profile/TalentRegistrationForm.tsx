@@ -352,7 +352,10 @@ export function TalentRegistrationForm() {
 
       // Get user email for notification
       const { data: userData } = await supabase.auth.getUser();
-      const userEmail = (userData as unknown as { user?: { email?: string } })?.user?.email;
+      let userEmail: string | undefined = undefined;
+      if (userData && typeof userData === 'object' && 'user' in userData && userData.user && typeof userData.user === 'object' && 'email' in userData.user && typeof userData.user.email === 'string') {
+        userEmail = userData.user.email;
+      }
 
       // Create the talent profile
       // In a real implementation, this would save to Supabase

@@ -11,7 +11,7 @@ const talentSchema = z.object({
   basicInfo: z.object({
     fullName: z.string().min(2, "Full Name must be at least 2 characters"),
     professionalTitle: z.string().min(2, "Professional title is required"),
-    profilePicture: z.any().optional(),
+    profilePicture: z.unknown().optional(),
   }),
   
   // Step 2: Experience
@@ -42,7 +42,7 @@ const talentSchema = z.object({
         url: z.string().url("Must be a valid URL").min(5, "URL isrequired"),
       })
     ).optional(), // Field can be undefined; defaultValues in useForm will provide initial array
-    cv: z.any().optional(),
+    cv: z.unknown().optional(),
   }),
 });
 
