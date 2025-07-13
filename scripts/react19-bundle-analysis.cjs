@@ -45,7 +45,7 @@ const bundleAnalysis = {
     // console.log();
   },
 
-  getBundleStats(buildPath) {
+  getBundleStats(_buildPath) {
     // Mock analysis - in production, this would parse actual build files
     return {
       totalJS: '245.2',
@@ -86,11 +86,11 @@ const bundleAnalysis = {
       }
     ];
 
-    opportunities.forEach(opp => {
-      // console.log(`  🎯 ${opp.area}:`);
-      // console.log(`    Current: ${opp.current}`);
-      // console.log(`    Opportunity: ${opp.opportunity}`);
-      // console.log(`    Impact: ${opp.impact}\n`);
+    opportunities.forEach(_opp => {
+      // console.log(`  🎯 ${_opp.area}:`);
+      // console.log(`    Current: ${_opp.current}`);
+      // console.log(`    Opportunity: ${_opp.opportunity}`);
+      // console.log(`    Impact: ${_opp.impact}\n`);
     });
   },
 
