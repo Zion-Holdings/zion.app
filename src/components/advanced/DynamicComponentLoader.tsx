@@ -206,7 +206,7 @@ export const DynamicComponentLoader: React.FC<DynamicLoaderProps> = ({
         isOnline
       }))
     }
-  }, [importFn, isOnline, maxRetries, setDynamicComponent, setLoadingState, setProgress])
+  }, [importFn, isOnline, setDynamicComponent, setLoadingState, setProgress]);
 
   // Retry functionality
   const retry = () => {
