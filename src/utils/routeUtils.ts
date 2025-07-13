@@ -32,7 +32,11 @@ export const canAccessRoute = (
     if (!userType) return false;
     // Type guard for string
     if (typeof userType !== 'string') return false;
-    return route.requiredRoles.includes(userType as unknown as string);
+    type AllowedRole = 'creator' | 'jobSeeker' | 'employer' | 'buyer' | 'admin';
+    if (["creator", "jobSeeker", "employer", "buyer", "admin"].includes(userType)) {
+      return route.requiredRoles.includes(userType as AllowedRole);
+    }
+    return false;
   }
   
   return true;
