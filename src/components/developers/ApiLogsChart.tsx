@@ -11,12 +11,13 @@ export function ApiLogsChart({ logs }: ApiLogsChartProps) {
   useEffect(() => {
     let chart: unknown;
     const scriptId = "chartjs-script";
+    const win = window as unknown as { Chart?: unknown };
 
     const loadChart = () => {
       if (!canvasRef.current) return;
-      const win = window as unknown as { Chart?: unknown };
       if (!win.Chart || typeof win.Chart !== 'function') return;
-      const Chart = win.Chart as typeof import('chart.js').Chart;
+      // Inline Chart type to avoid import error
+      const Chart = win.Chart as new (ctx: HTMLCanvasElement, config: any) => { destroy: () => void };
       const dateMap: Record<string, number> = {};
       logs.forEach((log) => {
         const day = new Date(log.created_at).toISOString().split("T")[0];
@@ -28,7 +29,7 @@ export function ApiLogsChart({ logs }: ApiLogsChartProps) {
       const data = labels.map((l) => dateMap[l]);
 
       if (chart && typeof (chart as { destroy?: () => void }).destroy === 'function') (chart as { destroy: () => void }).destroy();
-      chart = new Chart(canvasRef.current, {
+      chart = new Chart(canvasRef.current!, {
         type: "bar",
         data: {
           labels,
@@ -48,7 +49,7 @@ export function ApiLogsChart({ logs }: ApiLogsChartProps) {
       });
     };
 
-    if (typeof (window as any).Chart !== "undefined") {
+    if (typeof win.Chart !== "undefined") {
       loadChart();
     } else {
       let script = document.getElementById(scriptId) as HTMLScriptElement | null;
