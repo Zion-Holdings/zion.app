@@ -11,8 +11,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   exec('node scripts/train-zion-gpt.js', (err, stdout, stderr) => {
     if (err) {
       console.error('Training error:', stderr);
-    } else {
-      console.log(stdout);
     }
   });
 

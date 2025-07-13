@@ -126,7 +126,6 @@ self.addEventListener('message', event => {
       const syncPromise = bgSyncPlugin.queue
         .replayRequests()
         .then(() => {
-          console.log('Background sync completed successfully');
           // Send success response if there's a port
           if (event.ports && event.ports[0]) {
             try {
