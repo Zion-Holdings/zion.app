@@ -90,42 +90,39 @@ export function ReviewForm({
           control={form.control}
           name="rating"
           rules={{ required: "Rating is required" }}
-          render={({ field }: { field: unknown }) => {
-            if (typeof field !== 'object' || field === null) return null;
-            return (
-              <FormItem>
-                <FormLabel className="block text-center mb-2">
-                  How was your experience with {revieweeName}?
-                </FormLabel>
-                <FormControl>
-                  <div className="flex justify-center gap-1">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <button
-                        key={star}
-                        type="button"
-                        onClick={() => (field as { onChange: (v: number) => void }).onChange(star)}
-                        onMouseEnter={() => setHoveredStar(star)}
-                        onMouseLeave={() => setHoveredStar(0)}
-                        className="focus:outline-none transition-transform hover:scale-110"
-                        aria-label={`Rate ${star} star${star > 1 ? 's' : ''}`}
-                      >
-                        <Star
-                          className={`h-10 w-10 ${
-                            star <= (hoveredStar || (field as { value?: number }).value || 0)
-                              ? "fill-yellow-400 text-yellow-400"
-                              : "text-gray-300"
-                          } transition-colors`}
-                        />
-                      </button>
-                    ))}
-                  </div>
-                </FormControl>
-                <div className="text-center mt-1 h-5">
-                  <FormMessage />
+          render={({ field, fieldState, formState }) => (
+            <FormItem>
+              <FormLabel className="block text-center mb-2">
+                How was your experience with {revieweeName}?
+              </FormLabel>
+              <FormControl>
+                <div className="flex justify-center gap-1">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <button
+                      key={star}
+                      type="button"
+                      onClick={() => (field as { onChange: (v: number) => void }).onChange(star)}
+                      onMouseEnter={() => setHoveredStar(star)}
+                      onMouseLeave={() => setHoveredStar(0)}
+                      className="focus:outline-none transition-transform hover:scale-110"
+                      aria-label={`Rate ${star} star${star > 1 ? 's' : ''}`}
+                    >
+                      <Star
+                        className={`h-10 w-10 ${
+                          star <= (hoveredStar || (field as { value?: number }).value || 0)
+                            ? "fill-yellow-400 text-yellow-400"
+                            : "text-gray-300"
+                        } transition-colors`}
+                      />
+                    </button>
+                  ))}
                 </div>
-              </FormItem>
-            );
-          }}
+              </FormControl>
+              <div className="text-center mt-1 h-5">
+                <FormMessage />
+              </div>
+            </FormItem>
+          )}
         />
         
         {/* Review Text */}
@@ -139,22 +136,19 @@ export function ReviewForm({
               message: "Review must be at least 20 characters",
             },
           }}
-          render={({ field }: { field: unknown }) => {
-            if (typeof field !== 'object' || field === null) return null;
-            return (
-              <FormItem>
-                <FormLabel>Your Review</FormLabel>
-                <FormControl>
-                  <Textarea
-                    placeholder="Share your experience and feedback..."
-                    className="min-h-24 resize-none"
-                    {...(field as object)}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            );
-          }}
+          render={({ field, fieldState, formState }) => (
+            <FormItem>
+              <FormLabel>Your Review</FormLabel>
+              <FormControl>
+                <Textarea
+                  placeholder="Share your experience and feedback..."
+                  className="min-h-24 resize-none"
+                  {...(field as object)}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
         />
         
         {/* Additional Rating Categories (only shown if main rating is provided) */}
@@ -166,137 +160,125 @@ export function ReviewForm({
             <FormField
               control={form.control}
               name="communication_rating"
-              render={({ field }: { field: unknown }) => {
-                if (typeof field !== 'object' || field === null) return null;
-                return (
-                  <FormItem className="space-y-2">
-                    <FormLabel>Communication</FormLabel>
-                    <FormControl>
-                      <RadioGroup
-                        onValueChange={(value) => (field as { onChange: (v: number) => void }).onChange(parseInt(value))}
-                        defaultValue={(field as { value?: number }).value !== undefined ? (field as { value?: number }).value!.toString() : ""}
-                        className="flex flex-wrap gap-4"
-                      >
-                        {[1, 2, 3, 4, 5].map((value) => (
-                          <FormItem
-                            key={value}
-                            className="flex items-center space-x-2"
-                          >
-                            <FormControl>
-                              <RadioGroupItem value={value.toString()} />
-                            </FormControl>
-                            <FormLabel className="cursor-pointer font-normal">
-                              {value}
-                            </FormLabel>
-                          </FormItem>
-                        ))}
-                      </RadioGroup>
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                );
-              }}
+              render={({ field, fieldState, formState }) => (
+                <FormItem className="space-y-2">
+                  <FormLabel>Communication</FormLabel>
+                  <FormControl>
+                    <RadioGroup
+                      onValueChange={(value) => (field as { onChange: (v: number) => void }).onChange(parseInt(value))}
+                      defaultValue={(field as { value?: number }).value !== undefined ? (field as { value?: number }).value!.toString() : ""}
+                      className="flex flex-wrap gap-4"
+                    >
+                      {[1, 2, 3, 4, 5].map((value) => (
+                        <FormItem
+                          key={value}
+                          className="flex items-center space-x-2"
+                        >
+                          <FormControl>
+                            <RadioGroupItem value={value.toString()} />
+                          </FormControl>
+                          <FormLabel className="cursor-pointer font-normal">
+                            {value}
+                          </FormLabel>
+                        </FormItem>
+                      ))}
+                    </RadioGroup>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
             
             {/* Quality */}
             <FormField
               control={form.control}
               name="quality_rating"
-              render={({ field }: { field: unknown }) => {
-                if (typeof field !== 'object' || field === null) return null;
-                return (
-                  <FormItem className="space-y-2">
-                    <FormLabel>Quality of Work</FormLabel>
-                    <FormControl>
-                      <RadioGroup
-                        onValueChange={(value) => (field as { onChange: (v: number) => void }).onChange(parseInt(value))}
-                        defaultValue={(field as { value?: number }).value !== undefined ? (field as { value?: number }).value!.toString() : ""}
-                        className="flex flex-wrap gap-4"
-                      >
-                        {[1, 2, 3, 4, 5].map((value) => (
-                          <FormItem
-                            key={value}
-                            className="flex items-center space-x-2"
-                          >
-                            <FormControl>
-                              <RadioGroupItem value={value.toString()} />
-                            </FormControl>
-                            <FormLabel className="cursor-pointer font-normal">
-                              {value}
-                            </FormLabel>
-                          </FormItem>
-                        ))}
-                      </RadioGroup>
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                );
-              }}
+              render={({ field, fieldState, formState }) => (
+                <FormItem className="space-y-2">
+                  <FormLabel>Quality of Work</FormLabel>
+                  <FormControl>
+                    <RadioGroup
+                      onValueChange={(value) => (field as { onChange: (v: number) => void }).onChange(parseInt(value))}
+                      defaultValue={(field as { value?: number }).value !== undefined ? (field as { value?: number }).value!.toString() : ""}
+                      className="flex flex-wrap gap-4"
+                    >
+                      {[1, 2, 3, 4, 5].map((value) => (
+                        <FormItem
+                          key={value}
+                          className="flex items-center space-x-2"
+                        >
+                          <FormControl>
+                            <RadioGroupItem value={value.toString()} />
+                          </FormControl>
+                          <FormLabel className="cursor-pointer font-normal">
+                            {value}
+                          </FormLabel>
+                        </FormItem>
+                      ))}
+                    </RadioGroup>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
             
             {/* Timeliness */}
             <FormField
               control={form.control}
               name="timeliness_rating"
-              render={({ field }: { field: unknown }) => {
-                if (typeof field !== 'object' || field === null) return null;
-                return (
-                  <FormItem className="space-y-2">
-                    <FormLabel>Timeliness</FormLabel>
-                    <FormControl>
-                      <RadioGroup
-                        onValueChange={(value) => (field as { onChange: (v: number) => void }).onChange(parseInt(value))}
-                        defaultValue={(field as { value?: number }).value !== undefined ? (field as { value?: number }).value!.toString() : ""}
-                        className="flex flex-wrap gap-4"
-                      >
-                        {[1, 2, 3, 4, 5].map((value) => (
-                          <FormItem
-                            key={value}
-                            className="flex items-center space-x-2"
-                          >
-                            <FormControl>
-                              <RadioGroupItem value={value.toString()} />
-                            </FormControl>
-                            <FormLabel className="cursor-pointer font-normal">
-                              {value}
-                            </FormLabel>
-                          </FormItem>
-                        ))}
-                      </RadioGroup>
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                );
-              }}
+              render={({ field, fieldState, formState }) => (
+                <FormItem className="space-y-2">
+                  <FormLabel>Timeliness</FormLabel>
+                  <FormControl>
+                    <RadioGroup
+                      onValueChange={(value) => (field as { onChange: (v: number) => void }).onChange(parseInt(value))}
+                      defaultValue={(field as { value?: number }).value !== undefined ? (field as { value?: number }).value!.toString() : ""}
+                      className="flex flex-wrap gap-4"
+                    >
+                      {[1, 2, 3, 4, 5].map((value) => (
+                        <FormItem
+                          key={value}
+                          className="flex items-center space-x-2"
+                        >
+                          <FormControl>
+                            <RadioGroupItem value={value.toString()} />
+                          </FormControl>
+                          <FormLabel className="cursor-pointer font-normal">
+                            {value}
+                          </FormLabel>
+                        </FormItem>
+                      ))}
+                    </RadioGroup>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
             
             {/* Would Work Again */}
             <FormField
               control={form.control}
               name="would_work_again"
-              render={({ field }: { field: unknown }) => {
-                if (typeof field !== 'object' || field === null) return null;
-                return (
-                  <FormItem>
-                    <div className="flex items-center gap-2">
-                      <FormLabel>Would you work with {revieweeName} again?</FormLabel>
-                      <FormControl>
-                        <div className="flex items-center space-x-2">
-                          <Switch
-                            aria-label="Would work again"
-                            checked={(field as { value?: boolean }).value ?? false}
-                            onCheckedChange={(field as { onChange: (v: boolean) => void }).onChange}
-                          />
-                          <span className="text-sm text-muted-foreground">
-                            {(field as { value?: boolean }).value ? "Yes" : "No"}
-                          </span>
-                        </div>
-                      </FormControl>
-                    </div>
-                    <FormMessage />
-                  </FormItem>
-                );
-              }}
+              render={({ field, fieldState, formState }) => (
+                <FormItem>
+                  <div className="flex items-center gap-2">
+                    <FormLabel>Would you work with {revieweeName} again?</FormLabel>
+                    <FormControl>
+                      <div className="flex items-center space-x-2">
+                        <Switch
+                          aria-label="Would work again"
+                          checked={(field as { value?: boolean }).value ?? false}
+                          onCheckedChange={(field as { onChange: (v: boolean) => void }).onChange}
+                        />
+                        <span className="text-sm text-muted-foreground">
+                          {(field as { value?: boolean }).value ? "Yes" : "No"}
+                        </span>
+                      </div>
+                    </FormControl>
+                  </div>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
           </div>
         )}
@@ -305,29 +287,26 @@ export function ReviewForm({
         <FormField
           control={form.control}
           name="is_anonymous"
-          render={({ field }: { field: unknown }) => {
-            if (typeof field !== 'object' || field === null) return null;
-            return (
-              <FormItem>
-                <div className="flex items-center gap-2">
-                  <FormControl>
-                    <Switch
-                      aria-label="Submit anonymously"
-                      checked={(field as { value?: boolean }).value ?? false}
-                      onCheckedChange={(field as { onChange: (v: boolean) => void }).onChange}
-                    />
-                  </FormControl>
-                  <FormLabel className="cursor-pointer font-normal">
-                    Submit anonymously
-                  </FormLabel>
-                </div>
-                <p className="text-xs text-muted-foreground mt-1">
-                  Anonymous reviews won't display your name but will still be linked to your account.
-                </p>
-                <FormMessage />
-              </FormItem>
-            );
-          }}
+          render={({ field, fieldState, formState }) => (
+            <FormItem>
+              <div className="flex items-center gap-2">
+                <FormControl>
+                  <Switch
+                    aria-label="Submit anonymously"
+                    checked={(field as { value?: boolean }).value ?? false}
+                    onCheckedChange={(field as { onChange: (v: boolean) => void }).onChange}
+                  />
+                </FormControl>
+                <FormLabel className="cursor-pointer font-normal">
+                  Submit anonymously
+                </FormLabel>
+              </div>
+              <p className="text-xs text-muted-foreground mt-1">
+                Anonymous reviews won't display your name but will still be linked to your account.
+              </p>
+              <FormMessage />
+            </FormItem>
+          )}
         />
         
         <Button
