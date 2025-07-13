@@ -16,7 +16,7 @@ function fixReactRouterImports() {
   filesToFix.forEach(filePath => {
     try {
       if (!fs.existsSync(filePath)) {
-        console.log(`⚠️  File not found: ${filePath}`);
+        console.warn(`⚠️  File not found: ${filePath}`);
         return;
       }
 
@@ -43,9 +43,9 @@ function fixReactRouterImports() {
 
       if (hasChanges) {
         fs.writeFileSync(filePath, content);
-        console.log(`✅ Fixed: ${filePath}`);
+        console.warn(`✅ Fixed: ${filePath}`);
       } else {
-        console.log(`ℹ️  No changes needed: ${filePath}`);
+        console.warn(`ℹ️  No changes needed: ${filePath}`);
       }
     } catch (error) {
       console.error(`❌ Error fixing ${filePath}:`, error.message);
@@ -54,9 +54,9 @@ function fixReactRouterImports() {
 }
 
 if (require.main === module) {
-  console.log('🔧 Fixing remaining React Router imports...\n');
+  console.warn('🔧 Fixing remaining React Router imports...\n');
   fixReactRouterImports();
-  console.log('\n✨ Done!');
+  console.warn('\n✨ Done!');
 }
 
 module.exports = { fixReactRouterImports }; 

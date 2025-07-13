@@ -28,4 +28,4 @@ if (result.status !== 0) {
   process.exit(1);
 }
 
-console.log('\u2705 Playwright browsers installed successfully.');
+console.warn('\u2705 Playwright browsers installed successfully.');

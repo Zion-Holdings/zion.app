@@ -81,32 +81,32 @@ function findDuplicates() {
 }
 
 function main() {
-  console.log('🔍 Scanning for duplicate pages...\n');
+  console.warn('🔍 Scanning for duplicate pages...\n');
   
   const toDelete = findDuplicates();
   
   if (toDelete.length === 0) {
-    console.log('✅ No duplicate pages found!');
+    console.warn('✅ No duplicate pages found!');
     return;
   }
 
-  console.log(`📋 Found ${toDelete.length} files to delete:\n`);
+  console.warn(`📋 Found ${toDelete.length} files to delete:\n`);
   
   toDelete.forEach((item, index) => {
-    console.log(`${index + 1}. ${item.file}`);
-    console.log(`   Reason: ${item.reason}\n`);
+    console.warn(`${index + 1}. ${item.file}`);
+    console.warn(`   Reason: ${item.reason}\n`);
   });
 
   // Check if we should actually delete
   const shouldDelete = process.argv.includes('--delete');
   
   if (!shouldDelete) {
-    console.log('💡 Run with --delete flag to actually remove these files');
-    console.log('   node scripts/cleanup-duplicate-pages.js --delete');
+    console.warn('💡 Run with --delete flag to actually remove these files');
+    console.warn('   node scripts/cleanup-duplicate-pages.js --delete');
     return;
   }
 
-  console.log('🗑️  Deleting files...\n');
+  console.warn('🗑️  Deleting files...\n');
   
   let deleteCount = 0;
   let errorCount = 0;
@@ -114,21 +114,21 @@ function main() {
   for (const item of toDelete) {
     try {
       fs.unlinkSync(item.file);
-      console.log(`✅ Deleted: ${item.file}`);
+      console.warn(`✅ Deleted: ${item.file}`);
       deleteCount++;
     } catch (error) {
-      console.log(`❌ Failed to delete: ${item.file} - ${error.message}`);
+      console.warn(`❌ Failed to delete: ${item.file} - ${error.message}`);
       errorCount++;
     }
   }
 
-  console.log(`\n📊 Summary:`);
-  console.log(`   ✅ Successfully deleted: ${deleteCount} files`);
-  console.log(`   ❌ Failed to delete: ${errorCount} files`);
+  console.warn(`\n📊 Summary:`);
+  console.warn(`   ✅ Successfully deleted: ${deleteCount} files`);
+  console.warn(`   ❌ Failed to delete: ${errorCount} files`);
   
   if (deleteCount > 0) {
-    console.log('\n🎉 Duplicate pages cleanup completed!');
-    console.log('💡 You should now restart your Next.js dev server to see the changes');
+    console.warn('\n🎉 Duplicate pages cleanup completed!');
+    console.warn('💡 You should now restart your Next.js dev server to see the changes');
   }
 }
 

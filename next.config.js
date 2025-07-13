@@ -30,7 +30,7 @@ const assetPrefix = shouldUseCDN ? cdnUrl : '';
 
 // Log configuration for debugging
 if (process.env.NODE_ENV === 'development') {
-  console.log('Next.js Configuration:', {
+  console.warn('Next.js Configuration:', {
     isProd,
     isNetlify,
     isPreviewBuild,
