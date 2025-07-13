@@ -190,57 +190,57 @@ function validateEnvironment() {
   
   // Report results
   if (_errors.length > 0) {
-    console.error(chalk.red('❌ CRITICAL ERRORS - BUILD WILL FAIL:'));
-    console.error(chalk.red('================================================\n'));
+    process.stdout.write(chalk.red('❌ CRITICAL ERRORS - BUILD WILL FAIL:\n'));
+    process.stdout.write(chalk.red('================================================\n\n'));
     
     _errors.forEach(({ variable, error, description, current }) => {
-      console.error(chalk.red(`✗ ${variable}`));
-      console.error(chalk.red(`  Error: ${error}`));
-      console.error(chalk.gray(`  Description: ${description}`));
-      console.error(chalk.gray(`  Current: ${current}`));
-      console.error();
+      process.stdout.write(chalk.red(`✗ ${variable}\n`));
+      process.stdout.write(chalk.red(`  Error: ${error}\n`));
+      process.stdout.write(chalk.gray(`  Description: ${description}\n`));
+      process.stdout.write(chalk.gray(`  Current: ${current}\n`));
+      process.stdout.write('\n');
     });
     
-    console.error(chalk.red('🚨 TO FIX THESE ERRORS:'));
-    console.error(chalk.yellow('1. Check your .env.local file'));
-    console.error(chalk.yellow('2. Set up Supabase authentication'));
-    console.error(chalk.yellow('3. Add the missing variables with actual values'));
-    console.error(chalk.yellow('4. Restart your development server\n'));
+    process.stdout.write(chalk.red('🚨 TO FIX THESE ERRORS:\n'));
+    process.stdout.write(chalk.yellow('1. Check your .env.local file\n'));
+    process.stdout.write(chalk.yellow('2. Set up Supabase authentication\n'));
+    process.stdout.write(chalk.yellow('3. Add the missing variables with actual values\n'));
+    process.stdout.write(chalk.yellow('4. Restart your development server\n\n'));
     
     // Don't exit here - let the pre-build check handle it
   }
   
   if (_warnings.length > 0) {
-    console.warn(chalk.yellow('⚠️  WARNINGS:'));
-    console.warn(chalk.yellow('=============\n'));
+    process.stdout.write(chalk.yellow('⚠️  WARNINGS:\n'));
+    process.stdout.write(chalk.yellow('=============\n\n'));
     
     _warnings.forEach(({ variable, warning, current }) => {
-      console.warn(chalk.yellow(`! ${variable}: ${warning}`));
-      console.warn(chalk.gray(`  Current: ${current}\n`));
+      process.stdout.write(chalk.yellow(`! ${variable}: ${warning}\n`));
+      process.stdout.write(chalk.gray(`  Current: ${current}\n\n`));
     });
   }
   
   if (_suggestions.length > 0 && !isLocalDev) {
-    console.warn(chalk.cyan('💡 RECOMMENDATIONS:'));
-    console.warn(chalk.cyan('===================\n'));
+    process.stdout.write(chalk.cyan('💡 RECOMMENDATIONS:\n'));
+    process.stdout.write(chalk.cyan('===================\n\n'));
     
     _suggestions.slice(0, 5).forEach(({ variable, description, current }) => {
-      console.warn(chalk.cyan(`• ${variable}`));
-      console.warn(chalk.gray(`  ${description}`));
-      console.warn(chalk.gray(`  Current: ${current}\n`));
+      process.stdout.write(chalk.cyan(`• ${variable}\n`));
+      process.stdout.write(chalk.gray(`  ${description}\n`));
+      process.stdout.write(chalk.gray(`  Current: ${current}\n\n`));
     });
     
     if (_suggestions.length > 5) {
-      console.warn(chalk.gray(`... and ${_suggestions.length - 5} more optional variables\n`));
+      process.stdout.write(chalk.gray(`... and ${_suggestions.length - 5} more optional variables\n\n`));
     }
   }
   
   if (_errors.length === 0) {
-    console.log(chalk.green('✅ Environment validation passed!'));
+    process.stdout.write(chalk.green('✅ Environment validation passed!\n'));
     if (isLocalDev) {
-      console.log(chalk.green('Ready for local development.\n'));
+      process.stdout.write(chalk.green('Ready for local development.\n\n'));
     } else {
-      console.log(chalk.green('All critical environment variables are properly configured.\n'));
+      process.stdout.write(chalk.green('All critical environment variables are properly configured.\n\n'));
     }
   }
   
@@ -297,7 +297,7 @@ After setting up, you can verify by visiting:
 
   const guidePath = path.join(__dirname, '..', 'NETLIFY_ENVIRONMENT_SETUP.md');
   fs.writeFileSync(guidePath, guide.trim());
-  console.log(chalk.green(`📋 Setup guide generated: ${guidePath}`));
+  process.stdout.write(chalk.green(`📋 Setup guide generated: ${guidePath}\n`));
 }
 
 // Run validation
@@ -307,7 +307,7 @@ if (require.main === module) {
   // Only exit with error if there are actual critical errors
   if (!result.isValid) {
     if (isNetlifyBuild) {
-      console.warn('⚠️  Environment validation failed, continuing Netlify build.');
+      process.stdout.write(chalk.yellow('⚠️  Environment validation failed, continuing Netlify build.\n'));
     } else {
       process.exit(1);
     }

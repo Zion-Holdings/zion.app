@@ -12,7 +12,7 @@ const BASE_URL = 'http://localhost:3000';
 const getTestCases = () => {
   // Only run in development mode
   if (process.env.NODE_ENV !== 'development') {
-    console.log('❌ This script only runs in development mode for security');
+    process.stdout.write('❌ This script only runs in development mode for security\n');
     return [];
   }
 
@@ -68,8 +68,8 @@ const getTestCases = () => {
 
   // Add fallback test cases if no environment users are configured
   if (testCases.length === 0) {
-    console.log('⚠️  No development users configured in environment variables');
-    console.log('💡 Using fallback test cases with generic credentials');
+    process.stdout.write('⚠️  No development users configured in environment variables\n');
+    process.stdout.write('💡 Using fallback test cases with generic credentials\n');
     
     testCases.push(
       {
@@ -137,59 +137,59 @@ async function makeLoginRequest(email, password) {
 }
 
 async function runTest(testCase) {
-  console.log(`\n🧪 Running: ${testCase.name}`);
-  console.log(`📝 Description: ${testCase.description}`);
-  console.log(`📧 Email: ${testCase.email || 'empty'}`);
-  console.log(`🔑 Password: ${testCase.password ? '[SET]' : 'empty'}`);
-  console.log(`🎯 Expected Status: ${testCase.expectedStatus}`);
+  process.stdout.write(`\n🧪 Running: ${testCase.name}\n`);
+  process.stdout.write(`📝 Description: ${testCase.description}\n`);
+  process.stdout.write(`📧 Email: ${testCase.email || 'empty'}\n`);
+  process.stdout.write(`🔑 Password: ${testCase.password ? '[SET]' : 'empty'}\n`);
+  process.stdout.write(`🎯 Expected Status: ${testCase.expectedStatus}\n`);
 
   const result = await makeLoginRequest(testCase.email, testCase.password);
 
-  console.log(`📊 Actual Status: ${result.status}`);
+  process.stdout.write(`📊 Actual Status: ${result.status}\n`);
   
   if (result.status === testCase.expectedStatus) {
-    console.log(`✅ Test PASSED`);
+    process.stdout.write(`✅ Test PASSED\n`);
   } else {
-    console.log(`❌ Test FAILED`);
+    process.stdout.write(`❌ Test FAILED\n`);
   }
 
   if (result.data.message) {
-    console.log(`💬 Message: ${result.data.message}`);
+    process.stdout.write(`💬 Message: ${result.data.message}\n`);
   }
 
   if (result.data.error) {
-    console.log(`⚠️  Error: ${result.data.error}`);
+    process.stdout.write(`⚠️  Error: ${result.data.error}\n`);
   }
 
   if (result.success && result.data.user) {
-    console.log(`👤 User: ${result.data.user.email}`);
+    process.stdout.write(`👤 User: ${result.data.user.email}\n`);
   }
 
   return result.status === testCase.expectedStatus;
 }
 
 async function runAllTests() {
-  console.log('🔐 SECURITY: Login Tracing Test Suite');
-  console.log('=====================================\n');
+  process.stdout.write('🔐 SECURITY: Login Tracing Test Suite\n');
+  process.stdout.write('=====================================\n\n');
 
   // Security check
   if (process.env.NODE_ENV !== 'development') {
-    console.log('❌ This script only runs in development mode for security');
+    process.stdout.write('❌ This script only runs in development mode for security\n');
     return;
   }
 
-  console.log('🔒 Environment Security Check:');
-  console.log(`📋 NODE_ENV: ${process.env.NODE_ENV}`);
-  console.log(`📋 Development mode: ${process.env.NODE_ENV === 'development'}`);
+  process.stdout.write('🔒 Environment Security Check:\n');
+  process.stdout.write(`📋 NODE_ENV: ${process.env.NODE_ENV}\n`);
+  process.stdout.write(`📋 Development mode: ${process.env.NODE_ENV === 'development'}\n`);
 
   const testCases = getTestCases();
 
   if (testCases.length === 0) {
-    console.log('❌ No test cases configured. Please check your environment variables.');
+    process.stdout.write('❌ No test cases configured. Please check your environment variables.\n');
     return;
   }
 
-  console.log(`\n📊 Running ${testCases.length} test cases...\n`);
+  process.stdout.write(`\n📊 Running ${testCases.length} test cases...\n\n`);
 
   let passed = 0;
   let failed = 0;
@@ -203,22 +203,22 @@ async function runAllTests() {
     }
   }
 
-  console.log('\n🏁 Test Results:');
-  console.log(`✅ Passed: ${passed}`);
-  console.log(`❌ Failed: ${failed}`);
-  console.log(`📊 Total: ${testCases.length}`);
+  process.stdout.write('\n🏁 Test Results:\n');
+  process.stdout.write(`✅ Passed: ${passed}\n`);
+  process.stdout.write(`❌ Failed: ${failed}\n`);
+  process.stdout.write(`📊 Total: ${testCases.length}\n`);
 
   if (failed === 0) {
-    console.log('\n🎉 All tests passed! Login functionality is working correctly.');
+    process.stdout.write('\n🎉 All tests passed! Login functionality is working correctly.\n');
   } else {
-    console.log('\n⚠️  Some tests failed. Please check the server logs and configuration.');
+    process.stdout.write('\n⚠️  Some tests failed. Please check the server logs and configuration.\n');
   }
 
-  console.log('\n💡 Tips:');
-  console.log('- Make sure your .env.local file has DEV_USER_* variables configured');
-  console.log('- Check that your development server is running on http://localhost:3000');
-  console.log('- Look at the server console for detailed login traces');
-  console.log('- Verify your Supabase configuration if using production authentication');
+  process.stdout.write('\n💡 Tips:\n');
+  process.stdout.write('- Make sure your .env.local file has DEV_USER_* variables configured\n');
+  process.stdout.write('- Check that your development server is running on http://localhost:3000\n');
+  process.stdout.write('- Look at the server console for detailed login traces\n');
+  process.stdout.write('- Verify your Supabase configuration if using production authentication\n');
 }
 
 if (require.main === module) {
