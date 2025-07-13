@@ -251,7 +251,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
           if (typeof ethers === 'object' && ethers !== null && 'BrowserProvider' in ethers && typeof (ethers as typeof import('ethers')).BrowserProvider === 'function') {
             const EthersBrowserProvider = (ethers as typeof import('ethers')).BrowserProvider;
             const ethersProvider = new EthersBrowserProvider(
-              currentProvider as any
+              currentProvider as unknown as Eip1193ProviderWithEvents
             );
             const ethersSigner = await ethersProvider.getSigner();
             setWallet(prev => ({
