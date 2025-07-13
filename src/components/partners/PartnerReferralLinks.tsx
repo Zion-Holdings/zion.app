@@ -14,7 +14,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export function PartnerReferralLinks() {
-  const { getReferralLink, copyReferralLink, shareOnSocialMedia } = useReferrals();
+  const { getReferralLink, copyReferralLink: _copyReferralLink, shareOnSocialMedia: _shareOnSocialMedia } = useReferrals();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [selectedCampaign, setSelectedCampaign] = useState<string>("default");
   const [customParam, setCustomParam] = useState<string>("");
