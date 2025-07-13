@@ -53,7 +53,7 @@ export function ZionGPTModelManager() {
         purpose: model.purpose as string,
         active: model.active as boolean,
         trainingStatus: model.training_status as 'queued' | 'running' | 'succeeded' | 'failed',
-        errorMessage: model.error_message as string | undefined
+        errorMessage: (model.error_message as string) ?? ''
       })));
     } catch (error) {
       logErrorToProduction('Error fetching models:', { data: error });
