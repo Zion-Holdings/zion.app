@@ -283,12 +283,12 @@ function ensureSingleInstance() {
       try {
         // Check if process is still running
         process.kill(existingPid, 0);
-        console.log(`Another watchdog instance is already running (PID: ${existingPid}). Exiting.`);
+        console.warn(`Another watchdog instance is already running (PID: ${existingPid}). Exiting.`);
         process.exit(0);
       } catch (err) {
         // Process not found, remove stale PID file
         fs.unlinkSync(WATCHDOG_PID_FILE);
-        console.log('Removed stale PID file.');
+        console.warn('Removed stale PID file.');
       }
     }
     
@@ -307,12 +307,12 @@ function ensureSingleInstance() {
     });
     
     process.on('SIGINT', () => {
-      console.log('\nReceived SIGINT. Shutting down watchdog gracefully...');
+      console.warn('\nReceived SIGINT. Shutting down watchdog gracefully...');
       process.exit(0);
     });
     
     process.on('SIGTERM', () => {
-      console.log('\nReceived SIGTERM. Shutting down watchdog gracefully...');
+      console.warn('\nReceived SIGTERM. Shutting down watchdog gracefully...');
       process.exit(0);
     });
   } catch (err) {
@@ -378,7 +378,7 @@ function triggerSelfHeal(reason) {
   // Check if already healing
   if (isHealing) {
     const message = `Self-heal action already in progress. Skipping trigger for: ${reason}`;
-    console.log(message);
+    console.warn(message);
     appendToSelfHealLog(`[${new Date().toISOString()}] ${message}\n`);
     return;
   }
@@ -387,7 +387,7 @@ function triggerSelfHeal(reason) {
   if (currentTime - lastSelfHealTime < SELF_HEAL_COOLDOWN) {
     const remainingCooldown = Math.ceil((SELF_HEAL_COOLDOWN - (currentTime - lastSelfHealTime)) / 1000);
     const message = `Self-heal cooldown active. ${remainingCooldown}s remaining. Skipping trigger for: ${reason}`;
-    console.log(message);
+    console.warn(message);
     appendToSelfHealLog(`[${new Date().toISOString()}] ${message}\n`);
     return;
   }
@@ -397,7 +397,7 @@ function triggerSelfHeal(reason) {
   
   const timestamp = new Date().toISOString();
   const logMessage = `Triggering self-heal due to: ${reason}`;
-  console.log(logMessage);
+  console.warn(logMessage);
   appendToSelfHealLog(`[${timestamp}] ${logMessage}\n`);
 
   // Send Discord Alert if configured
@@ -409,7 +409,7 @@ function triggerSelfHeal(reason) {
   }
 
   const healCmdLog = `Executing self-heal command: ${_HEAL_COMMAND}`;
-  console.log(healCmdLog);
+  console.warn(healCmdLog);
   appendToSelfHealLog(`[${timestamp}] ${healCmdLog}\n`);
 
   // Execute the self-heal command with timeout
@@ -427,17 +427,17 @@ function triggerSelfHeal(reason) {
     }
     
     if (stderr && stderr.trim()) {
-      console.log(`Self-heal command stderr: ${stderr}`);
+      console.warn(`Self-heal command stderr: ${stderr}`);
       appendToSelfHealLog(`[${executionTimestamp}] Self-heal command stderr: ${stderr}\n`);
     }
     
     if (stdout && stdout.trim()) {
-      console.log(`Self-heal command stdout: ${stdout}`);
+      console.warn(`Self-heal command stdout: ${stdout}`);
       appendToSelfHealLog(`[${executionTimestamp}] Self-heal command stdout: ${stdout}\n`);
     }
 
     const completionMessage = error ? 'Self-heal action completed with errors. Resetting streaks.' : 'Self-heal action completed successfully. Resetting streaks.';
-    console.log(completionMessage);
+    console.warn(completionMessage);
     appendToSelfHealLog(`[${executionTimestamp}] ${completionMessage}\n`);
 
     // Trigger Codex automation for additional healing steps
@@ -476,12 +476,12 @@ function monitorSystemResources() {
     
     // Only log memory usage if it's concerning (above 85%)
     if (currentMemoryUsage > 0.85) {
-      console.log(`Current memory usage: ${(currentMemoryUsage * 100).toFixed(2)}%`);
+      console.warn(`Current memory usage: ${(currentMemoryUsage * 100).toFixed(2)}%`);
     }
     
     if (currentMemoryUsage > MEMORY_THRESHOLD) {
       const message = `High memory usage detected: ${(currentMemoryUsage * 100).toFixed(2)}% (Threshold: ${MEMORY_THRESHOLD * 100}%)`;
-      console.log(message);
+      console.warn(message);
       appendToSelfHealLog(`[${new Date().toISOString()}] ${message}\n`);
       triggerSelfHeal(message);
     }
@@ -491,18 +491,18 @@ function monitorSystemResources() {
   os.cpuUsage(cpuUsagePercent => {
     // Only log CPU usage if it's concerning (above 85%)
     if (cpuUsagePercent > 0.85) {
-      console.log(`Current CPU usage: ${(cpuUsagePercent * 100).toFixed(2)}%`);
+      console.warn(`Current CPU usage: ${(cpuUsagePercent * 100).toFixed(2)}%`);
     }
     
     if (cpuUsagePercent > CPU_THRESHOLD) {
       highCpuUsageCount++;
       const message = `High CPU usage detected: ${(cpuUsagePercent * 100).toFixed(2)}% (Threshold: ${CPU_THRESHOLD * 100}%). Count: ${highCpuUsageCount}/${CPU_SUSTAINED_CHECKS}`;
-      console.log(message);
+      console.warn(message);
       appendToSelfHealLog(`[${new Date().toISOString()}] ${message}\n`);
       
       if (highCpuUsageCount >= CPU_SUSTAINED_CHECKS) {
         const triggerMessage = `Sustained high CPU usage for ${CPU_SUSTAINED_CHECKS} checks. Current: ${(cpuUsagePercent * 100).toFixed(2)}%`;
-        console.log(triggerMessage);
+        console.warn(triggerMessage);
         appendToSelfHealLog(`[${new Date().toISOString()}] ${triggerMessage}\n`);
         triggerSelfHeal(triggerMessage);
         // highCpuUsageCount is reset inside triggerSelfHeal
@@ -510,7 +510,7 @@ function monitorSystemResources() {
     } else {
       if (highCpuUsageCount > 0) {
         const resetMessage = `CPU usage back to normal (${(cpuUsagePercent * 100).toFixed(2)}%). Resetting high CPU usage count. Was: ${highCpuUsageCount}`;
-        console.log(resetMessage);
+        console.warn(resetMessage);
         appendToSelfHealLog(`[${new Date().toISOString()}] ${resetMessage}\n`);
         highCpuUsageCount = 0; // Reset if CPU usage is below threshold
       }
@@ -525,20 +525,19 @@ function startMonitoring() {
   if (process.env.NODE_ENV === 'test') {
     // This check provides an additional layer of safety, though the primary guard
     // is in the `if (require.main === module ...)` block below.
-    console.log('Test environment detected, skipping startMonitoring() content.');
+    console.warn('Test environment detected, skipping startMonitoring() content.');
     return;
   }
 
   // Ensure only one instance runs
   ensureSingleInstance();
 
-  console.log('Watchdog script started. Monitoring log files...');
-  appendToSelfHealLog(
-    `[${new Date().toISOString()}] Watchdog script started. PID: ${process.pid}, Logs directory: ${BASE_LOG_PATH}\n`
+  console.warn(
+    `Watchdog script started. PID: ${process.pid}, Logs directory: ${BASE_LOG_PATH}\n`
   );
 
   // Log configuration
-  console.log(`Configuration:
+  console.warn(`Configuration:
   - Memory Threshold: ${MEMORY_THRESHOLD * 100}%
   - CPU Threshold: ${CPU_THRESHOLD * 100}%
   - CPU Sustained Checks: ${CPU_SUSTAINED_CHECKS}
@@ -554,12 +553,12 @@ function startMonitoring() {
       perfTail.on('line', function(data) {
         if (_PERF_ERROR_REGEX.test(data)) {
           _perfErrorStreak++;
-          console.log(`Performance error detected. Streak: ${_perfErrorStreak}`);
+          console.warn(`Performance error detected. Streak: ${_perfErrorStreak}`);
           if (_perfErrorStreak >= 3) {
             triggerSelfHeal('3 consecutive performance errors');
           }
         } else if (_perfErrorStreak > 0) {
-          console.log('Performance log normal. Resetting streak.');
+          console.warn('Performance log normal. Resetting streak.');
           _perfErrorStreak = 0;
         }
       });
@@ -568,7 +567,7 @@ function startMonitoring() {
         appendToSelfHealLog(`[${new Date().toISOString()}] Error tailing performance log file ${PERF_LOG_FILE}: ${error.message}\n`);
       });
       perfTail.watch();
-      console.log(`Watching performance log: ${PERF_LOG_FILE}`);
+      console.warn(`Watching performance log: ${PERF_LOG_FILE}`);
     } catch (e) {
       logErrorToProduction(`Failed to initialize tail for performance log: ${PERF_LOG_FILE}`, e);
       appendToSelfHealLog(`[${new Date().toISOString()}] Failed to initialize tail for ${PERF_LOG_FILE}: ${e.message}\n`);
@@ -586,12 +585,12 @@ function startMonitoring() {
       securityTail.on('line', function(data) {
         if (_SECURITY_PATCH_REGEX.test(data)) {
           _securityPatchStreak++;
-          console.log(`Security patch detected. Streak: ${_securityPatchStreak}`);
+          console.warn(`Security patch detected. Streak: ${_securityPatchStreak}`);
           if (_securityPatchStreak >= 3) {
             triggerSelfHeal('3 consecutive security patches');
           }
         } else if (_securityPatchStreak > 0) {
-          console.log('Security log normal. Resetting streak.');
+          console.warn('Security log normal. Resetting streak.');
           _securityPatchStreak = 0;
         }
       });
@@ -600,7 +599,7 @@ function startMonitoring() {
         appendToSelfHealLog(`[${new Date().toISOString()}] Error tailing security log file ${SECURITY_LOG_FILE}: ${error.message}\n`);
       });
       securityTail.watch();
-      console.log(`Watching security log: ${SECURITY_LOG_FILE}`);
+      console.warn(`Watching security log: ${SECURITY_LOG_FILE}`);
     } catch (e) {
       logErrorToProduction(`Failed to initialize tail for security log: ${SECURITY_LOG_FILE}`, e);
       appendToSelfHealLog(`[${new Date().toISOString()}] Failed to initialize tail for ${SECURITY_LOG_FILE}: ${e.message}\n`);
@@ -612,7 +611,7 @@ function startMonitoring() {
   }
 
   // Initialize System Resource Monitoring
-  console.log(`Initializing system resource monitoring. Check interval: ${SYSTEM_CHECK_INTERVAL / 1000} seconds.`);
+  console.warn(`Initializing system resource monitoring. Check interval: ${SYSTEM_CHECK_INTERVAL / 1000} seconds.`);
   appendToSelfHealLog(`[${new Date().toISOString()}] Initializing system resource monitoring. Memory Threshold: ${MEMORY_THRESHOLD * 100}%, CPU Threshold: ${CPU_THRESHOLD * 100}% for ${CPU_SUSTAINED_CHECKS} checks.\n`);
   setInterval(monitorSystemResources, SYSTEM_CHECK_INTERVAL);
   
