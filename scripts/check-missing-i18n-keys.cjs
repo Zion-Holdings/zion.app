@@ -35,11 +35,11 @@ for (const [file, keys] of Object.entries(localeKeys)) {
   const missingKeys = [...allKeys].filter(k => !keys.has(k));
   if (missingKeys.length) {
     missing = true;
-    console.log(`\nMissing keys in ${file}:`);
+    // console.log(`\nMissing keys in ${file}:`);
     missingKeys.forEach(k => console.log('- ' + k));
   }
 }
 
 if (!missing) {
-  console.log('All locales contain the same keys.');
+  // console.log('All locales contain the same keys.');
 }
