@@ -1,3 +1,4 @@
+// LINTER_FORCE_REFRESH: Dummy comment to force linter re-parse
 #!/usr/bin/env node
 
 // React 19 Bundle Analysis Tool
@@ -135,5 +136,3 @@ console.warn('  1. Review optimization opportunities above');
 console.warn('  2. Implement startTransition for heavy operations');
 console.warn('  3. Use React 19 concurrent features');
 console.warn('  4. Monitor performance improvements\n');
-
-// LINTER_FORCE_REFRESH: Dummy line to force linter re-parse
