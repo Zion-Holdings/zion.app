@@ -20,11 +20,11 @@ const handleApiResponse = async (res: Response) => {
     // Read response body once and attempt to parse JSON
     const raw = await res.text();
     try {
-      (error as any).info = JSON.parse(raw);
+      (error as unknown as { info?: unknown }).info = JSON.parse(raw);
     } catch {
-      (error as any).info = { message: raw };
+      (error as unknown as { info?: unknown }).info = { message: raw };
     }
-    (error as any).status = res.status;
+    (error as unknown as { status?: number }).status = res.status;
     throw error;
   }
   return res.json();

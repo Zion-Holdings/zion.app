@@ -28,7 +28,7 @@ describe('LoginForm fetch', () => {
       ok: true,
       status: 200,
       json: async () => ({ token: 'jwt' })
-    }) as any;
+    }) as unknown;
 
     render(
       <MemoryRouter>

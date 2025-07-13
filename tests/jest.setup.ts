@@ -39,7 +39,7 @@ expect.extend(toHaveNoViolations);
 
 // Ensure global window exists for Node test environments
 if (typeof global.window === 'undefined') {
-  global.window = {} as any;
+  global.window = {} as unknown;
 }
 
 // Mock window.matchMedia for Jest
@@ -199,7 +199,7 @@ jest.mock('firebase/storage', () => ({
 
 // Mock axios
 jest.mock('axios', () => {
-  const axiosMock: any = {
+  const axiosMock: Record<string, unknown> = {
     defaults: { baseURL: 'http://localhost' },
     interceptors: {
       request: { use: jest.fn(), eject: jest.fn(), clear: jest.fn() },
@@ -251,7 +251,7 @@ if (typeof window.scrollTo === 'undefined') {
 
 // Mock axios.create to return axios itself
 import axios from 'axios';
-(axios as any).create = jest.fn(() => axios);
+(axios as unknown).create = jest.fn(() => axios);
 
 // -----------------------------
 // Vitest Compatibility Layer for Jest
@@ -312,7 +312,7 @@ jest.mock('@/context/auth/AuthProvider', () => {
     signUp: jest.fn(),
   });
 
-  const AuthProvider = ({ children }: any) => children;
+  const AuthProvider = ({ children }: { children: React.ReactNode }) => children;
 
   return {
     __esModule: true,
@@ -328,7 +328,7 @@ jest.mock('@/context/AnalyticsContext', () => {
     trackEvent: jest.fn(),
     trackPageView: jest.fn(),
   });
-  const AnalyticsProvider = ({ children }: any) => children;
+  const AnalyticsProvider = ({ children }: { children: React.ReactNode }) => children;
   return {
     __esModule: true,
     AnalyticsProvider,
@@ -343,7 +343,7 @@ jest.mock('@/context/WhitelabelContext', () => {
     brand: 'default',
     theme: 'light',
   });
-  const WhitelabelProvider = ({ children }: any) => children;
+  const WhitelabelProvider = ({ children }: { children: React.ReactNode }) => children;
   return {
     __esModule: true,
     WhitelabelProvider,
@@ -357,7 +357,7 @@ jest.mock('@/context/FeedbackContext', () => {
   const useFeedback = () => ({
     open: jest.fn(),
   });
-  const FeedbackProvider = ({ children }: any) => children;
+  const FeedbackProvider = ({ children }: { children: React.ReactNode }) => children;
   return {
     __esModule: true,
     FeedbackProvider,
@@ -374,7 +374,7 @@ jest.mock('react-redux', () => {
     ...actualRedux,
     useDispatch: () => jest.fn(),
     // Provide predictable data for selectors so components don't explode
-    useSelector: jest.fn((selector: any) => {
+    useSelector: jest.fn((selector: unknown) => {
       const mockState = {
         cart: { items: [] },
         wishlist: { items: [] },
@@ -415,11 +415,11 @@ if (typeof window.IntersectionObserver === 'undefined') {
 // Ensure all code paths use the mock implementation
 // Some services import the global fetch reference before jest-fetch-mock is enabled.
 // Override it explicitly so those modules receive the mocked version.
-(global as any).fetch = fetchMock;
+(global as unknown).fetch = fetchMock;
 
 // Polyfill performance.getEntriesByType for JSDOM (used in productionLogger)
 if (typeof performance.getEntriesByType !== 'function') {
-  (performance as any).getEntriesByType = () => [];
+  (performance as unknown as Record<string, unknown>).getEntriesByType = () => [];
 }
 
 jest.mock('@supabase/ssr', () => ({
@@ -449,7 +449,7 @@ jest.mock('@/context', () => {
   // @ts-expect-error vi is added by the vitest mock above - TypeScript doesn't see the mock declaration
 if (global.vi && !global.vi.restoreAllMocks) {
   // @ts-expect-error global.vi property extension - TypeScript doesn't expect vitest globals in Jest environment
-  (global.vi as any).restoreAllMocks = jest.restoreAllMocks;
+  (global.vi as unknown as Record<string, unknown>).restoreAllMocks = jest.restoreAllMocks;
 }
 
 // Mock @supabase/ssr createBrowserClient so components don't crash in tests
@@ -473,7 +473,7 @@ jest.mock('msw/node', () => ({ setupServer: () => ({ listen: jest.fn(), resetHan
 jest.mock('@/components/talent/FilterSidebar', () => ({ FilterSidebar: () => null }));
 
 // Extend Vitest shim with timer helpers if not present
-const g: any = global as any;
+const g: Record<string, unknown> = global as Record<string, unknown>;
 if (g.vi) {
   if (!g.vi.useFakeTimers) g.vi.useFakeTimers = jest.useFakeTimers.bind(jest);
   if (!g.vi.runAllTimers) g.vi.runAllTimers = jest.runAllTimers.bind(jest);
@@ -505,7 +505,7 @@ jest.mock('react-i18next', () => {
 jest.mock('next/link', () => {
   const React = require('react');
   const forwardRef = React.forwardRef;
-  const LinkMock = ({ href, children, ...rest }: any, ref: any) => {
+  const LinkMock = ({ href, children, ...rest }: { href: string; children: React.ReactNode; rest?: Record<string, unknown> }, ref: React.Ref<unknown>) => {
     return React.createElement('a', { href, ref, ...rest }, children);
   };
   return { __esModule: true, default: forwardRef(LinkMock) };
@@ -590,7 +590,7 @@ jest.mock('axios-retry', () => {
   };
 });
 
-jest.mock('@ungap/structured-clone', () => ({ __esModule: true, default: (val: any) => JSON.parse(JSON.stringify(val)) }));
+jest.mock('@ungap/structured-clone', () => ({ __esModule: true, default: (val: unknown) => JSON.parse(JSON.stringify(val)) }));
 
 // ---------------------------------------------------------------------------
 // Global mocks for common libraries

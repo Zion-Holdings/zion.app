@@ -3,7 +3,7 @@ import { sinon } from "https://deno.land/x/sinon@v.1.13.0/mod.ts";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
 // --- Global Mocks & Setup ---
-let mockSupabaseClientSuggestions: any;
+let mockSupabaseClientSuggestions: unknown;
 const mockInvokeSuggestions = sinon.stub();
 
 // @ts-expect-error: Deno test global setup for testing environment
@@ -19,7 +19,7 @@ globalThis.Deno.env = {
 
 const originalCreateClientSuggestions = createClient;
 // @ts-expect-error: Assigning to read-only property for test mocking
-globalThis.createClient = (_url: string, _key: string, _options?: any) => {
+globalThis.createClient = (_url: string, _key: string, _options?: unknown) => {
     mockSupabaseClientSuggestions = {
         functions: { invoke: mockInvokeSuggestions }
     };
@@ -40,7 +40,7 @@ async function getSectionSuggestionsHandler(req: Request): Promise<Response> {
     const internalSupabaseClient = originalCreateClientSuggestions(Deno.env.get('SUPABASE_URL')!, Deno.env.get('SUPABASE_ANON_KEY')!, {
         global: { headers: { Authorization: req.headers.get('Authorization')! } }
     });
-    (internalSupabaseClient.functions as any).invoke = mockInvokeSuggestions;
+    (internalSupabaseClient.functions as unknown).invoke = mockInvokeSuggestions;
 
 
     const { data: gptData, error: gptError } = await internalSupabaseClient.functions.invoke("zion-gpt", {

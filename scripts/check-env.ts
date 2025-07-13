@@ -3,7 +3,11 @@ import { validateProductionEnvironment } from '../src/utils/environmentConfig';
 try {
   validateProductionEnvironment();
   console.log('✅ Environment configuration looks good.');
-} catch (err: any) {
+} catch (err: unknown) {
   console.warn('⚠️  Environment validation warning:');
-  console.warn(err.message);
+  if (err instanceof Error) {
+    console.warn(err.message);
+  } else {
+    console.warn('An unknown error occurred.');
+  }
 }

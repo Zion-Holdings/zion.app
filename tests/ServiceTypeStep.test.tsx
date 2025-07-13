@@ -24,7 +24,7 @@ it('shows results when searching services', async () => {
     json: async () => [
       { id: 'service-3', title: 'IT Consulting', category: 'service' },
     ],
-  }) as any;
+  }) as unknown;
 
   render(<ServiceTypeStep formData={data} updateFormData={updateFormData} />);
 
@@ -49,7 +49,7 @@ it('renders results from api', async () => {
       { id: 's2', title: 'B', category: 'service' },
       { id: 's3', title: 'C', category: 'service' },
     ],
-  }) as any;
+  }) as unknown;
 
   render(<ServiceTypeStep formData={data} updateFormData={updateFormData} />);
 
@@ -76,7 +76,7 @@ it('hides skeleton once services load', async () => {
             ],
           });
       })
-  ) as any;
+  ) as unknown;
 
   render(<ServiceTypeStep formData={data} updateFormData={updateFormData} />);
 

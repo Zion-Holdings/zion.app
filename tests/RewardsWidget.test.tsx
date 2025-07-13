@@ -6,7 +6,7 @@ import * as auth from '@/hooks/useAuth';
 
 describe('RewardsWidget', () => {
   it('opens rewards summary when authenticated', () => {
-    jest.spyOn(auth, 'useAuth').mockReturnValue({ user: { id: '1', points: 150 } } as any); // Changed vi.spyOn to jest.spyOn
+    jest.spyOn(auth, 'useAuth').mockReturnValue({ user: { id: '1', points: 150 } } as unknown); // Changed vi.spyOn to jest.spyOn
 
     render(
       <MemoryRouter>
@@ -21,7 +21,7 @@ describe('RewardsWidget', () => {
   });
 
   it('shows login modal when not authenticated', () => {
-    jest.spyOn(auth, 'useAuth').mockReturnValue({ user: null } as any); // Changed vi.spyOn to jest.spyOn
+    jest.spyOn(auth, 'useAuth').mockReturnValue({ user: null } as unknown); // Changed vi.spyOn to jest.spyOn
 
     render(
       <MemoryRouter>

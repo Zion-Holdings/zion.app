@@ -16,7 +16,7 @@ it('category "services" renders list length >0', async () => {
         { id: '1', title: 'Sample Service', description: 'd', category: 'Services', createdAt: '2020-01-01' },
       ],
     }),
-  }) as any;
+  }) as unknown;
 
   render(
     <MemoryRouter initialEntries={['/category/services']}>

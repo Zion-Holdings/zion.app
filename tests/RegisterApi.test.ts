@@ -7,12 +7,12 @@ jest.mock('@supabase/supabase-js', () => ({
   })),
 }));
 
-function mockReq(body: any) {
-  return { method: 'POST', body } as any;
+function mockReq(body: unknown) {
+  return { method: 'POST', body } as unknown;
 }
 
 function mockRes() {
-  const res: any = {};
+  const res: Record<string, unknown> = {};
   res.status = jest.fn().mockReturnValue(res);
   res.json = jest.fn().mockReturnValue(res);
   res.setHeader = jest.fn();

@@ -28,7 +28,7 @@ describe('Services navigation links', () => {
     );
 
     fireEvent.click(screen.getByLabelText('Services'));
-    expect(navigateMock).toHaveBeenCalledWith('/services', expect.any(Object));
+    expect(navigateMock).toHaveBeenCalledWith('/services', expect.objectContaining({}));
   });
 
   test('Explore Services button navigates to /services', () => {
@@ -41,6 +41,6 @@ describe('Services navigation links', () => {
     fireEvent.click(
       screen.getByRole('link', { name: /explore services marketplace/i })
     );
-    expect(navigateMock).toHaveBeenCalledWith('/services', expect.any(Object));
+    expect(navigateMock).toHaveBeenCalledWith('/services', expect.objectContaining({}));
   });
 });

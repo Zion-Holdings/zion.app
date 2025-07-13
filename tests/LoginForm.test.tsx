@@ -14,7 +14,7 @@ vi.mock('@/services/authService');
 vi.mock('react-router-dom', async () => {
   const actual = (await vi.importActual<typeof import('react-router-dom')>(
     'react-router-dom'
-  )) as any;
+  )) as unknown;
   return {
     ...actual,
     useNavigate: vi.fn(),

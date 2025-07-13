@@ -4,7 +4,7 @@ import NavLink from '@/components/NavLink'
 
 vi.mock('next/link', () => {
   return {
-    default: ({ href, children, ...props }: any) => (
+    default: ({ href, children, ...props }: unknown) => (
       <a href={href} {...props}>{children}</a>
     ),
   }
