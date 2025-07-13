@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Checkbox } from '@/components/ui/checkbox';
 import { cn } from '@/lib/utils';
 import { CheckCircle, AlertCircle, Eye, EyeOff } from 'lucide-react';
+import type { Control, FieldValues } from 'react-hook-form';
 
 
 
@@ -261,8 +262,8 @@ export function ValidatedFormField({
   function errorToString(error: unknown): string {
     if (!error) return '';
     if (typeof error === 'string') return error;
-    if (typeof error === 'object' && error !== null && 'message' in error && typeof (error as any).message === 'string') {
-      return (error as any).message;
+    if (typeof error === 'object' && error !== null && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+      return (error as { message: string }).message;
     }
     return '';
   }
@@ -270,7 +271,7 @@ export function ValidatedFormField({
   if (type === 'checkbox') {
     return (
       <FormField
-        control={isReactHookForm(form) ? (form.control as any) : undefined}
+        control={isReactHookForm(form) ? (form.control as Control<FieldValues>) : undefined}
         name={name}
         render={() => (
           <FormItem className="flex flex-row items-start space-x-3 space-y-0">
@@ -297,7 +298,7 @@ export function ValidatedFormField({
 
   return (
     <FormField
-      control={isReactHookForm(form) ? (form.control as any) : undefined}
+      control={isReactHookForm(form) ? (form.control as Control<FieldValues>) : undefined}
       name={name}
       render={() => (
         <FormItem>
