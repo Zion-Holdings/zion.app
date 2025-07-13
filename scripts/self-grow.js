@@ -46,11 +46,11 @@ async function generateIdeas(feedback) {
 async function run() {
   const feedback = await loadFeedback();
   if (feedback.length === 0) {
-    console.log('No feedback data found.');
+    console.warn('No feedback data found.');
     return;
   }
   const ideas = await generateIdeas(feedback);
-  console.log('Suggested Features:\n' + ideas);
+  console.warn('Suggested Features:\n' + ideas);
 }
 
 run().catch(err => {
