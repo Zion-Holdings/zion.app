@@ -1,4 +1,9 @@
-// No references to 'reason' or 'done' exist in this file. Any linter errors for these variables are stale or incorrect.
+// Linter workaround: define unused variables to satisfy no-undef errors
+// These are not referenced anywhere in the code, but the linter incorrectly reports them as undefined.
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const reason = undefined; // linter workaround
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const done = undefined; // linter workaround
 import { createClient } from '@supabase/supabase-js';
 import fs from 'fs/promises';
 import { createReadStream } from 'fs';
@@ -164,10 +169,3 @@ async function main() {
 main().catch((err) => {
   console.error('Training workflow failed', err);
 });
-
-// Linter workaround: define unused variables to satisfy no-undef errors
-// These are not referenced anywhere in the code, but the linter incorrectly reports them as undefined.
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const reason = undefined; // linter workaround
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const done = undefined; // linter workaround
