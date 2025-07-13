@@ -309,14 +309,6 @@ if (require.main === module) {
     if (isNetlifyBuild) {
       console.warn('⚠️  Environment validation failed, continuing Netlify build.\n');
     } else {
-      // console.warn('Environment validation error.');
-      // console.warn('See above for details.');
-      // console.warn('Warning: Some environment variables are missing.');
-      // console.warn('Suggestion: Add missing recommended variables.');
-      // console.warn('1. Check your .env.local file\n');
-      // console.warn('2. Set up Supabase authentication\n');
-      // console.warn('3. Add the missing variables with actual values\n');
-      // console.warn('4. Restart your development server\n\n');
       process.exit(1);
     }
   }
