@@ -54,22 +54,12 @@ class BuildValidator {
   }
 
   run() {
-    console.log('🔍 Validating Production Build...\n');
-    
     this.validateBuildExists();
     this.validateStaticFiles();
     this.validateServerFiles();
     this.validateManifest();
     
-    console.log('Build Validation Results:');
-    this.checks.forEach(check => {
-      const emoji = check.status === 'pass' ? '✅' : '❌';
-      console.log(`  ${emoji} ${check.name}: ${check.details}`);
-    });
-    
     const allPassed = this.checks.every(check => check.status === 'pass');
-    console.log(`\n🏗️ Build Status: ${allPassed ? '✅ VALID' : '❌ INVALID'}`);
-    
     return allPassed;
   }
 }
