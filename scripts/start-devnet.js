@@ -9,9 +9,9 @@ const hardhat = spawn('npx', ['hardhat', 'node'], {
 const dev = spawn('npm', ['run', 'dev'], { stdio: 'inherit' });
 
 hardhat.on('close', code => {
-  console.log(`Hardhat node exited with code ${code}`);
+  console.warn(`Hardhat node exited with code ${code}`);
 });
 
 dev.on('close', code => {
-  console.log(`Dev server exited with code ${code}`);
+  console.warn(`Dev server exited with code ${code}`);
 });

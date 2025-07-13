@@ -39,7 +39,7 @@ function processFile(file) {
   }
   const minifiedSize = Buffer.byteLength(content, 'utf8');
   fs.writeFileSync(file, content, 'utf8');
-  console.log(`Minified ${path.relative(publicDir, file)}: ${originalSize} -> ${minifiedSize} bytes`);
+  console.warn(`Minified ${path.relative(publicDir, file)}: ${originalSize} -> ${minifiedSize} bytes`);
 }
 
 function walk(dir) {
