@@ -5,7 +5,7 @@
 // Simplified logger functions - using proper structured logging
 function logInfo(message, ...args) {
   // eslint-disable-next-line no-console
-  console.log(`[INFO] ${message}`, ...args);
+  // console.log(`[INFO] ${message}`, ...args);
 }
 
 function logWarn(message, ...args) {
