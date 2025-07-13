@@ -33,19 +33,9 @@ interface AIListingGeneratorProps {
 export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIListingGeneratorProps) {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
-  const [generatedContent, setGeneratedContent] = useState<GeneratedContent | null>(null);
+  const [aiResponse, setAiResponse] = useState<unknown>(null);
 
-  const handleGenerate = async ({
-    title,
-    category,
-    keyFeatures,
-    targetAudience
-  }: {
-    title: string;
-    category: string;
-    keyFeatures: string;
-    targetAudience: string;
-  }) => {
+  const handleGenerate = async (values: Record<string, unknown>) => {
     setIsLoading(true);
     
     try {
@@ -65,7 +55,7 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
         throw new Error((data as any).error);
       }
 
-      setGeneratedContent((data as any)?.generated || null);
+      setAiResponse((data as any)?.generated || null);
       toast({
         title: "Content Generated",
         description: "AI has created optimized listing content for you."
@@ -83,8 +73,8 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
   };
 
   const handleApply = () => {
-    if (generatedContent && onApplyGenerated) {
-      onApplyGenerated(generatedContent);
+    if (aiResponse && onApplyGenerated) {
+      onApplyGenerated(aiResponse as GeneratedContent);
       toast({
         title: "Content Applied",
         description: "The generated content has been applied to your listing."
@@ -115,8 +105,8 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
 
       {isLoading && <LoadingContentSkeleton />}
 
-      {generatedContent && !isLoading && (
-        <GeneratedContentDisplay content={generatedContent} onApply={handleApply} />
+      {aiResponse && !isLoading && (
+        <GeneratedContentDisplay content={aiResponse as GeneratedContent} onApply={handleApply} />
       )}
     </div>
   );
