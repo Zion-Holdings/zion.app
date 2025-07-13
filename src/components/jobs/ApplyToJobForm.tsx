@@ -64,9 +64,14 @@ export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
           onSuccess();
         }
       }
-    } catch (err: any) {
-      setError(err.message || "Failed to submit application");
-      toast.error("Failed to submit application");
+    } catch (err: unknown) {
+      if (typeof err === 'object' && err !== null && 'message' in err && typeof (err as { message?: unknown }).message === 'string') {
+        setError((err as { message: string }).message);
+        toast.error("Failed to submit application");
+      } else {
+        setError("Failed to submit application");
+        toast.error("Failed to submit application");
+      }
     } finally {
       setIsSubmitting(false);
     }

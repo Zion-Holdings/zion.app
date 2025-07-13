@@ -77,9 +77,14 @@ export const useJobForm = ({ jobId, onSuccess }: JobPostingProps) => {
       }
       
       return jobData;
-    } catch (error: any) {
-      logErrorToProduction('Error in job form submission:', { data: error });
-      toast.error(error.message || "Failed to process form");
+    } catch (error: unknown) {
+      if (typeof error === 'object' && error !== null && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+        logErrorToProduction('Error in job form submission:', { data: error });
+        toast.error((error as { message: string }).message || "Failed to process form");
+      } else {
+        logErrorToProduction('Error in job form submission:', { data: error });
+        toast.error("Failed to process form");
+      }
       throw error;
     } finally {
       setIsLoading(false);
