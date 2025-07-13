@@ -33,7 +33,7 @@ export function ReferralMiddleware({ children }: Props) {
       }
     }
     sendReferral();
-  }, [user?.id]);
+  }, [user?.id, user?.email]);
 
   return <>{children}</>;
 }
