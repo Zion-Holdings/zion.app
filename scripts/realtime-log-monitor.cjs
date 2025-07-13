@@ -45,12 +45,12 @@ class RealtimeLogMonitor {
    * Start monitoring
    */
   async start() {
-    console.log('🚀 Starting Real-time Log Monitor...\n');
+    console.warn('🚀 Starting Real-time Log Monitor...\n');
     
     // Ensure logs directory exists
     if (!fs.existsSync(CONFIG.logsDir)) {
       fs.mkdirSync(CONFIG.logsDir, { recursive: true });
-      console.log('📁 Created logs directory');
+      console.warn('📁 Created logs directory');
     }
 
     this.isRunning = true;
@@ -58,7 +58,7 @@ class RealtimeLogMonitor {
     this.startDashboard();
     this.setupGracefulShutdown();
     
-    console.log('📊 Real-time monitoring active. Press Ctrl+C to stop.\n');
+    console.warn('📊 Real-time monitoring active. Press Ctrl+C to stop.\n');
   }
 
   /**
@@ -103,7 +103,7 @@ class RealtimeLogMonitor {
     });
 
     this.watchers.set(filePath, watcher);
-    console.log(`👁️  Watching: ${path.basename(filePath)}`);
+    console.warn(`👁️  Watching: ${path.basename(filePath)}`);
   }
 
   /**
@@ -294,7 +294,7 @@ class RealtimeLogMonitor {
     
     // Console alert for critical issues
     if (severity === 'CRITICAL') {
-      console.log(`\n🚨 ${severity}: ${message}\n`);
+      console.warn(`\n🚨 ${severity}: ${message}\n`);
     }
   }
 
@@ -339,45 +339,45 @@ class RealtimeLogMonitor {
     const now = new Date();
     const uptime = Math.floor((now - this.startTime) / 1000);
     
-    console.log('═'.repeat(80));
-    console.log('🔥 ZION APP - REAL-TIME LOG MONITOR');
-    console.log('═'.repeat(80));
-    console.log(`📊 Health Score: ${this.getHealthIndicator()} ${this.stats.healthScore}/100`);
-    console.log(`⏰ Uptime: ${uptime}s | Last Update: ${this.stats.lastUpdate.toLocaleTimeString()}`);
-    console.log(`📈 Total Entries: ${this.stats.totalEntries} | Errors: ${this.stats.errors} | Warnings: ${this.stats.warnings} | Critical: ${this.stats.critical}`);
+    console.warn('═'.repeat(80));
+    console.warn('🔥 ZION APP - REAL-TIME LOG MONITOR');
+    console.warn('═'.repeat(80));
+    console.warn(`📊 Health Score: ${this.getHealthIndicator()} ${this.stats.healthScore}/100`);
+    console.warn(`⏰ Uptime: ${uptime}s | Last Update: ${this.stats.lastUpdate.toLocaleTimeString()}`);
+    console.warn(`📈 Total Entries: ${this.stats.totalEntries} | Errors: ${this.stats.errors} | Warnings: ${this.stats.warnings} | Critical: ${this.stats.critical}`);
     
     // Recent alerts
     if (this.stats.alerts.length > 0) {
-      console.log('\n🚨 RECENT ALERTS:');
-      console.log('─'.repeat(50));
+      console.warn('\n🚨 RECENT ALERTS:');
+      console.warn('─'.repeat(50));
       this.stats.alerts.slice(0, 5).forEach(alert => {
         const icon = alert.severity === 'CRITICAL' ? '🔴' : alert.severity === 'HIGH' ? '🟠' : '🟡';
-        console.log(`${icon} [${alert.timestamp.toLocaleTimeString()}] ${alert.message}`);
+        console.warn(`${icon} [${alert.timestamp.toLocaleTimeString()}] ${alert.message}`);
       });
     }
     
     // Recent log entries
-    console.log('\n📝 RECENT LOG ENTRIES:');
-    console.log('─'.repeat(50));
+    console.warn('\n📝 RECENT LOG ENTRIES:');
+    console.warn('─'.repeat(50));
     this.stats.recentEntries.slice(0, 10).forEach(entry => {
       const icon = this.getLevelIcon(entry.level);
       const time = new Date(entry.timestamp).toLocaleTimeString();
       const message = entry.message.length > 60 ? entry.message.substring(0, 60) + '...' : entry.message;
-      console.log(`${icon} [${time}] [${entry.category}] ${message}`);
+      console.warn(`${icon} [${time}] [${entry.category}] ${message}`);
     });
     
     // Performance metrics
-    console.log('\n⚡ PERFORMANCE METRICS:');
-    console.log('─'.repeat(50));
+    console.warn('\n⚡ PERFORMANCE METRICS:');
+    console.warn('─'.repeat(50));
     const recentEntries = this.stats.recentEntries.slice(0, 100);
     const avgMemory = this.calculateAverageMemory(recentEntries);
     const avgDuration = this.calculateAverageDuration(recentEntries);
     
-    console.log(`📊 Avg Memory: ${avgMemory}MB | Avg Response: ${avgDuration}ms`);
-    console.log(`📊 Error Rate: ${this.calculateErrorRate(recentEntries)}%`);
+    console.warn(`📊 Avg Memory: ${avgMemory}MB | Avg Response: ${avgDuration}ms`);
+    console.warn(`📊 Error Rate: ${this.calculateErrorRate(recentEntries)}%`);
     
-    console.log('\n═'.repeat(80));
-    console.log('Press Ctrl+C to stop monitoring');
+    console.warn('\n═'.repeat(80));
+    console.warn('Press Ctrl+C to stop monitoring');
   }
 
   /**
@@ -443,13 +443,13 @@ class RealtimeLogMonitor {
     this.startTime = new Date();
     
     process.on('SIGINT', () => {
-      console.log('\n\n🛑 Stopping monitor...');
+      console.warn('\n\n🛑 Stopping monitor...');
       this.stop();
       process.exit(0);
     });
     
     process.on('SIGTERM', () => {
-      console.log('\n\n🛑 Stopping monitor...');
+      console.warn('\n\n🛑 Stopping monitor...');
       this.stop();
       process.exit(0);
     });
@@ -478,14 +478,14 @@ class RealtimeLogMonitor {
     this.watchers.clear();
     
     // Final summary
-    console.log('\n📊 MONITORING SUMMARY');
-    console.log('─'.repeat(30));
-    console.log(`Total Entries: ${this.stats.totalEntries}`);
-    console.log(`Errors: ${this.stats.errors}`);
-    console.log(`Warnings: ${this.stats.warnings}`);
-    console.log(`Critical: ${this.stats.critical}`);
-    console.log(`Final Health Score: ${this.stats.healthScore}/100`);
-    console.log('\n✅ Monitor stopped');
+    console.warn('\n📊 MONITORING SUMMARY');
+    console.warn('─'.repeat(30));
+    console.warn(`Total Entries: ${this.stats.totalEntries}`);
+    console.warn(`Errors: ${this.stats.errors}`);
+    console.warn(`Warnings: ${this.stats.warnings}`);
+    console.warn(`Critical: ${this.stats.critical}`);
+    console.warn(`Final Health Score: ${this.stats.healthScore}/100`);
+    console.warn('\n✅ Monitor stopped');
   }
 }
 
