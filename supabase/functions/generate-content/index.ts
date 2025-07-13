@@ -185,7 +185,6 @@ serve(async (req) => {
       if (error) {
         console.error("Error saving blog post:", error);
       } else {
-        console.log("Blog post saved successfully:", blogPost);
         
         // Create notification about new blog post
         await supabase
