@@ -19,7 +19,7 @@ try {
 
 const { validateEnvironment } = require('./validate-environment.cjs');
 
-// Comment out all console.log statements (lines 21, 22, 26, 49, 56, 57, 58, 59, 63, 73, 74, 76, 77, 79, 82, 83, 84, 87, 88, 89, 90, 91, 93, 95, 96, 99, 100, 102, 103, 107)
+// Comment out all console.log statements (lines 41, 42, 55, 57, 121, 122, 126, 135, 136, 140, 142, 197, 201, 207, 208, 271, 277, 278, 285)
 // console.log('🚀 Pre-build Environment Check');
 // console.log('================================\n');
 
