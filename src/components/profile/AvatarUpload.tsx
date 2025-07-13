@@ -8,8 +8,8 @@ type Props = {
 
 export function AvatarUpload({ value, onChange }: Props) {
   const [url, setUrl] = useState(value);
-  const handleUpload = (result: any) => {
-    const secure = result?.info?.secure_url as string | undefined;
+  const handleUpload = (result: unknown) => {
+    const secure = (result as any)?.info?.secure_url as string | undefined;
     if (secure) {
       setUrl(secure);
       onChange?.(secure);
