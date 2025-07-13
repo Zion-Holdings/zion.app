@@ -130,8 +130,19 @@ const tsHelpers = {
     return new ((P as typeof Promise) || (P = Promise))(function (resolve: (value: unknown) => void, reject: (reason?: unknown) => void) {
       function fulfilled(value: unknown) { try { step((generator as Generator).next(value)); } catch (e) { reject(e); } }
       function rejected(value: unknown) { try { step(((generator as Generator)["throw"] as (arg: unknown) => IteratorResult<unknown>)(value)); } catch (e) { reject(e); } }
-      function step(result: unknown) { const res = result as IteratorResult<unknown>; res.done ? resolve(res.value) : adopt(res.value).then(fulfilled, rejected); }
-      step(((generator = (typeof generator === 'function' ? generator.apply(thisArg, _arguments || []) : generator) as Generator).next()));
+      function step(result: unknown) {
+        const res = result as IteratorResult<unknown>;
+        if (res.done) {
+          resolve(res.value);
+        } else if (typeof res.value !== 'undefined') {
+          adopt(res.value).then(fulfilled, rejected);
+        }
+      }
+      step((
+        (typeof generator === 'function' || (typeof generator === 'object' && generator !== null && 'next' in generator && typeof (generator as { next: unknown }).next === 'function'))
+          ? (generator as Generator).next()
+          : { done: true, value: undefined }
+      ));
     });
   }
 };
