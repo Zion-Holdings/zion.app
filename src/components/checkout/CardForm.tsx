@@ -81,8 +81,12 @@ export default function CardForm({ amount, onSuccess }: Props) {
         logInfo('Payment Success');
         onSuccess(intent);
       }
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err: unknown) {
+      let message = 'An error occurred';
+      if (err && typeof err === 'object' && 'message' in err && typeof (err as { message?: unknown }).message === 'string') {
+        message = (err as { message: string }).message;
+      }
+      setError(message);
     } finally {
       setLoading(false);
     }
@@ -114,8 +118,12 @@ export default function CardForm({ amount, onSuccess }: Props) {
         logInfo('Payment Success');
         onSuccess(intent);
       }
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err: unknown) {
+      let message = 'An error occurred';
+      if (err && typeof err === 'object' && 'message' in err && typeof (err as { message?: unknown }).message === 'string') {
+        message = (err as { message: string }).message;
+      }
+      setError(message);
     } finally {
       setLoading(false);
     }
