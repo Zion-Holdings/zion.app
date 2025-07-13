@@ -110,7 +110,7 @@ export function KanbanBoard({ jobId }: KanbanBoardProps) {
         title: "Status updated",
         description: `Candidate moved to ${COLUMNS.find(col => col.id === newStatus)?.title}`,
       });
-    } catch (error) {
+    } catch {
       // Revert the UI changes if the database update fails
       toast({
         title: "Failed to update status",
