@@ -42,7 +42,7 @@ export function ITServicePricingTable() {
     });
     
     return filteredData;
-  }, [onsiteServicePricing, searchQuery, sortConfig]);
+  }, [searchQuery, sortConfig]);
 
   const handleSort = (key: keyof CountryPricing) => {
     setSortConfig({
