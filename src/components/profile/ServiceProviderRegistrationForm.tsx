@@ -52,18 +52,23 @@ const serviceProfileSchema = z.object({
 
 type ServiceFormValues = z.infer<typeof serviceProfileSchema>;
 
+interface AIProfileResponse {
+  summary: string;
+  services: string[];
+}
+
 export function ServiceProviderRegistrationForm() {
   const { user } = useAuth();
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [serviceTags, setServiceTags] = useState<string[]>([]);
   const [isGenerating, setIsGenerating] = useState(false);
-  const [generatedContent, setGeneratedContent] = useState<{ summary: string; services: string[] } | null>(null);
+  const [generatedContent, setGeneratedContent] = useState<AIProfileResponse | null>(null);
   const [uploadedAvatar, setUploadedAvatar] = useState<string | null>(null);
   
   // Initialize form with default values
   const form = useForm<ServiceFormValues>({
-    resolver: zodResolver(serviceProfileSchema) as any,
+    resolver: zodResolver(serviceProfileSchema),
     defaultValues: {
       name: user?.displayName || "",
       title: "",
@@ -144,7 +149,7 @@ export function ServiceProviderRegistrationForm() {
 
       // Check if data exists before type assertion
       if (data && typeof data === 'object') {
-        setGeneratedContent(data as { summary: string; services: string[] });
+        setGeneratedContent(data as AIProfileResponse);
         
         toast({
           title: "Enhanced Profile Generated",
@@ -240,9 +245,9 @@ export function ServiceProviderRegistrationForm() {
           });
           
           if (aiData) {
-            finalSummary = (aiData as any).summary || values.bio;
+            finalSummary = (aiData as AIProfileResponse).summary || values.bio;
             // Merge AI suggested services with user-provided services
-            const aiServices = (aiData as any).services || [];
+            const aiServices = (aiData as AIProfileResponse).services || [];
             finalServices = [...new Set([...serviceTags, ...aiServices])];
           }
         } catch (error) {
@@ -256,7 +261,7 @@ export function ServiceProviderRegistrationForm() {
 
       // Get user email for notification
       const { data: userData } = await supabase.auth.getUser();
-      const userEmail = (userData as any).user?.email;
+      const userEmail = (userData as { user?: { email?: string } })?.user?.email;
 
       // Create the service profile
       const { data: profileData, error } = await supabase
