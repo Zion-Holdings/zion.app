@@ -24,15 +24,14 @@ export function AIEnhancementButton({
   className
 }: AIEnhancementButtonProps) {
   const { enhanceContent, isEnhancing } = useResumeEnhancer();
-  const [error, setError] = useState<string | null>(null);
   
   const handleEnhance = async () => {
     if (!currentContent || currentContent.trim().length < 10) {
-      setError('Please enter at least some basic content before enhancing');
+      // setError('Please enter at least some basic content before enhancing'); // This line was removed
       return;
     }
     
-    setError(null);
+    // setError(null); // This line was removed
     const enhancedContent = await enhanceContent(
       currentContent,
       enhancementType,
