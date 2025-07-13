@@ -28,7 +28,7 @@ export function logError(
         // Attempt to stringify the object to capture more details
         const serializedError = JSON.stringify(error);
         message = `Unknown error: non-Error object thrown. Details: ${serializedError}`;
-      } catch (stringifyError) {
+      } catch (_stringifyError) {
         // If stringification fails (e.g., circular references), fallback to a simpler message
         message = 'Unknown error: non-Error object thrown. Could not serialize error object.';
       }
