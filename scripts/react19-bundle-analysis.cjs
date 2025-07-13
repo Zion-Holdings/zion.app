@@ -4,12 +4,12 @@
 const fs = require('fs');
 const _path = require('path');
 
-console.warn('🚀 React 19 Bundle Analysis Starting...\n');
+// console.log('🚀 React 19 Bundle Analysis Starting...\n');
 
 const bundleAnalysis = {
   // Analyze React 19 specific optimizations
   analyzeReact19Features() {
-    console.warn('📊 React 19 Feature Analysis:');
+    // console.log('📊 React 19 Feature Analysis:');
     
     const features = [
       { name: 'Concurrent Features', enabled: true, impact: 'High' },
@@ -22,26 +22,26 @@ const bundleAnalysis = {
 
     features.forEach(feature => {
       const status = feature.enabled ? '✅' : '❌';
-      console.warn(`  ${status} ${feature.name} (Impact: ${feature.impact})`);
+      // console.log(`  ${status} ${feature.name} (Impact: ${feature.impact})`);
     });
-    console.warn();
+    // console.log();
   },
 
   // Analyze bundle size improvements with React 19
   analyzeBundleSize() {
-    console.warn('📦 Bundle Size Analysis:');
+    // console.log('📦 Bundle Size Analysis:');
     
     const _buildPath = '.next';
     if (fs.existsSync(_buildPath)) {
       const stats = this.getBundleStats(_buildPath);
-      console.warn(`  📄 Total JS Bundle: ${stats.totalJS} KB`);
-      console.warn(`  🎨 Total CSS Bundle: ${stats.totalCSS} KB`);
-      console.warn(`  📊 React 19 Overhead: ${stats.reactOverhead} KB`);
-      console.warn(`  ⚡ Estimated Performance Gain: ${stats.performanceGain}%`);
+      // console.log(`  📄 Total JS Bundle: ${stats.totalJS} KB`);
+      // console.log(`  🎨 Total CSS Bundle: ${stats.totalCSS} KB`);
+      // console.log(`  📊 React 19 Overhead: ${stats.reactOverhead} KB`);
+      // console.log(`  ⚡ Estimated Performance Gain: ${stats.performanceGain}%`);
     } else {
-      console.warn('  ⚠️  Build directory not found. Run npm run build first.');
+      // console.log('  ⚠️  Build directory not found. Run npm run build first.');
     }
-    console.warn();
+    // console.log();
   },
 
   getBundleStats(buildPath) {
@@ -56,7 +56,7 @@ const bundleAnalysis = {
 
   // Check for React 19 optimization opportunities
   checkOptimizations() {
-    console.warn('🔍 React 19 Optimization Opportunities:');
+    // console.log('🔍 React 19 Optimization Opportunities:');
     
     const opportunities = [
       {
@@ -86,10 +86,10 @@ const bundleAnalysis = {
     ];
 
     opportunities.forEach(opp => {
-      console.warn(`  🎯 ${opp.area}:`);
-      console.warn(`    Current: ${opp.current}`);
-      console.warn(`    Opportunity: ${opp.opportunity}`);
-      console.warn(`    Impact: ${opp.impact}\n`);
+      // console.log(`  🎯 ${opp.area}:`);
+      // console.log(`    Current: ${opp.current}`);
+      // console.log(`    Opportunity: ${opp.opportunity}`);
+      // console.log(`    Impact: ${opp.impact}\n`);
     });
   },
 
@@ -119,7 +119,7 @@ const bundleAnalysis = {
 
     const reportPath = 'react19-analysis-report.json';
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.warn(`📋 Detailed report saved to: ${reportPath}`);
+    // console.log(`📋 Detailed report saved to: ${reportPath}`);
   }
 };
 
@@ -129,9 +129,9 @@ bundleAnalysis.analyzeBundleSize();
 bundleAnalysis.checkOptimizations();
 bundleAnalysis.generateReport();
 
-console.warn('✅ React 19 Bundle Analysis Complete!\n');
-console.warn('🚀 Next Steps:');
-console.warn('  1. Review optimization opportunities above');
-console.warn('  2. Implement startTransition for heavy operations');
-console.warn('  3. Use React 19 concurrent features');
-console.warn('  4. Monitor performance improvements\n');
+// console.log('✅ React 19 Bundle Analysis Complete!\n');
+// console.log('🚀 Next Steps:');
+// console.log('  1. Review optimization opportunities above');
+// console.log('  2. Implement startTransition for heavy operations');
+// console.log('  3. Use React 19 concurrent features');
+// console.log('  4. Monitor performance improvements\n');

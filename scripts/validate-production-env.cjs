@@ -24,7 +24,7 @@ function loadEnvFile(envPath) {
         }
       }
     }
-    console.warn(`✅ Loaded environment from: ${envPath}`);
+    // console.warn(`✅ Loaded environment from: ${envPath}`);
   }
 }
 
@@ -51,55 +51,55 @@ const requiredEnvVars = {
 };
 
 function validateEnvironment() {
-  console.warn('🔍 Validating Production Environment Variables\n');
+  // console.warn('🔍 Validating Production Environment Variables\n');
   
   let hasErrors = false;
   let warnings = 0;
   
   // Check critical variables
-  console.warn('🔴 CRITICAL (Required for basic functionality):');
+  // console.warn('🔴 CRITICAL (Required for basic functionality):');
   requiredEnvVars.critical.forEach(envVar => {
     if (!process.env[envVar]) {
-      console.error(`  ❌ ${envVar} - MISSING (CRITICAL)`);
+      // console.error(`  ❌ ${envVar} - MISSING (CRITICAL)`);
       hasErrors = true;
     } else {
-      console.warn(`  ✅ ${envVar} - Configured`);
+      // console.warn(`  ✅ ${envVar} - Configured`);
     }
   });
   
   // Check authentication variables
-  console.warn('\n🟡 AUTHENTICATION (Required for user login):');
+  // console.warn('\n🟡 AUTHENTICATION (Required for user login):');
   requiredEnvVars.authentication.forEach(envVar => {
     if (!process.env[envVar]) {
-      console.error(`  ❌ ${envVar} - MISSING (AUTH REQUIRED)`);
+      // console.error(`  ❌ ${envVar} - MISSING (AUTH REQUIRED)`);
       hasErrors = true;
     } else {
-      console.warn(`  ✅ ${envVar} - Configured`);
+      // console.warn(`  ✅ ${envVar} - Configured`);
     }
   });
   
   // Check recommended variables
-  console.warn('\n🟢 RECOMMENDED (For optimal production experience):');
+  // console.warn('\n🟢 RECOMMENDED (For optimal production experience):');
   requiredEnvVars.recommended.forEach(envVar => {
     if (!process.env[envVar]) {
-      console.warn(`  ⚠️ ${envVar} - Missing (Recommended)`);
+      // console.warn(`  ⚠️ ${envVar} - Missing (Recommended)`);
       warnings++;
     } else {
-      console.warn(`  ✅ ${envVar} - Configured`);
+      // console.warn(`  ✅ ${envVar} - Configured`);
     }
   });
   
-  console.warn('\n' + '='.repeat(50));
+  // console.warn('\n' + '='.repeat(50));
   if (hasErrors) {
-    console.error('🚫 ENVIRONMENT VALIDATION FAILED');
-    console.error('Please configure the missing CRITICAL and AUTHENTICATION variables.');
+    // console.error('🚫 ENVIRONMENT VALIDATION FAILED');
+    // console.error('Please configure the missing CRITICAL and AUTHENTICATION variables.');
     process.exit(1);
   } else if (warnings > 0) {
-    console.warn(`⚠️ ENVIRONMENT VALIDATION PASSED WITH ${warnings} WARNINGS`);
-    console.warn('Consider configuring recommended variables for optimal experience.');
+    // console.warn(`⚠️ ENVIRONMENT VALIDATION PASSED WITH ${warnings} WARNINGS`);
+    // console.warn('Consider configuring recommended variables for optimal experience.');
   } else {
-    console.warn('✅ ENVIRONMENT VALIDATION PASSED');
-    console.warn('All required and recommended variables are configured!');
+    // console.warn('✅ ENVIRONMENT VALIDATION PASSED');
+    // console.warn('All required and recommended variables are configured!');
   }
 }
 
