@@ -47,13 +47,13 @@ const TalentPage: React.FC = () => {
   }
 
   // Specific 404 error from API
-  if (error && (error as any).status === 404) {
+  if (error && typeof error === 'object' && error !== null && 'status' in error && (error as { status?: number }).status === 404) {
     return <NotFound />;
   }
 
   // Other errors (non-404)
   if (error) {
-    const err: any = error;
+    const err = error as { status?: number; info?: { error?: string; message?: string } };
     return (
       <div className="flex flex-col items-center justify-center py-20 text-center">
         <h2 className="text-2xl font-semibold mb-2">Error</h2>
