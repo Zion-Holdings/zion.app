@@ -12,13 +12,13 @@ import type { AppKitInstanceInterface } from '@reown/appkit/react';
 // import { captureException } from '@reown/appkit/react';
 
 import { createAppKit } from '@reown/appkit/react';
-import type { mainnet as MainnetType, goerli as GoerliType, polygon as PolygonType, optimism as OptimismType, arbitrum as ArbitrumType, base as BaseType } from '@reown/appkit/networks';
+import type { mainnet as _MainnetType, goerli as _GoerliType, polygon as _PolygonType, optimism as _OptimismType, arbitrum as _ArbitrumType, base as _BaseType } from '@reown/appkit/networks';
 import { mainnet, goerli, polygon, optimism, arbitrum, base } from '@reown/appkit/networks';
-import type { ethers as EthersType } from 'ethers';
+import type { ethers as _EthersType } from 'ethers';
 import { ethers } from 'ethers';
 
 // Use real wallet imports except in CI/build environments
-const isBuildEnv = process.env.CI === 'true';
+const _isBuildEnv = process.env.CI === 'true';
 
 // Dynamic imports for ESM compatibility
 
@@ -251,7 +251,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
           if (typeof ethers === 'object' && ethers !== null && 'BrowserProvider' in ethers && typeof (ethers as typeof import('ethers')).BrowserProvider === 'function') {
             const EthersBrowserProvider = (ethers as typeof import('ethers')).BrowserProvider;
             const ethersProvider = new EthersBrowserProvider(
-              currentProvider as Eip1193ProviderWithEvents
+              currentProvider as any
             );
             const ethersSigner = await ethersProvider.getSigner();
             setWallet(prev => ({
@@ -314,7 +314,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             callback(provider);
 
             if (typeof window !== 'undefined') {
-              const ethRaw = (window as Window & { ethereum?: MinimalEthereumProvider }).ethereum;
+              const ethRaw = (window as Window & { ethereum?: Eip1193ProviderWithEvents }).ethereum;
               if (typeof ethRaw === 'object' && ethRaw !== null && 'on' in ethRaw && typeof ethRaw.on === 'function') {
                 const handler = () => callback(targetAppKit.getWalletProvider?.());
                 ethRaw.on('accountsChanged', handler);
@@ -354,7 +354,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     }
 
     // Attempt to automatically open the MetaMask install page if no provider is detected
-    if (typeof window !== 'undefined' && !(window as Window & { ethereum?: MinimalEthereumProvider }).ethereum) {
+    if (typeof window !== 'undefined' && !(window as Window & { ethereum?: Eip1193ProviderWithEvents }).ethereum) {
       try {
         window.open('https://metamask.io/download.html', '_blank');
         logInfo('WalletContext: No wallet provider detected. Opening MetaMask install page.');
