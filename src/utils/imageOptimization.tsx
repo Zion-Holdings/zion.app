@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
+// @ts-ignore
 import { Buffer } from 'buffer';
 
 interface OptimizedImageProps {
@@ -102,7 +103,7 @@ export function OptimizedImage({
     </svg>`;
     const base64 = typeof window !== 'undefined'
       ? btoa(unescape(encodeURIComponent(svg)))
-      : (typeof Buffer !== 'undefined' ? (Buffer as unknown as Buffer).from(svg).toString('base64') : '');
+      : (Buffer as any).from(svg, 'utf-8').toString('base64');
     return `data:image/svg+xml;base64,${base64}`;
   };
 
@@ -116,20 +117,20 @@ export function OptimizedImage({
         <Image
           src={getOptimizedSrc(src)}
           alt={alt}
-          width={width}
-          height={height}
+          {...(typeof width !== 'undefined' ? { width } : {})}
+          {...(typeof height !== 'undefined' ? { height } : {})}
           priority={priority}
           quality={quality}
           sizes={sizes || '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'}
           placeholder={placeholder}
-          blurDataURL={placeholder === 'blur' ? generateBlurDataURL() : undefined}
+          {...(placeholder === 'blur' && generateBlurDataURL() ? { blurDataURL: generateBlurDataURL() } : {})}
           onLoad={handleLoad}
           onError={handleError}
           className={cn(
             'transition-opacity duration-300',
             isLoading ? 'opacity-0' : 'opacity-100'
           )}
-          {...props as unknown as OptimizedImageProps}
+          {...Object.fromEntries(Object.entries(props).filter(([k]) => k !== 'src' && k !== 'alt' && k !== 'width' && k !== 'height'))}
         />
       )}
 
