@@ -156,7 +156,7 @@ async function createFineTune(filePath) {
       model: 'gpt-3.5-turbo'
     })
   });
-  const job = await jobRes.json();
+  const _job = await jobRes.json();
   // console.log('Fine-tune job created:', job.id); // Removed console.log
 }
 
