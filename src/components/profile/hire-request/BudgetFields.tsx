@@ -8,10 +8,10 @@ import type { FormValues } from "./useHireRequestForm";
 
 interface BudgetFieldsProps {
   form: UseFormReturn<FormValues>;
-  talent?: TalentProfile;
+  _talent?: TalentProfile;
 }
 
-export function BudgetFields({ form, talent }: BudgetFieldsProps) {
+export function BudgetFields({ form, _talent }: BudgetFieldsProps) {
   return (
     <>
       <FormField
