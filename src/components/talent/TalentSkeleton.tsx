@@ -1,6 +1,5 @@
 import React from 'react';
 import Skeleton from 'react-loading-skeleton';
-import Head from 'next/head';
 
 export function TalentSkeleton() {
   return (
