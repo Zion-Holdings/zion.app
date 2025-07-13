@@ -452,7 +452,7 @@ class LogAnalyzer {
 const logAnalyzer = new LogAnalyzer();
 
 // Enhanced error logging function that includes analysis
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+ 
 export function logErrorWithAnalysis(
   message: string, 
   error?: Error | unknown, 
