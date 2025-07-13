@@ -59,7 +59,7 @@ export function ITServiceRequestHero() {
         setDetails("");
       }
     } catch (err: unknown) {
-      logErrorToProduction(err);
+      logErrorToProduction('ITServiceRequestHero submission error:', { data: err });
       toast({
         title: "Submission Failed",
         description: "There was an error submitting your request.",
