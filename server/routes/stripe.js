@@ -67,13 +67,10 @@ router.post('/webhook', express.raw({ type: 'application/json' }), (req, res) =>
   }
 
   // Successfully verified webhook
-  console.log('Stripe webhook event verified:', event.id, event.type);
-
   // Handle the event
   switch (event.type) {
     case 'invoice.payment_succeeded': {
       const invoice = event.data.object;
-      console.log(`Invoice payment succeeded for invoice ID: ${invoice.id}, Customer: ${invoice.customer}, Subscription: ${invoice.subscription}`);
 
       if (invoice.billing_reason === 'subscription_create' || invoice.billing_reason === 'subscription_cycle' || invoice.billing_reason === 'subscription_update') {
         if (invoice.subscription) {
@@ -130,7 +127,6 @@ router.post('/webhook', express.raw({ type: 'application/json' }), (req, res) =>
     case 'customer.subscription.created':
     case 'customer.subscription.updated': {
       const subscription = event.data.object;
-      console.log(`${event.type} event for subscription ID: ${subscription.id}`);
       try {
         const user = await User.findOne({ stripeCustomerId: subscription.customer });
         if (!user) {
@@ -177,7 +173,6 @@ router.post('/webhook', express.raw({ type: 'application/json' }), (req, res) =>
     }
     case 'customer.subscription.deleted': {
       const subscription = event.data.object; // This is the Stripe Subscription object
-      console.log(`customer.subscription.deleted event for subscription ID: ${subscription.id}`);
       try {
         const subInDb = await Subscription.findOne({ stripeSubscriptionId: subscription.id });
         if (!subInDb) {

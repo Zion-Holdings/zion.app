@@ -45,12 +45,12 @@ app.get('/random-error', (req, res) => {
 
 
 app.listen(port, () => {
-  console.log(`Test server listening at http://localhost:${port}`);
-  console.log('Available endpoints:');
-  console.log(`  http://localhost:${port}/fast`);
-  console.log(`  http://localhost:${port}/slow`);
-  console.log(`  http://localhost:${port}/very-slow`);
-  console.log(`  http://localhost:${port}/flaky`);
-  console.log(`  http://localhost:${port}/error`);
-  console.log(`  http://localhost:${port}/random-error`);
+  console.warn(`Test server listening at http://localhost:${port}`);
+  console.warn('Available endpoints:');
+  console.warn(`  http://localhost:${port}/fast`);
+  console.warn(`  http://localhost:${port}/slow`);
+  console.warn(`  http://localhost:${port}/very-slow`);
+  console.warn(`  http://localhost:${port}/flaky`);
+  console.warn(`  http://localhost:${port}/error`);
+  console.warn(`  http://localhost:${port}/random-error`);
 });

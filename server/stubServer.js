@@ -11,6 +11,6 @@ module.exports = app;
 if (require.main === module) {
   const PORT = process.env.PORT || 3002;
   app.listen(PORT, () => {
-    console.log(`Stub server running on port ${PORT}`);
+    console.warn(`Stub server running on port ${PORT}`);
   });
 }
