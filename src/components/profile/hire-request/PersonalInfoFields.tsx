@@ -14,7 +14,7 @@ export function PersonalInfoFields({ form }: PersonalInfoFieldsProps) {
       <FormField
         control={form.control}
         name="requesterName"
-        render={({ field }: { field: React.ChangeEvent<HTMLInputElement> }) => (
+        render={({ field, fieldState, formState }) => (
           <FormItem>
             <FormLabel className="text-white">Your Name</FormLabel>
             <FormControl>
@@ -32,7 +32,7 @@ export function PersonalInfoFields({ form }: PersonalInfoFieldsProps) {
       <FormField
         control={form.control}
         name="requesterEmail"
-        render={({ field }: { field: React.ChangeEvent<HTMLInputElement> }) => (
+        render={({ field, fieldState, formState }) => (
           <FormItem>
             <FormLabel className="text-white">Your Email</FormLabel>
             <FormControl>
