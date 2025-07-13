@@ -36,9 +36,9 @@ function updateIconImportsInFile(filePath) {
 
 // Find all TypeScript/JavaScript/JSX/TSX files
 const files = glob.sync('src/**/*.{js,jsx,ts,tsx}');
-let updatedFiles = 0;
+let _updatedFiles = 0;
 
 files.forEach(file => {
   const updated = updateIconImportsInFile(file);
-  if (updated) updatedFiles++;
+  if (updated) _updatedFiles++;
 });
