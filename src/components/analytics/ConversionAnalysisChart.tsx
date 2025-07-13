@@ -23,9 +23,8 @@ export function ConversionAnalysisChart({ data, timeRange, onTimeRangeChange }: 
         <AnalyticsChart
           title=""
           data={(data || []).map(item => ({
-            name: item.name || item.label || 'Unknown',
-            value: item.value || item.count || 0,
-            ...item
+            name: String(item.name || item.label || 'Unknown'),
+            value: typeof item.value === 'number' ? item.value : (typeof item.count === 'number' ? item.count : 0)
           }))}
           dataKeys={dataKeys}
           type="bar"
