@@ -1,19 +1,19 @@
 // Global webpack runtime polyfill for Node.js environment
 // This must run before any webpack chunks are loaded
 
-console.log('🔧 Applying webpack runtime polyfills...');
+console.warn('🔧 Applying webpack runtime polyfills...');
 
 // Ensure self is defined globally in Node.js
 if (typeof global !== 'undefined') {
   if (typeof global.self === 'undefined') {
     global.self = global;
-    console.log('  ✅ self -> global');
+    console.warn('  ✅ self -> global');
   }
 
   // Ensure webpackChunk array exists and is properly initialized
   if (!global.webpackChunk_N_E) {
     global.webpackChunk_N_E = [];
-    console.log('  ✅ webpackChunk_N_E -> []');
+    console.warn('  ✅ webpackChunk_N_E -> []');
   }
 
   // Ensure the webpack chunk array has push method
@@ -21,7 +21,7 @@ if (typeof global !== 'undefined') {
     global.webpackChunk_N_E.push = function (...args) {
       return Array.prototype.push.apply(this, args);
     };
-    console.log('  ✅ webpackChunk_N_E.push -> function');
+    console.warn('  ✅ webpackChunk_N_E.push -> function');
   }
 }
 
@@ -35,4 +35,4 @@ if (typeof globalThis !== 'undefined') {
   }
 }
 
-console.log('🔧 Webpack runtime polyfills applied successfully');
+console.warn('🔧 Webpack runtime polyfills applied successfully');

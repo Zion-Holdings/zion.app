@@ -27,11 +27,11 @@ function purgeOldLogs(dir) {
       const ageDays = ageMs / (1000 * 60 * 60 * 24);
       if (ageDays > RETENTION_DAYS) {
         fs.unlinkSync(full);
-        console.log(`Deleted old log: ${full}`);
+        console.warn(`Deleted old log: ${full}`);
       }
     }
   }
 }
 
 purgeOldLogs(LOG_DIR);
-console.log(`Old logs older than ${RETENTION_DAYS} days have been purged.`);
+console.warn(`Old logs older than ${RETENTION_DAYS} days have been purged.`);
