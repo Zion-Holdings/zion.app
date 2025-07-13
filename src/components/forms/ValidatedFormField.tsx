@@ -149,6 +149,8 @@ export function ValidatedFormField({
 
   const renderField = () => {
     const baseClasses = cn(getFieldClasses(), className);
+    const registerProps = isReactHookForm(form) ? form.register(name) : {};
+    const safeRegisterProps = typeof registerProps === 'object' && registerProps !== null ? registerProps : {};
 
     switch (type) {
       case 'textarea':
@@ -159,7 +161,7 @@ export function ValidatedFormField({
               disabled={disabled}
               className={baseClasses}
               rows={4}
-              {...(isReactHookForm(form) ? form.register(name) : {})}
+              {...safeRegisterProps}
             />
             <div className="absolute top-2 right-2">
               {getValidationIcon()}
@@ -215,7 +217,7 @@ export function ValidatedFormField({
               placeholder={placeholder}
               disabled={disabled}
               className={cn(baseClasses, 'pr-20')}
-              {...(isReactHookForm(form) ? form.register(name) : {})}
+              {...safeRegisterProps}
             />
             <div className="absolute inset-y-0 right-0 flex items-center gap-1 pr-3">
               {getValidationIcon()}
@@ -245,7 +247,7 @@ export function ValidatedFormField({
               placeholder={placeholder}
               disabled={disabled}
               className={baseClasses}
-              {...(isReactHookForm(form) ? form.register(name) : {})}
+              {...safeRegisterProps}
             />
             <div className="absolute inset-y-0 right-0 flex items-center pr-3">
               {getValidationIcon()}
@@ -255,10 +257,20 @@ export function ValidatedFormField({
     }
   };
 
+  // Helper to safely render error messages as strings
+  function errorToString(error: unknown): string {
+    if (!error) return '';
+    if (typeof error === 'string') return error;
+    if (typeof error === 'object' && error !== null && 'message' in error && typeof (error as any).message === 'string') {
+      return (error as any).message;
+    }
+    return '';
+  }
+
   if (type === 'checkbox') {
     return (
       <FormField
-        control={isReactHookForm(form) ? (form.control as import('react-hook-form').Control<unknown>) : undefined}
+        control={isReactHookForm(form) ? (form.control as any) : undefined}
         name={name}
         render={() => (
           <FormItem className="flex flex-row items-start space-x-3 space-y-0">
@@ -267,9 +279,9 @@ export function ValidatedFormField({
             </FormControl>
             {(fieldError || description) && (
               <div className="space-y-1">
-                {fieldError && typeof fieldError === 'object' && fieldError !== null && 'message' in fieldError && typeof (fieldError as { message?: unknown }).message === 'string' && (
+                {errorToString(fieldError ?? '') && (
                   <FormMessage className="text-sm text-red-500">
-                    {(fieldError as { message: string }).message}
+                    {errorToString(fieldError ?? '')}
                   </FormMessage>
                 )}
                 {description && (!fieldError || !(typeof fieldError === 'object' && fieldError !== null && 'message' in fieldError && typeof (fieldError as { message?: unknown }).message === 'string')) && (
@@ -285,7 +297,7 @@ export function ValidatedFormField({
 
   return (
     <FormField
-      control={isReactHookForm(form) ? (form.control as import('react-hook-form').Control<unknown>) : undefined}
+      control={isReactHookForm(form) ? (form.control as any) : undefined}
       name={name}
       render={() => (
         <FormItem>
@@ -298,10 +310,10 @@ export function ValidatedFormField({
           </FormControl>
           {(fieldError || description) && (
             <div className="space-y-1">
-              {fieldError && typeof fieldError === 'object' && fieldError !== null && 'message' in fieldError && typeof (fieldError as { message?: unknown }).message === 'string' && (
+              {errorToString(fieldError ?? '') && (
                 <FormMessage className="text-sm text-red-500 flex items-center gap-1">
                   <AlertCircle className="h-3 w-3" />
-                  {(fieldError as { message: string }).message}
+                  {errorToString(fieldError ?? '')}
                 </FormMessage>
               )}
               {description && (!fieldError || !(typeof fieldError === 'object' && fieldError !== null && 'message' in fieldError && typeof (fieldError as { message?: unknown }).message === 'string')) && (
