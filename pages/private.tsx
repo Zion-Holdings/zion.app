@@ -57,7 +57,7 @@ export default function PrivatePage({ user }: PrivatePageProps) {
                   <div className="flex items-center gap-2">
                     <Calendar className="h-4 w-4 text-muted-foreground" />
                     <span className="text-sm">
-                      Joined {typeof user === 'object' && user !== null && 'created_at' in user ? new Date((user as { created_at?: string }).created_at).toLocaleDateString() : 'Unknown'}
+                      Joined {typeof user === 'object' && user !== null && 'created_at' in user && typeof (user as { created_at?: unknown }).created_at === 'string' && (user as { created_at?: string }).created_at ? new Date((user as { created_at: string }).created_at).toLocaleDateString() : 'Unknown'}
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
@@ -75,15 +75,29 @@ export default function PrivatePage({ user }: PrivatePageProps) {
               <div className="grid gap-2 text-sm">
                 <div>
                   <span className="font-medium">Last Sign In: </span>
-                  {typeof user === 'object' && user !== null && 'last_sign_in_at' in user ? (user as { last_sign_in_at?: string }).last_sign_in_at 
-                    ? new Date((user as { last_sign_in_at?: string }).last_sign_in_at).toLocaleString()
-                    : 'Never'
-                  }
+                  {(() => {
+                    if (
+                      typeof user === 'object' &&
+                      user !== null &&
+                      'last_sign_in_at' in user &&
+                      typeof (user as { last_sign_in_at?: unknown }).last_sign_in_at === 'string'
+                    ) {
+                      const lastSignIn = (user as { last_sign_in_at: string }).last_sign_in_at;
+                      return lastSignIn ? new Date(lastSignIn).toLocaleString() : 'Never';
+                    }
+                    return 'Never';
+                  })()}
                 </div>
                 <div>
                   <span className="font-medium">App Metadata: </span>
                   <code className="text-xs">
-                    {JSON.stringify(typeof user === 'object' && user !== null && 'app_metadata' in user ? (user as { app_metadata?: any }).app_metadata || {} : {}, null, 2)}
+                    {JSON.stringify(
+                      typeof user === 'object' && user !== null && 'app_metadata' in user && typeof (user as { app_metadata?: unknown }).app_metadata === 'object' && (user as { app_metadata?: object }).app_metadata
+                        ? (user as { app_metadata: object }).app_metadata
+                        : {},
+                      null,
+                      2
+                    )}
                   </code>
                 </div>
               </div>
