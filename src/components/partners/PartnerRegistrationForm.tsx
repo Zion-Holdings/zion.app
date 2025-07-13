@@ -12,6 +12,7 @@ import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import {logErrorToProduction} from '@/utils/productionLogger';
+import type { ControllerRenderProps } from "react-hook-form";
 
 
 const partnerFormSchema = z.object({
@@ -98,7 +99,7 @@ export function PartnerRegistrationForm() {
       if (hasExistingPartner) return;
 
       // Insert new partner profile
-      const { data: newPartner, error } = await supabase
+      const { data: _newPartner, error } = await supabase
         .from('partner_profiles')
         .insert([
           {
@@ -173,7 +174,7 @@ export function PartnerRegistrationForm() {
               <FormField
                 control={form.control}
                 name="name"
-                render={({ field }: { field: unknown }) => (
+                render={({ field }: { field: ControllerRenderProps<PartnerFormValues, 'name'> }) => (
                   <FormItem>
                     <FormLabel>Name / Brand</FormLabel>
                     <FormControl>
@@ -187,7 +188,7 @@ export function PartnerRegistrationForm() {
               <FormField
                 control={form.control}
                 name="website"
-                render={({ field }: { field: unknown }) => (
+                render={({ field }: { field: ControllerRenderProps<PartnerFormValues, 'website'> }) => (
                   <FormItem>
                     <FormLabel>Website (Optional)</FormLabel>
                     <FormControl>
@@ -202,7 +203,7 @@ export function PartnerRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="twitter"
-                  render={({ field }: { field: unknown }) => (
+                  render={({ field }: { field: ControllerRenderProps<PartnerFormValues, 'twitter'> }) => (
                     <FormItem>
                       <FormLabel>Twitter (Optional)</FormLabel>
                       <FormControl>
@@ -216,7 +217,7 @@ export function PartnerRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="instagram"
-                  render={({ field }: { field: unknown }) => (
+                  render={({ field }: { field: ControllerRenderProps<PartnerFormValues, 'instagram'> }) => (
                     <FormItem>
                       <FormLabel>Instagram (Optional)</FormLabel>
                       <FormControl>
@@ -232,7 +233,7 @@ export function PartnerRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="youtube"
-                  render={({ field }: { field: unknown }) => (
+                  render={({ field }: { field: ControllerRenderProps<PartnerFormValues, 'youtube'> }) => (
                     <FormItem>
                       <FormLabel>YouTube (Optional)</FormLabel>
                       <FormControl>
@@ -246,7 +247,7 @@ export function PartnerRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="linkedin"
-                  render={({ field }: { field: unknown }) => (
+                  render={({ field }: { field: ControllerRenderProps<PartnerFormValues, 'linkedin'> }) => (
                     <FormItem>
                       <FormLabel>LinkedIn (Optional)</FormLabel>
                       <FormControl>
@@ -261,7 +262,7 @@ export function PartnerRegistrationForm() {
               <FormField
                 control={form.control}
                 name="niche"
-                render={({ field }: { field: unknown }) => (
+                render={({ field }: { field: ControllerRenderProps<PartnerFormValues, 'niche'> }) => (
                   <FormItem>
                     <FormLabel>Your Niche</FormLabel>
                     <FormControl>
@@ -279,7 +280,7 @@ export function PartnerRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="audience_size"
-                  render={({ field }: { field: unknown }) => (
+                  render={({ field }: { field: ControllerRenderProps<PartnerFormValues, 'audience_size'> }) => (
                     <FormItem>
                       <FormLabel>Audience Size</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
@@ -304,7 +305,7 @@ export function PartnerRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="payout_method"
-                  render={({ field }: { field: unknown }) => (
+                  render={({ field }: { field: ControllerRenderProps<PartnerFormValues, 'payout_method'> }) => (
                     <FormItem>
                       <FormLabel>Preferred Payout Method</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
@@ -329,7 +330,7 @@ export function PartnerRegistrationForm() {
               <FormField
                 control={form.control}
                 name="bio"
-                render={({ field }: { field: unknown }) => (
+                render={({ field }: { field: ControllerRenderProps<PartnerFormValues, 'bio'> }) => (
                   <FormItem>
                     <FormLabel>Bio</FormLabel>
                     <FormControl>
