@@ -9,9 +9,6 @@ import { fileURLToPath } from 'url';
 const currentFilename = fileURLToPath(import.meta.url);
 const currentDirname = path.dirname(currentFilename);
 
-console.log('🔍 Bundle Analysis and Optimization Tool');
-console.log('=========================================\n');
-
 // Configuration
 const config = {
   outputDir: '.next',
@@ -37,8 +34,6 @@ class BundleAnalyzer {
 
   async analyze() {
     try {
-      console.log('📦 Analyzing bundle...');
-      
       // Run build with analysis
       await this.runBuildAnalysis();
       
@@ -64,8 +59,6 @@ class BundleAnalyzer {
   }
 
   async runBuildAnalysis() {
-    console.log('   Building with analysis...');
-    
     try {
       // Set environment variable for bundle analysis
       process.env.ANALYZE = 'true';
@@ -76,15 +69,12 @@ class BundleAnalyzer {
         env: { ...process.env, ANALYZE: 'true' }
       });
       
-      console.log('   ✅ Build completed');
     } catch (error) {
-      console.log('   ⚠️  Build failed, analyzing existing files...');
+      // console.log('   ⚠️  Build failed, analyzing existing files...');
     }
   }
 
   async analyzeDependencies() {
-    console.log('   Analyzing dependencies...');
-    
     const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
     const dependencies = { ...packageJson.dependencies, ...packageJson.devDependencies };
     
@@ -105,7 +95,6 @@ class BundleAnalyzer {
     
     // Sort by size
     this.results.dependencies.sort((a, b) => b.size - a.size);
-    console.log(`   ✅ Analyzed ${this.results.dependencies.length} dependencies`);
   }
 
   getDependencySize(name) {
@@ -156,8 +145,6 @@ class BundleAnalyzer {
   }
 
   async findDuplicates() {
-    console.log('   Finding duplicate dependencies...');
-    
     try {
       // Use npm ls to find duplicates
       const output = execSync('npm ls --depth=0 --json', { 
@@ -169,13 +156,11 @@ class BundleAnalyzer {
       // Analysis of duplicates would go here
       
     } catch (error) {
-      console.log('   ⚠️  Could not analyze duplicates');
+      // console.log('   ⚠️  Could not analyze duplicates');
     }
   }
 
   generateRecommendations() {
-    console.log('   Generating recommendations...');
-    
     const recommendations = [];
     
     // Large dependencies
@@ -236,44 +221,39 @@ class BundleAnalyzer {
   }
 
   displayResults() {
-    console.log('\n📊 Bundle Analysis Results');
-    console.log('==========================\n');
-
     // Top 10 largest dependencies
-    console.log('🏗️  Largest Dependencies:');
     const topDeps = this.results.dependencies.slice(0, 10);
     topDeps.forEach((dep, index) => {
       const sizeFormatted = this.formatSize(dep.size);
       const indicator = dep.size > config.thresholds.warning ? '⚠️ ' : '  ';
-      console.log(`${indicator}${index + 1}. ${dep.name} - ${sizeFormatted}`);
+      // console.log(`${indicator}${index + 1}. ${dep.name} - ${sizeFormatted}`);
     });
 
     // Recommendations
-    console.log('\n💡 Recommendations:');
     this.results.recommendations.forEach(rec => {
-      console.log(`\n${rec.type === 'warning' ? '⚠️ ' : 'ℹ️ '} ${rec.title}`);
-      console.log(`   ${rec.description}`);
+      // console.log(`\n${rec.type === 'warning' ? '⚠️ ' : 'ℹ️ '} ${rec.title}`);
+      // console.log(`   ${rec.description}`);
       
       if (rec.items) {
         rec.items.forEach(item => {
           if (item.suggestion) {
-            console.log(`   • ${item.name} (${item.size}) - ${item.suggestion}`);
+            // console.log(`   • ${item.name} (${item.size}) - ${item.suggestion}`);
           } else {
-            console.log(`   • ${item.name}: ${item.description}`);
+            // console.log(`   • ${item.name}: ${item.description}`);
           }
         });
       }
     });
 
     // Quick wins
-    console.log('\n🚀 Quick Wins:');
-    console.log('   1. Enable gzip compression in production');
-    console.log('   2. Implement code splitting for routes');
-    console.log('   3. Use dynamic imports for heavy libraries');
-    console.log('   4. Optimize images and use WebP format');
-    console.log('   5. Remove unused dependencies');
+    // console.log('\n🚀 Quick Wins:');
+    // console.log('   1. Enable gzip compression in production');
+    // console.log('   2. Implement code splitting for routes');
+    // console.log('   3. Use dynamic imports for heavy libraries');
+    // console.log('   4. Optimize images and use WebP format');
+    // console.log('   5. Remove unused dependencies');
 
-    console.log('\n📝 Detailed report saved to bundle-analysis.json');
+    // console.log('\n📝 Detailed report saved to bundle-analysis.json');
   }
 
   saveReport() {

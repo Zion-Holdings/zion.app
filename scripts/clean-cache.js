@@ -19,8 +19,7 @@ const paths = [
 for (const p of paths) {
   try {
     rmSync(join(process.cwd(), p), { recursive: true, force: true });
-    console.log(`Removed ${p}`);
   } catch (err) {
-    console.error(`Failed to remove ${p}:`, err.message);
+    // console.error(`Failed to remove ${p}:`, err.message);
   }
 }
