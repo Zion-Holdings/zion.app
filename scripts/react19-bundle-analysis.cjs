@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🚀 React 19 Bundle Analysis Starting...\n');
+console.warn('🚀 React 19 Bundle Analysis Starting...\n');
 
 const bundleAnalysis = {
   // Analyze React 19 specific optimizations
@@ -39,7 +39,7 @@ const bundleAnalysis = {
       console.log(`  📊 React 19 Overhead: ${stats.reactOverhead} KB`);
       console.log(`  ⚡ Estimated Performance Gain: ${stats.performanceGain}%`);
     } else {
-      console.log('  ⚠️  Build directory not found. Run npm run build first.');
+      console.warn('  ⚠️  Build directory not found. Run npm run build first.');
     }
     console.log();
   },
@@ -129,9 +129,9 @@ bundleAnalysis.analyzeBundleSize();
 bundleAnalysis.checkOptimizations();
 bundleAnalysis.generateReport();
 
-console.log('✅ React 19 Bundle Analysis Complete!\n');
-console.log('🚀 Next Steps:');
-console.log('  1. Review optimization opportunities above');
-console.log('  2. Implement startTransition for heavy operations');
-console.log('  3. Use React 19 concurrent features');
-console.log('  4. Monitor performance improvements\n');
+console.warn('✅ React 19 Bundle Analysis Complete!\n');
+console.warn('🚀 Next Steps:');
+console.warn('  1. Review optimization opportunities above');
+console.warn('  2. Implement startTransition for heavy operations');
+console.warn('  3. Use React 19 concurrent features');
+console.warn('  4. Monitor performance improvements\n');
