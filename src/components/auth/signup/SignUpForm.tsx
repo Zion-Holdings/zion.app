@@ -72,9 +72,9 @@ export function SignUpForm({ onSignInClick }: SignUpFormProps) {
         logErrorToProduction('Supabase sign-up returned no error but no user or session.');
         setError("Sign up failed due to an unknown error. Please try again.");
       }
-    } catch (catchedError: any) {
+    } catch (catchedError: unknown) {
       logErrorToProduction('Exception during Supabase sign-up:', { data: catchedError });
-      setError(catchedError.message || "An unexpected error occurred. Please try again.");
+      setError((catchedError as Error).message || "An unexpected error occurred. Please try again.");
     } finally {
       setIsLoading(false);
     }
