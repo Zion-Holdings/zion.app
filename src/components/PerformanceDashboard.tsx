@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -27,7 +27,7 @@ interface Improvement {
 }
 
 const PerformanceDashboard: React.FC = () => {
-  const [metrics] = useState<PerformanceMetrics>({
+  const [metrics] = React.useState<PerformanceMetrics>({
     buildSize: '959 MB',
     pageCount: 166,
     loadTime: 1.2,
