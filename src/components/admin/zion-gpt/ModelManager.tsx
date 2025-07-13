@@ -45,15 +45,15 @@ export function ZionGPTModelManager() {
       
       // Map the data to our component state. Provide a fallback to avoid
       // "map is not a function" errors if the query returns null
-      setModels((data ?? []).map((model: any) => ({
-        id: model.id,
-        version: model.version,
-        createdAt: model.created_at,
-        baseModel: model.base_model,
-        purpose: model.purpose,
-        active: model.active,
-        trainingStatus: model.training_status,
-        errorMessage: model.error_message
+      setModels((data ?? []).map((model: Record<string, unknown>) => ({
+        id: model.id as string,
+        version: model.version as string,
+        createdAt: model.created_at as string,
+        baseModel: model.base_model as string,
+        purpose: model.purpose as string,
+        active: model.active as boolean,
+        trainingStatus: model.training_status as 'queued' | 'running' | 'succeeded' | 'failed',
+        errorMessage: model.error_message as string | undefined
       })));
     } catch (error) {
       logErrorToProduction('Error fetching models:', { data: error });
@@ -81,7 +81,11 @@ export function ZionGPTModelManager() {
       setModels(prev => 
         prev.map(model => 
           model.id === modelId 
-            ? { ...model, trainingStatus: (data as any)?.status || 'failed', errorMessage: (data as any)?.error || 'Unknown error' } 
+            ? {
+                ...model,
+                trainingStatus: typeof data === 'object' && data && 'status' in data ? (data.status as string) : 'failed',
+                errorMessage: typeof data === 'object' && data && 'error' in data ? (data.error as string) : 'Unknown error',
+              }
             : model
         )
       );
@@ -90,10 +94,10 @@ export function ZionGPTModelManager() {
       await supabase
         .from('model_versions')
         .update({
-          training_status: (data as any)?.status || 'failed',
-          error_message: (data as any)?.error || 'Unknown error',
+          training_status: typeof data === 'object' && data && 'status' in data ? (data.status as string) : 'failed',
+          error_message: typeof data === 'object' && data && 'error' in data ? (data.error as string) : 'Unknown error',
           // If training succeeded, automatically set to active
-          ...((data as any)?.status === 'succeeded' ? { active: true } : {})
+          ...((typeof data === 'object' && data && 'status' in data && data.status === 'succeeded') ? { active: true } : {})
         })
         .eq('id', modelId);
       
