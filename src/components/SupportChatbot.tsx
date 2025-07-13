@@ -92,7 +92,7 @@ export function SupportChatbot() {
                   accumulated += token;
                   setMessages(prev => prev.map(m => m.id === botId ? { ...m, message: accumulated } : m));
                 }
-              } catch (_) {
+              } catch {
                 // ignore parse errors
               }
             }
