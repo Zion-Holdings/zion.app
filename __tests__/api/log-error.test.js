@@ -277,7 +277,7 @@ describe('/api/log-error Endpoint', () => {
     //   // Potentially just send the 202 response or a specific message
     //   return;
     // }
-    console.log("INFO: Current logic in api/log-error.js re-analyzes errors even if they already have a suggestion. This is a potential area for future optimization.");
+    // console.log("INFO: Current logic in api/log-error.js re-analyzes errors even if they already have a suggestion. This is a potential area for future optimization.");
     expect(true).toBe(true); // Placeholder assertion
   });
 
