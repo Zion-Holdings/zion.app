@@ -2,7 +2,6 @@
 import { Button } from "@/components/ui/button";
 import { HireRequestModal } from "./hire-request";
 import { useState } from "react";
-import type { TalentProfile } from "@/types/talent";
 
 interface HireNowCTAProps {
   talentProfile: {
@@ -82,7 +81,7 @@ export function HireNowCTA({ talentProfile }: HireNowCTAProps) {
 }
 
 // Helper function to calculate profile completeness
-function calculateProfileCompleteness(profile: any) {
+function calculateProfileCompleteness(profile: unknown) {
   if (!profile) return 0;
   
   const fields = [
@@ -101,7 +100,7 @@ function calculateProfileCompleteness(profile: any) {
   let totalFields = 0;
   
   fields.forEach(field => {
-    if (profile[field]) {
+    if ((profile as any)[field]) {
       completedFields++;
     }
     totalFields++;
