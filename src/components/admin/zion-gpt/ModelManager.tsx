@@ -46,15 +46,15 @@ export function ZionGPTModelManager() {
       // Map the data to our component state. Provide a fallback to avoid
       // "map is not a function" errors if the query returns null
       setModels((data ?? []).map((model: Record<string, unknown>) => ({
-        id: model.id as string,
-        version: model.version as string,
+        id: model.id as import('@/utils/zion-gpt').ModelVersion,
+        version: Number(model.version),
         createdAt: model.created_at as string,
         baseModel: model.base_model as string,
         purpose: model.purpose as string,
         active: model.active as boolean,
-        trainingStatus: model.training_status as 'queued' | 'running' | 'succeeded' | 'failed',
+        trainingStatus: (model.training_status as 'queued' | 'running' | 'succeeded' | 'failed'),
         errorMessage: (model.error_message as string) ?? ''
-      })));
+      }) as ModelVersionData));
     } catch (error) {
       logErrorToProduction('Error fetching models:', { data: error });
     } finally {
@@ -81,11 +81,11 @@ export function ZionGPTModelManager() {
       setModels(prev => 
         prev.map(model => 
           model.id === modelId 
-            ? {
+            ? ({
                 ...model,
-                trainingStatus: typeof data === 'object' && data && 'status' in data ? (data.status as string) : 'failed',
+                trainingStatus: (typeof data === 'object' && data && 'status' in data ? (data.status as 'queued' | 'running' | 'succeeded' | 'failed') : 'failed'),
                 errorMessage: typeof data === 'object' && data && 'error' in data ? (data.error as string) : 'Unknown error',
-              }
+              } as ModelVersionData)
             : model
         )
       );
