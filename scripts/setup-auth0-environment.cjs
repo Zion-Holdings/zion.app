@@ -116,14 +116,14 @@ function createEnvFiles() {
   const envExamplePath = path.join(process.cwd(), '.env.example');
   const envLocalPath = path.join(process.cwd(), '.env.local');
 
-  console.log('🔧 Creating Auth0 environment configuration files...\n');
+  console.warn('🔧 Creating Auth0 environment configuration files...\n');
 
   // Create .env.example
   if (!fs.existsSync(envExamplePath)) {
     fs.writeFileSync(envExamplePath, auth0EnvExample);
-    console.log('✅ Created .env.example');
+    console.warn('✅ Created .env.example');
   } else {
-    console.log('⚠️  .env.example already exists, skipping...');
+    console.warn('⚠️  .env.example already exists, skipping...');
   }
 
   // Create .env.local if it doesn't exist
@@ -133,47 +133,47 @@ function createEnvFiles() {
       `AUTH0_SECRET=${generateAuth0Secret()}`
     );
     fs.writeFileSync(envLocalPath, localEnvWithSecret);
-    console.log('✅ Created .env.local with generated AUTH0_SECRET');
+    console.warn('✅ Created .env.local with generated AUTH0_SECRET');
   } else {
-    console.log('⚠️  .env.local already exists, skipping...');
-    console.log('   You may need to manually add Auth0 variables');
+    console.warn('⚠️  .env.local already exists, skipping...');
+    console.warn('   You may need to manually add Auth0 variables');
   }
 }
 
 function printInstructions() {
-  console.log('\n📚 Auth0 Setup Instructions:\n');
+  console.warn('\n📚 Auth0 Setup Instructions:\n');
   
-  console.log('1. 🏗️  Create Auth0 Application:');
-  console.log('   • Go to https://manage.auth0.com/dashboard');
-  console.log('   • Create new application or use existing one');
-  console.log('   • Choose "Single Page Application" type');
-  console.log('   • Note down your Domain, Client ID, and Client Secret\n');
+  console.warn('1. 🏗️  Create Auth0 Application:');
+  console.warn('   • Go to https://manage.auth0.com/dashboard');
+  console.warn('   • Create new application or use existing one');
+  console.warn('   • Choose "Single Page Application" type');
+  console.warn('   • Note down your Domain, Client ID, and Client Secret\n');
   
-  console.log('2. ⚙️  Configure Auth0 Application Settings:');
-  console.log('   • Allowed Callback URLs: http://localhost:3000/api/auth/callback');
-  console.log('   • Allowed Logout URLs: http://localhost:3000');
-  console.log('   • Allowed Web Origins: http://localhost:3000\n');
+  console.warn('2. ⚙️  Configure Auth0 Application Settings:');
+  console.warn('   • Allowed Callback URLs: http://localhost:3000/api/auth/callback');
+  console.warn('   • Allowed Logout URLs: http://localhost:3000');
+  console.warn('   • Allowed Web Origins: http://localhost:3000\n');
   
-  console.log('3. 🔐 Update .env.local with your Auth0 credentials:');
-  console.log('   • AUTH0_ISSUER_BASE_URL=https://your-tenant.us.auth0.com');
-  console.log('   • AUTH0_CLIENT_ID=your_actual_client_id');
-  console.log('   • AUTH0_CLIENT_SECRET=your_actual_client_secret');
-  console.log('   • AUTH0_SECRET is already generated for you!\n');
+  console.warn('3. 🔐 Update .env.local with your Auth0 credentials:');
+  console.warn('   • AUTH0_ISSUER_BASE_URL=https://your-tenant.us.auth0.com');
+  console.warn('   • AUTH0_CLIENT_ID=your_actual_client_id');
+  console.warn('   • AUTH0_CLIENT_SECRET=your_actual_client_secret');
+  console.warn('   • AUTH0_SECRET is already generated for you!\n');
   
-  console.log('4. 🌐 For Production (Netlify):');
-  console.log('   • Set all Auth0 variables in Netlify UI');
-  console.log('   • Update AUTH0_BASE_URL to your production domain');
-  console.log('   • Add production URLs to Auth0 application settings\n');
+  console.warn('4. 🌐 For Production (Netlify):');
+  console.warn('   • Set all Auth0 variables in Netlify UI');
+  console.warn('   • Update AUTH0_BASE_URL to your production domain');
+  console.warn('   • Add production URLs to Auth0 application settings\n');
   
-  console.log('5. ✅ Validate Configuration:');
-  console.log('   • Run: npm run validate-env');
-  console.log('   • Start development: npm run dev');
-  console.log('   • Test authentication flow\n');
+  console.warn('5. ✅ Validate Configuration:');
+  console.warn('   • Run: npm run validate-env');
+  console.warn('   • Start development: npm run dev');
+  console.warn('   • Test authentication flow\n');
   
-  console.log('📖 Additional Resources:');
-  console.log('   • Auth0 Next.js Guide: https://auth0.com/docs/quickstart/webapp/nextjs');
-  console.log('   • Migration Guide: docs/AUTH0_MIGRATION_GUIDE.md');
-  console.log('   • Environment Setup: docs/ENVIRONMENT_SETUP.md\n');
+  console.warn('📖 Additional Resources:');
+  console.warn('   • Auth0 Next.js Guide: https://auth0.com/docs/quickstart/webapp/nextjs');
+  console.warn('   • Migration Guide: docs/AUTH0_MIGRATION_GUIDE.md');
+  console.warn('   • Environment Setup: docs/ENVIRONMENT_SETUP.md\n');
 }
 
 function checkDependencies() {
@@ -186,36 +186,36 @@ function checkDependencies() {
     const hasAuth0 = '@auth0/nextjs-auth0' in dependencies;
     const hasSupabase = '@supabase/supabase-js' in dependencies;
     
-    console.log('\n🔍 Dependency Check:');
+    console.warn('\n🔍 Dependency Check:');
     
     if (hasAuth0) {
-      console.log('✅ @auth0/nextjs-auth0 is installed');
+      console.warn('✅ @auth0/nextjs-auth0 is installed');
     } else {
-      console.log('❌ @auth0/nextjs-auth0 is NOT installed');
-      console.log('   Run: npm install @auth0/nextjs-auth0');
+      console.warn('❌ @auth0/nextjs-auth0 is NOT installed');
+      console.warn('   Run: npm install @auth0/nextjs-auth0');
     }
     
     if (hasSupabase) {
-      console.log('⚠️  Supabase dependencies still installed');
-      console.log('   Consider removing: npm uninstall @supabase/supabase-js @supabase/auth-ui-react');
+      console.warn('⚠️  Supabase dependencies still installed');
+      console.warn('   Consider removing: npm uninstall @supabase/supabase-js @supabase/auth-ui-react');
     } else {
-      console.log('✅ Supabase dependencies have been removed');
+      console.warn('✅ Supabase dependencies have been removed');
     }
     
-    console.log('');
+    console.warn('');
   }
 }
 
 function main() {
-  console.log('🚀 Auth0 Environment Setup for Zion Tech Marketplace\n');
+  console.warn('🚀 Auth0 Environment Setup for Zion Tech Marketplace\n');
   
   try {
     createEnvFiles();
     checkDependencies();
     printInstructions();
     
-    console.log('🎉 Auth0 environment setup complete!');
-    console.log('   Next steps: Update .env.local with your Auth0 credentials and run npm run validate-env\n');
+    console.warn('🎉 Auth0 environment setup complete!');
+    console.warn('   Next steps: Update .env.local with your Auth0 credentials and run npm run validate-env\n');
     
   } catch (error) {
     console.error('❌ Setup failed:', error.message);
