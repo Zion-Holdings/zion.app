@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import { Logo } from './Logo';
 import { AvatarMenu } from './AvatarMenu';
 import { LanguageSelector } from './LanguageSelector';
@@ -8,7 +7,6 @@ import { useAuth } from '@/hooks/useAuth';
 import { useWhitelabel } from '@/context/WhitelabelContext';
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { generateSearchSuggestions } from "@/data/marketplaceData";
-import { slugify } from "@/lib/slugify";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
@@ -38,14 +36,6 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const searchSuggestions = generateSearchSuggestions();
   
-  // If we have a white-label tenant and no specific customTheme is provided,
-  // use the tenant's primary color
-  const effectiveTheme = customTheme || (isWhitelabel ? {
-    primaryColor,
-    backgroundColor: '#000000', // Default dark background
-    textColor: '#ffffff', // Default light text
-  } : undefined);
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const trimmed = query.trim();
