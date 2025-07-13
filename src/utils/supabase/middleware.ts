@@ -29,22 +29,22 @@ export async function updateSession(request: NextRequest) {
         cookies: {
           get(name: string) {
             const cookiesAny = request.cookies as unknown;
-            if (cookiesAny && typeof cookiesAny === 'object' && 'get' in cookiesAny && typeof (cookiesAny as any).get === 'function') {
-              const cookie = (cookiesAny as any).get(name);
+            if (cookiesAny && typeof cookiesAny === 'object' && 'get' in cookiesAny && typeof (cookiesAny as { get?: unknown }).get === 'function') {
+              const cookie = (cookiesAny as { get: (name: string) => unknown }).get(name);
               return typeof cookie === 'object' && cookie !== null && 'value' in cookie ? (cookie as { value: string }).value : undefined;
             }
             return undefined;
           },
           set(name: string, value: string, options: unknown) {
             const cookies = (response as unknown);
-            if (cookies && typeof cookies === 'object' && 'cookies' in cookies && typeof (cookies as any).cookies?.set === 'function') {
-              (cookies as any).cookies.set(name, value, options);
+            if (cookies && typeof cookies === 'object' && 'cookies' in cookies && typeof (cookies as { cookies?: { set?: unknown } }).cookies?.set === 'function') {
+              (cookies as { cookies: { set: (name: string, value: string, options: unknown) => void } }).cookies.set(name, value, options);
             }
           },
           remove(name: string, options: unknown) {
             const cookies = (response as unknown);
-            if (cookies && typeof cookies === 'object' && 'cookies' in cookies && typeof (cookies as any).cookies?.set === 'function') {
-              (cookies as any).cookies.set(name, '', options);
+            if (cookies && typeof cookies === 'object' && 'cookies' in cookies && typeof (cookies as { cookies?: { set?: unknown } }).cookies?.set === 'function') {
+              (cookies as { cookies: { set: (name: string, value: string, options: unknown) => void } }).cookies.set(name, '', options);
             }
           },
         },
