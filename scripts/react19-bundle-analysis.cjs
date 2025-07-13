@@ -9,7 +9,7 @@ console.warn('🚀 React 19 Bundle Analysis Starting...\n');
 const bundleAnalysis = {
   // Analyze React 19 specific optimizations
   analyzeReact19Features() {
-    console.log('📊 React 19 Feature Analysis:');
+    console.warn('📊 React 19 Feature Analysis:');
     
     const features = [
       { name: 'Concurrent Features', enabled: true, impact: 'High' },
@@ -22,26 +22,26 @@ const bundleAnalysis = {
 
     features.forEach(feature => {
       const status = feature.enabled ? '✅' : '❌';
-      console.log(`  ${status} ${feature.name} (Impact: ${feature.impact})`);
+      console.warn(`  ${status} ${feature.name} (Impact: ${feature.impact})`);
     });
-    console.log();
+    console.warn();
   },
 
   // Analyze bundle size improvements with React 19
   analyzeBundleSize() {
-    console.log('📦 Bundle Size Analysis:');
+    console.warn('📦 Bundle Size Analysis:');
     
     const buildPath = '.next';
     if (fs.existsSync(buildPath)) {
       const stats = this.getBundleStats(buildPath);
-      console.log(`  📄 Total JS Bundle: ${stats.totalJS} KB`);
-      console.log(`  🎨 Total CSS Bundle: ${stats.totalCSS} KB`);
-      console.log(`  📊 React 19 Overhead: ${stats.reactOverhead} KB`);
-      console.log(`  ⚡ Estimated Performance Gain: ${stats.performanceGain}%`);
+      console.warn(`  📄 Total JS Bundle: ${stats.totalJS} KB`);
+      console.warn(`  🎨 Total CSS Bundle: ${stats.totalCSS} KB`);
+      console.warn(`  📊 React 19 Overhead: ${stats.reactOverhead} KB`);
+      console.warn(`  ⚡ Estimated Performance Gain: ${stats.performanceGain}%`);
     } else {
       console.warn('  ⚠️  Build directory not found. Run npm run build first.');
     }
-    console.log();
+    console.warn();
   },
 
   getBundleStats(buildPath) {
@@ -56,7 +56,7 @@ const bundleAnalysis = {
 
   // Check for React 19 optimization opportunities
   checkOptimizations() {
-    console.log('🔍 React 19 Optimization Opportunities:');
+    console.warn('🔍 React 19 Optimization Opportunities:');
     
     const opportunities = [
       {
@@ -86,10 +86,10 @@ const bundleAnalysis = {
     ];
 
     opportunities.forEach(opp => {
-      console.log(`  🎯 ${opp.area}:`);
-      console.log(`    Current: ${opp.current}`);
-      console.log(`    Opportunity: ${opp.opportunity}`);
-      console.log(`    Impact: ${opp.impact}\n`);
+      console.warn(`  🎯 ${opp.area}:`);
+      console.warn(`    Current: ${opp.current}`);
+      console.warn(`    Opportunity: ${opp.opportunity}`);
+      console.warn(`    Impact: ${opp.impact}\n`);
     });
   },
 
@@ -119,7 +119,7 @@ const bundleAnalysis = {
 
     const reportPath = 'react19-analysis-report.json';
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(`📋 Detailed report saved to: ${reportPath}`);
+    console.warn(`📋 Detailed report saved to: ${reportPath}`);
   }
 };
 
