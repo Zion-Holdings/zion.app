@@ -149,7 +149,7 @@ class RealtimeLogMonitor {
     const logEntry = {
       timestamp: entry.timestamp || new Date().toISOString(),
       level: entry.level || 'info',
-      message: entry.message || line,
+      message: entry.message || '',
       category: entry.category || 'unknown',
       source: filename,
       metadata: entry.metadata || {},
