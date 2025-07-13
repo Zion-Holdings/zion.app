@@ -69,7 +69,7 @@ export function ProfileSetup({ onComplete, userType }: ProfileSetupProps) {
           <FormField
             control={form.control}
             name="displayName"
-            render={({ field, _fieldState, _formState }) => (
+            render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-zion-slate-light">Full Name</FormLabel>
                 <FormControl>
@@ -90,7 +90,7 @@ export function ProfileSetup({ onComplete, userType }: ProfileSetupProps) {
           <FormField
             control={form.control}
             name="headline"
-            render={({ field, _fieldState, _formState }) => (
+            render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-zion-slate-light">Professional Headline</FormLabel>
                 <FormControl>
@@ -115,7 +115,7 @@ export function ProfileSetup({ onComplete, userType }: ProfileSetupProps) {
           <FormField
             control={form.control}
             name="bio"
-            render={({ field, _fieldState, _formState }) => (
+            render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-zion-slate-light">Bio</FormLabel>
                 <FormControl>
