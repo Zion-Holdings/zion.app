@@ -31,11 +31,11 @@ interface OptimizationOpportunity {
 }
 
 class BuildPerformanceOptimizer {
-  private bundleAnalysis: BundleAnalysis[] = [];
-  private performanceMetrics: PerformanceMetrics;
+  private _bundleAnalysis: BundleAnalysis[] = [];
+  private _performanceMetrics: PerformanceMetrics;
 
   constructor() {
-    this.performanceMetrics = {
+    this._performanceMetrics = {
       totalBundleSize: 0,
       largestChunks: [],
       duplicatedModules: [],
@@ -60,7 +60,7 @@ class BuildPerformanceOptimizer {
       // Generate recommendations
       this.generateRecommendations();
       
-      return this.performanceMetrics;
+      return this._performanceMetrics;
       
     } catch (error) {
       logErrorToProduction('❌ Error during build analysis:', error);
@@ -97,13 +97,13 @@ class BuildPerformanceOptimizer {
         // Estimate gzipped size (roughly 30% of original)
         analysis.gzippedSize = Math.round(stats.size * 0.3);
         
-        this.bundleAnalysis.push(analysis);
-        this.performanceMetrics.totalBundleSize += stats.size;
+        this._bundleAnalysis.push(analysis);
+        this._performanceMetrics.totalBundleSize += stats.size;
       }
     }
 
     // Sort by size and identify largest chunks
-    this.performanceMetrics.largestChunks = this.bundleAnalysis
+    this._performanceMetrics.largestChunks = this._bundleAnalysis
       .sort((a, b) => b.size - a.size)
       .slice(0, 10);
   }
@@ -130,7 +130,7 @@ class BuildPerformanceOptimizer {
     const opportunities: OptimizationOpportunity[] = [];
 
     // Check for oversized vendor chunks
-    const largeVendorChunks = this.bundleAnalysis.filter(chunk => 
+    const largeVendorChunks = this._bundleAnalysis.filter(chunk => 
       chunk.file.includes('vendor') && chunk.size > 500000 // > 500KB
     );
 
@@ -145,7 +145,7 @@ class BuildPerformanceOptimizer {
     }
 
     // Check for oversized page chunks
-    const largePageChunks = this.bundleAnalysis.filter(chunk => 
+    const largePageChunks = this._bundleAnalysis.filter(chunk => 
       chunk.route && !['vendor', 'common'].includes(chunk.route) && chunk.size > 200000 // > 200KB
     );
 
@@ -160,18 +160,18 @@ class BuildPerformanceOptimizer {
     }
 
     // Check total bundle size
-    if (this.performanceMetrics.totalBundleSize > 2000000) { // > 2MB
+    if (this._performanceMetrics.totalBundleSize > 2000000) { // > 2MB
       opportunities.push({
         type: 'tree-shaking',
         impact: 'high',
         description: 'Total bundle size is large. Optimize imports and enable tree shaking.',
-        estimatedSaving: Math.round(this.performanceMetrics.totalBundleSize * 0.2 / 1024),
+        estimatedSaving: Math.round(this._performanceMetrics.totalBundleSize * 0.2 / 1024),
         implementation: 'Use named imports, remove unused code, configure webpack for better tree shaking'
       });
     }
 
     // Check for compression opportunities
-    const uncompressedSize = this.performanceMetrics.totalBundleSize;
+    const uncompressedSize = this._performanceMetrics.totalBundleSize;
     const estimatedGzippedSize = uncompressedSize * 0.3;
     
     if (estimatedGzippedSize > 500000) { // > 500KB gzipped
@@ -184,15 +184,15 @@ class BuildPerformanceOptimizer {
       });
     }
 
-    this.performanceMetrics.optimizationOpportunities = opportunities;
+    this._performanceMetrics.optimizationOpportunities = opportunities;
   }
 
   private generateRecommendations(): void {
     const recommendations: string[] = [];
 
     // Based on analysis results
-    if (this.performanceMetrics.largestChunks.length > 0) {
-      const largestChunk = this.performanceMetrics.largestChunks[0];
+    if (this._performanceMetrics.largestChunks.length > 0) {
+      const largestChunk = this._performanceMetrics.largestChunks[0];
       if (largestChunk) {
         recommendations.push(
           `🎯 Focus on optimizing ${largestChunk.file} (${this.formatSize(largestChunk.size)}) - your largest chunk`
@@ -201,18 +201,18 @@ class BuildPerformanceOptimizer {
     }
 
     // Vendor optimization
-    const vendorChunks = this.bundleAnalysis.filter(chunk => chunk.file.includes('vendor'));
+    const vendorChunks = this._bundleAnalysis.filter(chunk => chunk.file.includes('vendor'));
     if (vendorChunks.length > 0) {
       const vendorSize = vendorChunks.reduce((total, chunk) => total + chunk.size, 0);
-      if (vendorSize > this.performanceMetrics.totalBundleSize * 0.6) {
+      if (vendorSize > this._performanceMetrics.totalBundleSize * 0.6) {
         recommendations.push(
-          `📦 Vendor chunks are ${Math.round(vendorSize / this.performanceMetrics.totalBundleSize * 100)}% of total bundle. Consider code splitting`
+          `📦 Vendor chunks are ${Math.round(vendorSize / this._performanceMetrics.totalBundleSize * 100)}% of total bundle. Consider code splitting`
         );
       }
     }
 
     // Performance budget recommendations
-    const totalSizeMB = this.performanceMetrics.totalBundleSize / (1024 * 1024);
+    const totalSizeMB = this._performanceMetrics.totalBundleSize / (1024 * 1024);
     if (totalSizeMB > 3) {
       recommendations.push(
         `⚡ Total bundle size (${totalSizeMB.toFixed(2)}MB) exceeds recommended 3MB limit. Implement lazy loading`
@@ -220,7 +220,7 @@ class BuildPerformanceOptimizer {
     }
 
     // Specific optimization recommendations
-    this.performanceMetrics.optimizationOpportunities.forEach(opportunity => {
+    this._performanceMetrics.optimizationOpportunities.forEach(opportunity => {
       if (opportunity.impact === 'high') {
         recommendations.push(
           `🔥 HIGH IMPACT: ${opportunity.description} (Est. saving: ${opportunity.estimatedSaving}KB)`
@@ -237,7 +237,7 @@ class BuildPerformanceOptimizer {
       '🔍 Regular bundle analysis with webpack-bundle-analyzer'
     );
 
-    this.performanceMetrics.recommendations = recommendations;
+    this._performanceMetrics.recommendations = recommendations;
   }
 
   private formatSize(bytes: number): string {
@@ -255,14 +255,14 @@ class BuildPerformanceOptimizer {
 
 📊 BUNDLE OVERVIEW
 ------------------
-Total Bundle Size: ${this.formatSize(this.performanceMetrics.totalBundleSize)}
-Number of Chunks: ${this.bundleAnalysis.length}
-Estimated Gzipped: ${this.formatSize(this.performanceMetrics.totalBundleSize * 0.3)}
+Total Bundle Size: ${this.formatSize(this._performanceMetrics.totalBundleSize)}
+Number of Chunks: ${this._bundleAnalysis.length}
+Estimated Gzipped: ${this.formatSize(this._performanceMetrics.totalBundleSize * 0.3)}
 
 🔍 LARGEST CHUNKS
 -----------------`];
 
-    this.performanceMetrics.largestChunks.slice(0, 5).forEach((chunk, index) => {
+    this._performanceMetrics.largestChunks.slice(0, 5).forEach((chunk, index) => {
       report.push(`${index + 1}. ${chunk.file} - ${this.formatSize(chunk.size)}`);
     });
 
@@ -270,7 +270,7 @@ Estimated Gzipped: ${this.formatSize(this.performanceMetrics.totalBundleSize * 0
 ⚡ OPTIMIZATION OPPORTUNITIES
 ----------------------------`);
 
-    this.performanceMetrics.optimizationOpportunities.forEach((opportunity, index) => {
+    this._performanceMetrics.optimizationOpportunities.forEach((opportunity, index) => {
       report.push(`${index + 1}. [${opportunity.impact.toUpperCase()}] ${opportunity.description}`);
       report.push(`   💡 ${opportunity.implementation}`);
       report.push(`   💰 Estimated saving: ${opportunity.estimatedSaving}KB`);
@@ -281,7 +281,7 @@ Estimated Gzipped: ${this.formatSize(this.performanceMetrics.totalBundleSize * 0
 🎯 RECOMMENDATIONS
 ------------------`);
 
-    this.performanceMetrics.recommendations.forEach((rec, index) => {
+    this._performanceMetrics.recommendations.forEach((rec, index) => {
       report.push(`${index + 1}. ${rec}`);
     });
 
@@ -300,17 +300,17 @@ Estimated Gzipped: ${this.formatSize(this.performanceMetrics.totalBundleSize * 0
     let score = 100;
     
     // Deduct points based on bundle size
-    const sizeMB = this.performanceMetrics.totalBundleSize / (1024 * 1024);
+    const sizeMB = this._performanceMetrics.totalBundleSize / (1024 * 1024);
     if (sizeMB > 5) score -= 30;
     else if (sizeMB > 3) score -= 20;
     else if (sizeMB > 2) score -= 10;
     
     // Deduct points for large chunks
-    const largeChunks = this.bundleAnalysis.filter(chunk => chunk.size > 500000);
+    const largeChunks = this._bundleAnalysis.filter(chunk => chunk.size > 500000);
     score -= largeChunks.length * 5;
     
     // Deduct points for high-impact optimization opportunities
-    const highImpactOpportunities = this.performanceMetrics.optimizationOpportunities
+    const highImpactOpportunities = this._performanceMetrics.optimizationOpportunities
       .filter(op => op.impact === 'high');
     score -= highImpactOpportunities.length * 15;
     
@@ -319,7 +319,7 @@ Estimated Gzipped: ${this.formatSize(this.performanceMetrics.totalBundleSize * 0
 
   private getScoreEmoji(score: number): string {
     if (score >= 90) return '🟢';
-    if (score >= 70) return '🟡';
+    if (score >= 70) return '��';
     if (score >= 50) return '🟠';
     return '🔴';
   }
