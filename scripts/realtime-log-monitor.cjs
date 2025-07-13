@@ -498,7 +498,7 @@ async function main() {
 
 // Run if called directly
 if (require.main === module) {
-  main().catch(error => {
+  main().catch(_error => {
     // console.error('❌ Monitor failed:', error);
     process.exit(1);
   });

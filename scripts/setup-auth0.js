@@ -287,8 +287,8 @@ async function testConfiguration() {
       logErrorToProduction(`Auth0 domain test failed: ${response.status} ${response.statusText}`);
       return false;
     }
-  } catch (error) {
-    logErrorToProduction(`Auth0 domain test failed: ${error.message}`);
+  } catch (_error) {
+    logErrorToProduction(`Auth0 domain test failed: ${_error.message}`);
     return false;
   }
 }
@@ -387,9 +387,9 @@ async function main() {
     // Display next steps
     await displayNextSteps();
     
-  } catch (error) {
-    logErrorToProduction(`Setup failed: ${error.message}`);
-    console.error(error);
+  } catch (_error) {
+    logErrorToProduction(`Setup failed: ${_error.message}`);
+    console.error(_error);
   } finally {
     rl.close();
   }
@@ -406,7 +406,7 @@ process.on('SIGINT', () => {
 // Check if node-fetch is available, install if needed
 try {
   require('node-fetch');
-} catch (error) {
+} catch (_error) {
   logWarning('node-fetch not found. Please install it:');
   log('npm install node-fetch', 'cyan');
   process.exit(1);
@@ -415,7 +415,7 @@ try {
 // Check if dotenv is available
 try {
   require('dotenv');
-} catch (error) {
+} catch (_error) {
   logWarning('dotenv not found. Please install it:');
   log('npm install dotenv', 'cyan');
   process.exit(1);
