@@ -1,4 +1,3 @@
-const crypto = require('crypto');
 const syncStore = require('../utils/syncStore');
 
 // Merge incoming arrays by id to avoid duplicates
