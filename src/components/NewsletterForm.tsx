@@ -3,7 +3,6 @@ import { Input } from "@/components/ui/input";
 import { useState, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { isValidEmail } from "@/utils/email";
-import { logError } from '@/utils/logError';
 
 export function NewsletterForm() {
   const [email, setEmail] = useState("");
@@ -48,7 +47,6 @@ export function NewsletterForm() {
       }
     } catch (err: unknown) {
       // Optionally log the error if needed
-      // if (err instanceof Error) logError(err);
       toast.error("Unable to subscribe right now. Please try again later.");
     } finally {
       setIsSubmitting(false);
