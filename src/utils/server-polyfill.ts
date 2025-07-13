@@ -28,7 +28,7 @@ if (typeof window === 'undefined') {
       onLine: true
     },
     document: {
-      createElement: (): object => ({ nodeType: 1 }),
+      createElement: (): unknown => ({ nodeType: 1 }),
       getElementsByTagName: () => [],
       getElementById: () => null,
       querySelector: () => null,
