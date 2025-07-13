@@ -83,17 +83,17 @@ export default function TokenSimulator() {
 
   useEffect(() => {
     // Chart.js is loaded dynamically at runtime, so we must use 'any' here for chart instance
-    let chart: unknown | undefined;
+    let chart: any;
     const id = 'chartjs-script';
     const load = () => {
       if (!velocityChart.current || typeof window.Chart !== 'function') return;
-      const Chart = window.Chart as unknown as typeof Chart;
+      const Chart: any = window.Chart;
       const labels = Array.from({ length: months }, (_, i) => `${i + 1}`);
       const velocities = labels.map(
         (_, i) =>
           (inputs.activeWallets * (i + 1)) / (forecast[i] || inputs.circulating)
       );
-      if (chart) (chart as unknown as Chart).destroy();
+      if (chart) chart.destroy();
       chart = new Chart(velocityChart.current as HTMLCanvasElement, {
         type: 'line',
         data: {
@@ -117,19 +117,19 @@ export default function TokenSimulator() {
       }
     }
     return () => {
-      if (chart) (chart as unknown as Chart).destroy();
+      if (chart) chart.destroy();
     };
   }, [forecast, inputs.activeWallets, months]);
 
   useEffect(() => {
     // Chart.js is loaded dynamically at runtime, so we must use 'any' here for chart instance
-    let chart: unknown | undefined;
+    let chart: any;
     const id = 'chartjs-script2';
     const load = () => {
       if (!supplyChart.current || typeof window.Chart !== 'function') return;
-      const Chart = window.Chart as unknown as typeof Chart;
+      const Chart: any = window.Chart;
       const labels = Array.from({ length: months }, (_, i) => `${i + 1}`);
-      if (chart) (chart as unknown as Chart).destroy();
+      if (chart) chart.destroy();
       chart = new Chart(supplyChart.current as HTMLCanvasElement, {
         type: 'line',
         data: {
@@ -153,7 +153,7 @@ export default function TokenSimulator() {
       }
     }
     return () => {
-      if (chart) (chart as unknown as Chart).destroy();
+      if (chart) chart.destroy();
     };
   }, [forecast, months]);
 
