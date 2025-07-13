@@ -84,11 +84,11 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
         throw new Error(error.message);
       }
       
-      if ((data as any)?.error) {
-        throw new Error((data as any).error);
+      if ((data as unknown as { error?: string })?.error) {
+        throw new Error((data as unknown as { error?: string }).error);
       }
 
-      setGeneratedContent((data as any)?.generated || null);
+      setGeneratedContent((data as unknown as { generated?: GeneratedContent })?.generated || null);
       toast({
         title: "Content Generated",
         description: "AI has created optimized listing content for you."

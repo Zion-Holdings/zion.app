@@ -50,7 +50,7 @@ export const QuotesFilter: React.FC<QuotesFilterProps> = ({
           
           <div>
             <p className="text-zion-slate-light text-sm mb-2">Status</p>
-            <Select value={statusFilter} onValueChange={(value: any) => setStatusFilter(value)}>
+            <Select value={statusFilter} onValueChange={(value: QuoteStatus | 'all') => setStatusFilter(value)}>
               <SelectTrigger className="bg-zion-blue border-zion-blue-light text-white">
                 <SelectValue placeholder="Status" />
               </SelectTrigger>
@@ -67,7 +67,7 @@ export const QuotesFilter: React.FC<QuotesFilterProps> = ({
           
           <div>
             <p className="text-zion-slate-light text-sm mb-2">Archive</p>
-            <Select value={archiveFilter} onValueChange={(value: any) => setArchiveFilter(value)}>
+            <Select value={archiveFilter} onValueChange={(value: 'active' | 'archived' | 'all') => setArchiveFilter(value)}>
               <SelectTrigger className="bg-zion-blue border-zion-blue-light text-white">
                 <SelectValue placeholder="Archive Status" />
               </SelectTrigger>

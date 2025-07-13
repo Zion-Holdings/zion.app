@@ -20,7 +20,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
   const { user } = useAuth();
   const [messages, setMessages] = useState<Message[]>([]);
   const [text, setText] = useState('');
-  const socketRef = useRef<any>(null);
+  const socketRef = useRef<unknown>(null);
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
   // Load stored messages for this room when opened
@@ -40,7 +40,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
     if (!isOpen) return;
 
     let isMounted = true;
-    let socket: any;
+    let socket: unknown;
 
     async function setup() {
       const mod = await import('socket.io-client');

@@ -176,13 +176,13 @@ function getErrorMessage(error: Error): string {
 export function useErrorHandler() {
   const { reportError, showRetryableError, showNetworkError, showAuthError } = useGlobalErrorHandler();
 
-  const handleApiError = useCallback((error: any, retryAction?: () => void) => {
-    if (error.response?.status === 401 || error.response?.status === 403) {
+  const handleApiError = useCallback((error: unknown, retryAction?: () => void) => {
+    if ((error as any).response?.status === 401 || (error as any).response?.status === 403) {
       showAuthError();
-    } else if (error.code === 'NETWORK_ERROR' || !navigator.onLine) {
+    } else if ((error as any).code === 'NETWORK_ERROR' || !navigator.onLine) {
       showNetworkError(retryAction);
     } else {
-      showRetryableError(error, retryAction);
+      showRetryableError(error as Error, retryAction);
     }
   }, [showRetryableError, showNetworkError, showAuthError]);
 
@@ -205,11 +205,11 @@ export function useErrorHandler() {
       }
       
       return result;
-    } catch (error: any) {
-      reportError(error);
+    } catch (error: unknown) {
+      reportError(error as Error);
       
       if (options?.onError) {
-        options.onError(error);
+        options.onError(error as Error);
       } else {
         handleApiError(error, options?.retryAction);
       }
