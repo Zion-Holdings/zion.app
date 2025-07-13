@@ -75,7 +75,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     return;
   }
 
-  console.log('Received error report request');
   const errorDetails = req['body'] as ErrorDetails; // Type assertion for req.body
 
   if (!errorDetails || typeof errorDetails !== 'object' || !errorDetails.message || !errorDetails.stack) {
@@ -89,10 +88,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   errorForSentry.stack = errorDetails.stack;
   // Pass all errorDetails, and specify source context
   captureException(errorForSentry, { extra: { ...errorDetails, sourceContext: 'pages/api/log-error' } });
-  console.log('Error reported to Sentry');
 
   const errorSignature = generateErrorSignature(errorDetails);
-  console.log(`Generated error signature: ${errorSignature}`);
 
   let dbRecordId: string | undefined; // dbRecord.id is a string
   let formulatedPrompt: string | undefined;
@@ -103,7 +100,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
     if (dbRecord) {
-      console.log(`Recurring error found (ID: ${dbRecord.id}, Signature: ${errorSignature}). Updating count.`);
       dbRecord = await prisma.errorAnalysisSuggestion.update({
         where: { error_signature: errorSignature },
         data: {
@@ -112,7 +108,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         },
       });
     } else {
-      console.log(`New error (Signature: ${errorSignature}). Creating record.`);
       dbRecord = await prisma.errorAnalysisSuggestion.create({
         data: {
           error_signature: errorSignature,
@@ -127,16 +122,13 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
           occurrence_count: 1,
         },
       });
-      console.log(`New error record created (ID: ${dbRecord.id})`);
     }
     dbRecordId = dbRecord.id;
 
     formulatedPrompt = formulateCodexPrompt(errorDetails, errorSignature);
-    console.log(`Formulated Codex prompt (ID: ${dbRecordId}, first 100 chars): ${formulatedPrompt.substring(0, 100)}...`);
 
     res.status(202).json({ success: true, message: 'Error report received, analysis initiated.', signature: errorSignature, dbId: dbRecordId });
 
-    console.log(`Executing Codex script for DB record ID: ${dbRecordId}`);
     // Ensure prompt is correctly escaped for command line, using base64 is a robust way
     const command = `node "${CODEX_SCRIPT_PATH}" --prompt "${Buffer.from(formulatedPrompt).toString('base64')}"`;
 
@@ -219,7 +211,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
             analysis_error: null,
           },
         });
-        console.log(`Successfully processed and stored structured Codex suggestion for ID: ${dbRecordId}`);
 
       } catch (dbUpdateError: any) {
         console.error(`Failed to update DB record ${dbRecordId} after Codex script execution:`, dbUpdateError);

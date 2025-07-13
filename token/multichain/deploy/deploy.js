@@ -4,7 +4,7 @@ const path = require("path");
 
 async function main() {
   const [deployer] = await hre.ethers.getSigners();
-  console.log("Deploying with", deployer.address);
+  console.warn("Deploying with", deployer.address);
 
   const endpoint = process.env.LZ_ENDPOINT;
   const starknetApp = process.env.STARKNET_APP;
@@ -12,17 +12,17 @@ async function main() {
   const Token = await hre.ethers.getContractFactory("ZIONDollar");
   const token = await Token.deploy(endpoint, 20);
   await token.deployed();
-  console.log("ZIONDollar deployed:", token.address);
+  console.warn("ZIONDollar deployed:", token.address);
 
   const Relay = await hre.ethers.getContractFactory("VoteRelay");
   const relay = await Relay.deploy(endpoint, starknetApp);
   await relay.deployed();
-  console.log("VoteRelay deployed:", relay.address);
+  console.warn("VoteRelay deployed:", relay.address);
 
   const Executor = await hre.ethers.getContractFactory("GovernanceExecutor");
   const executor = await Executor.deploy(relay.address);
   await executor.deployed();
-  console.log("GovernanceExecutor deployed:", executor.address);
+  console.warn("GovernanceExecutor deployed:", executor.address);
 
   const output = {
     ZIONDollar: token.address,

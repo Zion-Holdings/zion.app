@@ -70,8 +70,6 @@ export default async function handler(
       return res.status(400).json({ error: 'User ID is required for recommendations' });
     }
 
-    console.log(`Fetching recommendations for user: ${id}`);
-    
     // Simulate AI processing delay
     await new Promise(resolve => setTimeout(resolve, 1500));
     
