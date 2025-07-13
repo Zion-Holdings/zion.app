@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* eslint-disable no-console */
+ 
 
 // Load environment variables from .env files if the dotenv package is available
 let dotenvAvailable = true;
@@ -20,13 +20,12 @@ try {
 
 const { validateEnvironment } = require('./validate-environment.cjs');
 
-// Comment out all remaining console.log statements (lines 41, 42, 55, 57, 121, 122, 126, 135, 136, 140, 142, 197, 201, 207, 208, 240, 242, 244, 261, 271, 277, 278, 285)
-// console.log('🚀 Pre-build Environment Check');
-// console.log('================================\n');
+// Remove all disallowed console statements (console.log, console.info, etc.)
+// Prefix unused variables/arguments with underscores
+// Remove variables that are never used and not required for function signatures
 
 // Verify essential dependencies are installed
 function checkDependencies() {
-  // console.log('🔍 Checking dependencies...');
   const required = [
     'react',
     'react-dom',
@@ -48,19 +47,12 @@ function checkDependencies() {
     console.error('Please run "./setup.sh npm" to install required packages.');
     process.exit(1);
   }
-
-  // console.log('✅ All required dependencies found.\n');
 }
 
 checkDependencies();
 
 // Special handling for Netlify environment
 if (process.env.NETLIFY === 'true') {
-  // console.log('🌐 Detected Netlify build environment');
-  // console.log(`📦 Deploy context: ${process.env.CONTEXT || 'unknown'}`);
-  // console.log(`🌍 Deploy URL: ${process.env.DEPLOY_URL || 'unknown'}`);
-  // console.log(`🔗 Site URL: ${process.env.URL || 'unknown'}\n`);
-  
   // Check if this is a production deploy
   if (process.env.CONTEXT === 'production') {
     // console.log('🔥 PRODUCTION DEPLOYMENT - Extra validation required\n');

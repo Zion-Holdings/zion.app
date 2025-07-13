@@ -11,9 +11,6 @@
 const fs = require('fs');
 const path = require('path');
 
-// console.log('⚡ QUICK SUPABASE SETUP - 100% PRODUCTION READY');
-// console.log('===============================================\n');
-
 class QuickSupabaseSetup {
   constructor() {
     this.envFile = '.env.local';
