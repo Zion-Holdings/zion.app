@@ -7,7 +7,7 @@ interface PerformanceData {
   conversionRate: string;
 }
 
-const DataSync: React.FC<DataSyncProps> = () => {
+const DataSync: React.FC = () => {
   // Replace placeholderData with real API call
   const [data, setData] = React.useState<PerformanceData | null>(null);
   const [loading, setLoading] = React.useState(true);
@@ -26,7 +26,7 @@ const DataSync: React.FC<DataSyncProps> = () => {
         };
         setData(result);
         setError(null);
-      } catch (err) {
+      } catch {
         setData(null);
         setError('Error fetching performance data');
       } finally {
