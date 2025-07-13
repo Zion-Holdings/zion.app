@@ -29,7 +29,7 @@ export function SkillsForm({ resumeId, skills, onComplete, onBack }: SkillsFormP
     }
   };
 
-  const handleDeleteSkill = async (id: string, category: string = 'Other') => {
+  const handleDeleteSkill = async (id: string) => {
     if (confirm('Are you sure you want to delete this skill?')) {
       const success = await deleteSkill(id);
       if (success) {

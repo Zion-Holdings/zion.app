@@ -33,7 +33,7 @@ export const QuoteDetails = ({ quote, isOpen, onClose }: QuoteDetailsProps) => {
     if (!dateString) return 'Not specified';
     try {
       return format(new Date(dateString), 'PPP');
-    } catch (e) {
+    } catch {
       return dateString;
     }
   };

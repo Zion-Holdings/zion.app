@@ -18,7 +18,6 @@ interface ResumeStepContentProps {
 }
 
 export const ResumeStepContent = ({ 
-  activeTab, 
   resume, 
   onNextStep, 
   onPrevStep 

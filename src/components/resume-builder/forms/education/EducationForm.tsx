@@ -14,16 +14,9 @@ export function EducationForm({
   onComplete, 
   onBack 
 }: EducationFormProps) {
-  const { addEducation, updateEducation, deleteEducation, isLoading } = useResume();
+  const { addEducation, updateEducation, deleteEducation } = useResume();
   const [editingId, setEditingId] = useState<string | null>(null);
   
-  // Helper function to format dates to string
-  const formatDateValue = (dateValue: string | Date | undefined): string => {
-    if (!dateValue) return '';
-    if (typeof dateValue === 'string') return dateValue;
-    return format(dateValue, 'yyyy-MM-dd');
-  };
-
   const handleAddOrUpdate = async (data: Education) => {
     const educationData: Education = {
       institution: data.institution,

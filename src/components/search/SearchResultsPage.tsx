@@ -438,7 +438,7 @@ export const SearchResultsPage: React.FC = () => {
       performSearch(searchTerm, 1, filters);
       setCurrentPage(1);
     }
-  }, [searchTerm, filters]);
+  }, [searchTerm, filters, performSearch]);
 
   // Handle search input
   const handleSearch = (term: string) => {

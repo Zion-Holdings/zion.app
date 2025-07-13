@@ -44,7 +44,7 @@ export const QuoteRequestsList: React.FC<QuoteRequestsListProps> = ({
         };
         if (!isArchived && onMarkAsResponded) {
           // Only include the prop if defined
-          (cardProps as any).onMarkAsResponded = onMarkAsResponded;
+          (cardProps as unknown as { onMarkAsResponded?: (id: string) => void }).onMarkAsResponded = onMarkAsResponded;
         }
         return <QuoteRequestCard {...cardProps} />;
       })}

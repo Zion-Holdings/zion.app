@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import {logErrorToProduction} from '@/utils/productionLogger';
-import { Loader2, Link, FileImage, Github, Edit } from 'lucide-react';
+import { Loader2, Link, FileImage, Github } from 'lucide-react';
 import {
   Form,
   FormControl,
@@ -109,7 +109,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
         <FormField
           control={form.control}
           name="title"
-          render={({ field }: { field: any }) => (
+          render={({ field }: { field: React.ChangeEvent<HTMLInputElement> }) => (
             <FormItem>
               <FormLabel>Project Title</FormLabel>
               <FormControl>
@@ -123,7 +123,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
         <FormField
           control={form.control}
           name="description"
-          render={({ field }: { field: any }) => (
+          render={({ field }: { field: React.ChangeEvent<HTMLTextAreaElement> }) => (
             <FormItem>
               <FormLabel>Project Description</FormLabel>
               <FormControl>
@@ -141,7 +141,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
         <FormField
           control={form.control}
           name="technologies"
-          render={({ field }: { field: any }) => (
+          render={({ field }: { field: React.ChangeEvent<HTMLInputElement> }) => (
             <FormItem>
               <FormLabel>Technologies Used</FormLabel>
               <FormControl>
@@ -156,7 +156,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
           <FormField
             control={form.control}
             name="github_url"
-            render={({ field }: { field: any }) => (
+            render={({ field }: { field: React.ChangeEvent<HTMLInputElement> }) => (
               <FormItem>
                 <FormLabel className="flex items-center gap-2">
                   <Github className="h-4 w-4" />
@@ -173,7 +173,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
           <FormField
             control={form.control}
             name="demo_url"
-            render={({ field }: { field: any }) => (
+            render={({ field }: { field: React.ChangeEvent<HTMLInputElement> }) => (
               <FormItem>
                 <FormLabel className="flex items-center gap-2">
                   <Link className="h-4 w-4" />
@@ -191,7 +191,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
         <FormField
           control={form.control}
           name="image_url"
-          render={({ field }: { field: any }) => (
+          render={({ field }: { field: React.ChangeEvent<HTMLInputElement> }) => (
             <FormItem>
               <FormLabel className="flex items-center gap-2">
                 <FileImage className="h-4 w-4" />

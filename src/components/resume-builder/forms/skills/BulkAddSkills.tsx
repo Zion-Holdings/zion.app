@@ -52,7 +52,7 @@ export const BulkAddSkills = ({ resumeId, onSuccess }: BulkAddSkillsProps) => {
           
           // Refresh the skills
           await onSuccess();
-        } catch (err) {
+        } catch {
           setError('Failed to parse categorized skills. Please try again.');
         }
       }
