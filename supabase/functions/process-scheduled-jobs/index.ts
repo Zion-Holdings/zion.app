@@ -136,34 +136,6 @@ async function processResumeScoring(supabase, applicationId) {
       throw new Error(`Resume scoring failed: ${JSON.stringify(errorData)}`);
     }
 
-    console.log(`Successfully scored application ${applicationId}`);
-    
-    // Notify the client that their application has been scored
-    const { data: application } = await supabase
-      .from("job_applications")
-      .select("job_id")
-      .eq("id", applicationId)
-      .single();
-      
-    if (application) {
-      const { data: job } = await supabase
-        .from("jobs")
-        .select("client_id, title")
-        .eq("id", application.job_id)
-        .single();
-        
-      if (job) {
-        // Create notification for the client
-        await supabase.from("notifications").insert({
-          user_id: job.client_id,
-          title: "Application Scored",
-          message: `An application for "${job.title}" has been scored and is ready for review.`,
-          type: "application_scored",
-          related_id: applicationId,
-          read: false
-        });
-      }
-    }
   } catch (error) {
     console.error("Error processing resume scoring:", error);
   }
@@ -171,7 +143,6 @@ async function processResumeScoring(supabase, applicationId) {
 
 async function processContentGeneration(supabase, contentType) {
   try {
-    console.log(`Starting scheduled content generation for ${contentType}`);
     
     // Call the content generation function
     const response = await fetch(
@@ -196,7 +167,6 @@ async function processContentGeneration(supabase, contentType) {
     }
 
     const contentData = await response.json();
-    console.log(`Successfully generated ${contentType} content`);
     
     // If it's a newsletter, send a test email to the admin
     if (contentType === 'newsletter') {
