@@ -28,21 +28,21 @@ export async function updateSession(request: NextRequest) {
       {
         cookies: {
           get(name: string) {
-            const cookiesAny = request.cookies as any;
+            const cookiesAny = request.cookies as unknown;
             if (typeof cookiesAny.get === 'function') {
               const cookie = cookiesAny.get(name);
               return typeof cookie === 'object' && cookie !== null && 'value' in cookie ? (cookie as { value: string }).value : undefined;
             }
             return undefined;
           },
-          set(name: string, value: string, options: any) {
-            const cookies = (response as any).cookies;
+          set(name: string, value: string, options: unknown) {
+            const cookies = (response as unknown).cookies;
             if (cookies && typeof cookies.set === 'function') {
               cookies.set(name, value, options);
             }
           },
-          remove(name: string, options: any) {
-            const cookies = (response as any).cookies;
+          remove(name: string, options: unknown) {
+            const cookies = (response as unknown).cookies;
             if (cookies && typeof cookies.set === 'function') {
               cookies.set(name, '', options);
             }
