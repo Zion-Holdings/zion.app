@@ -29,22 +29,22 @@ export async function updateSession(request: NextRequest) {
         cookies: {
           get(name: string) {
             const cookiesAny = request.cookies as unknown;
-            if (typeof cookiesAny.get === 'function') {
-              const cookie = cookiesAny.get(name);
+            if (cookiesAny && typeof cookiesAny === 'object' && 'get' in cookiesAny && typeof (cookiesAny as any).get === 'function') {
+              const cookie = (cookiesAny as any).get(name);
               return typeof cookie === 'object' && cookie !== null && 'value' in cookie ? (cookie as { value: string }).value : undefined;
             }
             return undefined;
           },
           set(name: string, value: string, options: unknown) {
-            const cookies = (response as unknown).cookies;
-            if (cookies && typeof cookies.set === 'function') {
-              cookies.set(name, value, options);
+            const cookies = (response as unknown);
+            if (cookies && typeof cookies === 'object' && 'cookies' in cookies && typeof (cookies as any).cookies?.set === 'function') {
+              (cookies as any).cookies.set(name, value, options);
             }
           },
           remove(name: string, options: unknown) {
-            const cookies = (response as unknown).cookies;
-            if (cookies && typeof cookies.set === 'function') {
-              cookies.set(name, '', options);
+            const cookies = (response as unknown);
+            if (cookies && typeof cookies === 'object' && 'cookies' in cookies && typeof (cookies as any).cookies?.set === 'function') {
+              (cookies as any).cookies.set(name, '', options);
             }
           },
         },
