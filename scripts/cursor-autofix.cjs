@@ -53,16 +53,16 @@ function applyPatch(diffText) {
 async function run() {
   const issues = await getIssues();
   if (!Array.isArray(issues) || issues.length === 0) {
-    console.log('No open Cursor issues to auto-fix.');
+    console.warn('No open Cursor issues to auto-fix.');
     return;
   }
 
   for (const issue of issues) {
     try {
-      console.log('Requesting patch for issue', issue.id);
+      console.warn('Requesting patch for issue', issue.id);
       const { diff, message } = await requestPatch(issue.id);
       if (!diff) {
-        console.log('No diff returned for', issue.id);
+        console.warn('No diff returned for', issue.id);
         continue;
       }
       applyPatch(diff);

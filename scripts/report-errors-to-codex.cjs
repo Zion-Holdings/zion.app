@@ -37,7 +37,7 @@ async function main() {
 
   const data = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
   if (data.numFailedTests === 0) {
-    console.log('✅ No failing tests — nothing to report.');
+    console.warn('✅ No failing tests — nothing to report.');
     return;
   }
 
@@ -68,7 +68,7 @@ async function main() {
       body: bodyLines.join('\n'),
       labels: ['autofix']
     });
-    console.log('📨 Created issue for Codex autofix');
+    console.warn('📨 Created issue for Codex autofix');
   } catch (err) {
     console.error('Failed to create issue:', err.message);
     process.exit(1);

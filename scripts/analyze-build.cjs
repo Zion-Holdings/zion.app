@@ -32,12 +32,12 @@ function analyzeBuildOutput() {
   const buildDir = path.join(process.cwd(), '.next');
   
   if (!fs.existsSync(buildDir)) {
-    console.log(colorize('⚠️  Build directory not found. Please run "npm run build" first.', 'yellow'));
+    console.warn(colorize('⚠️  Build directory not found. Please run "npm run build" first.', 'yellow'));
     return;
   }
 
-  console.log(colorize('\n🔍 Build Analysis Report', 'bright'));
-  console.log(colorize('========================\n', 'cyan'));
+  console.warn(colorize('\n🔍 Build Analysis Report', 'bright'));
+  console.warn(colorize('========================\n', 'cyan'));
 
   // Analyze static files
   const staticDir = path.join(buildDir, 'static');
@@ -56,8 +56,8 @@ function analyzeBuildOutput() {
 }
 
 function analyzeStaticFiles(staticDir) {
-  console.log(colorize('📦 Static Assets Analysis', 'blue'));
-  console.log(colorize('-------------------------', 'blue'));
+  console.warn(colorize('📦 Static Assets Analysis', 'blue'));
+  console.warn(colorize('-------------------------', 'blue'));
 
   const jsDir = path.join(staticDir, 'chunks');
   const cssDir = path.join(staticDir, 'css');
@@ -68,8 +68,8 @@ function analyzeStaticFiles(staticDir) {
       return total + fs.statSync(file).size;
     }, 0);
 
-    console.log(colorize(`📄 JavaScript Files: ${jsFiles.length}`, 'green'));
-    console.log(colorize(`📏 Total JS Size: ${formatBytes(totalJSSize)}`, 'green'));
+    console.warn(colorize(`📄 JavaScript Files: ${jsFiles.length}`, 'green'));
+    console.warn(colorize(`📏 Total JS Size: ${formatBytes(totalJSSize)}`, 'green'));
 
     // Find largest JS chunks
     const largechunks = jsFiles
@@ -81,9 +81,9 @@ function analyzeStaticFiles(staticDir) {
       .sort((a, b) => b.size - a.size)
       .slice(0, 10);
 
-    console.log(colorize('\n🔥 Largest JS Chunks:', 'yellow'));
+    console.warn(colorize('\n🔥 Largest JS Chunks:', 'yellow'));
     largechunks.forEach((chunk, i) => {
-      console.log(`${i + 1}. ${chunk.name} - ${formatBytes(chunk.size)}`);
+      console.warn(`${i + 1}. ${chunk.name} - ${formatBytes(chunk.size)}`);
     });
   }
 
@@ -93,24 +93,24 @@ function analyzeStaticFiles(staticDir) {
       return total + fs.statSync(file).size;
     }, 0);
 
-    console.log(colorize(`\n🎨 CSS Files: ${cssFiles.length}`, 'magenta'));
-    console.log(colorize(`📏 Total CSS Size: ${formatBytes(totalCSSSize)}`, 'magenta'));
+    console.warn(colorize(`\n🎨 CSS Files: ${cssFiles.length}`, 'magenta'));
+    console.warn(colorize(`📏 Total CSS Size: ${formatBytes(totalCSSSize)}`, 'magenta'));
   }
 }
 
 function analyzeServerFiles(serverDir) {
-  console.log(colorize('\n🖥️  Server Files Analysis', 'blue'));
-  console.log(colorize('-------------------------', 'blue'));
+  console.warn(colorize('\n🖥️  Server Files Analysis', 'blue'));
+  console.warn(colorize('-------------------------', 'blue'));
 
   const pagesDir = path.join(serverDir, 'pages');
   if (fs.existsSync(pagesDir)) {
     const pageFiles = getAllFiles(pagesDir, '.js');
-    console.log(colorize(`📄 Server Pages: ${pageFiles.length}`, 'green'));
+    console.warn(colorize(`📄 Server Pages: ${pageFiles.length}`, 'green'));
 
     const totalServerSize = pageFiles.reduce((total, file) => {
       return total + fs.statSync(file).size;
     }, 0);
-    console.log(colorize(`📏 Total Server Size: ${formatBytes(totalServerSize)}`, 'green'));
+    console.warn(colorize(`📏 Total Server Size: ${formatBytes(totalServerSize)}`, 'green'));
   }
 }
 
@@ -133,8 +133,8 @@ function getAllFiles(dir, ext) {
 }
 
 function provideRecommendations() {
-  console.log(colorize('\n💡 Performance Recommendations', 'bright'));
-  console.log(colorize('================================', 'cyan'));
+  console.warn(colorize('\n💡 Performance Recommendations', 'bright'));
+  console.warn(colorize('================================', 'cyan'));
 
   const recommendations = [
     '🚀 Consider implementing dynamic imports for large components',
@@ -150,16 +150,16 @@ function provideRecommendations() {
   ];
 
   recommendations.forEach(rec => {
-    console.log(rec);
+    console.warn(rec);
   });
 
-  console.log(colorize('\n📈 Bundle Analysis Commands', 'blue'));
-  console.log(colorize('---------------------------', 'blue'));
-  console.log('npm install --save-dev webpack-bundle-analyzer');
-  console.log('ANALYZE=true npm run build');
-  console.log('npx webpack-bundle-analyzer .next/static/chunks/*.js');
+  console.warn(colorize('\n📈 Bundle Analysis Commands', 'blue'));
+  console.warn(colorize('---------------------------', 'blue'));
+  console.warn('npm install --save-dev webpack-bundle-analyzer');
+  console.warn('ANALYZE=true npm run build');
+  console.warn('npx webpack-bundle-analyzer .next/static/chunks/*.js');
 
-  console.log(colorize('\n✅ Build analysis complete!', 'green'));
+  console.warn(colorize('\n✅ Build analysis complete!', 'green'));
 }
 
 // Run analysis
