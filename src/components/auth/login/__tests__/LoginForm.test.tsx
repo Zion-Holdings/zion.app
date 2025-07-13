@@ -10,7 +10,7 @@ jest.mock('@/context/auth/AuthProvider', () => ({
 }));
 
 jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'), // import and retain default behavior
+  ...jest.requireActual('react-router-dom'),
   Link: ({ children, to }: { children: React.ReactNode; to: string }) => (
     <a href={to}>{children}</a>
   ),
@@ -20,7 +20,7 @@ jest.mock('@/lib/analytics', () => ({
   fireEvent: jest.fn(),
 }));
 
-const mockLogin = jest.fn();
+const mockLogin: jest.Mock<Promise<{ error: { message?: string } | null }>, [string, string, boolean?]> = jest.fn();
 
 describe('LoginForm', () => {
   beforeEach(() => {
