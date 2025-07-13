@@ -27,6 +27,7 @@ import {
   CardFooter
 } from "@/components/ui/card";
 import { User, Briefcase, MapPin, Upload, Sparkles, Check, X } from '@/components/icons';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 // Define form schema
 const talentProfileSchema = z.object({
