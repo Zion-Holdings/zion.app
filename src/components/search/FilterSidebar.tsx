@@ -11,7 +11,7 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
   filters = {},
   onFilterChange 
 }) => {
-  const [category, setCategory] = useState(filters.category || '');
+  const [category, setCategory] = useState<string>(typeof filters.category === 'string' ? filters.category : '');
   const [minPrice, setMinPrice] = useState(filters.minPrice || '');
   const [maxPrice, setMaxPrice] = useState(filters.maxPrice || '');
 
