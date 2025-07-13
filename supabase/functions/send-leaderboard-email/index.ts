@@ -25,7 +25,7 @@ serve(async (req) => {
       .limit(10);
 
     const leaderboard = (users || [])
-      .map((u: any, idx: number) => `${idx + 1}. ${u.display_name} - ${u.points} pts`)
+      .map((u: { display_name: string; points: number }, idx: number) => `${idx + 1}. ${u.display_name} - ${u.points} pts`)
       .join("<br>");
 
     const { data: emails } = await supabase

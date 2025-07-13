@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "https://deno.land/std@0.83.0/uuid/mod.ts";
 
 
 // --- Global Mocks & Setup ---
-let mockSupabaseAdminClient_CreateShared: any;
+let mockSupabaseAdminClient_CreateShared: unknown;
 const mockFrom = sinon.stub();
 const mockInsert = sinon.stub();
 const mockSelect_CreateShared = sinon.stub();
@@ -31,7 +31,7 @@ uuidv4.generate = () => fixedUuid;
 
 const originalCreateClient_CreateShared = createClient;
 // @ts-expect-error globalThis client mock - overriding createClient for controlled test behavior
-globalThis.createClient = (url: string, key: string, _options?: any) => {
+globalThis.createClient = (url: string, key: string, _options?: unknown) => {
     // Ensure this mock is specific enough if different clients (anon vs service) are used across tests
     if (key === Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')) {
         mockInsert.returns({ select: mockSelect_CreateShared });
@@ -59,7 +59,7 @@ async function createSharedWhitepaperHandler(req: Request): Promise<Response> {
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
     );
     // Manually patch methods for this instance if global mock isn't fully effective due to scope
-    (internalSupabaseAdminClient as any).from = mockFrom;
+    (internalSupabaseAdminClient as Record<string, unknown>).from = mockFrom;
 
 
     const uniqueId = uuidv4.generate(); // Will use our mocked version

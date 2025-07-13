@@ -63,7 +63,7 @@ const SentryTestPage = () => {
 // import { withSentryGetServerSideProps } from '@sentry/nextjs'; // Removed
 
 // Example of how to trigger a server-side error during page load (SSR)
-export const getServerSideProps = async (context: any) => { // Added type for context for clarity
+export const getServerSideProps = async (context: unknown) => { // Added type for context for clarity
   // The context object is passed here by Next.js and Sentry's HOC
   // You can add custom Sentry tags or breadcrumbs related to this specific SSR execution if needed
   // Sentry.addBreadcrumb({ // Removed
@@ -86,8 +86,8 @@ export const getServerSideProps = async (context: any) => { // Added type for co
     // Sentry.captureException(error); // Removed
 
     // Optionally, set status code on response if available in context
-    if (context.res) {
-      context.res.statusCode = 500;
+    if (context && typeof context === 'object' && 'res' in context && context.res) {
+      (context.res as any).statusCode = 500;
     }
     // Return props, perhaps indicating an error state to the component
     return { props: { serverSideErrorOccurred: true } };

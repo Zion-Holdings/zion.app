@@ -16,7 +16,7 @@ console.log(JSON.stringify({
 
 serve(async (req) => {
   const requestTimestamp = new Date().toISOString();
-  const errorLoggerPayload: any = { // For logging errors before returning response
+  const errorLoggerPayload: Record<string, unknown> = { // For logging errors before returning response
     timestamp: requestTimestamp,
     serviceName: 'generate-seo-content',
     method: req.method,

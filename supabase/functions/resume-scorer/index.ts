@@ -85,25 +85,24 @@ serve(async (req) => {
           Headline: ${resume.headline || ""}
           
           Work Experience:
-          ${resume.work_history.map((job: any) => 
-            `${job.role_title} at ${job.company_name} (${new Date(job.start_date).getFullYear()} - ${job.end_date ? new Date(job.end_date).getFullYear() : 'Present'})
-            ${job.description || ""}`
+          ${resume.work_history.map((job: Record<string, unknown>) => 
+            `${(job.role_title as string)} at ${(job.company_name as string)} (${new Date(job.start_date as string).getFullYear()} - ${job.end_date ? new Date(job.end_date as string).getFullYear() : 'Present'})`
           ).join("\n\n")}
           
           Education:
-          ${resume.education.map((edu: any) =>
-            `${edu.degree} in ${edu.field_of_study || ""} from ${edu.institution}`
+          ${resume.education.map((edu: Record<string, unknown>) =>
+            `${(edu.degree as string)} from ${(edu.institution as string)} (${new Date(edu.start_date as string).getFullYear()} - ${edu.end_date ? new Date(edu.end_date as string).getFullYear() : 'Present'})`
           ).join("\n")}
 
           Skills:
-          ${resume.resume_skills.map((skill: any) => skill.name).join(", ")}
+          ${resume.resume_skills.map((skill: { name: string }) => skill.name).join(", ")}
 
           Certifications:
-          ${resume.certifications.map((cert: any) => `${cert.name} from ${cert.issuing_organization}`).join(", ")}
+          ${resume.certifications.map((cert: { name: string; issuing_organization: string }) => `${cert.name} from ${cert.issuing_organization}`).join(", ")}
         `;
         
-        resumeSkills = resume.resume_skills.map((skill: any) => skill.name);
-        resumeCerts = resume.certifications.map((cert: any) => cert.name);
+        resumeSkills = resume.resume_skills.map((skill: { name: string }) => skill.name);
+        resumeCerts = resume.certifications.map((cert: { name: string }) => cert.name);
       }
     }
     
@@ -223,28 +222,4 @@ serve(async (req) => {
       .eq("id", applicationId);
 
     if (updateError) {
-      throw new Error(`Failed to update application with score: ${updateError.message}`);
-    }
-
-    // 7. Return the match results
-    return new Response(
-      JSON.stringify({ 
-        success: true, 
-        matchResult 
-      }),
-      { 
-        status: 200, 
-        headers: { ...corsHeaders, "Content-Type": "application/json" } 
-      }
-    );
-  } catch (error) {
-    console.error("Error in resume-scorer function:", error);
-    return new Response(
-      JSON.stringify({ error: error.message }),
-      { 
-        status: 500, 
-        headers: { ...corsHeaders, "Content-Type": "application/json" } 
-      }
-    );
-  }
-});
+      throw new Error(`

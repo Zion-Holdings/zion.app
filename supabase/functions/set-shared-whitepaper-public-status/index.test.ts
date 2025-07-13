@@ -3,7 +3,7 @@ import { sinon } from "https://deno.land/x/sinon@v.1.13.0/mod.ts";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
 // --- Global Mocks & Setup ---
-let mockSupabaseAdminClient_SetStatus: any;
+let mockSupabaseAdminClient_SetStatus: unknown;
 const mockFrom_SetStatus = sinon.stub();
 const mockUpdate_SetStatus = sinon.stub();
 const mockEq_SetStatus = sinon.stub();
@@ -23,7 +23,7 @@ globalThis.Deno.env = {
 
 const originalCreateClient_SetStatus = createClient;
 // @ts-expect-error: Assigning to read-only property for test mocking
-globalThis.createClient = (url: string, key: string, _options?: any) => {
+globalThis.createClient = (url: string, key: string, _options?: unknown) => {
     if (key === Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')) {
         mockSelect_SetStatus.returns({ single: mockSingle_SetStatus });
         mockEq_SetStatus.returns({ select: mockSelect_SetStatus });
@@ -47,7 +47,7 @@ async function setPublicStatusHandler(req: Request): Promise<Response> {
       Deno.env.get('SUPABASE_URL')!,
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
     );
-    (internalSupabaseAdminClient as any).from = mockFrom_SetStatus;
+    (internalSupabaseAdminClient as Record<string, unknown>).from = mockFrom_SetStatus;
 
 
     const { data, error } = await internalSupabaseAdminClient

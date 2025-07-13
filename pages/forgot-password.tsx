@@ -20,8 +20,8 @@ async function resetPassword(
       return { ok: false, error: data.error || data.message };
     }
     return { ok: true };
-  } catch (err: any) {
-    return { ok: false, error: err.message };
+  } catch (err: unknown) {
+    return { ok: false, error: (err as Error).message };
   }
 }
 
@@ -53,9 +53,9 @@ const ForgotPassword = () => {
         description: "Please check your email for password reset instructions.",
         variant: "default",
       });
-    } catch (err: any) {
+    } catch (err: unknown) {
       const errorMessage =
-        err.message || 'Failed to send reset link. Please try again.';
+        (err as Error).message || 'Failed to send reset link. Please try again.';
       setError(errorMessage);
       toast.error(errorMessage);
     } finally {

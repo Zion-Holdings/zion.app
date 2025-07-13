@@ -3,7 +3,7 @@ import { sinon } from "https://deno.land/x/sinon@v.1.13.0/mod.ts";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
 // --- Global Mocks & Setup ---
-let mockSupabaseClient_GetShared: any;
+let mockSupabaseClient_GetShared: unknown;
 const mockFrom_GetShared = sinon.stub();
 const mockSelect_GetShared = sinon.stub();
 const mockEq_GetShared = sinon.stub();
@@ -23,7 +23,7 @@ globalThis.Deno.env = {
 
 const originalCreateClient_GetShared = createClient;
 // @ts-expect-error globalThis client mock - overriding createClient for controlled test behavior
-globalThis.createClient = (url: string, key: string, _options?: any) => {
+globalThis.createClient = (url: string, key: string, _options?: unknown) => {
     if (key === Deno.env.get('SUPABASE_ANON_KEY')) {
         mockEq_GetShared.returns({ single: mockSingle_GetShared });
         mockSelect_GetShared.returns({ eq: mockEq_GetShared });
@@ -45,7 +45,7 @@ async function getSharedWhitepaperHandler(req: Request): Promise<Response> {
       Deno.env.get('SUPABASE_URL')!,
       Deno.env.get('SUPABASE_ANON_KEY')!
     );
-    (internalSupabaseClient as any).from = mockFrom_GetShared;
+    (internalSupabaseClient as Record<string, unknown>).from = mockFrom_GetShared;
 
     const { data, error } = await internalSupabaseClient
       .from('shared_whitepapers')

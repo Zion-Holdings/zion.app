@@ -94,8 +94,8 @@ const ProposalDetailPage: React.FC = () => {
         setResults(null);
       }
 
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err: unknown) {
+      setError((err as Error).message);
     } finally {
       setIsLoading(false);
     }
@@ -111,7 +111,7 @@ const ProposalDetailPage: React.FC = () => {
     if (proposal && connectedWalletAddress) {
       const existingVote = proposal.votes.find(
         v => (v.voter_wallet_address?.toLowerCase() === connectedWalletAddress.toLowerCase()) ||
-             (v.voter && typeof v.voter === 'object' && 'id' in v.voter && (v.voter as any).id === (/* get platform user id if available */ null))
+             (v.voter && typeof v.voter === 'object' && 'id' in v.voter && (v.voter as { id?: unknown }).id === (/* get platform user id if available */ null))
       );
       setUserVote(existingVote || null);
     } else {
@@ -149,8 +149,8 @@ const ProposalDetailPage: React.FC = () => {
         throw new Error(errData.detail || errData.error || `Failed to submit vote: ${response.status}`);
       }
       await fetchProposalData(); // Refetch proposal data to show new vote and updated results
-    } catch (err: any) {
-      setVoteError(err.message);
+    } catch (err: unknown) {
+      setVoteError((err as Error).message);
     } finally {
       setIsVoting(false);
     }
