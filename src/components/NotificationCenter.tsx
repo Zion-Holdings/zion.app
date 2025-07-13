@@ -29,7 +29,7 @@ export const NotificationCenter: React.FC = () => {
   } = useNotifications();
   
   const [open, setOpen] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [, setError] = useState<string | null>(null);
   const [loadedOnce, setLoadedOnce] = useState(false);
   const enqueueSnackbar = useEnqueueSnackbar();
 

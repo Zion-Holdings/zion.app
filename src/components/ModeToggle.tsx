@@ -6,7 +6,6 @@ import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 import { Moon, Sun } from 'lucide-react';
 // Use the correct ThemeProvider hook from context
 import { useThemePreset } from "@/context/ThemeContext"
-import { logIssue } from "@/utils/logIssue"
 import { useEffect, useState } from "react"
 
 export function ModeToggle() {
@@ -71,7 +70,7 @@ export function ModeToggle() {
     } catch (error) {
       logErrorToProduction('Theme toggle error:', { data: error });
       // Use themePreset for currentTheme in error logging as `theme` (old var) is not defined
-      logIssue('Theme switch failed', { error, currentThemePreset: themePreset, currentDisplayTheme });
+      // logIssue('Theme switch failed', { error, currentThemePreset: themePreset, currentDisplayTheme }); // Removed logIssue
       toast({
         title: "Theme switch failed",
         description: "Unable to change theme. Please try again.",
