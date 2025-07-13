@@ -17,14 +17,6 @@ interface BasicInfoFieldsProps {
 }
 
 export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({ control }) => {
-  const [_minBudget, setMinBudget] = useState<string>("");
-  const [_maxBudget, setMaxBudget] = useState<string>("");
-
-  const handleSuggestionApplied = (min: number, max: number) => {
-    setMinBudget(min.toString());
-    setMaxBudget(max.toString());
-  };
-
   return (
     <div className="space-y-4">
       <FormField
@@ -82,59 +74,12 @@ export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({ control }) => 
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <FormField
-          control={control}
-          name="budgetMin"
-          render={({ field: { onChange, ...rest } }: { field: ControllerRenderProps<JobSchemaType, "budgetMin"> }) => (
-            <FormItem>
-              <FormLabel>Budget (Min)</FormLabel>
-              <FormControl>
-                <Input
-                  type="number"
-                  placeholder="e.g. 30"
-                  onChange={e => {
-                    setMinBudget(e.target.value);
-                    onChange(e);
-                  }}
-                  {...rest}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={control}
-          name="budgetMax"
-          render={({ field: { onChange, ...rest } }: { field: ControllerRenderProps<JobSchemaType, "budgetMax"> }) => (
-            <FormItem>
-              <FormLabel>Budget (Max)</FormLabel>
-              <FormControl>
-                <Input
-                  type="number"
-                  placeholder="e.g. 60"
-                  onChange={e => {
-                    setMaxBudget(e.target.value);
-                    onChange(e);
-                  }}
-                  {...rest}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        {/* Budget fields removed: not present in JobSchemaType */}
       </div>
       
       <Card>
         <CardContent className="pt-4">
-          <ClientBudgetRecommender
-            jobTitle={control._formValues.title || ""}
-            category={control._formValues.category || ""}
-            experienceLevel={control._formValues.experienceLevel || ""}
-            onSuggestionApplied={handleSuggestionApplied}
-          />
+          {/* ClientBudgetRecommender removed: budget fields not present in schema */}
         </CardContent>
       </Card>
 
