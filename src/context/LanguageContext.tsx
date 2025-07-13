@@ -51,7 +51,7 @@ interface LanguageProviderProps {
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ 
   children, 
-  authState = { isAuthenticated: false, user: null } 
+  authState: _authState = { isAuthenticated: false, user: null } 
 }) => {
   const { i18n, t } = useTranslation();
   // Initialize currentLanguage state with a value that reflects i18next's initial detection or fallback.
