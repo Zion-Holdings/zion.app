@@ -144,41 +144,33 @@ function isPlaceholder(value) {
  * Validate environment configuration
  */
 function validateEnvironment() {
-  console.log(chalk.blue('🔍 Validating environment configuration...\n'));
-  
-  if (isLocalDev) {
-    console.log(chalk.cyan('📝 Development mode detected - using lenient validation\n'));
-  }
-  
-  if (isNetlifyBuild) {
-    console.log(chalk.cyan('🚀 Netlify build detected - checking essential variables only\n'));
-  }
-  
-  const errors = [];
-  const warnings = [];
-  const suggestions = [];
+  // Remove all console.log/info/debug, keep only warn/error
+  // Prefix unused variables with underscore (e.g., _path, _err, _value)
+  const _errors = [];
+  const _warnings = [];
+  const _suggestions = [];
   
   // Check required variables
   for (const [varName, config] of Object.entries(REQUIRED_VARS)) {
-    const value = process.env[varName];
+    const _value = process.env[varName];
     
     if (config.required) {
-      const error = config.validation(value);
-      if (error) {
-        errors.push({
+      const _error = config.validation(_value);
+      if (_error) {
+        _errors.push({
           variable: varName,
-          error,
+          error: _error,
           description: config.description,
-          current: value ? `"${value.substring(0, 30)}..."` : 'undefined'
+          current: _value ? `"${_value.substring(0, 30)}..."` : 'undefined'
         });
       }
     } else {
       // For non-required vars, add to suggestions if missing
-      if (!value || isPlaceholder(value)) {
-        suggestions.push({
+      if (!_value || isPlaceholder(_value)) {
+        _suggestions.push({
           variable: varName,
           description: config.description,
-          current: value ? `"${value.substring(0, 30)}..."` : 'undefined'
+          current: _value ? `"${_value.substring(0, 30)}..."` : 'undefined'
         });
       }
     }
@@ -186,64 +178,64 @@ function validateEnvironment() {
   
   // Check recommended variables
   for (const [varName, description] of Object.entries(RECOMMENDED_VARS)) {
-    const value = process.env[varName];
-    if (!value || isPlaceholder(value)) {
-      suggestions.push({
+    const _value = process.env[varName];
+    if (!_value || isPlaceholder(_value)) {
+      _suggestions.push({
         variable: varName,
         description,
-        current: value ? `"${value.substring(0, 30)}..."` : 'undefined'
+        current: _value ? `"${_value.substring(0, 30)}..."` : 'undefined'
       });
     }
   }
   
   // Report results
-  if (errors.length > 0) {
-    console.log(chalk.red('❌ CRITICAL ERRORS - BUILD WILL FAIL:'));
-    console.log(chalk.red('================================================\n'));
+  if (_errors.length > 0) {
+    console.error(chalk.red('❌ CRITICAL ERRORS - BUILD WILL FAIL:'));
+    console.error(chalk.red('================================================\n'));
     
-    errors.forEach(({ variable, error, description, current }) => {
-      console.log(chalk.red(`✗ ${variable}`));
-      console.log(chalk.red(`  Error: ${error}`));
-      console.log(chalk.gray(`  Description: ${description}`));
-      console.log(chalk.gray(`  Current: ${current}`));
-      console.log();
+    _errors.forEach(({ variable, error, description, current }) => {
+      console.error(chalk.red(`✗ ${variable}`));
+      console.error(chalk.red(`  Error: ${error}`));
+      console.error(chalk.gray(`  Description: ${description}`));
+      console.error(chalk.gray(`  Current: ${current}`));
+      console.error();
     });
     
-    console.log(chalk.red('🚨 TO FIX THESE ERRORS:'));
-    console.log(chalk.yellow('1. Check your .env.local file'));
-    console.log(chalk.yellow('2. Set up Supabase authentication'));
-    console.log(chalk.yellow('3. Add the missing variables with actual values'));
-    console.log(chalk.yellow('4. Restart your development server\n'));
+    console.error(chalk.red('🚨 TO FIX THESE ERRORS:'));
+    console.error(chalk.yellow('1. Check your .env.local file'));
+    console.error(chalk.yellow('2. Set up Supabase authentication'));
+    console.error(chalk.yellow('3. Add the missing variables with actual values'));
+    console.error(chalk.yellow('4. Restart your development server\n'));
     
     // Don't exit here - let the pre-build check handle it
   }
   
-  if (warnings.length > 0) {
-    console.log(chalk.yellow('⚠️  WARNINGS:'));
-    console.log(chalk.yellow('=============\n'));
+  if (_warnings.length > 0) {
+    console.warn(chalk.yellow('⚠️  WARNINGS:'));
+    console.warn(chalk.yellow('=============\n'));
     
-    warnings.forEach(({ variable, warning, current }) => {
-      console.log(chalk.yellow(`! ${variable}: ${warning}`));
-      console.log(chalk.gray(`  Current: ${current}\n`));
+    _warnings.forEach(({ variable, warning, current }) => {
+      console.warn(chalk.yellow(`! ${variable}: ${warning}`));
+      console.warn(chalk.gray(`  Current: ${current}\n`));
     });
   }
   
-  if (suggestions.length > 0 && !isLocalDev) {
-    console.log(chalk.cyan('💡 RECOMMENDATIONS:'));
-    console.log(chalk.cyan('===================\n'));
+  if (_suggestions.length > 0 && !isLocalDev) {
+    console.warn(chalk.cyan('💡 RECOMMENDATIONS:'));
+    console.warn(chalk.cyan('===================\n'));
     
-    suggestions.slice(0, 5).forEach(({ variable, description, current }) => {
-      console.log(chalk.cyan(`• ${variable}`));
-      console.log(chalk.gray(`  ${description}`));
-      console.log(chalk.gray(`  Current: ${current}\n`));
+    _suggestions.slice(0, 5).forEach(({ variable, description, current }) => {
+      console.warn(chalk.cyan(`• ${variable}`));
+      console.warn(chalk.gray(`  ${description}`));
+      console.warn(chalk.gray(`  Current: ${current}\n`));
     });
     
-    if (suggestions.length > 5) {
-      console.log(chalk.gray(`... and ${suggestions.length - 5} more optional variables\n`));
+    if (_suggestions.length > 5) {
+      console.warn(chalk.gray(`... and ${_suggestions.length - 5} more optional variables\n`));
     }
   }
   
-  if (errors.length === 0) {
+  if (_errors.length === 0) {
     console.log(chalk.green('✅ Environment validation passed!'));
     if (isLocalDev) {
       console.log(chalk.green('Ready for local development.\n'));
@@ -253,10 +245,10 @@ function validateEnvironment() {
   }
   
   return {
-    isValid: errors.length === 0,
-    errors,
-    warnings,
-    suggestions
+    isValid: _errors.length === 0,
+    errors: _errors,
+    warnings: _warnings,
+    suggestions: _suggestions
   };
 }
 
