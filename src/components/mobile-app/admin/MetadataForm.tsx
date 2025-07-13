@@ -5,7 +5,7 @@ import type { AppMetadataValues } from "./MetadataManager";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from "@/components/ui/form";
 import { Badge } from "@/components/ui/badge";
 import { X } from 'lucide-react';
 
@@ -15,7 +15,7 @@ interface MetadataFormProps {
 }
 
 export const MetadataForm: React.FC<MetadataFormProps> = ({ form }) => {
-  const { control, register, watch, setValue } = form;
+  const { control, watch, setValue } = form;
   const keywords = watch("keywords");
   const platform = watch("platform");
   
@@ -52,7 +52,7 @@ export const MetadataForm: React.FC<MetadataFormProps> = ({ form }) => {
             <FormField
               control={control}
               name="appTitle"
-              render={({ field }: { field: any }) => (
+              render={({ field }: { field: React.Ref<HTMLInputElement> }) => (
                 <FormItem>
                   <FormLabel>App Title</FormLabel>
                   <FormControl>
@@ -72,7 +72,7 @@ export const MetadataForm: React.FC<MetadataFormProps> = ({ form }) => {
             <FormField
               control={control}
               name="shortDescription"
-              render={({ field }: { field: any }) => (
+              render={({ field }: { field: React.Ref<HTMLInputElement> }) => (
                 <FormItem>
                   <FormLabel>Short Description</FormLabel>
                   <FormControl>
@@ -92,7 +92,7 @@ export const MetadataForm: React.FC<MetadataFormProps> = ({ form }) => {
             <FormField
               control={control}
               name="longDescription"
-              render={({ field }: { field: any }) => (
+              render={({ field }: { field: React.Ref<HTMLTextAreaElement> }) => (
                 <FormItem>
                   <FormLabel>Long Description</FormLabel>
                   <FormControl>
@@ -142,7 +142,7 @@ export const MetadataForm: React.FC<MetadataFormProps> = ({ form }) => {
             <FormField
               control={control}
               name="version"
-              render={({ field }: { field: any }) => (
+              render={({ field }: { field: React.Ref<HTMLInputElement> }) => (
                 <FormItem>
                   <FormLabel>App Version</FormLabel>
                   <FormControl>
