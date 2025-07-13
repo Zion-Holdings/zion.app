@@ -42,7 +42,7 @@ const colors = {
   cyan: '\x1b[36m'
 };
 
-const log = {
+const _log = {
   success: (msg: string) => console.log(`${colors.green}✅ ${msg}${colors.reset}`),
   error: (msg: string) => console.log(`${colors.red}❌ ${msg}${colors.reset}`),
   warning: (msg: string) => console.log(`${colors.yellow}⚠️  ${msg}${colors.reset}`),
@@ -145,94 +145,94 @@ function validateConfiguration(env: Environment): ValidationResult {
 
   // Check if this is a Netlify build - be more lenient during builds
   const isNetlifyBuild = process.env.NETLIFY === 'true';
-  const isProduction = process.env.NODE_ENV === 'production' || process.env.CONTEXT === 'production';
+  const _isProduction = process.env.NODE_ENV === 'production' || process.env.CONTEXT === 'production';
 
   // Check Auth0 configuration - allow placeholders during builds but warn
   if (!env.AUTH0_SECRET) {
     if (isNetlifyBuild) {
-      result.warnings.push('AUTH0_SECRET is not configured - authentication features will be disabled');
+      _log.warning('AUTH0_SECRET is not configured - authentication features will be disabled');
     } else {
-      result.errors.push('AUTH0_SECRET is required for Auth0 authentication');
+      _log.error('AUTH0_SECRET is required for Auth0 authentication');
       result.isValid = false;
     }
   } else if (isPlaceholder(env.AUTH0_SECRET)) {
     if (isNetlifyBuild) {
-      result.warnings.push('AUTH0_SECRET appears to be a placeholder - authentication features will be disabled');
+      _log.warning('AUTH0_SECRET appears to be a placeholder - authentication features will be disabled');
     } else {
-      result.errors.push('AUTH0_SECRET appears to be a placeholder value');
+      _log.error('AUTH0_SECRET appears to be a placeholder value');
       result.isValid = false;
     }
   } else if (!validateAuth0Secret(env.AUTH0_SECRET)) {
-    result.warnings.push('AUTH0_SECRET should be a hex string generated with: openssl rand -hex 32');
+    _log.warning('AUTH0_SECRET should be a hex string generated with: openssl rand -hex 32');
   }
 
   if (!env.AUTH0_BASE_URL) {
     if (isNetlifyBuild) {
-      result.warnings.push('AUTH0_BASE_URL is not configured - authentication features will be disabled');
+      _log.warning('AUTH0_BASE_URL is not configured - authentication features will be disabled');
     } else {
-      result.errors.push('AUTH0_BASE_URL is required for Auth0 authentication');
+      _log.error('AUTH0_BASE_URL is required for Auth0 authentication');
       result.isValid = false;
     }
   } else if (isPlaceholder(env.AUTH0_BASE_URL)) {
     if (isNetlifyBuild) {
-      result.warnings.push('AUTH0_BASE_URL appears to be a placeholder - authentication features will be disabled');
+      _log.warning('AUTH0_BASE_URL appears to be a placeholder - authentication features will be disabled');
     } else {
-      result.errors.push('AUTH0_BASE_URL appears to be a placeholder value');
+      _log.error('AUTH0_BASE_URL appears to be a placeholder value');
       result.isValid = false;
     }
   }
 
   if (!env.AUTH0_ISSUER_BASE_URL) {
     if (isNetlifyBuild) {
-      result.warnings.push('AUTH0_ISSUER_BASE_URL is not configured - authentication features will be disabled');
+      _log.warning('AUTH0_ISSUER_BASE_URL is not configured - authentication features will be disabled');
     } else {
-      result.errors.push('AUTH0_ISSUER_BASE_URL is required for Auth0 authentication');
+      _log.error('AUTH0_ISSUER_BASE_URL is required for Auth0 authentication');
       result.isValid = false;
     }
   } else if (isPlaceholder(env.AUTH0_ISSUER_BASE_URL)) {
     if (isNetlifyBuild) {
-      result.warnings.push('AUTH0_ISSUER_BASE_URL appears to be a placeholder - authentication features will be disabled');
+      _log.warning('AUTH0_ISSUER_BASE_URL appears to be a placeholder - authentication features will be disabled');
     } else {
-      result.errors.push('AUTH0_ISSUER_BASE_URL appears to be a placeholder value');
+      _log.error('AUTH0_ISSUER_BASE_URL appears to be a placeholder value');
       result.isValid = false;
     }
   } else if (!validateAuth0Domain(env.AUTH0_ISSUER_BASE_URL)) {
     if (isNetlifyBuild) {
-      result.warnings.push('AUTH0_ISSUER_BASE_URL is not a valid Auth0 domain format');
+      _log.warning('AUTH0_ISSUER_BASE_URL is not a valid Auth0 domain format');
     } else {
-      result.errors.push('AUTH0_ISSUER_BASE_URL is not a valid Auth0 domain format');
+      _log.error('AUTH0_ISSUER_BASE_URL is not a valid Auth0 domain format');
       result.isValid = false;
     }
   }
 
   if (!env.AUTH0_CLIENT_ID) {
     if (isNetlifyBuild) {
-      result.warnings.push('AUTH0_CLIENT_ID is not configured - authentication features will be disabled');
+      _log.warning('AUTH0_CLIENT_ID is not configured - authentication features will be disabled');
     } else {
-      result.errors.push('AUTH0_CLIENT_ID is required for Auth0 authentication');
+      _log.error('AUTH0_CLIENT_ID is required for Auth0 authentication');
       result.isValid = false;
     }
   } else if (isPlaceholder(env.AUTH0_CLIENT_ID)) {
     if (isNetlifyBuild) {
-      result.warnings.push('AUTH0_CLIENT_ID appears to be a placeholder - authentication features will be disabled');
+      _log.warning('AUTH0_CLIENT_ID appears to be a placeholder - authentication features will be disabled');
     } else {
-      result.errors.push('AUTH0_CLIENT_ID appears to be a placeholder value');
+      _log.error('AUTH0_CLIENT_ID appears to be a placeholder value');
       result.isValid = false;
     }
   }
 
   if (!env.AUTH0_CLIENT_SECRET) {
     if (isNetlifyBuild) {
-      result.warnings.push('AUTH0_CLIENT_SECRET is not configured - authentication features will be disabled');
+      _log.warning('AUTH0_CLIENT_SECRET is not configured - authentication features will be disabled');
     } else {
-      result.errors.push('AUTH0_CLIENT_SECRET is required for Auth0 authentication');
+      _log.error('AUTH0_CLIENT_SECRET is required for Auth0 authentication');
       result.isValid = false;
     }
   } else if (isPlaceholder(env.AUTH0_CLIENT_SECRET)) {
     if (isNetlifyBuild) {
-      result.warnings.push('AUTH0_CLIENT_SECRET appears to be a placeholder - authentication features will be disabled');
+      _log.warning('AUTH0_CLIENT_SECRET appears to be a placeholder - authentication features will be disabled');
     } else {
-      result.errors.push('AUTH0_CLIENT_SECRET appears to be a placeholder value');
+      _log.error('AUTH0_CLIENT_SECRET appears to be a placeholder value');
       result.isValid = false;
     }
   }
@@ -241,13 +241,13 @@ function validateConfiguration(env: Environment): ValidationResult {
   if (!env.NEXT_PUBLIC_SENTRY_DSN) {
     result.suggestions.push('Consider setting up Sentry for error monitoring (NEXT_PUBLIC_SENTRY_DSN)');
   } else if (isPlaceholder(env.NEXT_PUBLIC_SENTRY_DSN)) {
-    result.warnings.push('NEXT_PUBLIC_SENTRY_DSN appears to be a placeholder value');
+    _log.warning('NEXT_PUBLIC_SENTRY_DSN appears to be a placeholder value');
   }
 
   if (!env.NEXT_PUBLIC_REOWN_PROJECT_ID) {
     result.suggestions.push('Consider setting up Reown for wallet integration (NEXT_PUBLIC_REOWN_PROJECT_ID)');
   } else if (isPlaceholder(env.NEXT_PUBLIC_REOWN_PROJECT_ID)) {
-    result.warnings.push('NEXT_PUBLIC_REOWN_PROJECT_ID appears to be a placeholder value');
+    _log.warning('NEXT_PUBLIC_REOWN_PROJECT_ID appears to be a placeholder value');
   }
 
   return result;
@@ -257,40 +257,40 @@ function printResults(result: ValidationResult): void {
   console.log('\n🔍 Environment Configuration Validation\n');
 
   if (result.errors.length > 0) {
-    console.log('❌ ERRORS (must be fixed):');
-    result.errors.forEach(error => console.log(`   • ${error}`));
+    _log.error('❌ ERRORS (must be fixed):');
+    result.errors.forEach(error => _log.error(`   • ${error}`));
     console.log('');
   }
 
   if (result.warnings.length > 0) {
-    console.log('⚠️  WARNINGS:');
-    result.warnings.forEach(warning => console.log(`   • ${warning}`));
+    _log.warning('⚠️  WARNINGS:');
+    result.warnings.forEach(warning => _log.warning(`   • ${warning}`));
     console.log('');
   }
 
   if (result.suggestions.length > 0) {
-    console.log('💡 SUGGESTIONS:');
-    result.suggestions.forEach(suggestion => console.log(`   • ${suggestion}`));
+    _log.info('💡 SUGGESTIONS:');
+    result.suggestions.forEach(suggestion => _log.info(`   • ${suggestion}`));
     console.log('');
   }
 
   if (result.isValid) {
-    console.log('✅ Environment configuration is valid!');
+    _log.success('✅ Environment configuration is valid!');
   } else {
-    console.log('❌ Environment configuration has errors that must be fixed.');
+    _log.error('❌ Environment configuration has errors that must be fixed.');
   }
 
-  console.log('\n📚 Setup Instructions:');
-  console.log('   • Auth0: https://manage.auth0.com/dashboard');
-  console.log('   • Generate Auth0 Secret: openssl rand -hex 32');
-  console.log('   • Sentry: https://sentry.io/settings/');
-  console.log('   • Reown: https://cloud.reown.com/');
+  _log.info('\n📚 Setup Instructions:');
+  _log.info('   • Auth0: https://manage.auth0.com/dashboard');
+  _log.info('   • Generate Auth0 Secret: openssl rand -hex 32');
+  _log.info('   • Sentry: https://sentry.io/settings/');
+  _log.info('   • Reown: https://cloud.reown.com/');
   console.log('');
 }
 
 function main(): void {
   try {
-    console.log('🚀 Validating environment configuration for Auth0...');
+    _log.info('🚀 Validating environment configuration for Auth0...');
     
     const env = envSchema.parse(process.env) as Environment;
     const result = validateConfiguration(env);
@@ -302,7 +302,7 @@ function main(): void {
     }
     
   } catch (error) {
-    console.error('❌ Environment validation failed:', error);
+    _log.error('❌ Environment validation failed:', error);
     process.exit(1);
   }
 }
