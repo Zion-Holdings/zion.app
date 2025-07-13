@@ -17,7 +17,7 @@ export function ApiLogsChart({ logs }: ApiLogsChartProps) {
       if (!canvasRef.current) return;
       if (!win.Chart || typeof win.Chart !== 'function') return;
       // Inline Chart type to avoid import error
-      const Chart = win.Chart as new (ctx: HTMLCanvasElement, config: any) => { destroy: () => void };
+      const Chart = win.Chart as new (ctx: HTMLCanvasElement, config: Record<string, unknown>) => { destroy: () => void };
       const dateMap: Record<string, number> = {};
       logs.forEach((log) => {
         const day = new Date(log.created_at).toISOString().split("T")[0];
