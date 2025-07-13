@@ -138,8 +138,10 @@ async function main() {
     process.exit(1);
   }
   
+  const results = [];
   for (const route of ROUTES_TO_TEST) {
     const result = await testRoute(route);
+    results.push(result);
     
     if (result.success) {
       // console.log(`✅ ${route} - ${result.message}`); // Removed console.log
@@ -151,7 +153,6 @@ async function main() {
     await new Promise(resolve => setTimeout(resolve, 100));
   }
 
-  const successful = results.filter(r => r.success);
   const failed = results.filter(r => !r.success);
   
   if (failed.length > 0) {

@@ -19,16 +19,16 @@ import { pathToFileURL, fileURLToPath } from 'url';
 
 // Linter workaround: define unused variables to satisfy no-undef errors
 // These are not referenced anywhere in the code, but the linter incorrectly reports them as undefined.
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const HEAL_COMMAND = undefined;
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const perfErrorStreak = undefined;
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const securityPatchStreak = undefined;
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const PERF_ERROR_REGEX = undefined;
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const SECURITY_PATCH_REGEX = undefined;
+ 
+const _HEAL_COMMAND = undefined;
+ 
+const _perfErrorStreak = undefined;
+ 
+const _securityPatchStreak = undefined;
+ 
+const _PERF_ERROR_REGEX = undefined;
+ 
+const _SECURITY_PATCH_REGEX = undefined;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -402,18 +402,18 @@ function triggerSelfHeal(reason) {
 
   // Send Discord Alert if configured
   if (DISCORD_WEBHOOK_URL) {
-    const discordAlertMessage = `🚨 **Watchdog Alert** 🚨\n\n**Reason:** ${reason}\n\n**Action:** Initiating self-heal sequence (code update & build).\n**Command:** \`\`\`${HEAL_COMMAND}\`\`\``;
+    const discordAlertMessage = `🚨 **Watchdog Alert** 🚨\n\n**Reason:** ${reason}\n\n**Action:** Initiating self-heal sequence (code update & build).\n**Command:** \`\`\`${_HEAL_COMMAND}\`\`\``;
     sendDiscordAlert(discordAlertMessage).catch(err => {
       logErrorToProduction('Failed to send Discord alert', err);
     });
   }
 
-  const healCmdLog = `Executing self-heal command: ${HEAL_COMMAND}`;
+  const healCmdLog = `Executing self-heal command: ${_HEAL_COMMAND}`;
   console.log(healCmdLog);
   appendToSelfHealLog(`[${timestamp}] ${healCmdLog}\n`);
 
   // Execute the self-heal command with timeout
-  const childProcess = exec(HEAL_COMMAND, { timeout: 10 * 60 * 1000 }, (error, stdout, stderr) => {
+  const childProcess = exec(_HEAL_COMMAND, { timeout: 10 * 60 * 1000 }, (error, stdout, stderr) => {
     const executionTimestamp = new Date().toISOString();
     
     if (error) {
@@ -444,8 +444,8 @@ function triggerSelfHeal(reason) {
     triggerCodexFix(reason);
 
     // Reset streaks after successful or failed healing attempt to avoid immediate re-trigger for the same issue.
-    perfErrorStreak = 0;
-    securityPatchStreak = 0;
+    _perfErrorStreak = 0;
+    _securityPatchStreak = 0;
     highCpuUsageCount = 0; // Reset CPU usage count as well
 
     isHealing = false; // Release cooldown
@@ -552,15 +552,15 @@ function startMonitoring() {
     try {
       const perfTail = new Tail(PERF_LOG_FILE);
       perfTail.on('line', function(data) {
-        if (PERF_ERROR_REGEX.test(data)) {
-          perfErrorStreak++;
-          console.log(`Performance error detected. Streak: ${perfErrorStreak}`);
-          if (perfErrorStreak >= 3) {
+        if (_PERF_ERROR_REGEX.test(data)) {
+          _perfErrorStreak++;
+          console.log(`Performance error detected. Streak: ${_perfErrorStreak}`);
+          if (_perfErrorStreak >= 3) {
             triggerSelfHeal('3 consecutive performance errors');
           }
-        } else if (perfErrorStreak > 0) {
+        } else if (_perfErrorStreak > 0) {
           console.log('Performance log normal. Resetting streak.');
-          perfErrorStreak = 0;
+          _perfErrorStreak = 0;
         }
       });
       perfTail.on('error', function(error) {
@@ -584,15 +584,15 @@ function startMonitoring() {
     try {
       const securityTail = new Tail(SECURITY_LOG_FILE);
       securityTail.on('line', function(data) {
-        if (SECURITY_PATCH_REGEX.test(data)) {
-          securityPatchStreak++;
-          console.log(`Security patch detected. Streak: ${securityPatchStreak}`);
-          if (securityPatchStreak >= 3) {
+        if (_SECURITY_PATCH_REGEX.test(data)) {
+          _securityPatchStreak++;
+          console.log(`Security patch detected. Streak: ${_securityPatchStreak}`);
+          if (_securityPatchStreak >= 3) {
             triggerSelfHeal('3 consecutive security patches');
           }
-        } else if (securityPatchStreak > 0) {
+        } else if (_securityPatchStreak > 0) {
           console.log('Security log normal. Resetting streak.');
-          securityPatchStreak = 0;
+          _securityPatchStreak = 0;
         }
       });
       securityTail.on('error', function(error) {
@@ -638,22 +638,22 @@ export {
 };
 
 export const _getStateForTests = () => ({
-  perfErrorStreak,
-  securityPatchStreak,
+  _perfErrorStreak,
+  _securityPatchStreak,
   isHealing,
   highCpuUsageCount,
 });
 
 export const _setStateForTests = (newState) => {
-  if (Object.prototype.hasOwnProperty.call(newState, 'perfErrorStreak')) perfErrorStreak = newState.perfErrorStreak;
-  if (Object.prototype.hasOwnProperty.call(newState, 'securityPatchStreak')) securityPatchStreak = newState.securityPatchStreak;
+  if (Object.prototype.hasOwnProperty.call(newState, '_perfErrorStreak')) _perfErrorStreak = newState._perfErrorStreak;
+  if (Object.prototype.hasOwnProperty.call(newState, '_securityPatchStreak')) _securityPatchStreak = newState._securityPatchStreak;
   if (Object.prototype.hasOwnProperty.call(newState, 'isHealing')) isHealing = newState.isHealing;
   if (Object.prototype.hasOwnProperty.call(newState, 'highCpuUsageCount')) highCpuUsageCount = newState.highCpuUsageCount;
 };
 
 export const _resetStateForTests = () => {
-  perfErrorStreak = 0;
-  securityPatchStreak = 0;
+  _perfErrorStreak = 0;
+  _securityPatchStreak = 0;
   isHealing = false;
   highCpuUsageCount = 0;
 };
@@ -663,9 +663,9 @@ export const _getConstantsForTests = () => ({
   PERF_LOG_FILE,
   SECURITY_LOG_FILE,
   SELF_HEAL_LOG_FILE,
-  PERF_ERROR_REGEX,
-  SECURITY_PATCH_REGEX,
-  HEAL_COMMAND,
+  _PERF_ERROR_REGEX,
+  _SECURITY_PATCH_REGEX,
+  _HEAL_COMMAND,
   MEMORY_THRESHOLD,
   CPU_THRESHOLD,
   CPU_SUSTAINED_CHECKS,
