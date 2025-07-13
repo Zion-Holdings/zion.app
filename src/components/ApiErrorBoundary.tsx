@@ -213,7 +213,9 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
                 </summary>
                 <pre className="mt-2 whitespace-pre-wrap break-all">
                   {this.state.error.toString()}
-                  {this.state.errorInfo?.componentStack}
+                  {typeof this.state.errorInfo === 'object' && this.state.errorInfo !== null && 'componentStack' in this.state.errorInfo && typeof (this.state.errorInfo as { componentStack?: unknown }).componentStack === 'string'
+                    ? (this.state.errorInfo as { componentStack: string }).componentStack
+                    : ''}
                 </pre>
               </details>
             )}
