@@ -65,7 +65,7 @@ export function SkillsForm({ resumeId, skills, onComplete, onBack }: SkillsFormP
       <div className="space-y-6">
         <div className="bg-muted/40 p-6 rounded-lg">
           <h3 className="text-md font-medium mb-4">Add Skills One by One</h3>
-          <AddSkillForm resumeId={resumeId} onAddSkill={handleAddSkill} />
+          <AddSkillForm _resumeId={resumeId} onAddSkill={handleAddSkill} />
         </div>
 
         <BulkAddSkills resumeId={resumeId} onSuccess={refreshSkills} />
