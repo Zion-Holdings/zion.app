@@ -179,8 +179,6 @@ export function OptimizedImage({
 // Higher-order component for easy migration from regular img tags
 export function withImageOptimization<_P extends OptimizedImageProps>(Component: React.ComponentType<_P>) {
   return function OptimizedComponent(props: _P) {
-    const { src, alt, ...otherProps } = props;
-    
     return (
       <OptimizedImage
         {...props as OptimizedImageProps}

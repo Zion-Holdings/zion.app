@@ -1,4 +1,4 @@
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 // Build Performance Optimizer
 // Analyzes bundle sizes, identifies optimization opportunities, and provides recommendations
@@ -319,7 +319,7 @@ Estimated Gzipped: ${this.formatSize(this._performanceMetrics.totalBundleSize * 
 
   private getScoreEmoji(score: number): string {
     if (score >= 90) return '🟢';
-    if (score >= 70) return '��';
+    if (score >= 70) return '🟡';
     if (score >= 50) return '🟠';
     return '🔴';
   }
