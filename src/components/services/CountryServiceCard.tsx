@@ -3,7 +3,7 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 import { Badge } from "@/components/ui/badge";
-import { Globe, Server, Clock, MapPin, Check } from 'lucide-react';
+import { Clock, MapPin, Check } from 'lucide-react';
 
 
 
@@ -91,10 +91,6 @@ export function CountryServiceCard({ country, onSelect, onQuote, isPopular }: Co
           <div className="flex items-start">
             <MapPin className="h-4 w-4 mr-2 text-zion-purple mt-1" />
             <span>Service available in major cities</span>
-          </div>
-          <div className="flex items-start">
-            <Server className="h-4 w-4 mr-2 text-zion-purple mt-1" />
-            <span>Hardware & network support</span>
           </div>
           <div className="flex items-start">
             <Check className="h-4 w-4 mr-2 text-zion-purple mt-1" />
