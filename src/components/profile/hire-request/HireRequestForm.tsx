@@ -43,7 +43,7 @@ export function HireRequestForm({ talent, onClose, initialJobTitle, userDetails,
         <TimelineField form={form} />
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <BudgetFields form={form} talent={talent} />
+          <BudgetFields form={form} _talent={talent} />
         </div>
         
         <DialogFooter className="pt-4">
