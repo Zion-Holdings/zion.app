@@ -16,7 +16,7 @@ try {
     fs.unlinkSync(zipFile);
   }
   execSync(`zip -r ${zipFile} .`, { cwd: kitDir, stdio: 'inherit' });
-  console.log('Media kit archive created at', zipFile);
+  console.warn('Media kit archive created at', zipFile);
 } catch (err) {
   console.error('Failed to create media kit archive:', err);
   process.exit(1);

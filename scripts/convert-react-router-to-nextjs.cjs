@@ -4,14 +4,14 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-console.log('🔄 Converting React Router to Next.js routing...\n');
+console.warn('🔄 Converting React Router to Next.js routing...\n');
 
 // Get all files that still use React Router
 const files = execSync('grep -r "useNavigate\\|react-router-dom" src --include="*.tsx" --include="*.ts" -l', { encoding: 'utf8' })
   .split('\n')
   .filter(f => f.trim());
 
-console.log(`📁 Found ${files.length} files to convert:\n`);
+console.warn(`📁 Found ${files.length} files to convert:\n`);
 
 let converted = 0;
 let skipped = 0;
@@ -19,7 +19,7 @@ let skipped = 0;
 files.forEach(file => {
   if (!file.trim()) return;
   
-  console.log(`🔧 Processing: ${file}`);
+  console.warn(`🔧 Processing: ${file}`);
   
   try {
     let content = fs.readFileSync(file, 'utf8');
@@ -64,33 +64,33 @@ files.forEach(file => {
     
     if (hasChanges) {
       fs.writeFileSync(file, content);
-      console.log(`   ${changes.join('\n   ')}`);
+      console.warn(`   ${changes.join('\n   ')}`);
       converted++;
     } else {
-      console.log('   ⚠️  No changes needed');
+      console.warn('   ⚠️  No changes needed');
       skipped++;
     }
     
   } catch (error) {
-    console.log(`   ❌ Error: ${error.message}`);
+    console.warn(`   ❌ Error: ${error.message}`);
     skipped++;
   }
   
-  console.log('');
+  console.warn('');
 });
 
-console.log(`\n📊 Conversion Summary:`);
-console.log(`✅ Converted: ${converted} files`);
-console.log(`⚠️  Skipped: ${skipped} files`);
-console.log(`\n🎉 Conversion complete! Running build test...\n`);
+console.warn(`\n📊 Conversion Summary:`);
+console.warn(`✅ Converted: ${converted} files`);
+console.warn(`⚠️  Skipped: ${skipped} files`);
+console.warn(`\n🎉 Conversion complete! Running build test...\n`);
 
 // Test the build
 try {
-  console.log('🧪 Testing build...');
+  console.warn('🧪 Testing build...');
   execSync('npm run build > build-test.log 2>&1');
-  console.log('✅ Build test passed!');
+  console.warn('✅ Build test passed!');
 } catch (error) {
-  console.log('❌ Build test failed. Check build-test.log for details.');
+  console.warn('❌ Build test failed. Check build-test.log for details.');
 }
 
-console.log('\n🚀 Next.js routing conversion complete!'); 
+console.warn('\n🚀 Next.js routing conversion complete!'); 
