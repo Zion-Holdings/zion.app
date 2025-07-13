@@ -6,7 +6,7 @@ const port = 3001;
 app.use(express.json());
 
 app.post('/webhook/trigger-fix', (req, res) => {
-  console.log('🔁 Webhook received! Starting Codex fix pipeline...');
+  console.warn('🔁 Webhook received! Starting Codex fix pipeline...');
 
   exec('openai-operator run ./codex-pipeline.yaml', (error, stdout, stderr) => {
     if (error) {
@@ -16,11 +16,11 @@ app.post('/webhook/trigger-fix', (req, res) => {
     if (stderr) {
       console.error(`⚠️ stderr: ${stderr}`);
     }
-    console.log(`✅ stdout: ${stdout}`);
+    console.warn(`✅ stdout: ${stdout}`);
     res.status(200).send('Fix triggered successfully');
   });
 });
 
 app.listen(port, () => {
-  console.log(`🚀 Webhook server listening on port ${port}`);
+  console.warn(`🚀 Webhook server listening on port ${port}`);
 });

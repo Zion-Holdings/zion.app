@@ -21,14 +21,14 @@ try {
   if (linesCoverage === undefined || linesCoverage === null) {
     console.error('Could not find total lines coverage percentage in the summary file.');
     console.error('Please ensure your Jest coverage reporter is configured to output a `coverage-summary.json` with `total.lines.pct`.');
-    console.log('Coverage summary content:', JSON.stringify(coverageSummary, null, 2));
+    console.warn('Coverage summary content:', JSON.stringify(coverageSummary, null, 2));
     process.exit(1);
   }
 
-  console.log(`Current lines coverage: ${linesCoverage}%`);
+  console.warn(`Current lines coverage: ${linesCoverage}%`);
 
   if (linesCoverage < coverageThreshold) {
-    console.log(`Coverage (${linesCoverage}%) is below the threshold of ${coverageThreshold}%.`);
+    console.warn(`Coverage (${linesCoverage}%) is below the threshold of ${coverageThreshold}%.`);
     // Outputting a specific value or setting an output for GitHub Actions
     // For simplicity, we'll rely on a log message and then check this in a later step,
     // or you can set an output variable like so:
@@ -39,7 +39,7 @@ try {
     // For now, let's make it fail the step if coverage is low to simplify the next step.
     process.exit(2); // Special exit code to indicate low coverage
   } else {
-    console.log(`Coverage (${linesCoverage}%) meets or exceeds the threshold of ${coverageThreshold}%.`);
+    console.warn(`Coverage (${linesCoverage}%) meets or exceeds the threshold of ${coverageThreshold}%.`);
     // console.log(`::set-output name=coverage_below_threshold::false`);
   }
 
