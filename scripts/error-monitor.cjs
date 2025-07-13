@@ -50,7 +50,7 @@ class ErrorMonitor {
     try {
       if (!fs.existsSync(CONFIG.logsDir)) {
         fs.mkdirSync(CONFIG.logsDir, { recursive: true });
-        console.log('📁 Created logs directory');
+        // console.log('📁 Created logs directory');
       }
       return true;
     } catch (error) {
@@ -77,7 +77,7 @@ class ErrorMonitor {
         }
       }
 
-      console.log(`📋 Found ${logFiles.length} log files`);
+      // console.log(`📋 Found ${logFiles.length} log files`);
 
       for (const filePath of logFiles) {
         const file = path.basename(filePath);
@@ -447,86 +447,86 @@ class ErrorMonitor {
    * Generate and display comprehensive report
    */
   generateReport() {
-    console.log('\n🔍 ERROR MONITORING REPORT');
-    console.log('=' .repeat(50));
+    // console.log('\n🔍 ERROR MONITORING REPORT');
+    // console.log('=' .repeat(50));
     
     // Summary
-    console.log('\n📊 SUMMARY');
-    console.log('-'.repeat(20));
-    console.log(`Total Log Entries: ${this.summary.totalEntries}`);
-    console.log(`Errors: ${this.summary.errorCount}`);
-    console.log(`Warnings: ${this.summary.warningCount}`);
-    console.log(`Critical Issues: ${this.summary.criticalCount}`);
+    // console.log('\n📊 SUMMARY');
+    // console.log('-'.repeat(20));
+    // console.log(`Total Log Entries: ${this.summary.totalEntries}`);
+    // console.log(`Errors: ${this.summary.errorCount}`);
+    // console.log(`Warnings: ${this.summary.warningCount}`);
+    // console.log(`Critical Issues: ${this.summary.criticalCount}`);
     
     if (this.summary.timeRange) {
-      console.log(`Time Range: ${this.summary.timeRange.start.toISOString()} to ${this.summary.timeRange.end.toISOString()}`);
+      // console.log(`Time Range: ${this.summary.timeRange.start.toISOString()} to ${this.summary.timeRange.end.toISOString()}`);
     }
 
     // Recent critical errors
     if (this.errors.length > 0) {
-      console.log('\n🚨 RECENT ERRORS (Top 5)');
-      console.log('-'.repeat(20));
-      this.errors.slice(0, 5).forEach((error, index) => {
-        console.log(`${index + 1}. [${error.timestamp || 'Unknown'}] ${error.message}`);
-        if (error.category) console.log(`   Category: ${error.category}`);
-        if (error.component) console.log(`   Component: ${error.component}`);
-      });
+      // console.log('\n🚨 RECENT ERRORS (Top 5)');
+      // console.log('-'.repeat(20));
+      // this.errors.slice(0, 5).forEach((error, index) => {
+      //   console.log(`${index + 1}. [${error.timestamp || 'Unknown'}] ${error.message}`);
+      //   if (error.category) console.log(`   Category: ${error.category}`);
+      //   if (error.component) console.log(`   Component: ${error.component}`);
+      // });
     }
 
     // Error patterns
     const patterns = this.analyzePatterns();
     if (patterns.length > 0) {
-      console.log('\n📈 ERROR PATTERNS (Top 5)');
-      console.log('-'.repeat(20));
-      patterns.slice(0, 5).forEach(([pattern, data], index) => {
-        console.log(`${index + 1}. Count: ${data.count} | Level: ${data.level}`);
-        console.log(`   Pattern: ${pattern}`);
-        console.log(`   Example: ${data.examples[0]}`);
-        console.log('');
-      });
+      // console.log('\n📈 ERROR PATTERNS (Top 5)');
+      // console.log('-'.repeat(20));
+      // patterns.slice(0, 5).forEach(([pattern, data], index) => {
+      //   console.log(`${index + 1}. Count: ${data.count} | Level: ${data.level}`);
+      //   console.log(`   Pattern: ${pattern}`);
+      //   console.log(`   Example: ${data.examples[0]}`);
+      //   console.log('');
+      // });
     }
 
     // Performance insights
     const perfInsights = this.analyzePerformance();
     if (perfInsights) {
-      console.log('\n⚡ PERFORMANCE INSIGHTS');
-      console.log('-'.repeat(20));
-      console.log(`Average Memory Usage: ${(perfInsights.memoryUsage.avg / 1024 / 1024).toFixed(2)} MB`);
-      console.log(`Peak Memory Usage: ${(perfInsights.memoryUsage.max / 1024 / 1024).toFixed(2)} MB`);
-      console.log(`Average Response Time: ${perfInsights.responseTime.avg.toFixed(2)} ms`);
-      console.log(`Max Response Time: ${perfInsights.responseTime.max.toFixed(2)} ms`);
+      // console.log('\n⚡ PERFORMANCE INSIGHTS');
+      // console.log('-'.repeat(20));
+      // console.log(`Average Memory Usage: ${(perfInsights.memoryUsage.avg / 1024 / 1024).toFixed(2)} MB`);
+      // console.log(`Peak Memory Usage: ${(perfInsights.memoryUsage.max / 1024 / 1024).toFixed(2)} MB`);
+      // console.log(`Average Response Time: ${perfInsights.responseTime.avg.toFixed(2)} ms`);
+      // console.log(`Max Response Time: ${perfInsights.responseTime.max.toFixed(2)} ms`);
       
       if (perfInsights.memoryUsage.alerts.length > 0) {
-        console.log(`Memory Alerts: ${perfInsights.memoryUsage.alerts.length}`);
+        // console.log(`Memory Alerts: ${perfInsights.memoryUsage.alerts.length}`);
       }
       if (perfInsights.responseTime.alerts.length > 0) {
-        console.log(`Performance Alerts: ${perfInsights.responseTime.alerts.length}`);
+        // console.log(`Performance Alerts: ${perfInsights.responseTime.alerts.length}`);
       }
     }
 
     // Recommendations
     const recommendations = this.generateRecommendations();
     if (recommendations.length > 0) {
-      console.log('\n💡 RECOMMENDATIONS');
-      console.log('-'.repeat(20));
-      recommendations.forEach((rec, index) => {
-        console.log(`${index + 1}. [${rec.priority}] ${rec.category}`);
-        console.log(`   Issue: ${rec.issue}`);
-        console.log(`   Recommendation: ${rec.recommendation}`);
-        console.log(`   Action: ${rec.action}`);
-        console.log('');
-      });
+      // console.log('\n💡 RECOMMENDATIONS');
+      // console.log('-'.repeat(20));
+      // recommendations.forEach((rec, index) => {
+      //   console.log(`${index + 1}. [${rec.priority}] ${rec.category}`);
+      //   console.log(`   Issue: ${rec.issue}`);
+      //   console.log(`   Recommendation: ${rec.recommendation}`);
+      //   console.log(`   Action: ${rec.action}`);
+      //   console.log('');
+      // });
     }
 
     // Health score
     const healthScore = this.calculateHealthScore();
-    console.log('\n🏥 SYSTEM HEALTH SCORE');
-    console.log('-'.repeat(20));
-    console.log(`Score: ${healthScore.score}/100 (${healthScore.grade})`);
-    console.log(`Status: ${healthScore.status}`);
+    // console.log('\n🏥 SYSTEM HEALTH SCORE');
+    // console.log('-'.repeat(20));
+    // console.log(`Score: ${healthScore.score}/100 (${healthScore.grade})`);
+    // console.log(`Status: ${healthScore.status}`);
     
-    console.log('\n' + '='.repeat(50));
-    console.log('Report generated at:', new Date().toISOString());
+    // console.log('\n' + '='.repeat(50));
+    // console.log('Report generated at:', new Date().toISOString());
   }
 
   /**
@@ -585,13 +585,13 @@ class ErrorMonitor {
     
     const reportPath = path.join(CONFIG.logsDir, filename || 'error-report.json');
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(`📄 Report exported to: ${reportPath}`);
+    // console.log(`📄 Report exported to: ${reportPath}`);
   }
 }
 
 // Main execution
 async function main() {
-  console.log('🚀 Starting Error Monitor...\n');
+  // console.log('🚀 Starting Error Monitor...\n');
   
   const monitor = new ErrorMonitor();
   
@@ -611,10 +611,10 @@ async function main() {
   // Exit with appropriate code based on health score
   const healthScore = monitor.calculateHealthScore();
   if (healthScore.score < 70) {
-    console.log('\n⚠️  System health is below acceptable threshold');
+    // console.log('\n⚠️  System health is below acceptable threshold');
     process.exit(1);
   } else {
-    console.log('\n✅ System health is acceptable');
+    // console.log('\n✅ System health is acceptable');
     process.exit(0);
   }
 }
