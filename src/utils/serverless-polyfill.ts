@@ -257,7 +257,7 @@ export const verifyPolyfills = () => {
     errorHandlersSet: typeof window !== 'undefined' && (window as unknown as Record<string, unknown>).onerror !== null
   };
   
-  // eslint-disable-next-line no-console
+   
   logInfo('Serverless polyfill verification:', checks);
   const result = Object.values(checks).every(Boolean);
   return result;
