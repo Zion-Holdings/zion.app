@@ -6,7 +6,7 @@ export async function loadSentry() {
   try {
     Sentry = await import("@sentry/nextjs");
     if (Sentry) {
-      console.log('Real Sentry SDK loaded.');
+      // console.log('Real Sentry SDK loaded.'); // Removed
     } else {
       throw new Error('@sentry/nextjs import returned null/undefined');
     }
@@ -41,7 +41,7 @@ export async function register() {
     // Preserve backward-compatibility with existing unit tests
     console.warn('Warning: NEXT_PUBLIC_SENTRY_DSN is not set. Sentry will not be initialized.');
     if (process.env.NODE_ENV === 'development') {
-      console.log('Sentry disabled in development (no valid DSN configured)');
+      // console.log('Sentry disabled in development (no valid DSN configured)'); // Removed
     } else {
       console.warn('Sentry DSN not configured for production - error monitoring disabled');
     }
@@ -58,11 +58,11 @@ export async function register() {
 
   // Skip initialization if Sentry is not available
   if (!Sentry) {
-    console.log('Sentry is not available, skipping initialization');
+    // console.log('Sentry is not available, skipping initialization'); // Removed
     return;
   }
 
-  console.log(`Initializing client-side Sentry. Release: ${SENTRY_RELEASE}, Environment: ${SENTRY_ENVIRONMENT}`);
+  // console.log(`Initializing client-side Sentry. Release: ${SENTRY_RELEASE}, Environment: ${SENTRY_ENVIRONMENT}`); // Removed
 
   try {
     const initOptions: Record<string, unknown> = {
@@ -90,7 +90,7 @@ export async function register() {
     }
     (Sentry as typeof SentrySDK).setTag("runtime", "browser");
 
-    console.log(`Sentry initialized successfully. Release: ${SENTRY_RELEASE}, Environment: ${SENTRY_ENVIRONMENT}`);
+    // console.log(`Sentry initialized successfully. Release: ${SENTRY_RELEASE}, Environment: ${SENTRY_ENVIRONMENT}`); // Removed
   } catch (error) {
     console.error('Failed to initialize Sentry:', error);
   }

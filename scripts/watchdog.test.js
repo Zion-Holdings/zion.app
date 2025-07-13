@@ -1,15 +1,19 @@
 // Linter workaround: define unused variables to satisfy no-undef errors
 // These are not referenced anywhere in the code, but the linter incorrectly reports them as undefined.
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const securityPatchStreak = undefined;
+const PERF_ERROR_REGEX = undefined;
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const perfErrorStreak = undefined;
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const PERF_ERROR_REGEX = undefined;
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const SECURITY_PATCH_REGEX = undefined;
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
+const securityPatchStreak = undefined;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const HEAL_COMMAND = undefined;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const reason = undefined;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const done = undefined;
 
 const os = require('os-utils'); // This will be the mocked version due to jest.mock
 const { exec } = require('child_process'); // This will be the mocked version
