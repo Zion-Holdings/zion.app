@@ -82,17 +82,15 @@ export function ApiPlayground({ method, path, params = [] }: ApiPlaygroundProps)
       // Format the response with status information
       const statusInfo = `HTTP ${res.status} ${res.statusText}\n\n`;
       setResponse(statusInfo + responseText);
-    } catch (err: any) {
+    } catch (err: unknown) {
       let errorMessage = 'Request failed';
-      
-      if (err.name === 'AbortError') {
+      if (err && typeof err === 'object' && 'name' in err && (err as { name?: unknown }).name === 'AbortError') {
         errorMessage = 'Request timed out (15s)';
-      } else if (err.message?.includes('Failed to fetch')) {
+      } else if (err && typeof err === 'object' && 'message' in err && typeof (err as { message?: unknown }).message === 'string' && (err as { message: string }).message.includes('Failed to fetch')) {
         errorMessage = 'Network error - check CORS configuration or API endpoint';
-      } else {
-        errorMessage = err.message || 'Unknown error occurred';
+      } else if (err && typeof err === 'object' && 'message' in err && typeof (err as { message?: unknown }).message === 'string') {
+        errorMessage = (err as { message: string }).message;
       }
-      
       setResponse(`Error: ${errorMessage}\n\nAttempted URL: ${url}\n\nTroubleshooting:\n- Ensure the API endpoint exists\n- Check CORS configuration\n- Verify API key is valid\n- Check network connectivity`);
     } finally {
       setLoading(false);

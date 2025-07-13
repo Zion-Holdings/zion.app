@@ -9,12 +9,14 @@ export function ApiLogsChart({ logs }: ApiLogsChartProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
-    let chart: any;
+    let chart: unknown;
     const scriptId = "chartjs-script";
 
     const loadChart = () => {
-      if (!canvasRef.current || !(window as any).Chart) return;
-      const Chart = (window as any).Chart;
+      if (!canvasRef.current) return;
+      const win = window as unknown as { Chart?: unknown };
+      if (!win.Chart || typeof win.Chart !== 'function') return;
+      const Chart = win.Chart as typeof import('chart.js').Chart;
       const dateMap: Record<string, number> = {};
       logs.forEach((log) => {
         const day = new Date(log.created_at).toISOString().split("T")[0];
@@ -25,7 +27,7 @@ export function ApiLogsChart({ logs }: ApiLogsChartProps) {
       const labels = Object.keys(dateMap).sort();
       const data = labels.map((l) => dateMap[l]);
 
-      if (chart) chart.destroy();
+      if (chart && typeof (chart as { destroy?: () => void }).destroy === 'function') (chart as { destroy: () => void }).destroy();
       chart = new Chart(canvasRef.current, {
         type: "bar",
         data: {
@@ -62,7 +64,7 @@ export function ApiLogsChart({ logs }: ApiLogsChartProps) {
     }
 
     return () => {
-      if (chart) chart.destroy();
+      if (chart && typeof (chart as { destroy?: () => void }).destroy === 'function') (chart as { destroy: () => void }).destroy();
     };
   }, [logs]);
 
