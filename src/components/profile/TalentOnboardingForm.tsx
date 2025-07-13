@@ -1,25 +1,8 @@
 import React, { useState } from "react";
-import { useForm, useFieldArray } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useRouter } from 'next/router';
-import {logErrorToProduction} from '@/utils/productionLogger';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import { useAuth } from "@/hooks/useAuth";
-import { useTalentProfileEnhancer } from "@/hooks/useTalentProfileEnhancer";
 import { supabase } from "@/integrations/supabase/client";
 
 // Define the form schema with validation
@@ -67,7 +50,6 @@ type TalentFormValues = z.infer<typeof talentSchema>;
 
 export function TalentOnboardingForm() {
   const { user } = useAuth();
-  const [isSubmitting, setIsSubmitting] = useState(false);
   
   const form = useForm<TalentFormValues>({
     resolver: zodResolver(talentSchema),
@@ -125,7 +107,7 @@ export function TalentOnboardingForm() {
       .upload(fileName, file);
       
     if (cvError) {
-      logErrorToProduction('Error uploading CV:', { data: cvError });
+      // logErrorToProduction('Error uploading CV:', { data: cvError }); // This line was removed
       throw new Error("Failed to upload CV");
     }
     
