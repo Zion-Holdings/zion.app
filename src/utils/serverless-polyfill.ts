@@ -108,7 +108,7 @@ const tsHelpers = {
       "decorate" in Reflect &&
       typeof (Reflect as { decorate?: unknown }).decorate === "function"
     ) {
-      r = ((Reflect as unknown) as { decorate: Function }).decorate(decorators, target, key, desc);
+      r = ((Reflect as unknown) as { decorate: (...args: unknown[]) => unknown }).decorate(decorators, target, key, desc);
     } else {
       for (let i = decorators.length - 1; i >= 0; i--) {
         d = decorators[i];
@@ -135,7 +135,7 @@ const tsHelpers = {
         if (res.done) {
           resolve(res.value);
         } else if (typeof res.value !== 'undefined') {
-          adopt(res.value).then(fulfilled, rejected);
+          (adopt as (v: unknown) => Promise<unknown>)(res.value).then(fulfilled, rejected);
         }
       }
       step((
