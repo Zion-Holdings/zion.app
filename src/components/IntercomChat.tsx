@@ -51,8 +51,8 @@ export default function IntercomChat() {
         ic('update', w.intercomSettings);
       } else {
         const d = document;
-        const i: any = function () {
-          i.c(arguments);
+        const i: any = function (...args: unknown[]) {
+          (i.q as any).push(args);
         };
         i.q = [];
         i.c = function (args: any) {

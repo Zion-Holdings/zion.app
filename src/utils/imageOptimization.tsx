@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
-// @ts-expect-error
+// @ts-expect-error: Buffer is not available in some environments, fallback is handled
 import { Buffer } from 'buffer';
 
 interface OptimizedImageProps {

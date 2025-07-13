@@ -76,6 +76,8 @@ export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyD
 
   const active = isWishlisted(product.id);
   const dispatch = useDispatch<AppDispatch>();
+  const isMobile = useMediaQuery('(max-width: 768px)');
+  const isTablet = useMediaQuery('(max-width: 1200px)');
 
   // Title is now guaranteed to be a non-empty string by the check above.
   const productTitle = product.title;
@@ -113,9 +115,6 @@ export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyD
       });
     }
   };
-
-  const isMobile = useMediaQuery('(max-width: 768px)');
-  const isTablet = useMediaQuery('(max-width: 1200px)');
 
   const imageSizes = isMobile ? '100vw' : isTablet ? '50vw' : '33vw';
 

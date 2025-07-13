@@ -1,9 +1,5 @@
 import React from 'react';
 
-interface DataSyncProps {
-  // Props can be added later for passing actual data
-}
-
 interface PerformanceData {
   activeUsers30d: number;
   totalListings: number;
