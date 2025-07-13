@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import { Slider } from "@/components/ui/slider";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { format } from "date-fns";
@@ -63,7 +62,7 @@ export function ServiceQuoteModal({ open, onOpenChange, service }: ServiceQuoteM
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
       // Call Supabase function to process the quote
-      const { data, error } = await supabase.functions.invoke('process-quote', {
+      const { error } = await supabase.functions.invoke('process-quote', {
         body: {
           service: service ? {
             id: service.id,

@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { ResponsiveContainer, PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 const ReactMarkdown = React.lazy(() => import('react-markdown'));
 
@@ -33,14 +33,6 @@ const WhitepaperPreviewPanel: React.FC<WhitepaperPreviewPanelProps> = ({
   // when the data hasn't loaded yet. Using a local variable ensures optional chaining isn't
   // required throughout the JSX below.
   const sectionList = sections ?? [];
-
-  // Helper to find specific section content - useful if we want to intersperse chart
-  const findSectionContent = (titleSubstring: string): string | undefined => {
-    const section = sectionList.find(s =>
-      s.title.toLowerCase().includes(titleSubstring.toLowerCase()),
-    );
-    return section?.content;
-  };
 
   return (
     <div className="p-6 bg-white dark:bg-gray-950 shadow-lg rounded-lg h-full overflow-y-auto prose lg:prose-xl">

@@ -7,7 +7,6 @@ import { Input } from '@/components/ui/input';
 import { AutocompleteSuggestions } from '@/components/search/AutocompleteSuggestions';
 import { fireEvent } from '@/lib/analytics';
 import type { SearchSuggestion } from '@/types/search';
-import { slugify } from '@/lib/slugify';
 import { useDebounce } from '@/hooks/useDebounce';
 import { useOnClickOutside } from '@/hooks/useOnClickOutside';
 

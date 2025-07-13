@@ -113,7 +113,7 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({ productId }) => {
     if (productId) {
       fetchReviews();
     }
-  }, [productId]);
+  }, [fetchReviews]);
 
   const handleSubmitReview = async (e: FormEvent) => {
     e.preventDefault();

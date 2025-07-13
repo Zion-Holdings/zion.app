@@ -167,7 +167,7 @@ const ProductListingCardComponent = ({
           )}
           {stockStatus && (
             <Badge
-              variant={stockVariant as any}
+              variant={stockVariant as 'success' | 'destructive' | 'warning'}
               className="absolute top-2 left-2"
             >
               {stockStatus}

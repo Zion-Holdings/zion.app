@@ -74,9 +74,9 @@ export function SummaryStep({ formData, updateFormData }: SummaryStepProps) {
   const matchItems = matches.map(match => match.item);
   
   // Map the onSelectMatch handler to work with the item directly
-  const handleItemSelect = (item: any) => {
+  const handleItemSelect = (item: unknown) => {
     // Find the original MatchResult that contains this item
-    const matchResult = matches.find(match => match.item.id === item.id);
+    const matchResult = matches.find(match => match.item.id === (item as any).id);
     if (matchResult) {
       handleSelectMatch(matchResult);
     }

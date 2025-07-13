@@ -21,7 +21,7 @@ export function RouteChangeHandler({
   const router = useRouter();
 
   useEffect(() => {
-    const handleRouteChangeStart = (url: string) => {
+    const handleRouteChangeStart = () => {
       // Clear any pending timeouts or intervals - simplified approach
       if (typeof window !== 'undefined') {
         // Clear intervals up to a reasonable range
@@ -32,20 +32,20 @@ export function RouteChangeHandler({
       }
     };
 
-    const handleRouteChangeComplete = (url: string) => {
+    const handleRouteChangeComplete = () => {
       // Reset scroll position
       if (resetScrollOnChange) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
 
       // Call custom handler
-      onRouteChange?.(url);
+      onRouteChange?.(router.asPath);
 
       // Force rerender if needed
       if (forceRerender) {
         // Trigger a small delay to ensure DOM updates
         setTimeout(() => {
-          const event = new CustomEvent('routeChangeComplete', { detail: { url } });
+          const event = new CustomEvent('routeChangeComplete', { detail: { url: router.asPath } });
           window.dispatchEvent(event);
         }, 0);
       }
