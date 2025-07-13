@@ -69,7 +69,7 @@ async function testLoginApi() {
       const bcrypt = await import('bcryptjs');
       console.warn('✅ bcrypt imported successfully');
     } catch (error) {
-      console.log('ℹ️  bcrypt not available (using plain text comparison):', error.message);
+      // console.log('ℹ️  bcrypt not available (using plain text comparison):', error.message);
     }
     
     // Test 4: Check environment variables

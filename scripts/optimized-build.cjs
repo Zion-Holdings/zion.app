@@ -54,7 +54,7 @@ const optimizedEnv = {
   NEXT_PRIVATE_MINIMIZE_BUNDLE_SIZE: "true",
 };
 
-// Comment out all console.log statements (lines 56-69, 80, 83, 87, 98, 106, 112, 120, 125, 131, 149, 153, 165, 171-174, 177-190)
+// Comment out all console.log statements (lines 57-98, 109, 112, 116, 127, 135, 141, 149, 154, 160, 178, 182, 194, 200-203, 206-222, 230, 233, 245, 253, 312, 317, 325, 328, 333, 350, 353, 364, 368-371, 373, 375, 379)
 // console.log("🚀 Starting ENHANCED build for 176+ pages...");
 // console.log("📊 Memory limit: 6GB");
 // console.log("👷 Workers: 1 (single worker)");
