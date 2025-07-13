@@ -132,14 +132,14 @@ export function ContactPublisherModal({
             <FormField
               control={form.control}
               name="subject"
-              render={({ field }: { field: unknown }) => (
+              render={({ field }) => (
                 <FormItem>
                   <FormLabel>Subject</FormLabel>
                   <FormControl>
                     <Input
                       placeholder="Subject"
                       className="bg-zion-blue border-zion-blue-light text-white"
-                      {...field}
+                      {...(typeof field === 'object' && field !== null ? field : {})}
                     />
                   </FormControl>
                   <FormMessage className="text-red-500" />
@@ -149,14 +149,14 @@ export function ContactPublisherModal({
             <FormField
               control={form.control}
               name="message"
-              render={({ field }: { field: unknown }) => (
+              render={({ field }) => (
                 <FormItem>
                   <FormLabel>Message</FormLabel>
                   <FormControl>
                     <Textarea
                       placeholder={`Message to ${publisherName}...`}
                       className="bg-zion-blue border-zion-blue-light text-white min-h-[120px]"
-                      {...field}
+                      {...(typeof field === 'object' && field !== null ? field : {})}
                     />
                   </FormControl>
                   <FormMessage className="text-red-500" />
