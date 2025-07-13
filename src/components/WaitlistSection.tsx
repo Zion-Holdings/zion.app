@@ -43,7 +43,7 @@ export function WaitlistSection() {
       setName("");
       setRole("");
       setAgreeTerms(false);
-    } catch (_error) {
+    } catch {
       toast({
         variant: "destructive",
         title: "Something went wrong",
