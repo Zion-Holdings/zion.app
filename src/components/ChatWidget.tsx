@@ -4,7 +4,6 @@ import { MessageBubble } from '@/components/messaging/MessageBubble';
 import { Button } from '@/components/ui/button';
 import type { Message } from '@/types/messaging';
 import { safeStorage } from '@/utils/safeStorage';
-import { logWarn } from '@/utils/productionLogger';
 
 
 interface ChatWidgetProps {
@@ -32,7 +31,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
         setMessages(JSON.parse(stored));
       }
     } catch (err) {
-      logWarn('ChatWidget: failed to load history', { data:  { data: err } });
+      // logWarn('ChatWidget: failed to load history', { data:  { data: err } }); // Removed as per edit hint
     }
   }, [isOpen, roomId]);
 
@@ -80,7 +79,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
     try {
       safeStorage.setItem(`chat-widget-${roomId}`, JSON.stringify(messages));
     } catch (err) {
-      logWarn('ChatWidget: failed to save history', { data:  { data: err } });
+      // logWarn('ChatWidget: failed to save history', { data:  { data: err } }); // Removed as per edit hint
     }
   }, [messages, roomId, isOpen]);
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
