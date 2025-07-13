@@ -157,7 +157,7 @@ async function createFineTune(filePath) {
     })
   });
   const job = await jobRes.json();
-  console.log('Fine-tune job created:', job.id);
+  // console.log('Fine-tune job created:', job.id); // Removed console.log
 }
 
 async function main() {
