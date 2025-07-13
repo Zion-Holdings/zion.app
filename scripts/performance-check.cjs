@@ -290,6 +290,7 @@ class PerformanceChecker {
     // console.log('================================');
     
     // Remove or prefix all remaining unused variables and arguments for linter compliance, including 'warning' and 'error'.
+    // Ensure no unused variables remain in the file.
     // console.log(`Overall Status: ${this.results.overall.toUpperCase()}`);
     
     // console.log('\nCheck Results:');
