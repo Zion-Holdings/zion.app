@@ -305,6 +305,8 @@ export const DynamicComponentLoader: React.FC<DynamicLoaderProps> = ({
   return null
 }
 
+DynamicComponentLoader.displayName = "DynamicComponentLoader";
+
 // HOC for creating dynamic components easily
 export const createDynamicComponent = <T extends ComponentType<unknown>>(
   importFn: () => Promise<{ default: T }>,
