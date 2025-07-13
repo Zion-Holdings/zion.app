@@ -14,7 +14,7 @@ interface ProfileContactProps {
   profileType: 'service' | 'talent';
 }
 
-export function ProfileContact({ email, profileName, profileType }: ProfileContactProps) {
+export function ProfileContact({ email, profileName, profileType: _profileType }: ProfileContactProps) {
   const [message, setMessage] = useState("");
   const [subject, setSubject] = useState("");
   const [isSending, setIsSending] = useState(false);
