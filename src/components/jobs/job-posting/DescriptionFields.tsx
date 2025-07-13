@@ -18,7 +18,7 @@ export function DescriptionFields({ control, handleEditorChange, editorContent }
       <FormField
         control={control}
         name="description"
-        render={({ field }: { field: ControllerRenderProps<any, "description"> }) => (
+        render={({ field }: { field: ControllerRenderProps<JobSchemaType, "description"> }) => (
           <FormItem>
             <FormLabel>Job Description</FormLabel>
             <FormControl>
@@ -43,7 +43,7 @@ export function DescriptionFields({ control, handleEditorChange, editorContent }
       <FormField
         control={control}
         name="responsibilities"
-        render={({ field }: { field: ControllerRenderProps<any, "responsibilities"> }) => (
+        render={({ field }: { field: ControllerRenderProps<JobSchemaType, "responsibilities"> }) => (
           <FormItem>
             <FormLabel>Responsibilities (Optional)</FormLabel>
             <FormControl>
@@ -64,7 +64,7 @@ export function DescriptionFields({ control, handleEditorChange, editorContent }
       <FormField
         control={control}
         name="qualifications"
-        render={({ field }: { field: ControllerRenderProps<any, "qualifications"> }) => (
+        render={({ field }: { field: ControllerRenderProps<JobSchemaType, "qualifications"> }) => (
           <FormItem>
             <FormLabel>Qualifications (Optional)</FormLabel>
             <FormControl>
@@ -85,7 +85,7 @@ export function DescriptionFields({ control, handleEditorChange, editorContent }
       <FormField
         control={control}
         name="benefits"
-        render={({ field }: { field: ControllerRenderProps<any, "benefits"> }) => (
+        render={({ field }: { field: ControllerRenderProps<JobSchemaType, "benefits"> }) => (
           <FormItem>
             <FormLabel>Benefits (Optional)</FormLabel>
             <FormControl>
@@ -106,7 +106,7 @@ export function DescriptionFields({ control, handleEditorChange, editorContent }
       <FormField
         control={control}
         name="application_instructions"
-        render={({ field }: { field: ControllerRenderProps<any, "application_instructions"> }) => (
+        render={({ field }: { field: ControllerRenderProps<JobSchemaType, "application_instructions"> }) => (
           <FormItem>
             <FormLabel>Application Instructions (Optional)</FormLabel>
             <FormControl>
