@@ -44,7 +44,7 @@ const talentProfileSchema = z.object({
     message: "Hourly rate must be a number",
   }),
   availability: z.enum(["available", "limited", "unavailable"]),
-  enhancedProfile: z.boolean().default(true),
+  enhancedProfile: z.boolean(),
 });
 
 type TalentFormValues = z.infer<typeof talentProfileSchema>;
@@ -75,7 +75,7 @@ export function TalentRegistrationForm() {
   
   // Initialize form with default values
   const form = useForm<TalentFormValues>({
-    resolver: zodResolver(talentProfileSchema) as any,
+    resolver: zodResolver(talentProfileSchema),
     defaultValues: {
       name: user?.displayName || "",
       title: "",
@@ -303,8 +303,8 @@ export function TalentRegistrationForm() {
       }
       
       // Enhance profile if not already done
-      let finalSummary: string = "";
-      let finalSkills: string[] = [];
+      let _finalSummary: string = "";
+      let _finalSkills: string[] = [];
       
       if (values.enhancedProfile && !generatedContent) {
         try {
@@ -321,7 +321,7 @@ export function TalentRegistrationForm() {
           });
           
           if (aiData) {
-            finalSummary = (aiData as EnhancedProfile).summary;
+            _finalSummary = (aiData as EnhancedProfile).summary;
             // Safely merge AI suggested skills with user-provided skills
             const categorizedSkills = (aiData as EnhancedProfile).categorizedSkills;
             const aiSkills: string[] = [];
@@ -338,17 +338,17 @@ export function TalentRegistrationForm() {
             });
             
             // Create a unique set of skills
-            finalSkills = [...new Set([...skillTags, ...aiSkills])];
+            _finalSkills = [...new Set([...skillTags, ...aiSkills])];
           }
         } catch (error: unknown) {
           if (error instanceof Error) {
             logErrorToProduction('Error enhancing profile:', { data: error });
             // Continue with submission even if enhancement fails
-            finalSummary = "";
+            _finalSummary = "";
           }
         }
       } else if (generatedContent) {
-        finalSummary = generatedContent.summary;
+        _finalSummary = generatedContent.summary;
       }
 
       // Get user email for notification
