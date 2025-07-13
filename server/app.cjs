@@ -26,7 +26,7 @@ try {
     };
   } else {
     tracer = require('dd-trace').init();
-    console.log('✅ Datadog tracing initialized');
+    // console.log('✅ Datadog tracing initialized');
   }
 } catch (error) {
   console.warn('⚠️ Failed to initialize dd-trace, using mock implementation:', error.message);
