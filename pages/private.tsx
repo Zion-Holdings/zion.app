@@ -47,21 +47,23 @@ export default function PrivatePage({ user }: PrivatePageProps) {
                 <div className="grid gap-3">
                   <div className="flex items-center gap-2">
                     <Mail className="h-4 w-4 text-muted-foreground" />
-                    <span className="text-sm">{(user as any).email || 'No email'}</span>
-                    <Badge variant={(user as any).email_confirmed_at ? "default" : "secondary"}>
-                      {(user as any).email_confirmed_at ? "Verified" : "Unverified"}
+                    <span className="text-sm">
+                      {typeof user === 'object' && user !== null && 'email' in user ? (user as { email?: string }).email : 'No email'}
+                    </span>
+                    <Badge variant={typeof user === 'object' && user !== null && 'email_confirmed_at' in user ? (user as { email_confirmed_at?: string }).email_confirmed_at ? "default" : "secondary" : "secondary"}>
+                      {typeof user === 'object' && user !== null && 'email_confirmed_at' in user ? (user as { email_confirmed_at?: string }).email_confirmed_at ? "Verified" : "Unverified" : "Unverified"}
                     </Badge>
                   </div>
                   <div className="flex items-center gap-2">
                     <Calendar className="h-4 w-4 text-muted-foreground" />
                     <span className="text-sm">
-                      Joined {(user as any).created_at ? new Date((user as any).created_at).toLocaleDateString() : 'Unknown'}
+                      Joined {typeof user === 'object' && user !== null && 'created_at' in user ? new Date((user as { created_at?: string }).created_at).toLocaleDateString() : 'Unknown'}
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-sm">User ID: </span>
                     <code className="px-2 py-1 bg-muted rounded text-xs font-mono">
-                      {(user as any).id || 'Unknown'}
+                      {typeof user === 'object' && user !== null && 'id' in user ? (user as { id?: string }).id || 'Unknown' : 'Unknown'}
                     </code>
                   </div>
                 </div>
@@ -73,15 +75,15 @@ export default function PrivatePage({ user }: PrivatePageProps) {
               <div className="grid gap-2 text-sm">
                 <div>
                   <span className="font-medium">Last Sign In: </span>
-                  {(user as any).last_sign_in_at 
-                    ? new Date((user as any).last_sign_in_at).toLocaleString()
+                  {typeof user === 'object' && user !== null && 'last_sign_in_at' in user ? (user as { last_sign_in_at?: string }).last_sign_in_at 
+                    ? new Date((user as { last_sign_in_at?: string }).last_sign_in_at).toLocaleString()
                     : 'Never'
                   }
                 </div>
                 <div>
                   <span className="font-medium">App Metadata: </span>
                   <code className="text-xs">
-                    {JSON.stringify((user as any).app_metadata || {}, null, 2)}
+                    {JSON.stringify(typeof user === 'object' && user !== null && 'app_metadata' in user ? (user as { app_metadata?: any }).app_metadata || {} : {}, null, 2)}
                   </code>
                 </div>
               </div>
