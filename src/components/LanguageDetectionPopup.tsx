@@ -37,7 +37,7 @@ export function LanguageDetectionPopup() {
       setDetectedLanguage(browserLang);
       setOpen(true);
     }
-  }, []);
+  }, [currentLanguage, supportedLanguages]);
 
   if (!detectedLanguage) return null;
 

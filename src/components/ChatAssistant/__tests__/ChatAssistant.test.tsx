@@ -242,7 +242,6 @@ describe('ChatAssistant', () => {
 
   describe('Guest Chat History Persistence', () => {
     const guestAuthProviderProps = { isAuthenticated: false, user: null, isLoading: false };
-    const localStorageKey = `chatHistory-${mockRecipient.id}`;
     let mockSetStoredValue: vi.Mock;
 
     beforeEach(() => {

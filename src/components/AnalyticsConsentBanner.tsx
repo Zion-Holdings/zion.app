@@ -5,9 +5,6 @@ import { getCookie, setCookie } from '@/utils/cookies';
 import { initGA } from '@/lib/analytics';
 import { initPostHog } from '@/lib/posthog';
 
-const CONSENT_COOKIE_NAME = 'analyticsConsent';
-const COOKIE_EXPIRATION_DAYS = 365;
-
 export const AnalyticsConsentBanner: React.FC = () => {
   const [showBanner, setShowBanner] = useState(false);
 

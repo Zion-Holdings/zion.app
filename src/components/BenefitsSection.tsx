@@ -14,7 +14,7 @@ interface BenefitsSectionProps {
   style?: React.CSSProperties;
 }
 
-const getBenefits = (t: any) => [
+const getBenefits = (t: (key: string) => string) => [
   {
     title: t('benefits.ai_matchmaking'),
     description: t('benefits.ai_matchmaking_desc'),

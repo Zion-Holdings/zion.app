@@ -51,7 +51,7 @@ export const NotificationCenter: React.FC = () => {
 
       loadNotifications();
     }
-  }, [open, loadedOnce, fetchNotifications]);
+  }, [open, loadedOnce, fetchNotifications, enqueueSnackbar]);
 
   const handleMarkAllAsRead = async () => {
     try {

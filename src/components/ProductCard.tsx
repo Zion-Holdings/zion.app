@@ -107,10 +107,10 @@ export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyD
   const imageUrl = Array.isArray(product.images) && product.images.length > 0 ? product.images[0] : null;
   const imageAltText = productTitle;
 
-  const handleImageError = (error: any) => {
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     if (!imageError) {
       setImageError(true);
-      captureException(error, {
+      captureException(e, {
         product: product.id,
         imageUrl,
       });
@@ -146,7 +146,7 @@ export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyD
         </div>
       )}
       {stockStatus && (
-        <Badge variant={stockVariant as any} className="absolute top-2 left-2">
+        <Badge variant={stockVariant as 'success' | 'destructive' | 'warning'} className="absolute top-2 left-2">
           {stockStatus}
         </Badge>
       )}

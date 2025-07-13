@@ -192,7 +192,7 @@ export function useAuthGuard() {
     
     // Simple permission check - can be extended based on your permission system
     // Use type assertion for extensibility, as permissions might be added to user type later
-    const userPermissions = (user as any).permissions || [];
+    const userPermissions = (user as unknown as { permissions?: string[] }).permissions || [];
     return userPermissions.includes(permission);
   };
 

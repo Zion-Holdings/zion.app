@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import Skeleton from "react-loading-skeleton";
-import Head from 'next/head';
 import { Slider } from "@/components/ui/slider";
 import type { ProductListing, ListingView } from "@/types/listings";
 
