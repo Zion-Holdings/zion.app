@@ -164,6 +164,8 @@ export const DynamicComponentLoader: React.FC<DynamicLoaderProps> = ({
     isOnline: true
   })
   const [progress, setProgress] = useState(0)
+  // Use ComponentType<any> here to allow spreading arbitrary props and children to dynamic components
+  // This is a safe exception for dynamic loaders where the prop shape is not known in advance
   const [DynamicComponent, setDynamicComponent] = useState<ComponentType<any> | null>(null)
   const isOnline = useNetworkStatus()
 
