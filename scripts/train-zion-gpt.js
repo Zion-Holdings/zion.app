@@ -31,13 +31,13 @@ async function collectData() {
   return datasetPath;
 }
 
-async function fineTune(datasetPath) {
+async function fineTune(_datasetPath) {
   // Placeholder: call OpenAI fine-tuning API or other model training
   // execSync(`openai api fine_tunes.create -t ${datasetPath} -m gpt-3.5-turbo`);
 }
 
-async function writeSummary(datasetPath) {
-  const summary = `ZionGPT-Core Training\nVersion: ${VERSION}\nDataset: ${datasetPath}\nDate: ${new Date().toISOString()}\n`;
+async function writeSummary(_datasetPath) {
+  const summary = `ZionGPT-Core Training\nVersion: ${VERSION}\nDataset: ${_datasetPath}\nDate: ${new Date().toISOString()}\n`;
   const summaryPath = path.join('reports', `zion-gpt-summary-${Date.now()}.md`);
   await writeFile(summaryPath, summary);
 }

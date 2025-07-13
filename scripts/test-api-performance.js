@@ -14,7 +14,7 @@
 const https = require('http');
 const { performance: _performance } = require('perf_hooks');
 
-const BASE_URL = 'http://localhost:3000';
+const _BASE_URL = 'http://localhost:3000';
 const TIMEOUT_THRESHOLD = 5000; // 5 seconds (much less than 30s mentioned in issue)
 const MAX_ACCEPTABLE_TIME = 2000; // 2 seconds for cached responses
 
@@ -168,10 +168,10 @@ async function testEndpoint(endpoint) {
       
       // Check if response has data
       if (coldResult.data && typeof coldResult.data === 'object') {
-        const dataLength = Array.isArray(coldResult.data) ? coldResult.data.length : 
+        const _dataLength = Array.isArray(coldResult.data) ? coldResult.data.length : 
                           coldResult.data.results ? coldResult.data.results.length :
                           Object.keys(coldResult.data).length;
-        // console.warn(`   📊 Data: ${dataLength} items, ${coldResult.size} bytes`);
+        // console.warn(`   📊 Data: ${_dataLength} items, ${coldResult.size} bytes`);
       }
     } else {
       // console.warn(`   ❌ Cold: Failed with ${coldResult.statusCode}`);

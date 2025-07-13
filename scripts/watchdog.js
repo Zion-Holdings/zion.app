@@ -185,7 +185,7 @@ function ensureFileExists(filePath) {
 [PERF_LOG_FILE, SECURITY_LOG_FILE, SELF_HEAL_LOG_FILE].forEach(ensureFileExists);
 
 // --- Configuration: Error Patterns and Healing Actions ---
-const CODEX_API_URL = process.env.CODEX_API_URL || 'http://localhost:3001/api/codex/suggest-fix'; // Assuming server runs on 3001
+const _CODEX_API_URL = process.env.CODEX_API_URL || 'http://localhost:3001/api/codex/suggest-fix'; // Assuming server runs on 3001
 
 const HEAL_ACTION_TYPES = {
   GENERAL_RESTART: 'GENERAL_RESTART',
@@ -194,7 +194,7 @@ const HEAL_ACTION_TYPES = {
   CHECK_DB_HEALTH: 'CHECK_DB_HEALTH',
 };
 
-const ERROR_PATTERNS_CONFIG = [
+const _ERROR_PATTERNS_CONFIG = [
   {
     name: 'DatabaseConnectionError',
     regex: /Error: connect ECONNREFUSED .*?:5432/i, // Example for PostgreSQL
@@ -253,7 +253,7 @@ const ERROR_PATTERNS_CONFIG = [
 const CODEX_TRIGGER_URL = process.env.CODEX_TRIGGER_URL || 'http://localhost:3001/api/codex/suggest-fix';
 
 // --- State Variables ---
-let errorStreaks = {}; // Stores streaks for each error pattern config name
+let _errorStreaks = {}; // Stores streaks for each error pattern config name
 /** @type {boolean} isHealing - Flag to prevent concurrent self-heal actions (cooldown mechanism). True if a heal is in progress. */
 let isHealing = false;
 /** @type {number} highCpuUsageCount - Counter for consecutive high CPU usage detections. */

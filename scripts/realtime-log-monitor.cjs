@@ -122,7 +122,7 @@ class RealtimeLogMonitor {
       
       lines.forEach(line => this.processLogLine(line, path.basename(filePath)));
       
-    } catch (error) {
+    } catch (_error) {
       // console.error(`Error reading ${filePath}:`, error.message);
     }
   }
@@ -135,7 +135,7 @@ class RealtimeLogMonitor {
       // Try to parse as JSON first
       const entry = JSON.parse(line);
       this.processStructuredEntry(entry, filename);
-    } catch (error) {
+    } catch (_error) {
       // Handle plain text logs
       this.processPlainTextEntry(line, filename);
     }

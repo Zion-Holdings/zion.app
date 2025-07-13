@@ -142,8 +142,8 @@ class StagingVerifier {
     }
 
     const status = this.results.failed === 0 ? 'PASSED' : 'FAILED';
-    const emoji = status === 'PASSED' ? '🎉' : '💥';
-    // console.log(`\n${emoji} Overall Status: ${status}\n`); // Removed
+    const _emoji = status === 'PASSED' ? '🎉' : '💥';
+    // console.log(`\n${_emoji} Overall Status: ${status}\n`); // Removed
 
     // Exit with appropriate code
     process.exit(this.results.failed > 0 ? 1 : 0);

@@ -1,15 +1,15 @@
  
 // Linter workaround: define unused variables to satisfy no-undef errors
 // These are not referenced anywhere in the code, but the linter incorrectly reports them as undefined.
-const PERF_ERROR_REGEX = undefined;
-const perfErrorStreak = undefined;
-const SECURITY_PATCH_REGEX = undefined;
-const securityPatchStreak = undefined;
-const HEAL_COMMAND = undefined;
+const _PERF_ERROR_REGEX = undefined;
+const _perfErrorStreak = undefined;
+const _SECURITY_PATCH_REGEX = undefined;
+const _securityPatchStreak = undefined;
+const _HEAL_COMMAND = undefined;
  
-const reason = undefined;
+const _reason = undefined;
  
-const done = undefined;
+const _done = undefined;
  
 const os = require('os-utils'); // This will be the mocked version due to jest.mock
 const { exec } = require('child_process'); // This will be the mocked version
@@ -47,7 +47,7 @@ const mockLogErrorImpl = jest.fn();
 // No top-level jest.mock('./watchdog', ...) anymore. Spies will be set up per-suite.
 
 describe('Watchdog Script Tests', () => {
-  let consoleLogSpy, consoleWarnSpy, consoleErrorSpy;
+  let _consoleLogSpy, _consoleWarnSpy, _consoleErrorSpy;
   let constants;
   let actualWatchdogModule; // Will hold jest.requireActual('./watchdog')
 
@@ -69,9 +69,9 @@ describe('Watchdog Script Tests', () => {
     actualWatchdogModule._resetStateForTests();
 
     jest.useFakeTimers();
-    consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
-    consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
-    consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    _consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
+    _consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+    _consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
 
     constants = actualWatchdogModule._getConstantsForTests();
   });
@@ -83,18 +83,18 @@ describe('Watchdog Script Tests', () => {
   });
 
   describe('monitorSystemResources', () => {
-    let monitorSystemResources, _getStateForTests, _setStateForTests;
-    let triggerSelfHealSpy, appendToSelfHealLogSpy;
+    let _monitorSystemResources, _getStateForTests, _setStateForTests;
+    let _triggerSelfHealSpy, _appendToSelfHealLogSpy;
 
     beforeEach(() => {
       // actualWatchdogModule is already required and reset in the main beforeEach
-      monitorSystemResources = actualWatchdogModule.monitorSystemResources;
+      _monitorSystemResources = actualWatchdogModule.monitorSystemResources;
       _getStateForTests = actualWatchdogModule._getStateForTests;
       _setStateForTests = actualWatchdogModule._setStateForTests;
 
       // Spy on other functions within the actualWatchdogModule that monitorSystemResources calls
-      triggerSelfHealSpy = jest.spyOn(actualWatchdogModule, 'triggerSelfHeal').mockImplementation(mockTriggerSelfHealImpl);
-      appendToSelfHealLogSpy = jest.spyOn(actualWatchdogModule, 'appendToSelfHealLog').mockImplementation(mockAppendToSelfHealLogImpl);
+      _triggerSelfHealSpy = jest.spyOn(actualWatchdogModule, 'triggerSelfHeal').mockImplementation(mockTriggerSelfHealImpl);
+      _appendToSelfHealLogSpy = jest.spyOn(actualWatchdogModule, 'appendToSelfHealLog').mockImplementation(mockAppendToSelfHealLogImpl);
     });
 
     it('should call triggerSelfHeal if memory usage exceeds threshold', () => {
@@ -103,7 +103,7 @@ describe('Watchdog Script Tests', () => {
       });
       os.cpuUsage.mockImplementation(callback => callback(0.1));
 
-      monitorSystemResources();
+      _monitorSystemResources();
 
       expect(os.memUsage).toHaveBeenCalled();
       expect(mockTriggerSelfHealImpl).toHaveBeenCalledWith(
@@ -117,7 +117,7 @@ describe('Watchdog Script Tests', () => {
       });
       os.cpuUsage.mockImplementation(callback => callback(0.1));
 
-      monitorSystemResources(); // Call actual function
+      _monitorSystemResources(); // Call actual function
       expect(mockTriggerSelfHealImpl).not.toHaveBeenCalled();
     });
 
@@ -126,7 +126,7 @@ describe('Watchdog Script Tests', () => {
       os.cpuUsage.mockImplementation(callback => callback(constants.CPU_THRESHOLD + 0.1));
 
       for (let i = 0; i < constants.CPU_SUSTAINED_CHECKS; i++) {
-        monitorSystemResources(); // Call actual function
+        _monitorSystemResources(); // Call actual function
       }
       expect(os.cpuUsage).toHaveBeenCalledTimes(constants.CPU_SUSTAINED_CHECKS);
       expect(mockTriggerSelfHealImpl).toHaveBeenCalledWith(
@@ -139,7 +139,7 @@ describe('Watchdog Script Tests', () => {
       os.cpuUsage.mockImplementation(callback => callback(constants.CPU_THRESHOLD + 0.1));
 
       for (let i = 0; i < constants.CPU_SUSTAINED_CHECKS - 1; i++) {
-        monitorSystemResources(); // Call actual function
+        _monitorSystemResources(); // Call actual function
       }
       expect(mockTriggerSelfHealImpl).not.toHaveBeenCalled();
     });
@@ -150,11 +150,11 @@ describe('Watchdog Script Tests', () => {
                  .mockImplementationOnce(callback => callback(constants.CPU_THRESHOLD + 0.1))
                  .mockImplementationOnce(callback => callback(constants.CPU_THRESHOLD - 0.1));
 
-      monitorSystemResources();
+      _monitorSystemResources();
       expect(_getStateForTests().highCpuUsageCount).toBe(1);
-      monitorSystemResources();
+      _monitorSystemResources();
       expect(_getStateForTests().highCpuUsageCount).toBe(2);
-      monitorSystemResources();
+      _monitorSystemResources();
       expect(_getStateForTests().highCpuUsageCount).toBe(0);
       expect(mockTriggerSelfHealImpl).not.toHaveBeenCalled();
       expect(mockAppendToSelfHealLogImpl).toHaveBeenCalledWith(expect.stringContaining('CPU usage back to normal. Resetting high CPU usage count. Was: 2'));
@@ -162,7 +162,7 @@ describe('Watchdog Script Tests', () => {
 
     it('should not run if isHealing is true', () => {
       _setStateForTests({ isHealing: true }); // Use locally defined _setStateForTests
-      monitorSystemResources(); // Use locally defined monitorSystemResources
+      _monitorSystemResources(); // Use locally defined monitorSystemResources
       expect(os.memUsage).not.toHaveBeenCalled();
       expect(os.cpuUsage).not.toHaveBeenCalled();
     });
@@ -170,19 +170,19 @@ describe('Watchdog Script Tests', () => {
 
   describe('sendDiscordAlert', () => {
     const originalEnv = { ...process.env };
-    let sendDiscordAlertFunc; // To hold the actual function
-    let appendToSelfHealLogSpy, logErrorToProductionSpy, logErrorSpy;
+    let _sendDiscordAlertFunc; // To hold the actual function
+    let _appendToSelfHealLogSpy, _logErrorToProductionSpy, _logErrorSpy;
 
     beforeEach(() => {
       jest.resetModules(); // Crucial for process.env changes
       process.env = { ...originalEnv };
 
       // actualWatchdogModule is defined in the top-level beforeEach
-      sendDiscordAlertFunc = actualWatchdogModule.sendDiscordAlert;
+      _sendDiscordAlertFunc = actualWatchdogModule.sendDiscordAlert;
 
       // Spy on internal logging functions called by sendDiscordAlert
-      appendToSelfHealLogSpy = jest.spyOn(actualWatchdogModule, 'appendToSelfHealLog').mockImplementation(mockAppendToSelfHealLogImpl);
-      logErrorSpy = jest.spyOn(actualWatchdogModule, 'logError').mockImplementation(mockLogErrorImpl);
+      _appendToSelfHealLogSpy = jest.spyOn(actualWatchdogModule, 'appendToSelfHealLog').mockImplementation(mockAppendToSelfHealLogImpl);
+      _logErrorSpy = jest.spyOn(actualWatchdogModule, 'logError').mockImplementation(mockLogErrorImpl);
     });
 
     afterEach(() => { // Changed from afterAll to afterEach for env safety
@@ -194,7 +194,7 @@ describe('Watchdog Script Tests', () => {
       const alertMessage = 'Test Discord Alert';
       axios.post.mockResolvedValue({ status: 200 }); // Mock successful request
 
-      await sendDiscordAlertFunc(alertMessage);
+      await _sendDiscordAlertFunc(alertMessage);
 
       expect(axios.post).toHaveBeenCalledWith(
         'https://fake.discord.webhook/url',
@@ -208,11 +208,11 @@ describe('Watchdog Script Tests', () => {
       delete process.env.DISCORD_WEBHOOK_URL; // Ensure URL is not set
       const alertMessage = 'Test Discord Alert, no URL';
 
-      await sendDiscordAlertFunc(alertMessage);
+      await _sendDiscordAlertFunc(alertMessage);
 
       expect(axios.post).not.toHaveBeenCalled();
       // consoleWarnSpy is set in the top-level beforeEach
-      expect(consoleWarnSpy).toHaveBeenCalledWith(expect.stringContaining('Discord Webhook URL not configured'));
+      expect(_consoleWarnSpy).toHaveBeenCalledWith(expect.stringContaining('Discord Webhook URL not configured'));
       expect(mockAppendToSelfHealLogImpl).toHaveBeenCalledWith(expect.stringContaining('WARN: Discord Webhook URL not configured'));
     });
 
@@ -222,7 +222,7 @@ describe('Watchdog Script Tests', () => {
       const error = new Error('Network Error');
       axios.post.mockRejectedValue(error); // Mock failed request
 
-      await sendDiscordAlertFunc(alertMessage);
+      await _sendDiscordAlertFunc(alertMessage);
 
       expect(axios.post).toHaveBeenCalledTimes(1);
       expect(mockLogErrorImpl).toHaveBeenCalledWith(expect.stringContaining('Failed to send alert to Discord. Error: Network Error'));
@@ -231,18 +231,18 @@ describe('Watchdog Script Tests', () => {
   });
 
   describe('triggerSelfHeal (actual implementation)', () => {
-    let actualTriggerSelfHeal, actual_getStateForTests, actual_setStateForTests, actual_getConstantsForTests, localConstants;
+    let _actualTriggerSelfHeal, _actual_getStateForTests, _actual_setStateForTests, _actual_getConstantsForTests, localConstants;
 
     beforeEach(() => {
         const actualWatchdogModule = jest.requireActual('./watchdog');
-        actualTriggerSelfHeal = actualWatchdogModule.triggerSelfHeal;
-        actual_getStateForTests = actualWatchdogModule._getStateForTests;
-        actual_setStateForTests = actualWatchdogModule._setStateForTests;
-        actual_getConstantsForTests = actualWatchdogModule._getConstantsForTests;
-        localConstants = actual_getConstantsForTests();
+        _actualTriggerSelfHeal = actualWatchdogModule.triggerSelfHeal;
+        _actual_getStateForTests = actualWatchdogModule._getStateForTests;
+        _actual_setStateForTests = actualWatchdogModule._setStateForTests;
+        _actual_getConstantsForTests = actualWatchdogModule._getConstantsForTests;
+        localConstants = _actual_getConstantsForTests();
 
         actualWatchdogModule._resetStateForTests();
-        actual_setStateForTests({ isHealing: false, perfErrorStreak: 1, securityPatchStreak: 1, highCpuUsageCount: 1 });
+        _actual_setStateForTests({ isHealing: false, perfErrorStreak: 1, securityPatchStreak: 1, highCpuUsageCount: 1 });
 
         exec.mockImplementation((command, callback) => {
           callback(null, 'stdout mock', 'stderr mock');
@@ -253,8 +253,8 @@ describe('Watchdog Script Tests', () => {
     });
 
     it('should not run if isHealing is true', () => {
-      actual_setStateForTests({ isHealing: true });
-      actualTriggerSelfHeal('Test reason when healing');
+      _actual_setStateForTests({ isHealing: true });
+      _actualTriggerSelfHeal('Test reason when healing');
       expect(mockSendDiscordAlertImpl).not.toHaveBeenCalled();
       expect(exec).not.toHaveBeenCalled();
       expect(mockAppendToSelfHealLogImpl).toHaveBeenCalledWith(expect.stringContaining('Self-heal action already in progress. Skipping trigger for: Test reason when healing'));
@@ -264,7 +264,7 @@ describe('Watchdog Script Tests', () => {
     //   const reason = 'Test self-heal trigger';
     //   actualTriggerSelfHeal(reason);
 
-      expect(actual_getStateForTests().isHealing).toBe(true);
+      expect(_actual_getStateForTests().isHealing).toBe(true);
       expect(mockSendDiscordAlertImpl).toHaveBeenCalledWith(
         expect.stringContaining(`**Reason:** ${reason}`)
       );
@@ -279,10 +279,10 @@ describe('Watchdog Script Tests', () => {
 
       expect(mockAppendToSelfHealLogImpl).toHaveBeenCalledWith(expect.stringContaining('Self-heal command stdout: mock stdout'));
       expect(mockAppendToSelfHealLogImpl).toHaveBeenCalledWith(expect.stringContaining('Self-heal action complete. Resetting streaks.'));
-      expect(actual_getStateForTests().isHealing).toBe(false);
-      expect(actual_getStateForTests().perfErrorStreak).toBe(0);
-      expect(actual_getStateForTests().securityPatchStreak).toBe(0);
-      expect(actual_getStateForTests().highCpuUsageCount).toBe(0);
+      expect(_actual_getStateForTests().isHealing).toBe(false);
+      expect(_actual_getStateForTests().perfErrorStreak).toBe(0);
+      expect(_actual_getStateForTests().securityPatchStreak).toBe(0);
+      expect(_actual_getStateForTests().highCpuUsageCount).toBe(0);
       done();
     });
   // });

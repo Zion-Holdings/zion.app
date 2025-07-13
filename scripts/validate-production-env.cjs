@@ -7,7 +7,7 @@
 
 // Load environment variables from .env.local if it exists
 const fs = require('fs');
-const path = require('path');
+const _path = require('path');
 
 function loadEnvFile(envPath) {
   if (fs.existsSync(envPath)) {
