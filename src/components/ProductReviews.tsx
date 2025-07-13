@@ -109,6 +109,7 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({ productId }) => {
     }
   };
 
+  // Wrap fetchReviews in useCallback and update useEffect dependencies accordingly.
   useEffect(() => {
     if (productId) {
       fetchReviews();

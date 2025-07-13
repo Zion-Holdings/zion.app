@@ -1,6 +1,6 @@
 'use client'
 
-import React, { Suspense, useState, useEffect } from 'react'
+import React, { Suspense, useState, useEffect, useCallback } from 'react'
 import type { ComponentType } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Loader2, AlertTriangle, WifiOff, RefreshCw } from 'lucide-react';
@@ -183,7 +183,7 @@ export const DynamicComponentLoader: React.FC<DynamicLoaderProps> = ({
   }, [loadingState.isLoading, loadingState.error])
 
   // Load component
-  const loadComponent = async () => {
+  const loadComponent = useCallback(async () => {
     try {
       setLoadingState(prev => ({ ...prev, isLoading: true, error: null, isOnline }))
       setProgress(0)
@@ -206,7 +206,7 @@ export const DynamicComponentLoader: React.FC<DynamicLoaderProps> = ({
         isOnline
       }))
     }
-  }
+  }, [importFn, isOnline, maxRetries, setDynamicComponent, setLoadingState, setProgress])
 
   // Retry functionality
   const retry = () => {
