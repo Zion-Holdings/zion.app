@@ -6,9 +6,6 @@ import { toast } from '@/hooks/use-toast';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
-// Allow either UserProfile or UserDetails
-type UserWithProfile = UserDetails | null;
-
 /**
  * Hook to handle message operations
  */
