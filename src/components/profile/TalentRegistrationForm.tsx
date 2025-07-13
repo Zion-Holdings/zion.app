@@ -26,7 +26,7 @@ import {
   CardContent,
   CardFooter
 } from "@/components/ui/card";
-import { UserRound } from '@/components/icons';
+import { User, Briefcase, MapPin, Upload, Sparkles, Check, X } from '@/components/icons';
 
 // Define form schema
 const talentProfileSchema = z.object({
@@ -425,7 +425,7 @@ export function TalentRegistrationForm() {
                           <FormLabel className="text-zion-slate-light">Full Name</FormLabel>
                           <FormControl>
                             <div className="relative">
-                              <UserRound className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate h-4 w-4" />
+                              <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate h-4 w-4" />
                               <Input
                                 className="pl-10 bg-zion-blue border-zion-blue-light text-white"
                                 placeholder="Your full name"
@@ -525,7 +525,7 @@ export function TalentRegistrationForm() {
                         </AspectRatio>
                       ) : (
                         <div className="flex items-center justify-center h-full">
-                          <UserRound className="h-10 w-10 text-zion-slate opacity-50" />
+                          <User className="h-10 w-10 text-zion-slate opacity-50" />
                         </div>
                       )}
                     </div>
