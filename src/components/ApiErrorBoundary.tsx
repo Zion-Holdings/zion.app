@@ -18,7 +18,7 @@ interface ApiErrorBoundaryProps {
 interface ApiErrorBoundaryState {
   hasError: boolean;
   error: Error | null;
-  errorInfo: any;
+  errorInfo: unknown;
   isRetrying: boolean;
   isOnline: boolean;
 }

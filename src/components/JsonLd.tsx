@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 
 interface JsonLdProps {
-  data: Record<string, any>;
+  data: Record<string, unknown>;
 }
 
 const JsonLd: React.FC<JsonLdProps> = ({ data }) => (

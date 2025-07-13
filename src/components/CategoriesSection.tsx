@@ -23,7 +23,7 @@ interface CategoryType {
 }
 
 // Default static categories with translation keys
-const getDefaultCategories = (t: any) => [
+const getDefaultCategories = (t: unknown) => [
   {
     id: "services",
     name: t('categories.services'),
@@ -69,7 +69,7 @@ const getIcon = (iconName?: string) => {
   }
 };
 
-const getSpecialServices = (t: any) => [
+const getSpecialServices = (t: unknown) => [
   {
     title: t('categories.it_onsite_services'),
     link: "/it-onsite-services"
