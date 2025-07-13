@@ -22,9 +22,9 @@ import { pathToFileURL, fileURLToPath } from 'url';
  
 const _HEAL_COMMAND = undefined;
  
-const _perfErrorStreak = undefined;
+let _perfErrorStreak = 0;
  
-const _securityPatchStreak = undefined;
+let _securityPatchStreak = 0;
  
 const _PERF_ERROR_REGEX = undefined;
  
