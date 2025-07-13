@@ -41,7 +41,7 @@ class PerformanceChecker {
   }
 
   async checkServerHealth() {
-    console.log('🔍 Checking server health...');
+    // console.log('🔍 Checking server health...');
     try {
       const startTime = Date.now();
       const response = await fetch(`${config.baseUrl}/api/health`, {
@@ -58,7 +58,7 @@ class PerformanceChecker {
           status: 'pass',
           responseTime: `${responseTime}ms`
         });
-        console.log(`✅ Server healthy (${responseTime}ms)`);
+        // console.log(`✅ Server healthy (${responseTime}ms)`);
       } else {
         throw new Error(`HTTP ${response.status}`);
       }
@@ -69,12 +69,12 @@ class PerformanceChecker {
         error: error.message
       });
       this.results.errors.push(`Server health check failed: ${error.message}`);
-      console.log(`❌ Server health check failed: ${error.message}`);
+      // console.log(`❌ Server health check failed: ${error.message}`);
     }
   }
 
   async checkPageLoad() {
-    console.log('🔍 Checking page load performance...');
+    // console.log('🔍 Checking page load performance...');
     try {
       const startTime = Date.now();
       const response = await fetch(config.baseUrl, {
@@ -100,7 +100,7 @@ class PerformanceChecker {
             contentLength: html.length
           }
         });
-        console.log(`✅ Page loads successfully (${responseTime}ms)`);
+        // console.log(`✅ Page loads successfully (${responseTime}ms)`);
       } else {
         throw new Error(`HTTP ${response.status}`);
       }
@@ -111,12 +111,12 @@ class PerformanceChecker {
         error: error.message
       });
       this.results.errors.push(`Page load failed: ${error.message}`);
-      console.log(`❌ Page load failed: ${error.message}`);
+      // console.log(`❌ Page load failed: ${error.message}`);
     }
   }
 
   async checkImageOptimization() {
-    console.log('🔍 Checking image optimization...');
+    // console.log('🔍 Checking image optimization...');
     const imageUrl = `${config.baseUrl}/_next/image?url=%2Flogos%2Fzion-logo.png&w=64&q=75`;
     
     try {
@@ -141,7 +141,7 @@ class PerformanceChecker {
             contentLength: contentLength ? `${Math.round(contentLength / 1024)}KB` : 'unknown'
           }
         });
-        console.log(`✅ Image optimization working (${responseTime}ms, ${contentType})`);
+        // console.log(`✅ Image optimization working (${responseTime}ms, ${contentType})`);
       } else {
         throw new Error(`HTTP ${response.status}`);
       }
@@ -152,12 +152,12 @@ class PerformanceChecker {
         error: error.message
       });
       this.results.warnings.push(`Image optimization not working: ${error.message}`);
-      console.log(`⚠️ Image optimization issue: ${error.message}`);
+      // console.log(`⚠️ Image optimization issue: ${error.message}`);
     }
   }
 
   checkFileSystem() {
-    console.log('🔍 Checking file system...');
+    // console.log('🔍 Checking file system...');
     
     const criticalFiles = [
       'package.json',
@@ -202,14 +202,14 @@ class PerformanceChecker {
 
     if (missingFiles.length > 0) {
       this.results.warnings.push(`Missing files: ${missingFiles.join(', ')}`);
-      console.log(`⚠️ Missing critical files: ${missingFiles.join(', ')}`);
+      // console.log(`⚠️ Missing critical files: ${missingFiles.join(', ')}`);
     } else {
-      console.log('✅ All critical files present');
+      // console.log('✅ All critical files present');
     }
   }
 
   checkEnvironmentVariables() {
-    console.log('🔍 Checking environment configuration...');
+    // console.log('🔍 Checking environment configuration...');
     
     const criticalEnvVars = [
       'NODE_ENV',
@@ -261,14 +261,14 @@ class PerformanceChecker {
 
     if (criticalMissing.length > 0) {
       this.results.errors.push(`Missing critical environment variables: ${criticalMissing.join(', ')}`);
-      console.log(`❌ Missing critical env vars: ${criticalMissing.join(', ')}`);
+      // console.log(`❌ Missing critical env vars: ${criticalMissing.join(', ')}`);
     } else {
-      console.log('✅ All critical environment variables present');
+      // console.log('✅ All critical environment variables present');
     }
 
     if (placeholder.length > 0) {
       this.results.warnings.push(`Placeholder values detected: ${placeholder.join(', ')}`);
-      console.log(`⚠️ Placeholder values: ${placeholder.join(', ')}`);
+      // console.log(`⚠️ Placeholder values: ${placeholder.join(', ')}`);
     }
   }
 
@@ -287,8 +287,8 @@ class PerformanceChecker {
   }
 
   printSummary() {
-    console.log('\n📊 Performance Check Summary');
-    console.log('================================');
+    // console.log('\n📊 Performance Check Summary');
+    // console.log('================================');
     
     const statusEmoji = {
       pass: '✅',
@@ -296,54 +296,54 @@ class PerformanceChecker {
       fail: '❌'
     };
 
-    console.log(`Overall Status: ${statusEmoji[this.results.overall]} ${this.results.overall.toUpperCase()}`);
+    // console.log(`Overall Status: ${statusEmoji[this.results.overall]} ${this.results.overall.toUpperCase()}`);
     
-    console.log('\nCheck Results:');
+    // console.log('\nCheck Results:');
     this.results.checks.forEach(check => {
-      console.log(`  ${statusEmoji[check.status]} ${check.name}: ${check.status}`);
+      // console.log(`  ${statusEmoji[check.status]} ${check.name}: ${check.status}`);
       if (check.responseTime) {
-        console.log(`    Response Time: ${check.responseTime}`);
+        // console.log(`    Response Time: ${check.responseTime}`);
       }
       if (check.error) {
-        console.log(`    Error: ${check.error}`);
+        // console.log(`    Error: ${check.error}`);
       }
     });
 
     if (this.results.performance.serverResponseTime) {
-      console.log('\nPerformance Metrics:');
-      console.log(`  Server Response: ${this.results.performance.serverResponseTime}ms`);
+      // console.log('\nPerformance Metrics:');
+      // console.log(`  Server Response: ${this.results.performance.serverResponseTime}ms`);
       if (this.results.performance.pageLoadTime) {
-        console.log(`  Page Load: ${this.results.performance.pageLoadTime}ms`);
+        // console.log(`  Page Load: ${this.results.performance.pageLoadTime}ms`);
       }
     }
 
     if (this.results.warnings.length > 0) {
-      console.log('\nWarnings:');
+      // console.log('\nWarnings:');
       this.results.warnings.forEach(warning => {
-        console.log(`  ⚠️ ${warning}`);
+        // console.log(`  ⚠️ ${warning}`);
       });
     }
 
     if (this.results.errors.length > 0) {
-      console.log('\nErrors:');
+      // console.log('\nErrors:');
       this.results.errors.forEach(error => {
-        console.log(`  ❌ ${error}`);
+        // console.log(`  ❌ ${error}`);
       });
     }
 
-    console.log('\n💡 Recommendations:');
+    // console.log('\n💡 Recommendations:');
     if (this.results.overall === 'pass') {
-      console.log('  🎉 Everything looks great! Your application is running optimally.');
+      // console.log('  🎉 Everything looks great! Your application is running optimally.');
     } else if (this.results.overall === 'warn') {
-      console.log('  📝 Address the warnings above to improve performance and reliability.');
+      // console.log('  📝 Address the warnings above to improve performance and reliability.');
     } else {
-      console.log('  🔧 Fix the errors above before deploying to production.');
+      // console.log('  🔧 Fix the errors above before deploying to production.');
     }
   }
 
   async run() {
-    console.log('🚀 Starting Performance Check');
-    console.log('=============================\n');
+    // console.log('🚀 Starting Performance Check');
+    // console.log('=============================\n');
 
     // Run all checks
     await this.checkServerHealth();
@@ -371,7 +371,7 @@ if (require.main === module) {
       process.exit(results.overall === 'fail' ? 1 : 0);
     })
     .catch(error => {
-      console.error('❌ Performance check failed:', error);
+      // console.error('❌ Performance check failed:', error);
       process.exit(1);
     });
 }
