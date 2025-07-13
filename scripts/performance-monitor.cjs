@@ -38,9 +38,6 @@ class PerformanceMonitor {
   }
 
   async runHealthCheck() {
-    console.log(this.colorize('\n🏥 Development Server Health Check', 'bright'));
-    console.log(this.colorize('===================================\n', 'cyan'));
-
     const checks = [
       { name: 'Node.js Version', check: () => this.checkNodeVersion() },
       { name: 'Dependencies', check: () => this.checkDependencies() },
@@ -118,9 +115,6 @@ class PerformanceMonitor {
   }
 
   analyzeBundle() {
-    console.log(this.colorize('\n📦 Bundle Analysis', 'bright'));
-    console.log(this.colorize('==================\n', 'cyan'));
-
     const buildDir = path.join(process.cwd(), '.next');
     if (!fs.existsSync(buildDir)) {
       console.log(this.colorize('⚠️  No build found. Run npm run build first.', 'yellow'));
@@ -204,9 +198,6 @@ class PerformanceMonitor {
   }
 
   generateOptimizationReport() {
-    console.log(this.colorize('\n⚡ Optimization Recommendations', 'bright'));
-    console.log(this.colorize('=================================\n', 'cyan'));
-
     const recommendations = [
       {
         category: '🎯 Critical',
