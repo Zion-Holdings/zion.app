@@ -227,7 +227,7 @@ export const DynamicComponentLoader: React.FC<DynamicLoaderProps> = ({
       loadComponent()
       return () => {} // Return empty cleanup function
     }
-  }, [])
+  }, [loadComponent, prefetch])
 
   // Update online status
   useEffect(() => {

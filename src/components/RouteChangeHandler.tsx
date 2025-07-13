@@ -68,7 +68,7 @@ export function RouteChangeHandler({
       };
     }
     return undefined;
-  }, [onRouteChange, resetScrollOnChange, forceRerender]); // Removed router.events from dependencies
+  }, [onRouteChange, resetScrollOnChange, forceRerender, router.asPath, router.events]);
 
   return null;
 } 
