@@ -4,7 +4,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useRouter } from 'next/router';
 import {logErrorToProduction} from '@/utils/productionLogger';
-import { User, Briefcase, Star, Calendar, Globe, DollarSign, FileText, Link, Upload, ArrowRight, ArrowLeft, Trash2, Plus, CheckCircle2 } from 'lucide-react';
 import {
   Form, FormControl, FormField, FormItem, FormLabel, FormMessage
 } from "@/components/ui/form";
@@ -14,9 +13,7 @@ import { Button } from "@/components/ui/button";
 import {
   Select, SelectContent, SelectItem, SelectTrigger, SelectValue 
 } from "@/components/ui/select";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Separator } from "@/components/ui/separator";
-import { toast } from "@/components/ui/use-toast";
 
 
 
