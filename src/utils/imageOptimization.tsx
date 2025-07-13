@@ -103,7 +103,7 @@ export function OptimizedImage({
     </svg>`;
     const base64 = typeof window !== 'undefined'
       ? btoa(unescape(encodeURIComponent(svg)))
-      : (Buffer as any).from(svg, 'utf-8').toString('base64');
+      : (Buffer as unknown as Buffer).from(svg, 'utf-8').toString('base64');
     return `data:image/svg+xml;base64,${base64}`;
   };
 
