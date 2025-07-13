@@ -206,7 +206,7 @@ export default function UpdatePassword() {
                     <FormField
                       control={form.control}
                       name="confirmPassword"
-                      render={({ field }: { field: ControllerRenderProps<UpdatePasswordFormValues, "password"> }) => (
+                      render={({ field }: { field: ControllerRenderProps<UpdatePasswordFormValues, "confirmPassword"> }) => (
                         <FormItem>
                           <FormLabel className="text-zion-slate-light">Confirm Password</FormLabel>
                           <FormControl>
