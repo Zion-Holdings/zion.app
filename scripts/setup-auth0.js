@@ -31,13 +31,17 @@ const colors = {
 };
 
 function log(message, color = 'white') {
-  console.log(`${colors[color]}${message}${colors.reset}`);
+  if (color === 'red' || color === 'yellow') {
+    console.error(`${colors[color]}${message}${colors.reset}`);
+  } else {
+    console.warn(`${colors[color]}${message}${colors.reset}`);
+  }
 }
 
 function logSection(title) {
-  console.log('\n' + '='.repeat(60));
+  console.warn('\n' + '='.repeat(60));
   log(`  ${title}`, 'bold');
-  console.log('='.repeat(60));
+  console.warn('='.repeat(60));
 }
 
 function logStep(step, description) {

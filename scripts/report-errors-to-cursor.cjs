@@ -28,7 +28,7 @@ async function main() {
   const data = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
   const failedSuites = data.testResults.filter(tr => tr.numFailingTests > 0);
   if (failedSuites.length === 0) {
-    console.log('✅ No failing tests — nothing to report.');
+    console.warn('✅ No failing tests — nothing to report.');
     return;
   }
 
