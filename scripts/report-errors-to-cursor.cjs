@@ -47,7 +47,7 @@ async function main() {
   const apiKey = process.env.CURSOR_API_KEY;
   if (!apiKey) {
     console.warn('CURSOR_API_KEY not set; printing payload instead:');
-    console.log(payload.message);
+    console.warn(payload.message);
     return;
   }
 
@@ -66,7 +66,7 @@ async function main() {
       return;
     }
     const json = await res.json();
-    console.log('📨 Sent error report to Cursor. Issue id:', json.id);
+    console.warn('📧 Sent error report to Cursor. Issue id:', json.id);
   } catch (err) {
     console.error('Error while sending report:', err);
     process.exitCode = 1;

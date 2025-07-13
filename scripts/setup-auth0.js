@@ -269,7 +269,7 @@ async function testConfiguration() {
     const fetch = require('node-fetch');
     const wellKnownUrl = `${process.env.AUTH0_ISSUER_BASE_URL}/.well-known/openid_configuration`;
     
-    logInfo(`Testing: ${wellKnownUrl}`);
+    console.warn(`Testing: ${wellKnownUrl}`);
     
     const response = await fetch(wellKnownUrl);
     
@@ -295,37 +295,37 @@ async function displayNextSteps() {
   logStep(1, 'Configure Auth0 Application Settings');
   logInfo('In your Auth0 Dashboard → Applications → Settings, add:');
   console.log('');
-  log('  Allowed Callback URLs:', 'yellow');
-  log('    http://localhost:3000/api/auth/callback');
-  log('    https://yourdomain.com/api/auth/callback');
+  console.warn('  Allowed Callback URLs:', 'yellow');
+  console.warn('    http://localhost:3000/api/auth/callback');
+  console.warn('    https://yourdomain.com/api/auth/callback');
   console.log('');
-  log('  Allowed Logout URLs:', 'yellow');
-  log('    http://localhost:3000');
-  log('    https://yourdomain.com');
+  console.warn('  Allowed Logout URLs:', 'yellow');
+  console.warn('    http://localhost:3000');
+  console.warn('    https://yourdomain.com');
   console.log('');
-  log('  Allowed Web Origins:', 'yellow');
-  log('    http://localhost:3000');
-  log('    https://yourdomain.com');
+  console.warn('  Allowed Web Origins:', 'yellow');
+  console.warn('    http://localhost:3000');
+  console.warn('    https://yourdomain.com');
   
   logStep(2, 'Grant Management API Permissions');
   logInfo('In Auth0 Dashboard → Applications → APIs → Machine to Machine:');
-  log('  • Authorize your app for "Auth0 Management API"');
-  log('  • Grant scopes: create:users, read:users, update:users');
+  console.warn('  • Authorize your app for "Auth0 Management API"');
+  console.warn('  • Grant scopes: create:users, read:users, update:users');
   
   logStep(3, 'Restart Your Application');
-  log('  npm run dev', 'cyan');
-  log('  # or', 'white');
-  log('  yarn dev', 'cyan');
+  console.warn('  npm run dev', 'cyan');
+  console.warn('  # or', 'white');
+  console.warn('  yarn dev', 'cyan');
   
   logStep(4, 'Test the Signup Flow');
-  log('  1. Visit: http://localhost:3000/signup', 'cyan');
-  log('  2. Fill out the form with test data', 'cyan');
-  log('  3. Verify no error messages appear', 'cyan');
-  log('  4. Check email for verification link', 'cyan');
+  console.warn('  1. Visit: http://localhost:3000/signup', 'cyan');
+  console.warn('  2. Fill out the form with test data', 'cyan');
+  console.warn('  3. Verify no error messages appear', 'cyan');
+  console.warn('  4. Check email for verification link', 'cyan');
   
   logStep(5, 'Verify Health Check');
-  log('  Visit: http://localhost:3000/api/auth/health', 'cyan');
-  log('  Should return: {"status": "ok", ...}', 'cyan');
+  console.warn('  Visit: http://localhost:3000/api/auth/health', 'cyan');
+  console.warn('  Should return: {"status": "ok", ...}', 'cyan');
   
   console.log('');
   logSuccess('Setup complete! Follow the steps above to finish the configuration.');

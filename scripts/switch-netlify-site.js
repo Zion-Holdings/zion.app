@@ -1,16 +1,16 @@
 #!/usr/bin/env node
-import process from 'process';
+import _process from 'process';
 
 const {
   NETLIFY_AUTH_TOKEN: token,
   NETLIFY_PRIMARY_DOMAIN: domain,
   NETLIFY_GREEN_SITE_ID: greenId,
   NETLIFY_BLUE_SITE_ID: blueId,
-} = process.env;
+} = _process.env;
 
 if (!token || !domain || !greenId || !blueId) {
   console.error('Missing Netlify environment variables');
-  process.exit(1);
+  _process.exit(1);
 }
 
 const headers = {
@@ -74,9 +74,9 @@ export async function switchNetlifySite() {
   }
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (import.meta.url === `file://${_process.argv[1]}`) {
   switchNetlifySite().catch((err) => {
     console.error(err);
-    process.exit(1);
+    _process.exit(1);
   });
 }

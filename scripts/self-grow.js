@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { readFile } from 'fs/promises';
+import _fetch from 'node-fetch';
 // Renamed 'fetch' to '_fetch' to avoid no-redeclare error
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
