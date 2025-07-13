@@ -35,6 +35,7 @@ export interface FilterComponentProps {
 export interface SkillsFilterProps extends FilterComponentProps {
   selectedSkills: string[];
   toggleSkill: (skill: string) => void;
+  _isMobileFilterOpen?: boolean;
 }
 
 export interface AvailabilityFilterProps extends FilterComponentProps {
