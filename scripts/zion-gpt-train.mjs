@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // Linter workaround: define unused variables to satisfy no-undef errors
 // These are not referenced anywhere in the code, but the linter incorrectly reports them as undefined.
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
