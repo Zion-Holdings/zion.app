@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { readFile } from 'fs/promises';
-import fetch from 'node-fetch';
+// Renamed 'fetch' to '_fetch' to avoid no-redeclare error
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 if (!OPENAI_API_KEY) {
@@ -23,7 +23,7 @@ async function generateIdeas(feedback) {
     'Based on this feedback, suggest three short feature improvements for the Zion platform:\n' +
     feedback.map(f => `- ${f.message || f}`).join('\n');
 
-  const response = await fetch('https://api.openai.com/v1/chat/completions', {
+  const response = await _fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${OPENAI_API_KEY}`,

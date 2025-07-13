@@ -5,7 +5,7 @@
  */
 const fs = require('fs');
 const path = require('path');
-const fetch = require('node-fetch');
+const _fetch = require('node-fetch');
 
 const RESULTS_DIR = path.resolve(__dirname, '..', 'test-results');
 
@@ -46,13 +46,13 @@ async function main() {
 
   const apiKey = process.env.CURSOR_API_KEY;
   if (!apiKey) {
-    console.error('CURSOR_API_KEY not set; printing payload instead:');
+    console.warn('CURSOR_API_KEY not set; printing payload instead:');
     console.log(payload.message);
     return;
   }
 
   try {
-    const res = await fetch('https://api.cursor.sh/v1/issues', {
+    const res = await _fetch('https://api.cursor.sh/v1/issues', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

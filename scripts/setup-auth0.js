@@ -9,7 +9,7 @@
 const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
-const crypto = require('crypto');
+const _crypto = require('crypto');
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -136,7 +136,7 @@ function isPlaceholderValue(value) {
 }
 
 function generateAuth0Secret() {
-  return crypto.randomBytes(32).toString('hex');
+  return _crypto.randomBytes(32).toString('hex');
 }
 
 function validateAuth0Domain(domain) {

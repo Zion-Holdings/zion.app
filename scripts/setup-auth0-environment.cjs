@@ -7,7 +7,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const crypto = require('crypto');
+const _crypto = require('crypto');
 
 const auth0EnvExample = `# Next.js Configuration
 NEXT_PUBLIC_APP_URL=http://localhost:3000
@@ -77,7 +77,7 @@ NEXT_PUBLIC_API_URL=http://localhost:3000/api
 
 # Auth0 - Get these from your Auth0 application dashboard
 # https://manage.auth0.com/dashboard/applications/YOUR_APP_ID/settings
-AUTH0_SECRET=${crypto.randomBytes(32).toString('hex')}
+AUTH0_SECRET=${_crypto.randomBytes(32).toString('hex')}
 AUTH0_BASE_URL=http://localhost:3000
 AUTH0_ISSUER_BASE_URL=https://your-tenant.us.auth0.com
 AUTH0_CLIENT_ID=your_auth0_client_id_here
@@ -109,7 +109,7 @@ EXAMPLE_API_URL=https://jsonplaceholder.typicode.com
 `;
 
 function generateAuth0Secret() {
-  return crypto.randomBytes(32).toString('hex');
+  return _crypto.randomBytes(32).toString('hex');
 }
 
 function createEnvFiles() {
@@ -129,7 +129,7 @@ function createEnvFiles() {
   // Create .env.local if it doesn't exist
   if (!fs.existsSync(envLocalPath)) {
     const localEnvWithSecret = auth0EnvLocal.replace(
-      'AUTH0_SECRET=${crypto.randomBytes(32).toString(\'hex\')}',
+      'AUTH0_SECRET=${_crypto.randomBytes(32).toString(\'hex\')}',
       `AUTH0_SECRET=${generateAuth0Secret()}`
     );
     fs.writeFileSync(envLocalPath, localEnvWithSecret);
