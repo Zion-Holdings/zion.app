@@ -52,7 +52,7 @@ export interface RegionFilterProps extends FilterComponentProps {
 export interface ExperienceFilterProps extends FilterComponentProps {
   experienceRange: [number, number];
   setExperienceRange: (range: [number, number]) => void;
-  isMobileFilterOpen?: boolean;
+  _isMobileFilterOpen?: boolean;
 }
 
 export interface PriceFilterProps extends FilterComponentProps {
