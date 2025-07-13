@@ -72,7 +72,7 @@ async function sendDiscordAlert(alertMessage) {
     // to prevent the watchdog from hanging indefinitely.
     await axios.post(DISCORD_WEBHOOK_URL, payload, { timeout: 10000 }); // 10 seconds timeout
     const logMsg = `Successfully sent alert to Discord.`; // Message itself can be long, so not logging it here.
-    console.log(logMsg);
+    console.warn(logMsg);
     appendToSelfHealLog(`[${new Date().toISOString()}] ${logMsg}\n`);
   } catch (error) {
     let errorMessage = `Failed to send alert to Discord.`;
@@ -350,7 +350,7 @@ async function triggerCodexFix(reason) {
   try {
     await axios.post(CODEX_TRIGGER_URL, { reason, timestamp: new Date().toISOString() }, { timeout: 10000 });
     const successMsg = `Codex fix triggered via ${CODEX_TRIGGER_URL}`;
-    console.log(successMsg);
+    console.warn(successMsg);
     appendToSelfHealLog(`[${new Date().toISOString()}] ${successMsg}\n`);
   } catch (err) {
     logErrorToProduction('Failed to trigger Codex fix', err);
@@ -358,7 +358,7 @@ async function triggerCodexFix(reason) {
   }
 }
 
-console.log('Watchdog script started. Monitoring log files...');
+console.warn('Watchdog script started. Monitoring log files...');
 appendToSelfHealLog(`[${new Date().toISOString()}] Watchdog script started.\n`);
 
 /**
