@@ -12,7 +12,7 @@
  */
 
 const https = require('http');
-const { performance } = require('perf_hooks');
+const { performance: _performance } = require('perf_hooks');
 
 const BASE_URL = 'http://localhost:3000';
 const TIMEOUT_THRESHOLD = 5000; // 5 seconds (much less than 30s mentioned in issue)
@@ -66,7 +66,7 @@ const TEST_ENDPOINTS = [
  */
 function makeRequest(endpoint, timeoutMs = TIMEOUT_THRESHOLD) {
   return new Promise((resolve, reject) => {
-    const startTime = performance.now();
+    const startTime = _performance.now();
     
     const options = {
       hostname: 'localhost',
@@ -88,7 +88,7 @@ function makeRequest(endpoint, timeoutMs = TIMEOUT_THRESHOLD) {
       });
       
       res.on('end', () => {
-        const endTime = performance.now();
+        const endTime = _performance.now();
         const responseTime = endTime - startTime;
         
         try {
@@ -114,7 +114,7 @@ function makeRequest(endpoint, timeoutMs = TIMEOUT_THRESHOLD) {
     });
 
     req.on('error', (error) => {
-      const endTime = performance.now();
+      const endTime = _performance.now();
       reject({
         error: error.message,
         responseTime: endTime - startTime
@@ -122,7 +122,7 @@ function makeRequest(endpoint, timeoutMs = TIMEOUT_THRESHOLD) {
     });
 
     req.on('timeout', () => {
-      const endTime = performance.now();
+      const endTime = _performance.now();
       req.destroy();
       reject({
         error: 'Request timeout',
