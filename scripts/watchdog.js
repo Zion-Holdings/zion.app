@@ -30,7 +30,8 @@ const _PERF_ERROR_REGEX = undefined;
  
 const _SECURITY_PATCH_REGEX = undefined;
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+// Rename custom __dirname to _dirname to avoid no-redeclare error
+const _dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // --- Discord Configuration ---
 const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
@@ -140,7 +141,7 @@ function determineBaseLogPath() {
     logErrorToProduction(`Failed to create cwd log directory at ${cwdPath}`, e);
   }
 
-  const fallback = path.resolve(__dirname, '../logs');
+  const fallback = path.resolve(_dirname, '../logs');
   try {
     fs.mkdirSync(fallback, { recursive: true });
     fs.accessSync(fallback, fs.constants.W_OK);
