@@ -169,13 +169,22 @@ export function ServiceProviderRegistrationForm() {
         });
       }
       
-    } catch (error: any) {
-      logErrorToProduction('Error generating enhanced profile:', { data: error });
-      toast({
-        title: "Generation failed",
-        description: error.message || "There was an error generating your enhanced profile. Please try again.",
-        variant: "destructive",
-      });
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        logErrorToProduction('Error generating enhanced profile:', { data: error });
+        toast({
+          title: "Generation failed",
+          description: error.message || "There was an error generating your enhanced profile. Please try again.",
+          variant: "destructive",
+        });
+      } else {
+        logErrorToProduction('Error generating enhanced profile:', { data: error });
+        toast({
+          title: "Generation failed",
+          description: "There was an error generating your enhanced profile. Please try again.",
+          variant: "destructive",
+        });
+      }
     } finally {
       setIsGenerating(false);
     }
@@ -250,9 +259,14 @@ export function ServiceProviderRegistrationForm() {
             const aiServices = (aiData as AIProfileResponse).services || [];
             finalServices = [...new Set([...serviceTags, ...aiServices])];
           }
-        } catch (error) {
-          logErrorToProduction('Error enhancing profile:', { data: error });
-          // Continue with submission even if enhancement fails
+        } catch (error: unknown) {
+          if (error instanceof Error) {
+            logErrorToProduction('Error enhancing profile:', { data: error });
+            // Continue with submission even if enhancement fails
+          } else {
+            logErrorToProduction('Error enhancing profile:', { data: error });
+            // Continue with submission even if enhancement fails
+          }
         }
       } else if (generatedContent) {
         finalSummary = generatedContent.summary;
@@ -318,9 +332,14 @@ export function ServiceProviderRegistrationForm() {
               `
             }
           });
-        } catch (emailError) {
-          logErrorToProduction('Failed to send notification email:', { data: emailError });
-          // Continue with submission even if email fails
+        } catch (emailError: unknown) {
+          if (emailError instanceof Error) {
+            logErrorToProduction('Failed to send notification email:', { data: emailError });
+            // Continue with submission even if email fails
+          } else {
+            logErrorToProduction('Failed to send notification email:', { data: emailError });
+            // Continue with submission even if email fails
+          }
         }
       }
       
@@ -334,13 +353,22 @@ export function ServiceProviderRegistrationForm() {
         router.push('/service-dashboard');
       }, 1500);
       
-    } catch (error: any) {
-      logErrorToProduction('Error creating profile:', { data: error });
-      toast({
-        title: "Profile Creation Failed",
-        description: error.message || "There was an error creating your profile. Please try again.",
-        variant: "destructive",
-      });
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        logErrorToProduction('Error creating profile:', { data: error });
+        toast({
+          title: "Profile Creation Failed",
+          description: error.message || "There was an error creating your profile. Please try again.",
+          variant: "destructive",
+        });
+      } else {
+        logErrorToProduction('Error creating profile:', { data: error });
+        toast({
+          title: "Profile Creation Failed",
+          description: "There was an error creating your profile. Please try again.",
+          variant: "destructive",
+        });
+      }
     } finally {
       setIsSubmitting(false);
     }
