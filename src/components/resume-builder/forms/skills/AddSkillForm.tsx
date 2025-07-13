@@ -7,11 +7,11 @@ import type { Skill } from '@/types/resume';
 import { AIEnhancementButton } from '@/components/resume-builder/forms/AIEnhancementButton';
 
 interface AddSkillFormProps {
-  resumeId: string;
+  _resumeId: string;
   onAddSkill: (skill: Skill) => Promise<boolean>;
 }
 
-export const AddSkillForm = ({ resumeId, onAddSkill }: AddSkillFormProps) => {
+export const AddSkillForm = ({ _resumeId, onAddSkill }: AddSkillFormProps) => {
   const [skillName, setSkillName] = useState('');
   const [skillCategory, setSkillCategory] = useState('');
   const [proficiency, setProficiency] = useState<number>(3);
