@@ -35,5 +35,5 @@ for (const [file, data] of Object.entries(summary)) {
     `// Placeholder tests for ${relative}\n` +
     `describe('${relative}', () => {\n  it('needs tests', () => {\n    expect(true).toBe(true);\n  });\n});\n`;
   fs.writeFileSync(testPath, content);
-  console.log('Created placeholder test:', testPath);
+  // console.log('Created placeholder test:', testPath);
 }

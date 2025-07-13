@@ -9,8 +9,8 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔍 LARGE CHUNK ANALYZER');
-console.log('=======================\n');
+// console.log('🔍 LARGE CHUNK ANALYZER');
+// console.log('=======================\n');
 
 const TARGET_SIZE = 244000; // 244KB target
 const buildStatsPath = path.join(process.cwd(), '.next');
@@ -183,38 +183,38 @@ function analyzeLargeChunks() {
 function generateDetailedReport() {
   const analysis = analyzeLargeChunks();
   
-  console.log(`📊 LARGE CHUNK ANALYSIS RESULTS:`);
-  console.log(`===============================`);
-  console.log(`Total chunks analyzed: ${analysis.totalAnalyzed}`);
-  console.log(`Total size: ${formatBytes(analysis.totalSize)}`);
-  console.log(`Large chunks (>${formatBytes(TARGET_SIZE)}): ${analysis.largeChunks.length}`);
-  console.log();
+  // console.log(`📊 LARGE CHUNK ANALYSIS RESULTS:`);
+  // console.log(`===============================`);
+  // console.log(`Total chunks analyzed: ${analysis.totalAnalyzed}`);
+  // console.log(`Total size: ${formatBytes(analysis.totalSize)}`);
+  // console.log(`Large chunks (>${formatBytes(TARGET_SIZE)}): ${analysis.largeChunks.length}`);
+  // console.log();
 
   if (analysis.largeChunks.length === 0) {
-    console.log('🎉 No chunks exceed the target size!');
+    // console.log('🎉 No chunks exceed the target size!');
     return { success: true, analysis };
   }
 
   // Sort by size (largest first)
   analysis.largeChunks.sort((a, b) => b.size - a.size);
 
-  console.log(`🔍 LARGE CHUNKS BREAKDOWN:`);
-  console.log(`=========================`);
+  // console.log(`🔍 LARGE CHUNKS BREAKDOWN:`);
+  // console.log(`=========================`);
   
   analysis.largeChunks.forEach((chunk, index) => {
     const urgency = chunk.strategy.priority === 'critical' ? '🚨' : 
                    chunk.strategy.priority === 'high' ? '⚠️' : 
                    chunk.strategy.priority === 'medium' ? '📊' : '📝';
     
-    console.log(`${index + 1}. ${urgency} ${chunk.name}`);
-    console.log(`   Size: ${chunk.sizeFormatted} (+${chunk.overTargetFormatted} over target)`);
-    console.log(`   Category: ${chunk.category}`);
-    console.log(`   Priority: ${chunk.strategy.priority}`);
+    // console.log(`${index + 1}. ${urgency} ${chunk.name}`);
+    // console.log(`   Size: ${chunk.sizeFormatted} (+${chunk.overTargetFormatted} over target)`);
+    // console.log(`   Category: ${chunk.category}`);
+    // console.log(`   Priority: ${chunk.strategy.priority}`);
     
     chunk.strategy.actions.forEach(action => {
-      console.log(`   • ${action}`);
+      // console.log(`   • ${action}`);
     });
-    console.log();
+    // console.log();
   });
 
   // Generate category-based recommendations
@@ -232,54 +232,54 @@ function generateDetailedReport() {
     categoryStats[chunk.category].chunks.push(chunk.name);
   });
 
-  console.log(`📋 OPTIMIZATION PRIORITIES BY CATEGORY:`);
-  console.log(`======================================`);
+  // console.log(`📋 OPTIMIZATION PRIORITIES BY CATEGORY:`);
+  // console.log(`======================================`);
   
   Object.entries(categoryStats)
     .sort(([,a], [,b]) => b.totalSize - a.totalSize)
     .forEach(([category, stats]) => {
-      console.log(`🔧 ${category.toUpperCase()}: ${stats.count} chunks, ${formatBytes(stats.totalSize)}`);
-      console.log(`   Chunks: ${stats.chunks.join(', ')}`);
+      // console.log(`🔧 ${category.toUpperCase()}: ${stats.count} chunks, ${formatBytes(stats.totalSize)}`);
+      // console.log(`   Chunks: ${stats.chunks.join(', ')}`);
       
       const strategy = getOptimizationStrategy(category, stats.totalSize);
-      console.log(`   Priority: ${strategy.priority}`);
-      console.log(`   Actions:`);
-      strategy.actions.forEach(action => {
-        console.log(`     • ${action}`);
-      });
-      console.log();
+      // console.log(`   Priority: ${strategy.priority}`);
+      // console.log(`   Actions:`);
+      // strategy.actions.forEach(action => {
+      //   console.log(`     • ${action}`);
+      // });
+      // console.log();
     });
 
   // Implementation guidance
-  console.log(`🚀 IMPLEMENTATION GUIDANCE:`);
-  console.log(`==========================`);
+  // console.log(`🚀 IMPLEMENTATION GUIDANCE:`);
+  // console.log(`==========================`);
   
   const criticalChunks = analysis.largeChunks.filter(c => c.strategy.priority === 'critical');
   const highPriorityChunks = analysis.largeChunks.filter(c => c.strategy.priority === 'high');
   
   if (criticalChunks.length > 0) {
-    console.log(`🚨 CRITICAL ISSUES (Fix Immediately):`);
-    criticalChunks.forEach(chunk => {
-      console.log(`   • ${chunk.name} (${chunk.category})`);
-    });
-    console.log();
+    // console.log(`🚨 CRITICAL ISSUES (Fix Immediately):`);
+    // criticalChunks.forEach(chunk => {
+    //   console.log(`   • ${chunk.name} (${chunk.category})`);
+    // });
+    // console.log();
   }
 
   if (highPriorityChunks.length > 0) {
-    console.log(`⚠️  HIGH PRIORITY (Next Sprint):`);
-    highPriorityChunks.forEach(chunk => {
-      console.log(`   • ${chunk.name} (${chunk.category})`);
-    });
-    console.log();
+    // console.log(`⚠️  HIGH PRIORITY (Next Sprint):`);
+    // highPriorityChunks.forEach(chunk => {
+    //   console.log(`   • ${chunk.name} (${chunk.category})`);
+    // });
+    // console.log();
   }
 
-  console.log(`📝 SUGGESTED NEXT STEPS:`);
-  console.log(`1. Address critical P2P library chunks immediately`);
-  console.log(`2. Implement dynamic imports for UI/chart libraries`);
-  console.log(`3. Review and optimize vendor bundling strategy`);
-  console.log(`4. Consider alternative lighter libraries`);
-  console.log(`5. Implement component-level code splitting`);
-  console.log();
+  // console.log(`📝 SUGGESTED NEXT STEPS:`);
+  // console.log(`1. Address critical P2P library chunks immediately`);
+  // console.log(`2. Implement dynamic imports for UI/chart libraries`);
+  // console.log(`3. Review and optimize vendor bundling strategy`);
+  // console.log(`4. Consider alternative lighter libraries`);
+  // console.log(`5. Implement component-level code splitting`);
+  // console.log();
 
   return { success: analysis.largeChunks.length <= 3, analysis };
 }
@@ -309,13 +309,13 @@ function saveAnalysis(analysis) {
   };
   
   fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-  console.log(`📄 Detailed analysis saved to: ${reportPath}`);
+  // console.log(`📄 Detailed analysis saved to: ${reportPath}`);
 }
 
 // Main execution
 try {
   if (!fs.existsSync(buildStatsPath)) {
-    console.log('❌ No build output found. Run `npm run build` first.');
+    // console.log('❌ No build output found. Run `npm run build` first.');
     process.exit(1);
   }
 
@@ -323,13 +323,13 @@ try {
   saveAnalysis(analysis);
   
   if (success) {
-    console.log('\n🎉 Chunk optimization target achieved!');
+    // console.log('\n🎉 Chunk optimization target achieved!');
   } else {
-    console.log('\n⚡ Continue chunk optimization efforts.');
+    // console.log('\n⚡ Continue chunk optimization efforts.');
   }
   
   process.exit(success ? 0 : 1);
 } catch (error) {
-  console.error('❌ Error during large chunk analysis:', error.message);
+  // console.error('❌ Error during large chunk analysis:', error.message);
   process.exit(1);
 }

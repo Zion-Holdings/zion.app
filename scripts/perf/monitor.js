@@ -62,7 +62,7 @@ function restartService() {
     if (err) {
       console.error('Service restart failed:', err.message);
     } else {
-      console.log('Service restarted:', stdout || stderr);
+      // console.log('Service restarted:', stdout || stderr);
     }
   });
 }

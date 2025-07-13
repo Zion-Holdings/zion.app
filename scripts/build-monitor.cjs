@@ -9,19 +9,15 @@ const fs = require('fs');
 const path = require('path');
 const { spawn } = require('child_process');
 
-console.log('🔍 Advanced Build Monitor\n');
-
 /**
  * Analyze bundle composition
  */
 function analyzeBundleComposition() {
-  console.log('📊 Bundle Composition Analysis:');
   
   const buildDir = path.join(__dirname, '..', '.next');
   const staticDir = path.join(buildDir, 'static');
   
   if (!fs.existsSync(staticDir)) {
-    console.log('   ❌ Build directory not found. Run `npm run build` first.');
     return null;
   }
 
@@ -70,20 +66,8 @@ function analyzeBundleComposition() {
     analysis.chunks.sort((a, b) => b.size - a.size);
 
     // Report findings
-    console.log(`   📦 Total Bundle Size: ${(analysis.totalSize / 1024 / 1024).toFixed(2)} MB`);
-    console.log(`   🧩 JavaScript Chunks: ${analysis.chunks.length}`);
-    console.log(`   🎨 CSS Files: ${analysis.css.length}`);
-    
-    // Show largest chunks
-    console.log('\n   🔥 Largest Chunks:');
-    analysis.chunks.slice(0, 5).forEach((chunk, index) => {
-      const sizeKB = (chunk.size / 1024).toFixed(1);
-      console.log(`      ${index + 1}. ${chunk.name} (${sizeKB} KB)`);
-    });
-
     return analysis;
   } catch (error) {
-    console.log('   ❌ Error analyzing bundle:', error.message);
     return null;
   }
 }
@@ -92,10 +76,8 @@ function analyzeBundleComposition() {
  * Check for potential optimizations
  */
 function checkOptimizations(bundleAnalysis) {
-  console.log('\n💡 Optimization Recommendations:');
   
   if (!bundleAnalysis) {
-    console.log('   ⚠️  Bundle analysis required for recommendations');
     return;
   }
 
@@ -129,8 +111,6 @@ function checkOptimizations(bundleAnalysis) {
   // Display recommendations
   recommendations.forEach(rec => {
     const icon = rec.type === 'success' ? '✅' : rec.type === 'warning' ? '⚠️' : '❌';
-    console.log(`   ${icon} ${rec.message}`);
-    console.log(`      💡 ${rec.action}`);
   });
 }
 
@@ -138,7 +118,6 @@ function checkOptimizations(bundleAnalysis) {
  * Performance benchmarking
  */
 async function runPerformanceBenchmark() {
-  console.log('\n⚡ Performance Benchmark:');
   
   const startTime = Date.now();
   
@@ -158,23 +137,6 @@ async function runPerformanceBenchmark() {
       const buildTime = Date.now() - startTime;
       const buildTimeSeconds = (buildTime / 1000).toFixed(1);
       
-      console.log(`   ⏱️  Build Time: ${buildTimeSeconds}s`);
-      
-      if (buildTime < 30000) {
-        console.log('   ✅ Build time is excellent (< 30s)');
-      } else if (buildTime < 60000) {
-        console.log('   ⚠️  Build time is acceptable (30-60s)');
-      } else {
-        console.log('   ❌ Build time is slow (> 60s) - consider optimizations');
-      }
-      
-      // Extract page count from build output
-      const pageMatch = buildOutput.match(/(\d+)\/(\d+).*pages/);
-      if (pageMatch) {
-        console.log(`   📄 Pages Generated: ${pageMatch[2]}`);
-      }
-      
-      resolve({ buildTime, buildTimeSeconds, exitCode: code });
     });
   });
 }
@@ -183,7 +145,6 @@ async function runPerformanceBenchmark() {
  * Generate build report
  */
 function generateBuildReport(bundleAnalysis, benchmark) {
-  console.log('\n📋 Generating Build Report...');
   
   const report = {
     timestamp: new Date().toISOString(),
@@ -214,18 +175,12 @@ function generateBuildReport(bundleAnalysis, benchmark) {
   const reportPath = path.join(__dirname, '..', 'build-report.json');
   fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
   
-  console.log(`   ✅ Report saved to: ${reportPath}`);
-  console.log(`   📊 Build Status: ${report.build.successful ? 'SUCCESS' : 'FAILED'}`);
-  console.log(`   ⏱️  Build Time: ${report.build.buildTime}`);
-  
-  return report;
 }
 
 /**
  * Main monitoring function
  */
 async function runBuildMonitor() {
-  console.log('Starting comprehensive build analysis...\n');
   
   // Step 1: Analyze current build
   const bundleAnalysis = analyzeBundleComposition();
@@ -239,14 +194,6 @@ async function runBuildMonitor() {
   // Step 4: Generate report
   const report = generateBuildReport(bundleAnalysis, null);
   
-  console.log('\n🎯 Build Monitor Complete!');
-  console.log('📈 Key Metrics:');
-  console.log(`   • Bundle Size: ${report.bundle?.totalSize || 'unknown'}`);
-  console.log(`   • Chunks: ${report.bundle?.chunks || 'unknown'}`);
-  console.log(`   • Pages: ${report.build.totalPages}`);
-  console.log(`   • Status: ${report.build.successful ? '✅ SUCCESS' : '❌ FAILED'}`);
-  
-  console.log('\n💡 Access detailed monitoring at: /dev/dashboard');
 }
 
 // Run the monitor

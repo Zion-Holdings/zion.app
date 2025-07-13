@@ -20,7 +20,7 @@ async function runFixer() {
   });
 
   fs.writeFileSync('./app/componentWithBug.fixed.js', response.data.choices[0].text);
-  console.log('Fix written to componentWithBug.fixed.js');
+  // console.log('Fix written to componentWithBug.fixed.js');
 }
 
 runFixer();

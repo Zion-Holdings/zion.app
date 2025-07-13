@@ -142,17 +142,17 @@ class ImportFixer {
    * Process all files
    */
   async processAllFiles() {
-    console.log('🔧 Fixing misplaced import statements...');
+    // console.log('🔧 Fixing misplaced import statements...');
     
     const files = this.getFilesToProcess();
-    console.log(`📋 Found ${files.length} files to check`);
+    // console.log(`📋 Found ${files.length} files to check`);
 
     const results = [];
 
     for (const filePath of files) {
       const result = this.fixFile(filePath);
       if (result.fixed) {
-        console.log(`✅ Fixed ${filePath} (${result.importsFixed} imports moved)`);
+        // console.log(`✅ Fixed ${filePath} (${result.importsFixed} imports moved)`);
         results.push({ file: filePath, ...result });
       }
     }
@@ -164,33 +164,33 @@ class ImportFixer {
    * Print summary
    */
   printSummary(results) {
-    console.log('\n' + '='.repeat(60));
-    console.log('📊 IMPORT FIXING SUMMARY');
-    console.log('='.repeat(60));
-    console.log(`✅ Files fixed: ${this.fixedFiles}`);
-    console.log(`❌ Errors encountered: ${this.errors.length}`);
+    // console.log('\n' + '='.repeat(60));
+    // console.log('📊 IMPORT FIXING SUMMARY');
+    // console.log('='.repeat(60));
+    // console.log(`✅ Files fixed: ${this.fixedFiles}`);
+    // console.log(`❌ Errors encountered: ${this.errors.length}`);
 
     if (results.length > 0) {
-      console.log('\n📝 Fixed files:');
+      // console.log('\n📝 Fixed files:');
       results.forEach(({ file, importsFixed }) => {
-        console.log(`   ${file}: ${importsFixed} imports moved`);
+        // console.log(`   ${file}: ${importsFixed} imports moved`);
       });
     }
 
     if (this.errors.length > 0) {
-      console.log('\n⚠️  Errors:');
+      // console.log('\n⚠️  Errors:');
       this.errors.forEach(({ file, error }) => {
-        console.log(`   ${file}: ${error}`);
+        // console.log(`   ${file}: ${error}`);
       });
     }
 
     if (this.fixedFiles > 0) {
-      console.log('\n🎉 Import placement issues fixed!');
-      console.log('📋 Next steps:');
-      console.log('   1. Run: npm run build');
-      console.log('   2. Test the application: npm run dev');
+      // console.log('\n🎉 Import placement issues fixed!');
+      // console.log('📋 Next steps:');
+      // console.log('   1. Run: npm run build');
+      // console.log('   2. Test the application: npm run dev');
     } else {
-      console.log('\n ℹ️ No misplaced imports found.');
+      // console.log('\n ℹ️ No misplaced imports found.');
     }
   }
 }
@@ -199,7 +199,7 @@ class ImportFixer {
 if (require.main === module) {
   const fixer = new ImportFixer();
   fixer.processAllFiles().catch(error => {
-    console.error('💥 Fatal error:', error);
+    // console.error('💥 Fatal error:', error);
     process.exit(1);
   });
 }

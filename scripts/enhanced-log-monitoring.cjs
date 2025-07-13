@@ -641,7 +641,7 @@ class EnhancedLogMonitor extends EventEmitter {
     } else if (level === 'warn') {
       console.warn(logEntry);
     } else {
-      console.log(logEntry);
+      // console.log(logEntry);
     }
     
     // Also write to monitor's own log file
