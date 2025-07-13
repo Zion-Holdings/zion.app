@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
-// @ts-ignore
+// @ts-expect-error
 import { Buffer } from 'buffer';
 
 interface OptimizedImageProps {
