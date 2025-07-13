@@ -4,6 +4,7 @@ import { Droppable } from "@/lib/dnd-stub";
 import type { JobApplication } from "@/types/jobs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import type { BadgeProps } from "@/components/ui/badge";
 import { CandidateCard } from "./CandidateCard";
 
 interface KanbanColumnProps {
@@ -22,7 +23,7 @@ export function KanbanColumn({
   count
 }: KanbanColumnProps) {
   // Add color based on column type
-  const getBadgeVariant = (columnId: string) => {
+  const getBadgeVariant = (columnId: string): BadgeProps['variant'] => {
     switch (columnId) {
       case "new":
         return "secondary";
@@ -35,7 +36,7 @@ export function KanbanColumn({
       case "rejected":
         return "destructive";
       default:
-        return "outline";
+        return "default";
     }
   };
   
@@ -55,7 +56,7 @@ export function KanbanColumn({
       <CardHeader className="pb-2">
         <div className="flex justify-between items-center">
           <CardTitle className="text-base">{title}</CardTitle>
-          <Badge variant={getBadgeVariant(id) as any}>{count}</Badge>
+          <Badge variant={getBadgeVariant(id) as NonNullable<BadgeProps['variant']>}>{count}</Badge>
         </div>
         <p className="text-xs text-muted-foreground">{description}</p>
       </CardHeader>
