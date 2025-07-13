@@ -266,13 +266,13 @@ describe('Watchdog Script Tests', () => {
 
       expect(_actual_getStateForTests().isHealing).toBe(true);
       expect(mockSendDiscordAlertImpl).toHaveBeenCalledWith(
-        expect.stringContaining(`**Reason:** ${reason}`)
+        expect.stringContaining(`**Reason:** ${_reason}`)
       );
       expect(mockSendDiscordAlertImpl).toHaveBeenCalledWith(
         expect.stringContaining(`**Command:** \`\`\`${localConstants.HEAL_COMMAND}\`\`\``)
       );
       expect(exec).toHaveBeenCalledWith(localConstants.HEAL_COMMAND, expect.any(Function));
-      expect(mockAppendToSelfHealLogImpl).toHaveBeenCalledWith(expect.stringContaining(`Triggering self-heal due to: ${reason}`));
+      expect(mockAppendToSelfHealLogImpl).toHaveBeenCalledWith(expect.stringContaining(`Triggering self-heal due to: ${_reason}`));
       expect(mockAppendToSelfHealLogImpl).toHaveBeenCalledWith(expect.stringContaining(`Executing self-heal command: ${localConstants.HEAL_COMMAND}`));
 
       exec.mock.calls[0][1](null, 'mock stdout', 'mock stderr');
@@ -283,7 +283,7 @@ describe('Watchdog Script Tests', () => {
       expect(_actual_getStateForTests().perfErrorStreak).toBe(0);
       expect(_actual_getStateForTests().securityPatchStreak).toBe(0);
       expect(_actual_getStateForTests().highCpuUsageCount).toBe(0);
-      done();
+      _done();
     });
   // });
 });
