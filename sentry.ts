@@ -78,16 +78,16 @@ export async function register() {
       initOptions.environment = SENTRY_ENVIRONMENT;
     }
 
-    (Sentry as any).init(initOptions);
+    (Sentry as Record<string, unknown>).init(initOptions);
 
     // Set additional context
     if (SENTRY_RELEASE) {
-      (Sentry as any).setTag("release", SENTRY_RELEASE);
+      (Sentry as Record<string, unknown>).setTag("release", SENTRY_RELEASE);
     }
     if (SENTRY_ENVIRONMENT) {
-      (Sentry as any).setTag("environment", SENTRY_ENVIRONMENT);
+      (Sentry as Record<string, unknown>).setTag("environment", SENTRY_ENVIRONMENT);
     }
-    (Sentry as any).setTag("runtime", "browser");
+    (Sentry as Record<string, unknown>).setTag("runtime", "browser");
 
     console.log(`Sentry initialized successfully. Release: ${SENTRY_RELEASE}, Environment: ${SENTRY_ENVIRONMENT}`);
   } catch (error) {
@@ -100,6 +100,6 @@ export async function register() {
 
 export function onRequestError(error: unknown) {
   if (typeof Sentry === 'object' && Sentry !== null && 'captureException' in Sentry && typeof Sentry.captureException === 'function') {
-    (Sentry as any).captureException(error);
+    (Sentry as Record<string, unknown>).captureException(error);
   }
 }
