@@ -73,10 +73,15 @@ export function SummaryStep({ formData, updateFormData }: SummaryStepProps) {
   // Extract just the items from each MatchResult for the AIMatchingResults component
   const matchItems = matches.map(match => match.item);
   
+  // Type guard for objects with an 'id' property
+  function hasId(obj: unknown): obj is { id: string | number } {
+    return typeof obj === 'object' && obj !== null && 'id' in obj && (typeof (obj as { id: unknown }).id === 'string' || typeof (obj as { id: unknown }).id === 'number');
+  }
+  
   // Map the onSelectMatch handler to work with the item directly
   const handleItemSelect = (item: unknown) => {
     // Find the original MatchResult that contains this item
-    const matchResult = matches.find(match => match.item.id === (item as any).id);
+    const matchResult = hasId(item) ? matches.find(match => match.item.id === item.id) : undefined;
     if (matchResult) {
       handleSelectMatch(matchResult);
     }
