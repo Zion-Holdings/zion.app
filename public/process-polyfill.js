@@ -217,7 +217,7 @@
   }
   
   // Log that the polyfill has been applied (only in development)
-  if (typeof console !== 'undefined' && console.log) {
-    // console.log('[Process Polyfill] Global process and Buffer objects initialized');
-  }
+  // if (typeof console !== 'undefined' && console.log) {
+  //   // console.log('[Process Polyfill] Global process and Buffer objects initialized');
+  // }
 })(); 
