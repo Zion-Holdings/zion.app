@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* eslint-disable no-console */
+ 
 
 /**
  * Real-time Log Monitor
@@ -90,9 +90,9 @@ class RealtimeLogMonitor {
   watchLogFile(filePath) {
     if (this.watchers.has(filePath)) return; // Already watching
     
-    let lastSize = 0;
+    let _lastSize = 0;
     try {
-      lastSize = fs.statSync(filePath).size;
+      _lastSize = fs.statSync(filePath).size;
     } catch (error) {
       return; // File doesn't exist
     }
@@ -338,13 +338,13 @@ class RealtimeLogMonitor {
     // process.stdout.write('\x1Bc');
     
     const now = new Date();
-    const uptime = Math.floor((now - this.startTime) / 1000);
+    const _uptime = Math.floor((now - this.startTime) / 1000);
     
     // console.warn('═'.repeat(80));
     // console.warn('🔥 ZION APP - REAL-TIME LOG MONITOR');
     // console.warn('═'.repeat(80));
     // console.warn(`📊 Health Score: ${this.getHealthIndicator()} ${this.stats.healthScore}/100`);
-    // console.warn(`⏰ Uptime: ${uptime}s | Last Update: ${this.stats.lastUpdate.toLocaleTimeString()}`);
+    // console.warn(`⏰ Uptime: ${_uptime}s | Last Update: ${this.stats.lastUpdate.toLocaleTimeString()}`);
     // console.warn(`📈 Total Entries: ${this.stats.totalEntries} | Errors: ${this.stats.errors} | Warnings: ${this.stats.warnings} | Critical: ${this.stats.critical}`);
     
     // Recent alerts
@@ -352,8 +352,8 @@ class RealtimeLogMonitor {
       // console.warn('\n🚨 RECENT ALERTS:');
       // console.warn('─'.repeat(50));
       this.stats.alerts.slice(0, 5).forEach(alert => {
-        const icon = alert.severity === 'CRITICAL' ? '🔴' : alert.severity === 'HIGH' ? '🟠' : '🟡';
-        // console.warn(`${icon} [${alert.timestamp.toLocaleTimeString()}] ${alert.message}`);
+        const _icon = alert.severity === 'CRITICAL' ? '🔴' : alert.severity === 'HIGH' ? '🟠' : '🟡';
+        // console.warn(`${_icon} [${alert.timestamp.toLocaleTimeString()}] ${alert.message}`);
       });
     }
     
@@ -361,20 +361,20 @@ class RealtimeLogMonitor {
     // console.warn('\n📝 RECENT LOG ENTRIES:');
     // console.warn('─'.repeat(50));
     this.stats.recentEntries.slice(0, 10).forEach(entry => {
-      const icon = this.getLevelIcon(entry.level);
-      const time = new Date(entry.timestamp).toLocaleTimeString();
-      const message = entry.message.length > 60 ? entry.message.substring(0, 60) + '...' : entry.message;
-      // console.warn(`${icon} [${time}] [${entry.category}] ${message}`);
+      const _icon = this.getLevelIcon(entry.level);
+      const _time = new Date(entry.timestamp).toLocaleTimeString();
+      const _message = entry.message.length > 60 ? entry.message.substring(0, 60) + '...' : entry.message;
+      // console.warn(`${_icon} [${_time}] [${entry.category}] ${_message}`);
     });
     
     // Performance metrics
     // console.warn('\n⚡ PERFORMANCE METRICS:');
     // console.warn('─'.repeat(50));
     const recentEntries = this.stats.recentEntries.slice(0, 100);
-    const avgMemory = this.calculateAverageMemory(recentEntries);
-    const avgDuration = this.calculateAverageDuration(recentEntries);
+    const _avgMemory = this.calculateAverageMemory(recentEntries);
+    const _avgDuration = this.calculateAverageDuration(recentEntries);
     
-    // console.warn(`📊 Avg Memory: ${avgMemory}MB | Avg Response: ${avgDuration}ms`);
+    // console.warn(`📊 Avg Memory: ${_avgMemory}MB | Avg Response: ${_avgDuration}ms`);
     // console.warn(`📊 Error Rate: ${this.calculateErrorRate(recentEntries)}%`);
     
     // console.warn('\n═'.repeat(80));

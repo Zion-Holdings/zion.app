@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* eslint-disable no-console */
+ 
  
 // React 19 Bundle Analysis Tool
 const fs = require('fs');
@@ -22,8 +22,8 @@ const bundleAnalysis = {
     ];
 
     features.forEach(feature => {
-      const status = feature.enabled ? '✅' : '❌';
-      // console.log(`  ${status} ${feature.name} (Impact: ${feature.impact})`);
+      const _status = feature.enabled ? '✅' : '❌';
+      // console.log(`  ${_status} ${feature.name} (Impact: ${feature.impact})`);
     });
     // console.log();
   },
@@ -34,11 +34,11 @@ const bundleAnalysis = {
     
     const _buildPath = '.next';
     if (fs.existsSync(_buildPath)) {
-      const stats = this.getBundleStats(_buildPath);
-      // console.log(`  📄 Total JS Bundle: ${stats.totalJS} KB`);
-      // console.log(`  🎨 Total CSS Bundle: ${stats.totalCSS} KB`);
-      // console.log(`  📊 React 19 Overhead: ${stats.reactOverhead} KB`);
-      // console.log(`  ⚡ Estimated Performance Gain: ${stats.performanceGain}%`);
+      const _stats = this.getBundleStats(_buildPath);
+      // console.log(`  📄 Total JS Bundle: ${_stats.totalJS} KB`);
+      // console.log(`  🎨 Total CSS Bundle: ${_stats.totalCSS} KB`);
+      // console.log(`  📊 React 19 Overhead: ${_stats.reactOverhead} KB`);
+      // console.log(`  ⚡ Estimated Performance Gain: ${_stats.performanceGain}%`);
     } else {
       // console.log('  ⚠️  Build directory not found. Run npm run build first.');
     }
