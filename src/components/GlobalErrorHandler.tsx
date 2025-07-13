@@ -12,7 +12,7 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface ErrorContextType {
-  reportError: (error: Error, context?: any) => void;
+  reportError: (error: Error, context?: unknown) => void;
   showRetryableError: (error: Error, retryAction?: () => void) => void;
   showNetworkError: (retryAction?: () => void) => void;
   showAuthError: (loginAction?: () => void) => void;
@@ -28,7 +28,7 @@ interface GlobalErrorHandlerProps {
 export function GlobalErrorHandler({ children }: GlobalErrorHandlerProps) {
   const [retryCount, setRetryCount] = useState<Record<string, number>>({});
 
-  const reportError = useCallback((error: Error, context?: any) => {
+  const reportError = useCallback((error: Error, context?: unknown) => {
     // Log to console for development
     if (process.env.NODE_ENV === 'development') {
       logErrorToProduction('Global Error Handler:', error, context);
@@ -177,9 +177,9 @@ export function useErrorHandler() {
   const { reportError, showRetryableError, showNetworkError, showAuthError } = useGlobalErrorHandler();
 
   const handleApiError = useCallback((error: unknown, retryAction?: () => void) => {
-    if ((error as any).response?.status === 401 || (error as any).response?.status === 403) {
+    if ((error as { response?: { status?: number } }).response?.status === 401 || (error as { response?: { status?: number } }).response?.status === 403) {
       showAuthError();
-    } else if ((error as any).code === 'NETWORK_ERROR' || !navigator.onLine) {
+    } else if ((error as { code?: string }).code === 'NETWORK_ERROR' || !navigator.onLine) {
       showNetworkError(retryAction);
     } else {
       showRetryableError(error as Error, retryAction);
