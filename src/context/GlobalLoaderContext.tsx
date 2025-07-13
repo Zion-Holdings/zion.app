@@ -6,7 +6,6 @@ import React, {
   useRef,
 } from 'react';
 import type { ReactNode } from 'react';
-import { useRouter } from 'next/router'; // Changed from useLocation
 import axios from 'axios';
 import type { InternalAxiosRequestConfig, AxiosResponse } from 'axios';
 
