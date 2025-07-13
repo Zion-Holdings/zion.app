@@ -189,7 +189,7 @@ async function testEndpoint(endpoint) {
       responseTime: warmResult.responseTime,
       statusCode: warmResult.statusCode,
       cacheHeader: warmResult.headers['x-cache'] || warmResult.headers['x-cache-strategy'],
-      improvement: coldTest.responseTime - warmResult.responseTime
+      improvement: coldResult.responseTime - warmResult.responseTime
     };
     
     results.tests.push(warmTest);
