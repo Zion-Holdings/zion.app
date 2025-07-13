@@ -1,6 +1,6 @@
 export interface ShippoCreateShipmentParams {
-  address_to: any;
-  parcels: any[];
+  address_to: unknown;
+  parcels: unknown[];
 }
 
 export interface ShippoShipment {
