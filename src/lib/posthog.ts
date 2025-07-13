@@ -52,7 +52,7 @@ export const initPostHog = () => {
       a.people = a.people || {};
       for (let i = 0; i < methods.length; i++) {
         const method = methods[i]!; // Non-null assertion since we're within array bounds
-        (a as any)[method] = p(method);
+        (a as unknown as Record<string, unknown>)[method] = p(method);
       }
       a._i.push([k, opts]);
       const script = c.createElement('script');
@@ -63,14 +63,14 @@ export const initPostHog = () => {
     };
   })(document, (window as { posthog?: PostHogInstance }).posthog || [] as unknown as PostHogInstance);
 
-  (window.posthog as any).init(key, { api_host: host });
+  (window.posthog as unknown as PostHogInstance).init(key, { api_host: host });
 };
 
 export const captureEvent = (name: string, properties?: Record<string, unknown>) => {
   if (typeof window === 'undefined') return;
-  if (!(window.posthog as any)?.capture) {
+  if (!(window.posthog as unknown as PostHogInstance)?.capture) {
     logErrorToProduction('PostHog not initialized. Call initPostHog() first.', new Error('PostHog not initialized'), { eventName: name });
     return;
   }
-  (window.posthog as any).capture(name, properties);
+  (window.posthog as unknown as PostHogInstance).capture(name, properties);
 };
