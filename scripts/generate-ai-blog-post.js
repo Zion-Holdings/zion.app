@@ -55,7 +55,7 @@ generateBlogPost(keywords)
     const slug = slugify(post.title);
     const filePath = `generated-${slug}.json`;
     await writeFile(filePath, JSON.stringify(post, null, 2), 'utf8');
-    console.log(`Blog post saved to ${filePath}`);
+    console.warn(`Blog post saved to ${filePath}`);
   })
   .catch((err) => {
     console.error(err);

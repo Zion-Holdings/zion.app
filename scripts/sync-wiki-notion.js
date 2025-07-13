@@ -14,7 +14,7 @@ async function syncDirs() {
       const src = path.join(WIKI_DIR, file);
       const dest = path.join(NOTION_DIR, file);
       await fs.copyFile(src, dest);
-      console.log(`Copied ${file} to docs/notion`);
+      console.warn(`Copied ${file} to docs/notion`);
     }
   }
 }

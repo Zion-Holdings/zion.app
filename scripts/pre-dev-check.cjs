@@ -26,7 +26,7 @@ if (missing.length > 0) {
   try {
     const { execSync } = require('child_process');
     execSync('bash offline-dev.sh', { stdio: 'inherit' });
-    console.log('\u2705 Offline development environment started.');
+    console.warn('\u2705 Offline development environment started.');
   } catch (err) {
     console.error('Failed to launch offline mode:', err.message);
   }
@@ -34,5 +34,5 @@ if (missing.length > 0) {
   console.error('Please run "./setup.sh npm" once internet access is available.');
   process.exit(0);
 } else {
-  console.log('\u2705 All required dependencies found.');
+  console.warn('\u2705 All required dependencies found.');
 }

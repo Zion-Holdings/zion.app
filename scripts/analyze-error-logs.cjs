@@ -165,7 +165,7 @@ function main() {
   });
 
   if (!files.length) {
-    console.log('No log files found');
+    console.warn('No log files found');
     return;
   }
 
@@ -179,15 +179,15 @@ function main() {
     const countsLine = `Levels: ${LEVELS.map(l => `${l}:${counts[l] || 0}`).join(', ')}`;
 
     summaryLines.push(`\n--- ${displayName} ---`, countsLine);
-    console.log(`\n--- ${displayName} ---`);
-    console.log(countsLine);
+    console.warn(`\n--- ${displayName} ---`);
+    console.warn(countsLine);
 
     if (issueLines.length) {
       overallIssues = true;
       const header = `=== Issues found in ${displayName} ===`;
       summaryLines.push(header, ...issueLines);
-      console.log(header);
-      issueLines.forEach(line => console.log(line));
+      console.warn(header);
+      issueLines.forEach(line => console.warn(line));
     }
 
     if (missingKeys && missingKeys.length) {
@@ -197,7 +197,7 @@ function main() {
 
   if (!overallIssues) {
     const msg = 'No issues detected in logs';
-    console.log(msg);
+    console.warn(msg);
     summaryLines.push(msg);
   }
 
@@ -230,20 +230,20 @@ function main() {
   }
   if (hints.length) {
     const header = '\n=== Suggestions ===';
-    console.log(header);
+    console.warn(header);
     summaryLines.push(header);
     hints.forEach(msg => {
-      console.log('- ' + msg);
+      console.warn('- ' + msg);
       summaryLines.push('- ' + msg);
     });
   }
 
   if (allMissingKeys.size) {
     const header = '\n=== Missing Translation Keys ===';
-    console.log(header);
+    console.warn(header);
     summaryLines.push(header);
     Array.from(allMissingKeys).forEach(key => {
-      console.log('- ' + key);
+      console.warn('- ' + key);
       summaryLines.push('- ' + key);
     });
   }
@@ -256,9 +256,9 @@ function main() {
     if (allMissingKeys.size) {
       const keysFile = path.join(summaryDir, `missing-keys-${Date.now()}.log`);
       fs.writeFileSync(keysFile, Array.from(allMissingKeys).join('\n') + '\n');
-      console.log(`Missing keys saved to ${keysFile}`);
+      console.warn(`Missing keys saved to ${keysFile}`);
     }
-    console.log(`Summary saved to ${summaryFile}`);
+    console.warn(`Summary saved to ${summaryFile}`);
   }
 }
 

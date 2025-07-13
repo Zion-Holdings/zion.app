@@ -8,25 +8,25 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('📊 Build Performance Report');
-console.log('==========================\n');
+console.warn('📊 Build Performance Report');
+console.warn('==========================\n');
 
 function analyzeBuildStats() {
   const buildDir = path.join(process.cwd(), '.next');
   
   if (!fs.existsSync(buildDir)) {
-    console.log('❌ No build directory found. Run npm run build first.');
+    console.warn('❌ No build directory found. Run npm run build first.');
     return;
   }
 
-  console.log('🔍 Build Analysis:');
+  console.warn('🔍 Build Analysis:');
   
   // Check for build manifest
   const manifestPath = path.join(buildDir, 'build-manifest.json');
   if (fs.existsSync(manifestPath)) {
     const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
     const entryFiles = Object.keys(manifest.pages);
-    console.log(`   📄 Total pages: ${entryFiles.length}`);
+    console.warn(`   📄 Total pages: ${entryFiles.length}`);
   }
 
   // Check server pages
@@ -34,7 +34,7 @@ function analyzeBuildStats() {
   if (fs.existsSync(serverDir)) {
     const serverPages = fs.readdirSync(serverDir, { recursive: true });
     const pageCount = serverPages.filter(file => file.endsWith('.js')).length;
-    console.log(`   🖥️  Server pages: ${pageCount}`);
+    console.warn(`   🖥️  Server pages: ${pageCount}`);
   }
 
   // Check static pages
@@ -43,13 +43,13 @@ function analyzeBuildStats() {
     const staticFiles = fs.readdirSync(staticDir, { recursive: true });
     const jsFiles = staticFiles.filter(file => file.endsWith('.js'));
     const cssFiles = staticFiles.filter(file => file.endsWith('.css'));
-    console.log(`   📦 Static JS files: ${jsFiles.length}`);
-    console.log(`   🎨 CSS files: ${cssFiles.length}`);
+    console.warn(`   📦 Static JS files: ${jsFiles.length}`);
+    console.warn(`   🎨 CSS files: ${cssFiles.length}`);
   }
 
   // Build size analysis
   const buildSize = getDirSize(buildDir);
-  console.log(`   💾 Total build size: ${formatBytes(buildSize)}`);
+  console.warn(`   💾 Total build size: ${formatBytes(buildSize)}`);
 }
 
 function getDirSize(dirPath) {
@@ -85,24 +85,24 @@ function formatBytes(bytes) {
 }
 
 function provideOptimizationSuggestions() {
-  console.log('\n💡 Optimization Recommendations:');
-  console.log('================================');
+  console.warn('\n💡 Optimization Recommendations:');
+  console.warn('================================');
   
-  console.log('✅ Environment validation is working');
-  console.log('✅ Search functionality has been optimized');
-  console.log('✅ Pre-build checks prevent deployment issues');
+  console.warn('✅ Environment validation is working');
+  console.warn('✅ Search functionality has been optimized');
+  console.warn('✅ Pre-build checks prevent deployment issues');
   
-  console.log('\n🎯 Next Steps for Further Optimization:');
-  console.log('• Consider implementing dynamic imports for large components');
-  console.log('• Add bundle analyzer for detailed size analysis');
-  console.log('• Implement service worker for better caching');
-  console.log('• Consider image optimization for better performance');
-  console.log('• Add performance monitoring in production');
+  console.warn('\n🎯 Next Steps for Further Optimization:');
+  console.warn('• Consider implementing dynamic imports for large components');
+  console.warn('• Add bundle analyzer for detailed size analysis');
+  console.warn('• Implement service worker for better caching');
+  console.warn('• Consider image optimization for better performance');
+  console.warn('• Add performance monitoring in production');
 }
 
 function checkBuildHealth() {
-  console.log('\n🏥 Build Health Check:');
-  console.log('======================');
+  console.warn('\n🏥 Build Health Check:');
+  console.warn('======================');
   
   const checks = [
     { name: 'Build directory exists', check: () => fs.existsSync('.next') },
@@ -113,7 +113,7 @@ function checkBuildHealth() {
   
   checks.forEach(({ name, check }) => {
     const result = check();
-    console.log(`   ${result ? '✅' : '❌'} ${name}`);
+    console.warn(`   ${result ? '✅' : '❌'} ${name}`);
   });
 }
 
@@ -122,5 +122,5 @@ analyzeBuildStats();
 checkBuildHealth();
 provideOptimizationSuggestions();
 
-console.log('\n🎉 Build Performance Report Complete!');
-console.log('====================================='); 
+console.warn('\n🎉 Build Performance Report Complete!');
+console.warn('====================================='); 
