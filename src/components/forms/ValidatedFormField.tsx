@@ -35,14 +35,14 @@ interface ValidatedFormFieldProps {
   debounceMs?: number;
 }
 
-function isReactHookForm(form: unknown): form is { watch: (name: string) => unknown; formState: { errors: Record<string, any>; touchedFields: Record<string, boolean> }; register: (name: string) => unknown; setValue: (name: string, value: unknown) => void } {
+function isReactHookForm(form: unknown): form is { watch: (name: string) => unknown; formState: { errors: Record<string, unknown>; touchedFields: Record<string, boolean> }; register: (name: string) => unknown; setValue: (name: string, value: unknown) => void } {
   return (
     typeof form === 'object' &&
     form !== null &&
-    'watch' in form && typeof (form as any).watch === 'function' &&
-    'formState' in form && typeof (form as any).formState === 'object' &&
-    'register' in form && typeof (form as any).register === 'function' &&
-    'setValue' in form && typeof (form as any).setValue === 'function'
+    'watch' in form && typeof (form as { watch?: unknown }).watch === 'function' &&
+    'formState' in form && typeof (form as { formState?: unknown }).formState === 'object' &&
+    'register' in form && typeof (form as { register?: unknown }).register === 'function' &&
+    'setValue' in form && typeof (form as { setValue?: unknown }).setValue === 'function'
   );
 }
 
