@@ -16,8 +16,16 @@ import { toast } from "@/components/ui/use-toast";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
+interface TranslatableJobFormData {
+  title: Record<SupportedLanguage, string>;
+  description: Record<SupportedLanguage, string>;
+  requirements: Record<SupportedLanguage, string>;
+  budget: string;
+  deadline: string;
+}
+
 interface TranslatableJobFormProps {
-  onSubmit: (formData: any) => void;
+  onSubmit: (formData: TranslatableJobFormData) => void;
   isSubmitting?: boolean;
 }
 

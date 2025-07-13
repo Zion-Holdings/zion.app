@@ -11,9 +11,32 @@ interface SuggestedTalentsProps {
   jobId: string;
   jobTitle?: string;
 }
+
+interface TalentProfile {
+  id: string;
+  user_id: string;
+  full_name: string;
+  professional_title: string;
+  profile_picture_url: string;
+  hourly_rate: number;
+  bio: string;
+  years_experience: number;
+  key_projects: string[];
+  skills: string[];
+  location: string;
+  category: string;
+  company_name: string;
+}
+
+interface SuggestedTalent {
+  id: string;
+  job_id: string;
+  match_score: number;
+  talent_profile: TalentProfile;
+}
  
 export function SuggestedTalents({ jobId, jobTitle }: SuggestedTalentsProps) {
-  const [talents, setTalents] = useState<any[]>([]);
+  const [talents, setTalents] = useState<SuggestedTalent[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isProcessing, setIsProcessing] = useState(false);
 
