@@ -130,7 +130,7 @@ const tsHelpers = {
     return new ((P as typeof Promise) || (P = Promise))(function (resolve: (value: unknown) => void, reject: (reason?: unknown) => void) {
       function fulfilled(value: unknown) { try { step((generator as Generator).next(value)); } catch (e) { reject(e); } }
       function rejected(value: unknown) { try { step(((generator as Generator)["throw"] as (arg: unknown) => IteratorResult<unknown>)(value)); } catch (e) { reject(e); } }
-      function step(result: IteratorResult<unknown>) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+      function step(result: unknown) { const res = result as IteratorResult<unknown>; res.done ? resolve(res.value) : adopt(res.value).then(fulfilled, rejected); }
       step(((generator = (typeof generator === 'function' ? generator.apply(thisArg, _arguments || []) : generator) as Generator).next()));
     });
   }
