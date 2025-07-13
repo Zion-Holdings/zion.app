@@ -36,8 +36,8 @@ export function setupRouterErrorHandlers(router: NextRouter) {
   ) => {
     try {
       return await originalPush.call(router, url, as, options);
-    } catch (error) {
-      logErrorToProduction('Router push error', error);
+    } catch (error: unknown) {
+      logErrorToProduction('Router push error', error as Error);
       handleRouterError(error as Error, router);
       throw error;
     }
@@ -51,8 +51,8 @@ export function setupRouterErrorHandlers(router: NextRouter) {
   ) => {
     try {
       return await originalReplace.call(router, url, as, options);
-    } catch (error) {
-      logErrorToProduction('Router replace error', error);
+    } catch (error: unknown) {
+      logErrorToProduction('Router replace error', error as Error);
       handleRouterError(error as Error, router);
       throw error;
     }
@@ -61,8 +61,8 @@ export function setupRouterErrorHandlers(router: NextRouter) {
   // Handle router errors
   // Use a more specific type for route change errors
   // Type: Error | { cancelled?: boolean; message?: string }
-  const routeChangeErrorHandler = (err: any, url: string) => {
-    logErrorToProduction('Route change error', err, { url });
+  const routeChangeErrorHandler = (err: unknown, url: string) => {
+    logErrorToProduction('Route change error', err as Error, { url });
     handleRouterError(err as Error, router);
   };
 
