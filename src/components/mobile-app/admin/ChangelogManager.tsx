@@ -20,7 +20,7 @@ type ChangelogEntry = {
   changes: string;
 };
 
-export const ChangelogManager: React.FC<ChangelogManagerProps> = ({ platform }) => {
+export const ChangelogManager: React.FC<ChangelogManagerProps> = ({ platform: _platform }) => {
   const [entries, setEntries] = useState<ChangelogEntry[]>([
     {
       id: "1",
