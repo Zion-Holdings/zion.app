@@ -45,6 +45,6 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, () => {
-  console.log(`📊 Log dashboard available at http://localhost:${port}`);
+  console.warn(`📊 Log dashboard available at http://localhost:${port}`);
 });
 
