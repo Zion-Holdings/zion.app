@@ -1,5 +1,5 @@
-/* eslint-disable no-console */
 #!/usr/bin/env node
+/* eslint-disable no-console */
  
 // React 19 Bundle Analysis Tool
 const fs = require('fs');
