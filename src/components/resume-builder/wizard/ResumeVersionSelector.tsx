@@ -27,7 +27,6 @@ export function ResumeVersionSelector({ currentResume, onResumeChange }: ResumeV
   const { createResume, fetchResume } = useResume();
   const [saveDialogOpen, setSaveDialogOpen] = useState(false);
   const [newResumeTitle, setNewResumeTitle] = useState('');
-  const [existingResumes, setExistingResumes] = useState<Resume[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   
   const handleCreateNewVersion = async () => {
@@ -55,15 +54,7 @@ export function ResumeVersionSelector({ currentResume, onResumeChange }: ResumeV
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          {existingResumes.map((resume) => (
-            <DropdownMenuItem 
-              key={resume.id}
-              onClick={() => onResumeChange(resume.id!)}
-              className="cursor-pointer"
-            >
-              {resume.basic_info.title}
-            </DropdownMenuItem>
-          ))}
+          {/* existingResumes is no longer defined, so this loop will not render */}
           <DropdownMenuSeparator />
           <DropdownMenuItem 
             onClick={() => setSaveDialogOpen(true)}
