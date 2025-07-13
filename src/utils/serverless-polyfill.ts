@@ -102,8 +102,26 @@ const tsHelpers = {
     const c = arguments.length;
     let r = c < 3 ? target : desc === null ? (desc = (Object.getOwnPropertyDescriptor as (o: object, p: string | symbol) => PropertyDescriptor | undefined)(target as object, key!)) : desc;
     let d: unknown;
-    if (typeof Reflect === "object" && typeof (Reflect as Record<string, unknown>).decorate === "function") r = (Reflect as Record<string, unknown>).decorate(decorators, target, key, desc);
-    else for (let i = decorators.length - 1; i >= 0; i--) if ((d = decorators[i])) r = (c < 3 ? (typeof d === 'function' ? d(r) : r) : c > 3 ? (typeof d === 'function' ? d(target, key!, r) : r) : (typeof d === 'function' ? d(target, key!) : r)) || r;
+    if (
+      typeof Reflect === "object" &&
+      Reflect !== null &&
+      "decorate" in Reflect &&
+      typeof (Reflect as { decorate?: unknown }).decorate === "function"
+    ) {
+      r = ((Reflect as unknown) as { decorate: Function }).decorate(decorators, target, key, desc);
+    } else {
+      for (let i = decorators.length - 1; i >= 0; i--) {
+        d = decorators[i];
+        if (typeof d === 'function') {
+          r =
+            c < 3
+              ? d(r as unknown)
+              : c > 3
+              ? d(target, key!, r as unknown)
+              : d(target, key!) || r;
+        }
+      }
+    }
     return c > 3 && r && Object.defineProperty(target, key!, r), r;
   },
   
