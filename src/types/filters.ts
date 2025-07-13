@@ -58,6 +58,7 @@ export interface ExperienceFilterProps extends FilterComponentProps {
 export interface PriceFilterProps extends FilterComponentProps {
   priceRange: [number, number];
   setPriceRange: (range: [number, number]) => void;
+  _isMobileFilterOpen?: boolean;
 }
 
 export interface SearchFilterProps {
