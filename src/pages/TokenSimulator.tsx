@@ -93,7 +93,7 @@ export default function TokenSimulator() {
         (_, i) =>
           (inputs.activeWallets * (i + 1)) / (forecast[i] || inputs.circulating)
       );
-      if (chart) (chart as any).destroy();
+      if (chart) (chart as unknown as Chart).destroy();
       chart = new Chart(velocityChart.current as HTMLCanvasElement, {
         type: 'line',
         data: {
@@ -117,7 +117,7 @@ export default function TokenSimulator() {
       }
     }
     return () => {
-      if (chart) (chart as any).destroy();
+      if (chart) (chart as unknown as Chart).destroy();
     };
   }, [forecast, inputs.activeWallets, months]);
 
@@ -129,7 +129,7 @@ export default function TokenSimulator() {
       if (!supplyChart.current || typeof window.Chart !== 'function') return;
       const Chart = window.Chart as unknown as typeof Chart;
       const labels = Array.from({ length: months }, (_, i) => `${i + 1}`);
-      if (chart) (chart as any).destroy();
+      if (chart) (chart as unknown as Chart).destroy();
       chart = new Chart(supplyChart.current as HTMLCanvasElement, {
         type: 'line',
         data: {
@@ -153,7 +153,7 @@ export default function TokenSimulator() {
       }
     }
     return () => {
-      if (chart) (chart as any).destroy();
+      if (chart) (chart as unknown as Chart).destroy();
     };
   }, [forecast, months]);
 
