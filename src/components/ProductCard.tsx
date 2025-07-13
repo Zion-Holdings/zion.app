@@ -31,11 +31,15 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyDisabled = false }: ProductCardProps) {
+  // Move all hooks to the top, before any early returns
   const { isAuthenticated } = useAuth();
   const { isWishlisted, toggle } = useWishlist();
   const [imageError, setImageError] = useState(false);
   const [isRedirecting, setIsRedirecting] = useState(false); // Added for loading state
   const router = useRouter();
+  const dispatch = useDispatch<AppDispatch>();
+  const isMobile = useMediaQuery('(max-width: 768px)');
+  const isTablet = useMediaQuery('(max-width: 1200px)');
 
   const stockStatus =
     product.stock === undefined
@@ -75,9 +79,6 @@ export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyD
   }
 
   const active = isWishlisted(product.id);
-  const dispatch = useDispatch<AppDispatch>();
-  const isMobile = useMediaQuery('(max-width: 768px)');
-  const isTablet = useMediaQuery('(max-width: 1200px)');
 
   // Title is now guaranteed to be a non-empty string by the check above.
   const productTitle = product.title;
