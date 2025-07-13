@@ -1,8 +1,6 @@
 import React, { createContext, useContext, useState, useCallback } from 'react';
 import type { ReactNode } from 'react';
 import { toast } from '@/hooks/use-toast';
-import { Button } from '@/components/ui/button';
-import { RefreshCw, AlertTriangle, Wifi, WifiOff, Shield } from 'lucide-react';
 
 
 
