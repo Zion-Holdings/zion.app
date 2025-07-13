@@ -17,7 +17,7 @@ async function handler(req, res) {
 
   try {
     // eslint-disable-next-line no-console
-    console.log('New contact message:', { name, email, message });
+    console.warn('New contact message:', { name, email, message });
     res.statusCode = 200;
     res.json({ success: true });
   } catch (err) {

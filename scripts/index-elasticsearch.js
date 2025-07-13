@@ -48,7 +48,7 @@ async function run() {
   if (resp.errors) {
     console.error('Some documents failed to index');
   }
-  console.log(`Indexed ${docs.length} documents`);
+  console.warn(`Indexed ${docs.length} documents`);
 }
 
 run().catch(err => {

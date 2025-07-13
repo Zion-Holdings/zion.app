@@ -69,9 +69,9 @@ async function main() {
   saveBacklinks(DATA_FILE, latest);
   saveBacklinks(REPORT_FILE, { added, lost, toxic });
 
-  console.log(`New backlinks: ${added.length}`);
-  console.log(`Lost backlinks: ${lost.length}`);
-  console.log(`Toxic backlinks: ${toxic.length}`);
+  console.warn(`New backlinks: ${added.length}`);
+  console.warn(`Lost backlinks: ${lost.length}`);
+  console.warn(`Toxic backlinks: ${toxic.length}`);
 }
 
 main().catch(err => {

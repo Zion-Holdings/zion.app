@@ -54,18 +54,18 @@ export async function switchNetlifySite() {
   const newSite = greenActive ? blueId : greenId;
   const oldSite = greenActive ? greenId : blueId;
 
-  console.log(`Switching ${domain} from ${oldSite} to ${newSite}`);
+  console.warn(`Switching ${domain} from ${oldSite} to ${newSite}`);
 
   let assigned = false;
   try {
     assigned = await assignDomain(newSite);
     await removeDomain(oldSite);
-    console.log('DNS switch complete');
+    console.warn('DNS switch complete');
   } catch (err) {
     if (assigned) {
       try {
         await removeDomain(newSite);
-        console.log('Rolled back domain assignment to new site');
+        console.warn('Rolled back domain assignment to new site');
       } catch (rollbackErr) {
         console.error('Failed to rollback new site assignment:', rollbackErr);
       }

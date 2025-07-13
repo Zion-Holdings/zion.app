@@ -25,7 +25,7 @@ if (missing.length === deps.length) {
 }
 
 const runner = missing.includes('jest') ? 'vitest' : 'jest';
-console.log(`\u2705 Running tests with ${runner}...`);
+console.warn(`\u2705 Running tests with ${runner}...`);
 spawnSync(runner, { stdio: 'inherit' });
 
 

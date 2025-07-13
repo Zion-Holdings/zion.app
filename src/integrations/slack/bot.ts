@@ -44,7 +44,7 @@ class MockApp {
     // Safely log without direct console reference
     const safeConsole = typeof globalThis !== 'undefined' ? globalThis.console : undefined;
     if (safeConsole && safeConsole.log) {
-      safeConsole.log(`⚡️ Mock Zion Slack bot is running on port ${port || 3000}!`);
+      safeConsole.warn(`⚡️ Mock Zion Slack bot is running on port ${port || 3000}!`);
     }
     return Promise.resolve();
   }
@@ -57,7 +57,7 @@ async function askZionGPT(prompt: string): Promise<string> {
   // Safely log without direct console reference
   const safeConsole = typeof globalThis !== 'undefined' ? globalThis.console : undefined;
   if (safeConsole && safeConsole.log) {
-    safeConsole.log(`ZionGPT was asked: ${prompt}`);
+    safeConsole.warn(`ZionGPT was asked: ${prompt}`);
   }
   return `AI response to: ${prompt}`;
 }
@@ -117,7 +117,7 @@ async function sendSlackAlert(message: string): Promise<void> {
   // Safely log without direct console reference
   const safeConsole = typeof globalThis !== 'undefined' ? globalThis.console : undefined;
   if (safeConsole && safeConsole.log) {
-    safeConsole.log(`SLACK_ALERT: ${message}`);
+    safeConsole.warn(`SLACK_ALERT: ${message}`);
   }
   // In a real scenario, this would use the Slack API to send a message
   // For example: await app.client.chat.postMessage({ channel: '#alerts', text: message });

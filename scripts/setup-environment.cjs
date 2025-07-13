@@ -121,26 +121,26 @@ function createEnvFiles() {
   
   // Create .env.example
   fs.writeFileSync(path.join(rootDir, '.env.example'), envExample);
-  console.log('✅ Created .env.example');
+  console.warn('✅ Created .env.example');
   
   // Create .env.local.example
   fs.writeFileSync(path.join(rootDir, '.env.local.example'), envLocal);
-  console.log('✅ Created .env.local.example');
+  console.warn('✅ Created .env.local.example');
   
   // Check if .env.local exists
   const envLocalPath = path.join(rootDir, '.env.local');
   if (!fs.existsSync(envLocalPath)) {
     fs.writeFileSync(envLocalPath, envLocal);
-    console.log('✅ Created .env.local with development defaults');
+    console.warn('✅ Created .env.local with development defaults');
   } else {
-    console.log('ℹ️  .env.local already exists, skipping');
+    console.warn('ℹ️  .env.local already exists, skipping');
   }
   
-  console.log('\n📋 Next Steps:');
-  console.log('1. Edit .env.local with your actual environment values');
-  console.log('2. For Supabase: Visit https://supabase.com/dashboard');
-  console.log('3. For Wallet: Visit https://cloud.walletconnect.com');
-  console.log('4. Generate NextAuth secret: openssl rand -base64 32');
+  console.warn('\n📋 Next Steps:');
+  console.warn('1. Edit .env.local with your actual environment values');
+  console.warn('2. For Supabase: Visit https://supabase.com/dashboard');
+  console.warn('3. For Wallet: Visit https://cloud.walletconnect.com');
+  console.warn('4. Generate NextAuth secret: openssl rand -base64 32');
 }
 
 if (require.main === module) {
