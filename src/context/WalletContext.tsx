@@ -250,9 +250,13 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
           // currentProvider is already the EIP-1193 provider from AppKit
           if (typeof ethers === 'object' && ethers !== null && 'BrowserProvider' in ethers && typeof (ethers as typeof import('ethers')).BrowserProvider === 'function') {
             const EthersBrowserProvider = (ethers as typeof import('ethers')).BrowserProvider;
-            const ethersProvider = new EthersBrowserProvider(
-              currentProvider as unknown as Eip1193ProviderWithEvents
-            );
+            // Ensure the provider has a required request method for Eip1193Provider
+            const safeProvider = Object.assign({}, currentProvider, {
+              request: typeof (currentProvider as any).request === 'function'
+                ? (currentProvider as any).request
+                : async (_args: { method: string; params?: unknown[] }) => { throw new Error('Provider does not implement request'); }
+            }) as import('ethers').Eip1193Provider;
+            const ethersProvider = new EthersBrowserProvider(safeProvider);
             const ethersSigner = await ethersProvider.getSigner();
             setWallet(prev => ({
               ...prev,
