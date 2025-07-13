@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { AutocompleteSuggestions } from './AutocompleteSuggestions';
 import type { SearchSuggestion } from '@/types/search';
 
@@ -59,7 +58,6 @@ describe('AutocompleteSuggestions', () => {
     renderComponent(true, [{ text: "Test Apple Case", type: "product"}], -1, "Apple");
     // The component uses spans for highlighting: before, match, after
     // Check for the 'match' part
-    const matchSpans = screen.getAllByText("Apple"); // This might be too generic if "Apple" appears elsewhere
     // A more robust way is to check for the structure if highlightMatch creates specific elements/classes
     // Our current highlightMatch returns {before, match, after} and uses a bold span for match
 
