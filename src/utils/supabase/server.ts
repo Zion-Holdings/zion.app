@@ -17,7 +17,7 @@ export function createClient(req: NextApiRequest, res: NextApiResponse) {
             value: (cookies as Record<string, string>)[name] || '',
           }))
         },
-        setAll(cookiesToSet: Array<{ name: string; value: string; options?: Record<string, any> }>) {
+        setAll(cookiesToSet: Array<{ name: string; value: string; options?: Record<string, unknown> }>) {
           cookiesToSet.forEach(({ name, value, options }) => {
             let cookieString = `${name}=${value}; Path=/`
             if (options?.httpOnly) cookieString += '; HttpOnly'
@@ -47,7 +47,7 @@ export function createServerSideClient(context: GetServerSidePropsContext) {
             value: (cookies as Record<string, string>)[name] || '',
           }))
         },
-        setAll(cookiesToSet: Array<{ name: string; value: string; options?: Record<string, any> }>) {
+        setAll(cookiesToSet: Array<{ name: string; value: string; options?: Record<string, unknown> }>) {
           cookiesToSet.forEach(({ name, value, options }) => {
             let cookieString = `${name}=${value}; Path=/`
             if (options?.httpOnly) cookieString += '; HttpOnly'
