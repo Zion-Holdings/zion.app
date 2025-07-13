@@ -82,11 +82,12 @@ export default function TokenSimulator() {
   useEffect(simulate, [inputs, months]);
 
   useEffect(() => {
-    let chart: InstanceType<typeof window.Chart> | undefined;
+    // Chart.js is loaded dynamically at runtime, so we must use 'any' here for chart instance
+    let chart: any | undefined;
     const id = 'chartjs-script';
     const load = () => {
       if (!velocityChart.current || typeof window.Chart !== 'function') return;
-      const Chart = window.Chart;
+      const Chart = window.Chart as any;
       const labels = Array.from({ length: months }, (_, i) => `${i + 1}`);
       const velocities = labels.map(
         (_, i) =>
@@ -121,11 +122,12 @@ export default function TokenSimulator() {
   }, [forecast, inputs.activeWallets, months]);
 
   useEffect(() => {
-    let chart: InstanceType<typeof window.Chart> | undefined;
+    // Chart.js is loaded dynamically at runtime, so we must use 'any' here for chart instance
+    let chart: any | undefined;
     const id = 'chartjs-script2';
     const load = () => {
       if (!supplyChart.current || typeof window.Chart !== 'function') return;
-      const Chart = window.Chart;
+      const Chart = window.Chart as any;
       const labels = Array.from({ length: months }, (_, i) => `${i + 1}`);
       if (chart) chart.destroy();
       chart = new Chart(supplyChart.current as HTMLCanvasElement, {
