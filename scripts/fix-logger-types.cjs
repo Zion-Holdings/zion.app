@@ -137,17 +137,17 @@ class LoggerTypeFixer {
    * Process all files
    */
   async processAllFiles() {
-    console.log('🔧 Fixing TypeScript errors in logger calls...');
+    console.warn('🔧 Fixing TypeScript errors in logger calls...');
     
     const files = this.getFilesToProcess();
-    console.log(`📋 Found ${files.length} files with productionLogger imports`);
+    console.warn(`📋 Found ${files.length} files with productionLogger imports`);
 
     const results = [];
 
     for (const filePath of files) {
       const result = this.fixFile(filePath);
       if (result.fixed) {
-        console.log(`✅ Fixed ${filePath} (${result.changesCount || 1} changes)`);
+        console.warn(`✅ Fixed ${filePath} (${result.changesCount || 1} changes)`);
         results.push({ file: filePath, ...result });
       }
     }
@@ -159,33 +159,33 @@ class LoggerTypeFixer {
    * Print summary
    */
   printSummary(results) {
-    console.log('\n' + '='.repeat(60));
-    console.log('📊 LOGGER TYPE FIXING SUMMARY');
-    console.log('='.repeat(60));
-    console.log(`✅ Files fixed: ${this.fixedFiles}`);
-    console.log(`❌ Errors encountered: ${this.errors.length}`);
+    console.warn('\n' + '='.repeat(60));
+    console.warn('📊 LOGGER TYPE FIXING SUMMARY');
+    console.warn('='.repeat(60));
+    console.warn(`✅ Files fixed: ${this.fixedFiles}`);
+    console.warn(`❌ Errors encountered: ${this.errors.length}`);
 
     if (results.length > 0) {
-      console.log('\n📝 Fixed files:');
+      console.warn('\n📝 Fixed files:');
       results.forEach(({ file, changesCount }) => {
-        console.log(`   ${file}: ${changesCount || 1} logger calls fixed`);
+        console.warn(`   ${file}: ${changesCount || 1} logger calls fixed`);
       });
     }
 
     if (this.errors.length > 0) {
-      console.log('\n⚠️  Errors:');
+      console.warn('\n⚠️  Errors:');
       this.errors.forEach(({ file, error }) => {
-        console.log(`   ${file}: ${error}`);
+        console.warn(`   ${file}: ${error}`);
       });
     }
 
     if (this.fixedFiles > 0) {
-      console.log('\n🎉 Logger TypeScript issues fixed!');
-      console.log('📋 Next steps:');
-      console.log('   1. Run: npm run build');
-      console.log('   2. Test the application: npm run dev');
+      console.warn('\n🎉 Logger TypeScript issues fixed!');
+      console.warn('📋 Next steps:');
+      console.warn('   1. Run: npm run build');
+      console.warn('   2. Test the application: npm run dev');
     } else {
-      console.log('\n ℹ️ No logger type issues found.');
+      console.warn('\n ℹ️ No logger type issues found.');
     }
   }
 }

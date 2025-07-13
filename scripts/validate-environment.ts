@@ -43,11 +43,11 @@ const colors = {
 };
 
 const _log = {
-  success: (msg: string) => console.log(`${colors.green}✅ ${msg}${colors.reset}`),
-  error: (msg: string) => console.log(`${colors.red}❌ ${msg}${colors.reset}`),
-  warning: (msg: string) => console.log(`${colors.yellow}⚠️  ${msg}${colors.reset}`),
-  info: (msg: string) => console.log(`${colors.blue}ℹ️  ${msg}${colors.reset}`),
-  header: (msg: string) => console.log(`${colors.bright}${colors.cyan}${msg}${colors.reset}`),
+  success: (msg: string) => console.warn(`${colors.green}✅ ${msg}${colors.reset}`),
+  error: (msg: string) => console.warn(`${colors.red}❌ ${msg}${colors.reset}`),
+  warning: (msg: string) => console.warn(`${colors.yellow}⚠️  ${msg}${colors.reset}`),
+  info: (msg: string) => console.warn(`${colors.blue}ℹ️  ${msg}${colors.reset}`),
+  header: (msg: string) => console.warn(`${colors.bright}${colors.cyan}${msg}${colors.reset}`),
 };
 
 interface ValidationResult {
@@ -254,24 +254,24 @@ function validateConfiguration(env: Environment): ValidationResult {
 }
 
 function printResults(result: ValidationResult): void {
-  console.log('\n🔍 Environment Configuration Validation\n');
+  console.warn('\n🔍 Environment Configuration Validation\n');
 
   if (result.errors.length > 0) {
     _log.error('❌ ERRORS (must be fixed):');
     result.errors.forEach(error => _log.error(`   • ${error}`));
-    console.log('');
+    console.warn('');
   }
 
   if (result.warnings.length > 0) {
     _log.warning('⚠️  WARNINGS:');
     result.warnings.forEach(warning => _log.warning(`   • ${warning}`));
-    console.log('');
+    console.warn('');
   }
 
   if (result.suggestions.length > 0) {
     _log.info('💡 SUGGESTIONS:');
     result.suggestions.forEach(suggestion => _log.info(`   • ${suggestion}`));
-    console.log('');
+    console.warn('');
   }
 
   if (result.isValid) {
@@ -285,7 +285,7 @@ function printResults(result: ValidationResult): void {
   _log.info('   • Generate Auth0 Secret: openssl rand -hex 32');
   _log.info('   • Sentry: https://sentry.io/settings/');
   _log.info('   • Reown: https://cloud.reown.com/');
-  console.log('');
+  console.warn('');
 }
 
 function main(): void {
