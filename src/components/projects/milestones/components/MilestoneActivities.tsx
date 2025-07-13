@@ -4,6 +4,6 @@ interface MilestoneActivitiesProps {
   projectId: string;
 }
 
-export function MilestoneActivities(props: MilestoneActivitiesProps) {
+export function MilestoneActivities() {
   return <div>Activity will be shown here</div>;
 }

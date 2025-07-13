@@ -34,13 +34,9 @@ interface MilestonesListProps {
 
 export const MilestonesList: React.FC<MilestonesListProps> = ({
   milestones,
-  activities,
   isLoading,
   isClient,
   onCreateMilestone,
-  onUpdateStatus,
-  onDeleteMilestone,
-  onUploadDeliverable,
   isSubmitting,
   onApprove,
   onReject,

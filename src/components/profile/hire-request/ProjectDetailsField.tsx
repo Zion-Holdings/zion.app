@@ -14,7 +14,7 @@ export function ProjectDetailsField({ form }: ProjectDetailsFieldProps) {
     <FormField
       control={form.control}
       name="projectOverview"
-      render={({ field }: { field: any }) => (
+      render={({ field }: { field: React.ChangeEvent<HTMLInputElement> }) => (
         <FormItem>
           <FormLabel className="text-white">Project Overview</FormLabel>
           <FormControl>

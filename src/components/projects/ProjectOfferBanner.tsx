@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
-import { Bell, Calendar, X } from 'lucide-react';
+import { Bell, X } from 'lucide-react';
 
 
 
