@@ -16,9 +16,9 @@ async function main() {
     const alertMsg = `[ALERT] [${new Date().toISOString()}] CRITICAL ERRORS DETECTED: ${criticals.length}\n`;
     const alertFile = path.join(CONFIG.logsDir, 'alerts.log');
     fs.appendFileSync(alertFile, alertMsg);
-    console.log(alertMsg.trim());
+    console.warn(alertMsg.trim());
   } else {
-    console.log('No critical errors found.');
+    console.warn('No critical errors found.');
   }
 }
 

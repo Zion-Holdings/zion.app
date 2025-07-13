@@ -681,19 +681,19 @@ if (require.main === module) {
   const monitor = new EnhancedLogMonitor();
   
   monitor.on('initialized', () => {
-    console.log('🚀 Enhanced log monitoring system is running');
-    console.log('📊 Access metrics at: http://localhost:3001/metrics');
-    console.log('🔍 Real-time monitoring active');
+    console.warn('🚀 Enhanced log monitoring system is running');
+    console.warn('📊 Access metrics at: http://localhost:3001/metrics');
+    console.warn('🔍 Real-time monitoring active');
   });
 
   monitor.on('logEntry', (entry) => {
     if (entry.level === 'error') {
-      console.log(`🚨 Error detected: ${entry.message.substring(0, 100)}...`);
+      console.warn(`🚨 Error detected: ${entry.message.substring(0, 100)}...`);
     }
   });
 
   monitor.on('healthCheck', (data) => {
-    console.log(`💗 Health check: ${data.totalErrors} errors, ${(data.errorRate * 100).toFixed(1)}% error rate`);
+    console.warn(`💗 Health check: ${data.totalErrors} errors, ${(data.errorRate * 100).toFixed(1)}% error rate`);
   });
 }
 

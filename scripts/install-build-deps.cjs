@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const { execSync } = require('child_process');
 
-console.log('📦 Installing build dependencies for Netlify...');
+console.warn('📦 Installing build dependencies for Netlify...');
 
 // List of essential build dependencies
 const buildDeps = [
@@ -14,11 +14,11 @@ const buildDeps = [
 ];
 
 try {
-  console.log('Installing:', buildDeps.join(', '));
+  console.warn('Installing:', buildDeps.join(', '));
   execSync(`npm install ${buildDeps.join(' ')} --save-dev --legacy-peer-deps`, {
     stdio: 'inherit'
   });
-  console.log('✅ Build dependencies installed successfully');
+  console.warn('✅ Build dependencies installed successfully');
 } catch (error) {
   console.error('❌ Failed to install build dependencies:', error.message);
   process.exit(1);
