@@ -158,7 +158,7 @@ describe('Watchdog Script Tests', () => {
   describe('sendDiscordAlert', () => {
     const originalEnv = { ...process.env };
     let sendDiscordAlertFunc; // To hold the actual function
-    let appendToSelfHealLogSpy, logErrorToProductionSpy;
+    let appendToSelfHealLogSpy, logErrorToProductionSpy, logErrorSpy;
 
     beforeEach(() => {
       jest.resetModules(); // Crucial for process.env changes
