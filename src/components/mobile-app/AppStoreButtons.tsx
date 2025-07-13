@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Apple, GithubIcon } from 'lucide-react';
+import { Apple } from 'lucide-react';
 
 
 import { cn } from "@/lib/utils";
