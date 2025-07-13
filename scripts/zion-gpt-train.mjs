@@ -168,6 +168,6 @@ main().catch((err) => {
 // Dummy definitions to silence linter errors for 'reason' and 'done'.
 // These are only present to work around a linter bug and should not be used in the code.
 // @ts-expect-error: workaround for linter bug
-const reason = undefined;
+const _reason = undefined;
 // @ts-expect-error: workaround for linter bug
-const done = undefined;
+const _done = undefined;
