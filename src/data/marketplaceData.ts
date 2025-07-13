@@ -44,13 +44,12 @@ export const generateSearchSuggestions = (): SearchSuggestion[] => {
 
 // Generate filter options for sidebar
 export const generateFilterOptions = (
-  listings: ProductListing[] = []
+  // Remove unused variables 'listings' and 'prices'
 ): FilterOptions => {
   const productTypes = [] as string[]; // No mock listings
   const locations = [] as string[]; // No mock listings
   const availability = [] as string[]; // No mock listings
   
-  const prices = [] as number[]; // No mock listings
   const minPrice = 0;
   const maxPrice = 0;
 

@@ -6,7 +6,6 @@ import { useNotificationOperations } from './useNotificationOperations';
 import type { NotificationContextType, Notification } from './types';
 import { subscribeToPush } from '@/utils/pushSubscription';
 import { safeStorage } from '@/utils/safeStorage';
-import { logInfo } from '@/utils/productionLogger';
 
 
 // Default context used when React type definitions are missing. Providing a

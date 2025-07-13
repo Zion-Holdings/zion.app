@@ -7,13 +7,11 @@ import { useRouter } from 'next/router'; // Changed from react-router-dom
 import { useAuthState } from "./useAuthState";
 import { useAuthEventHandlers } from "./useAuthEventHandlers";
 import { mapProfileToUser } from "./profileMapper";
-import { loginUser, registerUser } from "@/services/authService";
-import { safeStorage, safeSessionStorage } from "@/utils/safeStorage";
+import { safeStorage } from "@/utils/safeStorage";
 import type { UserDetails, AuthContextType } from "@/types/auth";
 import { toast } from "@/hooks/use-toast"; // Import toast
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
-import { addItem } from '@/store/cartSlice';
 // logger from '@/utils/logger' is removed
 import { logInfo, logWarn, logErrorToProduction, logDebug } from '@/utils/productionLogger';
 
