@@ -90,33 +90,33 @@ export class EnhancedApiErrorHandler {
     // Determine error type and priority based on status code
     let type: ToastType;
     let priority: ToastPriority;
-    let message: string;
+    let _message: string; // Renamed from 'message' to '_message' for linter compliance
 
     switch (status) {
       case 401:
         type = ToastType.AUTH_ERROR;
         priority = ToastPriority.HIGH;
-        message = 'Authentication required - please log in';
+        _message = 'Authentication required - please log in';
         break;
       case 403:
         type = ToastType.AUTH_ERROR;
         priority = ToastPriority.HIGH;
-        message = 'Access denied - insufficient permissions';
+        _message = 'Access denied - insufficient permissions';
         break;
       case 404:
         type = ToastType.ERROR;
         priority = ToastPriority.NORMAL;
-        message = 'Requested resource not found';
+        _message = 'Requested resource not found';
         break;
       case 422:
         type = ToastType.VALIDATION_ERROR;
         priority = ToastPriority.NORMAL;
-        message = 'Validation failed - please check your input';
+        _message = 'Validation failed - please check your input';
         break;
       case 429:
         type = ToastType.ERROR;
         priority = ToastPriority.HIGH;
-        message = 'Too many requests - please wait a moment';
+        _message = 'Too many requests - please wait a moment';
         break;
       case 500:
       case 502:
@@ -124,17 +124,17 @@ export class EnhancedApiErrorHandler {
       case 504:
         type = ToastType.ERROR;
         priority = ToastPriority.HIGH;
-        message = 'Server error - please try again later';
+        _message = 'Server error - please try again later';
         break;
       default:
         if (!navigator.onLine) {
           type = ToastType.NETWORK_ERROR;
           priority = ToastPriority.HIGH;
-          message = 'No internet connection - please check your network';
+          _message = 'No internet connection - please check your network';
         } else {
           type = ToastType.ERROR;
           priority = ToastPriority.NORMAL;
-          message = 'Request failed - please try again';
+          _message = 'Request failed - please try again';
         }
         break;
     }
@@ -153,9 +153,9 @@ export class EnhancedApiErrorHandler {
       ) {
         const dataObj = responseData as { error?: string; message?: string };
         if (dataObj.error && typeof dataObj.error === 'string') {
-          message = dataObj.error;
+          _message = dataObj.error;
         } else if (dataObj.message && typeof dataObj.message === 'string') {
-          message = dataObj.message;
+          _message = dataObj.message;
         }
       }
     } catch {
