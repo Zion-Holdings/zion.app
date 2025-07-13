@@ -190,57 +190,57 @@ function validateEnvironment() {
   
   // Report results
   if (_errors.length > 0) {
-    process.stdout.write(chalk.red('❌ CRITICAL ERRORS - BUILD WILL FAIL:\n'));
-    process.stdout.write(chalk.red('================================================\n\n'));
+    process.stderr.write(chalk.red('❌ CRITICAL ERRORS - BUILD WILL FAIL:\n'));
+    process.stderr.write(chalk.red('================================================\n\n'));
     
     _errors.forEach(({ variable, error, description, current }) => {
-      process.stdout.write(chalk.red(`✗ ${variable}\n`));
-      process.stdout.write(chalk.red(`  Error: ${error}\n`));
-      process.stdout.write(chalk.gray(`  Description: ${description}\n`));
-      process.stdout.write(chalk.gray(`  Current: ${current}\n`));
-      process.stdout.write('\n');
+      process.stderr.write(chalk.red(`✗ ${variable}\n`));
+      process.stderr.write(chalk.red(`  Error: ${error}\n`));
+      process.stderr.write(chalk.gray(`  Description: ${description}\n`));
+      process.stderr.write(chalk.gray(`  Current: ${current}\n`));
+      process.stderr.write('\n');
     });
     
-    process.stdout.write(chalk.red('🚨 TO FIX THESE ERRORS:\n'));
-    process.stdout.write(chalk.yellow('1. Check your .env.local file\n'));
-    process.stdout.write(chalk.yellow('2. Set up Supabase authentication\n'));
-    process.stdout.write(chalk.yellow('3. Add the missing variables with actual values\n'));
-    process.stdout.write(chalk.yellow('4. Restart your development server\n\n'));
+    process.stderr.write(chalk.red('🚨 TO FIX THESE ERRORS:\n'));
+    process.stderr.write(chalk.yellow('1. Check your .env.local file\n'));
+    process.stderr.write(chalk.yellow('2. Set up Supabase authentication\n'));
+    process.stderr.write(chalk.yellow('3. Add the missing variables with actual values\n'));
+    process.stderr.write(chalk.yellow('4. Restart your development server\n\n'));
     
     // Don't exit here - let the pre-build check handle it
   }
   
   if (_warnings.length > 0) {
-    process.stdout.write(chalk.yellow('⚠️  WARNINGS:\n'));
-    process.stdout.write(chalk.yellow('=============\n\n'));
+    process.stderr.write(chalk.yellow('⚠️  WARNINGS:\n'));
+    process.stderr.write(chalk.yellow('=============\n\n'));
     
     _warnings.forEach(({ variable, warning, current }) => {
-      process.stdout.write(chalk.yellow(`! ${variable}: ${warning}\n`));
-      process.stdout.write(chalk.gray(`  Current: ${current}\n\n`));
+      process.stderr.write(chalk.yellow(`! ${variable}: ${warning}\n`));
+      process.stderr.write(chalk.gray(`  Current: ${current}\n\n`));
     });
   }
   
   if (_suggestions.length > 0 && !isLocalDev) {
-    process.stdout.write(chalk.cyan('💡 RECOMMENDATIONS:\n'));
-    process.stdout.write(chalk.cyan('===================\n\n'));
+    process.stderr.write(chalk.cyan('💡 RECOMMENDATIONS:\n'));
+    process.stderr.write(chalk.cyan('===================\n\n'));
     
     _suggestions.slice(0, 5).forEach(({ variable, description, current }) => {
-      process.stdout.write(chalk.cyan(`• ${variable}\n`));
-      process.stdout.write(chalk.gray(`  ${description}\n`));
-      process.stdout.write(chalk.gray(`  Current: ${current}\n\n`));
+      process.stderr.write(chalk.cyan(`• ${variable}\n`));
+      process.stderr.write(chalk.gray(`  ${description}\n`));
+      process.stderr.write(chalk.gray(`  Current: ${current}\n\n`));
     });
     
     if (_suggestions.length > 5) {
-      process.stdout.write(chalk.gray(`... and ${_suggestions.length - 5} more optional variables\n\n`));
+      process.stderr.write(chalk.gray(`... and ${_suggestions.length - 5} more optional variables\n\n`));
     }
   }
   
   if (_errors.length === 0) {
-    process.stdout.write(chalk.green('✅ Environment validation passed!\n'));
+    process.stderr.write(chalk.green('✅ Environment validation passed!\n'));
     if (isLocalDev) {
-      process.stdout.write(chalk.green('Ready for local development.\n\n'));
+      process.stderr.write(chalk.green('Ready for local development.\n\n'));
     } else {
-      process.stdout.write(chalk.green('All critical environment variables are properly configured.\n\n'));
+      process.stderr.write(chalk.green('All critical environment variables are properly configured.\n\n'));
     }
   }
   
@@ -297,7 +297,7 @@ After setting up, you can verify by visiting:
 
   const guidePath = path.join(__dirname, '..', 'NETLIFY_ENVIRONMENT_SETUP.md');
   fs.writeFileSync(guidePath, guide.trim());
-  process.stdout.write(chalk.green(`📋 Setup guide generated: ${guidePath}\n`));
+  process.stderr.write(chalk.green(`📋 Setup guide generated: ${guidePath}\n`));
 }
 
 // Run validation
@@ -307,8 +307,16 @@ if (require.main === module) {
   // Only exit with error if there are actual critical errors
   if (!result.isValid) {
     if (isNetlifyBuild) {
-      process.stdout.write(chalk.yellow('⚠️  Environment validation failed, continuing Netlify build.\n'));
+      process.stderr.write(chalk.yellow('⚠️  Environment validation failed, continuing Netlify build.\n'));
     } else {
+      process.stderr.write('Environment validation error.\n');
+      process.stderr.write('See above for details.\n');
+      process.stderr.write('Warning: Some environment variables are missing.\n');
+      process.stderr.write('Suggestion: Add missing recommended variables.\n');
+      process.stderr.write('1. Check your .env.local file\n');
+      process.stderr.write('2. Set up Supabase authentication\n');
+      process.stderr.write('3. Add the missing variables with actual values\n');
+      process.stderr.write('4. Restart your development server\n\n');
       process.exit(1);
     }
   }
