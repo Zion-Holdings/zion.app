@@ -1,5 +1,4 @@
 
-import { Badge } from "@/components/ui/badge";
 import type { ProfileSkill } from "@/types/profile";
 
 interface ProfileSkillsProps {
