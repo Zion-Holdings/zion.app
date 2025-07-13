@@ -48,7 +48,7 @@ async function run() {
   await writeSummary(dataset);
 }
 
-run().catch((err) => {
-  console.error('Training failed:', err);
+run().catch((_err) => {
+  console.error('Training failed:', _err);
   process.exit(1);
 });
