@@ -165,7 +165,7 @@ class ConsoleReplacer {
           neededImports.add(importName);
           hasReplacements = true;
           this.replacementsMade += matches.length;
-          console.log(`  ✓ ${description}: ${matches.length} occurrences`);
+          console.warn(`  ✓ ${description}: ${matches.length} occurrences`);
         }
       });
 
@@ -192,36 +192,36 @@ class ConsoleReplacer {
    * Process all files
    */
   async processAllFiles() {
-    console.log('🔄 Starting console statement replacement...');
-    console.log(`📁 Project root: ${PROJECT_ROOT}`);
+    console.warn('🔄 Starting console statement replacement...');
+    console.warn(`📁 Project root: ${PROJECT_ROOT}`);
 
     const filesToProcess = this.getFilesToProcess();
-    console.log(`📋 Found ${filesToProcess.length} files to process`);
+    console.warn(`📋 Found ${filesToProcess.length} files to process`);
 
     if (filesToProcess.length === 0) {
-      console.log('ℹ️  No files found to process');
+      console.warn('ℹ️  No files found to process');
       return;
     }
 
     // Show first few files as preview
-    console.log('\n📄 Files to process (first 10):');
+    console.warn('\n📄 Files to process (first 10):');
     filesToProcess.slice(0, 10).forEach(file => {
-      console.log(`   ${file}`);
+      console.warn(`   ${file}`);
     });
     if (filesToProcess.length > 10) {
-      console.log(`   ... and ${filesToProcess.length - 10} more files`);
+      console.warn(`   ... and ${filesToProcess.length - 10} more files`);
     }
 
-    console.log('\n🔧 Processing files...\n');
+    console.warn('\n🔧 Processing files...\n');
 
     for (const filePath of filesToProcess) {
-      console.log(`📝 Processing: ${filePath}`);
+      console.warn(`📝 Processing: ${filePath}`);
       const result = this.processFile(filePath);
       
       if (result.processed) {
-        console.log(`  ✅ Processed successfully (${result.replacements} import types added)`);
+        console.warn(`  ✅ Processed successfully (${result.replacements} import types added)`);
       } else {
-        console.log(`  ⏭️  Skipped: ${result.reason}`);
+        console.warn(`  ⏭️  Skipped: ${result.reason}`);
       }
     }
 
@@ -232,32 +232,32 @@ class ConsoleReplacer {
    * Print processing summary
    */
   printSummary() {
-    console.log('\n' + '='.repeat(60));
-    console.log('📊 CONSOLE REPLACEMENT SUMMARY');
-    console.log('='.repeat(60));
-    console.log(`✅ Files processed: ${this.processedFiles}`);
-    console.log(`🔄 Total replacements made: ${this.replacementsMade}`);
-    console.log(`❌ Errors encountered: ${this.errors.length}`);
+    console.warn('\n' + '='.repeat(60));
+    console.warn('📊 CONSOLE REPLACEMENT SUMMARY');
+    console.warn('='.repeat(60));
+    console.warn(`✅ Files processed: ${this.processedFiles}`);
+    console.warn(`🔄 Total replacements made: ${this.replacementsMade}`);
+    console.warn(`❌ Errors encountered: ${this.errors.length}`);
 
     if (this.errors.length > 0) {
-      console.log('\n⚠️  Errors:');
+      console.warn('\n⚠️  Errors:');
       this.errors.forEach(({ file, error }) => {
-        console.log(`   ${file}: ${error}`);
+        console.warn(`   ${file}: ${error}`);
       });
     }
 
     if (this.processedFiles > 0) {
-      console.log('\n🎉 Console statement replacement completed!');
-      console.log('\n📋 Next steps:');
-      console.log('   1. Run: npm run lint -- --fix');
-      console.log('   2. Test the application: npm run dev');
-      console.log('   3. Check for any remaining console statements');
-      console.log('   4. Commit changes: git add . && git commit -m "Replace console statements with production logger"');
+      console.warn('\n🎉 Console statement replacement completed!');
+      console.warn('\n📋 Next steps:');
+      console.warn('   1. Run: npm run lint -- --fix');
+      console.warn('   2. Test the application: npm run dev');
+      console.warn('   3. Check for any remaining console statements');
+      console.warn('   4. Commit changes: git add . && git commit -m "Replace console statements with production logger"');
     } else {
-      console.log('\n ℹ️ No files were processed. This might mean:');
-      console.log('   • Console statements were already replaced');
-      console.log('   • No console statements found in the codebase');
-      console.log('   • Files are excluded by the filter patterns');
+      console.warn('\n ℹ️ No files were processed. This might mean:');
+      console.warn('   • Console statements were already replaced');
+      console.warn('   • No console statements found in the codebase');
+      console.warn('   • Files are excluded by the filter patterns');
     }
   }
 }
@@ -269,7 +269,7 @@ if (require.main === module) {
   // Handle command line arguments
   const args = process.argv.slice(2);
   if (args.includes('--help') || args.includes('-h')) {
-    console.log(`
+    console.warn(`
 Console Statement Replacer
 ========================
 

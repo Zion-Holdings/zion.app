@@ -192,7 +192,7 @@ async function promptForAuth0Config() {
   logInfo('Visit: https://manage.auth0.com/');
   logInfo('Create a "Regular Web Application" and get your credentials.');
   
-  console.log('\n');
+  console.warn('\n');
   
   const config = {};
   
@@ -295,18 +295,18 @@ async function testConfiguration() {
 async function displayNextSteps() {
   logSection('NEXT STEPS');
   
-  console.log('');
+  console.warn('');
   logStep(1, 'Configure Auth0 Application Settings');
   logInfo('In your Auth0 Dashboard → Applications → Settings, add:');
-  console.log('');
+  console.warn('');
   console.warn('  Allowed Callback URLs:', 'yellow');
   console.warn('    http://localhost:3000/api/auth/callback');
   console.warn('    https://yourdomain.com/api/auth/callback');
-  console.log('');
+  console.warn('');
   console.warn('  Allowed Logout URLs:', 'yellow');
   console.warn('    http://localhost:3000');
   console.warn('    https://yourdomain.com');
-  console.log('');
+  console.warn('');
   console.warn('  Allowed Web Origins:', 'yellow');
   console.warn('    http://localhost:3000');
   console.warn('    https://yourdomain.com');
@@ -331,10 +331,10 @@ async function displayNextSteps() {
   console.warn('  Visit: http://localhost:3000/api/auth/health', 'cyan');
   console.warn('  Should return: {"status": "ok", ...}', 'cyan');
   
-  console.log('');
+  console.warn('');
   logSuccess('Setup complete! Follow the steps above to finish the configuration.');
   
-  console.log('');
+  console.warn('');
   logInfo('For detailed instructions, see: AUTH0_SETUP_GUIDE_ISSUE_1.md');
   logInfo('For troubleshooting, check the Auth0 Dashboard → Monitoring → Logs');
 }
