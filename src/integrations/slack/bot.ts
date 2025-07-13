@@ -107,8 +107,7 @@ app.command('/zion-rollback', async ({ ack, respond }: { ack: SlackAck, respond:
 // Mock startup with safer environment access
 (async () => {
   // Get PORT from environment or use default
-  const env = typeof globalThis !== 'undefined' && (globalThis as any).process ? 
-    (globalThis as any).process.env : {};
+  const env = typeof globalThis !== 'undefined' && typeof (globalThis as unknown) === 'object' && globalThis !== null && 'process' in globalThis && typeof (globalThis as { process?: unknown }).process === 'object' && (globalThis as { process?: { env?: unknown } }).process !== null ? (globalThis as { process?: { env?: unknown } }).process!.env! : {};
   const port = env.PORT ? Number(env.PORT) : 3000;
   await app.start(port);
 })();
