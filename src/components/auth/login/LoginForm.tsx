@@ -45,7 +45,7 @@ export function LoginForm() {
   const router = useRouter();
   
   const form = useForm<LoginFormValues>({
-    resolver: zodResolver(loginSchema) as unknown as any,
+    resolver: zodResolver(loginSchema),
     defaultValues: {
       email: "",
       password: "",
@@ -66,12 +66,12 @@ export function LoginForm() {
           typeof result.error === 'object' &&
           result.error !== null &&
           'message' in result.error &&
-          typeof (result.error as any).message === 'string'
+          typeof (result.error as { message?: string }).message === 'string'
         ) {
-          if ((result.error as any).message.toLowerCase().includes("email not confirmed")) {
+          if (((result.error as { message?: string }).message ?? '').toLowerCase().includes("email not confirmed")) {
             errorMessage = "Your email is not confirmed. Please check your inbox for a confirmation link.";
           } else {
-            errorMessage = (result.error as any).message;
+            errorMessage = (result.error as { message?: string }).message ?? errorMessage;
           }
         }
         form.setError("root", { message: errorMessage });
