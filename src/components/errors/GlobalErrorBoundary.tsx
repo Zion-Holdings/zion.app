@@ -77,11 +77,10 @@ export class GlobalErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoun
 
     // Log to console in development
     if (process.env.NODE_ENV === 'development') {
-      console.group('🚨 Error Boundary Caught Error')
+      console.warn('🚨 Error Boundary Caught Error')
       logErrorToProduction('Error:', { data: error })
       logErrorToProduction('Error Info:', { data: errorInfo })
       logErrorToProduction('Enhanced Error:', { data: enhancedError })
-      console.groupEnd()
     }
 
     // Report to Sentry only on the server
