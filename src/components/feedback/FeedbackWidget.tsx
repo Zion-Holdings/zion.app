@@ -70,8 +70,12 @@ export function FeedbackWidget() {
         userAgent: navigator.userAgent,
       });
       enqueueSnackbar('Thank you for your feedback!', { variant: 'success' });
-    } catch (err: any) {
-      enqueueSnackbar(err.message, { variant: 'error' });
+    } catch (err: unknown) {
+      let message = 'An error occurred';
+      if (err && typeof err === 'object' && 'message' in err && typeof (err as { message?: unknown }).message === 'string') {
+        message = (err as { message: string }).message;
+      }
+      enqueueSnackbar(message, { variant: 'error' });
     }
     setSubmitted(true);
     reset();
