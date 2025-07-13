@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-/* eslint-disable no-console -- All output uses only console.warn or console.error. This disables false positives. */
+ 
 // React 19 Bundle Analysis Tool
 const fs = require('fs');
-const path = require('path');
+const _path = require('path');
 
 console.warn('🚀 React 19 Bundle Analysis Starting...\n');
 
@@ -31,9 +31,9 @@ const bundleAnalysis = {
   analyzeBundleSize() {
     console.warn('📦 Bundle Size Analysis:');
     
-    const buildPath = '.next';
-    if (fs.existsSync(buildPath)) {
-      const stats = this.getBundleStats(buildPath);
+    const _buildPath = '.next';
+    if (fs.existsSync(_buildPath)) {
+      const stats = this.getBundleStats(_buildPath);
       console.warn(`  📄 Total JS Bundle: ${stats.totalJS} KB`);
       console.warn(`  🎨 Total CSS Bundle: ${stats.totalCSS} KB`);
       console.warn(`  📊 React 19 Overhead: ${stats.reactOverhead} KB`);
