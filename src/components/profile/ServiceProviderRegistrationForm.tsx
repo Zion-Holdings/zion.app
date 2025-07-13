@@ -21,6 +21,7 @@ import {
   FormMessage
 } from "@/components/ui/form";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import type { ControllerRenderProps } from "react-hook-form";
 
 
 
@@ -395,7 +396,7 @@ export function ServiceProviderRegistrationForm() {
                     <FormField
                       control={form.control}
                       name="name"
-                      render={({ field }: { field: any }) => (
+                      render={({ field }: { field: ControllerRenderProps<ServiceFormValues, "name"> }) => (
                         <FormItem>
                           <FormLabel className="text-zion-slate-light">Full Name</FormLabel>
                           <FormControl>
@@ -418,7 +419,7 @@ export function ServiceProviderRegistrationForm() {
                     <FormField
                       control={form.control}
                       name="title"
-                      render={({ field }: { field: any }) => (
+                      render={({ field }: { field: ControllerRenderProps<ServiceFormValues, "title"> }) => (
                         <FormItem>
                           <FormLabel className="text-zion-slate-light">Business/Service Name</FormLabel>
                           <FormControl>
@@ -441,7 +442,7 @@ export function ServiceProviderRegistrationForm() {
                     <FormField
                       control={form.control}
                       name="location"
-                      render={({ field }: { field: any }) => (
+                      render={({ field }: { field: ControllerRenderProps<ServiceFormValues, "location"> }) => (
                         <FormItem>
                           <FormLabel className="text-zion-slate-light">Location</FormLabel>
                           <FormControl>
@@ -464,7 +465,7 @@ export function ServiceProviderRegistrationForm() {
                     <FormField
                       control={form.control}
                       name="website"
-                      render={({ field }: { field: any }) => (
+                      render={({ field }: { field: ControllerRenderProps<ServiceFormValues, "website"> }) => (
                         <FormItem>
                           <FormLabel className="text-zion-slate-light">Website (optional)</FormLabel>
                           <FormControl>
@@ -530,7 +531,7 @@ export function ServiceProviderRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="bio"
-                  render={({ field }: { field: any }) => (
+                  render={({ field }: { field: ControllerRenderProps<ServiceFormValues, "bio"> }) => (
                     <FormItem>
                       <FormLabel className="text-zion-slate-light">About Your Services</FormLabel>
                       <FormControl>
@@ -552,7 +553,7 @@ export function ServiceProviderRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="enhancedProfile"
-                  render={({ field }: { field: any }) => (
+                  render={({ field }: { field: ControllerRenderProps<ServiceFormValues, "enhancedProfile"> }) => (
                     <FormItem className="flex flex-row items-center justify-between p-3 border border-zion-blue-light bg-zion-blue/30 rounded-md">
                       <div className="space-y-0.5">
                         <FormLabel className="text-white flex items-center">
@@ -644,7 +645,7 @@ export function ServiceProviderRegistrationForm() {
                   <FormField
                     control={form.control}
                     name="services"
-                    render={({ field }: { field: any }) => (
+                    render={({ field }: { field: ControllerRenderProps<ServiceFormValues, "services"> }) => (
                       <FormItem>
                         <FormLabel className="text-zion-slate-light">Services</FormLabel>
                         <div className="flex gap-2">
@@ -701,7 +702,7 @@ export function ServiceProviderRegistrationForm() {
                   <FormField
                     control={form.control}
                     name="hourlyRate"
-                    render={({ field }: { field: any }) => (
+                    render={({ field }: { field: ControllerRenderProps<ServiceFormValues, "hourlyRate"> }) => (
                       <FormItem>
                         <FormLabel className="text-zion-slate-light">Starting Rate (USD)</FormLabel>
                         <FormControl>
@@ -725,7 +726,7 @@ export function ServiceProviderRegistrationForm() {
                   <FormField
                     control={form.control}
                     name="availability"
-                    render={({ field }: { field: any }) => (
+                    render={({ field }: { field: ControllerRenderProps<ServiceFormValues, "availability"> }) => (
                       <FormItem className="space-y-4">
                         <FormLabel className="text-zion-slate-light">Current Status</FormLabel>
                         <FormControl>
