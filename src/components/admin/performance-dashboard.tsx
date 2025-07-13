@@ -47,7 +47,7 @@ export function PerformanceDashboard() {
   const collectMetrics = async () => {
     try {
       // Collect performance metrics
-      const memoryInfo = (performance as any).memory;
+      const memoryInfo = typeof (performance as unknown) === 'object' && performance && 'memory' in performance ? (performance as { memory?: unknown }).memory : undefined;
       const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
       const resourceCount = performance.getEntriesByType('resource').length;
 
@@ -114,10 +114,10 @@ export function PerformanceDashboard() {
               vitals.lcp = entry.startTime;
             }
             if (entry.entryType === 'layout-shift') {
-              vitals.cls = (vitals.cls || 0) + (entry as any).value;
+              vitals.cls = (vitals.cls || 0) + (typeof entry === 'object' && entry && 'value' in entry ? (entry as { value: number }).value : 0);
             }
             if (entry.entryType === 'first-input') {
-              vitals.fid = (entry as any).processingStart - entry.startTime;
+              vitals.fid = (typeof entry === 'object' && entry && 'processingStart' in entry ? (entry as { processingStart: number }).processingStart : 0) - entry.startTime;
             }
           });
         });
