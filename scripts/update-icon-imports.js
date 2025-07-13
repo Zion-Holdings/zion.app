@@ -8,7 +8,6 @@
  */
 
 const fs = require('fs');
-const path = require('path');
 const glob = require('glob');
 
 // Helper to replace imports in a file
@@ -25,7 +24,6 @@ function updateIconImportsInFile(filePath) {
     // Only write if changes were made
     if (content !== updatedContent) {
       fs.writeFileSync(filePath, updatedContent, 'utf8');
-      console.log(`✅ Updated imports in ${filePath}`);
       return true;
     }
     
@@ -44,6 +42,3 @@ files.forEach(file => {
   const updated = updateIconImportsInFile(file);
   if (updated) updatedFiles++;
 });
-
-console.log(`\n🎉 Updated icon imports in ${updatedFiles} files`);
-console.log(`\nℹ️ Make sure to run 'npm install glob' if needed to support this script`);
