@@ -100,67 +100,58 @@ export function ServiceDescriptionForm({ onDescriptionGenerated }: ServiceDescri
             <FormField
               control={form.control}
               name="title"
-              render={({ field }: { field: unknown }) => {
-                if (typeof field !== 'object' || field === null) return null;
-                return (
-                  <FormItem>
-                    <FormLabel className="text-zion-slate-light">Service Title</FormLabel>
-                    <FormControl>
-                      <Input
-                        {...(field as object)}
-                        placeholder="e.g. Professional Web Design Services"
-                        className="bg-zion-blue border border-zion-blue-light text-white"
-                        disabled={isLoading}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                );
-              }}
+              render={({ field, fieldState, formState }) => (
+                <FormItem>
+                  <FormLabel className="text-zion-slate-light">Service Title</FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      placeholder="e.g. Professional Web Design Services"
+                      className="bg-zion-blue border border-zion-blue-light text-white"
+                      disabled={isLoading}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
             
             <FormField
               control={form.control}
               name="keyFeatures"
-              render={({ field }: { field: unknown }) => {
-                if (typeof field !== 'object' || field === null) return null;
-                return (
-                  <FormItem>
-                    <FormLabel className="text-zion-slate-light">Key Features</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        {...(field as object)}
-                        placeholder="Enter key features, separated by commas"
-                        className="bg-zion-blue border border-zion-blue-light text-white min-h-20"
-                        disabled={isLoading}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                );
-              }}
+              render={({ field, fieldState, formState }) => (
+                <FormItem>
+                  <FormLabel className="text-zion-slate-light">Key Features</FormLabel>
+                  <FormControl>
+                    <Textarea
+                      {...field}
+                      placeholder="Enter key features, separated by commas"
+                      className="bg-zion-blue border border-zion-blue-light text-white min-h-20"
+                      disabled={isLoading}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
             
             <FormField
               control={form.control}
               name="targetAudience"
-              render={({ field }: { field: unknown }) => {
-                if (typeof field !== 'object' || field === null) return null;
-                return (
-                  <FormItem>
-                    <FormLabel className="text-zion-slate-light">Target Audience</FormLabel>
-                    <FormControl>
-                      <Input
-                        {...(field as object)}
-                        placeholder="e.g. Small businesses, Startups, E-commerce brands"
-                        className="bg-zion-blue border border-zion-blue-light text-white"
-                        disabled={isLoading}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                );
-              }}
+              render={({ field, fieldState, formState }) => (
+                <FormItem>
+                  <FormLabel className="text-zion-slate-light">Target Audience</FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      placeholder="e.g. Small businesses, Startups, E-commerce brands"
+                      className="bg-zion-blue border border-zion-blue-light text-white"
+                      disabled={isLoading}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
             
             <Button 
