@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { logInfo, logWarn } from '@/utils/productionLogger';
 
 
 declare global {
@@ -32,13 +31,13 @@ export default function IntercomChat() {
     // Validate App ID before attempting to initialize
     if (!isValidIntercomAppId(appId)) {
       if (process.env.NODE_ENV === 'development') {
-        logWarn('Intercom: Invalid or placeholder App ID detected. Intercom chat disabled.', { data:  { data:  { appId } } });
+        console.warn('Intercom: Invalid or placeholder App ID detected. Intercom chat disabled.', { data:  { data:  { appId } } });
       }
       return;
     }
 
     if (process.env.NODE_ENV === 'development') {
-      logInfo('Intercom: Initializing with App ID', { data: appId?.substring(0, 4) + '****' });
+      console.log('Intercom: Initializing with App ID', { data: appId?.substring(0, 4) + '****' });
     }
 
     window.intercomSettings = { app_id: appId };
@@ -47,16 +46,17 @@ export default function IntercomChat() {
       const w = window as unknown as Window;
       const ic = w.Intercom;
       if (typeof ic === 'function') {
-        ic('reattach_activator');
-        ic('update', w.intercomSettings);
+        (ic as (...args: unknown[]) => void)('reattach_activator');
+        (ic as (...args: unknown[]) => void)('update', w.intercomSettings);
       } else {
         const d = document;
-        const i: unknown = function (...args: unknown[]) {
-          (i.q as unknown as unknown[]).push(args);
-        };
+        type IntercomFunc = ((...args: unknown[]) => void) & { q?: unknown[]; c?: (args: unknown) => void };
+        const i: IntercomFunc = function (...args: unknown[]) {
+          (i.q as unknown[]).push(args);
+        } as IntercomFunc;
         i.q = [];
         i.c = function (args: unknown) {
-          (i.q as unknown as unknown[]).push(args);
+          (i.q as unknown[]).push(args);
         };
         w.Intercom = i;
         const l = function () {
@@ -73,8 +73,11 @@ export default function IntercomChat() {
         };
         if (document.readyState === 'complete') {
           l();
-        } else if (w.attachEvent) {
-          w.attachEvent('onload', l);
+        } else if (typeof (w as Window & { attachEvent?: ((event: string, handler: () => void) => void) }).attachEvent === 'function') {
+          (w as Window & { attachEvent: (event: string, handler: () => void) => void }).attachEvent('onload', () => {
+            (window.Intercom as (...args: unknown[]) => void)('reattach_activator');
+            (window.Intercom as (...args: unknown[]) => void)('update', window.intercomSettings);
+          });
         } else {
           w.addEventListener('load', l, false);
         }
