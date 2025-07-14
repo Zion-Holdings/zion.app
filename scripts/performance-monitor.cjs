@@ -171,7 +171,7 @@ class PerformanceMonitor {
       'Other': []
     };
 
-    chunks.forEach(_chunk => {
+    chunks.forEach((_chunk, _i) => {
       const _name = _chunk.name.toLowerCase();
       if (_name.includes('framework')) {
         categories['Framework'].push(_chunk);
