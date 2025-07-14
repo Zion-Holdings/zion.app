@@ -175,4 +175,13 @@ class LoggerTypeFixer {
     if (this.errors.length > 0) {
       console.warn('\n⚠️  Errors:');
       this.errors.forEach(({ file, error }) => {
-        console.warn(`
+        console.warn(`   ${file}: ${error && error.message ? error.message : String(error)}`);
+      });
+    }
+  }
+}
+
+(async () => {
+  const fixer = new LoggerTypeFixer();
+  await fixer.processAllFiles();
+})();
