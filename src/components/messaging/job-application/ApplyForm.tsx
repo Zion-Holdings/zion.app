@@ -7,7 +7,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useJobApplications } from "@/hooks/useJobApplications";
 import { useMessaging } from "@/context/MessagingContext";
 import { toast } from "@/hooks/use-toast";
-import { _ResumeSelector } from './resume-selector/ResumeSelector';
 import type { ResumeOption } from "../resume-selector";
 import { MessageTab } from "./MessageTab";
 import { ResumeTab } from "./ResumeTab";
