@@ -153,7 +153,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         { data: { projectId: rawProjectId } }
       );
       if (appKitRef.current) appKitRef.current = null; // Ensure it's nulled if it somehow existed
-      setWallet(prev => ({
+      setWallet((_prev) => ({
         ...initialWalletState, // Reset to initial, ensuring all fields are non-connected
         isWalletSystemAvailable: false,
       }));
@@ -166,7 +166,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       // appKitRef.current should be null from initialization.
       // isWalletSystemAvailable was set by useState based on isProjectIdValid.
       // If isProjectIdValid was true, we now mark isWalletSystemAvailable as false because AppKit can't run.
-      setWallet(prev => ({
+      setWallet((_prev) => ({
         ...initialWalletState, // Reset to initial state
         isWalletSystemAvailable: false, // Crucially false for non-browser env
         // projectId might have been valid, so initialWalletState is safer
@@ -192,15 +192,15 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
           logInfo('WalletContext: appKitInstance created successfully:', { data:  { data: appKitRef.current } });
         }
         // On successful creation, system is available. Connection state will be updated by subscriptions.
-        setWallet(prev => ({
-          ...prev,
+        setWallet((_prev) => ({
+          ..._prev,
           isWalletSystemAvailable: true,
           isConnected: false, // Explicitly false until wallet connects
         }));
       } catch (error) {
         logErrorToProduction('WalletContext: CRITICAL error creating appKitInstance with valid Project ID:', { data: error });
         appKitRef.current = null;
-        setWallet(prev => ({
+        setWallet((_prev) => ({
           ...initialWalletState,
           isWalletSystemAvailable: false,
         }));
@@ -211,12 +211,12 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       if (process.env.NODE_ENV === 'development') {
         logInfo('WalletContext: AppKit already initialized. Ensuring state consistency. ID:', { data:  { data: rawProjectId } });
       }
-      setWallet(prev => ({
-        ...prev,
+      setWallet((_prev) => ({
+        ..._prev,
         isWalletSystemAvailable: true,
       }));
     }
-  }, [isProjectIdValid, rawProjectId, targetNetwork]); // Added targetNetwork
+  }, [isProjectIdValid, rawProjectId, targetNetwork, metadata]); // Added targetNetwork
 
   const [wallet, setWallet] = useState<WalletState>({
     ...initialWalletState,
@@ -232,7 +232,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
     if (!currentAppKit) {
       // If appKit is not available (e.g., invalid project ID), ensure state reflects this
-      setWallet(prev => ({
+      setWallet((_prev) => ({
         ...initialWalletState,
         isWalletSystemAvailable: false,
       }));
@@ -258,8 +258,8 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             }) as import('ethers').Eip1193Provider;
             const ethersProvider = new EthersBrowserProvider(safeProvider);
             const ethersSigner = await ethersProvider.getSigner();
-            setWallet(prev => ({
-              ...prev,
+            setWallet((_prev) => ({
+              ..._prev,
               provider: ethersProvider,
               signer: ethersSigner,
               address: currentAddress, // Use currentAddress from AppKit
@@ -268,7 +268,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
               isWalletSystemAvailable: true, // System is available and connected
             }));
           } else {
-            setWallet(prev => ({
+            setWallet((_prev) => ({
               ...initialWalletState,
               isConnected: false,
               isWalletSystemAvailable: true,
@@ -277,7 +277,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         } catch (error) {
           logErrorToProduction('WalletContext: Error getting signer or updating wallet state:', { data: error });
           // AppKit exists, but failed to get signer or other error
-          setWallet(prev => ({
+          setWallet((_prev) => ({
             ...initialWalletState,
             isConnected: false, // Not connected due to error
             isWalletSystemAvailable: true, // AppKit itself is still available
@@ -285,7 +285,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         }
       } else {
         // Not connected or essential info missing
-        setWallet(prev => ({
+        setWallet((_prev) => ({
           ...initialWalletState,
         isConnected: false, // Explicitly not connected
         isWalletSystemAvailable: true, // AppKit is available, just not connected
@@ -294,7 +294,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   } // This closes the outer if (currentAppKit?.getState().isConnected && currentAppKit?.getAddress())
   else {
     // Not connected or essential info missing (outer else)
-    setWallet(prev => ({
+    setWallet((_prev) => ({
       ...initialWalletState,
       isConnected: false, // Explicitly not connected
       isWalletSystemAvailable: true, // AppKit is available, just not connected

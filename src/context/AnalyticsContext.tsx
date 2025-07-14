@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useState, useContext, useEffect, useCallback } from 'react';
 import type { ReactNode } from 'react';
 import { useRouter } from 'next/router';
 import { useAuth } from '@/hooks/useAuth';
@@ -58,7 +58,7 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
   const { user } = useAuth();
 
   // Function to track general analytics events
-  const trackEvent = async (type: AnalyticsEventType, metadata: Record<string, unknown> = {}) => {
+  const trackEvent = useCallback((type: AnalyticsEventType, metadata: Record<string, unknown> = {}) => {
     const event: AnalyticsEvent = {
       type,
       path: router.pathname,
@@ -89,7 +89,7 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
         logErrorToProduction('Error logging analytics event:', { data: error });
       }
     }
-  };
+  }, [user, router.pathname]);
 
   // Function to track conversion events
   const trackConversion = (conversionType: string, value?: number, metadata: Record<string, unknown> = {}) => {

@@ -168,7 +168,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
       }
     }
    
-  }, []); // Run once on component mount to set initial language.
+  }, [currentLanguage, i18n]); // Run once on component mount to set initial language.
 
   // Effect to react to changes in i18n.language from other sources (e.g. detector post-init)
   // AND to update DOM attributes whenever currentLanguage (driven by this context) changes.
