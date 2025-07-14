@@ -26,7 +26,7 @@ export function ConversationDetailView() {
   
   useEffect(() => {
     if (activeConversation) {
-      loadMessages();
+      loadMessages(activeConversation.id);
     }
     inputRef.current?.focus();
   }, [activeConversation, loadMessages]);
