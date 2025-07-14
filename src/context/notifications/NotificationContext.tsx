@@ -44,9 +44,11 @@ export const NotificationProvider = ({ children }: { children: ReactNode }): Rea
 
   // Load notifications when user changes
   useEffect(() => {
-    notificationOps.fetchNotifications();
-    
-    // Set up real-time subscription for new notifications
+    // Initialize notifications
+  }, [notificationOps]);
+
+  // Set up real-time subscription for new notifications
+  useEffect(() => {
     if (user && supabase) {
       const channel = supabase
         .channel('notifications-changes')

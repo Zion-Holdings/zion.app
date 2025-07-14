@@ -29,4 +29,5 @@ if (pct < 85) {
     console.error('Failed to create GitHub issue:', err);
   }
 } else {
-  // console.log(`Coverage is ${pct}%, which meets the threshold.`
+  console.log(`Coverage is ${pct}%, which meets the threshold.`);
+}

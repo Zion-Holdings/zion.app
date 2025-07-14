@@ -149,9 +149,9 @@ describe('Accessibility Comprehensive Tests - Issue #17', () => {
       const navLinks = screen.getAllByRole('link');
       
       // Tab through navigation items
-      for (let i = 0; i < navLinks.length; i++) {
+      for (let j = 0; j < navLinks.length; j++) {
         await user.tab();
-        expect(navLinks[i]).toHaveFocus();
+        expect(navLinks[j]).toHaveFocus();
       }
     });
 
