@@ -457,7 +457,7 @@ const logAnalyzer = new LogAnalyzer();
  
  
  
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+ 
 export function logErrorWithAnalysis(
   message: string, 
   error?: Error | unknown, 
@@ -468,7 +468,7 @@ export function logErrorWithAnalysis(
 
   // Analyze the error for patterns
   const errorText = error instanceof Error ? error.message : String(error || message);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+   
   const _analysis = logAnalyzer.analyzeError(errorText, context);
 
   if (_analysis) {
