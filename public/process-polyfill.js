@@ -152,12 +152,12 @@
         if (typeof fill === 'string') {
           var encoder = new TextEncoder();
           var fillBytes = encoder.encode(fill);
-          for (var i = 0; i < Math.min(fillBytes.length, size); i++) {
-            buffer[i] = fillBytes[i];
+          for (var k = 0; k < Math.min(fillBytes.length, size); k++) {
+            buffer[k] = fillBytes[k];
           }
         } else {
-          for (var i = 0; i < size; i++) {
-            buffer[i] = fill;
+          for (var l = 0; l < size; l++) {
+            buffer[l] = fill;
           }
         }
       }
