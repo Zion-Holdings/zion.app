@@ -42,9 +42,38 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
 
   useEffect(() => {
     if (jobId) {
-      loadJobData();
+      setIsFormLoading(true);
+      getJobById(jobId)
+        .then((job) => {
+          if (job) {
+            const currentValues = form.getValues();
+            Object.entries(job).forEach(([key, value]) => {
+              if (key === 'published_date' && value) {
+                setStartDate(new Date(value as string));
+                setValue('published_date', value as string);
+              } else if (key === 'expiry_date' && value) {
+                setEndDate(new Date(value as string));
+                setValue('expiry_date', value as string);
+              } else if (key === 'is_remote') {
+                setIsRemote(value as boolean);
+              } else if (key === 'description') {
+                setEditorContent(value as string);
+                setValue('description', value as string);
+              } else if (key in currentValues) {
+                setValue(key as keyof JobSchemaType, value as JobSchemaType[keyof JobSchemaType]);
+              }
+            });
+          }
+        })
+        .catch((error) => {
+          logErrorToProduction('Failed to load job:', { data: error });
+          toast.error("Failed to load job");
+        })
+        .finally(() => {
+          setIsFormLoading(false);
+        });
     }
-  }, [jobId, form]);
+  }, [jobId, getJobById, setValue, setStartDate, setEndDate, setIsRemote, setEditorContent, form]);
 
   const handleEditorChange = useCallback((value: string) => {
     setEditorContent(value);
