@@ -2,7 +2,6 @@
 const { execSync, spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
-const process = require('process');
 const { runPreDeployChecks, analyzeAndReport } = require('./deploy-optimization.cjs');
 
 // Enhanced memory and performance optimizations
@@ -100,14 +99,14 @@ const optimizedEnv = {
 
 // Enhanced memory monitoring
 const startTime = Date.now();
-let buildProcess;
+let _buildProcess;
 
 // Build command with enhanced options
-const buildCommand = process.argv.includes('--analyze') 
+const _buildCommand = process.argv.includes('--analyze') 
   ? "npx next build --no-lint && npx @next/bundle-analyzer"
   : "npx next build --no-lint";
 
-// console.log(`📦 Build command: ${buildCommand}`);
+// console.log(`📦 Build command: ${_buildCommand}`);
 
 // Install TypeScript in production mode
 // console.log('📦 Ensuring TypeScript is available...');
@@ -131,7 +130,7 @@ try {
   process.exit(1);
 }
 
-async function main() {
+async function _main() {
   try {
     // console.log("\n🔍 Running Pre-Deployment Checks...");
     const preCheckResults = await runPreDeployChecks();
@@ -150,8 +149,8 @@ async function main() {
     // console.log("\n🔍 Pre-build validation...");
 
     // Check for common issues before building
-  const nextConfigPath = path.join(process.cwd(), 'next.config.js');
-  if (fs.existsSync(nextConfigPath)) {
+  const _nextConfigPath = path.join(process.cwd(), 'next.config.js');
+  if (fs.existsSync(_nextConfigPath)) {
     // console.log("✅ next.config.js found");
   } else {
     console.warn("⚠️  next.config.js not found");
@@ -160,20 +159,20 @@ async function main() {
   // Enhanced build execution with better error handling
   // console.log("\n🏗️  Starting build process...");
   
-  buildProcess = spawn('npx', ['next', 'build', '--no-lint'], {
+  _buildProcess = spawn('npx', ['next', 'build', '--no-lint'], {
     env: optimizedEnv,
     stdio: 'inherit',
     shell: true
   });
   
-  buildProcess.on('error', (error) => {
+  _buildProcess.on('error', (error) => {
     console.error("❌ Build process error:", error.message);
     process.exit(1);
   });
   
-  buildProcess.on('close', (code) => {
+  _buildProcess.on('close', (code) => {
     const endTime = Date.now();
-    const buildTime = ((endTime - startTime) / 1000).toFixed(1);
+    const _buildTime = ((endTime - startTime) / 1000).toFixed(1);
     
     if (code === 0) {
       // console.log("\n✅ Enhanced build completed successfully!");
@@ -194,13 +193,13 @@ async function main() {
       // Post-build verification
       // console.log("\n🔍 Verifying build output...");
       
-      const nextDir = path.join(process.cwd(), '.next');
-      const serverDir = path.join(nextDir, 'server');
-      const staticDir = path.join(nextDir, 'static');
+      const _nextDir = path.join(process.cwd(), '.next');
+      const _serverDir = path.join(_nextDir, 'server');
+      const _staticDir = path.join(_nextDir, 'static');
       
-      // console.log(fs.existsSync(nextDir) ? "✅ Next.js build directory created" : "❌ Build directory missing");
-      // console.log(fs.existsSync(serverDir) ? "✅ Server directory generated" : "❌ Server directory missing");
-      // console.log(fs.existsSync(staticDir) ? "✅ Static assets directory generated" : "❌ Static directory missing");
+      // console.log(fs.existsSync(_nextDir) ? "✅ Next.js build directory created" : "❌ Build directory missing");
+      // console.log(fs.existsSync(_serverDir) ? "✅ Server directory generated" : "❌ Server directory missing");
+      // console.log(fs.existsSync(_staticDir) ? "✅ Static assets directory generated" : "❌ Static directory missing");
       // console.log("✅ Next.js build ready for Netlify plugin");
       
       // Enhanced performance report
@@ -217,18 +216,18 @@ async function main() {
       // console.log("- Thread pool: ✅ Limited to 4 threads");
       // console.log("- Output mode: ✅ Standard Next.js (supports ISR & API routes)");
       // console.log("- Plugin: ✅ Auto-detected Netlify Next.js plugin");
-      // console.log(`- Build time: ✅ ${buildTime} seconds`);
+      // console.log(`- Build time: ✅ ${_buildTime} seconds`);
       // console.log("- Pages processed: ~176 pages");
       // console.log("- ISR & API routes: ✅ Fully supported");
       // console.log("- Bundle optimization: ✅ Chunk splitting enabled");
       
       // Bundle size analysis
       try {
-        const buildManifest = path.join(nextDir, 'build-manifest.json');
-        if (fs.existsSync(buildManifest)) {
-          const manifest = JSON.parse(fs.readFileSync(buildManifest, 'utf8'));
-          const pageCount = Object.keys(manifest.pages || {}).length;
-          // console.log(`- Total pages in manifest: ${pageCount}`);
+        const _buildManifest = path.join(_nextDir, 'build-manifest.json');
+        if (fs.existsSync(_buildManifest)) {
+          const manifest = JSON.parse(fs.readFileSync(_buildManifest, 'utf8'));
+          const _pageCount = Object.keys(manifest.pages || {}).length;
+          // console.log(`- Total pages in manifest: ${_pageCount}`);
         }
       } catch (manifestError) {
         // console.log("- Manifest analysis: ⚠️  Could not analyze build manifest");
@@ -244,16 +243,16 @@ async function main() {
   // Handle process termination gracefully
   process.on('SIGINT', () => {
     console.log('\n🛑 Build interrupted by user');
-    if (buildProcess) {
-      buildProcess.kill('SIGTERM');
+    if (_buildProcess) {
+      _buildProcess.kill('SIGTERM');
     }
     process.exit(1);
   });
   
   process.on('SIGTERM', () => {
     console.log('\n🛑 Build terminated');
-    if (buildProcess) {
-      buildProcess.kill('SIGTERM');
+    if (_buildProcess) {
+      _buildProcess.kill('SIGTERM');
     }
     process.exit(1);
   });
@@ -324,28 +323,28 @@ async function executeBuildSequence() {
 
   try {
     // console.log("\n🔍 Pre-build validation...");
-    const nextConfigPath = path.join(process.cwd(), 'next.config.js');
-    if (fs.existsSync(nextConfigPath)) {
+    const _nextConfigPath = path.join(process.cwd(), 'next.config.js');
+    if (fs.existsSync(_nextConfigPath)) {
       // console.log("✅ next.config.js found");
     } else {
       console.warn("⚠️  next.config.js not found");
     }
 
     // console.log("\n🏗️  Starting build process...");
-    buildProcess = spawn('npx', ['next', 'build', '--no-lint'], {
+    _buildProcess = spawn('npx', ['next', 'build', '--no-lint'], {
       env: optimizedEnv,
       stdio: 'inherit',
       shell: true
     });
 
-    buildProcess.on('error', (error) => {
+    _buildProcess.on('error', (error) => {
       console.error("❌ Build process error:", error.message);
       process.exit(1);
     });
 
-    buildProcess.on('close', async (code) => { // Made this handler async
+    _buildProcess.on('close', async (code) => { // Made this handler async
       const endTime = Date.now();
-      const buildTime = ((endTime - startTime) / 1000).toFixed(1);
+      const _buildTime = ((endTime - startTime) / 1000).toFixed(1);
 
       if (code === 0) {
         // console.log("\n✅ Enhanced build completed successfully!");
@@ -363,17 +362,17 @@ async function executeBuildSequence() {
         }
 
         // console.log("\n🔍 Verifying build output...");
-        const nextDir = path.join(process.cwd(), '.next');
-        const serverDir = path.join(nextDir, 'server');
-        const staticDir = path.join(nextDir, 'static');
-        // console.log(fs.existsSync(nextDir) ? "✅ Next.js build directory created" : "❌ Build directory missing");
-        // console.log(fs.existsSync(serverDir) ? "✅ Server directory generated" : "❌ Server directory missing");
-        // console.log(fs.existsSync(staticDir) ? "✅ Static assets directory generated" : "❌ Static directory missing");
+        const _nextDir = path.join(process.cwd(), '.next');
+        const _serverDir = path.join(_nextDir, 'server');
+        const _staticDir = path.join(_nextDir, 'static');
+        // console.log(fs.existsSync(_nextDir) ? "✅ Next.js build directory created" : "❌ Build directory missing");
+        // console.log(fs.existsSync(_serverDir) ? "✅ Server directory generated" : "❌ Server directory missing");
+        // console.log(fs.existsSync(_staticDir) ? "✅ Static assets directory generated" : "❌ Static directory missing");
         // console.log("✅ Next.js build ready for Netlify plugin");
 
         // console.log("\n📊 Enhanced Build Performance Report (details from optimized-build.cjs):");
         // ... (original report logs) ...
-        // console.log(`- Build time: ✅ ${buildTime} seconds`);
+        // console.log(`- Build time: ✅ ${_buildTime} seconds`);
 
         // Apply Netlify self fix
         try {
@@ -405,13 +404,13 @@ async function executeBuildSequence() {
 
     process.on('SIGINT', () => {
       console.log('\n🛑 Build interrupted by user');
-      if (buildProcess) buildProcess.kill('SIGTERM');
+      if (_buildProcess) _buildProcess.kill('SIGTERM');
       process.exit(1);
     });
 
     process.on('SIGTERM', () => {
       console.log('\n🛑 Build terminated');
-      if (buildProcess) buildProcess.kill('SIGTERM');
+      if (_buildProcess) _buildProcess.kill('SIGTERM');
       process.exit(1);
     });
 
