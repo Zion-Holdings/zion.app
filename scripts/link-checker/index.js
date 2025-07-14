@@ -62,7 +62,7 @@ function extractLinksFromJsx(jsxContent, filePath) {
         }
       }
       for (const key in node) {
-        if (node.hasOwnProperty(key) && typeof node[key] === 'object' && node[key] !== null) {
+        if (Object.prototype.hasOwnProperty.call(node, key) && typeof node[key] === 'object' && node[key] !== null) {
           if (Array.isArray(node[key])) {
             node[key].forEach(visit);
           } else {
