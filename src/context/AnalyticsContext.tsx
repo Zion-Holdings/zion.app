@@ -63,7 +63,7 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
       type,
       timestamp: Date.now(),
       path: router.pathname,
-      userId: user?.id,
+      userId: user?.id ?? null,
       metadata: {
         ...metadata,
         userAgent: typeof window !== 'undefined' ? window.navigator.userAgent : undefined,
