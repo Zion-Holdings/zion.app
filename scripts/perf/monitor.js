@@ -1,5 +1,4 @@
 const cron = require('node-cron');
-const fetch = require('node-fetch');
 const fs = require('fs');
 const path = require('path');
 const { exec } = require('child_process');
@@ -58,11 +57,11 @@ function logSlowResponses(results) {
 
 function restartService() {
   const cmd = process.env.RESTART_CMD || 'pm2 restart all';
-  exec(cmd, (err, stdout, stderr) => {
+  exec(cmd, (err, _stdout, _stderr) => {
     if (err) {
       console.error('Service restart failed:', err.message);
     } else {
-      // console.log('Service restarted:', stdout || stderr);
+      // console.log('Service restarted:', _stdout || _stderr);
     }
   });
 }
