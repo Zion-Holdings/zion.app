@@ -35,14 +35,14 @@ function collectRoutes(dir, parent = '') {
 function routeToRegex(route) {
   return new RegExp('^' + route
     .replace(/\/\*/g, '(?:.*)')
-    .replace(/:[^\/]+/g, '[^/]+')
-    .replace(/\//g, '\\/') + '$');
+    .replace(/:[^/]+/g, '[^/]+')
+    .replace(/\//g, '/') + '$');
 }
 
 function collectLinks(searchDirs) {
   const links = new Set();
   const fileRegex = /\.(ts|tsx|js|jsx)$/;
-  const linkRegex = /(href|to)=\"(\/[^\"#?]+)\"/g;
+  const linkRegex = /(href|to)="(\/[^"#?]+)"/g;
   for (const dir of searchDirs) {
     if (!fs.existsSync(dir)) continue;
     const stack = [dir];
