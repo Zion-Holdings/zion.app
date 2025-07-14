@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
-const path = require('path');
+const _path = require('path');
 const { execSync } = require('child_process');
 
 class LucideOptimizer {
@@ -12,19 +12,19 @@ class LucideOptimizer {
   }
 
   async optimizeAll() {
-    console.log('🚀 Starting lucide-react import optimization...');
-    console.log('This will significantly reduce bundle size by optimizing icon imports.\n');
+    // console.log('🚀 Starting lucide-react import optimization...');
+    // console.log('This will significantly reduce bundle size by optimizing icon imports.\n');
 
     // Find all files with lucide-react imports
     const files = await this.findLucideImports();
-    console.log(`📁 Found ${files.length} files with lucide-react imports`);
+    // console.log(`📁 Found ${files.length} files with lucide-react imports`);
 
     for (const file of files) {
       try {
         await this.optimizeFile(file);
       } catch (error) {
         this.errors.push({ file, error: error.message });
-        console.error(`❌ Error optimizing ${file}: ${error.message}`);
+        // console.error(`❌ Error optimizing ${file}: ${error.message}`);
       }
     }
 
@@ -43,7 +43,7 @@ class LucideOptimizer {
         !file.includes('optimize-lucide-imports.cjs')
       );
     } catch (error) {
-      console.error('Error finding lucide imports:', error);
+      // console.error('Error finding lucide imports:', error);
       return [];
     }
   }
@@ -68,7 +68,7 @@ class LucideOptimizer {
     // Pattern 2: Wildcard imports (like in Categories.tsx)
     const wildcardPattern = /import\s*\*\s*as\s*(\w+)\s*from\s*['"]lucide-react['"];?/g;
     if (wildcardPattern.test(content)) {
-      console.log(`⚠️  Wildcard import found in ${filePath} - manual review needed`);
+      // console.log(`⚠️  Wildcard import found in ${filePath} - manual review needed`);
       this.errors.push({ 
         file: filePath, 
         error: 'Wildcard import requires manual optimization' 
@@ -80,7 +80,7 @@ class LucideOptimizer {
       fs.writeFileSync(filePath, optimizedContent);
       this.optimizedCount++;
       this.processed.push(filePath);
-      console.log(`✅ Optimized ${filePath}`);
+      // console.log(`✅ Optimized ${filePath}`);
     }
   }
 
@@ -91,32 +91,32 @@ class LucideOptimizer {
   }
 
   printSummary() {
-    console.log('\n' + '='.repeat(60));
-    console.log('📊 OPTIMIZATION SUMMARY');
-    console.log('='.repeat(60));
-    console.log(`✅ Successfully optimized: ${this.optimizedCount} files`);
-    console.log(`❌ Errors encountered: ${this.errors.length} files`);
-    console.log(`📁 Total processed: ${this.processed.length} files\n`);
+    // console.log('\n' + '='.repeat(60));
+    // console.log('📊 OPTIMIZATION SUMMARY');
+    // console.log('='.repeat(60));
+    // console.log(`✅ Successfully optimized: ${this.optimizedCount} files`);
+    // console.log(`❌ Errors encountered: ${this.errors.length} files`);
+    // console.log(`📁 Total processed: ${this.processed.length} files\n`);
 
     if (this.errors.length > 0) {
-      console.log('❌ Files requiring manual review:');
+      // console.log('❌ Files requiring manual review:');
       this.errors.forEach(({ file, error }) => {
-        console.log(`   • ${file}: ${error}`);
+        // console.log(`   • ${file}: ${error}`);
       });
-      console.log('');
+      // console.log('');
     }
 
-    console.log('🎉 Expected Impact:');
-    console.log('   • Bundle size reduction: 60-80%');
-    console.log('   • Faster initial page loads');
-    console.log('   • Improved tree shaking');
-    console.log('   • Better Next.js optimization support\n');
+    // console.log('🎉 Expected Impact:');
+    // console.log('   • Bundle size reduction: 60-80%');
+    // console.log('   • Faster initial page loads');
+    // console.log('   • Improved tree shaking');
+    // console.log('   • Better Next.js optimization support\n');
 
-    console.log('📝 Next steps:');
-    console.log('   1. Test the application locally');
-    console.log('   2. Run build to verify bundle size reduction');
-    console.log('   3. Check for any icon display issues');
-    console.log('   4. Review files with errors manually\n');
+    // console.log('📝 Next steps:');
+    // console.log('   1. Test the application locally');
+    // console.log('   2. Run build to verify bundle size reduction');
+    // console.log('   3. Check for any icon display issues');
+    // console.log('   4. Review files with errors manually\n');
   }
 }
 
