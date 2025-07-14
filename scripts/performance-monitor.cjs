@@ -49,9 +49,9 @@ class PerformanceMonitor {
     for (const { name, check } of checks) {
       try {
         const result = await check();
-        console.log(`${this.colorize('✅', 'green')} ${name}: ${this.colorize(result, 'green')}`);
+        // console.log(`${this.colorize('✅', 'green')} ${name}: ${this.colorize(result, 'green')}`);
       } catch (error) {
-        console.log(`${this.colorize('❌', 'red')} ${name}: ${this.colorize(error.message, 'red')}`);
+        // console.log(`${this.colorize('❌', 'red')} ${name}: ${this.colorize(error.message, 'red')}`);
       }
     }
   }
@@ -117,7 +117,7 @@ class PerformanceMonitor {
   analyzeBundle() {
     const buildDir = path.join(process.cwd(), '.next');
     if (!fs.existsSync(buildDir)) {
-      console.log(this.colorize('⚠️  No build found. Run npm run build first.', 'yellow'));
+      // console.log(this.colorize('⚠️  No build found. Run npm run build first.', 'yellow'));
       return;
     }
 
@@ -126,14 +126,14 @@ class PerformanceMonitor {
     if (fs.existsSync(staticDir)) {
       const chunks = this.getChunkInfo(staticDir);
       
-      console.log(this.colorize(`📊 Total Chunks: ${chunks.length}`, 'blue'));
-      console.log(this.colorize(`📏 Total Size: ${this.formatBytes(chunks.reduce((sum, chunk) => sum + chunk.size, 0))}`, 'blue'));
+      // console.log(this.colorize(`📊 Total Chunks: ${chunks.length}`, 'blue'));
+      // console.log(this.colorize(`📏 Total Size: ${this.formatBytes(chunks.reduce((sum, chunk) => sum + chunk.size, 0))}`, 'blue'));
       
       // Show largest chunks
       const largest = chunks.sort((a, b) => b.size - a.size).slice(0, 5);
-      console.log(this.colorize('\n🔥 Largest Chunks:', 'yellow'));
+      // console.log(this.colorize('\n🔥 Largest Chunks:', 'yellow'));
       largest.forEach((chunk, i) => {
-        console.log(`${i + 1}. ${chunk.name} - ${this.formatBytes(chunk.size)}`);
+        // console.log(`${i + 1}. ${chunk.name} - ${this.formatBytes(chunk.size)}`);
       });
 
       // Categorize chunks
@@ -188,11 +188,11 @@ class PerformanceMonitor {
       }
     });
 
-    console.log(this.colorize('\n📂 Chunk Categories:', 'magenta'));
+    // console.log(this.colorize('\n📂 Chunk Categories:', 'magenta'));
     Object.entries(categories).forEach(([category, categoryChunks]) => {
       if (categoryChunks.length > 0) {
         const totalSize = categoryChunks.reduce((sum, chunk) => sum + chunk.size, 0);
-        console.log(`${category}: ${categoryChunks.length} chunks (${this.formatBytes(totalSize)})`);
+        // console.log(`${category}: ${categoryChunks.length} chunks (${this.formatBytes(totalSize)})`);
       }
     });
   }
@@ -228,11 +228,11 @@ class PerformanceMonitor {
     ];
 
     recommendations.forEach(({ category, items }) => {
-      console.log(this.colorize(category, 'yellow'));
+      // console.log(this.colorize(category, 'yellow'));
       items.forEach(item => {
-        console.log(`  • ${item}`);
+        // console.log(`  • ${item}`);
       });
-      console.log('');
+      // console.log('');
     });
   }
 
@@ -249,7 +249,7 @@ class PerformanceMonitor {
       try {
         history = JSON.parse(fs.readFileSync(this.metricsFile, 'utf8'));
       } catch (error) {
-        console.log(this.colorize('⚠️  Could not read existing metrics', 'yellow'));
+        // console.log(this.colorize('⚠️  Could not read existing metrics', 'yellow'));
       }
     }
 
@@ -259,21 +259,21 @@ class PerformanceMonitor {
 
     // Save to file
     fs.writeFileSync(this.metricsFile, JSON.stringify(history, null, 2));
-    console.log(this.colorize('\n💾 Metrics saved to .next/performance-metrics.json', 'green'));
+    // console.log(this.colorize('\n💾 Metrics saved to .next/performance-metrics.json', 'green'));
   }
 
   async run() {
     const startTime = Date.now();
     
-    console.log(this.colorize('🚀 Performance Monitor', 'bright'));
-    console.log(this.colorize('====================', 'cyan'));
+    // console.log(this.colorize('🚀 Performance Monitor', 'bright'));
+    // console.log(this.colorize('====================', 'cyan'));
     
     await this.runHealthCheck();
     this.analyzeBundle();
     this.generateOptimizationReport();
     
     const duration = Date.now() - startTime;
-    console.log(this.colorize(`\n⏱️  Analysis completed in ${this.formatTime(duration)}`, 'green'));
+    // console.log(this.colorize(`\n⏱️  Analysis completed in ${this.formatTime(duration)}`, 'green'));
     
     // Save basic metrics
     this.saveMetrics({
