@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 import fs from 'fs';
 import path from 'path';
-import fetch from 'node-fetch';
 
 const {
   BACKLINK_API_URL: apiUrl,
