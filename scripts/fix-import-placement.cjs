@@ -198,8 +198,8 @@ class ImportFixer {
 // CLI interface
 if (require.main === module) {
   const fixer = new ImportFixer();
-  fixer.processAllFiles().catch(error => {
-    // console.error('💥 Fatal error:', error);
+  fixer.processAllFiles().catch(_error => {
+    // console.error('💥 Fatal error:', _error);
     process.exit(1);
   });
 }
