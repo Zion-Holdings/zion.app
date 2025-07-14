@@ -172,15 +172,15 @@ class ImportFixer {
 
     if (results.length > 0) {
       // console.log('\n📝 Fixed files:');
-      results.forEach(({ file, importsFixed }) => {
-        // console.log(`   ${file}: ${importsFixed} imports moved`);
+      results.forEach(({ file: _file, importsFixed: _importsFixed }) => {
+        // console.log(`   ${_file}: ${_importsFixed} imports moved`);
       });
     }
 
     if (this.errors.length > 0) {
       // console.log('\n⚠️  Errors:');
-      this.errors.forEach(({ file, error }) => {
-        // console.log(`   ${file}: ${error}`);
+      this.errors.forEach(({ file: _file, error: _error }) => {
+        // console.log(`   ${_file}: ${_error}`);
       });
     }
 
