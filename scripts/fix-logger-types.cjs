@@ -174,8 +174,8 @@ class LoggerTypeFixer {
 
     if (this.errors.length > 0) {
       console.warn('\n⚠️  Errors:');
-      this.errors.forEach(({ file, error }) => {
-        console.warn(`   ${file}: ${error && error.message ? error.message : String(error)}`);
+      this.errors.forEach(({ file, error: _error }) => {
+        console.warn(`   ${file}: ${_error && _error.message ? _error.message : String(_error)}`);
       });
     }
   }
