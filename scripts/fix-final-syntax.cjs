@@ -6,7 +6,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const glob = require('glob');
+const _glob = require('glob');
 
 const PROJECT_ROOT = process.cwd();
 
@@ -56,12 +56,12 @@ function fixFile(filePath) {
 
 // console.log('🔧 Fixing final syntax issues...');
 
-let fixedCount = 0;
+let _fixedCount = 0;
 for (const file of filesToFix) {
   if (fixFile(file)) {
-    fixedCount++;
+    _fixedCount++;
   }
 }
 
-// console.log(`\n✅ Fixed ${fixedCount} files`);
+// console.log(`\n✅ Fixed ${_fixedCount} files`);
 // console.log('🎉 Final syntax fixes complete!'); 
