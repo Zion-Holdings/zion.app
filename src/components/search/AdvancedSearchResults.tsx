@@ -374,16 +374,18 @@ export const AdvancedSearchResults: React.FC = () => {
     if (!searchTerm.trim()) {
       setResults([]);
       setTotalCount(0);
+      setLoading(false);
       return;
     }
-
     setLoading(true);
     try {
-      const searchFilters = newFilters || filters;
+      const searchFilters = filters;
       const params = new URLSearchParams({
-        query: term,
-        page: page.toString(),
-        limit: '20'
+        query: searchTerm,
+        page: currentPage.toString(),
+        ...searchFilters,
+        sortBy: filters.sort,
+        itemsPerPage: '20'
       });
 
       if (searchFilters.types.length > 0) {
@@ -408,7 +410,7 @@ export const AdvancedSearchResults: React.FC = () => {
       const response = await fetch(`/api/search?${params}`);
       const data: SearchResponse = await response.json();
 
-      if (page === 1) {
+      if (currentPage === 1) {
         setResults(data.results);
       } else {
         setResults(prev => [...prev, ...data.results]);
@@ -419,7 +421,7 @@ export const AdvancedSearchResults: React.FC = () => {
       setHasMore(data.hasMore);
 
       logInfo('Search completed', { 
-        term, 
+        term: searchTerm, 
         resultCount: data.results.length, 
         totalCount: data.totalCount 
       });
@@ -430,12 +432,12 @@ export const AdvancedSearchResults: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  }, [searchTerm, filters, performSearch]);
+  }, [searchTerm, filters, currentPage]);
 
   // Search when term or filters change
   useEffect(() => {
     if (searchTerm.trim()) {
-      performSearch(searchTerm, 1, filters);
+      performSearch();
       setCurrentPage(1);
     }
   }, [searchTerm, filters, performSearch]);
@@ -454,7 +456,7 @@ export const AdvancedSearchResults: React.FC = () => {
   // Load more results
   const loadMore = () => {
     if (hasMore && !loading) {
-      performSearch(searchTerm, currentPage + 1);
+      performSearch();
     }
   };
 
