@@ -185,7 +185,7 @@ async function _main() {
             env: optimizedEnv,
             stdio: 'inherit' 
           });
-        } catch (analyzeError) {
+        } catch (_analyzeError) {
           console.warn("⚠️  Bundle analysis failed, but build was successful");
         }
       }
