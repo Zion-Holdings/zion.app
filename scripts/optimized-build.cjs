@@ -229,7 +229,7 @@ async function _main() {
           const _pageCount = Object.keys(manifest.pages || {}).length;
           // console.log(`- Total pages in manifest: ${_pageCount}`);
         }
-      } catch (manifestError) {
+      } catch (_manifestError) {
         // console.log("- Manifest analysis: ⚠️  Could not analyze build manifest");
       }
       
@@ -356,7 +356,7 @@ async function executeBuildSequence() {
               env: optimizedEnv,
               stdio: 'inherit'
             });
-          } catch (analyzeError) {
+          } catch (_analyzeError) {
             console.warn("⚠️  Bundle analysis failed, but build was successful");
           }
         }
