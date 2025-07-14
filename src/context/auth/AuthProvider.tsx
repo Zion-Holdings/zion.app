@@ -29,8 +29,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const dispatch = useDispatch<AppDispatch>();
   const { handleSignedIn, handleSignedOut } = useAuthEventHandlers(setUser, setOnboardingStep, router);
   const {
-    login: signInImpl,
-    signUp: signUpImpl,
+    login: _signInImpl,
+    signUp: _signUpImpl,
     logout,
     resetPassword,
     updateProfile,
@@ -322,7 +322,13 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     return () => {
       subscription.unsubscribe();
     };
-  }, [router, dispatch, handleSignedIn, handleSignedOut, setOnboardingStep, setUser, setAvatarUrl, setTokens, isLoading]); // Added router and other dependencies
+  }, [router, dispatch, handleSignedIn, handleSignedOut, setOnboardingStep, setUser, setAvatarUrl, setTokens, isLoading, user]); // Added router and other dependencies
+
+  useEffect(() => {
+    if (user) {
+      setIsLoading(false);
+    }
+  }, [user, setIsLoading]);
 
   if (!isSupabaseConfigured) {
     logger.warn('[AuthProvider] Supabase not configured - using fallback auth state');
