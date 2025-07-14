@@ -152,7 +152,7 @@ function validateInternalLink(linkUrl, projectRoot) {
                 if (dynamicMatch && i === pathSegments.length -1) { // Dynamic part must be the last segment checked here
                     return { status: 'internal_dynamic_route_exists', resolvedPath: path.join(currentPathForDynamicCheck, dynamicMatch) };
                 }
-            } catch (e) {
+            } catch (_e) {
                 // directory might not exist or not be readable, proceed to next check
             }
             // If not the last segment or no dynamic match, break and consider it broken by later checks
@@ -268,26 +268,26 @@ async function main(projectRoot = '.') {
     results = results.concat(chunkResults);
 
     chunkResults.forEach(result => {
-      const location = `${result.file}${result.line ? ':'+result.line : ''}`;
+      const _location = `${result.file}${result.line ? ':'+result.line : ''}`;
       if (result.status === 'skipped (special_protocol)') {
-        // console.log(chalk.gray(`SKIPPED: ${result.url} (in ${location})`));
+        // console.log(chalk.gray(`SKIPPED: ${result.url} (in ${_location})`));
       } else if (result.status === 'internal_ok') {
-        // console.log(chalk.green(`OK (Internal): ${result.url} -> ${path.relative(absoluteProjectRoot,result.resolvedPath)} (in ${location})`));
+        // console.log(chalk.green(`OK (Internal): ${result.url} -> ${path.relative(absoluteProjectRoot,result.resolvedPath)} (in ${_location})`));
       } else if (result.status === 'internal_dynamic_route_exists') {
-        // console.log(chalk.cyan(`OK (Internal Dynamic): ${result.url} -> ${path.relative(absoluteProjectRoot,result.resolvedPath)} (in ${location})`));
+        // console.log(chalk.cyan(`OK (Internal Dynamic): ${result.url} -> ${path.relative(absoluteProjectRoot,result.resolvedPath)} (in ${_location})`));
       } else if (result.status === 'internal_broken') {
         brokenInternal++;
-        // console.log(chalk.red.bold(`BROKEN (Internal): ${result.url} (in ${location})`));
+        // console.log(chalk.red.bold(`BROKEN (Internal): ${result.url} (in ${_location})`));
         if (result.reason) console.warn(chalk.red(`  Reason: ${result.reason}`));
       } else if (result.status === 200) {
-        // console.log(chalk.green(`OK (200 External): ${result.url} (in ${location})`));
+        // console.log(chalk.green(`OK (200 External): ${result.url} (in ${_location})`));
       } else if (typeof result.status === 'number' && result.status >= 400) {
         brokenExternal++;
-        // console.log(chalk.red.bold(`BROKEN (${result.status} External): ${result.url} (in ${location})`));
+        // console.log(chalk.red.bold(`BROKEN (${result.status} External): ${result.url} (in ${_location})`));
         if (result.error) console.warn(chalk.red(`  Error: ${result.error}`));
       } else { // Operational errors for external links
         operationalErrors++;
-        // console.log(chalk.yellow(`ERROR (${result.status} External): ${result.url} (in ${location})`));
+        // console.log(chalk.yellow(`ERROR (${result.status} External): ${result.url} (in ${_location})`));
         if (result.error) console.warn(chalk.yellow(`  Issue: ${result.error}`));
       }
     });
