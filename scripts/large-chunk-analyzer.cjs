@@ -154,21 +154,21 @@ function analyzeLargeChunks() {
       
       const chunkPath = path.join(staticPath, chunk);
       const stats = fs.statSync(chunkPath);
-      const size = stats.size;
+      const _size = stats.size;
       
       results.totalAnalyzed++;
-      results.totalSize += size;
+      results.totalSize += _size;
       
-      if (size > TARGET_SIZE) {
+      if (_size > TARGET_SIZE) {
         const category = analyzeChunkContent(chunk);
-        const strategy = getOptimizationStrategy(category, size);
+        const strategy = getOptimizationStrategy(category, _size);
         
         results.largeChunks.push({
           name: chunk,
-          size,
-          sizeFormatted: formatBytes(size),
-          overTarget: size - TARGET_SIZE,
-          overTargetFormatted: formatBytes(size - TARGET_SIZE),
+          size: _size,
+          sizeFormatted: formatBytes(_size),
+          overTarget: _size - TARGET_SIZE,
+          overTargetFormatted: formatBytes(_size - TARGET_SIZE),
           category,
           strategy
         });
@@ -201,18 +201,18 @@ function generateDetailedReport() {
   // console.log(`🔍 LARGE CHUNKS BREAKDOWN:`);
   // console.log(`=========================`);
   
-  analysis.largeChunks.forEach((chunk, index) => {
-    const urgency = chunk.strategy.priority === 'critical' ? '🚨' : 
+  analysis.largeChunks.forEach((chunk, _index) => {
+    const _urgency = chunk.strategy.priority === 'critical' ? '🚨' : 
                    chunk.strategy.priority === 'high' ? '⚠️' : 
                    chunk.strategy.priority === 'medium' ? '📊' : '📝';
     
-    // console.log(`${index + 1}. ${urgency} ${chunk.name}`);
+    // console.log(`${_index + 1}. ${_urgency} ${chunk.name}`);
     // console.log(`   Size: ${chunk.sizeFormatted} (+${chunk.overTargetFormatted} over target)`);
     // console.log(`   Category: ${chunk.category}`);
     // console.log(`   Priority: ${chunk.strategy.priority}`);
     
-    chunk.strategy.actions.forEach(action => {
-      // console.log(`   • ${action}`);
+    chunk.strategy.actions.forEach(_action => {
+      // console.log(`   • ${_action}`);
     });
     // console.log();
   });
@@ -241,10 +241,10 @@ function generateDetailedReport() {
       // console.log(`🔧 ${category.toUpperCase()}: ${stats.count} chunks, ${formatBytes(stats.totalSize)}`);
       // console.log(`   Chunks: ${stats.chunks.join(', ')}`);
       
-      const strategy = getOptimizationStrategy(category, stats.totalSize);
-      // console.log(`   Priority: ${strategy.priority}`);
+      const _strategy = getOptimizationStrategy(category, stats.totalSize);
+      // console.log(`   Priority: ${_strategy.priority}`);
       // console.log(`   Actions:`);
-      // strategy.actions.forEach(action => {
+      // _strategy.actions.forEach(action => {
       //   console.log(`     • ${action}`);
       // });
       // console.log();
@@ -329,7 +329,7 @@ try {
   }
   
   process.exit(success ? 0 : 1);
-} catch (error) {
-  // console.error('❌ Error during large chunk analysis:', error.message);
+} catch (_error) {
+  // console.error('❌ Error during large chunk analysis:', _error.message);
   process.exit(1);
 }
