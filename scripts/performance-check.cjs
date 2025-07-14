@@ -314,15 +314,15 @@ class PerformanceChecker {
 
     if (this.results.warnings.length > 0) {
       // console.log('\nWarnings:');
-      this.results.warnings.forEach(warning => {
-        // console.log(`  ⚠️ ${warning}`);
+      this.results.warnings.forEach(_warning => {
+        // console.log(`  ⚠️ ${_warning}`);
       });
     }
 
     if (this.results.errors.length > 0) {
       // console.log('\nErrors:');
-      this.results.errors.forEach(error => {
-        // console.log(`  ❌ ${error}`);
+      this.results.errors.forEach(_error => {
+        // console.log(`  ❌ ${_error}`);
       });
     }
 
@@ -365,8 +365,8 @@ if (require.main === module) {
     .then(results => {
       process.exit(results.overall === 'fail' ? 1 : 0);
     })
-    .catch(error => {
-      // console.error('❌ Performance check failed:', error);
+    .catch(_error => {
+      // console.error('❌ Performance check failed:', _error);
       process.exit(1);
     });
 }
