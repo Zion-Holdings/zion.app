@@ -132,8 +132,8 @@ class PerformanceMonitor {
       // Show largest chunks
       const largest = chunks.sort((a, b) => b.size - a.size).slice(0, 5);
       // console.log(this.colorize('\n🔥 Largest Chunks:', 'yellow'));
-      largest.forEach((chunk, i) => {
-        // console.log(`${i + 1}. ${chunk.name} - ${this.formatBytes(chunk.size)}`);
+      largest.forEach((_chunk, _i) => {
+        // console.log(`${_i + 1}. ${_chunk.name} - ${this.formatBytes(_chunk.size)}`);
       });
 
       // Categorize chunks
