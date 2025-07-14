@@ -28,10 +28,10 @@ if (!hasEnvLocal) {
 
 // Check package.json for performance scripts
 const packageJsonPath = path.join(process.cwd(), 'package.json');
-let packageJson = {};
+let _packageJson = {};
 try {
-  packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
-} catch (error) {
+  _packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+} catch (_error) {
   process.stdout.write('\u274c Could not read package.json\n');
 }
 
