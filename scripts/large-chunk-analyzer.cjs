@@ -48,7 +48,7 @@ function analyzeChunkContent(filename) {
 }
 
 // Get optimization strategy for each category
-function getOptimizationStrategy(category, size) {
+function getOptimizationStrategy(category, _size) {
   const strategies = {
     react: {
       priority: 'medium',
