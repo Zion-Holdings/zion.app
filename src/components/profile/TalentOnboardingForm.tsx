@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { _useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -80,7 +80,7 @@ export function TalentOnboardingForm() {
   });
   
   // Handle profile picture upload
-  const handleProfilePictureUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const _handleProfilePictureUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
     
@@ -96,7 +96,7 @@ export function TalentOnboardingForm() {
   };
 
   // Handle CV upload
-  const handleCvUpload = async (file: File) => {
+  const _handleCvUpload = async (file: File) => {
     if (!supabase) {
       throw new Error("Supabase client not initialized");
     }

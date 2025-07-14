@@ -26,10 +26,10 @@ export function ConversationDetailView() {
   
   useEffect(() => {
     if (activeConversation) {
-      loadMessages(activeConversation.id);
+      loadMessages();
     }
     inputRef.current?.focus();
-  }, [activeConversation?.id, loadMessages]);
+  }, [activeConversation, loadMessages]);
   
   useEffect(() => {
     scrollToBottom();
@@ -160,7 +160,7 @@ export function ConversationDetailView() {
             <p>No messages yet. Start the conversation!</p>
           </div>
         ) : (
-          groupedMessages.map((group, groupIndex) => (
+          groupedMessages.map((group, _groupIndex) => (
             <div key={group.date}>
               <DateDivider date={new Date(group.date)} />
               <div className="space-y-3">

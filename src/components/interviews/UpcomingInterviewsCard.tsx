@@ -20,32 +20,8 @@ export function UpcomingInterviewsCard() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const loadInterviews = async () => {
-      setIsLoading(true);
-      try {
-        const interviews = await fetchInterviews();
-        
-        // Filter for confirmed interviews in the future
-        const upcoming = interviews
-          .filter(interview => 
-            interview.status === 'confirmed' && 
-            !isPast(parseISO(interview.scheduled_date))
-          )
-          .sort((a, b) => 
-            parseISO(a.scheduled_date).getTime() - parseISO(b.scheduled_date).getTime()
-          )
-          .slice(0, 3); // Take only the next 3 interviews
-        
-        setUpcomingInterviews(upcoming);
-      } catch (error) {
-        logErrorToProduction('Error loading upcoming interviews:', { data: error });
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    loadInterviews();
-  }, []);
+    fetchInterviews();
+  }, [fetchInterviews]);
 
   if (isLoading) {
     return (

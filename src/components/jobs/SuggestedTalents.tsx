@@ -115,10 +115,8 @@ export function SuggestedTalents({ jobId, jobTitle }: SuggestedTalentsProps) {
   };
 
   useEffect(() => {
-    if (jobId) {
-      fetchSuggestedTalents();
-    }
-  }, [jobId]);
+    fetchSuggestedTalents();
+  }, [fetchSuggestedTalents]);
 
   // Transform data to match JobMatchCard component props
   const transformedTalents = talents.map(talent => {

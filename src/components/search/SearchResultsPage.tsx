@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import { Search, Filter, GridIcon, List, Loader2 } from 'lucide-react';
 
@@ -370,7 +370,7 @@ export const SearchResultsPage: React.FC = () => {
   }, [router.isReady, router.query.q]);
 
   // Search function
-  const performSearch = async (term: string, page: number = 1, newFilters?: SearchFilters) => {
+  const performSearch = useCallback(async (term: string, page: number = 1, newFilters?: SearchFilters) => {
     if (!term.trim()) {
       setResults([]);
       setTotalCount(0);
@@ -430,7 +430,7 @@ export const SearchResultsPage: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [filters]);
 
   // Search when term or filters change
   useEffect(() => {

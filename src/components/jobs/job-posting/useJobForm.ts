@@ -16,7 +16,7 @@ export interface JobPostingProps {
   onSuccess: (() => void) | undefined;
 }
 
-export const useJobForm = ({ jobId, onSuccess }: JobPostingProps) => {
+export const useJobForm = ({ jobId: _jobId, onSuccess }: JobPostingProps) => {
   const { user } = useAuth();
   const router = useRouter();
   

@@ -28,7 +28,7 @@ export function JobApplicationsTable({ jobId }: JobApplicationsTableProps) {
   const [selectedApplication, setSelectedApplication] = useState<JobApplication | null>(null);
   const [showScoreDialog, setShowScoreDialog] = useState(false);
   
-  const handleStatusChange = async (applicationId: string, newStatus: string) => {
+  const handleStatusChange = async (applicationId: string, newStatus: string, _updatedApplication: any) => {
     setProcessingId(applicationId);
     try {
       await updateApplicationStatus(applicationId, newStatus as ApplicationStatus);

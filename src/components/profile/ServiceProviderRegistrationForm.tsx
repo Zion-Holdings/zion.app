@@ -271,7 +271,7 @@ export function ServiceProviderRegistrationForm() {
         }
       } else if (generatedContent) {
         finalSummary = generatedContent.summary;
-        finalServices = [...new Set([...serviceTags, ...generatedContent.services])];
+        const _finalServices = [...new Set([...serviceTags, ...generatedContent.services])];
       }
 
       // Get user email for notification
@@ -282,7 +282,7 @@ export function ServiceProviderRegistrationForm() {
       }
 
       // Create the service profile
-      const { data: profileData, error } = await supabase
+      const { data: _profileData, error } = await supabase
         .from('profiles')
         .update({
           display_name: values.name,

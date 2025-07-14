@@ -24,7 +24,7 @@ export function SuggestedJobs({ talentId }: SuggestedJobsProps) {
     } 
   } = useJobSuggestions(currentTalentId);
 
-  const handleApply = (matchId: string, jobId: string) => {
+  const handleApply = (matchId: string, _jobId: string) => {
     updateJobMatchStatus(matchId, 'applied');
     // In a real app, this might redirect to application form or open a modal
   };

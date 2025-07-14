@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -70,7 +70,7 @@ export function ValidatedFormField({
   const fieldError = isReactHookForm(form) ? form.formState.errors[name] : undefined;
   const isTouched = isReactHookForm(form) ? form.formState.touchedFields[name] : false;
 
-  const validateField = (value: unknown): string | null => {
+  const validateField = useCallback((value: unknown): string | null => {
     if (validation.required && (!value || (typeof value === 'string' && value.trim() === ''))) {
       return `${label} is required`;
     }
@@ -94,7 +94,7 @@ export function ValidatedFormField({
     }
 
     return null;
-  };
+  }, [validation, label]);
 
   useEffect(() => {
     if (!fieldValue || !isTouched) {

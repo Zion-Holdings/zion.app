@@ -44,7 +44,7 @@ export function WebhookManager() {
   
   useEffect(() => {
     fetchWebhooks();
-  }, []);
+  }, [fetchWebhooks]);
   
   const handleAddEvent = () => {
     if (!newWebhook.selectedEvent) return;
