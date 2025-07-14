@@ -51,14 +51,14 @@ class ImportFixer {
       const importLines = [];
       const otherLines = [];
       let inExportFunction = false;
-      let hasExportFunction = false;
+      let _hasExportFunction = false;
 
       for (let i = 0; i < lines.length; i++) {
         const line = lines[i];
         
         // Check if we're entering an export function/component
         if (line.match(/^export\s+(default\s+)?function|^export\s+(default\s+)?(class|const)/)) {
-          hasExportFunction = true;
+          _hasExportFunction = true;
           inExportFunction = true;
         }
 
