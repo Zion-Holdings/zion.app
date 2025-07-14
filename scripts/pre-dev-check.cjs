@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
+const _fs = require('fs');
 
 const requiredDependencies = [
   'react',
