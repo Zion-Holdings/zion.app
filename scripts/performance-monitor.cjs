@@ -109,7 +109,7 @@ class PerformanceMonitor {
       } else {
         return 'Server not running (start with npm run dev)';
       }
-    } catch (error) {
+    } catch (_error) {
       return 'Server not running (start with npm run dev)';
     }
   }
@@ -248,7 +248,7 @@ class PerformanceMonitor {
     if (fs.existsSync(this.metricsFile)) {
       try {
         history = JSON.parse(fs.readFileSync(this.metricsFile, 'utf8'));
-      } catch (error) {
+      } catch (_error) {
         // console.log(this.colorize('⚠️  Could not read existing metrics', 'yellow'));
       }
     }
