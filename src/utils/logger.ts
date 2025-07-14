@@ -81,5 +81,11 @@ class Logger {
 // Export singleton instance
 export const logger = new Logger();
 
+// Export convenience functions for backward compatibility
+export const logWarn = logger.warn.bind(logger);
+export const logError = logger.error.bind(logger);
+export const logInfo = logger.info.bind(logger);
+export const logDebug = logger.debug.bind(logger);
+
 // Export for legacy compatibility
 export default logger; 

@@ -18,6 +18,7 @@ interface SlackRespond {
 // Define console type to avoid TypeScript errors
 interface SafeConsole {
   log: (message: string) => void;
+  warn: (message: string) => void;
 }
 
 // Declare available globals
@@ -43,7 +44,7 @@ class MockApp {
   async start(port?: number): Promise<void> {
     // Safely log without direct console reference
     const safeConsole = typeof globalThis !== 'undefined' ? globalThis.console : undefined;
-    if (safeConsole && safeConsole.log) {
+    if (safeConsole) {
       safeConsole.warn(`⚡️ Mock Zion Slack bot is running on port ${port || 3000}!`);
     }
     return Promise.resolve();
@@ -56,7 +57,7 @@ const app = new MockApp();
 async function askZionGPT(prompt: string): Promise<string> {
   // Safely log without direct console reference
   const safeConsole = typeof globalThis !== 'undefined' ? globalThis.console : undefined;
-  if (safeConsole && safeConsole.log) {
+  if (safeConsole) {
     safeConsole.warn(`ZionGPT was asked: ${prompt}`);
   }
   return `AI response to: ${prompt}`;
@@ -116,15 +117,7 @@ app.command('/zion-rollback', async ({ ack, respond }: { ack: SlackAck, respond:
 async function sendSlackAlert(message: string): Promise<void> {
   // Safely log without direct console reference
   const safeConsole = typeof globalThis !== 'undefined' ? globalThis.console : undefined;
-  if (safeConsole && safeConsole.log) {
+  if (safeConsole) {
     safeConsole.warn(`SLACK_ALERT: ${message}`);
   }
-  // In a real scenario, this would use the Slack API to send a message
-  // For example: await app.client.chat.postMessage({ channel: '#alerts', text: message });
-  return Promise.resolve();
 }
-
-// Export it if it's standalone, or ensure it can be called
-export { sendSlackAlert }; // If standalone
-
-export default app;

@@ -269,9 +269,10 @@ export function ValidatedFormField({
   }
 
   if (type === 'checkbox') {
+    if (!isReactHookForm(form)) return null;
     return (
       <FormField
-        control={isReactHookForm(form) ? (form.control as Control<FieldValues>) : undefined}
+        control={form.control as Control<FieldValues>}
         name={name}
         render={() => (
           <FormItem className="flex flex-row items-start space-x-3 space-y-0">
@@ -296,9 +297,10 @@ export function ValidatedFormField({
     );
   }
 
+  if (!isReactHookForm(form)) return null;
   return (
     <FormField
-      control={isReactHookForm(form) ? (form.control as Control<FieldValues>) : undefined}
+      control={form.control as Control<FieldValues>}
       name={name}
       render={() => (
         <FormItem>

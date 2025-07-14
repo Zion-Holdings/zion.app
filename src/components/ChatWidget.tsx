@@ -4,6 +4,7 @@ import { MessageBubble } from '@/components/messaging/MessageBubble';
 import { Button } from '@/components/ui/button';
 import type { Message } from '@/types/messaging';
 import { safeStorage } from '@/utils/safeStorage';
+// import type { Socket } from 'socket.io-client';
 
 
 interface ChatWidgetProps {
@@ -19,7 +20,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
   const { user } = useAuth();
   const [messages, setMessages] = useState<Message[]>([]);
   const [text, setText] = useState('');
-  const socketRef = useRef<unknown>(null);
+  const socketRef = useRef<any>(null);
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
   // Load stored messages for this room when opened
@@ -39,13 +40,14 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
     if (!isOpen) return;
 
     let isMounted = true;
-    let socket: unknown;
+    // let socket: Socket | null = null;
+    let socket: any = null;
 
     async function setup() {
       const mod = await import('socket.io-client');
-      const io = mod.default as typeof import('socket.io-client').default;
+      const io = mod.default as any;
       if (!isMounted) return;
-      socket = (io as unknown as typeof import('socket.io-client').Socket)({ path: '/api/socket', transports: ['websocket'] });
+      socket = io({ path: '/api/socket', transports: ['websocket'] });
       socketRef.current = socket;
       socket.emit('join-room', roomId);
       socket.on('receive-message', (msg: Message) => {

@@ -1,9 +1,7 @@
 import React, { createContext, useContext, useState, useCallback } from 'react';
 import type { ReactNode } from 'react';
 import { toast } from '@/hooks/use-toast';
-
-
-
+import type { LogContext } from '@/types/common';
 
 
 import {logErrorToProduction} from '@/utils/productionLogger';
@@ -29,7 +27,7 @@ export function GlobalErrorHandler({ children }: GlobalErrorHandlerProps) {
   const reportError = useCallback((error: Error, context?: unknown) => {
     // Log to console for development
     if (process.env.NODE_ENV === 'development') {
-      logErrorToProduction('Global Error Handler:', error, context);
+      logErrorToProduction('Global Error Handler:', error, context as LogContext | undefined);
     }
 
     // Report to Sentry for production

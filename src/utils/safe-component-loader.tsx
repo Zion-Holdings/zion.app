@@ -86,9 +86,9 @@ const DefaultLoading: React.FC = () => {
   }, 'Loading...');
 };
 
-// Safe dynamic component loader
+// Safe dynamic component loader with explicit import function
 export function createSafeComponent(
-  importPath: string,
+  importFn: () => Promise<{ default: React.ComponentType<any> }>,
   fallbackComponent?: React.ComponentType,
   options?: {
     loading?: React.ComponentType;
@@ -97,12 +97,12 @@ export function createSafeComponent(
 ) {
   const SafeComponent = dynamic(
     () => {
-      return import(importPath)
+      return importFn()
         .then(module => {
           // Ensure we have a valid component
           const Component = module.default || module;
           if (!Component || typeof Component !== 'function') {
-            throw new Error(`Invalid component loaded from ${importPath}`);
+            throw new Error(`Invalid component loaded`);
           }
           
           // Wrap component to ensure it has proper structure
@@ -110,7 +110,7 @@ export function createSafeComponent(
             try {
               return React.createElement(Component, props);
             } catch (error) {
-              logErrorToProduction(`Error rendering component from ${importPath}:`, error);
+              logErrorToProduction(`Error rendering component:`, error);
               const Fallback = fallbackComponent || DefaultFallback;
               return React.createElement(Fallback);
             }
@@ -122,7 +122,7 @@ export function createSafeComponent(
               try {
                 return await (Component as unknown as { getInitialProps: (ctx: unknown) => Promise<unknown> }).getInitialProps(ctx);
               } catch (error) {
-                logErrorToProduction(`Error in getInitialProps for ${importPath}:`, error);
+                logErrorToProduction(`Error in getInitialProps:`, error);
                 // Return empty props to prevent the error from crashing the app
                 return {};
               }
@@ -132,7 +132,7 @@ export function createSafeComponent(
           return { default: WrappedComponent };
         })
         .catch((error) => {
-          logErrorToProduction(`Failed to load component from ${importPath}:`, error);
+          logErrorToProduction(`Failed to load component:`, error);
           
           // Create a safe fallback component that handles getInitialProps
           const SafeFallback: React.FC<Record<string, unknown>> = (props: Record<string, unknown>) => {
@@ -144,12 +144,12 @@ export function createSafeComponent(
           (SafeFallback as unknown as { getInitialProps?: (ctx: unknown) => Promise<unknown> }).getInitialProps = async (ctx: unknown) => {
             try {
               // Try to call getInitialProps on the original component if it exists
-              const originalModule = await import(importPath).catch(() => null);
+              const originalModule = await importFn().catch(() => null);
               if (originalModule?.default?.getInitialProps) {
                 return await originalModule.default.getInitialProps(ctx);
               }
             } catch (error) {
-              logErrorToProduction(`Error in fallback getInitialProps for ${importPath}:`, error);
+              logErrorToProduction(`Error in fallback getInitialProps:`, error);
             }
             // Return empty props as final fallback
             return {};
@@ -167,11 +167,11 @@ export function createSafeComponent(
   return SafeComponent;
 }
 
-// Pre-configured safe components for common pages
-export const SafeWalletComponent = createSafeComponent('../pages/Wallet');
-export const SafeWishlistComponent = createSafeComponent('../pages/Wishlist');
-export const SafeTeamComponent = createSafeComponent('../pages/OrgChart');
-export const SafeTalentsComponent = createSafeComponent('../pages/TalentsPage');
+// Pre-configured safe components for common pages with explicit imports
+export const SafeWalletComponent = createSafeComponent(() => import('../pages/Wallet'));
+export const SafeWishlistComponent = createSafeComponent(() => import('../pages/Wishlist'));
+export const SafeTeamComponent = createSafeComponent(() => import('../pages/OrgChart'));
+export const SafeTalentsComponent = createSafeComponent(() => import('../pages/TalentsPage'));
 
 interface SafeComponentLoaderProps {
   loader: () => Promise<{ default: React.ComponentType<object> }>;

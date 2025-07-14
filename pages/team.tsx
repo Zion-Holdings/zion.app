@@ -1,3 +1,3 @@
 import { createSafeComponent } from '../src/utils/safe-component-loader';
 
-export default createSafeComponent('../src/pages/OrgChart');
+export default createSafeComponent(() => import('../src/pages/OrgChart'));
