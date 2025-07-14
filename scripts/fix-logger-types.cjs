@@ -167,15 +167,15 @@ class LoggerTypeFixer {
 
     if (results.length > 0) {
       console.warn('\n📝 Fixed files:');
-      results.forEach(({ file, changesCount }) => {
-        console.warn(`   ${file}: ${changesCount || 1} logger calls fixed`);
+      results.forEach(({ file: _file, changesCount }) => {
+        console.warn(`   ${_file}: ${changesCount || 1} logger calls fixed`);
       });
     }
 
     if (this.errors.length > 0) {
       console.warn('\n⚠️  Errors:');
-      this.errors.forEach(({ file, error: _error }) => {
-        console.warn(`   ${file}: ${_error && _error.message ? _error.message : String(_error)}`);
+      this.errors.forEach(({ file: _file, error: _error }) => {
+        console.warn(`   ${_file}: ${_error && _error.message ? _error.message : String(_error)}`);
       });
     }
   }
