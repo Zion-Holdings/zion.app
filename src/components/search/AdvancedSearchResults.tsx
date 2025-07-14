@@ -383,7 +383,6 @@ export const AdvancedSearchResults: React.FC = () => {
       const params = new URLSearchParams({
         query: searchTerm,
         page: currentPage.toString(),
-        sortBy: (searchFilters.sortBy || '').toString(),
         itemsPerPage: '20',
         types: Array.isArray(searchFilters.types) ? searchFilters.types.join(',') : '',
         category: (searchFilters.category || '').toString(),
