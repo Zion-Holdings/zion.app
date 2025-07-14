@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+const { execSync: _execSync } = require('child_process');
 
 // Performance monitoring and optimization script
 class PerformanceMonitor {
@@ -189,9 +189,9 @@ class PerformanceMonitor {
     });
 
     // console.log(this.colorize('\n📂 Chunk Categories:', 'magenta'));
-    Object.entries(categories).forEach(([category, categoryChunks]) => {
+    Object.entries(categories).forEach(([_category, categoryChunks]) => {
       if (categoryChunks.length > 0) {
-        const totalSize = categoryChunks.reduce((sum, chunk) => sum + chunk.size, 0);
+        const _totalSize = categoryChunks.reduce((sum, _chunk) => sum + _chunk.size, 0);
         // console.log(`${category}: ${categoryChunks.length} chunks (${this.formatBytes(totalSize)})`);
       }
     });
