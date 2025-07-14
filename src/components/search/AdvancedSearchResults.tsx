@@ -383,9 +383,14 @@ export const AdvancedSearchResults: React.FC = () => {
       const params = new URLSearchParams({
         query: searchTerm,
         page: currentPage.toString(),
-        ...searchFilters,
-        sortBy: filters.sort,
-        itemsPerPage: '20'
+        sortBy: (searchFilters.sortBy || '').toString(),
+        itemsPerPage: '20',
+        types: Array.isArray(searchFilters.types) ? searchFilters.types.join(',') : '',
+        category: (searchFilters.category || '').toString(),
+        minPrice: (searchFilters.minPrice ?? '').toString(),
+        maxPrice: (searchFilters.maxPrice ?? '').toString(),
+        minRating: (searchFilters.minRating ?? '').toString(),
+        sort: (searchFilters.sort || '').toString(),
       });
 
       if (searchFilters.types.length > 0) {
