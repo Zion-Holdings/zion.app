@@ -58,7 +58,7 @@ class LoggerTypeFixer {
       try {
         const content = fs.readFileSync(path.join(PROJECT_ROOT, file), 'utf8');
         return content.includes('productionLogger');
-      } catch (_error) {
+      } catch {
         return false;
       }
     });
@@ -175,28 +175,4 @@ class LoggerTypeFixer {
     if (this.errors.length > 0) {
       console.warn('\n⚠️  Errors:');
       this.errors.forEach(({ file, error }) => {
-        console.warn(`   ${file}: ${error}`);
-      });
-    }
-
-    if (this.fixedFiles > 0) {
-      console.warn('\n🎉 Logger TypeScript issues fixed!');
-      console.warn('📋 Next steps:');
-      console.warn('   1. Run: npm run build');
-      console.warn('   2. Test the application: npm run dev');
-    } else {
-      console.warn('\n ℹ️ No logger type issues found.');
-    }
-  }
-}
-
-// CLI interface
-if (require.main === module) {
-  const fixer = new LoggerTypeFixer();
-  fixer.processAllFiles().catch(error => {
-    console.error('💥 Fatal error:', error);
-    process.exit(1);
-  });
-}
-
-module.exports = LoggerTypeFixer; 
+        console.warn(`
