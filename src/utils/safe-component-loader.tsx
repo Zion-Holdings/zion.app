@@ -145,8 +145,9 @@ export function createSafeComponent(
             try {
               // Try to call getInitialProps on the original component if it exists
               const originalModule = await importFn().catch(() => null);
-              if (originalModule?.default?.getInitialProps) {
-                return await originalModule.default.getInitialProps(ctx);
+              const originalComponent = originalModule?.default;
+              if (originalComponent && typeof (originalComponent as any).getInitialProps === 'function') {
+                return await (originalComponent as any).getInitialProps(ctx);
               }
             } catch (error) {
               logErrorToProduction(`Error in fallback getInitialProps:`, error);

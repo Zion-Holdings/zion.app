@@ -1,8 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
-// @ts-expect-error: Buffer is not available in some environments, fallback is handled
-import { Buffer } from 'buffer';
+import { Buffer as NodeBuffer } from 'buffer';
 
 interface OptimizedImageProps {
   src: string;
@@ -103,7 +102,7 @@ export function OptimizedImage({
     </svg>`;
     const base64 = typeof window !== 'undefined'
       ? btoa(unescape(encodeURIComponent(svg)))
-      : (Buffer as unknown as Buffer).from(svg, 'utf-8').toString('base64');
+      : (NodeBuffer as any).from(svg, 'utf-8').toString('base64');
     return `data:image/svg+xml;base64,${base64}`;
   };
 

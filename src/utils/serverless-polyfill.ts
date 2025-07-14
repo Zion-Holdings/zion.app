@@ -12,6 +12,7 @@
  */
 
 import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import { logInfo } from './logger';
 
 // Type declarations for global augmentation
 declare global {

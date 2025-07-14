@@ -93,7 +93,7 @@ export default function TokenSimulator() {
         (_, i) =>
           (inputs.activeWallets * (i + 1)) / (forecast[i] || inputs.circulating)
       );
-      if (chart) (chart as { destroy?: () => void }).destroy();
+      if (chart && typeof (chart as { destroy?: () => void }).destroy === 'function') (chart as { destroy: () => void }).destroy();
       // Instead of 'new (Chart as any)', use a type guard for Chart constructor
       if (typeof Chart === 'function') {
         chart = new (Chart as new (ctx: HTMLCanvasElement, config: unknown) => unknown)(velocityChart.current as HTMLCanvasElement, {
@@ -120,7 +120,7 @@ export default function TokenSimulator() {
       }
     }
     return () => {
-      if (chart) (chart as { destroy?: () => void }).destroy();
+      if (chart && typeof (chart as { destroy?: () => void }).destroy === 'function') (chart as { destroy: () => void }).destroy();
     };
   }, [forecast, inputs.activeWallets, months]);
 

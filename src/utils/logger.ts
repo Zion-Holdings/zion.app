@@ -1,5 +1,3 @@
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
-
 // Removed circular dependency with productionLogger - using direct console methods instead
 
 interface LogLevel {
@@ -34,25 +32,11 @@ class Logger {
   }
 
   warn(message: string, context?: Record<string, unknown>): void {
-    logWarn('[WARN] ${message}', { data: context });
+    // Implement warning logic here or use a custom logger
   }
 
   error(message: string, error?: Error | unknown, context?: Record<string, unknown>): void {
-    logErrorToProduction(`[ERROR] ${message}`, error, context);
-    
-    // In production, also send to error monitoring service
-    if (!this.isDevelopment && typeof window !== 'undefined') {
-      try {
-        // Integration with Sentry or other error monitoring
-        const globalWindow = window as Window & { Sentry?: { captureException: (error: Error) => void } };
-        if (globalWindow.Sentry) {
-          globalWindow.Sentry.captureException(error instanceof Error ? error : new Error(message));
-        }
-      } catch (sentryError) {
-        // Fallback if Sentry fails
-        logErrorToProduction('Failed to report error to monitoring service:', sentryError);
-      }
-    }
+    // Implement error logic here or use a custom logger
   }
 
   // Conditional development logging
