@@ -242,7 +242,7 @@ async function _main() {
   
   // Handle process termination gracefully
   process.on('SIGINT', () => {
-    console.log('\n🛑 Build interrupted by user');
+    // console.log('\n🛑 Build interrupted by user');
     if (_buildProcess) {
       _buildProcess.kill('SIGTERM');
     }
@@ -250,7 +250,7 @@ async function _main() {
   });
   
   process.on('SIGTERM', () => {
-    console.log('\n🛑 Build terminated');
+    // console.log('\n🛑 Build terminated');
     if (_buildProcess) {
       _buildProcess.kill('SIGTERM');
     }
@@ -403,13 +403,13 @@ async function executeBuildSequence() {
     });
 
     process.on('SIGINT', () => {
-      console.log('\n🛑 Build interrupted by user');
+      // console.log('\n🛑 Build interrupted by user');
       if (_buildProcess) _buildProcess.kill('SIGTERM');
       process.exit(1);
     });
 
     process.on('SIGTERM', () => {
-      console.log('\n🛑 Build terminated');
+      // console.log('\n🛑 Build terminated');
       if (_buildProcess) _buildProcess.kill('SIGTERM');
       process.exit(1);
     });
