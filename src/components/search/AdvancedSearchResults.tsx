@@ -370,7 +370,7 @@ export const AdvancedSearchResults: React.FC = () => {
   }, [router.isReady, router.query.q]);
 
   // Search function
-  const performSearch = useCallback(async () => {
+  const performSearch: () => Promise<void> = useCallback(async () => {
     if (!searchTerm.trim()) {
       setResults([]);
       setTotalCount(0);
