@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { Plus, _Loader2 } from 'lucide-react';
+import { Plus, Loader2 } from 'lucide-react';
 
 
 import { useResume } from "@/hooks/useResume";
