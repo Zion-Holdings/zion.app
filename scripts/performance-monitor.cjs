@@ -46,12 +46,12 @@ class PerformanceMonitor {
       { name: 'Server Response', check: () => this.checkServerResponse() }
     ];
 
-    for (const { name, check } of checks) {
+    for (const { name: _name, check } of checks) {
       try {
-        const result = await check();
-        // console.log(`${this.colorize('✅', 'green')} ${name}: ${this.colorize(result, 'green')}`);
-      } catch (error) {
-        // console.log(`${this.colorize('❌', 'red')} ${name}: ${this.colorize(error.message, 'red')}`);
+        const _result = await check();
+        // console.log(`${this.colorize('✅', 'green')} ${_name}: ${this.colorize(_result, 'green')}`);
+      } catch (_error) {
+        // console.log(`${this.colorize('❌', 'red')} ${_name}: ${this.colorize(_error.message, 'red')}`);
       }
     }
   }
@@ -171,20 +171,20 @@ class PerformanceMonitor {
       'Other': []
     };
 
-    chunks.forEach(chunk => {
-      const name = chunk.name.toLowerCase();
-      if (name.includes('framework')) {
-        categories['Framework'].push(chunk);
-      } else if (name.includes('ui-libs')) {
-        categories['UI Libraries'].push(chunk);
-      } else if (name.includes('vendors')) {
-        categories['Vendors'].push(chunk);
-      } else if (name.includes('pages')) {
-        categories['Pages'].push(chunk);
-      } else if (name.includes('common')) {
-        categories['Common'].push(chunk);
+    chunks.forEach(_chunk => {
+      const _name = _chunk.name.toLowerCase();
+      if (_name.includes('framework')) {
+        categories['Framework'].push(_chunk);
+      } else if (_name.includes('ui-libs')) {
+        categories['UI Libraries'].push(_chunk);
+      } else if (_name.includes('vendors')) {
+        categories['Vendors'].push(_chunk);
+      } else if (_name.includes('pages')) {
+        categories['Pages'].push(_chunk);
+      } else if (_name.includes('common')) {
+        categories['Common'].push(_chunk);
       } else {
-        categories['Other'].push(chunk);
+        categories['Other'].push(_chunk);
       }
     });
 
@@ -192,7 +192,7 @@ class PerformanceMonitor {
     Object.entries(categories).forEach(([_category, categoryChunks]) => {
       if (categoryChunks.length > 0) {
         const _totalSize = categoryChunks.reduce((sum, _chunk) => sum + _chunk.size, 0);
-        // console.log(`${category}: ${categoryChunks.length} chunks (${this.formatBytes(totalSize)})`);
+        // console.log(`${_category}: ${categoryChunks.length} chunks (${this.formatBytes(_totalSize)})`);
       }
     });
   }
