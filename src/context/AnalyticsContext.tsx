@@ -94,7 +94,7 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
     //     console.warn('Failed to send analytics event:', error);
     //   }
     // }
-  }, [user, router.pathname, supabase]);
+  }, [user, router.pathname]);
 
   // Function to track conversion events
   const trackConversion = (conversionType: string, value?: number, metadata: Record<string, unknown> = {}) => {

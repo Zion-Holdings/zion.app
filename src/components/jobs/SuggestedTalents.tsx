@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -40,7 +40,7 @@ export function SuggestedTalents({ jobId, jobTitle }: SuggestedTalentsProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [isProcessing, setIsProcessing] = useState(false);
 
-  const fetchSuggestedTalents = async () => {
+  const fetchSuggestedTalents = useCallback(async () => {
     setIsLoading(true);
     try {
       if (!supabase) {
@@ -87,7 +87,7 @@ export function SuggestedTalents({ jobId, jobTitle }: SuggestedTalentsProps) {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [jobId]);
 
   const handleViewProfile = (talentId: string) => {
     // Implement logic to view talent profile

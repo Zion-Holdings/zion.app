@@ -6,7 +6,7 @@ import { ZION_TOKEN_NETWORK_ID } from '@/config/governanceConfig';
 
 // Use getAppKitProjectId from shared env config
 
-import React, { createContext, useState, useContext, useCallback, useEffect, useRef } from 'react';
+import React, { createContext, useState, useContext, useCallback, useEffect, useRef, useMemo } from 'react';
 import type { ReactNode } from 'react';
 import type { AppKitInstanceInterface } from '@reown/appkit/react';
 // import { captureException } from '@reown/appkit/react';
@@ -124,12 +124,12 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       }
   }
 
-  const metadata = {
+  const metadata = useMemo(() => ({
     name: 'Zion',
     description: 'Zion Finance Platform',
     url: typeof window !== 'undefined' ? window.location.origin : 'https://example.com',
     icons: ['https://avatars.githubusercontent.com/u/37784886'],
-  };
+  }), []);
 
   const ZION_CHAIN_MAP: Record<number, unknown> = {
     1: mainnet,
