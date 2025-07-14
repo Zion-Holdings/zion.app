@@ -152,7 +152,7 @@ function validateInternalLink(linkUrl, projectRoot) {
                 if (dynamicMatch && i === pathSegments.length -1) { // Dynamic part must be the last segment checked here
                     return { status: 'internal_dynamic_route_exists', resolvedPath: path.join(currentPathForDynamicCheck, dynamicMatch) };
                 }
-            } catch (_e) {
+            } catch {
                 // directory might not exist or not be readable, proceed to next check
             }
             // If not the last segment or no dynamic match, break and consider it broken by later checks
