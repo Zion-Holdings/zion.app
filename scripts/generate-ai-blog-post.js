@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import process from 'process';
 import { writeFile } from 'fs/promises';
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
