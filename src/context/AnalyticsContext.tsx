@@ -58,18 +58,18 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
   const { user } = useAuth();
 
   // Function to track general analytics events
-  const trackEvent = useCallback((type: AnalyticsEventType, metadata: Record<string, unknown> = {}) => {
+  const trackEvent = useCallback(async (type: AnalyticsEventType, metadata: Record<string, unknown> = {}) => {
     const event: AnalyticsEvent = {
       type,
-      path: router.pathname,
       timestamp: Date.now(),
-      userId: user?.id ?? null,
-      metadata
+      path: router.pathname,
+      userId: user?.id,
+      metadata: {
+        ...metadata,
+        userAgent: typeof window !== 'undefined' ? window.navigator.userAgent : undefined,
+      }
     };
-    
-    setEvents((prevEvents) => [...prevEvents, event]);
-    setLastEvent(event);
-    
+
     try {
       // Store event in Supabase for persistent analytics
       if (supabase) {
@@ -77,19 +77,24 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
           event_type: type,
           path: router.pathname,
           user_id: user?.id,
-          metadata: metadata
+          metadata: event.metadata,
+          created_at: event.timestamp
         }]);
       }
-      
-      if (process.env.NODE_ENV === 'development') {
-        logInfo('Analytics event tracked: ${type}', { data:  { data: metadata } });
-      }
     } catch (error) {
-      if (process.env.NODE_ENV === 'development') {
-        logErrorToProduction('Error logging analytics event:', { data: error });
+      // Log error but don't fail the tracking
+      console.warn('Failed to store analytics event:', error);
+    }
+
+    // Send to analytics service if configured
+    if (analytics) {
+      try {
+        analytics.track(type, event.metadata);
+      } catch (error) {
+        console.warn('Failed to send analytics event:', error);
       }
     }
-  }, [user, router.pathname]);
+  }, [user, router.pathname, supabase, analytics]);
 
   // Function to track conversion events
   const trackConversion = (conversionType: string, value?: number, metadata: Record<string, unknown> = {}) => {
