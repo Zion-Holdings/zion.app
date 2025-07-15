@@ -50,3 +50,20 @@ export const fireEvent = async (
 
   await logEventToSupabase(eventName, eventParams);
 };
+
+// Replace 'any' with a more specific type for event data
+export function trackEvent(event: string, data: Record<string, unknown>) {
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    (window as any).gtag('event', event, data);
+  }
+}
+
+// Replace 'any' with a more specific type for pageview data
+export function trackPageview(url: string, data: Record<string, unknown> = {}) {
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    (window as any).gtag('config', process.env.NEXT_PUBLIC_GA_ID, {
+      page_path: url,
+      ...data,
+    });
+  }
+}
