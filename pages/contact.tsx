@@ -1,1 +1,1 @@
-export { default } from '@/pages/Contact';
+export { default } from '../src/pages/Contact';

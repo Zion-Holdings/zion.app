@@ -1,1 +1,1 @@
-export { default } from '@/pages/GlobalMap';
+export { default } from '../src/pages/GlobalMap';

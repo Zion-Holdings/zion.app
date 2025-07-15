@@ -1,1 +1,1 @@
-export { default } from '@/pages/RoadmapSuggest';
+export { default } from '../../src/pages/RoadmapSuggest';
