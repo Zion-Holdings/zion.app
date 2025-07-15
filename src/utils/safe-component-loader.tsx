@@ -20,23 +20,7 @@ interface BoundaryState {
   hasError: boolean;
 }
 
-class ComponentErrorBoundary extends React.Component<BoundaryProps, BoundaryState> {
-  static getDerivedStateFromError(error: Error): BoundaryState {
-    return { hasError: true };
-  }
-  
-  override componentDidCatch(error: Error, info: React.ErrorInfo) {
-    logErrorToProduction('Component loading error:', error);
-  }
-  
-  override render() {
-    if (this.state.hasError) {
-      const Fallback = this.props.fallback;
-      return React.createElement(Fallback);
-    }
-    return this.props.children;
-  }
-}
+// Remove the ComponentErrorBoundary class entirely
 
 // Default fallback component
 const DefaultFallback: React.FC<object> = () => {
