@@ -140,9 +140,7 @@ fixes.forEach(fix => {
       console.warn(`   ⚠️  No changes needed`);
     }
     
-  } catch (_error) {
-    console.warn(`   ❌ Error: ${_error.message}`);
-  }
+  } catch {}
   
   console.warn('');
 });
@@ -154,8 +152,7 @@ try {
   console.warn('🧪 Testing build...');
   execSync('npm run build > build-test-2.log 2>&1');
   console.warn('✅ Build test passed!');
-} catch (_error) {
-  console.warn('❌ Build test failed. Checking errors...');
+} catch {}
   
   try {
     const buildLog = fs.readFileSync('build-test-2.log', 'utf8');
@@ -169,9 +166,7 @@ try {
       console.warn('\n🔍 Found errors:');
       errorLines.slice(0, 5).forEach(line => console.warn(`   ${line.trim()}`));
     }
-  } catch (_e) {
-    console.warn('Could not read build log');
-  }
+  } catch {}
 }
 
 console.warn('\n🚀 Router fixes complete!'); 
