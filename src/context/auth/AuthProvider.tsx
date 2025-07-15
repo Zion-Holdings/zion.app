@@ -328,7 +328,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     if (user) {
       setIsLoading(false);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [user, setIsLoading]);
 
   if (!isSupabaseConfigured) {
