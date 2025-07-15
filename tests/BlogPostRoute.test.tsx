@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
-import BlogPost from '@/pages/BlogPost';
+import BlogPost from '@/src/pages/BlogPost';
 
 it('renders blog article from slug', async () => {
   render(

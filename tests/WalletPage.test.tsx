@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import WalletPage from '@/pages/Wallet';
+import WalletPage from '@/src/pages/Wallet';
 import * as useWalletHook from '@/hooks/useWallet';
 
 describe('WalletPage', () => {

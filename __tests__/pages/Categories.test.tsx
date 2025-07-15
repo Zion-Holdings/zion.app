@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import Categories from '@/pages/Categories'; // Corrected import path
+import Categories from '@/src/pages/Categories'; // Corrected import path
 import { CATEGORIES } from '@/data/categories';
 import useSWR from 'swr';
 import { Category } from '@/data/categories'; // Import Category type

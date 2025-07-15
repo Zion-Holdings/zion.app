@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import { describe, it, expect } from 'vitest';
-import CartPage from '@/pages/Cart';
+import CartPage from '@/src/pages/Cart';
 import { CartProvider } from '@/context/CartContext';
 import { AuthContext } from '@/context/auth/AuthContext';
 import PrivateRoute from '@/components/PrivateRoute';

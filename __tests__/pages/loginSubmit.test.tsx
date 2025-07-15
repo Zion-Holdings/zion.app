@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import Login from '@/pages/Login';
+import Login from '@/src/pages/Login';
 import { useRouter } from 'next/router';
 import mockNextRouter from 'next-router-mock';
 

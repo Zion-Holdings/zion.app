@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import ForumCategoryPage from '@/pages/ForumCategoryPage';
+import ForumCategoryPage from '@/src/pages/ForumCategoryPage';
 import * as forumService from '@/services/forumPostService';
 
 it('loads posts for category', async () => {

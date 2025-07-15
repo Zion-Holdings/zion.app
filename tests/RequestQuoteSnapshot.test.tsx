@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import RequestQuote from '@/pages/RequestQuote';
+import RequestQuote from '@/src/pages/RequestQuote';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),

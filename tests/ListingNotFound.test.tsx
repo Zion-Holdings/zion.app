@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import Custom404 from '@/pages/404';
-import { getStaticProps } from '@/pages/marketplace/listing/[slug]';
+import Custom404 from '@/src/pages/404';
+import { getStaticProps } from '@/src/pages/marketplace/listing/[slug]';
 
 test('visit unknown slug shows 404 page', async () => {
   const result = await getStaticProps({ params: { slug: 'unknown-slug' } } as any);

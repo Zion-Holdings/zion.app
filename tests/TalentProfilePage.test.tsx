@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
-import TalentProfilePage from '@/pages/talent/[id]';
+import TalentProfilePage from '@/src/pages/talent/[id]';
 import { mockFetch } from './__mocks__/server';
 
 describe('TalentProfilePage', () => {

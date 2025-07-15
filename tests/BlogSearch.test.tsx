@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import Blog from '@/pages/Blog';
+import Blog from '@/src/pages/Blog';
 
 it('filters posts when typing in search', async () => {
   render(

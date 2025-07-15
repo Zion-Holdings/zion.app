@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Login from '@/pages/Login'; // Target the correct Login page
+import Login from '@/src/pages/Login'; // Target the correct Login page
 import { useAuth } from '@/context/auth/AuthProvider'; // Correct path to mock
 import { useRouter } from 'next/router';
 

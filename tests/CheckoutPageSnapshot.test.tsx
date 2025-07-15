@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import Checkout from '@/pages/Checkout';
+import Checkout from '@/src/pages/Checkout';
 import React from 'react';
 
 jest.mock('react-redux', () => ({

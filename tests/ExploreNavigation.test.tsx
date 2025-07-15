@@ -1,10 +1,10 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import { CategoriesSection } from '@/components/CategoriesSection';
-import ServicesPage from '@/pages/ServicesPage';
-import TalentDirectory from '@/pages/TalentDirectory';
-import EquipmentPage from '@/pages/EquipmentPage';
-import InnovationPage from '@/pages/InnovationPage';
+import ServicesPage from '@/src/pages/ServicesPage';
+import TalentDirectory from '@/src/pages/TalentDirectory';
+import EquipmentPage from '@/src/pages/EquipmentPage';
+import InnovationPage from '@/src/pages/InnovationPage';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const queryClient = new QueryClient();

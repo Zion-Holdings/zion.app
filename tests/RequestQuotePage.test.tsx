@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import RequestQuotePage from '@/pages/request-quote';
+import RequestQuotePage from '@/src/pages/request-quote';
 
 beforeEach(() => {
   global.fetch = vi.fn().mockResolvedValue({

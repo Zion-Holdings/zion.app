@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import RecommendationsPage from '@/pages/RecommendationsPage.jsx';
+import RecommendationsPage from '@/src/pages/RecommendationsPage.jsx';
 
 jest.mock('@/hooks/useAuth', () => ({ 
   useAuth: () => ({ user: { id: '1' } }) 

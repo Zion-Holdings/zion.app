@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
-import Signup from '@/pages/Signup';
+import Signup from '@/src/pages/Signup';
 import * as toastHook from '@/hooks/use-toast';
 import { useRouter } from 'next/router';
 import { vi, expect, test } from 'vitest';

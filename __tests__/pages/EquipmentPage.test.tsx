@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
-import EquipmentPage from '@/pages/EquipmentPage';
+import EquipmentPage from '@/src/pages/EquipmentPage';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import apiClient from '@/services/apiClient';
 import { toast } from '@/hooks/use-toast';

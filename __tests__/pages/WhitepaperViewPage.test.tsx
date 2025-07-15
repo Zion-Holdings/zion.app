@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import { useRouter } from 'next/router';
 import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
 import mockNextRouter from 'next-router-mock';
-import WhitepaperViewPage from '@/pages/WhitepaperViewPage';
+import WhitepaperViewPage from '@/src/pages/WhitepaperViewPage';
 import { supabase } from '@/integrations/supabase/client';
 import WhitepaperPreviewPanel from '@/components/WhitepaperPreviewPanel';
 

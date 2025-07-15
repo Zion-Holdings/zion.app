@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
 // Import the actual page component.
-import LoginPage from '@/pages/Login.jsx';
+import LoginPage from '@/src/pages/Login.jsx';
 import { AuthContext } from '@/context/auth/AuthContext';
 import type { AuthContextType } from '@/types/auth';
 import { WalletContext, WalletContextType } from '@/context/WalletContext';

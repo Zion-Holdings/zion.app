@@ -2,7 +2,7 @@
 import path from 'path';
 import http from 'http';
 import { Verifier } from '@pact-foundation/pact';
-import handler from '@/pages/api/items';
+import handler from '@/src/pages/api/items';
 
 let server;
 

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import { vi } from 'vitest';
-import NewPost from '@/pages/NewPost';
+import NewPost from '@/src/pages/NewPost';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
 import * as auth from '@/hooks/useAuth';
 

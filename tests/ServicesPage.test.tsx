@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import { SWRConfig } from 'swr';
-import ServicesPage from '@/pages/ServicesPage';
+import ServicesPage from '@/src/pages/ServicesPage';
 import * as sentry from '@/utils/sentry';
 
 jest.mock('@/utils/sentry');

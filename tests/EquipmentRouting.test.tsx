@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
-import EquipmentDetail from '@/pages/EquipmentDetail';
+import EquipmentDetail from '@/src/pages/EquipmentDetail';
 import { AuthProvider } from '@/context/auth/AuthProvider';
 
 it('renders equipment detail from slug', async () => {

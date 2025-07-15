@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import Profile from '@/pages/Profile';
+import Profile from '@/src/pages/Profile';
 import { vi, expect, test } from 'vitest';
 
 test('saves updated profile', async () => {

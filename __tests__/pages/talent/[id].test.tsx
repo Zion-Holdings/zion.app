@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 // import { vi } from 'vitest'; // Removed Vitest import
-import TalentPage from '@/pages/talent/[id]';
+import TalentPage from '@/src/pages/talent/[id]';
 import { TALENT_PROFILES } from '@/data/talentData'; // Adjust path if necessary
 import { useRouter } from 'next/router'; // Keep Next.js import for mocking
 

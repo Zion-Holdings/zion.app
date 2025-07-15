@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'; // Added waitFor
 import { MemoryRouter } from 'react-router-dom';
-import Signup from '@/pages/Signup';
+import Signup from '@/src/pages/Signup';
 import * as toastHook from '@/hooks/use-toast';
 import * as router from 'react-router-dom';
 import { mockFetch } from './__mocks__/server';

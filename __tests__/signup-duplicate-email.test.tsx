@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { useRouter } from 'next/router';
-import Signup from '@/pages/Signup';
+import Signup from '@/src/pages/Signup';
 import * as toastHook from '@/hooks/use-toast';
 import axios from 'axios';
 

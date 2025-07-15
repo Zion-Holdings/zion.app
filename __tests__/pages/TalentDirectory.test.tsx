@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
-import TalentDirectory from '@/pages/TalentDirectory';
+import TalentDirectory from '@/src/pages/TalentDirectory';
 
 // Mock child components and hooks
 jest.mock('@/components/talent/FilterSidebar', () => ({ FilterSidebar: (_props: any) => <div data-testid="filter-sidebar">Filter Sidebar</div> }));

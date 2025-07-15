@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
-import Contact from '@/pages/Contact';
+import Contact from '@/src/pages/Contact';
 
 // Mock heavy child components
 jest.mock('@/components/ChatAssistant', () => ({

@@ -3,7 +3,7 @@ import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
-import TalentDetail from '@/pages/TalentDetail';
+import TalentDetail from '@/src/pages/TalentDetail';
 
 const server = setupServer(
   rest.get('/api/talent/test-slug', (_req, res, ctx) =>

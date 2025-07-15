@@ -2,7 +2,7 @@ import { render, fireEvent } from '@testing-library/react';
 import React from 'react';
 import { ViewModeProvider, useViewMode } from '@/context/ViewModeContext';
 jest.mock('@/pages/Marketplace.module.css', () => ({ grid: 'grid', list: 'list' }));
-import styles from '@/pages/Marketplace.module.css';
+import styles from '@/src/pages/Marketplace.module.css';
 
 function TestComponent() {
   const { viewMode, setViewMode } = useViewMode();

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import Login from '@/pages/auth/login'; // Assuming Login page is now at pages/auth/login.tsx
+import Login from '@/src/pages/auth/login'; // Assuming Login page is now at pages/auth/login.tsx
 import { useRouter } from 'next/router';
 // useAuth hook is mocked below - no import needed
 import { safeStorage } from '@/utils/safeStorage'; // To be mocked

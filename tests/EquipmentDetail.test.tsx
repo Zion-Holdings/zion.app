@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import EquipmentDetail from '@/pages/EquipmentDetail';
+import EquipmentDetail from '@/src/pages/EquipmentDetail';
 import { AppLayout } from '@/layout/AppLayout';
 import * as router from 'react-router-dom';
 jest.mock('@/hooks/useAuth', () => ({ useAuth: () => ({ isAuthenticated: true }) }));

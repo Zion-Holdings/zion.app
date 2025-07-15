@@ -1,6 +1,6 @@
 import { render, fireEvent, act } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import Marketplace from '@/pages/Marketplace';
+import Marketplace from '@/src/pages/Marketplace';
 
 jest.mock('@/components/search/EnhancedSearchInput', () => ({
   EnhancedSearchInput: () => <div />,

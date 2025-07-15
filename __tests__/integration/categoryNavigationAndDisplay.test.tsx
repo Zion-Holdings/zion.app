@@ -40,9 +40,9 @@ jest.mock('next/link', () => {
 
 // The component being tested on initial load (lists all category cards)
 // Assuming pages/categories.tsx is the entry point that uses src/pages/Categories
-import CategoriesPage from '@/pages/Categories'; // This is src/pages/Categories.tsx
+import CategoriesPage from '@/src/pages/Categories'; // This is src/pages/Categories.tsx
 // The component that displays individual category items
-import CategoryPage from '@/pages/CategoryPage'; // This is src/pages/CategoryPage.tsx
+import CategoryPage from '@/src/pages/CategoryPage'; // This is src/pages/CategoryPage.tsx
 
 fetchMock.enableMocks();
 
@@ -75,7 +75,7 @@ describe('Integration: Category Navigation and Display', () => {
 
     // Mock fetch for /api/categories (used by CategoriesPage via getStaticProps or client-side fetch)
     // For this test, we'll assume client-side fetch or simplify how CategoriesPage gets its data
-    // If CategoriesPage from '@/pages/Categories' directly takes categories as props, that's simpler.
+    // If CategoriesPage from '@/src/pages/Categories' directly takes categories as props, that's simpler.
     // Let's assume CategoriesPage (src/pages/Categories) takes categories as a prop.
 
     render(<CategoriesPage categories={sampleCategories} />);

@@ -2,7 +2,7 @@
 import React from 'react';
 import { render, screen, fireEvent, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import EquipmentDetail, { SAMPLE_EQUIPMENT } from '@/pages/EquipmentDetail';
+import EquipmentDetail, { SAMPLE_EQUIPMENT } from '@/src/pages/EquipmentDetail';
 import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
 import { useRouter } from 'next/router';
 import mockNextRouter from 'next-router-mock';

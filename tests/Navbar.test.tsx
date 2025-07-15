@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { AppLayout } from '@/layout/AppLayout';
-import ServicesPage from '@/pages/ServicesPage';
-import SearchPage from '@/pages/SearchPage';
+import ServicesPage from '@/src/pages/ServicesPage';
+import SearchPage from '@/src/pages/SearchPage';
 
 it('renders single navbar on ServicesPage', () => {
   const { container } = render(

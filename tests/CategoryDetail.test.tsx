@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
-import CategoryPage from '@/pages/CategoryPage';
+import CategoryPage from '@/src/pages/CategoryPage';
 import { vi } from 'vitest';
 
 // Simplify page dependencies

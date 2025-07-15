@@ -1,5 +1,5 @@
 import { render, waitFor } from '@testing-library/react';
-import OAuthCallback from '@/pages/OAuthCallback';
+import OAuthCallback from '@/src/pages/OAuthCallback';
 import { useRouter } from 'next/router';
 import { safeStorage } from '@/utils/safeStorage';
 import { useAuth } from '@/hooks/useAuth';

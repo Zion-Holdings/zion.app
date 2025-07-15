@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import NotFound from '@/components/NotFound';
-import { getStaticProps } from '@/pages/talent/[id]';
+import { getStaticProps } from '@/src/pages/talent/[id]';
 
 test('unknown talent id shows NotFound page', async () => {
   const result = await getStaticProps({ params: { id: 'unknown-id' } } as any);
