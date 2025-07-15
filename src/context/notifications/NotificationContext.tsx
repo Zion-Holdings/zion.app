@@ -84,7 +84,7 @@ export const NotificationProvider = ({ children }: { children: ReactNode }): Rea
       };
     }
     return undefined;
-  }, [user]);
+  }, [user, notificationOps]);
 
   // Subscribe to push notifications once per user session
   useEffect(() => {
@@ -97,7 +97,7 @@ export const NotificationProvider = ({ children }: { children: ReactNode }): Rea
       .catch(() => {
         /* noop */
       });
-  }, [user]);
+  }, [user, notificationOps]);
   
   return (
     <NotificationContext.Provider value={notificationOps}>

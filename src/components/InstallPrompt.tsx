@@ -17,12 +17,21 @@ interface BeforeInstallPromptEvent extends Event {
   prompt(): Promise<void>;
 }
 
+// Define gtag function type
+interface GtagFunction {
+  (command: 'event', eventName: string, parameters?: Record<string, unknown>): void;
+}
+
 // Augment the WindowEventMap to include 'beforeinstallprompt'
 declare global {
   interface WindowEventMap {
     beforeinstallprompt: BeforeInstallPromptEvent;
     // appinstalled event is standard, but if issues arise, it can be augmented too
     // appinstalled: Event;
+  }
+  
+  interface Window {
+    gtag?: GtagFunction;
   }
 }
 
@@ -50,8 +59,8 @@ export const InstallPrompt: React.FC = () => {
     };
 
     const handleAppInstalled = () => {
-      if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
-        (window as any).gtag('event', 'pwa_install_success'); // More specific event for install success
+      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+        window.gtag('event', 'pwa_install_success'); // More specific event for install success
       }
       setVisible(false); // Hide prompt once installed
       setPromptEvent(null);
@@ -72,12 +81,12 @@ export const InstallPrompt: React.FC = () => {
     promptEvent.prompt();
     const { outcome } = await promptEvent.userChoice;
     if (outcome === 'accepted') {
-      if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
-        (window as any).gtag('event', 'pwa_install_accepted');
+      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+        window.gtag('event', 'pwa_install_accepted');
       }
     } else {
-      if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
-        (window as any).gtag('event', 'pwa_install_dismissed');
+      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+        window.gtag('event', 'pwa_install_dismissed');
       }
     }
     setVisible(false);
@@ -88,8 +97,8 @@ export const InstallPrompt: React.FC = () => {
     setVisible(false);
     setPromptEvent(null); // Clear the event so it doesn't re-appear on next visit in same session
     safeSessionStorage.setItem(DISMISS_KEY, String(Date.now() + DISMISS_MS));
-    if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
-      (window as any).gtag('event', 'pwa_prompt_closed_manually');
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      window.gtag('event', 'pwa_prompt_closed_manually');
     }
   };
 

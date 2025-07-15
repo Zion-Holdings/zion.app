@@ -252,8 +252,8 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             const EthersBrowserProvider = (ethers as typeof import('ethers')).BrowserProvider;
             // Ensure the provider has a required request method for Eip1193Provider
             const safeProvider = Object.assign({}, currentProvider, {
-              request: typeof (currentProvider as any).request === 'function'
-                ? (currentProvider as any).request
+              request: typeof (currentProvider as { request?: (args: { method: string; params?: unknown[] }) => Promise<unknown> }).request === 'function'
+                ? (currentProvider as { request: (args: { method: string; params?: unknown[] }) => Promise<unknown> }).request
                 : async (_args: { method: string; params?: unknown[] }) => { throw new Error('Provider does not implement request'); }
             }) as import('ethers').Eip1193Provider;
             const ethersProvider = new EthersBrowserProvider(safeProvider);
@@ -306,7 +306,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     const targetAppKit = appKitRef.current;
 
     if (!targetAppKit) {
-      setWallet(prev => ({ ...initialWalletState, isWalletSystemAvailable: false, isConnected: false }));
+      setWallet(_prev => ({ ...initialWalletState, isWalletSystemAvailable: false, isConnected: false }));
       return;
     }
 
