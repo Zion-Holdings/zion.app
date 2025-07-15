@@ -19,7 +19,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
   const { user } = useAuth();
   const [messages, setMessages] = useState<Message[]>([]);
   const [text, setText] = useState('');
-  const socketRef = useRef<Socket | null>(null);
+  const socketRef = useRef<any | null>(null);
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
   // Load stored messages for this room when opened
