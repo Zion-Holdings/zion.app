@@ -2,6 +2,6 @@ export {};
 
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void;
+    gtag?: (type: string, eventName: string, params?: Record<string, unknown>) => void;
   }
 }
