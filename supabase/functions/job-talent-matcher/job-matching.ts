@@ -1,6 +1,6 @@
 
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import { JobData, MatchResult } from "./types.ts";
+import { JobData, MatchResult, TalentProfile } from "./types.ts";
 import { normalizeSkillsWithAI, findBestMatches } from "./ai-matcher.ts";
 
 // Initialize the Supabase client
@@ -14,7 +14,7 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey);
  * @param talents Array of talent profiles
  * @returns Array of matches with talent IDs, scores, and reasons
  */
-export async function processJobMatching(job: JobData, talents: any[]): Promise<MatchResult[]> {
+export async function processJobMatching(job: JobData, talents: TalentProfile[]): Promise<MatchResult[]> {
   try {
     // Normalize job skills and generate embeddings via OpenAI
     const jobSkillsNormalized = await normalizeSkillsWithAI(job.skills);

@@ -4,6 +4,18 @@ import { JobData, TalentProfile, MatchResult } from "./types.ts";
 // Get openAI API key from environment variables
 const openAiApiKey = Deno.env.get("OPENAI_API_KEY") || "";
 
+// Define job details interface
+interface JobDetails {
+  title: string;
+  description: string;
+  category: string;
+  skills: string[];
+  budget: {
+    min: number;
+    max: number;
+  };
+}
+
 /**
  * Normalizes skills using OpenAI
  * @param skills Array of skill strings to normalize
@@ -59,7 +71,7 @@ export async function normalizeSkillsWithAI(skills: string[]): Promise<string[]>
  * @param talents Array of talent profiles
  * @returns Array of matches with scores and reasons
  */
-export async function findBestMatches(jobDetails: any, talents: TalentProfile[]): Promise<MatchResult[]> {
+export async function findBestMatches(jobDetails: JobDetails, talents: TalentProfile[]): Promise<MatchResult[]> {
   try {
     // Convert job details to string format for AI prompt
     const jobDetailsText = `
@@ -153,7 +165,7 @@ export async function findBestMatches(jobDetails: any, talents: TalentProfile[])
  * @param talents Array of talent profiles
  * @returns Array of matches with scores
  */
-export function performBasicSkillMatching(jobDetails: any, talents: TalentProfile[]): MatchResult[] {
+export function performBasicSkillMatching(jobDetails: JobDetails, talents: TalentProfile[]): MatchResult[] {
   const requiredSkills = jobDetails.skills.map((skill: string) => skill.toLowerCase());
   
   return talents.map(talent => {

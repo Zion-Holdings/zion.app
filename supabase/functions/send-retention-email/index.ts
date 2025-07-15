@@ -22,9 +22,22 @@ interface EmailData {
   display_name: string;
   user_type: string;
   days_inactive?: number;
-  onboarding_status?: any;
+  onboarding_status?: {
+    profile_completed?: boolean;
+    skills_added?: boolean;
+    availability_set?: boolean;
+    job_posted?: boolean;
+    talent_invited?: boolean;
+  };
   job_id?: string;
   job_title?: string;
+}
+
+interface UserData {
+  id: string;
+  display_name: string;
+  avatar_url?: string;
+  user_type: string;
 }
 
 serve(async (req) => {
@@ -66,7 +79,7 @@ serve(async (req) => {
     }
 
     // Generate email content based on email type
-    const { subject, html } = await generateEmail(emailData, userData);
+    const { subject, html } = await generateEmail(emailData, userData as UserData);
 
     // Send email via Resend
     const emailResponse = await resend.emails.send({
@@ -132,7 +145,7 @@ serve(async (req) => {
   }
 });
 
-async function generateEmail(emailData: EmailData, userData: any): Promise<{ subject: string; html: string }> {
+async function generateEmail(emailData: EmailData, userData: UserData): Promise<{ subject: string; html: string }> {
   const { email_type, display_name, user_type } = emailData;
   const firstName = display_name?.split(" ")[0] || "there";
 

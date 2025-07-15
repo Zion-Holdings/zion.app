@@ -14,6 +14,12 @@ interface ModerationRequest {
   sellerId: string;
 }
 
+interface ModerationResult {
+  flagged: boolean;
+  categories: Record<string, boolean>;
+  category_scores: Record<string, number>;
+}
+
 serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -52,7 +58,7 @@ serve(async (req) => {
       });
       const modData = await modRes.json();
       results.push({ field: "description", result: modData });
-      flagged ||= modData.results?.some((r: any) => r.flagged);
+      flagged ||= modData.results?.some((r: ModerationResult) => r.flagged);
 
       for (const img of images) {
         const imgRes = await fetch("https://api.openai.com/v1/moderations", {
@@ -62,7 +68,7 @@ serve(async (req) => {
         });
         const imgData = await imgRes.json();
         results.push({ field: "image", url: img, result: imgData });
-        flagged ||= imgData.results?.some((r: any) => r.flagged);
+        flagged ||= imgData.results?.some((r: ModerationResult) => r.flagged);
       }
     }
 
