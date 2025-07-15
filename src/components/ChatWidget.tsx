@@ -4,6 +4,7 @@ import { MessageBubble } from '@/components/messaging/MessageBubble';
 import { Button } from '@/components/ui/button';
 import type { Message } from '@/types/messaging';
 import { safeStorage } from '@/utils/safeStorage';
+import { Socket } from 'socket.io-client';
 
 
 interface ChatWidgetProps {
@@ -137,4 +138,3 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
   );
 }
 
-}
