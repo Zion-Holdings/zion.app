@@ -35,7 +35,7 @@ export const initGA = () => {
   }
 
   if (window.gtag) {
-    window.gtag('config', measurementId, {});
+    (window.gtag as any)('config', measurementId, {});
   }
 };
 export const fireEvent = async (
@@ -45,7 +45,7 @@ export const fireEvent = async (
   if (!window.gtag) {
     logErrorToProduction('gtag is not defined. Make sure GA4 is initialized.', new Error('gtag not defined'), { eventName, context: 'GoogleAnalyticsEvent' });
   } else {
-    window.gtag('event', eventName, eventParams);
+    (window.gtag as any)('event', eventName, eventParams);
   }
 
   await logEventToSupabase(eventName, eventParams);
