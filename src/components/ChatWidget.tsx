@@ -137,5 +137,3 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
     </div>
   );
 }
-
-}
