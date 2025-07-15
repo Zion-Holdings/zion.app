@@ -44,7 +44,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
 
     async function setup() {
       const mod = await import('socket.io-client');
-      const io = mod.default as any;
+      const io = mod.default as typeof import('socket.io-client');
       if (!isMounted) return;
       socket = io({ path: '/api/socket', transports: ['websocket'] });
       socketRef.current = socket;
@@ -136,4 +136,6 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
       </div>
     </div>
   );
+}
+
 }
