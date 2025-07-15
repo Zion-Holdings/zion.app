@@ -88,7 +88,7 @@ const DefaultLoading: React.FC = () => {
 
 // Safe dynamic component loader with explicit import function
 export function createSafeComponent(
-  importFn: () => Promise<{ default: React.ComponentType<any> }>,
+  importFn: () => Promise<{ default: React.ComponentType<Record<string, unknown>> }>,
   fallbackComponent?: React.ComponentType,
   options?: {
     loading?: React.ComponentType;
