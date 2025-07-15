@@ -1,1 +1,1 @@
-export { default } from '@/src/pages/Careers';
+export { default } from '../src/pages/Careers';

@@ -1,1 +1,1 @@
-export { default } from '@/pages/TimeOS';
+export { default } from '../src/pages/TimeOS';
