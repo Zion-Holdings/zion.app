@@ -2,6 +2,10 @@ export {};
 
 declare global {
   interface Window {
-    gtag?: (...args: unknown[]) => void;
+    gtag?: (
+      command: 'config' | 'event' | 'set' | 'js',
+      targetId: string,
+      config?: Record<string, unknown>
+    ) => void;
   }
 }

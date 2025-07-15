@@ -4,7 +4,6 @@ import { MessageBubble } from '@/components/messaging/MessageBubble';
 import { Button } from '@/components/ui/button';
 import type { Message } from '@/types/messaging';
 import { safeStorage } from '@/utils/safeStorage';
-import { Socket } from 'socket.io-client';
 
 
 interface ChatWidgetProps {
@@ -40,7 +39,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
     if (!isOpen) return;
 
     let isMounted = true;
-    let socket: Socket | null = null;
+    let socket: any | null = null;
 
     async function setup() {
       const mod = await import('socket.io-client');
