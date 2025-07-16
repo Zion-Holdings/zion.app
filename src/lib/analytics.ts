@@ -35,7 +35,7 @@ export const initGA = () => {
   }
 
   if (window.gtag) {
-    (window.gtag as any)('config', measurementId, {});
+    (window.gtag as Record<string, unknown>)('config', measurementId, {});
   }
 };
 export const fireEvent = async (
@@ -45,7 +45,7 @@ export const fireEvent = async (
   if (!window.gtag) {
     logErrorToProduction('gtag is not defined. Make sure GA4 is initialized.', new Error('gtag not defined'), { eventName, context: 'GoogleAnalyticsEvent' });
   } else {
-    (window.gtag as any)('event', eventName, eventParams);
+    (window.gtag as Record<string, unknown>)('event', eventName, eventParams);
   }
 
   await logEventToSupabase(eventName, eventParams);
@@ -53,17 +53,32 @@ export const fireEvent = async (
 
 // Replace 'any' with a more specific type for event data
 export function trackEvent(event: string, data: Record<string, unknown>) {
-  if (typeof window !== 'undefined' && (window as any).gtag) {
-    (window as any).gtag('event', event, data);
+  if (typeof window !== 'undefined' && (window as Record<string, unknown>).gtag) {
+    (window as Record<string, unknown>).gtag('event', event, data);
   }
 }
 
 // Replace 'any' with a more specific type for pageview data
 export function trackPageview(url: string, data: Record<string, unknown> = {}) {
-  if (typeof window !== 'undefined' && (window as any).gtag) {
-    (window as any).gtag('config', process.env.NEXT_PUBLIC_GA_ID, {
+  if (typeof window !== 'undefined' && (window as Record<string, unknown>).gtag) {
+    (window as Record<string, unknown>).gtag('config', process.env.NEXT_PUBLIC_GA_ID, {
       page_path: url,
       ...data,
     });
+  }
+}
+
+export function trackConversion(conversionId: string, data: Record<string, unknown> = {}) {
+  if (typeof window !== 'undefined' && (window as Record<string, unknown>).gtag) {
+    (window as Record<string, unknown>).gtag('event', 'conversion', {
+      send_to: conversionId,
+      ...data,
+    });
+  }
+}
+
+export function trackCustomEvent(eventName: string, parameters: Record<string, unknown> = {}) {
+  if (typeof window !== 'undefined' && (window as Record<string, unknown>).gtag) {
+    (window as Record<string, unknown>).gtag('event', eventName, parameters);
   }
 }
