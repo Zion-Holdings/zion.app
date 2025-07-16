@@ -163,7 +163,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
         clearTimeout(redirectTimer)
       }
     }
-  }, [router, redirectTo, allowUnauthenticated, requireEmailVerified, requireProfileComplete, requireOnboardingComplete])
+  }, [router, redirectTo, allowUnauthenticated, requireEmailVerified])
 
   return state
 }
