@@ -47,11 +47,15 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
       if (!isMounted) return;
       socket = io({ path: '/api/socket', transports: ['websocket'] });
       socketRef.current = socket;
-      socket.emit('join-room', roomId);
-      socket.on('receive-message', (msg: Message) => {
-        setMessages(prev => [...prev, msg]);
-        triggerNotification('New message', msg.content);
-      });
+      if (socket) {
+        socket.emit('join-room', roomId);
+        socket.on('receive-message', (msg: unknown) => {
+          if (typeof msg === 'object' && msg !== null && 'content' in msg && 'id' in msg) {
+            setMessages(prev => [...prev, msg as Message]);
+            triggerNotification('New message', (msg as Message).content);
+          }
+        });
+      }
     }
 
     setup();
