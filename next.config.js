@@ -229,8 +229,6 @@ const nextConfig = {
   experimental: {
     // Disable some experimental features that might cause issues
     esmExternals: false,
-    // Improve static export handling
-    staticExport: true,
   },
 };
 
