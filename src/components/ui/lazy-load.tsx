@@ -24,29 +24,23 @@ export function LazyLoad({
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
     const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (entry && entry.isIntersecting) {
+      ([entry]) => {
+        if (entry.isIntersecting) {
           setIsVisible(true);
           observer.disconnect();
         }
       },
-      {
-        rootMargin: "200px", // Start loading when element is within 200px of viewport
-        threshold: 0.1,
-      }
+      { threshold: 0.1 }
     );
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
+    observer.observe(container);
 
     return () => {
-      const ref = containerRef.current;
-      if (ref) {
-        observer.unobserve(ref);
-      }
+      observer.disconnect();
     };
   }, []);
 
