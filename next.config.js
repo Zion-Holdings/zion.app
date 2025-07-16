@@ -225,6 +225,13 @@ const nextConfig = {
 
     return config;
   },
+  // Add experimental features to improve build stability
+  experimental: {
+    // Disable some experimental features that might cause issues
+    esmExternals: false,
+    // Improve static export handling
+    staticExport: true,
+  },
 };
 
 export default nextConfig;
