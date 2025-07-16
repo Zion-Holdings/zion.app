@@ -1,1 +1,1 @@
-export { default } from '../../src/pages/OrgChart';
+export { default } from '@/pages/OrgChart';
