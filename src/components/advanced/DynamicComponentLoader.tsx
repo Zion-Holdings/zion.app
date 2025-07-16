@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback, Suspense } from 'react'
 import type { ComponentType } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
+import { Loader2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { logErrorToProduction } from '@/utils/productionLogger'
 
