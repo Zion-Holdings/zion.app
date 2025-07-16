@@ -1,18 +1,9 @@
 'use client'
 
-import React, { Suspense, useState, useEffect, useCallback } from 'react'
-import type { ComponentType } from 'react'
+import React, { useState, useEffect, useCallback, Suspense, ComponentType } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Loader2, AlertTriangle, WifiOff, RefreshCw } from 'lucide-react';
-
-
-
-
-
-import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger'
 
 
 interface LoadingState {
