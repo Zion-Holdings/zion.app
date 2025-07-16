@@ -53,15 +53,15 @@ export const fireEvent = async (
 
 // Replace 'any' with a more specific type for event data
 export function trackEvent(event: string, data: Record<string, unknown>) {
-  if (typeof window !== 'undefined' && (window as Record<string, unknown>).gtag) {
-    ((window as Record<string, unknown>).gtag as (...args: unknown[]) => void)('event', event, data);
+  if (typeof window !== 'undefined' && (window as unknown as Record<string, unknown>).gtag) {
+    ((window as unknown as Record<string, unknown>).gtag as (...args: unknown[]) => void)('event', event, data);
   }
 }
 
 // Replace 'any' with a more specific type for pageview data
 export function trackPageview(url: string, data: Record<string, unknown> = {}) {
-  if (typeof window !== 'undefined' && (window as Record<string, unknown>).gtag) {
-    ((window as Record<string, unknown>).gtag as (...args: unknown[]) => void)('config', process.env.NEXT_PUBLIC_GA_ID, {
+  if (typeof window !== 'undefined' && (window as unknown as Record<string, unknown>).gtag) {
+    ((window as unknown as Record<string, unknown>).gtag as (...args: unknown[]) => void)('config', process.env.NEXT_PUBLIC_GA_ID, {
       page_path: url,
       ...data,
     });
@@ -69,8 +69,8 @@ export function trackPageview(url: string, data: Record<string, unknown> = {}) {
 }
 
 export function trackConversion(conversionId: string, data: Record<string, unknown> = {}) {
-  if (typeof window !== 'undefined' && (window as Record<string, unknown>).gtag) {
-    ((window as Record<string, unknown>).gtag as (...args: unknown[]) => void)('event', 'conversion', {
+  if (typeof window !== 'undefined' && (window as unknown as Record<string, unknown>).gtag) {
+    ((window as unknown as Record<string, unknown>).gtag as (...args: unknown[]) => void)('event', 'conversion', {
       send_to: conversionId,
       ...data,
     });
@@ -78,7 +78,7 @@ export function trackConversion(conversionId: string, data: Record<string, unkno
 }
 
 export function trackCustomEvent(eventName: string, parameters: Record<string, unknown> = {}) {
-  if (typeof window !== 'undefined' && (window as Record<string, unknown>).gtag) {
-    ((window as Record<string, unknown>).gtag as (...args: unknown[]) => void)('event', eventName, parameters);
+  if (typeof window !== 'undefined' && (window as unknown as Record<string, unknown>).gtag) {
+    ((window as unknown as Record<string, unknown>).gtag as (...args: unknown[]) => void)('event', eventName, parameters);
   }
 }
