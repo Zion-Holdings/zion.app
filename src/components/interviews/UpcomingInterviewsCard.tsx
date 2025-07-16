@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Calendar, Clock, MapPin, User, Video, Phone } from 'lucide-react';
 import { format } from 'date-fns';
 import { supabase } from '@/integrations/supabase/client';
-import type { Interview } from '@/types/interviews';
+import type { Interview } from '@/types/interview';
 
 
 import { Avatar } from "@/components/ui/avatar";
