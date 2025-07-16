@@ -325,10 +325,16 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   }, [router, dispatch, handleSignedIn, handleSignedOut, setOnboardingStep, setUser, setAvatarUrl, setTokens, isLoading, user]); // Added router and other dependencies
 
   useEffect(() => {
-    if (user) {
-      setIsLoading(false);
+    if (user && !isLoading) {
+      setIsLoading(true);
     }
-  }, [user]);
+  }, [user, isLoading, setIsLoading]);
+
+  useEffect(() => {
+    if (!user && !isLoading) {
+      setIsLoading(true);
+    }
+  }, [user, isLoading, setIsLoading]);
 
   if (!isSupabaseConfigured) {
     logger.warn('[AuthProvider] Supabase not configured - using fallback auth state');
