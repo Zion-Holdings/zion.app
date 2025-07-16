@@ -130,7 +130,7 @@ export default function TokenSimulator() {
     const id = 'chartjs-script2';
     const load = () => {
       if (!supplyChart.current || typeof window.Chart !== 'function') return;
-      const Chart = window.Chart as typeof import('chart.js');
+      const Chart = window.Chart as unknown as typeof import('chart.js');
       const labels = Array.from({ length: months }, (_, i) => `${i + 1}`);
       if (chart && typeof (chart as { destroy?: () => void }).destroy === 'function') (chart as { destroy: () => void }).destroy();
       // Instead of 'new (Chart as any)', use a type guard for Chart constructor
