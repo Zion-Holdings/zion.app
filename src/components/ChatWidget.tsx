@@ -19,7 +19,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
   const { user } = useAuth();
   const [messages, setMessages] = useState<Message[]>([]);
   const [text, setText] = useState('');
-  const socketRef = useRef<unknown>(null);
+  const socketRef = useRef<import('socket.io-client').Socket | null>(null);
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
   // Load stored messages for this room when opened
@@ -39,7 +39,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
     if (!isOpen) return;
 
     let isMounted = true;
-    let socket: unknown = null;
+    let socket: import('socket.io-client').Socket | null = null;
 
     async function setup() {
       const mod = await import('socket.io-client');
@@ -47,8 +47,8 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
       if (!isMounted) return;
       socket = io({ path: '/api/socket', transports: ['websocket'] });
       socketRef.current = socket;
-      (socket as any).emit('join-room', roomId);
-      (socket as any).on('receive-message', (msg: Message) => {
+      socket.emit('join-room', roomId);
+      socket.on('receive-message', (msg: Message) => {
         setMessages(prev => [...prev, msg]);
         triggerNotification('New message', msg.content);
       });
@@ -60,7 +60,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
 
     return () => {
       isMounted = false;
-      (socket as any)?.disconnect();
+      socket?.disconnect();
       socketRef.current = null;
     };
   }, [isOpen, roomId]);
@@ -99,7 +99,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
       created_at: new Date().toISOString(),
       read: false
     };
-    (socketRef.current as any).emit('send-message', { roomId, message: msg });
+    socketRef.current?.emit('send-message', { roomId, message: msg });
     setMessages(prev => [...prev, msg]);
     setText('');
     inputRef.current?.focus();
