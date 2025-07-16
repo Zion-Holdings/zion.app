@@ -117,7 +117,8 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
 
     // Listen for auth state changes
     if (!supabase) throw new Error('Supabase client not initialized');
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+    const auth = supabase.auth;
+    const { data: { subscription } } = auth.onAuthStateChange(
       async (event: AuthChangeEvent, session: Session | null) => {
         if (!mounted) return
 
@@ -162,7 +163,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
         clearTimeout(redirectTimer)
       }
     }
-  }, [router, redirectTo, allowUnauthenticated, requireEmailVerified, supabase && supabase.auth])
+  }, [router, redirectTo, allowUnauthenticated, requireEmailVerified, supabase])
 
   return state
 }
