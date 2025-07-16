@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import { trackEvent, trackPageview } from '@/lib/analytics';
 
 // Analytics event types
 export type AnalyticsEventType = 
