@@ -12,6 +12,7 @@ import type { Interview } from '@/types/interview';
 import { Avatar } from "@/components/ui/avatar";
 import {logErrorToProduction} from '@/utils/productionLogger';
 import { useInterviews } from '@/hooks/useInterviews';
+import Link from 'next/link';
 
 export function UpcomingInterviewsCard() {
 
