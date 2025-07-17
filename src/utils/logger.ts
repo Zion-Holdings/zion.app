@@ -59,17 +59,17 @@ class Logger {
   }
 
   // Performance timing
-  time(): void {
-    if (this.isDevelopment) {
-      // Use structured logging instead of console.time
-      logInfo(`[TIMER] Starting: ${label}`);
+  time(label?: string): void {
+    if (this.isDevelopment && label) {
+      // eslint-disable-next-line no-console
+      console.time(label);
     }
   }
 
-  timeEnd(): void {
-    if (this.isDevelopment) {
-      // Use structured logging instead of console.timeEnd
-      logInfo(`[TIMER] Completed: ${label}`);
+  timeEnd(label?: string): void {
+    if (this.isDevelopment && label) {
+      // eslint-disable-next-line no-console
+      console.timeEnd(label);
     }
   }
 }
