@@ -117,7 +117,8 @@ export {
   Crown,
   Medal,
   Trophy,
-  Handshake
+  Handshake,
+  ShoppingCart
 } from 'lucide-react';
 
 // Development & Tech Icons
