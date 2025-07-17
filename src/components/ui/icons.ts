@@ -145,7 +145,8 @@ export {
   Sparkles,
   Bot,
   HardDrive,
-  Lightbulb
+  Lightbulb,
+  Webhook
 } from 'lucide-react';
 
 // Action Icons

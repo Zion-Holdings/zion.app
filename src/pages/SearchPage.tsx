@@ -81,7 +81,7 @@ export default function SearchPage() {
     } else {
       setResults([]);
     }
-  }, [router.isReady, query]); // Fixed dependency array
+  }, [router.isReady, query, fetchResults]);
 
   const fetchResults = async (term: string) => {
     if (!term.trim()) {
