@@ -27,7 +27,7 @@ export default function SearchResultsPage() {
   }, [router.isReady, router.query.q]);
 
   const [results, setResults] = useState<SearchResult[]>([]);
-  const [totalCount, setTotalCount] = useState(0);
+  const [_setTotalCount, setTotalCount] = useState(0);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [typeFilter, setTypeFilter] = useState<'all' | 'product' | 'service' | 'talent'>('all');

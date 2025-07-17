@@ -184,7 +184,7 @@ export default function ServicesPage() {
   const [sortBy, setSortBy] = useState('newest');
   const [filterCategory, setFilterCategory] = useState('');
   const [showRecommended, setShowRecommended] = useState(false);
-  const [totalGenerated, setTotalGenerated] = useState(0);
+  const [_totalGenerated, setTotalGenerated] = useState(0);
 
   const fetchServices = useCallback(async (page: number, limit: number) => {
     await new Promise(resolve => setTimeout(resolve, 400));

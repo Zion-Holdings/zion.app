@@ -64,7 +64,8 @@ export {
   Video,
   Camera,
   Mic,
-  MicOff
+  MicOff,
+  PlayCircle
 } from 'lucide-react';
 
 // File & Document Icons

@@ -63,7 +63,8 @@ function ProjectDetailsContent() {
   const { getProjectById, updateProjectStatus } = useProjects();
   
   const [project, setProject] = useState<Project | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [_setIsLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [notes, setNotes] = useState<ProjectNote[]>([]);
   const [newNote, setNewNote] = useState("");
   const [isSubmittingNote, setIsSubmittingNote] = useState(false);
