@@ -118,7 +118,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
       socket?.disconnect();
       socketRef.current = null;
     };
-  }, [isOpen, roomId]);
+  }, [isOpen, roomId, triggerNotification]);
 
   const triggerNotification = useCallback((title: string, body: string) => {
     if ('Notification' in window && Notification.permission === 'granted') {
@@ -169,7 +169,10 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
 
   useEffect(() => {
     if (isOpen && messages.length > 0) {
-      triggerNotification('New message', messages[messages.length - 1].content);
+      const lastMessage = messages[messages.length - 1];
+      if (lastMessage) {
+        triggerNotification('New message', lastMessage.content);
+      }
     }
   }, [isOpen, messages, triggerNotification]);
 
