@@ -204,6 +204,8 @@ export {
   ArrowRight,
   ArrowUp,
   ArrowDown,
+  ArrowDownAZ,
+  ArrowUpZA,
   Circle,
   CircleDot,
   Dot,

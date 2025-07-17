@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Search, Filter } from '@/components/ui/icons';
+import { Search, Filter, ArrowDownAZ, ArrowUpZA } from '@/components/ui/icons';
 import { GradientHeading } from "@/components/GradientHeading";
 import { ListingScoreCard } from "@/components/ListingScoreCard";
 import { Button } from "@/components/ui/button";
