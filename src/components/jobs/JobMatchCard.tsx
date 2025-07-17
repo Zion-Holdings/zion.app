@@ -10,7 +10,6 @@ import { Building, MapPin, Star } from 'lucide-react';
 
 
 import { formatDistanceToNow } from "date-fns";
-import type { JobMatch } from "@/types/jobs";
 
 interface JobMatchProps {
   matchId: string;
