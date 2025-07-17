@@ -48,6 +48,14 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
     }
   }, [isOpen, roomId]);
 
+  const triggerNotification = useCallback((title: string, body: string) => {
+    if ('Notification' in window && Notification.permission === 'granted') {
+      navigator.serviceWorker.getRegistration().then(reg => {
+        reg?.showNotification(title, { body });
+      });
+    }
+  }, []);
+
   useEffect(() => {
     if (!isOpen) return;
 
@@ -119,14 +127,6 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
       socketRef.current = null;
     };
   }, [isOpen, roomId, triggerNotification]);
-
-  const triggerNotification = useCallback((title: string, body: string) => {
-    if ('Notification' in window && Notification.permission === 'granted') {
-      navigator.serviceWorker.getRegistration().then(reg => {
-        reg?.showNotification(title, { body });
-      });
-    }
-  }, []);
 
   // Persist messages whenever they change while open
   useEffect(() => {
