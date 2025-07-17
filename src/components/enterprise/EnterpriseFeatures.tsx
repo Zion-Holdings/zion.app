@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Users, Shield, Award, Settings, Globe } from '@/components/ui/icons';
+import { Users, Shield, Award, Settings, Globe, Briefcase } from '@/components/ui/icons';
 
 
 
