@@ -14,21 +14,21 @@ try {
     get: () => (msg) => msg,
   });
 }
-const fs = require('fs');
-const path = require('path');
-let dotenv;
+const _fs = require('fs');
+const _path = require('path');
+let _dotenv;
 try {
-  dotenv = require('dotenv');
-} catch (err) {
+  _dotenv = require('dotenv');
+} catch (_err) {
   console.warn('⚠️  Optional dependency "dotenv" not found. Skipping env file loading.');
-  dotenv = null;
+  _dotenv = null;
 }
 
-const envPath = path.resolve(process.cwd(), '.env.local');
-if (!fs.existsSync(envPath)) {
+const envPath = _path.resolve(process.cwd(), '.env.local');
+if (!_fs.existsSync(envPath)) {
   console.warn(chalk.yellow('⚠️  .env.local file not found. Environment variables may be missing.'));
-} else if (dotenv && typeof dotenv.config === 'function') {
-  dotenv.config({ path: envPath });
+} else if (_dotenv && typeof _dotenv.config === 'function') {
+  _dotenv.config({ path: envPath });
 }
 
 // Check if we're in development mode or Netlify build
@@ -295,8 +295,8 @@ After setting up, you can verify by visiting:
 - Check the signup functionality at /signup
 `;
 
-  const guidePath = path.join(__dirname, '..', 'NETLIFY_ENVIRONMENT_SETUP.md');
-  fs.writeFileSync(guidePath, guide.trim());
+  const guidePath = _path.join(__dirname, '..', 'NETLIFY_ENVIRONMENT_SETUP.md');
+  _fs.writeFileSync(guidePath, guide.trim());
   console.error(chalk.green(`📋 Setup guide generated: ${guidePath}\n`));
 }
 
