@@ -7,7 +7,6 @@ import Link from 'next/link';
 import { RatingStars } from '@/components/RatingStars';
 import ProductReviews from '@/components/ProductReviews';
 import { ProductGallery } from '@/components/gallery/ProductGallery';
-import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
 import { addItem } from '@/store/cartSlice';
@@ -16,7 +15,6 @@ import { getBreadcrumbsForPath } from '@/utils/routeUtils';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 import { fetchProducts, validateProductData, ensureProductIntegrity } from '@/services/marketplace';
-import { AppLayout } from '@/layout/AppLayout';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -27,6 +25,21 @@ import {
 
 interface ListingPageProps {
   listing: ProductListing | null;
+}
+
+interface ApiProduct {
+  id: string;
+  name?: string;
+  title?: string;
+  description?: string;
+  price?: number;
+  currency?: string;
+  category?: string;
+  tags?: string[];
+  images?: string[];
+  rating?: number;
+  reviewCount?: number;
+  created_at?: string;
 }
 
 const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
@@ -127,26 +140,29 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
       // For now, we'll use `search: slug` and then filter, as `fetchProducts` might not support `id: slug` directly.
       // If an `id` param was available, it would be `fetchProducts({ id: slug })`
       const potentialProducts = await fetchProducts({ search: slug /* or id: slug if supported */ });
-      const productFromApi = potentialProducts.find((p: any) => p.id === slug);
+      const productFromApi = potentialProducts.find((p: ApiProduct) => p.id === slug);
 
       if (productFromApi && validateProductData(productFromApi)) {
         const ensuredProduct = ensureProductIntegrity([productFromApi])[0];
 
         if (ensuredProduct) {
+          const apiProduct = ensuredProduct as ApiProduct;
           listing = {
-            id: (ensuredProduct as any).id || slug,
-            title: (ensuredProduct as any).name || (ensuredProduct as any).title,
-            description: (ensuredProduct as any).description,
-            price: (ensuredProduct as any).price,
-            currency: (ensuredProduct as any).currency || 'USD',
-            category: (ensuredProduct as any).category || 'general',
-            tags: (ensuredProduct as any).tags,
-            images: (ensuredProduct as any).images,
-            rating: (ensuredProduct as any).rating,
-            reviewCount: (ensuredProduct as any).reviewCount,
-            createdAt: (ensuredProduct as any).created_at,
+            id: apiProduct.id || slug,
+            title: apiProduct.name || apiProduct.title || 'Untitled',
+            description: apiProduct.description || '',
+            price: apiProduct.price || null,
+            currency: apiProduct.currency || 'USD',
+            category: apiProduct.category || 'general',
+            tags: apiProduct.tags || [],
+            images: apiProduct.images || [],
+            rating: apiProduct.rating,
+            reviewCount: apiProduct.reviewCount,
+            createdAt: apiProduct.created_at || new Date().toISOString(),
             author: { name: 'Unknown', id: 'unknown' },
             availability: 'Available',
+            location: 'Unknown',
+            stock: 1,
           } as ProductListing;
         } else {
           // Handle case where product cannot be ensured
