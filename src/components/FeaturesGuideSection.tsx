@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Users, Zap, Settings, MessageSquare, ArrowRight, BarChart3, Plus } from '@/components/ui/icons';
+import { Users, Zap, Settings, MessageSquare, ArrowRight, BarChart3, Plus, Sparkles, HelpCircle } from '@/components/ui/icons';
 import { GradientHeading } from "./GradientHeading";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "./ui/button";
