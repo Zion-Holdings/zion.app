@@ -1,6 +1,6 @@
 
 import { formatDistanceToNow } from "date-fns";
-import { CheckCircle } from '@/components/ui/icons';
+import { CheckCircle, ThumbsUp, ThumbsDown } from '@/components/ui/icons';
 
 
 
