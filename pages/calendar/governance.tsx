@@ -1,6 +1,6 @@
-import { Header } from '../../src/components/Header';
-import { NextSeo } from '../../src/components/NextSeo';
-import { GradientHeading } from '../../src/components/GradientHeading';
+import { Header } from '@/components/Header';
+import { NextSeo } from '@/components/NextSeo';
+import { GradientHeading } from '@/components/GradientHeading';
 
 const historicalEvents: Record<string, string> = {
   '01-01': 'Genesis block minted (2023)',
