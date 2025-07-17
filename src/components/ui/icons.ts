@@ -50,7 +50,8 @@ export {
   Bell,
   Ban,
   ShieldAlert,
-  HelpCircle
+  HelpCircle,
+  ShieldCheck
 } from 'lucide-react';
 
 // Media Icons
