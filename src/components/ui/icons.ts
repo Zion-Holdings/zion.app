@@ -149,7 +149,10 @@ export {
   Bot,
   HardDrive,
   Lightbulb,
-  Webhook
+  Webhook,
+  Network,
+  Recycle,
+  Truck
 } from 'lucide-react';
 
 // Action Icons
