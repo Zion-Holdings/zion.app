@@ -300,7 +300,7 @@ export function initializePerformanceOptimizations(): void {
 
 export function calculateCLS(): number {
   const clsValue = 0;
-  const clsEntries: PerformanceEntry[] = [];
+  const _clsEntries: PerformanceEntry[] = [];
   // ... rest of the function ...
   return clsValue;
 }
@@ -442,8 +442,8 @@ export const bundleOptimization = {
   async dynamicImport<T>(importFn: () => Promise<T>): Promise<T> {
     try {
       return await importFn();
-    } catch (error) {
-      logErrorToProduction('Dynamic import failed:', { data: error });
+    } catch (_error) {
+      logErrorToProduction('Dynamic import failed:', { data: _error });
       throw new Error('Failed to load component');
     }
   },

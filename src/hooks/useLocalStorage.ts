@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
 import { logWarn } from '@/utils/productionLogger';
 
