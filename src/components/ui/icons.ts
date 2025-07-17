@@ -1,127 +1,170 @@
 /**
- * Optimized icon imports - reduces bundle size by using tree-shaking
- * Uses Next.js modularizeImports optimization for lucide-react
- * Expected bundle reduction: 60-80% from lucide-react
+ * Optimized icon exports for better tree shaking and bundle size
+ * This file centralizes all icon imports to reduce bundle size
  */
 
-// All icon exports using standard lucide-react imports
-// Next.js modularizeImports config will automatically tree-shake these
-export {
-  // Core navigation icons - frequently used across the app
-  Search,
-  Filter,
-  X,
-  Menu,
-  Home,
-  ArrowLeft,
-  ArrowRight,
-  ArrowUp,
+// Navigation & UI Icons
+export { 
+  Menu, 
+  X, 
+  Search, 
+  Filter, 
+  SortAsc, 
+  SortDesc,
   ChevronDown,
   ChevronUp,
   ChevronLeft,
   ChevronRight,
-  
-  // User interface icons
-  User,
-  Users,
-  UserPlus,
-  Settings,
-  LogIn,
-  LogOut,
+  ArrowLeft,
+  ArrowRight,
+  ArrowUp,
+  ArrowDown
+} from 'lucide-react';
+
+// Action Icons
+export {
   Plus,
   Minus,
   Edit,
   Trash2,
-  Trash,
-  Eye,
-  EyeOff,
-  
-  // Status and feedback icons
+  Copy,
+  Download,
+  Upload,
+  Share,
+  Heart,
+  Star,
+  Bookmark,
+  Flag,
+  MoreHorizontal,
+  MoreVertical
+} from 'lucide-react';
+
+// Communication Icons
+export {
+  MessageSquare,
+  Mail,
+  Phone,
+  Send,
+  Reply,
+  Forward
+} from 'lucide-react';
+
+// Status Icons
+export {
   Check,
   CheckCircle,
-  CheckCircle2,
   AlertCircle,
   AlertTriangle,
   Info,
+  XCircle,
   Loader2,
-  RefreshCw,
-  
-  // Theme icons
-  Sun,
-  Moon,
-  
-  // Business and marketplace icons
-  ShoppingCart,
-  Package,
-  CreditCard,
-  TrendingUp,
-  BarChart,
-  BarChart3,
-  DollarSign,
-  Briefcase,
-  MapPin,
   Clock,
   Calendar,
-  Globe,
-  Award,
-  
-  // Technology icons
-  Server,
-  Database,
-  Code,
-  Wifi,
-  WifiOff,
-  Monitor,
-  HardDrive,
-  Network,
-  Shield,
-  Lock,
-  Zap,
-  
-  // File and document icons
-  Download,
-  Upload,
-  File,
-  FileText,
-  Folder,
-  
-  // Communication icons
-  Mail,
-  MessageSquare,
-  MessageCircle,
-  Send,
-  Phone,
-  Bell,
-  
-  // Social media icons
-  Facebook,
-  Twitter,
-  Linkedin,
-  
-  // Media icons
-  Video,
-  VideoOff,
-  Mic,
-  MicOff,
-  Volume2,
-  VolumeX,
-  
-  // Rating and favorites
-  Heart,
-  Star,
-  StarHalf,
-  
-  // Layout icons
-  LayoutGrid,
-  List,
-  Grid,
-  
-  // Enhanced UI icons
-  Sparkles,
+  Bell
 } from 'lucide-react';
 
-// Simplified approach - use only the already optimized named exports
-// The Next.js modularizeImports config will handle tree-shaking automatically
+// Media Icons
+export {
+  Play,
+  Pause,
+  Stop,
+  Volume2,
+  VolumeX,
+  Image,
+  Video,
+  Camera,
+  Mic,
+  MicOff
+} from 'lucide-react';
+
+// File & Document Icons
+export {
+  File,
+  FileText,
+  FileImage,
+  FileVideo,
+  FileAudio,
+  Folder,
+  FolderOpen,
+  Save
+} from 'lucide-react';
+
+// Social & User Icons
+export {
+  User,
+  Users,
+  UserPlus,
+  UserMinus,
+  Settings,
+  LogOut,
+  LogIn,
+  UserCheck,
+  Shield,
+  Lock,
+  Unlock
+} from 'lucide-react';
+
+// Business & Finance Icons
+export {
+  DollarSign,
+  CreditCard,
+  Wallet,
+  TrendingUp,
+  TrendingDown,
+  BarChart3,
+  PieChart,
+  Activity,
+  Target,
+  Award
+} from 'lucide-react';
+
+// Development & Tech Icons
+export {
+  Code,
+  GitBranch,
+  GitCommit,
+  GitPullRequest,
+  Bug,
+  Zap,
+  Cpu,
+  Database,
+  Server,
+  Globe,
+  Wifi,
+  WifiOff
+} from 'lucide-react';
+
+// Layout & Design Icons
+export {
+  Grid,
+  List,
+  Columns,
+  Rows,
+  Layout,
+  Sidebar,
+  Maximize,
+  Minimize,
+  Move,
+  RotateCw,
+  RotateCcw
+} from 'lucide-react';
+
+// Utility Icons
+export {
+  Home,
+  MapPin,
+  Link,
+  ExternalLink,
+  RefreshCw,
+  RefreshCcw,
+  ZoomIn,
+  ZoomOut,
+  Eye,
+  EyeOff,
+  Sun,
+  Moon,
+  Monitor
+} from 'lucide-react';
 
 // Export type for icon component props
 export type IconProps = {
