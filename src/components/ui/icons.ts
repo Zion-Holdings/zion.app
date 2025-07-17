@@ -46,7 +46,8 @@ export {
   Clock,
   Calendar,
   Bell,
-  Ban // <-- Added Ban icon
+  Ban,
+  ShieldAlert
 } from 'lucide-react';
 
 // Media Icons
