@@ -76,7 +76,7 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ initialPost }) => {
     publishedTime: post.publishedDate,
     tags: post.tags || [],
   };
-  const body = (post as any).body || post.content;
+  const body = (post as BlogPost & { body?: string }).body || post.content;
   return (
     <>
       <AdvancedSEO

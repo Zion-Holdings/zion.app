@@ -70,15 +70,16 @@ const MyVotesPage: React.FC = () => {
         // const walletFilteredVotes = (data.results || data).filter((vote: UserVote) => vote.voter_wallet_address?.toLowerCase() === connectedWalletAddress?.toLowerCase());
         // setVotes(walletFilteredVotes);
         setVotes(Array.isArray(data) ? data : (data.results || []));
-      } catch (err: any) {
-        setError(err.message);
+      } catch (err: unknown) {
+        const errorMessage = err instanceof Error ? err.message : 'Failed to fetch votes';
+        setError(errorMessage);
       } finally {
         setIsLoading(false);
       }
     };
 
     fetchMyVotes();
-  }, [isConnected, connectedWalletAddress]); // Refetch if wallet connection status or address changes
+  }, [isConnected, connectedWalletAddress, user]); // Refetch if wallet connection status or address changes
 
   const getChoiceVariant = (choice: string): "default" | "secondary" | "destructive" | "outline" => {
     if (choice === 'APPROVE') return 'secondary'; // Green-ish in shadcn (often success-like)

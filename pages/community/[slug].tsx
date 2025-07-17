@@ -103,7 +103,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ initialPosts, initialNextCu
   );
 };
 
-export const getServerSideProps = async ({ req, params }: { req: any; params?: { slug?: string } }) => {
+export const getServerSideProps = async ({ req, params }: { req: { headers: { authorization?: string } }; params?: { slug?: string } }) => {
   const category = params?.slug as string;
   
   try {

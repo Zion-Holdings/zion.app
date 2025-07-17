@@ -46,8 +46,9 @@ const GovernancePage: React.FC = () => {
         // The Django REST Framework by default returns paginated results under a "results" key.
         // If not paginated, it might be a direct array.
         setProposals(Array.isArray(data) ? data : (data.results || []));
-      } catch (err: any) {
-        setError(err.message);
+      } catch (err: unknown) {
+        const errorMessage = err instanceof Error ? err.message : 'Failed to fetch proposals';
+        setError(errorMessage);
         logErrorToProduction('Fetch error:', { data: err });
       } finally {
         setIsLoading(false);

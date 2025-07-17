@@ -22,7 +22,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   const sig = (req.headers as Record<string, string | string[] | undefined>)['stripe-signature'] as string;
-  let event: any;
+  let event: Stripe.Event;
   try {
     const buf = await buffer(req as unknown as IncomingMessage);
     event = stripe.webhooks.constructEvent(buf.toString(), sig, webhookSecret);

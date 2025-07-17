@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 const grouped = PROPOSAL_TEMPLATES.reduce<Record<string, typeof PROPOSAL_TEMPLATES>>( (acc, t) => {
   (acc[t.category] = acc[t.category] || []).push(t);
   return acc;
-}, {} as any);
+}, {} as Record<string, typeof PROPOSAL_TEMPLATES>);
 
 const ZgpLibraryPage: React.FC = () => {
   return (

@@ -1,10 +1,16 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
 
+declare global {
+  interface Window {
+    SwaggerUIBundle: (config: { url: string; dom_id: string }) => void;
+  }
+}
+
 export default function SwaggerDocs() {
   useEffect(() => {
-    if (typeof window !== 'undefined' && (window as any).SwaggerUIBundle) {
-      (window as any).SwaggerUIBundle({
+    if (typeof window !== 'undefined' && window.SwaggerUIBundle) {
+      window.SwaggerUIBundle({
         url: '/openapi.yaml',
         dom_id: '#swagger-ui',
       });
