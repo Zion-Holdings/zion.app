@@ -1,7 +1,8 @@
 
 import React from "react";
+import { AlertTriangle, AlertCircle, ShieldAlert } from '@/components/ui/icons';
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { AlertTriangle, AlertCircle, ShieldAlert } from 'lucide-react';
+
 
 
 
