@@ -5,7 +5,7 @@
 
 
 import type { Badge } from "@/types/community";
-import { Award, Star, MessageSquare } from '@/components/ui/icons';
+import { Award, Star, MessageSquare, Trophy, BadgeCheck } from '@/components/ui/icons';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 
