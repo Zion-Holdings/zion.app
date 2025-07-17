@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Search } from '@/components/ui/icons';
+import { Search, CalendarIcon } from '@/components/ui/icons';
 
 import {
   Table,
