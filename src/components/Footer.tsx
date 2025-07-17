@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, MapPin, ArrowUp, Heart, Shield, Zap, Users, Globe, Award } from '@/components/ui/icons';
+import { Mail, Phone, MapPin, ArrowUp, Heart, Shield, Zap, Users, Globe, Award, Facebook, Twitter, Instagram, Linkedin, Youtube, Github } from '@/components/ui/icons';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
