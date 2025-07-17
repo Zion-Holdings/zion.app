@@ -125,7 +125,8 @@ export {
   Medal,
   Trophy,
   Handshake,
-  ShoppingCart
+  ShoppingCart,
+  BadgePlus
 } from 'lucide-react';
 
 // Development & Tech Icons
