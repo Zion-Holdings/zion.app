@@ -6,13 +6,13 @@
  * Comprehensive production setup and validation for enterprise deployment
  */
 
-const fs = require('fs');
-const path = require('path');
+const _fs = require('fs');
+const _path = require('path');
 
 // Remove or prefix all unused variables and arguments with underscores throughout the file for linter compliance
 
 class ProductionReadinessImplementer {
-  constructor() {
+  constructor(_options) {
     this.results = {
       implemented: [],
       validated: [],
@@ -119,7 +119,7 @@ UV_THREADPOOL_SIZE=4
 NODE_NO_WARNINGS=1
 `;
 
-    fs.writeFileSync('.env.production.example', envTemplate.trim());
+    _fs.writeFileSync('.env.production.example', envTemplate.trim());
     this.results.implemented.push('Environment Configuration Template Created');
     
     // Create production environment validation
@@ -196,7 +196,7 @@ if (require.main === module) {
 module.exports = { validateEnvironment };
 `;
 
-    fs.writeFileSync('scripts/validate-production-env.cjs', validatorCode);
+    _fs.writeFileSync('scripts/validate-production-env.cjs', validatorCode);
     this.results.implemented.push('Production Environment Validator Created');
   }
 
@@ -239,7 +239,7 @@ const securityHeaders = [
 module.exports = { securityHeaders };
 `;
 
-    fs.writeFileSync('scripts/security-headers.js', securityHeadersCode);
+    _fs.writeFileSync('scripts/security-headers.js', securityHeadersCode);
     this.results.implemented.push('Enterprise Security Headers Configuration');
   }
 
@@ -315,7 +315,7 @@ class ProductionMonitor {
       checks: results
     };
     
-    fs.writeFileSync('production-health-report.json', JSON.stringify(report, null, 2));
+    _fs.writeFileSync('production-health-report.json', JSON.stringify(report, null, 2));
     return report;
   }
 }
@@ -328,7 +328,7 @@ if (require.main === module) {
 module.exports = ProductionMonitor;
 `;
 
-    fs.writeFileSync('scripts/production-monitor.cjs', monitoringCode);
+    _fs.writeFileSync('scripts/production-monitor.cjs', monitoringCode);
     this.results.implemented.push('Production Monitoring System');
   }
 
@@ -374,7 +374,7 @@ export const productionOptimizations = {
 export default productionOptimizations;
 `;
 
-    fs.writeFileSync('src/config/production-optimizations.ts', performanceCode);
+    _fs.writeFileSync('src/config/production-optimizations.ts', performanceCode);
     this.results.implemented.push('Performance Optimization Configuration');
   }
 
@@ -458,7 +458,7 @@ if (require.main === module) {
 module.exports = BuildValidator;
 `;
 
-    fs.writeFileSync('scripts/validate-production-build.cjs', buildValidatorCode);
+    _fs.writeFileSync('scripts/validate-production-build.cjs', buildValidatorCode);
     this.results.implemented.push('Production Build Validator');
   }
 
@@ -566,7 +566,7 @@ npm run deploy:verify
 Once these are set, the application is **100% production-ready** for enterprise deployment! 🚀
 `;
 
-    fs.writeFileSync('docs/PRODUCTION_DEPLOYMENT_CHECKLIST.md', checklist);
+    _fs.writeFileSync('docs/PRODUCTION_DEPLOYMENT_CHECKLIST.md', checklist);
     this.results.implemented.push('Production Deployment Checklist');
   }
 
