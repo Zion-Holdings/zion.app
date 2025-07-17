@@ -31,7 +31,8 @@ export {
   EyeOff,
   Sun,
   Moon,
-  Monitor
+  Monitor,
+  PowerOff
 } from 'lucide-react';
 
 // Status Icons
@@ -76,7 +77,8 @@ export {
   FolderOpen,
   Save,
   Clipboard,
-  PaperclipIcon
+  PaperclipIcon,
+  Archive
 } from 'lucide-react';
 
 // Social & User Icons

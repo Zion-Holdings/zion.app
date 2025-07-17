@@ -24,7 +24,7 @@ export function useInfiniteScroll(
   const {
     hasMore,
     loading,
-    threshold = 100,
+    threshold: _threshold = 100,
     rootMargin = '0px',
     delayMs = 200
   } = options;

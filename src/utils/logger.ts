@@ -14,7 +14,7 @@ class Logger {
 
   log(message: string, data?: unknown): void {
     if (this.isDebugEnabled) {
-      console.log(`[${this.name}] ${message}`, data || '');
+      console.warn(`[${this.name}] ${message}`, data || '');
     }
   }
 
@@ -32,13 +32,13 @@ class Logger {
 
   info(message: string, data?: unknown): void {
     if (this.isDebugEnabled) {
-      console.info(`[${this.name}] ${message}`, data || '');
+      console.warn(`[${this.name}] ${message}`, data || '');
     }
   }
 
   debug(message: string, data?: unknown): void {
     if (this.isDebugEnabled) {
-      console.debug(`[${this.name}] ${message}`, data || '');
+      console.warn(`[${this.name}] ${message}`, data || '');
     }
   }
 
@@ -46,7 +46,7 @@ class Logger {
   devLog(message?: string, ...args: unknown[]): void {
     if (this.isDevelopment) {
       if (message) {
-        console.log('[DEV]', message, ...args);
+        console.warn('[DEV]', message, ...args);
       }
     }
   }

@@ -71,31 +71,10 @@ function ProjectDetailsContent() {
   
   // Load project data
   useEffect(() => {
-    async function loadProject() {
-      if (!projectId) return;
-      
-      setIsLoading(true);
-      const projectData = await getProjectById(projectId);
-      
-      if (projectData) {
-        setProject(projectData);
-        
-        // Now fetch notes
-        fetchProjectNotes(projectId);
-      } else {
-        toast({
-          title: "Project not found",
-          description: "The requested project could not be found.",
-          variant: "destructive",
-        });
-        router.push("/dashboard");
-      }
-      
-      setIsLoading(false);
+    if (projectId) {
+      getProjectById(projectId);
     }
-    
-    loadProject();
-  }, [projectId]);
+  }, [projectId, getProjectById, router]);
   
   const fetchProjectNotes = async (projectId: string) => {
     try {

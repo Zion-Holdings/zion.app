@@ -43,7 +43,7 @@ export const useJobs = (userId?: string, status?: JobStatus) => {
       setJobs(data as Job[]);
       setError(null);
     } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : String(err);
+      const _message = 'Job fetch error';
       logErrorToProduction('Error fetching jobs:', { data: err });
       setError("Failed to fetch jobs. Please try again.");
       toast.error("Failed to fetch jobs");
@@ -68,7 +68,7 @@ export const useJobs = (userId?: string, status?: JobStatus) => {
       toast.success("Job status updated successfully");
       return true;
     } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : String(err);
+      const _message = 'Job update error';
       logErrorToProduction('Error updating job status:', { data: err });
       toast.error("Failed to update job status");
       return false;
@@ -91,7 +91,7 @@ export const useJobs = (userId?: string, status?: JobStatus) => {
       toast.success("Job deleted successfully");
       return true;
     } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : String(err);
+      const _message = 'Job delete error';
       logErrorToProduction('Error deleting job:', { data: err });
       toast.error("Failed to delete job");
       return false;

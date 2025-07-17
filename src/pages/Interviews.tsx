@@ -18,13 +18,8 @@ function InterviewsContent() {
   const [activeTab, setActiveTab] = useState("upcoming");
   
   useEffect(() => {
-    // Modified to handle Promise<Interview[]> return type
-    const loadInterviews = async () => {
-      await fetchInterviews();
-    };
-    
-    loadInterviews();
-  }, []);
+    fetchInterviews();
+  }, [fetchInterviews]);
 
   // Filter interviews based on status and date
   const now = new Date();
