@@ -200,7 +200,7 @@ export class ProductionErrorMonitor {
     }
   }
 
-  public captureMessage(message: string, level: 'info' | 'warning' | 'error' = 'info'): void {
+  public captureMessage(): void {
     // Sentry.captureMessage(message, level); // Removed Sentry import, so this line is commented out
   }
 }
@@ -217,6 +217,6 @@ export const setUserId = (userId: string) => {
   errorMonitor.setUserId(userId);
 };
 
-export const captureMessage = (message: string, level?: 'info' | 'warning' | 'error') => {
-  errorMonitor.captureMessage(message, level);
+export const captureMessage = () => {
+  errorMonitor.captureMessage();
 }; 
