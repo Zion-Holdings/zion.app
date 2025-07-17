@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Edit, MoreHorizontal, ExternalLink, Users, RefreshCcw } from '@/components/ui/icons';
+import { Edit, MoreHorizontal, ExternalLink, Users, RefreshCcw, PowerOff } from '@/components/ui/icons';
 import { supabase } from '@/integrations/supabase/client';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
@@ -236,7 +236,7 @@ export function TenantsList() {
                               </>
                             ) : (
                               <>
-                                <Power className="mr-2 h-4 w-4" />
+                                <PowerOff className="mr-2 h-4 w-4" />
                                 Enable Tenant
                               </>
                             )}
