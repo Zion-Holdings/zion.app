@@ -19,7 +19,6 @@ const checkPageContent = async (path: string, expectedText: string | RegExp, une
   // if (unexpectedTestId) {
   //  expect(screen.queryByTestId(unexpectedTestId)).not.toBeInTheDocument();
   // }
-  console.log(`Mock test: Navigated to ${path}. Checked for "${expectedText}". Ensured "${unexpectedTestId || 'none'}" is not present.`);
   return true;
 };
 
@@ -76,6 +75,5 @@ describe('Top-Level Navigation Routes', () => {
     // Navigate to /community
     // Expect element with data-testid="community-forum-page" TO BE VISIBLE
     // Expect some text unique to non-forum pages NOT TO BE VISIBLE
-    console.log("Mock test: Navigated to /community. Checked for presence of community forum elements.");
   });
 });

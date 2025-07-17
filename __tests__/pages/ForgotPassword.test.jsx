@@ -37,8 +37,6 @@ describe('ForgotPassword Page', () => {
     //   expect(screen.getByText(/password reset instructions sent/i)).toBeInTheDocument();
     // });
     // expect(require('../../src/services/auth').forgotPassword).toHaveBeenCalledWith('success@example.com');
-    console.log("Mock test: Simulating successful submission message check.");
-    // For now, the component directly sets a message:
     await waitFor(() => {
       expect(screen.getByText(/password reset instructions sent to your email if it exists in our system./i)).toBeInTheDocument();
     });
@@ -56,6 +54,5 @@ describe('ForgotPassword Page', () => {
     //   expect(screen.getByText(/failed to send link/i)).toBeInTheDocument();
     // });
     // expect(require('../../src/services/auth').forgotPassword).toHaveBeenCalledWith('error@example.com');
-    console.log("Mock test: Simulating error message check (currently not implemented in component this way).");
   });
 });
