@@ -207,7 +207,7 @@ async function main() {
   } else {
     promptForCodex += "No files were automatically extracted or fetched.\n";
   }
-  promptForCodex += "Based on the issue described and provided files, generate a code patch in standard diff format. Ensure the patch is clearly delimited by \`\`\`diff ... \`\`\` marks. If you cannot generate a patch, explain why. If multiple files need changes, provide separate diffs for each file.";
+  promptForCodex += "Based on the issue described and provided files, generate a code patch in standard diff format. Ensure the patch is clearly delimited by ```diff ... ``` marks. If you cannot generate a patch, explain why. If multiple files need changes, provide separate diffs for each file.";
 
   console.warn("Constructed prompt for OpenAI. Length:", promptForCodex.length);
   const codexResponseContent = await sendPromptToOpenAI(promptForCodex);

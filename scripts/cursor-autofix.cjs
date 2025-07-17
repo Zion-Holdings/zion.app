@@ -14,7 +14,7 @@
 const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
-const fetch = require('node-fetch');
+const fetchModule = require('node-fetch');
 
 const API = 'https://api.cursor.sh/v1';
 const apiKey = process.env.CURSOR_API_KEY;
@@ -26,14 +26,14 @@ if (!apiKey || !projectId) {
 }
 
 async function getIssues() {
-  const res = await fetch(`${API}/projects/${projectId}/issues?status=open`, {
+  const res = await fetchModule(`${API}/projects/${projectId}/issues?status=open`, {
     headers: { Authorization: `Bearer ${apiKey}` },
   });
   return res.ok ? res.json() : [];
 }
 
 async function requestPatch(issueId) {
-  const res = await fetch(`${API}/issues/${issueId}/patch`, {
+  const res = await fetchModule(`${API}/issues/${issueId}/patch`, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${apiKey}`,
