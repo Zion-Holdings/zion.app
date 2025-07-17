@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BarChart3, Monitor, User } from '@/components/ui/icons';
+import { BarChart3, Monitor, User, BriefcaseIcon } from '@/components/ui/icons';
 import type { MatchResultItem } from "@/lib/ai-matchmaking";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
