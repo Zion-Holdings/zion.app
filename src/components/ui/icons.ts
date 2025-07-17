@@ -186,8 +186,7 @@ export {
   Linkedin,
   Link as LinkIcon,
   Megaphone,
-  Pin,
-  Lock
+  Pin
 } from 'lucide-react';
 
 // Navigation & UI Icons
