@@ -11,12 +11,12 @@ import { useDisputeCheck } from '@/hooks/useDisputeCheck';
 import { logErrorToProduction } from '@/utils/productionLogger';
 
 import {
-  MilestoneActivities,
   MilestoneManager,
   MilestoneCreator,
   ProjectActions,
   ProjectHeader,
 } from './components';
+import { MilestoneActivities } from './MilestoneActivities';
 import type { Milestone } from '@/hooks/milestones/types';
 
 export function ProjectMilestonesContent() {

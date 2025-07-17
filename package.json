@@ -418,6 +418,7 @@
     "vite": "^7.0.4",
     "vitest": "^3.2.4",
     "webpack": "^5.100.2",
+    "webpack-bundle-analyzer": "^4.10.2",
     "whatwg-fetch": "^3.6.20"
   },
   "overrides": {
