@@ -92,7 +92,7 @@ const PitchGeneratorPage: React.FC = () => {
           // In a real scenario, we'd get the Auth0 token here
           // For now, we'll proceed without a token since this is an admin operation
         }
-      } catch (_authError) {
+      } catch {
         logWarn('Supabase auth disabled, using Auth0 fallback for admin operations');
         // In a real scenario, we'd get the Auth0 token here
         // For now, we'll proceed without a token since this is an admin operation
