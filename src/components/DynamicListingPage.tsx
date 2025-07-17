@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Search, Filter, List, Star } from '@/components/ui/icons';
+import { Search, Filter, List, Star, LayoutGrid } from '@/components/ui/icons';
 import { useRouter } from 'next/router';
 import { GradientHeading } from "@/components/GradientHeading";
 import { ProductListingCard } from "@/components/ProductListingCard";

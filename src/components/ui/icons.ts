@@ -14,7 +14,8 @@ export {
   Maximize,
   Minimize,
   Move,
-  RotateCcw
+  RotateCcw,
+  LayoutGrid
 } from 'lucide-react';
 
 // Utility Icons
