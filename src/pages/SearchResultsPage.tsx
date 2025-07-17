@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import { SearchResultCard } from '@/components/search/SearchResultCard';
 import { SearchBar } from '@/components/SearchBar';
 import { SearchEmptyState } from '@/components/marketplace/EmptyState';
 import { generateSearchSuggestions } from '@/data/marketplaceData';
+import { logErrorToProduction } from '@/utils/logErrorToProduction';
 
 interface SearchResult {
   id: string;
@@ -32,35 +33,32 @@ export default function SearchResultsPage() {
   const [typeFilter, setTypeFilter] = useState<'all' | 'product' | 'service' | 'talent'>('all');
   const [sortBy, setSortBy] = useState<'relevance' | 'titleAsc' | 'titleDesc'>('relevance');
 
-  const fetchResults = async () => {
-    if (!router.isReady || !query) return;
-    setLoading(true);
-    const res = await fetch(
-      `/api/search?query=${encodeURIComponent(query)}&page=${page}&limit=${LIMIT}`
-    );
-    if (res.ok) {
-      const data = await res.json();
-      let items: SearchResult[] = data.results || [];
-      if (typeFilter !== 'all') {
-        items = items.filter((r) => r.type === typeFilter);
-      }
-      if (sortBy === 'titleAsc') {
-        items.sort((a, b) => a.title.localeCompare(b.title));
-      } else if (sortBy === 'titleDesc') {
-        items.sort((a, b) => b.title.localeCompare(a.title));
-      }
-      setResults(items);
-      setTotalCount(data.totalCount || items.length);
-    } else {
+  const fetchResults = useCallback(async (term: string) => {
+    if (!term.trim()) {
       setResults([]);
-      setTotalCount(0);
+      return;
     }
-    setLoading(false);
-  };
+    setLoading(true);
+    try {
+      const res = await fetch(`/api/search?query=${encodeURIComponent(term)}`);
+      const data = await res.json();
+      if (data && data.results && Array.isArray(data.results)) {
+        setResults(data.results);
+      } else {
+        setResults([]);
+        logErrorToProduction('Search API response structure is not as expected:', { data: data });
+      }
+    } catch (error) {
+      logErrorToProduction('Search failed:', { data: error });
+      setResults([]);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
   useEffect(() => {
     if (query) {
-      fetchResults();
+      fetchResults(query);
     }
   }, [query, fetchResults]);
 
