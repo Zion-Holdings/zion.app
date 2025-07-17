@@ -1,4 +1,4 @@
-import { logInfo, logWarn } from '@/utils/productionLogger';
+import { logWarn } from '@/utils/productionLogger';
 
 // Browser-safe IPFS implementation without any libp2p dependencies
 // This version never attempts to load native modules in the browser
