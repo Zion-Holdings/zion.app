@@ -7,7 +7,8 @@ import { Header } from '@/components/Header';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/useAuth';
 import { captureException } from '@/utils/sentry';
-import { Home, Search, Users, ArrowLeft, ExternalLink, ShoppingCart } from '@/components/ui/icons';
+import { Home, Search, Users, ArrowLeft, ExternalLink } from '@/components/ui/icons';
+import { ShoppingCart } from 'lucide-react';
 import { logInfo } from '@/utils/productionLogger';
 
 export default function Custom404() {
