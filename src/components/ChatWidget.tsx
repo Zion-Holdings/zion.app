@@ -128,12 +128,6 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
     }
   }, []);
 
-  useEffect(() => {
-    if (isOpen && messages.length > 0) {
-      triggerNotification();
-    }
-  }, [isOpen, messages.length, triggerNotification]);
-
   // Persist messages whenever they change while open
   useEffect(() => {
     if (!isOpen) return;
@@ -143,13 +137,6 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
       console.warn('ChatWidget: failed to save history', error);
     }
   }, [messages, roomId, isOpen]);
-
-  const handleKeyPress = useCallback((e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      handleSend();
-    }
-  }, [handleSend]);
 
   const handleSend = useCallback(() => {
     if (!socketRef.current || !text.trim() || !user || typeof user === 'boolean') return;
@@ -168,6 +155,13 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
     setText('');
     inputRef.current?.focus();
   }, [text, user, recipientId, roomId]);
+
+  const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSend();
+    }
+  }, [handleSend]);
 
   const handleClose = useCallback(() => {
     onClose();
@@ -236,7 +230,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
           <textarea
             value={text}
             onChange={e => setText(e.target.value)}
-            onKeyDown={handleKeyPress}
+            onKeyDown={handleKeyDown}
             rows={2}
             className="flex-1 p-2 text-black dark:text-white rounded bg-zion-blue-light dark:bg-zion-blue-dark border border-zion-purple/20 focus:border-zion-purple focus:outline-none resize-none"
             placeholder="Type your message..."
