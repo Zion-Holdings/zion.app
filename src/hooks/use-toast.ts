@@ -2,9 +2,9 @@
 import { globalToastManager, showToast, ToastType, ToastPriority } from '@/utils/globalToastManager';
 
 // Deduplication settings
-const DEDUPE_DELAY = 3000; // 3 seconds
-const lastKey: string | null = null;
-const lastShown = 0;
+const _DEDUPE_DELAY = 3000; // 3 seconds
+const _lastKey: string | null = null;
+const _lastShown = 0;
 
 interface ToastActionProps {
   label: string;
