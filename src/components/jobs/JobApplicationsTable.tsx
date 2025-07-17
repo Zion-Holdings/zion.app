@@ -51,7 +51,7 @@ export function JobApplicationsTable({ jobId }: JobApplicationsTableProps) {
     await markApplicationAsViewed(applicationId);
   };
 
-  const handleScoreUpdated = (updatedApplication: JobApplication) => {
+  const handleScoreUpdated = () => {
     refetch();
   };
 
