@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MessageSquare, Lock, CheckCircle } from '@/components/ui/icons';
+import { MessageSquare, Lock, CheckCircle, Pin, ThumbsUp, ThumbsDown } from '@/components/ui/icons';
 import { formatDistanceToNow } from "date-fns";
 import Link from "next/link";
 
