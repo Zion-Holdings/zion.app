@@ -1,5 +1,5 @@
 import React from 'react';
-import { LogOut } from '@/components/ui/icons';
+import { LogOut, UserIcon, Package } from '@/components/ui/icons';
 import Link from 'next/link';
 import { useAuth } from '@/hooks/useAuth';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
