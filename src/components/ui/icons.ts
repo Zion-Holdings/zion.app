@@ -31,7 +31,8 @@ export {
   EyeOff,
   Sun,
   Moon,
-  Monitor
+  Monitor,
+  PowerOff
 } from 'lucide-react';
 
 // Status Icons
