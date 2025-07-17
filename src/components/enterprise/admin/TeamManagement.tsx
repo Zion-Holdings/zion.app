@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { Mail, UserPlus } from '@/components/ui/icons';
+import { Mail, UserPlus, Trash } from '@/components/ui/icons';
 
 import {
   Table,
