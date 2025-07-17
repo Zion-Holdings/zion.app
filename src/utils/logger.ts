@@ -43,10 +43,9 @@ class Logger {
   }
 
   // Conditional development logging
-  devLog(message?: string, ...args: any[]): void {
+  devLog(message?: string, ...args: unknown[]): void {
     if (this.isDevelopment) {
       if (message) {
-        // eslint-disable-next-line no-console
         console.log('[DEV]', message, ...args);
       }
     }
@@ -55,14 +54,12 @@ class Logger {
   // Performance timing
   time(label?: string): void {
     if (this.isDevelopment && label) {
-      // eslint-disable-next-line no-console
       console.time(label);
     }
   }
 
   timeEnd(label?: string): void {
     if (this.isDevelopment && label) {
-      // eslint-disable-next-line no-console
       console.timeEnd(label);
     }
   }
