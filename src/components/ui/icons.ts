@@ -13,7 +13,8 @@ export {
   Sidebar,
   Maximize,
   Minimize,
-  Move
+  Move,
+  RotateCcw
 } from 'lucide-react';
 
 // Utility Icons
