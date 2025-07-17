@@ -2,15 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Calendar, Clock, MapPin, User, Video, Phone } from 'lucide-react';
+import { Calendar, Clock, Video } from 'lucide-react';
 import { format, parseISO } from 'date-fns';
 import { supabase } from '@/integrations/supabase/client';
 import type { Interview } from '@/types/interview';
 
 
 import { Avatar } from "@/components/ui/avatar";
-import {logErrorToProduction} from '@/utils/productionLogger';
 import { useInterviews } from '@/hooks/useInterviews';
 import Link from 'next/link';
 
