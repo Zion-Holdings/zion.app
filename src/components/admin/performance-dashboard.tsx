@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
+import { Zap, TrendingUp, AlertTriangle, CheckCircle, RefreshCw, BarChart3, Clock, Globe, Package } from '@/components/ui/icons';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { Zap, Package, TrendingUp, AlertTriangle, CheckCircle, RefreshCw, BarChart3, Clock, Globe } from 'lucide-react';
+
 
 
 
