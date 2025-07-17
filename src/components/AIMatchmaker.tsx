@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search } from '@/components/ui/icons';
+import { Search, Sparkles } from '@/components/ui/icons';
 import { toast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
