@@ -29,7 +29,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const DebugPage: React.FC<{ timestamp: number }> = ({ timestamp }) => {
+const DebugPage: React.FC<{ timestamp: number }> = ({ _timestamp }) => {
   const [debugInfo, setDebugInfo] = useState<DebugInfo | null>(null);
   const [loading, setLoading] = useState(true);
 

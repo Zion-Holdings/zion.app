@@ -126,7 +126,7 @@ const LoginPage = () => {
       logInfo('LoginPage: Unmounting, cleaning up auth listener.');
       unsubscribePromise.then(cleanup => cleanup && cleanup());
     };
-  }, []); // Run only once on mount
+  }, [sessionChecked]); // Include sessionChecked to satisfy exhaustive-deps
 
   // Effect for handling redirection AFTER session is checked and user state is updated
   useEffect(() => {

@@ -5,7 +5,7 @@
 // and a more descriptive style for E2E checks.
 
 // Helper function to simulate page navigation and content checking (conceptual)
-const checkPageContent = async (path: string, expectedText: string | RegExp, unexpectedTestId?: string) => {
+const checkPageContent = async (_path: string, _expectedText: string | RegExp, _unexpectedTestId?: string) => {
   // In a real E2E test (Cypress/Playwright):
   // await page.goto(path);
   // await expect(page.locator(`text=${expectedText}`)).toBeVisible();

@@ -1,7 +1,7 @@
 // pages/governance/create.tsx
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { useForm } from 'react-hook-form';
+import { useForm, ControllerRenderProps } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 
@@ -77,7 +77,7 @@ const CreateProposalPage: React.FC = () => {
         });
       }
     }
-  }, [query.template]);
+  }, [query.template, form]);
 
   const onSubmit = async (data: ProposalFormData) => {
     setIsLoading(true);
@@ -127,8 +127,9 @@ const CreateProposalPage: React.FC = () => {
 
       const newProposal = await response.json();
       router.push(`/governance/${newProposal.id}`);
-    } catch (err: any) {
-      setApiError(err.message || 'Failed to create proposal.');
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : 'Failed to create proposal.';
+      setApiError(errorMessage);
       logErrorToProduction("Error:", { error: err });
     } finally {
       setIsLoading(false);
@@ -144,7 +145,7 @@ const CreateProposalPage: React.FC = () => {
           <FormField
             control={form.control}
             name="title"
-          render={({ field }: { field: any }) => (
+          render={({ field }: { field: ControllerRenderProps<ProposalFormData, 'title'> }) => (
             <FormItem>
               <FormLabel>Title</FormLabel>
                 <FormControl>
@@ -158,7 +159,7 @@ const CreateProposalPage: React.FC = () => {
           <FormField
             control={form.control}
             name="summary"
-          render={({ field }: { field: any }) => (
+          render={({ field }: { field: ControllerRenderProps<ProposalFormData, 'summary'> }) => (
             <FormItem>
               <FormLabel>Summary</FormLabel>
                 <FormControl>
@@ -172,7 +173,7 @@ const CreateProposalPage: React.FC = () => {
           <FormField
             control={form.control}
             name="proposal_type"
-          render={({ field }: { field: any }) => (
+          render={({ field }: { field: ControllerRenderProps<ProposalFormData, 'proposal_type'> }) => (
             <FormItem>
               <FormLabel>Proposal Type</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
@@ -195,7 +196,7 @@ const CreateProposalPage: React.FC = () => {
           <FormField
             control={form.control}
             name="voting_starts_at"
-          render={({ field }: { field: any }) => (
+          render={({ field }: { field: ControllerRenderProps<ProposalFormData, 'voting_starts_at'> }) => (
             <FormItem>
               <FormLabel>Voting Starts At (Optional)</FormLabel>
                 <FormControl>
@@ -209,7 +210,7 @@ const CreateProposalPage: React.FC = () => {
           <FormField
             control={form.control}
             name="voting_ends_at"
-          render={({ field }: { field: any }) => (
+          render={({ field }: { field: ControllerRenderProps<ProposalFormData, 'voting_ends_at'> }) => (
             <FormItem>
               <FormLabel>Voting Ends At (Optional)</FormLabel>
                 <FormControl>
@@ -223,7 +224,7 @@ const CreateProposalPage: React.FC = () => {
           <FormField
             control={form.control}
             name="quorum_percentage"
-          render={({ field }: { field: any }) => (
+          render={({ field }: { field: ControllerRenderProps<ProposalFormData, 'quorum_percentage'> }) => (
             <FormItem>
               <FormLabel>Quorum Percentage (e.g., 0.2 for 20%)</FormLabel>
                 <FormControl>
@@ -240,7 +241,7 @@ const CreateProposalPage: React.FC = () => {
           <FormField
             control={form.control}
             name="funding_ask_amount"
-          render={({ field }: { field: any }) => (
+          render={({ field }: { field: ControllerRenderProps<ProposalFormData, 'funding_ask_amount'> }) => (
             <FormItem>
               <FormLabel>Funding Ask Amount (Optional)</FormLabel>
                 <FormControl>
@@ -256,7 +257,7 @@ const CreateProposalPage: React.FC = () => {
           <FormField
             control={form.control}
             name="funding_ask_token_symbol"
-          render={({ field }: { field: any }) => (
+          render={({ field }: { field: ControllerRenderProps<ProposalFormData, 'funding_ask_token_symbol'> }) => (
             <FormItem>
               <FormLabel>Funding Token Symbol (Optional)</FormLabel>
                 <FormControl>
@@ -270,7 +271,7 @@ const CreateProposalPage: React.FC = () => {
           <FormField
             control={form.control}
             name="reference_links_input"
-          render={({ field }: { field: any }) => (
+          render={({ field }: { field: ControllerRenderProps<ProposalFormData, 'reference_links_input'> }) => (
             <FormItem>
               <FormLabel>Reference Links (Optional)</FormLabel>
                 <FormControl>
