@@ -1,6 +1,6 @@
 
 import React from "react";
-import { CreditCard, Plus } from '@/components/ui/icons';
+import { CreditCard, Plus, Trash2 as Trash } from '@/components/ui/icons';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
