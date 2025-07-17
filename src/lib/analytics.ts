@@ -1,4 +1,4 @@
-import { logErrorToProduction, logInfo } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 import { supabase, isSupabaseConfigured } from '@/integrations/supabase/client';
 
 async function logEventToSupabase(
@@ -30,7 +30,7 @@ export const initGA = () => {
 
   const doNotTrack = navigator.doNotTrack;
   if (doNotTrack === '1' || doNotTrack === 'yes') {
-    logInfo('Do Not Track is enabled. GA4 initialization skipped.', { data:  { context: 'GoogleAnalyticsInit' } });
+    logErrorToProduction('Do Not Track is enabled. GA4 initialization skipped.', new Error('Do Not Track enabled'), { context: 'GoogleAnalyticsInit' });
     return;
   }
 

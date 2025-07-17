@@ -53,7 +53,7 @@ function CheckoutInner() {
       item_count: items.length,
       total: items.reduce((sum, i) => sum + i.price * i.quantity, 0)
     });
-  }, []);
+  }, [items]);
 
   const form = useForm<CheckoutFormData>({
     resolver: zodResolver(checkoutSchema),
