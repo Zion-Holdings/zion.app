@@ -139,7 +139,8 @@ export {
   WifiOff,
   BookOpen,
   Terminal,
-  Sparkles
+  Sparkles,
+  Bot
 } from 'lucide-react';
 
 // Action Icons

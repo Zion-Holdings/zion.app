@@ -1,6 +1,6 @@
 
 import { GradientHeading } from "./GradientHeading";
-import { Clock, Globe, TrendingDown } from '@/components/ui/icons';
+import { Clock, Globe, TrendingDown, Bot } from '@/components/ui/icons';
 import { FeatureCard } from "./FeatureCard";
 
 
