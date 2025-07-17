@@ -49,7 +49,8 @@ export {
   Calendar,
   Bell,
   Ban,
-  ShieldAlert
+  ShieldAlert,
+  HelpCircle
 } from 'lucide-react';
 
 // Media Icons
@@ -140,7 +141,9 @@ export {
   BookOpen,
   Terminal,
   Sparkles,
-  Bot
+  Bot,
+  HardDrive,
+  Lightbulb
 } from 'lucide-react';
 
 // Action Icons
