@@ -9,7 +9,6 @@
  */
 
 const fs = require('fs');
-const path = require('path');
 
 class QuickSupabaseSetup {
   constructor() {
@@ -148,7 +147,7 @@ NEXT_TELEMETRY_DISABLED=1
       }
       
       // console.log('');
-    } catch (error) {
+    } catch {
       // console.log('ℹ️  Environment check completed');
     }
   }

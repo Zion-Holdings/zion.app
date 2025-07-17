@@ -1,11 +1,5 @@
-import React from 'react';
 // Remove direct import of sonnerToast, rely on globalToastManager
 import { globalToastManager, showToast, ToastType, ToastPriority } from '@/utils/globalToastManager';
-
-const variantStyles = {
-  info: { background: '#1e3a8a', color: '#fff' },
-  error: { background: '#7f1d1d', color: '#fff' },
-};
 
 // Deduplication settings
 const DEDUPE_DELAY = 3000; // 3 seconds
@@ -29,15 +23,7 @@ interface ToastProps {
   persistent?: boolean;
 }
 
-const shouldShow = (key: string): boolean => {
-  const now = Date.now();
-  if (key === lastKey && (now - lastShown) < DEDUPE_DELAY) {
-    return false;
-  }
-  lastKey = key;
-  lastShown = now;
-  return true;
-};
+
 
 /**
  * Enhanced toast adapter that uses the global toast manager
