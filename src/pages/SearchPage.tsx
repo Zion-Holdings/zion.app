@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { Loader2 } from '@/components/ui/icons';
 import { useRouterReady, useRouteChange } from '@/hooks/useRouterReady';
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
@@ -72,23 +72,11 @@ export default function SearchPage() {
     }
   }, [router.isReady, router.query.q]); // Fixed dependency array
 
-  // Fetch results when query changes
-  useEffect(() => {
-    if (!router.isReady) return;
-    
-    if (query.trim()) {
-      fetchResults(query.trim());
-    } else {
-      setResults([]);
-    }
-  }, [router.isReady, query, fetchResults]);
-
-  const fetchResults = async (term: string) => {
+  const fetchResults = useCallback(async (term: string) => {
     if (!term.trim()) {
       setResults([]);
       return;
     }
-
     setLoading(true);
     try {
       const res = await fetch(`/api/search?query=${encodeURIComponent(term)}`);
@@ -105,7 +93,16 @@ export default function SearchPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    if (!router.isReady) return;
+    if (query.trim()) {
+      fetchResults(query.trim());
+    } else {
+      setResults([]);
+    }
+  }, [router.isReady, query, fetchResults]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

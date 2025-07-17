@@ -169,12 +169,9 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
 
   useEffect(() => {
     if (isOpen && messages.length > 0) {
-      const lastMessage = messages[messages.length - 1];
-      if (lastMessage) {
-        triggerNotification('New message', lastMessage.content);
-      }
+      triggerNotification('New message', messages[messages.length - 1].content);
     }
-  }, [isOpen, messages.length, triggerNotification]);
+  }, [isOpen, messages, triggerNotification]);
 
   if (!isOpen) return null;
 
