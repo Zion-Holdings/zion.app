@@ -15,7 +15,7 @@
 const fs = require('fs');
 const path = require('path');
 const { EventEmitter } = require('events');
-const WebSocket = require('ws');
+// const WebSocket = require('ws');
 
 class EnhancedLogMonitor extends EventEmitter {
   constructor(config = {}) {

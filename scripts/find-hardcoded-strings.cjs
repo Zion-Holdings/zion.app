@@ -79,7 +79,7 @@ function isExcluded(text) {
   }
   
   // Check if it's a CSS property or value
-  if (/^[\d\-\.]+(?:px|rem|em|%|vh|vw|fr|s|ms)$/.test(text)) {
+  if (/^[\d\-.]+(?:px|rem|em|%|vh|vw|fr|s|ms)$/.test(text)) {
     return true;
   }
   
