@@ -24,12 +24,22 @@ class Logger {
     }
   }
 
-  warn(): void {
-    // Implement warning logic here or use a custom logger
+  warn(message?: string, ...args: any[]): void {
+    if (this.isDevelopment) {
+      if (message) {
+        // eslint-disable-next-line no-console
+        console.warn(message, ...args);
+      }
+    }
   }
 
-  error(): void {
-    // Implement error logic here or use a custom logger
+  error(message?: string, ...args: any[]): void {
+    if (this.isDevelopment) {
+      if (message) {
+        // eslint-disable-next-line no-console
+        console.error(message, ...args);
+      }
+    }
   }
 
   // Conditional development logging
