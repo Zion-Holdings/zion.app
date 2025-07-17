@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
-import type { TalentProfile } from "@/types/talent";
+import type { TalentProfile as _TalentProfile } from '@/types/talent';
 
 import {logErrorToProduction} from "@/utils/productionLogger";
 

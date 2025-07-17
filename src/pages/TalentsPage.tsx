@@ -324,8 +324,7 @@ export default function TalentsPage() {
   // Refresh when filters change
   useEffect(() => {
     refresh();
-    setTotalGenerated(0);
-  }, [sortBy, filterSpecialization, filterAvailability, showRecommended]);
+  }, [refresh]);
 
   // Calculate market stats
   const marketStats = useMemo(() => {

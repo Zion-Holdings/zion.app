@@ -59,9 +59,10 @@ export default function SearchResultsPage() {
   };
 
   useEffect(() => {
-    fetchResults();
-     
-  }, [router.isReady, query, page, typeFilter, sortBy]);
+    if (query) {
+      fetchResults();
+    }
+  }, [query, fetchResults]);
 
   const totalPages = Math.max(1, Math.ceil(totalCount / LIMIT));
 

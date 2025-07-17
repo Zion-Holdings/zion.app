@@ -87,7 +87,7 @@ export function useMessages(
       
       // Update active messages if this conversation is selected
       if (activeConversation && activeConversation.id === conversationId) {
-        setActiveMessages((prev) => [...prev, data as Message]);
+        setActiveMessages((_prev) => [...activeMessages, data as Message]);
       }
       
       // Update conversations list
@@ -123,15 +123,15 @@ export function useMessages(
       if (error) throw error;
       
       // Update active messages to show they've been read
-      setActiveMessages(prev => 
-        prev.map(msg => 
+      setActiveMessages(_prev => 
+        _prev.map(msg => 
           msg.recipient_id === user.id ? { ...msg, read: true } : msg
         )
       );
       
       // Update conversations to reflect read messages
-      setConversations(prev => 
-        prev.map(conv => 
+      setConversations(_prev => 
+        _prev.map(conv => 
           conv.id === conversationId 
             ? { ...conv, unread_count: 0 }
             : conv
@@ -139,7 +139,7 @@ export function useMessages(
       );
       
       // Recalculate unread count
-      setUnreadCount(prev => {
+      setUnreadCount(_prev => {
         const updatedConversations = conversations.map(conv => 
           conv.id === conversationId 
             ? { ...conv, unread_count: 0 }

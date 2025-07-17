@@ -12,8 +12,7 @@ export function useFollowedCategories() {
       try {
         setFollowed(JSON.parse(raw));
       } catch (_err) {
-        // Invalid JSON in localStorage, reset to empty array
-        setFollowed([]);
+        // Ignore errors
       }
     }
   }, []);
