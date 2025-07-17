@@ -4,11 +4,8 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 const CheckoutTestPage = () => {
-  const [loading, setLoading] = useState(false);
-  const [testResults, setTestResults] = useState({});
-
-  // Use real marketplace products for testing
-  const testProducts = []; // No longer available from data/listingData
+  const [, setLoading] = useState(false);
+  const [, setTestResults] = useState({});
 
   const handleCheckout = async () => {
     setLoading(true);
@@ -31,25 +28,7 @@ const CheckoutTestPage = () => {
     }
   };
 
-  const testPaymentIntent = async () => {
-    setLoading(true);
-    try {
-      const { data } = await axios.post('/api/create-payment-intent', {
-        amount: 50.00,
-        userId: 'test-user'
-      });
-      if (data.clientSecret) {
-        alert('✅ Payment intent created successfully!');
-        setTestResults(prev => ({ ...prev, paymentIntent: 'success' }));
-      }
-    } catch (err) {
-      logErrorToProduction('Payment intent error:', { data: err });
-      alert('❌ Payment intent test failed. Check console for details.');
-      setTestResults(prev => ({ ...prev, paymentIntent: 'error' }));
-    } finally {
-      setLoading(false);
-    }
-  };
+
 
   return (
     <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif', textAlign: 'center' }}>
