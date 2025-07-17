@@ -99,7 +99,8 @@ export {
   Lock,
   Unlock,
   LockKeyhole,
-  Key
+  Key,
+  UserIcon
 } from 'lucide-react';
 
 // Business & Finance Icons
