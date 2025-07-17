@@ -1,6 +1,7 @@
 
 import React from "react";
-import { Brain, Clock, Award, Zap } from 'lucide-react';
+import { Clock, Award, Zap } from '@/components/ui/icons';
+
 
 
 

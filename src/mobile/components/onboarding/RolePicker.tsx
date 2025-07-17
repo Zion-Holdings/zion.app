@@ -1,8 +1,9 @@
 
 import React, { useState } from "react";
+import { Users, Check } from '@/components/ui/icons';
 // import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Briefcase, Users, Check } from 'lucide-react';
+
 
 
 

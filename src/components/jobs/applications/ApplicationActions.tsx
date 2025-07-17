@@ -1,6 +1,7 @@
 
 import Link from "next/link";
-import { Eye, ChevronDown, Loader2 } from 'lucide-react';
+import { Eye, ChevronDown, Loader2 } from '@/components/ui/icons';
+
 import {
   DropdownMenu,
   DropdownMenuContent,

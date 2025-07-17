@@ -1,7 +1,8 @@
 import { useRouter } from 'next/router';
+import { ArrowUp, Filter, SortAsc, TrendingUp, Star, AlertTriangle, RefreshCw } from '@/components/ui/icons';
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUp, Filter, SortAsc, TrendingUp, Star, ShoppingCart, AlertTriangle, RefreshCw } from 'lucide-react';
+
 import { toast } from '@/hooks/use-toast';
 import apiClient from '@/services/apiClient';
 

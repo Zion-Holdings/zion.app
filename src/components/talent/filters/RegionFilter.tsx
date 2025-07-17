@@ -2,8 +2,9 @@
 
 
 import { Checkbox } from "@/components/ui/checkbox";
+import { ChevronDown, ChevronUp } from '@/components/ui/icons';
 import type { RegionFilterProps } from "@/types/filters";
-import { ChevronDown, ChevronUp } from 'lucide-react';
+
 
 const REGION_OPTIONS = [
   { id: "North America", label: "North America" },

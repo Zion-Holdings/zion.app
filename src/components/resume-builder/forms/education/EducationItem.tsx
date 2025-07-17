@@ -1,6 +1,7 @@
 
 import { format } from 'date-fns';
-import { Edit, Trash2 } from 'lucide-react';
+import { Edit, Trash2 } from '@/components/ui/icons';
+
 
 
 import { Button } from '@/components/ui/button';

@@ -1,7 +1,8 @@
 
 import React from "react";
+import { Check } from '@/components/ui/icons';
 import { Card, CardContent } from "@/components/ui/card";
-import { Check } from 'lucide-react';
+
 
 import { cn } from "@/lib/utils";
 

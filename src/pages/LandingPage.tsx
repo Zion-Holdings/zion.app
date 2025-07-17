@@ -1,5 +1,6 @@
 
 import { Header } from "@/components/Header";
+import { ArrowRight, Users, Zap, Settings, BarChart3 } from '@/components/ui/icons';
 import { TrustedBySection } from "@/components/TrustedBySection";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { FloatingCTA } from "@/components/FloatingCTA";
@@ -16,7 +17,7 @@ import { FeaturesGuideSection } from "@/components/FeaturesGuideSection";
 import { SocialShareSection } from "@/components/SocialShareSection";
 import { useTranslation } from "react-i18next";
 import { useLanguage } from "@/context/LanguageContext";
-import { ArrowRight, Users, Zap, Settings, Sparkles, BarChart3, Smartphone } from 'lucide-react';
+
 
 
 

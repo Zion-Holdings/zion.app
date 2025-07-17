@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Send } from '@/components/ui/icons';
 import type { FormEvent, KeyboardEvent } from 'react';
 import { Button } from "@/components/ui/button";
-import { Send } from 'lucide-react';
+
 
 
 interface ChatInputProps {

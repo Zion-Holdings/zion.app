@@ -1,7 +1,8 @@
 
 import { Badge } from '@/components/ui/badge';
+import { Trash2 } from '@/components/ui/icons';
 import { Button } from '@/components/ui/button';
-import { Trash2 } from 'lucide-react';
+
 
 import type { SkillItemProps } from './types';
 

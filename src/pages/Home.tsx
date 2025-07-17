@@ -1,28 +1,12 @@
 import React from 'react';
+import { ArrowRight, Zap, Users, Globe, Shield, TrendingUp, Star, CheckCircle, Play, Target, Award, Heart } from '@/components/ui/icons';
 import { useTranslation } from 'react-i18next';
 import { SEO } from '@/components/SEO';
 import { Header } from '@/components/Header';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { 
-  ArrowRight, 
-  Zap, 
-  Users, 
-  Globe, 
-  Shield, 
-  TrendingUp, 
-  Star, 
-  CheckCircle,
-  Play,
-  ArrowUpRight,
-  Sparkles,
-  Rocket,
-  Target,
-  Award,
-  Heart,
-  Lightbulb
-} from 'lucide-react';
+
 
 export default function Home() {
   const { t } = useTranslation();

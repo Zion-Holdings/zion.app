@@ -1,9 +1,10 @@
 
 import React from "react";
+import { Search, Filter } from '@/components/ui/icons';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Search, Filter } from 'lucide-react';
+
 
 
 

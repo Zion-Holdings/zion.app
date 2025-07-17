@@ -1,7 +1,8 @@
 
 import { GradientHeading } from "./GradientHeading";
+import { Users } from '@/components/ui/icons';
 import Link from "next/link";
-import { Briefcase, HardDrive, Lightbulb, Users, HelpCircle } from 'lucide-react';
+
 
 
 

@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle } from '@/components/ui/icons';
+
 
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 

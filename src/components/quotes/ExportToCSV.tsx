@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
-import { Download } from 'lucide-react';
+import { Download } from '@/components/ui/icons';
+
 
 import type { QuoteRequest } from "@/types/quotes";
 

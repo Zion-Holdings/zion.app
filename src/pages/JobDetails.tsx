@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { Calendar, Clock, DollarSign } from '@/components/ui/icons';
 import { useRouter } from 'next/router'; // Changed from useParams, useNavigate
 import { Header } from '@/components/Header';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, Clock, DollarSign, Briefcase } from 'lucide-react';
+
 
 
 

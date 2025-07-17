@@ -1,7 +1,8 @@
 
 import React from "react";
+import { Download, Mail, BarChart3 } from '@/components/ui/icons';
 import { Button } from "@/components/ui/button";
-import { Download, Mail, BarChart3 } from 'lucide-react';
+
 
 
 

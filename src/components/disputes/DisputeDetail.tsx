@@ -1,9 +1,10 @@
 
 import React, { useState, useEffect } from "react";
+import { Check, MessageSquare, Download } from '@/components/ui/icons';
 import { useRouter } from 'next/router';
 import { useDisputes } from "@/hooks/useDisputes";
 import {logErrorToProduction} from '@/utils/productionLogger';
-import { Check, MessageSquare, Download } from 'lucide-react';
+
 import type { Dispute, DisputeMessage, DisputeStatus, ResolutionType } from "@/types/disputes";
 import { disputeReasonLabels } from "@/types/disputes";
 

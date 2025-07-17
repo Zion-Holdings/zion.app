@@ -181,7 +181,8 @@
     "automation:test-slack": "node automation/tests/test-slack-connection.js",
     "automation:test-cursor": "node automation/tests/test-cursor-connection.js",
     "automation:test-monitoring": "node automation/tests/test-performance-monitoring.js",
-    "optimize:bundle": "node scripts/optimize-bundle.cjs"
+    "optimize:bundle": "node scripts/optimize-bundle.cjs",
+    "optimize:icons": "node scripts/optimize-icon-imports.cjs"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

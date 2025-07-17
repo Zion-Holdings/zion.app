@@ -1,5 +1,6 @@
 
 import React, { useState } from "react";
+import { Loader2, Download } from '@/components/ui/icons';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -7,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import type { BlockchainNetwork, DeploymentOptions } from "@/types/smart-contracts";
-import { Loader2, ShieldCheck, Download } from 'lucide-react';
+
 
 
 

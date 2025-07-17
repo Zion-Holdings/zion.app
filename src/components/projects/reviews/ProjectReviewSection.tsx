@@ -1,5 +1,6 @@
 import type { Project } from '@/types/projects';
-import { Star } from 'lucide-react';
+import { Star } from '@/components/ui/icons';
+
 
 import { useState } from "react";
 

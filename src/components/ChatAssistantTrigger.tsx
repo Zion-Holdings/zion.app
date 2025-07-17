@@ -1,6 +1,7 @@
 
 import { useState } from "react";
-import { MessageSquare } from 'lucide-react';
+import { MessageSquare } from '@/components/ui/icons';
+
 
 import { Button } from "@/components/ui/button";
 import { ChatAssistant } from "@/components/ChatAssistant";

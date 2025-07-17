@@ -1,8 +1,9 @@
 
 import { Button } from "@/components/ui/button";
+import { X } from '@/components/ui/icons';
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { X } from 'lucide-react';
+
 
 
 export function FloatingCTA() {

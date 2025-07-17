@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Search } from '@/components/ui/icons';
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useDebounce } from "@/hooks/useDebounce";
@@ -11,7 +12,7 @@ import { Select, SelectValue, SelectTrigger, SelectContent, SelectItem } from "@
 import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import type { BlogPost } from "@/types/blog";
 import { BLOG_POSTS } from "@/data/blog-posts";
-import { Search } from 'lucide-react';
+
 
 import { fetchWithRetry } from '@/utils/fetchWithRetry';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';

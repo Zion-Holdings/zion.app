@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Star, ExternalLink } from 'lucide-react';
+import { Star, ExternalLink } from '@/components/ui/icons';
+
 
 import { Button } from "@/components/ui/button";
 

@@ -1,8 +1,9 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { User } from '@/components/ui/icons';
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { User, GraduationCap } from 'lucide-react';
+
 
 
 

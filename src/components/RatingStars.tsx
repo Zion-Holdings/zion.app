@@ -1,5 +1,6 @@
 import React from 'react';
-import { Star, StarHalf } from 'lucide-react';
+import { Star } from '@/components/ui/icons';
+
 
 
 

@@ -1,7 +1,8 @@
 
 import React from 'react';
+import { Upload, FileText } from '@/components/ui/icons';
 import { Button } from "@/components/ui/button";
-import { Upload, FileText } from 'lucide-react';
+
 
 
 

@@ -1,12 +1,13 @@
 
 import React, { useState } from "react";
+import { Zap, ChevronLeft, ChevronRight } from '@/components/ui/icons';
 import { MobileHeader } from "@/mobile/components/common/MobileHeader";
 import { BottomNavigation } from "@/mobile/components/common/BottomNavigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Zap, ChevronLeft, ChevronRight } from 'lucide-react';
+
 import {
   Select,
   SelectContent,

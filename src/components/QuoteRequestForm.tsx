@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Loader2 } from '@/components/ui/icons';
 import { logDebug, logErrorToProduction } from '@/utils/productionLogger';
 import { useToast } from "@/hooks/use-toast";
 import { useRouter } from 'next/router';
@@ -14,7 +15,7 @@ import { BudgetStep } from "@/components/QuoteRequestForm/BudgetStep";
 import { SummaryStep } from "@/components/QuoteRequestForm/SummaryStep";
 import { AutoFillModal } from "@/components/QuoteRequestForm/AutoFillModal";
 import type { QuoteFormData } from "@/types/quotes";
-import { Sparkles, Loader2 } from 'lucide-react';
+
 
 
 import { z } from "zod";

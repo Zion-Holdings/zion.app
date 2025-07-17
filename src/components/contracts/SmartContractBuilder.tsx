@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { Save } from '@/components/ui/icons';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { Save } from 'lucide-react';
+
 
 import type { TalentProfile } from "@/types/talent";
 import { ContractForm } from "./components/ContractForm";

@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
-import { MessageSquare, X } from 'lucide-react';
+import { MessageSquare, X } from '@/components/ui/icons';
+
 
 
 import { Button } from '@/components/ui/button';

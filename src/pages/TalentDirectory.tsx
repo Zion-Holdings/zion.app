@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { X } from '@/components/ui/icons';
 import Link from 'next/link';
 import { useAuth } from '@/hooks/useAuth';
 import { useRouterReady, useRouteChange } from '@/hooks/useRouterReady';
@@ -9,7 +10,7 @@ import { ErrorBanner } from '@/components/talent/ErrorBanner';
 import ErrorBoundary from '@/components/GlobalErrorBoundary'; // Import ErrorBoundary
 import { useTalentDirectory } from '@/hooks/useTalentDirectory';
 import { SORT_OPTIONS } from '@/data/sortOptions';
-import { X } from 'lucide-react';
+
 
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';

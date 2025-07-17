@@ -1,7 +1,8 @@
 
 
 import { Button } from './button';
-import { Package, RefreshCw } from 'lucide-react';
+import { RefreshCw } from '@/components/ui/icons';
+
 
 interface EmptyStateProps {
   text?: string;

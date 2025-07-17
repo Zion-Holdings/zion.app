@@ -1,5 +1,6 @@
 import React from 'react';
-import { X } from 'lucide-react';
+import { X } from '@/components/ui/icons';
+
 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';

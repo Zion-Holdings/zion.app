@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Search, X } from '@/components/ui/icons';
 import { useTranslation } from "react-i18next";
-import { Search, X } from 'lucide-react';
+
 
 
 import { Input } from "@/components/ui/input";

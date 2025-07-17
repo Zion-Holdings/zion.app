@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { Globe, MapPin } from '@/components/ui/icons';
 import { Header } from '@/components/Header';
 import { NextSeo } from '@/components/NextSeo';
-import { Globe, MapPin } from 'lucide-react';
+
 
 
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';

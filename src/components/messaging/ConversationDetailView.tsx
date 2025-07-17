@@ -1,7 +1,8 @@
 
 import React, { useState, useEffect, useRef } from 'react';
+import { MessageSquare } from '@/components/ui/icons';
 import { format } from 'date-fns';
-import { MessageSquare } from 'lucide-react';
+
 
 import { useMessaging } from '@/context/MessagingContext';
 import { Button } from '@/components/ui/button';

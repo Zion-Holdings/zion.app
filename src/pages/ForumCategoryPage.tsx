@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { MessageSquare, Code, FileText, Search } from '@/components/ui/icons';
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Button } from "@/components/ui/button";
@@ -13,7 +14,7 @@ import { useCommunity } from "@/context";
 import { useToast } from "@/hooks/use-toast";
 import { useFollowedCategories } from "@/hooks/useFollowedCategories";
 import { logInfo } from '@/utils/productionLogger';
-import { MessageSquare, Briefcase, Code, FileText, Megaphone, Search, type LucideIcon } from 'lucide-react';
+
 
 
 

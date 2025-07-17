@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
+import { ArrowRight, Zap, Target } from '@/components/ui/icons';
 import { GradientHeading } from "@/components/GradientHeading";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { HowItWorksVideo } from "@/components/HowItWorksVideo";
-import { ArrowRight, Sparkles, Zap, Target } from "lucide-react";
+
 
 export function HeroSection() {
   const { t } = useTranslation();

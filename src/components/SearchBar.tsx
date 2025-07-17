@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Search, X } from '@/components/ui/icons';
 import { useRouter } from 'next/router';
-import { Search, X } from 'lucide-react';
+
 
 
 import { Input } from '@/components/ui/input';

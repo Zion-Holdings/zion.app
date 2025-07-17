@@ -1,7 +1,8 @@
 
 import { GradientHeading } from "./GradientHeading";
+import { Clock, Globe, TrendingDown } from '@/components/ui/icons';
 import { FeatureCard } from "./FeatureCard";
-import { Bot, Clock, Globe, TrendingDown } from 'lucide-react';
+
 
 
 

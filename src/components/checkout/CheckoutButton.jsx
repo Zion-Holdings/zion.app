@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { Loader2 } from '@/components/ui/icons';
 import { Button } from '@/components/ui/button';
-import { Loader2 } from 'lucide-react';
+
 
 import { useAuth } from '@/hooks/useAuth';
 import { getStripe } from '@/utils/getStripe';

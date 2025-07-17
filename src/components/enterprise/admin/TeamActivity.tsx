@@ -1,6 +1,7 @@
 
 import React from "react";
-import { CalendarIcon, Search } from 'lucide-react';
+import { Search } from '@/components/ui/icons';
+
 import {
   Table,
   TableBody,

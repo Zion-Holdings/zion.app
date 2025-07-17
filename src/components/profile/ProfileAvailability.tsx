@@ -1,7 +1,8 @@
 
 import type { Availability } from "@/types/profile";
+import { Calendar, Clock } from '@/components/ui/icons';
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock } from 'lucide-react';
+
 
 
 

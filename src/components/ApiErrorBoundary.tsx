@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { RefreshCw, WifiOff } from '@/components/ui/icons';
 import type { ReactNode } from 'react';
 import { QueryClient } from '@tanstack/react-query';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { RefreshCw, WifiOff } from 'lucide-react';
+
 
 
 import {logErrorToProduction} from '@/utils/productionLogger';

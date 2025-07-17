@@ -1,6 +1,7 @@
 
 import { Button } from "./ui/button";
-import { Twitter, Facebook, Linkedin, Link } from 'lucide-react';
+import { Link } from '@/components/ui/icons';
+
 
 
 

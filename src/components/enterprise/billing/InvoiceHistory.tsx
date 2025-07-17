@@ -1,6 +1,7 @@
 
 import React from "react";
-import { Download, FileText, Search } from 'lucide-react';
+import { Download, FileText, Search } from '@/components/ui/icons';
+
 import {
   Table,
   TableBody,

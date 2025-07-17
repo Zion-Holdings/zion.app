@@ -1,6 +1,7 @@
 
 import * as React from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown } from '@/components/ui/icons';
+
 
 import { cn } from "@/lib/utils";
 import type { SafeRef } from "@/types/ref-types";

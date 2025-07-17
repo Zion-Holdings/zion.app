@@ -1,11 +1,12 @@
 import React from 'react';
+import { UserCheck, Bell, MessageSquare, LogOut, Send, Settings, FileText, Heart } from '@/components/ui/icons';
 import dynamic from 'next/dynamic';
 import { useAuth } from "@/hooks/useAuth";
 import { useRequireAuth } from "@/hooks/useAuthGuard";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Badge } from "@/components/ui/badge";
-import { UserCheck, Bell, MessageSquare, LogOut, Send, Settings, FileText, Heart, Key, ShoppingBag } from 'lucide-react';
+
 
 
 

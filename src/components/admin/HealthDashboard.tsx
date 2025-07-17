@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { AlertTriangle, CheckCircle, XCircle, Clock, TrendingUp, Activity } from '@/components/ui/icons';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { AlertTriangle, CheckCircle, XCircle, Clock, TrendingUp, Activity } from 'lucide-react';
+
 
 
 

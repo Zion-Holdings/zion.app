@@ -1,8 +1,9 @@
 
 import React, { useState } from "react";
+import { Wallet, Info, Check } from '@/components/ui/icons';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Wallet, Info, Check, ArrowUpRight } from 'lucide-react';
+
 
 
 

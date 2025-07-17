@@ -1,6 +1,7 @@
 
 import React, { useState } from "react";
-import { Trash, Mail, UserPlus } from 'lucide-react';
+import { Mail, UserPlus } from '@/components/ui/icons';
+
 import {
   Table,
   TableBody,

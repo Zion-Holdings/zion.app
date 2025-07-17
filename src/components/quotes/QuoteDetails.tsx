@@ -1,6 +1,7 @@
 
 import React from "react";
-import { Calendar, User, Mail, Clock, DollarSign } from 'lucide-react';
+import { Calendar, User, Mail, Clock, DollarSign } from '@/components/ui/icons';
+
 import {
   Dialog,
   DialogContent,

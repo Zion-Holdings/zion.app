@@ -1,8 +1,9 @@
 import React from 'react';
+import { LogOut } from '@/components/ui/icons';
 import Link from 'next/link';
 import { useAuth } from '@/hooks/useAuth';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { User as UserIcon, Package, LogOut } from 'lucide-react';
+
 import {
   DropdownMenu,
   DropdownMenuContent,

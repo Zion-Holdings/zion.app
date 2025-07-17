@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Edit, MoreHorizontal, ExternalLink, Users, RefreshCcw } from '@/components/ui/icons';
 import { supabase } from '@/integrations/supabase/client';
 import {logErrorToProduction} from '@/utils/productionLogger';
-import { Edit, MoreHorizontal, ExternalLink, Power, PowerOff, Users, RefreshCcw } from 'lucide-react';
+
 import { 
   Table, 
   TableBody, 

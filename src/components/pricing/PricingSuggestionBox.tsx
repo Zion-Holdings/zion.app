@@ -1,10 +1,11 @@
 
 import React from "react";
+import { Loader2, Info } from '@/components/ui/icons';
 import { Button } from "@/components/ui/button";
 import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Loader2, Info, ThumbsUp } from 'lucide-react';
+
 
 
 

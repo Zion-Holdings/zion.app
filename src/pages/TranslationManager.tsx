@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { AlertTriangle, Check, Globe, Search, Loader2 } from '@/components/ui/icons';
 import { Header } from "@/components/Header";
 import { SEO } from "@/components/SEO";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
 import { useTranslation } from "react-i18next";
-import { AlertTriangle, Check, Globe, Search, Loader2 } from 'lucide-react';
+
 
 
 

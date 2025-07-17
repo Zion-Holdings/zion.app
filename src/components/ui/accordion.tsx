@@ -1,7 +1,8 @@
 import * as React from "react"
+import { ChevronDown } from '@/components/ui/icons';
 import type { ElementRef, ComponentPropsWithoutRef } from "react"
 import * as AccordionPrimitive from "@radix-ui/react-accordion"
-import { ChevronDown } from 'lucide-react';
+
 
 
 import { cn } from "@/lib/utils"

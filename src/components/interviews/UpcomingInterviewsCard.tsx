@@ -1,8 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
+import { Calendar, Clock, Video } from '@/components/ui/icons';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Calendar, Clock, Video } from 'lucide-react';
+
 import { format, parseISO } from 'date-fns';
 import type { Interview } from '@/types/interview';
 

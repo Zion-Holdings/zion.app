@@ -1,9 +1,10 @@
 
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { Clock, MapPin, Check } from '@/components/ui/icons';
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 import { Badge } from "@/components/ui/badge";
-import { Clock, MapPin, Check } from 'lucide-react';
+
 
 
 

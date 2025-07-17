@@ -1,9 +1,10 @@
 import useSWR from 'swr';
+import { Folder } from '@/components/ui/icons';
 import { CategoryCard } from "@/components/CategoryCard";
 import { GradientHeading } from "@/components/GradientHeading";
 import { SkeletonCard } from '@/components/ui';
 import ErrorBoundary from "@/components/GlobalErrorBoundary";
-import { Folder } from 'lucide-react';
+
 
 import { CATEGORIES } from '@/data/categories';
 import { NextSeo } from '@/components/NextSeo';

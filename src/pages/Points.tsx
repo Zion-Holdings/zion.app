@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Gift, Star, Users, ShoppingBag, MessageSquare, TrendingUp, History } from 'lucide-react';
+import { Star, Users, MessageSquare, TrendingUp } from '@/components/ui/icons';
+
 
 
 

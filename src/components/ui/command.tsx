@@ -1,6 +1,7 @@
 import * as React from "react"
+import { Search } from '@/components/ui/icons';
 import { Command as CommandPrimitive } from "cmdk"
-import { Search } from 'lucide-react';
+
 
 
 import { cn } from "@/lib/utils"

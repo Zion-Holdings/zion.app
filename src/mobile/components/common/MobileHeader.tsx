@@ -1,6 +1,7 @@
 import React from "react";
+import { ChevronLeft, Bell, Settings } from '@/components/ui/icons';
 import { useRouter } from 'next/router';
-import { ChevronLeft, Bell, Settings } from 'lucide-react';
+
 
 
 

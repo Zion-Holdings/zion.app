@@ -1,9 +1,10 @@
 
 import { Card, CardContent } from "@/components/ui/card";
+import { FileText } from '@/components/ui/icons';
 import { Badge } from "@/components/ui/badge";
 import type { ProfileProject } from "@/types/profile";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { FileText } from 'lucide-react';
+
 
 
 interface ProfileProjectsProps {

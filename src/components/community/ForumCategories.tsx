@@ -1,7 +1,8 @@
 import Link from "next/link";
+import { MessageSquare, Code, FileText } from '@/components/ui/icons';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { useAuth } from "@/hooks/useAuth";
-import { MessageSquare, Briefcase, Code, FileText, Megaphone } from 'lucide-react';
+
 
 
 

@@ -1,6 +1,7 @@
 
 import { GradientHeading } from "./GradientHeading";
-import { Server, HardDrive, Network, Clock, Recycle, Truck } from 'lucide-react';
+import { Server, Clock } from '@/components/ui/icons';
+
 
 
 

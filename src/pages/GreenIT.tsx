@@ -1,8 +1,9 @@
 
 import { SEO } from "@/components/SEO";
+import { Server } from '@/components/ui/icons';
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
-import { Leaf, Server, Cloud } from 'lucide-react';
+
 
 
 

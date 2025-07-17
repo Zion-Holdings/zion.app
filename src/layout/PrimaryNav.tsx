@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Menu, X } from '@/components/ui/icons';
 import { logDebug, logErrorToProduction } from '@/utils/productionLogger';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -16,7 +17,7 @@ import { slugify as _slugify } from '@/lib/slugify';
 import { ResponsiveNavigation } from '@/components/navigation/ResponsiveNavigation';
 import { MobileMenu } from '@/components/header/MobileMenu';
 import { MobileBottomNav } from '@/components/header/MobileBottomNav';
-import { Menu, X } from 'lucide-react';
+
 
 
 import { useTranslation } from 'react-i18next';

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
+import { Star, MapPin, Clock, ArrowRight } from '@/components/ui/icons';
 import { Card } from "@/components/ui/card";
-import { Star, MapPin, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
+
 
 
 

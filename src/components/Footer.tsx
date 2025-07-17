@@ -1,25 +1,9 @@
 import React from 'react';
+import { Mail, Phone, MapPin, ArrowUp, Heart, Shield, Zap, Users, Globe, Award } from '@/components/ui/icons';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { 
-  Facebook, 
-  Twitter, 
-  Instagram, 
-  Linkedin, 
-  Youtube, 
-  Github,
-  Mail,
-  Phone,
-  MapPin,
-  ArrowUp,
-  Heart,
-  Shield,
-  Zap,
-  Users,
-  Globe,
-  Award
-} from 'lucide-react';
+
 
 export function Footer() {
   const currentYear = new Date().getFullYear();

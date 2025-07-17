@@ -1,9 +1,10 @@
 'use client'
 
 import React, { Component } from 'react'
+import { AlertTriangle, RefreshCw, Home, Bug, Send } from '@/components/ui/icons';
 import type { ErrorInfo, ReactNode } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { AlertTriangle, RefreshCw, Home, Bug, Send, Clipboard } from 'lucide-react';
+
 
 
 

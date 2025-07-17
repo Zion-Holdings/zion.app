@@ -1,6 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Award } from 'lucide-react';
+import { Award } from '@/components/ui/icons';
+
 
 
 interface LeaderboardEntry {

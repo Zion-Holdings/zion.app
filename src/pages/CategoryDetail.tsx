@@ -1,7 +1,8 @@
 import { GradientHeading } from "@/components/GradientHeading";
+import { Eye, Mic, Code } from '@/components/ui/icons';
 import { ProductListingCard } from "@/components/ProductListingCard";
 import { useState, useEffect, useRef, Suspense } from "react";
-import { Brain, PenLine, BarChart, Eye, Bot, Mic, Code, Briefcase } from 'lucide-react';
+
 
 
 

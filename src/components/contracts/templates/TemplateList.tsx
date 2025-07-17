@@ -1,7 +1,8 @@
 
 import type { ContractTemplate } from "@/types/contracts";
+import { Loader2, Edit, Star } from '@/components/ui/icons';
 import { Button } from "@/components/ui/button";
-import { Loader2, Edit, Trash, Star, StarOff } from 'lucide-react';
+
 
 
 

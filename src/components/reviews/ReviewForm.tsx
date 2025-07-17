@@ -1,6 +1,7 @@
 
 import { useState } from "react";
-import { Star } from 'lucide-react';
+import { Star } from '@/components/ui/icons';
+
 
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";

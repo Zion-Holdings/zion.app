@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { MessageSquare, User, FileText, MoreVertical, Calendar, AlertTriangle, BriefcaseIcon } from 'lucide-react';
+import { MessageSquare, User, FileText, MoreVertical, Calendar, AlertTriangle } from '@/components/ui/icons';
+
 // Local stub is used in place of the @hello-pangea/dnd package which isn't
 // available in this environment.
 import { Draggable } from "@/lib/dnd-stub";

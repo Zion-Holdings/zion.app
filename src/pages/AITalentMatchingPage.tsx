@@ -1,6 +1,7 @@
 import React from "react";
+import { Users, TrendingUp } from '@/components/ui/icons';
 import { ServiceLandingTemplate } from "@/components/services/ServiceLandingTemplate";
-import { Bot, Users, TrendingUp } from 'lucide-react';
+
 
 
 

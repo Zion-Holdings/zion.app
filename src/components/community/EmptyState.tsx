@@ -1,6 +1,7 @@
 import React from 'react';
+import { MessageSquare } from '@/components/ui/icons';
 import Link from 'next/link';
-import { MessageSquare } from 'lucide-react';
+
 
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';

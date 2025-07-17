@@ -1,9 +1,10 @@
 
 import React, { useState } from "react";
+import { Bookmark, ChevronRight, MapPin, Clock, DollarSign } from '@/components/ui/icons';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Bookmark, BookmarkCheck, ChevronRight, MapPin, Clock, DollarSign } from 'lucide-react';
+
 
 
 

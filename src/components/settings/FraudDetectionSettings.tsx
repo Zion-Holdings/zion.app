@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { Info } from '@/components/ui/icons';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Switch } from '@/components/ui/switch';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
-import { ShieldAlert, Info } from 'lucide-react';
+
 
 
 import {logErrorToProduction} from '@/utils/productionLogger';

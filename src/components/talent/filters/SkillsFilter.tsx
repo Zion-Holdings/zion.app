@@ -2,8 +2,9 @@
 
 
 import { Checkbox } from "@/components/ui/checkbox";
+import { ChevronDown, ChevronUp } from '@/components/ui/icons';
 import type { SkillsFilterProps } from "@/types/filters";
-import { ChevronDown, ChevronUp } from 'lucide-react';
+
 
 // Common skills in AI and tech
 const POPULAR_SKILLS = [

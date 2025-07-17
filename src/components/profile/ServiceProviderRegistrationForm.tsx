@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { X, Upload, Check, MapPin, Globe } from '@/components/ui/icons';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -10,7 +11,7 @@ import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
-import { X, Sparkles, Upload, Check, Briefcase, MapPin, UserRound, Globe } from 'lucide-react';
+
 import {
   Form,
   FormControl,

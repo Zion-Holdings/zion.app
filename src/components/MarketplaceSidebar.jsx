@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Menu, X } from 'lucide-react';
+import { Menu, X } from '@/components/ui/icons';
+
 
 
 import { useIsMobile } from "@/hooks/use-mobile";

@@ -1,6 +1,7 @@
 
 import { Button } from '@/components/ui/button';
-import { Sparkles, Loader2 } from 'lucide-react';
+import { Loader2 } from '@/components/ui/icons';
+
 
 
 import { useResumeEnhancer } from '@/hooks/useResumeEnhancer';

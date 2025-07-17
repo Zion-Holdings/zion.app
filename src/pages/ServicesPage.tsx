@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
+import { ArrowUp, Filter, SortAsc, Star } from '@/components/ui/icons';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/router';
-import { ArrowUp, Filter, SortAsc, Star, ShoppingCart } from 'lucide-react';
+
 
 
 

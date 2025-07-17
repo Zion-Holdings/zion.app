@@ -1,11 +1,12 @@
 
 import React from "react";
+import { ArrowRight, BarChart3, Users, Shield, Globe } from '@/components/ui/icons';
 import { Header } from "@/components/Header";
 import { SEO } from "@/components/SEO";
 import { useWhitelabel } from "@/context/WhitelabelContext";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Briefcase, PenTool, BarChart3, Users, Shield, Globe } from 'lucide-react';
+
 
 
 

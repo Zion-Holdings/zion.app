@@ -1,4 +1,5 @@
 import React from 'react';
+import { Search, Menu, X, Bell } from '@/components/ui/icons';
 import { Logo } from './Logo';
 import { AvatarMenu } from './AvatarMenu';
 import { LanguageSelector } from './LanguageSelector';
@@ -12,7 +13,7 @@ import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import { useTranslation } from 'react-i18next';
 import { logInfo } from '@/utils/productionLogger';
 import { Button } from '@/components/ui/button';
-import { Search, Menu, X, Bell, ShoppingCart } from 'lucide-react';
+
 
 export interface HeaderProps {
   hideLogin?: boolean;

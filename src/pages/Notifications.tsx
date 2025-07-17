@@ -1,6 +1,7 @@
 import React from 'react';
+import { Bell, Check, Trash2, ChevronRight, CheckCircle, AlertCircle, UserCheck, Settings } from '@/components/ui/icons';
 import { useNotifications } from '@/context/notifications/NotificationContext';
-import { Bell, Check, Trash2, ChevronRight, CheckCircle, AlertCircle, MessageCircle, Briefcase, UserCheck, Settings, Package } from 'lucide-react';
+
 import type { NotificationType, NotificationContextType, FilterType } from '@/context/notifications';
 import { formatDistanceToNow } from 'date-fns';
 

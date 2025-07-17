@@ -1,7 +1,8 @@
 
 import { Card } from "@/components/ui/card";
+import { RefreshCcw } from '@/components/ui/icons';
 import { Button } from "@/components/ui/button";
-import { Sparkles, RefreshCcw } from 'lucide-react';
+
 
 
 

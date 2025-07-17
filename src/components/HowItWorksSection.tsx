@@ -1,7 +1,8 @@
 
 import React from 'react';
+import { Check, Search, Send } from '@/components/ui/icons';
 import { GradientHeading } from "./GradientHeading";
-import { Check, Handshake, Search, Send } from 'lucide-react';
+
 
 
 

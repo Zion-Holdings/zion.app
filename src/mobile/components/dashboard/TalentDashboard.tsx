@@ -1,9 +1,10 @@
 
 import React from "react";
+import { ChevronRight, FileText, Image, Clock, Zap } from '@/components/ui/icons';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ChevronRight, FileText, Image, Clock, Zap, BookOpen } from 'lucide-react';
+
 
 
 

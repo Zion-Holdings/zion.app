@@ -1,7 +1,8 @@
 
 import React, { useState, useEffect } from "react";
+import { X } from '@/components/ui/icons';
 import { safeStorage } from "@/utils/safeStorage";
-import { X } from 'lucide-react';
+
 
 import { useIsMobile } from "@/hooks/use-mobile";
 

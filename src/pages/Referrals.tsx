@@ -1,5 +1,6 @@
 
 import { useEffect } from 'react';
+import { Share, Users } from '@/components/ui/icons';
 import { useAuth } from '@/hooks/useAuth';
 import { useReferrals } from '@/hooks/useReferrals';
 import { ReferralStats } from '@/components/referrals/ReferralStats';
@@ -11,7 +12,7 @@ import { ReferralLeaderboard } from '@/components/referrals/ReferralLeaderboard'
 import { Tabs, TabsList as _TabsList, TabsContent, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from '@/components/ui/button';
 import { toast } from '@/hooks/use-toast';
-import { Share, Users } from 'lucide-react';
+
 
 
 import { useRouter } from 'next/router'; // Changed from useNavigate

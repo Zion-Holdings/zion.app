@@ -1,7 +1,8 @@
 
 import React from "react";
+import { Calendar, ArrowRight } from '@/components/ui/icons';
 import { Button } from "@/components/ui/button";
-import { Calendar, ArrowRight } from 'lucide-react';
+
 
 
 

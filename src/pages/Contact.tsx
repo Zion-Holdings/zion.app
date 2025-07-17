@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Mail, MessageSquare, MapPin, Phone } from '@/components/ui/icons';
 import { SEO } from '@/components/SEO';
 import { GradientHeading } from '@/components/GradientHeading';
 import { Button } from '@/components/ui/button';
@@ -7,7 +8,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card } from '@/components/ui/card';
 import { toast } from '@/components/ui/use-toast';
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
-import { Mail, MessageSquare, MapPin, Phone } from 'lucide-react';
+
 import {
   Tooltip,
   TooltipContent,

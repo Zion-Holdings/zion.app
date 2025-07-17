@@ -1,8 +1,9 @@
 import React from 'react';
+import { AlertTriangle, Home, RefreshCw, Settings } from '@/components/ui/icons';
 import Link from 'next/link';
 import { ErrorBoundary } from 'react-error-boundary';
 import type { FallbackProps } from 'react-error-boundary';
-import { AlertTriangle, Home, RefreshCw, Settings } from 'lucide-react';
+
 
 
 

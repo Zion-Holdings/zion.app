@@ -1,7 +1,8 @@
 
 import React from "react";
+import { Search } from '@/components/ui/icons';
 import { Button } from "@/components/ui/button";
-import { Search, Sliders } from 'lucide-react';
+
 
 
 import { Input } from "@/components/ui/input";

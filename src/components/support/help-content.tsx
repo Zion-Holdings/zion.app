@@ -1,7 +1,8 @@
 
 import React from "react";
+import { CreditCard, Users, Calendar } from '@/components/ui/icons';
 import type { HelpCategory } from "./types";
-import { HelpCircle, CreditCard, Users, Calendar, Briefcase } from 'lucide-react';
+
 
 
 

@@ -1,6 +1,7 @@
 
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, FileText, Link } from 'lucide-react';
+import { ArrowLeft, FileText, Link } from '@/components/ui/icons';
+
 
 
 

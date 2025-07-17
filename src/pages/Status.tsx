@@ -1,6 +1,7 @@
 import { SEO } from "@/components/SEO";
+import { AlertCircle, CheckCircle, Clock, ExternalLink } from '@/components/ui/icons';
 import { useState, useEffect } from "react";
-import { AlertCircle, CheckCircle, Clock, ExternalLink } from 'lucide-react';
+
 
 
 

@@ -1,6 +1,7 @@
 import React from "react";
+import { Phone, Clock } from '@/components/ui/icons';
 import { ServiceLandingTemplate } from "@/components/services/ServiceLandingTemplate";
-import { Phone, ShieldCheck, Clock } from 'lucide-react';
+
 
 
 

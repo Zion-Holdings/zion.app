@@ -1,8 +1,9 @@
 
 import React, { useState, useRef } from "react";
+import { Upload, Trash2, Plus } from '@/components/ui/icons';
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Upload, Trash2, Plus } from 'lucide-react';
+
 
 
 

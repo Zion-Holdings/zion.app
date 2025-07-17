@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react';
+import { Loader2 } from '@/components/ui/icons';
 import { Button } from "@/components/ui/button";
-import { Loader2 } from 'lucide-react';
+
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useJobApplications } from "@/hooks/useJobApplications";

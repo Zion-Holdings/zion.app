@@ -1,6 +1,7 @@
 import Link from 'next/link';
+import { Home, Search, MessageSquare, User, X } from '@/components/ui/icons';
 import { useRouter } from 'next/router';
-import { Home, Search, BriefcaseIcon, MessageSquare, User, X, MessageCircle } from 'lucide-react';
+
 
 
 

@@ -1,7 +1,8 @@
 
 import React from "react";
+import { Menu, X } from '@/components/ui/icons';
 import { Button } from "@/components/ui/button";
-import { Menu, X } from 'lucide-react';
+
 
 
 import { useSidebar } from "./sidebar-context";

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Loader2, AlertTriangle, RefreshCw, Wifi, WifiOff, Clock, Zap } from '@/components/ui/icons';
 import { motion } from 'framer-motion';
-import { Loader2, AlertTriangle, RefreshCw, Wifi, WifiOff, Clock, Zap } from 'lucide-react';
+
 
 
 

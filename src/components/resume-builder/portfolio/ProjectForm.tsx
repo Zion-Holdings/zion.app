@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Loader2, Link, FileImage } from '@/components/ui/icons';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -6,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import {logErrorToProduction} from '@/utils/productionLogger';
-import { Loader2, Link, FileImage, Github } from 'lucide-react';
+
 import {
   Form,
   FormControl,

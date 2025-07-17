@@ -1,6 +1,7 @@
 import React from 'react';
+import { Mail } from '@/components/ui/icons';
 import FocusLock from 'react-focus-lock';
-import { SendIcon, Mail } from 'lucide-react';
+
 import {
   Dialog,
   DialogContent,

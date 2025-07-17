@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { Zap, Download, Trash2, RefreshCw, Settings, Activity, Monitor } from '@/components/ui/icons';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import {logErrorToProduction} from '@/utils/productionLogger';
-import { Zap, Download, Trash2, RefreshCw, Settings, Activity, Package, Monitor } from 'lucide-react';
+
 
 
 

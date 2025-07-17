@@ -1,12 +1,13 @@
 
 import { useState } from "react";
+import { Star, MessageSquare, Shield } from '@/components/ui/icons';
 import { useAuth } from "@/hooks/useAuth";
 import { ChatWidget } from "@/components/ChatWidget";
 import { useRouter } from "next/router";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import ImageWithRetry from '@/components/ui/ImageWithRetry';
-import { Star, MessageSquare, Brain, Shield } from 'lucide-react';
+
 
 
 

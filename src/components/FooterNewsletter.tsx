@@ -1,8 +1,9 @@
 import React, { useState, useRef } from 'react';
+import { Loader2 } from '@/components/ui/icons';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2 } from 'lucide-react';
+
 import { isValidEmail } from '@/utils/email';
 
 import {logErrorToProduction} from '@/utils/productionLogger';

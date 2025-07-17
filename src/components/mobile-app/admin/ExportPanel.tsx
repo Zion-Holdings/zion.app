@@ -1,8 +1,9 @@
 
 import React from "react";
+import { Download } from '@/components/ui/icons';
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Download } from 'lucide-react';
+
 
 import type { AppPlatform, AppMetadataValues } from "./MetadataManager";
 import { toast } from "sonner";

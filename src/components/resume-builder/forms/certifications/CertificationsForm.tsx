@@ -1,10 +1,11 @@
 
 import { useState } from 'react';
+import { Loader2 } from '@/components/ui/icons';
 import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
 import type { Certification } from '@/types/resume';
-import { Loader2 } from 'lucide-react';
+
 
 import { useResume } from '@/hooks/useResume';
 import { Alert, AlertDescription } from '@/components/ui/alert';

@@ -1,7 +1,8 @@
 
 import React from 'react';
+import { Star } from '@/components/ui/icons';
 import { Button } from "@/components/ui/button";
-import { Star } from 'lucide-react';
+
 
 
 interface SaveTalentButtonProps {

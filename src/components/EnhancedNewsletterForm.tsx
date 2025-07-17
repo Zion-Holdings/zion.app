@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
+import { Mail } from '@/components/ui/icons';
 import { Input } from "@/components/ui/input";
 import { useState, useRef } from "react";
-import { Mail } from 'lucide-react';
+
 
 import { useToast } from "@/hooks/use-toast";
 import { logErrorToProduction } from '@/utils/productionLogger';

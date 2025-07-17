@@ -1,7 +1,8 @@
 import { useRouter } from 'next/router';
+import { ArrowUp, Filter, SortAsc, Users, Star, MapPin } from '@/components/ui/icons';
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUp, Filter, SortAsc, Users, Star, Verified, MapPin } from 'lucide-react';
+
 
 
 

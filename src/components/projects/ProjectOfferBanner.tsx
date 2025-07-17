@@ -1,7 +1,8 @@
 
 import { useEffect, useState } from "react";
+import { Bell, X } from '@/components/ui/icons';
 import { useRouter } from 'next/router';
-import { Bell, X } from 'lucide-react';
+
 
 
 

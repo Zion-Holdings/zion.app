@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Gift, RefreshCw } from 'lucide-react';
+import { RefreshCw } from '@/components/ui/icons';
+
 
 
 import { usePoints } from '@/hooks/usePoints';

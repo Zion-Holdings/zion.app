@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { FileText, ChevronDown, Loader2, Download } from '@/components/ui/icons';
 import { Button } from '@/components/ui/button';
 import {logErrorToProduction} from '@/utils/productionLogger';
-import { FileText, ChevronDown, Loader2, Download } from 'lucide-react';
+
 import {
   DropdownMenu,
   DropdownMenuContent,

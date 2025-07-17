@@ -1,13 +1,14 @@
 'use client'
 
 import type { SearchSuggestion } from "@/types/search";
+import { Search } from '@/components/ui/icons';
 import React, { useState } from "react";
 // Build-test logs showed a missing `Link` name error when this component used
 // the react-router version. Switching to Next.js `Link` resolves the TypeScript
 // error and ensures proper navigation.
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
-import { Search } from 'lucide-react';
+
 
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { cn } from "@/lib/utils";

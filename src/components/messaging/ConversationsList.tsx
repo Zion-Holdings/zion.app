@@ -1,6 +1,7 @@
 
 import React, { useMemo } from 'react';
-import { User } from 'lucide-react';
+import { User } from '@/components/ui/icons';
+
 
 import type { Conversation } from '@/types/messaging';
 import { ConversationItem } from './ConversationItem';

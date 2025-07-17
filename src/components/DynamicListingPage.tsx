@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
+import { Search, Filter, List, Star } from '@/components/ui/icons';
 import { useRouter } from 'next/router';
 import { GradientHeading } from "@/components/GradientHeading";
 import { ProductListingCard } from "@/components/ProductListingCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
-import { Search, Filter, LayoutGrid, List, Star } from 'lucide-react';
+
 import {
   Select,
   SelectValue,

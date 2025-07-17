@@ -1,7 +1,8 @@
 
 import React from "react";
+import { Award } from '@/components/ui/icons';
 import { Badge } from "@/components/ui/badge";
-import { Award } from 'lucide-react';
+
 
 
 interface TalentCardBadgesProps {

@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
-import { MessageSquare, Video } from 'lucide-react';
+import { MessageSquare, Video } from '@/components/ui/icons';
+
 
 
 import { useMessaging } from '@/context/MessagingContext';

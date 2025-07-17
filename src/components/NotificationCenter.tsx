@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Bell } from 'lucide-react';
+import { Bell } from '@/components/ui/icons';
+
 // Use the shared icon wrapper
 
 import { Button } from '@/components/ui/button';

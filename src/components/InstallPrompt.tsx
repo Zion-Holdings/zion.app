@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { X } from '@/components/ui/icons';
 import { Button } from '@/components/ui/button';
 import { safeSessionStorage } from '@/utils/safeStorage';
-import { X } from 'lucide-react';
+
 
 const SHOWN_KEY = 'pwaInstallShown';
 const DISMISS_KEY = 'pwaInstallDismissUntil';

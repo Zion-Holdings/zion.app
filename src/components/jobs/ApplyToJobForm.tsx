@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AlertCircle, FileText, Loader2 } from '@/components/ui/icons';
 import { useRouter } from 'next/router';
 import { useJobApplications } from "@/hooks/useJobApplications";
 import { useResume } from "@/hooks/useResume";
@@ -8,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { AlertCircle, FileText, Loader2 } from 'lucide-react';
+
 
 
 

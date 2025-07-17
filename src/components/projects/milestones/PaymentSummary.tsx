@@ -1,7 +1,8 @@
 import React from 'react';
+import { CreditCard } from '@/components/ui/icons';
 import type { Milestone } from '@/hooks/useMilestones';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CreditCard } from 'lucide-react';
+
 
 interface PaymentSummaryProps {
   milestones: Milestone[];

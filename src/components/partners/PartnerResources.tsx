@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Download, FileImage, FileText, FileVideo } from '@/components/ui/icons';
 import { Button } from "@/components/ui/button";
-import { Download, FileImage, FileText, FileVideo } from 'lucide-react';
+
 
 
 

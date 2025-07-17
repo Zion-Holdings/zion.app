@@ -1,8 +1,9 @@
 import React from 'react';
+import { TrendingUp, Zap, Shield, Search, CheckCircle, AlertCircle } from '@/components/ui/icons';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { TrendingUp, Zap, Shield, Search, CheckCircle, AlertCircle } from 'lucide-react';
+
 
 
 

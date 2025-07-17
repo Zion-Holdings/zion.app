@@ -5,7 +5,8 @@ import React, {
   useContext,
 } from 'react';
 import type { ReactNode } from 'react';
-import { X } from 'lucide-react';
+import { X } from '@/components/ui/icons';
+
 import { AuthContext } from '../../context/auth/AuthContext';
 import { useDebounce } from '../../hooks/useDebounce';
 import { useLocalStorage } from '../../hooks/useLocalStorage';

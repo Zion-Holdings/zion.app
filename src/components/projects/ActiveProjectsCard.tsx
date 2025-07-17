@@ -1,7 +1,8 @@
 
 import { useEffect, useState } from "react";
+import { Clock } from '@/components/ui/icons';
 import Link from "next/link";
-import { BriefcaseIcon, Clock } from 'lucide-react';
+
 
 
 import { Button } from "@/components/ui/button";

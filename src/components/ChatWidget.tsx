@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
+import { Send, X } from '@/components/ui/icons';
 import { useAuth } from '@/hooks/useAuth';
 import { MessageBubble } from '@/components/messaging/MessageBubble';
 import { Button } from '@/components/ui/button';
 import type { Message } from '@/types/messaging';
 import { safeStorage } from '@/utils/safeStorage';
-import { Send, X } from 'lucide-react';
+
 
 interface ChatWidgetProps {
   /** Room identifier, typically order or service id */

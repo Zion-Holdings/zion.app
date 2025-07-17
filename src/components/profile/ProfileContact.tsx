@@ -1,8 +1,9 @@
 
 import { Button } from "@/components/ui/button";
+import { Mail, Send } from '@/components/ui/icons';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Send } from 'lucide-react';
+
 
 
 import { useState } from "react";

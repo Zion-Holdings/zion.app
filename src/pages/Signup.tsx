@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { AlertCircle, CheckCircle, Mail } from '@/components/ui/icons';
 import { useRouter } from 'next/router'; // Changed from react-router-dom
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -10,7 +11,7 @@ import { LoadingSpinner } from '@/components/ui/enhanced-loading-states';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter';
 import { AuthButtons } from '@/components/AuthButtons';
-import { AlertCircle, CheckCircle, Mail } from 'lucide-react';
+
 
 
 

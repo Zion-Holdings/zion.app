@@ -1,10 +1,11 @@
 
 import { SEO } from "@/components/SEO";
+import { Star, AlertTriangle } from '@/components/ui/icons';
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Star, AlertTriangle } from 'lucide-react';
+
 import { Button } from "@/components/ui/button";
 
 

@@ -1,6 +1,7 @@
 
 import React from "react";
-import { Users, Shield, Briefcase, Award, Settings, Globe } from 'lucide-react';
+import { Users, Shield, Award, Settings, Globe } from '@/components/ui/icons';
+
 
 
 

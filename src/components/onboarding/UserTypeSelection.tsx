@@ -1,9 +1,10 @@
 
-import { Briefcase, Star, User } from 'lucide-react';
+
 
 
 
 import { Button } from "@/components/ui/button";
+import { Star, User } from '@/components/ui/icons';
 
 interface UserTypeOption {
   id: "serviceProvider" | "talent" | "client";

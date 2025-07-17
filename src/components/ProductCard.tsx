@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Heart } from 'lucide-react';
+import { Heart } from '@/components/ui/icons';
+
 
 import { useWishlist } from '@/hooks/useWishlist';
 import { Button } from '@/components/ui/button';

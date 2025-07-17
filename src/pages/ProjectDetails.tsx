@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { AlertCircle, Calendar, Clock, FileText, MessageSquare, Video, User, XCircle } from '@/components/ui/icons';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { format } from "date-fns";
@@ -9,7 +10,7 @@ import { ProtectedRoute } from "@/components/ProtectedRoute";
 import type { Project, ProjectStatus } from "@/types/projects";
 import { Button } from "@/components/ui/button";
 import {logErrorToProduction} from '@/utils/productionLogger';
-import { AlertCircle, Calendar, CheckCircle2, Clock, FileText, Layers, MessageSquare, Video, User, XCircle } from 'lucide-react';
+
 import {
   Card,
   CardContent,

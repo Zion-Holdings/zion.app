@@ -1,4 +1,5 @@
 import React from 'react';
+import { Check, X } from '@/components/ui/icons';
 import {
   Card,
   CardContent,
@@ -9,7 +10,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { format } from 'date-fns';
-import { Check, X } from 'lucide-react';
+
 
 import { useDisputeCheck } from '@/hooks/useDisputeCheck';
 import { DisputeStatusBadge } from '@/components/disputes/DisputeStatusBadge';

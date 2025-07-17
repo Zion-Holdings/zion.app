@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { AlertCircle } from '@/components/ui/icons';
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -6,7 +7,7 @@ import { LoadingSpinner } from "@/components/ui/enhanced-loading-states";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useAuth } from "@/context/auth/AuthProvider";
-import { AlertCircle } from 'lucide-react';
+
 
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { PasswordStrengthMeter } from "@/components/PasswordStrengthMeter";

@@ -1,8 +1,9 @@
 
 import React from 'react';
+import { ChevronRight } from '@/components/ui/icons';
 import { completeSitemap, dynamicPaths } from '@/config/sitemap';
 import Link from 'next/link';
-import { ChevronRight } from 'lucide-react';
+
 
 import { SEO } from './SEO';
 

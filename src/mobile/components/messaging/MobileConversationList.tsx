@@ -1,9 +1,10 @@
 
 import React from "react";
+import { Search } from '@/components/ui/icons';
 // import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Search } from 'lucide-react';
+
 
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";

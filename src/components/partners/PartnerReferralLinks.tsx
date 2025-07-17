@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { Copy, Download, Link, Plus } from '@/components/ui/icons';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Copy, Download, Link, Plus } from 'lucide-react';
+
 
 
 

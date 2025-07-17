@@ -1,7 +1,8 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { TrendingUp, Users, DollarSign } from '@/components/ui/icons';
 import { Button } from "@/components/ui/button";
-import { LineChart, TrendingUp, Users, DollarSign } from 'lucide-react';
+
 
 
 

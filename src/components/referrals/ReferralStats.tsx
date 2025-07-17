@@ -1,7 +1,8 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Award, Share, Star, TrendingUp } from '@/components/ui/icons';
 import type { ReferralStats as ReferralStatsType } from "@/types/referrals";
-import { Award, Share, Star, TrendingUp } from 'lucide-react';
+
 
 
 

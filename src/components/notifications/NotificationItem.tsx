@@ -1,5 +1,6 @@
 import React from 'react';
-import { Check, Trash2, ChevronRight } from 'lucide-react';
+import { Check, Trash2, ChevronRight } from '@/components/ui/icons';
+
 // Use the centralized icon wrapper to avoid missing icons
 
 

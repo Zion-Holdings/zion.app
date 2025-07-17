@@ -1,6 +1,7 @@
 
 import React from "react";
-import { CheckCircle, Smartphone, Users, Star, Mail } from 'lucide-react';
+import { CheckCircle, Users, Star, Mail } from '@/components/ui/icons';
+
 
 
 

@@ -1,6 +1,7 @@
 
 import React from "react";
-import { BadgeCheck, Star, Clock, Award } from 'lucide-react';
+import { Star, Clock, Award } from '@/components/ui/icons';
+
 
 
 

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Loader2 } from '@/components/ui/icons';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -12,7 +13,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { Switch } from "@/components/ui/switch";
 import { format } from "date-fns";
-import { CalendarIcon, Loader2 } from 'lucide-react';
+
 import type { ControllerRenderProps } from 'react-hook-form';
 
 

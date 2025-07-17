@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Heart, MessageSquare, Wallet } from '@/components/ui/icons';
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -6,7 +7,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { useTranslation } from "react-i18next";
 import { useFavorites } from "@/hooks/useFavorites";
 import { useCart } from "@/context/CartContext";
-import { Heart, MessageSquare, CreditCard as _CreditCard, ShoppingCart, Wallet } from 'lucide-react';
+
 
 
 

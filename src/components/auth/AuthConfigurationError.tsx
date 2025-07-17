@@ -1,6 +1,7 @@
 import React from 'react';
+import { AlertTriangle, ExternalLink, RefreshCw, Settings, CheckCircle } from '@/components/ui/icons';
 import Link from 'next/link';
-import { AlertTriangle, ExternalLink, RefreshCw, Settings, CheckCircle } from 'lucide-react';
+
 
 
 

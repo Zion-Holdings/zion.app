@@ -1,7 +1,8 @@
 
 import { useState } from "react";
+import { Star, Flag, User } from '@/components/ui/icons';
 import { formatDistanceToNow } from "date-fns";
-import { Star, Flag, User } from 'lucide-react';
+
 
 
 

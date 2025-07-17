@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { AlertTriangle } from '@/components/ui/icons';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ImageIcon, AlertTriangle } from 'lucide-react';
+
 
 
 import { cn } from '@/lib/utils';

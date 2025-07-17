@@ -1,7 +1,8 @@
 
 
 import { Progress } from "@/components/ui/progress";
-import { Star } from 'lucide-react';
+import { Star } from '@/components/ui/icons';
+
 
 interface ReviewStatsProps {
   averageRating: number;

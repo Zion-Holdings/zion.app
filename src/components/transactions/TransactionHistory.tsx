@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { ArrowLeft, ArrowRight, RefreshCcw, XCircle, Clock, AlertCircle } from '@/components/ui/icons';
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
@@ -7,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Skeleton from "@/components/ui/skeleton";
-import { ArrowLeft, ArrowRight, RefreshCcw, CheckCircle2, XCircle, Clock, AlertCircle, ShieldAlert } from 'lucide-react';
+
 
 
 

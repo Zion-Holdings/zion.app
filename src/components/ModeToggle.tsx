@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button"
+import { Moon, Sun } from '@/components/ui/icons';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { toast } from "@/hooks/use-toast"
 import { darkModeMessages, lightModeMessages } from "@/utils/themeToggleMessages"
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
-import { Moon, Sun } from 'lucide-react';
+
 // Use the correct ThemeProvider hook from context
 import { useThemePreset } from "@/context/ThemeContext"
 import { useEffect, useState } from "react"

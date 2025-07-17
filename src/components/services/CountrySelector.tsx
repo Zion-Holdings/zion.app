@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
-import { Globe } from 'lucide-react';
+import { Globe } from '@/components/ui/icons';
+
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import type { CountryPricing } from "@/data/onsiteServicePricing";

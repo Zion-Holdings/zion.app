@@ -1,9 +1,10 @@
 
 import React, { useState } from "react";
+import { ArrowRight, ExternalLink } from '@/components/ui/icons';
 import { useWallet } from "@/hooks/useWallet";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Gift, ArrowRight, ExternalLink } from 'lucide-react';
+
 
 
 

@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
+import { Star, Shield, RotateCcw, Clock, AlertTriangle, ArrowLeft } from '@/components/ui/icons';
 import { useRouter } from 'next/router';
 import { NextSeo } from '@/components/NextSeo';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { ShoppingCart, Star, Truck, Shield, RotateCcw, Clock, AlertTriangle, ArrowLeft } from 'lucide-react';
+
 
 
 

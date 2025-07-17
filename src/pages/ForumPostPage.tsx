@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from "react";
+import { Calendar, Flag, Edit, Lock, CheckCircle } from '@/components/ui/icons';
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { SEO } from "@/components/SEO";
@@ -8,7 +9,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { ThumbsUp, ThumbsDown, Calendar, Flag, Edit, Pin, Lock, CheckCircle } from 'lucide-react';
+
 
 
 

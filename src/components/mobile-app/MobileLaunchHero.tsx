@@ -1,7 +1,8 @@
 
 import React from "react";
+import { ArrowRight } from '@/components/ui/icons';
 import Link from "next/link";
-import { ArrowRight, Smartphone } from 'lucide-react';
+
 
 
 import { Button } from "@/components/ui/button";

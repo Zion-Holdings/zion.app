@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { BarChart3, Monitor, User } from '@/components/ui/icons';
 import type { MatchResultItem } from "@/lib/ai-matchmaking";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BarChart3, BriefcaseIcon, Monitor, User } from 'lucide-react';
+
 
 
 
