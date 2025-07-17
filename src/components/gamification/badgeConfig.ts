@@ -1,5 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
-import { Award, Star } from '@/components/ui/icons';
+import { Award, Star, BadgeCheck, Trophy, BadgePlus, BadgeDollarSign } from '@/components/ui/icons';
 
 
 export type BadgeKey =
