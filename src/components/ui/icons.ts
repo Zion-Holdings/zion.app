@@ -3,50 +3,34 @@
  * This file centralizes all icon imports to reduce bundle size
  */
 
-// Navigation & UI Icons
-export { 
-  Menu, 
-  X, 
-  Search, 
-  Filter, 
-  SortAsc, 
-  SortDesc,
-  ChevronDown,
-  ChevronUp,
-  ChevronLeft,
-  ChevronRight,
-  ArrowLeft,
-  ArrowRight,
-  ArrowUp,
-  ArrowDown
+// Layout & Design Icons
+export {
+  Grid,
+  List,
+  Columns,
+  Rows,
+  Layout,
+  Sidebar,
+  Maximize,
+  Minimize,
+  Move
 } from 'lucide-react';
 
-// Action Icons
+// Utility Icons
 export {
-  Plus,
-  Minus,
-  Edit,
-  Trash2,
-  Copy,
-  Download,
-  Upload,
-  Share,
-  Heart,
-  Star,
-  Bookmark,
-  Flag,
-  MoreHorizontal,
-  MoreVertical
-} from 'lucide-react';
-
-// Communication Icons
-export {
-  MessageSquare,
-  Mail,
-  Phone,
-  Send,
-  Reply,
-  Forward
+  Home,
+  MapPin,
+  Link,
+  ExternalLink,
+  RefreshCw,
+  RefreshCcw,
+  ZoomIn,
+  ZoomOut,
+  Eye,
+  EyeOff,
+  Sun,
+  Moon,
+  Monitor
 } from 'lucide-react';
 
 // Status Icons
@@ -60,14 +44,14 @@ export {
   Loader2,
   Clock,
   Calendar,
-  Bell
+  Bell,
+  Ban // <-- Added Ban icon
 } from 'lucide-react';
 
 // Media Icons
 export {
   Play,
   Pause,
-  Stop,
   Volume2,
   VolumeX,
   Image,
@@ -134,36 +118,46 @@ export {
   WifiOff
 } from 'lucide-react';
 
-// Layout & Design Icons
+// Action Icons
 export {
-  Grid,
-  List,
-  Columns,
-  Rows,
-  Layout,
-  Sidebar,
-  Maximize,
-  Minimize,
-  Move,
-  RotateCw,
-  RotateCcw
+  Plus,
+  Minus,
+  Edit,
+  Trash2,
+  Copy,
+  Download,
+  Upload,
+  Share,
+  Heart,
+  Star,
+  Bookmark,
+  Flag,
+  MoreHorizontal,
+  MoreVertical,
+  Reply,
+  Forward,
+  MessageSquare,
+  Mail,
+  Phone,
+  Send
 } from 'lucide-react';
 
-// Utility Icons
+// Navigation & UI Icons
 export {
-  Home,
-  MapPin,
-  Link,
-  ExternalLink,
-  RefreshCw,
-  RefreshCcw,
-  ZoomIn,
-  ZoomOut,
-  Eye,
-  EyeOff,
-  Sun,
-  Moon,
-  Monitor
+  Menu,
+  X,
+  Search,
+  Filter,
+  SortAsc,
+  SortDesc,
+  ChevronDown,
+  ChevronUp,
+  ChevronLeft,
+  ChevronRight,
+  ArrowLeft,
+  ArrowRight,
+  ArrowUp,
+  ArrowDown
 } from 'lucide-react';
 
 // Export type for icon component props
