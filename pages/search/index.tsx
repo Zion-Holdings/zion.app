@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
 import { useMarketplaceSearch } from '@/hooks/useMarketplaceSearch';
-import { ProductListing } from '@/types/listings';
+import type { ProductListing } from '@/types/listings';
 import { ListingCard } from '@/components/ListingCard'; // Assuming this component exists
 import { AppLayout } from '@/layout/AppLayout'; // Assuming this component exists
-import { NextPageWithLayout } from '@/types/next';
+import type { NextPageWithLayout } from '@/types/next';
 import React, { useEffect } from 'react';
 
 const SearchPage: NextPageWithLayout = () => {
