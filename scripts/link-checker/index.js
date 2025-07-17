@@ -220,20 +220,20 @@ async function main(projectRoot = '.') {
     path.join(absoluteProjectRoot, 'content/**/*.md')
   ];
 
-  let files = [];
+  let _files = [];
   filePatterns.forEach(pattern => {
-    files = files.concat(glob.sync(pattern, { nodir: true, ignore: ['**/node_modules/**'] }));
+    _files = _files.concat(glob.sync(pattern, { nodir: true, ignore: ['**/node_modules/**'] }));
   });
-  files = [...new Set(files)];
+  _files = [...new Set(_files)];
 
-  if (files.length === 0) {
+  if (_files.length === 0) {
     // console.log(chalk.yellow('No relevant files found. Check patterns/paths. Ensure script is run from project root.'));
     return;
   }
-  // console.log(chalk.green(`Found ${files.length} file(s) to scan.`));
+  // console.log(chalk.green(`Found ${_files.length} file(s) to scan.`));
 
-  let allLinks = [];
-  files.forEach(filePath => {
+  let _allLinks = [];
+  _files.forEach(filePath => {
     const content = fs.readFileSync(filePath, 'utf8');
     const relativeFilePath = path.relative(absoluteProjectRoot, filePath);
     const ext = path.extname(filePath);
@@ -247,22 +247,22 @@ async function main(projectRoot = '.') {
     }
     if (extracted.length > 0) {
         // console.log(chalk.cyan(`Found ${extracted.length} links in ${relativeFilePath}`));
-        allLinks = allLinks.concat(extracted);
+        _allLinks = _allLinks.concat(extracted);
     }
   });
 
-  if (allLinks.length === 0) {
+  if (_allLinks.length === 0) {
     // console.log(chalk.yellow('No links found in any files.'));
     return;
   }
-  // console.log(chalk.green(`Found ${allLinks.length} total links. Checking status (this might take a while)...`));
+  // console.log(chalk.green(`Found ${_allLinks.length} total links. Checking status (this might take a while)...`));
 
   const CONCURRENT_CHECKS = 5;
   let results = [];
   let brokenInternal = 0, brokenExternal = 0, operationalErrors = 0;
 
-  for (let i = 0; i < allLinks.length; i += CONCURRENT_CHECKS) {
-    const chunk = allLinks.slice(i, i + CONCURRENT_CHECKS);
+  for (let i = 0; i < _allLinks.length; i += CONCURRENT_CHECKS) {
+    const chunk = _allLinks.slice(i, i + CONCURRENT_CHECKS);
     // Pass projectRoot to checkLink for internal link validation context
     const chunkResults = await Promise.all(chunk.map(linkObj => checkLink(linkObj, absoluteProjectRoot)));
     results = results.concat(chunkResults);
