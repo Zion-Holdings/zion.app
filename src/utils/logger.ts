@@ -12,15 +12,21 @@ class Logger {
   private isDevelopment = process.env.NODE_ENV === 'development';
   private isDebugEnabled = process.env.DEBUG === 'true' || this.isDevelopment;
 
-  debug(): void {
+  debug(message?: string, ...args: any[]): void {
     if (this.isDebugEnabled) {
-      logInfo('[DEBUG] ${message}', { data: context });
+      if (message) {
+        // eslint-disable-next-line no-console
+        console.debug(message, ...args);
+      }
     }
   }
 
-  info(): void {
+  info(message?: string, ...args: any[]): void {
     if (this.isDevelopment) {
-      logInfo('[INFO] ${message}', { data: context });
+      if (message) {
+        // eslint-disable-next-line no-console
+        console.info(message, ...args);
+      }
     }
   }
 
@@ -43,9 +49,12 @@ class Logger {
   }
 
   // Conditional development logging
-  devLog(): void {
+  devLog(message?: string, ...args: any[]): void {
     if (this.isDevelopment) {
-      logInfo('[DEV] ${message}', { data: context });
+      if (message) {
+        // eslint-disable-next-line no-console
+        console.log('[DEV]', message, ...args);
+      }
     }
   }
 
