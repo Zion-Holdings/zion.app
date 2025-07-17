@@ -101,7 +101,8 @@ export {
   PieChart,
   Activity,
   Target,
-  Award
+  Award,
+  Package
 } from 'lucide-react';
 
 // Development & Tech Icons
