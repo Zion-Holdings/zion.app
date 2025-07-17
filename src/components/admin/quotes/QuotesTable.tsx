@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Eye, MoreHorizontal, Trash2 } from '@/components/ui/icons';
+import { Eye, MoreHorizontal, Trash2, Archive } from '@/components/ui/icons';
 
 
 
