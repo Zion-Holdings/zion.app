@@ -221,7 +221,7 @@ function EquipmentPageContent() {
       hasMore: false,
       total: 0,
     };
-  }, [sortBy, filterCategory, showRecommended]);
+  }, []);
 
   const {
     items: equipment,

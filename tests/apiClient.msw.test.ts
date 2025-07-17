@@ -111,7 +111,7 @@ describe('globalAxiosErrorHandler Direct Tests', () => {
       response: { status: 404, data: { message: 'Not Found' } },
       config: { 'axios-retry': { attemptNumber: 1, retryCount: 3 } }, // Initial attempt failed
     };
-    try { await globalAxiosErrorHandler(errorPending); } catch (e) {
+    try { await globalAxiosErrorHandler(errorPending); } catch (_e) {
       // Expected error, test continues
     }
     expect(apiError.showApiError).not.toHaveBeenCalled();
@@ -121,7 +121,7 @@ describe('globalAxiosErrorHandler Direct Tests', () => {
       response: { status: 404, data: { message: 'Not Found' } },
       config: { 'axios-retry': { attemptNumber: 3, retryCount: 3 } }, // A mid-retry attempt failed (e.g. 2nd retry, if initial is 1st attempt)
     };
-    try { await globalAxiosErrorHandler(errorMidRetry); } catch (e) {
+    try { await globalAxiosErrorHandler(errorMidRetry); } catch (_e) {
       // Expected error, test continues
     }
     expect(apiError.showApiError).not.toHaveBeenCalled();
@@ -140,7 +140,7 @@ describe('globalAxiosErrorHandler Direct Tests', () => {
         'axios-retry': { attemptNumber: 4, retryCount: 3 },
       },
     };
-    try { await globalAxiosErrorHandler(errorFinalAttempt); } catch (e) {
+    try { await globalAxiosErrorHandler(errorFinalAttempt); } catch (_e) {
       // Expected error, test continues
     }
     expect(apiError.showApiError).toHaveBeenCalledWith(errorFinalAttempt);
@@ -152,7 +152,7 @@ describe('globalAxiosErrorHandler Direct Tests', () => {
       response: { status: 404, data: { message: 'Not Found' } },
       config: {}, // No axios-retry state
     };
-    try { await globalAxiosErrorHandler(errorNoRetry); } catch (e) {
+    try { await globalAxiosErrorHandler(errorNoRetry); } catch (_e) {
       // Expected error, test continues
     }
     expect(apiError.showApiError).toHaveBeenCalledWith(errorNoRetry);
@@ -164,7 +164,7 @@ describe('globalAxiosErrorHandler Direct Tests', () => {
       response: { status: 500, data: { message: 'Server Error' } },
       config: { 'axios-retry': { attemptNumber: 1, retryCount: 3 } }, // Retries pending
     };
-    try { await globalAxiosErrorHandler(error500); } catch (e) {
+    try { await globalAxiosErrorHandler(error500); } catch (_e) {
       // Expected error, test continues
     }
     expect(apiError.showApiError).toHaveBeenCalledWith(error500);
@@ -176,7 +176,7 @@ describe('globalAxiosErrorHandler Direct Tests', () => {
       message: 'Network Error',
       config: { 'axios-retry': { attemptNumber: 1, retryCount: 3 } }, // Potentially retrying
     };
-    try { await globalAxiosErrorHandler(networkError); } catch (e) {
+    try { await globalAxiosErrorHandler(networkError); } catch (_e) {
       // Expected error, test continues
     }
     // Network errors (no response status) should still be shown.
@@ -191,7 +191,7 @@ describe('globalAxiosErrorHandler Direct Tests', () => {
       config: { 'axios-retry': { attemptNumber: 1, retryCount: 0 } }, // Retries configured to 0
     };
     // attemptNumber 1, retryCount 0. 1 <= 0 is false. So should show.
-    try { await globalAxiosErrorHandler(errorRetryCountZero); } catch (e) {
+    try { await globalAxiosErrorHandler(errorRetryCountZero); } catch (_e) {
       // Expected error, test continues
     }
     expect(apiError.showApiError).toHaveBeenCalledWith(errorRetryCountZero);

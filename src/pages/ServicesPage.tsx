@@ -283,7 +283,7 @@ export default function ServicesPage() {
       hasMore: filteredServices.length >= limit,
       total: filteredServices.length
     };
-  }, [filterCategory, showRecommended, sortBy, totalGenerated]);
+  }, [filterCategory, showRecommended, sortBy]);
 
   const {
     items: services,
@@ -296,10 +296,13 @@ export default function ServicesPage() {
     refresh
   } = useInfiniteScrollPagination(fetchServices, 12);
 
+  const handleRefresh = useCallback(() => {
+    refresh();
+  }, [refresh]);
+
   useEffect(() => {
     refresh();
-    setTotalGenerated(0);
-  }, [sortBy, filterCategory, showRecommended]);
+  }, [refresh]);
 
   const marketStats = useMemo(() => {
     if (services.length === 0) return null;
@@ -339,7 +342,7 @@ export default function ServicesPage() {
       <main className="container py-8 text-center">
         <h2 className="text-2xl font-bold mb-4">Error Loading Services</h2>
         <p className="text-muted-foreground mb-4">Failed to load services. Please try again.</p>
-        <Button onClick={refresh}>Retry</Button>
+        <Button onClick={handleRefresh}>Retry</Button>
       </main>
     );
   }
