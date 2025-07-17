@@ -1,6 +1,6 @@
 
 import { GradientHeading } from "./GradientHeading";
-import { Server, Clock } from '@/components/ui/icons';
+import { Server, Clock, HardDrive, Network, Recycle, Truck } from '@/components/ui/icons';
 
 
 
