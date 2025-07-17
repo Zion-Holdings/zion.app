@@ -76,7 +76,8 @@ export {
   FolderOpen,
   Save,
   Clipboard,
-  PaperclipIcon
+  PaperclipIcon,
+  Archive
 } from 'lucide-react';
 
 // Social & User Icons
