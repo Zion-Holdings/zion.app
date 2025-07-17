@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-07-17T10:46:17.367Z",
+  "timestamp": "2025-07-17T17:07:51.816Z",
   "totalSize": 0,
   "chunks": [],
   "dependencies": [
@@ -12,7 +12,7 @@
     {
       "name": "@modelcontextprotocol/sdk",
       "version": "^1.15.1",
-      "size": 11904206,
+      "size": 12122070,
       "type": "development"
     },
     {
@@ -48,7 +48,7 @@
     {
       "name": "@types/jest",
       "version": "^30.0.0",
-      "size": 2077868,
+      "size": 2078387,
       "type": "development"
     },
     {
@@ -204,7 +204,7 @@
     {
       "name": "next-router-mock",
       "version": "^1.0.2",
-      "size": 161200,
+      "size": 161194,
       "type": "development"
     },
     {
@@ -786,7 +786,7 @@
     {
       "name": "react-router-dom",
       "version": "^7.6.3",
-      "size": 5460,
+      "size": 5416,
       "type": "production"
     },
     {
@@ -1336,6 +1336,12 @@
       "type": "production"
     },
     {
+      "name": "webpack-bundle-analyzer",
+      "version": "^4.10.2",
+      "size": 145,
+      "type": "development"
+    },
+    {
       "name": "null-loader",
       "version": "^4.0.1",
       "size": 83,
@@ -1386,7 +1392,7 @@
         },
         {
           "name": "@modelcontextprotocol/sdk",
-          "size": "11.35 MB",
+          "size": "11.56 MB",
           "suggestion": "Review if all features are needed"
         },
         {
@@ -1471,10 +1477,10 @@
   ],
   "performance": {},
   "summary": {
-    "totalDependencies": 228,
+    "totalDependencies": 229,
     "productionDependencies": 139,
     "largeDependencies": 13,
-    "totalSize": 81234102
+    "totalSize": 81452580
   },
   "actionPlan": [
     {
