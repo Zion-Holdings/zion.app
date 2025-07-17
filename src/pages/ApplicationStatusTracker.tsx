@@ -2,7 +2,7 @@
 import { SEO } from "@/components/SEO";
 import { ApplicationsTracker } from "@/components/jobs/applications";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Inbox } from 'lucide-react';
+import { Inbox } from '@/components/ui/icons';
 
 
 import { ProtectedRoute } from "@/components/ProtectedRoute";

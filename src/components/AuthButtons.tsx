@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Facebook } from 'lucide-react';
+import { Facebook } from '@/components/ui/icons';
 
 import { signIn } from 'next-auth/react';
 

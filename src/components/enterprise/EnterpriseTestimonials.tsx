@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Quote } from 'lucide-react';
+import { Quote } from '@/components/ui/icons';
 
 import {
   Carousel,

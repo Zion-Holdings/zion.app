@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Apple } from 'lucide-react';
+import { Apple } from '@/components/ui/icons';
 
 
 import { cn } from "@/lib/utils";

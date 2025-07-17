@@ -1,7 +1,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FilePlus } from 'lucide-react';
+import { FilePlus } from '@/components/ui/icons';
 
 import type { EmptyResumeProps } from "./types";
 

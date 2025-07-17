@@ -1,5 +1,5 @@
 import { Input } from "@/components/ui/input";
-import { SearchIcon } from 'lucide-react';
+import { SearchIcon } from '@/components/ui/icons';
 
 import type { SearchFilterProps } from "@/types/filters";
 

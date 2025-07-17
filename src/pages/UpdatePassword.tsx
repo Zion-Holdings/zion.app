@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import type { ControllerRenderProps } from "react-hook-form";
 import { z } from "zod";
-import { LockKeyhole } from 'lucide-react';
+import { LockKeyhole } from '@/components/ui/icons';
 
 
 import { supabase } from "@/integrations/supabase/client";

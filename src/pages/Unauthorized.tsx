@@ -1,7 +1,7 @@
 
 import Link from "next/link";
 import { Header } from "@/components/Header";
-import { ShieldAlert } from 'lucide-react';
+import { ShieldAlert } from '@/components/ui/icons';
 
 import { useTranslation } from "react-i18next";
 

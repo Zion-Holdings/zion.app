@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
-import { WifiOff, RefreshCw, Home, ShoppingCart, Clock, Bookmark, Search } from 'lucide-react';
+import { WifiOff, RefreshCw, Home, Clock, Bookmark, Search } from '@/components/ui/icons';
 
 
 

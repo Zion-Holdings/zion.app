@@ -9,7 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/router";
 import Image from 'next/image'; // Import next/image
 import {logErrorToProduction} from '@/utils/productionLogger';
-import { Sparkles } from 'lucide-react';
+import { Sparkles } from '@/components/ui/icons';
 
 import {
   Form,

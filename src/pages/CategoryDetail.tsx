@@ -15,7 +15,7 @@ import { MARKETPLACE_LISTINGS as _MARKETPLACE_LISTINGS } from "@/data/listingDat
 import type { ProductListing } from "@/types/listings";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { toast } from "@/hooks/use-toast";
+import { _toast } from "@/hooks/use-toast";
 import { useToast } from "@/hooks/use-toast";
 import { NextSeo } from '@/components/NextSeo';
 import { Header } from "@/components/Header";

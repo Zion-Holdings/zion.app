@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import type { FormEvent } from 'react';
 import Link from 'next/link';
-import { Mail as _Mail, Clock as _Clock, RefreshCw as _RefreshCw } from 'lucide-react';
+import { Mail as _Mail, Clock as _Clock, RefreshCw as _RefreshCw } from '@/components/ui/icons';
 
 
 

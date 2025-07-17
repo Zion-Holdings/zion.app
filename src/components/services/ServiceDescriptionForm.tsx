@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Loader, Sparkles } from 'lucide-react';
+import { Sparkles } from '@/components/ui/icons';
 
 
 import { supabase } from "@/integrations/supabase/client";

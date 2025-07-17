@@ -1,6 +1,6 @@
 import React from 'react';
 import { format } from 'date-fns';
-import { PaperclipIcon } from 'lucide-react';
+import { PaperclipIcon } from '@/components/ui/icons';
 
 import { cn } from '@/lib/utils';
 import type { Message } from '@/types/messaging';

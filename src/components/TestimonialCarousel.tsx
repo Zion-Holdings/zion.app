@@ -1,5 +1,5 @@
 
-import { Quote } from 'lucide-react';
+import { Quote } from '@/components/ui/icons';
 import {
   Carousel,
   CarouselContent,

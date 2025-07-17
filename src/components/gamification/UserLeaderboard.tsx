@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Trophy } from 'lucide-react';
+import { Trophy } from '@/components/ui/icons';
 
 
 export interface LeaderboardEntry {

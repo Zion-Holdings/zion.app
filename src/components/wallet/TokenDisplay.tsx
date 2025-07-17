@@ -1,6 +1,6 @@
 
 import React from "react";
-import { BadgeDollarSign } from 'lucide-react';
+import { BadgeDollarSign } from '@/components/ui/icons';
 
 import { useWallet } from "@/hooks/useWallet";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";

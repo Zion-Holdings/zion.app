@@ -1,6 +1,6 @@
 
 import React from "react";
-import { QrCode } from 'lucide-react';
+import { QrCode } from '@/components/ui/icons';
 
 import { AppStoreButtons } from "./AppStoreButtons";
 

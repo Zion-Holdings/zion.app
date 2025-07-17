@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Configuration
-const SEARCH_PATTERNS = [
+const _SEARCH_PATTERNS = [
   '**/*.tsx',
   '**/*.ts',
   '**/*.jsx',
@@ -149,8 +149,8 @@ function analyzeFile(filePath) {
       hasTranslation,
       hardcodedStrings: Array.from(hardcodedStrings)
     };
-  } catch (error) {
-    console.error(`Error analyzing file ${filePath}:`, error.message);
+  } catch (_error) {
+    console.error(`Error analyzing file ${filePath}:`, _error.message);
     return null;
   }
 }
@@ -256,7 +256,7 @@ function findFiles(dir, extensions, excludedDirs = []) {
           }
         }
       }
-    } catch (error) {
+    } catch (_error) {
       // Skip directories we can't read
     }
   }

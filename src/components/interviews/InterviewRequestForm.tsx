@@ -15,7 +15,7 @@ import { useForm } from "react-hook-form";
 import type { ControllerRenderProps } from "react-hook-form";
 import { z } from "zod";
 import { format, addDays } from "date-fns";
-import { CalendarIcon } from 'lucide-react';
+import { CalendarIcon } from '@/components/ui/icons';
 
 import { toast } from "@/components/ui/use-toast";
 import { useInterviews } from "@/hooks/useInterviews";

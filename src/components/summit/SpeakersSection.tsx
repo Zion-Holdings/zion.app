@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Twitter, Linkedin } from 'lucide-react';
+import { Twitter, Linkedin } from '@/components/ui/icons';
 
 
 

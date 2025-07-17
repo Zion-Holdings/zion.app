@@ -88,7 +88,7 @@ class ErrorMonitor {
           try {
             const entry = JSON.parse(line);
             this.processLogEntry(entry);
-          } catch (parseError) {
+          } catch (_parseError) {
             // Handle non-JSON log entries
             this.processPlainTextLog(line, file);
           }
@@ -519,7 +519,7 @@ class ErrorMonitor {
     }
 
     // Health score
-    const healthScore = this.calculateHealthScore();
+    const _healthScore = this.calculateHealthScore();
     // console.log('\n🏥 SYSTEM HEALTH SCORE');
     // console.log('-'.repeat(20));
     // console.log(`Score: ${healthScore.score}/100 (${healthScore.grade})`);

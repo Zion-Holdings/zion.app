@@ -6,7 +6,7 @@ import { HiringAnalytics } from "@/components/hiring-tracker/HiringAnalytics";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SEO } from "@/components/SEO";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
-import { Briefcase } from 'lucide-react';
+import { Briefcase } from '@/components/ui/icons';
 
 
 function HiringTrackerContent() {

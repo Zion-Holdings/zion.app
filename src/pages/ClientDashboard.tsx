@@ -5,7 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from "next/link";
 import type { JobStatus } from "@/types/jobs";
 import { SEO } from "@/components/SEO";
-import { BriefcaseIcon, PlusCircle, Kanban } from 'lucide-react';
+import { BriefcaseIcon, PlusCircle, Kanban } from '@/components/ui/icons';
 
 
 

@@ -1,6 +1,6 @@
 const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+const _path = require('path');
+const { execSync: _execSync } = require('child_process');
 
 // Files to process - complete list from grep results
 const filesToFix = [

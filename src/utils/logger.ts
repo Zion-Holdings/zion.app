@@ -12,39 +12,33 @@ class Logger {
   private isDevelopment = process.env.NODE_ENV === 'development';
   private isDebugEnabled = process.env.DEBUG === 'true' || this.isDevelopment;
 
-  debug(message?: string, ...args: any[]): void {
+  log(message: string, data?: unknown): void {
     if (this.isDebugEnabled) {
-      if (message) {
-        // eslint-disable-next-line no-console
-        console.debug(message, ...args);
-      }
+      console.log(`[${this.name}] ${message}`, data || '');
     }
   }
 
-  info(message?: string, ...args: any[]): void {
-    if (this.isDevelopment) {
-      if (message) {
-        // eslint-disable-next-line no-console
-        console.info(message, ...args);
-      }
+  warn(message: string, data?: unknown): void {
+    if (this.isDebugEnabled) {
+      console.warn(`[${this.name}] ${message}`, data || '');
     }
   }
 
-  warn(message?: string, ...args: any[]): void {
-    if (this.isDevelopment) {
-      if (message) {
-        // eslint-disable-next-line no-console
-        console.warn(message, ...args);
-      }
+  error(message: string, data?: unknown): void {
+    if (this.isDebugEnabled) {
+      console.error(`[${this.name}] ${message}`, data || '');
     }
   }
 
-  error(message?: string, ...args: any[]): void {
-    if (this.isDevelopment) {
-      if (message) {
-        // eslint-disable-next-line no-console
-        console.error(message, ...args);
-      }
+  info(message: string, data?: unknown): void {
+    if (this.isDebugEnabled) {
+      console.info(`[${this.name}] ${message}`, data || '');
+    }
+  }
+
+  debug(message: string, data?: unknown): void {
+    if (this.isDebugEnabled) {
+      console.debug(`[${this.name}] ${message}`, data || '');
     }
   }
 

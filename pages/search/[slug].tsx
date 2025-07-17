@@ -2,7 +2,7 @@ import type { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { useAuth } from '@/context/auth/AuthProvider';
-import { Search, Filter, Grid, List } from 'lucide-react';
+import { Search, Filter, Grid, List } from '@/components/ui/icons';
 
 
 

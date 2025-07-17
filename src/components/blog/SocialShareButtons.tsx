@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Twitter, Facebook, Linkedin, Link as LinkIcon } from 'lucide-react';
+import { Twitter, Facebook, Linkedin, Link as LinkIcon } from '@/components/ui/icons';
 
 
 

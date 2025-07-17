@@ -1,6 +1,6 @@
 
 import type { ProfileExperience as ProfileExperienceType } from "@/types/profile";
-import { Briefcase } from 'lucide-react';
+import { Briefcase } from '@/components/ui/icons';
 
 
 interface ProfileExperienceProps {

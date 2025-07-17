@@ -2,7 +2,7 @@
 
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
+import { fileURLToPath as _fileURLToPath } from 'url';
 
 console.warn('🔧 Fixing API TypeScript errors...');
 
@@ -64,8 +64,8 @@ function processFile(filePath) {
       return true;
     }
     return false;
-  } catch (error) {
-    console.error(`❌ Error processing ${filePath}:`, error.message);
+  } catch (_error) {
+    console.error(`❌ Error processing ${filePath}:`, _error.message);
     return false;
   }
 }

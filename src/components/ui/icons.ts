@@ -38,6 +38,7 @@ export {
 export {
   Check,
   CheckCircle,
+  CheckCircle2,
   AlertCircle,
   AlertTriangle,
   Info,
@@ -70,9 +71,12 @@ export {
   FileImage,
   FileVideo,
   FileAudio,
+  FilePlus,
   Folder,
   FolderOpen,
-  Save
+  Save,
+  Clipboard,
+  PaperclipIcon
 } from 'lucide-react';
 
 // Social & User Icons
@@ -87,7 +91,8 @@ export {
   UserCheck,
   Shield,
   Lock,
-  Unlock
+  Unlock,
+  LockKeyhole
 } from 'lucide-react';
 
 // Business & Finance Icons
@@ -102,7 +107,17 @@ export {
   Activity,
   Target,
   Award,
-  Package
+  Package,
+  Briefcase,
+  BriefcaseIcon,
+  Gift,
+  BadgeDollarSign,
+  Badge,
+  BadgeCheck,
+  Crown,
+  Medal,
+  Trophy,
+  Handshake
 } from 'lucide-react';
 
 // Development & Tech Icons
@@ -118,12 +133,16 @@ export {
   Server,
   Globe,
   Wifi,
-  WifiOff
+  WifiOff,
+  BookOpen,
+  Terminal,
+  Sparkles
 } from 'lucide-react';
 
 // Action Icons
 export {
   Plus,
+  PlusCircle,
   Minus,
   Edit,
   Trash2,
@@ -133,6 +152,7 @@ export {
   Share,
   Heart,
   Star,
+  StarIcon,
   Bookmark,
   Flag,
   MoreHorizontal,
@@ -140,9 +160,24 @@ export {
   Reply,
   Forward,
   MessageSquare,
+  MessageCircle,
   Mail,
   Phone,
-  Send
+  Send,
+  Inbox,
+  Kanban,
+  CalendarIcon,
+  ThumbsUp,
+  ThumbsDown,
+  Quote,
+  InfoIcon,
+  QrCode,
+  QrCodeIcon,
+  Apple,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Link as LinkIcon
 } from 'lucide-react';
 
 // Navigation & UI Icons
@@ -150,6 +185,7 @@ export {
   Menu,
   X,
   Search,
+  SearchIcon,
   Filter,
   SortAsc,
   SortDesc,
@@ -160,7 +196,13 @@ export {
   ArrowLeft,
   ArrowRight,
   ArrowUp,
-  ArrowDown
+  ArrowDown,
+  Circle,
+  CircleDot,
+  Dot,
+  GripVertical,
+  PanelLeft,
+  ImageIcon
 } from 'lucide-react';
 
 // Export type for icon component props

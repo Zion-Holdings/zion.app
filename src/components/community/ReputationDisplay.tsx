@@ -1,7 +1,7 @@
 
 
 import { Progress } from "@/components/ui/progress";
-import { Trophy } from 'lucide-react';
+import { Trophy } from '@/components/ui/icons';
 
 interface ReputationDisplayProps {
   reputation: number;

@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { BookOpen, Terminal } from 'lucide-react';
+import { BookOpen, Terminal } from '@/components/ui/icons';
 
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";

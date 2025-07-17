@@ -1,6 +1,6 @@
 
 import { format } from "date-fns";
-import { CalendarIcon } from 'lucide-react';
+import { CalendarIcon } from '@/components/ui/icons';
 
 import type { UseFormReturn, ControllerRenderProps } from "react-hook-form";
 import { 

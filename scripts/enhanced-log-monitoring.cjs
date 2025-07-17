@@ -230,7 +230,7 @@ class EnhancedLogMonitor extends EventEmitter {
   }
 
   async classifyAndProcessEntry(entry) {
-    const { level, message } = entry;
+    const { level, _message } = entry;
     
     // Store in appropriate metrics array
     if (level === 'error') {
@@ -436,7 +436,7 @@ class EnhancedLogMonitor extends EventEmitter {
   }
 
   async sendAlert(alert) {
-    const alertKey = `${alert.type}_${alert.timestamp}`;
+    const _alertKey = `${alert.type}_${alert.timestamp}`;
     
     // Prevent duplicate alerts
     if (this.alertHistory.some(a => a.type === alert.type && 

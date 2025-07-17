@@ -140,7 +140,7 @@ fixes.forEach(fix => {
       console.warn(`   ⚠️  No changes needed`);
     }
     
-  } catch { /* intentionally empty: ignore errors */ }
+  } catch (_error) { /* intentionally empty: ignore errors */ }
   
   console.warn('');
 });
@@ -152,7 +152,7 @@ try {
   console.warn('🧪 Testing build...');
   execSync('npm run build > build-test-2.log 2>&1');
   console.warn('✅ Build test passed!');
-} catch (error) {
+} catch (_error) {
   console.warn('⚠️  Build test failed');
 }
 
@@ -168,7 +168,7 @@ try {
     console.warn('\n🔍 Found errors:');
     errorLines.slice(0, 5).forEach(line => console.warn(`   ${line.trim()}`));
   }
-} catch (error) {
+} catch (_error) {
   console.warn('⚠️  Could not read build log');
 }
 
