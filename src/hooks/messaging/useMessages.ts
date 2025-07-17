@@ -87,7 +87,7 @@ export function useMessages(
       
       // Update active messages if this conversation is selected
       if (activeConversation && activeConversation.id === conversationId) {
-        setActiveMessages((_prev) => [..._prev, data as Message]);
+        setActiveMessages((prev) => [...prev, data as Message]);
       }
       
       // Update conversations list

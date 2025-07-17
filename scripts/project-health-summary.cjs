@@ -325,8 +325,7 @@ class ProjectHealthSummary {
     // console.log('💡 NEXT STEPS RECOMMENDATIONS');
     // console.log('-' .repeat(40));
     this.summary.recommendations.forEach((rec, index) => {
-      const priorityIcon = rec.priority === 'High' ? '🔴' : rec.priority === 'Medium' ? '🟡' : '🟢';
-      // console.log(`${index + 1}. ${priorityIcon} ${rec.priority} Priority - ${rec.category}`);
+      // console.log(`${index + 1}. ${rec.priority === 'High' ? '🔴' : rec.priority === 'Medium' ? '🟡' : '🟢'} ${rec.priority} Priority - ${rec.category}`);
       // console.log(`   Action: ${rec.action}`);
       // console.log(`   Benefit: ${rec.benefit}\n`);
     });

@@ -90,7 +90,7 @@ export function ReviewForm({
           control={form.control}
           name="rating"
           rules={{ required: "Rating is required" }}
-          render={({ field, fieldState, formState }) => (
+          render={({ field }) => (
             <FormItem>
               <FormLabel className="block text-center mb-2">
                 How was your experience with {revieweeName}?
@@ -136,7 +136,7 @@ export function ReviewForm({
               message: "Review must be at least 20 characters",
             },
           }}
-          render={({ field, fieldState, formState }) => (
+          render={({ field }) => (
             <FormItem>
               <FormLabel>Your Review</FormLabel>
               <FormControl>
@@ -160,7 +160,7 @@ export function ReviewForm({
             <FormField
               control={form.control}
               name="communication_rating"
-              render={({ field, fieldState, formState }) => (
+              render={({ field }) => (
                 <FormItem className="space-y-2">
                   <FormLabel>Communication</FormLabel>
                   <FormControl>
@@ -193,7 +193,7 @@ export function ReviewForm({
             <FormField
               control={form.control}
               name="quality_rating"
-              render={({ field, fieldState, formState }) => (
+              render={({ field }) => (
                 <FormItem className="space-y-2">
                   <FormLabel>Quality of Work</FormLabel>
                   <FormControl>
@@ -226,7 +226,7 @@ export function ReviewForm({
             <FormField
               control={form.control}
               name="timeliness_rating"
-              render={({ field, fieldState, formState }) => (
+              render={({ field }) => (
                 <FormItem className="space-y-2">
                   <FormLabel>Timeliness</FormLabel>
                   <FormControl>
@@ -259,7 +259,7 @@ export function ReviewForm({
             <FormField
               control={form.control}
               name="would_work_again"
-              render={({ field, fieldState, formState }) => (
+              render={({ field }) => (
                 <FormItem>
                   <div className="flex items-center gap-2">
                     <FormLabel>Would you work with {revieweeName} again?</FormLabel>
@@ -287,7 +287,7 @@ export function ReviewForm({
         <FormField
           control={form.control}
           name="is_anonymous"
-          render={({ field, fieldState, formState }) => (
+          render={({ field }) => (
             <FormItem>
               <div className="flex items-center gap-2">
                 <FormControl>

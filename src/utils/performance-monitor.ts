@@ -260,7 +260,7 @@ class PerformanceMonitor {
   private setupErrorCorrelation(): void {
     if (typeof window === 'undefined') return;
 
-    window.addEventListener('error', (event: ErrorEvent) => {
+    window.addEventListener('error', () => {
       this.recordMetric('JavaScriptError', {
         name: 'JavaScriptError',
         value: 1,
@@ -268,7 +268,7 @@ class PerformanceMonitor {
       });
     });
 
-    window.addEventListener('unhandledrejection', (event: PromiseRejectionEvent) => {
+    window.addEventListener('unhandledrejection', () => {
       this.recordMetric('UnhandledPromiseRejection', {
         name: 'UnhandledPromiseRejection',
         value: 1,

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import type { UserDetails } from "@/types/auth";
 import { mutate } from 'swr';
 import type { SignupParams } from "@/types/auth";
@@ -9,21 +9,6 @@ import { showApiError } from "@/utils/apiErrorHandler";
 import { trackReferral, checkUrlForReferralCode } from "@/utils/referralUtils";
 import { cleanupAuthState } from "@/utils/authUtils";
 import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
-
-
-// Helper function to get the auth token from cookies
-function getAuthToken() {
-  if (typeof window === 'undefined') return null;
-  if (document.cookie.includes('authToken=')) {
-    const token = document.cookie.split('(^|;) ?authToken=([^;]*)(;|$)').pop()?.split(';').shift();
-    return token || null;
-  }
-  if (document.cookie.includes('ztg_token=')) {
-    const token = document.cookie.split('(^|;) ?ztg_token=([^;]*)(;|$)').pop()?.split(';').shift();
-    return token || null;
-  }
-  return null;
-}
 
 interface EthereumProvider {
   request: (args: { method: string; params?: unknown[] }) => Promise<unknown>;
@@ -66,7 +51,7 @@ export function useAuthOperations(
       });
 
       return { data, error: null };
-    } catch (error: unknown) {
+    } catch {
       toast({
         variant: "destructive",
         title: "Oh no! Something went wrong.",
@@ -278,7 +263,7 @@ export function useAuthOperations(
     setIsLoading(true);
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { data, error } = await supabase.auth.signInWithOAuth({
+      const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
       });
 
@@ -298,7 +283,7 @@ export function useAuthOperations(
     setIsLoading(true);
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { data, error } = await supabase.auth.signInWithOAuth({
+      const { error } = await supabase.auth.signInWithOAuth({
         provider: "github",
       });
 
@@ -318,7 +303,7 @@ export function useAuthOperations(
     setIsLoading(true);
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { data, error } = await supabase.auth.signInWithOAuth({
+      const { error } = await supabase.auth.signInWithOAuth({
         provider: "facebook",
       });
 
@@ -338,7 +323,7 @@ export function useAuthOperations(
     setIsLoading(true);
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { data, error } = await supabase.auth.signInWithOAuth({
+      const { error } = await supabase.auth.signInWithOAuth({
         provider: "twitter",
       });
 

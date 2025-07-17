@@ -1,12 +1,5 @@
 // Removed circular dependency with productionLogger - using direct console methods instead
 
-interface LogLevel {
-  DEBUG: 'debug';
-  INFO: 'info';
-  WARN: 'warn';
-  ERROR: 'error';
-}
-
 // Remove unused LOG_LEVELS constant
 // const LOG_LEVELS: LogLevel = {
 //   DEBUG: 'debug',
@@ -19,42 +12,42 @@ class Logger {
   private isDevelopment = process.env.NODE_ENV === 'development';
   private isDebugEnabled = process.env.DEBUG === 'true' || this.isDevelopment;
 
-  debug(message: string, context?: Record<string, unknown>): void {
+  debug(): void {
     if (this.isDebugEnabled) {
       logInfo('[DEBUG] ${message}', { data: context });
     }
   }
 
-  info(message: string, context?: Record<string, unknown>): void {
+  info(): void {
     if (this.isDevelopment) {
       logInfo('[INFO] ${message}', { data: context });
     }
   }
 
-  warn(message: string, context?: Record<string, unknown>): void {
+  warn(): void {
     // Implement warning logic here or use a custom logger
   }
 
-  error(message: string, error?: Error | unknown, context?: Record<string, unknown>): void {
+  error(): void {
     // Implement error logic here or use a custom logger
   }
 
   // Conditional development logging
-  devLog(message: string, context?: Record<string, unknown>): void {
+  devLog(): void {
     if (this.isDevelopment) {
       logInfo('[DEV] ${message}', { data: context });
     }
   }
 
   // Performance timing
-  time(label: string): void {
+  time(): void {
     if (this.isDevelopment) {
       // Use structured logging instead of console.time
       logInfo(`[TIMER] Starting: ${label}`);
     }
   }
 
-  timeEnd(label: string): void {
+  timeEnd(): void {
     if (this.isDevelopment) {
       // Use structured logging instead of console.timeEnd
       logInfo(`[TIMER] Completed: ${label}`);

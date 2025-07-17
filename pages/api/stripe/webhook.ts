@@ -7,23 +7,6 @@ import { randomUUID } from 'crypto';
 import {logErrorToProduction} from '@/utils/productionLogger';
 import type { IncomingMessage } from 'http';
 
-interface StripeWebhookEvent {
-  id: string;
-  object: string;
-  api_version: string | null;
-  created: number;
-  data: {
-    object: Record<string, unknown>;
-  };
-  livemode: boolean;
-  pending_webhooks: number;
-  request: {
-    id?: string;
-    idempotency_key?: string;
-  };
-  type: string;
-}
-
 export const config = { api: { bodyParser: false } };
 
 

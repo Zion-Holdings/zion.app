@@ -152,21 +152,24 @@ try {
   console.warn('🧪 Testing build...');
   execSync('npm run build > build-test-2.log 2>&1');
   console.warn('✅ Build test passed!');
-} catch {}
+} catch (error) {
+  console.warn('⚠️  Build test failed');
+}
+
+try {
+  const buildLog = fs.readFileSync('build-test-2.log', 'utf8');
+  const errorLines = buildLog.split('\n').filter(line => 
+    line.includes('Type error') || 
+    line.includes('Cannot find name') ||
+    line.includes('Error:')
+  );
   
-  try {
-    const buildLog = fs.readFileSync('build-test-2.log', 'utf8');
-    const errorLines = buildLog.split('\n').filter(line => 
-      line.includes('Type error') || 
-      line.includes('Cannot find name') ||
-      line.includes('Error:')
-    );
-    
-    if (errorLines.length > 0) {
-      console.warn('\n🔍 Found errors:');
-      errorLines.slice(0, 5).forEach(line => console.warn(`   ${line.trim()}`));
-    }
-  } catch {}
+  if (errorLines.length > 0) {
+    console.warn('\n🔍 Found errors:');
+    errorLines.slice(0, 5).forEach(line => console.warn(`   ${line.trim()}`));
+  }
+} catch (error) {
+  console.warn('⚠️  Could not read build log');
 }
 
 console.warn('\n🚀 Router fixes complete!'); 

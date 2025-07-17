@@ -4,7 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Calendar, Clock, Video } from 'lucide-react';
 import { format, parseISO } from 'date-fns';
-import { supabase } from '@/integrations/supabase/client';
 import type { Interview } from '@/types/interview';
 
 
@@ -15,8 +14,8 @@ import Link from 'next/link';
 export function UpcomingInterviewsCard() {
 
   const { fetchInterviews } = useInterviews();
-  const [upcomingInterviews, setUpcomingInterviews] = useState<Interview[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [upcomingInterviews] = useState<Interview[]>([]);
+  const [isLoading] = useState(true);
 
   useEffect(() => {
     fetchInterviews();

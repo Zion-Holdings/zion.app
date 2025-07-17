@@ -1,8 +1,5 @@
-import type { UserDetails } from "@/types/auth";
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import {logErrorToProduction} from '@/utils/productionLogger';
-import { suggestFix } from '@/utils/suggestFix';
 import { useAuth } from '@/hooks/useAuth'; // To access user state
 const VerifyEmailPage = () => {
   const router = useRouter();

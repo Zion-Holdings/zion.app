@@ -140,7 +140,7 @@ const LoginPage = () => {
       if (router.query.returnTo && typeof router.query.returnTo === 'string') {
         try {
           returnTo = decodeURIComponent(router.query.returnTo);
-        } catch (_e) {
+        } catch {
           logWarn('Failed to decode returnTo parameter:', { data:  { data: router.query.returnTo } });
           returnTo = '/dashboard';
         }
@@ -196,7 +196,7 @@ const LoginPage = () => {
         const data = await response.json();
         setError({ name: 'ResendError', message: data.message || 'Failed to resend verification email' });
       }
-    } catch (_err) {
+    } catch {
       setError({ name: 'NetworkError', message: 'Failed to resend verification email. Please try again.' });
     } finally {
       setIsResendingVerification(false);
@@ -225,7 +225,7 @@ const LoginPage = () => {
       } else {
         setProactiveResendMessage({ type: 'error', text: data.message || 'Failed to resend verification email.' });
       }
-    } catch (_err) {
+    } catch {
       setProactiveResendMessage({ type: 'error', text: 'An unexpected error occurred. Please try again.' });
     } finally {
       setIsProactivelyResending(false);

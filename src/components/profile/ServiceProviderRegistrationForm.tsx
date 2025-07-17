@@ -238,7 +238,6 @@ export function ServiceProviderRegistrationForm() {
       
       // Enhance profile if not already done
       let finalSummary = values.bio;
-      let finalServices = serviceTags;
       
       if (values.enhancedProfile && !generatedContent) {
         try {
@@ -258,7 +257,7 @@ export function ServiceProviderRegistrationForm() {
             finalSummary = (aiData as AIProfileResponse).summary || values.bio;
             // Merge AI suggested services with user-provided services
             const aiServices = (aiData as AIProfileResponse).services || [];
-            finalServices = [...new Set([...serviceTags, ...aiServices])];
+            setServiceTags([...new Set([...serviceTags, ...aiServices])]);
           }
         } catch (error: unknown) {
           if (error instanceof Error) {

@@ -8,7 +8,7 @@ export function useAuthStatus() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   
   // Mock user details
-  const [userDetails, setUserDetails] = useState({
+  const [userDetails] = useState({
     id: 'user-123',
     name: 'Demo User',
     email: 'demo@example.com',
