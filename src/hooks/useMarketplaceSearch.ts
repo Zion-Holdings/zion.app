@@ -83,7 +83,7 @@ export function useMarketplaceSearch() {
         } else {
           setSearchSuggestions([]); // Fallback to empty if API call fails
         }
-      } catch (_err) {
+      } catch {
         // Failed to fetch suggestions, fallback to empty
         setSearchSuggestions([]);
       }

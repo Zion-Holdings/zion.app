@@ -1,15 +1,7 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import {logErrorToProduction} from '@/utils/productionLogger';
 import {
-  fetchProducts,
-  fetchCategories,
-  fetchTalent,
-  fetchEquipment,
   getMarketplaceErrorMessage,
-  type Product,
-  type Category,
-  type Equipment,
-  type TalentProfile,
 } from '@/services/marketplace';
 import { useQuery } from '@tanstack/react-query';
 import { logDev } from '@/utils/developmentLogger';
@@ -171,7 +163,6 @@ export function useMarketplaceErrorHandler() {
 
   const handleError = useCallback((error: unknown) => {
     // Add type guard and handle error appropriately
-    const message = error instanceof Error ? error.message : String(error);
     const errorMessage = getMarketplaceErrorMessage(error);
     setLastError(errorMessage);
     logErrorToProduction('Marketplace Error:', { data: { error, message: errorMessage } });
