@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Search, Bell, User, LogOut, Settings, Globe, ChevronDown } from '@/components/ui/icons';
+import { Menu, X, Search, Bell, User, LogOut, Settings, Globe, ChevronDown, ShoppingCart } from '@/components/ui/icons';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
