@@ -3,8 +3,8 @@ import { globalToastManager, showToast, ToastType, ToastPriority } from '@/utils
 
 // Deduplication settings
 const DEDUPE_DELAY = 3000; // 3 seconds
-let lastKey = '';
-let lastShown = 0;
+const lastKey: string | null = null;
+const lastShown = 0;
 
 interface ToastActionProps {
   label: string;
