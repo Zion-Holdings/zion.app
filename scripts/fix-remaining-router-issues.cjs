@@ -140,7 +140,7 @@ fixes.forEach(fix => {
       console.warn(`   ⚠️  No changes needed`);
     }
     
-  } catch {}
+  } catch { /* intentionally empty: ignore errors */ }
   
   console.warn('');
 });
