@@ -184,7 +184,8 @@ export {
   Facebook,
   Twitter,
   Linkedin,
-  Link as LinkIcon
+  Link as LinkIcon,
+  Megaphone
 } from 'lucide-react';
 
 // Navigation & UI Icons

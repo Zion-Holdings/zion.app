@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MessageSquare, Code, FileText } from '@/components/ui/icons';
+import { MessageSquare, Code, FileText, Briefcase, Megaphone } from '@/components/ui/icons';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { useAuth } from "@/hooks/useAuth";
 
