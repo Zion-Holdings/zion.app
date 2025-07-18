@@ -1,15 +1,11 @@
-import { supabase } from '@/utils/supabase/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { withErrorLogging } from '@/utils/withErrorLogging';
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
-async function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   if (req.method !== 'POST') {
-    res.setHeader('Allow', 'POST');
-    return res.status(405).end();
+    return res.status(405).json({ error: 'Method not allowed' });
   }
 
   try {
@@ -25,32 +21,23 @@ async function handler(
       return res.status(400).json({ error: 'Invalid email format' });
     }
 
-    // Resend verification email
-    const { error } = await supabase.auth.resend({
-      type: 'signup',
-      email: email
-    });
-
-    if (error) {
-      logErrorToProduction('Error resending verification email:', error);
-      return res.status(400).json({
-        error: 'Failed to resend verification email',
-        message: error.message
+    // Mock email resend for development
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Mock: Verification email would be sent to:', email);
+      return res.status(200).json({
+        success: true,
+        message: 'Verification email sent successfully (development mode)'
       });
     }
 
-    logInfo('Verification email resent successfully:', { email });
-    return res.status(200).json({
-      success: true,
-      message: 'Verification email sent successfully'
+    return res.status(500).json({
+      error: 'Email service not configured'
     });
 
   } catch (error) {
-    logErrorToProduction('Unexpected error in resend verification email:', error);
+    console.error('Email resend error:', error);
     return res.status(500).json({
       error: 'Internal server error'
     });
   }
 }
-
-export default withErrorLogging(handler);
