@@ -14,7 +14,7 @@ import { TextEncoder, TextDecoder } from 'util';
 
 // Polyfill TextEncoder and TextDecoder for JSDOM environment
 global.TextEncoder = TextEncoder;
-global.TextDecoder = TextDecoder;
+global.TextDecoder = TextDecoder as typeof global.TextDecoder;
 
 // Set up a mock for Vite environment variables accessed via import.meta.env
 // This assumes that Babel (via babel-plugin-transform-import-meta or similar)
@@ -391,9 +391,7 @@ if (typeof window.IntersectionObserver === 'undefined') {
     disconnect() {}
     takeRecords() { return []; }
   }
-  // @ts-expect-error IntersectionObserver polyfill for test environment - JSDOM doesn't include this API by default
   window.IntersectionObserver = MockIntersectionObserver;
-  // @ts-expect-error IntersectionObserver polyfill for global scope - ensuring both window and global have the mock
   global.IntersectionObserver = MockIntersectionObserver;
 }
 

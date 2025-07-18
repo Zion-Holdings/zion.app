@@ -197,8 +197,8 @@ export const _WalletProvider: React.FC<{ children: ReactNode }> = ({ children })
           isWalletSystemAvailable: true,
           isConnected: false, // Explicitly false until wallet connects
         }));
-      } catch {
-        logErrorToProduction('WalletContext: CRITICAL 'Error occurred' creating appKitInstance with valid Project ID:', { data: 'Error occurred' });
+      } catch (error) {
+        logErrorToProduction('WalletContext: CRITICAL Error occurred creating appKitInstance with valid Project ID:', { data: error });
         appKitRef.current = null;
         setWallet((_prev) => ({
           ...initialWalletState,
@@ -209,7 +209,7 @@ export const _WalletProvider: React.FC<{ children: ReactNode }> = ({ children })
       // AppKit already initialized. This block might be hit if dependencies change (e.g. projectId)
       // but AppKit instance was somehow preserved. Ensure state is consistent.
       if (process.env.NODE_ENV === 'development') {
-        logInfo('WalletContext: AppKit already initialized. Ensuring state consistency. ID:', { data:  { data: rawProjectId } });
+        logInfo('WalletContext: AppKit already initialized. Ensuring state consistency. ID:', { data: rawProjectId });
       }
       setWallet((_prev) => ({
         ..._prev,
@@ -239,13 +239,13 @@ export const _WalletProvider: React.FC<{ children: ReactNode }> = ({ children })
       return;
     }
 
-    if (currentAppKit.getState().isConnected && currentAppKit.getAddress()) {
+    if (currentAppKit._getState().isConnected && currentAppKit.getAddress()) {
       const currentAddress = currentAppKit.getAddress();
       const currentChainId = currentAppKit.getChainId();
       const currentProvider = currentAppKit.getWalletProvider();
 
       // Ensure currentProvider, currentAddress, and currentChainId are valid before proceeding
-      if (currentAppKit.getState().isConnected && currentAddress && currentProvider && currentChainId) {
+      if (currentAppKit._getState().isConnected && currentAddress && currentProvider && currentChainId) {
         try {
           // currentProvider is already the EIP-1193 provider from AppKit
           if (typeof ethers === 'object' && ethers !== null && 'BrowserProvider' in ethers && typeof (ethers as typeof import('ethers')).BrowserProvider === 'function') {
@@ -253,7 +253,7 @@ export const _WalletProvider: React.FC<{ children: ReactNode }> = ({ children })
             // Ensure the provider has a required request method for Eip1193Provider
             const safeProvider = Object.assign({}, currentProvider, {
               request: typeof (currentProvider as { request?: (args: { method: string; params?: unknown[] }) => Promise<unknown> }).request === 'function'
-                ? (currentProvider as { request: (args: { method: string; params?: unknown[] }) => Promise<unknown> })._request
+                ? (currentProvider as { request: (args: { method: string; params?: unknown[] }) => Promise<unknown> }).request
                 : async (_args: { method: string; params?: unknown[] }) => { throw new Error('Provider does not implement request'); }
             }) as import('ethers').Eip1193Provider;
             const ethersProvider = new EthersBrowserProvider(safeProvider);
@@ -274,8 +274,8 @@ export const _WalletProvider: React.FC<{ children: ReactNode }> = ({ children })
               isWalletSystemAvailable: true,
             }));
           }
-        } catch {
-          logErrorToProduction('WalletContext: Error getting signer or updating wallet state:', { data: 'Error occurred' });
+        } catch (error) {
+          logErrorToProduction('WalletContext: Error getting signer or updating wallet state:', { data: error });
           // AppKit exists, but failed to get signer or other error
           setWallet((_prev) => ({
             ...initialWalletState,
@@ -287,20 +287,19 @@ export const _WalletProvider: React.FC<{ children: ReactNode }> = ({ children })
         // Not connected or essential info missing
         setWallet((_prev) => ({
           ...initialWalletState,
+          isConnected: false, // Explicitly not connected
+          isWalletSystemAvailable: true, // AppKit is available, just not connected
+        }));
+      }
+    } else {
+      // Not connected or essential info missing (outer else)
+      setWallet((_prev) => ({
+        ...initialWalletState,
         isConnected: false, // Explicitly not connected
         isWalletSystemAvailable: true, // AppKit is available, just not connected
       }));
     }
-  } // This closes the outer if (currentAppKit?.getState().isConnected && currentAppKit?.getAddress())
-  else {
-    // Not connected or essential info missing (outer else)
-    setWallet((_prev) => ({
-      ...initialWalletState,
-      isConnected: false, // Explicitly not connected
-      isWalletSystemAvailable: true, // AppKit is available, just not connected
-    }));
-  }
-}, []); // appKitRef.current is stable, updateWalletState is memoized.
+  }, []); // appKitRef.current is stable, updateWalletState is memoized.
 
   useEffect(() => {
     const targetAppKit = appKitRef.current;
@@ -363,7 +362,7 @@ export const _WalletProvider: React.FC<{ children: ReactNode }> = ({ children })
         window.open('https://metamask.io/download.html', '_blank');
         logInfo('WalletContext: No wallet provider detected. Opening MetaMask install page.');
       } catch (_installError) {
-        logWarn('WalletContext: Failed to open MetaMask install page.', { data:  { data: installError } });
+        logWarn('WalletContext: Failed to open MetaMask install page.', { data:  { data: _installError } });
       }
     }
 
@@ -389,11 +388,11 @@ export const _WalletProvider: React.FC<{ children: ReactNode }> = ({ children })
 
     const actionKit = appKitRef.current;
 
-    if (actionKit?.getState().isConnected) {
+    if (actionKit?._getState().isConnected) {
       try {
         await actionKit.disconnect();
         // State update is typically handled by the subscription to provider changes
-      } catch {
+      } catch (error) {
         logErrorToProduction('WalletContext: Error during disconnect.', { data: 'Error occurred' });
         logErrorToProduction('WalletContext: Error disconnecting wallet:', { data: error });
       }

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
-const { _expect } = require("chai");
-const { _ethers } = require("hardhat");
+const { expect } = require("chai");
+const { ethers } = require("hardhat");
 
 describe("ZkBallot", function () {
   it("creates proposal and accepts vote", async function () {

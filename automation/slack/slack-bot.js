@@ -1,8 +1,12 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
-const { _App } = require('@slack/bolt');
+const { App } = require('@slack/bolt');
 const axios = require('axios');
 const fs = require('fs').promises;
 const path = require('path');
+const { exec } = require('child_process');
+const { promisify } = require('util');
+
+const execAsync = promisify(exec);
 
 class OptimizationSlackBot {
   constructor() {
@@ -258,10 +262,6 @@ class OptimizationSlackBot {
   }
 
   async runOptimizationScript(target) {
-    const { _exec } = require('child_process');
-    const util = require('util');
-    const execAsync = util.promisify(exec);
-
     try {
       let command = 'npm run optimize';
       
