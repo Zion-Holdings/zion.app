@@ -1,169 +1,169 @@
 import React from 'react';
-
-interface AppFallbackProps {
+;
+interface AppFallbackProps {;
   error?: Error;
   retry?: () => void;
-}
-
-export const AppFallback: React.FC<AppFallbackProps> = ({ error, retry }) => {
-  return (
-    <div
-      style={{
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: '2rem',
-        fontFamily:
-          'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-        backgroundColor: '#f8f9fa',
-        color: '#333',
-      }}
-    >
-      <div
-        style={{
-          textAlign: 'center',
-          maxWidth: '600px',
-          backgroundColor: 'white',
-          padding: '3rem',
-          borderRadius: '12px',
-          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-          border: '1px solid #e5e7eb',
-        }}
-      >
-        <div
-          style={{
-            width: '80px',
-            height: '80px',
-            margin: '0 auto 2rem',
-            borderRadius: '50%',
-            backgroundColor: '#007bff',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: 'white',
-            fontSize: '2rem',
-            fontWeight: 'bold',
-          }}
-        >
-          Z
-        </div>
-
-        <h1
-          style={{
-            fontSize: '2rem',
-            fontWeight: 'bold',
-            marginBottom: '1rem',
-            color: '#1f2937',
-          }}
-        >
-          Zion Tech Marketplace
-        </h1>
-
-        <p
-          style={{
-            fontSize: '1.1rem',
-            color: '#6b7280',
-            marginBottom: '2rem',
-            lineHeight: '1.6',
-          }}
-        >
-          {error
-            ? 'We encountered an issue while loading the application.'
-            : 'Loading the application...'}
-        </p>
-
-        {error && (
-          <div
-            style={{
-              backgroundColor: '#fef2f2',
-              border: '1px solid #fecaca',
-              borderRadius: '8px',
-              padding: '1rem',
-              marginBottom: '2rem',
-              fontSize: '0.9rem',
-              color: '#dc2626',
-            }}
-          >
-            <strong>Error:</strong> {error.message}
-          </div>
-        )}
-
-        <div
-          style={{
-            display: 'flex',
-            gap: '1rem',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-          }}
-        >
-          <button
-            onClick={retry || (() => window.location.reload())}
-            style={{
-              padding: '12px 24px',
-              backgroundColor: '#007bff',
-              color: 'white',
-              border: 'none',
-              borderRadius: '8px',
-              cursor: 'pointer',
-              fontSize: '1rem',
-              fontWeight: '500',
-              transition: 'background-color 0.2s',
-            }}
-            onMouseOver={(e) =>
-              (e.currentTarget.style.backgroundColor = '#0056b3')
-            }
-            onMouseOut={(e) =>
-              (e.currentTarget.style.backgroundColor = '#007bff')
-            }
-          >
-            {error ? 'Try Again' : 'Reload Page'}
-          </button>
-
-          <button
-            onClick={() => (window.location.href = '/')}
-            style={{
-              padding: '12px 24px',
-              backgroundColor: 'transparent',
-              color: '#007bff',
-              border: '1px solid #007bff',
-              borderRadius: '8px',
-              cursor: 'pointer',
-              fontSize: '1rem',
-              fontWeight: '500',
-              _transition: 'all 0.2s',
-            }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.backgroundColor = '#007bff';
-              e.currentTarget.style.color = 'white';
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent';
-              e.currentTarget.style.color = '#007bff';
-            }}
-          >
-            Go Home
-          </button>
-        </div>
-
-        <div
-          style={{
-            marginTop: '2rem',
-            paddingTop: '2rem',
-            borderTop: '1px solid #e5e7eb',
-            fontSize: '0.9rem',
-            color: '#9ca3af',
-          }}
-        >
-          <p>
-            If the problem persists, please contact support at
-            support@ziontechgroup.com
-          </p>
-        </div>
-      </div>
-    </div>
-  );
 };
 
+export const AppFallback: "React.FC<AppFallbackProps> = ({ error", retry }) => {;
+  return (;
+    <div;
+      style={{;
+        minHeight: '100vh',;
+        display: 'flex',;
+        flexDirection: 'column',;
+        justifyContent: 'center',;
+        alignItems: 'center',;
+        padding: '2rem',;
+        fontFamily:;
+          'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',;
+        backgroundColor: '#f8f9fa',;
+        color: '#333',;
+      }};
+    >;
+      <div;
+        style={{;
+          textAlign: 'center',;
+          maxWidth: '600px',;
+          backgroundColor: 'white',;
+          padding: '3rem',;
+          borderRadius: '12px',;
+          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',;
+          border: '1px solid #e5e7eb',;
+        }};
+      >;
+        <div;
+          style={{;
+            width: '80px',;
+            height: '80px',;
+            margin: '0 auto 2rem',;
+            borderRadius: '50%',;
+            backgroundColor: '#007bff',;
+            display: 'flex',;
+            alignItems: 'center',;
+            justifyContent: 'center',;
+            color: 'white',;
+            fontSize: '2rem',;
+            fontWeight: 'bold',;
+          }};
+        >;
+          Z;
+        </div>;
+
+        <h1;
+          style={{;
+            fontSize: '2rem',;
+            fontWeight: 'bold',;
+            marginBottom: '1rem',;
+            color: '#1f2937',;
+          }};
+        >;
+          Zion Tech Marketplace;
+        </h1>;
+
+        <p;
+          style={{;
+            fontSize: '1.1rem',;
+            color: '#6b7280',;
+            marginBottom: '2rem',;
+            lineHeight: '1.6',;
+          }};
+        >;
+          {error;
+            ? 'We encountered an issue while loading the application.';
+            : 'Loading the application...'};
+        </p>;
+
+        {error && (;
+          <div;
+            style={{;
+              backgroundColor: '#fef2f2',;
+              border: '1px solid #fecaca',;
+              borderRadius: '8px',;
+              padding: '1rem',;
+              marginBottom: '2rem',;
+              fontSize: '0.9rem',;
+              color: '#dc2626',;
+            }};
+          >;
+            <strong>Error: "</strong> {error.message"};
+          </div>;
+        )};
+
+        <div;
+          style={{;
+            display: 'flex',;
+            gap: '1rem',;
+            justifyContent: 'center',;
+            flexWrap: 'wrap',;
+          }};
+        >;
+          <button;
+            onClick={retry || (() => window.location.reload())};
+            style={{;
+              padding: '12px 24px',;
+              backgroundColor: '#007bff',;
+              color: 'white',;
+              border: 'none',;
+              borderRadius: '8px',;
+              cursor: 'pointer',;
+              fontSize: '1rem',;
+              fontWeight: '500',;
+              transition: 'background-color 0.2s',;
+            }};
+            onMouseOver={(e) =>;
+              (e.currentTarget.style.backgroundColor = '#0056b3');
+            };
+            onMouseOut={(e) =>;
+              (e.currentTarget.style.backgroundColor = '#007bff');
+            };
+          >;
+            {error ? 'Try Again' : 'Reload Page'};
+          </button>;
+
+          <button;
+            onClick={() => (window.location.href = '/')};
+            style={{;
+              padding: '12px 24px',;
+              backgroundColor: 'transparent',;
+              color: '#007bff',;
+              border: '1px solid #007bff',;
+              borderRadius: '8px',;
+              cursor: 'pointer',;
+              fontSize: '1rem',;
+              fontWeight: '500',;
+              _transition: 'all 0.2s',;
+            }};
+            onMouseOver={(e) => {;
+              e.currentTarget.style.backgroundColor = '#007bff';
+              e.currentTarget.style.color = 'white';
+            }};
+            onMouseOut={(e) => {;
+              e.currentTarget.style.backgroundColor = 'transparent';
+              e.currentTarget.style.color = '#007bff';
+            }};
+          >;
+            Go Home;
+          </button>;
+        </div>;
+
+        <div;
+          style={{;
+            marginTop: '2rem',;
+            paddingTop: '2rem',;
+            borderTop: '1px solid #e5e7eb',;
+            fontSize: '0.9rem',;
+            color: '#9ca3af',;
+          }};
+        >;
+          <p>;
+            If the problem persists, please contact support at;
+            support@ziontechgroup.com;
+          </p>;
+        </div>;
+      </div>;
+    </div>;
+  );
+};
+;
 export default AppFallback;

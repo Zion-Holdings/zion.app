@@ -1,17 +1,17 @@
-export interface CaseStudy {
-  id: string;
+export interface CaseStudy {;
+  id: "string;",
   title: string;
-  slug: string;
+  slug: "string;",
   excerpt: string;
-  content: string;
+  content: "string;",
   company: string;
-  companyLogo: string;
+  companyLogo: "string;",
   avatar: string;
-  quote: string;
+  quote: "string;",
   author: string;
-  role: string;
+  role: "string;",
   featuredImage: string;
   publishedDate?: string;
-  /** URL of downloadable case study PDF */
-  pdf: string;
-}
+  /** URL of downloadable case study PDF */;
+  pdf: "string;"
+};

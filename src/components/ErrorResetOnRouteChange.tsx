@@ -2,23 +2,23 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useToast } from '@/hooks/use-toast';
 import { useError } from '@/context/ErrorContext';
-
-export default function ErrorResetOnRouteChange() {
+;
+export default function ErrorResetOnRouteChange() {;
   const router = useRouter();
   const { _resetError } = useError();
   const { _dismiss } = useToast();
-
-  useEffect(() => {
+;
+  useEffect(() => {;
     if (!router.events) return;
-    const handleRouteChange = () => {
+    const handleRouteChange = () => {;
       resetError();
       dismiss();
     };
     router.events.on('routeChangeStart', handleRouteChange);
-    return () => {
+    return () => {;
       router.events?.off('routeChangeStart', handleRouteChange);
     };
   }, [router.events, resetError, dismiss]);
-
+;
   return null;
-}
+};

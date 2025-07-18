@@ -1,28 +1,28 @@
 import type { ReactNode } from 'react';
-
-export interface HelpArticle {
-  id: string;
+;
+export interface HelpArticle {;
+  id: "string;",
   title: string;
-  content: string;
+  content: "string;",
   lastUpdated: string;
-  tags: string[];
-}
+  tags: "string[];"
+};
 
-export interface HelpCategory {
-  id: string;
+export interface HelpCategory {;
+  id: "string;",
   name: string;
-  description: string;
+  description: "string;",
   icon: ReactNode;
-  articles: HelpArticle[];
-}
+  articles: "HelpArticle[];"
+};
 
-export interface SupportTicket {
-  id: string;
+export interface SupportTicket {;
+  id: "string;",
   userId: string;
-  subject: string;
+  subject: "string;",
   message: string;
-  status: 'open' | 'in-progress' | 'resolved' | 'closed';
+  status: 'open' | 'in-progress' | 'resolved' | 'closed';,
   priority: 'low' | 'medium' | 'high';
-  createdAt: string;
-  updatedAt: string;
-}
+  createdAt: "string;",
+  updatedAt: "string;"
+};

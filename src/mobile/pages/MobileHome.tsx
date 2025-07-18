@@ -4,24 +4,24 @@ import { BottomNavigation } from '@/mobile/components/common/BottomNavigation';
 import { ClientDashboard } from '@/mobile/components/dashboard/ClientDashboard';
 import { TalentDashboard } from '@/mobile/components/dashboard/TalentDashboard';
 import { useAuth } from '@/hooks/useAuth';
-
-export function MobileHome() {
+;
+export function MobileHome() {;
   const { _user } = useAuth();
   const isClient = user?.userType === 'client' || user?.userType === 'admin';
+;
+  return (;
+    <div className="min-h-screen">;
+      <MobileHeader;
+        title={isClient ? 'Client Dashboard' : 'Talent Dashboard'};
+        showNotifications;
+        showSettings;
+      />;
 
-  return (
-    <div className="min-h-screen">
-      <MobileHeader
-        title={isClient ? 'Client Dashboard' : 'Talent Dashboard'}
-        showNotifications
-        showSettings
-      />
+      <main className="py-4">;
+        {isClient ? <ClientDashboard /> : <TalentDashboard />};
+      </main>;
 
-      <main className="py-4">
-        {isClient ? <ClientDashboard /> : <TalentDashboard />}
-      </main>
-
-      <BottomNavigation />
-    </div>
+      <BottomNavigation />;
+    </div>;
   );
-}
+};

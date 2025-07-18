@@ -1,22 +1,22 @@
-// Remove direct import of sonnerToast, rely on globalToastManager
-import {
-  globalToastManager,
-  showToast,
-  ToastType,
-  ToastPriority,
+// Remove direct import of sonnerToast, rely on globalToastManager;
+import {;
+  globalToastManager,;
+  showToast,;
+  ToastType,;
+  ToastPriority,;
 } from '@/utils/globalToastManager';
-
-// Deduplication settings
-// const _DEDUPE_DELAY = 3000; // 3 seconds
+;
+// Deduplication settings;
+// const _DEDUPE_DELAY = 3000; // 3 seconds;
 // const _lastKey: string | null = null;
 // const _lastShown = undefined; // Unused 0;
+;
+interface ToastActionProps {;
+  label: "string;",
+  onClick: "() => void;"
+};
 
-interface ToastActionProps {
-  label: string;
-  onClick: () => void;
-}
-
-interface ToastProps {
+interface ToastProps {;
   title?: string;
   description?: string;
   variant?: 'default' | 'destructive' | 'success';
@@ -26,123 +26,123 @@ interface ToastProps {
   duration?: number;
   priority?: ToastPriority;
   persistent?: boolean;
-}
+};
 
-/**
- * Enhanced toast adapter that uses the global toast manager
- */
-const toastAdapter = (_props: ToastProps | string) => {
-  if (typeof props === 'string') {
-    return globalToastManager.showToast({
-      message: props,
-      type: ToastType.INFO,
+/**;
+ * Enhanced toast adapter that uses the global toast manager;
+ */;
+const toastAdapter = (_props: ToastProps | string) => {;
+  if (typeof props === 'string') {;
+    return globalToastManager.showToast({;
+      message: "props",;
+      type: "ToastType.INFO",;
     });
-  }
+  };
 
-  const {
-    title,
-    description,
-    variant = 'default',
-    action,
-    onRetry,
-    duration,
-    priority,
-    persistent = false,
+  const {;
+    title,;
+    description,;
+    variant = 'default',;
+    action,;
+    onRetry,;
+    duration,;
+    priority,;
+    persistent = false,;
   } = props;
-
-  // Map variant to toast type
+;
+  // Map variant to toast type;
   let type: ToastType;
-  switch (variant) {
-    case 'destructive':
+  switch (variant) {;
+    case 'destructive':;
       type = ToastType.ERROR;
       break;
-    case 'success':
+    case 'success':;
       type = ToastType.SUCCESS;
       break;
-    default:
+    default:;
       type = ToastType.INFO;
       break;
-  }
+  };
 
-  // Use title as message if no description, otherwise use description
+  // Use title as message if no description, otherwise use description;
   const message = description || title || '';
   const toastTitle = title && description ? title : undefined;
-
-  return globalToastManager.showToast({
-    message,
-    ...(toastTitle && { title: toastTitle }),
-    type,
-    ...(priority && { priority }),
-    ...(duration && { duration }),
-    persistent,
-    ...(action && { action }),
-    ...(onRetry && { onRetry }),
+;
+  return globalToastManager.showToast({;
+    message,;
+    ...(toastTitle && { title: "toastTitle "}),;
+    type,;
+    ...(priority && { priority }),;
+    ...(duration && { duration }),;
+    persistent,;
+    ...(action && { action }),;
+    ...(onRetry && { onRetry }),;
   });
 };
-
-// Convenience methods that use the global toast manager
-toastAdapter.success = (
-  message: string,
-  options?: { id?: string; duration?: number } & Record<string, unknown>,
-) => {
+;
+// Convenience methods that use the global toast manager;
+toastAdapter.success = (;
+  message: "string",;
+  options?: { id?: string; duration?: number } & Record<string, unknown>,;
+) => {;
   return showToast.success(message, options);
 };
-
-toastAdapter.error = (
-  message: string,
-  options?: { id?: string; duration?: number } & Record<string, unknown>,
-) => {
+;
+toastAdapter.error = (;
+  message: "string",;
+  options?: { id?: string; duration?: number } & Record<string, unknown>,;
+) => {;
   return showToast.error(message, options);
 };
-
-toastAdapter.info = (
-  message: string,
-  options?: { id?: string; duration?: number } & Record<string, unknown>,
-) => {
+;
+toastAdapter.info = (;
+  message: "string",;
+  options?: { id?: string; duration?: number } & Record<string, unknown>,;
+) => {;
   return showToast.info(message, options);
 };
-
-toastAdapter.warning = (
-  message: string,
-  options?: { id?: string; duration?: number } & Record<string, unknown>,
-) => {
+;
+toastAdapter.warning = (;
+  message: "string",;
+  options?: { id?: string; duration?: number } & Record<string, unknown>,;
+) => {;
   return showToast.warning(message, options);
 };
-
-toastAdapter.dismiss = (toastId?: string | number) => {
-  if (toastId) {
+;
+toastAdapter.dismiss = (toastId?: string | number) => {;
+  if (toastId) {;
     globalToastManager.dismissToast(String(toastId));
-  } else {
+  } else {;
     globalToastManager.dismissAll();
-  }
+  };
 };
-
-// Enhanced useToast hook with global toast manager integration
-export const useToast = () => ({
-  toast: toastAdapter,
-  _dismiss: (toastId?: string) => {
-    if (toastId) {
+;
+// Enhanced useToast hook with global toast manager integration;
+export const _useToast = () => ({;
+  toast: "toastAdapter",;
+  _dismiss: (toastId?: string) => {;
+    if (toastId) {;
       globalToastManager.dismissToast(toastId);
-    } else {
+    } else {;
       globalToastManager.dismissAll();
-    }
-  },
+    };
+  },;
 
-  // Additional methods from global toast manager
-  showToast: globalToastManager.showToast.bind(globalToastManager),
-  getActiveToasts: globalToastManager.getActiveToasts.bind(globalToastManager),
-  getQueueLength: globalToastManager.getQueueLength.bind(globalToastManager),
-  dismissAll: globalToastManager.dismissAll.bind(globalToastManager),
+  // Additional methods from global toast manager;
+  showToast: "globalToastManager.showToast.bind(globalToastManager)",;
+  getActiveToasts: "globalToastManager.getActiveToasts.bind(globalToastManager)",;
+  getQueueLength: "globalToastManager.getQueueLength.bind(globalToastManager)",;
+  dismissAll: "globalToastManager.dismissAll.bind(globalToastManager)",;
 
-  // Convenience methods
-  success: showToast.success,
-  error: showToast.error,
-  warning: showToast.warning,
-  info: showToast.info,
-  networkError: showToast.networkError,
-  authError: showToast.authError,
-  validationError: showToast.validationError,
-  criticalError: showToast.criticalError,
+  // Convenience methods;
+  success: "showToast.success",;
+  error: "showToast.error",;
+  warning: "showToast.warning",;
+  info: "showToast.info",;
+  networkError: "showToast.networkError",;
+  authError: "showToast.authError",;
+  validationError: "showToast.validationError",;
+  criticalError: "showToast.criticalError",;
 });
-
-export const toast = toastAdapter;
+;
+export const _toast = toastAdapter;

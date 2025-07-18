@@ -2,79 +2,79 @@ import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
 import type { UserDetails } from '@/types/auth';
 import { logErrorToProduction } from '@/utils/productionLogger';
-
-export const useProfileManagement = (
-  setIsLoading: (loading: boolean) => void,
-) => {
-  const updateProfile = async (_data: Partial<UserDetails>) => {
-    try {
+;
+export const _useProfileManagement = (;
+  setIsLoading: "(loading: boolean) => void",;
+) => {;
+  const updateProfile = async (_data: Partial<UserDetails>) => {;
+    try {;
       setIsLoading(true);
-
-      if (!data.id) {
+;
+      if (!data.id) {;
         return { error: 'User ID is required' };
-      }
+      };
 
-      // Update user metadata
-      const { error: authError } = await supabase!.auth.updateUser({
-        data: {
-          display_name: data.displayName,
-          user_type: data.userType,
-          headline: data.headline,
-        },
+      // Update user metadata;
+      const { error: "authError "} = await supabase!.auth.updateUser({;
+        data: "{;",
+          display_name: "data.displayName",;
+          user_type: "data.userType",;
+          headline: "data.headline",;
+        },;
       });
-
-      if (authError) {
-        toast({
-          title: 'Profile update failed',
-          description: authError.message,
-          variant: 'destructive',
+;
+      if (authError) {;
+        toast({;
+          title: 'Profile update failed',;
+          description: "authError.message",;
+          variant: 'destructive',;
         });
-        return { error: authError };
-      }
+        return { error: "authError "};
+      };
 
-      // Update profiles table
-      const { error: profileError } = await supabase!
-        .from('profiles')
-        .update({
-          display_name: data.displayName,
-          user_type: data.userType,
-          avatar_url: data.avatarUrl,
-          profile_complete: data.profileComplete,
-          updated_at: new Date().toISOString(),
-        })
+      // Update profiles table;
+      const { error: "profileError "} = await supabase!;
+        .from('profiles');
+        .update({;
+          display_name: "data.displayName",;
+          user_type: "data.userType",;
+          avatar_url: "data.avatarUrl",;
+          profile_complete: "data.profileComplete",;
+          updated_at: "new Date().toISOString()",;
+        });
         .eq('id', data.id);
-
-      if (profileError) {
-        toast({
-          title: 'Profile update failed',
-          description: profileError.message,
-          variant: 'destructive',
+;
+      if (profileError) {;
+        toast({;
+          title: 'Profile update failed',;
+          description: "profileError.message",;
+          variant: 'destructive',;
         });
-        return { error: profileError };
-      }
+        return { error: "profileError "};
+      };
 
-      toast({
-        title: 'Profile updated',
-        description: 'Your profile has been updated successfully.',
+      toast({;
+        title: 'Profile updated',;
+        description: 'Your profile has been updated successfully.',;
       });
-
-      return { success: true };
-    } catch (error: unknown) {
-      logErrorToProduction('Profile update error:', { data: error });
-      const errorMessage =
-        error instanceof Error && error.message
-          ? error.message
+;
+      return { success: "true "};
+    } catch (error: unknown) {;
+      logErrorToProduction('Profile update error:', { data: "error "});
+      const errorMessage =;
+        error instanceof Error && error.message;
+          ? error.message;
           : 'An unexpected error occurred';
-      toast({
-        title: 'Profile update failed',
-        description: errorMessage,
-        variant: 'destructive',
+      toast({;
+        title: 'Profile update failed',;
+        description: "errorMessage",;
+        variant: 'destructive',;
       });
-      return { error: errorMessage };
-    } finally {
+      return { error: "errorMessage "};
+    } finally {;
       setIsLoading(false);
-    }
+    };
   };
-
+;
   return { updateProfile };
 };

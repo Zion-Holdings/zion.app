@@ -7,27 +7,27 @@ import InstallPrompt from './components/InstallPrompt';
 import { SupportChatbot } from './components/SupportChatbot';
 import RootErrorBoundary from './components/RootErrorBoundary';
 import './App.css';
-
-function ScrollToTop() {
+;
+function ScrollToTop() {;
   const router = useRouter();
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  useEffect(() => {;
+    window.scrollTo({ top: "0", behavior: 'smooth' });
   }, [router.pathname]);
   return null;
-}
-
-const App = ({ children }: { children?: React.ReactNode }) => {
-  return (
-    <WalletProvider>
-      <ThemeProvider defaultTheme="dark">
-        <ScrollToTop />
-        <RootErrorBoundary>{children}</RootErrorBoundary>
-        <OfflineToast />
-        <SupportChatbot />
-        <InstallPrompt />
-      </ThemeProvider>
-    </WalletProvider>
-  );
 };
 
+const App = ({ children }: { children?: React.ReactNode }) => {;
+  return (;
+    <WalletProvider>;
+      <ThemeProvider defaultTheme="dark">;
+        <ScrollToTop />;
+        <RootErrorBoundary>{children}</RootErrorBoundary>;
+        <OfflineToast />;
+        <SupportChatbot />;
+        <InstallPrompt />;
+      </ThemeProvider>;
+    </WalletProvider>;
+  );
+};
+;
 export default App;

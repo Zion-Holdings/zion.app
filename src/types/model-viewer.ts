@@ -1,6 +1,6 @@
 import React from 'react';
-
-interface ModelViewerProps extends React.HTMLAttributes<HTMLElement> {
+;
+interface ModelViewerProps extends React.HTMLAttributes<HTMLElement> {;
   src?: string;
   alt?: string;
   poster?: string;
@@ -31,18 +31,18 @@ interface ModelViewerProps extends React.HTMLAttributes<HTMLElement> {
   loading?: 'auto' | 'lazy' | 'eager';
   reveal?: 'auto' | 'interaction' | 'manual';
   'with-credentials'?: boolean;
-}
+};
 
-declare global {
-  interface Window {
+declare global {;
+  interface Window {;
     modelViewerLoaded?: boolean;
-  }
-}
+  };
+};
 
-declare module 'react' {
-  interface IntrinsicElements {
+declare module 'react' {;
+  interface IntrinsicElements {;
     'model-viewer': ModelViewerProps;
-  }
-}
+  };
+};
 
 export type { ModelViewerProps };

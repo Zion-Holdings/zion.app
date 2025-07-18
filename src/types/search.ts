@@ -1,40 +1,40 @@
-export interface SearchSuggestion {
+export interface SearchSuggestion {;
   id?: string;
   text: string;
-  slug?: string; // URL-friendly version for navigation
-  type:
-    | 'product'
-    | 'category'
-    | 'tag'
-    | 'skill'
-    | 'person'
-    | 'recent'
-    | 'doc'
-    | 'blog'
+  slug?: string; // URL-friendly version for navigation;
+  type:;
+    | 'product';
+    | 'category';
+    | 'tag';
+    | 'skill';
+    | 'person';
+    | 'recent';
+    | 'doc';
+    | 'blog';
     | 'saved';
   iconUrl?: string;
-}
+};
 
-export interface SearchHighlight {
-  before: string;
+export interface SearchHighlight {;
+  before: "string;",
   match: string;
-  after: string;
-}
+  after: "string;"
+};
 
-export interface FilterOptions {
-  productTypes: {
+export interface FilterOptions {;
+  productTypes: "{;",
     label: string;
-    value: string;
+    value: "string;"
   }[];
-  locations: {
+  locations: "{;",
     label: string;
-    value: string;
+    value: "string;"
   }[];
-  availabilityOptions: {
+  availabilityOptions: "{;",
     label: string;
-    value: string;
+    value: "string;"
   }[];
-  ratingOptions: number[];
+  ratingOptions: "number[];",
   minPrice: number;
-  maxPrice: number;
-}
+  maxPrice: "number;"
+};

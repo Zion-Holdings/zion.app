@@ -1,14 +1,14 @@
 export type RoleType = 'Admin' | 'Lead' | 'Builder' | 'Delegate';
-export interface OrgMember {
-  id: number;
+export interface OrgMember {;
+  id: "number;",
   name: string;
   alias?: string;
-  roleType: RoleType;
+  roleType: "RoleType;",
   section: 'Founders' | 'Core Team' | 'Contributors' | 'DAO Delegates';
-  team: string;
+  team: "string;",
   location: string;
   bio?: string;
-  links?: { label: string; url: string }[];
+  links?: { label: "string; url: string "}[];
   votingPower?: number;
   avatar?: string;
-}
+};

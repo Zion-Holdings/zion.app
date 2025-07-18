@@ -1,4 +1,4 @@
-// Export all hooks from messaging directory
+// Export all hooks from messaging directory;
 export * from './messaging';
 export * from './use-toast';
 export * from './useAuth';
@@ -8,7 +8,7 @@ export * from './useReactId';
 export * from './useScrollToTop';
 export * from './usePostsByCategory';
 export * from './useAutocomplete';
-
+;
 export * from './useLocalStorage';
 export * from './useFavorites';
 export * from './useQuoteWizard';

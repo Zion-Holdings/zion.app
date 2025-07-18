@@ -1,24 +1,24 @@
-export type ConsoleLogEntry = {
-  level: 'warn' | 'error';
+export type ConsoleLogEntry = {;
+  level: 'warn' | 'error';,
   message: string;
-  timestamp: string;
+  timestamp: "string;"
+};
+;
+// Removed unused logBuffer and related functions for lint compliance;
+
+export function initConsoleLogCapture() {;
+  if (typeof window === 'undefined') return;
+  if (;
+    (window as unknown as { __logCaptureInitialized?: boolean });
+      .__logCaptureInitialized;
+  );
+    return;
+  (;
+    window as unknown as { __logCaptureInitialized?: boolean };
+  ).__logCaptureInitialized = true;
 };
 
-// Removed unused logBuffer and related functions for lint compliance
-
-export function initConsoleLogCapture() {
-  if (typeof window === 'undefined') return;
-  if (
-    (window as unknown as { __logCaptureInitialized?: boolean })
-      .__logCaptureInitialized
-  )
-    return;
-  (
-    window as unknown as { __logCaptureInitialized?: boolean }
-  ).__logCaptureInitialized = true;
-}
-
-export function getCapturedLogs(): ConsoleLogEntry[] {
-  // Return empty array since logBuffer was removed for lint compliance
+export function getCapturedLogs(): ConsoleLogEntry[] {;
+  // Return empty array since logBuffer was removed for lint compliance;
   return [];
-}
+};

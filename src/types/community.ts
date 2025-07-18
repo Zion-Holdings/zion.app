@@ -1,78 +1,78 @@
-export type ForumCategory =
-  | 'getting-hired'
-  | 'project-help'
-  | 'ai-tools'
-  | 'feedback'
+export type ForumCategory =;
+  | 'getting-hired';
+  | 'project-help';
+  | 'ai-tools';
+  | 'feedback';
   | 'announcements';
-
-export interface ForumCategoryInfo {
-  id: ForumCategory;
+;
+export interface ForumCategoryInfo {;
+  id: "ForumCategory;",
   name: string;
-  description: string;
+  description: "string;",
   adminOnly: boolean;
-  icon: string;
-}
+  icon: "string;"
+};
 
-export interface ForumPost {
-  id: string;
+export interface ForumPost {;
+  id: "string;",
   title: string;
-  content: string;
+  content: "string;",
   authorId: string;
   authorName: string;
   authorAvatar?: string;
   authorRole?: string;
-  categoryId: ForumCategory;
+  categoryId: "ForumCategory;",
   tags: string[];
-  createdAt: string;
+  createdAt: "string;",
   updatedAt: string;
-  upvotes: number;
+  upvotes: "number;",
   downvotes: number;
   replyCount: number;
   isAnswered?: boolean;
   isPinned?: boolean;
   isLocked?: boolean;
   isFeatured?: boolean;
-}
+};
 
-export interface ForumReply {
-  id: string;
+export interface ForumReply {;
+  id: "string;",
   postId: string;
   parentReplyId?: string;
-  content: string;
+  content: "string;",
   authorId: string;
   authorName: string;
   authorAvatar?: string;
   authorRole?: string;
-  createdAt: string;
+  createdAt: "string;",
   updatedAt: string;
-  upvotes: number;
+  upvotes: "number;",
   downvotes: number;
   isAnswer?: boolean;
-}
+};
 
-export interface Badge {
-  id: string;
+export interface Badge {;
+  id: "string;",
   name: string;
-  description: string;
+  description: "string;",
   icon: string;
-  color: string;
-}
+  color: "string;"
+};
 
-export interface UserBadge {
-  userId: string;
+export interface UserBadge {;
+  userId: "string;",
   badgeId: string;
-  awardedAt: string;
-}
+  awardedAt: "string;"
+};
 
-export interface CommunityUser {
-  id: string;
+export interface CommunityUser {;
+  id: "string;",
   name: string;
   avatar?: string;
-  role: string;
+  role: "string;",
   reputation: number;
-  postCount: number;
+  postCount: "number;",
   replyCount: number;
-  badges: Badge[];
+  badges: "Badge[];",
   isVerified: boolean;
-  isModerator: boolean;
-}
+  isModerator: "boolean;"
+};

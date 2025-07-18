@@ -6,142 +6,142 @@ import type { Milestone, MilestoneStatus } from './types';
 import { useRecordActivity } from './useRecordActivity';
 import { createNotification } from '@/utils/notifications';
 import { logErrorToProduction } from '@/utils/productionLogger';
-
-export const useUpdateMilestone = () => {
+;
+export const _useUpdateMilestone = () => {;
   const { _user } = useAuth();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { _recordMilestoneActivity } = useRecordActivity();
-
-  const updateMilestoneStatus = async (
-    milestoneId: string,
-    newStatus: MilestoneStatus,
-    comment?: string,
-  ) => {
+;
+  const updateMilestoneStatus = async (;
+    milestoneId: "string",;
+    newStatus: "MilestoneStatus",;
+    comment?: string,;
+  ) => {;
     if (!user) return false;
-
-    try {
+;
+    try {;
       setIsSubmitting(true);
-
+;
       if (!supabase) throw new Error('Supabase client not initialized');
-      // Get the current status
-      const { data: milestoneData, error: fetchError } = await supabase
-        .from('project_milestones')
-        .select('status, project_id, title')
-        .eq('id', milestoneId)
+      // Get the current status;
+      const { data: "milestoneData", error: "fetchError "} = await supabase;
+        .from('project_milestones');
+        .select('status, project_id, title');
+        .eq('id', milestoneId);
         .single();
-
+;
       if (fetchError) throw fetchError;
       if (!milestoneData) throw new Error('Milestone not found');
-
+;
       const previousStatus = milestoneData.status;
-
-      // Update the milestone status
+;
+      // Update the milestone status;
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { _error } = await supabase
-        .from('project_milestones')
-        .update({ status: newStatus })
+      const { _error } = await supabase;
+        .from('project_milestones');
+        .update({ status: "newStatus "});
         .eq('id', milestoneId);
-
+;
       if (error) throw error;
-
-      // Create activity record
-      await recordMilestoneActivity(
-        milestoneId,
-        'status_changed',
-        previousStatus,
-        newStatus,
-        comment,
+;
+      // Create activity record;
+      await recordMilestoneActivity(;
+        milestoneId,;
+        'status_changed',;
+        previousStatus,;
+        newStatus,;
+        comment,;
       );
-
-      if (milestoneData?.project_id) {
+;
+      if (milestoneData?.project_id) {;
         if (!supabase) throw new Error('Supabase client not initialized');
-        const { data: project } = await supabase
-          .from('projects')
-          .select('client_id, talent_id')
-          .eq('id', milestoneData.project_id)
+        const { data: "project "} = await supabase;
+          .from('projects');
+          .select('client_id, talent_id');
+          .eq('id', milestoneData.project_id);
           .single();
-
-        if (project) {
-          if (newStatus === 'completed') {
-            await createNotification({
-              userId: project.client_id,
-              title: 'Milestone Completed',
-              message: `Milestone "${milestoneData.title}" was marked as completed`,
-              type: 'milestone_complete',
-              relatedId: milestoneId,
-              sendEmail: true,
+;
+        if (project) {;
+          if (newStatus === 'completed') {;
+            await createNotification({;
+              userId: "project.client_id",;
+              title: 'Milestone Completed',;
+              message: `Milestone "${milestoneData.title}" was marked as completed`,;
+              type: 'milestone_complete',;
+              relatedId: "milestoneId",;
+              sendEmail: "true",;
             });
-          }
-          if (newStatus === 'approved') {
-            await createNotification({
-              userId: project.talent_id,
-              title: 'Milestone Approved',
-              message: `Milestone "${milestoneData.title}" was approved`,
-              type: 'project_update',
-              relatedId: milestoneId,
-              sendEmail: true,
+          };
+          if (newStatus === 'approved') {;
+            await createNotification({;
+              userId: "project.talent_id",;
+              title: 'Milestone Approved',;
+              message: `Milestone "${milestoneData.title}" was approved`,;
+              type: 'project_update',;
+              relatedId: "milestoneId",;
+              sendEmail: "true",;
             });
-          }
-        }
-      }
+          };
+        };
+      };
 
       toast.success(`Milestone status changed to ${newStatus}`);
-
+;
       return true;
-    } catch (err: unknown) {
-      logErrorToProduction('Error updating milestone status:', { data: err });
-      const errorMessage =
+    } catch (err: unknown) {;
+      logErrorToProduction('Error updating milestone status:', { data: "err "});
+      const errorMessage =;
         err instanceof Error && err.message ? err.message : 'Unknown error';
       toast.error('Failed to update status: ' + errorMessage);
       return false;
-    } finally {
+    } finally {;
       setIsSubmitting(false);
-    }
+    };
   };
-
-  const updateMilestone = async (
-    milestoneId: string,
-    _data: Partial<Milestone>,
-  ) => {
+;
+  const updateMilestone = async (;
+    milestoneId: "string",;
+    _data: "Partial<Milestone>",;
+  ) => {;
     if (!user) return false;
-
-    try {
+;
+    try {;
       setIsSubmitting(true);
-
+;
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { _error } = await supabase
-        .from('project_milestones')
-        .update(data)
+      const { _error } = await supabase;
+        .from('project_milestones');
+        .update(data);
         .eq('id', milestoneId);
-
+;
       if (error) throw error;
-
-      // Create activity record
-      await recordMilestoneActivity(
-        milestoneId,
-        'updated',
-        null,
-        'updated',
-        'Milestone details updated',
+;
+      // Create activity record;
+      await recordMilestoneActivity(;
+        milestoneId,;
+        'updated',;
+        null,;
+        'updated',;
+        'Milestone details updated',;
       );
-
+;
       toast.success('Milestone updated successfully');
-
+;
       return true;
-    } catch (err: unknown) {
-      logErrorToProduction('Error updating milestone:', { data: err });
-      const errorMessage =
+    } catch (err: unknown) {;
+      logErrorToProduction('Error updating milestone:', { data: "err "});
+      const errorMessage =;
         err instanceof Error && err.message ? err.message : 'Unknown error';
       toast.error('Failed to update milestone: ' + errorMessage);
       return false;
-    } finally {
+    } finally {;
       setIsSubmitting(false);
-    }
+    };
   };
-
-  return {
-    updateMilestoneStatus,
-    updateMilestone,
-    isSubmitting,
+;
+  return {;
+    updateMilestoneStatus,;
+    updateMilestone,;
+    isSubmitting,;
   };
 };

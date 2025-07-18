@@ -1,16 +1,16 @@
 import apiClient from './apiClient';
 import { apiHelper } from './apiHelper';
 import type { TokenTransaction } from '@/types/tokens';
-
-export interface Wallet {
-  id: string;
+;
+export interface Wallet {;
+  id: "string;",
   balance: number;
-  transactions: TokenTransaction[];
-}
+  transactions: "TokenTransaction[];"
+};
 
-export const getWalletData = async (): Promise<{
-  data: Wallet | null;
-  error: string | null;
-}> => {
+export const _getWalletData = async (): Promise<{;
+  data: "Wallet | null;",
+  error: "string | null;"
+}> => {;
   return apiHelper(() => apiClient.get('/api/v1/wallet'));
 };

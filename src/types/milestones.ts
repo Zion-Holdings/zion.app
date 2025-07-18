@@ -1,9 +1,9 @@
-export type Milestone = {
-  id: string;
+export type Milestone = {;
+  id: "string;",
   project_id: string;
-  title: string;
+  title: "string;",
   description: string;
-  amount: number;
+  amount: "number;",
   status: 'pending' | 'in_progress' | 'completed' | 'rejected';
   due_date?: string;
   created_at?: string;

@@ -1,18 +1,19 @@
-export interface AuthState {
-  token: string | null;
-  isLoggedIn: boolean;
-}
+import React from 'react';
+export interface AuthState {;
+  token: "string | null;",
+  isLoggedIn: "boolean;"
+};
 
-export interface UserProfile {
-  id: string;
+export interface UserProfile {;
+  id: "string;",
   email: string;
   name: string;
   userType?: 'talent' | 'client' | 'admin' | null;
-  profileComplete: boolean;
+  profileComplete: "boolean;",
   created_at: string;
-  updated_at: string;
+  updated_at: "string;",
   role: string;
-  displayName: string;
+  displayName: "string;",
   points: number;
   avatarUrl?: string;
   bio?: string;
@@ -20,62 +21,62 @@ export interface UserProfile {
   emailVerified?: boolean;
   interests?: string[];
   preferredCategories?: string[];
-}
+};
 
-export interface UserDetails extends UserProfile {
+export interface UserDetails extends UserProfile {;
   headline?: string;
   createdAt?: string;
   updatedAt?: string;
-}
+};
 
-export interface SignupParams {
-  email: string;
+export interface SignupParams {;
+  email: "string;",
   password: string;
-  display_name: string;
-}
+  display_name: "string;"
+};
 
-export interface AuthContextType {
-  user: UserDetails | null;
+export interface AuthContextType {;
+  user: "UserDetails | null;",
   isAuthenticated: boolean;
-  isLoading: boolean;
+  isLoading: "boolean;",
   onboardingStep: string | null;
-  setOnboardingStep: (step: string | null) => void;
-  login: (
-    email: string,
-    password: string,
-    rememberMe?: boolean,
-  ) => Promise<{ error: unknown }>;
-  signup: (
-    email: string,
-    password: string,
-    userData?: Partial<UserDetails>,
-  ) => Promise<{ error: unknown; emailVerificationRequired?: boolean }>;
-  register: (
-    email: string,
-    password: string,
-    userData?: Partial<UserDetails>,
-  ) => Promise<{ error: unknown; emailVerificationRequired?: boolean }>;
-  logout: () => Promise<void>;
-  resetPassword: (email: string) => Promise<{ error: unknown }>;
-  updateProfile: (data: Partial<UserDetails>) => Promise<{ error: unknown }>;
-  loginWithGoogle: () => Promise<void>;
+  setOnboardingStep: "(step: string | null) => void;",
+  login: (;
+    email: "string",;
+    password: "string",;
+    rememberMe?: boolean,;
+  ) => Promise<{ error: "unknown "}>;
+  signup: "(;",
+    email: "string",;
+    password: "string",;
+    userData?: Partial<UserDetails>,;
+  ) => Promise<{ error: "unknown; emailVerificationRequired?: boolean "}>;
+  register: "(;",
+    email: "string",;
+    password: "string",;
+    userData?: Partial<UserDetails>,;
+  ) => Promise<{ error: "unknown; emailVerificationRequired?: boolean "}>;
+  logout: "() => Promise<void>;",
+  resetPassword: "(email: string) => Promise<{ error: unknown "}>;
+  updateProfile: "(data: Partial<UserDetails>) => Promise<{ error: unknown "}>;
+  loginWithGoogle: "() => Promise<void>;",
   loginWithFacebook: () => Promise<void>;
-  loginWithGitHub: () => Promise<void>;
+  loginWithGitHub: "() => Promise<void>;",
   loginWithTwitter: () => Promise<void>;
-  loginWithWeb3: () => Promise<void>;
-  signIn: (
-    email: string,
-    password: string,
-    rememberMe?: boolean,
-  ) => Promise<{ error: unknown }>;
-  signOut: () => Promise<void>;
-  signUp: (
-    email: string,
-    password: string,
-    userData?: Partial<UserDetails>,
-  ) => Promise<{ error: unknown; emailVerificationRequired?: boolean }>;
-  avatarUrl: string | null;
-  setAvatarUrl: (url: string | null) => void;
+  loginWithWeb3: "() => Promise<void>;",
+  signIn: (;
+    email: "string",;
+    password: "string",;
+    rememberMe?: boolean,;
+  ) => Promise<{ error: "unknown "}>;
+  signOut: "() => Promise<void>;",
+  signUp: (;
+    email: "string",;
+    password: "string",;
+    userData?: Partial<UserDetails>,;
+  ) => Promise<{ error: "unknown; emailVerificationRequired?: boolean "}>;
+  avatarUrl: "string | null;",
+  setAvatarUrl: "(url: string | null) => void;",
   setUser: React.Dispatch<React.SetStateAction<UserDetails | null>>;
-  tokens: unknown | null;
-}
+  tokens: "unknown | null;"
+};

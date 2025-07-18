@@ -1,8 +1,8 @@
-export interface PointsLedgerEntry {
-  id: string;
+export interface PointsLedgerEntry {;
+  id: "string;",
   user_id: string;
-  delta: number;
+  delta: "number;",
   reason: string | null;
-  order_id: string | null;
-  created_at: string;
-}
+  order_id: "string | null;",
+  created_at: "string;"
+};

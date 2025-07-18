@@ -6,61 +6,61 @@ import type { WishlistState as _WishlistState } from './wishlistSlice';
 import authReducer from './authSlice';
 import { safeStorage } from '@/utils/safeStorage';
 import { logWarn } from '@/utils/productionLogger';
-
-export const store = configureStore({
-  reducer: {
-    cart: cartReducer,
-    wishlist: wishlistReducer,
-    auth: authReducer,
-  },
+;
+export const store = configureStore({;
+  reducer: "{;",
+    cart: "cartReducer",;
+    wishlist: "wishlistReducer",;
+    auth: "authReducer",;
+  },;
 });
-
-// Add throttling to prevent infinite loops
+;
+// Add throttling to prevent infinite loops;
 let lastStorageUpdate = 0;
-const STORAGE_UPDATE_THROTTLE = 100; // 100ms throttle
+const STORAGE_UPDATE_THROTTLE = 100; // 100ms throttle;
 
-store.subscribe(() => {
+store.subscribe(() => {;
   const now = Date.now();
-  if (now - lastStorageUpdate < STORAGE_UPDATE_THROTTLE) {
-    return; // Skip if too soon
-  }
+  if (now - lastStorageUpdate < STORAGE_UPDATE_THROTTLE) {;
+    return; // Skip if too soon;
+  };
   lastStorageUpdate = now;
-
-  try {
+;
+  try {;
     const state = store.getState();
-
-    // Only update if data has actually changed to prevent infinite loops
+;
+    // Only update if data has actually changed to prevent infinite loops;
     const cartData = JSON.stringify(state.cart.items);
     const wishlistData = JSON.stringify(state.wishlist.items);
-
-    if (cartData !== safeStorage.getItem('zion_cart')) {
+;
+    if (cartData !== safeStorage.getItem('zion_cart')) {;
       safeStorage.setItem('zion_cart', cartData);
-    }
+    };
 
-    if (wishlistData !== safeStorage.getItem('wishlist')) {
+    if (wishlistData !== safeStorage.getItem('wishlist')) {;
       safeStorage.setItem('wishlist', wishlistData);
-    }
+    };
 
-    // Handle auth token storage
-    if (state.auth.token) {
+    // Handle auth token storage;
+    if (state.auth.token) {;
       const currentToken = safeStorage.getItem('authToken');
-      if (currentToken !== state.auth.token) {
+      if (currentToken !== state.auth.token) {;
         safeStorage.setItem('authToken', state.auth.token);
-        safeStorage.setItem('ztg_token', state.auth.token); // For backward compatibility
-      }
-    } else {
-      // Only remove if they exist to prevent unnecessary operations
-      if (safeStorage.getItem('authToken')) {
+        safeStorage.setItem('ztg_token', state.auth.token); // For backward compatibility;
+      };
+    } else {;
+      // Only remove if they exist to prevent unnecessary operations;
+      if (safeStorage.getItem('authToken')) {;
         safeStorage.removeItem('authToken');
-      }
-      if (safeStorage.getItem('ztg_token')) {
+      };
+      if (safeStorage.getItem('ztg_token')) {;
         safeStorage.removeItem('ztg_token');
-      }
-    }
-  } catch {
-    logWarn('Store subscription error (throttled):', { data: { data: error } });
-  }
+      };
+    };
+  } catch {;
+    logWarn('Store subscription error (throttled):', { data: "{ data: error "} });
+  };
 });
-
+;
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

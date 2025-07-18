@@ -5,115 +5,115 @@ import { toast } from 'sonner';
 import { useAuth } from './useAuth';
 import { createJob, updateJob, getJobById } from '@/services/jobService';
 import { logErrorToProduction } from '@/utils/productionLogger';
-
-export const useJobs = (userId?: string, status?: JobStatus) => {
+;
+export const _useJobs = (userId?: string, status?: JobStatus) => {;
   const { _user } = useAuth();
   const [jobs, setJobs] = useState<Job[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
+;
   const clientId = userId || user?.id;
-
-  const fetchJobs = async () => {
+;
+  const fetchJobs = async () => {;
     if (!supabase) throw new Error('Supabase client not initialized');
-    if (!clientId) {
+    if (!clientId) {;
       setIsLoading(false);
       return;
-    }
+    };
 
-    try {
+    try {;
       setIsLoading(true);
-
-      let query = supabase
-        .from('jobs')
-        .select('*')
-        .eq('client_id', clientId)
-        .order('created_at', { ascending: false });
-
-      if (status) {
+;
+      let query = supabase;
+        .from('jobs');
+        .select('*');
+        .eq('client_id', clientId);
+        .order('created_at', { ascending: "false "});
+;
+      if (status) {;
         query = query.eq('status', status);
-      }
+      };
 
-      const { data, error: fetchError } = await query;
-
+      const { data, error: "fetchError "} = await query;
+;
       if (fetchError) throw fetchError;
-
+;
       setJobs(data as Job[]);
       setError(null);
-    } catch (err: unknown) {
+    } catch (err: unknown) {;
 //       const _message = 'Job fetch error';
-      logErrorToProduction('Error fetching jobs:', { data: err });
+      logErrorToProduction('Error fetching jobs:', { data: "err "});
       setError('Failed to fetch jobs. Please try again.');
       toast.error('Failed to fetch jobs');
-    } finally {
+    } finally {;
       setIsLoading(false);
-    }
+    };
   };
-
-  const updateJobStatus = async (jobId: string, _newStatus: JobStatus) => {
+;
+  const updateJobStatus = async (jobId: "string", _newStatus: JobStatus) => {;
     if (!supabase) throw new Error('Supabase client not initialized');
-    try {
-      const { error: updateError } = await supabase
-        .from('jobs')
-        .update({ status: newStatus })
-        .eq('id', jobId)
-        .eq('client_id', clientId); // Ensure user can only update their own jobs
+    try {;
+      const { error: "updateError "} = await supabase;
+        .from('jobs');
+        .update({ status: "newStatus "});
+        .eq('id', jobId);
+        .eq('client_id', clientId); // Ensure user can only update their own jobs;
 
       if (updateError) throw updateError;
-
-      // Update local state
-      setJobs(
-        jobs.map((job) =>
-          job.id === jobId ? { ...job, status: newStatus } : job,
-        ),
+;
+      // Update local state;
+      setJobs(;
+        jobs.map((job) =>;
+          job.id === jobId ? { ...job, status: "newStatus "} : job,;
+        ),;
       );
       toast.success('Job status updated successfully');
       return true;
-    } catch (err: unknown) {
+    } catch (err: unknown) {;
 //       const _message = 'Job update error';
-      logErrorToProduction('Error updating job status:', { data: err });
+      logErrorToProduction('Error updating job status:', { data: "err "});
       toast.error('Failed to update job status');
       return false;
-    }
+    };
   };
-
-  const deleteJob = async (_jobId: string) => {
+;
+  const deleteJob = async (_jobId: string) => {;
     if (!supabase) throw new Error('Supabase client not initialized');
-    try {
-      const { error: deleteError } = await supabase
-        .from('jobs')
-        .delete()
-        .eq('id', jobId)
-        .eq('client_id', clientId); // Ensure user can only delete their own jobs
+    try {;
+      const { error: "deleteError "} = await supabase;
+        .from('jobs');
+        .delete();
+        .eq('id', jobId);
+        .eq('client_id', clientId); // Ensure user can only delete their own jobs;
 
       if (deleteError) throw deleteError;
-
-      // Update local state
+;
+      // Update local state;
       setJobs(jobs.filter((job) => job.id !== jobId));
       toast.success('Job deleted successfully');
       return true;
-    } catch (err: unknown) {
+    } catch (err: unknown) {;
 //       const _message = 'Job delete error';
-      logErrorToProduction('Error deleting job:', { data: err });
+      logErrorToProduction('Error deleting job:', { data: "err "});
       toast.error('Failed to delete job');
       return false;
-    }
+    };
   };
-
-  // Fetch jobs when component mounts or dependencies change
-  useEffect(() => {
+;
+  // Fetch jobs when component mounts or dependencies change;
+  useEffect(() => {;
     fetchJobs();
   }, [clientId, status]);
-
-  return {
-    jobs,
-    isLoading,
-    error,
-    refetch: fetchJobs,
-    updateJobStatus,
-    deleteJob,
-    createJob,
-    updateJob,
-    getJobById,
+;
+  return {;
+    jobs,;
+    isLoading,;
+    error,;
+    refetch: "fetchJobs",;
+    updateJobStatus,;
+    deleteJob,;
+    createJob,;
+    updateJob,;
+    getJobById,;
   };
 };

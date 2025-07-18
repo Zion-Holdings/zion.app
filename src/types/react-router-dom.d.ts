@@ -1,4 +1,4 @@
-declare module 'react-router-dom' {
+declare module 'react-router-dom' {;
   const ReactRouterDom: unknown;
   export default ReactRouterDom;
   export const BrowserRouter: unknown;
@@ -13,4 +13,4 @@ declare module 'react-router-dom' {
   export function useLocation(): unknown;
   export function useParams(): unknown;
   export function useSearchParams(): unknown;
-}
+};

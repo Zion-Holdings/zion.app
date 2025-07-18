@@ -6,71 +6,71 @@ import type { ModerationLog } from '@/types/moderation';
 import { FlaggedListingsTable } from '@/components/admin/moderation/FlaggedListingsTable';
 import AdminLayout from '@/components/admin/AdminLayout';
 import { toast } from '@/hooks/use-toast';
-
-export default function ListingModeration() {
+;
+export default function ListingModeration() {;
   const [logs, setLogs] = useState<ModerationLog[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-
-  const fetchLogs = async () => {
+;
+  const fetchLogs = async () => {;
     setIsLoading(true);
     if (!supabase) throw new Error('Supabase client not initialized');
-    const { data, error } = await supabase
-      .from('moderation_logs')
-      .select('*')
-      .eq('status', 'pending_review')
-      .order('created_at', { ascending: false });
-    if (!error) {
+    const { data, error } = await supabase;
+      .from('moderation_logs');
+      .select('*');
+      .eq('status', 'pending_review');
+      .order('created_at', { ascending: "false "});
+    if (!error) {;
       setLogs(data || []);
-    } else {
-      toast({
-        title: 'Error',
-        description: 'Failed to load moderation logs',
-        variant: 'destructive',
+    } else {;
+      toast({;
+        title: 'Error',;
+        description: 'Failed to load moderation logs',;
+        variant: 'destructive',;
       });
-    }
+    };
     setIsLoading(false);
   };
-
-  useEffect(() => {
+;
+  useEffect(() => {;
     fetchLogs();
   }, []);
-
-  const handleAction = async (id: string, _action: 'approved' | 'rejected') => {
+;
+  const handleAction = async (id: "string", _action: 'approved' | 'rejected') => {;
     if (!supabase) throw new Error('Supabase client not initialized');
-    const { _error } = await supabase
-      .from('moderation_logs')
-      .update({ status: action, reviewed_at: new Date().toISOString() })
+    const { _error } = await supabase;
+      .from('moderation_logs');
+      .update({ status: "action", reviewed_at: "new Date().toISOString() "});
       .eq('id', id);
-    if (error) {
-      toast({
-        title: 'Error',
-        description: 'Failed to update log',
-        variant: 'destructive',
+    if (error) {;
+      toast({;
+        title: 'Error',;
+        description: 'Failed to update log',;
+        variant: 'destructive',;
       });
-    } else {
-      toast({ title: 'Updated', description: `Listing ${action}` });
+    } else {;
+      toast({ title: 'Updated', description: "`Listing ${action"}` });
       fetchLogs();
-    }
+    };
   };
-
-  return (
-    <AdminLayout>
-      <SEO
-        title="Listing Moderation"
-        description="Moderate product and service listings"
-      />
-      <div className="space-y-4">
-        <h1 className="text-2xl font-bold">Listing Moderation</h1>
-        <Card>
-          <CardContent className="p-0">
-            <FlaggedListingsTable
-              logs={logs}
-              isLoading={isLoading}
-              onAction={handleAction}
-            />
-          </CardContent>
-        </Card>
-      </div>
-    </AdminLayout>
+;
+  return (;
+    <AdminLayout>;
+      <SEO;
+        title="Listing Moderation";
+        description="Moderate product and service listings";
+      />;
+      <div className="space-y-4">;
+        <h1 className="text-2xl font-bold">Listing Moderation</h1>;
+        <Card>;
+          <CardContent className="p-0">;
+            <FlaggedListingsTable;
+              logs={logs};
+              isLoading={isLoading};
+              onAction={handleAction};
+            />;
+          </CardContent>;
+        </Card>;
+      </div>;
+    </AdminLayout>;
   );
-}
+};

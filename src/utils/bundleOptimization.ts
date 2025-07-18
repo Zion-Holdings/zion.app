@@ -1,21 +1,21 @@
 import { logWarn } from '@/utils/productionLogger';
+;
+/**;
+ * Bundle optimization utilities for improved performance;
+ */;
 
-/**
- * Bundle optimization utilities for improved performance
- */
-
-// Critical resource preloader
-export const preloadCriticalResources = () => {
+// Critical resource preloader;
+export const preloadCriticalResources = () => {;
   if (typeof window === 'undefined') return;
-
-  // Preload critical font files
-  const criticalFonts = [
-    '/fonts/inter-var.woff2',
-    '/fonts/inter-regular.woff2',
-    '/fonts/inter-medium.woff2',
+;
+  // Preload critical font files;
+  const criticalFonts = [;
+    '/fonts/inter-var.woff2',;
+    '/fonts/inter-regular.woff2',;
+    '/fonts/inter-medium.woff2',;
   ];
-
-  criticalFonts.forEach((font) => {
+;
+  criticalFonts.forEach((font) => {;
     const link = document.createElement('link');
     link.rel = 'preload';
     link.href = font;
@@ -24,229 +24,229 @@ export const preloadCriticalResources = () => {
     link.crossOrigin = 'anonymous';
     document.head.appendChild(link);
   });
-
-  // Preload critical API endpoints
+;
+  // Preload critical API endpoints;
   const criticalEndpoints = ['/api/marketplace/overview', '/api/categories'];
-
-  criticalEndpoints.forEach((endpoint) => {
+;
+  criticalEndpoints.forEach((endpoint) => {;
     const link = document.createElement('link');
     link.rel = 'prefetch';
     link.href = endpoint;
     document.head.appendChild(link);
   });
 };
-
-// Optimize image loading
-export const optimizeImageLoading = () => {
+;
+// Optimize image loading;
+export const optimizeImageLoading = () => {;
   if (typeof window === 'undefined') return;
-
-  // Enable lazy loading for all images
+;
+  // Enable lazy loading for all images;
   const images = document.querySelectorAll('img');
-  images.forEach((img) => {
-    if (!img.loading) {
+  images.forEach((img) => {;
+    if (!img.loading) {;
       img.loading = 'lazy';
-    }
+    };
   });
-
-  // Add intersection observer for progressive image enhancement
-  if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+;
+  // Add intersection observer for progressive image enhancement;
+  if ('IntersectionObserver' in window) {;
+    const imageObserver = new IntersectionObserver((entries) => {;
+      entries.forEach((entry) => {;
+        if (entry.isIntersecting) {;
           const img = entry.target as HTMLImageElement;
-          if (img.dataset.src) {
+          if (img.dataset.src) {;
             img.src = img.dataset.src;
             img.removeAttribute('data-src');
             imageObserver.unobserve(img);
-          }
-        }
+          };
+        };
       });
     });
-
+;
     const lazyImages = document.querySelectorAll('img[data-src]');
     lazyImages.forEach((img) => imageObserver.observe(img));
-  }
+  };
 };
-
-// Performance monitoring
-export const monitorBundlePerformance = () => {
+;
+// Performance monitoring;
+export const monitorBundlePerformance = () => {;
   if (typeof window === 'undefined') return;
-
-  // Monitor loading performance
-  window.addEventListener('load', () => {
-    const perfData = performance.getEntriesByType(
-      'navigation',
+;
+  // Monitor loading performance;
+  window.addEventListener('load', () => {;
+    const perfData = performance.getEntriesByType(;
+      'navigation',;
     )[0] as PerformanceNavigationTiming;
     const loadTime = perfData.loadEventEnd - perfData.fetchStart;
-
-    // Report to analytics if available
-    function hasGtag(
-      obj: unknown,
-    ): obj is { gtag: (...args: unknown[]) => void } {
-      return (
-        typeof obj === 'object' &&
-        obj !== null &&
-        'gtag' in obj &&
-        typeof (obj as Record<string, unknown>)['gtag'] === 'function'
+;
+    // Report to analytics if available;
+    function hasGtag(;
+      obj: "unknown",;
+    ): obj is { gtag: "(...args: unknown[]) => void "} {;
+      return (;
+        typeof obj === 'object' &&;
+        obj !== null &&;
+        'gtag' in obj &&;
+        typeof (obj as Record<string, unknown>)['gtag'] === 'function';
       );
-    }
-    if (hasGtag(window)) {
-      window.gtag('event', 'page_load_time', {
-        event_category: 'Performance',
-        value: Math.round(loadTime),
+    };
+    if (hasGtag(window)) {;
+      window.gtag('event', 'page_load_time', {;
+        event_category: 'Performance',;
+        value: "Math.round(loadTime)",;
       });
-    }
+    };
   });
-
-  // Monitor resource loading
-  const resourceObserver = new PerformanceObserver((list) => {
+;
+  // Monitor resource loading;
+  const resourceObserver = new PerformanceObserver((list) => {;
     const entries = list.getEntries() as PerformanceResourceTiming[];
-    const largeResources = entries.filter(
-      (entry) => entry.transferSize && entry.transferSize > 100000, // Resources > 100KB
+    const largeResources = entries.filter(;
+      (entry) => entry.transferSize && entry.transferSize > 100000, // Resources > 100KB;
     );
-
-    if (largeResources.length > 0) {
-      logWarn('Large resources detected:', {
-        resources: largeResources.map((r) => ({
-          name: r.name,
-          size: `${Math.round(r.transferSize / 1024)}KB`,
-          loadTime: `${Math.round(r.duration)}ms`,
-        })),
+;
+    if (largeResources.length > 0) {;
+      logWarn('Large resources detected:', {;
+        resources: "largeResources.map((r) => ({;",
+          name: "r.name",;
+          size: "`${Math.round(r.transferSize / 1024)"}KB`,;
+          loadTime: "`${Math.round(r.duration)"}ms`,;
+        })),;
       });
-    }
+    };
   });
-
-  if ('PerformanceObserver' in window) {
+;
+  if ('PerformanceObserver' in window) {;
     resourceObserver.observe({ entryTypes: ['resource'] });
-  }
+  };
 };
-
-// Implement virtual scrolling optimization
-export const optimizeListRendering = (
-  container: HTMLElement,
-  _itemHeight: number,
-) => {
+;
+// Implement virtual scrolling optimization;
+export const optimizeListRendering = (;
+  container: "HTMLElement",;
+  _itemHeight: "number",;
+) => {;
   if (!container) return;
-
+;
   const items = Array.from(container.children);
   const visibleHeight = container.clientHeight;
-  const visibleItems = Math.ceil(visibleHeight / itemHeight) + 2; // Buffer
+  const visibleItems = Math.ceil(visibleHeight / itemHeight) + 2; // Buffer;
 
   let scrollTop = 0;
-  const updateVisibleItems = () => {
+  const updateVisibleItems = () => {;
     const startIndex = Math.floor(scrollTop / itemHeight);
     const endIndex = Math.min(startIndex + visibleItems, items.length);
-
-    items.forEach((item, index) => {
+;
+    items.forEach((item, index) => {;
       const element = item as HTMLElement;
-      if (index >= startIndex && index < endIndex) {
+      if (index >= startIndex && index < endIndex) {;
         element.style.display = '';
         element.style.transform = `translateY(${index * itemHeight}px)`;
-      } else {
+      } else {;
         element.style.display = 'none';
-      }
+      };
     });
   };
-
-  container.addEventListener('scroll', () => {
+;
+  container.addEventListener('scroll', () => {;
     scrollTop = container.scrollTop;
     requestAnimationFrame(updateVisibleItems);
   });
-
+;
   updateVisibleItems();
 };
-
-// Memory optimization
-export const optimizeMemoryUsage = () => {
+;
+// Memory optimization;
+export const optimizeMemoryUsage = () => {;
   if (typeof window === 'undefined') return;
-
-  // Clear unused event listeners
-  let eventListeners: Array<{
+;
+  // Clear unused event listeners;
+  let eventListeners: "Array<{;",
     element: Element;
-    event: string;
-    handler: EventListener;
+    event: "string;",
+    handler: "EventListener;"
   }> = [];
-
-  const addOptimizedEventListener = (
-    element: Element,
-    event: string,
-    handler: EventListener,
-    options?: AddEventListenerOptions,
-  ) => {
+;
+  const addOptimizedEventListener = (;
+    element: "Element",;
+    event: "string",;
+    handler: "EventListener",;
+    options?: AddEventListenerOptions,;
+  ) => {;
     element.addEventListener(event, handler, options);
     eventListeners.push({ element, event, handler });
   };
-
-  const cleanupEventListeners = () => {
-    eventListeners.forEach(({ element, event, handler }) => {
+;
+  const cleanupEventListeners = () => {;
+    eventListeners.forEach(({ element, event, handler }) => {;
       element.removeEventListener(event, handler);
     });
     eventListeners = [];
   };
-
-  // Cleanup on page unload
+;
+  // Cleanup on page unload;
   window.addEventListener('beforeunload', cleanupEventListeners);
-
-  // Periodic memory cleanup
-  interface PerformanceWithMemory extends Performance {
-    memory?: {
-      _usedJSHeapSize: number;
-      jsHeapSizeLimit: number;
+;
+  // Periodic memory cleanup;
+  interface PerformanceWithMemory extends Performance {;
+    memory?: {;
+      _usedJSHeapSize: "number;",
+      jsHeapSizeLimit: "number;"
     };
-  }
-  setInterval(() => {
+  };
+  setInterval(() => {;
     const perf = performance as PerformanceWithMemory;
-    if (perf.memory) {
+    if (perf.memory) {;
       const memInfo = perf.memory;
       const usageRatio = memInfo.usedJSHeapSize / memInfo.jsHeapSizeLimit;
-
-      if (usageRatio > 0.8) {
+;
+      if (usageRatio > 0.8) {;
         logWarn('High memory usage detected, triggering cleanup');
-        // Force garbage collection if available
-        function hasGc(obj: unknown): obj is { gc: () => void } {
-          return (
-            typeof obj === 'object' &&
-            obj !== null &&
-            'gc' in obj &&
-            typeof (obj as Record<string, unknown>)['gc'] === 'function'
+        // Force garbage collection if available;
+        function hasGc(obj: "unknown): obj is { gc: () => void "} {;
+          return (;
+            typeof obj === 'object' &&;
+            obj !== null &&;
+            'gc' in obj &&;
+            typeof (obj as Record<string, unknown>)['gc'] === 'function';
           );
-        }
-        if (hasGc(window)) {
+        };
+        if (hasGc(window)) {;
           window.gc();
-        }
-      }
-    }
-  }, 30000); // Check every 30 seconds
+        };
+      };
+    };
+  }, 30000); // Check every 30 seconds;
 
   return { addOptimizedEventListener, cleanupEventListeners };
 };
-
-// Initialize all optimizations
-export const initializeBundleOptimizations = () => {
+;
+// Initialize all optimizations;
+export const initializeBundleOptimizations = () => {;
   if (typeof window === 'undefined') return;
-
-  // Run optimizations when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
+;
+  // Run optimizations when DOM is ready;
+  if (document.readyState === 'loading') {;
+    document.addEventListener('DOMContentLoaded', () => {;
       preloadCriticalResources();
       optimizeImageLoading();
       monitorBundlePerformance();
       optimizeMemoryUsage();
     });
-  } else {
+  } else {;
     preloadCriticalResources();
     optimizeImageLoading();
     monitorBundlePerformance();
     optimizeMemoryUsage();
-  }
+  };
 };
-
-// Export for use in _app.tsx
-export default {
-  preloadCriticalResources,
-  optimizeImageLoading,
-  monitorBundlePerformance,
-  optimizeListRendering,
-  optimizeMemoryUsage,
-  initializeBundleOptimizations,
+;
+// Export for use in _app.tsx;
+export default {;
+  preloadCriticalResources,;
+  optimizeImageLoading,;
+  monitorBundlePerformance,;
+  optimizeListRendering,;
+  optimizeMemoryUsage,;
+  initializeBundleOptimizations,;
 };

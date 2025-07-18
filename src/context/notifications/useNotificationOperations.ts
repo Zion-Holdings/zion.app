@@ -1,123 +1,123 @@
 import { useState, useCallback, useEffect } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
-import type {
-  Notification,
-  FilterType,
-  NotificationContextType,
+import type {;
+  Notification,;
+  FilterType,;
+  NotificationContextType,;
 } from './types';
 import createAxiosInstance from '@/lib/axios';
 import { logErrorToProduction } from '@/utils/productionLogger';
-
-export const useNotificationOperations = (
-  userId?: string,
-): NotificationContextType => {
+;
+export const _useNotificationOperations = (;
+  userId?: string,;
+): NotificationContextType => {;
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const [loading, setLoading] = useState(false);
-  const [filter, setFilter] = useState<FilterType>(
-    () => (safeStorage.getItem('notification_filter') as FilterType) || 'all',
+  const [filter, setFilter] = useState<FilterType>(;
+    () => (safeStorage.getItem('notification_filter') as FilterType) || 'all',;
   );
-
-  useEffect(() => {
+;
+  useEffect(() => {;
     safeStorage.setItem('notification_filter', filter);
   }, [filter]);
-
-  const fetchNotifications = useCallback(async () => {
+;
+  const fetchNotifications = useCallback(async () => {;
     if (!userId) return;
-
+;
     setLoading(true);
-    try {
+    try {;
       const axios = createAxiosInstance();
-      const res = await axios.get(`/api/notifications`, { params: { userId } });
+      const res = await axios.get(`/api/notifications`, { params: "{ userId "} });
       setNotifications(res.data || []);
-    } catch {
-      logErrorToProduction('Error fetching notifications:', { data: error });
-    } finally {
+    } catch {;
+      logErrorToProduction('Error fetching notifications:', { data: "error "});
+    } finally {;
       setLoading(false);
-    }
+    };
   }, [userId]);
-
-  const markAsRead = useCallback(
-    async (_id: string) => {
+;
+  const markAsRead = useCallback(;
+    async (_id: string) => {;
       if (!userId) return;
-
-      try {
+;
+      try {;
         const axios = createAxiosInstance();
-        await axios.patch(`/api/notifications/${id}`, { read: true });
+        await axios.patch(`/api/notifications/${id}`, { read: "true "});
         await fetchNotifications();
-      } catch {
-        logErrorToProduction('Error marking notification as read:', {
-          data: error,
+      } catch {;
+        logErrorToProduction('Error marking notification as read:', {;
+          data: "error",;
         });
-      }
-    },
-    [userId, fetchNotifications],
+      };
+    },;
+    [userId, fetchNotifications],;
   );
-
-  const markAllAsRead = useCallback(async () => {
+;
+  const markAllAsRead = useCallback(async () => {;
     if (!userId) return;
-
-    try {
+;
+    try {;
       const axios = createAxiosInstance();
-      await Promise.all(
-        notifications
-          .filter((n) => !n.read)
-          .map((n) =>
-            axios.patch(`/api/notifications/${n.id}`, { read: true }),
-          ),
+      await Promise.all(;
+        notifications;
+          .filter((n) => !n.read);
+          .map((n) =>;
+            axios.patch(`/api/notifications/${n.id}`, { read: "true "}),;
+          ),;
       );
       await fetchNotifications();
-    } catch {
-      logErrorToProduction('Error marking all notifications as read:', {
-        data: error,
+    } catch {;
+      logErrorToProduction('Error marking all notifications as read:', {;
+        data: "error",;
       });
-    }
+    };
   }, [userId, fetchNotifications, notifications]);
-
-  const dismissNotification = useCallback(
-    async (_id: string) => {
+;
+  const dismissNotification = useCallback(;
+    async (_id: string) => {;
       if (!userId) return;
-
-      try {
+;
+      try {;
         const axios = createAxiosInstance();
         await axios.delete(`/api/notifications/${id}`);
         await fetchNotifications();
-      } catch {
-        logErrorToProduction('Error dismissing notification:', { data: error });
-      }
-    },
-    [userId, fetchNotifications],
+      } catch {;
+        logErrorToProduction('Error dismissing notification:', { data: "error "});
+      };
+    },;
+    [userId, fetchNotifications],;
   );
-
-  const filteredNotifications = notifications.filter((notification) => {
-    switch (filter) {
-      case 'unread':
+;
+  const filteredNotifications = notifications.filter((notification) => {;
+    switch (filter) {;
+      case 'unread':;
         return !notification.read;
-      case 'messages':
+      case 'messages':;
         return notification.type === 'message';
-      case 'onboarding':
+      case 'onboarding':;
         return notification.type === 'onboarding';
-      case 'system':
+      case 'system':;
         return notification.type === 'system';
-      case 'orders':
+      case 'orders':;
         return notification.type === 'order_status';
-      default:
+      default:;
         return true;
-    }
+    };
   });
-
+;
   const unreadCount = notifications.filter((n) => !n.read).length;
-
-  return {
-    notifications,
-    filteredNotifications,
-    unreadCount,
-    loading,
-    filter,
-    markAsRead,
-    markAllAsRead,
-    dismissNotification,
-    setFilter,
-    fetchNotifications,
-    setNotifications,
+;
+  return {;
+    notifications,;
+    filteredNotifications,;
+    unreadCount,;
+    loading,;
+    filter,;
+    markAsRead,;
+    markAllAsRead,;
+    dismissNotification,;
+    setFilter,;
+    fetchNotifications,;
+    setNotifications,;
   };
 };

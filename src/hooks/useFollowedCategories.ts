@@ -1,42 +1,42 @@
 import { useEffect, useState } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
-
+;
 const STORAGE_KEY = 'followed_categories';
-
-export function useFollowedCategories() {
+;
+export function useFollowedCategories() {;
   const [followed, setFollowed] = useState<string[]>([]);
-
-  useEffect(() => {
+;
+  useEffect(() => {;
     const raw = safeStorage.getItem(STORAGE_KEY);
-    if (raw) {
-      try {
+    if (raw) {;
+      try {;
         setFollowed(JSON.parse(raw));
-      } catch {
-        // Ignore errors
-      }
-    }
+      } catch {;
+        // Ignore errors;
+      };
+    };
   }, []);
-
-  const save = (_data: string[]) => {
+;
+  const save = (_data: string[]) => {;
     setFollowed(data);
     safeStorage.setItem(STORAGE_KEY, JSON.stringify(data));
   };
-
-  const follow = (_categoryId: string) => {
-    if (!followed.includes(categoryId)) {
+;
+  const follow = (_categoryId: string) => {;
+    if (!followed.includes(categoryId)) {;
       save([...followed, categoryId]);
-    }
+    };
   };
-
-  const unfollow = (_categoryId: string) => {
-    if (followed.includes(categoryId)) {
+;
+  const unfollow = (_categoryId: string) => {;
+    if (followed.includes(categoryId)) {;
       save(followed.filter((id) => id !== categoryId));
-    }
+    };
   };
-
+;
   const isFollowed = (categoryId: string) => followed.includes(categoryId);
-
+;
   return { followed, follow, unfollow, isFollowed };
-}
+};
 
 export default useFollowedCategories;

@@ -1,12 +1,12 @@
 export {};
-
-declare global {
-  interface BeforeInstallPromptEvent extends Event {
+;
+declare global {;
+  interface BeforeInstallPromptEvent extends Event {;
     readonly platforms: readonly string[];
-    readonly userChoice: Promise<{
+    readonly userChoice: "Promise<{;",
       outcome: 'accepted' | 'dismissed';
-      platform: string;
+      platform: "string;"
     }>;
     prompt(): Promise<void>;
-  }
-}
+  };
+};

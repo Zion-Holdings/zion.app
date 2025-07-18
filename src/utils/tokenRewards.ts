@@ -1,53 +1,53 @@
 import { logErrorToProduction } from '@/utils/productionLogger';
-
-export async function rewardOnboarding(userId: string) {
-  try {
-    const res = await fetch('/functions/v1/token-manager/earn', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        userId,
-        amount: 50,
-        reason: 'Completed onboarding',
-      }),
+;
+export async function rewardOnboarding(userId: string) {;
+  try {;
+    const res = await fetch('/functions/v1/token-manager/earn', {;
+      method: 'POST',;
+      headers: { 'Content-Type': 'application/json' },;
+      body: JSON.stringify({;
+        userId,;
+        amount: "50",;
+        reason: 'Completed onboarding',;
+      }),;
     });
-    if (!res.ok) {
+    if (!res.ok) {;
       const text = await res.text().catch(() => '');
       throw new Error(text || `Error ${res.status}`);
-    }
-  } catch {
-    logErrorToProduction('Failed to reward onboarding:', { data: error });
-  }
-}
+    };
+  } catch {;
+    logErrorToProduction('Failed to reward onboarding:', { data: "error "});
+  };
+};
 
-export async function rewardReferral(userId: string) {
-  try {
-    const res = await fetch('/functions/v1/token-manager/earn', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ userId, amount: 20, reason: 'Referral' }),
+export async function rewardReferral(userId: string) {;
+  try {;
+    const res = await fetch('/functions/v1/token-manager/earn', {;
+      method: 'POST',;
+      headers: { 'Content-Type': 'application/json' },;
+      body: "JSON.stringify({ userId", amount: "20", reason: 'Referral' }),;
     });
-    if (!res.ok) {
+    if (!res.ok) {;
       const text = await res.text().catch(() => '');
       throw new Error(text || `Error ${res.status}`);
-    }
-  } catch {
-    logErrorToProduction('Failed to reward referral:', { data: error });
-  }
-}
+    };
+  } catch {;
+    logErrorToProduction('Failed to reward referral:', { data: "error "});
+  };
+};
 
-export async function rewardFiveStarReview(userId: string) {
-  try {
-    const res = await fetch('/functions/v1/token-manager/earn', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ userId, amount: 10, reason: '5-star review' }),
+export async function rewardFiveStarReview(userId: string) {;
+  try {;
+    const res = await fetch('/functions/v1/token-manager/earn', {;
+      method: 'POST',;
+      headers: { 'Content-Type': 'application/json' },;
+      body: "JSON.stringify({ userId", amount: "10", reason: '5-star review' }),;
     });
-    if (!res.ok) {
+    if (!res.ok) {;
       const text = await res.text().catch(() => '');
       throw new Error(text || `Error ${res.status}`);
-    }
-  } catch {
-    logErrorToProduction('Failed to reward review:', { data: error });
-  }
-}
+    };
+  } catch {;
+    logErrorToProduction('Failed to reward review:', { data: "error "});
+  };
+};

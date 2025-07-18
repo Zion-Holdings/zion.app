@@ -1,243 +1,243 @@
-/**
- * Optimized icon exports for better tree shaking and bundle size
- * This file centralizes all icon imports to reduce bundle size
- */
+/**;
+ * Optimized icon exports for better tree shaking and bundle size;
+ * This file centralizes all icon imports to reduce bundle size;
+ */;
 
-// Layout & Design Icons
-export {
-  Grid,
-  List,
-  Columns,
-  Rows,
-  Layout,
-  Sidebar,
-  Maximize,
-  Minimize,
-  Move,
-  RotateCcw,
-  LayoutGrid,
+// Layout & Design Icons;
+export {;
+  Grid,;
+  List,;
+  Columns,;
+  Rows,;
+  Layout,;
+  Sidebar,;
+  Maximize,;
+  Minimize,;
+  Move,;
+  RotateCcw,;
+  LayoutGrid,;
 } from 'lucide-react';
-
-// Utility Icons
-export {
-  Home,
-  MapPin,
-  Link,
-  ExternalLink,
-  RefreshCw,
-  RefreshCcw,
-  ZoomIn,
-  ZoomOut,
-  Eye,
-  EyeOff,
-  Sun,
-  Moon,
-  Monitor,
-  PowerOff,
+;
+// Utility Icons;
+export {;
+  Home,;
+  MapPin,;
+  Link,;
+  ExternalLink,;
+  RefreshCw,;
+  RefreshCcw,;
+  ZoomIn,;
+  ZoomOut,;
+  Eye,;
+  EyeOff,;
+  Sun,;
+  Moon,;
+  Monitor,;
+  PowerOff,;
 } from 'lucide-react';
-
-// Status Icons
-export {
-  Check,
-  CheckCircle,
-  CheckCircle2,
-  AlertCircle,
-  AlertTriangle,
-  Info,
-  XCircle,
-  Loader2,
-  Clock,
-  Calendar,
-  Bell,
-  Ban,
-  ShieldAlert,
-  HelpCircle,
-  ShieldCheck,
+;
+// Status Icons;
+export {;
+  Check,;
+  CheckCircle,;
+  CheckCircle2,;
+  AlertCircle,;
+  AlertTriangle,;
+  Info,;
+  XCircle,;
+  Loader2,;
+  Clock,;
+  Calendar,;
+  Bell,;
+  Ban,;
+  ShieldAlert,;
+  HelpCircle,;
+  ShieldCheck,;
 } from 'lucide-react';
-
-// Media Icons
-export {
-  Play,
-  Pause,
-  Volume2,
-  VolumeX,
-  Image,
-  Video,
-  Camera,
-  Mic,
-  MicOff,
-  PlayCircle,
+;
+// Media Icons;
+export {;
+  Play,;
+  Pause,;
+  Volume2,;
+  VolumeX,;
+  Image,;
+  Video,;
+  Camera,;
+  Mic,;
+  MicOff,;
+  PlayCircle,;
 } from 'lucide-react';
-
-// File & Document Icons
-export {
-  File,
-  FileText,
-  FileImage,
-  FileVideo,
-  FileAudio,
-  FilePlus,
-  Folder,
-  FolderOpen,
-  Save,
-  Clipboard,
-  PaperclipIcon,
-  Archive,
+;
+// File & Document Icons;
+export {;
+  File,;
+  FileText,;
+  FileImage,;
+  FileVideo,;
+  FileAudio,;
+  FilePlus,;
+  Folder,;
+  FolderOpen,;
+  Save,;
+  Clipboard,;
+  PaperclipIcon,;
+  Archive,;
 } from 'lucide-react';
-
-// Social & User Icons
-export {
-  User,
-  Users,
-  UserPlus,
-  UserMinus,
-  Settings,
-  LogOut,
-  LogIn,
-  UserCheck,
-  Shield,
-  Lock,
-  Unlock,
-  LockKeyhole,
-  Key,
-  UserIcon,
+;
+// Social & User Icons;
+export {;
+  User,;
+  Users,;
+  UserPlus,;
+  UserMinus,;
+  Settings,;
+  LogOut,;
+  LogIn,;
+  UserCheck,;
+  Shield,;
+  Lock,;
+  Unlock,;
+  LockKeyhole,;
+  Key,;
+  UserIcon,;
 } from 'lucide-react';
-
-// Business & Finance Icons
-export {
-  DollarSign,
-  CreditCard,
-  Wallet,
-  TrendingUp,
-  TrendingDown,
-  BarChart3,
-  PieChart,
-  Activity,
-  Target,
-  Award,
-  Package,
-  Briefcase,
-  BriefcaseIcon,
-  Gift,
-  BadgeDollarSign,
-  Badge,
-  BadgeCheck,
-  Crown,
-  Medal,
-  Trophy,
-  Handshake,
-  ShoppingCart,
-  BadgePlus,
+;
+// Business & Finance Icons;
+export {;
+  DollarSign,;
+  CreditCard,;
+  Wallet,;
+  TrendingUp,;
+  TrendingDown,;
+  BarChart3,;
+  PieChart,;
+  Activity,;
+  Target,;
+  Award,;
+  Package,;
+  Briefcase,;
+  BriefcaseIcon,;
+  Gift,;
+  BadgeDollarSign,;
+  Badge,;
+  BadgeCheck,;
+  Crown,;
+  Medal,;
+  Trophy,;
+  Handshake,;
+  ShoppingCart,;
+  BadgePlus,;
 } from 'lucide-react';
-
-// Data Visualization Icons
+;
+// Data Visualization Icons;
 export { BarChart, LineChart } from 'lucide-react';
-
-// Development & Tech Icons
-export {
-  Code,
-  GitBranch,
-  GitCommit,
-  GitPullRequest,
-  Bug,
-  Zap,
-  Cpu,
-  Database,
-  Server,
-  Globe,
-  Wifi,
-  WifiOff,
-  BookOpen,
-  Terminal,
-  Sparkles,
-  Bot,
-  HardDrive,
-  Lightbulb,
-  Webhook,
-  Network,
-  Recycle,
-  Truck,
-  Smartphone,
-  Building,
+;
+// Development & Tech Icons;
+export {;
+  Code,;
+  GitBranch,;
+  GitCommit,;
+  GitPullRequest,;
+  Bug,;
+  Zap,;
+  Cpu,;
+  Database,;
+  Server,;
+  Globe,;
+  Wifi,;
+  WifiOff,;
+  BookOpen,;
+  Terminal,;
+  Sparkles,;
+  Bot,;
+  HardDrive,;
+  Lightbulb,;
+  Webhook,;
+  Network,;
+  Recycle,;
+  Truck,;
+  Smartphone,;
+  Building,;
 } from 'lucide-react';
-
-// Action Icons
-export {
-  Plus,
-  PlusCircle,
-  Minus,
-  Edit,
-  Trash2,
-  Copy,
-  Download,
-  Upload,
-  Share,
-  Heart,
-  Star,
-  StarIcon,
-  StarOff,
-  Bookmark,
-  Flag,
-  MoreHorizontal,
-  MoreVertical,
-  Reply,
-  Forward,
-  MessageSquare,
-  MessageCircle,
-  Mail,
-  Phone,
-  Send,
-  Inbox,
-  Kanban,
-  CalendarIcon,
-  ThumbsUp,
-  ThumbsDown,
-  Quote,
-  InfoIcon,
-  QrCode,
-  QrCodeIcon,
-  Apple,
-  Facebook,
-  Twitter,
-  Linkedin,
-  Link as LinkIcon,
-  Megaphone,
-  Pin,
-  Instagram,
-  Youtube,
-  Github,
-  Slack,
+;
+// Action Icons;
+export {;
+  Plus,;
+  PlusCircle,;
+  Minus,;
+  Edit,;
+  Trash2,;
+  Copy,;
+  Download,;
+  Upload,;
+  Share,;
+  Heart,;
+  Star,;
+  StarIcon,;
+  StarOff,;
+  Bookmark,;
+  Flag,;
+  MoreHorizontal,;
+  MoreVertical,;
+  Reply,;
+  Forward,;
+  MessageSquare,;
+  MessageCircle,;
+  Mail,;
+  Phone,;
+  Send,;
+  Inbox,;
+  Kanban,;
+  CalendarIcon,;
+  ThumbsUp,;
+  ThumbsDown,;
+  Quote,;
+  InfoIcon,;
+  QrCode,;
+  QrCodeIcon,;
+  Apple,;
+  Facebook,;
+  Twitter,;
+  Linkedin,;
+  Link as LinkIcon,;
+  Megaphone,;
+  Pin,;
+  Instagram,;
+  Youtube,;
+  Github,;
+  Slack,;
 } from 'lucide-react';
-
-// Navigation & UI Icons
-export {
-  Menu,
-  X,
-  Search,
-  SearchIcon,
-  Filter,
-  SortAsc,
-  SortDesc,
-  ChevronDown,
-  ChevronUp,
-  ChevronLeft,
-  ChevronRight,
-  ArrowLeft,
-  ArrowRight,
-  ArrowUp,
-  ArrowDown,
-  ArrowDownAZ,
-  ArrowUpZA,
-  Circle,
-  CircleDot,
-  Dot,
-  GripVertical,
-  PanelLeft,
-  ImageIcon,
+;
+// Navigation & UI Icons;
+export {;
+  Menu,;
+  X,;
+  Search,;
+  SearchIcon,;
+  Filter,;
+  SortAsc,;
+  SortDesc,;
+  ChevronDown,;
+  ChevronUp,;
+  ChevronLeft,;
+  ChevronRight,;
+  ArrowLeft,;
+  ArrowRight,;
+  ArrowUp,;
+  ArrowDown,;
+  ArrowDownAZ,;
+  ArrowUpZA,;
+  Circle,;
+  CircleDot,;
+  Dot,;
+  GripVertical,;
+  PanelLeft,;
+  ImageIcon,;
 } from 'lucide-react';
-
-// Export type for icon component props
-export type IconProps = {
+;
+// Export type for icon component props;
+export type IconProps = {;
   size?: number;
   className?: string;
   color?: string;
