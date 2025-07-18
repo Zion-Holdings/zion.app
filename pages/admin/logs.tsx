@@ -137,7 +137,7 @@ export default function LogsPage({ logs: initialLogs, errorCount, warningCount, 
         const data = await response.json();
         setLogs(data.logs);
       }
-    } catch {
+    } catch (error) {
       logErrorToProduction('Failed to refresh logs:', error);
     } finally {
       setIsLoading(false);
@@ -157,7 +157,7 @@ export default function LogsPage({ logs: initialLogs, errorCount, warningCount, 
   };
 
   const formatTimestamp = (_timestamp: string) => {
-    return new Date(timestamp).toLocaleString();
+    return new Date(_timestamp).toLocaleString();
   };
 
   const formatPerformance = (performance?: LogEntry['performance']) => {
@@ -356,7 +356,7 @@ export default function LogsPage({ logs: initialLogs, errorCount, warningCount, 
                   
                   <div className="flex items-center justify-between text-xs text-muted-foreground">
                     <div>
-                      Session: {log.sessionId}
+                      Session: {log._sessionId}
                       {log.userId && ` • User: ${log.userId}`}
                     </div>
                     {log.performance && (
@@ -430,8 +430,8 @@ export const _getServerSideProps: GetServerSideProps = async () => {
         lastUpdated: new Date().toISOString(),
       },
     };
-  } catch {
-            logErrorToProduction('Error reading logs:', error);
+  } catch (error) {
+    logErrorToProduction('Error reading logs:', error);
     return {
       props: {
         logs: [],
