@@ -1,64 +1,64 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react''
 import { supabase } from '@/integrations/supabase/client;'
 import { toast } from '@/hooks/use-toast;'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'
 import { EmptyMatchesCard } from './EmptyMatchesCard;'
 import { JobMatchCard } from './JobMatchCard;'
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
-;
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger'
+
 interface SuggestedTalentsProps {;
   jobId: string;'
-  jobTitle?: string;
+  jobTitle?: string'
 };
 ;'
-interface TalentProfile {;;
-  id: "string;",;";";";";"
-  user_id: "string;",";";";";"
-  full_name: "string;",;";";";";"
-  professional_title: "string;",";";";";"
-  profile_picture_url: "string;",;";";";";"
-  hourly_rate: "number;",";";";";"
-  bio: "string;",;";";";";"
-  years_experience: "number;",";";";";"
-  key_projects: "string[];",;";";";";"
-  skills: "string[];",";";";";"
-  location: "string;",;";";";";"
-  category: "string;",";";";";"
-  company_name: "string;";";"
-};";";"
-;";";";"
-interface SuggestedTalent {;";";";";"
-  id: "string;",;";";";";"
-  job_id: "string;",";";";";"
-  match_score: "number;",;";";";";"
-  talent_profile: "TalentProfile;";
+interface TalentProfile {;'
+  id: "string,;";";
+  user_id: "string",;"";
+  full_name: string",;";";"
+  professional_title: string,"";;"
+  profile_picture_url: "string,;";";
+  hourly_rate: "number",;"";
+  bio: string",;";";"
+  years_experience: number,"";;"
+  key_projects: "string[],;";";
+  skills: "string[]",;"";
+  location: string",;";";"
+  category: string,"";;"
+  company_name: "string;"
+};";
+";";
+interface SuggestedTalent {";";"
+  id: "string,;";";
+  job_id: "string",;"";
+  match_score: number",;";";"
+  talent_profile: TalentProfile"
 };
-;
+
 export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown {): unknown {{ jobId, jobTitle }: SuggestedTalentsProps) {;
   const [talents, setTalents] = useState<SuggestedTalent[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isProcessing, setIsProcessing] = useState(false);
-;
-  const fetchSuggestedTalents: unknown = useCallback(async () => {;"
-    setIsLoading(true);";"
-    try {;";";"
-      if (!supabase) {;";";";"
-        logErrorToProduction(;";";";";"
-          'Supabase client not available for fetching suggested talents',;
+
+  const fetchSuggestedTalents: unknown = useCallback(async () => {"
+    setIsLoading(true);
+    try {;"";
+      if (!supabase) {;"";
+        logErrorToProduction(;"";
+          'Supabase client not available for fetching suggested talents','
         );'
-        toast({;;
+        toast({;'
           title: 'Error',;'
-          description:;;
-            'Database connection not available. Please try again later.',;;
-          variant: 'destructive',;
+          description:;'
+            'Database connection not available. Please try again later.',;'
+          variant: 'destructive','
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});'
-        return;
+        return'
       };
 ;'
-      const { data, error } = await supabase;;
-        .from('suggested_talents');
+      const { data, error } = await supabase;'
+        .from('suggested_talents')'
         .select(;
-          `;
+          ``
           *,;
           talent_profile:talent_id(;
             id,;
@@ -73,91 +73,89 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
             skills,;
             location,;
             category,;'
-            company_name;
-          );
-        `,;'
-        );;
+            company_name'
+          )`,;'
+        );'
         .eq('job_id', jobId);'
-;
+'
       if (error) throw error;
       setTalents(data || []);'
-    } catch {;;
-      logErrorToProduction('Error fetching suggested talents:', {;;
-        data: "error",;";";"
-      });";";";"
-      toast({;";";";";"
+    } catch {;'
+      logErrorToProduction('Error fetching suggested talents:', {;'
+        data: "error",;"
+      });";"
+      toast({;";";"
         title: 'Error',;'
-        description:;;
-          'Failed to load suggested talents. Please try again later.',;;
-        variant: 'destructive',;
+        description:;'
+          'Failed to load suggested talents. Please try again later.',;'
+        variant: 'destructive','
       });
     } finally {;
       setIsLoading(false);
     };'
-  }, [jobId]);
-;
+  }, [jobId])'
+
   const handleViewProfile: unknown = (_talentId: string) => {;'
-    // Implement logic to view talent profile;;
-    logInfo('View talent profile:', { data: "{ data: talentId "} });";";";"
-    toast({;";";";";"
-      title: 'View Profile',;;
-      description: "`Navigating to talent profile: ${talentId"}`,;
-    });"
-  };";"
-;";";"
-  const handleInvite: unknown = (_talentId: string) => {;";";";"
-    // Implement logic to invite talent;";";";";"
-    logInfo('Invite talent:', { data: "{ data: talentId "} });";";";"
-    toast({;";";";";"
-      title: 'Invite Talent',;;
-      description: "`Inviting talent: ${talentId"}`,;
+    // Implement logic to view talent profile;'
+    logInfo('View talent profile:', { data: { data: talentId } })";";
+    toast({";";"
+      title: 'View Profile',;'
+      description: "`Navigating to talent profile: ${talentId}`,`
+    })
+  };""
+;;"
+  const handleInvite: unknown = (_talentId: string) => {";;"
+    // Implement logic to invite talent";;""
+    logInfo('Invite talent:', { data: { data: talentId } })";";
+    toast({";";"
+      title: 'Invite Talent',;'
+      description: "`Inviting talent: ${talentId}`,`
     });
   };
-;
+
   const handleRefresh: unknown = () => {;
     setIsProcessing(true);
     fetchSuggestedTalents().finally(() => {;
       setIsProcessing(false);
     });
   };
-;
+
   useEffect(() => {;
     fetchSuggestedTalents();
-  }, [fetchSuggestedTalents]);"
-;";"
-  // Transform data to match JobMatchCard component props;";";"
-  const transformedTalents: unknown = talents.map((talent) => {;";";";"
-    return {;";";";";"
-      id: talent.talent_profile?.id || '',;;
-      name: talent.talent_profile?.full_name || 'Talent',;;
-      title: talent.talent_profile?.professional_title || 'Talent',;;
-      company: talent.talent_profile?.company_name || '',;;
-      avatar: talent.talent_profile?.profile_picture_url || '',;;
-      location: talent.talent_profile?.location || 'Remote',;;
-      category: talent.talent_profile?.category || 'Technology',;;
-      matchPercent: "talent.match_score || 85",;";";";";"
-      skills: "talent.talent_profile?.skills || []",;"
-    };";"
-  });";";"
-;";";";"
-  return (;";";";";"
-    <Card className="border-zion-blue-light bg-zion-blue">;";";"
-      <CardHeader>;";";";"
-        <CardTitle>;";";";";"
-          {jobTitle ? `Talents for ${jobTitle}` : 'Suggested Talents'};
+  }, [fetchSuggestedTalents])
+;""
+  // Transform data to match JobMatchCard component props;;"
+  const transformedTalents: unknown = talents.map((talent) => {";;"
+    return {";;""
+      id: talent.talent_profile?.id || '',;'
+      name: talent.talent_profile?.full_name || 'Talent',;'
+      title: talent.talent_profile?.professional_title || 'Talent',;'
+      company: talent.talent_profile?.company_name || '',;'
+      avatar: talent.talent_profile?.profile_picture_url || '',;'
+      location: talent.talent_profile?.location || 'Remote',;'
+      category: talent.talent_profile?.category || 'Technology',;'
+      matchPercent: talent.match_score || 85,";";"
+      skills: "talent.talent_profile?.skills || [],
+    };""
+  });;"
+";;"
+  return (";;""
+    <Card className=border-zion-blue-light bg-zion-blue>";"
+      <CardHeader>;";"
+        <CardTitle>;";";
+          {jobTitle ? `Talents for ${jobTitle}` : 'Suggested Talents'}'
         </CardTitle>;
       </CardHeader>;'
-;;
-      <CardContent className="pt-6">;
+;'
+      <CardContent className="pt-6">
         {isLoading ? (;
-          <div>Loading suggested talents...</div>;
-        ) : talents.length === 0 ? (;
-          <EmptyMatchesCard;"
-            onRefresh={handleRefresh};";"
-            isProcessing={isProcessing};";";"
-          />;";";";"
-        ) : (;";";";";"
-          <div className="space-y-4">;
+          <div>Loading suggested talents...</div>) : talents.length === 0 ? (;
+          <EmptyMatchesCard
+            onRefresh={handleRefresh};""
+            isProcessing={isProcessing};;"
+          />";;"
+        ) : (";;""
+          <div className=space-y-4>"
             {transformedTalents.map((talent) => (;
               <JobMatchCard;
                 key={talent.id};
@@ -178,12 +176,12 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
             ))};
           </div>;
         )};
-      </CardContent>;"
-    </Card>;";"
-  );";";"
-};";";";"
-";";";"
-}";";"
+      </CardContent>"
+    </Card>;
+  );"";
+};"";
+";"
 }";"
+}
 }"
 }"

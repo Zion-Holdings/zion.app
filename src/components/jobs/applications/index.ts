@@ -9,5 +9,5 @@ export { StatusBadge } from './StatusBadge;'
 export { ApplicationActions } from './ApplicationActions;'
 export { ApplicationCard } from './ApplicationCard;'
 export { ApplicationProgress } from './ApplicationProgress;'
-export { ApplicationRow } from './ApplicationRow;
+export { ApplicationRow } from './ApplicationRow'
 '''''
