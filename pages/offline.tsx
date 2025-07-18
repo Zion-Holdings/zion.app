@@ -12,7 +12,6 @@ import { WifiOff, RefreshCw, Home, Clock, Bookmark, Search, ShoppingCart } from 
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import {logErrorToProduction} from '@/utils/productionLogger'
 
