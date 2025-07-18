@@ -32,12 +32,12 @@ interface BlogPostPageProps {
   /**
    * Preloaded blog post for static generation. Can be null if not found.
    */
-  _initialPost: BlogPost | null;
+  initialPost: BlogPost | null;
 }
 
 const BlogPostPage: React.FC<BlogPostPageProps> = ({ initialPost }) => {
   const router = useRouter();
-  const { _slug } = router.query;
+  const { slug } = router.query;
   const [post, setPost] = React.useState<BlogPost | null>(initialPost);
   const [error, setError] = React.useState<string | null>(null);
 
@@ -129,7 +129,7 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ initialPost }) => {
 
 export default BlogPostPage;
 
-// export const _getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   try {
     const dir = path.join(process.cwd(), 'content', 'blog');
     if (!fs.existsSync(dir)) {
@@ -142,7 +142,7 @@ export default BlogPostPage;
     }));
     // Use `blocking` so new posts added after build can be generated on demand
     return { paths, fallback: 'blocking' };
-  } catch {
+  } catch (error) {
     logError('Failed to read blog directory:', { data: typeof error === 'object' && error !== null ? error : {} });
     return { paths: [], fallback: 'blocking' };
   }
@@ -165,7 +165,7 @@ export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({
       return { notFound: true };
     }
     return { props: { initialPost: post }, revalidate: 60 };
-  } catch {
+  } catch (error) {
     logError('Failed to read blog post:', { data: typeof error === 'object' && error !== null ? error : {} });
     return { notFound: true };
   }

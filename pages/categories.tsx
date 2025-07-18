@@ -4,8 +4,7 @@ import type { GetStaticProps } from 'next';
 import { CATEGORIES } from '@/data/categories'; // Import CATEGORIES
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
-// export const _getStaticProps: GetStaticProps<CategoriesProps> = async () => {
-
+export const getStaticProps: GetStaticProps<CategoriesProps> = async () => {
   const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
   const isBuildTime = process.env.NETLIFY || process.env.NODE_ENV === 'production' && !process.env.RUNTIME_ENVIRONMENT;
   
@@ -36,7 +35,7 @@ import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
       logInfo(`API request failed with status ${res.status}, falling back to default categories.`);
       return { props: { categories: CATEGORIES } };
     }
-  } catch {
+  } catch (error) {
     logErrorToProduction('Error fetching categories in getStaticProps, falling back to default. Error:', { data: error });
     return { props: { categories: CATEGORIES } };
   }

@@ -211,7 +211,11 @@ export default function LogsPage({ logs, totalLogs, error }: LogsPageProps) {
   );
 }
 
+<<<<<<< HEAD
+export const getServerSideProps: GetServerSideProps = async () => {
+=======
 export const getServerSideProps: GetServerSideProps<LogsPageProps> = async () => {
+>>>>>>> 85a51cdcdb539afe2abf7ce6f779a11d58548b70
   try {
     // This would normally fetch logs from your logging system
     // For now, return mock data
