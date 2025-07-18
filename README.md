@@ -105,6 +105,90 @@ npx ts-node --transpile-only scripts/check-env.ts
 console.log('Supabase configured:', !!window.location.origin.includes('localhost') || !!process.env.NEXT_PUBLIC_SUPABASE_URL)
 ```
 
+## 🚀 Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## 🤖 Advanced Self-Healing System
+
+The Zion App includes a comprehensive **Advanced Self-Healing System** that automatically detects, fixes, and improves the application continuously.
+
+### Quick Start
+
+```bash
+# Start the advanced self-healing system
+npm run advanced-heal:start
+
+# Start the continuous improvement pipeline
+npm run improvement:start
+
+# Check system status
+npm run advanced-heal:status
+npm run improvement:status
+```
+
+### Features
+
+- **🔧 Automatic Error Detection & Fixing**: Detects and fixes build, lint, TypeScript, runtime, performance, security, and accessibility issues
+- **🤖 Intelligent Cursor Chat Integration**: Triggers detailed Cursor chats with comprehensive project context for continuous improvement
+- **🔄 Continuous Improvement Pipeline**: Runs improvement cycles every 5 minutes with automatic commits and pushes to main branch
+- **📊 Comprehensive Monitoring**: Real-time health checks, performance metrics, and detailed reporting
+
+### Available Commands
+
+```bash
+# Advanced Self-Healing System
+npm run advanced-heal:start      # Start the system
+npm run advanced-heal:stop       # Stop the system
+npm run advanced-heal:status     # Check status
+npm run advanced-heal:report     # Generate report
+npm run advanced-heal:monitor    # Run one monitoring cycle
+
+# Continuous Improvement Pipeline
+npm run improvement:start        # Start the pipeline
+npm run improvement:stop         # Stop the pipeline
+npm run improvement:status       # Check pipeline status
+npm run improvement:report       # Generate improvement report
+npm run improvement:run          # Run one improvement cycle
+
+# Cursor Chat Triggers
+npm run cursor-chat:comprehensive [category]  # Trigger comprehensive analysis
+npm run cursor-chat:specific <category> <issue>  # Trigger specific issue resolution
+
+# Convenience Commands
+npm run auto-improve             # Start auto-improvement
+npm run auto-heal:advanced       # Start advanced healing
+npm run continuous:start         # Start continuous improvement
+npm run continuous:status        # Check continuous status
+```
+
+### Environment Variables
+
+```bash
+# Required for Cursor integration
+export CURSOR_API_KEY="your_cursor_api_key"
+export CURSOR_WORKSPACE_ID="your_workspace_id"
+
+# Git configuration for automatic commits
+export GIT_AUTHOR_NAME="Advanced Self-Healing Bot"
+export GIT_AUTHOR_EMAIL="advanced-self-healing@zion.app"
+```
+
+### Documentation
+
+- [Advanced Self-Healing System Guide](docs/ADVANCED_SELF_HEALING_SYSTEM.md)
+- [Continuous Improvement Guide](docs/CONTINUOUS_IMPROVEMENT_GUIDE.md)
+- [Self-Healing Quick Reference](docs/SELF_HEALING_QUICK_REFERENCE.md)
+
 ## Getting Started
 
 1.  **Prerequisites:** Node.js (v20+), npm, Python, pip, Docker (recommended).
