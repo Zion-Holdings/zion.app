@@ -1,4 +1,3 @@
-import type { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { useAuth } from '@/context/auth/AuthProvider';
@@ -12,7 +11,6 @@ import { TALENT_PROFILES } from '@/data/talentData';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import { useDebounce } from '@/hooks/useDebounce';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
-import type { TalentProfile } from '@/types/talent';
 
 
 interface BaseSearchResult {
