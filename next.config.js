@@ -1,4 +1,4 @@
-
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   webpack: (config, { dev, isServer }) => {
     if (dev && !isServer) {
@@ -32,6 +32,5 @@ const nextConfig = {
     pagesBufferLength: 2,
   },
 };
-      
 
-module.exports = nextConfig;
+export default nextConfig;
