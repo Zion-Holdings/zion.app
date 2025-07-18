@@ -37,7 +37,7 @@ export async function getClientBudgetSuggestion(params: ClientBudgetParams): Pro
     if (!response.ok) throw new Error('Failed to fetch pricing suggestion');
     const data = await response.json();
     return data;
-  } catch (_error) {
+  } catch {
     return {
       minRate: 0,
       maxRate: 0,

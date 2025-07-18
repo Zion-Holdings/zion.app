@@ -216,7 +216,7 @@ class EnhancedLogAnalytics {
       timestamp: now
     };
 
-    logWarn('Alert triggered: ${rule.name}', { data: alertData });
+    logWarn(`Alert triggered: ${rule.name}`, { data: alertData });
 
     // Execute alert actions
     rule.actions.forEach(action => {

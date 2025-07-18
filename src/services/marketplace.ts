@@ -107,11 +107,8 @@ const createMarketplaceClient = () => {
       }
       return config;
     },
-    (error: unknown) => {
-      if (process.env.NODE_ENV === 'development') {
-        logError('Marketplace request interceptor error:', error);
-      }
-      return Promise.reject(error);
+    () => {
+      return Promise.reject();
     }
   );
 
@@ -123,19 +120,8 @@ const createMarketplaceClient = () => {
       }
       return response;
     },
-    (error: unknown) => {
-      if (process.env.NODE_ENV === 'development') {
-        const status = typeof error === 'object' && error !== null && 'response' in error && error.response && typeof error.response === 'object' && error.response !== null && 'status' in error.response ? (error.response as { status?: number }).status : undefined;
-        const url = typeof error === 'object' && error !== null && 'config' in error && error.config && typeof error.config === 'object' && error.config !== null && 'url' in error.config ? (error.config as { url?: string }).url : undefined;
-        const method = typeof error === 'object' && error !== null && 'config' in error && error.config && typeof error.config === 'object' && error.config !== null && 'method' in error.config ? (error.config as { method?: string }).method : undefined;
-        logError('Marketplace API Error:', {
-          message: (error as { message?: string }).message,
-          status,
-          url,
-          method,
-        });
-      }
-      return Promise.reject(error);
+    () => {
+      return Promise.reject();
     }
   );
 
