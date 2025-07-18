@@ -130,6 +130,18 @@ export {
   BadgePlus
 } from 'lucide-react';
 
+// Data Visualization Icons
+export {
+  BarChart,
+  BarChart3,
+  LineChart,
+  PieChart,
+  TrendingUp,
+  TrendingDown,
+  Activity,
+  Target
+} from 'lucide-react';
+
 // Development & Tech Icons
 export {
   Code,
