@@ -75,12 +75,12 @@ function checkEnvironment() {
   }
 
   if (fs.existsSync('next.config.cjs')) {
-    console.log('   ✅ next.config.cjs found');
+    console.warn('   ✅ next.config.cjs found');
   } else if (fs.existsSync('next.config.js')) {
     if (packageType === 'module') {
-      console.log('   ✅ next.config.js found (ES module)');
+      console.warn('   ✅ next.config.js found (ES module)');
     } else {
-      console.log('   ✅ next.config.js found');
+      console.warn('   ✅ next.config.js found');
     }
   } else {
     warnings.push('No Next.js config file found');
@@ -88,21 +88,21 @@ function checkEnvironment() {
 
   // Check TypeScript
   if (fs.existsSync('tsconfig.json')) {
-    console.log('   ✅ tsconfig.json found');
+    console.warn('   ✅ tsconfig.json found');
   } else {
     warnings.push('tsconfig.json not found - TypeScript configuration missing');
   }
 
   // Check Tailwind
   if (fs.existsSync('tailwind.config.js') || fs.existsSync('tailwind.config.ts')) {
-    console.log('   ✅ Tailwind config found');
+    console.warn('   ✅ Tailwind config found');
   } else {
     warnings.push('Tailwind config not found');
   }
 
   // Check for common development scripts
-  console.log('\n🔧 Development Scripts:');
-  console.log('======================');
+  console.warn('\n🔧 Development Scripts:');
+  console.warn('======================');
   
   try {
     const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
@@ -111,12 +111,12 @@ function checkEnvironment() {
     const requiredScripts = ['dev', 'build', 'start'];
     requiredScripts.forEach(script => {
       if (scripts[script]) {
-        console.log(`   ✅ ${script} script available`);
+        console.warn(`   ✅ ${script} script available`);
       } else {
         warnings.push(`${script} script missing in package.json`);
       }
     });
-  } catch (error) {
+  } catch {
     errors.push('Error reading package.json');
   }
 

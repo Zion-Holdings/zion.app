@@ -1,9 +1,9 @@
  
 // Linter workaround: define unused variables to satisfy no-undef errors
 // These are not referenced anywhere in the code, but the linter incorrectly reports them as undefined.
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+ 
 const _reason = undefined; // linter workaround for no-undef
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+ 
 const _done = undefined; // linter workaround for no-undef
 import { createClient } from '@supabase/supabase-js';
 import fs from 'fs/promises';

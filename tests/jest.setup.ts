@@ -14,8 +14,7 @@ import { TextEncoder, TextDecoder } from 'util';
 
 // Polyfill TextEncoder and TextDecoder for JSDOM environment
 global.TextEncoder = TextEncoder;
-// @ts-expect-error Node's TextDecoder might not perfectly match DOM's, but it's usually sufficient for tests
-global.TextDecoder = TextDecoder;
+(global as any).TextDecoder = TextDecoder;
 
 
 // Set up a mock for Vite environment variables accessed via import.meta.env
