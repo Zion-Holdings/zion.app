@@ -1,1 +1,29 @@
-<<<<<<< HEAD;
+import type { NextApiRequest, NextApiResponse } from 'next';
+
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== 'GET') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  // Mock jobs data
+  const jobs = [
+    {
+      id: '1',
+      title: 'Software Engineer',
+      company: 'Tech Corp',
+      location: 'Remote',
+      type: 'Full-time',
+      description: 'We are looking for a talented software engineer...'
+    },
+    {
+      id: '2',
+      title: 'Product Manager',
+      company: 'Startup Inc',
+      location: 'San Francisco, CA',
+      type: 'Full-time',
+      description: 'Join our team as a product manager...'
+    }
+  ];
+
+  res.status(200).json({ jobs });
+}

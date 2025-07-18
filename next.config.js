@@ -1,80 +1,66 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Disable file watching in development to avoid Watchpack issues
+  // Disable webpack file watching to prevent Watchpack errors
   webpack: (config, { dev, isServer }) => {
     if (dev && !isServer) {
-      // Completely disable file watching to prevent Watchpack errors
+      // Disable file watching completely
       config.watchOptions = {
         ignored: ['**/*'],
-        poll: false
+        poll: false,
+        followSymlinks: false
       };
       
-      // Use memory cache
+      // Use memory cache only
       config.cache = {
         type: 'memory',
         maxGenerations: 1
       };
       
-      // Disable path resolution that causes issues
+      // Disable problematic path resolution
       config.resolve = {
         ...config.resolve,
         fallback: {
           ...config.resolve.fallback,
           fs: false,
-          path: false
+          path: false,
+          os: false
         }
       };
+      
+      // Disable watchpack
+      config.watch = false;
     }
     return config;
   },
   
-  // Disable experimental features that cause issues
+  // Disable all experimental features
   experimental: {
     optimizePackageImports: false,
-    turbo: false
+    turbo: false,
+    esmExternals: false
   },
   
-  // Disable SWC minification in development
+  // Disable SWC minification
   swcMinify: false,
   
-  // Minimal onDemandEntries
-  onDemandEntries: {
-    maxInactiveAge: 25 * 1000,
-    pagesBufferLength: 2,
-  },
-  
-  // Basic configuration
+  // Minimal configuration
   distDir: '.next',
   generateBuildId: async () => {
     return 'build-' + Date.now();
   },
   
-  // Disable image optimization in development
+  // Disable image optimization
   images: {
     unoptimized: true
+  },
+  
+  // Disable file watching
+  onDemandEntries: {
+    maxInactiveAge: 25 * 1000,
+    pagesBufferLength: 2,
   }
 };
 
 export default nextConfig;
-// Webpack optimizations added
-// Build caching enabled
-// Webpack optimizations added
-// Build caching enabled
 // Security headers added
 // Security headers added
-// Webpack optimizations added
-// Webpack optimizations added
-// Build caching enabled
-// Build caching enabled
-// Security headers added
-// Security headers added
-// Security headers added
-// Webpack optimizations added
-// Webpack optimizations added
-// Build caching enabled
-// Build caching enabled
-// Webpack optimizations added
-// Security headers added
-// Build caching enabled
-// Webpack optimizations added
-// Build caching enabled
