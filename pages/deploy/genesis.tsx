@@ -1,3 +1,89 @@
+<<<<<<< HEAD
+import React from 'react';
+<<<<<<< HEAD
+
+// Helper function to generate IDs
+const generateId = (label: string) => {
+  return label.toLowerCase().replace(/[^\w]+/g, '-');
+};
+
+const GenesisPage: React.FC = () => {
+  const autoDeployModules = [
+    "/marketplace (Jobs, Talent, Quotes)",
+    "/gpt (ZionGPT Core + Prompt Router)",
+    "/academy (Courses, AI Tutors, Certification)",
+    "/token (ZION$ economy, escrow, staking)",
+    "/dao (Voting, Proposals, Governance Constitution)",
+    "/nation-builder (Multiverse + Digital Country Creator)",
+    "/launch-kit (Media, Press, Legal)",
+    "/book-builder (Founder Story + System Manifesto)",
+    "/roadmap + /whitepaper (Public docs)",
+    "/api-docs + /wiki (Public & partner dev guides)",
+    "/zion-brain (Auto-agent monitor + reflex logic)"
+=======
+;
+// Helper function to generate IDs;
+const generateId: unknown unknown = (_label: string) => {;'
+  return label.toLowerCase().replace(/[^\w]+/g, '-');
+};
+;
+// const _GenesisPage: unknown React.FC = () => {;
+  const autoDeployModules: unknown unknown = [;'
+    "/marketplace (Jobs, Talent, Quotes)",;"
+    "/gpt (ZionGPT Core + Prompt Router)",;"
+    "/academy (Courses, AI Tutors, Certification)",;"
+    "/token (ZION$ economy, escrow, staking)",;"
+    "/dao (Voting, Proposals, Governance Constitution)",;"
+    "/nation-builder (Multiverse + Digital Country Creator)",;"
+    "/launch-kit (Media, Press, Legal)",;"
+    "/book-builder (Founder Story + System Manifesto)",;"
+    "/roadmap + /whitepaper (Public docs)",;"
+    "/api-docs + /wiki (Public & partner dev guides)",;"
+    "/zion-brain (Auto-agent monitor + reflex logic)";
+>>>>>>> 15a42121e14e1d643bfc93127df8e4649e2d7f6a
+  ];
+;
+  const bonusModules: unknown unknown = [;"
+    "/global-map (Multiverse visualizer)",;"
+    "/franchise/onboarding (Zion OS white-label flow)",;"
+    "/referral/ambassadors (Viral growth engine)",;"
+    "/grant/portal (Zion Incubator funding deck)",;"
+    "/trailer (Auto-script + AI voice prompt)",;"
+    "/book-store (Zion hardcover print + linkable chapters)";
+  ];
+;
+  return (;"
+    <div className="min-h-screen bg-gray-900 text-white p-8">;"
+      <header className="mb-12">;"
+        <h1 className="text-4xl font-bold text-purple-400">Zion OS Instance Deployment</h1>;"
+        <p className="text-gray-200">Configure and deploy your Zion OS instances with ease.</p>;
+      </header>;
+;"
+      <main className="space-y-10">;"
+        <section className="bg-gray-800 p-6 rounded-lg shadow-xl">;"
+          <h2 className="text-2xl font-semibold text-purple-300 mb-6">Instance Configuration</h2>;"
+          <form className="space-y-6">;
+            <div>;"
+              <label htmlFor="instanceName" className="block text-sm font-medium text-gray-200">;
+                Instance Name;
+              </label>;
+              <input;"
+                type="text";"
+                name="instanceName";"
+                id="instanceName";"
+                placeholder="e.g., MyZionInstance";"
+                className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm";
+              />;
+            </div>;
+;
+            <div>;"
+              <label htmlFor="defaultLanguage" className="block text-sm font-medium text-gray-200">;
+                Default Language;
+              </label>;
+              <select;"
+                name="defaultLanguage";"
+                id="defaultLanguage";"
+=======
 import React from 'react';';'
 ;';';'
 // Helper function to generate IDs;';';';'
@@ -60,6 +146,7 @@ const generateId: unknown unknown unknown unknown unknown unknown = (_label: str
               <select;";";";";"
                 name="defaultLanguage";";";";";"
                 id="defaultLanguage";";";";";"
+>>>>>>> a19b0adf7100f906437eb81887e77bbb28c0f50c
                 className="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm";
               >;
                 <option>English</option>;

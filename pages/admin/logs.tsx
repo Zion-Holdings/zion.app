@@ -209,10 +209,75 @@ export default function LogsPage(): unknown {): unknown {): unknown {{ logs, tot
       </Card>;
     </div>;
   );
+<<<<<<< HEAD
+}
+
+export const getServerSideProps: GetServerSideProps<LogsPageProps> = async () => {
+  try {
+    // This would normally fetch logs from your logging system
+    // For now, return mock data
+    const mockLogs: LogEntry[] = [
+      {
+        id: '1',
+        timestamp: new Date().toISOString(),
+        level: 'info',
+        message: 'Application started successfully',
+        category: 'system',
+        url: '/admin/logs'
+      },
+      {
+        id: '2',
+        timestamp: new Date(Date.now() - 60000).toISOString(),
+        level: 'warn',
+        message: 'Database connection slow',
+        category: 'database',
+        url: '/api/users'
+      }
+=======
 };
 ;
 export const _getServerSideProps: unknown unknown unknown GetServerSideProps<LogsPageProps> = async () => {;
   try {;
+<<<<<<< HEAD
+    // This would normally fetch logs from your logging system;
+    // For now, return mock data;
+    const mockLogs: unknown LogEntry[] = [;
+      {;"
+        id: '1',;'
+        timestamp: "new Date().toISOString()",;"
+        level: 'info',;'
+        message: 'Application started successfully',;'
+        category: 'system',;'
+        url: '/admin/logs';
+      } catch (error) {},;
+      {;'
+        id: '2',;'
+        timestamp: "new Date(Date.now() - 60000).toISOString()",;"
+        level: 'warn',;'
+        message: 'Database connection slow',;'
+        category: 'database',;'
+        url: '/api/users';
+      };
+>>>>>>> 15a42121e14e1d643bfc93127df8e4649e2d7f6a
+    ];
+;
+    return {;'
+      props: "{;",;"
+        logs: "mockLogs",;"
+        totalLogs: "mockLogs.length;";
+      };
+    };
+  } catch (error) {;
+    return {;"
+      props: "{;",;"
+        logs: "[]",;"
+        totalLogs: "0",;"
+        error: error instanceof Error ? error.message : 'Unknown error';
+      };
+    };
+  };
+}; '
+=======
     // Mock data for now - replace with actual log fetching;"
     const mockLogs: unknown unknown unknown LogEntry[] = [;";"
       {;";";"
@@ -243,3 +308,4 @@ export const _getServerSideProps: unknown unknown unknown GetServerSideProps<Log
 };';'
 }'
 }'
+>>>>>>> a19b0adf7100f906437eb81887e77bbb28c0f50c

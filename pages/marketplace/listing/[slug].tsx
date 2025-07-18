@@ -123,6 +123,21 @@ const ListingPage: unknown unknown unknown unknown unknown "React.FC<ListingPage
           <button className="rounded border px-4 py-2">Add to Wishlist</button>;
         </div>;
         <ProductReviews productId={listing.id} />;
+<<<<<<< HEAD
+      </main>;
+    </>;
+  );
+};
+<<<<<<< HEAD
+
+export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({ params }: { params: { slug: string } }) => {
+  const slug = params?.slug as string;
+=======
+;"
+// export const _getServerSideProps: unknown "GetServerSideProps<ListingPageProps> = async ({ params "}: { params: "{ slug: string "} }) => {;
+  const slug: unknown unknown = params?.slug as string;
+>>>>>>> 15a42121e14e1d643bfc93127df8e4649e2d7f6a
+=======
       </main>;"
     </>;";"
   );";";"
@@ -130,6 +145,7 @@ const ListingPage: unknown unknown unknown unknown unknown "React.FC<ListingPage
 ;";";";";"
 // export const _getServerSideProps: unknown unknown unknown unknown unknown "GetServerSideProps<ListingPageProps> = async ({ params "}: { params: "{ slug: string "} }) => {;
   const slug: unknown unknown unknown unknown unknown unknown = params?.slug as string;
+>>>>>>> a19b0adf7100f906437eb81887e77bbb28c0f50c
   let listing: ProductListing | null = null;
 ;
   try {;

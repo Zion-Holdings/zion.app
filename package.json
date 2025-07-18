@@ -239,6 +239,30 @@
     "continuous:stop": "npm run improvement:stop",
     "continuous:status": "npm run improvement:status",
     "continuous:report": "npm run improvement:report",
+<<<<<<< HEAD
+    "ai-improvement:start": "node scripts/ai-continuous-improvement.cjs",
+    "ai-improvement:stop": "pkill -f 'ai-continuous-improvement.cjs'",
+    "ai-improvement:status": "curl -s http://localhost:3001/api/status | jq",
+    "ai-improvement:report": "node scripts/ai-continuous-improvement.cjs report",
+    "cursor-delegator:start": "node scripts/cursor-ai-delegator.cjs",
+    "cursor-delegator:stop": "pkill -f 'cursor-ai-delegator.cjs'",
+    "cursor-delegator:status": "curl -s http://localhost:3005/api/status | jq",
+    "cursor-delegator:submit": "curl -X POST http://localhost:3005/api/tasks/submit -H 'Content-Type: application/json' -d",
+    "multi-coordinator:start": "node scripts/multi-computer-coordinator.cjs",
+    "multi-coordinator:stop": "pkill -f 'multi-computer-coordinator.cjs'",
+    "multi-coordinator:status": "curl -s http://localhost:3002/api/nodes/status | jq",
+    "ai-delegate:start": "npm run ai-improvement:start && npm run cursor-delegator:start && npm run multi-coordinator:start",
+    "ai-delegate:stop": "npm run ai-improvement:stop && npm run cursor-delegator:stop && npm run multi-coordinator:stop",
+    "ai-delegate:status": "echo 'AI Improvement System:' && npm run ai-improvement:status && echo 'Cursor Delegator:' && npm run cursor-delegator:status && echo 'Multi-Coordinator:' && npm run multi-coordinator:status",
+    "ai-delegate:master": "MASTER_NODE=true IS_MASTER=true npm run ai-delegate:start",
+    "ai-delegate:worker": "MASTER_NODE=false IS_MASTER=false npm run ai-delegate:start",
+    "ai-delegate:submit-task": "npm run cursor-delegator:submit",
+    "ai-delegate:monitor": "watch -n 5 'npm run ai-delegate:status'",
+    "ai-delegate:logs": "tail -f logs/ai-improvement.log logs/cursor-delegator.log logs/multi-coordinator.log",
+    "ai-delegate:setup": "node scripts/setup-ai-delegation.cjs",
+    "ai-delegate:test": "node scripts/test-ai-delegation.cjs",
+    "ai-delegate:cleanup": "node scripts/cleanup-ai-delegation.cjs"
+=======
     "distributed-ai:start": "node scripts/distributed-ai-controller.cjs",
     "distributed-ai:install": "node scripts/cursor-ai-installer.cjs install-local",
     "distributed-ai:discover": "node scripts/cursor-ai-installer.cjs discover",
@@ -254,6 +278,7 @@
     "multi-computer:verify": "npm run distributed-ai:verify",
     "multi-computer:report": "npm run distributed-ai:report",
     "multi-computer:status": "npm run ai-coordinator:status"
+>>>>>>> a19b0adf7100f906437eb81887e77bbb28c0f50c
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
