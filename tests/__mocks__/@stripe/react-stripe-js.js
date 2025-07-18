@@ -49,7 +49,7 @@ const useElements = () => {
 const _loadStripe = (_type) => {
   return Promise.resolve({
     elements: jest.fn(() => ({
-      create: jest.fn(() => ({
+      create: jest.fn((_type) => ({
         mount: jest.fn(),
         unmount: jest.fn(),
         update: jest.fn(),

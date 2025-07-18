@@ -12,7 +12,7 @@ export interface NextApiResponse<T = unknown> {
   json(data: T): void;
 }
 
-export type NextPage<P = object, IP = P> = (props: P) => ReactElement | null;
+export type NextPage<P = object, _IP = P> = (props: P) => ReactElement | null;
 
 export type GetServerSideProps<P = Record<string, unknown>, _Params = Record<string, string | string[] | undefined>> = (
   context: unknown

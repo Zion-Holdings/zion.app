@@ -3,12 +3,15 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import AuthRoutes from '@/routes/AuthRoutes';
 
-jest.mock('@/pages/Signup', () => () => (
+const MockSignup = () => (
   <form>
     <label htmlFor="first">First name</label>
     <input id="first" />
   </form>
-));
+);
+MockSignup.displayName = 'MockSignup';
+
+jest.mock('@/pages/Signup', () => MockSignup);
 
 const TestComponent = () => <div>Test</div>;
 TestComponent.displayName = 'TestComponent';

@@ -17,15 +17,15 @@ export type GetStaticProps<T = unknown> = unknown;
 export type GetStaticPaths<T = unknown> = unknown;
 export type GetServerSideProps<T = unknown> = unknown;
 
-type NextPageWithLayout<T = {}> = NextPage<T> & {
+type NextPageWithLayout<_T = object> = NextPage<_T> & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
 
-type NextPageWithAuth<T = {}> = NextPage<T> & {
+type NextPageWithAuth<_T = object> = NextPage<_T> & {
   requireAuth?: boolean;
 };
 
-type NextPageWithSeo<T = {}> = NextPage<T> & {
+type NextPageWithSeo<_T = object> = NextPage<_T> & {
   seo?: {
     title?: string;
     description?: string;
