@@ -48,4 +48,6 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = nextConfig;// Security headers added
+// Webpack optimizations added
+// Build caching enabled
