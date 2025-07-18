@@ -44,7 +44,7 @@ export default async function handler(
     
     res.status(500).json({
       success: false,
-      'Error occurred': 'Internal server 'Error occurred'',
+      message: 'Internal server error',
       timestamp
     });
   }

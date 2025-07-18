@@ -53,9 +53,9 @@ export default async function handler(
     logInfo(`Equipment API: returning ${paginatedEquipment.length} items`);
     
     return res.status(200).json(paginatedEquipment);
-  } catch {
+  } catch (error) {
     clearTimeout(timeout);
-    logErrorToProduction('Equipment API 'Error occurred':', { data: 'Error occurred' });
+    logErrorToProduction('Equipment API error:', { data: error });
     return res.status(500).json({ 
       error: 'Internal Server Error: Failed to fetch equipment' 
     });

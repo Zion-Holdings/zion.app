@@ -120,7 +120,7 @@ export default async function handler(
       message: 'Internal Server Error',
       logs: [],
       statistics: {
-        'Error occurred'Count: 0,
+        errorCount: 0,
         warningCount: 0,
         totalCount: 0,
         filteredCount: 0,

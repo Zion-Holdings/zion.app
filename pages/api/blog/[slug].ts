@@ -24,8 +24,8 @@ export default function handler(
       return res.status(404).json({ error: 'Post not found' });
     }
     return res.status(200).json(post);
-  } catch {
-    logErrorToProduction('Blog API 'Error occurred'or:', { data: 'Error occurred' });
+  } catch (error) {
+    logErrorToProduction('Blog API error:', { data: error });
     return res.status(500).json({ error: 'Internal Server Error: Failed to fetch blog post' });
   }
 }
