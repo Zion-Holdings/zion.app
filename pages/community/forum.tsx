@@ -2,7 +2,7 @@ import React from 'react';
 import type { GetServerSideProps } from 'next';
 import CommunityPage from '@/pages/CommunityPage';
 
-// export const _getServerSideProps: GetServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   return {
     props: {}
   };

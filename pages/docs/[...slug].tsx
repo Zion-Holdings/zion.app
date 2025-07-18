@@ -26,7 +26,7 @@ const Doc: React.FC<DocProps> = ({ content }) => {
 
 const docsDir = path.join(process.cwd(), 'content', 'docs');
 
-// export const _getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const paths: { params: DocPageParams }[] = [];
   if (fs.existsSync(docsDir)) {
     for (const file of fs.readdirSync(docsDir)) {

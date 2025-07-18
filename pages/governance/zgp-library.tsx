@@ -9,7 +9,7 @@ const grouped = PROPOSAL_TEMPLATES.reduce<Record<string, typeof PROPOSAL_TEMPLAT
   return acc;
 }, {} as Record<string, typeof PROPOSAL_TEMPLATES>);
 
-// const _ZgpLibraryPage: React.FC = () => {
+const ZgpLibraryPage: React.FC = () => {
   return (
     <div className="container mx-auto p-4 space-y-8">
       <h1 className="text-3xl font-bold">Zion Governance Proposal Library</h1>

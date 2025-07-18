@@ -127,7 +127,7 @@ const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
   );
 };
 
-// export const _getServerSideProps: GetServerSideProps<ListingPageProps> = async ({ params }: { params: { slug: string } }) => {
+export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({ params }: { params: { slug: string } }) => {
   const slug = params?.slug as string;
   let listing: ProductListing | null = null;
 

@@ -1,11 +1,11 @@
 import React from 'react';
 
 // Helper function to generate IDs
-const generateId = (_label: string) => {
+const generateId = (label: string) => {
   return label.toLowerCase().replace(/[^\w]+/g, '-');
 };
 
-// const _GenesisPage: React.FC = () => {
+const GenesisPage: React.FC = () => {
   const autoDeployModules = [
     "/marketplace (Jobs, Talent, Quotes)",
     "/gpt (ZionGPT Core + Prompt Router)",
