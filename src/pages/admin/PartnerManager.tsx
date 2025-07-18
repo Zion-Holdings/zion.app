@@ -103,8 +103,8 @@ export default function PartnerManager() {
     }
     
     // Filter by search query
-    if (query) {
-      const lowerQuery = query.toLowerCase();
+    if (_query) {
+      const lowerQuery = _query.toLowerCase();
       filtered = filtered.filter(p => 
         p.name.toLowerCase().includes(lowerQuery) ||
         p.niche.toLowerCase().includes(lowerQuery) ||
@@ -117,23 +117,23 @@ export default function PartnerManager() {
   };
 
   const handleSearch = (_e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(e.target.value);
-    filterPartners(partners, activeTab, e.target.value);
+    setSearchQuery(_e.target.value);
+    filterPartners(partners, activeTab, _e.target.value);
   };
 
   const handleTabChange = (_value: string) => {
-    setActiveTab(value);
-    filterPartners(partners, value, searchQuery);
+    setActiveTab(_value);
+    filterPartners(partners, _value, searchQuery);
   };
 
   const handleViewDetails = (_partner: PartnerProfile) => {
-    setSelectedPartner(partner);
+    setSelectedPartner(_partner);
     setIsDetailsOpen(true);
   };
 
   const handleOpenSettings = (_partner: PartnerProfile) => {
-    setSelectedPartner(partner);
-    setCommissionRate(partner.commission_rate || 25);
+    setSelectedPartner(_partner);
+    setCommissionRate(_partner.commission_rate || 25);
     setIsSettingsOpen(true);
   };
 
@@ -141,19 +141,19 @@ export default function PartnerManager() {
     try {
       // In a real app, this would update the database
       setPartners(partners.map(p => 
-        p.id === partnerId ? { ...p, status } : p
+        p.id === partnerId ? { ...p, status: _status } : p
       ));
       
       filterPartners(
-        partners.map(p => p.id === partnerId ? { ...p, status } : p),
+        partners.map(p => p.id === partnerId ? { ...p, status: _status } : p),
         activeTab,
         searchQuery
       );
       
       toast({
-        title: status === 'approved' ? "Partner Approved" : "Partner Rejected",
-        description: `The partner has been ${status}.`,
-        variant: status === 'approved' ? "default" : "destructive",
+        title: _status === 'approved' ? "Partner Approved" : "Partner Rejected",
+        description: `The partner has been ${_status}.`,
+        variant: _status === 'approved' ? "default" : "destructive",
       });
       
       // Close the dialog if open
@@ -161,7 +161,7 @@ export default function PartnerManager() {
         setIsDetailsOpen(false);
       }
     } catch (_error) {
-      logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error updating partner status' });
+      logErrorToProduction(_error instanceof Error ? _error.message : String(_error), _error instanceof Error ? _error : undefined, { message: 'Error updating partner status' });
       toast({
         title: "Error",
         description: "Failed to update partner status",
@@ -193,7 +193,7 @@ export default function PartnerManager() {
       
       setIsSettingsOpen(false);
     } catch (_error) {
-      logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error updating partner settings' });
+      logErrorToProduction(_error instanceof Error ? _error.message : String(_error), _error instanceof Error ? _error : undefined, { message: 'Error updating partner settings' });
       toast({
         title: "Error",
         description: "Failed to update partner settings",

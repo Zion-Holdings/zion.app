@@ -14,7 +14,6 @@ import { TextEncoder, TextDecoder } from 'util';
 
 // Polyfill TextEncoder and TextDecoder for JSDOM environment
 global.TextEncoder = TextEncoder;
-// @ts-expect-error Node's TextDecoder might not perfectly match DOM's, but it's usually sufficient for tests
 global.TextDecoder = TextDecoder;
 
 // Set up a mock for Vite environment variables accessed via import.meta.env
@@ -215,7 +214,6 @@ if (typeof URL.revokeObjectURL === 'undefined') {
 
 // Polyfill for BroadcastChannel
 if (typeof BroadcastChannel === 'undefined') {
-  // @ts-expect-error BroadcastChannel polyfill for test environment - native interface doesn't exist in Node.js
   global.BroadcastChannel = class BroadcastChannelMock {
     name: string;
     constructor(name: string) {
