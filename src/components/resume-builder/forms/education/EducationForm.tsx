@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { EducationFormFields } from './EducationFormFields;'';
 

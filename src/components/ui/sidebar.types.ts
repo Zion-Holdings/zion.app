@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 import React from 'react;'';
 
   React.PropsWithoutRef<P> & React.RefAttributes<T>;''';

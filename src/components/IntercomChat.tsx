@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 ;''';
 declare global {''';

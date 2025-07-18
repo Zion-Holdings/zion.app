@@ -3,7 +3,7 @@ import {;
   CardContent,;
   CardDescription,;
   CardHeader,;
-<<<<<<< HEAD;
+
   CardTitle,;
 } from '@/components/ui/card;''';
   const steps: unknown = [;''';

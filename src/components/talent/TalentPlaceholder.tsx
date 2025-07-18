@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import React, { useState } from 'react;'';
 const DUMMY_TALENTS: unknown = [;''';

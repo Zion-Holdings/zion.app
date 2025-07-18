@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import Skeleton from '@/components/ui/skeleton;'';
   loadingComponent?: ReactNode;''';

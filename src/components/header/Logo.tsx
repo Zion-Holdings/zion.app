@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { OptimizedImage } from '@/components/ui/OptimizedImage;'';
 

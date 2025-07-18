@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
   RefreshCw,;''';
   Globe,;''';

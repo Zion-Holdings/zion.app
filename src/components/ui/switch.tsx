@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import * as SwitchPrimitives from '@radix-ui/react-switch;'';
 import { cn } from '@/lib/utils;'';

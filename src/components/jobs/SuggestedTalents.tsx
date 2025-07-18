@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger;'';
   jobId: string;''';

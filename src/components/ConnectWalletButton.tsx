@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 // src/components/ConnectWalletButton.tsx;
 ;
     address,;''';

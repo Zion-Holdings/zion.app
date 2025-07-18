@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 export { DisputeDashboard } from '';
 export { DisputeDetail } from '';
 export { DisputeForm } from '';

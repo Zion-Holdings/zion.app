@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { QrCodeIcon } from '@/components/ui/icons;'';
 

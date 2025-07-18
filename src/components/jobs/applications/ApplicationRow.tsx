@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { Calendar, User, FileText, BarChart } from '@/components/ui/icons;'';
 

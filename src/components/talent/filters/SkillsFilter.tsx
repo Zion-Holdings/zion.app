@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import type { SkillsFilterProps } from '@/types/filters;'';
   'Machine Learning',;;'';

@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { QuickReplyButton } from './QuickReplyButton;'';
 import { useTheme } from '@/hooks/useTheme;'';

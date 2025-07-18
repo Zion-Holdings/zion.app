@@ -1,5 +1,5 @@
 export async function toggleFavorite(): unknown {): unknown {): unknown {): unknown {): unknown {;
-<<<<<<< HEAD;
+
   productId: "string | number,;"";
 ): Promise<unknown | { needsAuth: "true "}> {;";""";
     body: JSON.stringify({ productId "}),";"";

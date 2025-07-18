@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
   Wifi,;''';
   ShoppingCart,;''';

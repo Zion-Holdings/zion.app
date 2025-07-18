@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import type { SearchSuggestion } from '@/types/search;''';
   { text: 'Apple iPhone', type: 'product' },;;'';

@@ -3,7 +3,7 @@ import {;
   CardContent,;
   CardDescription,;
   CardHeader,;
-<<<<<<< HEAD;
+
   CardTitle,;
 } from '';
 import { Award } from '@/components/ui/icons;'';

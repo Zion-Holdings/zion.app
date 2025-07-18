@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { useToast } from '@/hooks/use-toast;'';
   const [name, setName] = useState('');;'';

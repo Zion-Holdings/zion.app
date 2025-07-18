@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import type { ApplicationStatus } from '@/types/jobs;'';
 export function ApplicationsTracker(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''';

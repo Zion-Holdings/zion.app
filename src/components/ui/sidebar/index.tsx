@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 // Export all components from the sidebar subcomponents;
 export * from '';
 export * from '';

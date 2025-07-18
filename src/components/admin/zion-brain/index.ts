@@ -1,3 +1,3 @@
-<<<<<<< HEAD;
+
 export * from './ZionBrainDashboard;'';
 '''''''

@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { fireEvent as analyticsFireEvent } from '@/lib/analytics;'';
 ;''';

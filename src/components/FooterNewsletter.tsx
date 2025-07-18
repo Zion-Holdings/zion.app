@@ -2,7 +2,6 @@ function isValidEmail(): unknown {): unknown {): unknown {): unknown {): unknown
   const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
   return emailRegex.test(email);
 };
-<<<<<<< HEAD;
 
 export function FooterNewsletter(): unknown {): unknown {): unknown {): unknown {): unknown {): React.ReactElement {;''';
   const [email, setEmail] = useState('');''';

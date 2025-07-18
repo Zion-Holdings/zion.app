@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { Star, ExternalLink } from '@/components/ui/icons;'';
 import { Button } from '@/components/ui/button;'';

@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
   requireAuth = true,;''';
   requireRole,;''';

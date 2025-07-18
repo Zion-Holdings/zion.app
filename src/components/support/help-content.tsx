@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import type { HelpCategory } from './types;'';
 export const HELP_CATEGORIES: unknown HelpCategory[] = [;''';

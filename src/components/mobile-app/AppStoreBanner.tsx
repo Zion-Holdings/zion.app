@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { safeStorage } from '@/utils/safeStorage;'';
 import { useIsMobile } from '@/hooks/use-mobile;'';

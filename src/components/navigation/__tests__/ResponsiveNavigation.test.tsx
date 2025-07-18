@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { useTranslation } from 'react-i18next;'';
 jest.mock('@/hooks/useAuth');;'';

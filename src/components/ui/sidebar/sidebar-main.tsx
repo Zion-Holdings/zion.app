@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import type { SafeRef } from '../sidebar.types;'';
 export interface SidebarProps extends React.ComponentProps<'div'> {;;'';

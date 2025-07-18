@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { ArrowLeft, FileText, Link } from '@/components/ui/icons;'';
 

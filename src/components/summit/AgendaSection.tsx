@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 export function AgendaSection(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const agenda: unknown = [;
     'Opening Keynote: Launching Zion Protocol',;;'';

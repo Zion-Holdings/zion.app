@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { Star } from '@/components/ui/icons;''';
   // Stats display with social proof;''';

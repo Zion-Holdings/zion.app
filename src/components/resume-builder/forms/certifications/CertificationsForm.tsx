@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import type { Certification } from '@/types/resume;'';
 

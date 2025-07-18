@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 export function InteractiveMap(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const locations: unknown = [;
     { name: 'New York', subdomain: 'ny.zionapp.com', top: '40%', left: '35%' },;''';

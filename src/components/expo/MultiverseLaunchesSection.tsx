@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 export function MultiverseLaunchesSection(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const launches: unknown = [;
     'New Multiverse Instance Alpha',;;'';

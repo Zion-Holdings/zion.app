@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import type { SmartContractInfo } from '@/types/smart-contracts;''';
   contractContent?: string;''';

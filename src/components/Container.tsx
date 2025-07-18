@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 /**;''';
  * Provides a consistent max-width and horizontal padding for page sections.''';

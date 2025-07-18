@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 export { TalentCardAvatar } from '';
 export { TalentCardAvailability } from '';
 export { TalentCardBadges } from '';

@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 const AnalyticsConsentBanner: unknown React.FC = () => {;''';
   const [showBanner, setShowBanner] = useState(false)''';

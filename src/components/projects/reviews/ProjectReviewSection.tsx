@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { Star } from '@/components/ui/icons;'';
 import { useState } from 'react;'';

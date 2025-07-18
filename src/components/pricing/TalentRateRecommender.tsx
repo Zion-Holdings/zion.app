@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
   getTalentRateSuggestion,;''';
 } from '';

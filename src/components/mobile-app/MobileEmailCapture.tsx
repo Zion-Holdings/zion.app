@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { isValidEmail } from '@/utils/email;'';
 ;''';

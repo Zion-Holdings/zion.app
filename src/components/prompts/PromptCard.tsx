@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { Copy, Send } from '@/components/ui/icons;'';
 

@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import Link from 'next/link;'';
   { name: 'Partner A', logo: 'https://placehold.co/150x80' },;;'';

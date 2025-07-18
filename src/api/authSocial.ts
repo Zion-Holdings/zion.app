@@ -1,5 +1,5 @@
 export function openAuthPopup(): unknown {): unknown {): unknown {): unknown {): unknown {provider: string): Window | null {;
-<<<<<<< HEAD;
+
   const width: unknown = 600;
   const height: unknown = 600;
   const left: unknown = window.screenX + (window.innerWidth - width) / 2;

@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { CheckCircle, ThumbsUp, ThumbsDown } from '@/components/ui/icons;'';
 import {;''';

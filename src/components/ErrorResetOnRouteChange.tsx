@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
     if (!router.events) return;''';
     const handleRouteChange: unknown = () => {''';

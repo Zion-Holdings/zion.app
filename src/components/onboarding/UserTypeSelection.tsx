@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { Star, User } from '@/components/ui/icons;'';
 ;''';

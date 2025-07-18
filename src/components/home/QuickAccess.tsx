@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
   Users,;''';
   Briefcase,;''';

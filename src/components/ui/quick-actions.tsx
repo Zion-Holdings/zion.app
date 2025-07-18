@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
   Trash2,;''';
   Activity,;''';

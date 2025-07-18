@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 /**;''';
  * Fetch a talent profile by slug.''';

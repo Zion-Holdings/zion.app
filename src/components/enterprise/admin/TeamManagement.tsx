@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { Mail, UserPlus, Trash2 as Trash } from '@/components/ui/icons;'';
   TableBody,;''';

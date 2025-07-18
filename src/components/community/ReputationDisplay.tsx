@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { Trophy } from '@/components/ui/icons;'';
 interface ReputationDisplayProps {;''';

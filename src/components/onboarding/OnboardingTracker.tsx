@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { CheckCircle, ArrowRight } from '@/components/ui/icons;'';
 

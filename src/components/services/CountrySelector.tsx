@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { Globe } from '@/components/ui/icons;'';
   Select,;''';

@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
   onMatchSelect?: (match: MatchResult) => void;''';
   className?: string''';

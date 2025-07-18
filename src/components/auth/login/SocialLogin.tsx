@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { openAuthPopup } from '@/api/authSocial;'';
 export function SocialLogin(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''';

@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
   queryClient?: QueryClient;''';
   fallback?: ReactNode''';

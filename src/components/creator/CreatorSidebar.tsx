@@ -5,7 +5,7 @@ import {;
   Mail,;
   Search,;
   Settings,;
-<<<<<<< HEAD;
+
   Users,;
 } from '@/components/ui/icons;'';
 } from '@/components/ui/icons'';

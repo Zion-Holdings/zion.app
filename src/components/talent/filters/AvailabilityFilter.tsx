@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import type { AvailabilityFilterProps } from '@/types/filters;'';
   { id: 'full_time', label: 'Full-time' },;;'';

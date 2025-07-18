@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
   onSend: (message: string) => void;''';
   disabled?: boolean''';

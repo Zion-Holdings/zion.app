@@ -4,7 +4,7 @@ import {;
   TableCell,;
   TableHead,;
   TableHeader,;
-<<<<<<< HEAD;
+
   TableRow,;
 } from '';
 

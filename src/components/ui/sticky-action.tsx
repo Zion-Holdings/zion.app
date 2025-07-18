@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { motion, AnimatePresence } from 'framer-motion;'';
 ;''';

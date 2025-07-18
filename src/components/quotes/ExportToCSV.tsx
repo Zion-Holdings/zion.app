@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { Download } from '@/components/ui/icons;'';
 import type { QuoteRequest } from '@/types/quotes;'';

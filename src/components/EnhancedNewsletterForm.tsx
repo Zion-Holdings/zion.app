@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
   return emailRegex.test(email);''';
 

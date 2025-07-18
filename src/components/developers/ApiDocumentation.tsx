@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { BookOpen, Terminal } from '@/components/ui/icons;'';
 

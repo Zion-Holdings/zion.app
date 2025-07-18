@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 import { useRouter } from 'next/router;''';
 'use client;'';
 

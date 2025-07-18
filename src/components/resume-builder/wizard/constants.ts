@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 export const RESUME_STEPS: unknown = [;
   { id: 'basic-info', label: 'Basic Info' },;;'';
   { id: 'work-experience', label: 'Work Experience' },;;'';

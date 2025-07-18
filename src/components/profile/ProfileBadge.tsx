@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { Star, Clock, Award } from '@/components/ui/icons;'';
 import { cn } from '@/lib/utils;'';

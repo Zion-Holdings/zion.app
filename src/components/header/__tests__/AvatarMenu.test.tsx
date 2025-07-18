@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import type { AuthContextType } from '@/types/auth;'';
 ;''';

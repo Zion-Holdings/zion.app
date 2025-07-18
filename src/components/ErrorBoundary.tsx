@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 };''';
   constructor(props: Props) {;''';

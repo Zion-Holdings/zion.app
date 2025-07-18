@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 export { WorkExperienceSection } from '';
 export { EducationSection } from '';
 export { SkillsSection } from '';

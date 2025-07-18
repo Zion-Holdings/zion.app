@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { MessageSquare, Star } from '@/components/icons;'';
 import { Button } from '@/components/ui/button;'';

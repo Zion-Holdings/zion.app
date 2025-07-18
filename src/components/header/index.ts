@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 export { Header } from '';
 export { Logo } from '';
 export { MobileMenu, type MobileMenuProps } from '';

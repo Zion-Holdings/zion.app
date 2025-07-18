@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
     safeStorage.setItem('smartBannerDismissed', 'true');'';
     safeStorage.removeItem('smartBannerDismissed');'';

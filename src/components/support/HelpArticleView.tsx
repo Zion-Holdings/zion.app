@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { ThumbsUp, ThumbsDown } from '@/components/ui/icons;'';
 

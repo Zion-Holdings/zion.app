@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
   useEffect(() => {;''';
     const updateVisibility: unknown = () => {''';

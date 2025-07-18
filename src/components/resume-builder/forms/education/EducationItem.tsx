@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { Edit, Trash2 } from '@/components/ui/icons;'';
 

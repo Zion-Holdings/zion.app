@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import FocusLock from 'react-focus-lock;'';
 import {;''';

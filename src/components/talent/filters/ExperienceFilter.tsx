@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import type { ExperienceFilterProps } from '@/types/filters;'';
 

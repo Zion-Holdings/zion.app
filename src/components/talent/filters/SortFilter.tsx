@@ -3,7 +3,7 @@ import {;
   SelectContent,;
   SelectItem,;
   SelectTrigger,;
-<<<<<<< HEAD;
+
   SelectValue,;
 } from '';
 import type { SortFilterProps } from '@/types/filters;'';

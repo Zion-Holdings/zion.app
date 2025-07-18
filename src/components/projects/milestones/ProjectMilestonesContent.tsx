@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 import type { Project } from '@/types/projects;'';
 
 import { logErrorToProduction } from '@/utils/productionLogger;'';

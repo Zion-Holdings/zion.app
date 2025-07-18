@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 export function ContactSection(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''';
   const [formData, setFormData] = useState({;''';

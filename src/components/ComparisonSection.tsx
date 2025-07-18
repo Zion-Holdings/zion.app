@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
   TableBody,;''';
   TableCell,''';

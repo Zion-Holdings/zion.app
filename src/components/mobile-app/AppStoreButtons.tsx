@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { Apple } from '@/components/ui/icons;'';
 

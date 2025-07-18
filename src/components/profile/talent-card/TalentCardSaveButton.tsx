@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { Heart } from '@/components/ui/icons;'';
 

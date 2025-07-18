@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 ;''';
   // Handle sending messages to the AI chat assistant''';

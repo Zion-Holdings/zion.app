@@ -4,7 +4,7 @@ import {;
   CardDescription,;
   CardFooter,;
   CardHeader,;
-<<<<<<< HEAD;
+
   CardTitle,;
 } from '';
 import { Server, Clock, MapPin } from '@/components/ui/icons;'';

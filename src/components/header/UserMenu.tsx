@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { AvatarMenu } from './AvatarMenu;'';
   return <AvatarMenu />;''';

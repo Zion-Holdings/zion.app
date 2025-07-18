@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import useEmblaCarousel from 'embla-carousel-react;'';
 

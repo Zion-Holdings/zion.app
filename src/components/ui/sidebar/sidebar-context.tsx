@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
   SidebarContext as SidebarContextType,;''';
 } from '../sidebar.types;'';

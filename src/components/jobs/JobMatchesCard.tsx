@@ -4,7 +4,7 @@ import {;
   CardHeader,;
   CardTitle,;
   CardDescription,;
-<<<<<<< HEAD;
+
   CardFooter,;
 } from '';
 import {;''';

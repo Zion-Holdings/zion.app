@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
       } else {;''';
         setIsVisible(false)''';

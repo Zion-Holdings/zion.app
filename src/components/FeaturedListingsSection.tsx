@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 }: FeaturedListingsSectionProps) {;''';
   // Reactivate: Use a mock or real data source for featured listings''';

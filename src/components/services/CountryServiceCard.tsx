@@ -2,7 +2,7 @@ import {;
   Card,;
   CardContent,;
   CardFooter,;
-<<<<<<< HEAD;
+
   CardHeader,;
 } from '';
 

@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
   children: React.ReactNode;''';
   className?: string;''';

@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
   FormControl,;''';
   FormLabel,;''';

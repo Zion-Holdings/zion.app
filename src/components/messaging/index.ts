@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 export { ConversationItem } from '';
 export { MessageBubble } from '';
 export { DateDivider } from '';

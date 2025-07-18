@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { BulkAddSkills } from './BulkAddSkills;'';
 

@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
   onSelectMatch,;''';
   isLoading = false,;''';

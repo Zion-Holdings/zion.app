@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { ChatBotPanel } from './ChatBotPanel;'';
 

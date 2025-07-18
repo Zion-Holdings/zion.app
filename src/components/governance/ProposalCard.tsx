@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 // src/components/governance/ProposalCard.tsx;
 ;
   CardHeader,;''';

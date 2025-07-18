@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 export { QuoteRequestCard } from '';
 export { QuoteRequestsList } from '';
 export { RequestsHeader } from '';

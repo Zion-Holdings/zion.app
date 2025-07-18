@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { Clock, Award, Zap } from '@/components/ui/icons;'';
   Card,;''';

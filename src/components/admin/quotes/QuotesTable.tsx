@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { Eye, MoreHorizontal, Trash2, Archive } from '@/components/ui/icons;'';
   TableBody,;''';

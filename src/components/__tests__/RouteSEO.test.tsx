@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { findRouteByPath } from '@/utils/routeUtils;'';
 vi.mock('next/router', () => ({;;'';

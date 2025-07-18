@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
   style?: React.CSSProperties;''';
 }''';

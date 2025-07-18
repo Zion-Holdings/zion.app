@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { ChevronLeft, ChevronRight } from '@/components/ui/icons;'';
 import { DayPicker } from 'react-day-picker;'';

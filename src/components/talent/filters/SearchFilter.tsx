@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { SearchIcon } from '@/components/ui/icons;'';
 import type { SearchFilterProps } from '@/types/filters;'';

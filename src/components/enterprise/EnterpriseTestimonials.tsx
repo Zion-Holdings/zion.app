@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { Quote } from '@/components/ui/icons;'';
   Carousel,;''';

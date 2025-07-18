@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { toast } from 'sonner;'';
 export type AppPlatform = 'ios' | 'android;'';

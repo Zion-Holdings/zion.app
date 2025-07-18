@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 import { Button } from '@/components/ui/button;'';
 export function ExportsSection(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''';
     'Auto-email summary to attendees',;;'';

@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { Calendar, User, Mail, Clock, DollarSign } from '@/components/ui/icons;'';
   Dialog,;''';

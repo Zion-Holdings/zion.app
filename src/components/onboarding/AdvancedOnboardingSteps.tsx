@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { useAdvancedOnboardingStatus } from '@/hooks/useAdvancedOnboardingStatus;'';
 export function AdvancedOnboardingSteps(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''';

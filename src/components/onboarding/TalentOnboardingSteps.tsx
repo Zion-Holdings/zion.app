@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { useOnboardingStatus } from '@/hooks/useOnboardingStatus;'';
 

@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import type { RegionFilterProps } from '@/types/filters;'';
   { id: 'North America', label: 'North America' },;;'';

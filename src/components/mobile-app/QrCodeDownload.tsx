@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { QrCode } from '@/components/ui/icons;'';
 import { AppStoreButtons } from './AppStoreButtons;'';

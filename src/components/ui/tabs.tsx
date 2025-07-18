@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import * as TabsPrimitive from '@radix-ui/react-tabs;'';
 import { cn } from '@/lib/utils;'';

@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
   Loader2,;''';
   CheckCircle,;''';

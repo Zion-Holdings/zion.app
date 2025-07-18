@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { useWallet as useAppWallet } from '../../../context/WalletContext.tsx // Renamed to avoid conflict if useWallet hook is defined locally;''';
 

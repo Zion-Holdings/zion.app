@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { ServiceDetails } from './ServiceDetails;'';
   selectedCountry?: CountryPricing | null;''';

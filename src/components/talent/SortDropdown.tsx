@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { SORT_OPTIONS } from '@/data/sortOptions;'';
 import {;''';

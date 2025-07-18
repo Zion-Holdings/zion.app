@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 
 import { Star } from '@/components/ui/icons;'';
 import { Card, CardContent, CardFooter } from '@/components/ui/card;'';

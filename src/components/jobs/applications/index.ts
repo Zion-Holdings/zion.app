@@ -1,4 +1,4 @@
-<<<<<<< HEAD;
+
 export { ApplicationsTracker } from '';
 export { ApplicationsTable } from '';
 export { EmptyState } from '';
