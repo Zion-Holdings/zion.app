@@ -36,7 +36,7 @@ export function useAISearch() {
     const filters: SearchFilters =
       (data as { filters?: SearchFilters }).filters || {};
 
-    const _items: SearchResult[] = [];
+//     const _items: SearchResult[] = [];
     const matchSkill = (skills: string[] | undefined) => {
       if (!filters.skills || filters.skills.length === 0) return true;
       return skills?.some((s) =>

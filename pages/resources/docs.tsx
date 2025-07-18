@@ -3,7 +3,7 @@ import type { GetServerSideProps } from 'next';
 import { SEO } from '@/components/SEO';
 import YoutubeEmbed from '@/components/YoutubeEmbed';
 
-export const _getServerSideProps: GetServerSideProps = async () => {
+// export const _getServerSideProps: GetServerSideProps = async () => {
   return {
     props: {}
   };

@@ -50,7 +50,7 @@ export default function FounderBackupVault() {
       const blob = await zip.generateAsync({ type: 'blob' });
       saveAs(blob, 'zion_backup.zip');
     } catch (error) {
-      console.log('Failed to create ZIP:', error);
+//       console.log('Failed to create ZIP:', error);
       // Fallback: save as encrypted file directly
       const blob = new Blob([encryptedData], {
         type: 'application/octet-stream',

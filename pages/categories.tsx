@@ -4,7 +4,7 @@ import type { GetStaticProps } from 'next';
 import { CATEGORIES } from '@/data/categories'; // Import CATEGORIES
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
-export const _getStaticProps: GetStaticProps<CategoriesProps> = async () => {
+// export const _getStaticProps: GetStaticProps<CategoriesProps> = async () => {
 
   const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
   const isBuildTime = process.env.NETLIFY || process.env.NODE_ENV === 'production' && !process.env.RUNTIME_ENVIRONMENT;

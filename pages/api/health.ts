@@ -28,7 +28,7 @@ export default async function handler(
   res: NextApiResponse<SystemHealth | { error: string }>
 ): Promise<void> {
   try {
-    const _startTime = undefined; // Unused Date.now();
+//     const _startTime = undefined; // Unused Date.now();
     
     // Basic health checks
     const healthChecks = await performHealthChecks();
@@ -73,7 +73,7 @@ async function performHealthChecks(): Promise<SystemHealth['checks']> {
 
   // Memory check
   try {
-    const _memoryUsage = process.memoryUsage();
+//     const _memoryUsage = process.memoryUsage();
     const totalMemoryMB = _memoryUsage.heapTotal / 1024 / 1024;
     const usedMemoryMB = _memoryUsage.heapUsed / 1024 / 1024;
     const memoryUsagePercent = (usedMemoryMB / totalMemoryMB) * 100;
@@ -132,7 +132,7 @@ async function performHealthChecks(): Promise<SystemHealth['checks']> {
     // In serverless environments like Netlify, disk checks are limited
     // We'll just check if we can write to tmp directory
     const fs = await import('fs');
-    const _path = await import('path');
+//     const _path = await import('path');
     
     const tmpDir = process.env['TMPDIR'] || '/tmp';
     const testFile = path.join(tmpDir, 'health-check-test');
@@ -189,7 +189,7 @@ async function gatherMetrics(): Promise<SystemHealth['metrics']> {
 
   try {
     // Basic process metrics
-    const _memoryUsage = process.memoryUsage();
+//     const _memoryUsage = process.memoryUsage();
     
     // In a real application, these would come from monitoring systems
     // For now, we'll provide basic information

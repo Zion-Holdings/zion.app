@@ -15,7 +15,7 @@ import ListingGridSkeleton from '@/components/skeletons/ListingGridSkeleton';
 import { logErrorToProduction } from '@/utils/productionLogger';
 import apiClient from '@/services/apiClient';
 
-const _AUTO_SERVICE_TITLES = [
+// const _AUTO_SERVICE_TITLES = [
   'AI-Powered Customer Support',
   'Cloud Infrastructure Management',
   'Predictive Analytics Consulting',

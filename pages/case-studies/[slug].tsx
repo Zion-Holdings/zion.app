@@ -4,7 +4,7 @@ import type { GetStaticPaths, GetStaticProps } from 'next';
 
 export default CaseStudyPage;
 
-export const _getStaticPaths: GetStaticPaths = async () => {
+// export const _getStaticPaths: GetStaticPaths = async () => {
   const paths = CASE_STUDIES.map(s => ({ params: { slug: s.slug } }));
   return { paths, fallback: false };
 };

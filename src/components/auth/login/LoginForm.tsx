@@ -101,7 +101,7 @@ export function LoginForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
       });
-      const _data = await response.json();
+//       const _data = await response.json();
       if (response.ok) {
         setVerificationMessage(
           'Verification email sent. Please check your inbox.',

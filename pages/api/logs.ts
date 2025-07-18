@@ -65,7 +65,7 @@ export default async function handler(
       entries.forEach((entry) => {
         if (entry.level === 'error' || entry.level === 'warn') {
           // Map our log levels to Sentry's SeverityLevel
-          const _sentryLevel = entry.level === 'warn' ? 'warning' : entry.level;
+//           const _sentryLevel = entry.level === 'warn' ? 'warning' : entry.level;
           // Sentry.withScope(scope => {
           //   scope.setLevel(_sentryLevel);
           //   scope.setExtra('level', entry.level);

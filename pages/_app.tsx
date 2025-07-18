@@ -31,7 +31,7 @@ if (typeof window !== 'undefined') {
   // Enhanced error handling for getInitialProps and http errors
   window.addEventListener('error', (event) => {
     const errorMessage = event.message || '';
-    const _errorSource = undefined; // Unused event.filename || '';
+//     const _errorSource = undefined; // Unused event.filename || '';
     
     // Handle getInitialProps errors
     if (errorMessage.includes('getInitialProps') || errorMessage.includes('Cannot read properties of undefined (reading \'getInitialProps\')')) {

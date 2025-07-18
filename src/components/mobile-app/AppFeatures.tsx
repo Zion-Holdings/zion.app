@@ -36,7 +36,7 @@ const features = [
   },
 ];
 
-export const _AppFeatures: React.FC = () => {
+// export const _AppFeatures: React.FC = () => {
   return (
     <section className="py-16 bg-zion-blue">
       <div className="container mx-auto px-4">

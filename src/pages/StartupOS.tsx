@@ -1,7 +1,7 @@
 import React from 'react';
 import LegalTemplates from '@/components/dashboard/LegalTemplates'; // Import the component
 
-const _StartupOSPage: React.FC = () => {
+// const _StartupOSPage: React.FC = () => {
   return (
     <div className="flex h-screen bg-gray-50">
       {/* Sidebar */}

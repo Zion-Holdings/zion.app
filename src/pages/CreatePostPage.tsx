@@ -31,7 +31,7 @@ export default function CreatePostPage() {
   // Get category from URL query params if available
   const initialCategory = router.query.category as ForumCategory | null;
 
-  const _initialValues: Partial<PostFormValues> = {
+//   const _initialValues: Partial<PostFormValues> = {
     categoryId: initialCategory || 'project-help',
   };
 
@@ -41,7 +41,7 @@ export default function CreatePostPage() {
       // For now, we'll just simulate a successful post creation
 
       // Parse tags into an array
-      const _tagsArray = undefined; // Unused values.tags.split(",").map(tag => tag.trim());
+//       const _tagsArray = undefined; // Unused values.tags.split(",").map(tag => tag.trim());
 
       toast({
         title: 'Post created',

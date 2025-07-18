@@ -51,17 +51,10 @@ interface CategorySearchResult extends BaseSearchResult {
 type SearchResult = ProductSearchResult | TalentSearchResult | BlogSearchResult | CategorySearchResult;
 
 // Type guard functions
-<<<<<<< HEAD
 const hasPrice = (result: SearchResult): result is ProductSearchResult => 
   result.type === 'product' || result.type === 'equipment';
 
 const hasRating = (result: SearchResult): result is ProductSearchResult | TalentSearchResult => 
-=======
-const _hasPrice = (result: SearchResult): result is ProductSearchResult => 
-  result.type === 'product' || result.type === 'equipment';
-
-const _hasRating = (result: SearchResult): result is ProductSearchResult | TalentSearchResult => 
->>>>>>> 710519fe6cbd4de91be8a635123762393fdf873b
   result.type === 'product' || result.type === 'equipment' || result.type === 'talent';
 
 interface SearchResultsPageProps {
@@ -224,7 +217,7 @@ export default function SearchResultsPage({
   slug: _slug,
   totalCount,
 }: SearchResultsPageProps) {
-  const _router = useRouter();
+//   const _router = useRouter();
   const { _isAuthenticated } = useAuth();
   const [results, setResults] = useState<SearchResult[]>(initialResults);
   const [_loading, setLoading] = useState(false);
@@ -291,7 +284,7 @@ export default function SearchResultsPage({
   }, [sortBy, categoryFilter, minPrice, maxPrice, minRating]);
 
   // Handle search input change
-  // const _handleSearch = () => {
+//   // const _handleSearch = () => {
   //   setSearchQuery(newQuery);
   //   if (newQuery.trim()) {
   //     router.push(`/search?q=${encodeURIComponent(newQuery)}`, undefined, {
@@ -311,17 +304,17 @@ export default function SearchResultsPage({
   }, [debouncedQuery, fetchResults]);
 
   // Load more results
-  // const _loadMore = () => {
+//   // const _loadMore = () => {
   //   const nextPage = currentPage + 1;
   //   setCurrentPage(nextPage);
   //   fetchResults(searchQuery, nextPage);
   // };
 
-  // const _categories = Array.from(
+//   // const _categories = Array.from(
   //   new Set(results.map((r) => r.category).filter(Boolean)),
   // );
 
-  const _filteredResults = results.filter((r) => {
+//   const _filteredResults = results.filter((r) => {
     if (
       categoryFilter !== 'all' &&
       categoryFilter &&
@@ -348,7 +341,7 @@ export default function SearchResultsPage({
   });
 
   // Group results by type for better display
-  // const _groupedResults = filteredResults.reduce(
+//   // const _groupedResults = filteredResults.reduce(
   //   (acc, result) => {
   //     if (!acc[result.type]) acc[result.type] = [];
   //     acc[result.type]!.push(result);
@@ -357,7 +350,7 @@ export default function SearchResultsPage({
   //   {} as Record<string, SearchResult[]>,
   // );
 
-  // const _renderResultCard = (_result: SearchResult) => {
+//   // const _renderResultCard = (_result: SearchResult) => {
   //   switch (result.type) {
   //     case 'product':
   //     case 'equipment':

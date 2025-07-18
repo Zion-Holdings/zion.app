@@ -4,7 +4,7 @@ import { QrCodeIcon } from '@/components/ui/icons';
 import { AppStoreButtons } from './AppStoreButtons';
 import { logInfo } from '@/utils/productionLogger';
 
-export const _DownloadSection: React.FC = () => {
+// export const _DownloadSection: React.FC = () => {
   // These would typically come from environment variables or a config
   const appStoreUrl = '#'; // Replace with actual App Store URL when available
   const googlePlayUrl = '#'; // Replace with actual Google Play URL when available

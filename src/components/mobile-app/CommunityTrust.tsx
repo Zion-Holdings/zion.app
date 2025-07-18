@@ -1,7 +1,11 @@
 import React from 'react';
 import { Star } from '@/components/ui/icons';
 
+<<<<<<< HEAD
 export const CommunityTrust: React.FC = () => {
+=======
+// export const _CommunityTrust: React.FC = () => {
+>>>>>>> b37ebba4446956d5d94efdabe1cff2346bf41376
   // Stats display with social proof
   const stats = [
     { value: '4.8', label: 'App Store Rating' },

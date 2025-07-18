@@ -8,7 +8,7 @@ import { AppStoreBanner } from '@/components/mobile-app/AppStoreBanner';
 import { QrCodeDownload } from '@/components/mobile-app/QrCodeDownload';
 import { CommunityTrust } from '@/components/mobile-app/CommunityTrust';
 
-const _MobileLaunchPage: React.FC = () => {
+// const _MobileLaunchPage: React.FC = () => {
   return (
     <>
       <SEO

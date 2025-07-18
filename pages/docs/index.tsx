@@ -1,6 +1,6 @@
 import type { GetServerSideProps } from 'next';
 
-export const _getServerSideProps: GetServerSideProps = async () => {
+// export const _getServerSideProps: GetServerSideProps = async () => {
   return {
     redirect: {
       destination: '/resources/docs',

@@ -129,7 +129,7 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ initialPost }) => {
 
 export default BlogPostPage;
 
-export const _getStaticPaths: GetStaticPaths = async () => {
+// export const _getStaticPaths: GetStaticPaths = async () => {
   try {
     const dir = path.join(process.cwd(), 'content', 'blog');
     if (!fs.existsSync(dir)) {

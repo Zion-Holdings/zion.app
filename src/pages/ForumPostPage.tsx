@@ -21,7 +21,7 @@ export default function ForumPostPage() {
   // can't determine the generic type for the helper from React Router.
   // Cast the result instead to provide the expected shape.
   const router = useRouter();
-  const _postId = router.query.postId as string;
+//   const _postId = router.query.postId as string;
   const { _user } = useAuth();
   const { _toast } = useToast();
   const [post, setPost] = useState<ForumPost | null>(null);

@@ -13,15 +13,15 @@ import { logWarn } from '@/utils/productionLogger';
 import './stream-polyfill';
 
 // Only define process in browser environments, not in Node.js
-const _isBrowser =
+// const _isBrowser =
   typeof window !== 'undefined' || typeof document !== 'undefined';
-const _isNode =
+// const _isNode =
   typeof process !== 'undefined' && process.versions && process.versions.node;
 
 // Only run polyfill in browser environments
 if (_isBrowser && !_isNode) {
   // Simple process object for browser
-  const _processObj = {
+//   const _processObj = {
     env: {
       NODE_ENV: 'production',
       NEXT_PUBLIC_APP_URL: '',

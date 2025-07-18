@@ -176,7 +176,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
     setDistributionData((prev) => prev.filter((item) => item.id !== id));
   };
 
-  const _distributionChartData: DistributionChartItem[] = React.useMemo(() => {
+//   const _distributionChartData: DistributionChartItem[] = React.useMemo(() => {
     return distributionData
       .map((item) => ({
         name: item.name || 'Unnamed',

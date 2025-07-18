@@ -515,7 +515,7 @@ export function logErrorWithAnalysis(
   const errorText =
     error instanceof Error ? error.message : String(error || message);
 
-  const _analysis = logAnalyzer.analyzeError(errorText, context);
+//   const _analysis = logAnalyzer.analyzeError(errorText, context);
 
   if (_analysis) {
     logInfo('Error analysis completed', {

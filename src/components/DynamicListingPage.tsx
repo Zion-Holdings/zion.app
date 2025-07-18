@@ -106,7 +106,7 @@ export function DynamicListingPage({
     setCurrentPriceFilter([min, max]);
   };
 
-  const _filteredListings: ProductListing[] = [];
+//   const _filteredListings: ProductListing[] = [];
   try {
     filteredListings = allListings.filter((listing) => {
       const matchesSearch =

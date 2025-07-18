@@ -11,7 +11,7 @@ export default function Page({ tutorial }: PageProps) {
   return <TutorialPage tutorial={tutorial} />;
 }
 
-export const _getStaticPaths: GetStaticPaths = async () => {
+// export const _getStaticPaths: GetStaticPaths = async () => {
   const paths = TUTORIALS.map(t => ({ params: { slug: t.slug } }));
   return { paths, fallback: false };
 };

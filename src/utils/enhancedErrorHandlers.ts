@@ -250,7 +250,7 @@ export class EnhancedConsoleErrorHandler {
 
       try {
         const first = args[0];
-        const _message = first instanceof Error ? first.message : String(first);
+//         const _message = first instanceof Error ? first.message : String(first);
 
         // Patterns that should not trigger user-facing toasts
         const silentPatterns = [

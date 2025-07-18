@@ -34,7 +34,7 @@ export function ApiDocsLayout({ children }: ApiDocsLayoutProps) {
   ];
 
   const handleSelectSuggestion = (_suggestion: SearchSuggestion) => {
-    const _path = getDocsSearchPath(suggestion.text);
+//     const _path = getDocsSearchPath(suggestion.text);
     if (path) {
       router.push(path);
       setSearchValue('');
@@ -43,7 +43,7 @@ export function ApiDocsLayout({ children }: ApiDocsLayoutProps) {
 
   const handleSubmit = (_e: React.FormEvent) => {
     e.preventDefault();
-    const _path = getDocsSearchPath(searchValue);
+//     const _path = getDocsSearchPath(searchValue);
     if (path) {
       router.push(path);
       setSearchValue('');

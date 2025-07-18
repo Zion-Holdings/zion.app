@@ -1,7 +1,11 @@
 import React from 'react';
 import { CheckCircle, Users, Star, Mail, Smartphone } from '@/components/ui/icons';
 
+<<<<<<< HEAD
 export const MobileFeatureShowcase: React.FC = () => {
+=======
+// export const _MobileFeatureShowcase: React.FC = () => {
+>>>>>>> b37ebba4446956d5d94efdabe1cff2346bf41376
   const features = [
     {
       icon: <Users className="h-8 w-8 text-zion-cyan" />,

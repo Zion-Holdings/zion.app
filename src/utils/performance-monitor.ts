@@ -203,7 +203,7 @@ class PerformanceMonitor {
       const resources = performance.getEntriesByType(
         'resource',
       ) as PerformanceResourceTiming[];
-      const _resourceTimes: { [key: string]: number } = {};
+//       const _resourceTimes: { [key: string]: number } = {};
 
       resources.forEach((resource) => {
         const duration = resource.responseEnd - resource.startTime;

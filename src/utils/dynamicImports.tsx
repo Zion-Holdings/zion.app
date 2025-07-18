@@ -38,7 +38,7 @@ export function createDynamicImport<
   });
 
   // Wrap with error handling
-  const _WrappedComponent: React.FC<PropsWithChildren<P>> = (props) => {
+//   const _WrappedComponent: React.FC<PropsWithChildren<P>> = (props) => {
     try {
       return <DynamicComponent {...props} />;
     } catch {

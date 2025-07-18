@@ -72,7 +72,7 @@ const DefaultFallback: React.FC<object> = () => {
 };
 
 // Default loading component
-const _DefaultLoading: React.FC = () => {
+// const _DefaultLoading: React.FC = () => {
   return React.createElement(
     'div',
     {
