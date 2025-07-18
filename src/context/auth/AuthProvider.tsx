@@ -16,7 +16,7 @@ import logger from '@/utils/logger';
 import { logInfo, logDebug, logErrorToProduction } from '@/utils/productionLogger';
 
 
-export const AuthProvider = ({ children }: { _children: React.ReactNode }) => {
+export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   // Always call hooks at the top
   const {
     user, setUser,
