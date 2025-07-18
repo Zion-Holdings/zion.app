@@ -108,10 +108,7 @@ function offlineSearch(
     return result;
   });
 
-<<<<<<< HEAD
-=======
 
->>>>>>> f3223bf8e97425737aecc6ef0373b006c412d2f2
   const talentResults: TalentSearchResult[] = TALENT_PROFILES.filter(
     (t) =>
       match(t.full_name) ||
@@ -384,8 +381,8 @@ export default function SearchResultsPage({
                 currency: '$',
                 created_at: new Date().toISOString(),
                 updated_at: new Date().toISOString(),
-                stock: (result as ProductSearchResult).stock,
-                in_stock: ((result as ProductSearchResult).stock || 0) > 0
+                stock: (result as ProductSearchResult).stock ?? 0,
+                in_stock: ((result as ProductSearchResult).stock ?? 0) > 0
               }}
             />
           </div>

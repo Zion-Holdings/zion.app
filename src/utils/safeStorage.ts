@@ -61,9 +61,9 @@ export const safeStorage = {
     
     try {
       return localStorage.getItem(key);
-    } catch (_e) {
+    } catch {
       if (!isVerboseKey) {
-        safeConsoleError(`safeStorage.getItem: Error accessing localStorage for key "${key}". Falling back to in-memory.`, _e);
+        safeConsoleError(`safeStorage.getItem: Error accessing localStorage for key "${key}". Falling back to in-memory.`);
       }
       return inMemoryStore[key] || null;
     }
@@ -75,9 +75,9 @@ export const safeStorage = {
     
     try {
       localStorage.setItem(key, value);
-    } catch (_e) {
+    } catch {
       if (!isVerboseKey) {
-        safeConsoleError(`safeStorage.setItem: Error accessing localStorage for key "${key}". Falling back to in-memory.`, _e);
+        safeConsoleError(`safeStorage.setItem: Error accessing localStorage for key "${key}". Falling back to in-memory.`);
       }
       inMemoryStore[key] = value;
     }
@@ -89,9 +89,9 @@ export const safeStorage = {
     
     try {
       localStorage.removeItem(key);
-    } catch (_e) {
+    } catch {
       if (!isVerboseKey) {
-        safeConsoleError(`safeStorage.removeItem: Error accessing localStorage for key "${key}". Falling back to in-memory.`, _e);
+        safeConsoleError(`safeStorage.removeItem: Error accessing localStorage for key "${key}". Falling back to in-memory.`);
       }
       delete inMemoryStore[key];
     }
@@ -105,8 +105,8 @@ export const safeStorage = {
     }
     try {
       localStorage.clear();
-    } catch (_e) {
-      safeConsoleError('safeStorage.clear: Error clearing localStorage. Falling back to in-memory.', _e);
+    } catch {
+      safeConsoleError('safeStorage.clear: Error clearing localStorage. Falling back to in-memory.');
       for (const key in inMemoryStore) {
         delete inMemoryStore[key];
       }
@@ -125,7 +125,7 @@ export const safeSessionStorage = {
     if (typeof window === 'undefined') return null;
     try {
       return sessionStorage.getItem(key);
-    } catch (_e) {
+    } catch {
       return sessionMemoryStore[key] || null;
     }
   },
@@ -133,7 +133,7 @@ export const safeSessionStorage = {
     if (typeof window === 'undefined') return;
     try {
       sessionStorage.setItem(key, value);
-    } catch (_e) {
+    } catch {
       sessionMemoryStore[key] = value;
     }
   },
@@ -141,7 +141,7 @@ export const safeSessionStorage = {
     if (typeof window === 'undefined') return;
     try {
       sessionStorage.removeItem(key);
-    } catch (_e) {
+    } catch {
       delete sessionMemoryStore[key];
     }
   },

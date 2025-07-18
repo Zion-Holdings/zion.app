@@ -220,9 +220,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                                         }
                                         logInfo('[AuthProvider DEBUG] Attempting to redirect to:', { data:  { data: redirectTo } });
                                         router.replace(redirectTo);
-                                      } catch (redirectError) {
-                                        logErrorToProduction('[AuthProvider DEBUG] Error during redirection:', { data: redirectError });
-                                      }
+                                                              } catch {
+                          logErrorToProduction('[AuthProvider DEBUG] Error during redirection');
+                        }
                                 }
                             } else {
                                 logErrorToProduction("[AuthProvider DEBUG] Mapped user is null. Not updating user state. Mapping failed or profile was insufficient.");
@@ -248,9 +248,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                             setUser(null);
                             setAvatarUrl(null);
                         }
-                    } catch (profileMapError) {
+                    } catch {
                         // This catch block is for errors specifically within the profile fetching/user mapping phase
-                        logErrorToProduction('[AuthProvider DEBUG] Critical error in profile fetching/user mapping phase:', { data: profileMapError });
+                        logErrorToProduction('[AuthProvider DEBUG] Critical error in profile fetching/user mapping phase');
                          if (event === 'SIGNED_IN') {
                             toast({
                                 title: "User Initialization Error",
