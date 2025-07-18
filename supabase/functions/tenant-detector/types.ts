@@ -14,7 +14,7 @@ export interface TenantInfo {
   };
   is_active: boolean;
 }
-
+;
 export interface TenantResponse {
   tenant: TenantInfo | null;
   error?: string;

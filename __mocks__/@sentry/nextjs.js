@@ -1,6 +1,6 @@
 /* global jest */
 // __mocks__/@sentry/nextjs.js
-
+;
 const Sentry = {
   init: jest.fn(),
   captureException: jest.fn(),
@@ -30,7 +30,7 @@ const Sentry = {
   wrapErrorGetInitialPropsWithSentry: jest.fn((handler) => handler),
   // If you use any specific Sentry integrations or features, mock them as needed
 };
-
+;
 export const init = Sentry.init;
 export const captureException = Sentry.captureException;
 export const captureMessage = Sentry.captureMessage;
@@ -46,5 +46,5 @@ export const wrapGetServerSidePropsWithSentry = Sentry.wrapGetServerSidePropsWit
 export const wrapGetStaticPropsWithSentry = Sentry.wrapGetStaticPropsWithSentry;
 export const wrapAppGetInitialPropsWithSentry = Sentry.wrapAppGetInitialPropsWithSentry;
 export const wrapErrorGetInitialPropsWithSentry = Sentry.wrapErrorGetInitialPropsWithSentry;
-
+;
 export default Sentry;

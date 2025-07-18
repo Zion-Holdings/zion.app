@@ -1,2 +1,2 @@
-// listingData.ts - placeholder
-export const placeholder = 'placeholder';
+// listingData.ts - placeholder;
+export const placeholder = 'placeholder';'

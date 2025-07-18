@@ -1,2 +1,2 @@
-// performance.ts - placeholder
-export const placeholder = 'placeholder';
+// performance.ts - placeholder;
+export const placeholder = 'placeholder';'

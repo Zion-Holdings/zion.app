@@ -1,2 +1,2 @@
-// fontConfig.ts - placeholder
-export const placeholder = 'placeholder';
+// fontConfig.ts - placeholder;
+export const placeholder = 'placeholder';'

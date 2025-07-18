@@ -2,7 +2,6 @@
 module.exports = {
   __esModule: true,
   default: {
-    t: (key) => key.split('.').pop(),
-    i18n: { changeLanguage: () => Promise.resolve() },
+    t: (key) => key.split('.').pop(),'    i18n: { changeLanguage: () => Promise.resolve() },
   },
 }; 

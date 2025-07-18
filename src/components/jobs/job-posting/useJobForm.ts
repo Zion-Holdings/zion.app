@@ -1,2 +1,2 @@
-// useJobForm.ts - placeholder
-export const placeholder = 'placeholder';
+// useJobForm.ts - placeholder;
+export const placeholder = 'placeholder';'

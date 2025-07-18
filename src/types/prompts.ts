@@ -1,2 +1,2 @@
-// prompts.ts - placeholder
-export const placeholder = 'placeholder';
+// prompts.ts - placeholder;
+export const placeholder = 'placeholder';'

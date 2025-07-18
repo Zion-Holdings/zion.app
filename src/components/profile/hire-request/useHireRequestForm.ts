@@ -1,2 +1,2 @@
-// useHireRequestForm.ts - placeholder
-export const placeholder = 'placeholder';
+// useHireRequestForm.ts - placeholder;
+export const placeholder = 'placeholder';'

@@ -1,2 +1,2 @@
-// orbitdb.ts - placeholder
-export const placeholder = 'placeholder';
+// orbitdb.ts - placeholder;
+export const placeholder = 'placeholder';'

@@ -1,2 +1,2 @@
-// api-helpers.ts - placeholder
-export const placeholder = 'placeholder';
+// api-helpers.ts - placeholder;
+export const placeholder = 'placeholder';'

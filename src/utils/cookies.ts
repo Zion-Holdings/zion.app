@@ -1,2 +1,2 @@
-// cookies.ts - placeholder
-export const placeholder = 'placeholder';
+// cookies.ts - placeholder;
+export const placeholder = 'placeholder';'

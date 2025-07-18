@@ -1,2 +1,2 @@
-// useCurrency.ts - placeholder
-export const placeholder = 'placeholder';
+// useCurrency.ts - placeholder;
+export const placeholder = 'placeholder';'

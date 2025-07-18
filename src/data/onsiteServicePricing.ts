@@ -1,2 +1,2 @@
-// onsiteServicePricing.ts - placeholder
-export const placeholder = 'placeholder';
+// onsiteServicePricing.ts - placeholder;
+export const placeholder = 'placeholder';'

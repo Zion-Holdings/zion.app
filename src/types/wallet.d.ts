@@ -1,2 +1,2 @@
-// wallet.d.ts - placeholder
-export const placeholder = 'placeholder';
+// wallet.d.ts - placeholder;
+export const placeholder = 'placeholder';'

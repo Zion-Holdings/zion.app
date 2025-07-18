@@ -1,2 +1,2 @@
-// useNavigationGestures.ts - placeholder
-export const placeholder = 'placeholder';
+// useNavigationGestures.ts - placeholder;
+export const placeholder = 'placeholder';'

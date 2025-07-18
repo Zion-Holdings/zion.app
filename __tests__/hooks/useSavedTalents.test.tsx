@@ -1,16 +1,8 @@
-import { vi, describe, it, expect, beforeEach } from 'vitest';
-import { renderHook, act } from '@testing-library/react';
-import { useSavedTalents } from '@/hooks/talent/useSavedTalents';
-import { supabase } from '@/integrations/supabase/client';
-import { showApiError } from '@/utils/apiErrorHandler';
-import { toast } from '@/hooks/use-toast'; // Assuming direct toast usage for non-error cases
-// Removed unused useRouter import
-
-import { supabase as supabaseClientModule } from '@/integrations/supabase/client';
-
+import { vi, describe, it, expect, beforeEach } from 'vitest';'import { renderHook, act } from '@testing-library/react';'import { useSavedTalents } from '@/hooks/talent/useSavedTalents';'import { supabase } from '@/integrations/supabase/client';'import { showApiError } from '@/utils/apiErrorHandler';'import { toast } from '@/hooks/use-toast'; // Assuming direct toast usage for non-error cases'// Removed unused useRouter import
+;
+import { supabase as supabaseClientModule } from '@/integrations/supabase/client';'
 // Mocks
-vi.mock('@/integrations/supabase/client', () => ({
-  supabase: {
+vi.mock('@/integrations/supabase/client', () => ({'  supabase: {
     from: vi.fn(),
     select: vi.fn(),
     eq: vi.fn(),
@@ -20,7 +12,7 @@ vi.mock('@/integrations/supabase/client', () => ({
   },
 }));
 
-// Cast the imported module to access its mocked methods
+// Cast the imported module to access its mocked methods;
 const supabase = supabaseClientModule as unknown as {
   from: vi.Mock;
   select: vi.Mock;
@@ -30,31 +22,24 @@ const supabase = supabaseClientModule as unknown as {
   delete: vi.Mock;
 };
 
-vi.mock('@/utils/apiErrorHandler', () => ({
-  showApiError: vi.fn(),
+vi.mock('@/utils/apiErrorHandler', () => ({'  showApiError: vi.fn(),
 }));
 
-vi.mock('@/hooks/use-toast', () => ({
-  toast: vi.fn(),
+vi.mock('@/hooks/use-toast', () => ({'  toast: vi.fn(),
 }));
 
-vi.mock('@/hooks/talent/useAuthStatus', () => ({
-  useAuthStatus: vi.fn(() => ({
+vi.mock('@/hooks/talent/useAuthStatus', () => ({'  useAuthStatus: vi.fn(() => ({
     isAuthenticated: true,
-    userDetails: { id: 'test-user-id' },
-  })),
+    userDetails: { id: 'test-user-id' },'  })),
 }));
 
-vi.mock('next/router', () => ({
-  useRouter: vi.fn(() => ({
+vi.mock('next/router', () => ({'  useRouter: vi.fn(() => ({
     push: vi.fn(),
-    asPath: '/some-path',
-  })),
+    asPath: '/some-path','  })),
 }));
 
 
-describe('useSavedTalents', () => {
-  beforeEach(() => {
+describe('useSavedTalents', () => {'  beforeEach(() => {
     vi.clearAllMocks();
 
     // Re-establish default behavior on the (now globally mocked) supabase methods
@@ -66,10 +51,7 @@ describe('useSavedTalents', () => {
     supabase.delete.mockReturnThis();
   });
 
-  describe('fetchSavedTalents', () => {
-    it('should call showApiError with a retry callback if fetching saved talent IDs fails', async () => {
-      const mockError = new Error('Supabase fetch error for saved_talents');
-      // Mock supabase to return an error for the first call (fetching IDs)
+  describe('fetchSavedTalents', () => {'    it('should call showApiError with a retry callback if fetching saved talent IDs fails', async () => {'      const mockError = new Error('Supabase fetch error for saved_talents');'      // Mock supabase to return an error for the first call (fetching IDs)
       supabase.eq.mockResolvedValueOnce({ data: null, error: mockError });
 
       const { result: _result } = renderHook(() => useSavedTalents());
@@ -85,8 +67,7 @@ describe('useSavedTalents', () => {
       const [errorArg, messageArg, retryCallback] = (showApiError as vi.Mock).mock.calls[0];
 
       expect(errorArg).toBe(mockError);
-      expect(messageArg).toBe('There was a problem loading your saved talents.');
-      expect(retryCallback).toBeInstanceOf(Function);
+      expect(messageArg).toBe('There was a problem loading your saved talents.');'      expect(retryCallback).toBeInstanceOf(Function);
 
       // Simulate retry
       vi.clearAllMocks(); // Clear mocks before retry
@@ -94,9 +75,7 @@ describe('useSavedTalents', () => {
       supabase.from.mockReturnThis();
       supabase.select.mockReturnThis();
       // First .eq() for saved_talents IDs, second .in() for talent_profiles
-      supabase.eq.mockResolvedValueOnce({ data: [{ talent_id: 'talent1' }], error: null });
-      supabase.in.mockResolvedValueOnce({ data: [{id: 'talent1', full_name: 'Talent 1'}], error: null });
-
+      supabase.eq.mockResolvedValueOnce({ data: [{ talent_id: 'talent1' }], error: null });'      supabase.in.mockResolvedValueOnce({ data: [{id: 'talent1', full_name: 'Talent 1'}], error: null });'
       await act(async () => {
         await retryCallback();
       });
@@ -107,11 +86,8 @@ describe('useSavedTalents', () => {
       expect(supabase.from).toHaveBeenCalledTimes(2);
     });
 
-    it('should call showApiError with a retry callback if fetching talent profiles fails', async () => {
-      const mockError = new Error('Supabase fetch error for talent_profiles');
-      // Mock first call (IDs) to be successful, second call (profiles) to fail
-      supabase.eq.mockResolvedValueOnce({ data: [{ talent_id: 'talent1' }], error: null }); // For saved_talents IDs
-      supabase.in.mockResolvedValueOnce({ data: null, error: mockError }); // For talent_profiles
+    it('should call showApiError with a retry callback if fetching talent profiles fails', async () => {'      const mockError = new Error('Supabase fetch error for talent_profiles');'      // Mock first call (IDs) to be successful, second call (profiles) to fail
+      supabase.eq.mockResolvedValueOnce({ data: [{ talent_id: 'talent1' }], error: null }); // For saved_talents IDs'      supabase.in.mockResolvedValueOnce({ data: null, error: mockError }); // For talent_profiles
 
       const { result: _result } = renderHook(() => useSavedTalents());
 
@@ -123,26 +99,18 @@ describe('useSavedTalents', () => {
       const [errorArg, messageArg, retryCallback] = (showApiError as vi.Mock).mock.calls[0];
 
       expect(errorArg).toBe(mockError);
-      expect(messageArg).toBe('There was a problem loading your saved talents.');
-      expect(retryCallback).toBeInstanceOf(Function);
+      expect(messageArg).toBe('There was a problem loading your saved talents.');'      expect(retryCallback).toBeInstanceOf(Function);
     });
   });
 
-  describe('toggleSaveTalent', () => {
-    it('should call showApiError with a retry callback if deleting a saved talent fails', async () => {
-      const talentToToggle = { id: 'talent1', full_name: 'Talent One' } as any;
-      // Setup initial state as if 'talent1' is already saved
-      supabase.eq.mockResolvedValueOnce({ data: [{ talent_id: 'talent1' }], error: null }); // For initial load of saved IDs
-      supabase.in.mockResolvedValueOnce({ data: [talentToToggle], error: null });      // For initial load of talent profiles
+  describe('toggleSaveTalent', () => {'    it('should call showApiError with a retry callback if deleting a saved talent fails', async () => {'      const talentToToggle = { id: 'talent1', full_name: 'Talent One' } as any;'      // Setup initial state as if 'talent1' is already saved'      supabase.eq.mockResolvedValueOnce({ data: [{ talent_id: 'talent1' }], error: null }); // For initial load of saved IDs'      supabase.in.mockResolvedValueOnce({ data: [talentToToggle], error: null });      // For initial load of talent profiles
 
       const { _result } = renderHook(() => useSavedTalents());
       await act(async () => { await new Promise(resolve => setTimeout(resolve, 0)); }); // Initial fetch
 
-      const mockDeleteError = new Error('Supabase delete error');
-
+      const mockDeleteError = new Error('Supabase delete error');'
       // Setup for the failing delete operation: from -> delete -> eq (user_id) -> eq (talent_id)
-      supabase.from.mockReturnThis(); // from('saved_talents')
-      supabase.delete.mockReturnThis(); // .delete()
+      supabase.from.mockReturnThis(); // from('saved_talents')'      supabase.delete.mockReturnThis(); // .delete()
       supabase.eq // First eq for user_id, needs to be chainable for the second eq
         .mockImplementationOnce(() => supabase) // Make the first eq return `this` (the supabase mock)
         .mockResolvedValueOnce({ error: mockDeleteError }); // Second eq for talent_id, resolves with error
@@ -157,8 +125,7 @@ describe('useSavedTalents', () => {
       // For this test, we ensure our mock setup leads to the intended mockError being passed.
       // If the chain breaks, errorArg might be a TypeError.
       expect(errorArg.message).toBe(mockDeleteError.message); // Check message if object instances differ
-      expect(messageArg).toBe('There was a problem updating your favorites. Please try again.');
-      expect(retryCallback).toBeInstanceOf(Function);
+      expect(messageArg).toBe('There was a problem updating your favorites. Please try again.');'      expect(retryCallback).toBeInstanceOf(Function);
 
       // Simulate retry
       vi.clearAllMocks();
@@ -173,20 +140,15 @@ describe('useSavedTalents', () => {
       });
       expect(showApiError).not.toHaveBeenCalled();
       expect(supabase.delete).toHaveBeenCalledTimes(1); // Called once in the retry path
-      expect(toast).toHaveBeenCalledWith(expect.objectContaining({ title: "Removed from favorites" }));
-    });
+      expect(toast).toHaveBeenCalledWith(expect.objectContaining({ title: "Removed from favorites" }));"    });
 
-    it('should call showApiError with a retry callback if inserting a new saved talent fails', async () => {
-        const talentToToggle = { id: 'talent2', full_name: 'Talent Two' } as any;
-        // Initial state: no talents saved for the first call in useEffect
+    it('should call showApiError with a retry callback if inserting a new saved talent fails', async () => {'        const talentToToggle = { id: 'talent2', full_name: 'Talent Two' } as any;'        // Initial state: no talents saved for the first call in useEffect
         supabase.eq.mockResolvedValueOnce({ data: [], error: null });
-        // No profiles needed if no IDs, so inFn won't be called for initial load
-
+        // No profiles needed if no IDs, so inFn won't be called for initial load'
         const { _result } = renderHook(() => useSavedTalents());
         await act(async () => { await new Promise(resolve => setTimeout(resolve, 0)); }); // Initial fetch
 
-        const mockInsertError = new Error('Supabase insert error');
-        supabase.insert.mockResolvedValueOnce({ error: mockInsertError });
+        const mockInsertError = new Error('Supabase insert error');'        supabase.insert.mockResolvedValueOnce({ error: mockInsertError });
 
         await act(async () => {
             await result.current.toggleSaveTalent(talentToToggle);
@@ -195,8 +157,7 @@ describe('useSavedTalents', () => {
         expect(showApiError).toHaveBeenCalledTimes(1);
         const [errorArg, messageArg, retryCallback] = (showApiError as vi.Mock).mock.calls[0];
         expect(errorArg).toBe(mockInsertError);
-        expect(messageArg).toBe('There was a problem updating your favorites. Please try again.');
-        expect(retryCallback).toBeInstanceOf(Function);
+        expect(messageArg).toBe('There was a problem updating your favorites. Please try again.');'        expect(retryCallback).toBeInstanceOf(Function);
 
         // Simulate retry
         vi.clearAllMocks();
@@ -207,7 +168,6 @@ describe('useSavedTalents', () => {
         });
         expect(showApiError).not.toHaveBeenCalled();
         expect(supabase.insert).toHaveBeenCalledTimes(1);
-        expect(toast).toHaveBeenCalledWith(expect.objectContaining({ title: "Added to favorites" }));
-    });
+        expect(toast).toHaveBeenCalledWith(expect.objectContaining({ title: "Added to favorites" }));"    });
   });
 });

@@ -1,2 +1,2 @@
-// apiClient.ts - placeholder
-export const placeholder = 'placeholder';
+// apiClient.ts - placeholder;
+export const placeholder = 'placeholder';'

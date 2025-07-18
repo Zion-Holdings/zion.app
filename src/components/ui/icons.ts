@@ -1,2 +1,2 @@
-// icons.ts - placeholder
-export const placeholder = 'placeholder';
+// icons.ts - placeholder;
+export const placeholder = 'placeholder';'

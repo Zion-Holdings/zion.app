@@ -1,2 +1,2 @@
-// types.ts - placeholder
-export const placeholder = 'placeholder';
+// types.ts - placeholder;
+export const placeholder = 'placeholder';'

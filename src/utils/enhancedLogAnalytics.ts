@@ -1,2 +1,2 @@
-// enhancedLogAnalytics.ts - placeholder
-export const placeholder = 'placeholder';
+// enhancedLogAnalytics.ts - placeholder;
+export const placeholder = 'placeholder';'

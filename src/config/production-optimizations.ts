@@ -1,2 +1,2 @@
-// production-optimizations.ts - placeholder
-export const placeholder = 'placeholder';
+// production-optimizations.ts - placeholder;
+export const placeholder = 'placeholder';'

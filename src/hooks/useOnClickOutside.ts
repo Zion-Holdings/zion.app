@@ -1,2 +1,2 @@
-// useOnClickOutside.ts - placeholder
-export const placeholder = 'placeholder';
+// useOnClickOutside.ts - placeholder;
+export const placeholder = 'placeholder';'

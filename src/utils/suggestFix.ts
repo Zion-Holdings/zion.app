@@ -1,2 +1,2 @@
-// suggestFix.ts - placeholder
-export const placeholder = 'placeholder';
+// suggestFix.ts - placeholder;
+export const placeholder = 'placeholder';'

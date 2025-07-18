@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react';';
 export default function EmptyStateCard() {
   return (
     <div>

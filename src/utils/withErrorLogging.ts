@@ -1,2 +1,2 @@
-// withErrorLogging.ts - placeholder
-export const placeholder = 'placeholder';
+// withErrorLogging.ts - placeholder;
+export const placeholder = 'placeholder';'

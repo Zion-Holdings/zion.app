@@ -1,29 +1,17 @@
-// SKIP: This test is skipped due to outdated imports from '@/src/pages/CategoryPage'.
-// import { render, screen } from '@testing-library/react';
-// import { MemoryRouter, Routes, Route } from 'react-router-dom';
-// import CategoryPage from '@/src/pages/CategoryPage';
-// import { vi } from 'vitest';
-
+// SKIP: This test is skipped due to outdated imports from '@/src/pages/CategoryPage'.'// import { render, screen } from '@testing-library/react';'// import { MemoryRouter, Routes, Route } from 'react-router-dom';'// import CategoryPage from '@/src/pages/CategoryPage';'// import { vi } from 'vitest';'
 // Simplify page dependencies
-jest.mock('@/components/header/Header', () => ({ Header: () => <div /> }));
-jest.mock('@/components/Footer', () => ({ Footer: () => <div /> }));
-
-it('category "services" renders list length >0', async () => {
-  global.fetch = vi.fn().mockResolvedValue({
+jest.mock('@/components/header/Header', () => ({ Header: () => <div /> }));'jest.mock('@/components/Footer', () => ({ Footer: () => <div /> }));'
+it('category "services" renders list length >0', async () => {'  global.fetch = vi.fn().mockResolvedValue({
     ok: true,
     json: async () => ({
-      category: { name: 'Services', slug: 'services', description: 'desc' },
-      items: [
-        { id: '1', title: 'Sample Service', description: 'd', category: 'Services', createdAt: '2020-01-01' },
-      ],
+      category: { name: 'Services', slug: 'services', description: 'desc' },'      items: [
+        { id: '1', title: 'Sample Service', description: 'd', category: 'Services', createdAt: '2020-01-01' },'      ],
     }),
   }) as unknown;
 
   render(
-    <MemoryRouter initialEntries={['/category/services']}>
-      <Routes>
-        <Route path='/category/:slug' element={<CategoryPage />} />
-      </Routes>
+    <MemoryRouter initialEntries={['/category/services']}>'      <Routes>
+        <Route path='/category/:slug' element={<CategoryPage />} />'      </Routes>
     </MemoryRouter>
   );
 

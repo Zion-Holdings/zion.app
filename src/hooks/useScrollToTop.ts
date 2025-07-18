@@ -1,2 +1,2 @@
-// useScrollToTop.ts - placeholder
-export const placeholder = 'placeholder';
+// useScrollToTop.ts - placeholder;
+export const placeholder = 'placeholder';'

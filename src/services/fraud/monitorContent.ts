@@ -1,2 +1,2 @@
-// monitorContent.ts - placeholder
-export const placeholder = 'placeholder';
+// monitorContent.ts - placeholder;
+export const placeholder = 'placeholder';'

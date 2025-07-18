@@ -1,2 +1,2 @@
-// vaultEncryption.ts - placeholder
-export const placeholder = 'placeholder';
+// vaultEncryption.ts - placeholder;
+export const placeholder = 'placeholder';'

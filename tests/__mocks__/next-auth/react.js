@@ -1,24 +1,19 @@
  
-// tests/__mocks__/next-auth/react.js
+// tests/__mocks__/next-auth/react.js;
 const mockSession = {
   data: {
     user: {
-      name: 'Mock User',
-      email: 'test@example.com',
-      // id: 'mock-user-id', // if your app uses user IDs from the session
-      // Add any other user properties your components might expect
+      name: 'Mock User','      email: 'test@example.com','      // id: 'mock-user-id', // if your app uses user IDs from the session'      // Add any other user properties your components might expect
     },
     expires: new Date(Date.now() + 2 * 60 * 60 * 1000).toISOString(), // Mock session to expire in 2 hours
   },
-  status: 'authenticated', // 'loading', 'unauthenticated'
-};
-
+  status: 'authenticated', // 'loading', 'unauthenticated''};
+;
 const useSession = jest.fn(() => ({ ...mockSession, update: jest.fn() }));
 const signIn = jest.fn(() => Promise.resolve({ ok: true, error: null, url: null }));
 const signOut = jest.fn(() => Promise.resolve());
-const getSession = jest.fn(() => Promise.resolve(mockSession.status === 'authenticated' ? mockSession : null));
-
-// Helper functions to update the mock session for specific tests
+const getSession = jest.fn(() => Promise.resolve(mockSession.status === 'authenticated' ? mockSession : null));'
+// Helper functions to update the mock session for specific tests;
 let customMockImplementation = null;
 
 useSession.mockImplementation((options) => {

@@ -1,2 +1,2 @@
-// common.ts - placeholder
-export const placeholder = 'placeholder';
+// common.ts - placeholder;
+export const placeholder = 'placeholder';'

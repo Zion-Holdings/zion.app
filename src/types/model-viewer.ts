@@ -1,2 +1,2 @@
-// model-viewer.ts - placeholder
-export const placeholder = 'placeholder';
+// model-viewer.ts - placeholder;
+export const placeholder = 'placeholder';'

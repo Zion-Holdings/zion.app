@@ -1,13 +1,8 @@
-import { render, screen } from '@testing-library/react';
-import { ErrorBoundary } from 'react-error-boundary';
-import * as sentry from '@/utils/sentry';
-
-jest.mock('@/utils/sentry');
-
+import { render, screen } from '@testing-library/react';'import { ErrorBoundary } from 'react-error-boundary';'import * as sentry from '@/utils/sentry';'
+jest.mock('@/utils/sentry');';
 function Bomb() {
-  throw new Error('boom');
-}
-
+  throw new Error('boom');'}
+;
 function Fallback() {
   return (
     <div>
@@ -17,8 +12,7 @@ function Fallback() {
   );
 }
 
-test('shows fallback and logs error', () => {
-  render(
+test('shows fallback and logs error', () => {'  render(
     <ErrorBoundary
       FallbackComponent={Fallback}
       onError={(err, info) => {
@@ -29,7 +23,5 @@ test('shows fallback and logs error', () => {
       <Bomb />
     </ErrorBoundary>
   );
-  expect(screen.getByText('Something went wrong')).toBeInTheDocument();
-  expect(screen.getByRole('button', { name: /reload/i })).toBeInTheDocument();
-  expect(sentry.captureException).toHaveBeenCalled();
+  expect(screen.getByText('Something went wrong')).toBeInTheDocument();'  expect(screen.getByRole('button', { name: /reload/i })).toBeInTheDocument();'  expect(sentry.captureException).toHaveBeenCalled();
 });

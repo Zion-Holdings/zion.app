@@ -1,2 +1,2 @@
-// accessibility.ts - placeholder
-export const placeholder = 'placeholder';
+// accessibility.ts - placeholder;
+export const placeholder = 'placeholder';'

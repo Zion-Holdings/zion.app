@@ -1,2 +1,2 @@
-// talent-api.d.ts - placeholder
-export const placeholder = 'placeholder';
+// talent-api.d.ts - placeholder;
+export const placeholder = 'placeholder';'

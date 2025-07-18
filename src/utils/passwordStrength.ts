@@ -1,2 +1,2 @@
-// passwordStrength.ts - placeholder
-export const placeholder = 'placeholder';
+// passwordStrength.ts - placeholder;
+export const placeholder = 'placeholder';'

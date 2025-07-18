@@ -1,2 +1,2 @@
-// safeStorage.ts - placeholder
-export const placeholder = 'placeholder';
+// safeStorage.ts - placeholder;
+export const placeholder = 'placeholder';'

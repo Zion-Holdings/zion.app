@@ -1,2 +1,2 @@
-// talent.ts - placeholder
-export const placeholder = 'placeholder';
+// talent.ts - placeholder;
+export const placeholder = 'placeholder';'

@@ -1,2 +1,2 @@
-// useFirestoreFavorites.ts - placeholder
-export const placeholder = 'placeholder';
+// useFirestoreFavorites.ts - placeholder;
+export const placeholder = 'placeholder';'

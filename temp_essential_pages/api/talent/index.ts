@@ -1,7 +1,4 @@
-import { PrismaClient } from '@prisma/client';
-import type { NextApiRequest, NextApiResponse } from 'next';
-import * as Sentry from '@sentry/nextjs';
-
+import { PrismaClient } from '@prisma/client';'import type { NextApiRequest, NextApiResponse } from 'next';'import * as Sentry from '@sentry/nextjs';';
 const prisma = new PrismaClient();
 
 interface _TalentFilters {
@@ -22,12 +19,9 @@ interface WhereClause {
     hasSome: string[];
   };
   OR?: Array<{
-    name?: { contains: string; mode: 'insensitive' };
-    headline?: { contains: string; mode: 'insensitive' };
-    bio?: { contains: string; mode: 'insensitive' };
-  }>;
+    name?: { contains: string; mode: 'insensitive' };'    headline?: { contains: string; mode: 'insensitive' };'    bio?: { contains: string; mode: 'insensitive' };'  }>;
 }
-
+;
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
@@ -61,10 +55,7 @@ export default async function handler(
     
     if (filters.search) {
       where.OR = [
-        { name: { contains: filters.search, mode: 'insensitive' } },
-        { headline: { contains: filters.search, mode: 'insensitive' } },
-        { bio: { contains: filters.search, mode: 'insensitive' } },
-      ];
+        { name: { contains: filters.search, mode: 'insensitive' } },'        { headline: { contains: filters.search, mode: 'insensitive' } },'        { bio: { contains: filters.search, mode: 'insensitive' } },'      ];
     }
 
     const [profiles, totalCount] = await Promise.all([
@@ -73,8 +64,7 @@ export default async function handler(
         skip,
         take: limit,
         orderBy: {
-          createdAt: 'desc',
-        },
+          createdAt: 'desc','        },
         select: {
           id: true,
           name: true,
@@ -102,9 +92,7 @@ export default async function handler(
     });
   } catch (error) {
     Sentry.captureException(error);
-    console.error('Error fetching talent profiles:', error);
-    return res.status(500).json({ error: 'Failed to fetch talent profiles' });
-  } finally {
+    console.error('Error fetching talent profiles:', error);'    return res.status(500).json({ error: 'Failed to fetch talent profiles' });'  } finally {
     await prisma.$disconnect();
   }
 }

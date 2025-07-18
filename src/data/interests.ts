@@ -1,2 +1,2 @@
-// interests.ts - placeholder
-export const placeholder = 'placeholder';
+// interests.ts - placeholder;
+export const placeholder = 'placeholder';'

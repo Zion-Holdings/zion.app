@@ -1,2 +1,2 @@
-// middleware.ts - placeholder
-export const placeholder = 'placeholder';
+// middleware.ts - placeholder;
+export const placeholder = 'placeholder';'

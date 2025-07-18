@@ -1,2 +1,2 @@
-// commentService.ts - placeholder
-export const placeholder = 'placeholder';
+// commentService.ts - placeholder;
+export const placeholder = 'placeholder';'

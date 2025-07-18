@@ -1,2 +1,2 @@
-// dynamicComponents.ts - placeholder
-export const placeholder = 'placeholder';
+// dynamicComponents.ts - placeholder;
+export const placeholder = 'placeholder';'

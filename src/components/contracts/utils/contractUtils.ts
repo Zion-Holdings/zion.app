@@ -1,2 +1,2 @@
-// contractUtils.ts - placeholder
-export const placeholder = 'placeholder';
+// contractUtils.ts - placeholder;
+export const placeholder = 'placeholder';'

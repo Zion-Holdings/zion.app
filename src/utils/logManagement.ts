@@ -1,2 +1,2 @@
-// logManagement.ts - placeholder
-export const placeholder = 'placeholder';
+// logManagement.ts - placeholder;
+export const placeholder = 'placeholder';'

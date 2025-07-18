@@ -1,2 +1,2 @@
-// useMessagingOperations.ts - placeholder
-export const placeholder = 'placeholder';
+// useMessagingOperations.ts - placeholder;
+export const placeholder = 'placeholder';'

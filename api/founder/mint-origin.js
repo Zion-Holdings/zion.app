@@ -1,1 +1,1 @@
-module.exports = require('../nft/mint');''
+module.exports = require('../nft/mint');'''

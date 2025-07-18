@@ -1,2 +1,2 @@
-// pwa.ts - placeholder
-export const placeholder = 'placeholder';
+// pwa.ts - placeholder;
+export const placeholder = 'placeholder';'

@@ -1,2 +1,2 @@
-// themeUtils.ts - placeholder
-export const placeholder = 'placeholder';
+// themeUtils.ts - placeholder;
+export const placeholder = 'placeholder';'

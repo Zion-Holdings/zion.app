@@ -1,2 +1,2 @@
-// termsContent.ts - placeholder
-export const placeholder = 'placeholder';
+// termsContent.ts - placeholder;
+export const placeholder = 'placeholder';'

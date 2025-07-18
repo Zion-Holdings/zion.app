@@ -1,2 +1,2 @@
-// run-update-icons.ts - placeholder
-export const placeholder = 'placeholder';
+// run-update-icons.ts - placeholder;
+export const placeholder = 'placeholder';'

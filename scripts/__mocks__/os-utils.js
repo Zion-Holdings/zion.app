@@ -4,6 +4,5 @@
 module.exports = {
   memUsage: jest.fn(),
   cpuUsage: jest.fn(),
-  // platform: jest.fn(() => 'linux'), // if needed
-  // countCPUs: jest.fn(() => 4), // if needed
+  // platform: jest.fn(() => 'linux'), // if needed'  // countCPUs: jest.fn(() => 4), // if needed
 };

@@ -1,2 +1,2 @@
-// search.ts - placeholder
-export const placeholder = 'placeholder';
+// search.ts - placeholder;
+export const placeholder = 'placeholder';'

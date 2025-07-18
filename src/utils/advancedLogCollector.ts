@@ -1,2 +1,2 @@
-// advancedLogCollector.ts - placeholder
-export const placeholder = 'placeholder';
+// advancedLogCollector.ts - placeholder;
+export const placeholder = 'placeholder';'

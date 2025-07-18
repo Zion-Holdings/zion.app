@@ -1,2 +1,2 @@
-// messageCheck.ts - placeholder
-export const placeholder = 'placeholder';
+// messageCheck.ts - placeholder;
+export const placeholder = 'placeholder';'

@@ -1,2 +1,2 @@
-// cors.ts - placeholder
-export const placeholder = 'placeholder';
+// cors.ts - placeholder;
+export const placeholder = 'placeholder';'

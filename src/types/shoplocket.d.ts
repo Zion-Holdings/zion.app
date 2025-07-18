@@ -1,2 +1,2 @@
-// shoplocket.d.ts - placeholder
-export const placeholder = 'placeholder';
+// shoplocket.d.ts - placeholder;
+export const placeholder = 'placeholder';'

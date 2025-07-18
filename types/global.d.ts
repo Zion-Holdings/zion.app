@@ -185,8 +185,7 @@ declare global {
     keepalive?: boolean;
     
     // Fetch with Priority Hints
-    priority?: 'high' | 'low' | 'auto';
-    
+    priority?: 'high' | 'low' | 'auto';'    
     // Fetch with Credentials
     credentials?: RequestCredentials;
     
@@ -209,8 +208,7 @@ declare global {
     integrity?: string;
     
     // Fetch with Duplex
-    duplex?: 'half' | 'full';
-  }
+    duplex?: 'half' | 'full';'  }
 
   // Modern Web APIs
   interface Window {
@@ -234,18 +232,7 @@ declare global {
     
     // Web Timing API
     performance: Performance & {
-      getEntriesByType(type: 'navigation'): PerformanceNavigationTiming[];
-      getEntriesByType(type: 'resource'): PerformanceResourceTiming[];
-      getEntriesByType(type: 'paint'): PerformancePaintTiming[];
-      getEntriesByType(type: 'largest-contentful-paint'): LargestContentfulPaint[];
-      getEntriesByType(type: 'first-input'): FirstInputDelay[];
-      getEntriesByType(type: 'layout-shift'): LayoutShift[];
-      getEntriesByType(type: 'longtask'): PerformanceLongTaskTiming[];
-      getEntriesByType(type: 'element'): PerformanceElementTiming[];
-      getEntriesByType(type: 'event'): PerformanceEventTiming[];
-      getEntriesByType(type: 'measure'): PerformanceMeasure[];
-      getEntriesByType(type: 'mark'): PerformanceMark[];
-    };
+      getEntriesByType(type: 'navigation'): PerformanceNavigationTiming[];'      getEntriesByType(type: 'resource'): PerformanceResourceTiming[];'      getEntriesByType(type: 'paint'): PerformancePaintTiming[];'      getEntriesByType(type: 'largest-contentful-paint'): LargestContentfulPaint[];'      getEntriesByType(type: 'first-input'): FirstInputDelay[];'      getEntriesByType(type: 'layout-shift'): LayoutShift[];'      getEntriesByType(type: 'longtask'): PerformanceLongTaskTiming[];'      getEntriesByType(type: 'element'): PerformanceElementTiming[];'      getEntriesByType(type: 'event'): PerformanceEventTiming[];'      getEntriesByType(type: 'measure'): PerformanceMeasure[];'      getEntriesByType(type: 'mark'): PerformanceMark[];'    };
     
     // Web Beacon API
     navigator: Navigator & {
@@ -384,8 +371,7 @@ declare global {
   // Custom project types
   interface ZionAppConfig {
     version: string;
-    environment: 'development' | 'staging' | 'production';
-    features: {
+    environment: 'development' | 'staging' | 'production';'    features: {
       auth: boolean;
       payments: boolean;
       analytics: boolean;
@@ -439,5 +425,5 @@ declare global {
   type AnimationEventHandler<T extends Element = Element> = (event: AnimationEvent<T>) => void;
 }
 
-// Export to make this a module
+// Export to make this a module;
 export {}; 

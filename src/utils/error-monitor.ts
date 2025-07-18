@@ -1,2 +1,2 @@
-// error-monitor.ts - placeholder
-export const placeholder = 'placeholder';
+// error-monitor.ts - placeholder;
+export const placeholder = 'placeholder';'

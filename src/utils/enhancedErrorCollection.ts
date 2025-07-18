@@ -1,2 +1,2 @@
-// enhancedErrorCollection.ts - placeholder
-export const placeholder = 'placeholder';
+// enhancedErrorCollection.ts - placeholder;
+export const placeholder = 'placeholder';'

@@ -1,2 +1,2 @@
-// interview.ts - placeholder
-export const placeholder = 'placeholder';
+// interview.ts - placeholder;
+export const placeholder = 'placeholder';'

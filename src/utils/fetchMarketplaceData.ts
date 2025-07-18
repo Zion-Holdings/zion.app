@@ -1,2 +1,2 @@
-// fetchMarketplaceData.ts - placeholder
-export const placeholder = 'placeholder';
+// fetchMarketplaceData.ts - placeholder;
+export const placeholder = 'placeholder';'

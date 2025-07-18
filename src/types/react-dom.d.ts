@@ -1,2 +1,2 @@
-// react-dom.d.ts - placeholder
-export const placeholder = 'placeholder';
+// react-dom.d.ts - placeholder;
+export const placeholder = 'placeholder';'

@@ -1,2 +1,2 @@
-// stream-polyfill.ts - placeholder
-export const placeholder = 'placeholder';
+// stream-polyfill.ts - placeholder;
+export const placeholder = 'placeholder';'

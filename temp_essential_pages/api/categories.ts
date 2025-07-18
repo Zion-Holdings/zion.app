@@ -1,14 +1,7 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-
-// Mock categories data for development
+import type { NextApiRequest, NextApiResponse } from 'next';'
+// Mock categories data for development;
 const mockCategories = [
-  { id: 'services', name: 'Services', slug: 'services', icon: 'Briefcase' },
-  { id: 'talents', name: 'Talents', slug: 'talents', icon: 'Users' },
-  { id: 'equipment', name: 'Equipment', slug: 'equipment', icon: 'HardDrive' },
-  { id: 'innovation', name: 'Innovation', slug: 'innovation', icon: 'Lightbulb' },
-  { id: 'ai-models', name: 'AI Models', slug: 'ai-models', icon: 'Brain' },
-  { id: 'data-science', name: 'Data Science', slug: 'data-science', icon: 'BarChart' },
-];
+  { id: 'services', name: 'Services', slug: 'services', icon: 'Briefcase' },'  { id: 'talents', name: 'Talents', slug: 'talents', icon: 'Users' },'  { id: 'equipment', name: 'Equipment', slug: 'equipment', icon: 'HardDrive' },'  { id: 'innovation', name: 'Innovation', slug: 'innovation', icon: 'Lightbulb' },'  { id: 'ai-models', name: 'AI Models', slug: 'ai-models', icon: 'Brain' },'  { id: 'data-science', name: 'Data Science', slug: 'data-science', icon: 'BarChart' },'];
 
 interface CategoryType {
   id: string;
@@ -16,14 +9,12 @@ interface CategoryType {
   slug: string;
   icon: string;
 }
-
+;
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<CategoryType[] | { error: string }>
 ) {
-  if (req.method !== 'GET') {
-    res.setHeader('Allow', 'GET');
-    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+  if (req.method !== 'GET') {'    res.setHeader('Allow', 'GET');'    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
   }
 
   try {
@@ -31,7 +22,5 @@ export default async function handler(
     const sortedCategories = mockCategories.sort((a, b) => a.name.localeCompare(b.name));
     return res.status(200).json(sortedCategories);
   } catch {
-    console.('Failed to fetch categories:', );
-    return res.status(500).json({ : 'Internal Server Error: Failed to fetch categories' });
-  }
+    console.('Failed to fetch categories:', );'    return res.status(500).json({ : 'Internal Server Error: Failed to fetch categories' });'  }
 }

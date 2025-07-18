@@ -1,2 +1,2 @@
-// favorites.ts - placeholder
-export const placeholder = 'placeholder';
+// favorites.ts - placeholder;
+export const placeholder = 'placeholder';'

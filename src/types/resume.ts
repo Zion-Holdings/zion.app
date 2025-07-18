@@ -1,2 +1,2 @@
-// resume.ts - placeholder
-export const placeholder = 'placeholder';
+// resume.ts - placeholder;
+export const placeholder = 'placeholder';'

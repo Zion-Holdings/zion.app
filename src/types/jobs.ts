@@ -1,2 +1,2 @@
-// jobs.ts - placeholder
-export const placeholder = 'placeholder';
+// jobs.ts - placeholder;
+export const placeholder = 'placeholder';'

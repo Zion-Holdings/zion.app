@@ -1,2 +1,2 @@
-// useSessionDuration.ts - placeholder
-export const placeholder = 'placeholder';
+// useSessionDuration.ts - placeholder;
+export const placeholder = 'placeholder';'

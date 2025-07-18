@@ -1,2 +1,2 @@
-// socket.io.d.ts - placeholder
-export const placeholder = 'placeholder';
+// socket.io.d.ts - placeholder;
+export const placeholder = 'placeholder';'

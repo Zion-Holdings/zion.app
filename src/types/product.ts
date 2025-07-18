@@ -1,2 +1,2 @@
-// product.ts - placeholder
-export const placeholder = 'placeholder';
+// product.ts - placeholder;
+export const placeholder = 'placeholder';'

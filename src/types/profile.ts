@@ -1,2 +1,2 @@
-// profile.ts - placeholder
-export const placeholder = 'placeholder';
+// profile.ts - placeholder;
+export const placeholder = 'placeholder';'

@@ -1,2 +1,2 @@
-// sitemap.ts - placeholder
-export const placeholder = 'placeholder';
+// sitemap.ts - placeholder;
+export const placeholder = 'placeholder';'

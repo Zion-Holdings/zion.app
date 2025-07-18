@@ -1,2 +1,2 @@
-// bundleOptimization.ts - placeholder
-export const placeholder = 'placeholder';
+// bundleOptimization.ts - placeholder;
+export const placeholder = 'placeholder';'

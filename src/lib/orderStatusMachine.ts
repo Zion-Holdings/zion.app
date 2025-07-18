@@ -1,2 +1,2 @@
-// orderStatusMachine.ts - placeholder
-export const placeholder = 'placeholder';
+// orderStatusMachine.ts - placeholder;
+export const placeholder = 'placeholder';'

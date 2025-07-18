@@ -1,2 +1,2 @@
-// community.ts - placeholder
-export const placeholder = 'placeholder';
+// community.ts - placeholder;
+export const placeholder = 'placeholder';'

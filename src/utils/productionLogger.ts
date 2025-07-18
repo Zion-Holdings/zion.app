@@ -1,2 +1,2 @@
-// productionLogger.ts - placeholder
-export const placeholder = 'placeholder';
+// productionLogger.ts - placeholder;
+export const placeholder = 'placeholder';'

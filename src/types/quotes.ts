@@ -1,2 +1,2 @@
-// quotes.ts - placeholder
-export const placeholder = 'placeholder';
+// quotes.ts - placeholder;
+export const placeholder = 'placeholder';'

@@ -1,2 +1,2 @@
-// useTalentQuotes.ts - placeholder
-export const placeholder = 'placeholder';
+// useTalentQuotes.ts - placeholder;
+export const placeholder = 'placeholder';'

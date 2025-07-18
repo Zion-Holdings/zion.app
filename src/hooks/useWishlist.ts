@@ -1,2 +1,2 @@
-// useWishlist.ts - placeholder
-export const placeholder = 'placeholder';
+// useWishlist.ts - placeholder;
+export const placeholder = 'placeholder';'

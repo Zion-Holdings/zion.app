@@ -1,2 +1,2 @@
-// createHireRequestNotifications.ts - placeholder
-export const placeholder = 'placeholder';
+// createHireRequestNotifications.ts - placeholder;
+export const placeholder = 'placeholder';'

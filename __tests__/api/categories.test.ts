@@ -1,13 +1,7 @@
-import categoriesApiHandler from '@/pages/api/categories'; // Correctly import the default export
-import { CATEGORIES } from '@/data/categories';
-// Prisma is now mocked from @prisma/client directly in the jest.mock call
-import { createMocks, createRequest as _createRequest, createResponse as _createResponse } from 'node-mocks-http';
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { PrismaClient } from '@prisma/client';
-
+import categoriesApiHandler from '@/pages/api/categories'; // Correctly import the default export'import { CATEGORIES } from '@/data/categories';'// Prisma is now mocked from @prisma/client directly in the jest.mock call;
+import { createMocks, createRequest as _createRequest, createResponse as _createResponse } from 'node-mocks-http';'import type { NextApiRequest, NextApiResponse } from 'next';'import { PrismaClient } from '@prisma/client';'
 // Mock Prisma
-jest.mock('@prisma/client', () => {
-  const mockPrismaClient = {
+jest.mock('@prisma/client', () => {'  const mockPrismaClient = {
     category: {
       findMany: jest.fn(),
     },
@@ -16,16 +10,14 @@ jest.mock('@prisma/client', () => {
   return { PrismaClient: jest.fn(() => mockPrismaClient) };
 });
 
-// Mock console.error
+// Mock console.error;
 let consoleErrorSpy: jest.SpyInstance;
 
-describe('/api/categories API Endpoint', () => {
-  let _mockPrismaCategory: any;
+describe('/api/categories API Endpoint', () => {'  let _mockPrismaCategory: any;
 
   beforeEach(() => {
     jest.clearAllMocks();
-    consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
-    // Use the already imported and mocked PrismaClient
+    consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});'    // Use the already imported and mocked PrismaClient
     const prisma = new PrismaClient();
     mockPrismaCategory = (prisma as any).category;
   });
@@ -34,13 +26,10 @@ describe('/api/categories API Endpoint', () => {
     consoleErrorSpy.mockRestore();
   });
 
-  test('should return categories from DB if query is successful', async () => {
-    const dbCategories = [{ id: 'db1', name: 'DB Category', slug: 'db-cat', icon: 'Database' }];
-    mockPrismaCategory.findMany.mockResolvedValueOnce(dbCategories);
+  test('should return categories from DB if query is successful', async () => {'    const dbCategories = [{ id: 'db1', name: 'DB Category', slug: 'db-cat', icon: 'Database' }];'    mockPrismaCategory.findMany.mockResolvedValueOnce(dbCategories);
 
     const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
-      method: 'GET',
-    });
+      method: 'GET','    });
 
     await categoriesApiHandler(req, res);
 
@@ -49,17 +38,14 @@ describe('/api/categories API Endpoint', () => {
     expect(mockPrismaCategory.findMany).toHaveBeenCalledTimes(1);
   });
 
-  test('should return default CATEGORIES if DB query returns empty array and CATEGORIES is not empty', async () => {
-    mockPrismaCategory.findMany.mockResolvedValueOnce([]);
+  test('should return default CATEGORIES if DB query returns empty array and CATEGORIES is not empty', async () => {'    mockPrismaCategory.findMany.mockResolvedValueOnce([]);
     // Ensure CATEGORIES has data for this test case
     const _originalCategories = [...CATEGORIES];
     if (CATEGORIES.length === 0) {
-        CATEGORIES.push({ id: 'fallback1', name: 'Fallback Category', slug: 'fallback-cat', icon: 'FallbackIcon' });
-    }
+        CATEGORIES.push({ id: 'fallback1', name: 'Fallback Category', slug: 'fallback-cat', icon: 'FallbackIcon' });'    }
 
     const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
-      method: 'GET',
-    });
+      method: 'GET','    });
 
     await categoriesApiHandler(req, res);
 
@@ -73,8 +59,7 @@ describe('/api/categories API Endpoint', () => {
     }
   });
 
-  test('should return empty array if DB query returns empty array and CATEGORIES is also empty', async () => {
-    mockPrismaCategory.findMany.mockResolvedValueOnce([]);
+  test('should return empty array if DB query returns empty array and CATEGORIES is also empty', async () => {'    mockPrismaCategory.findMany.mockResolvedValueOnce([]);
     const _originalCategories = [...CATEGORIES];
     // Temporarily empty CATEGORIES for this test
     const tempCategoriesStore = [...CATEGORIES];
@@ -82,8 +67,7 @@ describe('/api/categories API Endpoint', () => {
 
 
     const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
-      method: 'GET',
-    });
+      method: 'GET','    });
 
     await categoriesApiHandler(req, res);
 
@@ -95,34 +79,25 @@ describe('/api/categories API Endpoint', () => {
     CATEGORIES.push(...tempCategoriesStore);
   });
 
-  test('should return 500 and error message if DB query throws error', async () => {
-    const dbError = new Error('DB Error');
-    mockPrismaCategory.findMany.mockRejectedValueOnce(dbError);
+  test('should return 500 and error message if DB query throws error', async () => {'    const dbError = new Error('DB Error');'    mockPrismaCategory.findMany.mockRejectedValueOnce(dbError);
 
     const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
-      method: 'GET',
-    });
+      method: 'GET','    });
 
     await categoriesApiHandler(req, res);
 
     expect(res._getStatusCode()).toBe(500);
-    expect(res._getJSONData()).toEqual({ error: 'Failed to fetch categories from database.' });
-    expect(mockPrismaCategory.findMany).toHaveBeenCalledTimes(1);
-    expect(consoleErrorSpy).toHaveBeenCalledWith('Failed to fetch categories from database:', dbError);
-  });
+    expect(res._getJSONData()).toEqual({ error: 'Failed to fetch categories from database.' });'    expect(mockPrismaCategory.findMany).toHaveBeenCalledTimes(1);
+    expect(consoleErrorSpy).toHaveBeenCalledWith('Failed to fetch categories from database:', dbError);'  });
 
-  test('should return 405 if method is not GET', async () => {
-    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
-      method: 'POST',
-      body: {
-        name: 'Test Category',
-      },
+  test('should return 405 if method is not GET', async () => {'    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
+      method: 'POST','      body: {
+        name: 'Test Category','      },
     });
 
     await categoriesApiHandler(req, res);
 
     expect(res._getStatusCode()).toBe(405);
-    expect(res._getJSONData()).toEqual({ error: 'Method POST Not Allowed' });
-    expect(mockPrismaCategory.findMany).not.toHaveBeenCalled();
+    expect(res._getJSONData()).toEqual({ error: 'Method POST Not Allowed' });'    expect(mockPrismaCategory.findMany).not.toHaveBeenCalled();
   });
 });

@@ -5,26 +5,17 @@
  * 
  * Processes improvement suggestions and applies them automatically
  */
-
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-const axios = require('axios');
-const winston = require('winston');
-
-// Configure logging
+;
+const fs = require('fs');'const path = require('path');'const { execSync } = require('child_process');'const axios = require('axios');'const winston = require('winston');'
+// Configure logging;
 const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.combine(
+  level: 'info','  format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: 'zion-improve' },
-  transports: [
-    new winston.transports.File({ filename: 'logs/improve-error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/improve-combined.log' }),
-    new winston.transports.Console({
+  defaultMeta: { service: 'zion-improve' },'  transports: [
+    new winston.transports.File({ filename: 'logs/improve-error.log', level: 'error' }),'    new winston.transports.File({ filename: 'logs/improve-combined.log' }),'    new winston.transports.Console({
       format: winston.format.combine(
         winston.format.colorize(),
         winston.format.simple()
@@ -56,8 +47,7 @@ class ZionImprover {
       
       logger.info(`✅ Processed ${suggestions.length} improvements successfully`);
     } catch (error) {
-      logger.error('Error processing improvements:', error);
-    } finally {
+      logger.error('Error processing improvements:', error);'    } finally {
       this.isProcessing = false;
     }
   }
@@ -71,8 +61,7 @@ class ZionImprover {
     try {
       // Validate suggestion
       if (!this.validateSuggestion(suggestion)) {
-        throw new Error('Invalid suggestion format');
-      }
+        throw new Error('Invalid suggestion format');'      }
 
       // Create backup before applying changes
       await this.createBackup(suggestion);
@@ -90,15 +79,13 @@ class ZionImprover {
         this.appliedImprovements.push({
           ...suggestion,
           appliedAt: new Date().toISOString(),
-          status: 'success'
-        });
+          status: 'success''        });
         
         logger.info(`✅ Successfully applied: ${suggestion.description}`);
       } else {
         // Revert changes if tests fail
         await this.revertChanges(suggestion);
-        throw new Error('Tests failed after applying changes');
-      }
+        throw new Error('Tests failed after applying changes');'      }
     } catch (error) {
       logger.error(`❌ Failed to apply suggestion: ${suggestion.description}`, error);
       
@@ -106,8 +93,7 @@ class ZionImprover {
         ...suggestion,
         failedAt: new Date().toISOString(),
         error: error.message,
-        status: 'failed'
-      });
+        status: 'failed''      });
 
       // Revert changes if they were partially applied
       await this.revertChanges(suggestion);
@@ -118,8 +104,7 @@ class ZionImprover {
    * Validate improvement suggestion
    */
   validateSuggestion(suggestion) {
-    const requiredFields = ['type', 'description', 'changes'];
-    
+    const requiredFields = ['type', 'description', 'changes'];'    
     for (const field of requiredFields) {
       if (!suggestion[field]) {
         logger.error(`Missing required field: ${field}`);
@@ -128,20 +113,15 @@ class ZionImprover {
     }
 
     if (!Array.isArray(suggestion.changes)) {
-      logger.error('Changes must be an array');
-      return false;
+      logger.error('Changes must be an array');'      return false;
     }
 
     for (const change of suggestion.changes) {
       if (!change.action) {
-        logger.error('Each change must have action');
-        return false;
+        logger.error('Each change must have action');'        return false;
       }
       
-      // For 'add' action, we don't need target
-      if (change.action !== 'add' && !change.target && !change.file) {
-        logger.error('Each change must have target or file (except for add action)');
-        return false;
+      // For 'add' action, we don't need target'      if (change.action !== 'add' && !change.target && !change.file) {'        logger.error('Each change must have target or file (except for add action)');'        return false;
       }
     }
 
@@ -152,8 +132,7 @@ class ZionImprover {
    * Create backup before applying changes
    */
   async createBackup(suggestion) {
-    const backupDir = 'backups';
-    if (!fs.existsSync(backupDir)) {
+    const backupDir = 'backups';'    if (!fs.existsSync(backupDir)) {
       fs.mkdirSync(backupDir, { recursive: true });
     }
 
@@ -165,12 +144,10 @@ class ZionImprover {
       }
     }
 
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const backupPath = path.join(backupDir, `backup_${suggestion.type}_${timestamp}`);
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');'    const backupPath = path.join(backupDir, `backup_${suggestion.type}_${timestamp}`);
 
     for (const file of backupFiles) {
-      const relativePath = path.relative('.', file);
-      const backupFilePath = path.join(backupPath, relativePath);
+      const relativePath = path.relative('.', file);'      const backupFilePath = path.join(backupPath, relativePath);
       
       // Create directory structure
       const backupFileDir = path.dirname(backupFilePath);
@@ -193,23 +170,17 @@ class ZionImprover {
     logger.info(`🔧 Applying suggestion: ${suggestion.description}`);
 
     switch (suggestion.type) {
-      case 'code_change':
-        await this.applyCodeChange(suggestion);
+      case 'code_change':'        await this.applyCodeChange(suggestion);
         break;
-      case 'dependency_update':
-        await this.applyDependencyUpdate(suggestion);
+      case 'dependency_update':'        await this.applyDependencyUpdate(suggestion);
         break;
-      case 'configuration_change':
-        await this.applyConfigurationChange(suggestion);
+      case 'configuration_change':'        await this.applyConfigurationChange(suggestion);
         break;
-      case 'performance_optimization':
-        await this.applyPerformanceOptimization(suggestion);
+      case 'performance_optimization':'        await this.applyPerformanceOptimization(suggestion);
         break;
-      case 'security_fix':
-        await this.applySecurityFix(suggestion);
+      case 'security_fix':'        await this.applySecurityFix(suggestion);
         break;
-      case 'accessibility_improvement':
-        await this.applyAccessibilityImprovement(suggestion);
+      case 'accessibility_improvement':'        await this.applyAccessibilityImprovement(suggestion);
         break;
       default:
         throw new Error(`Unknown suggestion type: ${suggestion.type}`);
@@ -222,8 +193,7 @@ class ZionImprover {
   async applyCodeChange(suggestion) {
     for (const change of suggestion.changes) {
       if (!change.file) {
-        logger.warn('Skipping change without file path');
-        continue;
+        logger.warn('Skipping change without file path');'        continue;
       }
 
       if (!fs.existsSync(change.file)) {
@@ -231,53 +201,35 @@ class ZionImprover {
         continue;
       }
 
-      let content = fs.readFileSync(change.file, 'utf8');
-      
+      let content = fs.readFileSync(change.file, 'utf8');'      
       switch (change.action) {
-        case 'add':
-          if (change.position === 'start') {
-            content = change.content + '\n' + content;
-          } else if (change.position === 'end') {
-            content = content + '\n' + change.content;
-          } else {
-            content += '\n' + change.content;
-          }
+        case 'add':'          if (change.position === 'start') {'            content = change.content + '\n' + content;'          } else if (change.position === 'end') {'            content = content + '\n' + change.content;'          } else {
+            content += '\n' + change.content;'          }
           break;
           
-        case 'modify':
-          if (change.regex) {
-            const regex = new RegExp(change.regex, 'g');
-            content = content.replace(regex, change.content);
+        case 'modify':'          if (change.regex) {
+            const regex = new RegExp(change.regex, 'g');'            content = content.replace(regex, change.content);
           } else {
             content = content.replace(change.target, change.content);
           }
           break;
           
-        case 'remove':
-          if (change.regex) {
-            const regex = new RegExp(change.regex, 'g');
-            content = content.replace(regex, '');
-          } else {
-            content = content.replace(change.target, '');
-          }
+        case 'remove':'          if (change.regex) {
+            const regex = new RegExp(change.regex, 'g');'            content = content.replace(regex, '');'          } else {
+            content = content.replace(change.target, '');'          }
           break;
           
-        case 'replace':
-          if (change.regex) {
-            const regex = new RegExp(change.regex, 'g');
-            content = content.replace(regex, change.content);
+        case 'replace':'          if (change.regex) {
+            const regex = new RegExp(change.regex, 'g');'            content = content.replace(regex, change.content);
           } else {
             content = content.replace(change.target, change.content);
           }
           break;
           
-        case 'insert':
-          if (change.after) {
-            const afterRegex = new RegExp(change.after, 'g');
-            content = content.replace(afterRegex, `$&${change.content}`);
+        case 'insert':'          if (change.after) {
+            const afterRegex = new RegExp(change.after, 'g');'            content = content.replace(afterRegex, `$&${change.content}`);
           } else if (change.before) {
-            const beforeRegex = new RegExp(change.before, 'g');
-            content = content.replace(beforeRegex, `${change.content}$&`);
+            const beforeRegex = new RegExp(change.before, 'g');'            content = content.replace(beforeRegex, `${change.content}$&`);
           }
           break;
           
@@ -296,15 +248,8 @@ class ZionImprover {
   async applyDependencyUpdate(suggestion) {
     for (const change of suggestion.changes) {
       try {
-        if (change.action === 'install') {
-          execSync(`npm install ${change.package}@${change.version || 'latest'}`, { stdio: 'inherit' });
-          logger.info(`✅ Installed ${change.package}@${change.version || 'latest'}`);
-        } else if (change.action === 'update') {
-          execSync(`npm update ${change.package}`, { stdio: 'inherit' });
-          logger.info(`✅ Updated ${change.package}`);
-        } else if (change.action === 'remove') {
-          execSync(`npm uninstall ${change.package}`, { stdio: 'inherit' });
-          logger.info(`✅ Removed ${change.package}`);
+        if (change.action === 'install') {'          execSync(`npm install ${change.package}@${change.version || 'latest'}`, { stdio: 'inherit' });'          logger.info(`✅ Installed ${change.package}@${change.version || 'latest'}`);'        } else if (change.action === 'update') {'          execSync(`npm update ${change.package}`, { stdio: 'inherit' });'          logger.info(`✅ Updated ${change.package}`);
+        } else if (change.action === 'remove') {'          execSync(`npm uninstall ${change.package}`, { stdio: 'inherit' });'          logger.info(`✅ Removed ${change.package}`);
         }
       } catch (error) {
         logger.error(`❌ Failed to ${change.action} ${change.package}:`, error.message);
@@ -319,19 +264,16 @@ class ZionImprover {
   async applyConfigurationChange(suggestion) {
     for (const change of suggestion.changes) {
       if (!change.file) {
-        logger.warn('Skipping configuration change without file path');
-        continue;
+        logger.warn('Skipping configuration change without file path');'        continue;
       }
 
       if (!fs.existsSync(change.file)) {
-        // Create file if it doesn't exist
-        fs.writeFileSync(change.file, change.content);
+        // Create file if it doesn't exist'        fs.writeFileSync(change.file, change.content);
         logger.info(`✅ Created configuration file: ${change.file}`);
       } else {
         // Apply changes to existing file
         await this.applyCodeChange({
-          type: 'code_change',
-          changes: [change]
+          type: 'code_change','          changes: [change]
         });
       }
     }
@@ -341,20 +283,15 @@ class ZionImprover {
    * Apply performance optimizations
    */
   async applyPerformanceOptimization(suggestion) {
-    logger.info('⚡ Applying performance optimization...');
-    
+    logger.info('⚡ Applying performance optimization...');'    
     for (const change of suggestion.changes) {
-      if (change.type === 'image_optimization') {
-        await this.optimizeImages(change);
-      } else if (change.type === 'code_splitting') {
-        await this.applyCodeSplitting(change);
-      } else if (change.type === 'caching') {
-        await this.applyCaching(change);
+      if (change.type === 'image_optimization') {'        await this.optimizeImages(change);
+      } else if (change.type === 'code_splitting') {'        await this.applyCodeSplitting(change);
+      } else if (change.type === 'caching') {'        await this.applyCaching(change);
       } else {
         // Treat as regular code change
         await this.applyCodeChange({
-          type: 'code_change',
-          changes: [change]
+          type: 'code_change','          changes: [change]
         });
       }
     }
@@ -364,18 +301,14 @@ class ZionImprover {
    * Apply security fixes
    */
   async applySecurityFix(suggestion) {
-    logger.info('🔒 Applying security fix...');
-    
+    logger.info('🔒 Applying security fix...');'    
     for (const change of suggestion.changes) {
-      if (change.type === 'dependency_vulnerability') {
-        await this.fixDependencyVulnerability(change);
-      } else if (change.type === 'code_vulnerability') {
-        await this.fixCodeVulnerability(change);
+      if (change.type === 'dependency_vulnerability') {'        await this.fixDependencyVulnerability(change);
+      } else if (change.type === 'code_vulnerability') {'        await this.fixCodeVulnerability(change);
       } else {
         // Treat as regular code change
         await this.applyCodeChange({
-          type: 'code_change',
-          changes: [change]
+          type: 'code_change','          changes: [change]
         });
       }
     }
@@ -385,20 +318,15 @@ class ZionImprover {
    * Apply accessibility improvements
    */
   async applyAccessibilityImprovement(suggestion) {
-    logger.info('♿ Applying accessibility improvement...');
-    
+    logger.info('♿ Applying accessibility improvement...');'    
     for (const change of suggestion.changes) {
-      if (change.type === 'aria_labels') {
-        await this.addAriaLabels(change);
-      } else if (change.type === 'semantic_html') {
-        await this.improveSemanticHTML(change);
-      } else if (change.type === 'color_contrast') {
-        await this.improveColorContrast(change);
+      if (change.type === 'aria_labels') {'        await this.addAriaLabels(change);
+      } else if (change.type === 'semantic_html') {'        await this.improveSemanticHTML(change);
+      } else if (change.type === 'color_contrast') {'        await this.improveColorContrast(change);
       } else {
         // Treat as regular code change
         await this.applyCodeChange({
-          type: 'code_change',
-          changes: [change]
+          type: 'code_change','          changes: [change]
         });
       }
     }
@@ -414,29 +342,24 @@ class ZionImprover {
       // Run linting
       const lintPassed = await this.runLinting();
       if (!lintPassed) {
-        logger.error('❌ Linting failed');
-        return false;
+        logger.error('❌ Linting failed');'        return false;
       }
 
       // Run tests
       const testsPassed = await this.runTests();
       if (!testsPassed) {
-        logger.error('❌ Tests failed');
-        return false;
+        logger.error('❌ Tests failed');'        return false;
       }
 
       // Run build
       const buildPassed = await this.runBuild();
       if (!buildPassed) {
-        logger.error('❌ Build failed');
-        return false;
+        logger.error('❌ Build failed');'        return false;
       }
 
-      logger.info('✅ All tests passed');
-      return true;
+      logger.info('✅ All tests passed');'      return true;
     } catch (error) {
-      logger.error('❌ Error during testing:', error);
-      return false;
+      logger.error('❌ Error during testing:', error);'      return false;
     }
   }
 
@@ -445,8 +368,7 @@ class ZionImprover {
    */
   async runLinting() {
     try {
-      execSync('npm run lint', { stdio: 'pipe' });
-      return true;
+      execSync('npm run lint', { stdio: 'pipe' });'      return true;
     } catch (error) {
       return false;
     }
@@ -457,8 +379,7 @@ class ZionImprover {
    */
   async runTests() {
     try {
-      execSync('npm test', { stdio: 'pipe' });
-      return true;
+      execSync('npm test', { stdio: 'pipe' });'      return true;
     } catch (error) {
       return false;
     }
@@ -469,8 +390,7 @@ class ZionImprover {
    */
   async runBuild() {
     try {
-      execSync('npm run build', { stdio: 'pipe' });
-      return true;
+      execSync('npm run build', { stdio: 'pipe' });'      return true;
     } catch (error) {
       return false;
     }
@@ -482,19 +402,14 @@ class ZionImprover {
   async commitChanges(suggestion) {
     try {
       // Stage all changes
-      execSync('git add .', { stdio: 'pipe' });
-      
+      execSync('git add .', { stdio: 'pipe' });'      
       // Create commit message
       const commitMessage = `🤖 Auto-improvement: ${suggestion.type} - ${suggestion.description}`;
-      execSync(`git commit -m "${commitMessage}"`, { stdio: 'pipe' });
-      
+      execSync(`git commit -m "${commitMessage}"`, { stdio: 'pipe' });'      
       // Push to main branch
-      execSync('git push origin main', { stdio: 'pipe' });
-      
-      logger.info('✅ Changes committed and pushed successfully');
-    } catch (error) {
-      logger.error('❌ Error committing/pushing changes:', error);
-      throw error;
+      execSync('git push origin main', { stdio: 'pipe' });'      
+      logger.info('✅ Changes committed and pushed successfully');'    } catch (error) {
+      logger.error('❌ Error committing/pushing changes:', error);'      throw error;
     }
   }
 
@@ -506,72 +421,58 @@ class ZionImprover {
     
     try {
       // Reset to last commit
-      execSync('git reset --hard HEAD', { stdio: 'pipe' });
-      
+      execSync('git reset --hard HEAD', { stdio: 'pipe' });'      
       // Clean untracked files
-      execSync('git clean -fd', { stdio: 'pipe' });
-      
-      logger.info('✅ Changes reverted successfully');
-    } catch (error) {
-      logger.error('❌ Error reverting changes:', error);
-    }
+      execSync('git clean -fd', { stdio: 'pipe' });'      
+      logger.info('✅ Changes reverted successfully');'    } catch (error) {
+      logger.error('❌ Error reverting changes:', error);'    }
   }
 
   // Helper methods for specific improvement types
   async optimizeImages(change) {
     // Implement image optimization logic
-    logger.info('🖼️  Optimizing images...');
-  }
+    logger.info('🖼️  Optimizing images...');'  }
 
   async applyCodeSplitting(change) {
     // Implement code splitting logic
-    logger.info('📦 Applying code splitting...');
-  }
+    logger.info('📦 Applying code splitting...');'  }
 
   async applyCaching(change) {
     // Implement caching logic
-    logger.info('💾 Applying caching...');
-  }
+    logger.info('💾 Applying caching...');'  }
 
   async fixDependencyVulnerability(change) {
     try {
-      execSync(`npm audit fix`, { stdio: 'inherit' });
-      logger.info('✅ Fixed dependency vulnerabilities');
-    } catch (error) {
-      logger.error('❌ Error fixing dependency vulnerabilities:', error);
-      throw error;
+      execSync(`npm audit fix`, { stdio: 'inherit' });'      logger.info('✅ Fixed dependency vulnerabilities');'    } catch (error) {
+      logger.error('❌ Error fixing dependency vulnerabilities:', error);'      throw error;
     }
   }
 
   async fixCodeVulnerability(change) {
     // Apply security-related code changes
     await this.applyCodeChange({
-      type: 'code_change',
-      changes: [change]
+      type: 'code_change','      changes: [change]
     });
   }
 
   async addAriaLabels(change) {
     // Add ARIA labels for accessibility
     await this.applyCodeChange({
-      type: 'code_change',
-      changes: [change]
+      type: 'code_change','      changes: [change]
     });
   }
 
   async improveSemanticHTML(change) {
     // Improve semantic HTML structure
     await this.applyCodeChange({
-      type: 'code_change',
-      changes: [change]
+      type: 'code_change','      changes: [change]
     });
   }
 
   async improveColorContrast(change) {
     // Improve color contrast for accessibility
     await this.applyCodeChange({
-      type: 'code_change',
-      changes: [change]
+      type: 'code_change','      changes: [change]
     });
   }
 
@@ -612,15 +513,10 @@ if (require.main === module) {
   // Example usage
   const exampleSuggestions = [
     {
-      type: 'code_change',
-      description: 'Add error boundary to improve error handling',
-      changes: [
+      type: 'code_change','      description: 'Add error boundary to improve error handling','      changes: [
         {
-          action: 'add',
-          file: 'src/components/ErrorBoundary.tsx',
-          content: `
-import React from 'react';
-
+          action: 'add','          file: 'src/components/ErrorBoundary.tsx','          content: `;
+import React from 'react';'
 interface ErrorBoundaryState {
   hasError: boolean;
   error?: Error;
@@ -642,8 +538,7 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error('Error caught by boundary:', error, errorInfo);
-  }
+    console.error('Error caught by boundary:', error, errorInfo);'  }
 
   render() {
     if (this.state.hasError) {
@@ -652,8 +547,7 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
         return <FallbackComponent error={this.state.error!} />;
       }
       return (
-        <div className="error-boundary">
-          <h2>Something went wrong</h2>
+        <div className="error-boundary">"          <h2>Something went wrong</h2>
           <p>Please refresh the page or contact support.</p>
         </div>
       );
@@ -662,7 +556,7 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
     return this.props.children;
   }
 }
-
+;
 export default ErrorBoundary;
           `.trim()
         }
@@ -671,9 +565,6 @@ export default ErrorBoundary;
   ];
 
   improver.processImprovements(exampleSuggestions).then(() => {
-    console.log('Improvement processing completed');
-    console.log('Stats:', improver.getStats());
-  }).catch(error => {
-    console.error('Error processing improvements:', error);
-  });
+    console.log('Improvement processing completed');'    console.log('Stats:', improver.getStats());'  }).catch(error => {
+    console.error('Error processing improvements:', error);'  });
 } 

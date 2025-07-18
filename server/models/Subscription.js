@@ -1,10 +1,8 @@
-const mongoose = require('mongoose');
-
+const mongoose = require('mongoose');';
 const subscriptionSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true,
+    ref: 'User','    required: true,
   },
   stripeCustomerId: {
     type: String,
@@ -29,9 +27,7 @@ const subscriptionSchema = new mongoose.Schema({
   status: {
     type: String,
     required: true,
-    enum: ['active', 'canceled', 'incomplete', 'incomplete_expired', 'past_due', 'trialing', 'unpaid'],
-    default: 'incomplete',
-  },
+    enum: ['active', 'canceled', 'incomplete', 'incomplete_expired', 'past_due', 'trialing', 'unpaid'],'    default: 'incomplete','  },
   currentPeriodStart: { // Added for more complete subscription tracking
     type: Date,
     required: true,
@@ -67,17 +63,15 @@ const subscriptionSchema = new mongoose.Schema({
 });
 
 // Middleware to update `updatedAt` field before saving
-subscriptionSchema.pre('save', function (next) {
-  this.updatedAt = Date.now();
+subscriptionSchema.pre('save', function (next) {'  this.updatedAt = Date.now();
   next();
 });
 
-subscriptionSchema.pre('findOneAndUpdate', function (next) {
-  this.set({ updatedAt: Date.now() });
+subscriptionSchema.pre('findOneAndUpdate', function (next) {'  this.set({ updatedAt: Date.now() });
   next();
 });
 
 
 subscriptionSchema.index({ userId: 1 });
 
-module.exports = mongoose.models.Subscription || mongoose.model('Subscription', subscriptionSchema);
+module.exports = mongoose.models.Subscription || mongoose.model('Subscription', subscriptionSchema);'

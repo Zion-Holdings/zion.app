@@ -1,6 +1,4 @@
-const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
-
+const mongoose = require('mongoose');'const bcrypt = require('bcryptjs');';
 const userSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, lowercase: true, trim: true, unique: true },
@@ -16,8 +14,7 @@ const userSchema = new mongoose.Schema({
   // For quick access to current subscription status, denormalized from Subscription model
   planStatus: {
     type: String,
-    enum: [null, 'active', 'canceled', 'incomplete', 'past_due', 'trialing', 'unpaid'], // Mirrored from Subscription model
-    default: null,
+    enum: [null, 'active', 'canceled', 'incomplete', 'past_due', 'trialing', 'unpaid'], // Mirrored from Subscription model'    default: null,
   },
   // For quick access to the primary/current subscription ID
   stripeSubscriptionId: {
@@ -35,15 +32,13 @@ const userSchema = new mongoose.Schema({
 });
 
 // Middleware to update `updatedAt` field before saving
-userSchema.pre('save', function(next) {
-  if (this.isModified()) { // only update if something changed
+userSchema.pre('save', function(next) {'  if (this.isModified()) { // only update if something changed
     this.updatedAt = Date.now();
   }
   next();
 });
 
-userSchema.pre('findOneAndUpdate', function(next) {
-  this.set({ updatedAt: Date.now() });
+userSchema.pre('findOneAndUpdate', function(next) {'  this.set({ updatedAt: Date.now() });
   next();
 });
 
@@ -57,4 +52,4 @@ userSchema.methods.setPassword = async function(password) {
   this.passwordHash = await bcrypt.hash(password, 10);
 };
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('User', userSchema);'

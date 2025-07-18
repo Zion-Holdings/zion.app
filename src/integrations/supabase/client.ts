@@ -1,2 +1,2 @@
-// client.ts - placeholder
-export const placeholder = 'placeholder';
+// client.ts - placeholder;
+export const placeholder = 'placeholder';'

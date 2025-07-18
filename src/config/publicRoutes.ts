@@ -1,2 +1,2 @@
-// publicRoutes.ts - placeholder
-export const placeholder = 'placeholder';
+// publicRoutes.ts - placeholder;
+export const placeholder = 'placeholder';'

@@ -1,2 +1,2 @@
-// generateTraceId.ts - placeholder
-export const placeholder = 'placeholder';
+// generateTraceId.ts - placeholder;
+export const placeholder = 'placeholder';'

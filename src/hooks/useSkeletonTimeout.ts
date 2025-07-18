@@ -1,2 +1,2 @@
-// useSkeletonTimeout.ts - placeholder
-export const placeholder = 'placeholder';
+// useSkeletonTimeout.ts - placeholder;
+export const placeholder = 'placeholder';'

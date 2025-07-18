@@ -1,2 +1,2 @@
-// pricingSuggestionService.ts - placeholder
-export const placeholder = 'placeholder';
+// pricingSuggestionService.ts - placeholder;
+export const placeholder = 'placeholder';'

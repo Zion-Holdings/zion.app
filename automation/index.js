@@ -1,14 +1,8 @@
 #!/usr/bin/env node
 /* eslint-disable @typescript-eslint/no-require-imports */
 
-require('dotenv').config();
-
-const OptimizationSlackBot = require('./slack/slack-bot');
-const PerformanceMonitor = require('./performance/monitor');
-const EnhancedAutomation = require('./continuous-improvement/enhanced-automation');
-const express = require('express');
-const path = require('path');
-
+require('dotenv').config();';
+const OptimizationSlackBot = require('./slack/slack-bot');'const PerformanceMonitor = require('./performance/monitor');'const EnhancedAutomation = require('./continuous-improvement/enhanced-automation');'const express = require('express');'const path = require('path');'
 class OptimizationAutomation {
   constructor() {
     this.slackBot = new OptimizationSlackBot();
@@ -28,9 +22,7 @@ class OptimizationAutomation {
     
     // CORS and basic middleware
     this.app.use((req, res, next) => {
-      res.header('Access-Control-Allow-Origin', '*');
-      res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-      next();
+      res.header('Access-Control-Allow-Origin', '*');'      res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');'      next();
     });
 
     // Request logging
@@ -43,8 +35,7 @@ class OptimizationAutomation {
 
   setupAPIRoutes() {
     // Enhanced automation endpoints
-    this.app.get('/api/automation/status', async (req, res) => {
-      try {
+    this.app.get('/api/automation/status', async (req, res) => {'      try {
         const status = this.enhancedAutomation.getStatus();
         res.json(status);
       } catch (error) {
@@ -53,8 +44,7 @@ class OptimizationAutomation {
       }
     });
 
-    this.app.post('/api/automation/trigger', async (req, res) => {
-      try {
+    this.app.post('/api/automation/trigger', async (req, res) => {'      try {
         const { taskType, data } = req.body;
         
         process.stdout.write(`[${new Date().toISOString()}] 🚀 Manual automation trigger: ${taskType}\n`);
@@ -76,8 +66,7 @@ class OptimizationAutomation {
       }
     });
 
-    this.app.get('/api/automation/report', async (req, res) => {
-      try {
+    this.app.get('/api/automation/report', async (req, res) => {'      try {
         const report = this.enhancedAutomation.generateReport();
         res.json(report);
       } catch (error) {
@@ -87,28 +76,22 @@ class OptimizationAutomation {
     });
 
     // Slack webhook endpoints
-    this.app.post('/api/slack/events', async (req, res) => {
-      try {
+    this.app.post('/api/slack/events', async (req, res) => {'      try {
         const { type, challenge, event } = req.body;
         
-        if (type === 'url_verification') {
-          return res.send(challenge);
+        if (type === 'url_verification') {'          return res.send(challenge);
         }
         
-        if (type === 'event_callback' && event) {
-          await this.handleSlackEvent(event);
+        if (type === 'event_callback' && event) {'          await this.handleSlackEvent(event);
         }
         
-        res.status(200).send('OK');
-      } catch (error) {
+        res.status(200).send('OK');'      } catch (error) {
         process.stderr.write(`[${new Date().toISOString()}] ERROR: Slack event error: ${error.message}\n`);
-        res.status(500).send('Error processing event');
-      }
+        res.status(500).send('Error processing event');'      }
     });
 
     // Manual optimization trigger
-    this.app.post('/api/optimization/trigger', async (req, res) => {
-      try {
+    this.app.post('/api/optimization/trigger', async (req, res) => {'      try {
         const { target, reason, alert: _alert } = req.body;
         
         process.stdout.write(`[${new Date().toISOString()}] 🚀 Manual optimization triggered: ${target} (reason: ${reason})\n`);
@@ -132,8 +115,7 @@ class OptimizationAutomation {
     });
 
     // Performance status endpoint
-    this.app.get('/api/performance/status', async (req, res) => {
-      try {
+    this.app.get('/api/performance/status', async (req, res) => {'      try {
         const status = await this.slackBot.getPerformanceStatus();
         res.json(status);
       } catch (error) {
@@ -143,8 +125,7 @@ class OptimizationAutomation {
     });
 
     // Performance metrics endpoint
-    this.app.get('/api/performance/metrics', async (req, res) => {
-      try {
+    this.app.get('/api/performance/metrics', async (req, res) => {'      try {
         const metrics = await this.performanceMonitor.getMetrics();
         res.json(metrics);
       } catch (error) {
@@ -154,8 +135,7 @@ class OptimizationAutomation {
     });
 
     // Performance history endpoint
-    this.app.get('/api/performance/history', async (req, res) => {
-      try {
+    this.app.get('/api/performance/history', async (req, res) => {'      try {
         const hours = parseInt(req.query.hours) || 24;
         const history = await this.performanceMonitor.getHistory(hours);
         res.json(history);
@@ -166,59 +146,38 @@ class OptimizationAutomation {
     });
 
     // Dashboard routes
-    this.app.get('/dashboard', (req, res) => {
-      res.sendFile(path.join(__dirname, 'continuous-improvement', 'dashboard', 'index.html'));
-    });
+    this.app.get('/dashboard', (req, res) => {'      res.sendFile(path.join(__dirname, 'continuous-improvement', 'dashboard', 'index.html'));'    });
 
-    this.app.get('/slack-status', (req, res) => {
-      res.json({
-        slackBot: 'running',
-        performanceMonitor: this.performanceMonitor.isMonitoring ? 'running' : 'stopped',
-        enhancedAutomation: this.enhancedAutomation.isRunning ? 'running' : 'stopped',
-        uptime: process.uptime(),
+    this.app.get('/slack-status', (req, res) => {'      res.json({
+        slackBot: 'running','        performanceMonitor: this.performanceMonitor.isMonitoring ? 'running' : 'stopped','        enhancedAutomation: this.enhancedAutomation.isRunning ? 'running' : 'stopped','        uptime: process.uptime(),
         timestamp: new Date().toISOString()
       });
     });
   }
 
   setupHealthChecks() {
-    this.app.get('/health', (req, res) => {
-      res.json({
-        status: 'healthy',
-        uptime: process.uptime(),
+    this.app.get('/health', (req, res) => {'      res.json({
+        status: 'healthy','        uptime: process.uptime(),
         timestamp: new Date().toISOString(),
         components: {
-          slackBot: 'running',
-          performanceMonitor: this.performanceMonitor.isMonitoring ? 'running' : 'stopped',
-          enhancedAutomation: this.enhancedAutomation.isRunning ? 'running' : 'stopped',
-          express: 'running'
-        }
+          slackBot: 'running','          performanceMonitor: this.performanceMonitor.isMonitoring ? 'running' : 'stopped','          enhancedAutomation: this.enhancedAutomation.isRunning ? 'running' : 'stopped','          express: 'running''        }
       });
     });
 
-    this.app.get('/version', (req, res) => {
-      const packageJson = require('../package.json');
-      res.json({
+    this.app.get('/version', (req, res) => {'      const packageJson = require('../package.json');'      res.json({
         name: packageJson.name,
         version: packageJson.version,
-        automation: 'v2.0.0',
-        enhanced: true
+        automation: 'v2.0.0','        enhanced: true
       });
     });
   }
 
   async handleSlackEvent(event) {
     switch (event.type) {
-      case 'performance_alert':
-        await this.slackBot.app.client.emit('performance_alert', { event });
-        break;
-      case 'optimization_complete':
-        await this.slackBot.app.client.emit('optimization_complete', { event });
-        break;
-      case 'automation_trigger':
-        // Handle automation triggers from Slack
-        if (event.text && event.text.includes('/automation')) {
-          const taskType = this.parseSlackAutomationCommand(event.text);
+      case 'performance_alert':'        await this.slackBot.app.client.emit('performance_alert', { event });'        break;
+      case 'optimization_complete':'        await this.slackBot.app.client.emit('optimization_complete', { event });'        break;
+      case 'automation_trigger':'        // Handle automation triggers from Slack
+        if (event.text && event.text.includes('/automation')) {'          const taskType = this.parseSlackAutomationCommand(event.text);
           if (taskType) {
             this.enhancedAutomation.queueTask(taskType);
           }
@@ -231,13 +190,7 @@ class OptimizationAutomation {
 
   parseSlackAutomationCommand(text) {
     const commands = {
-      '/automation quick': 'quickScan',
-      '/automation deep': 'deepAnalysis',
-      '/automation full': 'fullAudit',
-      '/automation performance': 'performanceCheck',
-      '/automation security': 'securityScan',
-      '/automation dependencies': 'dependencyCheck'
-    };
+      '/automation quick': 'quickScan','      '/automation deep': 'deepAnalysis','      '/automation full': 'fullAudit','      '/automation performance': 'performanceCheck','      '/automation security': 'securityScan','      '/automation dependencies': 'dependencyCheck''    };
 
     for (const [command, taskType] of Object.entries(commands)) {
       if (text.includes(command)) {
@@ -256,13 +209,11 @@ class OptimizationAutomation {
       await this.enhancedAutomation.start();
       
       // Start performance monitoring
-      if (process.env.ENABLE_PERFORMANCE_MONITORING === 'true') {
-        await this.performanceMonitor.start();
+      if (process.env.ENABLE_PERFORMANCE_MONITORING === 'true') {'        await this.performanceMonitor.start();
       }
       
       // Start Slack bot
-      if (process.env.ENABLE_SLACK_COMMANDS === 'true') {
-        await this.slackBot.start();
+      if (process.env.ENABLE_SLACK_COMMANDS === 'true') {'        await this.slackBot.start();
       }
       
       // Start Express server for API endpoints
@@ -318,10 +269,7 @@ class OptimizationAutomation {
       }
     };
     
-    process.on('SIGINT', () => shutdown('SIGINT'));
-    process.on('SIGTERM', () => shutdown('SIGTERM'));
-    process.on('SIGQUIT', () => shutdown('SIGQUIT'));
-  }
+    process.on('SIGINT', () => shutdown('SIGINT'));'    process.on('SIGTERM', () => shutdown('SIGTERM'));'    process.on('SIGQUIT', () => shutdown('SIGQUIT'));'  }
 
   async stop() {
     process.stdout.write(`[${new Date().toISOString()}] 🛑 Stopping Enhanced Optimization Automation System...\n`);
@@ -363,12 +311,10 @@ class OptimizationAutomation {
       },
       slackBot: {
         isRunning: this.slackBot.isRunning,
-        status: 'running'
-      },
+        status: 'running''      },
       server: {
         port: this.port,
-        status: 'running'
-      },
+        status: 'running''      },
       timestamp: new Date().toISOString()
     };
   }

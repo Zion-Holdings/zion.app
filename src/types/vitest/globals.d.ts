@@ -1,2 +1,2 @@
-// globals.d.ts - placeholder
-export const placeholder = 'placeholder';
+// globals.d.ts - placeholder;
+export const placeholder = 'placeholder';'

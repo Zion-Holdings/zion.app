@@ -1,2 +1,2 @@
-// index.ts - placeholder
-export const placeholder = 'placeholder';
+// index.ts - placeholder;
+export const placeholder = 'placeholder';'

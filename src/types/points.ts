@@ -1,2 +1,2 @@
-// points.ts - placeholder
-export const placeholder = 'placeholder';
+// points.ts - placeholder;
+export const placeholder = 'placeholder';'

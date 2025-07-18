@@ -1,43 +1,28 @@
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-
+import { serve } from "https://deno.land/std@0.168.0/http/server.ts";"import { createClient } from "https://esm.sh/@supabase/supabase-js@2";";
 const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
-};
+  "Access-Control-Allow-Origin": "*","  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type","};
 
 serve(async (req) => {
-  if (req.method === "OPTIONS") {
-    return new Response("ok", { headers: corsHeaders });
-  }
+  if (req.method === "OPTIONS") {"    return new Response("ok", { headers: corsHeaders });"  }
 
   try {
     const supabaseClient = createClient(
-      Deno.env.get("SUPABASE_URL") ?? "",
-      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? ""
-    );
+      Deno.env.get("SUPABASE_URL") ?? "","      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? """    );
 
     const { days_back = 7 } = await req.json();
     const startDate = new Date();
     startDate.setDate(startDate.getDate() - days_back);
 
     const { data, error } = await supabaseClient
-      .from("analytics_events")
-      .select("metadata, created_at")
-      .eq("event_type", "feature_usage")
-      .gte("created_at", startDate.toISOString());
-
+      .from("analytics_events")"      .select("metadata, created_at")"      .eq("event_type", "feature_usage")"      .gte("created_at", startDate.toISOString());"
     if (error) {
-      console.error("Error fetching feature usage data:", error);
-      throw error;
+      console.error("Error fetching feature usage data:", error);"      throw error;
     }
 
     const usageByDate: Record<string, Record<string, number>> = {};
 
     data.forEach((event) => {
-      const date = new Date(event.created_at).toISOString().split("T")[0];
-      const feature = event.metadata?.feature ?? "unknown";
-
+      const date = new Date(event.created_at).toISOString().split("T")[0];"      const feature = event.metadata?.feature ?? "unknown";"
       if (!usageByDate[date]) usageByDate[date] = {};
       if (!usageByDate[date][feature]) usageByDate[date][feature] = 0;
 
@@ -50,14 +35,11 @@ serve(async (req) => {
     })).sort((a, b) => a.date.localeCompare(b.date));
 
     return new Response(JSON.stringify(result), {
-      headers: { ...corsHeaders, "Content-Type": "application/json" },
-      status: 200,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },"      status: 200,
     });
   } catch {
-    console.("Error:", .message);
-    return new Response(JSON.stringify({ : .message }), {
-      headers: { ...corsHeaders, "Content-Type": "application/json" },
-      status: 500,
+    console.("Error:", .message);"    return new Response(JSON.stringify({ : .message }), {
+      headers: { ...corsHeaders, "Content-Type": "application/json" },"      status: 500,
     });
   }
 });

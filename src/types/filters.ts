@@ -1,2 +1,2 @@
-// filters.ts - placeholder
-export const placeholder = 'placeholder';
+// filters.ts - placeholder;
+export const placeholder = 'placeholder';'

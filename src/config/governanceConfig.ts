@@ -1,2 +1,2 @@
-// governanceConfig.ts - placeholder
-export const placeholder = 'placeholder';
+// governanceConfig.ts - placeholder;
+export const placeholder = 'placeholder';'

@@ -1,2 +1,2 @@
-// globalFetchInterceptor.ts - placeholder
-export const placeholder = 'placeholder';
+// globalFetchInterceptor.ts - placeholder;
+export const placeholder = 'placeholder';'

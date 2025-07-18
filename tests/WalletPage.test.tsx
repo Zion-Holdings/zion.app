@@ -1,12 +1,5 @@
-import { render, screen } from '@testing-library/react';
-import WalletPage from '@/src/pages/Wallet';
-import * as useWalletHook from '@/hooks/useWallet';
-
-describe('WalletPage', () => {
-  it('renders balance heading', () => {
-    jest.spyOn(useWalletHook, 'useWallet').mockReturnValue({
-      wallet: { user_id: '1', balance: 100, updated_at: '' },
-      transactions: [],
+import { render, screen } from '@testing-library/react';'import WalletPage from '@/src/pages/Wallet';'import * as useWalletHook from '@/hooks/useWallet';'
+describe('WalletPage', () => {'  it('renders balance heading', () => {'    jest.spyOn(useWalletHook, 'useWallet').mockReturnValue({'      wallet: { user_id: '1', balance: 100, updated_at: '' },'      transactions: [],
       loading: false,
       fetchWallet: jest.fn(),
       fetchTransactions: jest.fn(),
@@ -16,7 +9,6 @@ describe('WalletPage', () => {
 
     render(<WalletPage />);
     expect(
-      screen.getByRole('heading', { name: /balance/i })
-    ).toBeInTheDocument();
+      screen.getByRole('heading', { name: /balance/i })'    ).toBeInTheDocument();
   });
 });

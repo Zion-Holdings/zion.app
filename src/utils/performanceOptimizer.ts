@@ -1,2 +1,2 @@
-// performanceOptimizer.ts - placeholder
-export const placeholder = 'placeholder';
+// performanceOptimizer.ts - placeholder;
+export const placeholder = 'placeholder';'

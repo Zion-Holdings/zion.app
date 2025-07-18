@@ -1,2 +1,2 @@
-// useAutocomplete.ts - placeholder
-export const placeholder = 'placeholder';
+// useAutocomplete.ts - placeholder;
+export const placeholder = 'placeholder';'

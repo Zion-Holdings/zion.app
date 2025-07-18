@@ -1,2 +1,2 @@
-// developmentLogger.ts - placeholder
-export const placeholder = 'placeholder';
+// developmentLogger.ts - placeholder;
+export const placeholder = 'placeholder';'

@@ -1,2 +1,2 @@
-// useResumeUtils.ts - placeholder
-export const placeholder = 'placeholder';
+// useResumeUtils.ts - placeholder;
+export const placeholder = 'placeholder';'

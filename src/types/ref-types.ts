@@ -1,2 +1,2 @@
-// ref-types.ts - placeholder
-export const placeholder = 'placeholder';
+// ref-types.ts - placeholder;
+export const placeholder = 'placeholder';'

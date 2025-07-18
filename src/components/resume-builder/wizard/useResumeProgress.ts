@@ -1,2 +1,2 @@
-// useResumeProgress.ts - placeholder
-export const placeholder = 'placeholder';
+// useResumeProgress.ts - placeholder;
+export const placeholder = 'placeholder';'

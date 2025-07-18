@@ -1,2 +1,2 @@
-// consoleErrorToast.ts - placeholder
-export const placeholder = 'placeholder';
+// consoleErrorToast.ts - placeholder;
+export const placeholder = 'placeholder';'

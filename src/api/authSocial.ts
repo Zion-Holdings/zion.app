@@ -1,2 +1,2 @@
-// authSocial.ts - placeholder
-export const placeholder = 'placeholder';
+// authSocial.ts - placeholder;
+export const placeholder = 'placeholder';'

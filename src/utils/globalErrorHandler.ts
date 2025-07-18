@@ -1,2 +1,2 @@
-// globalErrorHandler.ts - placeholder
-export const placeholder = 'placeholder';
+// globalErrorHandler.ts - placeholder;
+export const placeholder = 'placeholder';'

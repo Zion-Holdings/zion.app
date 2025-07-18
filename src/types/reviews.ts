@@ -1,2 +1,2 @@
-// reviews.ts - placeholder
-export const placeholder = 'placeholder';
+// reviews.ts - placeholder;
+export const placeholder = 'placeholder';'

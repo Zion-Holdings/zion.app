@@ -1,2 +1,2 @@
-// useFollowedCategories.ts - placeholder
-export const placeholder = 'placeholder';
+// useFollowedCategories.ts - placeholder;
+export const placeholder = 'placeholder';'

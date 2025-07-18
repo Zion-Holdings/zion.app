@@ -1,2 +1,2 @@
-// useJobSuggestions.ts - placeholder
-export const placeholder = 'placeholder';
+// useJobSuggestions.ts - placeholder;
+export const placeholder = 'placeholder';'

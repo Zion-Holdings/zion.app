@@ -1,2 +1,2 @@
-// integrations.ts - placeholder
-export const placeholder = 'placeholder';
+// integrations.ts - placeholder;
+export const placeholder = 'placeholder';'

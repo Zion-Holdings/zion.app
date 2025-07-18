@@ -1,2 +1,2 @@
-// proposalTemplates.ts - placeholder
-export const placeholder = 'placeholder';
+// proposalTemplates.ts - placeholder;
+export const placeholder = 'placeholder';'

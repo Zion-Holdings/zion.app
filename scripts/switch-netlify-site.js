@@ -1,6 +1,5 @@
-#!/usr/bin/env node
-import _process from 'process';
-
+#!/usr/bin/env node;
+import _process from 'process';';
 const {
   NETLIFY_AUTH_TOKEN: token,
   NETLIFY_PRIMARY_DOMAIN: domain,
@@ -9,13 +8,11 @@ const {
 } = _process.env;
 
 if (!token || !domain || !greenId || !blueId) {
-  console.error('Missing Netlify environment variables');
-  _process.exit(1);
+  console.error('Missing Netlify environment variables');'  _process.exit(1);
 }
-
+;
 const headers = {
-  'Content-Type': 'application/json',
-  Authorization: `Bearer ${token}`,
+  'Content-Type': 'application/json','  Authorization: `Bearer ${token}`,
 };
 
 async function siteHasDomain(siteId) {
@@ -27,8 +24,7 @@ async function siteHasDomain(siteId) {
 
 async function assignDomain(siteId) {
   const res = await fetch(`https://api.netlify.com/api/v1/sites/${siteId}/domains`, {
-    method: 'POST',
-    headers,
+    method: 'POST','    headers,
     body: JSON.stringify({ domain }),
   });
   if (!res.ok && res.status !== 422) {
@@ -40,15 +36,14 @@ async function assignDomain(siteId) {
 
 async function removeDomain(siteId) {
   const res = await fetch(`https://api.netlify.com/api/v1/sites/${siteId}/domains/${domain}`, {
-    method: 'DELETE',
-    headers,
+    method: 'DELETE','    headers,
   });
   if (!res.ok && res.status !== 404) {
     throw new Error(`Remove domain failed: ${res.statusText}`);
   }
   return res.status === 200;
 }
-
+;
 export async function switchNetlifySite() {
   const greenActive = await siteHasDomain(greenId);
   const newSite = greenActive ? blueId : greenId;
@@ -60,15 +55,12 @@ export async function switchNetlifySite() {
   try {
     assigned = await assignDomain(newSite);
     await removeDomain(oldSite);
-    console.warn('DNS switch complete');
-  } catch {
+    console.warn('DNS switch complete');'  } catch {
     if (assigned) {
       try {
         await removeDomain(newSite);
-        console.warn('Rolled back domain assignment to new site');
-      } catch (_rollbackErr) {
-        console.error('Failed to rollback new site assignment:', rollbackErr);
-      }
+        console.warn('Rolled back domain assignment to new site');'      } catch (_rollbackErr) {
+        console.error('Failed to rollback new site assignment:', rollbackErr);'      }
     }
     throw err;
   }

@@ -1,2 +1,2 @@
-// reown-appkit.d.ts - placeholder
-export const placeholder = 'placeholder';
+// reown-appkit.d.ts - placeholder;
+export const placeholder = 'placeholder';'

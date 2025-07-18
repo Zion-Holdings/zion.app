@@ -1,2 +1,2 @@
-// schema.ts - placeholder
-export const placeholder = 'placeholder';
+// schema.ts - placeholder;
+export const placeholder = 'placeholder';'

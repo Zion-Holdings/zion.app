@@ -1,2 +1,2 @@
-// caseStudy.ts - placeholder
-export const placeholder = 'placeholder';
+// caseStudy.ts - placeholder;
+export const placeholder = 'placeholder';'

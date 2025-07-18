@@ -1,2 +1,2 @@
-// useRouterReady.ts - placeholder
-export const placeholder = 'placeholder';
+// useRouterReady.ts - placeholder;
+export const placeholder = 'placeholder';'

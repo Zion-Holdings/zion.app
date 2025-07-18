@@ -1,14 +1,9 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { withErrorLogging } from '@/utils/withErrorLogging';
-
+import type { NextApiRequest, NextApiResponse } from 'next';'import { withErrorLogging } from '@/utils/withErrorLogging';';
 function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
-    res.setHeader('Allow', 'POST');
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
+  if (req.method !== 'POST') {'    res.setHeader('Allow', 'POST');'    return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  const { invitee = 'Guest', topic = 'Zion' } = req['body'] || {};
-
+  const { invitee = 'Guest', topic = 'Zion' } = req['body'] || {};'
   const questions = [
     `Could you introduce yourself and tell us about your background?`,
     `What inspired you to work on ${topic}?`,
@@ -20,10 +15,9 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
   ];
 
   const script = `Intro (0:00): Welcome to the Zion Podcast. Today we chat with ${invitee}.\n` +
-    `Questions: \n${questions.map((q, i) => `${i + 1}. ${q}`).join('\n')}\n` +
-    `Closing (14:30): Thanks for joining us! Learn more at zion.community.`;
+    `Questions: \n${questions.map((q, i) => `${i + 1}. ${q}`).join('\n')}\n` +'    `Closing (14:30): Thanks for joining us! Learn more at zion.community.`;
 
   res.status(200).json({ questions, script });
 }
-
+;
 export default withErrorLogging(handler);

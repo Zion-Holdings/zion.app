@@ -1,5 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
-
+import Document, { Html, Head, Main, NextScript } from 'next/document';'
 class MyDocument extends Document {
   render() {
     return (
@@ -8,8 +7,7 @@ class MyDocument extends Document {
         <body>
           <script
             dangerouslySetInnerHTML={{
-              __html: `(function(){try{var t=localStorage.getItem('theme');var e=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';if(t==='dark'||(!t&&e==='dark')){document.documentElement.classList.add('dark');document.documentElement.setAttribute('data-theme','dark');}else{document.documentElement.classList.add('light');document.documentElement.setAttribute('data-theme','light');}}catch(_o){}})();`
-            }}
+              __html: `(function(){try{var t=localStorage.getItem('theme');var e=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';if(t==='dark'||(!t&&e==='dark')){document.documentElement.classList.add('dark');document.documentElement.setAttribute('data-theme','dark');}else{document.documentElement.classList.add('light');document.documentElement.setAttribute('data-theme','light');}}catch(_o){}})();`'            }}
           />
           <Main />
           <NextScript />
@@ -18,5 +16,5 @@ class MyDocument extends Document {
     );
   }
 }
-
+;
 export default MyDocument;

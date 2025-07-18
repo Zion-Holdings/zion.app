@@ -11,7 +11,7 @@ export interface JobData {
   };
   deadline: string;
 }
-
+;
 export interface TalentProfile {
   id: string;
   full_name: string;
@@ -22,7 +22,7 @@ export interface TalentProfile {
   hourly_rate?: number;
   availability_type?: string;
 }
-
+;
 export interface TalentMatch {
   talent_id: string;
   job_id: string;
@@ -30,7 +30,7 @@ export interface TalentMatch {
   matched_skills: string[];
   created_at: string;
 }
-
+;
 export interface MatchResult {
   talentId: string;
   score: number;

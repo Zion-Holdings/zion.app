@@ -1,2 +1,2 @@
-// badge-variants.ts - placeholder
-export const placeholder = 'placeholder';
+// badge-variants.ts - placeholder;
+export const placeholder = 'placeholder';'

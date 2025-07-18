@@ -1,2 +1,2 @@
-// apiErrorHandler.ts - placeholder
-export const placeholder = 'placeholder';
+// apiErrorHandler.ts - placeholder;
+export const placeholder = 'placeholder';'

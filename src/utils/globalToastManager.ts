@@ -1,2 +1,2 @@
-// globalToastManager.ts - placeholder
-export const placeholder = 'placeholder';
+// globalToastManager.ts - placeholder;
+export const placeholder = 'placeholder';'

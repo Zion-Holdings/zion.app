@@ -1,2 +1,2 @@
-// sortOptions.ts - placeholder
-export const placeholder = 'placeholder';
+// sortOptions.ts - placeholder;
+export const placeholder = 'placeholder';'

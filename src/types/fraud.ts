@@ -1,2 +1,2 @@
-// fraud.ts - placeholder
-export const placeholder = 'placeholder';
+// fraud.ts - placeholder;
+export const placeholder = 'placeholder';'

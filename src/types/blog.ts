@@ -1,2 +1,2 @@
-// blog.ts - placeholder
-export const placeholder = 'placeholder';
+// blog.ts - placeholder;
+export const placeholder = 'placeholder';'

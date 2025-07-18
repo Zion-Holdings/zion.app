@@ -1,2 +1,2 @@
-// flagContent.ts - placeholder
-export const placeholder = 'placeholder';
+// flagContent.ts - placeholder;
+export const placeholder = 'placeholder';'

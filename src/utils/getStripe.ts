@@ -1,2 +1,2 @@
-// getStripe.ts - placeholder
-export const placeholder = 'placeholder';
+// getStripe.ts - placeholder;
+export const placeholder = 'placeholder';'

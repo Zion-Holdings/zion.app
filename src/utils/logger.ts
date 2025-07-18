@@ -1,2 +1,2 @@
-// logger.ts - placeholder
-export const placeholder = 'placeholder';
+// logger.ts - placeholder;
+export const placeholder = 'placeholder';'

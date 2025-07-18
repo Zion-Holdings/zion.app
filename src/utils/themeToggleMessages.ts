@@ -1,2 +1,2 @@
-// themeToggleMessages.ts - placeholder
-export const placeholder = 'placeholder';
+// themeToggleMessages.ts - placeholder;
+export const placeholder = 'placeholder';'

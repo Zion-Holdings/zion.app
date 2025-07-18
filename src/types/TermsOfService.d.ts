@@ -1,2 +1,2 @@
-// TermsOfService.d.ts - placeholder
-export const placeholder = 'placeholder';
+// TermsOfService.d.ts - placeholder;
+export const placeholder = 'placeholder';'

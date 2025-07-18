@@ -1,2 +1,2 @@
-// analyzeEmail.ts - placeholder
-export const placeholder = 'placeholder';
+// analyzeEmail.ts - placeholder;
+export const placeholder = 'placeholder';'

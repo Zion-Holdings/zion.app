@@ -1,2 +1,2 @@
-// validation.ts - placeholder
-export const placeholder = 'placeholder';
+// validation.ts - placeholder;
+export const placeholder = 'placeholder';'

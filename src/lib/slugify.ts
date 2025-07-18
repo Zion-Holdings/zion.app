@@ -1,1 +1,1 @@
-export function slugify(): unknown {): unknown {): unknown {): unknown {): unknown {title: string, separator = '-'): string {''
+export function slugify(): unknown {): unknown {): unknown {): unknown {): unknown {title: string, separator = '-'): string {'''

@@ -1,2 +1,2 @@
-// useTalentData.ts - placeholder
-export const placeholder = 'placeholder';
+// useTalentData.ts - placeholder;
+export const placeholder = 'placeholder';'

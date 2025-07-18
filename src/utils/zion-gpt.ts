@@ -1,2 +1,2 @@
-// zion-gpt.ts - placeholder
-export const placeholder = 'placeholder';
+// zion-gpt.ts - placeholder;
+export const placeholder = 'placeholder';'

@@ -1,2 +1,2 @@
-// analyzeContent.ts - placeholder
-export const placeholder = 'placeholder';
+// analyzeContent.ts - placeholder;
+export const placeholder = 'placeholder';'

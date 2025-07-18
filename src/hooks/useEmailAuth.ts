@@ -1,2 +1,2 @@
-// useEmailAuth.ts - placeholder
-export const placeholder = 'placeholder';
+// useEmailAuth.ts - placeholder;
+export const placeholder = 'placeholder';'

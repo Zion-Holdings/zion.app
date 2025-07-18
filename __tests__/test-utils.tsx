@@ -1,22 +1,5 @@
-import React from 'react';
-import type { FC, ReactElement } from 'react';
-import { render } from '@testing-library/react';
-import type { RenderOptions } from '@testing-library/react';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Provider as ReduxProvider } from 'react-redux';
-import { AuthProvider } from '@/context/auth/AuthProvider';
-import { WhitelabelProvider } from '@/context/WhitelabelContext';
-import { I18nextProvider } from 'react-i18next';
-import { WalletProvider } from '@/context/WalletContext';
-import { CartProvider } from '@/context/CartContext';
-import { AnalyticsProvider } from '@/context/AnalyticsContext';
-import { ThemeProvider } from '@/components/ThemeProvider'; // Assuming ThemeProvider is a component
-import { ErrorProvider } from '@/context/ErrorContext';
-import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
-import { store } from '@/store'; // Fix: Use named import instead of default import
-import i18n from '@/i18n'; // Assuming this is the correct path to i18n config
-
-// Initialize a new QueryClient for each test run to ensure test isolation
+import React from 'react';'import type { FC, ReactElement } from 'react';'import { render } from '@testing-library/react';'import type { RenderOptions } from '@testing-library/react';'import { QueryClient, QueryClientProvider } from '@tanstack/react-query';'import { Provider as ReduxProvider } from 'react-redux';'import { AuthProvider } from '@/context/auth/AuthProvider';'import { WhitelabelProvider } from '@/context/WhitelabelContext';'import { I18nextProvider } from 'react-i18next';'import { WalletProvider } from '@/context/WalletContext';'import { CartProvider } from '@/context/CartContext';'import { AnalyticsProvider } from '@/context/AnalyticsContext';'import { ThemeProvider } from '@/components/ThemeProvider'; // Assuming ThemeProvider is a component'import { ErrorProvider } from '@/context/ErrorContext';'import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';'import { store } from '@/store'; // Fix: Use named import instead of default import'import i18n from '@/i18n'; // Assuming this is the correct path to i18n config'
+// Initialize a new QueryClient for each test run to ensure test isolation;
 const createTestQueryClient = () => new QueryClient({
   defaultOptions: {
     queries: {
@@ -25,7 +8,7 @@ const createTestQueryClient = () => new QueryClient({
     },
   },
 });
-
+;
 const _AllTheProviders: FC<{ children: React.ReactNode }> = ({ children }) => {
   const testQueryClient = createTestQueryClient();
 
@@ -39,8 +22,7 @@ const _AllTheProviders: FC<{ children: React.ReactNode }> = ({ children }) => {
                   <WalletProvider>
                     <CartProvider>
                       <AnalyticsProvider>
-                        <ThemeProvider defaultTheme="light">
-                          <ErrorProvider>
+                        <ThemeProvider defaultTheme="light">"                          <ErrorProvider>
                             {children}
                           </ErrorProvider>
                         </ThemeProvider>
@@ -55,17 +37,15 @@ const _AllTheProviders: FC<{ children: React.ReactNode }> = ({ children }) => {
     </MemoryRouterProvider>
   );
 };
-
+;
 const customRender = (
   ui: ReactElement,
-  options?: Omit<RenderOptions, 'wrapper'>
-) => render(ui, { wrapper: AllTheProviders, ...options });
+  options?: Omit<RenderOptions, 'wrapper'>') => render(ui, { wrapper: AllTheProviders, ...options });
 
-// Re-export everything from React Testing Library
-export * from '@testing-library/react';
-
-// Override the render method with our custom one
+// Re-export everything from React Testing Library;
+export * from '@testing-library/react';'
+// Override the render method with our custom one;
 export { customRender as renderWithProviders };
 
-// Export the AllTheProviders component for direct use if needed
+// Export the AllTheProviders component for direct use if needed;
 export { AllTheProviders };

@@ -1,2 +1,2 @@
-// useToggle.ts - placeholder
-export const placeholder = 'placeholder';
+// useToggle.ts - placeholder;
+export const placeholder = 'placeholder';'

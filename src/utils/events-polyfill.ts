@@ -1,2 +1,2 @@
-// events-polyfill.ts - placeholder
-export const placeholder = 'placeholder';
+// events-polyfill.ts - placeholder;
+export const placeholder = 'placeholder';'

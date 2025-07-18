@@ -1,2 +1,2 @@
-// usePoints.ts - placeholder
-export const placeholder = 'placeholder';
+// usePoints.ts - placeholder;
+export const placeholder = 'placeholder';'

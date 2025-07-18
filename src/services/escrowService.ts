@@ -1,2 +1,2 @@
-// escrowService.ts - placeholder
-export const placeholder = 'placeholder';
+// escrowService.ts - placeholder;
+export const placeholder = 'placeholder';'

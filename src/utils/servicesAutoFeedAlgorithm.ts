@@ -1,2 +1,2 @@
-// servicesAutoFeedAlgorithm.ts - placeholder
-export const placeholder = 'placeholder';
+// servicesAutoFeedAlgorithm.ts - placeholder;
+export const placeholder = 'placeholder';'

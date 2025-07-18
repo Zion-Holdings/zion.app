@@ -1,2 +1,2 @@
-// google-analytics.d.ts - placeholder
-export const placeholder = 'placeholder';
+// google-analytics.d.ts - placeholder;
+export const placeholder = 'placeholder';'

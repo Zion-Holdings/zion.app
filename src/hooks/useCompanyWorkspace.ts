@@ -1,2 +1,2 @@
-// useCompanyWorkspace.ts - placeholder
-export const placeholder = 'placeholder';
+// useCompanyWorkspace.ts - placeholder;
+export const placeholder = 'placeholder';'

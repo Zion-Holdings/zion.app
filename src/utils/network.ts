@@ -1,2 +1,2 @@
-// network.ts - placeholder
-export const placeholder = 'placeholder';
+// network.ts - placeholder;
+export const placeholder = 'placeholder';'

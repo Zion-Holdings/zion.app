@@ -1,2 +1,2 @@
-// PrivacyPolicy.d.ts - placeholder
-export const placeholder = 'placeholder';
+// PrivacyPolicy.d.ts - placeholder;
+export const placeholder = 'placeholder';'

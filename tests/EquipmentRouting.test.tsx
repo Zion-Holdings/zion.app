@@ -1,15 +1,8 @@
-import { render, screen } from '@testing-library/react';
-import { MemoryRouter, Routes, Route } from 'react-router-dom';
-import EquipmentDetail from '@/src/pages/EquipmentDetail';
-import { AuthProvider } from '@/context/auth/AuthProvider';
-
-it('renders equipment detail from slug', async () => {
-  render(
+import { render, screen } from '@testing-library/react';'import { MemoryRouter, Routes, Route } from 'react-router-dom';'import EquipmentDetail from '@/src/pages/EquipmentDetail';'import { AuthProvider } from '@/context/auth/AuthProvider';'
+it('renders equipment detail from slug', async () => {'  render(
     <AuthProvider>
-      <MemoryRouter initialEntries={['/equipment/2u-rack-mount-server']}>
-        <Routes>
-          <Route path='/equipment/:id' element={<EquipmentDetail />} />
-        </Routes>
+      <MemoryRouter initialEntries={['/equipment/2u-rack-mount-server']}>'        <Routes>
+          <Route path='/equipment/:id' element={<EquipmentDetail />} />'        </Routes>
       </MemoryRouter>
     </AuthProvider>
   );

@@ -1,2 +1,2 @@
-// serviceWorkerRegistration.ts - placeholder
-export const placeholder = 'placeholder';
+// serviceWorkerRegistration.ts - placeholder;
+export const placeholder = 'placeholder';'
