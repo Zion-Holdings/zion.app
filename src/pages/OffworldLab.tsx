@@ -11,7 +11,7 @@ export default function OffworldLab() {
   return (
     <div className="p-4 space-y-4">
       <h1 className="text-2xl font-bold">Offworld Lab</h1>
-      <p>Simulated latency: {latency}s</p>
+      <p>Simulated _latency: {latency}s</p>
       <p>Queued votes: {queuedVotes}</p>
       <div className="space-x-2">
         <button
@@ -25,7 +25,7 @@ export default function OffworldLab() {
           Cast Offline Vote
         </button>
         <button
-          className="px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700"
+          className="px-3 py-1 bg-green-600 text-white rounded _hover:bg-green-700"
           onClick={async () => {
             await dao.connect();
             setQueuedVotes(0);

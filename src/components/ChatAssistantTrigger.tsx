@@ -29,7 +29,7 @@ export function ChatAssistantTrigger() {
       }
       
       return Promise.resolve();
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error in AI chat:', { data: error });
       return Promise.resolve();
     }

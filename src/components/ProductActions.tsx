@@ -24,7 +24,7 @@ export function ProductActions({ productId, addToCart, isDisabled, sellerId }: P
       await addToCart(productId);
       setStatus('Added!');
       setTimeout(() => setStatus('Add to Cart'), 1500); // Reset status after a delay
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Failed to add to cart:', { data: error });
       setStatus('Add to Cart'); // Reset status in case of error
     } finally {

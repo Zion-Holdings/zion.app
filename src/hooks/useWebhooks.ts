@@ -24,7 +24,7 @@ export interface TestWebhookResult {
 }
 
 export function useWebhooks() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [webhooks, setWebhooks] = useState<Webhook[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -76,7 +76,7 @@ export function useWebhooks() {
       }
 
       setWebhooks(result.webhooks || []);
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Error fetching webhooks:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
@@ -137,7 +137,7 @@ export function useWebhooks() {
       });
       
       return result.webhook;
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Error creating webhook:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
@@ -151,7 +151,7 @@ export function useWebhooks() {
   };
 
   // Toggle webhook active status
-  const toggleWebhook = async (webhookId: string, isActive: boolean) => {
+  const toggleWebhook = async (webhookId: string, _isActive: boolean) => {
     if (!user) return;
     if (!supabase) throw new Error('Supabase client not initialized');
     
@@ -195,7 +195,7 @@ export function useWebhooks() {
       });
       
       return result;
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Error toggling webhook:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
@@ -209,7 +209,7 @@ export function useWebhooks() {
   };
 
   // Delete webhook
-  const deleteWebhook = async (webhookId: string) => {
+  const deleteWebhook = async (_webhookId: string) => {
     if (!user) return;
     if (!supabase) throw new Error('Supabase client not initialized');
     
@@ -251,7 +251,7 @@ export function useWebhooks() {
       });
       
       return result;
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Error deleting webhook:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
@@ -265,7 +265,7 @@ export function useWebhooks() {
   };
 
   // Test webhook
-  const testWebhook = async (webhookId: string, eventType: WebhookEventType) => {
+  const testWebhook = async (webhookId: string, _eventType: WebhookEventType) => {
     if (!user) return;
     if (!supabase) throw new Error('Supabase client not initialized');
     
@@ -317,7 +317,7 @@ export function useWebhooks() {
       });
       
       return result;
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Error testing webhook:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({

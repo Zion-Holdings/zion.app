@@ -57,11 +57,11 @@ export default function CongressPage() {
   const majority = total <= 5 ? total : Math.ceil((2 / 3) * total);
   const pass = yesCount >= majority;
 
-  const castVote = (id: number, value: Vote) => {
+  const castVote = (id: number, _value: Vote) => {
     setVotes((prev) => ({ ...prev, [id]: prev[id] === value ? null : value }));
   };
 
-  const submitProposal = (e: React.FormEvent) => {
+  const submitProposal = (_e: React.FormEvent) => {
     e.preventDefault();
     setTitle('');
     setBody('');

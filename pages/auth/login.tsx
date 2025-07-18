@@ -20,7 +20,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 
 const LoginPage = () => {
   const router = useRouter();
-  const { t } = useTranslation();
+  cons_t { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<Error | { name: string; message: string } | null>(null);
@@ -77,7 +77,7 @@ const LoginPage = () => {
           logInfo('LoginPage: getSession returned, user:', { data:  { data: session?.user?.id } });
           setUser(session?.user ?? null);
         }
-      } catch (e) {
+      } catch (_e) {
         if (mounted) {
           logErrorToProduction('LoginPage: Exception during getSession:', { data:  e });
           clearTimeout(sessionTimeoutId); // Ensure timeout is cleared on error too
@@ -97,7 +97,7 @@ const LoginPage = () => {
       }
       
       logInfo('LoginPage: Setting up onAuthStateChange listener.');
-      const { data: authListener } = supabase.auth.onAuthStateChange((event: AuthChangeEvent, session: _Session | null) => {
+      const { data: authListener } = supabase.auth.onAuthStateChange((event: AuthChangeEvent, _session: _Session | null) => {
         if (!mounted) return;
         logInfo('LoginPage: onAuthStateChange event:', { 
           event, 
@@ -203,7 +203,7 @@ const LoginPage = () => {
     }
   };
 
-  const _handleProactiveResendVerification = async (e: FormEvent) => {
+  const _handleProactiveResendVerification = async (_e: FormEvent) => {
     e.preventDefault();
     if (!_proactiveResendEmail) {
       setProactiveResendMessage({ type: 'error', text: 'Please enter your email address.' });
@@ -232,7 +232,7 @@ const LoginPage = () => {
     }
   };
 
-  const handleLogin = async (e: FormEvent) => {
+  const handleLogin = async (_e: FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setError(null);

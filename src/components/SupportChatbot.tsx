@@ -28,7 +28,7 @@ export function SupportChatbot() {
 
   useEffect(() => { endRef.current?.scrollIntoView({ behavior: 'smooth' }); }, [messages]);
 
-  const sendMessage = async (text: string) => {
+  const sendMessage = async (_text: string) => {
     const userMsg: Msg = { id: Date.now().toString(), role: 'user', message: text };
     setMessages(prev => [...prev, userMsg]);
     setLoading(true);
@@ -104,7 +104,7 @@ export function SupportChatbot() {
           (FALLBACK_RESPONSES[Math.floor(Math.random() * FALLBACK_RESPONSES.length)] || "I'm experiencing technical difficulties. Please contact support@ziontechgroup.com for assistance.");
         setMessages(prev => prev.map(m => m.id === botId ? { ...m, message: final } : m));
       }
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Chatbot error:', { data: err });
       
       // Provide a helpful fallback response instead of generic error

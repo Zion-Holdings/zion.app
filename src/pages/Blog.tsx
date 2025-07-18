@@ -66,7 +66,7 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
           `/api/blog?query=${encodeURIComponent(query)}`
         ) as BlogPost[];
         setPosts(data);
-      } catch (err) {
+      } catch (_err) {
         logErrorToProduction('Failed to fetch blog posts', { data: err });
       } finally {
         setIsLoading(false);
@@ -116,7 +116,7 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
             return (
             <div className="mb-16">
               <h2 className="text-2xl font-bold text-white mb-6">Featured Article</h2>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 _lg:grid-cols-2 gap-8">
                 <div className="aspect-video overflow-hidden rounded-lg">
                   <OptimizedImage
                     src={featuredPost.featuredImage}
@@ -213,7 +213,7 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
               {filteredPosts.map((post) => (
                 <Card
                   key={post.id}
-                  className="bg-zion-blue-dark border border-zion-blue-light hover:border-zion-purple transition-all duration-300 group-hover:shadow-lg"
+                  className="bg-zion-blue-dark border border-zion-blue-light _hover:border-zion-purple transition-all duration-300 group-hover:shadow-lg"
                 >
                   <Link href={`/blog/${post.slug}`} className="block group">
                   <div className="aspect-[16/9] relative overflow-hidden">

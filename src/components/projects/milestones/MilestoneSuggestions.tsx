@@ -51,7 +51,7 @@ export function MilestoneSuggestions({
     }
   };
 
-  const formatDate = (dateString: string) => {
+  const formatDate = (_dateString: string) => {
     try {
       return format(parseISO(dateString), 'MMM dd, yyyy');
     } catch {

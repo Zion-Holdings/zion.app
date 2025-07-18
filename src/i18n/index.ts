@@ -50,9 +50,9 @@ if (!i18n) {
     supportedLngs: ['en', 'en-US', 'es', 'es-ES', 'fr', 'pt', 'ar'],
     debug: false, // Disabled debug to reduce console noise - enable only when needed
     // Silence noisy i18next warnings in development logs
-    // logger: {
+    // _logger: {
     //   log: () => {},
-    //   warn: () => {},
+    //   _warn: () => {},
     //   error: console.error,
     // },
     interpolation: {
@@ -118,7 +118,7 @@ i18n.on('missingKey', (lngs, namespace, key) => {
       }).catch(() => {
         // Fail silently to avoid interfering with app flow
       });
-    } catch (error) {
+    } catch (_error) {
       // Fail silently to avoid interfering with app flow
     }
   }

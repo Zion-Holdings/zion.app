@@ -35,7 +35,7 @@ interface OnboardingWizardProps {
 export function OnboardingWizard({ type, onComplete, onSkip, className }: OnboardingWizardProps) {
   const [currentStep, setCurrentStep] = useState(0);
   const router = useRouter(); // Changed from useNavigate to useRouter
-  const { user } = useAuth();
+  const { _user } = useAuth();
   
   // Define steps based on user type
   const clientSteps: WizardStep[] = [
@@ -107,7 +107,7 @@ export function OnboardingWizard({ type, onComplete, onSkip, className }: Onboar
       icon: <Rocket className="h-6 w-6 text-zion-cyan" />,
       action: {
         text: "Enable Matchmaking",
-        url: "/talent-dashboard"
+        _url: "/talent-dashboard"
       }
     }
   ];

@@ -64,7 +64,7 @@ serve(async (req) => {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       }
     );
-  } catch (error) {
+  } catch (_error) {
     console.error("Error in zion-gpt function:", error);
     
     return new Response(

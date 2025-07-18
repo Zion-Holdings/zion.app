@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import type { Resume } from '@/types/resume';
 
-export const useResumeProgress = (resume: Resume | null) => {
+export const useResumeProgress = (_resume: Resume | null) => {
   const [progress, setProgress] = useState(0);
   
   useEffect(() => {

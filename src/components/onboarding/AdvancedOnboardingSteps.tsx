@@ -3,7 +3,7 @@ import type { OnboardingStep } from './OnboardingTracker';
 import { useAdvancedOnboardingStatus } from '@/hooks/useAdvancedOnboardingStatus';
 
 export function AdvancedOnboardingSteps() {
-  const { status } = useAdvancedOnboardingStatus();
+  const { _status } = useAdvancedOnboardingStatus();
 
   const steps: OnboardingStep[] = [
     {

@@ -80,7 +80,7 @@ export function RoleManagement() {
     },
   ];
 
-  const handlePermissionChange = (_memberId: number, permission: string, value: boolean) => {
+  const handlePermissionChange = (_memberId: number, permission: string, _value: boolean) => {
     // In a real app, this would make an API call to update permissions
     toast({
       title: "Permission updated",

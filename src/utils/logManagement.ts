@@ -90,7 +90,7 @@ class LogManagement {
       });
 
       return result;
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Failed to analyze system health', error);
       
       return {
@@ -173,7 +173,7 @@ class LogManagement {
               actionId: action.id,
               pattern: pattern.pattern 
             });
-          } catch (error) {
+          } catch (_error) {
             const issue = `Failed to execute ${action.description}: ${error}`;
             issues.push(issue);
             logWarn('Auto-heal action failed', { actionId: action.id, error });
@@ -182,7 +182,7 @@ class LogManagement {
       }
 
       return { actionsExecuted: actionsExecuted.length, issues };
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Auto-healing process failed', error);
       return { actionsExecuted: 0, issues: ['Auto-healing system error'] };
     }
@@ -263,7 +263,7 @@ class LogManagement {
 
       logInfo('Predictive insights generated', { data:  { insightsCount: insights.length } });
       return insights;
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Failed to generate predictive insights', error);
       return [];
     }
@@ -313,7 +313,7 @@ class LogManagement {
           alerts
         }
       };
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Failed to export system report', error);
       throw error;
     }
@@ -356,7 +356,7 @@ class LogManagement {
       });
 
       return { optimizations, spaceFreed, performanceGain };
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Failed to optimize logging', error);
       return { optimizations: [], spaceFreed: 0, performanceGain: 0 };
     }
@@ -391,7 +391,7 @@ class LogManagement {
     // Group logs by message similarity
     const messageGroups = new Map<string, unknown[]>();
     
-    logs.forEach((log: unknown) => {
+    logs.forEach((_log: unknown) => {
       // Normalize message for pattern matching
       const normalizedMessage = (log as { message: string }).message
         .replace(/\d+/g, 'NUMBER')

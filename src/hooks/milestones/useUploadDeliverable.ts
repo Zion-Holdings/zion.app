@@ -8,11 +8,11 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 export const useUploadDeliverable = () => {
 
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { recordMilestoneActivity } = useRecordActivity();
+  const { _recordMilestoneActivity } = useRecordActivity();
   
-  const uploadDeliverable = async (milestoneId: string, projectId: string, file: File) => {
+  const uploadDeliverable = async (milestoneId: string, projectId: string, _file: File) => {
     if (!user || !projectId) return null;
     
     try {
@@ -43,7 +43,7 @@ export const useUploadDeliverable = () => {
       const deliverables = [...(milestone.deliverables || []), newDeliverable];
       
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { error } = await supabase
+      const { _error } = await supabase
         .from('project_milestones')
         .update({ deliverables })
         .eq('id', milestoneId);

@@ -3,7 +3,7 @@ import { performSearch } from '@/pages/api/search';
 
 describe('performSearch', () => {
   it('filters by category and sorts by price desc', () => {
-    const { results } = performSearch('AI', 1, 50, {
+    const { _results } = performSearch('AI', 1, 50, {
       category: 'AI Models & APIs',
       sort: 'price_desc'
     });
@@ -17,7 +17,7 @@ describe('performSearch', () => {
   });
 
   it('applies minimum rating filter', () => {
-    const { results } = performSearch('AI', 1, 50, {
+    const { _results } = performSearch('AI', 1, 50, {
       minRating: 4.8,
       sort: 'rating'
     });

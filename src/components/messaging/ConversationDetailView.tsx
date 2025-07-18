@@ -14,7 +14,7 @@ import { DateDivider } from './DateDivider';
 import type { Message } from '@/types/messaging';
 
 export function ConversationDetailView() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const { 
     activeConversation, 
     activeMessages, 
@@ -48,12 +48,12 @@ export function ConversationDetailView() {
     inputRef.current?.focus();
   };
 
-  const handleSendMessage = async (e: React.FormEvent) => {
+  const handleSendMessage = async (_e: React.FormEvent) => {
     e.preventDefault();
     await send();
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+  const handleKeyDown = (_e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       send();

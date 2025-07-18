@@ -72,7 +72,7 @@ export default function SearchPage() {
     }
   }, [router.isReady, router.query.q, query]); // Fixed dependency array
 
-  const fetchResults = useCallback(async (term: string) => {
+  const fetchResults = useCallback(async (_term: string) => {
     if (!term.trim()) {
       setResults([]);
       return;
@@ -87,7 +87,7 @@ export default function SearchPage() {
         setResults([]);
         logErrorToProduction('Search API response structure is not as expected:', { data: data });
       }
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Search failed:', { data: error });
       setResults([]);
     } finally {
@@ -104,7 +104,7 @@ export default function SearchPage() {
     }
   }, [router.isReady, query, fetchResults]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (_e: React.FormEvent) => {
     e.preventDefault();
     if (query.trim()) {
       router.push(`/search?q=${encodeURIComponent(query.trim())}`);

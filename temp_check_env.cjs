@@ -150,7 +150,7 @@ try {
   if (process.env.NODE_ENV !== 'production') { // Assuming default to dev if not set
      // logInfo('✅ Environment configuration looks good.'); // This might be redundant
   }
-} catch (err) {
+} catch (_err) {
   // This catch is if validateProductionEnvironment itself throws an unhandled error,
   // not for the configuration errors it's designed to report.
   // The original `scripts/check-env.ts` has a top-level catch.

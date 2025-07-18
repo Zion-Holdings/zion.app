@@ -38,7 +38,7 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
   } = useJobForm({ jobId, onSuccess });
 
   const { handleSubmit, setValue, formState } = form;
-  const { isSubmitting } = formState;
+  const { _isSubmitting } = formState;
 
   useEffect(() => {
     if (jobId) {
@@ -75,12 +75,12 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
     }
   }, [jobId, getJobById, setValue, setStartDate, setEndDate, setIsRemote, setEditorContent, form]);
 
-  const handleEditorChange = useCallback((value: string) => {
+  const handleEditorChange = useCallback((_value: string) => {
     setEditorContent(value);
     setValue('description', value);
   }, [setValue]);
 
-  const onSubmit = async (values: JobSchemaType) => {
+  const onSubmit = async (_values: JobSchemaType) => {
     setIsFormLoading(true);
 
     try {

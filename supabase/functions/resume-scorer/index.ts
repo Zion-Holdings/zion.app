@@ -28,7 +28,7 @@ serve(async (req) => {
   const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
   try {
-    const { applicationId } = await req.json();
+    const { _applicationId } = await req.json();
     
     if (!applicationId) {
       throw new Error("Application ID is required");
@@ -204,7 +204,7 @@ serve(async (req) => {
       if (!matchResult.score || !matchResult.summary || !matchResult.suggestion) {
         throw new Error("Invalid response format");
       }
-    } catch (error) {
+    } catch (_error) {
       console.error("Error parsing AI response:", error);
       throw new Error("Failed to parse AI analysis results");
     }
@@ -229,7 +229,7 @@ serve(async (req) => {
       JSON.stringify({ success: true, matchResult }),
       { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
-  } catch (error) {
+  } catch (_error) {
     console.error("Error in resume scorer:", error);
     return new Response(
       JSON.stringify({ error: (error as Error).message }),

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 
 export default function NationDashboard() {
   const router = useRouter();
-  const { slug } = router.query as { slug?: string };
+  const { _slug } = router.query as { slug?: string };
   if (!slug) return null;
 
   return (

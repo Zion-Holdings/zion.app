@@ -49,7 +49,7 @@ async function ask() {
     } else {
       outputElement.textContent = 'No response from background script.';
     }
-  } catch (err) {
+  } catch (_err) {
     console.error('Failed to contact background script', err);
     if (err.message === 'Request timeout') {
       outputElement.textContent = 'Request timed out. Please try again.';
@@ -84,7 +84,7 @@ async function safeMessageSend(message, action) {
       console.error(`${action} failed:`, response.error);
     }
     return response;
-  } catch (err) {
+  } catch (_err) {
     console.error(`${action} message failed:`, err);
     return { error: err.message };
   }

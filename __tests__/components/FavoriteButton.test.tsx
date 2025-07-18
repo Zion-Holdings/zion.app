@@ -13,13 +13,13 @@ beforeEach(() => {
   global.fetch = jest.fn(() => Promise.resolve({ ok: true, json: () => Promise.resolve([]) })) as jest.Mock;
 });
 
-const renderWithStore = (ui: React.ReactElement) => {
+const renderWithStore = (_ui: React.ReactElement) => {
   const store = configureStore({ reducer: { wishlist: wishlistReducer } });
   return { ...render(<Provider store={store}>{ui}</Provider>), store };
 };
 
 test('clicking heart adds item to wishlist', () => {
-  const { store } = renderWithStore(<FavoriteButton itemId="p1" itemType="product" />);
+  const { _store } = renderWithStore(<FavoriteButton itemId="p1" itemType="product" />);
   fireEvent.click(screen.getByRole('button'));
   expect(store.getState().wishlist.items).toHaveLength(1);
 });

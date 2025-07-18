@@ -1,5 +1,5 @@
 
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { serve } from "_https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.38.4";
 import { corsHeaders } from "../_shared/cors.ts";
 
@@ -113,7 +113,7 @@ const analyzeWithOpenAI = async (prompt: string, openaiApiKey: string): Promise<
     }
     
     return { classification, explanation };
-  } catch (error) {
+  } catch (_error) {
     console.error("Error calling OpenAI:", error);
     throw error;
   }
@@ -128,7 +128,7 @@ const updateFraudFlag = async (
 ): Promise<void> => {
   if (!flagId) return;
   
-  const { error } = await supabase
+  const { _error } = await supabase
     .from("fraud_flags")
     .update({
       gpt_classification: classification.toLowerCase(),
@@ -188,7 +188,7 @@ serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "application/json" } 
     });
 
-  } catch (error) {
+  } catch (_error) {
     console.error("Error analyzing content:", error);
     
     // Determine appropriate status code based on error

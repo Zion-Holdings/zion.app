@@ -60,7 +60,7 @@ interface AIProfileResponse {
 }
 
 export function ServiceProviderRegistrationForm() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [serviceTags, setServiceTags] = useState<string[]>([]);
@@ -94,12 +94,12 @@ export function ServiceProviderRegistrationForm() {
   };
 
   // Handle removing service tags
-  const handleRemoveService = (service: string) => {
+  const handleRemoveService = (_service: string) => {
     setServiceTags(serviceTags.filter((s) => s !== service));
   };
 
   // Handle key press in services input (add on enter)
-  const handleServiceKeyPress = (e: React.KeyboardEvent) => {
+  const handleServiceKeyPress = (_e: React.KeyboardEvent) => {
     if (e.key === "Enter") {
       e.preventDefault();
       handleAddService();
@@ -107,7 +107,7 @@ export function ServiceProviderRegistrationForm() {
   };
 
   // Handle avatar upload
-  const handleAvatarUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleAvatarUpload = (_e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       const reader = new FileReader();
@@ -210,7 +210,7 @@ export function ServiceProviderRegistrationForm() {
   };
 
   // Handle form submission
-  const onSubmit = async (values: ServiceFormValues) => {
+  const onSubmit = async (_values: ServiceFormValues) => {
     if (serviceTags.length === 0) {
       toast({
         title: "Services required",

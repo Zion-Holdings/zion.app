@@ -17,7 +17,7 @@ interface RolePickerProps {
 export function RolePicker({ onSelect }: RolePickerProps) {
   const [selectedRole, setSelectedRole] = useState<UserRole>(null);
 
-  const handleSelect = (role: UserRole) => {
+  const handleSelect = (_role: UserRole) => {
     setSelectedRole(role);
     onSelect(role);
   };

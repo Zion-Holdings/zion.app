@@ -23,12 +23,12 @@ export default function InvestorMatchPage() {
   const [emailText, setEmailText] = useState('');
   const [selected, setSelected] = useState<InvestorMatch | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (_e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setForm(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (_e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     const results = await getInvestorMatches(form.industry, form.location, form.stage);
@@ -36,7 +36,7 @@ export default function InvestorMatchPage() {
     setLoading(false);
   };
 
-  const handleGenerateEmail = (match: InvestorMatch) => {
+  const handleGenerateEmail = (_match: InvestorMatch) => {
     setSelected(match);
     setEmailText(generatePitchEmail(form.startup, match.investor.name, form.summary));
   };

@@ -9,7 +9,7 @@
 let chalk;
 try {
   chalk = require('chalk');
-} catch (err) {
+} catch (_err) {
   chalk = new Proxy({}, {
     get: () => (msg) => msg,
   });
@@ -41,7 +41,7 @@ const REQUIRED_VARS = {
   // Supabase (core authentication - more lenient for dev and Netlify)
   'NEXT_PUBLIC_SUPABASE_URL': {
     required: !isLocalDev && !isNetlifyBuild, // Only required in local production builds
-    validation: (value) => {
+    _validation: (value) => {
       if (!value) {
         if (isLocalDev || isNetlifyBuild) return null; // Allow missing in local dev and Netlify
         return 'Missing Supabase URL';
@@ -56,7 +56,7 @@ const REQUIRED_VARS = {
   },
   'NEXT_PUBLIC_SUPABASE_ANON_KEY': {
     required: !isLocalDev && !isNetlifyBuild, // Only required in local production builds
-    validation: (value) => {
+    _validation: (value) => {
       if (!value) {
         if (isLocalDev || isNetlifyBuild) return null; // Allow missing in local dev and Netlify
         return 'Missing Supabase anonymous key';
@@ -73,7 +73,7 @@ const REQUIRED_VARS = {
   // Auth0 authentication (completely optional now)
   'AUTH0_SECRET': {
     required: false, // Made optional to prevent build failures
-    validation: (value) => {
+    _validation: (value) => {
       // Always return null (no validation) to prevent errors
       return null;
     },
@@ -81,28 +81,28 @@ const REQUIRED_VARS = {
   },
   'AUTH0_BASE_URL': {
     required: false, // Made optional
-    validation: (value) => {
+    _validation: (value) => {
       return null; // No validation to prevent errors
     },
     description: 'Auth0 base URL of your application (optional - using Supabase auth)'
   },
   'AUTH0_ISSUER_BASE_URL': {
     required: false, // Made optional
-    validation: (value) => {
+    _validation: (value) => {
       return null; // No validation to prevent errors
     },
     description: 'Auth0 domain from your Auth0 dashboard (optional - using Supabase auth)'
   },
   'AUTH0_CLIENT_ID': {
     required: false, // Made optional
-    validation: (value) => {
+    _validation: (value) => {
       return null; // No validation to prevent errors
     },
     description: 'Auth0 client ID from your Auth0 application (optional - using Supabase auth)'
   },
   'AUTH0_CLIENT_SECRET': {
     required: false, // Made optional
-    validation: (value) => {
+    _validation: (value) => {
       return null; // No validation to prevent errors
     },
     description: 'Auth0 client secret from your Auth0 application (optional - using Supabase auth)'

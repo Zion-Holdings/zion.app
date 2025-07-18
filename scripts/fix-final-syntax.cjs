@@ -44,17 +44,17 @@ function fixFile(filePath) {
 
     if (changed) {
       fs.writeFileSync(fullPath, content, 'utf8');
-      // console.log(`✅ Fixed ${filePath}`);
+      // console.warn(`✅ Fixed ${filePath}`);
       return true;
     }
     return false;
-  } catch (error) {
+  } catch (_error) {
     console.error(`❌ Error fixing ${filePath}:`, error.message);
     return false;
   }
 }
 
-// console.log('🔧 Fixing final syntax issues...');
+// console.warn('🔧 Fixing final syntax issues...');
 
 let _fixedCount = 0;
 for (const file of filesToFix) {
@@ -63,5 +63,5 @@ for (const file of filesToFix) {
   }
 }
 
-// console.log(`\n✅ Fixed ${_fixedCount} files`);
-// console.log('🎉 Final syntax fixes complete!'); 
+// console.warn(`\n✅ Fixed ${_fixedCount} files`);
+// console.warn('🎉 Final syntax fixes complete!'); 

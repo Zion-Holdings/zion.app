@@ -7,8 +7,8 @@ import { useToast } from '@/hooks/use-toast';
 import { showApiError } from '@/utils/apiErrorHandler';
 
 export const useTalentQuotes = () => {
-  const { user } = useAuth();
-  const { toast } = useToast();
+  const { _user } = useAuth();
+  const { _toast } = useToast();
   const queryClient = useQueryClient();
   const [statusFilter, setStatusFilter] = useState<QuoteStatus | 'all'>('all');
   const [archiveFilter, setArchiveFilter] = useState<'active' | 'archived' | 'all'>('active');
@@ -64,7 +64,7 @@ export const useTalentQuotes = () => {
       });
       queryClient.invalidateQueries({ queryKey: ['quotes', 'talent', talentId] });
     },
-    onError: (error: Error, variables: { id: string; status: QuoteStatus }) => {
+    onError: (error: Error, _variables: { id: string; status: QuoteStatus }) => {
       showApiError(error, 'Failed to update status', () => updateStatusMutation.mutate(variables));
     }
   });
@@ -82,7 +82,7 @@ export const useTalentQuotes = () => {
       });
       queryClient.invalidateQueries({ queryKey: ['quotes', 'talent', talentId] });
     },
-    onError: (error: Error, variables: { id: string; isArchived: boolean }) => {
+    onError: (error: Error, _variables: { id: string; isArchived: boolean }) => {
       showApiError(error, 'Failed to update quote', () => toggleArchiveMutation.mutate(variables));
     }
   });

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 
 // This component handles deep linking to the mobile app
-const OpenAppRedirect: React.FC = () => {
+const _OpenAppRedirect: React.FC = () => {
   const router = useRouter();
   const [status, setStatus] = useState<'redirecting' | 'failed' | 'timeout'>('redirecting');
   

@@ -33,7 +33,7 @@ export interface OrderDetail extends Order {
 export function useGetOrderQuery(orderId?: string) {
   return useQuery({
     queryKey: ['order', orderId],
-    queryFn: async () => {
+    _queryFn: async () => {
       if (!orderId) return null as unknown as OrderDetail;
       const res = await fetch(`/api/orders/${orderId}`);
       if (!res.ok) {

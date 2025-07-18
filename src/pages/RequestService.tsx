@@ -8,9 +8,9 @@ export default function RequestService() {
   const [phone, setPhone] = useState('');
   const [details, setDetails] = useState('');
   const [loading, setLoading] = useState(false);
-  const { toast } = useToast();
+  const { _toast } = useToast();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (_e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !email || !phone) {
       toast({

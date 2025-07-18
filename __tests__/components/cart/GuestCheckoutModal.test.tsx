@@ -154,7 +154,7 @@ describe('GuestCheckoutModal', () => {
     // or that a custom validation logic (if any) within the component prevents proceeding.
     // For this component, it directly calls `onSubmit` prop.
 
-    let emailInput: HTMLInputElement;
+    let _emailInput: HTMLInputElement;
     let addressInput: HTMLInputElement;
     let submitButton: HTMLElement;
 

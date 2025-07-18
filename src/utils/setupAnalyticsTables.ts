@@ -7,7 +7,7 @@ export async function ensureAnalyticsTablesExist() {
   try {
     if (!supabase) throw new Error('Supabase client not initialized');
     // Check if analytics_events table exists
-    const { error } = await supabase
+    const { _error } = await supabase
       .from('analytics_events')
       .select('id')
       .limit(1);
@@ -16,7 +16,7 @@ export async function ensureAnalyticsTablesExist() {
       logInfo('Creating analytics tables...');
       await createAnalyticsTables();
     }
-  } catch (error) {
+  } catch (_error) {
     logWarn('Error checking if analytics tables exist:', { data:  { data: error } });
     // No need to create tables here, as this could be a connection error
   }
@@ -87,7 +87,7 @@ async function createAnalyticsTables() {
     });
     
     logInfo('Analytics tables created successfully');
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction('Error creating analytics tables:', { data: error });
     // Tables creation failed, but we can still continue
   }

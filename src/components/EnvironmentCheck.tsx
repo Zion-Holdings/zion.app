@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 interface EnvironmentStatus {
-  variable: string;
+  _variable: string;
   value: string;
   status: 'ok' | 'missing' | 'placeholder';
 }

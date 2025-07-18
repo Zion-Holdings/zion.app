@@ -3,7 +3,7 @@
 // This script runs Jest to produce a coverage summary and
 // creates placeholder test files under __tests__/auto.
 
-const { execSync } = require('child_process');
+const { _execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
@@ -35,5 +35,5 @@ for (const [file, data] of Object.entries(summary)) {
     `// Placeholder tests for ${relative}\n` +
     `describe('${relative}', () => {\n  it('needs tests', () => {\n    expect(true).toBe(true);\n  });\n});\n`;
   fs.writeFileSync(testPath, content);
-  // console.log('Created placeholder test:', testPath);
+  // console.warn('Created placeholder test:', testPath);
 }

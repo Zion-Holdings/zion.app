@@ -66,7 +66,7 @@ export function OptimizedImage({
   }, [lazy, priority, isInView]);
 
   // Generate WebP-compatible src
-  const getOptimizedSrc = (originalSrc: string) => {
+  const getOptimizedSrc = (_originalSrc: string) => {
     // If it's already optimized or external, return as-is
     if (originalSrc.startsWith('http') || originalSrc.includes('/_next/image')) {
       return originalSrc;
@@ -102,7 +102,7 @@ export function OptimizedImage({
     </svg>`;
     const base64 = typeof window !== 'undefined'
       ? btoa(unescape(encodeURIComponent(svg)))
-      : (NodeBuffer as { from: (data: string, encoding: string) => { toString: (encoding: string) => string } }).from(svg, 'utf-8').toString('base64');
+      : (NodeBuffer as { from: (data: string, _encoding: string) => { toString: (encoding: string) => string } }).from(svg, 'utf-8').toString('base64');
     return `data:image/svg+xml;base64,${base64}`;
   };
 

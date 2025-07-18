@@ -89,7 +89,7 @@ class ErrorMonitor {
           context,
         }),
       });
-    } catch (reportingError) {
+    } catch (_reportingError) {
       // Silently fail if error reporting fails
       console.warn('Failed to report error:', reportingError);
     }

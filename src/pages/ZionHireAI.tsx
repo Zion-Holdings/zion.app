@@ -19,7 +19,7 @@ import Link from "next/link";
 
 export default function ZionHireAI() {
   const { isWhitelabel, brandName, primaryColor } = useWhitelabel();
-  const { isAuthenticated } = useAuth();
+  const { _isAuthenticated } = useAuth();
   
   return (
     <>

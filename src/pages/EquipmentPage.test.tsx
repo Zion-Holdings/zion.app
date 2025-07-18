@@ -49,7 +49,7 @@ describe('fetchEquipment', () => {
     // Check specific parts of the error and toast
     try {
       await fetchEquipment();
-    } catch (error) {
+    } catch (_error) {
       if (error && typeof error === 'object') {
         const err = error as { message?: string; response?: { data?: unknown; status?: number } };
         expect(err.message).toBeDefined();
@@ -97,7 +97,7 @@ describe('fetchEquipment', () => {
 
     try {
       await fetchEquipment();
-    } catch (error) {
+    } catch (_error) {
       if (error && typeof error === 'object') {
         const err = error as { message?: string; response?: unknown };
         expect(err.message).toBe(networkErrorMessage);
@@ -156,7 +156,7 @@ describe('fetchEquipment', () => {
 
     try {
       await fetchEquipment();
-    } catch (e) {
+    } catch (_e) {
       if (e && typeof e === 'object') {
         const err = e as { message?: string };
         expect(toast).toHaveBeenCalledWith({

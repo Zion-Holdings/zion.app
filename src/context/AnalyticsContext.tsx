@@ -55,7 +55,7 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
   const [events, setEvents] = useState<AnalyticsEvent[]>([]);
   const [lastEvent, setLastEvent] = useState<AnalyticsEvent | null>(null);
   const router = useRouter();
-  const { user } = useAuth();
+  const { _user } = useAuth();
 
   // Function to track general analytics events
   const trackEvent = useCallback(async (type: AnalyticsEventType, metadata: Record<string, unknown> = {}) => {
@@ -81,7 +81,7 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
           created_at: event.timestamp
         }]);
       }
-    } catch (error) {
+    } catch (_error) {
       // Log error but don't fail the tracking
       console.warn('Failed to store analytics event:', error);
     }
@@ -90,7 +90,7 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
     // if (analytics) {
     //   try {
     //     analytics.track(type, event.metadata);
-    //   } catch (error) {
+    //   } catch (_error) {
     //     console.warn('Failed to send analytics event:', error);
     //   }
     // }

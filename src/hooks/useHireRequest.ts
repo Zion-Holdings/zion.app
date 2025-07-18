@@ -29,7 +29,7 @@ export function useHireRequest() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const submitHireRequest = async (requestData: HireRequestData) => {
+  const submitHireRequest = async (_requestData: HireRequestData) => {
     setIsSubmitting(true);
     setError(null);
     
@@ -53,7 +53,7 @@ export function useHireRequest() {
         requestId = (response as { request_id?: string }).request_id;
       }
       return { success: true, requestId };
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error submitting hire request:', { data: error });
       
       const errorMessage = error instanceof Error 

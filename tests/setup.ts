@@ -44,5 +44,5 @@ afterEach(() => {
   // Snapshot placeholder (no-op) – Vitest has its own snapshot system.
   // We expose it so imports compile even if we don't use it.
    
-  SnapshotSerializer: () => {},
+  _SnapshotSerializer: () => {},
 };

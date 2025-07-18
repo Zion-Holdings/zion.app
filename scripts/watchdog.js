@@ -75,7 +75,7 @@ async function sendDiscordAlert(alertMessage) {
     const logMsg = `Successfully sent alert to Discord.`; // Message itself can be long, so not logging it here.
     console.warn(logMsg);
     appendToSelfHealLog(`[${new Date().toISOString()}] ${logMsg}\n`);
-  } catch (error) {
+  } catch (_error) {
     let errorMessage = `Failed to send alert to Discord.`;
     if (error.code === 'ECONNABORTED') {
         errorMessage += ` Request timed out.`;
@@ -127,7 +127,7 @@ function determineBaseLogPath() {
       fs.mkdirSync(envPath, { recursive: true });
       fs.accessSync(envPath, fs.constants.W_OK);
       return envPath;
-    } catch (e) {
+    } catch (_e) {
       logErrorToProduction(`Failed to use WATCHDOG_LOG_PATH at ${envPath}. Falling back to local logs directory.`, e);
     }
   }
@@ -137,7 +137,7 @@ function determineBaseLogPath() {
     fs.mkdirSync(cwdPath, { recursive: true });
     fs.accessSync(cwdPath, fs.constants.W_OK);
     return cwdPath;
-  } catch (e) {
+  } catch (_e) {
     logErrorToProduction(`Failed to create cwd log directory at ${cwdPath}`, e);
   }
 
@@ -146,7 +146,7 @@ function determineBaseLogPath() {
     fs.mkdirSync(fallback, { recursive: true });
     fs.accessSync(fallback, fs.constants.W_OK);
     return fallback;
-  } catch (e) {
+  } catch (_e) {
     logErrorToProduction(`Failed to create fallback log directory at ${fallback}`, e);
   }
 
@@ -155,7 +155,7 @@ function determineBaseLogPath() {
     fs.mkdirSync(tmpPath, { recursive: true });
     fs.accessSync(tmpPath, fs.constants.W_OK);
     return tmpPath;
-  } catch (e) {
+  } catch (_e) {
     logErrorToProduction(`Failed to create tmp log directory at ${tmpPath}`, e);
   }
 
@@ -177,7 +177,7 @@ function ensureFileExists(filePath) {
     if (!fs.existsSync(filePath)) {
       fs.closeSync(fs.openSync(filePath, 'a'));
     }
-  } catch (err) {
+  } catch (_err) {
     logErrorToProduction(`Failed to create log file: ${filePath}`, err);
   }
 }
@@ -211,7 +211,7 @@ const _ERROR_PATTERNS_CONFIG = [
     actionType: HEAL_ACTION_TYPES.CODEX_FIX_FILE,
     priority: 2,
     maxStreak: 3,
-    extractContext: (logLine) => {
+    _extractContext: (logLine) => {
       const match = logLine.match(/TypeError: Cannot read properties of undefined \(reading '.*?'\) at .*? (\/.*?\.js:\d+:\d+)/i);
       return {
         filePathPattern: match ? match[1].replace(/.*\/src\//, 'src/') : null, // Attempt to get relative path
@@ -286,7 +286,7 @@ function ensureSingleInstance() {
         process.kill(existingPid, 0);
         console.warn(`Another watchdog instance is already running (PID: ${existingPid}). Exiting.`);
         process.exit(0);
-      } catch (err) {
+      } catch (_err) {
         // Process not found, remove stale PID file
         fs.unlinkSync(WATCHDOG_PID_FILE);
         console.warn('Removed stale PID file.');
@@ -302,7 +302,7 @@ function ensureSingleInstance() {
         if (fs.existsSync(WATCHDOG_PID_FILE)) {
           fs.unlinkSync(WATCHDOG_PID_FILE);
         }
-      } catch (err) {
+      } catch (_err) {
         // Ignore cleanup errors
       }
     });
@@ -316,7 +316,7 @@ function ensureSingleInstance() {
       console.warn('\nReceived SIGTERM. Shutting down watchdog gracefully...');
       process.exit(0);
     });
-  } catch (err) {
+  } catch (_err) {
     logErrorToProduction('Failed to ensure single instance', err);
   }
 }
@@ -334,7 +334,7 @@ function appendToSelfHealLog(message) {
   }
   try {
     fs.appendFileSync(SELF_HEAL_LOG_FILE, message);
-  } catch (err) {
+  } catch (_err) {
     logErrorToProduction(`Failed to write to self-heal log: ${SELF_HEAL_LOG_FILE}`, err);
   }
 }
@@ -353,13 +353,13 @@ async function triggerCodexFix(reason) {
     const successMsg = `Codex fix triggered via ${CODEX_TRIGGER_URL}`;
     console.warn(successMsg);
     appendToSelfHealLog(`[${new Date().toISOString()}] ${successMsg}\n`);
-  } catch (err) {
+  } catch (_err) {
     logErrorToProduction('Failed to trigger Codex fix', err);
     appendToSelfHealLog(`[${new Date().toISOString()}] ERROR: Failed to trigger Codex fix: ${err.message}\n`);
   }
 }
 
-// console.log('Watchdog script started. Monitoring log files...');
+// console.warn('Watchdog script started. Monitoring log files...');
 appendToSelfHealLog(`[${new Date().toISOString()}] Watchdog script started.\n`);
 
 /**
@@ -533,12 +533,12 @@ function startMonitoring() {
   // Ensure only one instance runs
   ensureSingleInstance();
 
-  // console.log(
+  // console.warn(
   //   `Watchdog script started. PID: ${process.pid}, Logs directory: ${BASE_LOG_PATH}\n`
   // );
 
   // Log configuration
-  // console.log(`Configuration:
+  // console.warn(`Configuration:
   //   - Memory Threshold: ${MEMORY_THRESHOLD * 100}%
   //   - CPU Threshold: ${CPU_THRESHOLD * 100}%
   //   - CPU Sustained Checks: ${CPU_SUSTAINED_CHECKS}
@@ -554,12 +554,12 @@ function startMonitoring() {
       perfTail.on('line', function(data) {
         if (_PERF_ERROR_REGEX.test(data)) {
           _perfErrorStreak++;
-          // console.log(`Performance error detected. Streak: ${_perfErrorStreak}`);
+          // console.warn(`Performance error detected. Streak: ${_perfErrorStreak}`);
           if (_perfErrorStreak >= 3) {
             triggerSelfHeal('3 consecutive performance errors');
           }
         } else if (_perfErrorStreak > 0) {
-          // console.log('Performance log normal. Resetting streak.');
+          // console.warn('Performance log normal. Resetting streak.');
           _perfErrorStreak = 0;
         }
       });
@@ -568,8 +568,8 @@ function startMonitoring() {
         appendToSelfHealLog(`[${new Date().toISOString()}] Error tailing performance log file ${PERF_LOG_FILE}: ${error.message}\n`);
       });
       perfTail.watch();
-      // console.log(`Watching performance log: ${PERF_LOG_FILE}`);
-    } catch (e) {
+      // console.warn(`Watching performance log: ${PERF_LOG_FILE}`);
+    } catch (_e) {
       logErrorToProduction(`Failed to initialize tail for performance log: ${PERF_LOG_FILE}`, e);
       appendToSelfHealLog(`[${new Date().toISOString()}] Failed to initialize tail for ${PERF_LOG_FILE}: ${e.message}\n`);
     }
@@ -586,12 +586,12 @@ function startMonitoring() {
       securityTail.on('line', function(data) {
         if (_SECURITY_PATCH_REGEX.test(data)) {
           _securityPatchStreak++;
-          // console.log(`Security patch detected. Streak: ${_securityPatchStreak}`);
+          // console.warn(`Security patch detected. Streak: ${_securityPatchStreak}`);
           if (_securityPatchStreak >= 3) {
             triggerSelfHeal('3 consecutive security patches');
           }
         } else if (_securityPatchStreak > 0) {
-          // console.log('Security log normal. Resetting streak.');
+          // console.warn('Security log normal. Resetting streak.');
           _securityPatchStreak = 0;
         }
       });
@@ -600,8 +600,8 @@ function startMonitoring() {
         appendToSelfHealLog(`[${new Date().toISOString()}] Error tailing security log file ${SECURITY_LOG_FILE}: ${error.message}\n`);
       });
       securityTail.watch();
-      // console.log(`Watching security log: ${SECURITY_LOG_FILE}`);
-    } catch (e) {
+      // console.warn(`Watching security log: ${SECURITY_LOG_FILE}`);
+    } catch (_e) {
       logErrorToProduction(`Failed to initialize tail for security log: ${SECURITY_LOG_FILE}`, e);
       appendToSelfHealLog(`[${new Date().toISOString()}] Failed to initialize tail for ${SECURITY_LOG_FILE}: ${e.message}\n`);
     }
@@ -612,7 +612,7 @@ function startMonitoring() {
   }
 
   // Initialize System Resource Monitoring
-  // console.log(`Initializing system resource monitoring. Check interval: ${SYSTEM_CHECK_INTERVAL / 1000} seconds.`);
+  // console.warn(`Initializing system resource monitoring. Check interval: ${SYSTEM_CHECK_INTERVAL / 1000} seconds.`);
   appendToSelfHealLog(`[${new Date().toISOString()}] Initializing system resource monitoring. Memory Threshold: ${MEMORY_THRESHOLD * 100}%, CPU Threshold: ${CPU_THRESHOLD * 100}% for ${CPU_SUSTAINED_CHECKS} checks.\n`);
   setInterval(monitorSystemResources, SYSTEM_CHECK_INTERVAL);
   

@@ -8,7 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useAuth } from "@/hooks/useAuth";
 
 export default function WhitelabelManager() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [activeTab, setActiveTab] = useState("tenants");
   
   // Check if user has admin role

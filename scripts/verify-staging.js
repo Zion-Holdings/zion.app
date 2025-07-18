@@ -85,7 +85,7 @@ class StagingVerifier {
 
   async testRoute(route) {
     const url = `${STAGING_URL}${route}`;
-    // console.log(`Testing ${route}...`); // Removed
+    // console.warn(`Testing ${route}...`); // Removed
 
     try {
       const response = await this.makeRequest(url);
@@ -102,12 +102,12 @@ class StagingVerifier {
         }
       }
 
-      // console.log(`  ✅ ${route} - OK`); // Removed
+      // console.warn(`  ✅ ${route} - OK`); // Removed
       this.results.passed++;
       return true;
 
-    } catch (error) {
-      // console.log(`  ❌ ${route} - FAILED: ${error.message}`); // Removed
+    } catch (_error) {
+      // console.warn(`  ❌ ${route} - FAILED: ${error.message}`); // Removed
       this.results.failed++;
       this.results.errors.push({
         route,
@@ -119,31 +119,31 @@ class StagingVerifier {
   }
 
   async run() {
-    // console.log(`🚀 Starting staging verification for: ${STAGING_URL}\n`); // Removed
+    // console.warn(`🚀 Starting staging verification for: ${STAGING_URL}\n`); // Removed
     
     // Test all critical routes
-    // console.log('Testing critical routes...'); // Removed
+    // console.warn('Testing critical routes...'); // Removed
     for (const route of CRITICAL_ROUTES) {
       await this.testRoute(route);
     }
 
     // Print summary
-    // console.log('\n' + '='.repeat(50)); // Removed
-    // console.log('STAGING VERIFICATION SUMMARY'); // Removed
-    // console.log('='.repeat(50)); // Removed
-    // console.log(`✅ Passed: ${this.results.passed}`); // Removed
-    // console.log(`❌ Failed: ${this.results.failed}`); // Removed
+    // console.warn('\n' + '='.repeat(50)); // Removed
+    // console.warn('STAGING VERIFICATION SUMMARY'); // Removed
+    // console.warn('='.repeat(50)); // Removed
+    // console.warn(`✅ Passed: ${this.results.passed}`); // Removed
+    // console.warn(`❌ Failed: ${this.results.failed}`); // Removed
     
     if (this.results.errors.length > 0) {
-      // console.log('\nErrors:'); // Removed
+      // console.warn('\nErrors:'); // Removed
       this.results.errors.forEach(error => {
-        // console.log(`  • ${error.route}: ${error.error}`); // Removed
+        // console.warn(`  • ${error.route}: ${error.error}`); // Removed
       });
     }
 
     const status = this.results.failed === 0 ? 'PASSED' : 'FAILED';
     const _emoji = status === 'PASSED' ? '🎉' : '💥';
-    // console.log(`\n${_emoji} Overall Status: ${status}\n`); // Removed
+    // console.warn(`\n${_emoji} Overall Status: ${status}\n`); // Removed
 
     // Exit with appropriate code
     process.exit(this.results.failed > 0 ? 1 : 0);

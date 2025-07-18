@@ -3,7 +3,7 @@ import { VideoCallRoom } from '@/components/VideoCall/VideoCallRoom';
 
 const VideoCallPage = () => {
   const router = useRouter();
-  const { roomId } = router.query;
+  const { _roomId } = router.query;
 
   if (!roomId || typeof roomId !== 'string') {
     return <div>Loading...</div>;

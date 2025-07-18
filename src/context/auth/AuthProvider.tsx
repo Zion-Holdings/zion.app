@@ -16,7 +16,7 @@ import logger from '@/utils/logger';
 import { logInfo, logDebug, logErrorToProduction } from '@/utils/productionLogger';
 
 
-export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
+export const AuthProvider = ({ children }: { _children: React.ReactNode }) => {
   // Always call hooks at the top
   const {
     user, setUser,
@@ -47,25 +47,25 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     isLoading: false,
     isAuthenticated: false,
     onboardingStep: null,
-    setOnboardingStep: () => {},
+    _setOnboardingStep: () => {},
     login: async () => ({ error: "Authentication not available" }),
     signup: async () => ({ error: "Authentication not available", emailVerificationRequired: false }),
     register: async () => ({ error: "Authentication not available", emailVerificationRequired: false }),
-    logout: async () => {},
+    _logout: async () => {},
     resetPassword: async () => ({ error: "Authentication not available" }),
     updateProfile: async () => ({ error: "Authentication not available" }),
-    loginWithGoogle: async () => {},
-    loginWithGitHub: async () => {},
-    loginWithFacebook: async () => {},
-    loginWithTwitter: async () => {},
-    loginWithWeb3: async () => {},
+    _loginWithGoogle: async () => {},
+    _loginWithGitHub: async () => {},
+    _loginWithFacebook: async () => {},
+    _loginWithTwitter: async () => {},
+    _loginWithWeb3: async () => {},
     signIn: async () => ({ error: "Authentication not available" }),
-    signOut: async () => {},
+    _signOut: async () => {},
     signUp: async () => ({ error: "Authentication not available", emailVerificationRequired: false }),
-    setUser: () => {},
+    _setUser: () => {},
     tokens: null,
     avatarUrl: null,
-    setAvatarUrl: () => {},
+    _setAvatarUrl: () => {},
   };
 
   if (process.env.NODE_ENV === 'development') {
@@ -301,7 +301,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                         logInfo('[AuthProvider DEBUG] onAuthStateChange fallback: setIsLoading(false) called. New isLoading:', { data:  { data: isLoading } });
                     }
                 }
-            } catch (outerError) { // Catch errors from the main try block in onAuthStateChange
+            } catch (_outerError) { // Catch errors from the main try block in onAuthStateChange
                 logErrorToProduction('[AuthProvider DEBUG] Outer error in onAuthStateChange callback:', { data: outerError });
                 setUser(null); // Ensure user state is cleared
                 setAvatarUrl(null);
@@ -316,7 +316,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                  // setIsLoading(false); // This might be too broad, rely on specific path resets.
             }
           } // <-- closes the callback function
-        ).data.subscription // <-- closes the method call and accesses .data.subscription
+        ).data.subscription // <-- closes the method call and accesses .data._subscription
       : { unsubscribe: () => {} };
 
     return () => {
@@ -420,7 +420,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   // Refactored signup method to use Auth0 API
-  const signup = async (email: string, password: string, userData: Partial<UserDetails> = {}) => {
+  const signup = async (email: string, password: string, _userData: Partial<UserDetails> = {}) => {
     setIsLoading(true);
     try {
       const { name = '' } = userData;

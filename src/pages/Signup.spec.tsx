@@ -30,7 +30,7 @@ const mockUseLocationValues = jest.fn(() => mockRawLocation);
 
 jest.mock('next/router', () => ({
   ...jest.requireActual('next/router'), // Import and retain default behavior
-  useRouter: () => {
+  _useRouter: () => {
     const { search, pathname } = mockUseLocationValues(); // Get current mocked location values
     return {
       push: mockNavigate,
@@ -47,7 +47,7 @@ jest.mock('next/router', () => ({
 const mockRegisterUser = registerUser as jest.Mock;
 
 describe('Signup Page', () => {
-  let mockSetUser: jest.Mock;
+  let _mockSetUser: jest.Mock;
   let mockAuthContextValue: AuthContextType;
 
   beforeEach(() => {
@@ -135,7 +135,7 @@ describe('Signup Page', () => {
     expect(toast.success).toHaveBeenCalledWith('Registration successful! Welcome!');
 
     // Check Mailchimp calls because newsletter was opted-in
-    const { mailchimpService } = jest.requireMock('@/integrations/mailchimp');
+    const { _mailchimpService } = jest.requireMock('@/integrations/mailchimp');
     expect(mailchimpService.addSubscriber).toHaveBeenCalledWith({
       email: 'test@example.com',
       mergeFields: { FNAME: 'Test User' }
@@ -248,7 +248,7 @@ describe('Signup Page', () => {
       expect(toast.success).toHaveBeenCalledWith('Registration successful! Welcome!');
     });
 
-    const { mailchimpService } = jest.requireMock('@/integrations/mailchimp');
+    const { _mailchimpService } = jest.requireMock('@/integrations/mailchimp');
     expect(mailchimpService.addSubscriber).not.toHaveBeenCalled();
     expect(mailchimpService.sendWelcomeEmail).not.toHaveBeenCalled();
   });

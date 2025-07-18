@@ -17,7 +17,7 @@ files.forEach(file => {
       const key = match[1];
       const val = match[2];
       if (placeholderRegex.test(val)) {
-        // console.log(`Placeholder detected in ${file}:${index + 1} -> ${key}`);
+        // console.warn(`Placeholder detected in ${file}:${index + 1} -> ${key}`);
         issueFound = true;
       }
     }
@@ -25,5 +25,5 @@ files.forEach(file => {
 });
 
 if (!issueFound) {
-  // console.log('No placeholder environment values detected.');
+  // console.warn('No placeholder environment values detected.');
 }

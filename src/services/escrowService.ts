@@ -2,7 +2,7 @@ import { supabase } from '@/integrations/supabase/client';
 import type { OrderStatus } from '@/lib/orderStatusMachine';
 import { logErrorToProduction } from '@/utils/productionLogger';
 
-export const holdInEscrow = async (params: {
+export const holdInEscrow = async (_params: {
   amount: number;
   currency?: string;
   providerAccountId: string;
@@ -16,13 +16,13 @@ export const holdInEscrow = async (params: {
     if (error) throw error;
     // Handle mock response with fallback
     return data ? (data as { paymentIntentId: string }) : { paymentIntentId: 'mock-payment-intent-id' };
-  } catch (err) {
+  } catch (_err) {
     logErrorToProduction('Error in holdInEscrow', { data: err });
     throw err;
   }
 };
 
-export const releaseEscrow = async (paymentIntentId: string) => {
+export const releaseEscrow = async (_paymentIntentId: string) => {
   try {
     if (!supabase) throw new Error('Supabase client not initialized');
     const { data, error } = await supabase.functions.invoke('escrow-service', {
@@ -31,13 +31,13 @@ export const releaseEscrow = async (paymentIntentId: string) => {
     if (error) throw error;
     // Handle mock response with fallback
     return data ? (data as { message: string }) : { message: 'Escrow released successfully' };
-  } catch (err) {
+  } catch (_err) {
     logErrorToProduction('Error in releaseEscrow', { data: err });
     throw err;
   }
 };
 
-export const disputeOrder = async (orderId: string) => {
+export const disputeOrder = async (_orderId: string) => {
   try {
     if (!supabase) throw new Error('Supabase client not initialized');
     const { data, error } = await supabase.functions.invoke('escrow-service', {
@@ -46,7 +46,7 @@ export const disputeOrder = async (orderId: string) => {
     if (error) throw error;
     // Handle mock response with fallback
     return data ? (data as { message: string }) : { message: 'Dispute initiated successfully' };
-  } catch (err) {
+  } catch (_err) {
     logErrorToProduction('Error in disputeOrder', { data: err });
     throw err;
   }

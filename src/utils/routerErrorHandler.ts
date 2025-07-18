@@ -61,7 +61,7 @@ export function setupRouterErrorHandlers(router: NextRouter) {
   // Handle router errors
   // Use a more specific type for route change errors
   // Type: Error | { cancelled?: boolean; message?: string }
-  const routeChangeErrorHandler = (err: unknown, url: string) => {
+  const routeChangeErrorHandler = (err: unknown, _url: string) => {
     logErrorToProduction('Route change error', err as Error, { url });
     handleRouterError(err as Error, router);
   };

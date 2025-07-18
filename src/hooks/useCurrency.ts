@@ -2,9 +2,9 @@ import { useLanguage } from '@/context/LanguageContext';
 import { formatPriceByLocale } from '@/utils/currency';
 
 export function useCurrency() {
-  const { currentLanguage } = useLanguage();
+  const { _currentLanguage } = useLanguage();
 
-  const formatPrice = (amountUSD: number) => {
+  const formatPrice = (_amountUSD: number) => {
     return formatPriceByLocale(amountUSD, currentLanguage);
   };
 

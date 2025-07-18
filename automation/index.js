@@ -56,7 +56,7 @@ class OptimizationAutomation {
         }
         
         res.status(200).send('OK');
-      } catch (error) {
+      } catch (_error) {
         // Use structured error logging
         process.stderr.write(`[${new Date().toISOString()}] ERROR: Slack event error: ${error.message}\n`);
         res.status(500).send('Error processing event');
@@ -80,7 +80,7 @@ class OptimizationAutomation {
           result,
           timestamp: new Date().toISOString()
         });
-      } catch (error) {
+      } catch (_error) {
         // Use structured error logging
         process.stderr.write(`[${new Date().toISOString()}] ERROR: Optimization trigger error: ${error.message}\n`);
         res.status(500).json({
@@ -95,7 +95,7 @@ class OptimizationAutomation {
       try {
         const status = await this.slackBot.getPerformanceStatus();
         res.json(status);
-      } catch (error) {
+      } catch (_error) {
         process.stderr.write(`[${new Date().toISOString()}] ERROR: Performance status error: ${error.message}\n`);
         res.status(500).json({ error: error.message });
       }
@@ -106,7 +106,7 @@ class OptimizationAutomation {
       try {
         const metrics = await this.performanceMonitor.getMetrics();
         res.json(metrics);
-      } catch (error) {
+      } catch (_error) {
         process.stderr.write(`[${new Date().toISOString()}] ERROR: Performance metrics error: ${error.message}\n`);
         res.status(500).json({ error: error.message });
       }
@@ -118,7 +118,7 @@ class OptimizationAutomation {
         const hours = parseInt(req.query.hours) || 24;
         const history = await this.performanceMonitor.getHistory(hours);
         res.json(history);
-      } catch (error) {
+      } catch (_error) {
         process.stderr.write(`[${new Date().toISOString()}] ERROR: Performance history error: ${error.message}\n`);
         res.status(500).json({ error: error.message });
       }
@@ -201,7 +201,7 @@ class OptimizationAutomation {
       process.stdout.write(`[${timestamp}] 🔧 API: http://localhost:${this.port}/api\n`);
       process.stdout.write(`[${timestamp}] 💚 Health: http://localhost:${this.port}/health\n`);
       
-    } catch (error) {
+    } catch (_error) {
       process.stderr.write(`[${new Date().toISOString()}] ❌ Failed to start automation system: ${error.message}\n`);
       process.exit(1);
     }
@@ -222,7 +222,7 @@ class OptimizationAutomation {
       }
       
               process.stdout.write(`[${new Date().toISOString()}] ✅ Automation system stopped\n`);
-    } catch (error) {
+    } catch (_error) {
               process.stderr.write(`[${new Date().toISOString()}] ❌ Error stopping automation system: ${error.message}\n`);
     }
   }

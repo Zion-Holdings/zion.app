@@ -8,7 +8,7 @@ import { AppTestimonials } from "@/components/mobile-app/AppTestimonials";
 import { AppStoreBanner } from "@/components/mobile-app/AppStoreBanner";
 import { DownloadSection } from "@/components/mobile-app/DownloadSection";
 
-const MobileAppPage: React.FC = () => {
+const _MobileAppPage: React.FC = () => {
   return (
     <>
       <SEO

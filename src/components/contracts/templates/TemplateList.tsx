@@ -42,10 +42,10 @@ export function TemplateList({
 }: TemplateListProps) {
   const [templateToDelete, setTemplateToDelete] = useState<string | null>(null);
   const { deleteTemplate, setDefaultTemplate } = useContractTemplates();
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const router = useRouter();
 
-  const handleDeleteClick = (templateId: string) => {
+  const handleDeleteClick = (_templateId: string) => {
     setTemplateToDelete(templateId);
   };
 
@@ -56,7 +56,7 @@ export function TemplateList({
     }
   };
 
-  const handleSetDefault = async (templateId: string) => {
+  const handleSetDefault = async (_templateId: string) => {
     if (!user) {
       const currentPath = router.asPath;
       router.push(`/auth/login?returnTo=${encodeURIComponent(currentPath)}`);

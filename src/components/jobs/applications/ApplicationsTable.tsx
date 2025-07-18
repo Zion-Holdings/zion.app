@@ -30,7 +30,7 @@ interface ApplicationsTableProps {
 }
 
 // Sub-component for avatar to handle its own error state
-const ApplicationAvatar = ({ application }: { application: JobApplication }) => {
+const ApplicationAvatar = ({ application }: { _application: JobApplication }) => {
   const [avatarError, setAvatarError] = useState(false);
   const talentName = application.talent_profile?.full_name || "Candidate";
 
@@ -63,7 +63,7 @@ export function ApplicationsTable({
   const [hireModalOpen, setHireModalOpen] = useState(false);
   const [selectedApplication, setSelectedApplication] = useState<JobApplication | null>(null);
   
-  const handleHireClick = (application: JobApplication) => {
+  const handleHireClick = (_application: JobApplication) => {
     setSelectedApplication(application);
     setHireModalOpen(true);
   };

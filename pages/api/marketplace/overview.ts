@@ -16,7 +16,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       : []; // Replace any usage of MARKETPLACE_LISTINGS with an empty array or fallback
 
     return res.status(200).json(listings);
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction('Error in marketplace overview API:', { data: error });
     
     // Return fallback empty array instead of error

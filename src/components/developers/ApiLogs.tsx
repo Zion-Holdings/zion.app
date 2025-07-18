@@ -28,12 +28,12 @@ export function ApiLogs() {
   };
   
   // Helper to format the timestamp
-  const formatTimestamp = (timestamp: string) => {
+  const formatTimestamp = (_timestamp: string) => {
     return format(new Date(timestamp), 'yyyy-MM-dd HH:mm:ss');
   };
   
   // Helper to get badge color based on status code
-  const getStatusBadge = (statusCode: number) => {
+  const getStatusBadge = (_statusCode: number) => {
     if (statusCode >= 200 && statusCode < 300) {
       return <Badge className="bg-green-700">Success</Badge>;
     } else if (statusCode >= 400 && statusCode < 500) {

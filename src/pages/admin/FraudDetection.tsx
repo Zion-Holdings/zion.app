@@ -59,7 +59,7 @@ export default function FraudDetection() {
       };
       setStats(newStats);
       
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error fetching fraud flags' });
       toast({
         title: "Error",
@@ -108,13 +108,13 @@ export default function FraudDetection() {
     setFilteredFlags(result);
   }, [flags, searchQuery, statusFilter, severityFilter, contentTypeFilter]);
 
-  const handleAction = async (flagId: string, action: 'warning' | 'suspension' | 'ban' | 'ignore') => {
+  const handleAction = async (flagId: string, _action: 'warning' | 'suspension' | 'ban' | 'ignore') => {
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
       const status = action === 'ignore' ? 'ignored' : 'actioned';
       const actionTaken = action === 'ignore' ? 'none' : action;
       
-      const { error } = await supabase
+      const { _error } = await supabase
         .from("fraud_flags")
         .update({
           status,
@@ -135,7 +135,7 @@ export default function FraudDetection() {
       // Refresh the data
       fetchFraudFlags();
       
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error updating fraud flag' });
       toast({
         title: "Error",

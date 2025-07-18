@@ -6,7 +6,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { handleResumeError, showSuccessToast } from './useResumeUtils';
 
 export function useSkills() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   
@@ -21,7 +21,7 @@ export function useSkills() {
     setError(null);
     
     try {
-      const { error } = await supabase
+      const { _error } = await supabase
         .from('resume_skills')
         .insert({
           resume_id: resumeId,
@@ -52,7 +52,7 @@ export function useSkills() {
     setError(null);
     
     try {
-      const { error } = await supabase
+      const { _error } = await supabase
         .from('resume_skills')
         .delete()
         .eq('id', skillId);

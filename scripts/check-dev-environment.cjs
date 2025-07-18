@@ -70,7 +70,7 @@ function checkEnvironment() {
   try {
     const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
     packageType = packageJson.type || 'commonjs';
-  } catch (error) {
+  } catch (_error) {
     // Will be caught later
   }
 
@@ -121,39 +121,39 @@ function checkEnvironment() {
   }
 
   // Summary
-  console.log('\n📊 Environment Status:');
-  console.log('=====================');
+  console.warn('\n📊 Environment Status:');
+  console.warn('=====================');
   
   if (errors.length === 0 && warnings.length === 0) {
-    console.log('🎉 Perfect! Your development environment is fully configured.');
-    console.log('\nYou can now run:');
-    console.log('• npm run dev - Start development server');
-    console.log('• npm run build - Build for production');
-    console.log('• npm run start - Start production server');
+    console.warn('🎉 Perfect! Your development environment is fully configured.');
+    console.warn('\nYou can now run:');
+    console.warn('• npm run dev - Start development server');
+    console.warn('• npm run build - Build for production');
+    console.warn('• npm run start - Start production server');
   } else {
     if (errors.length > 0) {
-      console.log('\n❌ Critical Issues:');
-      errors.forEach(error => console.log(`   • ${error}`));
+      console.warn('\n❌ Critical Issues:');
+      errors.forEach(error => console.warn(`   • ${error}`));
       allGood = false;
     }
     
     if (warnings.length > 0) {
-      console.log('\n⚠️  Warnings:');
-      warnings.forEach(warning => console.log(`   • ${warning}`));
+      console.warn('\n⚠️  Warnings:');
+      warnings.forEach(warning => console.warn(`   • ${warning}`));
     }
     
     if (!allGood) {
-      console.log('\n🔧 Please fix the critical issues before continuing.');
+      console.warn('\n🔧 Please fix the critical issues before continuing.');
     } else {
-      console.log('\n✅ Environment is functional but could be improved.');
+      console.warn('\n✅ Environment is functional but could be improved.');
     }
   }
 
-  console.log('\n💡 Quick Setup Commands:');
-  console.log('========================');
-  console.log('npm install          # Install dependencies');
-  console.log('npm run build        # Test production build');
-  console.log('npm run dev          # Start development server');
+  console.warn('\n💡 Quick Setup Commands:');
+  console.warn('========================');
+  console.warn('npm install          # Install dependencies');
+  console.warn('npm run build        # Test production build');
+  console.warn('npm run dev          # Start development server');
   
   return allGood;
 }

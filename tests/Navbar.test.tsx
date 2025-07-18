@@ -6,7 +6,7 @@
 // import SearchPage from '@/src/pages/SearchPage';
 //
 // it('renders single navbar on ServicesPage', () => {
-//   const { container } = render(
+//   const { _container } = render(
 //     <MemoryRouter>
 //       <AppLayout>
 //         <ServicesPage />
@@ -17,7 +17,7 @@
 // });
 
 it('renders single navbar on SearchPage', () => {
-  const { container } = render(
+  const { _container } = render(
     <MemoryRouter>
       <AppLayout>
         <SearchPage />

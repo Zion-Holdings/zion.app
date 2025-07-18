@@ -21,7 +21,7 @@ beforeAll(() => {
     ...originalEnv,
     NEXT_PUBLIC_SENTRY_DSN: 'test-dsn', // Ensure Sentry is "active"
   };
-  console.error = (...args: unknown[]) => {
+  console.error = (..._args: unknown[]) => {
     const firstArg = args[0];
     if (typeof firstArg === 'string' && firstArg.includes('Test error from ErrorThrowingComponent')) {
       return;

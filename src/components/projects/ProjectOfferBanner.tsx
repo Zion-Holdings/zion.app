@@ -24,7 +24,7 @@ export function ProjectOfferBanner() {
     }
   }, [projects, isLoading]);
   
-  const handleDismiss = (projectId: string, e: React.MouseEvent) => {
+  const handleDismiss = (projectId: string, _e: React.MouseEvent) => {
     e.stopPropagation();
     setDismissed(prev => {
       const updated = new Set(prev);
@@ -33,7 +33,7 @@ export function ProjectOfferBanner() {
     });
   };
   
-  const handleViewOffer = (projectId: string) => {
+  const handleViewOffer = (_projectId: string) => {
     router.push(`/project/${projectId}`);
   };
   

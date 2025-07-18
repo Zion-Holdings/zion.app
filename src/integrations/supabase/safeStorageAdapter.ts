@@ -1,13 +1,13 @@
 import { safeStorage } from '@/utils/safeStorage';
 
 export const supabaseStorageAdapter = {
-  getItem: (key: string) => {
+  _getItem: (key: string) => {
     return safeStorage.getItem(key);
   },
-  setItem: (key: string, value: string) => {
+  setItem: (key: string, _value: string) => {
     safeStorage.setItem(key, value);
   },
-  removeItem: (key: string) => {
+  _removeItem: (key: string) => {
     safeStorage.removeItem(key);
   },
 };

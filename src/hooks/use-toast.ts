@@ -28,7 +28,7 @@ interface ToastProps {
 /**
  * Enhanced toast adapter that uses the global toast manager
  */
-const toastAdapter = (props: ToastProps | string) => {
+const toastAdapter = (_props: ToastProps | string) => {
   if (typeof props === 'string') {
     return globalToastManager.showToast({
       message: props,
@@ -105,7 +105,7 @@ toastAdapter.dismiss = (toastId?: string | number) => {
 // Enhanced useToast hook with global toast manager integration
 export const useToast = () => ({
   toast: toastAdapter,
-  dismiss: (toastId?: string) => {
+  _dismiss: (toastId?: string) => {
     if (toastId) {
       globalToastManager.dismissToast(toastId);
     } else {

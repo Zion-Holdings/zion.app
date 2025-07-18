@@ -7,7 +7,7 @@ import { logErrorToProduction } from '@/utils/productionLogger';
 export const useJobPostings = () => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const createJob = useCallback(async (jobData: JobSchemaType & { user_id: string }) => {
+  const createJob = useCallback(async (_jobData: JobSchemaType & { user_id: string }) => {
     setIsLoading(true);
     try {
       const result = await createJobPosting(jobData);
@@ -23,7 +23,7 @@ export const useJobPostings = () => {
     }
   }, []);
 
-  const updateJob = useCallback(async (jobId: string, jobData: Partial<JobSchemaType>) => {
+  const updateJob = useCallback(async (jobId: string, _jobData: Partial<JobSchemaType>) => {
     setIsLoading(true);
     try {
       const result = await updateJobPosting(jobId, jobData);
@@ -39,7 +39,7 @@ export const useJobPostings = () => {
     }
   }, []);
 
-  const getJobById = useCallback(async (jobId: string) => {
+  const getJobById = useCallback(async (_jobId: string) => {
     setIsLoading(true);
     try {
       const result = await getJobPostingById(jobId);
@@ -54,7 +54,7 @@ export const useJobPostings = () => {
     }
   }, []);
 
-  const getJobsByUserId = useCallback(async (userId: string) => {
+  const getJobsByUserId = useCallback(async (_userId: string) => {
     setIsLoading(true);
     try {
       const result = await getJobPostingsByUserId(userId);

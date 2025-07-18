@@ -19,7 +19,7 @@ export function UserBehaviorStats() {
   
   const { data: behaviorData, isLoading } = useQuery({
     queryKey: ['user-behavior-data', timeRange],
-    queryFn: async () => {
+    _queryFn: async () => {
       if (!supabase) {
         throw new Error('Supabase client not available');
       }
@@ -68,7 +68,7 @@ export function UserBehaviorStats() {
     if (!behaviorData || behaviorData.length === 0) return ['page_view'];
     
     const allKeys = new Set<string>();
-    behaviorData.forEach((item: BehaviorDataItem) => {
+    behaviorData.forEach((_item: BehaviorDataItem) => {
       Object.keys(item).forEach(key => {
         if (key !== 'date') allKeys.add(key);
       });

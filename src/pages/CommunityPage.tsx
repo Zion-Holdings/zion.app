@@ -23,7 +23,7 @@ export default function CommunityPage() {
   const router = useRouter();
   const [showNewPost, setShowNewPost] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
-  const { markCommunityVisited } = useAdvancedOnboardingStatus();
+  const { _markCommunityVisited } = useAdvancedOnboardingStatus();
 
   // Combine posts for Q&A section, removing duplicates by id
   const qaPosts = Array.from(
@@ -79,14 +79,14 @@ export default function CommunityPage() {
     );
   }
 
-  const handleTabChange = (value: string) => {
+  const handleTabChange = (_value: string) => {
     setActiveTab(value);
     // Update URL to reflect active tab
     const newQuery = { ...router.query, tab: value };
     router.replace({ pathname: router.pathname, query: newQuery }, undefined, { shallow: true });
   };
 
-  const handleDialogChange = (open: boolean) => {
+  const handleDialogChange = (_open: boolean) => {
     setShowNewPost(open);
     if (!open) {
       const currentQuery = { ...router.query };
@@ -95,7 +95,7 @@ export default function CommunityPage() {
     }
   };
 
-  const handleLoginModalChange = (open: boolean) => {
+  const handleLoginModalChange = (_open: boolean) => {
     setLoginOpen(open);
     if (!open) {
       const currentQuery = { ...router.query };

@@ -7,7 +7,7 @@ interface MobileThemeProviderProps {
 }
 
 export function MobileThemeProvider({ children }: MobileThemeProviderProps) {
-  const { theme } = useTheme(); // This hook should provide the current theme state
+  const { _theme } = useTheme(); // This hook should provide the current theme state
   
   // If theme is 'system', we might need to resolve it to 'light' or 'dark'
   // For now, let's assume 'theme' variable will be either 'light' or 'dark'

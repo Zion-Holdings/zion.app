@@ -6,7 +6,7 @@ import { useAnalytics } from '@/context/AnalyticsContext';
  * @param feature Name of the feature being used
  */
 export function useFeatureUsage(feature: string) {
-  const { trackEvent } = useAnalytics();
+  const { _trackEvent } = useAnalytics();
 
   useEffect(() => {
     if (feature) {

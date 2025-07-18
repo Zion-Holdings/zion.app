@@ -5,7 +5,7 @@ import { LoadingSpinner } from '@/components/ui/enhanced-loading-states';
 import type { TokenTransaction } from '@/types/tokens';
 import { useRouter } from 'next/router'; // Changed from useNavigate
 interface WalletResponse {
-  points: number;
+  _points: number;
   history: TokenTransaction[];
 }
 

@@ -100,7 +100,7 @@ function makeRequest(endpoint, timeoutMs = TIMEOUT_THRESHOLD) {
             headers: res.headers,
             size: data.length
           });
-        } catch (error) {
+        } catch (_error) {
           resolve({
             statusCode: res.statusCode,
             responseTime,
@@ -203,7 +203,7 @@ async function testEndpoint(endpoint) {
       // console.warn(`   ❌ Warm: Failed with ${warmResult.statusCode}`);
     }
     
-  } catch (error) {
+  } catch (_error) {
     // console.warn(`   ❌ Error: ${error.error} (${Math.round(error.responseTime)}ms)`);
     results.tests.push({
       type: 'error',
@@ -314,7 +314,7 @@ async function checkServer() {
   try {
     await makeRequest({ path: '/api/health', method: 'GET' }, 2000);
     return true;
-  } catch (error) {
+  } catch (_error) {
     return false;
   }
 }
@@ -335,7 +335,7 @@ async function main() {
   try {
     const results = await runPerformanceTests();
     process.exit(results.success ? 0 : 1);
-  } catch (error) {
+  } catch (_error) {
     // console.error('Test suite failed:', error);
     process.exit(1);
   }

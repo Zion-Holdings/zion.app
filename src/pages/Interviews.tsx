@@ -46,7 +46,7 @@ function InterviewsContent() {
   });
 
   // Group interviews by date
-  const groupInterviewsByDate = (interviews: Interview[]) => {
+  const groupInterviewsByDate = (_interviews: Interview[]) => {
     const grouped: Record<string, Interview[]> = {};
     
     interviews.forEach((interview) => {

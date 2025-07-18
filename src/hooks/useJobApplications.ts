@@ -8,7 +8,7 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 export const useJobApplications = (jobId?: string) => {
 
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [applications, setApplications] = useState<JobApplication[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -151,10 +151,10 @@ export const useJobApplications = (jobId?: string) => {
     }
   };
   
-  const updateApplicationStatus = async (applicationId: string, status: ApplicationStatus) => {
+  const updateApplicationStatus = async (applicationId: string, _status: ApplicationStatus) => {
     if (!supabase) throw new Error('Supabase client not initialized');
     try {
-      const { error } = await supabase
+      const { _error } = await supabase
         .from("job_applications")
         .update({ status })
         .eq("id", applicationId);
@@ -176,10 +176,10 @@ export const useJobApplications = (jobId?: string) => {
     }
   };
   
-  const markApplicationAsViewed = async (applicationId: string) => {
+  const markApplicationAsViewed = async (_applicationId: string) => {
     if (!supabase) throw new Error('Supabase client not initialized');
     try {
-      const { error } = await supabase
+      const { _error } = await supabase
         .from("job_applications")
         .update({ 
           status: "viewed", 

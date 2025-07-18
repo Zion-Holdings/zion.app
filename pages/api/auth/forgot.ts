@@ -98,7 +98,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
     return;
   }
 
-  const { email } = result.data;
+  const { _email } = result.data;
   const domain = process.env['AUTH0_ISSUER_BASE_URL'];
 
   if (!domain) {

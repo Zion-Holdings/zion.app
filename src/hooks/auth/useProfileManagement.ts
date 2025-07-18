@@ -6,7 +6,7 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 export const useProfileManagement = (setIsLoading: (loading: boolean) => void) => {
 
-  const updateProfile = async (data: Partial<UserDetails>) => {
+  const updateProfile = async (_data: Partial<UserDetails>) => {
     try {
       setIsLoading(true);
 

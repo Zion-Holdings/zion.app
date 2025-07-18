@@ -66,7 +66,7 @@ export default async function handler(
 
     return res.status(200).json(results);
 
-  } catch (err) {
+  } catch (_err) {
     logErrorToProduction('Blog API error:', { data: err });
     
     // Return fallback - all posts on error

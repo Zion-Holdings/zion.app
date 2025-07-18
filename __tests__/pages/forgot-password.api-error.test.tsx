@@ -21,7 +21,7 @@ jest.mock('next/link', () => {
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 
 describe('ForgotPasswordPage API error handling', () => {
-  let consoleErrorSpy: jest.SpyInstance;
+  let _consoleErrorSpy: jest.SpyInstance;
 
   beforeEach(() => {
     mockedAxios.post.mockReset();

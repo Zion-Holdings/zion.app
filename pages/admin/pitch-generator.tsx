@@ -13,7 +13,7 @@ import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger
 
 
 interface Slide {
-  id: string;
+  _id: string;
   title: string;
   content: string;
   type: string;
@@ -177,7 +177,7 @@ const PitchGeneratorPage: React.FC = () => {
   }, [user, fetchVersionHistory]);
 
 
-  const handleInputSubmit = (data: unknown) => {
+  const handleInputSubmit = (_data: unknown) => {
     const typedData = data as Record<string, unknown>;
     setInputData(typedData);
     setCurrentStep('data');
@@ -242,7 +242,7 @@ const PitchGeneratorPage: React.FC = () => {
     }
   };
 
-  const handleSlidesUpdate = (updatedSlides: Slide[]) => {
+  const handleSlidesUpdate = (_updatedSlides: Slide[]) => {
     setGeneratedSlides(updatedSlides);
   };
 

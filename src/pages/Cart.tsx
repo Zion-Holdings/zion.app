@@ -40,11 +40,11 @@ export default function CartPage() {
   const [guestOpen, setGuestOpen] = useState(false);
   const { toggle: toggleWishlist, isWishlisted } = useWishlist();
 
-  const updateQuantity = (id: string, qty: number) => {
+  const updateQuantity = (id: string, _qty: number) => {
     dispatch(updateQuantityAction({ id, quantity: qty }));
   };
 
-  const removeItem = (id: string) => {
+  const removeItem = (_id: string) => {
     const item = items.find(i => i.id === id);
     dispatch(removeItemAction(id));
     
@@ -56,7 +56,7 @@ export default function CartPage() {
     }
   };
 
-  const saveForLater = (id: string, name: string) => {
+  const saveForLater = (id: string, _name: string) => {
     const wasWishlisted = isWishlisted(id);
     toggleWishlist(id);
     toast({
@@ -73,7 +73,7 @@ export default function CartPage() {
       const stripe = await getStripe();
       if (!stripe) throw new Error('Stripe.js failed to load');
 
-      const { data } = await axios.post('/api/checkout-session', {
+      const { _data } = await axios.post('/api/checkout-session', {
         cartItems: items,
         customer_email: details?.email || user?.email,
         shipping_address: details?.address,
@@ -82,9 +82,9 @@ export default function CartPage() {
       const sessionId = data.sessionId as string | undefined;
       if (!sessionId) throw new Error('Session ID missing in response');
 
-      const { error } = await stripe.redirectToCheckout({ sessionId });
+      const { _error } = await stripe.redirectToCheckout({ sessionId });
       if (error) logErrorToProduction('Stripe redirect error:', { data: error.message });
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Checkout error:', { data: err });
       let message = 'Checkout failed';
       if (err && typeof err === 'object' && 'message' in err && typeof (err as { message?: unknown }).message === 'string') {

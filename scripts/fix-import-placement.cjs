@@ -88,7 +88,7 @@ class ImportFixer {
       }
 
       return { fixed: false };
-    } catch (error) {
+    } catch (_error) {
       this.errors.push({ file: filePath, error: error.message });
       return { fixed: false, error: error.message };
     }
@@ -142,17 +142,17 @@ class ImportFixer {
    * Process all files
    */
   async processAllFiles() {
-    // console.log('🔧 Fixing misplaced import statements...');
+    // console.warn('🔧 Fixing misplaced import statements...');
     
     const files = this.getFilesToProcess();
-    // console.log(`📋 Found ${files.length} files to check`);
+    // console.warn(`📋 Found ${files.length} files to check`);
 
     const results = [];
 
     for (const filePath of files) {
       const result = this.fixFile(filePath);
       if (result.fixed) {
-        // console.log(`✅ Fixed ${filePath} (${result.importsFixed} imports moved)`);
+        // console.warn(`✅ Fixed ${filePath} (${result.importsFixed} imports moved)`);
         results.push({ file: filePath, ...result });
       }
     }
@@ -164,33 +164,33 @@ class ImportFixer {
    * Print summary
    */
   printSummary(results) {
-    // console.log('\n' + '='.repeat(60));
-    // console.log('📊 IMPORT FIXING SUMMARY');
-    // console.log('='.repeat(60));
-    // console.log(`✅ Files fixed: ${this.fixedFiles}`);
-    // console.log(`❌ Errors encountered: ${this.errors.length}`);
+    // console.warn('\n' + '='.repeat(60));
+    // console.warn('📊 IMPORT FIXING SUMMARY');
+    // console.warn('='.repeat(60));
+    // console.warn(`✅ Files fixed: ${this.fixedFiles}`);
+    // console.warn(`❌ Errors encountered: ${this.errors.length}`);
 
     if (results.length > 0) {
-      // console.log('\n📝 Fixed files:');
-      results.forEach(({ file: _file, importsFixed: _importsFixed }) => {
-        // console.log(`   ${_file}: ${_importsFixed} imports moved`);
+      // console.warn('\n📝 Fixed files:');
+      results.forEach(({ file: _file, _importsFixed: _importsFixed }) => {
+        // console.warn(`   ${_file}: ${_importsFixed} imports moved`);
       });
     }
 
     if (this.errors.length > 0) {
-      // console.log('\n⚠️  Errors:');
-      this.errors.forEach(({ file: _file, error: _error }) => {
-        // console.log(`   ${_file}: ${_error}`);
+      // console.warn('\n⚠️  Errors:');
+      this.errors.forEach(({ file: _file, _error: _error }) => {
+        // console.warn(`   ${_file}: ${_error}`);
       });
     }
 
     if (this.fixedFiles > 0) {
-      // console.log('\n🎉 Import placement issues fixed!');
-      // console.log('📋 Next steps:');
-      // console.log('   1. Run: npm run build');
-      // console.log('   2. Test the application: npm run dev');
+      // console.warn('\n🎉 Import placement issues fixed!');
+      // console.warn('📋 Next steps:');
+      // console.warn('   1. Run: npm run build');
+      // console.warn('   2. Test the application: npm run dev');
     } else {
-      // console.log('\n ℹ️ No misplaced imports found.');
+      // console.warn('\n ℹ️ No misplaced imports found.');
     }
   }
 }

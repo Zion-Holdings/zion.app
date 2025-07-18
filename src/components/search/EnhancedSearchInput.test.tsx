@@ -18,7 +18,7 @@ vi.mock('./AutocompleteSuggestions', () => ({
 const actualLodashDebounce = vi.requireActual('lodash.debounce');
 let lastDebouncedFn: { cancel: () => void } | null = null;
 
-vi.mock('lodash.debounce', () => (fn: (...args: any[]) => any, delay: number) => {
+vi.mock('lodash.debounce', () => (fn: (...args: any[]) => any, _delay: number) => {
   // Use actual debounce logic which works with Jest's fake timers
   const debouncedFn = actualLodashDebounce(fn, delay);
   const mockCancel = vi.fn(debouncedFn.cancel);
@@ -87,7 +87,7 @@ describe('EnhancedSearchInput', () => {
       renderComponent();
       const input = screen.getByPlaceholderText('Search...');
 
-      // Initial state: recent suggestions
+      // Initial _state: recent suggestions
       act(() => {vi.advanceTimersByTime(300);}); // Advance for initial debounce if any
       expect(AutocompleteSuggestions).toHaveBeenLastCalledWith(
         expect.objectContaining({
@@ -135,7 +135,7 @@ describe('EnhancedSearchInput', () => {
     });
 
     test('cancels debounce on unmount', () => {
-      const { unmount } = render(
+      const { _unmount } = render(
         <EnhancedSearchInput value="" onChange={vi.fn()} searchSuggestions={[]} />
       );
       unmount();

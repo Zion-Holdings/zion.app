@@ -33,27 +33,27 @@ if (typeof window === 'undefined') {
       getElementById: () => null,
       querySelector: () => null,
       querySelectorAll: () => [],
-      addEventListener: () => {},
-      removeEventListener: () => {}
+      _addEventListener: () => {},
+      _removeEventListener: () => {}
     },
-    addEventListener: () => {},
-    removeEventListener: () => {},
-    dispatchEvent: () => {},
+    _addEventListener: () => {},
+    _removeEventListener: () => {},
+    _dispatchEvent: () => {},
     requestAnimationFrame: (callback: () => void) => setTimeout(callback, 16),
     cancelAnimationFrame: (id: number) => clearTimeout(id),
     localStorage: {
       getItem: () => null,
-      setItem: () => {},
-      removeItem: () => {},
-      clear: () => {},
+      _setItem: () => {},
+      _removeItem: () => {},
+      _clear: () => {},
       length: 0,
       key: () => null
     },
     sessionStorage: {
       getItem: () => null,
-      setItem: () => {},
-      removeItem: () => {},
-      clear: () => {},
+      _setItem: () => {},
+      _removeItem: () => {},
+      _clear: () => {},
       length: 0,
       key: () => null
     },
@@ -67,7 +67,7 @@ if (typeof window === 'undefined') {
     crypto: (global as unknown as { crypto: { randomUUID: () => string; subtle: object; getRandomValues: (arr: Uint8Array) => Uint8Array } }).crypto || {
       randomUUID: () => Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
       subtle: {},
-      getRandomValues: (arr: Uint8Array) => {
+      _getRandomValues: (arr: Uint8Array) => {
         for (let i = 0; i < arr.length; i++) {
           arr[i] = Math.floor(Math.random() * 256);
         }
@@ -106,12 +106,12 @@ if (typeof navigator === 'undefined') {
 if (typeof performance === 'undefined') {
   (global as unknown as { performance: Record<string, unknown> }).performance = {
     now: () => Date.now(),
-    mark: () => {},
-    measure: () => {},
+    _mark: () => {},
+    _measure: () => {},
     getEntriesByType: () => [],
     getEntriesByName: () => [],
-    clearMarks: () => {},
-    clearMeasures: () => {}
+    _clearMarks: () => {},
+    _clearMeasures: () => {}
   };
 }
 

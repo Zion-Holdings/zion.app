@@ -69,16 +69,16 @@ export function WebhooksManager() {
     resetWebhookForm();
   };
 
-  const handleToggleStatus = async (webhookId: string, currentStatus: boolean) => {
+  const handleToggleStatus = async (webhookId: string, _currentStatus: boolean) => {
     await toggleWebhook(webhookId, !currentStatus);
   };
 
-  const handleDeleteWebhook = async (webhookId: string) => {
+  const handleDeleteWebhook = async (_webhookId: string) => {
     await deleteWebhook(webhookId);
     setShowDeleteConfirm(null);
   };
 
-  const handleTestWebhook = async (webhookId: string) => {
+  const handleTestWebhook = async (_webhookId: string) => {
     await testWebhook(webhookId, testEventType);
     setShowTestResult(true);
   };
@@ -99,7 +99,7 @@ export function WebhooksManager() {
   ];
 
   // Toggle an event selection
-  const toggleEvent = (event: WebhookEventType) => {
+  const toggleEvent = (_event: WebhookEventType) => {
     setSelectedEvents(prev => 
       prev.includes(event) 
         ? prev.filter(e => e !== event) 
@@ -316,7 +316,7 @@ export function WebhooksManager() {
       {/* Test Webhook Dialog */}
       <Dialog 
         open={showTestDialog !== null} 
-        onOpenChange={(open: boolean) => {
+        onOpenChange={(_open: boolean) => {
           if (!open) {
             setShowTestDialog(null);
             setTestEventType('new_application');

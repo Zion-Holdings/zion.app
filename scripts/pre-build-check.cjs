@@ -18,7 +18,7 @@ try {
  * are properly configured in Netlify. It provides clear instructions for fixing issues.
  */
 
-const { validateEnvironment } = require('./validate-environment.cjs');
+const { _validateEnvironment } = require('./validate-environment.cjs');
 
 // Remove all disallowed console statements (console.log, console.info, etc.)
 // Prefix unused variables/arguments with underscores
@@ -55,7 +55,7 @@ checkDependencies();
 if (process.env.NETLIFY === 'true') {
   // Check if this is a production deploy
   if (process.env.CONTEXT === 'production') {
-    // console.log('🔥 PRODUCTION DEPLOYMENT - Extra validation required\n');
+    // console.warn('🔥 PRODUCTION DEPLOYMENT - Extra validation required\n');
   }
 }
 
@@ -65,39 +65,39 @@ const result = validateEnvironment();
 // Patch: Never fail local builds due to missing/placeholder env vars
 const isNetlify = process.env.NETLIFY === 'true';
 if (!result.isValid) {
-  // console.log('\n🚨 NETLIFY SETUP INSTRUCTIONS:');
-  // console.log('==============================\n');
+  // console.warn('\n🚨 NETLIFY SETUP INSTRUCTIONS:');
+  // console.warn('==============================\n');
 
-  // console.log('1. 🌐 Go to your Netlify dashboard:');
-  // console.log('   https://app.netlify.com/sites/[your-site-name]/settings/deploys#environment\n');
+  // console.warn('1. 🌐 Go to your Netlify dashboard:');
+  // console.warn('   https://app.netlify.com/sites/[your-site-name]/settings/deploys#environment\n');
 
-  // console.log('2. 📝 Click "Edit variables" and add these required variables:\n');
+  // console.warn('2. 📝 Click "Edit variables" and add these required variables:\n');
 
   result.errors.forEach(_error => {
-    // console.log(`   ✏️  ${error.variable}`);
-    // console.log(`       Description: ${error.description}`);
-    // console.log(`       Current: ${error.current}\n`);
+    // console.warn(`   ✏️  ${error.variable}`);
+    // console.warn(`       Description: ${error.description}`);
+    // console.warn(`       Current: ${error.current}\n`);
   });
 
-  // console.log('3. 🔧 Get your Supabase credentials:');
-  // console.log('   - Go to https://supabase.com/dashboard');
-  // console.log('   - Select your project');
-  // console.log('   - Go to Settings > API');
-  // console.log('   - Copy the Project URL and anon/public key\n');
+  // console.warn('3. 🔧 Get your Supabase credentials:');
+  // console.warn('   - Go to https://supabase.com/dashboard');
+  // console.warn('   - Select your project');
+  // console.warn('   - Go to Settings > API');
+  // console.warn('   - Copy the Project URL and anon/public key\n');
 
-  // console.log('4. 💾 Click "Save" and then "Deploy site"\n');
+  // console.warn('4. 💾 Click "Save" and then "Deploy site"\n');
 
-  // console.log('5. 🔍 Verify the setup by visiting:');
-  // console.log('   https://your-site.netlify.app/api/health/environment\n');
+  // console.warn('5. 🔍 Verify the setup by visiting:');
+  // console.warn('   https://your-site.netlify.app/api/health/environment\n');
 
   if (isNetlify) {
-    // console.log('⚠️  Continuing build on Netlify despite missing configuration.');
-    // console.log('   Environment variables should be set in Netlify dashboard for production.\n');
+    // console.warn('⚠️  Continuing build on Netlify despite missing configuration.');
+    // console.warn('   Environment variables should be set in Netlify dashboard for production.\n');
   } else {
-    // console.log('⚠️  Local build: Skipping environment variable enforcement for local development.');
-    // console.log('   You may see runtime errors if your app requires these variables.\n');
+    // console.warn('⚠️  Local build: Skipping environment variable enforcement for local development.');
+    // console.warn('   You may see runtime errors if your app requires these variables.\n');
     // Do NOT exit(1) for local builds
   }
 } else {
-  // console.log('✅ Pre-build check passed! Proceeding with build...\n');
+  // console.warn('✅ Pre-build check passed! Proceeding with build...\n');
 }

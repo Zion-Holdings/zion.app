@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProfilePage: React.FC = () => {
+const _ProfilePage: React.FC = () => {
   const pageStyle: React.CSSProperties = {
     padding: '20px',
     fontFamily: 'Arial, sans-serif',

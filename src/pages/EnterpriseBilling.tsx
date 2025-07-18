@@ -7,7 +7,7 @@ import { SEO } from "@/components/SEO";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 
 export default function EnterpriseBilling() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   
   // Check if user has billing permissions
   const hasBillingAccess = user?.role === "enterprise_admin" || 

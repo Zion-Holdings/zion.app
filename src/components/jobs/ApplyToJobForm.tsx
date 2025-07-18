@@ -23,8 +23,8 @@ interface ApplyToJobFormProps {
 }
 
 export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
-  const { user } = useAuth();
-  const { applyToJob } = useJobApplications();
+  const { _user } = useAuth();
+  const { _applyToJob } = useJobApplications();
   const { resumes, isLoading: isResumesLoading } = useResume();
   const router = useRouter();
   
@@ -34,7 +34,7 @@ export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (_e: React.FormEvent) => {
     e.preventDefault();
     
     if (!user) {

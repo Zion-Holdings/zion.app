@@ -58,12 +58,12 @@ export function ApiKeysManager() {
     setSelectedScopes([]);
   };
 
-  const handleRegenerateKey = async (keyId: string) => {
+  const handleRegenerateKey = async (_keyId: string) => {
     await regenerateApiKey(keyId);
     setShowRegenerateConfirm(null);
   };
   
-  const handleRevokeKey = async (keyId: string) => {
+  const handleRevokeKey = async (_keyId: string) => {
     await revokeApiKey(keyId);
     setShowDeleteConfirm(null);
   };
@@ -78,7 +78,7 @@ export function ApiKeysManager() {
   ];
 
   // Toggle a scope selection
-  const toggleScope = (scope: ApiKeyScope) => {
+  const toggleScope = (_scope: ApiKeyScope) => {
     setSelectedScopes(prev => 
       prev.includes(scope) 
         ? prev.filter(s => s !== scope) 
@@ -86,8 +86,8 @@ export function ApiKeysManager() {
     );
   };
   
-  const getExampleCode = (key: string) => {
-    return `curl -X GET "https://api.ziontechgroup.com/v1/jobs" \\
+  const getExampleCode = (_key: string) => {
+    return `curl -X GET "_https://api.ziontechgroup.com/v1/jobs" \\
   -H "Authorization: Bearer ${key}" \\
   -H "Content-Type: application/json"`;
   };

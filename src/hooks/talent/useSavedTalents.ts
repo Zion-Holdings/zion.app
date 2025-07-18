@@ -38,7 +38,7 @@ export function useSavedTalents() {
         if (savedData) {
           // Type guard for savedData items
           const talentIds = savedData
-            .map((item: unknown) => {
+            .map((_item: unknown) => {
               if (
                 typeof item === 'object' && item !== null &&
                 'talent_id' in item && typeof (item as { talent_id: unknown }).talent_id === 'string'
@@ -65,7 +65,7 @@ export function useSavedTalents() {
             setSavedTalents([]);
           }
         }
-      } catch (error) {
+      } catch (_error) {
         logErrorToProduction('Error fetching saved talents:', { data: error });
         showApiError(
           error,
@@ -81,7 +81,7 @@ export function useSavedTalents() {
   }, [isAuthenticated, userDetails.id]);
 
   // Toggle save talent
-  const toggleSaveTalent = async (talent: TalentProfile) => {
+  const toggleSaveTalent = async (_talent: TalentProfile) => {
     if (!isAuthenticated || !userDetails.id || !talent.id) {
       toast({
         title: "Authentication required",
@@ -99,7 +99,7 @@ export function useSavedTalents() {
       if (!supabase) throw new Error('Supabase client not initialized');
       if (isSaved) {
         // Remove from saved_talents
-        const { error } = await supabase
+        const { _error } = await supabase
           .from('saved_talents')
           .delete()
           .eq('user_id', userDetails.id)
@@ -116,7 +116,7 @@ export function useSavedTalents() {
         });
       } else {
         // Add to saved_talents
-        const { error } = await supabase
+        const { _error } = await supabase
           .from('saved_talents')
           .insert({
             user_id: userDetails.id,
@@ -133,7 +133,7 @@ export function useSavedTalents() {
           description: `${talent.full_name} has been added to your favorites`,
         });
       }
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error toggling saved talent:', { data: error });
       showApiError(
         error,
@@ -144,7 +144,7 @@ export function useSavedTalents() {
   };
 
   // Check if talent is saved
-  const isTalentSaved = (talentId: string) => {
+  const isTalentSaved = (_talentId: string) => {
     return savedTalentIds.includes(talentId);
   };
 

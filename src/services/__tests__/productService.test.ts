@@ -20,7 +20,7 @@ const mockProduct: ProductDetailsData = {
 
 describe('fetchProductById', () => {
   const originalFetch = global.fetch;
-  let mockFetch: jest.Mock;
+  let _mockFetch: jest.Mock;
   let consoleWarnSpy: jest.SpyInstance;
   let consoleErrorSpy: jest.SpyInstance;
 

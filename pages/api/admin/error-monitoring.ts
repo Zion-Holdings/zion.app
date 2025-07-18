@@ -39,7 +39,7 @@ export default async function handler(
           timestamp
         });
     }
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction('Error monitoring API error:', error);
     
     res.status(500).json({
@@ -71,7 +71,7 @@ async function handleGet(
           },
           timestamp
         });
-      } catch (error) {
+      } catch (_error) {
         logErrorToProduction('Error generating error report:', error);
         res.status(500).json({
           success: false,
@@ -95,7 +95,7 @@ async function handleGet(
           },
           timestamp
         });
-      } catch (error) {
+      } catch (_error) {
         logErrorToProduction('Error getting system health:', error);
         res.status(500).json({
           success: false,
@@ -124,7 +124,7 @@ async function handleGet(
           },
           timestamp
         });
-      } catch (error) {
+      } catch (_error) {
         // Log and handle dashboard data retrieval errors gracefully
         logErrorToProduction('Error getting dashboard data:', error);
         res.status(500).json({
@@ -167,7 +167,7 @@ async function handleGet(
           },
           timestamp
         });
-      } catch (error) {
+      } catch (_error) {
         logErrorToProduction('Error getting comprehensive monitoring data:', error);
         res.status(500).json({
           success: false,
@@ -226,7 +226,7 @@ async function handlePost(
           },
           timestamp
         });
-      } catch (error) {
+      } catch (_error) {
         logErrorToProduction('Error creating test error:', error);
         res.status(500).json({
           success: false,
@@ -250,7 +250,7 @@ async function handlePost(
           },
           timestamp
         });
-      } catch (error) {
+      } catch (_error) {
         logErrorToProduction('Error triggering health check:', error);
         res.status(500).json({
           success: false,
@@ -276,7 +276,7 @@ async function handlePost(
           },
           timestamp
         });
-      } catch (error) {
+      } catch (_error) {
         logErrorToProduction('Error clearing old logs:', error);
         res.status(500).json({
           success: false,

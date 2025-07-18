@@ -4,7 +4,7 @@ import { AuthContext } from '@/context/auth/AuthContext';
 import { safeStorage } from '@/utils/safeStorage';
 
 interface PrivateRouteProps {
-  children: React.ReactNode;
+  _children: React.ReactNode;
 }
 
 export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {

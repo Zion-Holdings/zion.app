@@ -3,7 +3,7 @@ import TermsOfService from "@/legal/TermsOfService";
 import { useTranslation } from "react-i18next";
 
 export default function Terms() {
-  const { t } = useTranslation();
+  cons_t { t } = useTranslation();
   
   return (
     <>

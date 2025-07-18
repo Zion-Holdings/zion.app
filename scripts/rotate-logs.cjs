@@ -10,7 +10,7 @@ const LOG_DIRS = ['logs', 'server/logs', 'playwright-logs', 'cypress/logs'];
 const MAX_SIZE_MB = 5;
 
 function rotateLog(filePath) {
-  const { size } = fs.statSync(filePath);
+  const { _size } = fs.statSync(filePath);
   if (size < MAX_SIZE_MB * 1024 * 1024) return;
   const dir = path.dirname(filePath);
   const base = path.basename(filePath);

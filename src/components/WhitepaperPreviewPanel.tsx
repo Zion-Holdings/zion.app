@@ -35,7 +35,7 @@ const WhitepaperPreviewPanel: React.FC<WhitepaperPreviewPanelProps> = ({
   const sectionList = sections ?? [];
 
   return (
-    <div className="p-6 bg-white dark:bg-gray-950 shadow-lg rounded-lg h-full overflow-y-auto prose lg:prose-xl">
+    <div className="p-6 bg-white _dark:bg-gray-950 shadow-lg rounded-lg h-full overflow-y-auto prose lg:prose-xl">
       {tokenName && <h1 className="text-3xl font-bold mb-2 text-center">{tokenName} - Whitepaper Draft</h1>}
       {tokenSupply && <p className="text-center text-gray-600 dark:text-gray-300 mb-6">Total Supply: {tokenSupply}</p>}
 

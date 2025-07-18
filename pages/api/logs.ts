@@ -36,7 +36,7 @@ export default async function handler(
     return res.status(405).json({ message: 'Method Not Allowed' });
   }
 
-  const { entries } = req['body'] as { entries?: ClientLogEntry[] };
+  const { _entries } = req['body'] as { entries?: ClientLogEntry[] };
 
   if (!Array.isArray(entries) || entries.length === 0) {
     return res.status(400).json({ message: 'Invalid payload – expected { entries: ClientLogEntry[] }' });
@@ -90,14 +90,14 @@ export default async function handler(
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ entries }),
         });
-      } catch (err) {
+      } catch (_err) {
         // swallow – do not break client logging on webhook failure
         logWarn('Failed to forward logs to webhook:', { data:  { error: err } });
       }
     }
 
     return res.status(200).json({ success: true });
-  } catch (error) {
+  } catch (_error) {
     // Log server-side failure
     logErrorToProduction('Error in /api/logs:', error);
     // Sentry.captureException(error);

@@ -12,7 +12,7 @@ const mockFetch = global.fetch as jest.Mock;
 
 describe('/api/auth/register API Endpoint', () => {
   const ORIGINAL_ENV = { ...process.env };
-  const MOCK_AUTH0_DOMAIN = 'https://test-tenant.us.auth0.com';
+  const MOCK_AUTH0_DOMAIN = '_https://test-tenant.us.auth0.com';
 
   beforeEach(() => {
     jest.resetModules(); // Clears module cache, useful if modules have internal state or rely on env vars at import time

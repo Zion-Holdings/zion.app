@@ -14,7 +14,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { EventEmitter } = require('events');
+const { _EventEmitter } = require('events');
 // const WebSocket = require('ws');
 
 class EnhancedLogMonitor extends EventEmitter {
@@ -73,7 +73,7 @@ class EnhancedLogMonitor extends EventEmitter {
       
       this.log('Enhanced log monitoring system initialized', 'info');
       this.emit('initialized');
-    } catch (error) {
+    } catch (_error) {
       this.log(`Failed to initialize monitoring: ${error.message}`, 'error');
       throw error;
     }
@@ -102,7 +102,7 @@ class EnhancedLogMonitor extends EventEmitter {
         this.metrics = { ...this.metrics, ...data };
         this.log(`Loaded historical data: ${this.metrics.errors.length} errors, ${this.metrics.warnings.length} warnings`, 'info');
       }
-    } catch (error) {
+    } catch (_error) {
       this.log(`Failed to load historical data: ${error.message}`, 'warn');
     }
   }
@@ -157,7 +157,7 @@ class EnhancedLogMonitor extends EventEmitter {
 
       this.watchers.set(filePath, watcher);
       this.log(`Watching log file: ${path.relative(this.config.logDir, filePath)}`, 'debug');
-    } catch (error) {
+    } catch (_error) {
       this.log(`Failed to watch file ${filePath}: ${error.message}`, 'warn');
     }
   }
@@ -173,7 +173,7 @@ class EnhancedLogMonitor extends EventEmitter {
       for (const line of newLines) {
         await this.processLogEntry(line, filePath);
       }
-    } catch (error) {
+    } catch (_error) {
       this.log(`Error processing log file changes: ${error.message}`, 'error');
     }
   }
@@ -206,7 +206,7 @@ class EnhancedLogMonitor extends EventEmitter {
       // Emit event for real-time consumers
       this.emit('logEntry', entry);
       
-    } catch (error) {
+    } catch (_error) {
       this.log(`Error processing log entry: ${error.message}`, 'error');
     }
   }
@@ -396,7 +396,7 @@ class EnhancedLogMonitor extends EventEmitter {
   }
 
   async checkAlertConditions(entry) {
-    const { alertThresholds } = this.config;
+    const { _alertThresholds } = this.config;
     
     // Check error rate threshold
     if (this.metrics.system.errorRate > alertThresholds.errorRate) {
@@ -447,7 +447,7 @@ class EnhancedLogMonitor extends EventEmitter {
     this.alertHistory.push(alert);
     
     // Send to configured channels
-    const { alertChannels } = this.config;
+    const { _alertChannels } = this.config;
     
     if (alertChannels.email) {
       await this.sendEmailAlert(alert);
@@ -499,7 +499,7 @@ class EnhancedLogMonitor extends EventEmitter {
       try {
         await healingStrategies[strategy]();
         this.log(`Self-healing successful: ${strategy}`, 'info');
-      } catch (error) {
+      } catch (_error) {
         this.log(`Self-healing failed: ${error.message}`, 'error');
       }
     }
@@ -601,7 +601,7 @@ class EnhancedLogMonitor extends EventEmitter {
       const metricsFile = path.join(this.config.logDir, 'aggregated', 'metrics.json');
       fs.writeFileSync(metricsFile, JSON.stringify(this.metrics, null, 2));
       this.log('Metrics saved successfully', 'debug');
-    } catch (error) {
+    } catch (_error) {
       this.log(`Failed to save metrics: ${error.message}`, 'error');
     }
   }
@@ -641,7 +641,7 @@ class EnhancedLogMonitor extends EventEmitter {
     } else if (level === 'warn') {
       console.warn(logEntry);
     } else {
-      // console.log(logEntry);
+      // console.warn(logEntry);
     }
     
     // Also write to monitor's own log file

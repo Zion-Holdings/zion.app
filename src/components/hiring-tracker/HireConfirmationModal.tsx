@@ -38,7 +38,7 @@ export function HireConfirmationModal({
   const [projectDescription, setProjectDescription] = useState('');
   const [updateAvailability, setUpdateAvailability] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  const { user } = useAuth();
+  const { _user } = useAuth();
 
   // Get talent information from either candidateData or application
   const talentData = candidateData || (application?.talent_profile as TalentProfile);
@@ -150,7 +150,7 @@ export function HireConfirmationModal({
             setIsLoading(false);
             return;
           }
-        } catch (error) {
+        } catch (_error) {
           logErrorToProduction('Error updating availability:', { data: error });
           toast({
             title: 'Error updating availability',
@@ -168,7 +168,7 @@ export function HireConfirmationModal({
       });
       onConfirm();
       onClose();
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error hiring candidate:', { data: error });
       toast({
         title: 'Error hiring candidate',

@@ -25,7 +25,7 @@ function globSync(pattern) {
   }
 }
 
-// console.log('🔧 Fixing Netlify "self is not defined" issue...');
+// console.warn('🔧 Fixing Netlify "self is not defined" issue...');
 
 function patchVendorsFile() {
   try {
@@ -36,18 +36,18 @@ function patchVendorsFile() {
     const vendorFiles = globSync(vendorsPattern);
     
     if (vendorFiles.length === 0) {
-      // console.log('📁 No vendors.js file found to patch');
+      // console.warn('📁 No vendors.js file found to patch');
       return;
     }
 
     vendorFiles.forEach(vendorFile => {
-      // console.log(`🔧 Patching ${path.basename(vendorFile)}...`);
+      // console.warn(`🔧 Patching ${path.basename(vendorFile)}...`);
       
       let content = fs.readFileSync(vendorFile, 'utf8');
       
       // Check if file starts with problematic self reference
       if (content.startsWith('(self["webpackChunk_N_E"]') || content.includes('self["webpackChunk_N_E"]')) {
-        // console.log('🎯 Found problematic self reference, applying fix...');
+        // console.warn('🎯 Found problematic self reference, applying fix...');
         
         // Create comprehensive polyfill
         const polyfill = `// Netlify Serverless Self Polyfill
@@ -77,13 +77,13 @@ if (typeof self !== 'undefined' && !self.webpackChunk_N_E) {
         
         // Write the patched content back
         fs.writeFileSync(vendorFile, content, 'utf8');
-        // console.log(`✅ Successfully patched ${path.basename(vendorFile)}`);
+        // console.warn(`✅ Successfully patched ${path.basename(vendorFile)}`);
       } else {
-        // console.log(`ℹ️ ${path.basename(vendorFile)} doesn't need patching`);
+        // console.warn(`ℹ️ ${path.basename(vendorFile)} doesn't need patching`);
       }
     });
 
-  } catch (error) {
+  } catch (_error) {
     console.error('❌ Error patching vendors file:', error.message);
     throw error;
   }
@@ -95,7 +95,7 @@ function patchChunkFiles() {
     const staticDir = path.join(process.cwd(), '.next', 'static', 'chunks');
     
     if (!fs.existsSync(staticDir)) {
-      // console.log('📁 Static chunks directory not found');
+      // console.warn('📁 Static chunks directory not found');
       return;
     }
 
@@ -105,7 +105,7 @@ function patchChunkFiles() {
       let content = fs.readFileSync(chunkFile, 'utf8');
       
       if (content.includes('self["webpackChunk_N_E"]') || content.includes('self.webpackChunk_N_E')) {
-        // console.log(`🔧 Patching chunk ${path.basename(chunkFile)}...`);
+        // console.warn(`🔧 Patching chunk ${path.basename(chunkFile)}...`);
         
         // Replace self references with safe access
         content = content.replace(
@@ -119,11 +119,11 @@ function patchChunkFiles() {
         );
         
         fs.writeFileSync(chunkFile, content, 'utf8');
-        // console.log(`✅ Patched chunk ${path.basename(chunkFile)}`);
+        // console.warn(`✅ Patched chunk ${path.basename(chunkFile)}`);
       }
     });
 
-  } catch (error) {
+  } catch (_error) {
     console.warn('⚠️ Error patching chunk files:', error.message);
     // Don't throw here as chunk patching is optional
   }
@@ -158,15 +158,15 @@ module.exports = {
 `;
 
     fs.writeFileSync(polyfillPath, polyfillContent, 'utf8');
-    // console.log('✅ Created global self polyfill');
+    // console.warn('✅ Created global self polyfill');
 
-  } catch (error) {
+  } catch (_error) {
     console.warn('⚠️ Could not create global polyfill:', error.message);
   }
 }
 
 function main() {
-  // console.log('🚀 Starting Netlify self reference fix...');
+  // console.warn('🚀 Starting Netlify self reference fix...');
   
   try {
     // Step 1: Patch vendors.js file
@@ -178,9 +178,9 @@ function main() {
     // Step 3: Create global polyfill
     createGlobalPolyfill();
     
-    // console.log('✅ Netlify self fix completed successfully!');
+    // console.warn('✅ Netlify self fix completed successfully!');
     
-  } catch (error) {
+  } catch (_error) {
     console.error('❌ Netlify self fix failed:', error.message);
     process.exit(1);
   }

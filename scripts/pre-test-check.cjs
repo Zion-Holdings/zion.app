@@ -14,7 +14,7 @@ function check(deps) {
   });
 }
 
-const { spawnSync } = require('child_process');
+const { _spawnSync } = require('child_process');
 const deps = ['jest', 'vitest'];
 const missing = check(deps);
 

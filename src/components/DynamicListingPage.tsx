@@ -52,7 +52,7 @@ export function DynamicListingPage({
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const toggleCategory = (category: string) => {
+  const toggleCategory = (_category: string) => {
     setSelectedCategories(prev =>
       prev.includes(category)
         ? prev.filter(c => c !== category)
@@ -100,13 +100,13 @@ export function DynamicListingPage({
     [number, number]
   >([0, initialPrice.max]);
 
-  const handleSliderChange = (values: number[]) => {
+  const handleSliderChange = (_values: number[]) => {
     const [min, max] = values.map(Number);
     if (min == null || max == null || isNaN(min) || isNaN(max)) return;
     setCurrentPriceFilter([min, max]);
   };
 
-  let filteredListings: ProductListing[] = [];
+  let _filteredListings: ProductListing[] = [];
   try {
     filteredListings = allListings.filter((listing) => {
       const matchesSearch =
@@ -176,12 +176,12 @@ export function DynamicListingPage({
           );
       }
     });
-  } catch (error) {
+  } catch (_error) {
     captureException(error);
     logErrorToProduction('Listing filter error:', { data: error });
   }
 
-  const handleRequestQuote = (listingId: string) => {
+  const handleRequestQuote = (_listingId: string) => {
     setIsLoading(true);
 
     const listing = allListings.find((item) => item.id === listingId);
@@ -387,7 +387,7 @@ export function DynamicListingPage({
 
               <Button
                 variant="outline"
-                className="w-full border-zion-purple text-zion-purple hover:bg-zion-purple/10"
+                className="w-full border-zion-purple text-zion-purple _hover:bg-zion-purple/10"
                 onClick={() => {
                   logInfo("Clearing filters");
                   setSearchQuery("");
@@ -404,7 +404,7 @@ export function DynamicListingPage({
             </div>
           </div>
 
-          <div className="lg:col-span-3">
+          <div className="_lg:col-span-3">
             <div className="bg-zion-blue-dark rounded-lg p-4 mb-6 border border-zion-blue-light">
               <div className="flex flex-col md:flex-row gap-4">
                 <div className="relative flex-grow">

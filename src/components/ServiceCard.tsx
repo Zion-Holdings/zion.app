@@ -9,7 +9,7 @@ interface ServiceCardProps {
 }
 
 export default function ServiceCard({ service, onSelect }: ServiceCardProps) {
-  const { startQuote } = useRequestQuoteWizard();
+  const { _startQuote } = useRequestQuoteWizard();
 
   const handleClick = () => {
     if (onSelect) {
@@ -17,7 +17,7 @@ export default function ServiceCard({ service, onSelect }: ServiceCardProps) {
     }
   };
 
-  const handleRequestQuote = (e: React.MouseEvent) => {
+  const handleRequestQuote = (_e: React.MouseEvent) => {
     e.stopPropagation();
     startQuote(service.id);
   };

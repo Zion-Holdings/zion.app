@@ -17,7 +17,7 @@ export interface JobPostingProps {
 }
 
 export const useJobForm = ({ jobId: _jobId, onSuccess }: JobPostingProps) => {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const router = useRouter();
   
   const [startDate, setStartDate] = useState<Date | undefined>(undefined);
@@ -51,7 +51,7 @@ export const useJobForm = ({ jobId: _jobId, onSuccess }: JobPostingProps) => {
   });
 
   // Function to create/update jobs that will be implemented by parent component
-  const submitJob = async (values: JobSchemaType) => {
+  const submitJob = async (_values: JobSchemaType) => {
     if (!user) {
       toast.error("You must be logged in to post a job");
       router.push("/login");

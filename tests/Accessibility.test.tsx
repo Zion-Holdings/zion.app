@@ -134,20 +134,20 @@ const MockAuthProvider = ({ children }: { children: React.ReactNode }) => (
 expect.extend(toHaveNoViolations);
 
 test('ModeToggle has no accessibility violations', async () => {
-  const { container } = render(<ModeToggle />);
+  const { _container } = render(<ModeToggle />);
   const results = await axe(container);
   expect(results).toHaveNoViolations();
 });
 
 // --- UI Components ---
 test('Button has no accessibility violations', async () => {
-  const { container } = render(<Button>Click me</Button>);
+  const { _container } = render(<Button>Click me</Button>);
   const results = await axe(container);
   expect(results).toHaveNoViolations();
 });
 
 test('Card has no accessibility violations', async () => {
-  const { container } = render(
+  const { _container } = render(
     <Card>
       <CardHeader><CardTitle>Test Card</CardTitle></CardHeader>
       <CardContent><p>Content</p></CardContent>
@@ -159,7 +159,7 @@ test('Card has no accessibility violations', async () => {
 });
 
 test('Input has no accessibility violations', async () => {
-  const { container } = render(
+  const { _container } = render(
     <div>
       <Label htmlFor="test-input">Test Input</Label>
       <Input id="test-input" placeholder="Test input" />
@@ -170,13 +170,13 @@ test('Input has no accessibility violations', async () => {
 });
 
 test('Label has no accessibility violations', async () => {
-  const { container } = render(<Label htmlFor="some-input">Test Label</Label>);
+  const { _container } = render(<Label htmlFor="some-input">Test Label</Label>);
   const results = await axe(container);
   expect(results).toHaveNoViolations();
 });
 
 test('Checkbox has no accessibility violations', async () => {
-  const { container } = render(
+  const { _container } = render(
     <div>
       <Label id="test-checkbox-label" htmlFor="test-checkbox">Test Checkbox Visual</Label>
       <Checkbox id="test-checkbox" aria-labelledby="test-checkbox-label" />
@@ -187,7 +187,7 @@ test('Checkbox has no accessibility violations', async () => {
 });
 
 test('RadioGroup has no accessibility violations', async () => {
-  const { container } = render(
+  const { _container } = render(
     <RadioGroup defaultValue="option1" aria-label="Test Radio Group">
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <RadioGroupItem value="option1" id="r1" aria-label="Option 1" /> {/* Direct aria-label as fallback */}
@@ -204,7 +204,7 @@ test('RadioGroup has no accessibility violations', async () => {
 });
 
 test('Select has no accessibility violations', async () => {
-  const { container } = render(
+  const { _container } = render(
     <Select>
       <SelectTrigger aria-label="Test Select Trigger">
         <SelectValue placeholder="Select an option" />
@@ -220,7 +220,7 @@ test('Select has no accessibility violations', async () => {
 });
 
 test('Textarea has no accessibility violations', async () => {
-  const { container } = render(
+  const { _container } = render(
     <div>
       <Label htmlFor="test-textarea">Test Textarea</Label>
       <Textarea id="test-textarea" placeholder="Test textarea" />
@@ -231,7 +231,7 @@ test('Textarea has no accessibility violations', async () => {
 });
 
 test('Alert has no accessibility violations', async () => {
-  const { container } = render(
+  const { _container } = render(
     <Alert>
       <AlertTitle>Test Alert</AlertTitle>
       <AlertDescription>This is an alert description.</AlertDescription>
@@ -242,7 +242,7 @@ test('Alert has no accessibility violations', async () => {
 });
 
 test('AlertDialog has no accessibility violations when closed', async () => {
-  const { container } = render(
+  const { _container } = render(
     <AlertDialog>
       <AlertDialogTrigger asChild><Button>Open Alert Dialog</Button></AlertDialogTrigger>
       <AlertDialogContent>
@@ -257,7 +257,7 @@ test('AlertDialog has no accessibility violations when closed', async () => {
 });
 
 test('Dialog has no accessibility violations when closed', async () => {
-  const { container } = render(
+  const { _container } = render(
     <Dialog>
       <DialogTrigger asChild><Button>Open Dialog</Button></DialogTrigger>
       <DialogContent>
@@ -272,7 +272,7 @@ test('Dialog has no accessibility violations when closed', async () => {
 });
 
 test('Table has no accessibility violations', async () => {
-  const { container } = render(
+  const { _container } = render(
     <Table>
       <TableCaption>Test Table Caption</TableCaption>
       <TableHeader><TableRow><TableHead>Header 1</TableHead><TableHead>Header 2</TableHead></TableRow></TableHeader>
@@ -294,31 +294,31 @@ const AllCoreProviders = ({ children }: { children: React.ReactNode }) => (
 );
 
 test('Header has no accessibility violations', async () => {
-  const { container } = render(<Header />, { wrapper: AllCoreProviders });
+  const { _container } = render(<Header />, { wrapper: AllCoreProviders });
   const results = await axe(container);
   expect(results).toHaveNoViolations();
 });
 
 test('MainNavigation has no accessibility violations', async () => {
-  const { container } = render(<MainNavigation />, { wrapper: AllCoreProviders });
+  const { _container } = render(<MainNavigation />, { wrapper: AllCoreProviders });
   const results = await axe(container);
   expect(results).toHaveNoViolations();
 });
 
 test('AvatarMenu has no accessibility violations', async () => {
-  const { container } = render(<AvatarMenu />, { wrapper: AllCoreProviders });
+  const { _container } = render(<AvatarMenu />, { wrapper: AllCoreProviders });
   const results = await axe(container);
   expect(results).toHaveNoViolations();
 });
 
 test('Logo has no accessibility violations', async () => {
-  const { container } = render(<Logo />, { wrapper: AllCoreProviders });
+  const { _container } = render(<Logo />, { wrapper: AllCoreProviders });
   const results = await axe(container);
   expect(results).toHaveNoViolations();
 });
 
 test('Footer has no accessibility violations', async () => {
-  const { container } = render(<Footer />, { wrapper: AllCoreProviders });
+  const { _container } = render(<Footer />, { wrapper: AllCoreProviders });
   const results = await axe(container);
   expect(results).toHaveNoViolations();
 });
@@ -326,7 +326,7 @@ test('Footer has no accessibility violations', async () => {
 test('Home page has no accessibility violations', async () => {
   try {
     const { default: Home } = await import('@/pages/Home');
-    const { container } = render(<Home />, { wrapper: AllCoreProviders });
+    const { _container } = render(<Home />, { wrapper: AllCoreProviders });
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   } catch (_e) {
@@ -338,7 +338,7 @@ test('Home page has no accessibility violations', async () => {
 test('Login page has no accessibility violations', async () => {
   try {
     const { default: Login } = await import('@/pages/Login');
-    const { container } = render(<Login />, { wrapper: AllCoreProviders });
+    const { _container } = render(<Login />, { wrapper: AllCoreProviders });
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   } catch (_e) {
@@ -350,7 +350,7 @@ test('Login page has no accessibility violations', async () => {
 test('Marketplace page has no accessibility violations (if exists)', async () => {
   try {
     const { default: Marketplace } = await import('@/pages/Marketplace');
-    const { container } = render(<Marketplace />, { wrapper: AllCoreProviders });
+    const { _container } = render(<Marketplace />, { wrapper: AllCoreProviders });
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   } catch (_e) {
@@ -362,7 +362,7 @@ test('Marketplace page has no accessibility violations (if exists)', async () =>
 test('Contact page has no accessibility violations', async () => {
   try {
     const { default: Contact } = await import('@/pages/Contact');
-    const { container } = render(<Contact />, { wrapper: AllCoreProviders });
+    const { _container } = render(<Contact />, { wrapper: AllCoreProviders });
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   } catch (_e: any) {
@@ -378,7 +378,7 @@ test('Contact page has no accessibility violations', async () => {
 test('Blog page has no accessibility violations', async () => {
   try {
     const { default: Blog } = await import('@/pages/Blog');
-    const { container } = render(<Blog />, { wrapper: AllCoreProviders });
+    const { _container } = render(<Blog />, { wrapper: AllCoreProviders });
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   } catch (_e) {
@@ -390,7 +390,7 @@ test('Blog page has no accessibility violations', async () => {
 test('AppLayout has no accessibility violations (if exists)', async () => {
   try {
     const { default: AppLayout } = await import('@/layout/AppLayout');
-    const { container } = render(<AppLayout><div>Child Content</div></AppLayout>, { wrapper: AllCoreProviders });
+    const { _container } = render(<AppLayout><div>Child Content</div></AppLayout>, { wrapper: AllCoreProviders });
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   } catch (_e) {
@@ -402,7 +402,7 @@ test('AppLayout has no accessibility violations (if exists)', async () => {
 test('AppHeader has no accessibility violations (if exists)', async () => {
   try {
     const { default: AppHeader } = await import('@/layout/AppHeader');
-    const { container } = render(<AppHeader />, { wrapper: AllCoreProviders });
+    const { _container } = render(<AppHeader />, { wrapper: AllCoreProviders });
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   } catch (_e) {

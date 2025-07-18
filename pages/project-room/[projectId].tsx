@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 
 const ProjectRoomPage = () => {
   const router = useRouter();
-  const { projectId } = router.query;
+  const { _projectId } = router.query;
 
   return (
     <div>

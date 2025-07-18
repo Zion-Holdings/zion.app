@@ -50,19 +50,19 @@ export function ServiceQuoteModal({ open, onOpenChange, service }: ServiceQuoteM
   const [currentStep, setCurrentStep] = useState<'details' | 'timeline' | 'contact'>('details');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (_e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (_e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
       // Call Supabase function to process the quote
-      const { error } = await supabase.functions.invoke('process-quote', {
+      const { _error } = await supabase.functions.invoke('process-quote', {
         body: {
           service: service ? {
             id: service.id,
@@ -96,7 +96,7 @@ export function ServiceQuoteModal({ open, onOpenChange, service }: ServiceQuoteM
       setStartDate(new Date());
       setEndDate(undefined);
       setCurrentStep('details');
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error submitting quote:', { data: error });
       toast({
         title: "Error",

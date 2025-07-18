@@ -158,7 +158,7 @@ export function useTenantAdminStatus(tenantId?: string) {
         }
 
         setIsAdmin(!!data && !error);
-      } catch (err) {
+      } catch (_err) {
         logWarn('Error checking tenant admin status:', { data:  { data: err } });
         setIsAdmin(false);
       } finally {

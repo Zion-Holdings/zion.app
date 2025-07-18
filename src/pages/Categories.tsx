@@ -27,7 +27,7 @@ const fetcher = async (url: string): Promise<CategoryType[]> => {
     }
     const data = await response.json();
     return Array.isArray(data) && data.length > 0 ? data : CATEGORIES as CategoryType[];
-  } catch (err) {
+  } catch (_err) {
     logErrorToProduction('Categories API fetch failed:', { data: err });
     return CATEGORIES as CategoryType[];
   }
@@ -82,7 +82,7 @@ export default function Categories({ categories: initialCategories = [] }: Categ
             </div>
           )}
           {!isLoading && !error && categories.length > 0 && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 _sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {categories.map((category) => {
                 // Use default folder icon for all categories to avoid large bundle
                 return (

@@ -33,7 +33,7 @@ function loadTranslations() {
     try {
       const content = fs.readFileSync(filePath, 'utf8');
       translations[lang] = JSON.parse(content);
-    } catch (error) {
+    } catch (_error) {
       log(`Error loading ${lang} translations: ${error.message}`, 'red');
       translations[lang] = {};
     }

@@ -11,7 +11,7 @@ export const useEmailAuth = (
   setUser: (user: UserDetails | null) => void,
   setIsLoading: (loading: boolean) => void
 ) => {
-  const login = async ({ email, password, rememberMe }: { email: string; password: string; rememberMe: boolean }) => {
+  const login = async ({ email, password, rememberMe }: { _email: string; password: string; rememberMe: boolean }) => {
     try {
       setIsLoading(true);
       // Clean up any stale auth state before login
@@ -100,7 +100,7 @@ export const useEmailAuth = (
       // Attempt to sign out any existing session first to prevent conflicts
       try {
         await supabase!.auth.signOut({ scope: 'global' });
-      } catch (err) {
+      } catch (_err) {
         // Continue even if signout fails
         logInfo('Sign out before signup failed:', { data:  { data: err } });
       }
@@ -147,10 +147,10 @@ export const useEmailAuth = (
     }
   };
 
-  const resetPassword = async (email: string) => {
+  const resetPassword = async (_email: string) => {
     try {
       setIsLoading(true);
-      const { error } = await supabase!.auth.resetPasswordForEmail(email, {
+      const { _error } = await supabase!.auth.resetPasswordForEmail(email, {
         redirectTo: `${window.location.origin}/update-password`,
       });
 

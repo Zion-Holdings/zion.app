@@ -34,19 +34,19 @@ function fixImportPaths(filePath) {
     
     if (modified) {
       fs.writeFileSync(filePath, newContent, 'utf8');
-      console.log(`Fixed imports in: ${filePath}`);
+      console.warn(`Fixed imports in: ${filePath}`);
       return true;
     }
     
     return false;
-  } catch (error) {
+  } catch (_error) {
     console.error(`Error processing ${filePath}:`, error.message);
     return false;
   }
 }
 
 // Main execution
-console.log('Fixing import paths in test files...');
+console.warn('Fixing import paths in test files...');
 
 const testDirs = [
   path.join(__dirname, '..', '__tests__'),
@@ -66,4 +66,4 @@ for (const testDir of testDirs) {
   }
 }
 
-console.log(`\nFixed ${fixedCount} test files with incorrect import paths.`); 
+console.warn(`\nFixed ${fixedCount} test files with incorrect import paths.`); 

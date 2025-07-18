@@ -48,7 +48,7 @@ export function ContractForm({
 }: ContractFormProps) {
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedMilestones, setGeneratedMilestones] = useState<GeneratedMilestone[]>([]);
-  const { toast } = useToast();
+  const { _toast } = useToast();
 
   const form = useForm<ContractFormValues>({
     resolver: zodResolver(formSchema),
@@ -84,7 +84,7 @@ export function ContractForm({
     return undefined;
   }, [form, onFormValuesChange]);
   
-  const handleMilestonesGenerated = (milestones: GeneratedMilestone[]) => {
+  const handleMilestonesGenerated = (_milestones: GeneratedMilestone[]) => {
     setGeneratedMilestones(milestones);
     
     // If payment terms isn't already set to milestone, update it
@@ -98,7 +98,7 @@ export function ContractForm({
     });
   };
   
-  const onSubmit = async (values: ContractFormValues) => {
+  const onSubmit = async (_values: ContractFormValues) => {
     setIsGenerating(true);
     try {
       const contract = await generateContract(
@@ -109,7 +109,7 @@ export function ContractForm({
       );
       
       onContractGenerated(contract);
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error generating contract:', { data: error });
       toast({
         title: "Contract Generation Failed",

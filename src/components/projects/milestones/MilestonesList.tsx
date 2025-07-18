@@ -44,7 +44,7 @@ export const MilestonesList: React.FC<MilestonesListProps> = ({
 }) => {
   const [showAddForm, setShowAddForm] = useState(false);
 
-  const handleSubmit = async (data: {
+  const handleSubmit = async (_data: {
     title: string;
     amount: number;
     description?: string | undefined;

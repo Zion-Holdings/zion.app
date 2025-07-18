@@ -39,5 +39,5 @@ for (const [file, keys] of Object.entries(localeKeys)) {
 }
 
 if (!missing) {
-  console.log('✅ All translation keys are present across all locales');
+  console.warn('✅ All translation keys are present across all locales');
 }

@@ -42,7 +42,7 @@ vi.mock('@/config/env', () => ({
 }));
 
 describe('App Integration - Wallet Initialization Failure', () => {
-  let consoleErrorSpy: jest.SpyInstance;
+  let _consoleErrorSpy: jest.SpyInstance;
 
   beforeEach(() => {
     // Spy on console.error and mock its implementation to suppress output during tests

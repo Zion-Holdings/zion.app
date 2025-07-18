@@ -49,7 +49,7 @@ test('shows only 10 listings per page when itemsPerPage is 10', () => {
     createdAt: '2020-01-01'
   }));
 
-  const { container } = render(
+  const { _container } = render(
     <MemoryRouter>
       <DynamicListingPage
         title="t"

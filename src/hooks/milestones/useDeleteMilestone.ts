@@ -7,17 +7,17 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 export const useDeleteMilestone = () => {
 
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [isSubmitting, setIsSubmitting] = useState(false);
   
-  const deleteMilestone = async (milestoneId: string) => {
+  const deleteMilestone = async (_milestoneId: string) => {
     if (!user) return false;
     if (!supabase) throw new Error('Supabase client not initialized');
     
     try {
       setIsSubmitting(true);
       
-      const { error } = await supabase
+      const { _error } = await supabase
         .from('project_milestones')
         .delete()
         .eq('id', milestoneId);

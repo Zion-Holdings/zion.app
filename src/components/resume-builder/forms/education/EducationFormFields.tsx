@@ -59,7 +59,7 @@ export function EducationFormFields({
     },
   });
 
-  const handleSubmit = async (data: EducationFormValues) => {
+  const handleSubmit = async (_data: EducationFormValues) => {
     setIsLoading(true);
     setError(null);
     try {

@@ -94,7 +94,7 @@ export default async function handler(
       authStatus = 'error';
       authDetails = 'Authentication unavailable due to missing Supabase configuration';
     }
-  } catch (error) {
+  } catch (_error) {
     authStatus = 'error';
     authDetails = `Authentication check failed: ${(error as Error).message}`;
     errors.push('Authentication system error');

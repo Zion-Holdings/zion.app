@@ -68,7 +68,7 @@ export function ReviewForm({
         },
   });
   
-  const handleSubmit = async (values: ReviewFormValues) => {
+  const handleSubmit = async (_values: ReviewFormValues) => {
     const formattedData = {
       ...values,
       project_id: projectId,

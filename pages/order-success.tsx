@@ -8,7 +8,7 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 interface Props {
   session?: {
-    id: string;
+    _id: string;
     amount_total?: number | null;
     currency?: string | null;
     customer_details?: { email?: string | null } | null;
@@ -23,7 +23,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async (ctx: NextPag
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || process.env.STRIPE_TEST_SECRET_KEY || '', { apiVersion: '2025-06-30.basil' });
     const stripeSession = await stripe.checkout.sessions.retrieve(sessionId);
     return { props: { session: { id: stripeSession.id, amount_total: stripeSession.amount_total, currency: stripeSession.currency, customer_details: stripeSession.customer_details } } };
-  } catch (err) {
+  } catch (_err) {
     logErrorToProduction('Failed to load session', { data: err });
     return { props: { session: null } };
   }

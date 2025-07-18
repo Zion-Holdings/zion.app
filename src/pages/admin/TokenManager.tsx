@@ -13,8 +13,8 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 export default function TokenManager() {
 
-  const { user } = useAuth();
-  const { toast } = useToast();
+  const { _user } = useAuth();
+  const { _toast } = useToast();
   const [transactions, setTransactions] = useState<TokenTransaction[]>([]);
   const [userId, setUserId] = useState('');
   const [amount, setAmount] = useState(0);
@@ -36,7 +36,7 @@ export default function TokenManager() {
     if (!error) setTransactions(data || []);
   };
 
-  const handleIssue = async (type: 'earn' | 'burn') => {
+  const handleIssue = async (_type: 'earn' | 'burn') => {
     if (!userId || amount <= 0 || processing) return;
     setProcessing(true);
     try {

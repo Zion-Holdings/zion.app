@@ -40,7 +40,7 @@ export function WebhookManager() {
     { value: "new_application", label: "New Application Received" },
     { value: "quote_received", label: "Quote Request Received" },
     { value: "milestone_approved", label: "Milestone Approved" },
-    { value: "talent_hired", label: "Talent Hired" }
+    { value: "talent_hired", _label: "Talent Hired" }
   ];
   
   useEffect(() => {
@@ -62,7 +62,7 @@ export function WebhookManager() {
     });
   };
   
-  const handleRemoveEvent = (event: WebhookEventType) => {
+  const handleRemoveEvent = (_event: WebhookEventType) => {
     setNewWebhook({
       ...newWebhook,
       eventTypes: newWebhook.eventTypes.filter(e => e !== event)
@@ -92,7 +92,7 @@ export function WebhookManager() {
     });
   };
   
-  const handleTestWebhook = async (webhookId: string, eventType: WebhookEventType) => {
+  const handleTestWebhook = async (webhookId: string, _eventType: WebhookEventType) => {
     await testWebhook(webhookId, eventType);
   };
   

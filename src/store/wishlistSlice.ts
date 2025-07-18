@@ -24,15 +24,15 @@ const wishlistSlice = createSlice({
   name: 'wishlist',
   initialState,
   reducers: {
-    add: (state, action: PayloadAction<string>) => {
+    add: (state, _action: PayloadAction<string>) => {
       if (!state.items.includes(action.payload)) {
         state.items.push(action.payload);
       }
     },
-    remove: (state, action: PayloadAction<string>) => {
+    remove: (state, _action: PayloadAction<string>) => {
       state.items = state.items.filter(id => id !== action.payload);
     },
-    set: (state, action: PayloadAction<string[]>) => {
+    set: (state, _action: PayloadAction<string[]>) => {
       state.items = action.payload;
     },
   },

@@ -26,16 +26,16 @@ export interface HeaderProps {
 }
 
 export function Header({ hideLogin = false, customLogo }: HeaderProps) {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const firstName =
     (user && typeof user !== 'boolean' ? (user.displayName?.split(' ')[0] || user.name?.split(' ')[0]) : undefined) || '';
-  const { t } = useTranslation();
+  cons_t { t } = useTranslation();
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const searchSuggestions = generateSearchSuggestions();
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (_e: React.FormEvent) => {
     e.preventDefault();
     const trimmed = query.trim();
     if (trimmed) {
@@ -55,7 +55,7 @@ export function Header({ hideLogin = false, customLogo }: HeaderProps) {
     <header 
       className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur-md text-foreground shadow-sm"
     >
-      <div className="container flex h-16 items-center justify-between px-4 sm:px-6">
+      <div className="container flex h-16 items-center justify-between px-4 _sm:px-6">
         {/* Logo and Navigation */}
         <div className="flex items-center gap-6">
           {customLogo ? <Logo customLogo={customLogo} /> : <Logo />}
@@ -108,7 +108,7 @@ export function Header({ hideLogin = false, customLogo }: HeaderProps) {
           <Button
             variant="ghost"
             size="icon"
-            className="lg:hidden"
+            className="_lg:hidden"
             onClick={() => {/* Toggle mobile search */}}
             aria-label="Search"
           >
@@ -191,7 +191,7 @@ export function Header({ hideLogin = false, customLogo }: HeaderProps) {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-md">
+        <div className="_md:hidden border-t border-border/50 bg-background/95 backdrop-blur-md">
           <div className="container px-4 py-4 space-y-4">
             {/* Mobile Search */}
             <form onSubmit={handleSubmit}>

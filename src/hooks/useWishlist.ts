@@ -30,7 +30,7 @@ export function useWishlist() {
     }).catch(() => {});
   }, [items, user, isAuthenticated]);
 
-  const toggle = (id: string) => {
+  const toggle = (_id: string) => {
     if (items.includes(id)) {
       dispatch(remove(id));
     } else {

@@ -60,7 +60,7 @@ export default function ProjectRoom() {
   };
   
   // --- Video Call Integration Point ---
-  // Reactivate: Simulate a user joining the call after a delay
+  // _Reactivate: Simulate a user joining the call after a delay
   useEffect(() => {
     if (isInCall) {
       const joinTimeout = setTimeout(() => {
@@ -83,7 +83,7 @@ export default function ProjectRoom() {
 
   const [chatMessages, setChatMessages] = useState<{user: string, text: string}[]>([]);
   const [chatInput, setChatInput] = useState('');
-  const handleSendMessage = (e: React.FormEvent) => {
+  const handleSendMessage = (_e: React.FormEvent) => {
     e.preventDefault();
     if (!chatInput.trim()) return;
     setChatMessages(msgs => [...msgs, { user: 'You', text: chatInput }]);
@@ -91,7 +91,7 @@ export default function ProjectRoom() {
   };
 
   const [files, setFiles] = useState<File[]>([]);
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileUpload = (_e: React.ChangeEvent<HTMLInputElement>) => {
     const filesArray = e.target.files ? Array.from(e.target.files) : [];
     setFiles(prev => [...prev, ...filesArray]);
   };
@@ -99,7 +99,7 @@ export default function ProjectRoom() {
   const [events, setEvents] = useState<{title: string, date: string}[]>([]);
   const [eventTitle, setEventTitle] = useState('');
   const [eventDate, setEventDate] = useState('');
-  const handleAddEvent = (e: React.FormEvent) => {
+  const handleAddEvent = (_e: React.FormEvent) => {
     e.preventDefault();
     if (!eventTitle.trim() || !eventDate) return;
     setEvents(evts => [...evts, { title: eventTitle, date: eventDate }]);
@@ -109,7 +109,7 @@ export default function ProjectRoom() {
 
   const [team, setTeam] = useState<string[]>([]);
   const [teamInput, setTeamInput] = useState('');
-  const handleAddTeamMember = (e: React.FormEvent) => {
+  const handleAddTeamMember = (_e: React.FormEvent) => {
     e.preventDefault();
     if (!teamInput.trim()) return;
     setTeam(t => [...t, teamInput]);
@@ -119,7 +119,7 @@ export default function ProjectRoom() {
   const [settingsName, setSettingsName] = useState('');
   const [settingsDesc, setSettingsDesc] = useState('');
   const [settingsSaved, setSettingsSaved] = useState(false);
-  const handleSaveSettings = (e: React.FormEvent) => {
+  const handleSaveSettings = (_e: React.FormEvent) => {
     e.preventDefault();
     setSettingsSaved(true);
     setTimeout(() => setSettingsSaved(false), 2000);

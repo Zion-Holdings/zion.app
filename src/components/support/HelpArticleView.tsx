@@ -29,7 +29,7 @@ export function HelpArticleView({ articleId }: HelpArticleViewProps) {
     return <div>Article not found</div>;
   }
   
-  const handleFeedback = (type: "helpful" | "not-helpful") => {
+  const handleFeedback = (_type: "helpful" | "not-helpful") => {
     setFeedbackGiven(type);
     
     // In a real implementation, this would send feedback to the server

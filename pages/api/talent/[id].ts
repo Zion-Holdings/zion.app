@@ -9,7 +9,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
     return;
   }
 
-  const { id } = req.query as { id: string | string[] };
+  const { _id } = req.query as { id: string | string[] };
   if (typeof id !== 'string') {
     res.status(400).json({ error: 'Invalid id' });
     return;

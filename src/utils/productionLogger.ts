@@ -152,13 +152,13 @@ class ProductionLogger {
             // to prevent circular logging
             internalConsole.warn(`Logging endpoint returned ${response.status}`);
           }
-        } catch (error) {
+        } catch (_error) {
           // Silent fail for logging endpoint to prevent circular errors
           // Only log in development mode (this check is outside the production block)
           internalConsole.warn('Failed to send logs to endpoint:', error);
         }
       }
-    } catch (error) {
+    } catch (_error) {
       // Fallback to console for logging service failures
       internalConsole.error('Failed to send logs to remote service:', error);
     }
@@ -231,7 +231,7 @@ class ProductionLogger {
 
         observer.observe({ entryTypes: ['largest-contentful-paint', 'layout-shift'] });
       }
-    } catch (error) {
+    } catch (_error) {
       internalConsole.warn('Performance tracking initialization failed:', error);
     }
   }
@@ -347,7 +347,7 @@ class ProductionLogger {
       performance.clearMeasures(label);
 
       return duration;
-    } catch (error) {
+    } catch (_error) {
       this.warn(`Timer measurement failed for ${label}`, { error });
       return undefined;
     }

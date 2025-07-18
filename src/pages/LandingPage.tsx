@@ -29,8 +29,8 @@ import { useLanguage } from "@/context/LanguageContext";
 
 
 export default function LandingPage() {
-  const { t } = useTranslation();
-  const { isRTL } = useLanguage();
+  cons_t { t } = useTranslation();
+  const { _isRTL } = useLanguage();
   
   // Tools and features showcase
   const toolsFeatures = [

@@ -47,7 +47,7 @@ function fixReactRouterImports() {
       } else {
         console.warn(`ℹ️  No changes needed: ${filePath}`);
       }
-    } catch (error) {
+    } catch (_error) {
       console.error(`❌ Error fixing ${filePath}:`, error.message);
     }
   });

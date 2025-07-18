@@ -10,7 +10,7 @@ interface ReferralTableProps {
 
 export function ReferralTable({ referrals, isLoading }: ReferralTableProps) {
   // Helper function to render status badges
-  const renderStatusBadge = (status: ReferralStatus) => {
+  const renderStatusBadge = (_status: ReferralStatus) => {
     switch (status) {
       case "pending":
         return <Badge variant="outline" className="bg-yellow-50 text-yellow-800 border-yellow-200">Pending</Badge>;

@@ -20,7 +20,7 @@ export function ProfileContact({ email, profileName, profileType: _profileType }
   const [subject, setSubject] = useState("");
   const [isSending, setIsSending] = useState(false);
   
-  const handleSendMessage = (e: React.FormEvent) => {
+  const handleSendMessage = (_e: React.FormEvent) => {
     e.preventDefault();
     setIsSending(true);
     

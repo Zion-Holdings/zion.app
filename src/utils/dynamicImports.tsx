@@ -35,10 +35,10 @@ export function createDynamicImport<P = unknown, T extends ComponentType<P> = Co
   });
 
   // Wrap with error handling
-  const WrappedComponent: React.FC<PropsWithChildren<P>> = (props) => {
+  const _WrappedComponent: React.FC<PropsWithChildren<P>> = (props) => {
     try {
       return <DynamicComponent {...props} />;
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Dynamic import failed:', { data: error });
       if (options.errorFallback) {
         return <options.errorFallback error={error as Error} />;

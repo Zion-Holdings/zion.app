@@ -12,7 +12,7 @@ export function useToggle(initial = false): [boolean, () => void, (value: boolea
     setState(prev => !prev);
   }, []);
 
-  const set = useCallback((value: boolean) => {
+  const set = useCallback((_value: boolean) => {
     setState(value);
   }, []);
 

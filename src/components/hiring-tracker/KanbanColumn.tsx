@@ -35,7 +35,7 @@ export function KanbanColumn({
         return "success";
       case "rejected":
         return "destructive";
-      default:
+      _default:
         return "default";
     }
   };

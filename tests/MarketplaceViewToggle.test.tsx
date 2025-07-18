@@ -33,7 +33,7 @@ jest.mock('@/utils/generateRandomListing', () => ({
 
 test('toggling view updates container class', () => {
   jest.useFakeTimers();
-  const { getByTestId } = render(
+  const { _getByTestId } = render(
     <MemoryRouter>
       <Marketplace />
     </MemoryRouter>

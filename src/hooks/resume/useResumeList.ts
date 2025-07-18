@@ -7,7 +7,7 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useResumeList() {
 
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [resumes, setResumes] = useState<ResumeBasicInfo[]>([]);

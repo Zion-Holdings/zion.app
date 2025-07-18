@@ -13,7 +13,7 @@ serve(async (req) => {
   }
 
   try {
-    const { id } = await req.json(); // Expecting ID in the request body
+    const { _id } = await req.json(); // Expecting ID in the request body
 
     if (!id) {
       return new Response(
@@ -61,7 +61,7 @@ serve(async (req) => {
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
 
-  } catch (error) {
+  } catch (_error) {
     console.error("Error in get-shared-whitepaper function:", error);
     return new Response(
       JSON.stringify({ error: error.message }),

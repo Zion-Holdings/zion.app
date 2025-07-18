@@ -20,7 +20,7 @@ import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 export default function AccountSettings() {
 
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [displayWeb3, setDisplayWeb3] = useLocalStorage('display_web3', false);
   const [didHandle, setDidHandle] = useLocalStorage('did_handle', '');
   const [enableBackup, setEnableBackup] = useLocalStorage('enable_backup', false);
@@ -37,7 +37,7 @@ export default function AccountSettings() {
         setEnableBackup(enableBackup);
         logInfo('Saved settings', { displayWeb3, didHandle, enableBackup });
         toast.success('Account settings updated successfully');
-      } catch (e) {
+      } catch (_e) {
         logErrorToProduction('Failed to save settings', { data:  e });
         toast.error('Failed to save settings');
       } finally {
@@ -74,18 +74,18 @@ export default function AccountSettings() {
       try {
         const ethers = (window as unknown as { ethers?: unknown }).ethers;
         if (ethers && typeof ethers === 'object' && 'providers' in ethers && typeof (ethers as { providers: unknown }).providers === 'object') {
-          const Web3Provider = (ethers as { providers: { Web3Provider: new (eth: unknown) => { lookupAddress: (address: string) => Promise<string | null> } } }).providers.Web3Provider;
+          const Web3Provider = (ethers as { _providers: { Web3Provider: new (eth: unknown) => { lookupAddress: (address: string) => Promise<string | null> } } }).providers.Web3Provider;
           const provider = new Web3Provider(ethereum);
           const ensName = await provider.lookupAddress(address);
           if (ensName) {
             setDidHandle(ensName);
           }
         }
-      } catch (error) {
+      } catch (_error) {
         logErrorToProduction('ENS lookup error:', { data: error });
       }
       toast.success(`Wallet connected: ${address.slice(0, 6)}...${address.slice(-4)}`);
-    } catch (error) {
+    } catch (_error) {
       if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
         toast.error((error as { message: string }).message);
       } else {

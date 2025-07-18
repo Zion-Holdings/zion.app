@@ -35,7 +35,7 @@ export default function WorkFuturesSimulator() {
   const [output, setOutput] = useState('');
   const [workIndex, setWorkIndex] = useState<number | null>(null);
   const networkCanvas = useRef<HTMLCanvasElement | null>(null);
-  const { toast } = useToast();
+  const { _toast } = useToast();
 
   const runSimulation = async () => {
     toast({ title: 'Running ZionGPT simulation...' });
@@ -45,7 +45,7 @@ export default function WorkFuturesSimulator() {
       setOutput(result);
       // Reactivate: Mock decentralized work index calculation
       setWorkIndex(Math.floor(Math.random() * 41) + 60); // 60-100
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction(err instanceof Error ? err.message : String(err), err instanceof Error ? err : undefined, { context: 'WorkFuturesSimulator.runSimulation' });
       const suggestion = await suggestFix(err instanceof Error ? err : new Error(String(err)));
       setOutput(suggestion);
@@ -111,7 +111,7 @@ export default function WorkFuturesSimulator() {
           }
         });
       });
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction(err instanceof Error ? err.message : String(err), err instanceof Error ? err : undefined, { context: 'WorkFuturesSimulator.useEffect' });
     }
   }, [output]);
@@ -128,7 +128,7 @@ export default function WorkFuturesSimulator() {
   };
 
   const exportPDF = async () => {
-    const { jsPDF } = await import('jspdf');
+    const { _jsPDF } = await import('jspdf');
     const doc = new jsPDF();
     doc.text('Zion Work Futures Simulation', 10, 10);
     doc.text(`Scenario: ${scenario}`, 10, 20);

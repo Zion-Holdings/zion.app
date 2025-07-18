@@ -15,7 +15,7 @@ const listings = [
 
 test('spinner disappears after loading', async () => {
   vi.useFakeTimers();
-  const { container } = render(
+  const { _container } = render(
     <MemoryRouter>
       <CategoryListingPage
         title="t"

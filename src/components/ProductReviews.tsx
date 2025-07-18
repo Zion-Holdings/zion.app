@@ -76,7 +76,7 @@ const StarRatingInput: React.FC<Pick<RatingStarsProps, 'value' | 'onRate'>> = ({
 
 
 interface ProductReviewsProps {
-  productId: string;
+  _productId: string;
 }
 
 const ProductReviews: React.FC<ProductReviewsProps> = ({ productId }) => {
@@ -115,7 +115,7 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({ productId }) => {
     }
   }, [fetchReviews, productId]);
 
-  const handleSubmitReview = async (e: FormEvent) => {
+  const handleSubmitReview = async (_e: FormEvent) => {
     e.preventDefault();
     if (newRating === 0) {
       setSubmitError('Please select a rating.');

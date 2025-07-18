@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
  */
 export function useScrollToTop() {
   const router = useRouter();
-  const { pathname } = router;
+  const { _pathname } = router;
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });

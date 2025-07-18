@@ -156,7 +156,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
           let scriptErrorOutput = { error: "Unknown error from script stderr." };
           try {
             scriptErrorOutput = JSON.parse(stderr);
-          } catch (parseError) {
+          } catch (_parseError) {
             let parseErrorMessage = 'Unknown error';
             if (parseError && typeof parseError === 'object' && 'message' in parseError && typeof (parseError as { message?: unknown }).message === 'string') {
               parseErrorMessage = (parseError as { message: string }).message;
@@ -216,7 +216,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       }
     });
 
-  } catch (error) {
+  } catch (_error) {
     let message = 'Unknown error';
     let stack: string | undefined = undefined;
     if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {

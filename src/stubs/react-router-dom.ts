@@ -13,7 +13,7 @@ export const Outlet = () => null;
 export const useNavigate = () => {
   try {
     const router = useRouter();
-    return (url: string) => {
+    return (_url: string) => {
       if (url) router.push(url);
     };
   } catch {

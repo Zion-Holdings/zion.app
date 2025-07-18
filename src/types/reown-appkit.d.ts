@@ -12,7 +12,7 @@ declare module '@reown/appkit/react' {
     open: () => Promise<void>;
     close: () => Promise<void>;
     disconnect: () => Promise<void>;
-    getState: () => { isConnected?: boolean; [key: string]: unknown }; // Allow other state properties
+    _getState: () => { isConnected?: boolean; [key: string]: unknown }; // Allow other state properties
     getAddress: () => string | null | undefined;
     getChainId: () => string | number | null | undefined; // Can be string or number
     getWalletProvider: () => unknown; // The provider can be of various types

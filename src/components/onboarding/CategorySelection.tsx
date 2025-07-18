@@ -10,7 +10,7 @@ interface CategorySelectionProps {
 export function CategorySelection({ onComplete }: CategorySelectionProps) {
   const [selected, setSelected] = useState<string[]>([]);
 
-  const toggle = (id: string) => {
+  const toggle = (_id: string) => {
     setSelected(prev =>
       prev.includes(id) ? prev.filter(c => c !== id) : [...prev, id]
     );

@@ -17,7 +17,7 @@ const corsHeaders = {
 };
 
 interface EmailData {
-  user_id: string;
+  _user_id: string;
   email_type: string;
   display_name: string;
   user_type: string;
@@ -126,7 +126,7 @@ serve(async (req) => {
         status: 200,
       }
     );
-  } catch (error) {
+  } catch (_error) {
     console.error("Error in send-retention-email function:", error);
 
     return new Response(

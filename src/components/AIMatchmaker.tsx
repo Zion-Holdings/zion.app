@@ -55,7 +55,7 @@ export function AIMatchmaker({ serviceType = "", onMatchSelect, className }: AIM
         title: "Matches Found",
         description: `Found ${results.length} matches based on your description.`,
       });
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error during AI matching:', { data: error });
       toast({
         title: "Matching Error",
@@ -69,7 +69,7 @@ export function AIMatchmaker({ serviceType = "", onMatchSelect, className }: AIM
     }
   };
   
-  const handleItemSelect = (item: unknown) => {
+  const handleItemSelect = (_item: unknown) => {
     if (onMatchSelect && typeof item === 'object' && item !== null) {
       // Find the corresponding match from matches array
       const match = matches.find(m => m.item === item);

@@ -10,7 +10,7 @@ async function handler(
   try {
     // This will intentionally throw an error
     throw new Error('Sentry Test API Error');
-  } catch (error) {
+  } catch (_error) {
     // Capture the error with Sentry
     Sentry.captureException(error);
     // Respond with an error status and consistent message

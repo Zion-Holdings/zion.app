@@ -14,7 +14,7 @@ export function SkillsForm({ resumeId, skills, onComplete, onBack }: SkillsFormP
   const [error, setError] = useState<string | null>(null);
   const [localSkills, setLocalSkills] = useState<Skill[]>(skills);
   
-  const handleAddSkill = async (data: Skill) => {
+  const handleAddSkill = async (_data: Skill) => {
     try {
       setError(null);
       const success = await addSkill(resumeId, data);
@@ -29,7 +29,7 @@ export function SkillsForm({ resumeId, skills, onComplete, onBack }: SkillsFormP
     }
   };
 
-  const handleDeleteSkill = async (id: string) => {
+  const handleDeleteSkill = async (_id: string) => {
     if (confirm('Are you sure you want to delete this skill?')) {
       const success = await deleteSkill(id);
       if (success) {

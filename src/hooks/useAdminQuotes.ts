@@ -6,7 +6,7 @@ import { useToast } from '@/components/ui/use-toast';
 import type { DateRange } from 'react-day-picker';
 
 export const useAdminQuotes = () => {
-  const { toast } = useToast();
+  const { _toast } = useToast();
   const queryClient = useQueryClient();
   const [statusFilter, setStatusFilter] = useState<QuoteStatus | 'all'>('all');
   const [archiveFilter, setArchiveFilter] = useState<'active' | 'archived' | 'all'>('active');
@@ -72,14 +72,14 @@ export const useAdminQuotes = () => {
   const updateStatusMutation = useMutation({
     mutationFn: ({ id, status }: { id: string; status: QuoteStatus }) => 
       quoteRequestService.updateStatus(id, status),
-    onSuccess: () => {
+    _onSuccess: () => {
       toast({
         title: "Status updated",
         description: "The quote request status has been updated"
       });
       queryClient.invalidateQueries({ queryKey: ['quotes', 'admin'] });
     },
-    onError: (error: Error) => {
+    _onError: (error: Error) => {
       toast({
         title: "Error",
         description: "Failed to update status: " + error.message,
@@ -101,7 +101,7 @@ export const useAdminQuotes = () => {
       });
       queryClient.invalidateQueries({ queryKey: ['quotes', 'admin'] });
     },
-    onError: (error: Error) => {
+    _onError: (error: Error) => {
       toast({
         title: "Error",
         description: "Failed to update quote: " + error.message,
@@ -113,14 +113,14 @@ export const useAdminQuotes = () => {
   // Delete mutation
   const deleteMutation = useMutation({
     mutationFn: (id: string) => quoteRequestService.delete(id),
-    onSuccess: () => {
+    _onSuccess: () => {
       toast({
         title: "Quote deleted",
         description: "The quote request has been permanently deleted"
       });
       queryClient.invalidateQueries({ queryKey: ['quotes', 'admin'] });
     },
-    onError: (error: Error) => {
+    _onError: (error: Error) => {
       toast({
         title: "Error",
         description: "Failed to delete quote: " + error.message,

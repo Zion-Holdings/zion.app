@@ -24,7 +24,7 @@ interface CategoryType {
 }
 
 // Default static categories with translation keys
-const getDefaultCategories = (t: unknown) => {
+const getDefaultCategories = (_t: unknown) => {
   const translate = typeof t === 'function' ? t : (x: string) => x;
   return [
     {
@@ -69,7 +69,7 @@ const getIcon = (iconName?: string) => {
     case "Users": return <Users className="w-10 h-10" />;
     case "HardDrive": return <HardDrive className="w-10 h-10" />;
     case "Lightbulb": return <Lightbulb className="w-10 h-10" />;
-    default: return <HelpCircle className="w-10 h-10" />; // Default icon
+    _default: return <HelpCircle className="w-10 h-10" />; // Default icon
   }
 };
 
@@ -96,7 +96,7 @@ export function CategoriesSection({
   style,
   categories: fetchedCategories, // Rename prop for clarity
 }: CategoriesSectionProps) {
-  const { t } = useTranslation();
+  cons_t { t } = useTranslation();
   const defaultCategories = getDefaultCategories(t);
   
   // Use fetchedCategories if provided, otherwise fallback to defaultCategories

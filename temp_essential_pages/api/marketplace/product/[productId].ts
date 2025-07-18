@@ -21,7 +21,7 @@ async function handler(
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  const { productId } = req.query as { productId: string | string[] };
+  const { _productId } = req.query as { productId: string | string[] };
 
   if (!productId || typeof productId !== 'string') {
     return res.status(400).json({ error: 'Product ID is required and must be a string.' });
@@ -53,7 +53,7 @@ async function handler(
     };
 
     return res.status(200).json(result);
-  } catch (e) {
+  } catch (_e) {
     console.error(`Error fetching product ${productId}:`, e);
     // More specific error checking can be done here (e.g., Prisma known errors)
     return res.status(500).json({ error: 'Internal server error while fetching product details.' });

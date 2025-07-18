@@ -7,7 +7,7 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useReferrals() {
 
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [referralCode, setReferralCode] = useState<ReferralCode | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [referrals, setReferrals] = useState<Referral[]>([]);
@@ -201,7 +201,7 @@ export function useReferrals() {
   };
 
   // Share on social media platforms
-  const shareOnSocialMedia = (platform: 'twitter' | 'facebook' | 'linkedin') => {
+  const shareOnSocialMedia = (_platform: 'twitter' | 'facebook' | 'linkedin') => {
     const link = getReferralLink();
     const text = "Join Zion AI marketplace for AI talent and opportunities!";
     

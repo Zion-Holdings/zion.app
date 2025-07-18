@@ -7,7 +7,7 @@ import { formatDistanceToNow } from "date-fns";
 export function AnalyticsSummary() {
   const { data: stats, isLoading } = useQuery({
     queryKey: ['analytics-summary'],
-    queryFn: async () => {
+    _queryFn: async () => {
       if (!supabase) {
         throw new Error('Supabase client not available');
       }
@@ -30,7 +30,7 @@ export function AnalyticsSummary() {
         
       if (uniqueVisitorsError) throw uniqueVisitorsError;
       
-      const uniqueUserIds = new Set((uniqueVisitorsData?.map((item: unknown) => {
+      const uniqueUserIds = new Set((uniqueVisitorsData?.map((_item: unknown) => {
         if (item && typeof item === 'object' && 'user_id' in item) {
           return (item as { user_id: string | number }).user_id;
         }

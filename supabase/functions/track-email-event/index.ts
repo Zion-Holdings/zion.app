@@ -70,7 +70,7 @@ serve(async (req) => {
       JSON.stringify({ error: "Invalid event type" }),
       { status: 400, headers: { "Content-Type": "application/json" } }
     );
-  } catch (error) {
+  } catch (_error) {
     console.error("Error tracking email event:", error);
     
     // If it was a click event, still try to redirect the user

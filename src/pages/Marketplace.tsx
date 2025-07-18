@@ -241,8 +241,8 @@ const FilterControls: React.FC<{
  */
 export default function Marketplace() {
   const router = useRouter();
-  const { t } = useTranslation();
-  const { toast } = useToast();
+  cons_t { t } = useTranslation();
+  const { _toast } = useToast();
   const { isAuthenticated, user } = useAuth();
   const firstRenderRef = useRef(true);
   const isRefreshingAfterFilterChange = useRef(false); // New ref to track refresh state
@@ -280,7 +280,7 @@ export default function Marketplace() {
   }, [isAuthenticated, user, router, toast]);
 
   // Fetch function for infinite scroll with AI product generation
-  const _fetchProducts = useCallback(async (page: number, limit: number) => {
+  const _fetchProducts = useCallback(async (page: number, _limit: number) => {
     try {
       const params = {
         page,
@@ -312,7 +312,7 @@ export default function Marketplace() {
         );
       });
       return { items, hasMore, total };
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Marketplace.tsx: Error fetching products from API', { data: error });
       return { items: [], hasMore: false, total: 0 };
     }
@@ -566,7 +566,7 @@ export default function Marketplace() {
                   }
                   try {
                     await router.push(`/checkout/${product.id}`);
-                  } catch (error) {
+                  } catch (_error) {
                     logErrorToProduction('Failed to navigate to checkout:', { data: error });
                     toast({
                       title: "Navigation Error",

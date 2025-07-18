@@ -11,7 +11,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+const { _execSync } = require('child_process');
 
 // Configuration
 const SRC_DIR = path.join(process.cwd(), 'src');
@@ -148,18 +148,18 @@ function optimizeFile(filePath) {
     }
     
     return false;
-  } catch (error) {
+  } catch (_error) {
     console.error(`❌ Error processing ${filePath}:`, error.message);
     return false;
   }
 }
 
 function main() {
-  console.log('🚀 Starting icon import optimization...\n');
+  console.warn('🚀 Starting icon import optimization...\n');
   
   // Find all files to process
   const files = findFiles(SRC_DIR);
-  console.log(`📁 Found ${files.length} files to process\n`);
+  console.warn(`📁 Found ${files.length} files to process\n`);
   
   let optimizedCount = 0;
   let errorCount = 0;
@@ -171,26 +171,26 @@ function main() {
       const wasOptimized = optimizeFile(file);
       
       if (wasOptimized) {
-        console.log(`✅ Optimized: ${relativePath}`);
+        console.warn(`✅ Optimized: ${relativePath}`);
         optimizedCount++;
       }
-    } catch (error) {
+    } catch (_error) {
       console.error(`❌ Error: ${file}`, error.message);
       errorCount++;
     }
   }
   
-  console.log('\n📊 Optimization Summary:');
-  console.log(`✅ Files optimized: ${optimizedCount}`);
-  console.log(`❌ Errors: ${errorCount}`);
-  console.log(`📁 Total files processed: ${files.length}`);
+  console.warn('\n📊 Optimization Summary:');
+  console.warn(`✅ Files optimized: ${optimizedCount}`);
+  console.warn(`❌ Errors: ${errorCount}`);
+  console.warn(`📁 Total files processed: ${files.length}`);
   
   if (optimizedCount > 0) {
-    console.log('\n🎯 Expected bundle size reduction: 60-80% from lucide-react');
-    console.log('💡 Run "npm run build:analyze" to verify bundle size improvements');
+    console.warn('\n🎯 Expected bundle size reduction: 60-80% from lucide-react');
+    console.warn('💡 Run "npm run build:analyze" to verify bundle size improvements');
   }
   
-  console.log('\n✨ Icon import optimization complete!');
+  console.warn('\n✨ Icon import optimization complete!');
 }
 
 // Run the script

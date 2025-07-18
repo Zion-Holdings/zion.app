@@ -5,7 +5,7 @@ interface InputFieldsProps {
   onSubmit: (data: Record<string, unknown>) => void;
 }
 
-const InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
+const _InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
     companyMission: '',
     currentFundingStage: '',
@@ -21,12 +21,12 @@ const InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
   const [logoPreview, setLogoPreview] = useState<string | null>(null);
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (_e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileChange = (_e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, files } = e.target;
     if (files && files.length > 0) {
       const file = files[0];
@@ -69,7 +69,7 @@ const InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (_e: React.FormEvent) => {
     e.preventDefault();
     if (validate()) {
       // Note: Object URLs are not explicitly revoked here before submit

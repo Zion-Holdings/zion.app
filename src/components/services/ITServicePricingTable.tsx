@@ -45,7 +45,7 @@ export function ITServicePricingTable() {
     return filteredData;
   }, [searchQuery, sortConfig]);
 
-  const handleSort = (key: keyof CountryPricing) => {
+  const handleSort = (_key: keyof CountryPricing) => {
     setSortConfig({
       key,
       direction: 

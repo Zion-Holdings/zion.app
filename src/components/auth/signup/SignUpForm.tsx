@@ -17,7 +17,7 @@ export function SignUpForm({ onSignInClick }: SignUpFormProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSignUp = async (e: FormEvent) => {
+  const handleSignUp = async (_e: FormEvent) => {
     e.preventDefault();
     setError(null);
     setIsSuccess(false);

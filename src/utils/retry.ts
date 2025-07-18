@@ -9,7 +9,7 @@ export async function retry<T>(fn: () => Promise<T>, options: RetryOptions = {})
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
       return await fn();
-    } catch (err) {
+    } catch (_err) {
       if (attempt >= retries) {
         throw err;
       }
@@ -31,7 +31,7 @@ export async function withRetry<T>(
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
       return await operation();
-    } catch (error) {
+    } catch (_error) {
       if (attempt >= retries) {
         throw error;
       }

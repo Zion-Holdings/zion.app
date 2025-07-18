@@ -71,7 +71,7 @@ Format the response as a JSON object with the following structure:
       
       const jsonString = jsonMatch[1].trim();
       parsedResponse = JSON.parse(jsonString);
-    } catch (error) {
+    } catch (_error) {
       console.error("Failed to parse AI response as JSON:", error);
       console.warn("Raw response:", responseText);
       
@@ -92,7 +92,7 @@ Format the response as a JSON object with the following structure:
         headers: { ...corsHeaders, "Content-Type": "application/json" } 
       }
     );
-  } catch (error) {
+  } catch (_error) {
     console.error("Error in AI listing generator:", error);
     
     return new Response(

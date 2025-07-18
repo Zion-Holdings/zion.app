@@ -60,7 +60,7 @@ export function AIMilestoneGenerator({
     await generateMilestones(input);
     // Initially select all milestones
     const initialSelection: Record<number, boolean> = {};
-    generatedMilestones.forEach((_, index: number) => {
+    generatedMilestones.forEach((_, _index: number) => {
       initialSelection[index] = true;
     });
     setSelectedMilestones(initialSelection);
@@ -76,18 +76,18 @@ export function AIMilestoneGenerator({
     setSelectedMilestones({});
   };
 
-  const toggleMilestoneSelection = (index: number) => {
+  const toggleMilestoneSelection = (_index: number) => {
     setSelectedMilestones((prev) => ({
       ...prev,
       [index]: !prev[index],
     }));
   };
 
-  const handleAddSingleMilestone = (milestone: GeneratedMilestone) => {
+  const handleAddSingleMilestone = (_milestone: GeneratedMilestone) => {
     onAddMilestone(milestone);
   };
 
-  const formatDate = (dateString: string) => {
+  const formatDate = (_dateString: string) => {
     try {
       return format(parseISO(dateString), 'MMM dd, yyyy');
     } catch {
@@ -153,7 +153,7 @@ export function AIMilestoneGenerator({
                         onChange={() => toggleMilestoneSelection(index)}
                         className="mr-2 w-4 h-4 rounded text-primary"
                       />
-                      <AccordionTrigger className="hover:no-underline flex-1 text-left">
+                      <AccordionTrigger className="_hover:no-underline flex-1 text-left">
                         <div className="flex items-center">
                           <span className="font-medium">{milestone.title}</span>
                           <Badge

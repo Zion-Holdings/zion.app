@@ -6,7 +6,7 @@ import type { GetStaticPaths, GetStaticProps } from 'next';
 import type { ParsedUrlQuery } from 'querystring';
 
 interface DocProps {
-  content: string | null;
+  _content: string | null;
 }
 
 interface DocPageParams extends ParsedUrlQuery {
@@ -26,7 +26,7 @@ const Doc: React.FC<DocProps> = ({ content }) => {
 
 const docsDir = path.join(process.cwd(), 'content', 'docs');
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const _getStaticPaths: GetStaticPaths = async () => {
   const paths: { params: DocPageParams }[] = [];
   if (fs.existsSync(docsDir)) {
     for (const file of fs.readdirSync(docsDir)) {
@@ -42,7 +42,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: 'blocking' };
 };
 
-export const getStaticProps: GetStaticProps<DocProps, DocPageParams> = async ({ params }: { params: DocPageParams }) => {
+export const getStaticProps: GetStaticProps<DocProps, DocPageParams> = async ({ params }: { _params: DocPageParams }) => {
   const slugParts = params?.slug ?? [];
   const filePath = path.join(docsDir, `${slugParts.join('/')}.md`);
 

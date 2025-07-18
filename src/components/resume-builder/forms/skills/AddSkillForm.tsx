@@ -16,7 +16,7 @@ export const AddSkillForm = ({ _resumeId, onAddSkill }: AddSkillFormProps) => {
   const [skillCategory, setSkillCategory] = useState('');
   const [proficiency, setProficiency] = useState<number>(3);
   
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (_e: React.FormEvent) => {
     e.preventDefault();
     
     if (!skillName.trim()) return;
@@ -34,7 +34,7 @@ export const AddSkillForm = ({ _resumeId, onAddSkill }: AddSkillFormProps) => {
     }
   };
   
-  const handleEnhanceSkill = (enhancedCategory: string) => {
+  const handleEnhanceSkill = (_enhancedCategory: string) => {
     setSkillCategory(enhancedCategory);
   };
   

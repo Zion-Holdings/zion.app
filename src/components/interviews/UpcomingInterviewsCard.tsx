@@ -14,7 +14,7 @@ import Link from 'next/link';
 
 export function UpcomingInterviewsCard() {
 
-  const { fetchInterviews } = useInterviews();
+  const { _fetchInterviews } = useInterviews();
   const [upcomingInterviews] = useState<Interview[]>([]);
   const [isLoading] = useState(true);
 

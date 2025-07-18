@@ -56,14 +56,14 @@ export function ZionGPTModelManager() {
         trainingStatus: (model.training_status as 'queued' | 'running' | 'succeeded' | 'failed'),
         errorMessage: (model.error_message as string) ?? ''
       }) as ModelVersionData));
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error fetching models:', { data: error });
     } finally {
       setIsLoading(false);
     }
   };
 
-  const checkTrainingStatus = async (modelId: string) => {
+  const checkTrainingStatus = async (_modelId: string) => {
     try {
       if (!supabase) {
         throw new Error('Supabase client not available');
@@ -102,14 +102,14 @@ export function ZionGPTModelManager() {
         })
         .eq('id', modelId);
       
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error checking status for model ${modelId}:', { data: error });
     } finally {
       setActiveJobs(prev => ({ ...prev, [modelId]: false }));
     }
   };
 
-  const toggleModelActive = async (modelId: string, currentActive: boolean, purpose: string) => {
+  const toggleModelActive = async (modelId: string, currentActive: boolean, _purpose: string) => {
     try {
       if (!supabase) {
         throw new Error('Supabase client not available');
@@ -131,7 +131,7 @@ export function ZionGPTModelManager() {
       
       // Refresh the model list
       fetchModels();
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error toggling model active state:', { data: error });
     }
   };

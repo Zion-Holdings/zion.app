@@ -16,7 +16,7 @@ export default function IntegrationsFeature() {
     "url": "https://app.ziontechgroup.com/features/integrations"
   };
 
-  const { markSlackConnected } = useAdvancedOnboardingStatus();
+  const { _markSlackConnected } = useAdvancedOnboardingStatus();
 
   useEffect(() => {
     markSlackConnected();

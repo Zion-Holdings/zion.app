@@ -16,7 +16,7 @@ export function formatDate(date: Date | string | undefined): string {
       day: 'numeric',
       year: 'numeric',
     }).format(d);
-  } catch (e) {
+  } catch (_e) {
     logErrorToProduction('Error formatting date:', { data:  e });
     return '-';
   }
@@ -69,7 +69,7 @@ export async function trackReferral(userId: string, email: string): Promise<bool
       safeStorage.removeItem('referral_code');
       return true;
     }
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction('Error tracking referral:', { data: error });
   }
   return false;

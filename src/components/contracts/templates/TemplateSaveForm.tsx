@@ -45,7 +45,7 @@ export function TemplateSaveForm({
     },
   });
   
-  const onSubmit = async (values: FormValues) => {
+  const onSubmit = async (_values: FormValues) => {
     if (!currentValues && !editTemplate) {
       return;
     }

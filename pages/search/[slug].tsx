@@ -218,7 +218,7 @@ export default function SearchResultsPage({
   totalCount,
 }: SearchResultsPageProps) {
   const router = useRouter();
-  const { isAuthenticated } = useAuth();
+  const { _isAuthenticated } = useAuth();
   const [results, setResults] = useState<SearchResult[]>(initialResults);
   const [_loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState(query);
@@ -265,7 +265,7 @@ export default function SearchResultsPage({
       } else {
         setResults((prev) => [...prev, ...(data.results || [])]);
       }
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error fetching search results:', { data: error });
       const offline = offlineSearch(searchTerm, page, 12, {
         sortBy,
@@ -286,7 +286,7 @@ export default function SearchResultsPage({
   }, [sortBy, categoryFilter, minPrice, maxPrice, minRating]);
 
   // Handle search input change
-  const _handleSearch = (newQuery: string) => {
+  const _handleSearch = (_newQuery: string) => {
     setSearchQuery(newQuery);
     if (newQuery.trim()) {
       router.push(`/search?q=${encodeURIComponent(newQuery)}`, undefined, {
@@ -352,7 +352,7 @@ export default function SearchResultsPage({
     {} as Record<string, SearchResult[]>,
   );
 
-  const _renderResultCard = (result: SearchResult) => {
+  const _renderResultCard = (_result: SearchResult) => {
     switch (result.type) {
       case 'product':
       case 'equipment':
@@ -397,7 +397,7 @@ export default function SearchResultsPage({
                 is_verified: false,
                 availability_type: 'available',
               }}
-              onViewProfile={(id: string) => {
+              onViewProfile={(_id: string) => {
                 router.push(`/talent/${id}`);
               }}
               onRequestHire={(talent) => {

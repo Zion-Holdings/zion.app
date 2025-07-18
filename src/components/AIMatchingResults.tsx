@@ -39,7 +39,7 @@ export function AIMatchingResults({
   };
   
   // Get the icon for a category
-  const getCategoryIcon = (category: string) => {
+  const getCategoryIcon = (_category: string) => {
     const lowerCategory = category.toLowerCase();
     if (lowerCategory.includes("talent")) return User;
     if (lowerCategory.includes("equipment")) return Monitor;

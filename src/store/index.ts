@@ -58,7 +58,7 @@ store.subscribe(() => {
         safeStorage.removeItem('ztg_token');
       }
     }
-  } catch (error) {
+  } catch (_error) {
     logWarn('Store subscription error (throttled):', { data:  { data: error } });
   }
 });

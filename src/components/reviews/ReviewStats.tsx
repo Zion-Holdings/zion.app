@@ -15,7 +15,7 @@ export function ReviewStats({ averageRating, totalReviews, ratingDistribution }:
   const formattedRating = averageRating.toFixed(1);
   
   // Calculate percentages for distribution if available
-  const getPercentage = (count: number) => {
+  const getPercentage = (_count: number) => {
     if (totalReviews === 0) return 0;
     return (count / totalReviews) * 100;
   };

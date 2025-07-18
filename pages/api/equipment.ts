@@ -53,7 +53,7 @@ export default async function handler(
     logInfo(`Equipment API: returning ${paginatedEquipment.length} items`);
     
     return res.status(200).json(paginatedEquipment);
-  } catch (error) {
+  } catch (_error) {
     clearTimeout(timeout);
     logErrorToProduction('Equipment API error:', { data: error });
     return res.status(500).json({ 

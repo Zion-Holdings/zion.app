@@ -13,7 +13,7 @@ async function getCsrfToken() {
     if (!response.ok) return null;
     const data = await response.json();
     return data.csrfToken;
-  } catch (error) {
+  } catch (_error) {
     console.error('Error fetching CSRF token:', error);
     return null;
   }
@@ -202,7 +202,7 @@ async function loginWithWallet(walletProvider) {
       throw new Error('Wallet login succeeded but session data could not be retrieved.');
     }
 
-  } catch (error) {
+  } catch (_error) {
     console.error('loginWithWallet error:', error);
     // More specific error handling can be added here
     if (error.code === 4001) { // Standard EIP-1193 user rejected request error
@@ -271,7 +271,7 @@ async function getUser() {
         return null;
     }
     return session; // session object contains { user: { name, email, image }, expires: "..." }
-  } catch (error) {
+  } catch (_error) {
     console.error('Error fetching user session:', error);
     throw error; // Re-throw for consumer to handle
   }
@@ -311,7 +311,7 @@ function onAuthStateChanged(callback) {
           currentUserState = newUserState;
           authListeners.forEach(listener => listener(currentUserState));
         }
-      } catch (error) {
+      } catch (_error) {
         // If fetching session fails (e.g. network error), notify listeners with null
         // or maintain last known state, depending on desired behavior.
         // For now, assume error means user is logged out or session is inaccessible.

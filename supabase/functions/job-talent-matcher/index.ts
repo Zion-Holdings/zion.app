@@ -20,7 +20,7 @@ serve(async (req) => {
   }
 
   try {
-    const { jobId } = await req.json();
+    const { _jobId } = await req.json();
     
     if (!jobId) {
       throw new Error("Job ID is required");
@@ -68,7 +68,7 @@ serve(async (req) => {
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
     
-  } catch (error) {
+  } catch (_error) {
     console.error("Error in job-talent-matcher:", error);
     
     return new Response(

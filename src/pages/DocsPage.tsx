@@ -18,7 +18,7 @@ const NAV_ITEMS = [
   { title: 'Legal + Manifestos', slug: 'legal' },
 ];
 
-const DocsPage: React.FC<DocsPageProps> = ({ content }) => {
+const _DocsPage: React.FC<DocsPageProps> = ({ content }) => {
   if (!content) {
     // Handle missing content, e.g. when used in src/routes/config.tsx
     return (

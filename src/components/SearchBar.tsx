@@ -77,7 +77,7 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
     setHighlightedIndex(-1);
   });
 
-  const handleSelect = (suggestion: SearchSuggestion) => {
+  const handleSelect = (_suggestion: SearchSuggestion) => {
     onChange(suggestion.text);
     if (onSelectSuggestion) onSelectSuggestion(suggestion);
 
@@ -122,7 +122,7 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
             }
           }}
           placeholder={placeholder}
-          className="pl-10 bg-zion-blue border border-zion-blue-light text-white placeholder:text-zion-slate"
+          className="pl-10 bg-zion-blue border border-zion-blue-light text-white _placeholder:text-zion-slate"
           aria-autocomplete="list"
           aria-activedescendant={highlightedIndex !== -1 ? `suggestion-item-${highlightedIndex}` : undefined}
           autoComplete="search"

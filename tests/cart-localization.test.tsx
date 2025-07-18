@@ -123,7 +123,7 @@ describe('Cart Localization Fixes (Issue #19)', () => {
   });
 
   test('Alt text changes when language is switched', () => {
-    const { rerender } = renderWithProviders(<MockCartPage />, 'en');
+    const { _rerender } = renderWithProviders(<MockCartPage />, 'en');
     
     // English alt text
     expect(screen.getByAltText('Empty shopping cart illustration')).toBeInTheDocument();

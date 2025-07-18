@@ -55,7 +55,7 @@ export default function UserProfile({ onUserChange }: UserProfileProps) {
       return;
     }
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event: AuthChangeEvent, session: Session | null) => {
+      (event: AuthChangeEvent, _session: Session | null) => {
         setUser(session?.user ?? null);
         setLoading(false);
         onUserChange?.(session?.user ?? null);

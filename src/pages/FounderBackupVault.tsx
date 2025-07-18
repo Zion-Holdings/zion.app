@@ -30,7 +30,7 @@ export default function FounderBackupVault() {
   const [encrypted, setEncrypted] = useState<Uint8Array | null>(null);
   const [failCount, setFailCount] = useState(0);
 
-  const handleChange = (field: keyof VaultData) => (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+  const handleChange = (field: keyof VaultData) => (_e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
     setData({ ...data, [field]: e.target.value });
   };
 
@@ -48,7 +48,7 @@ export default function FounderBackupVault() {
       zip.file('vault.enc', encryptedData);
       const blob = await zip.generateAsync({ type: 'blob' });
       saveAs(blob, 'zion_backup.zip');
-    } catch (error) {
+    } catch (_error) {
       console.error('Failed to create ZIP:', error);
       // Fallback: save as encrypted file directly
       const blob = new Blob([encryptedData], { type: 'application/octet-stream' });
@@ -57,7 +57,7 @@ export default function FounderBackupVault() {
   };
 
   const handleExportPdf = async () => {
-    const { jsPDF } = await import('jspdf');
+    const { _jsPDF } = await import('jspdf');
     const doc = new jsPDF();
     doc.text('Zion Backup Checklist', 10, 10);
     const items = [

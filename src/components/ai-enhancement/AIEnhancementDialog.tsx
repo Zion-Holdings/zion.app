@@ -26,7 +26,7 @@ export function AIEnhancementDialog({
   defaultOptions,
   initialContent
 }: AIEnhancementDialogProps) {
-  const handleApply = (content: string) => {
+  const handleApply = (_content: string) => {
     onApply(content);
     onClose();
   };

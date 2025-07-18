@@ -22,7 +22,7 @@ export const AppStoreButtons: React.FC<AppStoreButtonsProps> = ({
   onAppStoreClick,
   onGooglePlayClick
 }) => {
-  const handleAppStoreClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleAppStoreClick = (_e: React.MouseEvent<HTMLAnchorElement>) => {
     if (!appStoreUrl || appStoreUrl === "#") {
       e.preventDefault();
       logInfo("App Store download clicked");
@@ -30,7 +30,7 @@ export const AppStoreButtons: React.FC<AppStoreButtonsProps> = ({
     }
   };
 
-  const handleGooglePlayClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleGooglePlayClick = (_e: React.MouseEvent<HTMLAnchorElement>) => {
     if (!googlePlayUrl || googlePlayUrl === "#") {
       e.preventDefault();
       logInfo("Google Play download clicked");

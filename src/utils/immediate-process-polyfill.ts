@@ -52,22 +52,22 @@ if (_isBrowser && !_isNode) {
     browser: true,
     cwd: () => '/',
     nextTick: (fn: (...args: unknown[]) => void) => setTimeout(fn, 0),
-    exit: (code?: number) => {
+    _exit: (code?: number) => {
       logWarn('process.exit called with code:', { code });
     },
-    on: () => {},
-    once: () => {},
-    emit: () => {},
-    addListener: () => {},
-    removeListener: () => {},
-    removeAllListeners: () => {},
-    setMaxListeners: () => {},
+    _on: () => {},
+    _once: () => {},
+    _emit: () => {},
+    _addListener: () => {},
+    _removeListener: () => {},
+    _removeAllListeners: () => {},
+    _setMaxListeners: () => {},
     getMaxListeners: () => 10,
     listeners: () => [],
     rawListeners: () => [],
     listenerCount: () => 0,
-    prependListener: () => {},
-    prependOnceListener: () => {},
+    _prependListener: () => {},
+    _prependOnceListener: () => {},
     eventNames: () => [],
   };
 
@@ -77,13 +77,13 @@ if (_isBrowser && !_isNode) {
   // bundled by mistake.
   if (typeof (globalThis as unknown as { http?: unknown }).http === 'undefined') {
     (globalThis as unknown as { http: unknown }).http = {
-      request: () => {
+      _request: () => {
         throw new Error('http.request is not available in the browser');
       },
-      get: () => {
+      _get: () => {
         throw new Error('http.get is not available in the browser');
       },
-      createServer: () => {
+      _createServer: () => {
         throw new Error('http.createServer is not available in the browser');
       },
       Server: class {
@@ -114,13 +114,13 @@ if (_isBrowser && !_isNode) {
 
   if (typeof (globalThis as unknown as { https?: unknown }).https === 'undefined') {
     (globalThis as unknown as { https: unknown }).https = {
-      request: () => {
+      _request: () => {
         throw new Error('https.request is not available in the browser');
       },
-      get: () => {
+      _get: () => {
         throw new Error('https.get is not available in the browser');
       },
-      createServer: () => {
+      _createServer: () => {
         throw new Error('https.createServer is not available in the browser');
       },
       Server: class {
@@ -228,7 +228,7 @@ if (_isBrowser && !_isNode) {
             new Promise((resolve, reject) => {
               fn(...args, (err: unknown, res: unknown) => (err ? reject(err) : resolve(res)));
             }),
-      inherits: (ctor: unknown, superCtor: unknown) => {
+      inherits: (ctor: unknown, _superCtor: unknown) => {
         if (superCtor && typeof ctor === 'function' && typeof superCtor === 'function') {
           Object.setPrototypeOf(ctor.prototype, superCtor.prototype);
           Object.setPrototypeOf(ctor, superCtor);

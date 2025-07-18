@@ -36,7 +36,7 @@ const TalentCardComponent = ({
     }
   };
 
-  const handleRequestHire = (e: React.MouseEvent) => {
+  const handleRequestHire = (_e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     if (onRequestHire) {

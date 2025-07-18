@@ -28,7 +28,7 @@ export function JobApplicationsTable({ jobId }: JobApplicationsTableProps) {
   const [selectedApplication, setSelectedApplication] = useState<JobApplication | null>(null);
   const [showScoreDialog, setShowScoreDialog] = useState(false);
   
-  const handleStatusChange = async (applicationId: string, newStatus: string) => {
+  const handleStatusChange = async (applicationId: string, _newStatus: string) => {
     setProcessingId(applicationId);
     try {
       await updateApplicationStatus(applicationId, newStatus as ApplicationStatus);
@@ -42,12 +42,12 @@ export function JobApplicationsTable({ jobId }: JobApplicationsTableProps) {
     }
   };
 
-  const handleViewScore = (application: JobApplication) => {
+  const handleViewScore = (_application: JobApplication) => {
     setSelectedApplication(application);
     setShowScoreDialog(true);
   };
 
-  const handleViewApplication = async (applicationId: string) => {
+  const handleViewApplication = async (_applicationId: string) => {
     await markApplicationAsViewed(applicationId);
   };
 

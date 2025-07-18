@@ -32,7 +32,7 @@ export function ThemeProvider({
     return stored || defaultTheme
   })
 
-  const applyTheme = (t: Theme) => {
+  const applyTheme = (_t: Theme) => {
     const root = window.document.documentElement
     const body = window.document.body
 
@@ -63,7 +63,7 @@ export function ThemeProvider({
     safeStorage.setItem("theme", theme)
   }, [theme])
 
-  const setCurrentTheme = (newTheme: Theme) => {
+  const setCurrentTheme = (_newTheme: Theme) => {
     safeStorage.setItem("theme", newTheme);
     applyTheme(newTheme);
     setTheme(newTheme);

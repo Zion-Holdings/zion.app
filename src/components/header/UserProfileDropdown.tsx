@@ -4,7 +4,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { fireEvent } from '@/lib/analytics';
 
-const UserProfileDropdown: React.FC = () => {
+const _UserProfileDropdown: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { logout, user } = useAuth(); // Destructure user as well, if needed for display or checks
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -27,7 +27,7 @@ const UserProfileDropdown: React.FC = () => {
 
   // Close dropdown when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
+    const handleClickOutside = (_event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsOpen(false);
         fireEvent('profile_dropdown_toggle', { open: false });
@@ -52,7 +52,7 @@ const UserProfileDropdown: React.FC = () => {
   }, [isOpen]);
 
   return (
-    <div style={{ position: 'relative' }} ref={dropdownRef}>
+    <div style={{ _position: 'relative' }} ref={dropdownRef}>
       <button
         ref={buttonRef}
         onClick={toggleDropdown}
@@ -92,7 +92,7 @@ const UserProfileDropdown: React.FC = () => {
         >
           <ul
             ref={menuRef}
-            style={{ listStyle: 'none', margin: 0, padding: '8px 0' }}
+            style={{ listStyle: 'none', margin: 0, _padding: '8px 0' }}
             role="menu"
             aria-label="User menu"
             onKeyDown={(e) => {
@@ -113,7 +113,7 @@ const UserProfileDropdown: React.FC = () => {
               }
             }}
           >
-            <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }} role="none">
+            <li style={{ padding: '8px 16px', _whiteSpace: 'nowrap' }} role="none">
               <Link
                 href="/profile"
                 onClick={() => {
@@ -126,7 +126,7 @@ const UserProfileDropdown: React.FC = () => {
               Profile
               </Link>
             </li>
-            <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }} role="none">
+            <li style={{ padding: '8px 16px', _whiteSpace: 'nowrap' }} role="none">
               <Link
                 href="/orders"
                 onClick={() => {
@@ -139,7 +139,7 @@ const UserProfileDropdown: React.FC = () => {
               Orders
               </Link>
             </li>
-            <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }} role="none">
+            <li style={{ padding: '8px 16px', _whiteSpace: 'nowrap' }} role="none">
               <Link
                 href="/settings"
                 onClick={() => {

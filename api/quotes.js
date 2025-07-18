@@ -1,4 +1,4 @@
-const { withSentry } = require('./withSentry.cjs');
+const { _withSentry } = require('./withSentry.cjs');
 const fs = require('fs');
 
 async function handler(req, res) {
@@ -33,7 +33,7 @@ async function handler(req, res) {
 
     res.statusCode = 200;
     res.json({ success: true });
-  } catch (err) {
+  } catch (_err) {
     console.error('Quote API error:', err);
     res.statusCode = 500;
     res.json({ error: err.message || 'Quote submission failed' });

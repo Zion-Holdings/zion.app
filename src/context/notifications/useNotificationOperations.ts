@@ -26,7 +26,7 @@ export const useNotificationOperations = (
       const axios = createAxiosInstance();
       const res = await axios.get(`/api/notifications`, { params: { userId } });
       setNotifications(res.data || []);
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Error fetching notifications:', { data: err });
     } finally {
       setLoading(false);
@@ -34,14 +34,14 @@ export const useNotificationOperations = (
   }, [userId]);
 
   const markAsRead = useCallback(
-    async (id: string) => {
+    async (_id: string) => {
       if (!userId) return;
 
       try {
         const axios = createAxiosInstance();
         await axios.patch(`/api/notifications/${id}`, { read: true });
         await fetchNotifications();
-      } catch (err) {
+      } catch (_err) {
         logErrorToProduction('Error marking notification as read:', { data: err });
       }
     },
@@ -61,20 +61,20 @@ export const useNotificationOperations = (
           ),
       );
       await fetchNotifications();
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Error marking all notifications as read:', { data: err });
     }
   }, [userId, fetchNotifications, notifications]);
 
   const dismissNotification = useCallback(
-    async (id: string) => {
+    async (_id: string) => {
       if (!userId) return;
 
       try {
         const axios = createAxiosInstance();
         await axios.delete(`/api/notifications/${id}`);
         await fetchNotifications();
-      } catch (err) {
+      } catch (_err) {
         logErrorToProduction('Error dismissing notification:', { data: err });
       }
     },

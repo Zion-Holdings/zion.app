@@ -6,7 +6,7 @@ import { ShieldAlert } from '@/components/ui/icons';
 import { useTranslation } from "react-i18next";
 
 export default function Unauthorized() {
-  const { t } = useTranslation();
+  cons_t { t } = useTranslation();
   return (
     <>
       <Header />

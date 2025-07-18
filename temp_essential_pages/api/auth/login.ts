@@ -4,7 +4,7 @@ import * as Sentry from '@sentry/nextjs';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { ENV_CONFIG } from '@/utils/environmentConfig';
 
-// 🔐 SECURITY: Development users from environment variables
+// 🔐 _SECURITY: Development users from environment variables
 const getDevUsers = () => {
   // Only load development users in development mode
   if (process.env.NODE_ENV !== 'development') {
@@ -157,7 +157,7 @@ async function handler(
       message: 'Authentication successful'
     });
 
-  } catch (error) {
+  } catch (_error) {
     if (isDevelopment) {
       console.error('🔧 LOGIN TRACE: Unexpected error during authentication:', error);
     }

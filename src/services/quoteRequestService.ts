@@ -4,7 +4,7 @@ import type { QuoteRequest, QuoteStatus } from '@/types/quotes';
 
 export const quoteRequestService = {
   // Get all quote requests (for admin)
-  getAll: async () => {
+  _getAll: async () => {
     if (!supabase) throw new Error('Supabase client not initialized');
     const { data, error } = await supabase
       .from('quote_requests')
@@ -26,7 +26,7 @@ export const quoteRequestService = {
   },
   
   // Get quote requests for a specific talent
-  getByTalentId: async (talentId: string) => {
+  _getByTalentId: async (talentId: string) => {
     if (!supabase) throw new Error('Supabase client not initialized');
     const { data, error } = await supabase
       .from('quote_requests')
@@ -39,7 +39,7 @@ export const quoteRequestService = {
   },
   
   // Get a single quote request by id
-  getById: async (id: string) => {
+  _getById: async (id: string) => {
     if (!supabase) throw new Error('Supabase client not initialized');
     const { data, error } = await supabase
       .from('quote_requests')
@@ -61,7 +61,7 @@ export const quoteRequestService = {
   },
   
   // Update quote request status
-  updateStatus: async (id: string, status: QuoteStatus) => {
+  updateStatus: async (id: string, _status: QuoteStatus) => {
     if (!supabase) throw new Error('Supabase client not initialized');
     const updates: Record<string, unknown> = { status };
     
@@ -72,7 +72,7 @@ export const quoteRequestService = {
     
     // If marking as in_review and viewed_at is null, set viewed_at
     if (status === 'in_review') {
-      const { data } = await supabase
+      const { _data } = await supabase
         .from('quote_requests')
         .select('viewed_at')
         .eq('id', id)
@@ -94,7 +94,7 @@ export const quoteRequestService = {
   },
   
   // Archive/Unarchive a quote request
-  toggleArchive: async (id: string, isArchived: boolean) => {
+  toggleArchive: async (id: string, _isArchived: boolean) => {
     if (!supabase) throw new Error('Supabase client not initialized');
     const { data, error } = await supabase
       .from('quote_requests')
@@ -107,9 +107,9 @@ export const quoteRequestService = {
   },
   
   // Delete a quote request
-  delete: async (id: string) => {
+  _delete: async (id: string) => {
     if (!supabase) throw new Error('Supabase client not initialized');
-    const { error } = await supabase
+    const { _error } = await supabase
       .from('quote_requests')
       .delete()
       .eq('id', id);

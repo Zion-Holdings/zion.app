@@ -34,7 +34,7 @@ export default function OfflineToast() {
           
           // Send message with port
           reg.active?.postMessage({ type: 'SYNC_QUEUE' }, [channel.port2]);
-        } catch (error) {
+        } catch (_error) {
           logWarn('Failed to send sync message to service worker:', { data: typeof error === 'object' && error !== null ? error : {} });
         }
       }).catch(error => {
@@ -42,7 +42,7 @@ export default function OfflineToast() {
       });
     };
 
-    const handleMessage = (event: MessageEvent) => {
+    const handleMessage = (_event: MessageEvent) => {
       if (event.data?.type === 'QUEUE_SYNCED') {
         toast.success('Offline actions synchronized');
       } else if (event.data?.type === 'SYNC_FAILED') {

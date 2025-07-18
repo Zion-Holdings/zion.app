@@ -285,7 +285,7 @@ class GlobalToastManager {
           priority: toast.priority,
           metadata: toast.metadata 
         });
-      } catch (e) {
+      } catch (_e) {
         logErrorToProduction('Failed to log toast error:', { data:  e });
       }
     }
@@ -331,8 +331,8 @@ class GlobalToastManager {
       priority: priority !== undefined ? priority : this.priorityMap[type],
       duration: duration !== undefined ? duration : 0,
       persistent,
-      action: action ?? { label: '', onClick: () => {} },
-      onRetry: onRetry ?? (() => {}),
+      action: action ?? { label: '', _onClick: () => {} },
+      _onRetry: onRetry ?? (() => {}),
       metadata: metadata ?? {},
       createdAt: Date.now(),
     };
@@ -480,7 +480,7 @@ export class EnhancedGlobalErrorHandler {
         title: this.getErrorTitle(type) ?? '',
         type,
         priority: priority !== undefined ? priority : ToastPriority.HIGH,
-        onRetry: retryAction ? () => {
+        _onRetry: retryAction ? () => {
           this.retryCount.set(errorKey, currentRetries + 1);
           retryAction();
         } : (() => {}),

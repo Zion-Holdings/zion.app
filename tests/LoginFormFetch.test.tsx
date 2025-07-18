@@ -11,8 +11,8 @@ vi.spyOn(authService, 'loginUser');
 vi.mock('@/hooks/useAuth', () => ({
   useAuth: () => ({
     isLoading: false,
-    login: async (email: string, password: string) => {
-      const { res } = await authService.loginUser(email, password);
+    login: async (email: string, _password: string) => {
+      const { _res } = await authService.loginUser(email, password);
       return { error: res.ok ? null : 'error' };
     }
   })

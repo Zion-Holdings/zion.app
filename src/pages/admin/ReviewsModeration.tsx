@@ -19,11 +19,11 @@ function ReviewsModerationContent() {
     { id: 3, user: "Carla", content: "Excellent support.", status: "pending" },
   ]);
 
-  const handleApprove = (id: number) => {
+  const handleApprove = (_id: number) => {
     setReviews(reviews => reviews.map(r => r.id === id ? { ...r, status: "approved" } : r));
     toast({ title: "Review approved" });
   };
-  const handleReject = (id: number) => {
+  const handleReject = (_id: number) => {
     setReviews(reviews => reviews.map(r => r.id === id ? { ...r, status: "rejected" } : r));
     toast({ title: "Review rejected", variant: "destructive" });
   };

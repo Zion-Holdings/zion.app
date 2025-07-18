@@ -32,7 +32,7 @@ const supportedLanguages = SUPPORTED_LANGUAGES;
 
 const defaultLanguageContext: LanguageContextType = {
   currentLanguage: 'en',
-  changeLanguage: async () => {},
+  _changeLanguage: async () => {},
   isRTL: false,
   supportedLanguages
 };
@@ -51,7 +51,7 @@ interface LanguageProviderProps {
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ 
   children, 
-  authState: _authState = { isAuthenticated: false, user: null } 
+  authState: _authState = { isAuthenticated: false, _user: null } 
 }) => {
   const { i18n, t } = useTranslation();
   // Initialize currentLanguage state with a value that reflects i18next's initial detection or fallback.
@@ -199,7 +199,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
     };
   }, [currentLanguage, i18n]);
   
-  // Note: Language preference sync with user profile removed after Auth0 migration
+  // _Note: Language preference sync with user profile removed after Auth0 migration
   // Future: Implement Auth0 user metadata sync if needed
   
   const changeLanguage = async (lang: SupportedLanguage) => {
@@ -241,7 +241,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
         }
       }, 50);
       
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('LanguageContext: Error changing language:', { data: err });
       toast({
         title: 'Error',

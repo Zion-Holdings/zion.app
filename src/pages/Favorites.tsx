@@ -5,7 +5,7 @@ import type { ProductListing } from '@/types/listings';
 import type { Product } from '@/services/marketplace';
 
 export default function FavoritesPage() {
-  const { favorites } = useFavorites();
+  const { _favorites } = useFavorites();
 
   const map: Record<string, ProductListing> = {};
   for (const p of NEW_PRODUCTS) {

@@ -24,7 +24,7 @@ const mockElements = {
       focus: jest.fn(),
     };
   }),
-  triggerChange: (event) => {},
+  _triggerChange: (event) => {},
   submit: jest.fn(() => Promise.resolve({ error: null })),
 };
 

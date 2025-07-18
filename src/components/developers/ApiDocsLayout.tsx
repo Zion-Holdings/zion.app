@@ -34,7 +34,7 @@ export function ApiDocsLayout({ children }: ApiDocsLayoutProps) {
     { title: "Error Codes & Rate Limits", path: "/developers/docs/errors" },
   ];
 
-  const handleSelectSuggestion = (suggestion: SearchSuggestion) => {
+  const handleSelectSuggestion = (_suggestion: SearchSuggestion) => {
     const path = getDocsSearchPath(suggestion.text);
     if (path) {
       router.push(path);
@@ -42,7 +42,7 @@ export function ApiDocsLayout({ children }: ApiDocsLayoutProps) {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (_e: React.FormEvent) => {
     e.preventDefault();
     const path = getDocsSearchPath(searchValue);
     if (path) {

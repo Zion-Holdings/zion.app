@@ -49,7 +49,7 @@ export const useWhitelabel = (): WhitelabelContextType => {
 };
 
 interface WhitelabelProviderProps {
-  children: ReactNode;
+  _children: ReactNode;
 }
 
 export const WhitelabelProvider = ({ children }: WhitelabelProviderProps) => {

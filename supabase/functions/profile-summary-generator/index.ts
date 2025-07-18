@@ -82,7 +82,7 @@ serve(async (req) => {
       } else {
         throw new Error("Could not extract JSON from response");
       }
-    } catch (e) {
+    } catch (_e) {
       console.error("Error parsing OpenAI response:", e);
       
       // Fallback parsing approach if the standard parsing fails
@@ -107,7 +107,7 @@ serve(async (req) => {
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
 
-  } catch (error) {
+  } catch (_error) {
     console.error("Error in profile-summary-generator function:", error);
     
     return new Response(

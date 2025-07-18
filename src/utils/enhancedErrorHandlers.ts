@@ -213,7 +213,7 @@ export class EnhancedConsoleErrorHandler {
   }
 
   private overrideConsoleError(): void {
-    console.error = (...args: unknown[]) => {
+    console.error = (..._args: unknown[]) => {
       // Prevent infinite recursion
       if (this.isProcessingError) {
         this.originalConsoleError(...args);
@@ -252,7 +252,7 @@ export class EnhancedConsoleErrorHandler {
             context: 'consoleError',
             args: args.slice(1),
           });
-        } catch (sentryError) {
+        } catch (_sentryError) {
           this.originalConsoleError('Error reporting to logger:', sentryError);
         }
 
@@ -273,7 +273,7 @@ export class EnhancedConsoleErrorHandler {
         // Always call original console.error
         this.originalConsoleError(...args);
 
-      } catch (overallError) {
+      } catch (_overallError) {
         this.originalConsoleError('Critical error in console.error override:', overallError);
       } finally {
         this.isProcessingError = false;

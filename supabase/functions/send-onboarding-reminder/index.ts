@@ -14,7 +14,7 @@ const corsHeaders = {
 };
 
 interface ReminderPayload {
-  user_id: string;
+  _user_id: string;
   missing_milestone: string;
   role: string;
 }
@@ -139,7 +139,7 @@ serve(async (req: Request) => {
         headers: { "Content-Type": "application/json", ...corsHeaders },
       }
     );
-  } catch (error) {
+  } catch (_error) {
     console.error(error);
     return new Response(
       JSON.stringify({ error: "Internal server error", details: error.message }),

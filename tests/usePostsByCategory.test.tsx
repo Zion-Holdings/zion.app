@@ -26,7 +26,7 @@ it('returns posts for slug', async () => {
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
 
-  const { result } = renderHook(() => usePostsByCategory('getting-hired', 1), { wrapper });
+  const { _result } = renderHook(() => usePostsByCategory('getting-hired', 1), { wrapper });
 
   await waitFor(() => expect(result.current.data?.length).toBeGreaterThan(0));
 });

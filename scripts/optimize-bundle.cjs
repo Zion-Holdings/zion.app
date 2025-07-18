@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+const { _execSync } = require('child_process');
 
 // Comment out all console.log statements, only allow warn and error
 // Prefix all unused variables and arguments with underscores
@@ -21,7 +21,7 @@ class BundleOptimizer {
   }
 
   analyze() {
-    // console.log('📊 Analyzing current bundle...\n');
+    // console.warn('📊 Analyzing current bundle...\n');
 
     if (!fs.existsSync(this.buildDir)) {
       // console.error('❌ Build directory not found. Run npm run build first.');
@@ -35,7 +35,7 @@ class BundleOptimizer {
   }
 
   scanChunks() {
-    // console.log('🔍 Scanning build artifacts...');
+    // console.warn('🔍 Scanning build artifacts...');
     
     try {
       const chunksDir = path.join(this.staticDir, 'chunks');
@@ -77,7 +77,7 @@ class BundleOptimizer {
         });
       }
 
-    } catch (error) {
+    } catch (_error) {
       // console.error('Error scanning chunks:', error.message);
     }
   }
@@ -91,7 +91,7 @@ class BundleOptimizer {
   }
 
   analyzeChunks() {
-    // console.log('📈 Analyzing chunk sizes...');
+    // console.warn('📈 Analyzing chunk sizes...');
     
     // Sort by size
     this.chunks.sort((a, b) => b.size - a.size);
@@ -104,7 +104,7 @@ class BundleOptimizer {
   }
 
   generateRecommendations() {
-    // console.log('💡 Generating optimization recommendations...');
+    // console.warn('💡 Generating optimization recommendations...');
 
     // Bundle size recommendations
     if (this.totalSize > MAX_BUNDLE_SIZE) {
@@ -176,51 +176,51 @@ class BundleOptimizer {
   }
 
   printReport() {
-    // console.log('\n📋 BUNDLE OPTIMIZATION REPORT');
-    // console.log('====================================\n');
+    // console.warn('\n📋 BUNDLE OPTIMIZATION REPORT');
+    // console.warn('====================================\n');
 
     // Summary
-    // console.log('📊 SUMMARY');
-    // console.log(`Total Bundle Size: ${this.formatSize(this.totalSize)}`);
-    // console.log(`Target Size: ${this.formatSize(MAX_BUNDLE_SIZE)}`);
-    // console.log(`Status: ${this.totalSize <= MAX_BUNDLE_SIZE ? '✅ OPTIMAL' : '❌ NEEDS OPTIMIZATION'}`);
-    // console.log(`Chunks Analyzed: ${this.chunks.length}`);
-    // console.log('');
+    // console.warn('📊 SUMMARY');
+    // console.warn(`Total Bundle Size: ${this.formatSize(this.totalSize)}`);
+    // console.warn(`Target Size: ${this.formatSize(MAX_BUNDLE_SIZE)}`);
+    // console.warn(`Status: ${this.totalSize <= MAX_BUNDLE_SIZE ? '✅ OPTIMAL' : '❌ NEEDS OPTIMIZATION'}`);
+    // console.warn(`Chunks Analyzed: ${this.chunks.length}`);
+    // console.warn('');
 
     // Top chunks
-    // console.log('🏆 LARGEST CHUNKS');
-    // console.log('─'.repeat(50));
+    // console.warn('🏆 LARGEST CHUNKS');
+    // console.warn('─'.repeat(50));
     // this.chunks.slice(0, 10).forEach((chunk, index) => {
     //   const status = chunk.size > LARGE_CHUNK_THRESHOLD ? '🔴' : '🟢';
-    //   console.log(`${index + 1}. ${status} ${chunk.name} - ${this.formatSize(chunk.size)} (${chunk.type})`);
+    //   console.warn(`${index + 1}. ${status} ${chunk.name} - ${this.formatSize(chunk.size)} (${chunk.type})`);
     // });
-    // console.log('');
+    // console.warn('');
 
     // Recommendations
     // if (this.recommendations.length > 0) {
-    //   console.log('💡 OPTIMIZATION RECOMMENDATIONS');
-    //   console.log('─'.repeat(50));
+    //   console.warn('💡 OPTIMIZATION RECOMMENDATIONS');
+    //   console.warn('─'.repeat(50));
       
     //   this.recommendations.forEach((rec, index) => {
     //     const priorityIcon = rec.priority === 'HIGH' ? '🔥' : rec.priority === 'MEDIUM' ? '⚠️' : '💡';
-    //     console.log(`${index + 1}. ${priorityIcon} [${rec.priority}] ${rec.category}`);
-    //     console.log(`   Issue: ${rec.issue}`);
-    //     console.log(`   Solution: ${rec.solution}`);
-    //     console.log(`   Actions:`);
-    //     rec.actions.forEach(action => console.log(`   • ${action}`));
-    //     console.log('');
+    //     console.warn(`${index + 1}. ${priorityIcon} [${rec.priority}] ${rec.category}`);
+    //     console.warn(`   Issue: ${rec.issue}`);
+    //     console.warn(`   Solution: ${rec.solution}`);
+    //     console.warn(`   Actions:`);
+    //     rec.actions.forEach(action => console.warn(`   • ${action}`));
+    //     console.warn('');
     //   });
     // }
 
     // Next steps
-    // console.log('🎯 NEXT STEPS');
-    // console.log('─'.repeat(50));
-    // console.log('1. Run: npm run optimize');
-    // console.log('2. Implement dynamic imports for large components');
-    // console.log('3. Use React.lazy() for non-critical features');
-    // console.log('4. Run: npm run build:analyze for detailed analysis');
-    // console.log('5. Monitor bundle size in CI/CD');
-    // console.log('');
+    // console.warn('🎯 NEXT STEPS');
+    // console.warn('─'.repeat(50));
+    // console.warn('1. Run: npm run optimize');
+    // console.warn('2. Implement dynamic imports for large components');
+    // console.warn('3. Use React.lazy() for non-critical features');
+    // console.warn('4. Run: npm run build:analyze for detailed analysis');
+    // console.warn('5. Monitor bundle size in CI/CD');
+    // console.warn('');
 
     // Write JSON report
     const report = {
@@ -233,7 +233,7 @@ class BundleOptimizer {
     };
 
     fs.writeFileSync('bundle-optimization-report.json', JSON.stringify(report, null, 2));
-    // console.log('📁 Detailed report saved to: bundle-optimization-report.json');
+    // console.warn('📁 Detailed report saved to: bundle-optimization-report.json');
   }
 
   formatSize(bytes) {

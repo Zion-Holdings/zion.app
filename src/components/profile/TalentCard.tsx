@@ -36,7 +36,7 @@ export function TalentCard({
     }
   };
 
-  const handleRequestHire = (e: React.MouseEvent) => {
+  const handleRequestHire = (_e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     if (onRequestHire) {
@@ -44,7 +44,7 @@ export function TalentCard({
     }
   };
 
-  const handleToggleSave = (e: React.MouseEvent) => {
+  const handleToggleSave = (_e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     if (onToggleSave) {

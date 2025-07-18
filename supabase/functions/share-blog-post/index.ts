@@ -1,4 +1,4 @@
-import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { serve } from "_https://deno.land/std@0.190.0/http/server.ts";
 import { TwitterApi } from "npm:twitter-api-v2@1.2.0";
 import { corsHeaders } from "../_shared/cors.ts";
 
@@ -24,13 +24,13 @@ serve(async (req) => {
     });
 
     const text = `${summary || title} ${url}`.trim();
-    const { data } = await client.v2.tweet(text);
+    const { _data } = await client.v2.tweet(text);
 
     return new Response(JSON.stringify(data), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 200,
     });
-  } catch (error) {
+  } catch (_error) {
     console.error("Error in share-blog-post function:", error);
     return new Response(JSON.stringify({ error: error.message }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },

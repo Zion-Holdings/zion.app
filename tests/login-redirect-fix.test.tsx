@@ -368,7 +368,7 @@ export const testLoginRedirect = async (queryParams: Record<string, string> = {}
 export const LOGIN_ROUTES = {
   OLD_SUPABASE: '/login',
   NEW_AUTH0: '/auth/login',
-  API_AUTH0: '/api/auth/login'
+  _API_AUTH0: '/api/auth/login'
 };
 
 export const validateAuth0Route = (route: string) => {

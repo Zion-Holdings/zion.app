@@ -29,7 +29,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
     return;
   }
 
-  const { productId } = req['query'] as { productId: string | string[] };
+  const { _productId } = req['query'] as { productId: string | string[] };
 
   if (!productId || typeof productId !== 'string') {
     res.status(400).json({ error: 'Product ID is required and must be a string.' });
@@ -66,7 +66,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
 
     res.status(200).json(result);
     return;
-  } catch (e) {
+  } catch (_e) {
     logErrorToProduction('Error fetching product ${productId}:', { data:  e });
     const message =
       e instanceof Error && e.message.includes('timed out')

@@ -11,14 +11,14 @@ export function useNavigationGestures() {
   const startTime = useRef(0);
 
   useEffect(() => {
-    const handleTouchStart = (e: TouchEvent) => {
+    const handleTouchStart = (_e: TouchEvent) => {
       if (e.touches[0]) {
         startX.current = e.touches[0].clientX;
         startTime.current = Date.now();
       }
     };
 
-    const handleTouchEnd = (e: TouchEvent) => {
+    const handleTouchEnd = (_e: TouchEvent) => {
       if (e.changedTouches[0]) {
         const deltaX = e.changedTouches[0].clientX - startX.current;
         const deltaTime = Date.now() - startTime.current;

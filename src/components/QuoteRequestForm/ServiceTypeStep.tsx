@@ -64,7 +64,7 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
             setError(null);
           }
           return;
-        } catch (err) {
+        } catch (_err) {
           if (attempt === maxRetries - 1) {
             if (process.env.NODE_ENV === 'development') {
               logErrorToProduction('Failed to load services:', { data: err });
@@ -87,11 +87,11 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
     fetchServices();
   }, [formData.serviceType, debouncedQuery, isMounted]);
   
-  const handleTypeSelect = (type: ServiceType) => {
+  const handleTypeSelect = (_type: ServiceType) => {
     updateFormData({ serviceType: type });
   };
   
-  const handleItemSelect = (item: ListingItem) => {
+  const handleItemSelect = (_item: ListingItem) => {
     updateFormData({ 
       specificItem: item,
       serviceCategory: item.category,

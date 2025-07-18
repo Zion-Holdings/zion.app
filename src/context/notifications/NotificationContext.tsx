@@ -17,12 +17,12 @@ const defaultContext: NotificationContextType = {
   unreadCount: 0,
   loading: false,
   filter: 'all',
-  markAsRead: async () => {},
-  markAllAsRead: async () => {},
-  dismissNotification: async () => {},
-  setFilter: () => {},
-  fetchNotifications: async () => {},
-  setNotifications: () => {},
+  _markAsRead: async () => {},
+  _markAllAsRead: async () => {},
+  _dismissNotification: async () => {},
+  _setFilter: () => {},
+  _fetchNotifications: async () => {},
+  _setNotifications: () => {},
 };
 
 // Cast the default context value to avoid issues when React types are missing.
@@ -39,7 +39,7 @@ export const useNotifications = (): NotificationContextType => {
 };
 
 export const NotificationProvider = ({ children }: { children: ReactNode }): React.JSX.Element => {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const notificationOps = useNotificationOperations(user?.id);
 
   // Load notifications when user changes

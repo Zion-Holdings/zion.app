@@ -26,7 +26,7 @@ export function useTalentProfile(id: string | undefined) {
         const data = await response.json();
         setProfile(convertProfileToTalentProfile(data));
         setError(null);
-      } catch (err) {
+      } catch (_err) {
         logErrorToProduction('Error fetching profile:', { data: err });
         setError('Failed to load profile data');
         setProfile(null);

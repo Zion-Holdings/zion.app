@@ -15,7 +15,7 @@ export function useAuthEventHandlers(
 ) {
   // Removed: const router = useRouter();
 
-  const handleSignedIn = (mappedUser: UserProfile) => {
+  const handleSignedIn = (_mappedUser: UserProfile) => {
     toast({
       title: "Welcome back!",
       description: `You're now signed in as ${mappedUser.displayName || mappedUser.email}`,

@@ -26,13 +26,13 @@ export interface HeaderProps {
 }
 
 export function Header({ hideLogin = false }: HeaderProps) {
-  const { t } = useTranslation();
+  cons_t { t } = useTranslation();
   const router = useRouter();
   const { user, isAuthenticated, logout } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const handleSearch = (e: React.FormEvent) => {
+  const handleSearch = (_e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
       router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
@@ -44,7 +44,7 @@ export function Header({ hideLogin = false }: HeaderProps) {
     try {
       await logout();
       router.push('/');
-    } catch (error) {
+    } catch (_error) {
       logError('Logout failed:', { data: error as unknown });
     }
   };
@@ -95,7 +95,7 @@ export function Header({ hideLogin = false }: HeaderProps) {
                   placeholder={t('search.placeholder') || 'Search marketplace...'}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 text-sm bg-muted/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full pl-10 pr-4 py-2 text-sm bg-muted/50 border border-border rounded-lg _focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
             </form>

@@ -7,7 +7,7 @@ const originalConsoleError = console.error;
 // Add recursion prevention
 let isProcessingError = false;
 
-console.error = (...args: unknown[]) => {
+console.error = (..._args: unknown[]) => {
   // Prevent infinite recursion
   if (isProcessingError) {
     originalConsoleError(...args);
@@ -71,7 +71,7 @@ console.error = (...args: unknown[]) => {
 
     try {
       logErrorToProduction(first instanceof Error ? first.message : message, first instanceof Error ? first : undefined);
-    } catch (sentryError) {
+    } catch (_sentryError) {
       originalConsoleError('Error reporting to logger in console.error override:', sentryError);
     }
 
@@ -83,12 +83,12 @@ console.error = (...args: unknown[]) => {
           description: "Something went wrong. Please refresh the page if the issue persists.",
           variant: "destructive",
         });
-      } catch (snackbarError) {
+      } catch (_snackbarError) {
         originalConsoleError('Error showing toast in console.error override:', snackbarError);
       }
     }
 
-  } catch (overallError) {
+  } catch (_overallError) {
     // Fallback if determining message or other initial logic failed.
     originalConsoleError('Critical error in console.error override:', overallError);
   } finally {

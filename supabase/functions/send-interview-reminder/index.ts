@@ -66,7 +66,7 @@ serve(async (req) => {
             });
             
             results.push(`Reminder sent to client: ${clientEmail}`);
-          } catch (emailError) {
+          } catch (_emailError) {
             console.error(`Error sending reminder to client ${clientEmail}:`, emailError);
           }
         }
@@ -92,7 +92,7 @@ serve(async (req) => {
             });
             
             results.push(`Reminder sent to talent: ${talentEmail}`);
-          } catch (emailError) {
+          } catch (_emailError) {
             console.error(`Error sending reminder to talent ${talentEmail}:`, emailError);
           }
         }
@@ -109,7 +109,7 @@ serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 200,
     });
-  } catch (error) {
+  } catch (_error) {
     console.error("Error in send-interview-reminder function:", error);
     return new Response(JSON.stringify({ error: error.message }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },

@@ -174,7 +174,7 @@ const FilterSidebar: React.FC<{
     { id: 'blog', label: 'Blog Posts' }
   ];
 
-  const handleTypeChange = (typeId: string, checked: boolean) => {
+  const handleTypeChange = (typeId: string, _checked: boolean) => {
     const newTypes = checked 
       ? [...filters.types, typeId]
       : filters.types.filter(t => t !== typeId);
@@ -182,7 +182,7 @@ const FilterSidebar: React.FC<{
     onFiltersChange({ ...filters, types: newTypes });
   };
 
-  const handlePriceChange = (values: number[]) => {
+  const handlePriceChange = (_values: number[]) => {
     onFiltersChange({ 
       ...filters, 
       minPrice: values[0] ?? 0, 
@@ -331,7 +331,7 @@ const NoResultsState: React.FC<{ searchTerm: string; onNewSearch: (term: string)
 };
 
 // Main Search Results Page Component
-export const SearchResultsPage: React.FC = () => {
+export const _SearchResultsPage: React.FC = () => {
   const router = useRouter();
   const [searchTerm, setSearchTerm] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
@@ -424,7 +424,7 @@ export const SearchResultsPage: React.FC = () => {
         resultCount: data.results.length, 
         totalCount: data.totalCount 
       });
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Search failed', { data: error });
       setResults([]);
       setTotalCount(0);
@@ -442,13 +442,13 @@ export const SearchResultsPage: React.FC = () => {
   }, [searchTerm, filters, performSearch]);
 
   // Handle search input
-  const handleSearch = (term: string) => {
+  const handleSearch = (_term: string) => {
     setSearchTerm(term);
     router.push(`/search?q=${encodeURIComponent(term)}`, undefined, { shallow: true });
   };
 
   // Handle filter changes
-  const handleFiltersChange = (newFilters: SearchFilters) => {
+  const handleFiltersChange = (_newFilters: SearchFilters) => {
     setFilters(newFilters);
   };
 

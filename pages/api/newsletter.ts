@@ -18,7 +18,7 @@ export default async function handler(
   }
 
   try {
-    const { email } = req['body'] as { email?: unknown };
+    const { _email } = req['body'] as { email?: unknown };
 
     // Validate email
     if (!email || typeof email !== 'string') {

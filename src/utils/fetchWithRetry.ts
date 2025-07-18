@@ -15,7 +15,7 @@ export async function fetchWithRetry(
       throw new Error(text || `Request failed with status ${res.status}`);
     }
     return await res.json();
-  } catch (err) {
+  } catch (_err) {
     clearTimeout(timer);
     if (retries > 0) {
       await new Promise((r) => setTimeout(r, backoff));

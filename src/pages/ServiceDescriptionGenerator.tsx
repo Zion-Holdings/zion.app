@@ -26,7 +26,7 @@ export default function ServiceDescriptionGenerator() {
     return null // Redirect handled by useRouter;
   }
 
-  const handleDescriptionSave = (editedDescription: string) => {
+  const handleDescriptionSave = (_editedDescription: string) => {
     setGeneratedDescription(editedDescription);
     // Here you could also save to database if needed
   };

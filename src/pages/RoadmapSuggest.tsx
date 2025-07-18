@@ -16,7 +16,7 @@ interface Suggestion {
 }
 
 export default function RoadmapSuggestPage() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [submitted, setSubmitted] = useState<Suggestion[]>(() => {
@@ -33,7 +33,7 @@ export default function RoadmapSuggestPage() {
     safeStorage.setItem('feature_requests', JSON.stringify(submitted));
   }, [submitted]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (_e: React.FormEvent) => {
     e.preventDefault();
     if (!user) {
       toast({ title: 'Login required', description: 'Please sign in to suggest' });

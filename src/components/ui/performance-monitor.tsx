@@ -14,7 +14,7 @@ interface PerformanceMetrics {
 }
 
 export function PerformanceMonitor() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const isAdmin = user?.userType === 'admin' || user?.role === 'admin';
   // Always call hooks at the top
   const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
@@ -89,7 +89,7 @@ export function PerformanceMonitor() {
     };
   }, [isAdmin]);
 
-  const getScoreColor = (value: number, good: number, poor: number) => {
+  const getScoreColor = (value: number, good: number, _poor: number) => {
     if (value <= good) return 'bg-green-500';
     if (value <= poor) return 'bg-yellow-500';
     return 'bg-red-500';

@@ -114,7 +114,7 @@ export const AppFallback: React.FC<AppFallbackProps> = ({ error, retry }) => {
               cursor: 'pointer',
               fontSize: '1rem',
               fontWeight: '500',
-              transition: 'all 0.2s'
+              _transition: 'all 0.2s'
             }}
             onMouseOver={(e) => {
               e.currentTarget.style.backgroundColor = '#007bff';

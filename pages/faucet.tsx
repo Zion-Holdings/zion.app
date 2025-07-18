@@ -5,7 +5,7 @@ export default function FaucetPage() {
   const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleRequest = async (e: React.FormEvent) => {
+  const handleRequest = async (_e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {

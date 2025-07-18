@@ -15,7 +15,7 @@ import { Switch } from "@/components/ui/switch";
 import { logErrorToProduction } from '@/utils/productionLogger';
 
 export default function TenantOnboarding() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [activeTab, setActiveTab] = useState("company");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -37,20 +37,20 @@ export default function TenantOnboarding() {
     return // Use router.push('/unauthorized') or redirect in getServerSideProps;
   }
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (_e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   
-  const handleSelectChange = (name: string, value: string) => {
+  const handleSelectChange = (name: string, _value: string) => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   
-  const handleSwitchChange = (name: string, checked: boolean) => {
+  const handleSwitchChange = (name: string, _checked: boolean) => {
     setFormData(prev => ({ ...prev, [name]: checked }));
   };
   
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (_e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     

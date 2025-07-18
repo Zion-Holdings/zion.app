@@ -16,7 +16,7 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
   const [traceId, setTraceId] = useState<string | null>(null);
   const [componentStack, setComponentStack] = useState<string | undefined>(undefined);
 
-  const handleReportIssue = async (error: Error) => {
+  const handleReportIssue = async (_error: Error) => {
     const logs: string[] = []; // Replaced getCapturedLogs() with empty array
     const id = traceId || generateTraceId();
     await sendErrorToBackend({
@@ -33,7 +33,7 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
     try {
       const enqueueSnackbar = getEnqueueSnackbar();
       enqueueSnackbar(`Issue reported. Reference ID: ${id}`, { variant: 'success' });
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction(err instanceof Error ? err.message : String(err), err instanceof Error ? err : undefined, { context: 'Failed to show report confirmation' });
     }
   };
@@ -88,7 +88,7 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
   );
 }
 
-  const handleError = (error: Error, info: React.ErrorInfo) => {
+  const handleError = (error: Error, _info: React.ErrorInfo) => {
     logInfo("Detailed error info:", { name: error.name, message: error.message, stack: error.stack, componentStack: info.componentStack });
     logErrorToProduction(error.message, error, { 
       componentStack: info.componentStack || undefined,
@@ -161,7 +161,7 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
         // Prevent this generic error toast from persisting too long if it's a background issue
         autoHideDuration: 5000,
       });
-    } catch (e) {
+    } catch (_e) {
       logErrorToProduction(e instanceof Error ? e.message : String(e), e instanceof Error ? e : undefined, { context: 'Error in enqueueSnackbar' });
       // noop if snackbar itself fails
     }

@@ -17,7 +17,7 @@ export default function MockCheckoutPage() {
       return; // Router not ready yet, wait for next effect run
     }
 
-    const { mock } = router.query;
+    const { _mock } = router.query;
 
     if (!mock) {
       router.push('/checkout');

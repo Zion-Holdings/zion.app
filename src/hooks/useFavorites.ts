@@ -11,7 +11,7 @@ export interface Favorite {
 }
 
 export function useFavorites() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [favorites, setFavorites] = useState<Favorite[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -26,7 +26,7 @@ export function useFavorites() {
       const data = await res.json();
       setFavorites(data || []);
       await saveWishlist(data || []);
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Failed to fetch favorites', { data: err });
       const local = await getWishlist();
       setFavorites(local as Favorite[]);
@@ -40,7 +40,7 @@ export function useFavorites() {
     fetchFavorites();
   }, []);
 
-  const toggleFavorite = async (item_type: string, item_id: string) => {
+  const toggleFavorite = async (item_type: string, _item_id: string) => {
     if (!user) return;
     const exists = favorites.some(
       f => f.item_type === item_type && f.item_id === item_id
@@ -68,7 +68,7 @@ export function useFavorites() {
           ? favorites.filter(f => !(f.item_type === item_type && f.item_id === item_id))
           : [...favorites, { item_type, item_id }]
       );
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Failed to toggle favorite', { data: err });
     }
   };

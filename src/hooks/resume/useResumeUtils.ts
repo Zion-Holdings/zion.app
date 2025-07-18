@@ -4,14 +4,14 @@ import { toast } from '@/hooks/use-toast';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 // Utility function to format dates for DB operations
-export const formatDateForDB = (date: Date | string | undefined) => {
+export const formatDateForDB = (_date: Date | string | undefined) => {
 
   if (!date) return undefined;
   return typeof date === 'string' ? date : format(date, 'yyyy-MM-dd');
 };
 
 // Error handling with toast
-export const handleResumeError = (e: unknown, errorMessage: string) => {
+export const handleResumeError = (e: unknown, _errorMessage: string) => {
   logErrorToProduction(`Error: ${errorMessage}`, { data: e });
   const message = (e instanceof Error && e.message) ? e.message : 'Unknown error';
   toast({
@@ -23,7 +23,7 @@ export const handleResumeError = (e: unknown, errorMessage: string) => {
 };
 
 // Success notification
-export const showSuccessToast = (title: string, description: string) => {
+export const showSuccessToast = (title: string, _description: string) => {
   toast({
     title,
     description

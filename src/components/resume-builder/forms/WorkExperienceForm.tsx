@@ -70,7 +70,7 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
     },
   });
 
-  const handleAddOrUpdate = async (data: WorkExperienceFormValues) => {
+  const handleAddOrUpdate = async (_data: WorkExperienceFormValues) => {
     try {
       setError(null);
       let success;
@@ -111,7 +111,7 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
     }
   };
 
-  const handleEdit = (work: WorkExperience) => {
+  const handleEdit = (_work: WorkExperience) => {
     setEditingId(work.id!);
     form.reset({
       ...work,
@@ -120,13 +120,13 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
     });
   };
 
-  const handleDelete = async (id: string) => {
+  const handleDelete = async (_id: string) => {
     if (confirm('Are you sure you want to delete this work experience?')) {
       await deleteWorkExperience(id);
     }
   };
 
-  const handleEnhanceDescription = (enhancedContent: string) => {
+  const handleEnhanceDescription = (_enhancedContent: string) => {
     form.setValue('description', enhancedContent);
   };
 

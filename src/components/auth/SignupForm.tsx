@@ -55,7 +55,7 @@ export default function SignupForm({ onSuccess, onError }: SignupFormProps) {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [fieldStates, setFieldStates] = useState<Record<string, FieldValidationState>>({});
-  const { signUp } = useAuth();
+  const { _signUp } = useAuth();
   
   const {
     register,
@@ -109,7 +109,7 @@ export default function SignupForm({ onSuccess, onError }: SignupFormProps) {
     };
   }, [watchedFields, touchedFields, trigger, errors]);
 
-  const getFieldValidationIcon = (fieldName: string) => {
+  const getFieldValidationIcon = (_fieldName: string) => {
     const state = fieldStates[fieldName];
     const isTouched = touchedFields[fieldName as keyof SignupFormData];
     
@@ -130,7 +130,7 @@ export default function SignupForm({ onSuccess, onError }: SignupFormProps) {
     return null;
   };
 
-  const getFieldClasses = (fieldName: string) => {
+  const getFieldClasses = (_fieldName: string) => {
     const state = fieldStates[fieldName];
     const isTouched = touchedFields[fieldName as keyof SignupFormData];
     
@@ -145,7 +145,7 @@ export default function SignupForm({ onSuccess, onError }: SignupFormProps) {
     }
     
     if (state?.error) {
-      return 'border-red-500 focus:border-red-500 focus:ring-red-500/20';
+      return 'border-red-500 _focus:border-red-500 focus:ring-red-500/20';
     }
     
     return '';
@@ -178,7 +178,7 @@ export default function SignupForm({ onSuccess, onError }: SignupFormProps) {
 
   const passwordStrength = getPasswordStrength(watchedFields.password || '');
 
-  const onSubmit = async (data: SignupFormData) => {
+  const onSubmit = async (_data: SignupFormData) => {
     fireEvent('signup_submit');
     setIsSubmitting(true);
 

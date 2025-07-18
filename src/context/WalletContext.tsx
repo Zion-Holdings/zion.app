@@ -68,8 +68,8 @@ export const WalletContext = createContext<WalletContextType | undefined>(undefi
 // gracefully with a no-op implementation.
 const defaultWalletContext: WalletContextType = {
   ...initialWalletState,
-  connectWallet: async () => {},
-  disconnectWallet: async () => {},
+  _connectWallet: async () => {},
+  _disconnectWallet: async () => {},
   displayAddress: null,
   appKit: null,
 };
@@ -93,7 +93,7 @@ const KNOWN_INVALID_PROJECT_IDS = [
 // This is to ensure only one well-structured WalletProvider (the one using useRef,
 // originally starting at line 181) remains.
 
-export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const _WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
   if (process.env.NODE_ENV === 'development') {
     logInfo('[WalletProvider] Initializing...');
@@ -197,7 +197,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
           isWalletSystemAvailable: true,
           isConnected: false, // Explicitly false until wallet connects
         }));
-      } catch (error) {
+      } catch (_error) {
         logErrorToProduction('WalletContext: CRITICAL error creating appKitInstance with valid Project ID:', { data: error });
         appKitRef.current = null;
         setWallet((_prev) => ({
@@ -253,7 +253,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             // Ensure the provider has a required request method for Eip1193Provider
             const safeProvider = Object.assign({}, currentProvider, {
               request: typeof (currentProvider as { request?: (args: { method: string; params?: unknown[] }) => Promise<unknown> }).request === 'function'
-                ? (currentProvider as { request: (args: { method: string; params?: unknown[] }) => Promise<unknown> }).request
+                ? (currentProvider as { request: (args: { method: string; params?: unknown[] }) => Promise<unknown> })._request
                 : async (_args: { method: string; params?: unknown[] }) => { throw new Error('Provider does not implement request'); }
             }) as import('ethers').Eip1193Provider;
             const ethersProvider = new EthersBrowserProvider(safeProvider);
@@ -274,7 +274,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
               isWalletSystemAvailable: true,
             }));
           }
-        } catch (error) {
+        } catch (_error) {
           logErrorToProduction('WalletContext: Error getting signer or updating wallet state:', { data: error });
           // AppKit exists, but failed to get signer or other error
           setWallet((_prev) => ({
@@ -362,7 +362,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       try {
         window.open('https://metamask.io/download.html', '_blank');
         logInfo('WalletContext: No wallet provider detected. Opening MetaMask install page.');
-      } catch (installError) {
+      } catch (_installError) {
         logWarn('WalletContext: Failed to open MetaMask install page.', { data:  { data: installError } });
       }
     }
@@ -393,7 +393,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       try {
         await actionKit.disconnect();
         // State update is typically handled by the subscription to provider changes
-      } catch (error) {
+      } catch (_error) {
         logErrorToProduction('WalletContext: Error during disconnect.', { data: error });
         logErrorToProduction('WalletContext: Error disconnecting wallet:', { data: error });
       }

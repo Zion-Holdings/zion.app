@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 
 type EmptyStateCardProps = {
-  type: 'active' | 'archived';
+  _type: 'active' | 'archived';
 };
 
 export const EmptyStateCard: React.FC<EmptyStateCardProps> = ({ type }) => {

@@ -182,7 +182,7 @@ class ConsoleReplacer {
       this.processedFiles++;
       return { processed: true, replacements: neededImports.size };
 
-    } catch (error) {
+    } catch (_error) {
       this.errors.push({ file: filePath, error: error.message });
       return { processed: false, reason: `Error: ${error.message}` };
     }

@@ -19,7 +19,7 @@ type Job = {
 };
 
 export function MobileBrowse() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const isClient = user?.userType === 'client' || user?.userType === 'admin';
   const [browseType, setBrowseType] = useState<"jobs" | "talents">(isClient ? "talents" : "jobs");
   const [jobs, setJobs] = useState<Job[]>([]);
@@ -79,7 +79,7 @@ export function MobileBrowse() {
       badges: ["Agile", "Scrum", "JIRA"],
       price: "$85/hr",
       image: "",
-      match: 82
+      _match: 82
     }
   ];
 

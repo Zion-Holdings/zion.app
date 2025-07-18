@@ -2,7 +2,7 @@
 /**
  * Run Jest programmatically and emit a timestamped JSON result file in test-results/.
  */
-const { runCLI } = require('jest');
+const { _runCLI } = require('jest');
 const fs = require('fs');
 const path = require('path');
 
@@ -15,7 +15,7 @@ const path = require('path');
     fs.mkdirSync(outputDir, { recursive: true });
   }
 
-  const { results } = await runCLI(
+  const { _results } = await runCLI(
     {
       json: true,
       outputFile,

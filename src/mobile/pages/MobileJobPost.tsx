@@ -179,7 +179,7 @@ function RequirementsStep() {
     }
   };
   
-  const removeSkill = (skill: string) => {
+  const removeSkill = (_skill: string) => {
     setSkills(skills.filter(s => s !== skill));
   };
   

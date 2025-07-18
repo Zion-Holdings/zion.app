@@ -31,9 +31,9 @@ export default function ListingModeration() {
     fetchLogs();
   }, []);
 
-  const handleAction = async (id: string, action: 'approved' | 'rejected') => {
+  const handleAction = async (id: string, _action: 'approved' | 'rejected') => {
     if (!supabase) throw new Error('Supabase client not initialized');
-    const { error } = await supabase
+    const { _error } = await supabase
       .from('moderation_logs')
       .update({ status: action, reviewed_at: new Date().toISOString() })
       .eq('id', id);

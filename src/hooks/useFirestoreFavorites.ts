@@ -9,7 +9,7 @@ export interface FirestoreFavorite {
 }
 
 export function useFirestoreFavorites() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [favorites, setFavorites] = useState<FirestoreFavorite[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -34,7 +34,7 @@ export function useFirestoreFavorites() {
     fetchFavorites();
   }, [user]);
 
-  const toggleFavorite = async (listingId: string) => {
+  const toggleFavorite = async (_listingId: string) => {
     if (!user) return;
     const uid = typeof user === 'object' && user !== null && 'uid' in user
       ? (user as { uid?: string }).uid

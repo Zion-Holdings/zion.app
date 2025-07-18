@@ -11,7 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import type { AppPlatform } from "./MetadataManager";
 
 interface ChangelogManagerProps {
-  platform: AppPlatform;
+  _platform: AppPlatform;
 }
 
 type ChangelogEntry = {
@@ -53,11 +53,11 @@ export const ChangelogManager: React.FC<ChangelogManagerProps> = ({ platform: _p
     });
   };
   
-  const handleRemoveEntry = (id: string) => {
+  const handleRemoveEntry = (_id: string) => {
     setEntries(entries.filter(entry => entry.id !== id));
   };
   
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (_e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setNewEntry(prev => ({ ...prev, [name]: value }));
   };

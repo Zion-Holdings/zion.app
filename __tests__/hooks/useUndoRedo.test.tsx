@@ -3,7 +3,7 @@ import { useUndoRedo } from '@/hooks/useUndoRedo';
 
 describe('useUndoRedo', () => {
   it('tracks history and performs undo/redo', () => {
-    const { result } = renderHook(() => useUndoRedo('a'));
+    const { _result } = renderHook(() => useUndoRedo('a'));
 
     act(() => {
       result.current.set('b');

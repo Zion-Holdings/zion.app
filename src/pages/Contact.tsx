@@ -47,7 +47,7 @@ export default function Contact() {
     setErrors((prev) => ({ ...prev, [name]: undefined }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (_e: React.FormEvent) => {
     e.preventDefault();
     logInfo('[ContactForm] handleSubmit triggered.');
     logInfo('[ContactForm] formData:', { data:  { data: formData } });
@@ -102,7 +102,7 @@ export default function Contact() {
             let errorData = { error: `Request failed with status ${res.status}` };
             try {
               errorData = JSON.parse(responseBody);
-            } catch (parseError) {
+            } catch (_parseError) {
               logWarn('[ContactForm] Could not parse error response as JSON.', { data:  { data: parseError } });
             }
             logErrorToProduction('[ContactForm] API error response:', { data: errorData });
@@ -131,7 +131,7 @@ export default function Contact() {
             variant: 'destructive',
           });
         });
-    } catch (error) {
+    } catch (_error) {
       // This catches synchronous errors that might occur when initiating fetch or in its direct vicinity
       // if not caught by the promise's .catch (less common for typical fetch issues but good for safety)
       logErrorToProduction('[ContactForm] Synchronous error during fetch initiation or processing:', { data: error });
@@ -165,7 +165,7 @@ export default function Contact() {
       }
 
       return Promise.resolve();
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error in AI chat', error);
       toast({
         title: 'Chat Error',

@@ -16,7 +16,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
     return;
   }
 
-  const { productId } = req.query as { productId: string | string[] };
+  const { _productId } = req.query as { productId: string | string[] };
   if (!productId || typeof productId !== 'string') {
     res.status(400).json({
       error: 'productId is required in the URL path and must be a string.',
@@ -39,7 +39,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
 
     res.status(200).json(data || []);
     return;
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction('Error fetching reviews:', { data: error });
     res.status(500).json({
       error: 'Internal server error while fetching reviews.',

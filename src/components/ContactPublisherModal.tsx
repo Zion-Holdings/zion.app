@@ -55,7 +55,7 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: 
     return null;
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (_e: React.FormEvent) => {
     e.preventDefault();
     if (!subject.trim() || !message.trim()) {
       setError('Subject and message are required.');
@@ -70,7 +70,7 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: 
       onClose(); // Close modal
       setSubject(''); // Clear subject
       setMessage(''); // Clear message
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Failed to send message:', { data: err });
       toast.error('Failed to send message. Please try again.');
       // Optionally, set a specific error message state if needed

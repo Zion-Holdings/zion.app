@@ -12,7 +12,7 @@ axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL || 'https://api.ziontec
 // Global interceptor for all axios instances
 
 // Define the global error handler (exported for testing purposes)
-export const globalAxiosErrorHandler = (error: unknown) => {
+export const globalAxiosErrorHandler = (_error: unknown) => {
   const contentType = typeof error === 'object' && error && 'response' in error && error.response && typeof error.response === 'object' && error.response !== null && 'headers' in error.response ? (error.response as { headers?: Record<string, unknown> }).headers?.['content-type'] : undefined;
   if (typeof contentType === 'string' && contentType.includes('text/html')) {
     showError('html-error', 'Server returned HTML instead of JSON');
@@ -113,7 +113,7 @@ const apiClient = axios.create({
 });
 
 // Request interceptor for authentication and headers
-apiClient.interceptors.request.use((config: InternalAxiosRequestConfig) => {
+apiClient.interceptors.request.use((_config: InternalAxiosRequestConfig) => {
   if (typeof config !== 'object' || config === null) {
     return config;
   }
@@ -133,7 +133,7 @@ apiClient.interceptors.request.use((config: InternalAxiosRequestConfig) => {
 
 axiosRetry(apiClient, {
   retries: 3,
-  retryCondition: (error) => {
+  _retryCondition: (error) => {
     return (
       axiosRetry.isNetworkError(error) ||
       axiosRetry.isIdempotentRequestError(error)
@@ -143,14 +143,14 @@ axiosRetry(apiClient, {
 
 apiClient.interceptors.response.use(
   (response: AxiosResponse) => response,
-  async (error: unknown) => {
+  async (_error: unknown) => {
     const status = typeof error === 'object' && error && 'response' in error && error.response && typeof error.response === 'object' && error.response !== null && 'status' in error.response ? (error.response as { status?: number }).status : undefined;
 
     if (status === 401) {
       try {
         if (!supabase) throw new Error('Supabase client not initialized');
         await supabase.auth.signOut({ scope: 'global' });
-      } catch (e) {
+      } catch (_e) {
         logErrorToProduction('Failed to logout after 401', { data: e });
       }
       if (typeof window !== 'undefined') {

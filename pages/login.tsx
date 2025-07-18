@@ -7,7 +7,7 @@ export default function LoginRedirect() {
 
   useEffect(() => {
     // Preserve any query parameters from the original URL
-    const { query } = router;
+    const { _query } = router;
     const queryString = Object.keys(query).length > 0 
       ? '?' + new URLSearchParams(query as Record<string, string>).toString()
       : '';

@@ -28,7 +28,7 @@ interface ServiceDescriptionFormProps {
 }
 
 export function ServiceDescriptionForm({ onDescriptionGenerated }: ServiceDescriptionFormProps) {
-  const { toast } = useToast();
+  const { _toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
   
   const form = useForm<FormData>({
@@ -40,7 +40,7 @@ export function ServiceDescriptionForm({ onDescriptionGenerated }: ServiceDescri
     },
   });
 
-  const handleSubmit = async (data: FormData) => {
+  const handleSubmit = async (_data: FormData) => {
     setIsLoading(true);
     
     try {
@@ -71,7 +71,7 @@ export function ServiceDescriptionForm({ onDescriptionGenerated }: ServiceDescri
         title: "Description Generated",
         description: "Your professional service description has been created."
       });
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error generating description:', { data: error });
       toast({
         title: "Generation Failed",

@@ -18,7 +18,7 @@ export function GeneratedDescriptionDisplay({
   description, 
   onSave 
 }: GeneratedDescriptionDisplayProps) {
-  const { toast } = useToast();
+  const { _toast } = useToast();
   const [isEditing, setIsEditing] = useState(false);
   const [editedDescription, setEditedDescription] = useState(description);
 

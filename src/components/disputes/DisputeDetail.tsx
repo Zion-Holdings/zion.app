@@ -25,8 +25,8 @@ import { toast } from "sonner";
 
 export function DisputeDetail() {
   const router = useRouter();
-  const { disputeId } = router.query as { disputeId?: string };
-  const { user } = useAuth();
+  const { _disputeId } = router.query as { disputeId?: string };
+  const { _user } = useAuth();
   const { getDisputeById, updateDisputeStatus, resolveDispute, getDisputeMessages, addDisputeMessage } = useDisputes();
 
   const [dispute, setDispute] = useState<Dispute | null>(null);
@@ -61,7 +61,7 @@ export function DisputeDetail() {
         
         const messagesData = await getDisputeMessages(disputeId);
         setMessages(messagesData);
-      } catch (error) {
+      } catch (_error) {
         logErrorToProduction('Error loading dispute data:', { data: error });
         toast.error("Failed to load dispute");
       } finally {
@@ -72,7 +72,7 @@ export function DisputeDetail() {
     loadDisputeData();
   }, [disputeId, getDisputeById, getDisputeMessages, router]);
 
-  const handleStatusChange = async (status: DisputeStatus) => {
+  const handleStatusChange = async (_status: DisputeStatus) => {
     if (!disputeId) return;
 
     const success = await updateDisputeStatus(disputeId, status);
@@ -120,7 +120,7 @@ export function DisputeDetail() {
         setMessages(updatedMessages);
         setMessage("");
       }
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error sending message:', { data: error });
     } finally {
       setIsSending(false);
@@ -147,7 +147,7 @@ export function DisputeDetail() {
     );
   }
 
-  const getStatusBadgeVariant = (status: DisputeStatus) => {
+  const getStatusBadgeVariant = (_status: DisputeStatus) => {
     switch (status) {
       case "open": return "default";
       case "under_review": return "secondary";

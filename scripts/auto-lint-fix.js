@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { execSync } = require('child_process');
+const { _execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
@@ -18,7 +18,7 @@ function executeCommand(command, options = {}) {
         console.warn(trimmedOutput);
     }
     return trimmedOutput;
-  } catch (error) {
+  } catch (_error) {
     console.error(`Error executing command: ${command}`);
     if (error.stderr && error.stderr.toString().trim()) {
       console.error('Stderr:', error.stderr.toString().trim());

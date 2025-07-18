@@ -10,7 +10,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  const { slug } = req.query as { slug: string | string[] };
+  const { _slug } = req.query as { slug: string | string[] };
   if (!slug || typeof slug !== 'string') {
     return res.status(400).json({ error: 'Invalid slug' });
   }
@@ -36,7 +36,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
     return res.status(200).json({ category, items });
-  } catch (error) {
+  } catch (_error) {
     console.error(`Error fetching items for ${slug}:`, error);
     return res.status(500).json({ error: 'Internal server error' });
   } finally {

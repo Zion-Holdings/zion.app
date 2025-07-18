@@ -55,8 +55,8 @@ interface GeneratedContent {
 }
 
 export function ProductSubmissionForm() {
-  const { user } = useAuth();
-  const { toast } = useToast();
+  const { _user } = useAuth();
+  const { _toast } = useToast();
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [imagePreview, setImagePreview] = React.useState(null as string | null);
@@ -77,7 +77,7 @@ export function ProductSubmissionForm() {
   });
   
   // Handle image upload preview
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageChange = (_e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       form.setValue("image", file);
@@ -89,14 +89,14 @@ export function ProductSubmissionForm() {
     }
   };
 
-  const handleVideoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleVideoChange = (_e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       form.setValue("video", file);
     }
   };
 
-  const handleModelChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleModelChange = (_e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       form.setValue("model", file);
@@ -104,7 +104,7 @@ export function ProductSubmissionForm() {
   };
 
   // Apply AI-generated content to the form
-  const handleApplyGenerated = (content: unknown) => {
+  const handleApplyGenerated = (_content: unknown) => {
     const generated = content as GeneratedContent;
     form.setValue("description", generated.description);
     form.setValue("tags", generated.tags.join(", "));
@@ -118,7 +118,7 @@ export function ProductSubmissionForm() {
   };
 
   // Handle form submission
-  const onSubmit = async (values: ProductFormValues) => {
+  const onSubmit = async (_values: ProductFormValues) => {
     if (!user) {
       toast({
         title: "Authentication required",
@@ -254,7 +254,7 @@ export function ProductSubmissionForm() {
             sellerId: user.id,
           }
         });
-      } catch (err) {
+      } catch (_err) {
         logErrorToProduction('Error invoking moderation:', { data: err });
       }
       
@@ -266,7 +266,7 @@ export function ProductSubmissionForm() {
       
       // Redirect to product page
       router.push(`/marketplace/listing/${productRecord.id}`);
-    } catch (error) {
+    } catch (_error) {
       toast({
         title: "Publication Failed",
         description: error instanceof Error ? error.message : "An unknown error occurred",

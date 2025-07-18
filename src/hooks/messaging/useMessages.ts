@@ -23,7 +23,7 @@ export function useMessages(
   /**
    * Fetch messages for a conversation
    */
-  const loadMessages = async (conversationId: string) => {
+  const loadMessages = async (_conversationId: string) => {
     if (!user) return;
     
     setIsLoading(true);
@@ -49,7 +49,7 @@ export function useMessages(
       if (unreadMessages.length > 0) {
         await markAsRead(conversationId);
       }
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error fetching messages:', { data: error });
     } finally {
       setIsLoading(false);
@@ -59,7 +59,7 @@ export function useMessages(
   /**
    * Send a message to an existing conversation
    */
-  const sendMessage = async (conversationId: string, content: string) => {
+  const sendMessage = async (conversationId: string, _content: string) => {
     if (!user || !content.trim() || !conversationId) return;
     
     try {
@@ -95,7 +95,7 @@ export function useMessages(
       
       // Return the sent message
       return data;
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error sending message:', { data: error });
       toast({
         title: "Failed to send message",
@@ -108,12 +108,12 @@ export function useMessages(
   /**
    * Mark messages as read
    */
-  const markAsRead = async (conversationId: string) => {
+  const markAsRead = async (_conversationId: string) => {
     if (!user || !conversationId) return;
     
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { error } = await supabase
+      const { _error } = await supabase
         .from('messages')
         .update({ read: true })
         .eq('conversation_id', conversationId)
@@ -151,7 +151,7 @@ export function useMessages(
           0
         );
       });
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error marking messages as read:', { data: error });
     }
   };

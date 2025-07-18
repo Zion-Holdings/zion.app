@@ -11,7 +11,7 @@ export function useIsMobile(breakpoint = 768) {
     const query = `(max-width: ${breakpoint}px)`;
     const mediaQuery = window.matchMedia(query);
 
-    const handleChange = (event: MediaQueryListEvent) => {
+    const handleChange = (_event: MediaQueryListEvent) => {
       setIsMobile(event.matches);
     };
 

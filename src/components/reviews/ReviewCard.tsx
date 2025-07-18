@@ -59,7 +59,7 @@ export function ReviewCard({ review, onReport }: ReviewCardProps) {
     );
   };
   
-  const getInitials = (name: string) => {
+  const getInitials = (_name: string) => {
     return name
       .split(" ")
       .map((n) => n[0])

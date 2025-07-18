@@ -43,7 +43,7 @@ const VerifyEmailPage = () => {
         setError('Invalid, expired, or already used verification link. Please try logging in or request a new verification email.');
         setMessage('');
         setIsLoading(false);
-         // Optional: Redirect to login or a page to request new verification
+         // _Optional: Redirect to login or a page to request new verification
          setTimeout(() => {
             router.push('/auth/login');
         }, 3000);

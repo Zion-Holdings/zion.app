@@ -16,7 +16,7 @@ vi.mock('@/hooks/use-toast', async (importOriginal) => {
 });
 
 describe('useEmailAuth', () => {
-  let mockSetUser: ReturnType<typeof vi.fn>;
+  let _mockSetUser: ReturnType<typeof vi.fn>;
   let mockSetIsLoading: ReturnType<typeof vi.fn>;
 
   beforeEach(() => {
@@ -26,7 +26,7 @@ describe('useEmailAuth', () => {
   });
 
   it('successful login with rememberMe=true stores token in localStorage', async () => {
-    const { result } = renderHook(() => useEmailAuth(mockSetUser, mockSetIsLoading));
+    const { _result } = renderHook(() => useEmailAuth(mockSetUser, mockSetIsLoading));
 
     let loginResult;
     await act(async () => {
@@ -60,7 +60,7 @@ describe('useEmailAuth', () => {
   });
 
   it('successful login with rememberMe=false stores token in sessionStorage', async () => {
-    const { result } = renderHook(() => useEmailAuth(mockSetUser, mockSetIsLoading));
+    const { _result } = renderHook(() => useEmailAuth(mockSetUser, mockSetIsLoading));
 
     let loginResult;
     await act(async () => {
@@ -83,7 +83,7 @@ describe('useEmailAuth', () => {
   });
 
   it('failed login (401) displays toast and returns error', async () => {
-    const { result } = renderHook(() => useEmailAuth(mockSetUser, mockSetIsLoading));
+    const { _result } = renderHook(() => useEmailAuth(mockSetUser, mockSetIsLoading));
 
     let loginResult;
     await act(async () => {
@@ -110,7 +110,7 @@ describe('useEmailAuth', () => {
   });
 
   it('handles other API errors (e.g., 500) and displays toast', async () => {
-    const { result } = renderHook(() => useEmailAuth(mockSetUser, mockSetIsLoading));
+    const { _result } = renderHook(() => useEmailAuth(mockSetUser, mockSetIsLoading));
 
     let loginResult;
     await act(async () => {
@@ -143,7 +143,7 @@ describe('useEmailAuth', () => {
     const authUtils = await import('@/utils/authUtils');
     const cleanupSpy = vi.spyOn(authUtils, 'cleanupAuthState');
 
-    const { result } = renderHook(() => useEmailAuth(mockSetUser, mockSetIsLoading));
+    const { _result } = renderHook(() => useEmailAuth(mockSetUser, mockSetIsLoading));
 
     await act(async () => {
       await result.current.login({

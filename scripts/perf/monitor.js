@@ -1,7 +1,7 @@
 const cron = require('node-cron');
 const fs = require('fs');
 const path = require('path');
-const { exec } = require('child_process');
+const { _exec } = require('child_process');
 
 const BASE_URL = process.env.BACKEND_BASE_URL || 'http://localhost:3001';
 const ENDPOINTS = (process.env.MONITOR_ENDPOINTS
@@ -15,7 +15,7 @@ const MAX_LOG_SIZE = 5 * 1024 * 1024; // 5MB
 
 function rotateLogs() {
   if (fs.existsSync(LOG_FILE)) {
-    const { size } = fs.statSync(LOG_FILE);
+    const { _size } = fs.statSync(LOG_FILE);
     if (size >= MAX_LOG_SIZE) {
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
       const rotated = path.join(LOG_DIR, `hourly-${timestamp}.log`);
@@ -33,7 +33,7 @@ async function measureEndpoint(endpoint) {
     try {
       res = await fetch(url);
       await res.text();
-    } catch (err) {
+    } catch (_err) {
       console.error(`Request error for ${url}:`, err.message);
       return { url, avg: Infinity };
     }
@@ -61,7 +61,7 @@ function restartService() {
     if (err) {
       console.error('Service restart failed:', err.message);
     } else {
-      // console.log('Service restarted:', _stdout || _stderr);
+      // console.warn('Service restarted:', _stdout || _stderr);
     }
   });
 }
@@ -75,7 +75,7 @@ async function sendAlert(message) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text: message }),
     });
-  } catch (err) {
+  } catch (_err) {
     console.error('Failed to send alert webhook:', err.message);
   }
 }

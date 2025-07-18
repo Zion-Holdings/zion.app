@@ -221,7 +221,7 @@ export default function Signup() {
     }
   });
 
-  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (_e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     formik.setTouched({
       name: true,

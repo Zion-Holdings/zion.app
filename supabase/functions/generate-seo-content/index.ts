@@ -90,7 +90,7 @@ serve(async (req) => {
       status: 200,
     });
 
-  } catch (error) {
+  } catch (_error) {
     console.error(JSON.stringify({
       ...errorLoggerPayload,
       level: 'ERROR',

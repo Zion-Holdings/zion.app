@@ -114,7 +114,7 @@ export const monitorBundlePerformance = () => {
 };
 
 // Implement virtual scrolling optimization
-export const optimizeListRendering = (container: HTMLElement, itemHeight: number) => {
+export const optimizeListRendering = (container: HTMLElement, _itemHeight: number) => {
   if (!container) return;
 
   const items = Array.from(container.children);
@@ -175,7 +175,7 @@ export const optimizeMemoryUsage = () => {
   // Periodic memory cleanup
   interface PerformanceWithMemory extends Performance {
     memory?: {
-      usedJSHeapSize: number;
+      _usedJSHeapSize: number;
       jsHeapSizeLimit: number;
     };
   }

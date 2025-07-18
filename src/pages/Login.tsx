@@ -15,7 +15,7 @@ export default function Login() {
   const router = useRouter(); // Initialized router
   // location is now router
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { dispatch } = useCart(); // Reserved for future cart handling
+  const { _dispatch } = useCart(); // Reserved for future cart handling
   const [authTimedOut, setAuthTimedOut] = useState(false);
 
   // If auth status check takes too long, show a fallback message

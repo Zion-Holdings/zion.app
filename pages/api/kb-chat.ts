@@ -37,7 +37,7 @@ export default async function handler(
   }
 
   try {
-    const { messages } = req['body'] as { messages?: unknown };
+    const { _messages } = req['body'] as { messages?: unknown };
 
     if (!messages || !Array.isArray(messages)) {
       return res.status(400).json({ error: 'Messages array is required' });
@@ -71,7 +71,7 @@ export default async function handler(
     };
 
     return res.status(200).json(response);
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction('KB Chat API error:', { data: error });
     return res.status(500).json({ error: 'Internal server error' });
   }

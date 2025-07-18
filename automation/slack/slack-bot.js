@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
-const { App } = require('@slack/bolt');
+const { _App } = require('@slack/bolt');
 const axios = require('axios');
 const fs = require('fs').promises;
 const path = require('path');
@@ -44,7 +44,7 @@ class OptimizationSlackBot {
         const result = await this.triggerOptimization(target, options);
         
         await this.sendOptimizationResults(client, command.channel_id, result);
-      } catch (error) {
+      } catch (_error) {
         console.error('Optimization command error:', error);
         await respond({
           text: `❌ Optimization failed: ${error.message}`,
@@ -62,7 +62,7 @@ class OptimizationSlackBot {
         await respond({
           blocks: this.formatStatusBlocks(status)
         });
-      } catch (error) {
+      } catch (_error) {
         await respond({
           text: `❌ Status check failed: ${error.message}`,
           response_type: 'ephemeral'
@@ -81,7 +81,7 @@ class OptimizationSlackBot {
         await respond({
           blocks: this.formatReportBlocks(report)
         });
-      } catch (error) {
+      } catch (_error) {
         await respond({
           text: `❌ Report generation failed: ${error.message}`,
           response_type: 'ephemeral'
@@ -98,7 +98,7 @@ class OptimizationSlackBot {
         await respond({
           blocks: this.formatSuggestionsBlocks(suggestions)
         });
-      } catch (error) {
+      } catch (_error) {
         await respond({
           text: `❌ Failed to get suggestions: ${error.message}`,
           response_type: 'ephemeral'
@@ -126,7 +126,7 @@ class OptimizationSlackBot {
           text: `✅ Configuration updated: ${setting} = ${value}`,
           response_type: 'ephemeral'
         });
-      } catch (error) {
+      } catch (_error) {
         await respond({
           text: `❌ Configuration failed: ${error.message}`,
           response_type: 'ephemeral'
@@ -146,7 +146,7 @@ class OptimizationSlackBot {
       try {
         const result = await this.triggerOptimization(target);
         await this.sendOptimizationResults(client, body.channel.id, result);
-      } catch (error) {
+      } catch (_error) {
         console.error('Button action error:', error);
       }
     });
@@ -251,14 +251,14 @@ class OptimizationSlackBot {
       });
 
       return response.data;
-    } catch (error) {
+    } catch (_error) {
       console.error('Cursor API error:', error);
       throw new Error(`Cursor agent failed: ${error.message}`);
     }
   }
 
   async runOptimizationScript(target) {
-    const { exec } = require('child_process');
+    const { _exec } = require('child_process');
     const util = require('util');
     const execAsync = util.promisify(exec);
 
@@ -278,7 +278,7 @@ class OptimizationSlackBot {
         output: stdout,
         errors: stderr
       };
-    } catch (error) {
+    } catch (_error) {
       return {
         success: false,
         error: error.message
@@ -301,7 +301,7 @@ class OptimizationSlackBot {
         timestamp: new Date().toISOString(),
         status: this.calculateOverallStatus(metrics)
       };
-    } catch (error) {
+    } catch (_error) {
       throw new Error(`Failed to get performance status: ${error.message}`);
     }
   }
@@ -357,7 +357,7 @@ class OptimizationSlackBot {
       }
       
       return rules;
-    } catch (error) {
+    } catch (_error) {
       console.error('Error reading optimization rules:', error);
       return [];
     }
@@ -493,7 +493,7 @@ class OptimizationSlackBot {
         version: packageInfo.version,
         bundleSize: 0 // Would be calculated from actual build
       };
-    } catch (error) {
+    } catch (_error) {
       return { error: error.message };
     }
   }

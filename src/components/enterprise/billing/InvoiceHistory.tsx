@@ -65,7 +65,7 @@ export function InvoiceHistory() {
     },
   ];
 
-  const handleDownloadInvoice = (invoiceId: string) => {
+  const handleDownloadInvoice = (_invoiceId: string) => {
     // In a real app, this would trigger a download of the invoice PDF
     toast({
       title: "Downloading invoice",
@@ -73,7 +73,7 @@ export function InvoiceHistory() {
     });
   };
 
-  const getBadgeForStatus = (status: string) => {
+  const getBadgeForStatus = (_status: string) => {
     switch (status) {
       case "paid":
         return <Badge className="bg-green-500">Paid</Badge>;

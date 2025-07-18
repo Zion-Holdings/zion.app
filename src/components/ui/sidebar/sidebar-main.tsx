@@ -100,7 +100,7 @@ export const SidebarRail = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<"button">
 >((props, ref) => {
-  const { toggleSidebar } = useSidebar()
+  const { _toggleSidebar } = useSidebar()
 
   return (
     <button

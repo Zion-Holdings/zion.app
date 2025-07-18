@@ -30,7 +30,7 @@ export function RaiseDisputeButton({
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const router = useRouter();
   
-  const handleDisputeCreated = (disputeId: string) => {
+  const handleDisputeCreated = (_disputeId: string) => {
     setIsDialogOpen(false);
     router.push(`/dashboard/disputes/${disputeId}`);
   };

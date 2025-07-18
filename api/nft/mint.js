@@ -1,4 +1,4 @@
-const { withSentry } = require('../withSentry.cjs');
+const { _withSentry } = require('../withSentry.cjs');
 
 const chains = {
   ethereum: 'Ethereum Mainnet',
@@ -16,7 +16,7 @@ async function handler(req, res) {
     return;
   }
 
-  const { chain } = req.body || {};
+  const { _chain } = req.body || {};
   if (!chain || !chains[chain]) {
     res.statusCode = 400;
     res.json({ error: 'Invalid chain selected' });

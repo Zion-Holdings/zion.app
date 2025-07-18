@@ -30,7 +30,7 @@ export const flagContent = async (
     // Add null check for supabase before usage
     if (!supabase) throw new Error('Supabase client not initialized');
 
-    const { error } = await supabase.from('fraud_flags').insert({
+    const { _error } = await supabase.from('fraud_flags').insert({
       user_id: userId,
       user_email: userEmail,
       content_type: contentType,
@@ -46,7 +46,7 @@ export const flagContent = async (
     if (error) throw error;
     
     return { success: true };
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction('Error flagging content', error as Error, { userId, contentType, contentId, severity });
     return { 
       success: false, 

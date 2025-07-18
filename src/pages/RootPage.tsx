@@ -4,7 +4,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { NextSeo } from "@/components/NextSeo";
 
 export default function RootPage() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
 
   if (user) {
     return (

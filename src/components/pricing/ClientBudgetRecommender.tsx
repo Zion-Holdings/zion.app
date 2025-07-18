@@ -31,7 +31,7 @@ export const ClientBudgetRecommender: React.FC<ClientBudgetRecommenderProps> = (
 }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [suggestion, setSuggestion] = useState<PricingSuggestion | null>(null);
-  const { user } = useAuth();
+  const { _user } = useAuth();
 
   const generateSuggestion = async () => {
     if (!jobTitle || !category) {
@@ -51,7 +51,7 @@ export const ClientBudgetRecommender: React.FC<ClientBudgetRecommenderProps> = (
 
       const result = await getClientBudgetSuggestion(params);
       setSuggestion(result);
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error generating budget suggestion:', { data: error });
     } finally {
       setIsLoading(false);

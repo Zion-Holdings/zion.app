@@ -33,20 +33,20 @@ export function MarketplaceSearch({ products, onSelect }: MarketplaceSearchProps
     };
   }, [query, debouncedSuggest]);
 
-  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInput = (_e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setQuery(value);
     setHighlight(-1);
   };
 
-  const select = (item: ProductListing) => {
+  const select = (_item: ProductListing) => {
     setQuery(item.title);
     clearSuggestions();
     if (onSelect) onSelect(item);
     fireEvent('search', { search_term: item.title });
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = (_e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'ArrowDown') {
       e.preventDefault();
       setHighlight(h => Math.min(h + 1, suggestions.length - 1));

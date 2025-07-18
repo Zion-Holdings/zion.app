@@ -15,7 +15,7 @@ export function useUIState() {
   });
   
   // Toggle expanded sections in the sidebar
-  const toggleSection = (sectionName: keyof typeof expandedSections) => {
+  const toggleSection = (_sectionName: keyof typeof expandedSections) => {
     setExpandedSections(prev => ({
       ...prev,
       [sectionName]: !prev[sectionName]

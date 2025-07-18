@@ -22,7 +22,7 @@ function voteWeight(role?: string) {
 }
 
 export default function RoadmapPage() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [items, setItems] = useState<RoadmapItem[]>(() => {
     const raw = safeStorage.getItem('roadmap_items');
     if (!raw) return ROADMAP_ITEMS;
@@ -37,7 +37,7 @@ export default function RoadmapPage() {
     safeStorage.setItem('roadmap_items', JSON.stringify(items));
   }, [items]);
 
-  const handleUpvote = (id: string) => {
+  const handleUpvote = (_id: string) => {
     if (!user) {
       toast({ title: 'Login required', description: 'Please sign in to vote' });
       return;

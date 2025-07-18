@@ -4,9 +4,9 @@ describe('feedbackService', () => {
   let store: Record<string, string> = {};
   const mockStorage = {
     getItem: jest.fn((key: string) => store[key] || null),
-    setItem: jest.fn((key: string, value: string) => { store[key] = value; }),
-    removeItem: jest.fn((key: string) => { delete store[key]; }),
-    clear: jest.fn(() => { store = {}; })
+    setItem: jest.fn((key: string, _value: string) => { store[key] = value; }),
+    _removeItem: jest.fn((key: string) => { delete store[key]; }),
+    _clear: jest.fn(() => { store = {}; })
   };
 
   beforeAll(() => {

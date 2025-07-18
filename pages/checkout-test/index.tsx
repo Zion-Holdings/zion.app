@@ -11,7 +11,7 @@ const CheckoutTestPage = () => {
     setLoading(true);
     const cart = [{ title: 'Test Product', price: 1.00, quantity: 1 }];
     try {
-      const { data } = await axios.post('/api/checkout-session', { 
+      const { _data } = await axios.post('/api/checkout-session', { 
         cartItems: cart,
         customer_email: 'test@example.com'
       });
@@ -19,7 +19,7 @@ const CheckoutTestPage = () => {
         alert('✅ Checkout session created successfully! In production, you would be redirected to Stripe.');
         setTestResults(prev => ({ ...prev, checkout: 'success' }));
       }
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Checkout error:', { data: err });
       alert('❌ Checkout test failed. Check console for details.');
       setTestResults(prev => ({ ...prev, checkout: 'error' }));

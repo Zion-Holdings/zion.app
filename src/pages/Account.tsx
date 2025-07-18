@@ -31,7 +31,7 @@ interface AccountProps {
 function Account({ user: initialUser, orders }: AccountProps) {
   const [user, setUser] = useState(initialUser);
 
-  const handleSubmit = async (values: ProfileValues) => {
+  const handleSubmit = async (_values: ProfileValues) => {
     try {
       const res = await fetch(`/api/users/${user.id}`, {
         method: 'PATCH',
@@ -40,7 +40,7 @@ function Account({ user: initialUser, orders }: AccountProps) {
       });
       const data = await res.json();
       setUser(data);
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error updating profile:', { data: error });
       let description = 'Failed to update profile. Please try again.';
       if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
@@ -109,7 +109,7 @@ export default function ProtectedAccount(props: AccountProps) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps<AccountProps> = async ({ req }: { req: NextApiRequest }) => {
+export const _getServerSideProps: GetServerSideProps<AccountProps> = async ({ req }: { req: NextApiRequest }) => {
   const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
   // Handle cookie header which can be string or string[]

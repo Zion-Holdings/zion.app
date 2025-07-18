@@ -28,7 +28,7 @@ function bug() {
   console.warn("This is a placeholder for the failing code.");
 }`);
 
-} catch (error) {
+} catch (_error) {
   console.error(`Error processing ESLint report: ${error.message}`);
   process.exit(1);
 }

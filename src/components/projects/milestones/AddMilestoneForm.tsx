@@ -65,12 +65,12 @@ export function AddMilestoneForm({
     },
   });
 
-  const handleSubmit = (values: MilestoneFormValues) => {
+  const handleSubmit = (_values: MilestoneFormValues) => {
     onSubmit(values);
     form.reset();
   };
 
-  const handleAddMilestones = (milestones: GeneratedMilestone[]) => {
+  const handleAddMilestones = (_milestones: GeneratedMilestone[]) => {
     // If there's only one milestone, submit it directly
     if (milestones.length === 1) {
       const milestone = milestones[0];
@@ -96,7 +96,7 @@ export function AddMilestoneForm({
     });
   };
 
-  const handleAddMilestone = (milestone: GeneratedMilestone) => {
+  const handleAddMilestone = (_milestone: GeneratedMilestone) => {
     onSubmit({
       title: milestone.title,
       description: milestone.description || '',

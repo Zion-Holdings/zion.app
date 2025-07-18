@@ -63,7 +63,7 @@ export function PartnerLeaderboard() {
       avatar: "",
       referrals: 87,
       earnings: 2175,
-      badges: ["newcomer"]
+      _badges: ["newcomer"]
     }
   ];
   

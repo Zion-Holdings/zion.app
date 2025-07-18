@@ -101,7 +101,7 @@ class LoggerTypeFixer {
       }
 
       return { fixed: false };
-    } catch (error) {
+    } catch (_error) {
       this.errors.push({ file: filePath, error: error.message });
       return { fixed: false, error: error.message };
     }
@@ -174,7 +174,7 @@ class LoggerTypeFixer {
 
     if (this.errors.length > 0) {
       console.warn('\n⚠️  Errors:');
-      this.errors.forEach(({ file: _file, error: _error }) => {
+      this.errors.forEach(({ file: _file, _error: _error }) => {
         console.warn(`   ${_file}: ${_error && _error.message ? _error.message : String(_error)}`);
       });
     }

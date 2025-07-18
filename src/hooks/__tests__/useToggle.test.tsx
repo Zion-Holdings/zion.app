@@ -3,7 +3,7 @@ import { useToggle } from '../useToggle';
 
 describe('useToggle', () => {
   test('toggles value', () => {
-    const { result } = renderHook(() => useToggle());
+    const { _result } = renderHook(() => useToggle());
     expect(result.current[0]).toBe(false);
     act(() => {
       result.current[1]();
@@ -12,7 +12,7 @@ describe('useToggle', () => {
   });
 
   test('sets value explicitly', () => {
-    const { result } = renderHook(() => useToggle(true));
+    const { _result } = renderHook(() => useToggle(true));
     expect(result.current[0]).toBe(true);
     act(() => {
       result.current[2](false);

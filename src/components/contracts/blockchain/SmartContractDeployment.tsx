@@ -42,7 +42,7 @@ export function SmartContractDeployment({
     
     try {
       await onDeploy(deploymentOptions);
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Deployment error:', { data: error });
     }
   };

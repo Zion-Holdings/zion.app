@@ -5,7 +5,7 @@ export default function GPTPlayground() {
   const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (_e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {

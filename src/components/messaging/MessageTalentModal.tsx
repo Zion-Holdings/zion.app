@@ -30,7 +30,7 @@ export function MessageTalentModal({
   onClose,
   jobTitle
 }: MessageTalentModalProps) {
-  const { createConversation } = useMessaging();
+  const { _createConversation } = useMessaging();
   const router = useRouter();
   const [message, setMessage] = useState(
     jobTitle 
@@ -77,7 +77,7 @@ export function MessageTalentModal({
       
       // Navigate to messages inbox
       router.push("/messages");
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Failed to send message:', { data: error });
       toast({
         title: "Message not sent",

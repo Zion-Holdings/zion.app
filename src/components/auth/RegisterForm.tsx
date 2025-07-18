@@ -39,7 +39,7 @@ export default function RegisterForm() {
     defaultValues: { email: '', password: '', confirmPassword: '' },
   });
 
-  const onSubmit = async (data: FormValues) => {
+  const onSubmit = async (_data: FormValues) => {
     if (isSubmitting) return;
     setIsSubmitting(true);
     try {

@@ -25,7 +25,7 @@ export function useAuthOperations(
     checkUrlForReferralCode();
   }, []);
 
-  const signIn = async ({ email, password }: { email: string; password: string }) => {
+  const signIn = async ({ email, password }: { _email: string; password: string }) => {
     setIsLoading(true);
     try {
       // Clean up any stale auth state before login
@@ -109,7 +109,7 @@ export function useAuthOperations(
           // Generate a referral code for the new user
           if (!supabase) throw new Error('Supabase client not initialized');
           await supabase.rpc('generate_referral_code', { user_id: (data as { user: { id: string } }).user.id });
-        } catch (err) {
+        } catch (_err) {
           logErrorToProduction('Failed to complete signup rewards', { data: err });
         }
         mutate('user');
@@ -133,7 +133,7 @@ export function useAuthOperations(
     setIsLoading(true);
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { error } = await supabase.auth.signOut();
+      const { _error } = await supabase.auth.signOut();
 
       if (error) {
         toast({
@@ -147,7 +147,7 @@ export function useAuthOperations(
         try {
           // Clear authToken cookie on backend
           await fetch('/api/auth/logout', { method: 'POST' });
-        } catch (cookieErr) {
+        } catch (_cookieErr) {
           logWarn('useAuthOperations.logout: failed to clear auth cookie', { data:  { data: cookieErr } });
         }
         toast({
@@ -167,7 +167,7 @@ export function useAuthOperations(
     }
   };
 
-  const resetPassword = async (email: string) => {
+  const resetPassword = async (_email: string) => {
     setIsLoading(true);
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
@@ -202,14 +202,14 @@ export function useAuthOperations(
     }
   };
 
-  const updateProfile = async (profileData: Partial<UserProfile>) => {
+  const updateProfile = async (_profileData: Partial<UserProfile>) => {
     setIsLoading(true);
     try {
       if (!profileData || !profileData.id) {
         throw new Error("Profile data or user ID is missing.");
       }
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { error } = await supabase
+      const { _error } = await supabase
         .from("profiles")
         .update({
           display_name: profileData.displayName,
@@ -263,7 +263,7 @@ export function useAuthOperations(
     setIsLoading(true);
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { error } = await supabase.auth.signInWithOAuth({
+      const { _error } = await supabase.auth.signInWithOAuth({
         provider: "google",
       });
 
@@ -283,7 +283,7 @@ export function useAuthOperations(
     setIsLoading(true);
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { error } = await supabase.auth.signInWithOAuth({
+      const { _error } = await supabase.auth.signInWithOAuth({
         provider: "github",
       });
 
@@ -303,7 +303,7 @@ export function useAuthOperations(
     setIsLoading(true);
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { error } = await supabase.auth.signInWithOAuth({
+      const { _error } = await supabase.auth.signInWithOAuth({
         provider: "facebook",
       });
 
@@ -323,7 +323,7 @@ export function useAuthOperations(
     setIsLoading(true);
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { error } = await supabase.auth.signInWithOAuth({
+      const { _error } = await supabase.auth.signInWithOAuth({
         provider: "twitter",
       });
 

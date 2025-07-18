@@ -44,7 +44,7 @@ interface CheckoutFormData {
 function CheckoutInner() {
   const items = useSelector((s: RootState) => s.cart.items);
   const router = useRouter();
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const breadcrumbs = getBreadcrumbsForPath('/checkout');
 
@@ -68,7 +68,7 @@ function CheckoutInner() {
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
   const tax = subtotal * 0.08; // 8% tax estimate
-  const shipping = subtotal > 100 ? 0 : 15; // Free shipping over $100
+  const shipping = subtotal > 100 ? _0 : 15; // Free shipping over $100
   const total = subtotal + tax + shipping;
 
   const handleCheckout = async (data: CheckoutFormData) => {
@@ -112,7 +112,7 @@ function CheckoutInner() {
       }
 
       window.location.href = responseData.url;
-    } catch (err) {
+    } catch (_err) {
       logDevError('Checkout error:', err);
       let message = 'Failed to process checkout. Please try again.';
       if (err && typeof err === 'object' && 'message' in err && typeof (err as { message?: unknown }).message === 'string') {

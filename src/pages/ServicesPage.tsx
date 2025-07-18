@@ -128,7 +128,7 @@ const ServiceFilterControls = ({
 
 // Service card
 const ServiceCard = ({ service, onViewDetails }: { service: ProductListing; onViewDetails: () => void }) => {
-  const { formatPrice } = useCurrency();
+  const { _formatPrice } = useCurrency();
   return (
   <Card className="h-full hover:shadow-lg transition-shadow">
     <CardHeader className="pb-3">
@@ -186,7 +186,7 @@ export default function ServicesPage() {
   const [showRecommended, setShowRecommended] = useState(false);
   const [_totalGenerated, setTotalGenerated] = useState(0);
 
-  const fetchServices = useCallback(async (page: number, limit: number) => {
+  const fetchServices = useCallback(async (page: number, _limit: number) => {
     await new Promise(resolve => setTimeout(resolve, 400));
 
     // Reactivate: Use a mock data source for services

@@ -8,8 +8,8 @@
 
 const fs = require('fs');
 const path = require('path');
-const { exec } = require('child_process');
-const { promisify } = require('util');
+const { _exec } = require('child_process');
+const { _promisify } = require('util');
 
 const execAsync = promisify(exec);
 
@@ -63,7 +63,7 @@ class EnhancedLogCollector {
       }
 
       return true;
-    } catch (error) {
+    } catch (_error) {
       console.error('❌ Failed to initialize log collector:', error.message);
       return false;
     }
@@ -85,7 +85,7 @@ class EnhancedLogCollector {
       }
     };
 
-    console.log('🔍 Collecting logs from all sources...\n');
+    console.warn('🔍 Collecting logs from all sources...\n');
 
     // Collect build logs
     await this.collectBuildLogs(report);
@@ -112,7 +112,7 @@ class EnhancedLogCollector {
    * Collect Next.js build logs
    */
   async collectBuildLogs(report) {
-    console.log('📦 Collecting build logs...');
+    console.warn('📦 Collecting build logs...');
     
     try {
       // Check for .next directory
@@ -126,9 +126,9 @@ class EnhancedLogCollector {
 
         // Get build info
         try {
-          const { stdout } = await execAsync('du -sh .next 2>/dev/null || echo "0B"');
+          const { _stdout } = await execAsync('du -sh .next 2>/dev/null || echo "0B"');
           buildInfo.size = stdout.trim();
-        } catch (error) {
+        } catch (_error) {
           buildInfo.size = 'Unknown';
         }
 
@@ -152,17 +152,17 @@ class EnhancedLogCollector {
           if (buildLog.hasWarnings) {
             report.summary.warningCount++;
           }
-        } catch (error) {
+        } catch (_error) {
           console.warn('  ⚠️  Could not capture build output');
         }
 
         report.sources.build = buildInfo;
         report.summary.totalFiles += buildInfo.files.length;
-        console.log(`  ✅ Build logs collected (${buildInfo.files.length} files)`);
+        console.warn(`  ✅ Build logs collected (${buildInfo.files.length} files)`);
       } else {
-        console.log('  ℹ️  No .next directory found');
+        console.warn('  ℹ️  No .next directory found');
       }
-    } catch (error) {
+    } catch (_error) {
       console.warn('  ⚠️  Error collecting build logs:', error.message);
     }
   }
@@ -171,7 +171,7 @@ class EnhancedLogCollector {
    * Collect application runtime logs
    */
   async collectApplicationLogs(report) {
-    console.log('🏃 Collecting application logs...');
+    console.warn('🏃 Collecting application logs...');
     
     const appInfo = {
       timestamp: new Date().toISOString(),
@@ -251,7 +251,7 @@ class EnhancedLogCollector {
                   });
                 }
               });
-            } catch (readError) {
+            } catch (_readError) {
               console.warn(`    ⚠️  Could not read ${filePath}`);
             }
           }
@@ -263,8 +263,8 @@ class EnhancedLogCollector {
       report.summary.errorCount += appInfo.errors.length;
       report.summary.warningCount += appInfo.warnings.length;
       
-      console.log(`  ✅ Application logs collected (${appInfo.files.length} files, ${appInfo.errors.length} errors, ${appInfo.warnings.length} warnings)`);
-    } catch (error) {
+      console.warn(`  ✅ Application logs collected (${appInfo.files.length} files, ${appInfo.errors.length} errors, ${appInfo.warnings.length} warnings)`);
+    } catch (_error) {
       console.warn('  ⚠️  Error collecting application logs:', error.message);
     }
   }
@@ -273,7 +273,7 @@ class EnhancedLogCollector {
    * Collect test logs
    */
   async collectTestLogs(report) {
-    console.log('🧪 Collecting test logs...');
+    console.warn('🧪 Collecting test logs...');
     
     const testInfo = {
       timestamp: new Date().toISOString(),
@@ -307,7 +307,7 @@ class EnhancedLogCollector {
                 return acc.concat(failures);
               }, []) || []
             };
-          } catch (parseError) {
+          } catch (_parseError) {
             console.warn('    ⚠️  Could not parse Playwright results');
           }
         }
@@ -323,8 +323,8 @@ class EnhancedLogCollector {
       const totalTestFiles = testInfo.jest.files.length + testInfo.playwright.files.length + testInfo.cypress.files.length;
       report.summary.totalFiles += totalTestFiles;
       
-      console.log(`  ✅ Test logs collected (${totalTestFiles} files)`);
-    } catch (error) {
+      console.warn(`  ✅ Test logs collected (${totalTestFiles} files)`);
+    } catch (_error) {
       console.warn('  ⚠️  Error collecting test logs:', error.message);
     }
   }
@@ -333,7 +333,7 @@ class EnhancedLogCollector {
    * Collect system logs
    */
   async collectSystemLogs(report) {
-    console.log('🖥️  Collecting system logs...');
+    console.warn('🖥️  Collecting system logs...');
     
     const systemInfo = {
       timestamp: new Date().toISOString(),
@@ -356,7 +356,7 @@ class EnhancedLogCollector {
         
         const { stdout: npmConfig } = await execAsync('npm config list --json 2>/dev/null || echo "{}"');
         systemInfo.npm.config = JSON.parse(npmConfig || '{}');
-      } catch (npmError) {
+      } catch (_npmError) {
         console.warn('    ⚠️  Could not get NPM info');
       }
 
@@ -369,13 +369,13 @@ class EnhancedLogCollector {
           const { stdout: memInfo } = await execAsync('free -h');
           systemInfo.system.memory = memInfo;
         }
-      } catch (sysError) {
+      } catch (_sysError) {
         console.warn('    ⚠️  Could not get system info');
       }
 
       report.sources.system = systemInfo;
-      console.log('  ✅ System logs collected');
-    } catch (error) {
+      console.warn('  ✅ System logs collected');
+    } catch (_error) {
       console.warn('  ⚠️  Error collecting system logs:', error.message);
     }
   }
@@ -384,7 +384,7 @@ class EnhancedLogCollector {
    * Collect Git logs
    */
   async collectGitLogs(report) {
-    console.log('🔀 Collecting Git logs...');
+    console.warn('🔀 Collecting Git logs...');
     
     const gitInfo = {
       timestamp: new Date().toISOString(),
@@ -410,8 +410,8 @@ class EnhancedLogCollector {
       };
 
       report.sources.git = gitInfo;
-      console.log(`  ✅ Git logs collected (${gitInfo.commits.length} recent commits)`);
-    } catch (error) {
+      console.warn(`  ✅ Git logs collected (${gitInfo.commits.length} recent commits)`);
+    } catch (_error) {
       console.warn('  ⚠️  Error collecting Git logs:', error.message);
     }
   }
@@ -420,7 +420,7 @@ class EnhancedLogCollector {
    * Generate consolidated report
    */
   async generateConsolidatedReport(report) {
-    console.log('\n📊 Generating consolidated report...');
+    console.warn('\n📊 Generating consolidated report...');
     
     const reportPath = path.join(this.config.outputDir, `consolidated-report-${Date.now()}.json`);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
@@ -430,18 +430,18 @@ class EnhancedLogCollector {
     const summary = this.generateTextSummary(report);
     fs.writeFileSync(summaryPath, summary);
     
-    console.log(`  ✅ Report saved to: ${reportPath}`);
-    console.log(`  ✅ Summary saved to: ${summaryPath}`);
+    console.warn(`  ✅ Report saved to: ${reportPath}`);
+    console.warn(`  ✅ Summary saved to: ${summaryPath}`);
     
     // Display key metrics
-    console.log('\n📈 Key Metrics:');
-    console.log(`  Total files analyzed: ${report.summary.totalFiles}`);
-    console.log(`  Errors found: ${report.summary.errorCount}`);
-    console.log(`  Warnings found: ${report.summary.warningCount}`);
+    console.warn('\n📈 Key Metrics:');
+    console.warn(`  Total files analyzed: ${report.summary.totalFiles}`);
+    console.warn(`  Errors found: ${report.summary.errorCount}`);
+    console.warn(`  Warnings found: ${report.summary.warningCount}`);
     
     if (report.sources.tests?.playwright?.lastRun?.stats) {
       const stats = report.sources.tests.playwright.lastRun.stats;
-      console.log(`  Test failures: ${stats.unexpected || 0}`);
+      console.warn(`  Test failures: ${stats.unexpected || 0}`);
     }
   }
 
@@ -516,7 +516,7 @@ class EnhancedLogCollector {
    * Clean old logs based on retention policy
    */
   async cleanOldLogs() {
-    console.log('🧹 Cleaning old logs...');
+    console.warn('🧹 Cleaning old logs...');
     
     const cutoffDate = new Date();
     cutoffDate.setDate(cutoffDate.getDate() - this.config.retention.days);
@@ -542,8 +542,8 @@ class EnhancedLogCollector {
       };
       
       walkDir(this.config.outputDir);
-      console.log(`  ✅ Cleaned ${deletedCount} old log files`);
-    } catch (error) {
+      console.warn(`  ✅ Cleaned ${deletedCount} old log files`);
+    } catch (_error) {
       console.warn('  ⚠️  Error cleaning logs:', error.message);
     }
   }
@@ -551,7 +551,7 @@ class EnhancedLogCollector {
 
 // Main execution
 async function main() {
-  console.log('🚀 Enhanced Log Collector\n');
+  console.warn('🚀 Enhanced Log Collector\n');
   
   const collector = new EnhancedLogCollector();
   
@@ -569,7 +569,7 @@ async function main() {
 
   // Run error monitoring if requested
   if (process.argv.includes('--analyze')) {
-    const { ErrorMonitor } = require('./error-monitor.cjs');
+    const { _ErrorMonitor } = require('./error-monitor.cjs');
     const monitor = new ErrorMonitor();
     if (monitor.init()) {
       await monitor.readLogs();
@@ -581,11 +581,11 @@ async function main() {
     }
   }
   
-  console.log('\n✅ Log collection completed!');
+  console.warn('\n✅ Log collection completed!');
   
   // Exit with error code if significant issues found
   if (report.summary.errorCount > 5) {
-    console.log('⚠️  High error count detected');
+    console.warn('⚠️  High error count detected');
     process.exit(1);
   }
 }

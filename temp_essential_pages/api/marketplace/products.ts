@@ -139,7 +139,7 @@ async function handler(
       stats.map((s) => [s.productId, { avg: s._avg.rating, count: s._count.id }])
     );
 
-    const result: ProductWithStats[] = products.map((p) => {
+    const _result: ProductWithStats[] = products.map((p) => {
       const productStats = statsMap.get(p.id);
       return {
         ...p,

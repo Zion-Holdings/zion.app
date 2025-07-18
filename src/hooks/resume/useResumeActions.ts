@@ -6,7 +6,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { handleResumeError, showSuccessToast } from './useResumeUtils';
 
 export function useResumeActions() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   
@@ -55,7 +55,7 @@ export function useResumeActions() {
     
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { error } = await supabase
+      const { _error } = await supabase
         .from('talent_resumes')
         .update({
           title: basicInfo.title,
@@ -95,7 +95,7 @@ export function useResumeActions() {
       if (resetError) throw resetError;
       
       // Then, set the selected resume as active
-      const { error } = await supabase
+      const { _error } = await supabase
         .from('talent_resumes')
         .update({ is_active: true })
         .eq('id', resumeId)

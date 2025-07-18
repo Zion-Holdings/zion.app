@@ -102,7 +102,7 @@ const trustedCompanies = [
   {
     name: "Thomson Reuters",
     logo: "/logos/thomson-reuters-logo.svg",
-    alt: "Thomson Reuters logo"
+    _alt: "Thomson Reuters logo"
   }
 ];
 

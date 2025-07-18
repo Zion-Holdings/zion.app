@@ -73,7 +73,7 @@ ${messageSuffix}`, // Use the dynamic message suffix
     logger.info(`Sending webhook notification for ${result.name} to ${ALERT_WEBHOOK_URL}`);
     await axios.post(ALERT_WEBHOOK_URL, payload, { timeout: 10000 });
     logger.info(`Webhook notification sent successfully for ${result.name}.`);
-  } catch (error) {
+  } catch (_error) {
     let errorMessage = 'Unknown error';
     if (axios.isAxiosError(error)) {
       errorMessage = error.message;
@@ -112,7 +112,7 @@ export async function triggerAlerts(result: EndpointTestResult): Promise<void> {
       try {
         await restartService(serviceName); // This will now only run for non-nextjs-service
         logger.info(`PM2 Service restart process initiated for ${serviceName} due to high latency on ${result.name}.`);
-      } catch (restartError) {
+      } catch (_restartError) {
         logger.error(`PM2 Service restart attempt failed for ${serviceName}.`, restartError);
         // Optionally send another webhook if restart fails critically
       }

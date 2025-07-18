@@ -5,7 +5,7 @@ import { ENV_CONFIG } from '@/utils/environmentConfig';
 import { logInfo as _logInfo, logWarn as _logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 
-// 🔐 SECURITY: Development users from environment variables
+// 🔐 _SECURITY: Development users from environment variables
 const getDevUsers = () => {
   // Only load development users in development mode
   if (process.env.NODE_ENV !== 'development') {

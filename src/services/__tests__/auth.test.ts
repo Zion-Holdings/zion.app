@@ -71,7 +71,7 @@ describe('Auth Service', () => {
         (fetch as jest.Mock).mockResolvedValueOnce({
           ok: false,
           status: 503,
-          json: async () => { throw new Error('Network error'); } // Simulate non-JSON response by throwing during .json()
+          _json: async () => { throw new Error('Network error'); } // Simulate non-JSON response by throwing during .json()
         });
 
         await expect(resetPassword(mockToken, mockPassword))

@@ -29,14 +29,14 @@ export function SignUpForm() {
   const [fieldErrors, setFieldErrors] = useState<{ email?: string; password?: string; name?: string }>({});
   const [showVerificationMessage, setShowVerificationMessage] = useState(false);
   
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (_e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     setError("");
     setFieldErrors(prev => ({ ...prev, [name]: "" }));
   };
   
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (_e: React.FormEvent) => {
     e.preventDefault();
     setError("");
     setFieldErrors({});
@@ -94,7 +94,7 @@ export function SignUpForm() {
           router.push("/mobile");
         }
       } else {
-        const { error } = await login(formData.email, formData.password);
+        const { _error } = await login(formData.email, formData.password);
         
         if (error) {
           let errorMsg: string;

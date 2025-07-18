@@ -11,7 +11,7 @@ jest.mock('@/lib/email', () => ({
 }));
 
 describe('/api/newsletter API', () => {
-  const mc = mailchimpService as { addSubscriber: jest.Mock };
+  const mc = mailchimpService as { _addSubscriber: jest.Mock };
 
   beforeEach(() => {
     jest.clearAllMocks();
@@ -48,7 +48,7 @@ describe('/api/newsletter API', () => {
         mergeFields: expect.any(Object)
       })
     );
-    const { sendEmailWithSendGrid } = jest.requireMock('@/lib/email');
+    const { _sendEmailWithSendGrid } = jest.requireMock('@/lib/email');
     expect(sendEmailWithSendGrid).toHaveBeenCalled();
   });
 });

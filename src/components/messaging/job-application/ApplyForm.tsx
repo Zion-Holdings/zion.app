@@ -22,8 +22,8 @@ interface ApplyFormProps {
 }
 
 export function ApplyForm({ job, onClose, onApplySuccess }: ApplyFormProps) {
-  const { createConversation } = useMessaging();
-  const { applyToJob } = useJobApplications();
+  const { _createConversation } = useMessaging();
+  const { _applyToJob } = useJobApplications();
   const [message, setMessage] = useState(
     `Hi, I'm interested in your job "${job.title}" and would like to apply. I believe my skills and experience are a great match for this role.`
   );
@@ -33,7 +33,7 @@ export function ApplyForm({ job, onClose, onApplySuccess }: ApplyFormProps) {
   const [selectedResume, setSelectedResume] = useState<ResumeOption | null>(null);
   const [selectedResumeId, setSelectedResumeId] = useState<string | null>(null);
   
-  const handleResumeSelected = (resume: ResumeOption) => {
+  const handleResumeSelected = (_resume: ResumeOption) => {
     setSelectedResume(resume);
     setSelectedResumeId(resume.id);
   };
@@ -110,7 +110,7 @@ export function ApplyForm({ job, onClose, onApplySuccess }: ApplyFormProps) {
       });
       
       onClose();
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Failed to send application:', { data: error });
       toast({
         title: "Application failed",

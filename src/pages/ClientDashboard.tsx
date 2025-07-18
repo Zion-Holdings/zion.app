@@ -46,7 +46,7 @@ function ClientDashboardContent() {
     }
   }, [jobs, selectedJobId]);
 
-  const handleJobSelect = (jobId: string, jobTitle: string) => {
+  const handleJobSelect = (jobId: string, _jobTitle: string) => {
     setSelectedJobId(jobId);
     setSelectedJobTitle(jobTitle);
   };

@@ -7,7 +7,7 @@ import { AlertTriangle, AlertCircle, CheckCircle } from '@/components/ui/icons';
 
 
 interface FraudTabContentProps {
-  tabValue: string;
+  _tabValue: string;
 }
 
 export const FraudTabContent: React.FC<FraudTabContentProps> = ({ tabValue }) => {

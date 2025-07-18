@@ -25,7 +25,7 @@ export async function registerUser(name: string, email: string, password: string
     logDebug('Register API Response Status:', { data:  { status: res.status } });
     logDebug('Register API Response Body:', { data:  { body: res.data } });
     return { res, data: res.data };
-  } catch (err) {
+  } catch (_err) {
     logErrorToProduction('Register API error', err as Error, { endpoint, email });
     throw err;
   }

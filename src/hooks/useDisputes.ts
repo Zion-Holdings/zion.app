@@ -9,7 +9,7 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useDisputes() {
 
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [disputes, setDisputes] = useState<Dispute[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -134,7 +134,7 @@ export function useDisputes() {
   const updateDisputeStatus = async (disputeId: string, status: DisputeStatus): Promise<boolean> => {
     if (!supabase) throw new Error('Supabase client not initialized');
     try {
-      const { error } = await supabase
+      const { _error } = await supabase
         .from("disputes")
         .update({ status })
         .eq("id", disputeId);
@@ -163,7 +163,7 @@ export function useDisputes() {
   ): Promise<boolean> => {
     if (!supabase) throw new Error('Supabase client not initialized');
     try {
-      const { error } = await supabase
+      const { _error } = await supabase
         .from("disputes")
         .update({
           status: 'resolved',
@@ -229,7 +229,7 @@ export function useDisputes() {
     }
 
     try {
-      const { error } = await supabase
+      const { _error } = await supabase
         .from("dispute_messages")
         .insert({
           dispute_id: disputeId,

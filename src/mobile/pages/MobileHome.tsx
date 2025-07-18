@@ -7,7 +7,7 @@ import { TalentDashboard } from "@/mobile/components/dashboard/TalentDashboard";
 import { useAuth } from "@/hooks/useAuth";
 
 export function MobileHome() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const isClient = user?.userType === 'client' || user?.userType === 'admin';
 
   return (

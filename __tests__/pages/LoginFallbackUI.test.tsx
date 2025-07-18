@@ -77,7 +77,7 @@ describe('Login Page Fallback UI for Long Loading', () => {
       user: null,
     });
 
-    const { rerender } = render(<Login />);
+    const { _rerender } = render(<Login />);
 
     expect(screen.getByText('Loading...')).toBeInTheDocument();
     expect(screen.queryByText(/Login is taking longer than usual/i)).not.toBeInTheDocument();
@@ -123,7 +123,7 @@ describe('Login Page Fallback UI for Long Loading', () => {
       user: null,
     });
 
-    const { rerender } = render(<Login />);
+    const { _rerender } = render(<Login />);
 
     // Show the fallback message
     act(() => {

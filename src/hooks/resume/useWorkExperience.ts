@@ -6,7 +6,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { formatDateForDB, handleResumeError, showSuccessToast } from './useResumeUtils';
 
 export function useWorkExperience() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   
@@ -21,7 +21,7 @@ export function useWorkExperience() {
     setError(null);
     
     try {
-      const { error } = await supabase
+      const { _error } = await supabase
         .from('work_history')
         .insert({
           resume_id: resumeId,
@@ -56,7 +56,7 @@ export function useWorkExperience() {
     setError(null);
     
     try {
-      const { error } = await supabase
+      const { _error } = await supabase
         .from('work_history')
         .update({
           company_name: work.company_name,
@@ -91,7 +91,7 @@ export function useWorkExperience() {
     setError(null);
     
     try {
-      const { error } = await supabase
+      const { _error } = await supabase
         .from('work_history')
         .delete()
         .eq('id', workId);

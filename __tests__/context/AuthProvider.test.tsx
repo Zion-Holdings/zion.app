@@ -46,7 +46,7 @@ const mockedAuthService = authService as jest.Mocked<typeof authService>;
 const mockedToast = originalToast as jest.MockedFunction<typeof originalToast>; // Use the originalToast for type
 const mockedSupabase = supabase as jest.Mocked<typeof supabase>;
 
-const TestConsumer: React.FC<{loginPayload?: {email: string, pass: string}}> = ({ loginPayload }) => {
+const TestConsumer: React.FC<{loginPayload?: {email: string, _pass: string}}> = ({ loginPayload }) => {
   const { login, isLoading, user } = useAuth();
 
   const handleLogin = async () => {

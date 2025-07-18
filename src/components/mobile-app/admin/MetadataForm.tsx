@@ -12,7 +12,7 @@ import { Badge } from "@/components/ui/badge";
 
 
 interface MetadataFormProps {
-  form: UseFormReturn<AppMetadataValues>;
+  _form: UseFormReturn<AppMetadataValues>;
 }
 
 export const MetadataForm: React.FC<MetadataFormProps> = ({ form }) => {
@@ -20,7 +20,7 @@ export const MetadataForm: React.FC<MetadataFormProps> = ({ form }) => {
   const keywords = watch("keywords");
   const platform = watch("platform");
   
-  const addKeyword = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const addKeyword = (_e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" || e.key === ",") {
       e.preventDefault();
       const value = e.currentTarget.value.trim();
@@ -32,7 +32,7 @@ export const MetadataForm: React.FC<MetadataFormProps> = ({ form }) => {
     }
   };
   
-  const removeKeyword = (keyword: string) => {
+  const removeKeyword = (_keyword: string) => {
     setValue(
       "keywords",
       keywords.filter((k) => k !== keyword)

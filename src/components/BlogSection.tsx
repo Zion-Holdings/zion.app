@@ -12,7 +12,7 @@ const recentPosts = [...BLOG_POSTS].sort((a, b) => {
 }).slice(0, 3);
 
 // Define a sub-component for the image to manage its state
-const PostImage = ({ post }: { post: typeof recentPosts[0] }) => {
+const PostImage = ({ post }: { _post: typeof recentPosts[0] }) => {
   const [imageSrc, setImageSrc] = useState(post.featuredImage);
   const [imageError, setImageError] = useState(false);
 

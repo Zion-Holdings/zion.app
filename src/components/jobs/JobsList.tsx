@@ -18,7 +18,7 @@ interface JobsListProps {
 }
 
 export function JobsList({ filter, onSelectJob }: JobsListProps) {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const [jobs, setJobs] = useState<Job[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -46,7 +46,7 @@ export function JobsList({ filter, onSelectJob }: JobsListProps) {
 
         if (error) throw error;
         setJobs(data as Job[]);
-      } catch (error) {
+      } catch (_error) {
         logErrorToProduction('Error fetching jobs:', { data: error });
       } finally {
         setIsLoading(false);
@@ -80,7 +80,7 @@ export function JobsList({ filter, onSelectJob }: JobsListProps) {
     );
   }
 
-  const getStatusColor = (status: JobStatus) => {
+  const getStatusColor = (_status: JobStatus) => {
     switch (status) {
       case "new":
         return "bg-blue-100 text-blue-800";

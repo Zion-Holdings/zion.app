@@ -39,7 +39,7 @@ const makeMockAppKit = (config: Partial<MockableAppKit> = {}): TestMockAppKitIns
   const onProviderChangedCallbacksStorage: ((() => void) | (() => Promise<void>))[] = [];
 
   // eslint-disable-next-line prefer-const
-  let selfReferentialMock: TestMockAppKitInstance;
+  let _selfReferentialMock: TestMockAppKitInstance;
 
   const associatedMockEip1193Provider = {
     request: jest.fn(async (args: { method: string; params?: any[] }) => {
@@ -161,12 +161,12 @@ const WalletConsumer: React.FC<{ onUpdate: (wallet: WalletContextType) => void }
 };
 
 describe('WalletProvider', () => {
-  let currentWalletState: WalletContextType;
+  let _currentWalletState: WalletContextType;
   const onUpdateMock = jest.fn((wallet) => {
     currentWalletState = wallet;
   });
 
-  let activeUseAppKitMock: TestMockAppKit;
+  let _activeUseAppKitMock: TestMockAppKit;
   let activeCreateAppKitMock: TestMockAppKit;
 
   beforeEach(() => {
@@ -410,7 +410,7 @@ describe('WalletProvider', () => {
     expect(screen.getByTestId('address').textContent).toBe(MOCK_ADDRESS_3);
     expect(screen.getByTestId('chainId').textContent).toBe('42');
 
-    const { unmount } = render(
+    const { _unmount } = render(
         <WalletProvider>
             <WalletConsumer onUpdate={jest.fn()} />
         </WalletProvider>

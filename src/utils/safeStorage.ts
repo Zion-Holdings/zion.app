@@ -68,7 +68,7 @@ export const safeStorage = {
       return inMemoryStore[key] || null;
     }
   },
-  setItem: (key: string, value: string) => {
+  setItem: (key: string, _value: string) => {
     if (typeof window === 'undefined') return;
     
     const isVerboseKey = key.includes('sb-') || key.includes('supabase');
@@ -82,7 +82,7 @@ export const safeStorage = {
       inMemoryStore[key] = value;
     }
   },
-  removeItem: (key: string) => {
+  _removeItem: (key: string) => {
     if (typeof window === 'undefined') return;
     
     const isVerboseKey = key.includes('sb-') || key.includes('supabase');
@@ -96,7 +96,7 @@ export const safeStorage = {
       delete inMemoryStore[key];
     }
   },
-  clear: () => {
+  _clear: () => {
     if (typeof window === 'undefined') {
       for (const key in inMemoryStore) {
         delete inMemoryStore[key];
@@ -129,7 +129,7 @@ export const safeSessionStorage = {
       return sessionMemoryStore[key] || null;
     }
   },
-  setItem: (key: string, value: string) => {
+  setItem: (key: string, _value: string) => {
     if (typeof window === 'undefined') return;
     try {
       sessionStorage.setItem(key, value);
@@ -137,7 +137,7 @@ export const safeSessionStorage = {
       sessionMemoryStore[key] = value;
     }
   },
-  removeItem: (key: string) => {
+  _removeItem: (key: string) => {
     if (typeof window === 'undefined') return;
     try {
       sessionStorage.removeItem(key);
@@ -145,7 +145,7 @@ export const safeSessionStorage = {
       delete sessionMemoryStore[key];
     }
   },
-  clear: () => {
+  _clear: () => {
     if (typeof window === 'undefined') {
       for (const key in sessionMemoryStore) {
         delete sessionMemoryStore[key];

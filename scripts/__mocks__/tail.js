@@ -8,10 +8,10 @@ const Tail = jest.fn().mockImplementation(function(filePath) {
     this.eventCallbacks[event].push(callback);
   });
   this.watch = jest.fn(() => {
-    // console.log(`Mock Tail: watch() called for ${this.filePath}`);
+    // console.warn(`Mock Tail: watch() called for ${this.filePath}`);
   });
   this.unwatch = jest.fn(() => {
-    // console.log(`Mock Tail: unwatch() called for ${this.filePath}`);
+    // console.warn(`Mock Tail: unwatch() called for ${this.filePath}`);
   });
 
   // Helper for tests to simulate line events
@@ -27,7 +27,7 @@ const Tail = jest.fn().mockImplementation(function(filePath) {
     }
   };
 
-  // console.log(`Mock Tail: constructor called for ${filePath}`);
+  // console.warn(`Mock Tail: constructor called for ${filePath}`);
   return this;
 });
 

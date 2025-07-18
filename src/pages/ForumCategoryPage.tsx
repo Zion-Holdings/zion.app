@@ -108,7 +108,7 @@ function CategoryContent({
 
   const canCreatePost = Boolean(user && (!category.adminOnly || (isAdminUser(user) && (user.userType === 'admin' || user.role === 'admin'))));
   const { isFollowed, follow, unfollow } = useFollowedCategories();
-  const { toast } = useToast();
+  const { _toast } = useToast();
 
   const handleFollow = () => {
     if (!user) {
@@ -207,8 +207,8 @@ function CategoryContent({
 
 export default function ForumCategoryPage() {
   const router = useRouter();
-  const { categoryId } = router.query as { categoryId: string };
-  const { user } = useAuth();
+  const { _categoryId } = router.query as { categoryId: string };
+  const { _user } = useAuth();
 
   // Check if the category exists and user has access
   const category = categoryId ? categoriesInfo[categoryId] : null;

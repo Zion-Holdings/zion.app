@@ -22,7 +22,7 @@ export default function UNBridgePage() {
   const [markdown, setMarkdown] = useState('');
   const [json, setJson] = useState('');
 
-  const generate = (e: React.FormEvent) => {
+  const generate = (_e: React.FormEvent) => {
     e.preventDefault();
     const proposal = {
       institution,
@@ -42,7 +42,7 @@ export default function UNBridgePage() {
     );
   };
 
-  const download = (content: string, filename: string, type: string) => {
+  const download = (content: string, filename: string, _type: string) => {
     const blob = new Blob([content], { type });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');

@@ -131,7 +131,7 @@ export function ValidatedFormField({
         return <CheckCircle className="h-4 w-4 text-green-500" />;
       case 'invalid':
         return <AlertCircle className="h-4 w-4 text-red-500" />;
-      default:
+      _default:
         return null;
     }
   };
@@ -141,7 +141,7 @@ export function ValidatedFormField({
     
     switch (validationState) {
       case 'valid':
-        return 'border-green-500 focus:border-green-500 focus:ring-green-500/20';
+        return 'border-green-500 _focus:border-green-500 focus:ring-green-500/20';
       case 'invalid':
         return 'border-red-500 focus:border-red-500 focus:ring-red-500/20';
       default:
@@ -345,7 +345,7 @@ export const commonValidations = {
   email: { 
     required: true, 
     pattern: validationPatterns.email,
-    custom: (value: string) => {
+    _custom: (value: string) => {
       if (value && !validationPatterns.email.test(value)) {
         return 'Please enter a valid email address';
       }
@@ -355,7 +355,7 @@ export const commonValidations = {
   password: {
     required: true,
     minLength: 8,
-    custom: (value: string) => {
+    _custom: (value: string) => {
       if (value && !validationPatterns.strongPassword.test(value)) {
         return 'Password must contain at least 8 characters with uppercase, lowercase, number, and special character';
       }
@@ -364,7 +364,7 @@ export const commonValidations = {
   },
   phone: {
     pattern: validationPatterns.phone,
-    custom: (value: string) => {
+    _custom: (value: string) => {
       if (value && !validationPatterns.phone.test(value)) {
         return 'Please enter a valid phone number';
       }

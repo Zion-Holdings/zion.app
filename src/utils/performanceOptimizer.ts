@@ -78,13 +78,13 @@ class PerformanceOptimizer {
           if (this.performanceObserver) {
             this.performanceObserver.observe({ entryTypes: [type] });
           }
-        } catch (error) {
+        } catch (_error) {
           logWarn('Failed to observe ${type} performance entries', { data:  { data:  { error } } });
         }
       });
 
       logInfo('Performance monitoring initialized');
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Failed to initialize performance monitoring', { data: error });
     }
   }
@@ -242,7 +242,7 @@ class PerformanceOptimizer {
 
       this.optimizationApplied = true;
       logInfo('Performance optimizations applied successfully');
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Failed to apply performance optimizations', { data: error });
     }
   }
@@ -367,7 +367,7 @@ class PerformanceOptimizer {
         version: process.env.NEXT_PUBLIC_APP_VERSION || '1.0.0',
       };
       localStorage.setItem('app-cache-info', JSON.stringify(cacheData));
-    } catch (error) {
+    } catch (_error) {
       logWarn('Failed to set localStorage cache', { data:  { data:  { error } } });
     }
 

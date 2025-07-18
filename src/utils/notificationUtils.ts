@@ -59,7 +59,7 @@ export async function createNotification({
     }
 
     return { success: true, notificationId: data };
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction('Error creating notification:', { data: error });
     return { success: false, error };
   }

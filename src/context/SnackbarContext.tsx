@@ -6,7 +6,7 @@ import type { OptionsObject, SnackbarKey } from 'notistack';
 export type EnqueueSnackbar = (message: string, options?: OptionsObject) => SnackbarKey;
 
 let enqueueSnackbarRef: EnqueueSnackbar = () => '';
-export const setEnqueueSnackbarRef = (fn: EnqueueSnackbar) => {
+export const setEnqueueSnackbarRef = (_fn: EnqueueSnackbar) => {
   enqueueSnackbarRef = fn;
 };
 export const getEnqueueSnackbar = () => enqueueSnackbarRef;
@@ -15,8 +15,8 @@ const SnackbarContext = createContext<EnqueueSnackbar>(() => '');
 
 export const useEnqueueSnackbar = (): EnqueueSnackbar => useContext(SnackbarContext);
 
-const InnerProvider = ({ children }: { children: ReactNode }) => {
-  const { enqueueSnackbar } = useSnackbar();
+const InnerProvider = ({ children }: { _children: ReactNode }) => {
+  const { _enqueueSnackbar } = useSnackbar();
   setEnqueueSnackbarRef(enqueueSnackbar);
   return <SnackbarContext.Provider value={enqueueSnackbar}>{children}</SnackbarContext.Provider>;
 };

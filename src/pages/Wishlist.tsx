@@ -32,7 +32,7 @@ export default function WishlistPage() {
     return null; // Or a loading spinner
   }
 
-  const addToCart = (item: ProductListing) => {
+  const addToCart = (_item: ProductListing) => {
     if (items.some(i => i.id === item.id)) return;
     dispatch({
       type: 'ADD_ITEM',

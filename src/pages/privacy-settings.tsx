@@ -15,7 +15,7 @@ export default function PrivacySettings() {
     }
   }, []);
 
-  const handleChange = (value: 'granted' | 'denied') => {
+  const handleChange = (_value: 'granted' | 'denied') => {
     setConsent(value);
     setCookie('analyticsConsent', value, 365);
     safeStorage.setItem('analyticsConsent', value);

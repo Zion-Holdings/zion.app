@@ -14,7 +14,7 @@ const createAxiosInstance = (): AxiosInstance => {
 
   // Request interceptor
   instance.interceptors.request.use(
-    (config: InternalAxiosRequestConfig) => {
+    (_config: InternalAxiosRequestConfig) => {
       // Add auth token if available
       if (typeof window !== 'undefined') {
         const token = safeStorage.getItem('auth-token');
@@ -24,7 +24,7 @@ const createAxiosInstance = (): AxiosInstance => {
       }
       return config;
     },
-    (error: unknown) => {
+    (_error: unknown) => {
       return Promise.reject(error);
     }
   );
@@ -32,7 +32,7 @@ const createAxiosInstance = (): AxiosInstance => {
   // Response interceptor
   instance.interceptors.response.use(
     (response: AxiosResponse) => response,
-    (error: unknown) => {
+    (_error: unknown) => {
       if ((error as AxiosError)?.response?.status === 401) {
         // Handle unauthorized access
         if (typeof window !== 'undefined') {

@@ -30,7 +30,7 @@ const mockCookies = cookies as unknown as {
 
 
 describe('AnalyticsConsentBanner', () => {
-  let isAvailableSpy: ReturnType<typeof vi.spyOn>;
+  let _isAvailableSpy: ReturnType<typeof vi.spyOn>;
 
   beforeEach(() => {
     vi.clearAllMocks();

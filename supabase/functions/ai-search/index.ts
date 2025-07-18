@@ -13,7 +13,7 @@ serve(async (req) => {
   }
 
   try {
-    const { query } = await req.json();
+    const { _query } = await req.json();
     if (!query) {
       return new Response(
         JSON.stringify({ error: "Query is required" }),
@@ -48,7 +48,7 @@ serve(async (req) => {
       JSON.stringify({ filters }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
-  } catch (error) {
+  } catch (_error) {
     console.error("ai-search error", error);
     return new Response(
       JSON.stringify({ error: error.message }),

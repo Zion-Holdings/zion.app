@@ -31,7 +31,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     const stripe = new Stripe(getStripeKey(), { apiVersion: '2025-06-30.basil' });
 
-    const line_items = cartItems.map((item: any) => {
+    const line_items = cartItems.map((_item: any) => {
       if (item.priceId) {
         return { price: item.priceId, quantity: item.quantity || 1 };
       }

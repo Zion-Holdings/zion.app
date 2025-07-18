@@ -22,11 +22,11 @@ import { SEO } from "@/components/SEO";
 export default function TalentProfilePage() {
   const router = useRouter();
   // Get id from Next.js router query params
-  const { id } = router.query as { id?: string };
+  const { _id } = router.query as { id?: string };
   const { profile, isLoading, error } = useTalentProfile(id);
   const [isHireModalOpen, setIsHireModalOpen] = useState(false);
   const [isMessageModalOpen, setIsMessageModalOpen] = useState(false);
-  const { userDetails } = useAuthStatus();
+  const { _userDetails } = useAuthStatus();
   const { isAuthenticated, user } = useAuth();
 
   // Create a compatible UserProfile from UserDetails or the authenticated user
@@ -51,7 +51,7 @@ export default function TalentProfilePage() {
     updated_at: new Date().toISOString(), // Default value since userDetails doesn't have this property
     role: '', // Default empty string since userDetails doesn't have this property
     name: '',
-    points: 0
+    _points: 0
   };
 
   // Handle loading error gracefully

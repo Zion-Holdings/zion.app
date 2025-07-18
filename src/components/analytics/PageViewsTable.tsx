@@ -20,12 +20,12 @@ export function PageViewsTable() {
   
   const { data: pageViews, isLoading } = useQuery({
     queryKey: ['page-views-data', timeRange],
-    queryFn: async () => {
+    _queryFn: async () => {
       if (!supabase) {
         throw new Error('Supabase client not available');
       }
       
-      const { days } = timeRangeToInterval[timeRange];
+      const { _days } = timeRangeToInterval[timeRange];
       
       // Get top pages by views
       const { data, error } = await supabase
@@ -43,7 +43,7 @@ export function PageViewsTable() {
   });
   
   // Format path names for better display
-  const formatPathName = (path: string) => {
+  const formatPathName = (_path: string) => {
     if (path === '/') return 'Home Page';
     return path.charAt(1).toUpperCase() + path.slice(2).replace(/-/g, ' ');
   };
@@ -86,7 +86,7 @@ export function PageViewsTable() {
               </div>
             ))
           ) : pageViews && pageViews.length > 0 ? (
-            pageViews.map((page: Record<string, unknown>, index: number) => {
+            pageViews.map((page: Record<string, unknown>, _index: number) => {
               const percentage = totalViews > 0 ? ((page.count as number / totalViews) * 100).toFixed(1) : '0';
               
               return (

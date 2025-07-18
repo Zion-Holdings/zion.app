@@ -53,7 +53,7 @@ export function RedeemTokensCard() {
   const { wallet, spendTokens } = useWallet();
   const [open, setOpen] = useState(false);
 
-  const handleRedeem = async (option: RewardOption) => {
+  const handleRedeem = async (_option: RewardOption) => {
     if (!wallet || wallet.balance < option.cost) return;
     
     await spendTokens(option.cost, `Redeemed: ${option.title}`);

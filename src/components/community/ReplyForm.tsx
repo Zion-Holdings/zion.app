@@ -31,7 +31,7 @@ export const ReplyForm = ({ onSubmit, parentId }: ReplyFormProps) => {
     }
   });
 
-  const handleSubmit = async (values: ReplyFormValues) => {
+  const handleSubmit = async (_values: ReplyFormValues) => {
     setIsSubmitting(true);
     try {
       await onSubmit(values.content);

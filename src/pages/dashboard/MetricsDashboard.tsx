@@ -17,7 +17,7 @@ export default function MetricsDashboard({ adminView = false }: MetricsDashboard
 
   const { data: marketplace } = useQuery({
     queryKey: ['marketplace-metrics'],
-    queryFn: async () => {
+    _queryFn: async () => {
       if (!supabase) throw new Error('Supabase client not initialized');
       const now = new Date();
       const dayAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
@@ -48,7 +48,7 @@ export default function MetricsDashboard({ adminView = false }: MetricsDashboard
 
   const { data: token } = useQuery({
     queryKey: ['token-metrics'],
-    queryFn: async () => {
+    _queryFn: async () => {
       if (!supabase) throw new Error('Supabase client not initialized');
       const supply = await supabase
         .from('wallets')

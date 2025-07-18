@@ -12,7 +12,7 @@ export interface Order {
 export function useGetOrdersQuery(userId?: string) {
   return useQuery({
     queryKey: ['orders', userId],
-    queryFn: async () => {
+    _queryFn: async () => {
       if (!userId) return [] as Order[];
       const res = await fetch(`/api/orders?user_id=me`);
       if (!res.ok) {

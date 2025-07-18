@@ -4,7 +4,7 @@ import type { GetServerSideProps } from 'next';
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const _getServerSideProps: GetServerSideProps = async () => {
   return {
     props: {}
   };

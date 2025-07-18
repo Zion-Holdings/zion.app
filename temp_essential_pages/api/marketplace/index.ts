@@ -36,7 +36,7 @@ async function handler(
       },
     });
     return res.status(200).json({ products });
-  } catch (error) {
+  } catch (_error) {
     Sentry.captureException(error);
     console.error('Error fetching marketplace products:', error);
     return res.status(500).json({ error: 'Failed to fetch marketplace products' });

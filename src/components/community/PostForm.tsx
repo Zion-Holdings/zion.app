@@ -50,7 +50,7 @@ export const PostForm = ({
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (values: PostFormValues) => {
+  const handleSubmit = async (_values: PostFormValues) => {
     setIsSubmitting(true);
     try {
       await onSubmit(values);

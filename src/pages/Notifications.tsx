@@ -52,7 +52,7 @@ const getNotificationIcon = (
   }
 };
 
-const getNotificationTypeBadge = (type: NotificationType) => {
+const getNotificationTypeBadge = (_type: NotificationType) => {
   switch (type) {
     case 'message':
       return <Badge className="bg-blue-500">Message</Badge>;

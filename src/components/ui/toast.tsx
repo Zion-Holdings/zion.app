@@ -135,7 +135,7 @@ export {
 // export function useToast() {
 //   return {
 //     // Accept a loosely typed props object to allow custom fields like `description`
-//     toast: (props: any) => {
+//     _toast: (props: any) => {
 //       // Implementation of toast functionality
 //     },
 //   }

@@ -3,7 +3,7 @@
 // Comprehensive build monitoring and error suppression
 // Handles webpack runtime warnings while preserving critical error detection
 
-const { spawn } = require('child_process');
+const { _spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
@@ -80,15 +80,15 @@ function log(level, message, ...args) {
   switch (level) {
     case 'info':
       if (config.logLevel === 'verbose' || config.logLevel === 'normal') {
-        console.log(`${colorize(`[${timestamp}]`, colors.cyan)} ${colorize('ℹ', colors.blue)} ${message}`, ...args);
+        console.warn(`${colorize(`[${timestamp}]`, colors.cyan)} ${colorize('ℹ', colors.blue)} ${message}`, ...args);
       }
       break;
     case 'success':
-      console.log(`${colorize(`[${timestamp}]`, colors.cyan)} ${colorize('✅', colors.green)} ${message}`, ...args);
+      console.warn(`${colorize(`[${timestamp}]`, colors.cyan)} ${colorize('✅', colors.green)} ${message}`, ...args);
       break;
     case 'warning':
       if (config.logLevel === 'verbose') {
-        console.log(`${colorize(`[${timestamp}]`, colors.cyan)} ${colorize('⚠️', colors.yellow)} ${message}`, ...args);
+        console.warn(`${colorize(`[${timestamp}]`, colors.cyan)} ${colorize('⚠️', colors.yellow)} ${message}`, ...args);
       }
       break;
     case 'error':
@@ -197,14 +197,14 @@ function generateBuildReport() {
   try {
     fs.writeFileSync('build-report.json', JSON.stringify(report, null, 2));
     log('info', `Build report written to build-report.json`);
-  } catch (error) {
+  } catch (_error) {
     log('error', `Failed to write build report: ${error.message}`);
   }
   
   // Console summary
-  console.log('\n' + colorize('━'.repeat(60), colors.cyan));
-  console.log(colorize('BUILD SUMMARY', colors.bright));
-  console.log(colorize('━'.repeat(60), colors.cyan));
+  console.warn('\n' + colorize('━'.repeat(60), colors.cyan));
+  console.warn(colorize('BUILD SUMMARY', colors.bright));
+  console.warn(colorize('━'.repeat(60), colors.cyan));
   
   log('info', `Duration: ${colorize(`${(buildDuration / 1000).toFixed(2)}s`, colors.bright)}`);
   log('info', `Status: ${buildSuccess ? colorize('SUCCESS', colors.green) : colorize('FAILED', colors.red)}`);
@@ -212,23 +212,23 @@ function generateBuildReport() {
   log('info', `Suppressed Warnings: ${colorize(suppressedWarnings.length.toString(), colors.yellow)}`);
   
   if (criticalErrors.length > 0) {
-    console.log('\n' + colorize('CRITICAL ERRORS:', colors.red));
+    console.warn('\n' + colorize('CRITICAL ERRORS:', colors.red));
     criticalErrors.forEach((error, index) => {
-      console.log(`${index + 1}. ${error.message}`);
+      console.warn(`${index + 1}. ${error.message}`);
     });
   }
   
   if (suppressedWarnings.length > 0 && config.logLevel === 'verbose') {
-    console.log('\n' + colorize('SUPPRESSED WARNINGS:', colors.yellow));
+    console.warn('\n' + colorize('SUPPRESSED WARNINGS:', colors.yellow));
     suppressedWarnings.slice(0, 5).forEach((warning, index) => {
-      console.log(`${index + 1}. ${warning.message}`);
+      console.warn(`${index + 1}. ${warning.message}`);
     });
     if (suppressedWarnings.length > 5) {
-      console.log(`... and ${suppressedWarnings.length - 5} more`);
+      console.warn(`... and ${suppressedWarnings.length - 5} more`);
     }
   }
   
-  console.log(colorize('━'.repeat(60), colors.cyan) + '\n');
+  console.warn(colorize('━'.repeat(60), colors.cyan) + '\n');
 }
 
 async function runBuild(attempt = 1) {
@@ -321,7 +321,7 @@ async function main() {
     try {
       await runBuild(attempt);
       break; // Success, exit retry loop
-    } catch (error) {
+    } catch (_error) {
       lastError = error;
       
       if (attempt < config.retryAttempts + 1) {

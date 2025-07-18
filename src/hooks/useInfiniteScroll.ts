@@ -43,7 +43,7 @@ export function useInfiniteScroll(
     };
   }, []);
 
-  const lastElementRef = useCallback((node: HTMLElement | null) => {
+  const lastElementRef = useCallback((_node: HTMLElement | null) => {
     if (loading || !hasMore) return;
     
     if (observer.current) observer.current.disconnect();
@@ -63,7 +63,7 @@ export function useInfiniteScroll(
           timeoutRef.current = setTimeout(async () => {
             try {
               await loadMore();
-            } catch (error) {
+            } catch (_error) {
               logErrorToProduction('Error loading more items:', { data: error });
             } finally {
               setIsFetching(false);
@@ -163,7 +163,7 @@ export function useInfiniteScrollPagination<T>(
       if (result.total !== undefined) {
         setTotal(result.total);
       }
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Error loading items:', { data: err });
       setError(getErrorMessage(err));
     } finally {
@@ -209,7 +209,7 @@ export function useInfiniteScrollPagination<T>(
         setTotal(result.total);
       }
       setIsInitialized(true);
-    } catch (err) {
+    } catch (_err) {
       logErrorToProduction('Error refreshing items:', { data: err });
       setError(getErrorMessage(err));
     } finally {

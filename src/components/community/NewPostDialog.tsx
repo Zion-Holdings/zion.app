@@ -13,11 +13,11 @@ interface NewPostDialogProps {
 }
 
 export function NewPostDialog({ open, onOpenChange, initialCategory }: NewPostDialogProps) {
-  const { user } = useAuth();
-  const { toast } = useToast();
+  const { _user } = useAuth();
+  const { _toast } = useToast();
   const router = useRouter();
 
-  const handleSubmit = async (values: { title: string; content: string; categoryId: ForumCategory; tags: string; }) => {
+  const handleSubmit = async (_values: { title: string; content: string; categoryId: ForumCategory; tags: string; }) => {
     try {
       toast({ title: "Post created", description: "Your post has been published successfully" });
       if (user?.id) {

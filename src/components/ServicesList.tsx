@@ -23,7 +23,7 @@ async function fetchServices(): Promise<ProductListing[]> {
     }
 
     return (await res.json()) as ProductListing[];
-  } catch (err) {
+  } catch (_err) {
     captureException(err);
     throw err;
   }

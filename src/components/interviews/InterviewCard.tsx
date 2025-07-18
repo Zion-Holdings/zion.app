@@ -25,7 +25,7 @@ interface InterviewCardProps {
 }
 
 export function InterviewCard({ interview, onRefresh }: InterviewCardProps) {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const { respondToInterview, cancelInterview } = useInterviews();
   const [isResponseDialogOpen, setIsResponseDialogOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -56,7 +56,7 @@ export function InterviewCard({ interview, onRefresh }: InterviewCardProps) {
     }
   };
 
-  const handleRespondToInterview = async (status: 'confirmed' | 'declined' | 'rescheduled') => {
+  const handleRespondToInterview = async (_status: 'confirmed' | 'declined' | 'rescheduled') => {
     setIsLoading(true);
     const success = await respondToInterview(interview.id, { 
       interview_id: interview.id, 
@@ -116,7 +116,7 @@ export function InterviewCard({ interview, onRefresh }: InterviewCardProps) {
         return <Badge className="bg-green-700">Completed</Badge>;
       case 'cancelled':
         return <Badge variant="outline" className="border-destructive text-destructive">Cancelled</Badge>;
-      default:
+      _default:
         return <Badge>{interview.status}</Badge>;
     }
   };

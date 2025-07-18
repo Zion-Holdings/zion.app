@@ -70,7 +70,7 @@ class BundleAnalyzer {
       });
       
     } catch {
-      // console.log('   ⚠️  Build failed, analyzing existing files...');
+      // console.warn('   ⚠️  Build failed, analyzing existing files...');
     }
   }
 
@@ -156,7 +156,7 @@ class BundleAnalyzer {
       // Analysis of duplicates would go here
       
     } catch {
-      // console.log('   ⚠️  Could not analyze duplicates');
+      // console.warn('   ⚠️  Could not analyze duplicates');
     }
   }
 
@@ -226,34 +226,34 @@ class BundleAnalyzer {
     topDeps.forEach((dep, _index) => {
       const _sizeFormatted = this.formatSize(dep.size);
       const _indicator = dep.size > config.thresholds.warning ? '⚠️ ' : '  ';
-      // console.log(`${indicator}${index + 1}. ${dep.name} - ${sizeFormatted}`);
+      // console.warn(`${indicator}${index + 1}. ${dep.name} - ${sizeFormatted}`);
     });
 
     // Recommendations
     this.results.recommendations.forEach(rec => {
-      // console.log(`\n${rec.type === 'warning' ? '⚠️ ' : 'ℹ️ '} ${rec.title}`);
-      // console.log(`   ${rec.description}`);
+      // console.warn(`\n${rec.type === 'warning' ? '⚠️ ' : 'ℹ️ '} ${rec.title}`);
+      // console.warn(`   ${rec.description}`);
       
       if (rec.items) {
         rec.items.forEach(item => {
           if (item.suggestion) {
-            // console.log(`   • ${item.name} (${item.size}) - ${item.suggestion}`);
+            // console.warn(`   • ${item.name} (${item.size}) - ${item.suggestion}`);
           } else {
-            // console.log(`   • ${item.name}: ${item.description}`);
+            // console.warn(`   • ${item.name}: ${item.description}`);
           }
         });
       }
     });
 
     // Quick wins
-    // console.log('\n🚀 Quick Wins:');
-    // console.log('   1. Enable gzip compression in production');
-    // console.log('   2. Implement code splitting for routes');
-    // console.log('   3. Use dynamic imports for heavy libraries');
-    // console.log('   4. Optimize images and use WebP format');
-    // console.log('   5. Remove unused dependencies');
+    // console.warn('\n🚀 Quick Wins:');
+    // console.warn('   1. Enable gzip compression in production');
+    // console.warn('   2. Implement code splitting for routes');
+    // console.warn('   3. Use dynamic imports for heavy libraries');
+    // console.warn('   4. Optimize images and use WebP format');
+    // console.warn('   5. Remove unused dependencies');
 
-    // console.log('\n📝 Detailed report saved to bundle-analysis.json');
+    // console.warn('\n📝 Detailed report saved to bundle-analysis.json');
   }
 
   saveReport() {

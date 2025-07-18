@@ -76,7 +76,7 @@ class PerformanceMonitor {
       onINP((metric) => this.recordMetric('INP', metric));
       onLCP((metric) => this.recordMetric('LCP', metric));
       onTTFB((metric) => this.recordMetric('TTFB', metric));
-    } catch (error) {
+    } catch (_error) {
       logWarn('Failed to initialize Core Web Vitals:', { error });
     }
   }
@@ -153,7 +153,7 @@ class PerformanceMonitor {
 
     window.addEventListener('load', () => {
       const resources = performance.getEntriesByType('resource') as PerformanceResourceTiming[];
-      const resourceTimes: { [key: string]: number } = {};
+      const _resourceTimes: { [key: string]: number } = {};
 
       resources.forEach((resource) => {
         const duration = resource.responseEnd - resource.startTime;
@@ -210,7 +210,7 @@ class PerformanceMonitor {
           id: this.generateId()
         });
       }, 5000);
-    } catch (error) {
+    } catch (_error) {
       logWarn('Long task API not supported:', { error });
     }
   }
@@ -322,7 +322,7 @@ class PerformanceMonitor {
 
       // Clear reported metrics
       this.metrics = [];
-    } catch (error) {
+    } catch (_error) {
       logWarn('Failed to report performance metrics:', { error });
     }
   }

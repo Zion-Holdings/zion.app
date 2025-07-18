@@ -35,7 +35,7 @@ interface BrowseCardsProps {
 export function BrowseCards({ items, type, onViewDetails }: BrowseCardsProps) {
   const [savedItems, setSavedItems] = useState<string[]>([]);
   
-  const toggleSaved = (id: string) => {
+  const toggleSaved = (_id: string) => {
     setSavedItems(prev => 
       prev.includes(id) 
         ? prev.filter(itemId => itemId !== id)

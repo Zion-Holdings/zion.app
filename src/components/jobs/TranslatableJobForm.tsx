@@ -30,7 +30,7 @@ interface TranslatableJobFormProps {
 }
 
 export function TranslatableJobForm({ onSubmit, isSubmitting = false }: TranslatableJobFormProps) {
-  const { t } = useTranslation();
+  cons_t { t } = useTranslation();
   const { translateContent, isTranslating } = useTranslationService();
   const { supportedLanguages, currentLanguage } = useLanguage();
   
@@ -65,20 +65,20 @@ export function TranslatableJobForm({ onSubmit, isSubmitting = false }: Translat
   const [deadline, setDeadline] = useState("");
   
   // Handle text changes
-  const handleTitleChange = (value: string) => {
+  const handleTitleChange = (_value: string) => {
     setTitle({ ...title, [activeTab]: value });
   };
   
-  const handleDescriptionChange = (value: string) => {
+  const handleDescriptionChange = (_value: string) => {
     setDescription({ ...description, [activeTab]: value });
   };
   
-  const handleRequirementsChange = (value: string) => {
+  const handleRequirementsChange = (_value: string) => {
     setRequirements({ ...requirements, [activeTab]: value });
   };
   
   // Handle form submission
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (_e: React.FormEvent) => {
     e.preventDefault();
     
     // Complete any missing translations with auto-translation
@@ -94,7 +94,7 @@ export function TranslatableJobForm({ onSubmit, isSubmitting = false }: Translat
   };
   
   // Auto translate content when language tab changes
-  const handleTabChange = async (tab: string) => {
+  const handleTabChange = async (_tab: string) => {
     const selectedLanguage = tab as SupportedLanguage;
     if (selectedLanguage !== activeTab) {
       setActiveTab(selectedLanguage);
@@ -102,7 +102,7 @@ export function TranslatableJobForm({ onSubmit, isSubmitting = false }: Translat
   };
   
   // Auto translate function
-  const autoTranslate = async (field: 'title' | 'description' | 'requirements') => {
+  const autoTranslate = async (_field: 'title' | 'description' | 'requirements') => {
     let sourceLanguage: SupportedLanguage = 'en';
     let content = '';
     
@@ -156,7 +156,7 @@ export function TranslatableJobForm({ onSubmit, isSubmitting = false }: Translat
         title: t('translation.translation_success'),
         description: t('translation.content_translated'),
       });
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error translating ${field}:', { data: error });
       toast({
         title: t('translation.translation_failed'),

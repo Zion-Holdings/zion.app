@@ -28,7 +28,7 @@ const defaultValues: AppMetadataValues = {
   longDescription: "Zion AI Marketplace is your one-stop solution for connecting with top AI and tech talent worldwide. Whether you're a business looking to hire specialized talent or a professional seeking your next opportunity, our app simplifies the process with AI-powered matching, secure messaging, and streamlined hiring.",
   keywords: ["AI freelancer", "tech jobs", "hire developers", "IT marketplace", "artificial intelligence jobs"],
   version: "1.0.0",
-  platform: "ios"
+  _platform: "ios"
 };
 
 export const MetadataManager: React.FC = () => {
@@ -39,7 +39,7 @@ export const MetadataManager: React.FC = () => {
   const iosForm = useForm<AppMetadataValues>({ defaultValues: { ...defaultValues, platform: "ios" } });
   const androidForm = useForm<AppMetadataValues>({ defaultValues: { ...defaultValues, platform: "android" } });
   
-  const currentForm = currentPlatform === "ios" ? iosForm : androidForm;
+  const currentForm = currentPlatform === "ios" ? _iosForm : androidForm;
   
   const handleSaveMetadata = async (data: AppMetadataValues) => {
     setIsSaving(true);
@@ -52,7 +52,7 @@ export const MetadataManager: React.FC = () => {
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       toast.success(`${currentPlatform === "ios" ? "iOS" : "Android"} metadata saved successfully!`);
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to save metadata");
       logErrorToProduction("Failed to save metadata", { data: error });
     } finally {

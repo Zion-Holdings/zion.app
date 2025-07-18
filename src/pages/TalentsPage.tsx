@@ -22,7 +22,7 @@ import Spinner from '@/components/ui/spinner';
 
 // Add or import TalentStats type
 type TalentStats = {
-  averageHourlyRate: number;
+  _averageHourlyRate: number;
   averageMonthlySalary: number;
   averageRating: number;
   averageExperience: number;
@@ -239,7 +239,7 @@ export default function TalentsPage() {
   const [totalGenerated, setTotalGenerated] = useState(0);
 
   // Fetch function for infinite scroll with AI talent generation
-  const fetchTalents = useCallback(async (page: number, limit: number) => {
+  const fetchTalents = useCallback(async (page: number, _limit: number) => {
     // Add realistic loading delay
     await new Promise(resolve => setTimeout(resolve, 300));
 

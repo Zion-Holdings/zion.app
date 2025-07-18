@@ -9,7 +9,7 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/ca
 import type { FraudStats } from "@/types/fraud";
 
 interface FraudStatsCardsProps {
-  stats: FraudStats;
+  _stats: FraudStats;
 }
 
 export const FraudStatsCards: React.FC<FraudStatsCardsProps> = ({ stats }) => {

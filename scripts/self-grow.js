@@ -13,7 +13,7 @@ async function loadFeedback() {
   try {
     const data = await readFile('data/feedback.json', 'utf8');
     return JSON.parse(data);
-  } catch (e) {
+  } catch (_e) {
     console.error('Failed to read feedback.json:', e.message);
     return [];
   }

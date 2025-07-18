@@ -50,7 +50,7 @@ export function DisputeForm({
   onDisputeCreated, 
   onCancel 
 }: DisputeFormProps) {
-  const { createDispute } = useDisputes();
+  const { _createDispute } = useDisputes();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [files, setFiles] = useState<File[]>([]);
 
@@ -63,7 +63,7 @@ export function DisputeForm({
     },
   });
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileChange = (_e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       const newFiles = Array.from(e.target.files);
       setFiles(prev => [...prev, ...newFiles]);
@@ -71,7 +71,7 @@ export function DisputeForm({
     }
   };
 
-  const removeFile = (index: number) => {
+  const removeFile = (_index: number) => {
     const newFiles = [...files];
     newFiles.splice(index, 1);
     setFiles(newFiles);
@@ -102,7 +102,7 @@ export function DisputeForm({
           onDisputeCreated(dispute.id);
         }
       }
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error submitting dispute:', { data: error });
       toast.error("Failed to submit dispute. Please try again.");
     } finally {

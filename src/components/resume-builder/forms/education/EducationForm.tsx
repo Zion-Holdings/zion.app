@@ -16,7 +16,7 @@ export function EducationForm({
   const { addEducation, updateEducation, deleteEducation } = useResume();
   const [editingId, setEditingId] = useState<string | null>(null);
   
-  const handleAddOrUpdate = async (data: Education) => {
+  const handleAddOrUpdate = async (_data: Education) => {
     const educationData: Education = {
       institution: data.institution,
       degree: data.degree,
@@ -40,12 +40,12 @@ export function EducationForm({
     }
   };
 
-  const handleEdit = (edu: Education) => {
+  const handleEdit = (_edu: Education) => {
     setEditingId(edu.id!);
     // Form reset happens in the child component
   };
 
-  const handleDelete = async (id: string) => {
+  const handleDelete = async (_id: string) => {
     if (confirm('Are you sure you want to delete this education entry?')) {
       await deleteEducation(id);
     }

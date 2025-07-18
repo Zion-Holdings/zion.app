@@ -67,7 +67,7 @@ export function PartnerResources() {
       description: 'Key messages and benefits to highlight',
       type: 'document',
       icon: <FileText className="h-10 w-10 text-zion-cyan" />,
-      url: '#'
+      _url: '#'
     }
   ];
 

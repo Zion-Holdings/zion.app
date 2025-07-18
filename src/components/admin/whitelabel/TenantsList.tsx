@@ -57,13 +57,13 @@ export function TenantsList() {
     }
   };
 
-  const toggleTenantStatus = async (tenant: WhitelabelTenant) => {
+  const toggleTenantStatus = async (_tenant: WhitelabelTenant) => {
     try {
       if (!supabase) {
         throw new Error('Supabase client not available');
       }
       
-      const { error } = await supabase
+      const { _error } = await supabase
         .from('whitelabel_tenants')
         .update({ is_active: !(tenant as WhitelabelTenant).is_active })
         .eq('id', (tenant as WhitelabelTenant).id);
@@ -89,7 +89,7 @@ export function TenantsList() {
     }
   };
 
-  const verifyDns = async (tenant: WhitelabelTenant) => {
+  const verifyDns = async (_tenant: WhitelabelTenant) => {
     try {
       if (!supabase) {
         throw new Error('Supabase client not available');
@@ -97,7 +97,7 @@ export function TenantsList() {
       
       // In a real implementation, this would verify DNS records
       // For now, we'll just mark it as verified
-      const { error } = await supabase
+      const { _error } = await supabase
         .from('whitelabel_tenants')
         .update({ dns_verified: true })
         .eq('id', (tenant as WhitelabelTenant).id);

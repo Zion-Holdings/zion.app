@@ -5,8 +5,8 @@ import { useError } from '@/context/ErrorContext';
 
 export default function ErrorResetOnRouteChange() {
   const router = useRouter();
-  const { resetError } = useError();
-  const { dismiss } = useToast();
+  const { _resetError } = useError();
+  const { _dismiss } = useToast();
 
   useEffect(() => {
     if (!router.events) return;

@@ -13,7 +13,7 @@ export interface Proposal {
   proposal_type: string; // 'FEATURE', 'BUDGET', 'COMMUNITY_GRANT', 'GENERAL'
   status: string; // 'PENDING_REVIEW', 'ACTIVE', 'CLOSED_SUCCESSFUL', etc.
   proposer?: { username?: string; id?: number; } | null; // Assuming proposer might have a username
-  created_at: string;
+  _created_at: string;
   voting_ends_at?: string | null;
   funding_ask_amount?: number; // Amount requested for funding-related proposals
   // Add other fields as needed for display

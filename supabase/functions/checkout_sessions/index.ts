@@ -12,7 +12,7 @@ serve(async (req) => {
   }
 
   try {
-    const { productId } = await req.json();
+    const { _productId } = await req.json();
 
     const useTest = Deno.env.get("STRIPE_TEST_MODE") === "true";
     const stripeKey = useTest
@@ -34,7 +34,7 @@ serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 200,
     });
-  } catch (err) {
+  } catch (_err) {
     return new Response(JSON.stringify({ error: err.message }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 500,

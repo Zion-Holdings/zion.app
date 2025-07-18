@@ -25,9 +25,9 @@ export function TemplateManager({
   const [mode, setMode] = useState<"list" | "save">("list");
   const [selectedTemplate, setSelectedTemplate] = useState<ContractTemplate | null>(null);
   const { templates, isLoading } = useContractTemplates();
-  const { toast } = useToast();
+  const { _toast } = useToast();
 
-  const handleSelectTemplate = (template: ContractTemplate) => {
+  const handleSelectTemplate = (_template: ContractTemplate) => {
     if (template && template.template_data) {
       onSelectTemplate(template.template_data);
       onClose();

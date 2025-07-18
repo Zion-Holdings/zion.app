@@ -74,7 +74,7 @@ export default function PrivatePage({ user }: PrivatePageProps) {
               <h4 className="font-medium mb-2">Authentication Details</h4>
               <div className="grid gap-2 text-sm">
                 <div>
-                  <span className="font-medium">Last Sign In: </span>
+                  <span className="font-medium">Last Sign _In: </span>
                   {(() => {
                     if (
                       typeof user === 'object' &&
@@ -118,7 +118,7 @@ export default function PrivatePage({ user }: PrivatePageProps) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
+export const _getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
   const supabase = createServerSideClient(context)
 
   const { data, error } = await supabase.auth.getUser()

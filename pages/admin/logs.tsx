@@ -29,7 +29,7 @@ interface LogEntry {
   url?: string;
   userAgent?: string;
   userId?: string;
-  sessionId: string;
+  _sessionId: string;
   source: 'client' | 'server' | 'middleware' | 'api';
   component?: string;
   feature?: string;
@@ -66,7 +66,7 @@ const LogLevelIcon = ({ level }: { level: LogEntry['level'] }) => {
       return <AlertCircle className="h-4 w-4 text-red-500" />;
     case 'critical':
       return <XCircle className="h-4 w-4 text-red-700" />;
-    default:
+    _default:
       return <Info className="h-4 w-4 text-gray-500" />;
   }
 };
@@ -137,7 +137,7 @@ export default function LogsPage({ logs: initialLogs, errorCount, warningCount, 
         const data = await response.json();
         setLogs(data.logs);
       }
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Failed to refresh logs:', error);
     } finally {
       setIsLoading(false);
@@ -156,7 +156,7 @@ export default function LogsPage({ logs: initialLogs, errorCount, warningCount, 
     linkElement.click();
   };
 
-  const formatTimestamp = (timestamp: string) => {
+  const formatTimestamp = (_timestamp: string) => {
     return new Date(timestamp).toLocaleString();
   };
 
@@ -383,7 +383,7 @@ export default function LogsPage({ logs: initialLogs, errorCount, warningCount, 
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const _getServerSideProps: GetServerSideProps = async () => {
   try {
     const logsDir = path.join(process.cwd(), 'logs');
     const logs: LogEntry[] = [];
@@ -430,7 +430,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
         lastUpdated: new Date().toISOString(),
       },
     };
-  } catch (error) {
+  } catch (_error) {
             logErrorToProduction('Error reading logs:', error);
     return {
       props: {

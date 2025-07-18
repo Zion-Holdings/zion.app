@@ -13,7 +13,7 @@ export interface ResumeTabProps {
 }
 
 export function ResumeTab({ selectedResumeId, onSelectResume, onResumeSelected, onApply, isSubmitting = false }: ResumeTabProps) {
-  const handleResumeSelected = (resume: ResumeOption) => {
+  const handleResumeSelected = (_resume: ResumeOption) => {
     if (onResumeSelected) {
       onResumeSelected(resume);
     }

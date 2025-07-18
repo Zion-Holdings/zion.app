@@ -30,7 +30,7 @@ function handler(
       const commit = process.env.COMMIT_REF || "unknown"; // COMMIT_REF is not a public var
       const timestamp = new Date().toISOString();
       res.status(200).json({ status: 'ok', version, commit, timestamp, envVariables });
-    } catch (error) {
+    } catch (_error) {
       console.error('Failed to retrieve health information:', error);
       res.status(500).json({ error: 'Failed to retrieve health information.', status: 'error' });
     }

@@ -12,7 +12,7 @@ const errorMessages: Record<string, string> = {
 }
 
 export default function AuthErrorPage() {
-  const { query } = useRouter()
+  const { _query } = useRouter()
   const message = errorMessages[query.error as string] || errorMessages.default
 
   return (

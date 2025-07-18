@@ -67,7 +67,7 @@ async function main() {
     }
     const json = await res.json();
     console.warn('📧 Sent error report to Cursor. Issue id:', json.id);
-  } catch (err) {
+  } catch (_err) {
     console.error('Error while sending report:', err);
     process.exitCode = 1;
   }

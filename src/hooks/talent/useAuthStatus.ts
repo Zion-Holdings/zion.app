@@ -21,7 +21,7 @@ export function useAuthStatus() {
   const [savedTalents, setSavedTalents] = useState<string[]>([]);
   
   // Toggle saved talent
-  const handleToggleSave = (talentId: string, isSaved: boolean) => {
+  const handleToggleSave = (talentId: string, _isSaved: boolean) => {
     if (isAuthenticated) {
       if (isSaved) {
         setSavedTalents(prev => [...prev, talentId]);

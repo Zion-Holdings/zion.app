@@ -19,7 +19,7 @@ const meta: Meta<typeof TalentProfilePage> = {
 
 export default meta;
 
-export const Default: StoryObj<typeof TalentProfilePage> = {
+export const _Default: StoryObj<typeof TalentProfilePage> = {
   render: () => {
     // Mock fetch to return the sample talent data
     window.fetch = () =>

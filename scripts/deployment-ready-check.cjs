@@ -43,7 +43,7 @@ class DeploymentChecker {
   }
 
   checkProductionBuild() {
-    // console.log('🔍 Checking production build capability...');
+    // console.warn('🔍 Checking production build capability...');
     
     const packageJsonExists = fs.existsSync('package.json');
     const nextConfigExists = fs.existsSync('next.config.js');
@@ -65,7 +65,7 @@ class DeploymentChecker {
   }
 
   checkEnvironmentVariables() {
-    // console.log('🔍 Checking environment variables...');
+    // console.warn('🔍 Checking environment variables...');
     
     const required = ['NEXT_PUBLIC_SUPABASE_URL', 'NEXT_PUBLIC_SUPABASE_ANON_KEY'];
     const missing = required.filter(v => !process.env[v]);
@@ -87,7 +87,7 @@ class DeploymentChecker {
   }
 
   checkSecurity() {
-    // console.log('🔍 Checking security configuration...');
+    // console.warn('🔍 Checking security configuration...');
     
     try {
       let hasSecurityHeaders = false;
@@ -120,7 +120,7 @@ class DeploymentChecker {
       if (!hasSecurityHeaders) {
         this.results.recommendations.push('Add security headers to next.config.js or netlify.toml');
       }
-    } catch (error) {
+    } catch (_error) {
       this.results.checks.push({
         name: 'Security Configuration',
         status: 'warn',
@@ -149,8 +149,8 @@ class DeploymentChecker {
   }
 
   printResults() {
-    // console.log('\n🚀 Deployment Readiness Report');
-    // console.log('================================');
+    // console.warn('\n🚀 Deployment Readiness Report');
+    // console.warn('================================');
     
     const statusEmojis = {
       ready: '🟢',
@@ -159,26 +159,26 @@ class DeploymentChecker {
       blocked: '🔴'
     };
 
-    // console.log(`Overall Status: ${statusEmojis[this.results.overall]} ${this.results.overall.toUpperCase()}`);
-    // console.log(`Readiness Score: ${this.results.readiness}%\n`);
+    // console.warn(`Overall Status: ${statusEmojis[this.results.overall]} ${this.results.overall.toUpperCase()}`);
+    // console.warn(`Readiness Score: ${this.results.readiness}%\n`);
     
-    // console.log('Check Results:');
+    // console.warn('Check Results:');
     this.results.checks.forEach(check => {
       const emoji = check.status === 'pass' ? '✅' : check.status === 'warn' ? '⚠️' : '❌';
-      // console.log(`  ${emoji} ${check.name}: ${check.details}`);
+      // console.warn(`  ${emoji} ${check.name}: ${check.details}`);
     });
 
     if (this.results.blockers.length > 0) {
-      // console.log('\n🚫 Deployment Blockers:');
+      // console.warn('\n🚫 Deployment Blockers:');
       this.results.blockers.forEach(blocker => console.warn(`  ❌ ${blocker}`));
     }
 
     if (this.results.recommendations.length > 0) {
-      // console.log('\n💡 Recommendations:');
+      // console.warn('\n💡 Recommendations:');
       this.results.recommendations.forEach(rec => console.warn(`  💡 ${rec}`));
     }
 
-    // console.log('\n📋 Deployment Checklist:');
+    // console.warn('\n📋 Deployment Checklist:');
     const checklist = [
       '☐ Run npm run build successfully',
       '☐ Configure production environment variables',
@@ -186,11 +186,11 @@ class DeploymentChecker {
       '☐ Test application in production mode',
       '☐ Set up monitoring and error tracking'
     ];
-    // checklist.forEach(item => console.log(`  ${item}`));
+    // checklist.forEach(item => console.warn(`  ${item}`));
   }
 
   async run() {
-    // console.log('🔍 Starting Deployment Readiness Check\n');
+    // console.warn('🔍 Starting Deployment Readiness Check\n');
 
     this.checkProductionBuild();
     this.checkEnvironmentVariables(); 

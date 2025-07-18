@@ -13,7 +13,7 @@ interface DroppableProps {
   droppableId: string;
 }
 export function Droppable({ children }: DroppableProps) {
-  return <>{children({ droppableProps: {}, innerRef: () => {}, placeholder: null })}</>;
+  return <>{children({ droppableProps: {}, _innerRef: () => {}, placeholder: null })}</>;
 }
 
 interface DraggableProps {
@@ -22,5 +22,5 @@ interface DraggableProps {
   index: number;
 }
 export function Draggable({ children }: DraggableProps) {
-  return <>{children({ draggableProps: {}, dragHandleProps: {}, innerRef: () => {} })}</>;
+  return <>{children({ draggableProps: {}, dragHandleProps: {}, _innerRef: () => {} })}</>;
 }

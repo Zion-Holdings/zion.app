@@ -29,7 +29,7 @@ export function TalentPool() {
       role: "Product Manager",
       skills: ["Agile", "Roadmapping", "User Research"],
       status: "available",
-      match: 88
+      _match: 88
     }
   ];
 

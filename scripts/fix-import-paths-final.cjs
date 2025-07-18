@@ -34,19 +34,19 @@ function fixImportPaths(filePath) {
     
     if (modified) {
       fs.writeFileSync(filePath, newContent, 'utf8');
-      console.log(`Fixed imports in: ${filePath}`);
+      console.warn(`Fixed imports in: ${filePath}`);
       return true;
     }
     
     return false;
-  } catch (error) {
+  } catch (_error) {
     console.error(`Error processing ${filePath}:`, error.message);
     return false;
   }
 }
 
 // Main execution
-console.log('Fixing import paths to use correct @/pages/ mapping...');
+console.warn('Fixing import paths to use correct @/pages/ mapping...');
 
 const pagesDir = path.join(__dirname, '..', 'pages');
 const tsxFiles = findTsxFiles(pagesDir);
@@ -66,4 +66,4 @@ if (fs.existsSync(routesConfigPath)) {
   }
 }
 
-console.log(`\nFixed ${fixedCount} files with incorrect import paths.`); 
+console.warn(`\nFixed ${fixedCount} files with incorrect import paths.`); 

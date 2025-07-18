@@ -36,7 +36,7 @@ export function UserTypeSelection({ onSelect, selectedType }: UserTypeSelectionP
       id: "client",
       name: "Client",
       description: "I want to discover and hire talent or services",
-      icon: User
+      _icon: User
     }
   ];
 

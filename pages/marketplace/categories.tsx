@@ -2,7 +2,7 @@ import React from 'react';
 import type { GetServerSideProps } from 'next';
 import Categories from '@/pages/Categories';
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const _getServerSideProps: GetServerSideProps = async () => {
   return {
     props: {}
   };

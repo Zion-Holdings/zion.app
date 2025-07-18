@@ -12,7 +12,7 @@ import dynamic from 'next/dynamic';
 
 // Error boundary for component loading
 interface BoundaryProps {
-  fallback: React.ComponentType<object>;
+  _fallback: React.ComponentType<object>;
   children: React.ReactNode;
 }
 
@@ -60,7 +60,7 @@ const DefaultFallback: React.FC<object> = () => {
 };
 
 // Default loading component
-const DefaultLoading: React.FC = () => {
+const _DefaultLoading: React.FC = () => {
   return React.createElement('div', {
     style: { 
       padding: '2rem', 
@@ -93,7 +93,7 @@ export function createSafeComponent(
           const WrappedComponent: React.FC<Record<string, unknown>> = (props: Record<string, unknown>) => {
             try {
               return React.createElement(Component, props);
-            } catch (error) {
+            } catch (_error) {
               logErrorToProduction(`Error rendering component:`, error);
               const Fallback = fallbackComponent || DefaultFallback;
               return React.createElement(Fallback);
@@ -102,10 +102,10 @@ export function createSafeComponent(
           
           // Ensure getInitialProps is safe and doesn't cause errors
           if ((Component as unknown as { getInitialProps?: (ctx: unknown) => Promise<unknown> }).getInitialProps) {
-            (WrappedComponent as unknown as { getInitialProps?: (ctx: unknown) => Promise<unknown> }).getInitialProps = async (ctx: unknown) => {
+            (WrappedComponent as unknown as { getInitialProps?: (ctx: unknown) => Promise<unknown> }).getInitialProps = async (_ctx: unknown) => {
               try {
                 return await (Component as unknown as { getInitialProps: (ctx: unknown) => Promise<unknown> }).getInitialProps(ctx);
-              } catch (error) {
+              } catch (_error) {
                 logErrorToProduction(`Error in getInitialProps:`, error);
                 // Return empty props to prevent the error from crashing the app
                 return {};
@@ -125,7 +125,7 @@ export function createSafeComponent(
           };
           
           // Ensure the fallback component has a safe getInitialProps
-          (SafeFallback as unknown as { getInitialProps?: (ctx: unknown) => Promise<unknown> }).getInitialProps = async (ctx: unknown) => {
+          (SafeFallback as unknown as { getInitialProps?: (ctx: unknown) => Promise<unknown> }).getInitialProps = async (_ctx: unknown) => {
             try {
               // Try to call getInitialProps on the original component if it exists
               const originalModule = await importFn().catch(() => null);
@@ -133,7 +133,7 @@ export function createSafeComponent(
               if (originalComponent && typeof (originalComponent as unknown as { getInitialProps?: (ctx: unknown) => Promise<unknown> }).getInitialProps === 'function') {
                 return await (originalComponent as unknown as { getInitialProps: (ctx: unknown) => Promise<unknown> }).getInitialProps(ctx);
               }
-            } catch (error) {
+            } catch (_error) {
               logErrorToProduction(`Error in fallback getInitialProps:`, error);
             }
             // Return empty props as final fallback

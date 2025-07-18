@@ -16,7 +16,7 @@ const fetcher = async (url: string): Promise<ServiceItem[]> => {
       throw new Error('Failed');
     }
     return res.json();
-  } catch (err) {
+  } catch (_err) {
     if (process.env.NODE_ENV === 'development') {
       logErrorToProduction('Failed to fetch service items', { data: err });
     } else {

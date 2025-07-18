@@ -33,7 +33,7 @@ export const QuoteRequestCard: React.FC<QuoteRequestCardProps> = ({
   onToggleArchive
 }) => {
   // Format date for display
-  const formatDate = (dateString: string) => {
+  const formatDate = (_dateString: string) => {
     try {
       return format(new Date(dateString), 'PP');
     } catch {

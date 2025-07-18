@@ -28,7 +28,7 @@ interface ChunkInfo {
 }
 
 export function BundleAnalyzer() {
-  const { user } = useAuth();
+  const { _user } = useAuth();
   const isAdmin = user?.userType === 'admin' || user?.role === 'admin';
   // Always call hooks at the top
   const [bundleInfo, setBundleInfo] = useState<BundleInfo | null>(null);
@@ -99,7 +99,7 @@ export function BundleAnalyzer() {
       });
 
       setChunks(chunkData.sort((a, b) => b.size - a.size).slice(0, 5)); // Top 5 largest chunks
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Failed to collect bundle info:', { data: error });
     } finally {
       setIsCollecting(false);
@@ -114,7 +114,7 @@ export function BundleAnalyzer() {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
   };
 
-  const getSizeColor = (size: number) => {
+  const getSizeColor = (_size: number) => {
     if (size < 100000) return 'bg-green-500'; // < 100KB
     if (size < 500000) return 'bg-yellow-500'; // < 500KB
     return 'bg-red-500'; // > 500KB

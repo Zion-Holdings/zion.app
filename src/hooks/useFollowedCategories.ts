@@ -17,18 +17,18 @@ export function useFollowedCategories() {
     }
   }, []);
 
-  const save = (data: string[]) => {
+  const save = (_data: string[]) => {
     setFollowed(data);
     safeStorage.setItem(STORAGE_KEY, JSON.stringify(data));
   };
 
-  const follow = (categoryId: string) => {
+  const follow = (_categoryId: string) => {
     if (!followed.includes(categoryId)) {
       save([...followed, categoryId]);
     }
   };
 
-  const unfollow = (categoryId: string) => {
+  const unfollow = (_categoryId: string) => {
     if (followed.includes(categoryId)) {
       save(followed.filter((id) => id !== categoryId));
     }

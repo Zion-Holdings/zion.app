@@ -8,7 +8,7 @@ const corsHeaders = {
 };
 
 interface SectionSuggestionsParams {
-  sectionTitle: string;
+  _sectionTitle: string;
   sectionContent: string;
 }
 
@@ -62,7 +62,7 @@ serve(async (req) => {
       }
     );
 
-  } catch (error) {
+  } catch (_error) {
     console.error("Error in get-whitepaper-section-suggestions function:", error);
     return new Response(
       JSON.stringify({ error: error.message }),

@@ -87,7 +87,7 @@ async function handler(req, res) {
 
     res.statusCode = 200;
     res.json({ sessionId: session.id, orderId });
-  } catch (err) {
+  } catch (_err) {
     console.error('Create checkout session error:', err);
     res.statusCode = 500;
     res.json({ error: err.message });

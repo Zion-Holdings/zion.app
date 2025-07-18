@@ -56,13 +56,13 @@ async function changeBalance(userId: string, delta: number, type: 'earn' | 'burn
   if (balance < 0) balance = 0;
 
   if (wallet) {
-    const { error } = await supabase
+    const { _error } = await supabase
       .from('wallets')
       .update({ balance, updated_at: new Date().toISOString() })
       .eq('user_id', userId);
     if (error) return new Response(JSON.stringify({ error: error.message }), { status: 500 });
   } else {
-    const { error } = await supabase
+    const { _error } = await supabase
       .from('wallets')
       .insert({ user_id: userId, balance });
     if (error) return new Response(JSON.stringify({ error: error.message }), { status: 500 });

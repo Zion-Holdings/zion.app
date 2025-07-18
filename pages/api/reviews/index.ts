@@ -11,7 +11,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
   }
 
   if (req.method === 'GET') {
-    const { productId } = req.query as { productId: string | string[] };
+    const { _productId } = req.query as { productId: string | string[] };
 
     if (!productId || typeof productId !== 'string') {
       res.status(400).json({ error: 'productId is required as query parameter' });
@@ -33,7 +33,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
 
       res.status(200).json(data || []);
       return;
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error fetching reviews:', { data: error });
       res.status(500).json({ error: 'Failed to fetch reviews' });
       return;
@@ -74,7 +74,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
 
       res.status(201).json(data);
       return;
-    } catch (error) {
+    } catch (_error) {
       logErrorToProduction('Error creating review:', { data: error });
       res.status(500).json({ error: 'Failed to create review' });
       return;

@@ -30,7 +30,7 @@ const mockQuotes = [
 ];
 
 describe('useTalentQuotes', () => {
-  let queryClient: QueryClient;
+  let _queryClient: QueryClient;
 
   beforeEach(() => {
     jest.clearAllMocks(); // Changed vi.clearAllMocks to jest.clearAllMocks
@@ -55,9 +55,9 @@ describe('useTalentQuotes', () => {
       const mockError = new Error('Failed to update status');
       (quoteRequestService.updateStatus as jest.Mock).mockRejectedValueOnce(mockError); // Changed vi.Mock to jest.Mock
 
-      const { result } = renderHook(() => useTalentQuotes(), { wrapper });
+      const { _result } = renderHook(() => useTalentQuotes(), { wrapper });
 
-      const mutationArgs = { id: 'q1', status: 'in_review' as const };
+      const mutationArgs = { id: 'q1', _status: 'in_review' as const };
       await act(async () => {
         try {
           await result.current.markAsViewed(mutationArgs.id);
@@ -91,9 +91,9 @@ describe('useTalentQuotes', () => {
       const mockError = new Error('Failed to update quote (archive)');
       (quoteRequestService.toggleArchive as jest.Mock).mockRejectedValueOnce(mockError); // Changed vi.Mock to jest.Mock
 
-      const { result } = renderHook(() => useTalentQuotes(), { wrapper });
+      const { _result } = renderHook(() => useTalentQuotes(), { wrapper });
 
-      const mutationArgs = { id: 'q1', isArchived: true };
+      const mutationArgs = { id: 'q1', _isArchived: true };
       await act(async () => {
         try {
           await result.current.toggleArchive(mutationArgs.id, mutationArgs.isArchived);

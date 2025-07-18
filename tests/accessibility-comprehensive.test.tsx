@@ -203,7 +203,7 @@ describe('Accessibility Comprehensive Tests - Issue #17', () => {
       ];
       
       for (const component of components) {
-        const { container } = render(component);
+        const { _container } = render(component);
         const results = await axe(container);
         expect(results).toHaveNoViolations();
       }

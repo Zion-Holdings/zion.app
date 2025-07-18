@@ -114,7 +114,7 @@ export default async function handler(
       },
       lastUpdated: new Date().toISOString(),
     });
-  } catch (error) {
+  } catch (_error) {
     logErrorToProduction('Error reading logs:', error);
     return res.status(500).json({ 
       message: 'Internal Server Error',
