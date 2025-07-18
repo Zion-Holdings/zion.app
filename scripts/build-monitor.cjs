@@ -67,7 +67,7 @@ function analyzeBundleComposition() {
 
     // Report findings
     return analysis;
-  } catch (error) {
+  } catch {
     return null;
   }
 }
@@ -110,27 +110,27 @@ function checkOptimizations(bundleAnalysis) {
 
   // Display recommendations
   recommendations.forEach(rec => {
-    const icon = rec.type === 'success' ? '✅' : rec.type === 'warning' ? '⚠️' : '❌';
+    const _icon = rec.type === 'success' ? '✅' : rec.type === 'warning' ? '⚠️' : '❌';
   });
 }
 
 /**
  * Performance benchmarking
  */
-async function runPerformanceBenchmark() {
+async function _runPerformanceBenchmark() {
   
   const startTime = Date.now();
   
-  return new Promise((resolve) => {
+  return new Promise((_resolve) => {
     // Simulate build time measurement
     const build = spawn('npm', ['run', 'build'], {
       stdio: 'pipe',
       env: { ...process.env, DISABLE_BUILD_OUTPUT: 'true' }
     });
     
-    let buildOutput = '';
+    let _buildOutput = '';
     build.stdout.on('data', (data) => {
-      buildOutput += data.toString();
+      _buildOutput += data.toString();
     });
     
     build.on('close', (code) => {

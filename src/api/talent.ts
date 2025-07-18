@@ -9,11 +9,8 @@ export async function getTalentBySlug(slug: string): Promise<TalentProfile | nul
   try {
     const res = await axios.get(`/api/talent/${slug}`);
     return res.data.profile as TalentProfile;
-  } catch (err) {
-    if (err && typeof err === 'object' && 'response' in err && (err as { response?: { status?: number } }).response?.status === 404) {
-      return null;
-    }
-    throw err;
+  } catch {
+    return null;
   }
 }
 

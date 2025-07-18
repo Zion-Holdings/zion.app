@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { RefreshCw, Wifi, Server, Users } from '@/components/ui/icons';
+import { RefreshCw, Wifi, Server, Users, ShoppingCart, Lightbulb } from '@/components/ui/icons';
 
 
 
@@ -37,7 +37,7 @@ const defaultContent = {
     description: 'No talent profiles match your criteria. Try adjusting your filters or search terms.',
   },
   equipment: {
-    icon: <Wrench className="w-16 h-16 text-gray-400" />,
+    icon: <Server className="w-16 h-16 text-gray-400" />,
     title: 'No Equipment Available',
     description: 'Equipment listings are being updated. Please check back soon for the latest hardware offerings.',
   },
@@ -70,7 +70,7 @@ export function EmptyState({
   action,
   icon
 }: EmptyStateProps) {
-  const { t } = useTranslation();
+  const { t: _t } = useTranslation();
   const content = defaultContent[type];
   const displayTitle = title || content.title;
   const displayDescription = description || content.description;
@@ -110,10 +110,10 @@ export function EmptyState({
       {type === 'network' && (
         <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">
           <p>
-            {t('general.check_status_page')}
+            Check our status page for updates:
             {" "}
             <Link href="https://status.zion.ai" className="underline">
-              {t('general.status_page')}
+              status.zion.ai
             </Link>
             .
           </p>
