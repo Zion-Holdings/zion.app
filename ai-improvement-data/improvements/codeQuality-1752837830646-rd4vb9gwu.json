@@ -1,5 +1,5 @@
 {
-  "id": "codeQuality-1752837808596-gng1q45i8",
+  "id": "codeQuality-1752837830646-rd4vb9gwu",
   "type": "codeQuality",
   "improvement": {
     "type": "codeQuality",
@@ -11,8 +11,7 @@
       "codeSmells": []
     }
   },
-  "timestamp": 1752837808596,
+  "timestamp": 1752837830646,
   "nodeId": "node-1",
-  "status": "completed",
-  "completedAt": 1752837812962
+  "status": "queued"
 }
