@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useRouter } from 'next/router'; // Changed from useParams
 import Skeleton from 'react-loading-skeleton';
@@ -22,13 +22,13 @@ export default function Category() {
   const [hasMore, setHasMore] = useState(true);
   const LIMIT = 10;
 
-  const fetchPosts = async () => {
+  const fetchPosts = useCallback(async () => {
     const res = await fetch(
       `/api/community?category=${slug}&limit=${LIMIT}&offset=${offset}`
     );
     if (!res.ok) throw new Error('Request failed');
     return res.json();
-  };
+  }, [slug, offset]);
 
   useEffect(() => {
     if (!slug) return;

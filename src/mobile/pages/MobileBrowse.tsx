@@ -38,7 +38,7 @@ export function MobileBrowse() {
         ];
         setJobs(data);
         setError(null);
-      } catch (__err) {
+      } catch {
         setJobs([]);
         setError('Error fetching jobs');
       } finally {

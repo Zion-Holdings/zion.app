@@ -11,7 +11,7 @@ export function useFollowedCategories() {
     if (raw) {
       try {
         setFollowed(JSON.parse(raw));
-      } catch (_err) {
+      } catch {
         // Ignore errors
       }
     }

@@ -1,6 +1,6 @@
 // Browser-safe implementation without any libp2p dependencies
 // This version never attempts to load native modules in the browser
-import { logInfo, logWarn } from '@/utils/productionLogger';
+import { logWarn } from '@/utils/productionLogger';
 
 export interface Proposal {
   id: string;
@@ -42,7 +42,7 @@ export class DelayTolerantDAO {
       ]);
       // ... initialize modules
       this.ready = true;
-    } catch (__error) {
+    } catch {
       logWarn('⚠️ Failed to load native modules, using mocks');
       this.ready = true; // Continue with mock functionality
     }

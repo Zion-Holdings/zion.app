@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Check, Flag, Search, Settings, X, Users } from '@/components/ui/icons';
 import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from 'next/router';
@@ -51,16 +51,7 @@ export default function PartnerManager() {
   const { user: _user, isAuthenticated } = useAuth();
   const router = useRouter();
 
-  useEffect(() => {
-    if (!isAuthenticated) {
-      router.push('/auth/login?returnTo=' + encodeURIComponent('/admin/partners'));
-      return;
-    }
-
-    fetchPartners();
-  }, [isAuthenticated, router, fetchPartners]);
-
-  const fetchPartners = async () => {
+  const fetchPartners = useCallback(async () => {
     try {
       setIsLoading(true);
       // In a real application, check admin permissions here
@@ -92,7 +83,16 @@ export default function PartnerManager() {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [activeTab, searchQuery]);
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      router.push('/auth/login?returnTo=' + encodeURIComponent('/admin/partners'));
+      return;
+    }
+
+    fetchPartners();
+  }, [isAuthenticated, router, fetchPartners]);
 
   const filterPartners = (partners: PartnerProfile[], status: string, query: string) => {
     let filtered = partners;

@@ -69,8 +69,8 @@ if (!i18n) {
       caches: ['cookie'], // Re-enabled cookie caching for better performance
     },
   })
-  .catch(_error => {
-    logErrorToProduction('Error initializing i18next or its detector:', { data: _error });
+  .catch(() => {
+    logErrorToProduction('Error initializing i18next or its detector');
     // This helps prevent an unhandled promise rejection if init fails.
   });
 

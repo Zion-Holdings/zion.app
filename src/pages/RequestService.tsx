@@ -35,7 +35,7 @@ export default function RequestService() {
       setEmail('');
       setPhone('');
       setDetails('');
-    } catch (__err) {
+    } catch {
       toast({
         title: 'Submission Failed',
         description: 'There was an error submitting your request.',
