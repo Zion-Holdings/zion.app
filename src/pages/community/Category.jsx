@@ -50,7 +50,7 @@ export default function Category() {
       .finally(() => {
         setLoading(false);
       });
-  }, [slug, offset]);
+  }, [slug, offset, fetchPosts]);
 
   if (loading && offset === 0) return <Skeleton count={5} />;
   if (error) return <Alert variant="destructive">Failed to load posts</Alert>;
