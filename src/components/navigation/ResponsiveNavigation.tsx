@@ -37,10 +37,13 @@ const protectedRoutes = [
 ];
 
 function isProtectedRoute(href: string): boolean {
-  return protectedRoutes.some(route => href.startsWith(route));
+  return protectedRoutes.some((route) => href.startsWith(route));
 }
 
-export function ResponsiveNavigation({ className, openLoginModal }: ResponsiveNavigationProps) {
+export function ResponsiveNavigation({
+  className,
+  openLoginModal,
+}: ResponsiveNavigationProps) {
   const { _user } = useAuth();
   const isAuthenticated = !!user;
   const { t } = useTranslation();
@@ -52,7 +55,10 @@ export function ResponsiveNavigation({ className, openLoginModal }: ResponsiveNa
       label: t('nav.marketplace', 'Marketplace'),
       href: '/marketplace',
       subItems: [
-        { label: t('nav.marketplace_overview', 'Overview'), href: '/marketplace' },
+        {
+          label: t('nav.marketplace_overview', 'Overview'),
+          href: '/marketplace',
+        },
         { label: t('nav.categories', 'Categories'), href: '/categories' },
         { label: t('nav.talent', 'Talent'), href: '/talent' },
         { label: t('nav.equipment', 'Equipment'), href: '/equipment' },
@@ -113,15 +119,26 @@ export function ResponsiveNavigation({ className, openLoginModal }: ResponsiveNa
                           <Link legacyBehavior href={sub.href} passHref>
                             <a
                               className={cn(
-                                "block rounded-sm px-2 py-1.5 text-sm hover:bg-accent focus:bg-accent focus:outline-none",
-                                router.pathname.startsWith(sub.href) && "bg-accent text-accent-foreground"
+                                'block rounded-sm px-2 py-1.5 text-sm hover:bg-accent focus:bg-accent focus:outline-none',
+                                router.pathname.startsWith(sub.href) &&
+                                  'bg-accent text-accent-foreground',
                               )}
                               onClick={(e) => {
-                                if (!isAuthenticated && isProtectedRoute(sub.href)) {
+                                if (
+                                  !isAuthenticated &&
+                                  isProtectedRoute(sub.href)
+                                ) {
                                   e.preventDefault();
                                   // Update URL to include returnTo, then open modal
                                   // This makes the returnTo available in router.query for the login page/modal logic
-                                  router.push({ pathname: '/auth/login', query: { returnTo: sub.href } }, undefined, { shallow: true });
+                                  router.push(
+                                    {
+                                      pathname: '/auth/login',
+                                      query: { returnTo: sub.href },
+                                    },
+                                    undefined,
+                                    { shallow: true },
+                                  );
                                   openLoginModal(sub.href);
                                 }
                                 // If authenticated or not a protected route, default Link behavior occurs
@@ -141,8 +158,10 @@ export function ResponsiveNavigation({ className, openLoginModal }: ResponsiveNa
                 <Link
                   href={item.href || '#'}
                   className={cn(
-                    "inline-block px-4 py-2 text-sm font-medium",
-                    item.href && router.pathname === item.href && "text-primary"
+                    'inline-block px-4 py-2 text-sm font-medium',
+                    item.href &&
+                      router.pathname === item.href &&
+                      'text-primary',
                   )}
                 >
                   {item.label}

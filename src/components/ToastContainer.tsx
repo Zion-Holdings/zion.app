@@ -15,7 +15,7 @@ interface ToastContainerProps {
 export function ToastContainer({
   className,
   position = 'top-right',
-  showQueueIndicator = true
+  showQueueIndicator = true,
 }: ToastContainerProps) {
   const [queueLength, setQueueLength] = useState(0);
 
@@ -79,8 +79,12 @@ export function ToastContainer({
  * Toast queue manager component - displays current queue status
  */
 export function ToastQueueManager() {
-  const [activeToasts, setActiveToasts] = useState(globalToastManager.getActiveToasts());
-  const [queueLength, setQueueLength] = useState(globalToastManager.getQueueLength());
+  const [activeToasts, setActiveToasts] = useState(
+    globalToastManager.getActiveToasts(),
+  );
+  const [queueLength, setQueueLength] = useState(
+    globalToastManager.getQueueLength(),
+  );
 
   useEffect(() => {
     const updateStatus = () => {
@@ -100,7 +104,7 @@ export function ToastQueueManager() {
   return (
     <div className="fixed top-4 left-4 z-[102] p-3 bg-background border border-border rounded-lg shadow-lg text-xs space-y-2 max-w-sm">
       <div className="font-semibold text-foreground">Toast Manager Debug</div>
-      
+
       <div className="space-y-1">
         <div>Active Toasts: {activeToasts.length}/3</div>
         <div>Queued Toasts: {queueLength}</div>
@@ -138,4 +142,4 @@ export function ToastQueueManager() {
       </div>
     </div>
   );
-} 
+}

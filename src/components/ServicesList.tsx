@@ -33,7 +33,7 @@ export default function ServicesList() {
   const { data, error, mutate } = useSWR<ProductListing[]>(
     '/api/services',
     fetchServices,
-    { shouldRetryOnError: false }
+    { shouldRetryOnError: false },
   );
 
   if (!data && !error) {

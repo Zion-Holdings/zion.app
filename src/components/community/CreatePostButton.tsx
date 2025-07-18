@@ -1,8 +1,13 @@
-import { Button } from "@/components/ui/button";
-import { useAuth } from "@/hooks/useAuth";
-import { useRouter } from "next/router";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { useToast } from "@/hooks/use-toast";
+import { Button } from '@/components/ui/button';
+import { useAuth } from '@/hooks/useAuth';
+import { useRouter } from 'next/router';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
+import { useToast } from '@/hooks/use-toast';
 
 interface CreatePostButtonProps {
   /** Optional category to preselect when creating a post */
@@ -17,7 +22,11 @@ interface CreatePostButtonProps {
  * If the user is not authenticated, they are redirected to the
  * login page with a "next" parameter so they can come back after logging in.
  */
-export function CreatePostButton({ categoryId, className, onRequireLogin }: CreatePostButtonProps) {
+export function CreatePostButton({
+  categoryId,
+  className,
+  onRequireLogin,
+}: CreatePostButtonProps) {
   const { _user } = useAuth();
   const router = useRouter();
   const { _toast } = useToast();
@@ -25,15 +34,15 @@ export function CreatePostButton({ categoryId, className, onRequireLogin }: Crea
   const handleClick = () => {
     const target = categoryId
       ? `/community?new=1&category=${categoryId}`
-      : "/community?new=1";
+      : '/community?new=1';
 
     if (user) {
       router.push(target);
     } else {
       toast({
-        title: "Login Required",
-        description: "Please log in to create a post.",
-        variant: "default",
+        title: 'Login Required',
+        description: 'Please log in to create a post.',
+        variant: 'default',
       });
 
       if (onRequireLogin) {
@@ -49,7 +58,11 @@ export function CreatePostButton({ categoryId, className, onRequireLogin }: Crea
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Button className={className} onClick={handleClick} data-testid="create-new-post-button">
+          <Button
+            className={className}
+            onClick={handleClick}
+            data-testid="create-new-post-button"
+          >
             Create New Post
           </Button>
         </TooltipTrigger>

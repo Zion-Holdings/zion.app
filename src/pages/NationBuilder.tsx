@@ -21,7 +21,7 @@ export default function NationBuilder() {
 
   const toggleFunding = (_value: string) => {
     setFunding((prev) =>
-      prev.includes(value) ? prev.filter((f) => f !== value) : [...prev, value]
+      prev.includes(value) ? prev.filter((f) => f !== value) : [...prev, value],
     );
   };
 
@@ -32,7 +32,13 @@ export default function NationBuilder() {
   const handleSubmit = (_e: React.FormEvent) => {
     e.preventDefault();
     // Placeholder submit handler
-    logInfo('Nation creation form submitted', { name, flag, constitution, governance, funding });
+    logInfo('Nation creation form submitted', {
+      name,
+      flag,
+      constitution,
+      governance,
+      funding,
+    });
   };
 
   return (
@@ -60,7 +66,12 @@ export default function NationBuilder() {
             value={constitution}
             onChange={(e) => setConstitution(e.target.value)}
           />
-          <Button type="button" variant="outline" className="mt-2" onClick={handleGenerate}>
+          <Button
+            type="button"
+            variant="outline"
+            className="mt-2"
+            onClick={handleGenerate}
+          >
             Generate with AI
           </Button>
         </div>

@@ -1,11 +1,12 @@
-
 import { useState } from 'react';
 import type { TalentProfile } from '@/types/talent';
 
 export function useUIState() {
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
   const [isHireModalOpen, setIsHireModalOpen] = useState(false);
-  const [selectedTalent, setSelectedTalent] = useState<TalentProfile | null>(null);
+  const [selectedTalent, setSelectedTalent] = useState<TalentProfile | null>(
+    null,
+  );
   const [expandedSections, setExpandedSections] = useState({
     skills: true,
     availability: true,
@@ -13,23 +14,23 @@ export function useUIState() {
     experience: true,
     price: true,
   });
-  
+
   // Toggle expanded sections in the sidebar
   const toggleSection = (_sectionName: keyof typeof expandedSections) => {
-    setExpandedSections(prev => ({
+    setExpandedSections((prev) => ({
       ...prev,
-      [sectionName]: !prev[sectionName]
+      [sectionName]: !prev[sectionName],
     }));
   };
-  
+
   // Handler for closing mobile filter sidebar
   const closeMobileFilter = () => {
     setIsMobileFilterOpen(false);
   };
-  
+
   // Effect to listen for the custom event to close mobile filter
   // This would typically be in a useEffect hook, but we'll handle it via the button's onClick
-  
+
   return {
     isMobileFilterOpen,
     setIsMobileFilterOpen,

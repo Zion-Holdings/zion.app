@@ -1,7 +1,9 @@
 // src/components/testing/ErrorTriggerComponent.tsx
 import React, { useEffect } from 'react';
 
-const ErrorTriggerComponent: React.FC<{ onMount?: boolean }> = ({ onMount }) => {
+const ErrorTriggerComponent: React.FC<{ onMount?: boolean }> = ({
+  onMount,
+}) => {
   useEffect(() => {
     if (onMount) {
       throw new Error('Test error triggered on mount');

@@ -3,9 +3,12 @@ export interface RetryOptions {
   minTimeout?: number;
 }
 
-export async function retry<T>(fn: () => Promise<T>, options: RetryOptions = {}): Promise<T> {
+export async function retry<T>(
+  fn: () => Promise<T>,
+  options: RetryOptions = {},
+): Promise<T> {
   const { retries = 3, minTimeout = 500 } = options;
-  
+
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
       return await fn();
@@ -17,17 +20,17 @@ export async function retry<T>(fn: () => Promise<T>, options: RetryOptions = {})
       await new Promise((res) => setTimeout(res, delay));
     }
   }
-  
+
   // This should never be reached, but TypeScript requires it
   throw new Error('Maximum retry attempts exceeded');
 }
 
 export async function withRetry<T>(
   operation: () => Promise<T>,
-  options: RetryOptions = {}
+  options: RetryOptions = {},
 ): Promise<T> {
   const { retries = 3, minTimeout = 1000 } = options;
-  
+
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
       return await operation();
@@ -35,12 +38,12 @@ export async function withRetry<T>(
       if (attempt >= retries) {
         throw error;
       }
-      
+
       const waitTime = Math.pow(2, attempt - 1) * minTimeout;
-      await new Promise(resolve => setTimeout(resolve, waitTime));
+      await new Promise((resolve) => setTimeout(resolve, waitTime));
     }
   }
-  
+
   // This should never be reached, but TypeScript requires it
   throw new Error('Maximum retry attempts exceeded');
 }

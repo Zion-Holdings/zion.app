@@ -1,26 +1,30 @@
-
 import { useState } from 'react';
-import { useAuth } from "@/hooks/useAuth";
+import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
-import type { Interview, InterviewRequest, InterviewResponse } from '@/types/interview';
+import type {
+  Interview,
+  InterviewRequest,
+  InterviewResponse,
+} from '@/types/interview';
 import { toast } from '@/components/ui/use-toast';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 export function useInterviews() {
-
   const [interviews, setInterviews] = useState<Interview[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const { _user } = useAuth();
 
   // Request an interview as a client
-  const requestInterview = async (interviewRequest: InterviewRequest): Promise<Interview | null> => {
+  const requestInterview = async (
+    interviewRequest: InterviewRequest,
+  ): Promise<Interview | null> => {
     if (!supabase) throw new Error('Supabase client not initialized');
     if (!user) {
       toast({
-        title: "Authentication required",
-        description: "You must be logged in to request interviews",
-        variant: "destructive"
+        title: 'Authentication required',
+        description: 'You must be logged in to request interviews',
+        variant: 'destructive',
       });
       return null;
     }
@@ -48,7 +52,9 @@ export function useInterviews() {
         .single();
 
       if (insertError) {
-        logErrorToProduction('Error requesting interview:', { data: insertError });
+        logErrorToProduction('Error requesting interview:', {
+          data: insertError,
+        });
         setError(insertError.message);
         return null;
       }
@@ -59,7 +65,7 @@ export function useInterviews() {
         'interview_request',
         'New Interview Request',
         `You have received an interview request for ${interviewRequest.scheduled_date}`,
-        data.id
+        data.id,
       );
 
       return data;
@@ -87,16 +93,20 @@ export function useInterviews() {
       // Get interviews where the user is either the client or the talent
       const { data, error: fetchError } = await supabase
         .from('interviews')
-        .select(`
+        .select(
+          `
           *,
           clients:client_id(id, display_name, avatar_url),
           talents:talent_id(id, full_name, profile_picture_url)
-        `)
+        `,
+        )
         .or(`client_id.eq.${user.id},talent_id.eq.${user.id}`)
         .order('scheduled_date', { ascending: true });
 
       if (fetchError) {
-        logErrorToProduction('Error fetching interviews:', { data: fetchError });
+        logErrorToProduction('Error fetching interviews:', {
+          data: fetchError,
+        });
         setError(fetchError.message);
         return [];
       }
@@ -121,41 +131,71 @@ export function useInterviews() {
         clients?: { display_name?: string; avatar_url?: string };
         talents?: { full_name?: string; profile_picture_url?: string };
       };
-      const validStatuses = ['requested', 'confirmed', 'declined', 'rescheduled', 'completed', 'cancelled'] as const;
-      const validPlatforms = ['zoom', 'google-meet', 'teams', 'other', 'in-app'] as const;
+      const validStatuses = [
+        'requested',
+        'confirmed',
+        'declined',
+        'rescheduled',
+        'completed',
+        'cancelled',
+      ] as const;
+      const validPlatforms = [
+        'zoom',
+        'google-meet',
+        'teams',
+        'other',
+        'in-app',
+      ] as const;
       const validTypes = ['video', 'phone', 'in-person'] as const;
-      const formattedInterviews = (data ?? []).map((interview: InterviewRaw): Interview => {
-        const status = validStatuses.includes(interview.status as typeof validStatuses[number])
-          ? (interview.status as typeof validStatuses[number])
-          : 'requested';
-        const meeting_platform = interview.meeting_platform && validPlatforms.includes(interview.meeting_platform as typeof validPlatforms[number])
-          ? (interview.meeting_platform as typeof validPlatforms[number])
-          : 'zoom'; // Default to 'zoom' instead of undefined
-        const interview_type = validTypes.includes(interview.interview_type as typeof validTypes[number])
-          ? (interview.interview_type as typeof validTypes[number])
-          : 'video';
-        const result: Interview = {
-          id: interview.id,
-          client_id: interview.client_id,
-          talent_id: interview.talent_id,
-          scheduled_date: interview.scheduled_date,
-          end_time: interview.end_time !== undefined ? interview.end_time : '',
-          duration_minutes: interview.duration_minutes,
-          status,
-          meeting_platform,
-          created_at: interview.created_at,
-          updated_at: interview.updated_at,
-          interview_type,
-        };
-        if (interview.meeting_link !== undefined) result.meeting_link = interview.meeting_link;
-        if (interview.notes !== undefined) result.notes = interview.notes;
-        if (typeof interview.title === 'string') result.title = interview.title;
-        if (interview.clients?.display_name !== undefined) result.client_name = interview.clients.display_name;
-        if (interview.talents?.full_name !== undefined) result.talent_name = interview.talents.full_name;
-        if (interview.clients?.avatar_url !== undefined) result.client_avatar = interview.clients.avatar_url;
-        if (interview.talents?.profile_picture_url !== undefined) result.talent_avatar = interview.talents.profile_picture_url;
-        return result;
-      });
+      const formattedInterviews = (data ?? []).map(
+        (interview: InterviewRaw): Interview => {
+          const status = validStatuses.includes(
+            interview.status as (typeof validStatuses)[number],
+          )
+            ? (interview.status as (typeof validStatuses)[number])
+            : 'requested';
+          const meeting_platform =
+            interview.meeting_platform &&
+            validPlatforms.includes(
+              interview.meeting_platform as (typeof validPlatforms)[number],
+            )
+              ? (interview.meeting_platform as (typeof validPlatforms)[number])
+              : 'zoom'; // Default to 'zoom' instead of undefined
+          const interview_type = validTypes.includes(
+            interview.interview_type as (typeof validTypes)[number],
+          )
+            ? (interview.interview_type as (typeof validTypes)[number])
+            : 'video';
+          const result: Interview = {
+            id: interview.id,
+            client_id: interview.client_id,
+            talent_id: interview.talent_id,
+            scheduled_date: interview.scheduled_date,
+            end_time:
+              interview.end_time !== undefined ? interview.end_time : '',
+            duration_minutes: interview.duration_minutes,
+            status,
+            meeting_platform,
+            created_at: interview.created_at,
+            updated_at: interview.updated_at,
+            interview_type,
+          };
+          if (interview.meeting_link !== undefined)
+            result.meeting_link = interview.meeting_link;
+          if (interview.notes !== undefined) result.notes = interview.notes;
+          if (typeof interview.title === 'string')
+            result.title = interview.title;
+          if (interview.clients?.display_name !== undefined)
+            result.client_name = interview.clients.display_name;
+          if (interview.talents?.full_name !== undefined)
+            result.talent_name = interview.talents.full_name;
+          if (interview.clients?.avatar_url !== undefined)
+            result.client_avatar = interview.clients.avatar_url;
+          if (interview.talents?.profile_picture_url !== undefined)
+            result.talent_avatar = interview.talents.profile_picture_url;
+          return result;
+        },
+      );
 
       setInterviews(formattedInterviews);
       return formattedInterviews;
@@ -171,14 +211,14 @@ export function useInterviews() {
   // Respond to an interview request (as talent)
   const respondToInterview = async (
     interviewId: string,
-    response: InterviewResponse
+    response: InterviewResponse,
   ): Promise<boolean> => {
     if (!supabase) throw new Error('Supabase client not initialized');
     if (!user?.id) {
       toast({
-        title: "Authentication required",
-        description: "You must be logged in to respond to interviews",
-        variant: "destructive"
+        title: 'Authentication required',
+        description: 'You must be logged in to respond to interviews',
+        variant: 'destructive',
       });
       return false;
     }
@@ -192,12 +232,14 @@ export function useInterviews() {
         .from('interviews')
         .update({
           status: response.status,
-          updated_at: new Date().toISOString()
+          updated_at: new Date().toISOString(),
         })
         .eq('id', interviewId);
 
       if (updateError) {
-        logErrorToProduction('Error responding to interview:', { data: updateError });
+        logErrorToProduction('Error responding to interview:', {
+          data: updateError,
+        });
         setError(updateError.message);
         return false;
       }
@@ -235,7 +277,7 @@ export function useInterviews() {
         notificationType,
         title,
         message,
-        interviewId
+        interviewId,
       );
 
       // Refresh the interviews list
@@ -256,7 +298,7 @@ export function useInterviews() {
     type: string,
     title: string,
     message: string,
-    _relatedId: string
+    _relatedId: string,
   ) => {
     if (!supabase) throw new Error('Supabase client not initialized');
     try {
@@ -304,7 +346,7 @@ export function useInterviews() {
         .from('interviews')
         .update({
           status: 'cancelled',
-          updated_at: new Date().toISOString()
+          updated_at: new Date().toISOString(),
         })
         .eq('id', interviewId);
 
@@ -314,9 +356,10 @@ export function useInterviews() {
       }
 
       // Determine who to notify
-      const notifyUserId = interview.client_id === user.id
-        ? interview.talent_id
-        : interview.client_id;
+      const notifyUserId =
+        interview.client_id === user.id
+          ? interview.talent_id
+          : interview.client_id;
 
       // Create notification for the other party
       await createInterviewNotification(
@@ -324,7 +367,7 @@ export function useInterviews() {
         'interview_cancelled',
         'Interview Cancelled',
         `The scheduled interview for ${interview.scheduled_date} has been cancelled`,
-        interviewId
+        interviewId,
       );
 
       // Refresh the interviews list

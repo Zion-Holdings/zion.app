@@ -29,7 +29,10 @@ const _DocsPage: React.FC<DocsPageProps> = ({ content }) => {
             <ul className="space-y-2">
               {NAV_ITEMS.map((item) => (
                 <li key={item.slug}>
-                  <Link href={`/docs/${item.slug}`} className="text-blue-500 hover:underline">
+                  <Link
+                    href={`/docs/${item.slug}`}
+                    className="text-blue-500 hover:underline"
+                  >
                     {item.title}
                   </Link>
                 </li>
@@ -52,7 +55,10 @@ const _DocsPage: React.FC<DocsPageProps> = ({ content }) => {
           <ul className="space-y-2">
             {NAV_ITEMS.map((item) => (
               <li key={item.slug}>
-                <Link href={`/docs/${item.slug}`} className="text-blue-500 hover:underline">
+                <Link
+                  href={`/docs/${item.slug}`}
+                  className="text-blue-500 hover:underline"
+                >
                   {item.title}
                 </Link>
               </li>

@@ -1,20 +1,26 @@
-import { useState } from "react";
+import { useState } from 'react';
 import { Save } from '@/components/ui/icons';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { Button } from '@/components/ui/button';
 
-
-import type { TalentProfile } from "@/types/talent";
-import { ContractForm } from "./components/ContractForm";
-import type { ContractFormValues } from "./components/ContractForm";
-import { ContractPreview } from "./components/ContractPreview";
-import { TemplateManager } from "./templates/TemplateManager";
-import type { DeploymentOptions, SmartContractInfo } from "@/types/smart-contracts";
-import { useSmartContracts } from "@/hooks/useSmartContracts";
-import { toast } from "sonner";
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import type { TalentProfile } from '@/types/talent';
+import { ContractForm } from './components/ContractForm';
+import type { ContractFormValues } from './components/ContractForm';
+import { ContractPreview } from './components/ContractPreview';
+import { TemplateManager } from './templates/TemplateManager';
+import type {
+  DeploymentOptions,
+  SmartContractInfo,
+} from '@/types/smart-contracts';
+import { useSmartContracts } from '@/hooks/useSmartContracts';
+import { toast } from 'sonner';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 interface SmartContractBuilderProps {
   isOpen: boolean;
@@ -31,20 +37,23 @@ export function SmartContractBuilder({
   clientName,
   onContractGenerated,
 }: SmartContractBuilderProps) {
-  const [activeTab, setActiveTab] = useState<string>("form");
-  const [generatedContract, setGeneratedContract] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState<string>('form');
+  const [generatedContract, setGeneratedContract] = useState<string | null>(
+    null,
+  );
   const [formValues, setFormValues] = useState<ContractFormValues | undefined>(
-    undefined
+    undefined,
   );
   const [templateManagerOpen, setTemplateManagerOpen] = useState(false);
   const [deployOptions, _setDeployOptions] = useState<DeploymentOptions>({
     network: 'ethereum',
     useEscrow: true,
-    deployToChain: false
+    deployToChain: false,
   });
   const [deployStatus, setDeployStatus] = useState<string>('');
-  const [deploymentInfo, setDeploymentInfo] = useState<SmartContractInfo | null>(null);
-  
+  const [deploymentInfo, setDeploymentInfo] =
+    useState<SmartContractInfo | null>(null);
+
   const { _deploySmartContract } = useSmartContracts();
 
   const handleLoadTemplate = (_templateData: ContractFormValues) => {
@@ -52,26 +61,29 @@ export function SmartContractBuilder({
   };
 
   // Convert ContractFormValues to contract content string
-  
+
   const handleDeployContract = async () => {
     if (!generatedContract) return;
-    
+
     try {
       setDeployStatus('deploying');
-      const contractInfo = await deploySmartContract(generatedContract, deployOptions);
-      
+      const contractInfo = await deploySmartContract(
+        generatedContract,
+        deployOptions,
+      );
+
       if (contractInfo) {
         setDeploymentInfo(contractInfo);
         setDeployStatus('deployed');
-        toast.success("Smart contract deployed successfully!");
+        toast.success('Smart contract deployed successfully!');
       } else {
         setDeployStatus('error');
-        toast.error("Failed to deploy smart contract");
+        toast.error('Failed to deploy smart contract');
       }
     } catch {
       logErrorToProduction('Error deploying contract:', { data: error });
       setDeployStatus('error');
-      toast.error("Failed to deploy smart contract");
+      toast.error('Failed to deploy smart contract');
     }
   };
 
@@ -83,7 +95,7 @@ export function SmartContractBuilder({
       onContractGenerated(contract);
     }
     setGeneratedContract(contract);
-    setActiveTab("preview");
+    setActiveTab('preview');
   };
 
   return (
@@ -96,12 +108,14 @@ export function SmartContractBuilder({
           <div className="flex justify-between items-center">
             <TabsList className="grid grid-cols-2">
               <TabsTrigger value="form">Contract Details</TabsTrigger>
-              <TabsTrigger value="preview" disabled={!generatedContract}>Preview</TabsTrigger>
+              <TabsTrigger value="preview" disabled={!generatedContract}>
+                Preview
+              </TabsTrigger>
             </TabsList>
-            
+
             <div className="flex gap-2">
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="sm"
                 onClick={() => setTemplateManagerOpen(true)}
                 className="flex gap-1"
@@ -111,43 +125,47 @@ export function SmartContractBuilder({
               </Button>
             </div>
           </div>
-          
+
           <TabsContent value="form" className="pt-4">
-            <ContractForm 
+            <ContractForm
               talent={talent}
               clientName={clientName}
-              initialValues={formValues || {
-                projectName: '',
-                startDate: new Date(),
-                scopeSummary: '',
-                paymentTerms: 'fixed',
-                paymentAmount: '',
-                endDate: undefined,
-                additionalClauses: []
-              }}
+              initialValues={
+                formValues || {
+                  projectName: '',
+                  startDate: new Date(),
+                  scopeSummary: '',
+                  paymentTerms: 'fixed',
+                  paymentAmount: '',
+                  endDate: undefined,
+                  additionalClauses: [],
+                }
+              }
               onFormValuesChange={setFormValues}
               onContractGenerated={handleFormSubmit}
             />
           </TabsContent>
-          
+
           <TabsContent value="preview" className="pt-4">
             {generatedContract && (
               <div>
-                <ContractPreview 
+                <ContractPreview
                   generatedContract={generatedContract}
                   talent={talent}
                   onClose={onClose}
                   deploymentInfo={deploymentInfo}
                 />
-                
+
                 {!deploymentInfo && deployOptions.deployToChain && (
                   <div className="mt-6 flex justify-center">
-                    <Button 
+                    <Button
                       onClick={handleDeployContract}
                       disabled={deployStatus === 'deploying'}
                       className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
                     >
-                      {deployStatus === 'deploying' ? 'Deploying...' : 'Deploy to Blockchain'}
+                      {deployStatus === 'deploying'
+                        ? 'Deploying...'
+                        : 'Deploy to Blockchain'}
                     </Button>
                   </div>
                 )}
@@ -155,20 +173,22 @@ export function SmartContractBuilder({
             )}
           </TabsContent>
         </Tabs>
-        
+
         <TemplateManager
           isOpen={templateManagerOpen}
           onClose={() => setTemplateManagerOpen(false)}
           onSelectTemplate={handleLoadTemplate}
-          currentValues={formValues || {
-            projectName: '',
-            startDate: new Date(),
-            scopeSummary: '',
-            paymentTerms: 'fixed',
-            paymentAmount: '',
-            endDate: undefined,
-            additionalClauses: []
-          }}
+          currentValues={
+            formValues || {
+              projectName: '',
+              startDate: new Date(),
+              scopeSummary: '',
+              paymentTerms: 'fixed',
+              paymentAmount: '',
+              endDate: undefined,
+              additionalClauses: [],
+            }
+          }
         />
       </DialogContent>
     </Dialog>

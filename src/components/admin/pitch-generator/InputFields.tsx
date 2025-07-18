@@ -21,9 +21,13 @@ const _InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
   const [logoPreview, setLogoPreview] = useState<string | null>(null);
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
 
-  const handleChange = (_e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    _e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleFileChange = (_e: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,7 +35,7 @@ const _InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
     if (files && files.length > 0) {
       const file = files[0];
       if (file) {
-        setFormData(prev => ({ ...prev, [name]: file }));
+        setFormData((prev) => ({ ...prev, [name]: file }));
         if (name === 'logos') {
           // Revoke previous object URL if it exists
           if (logoPreview) URL.revokeObjectURL(logoPreview);
@@ -43,7 +47,7 @@ const _InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
         }
       }
     } else {
-      setFormData(prev => ({ ...prev, [name]: null }));
+      setFormData((prev) => ({ ...prev, [name]: null }));
       if (name === 'logos') {
         if (logoPreview) URL.revokeObjectURL(logoPreview);
         setLogoPreview(null);
@@ -57,9 +61,12 @@ const _InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
   const validate = () => {
     // Update newErrors to use the same type
     const newErrors: Record<string, string> = {};
-    if (!formData.companyMission) newErrors.companyMission = 'Company mission is required.';
-    if (!formData.currentFundingStage) newErrors.currentFundingStage = 'Current funding stage is required.';
-    if (!formData.visionGoals) newErrors.visionGoals = 'Vision/goals are required.';
+    if (!formData.companyMission)
+      newErrors.companyMission = 'Company mission is required.';
+    if (!formData.currentFundingStage)
+      newErrors.currentFundingStage = 'Current funding stage is required.';
+    if (!formData.visionGoals)
+      newErrors.visionGoals = 'Vision/goals are required.';
     if (!formData.targetRaiseAmount) {
       newErrors.targetRaiseAmount = 'Target raise amount is required.';
     } else if (isNaN(Number(formData.targetRaiseAmount))) {
@@ -90,7 +97,10 @@ const _InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div>
-        <label htmlFor="companyMission" className="block text-sm font-medium text-gray-700">
+        <label
+          htmlFor="companyMission"
+          className="block text-sm font-medium text-gray-700"
+        >
           Company Mission
         </label>
         <textarea
@@ -101,11 +111,16 @@ const _InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
           rows={3}
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
         />
-        {errors.companyMission && <p className="text-xs text-red-600 mt-1">{errors.companyMission}</p>}
+        {errors.companyMission && (
+          <p className="text-xs text-red-600 mt-1">{errors.companyMission}</p>
+        )}
       </div>
 
       <div>
-        <label htmlFor="currentFundingStage" className="block text-sm font-medium text-gray-700">
+        <label
+          htmlFor="currentFundingStage"
+          className="block text-sm font-medium text-gray-700"
+        >
           Current Funding Stage
         </label>
         <input
@@ -116,11 +131,18 @@ const _InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
           onChange={handleChange}
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
         />
-        {errors.currentFundingStage && <p className="text-xs text-red-600 mt-1">{errors.currentFundingStage}</p>}
+        {errors.currentFundingStage && (
+          <p className="text-xs text-red-600 mt-1">
+            {errors.currentFundingStage}
+          </p>
+        )}
       </div>
 
       <div>
-        <label htmlFor="visionGoals" className="block text-sm font-medium text-gray-700">
+        <label
+          htmlFor="visionGoals"
+          className="block text-sm font-medium text-gray-700"
+        >
           Vision/Goals
         </label>
         <textarea
@@ -131,11 +153,16 @@ const _InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
           rows={3}
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
         />
-        {errors.visionGoals && <p className="text-xs text-red-600 mt-1">{errors.visionGoals}</p>}
+        {errors.visionGoals && (
+          <p className="text-xs text-red-600 mt-1">{errors.visionGoals}</p>
+        )}
       </div>
 
       <div>
-        <label htmlFor="roundType" className="block text-sm font-medium text-gray-700">
+        <label
+          htmlFor="roundType"
+          className="block text-sm font-medium text-gray-700"
+        >
           Round Type
         </label>
         <select
@@ -153,7 +180,10 @@ const _InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
       </div>
 
       <div>
-        <label htmlFor="targetRaiseAmount" className="block text-sm font-medium text-gray-700">
+        <label
+          htmlFor="targetRaiseAmount"
+          className="block text-sm font-medium text-gray-700"
+        >
           Target Raise Amount ($)
         </label>
         <input
@@ -164,11 +194,18 @@ const _InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
           onChange={handleChange}
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
         />
-        {errors.targetRaiseAmount && <p className="text-xs text-red-600 mt-1">{errors.targetRaiseAmount}</p>}
+        {errors.targetRaiseAmount && (
+          <p className="text-xs text-red-600 mt-1">
+            {errors.targetRaiseAmount}
+          </p>
+        )}
       </div>
 
       <div>
-        <label htmlFor="logos" className="block text-sm font-medium text-gray-700">
+        <label
+          htmlFor="logos"
+          className="block text-sm font-medium text-gray-700"
+        >
           Company Logo (Optional)
         </label>
         <input
@@ -180,14 +217,27 @@ const _InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
           className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-600 hover:file:bg-indigo-100"
         />
         {logoPreview && (
-          <div className="mt-2" style={{ position: 'relative', width: 'auto', height: '64px' }}> {/* Ensure parent has dimensions for layout='fill' */}
-            <Image src={logoPreview} alt="Logo preview" fill className="object-contain" />
+          <div
+            className="mt-2"
+            style={{ position: 'relative', width: 'auto', height: '64px' }}
+          >
+            {' '}
+            {/* Ensure parent has dimensions for layout='fill' */}
+            <Image
+              src={logoPreview}
+              alt="Logo preview"
+              fill
+              className="object-contain"
+            />
           </div>
         )}
       </div>
 
       <div>
-        <label htmlFor="photos" className="block text-sm font-medium text-gray-700">
+        <label
+          htmlFor="photos"
+          className="block text-sm font-medium text-gray-700"
+        >
           Additional Photos (Optional)
         </label>
         <input
@@ -199,8 +249,18 @@ const _InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
           className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-600 hover:file:bg-indigo-100"
         />
         {photoPreview && (
-          <div className="mt-2" style={{ position: 'relative', width: 'auto', height: '64px' }}> {/* Ensure parent has dimensions for layout='fill' */}
-            <Image src={photoPreview} alt="Photo preview" fill className="object-contain" />
+          <div
+            className="mt-2"
+            style={{ position: 'relative', width: 'auto', height: '64px' }}
+          >
+            {' '}
+            {/* Ensure parent has dimensions for layout='fill' */}
+            <Image
+              src={photoPreview}
+              alt="Photo preview"
+              fill
+              className="object-contain"
+            />
           </div>
         )}
       </div>

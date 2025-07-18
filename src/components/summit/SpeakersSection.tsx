@@ -1,7 +1,5 @@
-import Image from "next/image";
+import Image from 'next/image';
 import { Twitter, Linkedin } from '@/components/ui/icons';
-
-
 
 interface Speaker {
   name: string;

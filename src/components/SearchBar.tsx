@@ -2,8 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Search, X } from '@/components/ui/icons';
 import { useRouter } from 'next/router';
 
-
-
 import { Input } from '@/components/ui/input';
 import { AutocompleteSuggestions } from '@/components/search/AutocompleteSuggestions';
 import { fireEvent } from '@/lib/analytics';
@@ -38,7 +36,12 @@ interface SearchBarProps {
 /**
  * SearchBar component that allows users to search for content.
  */
-export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = 'Search...' }: SearchBarProps) {
+export function SearchBar({
+  value,
+  onChange,
+  onSelectSuggestion,
+  placeholder = 'Search...',
+}: SearchBarProps) {
   const router = useRouter();
   const [suggestions, setSuggestions] = useState<SearchSuggestion[]>([]);
   const [focused, setFocused] = useState(false);
@@ -55,12 +58,14 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
       return;
     }
     const controller = new AbortController();
-    fetch(`/api/search/suggest?q=${encodeURIComponent(debounced)}`, { signal: controller.signal })
-      .then(res => {
+    fetch(`/api/search/suggest?q=${encodeURIComponent(debounced)}`, {
+      signal: controller.signal,
+    })
+      .then((res) => {
         if (!res.ok) throw new Error('Failed to fetch suggestions');
         return res.json();
       })
-      .then(data => {
+      .then((data) => {
         if (Array.isArray(data)) {
           setSuggestions(data.slice(0, 5));
         } else {
@@ -111,12 +116,18 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
           onFocus={(e) => {
             setFocused(true);
             // Ensure the input receives focus properly
-            e.target.setSelectionRange(e.target.value.length, e.target.value.length);
+            e.target.setSelectionRange(
+              e.target.value.length,
+              e.target.value.length,
+            );
           }}
           onBlur={(e) => {
             // Only blur if not clicking on suggestions
             const relatedTarget = e.relatedTarget as HTMLElement;
-            if (!relatedTarget || !containerRef.current?.contains(relatedTarget)) {
+            if (
+              !relatedTarget ||
+              !containerRef.current?.contains(relatedTarget)
+            ) {
               setFocused(false);
               setHighlightedIndex(-1);
             }
@@ -124,7 +135,11 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
           placeholder={placeholder}
           className="pl-10 bg-zion-blue border border-zion-blue-light text-white _placeholder:text-zion-slate"
           aria-autocomplete="list"
-          aria-activedescendant={highlightedIndex !== -1 ? `suggestion-item-${highlightedIndex}` : undefined}
+          aria-activedescendant={
+            highlightedIndex !== -1
+              ? `suggestion-item-${highlightedIndex}`
+              : undefined
+          }
           autoComplete="search"
           onKeyDown={(e) => {
             if (!focused || suggestions.length === 0) {
@@ -152,7 +167,10 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
                 break;
               case 'ArrowUp':
                 e.preventDefault();
-                setHighlightedIndex((prev) => (prev - 1 + suggestions.length) % suggestions.length);
+                setHighlightedIndex(
+                  (prev) =>
+                    (prev - 1 + suggestions.length) % suggestions.length,
+                );
                 break;
               case 'Enter':
                 if (highlightedIndex !== -1 && suggestions[highlightedIndex]) {

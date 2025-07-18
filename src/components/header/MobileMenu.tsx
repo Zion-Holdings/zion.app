@@ -1,14 +1,14 @@
 import Link from 'next/link';
-import { Home, Search, MessageSquare, User, X, MessageCircle, BriefcaseIcon } from '@/components/ui/icons';
+import {
+  Home,
+  Search,
+  MessageSquare,
+  User,
+  X,
+  MessageCircle,
+  BriefcaseIcon,
+} from '@/components/ui/icons';
 import { useRouter } from 'next/router';
-
-
-
-
-
-
-
-
 
 import { cn } from '@/lib/utils';
 import { useAuth } from '@/hooks/useAuth';
@@ -32,17 +32,21 @@ const protectedRoutes = [
   '/tutorials',
   '/case-studies',
   '/post-job', // Already marked as authRequired, but good to be explicit if used elsewhere
-  '/messages',  // Already marked as authRequired
+  '/messages', // Already marked as authRequired
   '/dashboard', // Already marked as authRequired
   // Add any specific sub-routes if necessary
 ];
 
 function isProtectedRoute(href: string): boolean {
   // Also check against the item's own authRequired flag if present
-  return protectedRoutes.some(route => href.startsWith(route));
+  return protectedRoutes.some((route) => href.startsWith(route));
 }
 
-export function MobileMenu({ unreadCount = 0, onClose, openLoginModal }: MobileMenuProps) {
+export function MobileMenu({
+  unreadCount = 0,
+  onClose,
+  openLoginModal,
+}: MobileMenuProps) {
   const router = useRouter();
   const { _user } = useAuth();
   const isAuthenticated = !!user;
@@ -134,11 +138,16 @@ export function MobileMenu({ unreadCount = 0, onClose, openLoginModal }: MobileM
                 : 'text-foreground hover:bg-primary/10 hover:text-primary',
             )}
             onClick={(e) => {
-              const routeIsProtected = item.authRequired || isProtectedRoute(item.href);
+              const routeIsProtected =
+                item.authRequired || isProtectedRoute(item.href);
               if (!isAuthenticated && routeIsProtected) {
                 e.preventDefault();
                 // Update URL to include returnTo, then open modal
-                router.push({ pathname: '/auth/login', query: { returnTo: item.href } }, undefined, { shallow: true });
+                router.push(
+                  { pathname: '/auth/login', query: { returnTo: item.href } },
+                  undefined,
+                  { shallow: true },
+                );
                 openLoginModal(item.href);
                 // It's important to call onClose AFTER openLoginModal if the modal might be part of the same parent that controls menu visibility.
                 // Or ensure modal is rendered at a higher level. Given AppHeader structure, this should be okay.

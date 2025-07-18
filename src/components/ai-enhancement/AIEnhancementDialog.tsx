@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {
   Dialog,
@@ -24,7 +23,7 @@ export function AIEnhancementDialog({
   onClose,
   onApply,
   defaultOptions,
-  initialContent
+  initialContent,
 }: AIEnhancementDialogProps) {
   const handleApply = (_content: string) => {
     onApply(content);

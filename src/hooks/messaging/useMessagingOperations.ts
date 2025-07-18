@@ -1,4 +1,3 @@
-
 import type { UserDetails } from '@/types/auth';
 import { useConversationState } from './useConversationState';
 import { useConversations } from './useConversations';
@@ -20,26 +19,19 @@ export function useMessagingOperations(user: UserDetails | null) {
     activeConversation,
     setActiveConversation,
     isLoading,
-    setIsLoading
+    setIsLoading,
   } = useConversationState();
 
   // Conversations management
-  const {
-    fetchConversations,
-    createConversation
-  } = useConversations(
+  const { fetchConversations, createConversation } = useConversations(
     user,
     setConversations,
     setUnreadCount,
-    setIsLoading
+    setIsLoading,
   );
 
   // Messages management
-  const {
-    loadMessages,
-    sendMessage,
-    markAsRead
-  } = useMessages(
+  const { loadMessages, sendMessage, markAsRead } = useMessages(
     user,
     activeConversation,
     activeMessages,
@@ -48,7 +40,7 @@ export function useMessagingOperations(user: UserDetails | null) {
     setConversations,
     setUnreadCount,
     setIsLoading,
-    fetchConversations
+    fetchConversations,
   );
 
   return {
@@ -63,12 +55,12 @@ export function useMessagingOperations(user: UserDetails | null) {
     activeConversation,
     setActiveConversation,
     isLoading,
-    
+
     // Operations
     sendMessage,
     createConversation,
     markAsRead,
     fetchConversations,
-    loadMessages
+    loadMessages,
   };
 }

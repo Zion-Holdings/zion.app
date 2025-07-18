@@ -1,39 +1,45 @@
-
-import { useState } from "react";
-import type { JobApplication, ApplicationStatus } from "@/types/jobs";
-import { useJobApplications } from "@/hooks/useJobApplications";
+import { useState } from 'react';
+import type { JobApplication, ApplicationStatus } from '@/types/jobs';
+import { useJobApplications } from '@/hooks/useJobApplications';
 import {
   ApplicationsTable,
   EmptyState,
   ErrorState,
   LoadingState,
-  ScoreDialog
-} from "./applications";
+  ScoreDialog,
+} from './applications';
 
 interface JobApplicationsTableProps {
   jobId: string;
 }
 
 export function JobApplicationsTable({ jobId }: JobApplicationsTableProps) {
-  const { 
-    applications, 
-    isLoading, 
-    error, 
-    updateApplicationStatus, 
+  const {
+    applications,
+    isLoading,
+    error,
+    updateApplicationStatus,
     markApplicationAsViewed,
-    refetch
+    refetch,
   } = useJobApplications(jobId);
 
   const [processingId, setProcessingId] = useState<string | null>(null);
-  const [selectedApplication, setSelectedApplication] = useState<JobApplication | null>(null);
+  const [selectedApplication, setSelectedApplication] =
+    useState<JobApplication | null>(null);
   const [showScoreDialog, setShowScoreDialog] = useState(false);
-  
-  const handleStatusChange = async (applicationId: string, _newStatus: string) => {
+
+  const handleStatusChange = async (
+    applicationId: string,
+    _newStatus: string,
+  ) => {
     setProcessingId(applicationId);
     try {
-      await updateApplicationStatus(applicationId, newStatus as ApplicationStatus);
+      await updateApplicationStatus(
+        applicationId,
+        newStatus as ApplicationStatus,
+      );
       // If it's not already viewed, mark it as viewed
-      const application = applications.find(app => app.id === applicationId);
+      const application = applications.find((app) => app.id === applicationId);
       if (application && !application.viewed_at) {
         await markApplicationAsViewed(applicationId);
       }

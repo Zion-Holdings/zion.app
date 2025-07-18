@@ -16,7 +16,7 @@ export const CAREER_JOBS: Record<string, CareerJob[]> = {
       type: 'Full-time',
       department: 'Engineering',
       description:
-        'Join our frontend team to build beautiful, responsive, and accessible user interfaces for our AI-powered marketplace.'
+        'Join our frontend team to build beautiful, responsive, and accessible user interfaces for our AI-powered marketplace.',
     },
     {
       id: 'ai-research-engineer',
@@ -25,7 +25,7 @@ export const CAREER_JOBS: Record<string, CareerJob[]> = {
       type: 'Full-time',
       department: 'Engineering',
       description:
-        'Work on cutting-edge AI technologies to power our matching algorithms and recommendation systems.'
+        'Work on cutting-edge AI technologies to power our matching algorithms and recommendation systems.',
     },
     {
       id: 'full-stack-developer',
@@ -34,8 +34,8 @@ export const CAREER_JOBS: Record<string, CareerJob[]> = {
       type: 'Full-time',
       department: 'Engineering',
       description:
-        'Develop end-to-end features across our platform, working with modern technologies like React, Node.js, and PostgreSQL.'
-    }
+        'Develop end-to-end features across our platform, working with modern technologies like React, Node.js, and PostgreSQL.',
+    },
   ],
   product: [
     {
@@ -45,7 +45,7 @@ export const CAREER_JOBS: Record<string, CareerJob[]> = {
       type: 'Full-time',
       department: 'Product',
       description:
-        'Lead product development initiatives to enhance our marketplace experience for both talent and clients.'
+        'Lead product development initiatives to enhance our marketplace experience for both talent and clients.',
     },
     {
       id: 'ux-ui-designer',
@@ -54,8 +54,8 @@ export const CAREER_JOBS: Record<string, CareerJob[]> = {
       type: 'Full-time',
       department: 'Product',
       description:
-        'Create intuitive and engaging user experiences that make complex technology accessible to all users.'
-    }
+        'Create intuitive and engaging user experiences that make complex technology accessible to all users.',
+    },
   ],
   marketing: [
     {
@@ -65,7 +65,7 @@ export const CAREER_JOBS: Record<string, CareerJob[]> = {
       type: 'Full-time',
       department: 'Marketing',
       description:
-        'Drive user acquisition and engagement strategies across multiple channels to grow our marketplace.'
+        'Drive user acquisition and engagement strategies across multiple channels to grow our marketplace.',
     },
     {
       id: 'content-strategist',
@@ -74,8 +74,8 @@ export const CAREER_JOBS: Record<string, CareerJob[]> = {
       type: 'Full-time',
       department: 'Marketing',
       description:
-        'Develop compelling content that educates and inspires our audience about the future of AI and technology.'
-    }
+        'Develop compelling content that educates and inspires our audience about the future of AI and technology.',
+    },
   ],
   operations: [
     {
@@ -85,7 +85,7 @@ export const CAREER_JOBS: Record<string, CareerJob[]> = {
       type: 'Full-time',
       department: 'Operations',
       description:
-        'Build and nurture our growing community of AI specialists, developers, and tech enthusiasts.'
+        'Build and nurture our growing community of AI specialists, developers, and tech enthusiasts.',
     },
     {
       id: 'talent-acquisition-specialist',
@@ -94,13 +94,17 @@ export const CAREER_JOBS: Record<string, CareerJob[]> = {
       type: 'Full-time',
       department: 'Operations',
       description:
-        'Help connect the right talent with the right opportunities on our platform through personalized matching.'
-    }
-  ]
+        'Help connect the right talent with the right opportunities on our platform through personalized matching.',
+    },
+  ],
 };
 
-export function findCareerJob(id: string | string[] | undefined): CareerJob | undefined {
+export function findCareerJob(
+  id: string | string[] | undefined,
+): CareerJob | undefined {
   if (!id) return undefined;
   const slug = Array.isArray(id) ? id[0] : id;
-  return Object.values(CAREER_JOBS).flat().find(job => job.id === slug);
+  return Object.values(CAREER_JOBS)
+    .flat()
+    .find((job) => job.id === slug);
 }

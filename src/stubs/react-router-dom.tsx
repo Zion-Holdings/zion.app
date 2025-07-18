@@ -46,8 +46,9 @@ export const useNavigate = () => {
   return context.navigate;
 };
 export const useLocation = () => ({ pathname: '/' });
-export const useParams = () => ({ });
-export const useSearchParams = () => [new URLSearchParams(), () => {}] as [URLSearchParams, () => void];
+export const useParams = () => ({});
+export const useSearchParams = () =>
+  [new URLSearchParams(), () => {}] as [URLSearchParams, () => void];
 export default {
   BrowserRouter,
   Routes,

@@ -1,8 +1,13 @@
-
-import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import type { Control, ControllerRenderProps } from "react-hook-form";
-import type { BasicInfoFormData } from "./schema";
+import {
+  FormField,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormMessage,
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import type { Control, ControllerRenderProps } from 'react-hook-form';
+import type { BasicInfoFormData } from './schema';
 
 interface PersonalInfoFieldsProps {
   control: Control<BasicInfoFormData>;
@@ -14,7 +19,11 @@ export function PersonalInfoFields({ control }: PersonalInfoFieldsProps) {
       <FormField
         control={control}
         name="fullName"
-        render={({ field }: { field: ControllerRenderProps<BasicInfoFormData, 'fullName'> }) => (
+        render={({
+          field,
+        }: {
+          field: ControllerRenderProps<BasicInfoFormData, 'fullName'>;
+        }) => (
           <FormItem>
             <FormLabel>Full Name</FormLabel>
             <FormControl>
@@ -28,7 +37,11 @@ export function PersonalInfoFields({ control }: PersonalInfoFieldsProps) {
       <FormField
         control={control}
         name="title"
-        render={({ field }: { field: ControllerRenderProps<BasicInfoFormData, 'title'> }) => (
+        render={({
+          field,
+        }: {
+          field: ControllerRenderProps<BasicInfoFormData, 'title'>;
+        }) => (
           <FormItem>
             <FormLabel>Professional Title</FormLabel>
             <FormControl>
@@ -42,7 +55,11 @@ export function PersonalInfoFields({ control }: PersonalInfoFieldsProps) {
       <FormField
         control={control}
         name="email"
-        render={({ field }: { field: ControllerRenderProps<BasicInfoFormData, 'email'> }) => (
+        render={({
+          field,
+        }: {
+          field: ControllerRenderProps<BasicInfoFormData, 'email'>;
+        }) => (
           <FormItem>
             <FormLabel>Email</FormLabel>
             <FormControl>
@@ -56,7 +73,11 @@ export function PersonalInfoFields({ control }: PersonalInfoFieldsProps) {
       <FormField
         control={control}
         name="phone"
-        render={({ field }: { field: ControllerRenderProps<BasicInfoFormData, 'phone'> }) => (
+        render={({
+          field,
+        }: {
+          field: ControllerRenderProps<BasicInfoFormData, 'phone'>;
+        }) => (
           <FormItem>
             <FormLabel>Phone</FormLabel>
             <FormControl>

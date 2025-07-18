@@ -3,7 +3,6 @@ import { X } from '@/components/ui/icons';
 import { Button } from '@/components/ui/button';
 import { safeSessionStorage } from '@/utils/safeStorage';
 
-
 const SHOWN_KEY = 'pwaInstallShown';
 const DISMISS_KEY = 'pwaInstallDismissUntil';
 const DISMISS_MS = 24 * 60 * 60 * 1000; // 24 hours
@@ -20,7 +19,11 @@ interface BeforeInstallPromptEvent extends Event {
 
 // Define gtag function type
 interface GtagFunction {
-  (command: 'event', eventName: string, parameters?: Record<string, unknown>): void;
+  (
+    command: 'event',
+    eventName: string,
+    parameters?: Record<string, unknown>,
+  ): void;
 }
 
 // Augment the WindowEventMap to include 'beforeinstallprompt'
@@ -30,14 +33,15 @@ declare global {
     // appinstalled event is standard, but if issues arise, it can be augmented too
     // _appinstalled: Event;
   }
-  
+
   interface Window {
     gtag?: GtagFunction;
   }
 }
 
 export const InstallPrompt: React.FC = () => {
-  const [promptEvent, setPromptEvent] = useState<BeforeInstallPromptEvent | null>(null);
+  const [promptEvent, setPromptEvent] =
+    useState<BeforeInstallPromptEvent | null>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -48,7 +52,11 @@ export const InstallPrompt: React.FC = () => {
     const hasShown = safeSessionStorage.getItem(SHOWN_KEY);
 
     // Do not show prompt if already installed (standalone mode)
-    if (isDismissed || hasShown || window.matchMedia('(display-mode: standalone)').matches) {
+    if (
+      isDismissed ||
+      hasShown ||
+      window.matchMedia('(display-mode: standalone)').matches
+    ) {
       return;
     }
 
@@ -69,11 +77,20 @@ export const InstallPrompt: React.FC = () => {
 
     // Add typed event listeners
     window.addEventListener('beforeinstallprompt', handler as EventListener);
-    window.addEventListener('appinstalled', handleAppInstalled as EventListener);
+    window.addEventListener(
+      'appinstalled',
+      handleAppInstalled as EventListener,
+    );
 
     return () => {
-      window.removeEventListener('beforeinstallprompt', handler as EventListener);
-      window.removeEventListener('appinstalled', handleAppInstalled as EventListener);
+      window.removeEventListener(
+        'beforeinstallprompt',
+        handler as EventListener,
+      );
+      window.removeEventListener(
+        'appinstalled',
+        handleAppInstalled as EventListener,
+      );
     };
   }, []);
 
@@ -119,11 +136,20 @@ export const InstallPrompt: React.FC = () => {
           }
         `}
       </style>
-      <div className="fixed bottom-4 right-4 z-[1000] pwa-install-button-container"> {/* Added a container for styling */}
+      <div className="fixed bottom-4 right-4 z-[1000] pwa-install-button-container">
+        {' '}
+        {/* Added a container for styling */}
         <div className="bg-zion-blue-dark text-white p-3 rounded-lg shadow-lg flex items-center space-x-3">
           <p className="text-sm">Install our app for a better experience!</p>
-          <Button onClick={install} aria-label="Install PWA" size="sm">Install</Button>
-          <Button variant="ghost" size="sm" onClick={close} aria-label="Dismiss install prompt">
+          <Button onClick={install} aria-label="Install PWA" size="sm">
+            Install
+          </Button>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={close}
+            aria-label="Dismiss install prompt"
+          >
             <X className="h-4 w-4" />
           </Button>
         </div>

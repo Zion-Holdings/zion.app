@@ -2,7 +2,6 @@ import type { NextRouter } from 'next/router';
 import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 export function handleRouterError(error: Error, router: NextRouter) {
-
   // Capture the error using our centralized logger which sends data to Sentry
   logErrorToProduction('Router error occurred', error, {
     route: router.asPath,
@@ -11,9 +10,12 @@ export function handleRouterError(error: Error, router: NextRouter) {
   });
 
   // Prevent router abort by handling specific dashboard errors
-  if (router.pathname === '/dashboard' || router.asPath.includes('/dashboard')) {
+  if (
+    router.pathname === '/dashboard' ||
+    router.asPath.includes('/dashboard')
+  ) {
     logWarn('Dashboard route error caught, attempting recovery...');
-    
+
     // Try to recover by redirecting to a safe route
     if (typeof window !== 'undefined') {
       window.location.href = '/dashboard';
@@ -32,7 +34,7 @@ export function setupRouterErrorHandlers(router: NextRouter) {
   router.push = async (
     url: Parameters<NextRouter['push']>[0],
     as?: Parameters<NextRouter['push']>[1],
-    options?: Parameters<NextRouter['push']>[2]
+    options?: Parameters<NextRouter['push']>[2],
   ) => {
     try {
       return await originalPush.call(router, url, as, options);
@@ -47,7 +49,7 @@ export function setupRouterErrorHandlers(router: NextRouter) {
   router.replace = async (
     url: Parameters<NextRouter['replace']>[0],
     as?: Parameters<NextRouter['replace']>[1],
-    options?: Parameters<NextRouter['replace']>[2]
+    options?: Parameters<NextRouter['replace']>[2],
   ) => {
     try {
       return await originalReplace.call(router, url, as, options);
@@ -79,4 +81,4 @@ export function setupRouterErrorHandlers(router: NextRouter) {
       router.events.off('routeChangeError', routeChangeErrorHandler);
     }
   };
-} 
+}

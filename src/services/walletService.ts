@@ -8,6 +8,9 @@ export interface Wallet {
   transactions: TokenTransaction[];
 }
 
-export const getWalletData = async (): Promise<{ data: Wallet | null; error: string | null }> => {
+export const getWalletData = async (): Promise<{
+  data: Wallet | null;
+  error: string | null;
+}> => {
   return apiHelper(() => apiClient.get('/api/v1/wallet'));
 };

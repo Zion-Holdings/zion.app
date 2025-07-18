@@ -1,14 +1,9 @@
-
-import { GradientHeading } from "./GradientHeading";
+import { GradientHeading } from './GradientHeading';
 import { Clock, Globe, TrendingDown, Bot } from '@/components/ui/icons';
-import { FeatureCard } from "./FeatureCard";
+import { FeatureCard } from './FeatureCard';
 
-
-
-
-
-import { cn } from "@/lib/utils";
-import { useTranslation } from "react-i18next";
+import { cn } from '@/lib/utils';
+import { useTranslation } from 'react-i18next';
 
 interface BenefitsSectionProps {
   className?: string;
@@ -41,9 +36,12 @@ const getBenefits = (t: (key: string) => string) => [
 export function BenefitsSection({ className, style }: BenefitsSectionProps) {
   const { t } = useTranslation();
   const benefits = getBenefits(t);
-  
+
   return (
-    <section className={cn("py-20 bg-zion-blue-light", className)} style={style}>
+    <section
+      className={cn('py-20 bg-zion-blue-light', className)}
+      style={style}
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <GradientHeading>{t('home.benefits_title')}</GradientHeading>
@@ -51,7 +49,7 @@ export function BenefitsSection({ className, style }: BenefitsSectionProps) {
             {t('home.benefits_subtitle')}
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {benefits.map((benefit, index) => (
             <FeatureCard

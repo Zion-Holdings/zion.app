@@ -7,7 +7,8 @@ export default function PrivacySettings() {
   const [consent, setConsent] = useState<'granted' | 'denied' | null>(null);
 
   useEffect(() => {
-    const stored = getCookie('analyticsConsent') || safeStorage.getItem('analyticsConsent');
+    const stored =
+      getCookie('analyticsConsent') || safeStorage.getItem('analyticsConsent');
     if (stored === 'granted' || stored === 'denied') {
       setConsent(stored as 'granted' | 'denied');
     } else {
@@ -23,7 +24,10 @@ export default function PrivacySettings() {
 
   return (
     <>
-      <SEO title="Privacy Settings" description="Manage your privacy preferences" />
+      <SEO
+        title="Privacy Settings"
+        description="Manage your privacy preferences"
+      />
       <main className="container mx-auto px-4 py-10">
         <h1 className="text-3xl font-bold mb-6">Privacy Settings</h1>
         <div className="space-y-4">

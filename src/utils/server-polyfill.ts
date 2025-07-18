@@ -21,11 +21,11 @@ if (typeof window === 'undefined') {
       host: '',
       pathname: '',
       search: '',
-      hash: ''
+      hash: '',
     },
     navigator: {
       userAgent: 'Node.js Server',
-      onLine: true
+      onLine: true,
     },
     document: {
       createElement: (): object => ({ nodeType: 1 }),
@@ -34,7 +34,7 @@ if (typeof window === 'undefined') {
       querySelector: () => null,
       querySelectorAll: () => [],
       _addEventListener: () => {},
-      _removeEventListener: () => {}
+      _removeEventListener: () => {},
     },
     _addEventListener: () => {},
     _removeEventListener: () => {},
@@ -47,7 +47,7 @@ if (typeof window === 'undefined') {
       _removeItem: () => {},
       _clear: () => {},
       length: 0,
-      key: () => null
+      key: () => null,
     },
     sessionStorage: {
       getItem: () => null,
@@ -55,36 +55,58 @@ if (typeof window === 'undefined') {
       _removeItem: () => {},
       _clear: () => {},
       length: 0,
-      key: () => null
+      key: () => null,
     },
     console: console,
-    fetch: (global as unknown as Record<string, unknown>).fetch || (() => Promise.reject(new Error('Fetch not available on server'))),
-    URL: (global as unknown as { URL: new (href: string) => URL }).URL || class URL {
-      href: string;
-      constructor(href: string) { this.href = href; }
-      toString() { return this.href; }
-    },
-    crypto: (global as unknown as { crypto: { randomUUID: () => string; subtle: object; getRandomValues: (arr: Uint8Array) => Uint8Array } }).crypto || {
-      randomUUID: () => Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
+    fetch:
+      (global as unknown as Record<string, unknown>).fetch ||
+      (() => Promise.reject(new Error('Fetch not available on server'))),
+    URL:
+      (global as unknown as { URL: new (href: string) => URL }).URL ||
+      class URL {
+        href: string;
+        constructor(href: string) {
+          this.href = href;
+        }
+        toString() {
+          return this.href;
+        }
+      },
+    crypto: (
+      global as unknown as {
+        crypto: {
+          randomUUID: () => string;
+          subtle: object;
+          getRandomValues: (arr: Uint8Array) => Uint8Array;
+        };
+      }
+    ).crypto || {
+      randomUUID: () =>
+        Math.random().toString(36).substring(2, 15) +
+        Math.random().toString(36).substring(2, 15),
       subtle: {},
       _getRandomValues: (arr: Uint8Array) => {
         for (let i = 0; i < arr.length; i++) {
           arr[i] = Math.floor(Math.random() * 256);
         }
         return arr;
-      }
-    }
+      },
+    },
   };
 
   // Also assign to globalThis for broader compatibility
   if (typeof globalThis !== 'undefined') {
-    (globalThis as unknown as { window: Record<string, unknown> }).window = (global as unknown as { window: Record<string, unknown> }).window;
+    (globalThis as unknown as { window: Record<string, unknown> }).window = (
+      global as unknown as { window: Record<string, unknown> }
+    ).window;
   }
 }
 
 // Mock document if not available
 if (typeof document === 'undefined') {
-  (global as unknown as { document: Record<string, unknown> }).document = ((global as unknown as { window: Record<string, unknown> }).window?.document as Record<string, unknown>) || { fallback: true };
+  (global as unknown as { document: Record<string, unknown> }).document = ((
+    global as unknown as { window: Record<string, unknown> }
+  ).window?.document as Record<string, unknown>) || { fallback: true };
 }
 
 // Mock navigator if not available
@@ -97,22 +119,23 @@ if (typeof navigator === 'undefined') {
     platform: 'Node.js',
     clipboard: {
       writeText: () => Promise.resolve(),
-      readText: () => Promise.resolve('')
-    }
+      readText: () => Promise.resolve(''),
+    },
   };
 }
 
 // Prevent common client-side errors during server-side rendering
 if (typeof performance === 'undefined') {
-  (global as unknown as { performance: Record<string, unknown> }).performance = {
-    now: () => Date.now(),
-    _mark: () => {},
-    _measure: () => {},
-    getEntriesByType: () => [],
-    getEntriesByName: () => [],
-    _clearMarks: () => {},
-    _clearMeasures: () => {}
-  };
+  (global as unknown as { performance: Record<string, unknown> }).performance =
+    {
+      now: () => Date.now(),
+      _mark: () => {},
+      _measure: () => {},
+      getEntriesByType: () => [],
+      getEntriesByName: () => [],
+      _clearMarks: () => {},
+      _clearMeasures: () => {},
+    };
 }
 
 // Export for explicit imports

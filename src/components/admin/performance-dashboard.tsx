@@ -1,20 +1,19 @@
 import React, { useEffect } from 'react';
-import { Zap, TrendingUp, AlertTriangle, CheckCircle, RefreshCw, BarChart3, Clock, Globe, Package } from '@/components/ui/icons';
+import {
+  Zap,
+  TrendingUp,
+  AlertTriangle,
+  CheckCircle,
+  RefreshCw,
+  BarChart3,
+  Clock,
+  Globe,
+  Package,
+} from '@/components/ui/icons';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-
-
-
-
-
-
-
-
-
-
-
 
 import { logErrorToProduction, logInfo } from '@/utils/productionLogger';
 
@@ -36,30 +35,34 @@ export function PerformanceDashboard() {
   const collectMetrics = async () => {
     try {
       // Collect performance metrics
-      const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+      const navigationEntry = performance.getEntriesByType(
+        'navigation',
+      )[0] as PerformanceNavigationTiming;
       const resourceCount = performance.getEntriesByType('resource').length;
 
       const performanceMetrics: PerformanceMetrics = {
         bundleSize: 0, // This would need to be calculated separately
-        loadTime: navigationEntry ? navigationEntry.loadEventEnd - navigationEntry.fetchStart : 0,
+        loadTime: navigationEntry
+          ? navigationEntry.loadEventEnd - navigationEntry.fetchStart
+          : 0,
         performanceScore: 0, // This would need to be calculated
         chunkCount: resourceCount,
         cacheHitRate: 0, // This would need to be calculated from resource timing
         fcp: 0, // First Contentful Paint - would need Performance Observer
-        lcp: 0, // Largest Contentful Paint - would need Performance Observer  
+        lcp: 0, // Largest Contentful Paint - would need Performance Observer
         cls: 0, // Cumulative Layout Shift - would need Performance Observer
-        fid: 0  // First Input Delay - would need Performance Observer
+        fid: 0, // First Input Delay - would need Performance Observer
       };
 
       setMetrics(performanceMetrics);
-      logInfo('Performance metrics collected successfully', { 
+      logInfo('Performance metrics collected successfully', {
         loadTime: performanceMetrics.loadTime,
-        resourceCount: performanceMetrics.chunkCount
+        resourceCount: performanceMetrics.chunkCount,
       });
     } catch {
       logErrorToProduction('Failed to collect performance metrics', error, {
         component: 'PerformanceDashboard',
-        action: 'collectMetrics'
+        action: 'collectMetrics',
       });
       // Set fallback metrics
       setMetrics({
@@ -71,7 +74,7 @@ export function PerformanceDashboard() {
         fcp: 0,
         lcp: 0,
         cls: 0,
-        fid: 0
+        fid: 0,
       });
     }
   };
@@ -86,7 +89,8 @@ export function PerformanceDashboard() {
 
   const getScoreIcon = (_score: number) => {
     if (score >= 90) return <CheckCircle className="w-4 h-4 text-green-600" />;
-    if (score >= 70) return <AlertTriangle className="w-4 h-4 text-yellow-600" />;
+    if (score >= 70)
+      return <AlertTriangle className="w-4 h-4 text-yellow-600" />;
     return <AlertTriangle className="w-4 h-4 text-red-600" />;
   };
 
@@ -104,7 +108,8 @@ export function PerformanceDashboard() {
         <div>
           <h2 className="text-2xl font-bold">Performance Dashboard</h2>
           <p className="text-muted-foreground">
-            Monitor bundle size, performance metrics, and optimization opportunities
+            Monitor bundle size, performance metrics, and optimization
+            opportunities
           </p>
         </div>
         <Button onClick={collectMetrics}>
@@ -131,20 +136,28 @@ export function PerformanceDashboard() {
                     <span className="text-2xl font-bold">
                       {metrics.performanceScore}/100
                     </span>
-                    <Badge variant={metrics.performanceScore >= 90 ? 'default' : 'secondary'}>
-                      {metrics.performanceScore >= 90 ? 'Excellent' : 
-                       metrics.performanceScore >= 70 ? 'Good' : 'Needs Improvement'}
+                    <Badge
+                      variant={
+                        metrics.performanceScore >= 90 ? 'default' : 'secondary'
+                      }
+                    >
+                      {metrics.performanceScore >= 90
+                        ? 'Excellent'
+                        : metrics.performanceScore >= 70
+                          ? 'Good'
+                          : 'Needs Improvement'}
                     </Badge>
                   </div>
                   <Progress value={metrics.performanceScore} className="h-2" />
                 </div>
               </div>
-              
             </div>
           ) : (
             <div className="text-center py-8">
               <Clock className="w-8 h-8 mx-auto mb-2 text-muted-foreground" />
-              <p className="text-muted-foreground">Click refresh to collect metrics</p>
+              <p className="text-muted-foreground">
+                Click refresh to collect metrics
+              </p>
             </div>
           )}
         </CardContent>
@@ -159,7 +172,9 @@ export function PerformanceDashboard() {
                 <Package className="w-4 h-4 text-blue-600" />
                 <span className="text-sm font-medium">Bundle Size</span>
               </div>
-              <p className="text-2xl font-bold mt-2">{formatSize(metrics.bundleSize)}</p>
+              <p className="text-2xl font-bold mt-2">
+                {formatSize(metrics.bundleSize)}
+              </p>
               <p className="text-xs text-muted-foreground">
                 {metrics.chunkCount} chunks
               </p>
@@ -172,7 +187,9 @@ export function PerformanceDashboard() {
                 <Clock className="w-4 h-4 text-purple-600" />
                 <span className="text-sm font-medium">Load Time</span>
               </div>
-              <p className="text-2xl font-bold mt-2">{metrics.loadTime.toFixed(0)}ms</p>
+              <p className="text-2xl font-bold mt-2">
+                {metrics.loadTime.toFixed(0)}ms
+              </p>
               <p className="text-xs text-muted-foreground">
                 Average chunk load time
               </p>
@@ -183,7 +200,9 @@ export function PerformanceDashboard() {
             <CardContent className="p-4">
               <div className="flex items-center gap-2">
                 <Globe className="w-4 h-4 text-green-600" />
-                <span className="text-sm font-medium">First Contentful Paint</span>
+                <span className="text-sm font-medium">
+                  First Contentful Paint
+                </span>
               </div>
               <p className="text-2xl font-bold mt-2">
                 {metrics.fcp ? `${metrics.fcp.toFixed(0)}ms` : 'N/A'}
@@ -198,7 +217,9 @@ export function PerformanceDashboard() {
             <CardContent className="p-4">
               <div className="flex items-center gap-2">
                 <BarChart3 className="w-4 h-4 text-orange-600" />
-                <span className="text-sm font-medium">Largest Contentful Paint</span>
+                <span className="text-sm font-medium">
+                  Largest Contentful Paint
+                </span>
               </div>
               <p className="text-2xl font-bold mt-2">
                 {metrics.lcp ? `${metrics.lcp.toFixed(0)}ms` : 'N/A'}
@@ -247,11 +268,12 @@ export function PerformanceDashboard() {
                   Bundle splitting implemented
                 </p>
                 <p className="text-sm text-blue-700 dark:text-blue-300">
-                  Your bundle is properly split into framework, vendor, and application chunks
+                  Your bundle is properly split into framework, vendor, and
+                  application chunks
                 </p>
               </div>
             </div>
-            
+
             <div className="flex items-start gap-3 p-3 bg-green-50 dark:bg-green-900/20 rounded">
               <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
               <div>
@@ -259,11 +281,12 @@ export function PerformanceDashboard() {
                   Performance monitoring active
                 </p>
                 <p className="text-sm text-green-700 dark:text-green-300">
-                  Real-time performance tracking is helping optimize your application
+                  Real-time performance tracking is helping optimize your
+                  application
                 </p>
               </div>
             </div>
-            
+
             {metrics && metrics.bundleSize > 2 * 1024 * 1024 && (
               <div className="flex items-start gap-3 p-3 bg-yellow-50 dark:bg-yellow-900/20 rounded">
                 <AlertTriangle className="w-5 h-5 text-yellow-600 mt-0.5" />
@@ -272,7 +295,8 @@ export function PerformanceDashboard() {
                     Consider more aggressive code splitting
                   </p>
                   <p className="text-sm text-yellow-700 dark:text-yellow-300">
-                    Bundle size is above 2MB. Consider implementing dynamic imports for heavy components
+                    Bundle size is above 2MB. Consider implementing dynamic
+                    imports for heavy components
                   </p>
                 </div>
               </div>
@@ -282,4 +306,4 @@ export function PerformanceDashboard() {
       </Card>
     </div>
   );
-} 
+}

@@ -22,7 +22,10 @@ export default function BookBuilder() {
 
   return (
     <div className="min-h-screen bg-background prose lg:prose-xl font-serif mx-auto p-8">
-      <NextSeo title="Zion OS Book Builder" description="Auto-layout hardcover edition." />
+      <NextSeo
+        title="Zion OS Book Builder"
+        description="Auto-layout hardcover edition."
+      />
       <h1>Zion OS: Building the Civilization Protocol</h1>
       <p className="text-xl italic">AI. Talent. Trust.</p>
       <blockquote>
@@ -79,7 +82,9 @@ export default function BookBuilder() {
 
       <div className="not-prose mt-8 flex gap-4">
         <Button onClick={handleDownload}>Download PDF</Button>
-        <Button variant="outline" onClick={handlePrint}>Print</Button>
+        <Button variant="outline" onClick={handlePrint}>
+          Print
+        </Button>
       </div>
     </div>
   );

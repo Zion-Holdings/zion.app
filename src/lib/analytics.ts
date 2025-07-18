@@ -3,7 +3,7 @@ import { supabase, isSupabaseConfigured } from '@/integrations/supabase/client';
 
 async function logEventToSupabase(
   eventName: string,
-  eventParams?: Record<string, unknown>
+  eventParams?: Record<string, unknown>,
 ) {
   if (!isSupabaseConfigured) return;
   if (!supabase) throw new Error('Supabase client not initialized');
@@ -17,20 +17,32 @@ async function logEventToSupabase(
       },
     ]);
   } catch {
-    logErrorToProduction('Error logging analytics event to Supabase', error as Error, { eventName, eventParams, context: 'SupabaseAnalytics' });
+    logErrorToProduction(
+      'Error logging analytics event to Supabase',
+      error as Error,
+      { eventName, eventParams, context: 'SupabaseAnalytics' },
+    );
   }
 }
 
 export const initGA = () => {
   const measurementId = process.env.NEXT_PUBLIC_GA_ID;
   if (!measurementId) {
-    logErrorToProduction('NEXT_PUBLIC_GA_ID is not defined. GA4 initialization skipped.', new Error('Missing GA ID'), { context: 'GoogleAnalyticsInit' });
+    logErrorToProduction(
+      'NEXT_PUBLIC_GA_ID is not defined. GA4 initialization skipped.',
+      new Error('Missing GA ID'),
+      { context: 'GoogleAnalyticsInit' },
+    );
     return;
   }
 
   const doNotTrack = navigator.doNotTrack;
   if (doNotTrack === '1' || doNotTrack === 'yes') {
-    logErrorToProduction('Do Not Track is enabled. GA4 initialization skipped.', new Error('Do Not Track enabled'), { context: 'GoogleAnalyticsInit' });
+    logErrorToProduction(
+      'Do Not Track is enabled. GA4 initialization skipped.',
+      new Error('Do Not Track enabled'),
+      { context: 'GoogleAnalyticsInit' },
+    );
     return;
   }
 
@@ -40,12 +52,20 @@ export const initGA = () => {
 };
 export const fireEvent = async (
   eventName: string,
-  eventParams?: Record<string, unknown>
+  eventParams?: Record<string, unknown>,
 ) => {
   if (!window.gtag) {
-    logErrorToProduction('gtag is not defined. Make sure GA4 is initialized.', new Error('gtag not defined'), { eventName, context: 'GoogleAnalyticsEvent' });
+    logErrorToProduction(
+      'gtag is not defined. Make sure GA4 is initialized.',
+      new Error('gtag not defined'),
+      { eventName, context: 'GoogleAnalyticsEvent' },
+    );
   } else {
-    (window.gtag as (...args: unknown[]) => void)('event', eventName, eventParams);
+    (window.gtag as (...args: unknown[]) => void)(
+      'event',
+      eventName,
+      eventParams,
+    );
   }
 
   await logEventToSupabase(eventName, eventParams);
@@ -53,32 +73,66 @@ export const fireEvent = async (
 
 // Replace 'any' with a more specific type for event data
 export function trackEvent(event: string, data: Record<string, unknown>) {
-  if (typeof window !== 'undefined' && ((window as unknown) as Record<string, unknown>).gtag) {
-    (((window as unknown) as Record<string, unknown>).gtag as (...args: unknown[]) => void)('event', event, data);
+  if (
+    typeof window !== 'undefined' &&
+    (window as unknown as Record<string, unknown>).gtag
+  ) {
+    (
+      (window as unknown as Record<string, unknown>).gtag as (
+        ...args: unknown[]
+      ) => void
+    )('event', event, data);
   }
 }
 
 // Replace 'any' with a more specific type for pageview data
 export function trackPageview(url: string, data: Record<string, unknown> = {}) {
-  if (typeof window !== 'undefined' && ((window as unknown) as Record<string, unknown>).gtag) {
-    (((window as unknown) as Record<string, unknown>).gtag as (...args: unknown[]) => void)('config', process.env.NEXT_PUBLIC_GA_ID, {
+  if (
+    typeof window !== 'undefined' &&
+    (window as unknown as Record<string, unknown>).gtag
+  ) {
+    (
+      (window as unknown as Record<string, unknown>).gtag as (
+        ...args: unknown[]
+      ) => void
+    )('config', process.env.NEXT_PUBLIC_GA_ID, {
       page_path: url,
       ...data,
     });
   }
 }
 
-export function trackConversion(conversionId: string, data: Record<string, unknown> = {}) {
-  if (typeof window !== 'undefined' && ((window as unknown) as Record<string, unknown>).gtag) {
-    (((window as unknown) as Record<string, unknown>).gtag as (...args: unknown[]) => void)('event', 'conversion', {
+export function trackConversion(
+  conversionId: string,
+  data: Record<string, unknown> = {},
+) {
+  if (
+    typeof window !== 'undefined' &&
+    (window as unknown as Record<string, unknown>).gtag
+  ) {
+    (
+      (window as unknown as Record<string, unknown>).gtag as (
+        ...args: unknown[]
+      ) => void
+    )('event', 'conversion', {
       send_to: conversionId,
       ...data,
     });
   }
 }
 
-export function trackCustomEvent(eventName: string, parameters: Record<string, unknown> = {}) {
-  if (typeof window !== 'undefined' && ((window as unknown) as Record<string, unknown>).gtag) {
-    (((window as unknown) as Record<string, unknown>).gtag as (...args: unknown[]) => void)('event', eventName, parameters);
+export function trackCustomEvent(
+  eventName: string,
+  parameters: Record<string, unknown> = {},
+) {
+  if (
+    typeof window !== 'undefined' &&
+    (window as unknown as Record<string, unknown>).gtag
+  ) {
+    (
+      (window as unknown as Record<string, unknown>).gtag as (
+        ...args: unknown[]
+      ) => void
+    )('event', eventName, parameters);
   }
 }

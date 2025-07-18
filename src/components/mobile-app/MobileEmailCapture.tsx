@@ -1,19 +1,17 @@
-
 function isValidEmail(email) {
   const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
   return emailRegex.test(email);
 }
 
-import React, { useState, useRef } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import React, { useState, useRef } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { useEnqueueSnackbar } from '@/context';
 import { logErrorToProduction } from '@/utils/productionLogger';
 import { isValidEmail } from '@/utils/email';
 
 export const _MobileEmailCapture: React.FC = () => {
-
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const enqueueSnackbar = useEnqueueSnackbar();
@@ -40,16 +38,20 @@ export const _MobileEmailCapture: React.FC = () => {
       const res = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: trimmed })
+        body: JSON.stringify({ email: trimmed }),
       });
 
       const data = await res.json().catch(() => ({}));
 
       if (res.ok) {
         if (data.status === 'already_subscribed') {
-          enqueueSnackbar(data.message || "You're already subscribed!", { variant: 'success' });
+          enqueueSnackbar(data.message || "You're already subscribed!", {
+            variant: 'success',
+          });
         } else {
-          enqueueSnackbar(data.message || 'Successfully subscribed!', { variant: 'success' });
+          enqueueSnackbar(data.message || 'Successfully subscribed!', {
+            variant: 'success',
+          });
         }
         setIsSuccess(true);
         setEmail('');
@@ -58,11 +60,17 @@ export const _MobileEmailCapture: React.FC = () => {
         }, 5000);
       } else {
         logErrorToProduction('Newsletter subscription failed:', { data });
-        enqueueSnackbar(data.error || 'Subscription failed. Please try again.', { variant: 'error' });
+        enqueueSnackbar(
+          data.error || 'Subscription failed. Please try again.',
+          { variant: 'error' },
+        );
       }
     } catch (error: unknown) {
       logErrorToProduction('Error subscribing:', { data: error });
-      enqueueSnackbar('Unable to subscribe right now. Please try again later.', { variant: 'error' });
+      enqueueSnackbar(
+        'Unable to subscribe right now. Please try again later.',
+        { variant: 'error' },
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -76,10 +84,14 @@ export const _MobileEmailCapture: React.FC = () => {
             Get Early Access to New Features
           </h2>
           <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-            Subscribe to our mobile app updates and be the first to try new features before they're released to the public.
+            Subscribe to our mobile app updates and be the first to try new
+            features before they're released to the public.
           </p>
-          
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
+          >
             <Input
               type="email"
               name="email"
@@ -89,15 +101,19 @@ export const _MobileEmailCapture: React.FC = () => {
               className="flex-grow bg-zion-blue-dark/70 text-white border-zion-purple/30 placeholder:text-gray-400"
               required
             />
-            <Button 
-              type="submit" 
+            <Button
+              type="submit"
               disabled={isSubmitting || isSuccess}
               className="bg-zion-cyan hover:bg-zion-cyan/80 text-zion-blue-dark font-medium"
             >
-              {isSubmitting ? "Subscribing..." : isSuccess ? "Subscribed!" : "Subscribe"}
+              {isSubmitting
+                ? 'Subscribing...'
+                : isSuccess
+                  ? 'Subscribed!'
+                  : 'Subscribe'}
             </Button>
           </form>
-          
+
           <p className="text-sm text-gray-400 mt-4">
             We respect your privacy and will never share your information.
           </p>

@@ -21,13 +21,16 @@ const ErrorFallback = ({ error }: { error: Error }) => (
 // Enhanced dynamic import with error handling
 type ErrorFallbackComponent = ComponentType<{ error: Error }>;
 
-export function createDynamicImport<P = unknown, T extends ComponentType<P> = ComponentType<P>>(
+export function createDynamicImport<
+  P = unknown,
+  T extends ComponentType<P> = ComponentType<P>,
+>(
   importFn: () => Promise<{ default: T }>,
   options: {
     loading?: () => React.JSX.Element;
     ssr?: boolean;
     errorFallback?: ErrorFallbackComponent;
-  } = {}
+  } = {},
 ) {
   const DynamicComponent = dynamic(importFn, {
     loading: options.loading || LoadingSpinner,
@@ -56,7 +59,7 @@ export function createDynamicImport<P = unknown, T extends ComponentType<P> = Co
 //   // Components will be added when they have proper default exports
 // };
 
-// Route-based code splitting helpers  
+// Route-based code splitting helpers
 // Note: Commented out until pages export proper default exports
 // export const DynamicPages = {
 //   // Pages will be added when they have proper default exports
@@ -64,7 +67,13 @@ export function createDynamicImport<P = unknown, T extends ComponentType<P> = Co
 
 // Utility for preloading components
 export function preloadComponent(component: unknown) {
-  if (typeof window !== 'undefined' && typeof component === 'object' && component !== null && 'preload' in component && typeof (component as { preload: unknown }).preload === 'function') {
+  if (
+    typeof window !== 'undefined' &&
+    typeof component === 'object' &&
+    component !== null &&
+    'preload' in component &&
+    typeof (component as { preload: unknown }).preload === 'function'
+  ) {
     (component as { preload: () => void }).preload();
   }
 }
@@ -74,4 +83,4 @@ export function trackBundleUsage(componentName: string) {
   if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
     logInfo(`[Bundle] Loading component: ${componentName}`);
   }
-} 
+}

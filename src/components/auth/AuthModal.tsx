@@ -16,7 +16,11 @@ interface AuthModalProps {
   returnUrl?: string;
 }
 
-export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, returnUrl = '/marketplace' }) => {
+export const AuthModal: React.FC<AuthModalProps> = ({
+  isOpen,
+  onClose,
+  returnUrl = '/marketplace',
+}) => {
   const router = useRouter();
 
   const handleLogin = () => {

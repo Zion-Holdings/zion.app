@@ -1,23 +1,28 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { useAuth } from "@/hooks/useAuth";
-import { LoginModal } from "@/components/auth/LoginModal";
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
+import { useAuth } from '@/hooks/useAuth';
+import { LoginModal } from '@/components/auth/LoginModal';
 
 export function RewardsWidget() {
   const { _user } = useAuth();
   const [open, setOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
 
-  const points = (user && typeof user !== 'boolean') ? user.points ?? _0 : 0;
+  const points = user && typeof user !== 'boolean' ? (user.points ?? _0) : 0;
 
   const getTier = (pts: number) => {
-    if (pts >= 500) return "Gold";
-    if (pts >= 100) return "Silver";
-    return "Bronze";
+    if (pts >= 500) return 'Gold';
+    if (pts >= 100) return 'Silver';
+    return 'Bronze';
   };
 
-  const tasks = ["Complete your profile", "Invite a friend", "Buy any service"];
+  const tasks = ['Complete your profile', 'Invite a friend', 'Buy any service'];
 
   const handleClick = () => {
     if (user) {
@@ -29,7 +34,9 @@ export function RewardsWidget() {
 
   return (
     <>
-      <Button onClick={handleClick} aria-label="Rewards">Rewards</Button>
+      <Button onClick={handleClick} aria-label="Rewards">
+        Rewards
+      </Button>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="bg-zion-blue-dark border-zion-blue-light text-white sm:max-w-md">
           <DialogHeader>
@@ -41,7 +48,7 @@ export function RewardsWidget() {
             <div className="mt-2">
               <p className="font-medium">Earn more:</p>
               <ul className="list-disc list-inside text-sm space-y-1">
-                {tasks.map(task => (
+                {tasks.map((task) => (
                   <li key={task}>{task}</li>
                 ))}
               </ul>

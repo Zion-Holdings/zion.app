@@ -1,5 +1,3 @@
-
-
 export type BlockchainNetwork = 'ethereum' | 'polygon' | 'none';
 
 export interface SmartContractInfo {

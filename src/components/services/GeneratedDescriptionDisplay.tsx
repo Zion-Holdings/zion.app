@@ -1,22 +1,24 @@
-
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { Check } from '@/components/ui/icons';
-import { useToast } from "@/hooks/use-toast";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea";
-
-
-
+import { useToast } from '@/hooks/use-toast';
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardFooter,
+} from '@/components/ui/card';
+import { Textarea } from '@/components/ui/textarea';
 
 interface GeneratedDescriptionDisplayProps {
   description: string;
   onSave: (editedDescription: string) => void;
 }
 
-export function GeneratedDescriptionDisplay({ 
-  description, 
-  onSave 
+export function GeneratedDescriptionDisplay({
+  description,
+  onSave,
 }: GeneratedDescriptionDisplayProps) {
   const { _toast } = useToast();
   const [isEditing, setIsEditing] = useState(false);
@@ -26,8 +28,8 @@ export function GeneratedDescriptionDisplay({
     onSave(editedDescription);
     setIsEditing(false);
     toast({
-      title: "Description Saved",
-      description: "Your edited description has been saved."
+      title: 'Description Saved',
+      description: 'Your edited description has been saved.',
     });
   };
 
@@ -36,9 +38,9 @@ export function GeneratedDescriptionDisplay({
       <CardHeader>
         <CardTitle className="text-white flex items-center justify-between">
           Generated Description
-          <Button 
-            variant="outline" 
-            size="sm" 
+          <Button
+            variant="outline"
+            size="sm"
             onClick={() => setIsEditing(!isEditing)}
             className="border-zion-blue-light text-zion-slate-light hover:text-white"
           >
@@ -71,7 +73,7 @@ export function GeneratedDescriptionDisplay({
       </CardContent>
       {isEditing && (
         <CardFooter>
-          <Button 
+          <Button
             onClick={handleSave}
             className="w-full bg-gradient-to-r from-zion-cyan to-zion-cyan-dark hover:from-zion-cyan-light hover:to-zion-cyan text-white"
           >

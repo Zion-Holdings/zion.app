@@ -1,16 +1,14 @@
-
-import { useState } from "react";
+import { useState } from 'react';
 import { Loader2 } from '@/components/ui/icons';
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 
+import type { CreateResumeFormProps } from './types';
 
-import type { CreateResumeFormProps } from "./types";
-
-export const CreateResumeForm = ({ 
+export const CreateResumeForm = ({
   onCreateResume,
   onCancel,
-  isLoading 
+  isLoading,
 }: CreateResumeFormProps) => {
   const [newResumeTitle, setNewResumeTitle] = useState('');
 
@@ -24,8 +22,10 @@ export const CreateResumeForm = ({
       <CardContent className="py-8">
         <div className="text-center">
           <h2 className="text-2xl font-bold mb-2">Create New Resume</h2>
-          <p className="text-muted-foreground mb-6">Give your resume a title to get started</p>
-          
+          <p className="text-muted-foreground mb-6">
+            Give your resume a title to get started
+          </p>
+
           <div className="flex gap-2 max-w-md mx-auto">
             <input
               type="text"
@@ -34,7 +34,7 @@ export const CreateResumeForm = ({
               value={newResumeTitle}
               onChange={(e) => setNewResumeTitle(e.target.value)}
             />
-            <Button 
+            <Button
               onClick={handleSubmit}
               disabled={!newResumeTitle.trim() || isLoading}
             >
@@ -42,12 +42,8 @@ export const CreateResumeForm = ({
               Create
             </Button>
           </div>
-          
-          <Button
-            variant="ghost"
-            onClick={onCancel}
-            className="mt-4"
-          >
+
+          <Button variant="ghost" onClick={onCancel} className="mt-4">
             Cancel
           </Button>
         </div>

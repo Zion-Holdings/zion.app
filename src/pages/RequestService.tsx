@@ -16,7 +16,7 @@ export default function RequestService() {
       toast({
         title: 'Missing Information',
         description: 'Name, email and phone are required.',
-        variant: 'destructive'
+        variant: 'destructive',
       });
       return;
     }
@@ -25,11 +25,11 @@ export default function RequestService() {
       const res = await fetch('/api/service-request', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, phone, details })
+        body: JSON.stringify({ name, email, phone, details }),
       });
       if (!res.ok) throw new Error('Request failed');
       toast({
-        title: "Request sent – we'll reply within 24h"
+        title: "Request sent – we'll reply within 24h",
       });
       setName('');
       setEmail('');
@@ -39,7 +39,7 @@ export default function RequestService() {
       toast({
         title: 'Submission Failed',
         description: 'There was an error submitting your request.',
-        variant: 'destructive'
+        variant: 'destructive',
       });
     } finally {
       setLoading(false);
@@ -78,7 +78,11 @@ export default function RequestService() {
           className="request-textarea w-full border p-2 rounded"
           rows={4}
         />
-        <button type="submit" className="request-btn p-2 rounded w-full" disabled={loading}>
+        <button
+          type="submit"
+          className="request-btn p-2 rounded w-full"
+          disabled={loading}
+        >
           {loading ? (
             <>
               <LoadingSpinner size="sm" className="mr-2" />

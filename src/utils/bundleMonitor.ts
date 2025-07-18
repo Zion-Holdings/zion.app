@@ -43,7 +43,10 @@ class BundleMonitor {
       const observer = new PerformanceObserver((list) => {
         const entries = list.getEntries();
         entries.forEach((entry) => {
-          if (entry.entryType === 'resource' && entry.name.includes('/_next/static/')) {
+          if (
+            entry.entryType === 'resource' &&
+            entry.name.includes('/_next/static/')
+          ) {
             this.trackResourceLoad(entry as PerformanceResourceTiming);
           }
         });
@@ -57,19 +60,22 @@ class BundleMonitor {
     if (typeof window === 'undefined') return;
 
     try {
-      const resourceEntries = performance.getEntriesByType('resource') as PerformanceResourceTiming[];
-      const jsEntries = resourceEntries.filter(entry => 
-        entry.name.includes('/_next/static/') && entry.name.endsWith('.js')
+      const resourceEntries = performance.getEntriesByType(
+        'resource',
+      ) as PerformanceResourceTiming[];
+      const jsEntries = resourceEntries.filter(
+        (entry) =>
+          entry.name.includes('/_next/static/') && entry.name.endsWith('.js'),
       );
 
       let totalSize = 0;
       let initialChunkSize = 0;
       let totalLoadTime = 0;
 
-      jsEntries.forEach(entry => {
+      jsEntries.forEach((entry) => {
         const size = entry.transferSize || entry.encodedBodySize || 0;
         totalSize += size;
-        totalLoadTime += (entry.responseEnd - entry.requestStart);
+        totalLoadTime += entry.responseEnd - entry.requestStart;
 
         // Identify initial chunk (usually the largest or framework chunk)
         if (entry.name.includes('framework') || entry.name.includes('main')) {
@@ -83,8 +89,18 @@ class BundleMonitor {
         initialChunkSize,
         chunkCount: jsEntries.length,
         loadTime: totalLoadTime / jsEntries.length || 0,
-        performanceScore: this.calculatePerformanceScore(totalSize, initialChunkSize, totalLoadTime / jsEntries.length, jsEntries.length),
-        recommendations: this.generateRecommendations(totalSize, initialChunkSize, totalLoadTime / jsEntries.length, jsEntries.length),
+        performanceScore: this.calculatePerformanceScore(
+          totalSize,
+          initialChunkSize,
+          totalLoadTime / jsEntries.length,
+          jsEntries.length,
+        ),
+        recommendations: this.generateRecommendations(
+          totalSize,
+          initialChunkSize,
+          totalLoadTime / jsEntries.length,
+          jsEntries.length,
+        ),
       };
 
       this.metrics.push(metrics);
@@ -94,9 +110,10 @@ class BundleMonitor {
       if (process.env.NODE_ENV === 'development') {
         localStorage.setItem('bundleMetrics', JSON.stringify(metrics));
       }
-
     } catch {
-      logErrorToProduction('Failed to collect bundle metrics:', { data: error });
+      logErrorToProduction('Failed to collect bundle metrics:', {
+        data: error,
+      });
     }
   }
 
@@ -105,19 +122,21 @@ class BundleMonitor {
     const loadTime = entry.responseEnd - entry.requestStart;
 
     // Log slow or large resources
-    if (size > 500 * 1024) { // > 500KB
+    if (size > 500 * 1024) {
+      // > 500KB
       logWarn('Large bundle chunk detected:', {
         url: entry.name,
         size: `${(size / 1024).toFixed(2)}KB`,
-        loadTime: `${loadTime.toFixed(2)}ms`
+        loadTime: `${loadTime.toFixed(2)}ms`,
       });
     }
 
-    if (loadTime > 2000) { // > 2 seconds
+    if (loadTime > 2000) {
+      // > 2 seconds
       logWarn('Slow bundle chunk loading:', {
         url: entry.name,
         loadTime: `${loadTime.toFixed(2)}ms`,
-        size: size ? `${(size / 1024).toFixed(2)}KB` : 'unknown'
+        size: size ? `${(size / 1024).toFixed(2)}KB` : 'unknown',
       });
     }
   }
@@ -126,27 +145,47 @@ class BundleMonitor {
     totalSize: number,
     initialSize: number,
     avgLoadTime: number,
-    chunkCount: number
+    chunkCount: number,
   ): number {
     let score = 100;
 
     // Size penalties
     if (totalSize > this.thresholds.maxBundleSize) {
-      score -= Math.min(30, (totalSize - this.thresholds.maxBundleSize) / this.thresholds.maxBundleSize * 30);
+      score -= Math.min(
+        30,
+        ((totalSize - this.thresholds.maxBundleSize) /
+          this.thresholds.maxBundleSize) *
+          30,
+      );
     }
 
     if (initialSize > this.thresholds.maxInitialChunk) {
-      score -= Math.min(25, (initialSize - this.thresholds.maxInitialChunk) / this.thresholds.maxInitialChunk * 25);
+      score -= Math.min(
+        25,
+        ((initialSize - this.thresholds.maxInitialChunk) /
+          this.thresholds.maxInitialChunk) *
+          25,
+      );
     }
 
     // Load time penalties
     if (avgLoadTime > this.thresholds.maxLoadTime) {
-      score -= Math.min(25, (avgLoadTime - this.thresholds.maxLoadTime) / this.thresholds.maxLoadTime * 25);
+      score -= Math.min(
+        25,
+        ((avgLoadTime - this.thresholds.maxLoadTime) /
+          this.thresholds.maxLoadTime) *
+          25,
+      );
     }
 
     // Chunk count penalties (too many or too few chunks)
     if (chunkCount > this.thresholds.maxChunkCount) {
-      score -= Math.min(10, (chunkCount - this.thresholds.maxChunkCount) / this.thresholds.maxChunkCount * 10);
+      score -= Math.min(
+        10,
+        ((chunkCount - this.thresholds.maxChunkCount) /
+          this.thresholds.maxChunkCount) *
+          10,
+      );
     } else if (chunkCount < 5) {
       score -= (5 - chunkCount) * 2; // Penalty for too few chunks
     }
@@ -158,28 +197,38 @@ class BundleMonitor {
     totalSize: number,
     initialSize: number,
     avgLoadTime: number,
-    chunkCount: number
+    chunkCount: number,
   ): string[] {
     const recommendations: string[] = [];
 
     if (totalSize > this.thresholds.maxBundleSize) {
-      recommendations.push('Total bundle size exceeds 2MB. Consider implementing more aggressive code splitting.');
+      recommendations.push(
+        'Total bundle size exceeds 2MB. Consider implementing more aggressive code splitting.',
+      );
     }
 
     if (initialSize > this.thresholds.maxInitialChunk) {
-      recommendations.push('Initial chunk is too large. Move non-critical code to dynamic imports.');
+      recommendations.push(
+        'Initial chunk is too large. Move non-critical code to dynamic imports.',
+      );
     }
 
     if (avgLoadTime > this.thresholds.maxLoadTime) {
-      recommendations.push('Bundle chunks are loading slowly. Check network conditions and consider CDN.');
+      recommendations.push(
+        'Bundle chunks are loading slowly. Check network conditions and consider CDN.',
+      );
     }
 
     if (chunkCount > this.thresholds.maxChunkCount) {
-      recommendations.push('Too many chunks detected. Consider consolidating smaller chunks.');
+      recommendations.push(
+        'Too many chunks detected. Consider consolidating smaller chunks.',
+      );
     }
 
     if (chunkCount < 5) {
-      recommendations.push('Too few chunks. Better code splitting could improve load performance.');
+      recommendations.push(
+        'Too few chunks. Better code splitting could improve load performance.',
+      );
     }
 
     if (recommendations.length === 0) {
@@ -194,18 +243,21 @@ class BundleMonitor {
 
     const previous = this.metrics[this.metrics.length - 2];
     if (!previous) return;
-    
+
     const sizeChange = current.totalBundleSize - previous.totalBundleSize;
     const scoreChange = current.performanceScore - previous.performanceScore;
 
     // Log significant changes
-    if (Math.abs(sizeChange) > 50 * 1024) { // > 50KB change
+    if (Math.abs(sizeChange) > 50 * 1024) {
+      // > 50KB change
       const _changeType = sizeChange > 0 ? 'increased' : 'decreased';
-      logInfo('Bundle size ${_changeType}:', { data:  {
-        change: `${(Math.abs(sizeChange) / 1024).toFixed(2)}KB`,
-        current: `${(current.totalBundleSize / 1024).toFixed(2)}KB`,
-        score: current.performanceScore
-      }});
+      logInfo('Bundle size ${_changeType}:', {
+        data: {
+          change: `${(Math.abs(sizeChange) / 1024).toFixed(2)}KB`,
+          current: `${(current.totalBundleSize / 1024).toFixed(2)}KB`,
+          score: current.performanceScore,
+        },
+      });
     }
 
     if (Math.abs(scoreChange) > 5) {
@@ -213,7 +265,7 @@ class BundleMonitor {
       logInfo(`Performance score ${_changeType}:`, {
         change: scoreChange,
         current: current.performanceScore,
-        recommendations: current.recommendations
+        recommendations: current.recommendations,
       });
     }
   }
@@ -235,13 +287,13 @@ class BundleMonitor {
     recommendations: string[];
   } {
     const current = this.getLatestMetrics();
-    
+
     if (!current || this.metrics.length < 2) {
-              return {
-          current: current as BundleMetrics | null,
-          trend: 'stable',
-          recommendations: current?.recommendations || []
-        };
+      return {
+        current: current as BundleMetrics | null,
+        trend: 'stable',
+        recommendations: current?.recommendations || [],
+      };
     }
 
     const previous = this.metrics[this.metrics.length - 2];
@@ -249,12 +301,12 @@ class BundleMonitor {
       return {
         current,
         trend: 'stable',
-        recommendations: current.recommendations
+        recommendations: current.recommendations,
       };
     }
-    
+
     const scoreDiff = current.performanceScore - previous.performanceScore;
-    
+
     let trend: 'improving' | 'stable' | 'declining' = 'stable';
     if (scoreDiff > 2) trend = 'improving';
     else if (scoreDiff < -2) trend = 'declining';
@@ -262,7 +314,7 @@ class BundleMonitor {
     return {
       current,
       trend,
-      recommendations: current.recommendations
+      recommendations: current.recommendations,
     };
   }
 
@@ -276,4 +328,4 @@ class BundleMonitor {
 const bundleMonitor = new BundleMonitor();
 
 export { bundleMonitor, BundleMonitor };
-export type { BundleMetrics, PerformanceThresholds }; 
+export type { BundleMetrics, PerformanceThresholds };

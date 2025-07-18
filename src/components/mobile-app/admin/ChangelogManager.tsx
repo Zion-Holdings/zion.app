@@ -1,14 +1,11 @@
-
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { Plus, Trash2 } from '@/components/ui/icons';
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 
-
-
-import type { AppPlatform } from "./MetadataManager";
+import type { AppPlatform } from './MetadataManager';
 
 interface ChangelogManagerProps {
   _platform: AppPlatform;
@@ -21,47 +18,55 @@ type ChangelogEntry = {
   changes: string;
 };
 
-export const ChangelogManager: React.FC<ChangelogManagerProps> = ({ platform: _platform }) => {
+export const ChangelogManager: React.FC<ChangelogManagerProps> = ({
+  platform: _platform,
+}) => {
   const [entries, setEntries] = useState<ChangelogEntry[]>([
     {
-      id: "1",
-      version: "1.0.0",
-      date: "2025-05-15",
-      changes: "Initial release of the Zion AI Marketplace app."
-    }
+      id: '1',
+      version: '1.0.0',
+      date: '2025-05-15',
+      changes: 'Initial release of the Zion AI Marketplace app.',
+    },
   ]);
-  
-  const [newEntry, setNewEntry] = useState<Omit<ChangelogEntry, "id">>({
-    version: "",
-    date: new Date().toISOString().split('T')[0] || new Date().toLocaleDateString('en-CA'),
-    changes: ""
+
+  const [newEntry, setNewEntry] = useState<Omit<ChangelogEntry, 'id'>>({
+    version: '',
+    date:
+      new Date().toISOString().split('T')[0] ||
+      new Date().toLocaleDateString('en-CA'),
+    changes: '',
   });
-  
+
   const handleAddEntry = () => {
     if (!newEntry.version || !newEntry.changes) return;
-    
+
     const entry: ChangelogEntry = {
       ...newEntry,
-      id: Math.random().toString(36).substring(2, 9)
+      id: Math.random().toString(36).substring(2, 9),
     };
-    
+
     setEntries([entry, ...entries]);
     setNewEntry({
-      version: "",
-      date: new Date().toISOString().split('T')[0] || new Date().toLocaleDateString('en-CA'),
-      changes: ""
+      version: '',
+      date:
+        new Date().toISOString().split('T')[0] ||
+        new Date().toLocaleDateString('en-CA'),
+      changes: '',
     });
   };
-  
+
   const handleRemoveEntry = (_id: string) => {
-    setEntries(entries.filter(entry => entry.id !== id));
+    setEntries(entries.filter((entry) => entry.id !== id));
   };
-  
-  const handleInputChange = (_e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+
+  const handleInputChange = (
+    _e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
-    setNewEntry(prev => ({ ...prev, [name]: value }));
+    setNewEntry((prev) => ({ ...prev, [name]: value }));
   };
-  
+
   return (
     <Card className="bg-zion-blue border-zion-purple/30">
       <CardHeader>
@@ -84,7 +89,7 @@ export const ChangelogManager: React.FC<ChangelogManagerProps> = ({ platform: _p
                 onChange={handleInputChange}
               />
             </div>
-            <Button 
+            <Button
               onClick={handleAddEntry}
               disabled={!newEntry.version || !newEntry.changes}
             >
@@ -92,7 +97,7 @@ export const ChangelogManager: React.FC<ChangelogManagerProps> = ({ platform: _p
               Add
             </Button>
           </div>
-          
+
           <Textarea
             placeholder="What's new in this version?"
             name="changes"
@@ -100,16 +105,18 @@ export const ChangelogManager: React.FC<ChangelogManagerProps> = ({ platform: _p
             onChange={handleInputChange}
             rows={3}
           />
-          
+
           <div className="border-t border-zion-purple/20 pt-4 space-y-4">
             {entries.map((entry) => (
-              <div 
+              <div
                 key={entry.id}
                 className="p-3 rounded border border-zion-purple/20 bg-zion-blue-dark"
               >
                 <div className="flex justify-between mb-2">
                   <div className="flex items-center gap-3">
-                    <span className="text-zion-cyan font-semibold">v{entry.version}</span>
+                    <span className="text-zion-cyan font-semibold">
+                      v{entry.version}
+                    </span>
                     <span className="text-sm text-gray-400">{entry.date}</span>
                   </div>
                   <Button
@@ -124,9 +131,11 @@ export const ChangelogManager: React.FC<ChangelogManagerProps> = ({ platform: _p
                 <p className="text-sm whitespace-pre-wrap">{entry.changes}</p>
               </div>
             ))}
-            
+
             {entries.length === 0 && (
-              <p className="text-center text-gray-400 py-4">No changelog entries yet</p>
+              <p className="text-center text-gray-400 py-4">
+                No changelog entries yet
+              </p>
             )}
           </div>
         </div>

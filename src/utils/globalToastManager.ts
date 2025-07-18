@@ -1,4 +1,8 @@
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import {
+  logInfo,
+  logWarn,
+  logErrorToProduction,
+} from '@/utils/productionLogger';
 import { toast as sonnerToast } from 'sonner';
 
 // Toast configuration constants
@@ -79,7 +83,8 @@ class GlobalToastManager {
     [ToastType.NETWORK_ERROR]: TOAST_CONFIG.ERROR_DURATION,
     [ToastType.AUTH_ERROR]: TOAST_CONFIG.ERROR_DURATION,
     [ToastType.VALIDATION_ERROR]: TOAST_CONFIG.DEFAULT_DURATION,
-    [ToastType.CRITICAL_ERROR]: TOAST_CONFIG.ERROR_DURATION + TOAST_CONFIG.PRIORITY_BOOST_DURATION,
+    [ToastType.CRITICAL_ERROR]:
+      TOAST_CONFIG.ERROR_DURATION + TOAST_CONFIG.PRIORITY_BOOST_DURATION,
   };
 
   /**
@@ -87,7 +92,9 @@ class GlobalToastManager {
    */
   private generateDedupeKey(toast: Partial<GlobalToast>): string {
     const { type, message, title } = toast;
-    return `${type}-${title || ''}-${message}`.toLowerCase().replace(/\s+/g, '-');
+    return `${type}-${title || ''}-${message}`
+      .toLowerCase()
+      .replace(/\s+/g, '-');
   }
 
   /**
@@ -96,11 +103,11 @@ class GlobalToastManager {
   private shouldShowToast(dedupeKey: string): boolean {
     const now = Date.now();
     const lastShown = this.dedupeCache.get(dedupeKey);
-    
-    if (lastShown && (now - lastShown) < TOAST_CONFIG.DEDUPE_WINDOW) {
+
+    if (lastShown && now - lastShown < TOAST_CONFIG.DEDUPE_WINDOW) {
       return false;
     }
-    
+
     this.dedupeCache.set(dedupeKey, now);
     return true;
   }
@@ -133,8 +140,10 @@ class GlobalToastManager {
     let toastToRemove: string | null = null;
 
     for (const [id, toast] of this.activeToasts.entries()) {
-      if (toast.priority < lowestPriority || 
-         (toast.priority === lowestPriority && toast.createdAt < oldestTime)) {
+      if (
+        toast.priority < lowestPriority ||
+        (toast.priority === lowestPriority && toast.createdAt < oldestTime)
+      ) {
         lowestPriority = toast.priority;
         oldestTime = toast.createdAt;
         toastToRemove = id;
@@ -195,12 +204,12 @@ class GlobalToastManager {
     for (const timer of this.dismissalTimers.values()) {
       clearTimeout(timer);
     }
-    
+
     // Clear all data structures
     this.dismissalTimers.clear();
     this.activeToasts.clear();
     this.toastQueue.length = 0;
-    
+
     // Dismiss all Sonner toasts
     sonnerToast.dismiss();
   }
@@ -209,7 +218,10 @@ class GlobalToastManager {
    * Process the toast queue
    */
   private processQueue(): void {
-    while (this.toastQueue.length > 0 && this.getVisibleToastCount() < TOAST_CONFIG.MAX_VISIBLE_TOASTS) {
+    while (
+      this.toastQueue.length > 0 &&
+      this.getVisibleToastCount() < TOAST_CONFIG.MAX_VISIBLE_TOASTS
+    ) {
       const toast = this.toastQueue.shift();
       if (toast) {
         this.showToastInternal(toast);
@@ -225,7 +237,9 @@ class GlobalToastManager {
 
     const options: Record<string, unknown> = {
       id: toast.id,
-      duration: toast.persistent ? Infinity : (toast.duration || this.durationMap[toast.type]),
+      duration: toast.persistent
+        ? Infinity
+        : toast.duration || this.durationMap[toast.type],
     };
 
     // Add action button if present
@@ -257,7 +271,7 @@ class GlobalToastManager {
           sonnerToast.error(message, {
             ...options,
             description,
-            style: { background: '#7f1d1d', color: '#fff' }
+            style: { background: '#7f1d1d', color: '#fff' },
           });
           break;
         case ToastType.WARNING:
@@ -273,20 +287,22 @@ class GlobalToastManager {
       this.setupAutoDismissal(toast);
     } else {
       // Log to console or a server-side logger if attempting to show toast on server
-      console.warn(`[SSR Toast Attempt]: ${toast.type} - ${message} (Sonner UI not rendered on server)`);
+      console.warn(
+        `[SSR Toast Attempt]: ${toast.type} - ${message} (Sonner UI not rendered on server)`,
+      );
     }
 
     // Log error toasts for debugging
     if (toast.type.includes('error')) {
       try {
-        logErrorToProduction(toast.message, new Error(toast.message), { 
+        logErrorToProduction(toast.message, new Error(toast.message), {
           context: 'globalToastManager',
           toastType: toast.type,
           priority: toast.priority,
-          metadata: toast.metadata 
+          metadata: toast.metadata,
         });
       } catch {
-        logErrorToProduction('Failed to log toast error:', { data:  e });
+        logErrorToProduction('Failed to log toast error:', { data: e });
       }
     }
   }
@@ -382,29 +398,81 @@ export const globalToastManager = new GlobalToastManager();
 
 // Convenience functions for different toast types
 export const showToast = {
-  info: (message: string, options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>) =>
+  info: (
+    message: string,
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,
+  ) =>
     globalToastManager.showToast({ message, type: ToastType.INFO, ...options }),
 
-  success: (message: string, options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>) =>
-    globalToastManager.showToast({ message, type: ToastType.SUCCESS, ...options }),
+  success: (
+    message: string,
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,
+  ) =>
+    globalToastManager.showToast({
+      message,
+      type: ToastType.SUCCESS,
+      ...options,
+    }),
 
-  warning: (message: string, options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>) =>
-    globalToastManager.showToast({ message, type: ToastType.WARNING, ...options }),
+  warning: (
+    message: string,
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,
+  ) =>
+    globalToastManager.showToast({
+      message,
+      type: ToastType.WARNING,
+      ...options,
+    }),
 
-  error: (message: string, options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>) =>
-    globalToastManager.showToast({ message, type: ToastType.ERROR, ...options }),
+  error: (
+    message: string,
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,
+  ) =>
+    globalToastManager.showToast({
+      message,
+      type: ToastType.ERROR,
+      ...options,
+    }),
 
-  networkError: (message: string, options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>) =>
-    globalToastManager.showToast({ message, type: ToastType.NETWORK_ERROR, ...options }),
+  networkError: (
+    message: string,
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,
+  ) =>
+    globalToastManager.showToast({
+      message,
+      type: ToastType.NETWORK_ERROR,
+      ...options,
+    }),
 
-  authError: (message: string, options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>) =>
-    globalToastManager.showToast({ message, type: ToastType.AUTH_ERROR, ...options }),
+  authError: (
+    message: string,
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,
+  ) =>
+    globalToastManager.showToast({
+      message,
+      type: ToastType.AUTH_ERROR,
+      ...options,
+    }),
 
-  validationError: (message: string, options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>) =>
-    globalToastManager.showToast({ message, type: ToastType.VALIDATION_ERROR, ...options }),
+  validationError: (
+    message: string,
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,
+  ) =>
+    globalToastManager.showToast({
+      message,
+      type: ToastType.VALIDATION_ERROR,
+      ...options,
+    }),
 
-  criticalError: (message: string, options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>) =>
-    globalToastManager.showToast({ message, type: ToastType.CRITICAL_ERROR, ...options }),
+  criticalError: (
+    message: string,
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,
+  ) =>
+    globalToastManager.showToast({
+      message,
+      type: ToastType.CRITICAL_ERROR,
+      ...options,
+    }),
 
   dismiss: (toastId: string) => globalToastManager.dismissToast(toastId),
   dismissAll: () => globalToastManager.dismissAll(),
@@ -418,13 +486,16 @@ export class EnhancedGlobalErrorHandler {
   /**
    * Report an error with appropriate toast notification
    */
-  reportError(error: Error | string, context?: {
-    type?: ToastType;
-    priority?: ToastPriority;
-    retryAction?: () => void;
-    metadata?: Record<string, unknown>;
-    showToast?: boolean;
-  }): string | null {
+  reportError(
+    error: Error | string,
+    context?: {
+      type?: ToastType;
+      priority?: ToastPriority;
+      retryAction?: () => void;
+      metadata?: Record<string, unknown>;
+      showToast?: boolean;
+    },
+  ): string | null {
     const {
       type = ToastType.ERROR,
       priority,
@@ -446,19 +517,28 @@ export class EnhancedGlobalErrorHandler {
       let isLikelyUnauthenticated = true; // Default assumption for this specific error
       if (typeof window !== 'undefined' && window.localStorage) {
         // Check for Supabase auth token in localStorage. This is a heuristic.
-        const supabaseAuthTokenKey = Object.keys(window.localStorage).find(k => k.startsWith('sb-') && k.endsWith('-auth-token'));
-        if (supabaseAuthTokenKey && window.localStorage.getItem(supabaseAuthTokenKey)) {
+        const supabaseAuthTokenKey = Object.keys(window.localStorage).find(
+          (k) => k.startsWith('sb-') && k.endsWith('-auth-token'),
+        );
+        if (
+          supabaseAuthTokenKey &&
+          window.localStorage.getItem(supabaseAuthTokenKey)
+        ) {
           isLikelyUnauthenticated = false; // Found a token, user might be authenticated
         }
       }
 
       if (isLikelyUnauthenticated) {
         // Log suppression for debugging, but don't show the toast.
-        logWarn(`[EnhancedGlobalErrorHandler] Suppressing toast for ${type} with message "${errorMessage}" for assumed unauthenticated user.`);
+        logWarn(
+          `[EnhancedGlobalErrorHandler] Suppressing toast for ${type} with message "${errorMessage}" for assumed unauthenticated user.`,
+        );
         return null;
       } else {
         if (process.env.NODE_ENV === 'development') {
-          logInfo(`[EnhancedGlobalErrorHandler] NOT suppressing "${errorMessage}" toast as user appears authenticated or check is inconclusive.`);
+          logInfo(
+            `[EnhancedGlobalErrorHandler] NOT suppressing "${errorMessage}" toast as user appears authenticated or check is inconclusive.`,
+          );
         }
       }
     }
@@ -480,10 +560,12 @@ export class EnhancedGlobalErrorHandler {
         title: this.getErrorTitle(type) ?? '',
         type,
         priority: priority !== undefined ? priority : ToastPriority.HIGH,
-        _onRetry: retryAction ? () => {
-          this.retryCount.set(errorKey, currentRetries + 1);
-          retryAction();
-        } : (() => {}),
+        _onRetry: retryAction
+          ? () => {
+              this.retryCount.set(errorKey, currentRetries + 1);
+              retryAction();
+            }
+          : () => {},
         metadata: {
           ...metadata,
           originalError: error,
@@ -509,7 +591,7 @@ export class EnhancedGlobalErrorHandler {
       return 'Please log in to continue';
     }
     if (error.includes('forbidden') || error.includes('403')) {
-      return 'You don\'t have permission for this action';
+      return "You don't have permission for this action";
     }
     if (error.includes('not found') || error.includes('404')) {
       return 'Requested resource not found';
@@ -517,7 +599,7 @@ export class EnhancedGlobalErrorHandler {
     if (error.includes('server') || error.includes('500')) {
       return 'Server error - please try again later';
     }
-    
+
     // Return sanitized error message
     return error.length > 100 ? `${error.substring(0, 100)}...` : error;
   }
@@ -556,4 +638,4 @@ export class EnhancedGlobalErrorHandler {
 }
 
 // Create singleton instance
-export const enhancedGlobalErrorHandler = new EnhancedGlobalErrorHandler(); 
+export const enhancedGlobalErrorHandler = new EnhancedGlobalErrorHandler();

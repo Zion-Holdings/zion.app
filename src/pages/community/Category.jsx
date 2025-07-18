@@ -6,8 +6,7 @@ import { Alert } from '@/components/ui/alert';
 import PostCard from '@/components/community/PostCard';
 import Empty from '@/components/community/Empty';
 import { Button } from '@/components/ui/button';
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 const queryClient = new QueryClient();
 
@@ -24,7 +23,7 @@ export default function Category() {
 
   const fetchPosts = useCallback(async () => {
     const res = await fetch(
-      `/api/community?category=${slug}&limit=${LIMIT}&offset=${offset}`
+      `/api/community?category=${slug}&limit=${LIMIT}&offset=${offset}`,
     );
     if (!res.ok) throw new Error('Request failed');
     return res.json();
@@ -37,13 +36,13 @@ export default function Category() {
     setError(false);
 
     fetchPosts()
-      .then(data => {
-        setPosts(prev =>
-          offset === 0 ? data.posts : [...prev, ...data.posts]
+      .then((data) => {
+        setPosts((prev) =>
+          offset === 0 ? data.posts : [...prev, ...data.posts],
         );
         setHasMore(data.posts.length === LIMIT);
       })
-      .catch(err => {
+      .catch((err) => {
         logErrorToProduction(err);
         setError(true);
       })
@@ -57,7 +56,7 @@ export default function Category() {
 
   const content = posts.length ? (
     <div className="space-y-4">
-      {posts.map(p => (
+      {posts.map((p) => (
         <PostCard key={p.id} post={p} />
       ))}
       {hasMore && (
@@ -72,5 +71,7 @@ export default function Category() {
     <Empty message="No posts yet" />
   );
 
-  return <QueryClientProvider client={queryClient}>{content}</QueryClientProvider>;
+  return (
+    <QueryClientProvider client={queryClient}>{content}</QueryClientProvider>
+  );
 }

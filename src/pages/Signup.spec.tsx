@@ -1,4 +1,3 @@
-
 async function registerUser(userData) {
   // Stub implementation for testing
   return { success: true, user: userData };
@@ -32,7 +31,6 @@ const mockNavigate = jest.fn();
 const mockRawLocation = { search: '', pathname: '/signup' }; // Store the raw parts
 const mockUseLocationValues = jest.fn(() => mockRawLocation);
 
-
 jest.mock('next/router', () => ({
   ...jest.requireActual('next/router'), // Import and retain default behavior
   _useRouter: () => {
@@ -63,7 +61,6 @@ describe('Signup Page', () => {
     // Update the raw location object that mockUseLocationValues will use
     mockRawLocation.search = '';
     mockRawLocation.pathname = '/signup';
-
 
     mockAuthContextValue = {
       user: null,
@@ -98,27 +95,38 @@ describe('Signup Page', () => {
             <Route path="/custom-path" element={<div>Custom Path Page</div>} />
           </Routes>
         </AuthContext.Provider>
-      </MemoryRouter>
+      </MemoryRouter>,
     );
   };
 
   const fillForm = (overrideEmail?: string) => {
-    fireEvent.input(screen.getByTestId('display-name-input'), { target: { value: 'Test User' } });
-    fireEvent.input(screen.getByTestId('email-input'), { target: { value: overrideEmail || 'test@example.com' } });
-    fireEvent.input(screen.getByTestId('password-input'), { target: { value: 'Password123' } });
-    fireEvent.input(screen.getByTestId('confirm-password-input'), { target: { value: 'Password123' } });
+    fireEvent.input(screen.getByTestId('display-name-input'), {
+      target: { value: 'Test User' },
+    });
+    fireEvent.input(screen.getByTestId('email-input'), {
+      target: { value: overrideEmail || 'test@example.com' },
+    });
+    fireEvent.input(screen.getByTestId('password-input'), {
+      target: { value: 'Password123' },
+    });
+    fireEvent.input(screen.getByTestId('confirm-password-input'), {
+      target: { value: 'Password123' },
+    });
     // Click the "I agree to the Terms of Service and Privacy Policy" checkbox
-    const termsCheckbox = screen.getByRole('checkbox', { name: /i agree to the terms of service/i });
+    const termsCheckbox = screen.getByRole('checkbox', {
+      name: /i agree to the terms of service/i,
+    });
     fireEvent.click(termsCheckbox);
   };
 
   const fillFormWithNewsletter = (overrideEmail?: string) => {
     fillForm(overrideEmail);
     // Click the newsletter checkbox
-     const newsletterCheckbox = screen.getByRole('checkbox', { name: /subscribe to our newsletter/i });
-     fireEvent.click(newsletterCheckbox);
+    const newsletterCheckbox = screen.getByRole('checkbox', {
+      name: /subscribe to our newsletter/i,
+    });
+    fireEvent.click(newsletterCheckbox);
   };
-
 
   it('should successfully register, store token, update context, and redirect to home', async () => {
     const mockToken = 'test-auth-token';
@@ -137,15 +145,20 @@ describe('Signup Page', () => {
     });
     expect(mockSetUser).toHaveBeenCalledWith(mockUser);
     expect(mockNavigate).toHaveBeenCalledWith('/', { replace: true });
-    expect(toast.success).toHaveBeenCalledWith('Registration successful! Welcome!');
+    expect(toast.success).toHaveBeenCalledWith(
+      'Registration successful! Welcome!',
+    );
 
     // Check Mailchimp calls because newsletter was opted-in
     const { _mailchimpService } = jest.requireMock('@/integrations/mailchimp');
     expect(mailchimpService.addSubscriber).toHaveBeenCalledWith({
       email: 'test@example.com',
-      mergeFields: { FNAME: 'Test User' }
+      mergeFields: { FNAME: 'Test User' },
     });
-    expect(mailchimpService.sendWelcomeEmail).toHaveBeenCalledWith('test@example.com', 'NEW10');
+    expect(mailchimpService.sendWelcomeEmail).toHaveBeenCalledWith(
+      'test@example.com',
+      'NEW10',
+    );
   });
 
   it('should show "Email already registered – please login." toast for duplicate email error', async () => {
@@ -159,7 +172,9 @@ describe('Signup Page', () => {
     fireEvent.click(screen.getByTestId('create-account-button'));
 
     await waitFor(() => {
-      expect(toast.error).toHaveBeenCalledWith('Email already registered – please login.');
+      expect(toast.error).toHaveBeenCalledWith(
+        'Email already registered – please login.',
+      );
     });
     expect(screen.getByText('Email is already registered')).toBeInTheDocument(); // Check form field error
     expect(safeStorage.setItem).not.toHaveBeenCalled();
@@ -169,7 +184,11 @@ describe('Signup Page', () => {
 
   it('should redirect to "next" path on successful registration if provided', async () => {
     const mockToken = 'test-auth-token-next';
-    const mockUser = { id: '2', email: 'nextuser@example.com', name: 'Next User' };
+    const mockUser = {
+      id: '2',
+      email: 'nextuser@example.com',
+      name: 'Next User',
+    };
     mockRegisterUser.mockResolvedValue({
       res: { ok: true, status: 201 },
       data: { token: mockToken, user: mockUser },
@@ -180,27 +199,40 @@ describe('Signup Page', () => {
     mockRawLocation.search = '?next=/custom-path';
     mockRawLocation.pathname = '/signup';
 
-
     renderSignup(['/signup?next=/custom-path']); // Initial entry for MemoryRouter
     fillForm('nextuser@example.com'); // Use a unique email for this test
     fireEvent.click(screen.getByTestId('create-account-button'));
 
     await waitFor(() => {
-      expect(mockNavigate).toHaveBeenCalledWith('/custom-path', { replace: true });
+      expect(mockNavigate).toHaveBeenCalledWith('/custom-path', {
+        replace: true,
+      });
     });
     expect(safeStorage.setItem).toHaveBeenCalledWith('authToken', mockToken);
     expect(mockSetUser).toHaveBeenCalledWith(mockUser);
-    expect(toast.success).toHaveBeenCalledWith('Registration successful! Welcome!');
+    expect(toast.success).toHaveBeenCalledWith(
+      'Registration successful! Welcome!',
+    );
   });
 
   it('should show password mismatch error if passwords do not match', async () => {
     renderSignup();
     // Fill form with mismatched passwords
-    fireEvent.input(screen.getByTestId('display-name-input'), { target: { value: 'Test User' } });
-    fireEvent.input(screen.getByTestId('email-input'), { target: { value: 'test@example.com' } });
-    fireEvent.input(screen.getByTestId('password-input'), { target: { value: 'Password123' } });
-    fireEvent.input(screen.getByTestId('confirm-password-input'), { target: { value: 'PasswordMismatch' } });
-    const termsCheckbox = screen.getByRole('checkbox', { name: /i agree to the terms of service/i });
+    fireEvent.input(screen.getByTestId('display-name-input'), {
+      target: { value: 'Test User' },
+    });
+    fireEvent.input(screen.getByTestId('email-input'), {
+      target: { value: 'test@example.com' },
+    });
+    fireEvent.input(screen.getByTestId('password-input'), {
+      target: { value: 'Password123' },
+    });
+    fireEvent.input(screen.getByTestId('confirm-password-input'), {
+      target: { value: 'PasswordMismatch' },
+    });
+    const termsCheckbox = screen.getByRole('checkbox', {
+      name: /i agree to the terms of service/i,
+    });
     fireEvent.click(termsCheckbox);
 
     fireEvent.click(screen.getByTestId('create-account-button'));
@@ -208,10 +240,10 @@ describe('Signup Page', () => {
     await waitFor(() => {
       // This specific message comes from the zod schema refinement check in Signup.tsx
       // which calls toast.error directly before attempting API call.
-      expect(toast.error).toHaveBeenCalledWith("Passwords do not match");
+      expect(toast.error).toHaveBeenCalledWith('Passwords do not match');
     });
     // Also check that the form field error is displayed
-     expect(screen.getByText("Passwords do not match")).toBeInTheDocument();
+    expect(screen.getByText('Passwords do not match')).toBeInTheDocument();
 
     expect(mockRegisterUser).not.toHaveBeenCalled(); // API call should not be made
     expect(safeStorage.setItem).not.toHaveBeenCalled();
@@ -239,7 +271,11 @@ describe('Signup Page', () => {
 
   it('should not call mailchimpService if newsletter is not opted in', async () => {
     const mockToken = 'test-auth-token-no-newsletter';
-    const mockUser = { id: '3', email: 'nonewsletter@example.com', name: 'No Newsletter User' };
+    const mockUser = {
+      id: '3',
+      email: 'nonewsletter@example.com',
+      name: 'No Newsletter User',
+    };
     mockRegisterUser.mockResolvedValue({
       res: { ok: true, status: 201 },
       data: { token: mockToken, user: mockUser },
@@ -250,7 +286,9 @@ describe('Signup Page', () => {
     fireEvent.click(screen.getByTestId('create-account-button'));
 
     await waitFor(() => {
-      expect(toast.success).toHaveBeenCalledWith('Registration successful! Welcome!');
+      expect(toast.success).toHaveBeenCalledWith(
+        'Registration successful! Welcome!',
+      );
     });
 
     const { _mailchimpService } = jest.requireMock('@/integrations/mailchimp');
@@ -264,11 +302,19 @@ describe('Signup Page', () => {
 
     await waitFor(() => {
       // Check for some of the expected validation messages
-      expect(screen.getByText('Full Name must be at least 2 characters')).toBeInTheDocument();
-      expect(screen.getByText('Please enter a valid email')).toBeInTheDocument();
-      expect(screen.getByText('Password must be at least 8 characters')).toBeInTheDocument();
+      expect(
+        screen.getByText('Full Name must be at least 2 characters'),
+      ).toBeInTheDocument();
+      expect(
+        screen.getByText('Please enter a valid email'),
+      ).toBeInTheDocument();
+      expect(
+        screen.getByText('Password must be at least 8 characters'),
+      ).toBeInTheDocument();
       // For terms accepted:
-      expect(screen.getByText('You must accept the terms and conditions')).toBeInTheDocument();
+      expect(
+        screen.getByText('You must accept the terms and conditions'),
+      ).toBeInTheDocument();
     });
     expect(mockRegisterUser).not.toHaveBeenCalled();
   });

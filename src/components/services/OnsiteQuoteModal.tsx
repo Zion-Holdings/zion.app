@@ -1,5 +1,11 @@
 import { useState } from 'react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+} from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
@@ -11,20 +17,38 @@ interface OnsiteQuoteModalProps {
   country?: string;
 }
 
-export function OnsiteQuoteModal({ open, onOpenChange, country }: OnsiteQuoteModalProps) {
+export function OnsiteQuoteModal({
+  open,
+  onOpenChange,
+  country,
+}: OnsiteQuoteModalProps) {
   const enqueueSnackbar = useEnqueueSnackbar();
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', details: '' });
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    details: '',
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (_e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    _e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (_e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.phone || !formData.details) {
-      enqueueSnackbar('Please fill in all required fields.', { variant: 'error' });
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.details
+    ) {
+      enqueueSnackbar('Please fill in all required fields.', {
+        variant: 'error',
+      });
       return;
     }
 
@@ -46,9 +70,14 @@ export function OnsiteQuoteModal({ open, onOpenChange, country }: OnsiteQuoteMod
         typeof err === 'object' &&
         err !== null &&
         'response' in err &&
-        typeof (err as { response?: { data?: { message?: string } } }).response?.data?.message === 'string'
+        typeof (err as { response?: { data?: { message?: string } } }).response
+          ?.data?.message === 'string'
       ) {
-        enqueueSnackbar((err as { response?: { data?: { message?: string } } }).response?.data?.message ?? 'An unexpected error occurred.', { variant: 'error' });
+        enqueueSnackbar(
+          (err as { response?: { data?: { message?: string } } }).response?.data
+            ?.message ?? 'An unexpected error occurred.',
+          { variant: 'error' },
+        );
       } else {
         enqueueSnackbar('An unexpected error occurred.', { variant: 'error' });
       }
@@ -98,7 +127,11 @@ export function OnsiteQuoteModal({ open, onOpenChange, country }: OnsiteQuoteMod
             required
           />
           <DialogFooter>
-            <Button type="submit" disabled={isSubmitting} className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white">
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white"
+            >
               {isSubmitting ? 'Submitting...' : 'Submit Request'}
             </Button>
           </DialogFooter>

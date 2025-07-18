@@ -24,10 +24,10 @@ export class SalesforceService {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${this.token}`,
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(lead)
-      }
+        body: JSON.stringify(lead),
+      },
     );
 
     if (!res.ok) {

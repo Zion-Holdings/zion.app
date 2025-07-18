@@ -1,17 +1,16 @@
 import { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 const ERC20_ABI = [
   'function balanceOf(address owner) view returns (uint256)',
-  'function decimals() view returns (uint8)'
+  'function decimals() view returns (uint8)',
 ];
 
 export function useTokenBalance(
   address: string | null,
   tokenAddress: string,
-  provider: ethers.Provider | null
+  provider: ethers.Provider | null,
 ) {
   const [balance, setBalance] = useState<string | null>(null);
 
@@ -26,18 +25,25 @@ export function useTokenBalance(
     async function fetchBalance() {
       try {
         const contract = new ethers.Contract(tokenAddress, ERC20_ABI, provider);
-        if (typeof contract.balanceOf !== 'function' || typeof contract.decimals !== 'function') {
-          throw new Error('Contract methods balanceOf or decimals are not functions');
+        if (
+          typeof contract.balanceOf !== 'function' ||
+          typeof contract.decimals !== 'function'
+        ) {
+          throw new Error(
+            'Contract methods balanceOf or decimals are not functions',
+          );
         }
         const [rawBalance, decimals] = await Promise.all([
           contract.balanceOf(address),
-          contract.decimals()
+          contract.decimals(),
         ]);
         if (!isStale) {
           setBalance(ethers.formatUnits(rawBalance, decimals));
         }
       } catch {
-        logErrorToProduction('useTokenBalance: failed to fetch balance', { data: error });
+        logErrorToProduction('useTokenBalance: failed to fetch balance', {
+          data: error,
+        });
         if (!isStale) setBalance(null);
       }
     }

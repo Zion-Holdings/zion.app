@@ -1,4 +1,3 @@
-
 export interface TalentProfile {
   id: string;
   user_id: string;

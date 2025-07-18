@@ -22,10 +22,15 @@ export function getFeedback(): FeedbackEntry[] {
   }
 }
 
-export function saveFeedback(entry: Omit<FeedbackEntry, 'id' | 'createdAt'>): FeedbackEntry {
+export function saveFeedback(
+  entry: Omit<FeedbackEntry, 'id' | 'createdAt'>,
+): FeedbackEntry {
   const all = getFeedback();
   const newEntry: FeedbackEntry = {
-    id: typeof crypto !== 'undefined' && 'randomUUID' in crypto ? crypto.randomUUID() : Math.random().toString(36).slice(2),
+    id:
+      typeof crypto !== 'undefined' && 'randomUUID' in crypto
+        ? crypto.randomUUID()
+        : Math.random().toString(36).slice(2),
     createdAt: new Date().toISOString(),
     ...entry,
   };
@@ -34,7 +39,9 @@ export function saveFeedback(entry: Omit<FeedbackEntry, 'id' | 'createdAt'>): Fe
   return newEntry;
 }
 
-export async function postFeedback(entry: Omit<FeedbackEntry, 'id' | 'createdAt'>) {
+export async function postFeedback(
+  entry: Omit<FeedbackEntry, 'id' | 'createdAt'>,
+) {
   try {
     const res = await fetch('/api/feedback', {
       method: 'POST',
@@ -43,7 +50,9 @@ export async function postFeedback(entry: Omit<FeedbackEntry, 'id' | 'createdAt'
     });
     const data = await res.json().catch(() => ({}));
     if (res.status !== 201) {
-      throw new Error(data?.error || `Error ${res.status}: Failed to submit feedback`);
+      throw new Error(
+        data?.error || `Error ${res.status}: Failed to submit feedback`,
+      );
     }
     return data;
   } catch {

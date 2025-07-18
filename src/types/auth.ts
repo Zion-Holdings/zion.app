@@ -40,9 +40,21 @@ export interface AuthContextType {
   isLoading: boolean;
   onboardingStep: string | null;
   setOnboardingStep: (step: string | null) => void;
-  login: (email: string, password: string, rememberMe?: boolean) => Promise<{ error: unknown }>;
-  signup: (email: string, password: string, userData?: Partial<UserDetails>) => Promise<{ error: unknown; emailVerificationRequired?: boolean }>;
-  register: (email: string, password: string, userData?: Partial<UserDetails>) => Promise<{ error: unknown; emailVerificationRequired?: boolean }>;
+  login: (
+    email: string,
+    password: string,
+    rememberMe?: boolean,
+  ) => Promise<{ error: unknown }>;
+  signup: (
+    email: string,
+    password: string,
+    userData?: Partial<UserDetails>,
+  ) => Promise<{ error: unknown; emailVerificationRequired?: boolean }>;
+  register: (
+    email: string,
+    password: string,
+    userData?: Partial<UserDetails>,
+  ) => Promise<{ error: unknown; emailVerificationRequired?: boolean }>;
   logout: () => Promise<void>;
   resetPassword: (email: string) => Promise<{ error: unknown }>;
   updateProfile: (data: Partial<UserDetails>) => Promise<{ error: unknown }>;
@@ -51,9 +63,17 @@ export interface AuthContextType {
   loginWithGitHub: () => Promise<void>;
   loginWithTwitter: () => Promise<void>;
   loginWithWeb3: () => Promise<void>;
-  signIn: (email: string, password: string, rememberMe?: boolean) => Promise<{ error: unknown }>;
+  signIn: (
+    email: string,
+    password: string,
+    rememberMe?: boolean,
+  ) => Promise<{ error: unknown }>;
   signOut: () => Promise<void>;
-  signUp: (email: string, password: string, userData?: Partial<UserDetails>) => Promise<{ error: unknown; emailVerificationRequired?: boolean }>;
+  signUp: (
+    email: string,
+    password: string,
+    userData?: Partial<UserDetails>,
+  ) => Promise<{ error: unknown; emailVerificationRequired?: boolean }>;
   avatarUrl: string | null;
   setAvatarUrl: (url: string | null) => void;
   setUser: React.Dispatch<React.SetStateAction<UserDetails | null>>;

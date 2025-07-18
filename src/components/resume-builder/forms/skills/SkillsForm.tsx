@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import type { Skill } from '@/types/resume';
 import { Button } from '@/components/ui/button';
@@ -9,11 +8,16 @@ import { SkillsList } from './SkillsList';
 import { AddSkillForm } from './AddSkillForm';
 import { BulkAddSkills } from './BulkAddSkills';
 
-export function SkillsForm({ resumeId, skills, onComplete, onBack }: SkillsFormProps) {
+export function SkillsForm({
+  resumeId,
+  skills,
+  onComplete,
+  onBack,
+}: SkillsFormProps) {
   const { addSkill, deleteSkill, fetchResume } = useResume();
   const [error, setError] = useState<string | null>(null);
   const [localSkills, setLocalSkills] = useState<Skill[]>(skills);
-  
+
   const handleAddSkill = async (_data: Skill) => {
     try {
       setError(null);
@@ -34,11 +38,11 @@ export function SkillsForm({ resumeId, skills, onComplete, onBack }: SkillsFormP
       const success = await deleteSkill(id);
       if (success) {
         // Update local state
-        setLocalSkills(localSkills.filter(skill => skill.id !== id));
+        setLocalSkills(localSkills.filter((skill) => skill.id !== id));
       }
     }
   };
-  
+
   const refreshSkills = async () => {
     try {
       const resumeData = await fetchResume(resumeId);
@@ -71,7 +75,11 @@ export function SkillsForm({ resumeId, skills, onComplete, onBack }: SkillsFormP
         <BulkAddSkills resumeId={resumeId} onSuccess={refreshSkills} />
       </div>
 
-      {error && <Alert variant="destructive"><AlertDescription>{error}</AlertDescription></Alert>}
+      {error && (
+        <Alert variant="destructive">
+          <AlertDescription>{error}</AlertDescription>
+        </Alert>
+      )}
 
       <div className="flex justify-between">
         <Button variant="outline" onClick={onBack}>

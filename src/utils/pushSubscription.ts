@@ -24,18 +24,20 @@ export async function subscribeToPush() {
     if (existing) return;
 
     if (!VAPID_PUBLIC_KEY) {
-      logWarn('VAPID_PUBLIC_KEY is not defined. Push subscription will be skipped.');
+      logWarn(
+        'VAPID_PUBLIC_KEY is not defined. Push subscription will be skipped.',
+      );
       return;
     }
     const subscription = await registration.pushManager.subscribe({
       userVisibleOnly: true,
-      applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC_KEY)
+      applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC_KEY),
     });
 
     await fetch('/api/push/subscribe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(subscription)
+      body: JSON.stringify(subscription),
     });
   } catch {
     logErrorToProduction('Push subscription failed', { data: error });

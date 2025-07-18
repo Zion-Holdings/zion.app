@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { sendMessage } from '../services/messages';
 import { toast } from '@/hooks/use-toast';
-import {logErrorToProduction} from '@/utils/productionLogger';
-
-
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 interface ContactPublisherModalProps {
   isOpen: boolean;
@@ -12,7 +10,12 @@ interface ContactPublisherModalProps {
   sellerId: string;
 }
 
-export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: ContactPublisherModalProps) {
+export function ContactPublisherModal({
+  isOpen,
+  onClose,
+  productId,
+  sellerId,
+}: ContactPublisherModalProps) {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');

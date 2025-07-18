@@ -55,13 +55,18 @@ export default function TalentDetail() {
         description={talent.bio || 'Talent profile'}
         ogImage={talent.profile_picture_url || ''}
       />
-      <main className="min-h-screen bg-zion-blue py-8 text-white" data-testid="talent-details">
+      <main
+        className="min-h-screen bg-zion-blue py-8 text-white"
+        data-testid="talent-details"
+      >
         <div className="container mx-auto px-4 space-y-4">
-          <h1 className="text-3xl font-bold" data-testid="talent-name">{talent.full_name}</h1>
+          <h1 className="text-3xl font-bold" data-testid="talent-name">
+            {talent.full_name}
+          </h1>
           {talent.bio && <p>{talent.bio}</p>}
           {talent.skills && talent.skills.length > 0 && (
             <ul className="list-disc ml-4" data-testid="talent-skills">
-              {talent.skills.map(skill => (
+              {talent.skills.map((skill) => (
                 <li key={skill}>{skill}</li>
               ))}
             </ul>

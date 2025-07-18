@@ -20,8 +20,8 @@ export default function CheckoutPage() {
   const tax = subtotal * taxRate;
 
   // Consistent with CartDrawer: Only add shipping for physical items
-  const hasPhysicalItems = items.some(item =>
-    !item.type || item.type === 'physical' // Default to physical if type not specified
+  const hasPhysicalItems = items.some(
+    (item) => !item.type || item.type === 'physical', // Default to physical if type not specified
   );
   // Consistent with CartDrawer: shipping is $15 if subtotal is $100 or less, and there are physical items
   const shipping = hasPhysicalItems && subtotal > 0 && subtotal <= 100 ? 15 : 0;
@@ -47,9 +47,19 @@ export default function CheckoutPage() {
         <div className="space-y-2 text-center">
           <p className="text-2xl font-semibold">Payment Successful!</p>
           <p>Thank you for your order.</p>
-          <p className="text-sm text-muted-foreground">Confirmation ID: {intent.id}</p>
-          <p className="text-sm text-muted-foreground">Total Paid: ${intent.amount ? (intent.amount / 100).toFixed(2) : total.toFixed(2)}</p>
-          <Link href="/marketplace" className="inline-block mt-4 px-6 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90">
+          <p className="text-sm text-muted-foreground">
+            Confirmation ID: {intent.id}
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Total Paid: $
+            {intent.amount
+              ? (intent.amount / 100).toFixed(2)
+              : total.toFixed(2)}
+          </p>
+          <Link
+            href="/marketplace"
+            className="inline-block mt-4 px-6 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
+          >
             Continue Shopping
           </Link>
         </div>
@@ -57,13 +67,19 @@ export default function CheckoutPage() {
         <>
           <div className="space-y-3 border p-4 rounded-md">
             <h2 className="text-xl font-semibold mb-2">Items</h2>
-            {items.map(item => (
+            {items.map((item) => (
               <div key={item.id} className="flex justify-between items-center">
                 <div>
-                  <p className="font-medium">{item.name} (x{item.quantity})</p>
-                  <p className="text-sm text-muted-foreground">${item.price.toFixed(2)} each</p>
+                  <p className="font-medium">
+                    {item.name} (x{item.quantity})
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    ${item.price.toFixed(2)} each
+                  </p>
                 </div>
-                <p className="font-medium">${(item.price * item.quantity).toFixed(2)}</p>
+                <p className="font-medium">
+                  ${(item.price * item.quantity).toFixed(2)}
+                </p>
               </div>
             ))}
           </div>
@@ -75,12 +91,18 @@ export default function CheckoutPage() {
               <span>${subtotal.toFixed(2)}</span>
             </div>
             <div className="flex justify-between">
-              <span>Tax ({ (taxRate * 100).toFixed(0) }%)</span>
+              <span>Tax ({(taxRate * 100).toFixed(0)}%)</span>
               <span>${tax.toFixed(2)}</span>
             </div>
             <div className="flex justify-between">
               <span>Shipping</span>
-              <span>{shipping === 0 && subtotal > 0 ? 'Free' : (subtotal === 0 ? '$0.00' : `$${shipping.toFixed(2)}`)}</span>
+              <span>
+                {shipping === 0 && subtotal > 0
+                  ? 'Free'
+                  : subtotal === 0
+                    ? '$0.00'
+                    : `$${shipping.toFixed(2)}`}
+              </span>
             </div>
             <div className="flex justify-between font-bold text-lg border-t pt-2 mt-2">
               <span>Total</span>

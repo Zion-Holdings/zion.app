@@ -1,6 +1,6 @@
-import { TalentCard } from "@/components/talent/TalentCard";
-import { TalentSkeleton } from "@/components/talent/TalentSkeleton";
-import type { TalentProfile } from "@/types/talent";
+import { TalentCard } from '@/components/talent/TalentCard';
+import { TalentSkeleton } from '@/components/talent/TalentSkeleton';
+import type { TalentProfile } from '@/types/talent';
 import { logInfo } from '@/utils/productionLogger';
 
 export interface TalentGridProps {
@@ -13,21 +13,21 @@ export interface TalentGridProps {
   handleRequestHire?: (talent: TalentProfile) => void;
 }
 
-export function TalentGrid({ 
-  talents, 
-  isLoading, 
-  onTalentClick, 
+export function TalentGrid({
+  talents,
+  isLoading,
+  onTalentClick,
   isAuthenticated,
   viewProfile,
   clearFilters,
-  handleRequestHire
+  handleRequestHire,
 }: TalentGridProps) {
   const handleRequestHireInternal = (_talent: TalentProfile) => {
     if (handleRequestHire) {
       handleRequestHire(talent);
     } else {
       // Default implementation
-      logInfo('Request to hire:', { data:  { data: talent.id } });
+      logInfo('Request to hire:', { data: { data: talent.id } });
     }
   };
 
@@ -38,23 +38,27 @@ export function TalentGrid({
       onTalentClick(id);
     }
   };
-  
+
   if (isLoading) {
     return <TalentSkeleton />;
   }
 
   if (!talents || talents.length === 0) {
-    return <div className="py-8 text-center bg-zion-blue-dark rounded-lg border border-zion-blue-light p-6">
-      <p className="text-zion-slate-light mb-4">No talents found matching your criteria</p>
-      {clearFilters && (
-        <button 
-          onClick={clearFilters}
-          className="px-4 py-2 bg-zion-purple text-white rounded hover:bg-zion-purple-dark transition-colors"
-        >
-          Clear Filters
-        </button>
-      )}
-    </div>;
+    return (
+      <div className="py-8 text-center bg-zion-blue-dark rounded-lg border border-zion-blue-light p-6">
+        <p className="text-zion-slate-light mb-4">
+          No talents found matching your criteria
+        </p>
+        {clearFilters && (
+          <button
+            onClick={clearFilters}
+            className="px-4 py-2 bg-zion-purple text-white rounded hover:bg-zion-purple-dark transition-colors"
+          >
+            Clear Filters
+          </button>
+        )}
+      </div>
+    );
   }
 
   return (

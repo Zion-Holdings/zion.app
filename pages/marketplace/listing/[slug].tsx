@@ -22,6 +22,7 @@ import {
   BreadcrumbLink,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
+import { useState } from 'react';
 
 interface ListingPageProps {
   _listing: ProductListing | null;
@@ -130,6 +131,7 @@ const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
 export const _getServerSideProps: GetServerSideProps<ListingPageProps> = async ({ params }: { params: { slug: string } }) => {
   const slug = params?.slug as string;
   let listing: ProductListing | null = null;
+  const [_apiError, setApiError] = useState<string | null>(null);
 
   try {
     // Step 1: Try to fetch directly by ID from API
@@ -171,7 +173,7 @@ export const _getServerSideProps: GetServerSideProps<ListingPageProps> = async (
           };
         }
       }
-    } catch (_apiError) {
+    } catch (apiError) {
       logWarn('API fetch for product ${slug} (attempting ID match) failed:', { data:  { data: apiError } });
       if (typeof window === 'undefined') {
         const Sentry = await import('@sentry/nextjs');
@@ -249,7 +251,7 @@ export const _getServerSideProps: GetServerSideProps<ListingPageProps> = async (
     
     return { props: { listing } };
 
-  } catch {
+  } catch (error) {
     if (typeof window === 'undefined') {
       const Sentry = await import('@sentry/nextjs');
       Sentry.captureException(error);

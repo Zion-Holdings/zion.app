@@ -16,7 +16,7 @@ declare module '@reown/appkit/react' {
     getAddress: () => string | null | undefined;
     getChainId: () => string | number | null | undefined; // Can be string or number
     getWalletProvider: () => unknown; // The provider can be of various types
-    subscribeProvider: (callback: (provider: unknown) => void) => (() => void); // Callback takes provider, returns unsubscribe
+    subscribeProvider: (callback: (provider: unknown) => void) => () => void; // Callback takes provider, returns unsubscribe
     // Optional event handlers as seen in WalletContext.tsx internal interface
     on?: (event: string, callback: (...args: unknown[]) => void) => void;
     off?: (event: string, callback: (...args: unknown[]) => void) => void;

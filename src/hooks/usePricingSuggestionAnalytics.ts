@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
-import { supabase } from "@/integrations/supabase/client";
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { supabase } from '@/integrations/supabase/client';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 interface PricingSuggestionAnalytics {
   totalSuggestions: number;
   acceptanceRate: number;
   averagePriceGap: number;
-  suggestionsByCategory: { category: string; count: number; acceptanceRate: number }[];
+  suggestionsByCategory: {
+    category: string;
+    count: number;
+    acceptanceRate: number;
+  }[];
   recentSuggestions: {
     id: string;
     userId: string;
@@ -30,14 +33,16 @@ export function usePricingSuggestionAnalytics(days = 30) {
     suggestionsByCategory: [],
     recentSuggestions: [],
     isLoading: true,
-    error: null
+    error: null,
   });
 
   useEffect(() => {
     const fetchAnalytics = async () => {
       try {
         if (!supabase) throw new Error('Supabase client not initialized');
-        const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString();
+        const since = new Date(
+          Date.now() - days * 24 * 60 * 60 * 1000,
+        ).toISOString();
         const { data, error } = await supabase
           .from('pricing_suggestions')
           .select('*')
@@ -46,49 +51,93 @@ export function usePricingSuggestionAnalytics(days = 30) {
         if (error) throw error;
 
         const totalSuggestions = data.length;
-        const accepted = data.filter((d: unknown) => typeof d === 'object' && d !== null && 'accepted' in d && (d as { accepted: boolean }).accepted).length;
-        const acceptanceRate = totalSuggestions ? accepted / totalSuggestions : 0;
+        const accepted = data.filter(
+          (d: unknown) =>
+            typeof d === 'object' &&
+            d !== null &&
+            'accepted' in d &&
+            (d as { accepted: boolean }).accepted,
+        ).length;
+        const acceptanceRate = totalSuggestions
+          ? accepted / totalSuggestions
+          : 0;
 
         const gaps = data
-          .filter((d: unknown) => typeof d === 'object' && d !== null && 'actual_value' in d && (d as { actual_value?: number }).actual_value !== null && (d as { actual_value?: number }).actual_value !== undefined)
+          .filter(
+            (d: unknown) =>
+              typeof d === 'object' &&
+              d !== null &&
+              'actual_value' in d &&
+              (d as { actual_value?: number }).actual_value !== null &&
+              (d as { actual_value?: number }).actual_value !== undefined,
+          )
           .map((_d: unknown) => {
-            if (typeof d === 'object' && d !== null && 'actual_value' in d && 'suggested_min' in d && 'suggested_max' in d) {
+            if (
+              typeof d === 'object' &&
+              d !== null &&
+              'actual_value' in d &&
+              'suggested_min' in d &&
+              'suggested_max' in d
+            ) {
               return Math.abs(
                 Number((d as { actual_value: number }).actual_value) -
-                ((Number((d as { suggested_min: number }).suggested_min) + Number((d as { suggested_max: number }).suggested_max)) / 2)
+                  (Number((d as { suggested_min: number }).suggested_min) +
+                    Number((d as { suggested_max: number }).suggested_max)) /
+                    2,
               );
             }
             return 0;
           });
-        const averagePriceGap = gaps.length ? gaps.reduce((a: number, b: number) => a + b, 0) / gaps.length : 0;
+        const averagePriceGap = gaps.length
+          ? gaps.reduce((a: number, b: number) => a + b, 0) / gaps.length
+          : 0;
 
-        const categoryMap: Record<string, { _count: number; accepted: number }> = {};
+        const categoryMap: Record<
+          string,
+          { _count: number; accepted: number }
+        > = {};
         data.forEach((d: unknown) => {
           let cat = 'other';
           if (typeof d === 'object' && d !== null && 'category' in d) {
             cat = (d as { category?: string }).category || 'other';
           }
-          if (!Object.prototype.hasOwnProperty.call(categoryMap, cat) || !categoryMap[cat]) {
+          if (
+            !Object.prototype.hasOwnProperty.call(categoryMap, cat) ||
+            !categoryMap[cat]
+          ) {
             categoryMap[cat] = { count: 0, accepted: 0 };
           }
           categoryMap[cat]!.count += 1;
-          if (typeof d === 'object' && d !== null && 'accepted' in d && (d as { accepted: boolean }).accepted) {
+          if (
+            typeof d === 'object' &&
+            d !== null &&
+            'accepted' in d &&
+            (d as { accepted: boolean }).accepted
+          ) {
             categoryMap[cat]!.accepted += 1;
           }
         });
-        const suggestionsByCategory = Object.entries(categoryMap).map(([category, val]) => ({
-          category,
-          count: val.count,
-          acceptanceRate: val.count ? val.accepted / val.count : 0
-        }));
+        const suggestionsByCategory = Object.entries(categoryMap).map(
+          ([category, val]) => ({
+            category,
+            count: val.count,
+            acceptanceRate: val.count ? val.accepted / val.count : 0,
+          }),
+        );
 
         const recentSuggestions = data
           .sort((a: unknown, _b: unknown) => {
             if (
-              typeof a === 'object' && a !== null && 'created_at' in a &&
-              typeof b === 'object' && b !== null && 'created_at' in b
+              typeof a === 'object' &&
+              a !== null &&
+              'created_at' in a &&
+              typeof b === 'object' &&
+              b !== null &&
+              'created_at' in b
             ) {
-              return String((b as { created_at: string }).created_at).localeCompare(String((a as { created_at: string }).created_at));
+              return String(
+                (b as { created_at: string }).created_at,
+              ).localeCompare(String((a as { created_at: string }).created_at));
             }
             return 0;
           })
@@ -99,8 +148,10 @@ export function usePricingSuggestionAnalytics(days = 30) {
               return {
                 id: (d as { id?: string }).id ?? '',
                 userId: (d as { user_id?: string }).user_id ?? '',
-                suggestedMin: (d as { suggested_min?: number }).suggested_min ?? 0,
-                suggestedMax: (d as { suggested_max?: number }).suggested_max ?? 0,
+                suggestedMin:
+                  (d as { suggested_min?: number }).suggested_min ?? 0,
+                suggestedMax:
+                  (d as { suggested_max?: number }).suggested_max ?? 0,
                 actualValue: (d as { actual_value?: number }).actual_value ?? 0,
                 accepted: (d as { accepted?: boolean }).accepted ?? false,
                 createdAt: (d as { created_at?: string }).created_at ?? '',
@@ -144,14 +195,16 @@ export function usePricingSuggestionAnalytics(days = 30) {
           suggestionsByCategory,
           recentSuggestions,
           isLoading: false,
-          error: null
+          error: null,
         });
       } catch {
-        logErrorToProduction('Error fetching pricing suggestion analytics:', { data: error });
+        logErrorToProduction('Error fetching pricing suggestion analytics:', {
+          data: error,
+        });
         setAnalytics({
           ...analytics,
           isLoading: false,
-          error: "Failed to load pricing analytics data."
+          error: 'Failed to load pricing analytics data.',
         });
       }
     };

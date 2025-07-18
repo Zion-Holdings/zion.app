@@ -1,43 +1,60 @@
 import { useState, useCallback } from 'react';
 import { toast } from 'sonner';
-import { createJobPosting, updateJobPosting, getJobPostingById, getJobPostingsByUserId } from '@/services/jobPostingService';
+import {
+  createJobPosting,
+  updateJobPosting,
+  getJobPostingById,
+  getJobPostingsByUserId,
+} from '@/services/jobPostingService';
 import type { JobSchemaType } from '@/components/jobs/job-posting/validation';
 import { logErrorToProduction } from '@/utils/productionLogger';
 
 export const useJobPostings = () => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const createJob = useCallback(async (_jobData: JobSchemaType & { user_id: string }) => {
-    setIsLoading(true);
-    try {
-      const result = await createJobPosting(jobData);
-      toast.success('Job posting created successfully!');
-      return result;
-    } catch (error: unknown) {
-      logErrorToProduction('Error creating job posting:', { data: error });
-      const message = error instanceof Error ? error.message : 'Failed to create job posting';
-      toast.error(message);
-      throw error;
-    } finally {
-      setIsLoading(false);
-    }
-  }, []);
+  const createJob = useCallback(
+    async (_jobData: JobSchemaType & { user_id: string }) => {
+      setIsLoading(true);
+      try {
+        const result = await createJobPosting(jobData);
+        toast.success('Job posting created successfully!');
+        return result;
+      } catch (error: unknown) {
+        logErrorToProduction('Error creating job posting:', { data: error });
+        const message =
+          error instanceof Error
+            ? error.message
+            : 'Failed to create job posting';
+        toast.error(message);
+        throw error;
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [],
+  );
 
-  const updateJob = useCallback(async (jobId: string, _jobData: Partial<JobSchemaType>) => {
-    setIsLoading(true);
-    try {
-      const result = await updateJobPosting(jobId, jobData);
-      toast.success('Job posting updated successfully!');
-      return result;
-    } catch (error: unknown) {
-      logErrorToProduction('Error updating job posting:', { data: error });
-      const message = error instanceof Error ? error.message : 'Failed to update job posting';
-      toast.error(message);
-      throw error;
-    } finally {
-      setIsLoading(false);
-    }
-  }, []);
+  const updateJob = useCallback(
+    async (jobId: string, _jobData: Partial<JobSchemaType>) => {
+      setIsLoading(true);
+      try {
+        const result = await updateJobPosting(jobId, jobData);
+        toast.success('Job posting updated successfully!');
+        return result;
+      } catch (error: unknown) {
+        logErrorToProduction('Error updating job posting:', { data: error });
+        const message =
+          error instanceof Error
+            ? error.message
+            : 'Failed to update job posting';
+        toast.error(message);
+        throw error;
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [],
+  );
 
   const getJobById = useCallback(async (_jobId: string) => {
     setIsLoading(true);
@@ -46,7 +63,8 @@ export const useJobPostings = () => {
       return result;
     } catch (error: unknown) {
       logErrorToProduction('Error fetching job posting:', { data: error });
-      const message = error instanceof Error ? error.message : 'Failed to fetch job posting';
+      const message =
+        error instanceof Error ? error.message : 'Failed to fetch job posting';
       toast.error(message);
       throw error;
     } finally {
@@ -61,7 +79,8 @@ export const useJobPostings = () => {
       return result;
     } catch (error: unknown) {
       logErrorToProduction('Error fetching job postings:', { data: error });
-      const message = error instanceof Error ? error.message : 'Failed to fetch job postings';
+      const message =
+        error instanceof Error ? error.message : 'Failed to fetch job postings';
       toast.error(message);
       throw error;
     } finally {
@@ -74,6 +93,6 @@ export const useJobPostings = () => {
     updateJob,
     getJobById,
     getJobsByUserId,
-    isLoading
+    isLoading,
   };
-}; 
+};

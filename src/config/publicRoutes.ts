@@ -27,7 +27,7 @@ export const publicRoutes: (string | RegExp)[] = [
   /^\/docs\/.+/, // Specific doc pages
   '/marketplace', // Marketplace index
   /^\/marketplace\/.+/, // Individual marketplace sub-pages/items
-  '/community',   // Community index
+  '/community', // Community index
   /^\/community\/.+/, // Individual community sub-pages/posts
   '/api/health', // Public health check endpoints
   '/api/status',
@@ -49,7 +49,7 @@ export const isPublicRoute = (path: string): boolean => {
   // Ensure path starts with a slash for consistent matching
   const normalizedPath = path.startsWith('/') ? path : `/${path}`;
 
-  return publicRoutes.some(route => {
+  return publicRoutes.some((route) => {
     if (route instanceof RegExp) {
       return route.test(normalizedPath);
     }

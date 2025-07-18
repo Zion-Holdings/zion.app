@@ -1,15 +1,13 @@
-
 import { Badge } from '@/components/ui/badge';
 import { Trash2 } from '@/components/ui/icons';
 import { Button } from '@/components/ui/button';
-
 
 import type { SkillItemProps } from './types';
 
 export const SkillItem = ({ skill, category, onDelete }: SkillItemProps) => {
   return (
-    <Badge 
-      key={skill.id} 
+    <Badge
+      key={skill.id}
       variant="secondary"
       className="flex items-center gap-1 py-1.5 px-3"
     >

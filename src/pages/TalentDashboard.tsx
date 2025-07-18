@@ -1,35 +1,32 @@
-
-import { useState } from "react";
+import { useState } from 'react';
 import { MessageSquare, Star } from '@/components/ui/icons';
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Link from "next/link";
-import { SEO } from "@/components/SEO";
+import { Button } from '@/components/ui/button';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import Link from 'next/link';
+import { SEO } from '@/components/SEO';
 
-
-
-
-
-
-
-
-
-import { ProtectedRoute } from "@/components/ProtectedRoute";
-import { SuggestedJobs } from "@/components/jobs/SuggestedJobs";
-import { useAuth } from "@/hooks/useAuth";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { TalentOnboardingSteps } from "@/components/onboarding/TalentOnboardingSteps";
-import { AdvancedOnboardingSteps } from "@/components/onboarding/AdvancedOnboardingSteps";
-import { useOnboardingStatus } from "@/hooks/useOnboardingStatus";
-import { MyApplications } from "@/components/jobs/MyApplications";
-import { ProjectOfferBanner } from "@/components/projects/ProjectOfferBanner";
-import { UpcomingInterviewsCard } from "@/components/interviews/UpcomingInterviewsCard";
+import { ProtectedRoute } from '@/components/ProtectedRoute';
+import { SuggestedJobs } from '@/components/jobs/SuggestedJobs';
+import { useAuth } from '@/hooks/useAuth';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Avatar } from '@/components/ui/avatar';
+import { Badge } from '@/components/ui/badge';
+import { TalentOnboardingSteps } from '@/components/onboarding/TalentOnboardingSteps';
+import { AdvancedOnboardingSteps } from '@/components/onboarding/AdvancedOnboardingSteps';
+import { useOnboardingStatus } from '@/hooks/useOnboardingStatus';
+import { MyApplications } from '@/components/jobs/MyApplications';
+import { ProjectOfferBanner } from '@/components/projects/ProjectOfferBanner';
+import { UpcomingInterviewsCard } from '@/components/interviews/UpcomingInterviewsCard';
 
 function TalentDashboardContent() {
   const { _user } = useAuth();
-  const [, setActiveTab] = useState("job-matches");
+  const [, setActiveTab] = useState('job-matches');
   const onboardingStatus = useOnboardingStatus();
   const showAdvanced =
     onboardingStatus.profileCompleted &&
@@ -39,15 +36,17 @@ function TalentDashboardContent() {
 
   return (
     <>
-      <SEO 
-        title="Talent Dashboard | Zion AI Marketplace" 
-        description="Your personalized talent dashboard with job matches and professional opportunities." 
+      <SEO
+        title="Talent Dashboard | Zion AI Marketplace"
+        description="Your personalized talent dashboard with job matches and professional opportunities."
       />
       <main className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
           <div>
             <h1 className="text-3xl font-bold">Talent Dashboard</h1>
-            <p className="text-muted-foreground mt-1">Find opportunities matched to your skills and experience</p>
+            <p className="text-muted-foreground mt-1">
+              Find opportunities matched to your skills and experience
+            </p>
           </div>
           <div className="flex gap-4">
             <Button variant="outline" asChild>
@@ -75,16 +74,22 @@ function TalentDashboardContent() {
                   <div className="flex items-center gap-3">
                     <Avatar className="h-12 w-12 border">
                       {user?.avatarUrl ? (
-                        <img src={user.avatarUrl} alt={user.displayName || "User"} loading="lazy" />
+                        <img
+                          src={user.avatarUrl}
+                          alt={user.displayName || 'User'}
+                          loading="lazy"
+                        />
                       ) : (
                         <div className="flex h-full w-full items-center justify-center bg-muted text-lg font-medium uppercase">
-                          {user?.displayName?.charAt(0) || "U"}
+                          {user?.displayName?.charAt(0) || 'U'}
                         </div>
                       )}
                     </Avatar>
                     <div>
-                      <CardTitle>{user?.displayName || "User"}</CardTitle>
-                      <CardDescription>{user?.headline || "AI Professional"}</CardDescription>
+                      <CardTitle>{user?.displayName || 'User'}</CardTitle>
+                      <CardDescription>
+                        {user?.headline || 'AI Professional'}
+                      </CardDescription>
                     </div>
                   </div>
                   <Badge className="bg-green-100 text-green-800">Online</Badge>
@@ -97,14 +102,18 @@ function TalentDashboardContent() {
                       <Star className="h-4 w-4 text-yellow-500" />
                       4.9
                     </div>
-                    <span className="text-xs text-muted-foreground">Rating</span>
+                    <span className="text-xs text-muted-foreground">
+                      Rating
+                    </span>
                   </div>
                   <div className="flex flex-col items-center p-3 bg-muted/30 rounded-md">
                     <div className="text-lg font-bold">18</div>
-                    <span className="text-xs text-muted-foreground">Projects</span>
+                    <span className="text-xs text-muted-foreground">
+                      Projects
+                    </span>
                   </div>
                 </div>
-                
+
                 <div className="mt-4">
                   <Button className="w-full" asChild>
                     <Link href="/messages">
@@ -115,7 +124,7 @@ function TalentDashboardContent() {
                 </div>
               </CardContent>
             </Card>
-            
+
             {/* New Onboarding Progress Tracker */}
             <TalentOnboardingSteps />
             {showAdvanced && (
@@ -123,12 +132,12 @@ function TalentDashboardContent() {
                 <AdvancedOnboardingSteps />
               </div>
             )}
-            
+
             {/* Upcoming Interviews Card */}
             <div className="mt-8">
               <UpcomingInterviewsCard />
             </div>
-            
+
             <Card className="mt-8">
               <CardHeader>
                 <CardTitle className="text-lg">Quick Stats</CardTitle>
@@ -148,14 +157,16 @@ function TalentDashboardContent() {
                     <span className="font-medium">3</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Profile completion</span>
+                    <span className="text-muted-foreground">
+                      Profile completion
+                    </span>
                     <span className="font-medium">85%</span>
                   </div>
                 </div>
               </CardContent>
             </Card>
           </div>
-          
+
           <div className="lg:col-span-2">
             <Tabs defaultValue="job-matches" onValueChange={setActiveTab}>
               <TabsList className="mb-6">
@@ -166,22 +177,23 @@ function TalentDashboardContent() {
                 <TabsTrigger value="applications">My Applications</TabsTrigger>
                 <TabsTrigger value="saved">Saved Jobs</TabsTrigger>
               </TabsList>
-              
+
               <TabsContent value="job-matches" className="mt-0">
                 <SuggestedJobs />
               </TabsContent>
-              
+
               <TabsContent value="applications" className="mt-0">
                 <MyApplications />
                 <div className="mt-4 flex justify-center">
                   <Button variant="outline" asChild>
                     <Link href="/dashboard/talent/applications">
-                      <Inbox className="h-4 w-4 mr-2" /> View Full Application Tracker
+                      <Inbox className="h-4 w-4 mr-2" /> View Full Application
+                      Tracker
                     </Link>
                   </Button>
                 </div>
               </TabsContent>
-              
+
               <TabsContent value="saved" className="mt-0">
                 <Card className="bg-muted/30">
                   <CardContent className="pt-6 text-center">

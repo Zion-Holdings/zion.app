@@ -1,21 +1,26 @@
-
-import { useState } from "react";
+import { useState } from 'react';
 import { Loader2 } from '@/components/ui/icons';
-import { useForm, type ControllerRenderProps } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
+import { useForm, type ControllerRenderProps } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
 
-
-import type { ContractFormValues } from "@/components/contracts/components/ContractForm";
-import type { ContractTemplate } from "@/types/contracts";
-import { useContractTemplates } from "@/hooks/useContractTemplates";
-import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Switch } from "@/components/ui/switch";
+import type { ContractFormValues } from '@/components/contracts/components/ContractForm';
+import type { ContractTemplate } from '@/types/contracts';
+import { useContractTemplates } from '@/hooks/useContractTemplates';
+import { Button } from '@/components/ui/button';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Switch } from '@/components/ui/switch';
 
 const formSchema = z.object({
-  title: z.string().min(1, "Title is required"),
+  title: z.string().min(1, 'Title is required'),
   isDefault: z.boolean(),
 });
 
@@ -32,26 +37,26 @@ export function TemplateSaveForm({
   onCancel,
   onComplete,
   editTemplate,
-  currentValues
+  currentValues,
 }: TemplateSaveFormProps) {
   const [saving, setSaving] = useState(false);
   const { createTemplate, updateTemplate } = useContractTemplates();
-  
+
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      title: editTemplate?.title || "",
+      title: editTemplate?.title || '',
       isDefault: editTemplate?.is_default || false,
     },
   });
-  
+
   const onSubmit = async (_values: FormValues) => {
     if (!currentValues && !editTemplate) {
       return;
     }
-    
+
     setSaving(true);
-    
+
     try {
       if (editTemplate) {
         await updateTemplate.mutateAsync({
@@ -67,20 +72,24 @@ export function TemplateSaveForm({
           isDefault: values.isDefault,
         });
       }
-      
+
       onComplete();
     } finally {
       setSaving(false);
     }
   };
-  
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
         <FormField
           control={form.control}
           name="title"
-          render={({ field }: { field: ControllerRenderProps<FormValues, "title"> }) => (
+          render={({
+            field,
+          }: {
+            field: ControllerRenderProps<FormValues, 'title'>;
+          }) => (
             <FormItem>
               <FormLabel>Template Name</FormLabel>
               <FormControl>
@@ -90,13 +99,19 @@ export function TemplateSaveForm({
             </FormItem>
           )}
         />
-        
+
         <FormField
           control={form.control}
           name="isDefault"
-          render={({ field }: { field: ControllerRenderProps<FormValues, "isDefault"> }) => (
+          render={({
+            field,
+          }: {
+            field: ControllerRenderProps<FormValues, 'isDefault'>;
+          }) => (
             <FormItem className="flex items-center justify-between">
-              <FormLabel className="cursor-pointer">Set as default template</FormLabel>
+              <FormLabel className="cursor-pointer">
+                Set as default template
+              </FormLabel>
               <FormControl>
                 <Switch
                   aria-label="Default template"
@@ -108,7 +123,7 @@ export function TemplateSaveForm({
             </FormItem>
           )}
         />
-        
+
         <div className="flex gap-2 justify-end">
           <Button type="button" variant="outline" onClick={onCancel}>
             Cancel
@@ -120,7 +135,7 @@ export function TemplateSaveForm({
                 Saving...
               </>
             ) : (
-              `${editTemplate ? "Update" : "Save"} Template`
+              `${editTemplate ? 'Update' : 'Save'} Template`
             )}
           </Button>
         </div>

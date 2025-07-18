@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import {logErrorToProduction} from "@/utils/productionLogger";
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 export interface ShippoShipment {
   tracking_number: string;
@@ -50,21 +50,28 @@ const FROM_ADDRESS = {
   city: process.env.SHIPPO_FROM_CITY || '',
   state: process.env.SHIPPO_FROM_STATE || '',
   zip: process.env.SHIPPO_FROM_ZIP || '',
-  country: process.env.SHIPPO_FROM_COUNTRY || 'US'
+  country: process.env.SHIPPO_FROM_COUNTRY || 'US',
 };
 
-export async function createShipment(addressTo: ShippoAddress, parcels: ShippoParcel[]): Promise<ShippoShipment> {
+export async function createShipment(
+  addressTo: ShippoAddress,
+  parcels: ShippoParcel[],
+): Promise<ShippoShipment> {
   try {
-    const res = await axios.post('https://api.goshippo.com/shipments/', {
-      address_from: FROM_ADDRESS,
-      address_to: addressTo,
-      parcels,
-    }, {
-      headers: {
-        Authorization: `ShippoToken ${SHIPPO_TOKEN}`,
-        'Content-Type': 'application/json',
+    const res = await axios.post(
+      'https://api.goshippo.com/shipments/',
+      {
+        address_from: FROM_ADDRESS,
+        address_to: addressTo,
+        parcels,
       },
-    });
+      {
+        headers: {
+          Authorization: `ShippoToken ${SHIPPO_TOKEN}`,
+          'Content-Type': 'application/json',
+        },
+      },
+    );
 
     return res.data as ShippoShipment;
   } catch {
@@ -74,8 +81,11 @@ export async function createShipment(addressTo: ShippoAddress, parcels: ShippoPa
 }
 
 export function parseShippoWebhook(payload: unknown) {
-  const trackingNumber = (payload as { tracking_number?: string })?.tracking_number;
-  const trackingStatus = (payload as { tracking_status?: { status?: string } })?.tracking_status?.status;
-  const events = (payload as { tracking_history?: ShippoTrackingEvent[] })?.tracking_history as ShippoTrackingEvent[] | undefined;
+  const trackingNumber = (payload as { tracking_number?: string })
+    ?.tracking_number;
+  const trackingStatus = (payload as { tracking_status?: { status?: string } })
+    ?.tracking_status?.status;
+  const events = (payload as { tracking_history?: ShippoTrackingEvent[] })
+    ?.tracking_history as ShippoTrackingEvent[] | undefined;
   return { trackingNumber, trackingStatus, events };
 }

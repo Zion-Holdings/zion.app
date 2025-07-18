@@ -72,7 +72,10 @@ export default function CongressPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <NextSeo title="Planetary Congress" description="Cross-instance governance" />
+      <NextSeo
+        title="Planetary Congress"
+        description="Cross-instance governance"
+      />
       <Header />
       <main className="container mx-auto py-8 space-y-10">
         <h1 className="text-3xl font-bold">Zion Planetary Congress</h1>
@@ -123,7 +126,11 @@ export default function CongressPage() {
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold">Submit Global Proposal</h2>
           <form onSubmit={submitProposal} className="space-y-2">
-            <Input placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
+            <Input
+              placeholder="Title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
             <Textarea
               placeholder="Proposal body"
               value={body}

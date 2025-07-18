@@ -15,11 +15,17 @@ function StepIndicator({ step }: { step: number }) {
   const progress = (step / WIZARD_STEPS.length) * 100;
   return (
     <div className="space-y-1">
-      <div data-testid="step-indicator" className="text-sm text-muted-foreground">
+      <div
+        data-testid="step-indicator"
+        className="text-sm text-muted-foreground"
+      >
         {step}/{WIZARD_STEPS.length}
       </div>
       <div className="h-1 bg-zion-blue-light rounded">
-        <div className="h-1 bg-zion-purple rounded" style={{ width: `${progress}%` }} />
+        <div
+          className="h-1 bg-zion-purple rounded"
+          style={{ width: `${progress}%` }}
+        />
       </div>
     </div>
   );
@@ -42,7 +48,7 @@ export function QuoteWizard({ category }: QuoteWizardProps) {
     if (delayedError) {
       toast({
         title: 'Unable to load services',
-        variant: 'destructive'
+        variant: 'destructive',
       });
     }
   }, [delayedError, toast]);
@@ -52,7 +58,7 @@ export function QuoteWizard({ category }: QuoteWizardProps) {
 
   const selectedItem = useMemo(() => {
     if (!data || !selectedItemId) return null;
-    return data.find(item => item.id === selectedItemId);
+    return data.find((item) => item.id === selectedItemId);
   }, [data, selectedItemId]);
 
   const handleSelect = (_id: string) => {
@@ -67,9 +73,9 @@ export function QuoteWizard({ category }: QuoteWizardProps) {
           category === 'services'
             ? 'service'
             : category === 'talent'
-            ? 'talent'
-            : 'item'
-        } to continue.`
+              ? 'talent'
+              : 'item'
+        } to continue.`,
       );
       return;
     }
@@ -84,13 +90,16 @@ export function QuoteWizard({ category }: QuoteWizardProps) {
     await fetch('/api/quotes', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ item_id: selectedItemId, category: category, user_message: message })
+      body: JSON.stringify({
+        item_id: selectedItemId,
+        category: category,
+        user_message: message,
+      }),
     });
     setStep(3);
   };
 
   if (step === 1) {
-
     return (
       <div className="space-y-6">
         <StepIndicator step={step} />
@@ -110,10 +119,15 @@ export function QuoteWizard({ category }: QuoteWizardProps) {
             <Alert variant="destructive">
               <AlertTitle>Error Fetching {category}</AlertTitle>
               <AlertDescription>
-                There was a problem fetching the {category}. Please check your internet connection and try again.
+                There was a problem fetching the {category}. Please check your
+                internet connection and try again.
               </AlertDescription>
             </Alert>
-            <Button size="sm" onClick={() => mutate()} data-testid="retry-button">
+            <Button
+              size="sm"
+              onClick={() => mutate()}
+              data-testid="retry-button"
+            >
               Retry
             </Button>
           </div>
@@ -153,10 +167,18 @@ export function QuoteWizard({ category }: QuoteWizardProps) {
                   size="sm"
                   variant="outline"
                   data-testid={`select-item-${item.id}`}
-                  onClick={(e) => { e.stopPropagation(); handleSelect(item.id); }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleSelect(item.id);
+                  }}
                   className="w-full mt-2"
                 >
-                  Select this {category === 'services' ? 'Service' : category === 'talent' ? 'Talent' : 'Item'}
+                  Select this{' '}
+                  {category === 'services'
+                    ? 'Service'
+                    : category === 'talent'
+                      ? 'Talent'
+                      : 'Item'}
                 </Button>
               </Card>
             ))}
@@ -164,11 +186,18 @@ export function QuoteWizard({ category }: QuoteWizardProps) {
         )}
 
         {selectionError && (
-          <p className="text-red-500 text-sm mt-2" data-testid="selection-error">
+          <p
+            className="text-red-500 text-sm mt-2"
+            data-testid="selection-error"
+          >
             {selectionError}
           </p>
         )}
-        <Button onClick={handleContinue} disabled={loading || !!delayedError || !selectedItemId} className="mt-6">
+        <Button
+          onClick={handleContinue}
+          disabled={loading || !!delayedError || !selectedItemId}
+          className="mt-6"
+        >
           Continue
         </Button>
       </div>
@@ -180,14 +209,23 @@ export function QuoteWizard({ category }: QuoteWizardProps) {
       <div data-testid="details-step" className="space-y-4">
         <StepIndicator step={step} />
         {selectedItem && (
-          <div data-testid="selected-item-name" className="text-lg font-semibold text-zion-slate-dark">
-            Selected {category === 'services' ? 'Service' : category === 'talent' ? 'Talent' : 'Item'}: {selectedItem.name}
+          <div
+            data-testid="selected-item-name"
+            className="text-lg font-semibold text-zion-slate-dark"
+          >
+            Selected{' '}
+            {category === 'services'
+              ? 'Service'
+              : category === 'talent'
+                ? 'Talent'
+                : 'Item'}
+            : {selectedItem.name}
           </div>
         )}
         {selectedItem && selectedItem.price !== undefined && (
-           <div className="text-md text-muted-foreground">
-             Price: ${selectedItem.price.toFixed(2)}
-           </div>
+          <div className="text-md text-muted-foreground">
+            Price: ${selectedItem.price.toFixed(2)}
+          </div>
         )}
         <Textarea
           value={message}
@@ -197,8 +235,12 @@ export function QuoteWizard({ category }: QuoteWizardProps) {
           rows={4}
         />
         <div className="flex justify-between items-center">
-          <Button variant="outline" onClick={() => setStep(1)}>Back</Button>
-          <Button onClick={handleSubmit} disabled={!selectedItemId}>Submit Quote</Button>
+          <Button variant="outline" onClick={() => setStep(1)}>
+            Back
+          </Button>
+          <Button onClick={handleSubmit} disabled={!selectedItemId}>
+            Submit Quote
+          </Button>
         </div>
       </div>
     );
@@ -208,15 +250,21 @@ export function QuoteWizard({ category }: QuoteWizardProps) {
     return (
       <div data-testid="success-step" className="space-y-4 text-center py-12">
         <StepIndicator step={step} />
-        <div className="text-2xl font-semibold text-green-600">Quote Submitted Successfully!</div>
+        <div className="text-2xl font-semibold text-green-600">
+          Quote Submitted Successfully!
+        </div>
         <p className="text-muted-foreground">
-          Thank you for your request regarding {selectedItem?.name || 'the selected item'}. We will get back to you shortly.
+          Thank you for your request regarding{' '}
+          {selectedItem?.name || 'the selected item'}. We will get back to you
+          shortly.
         </p>
-        <Button onClick={() => {
-          setStep(1);
-          setSelectedItemId(null);
-          setMessage('');
-        }}>
+        <Button
+          onClick={() => {
+            setStep(1);
+            setSelectedItemId(null);
+            setMessage('');
+          }}
+        >
           Request Another Quote
         </Button>
       </div>

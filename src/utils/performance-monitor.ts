@@ -4,7 +4,6 @@
 import type { Metric } from 'web-vitals';
 import { logWarn } from '@/utils/productionLogger';
 
-
 interface PerformanceMetric {
   name: string;
   value: number;
@@ -33,9 +32,10 @@ class PerformanceMonitor {
 
   constructor() {
     this.sessionId = this.generateSessionId();
-    this.isEnabled = typeof window !== 'undefined' && process.env.NODE_ENV === 'production';
+    this.isEnabled =
+      typeof window !== 'undefined' && process.env.NODE_ENV === 'production';
     this.reportingEndpoint = '/api/performance-metrics';
-    
+
     if (this.isEnabled) {
       this.initializeMonitoring();
     }
@@ -48,18 +48,18 @@ class PerformanceMonitor {
   private initializeMonitoring(): void {
     // Core Web Vitals monitoring
     this.initializeCoreWebVitals();
-    
+
     // Custom performance metrics
     this.measurePageLoadTime();
     this.measureResourceLoadTimes();
     this.measureTimeToInteractive();
-    
+
     // User interaction monitoring
     this.monitorUserInteractions();
-    
+
     // Memory usage monitoring
     this.monitorMemoryUsage();
-    
+
     // Error correlation
     this.setupErrorCorrelation();
 
@@ -83,23 +83,64 @@ class PerformanceMonitor {
 
   // Overload signatures
   private recordMetric(name: string, metric: Metric): void;
-  private recordMetric(name: string, metric: { name?: string; value: number; id?: string; rating?: PerformanceMetric['rating']; navigationType?: string }): void;
-  private recordMetric(name: string, metric: Metric | { name?: string; value: number; id?: string; rating?: PerformanceMetric['rating']; navigationType?: string }): void {
+  private recordMetric(
+    name: string,
+    metric: {
+      name?: string;
+      value: number;
+      id?: string;
+      rating?: PerformanceMetric['rating'];
+      navigationType?: string;
+    },
+  ): void;
+  private recordMetric(
+    name: string,
+    metric:
+      | Metric
+      | {
+          name?: string;
+          value: number;
+          id?: string;
+          rating?: PerformanceMetric['rating'];
+          navigationType?: string;
+        },
+  ): void {
     const performanceMetric: PerformanceMetric = {
       name: metric.name || name,
-      value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+      value: Math.round(
+        metric.name === 'CLS' ? metric.value * 1000 : metric.value,
+      ),
       rating: metric.rating || this.calculateRating(name, metric.value),
       timestamp: Date.now(),
       id: metric.id || this.generateId(),
       navigationType: metric.navigationType,
-      url: typeof window !== 'undefined' ? window.location.href : ''
+      url: typeof window !== 'undefined' ? window.location.href : '',
     };
 
     this.metrics.push(performanceMetric);
-    
+
     // Send to analytics if available
-    if (typeof window !== 'undefined' && (window as unknown as { gtag?: (event: string, action: string, params: Record<string, unknown>) => void }).gtag) {
-      (window as unknown as { gtag?: (event: string, action: string, params: Record<string, unknown>) => void }).gtag!('event', metric.name || name, {
+    if (
+      typeof window !== 'undefined' &&
+      (
+        window as unknown as {
+          gtag?: (
+            event: string,
+            action: string,
+            params: Record<string, unknown>,
+          ) => void;
+        }
+      ).gtag
+    ) {
+      (
+        window as unknown as {
+          gtag?: (
+            event: string,
+            action: string,
+            params: Record<string, unknown>,
+          ) => void;
+        }
+      ).gtag!('event', metric.name || name, {
         value: performanceMetric.value,
         event_label: performanceMetric.id,
         non_interaction: true,
@@ -108,21 +149,26 @@ class PerformanceMonitor {
 
     // Log significant performance issues
     if (performanceMetric.rating === 'poor') {
-      logWarn(`Performance issue detected: ${performanceMetric.name} = ${performanceMetric.value}ms`);
+      logWarn(
+        `Performance issue detected: ${performanceMetric.name} = ${performanceMetric.value}ms`,
+      );
     }
   }
 
-  private calculateRating(metricName: string, value: number): 'good' | 'needs-improvement' | 'poor' {
+  private calculateRating(
+    metricName: string,
+    value: number,
+  ): 'good' | 'needs-improvement' | 'poor' {
     const thresholds: { [key: string]: [number, number] } = {
-      'CLS': [0.1, 0.25],
-      'FCP': [1800, 3000],
-      'INP': [200, 500],
-      'LCP': [2500, 4000],
-      'TTFB': [800, 1800]
+      CLS: [0.1, 0.25],
+      FCP: [1800, 3000],
+      INP: [200, 500],
+      LCP: [2500, 4000],
+      TTFB: [800, 1800],
     };
 
     const [good, poor] = thresholds[metricName] || [1000, 2000];
-    
+
     if (value <= good) return 'good';
     if (value <= poor) return 'needs-improvement';
     return 'poor';
@@ -136,13 +182,15 @@ class PerformanceMonitor {
     if (typeof window === 'undefined') return;
 
     window.addEventListener('load', () => {
-      const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+      const navigation = performance.getEntriesByType(
+        'navigation',
+      )[0] as PerformanceNavigationTiming;
       if (navigation) {
         const pageLoadTime = navigation.loadEventEnd - navigation.fetchStart;
         this.recordMetric('PageLoad', {
           name: 'PageLoad',
           value: pageLoadTime,
-          id: this.generateId()
+          id: this.generateId(),
         });
       }
     });
@@ -152,25 +200,31 @@ class PerformanceMonitor {
     if (typeof window === 'undefined') return;
 
     window.addEventListener('load', () => {
-      const resources = performance.getEntriesByType('resource') as PerformanceResourceTiming[];
+      const resources = performance.getEntriesByType(
+        'resource',
+      ) as PerformanceResourceTiming[];
       const _resourceTimes: { [key: string]: number } = {};
 
       resources.forEach((resource) => {
         const duration = resource.responseEnd - resource.startTime;
         const resourceType = this.getResourceType(resource.name);
-        
-        if (!resourceTimes[resourceType] || duration > resourceTimes[resourceType]) {
+
+        if (
+          !resourceTimes[resourceType] ||
+          duration > resourceTimes[resourceType]
+        ) {
           resourceTimes[resourceType] = duration;
         }
       });
 
       // Record significant resource load times
       Object.entries(resourceTimes).forEach(([type, duration]) => {
-        if (duration > 1000) { // Only record if > 1s
+        if (duration > 1000) {
+          // Only record if > 1s
           this.recordMetric(`Resource-${type}`, {
             name: `Resource-${type}`,
             value: duration,
-            id: this.generateId()
+            id: this.generateId(),
           });
         }
       });
@@ -200,14 +254,14 @@ class PerformanceMonitor {
 
     try {
       observer.observe({ entryTypes: ['longtask'] });
-      
+
       setTimeout(() => {
         observer.disconnect();
         const tti = performance.now();
         this.recordMetric('TTI', {
           name: 'TTI',
           value: tti,
-          id: this.generateId()
+          id: this.generateId(),
         });
       }, 5000);
     } catch {
@@ -222,26 +276,42 @@ class PerformanceMonitor {
     const events = ['click', 'keydown', 'scroll'];
 
     events.forEach((eventType) => {
-      document.addEventListener(eventType, () => {
-        interactionCount++;
-        
-        // Record first interaction time
-        if (interactionCount === 1) {
-          this.recordMetric('FirstInteraction', {
-            name: 'FirstInteraction',
-            value: performance.now(),
-            id: this.generateId()
-          });
-        }
-      }, { once: eventType !== 'scroll' });
+      document.addEventListener(
+        eventType,
+        () => {
+          interactionCount++;
+
+          // Record first interaction time
+          if (interactionCount === 1) {
+            this.recordMetric('FirstInteraction', {
+              name: 'FirstInteraction',
+              value: performance.now(),
+              id: this.generateId(),
+            });
+          }
+        },
+        { once: eventType !== 'scroll' },
+      );
     });
   }
 
   private monitorMemoryUsage(): void {
-    if (typeof window === 'undefined' || !(performance as Performance & { memory?: { usedJSHeapSize: number; totalJSHeapSize: number } }).memory) return;
+    if (
+      typeof window === 'undefined' ||
+      !(
+        performance as Performance & {
+          memory?: { usedJSHeapSize: number; totalJSHeapSize: number };
+        }
+      ).memory
+    )
+      return;
 
     setInterval(() => {
-      const memory = (performance as Performance & { memory?: { usedJSHeapSize: number; totalJSHeapSize: number } }).memory;
+      const memory = (
+        performance as Performance & {
+          memory?: { usedJSHeapSize: number; totalJSHeapSize: number };
+        }
+      ).memory;
       if (!memory) return;
       const usedMemory = memory.usedJSHeapSize;
       const totalMemory = memory.totalJSHeapSize;
@@ -251,7 +321,7 @@ class PerformanceMonitor {
         this.recordMetric('MemoryUsage', {
           name: 'MemoryUsage',
           value: memoryUsagePercent,
-          id: this.generateId()
+          id: this.generateId(),
         });
       }
     }, 30000); // Check every 30 seconds
@@ -264,7 +334,7 @@ class PerformanceMonitor {
       this.recordMetric('JavaScriptError', {
         name: 'JavaScriptError',
         value: 1,
-        id: this.generateId()
+        id: this.generateId(),
       });
     });
 
@@ -272,7 +342,7 @@ class PerformanceMonitor {
       this.recordMetric('UnhandledPromiseRejection', {
         name: 'UnhandledPromiseRejection',
         value: 1,
-        id: this.generateId()
+        id: this.generateId(),
       });
     });
   }
@@ -306,7 +376,7 @@ class PerformanceMonitor {
       sessionId: this.sessionId,
       pageLoadTime: this.getMetricValue('PageLoad'),
       timeToInteractive: this.getMetricValue('TTI'),
-      resourceLoadTimes: this.getResourceLoadTimes()
+      resourceLoadTimes: this.getResourceLoadTimes(),
     };
 
     try {
@@ -316,7 +386,7 @@ class PerformanceMonitor {
         await fetch(this.reportingEndpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(report)
+          body: JSON.stringify(report),
         });
       }
 
@@ -328,18 +398,20 @@ class PerformanceMonitor {
   }
 
   private getMetricValue(metricName: string): number {
-    const metric = this.metrics.find(m => m.name === metricName);
+    const metric = this.metrics.find((m) => m.name === metricName);
     return metric ? metric.value : 0;
   }
 
   private getResourceLoadTimes(): { [key: string]: number } {
-    const resourceMetrics = this.metrics.filter(m => m.name.startsWith('Resource-'));
+    const resourceMetrics = this.metrics.filter((m) =>
+      m.name.startsWith('Resource-'),
+    );
     const result: { [key: string]: number } = {};
-    
-    resourceMetrics.forEach(metric => {
+
+    resourceMetrics.forEach((metric) => {
       result[metric.name] = metric.value;
     });
-    
+
     return result;
   }
 
@@ -348,7 +420,7 @@ class PerformanceMonitor {
     this.recordMetric(name, {
       name: `Custom-${name}`,
       value,
-      id: this.generateId()
+      id: this.generateId(),
     });
   }
 
@@ -362,19 +434,25 @@ class PerformanceMonitor {
     totalMetrics: number;
   } {
     const totalMetrics = this.metrics.length;
-    const poorMetrics = this.metrics.filter(m => m.rating === 'poor').length;
+    const poorMetrics = this.metrics.filter((m) => m.rating === 'poor').length;
     const loadTimes = this.metrics
-      .filter(m => m.name.includes('Load') || m.name.includes('FCP') || m.name.includes('LCP'))
-      .map(m => m.value);
-    
-    const averageLoadTime = loadTimes.length > 0 
-      ? loadTimes.reduce((a, b) => a + b, 0) / loadTimes.length 
-      : 0;
+      .filter(
+        (m) =>
+          m.name.includes('Load') ||
+          m.name.includes('FCP') ||
+          m.name.includes('LCP'),
+      )
+      .map((m) => m.value);
+
+    const averageLoadTime =
+      loadTimes.length > 0
+        ? loadTimes.reduce((a, b) => a + b, 0) / loadTimes.length
+        : 0;
 
     return {
       averageLoadTime: Math.round(averageLoadTime),
       poorMetricsCount: poorMetrics,
-      totalMetrics
+      totalMetrics,
     };
   }
 }

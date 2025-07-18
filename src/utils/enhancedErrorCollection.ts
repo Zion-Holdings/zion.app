@@ -4,7 +4,11 @@
  * for better future debugging and system monitoring
  */
 
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import {
+  logInfo,
+  logWarn,
+  logErrorToProduction,
+} from '@/utils/productionLogger';
 import { reportErrorToServices } from '@/utils/logError';
 import { generateTraceId } from '@/utils/generateTraceId';
 
@@ -29,7 +33,15 @@ export interface ErrorDetails {
   name?: string;
   cause?: unknown;
   severity: 'low' | 'medium' | 'high' | 'critical';
-  category: 'user' | 'system' | 'network' | 'validation' | 'auth' | 'payment' | 'performance' | 'security';
+  category:
+    | 'user'
+    | 'system'
+    | 'network'
+    | 'validation'
+    | 'auth'
+    | 'payment'
+    | 'performance'
+    | 'security';
   tags: string[];
   context: ErrorContext;
   timestamp: string;
@@ -103,9 +115,11 @@ class EnhancedErrorCollector {
     this.setupNetworkMonitoring();
     this.setupMemoryMonitoring();
     this.startHealthChecks();
-    
+
     this.isInitialized = true;
-    logInfo('Enhanced Error Collector initialized', { data:  { sessionId: this.sessionId } });
+    logInfo('Enhanced Error Collector initialized', {
+      data: { sessionId: this.sessionId },
+    });
   }
 
   private setupPerformanceMonitoring(): void {
@@ -117,26 +131,27 @@ class EnhancedErrorCollector {
           if (entry.entryType === 'navigation') {
             const navEntry = entry as PerformanceNavigationTiming;
             if (navEntry.loadEventEnd - navEntry.fetchStart > 5000) {
-              this.collectError(
-                new Error('Slow page load detected'),
-                {
-                  severity: 'medium',
-                  category: 'performance',
-                  tags: ['slow-load', 'performance'],
-                  context: {
-                    loadTime: navEntry.loadEventEnd - navEntry.fetchStart,
-                    route: window.location.pathname,
-                  },
-                }
-              );
+              this.collectError(new Error('Slow page load detected'), {
+                severity: 'medium',
+                category: 'performance',
+                tags: ['slow-load', 'performance'],
+                context: {
+                  loadTime: navEntry.loadEventEnd - navEntry.fetchStart,
+                  route: window.location.pathname,
+                },
+              });
             }
           }
         }
       });
 
-      this.performanceObserver.observe({ entryTypes: ['navigation', 'resource'] });
+      this.performanceObserver.observe({
+        entryTypes: ['navigation', 'resource'],
+      });
     } catch {
-      logWarn('Failed to setup performance monitoring:', { data:  { data: error } });
+      logWarn('Failed to setup performance monitoring:', {
+        data: { data: error },
+      });
     }
   }
 
@@ -150,15 +165,12 @@ class EnhancedErrorCollector {
 
     window.addEventListener('offline', () => {
       this.healthMetrics.networkStatus = 'offline';
-      this.collectError(
-        new Error('Network disconnected'),
-        {
-          severity: 'medium',
-          category: 'network',
-          tags: ['offline', 'connectivity'],
-          context: { event: 'network-offline' },
-        }
-      );
+      this.collectError(new Error('Network disconnected'), {
+        severity: 'medium',
+        category: 'network',
+        tags: ['offline', 'connectivity'],
+        context: { event: 'network-offline' },
+      });
     });
   }
 
@@ -168,23 +180,21 @@ class EnhancedErrorCollector {
     setInterval(() => {
       const perf = performance as PerformanceWithMemory;
       if (perf.memory) {
-        const memoryPressure = perf.memory.usedJSHeapSize / perf.memory.jsHeapSizeLimit;
+        const memoryPressure =
+          perf.memory.usedJSHeapSize / perf.memory.jsHeapSizeLimit;
         this.healthMetrics.memoryPressure = memoryPressure;
 
         if (memoryPressure > 0.9) {
-          this.collectError(
-            new Error('High memory usage detected'),
-            {
-              severity: 'high',
-              category: 'performance',
-              tags: ['memory-pressure', 'performance'],
-              context: {
-                memoryUsage: perf.memory.usedJSHeapSize,
-                memoryLimit: perf.memory.jsHeapSizeLimit,
-                memoryPressure,
-              },
-            }
-          );
+          this.collectError(new Error('High memory usage detected'), {
+            severity: 'high',
+            category: 'performance',
+            tags: ['memory-pressure', 'performance'],
+            context: {
+              memoryUsage: perf.memory.usedJSHeapSize,
+              memoryLimit: perf.memory.jsHeapSizeLimit,
+              memoryPressure,
+            },
+          });
         }
       }
     }, 30000); // Check every 30 seconds
@@ -210,13 +220,15 @@ class EnhancedErrorCollector {
     };
 
     // Log health summary
-    logInfo('System health check', { data: {
-      uptime: Math.round(uptime / 1000 / 60), // minutes
-      errorRate: Math.round(errorRate * 100) / 100,
-      errorCount,
-      memoryPressure: Math.round(this.healthMetrics.memoryPressure * 100),
-      networkStatus: this.healthMetrics.networkStatus,
-    }});
+    logInfo('System health check', {
+      data: {
+        uptime: Math.round(uptime / 1000 / 60), // minutes
+        errorRate: Math.round(errorRate * 100) / 100,
+        errorCount,
+        memoryPressure: Math.round(this.healthMetrics.memoryPressure * 100),
+        networkStatus: this.healthMetrics.networkStatus,
+      },
+    });
   }
 
   private generateFingerprint(error: Error, context: ErrorContext): string {
@@ -224,7 +236,10 @@ class EnhancedErrorCollector {
     return btoa(key).replace(/[/+=]/g, '').substring(0, 16);
   }
 
-  private categorizeError(error: Error, context: ErrorContext): {
+  private categorizeError(
+    error: Error,
+    context: ErrorContext,
+  ): {
     severity: ErrorDetails['severity'];
     category: ErrorDetails['category'];
     tags: string[];
@@ -234,27 +249,59 @@ class EnhancedErrorCollector {
 
     // Determine severity
     let severity: ErrorDetails['severity'] = 'medium';
-    if (message.includes('critical') || message.includes('fatal') || error.name === 'SecurityError') {
+    if (
+      message.includes('critical') ||
+      message.includes('fatal') ||
+      error.name === 'SecurityError'
+    ) {
       severity = 'critical';
     } else if (message.includes('warning') || message.includes('deprecated')) {
       severity = 'low';
-    } else if (message.includes('timeout') || message.includes('failed') || message.includes('cannot')) {
+    } else if (
+      message.includes('timeout') ||
+      message.includes('failed') ||
+      message.includes('cannot')
+    ) {
       severity = 'high';
     }
 
     // Determine category
     let category: ErrorDetails['category'] = 'system';
-    if (message.includes('network') || message.includes('fetch') || message.includes('connection')) {
+    if (
+      message.includes('network') ||
+      message.includes('fetch') ||
+      message.includes('connection')
+    ) {
       category = 'network';
-    } else if (message.includes('auth') || message.includes('permission') || message.includes('unauthorized')) {
+    } else if (
+      message.includes('auth') ||
+      message.includes('permission') ||
+      message.includes('unauthorized')
+    ) {
       category = 'auth';
-    } else if (message.includes('validation') || message.includes('invalid') || message.includes('required')) {
+    } else if (
+      message.includes('validation') ||
+      message.includes('invalid') ||
+      message.includes('required')
+    ) {
       category = 'validation';
-    } else if (message.includes('payment') || message.includes('stripe') || message.includes('billing')) {
+    } else if (
+      message.includes('payment') ||
+      message.includes('stripe') ||
+      message.includes('billing')
+    ) {
       category = 'payment';
-    } else if (message.includes('performance') || message.includes('memory') || message.includes('slow')) {
+    } else if (
+      message.includes('performance') ||
+      message.includes('memory') ||
+      message.includes('slow')
+    ) {
       category = 'performance';
-    } else if (message.includes('security') || message.includes('xss') || message.includes('csrf')) {
+    } else if (
+      message.includes('security') ||
+      message.includes('xss') ||
+      message.includes('csrf')
+    ) {
       category = 'security';
     } else if (context.component && message.includes('user')) {
       category = 'user';
@@ -280,15 +327,18 @@ class EnhancedErrorCollector {
       tags?: string[];
       context?: ErrorContext;
       reproductionSteps?: string[];
-    } = {}
+    } = {},
   ): string {
     const errorObj = typeof error === 'string' ? new Error(error) : error;
     const traceId = generateTraceId();
     const timestamp = new Date().toISOString();
-    
+
     const context: ErrorContext = {
       sessionId: this.sessionId,
-      route: typeof window !== 'undefined' && window.location.pathname ? window.location.pathname : '',
+      route:
+        typeof window !== 'undefined' && window.location.pathname
+          ? window.location.pathname
+          : '',
       userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
       timestamp,
       buildVersion: process.env.NEXT_PUBLIC_BUILD_VERSION || 'unknown',
@@ -367,18 +417,28 @@ class EnhancedErrorCollector {
     const oneHourAgo = Date.now() - 60 * 60 * 1000;
 
     // Calculate summary
-    const criticalErrors = errors.filter(e => e.severity === 'critical').length;
-    const recentErrors = errors.filter(e => new Date(e.lastSeen).getTime() > oneHourAgo).length;
+    const criticalErrors = errors.filter(
+      (e) => e.severity === 'critical',
+    ).length;
+    const recentErrors = errors.filter(
+      (e) => new Date(e.lastSeen).getTime() > oneHourAgo,
+    ).length;
 
     // Top categories
     const categoryCount = new Map<string, number>();
     const componentCount = new Map<string, number>();
 
-    errors.forEach(error => {
-      categoryCount.set(error.category, (categoryCount.get(error.category) || 0) + error.occurrenceCount);
-      
+    errors.forEach((error) => {
+      categoryCount.set(
+        error.category,
+        (categoryCount.get(error.category) || 0) + error.occurrenceCount,
+      );
+
       const component = error.context.component || 'unknown';
-      componentCount.set(component, (componentCount.get(component) || 0) + error.occurrenceCount);
+      componentCount.set(
+        component,
+        (componentCount.get(component) || 0) + error.occurrenceCount,
+      );
     });
 
     const topCategories = Array.from(categoryCount.entries())
@@ -393,7 +453,7 @@ class EnhancedErrorCollector {
 
     // Group errors by category
     const errorsByCategory: Record<string, ErrorDetails[]> = {};
-    errors.forEach(error => {
+    errors.forEach((error) => {
       if (!errorsByCategory[error.category]) {
         errorsByCategory[error.category] = [];
       }
@@ -410,8 +470,11 @@ class EnhancedErrorCollector {
       },
       healthMetrics: this.healthMetrics,
       recentErrors: errors
-        .filter(e => new Date(e.lastSeen).getTime() > oneHourAgo)
-        .sort((a, b) => new Date(b.lastSeen).getTime() - new Date(a.lastSeen).getTime())
+        .filter((e) => new Date(e.lastSeen).getTime() > oneHourAgo)
+        .sort(
+          (a, b) =>
+            new Date(b.lastSeen).getTime() - new Date(a.lastSeen).getTime(),
+        )
         .slice(0, 10),
       errorsByCategory,
     };
@@ -419,29 +482,38 @@ class EnhancedErrorCollector {
 
   public exportErrorData(): string {
     const report = this.getErrorReport();
-    return JSON.stringify({
-      exportTimestamp: new Date().toISOString(),
-      sessionId: this.sessionId,
-      ...report,
-      allErrors: Array.from(this.errors.values()),
-    }, null, 2);
+    return JSON.stringify(
+      {
+        exportTimestamp: new Date().toISOString(),
+        sessionId: this.sessionId,
+        ...report,
+        allErrors: Array.from(this.errors.values()),
+      },
+      null,
+      2,
+    );
   }
 
   public clearErrors(): void {
     this.errors.clear();
-    logInfo('Error collection cleared', { data:  { sessionId: this.sessionId } });
+    logInfo('Error collection cleared', {
+      data: { sessionId: this.sessionId },
+    });
   }
 
   public getHealthScore(): number {
     const errors = Array.from(this.errors.values());
-    const criticalCount = errors.filter(e => e.severity === 'critical').length;
-    const highCount = errors.filter(e => e.severity === 'high').length;
-    const mediumCount = errors.filter(e => e.severity === 'medium').length;
+    const criticalCount = errors.filter(
+      (e) => e.severity === 'critical',
+    ).length;
+    const highCount = errors.filter((e) => e.severity === 'high').length;
+    const mediumCount = errors.filter((e) => e.severity === 'medium').length;
 
     // Calculate score based on error severity and frequency
-    const penalty = (criticalCount * 20) + (highCount * 10) + (mediumCount * 5);
+    const penalty = criticalCount * 20 + highCount * 10 + mediumCount * 5;
     const memoryPenalty = this.healthMetrics.memoryPressure * 10;
-    const networkPenalty = this.healthMetrics.networkStatus === 'offline' ? 15 : 0;
+    const networkPenalty =
+      this.healthMetrics.networkStatus === 'offline' ? 15 : 0;
 
     const score = Math.max(0, 100 - penalty - memoryPenalty - networkPenalty);
     return Math.round(score);
@@ -452,7 +524,9 @@ class EnhancedErrorCollector {
       this.performanceObserver.disconnect();
     }
     this.isInitialized = false;
-    logInfo('Enhanced Error Collector destroyed', { data:  { sessionId: this.sessionId } });
+    logInfo('Enhanced Error Collector destroyed', {
+      data: { sessionId: this.sessionId },
+    });
   }
 }
 
@@ -468,7 +542,7 @@ export function reportEnhancedError(
     tags?: string[];
     context?: ErrorContext;
     reproductionSteps?: string[];
-  }
+  },
 ): string {
   return enhancedErrorCollector.collectError(error, options);
 }
@@ -489,21 +563,27 @@ export function exportSystemLogs(): string {
 if (typeof window !== 'undefined') {
   // Hook into unhandled errors
   window.addEventListener('error', (event) => {
-    enhancedErrorCollector.collectError(event.error || new Error(event.message), {
-      category: 'system',
-      tags: ['unhandled', 'global'],
-      context: {
-        filename: event.filename,
-        lineno: event.lineno,
-        colno: event.colno,
-        route: window.location.pathname,
+    enhancedErrorCollector.collectError(
+      event.error || new Error(event.message),
+      {
+        category: 'system',
+        tags: ['unhandled', 'global'],
+        context: {
+          filename: event.filename,
+          lineno: event.lineno,
+          colno: event.colno,
+          route: window.location.pathname,
+        },
       },
-    });
+    );
   });
 
   // Hook into unhandled promise rejections
   window.addEventListener('unhandledrejection', (event) => {
-    const error = event.reason instanceof Error ? event.reason : new Error(String(event.reason));
+    const error =
+      event.reason instanceof Error
+        ? event.reason
+        : new Error(String(event.reason));
     enhancedErrorCollector.collectError(error, {
       category: 'system',
       tags: ['unhandled', 'promise'],

@@ -1,13 +1,17 @@
 /**
  * Environment Polyfill for Browser
- * 
+ *
  * This polyfill ensures that process.env is always available in the browser environment.
  * It prevents the "Cannot read properties of undefined (reading 'env')" error.
  */
 
 // Remove any 'var process' block
 // Only polyfill process on globalThis if it does not exist
-if (typeof globalThis !== 'undefined' && typeof (globalThis as unknown as { process?: unknown }).process === 'undefined') {
+if (
+  typeof globalThis !== 'undefined' &&
+  typeof (globalThis as unknown as { process?: unknown }).process ===
+    'undefined'
+) {
   (globalThis as unknown as { process?: unknown }).process = {
     env: {
       NODE_ENV: 'production', // Default to production for safety
@@ -42,25 +46,72 @@ if (typeof globalThis !== 'undefined' && typeof (globalThis as unknown as { proc
 
 // Export a safe environment accessor
 export const safeEnv = {
-  NODE_ENV: (typeof (globalThis as unknown as { process?: unknown }).process !== 'undefined' && typeof (globalThis as unknown as { process?: { env?: { NODE_ENV?: string } } }).process?.env?.NODE_ENV === 'string'
-    ? (globalThis as unknown as { process?: { env?: { NODE_ENV?: string } } }).process?.env?.NODE_ENV
-    : 'production'),
-  NEXT_PUBLIC_APP_URL: (typeof (globalThis as unknown as { process?: unknown }).process !== 'undefined' && typeof (globalThis as unknown as { process?: { env?: { NEXT_PUBLIC_APP_URL?: string } } }).process?.env?.NEXT_PUBLIC_APP_URL === 'string'
-    ? (globalThis as unknown as { process?: { env?: { NEXT_PUBLIC_APP_URL?: string } } }).process?.env?.NEXT_PUBLIC_APP_URL
-    : ''),
-  NEXT_PUBLIC_SUPABASE_URL: (typeof (globalThis as unknown as { process?: unknown }).process !== 'undefined' && typeof (globalThis as unknown as { process?: { env?: { NEXT_PUBLIC_SUPABASE_URL?: string } } }).process?.env?.NEXT_PUBLIC_SUPABASE_URL === 'string'
-    ? (globalThis as unknown as { process?: { env?: { NEXT_PUBLIC_SUPABASE_URL?: string } } }).process?.env?.NEXT_PUBLIC_SUPABASE_URL
-    : ''),
-  NEXT_PUBLIC_SUPABASE_ANON_KEY: (typeof (globalThis as unknown as { process?: unknown }).process !== 'undefined' && typeof (globalThis as unknown as { process?: { env?: { NEXT_PUBLIC_SUPABASE_ANON_KEY?: string } } }).process?.env?.NEXT_PUBLIC_SUPABASE_ANON_KEY === 'string'
-    ? (globalThis as unknown as { process?: { env?: { NEXT_PUBLIC_SUPABASE_ANON_KEY?: string } } }).process?.env?.NEXT_PUBLIC_SUPABASE_ANON_KEY
-    : ''),
+  NODE_ENV:
+    typeof (globalThis as unknown as { process?: unknown }).process !==
+      'undefined' &&
+    typeof (
+      globalThis as unknown as { process?: { env?: { NODE_ENV?: string } } }
+    ).process?.env?.NODE_ENV === 'string'
+      ? (globalThis as unknown as { process?: { env?: { NODE_ENV?: string } } })
+          .process?.env?.NODE_ENV
+      : 'production',
+  NEXT_PUBLIC_APP_URL:
+    typeof (globalThis as unknown as { process?: unknown }).process !==
+      'undefined' &&
+    typeof (
+      globalThis as unknown as {
+        process?: { env?: { NEXT_PUBLIC_APP_URL?: string } };
+      }
+    ).process?.env?.NEXT_PUBLIC_APP_URL === 'string'
+      ? (
+          globalThis as unknown as {
+            process?: { env?: { NEXT_PUBLIC_APP_URL?: string } };
+          }
+        ).process?.env?.NEXT_PUBLIC_APP_URL
+      : '',
+  NEXT_PUBLIC_SUPABASE_URL:
+    typeof (globalThis as unknown as { process?: unknown }).process !==
+      'undefined' &&
+    typeof (
+      globalThis as unknown as {
+        process?: { env?: { NEXT_PUBLIC_SUPABASE_URL?: string } };
+      }
+    ).process?.env?.NEXT_PUBLIC_SUPABASE_URL === 'string'
+      ? (
+          globalThis as unknown as {
+            process?: { env?: { NEXT_PUBLIC_SUPABASE_URL?: string } };
+          }
+        ).process?.env?.NEXT_PUBLIC_SUPABASE_URL
+      : '',
+  NEXT_PUBLIC_SUPABASE_ANON_KEY:
+    typeof (globalThis as unknown as { process?: unknown }).process !==
+      'undefined' &&
+    typeof (
+      globalThis as unknown as {
+        process?: { env?: { NEXT_PUBLIC_SUPABASE_ANON_KEY?: string } };
+      }
+    ).process?.env?.NEXT_PUBLIC_SUPABASE_ANON_KEY === 'string'
+      ? (
+          globalThis as unknown as {
+            process?: { env?: { NEXT_PUBLIC_SUPABASE_ANON_KEY?: string } };
+          }
+        ).process?.env?.NEXT_PUBLIC_SUPABASE_ANON_KEY
+      : '',
 } as const;
 
 // Safe environment getter function
 export function getEnv(key: string, defaultValue = ''): string {
-  const env = (typeof (globalThis as unknown as { process?: unknown }).process !== 'undefined' && (globalThis as unknown as { process?: { env?: { [key: string]: string } } }).process?.env)
-    ? (globalThis as unknown as { process?: { env?: { [key: string]: string } } }).process?.env
-    : undefined;
+  const env =
+    typeof (globalThis as unknown as { process?: unknown }).process !==
+      'undefined' &&
+    (globalThis as unknown as { process?: { env?: { [key: string]: string } } })
+      .process?.env
+      ? (
+          globalThis as unknown as {
+            process?: { env?: { [key: string]: string } };
+          }
+        ).process?.env
+      : undefined;
   const value = env && typeof env[key] === 'string' ? env[key] : undefined;
   return value !== undefined ? value : defaultValue;
 }
@@ -76,14 +127,22 @@ export function isProduction(): boolean {
 }
 
 // Export the polyfilled process object
-export const processEnv = (typeof (globalThis as unknown as { process?: unknown }).process !== 'undefined' && (globalThis as unknown as { process?: { env?: { [key: string]: string } } }).process?.env)
-  ? (globalThis as unknown as { process?: { env?: { [key: string]: string } } }).process?.env
-  : {
-      NODE_ENV: 'production',
-      NEXT_PUBLIC_APP_URL: '',
-      NEXT_PUBLIC_SUPABASE_URL: '',
-      NEXT_PUBLIC_SUPABASE_ANON_KEY: '',
-    };
+export const processEnv =
+  typeof (globalThis as unknown as { process?: unknown }).process !==
+    'undefined' &&
+  (globalThis as unknown as { process?: { env?: { [key: string]: string } } })
+    .process?.env
+    ? (
+        globalThis as unknown as {
+          process?: { env?: { [key: string]: string } };
+        }
+      ).process?.env
+    : {
+        NODE_ENV: 'production',
+        NEXT_PUBLIC_APP_URL: '',
+        NEXT_PUBLIC_SUPABASE_URL: '',
+        NEXT_PUBLIC_SUPABASE_ANON_KEY: '',
+      };
 
 // Environment polyfill loaded
 

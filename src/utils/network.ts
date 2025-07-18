@@ -5,9 +5,12 @@
  * Returns true if navigator.onLine is available and true, otherwise assumes online in non-browser environments.
  */
 export async function checkOnline(): Promise<boolean> {
-  if (typeof navigator !== 'undefined' && typeof navigator.onLine !== 'undefined') {
+  if (
+    typeof navigator !== 'undefined' &&
+    typeof navigator.onLine !== 'undefined'
+  ) {
     return navigator.onLine;
   }
   // Assume online if not in a browser
   return true;
-} 
+}

@@ -6,7 +6,7 @@ export default function OffworldLab() {
   const [queuedVotes, setQueuedVotes] = useState(0);
   const [dao] = useState(() => new DelayTolerantDAO());
 
-  const tickLatency = () => setLatency(l => (l + 1) % 60);
+  const tickLatency = () => setLatency((l) => (l + 1) % 60);
 
   return (
     <div className="p-4 space-y-4">
@@ -17,8 +17,12 @@ export default function OffworldLab() {
         <button
           className="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700"
           onClick={() => {
-            dao.submitVote({ proposalId: 'demo', voter: 'tester', support: true });
-            setQueuedVotes(v => v + 1);
+            dao.submitVote({
+              proposalId: 'demo',
+              voter: 'tester',
+              support: true,
+            });
+            setQueuedVotes((v) => v + 1);
             tickLatency();
           }}
         >

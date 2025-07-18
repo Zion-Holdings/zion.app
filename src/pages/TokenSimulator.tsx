@@ -91,12 +91,20 @@ export default function TokenSimulator() {
       const labels = Array.from({ length: months }, (_, i) => `${i + 1}`);
       const velocities = labels.map(
         (_, i) =>
-          (inputs.activeWallets * (i + 1)) / (forecast[i] || inputs.circulating)
+          (inputs.activeWallets * (i + 1)) /
+          (forecast[i] || inputs.circulating),
       );
-      if (chart && typeof (chart as { destroy?: () => void }).destroy === 'function') (chart as { destroy: () => void }).destroy();
+      if (
+        chart &&
+        typeof (chart as { destroy?: () => void }).destroy === 'function'
+      )
+        (chart as { destroy: () => void }).destroy();
       // Instead of 'new (Chart as any)', use a type guard for Chart constructor
       if (typeof Chart === 'function') {
-        chart = new (Chart as new (ctx: HTMLCanvasElement, config: unknown) => unknown)(velocityChart.current as HTMLCanvasElement, {
+        chart = new (Chart as new (
+          ctx: HTMLCanvasElement,
+          config: unknown,
+        ) => unknown)(velocityChart.current as HTMLCanvasElement, {
           type: 'line',
           data: {
             labels,
@@ -120,7 +128,11 @@ export default function TokenSimulator() {
       }
     }
     return () => {
-      if (chart && typeof (chart as { destroy?: () => void }).destroy === 'function') (chart as { destroy: () => void }).destroy();
+      if (
+        chart &&
+        typeof (chart as { destroy?: () => void }).destroy === 'function'
+      )
+        (chart as { destroy: () => void }).destroy();
     };
   }, [forecast, inputs.activeWallets, months, inputs.circulating]);
 
@@ -132,10 +144,17 @@ export default function TokenSimulator() {
       if (!supplyChart.current || typeof window.Chart !== 'function') return;
       const Chart = window.Chart as unknown as typeof import('chart.js');
       const labels = Array.from({ length: months }, (_, i) => `${i + 1}`);
-      if (chart && typeof (chart as { destroy?: () => void }).destroy === 'function') (chart as { destroy: () => void }).destroy();
+      if (
+        chart &&
+        typeof (chart as { destroy?: () => void }).destroy === 'function'
+      )
+        (chart as { destroy: () => void }).destroy();
       // Instead of 'new (Chart as any)', use a type guard for Chart constructor
       if (typeof Chart === 'function') {
-        chart = new (Chart as new (ctx: HTMLCanvasElement, config: unknown) => unknown)(supplyChart.current as HTMLCanvasElement, {
+        chart = new (Chart as new (
+          ctx: HTMLCanvasElement,
+          config: unknown,
+        ) => unknown)(supplyChart.current as HTMLCanvasElement, {
           type: 'line',
           data: {
             labels,
@@ -159,7 +178,11 @@ export default function TokenSimulator() {
       }
     }
     return () => {
-      if (chart && typeof (chart as { destroy?: () => void }).destroy === 'function') (chart as { destroy: () => void }).destroy();
+      if (
+        chart &&
+        typeof (chart as { destroy?: () => void }).destroy === 'function'
+      )
+        (chart as { destroy: () => void }).destroy();
     };
   }, [forecast, months]);
 
@@ -172,8 +195,14 @@ export default function TokenSimulator() {
       });
       setGptOutput(result);
     } catch {
-      logErrorToProduction(err instanceof Error ? error : String(err), err instanceof Error ? err : undefined, { context: 'TokenSimulator.handleGPT' });
-      const suggestion = await suggestFix(err instanceof Error ? err : new Error(String(err)));
+      logErrorToProduction(
+        err instanceof Error ? error : String(err),
+        err instanceof Error ? err : undefined,
+        { context: 'TokenSimulator.handleGPT' },
+      );
+      const suggestion = await suggestFix(
+        err instanceof Error ? err : new Error(String(err)),
+      );
       setGptOutput(suggestion);
       toast({ title: 'GPT analysis failed', variant: 'destructive' });
     }

@@ -36,10 +36,14 @@ export function PerformanceMonitor() {
     if (!show) return;
     const collectMetrics = () => {
       if (typeof window === 'undefined') return;
-      const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+      const navigation = performance.getEntriesByType(
+        'navigation',
+      )[0] as PerformanceNavigationTiming;
       const newMetrics: PerformanceMetrics = {
         loadTime: navigation.loadEventEnd - navigation.loadEventStart,
-        domContentLoaded: navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart,
+        domContentLoaded:
+          navigation.domContentLoadedEventEnd -
+          navigation.domContentLoadedEventStart,
         firstContentfulPaint: 0,
         largestContentfulPaint: 0,
         cumulativeLayoutShift: 0,
@@ -68,8 +72,12 @@ export function PerformanceMonitor() {
         let clsValue = 0;
         new PerformanceObserver((list) => {
           for (const entry of list.getEntries()) {
-            if (!(entry as PerformanceEntry & { hadRecentInput?: boolean }).hadRecentInput) {
-              clsValue += (entry as PerformanceEntry & { value?: number }).value ?? 0;
+            if (
+              !(entry as PerformanceEntry & { hadRecentInput?: boolean })
+                .hadRecentInput
+            ) {
+              clsValue +=
+                (entry as PerformanceEntry & { value?: number }).value ?? 0;
             }
           }
           newMetrics.cumulativeLayoutShift = clsValue;
@@ -150,28 +158,48 @@ export function PerformanceMonitor() {
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-xs">FCP</span>
-                <Badge className={getScoreColor(metrics.firstContentfulPaint, 1800, 3000)}>
+                <Badge
+                  className={getScoreColor(
+                    metrics.firstContentfulPaint,
+                    1800,
+                    3000,
+                  )}
+                >
                   {metrics.firstContentfulPaint.toFixed(0)}ms
                 </Badge>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-xs">LCP</span>
-                <Badge className={getScoreColor(metrics.largestContentfulPaint, 2500, 4000)}>
+                <Badge
+                  className={getScoreColor(
+                    metrics.largestContentfulPaint,
+                    2500,
+                    4000,
+                  )}
+                >
                   {metrics.largestContentfulPaint.toFixed(0)}ms
                 </Badge>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-xs">CLS</span>
-                <Badge className={getScoreColor(metrics.cumulativeLayoutShift * 1000, 100, 250)}>
+                <Badge
+                  className={getScoreColor(
+                    metrics.cumulativeLayoutShift * 1000,
+                    100,
+                    250,
+                  )}
+                >
                   {metrics.cumulativeLayoutShift.toFixed(3)}
                 </Badge>
               </div>
             </>
           ) : (
-            <div className="text-xs text-muted-foreground">Collecting metrics...</div>
+            <div className="text-xs text-muted-foreground">
+              Collecting metrics...
+            </div>
           )}
         </CardContent>
       </Card>
     </div>
   );
-} 
+}

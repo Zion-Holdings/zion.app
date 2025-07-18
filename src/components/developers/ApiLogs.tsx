@@ -1,37 +1,46 @@
-
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import { List, RefreshCw } from '@/components/ui/icons';
-import { format } from "date-fns";
+import { format } from 'date-fns';
 
+import { useApiKeys } from '@/hooks/useApiKeys';
 
-
-import { useApiKeys } from "@/hooks/useApiKeys";
-
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Badge } from "@/components/ui/badge";
-import { DynamicApiLogsChart as ApiLogsChart } from "@/utils/dynamicComponents";
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import { Badge } from '@/components/ui/badge';
+import { DynamicApiLogsChart as ApiLogsChart } from '@/utils/dynamicComponents';
 
 export function ApiLogs() {
   const { logs, totalLogs, loading, fetchApiLogs } = useApiKeys();
   const [pageSize, setPageSize] = useState(25);
   const [currentPage, setCurrentPage] = useState(0);
-  
+
   // Load logs on mount and when pagination changes
   useEffect(() => {
     fetchApiLogs(pageSize, currentPage * pageSize);
   }, [pageSize, currentPage, fetchApiLogs]);
-  
+
   const handleRefresh = () => {
     fetchApiLogs(pageSize, currentPage * pageSize);
   };
-  
+
   // Helper to format the timestamp
   const formatTimestamp = (_timestamp: string) => {
     return format(new Date(timestamp), 'yyyy-MM-dd HH:mm:ss');
   };
-  
+
   // Helper to get badge color based on status code
   const getStatusBadge = (_statusCode: number) => {
     if (statusCode >= 200 && statusCode < 300) {
@@ -44,7 +53,7 @@ export function ApiLogs() {
       return <Badge className="bg-blue-700">Other</Badge>;
     }
   };
-  
+
   // Calculate pagination info
   const totalPages = Math.ceil(totalLogs / pageSize);
   const hasNextPage = currentPage < totalPages - 1;
@@ -60,7 +69,7 @@ export function ApiLogs() {
           View logs of requests made using your API keys.
         </CardDescription>
       </CardHeader>
-      
+
       <CardContent>
         <div className="flex justify-between items-center mb-6">
           <div className="flex items-center space-x-2">
@@ -84,7 +93,7 @@ export function ApiLogs() {
             </Select>
             <span className="text-sm text-zinc-400">per page</span>
           </div>
-          
+
           <Button variant="outline" size="sm" onClick={handleRefresh}>
             <RefreshCw size={14} className="mr-1" /> Refresh
           </Button>
@@ -101,12 +110,24 @@ export function ApiLogs() {
           <table className="w-full border-collapse">
             <thead>
               <tr className="border-b border-zinc-800">
-                <th className="px-4 py-2 text-left font-medium text-zinc-300">Timestamp</th>
-                <th className="px-4 py-2 text-left font-medium text-zinc-300">Method</th>
-                <th className="px-4 py-2 text-left font-medium text-zinc-300">Endpoint</th>
-                <th className="px-4 py-2 text-left font-medium text-zinc-300">Status</th>
-                <th className="px-4 py-2 text-left font-medium text-zinc-300">Response Time</th>
-                <th className="px-4 py-2 text-left font-medium text-zinc-300">IP Address</th>
+                <th className="px-4 py-2 text-left font-medium text-zinc-300">
+                  Timestamp
+                </th>
+                <th className="px-4 py-2 text-left font-medium text-zinc-300">
+                  Method
+                </th>
+                <th className="px-4 py-2 text-left font-medium text-zinc-300">
+                  Endpoint
+                </th>
+                <th className="px-4 py-2 text-left font-medium text-zinc-300">
+                  Status
+                </th>
+                <th className="px-4 py-2 text-left font-medium text-zinc-300">
+                  Response Time
+                </th>
+                <th className="px-4 py-2 text-left font-medium text-zinc-300">
+                  IP Address
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -133,46 +154,59 @@ export function ApiLogs() {
                 </tr>
               ) : (
                 logs.map((log) => (
-                  <tr key={log.id} className="border-b border-zinc-800 hover:bg-zinc-800/40">
-                    <td className="px-4 py-3 text-sm">{formatTimestamp(log.created_at)}</td>
+                  <tr
+                    key={log.id}
+                    className="border-b border-zinc-800 hover:bg-zinc-800/40"
+                  >
+                    <td className="px-4 py-3 text-sm">
+                      {formatTimestamp(log.created_at)}
+                    </td>
                     <td className="px-4 py-3">
-                      <Badge 
+                      <Badge
                         variant="outline"
                         className={
-                          log.method === 'GET' 
-                            ? "border-green-500 text-green-400" 
-                            : log.method === 'POST' 
-                            ? "border-blue-500 text-blue-400"
-                            : log.method === 'PUT'
-                            ? "border-yellow-500 text-yellow-400"
-                            : "border-red-500 text-red-400"
+                          log.method === 'GET'
+                            ? 'border-green-500 text-green-400'
+                            : log.method === 'POST'
+                              ? 'border-blue-500 text-blue-400'
+                              : log.method === 'PUT'
+                                ? 'border-yellow-500 text-yellow-400'
+                                : 'border-red-500 text-red-400'
                         }
                       >
                         {log.method}
                       </Badge>
                     </td>
-                    <td className="px-4 py-3 font-mono text-sm text-zinc-400">{log.endpoint}</td>
+                    <td className="px-4 py-3 font-mono text-sm text-zinc-400">
+                      {log.endpoint}
+                    </td>
                     <td className="px-4 py-3">
                       <div className="flex items-center">
-                        <span className="font-mono mr-2">{log.status_code}</span>
+                        <span className="font-mono mr-2">
+                          {log.status_code}
+                        </span>
                         {getStatusBadge(log.status_code)}
                       </div>
                     </td>
                     <td className="px-4 py-3 text-sm">
                       {log.response_time_ms ? `${log.response_time_ms}ms` : '-'}
                     </td>
-                    <td className="px-4 py-3 text-sm">{log.ip_address || '-'}</td>
+                    <td className="px-4 py-3 text-sm">
+                      {log.ip_address || '-'}
+                    </td>
                   </tr>
                 ))
               )}
             </tbody>
           </table>
         </div>
-        
+
         {logs.length > 0 && (
           <div className="mt-4 flex justify-between items-center">
             <div className="text-sm text-zinc-500">
-              Showing {currentPage * pageSize + 1} to {Math.min((currentPage + 1) * pageSize, totalLogs)} of {totalLogs} logs
+              Showing {currentPage * pageSize + 1} to{' '}
+              {Math.min((currentPage + 1) * pageSize, totalLogs)} of {totalLogs}{' '}
+              logs
             </div>
             <div className="flex space-x-2">
               <Button

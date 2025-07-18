@@ -7,7 +7,6 @@ import { AdminLayout } from '@/components/admin/AdminLayout';
 import { encryptData, decryptData } from '@/utils/vaultEncryption';
 import { logInfo } from '@/utils/productionLogger';
 
-
 interface VaultData {
   daoKey: string;
   treasuryAddress: string;
@@ -30,9 +29,11 @@ export default function FounderBackupVault() {
   const [encrypted, setEncrypted] = useState<Uint8Array | null>(null);
   const [failCount, setFailCount] = useState(0);
 
-  const handleChange = (field: keyof VaultData) => (_e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
-    setData({ ...data, [field]: _e.target.value });
-  };
+  const handleChange =
+    (field: keyof VaultData) =>
+    (_e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+      setData({ ...data, [field]: _e.target.value });
+    };
 
   const allFilled = Object.values(data).every(Boolean);
 
@@ -40,7 +41,7 @@ export default function FounderBackupVault() {
     if (!password) return alert('Set a password');
     const encryptedData = await encryptData(JSON.stringify(data), password);
     setEncrypted(encryptedData);
-    
+
     try {
       // Dynamic import to avoid bundling JSZip on the server
       const JSZip = (await import('jszip')).default;
@@ -51,7 +52,9 @@ export default function FounderBackupVault() {
     } catch (error) {
       console.log('Failed to create ZIP:', error);
       // Fallback: save as encrypted file directly
-      const blob = new Blob([encryptedData], { type: 'application/octet-stream' });
+      const blob = new Blob([encryptedData], {
+        type: 'application/octet-stream',
+      });
       saveAs(blob, 'zion_backup.enc');
     }
   };
@@ -81,7 +84,7 @@ export default function FounderBackupVault() {
       const arrayBuffer = new ArrayBuffer(encrypted.buffer.byteLength);
       new Uint8Array(arrayBuffer).set(new Uint8Array(encrypted.buffer));
       const decrypted = await decryptData(arrayBuffer, pass);
-      logInfo('Decrypted:', { data:  { data: decrypted } });
+      logInfo('Decrypted:', { data: { data: decrypted } });
       alert('Recovery successful');
       setFailCount(0);
     } catch {
@@ -99,26 +102,65 @@ export default function FounderBackupVault() {
     <AdminLayout>
       <div className="space-y-6">
         <h1 className="text-2xl font-bold">Founder Backup Vault</h1>
-        <p className="text-sm text-muted-foreground">Securely store critical recovery data. All fields are encrypted with your password.</p>
+        <p className="text-sm text-muted-foreground">
+          Securely store critical recovery data. All fields are encrypted with
+          your password.
+        </p>
 
         <div className="grid gap-4">
-          <Textarea placeholder="DAO Genesis Key / Multisig fallback" value={data.daoKey} onChange={handleChange('daoKey')} />
-          <Textarea placeholder="Treasury recovery address" value={data.treasuryAddress} onChange={handleChange('treasuryAddress')} />
-          <Textarea placeholder="ZION$ initial distribution" value={data.distribution} onChange={handleChange('distribution')} />
-          <Textarea placeholder="Manifesto v1-v5" value={data.manifesto} onChange={handleChange('manifesto')} />
-          <Textarea placeholder="Whitepaper + roadmap history" value={data.whitepaper} onChange={handleChange('whitepaper')} />
-          <Textarea placeholder="Original GPT prompt base (ZionGPT Core)" value={data.promptBase} onChange={handleChange('promptBase')} />
+          <Textarea
+            placeholder="DAO Genesis Key / Multisig fallback"
+            value={data.daoKey}
+            onChange={handleChange('daoKey')}
+          />
+          <Textarea
+            placeholder="Treasury recovery address"
+            value={data.treasuryAddress}
+            onChange={handleChange('treasuryAddress')}
+          />
+          <Textarea
+            placeholder="ZION$ initial distribution"
+            value={data.distribution}
+            onChange={handleChange('distribution')}
+          />
+          <Textarea
+            placeholder="Manifesto v1-v5"
+            value={data.manifesto}
+            onChange={handleChange('manifesto')}
+          />
+          <Textarea
+            placeholder="Whitepaper + roadmap history"
+            value={data.whitepaper}
+            onChange={handleChange('whitepaper')}
+          />
+          <Textarea
+            placeholder="Original GPT prompt base (ZionGPT Core)"
+            value={data.promptBase}
+            onChange={handleChange('promptBase')}
+          />
         </div>
 
         <div className="flex items-center gap-2">
-          <Input type="password" placeholder="Vault password" value={password} onChange={(e) => setPassword(e.target.value)} className="max-w-xs" />
-          <span className="text-sm">{allFilled ? '✅ All items added' : '❌ Missing items'}</span>
+          <Input
+            type="password"
+            placeholder="Vault password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="max-w-xs"
+          />
+          <span className="text-sm">
+            {allFilled ? '✅ All items added' : '❌ Missing items'}
+          </span>
         </div>
 
         <div className="flex gap-4">
           <Button onClick={handleExport}>Download Encrypted ZIP</Button>
-          <Button variant="secondary" onClick={handleExportPdf}>Export Checklist PDF</Button>
-          <Button variant="outline" onClick={simulateRecovery}>Simulate Recovery</Button>
+          <Button variant="secondary" onClick={handleExportPdf}>
+            Export Checklist PDF
+          </Button>
+          <Button variant="outline" onClick={simulateRecovery}>
+            Simulate Recovery
+          </Button>
         </div>
       </div>
     </AdminLayout>

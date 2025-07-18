@@ -1,7 +1,5 @@
-
 import React from 'react';
 import { FileText } from '@/components/ui/icons';
-
 
 import type { ResumeOption } from '../resume-selector/types';
 import { ResumePreviewCard } from './ResumePreviewCard';
@@ -20,7 +18,7 @@ export function SelectResumeSection({
   selectedResume,
   handleResumeSelect,
   handleDownloadResume,
-  isLoading
+  isLoading,
 }: SelectResumeSectionProps) {
   return (
     <div className="space-y-2">
@@ -32,8 +30,8 @@ export function SelectResumeSection({
             <button
               key={option.id}
               className={`w-full text-left p-3 rounded-md transition ${
-                selectedResume?.id === option.id 
-                  ? 'bg-zion-purple/20 border border-zion-purple' 
+                selectedResume?.id === option.id
+                  ? 'bg-zion-purple/20 border border-zion-purple'
                   : 'bg-zion-blue-dark/30 hover:bg-zion-blue-dark/50'
               }`}
               onClick={() => handleResumeSelect(option.id)}
@@ -44,7 +42,7 @@ export function SelectResumeSection({
               </div>
             </button>
           ))}
-          
+
           {selectedResume?.type === 'ai_resume' && selectedResume.resume && (
             <ResumePreviewCard
               resume={selectedResume.resume as Resume}

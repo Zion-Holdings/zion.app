@@ -32,8 +32,8 @@ export class MailchimpService {
       headers: {
         Authorization: `apikey ${this.apiKey}`,
         'Content-Type': 'application/json',
-        ...(options.headers || {})
-      }
+        ...(options.headers || {}),
+      },
     });
 
     if (!res.ok) {
@@ -52,8 +52,8 @@ export class MailchimpService {
       body: JSON.stringify({
         email_address: member.email,
         status: 'subscribed',
-        merge_fields: member.mergeFields || {}
-      })
+        merge_fields: member.mergeFields || {},
+      }),
     });
   }
 
@@ -62,14 +62,17 @@ export class MailchimpService {
    */
   async upsertMember(member: MailchimpMember) {
     const crypto = await import('crypto');
-    const hash = crypto.createHash('md5').update(member.email.toLowerCase()).digest('hex');
+    const hash = crypto
+      .createHash('md5')
+      .update(member.email.toLowerCase())
+      .digest('hex');
     return this.request(`/lists/${this.listId}/members/${hash}`, {
       method: 'PUT',
       body: JSON.stringify({
         email_address: member.email,
         status_if_new: 'subscribed',
-        merge_fields: member.mergeFields || {}
-      })
+        merge_fields: member.mergeFields || {},
+      }),
     });
   }
 
@@ -81,7 +84,7 @@ export class MailchimpService {
   async sendWelcomeEmail(email: string, coupon: string) {
     return this.request(`/automations/welcome/emails/1/queue`, {
       method: 'POST',
-      body: JSON.stringify({ email_address: email, coupon })
+      body: JSON.stringify({ email_address: email, coupon }),
     });
   }
 

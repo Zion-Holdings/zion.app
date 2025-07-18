@@ -1,16 +1,17 @@
-
-import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
-import {logErrorToProduction} from '@/utils/productionLogger';
+import React, { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { logErrorToProduction } from '@/utils/productionLogger';
 import { Sparkles } from 'lucide-react';
 import {
   getClientBudgetSuggestion,
-  trackPricingSuggestion
-} from "@/services/pricingSuggestionService";
-import type { PricingSuggestion, ClientBudgetParams } from "@/services/pricingSuggestionService";
-import { PricingSuggestionBox } from "./PricingSuggestionBox";
-import { useAuth } from "@/hooks/useAuth";
-
+  trackPricingSuggestion,
+} from '@/services/pricingSuggestionService';
+import type {
+  PricingSuggestion,
+  ClientBudgetParams,
+} from '@/services/pricingSuggestionService';
+import { PricingSuggestionBox } from './PricingSuggestionBox';
+import { useAuth } from '@/hooks/useAuth';
 
 interface ClientBudgetRecommenderProps {
   jobTitle: string;
@@ -21,7 +22,9 @@ interface ClientBudgetRecommenderProps {
   onSuggestionApplied: (minValue: number, maxValue: number) => void;
 }
 
-export const ClientBudgetRecommender: React.FC<ClientBudgetRecommenderProps> = ({
+export const ClientBudgetRecommender: React.FC<
+  ClientBudgetRecommenderProps
+> = ({
   jobTitle,
   category,
   timeline,
@@ -52,7 +55,9 @@ export const ClientBudgetRecommender: React.FC<ClientBudgetRecommenderProps> = (
       const result = await getClientBudgetSuggestion(params);
       setSuggestion(result);
     } catch {
-      logErrorToProduction('Error generating budget suggestion:', { data: error });
+      logErrorToProduction('Error generating budget suggestion:', {
+        data: error,
+      });
     } finally {
       setIsLoading(false);
     }
@@ -61,15 +66,15 @@ export const ClientBudgetRecommender: React.FC<ClientBudgetRecommenderProps> = (
   const handleApplySuggestion = () => {
     if (suggestion) {
       onSuggestionApplied(suggestion.minRate, suggestion.maxRate);
-      
+
       // Track this suggestion application
       if (user && user.id) {
         trackPricingSuggestion({
           userId: user.id,
-          suggestionType: "client",
+          suggestionType: 'client',
           suggestedMin: suggestion.minRate,
           suggestedMax: suggestion.maxRate,
-          accepted: true
+          accepted: true,
         });
       }
     }

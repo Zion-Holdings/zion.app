@@ -4,7 +4,7 @@ export function ExportsSection() {
   const items = [
     'Auto-email summary to attendees',
     'Web3 wallet connect for VIP streams',
-    'Claimable NFT ticket & proof-of-attendance'
+    'Claimable NFT ticket & proof-of-attendance',
   ];
   return (
     <section className="py-12 bg-zion-blue-light text-foreground" id="exports">

@@ -1,16 +1,11 @@
-import React, {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-} from "react";
-import type { ReactNode } from "react";
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import type { ReactNode } from 'react';
 import { useRouter } from 'next/router';
-import {logErrorToProduction} from '@/utils/productionLogger';
-import { toast } from "@/hooks/use-toast";
+import { logErrorToProduction } from '@/utils/productionLogger';
+import { toast } from '@/hooks/use-toast';
 import axios from 'axios';
 
-export type WizardStep = "Services" | "Details" | "Success";
+export type WizardStep = 'Services' | 'Details' | 'Success';
 
 export interface RequestQuoteWizardContextType {
   step: WizardStep;
@@ -22,7 +17,7 @@ export interface RequestQuoteWizardContextType {
 }
 
 const defaultContext: RequestQuoteWizardContextType = {
-  step: "Services",
+  step: 'Services',
   selectedService: null,
   _goToStep: () => {},
   _selectService: () => {},
@@ -30,14 +25,19 @@ const defaultContext: RequestQuoteWizardContextType = {
   _submitQuote: async () => {},
 };
 
-const RequestQuoteWizardContext = createContext<RequestQuoteWizardContextType>(defaultContext);
+const RequestQuoteWizardContext =
+  createContext<RequestQuoteWizardContextType>(defaultContext);
 
 export function useRequestQuoteWizard(): RequestQuoteWizardContextType {
   return useContext(RequestQuoteWizardContext);
 }
 
-export function RequestQuoteWizardProvider({ children }: { children: ReactNode }) {
-  const [step, setStep] = useState<WizardStep>("Services");
+export function RequestQuoteWizardProvider({
+  children,
+}: {
+  children: ReactNode;
+}) {
+  const [step, setStep] = useState<WizardStep>('Services');
   const [selectedService, setSelectedService] = useState<string | null>(null);
   const router = useRouter();
 
@@ -45,12 +45,12 @@ export function RequestQuoteWizardProvider({ children }: { children: ReactNode }
 
   const selectService = (_serviceId: string) => {
     setSelectedService(serviceId);
-    goToStep("Details");
+    goToStep('Details');
   };
 
   const startQuote = (_serviceId: string) => {
     setSelectedService(serviceId);
-    goToStep("Details");
+    goToStep('Details');
   };
 
   const submitQuote = async (_message: string) => {
@@ -60,9 +60,9 @@ export function RequestQuoteWizardProvider({ children }: { children: ReactNode }
         service_id: selectedService,
         user_message: message,
       });
-      toast.success("Quote request submitted");
-      router.push("/dashboard/quotes");
-      setStep("Success");
+      toast.success('Quote request submitted');
+      router.push('/dashboard/quotes');
+      setStep('Success');
     } catch {
       logErrorToProduction('Failed to submit quote', { data: error });
       toast({ title: 'Error submitting quote', variant: 'destructive' });
@@ -70,8 +70,12 @@ export function RequestQuoteWizardProvider({ children }: { children: ReactNode }
   };
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      (window as Window & { wizardState?: { step: WizardStep; selectedService: string | null } }).wizardState = { step, selectedService };
+    if (typeof window !== 'undefined') {
+      (
+        window as Window & {
+          wizardState?: { step: WizardStep; selectedService: string | null };
+        }
+      ).wizardState = { step, selectedService };
     }
   }, [step, selectedService]);
 

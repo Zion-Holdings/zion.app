@@ -1,26 +1,34 @@
 import React from 'react';
-import { AlertTriangle, Home, RefreshCw, Settings } from '@/components/ui/icons';
+import {
+  AlertTriangle,
+  Home,
+  RefreshCw,
+  Settings,
+} from '@/components/ui/icons';
 import Link from 'next/link';
 import { ErrorBoundary } from 'react-error-boundary';
 import type { FallbackProps } from 'react-error-boundary';
 
-
-
-
-
-import {logErrorToProduction} from '@/utils/productionLogger';
-import { logInfo, logErrorToProduction as prodLogError } from '@/utils/productionLogger';
-
+import { logErrorToProduction } from '@/utils/productionLogger';
+import {
+  logInfo,
+  logErrorToProduction as prodLogError,
+} from '@/utils/productionLogger';
 
 interface PageErrorFallbackProps extends FallbackProps {
   pageName?: string | undefined;
 }
 
-function PageErrorFallback({ error, resetErrorBoundary, pageName }: PageErrorFallbackProps) {
-  const isAuthConfigError = error?.message?.includes('Auth0') || 
-                           error?.message?.includes('AUTH0') ||
-                           error?.message?.includes('authentication') ||
-                           error?.message?.includes('environment');
+function PageErrorFallback({
+  error,
+  resetErrorBoundary,
+  pageName,
+}: PageErrorFallbackProps) {
+  const isAuthConfigError =
+    error?.message?.includes('Auth0') ||
+    error?.message?.includes('AUTH0') ||
+    error?.message?.includes('authentication') ||
+    error?.message?.includes('environment');
 
   const handleRefresh = () => {
     if (resetErrorBoundary) {
@@ -43,10 +51,9 @@ function PageErrorFallback({ error, resetErrorBoundary, pageName }: PageErrorFal
               {pageName ? `${pageName} Unavailable` : 'Page Unavailable'}
             </h1>
             <p className="text-gray-600">
-              {isAuthConfigError 
+              {isAuthConfigError
                 ? 'This page cannot load due to missing authentication configuration'
-                : 'An unexpected error occurred while loading this page'
-              }
+                : 'An unexpected error occurred while loading this page'}
             </p>
           </div>
 
@@ -55,10 +62,13 @@ function PageErrorFallback({ error, resetErrorBoundary, pageName }: PageErrorFal
               <div className="flex">
                 <Settings className="h-5 w-5 text-yellow-600 mt-0.5 mr-3" />
                 <div>
-                  <h3 className="font-semibold text-yellow-800 mb-1">Configuration Required</h3>
+                  <h3 className="font-semibold text-yellow-800 mb-1">
+                    Configuration Required
+                  </h3>
                   <p className="text-yellow-700 text-sm">
-                    This application requires Auth0 authentication to be properly configured. 
-                    Please contact your system administrator.
+                    This application requires Auth0 authentication to be
+                    properly configured. Please contact your system
+                    administrator.
                   </p>
                 </div>
               </div>
@@ -78,15 +88,15 @@ function PageErrorFallback({ error, resetErrorBoundary, pageName }: PageErrorFal
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 mb-6">
-            <button 
+            <button
               onClick={handleRefresh}
               className="flex-1 bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center px-4 py-2 rounded-lg font-medium transition-colors"
             >
               <RefreshCw className="w-4 h-4 mr-2" />
               Try Again
             </button>
-            
-            <Link 
+
+            <Link
               href="/"
               className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 flex items-center justify-center px-4 py-2 rounded-lg font-medium transition-colors"
             >
@@ -97,9 +107,14 @@ function PageErrorFallback({ error, resetErrorBoundary, pageName }: PageErrorFal
 
           {/* Navigation Options */}
           <div className="border-t pt-6">
-            <h3 className="font-semibold text-gray-900 mb-3">You can also visit:</h3>
+            <h3 className="font-semibold text-gray-900 mb-3">
+              You can also visit:
+            </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-              <Link href="/marketplace" className="text-blue-600 hover:underline">
+              <Link
+                href="/marketplace"
+                className="text-blue-600 hover:underline"
+              >
                 Marketplace
               </Link>
               <Link href="/talent" className="text-blue-600 hover:underline">
@@ -119,8 +134,8 @@ function PageErrorFallback({ error, resetErrorBoundary, pageName }: PageErrorFal
         <div className="bg-gray-800 text-white rounded-lg p-6 text-center">
           <p className="mb-3">Need help? Contact our support team</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a 
-              href="mailto:support@zion.tech" 
+            <a
+              href="mailto:support@zion.tech"
               className="text-blue-400 hover:underline"
             >
               support@zion.tech
@@ -141,25 +156,34 @@ interface PageErrorBoundaryProps {
   fallback?: React.ComponentType<FallbackProps>;
 }
 
-export default function PageErrorBoundary({ 
-  children, 
-  pageName, 
-  fallback 
+export default function PageErrorBoundary({
+  children,
+  pageName,
+  fallback,
 }: PageErrorBoundaryProps) {
   const handleError = (error: Error, _errorInfo: React.ErrorInfo) => {
-    prodLogError(`PageErrorBoundary caught error on ${pageName || 'unknown page'}:`, error);
-    
-    logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, {
-      page: pageName || 'unknown',
-      componentStack: errorInfo.componentStack || undefined,
-      errorBoundary: 'PageErrorBoundary',
-      timestamp: new Date().toISOString()
-    });
+    prodLogError(
+      `PageErrorBoundary caught error on ${pageName || 'unknown page'}:`,
+      error,
+    );
+
+    logErrorToProduction(
+      error instanceof Error ? error.message : String(error),
+      error instanceof Error ? error : undefined,
+      {
+        page: pageName || 'unknown',
+        componentStack: errorInfo.componentStack || undefined,
+        errorBoundary: 'PageErrorBoundary',
+        timestamp: new Date().toISOString(),
+      },
+    );
   };
 
-  const FallbackComponent = fallback || ((props: FallbackProps) => (
-    <PageErrorFallback {...props} pageName={pageName} />
-  ));
+  const FallbackComponent =
+    fallback ||
+    ((props: FallbackProps) => (
+      <PageErrorFallback {...props} pageName={pageName} />
+    ));
 
   return (
     <ErrorBoundary
@@ -173,4 +197,4 @@ export default function PageErrorBoundary({
       {children}
     </ErrorBoundary>
   );
-} 
+}

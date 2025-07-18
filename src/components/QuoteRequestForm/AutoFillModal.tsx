@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import {
   Dialog,
   DialogContent,
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
+} from '@/components/ui/dialog';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
+import { Progress } from '@/components/ui/progress';
 
 interface AutoFillModalProps {
   open: boolean;
@@ -23,7 +23,7 @@ export function AutoFillModal({
   onSubmit,
   loading,
 }: AutoFillModalProps) {
-  const [description, setDescription] = useState("");
+  const [description, setDescription] = useState('');
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -75,7 +75,7 @@ export function AutoFillModal({
             disabled={loading || !description.trim()}
             className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white"
           >
-            {loading ? "Matching..." : "Continue"}
+            {loading ? 'Matching...' : 'Continue'}
           </Button>
         </DialogFooter>
       </DialogContent>

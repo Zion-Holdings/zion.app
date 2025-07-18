@@ -21,15 +21,15 @@ export function Navigation({ className }: NavigationProps) {
 
   const navigationItems = [
     { href: '/', label: 'Home' },
-    { 
-      href: '/marketplace', 
+    {
+      href: '/marketplace',
       label: 'Marketplace',
       submenu: [
         { href: '/marketplace', label: 'Overview' },
         { href: '/categories', label: 'Categories' },
         { href: '/talent', label: 'Talent' },
         { href: '/equipment', label: 'Equipment' },
-      ]
+      ],
     },
     {
       href: '/community',
@@ -38,7 +38,7 @@ export function Navigation({ className }: NavigationProps) {
         { href: '/community', label: 'Overview' },
         { href: '/blog', label: 'Blog' },
         { href: '/partners', label: 'Partners' },
-      ]
+      ],
     },
     {
       href: '/resources',
@@ -47,7 +47,7 @@ export function Navigation({ className }: NavigationProps) {
         { href: '/resources/docs', label: 'Docs' },
         { href: '/tutorials', label: 'Tutorials' },
         { href: '/case-studies', label: 'Case Studies' },
-      ]
+      ],
     },
     { href: '/about', label: 'About' },
   ];
@@ -64,12 +64,12 @@ export function Navigation({ className }: NavigationProps) {
             href={item.href}
             className={cn(
               'text-foreground hover:text-primary transition-colors duration-200',
-              isActive(item.href) && 'text-primary font-medium'
+              isActive(item.href) && 'text-primary font-medium',
             )}
           >
             {item.label}
           </Link>
-          
+
           {item.submenu && (
             <div className="absolute top-full left-0 mt-2 w-48 bg-background border border-border rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
               <div className="py-2">
@@ -79,7 +79,7 @@ export function Navigation({ className }: NavigationProps) {
                     href={subItem.href}
                     className={cn(
                       'block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors',
-                      isActive(subItem.href) && 'bg-muted text-primary'
+                      isActive(subItem.href) && 'bg-muted text-primary',
                     )}
                   >
                     {subItem.label}
@@ -92,4 +92,4 @@ export function Navigation({ className }: NavigationProps) {
       ))}
     </nav>
   );
-} 
+}

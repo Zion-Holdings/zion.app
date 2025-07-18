@@ -15,7 +15,11 @@ async function fetchProducts() {
 
 export default function MarketplaceLanding() {
   const router = useRouter(); // Changed from navigate
-  const { data: products = [], error, isError } = useQuery({
+  const {
+    data: products = [],
+    error,
+    isError,
+  } = useQuery({
     queryKey: ['products'],
     queryFn: fetchProducts,
     retry: 1,

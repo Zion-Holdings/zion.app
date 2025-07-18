@@ -21,23 +21,37 @@ export default function VerifyIdentity() {
       <Header />
       <div className="min-h-screen bg-zion-blue px-4 py-8">
         <div className="container mx-auto max-w-lg">
-          <h1 className="text-3xl font-bold text-white mb-6">Verify Identity</h1>
+          <h1 className="text-3xl font-bold text-white mb-6">
+            Verify Identity
+          </h1>
           <Card>
             <CardHeader>
               <CardTitle>KYC Verification</CardTitle>
             </CardHeader>
             <CardContent>
               {submitted ? (
-                <p className="text-green-600">Your documents have been submitted for review.</p>
+                <p className="text-green-600">
+                  Your documents have been submitted for review.
+                </p>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <Label htmlFor="legalName">Full Legal Name</Label>
-                    <Input id="legalName" value={name} onChange={e => setName(e.target.value)} required />
+                    <Input
+                      id="legalName"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      required
+                    />
                   </div>
                   <div>
                     <Label htmlFor="idUpload">Government ID</Label>
-                    <Input id="idUpload" type="file" onChange={e => setIdFile(e.target.files?.[0] || null)} required />
+                    <Input
+                      id="idUpload"
+                      type="file"
+                      onChange={(e) => setIdFile(e.target.files?.[0] || null)}
+                      required
+                    />
                   </div>
                   <Button type="submit">Submit</Button>
                 </form>

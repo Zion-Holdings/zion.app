@@ -1,4 +1,4 @@
-import { SkeletonCard } from "@/components/ui";
+import { SkeletonCard } from '@/components/ui';
 
 export function ListingGridSkeleton({ count = 8 }: { count?: number }) {
   return (

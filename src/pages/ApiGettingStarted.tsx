@@ -4,7 +4,6 @@ import { CodeBlock } from '@/components/developers/CodeBlock';
 import Link from 'next/link';
 
 export function ApiGettingStarted() {
-
   const authExample = `curl -X GET \\
   https://api.ziontechgroup.com/v1/jobs \\
   -H "Authorization: Bearer YOUR_API_KEY"`;

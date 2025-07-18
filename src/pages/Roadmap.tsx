@@ -11,7 +11,11 @@ import { ROADMAP_ITEMS } from '@/data/roadmap';
 import type { RoadmapItem } from '@/data/roadmap';
 import { safeStorage } from '@/utils/safeStorage';
 
-const STATUSES: RoadmapItem['status'][] = ['Planned', 'In Progress', 'Completed'];
+const STATUSES: RoadmapItem['status'][] = [
+  'Planned',
+  'In Progress',
+  'Completed',
+];
 
 function voteWeight(role?: string) {
   if (!role) return 1;
@@ -45,8 +49,8 @@ export default function RoadmapPage() {
     const weight = voteWeight(user.role);
     setItems((prev) =>
       prev.map((item) =>
-        item.id === id ? { ...item, upvotes: item.upvotes + weight } : item
-      )
+        item.id === id ? { ...item, upvotes: item.upvotes + weight } : item,
+      ),
     );
   };
 
@@ -68,7 +72,9 @@ export default function RoadmapPage() {
                       <CardHeader>
                         <CardTitle className="flex justify-between items-start">
                           <span>{f.title}</span>
-                          <span className="text-sm text-muted-foreground">{f.eta}</span>
+                          <span className="text-sm text-muted-foreground">
+                            {f.eta}
+                          </span>
                         </CardTitle>
                       </CardHeader>
                       <CardContent className="space-y-2">

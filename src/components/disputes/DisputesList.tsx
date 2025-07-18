@@ -1,8 +1,7 @@
-
-import React, { useState } from "react";
-import type { Dispute, DisputeStatus } from "@/types/disputes";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import React, { useState } from 'react';
+import type { Dispute, DisputeStatus } from '@/types/disputes';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { ShieldAlert } from '@/components/ui/icons';
 import {
   Table,
@@ -10,12 +9,12 @@ import {
   TableCell,
   TableHead,
   TableHeader,
-  TableRow
-} from "@/components/ui/table";
-import Skeleton from "@/components/ui/skeleton";
-import { formatDistanceToNow } from "date-fns";
+  TableRow,
+} from '@/components/ui/table';
+import Skeleton from '@/components/ui/skeleton';
+import { formatDistanceToNow } from 'date-fns';
 
-import Link from "next/link";
+import Link from 'next/link';
 
 type DisputesListProps = {
   disputes: Dispute[];
@@ -23,24 +22,27 @@ type DisputesListProps = {
 };
 
 export function DisputesList({ disputes, isLoading }: DisputesListProps) {
-  const [statusFilter, setStatusFilter] = useState<DisputeStatus | "all">("all");
+  const [statusFilter, setStatusFilter] = useState<DisputeStatus | 'all'>(
+    'all',
+  );
 
-  const filteredDisputes = statusFilter === "all" 
-    ? disputes 
-    : disputes.filter(dispute => dispute.status === statusFilter);
+  const filteredDisputes =
+    statusFilter === 'all'
+      ? disputes
+      : disputes.filter((dispute) => dispute.status === statusFilter);
 
   const getStatusBadgeVariant = (_status: DisputeStatus) => {
     switch (status) {
-      case "open":
-        return "default";
-      case "under_review":
-        return "secondary";
-      case "resolved":
-        return "outline"; // Changed from "success" to "outline"
-      case "closed":
-        return "outline";
+      case 'open':
+        return 'default';
+      case 'under_review':
+        return 'secondary';
+      case 'resolved':
+        return 'outline'; // Changed from "success" to "outline"
+      case 'closed':
+        return 'outline';
       default:
-        return "default";
+        return 'default';
     }
   };
 
@@ -48,9 +50,11 @@ export function DisputesList({ disputes, isLoading }: DisputesListProps) {
     return (
       <div className="space-y-4">
         <div className="flex gap-2 mb-4">
-          {["All", "Open", "Under Review", "Resolved", "Closed"].map((status) => (
-            <Skeleton key={status} className="h-10 w-24" />
-          ))}
+          {['All', 'Open', 'Under Review', 'Resolved', 'Closed'].map(
+            (status) => (
+              <Skeleton key={status} className="h-10 w-24" />
+            ),
+          )}
         </div>
         <div className="border rounded-md">
           <Table>
@@ -67,12 +71,24 @@ export function DisputesList({ disputes, isLoading }: DisputesListProps) {
             <TableBody>
               {[...Array(5)].map((_, i) => (
                 <TableRow key={i}>
-                  <TableCell><Skeleton className="h-4 w-24" /></TableCell>
-                  <TableCell><Skeleton className="h-4 w-40" /></TableCell>
-                  <TableCell><Skeleton className="h-4 w-32" /></TableCell>
-                  <TableCell><Skeleton className="h-4 w-24" /></TableCell>
-                  <TableCell><Skeleton className="h-6 w-20" /></TableCell>
-                  <TableCell className="text-right"><Skeleton className="h-9 w-20 ml-auto" /></TableCell>
+                  <TableCell>
+                    <Skeleton className="h-4 w-24" />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton className="h-4 w-40" />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton className="h-4 w-32" />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton className="h-4 w-24" />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton className="h-6 w-20" />
+                  </TableCell>
+                  <TableCell className="text-right">
+                    <Skeleton className="h-9 w-20 ml-auto" />
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -98,36 +114,36 @@ export function DisputesList({ disputes, isLoading }: DisputesListProps) {
     <div className="space-y-4">
       <div className="flex gap-2 mb-4 overflow-x-auto pb-2">
         <Button
-          variant={statusFilter === "all" ? "default" : "outline"}
-          onClick={() => setStatusFilter("all")}
+          variant={statusFilter === 'all' ? 'default' : 'outline'}
+          onClick={() => setStatusFilter('all')}
           size="sm"
         >
           All
         </Button>
         <Button
-          variant={statusFilter === "open" ? "default" : "outline"}
-          onClick={() => setStatusFilter("open")}
+          variant={statusFilter === 'open' ? 'default' : 'outline'}
+          onClick={() => setStatusFilter('open')}
           size="sm"
         >
           Open
         </Button>
         <Button
-          variant={statusFilter === "under_review" ? "default" : "outline"}
-          onClick={() => setStatusFilter("under_review")}
+          variant={statusFilter === 'under_review' ? 'default' : 'outline'}
+          onClick={() => setStatusFilter('under_review')}
           size="sm"
         >
           Under Review
         </Button>
         <Button
-          variant={statusFilter === "resolved" ? "default" : "outline"}
-          onClick={() => setStatusFilter("resolved")}
+          variant={statusFilter === 'resolved' ? 'default' : 'outline'}
+          onClick={() => setStatusFilter('resolved')}
           size="sm"
         >
           Resolved
         </Button>
         <Button
-          variant={statusFilter === "closed" ? "default" : "outline"}
-          onClick={() => setStatusFilter("closed")}
+          variant={statusFilter === 'closed' ? 'default' : 'outline'}
+          onClick={() => setStatusFilter('closed')}
           size="sm"
         >
           Closed
@@ -153,20 +169,24 @@ export function DisputesList({ disputes, isLoading }: DisputesListProps) {
                   {dispute.id.split('-')[0]}
                 </TableCell>
                 <TableCell>
-                  {dispute.project?.title || "Unknown Project"}
+                  {dispute.project?.title || 'Unknown Project'}
                 </TableCell>
                 <TableCell>
                   <div className="flex flex-col text-sm">
                     <span>
-                      Client: {dispute.client_profile?.display_name || "Unknown Client"}
+                      Client:{' '}
+                      {dispute.client_profile?.display_name || 'Unknown Client'}
                     </span>
                     <span>
-                      Talent: {dispute.talent_profile?.display_name || "Unknown Talent"}
+                      Talent:{' '}
+                      {dispute.talent_profile?.display_name || 'Unknown Talent'}
                     </span>
                   </div>
                 </TableCell>
                 <TableCell>
-                  {formatDistanceToNow(new Date(dispute.created_at), { addSuffix: true })}
+                  {formatDistanceToNow(new Date(dispute.created_at), {
+                    addSuffix: true,
+                  })}
                 </TableCell>
                 <TableCell>
                   <Badge variant={getStatusBadgeVariant(dispute.status)}>
@@ -175,7 +195,9 @@ export function DisputesList({ disputes, isLoading }: DisputesListProps) {
                 </TableCell>
                 <TableCell className="text-right">
                   <Button asChild size="sm">
-                    <Link href={`/dashboard/disputes/${dispute.id}`}>View Details</Link>
+                    <Link href={`/dashboard/disputes/${dispute.id}`}>
+                      View Details
+                    </Link>
                   </Button>
                 </TableCell>
               </TableRow>

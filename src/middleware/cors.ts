@@ -27,7 +27,7 @@ const defaultCorsOptions: CorsOptions = {
     'X-Mx-ReqToken',
     'Keep-Alive',
     'X-Requested-With',
-    'If-Modified-Since'
+    'If-Modified-Since',
   ],
   credentials: false,
   maxAge: 86400, // 24 hours
@@ -39,7 +39,7 @@ const defaultCorsOptions: CorsOptions = {
 export function applyCorsHeaders(
   req: NextApiRequest,
   res: NextApiResponse,
-  options: CorsOptions = {}
+  options: CorsOptions = {},
 ): void {
   const corsOptions = { ...defaultCorsOptions, ...options };
 
@@ -48,7 +48,9 @@ export function applyCorsHeaders(
     res.setHeader('Access-Control-Allow-Origin', corsOptions.origin);
   } else if (Array.isArray(corsOptions.origin)) {
     const requestOrigin = req.headers.origin;
-    const originString = Array.isArray(requestOrigin) ? requestOrigin[0] : requestOrigin;
+    const originString = Array.isArray(requestOrigin)
+      ? requestOrigin[0]
+      : requestOrigin;
     if (originString && corsOptions.origin.includes(originString)) {
       res.setHeader('Access-Control-Allow-Origin', originString);
     }
@@ -59,8 +61,14 @@ export function applyCorsHeaders(
   }
 
   // Set other CORS headers
-  res.setHeader('Access-Control-Allow-Methods', corsOptions.methods!.join(', '));
-  res.setHeader('Access-Control-Allow-Headers', corsOptions.allowedHeaders!.join(', '));
+  res.setHeader(
+    'Access-Control-Allow-Methods',
+    corsOptions.methods!.join(', '),
+  );
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    corsOptions.allowedHeaders!.join(', '),
+  );
   res.setHeader('Access-Control-Max-Age', corsOptions.maxAge!.toString());
 
   if (corsOptions.credentials) {
@@ -68,7 +76,10 @@ export function applyCorsHeaders(
   }
 
   // Expose common headers that might be useful for API clients
-  res.setHeader('Access-Control-Expose-Headers', 'Content-Length, Content-Type, Date, Server, X-RateLimit-Limit, X-RateLimit-Remaining');
+  res.setHeader(
+    'Access-Control-Expose-Headers',
+    'Content-Length, Content-Type, Date, Server, X-RateLimit-Limit, X-RateLimit-Remaining',
+  );
 }
 
 /**
@@ -76,7 +87,7 @@ export function applyCorsHeaders(
  */
 export function withCors(
   handler: (req: NextApiRequest, res: NextApiResponse) => Promise<void> | void,
-  options: CorsOptions = {}
+  options: CorsOptions = {},
 ) {
   return async (req: NextApiRequest, _res: NextApiResponse) => {
     // Apply CORS headers
@@ -104,7 +115,7 @@ export const apiDocsCorsOptions: CorsOptions = {
     'Authorization',
     'X-Requested-With',
     'Accept',
-    'Origin'
+    'Origin',
   ],
   credentials: false,
   maxAge: 3600, // 1 hour for documentation
@@ -114,7 +125,7 @@ export const apiDocsCorsOptions: CorsOptions = {
  * Quick helper for API documentation endpoints
  */
 export function withApiDocsCors(
-  handler: (req: NextApiRequest, res: NextApiResponse) => Promise<void> | void
+  handler: (req: NextApiRequest, res: NextApiResponse) => Promise<void> | void,
 ) {
   return withCors(handler, apiDocsCorsOptions);
-} 
+}

@@ -1,9 +1,12 @@
-
 import React from 'react';
 import { CheckCircle } from '@/components/ui/icons';
 
-
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 
 interface VerifiedBadgeProps {
   verified: boolean;
@@ -12,15 +15,19 @@ interface VerifiedBadgeProps {
   label?: string;
 }
 
-export function VerifiedBadge({ verified, size = 'sm', label = 'Verified talent' }: VerifiedBadgeProps) {
+export function VerifiedBadge({
+  verified,
+  size = 'sm',
+  label = 'Verified talent',
+}: VerifiedBadgeProps) {
   if (!verified) return null;
-  
+
   const sizeClasses = {
     sm: 'h-3.5 w-3.5',
     md: 'h-4 w-4',
-    lg: 'h-5 w-5'
+    lg: 'h-5 w-5',
   };
-  
+
   return (
     <TooltipProvider>
       <Tooltip>

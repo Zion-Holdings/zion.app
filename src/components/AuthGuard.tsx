@@ -4,9 +4,6 @@ import { useRouter } from 'next/router';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
 
-
-
-
 interface AuthGuardProps {
   children: React.ReactNode;
   requireAuth?: boolean;
@@ -37,9 +34,9 @@ export function AuthGuard({
     if (requireAuth && !isAuthenticated && !allowGuest) {
       if (showToast) {
         toast({
-          title: "Authentication Required",
-          description: "Please log in to access this feature.",
-          variant: "destructive",
+          title: 'Authentication Required',
+          description: 'Please log in to access this feature.',
+          variant: 'destructive',
         });
       }
 
@@ -51,65 +48,87 @@ export function AuthGuard({
     // If specific roles are required
     if (requireRole && isAuthenticated && user) {
       const userRoles = user.role ? [user.role] : [];
-      const hasRequiredRole = requireRole.some(role => userRoles.includes(role));
+      const hasRequiredRole = requireRole.some((role) =>
+        userRoles.includes(role),
+      );
 
       if (!hasRequiredRole) {
         if (showToast) {
           toast({
-            title: "Access Denied",
+            title: 'Access Denied',
             description: `This feature requires ${requireRole.join(' or ')} privileges.`,
-            variant: "destructive",
+            variant: 'destructive',
           });
         }
         router.push('/dashboard'); // Redirect to dashboard instead of login
         return;
       }
     }
-  }, [isAuthenticated, isLoading, user, requireAuth, requireRole, router, redirectTo, showToast, allowGuest]);
+  }, [
+    isAuthenticated,
+    isLoading,
+    user,
+    requireAuth,
+    requireRole,
+    router,
+    redirectTo,
+    showToast,
+    allowGuest,
+  ]);
 
   // Show loading state while auth is being determined
   if (isLoading) {
-    return fallback || (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="flex items-center gap-2 text-muted-foreground">
-          <Loader2 className="h-6 w-6 animate-spin" />
-          <span>Loading...</span>
+    return (
+      fallback || (
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="flex items-center gap-2 text-muted-foreground">
+            <Loader2 className="h-6 w-6 animate-spin" />
+            <span>Loading...</span>
+          </div>
         </div>
-      </div>
+      )
     );
   }
 
   // Show unauthorized state if auth is required but user is not authenticated
   if (requireAuth && !isAuthenticated && !allowGuest) {
-    return fallback || (
-      <div className="flex flex-col items-center justify-center min-h-screen gap-4">
-        <Shield className="h-12 w-12 text-muted-foreground" />
-        <div className="text-center">
-          <h2 className="text-xl font-semibold mb-2">Authentication Required</h2>
-          <p className="text-muted-foreground">
-            Please log in to access this feature.
-          </p>
+    return (
+      fallback || (
+        <div className="flex flex-col items-center justify-center min-h-screen gap-4">
+          <Shield className="h-12 w-12 text-muted-foreground" />
+          <div className="text-center">
+            <h2 className="text-xl font-semibold mb-2">
+              Authentication Required
+            </h2>
+            <p className="text-muted-foreground">
+              Please log in to access this feature.
+            </p>
+          </div>
         </div>
-      </div>
+      )
     );
   }
 
   // Show role denied state if user doesn't have required role
   if (requireRole && isAuthenticated && user) {
     const userRoles = user.role ? [user.role] : [];
-    const hasRequiredRole = requireRole.some(role => userRoles.includes(role));
+    const hasRequiredRole = requireRole.some((role) =>
+      userRoles.includes(role),
+    );
 
     if (!hasRequiredRole) {
-      return fallback || (
-        <div className="flex flex-col items-center justify-center min-h-screen gap-4">
-          <Shield className="h-12 w-12 text-muted-foreground" />
-          <div className="text-center">
-            <h2 className="text-xl font-semibold mb-2">Access Denied</h2>
-            <p className="text-muted-foreground">
-              This feature requires {requireRole.join(' or ')} privileges.
-            </p>
+      return (
+        fallback || (
+          <div className="flex flex-col items-center justify-center min-h-screen gap-4">
+            <Shield className="h-12 w-12 text-muted-foreground" />
+            <div className="text-center">
+              <h2 className="text-xl font-semibold mb-2">Access Denied</h2>
+              <p className="text-muted-foreground">
+                This feature requires {requireRole.join(' or ')} privileges.
+              </p>
+            </div>
           </div>
-        </div>
+        )
       );
     }
   }
@@ -121,7 +140,7 @@ export function AuthGuard({
 // Higher-order component for easy wrapping
 export function withAuthGuard<P extends object>(
   Component: React.ComponentType<P>,
-  guardOptions?: Omit<AuthGuardProps, 'children'>
+  guardOptions?: Omit<AuthGuardProps, 'children'>,
 ) {
   return function AuthGuardedComponent(props: P) {
     return (
@@ -147,12 +166,12 @@ export function useAuthGuard() {
     if (!isAuthenticated) {
       const redirectTo = options?.redirectTo || '/login';
       const returnUrl = options?.returnUrl || router.asPath;
-      
+
       if (options?.showToast !== false) {
         toast({
-          title: "Authentication Required",
-          description: "Please log in to continue.",
-          variant: "destructive",
+          title: 'Authentication Required',
+          description: 'Please log in to continue.',
+          variant: 'destructive',
         });
       }
 
@@ -163,21 +182,24 @@ export function useAuthGuard() {
     return true;
   };
 
-  const requireRole = (roles: string[], options?: {
-    showToast?: boolean;
-    redirectTo?: string;
-  }) => {
+  const requireRole = (
+    roles: string[],
+    options?: {
+      showToast?: boolean;
+      redirectTo?: string;
+    },
+  ) => {
     if (!requireAuth({ showToast: false })) return false;
 
     const userRoles = user?.role ? [user.role] : [];
-    const hasRequiredRole = roles.some(role => userRoles.includes(role));
+    const hasRequiredRole = roles.some((role) => userRoles.includes(role));
 
     if (!hasRequiredRole) {
       if (options?.showToast !== false) {
         toast({
-          title: "Access Denied",
+          title: 'Access Denied',
           description: `This feature requires ${roles.join(' or ')} privileges.`,
-          variant: "destructive",
+          variant: 'destructive',
         });
       }
 
@@ -190,10 +212,11 @@ export function useAuthGuard() {
 
   const checkPermission = (permission: string): boolean => {
     if (!isAuthenticated || !user) return false;
-    
+
     // Simple permission check - can be extended based on your permission system
     // Use type assertion for extensibility, as permissions might be added to user type later
-    const userPermissions = (user as unknown as { permissions?: string[] }).permissions || [];
+    const userPermissions =
+      (user as unknown as { permissions?: string[] }).permissions || [];
     return userPermissions.includes(permission);
   };
 

@@ -38,7 +38,7 @@ export class DelayTolerantDAO {
     try {
       const [_ipfs, _orbitdb] = await Promise.all([
         import('./ipfs'),
-        import('./orbitdb')
+        import('./orbitdb'),
       ]);
       // ... initialize modules
       this.ready = true;
@@ -48,7 +48,10 @@ export class DelayTolerantDAO {
     }
   }
 
-  async submitProposal(description: string, ttlMs = 5 * 24 * 60 * 60 * 1000): Promise<Proposal> {
+  async submitProposal(
+    description: string,
+    ttlMs = 5 * 24 * 60 * 60 * 1000,
+  ): Promise<Proposal> {
     const now = Date.now();
     const proposal: Proposal = {
       id: crypto.randomUUID(),
@@ -59,7 +62,7 @@ export class DelayTolerantDAO {
       forVotes: 0,
       againstVotes: 0,
     };
-    
+
     // Always use local storage in browser environment
     if (isBrowserEnv) {
       this.proposals.push(proposal);
@@ -76,7 +79,7 @@ export class DelayTolerantDAO {
       // Server-side implementation - use mock for now
       this.proposals.push(proposal);
     }
-    
+
     return proposal;
   }
 

@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Save, ChevronDown, Plus, Loader2 } from '@/components/ui/icons';
 
@@ -7,14 +6,17 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
-  DropdownMenuTrigger
-} from "@/components/ui/dropdown-menu";
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-
-
-
+import {
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 import type { Resume } from '@/types/resume';
 import { useResume } from '@/hooks/useResume';
@@ -24,12 +26,15 @@ interface ResumeVersionSelectorProps {
   onResumeChange: (resumeId: string) => void;
 }
 
-export function ResumeVersionSelector({ currentResume, onResumeChange }: ResumeVersionSelectorProps) {
+export function ResumeVersionSelector({
+  currentResume,
+  onResumeChange,
+}: ResumeVersionSelectorProps) {
   const { createResume, fetchResume } = useResume();
   const [saveDialogOpen, setSaveDialogOpen] = useState(false);
   const [newResumeTitle, setNewResumeTitle] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  
+
   const handleCreateNewVersion = async () => {
     if (newResumeTitle.trim()) {
       setIsLoading(true);
@@ -57,7 +62,7 @@ export function ResumeVersionSelector({ currentResume, onResumeChange }: ResumeV
         <DropdownMenuContent align="end">
           {/* existingResumes is no longer defined, so this loop will not render */}
           <DropdownMenuSeparator />
-          <DropdownMenuItem 
+          <DropdownMenuItem
             onClick={() => setSaveDialogOpen(true)}
             className="cursor-pointer"
           >
@@ -66,7 +71,7 @@ export function ResumeVersionSelector({ currentResume, onResumeChange }: ResumeV
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-      
+
       <Dialog open={saveDialogOpen} onOpenChange={setSaveDialogOpen}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
@@ -80,13 +85,10 @@ export function ResumeVersionSelector({ currentResume, onResumeChange }: ResumeV
             />
           </div>
           <DialogFooter>
-            <Button 
-              variant="outline" 
-              onClick={() => setSaveDialogOpen(false)}
-            >
+            <Button variant="outline" onClick={() => setSaveDialogOpen(false)}>
               Cancel
             </Button>
-            <Button 
+            <Button
               onClick={handleCreateNewVersion}
               disabled={!newResumeTitle.trim() || isLoading}
               className="gap-2"

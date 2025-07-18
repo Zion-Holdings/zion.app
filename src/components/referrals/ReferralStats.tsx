@@ -1,12 +1,6 @@
-
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Award, Share, Star, TrendingUp } from '@/components/ui/icons';
-import type { ReferralStats as ReferralStatsType } from "@/types/referrals";
-
-
-
-
-
+import type { ReferralStats as ReferralStatsType } from '@/types/referrals';
 
 interface ReferralStatsProps {
   stats: ReferralStatsType;
@@ -16,28 +10,28 @@ interface ReferralStatsProps {
 export function ReferralStats({ stats, isLoading }: ReferralStatsProps) {
   const statCards = [
     {
-      title: "Total Referrals",
+      title: 'Total Referrals',
       value: stats.totalReferrals,
       icon: <Share className="h-5 w-5 text-muted-foreground" />,
       description: "People you've invited",
     },
     {
-      title: "Completed",
+      title: 'Completed',
       value: stats.completedReferrals,
       icon: <Star className="h-5 w-5 text-muted-foreground" />,
-      description: "Signed up & completed onboarding",
+      description: 'Signed up & completed onboarding',
     },
     {
-      title: "Pending",
+      title: 'Pending',
       value: stats.pendingReferrals,
       icon: <TrendingUp className="h-5 w-5 text-muted-foreground" />,
-      description: "Not yet completed onboarding",
+      description: 'Not yet completed onboarding',
     },
     {
-      title: "Total Rewards",
-      value: stats.totalRewards > 0 ? `$${stats.totalRewards.toFixed(2)}` : "-",
+      title: 'Total Rewards',
+      value: stats.totalRewards > 0 ? `$${stats.totalRewards.toFixed(2)}` : '-',
       icon: <Award className="h-5 w-5 text-muted-foreground" />,
-      description: "Credits earned from referrals",
+      description: 'Credits earned from referrals',
     },
   ];
 
@@ -55,7 +49,9 @@ export function ReferralStats({ stats, isLoading }: ReferralStatsProps) {
             ) : (
               <>
                 <div className="text-2xl font-bold">{card.value}</div>
-                <p className="text-xs text-muted-foreground">{card.description}</p>
+                <p className="text-xs text-muted-foreground">
+                  {card.description}
+                </p>
               </>
             )}
           </CardContent>

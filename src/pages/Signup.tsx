@@ -12,13 +12,9 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter';
 import { AuthButtons } from '@/components/AuthButtons';
 
-
-
-
 import { toast } from '@/hooks/use-toast';
 import { AuthLayout } from '@/layout';
 import { logError, logWarn } from '@/utils/logger';
-
 
 const SignupSchema = Yup.object({
   name: Yup.string().required('Name is required'),
@@ -32,7 +28,10 @@ const SignupSchema = Yup.object({
   confirm: Yup.string()
     .oneOf([Yup.ref('password')], 'Passwords must match')
     .required('Confirm password is required'),
-  terms: Yup.boolean().oneOf([true], 'You must accept the terms and conditions')
+  terms: Yup.boolean().oneOf(
+    [true],
+    'You must accept the terms and conditions',
+  ),
 });
 
 export default function Signup() {
@@ -40,14 +39,15 @@ export default function Signup() {
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
-  const [emailVerificationRequired, setEmailVerificationRequired] = useState(false);
+  const [emailVerificationRequired, setEmailVerificationRequired] =
+    useState(false);
   const [_authServiceAvailable, setAuthServiceAvailable] = useState(true);
   const [healthCheckLoading, setHealthCheckLoading] = useState(true);
   const [healthCheckError, setHealthCheckError] = useState<string | null>(null);
-  
+
   // Check if this is a partner signup
   const isPartnerSignup = router.query.type === 'partner';
-  const signupSource = router.query.source as string || 'direct';
+  const signupSource = (router.query.source as string) || 'direct';
 
   const performHealthCheck = async () => {
     setHealthCheckLoading(true);
@@ -62,13 +62,27 @@ export default function Signup() {
       logError('Auth service health check failed', { data: err });
       setAuthServiceAvailable(false);
       // Set a more specific error message based on the error type
-      const code = typeof err === 'object' && err !== null && 'code' in err ? (err as { code?: string }).code : undefined;
-      const message = typeof err === 'object' && err !== null && 'message' in err ? (err as { message?: string }).message : undefined;
-      const response = typeof err === 'object' && err !== null && 'response' in err ? (err as { response?: { status?: number } }).response : undefined;
-      if (code === 'NETWORK_ERROR' || (typeof message === 'string' && message.includes('Network Error'))) {
+      const code =
+        typeof err === 'object' && err !== null && 'code' in err
+          ? (err as { code?: string }).code
+          : undefined;
+      const message =
+        typeof err === 'object' && err !== null && 'message' in err
+          ? (err as { message?: string }).message
+          : undefined;
+      const response =
+        typeof err === 'object' && err !== null && 'response' in err
+          ? (err as { response?: { status?: number } }).response
+          : undefined;
+      if (
+        code === 'NETWORK_ERROR' ||
+        (typeof message === 'string' && message.includes('Network Error'))
+      ) {
         setHealthCheckError('Network connection issues detected');
       } else if (response && response.status === 500) {
-        setHealthCheckError('Authentication service is temporarily unavailable');
+        setHealthCheckError(
+          'Authentication service is temporarily unavailable',
+        );
       } else {
         setHealthCheckError('Unable to verify authentication service status');
       }
@@ -87,22 +101,22 @@ export default function Signup() {
       email: '',
       password: '',
       confirm: '',
-      terms: false
+      terms: false,
     },
     validationSchema: SignupSchema,
     onSubmit: async (values, { setErrors }) => {
-      logWarn('Form submission started with:', { 
-        name: values.name, 
+      logWarn('Form submission started with:', {
+        name: values.name,
         email: values.email,
         hasPassword: !!values.password,
-        isPartnerSignup 
+        isPartnerSignup,
       });
-      
+
       setLoading(true);
       setErrorMessage(''); // Clear any previous error
       setSuccessMessage(''); // Clear any previous success message
       setEmailVerificationRequired(false);
-      
+
       try {
         const requestData = {
           name: values.name,
@@ -113,54 +127,58 @@ export default function Signup() {
             source: signupSource,
             metadata: {
               partnerProgram: true,
-              signupType: 'partner'
-            }
-          })
+              signupType: 'partner',
+            },
+          }),
         };
-        
-        logWarn('Making API request to /api/auth/register with:', { 
-          ...requestData, 
-          password: '[REDACTED]' 
+
+        logWarn('Making API request to /api/auth/register with:', {
+          ...requestData,
+          password: '[REDACTED]',
         });
-        
+
         const res = await axios.post('/api/auth/register', requestData);
-        
-        logWarn('API response received:', { 
-          status: res.status, 
-          data: res.data 
+
+        logWarn('API response received:', {
+          status: res.status,
+          data: res.data,
         });
-        
+
         if (res.status === 201) {
           const data = res.data;
-          
+
           if (data.emailVerificationRequired) {
             // Email verification is required
             setEmailVerificationRequired(true);
-            const message = isPartnerSignup 
+            const message = isPartnerSignup
               ? 'Partner application submitted! Please check your email to verify your account. Once verified, your partner application will be reviewed.'
               : 'Account created! Please check your email to verify your account.';
             setSuccessMessage(data.message || message);
-            
+
             toast({
-              title: isPartnerSignup ? 'Partner application submitted!' : 'Account created!',
-              description: isPartnerSignup 
+              title: isPartnerSignup
+                ? 'Partner application submitted!'
+                : 'Account created!',
+              description: isPartnerSignup
                 ? 'Please verify your email. Your partner application will be reviewed after verification.'
                 : 'Please check your email to verify your account before logging in.',
             });
           } else {
             // Account created and ready to use
-            const message = isPartnerSignup 
+            const message = isPartnerSignup
               ? 'Partner application submitted successfully! You can now log in and your application will be reviewed.'
               : 'Account created successfully!';
             setSuccessMessage(data.message || message);
-            
+
             toast({
-              title: isPartnerSignup ? 'Partner application submitted!' : 'Account created successfully!',
-              description: isPartnerSignup 
+              title: isPartnerSignup
+                ? 'Partner application submitted!'
+                : 'Account created successfully!',
+              description: isPartnerSignup
                 ? 'Welcome to the partner program. You can now log in.'
                 : 'Welcome to the platform. You can now log in.',
             });
-            
+
             // Redirect to appropriate page after a short delay
             setTimeout(() => {
               router.push(isPartnerSignup ? '/partners' : '/login');
@@ -169,22 +187,54 @@ export default function Signup() {
         }
       } catch (err: unknown) {
         logError('Signup error details:', {
-          message: typeof err === 'object' && err !== null && 'message' in err ? (err as { message?: string }).message : undefined,
-          response: typeof err === 'object' && err !== null && 'response' in err && (err as { response?: unknown }).response ? {
-            status: (err as { response?: { status?: number } }).response?.status,
-            statusText: (err as { response?: { statusText?: string } }).response?.statusText,
-            data: (err as { response?: { data?: unknown } }).response?.data
-          } : 'No response',
-          request: typeof err === 'object' && err !== null && 'request' in err ? 'Request made but no response' : 'No request',
-          config: typeof err === 'object' && err !== null && 'config' in err ? {
-            url: (err as { config?: { url?: string } }).config?.url,
-            method: (err as { config?: { method?: string } }).config?.method
-          } : 'No config'
+          message:
+            typeof err === 'object' && err !== null && 'message' in err
+              ? (err as { message?: string }).message
+              : undefined,
+          response:
+            typeof err === 'object' &&
+            err !== null &&
+            'response' in err &&
+            (err as { response?: unknown }).response
+              ? {
+                  status: (err as { response?: { status?: number } }).response
+                    ?.status,
+                  statusText: (err as { response?: { statusText?: string } })
+                    .response?.statusText,
+                  data: (err as { response?: { data?: unknown } }).response
+                    ?.data,
+                }
+              : 'No response',
+          request:
+            typeof err === 'object' && err !== null && 'request' in err
+              ? 'Request made but no response'
+              : 'No request',
+          config:
+            typeof err === 'object' && err !== null && 'config' in err
+              ? {
+                  url: (err as { config?: { url?: string } }).config?.url,
+                  method: (err as { config?: { method?: string } }).config
+                    ?.method,
+                }
+              : 'No config',
         });
-        const response = typeof err === 'object' && err !== null && 'response' in err ? (err as { response?: { status?: number, data?: { error?: string, message?: string } } }).response : undefined;
+        const response =
+          typeof err === 'object' && err !== null && 'response' in err
+            ? (
+                err as {
+                  response?: {
+                    status?: number;
+                    data?: { error?: string; message?: string };
+                  };
+                }
+              ).response
+            : undefined;
         const status = response?.status;
-        const errorMsg = response?.data?.error || response?.data?.message || 'Signup failed. Please try again.';
-        logWarn('Processed error message:', { data:  { data: errorMsg } });
+        const errorMsg =
+          response?.data?.error ||
+          response?.data?.message ||
+          'Signup failed. Please try again.';
+        logWarn('Processed error message:', { data: { data: errorMsg } });
         if (status === 409) {
           setErrorMessage(errorMsg);
           setErrors({ email: errorMsg });
@@ -195,7 +245,10 @@ export default function Signup() {
           });
         } else if (status === 400) {
           setErrorMessage(errorMsg);
-          if (typeof errorMsg === 'string' && errorMsg.toLowerCase().includes('password')) {
+          if (
+            typeof errorMsg === 'string' &&
+            errorMsg.toLowerCase().includes('password')
+          ) {
             setErrors({ password: errorMsg });
           } else {
             setErrors({ confirm: errorMsg });
@@ -218,7 +271,7 @@ export default function Signup() {
         logWarn('Form submission completed, setting loading to false');
         setLoading(false);
       }
-    }
+    },
   });
 
   const handleFormSubmit = async (_e: React.FormEvent<HTMLFormElement>) => {
@@ -228,7 +281,7 @@ export default function Signup() {
       email: true,
       password: true,
       confirm: true,
-      terms: true
+      terms: true,
     });
     await formik.handleSubmit(e);
   };
@@ -237,7 +290,9 @@ export default function Signup() {
   useEffect(() => {
     if (emailVerificationRequired && formik.values.email) {
       const timer = setTimeout(() => {
-        router.push(`/verify-status?email=${encodeURIComponent(formik.values.email)}`);
+        router.push(
+          `/verify-status?email=${encodeURIComponent(formik.values.email)}`,
+        );
       }, 3000);
       return () => clearTimeout(timer);
     }
@@ -264,211 +319,246 @@ export default function Signup() {
         <div className="w-full max-w-sm space-y-4">
           {isPartnerSignup && (
             <div className="text-center mb-6">
-              <h1 className="text-2xl font-bold text-foreground">Partner Application</h1>
+              <h1 className="text-2xl font-bold text-foreground">
+                Partner Application
+              </h1>
               <p className="text-sm text-muted-foreground mt-2">
                 Join the Zion AI Partner Program and start earning rewards
               </p>
             </div>
           )}
           <form onSubmit={handleFormSubmit} className="space-y-4" noValidate>
-          {/* Show Health Check Warning */}
-          {healthCheckError && (
-            <Alert variant="destructive" className="border-yellow-500 bg-yellow-50 text-yellow-900">
-              <AlertCircle className="h-4 w-4" />
-              <AlertDescription className="flex items-center justify-between">
-                <span>{healthCheckError}. You can still try to sign up, but it may fail.</span>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  onClick={performHealthCheck}
-                  disabled={healthCheckLoading}
-                  className="ml-2 text-xs"
-                >
-                  {healthCheckLoading ? 'Checking...' : 'Retry'}
-                </Button>
-              </AlertDescription>
-            </Alert>
-          )}
-          
-          {/* Show Success message */}
-          {successMessage && (
-            <Alert className="border-green-500 bg-green-50 text-green-900" data-testid="success-alert">
-              {emailVerificationRequired ? <Mail className="h-4 w-4" /> : <CheckCircle className="h-4 w-4" />}
-              <AlertDescription>{successMessage}</AlertDescription>
-            </Alert>
-          )}
-          
-          {/* Show Error message */}
-          {errorMessage && (
-            <Alert variant="destructive" data-testid="error-alert">
-              <AlertCircle className="h-4 w-4" />
-              <AlertDescription>{errorMessage}</AlertDescription>
-            </Alert>
-          )}
-          
-          {emailVerificationRequired && (
-            <Alert className="border-blue-500 bg-blue-50 text-blue-900">
-              <Mail className="h-4 w-4" />
-              <AlertDescription>
-                Before you can log in, please click the verification link in the email we sent to <strong>{formik.values.email}</strong>.
-              </AlertDescription>
-            </Alert>
-          )}
-          
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium">
-              Full Name
-            </label>
-            <Input
-              id="name"
-              name="name"
-              data-testid="name-input"
-              value={formik.values.name}
-              onChange={formik.handleChange}
-              disabled={loading || emailVerificationRequired}
-            />
-            {formik.touched.name && formik.errors.name && (
-              <div className="text-red-500 text-sm">{formik.errors.name}</div>
-            )}
-          </div>
-          
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium">
-              Email address
-            </label>
-            <Input
-              id="email"
-              type="email"
-              name="email"
-              data-testid="email-input"
-              value={formik.values.email}
-              onChange={formik.handleChange}
-              disabled={loading || emailVerificationRequired}
-            />
-            {formik.touched.email && formik.errors.email && (
-              <div className="text-red-500 text-sm">{formik.errors.email}</div>
-            )}
-          </div>
-          
-          <div>
-            <label htmlFor="password" className="block text-sm font-medium">
-              Password
-            </label>
-          <Input
-            id="password"
-            type="password"
-            name="password"
-            data-testid="password-input"
-            value={formik.values.password}
-            onChange={formik.handleChange}
-            disabled={loading || emailVerificationRequired}
-          />
-          <PasswordStrengthMeter password={formik.values.password} />
-          {formik.touched.password && formik.errors.password && (
-            <div className="text-red-500 text-sm">{formik.errors.password}</div>
-          )}
-        </div>
-          
-          <div>
-            <label htmlFor="confirm" className="block text-sm font-medium">
-              Confirm Password
-            </label>
-            <Input
-              id="confirm"
-              type="password"
-              name="confirm"
-              data-testid="confirm-password-input"
-              value={formik.values.confirm}
-              onChange={formik.handleChange}
-              disabled={loading || emailVerificationRequired}
-            />
-            {formik.touched.confirm && formik.errors.confirm && (
-              <div className="text-red-500 text-sm">{formik.errors.confirm}</div>
-            )}
-          </div>
-          
-          <div className="flex items-center space-x-2">
-            <input
-              id="terms"
-              name="terms"
-              type="checkbox"
-              data-testid="terms-checkbox"
-              checked={formik.values.terms}
-              onChange={formik.handleChange}
-              disabled={loading || emailVerificationRequired}
-            />
-            <label htmlFor="terms" className="text-sm">
-              I agree to the{' '}
-              <Link href="/terms" className="underline">Terms of Service</Link>{' '}
-              and{' '}
-              <Link href="/privacy" className="underline">Privacy Policy</Link>
-            </label>
-          </div>
-          {formik.touched.terms && formik.errors.terms && (
-            <div className="text-red-500 text-sm">{formik.errors.terms}</div>
-          )}
-          
-          {!emailVerificationRequired ? (
-            <Button 
-              type="submit" 
-              disabled={loading} 
-              data-testid="signup-submit"
-              className={healthCheckError ? 'bg-yellow-600 hover:bg-yellow-700' : ''}
-            >
-              {loading ? (
-                <>
-                  <LoadingSpinner size="sm" className="mr-2" />
-                  Creating Account...
-                </>
-              ) : (
-                healthCheckError ? 'Try Creating Account' : 'Create Account'
-              )}
-            </Button>
-          ) : (
-            <div className="space-y-2">
-              <Button
-                type="button"
-                variant="outline"
-                className="w-full"
-                onClick={() => router.push('/login')}
+            {/* Show Health Check Warning */}
+            {healthCheckError && (
+              <Alert
+                variant="destructive"
+                className="border-yellow-500 bg-yellow-50 text-yellow-900"
               >
-                Go to Login
-              </Button>
+                <AlertCircle className="h-4 w-4" />
+                <AlertDescription className="flex items-center justify-between">
+                  <span>
+                    {healthCheckError}. You can still try to sign up, but it may
+                    fail.
+                  </span>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={performHealthCheck}
+                    disabled={healthCheckLoading}
+                    className="ml-2 text-xs"
+                  >
+                    {healthCheckLoading ? 'Checking...' : 'Retry'}
+                  </Button>
+                </AlertDescription>
+              </Alert>
+            )}
+
+            {/* Show Success message */}
+            {successMessage && (
+              <Alert
+                className="border-green-500 bg-green-50 text-green-900"
+                data-testid="success-alert"
+              >
+                {emailVerificationRequired ? (
+                  <Mail className="h-4 w-4" />
+                ) : (
+                  <CheckCircle className="h-4 w-4" />
+                )}
+                <AlertDescription>{successMessage}</AlertDescription>
+              </Alert>
+            )}
+
+            {/* Show Error message */}
+            {errorMessage && (
+              <Alert variant="destructive" data-testid="error-alert">
+                <AlertCircle className="h-4 w-4" />
+                <AlertDescription>{errorMessage}</AlertDescription>
+              </Alert>
+            )}
+
+            {emailVerificationRequired && (
+              <Alert className="border-blue-500 bg-blue-50 text-blue-900">
+                <Mail className="h-4 w-4" />
+                <AlertDescription>
+                  Before you can log in, please click the verification link in
+                  the email we sent to <strong>{formik.values.email}</strong>.
+                </AlertDescription>
+              </Alert>
+            )}
+
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium">
+                Full Name
+              </label>
+              <Input
+                id="name"
+                name="name"
+                data-testid="name-input"
+                value={formik.values.name}
+                onChange={formik.handleChange}
+                disabled={loading || emailVerificationRequired}
+              />
+              {formik.touched.name && formik.errors.name && (
+                <div className="text-red-500 text-sm">{formik.errors.name}</div>
+              )}
+            </div>
+
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium">
+                Email address
+              </label>
+              <Input
+                id="email"
+                type="email"
+                name="email"
+                data-testid="email-input"
+                value={formik.values.email}
+                onChange={formik.handleChange}
+                disabled={loading || emailVerificationRequired}
+              />
+              {formik.touched.email && formik.errors.email && (
+                <div className="text-red-500 text-sm">
+                  {formik.errors.email}
+                </div>
+              )}
+            </div>
+
+            <div>
+              <label htmlFor="password" className="block text-sm font-medium">
+                Password
+              </label>
+              <Input
+                id="password"
+                type="password"
+                name="password"
+                data-testid="password-input"
+                value={formik.values.password}
+                onChange={formik.handleChange}
+                disabled={loading || emailVerificationRequired}
+              />
+              <PasswordStrengthMeter password={formik.values.password} />
+              {formik.touched.password && formik.errors.password && (
+                <div className="text-red-500 text-sm">
+                  {formik.errors.password}
+                </div>
+              )}
+            </div>
+
+            <div>
+              <label htmlFor="confirm" className="block text-sm font-medium">
+                Confirm Password
+              </label>
+              <Input
+                id="confirm"
+                type="password"
+                name="confirm"
+                data-testid="confirm-password-input"
+                value={formik.values.confirm}
+                onChange={formik.handleChange}
+                disabled={loading || emailVerificationRequired}
+              />
+              {formik.touched.confirm && formik.errors.confirm && (
+                <div className="text-red-500 text-sm">
+                  {formik.errors.confirm}
+                </div>
+              )}
+            </div>
+
+            <div className="flex items-center space-x-2">
+              <input
+                id="terms"
+                name="terms"
+                type="checkbox"
+                data-testid="terms-checkbox"
+                checked={formik.values.terms}
+                onChange={formik.handleChange}
+                disabled={loading || emailVerificationRequired}
+              />
+              <label htmlFor="terms" className="text-sm">
+                I agree to the{' '}
+                <Link href="/terms" className="underline">
+                  Terms of Service
+                </Link>{' '}
+                and{' '}
+                <Link href="/privacy" className="underline">
+                  Privacy Policy
+                </Link>
+              </label>
+            </div>
+            {formik.touched.terms && formik.errors.terms && (
+              <div className="text-red-500 text-sm">{formik.errors.terms}</div>
+            )}
+
+            {!emailVerificationRequired ? (
               <Button
-                type="button"
-                variant="outline"
-                className="w-full"
-                onClick={() =>
-                  router.push(`/verify-status?email=${encodeURIComponent(formik.values.email)}`)
+                type="submit"
+                disabled={loading}
+                data-testid="signup-submit"
+                className={
+                  healthCheckError ? 'bg-yellow-600 hover:bg-yellow-700' : ''
                 }
               >
-                Check Verification Status
+                {loading ? (
+                  <>
+                    <LoadingSpinner size="sm" className="mr-2" />
+                    Creating Account...
+                  </>
+                ) : healthCheckError ? (
+                  'Try Creating Account'
+                ) : (
+                  'Create Account'
+                )}
               </Button>
-              <Button
-                type="button"
-                variant="ghost"
-                className="w-full text-sm"
-                onClick={() => {
-                  setEmailVerificationRequired(false);
-                  setSuccessMessage('');
-                }}
-              >
-                Try Different Email
-              </Button>
-            </div>
-          )}
-          
-          {/* Additional help text when service issues are detected */}
-          {healthCheckError && (
-            <div className="text-center text-xs text-muted-foreground mt-4 p-3 bg-muted rounded">
-              <p>⚠️ We detected some authentication service issues.</p>
-              <p>If signup fails, please try again in a few minutes or contact support.</p>
-            </div>
-          )}
+            ) : (
+              <div className="space-y-2">
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="w-full"
+                  onClick={() => router.push('/login')}
+                >
+                  Go to Login
+                </Button>
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="w-full"
+                  onClick={() =>
+                    router.push(
+                      `/verify-status?email=${encodeURIComponent(formik.values.email)}`,
+                    )
+                  }
+                >
+                  Check Verification Status
+                </Button>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  className="w-full text-sm"
+                  onClick={() => {
+                    setEmailVerificationRequired(false);
+                    setSuccessMessage('');
+                  }}
+                >
+                  Try Different Email
+                </Button>
+              </div>
+            )}
+
+            {/* Additional help text when service issues are detected */}
+            {healthCheckError && (
+              <div className="text-center text-xs text-muted-foreground mt-4 p-3 bg-muted rounded">
+                <p>⚠️ We detected some authentication service issues.</p>
+                <p>
+                  If signup fails, please try again in a few minutes or contact
+                  support.
+                </p>
+              </div>
+            )}
           </form>
           {!emailVerificationRequired && (
             <div className="mt-6">
-              <AuthButtons providers={["google", "github"]} />
+              <AuthButtons providers={['google', 'github']} />
             </div>
           )}
         </div>

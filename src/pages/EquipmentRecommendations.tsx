@@ -4,9 +4,13 @@ import { ProductListingCard } from '@/components/ProductListingCard';
 import { useAuth } from '@/hooks/useAuth';
 import { fetchRecommendations } from '@/api/recommendations';
 import type { ProductListing } from '@/types/listings';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-
 
 import Link from 'next/link';
 import { ErrorState } from '@/components/jobs/applications';
@@ -35,8 +39,13 @@ export default function EquipmentRecommendations() {
             <DialogTitle>Authentication required</DialogTitle>
           </DialogHeader>
           <p>Please sign in to get personalized AI picks.</p>
-          <Button asChild className="mt-4 bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white">
-            <Link href="/auth/login?returnTo=/equipment/recommendations">Sign In</Link>
+          <Button
+            asChild
+            className="mt-4 bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white"
+          >
+            <Link href="/auth/login?returnTo=/equipment/recommendations">
+              Sign In
+            </Link>
           </Button>
         </DialogContent>
       </Dialog>
@@ -45,7 +54,9 @@ export default function EquipmentRecommendations() {
 
   return (
     <div className="min-h-screen bg-zion-blue py-8 px-4">
-      <h1 className="text-2xl font-bold text-white mb-6">AI Equipment Recommendations</h1>
+      <h1 className="text-2xl font-bold text-white mb-6">
+        AI Equipment Recommendations
+      </h1>
       {loading && (
         <div className="flex justify-center py-20">
           <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />

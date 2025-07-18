@@ -1,11 +1,9 @@
-
-import { useState, useEffect } from "react";
-import type { TalentProfile as TalentProfileType } from "@/types/talent";
-import { convertProfileToTalentProfile } from "@/utils/profileConverter";
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { useState, useEffect } from 'react';
+import type { TalentProfile as TalentProfileType } from '@/types/talent';
+import { convertProfileToTalentProfile } from '@/utils/profileConverter';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 export function useTalentProfile(id: string | undefined) {
-
   const [profile, setProfile] = useState<TalentProfileType | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

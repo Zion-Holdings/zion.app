@@ -58,14 +58,17 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
     onLoad?.();
   }, [onLoad]);
 
-  const handleError = useCallback((error?: unknown) => {
-    setHasError(true);
-    setIsLoading(false);
-    if (imgSrc !== actualFallback) {
-      setImgSrc(actualFallback);
-    }
-    onError?.(error);
-  }, [imgSrc, actualFallback, onError]);
+  const handleError = useCallback(
+    (error?: unknown) => {
+      setHasError(true);
+      setIsLoading(false);
+      if (imgSrc !== actualFallback) {
+        setImgSrc(actualFallback);
+      }
+      onError?.(error);
+    },
+    [imgSrc, actualFallback, onError],
+  );
 
   // Generate low-quality placeholder if not provided
   const defaultBlurDataURL = `data:image/svg+xml;base64,${btoa(
@@ -74,21 +77,21 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
       <text x="50%" y="50%" text-anchor="middle" dy="0.3em" fill="#9ca3af" font-family="Arial, sans-serif" font-size="14">
         Loading...
       </text>
-    </svg>`
+    </svg>`,
   )}`;
 
   return (
     <div className={cn('relative overflow-hidden', className)}>
       {isLoading && (
-        <div 
+        <div
           className="absolute inset-0 bg-gray-100 animate-pulse flex items-center justify-center"
           style={{ width: width || '100%', height: height || 'auto' }}
         >
           <span className="text-gray-400 text-sm">Loading...</span>
         </div>
       )}
-      
-              <Image
+
+      <Image
         src={imgSrc}
         alt={alt}
         {...(fill ? {} : width !== undefined ? { width } : {})}
@@ -104,11 +107,11 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
         className={cn(
           'transition-opacity duration-300',
           isLoading ? 'opacity-0' : 'opacity-100',
-          hasError && 'opacity-75'
+          hasError && 'opacity-75',
         )}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
-      
+
       {hasError && (
         <div className="absolute top-2 right-2">
           <span className="text-xs text-red-500 bg-red-100 px-2 py-1 rounded">

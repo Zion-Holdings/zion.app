@@ -1,27 +1,25 @@
-
 import { useState, useCallback } from 'react';
 import type { PortfolioProject } from '@/types/resume';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 export function usePortfolio() {
-
   const { _user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [projects, setProjects] = useState<PortfolioProject[]>([]);
-  
+
   const fetchProjects = useCallback(async () => {
     if (!user) {
       setError('You must be logged in to access portfolio projects');
       return [];
     }
-    
+
     setIsLoading(true);
     setError(null);
-    
+
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
@@ -29,30 +27,32 @@ export function usePortfolio() {
         .select('*')
         .eq('user_id', user.id)
         .order('created_at', { ascending: false });
-      
+
       if (error) throw error;
-      
+
       setProjects(data || []);
       return data || [];
     } catch (e: unknown) {
       const message = e instanceof Error ? e.message : String(e);
-      logErrorToProduction('Error fetching portfolio projects:', { data:  e });
+      logErrorToProduction('Error fetching portfolio projects:', { data: e });
       setError(message);
       return [];
     } finally {
       setIsLoading(false);
     }
   }, [user]);
-  
-  const addProject = async (project: PortfolioProject): Promise<string | null> => {
+
+  const addProject = async (
+    project: PortfolioProject,
+  ): Promise<string | null> => {
     if (!user) {
       setError('You must be logged in to add a portfolio project');
       return null;
     }
-    
+
     setIsLoading(true);
     setError(null);
-    
+
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
@@ -65,44 +65,47 @@ export function usePortfolio() {
           image_url: project.image_url,
           github_url: project.github_url,
           demo_url: project.demo_url,
-          pdf_url: project.pdf_url
+          pdf_url: project.pdf_url,
         })
         .select('id')
         .single();
-      
+
       if (error) throw error;
-      
+
       toast({
-        title: "Project added",
-        description: "Your project has been added to your portfolio"
+        title: 'Project added',
+        description: 'Your project has been added to your portfolio',
       });
-      
+
       await fetchProjects();
       return data.id;
     } catch (e: unknown) {
       const message = e instanceof Error ? e.message : String(e);
-      logErrorToProduction('Error adding portfolio project:', { data:  e });
+      logErrorToProduction('Error adding portfolio project:', { data: e });
       setError(message);
       toast({
-        title: "Error",
+        title: 'Error',
         description: `Could not add project: ${message}`,
-        variant: "destructive"
+        variant: 'destructive',
       });
       return null;
     } finally {
       setIsLoading(false);
     }
   };
-  
-  const updateProject = async (projectId: string, project: PortfolioProject): Promise<boolean> => {
+
+  const updateProject = async (
+    projectId: string,
+    project: PortfolioProject,
+  ): Promise<boolean> => {
     if (!user) {
       setError('You must be logged in to update a portfolio project');
       return false;
     }
-    
+
     setIsLoading(true);
     setError(null);
-    
+
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
       const { _error } = await supabase
@@ -114,44 +117,44 @@ export function usePortfolio() {
           image_url: project.image_url,
           github_url: project.github_url,
           demo_url: project.demo_url,
-          pdf_url: project.pdf_url
+          pdf_url: project.pdf_url,
         })
         .eq('id', projectId)
         .eq('user_id', user.id);
-      
+
       if (error) throw error;
-      
+
       toast({
-        title: "Project updated",
-        description: "Your portfolio project has been updated"
+        title: 'Project updated',
+        description: 'Your portfolio project has been updated',
       });
-      
+
       await fetchProjects();
       return true;
     } catch (e: unknown) {
       const message = e instanceof Error ? e.message : String(e);
-      logErrorToProduction('Error updating portfolio project:', { data:  e });
+      logErrorToProduction('Error updating portfolio project:', { data: e });
       setError(message);
       toast({
-        title: "Error",
+        title: 'Error',
         description: `Could not update project: ${message}`,
-        variant: "destructive"
+        variant: 'destructive',
       });
       return false;
     } finally {
       setIsLoading(false);
     }
   };
-  
+
   const deleteProject = async (projectId: string): Promise<boolean> => {
     if (!user) {
       setError('You must be logged in to delete a portfolio project');
       return false;
     }
-    
+
     setIsLoading(true);
     setError(null);
-    
+
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
       const { _error } = await supabase
@@ -159,31 +162,31 @@ export function usePortfolio() {
         .delete()
         .eq('id', projectId)
         .eq('user_id', user.id);
-      
+
       if (error) throw error;
-      
+
       toast({
-        title: "Project deleted",
-        description: "Your portfolio project has been deleted"
+        title: 'Project deleted',
+        description: 'Your portfolio project has been deleted',
       });
-      
-      setProjects(projects.filter(p => p.id !== projectId));
+
+      setProjects(projects.filter((p) => p.id !== projectId));
       return true;
     } catch (e: unknown) {
       const message = e instanceof Error ? e.message : String(e);
-      logErrorToProduction('Error deleting portfolio project:', { data:  e });
+      logErrorToProduction('Error deleting portfolio project:', { data: e });
       setError(message);
       toast({
-        title: "Error",
+        title: 'Error',
         description: `Could not delete project: ${message}`,
-        variant: "destructive"
+        variant: 'destructive',
       });
       return false;
     } finally {
       setIsLoading(false);
     }
   };
-  
+
   return {
     isLoading,
     error,
@@ -191,6 +194,6 @@ export function usePortfolio() {
     fetchProjects,
     addProject,
     updateProject,
-    deleteProject
+    deleteProject,
   };
 }

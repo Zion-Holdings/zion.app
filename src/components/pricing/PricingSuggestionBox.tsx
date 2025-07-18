@@ -1,21 +1,22 @@
-
-import React from "react";
+import React from 'react';
 import { Loader2, Info } from '@/components/ui/icons';
-import { Button } from "@/components/ui/button";
-import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Button } from '@/components/ui/button';
+import {
+  TooltipProvider,
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+} from '@/components/ui/tooltip';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
-
-
-
-import type { PricingSuggestion } from "@/services/pricingSuggestionService";
+import type { PricingSuggestion } from '@/services/pricingSuggestionService';
 
 interface PricingSuggestionBoxProps {
   suggestion: PricingSuggestion | null;
   isLoading: boolean;
   onApplySuggestion: () => void;
-  rateType: "hourly" | "fixed";
+  rateType: 'hourly' | 'fixed';
 }
 
 export const PricingSuggestionBox: React.FC<PricingSuggestionBoxProps> = ({
@@ -44,9 +45,9 @@ export const PricingSuggestionBox: React.FC<PricingSuggestionBoxProps> = ({
   }
 
   const confidenceColor = {
-    High: "bg-green-100 text-green-800",
-    Medium: "bg-yellow-100 text-yellow-800",
-    Low: "bg-red-100 text-red-800",
+    High: 'bg-green-100 text-green-800',
+    Medium: 'bg-yellow-100 text-yellow-800',
+    Low: 'bg-red-100 text-red-800',
   }[suggestion.confidence];
 
   return (
@@ -64,7 +65,7 @@ export const PricingSuggestionBox: React.FC<PricingSuggestionBoxProps> = ({
             ${suggestion.minRate.toFixed(0)} - ${suggestion.maxRate.toFixed(0)}
           </span>
           <span className="text-sm text-muted-foreground ml-1">
-            {rateType === "hourly" ? "/hour" : " total"}
+            {rateType === 'hourly' ? '/hour' : ' total'}
           </span>
         </div>
 
@@ -91,7 +92,7 @@ export const PricingSuggestionBox: React.FC<PricingSuggestionBoxProps> = ({
             </Tooltip>
           </TooltipProvider>
         </div>
-        
+
         <p className="text-xs text-center text-muted-foreground pt-2">
           Based on market data & trends. You can adjust as needed.
         </p>

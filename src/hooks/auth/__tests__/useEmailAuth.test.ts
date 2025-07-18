@@ -8,7 +8,7 @@ import { toast } from '@/hooks/use-toast'; // Mocked in setupTests.ts or here
 // Mock toast if not already fully mocked in setupTests,
 // especially if you want to assert on its calls within these specific tests.
 vi.mock('@/hooks/use-toast', async (importOriginal) => {
-  const actual = await importOriginal() as any;
+  const actual = (await importOriginal()) as any;
   return {
     ...actual,
     toast: vi.fn(),
@@ -26,14 +26,16 @@ describe('useEmailAuth', () => {
   });
 
   it('successful login with rememberMe=true stores token in localStorage', async () => {
-    const { _result } = renderHook(() => useEmailAuth(mockSetUser, mockSetIsLoading));
+    const { _result } = renderHook(() =>
+      useEmailAuth(mockSetUser, mockSetIsLoading),
+    );
 
     let loginResult;
     await act(async () => {
       loginResult = await result.current.login({
         email: 'test@example.com',
         password: 'password123',
-        rememberMe: true
+        rememberMe: true,
       });
     });
 
@@ -42,25 +44,34 @@ describe('useEmailAuth', () => {
 
     // from msw handler
     const expectedUser = {
-        id: 'user-123',
-        email: 'test@example.com',
-        displayName: 'Test User',
-        userType: 'test',
-        profileComplete: true,
-        // Omitting dates for simplicity in this part of the test, or use expect.any(String)
+      id: 'user-123',
+      email: 'test@example.com',
+      displayName: 'Test User',
+      userType: 'test',
+      profileComplete: true,
+      // Omitting dates for simplicity in this part of the test, or use expect.any(String)
     };
-    expect(mockSetUser).toHaveBeenCalledWith(expect.objectContaining(expectedUser));
-    expect(safeStorage.setItem).toHaveBeenCalledWith('zion_token', 'mock-jwt-token');
+    expect(mockSetUser).toHaveBeenCalledWith(
+      expect.objectContaining(expectedUser),
+    );
+    expect(safeStorage.setItem).toHaveBeenCalledWith(
+      'zion_token',
+      'mock-jwt-token',
+    );
     expect(safeSessionStorage.setItem).not.toHaveBeenCalled();
     expect(loginResult?.data?.token).toBe('mock-jwt-token');
-    expect(loginResult?.data?.user).toEqual(expect.objectContaining(expectedUser));
+    expect(loginResult?.data?.user).toEqual(
+      expect.objectContaining(expectedUser),
+    );
     expect(loginResult?.error).toBeUndefined();
     expect(mockSetIsLoading).toHaveBeenCalledWith(false);
     expect(toast).not.toHaveBeenCalled();
   });
 
   it('successful login with rememberMe=false stores token in sessionStorage', async () => {
-    const { _result } = renderHook(() => useEmailAuth(mockSetUser, mockSetIsLoading));
+    const { _result } = renderHook(() =>
+      useEmailAuth(mockSetUser, mockSetIsLoading),
+    );
 
     let loginResult;
     await act(async () => {
@@ -74,8 +85,13 @@ describe('useEmailAuth', () => {
     expect(mockSetIsLoading).toHaveBeenCalledWith(true);
     expect(fetch).toHaveBeenCalledWith('/auth/login', expect.any(Object));
     const expectedUser = { email: 'test@example.com' }; // Simplified check
-    expect(mockSetUser).toHaveBeenCalledWith(expect.objectContaining(expectedUser));
-    expect(safeSessionStorage.setItem).toHaveBeenCalledWith('zion_token', 'mock-jwt-token');
+    expect(mockSetUser).toHaveBeenCalledWith(
+      expect.objectContaining(expectedUser),
+    );
+    expect(safeSessionStorage.setItem).toHaveBeenCalledWith(
+      'zion_token',
+      'mock-jwt-token',
+    );
     expect(safeStorage.setItem).not.toHaveBeenCalled();
     expect(loginResult?.data?.token).toBe('mock-jwt-token');
     expect(mockSetIsLoading).toHaveBeenCalledWith(false);
@@ -83,7 +99,9 @@ describe('useEmailAuth', () => {
   });
 
   it('failed login (401) displays toast and returns error', async () => {
-    const { _result } = renderHook(() => useEmailAuth(mockSetUser, mockSetIsLoading));
+    const { _result } = renderHook(() =>
+      useEmailAuth(mockSetUser, mockSetIsLoading),
+    );
 
     let loginResult;
     await act(async () => {
@@ -110,7 +128,9 @@ describe('useEmailAuth', () => {
   });
 
   it('handles other API errors (e.g., 500) and displays toast', async () => {
-    const { _result } = renderHook(() => useEmailAuth(mockSetUser, mockSetIsLoading));
+    const { _result } = renderHook(() =>
+      useEmailAuth(mockSetUser, mockSetIsLoading),
+    );
 
     let loginResult;
     await act(async () => {
@@ -143,13 +163,15 @@ describe('useEmailAuth', () => {
     const authUtils = await import('@/utils/authUtils');
     const cleanupSpy = vi.spyOn(authUtils, 'cleanupAuthState');
 
-    const { _result } = renderHook(() => useEmailAuth(mockSetUser, mockSetIsLoading));
+    const { _result } = renderHook(() =>
+      useEmailAuth(mockSetUser, mockSetIsLoading),
+    );
 
     await act(async () => {
       await result.current.login({
         email: 'test@example.com',
         password: 'password123',
-        rememberMe: true
+        rememberMe: true,
       });
     });
 

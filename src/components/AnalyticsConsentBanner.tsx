@@ -5,11 +5,12 @@ import { getCookie, setCookie } from '@/utils/cookies';
 import { initGA } from '@/lib/analytics';
 import { initPostHog } from '@/lib/posthog';
 
-export const _AnalyticsConsentBanner: React.FC = () => {
+const AnalyticsConsentBanner: React.FC = () => {
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
-    const consent = getCookie('analyticsConsent') || safeStorage.getItem('analyticsConsent');
+    const consent =
+      getCookie('analyticsConsent') || safeStorage.getItem('analyticsConsent');
     if (consent === 'granted') {
       initGA();
       initPostHog();

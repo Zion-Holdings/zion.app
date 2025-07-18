@@ -1,24 +1,29 @@
-import { GradientHeading } from "./GradientHeading";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Button } from "./ui/button";
-import Link from "next/link";
-import { BLOG_POSTS } from "@/data/blog-posts";
+import { GradientHeading } from './GradientHeading';
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { Button } from './ui/button';
+import Link from 'next/link';
+import { BLOG_POSTS } from '@/data/blog-posts';
 import Image from 'next/image';
 import React, { useState } from 'react'; // Ensure React and useState are imported
 
 // Get the 3 most recent blog posts
-const recentPosts = [...BLOG_POSTS].sort((a, b) => {
-  return new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime();
-}).slice(0, 3);
+const recentPosts = [...BLOG_POSTS]
+  .sort((a, b) => {
+    return (
+      new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime()
+    );
+  })
+  .slice(0, 3);
 
 // Define a sub-component for the image to manage its state
-const PostImage = ({ post }: { _post: typeof recentPosts[0] }) => {
+const PostImage = ({ post }: { _post: (typeof recentPosts)[0] }) => {
   const [imageSrc, setImageSrc] = useState(post.featuredImage);
   const [imageError, setImageError] = useState(false);
 
   const handleImageError = () => {
-    if (!imageError) { // Prevent infinite loops if placeholder also fails
-      setImageSrc("/images/blog-placeholder.svg");
+    if (!imageError) {
+      // Prevent infinite loops if placeholder also fails
+      setImageSrc('/images/blog-placeholder.svg');
       setImageError(true);
     }
   };
@@ -45,7 +50,8 @@ export function BlogSection() {
           <div>
             <GradientHeading>Latest Insights</GradientHeading>
             <p className="mt-2 text-zion-slate-light text-xl max-w-2xl">
-              Stay updated with trends in AI technology, marketplace strategies, and IT services
+              Stay updated with trends in AI technology, marketplace strategies,
+              and IT services
             </p>
           </div>
           <Button
@@ -66,18 +72,30 @@ export function BlogSection() {
               <Link href={`/blog/${post.slug}`} className="block group">
                 <div className="h-48 bg-zion-blue-dark relative overflow-hidden">
                   <PostImage post={post} /> {/* Use the sub-component */}
-                  <div className="absolute bottom-4 left-4 text-zion-purple/70 text-4xl font-bold">{index + 1}</div>
+                  <div className="absolute bottom-4 left-4 text-zion-purple/70 text-4xl font-bold">
+                    {index + 1}
+                  </div>
                 </div>
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs text-white bg-zion-blue-dark px-2 py-1 rounded">{post.category}</span>
-                    <div className="text-xs text-zion-slate-light">{post.publishedDate} • {post.readTime}</div>
+                    <span className="text-xs text-white bg-zion-blue-dark px-2 py-1 rounded">
+                      {post.category}
+                    </span>
+                    <div className="text-xs text-zion-slate-light">
+                      {post.publishedDate} • {post.readTime}
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-zion-blue-dark mb-3">{post.title}</h3>
-                  <p className="text-zion-blue-dark line-clamp-2">{post.excerpt}</p>
+                  <h3 className="text-xl font-bold text-zion-blue-dark mb-3">
+                    {post.title}
+                  </h3>
+                  <p className="text-zion-blue-dark line-clamp-2">
+                    {post.excerpt}
+                  </p>
                 </CardContent>
                 <CardFooter className="p-6 pt-0">
-                  <span className="text-zion-blue-dark group-hover:text-zion-purple-dark">Read More →</span>
+                  <span className="text-zion-blue-dark group-hover:text-zion-purple-dark">
+                    Read More →
+                  </span>
                 </CardFooter>
               </Link>
             </Card>

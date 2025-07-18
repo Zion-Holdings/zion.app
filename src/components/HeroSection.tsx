@@ -1,10 +1,9 @@
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import { ArrowRight, Zap, Target, Sparkles } from 'lucide-react';
-import { GradientHeading } from "@/components/GradientHeading";
-import Link from "next/link";
-import { useTranslation } from "react-i18next";
-import { HowItWorksVideo } from "@/components/HowItWorksVideo";
-
+import { GradientHeading } from '@/components/GradientHeading';
+import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
+import { HowItWorksVideo } from '@/components/HowItWorksVideo';
 
 export function HeroSection() {
   const { t } = useTranslation();
@@ -12,22 +11,22 @@ export function HeroSection() {
     <section className="relative overflow-hidden py-20 md:py-32 min-h-[600px] md:min-h-[700px] bg-gradient-to-br from-background via-background to-muted/20">
       {/* Enhanced background effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background opacity-90"></div>
-      
+
       {/* Animated floating elements with better positioning */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-2 h-2 rounded-full bg-primary opacity-40 animate-pulse"></div>
         <div className="absolute top-1/3 right-1/3 w-3 h-3 rounded-full bg-secondary opacity-30 animate-pulse hidden sm:block"></div>
         <div className="absolute bottom-1/4 left-1/2 w-2 h-2 rounded-full bg-primary opacity-30 animate-pulse"></div>
         <div className="absolute top-1/2 right-1/4 w-4 h-4 rounded-full bg-secondary opacity-20 animate-pulse hidden sm:block"></div>
-        
+
         {/* New animated elements */}
         <div className="absolute top-1/6 right-1/6 w-1 h-1 rounded-full bg-accent opacity-50 animate-bounce"></div>
         <div className="absolute bottom-1/3 left-1/6 w-2 h-2 rounded-full bg-primary opacity-25 animate-ping"></div>
       </div>
-      
+
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
-      
+
       <div className="container relative z-10 px-4 mx-auto text-center flex flex-col justify-center min-h-[500px] md:min-h-[600px]">
         {/* Enhanced hero title with better spacing */}
         <div className="min-h-[120px] sm:min-h-[140px] md:min-h-[180px] flex items-center justify-center mb-8">
@@ -72,7 +71,7 @@ export function HeroSection() {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
               </Link>
             </Button>
-            
+
             <Button
               variant="outline"
               size="lg"

@@ -1,16 +1,14 @@
-
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import { Loader2 } from '@/components/ui/icons';
 
-
-import type { NavigationButtonsProps } from "./types";
+import type { NavigationButtonsProps } from './types';
 
 export const NavigationButtons = ({
   onBack,
   onNext,
   isNextDisabled = false,
-  backLabel = "Back",
-  nextLabel = "Next",
+  backLabel = 'Back',
+  nextLabel = 'Next',
   isLoading = false,
 }: NavigationButtonsProps) => {
   return (

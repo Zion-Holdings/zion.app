@@ -17,7 +17,7 @@ const DataSync: React.FC = () => {
     (async () => {
       try {
         // Reactivate: Use mock data for performance API
-        await new Promise(resolve => setTimeout(resolve, 400));
+        await new Promise((resolve) => setTimeout(resolve, 400));
         const result = {
           activeUsers30d: 1245,
           totalListings: 312,
@@ -41,12 +41,26 @@ const DataSync: React.FC = () => {
 
   return (
     <div className="p-6 bg-white shadow rounded-lg">
-      <h2 className="text-xl font-semibold mb-4 text-gray-800">Marketplace Performance Data (Auto-Pulled)</h2>
+      <h2 className="text-xl font-semibold mb-4 text-gray-800">
+        Marketplace Performance Data (Auto-Pulled)
+      </h2>
       <div className="space-y-2">
-        <div>Active Users (30d): <span className="font-bold">{data.activeUsers30d}</span></div>
-        <div>Total Listings: <span className="font-bold">{data.totalListings}</span></div>
-        <div>Avg. Response Time: <span className="font-bold">{data.avgResponseTime}</span></div>
-        <div>Conversion Rate: <span className="font-bold">{data.conversionRate}</span></div>
+        <div>
+          Active Users (30d):{' '}
+          <span className="font-bold">{data.activeUsers30d}</span>
+        </div>
+        <div>
+          Total Listings:{' '}
+          <span className="font-bold">{data.totalListings}</span>
+        </div>
+        <div>
+          Avg. Response Time:{' '}
+          <span className="font-bold">{data.avgResponseTime}</span>
+        </div>
+        <div>
+          Conversion Rate:{' '}
+          <span className="font-bold">{data.conversionRate}</span>
+        </div>
       </div>
     </div>
   );

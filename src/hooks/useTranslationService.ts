@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 // Only use the public client-side OpenAI key - never reference server-side secrets
 const openAiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
@@ -18,12 +17,12 @@ interface TranslationResponse {
 export function useTranslationService() {
   const [isTranslating, setIsTranslating] = useState(false);
   const { _currentLanguage } = useLanguage();
-  
+
   const translateContent = async (
     content: string,
     contentType: ContentType = 'general',
     sourceLanguage: SupportedLanguage = 'en',
-    targetLanguages: SupportedLanguage[] = ['en', 'es', 'fr', 'pt', 'ar']
+    targetLanguages: SupportedLanguage[] = ['en', 'es', 'fr', 'pt', 'ar'],
   ): Promise<TranslationResponse> => {
     setIsTranslating(true);
 
@@ -36,7 +35,10 @@ export function useTranslationService() {
               ? 'You are a professional translator specializing in professional profiles. Translate the content accurately while maintaining the professional tone and highlighting skills appropriately.'
               : 'You are a professional translator. Translate the content accurately while maintaining the original meaning, tone, and format.';
 
-        const translations: Record<SupportedLanguage, string> = {} as Record<SupportedLanguage, string>;
+        const translations: Record<SupportedLanguage, string> = {} as Record<
+          SupportedLanguage,
+          string
+        >;
 
         for (const targetLang of targetLanguages) {
           if (targetLang === sourceLanguage) {
@@ -44,24 +46,27 @@ export function useTranslationService() {
             continue;
           }
 
-          const response = await fetch('https://api.openai.com/v1/chat/completions', {
-            method: 'POST',
-            headers: {
-              Authorization: `Bearer ${openAiKey}`,
-              'Content-Type': 'application/json'
+          const response = await fetch(
+            'https://api.openai.com/v1/chat/completions',
+            {
+              method: 'POST',
+              headers: {
+                Authorization: `Bearer ${openAiKey}`,
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                model: 'gpt-4o',
+                messages: [
+                  { role: 'system', content: systemPrompt },
+                  {
+                    role: 'user',
+                    content: `Translate the following ${contentType || 'content'} from ${sourceLanguage} to ${targetLang}:\n\n${content}\n\nOnly provide the translated text, no explanations or additional comments.`,
+                  },
+                ],
+                temperature: 0.3,
+              }),
             },
-            body: JSON.stringify({
-              model: 'gpt-4o',
-              messages: [
-                { role: 'system', content: systemPrompt },
-                {
-                  role: 'user',
-                  content: `Translate the following ${contentType || 'content'} from ${sourceLanguage} to ${targetLang}:\n\n${content}\n\nOnly provide the translated text, no explanations or additional comments.`
-                }
-              ],
-              temperature: 0.3
-            })
-          });
+          );
 
           if (!response.ok) {
             const errorData = await response.json();
@@ -77,17 +82,20 @@ export function useTranslationService() {
       }
 
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { data, error } = await supabase.functions.invoke('translate-content', {
-        body: {
-          content,
-          sourceLanguage,
-          targetLanguages,
-          contentType
-        }
-      });
-      
+      const { data, error } = await supabase.functions.invoke(
+        'translate-content',
+        {
+          body: {
+            content,
+            sourceLanguage,
+            targetLanguages,
+            contentType,
+          },
+        },
+      );
+
       setIsTranslating(false);
-      
+
       if (error) {
         logErrorToProduction('Translation error:', { data: error });
         const initialTranslations: Record<SupportedLanguage, string> = {
@@ -95,12 +103,12 @@ export function useTranslationService() {
           es: '',
           fr: '',
           pt: '',
-          ar: ''
+          ar: '',
         };
         initialTranslations[sourceLanguage] = content;
         return { translations: initialTranslations, error: error.message };
       }
-      
+
       // Handle mock response with fallback
       if (!data || typeof data !== 'object' || !('translations' in data)) {
         const initialTranslations: Record<SupportedLanguage, string> = {
@@ -108,29 +116,34 @@ export function useTranslationService() {
           es: '',
           fr: '',
           pt: '',
-          ar: ''
+          ar: '',
         };
         initialTranslations[sourceLanguage] = content;
         return { translations: initialTranslations };
       }
 
       // Type guard for translations
-      const maybeTranslations = (data as { translations: unknown }).translations;
+      const maybeTranslations = (data as { translations: unknown })
+        .translations;
       if (
         maybeTranslations &&
         typeof maybeTranslations === 'object' &&
         ['en', 'es', 'fr', 'pt', 'ar'].every(
-          lang => typeof (maybeTranslations as Record<string, unknown>)[lang] === 'string'
+          (lang) =>
+            typeof (maybeTranslations as Record<string, unknown>)[lang] ===
+            'string',
         )
       ) {
-        return { translations: maybeTranslations as Record<SupportedLanguage, string> };
+        return {
+          translations: maybeTranslations as Record<SupportedLanguage, string>,
+        };
       } else {
         const initialTranslations: Record<SupportedLanguage, string> = {
           en: content,
           es: '',
           fr: '',
           pt: '',
-          ar: ''
+          ar: '',
         };
         initialTranslations[sourceLanguage] = content;
         return { translations: initialTranslations };
@@ -138,31 +151,35 @@ export function useTranslationService() {
     } catch (error) {
       setIsTranslating(false);
       logErrorToProduction('Translation service error:', { data: error });
-      
+
       const initialTranslations: Record<SupportedLanguage, string> = {
         en: content,
         es: '',
         fr: '',
         pt: '',
-        ar: ''
+        ar: '',
       };
       initialTranslations[sourceLanguage] = content;
-      
-      return { 
+
+      return {
         translations: initialTranslations,
-        error: error instanceof Error ? error.message : 'Unknown translation error' 
+        error:
+          error instanceof Error ? error.message : 'Unknown translation error',
       };
     }
   };
-  
-  const getTranslation = (translations: Record<SupportedLanguage, string>, fallback: string = '') => {
+
+  const getTranslation = (
+    translations: Record<SupportedLanguage, string>,
+    fallback: string = '',
+  ) => {
     if (!translations) return fallback;
     return translations[_currentLanguage] || translations.en || fallback;
   };
-  
+
   return {
     translateContent,
     isTranslating,
-    getTranslation
+    getTranslation,
   };
 }

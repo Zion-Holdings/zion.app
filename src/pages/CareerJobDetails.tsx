@@ -20,9 +20,11 @@ export default function CareerJobDetails() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (_e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    _e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
-    setForm(prev => ({ ...prev, [name]: value }));
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (_e: React.FormEvent) => {
@@ -37,8 +39,8 @@ export default function CareerJobDetails() {
           name: form.name,
           email: form.email,
           subject: `Application for ${job.title}`,
-          message: form.message
-        })
+          message: form.message,
+        }),
       });
       setSubmitted(true);
       setForm({ name: '', email: '', message: '' });
@@ -69,28 +71,66 @@ export default function CareerJobDetails() {
 
           <div className="max-w-3xl mx-auto space-y-8 bg-zion-blue-dark border border-zion-blue-light p-8 rounded-lg">
             <div>
-              <h2 className="text-xl font-semibold text-white mb-2">Job Description</h2>
-              <p className="text-zion-slate-light whitespace-pre-line">{job.description}</p>
+              <h2 className="text-xl font-semibold text-white mb-2">
+                Job Description
+              </h2>
+              <p className="text-zion-slate-light whitespace-pre-line">
+                {job.description}
+              </p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
-              <h3 className="text-lg font-semibold text-white">Apply for this role</h3>
+              <h3 className="text-lg font-semibold text-white">
+                Apply for this role
+              </h3>
               {submitted && (
-                <p className="text-green-400">Application sent! We'll be in touch soon.</p>
+                <p className="text-green-400">
+                  Application sent! We'll be in touch soon.
+                </p>
               )}
               <div>
-                <label className="block text-sm mb-1" htmlFor="name">Name</label>
-                <Input id="name" name="name" value={form.name} onChange={handleChange} required />
+                <label className="block text-sm mb-1" htmlFor="name">
+                  Name
+                </label>
+                <Input
+                  id="name"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  required
+                />
               </div>
               <div>
-                <label className="block text-sm mb-1" htmlFor="email">Email</label>
-                <Input id="email" name="email" type="email" value={form.email} onChange={handleChange} required />
+                <label className="block text-sm mb-1" htmlFor="email">
+                  Email
+                </label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  required
+                />
               </div>
               <div>
-                <label className="block text-sm mb-1" htmlFor="message">Cover Letter</label>
-                <Textarea id="message" name="message" rows={6} value={form.message} onChange={handleChange} required />
+                <label className="block text-sm mb-1" htmlFor="message">
+                  Cover Letter
+                </label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  rows={6}
+                  value={form.message}
+                  onChange={handleChange}
+                  required
+                />
               </div>
-              <Button type="submit" disabled={submitting} className="bg-gradient-to-r from-zion-purple to-zion-purple-dark">
+              <Button
+                type="submit"
+                disabled={submitting}
+                className="bg-gradient-to-r from-zion-purple to-zion-purple-dark"
+              >
                 {submitting ? (
                   <>
                     <LoadingSpinner size="sm" className="mr-2" />
@@ -103,7 +143,13 @@ export default function CareerJobDetails() {
             </form>
 
             <div className="text-sm text-zion-slate-light">
-              Prefer email? <a href={`mailto:${applyEmail}?subject=${encodeURIComponent(`Application for ${job.title}`)}`} className="text-zion-cyan">{applyEmail}</a>
+              Prefer email?{' '}
+              <a
+                href={`mailto:${applyEmail}?subject=${encodeURIComponent(`Application for ${job.title}`)}`}
+                className="text-zion-cyan"
+              >
+                {applyEmail}
+              </a>
             </div>
 
             <Button asChild variant="outline" className="mt-6">

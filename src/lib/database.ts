@@ -1,5 +1,9 @@
 import { PrismaClient, Prisma as _Prisma } from '@prisma/client';
-import { logInfo, logErrorToProduction, logDebug } from '@/utils/productionLogger';
+import {
+  logInfo,
+  logErrorToProduction,
+  logDebug,
+} from '@/utils/productionLogger';
 import type { Prisma } from '@prisma/client';
 
 // Global Prisma instance for connection reuse
@@ -16,7 +20,10 @@ interface DatabaseOptions {
 }
 
 const DB_OPTIONS: DatabaseOptions = {
-  log: process.env.NODE_ENV === 'development' ? ['error', 'warn'] as Prisma.LogLevel[] : ['error'] as Prisma.LogLevel[],
+  log:
+    process.env.NODE_ENV === 'development'
+      ? (['error', 'warn'] as Prisma.LogLevel[])
+      : (['error'] as Prisma.LogLevel[]),
   datasources: {
     db: {
       url: process.env.DATABASE_URL || '',
@@ -31,7 +38,7 @@ export function getDatabaseClient(): PrismaClient {
   if (!prisma) {
     logInfo('Creating new Prisma client instance...');
     prisma = new PrismaClient(DB_OPTIONS);
-    
+
     // Handle graceful shutdown
     process.on('beforeExit', async () => {
       if (prisma) {
@@ -40,7 +47,7 @@ export function getDatabaseClient(): PrismaClient {
       }
     });
   }
-  
+
   return prisma;
 }
 
@@ -50,29 +57,29 @@ export function getDatabaseClient(): PrismaClient {
 export async function executeWithTimeout<T>(
   queryFn: (client: PrismaClient) => Promise<T>,
   timeoutMs: number = 5000,
-  fallbackData?: T
+  fallbackData?: T,
 ): Promise<T> {
   const client = getDatabaseClient();
-  
+
   const timeoutPromise = new Promise<never>((_, reject) => {
-    setTimeout(() => reject(new Error(`Database query timeout after ${timeoutMs}ms`)), timeoutMs);
+    setTimeout(
+      () => reject(new Error(`Database query timeout after ${timeoutMs}ms`)),
+      timeoutMs,
+    );
   });
 
   try {
-    const result = await Promise.race([
-      queryFn(client),
-      timeoutPromise
-    ]);
-    
+    const result = await Promise.race([queryFn(client), timeoutPromise]);
+
     return result;
   } catch {
     logErrorToProduction('Database query failed', error as Error);
-    
+
     if (fallbackData !== undefined) {
       logDebug('Returning fallback data due to database error');
       return fallbackData;
     }
-    
+
     throw error;
   }
 }
@@ -98,7 +105,7 @@ export async function testDatabaseConnection(): Promise<boolean> {
 export async function getDatabaseStats() {
   try {
     const _client = undefined; // Unused getDatabaseClient();
-    
+
     // These might not be available in all Prisma versions
     const stats = {
       connected: true,
@@ -106,16 +113,16 @@ export async function getDatabaseStats() {
         // Add pool stats if available
         active: 'unknown',
         idle: 'unknown',
-        total: 'unknown'
-      }
+        total: 'unknown',
+      },
     };
-    
+
     return stats;
   } catch {
     logErrorToProduction('Failed to get database stats', error as Error);
     return {
       connected: false,
-      error: error instanceof Error ? error : 'Unknown error'
+      error: error instanceof Error ? error : 'Unknown error',
     };
   }
 }
@@ -128,9 +135,9 @@ export async function disconnectDatabase(): Promise<void> {
     try {
       await prisma.$disconnect();
       prisma = null;
-    logInfo('Database disconnected successfully');
+      logInfo('Database disconnected successfully');
     } catch {
-    logErrorToProduction('Error disconnecting from database', error as Error);
+      logErrorToProduction('Error disconnecting from database', error as Error);
     }
   }
 }
@@ -144,24 +151,24 @@ export async function databaseHealthCheck(): Promise<{
   error?: string;
 }> {
   const startTime = Date.now();
-  
+
   try {
     await executeWithTimeout(
       async (client) => client.$queryRaw`SELECT 1`,
-      3000 // 3 second timeout for health check
+      3000, // 3 second timeout for health check
     );
-    
+
     const responseTime = Date.now() - startTime;
-    
+
     return {
       status: responseTime > 1000 ? 'degraded' : 'healthy',
-      responseTime
+      responseTime,
     };
   } catch {
     return {
       status: 'unhealthy',
       responseTime: Date.now() - startTime,
-      error: error instanceof Error ? error : 'Unknown error'
+      error: error instanceof Error ? error : 'Unknown error',
     };
   }
 }
@@ -172,5 +179,5 @@ export default {
   testConnection: testDatabaseConnection,
   getStats: getDatabaseStats,
   disconnect: disconnectDatabase,
-  healthCheck: databaseHealthCheck
-}; 
+  healthCheck: databaseHealthCheck,
+};

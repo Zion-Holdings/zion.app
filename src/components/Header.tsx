@@ -1,5 +1,16 @@
 import React, { useState } from 'react';
-import { Menu, X, Search, Bell, User, LogOut, Settings, Globe, ChevronDown, ShoppingCart } from '@/components/ui/icons';
+import {
+  Menu,
+  X,
+  Search,
+  Bell,
+  User,
+  LogOut,
+  Settings,
+  Globe,
+  ChevronDown,
+  ShoppingCart,
+} from '@/components/ui/icons';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
@@ -92,7 +103,9 @@ export function Header({ hideLogin = false }: HeaderProps) {
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <input
                   type="text"
-                  placeholder={t('search.placeholder') || 'Search marketplace...'}
+                  placeholder={
+                    t('search.placeholder') || 'Search marketplace...'
+                  }
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-10 pr-4 py-2 text-sm bg-muted/50 border border-border rounded-lg _focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -108,7 +121,9 @@ export function Header({ hideLogin = false }: HeaderProps) {
               variant="ghost"
               size="icon"
               className="lg:hidden"
-              onClick={() => {/* Toggle mobile search */}}
+              onClick={() => {
+                /* Toggle mobile search */
+              }}
             >
               <Search className="h-4 w-4" />
             </Button>
@@ -143,7 +158,10 @@ export function Header({ hideLogin = false }: HeaderProps) {
             {isAuthenticated && user ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="flex items-center space-x-2">
+                  <Button
+                    variant="ghost"
+                    className="flex items-center space-x-2"
+                  >
                     <div className="h-8 w-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
                       <User className="h-4 w-4 text-white" />
                     </div>
@@ -171,14 +189,14 @@ export function Header({ hideLogin = false }: HeaderProps) {
               </DropdownMenu>
             ) : !hideLogin ? (
               <div className="hidden sm:flex items-center space-x-2">
-                <Button 
-                  variant="ghost" 
+                <Button
+                  variant="ghost"
                   size="sm"
                   onClick={() => router.push('/auth/login')}
                 >
                   {t('auth.login') || 'Login'}
                 </Button>
-                <Button 
+                <Button
                   size="sm"
                   onClick={() => router.push('/signup')}
                   className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
@@ -195,7 +213,11 @@ export function Header({ hideLogin = false }: HeaderProps) {
               className="md:hidden"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isMobileMenuOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </Button>
           </div>
         </div>
@@ -210,7 +232,9 @@ export function Header({ hideLogin = false }: HeaderProps) {
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <input
                     type="text"
-                    placeholder={t('search.placeholder') || 'Search marketplace...'}
+                    placeholder={
+                      t('search.placeholder') || 'Search marketplace...'
+                    }
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="w-full pl-10 pr-4 py-2 text-sm bg-muted/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -235,8 +259,8 @@ export function Header({ hideLogin = false }: HeaderProps) {
               {/* Mobile Auth Buttons */}
               {!isAuthenticated && !hideLogin && (
                 <div className="flex flex-col space-y-2 pt-4 border-t border-border/40">
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                       router.push('/auth/login');
@@ -244,7 +268,7 @@ export function Header({ hideLogin = false }: HeaderProps) {
                   >
                     {t('auth.login') || 'Login'}
                   </Button>
-                  <Button 
+                  <Button
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                       router.push('/signup');

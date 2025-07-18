@@ -1,4 +1,3 @@
-
 import { createNotification } from './createNotification';
 import type { OnboardingNotificationParams } from './types';
 
@@ -8,13 +7,13 @@ import type { OnboardingNotificationParams } from './types';
 export async function createOnboardingNotification({
   userId,
   missingMilestone,
-  userRole
+  userRole,
 }: OnboardingNotificationParams) {
   let title = '';
   let message = '';
   let actionUrl = '';
   let actionText = '';
-  
+
   if (userRole === 'talent') {
     switch (missingMilestone) {
       case 'profile_completed':
@@ -31,7 +30,8 @@ export async function createOnboardingNotification({
         break;
       case 'availability_set':
         title = 'Set your availability';
-        message = 'Set your availability to help clients know when you can work';
+        message =
+          'Set your availability to help clients know when you can work';
         actionUrl = '/settings/account';
         actionText = 'Set Availability';
         break;
@@ -58,7 +58,7 @@ export async function createOnboardingNotification({
         break;
     }
   }
-  
+
   return createNotification({
     userId,
     title,
@@ -66,6 +66,6 @@ export async function createOnboardingNotification({
     type: 'onboarding',
     sendEmail: false,
     actionUrl,
-    actionText
+    actionText,
   });
 }

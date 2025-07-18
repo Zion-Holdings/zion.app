@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { AlertTriangle, CheckCircle, XCircle, Clock, TrendingUp, Activity } from '@/components/ui/icons';
+import {
+  AlertTriangle,
+  CheckCircle,
+  XCircle,
+  Clock,
+  TrendingUp,
+  Activity,
+} from '@/components/ui/icons';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-
-
-
-
-
-
-
 
 interface HealthData {
   _status: 'healthy' | 'warning' | 'critical';
@@ -78,7 +78,7 @@ const HealthDashboard: React.FC = () => {
       const interval = setInterval(fetchHealthData, 30000); // Refresh every 30 seconds
       return () => clearInterval(interval);
     }
-    
+
     return undefined;
   }, [autoRefresh]);
 
@@ -90,13 +90,17 @@ const HealthDashboard: React.FC = () => {
         return <AlertTriangle className="w-5 h-5 text-yellow-500" />;
       case 'critical':
         return <XCircle className="w-5 h-5 text-red-500" />;
-      return <Activity className="w-5 h-5 text-gray-500" />;
+        return <Activity className="w-5 h-5 text-gray-500" />;
     }
   };
 
   const getStatusBadge = (status: string) => {
-    const variant = status === 'healthy' ? 'default' : 
-                   status === 'warning' ? 'secondary' : 'destructive';
+    const variant =
+      status === 'healthy'
+        ? 'default'
+        : status === 'warning'
+          ? 'secondary'
+          : 'destructive';
     return (
       <Badge variant={variant} className="ml-2">
         {status.toUpperCase()}
@@ -169,8 +173,12 @@ const HealthDashboard: React.FC = () => {
             <div className="flex items-center">
               {getStatusIcon(healthData.status)}
               <div className="ml-2">
-                <p className="text-sm font-medium text-gray-600">Overall Health</p>
-                <p className="text-2xl font-bold">{healthData.health.score}/100</p>
+                <p className="text-sm font-medium text-gray-600">
+                  Overall Health
+                </p>
+                <p className="text-2xl font-bold">
+                  {healthData.health.score}/100
+                </p>
               </div>
             </div>
           </CardContent>
@@ -182,7 +190,9 @@ const HealthDashboard: React.FC = () => {
               <Clock className="w-5 h-5 text-blue-500" />
               <div className="ml-2">
                 <p className="text-sm font-medium text-gray-600">Uptime</p>
-                <p className="text-2xl font-bold">{formatUptime(healthData.uptime)}</p>
+                <p className="text-2xl font-bold">
+                  {formatUptime(healthData.uptime)}
+                </p>
               </div>
             </div>
           </CardContent>
@@ -194,7 +204,9 @@ const HealthDashboard: React.FC = () => {
               <TrendingUp className="w-5 h-5 text-orange-500" />
               <div className="ml-2">
                 <p className="text-sm font-medium text-gray-600">Error Rate</p>
-                <p className="text-2xl font-bold">{healthData.metrics.errorRate.toFixed(1)}%</p>
+                <p className="text-2xl font-bold">
+                  {healthData.metrics.errorRate.toFixed(1)}%
+                </p>
               </div>
             </div>
           </CardContent>
@@ -205,8 +217,12 @@ const HealthDashboard: React.FC = () => {
             <div className="flex items-center">
               <Activity className="w-5 h-5 text-purple-500" />
               <div className="ml-2">
-                <p className="text-sm font-medium text-gray-600">Response Time</p>
-                <p className="text-2xl font-bold">{healthData.metrics.responseTime.toFixed(0)}ms</p>
+                <p className="text-sm font-medium text-gray-600">
+                  Response Time
+                </p>
+                <p className="text-2xl font-bold">
+                  {healthData.metrics.responseTime.toFixed(0)}ms
+                </p>
               </div>
             </div>
           </CardContent>
@@ -236,15 +252,21 @@ const HealthDashboard: React.FC = () => {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-sm text-gray-600">Version:</span>
-                    <span className="text-sm font-mono">{healthData.version}</span>
+                    <span className="text-sm font-mono">
+                      {healthData.version}
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-sm text-gray-600">Memory Usage:</span>
-                    <span className="text-sm">{formatBytes(healthData.metrics.memoryUsage)}</span>
+                    <span className="text-sm">
+                      {formatBytes(healthData.metrics.memoryUsage)}
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-sm text-gray-600">Last Updated:</span>
-                    <span className="text-sm">{new Date(healthData.timestamp).toLocaleTimeString()}</span>
+                    <span className="text-sm">
+                      {new Date(healthData.timestamp).toLocaleTimeString()}
+                    </span>
                   </div>
                 </div>
               </CardContent>
@@ -261,7 +283,10 @@ const HealthDashboard: React.FC = () => {
                 {healthData.health.issues.length > 0 ? (
                   <ul className="space-y-2">
                     {healthData.health.issues.map((issue, index) => (
-                      <li key={index} className="text-sm text-red-600 flex items-start">
+                      <li
+                        key={index}
+                        className="text-sm text-red-600 flex items-start"
+                      >
                         <span className="w-2 h-2 bg-red-400 rounded-full mt-1.5 mr-2 flex-shrink-0"></span>
                         {issue}
                       </li>
@@ -284,19 +309,27 @@ const HealthDashboard: React.FC = () => {
               <CardContent>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center">
-                    <p className="text-2xl font-bold text-red-600">{healthData.errors.summary.critical}</p>
+                    <p className="text-2xl font-bold text-red-600">
+                      {healthData.errors.summary.critical}
+                    </p>
                     <p className="text-sm text-gray-600">Critical</p>
                   </div>
                   <div className="text-center">
-                    <p className="text-2xl font-bold text-orange-600">{healthData.errors.summary.high}</p>
+                    <p className="text-2xl font-bold text-orange-600">
+                      {healthData.errors.summary.high}
+                    </p>
                     <p className="text-sm text-gray-600">High</p>
                   </div>
                   <div className="text-center">
-                    <p className="text-2xl font-bold text-yellow-600">{healthData.errors.summary.medium}</p>
+                    <p className="text-2xl font-bold text-yellow-600">
+                      {healthData.errors.summary.medium}
+                    </p>
                     <p className="text-sm text-gray-600">Medium</p>
                   </div>
                   <div className="text-center">
-                    <p className="text-2xl font-bold text-gray-600">{healthData.errors.summary.low}</p>
+                    <p className="text-2xl font-bold text-gray-600">
+                      {healthData.errors.summary.low}
+                    </p>
                     <p className="text-sm text-gray-600">Low</p>
                   </div>
                 </div>
@@ -310,14 +343,21 @@ const HealthDashboard: React.FC = () => {
               <CardContent>
                 {healthData.errors.topErrors.length > 0 ? (
                   <div className="space-y-2">
-                    {healthData.errors.topErrors.slice(0, 5).map((error, index) => (
-                      <div key={index} className="border-l-4 border-red-400 pl-3 py-1">
-                        <p className="text-sm font-medium">{error.description}</p>
-                        <p className="text-xs text-gray-600">
-                          {error.occurrences} occurrences • {error.severity}
-                        </p>
-                      </div>
-                    ))}
+                    {healthData.errors.topErrors
+                      .slice(0, 5)
+                      .map((error, index) => (
+                        <div
+                          key={index}
+                          className="border-l-4 border-red-400 pl-3 py-1"
+                        >
+                          <p className="text-sm font-medium">
+                            {error.description}
+                          </p>
+                          <p className="text-xs text-gray-600">
+                            {error.occurrences} occurrences • {error.severity}
+                          </p>
+                        </div>
+                      ))}
                   </div>
                 ) : (
                   <p className="text-gray-600 text-sm">No recurring errors</p>
@@ -334,7 +374,9 @@ const HealthDashboard: React.FC = () => {
                 <CardTitle className="text-sm">Error Rate</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-2xl font-bold">{healthData.metrics.errorRate.toFixed(2)}%</p>
+                <p className="text-2xl font-bold">
+                  {healthData.metrics.errorRate.toFixed(2)}%
+                </p>
                 <p className="text-xs text-gray-600">Errors per request</p>
               </CardContent>
             </Card>
@@ -344,7 +386,9 @@ const HealthDashboard: React.FC = () => {
                 <CardTitle className="text-sm">Critical Errors</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-2xl font-bold text-red-600">{healthData.metrics.criticalErrors}</p>
+                <p className="text-2xl font-bold text-red-600">
+                  {healthData.metrics.criticalErrors}
+                </p>
                 <p className="text-xs text-gray-600">In last hour</p>
               </CardContent>
             </Card>
@@ -354,7 +398,9 @@ const HealthDashboard: React.FC = () => {
                 <CardTitle className="text-sm">Avg Response</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-2xl font-bold">{healthData.metrics.responseTime.toFixed(0)}ms</p>
+                <p className="text-2xl font-bold">
+                  {healthData.metrics.responseTime.toFixed(0)}ms
+                </p>
                 <p className="text-xs text-gray-600">API response time</p>
               </CardContent>
             </Card>
@@ -364,7 +410,9 @@ const HealthDashboard: React.FC = () => {
                 <CardTitle className="text-sm">Memory Usage</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-2xl font-bold">{formatBytes(healthData.metrics.memoryUsage)}</p>
+                <p className="text-2xl font-bold">
+                  {formatBytes(healthData.metrics.memoryUsage)}
+                </p>
                 <p className="text-xs text-gray-600">JavaScript heap</p>
               </CardContent>
             </Card>
@@ -387,7 +435,9 @@ const HealthDashboard: React.FC = () => {
                   ))}
                 </ul>
               ) : (
-                <p className="text-gray-600">No specific recommendations at this time</p>
+                <p className="text-gray-600">
+                  No specific recommendations at this time
+                </p>
               )}
             </CardContent>
           </Card>
@@ -397,4 +447,4 @@ const HealthDashboard: React.FC = () => {
   );
 };
 
-export default HealthDashboard; 
+export default HealthDashboard;

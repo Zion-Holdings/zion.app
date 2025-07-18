@@ -2,8 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { AlertTriangle } from '@/components/ui/icons';
 import { motion, AnimatePresence } from 'framer-motion';
 
-
-
 import { cn } from '@/lib/utils';
 import { imageOptimization } from '@/utils/performance';
 import { logWarn } from '@/utils/productionLogger';
@@ -73,8 +71,8 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
       },
       {
         rootMargin: '50px', // Start loading 50px before image comes into view
-        threshold: 0.1
-      }
+        threshold: 0.1,
+      },
     );
 
     observerRef.current = observer;
@@ -101,15 +99,17 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
         entries.forEach((entry) => {
           if (entry.name === src && entry.entryType === 'resource') {
             const resourceEntry = entry as PerformanceResourceTiming;
-            const fileSize = resourceEntry.transferSize || resourceEntry.encodedBodySize || 0;
-            const loadTime = resourceEntry.responseEnd - resourceEntry.requestStart;
-            
+            const fileSize =
+              resourceEntry.transferSize || resourceEntry.encodedBodySize || 0;
+            const loadTime =
+              resourceEntry.responseEnd - resourceEntry.requestStart;
+
             // Log slow or large images
             if (loadTime > 2000) {
               logWarn('Slow image loading:', {
                 src,
                 loadTime: `${loadTime.toFixed(2)}ms`,
-                size: `${(fileSize / 1024).toFixed(2)}KB`
+                size: `${(fileSize / 1024).toFixed(2)}KB`,
               });
             }
 
@@ -117,7 +117,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
               logWarn('Large image detected:', {
                 src,
                 size: `${(fileSize / 1024).toFixed(2)}KB`,
-                loadTime: `${loadTime.toFixed(2)}ms`
+                loadTime: `${loadTime.toFixed(2)}ms`,
               });
             }
           }
@@ -128,13 +128,16 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
 
       return () => observer.disconnect();
     }
-    
+
     return () => {}; // Return empty cleanup function for the else case
   }, [src]);
 
   // Generate optimized URLs
-  const optimizedSrc = isInView ? imageOptimization.optimizeUrl(currentSrc, width, quality) : '';
-  const srcSet = isInView && sizes ? imageOptimization.generateSrcSet(currentSrc) : '';
+  const optimizedSrc = isInView
+    ? imageOptimization.optimizeUrl(currentSrc, width, quality)
+    : '';
+  const srcSet =
+    isInView && sizes ? imageOptimization.generateSrcSet(currentSrc) : '';
 
   // Handle image load
   const handleLoad = () => {
@@ -147,11 +150,14 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   // Handle image error with retry logic
   const handleError = () => {
     if (retries < retryCount) {
-      setRetries(prev => prev + 1);
+      setRetries((prev) => prev + 1);
       // Retry with a slight delay
-      setTimeout(() => {
-        setCurrentSrc(src + `?retry=${retries + 1}`);
-      }, 1000 * (retries + 1));
+      setTimeout(
+        () => {
+          setCurrentSrc(src + `?retry=${retries + 1}`);
+        },
+        1000 * (retries + 1),
+      );
     } else if (fallbackSrc && currentSrc !== fallbackSrc) {
       setCurrentSrc(fallbackSrc);
       setRetries(0);
@@ -167,7 +173,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
     if (!isLoading || !showLoadingProgress) return;
 
     const interval = setInterval(() => {
-      setLoadProgress(prev => {
+      setLoadProgress((prev) => {
         if (prev >= 90) {
           clearInterval(interval);
           return prev;
@@ -185,14 +191,15 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
 
     const placeholderClassName = cn(
       'absolute inset-0 flex items-center justify-center',
-      placeholder === 'shimmer' && 'bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 animate-pulse',
+      placeholder === 'shimmer' &&
+        'bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 animate-pulse',
       placeholder === 'blur' && 'backdrop-blur-sm bg-gray-200/50',
-      placeholder === 'color' && 'bg-gray-200'
+      placeholder === 'color' && 'bg-gray-200',
     );
 
     if (placeholder === 'color') {
       return (
-        <div 
+        <div
           className={placeholderClassName}
           style={{ backgroundColor: placeholderColor }}
         />
@@ -208,13 +215,14 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
 
   // Container styles
   const containerStyle: React.CSSProperties = {
-    aspectRatio: aspectRatio || (width && height ? `${width}/${height}` : undefined),
+    aspectRatio:
+      aspectRatio || (width && height ? `${width}/${height}` : undefined),
     width: width ? `${width}px` : undefined,
     height: height ? `${height}px` : undefined,
   };
 
   return (
-    <div 
+    <div
       ref={imgRef}
       className={cn('relative overflow-hidden', className)}
       style={containerStyle}
@@ -229,7 +237,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
             className="absolute inset-0"
           >
             {generatePlaceholder()}
-            
+
             {/* Loading progress */}
             {showLoadingProgress && isLoading && loadProgress > 0 && (
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gray-200">
@@ -272,7 +280,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
             className={cn(
               'w-full h-full transition-opacity duration-300',
               `object-${objectFit}`,
-              isLoading ? 'opacity-0' : 'opacity-100'
+              isLoading ? 'opacity-0' : 'opacity-100',
             )}
             initial={{ opacity: 0 }}
             animate={{ opacity: isLoading ? 0 : 1 }}
@@ -302,12 +310,12 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({
   columns = 3,
   aspectRatio = '16/9',
   className,
-  onImageClick
+  onImageClick,
 }) => {
   const [loadedCount, setLoadedCount] = useState(0);
 
   const handleImageLoad = () => {
-    setLoadedCount(prev => prev + 1);
+    setLoadedCount((prev) => prev + 1);
   };
 
   return (
@@ -318,11 +326,11 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({
           {loadedCount}/{images.length} loaded
         </span>
       </div>
-      
-      <div 
+
+      <div
         className={`grid gap-4`}
-        style={{ 
-          gridTemplateColumns: `repeat(${columns}, 1fr)` 
+        style={{
+          gridTemplateColumns: `repeat(${columns}, 1fr)`,
         }}
       >
         {images.map((image, index) => (
@@ -343,7 +351,7 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({
                 onLoad={handleImageLoad}
                 priority={index < 3} // Prioritize first 3 images
               />
-              
+
               {image.caption && (
                 <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-2 rounded-b-lg">
                   <p className="text-sm">{image.caption}</p>
@@ -371,19 +379,32 @@ export const OptimizedAvatar: React.FC<OptimizedAvatarProps> = ({
   alt,
   size = 'md',
   fallback,
-  className
+  className,
 }) => {
   const sizeClasses = {
     sm: 'h-8 w-8',
     md: 'h-10 w-10',
     lg: 'h-12 w-12',
-    xl: 'h-16 w-16'
+    xl: 'h-16 w-16',
   };
 
-  const initials = fallback || alt.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
+  const initials =
+    fallback ||
+    alt
+      .split(' ')
+      .map((n) => n[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 2);
 
   return (
-    <div className={cn('relative rounded-full overflow-hidden', sizeClasses[size], className)}>
+    <div
+      className={cn(
+        'relative rounded-full overflow-hidden',
+        sizeClasses[size],
+        className,
+      )}
+    >
       {src ? (
         <OptimizedImage
           src={src}
@@ -403,4 +424,4 @@ export const OptimizedAvatar: React.FC<OptimizedAvatarProps> = ({
       )}
     </div>
   );
-}; 
+};

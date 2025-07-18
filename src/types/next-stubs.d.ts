@@ -10,9 +10,17 @@ declare module 'next' {
     setHeader: (name: string, value: string | readonly string[]) => void;
   }
   export type GetStaticPaths = unknown;
-  export type GetStaticProps<T = unknown, P = Record<string, unknown>> = unknown;
-  export type GetServerSideProps<T = unknown, P = Record<string, unknown>> = unknown;
-  export type NextPage<P = Record<string, unknown>, IP = P> = (props: P) => React.ReactElement | null;
+  export type GetStaticProps<
+    T = unknown,
+    P = Record<string, unknown>,
+  > = unknown;
+  export type GetServerSideProps<
+    T = unknown,
+    P = Record<string, unknown>,
+  > = unknown;
+  export type NextPage<P = Record<string, unknown>, IP = P> = (
+    props: P,
+  ) => React.ReactElement | null;
 }
 
 declare module 'next/*' {

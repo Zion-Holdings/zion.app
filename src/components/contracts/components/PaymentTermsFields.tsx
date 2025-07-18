@@ -1,33 +1,32 @@
-
-import type { UseFormReturn, ControllerRenderProps } from "react-hook-form";
-import { 
-  FormField, 
-  FormItem, 
-  FormLabel, 
-  FormControl, 
-  FormDescription, 
-  FormMessage 
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { 
-  Select, 
-  SelectContent, 
-  SelectItem, 
-  SelectTrigger, 
-  SelectValue 
-} from "@/components/ui/select";
-import { MilestoneSuggestions } from "@/components/projects/milestones/MilestoneSuggestions";
-import type { GeneratedMilestone } from "@/hooks/useMilestoneGenerator";
-import type { ContractFormValues } from "./ContractForm";
+import type { UseFormReturn, ControllerRenderProps } from 'react-hook-form';
+import {
+  FormField,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormDescription,
+  FormMessage,
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import { MilestoneSuggestions } from '@/components/projects/milestones/MilestoneSuggestions';
+import type { GeneratedMilestone } from '@/hooks/useMilestoneGenerator';
+import type { ContractFormValues } from './ContractForm';
 
 interface PaymentTermsFieldsProps {
   form: UseFormReturn<ContractFormValues>;
   handleMilestonesGenerated: (milestones: GeneratedMilestone[]) => void;
 }
 
-export function PaymentTermsFields({ 
-  form, 
-  handleMilestonesGenerated 
+export function PaymentTermsFields({
+  form,
+  handleMilestonesGenerated,
 }: PaymentTermsFieldsProps) {
   return (
     <>
@@ -35,7 +34,11 @@ export function PaymentTermsFields({
         <FormField
           control={form.control}
           name="paymentTerms"
-          render={({ field }: { field: ControllerRenderProps<ContractFormValues, "paymentTerms"> }) => (
+          render={({
+            field,
+          }: {
+            field: ControllerRenderProps<ContractFormValues, 'paymentTerms'>;
+          }) => (
             <FormItem>
               <FormLabel>Payment Terms</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
@@ -54,22 +57,30 @@ export function PaymentTermsFields({
             </FormItem>
           )}
         />
-        
+
         <FormField
           control={form.control}
           name="paymentAmount"
-          render={({ field }: { field: ControllerRenderProps<ContractFormValues, "paymentAmount"> }) => (
+          render={({
+            field,
+          }: {
+            field: ControllerRenderProps<ContractFormValues, 'paymentAmount'>;
+          }) => (
             <FormItem>
               <FormLabel>Payment Amount</FormLabel>
               <FormControl>
-                <Input 
-                  placeholder={form.getValues("paymentTerms") === "hourly" ? "$X per hour" : "Total $X"} 
-                  {...field} 
+                <Input
+                  placeholder={
+                    form.getValues('paymentTerms') === 'hourly'
+                      ? '$X per hour'
+                      : 'Total $X'
+                  }
+                  {...field}
                 />
               </FormControl>
               <FormDescription>
-                {form.getValues("paymentTerms") === "milestone" && 
-                  "You can define specific milestone amounts in the contract text or use AI to suggest milestones"}
+                {form.getValues('paymentTerms') === 'milestone' &&
+                  'You can define specific milestone amounts in the contract text or use AI to suggest milestones'}
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -78,18 +89,18 @@ export function PaymentTermsFields({
       </div>
 
       {/* Project Milestones */}
-      {form.watch("paymentTerms") === "milestone" && (
+      {form.watch('paymentTerms') === 'milestone' && (
         <div className="pt-2">
           <MilestoneSuggestions
-            projectName={form.getValues("projectName") || "Project"}
-            scopeSummary={form.getValues("scopeSummary") || ""}
-            startDate={form.getValues("startDate") || new Date()}
-            endDate={form.getValues("endDate") || new Date()}
+            projectName={form.getValues('projectName') || 'Project'}
+            scopeSummary={form.getValues('scopeSummary') || ''}
+            startDate={form.getValues('startDate') || new Date()}
+            endDate={form.getValues('endDate') || new Date()}
             projectType={(() => {
-              const name = form.getValues("projectName") || "";
-              if (name.includes("AI")) return "AI/ML";
-              if (name.includes("Web")) return "Web Development";
-              return "Other";
+              const name = form.getValues('projectName') || '';
+              if (name.includes('AI')) return 'AI/ML';
+              if (name.includes('Web')) return 'Web Development';
+              return 'Other';
             })()}
             onMilestonesGenerated={handleMilestonesGenerated}
           />

@@ -1,11 +1,9 @@
-
-import { useState } from "react";
+import { useState } from 'react';
 import { Star } from '@/components/ui/icons';
 
-
-import { useForm } from "react-hook-form";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { useForm } from 'react-hook-form';
+import { Button } from '@/components/ui/button';
+import { Textarea } from '@/components/ui/textarea';
 import {
   Form,
   FormControl,
@@ -13,13 +11,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import {
-  RadioGroup,
-  RadioGroupItem,
-} from "@/components/ui/radio-group";
-import { Switch } from "@/components/ui/switch";
-import type { Review } from "@/types/reviews";
+} from '@/components/ui/form';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Switch } from '@/components/ui/switch';
+import type { Review } from '@/types/reviews';
 
 export interface ReviewFormValues {
   rating?: number;
@@ -49,40 +44,54 @@ export function ReviewForm({
   isSubmitting,
 }: ReviewFormProps) {
   const [hoveredStar, setHoveredStar] = useState<number>(0);
-  
+
   const form = useForm<ReviewFormValues>({
     defaultValues: defaultValues
       ? {
-          ...(defaultValues.rating !== undefined ? { rating: defaultValues.rating } : {}),
-          ...(defaultValues.review_text !== undefined ? { review_text: defaultValues.review_text } : {}),
-          ...(defaultValues.communication_rating !== undefined ? { communication_rating: defaultValues.communication_rating } : {}),
-          ...(defaultValues.quality_rating !== undefined ? { quality_rating: defaultValues.quality_rating } : {}),
-          ...(defaultValues.timeliness_rating !== undefined ? { timeliness_rating: defaultValues.timeliness_rating } : {}),
-          ...(defaultValues.would_work_again !== undefined ? { would_work_again: defaultValues.would_work_again } : {}),
-          ...(defaultValues.is_anonymous !== undefined ? { is_anonymous: defaultValues.is_anonymous } : {}),
+          ...(defaultValues.rating !== undefined
+            ? { rating: defaultValues.rating }
+            : {}),
+          ...(defaultValues.review_text !== undefined
+            ? { review_text: defaultValues.review_text }
+            : {}),
+          ...(defaultValues.communication_rating !== undefined
+            ? { communication_rating: defaultValues.communication_rating }
+            : {}),
+          ...(defaultValues.quality_rating !== undefined
+            ? { quality_rating: defaultValues.quality_rating }
+            : {}),
+          ...(defaultValues.timeliness_rating !== undefined
+            ? { timeliness_rating: defaultValues.timeliness_rating }
+            : {}),
+          ...(defaultValues.would_work_again !== undefined
+            ? { would_work_again: defaultValues.would_work_again }
+            : {}),
+          ...(defaultValues.is_anonymous !== undefined
+            ? { is_anonymous: defaultValues.is_anonymous }
+            : {}),
         }
       : {
           rating: 0,
-          review_text: "",
+          review_text: '',
           is_anonymous: false,
         },
   });
-  
+
   const handleSubmit = async (_values: ReviewFormValues) => {
     const formattedData = {
       ...values,
       project_id: projectId,
       reviewee_id: revieweeId,
     };
-    
+
     const success = await onSubmit(formattedData);
     if (success) {
       form.reset();
     }
   };
-  
-  const watchRating = form.watch("rating");
-  
+
+  const watchRating = form.watch('rating');
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-6">
@@ -90,7 +99,7 @@ export function ReviewForm({
         <FormField
           control={form.control}
           name="rating"
-          rules={{ required: "Rating is required" }}
+          rules={{ required: 'Rating is required' }}
           render={({ field }) => (
             <FormItem>
               <FormLabel className="block text-center mb-2">
@@ -102,7 +111,11 @@ export function ReviewForm({
                     <button
                       key={star}
                       type="button"
-                      onClick={() => (field as { onChange: (v: number) => void }).onChange(star)}
+                      onClick={() =>
+                        (field as { onChange: (v: number) => void }).onChange(
+                          star,
+                        )
+                      }
                       onMouseEnter={() => setHoveredStar(star)}
                       onMouseLeave={() => setHoveredStar(0)}
                       className="focus:outline-none transition-transform hover:scale-110"
@@ -110,9 +123,12 @@ export function ReviewForm({
                     >
                       <Star
                         className={`h-10 w-10 ${
-                          star <= (hoveredStar || (field as { value?: number }).value || 0)
-                            ? "fill-yellow-400 text-yellow-400"
-                            : "text-gray-300"
+                          star <=
+                          (hoveredStar ||
+                            (field as { value?: number }).value ||
+                            0)
+                            ? 'fill-yellow-400 text-yellow-400'
+                            : 'text-gray-300'
                         } transition-colors`}
                       />
                     </button>
@@ -125,16 +141,16 @@ export function ReviewForm({
             </FormItem>
           )}
         />
-        
+
         {/* Review Text */}
         <FormField
           control={form.control}
           name="review_text"
           rules={{
-            required: "Please provide feedback",
+            required: 'Please provide feedback',
             minLength: {
               value: 20,
-              message: "Review must be at least 20 characters",
+              message: 'Review must be at least 20 characters',
             },
           }}
           render={({ field }) => (
@@ -151,12 +167,14 @@ export function ReviewForm({
             </FormItem>
           )}
         />
-        
+
         {/* Additional Rating Categories (only shown if main rating is provided) */}
         {(watchRating ?? 0) > 0 && (
           <div className="space-y-6 border-t pt-6">
-            <h3 className="font-medium text-sm">Additional Ratings (Optional)</h3>
-            
+            <h3 className="font-medium text-sm">
+              Additional Ratings (Optional)
+            </h3>
+
             {/* Communication */}
             <FormField
               control={form.control}
@@ -166,8 +184,16 @@ export function ReviewForm({
                   <FormLabel>Communication</FormLabel>
                   <FormControl>
                     <RadioGroup
-                      onValueChange={(value) => (field as { onChange: (v: number) => void }).onChange(parseInt(value))}
-                      defaultValue={(field as { value?: number }).value !== undefined ? (field as { value?: number }).value!.toString() : ""}
+                      onValueChange={(value) =>
+                        (field as { onChange: (v: number) => void }).onChange(
+                          parseInt(value),
+                        )
+                      }
+                      defaultValue={
+                        (field as { value?: number }).value !== undefined
+                          ? (field as { value?: number }).value!.toString()
+                          : ''
+                      }
                       className="flex flex-wrap gap-4"
                     >
                       {[1, 2, 3, 4, 5].map((value) => (
@@ -189,7 +215,7 @@ export function ReviewForm({
                 </FormItem>
               )}
             />
-            
+
             {/* Quality */}
             <FormField
               control={form.control}
@@ -199,8 +225,16 @@ export function ReviewForm({
                   <FormLabel>Quality of Work</FormLabel>
                   <FormControl>
                     <RadioGroup
-                      onValueChange={(value) => (field as { onChange: (v: number) => void }).onChange(parseInt(value))}
-                      defaultValue={(field as { value?: number }).value !== undefined ? (field as { value?: number }).value!.toString() : ""}
+                      onValueChange={(value) =>
+                        (field as { onChange: (v: number) => void }).onChange(
+                          parseInt(value),
+                        )
+                      }
+                      defaultValue={
+                        (field as { value?: number }).value !== undefined
+                          ? (field as { value?: number }).value!.toString()
+                          : ''
+                      }
                       className="flex flex-wrap gap-4"
                     >
                       {[1, 2, 3, 4, 5].map((value) => (
@@ -222,7 +256,7 @@ export function ReviewForm({
                 </FormItem>
               )}
             />
-            
+
             {/* Timeliness */}
             <FormField
               control={form.control}
@@ -232,8 +266,16 @@ export function ReviewForm({
                   <FormLabel>Timeliness</FormLabel>
                   <FormControl>
                     <RadioGroup
-                      onValueChange={(value) => (field as { onChange: (v: number) => void }).onChange(parseInt(value))}
-                      defaultValue={(field as { value?: number }).value !== undefined ? (field as { value?: number }).value!.toString() : ""}
+                      onValueChange={(value) =>
+                        (field as { onChange: (v: number) => void }).onChange(
+                          parseInt(value),
+                        )
+                      }
+                      defaultValue={
+                        (field as { value?: number }).value !== undefined
+                          ? (field as { value?: number }).value!.toString()
+                          : ''
+                      }
                       className="flex flex-wrap gap-4"
                     >
                       {[1, 2, 3, 4, 5].map((value) => (
@@ -255,7 +297,7 @@ export function ReviewForm({
                 </FormItem>
               )}
             />
-            
+
             {/* Would Work Again */}
             <FormField
               control={form.control}
@@ -263,16 +305,23 @@ export function ReviewForm({
               render={({ field }) => (
                 <FormItem>
                   <div className="flex items-center gap-2">
-                    <FormLabel>Would you work with {revieweeName} again?</FormLabel>
+                    <FormLabel>
+                      Would you work with {revieweeName} again?
+                    </FormLabel>
                     <FormControl>
                       <div className="flex items-center space-x-2">
                         <Switch
                           aria-label="Would work again"
-                          checked={(field as { value?: boolean }).value ?? false}
-                          onCheckedChange={(field as { onChange: (v: boolean) => void }).onChange}
+                          checked={
+                            (field as { value?: boolean }).value ?? false
+                          }
+                          onCheckedChange={
+                            (field as { onChange: (v: boolean) => void })
+                              .onChange
+                          }
                         />
                         <span className="text-sm text-muted-foreground">
-                          {(field as { value?: boolean }).value ? "Yes" : "No"}
+                          {(field as { value?: boolean }).value ? 'Yes' : 'No'}
                         </span>
                       </div>
                     </FormControl>
@@ -283,7 +332,7 @@ export function ReviewForm({
             />
           </div>
         )}
-        
+
         {/* Anonymous Review */}
         <FormField
           control={form.control}
@@ -295,7 +344,9 @@ export function ReviewForm({
                   <Switch
                     aria-label="Submit anonymously"
                     checked={(field as { value?: boolean }).value ?? false}
-                    onCheckedChange={(field as { onChange: (v: boolean) => void }).onChange}
+                    onCheckedChange={
+                      (field as { onChange: (v: boolean) => void }).onChange
+                    }
                   />
                 </FormControl>
                 <FormLabel className="cursor-pointer font-normal">
@@ -303,19 +354,24 @@ export function ReviewForm({
                 </FormLabel>
               </div>
               <p className="text-xs text-muted-foreground mt-1">
-                Anonymous reviews won't display your name but will still be linked to your account.
+                Anonymous reviews won't display your name but will still be
+                linked to your account.
               </p>
               <FormMessage />
             </FormItem>
           )}
         />
-        
+
         <Button
           type="submit"
           className="w-full"
           disabled={isSubmitting || !form.formState.isValid}
         >
-          {isSubmitting ? "Submitting..." : defaultValues ? "Save Changes" : "Submit Review"}
+          {isSubmitting
+            ? 'Submitting...'
+            : defaultValues
+              ? 'Save Changes'
+              : 'Submit Review'}
         </Button>
       </form>
     </Form>

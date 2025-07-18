@@ -1,4 +1,8 @@
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import {
+  logInfo,
+  logWarn,
+  logErrorToProduction,
+} from '@/utils/productionLogger';
 
 // Removed circular dependency with productionLogger - using direct console methods instead
 
@@ -16,16 +20,26 @@ interface LogContext {
 }
 
 // Utility to get emoji for log level
-function getEmojiForLevel(level: 'debug' | 'info' | 'warn' | 'error' | 'mount' | 'unmount' | 'update'): string {
+function getEmojiForLevel(
+  level: 'debug' | 'info' | 'warn' | 'error' | 'mount' | 'unmount' | 'update',
+): string {
   switch (level) {
-    case 'debug': return '🐛';
-    case 'info': return 'ℹ️';
-    case 'warn': return '⚠️';
-    case 'error': return '❌';
-    case 'mount': return '🟢';
-    case 'unmount': return '🔴';
-    case 'update': return '🔄';
-    default: return '';
+    case 'debug':
+      return '🐛';
+    case 'info':
+      return 'ℹ️';
+    case 'warn':
+      return '⚠️';
+    case 'error':
+      return '❌';
+    case 'mount':
+      return '🟢';
+    case 'unmount':
+      return '🔴';
+    case 'update':
+      return '🔄';
+    default:
+      return '';
   }
 }
 
@@ -83,17 +97,31 @@ class DevelopmentLogger {
    */
   api(method: string, url: string, status?: number, duration?: number): void {
     if (!this.enabled) return;
-    
+
     const statusColor = status && status >= 400 ? '🔴' : '🟢';
     const durationText = duration ? ` (${duration}ms)` : '';
-    
-    logInfo(`[API] ${statusColor} ${method.toUpperCase()} ${url}${durationText}`);
+
+    logInfo(
+      `[API] ${statusColor} ${method.toUpperCase()} ${url}${durationText}`,
+    );
   }
 
   /**
    * Component lifecycle logging
    */
-  component(name: string, action: 'mount' | 'unmount' | 'update', props?: LogContext, level: 'debug' | 'info' | 'warn' | 'error' | 'mount' | 'unmount' | 'update' = 'info'): void {
+  component(
+    name: string,
+    action: 'mount' | 'unmount' | 'update',
+    props?: LogContext,
+    level:
+      | 'debug'
+      | 'info'
+      | 'warn'
+      | 'error'
+      | 'mount'
+      | 'unmount'
+      | 'update' = 'info',
+  ): void {
     if (!this.enabled) return;
     const _emoji = getEmojiForLevel(level);
     logInfo(`[COMPONENT] ${_emoji} ${name} ${action}`, { data: props });
@@ -115,9 +143,12 @@ export const logComponent = devLogger.component.bind(devLogger);
 declare global {
   interface Window {
     Sentry?: {
-      captureException: (error: Error, context?: Record<string, unknown>) => void;
+      captureException: (
+        error: Error,
+        context?: Record<string, unknown>,
+      ) => void;
     };
   }
 }
 
-export default devLogger; 
+export default devLogger;

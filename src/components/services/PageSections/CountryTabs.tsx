@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Search } from '@/components/ui/icons';
 
-
 import { Input } from '@/components/ui/input';
 import {
   Pagination,
@@ -42,7 +41,7 @@ export function CountryTabs({
   const totalPages = Math.ceil(filteredCountries.length / countriesPerPage);
   const paginatedCountries = filteredCountries.slice(
     (currentPage - 1) * countriesPerPage,
-    currentPage * countriesPerPage
+    currentPage * countriesPerPage,
   );
   return (
     <Tabs defaultValue="featured" className="w-full">
@@ -134,7 +133,7 @@ export function CountryTabs({
                         }}
                       />
                     </PaginationItem>
-                  )
+                  ),
                 )}
                 <PaginationItem>
                   <PaginationNext

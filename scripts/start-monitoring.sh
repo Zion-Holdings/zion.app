@@ -51,15 +51,15 @@ cleanup() {
 trap cleanup SIGINT SIGTERM
 
 echo "🔍 Starting health monitor..."
-node scripts/health-monitor.js &
+node scripts/health-monitor.cjs &
 HEALTH_PID=$!
 
 echo "🔧 Starting build monitor..."
-node scripts/build-monitor.js &
+node scripts/build-monitor.cjs &
 BUILD_PID=$!
 
 echo "🩹 Starting self-healing system..."
-node scripts/self-healing.js &
+node scripts/self-healing.cjs &
 SELF_HEAL_PID=$!
 
 echo "✅ All monitoring systems started successfully!"

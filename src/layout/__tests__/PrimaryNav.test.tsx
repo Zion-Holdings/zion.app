@@ -16,13 +16,19 @@ const mockedUseAuth = useAuth as jest.MockedFunction<typeof useAuth>;
 jest.mock('react-i18next', () => ({
   useTranslation: jest.fn(),
 }));
-const mockedUseTranslation = useTranslation as jest.MockedFunction<typeof useTranslation>;
+const mockedUseTranslation = useTranslation as jest.MockedFunction<
+  typeof useTranslation
+>;
 
 jest.mock('@/hooks/use-mobile');
-const mockedUseIsMobile = useIsMobile as jest.MockedFunction<typeof useIsMobile>;
+const mockedUseIsMobile = useIsMobile as jest.MockedFunction<
+  typeof useIsMobile
+>;
 
 jest.mock('@/context/MessagingContext');
-const mockedUseMessaging = useMessaging as jest.MockedFunction<typeof useMessaging>;
+const mockedUseMessaging = useMessaging as jest.MockedFunction<
+  typeof useMessaging
+>;
 
 // Mock child components that are not the focus of these tests
 jest.mock('@/components/header/Logo', () => ({
@@ -30,11 +36,15 @@ jest.mock('@/components/header/Logo', () => ({
 }));
 
 jest.mock('../MainNavigation', () => ({
-  MainNavigation: () => <nav data-testid="main-navigation">Main Navigation</nav>,
+  MainNavigation: () => (
+    <nav data-testid="main-navigation">Main Navigation</nav>
+  ),
 }));
 
 jest.mock('@/components/header/LanguageSelector', () => ({
-  LanguageSelector: () => <div data-testid="language-selector">Language Selector</div>,
+  LanguageSelector: () => (
+    <div data-testid="language-selector">Language Selector</div>
+  ),
 }));
 
 jest.mock('@/components/loyalty/PointsBadge', () => ({
@@ -51,12 +61,15 @@ jest.mock('@/components/header/MobileMenu', () => ({
   MobileMenu: () => <div data-testid="mobile-menu">Mobile Menu</div>,
 }));
 jest.mock('@/components/header/MobileBottomNav', () => ({
-    MobileBottomNav: () => <div data-testid="mobile-bottom-nav">Mobile Bottom Nav</div>,
-  }));
-
+  MobileBottomNav: () => (
+    <div data-testid="mobile-bottom-nav">Mobile Bottom Nav</div>
+  ),
+}));
 
 describe('PrimaryNav', () => {
-  const mockT = jest.fn((key: string) => key) as jest.MockedFunction<(key: string) => string>; // Simple translation mock
+  const mockT = jest.fn((key: string) => key) as jest.MockedFunction<
+    (key: string) => string
+  >; // Simple translation mock
 
   beforeEach(() => {
     mockedUseAuth.mockClear();
@@ -66,7 +79,10 @@ describe('PrimaryNav', () => {
     mockT.mockClear();
 
     // Default mocks
-    mockedUseTranslation.mockReturnValue({ t: mockT as any, i18n: {} as any } as any);
+    mockedUseTranslation.mockReturnValue({
+      t: mockT as any,
+      i18n: {} as any,
+    } as any);
     mockedUseIsMobile.mockReturnValue(false); // Default to not mobile
     mockedUseMessaging.mockReturnValue({
       messages: [],
@@ -87,24 +103,41 @@ describe('PrimaryNav', () => {
   describe('when user is logged in', () => {
     beforeEach(() => {
       mockedUseAuth.mockReturnValue({
-        user: { id: '1', displayName: 'Test User', name: 'Test User', email: 'test@example.com' },
+        user: {
+          id: '1',
+          displayName: 'Test User',
+          name: 'Test User',
+          email: 'test@example.com',
+        },
         isLoading: false,
         // ... other properties returned by useAuth
       } as unknown as AuthContextType);
     });
 
     it('renders LanguageSelector', () => {
-      render(<MemoryRouter><PrimaryNav /></MemoryRouter>);
+      render(
+        <MemoryRouter>
+          <PrimaryNav />
+        </MemoryRouter>,
+      );
       expect(screen.getByTestId('language-selector')).toBeInTheDocument();
     });
 
     it('renders UserMenu', () => {
-      render(<MemoryRouter><PrimaryNav /></MemoryRouter>);
+      render(
+        <MemoryRouter>
+          <PrimaryNav />
+        </MemoryRouter>,
+      );
       expect(screen.getByTestId('user-menu')).toBeInTheDocument();
     });
 
     it('does NOT render the old "Hello, {firstName}!" greeting', () => {
-      render(<MemoryRouter><PrimaryNav /></MemoryRouter>);
+      render(
+        <MemoryRouter>
+          <PrimaryNav />
+        </MemoryRouter>,
+      );
       // The greeting span had data-testid="header-greeting"
       // If AvatarMenu is rendered, the greeting span should not be.
       expect(screen.queryByTestId('header-greeting')).not.toBeInTheDocument();
@@ -112,7 +145,11 @@ describe('PrimaryNav', () => {
     });
 
     it('does NOT render the Login link', () => {
-      render(<MemoryRouter><PrimaryNav /></MemoryRouter>);
+      render(
+        <MemoryRouter>
+          <PrimaryNav />
+        </MemoryRouter>,
+      );
       expect(screen.queryByTestId('login-link')).not.toBeInTheDocument();
     });
   });
@@ -127,32 +164,54 @@ describe('PrimaryNav', () => {
     });
 
     it('does NOT render UserMenu', () => {
-      render(<MemoryRouter><PrimaryNav /></MemoryRouter>);
+      render(
+        <MemoryRouter>
+          <PrimaryNav />
+        </MemoryRouter>,
+      );
       expect(screen.queryByTestId('user-menu')).not.toBeInTheDocument();
     });
 
     it('renders the Login link', () => {
-      render(<MemoryRouter><PrimaryNav /></MemoryRouter>);
+      render(
+        <MemoryRouter>
+          <PrimaryNav />
+        </MemoryRouter>,
+      );
       const loginLink = screen.getByTestId('login-link');
       expect(loginLink).toBeInTheDocument();
       expect(loginLink).toHaveAttribute('href', '/login');
     });
 
     it('renders LanguageSelector (assuming it is shown for logged-out users too)', () => {
-      render(<MemoryRouter><PrimaryNav /></MemoryRouter>);
+      render(
+        <MemoryRouter>
+          <PrimaryNav />
+        </MemoryRouter>,
+      );
       expect(screen.getByTestId('language-selector')).toBeInTheDocument();
     });
 
     it('Login and language selector allow pointer events', () => {
-      render(<MemoryRouter><PrimaryNav /></MemoryRouter>);
+      render(
+        <MemoryRouter>
+          <PrimaryNav />
+        </MemoryRouter>,
+      );
       const loginLink = screen.getByTestId('login-link');
       const langSelector = screen.getByTestId('language-selector');
       expect(window.getComputedStyle(loginLink).pointerEvents).not.toBe('none');
-      expect(window.getComputedStyle(langSelector).pointerEvents).not.toBe('none');
+      expect(window.getComputedStyle(langSelector).pointerEvents).not.toBe(
+        'none',
+      );
     });
 
     it('Login link is focusable via keyboard', async () => {
-      render(<MemoryRouter><PrimaryNav /></MemoryRouter>);
+      render(
+        <MemoryRouter>
+          <PrimaryNav />
+        </MemoryRouter>,
+      );
       const loginLink = screen.getByTestId('login-link');
       loginLink.focus();
       expect(loginLink).toHaveFocus();

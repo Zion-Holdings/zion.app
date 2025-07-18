@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { SEO } from "@/components/SEO";
-import { Button } from "@/components/ui/button";
-import PostForm from "@/components/community/PostForm";
-import { useToast } from "@/hooks/use-toast";
-import type { ForumPost, ForumCategory } from "@/types/community";
-import { useAuth } from "@/hooks/useAuth";
+import { SEO } from '@/components/SEO';
+import { Button } from '@/components/ui/button';
+import PostForm from '@/components/community/PostForm';
+import { useToast } from '@/hooks/use-toast';
+import type { ForumPost, ForumCategory } from '@/types/community';
+import { useAuth } from '@/hooks/useAuth';
 
 interface PostFormValues {
   title: string;
@@ -22,7 +22,7 @@ export default function EditPostPage() {
   const { _user } = useAuth();
   const [post, _setPost] = useState<ForumPost | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  
+
   useEffect(() => {
     // Reactivate: Use mock data for post API
     setIsLoading(true);
@@ -35,7 +35,8 @@ export default function EditPostPage() {
       _setPost({
         id: postId,
         title: 'How to use ZionGPT for project management?',
-        content: 'I am interested in using ZionGPT for managing my project milestones. Any tips or best practices?',
+        content:
+          'I am interested in using ZionGPT for managing my project milestones. Any tips or best practices?',
         authorId: 'user-1',
         authorName: 'Alice',
         createdAt: '2024-07-01T10:00:00.000Z',
@@ -49,7 +50,7 @@ export default function EditPostPage() {
       setIsLoading(false);
     }, 400);
   }, [postId]);
-  
+
   if (isLoading) {
     return (
       <div className="container py-8">
@@ -59,7 +60,7 @@ export default function EditPostPage() {
       </div>
     );
   }
-  
+
   if (!post) {
     return (
       <div className="container py-8">
@@ -70,11 +71,11 @@ export default function EditPostPage() {
       </div>
     );
   }
-  
+
   // Check if the user is the author or an admin
   const isAuthor = user?.id === post.authorId;
   const isAdmin = user?.userType === 'admin' || user?.role === 'admin';
-  
+
   if (!isAuthor && !isAdmin) {
     return (
       <div className="container py-8">
@@ -86,31 +87,31 @@ export default function EditPostPage() {
       </div>
     );
   }
-  
+
   const initialValues: Partial<PostFormValues> = {
     title: post.title,
     content: post.content,
     categoryId: post.categoryId as ForumCategory,
-    tags: post.tags.join(", ")
+    tags: post.tags.join(', '),
   };
 
   const handleSubmit = async (_values: PostFormValues) => {
     try {
       // Here we would normally update the post in the database
       // For now, we'll just simulate a successful update
-      
+
       toast({
-        title: "Post updated",
-        description: "Your post has been updated successfully"
+        title: 'Post updated',
+        description: 'Your post has been updated successfully',
       });
-      
+
       // Redirect back to the post
       router.push(`/community/post/${postId}`);
     } catch {
       toast({
-        title: "Error",
-        description: "There was a problem updating your post",
-        variant: "destructive"
+        title: 'Error',
+        description: 'There was a problem updating your post',
+        variant: 'destructive',
       });
     }
   };
@@ -122,22 +123,28 @@ export default function EditPostPage() {
         description="Edit your discussion post in the Zion AI Marketplace community forum."
         keywords="community, forum, discussion, edit post"
       />
-      
+
       <div className="container py-8">
         <div className="flex items-center gap-3 mb-6">
-          <Link href="/community" className="text-sm text-muted-foreground hover:text-foreground">
+          <Link
+            href="/community"
+            className="text-sm text-muted-foreground hover:text-foreground"
+          >
             Forum
           </Link>
           <span className="text-muted-foreground">/</span>
-          <Link href={`/community/post/${postId}`} className="text-sm text-muted-foreground hover:text-foreground">
+          <Link
+            href={`/community/post/${postId}`}
+            className="text-sm text-muted-foreground hover:text-foreground"
+          >
             Post
           </Link>
           <span className="text-muted-foreground">/</span>
           <span className="text-sm font-medium">Edit</span>
         </div>
-        
+
         <h1 className="text-3xl font-bold mb-8">Edit Post</h1>
-        
+
         <PostForm
           initialValues={initialValues}
           onSubmit={handleSubmit}

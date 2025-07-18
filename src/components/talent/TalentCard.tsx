@@ -1,15 +1,12 @@
 import React from 'react';
 import { MapPin, Clock, ArrowRight } from '@/components/ui/icons';
 import { useRouter } from 'next/router';
-import { Card } from "@/components/ui/card";
+import { Card } from '@/components/ui/card';
 
 import { Button } from '@/components/ui/button';
 
-
-
-
-import { FavoriteButton } from "@/components/FavoriteButton";
-import type { TalentProfile } from "@/types/talent";
+import { FavoriteButton } from '@/components/FavoriteButton';
+import type { TalentProfile } from '@/types/talent';
 
 export interface TalentCardProps {
   talent: TalentProfile;
@@ -22,14 +19,14 @@ const TalentCardComponent = ({
   talent,
   onViewProfile,
   onRequestHire,
-  isAuthenticated
+  isAuthenticated,
 }: TalentCardProps) => {
   const router = useRouter();
-  
+
   const handleViewProfile = () => {
     // Navigate directly to the talent profile
     router.push(`/talent/${talent.id}`);
-    
+
     // Also call the onViewProfile callback if provided
     if (onViewProfile) {
       onViewProfile(talent.id);
@@ -43,7 +40,6 @@ const TalentCardComponent = ({
       onRequestHire(talent);
     }
   };
-
 
   // Extract skills - limit to 5 for display
   const skills = talent.skills?.slice(0, 5) || [];
@@ -68,7 +64,7 @@ const TalentCardComponent = ({
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center text-zion-slate-light text-xl font-bold">
-                  {talent.full_name?.charAt(0) || "T"}
+                  {talent.full_name?.charAt(0) || 'T'}
                 </div>
               )}
             </div>
@@ -78,15 +74,19 @@ const TalentCardComponent = ({
               </div>
             )}
           </div>
-          
+
           {/* Main Info */}
           <div className="flex-1">
             <div className="flex justify-between items-start">
-              <h3 className="text-lg font-bold text-white">{talent.full_name}</h3>
+              <h3 className="text-lg font-bold text-white">
+                {talent.full_name}
+              </h3>
               <FavoriteButton itemId={talent.id} className="-mt-1" />
             </div>
-            <p className="text-white font-medium">{talent.professional_title}</p>
-            
+            <p className="text-white font-medium">
+              {talent.professional_title}
+            </p>
+
             {/* Location & Availability */}
             <div className="mt-2 flex flex-wrap gap-3 text-sm">
               {talent.location && (
@@ -104,13 +104,13 @@ const TalentCardComponent = ({
             </div>
           </div>
         </div>
-        
+
         {/* Skills */}
         {skills.length > 0 && (
           <div className="mt-4">
             <div className="flex flex-wrap gap-2">
               {skills.map((skill, index) => (
-                <span 
+                <span
                   key={index}
                   className="px-2 py-1 text-xs rounded-full bg-zion-blue-light text-zion-slate-light"
                 >
@@ -125,7 +125,7 @@ const TalentCardComponent = ({
             </div>
           </div>
         )}
-        
+
         {/* Hourly Rate & Actions */}
         <div className="mt-5 flex items-center justify-between">
           <div>
@@ -138,7 +138,7 @@ const TalentCardComponent = ({
               <div className="text-zion-slate-light">Rate not specified</div>
             )}
           </div>
-          
+
           <div className="flex items-center gap-2">
             {isAuthenticated && (
               <Button

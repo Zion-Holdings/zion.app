@@ -6,10 +6,15 @@ export interface TalentDetailsProps {
   talent: TalentProfile & { social?: Record<string, string> };
 }
 const TalentDetails: React.FC<TalentDetailsProps> = ({ talent }) => (
-  <main className="min-h-screen bg-zion-blue py-8 text-white" data-testid="talent-details">
+  <main
+    className="min-h-screen bg-zion-blue py-8 text-white"
+    data-testid="talent-details"
+  >
     <div className="container mx-auto px-4 space-y-6">
       <h1 className="text-3xl font-bold">{talent.full_name}</h1>
-      {talent.professional_title && <p className="text-zion-slate-light">{talent.professional_title}</p>}
+      {talent.professional_title && (
+        <p className="text-zion-slate-light">{talent.professional_title}</p>
+      )}
 
       {talent.bio && <p>{talent.bio}</p>}
 
@@ -18,7 +23,10 @@ const TalentDetails: React.FC<TalentDetailsProps> = ({ talent }) => (
           <h2 className="text-xl font-semibold mb-2">Skills</h2>
           <ul className="flex flex-wrap gap-2">
             {talent.skills.map((skill) => (
-              <li key={skill} className="bg-zion-blue-light rounded px-2 py-1 text-sm">
+              <li
+                key={skill}
+                className="bg-zion-blue-light rounded px-2 py-1 text-sm"
+              >
                 {skill}
               </li>
             ))}
@@ -34,7 +42,12 @@ const TalentDetails: React.FC<TalentDetailsProps> = ({ talent }) => (
           <ul className="space-y-1">
             {Object.entries(talent.social).map(([platform, url]) => (
               <li key={platform}>
-                <a href={url} className="text-zion-cyan underline" target="_blank" rel="noopener noreferrer">
+                <a
+                  href={url}
+                  className="text-zion-cyan underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {platform}
                 </a>
               </li>

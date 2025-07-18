@@ -1,4 +1,4 @@
-// Types exported from other modules as needed 
+// Types exported from other modules as needed
 import { captureException } from './sentry';
 import { sendErrorToBackend } from './customErrorReporter';
 import { generateTraceId } from './generateTraceId';
@@ -13,7 +13,7 @@ import { logWarn } from '@/utils/productionLogger';
  */
 export function logError(
   error: unknown,
-  context?: { componentStack?: string } & Record<string, unknown>
+  context?: { componentStack?: string } & Record<string, unknown>,
 ): string {
   const traceId = generateTraceId();
   let errorToSend: Error;
@@ -30,7 +30,8 @@ export function logError(
         message = `Unknown error: non-Error object thrown. Details: ${serializedError}`;
       } catch (_stringifyError) {
         // If stringification fails (e.g., circular references), fallback to a simpler message
-        message = 'Unknown error: non-Error object thrown. Could not serialize error object.';
+        message =
+          'Unknown error: non-Error object thrown. Could not serialize error object.';
       }
     }
     // If error is null, undefined, or some other primitive, it will default to the initial 'Unknown error' message.
@@ -39,10 +40,16 @@ export function logError(
     try {
       // Preserve original error's stack or name if they exist (though less likely for non-Errors)
       if (typeof error === 'object' && error !== null) {
-        if ('stack' in error && typeof (error as { stack?: unknown }).stack === 'string') {
+        if (
+          'stack' in error &&
+          typeof (error as { stack?: unknown }).stack === 'string'
+        ) {
           errorToSend.stack = (error as { stack: string }).stack;
         }
-        if ('name' in error && typeof (error as { name?: unknown }).name === 'string') {
+        if (
+          'name' in error &&
+          typeof (error as { name?: unknown }).name === 'string'
+        ) {
           errorToSend.name = (error as { name: string }).name;
         }
       }
@@ -61,39 +68,52 @@ export function logError(
 
     // Datadog logging - client-side only
     if (typeof window !== 'undefined') {
-      import('@datadog/browser-logs').then(({ datadogLogs }) => {
-        if (datadogLogs && datadogLogs.logger) {
-          if (context) {
-            datadogLogs.logger.error(errorToSend.message, {
-              error: errorToSend,
-              traceId,
-              ...context,
-            });
-          } else {
-            datadogLogs.logger.error(errorToSend.message, { error: errorToSend, traceId });
+      import('@datadog/browser-logs')
+        .then(({ datadogLogs }) => {
+          if (datadogLogs && datadogLogs.logger) {
+            if (context) {
+              datadogLogs.logger.error(errorToSend.message, {
+                error: errorToSend,
+                traceId,
+                ...context,
+              });
+            } else {
+              datadogLogs.logger.error(errorToSend.message, {
+                error: errorToSend,
+                traceId,
+              });
+            }
           }
-        }
-      }).catch(ddImportError => {
-        logWarn('Failed to import or use Datadog logger:', { data:  { data: ddImportError } });
-      });
+        })
+        .catch((ddImportError) => {
+          logWarn('Failed to import or use Datadog logger:', {
+            data: { data: ddImportError },
+          });
+        });
 
       // LogRocket logging
-      import('logrocket').then(mod => {
-        const LogRocket = mod.default;
-        if (LogRocket && typeof LogRocket.captureException === 'function') {
-          if (context) {
-            LogRocket.captureException(errorToSend, { extra: { traceId, ...context } });
-          } else {
-            LogRocket.captureException(errorToSend, { extra: { traceId } });
+      import('logrocket')
+        .then((mod) => {
+          const LogRocket = mod.default;
+          if (LogRocket && typeof LogRocket.captureException === 'function') {
+            if (context) {
+              LogRocket.captureException(errorToSend, {
+                extra: { traceId, ...context },
+              });
+            } else {
+              LogRocket.captureException(errorToSend, { extra: { traceId } });
+            }
           }
-        }
-      }).catch(lrError => {
-        logWarn('Failed to log error to LogRocket:', { data:  { data: lrError } });
-      });
+        })
+        .catch((lrError) => {
+          logWarn('Failed to log error to LogRocket:', {
+            data: { data: lrError },
+          });
+        });
     }
   } catch {
     // Use console logging to avoid circular dependencies
-    console.or('Failed to report or to Sentry:', );
+    console.or('Failed to report or to Sentry:');
   }
 
   try {
@@ -119,7 +139,10 @@ export function logError(
     const errorDetails = {
       message: errorToSend.message,
       stack: errorToSend.stack || '',
-      componentStack: typeof context?.componentStack === 'string' ? context.componentStack : '',
+      componentStack:
+        typeof context?.componentStack === 'string'
+          ? context.componentStack
+          : '',
       filename,
       lineno,
       colno,
@@ -133,19 +156,18 @@ export function logError(
     };
 
     // Non-blocking call
-    sendErrorToBackend(errorDetails).catch(err => {
+    sendErrorToBackend(errorDetails).catch((err) => {
       // Use console logging to avoid circular dependencies
       console.error('Error sending logError to backend:', err);
     });
-
   } catch {
     // Use console logging to avoid circular dependencies
-    console.or('Failed to prepare or send or to custom backend:', );
+    console.or('Failed to prepare or send or to custom backend:');
   }
 
   return traceId;
 }
 
 // Export aliases for different use cases
-export { logError as reportErrorToServices };  // More descriptive name
+export { logError as reportErrorToServices }; // More descriptive name
 // Note: logErrorToProduction was moved to productionLogger.ts to avoid naming conflicts

@@ -10,7 +10,9 @@ interface FeedbackContextType {
   reset: () => void;
 }
 
-const FeedbackContext = createContext<FeedbackContextType | undefined>(undefined);
+const FeedbackContext = createContext<FeedbackContextType | undefined>(
+  undefined,
+);
 
 export function useFeedback() {
   const ctx = useContext(FeedbackContext);
@@ -30,7 +32,17 @@ export function FeedbackProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <FeedbackContext.Provider value={{ rating, comment, screenshot, setRating, setComment, setScreenshot, reset }}>
+    <FeedbackContext.Provider
+      value={{
+        rating,
+        comment,
+        screenshot,
+        setRating,
+        setComment,
+        setScreenshot,
+        reset,
+      }}
+    >
       {children}
     </FeedbackContext.Provider>
   );

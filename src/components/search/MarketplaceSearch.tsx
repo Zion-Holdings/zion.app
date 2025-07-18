@@ -11,9 +11,15 @@ interface MarketplaceSearchProps {
   onSelect?: (item: ProductListing) => void;
 }
 
-export function MarketplaceSearch({ products, onSelect }: MarketplaceSearchProps) {
-  const [query, setQuery] = useState(() => safeStorage.getItem('marketplace_search_query') || '');
-  const { suggestions, getSuggestions, clearSuggestions } = useAutocomplete(products);
+export function MarketplaceSearch({
+  products,
+  onSelect,
+}: MarketplaceSearchProps) {
+  const [query, setQuery] = useState(
+    () => safeStorage.getItem('marketplace_search_query') || '',
+  );
+  const { suggestions, getSuggestions, clearSuggestions } =
+    useAutocomplete(products);
   const [highlight, setHighlight] = useState(-1);
 
   useEffect(() => {
@@ -23,7 +29,7 @@ export function MarketplaceSearch({ products, onSelect }: MarketplaceSearchProps
   // Debounce fetching suggestions to reduce expensive computations/API calls
   const debouncedSuggest = React.useMemo(
     () => debounce((value: string) => getSuggestions(value), 300),
-    [getSuggestions]
+    [getSuggestions],
   );
 
   useEffect(() => {
@@ -49,10 +55,10 @@ export function MarketplaceSearch({ products, onSelect }: MarketplaceSearchProps
   const handleKeyDown = (_e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'ArrowDown') {
       e.preventDefault();
-      setHighlight(h => Math.min(h + 1, suggestions.length - 1));
+      setHighlight((h) => Math.min(h + 1, suggestions.length - 1));
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
-      setHighlight(h => Math.max(h - 1, 0));
+      setHighlight((h) => Math.max(h - 1, 0));
     } else if (e.key === 'Enter' && highlight >= 0) {
       e.preventDefault();
       const selectedSuggestion = suggestions[highlight];

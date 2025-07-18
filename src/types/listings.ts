@@ -44,4 +44,4 @@ export interface ListingItem {
   description?: string;
 }
 
-export type ListingView = "grid" | "list";
+export type ListingView = 'grid' | 'list';

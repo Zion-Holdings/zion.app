@@ -1,5 +1,4 @@
-
-import type { ReactNode } from "react";
+import type { ReactNode } from 'react';
 
 export interface HelpArticle {
   id: string;
@@ -22,8 +21,8 @@ export interface SupportTicket {
   userId: string;
   subject: string;
   message: string;
-  status: "open" | "in-progress" | "resolved" | "closed";
-  priority: "low" | "medium" | "high";
+  status: 'open' | 'in-progress' | 'resolved' | 'closed';
+  priority: 'low' | 'medium' | 'high';
   createdAt: string;
   updatedAt: string;
 }

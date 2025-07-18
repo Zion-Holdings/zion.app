@@ -1,6 +1,6 @@
-import { Header } from "@/components/Header";
-import { GradientHeading } from "@/components/GradientHeading";
-import Link from "next/link";
+import { Header } from '@/components/Header';
+import { GradientHeading } from '@/components/GradientHeading';
+import Link from 'next/link';
 
 export default function DevNet() {
   return (
@@ -9,8 +9,9 @@ export default function DevNet() {
       <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">
         <GradientHeading>DevNet Sandbox</GradientHeading>
         <p>
-          This isolated environment lets you experiment with job flows, DAO votes,
-          token logic and GPT interactions without affecting production data.
+          This isolated environment lets you experiment with job flows, DAO
+          votes, token logic and GPT interactions without affecting production
+          data.
         </p>
         <ul>
           <li>

@@ -6,7 +6,8 @@ export default function FoundationPage() {
     <>
       <SEO
         title="Zion Foundation"
-        description="Public trust portal for the Zion protocol" />
+        description="Public trust portal for the Zion protocol"
+      />
       <Header />
       <main className="prose dark:prose-invert mx-auto p-8 max-w-3xl">
         <h1>Zion Foundation</h1>
@@ -46,8 +47,8 @@ export default function FoundationPage() {
         <section>
           <h2>Transparency & Grants</h2>
           <p>
-            This portal provides access to charter details, transparency reports,
-            grants issued, and an archive of partnership MOUs.
+            This portal provides access to charter details, transparency
+            reports, grants issued, and an archive of partnership MOUs.
           </p>
         </section>
       </main>

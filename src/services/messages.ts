@@ -1,5 +1,4 @@
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 // Define proper interfaces for message service
 interface SendMessageParams {
@@ -15,11 +14,11 @@ interface MessageResponse {
   error?: string;
 }
 
-export async function sendMessage({ 
-  productId, 
-  sellerId, 
-  subject, 
-  message 
+export async function sendMessage({
+  productId,
+  sellerId,
+  subject,
+  message,
 }: SendMessageParams): Promise<MessageResponse> {
   try {
     const response = await fetch('/api/messages', {

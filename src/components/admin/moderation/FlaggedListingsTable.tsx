@@ -1,5 +1,12 @@
 import React from 'react';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
 import type { ModerationLog } from '@/types/moderation';
 
@@ -43,8 +50,14 @@ export function FlaggedListingsTable({ logs, isLoading, onAction }: Props) {
             <TableCell>{log.listing_type}</TableCell>
             <TableCell>{log.status}</TableCell>
             <TableCell className="text-right space-x-2">
-              <Button size="sm" onClick={() => onAction(log.id, 'approved')}>Approve</Button>
-              <Button size="sm" variant="destructive" onClick={() => onAction(log.id, 'rejected')}>
+              <Button size="sm" onClick={() => onAction(log.id, 'approved')}>
+                Approve
+              </Button>
+              <Button
+                size="sm"
+                variant="destructive"
+                onClick={() => onAction(log.id, 'rejected')}
+              >
                 Reject
               </Button>
             </TableCell>

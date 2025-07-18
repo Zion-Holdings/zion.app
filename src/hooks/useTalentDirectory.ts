@@ -1,30 +1,20 @@
-
-import { useAuthStatus } from "./talent/useAuthStatus";
-import { useTalentData } from "./talent/useTalentData";
-import { useFilterTalents } from "./talent/useFilterTalents";
-import type { TalentFilterOptions } from "./talent/useFilterTalents";
-import { useUIState } from "./talent/useUIState";
+import { useAuthStatus } from './talent/useAuthStatus';
+import { useTalentData } from './talent/useTalentData';
+import { useFilterTalents } from './talent/useFilterTalents';
+import type { TalentFilterOptions } from './talent/useFilterTalents';
+import { useUIState } from './talent/useUIState';
 
 export function useTalentDirectory(
   page = 1,
   limit = 12,
-  initialFilters: TalentFilterOptions = {}
+  initialFilters: TalentFilterOptions = {},
 ) {
   // Fetch auth status and saved talents
-  const { 
-    isAuthenticated, 
-    userDetails, 
-    savedTalents, 
-    handleToggleSave 
-  } = useAuthStatus();
+  const { isAuthenticated, userDetails, savedTalents, handleToggleSave } =
+    useAuthStatus();
 
   // Fetch talent data
-  const {
-    talents,
-    total,
-    isLoading,
-    error,
-  } = useTalentData(page, limit);
+  const { talents, total, isLoading, error } = useTalentData(page, limit);
 
   // Apply filters and sorting
   const {
@@ -43,7 +33,7 @@ export function useTalentDirectory(
     toggleSkill,
     toggleAvailability,
     toggleRegion,
-    clearFilters
+    clearFilters,
   } = useFilterTalents(talents, initialFilters);
 
   // Manage UI state
@@ -55,7 +45,7 @@ export function useTalentDirectory(
     selectedTalent,
     setSelectedTalent,
     expandedSections,
-    toggleSection
+    toggleSection,
   } = useUIState();
 
   return {
@@ -65,7 +55,7 @@ export function useTalentDirectory(
     total,
     isLoading,
     error,
-    
+
     // Search and filter state
     searchTerm,
     setSearchTerm,
@@ -78,7 +68,7 @@ export function useTalentDirectory(
     setExperienceRange,
     sortOption,
     setSortOption,
-    
+
     // UI state
     isMobileFilterOpen,
     setIsMobileFilterOpen,
@@ -87,18 +77,18 @@ export function useTalentDirectory(
     selectedTalent,
     setSelectedTalent,
     expandedSections,
-    
+
     // Auth and user state
     isAuthenticated,
     userDetails,
     savedTalents,
-    
+
     // Actions
     toggleSkill,
     toggleAvailability,
     toggleRegion,
     clearFilters,
     toggleSection,
-    handleToggleSave
+    handleToggleSave,
   };
 }

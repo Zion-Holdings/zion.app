@@ -1,4 +1,10 @@
-import React, { createContext, useState, useContext, useEffect, useCallback } from 'react';
+import React, {
+  createContext,
+  useState,
+  useContext,
+  useEffect,
+  useCallback,
+} from 'react';
 import type { ReactNode } from 'react';
 import { useRouter } from 'next/router';
 import { useAuth } from '@/hooks/useAuth';
@@ -6,7 +12,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { logInfo } from '@/utils/productionLogger';
 
 // Analytics event types
-export type AnalyticsEventType = 
+export type AnalyticsEventType =
   | 'page_view'
   | 'button_click'
   | 'form_submit'
@@ -35,8 +41,15 @@ export interface AnalyticsEvent {
 }
 
 export interface AnalyticsContextType {
-  trackEvent: (type: AnalyticsEventType, metadata?: Record<string, unknown>) => void;
-  trackConversion: (conversionType: string, value?: number, metadata?: Record<string, unknown>) => void;
+  trackEvent: (
+    type: AnalyticsEventType,
+    metadata?: Record<string, unknown>,
+  ) => void;
+  trackConversion: (
+    conversionType: string,
+    value?: number,
+    metadata?: Record<string, unknown>,
+  ) => void;
   pageViews: number;
   lastEvent: AnalyticsEvent | null;
   events: AnalyticsEvent[];
@@ -44,7 +57,7 @@ export interface AnalyticsContextType {
 }
 
 const AnalyticsContext = createContext<AnalyticsContextType | undefined>(
-  undefined
+  undefined,
 );
 
 export function AnalyticsProvider({ children }: { children: ReactNode }) {
@@ -58,53 +71,68 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
   const { _user } = useAuth();
 
   // Function to track general analytics events
-  const trackEvent = useCallback(async (type: AnalyticsEventType, metadata: Record<string, unknown> = {}) => {
-    const event: AnalyticsEvent = {
-      type,
-      timestamp: Date.now(),
-      path: router.pathname,
-      userId: user?.id ?? null,
-      metadata: {
-        ...metadata,
-        userAgent: typeof window !== 'undefined' ? window.navigator.userAgent : undefined,
-      }
-    };
+  const trackEvent = useCallback(
+    async (
+      type: AnalyticsEventType,
+      metadata: Record<string, unknown> = {},
+    ) => {
+      const event: AnalyticsEvent = {
+        type,
+        timestamp: Date.now(),
+        path: router.pathname,
+        userId: user?.id ?? null,
+        metadata: {
+          ...metadata,
+          userAgent:
+            typeof window !== 'undefined'
+              ? window.navigator.userAgent
+              : undefined,
+        },
+      };
 
-    try {
-      // Store event in Supabase for persistent analytics
-      if (supabase) {
-        await supabase.from('analytics_events').insert([{
-          event_type: type,
-          path: router.pathname,
-          user_id: user?.id,
-          metadata: event.metadata,
-          created_at: event.timestamp
-        }]);
+      try {
+        // Store event in Supabase for persistent analytics
+        if (supabase) {
+          await supabase.from('analytics_events').insert([
+            {
+              event_type: type,
+              path: router.pathname,
+              user_id: user?.id,
+              metadata: event.metadata,
+              created_at: event.timestamp,
+            },
+          ]);
+        }
+      } catch {
+        // Log error but don't fail the tracking
+        console.warn('Failed to store analytics event:', error);
       }
-    } catch {
-      // Log error but don't fail the tracking
-      console.warn('Failed to store analytics event:', error);
-    }
 
-    // Send to analytics service if configured
-    // if (analytics) {
-    //   try {
-    //     analytics.track(type, event.metadata);
-    //   } catch {
-    //     console.warn('Failed to send analytics event:', error);
-    //   }
-    // }
-  }, [user, router.pathname]);
+      // Send to analytics service if configured
+      // if (analytics) {
+      //   try {
+      //     analytics.track(type, event.metadata);
+      //   } catch {
+      //     console.warn('Failed to send analytics event:', error);
+      //   }
+      // }
+    },
+    [user, router.pathname],
+  );
 
   // Function to track conversion events
-  const trackConversion = (conversionType: string, value?: number, metadata: Record<string, unknown> = {}) => {
-    trackEvent('conversion', { 
-      conversionType, 
-      value, 
-      ...metadata 
+  const trackConversion = (
+    conversionType: string,
+    value?: number,
+    metadata: Record<string, unknown> = {},
+  ) => {
+    trackEvent('conversion', {
+      conversionType,
+      value,
+      ...metadata,
     });
   };
-  
+
   // Clear events (for development or testing)
   const clearEvents = () => {
     setEvents([]);
@@ -125,7 +153,7 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
         pageViews,
         lastEvent,
         events,
-        clearEvents
+        clearEvents,
       }}
     >
       {children}

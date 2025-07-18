@@ -3,9 +3,9 @@ import { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '@/context/auth/AuthProvider';
 
 import { SEO } from '@/components/SEO';
-import ProductCard from '@/components/ProductCard';
-import { TalentCard } from '@/components/talent/TalentCard';
-import { CategoryCard } from '@/components/CategoryCard';
+import { _ProductCard as ProductCard } from '@/components/marketplace/ProductCard';
+import { _TalentCard as TalentCard } from '@/components/talent/TalentCard';
+import { _CategoryCard as CategoryCard } from '@/components/marketplace/CategoryCard';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { TALENT_PROFILES } from '@/data/talentData';
 import { BLOG_POSTS } from '@/data/blog-posts';

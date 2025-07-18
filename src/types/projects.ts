@@ -1,6 +1,6 @@
 import type { Job } from './jobs';
 
-export type ProjectStatus = 
+export type ProjectStatus =
   | 'offer_sent'
   | 'offer_accepted'
   | 'changes_requested'

@@ -1,5 +1,3 @@
-
-
 export interface PartnerProfile {
   id: string;
   user_id: string;

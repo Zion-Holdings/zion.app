@@ -13,8 +13,8 @@ export function useWishlist() {
   useEffect(() => {
     if (!user || !isAuthenticated) return;
     fetch(`/api/users/${user.id}/wishlist`)
-      .then(res => (res.ok ? res.json() : null))
-      .then(data => {
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
         if (Array.isArray(data)) dispatch(set(data));
       })
       .catch(() => {});

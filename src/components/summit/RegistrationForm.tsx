@@ -31,21 +31,46 @@ export function RegistrationForm() {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="name">Name</Label>
-            <Input id="name" value={name} onChange={(e) => setName(e.target.value)} className="bg-zion-blue-light" />
+            <Input
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="bg-zion-blue-light"
+            />
           </div>
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="bg-zion-blue-light" />
+            <Input
+              id="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="bg-zion-blue-light"
+            />
           </div>
           <div className="space-y-2">
             <Label htmlFor="role">Role</Label>
-            <Input id="role" value={role} onChange={(e) => setRole(e.target.value)} className="bg-zion-blue-light" />
+            <Input
+              id="role"
+              value={role}
+              onChange={(e) => setRole(e.target.value)}
+              className="bg-zion-blue-light"
+            />
           </div>
           <div className="space-y-2">
             <Label htmlFor="country">Country</Label>
-            <Input id="country" value={country} onChange={(e) => setCountry(e.target.value)} className="bg-zion-blue-light" />
+            <Input
+              id="country"
+              value={country}
+              onChange={(e) => setCountry(e.target.value)}
+              className="bg-zion-blue-light"
+            />
           </div>
-          <Button type="submit" disabled={loading} className="w-full bg-zion-cyan hover:bg-zion-cyan/80">
+          <Button
+            type="submit"
+            disabled={loading}
+            className="w-full bg-zion-cyan hover:bg-zion-cyan/80"
+          >
             {loading ? 'Submitting...' : 'Sign Up'}
           </Button>
         </form>

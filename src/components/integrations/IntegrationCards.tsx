@@ -1,23 +1,27 @@
-
-import React from "react";
-import { ArrowRight, Check, ExternalLink, Users, Slack, Briefcase } from '@/components/ui/icons';
+import React from 'react';
+import {
+  ArrowRight,
+  Check,
+  ExternalLink,
+  Users,
+  Slack,
+  Briefcase,
+} from '@/components/ui/icons';
 import { logDebug } from '@/utils/productionLogger';
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-
-
-
-
-
-
-
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 interface IntegrationCardProps {
   title: string;
   description: string;
   icon: React.ReactNode;
-  status?: "connected" | "disconnected" | "pending";
+  status?: 'connected' | 'disconnected' | 'pending';
   href?: string;
   onConnect?: () => void;
 }
@@ -26,7 +30,7 @@ export function IntegrationCard({
   title,
   description,
   icon,
-  status = "disconnected",
+  status = 'disconnected',
   href,
   onConnect,
 }: IntegrationCardProps) {
@@ -42,13 +46,18 @@ export function IntegrationCard({
               <h3 className="font-semibold">{title}</h3>
             </div>
           </div>
-          {status === "connected" ? (
-            <Badge variant="outline" className="bg-green-100 text-green-800 gap-1">
+          {status === 'connected' ? (
+            <Badge
+              variant="outline"
+              className="bg-green-100 text-green-800 gap-1"
+            >
               <Check className="h-3.5 w-3.5" />
               <span>Connected</span>
             </Badge>
-          ) : status === "pending" ? (
-            <Badge variant="outline" className="bg-yellow-100 text-yellow-800">Pending</Badge>
+          ) : status === 'pending' ? (
+            <Badge variant="outline" className="bg-yellow-100 text-yellow-800">
+              Pending
+            </Badge>
           ) : (
             <Badge variant="outline">Not Connected</Badge>
           )}
@@ -58,9 +67,14 @@ export function IntegrationCard({
         <p className="text-sm text-muted-foreground">{description}</p>
       </CardContent>
       <CardFooter className="pt-0">
-        {status === "connected" ? (
+        {status === 'connected' ? (
           <Button variant="outline" className="w-full" asChild>
-            <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1"
+            >
               <span>Manage</span>
               <ExternalLink className="h-3.5 w-3.5" />
             </a>

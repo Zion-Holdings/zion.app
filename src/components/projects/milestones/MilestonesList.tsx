@@ -12,7 +12,10 @@ import { EmptyState } from '@/components/ui/EmptyState';
 
 interface MilestonesListProps {
   milestones: Milestone[];
-  activities: Record<string, import('@/hooks/milestones/types').MilestoneActivity[]>;
+  activities: Record<
+    string,
+    import('@/hooks/milestones/types').MilestoneActivity[]
+  >;
   isLoading: boolean;
   isClient: boolean;
   onCreateMilestone: (data: {

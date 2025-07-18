@@ -1,5 +1,10 @@
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { LoginCard } from "./login";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
+import { LoginCard } from './login';
 
 interface LoginModalProps {
   isOpen: boolean;

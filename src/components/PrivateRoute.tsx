@@ -9,8 +9,11 @@ interface PrivateRouteProps {
 
 export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
   const auth = useContext(AuthContext);
-  const { user, isLoading, isAuthenticated } =
-    auth ?? { user: null, isLoading: false, isAuthenticated: false };
+  const { user, isLoading, isAuthenticated } = auth ?? {
+    user: null,
+    isLoading: false,
+    isAuthenticated: false,
+  };
   const router = useRouter();
 
   useEffect(() => {
@@ -26,7 +29,8 @@ export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
     }
   }, [isAuthenticated, user, isLoading, router]);
 
-  if (isLoading || (!isAuthenticated && !isLoading) || (!user && !isLoading) ) { // Show loader if loading or if conditions for redirect are met but effect hasn't run
+  if (isLoading || (!isAuthenticated && !isLoading) || (!user && !isLoading)) {
+    // Show loader if loading or if conditions for redirect are met but effect hasn't run
     return (
       <div className="flex h-screen w-full items-center justify-center">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-zion-cyan"></div>

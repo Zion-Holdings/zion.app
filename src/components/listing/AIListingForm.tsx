@@ -1,11 +1,9 @@
-
-import React, { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import React, { useState } from 'react';
+import { useToast } from '@/hooks/use-toast';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 import { Sparkles } from 'lucide-react';
-
 
 interface AIListingFormProps {
   onSubmit: (formData: {
@@ -23,19 +21,27 @@ interface AIListingFormProps {
   };
 }
 
-export function AIListingForm({ onSubmit, isLoading, initialValues = {} }: AIListingFormProps) {
+export function AIListingForm({
+  onSubmit,
+  isLoading,
+  initialValues = {},
+}: AIListingFormProps) {
   const { _toast } = useToast();
-  const [title, setTitle] = useState(initialValues.title || "");
-  const [category, setCategory] = useState(initialValues.category || "");
-  const [keyFeatures, setKeyFeatures] = useState(initialValues.keyFeatures || "");
-  const [targetAudience, setTargetAudience] = useState(initialValues.targetAudience || "");
+  const [title, setTitle] = useState(initialValues.title || '');
+  const [category, setCategory] = useState(initialValues.category || '');
+  const [keyFeatures, setKeyFeatures] = useState(
+    initialValues.keyFeatures || '',
+  );
+  const [targetAudience, setTargetAudience] = useState(
+    initialValues.targetAudience || '',
+  );
 
   const handleSubmit = () => {
     if (!title || !category) {
       toast({
-        title: "Missing required fields",
-        description: "Please provide at least a title and category.",
-        variant: "destructive"
+        title: 'Missing required fields',
+        description: 'Please provide at least a title and category.',
+        variant: 'destructive',
       });
       return;
     }
@@ -44,14 +50,19 @@ export function AIListingForm({ onSubmit, isLoading, initialValues = {} }: AILis
       title,
       category,
       keyFeatures,
-      targetAudience
+      targetAudience,
     });
   };
 
   return (
     <div className="space-y-4">
       <div className="space-y-2">
-        <label htmlFor="title" className="text-sm font-medium text-zion-slate-light">Title</label>
+        <label
+          htmlFor="title"
+          className="text-sm font-medium text-zion-slate-light"
+        >
+          Title
+        </label>
         <Input
           id="title"
           value={title}
@@ -62,7 +73,12 @@ export function AIListingForm({ onSubmit, isLoading, initialValues = {} }: AILis
         />
       </div>
       <div className="space-y-2">
-        <label htmlFor="category" className="text-sm font-medium text-zion-slate-light">Category</label>
+        <label
+          htmlFor="category"
+          className="text-sm font-medium text-zion-slate-light"
+        >
+          Category
+        </label>
         <Input
           id="category"
           value={category}
@@ -73,7 +89,12 @@ export function AIListingForm({ onSubmit, isLoading, initialValues = {} }: AILis
         />
       </div>
       <div className="space-y-2">
-        <label htmlFor="keyFeatures" className="text-sm font-medium text-zion-slate-light">Key Features (Optional)</label>
+        <label
+          htmlFor="keyFeatures"
+          className="text-sm font-medium text-zion-slate-light"
+        >
+          Key Features (Optional)
+        </label>
         <Textarea
           id="keyFeatures"
           value={keyFeatures}
@@ -84,7 +105,12 @@ export function AIListingForm({ onSubmit, isLoading, initialValues = {} }: AILis
         />
       </div>
       <div className="space-y-2">
-        <label htmlFor="targetAudience" className="text-sm font-medium text-zion-slate-light">Target Audience (Optional)</label>
+        <label
+          htmlFor="targetAudience"
+          className="text-sm font-medium text-zion-slate-light"
+        >
+          Target Audience (Optional)
+        </label>
         <Input
           id="targetAudience"
           value={targetAudience}
@@ -94,7 +120,7 @@ export function AIListingForm({ onSubmit, isLoading, initialValues = {} }: AILis
           disabled={isLoading}
         />
       </div>
-      <Button 
+      <Button
         onClick={handleSubmit}
         disabled={isLoading || !title || !category}
         className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white mt-2"

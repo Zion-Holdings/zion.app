@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import { useTranslation } from "react-i18next";
-import { cn } from "@/lib/utils";
+import React from 'react';
+import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
+import { cn } from '@/lib/utils';
 
 interface AllFeaturesSectionProps {
   className?: string;
@@ -30,10 +30,13 @@ const features = [
   { key: 'ai_content_generation', link: '/features/ai-content-generation' },
 ];
 
-export function AllFeaturesSection({ className, style }: AllFeaturesSectionProps) {
+export function AllFeaturesSection({
+  className,
+  style,
+}: AllFeaturesSectionProps) {
   const { t } = useTranslation();
   return (
-    <section className={cn("py-16 bg-zion-blue-dark", className)} style={style}>
+    <section className={cn('py-16 bg-zion-blue-dark', className)} style={style}>
       <div className="container mx-auto px-4">
         <h2 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent">
           {t('home.all_features_title', 'Explore All Features')}

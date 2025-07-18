@@ -30,7 +30,10 @@ export default function RecommendationsPage() {
     return (
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
         {Array.from({ length: 5 }).map((_, i) => (
-          <div key={i} className="rounded-lg overflow-hidden border border-zion-blue-light">
+          <div
+            key={i}
+            className="rounded-lg overflow-hidden border border-zion-blue-light"
+          >
             <Skeleton className="h-48 w-full bg-zion-blue-light/20" />
             <div className="p-4 space-y-2">
               <Skeleton className="h-6 w-1/3 bg-zion-blue-light/20" />
@@ -47,13 +50,17 @@ export default function RecommendationsPage() {
 
   if (delayedError) {
     return (
-      <div className="py-12 text-center text-red-400">Failed to load recommendations.</div>
+      <div className="py-12 text-center text-red-400">
+        Failed to load recommendations.
+      </div>
     );
   }
 
   return (
     <div className="min-h-screen bg-zion-blue py-8 px-4">
-      <h1 className="text-2xl font-bold text-white mb-6">AI Equipment Recommendations</h1>
+      <h1 className="text-2xl font-bold text-white mb-6">
+        AI Equipment Recommendations
+      </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {items.map((item) => (
           <ListingScoreCard

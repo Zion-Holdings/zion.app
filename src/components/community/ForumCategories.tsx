@@ -1,51 +1,59 @@
-import Link from "next/link";
-import { MessageSquare, Code, FileText, Briefcase, Megaphone } from '@/components/ui/icons';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { useAuth } from "@/hooks/useAuth";
+import Link from 'next/link';
+import {
+  MessageSquare,
+  Code,
+  FileText,
+  Briefcase,
+  Megaphone,
+} from '@/components/ui/icons';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from '@/components/ui/card';
+import { useAuth } from '@/hooks/useAuth';
 
-
-
-
-
-
-import type { ForumCategoryInfo } from "@/types/community";
+import type { ForumCategoryInfo } from '@/types/community';
 
 const categories: ForumCategoryInfo[] = [
   {
-    id: "getting-hired",
-    name: "Getting Hired",
-    description: "Tips, strategies, and questions about getting hired on the platform.",
+    id: 'getting-hired',
+    name: 'Getting Hired',
+    description:
+      'Tips, strategies, and questions about getting hired on the platform.',
     adminOnly: false,
-    icon: "Briefcase"
+    icon: 'Briefcase',
   },
   {
-    id: "project-help",
-    name: "Project Help",
-    description: "Get help with your ongoing projects and collaboration.",
+    id: 'project-help',
+    name: 'Project Help',
+    description: 'Get help with your ongoing projects and collaboration.',
     adminOnly: false,
-    icon: "MessageSquare"
+    icon: 'MessageSquare',
   },
   {
-    id: "ai-tools",
-    name: "AI Tools Discussion",
-    description: "Discuss AI tools, frameworks, and best practices.",
+    id: 'ai-tools',
+    name: 'AI Tools Discussion',
+    description: 'Discuss AI tools, frameworks, and best practices.',
     adminOnly: false,
-    icon: "Code"
+    icon: 'Code',
   },
   {
-    id: "feedback",
-    name: "Feedback & Feature Requests",
-    description: "Share your feedback and suggest new features.",
+    id: 'feedback',
+    name: 'Feedback & Feature Requests',
+    description: 'Share your feedback and suggest new features.',
     adminOnly: false,
-    icon: "FileText"
+    icon: 'FileText',
   },
   {
-    id: "announcements",
-    name: "Announcements",
-    description: "Official announcements from the Zion team.",
+    id: 'announcements',
+    name: 'Announcements',
+    description: 'Official announcements from the Zion team.',
     adminOnly: true,
-    icon: "Megaphone"
-  }
+    icon: 'Megaphone',
+  },
 ];
 
 const iconMap = {
@@ -53,7 +61,7 @@ const iconMap = {
   MessageSquare,
   Code,
   FileText,
-  Megaphone
+  Megaphone,
 };
 
 export const ForumCategories = () => {
@@ -61,7 +69,7 @@ export const ForumCategories = () => {
   const isAdmin = user?.userType === 'admin' || user?.role === 'admin';
 
   const visibleCategories = categories.filter(
-    category => !category.adminOnly || isAdmin
+    (category) => !category.adminOnly || isAdmin,
   );
 
   return (
@@ -78,7 +86,9 @@ export const ForumCategories = () => {
                 <CardTitle className="text-xl">{category.name}</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base">{category.description}</CardDescription>
+                <CardDescription className="text-base">
+                  {category.description}
+                </CardDescription>
               </CardContent>
             </Card>
           </Link>

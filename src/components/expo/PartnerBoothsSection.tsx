@@ -8,7 +8,9 @@ export function PartnerBoothsSection() {
           {booths.map((b) => (
             <div key={b} className="p-6 border rounded-lg">
               <p className="text-lg font-semibold">{b}</p>
-              <p className="text-sm text-muted-foreground">Interactive showcase</p>
+              <p className="text-sm text-muted-foreground">
+                Interactive showcase
+              </p>
             </div>
           ))}
         </div>

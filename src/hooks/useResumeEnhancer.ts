@@ -1,39 +1,47 @@
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
-
-type EnhancementType = 'summary' | 'work-description' | 'skill-categorization' | 'general';
+type EnhancementType =
+  | 'summary'
+  | 'work-description'
+  | 'skill-categorization'
+  | 'general';
 
 export function useResumeEnhancer() {
   const [isEnhancing, setIsEnhancing] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  
+
   const enhanceContent = async (
-    content: string, 
+    content: string,
     type: EnhancementType = 'general',
-    context?: string
+    context?: string,
   ): Promise<string | null> => {
     setIsEnhancing(true);
     setError(null);
-    
+
     if (!supabase) throw new Error('Supabase client not initialized');
 
     try {
-      const { data, error } = await supabase.functions.invoke('resume-enhancer', {
-        body: { 
-          content, 
-          enhancementType: type,
-          context
-        }
-      });
-      
+      const { data, error } = await supabase.functions.invoke(
+        'resume-enhancer',
+        {
+          body: {
+            content,
+            enhancementType: type,
+            context,
+          },
+        },
+      );
+
       if (error) {
         throw new Error(error.message);
       }
-      
+
       // Handle mock response with fallback
-      return data && typeof data === 'object' && 'enhancedContent' in data ? (data as { enhancedContent: string }).enhancedContent : content;
+      return data && typeof data === 'object' && 'enhancedContent' in data
+        ? (data as { enhancedContent: string }).enhancedContent
+        : content;
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : String(err);
       setError(message || 'Failed to enhance content');
@@ -43,10 +51,10 @@ export function useResumeEnhancer() {
       setIsEnhancing(false);
     }
   };
-  
+
   return {
     enhanceContent,
     isEnhancing,
-    error
+    error,
   };
 }

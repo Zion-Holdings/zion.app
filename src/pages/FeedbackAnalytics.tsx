@@ -5,7 +5,10 @@ import type { FeedbackEntry } from '@/services/feedbackService';
 
 export default function FeedbackAnalytics() {
   const [feedback, setFeedback] = useState<FeedbackEntry[]>([]);
-  const [stats, setStats] = useState<{ count: number; averageRating: number }>({ count: 0, averageRating: 0 });
+  const [stats, setStats] = useState<{ count: number; averageRating: number }>({
+    count: 0,
+    averageRating: 0,
+  });
 
   useEffect(() => {
     setFeedback(getFeedback());
@@ -29,11 +32,13 @@ export default function FeedbackAnalytics() {
         </CardHeader>
         <CardContent>
           <ul className="space-y-4">
-            {feedback.map(f => (
+            {feedback.map((f) => (
               <li key={f.id} className="border-b pb-2">
                 <div>Rating: {f.rating}</div>
                 {f.comment && <div className="text-sm italic">{f.comment}</div>}
-                <div className="text-xs text-muted-foreground">{new Date(f.createdAt).toLocaleString()}</div>
+                <div className="text-xs text-muted-foreground">
+                  {new Date(f.createdAt).toLocaleString()}
+                </div>
               </li>
             ))}
             {feedback.length === 0 && <li>No feedback submitted yet.</li>}

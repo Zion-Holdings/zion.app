@@ -1,22 +1,33 @@
-import React, { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import React, { useState } from 'react';
+import { useToast } from '@/hooks/use-toast';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from '@/components/ui/card';
 import { Sparkles } from 'lucide-react';
 
-
-import { supabase } from "@/integrations/supabase/client";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { useForm } from "react-hook-form";
-import z from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { supabase } from '@/integrations/supabase/client';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
+import { useForm } from 'react-hook-form';
+import z from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 const formSchema = z.object({
-  title: z.string().min(3, "Title must be at least 3 characters"),
+  title: z.string().min(3, 'Title must be at least 3 characters'),
   keyFeatures: z.string(),
   targetAudience: z.string(),
 });
@@ -27,56 +38,73 @@ interface ServiceDescriptionFormProps {
   onDescriptionGenerated: (description: string) => void;
 }
 
-export function ServiceDescriptionForm({ onDescriptionGenerated }: ServiceDescriptionFormProps) {
+export function ServiceDescriptionForm({
+  onDescriptionGenerated,
+}: ServiceDescriptionFormProps) {
   const { _toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
-  
+
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      title: "",
-      keyFeatures: "",
-      targetAudience: "",
+      title: '',
+      keyFeatures: '',
+      targetAudience: '',
     },
   });
 
   const handleSubmit = async (_data: FormData) => {
     setIsLoading(true);
-    
+
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
-      const { data: response, error } = await supabase.functions.invoke('generate-service-description', {
-        body: { 
-          title: data.title, 
-          keyFeatures: data.keyFeatures, 
-          targetAudience: data.targetAudience 
-        }
-      });
+      const { data: response, error } = await supabase.functions.invoke(
+        'generate-service-description',
+        {
+          body: {
+            title: data.title,
+            keyFeatures: data.keyFeatures,
+            targetAudience: data.targetAudience,
+          },
+        },
+      );
 
       if (error) {
         throw new Error(error.message);
       }
-      
-      if (response && typeof response === 'object' && response !== null && 'error' in response) {
+
+      if (
+        response &&
+        typeof response === 'object' &&
+        response !== null &&
+        'error' in response
+      ) {
         throw new Error((response as { error: string }).error);
       }
 
-      const description = response && typeof response === 'object' && response !== null && 'description' in response
-        ? (response as { description: string }).description
-        : "Professional service with expert knowledge and proven results. We deliver high-quality solutions tailored to your specific needs.";
-      
+      const description =
+        response &&
+        typeof response === 'object' &&
+        response !== null &&
+        'description' in response
+          ? (response as { description: string }).description
+          : 'Professional service with expert knowledge and proven results. We deliver high-quality solutions tailored to your specific needs.';
+
       onDescriptionGenerated(description);
-      
+
       toast({
-        title: "Description Generated",
-        description: "Your professional service description has been created."
+        title: 'Description Generated',
+        description: 'Your professional service description has been created.',
       });
     } catch {
       logErrorToProduction('Error generating description:', { data: error });
       toast({
-        title: "Generation Failed",
-        description: error instanceof Error ? error.message : "Failed to generate description. Please try again.",
-        variant: "destructive"
+        title: 'Generation Failed',
+        description:
+          error instanceof Error
+            ? error.message
+            : 'Failed to generate description. Please try again.',
+        variant: 'destructive',
       });
     } finally {
       setIsLoading(false);
@@ -91,18 +119,24 @@ export function ServiceDescriptionForm({ onDescriptionGenerated }: ServiceDescri
           AI Service Description Generator
         </CardTitle>
         <CardDescription className="text-zion-slate-light">
-          Provide basic details about your service and let AI create a professional description
+          Provide basic details about your service and let AI create a
+          professional description
         </CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">
+          <form
+            onSubmit={form.handleSubmit(handleSubmit)}
+            className="space-y-4"
+          >
             <FormField
               control={form.control}
               name="title"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-zion-slate-light">Service Title</FormLabel>
+                  <FormLabel className="text-zion-slate-light">
+                    Service Title
+                  </FormLabel>
                   <FormControl>
                     <Input
                       {...field}
@@ -115,13 +149,15 @@ export function ServiceDescriptionForm({ onDescriptionGenerated }: ServiceDescri
                 </FormItem>
               )}
             />
-            
+
             <FormField
               control={form.control}
               name="keyFeatures"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-zion-slate-light">Key Features</FormLabel>
+                  <FormLabel className="text-zion-slate-light">
+                    Key Features
+                  </FormLabel>
                   <FormControl>
                     <Textarea
                       {...field}
@@ -134,13 +170,15 @@ export function ServiceDescriptionForm({ onDescriptionGenerated }: ServiceDescri
                 </FormItem>
               )}
             />
-            
+
             <FormField
               control={form.control}
               name="targetAudience"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-zion-slate-light">Target Audience</FormLabel>
+                  <FormLabel className="text-zion-slate-light">
+                    Target Audience
+                  </FormLabel>
                   <FormControl>
                     <Input
                       {...field}
@@ -153,8 +191,8 @@ export function ServiceDescriptionForm({ onDescriptionGenerated }: ServiceDescri
                 </FormItem>
               )}
             />
-            
-            <Button 
+
+            <Button
               type="submit"
               disabled={isLoading}
               className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white"

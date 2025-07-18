@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import type { ReactNode } from 'react';
 
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 interface Props {
   children: ReactNode;
@@ -27,7 +26,11 @@ export class ErrorBoundary extends Component<Props, State> {
   override componentDidCatch(error: Error, errorInfo: unknown) {
     // Only pass errorInfo if it's an object
     if (typeof errorInfo === 'object' && errorInfo !== null) {
-      logErrorToProduction('ErrorBoundary caught an error:', error, errorInfo as Record<string, unknown>);
+      logErrorToProduction(
+        'ErrorBoundary caught an error:',
+        error,
+        errorInfo as Record<string, unknown>,
+      );
     } else {
       logErrorToProduction('ErrorBoundary caught an error:', error);
     }
@@ -41,7 +44,10 @@ export class ErrorBoundary extends Component<Props, State> {
       return (
         <div className="container py-8">
           <h2>Something went wrong.</h2>
-          <p>Please try refreshing the page or contact support if the problem persists.</p>
+          <p>
+            Please try refreshing the page or contact support if the problem
+            persists.
+          </p>
         </div>
       );
     }

@@ -8,8 +8,14 @@ export type ConsoleLogEntry = {
 
 export function initConsoleLogCapture() {
   if (typeof window === 'undefined') return;
-  if ((window as unknown as { __logCaptureInitialized?: boolean }).__logCaptureInitialized) return;
-  (window as unknown as { __logCaptureInitialized?: boolean }).__logCaptureInitialized = true;
+  if (
+    (window as unknown as { __logCaptureInitialized?: boolean })
+      .__logCaptureInitialized
+  )
+    return;
+  (
+    window as unknown as { __logCaptureInitialized?: boolean }
+  ).__logCaptureInitialized = true;
 }
 
 export function getCapturedLogs(): ConsoleLogEntry[] {

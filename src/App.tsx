@@ -21,9 +21,7 @@ const App = ({ children }: { children?: React.ReactNode }) => {
     <WalletProvider>
       <ThemeProvider defaultTheme="dark">
         <ScrollToTop />
-        <RootErrorBoundary>
-          {children}
-        </RootErrorBoundary>
+        <RootErrorBoundary>{children}</RootErrorBoundary>
         <OfflineToast />
         <SupportChatbot />
         <InstallPrompt />

@@ -34,15 +34,15 @@ HEALTH_RUNNING=false
 BUILD_RUNNING=false
 HEALING_RUNNING=false
 
-if check_process "Health Monitor" "health-monitor.js"; then
+if check_process "Health Monitor" "health-monitor.cjs"; then
     HEALTH_RUNNING=true
 fi
 
-if check_process "Build Monitor" "build-monitor.js"; then
+if check_process "Build Monitor" "build-monitor.cjs"; then
     BUILD_RUNNING=true
 fi
 
-if check_process "Self-Healing System" "self-healing.js"; then
+if check_process "Self-Healing System" "self-healing.cjs"; then
     HEALING_RUNNING=true
 fi
 

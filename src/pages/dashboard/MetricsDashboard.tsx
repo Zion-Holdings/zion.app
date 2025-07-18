@@ -1,18 +1,20 @@
-import React, { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { supabase } from "@/integrations/supabase/client";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ExportPanel } from "@/components/analytics/ExportPanel";
-import { DynamicAnalyticsChart as AnalyticsChart } from "@/utils/dynamicComponents";
-import AdminLayout from "@/components/admin/AdminLayout";
-import { ProtectedRoute } from "@/components/ProtectedRoute";
+import React, { useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { supabase } from '@/integrations/supabase/client';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { ExportPanel } from '@/components/analytics/ExportPanel';
+import { DynamicAnalyticsChart as AnalyticsChart } from '@/utils/dynamicComponents';
+import AdminLayout from '@/components/admin/AdminLayout';
+import { ProtectedRoute } from '@/components/ProtectedRoute';
 
 interface MetricsDashboardProps {
   adminView?: boolean;
 }
 
-export default function MetricsDashboard({ adminView = false }: MetricsDashboardProps) {
+export default function MetricsDashboard({
+  adminView = false,
+}: MetricsDashboardProps) {
   const [internalOnly, setInternalOnly] = useState(adminView);
 
   const { data: marketplace } = useQuery({
@@ -59,10 +61,21 @@ export default function MetricsDashboard({ adminView = false }: MetricsDashboard
       const volume = await supabase
         .from('token_transactions')
         .select('amount')
-        .gte('created_at', new Date(Date.now() - 24*60*60*1000).toISOString());
-      const totalVolume = volume.data?.reduce((t: number, v: { amount?: number }) => t + (v.amount || 0), 0) || 0;
+        .gte(
+          'created_at',
+          new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(),
+        );
+      const totalVolume =
+        volume.data?.reduce(
+          (t: number, v: { amount?: number }) => t + (v.amount || 0),
+          0,
+        ) || 0;
       return {
-        supply: supply.data?.reduce((t:number,c:{ balance?: number })=>t+(c.balance||0),0) || 0,
+        supply:
+          supply.data?.reduce(
+            (t: number, c: { balance?: number }) => t + (c.balance || 0),
+            0,
+          ) || 0,
         activeWallets: activeWallets.count || 0,
         volume: totalVolume,
       };
@@ -79,7 +92,10 @@ export default function MetricsDashboard({ adminView = false }: MetricsDashboard
             <p className="text-zion-slate-light">Real-time protocol KPIs</p>
           </div>
           {adminView && (
-            <Button variant="outline" onClick={() => setInternalOnly(!internalOnly)}>
+            <Button
+              variant="outline"
+              onClick={() => setInternalOnly(!internalOnly)}
+            >
               {internalOnly ? 'Public View' : 'Internal View'}
             </Button>
           )}
@@ -89,26 +105,33 @@ export default function MetricsDashboard({ adminView = false }: MetricsDashboard
           <Card className="bg-zion-blue-dark border-zion-blue-light">
             <CardContent className="p-6 space-y-2">
               <h3 className="text-lg font-bold text-white">Marketplace</h3>
-              <p className="text-zion-slate-light">Jobs posted 24h/7d/total: {marketplace?.jobs24h} / {marketplace?.jobs7d} / {marketplace?.jobsTotal}</p>
-              <p className="text-zion-slate-light">Talent onboarded: {marketplace?.talent}</p>
+              <p className="text-zion-slate-light">
+                Jobs posted 24h/7d/total: {marketplace?.jobs24h} /{' '}
+                {marketplace?.jobs7d} / {marketplace?.jobsTotal}
+              </p>
+              <p className="text-zion-slate-light">
+                Talent onboarded: {marketplace?.talent}
+              </p>
             </CardContent>
           </Card>
           <Card className="bg-zion-blue-dark border-zion-blue-light">
             <CardContent className="p-6 space-y-2">
               <h3 className="text-lg font-bold text-white">Token</h3>
-              <p className="text-zion-slate-light">Circulating supply: {token?.supply}</p>
-              <p className="text-zion-slate-light">Active wallets: {token?.activeWallets}</p>
-              <p className="text-zion-slate-light">24h volume: {token?.volume}</p>
+              <p className="text-zion-slate-light">
+                Circulating supply: {token?.supply}
+              </p>
+              <p className="text-zion-slate-light">
+                Active wallets: {token?.activeWallets}
+              </p>
+              <p className="text-zion-slate-light">
+                24h volume: {token?.volume}
+              </p>
             </CardContent>
           </Card>
         </div>
 
         <div className="mb-6 grid grid-cols-1 gap-6">
-          <AnalyticsChart
-            title="Jobs Posted"
-            data={[]}
-            dataKeys={['jobs']}
-          />
+          <AnalyticsChart title="Jobs Posted" data={[]} dataKeys={['jobs']} />
         </div>
 
         <ExportPanel />

@@ -11,7 +11,6 @@ import ErrorBoundary from '@/components/GlobalErrorBoundary'; // Import ErrorBou
 import { useTalentDirectory } from '@/hooks/useTalentDirectory';
 import { SORT_OPTIONS } from '@/data/sortOptions';
 
-
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import type { TalentProfile } from '@/types/talent';
@@ -66,7 +65,9 @@ export default function TalentDirectory() {
 
   // Local state for modal and selected talent
   const [_isHireModalOpen, setIsHireModalOpen] = useState(false);
-  const [_selectedTalent, setSelectedTalent] = useState<TalentProfile | null>(null);
+  const [_selectedTalent, setSelectedTalent] = useState<TalentProfile | null>(
+    null,
+  );
 
   const { user } = useAuth();
   const isAdmin = user?.userType === 'admin';
@@ -81,7 +82,7 @@ export default function TalentDirectory() {
   // Load filters from query parameters on first load
   useEffect(() => {
     if (!router.isReady || initialized) return;
-    
+
     const {
       search,
       skills,
@@ -103,28 +104,26 @@ export default function TalentDirectory() {
     if (regions) regions.split(',').forEach((r) => toggleRegion(r));
     if (priceMin && priceMax)
       setPriceRange([Number(priceMin), Number(priceMax)]);
-    if (expMin && expMax)
-      setExperienceRange([Number(expMin), Number(expMax)]);
-    if (sort && SORT_OPTIONS.some((o) => o.value === sort))
-      setSortOption(sort);
+    if (expMin && expMax) setExperienceRange([Number(expMin), Number(expMax)]);
+    if (sort && SORT_OPTIONS.some((o) => o.value === sort)) setSortOption(sort);
     setInitialized(true);
   }, [
-    router.isReady, 
-    router.query, 
-    initialized, 
-    setSearchTerm, 
-    toggleSkill, 
-    toggleAvailability, 
-    toggleRegion, 
-    setPriceRange, 
-    setExperienceRange, 
-    setSortOption
+    router.isReady,
+    router.query,
+    initialized,
+    setSearchTerm,
+    toggleSkill,
+    toggleAvailability,
+    toggleRegion,
+    setPriceRange,
+    setExperienceRange,
+    setSortOption,
   ]);
 
   // Persist filters to query parameters
   useEffect(() => {
     if (!initialized || !router.isReady) return;
-    
+
     const query: Record<string, string> = {};
     if (searchTerm) query.search = searchTerm;
     if (selectedSkills.length) query.skills = selectedSkills.join(',');
@@ -141,7 +140,7 @@ export default function TalentDirectory() {
     }
     if (sortOption !== 'relevance') query.sort = sortOption;
     if (currentPage > 1) query.page = String(currentPage);
-    
+
     router.replace({ pathname: router.pathname, query }, undefined, {
       shallow: true,
     });
@@ -345,7 +344,7 @@ export default function TalentDirectory() {
                               }}
                             />
                           </PaginationItem>
-                        )
+                        ),
                       )}
                       <PaginationItem>
                         <PaginationNext
@@ -353,7 +352,7 @@ export default function TalentDirectory() {
                           onClick={(e) => {
                             e.preventDefault();
                             setCurrentPage(
-                              Math.min(totalPages, currentPage + 1)
+                              Math.min(totalPages, currentPage + 1),
                             );
                           }}
                         />

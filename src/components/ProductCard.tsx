@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { Heart } from '@/components/ui/icons';
 
-
 import { useWishlist } from '@/hooks/useWishlist';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -31,7 +30,12 @@ interface ProductCardProps {
   buyDisabled?: boolean;
 }
 
-export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyDisabled = false }: ProductCardProps) {
+export default function ProductCard({
+  product,
+  onBuy,
+  onBuyAttemptComplete,
+  buyDisabled = false,
+}: ProductCardProps) {
   // Move all hooks to the top, before any early returns
   const { _isAuthenticated } = useAuth();
   const { isWishlisted, toggle } = useWishlist();
@@ -46,19 +50,19 @@ export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyD
     product.stock === undefined
       ? 'In stock'
       : product.stock <= 0
-      ? 'Out of stock'
-      : product.stock <= 5
-      ? 'Low stock'
-      : 'In stock';
+        ? 'Out of stock'
+        : product.stock <= 5
+          ? 'Low stock'
+          : 'In stock';
 
   const stockVariant =
     product.stock === undefined
       ? 'success'
       : product.stock <= 0
-      ? 'destructive'
-      : product.stock <= 5
-      ? 'warning'
-      : 'success';
+        ? 'destructive'
+        : product.stock <= 5
+          ? 'warning'
+          : 'success';
   // Reset redirecting state if component unmounts (e.g., navigation cancelled by user)
   useEffect(() => {
     return () => {
@@ -66,13 +70,26 @@ export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyD
     };
   }, []);
 
-  if (!product || typeof product.id !== 'string' || typeof product.title !== 'string' || product.title.trim() === '') {
-    captureException(new Error('Invalid product data received by ProductCard'), {
-      extra: { product },
-    });
+  if (
+    !product ||
+    typeof product.id !== 'string' ||
+    typeof product.title !== 'string' ||
+    product.title.trim() === ''
+  ) {
+    captureException(
+      new Error('Invalid product data received by ProductCard'),
+      {
+        extra: { product },
+      },
+    );
     return (
-      <div className="relative border rounded-lg bg-card p-4 text-center h-full flex flex-col justify-center items-center" data-testid="product-card-error">
-        <p className="text-destructive text-sm">Product information unavailable.</p>
+      <div
+        className="relative border rounded-lg bg-card p-4 text-center h-full flex flex-col justify-center items-center"
+        data-testid="product-card-error"
+      >
+        <p className="text-destructive text-sm">
+          Product information unavailable.
+        </p>
         {/* Optionally, provide more details if product ID is known */}
         {/* {product && product.id && <p className="text-xs text-muted-foreground">ID: {product.id}</p>} */}
       </div>
@@ -94,7 +111,13 @@ export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyD
       router.push(`/auth/login?returnTo=${encodeURIComponent(router.asPath)}`);
       return;
     }
-    dispatch(addItem({ id: product.id, title: productTitle, price: product.price ?? 0 }));
+    dispatch(
+      addItem({
+        id: product.id,
+        title: productTitle,
+        price: product.price ?? 0,
+      }),
+    );
     toast({
       title: 'Added to cart',
       description: `${productTitle} has been added to your cart`,
@@ -105,10 +128,15 @@ export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyD
     });
   };
 
-  const imageUrl = Array.isArray(product.images) && product.images.length > 0 ? product.images[0] : null;
+  const imageUrl =
+    Array.isArray(product.images) && product.images.length > 0
+      ? product.images[0]
+      : null;
   const imageAltText = productTitle;
 
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+  const handleImageError = (
+    e: React.SyntheticEvent<HTMLImageElement, Event>,
+  ) => {
     if (!imageError) {
       setImageError(true);
       captureException(e, {
@@ -121,42 +149,50 @@ export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyD
   const imageSizes = isMobile ? '100vw' : isTablet ? '50vw' : '33vw';
 
   return (
-    <div className="relative border rounded-lg bg-card p-4" data-testid="product-card">
+    <div
+      className="relative border rounded-lg bg-card p-4"
+      data-testid="product-card"
+    >
       <button
         className="absolute top-2 right-2 p-1 rounded-full bg-background/70"
         onClick={() => toggle(product.id)}
         aria-label={active ? 'Remove from favorites' : 'Add to favorites'}
       >
-        <Heart className={active ? 'text-red-500 fill-red-500' : 'text-gray-500'} />
+        <Heart
+          className={active ? 'text-red-500 fill-red-500' : 'text-gray-500'}
+        />
       </button>
 
-    <div className="w-full h-40 relative mb-2">
-      {imageUrl && !imageError ? (
-        <Image
-          src={imageUrl}
-          alt={imageAltText}
-          fill
-          style={{ objectFit: 'cover' }}
-          onError={(e) => handleImageError(e)}
-          priority={false}
-          sizes={imageSizes}
-        />
-      ) : (
-        <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-          <span className="text-gray-500">No Image</span>
-        </div>
-      )}
-      {stockStatus && (
-        <Badge variant={stockVariant as 'success' | 'destructive' | 'warning'} className="absolute top-2 left-2">
-          {stockStatus}
-        </Badge>
-      )}
-      {active && (
-        <div className="absolute top-10 left-2 p-1 rounded-full bg-background/70">
-          <Heart className="text-red-500 fill-red-500" />
-        </div>
-      )}
-    </div>
+      <div className="w-full h-40 relative mb-2">
+        {imageUrl && !imageError ? (
+          <Image
+            src={imageUrl}
+            alt={imageAltText}
+            fill
+            style={{ objectFit: 'cover' }}
+            onError={(e) => handleImageError(e)}
+            priority={false}
+            sizes={imageSizes}
+          />
+        ) : (
+          <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+            <span className="text-gray-500">No Image</span>
+          </div>
+        )}
+        {stockStatus && (
+          <Badge
+            variant={stockVariant as 'success' | 'destructive' | 'warning'}
+            className="absolute top-2 left-2"
+          >
+            {stockStatus}
+          </Badge>
+        )}
+        {active && (
+          <div className="absolute top-10 left-2 p-1 rounded-full bg-background/70">
+            <Heart className="text-red-500 fill-red-500" />
+          </div>
+        )}
+      </div>
       <Link href={`/marketplace/listing/${product.id}`}>
         <div className="w-full h-40 relative mb-2 cursor-pointer">
           {imageUrl && !imageError ? (
@@ -221,7 +257,11 @@ export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyD
                 >
                   {isRedirecting ? (
                     <>
-                      <span className="animate-spin inline-block mr-2 h-4 w-4 border-2 border-current border-t-transparent rounded-full" role="status" aria-hidden="true"></span>
+                      <span
+                        className="animate-spin inline-block mr-2 h-4 w-4 border-2 border-current border-t-transparent rounded-full"
+                        role="status"
+                        aria-hidden="true"
+                      ></span>
                       Processing...
                     </>
                   ) : (

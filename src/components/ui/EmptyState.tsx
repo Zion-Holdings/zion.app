@@ -1,8 +1,5 @@
-
-
 import { Button } from './button';
 import { RefreshCw } from '@/components/ui/icons';
-
 
 interface EmptyStateProps {
   text?: string;
@@ -12,25 +9,21 @@ interface EmptyStateProps {
   icon?: React.ReactNode;
 }
 
-export function EmptyState({ 
-  text = "No items available", 
+export function EmptyState({
+  text = 'No items available',
   description,
   onRetry,
   showRetry = false,
-  icon
+  icon,
 }: EmptyStateProps) {
   return (
     <div className="flex flex-col items-center justify-center py-16 px-4 text-center">
       <div className="mb-4 text-gray-400">
         {icon || <Package className="h-16 w-16" />}
       </div>
-      <h3 className="text-xl font-semibold text-white mb-2">
-        {text}
-      </h3>
+      <h3 className="text-xl font-semibold text-white mb-2">{text}</h3>
       {description && (
-        <p className="text-gray-400 mb-6 max-w-md">
-          {description}
-        </p>
+        <p className="text-gray-400 mb-6 max-w-md">{description}</p>
       )}
       {showRetry && onRetry && (
         <Button
@@ -44,4 +37,4 @@ export function EmptyState({
       )}
     </div>
   );
-} 
+}

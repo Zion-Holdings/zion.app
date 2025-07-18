@@ -1,17 +1,16 @@
-
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import type { ControllerRenderProps } from "react-hook-form";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import type { ControllerRenderProps } from 'react-hook-form';
+import { Button } from '@/components/ui/button';
+import { Textarea } from '@/components/ui/textarea';
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
-  FormMessage
-} from "@/components/ui/form";
-import { Card, CardContent } from "@/components/ui/card";
+  FormMessage,
+} from '@/components/ui/form';
+import { Card, CardContent } from '@/components/ui/card';
 
 interface ReplyFormProps {
   onSubmit: (content: string) => Promise<void>;
@@ -24,11 +23,11 @@ interface ReplyFormValues {
 
 export const ReplyForm = ({ onSubmit, parentId }: ReplyFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   const form = useForm<ReplyFormValues>({
     defaultValues: {
-      content: ""
-    }
+      content: '',
+    },
   });
 
   const handleSubmit = async (_values: ReplyFormValues) => {
@@ -49,11 +48,19 @@ export const ReplyForm = ({ onSubmit, parentId }: ReplyFormProps) => {
             <FormField
               control={form.control}
               name="content"
-              render={({ field }: { field: ControllerRenderProps<ReplyFormValues, "content"> }) => (
+              render={({
+                field,
+              }: {
+                field: ControllerRenderProps<ReplyFormValues, 'content'>;
+              }) => (
                 <FormItem>
                   <FormControl>
                     <Textarea
-                      placeholder={parentId ? "Write your reply..." : "Join the discussion..."}
+                      placeholder={
+                        parentId
+                          ? 'Write your reply...'
+                          : 'Join the discussion...'
+                      }
                       className="min-h-[100px] resize-y"
                       {...field}
                     />
@@ -64,7 +71,7 @@ export const ReplyForm = ({ onSubmit, parentId }: ReplyFormProps) => {
             />
             <div className="mt-4 flex justify-end">
               <Button type="submit" disabled={isSubmitting}>
-                {isSubmitting ? "Submitting..." : "Post Reply"}
+                {isSubmitting ? 'Submitting...' : 'Post Reply'}
               </Button>
             </div>
           </form>

@@ -1,16 +1,14 @@
-
-import { supabase } from "@/integrations/supabase/client";
-import type { UserDetails } from "@/types/auth";
+import { supabase } from '@/integrations/supabase/client';
+import type { UserDetails } from '@/types/auth';
 import { safeStorage, safeSessionStorage } from './safeStorage';
 import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
-
 
 /**
  * Utility function to clean up authentication state
  * This helps prevent auth state inconsistencies and "limbo" states
  */
 export const cleanupAuthState = () => {
-  const authTokenKey = "zion_token";
+  const authTokenKey = 'zion_token';
   // Remove our custom auth token
   safeStorage.removeItem(authTokenKey);
   safeSessionStorage.removeItem(authTokenKey);
@@ -19,7 +17,7 @@ export const cleanupAuthState = () => {
   safeStorage.removeItem('supabase.auth.token');
   // Also clear from session storage if it was ever used there by Supabase or other logic
   safeSessionStorage.removeItem('supabase.auth.token');
-  
+
   // Remove all Supabase auth keys from localStorage
   try {
     Object.keys(localStorage).forEach((key) => {
@@ -28,9 +26,9 @@ export const cleanupAuthState = () => {
       }
     });
   } catch {
-    logWarn('Storage access error:', { data:  { data:  e } });
+    logWarn('Storage access error:', { data: { data: e } });
   }
-  
+
   // Remove from sessionStorage if in use
   try {
     Object.keys(sessionStorage || {}).forEach((key) => {
@@ -39,7 +37,7 @@ export const cleanupAuthState = () => {
       }
     });
   } catch {
-    logWarn('Storage access error:', { data:  { data:  e } });
+    logWarn('Storage access error:', { data: { data: e } });
   }
 };
 
@@ -51,45 +49,43 @@ export const checkNewRegistration = async (_user: UserDetails) => {
   try {
     // Check if user has received welcome email already
     const { data: existingCampaign } = await supabase
-      .from("email_campaigns")
-      .select("id")
-      .eq("user_id", user.id)
-      .eq("campaign_type", "welcome_series")
+      .from('email_campaigns')
+      .select('id')
+      .eq('user_id', user.id)
+      .eq('campaign_type', 'welcome_series')
       .maybeSingle();
-      
+
     // If no welcome email sent yet, schedule one
     if (!existingCampaign) {
       // Create a scheduled job for the welcome email
-      await supabase
-        .from("scheduled_jobs")
-        .insert({
-          job_type: "send_retention_email",
-          scheduled_for: new Date().toISOString(),
-          status: "pending",
-          payload: {
-            user_id: user.id,
-            email_type: "welcome_series",
-            user_type: user.userType || "unknown",
-            display_name: user.displayName || user.email?.split("@")[0] || "User"
-          }
-        });
-        
-      // Create entry in email_campaigns table
-      await supabase
-        .from("email_campaigns")
-        .insert({
+      await supabase.from('scheduled_jobs').insert({
+        job_type: 'send_retention_email',
+        scheduled_for: new Date().toISOString(),
+        status: 'pending',
+        payload: {
           user_id: user.id,
-          campaign_type: "welcome_series",
-          template_name: "welcome_email",
-          template_data: {
-            user_id: user.id,
-            email_type: "welcome_series",
-            user_type: user.userType || "unknown",
-            display_name: user.displayName || user.email?.split("@")[0] || "User"
-          }
-        });
+          email_type: 'welcome_series',
+          user_type: user.userType || 'unknown',
+          display_name: user.displayName || user.email?.split('@')[0] || 'User',
+        },
+      });
+
+      // Create entry in email_campaigns table
+      await supabase.from('email_campaigns').insert({
+        user_id: user.id,
+        campaign_type: 'welcome_series',
+        template_name: 'welcome_email',
+        template_data: {
+          user_id: user.id,
+          email_type: 'welcome_series',
+          user_type: user.userType || 'unknown',
+          display_name: user.displayName || user.email?.split('@')[0] || 'User',
+        },
+      });
     }
   } catch {
-    logErrorToProduction('Error checking or scheduling welcome email:', { data: error });
+    logErrorToProduction('Error checking or scheduling welcome email:', {
+      data: error,
+    });
   }
 };

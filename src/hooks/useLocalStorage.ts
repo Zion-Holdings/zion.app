@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
 import { logWarn } from '@/utils/productionLogger';
 
-
 /**
  * Persist state to localStorage and keep it in sync.
  * @param key Storage key
@@ -22,7 +21,8 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
 
   const setValue = (value: T | ((val: T) => T)) => {
     try {
-      const valueToStore = value instanceof Function ? value(storedValue) : value;
+      const valueToStore =
+        value instanceof Function ? value(storedValue) : value;
       setStoredValue(valueToStore);
       if (typeof window !== 'undefined') {
         safeStorage.setItem(key, JSON.stringify(valueToStore));

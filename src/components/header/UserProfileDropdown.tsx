@@ -28,7 +28,10 @@ const _UserProfileDropdown: React.FC = () => {
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (_event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
         fireEvent('profile_dropdown_toggle', { open: false });
       }
@@ -60,7 +63,13 @@ const _UserProfileDropdown: React.FC = () => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             toggleDropdown();
-            setTimeout(() => menuRef.current?.querySelector<HTMLElement>('a,button')?.focus(), 0);
+            setTimeout(
+              () =>
+                menuRef.current
+                  ?.querySelector<HTMLElement>('a,button')
+                  ?.focus(),
+              0,
+            );
           }
         }}
         style={{ background: 'none', border: 'none', cursor: 'pointer' }}
@@ -69,10 +78,23 @@ const _UserProfileDropdown: React.FC = () => {
         aria-label="User profile"
       >
         <Avatar className="h-8 w-8">
-          {(user && typeof user !== 'boolean' && user.avatarUrl) ? (
-            <AvatarImage src={user.avatarUrl} alt={(user && typeof user !== 'boolean' ? (user.displayName || user.name) : '') || 'User'} />
+          {user && typeof user !== 'boolean' && user.avatarUrl ? (
+            <AvatarImage
+              src={user.avatarUrl}
+              alt={
+                (user && typeof user !== 'boolean'
+                  ? user.displayName || user.name
+                  : '') || 'User'
+              }
+            />
           ) : (
-            <AvatarFallback>{((user && typeof user !== 'boolean' ? (user.displayName || user.name) : '') || 'U').charAt(0)}</AvatarFallback>
+            <AvatarFallback>
+              {(
+                (user && typeof user !== 'boolean'
+                  ? user.displayName || user.name
+                  : '') || 'U'
+              ).charAt(0)}
+            </AvatarFallback>
           )}
         </Avatar>
       </button>
@@ -96,8 +118,13 @@ const _UserProfileDropdown: React.FC = () => {
             role="menu"
             aria-label="User menu"
             onKeyDown={(e) => {
-              const items = Array.from(menuRef.current?.querySelectorAll<HTMLElement>('a,button') || []);
-              const index = items.indexOf(document.activeElement as HTMLElement);
+              const items = Array.from(
+                menuRef.current?.querySelectorAll<HTMLElement>('a,button') ||
+                  [],
+              );
+              const index = items.indexOf(
+                document.activeElement as HTMLElement,
+              );
               if (e.key === 'Escape') {
                 setIsOpen(false);
                 fireEvent('profile_dropdown_toggle', { open: false });
@@ -113,7 +140,10 @@ const _UserProfileDropdown: React.FC = () => {
               }
             }}
           >
-            <li style={{ padding: '8px 16px', _whiteSpace: 'nowrap' }} role="none">
+            <li
+              style={{ padding: '8px 16px', _whiteSpace: 'nowrap' }}
+              role="none"
+            >
               <Link
                 href="/profile"
                 onClick={() => {
@@ -123,10 +153,13 @@ const _UserProfileDropdown: React.FC = () => {
                 style={{ textDecoration: 'none', color: 'inherit' }}
                 role="menuitem"
               >
-              Profile
+                Profile
               </Link>
             </li>
-            <li style={{ padding: '8px 16px', _whiteSpace: 'nowrap' }} role="none">
+            <li
+              style={{ padding: '8px 16px', _whiteSpace: 'nowrap' }}
+              role="none"
+            >
               <Link
                 href="/orders"
                 onClick={() => {
@@ -136,10 +169,13 @@ const _UserProfileDropdown: React.FC = () => {
                 style={{ textDecoration: 'none', color: 'inherit' }}
                 role="menuitem"
               >
-              Orders
+                Orders
               </Link>
             </li>
-            <li style={{ padding: '8px 16px', _whiteSpace: 'nowrap' }} role="none">
+            <li
+              style={{ padding: '8px 16px', _whiteSpace: 'nowrap' }}
+              role="none"
+            >
               <Link
                 href="/settings"
                 onClick={() => {
@@ -149,13 +185,24 @@ const _UserProfileDropdown: React.FC = () => {
                 style={{ textDecoration: 'none', color: 'inherit' }}
                 role="menuitem"
               >
-              Settings
+                Settings
               </Link>
             </li>
-            <li style={{ padding: '8px 0 8px 16px', borderTop: '1px solid #ccc' }} role="none">
+            <li
+              style={{ padding: '8px 0 8px 16px', borderTop: '1px solid #ccc' }}
+              role="none"
+            >
               <button
                 onClick={handleLogout}
-                style={{ background: 'none', border: 'none', textAlign: 'left', width: '100%', padding: 0, cursor: 'pointer', color: 'inherit' }}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  textAlign: 'left',
+                  width: '100%',
+                  padding: 0,
+                  cursor: 'pointer',
+                  color: 'inherit',
+                }}
                 role="menuitem"
               >
                 Logout

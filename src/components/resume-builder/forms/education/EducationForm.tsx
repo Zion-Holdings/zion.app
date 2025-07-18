@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import type { Education } from '@/types/resume';
@@ -7,22 +6,22 @@ import type { EducationFormProps } from './types';
 import { EducationList } from './EducationList';
 import { EducationFormFields } from './EducationFormFields';
 
-export function EducationForm({ 
-  resumeId, 
-  educationEntries, 
-  onComplete, 
-  onBack 
+export function EducationForm({
+  resumeId,
+  educationEntries,
+  onComplete,
+  onBack,
 }: EducationFormProps) {
   const { addEducation, updateEducation, deleteEducation } = useResume();
   const [editingId, setEditingId] = useState<string | null>(null);
-  
+
   const handleAddOrUpdate = async (_data: Education) => {
     const educationData: Education = {
       institution: data.institution,
       degree: data.degree,
       field_of_study: data.field_of_study ?? '',
       start_date: data.start_date,
-      end_date: data.is_current ? '' : (data.end_date || ''),
+      end_date: data.is_current ? '' : data.end_date || '',
       is_current: data.is_current,
       description: data.description,
       location: data.location,
@@ -68,8 +67,8 @@ export function EducationForm({
         </p>
       </div>
 
-      <EducationList 
-        educationEntries={educationEntries} 
+      <EducationList
+        educationEntries={educationEntries}
         onEdit={handleEdit}
         onDelete={handleDelete}
       />

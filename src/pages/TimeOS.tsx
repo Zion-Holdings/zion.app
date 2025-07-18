@@ -14,14 +14,16 @@ export default function TimeOS() {
     <>
       <NextSeo
         title="Zion TimeOS"
-        description="Decentralized coordination layer for proposals, releases, and anniversaries."/>
+        description="Decentralized coordination layer for proposals, releases, and anniversaries."
+      />
       <Header />
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           <section className="text-center space-y-4">
             <GradientHeading level="h1">Zion TimeOS</GradientHeading>
             <p className="text-zion-slate-light text-xl">
-              Manage proposals, releases, anniversaries and cross-instance schedules.
+              Manage proposals, releases, anniversaries and cross-instance
+              schedules.
             </p>
           </section>
 
@@ -77,4 +79,4 @@ export default function TimeOS() {
       </main>
     </>
   );
-} 
+}

@@ -6,17 +6,14 @@ interface MarketplaceLayoutProps {
   sidebar?: React.ReactNode;
 }
 
-export function MarketplaceLayout({ children, sidebar }: MarketplaceLayoutProps) {
+export function MarketplaceLayout({
+  children,
+  sidebar,
+}: MarketplaceLayoutProps) {
   return (
     <div className="flex min-h-screen bg-background">
-      {sidebar && (
-        <MarketplaceSidebar>
-          {sidebar}
-        </MarketplaceSidebar>
-      )}
-      <main className="flex-1 p-6">
-        {children}
-      </main>
+      {sidebar && <MarketplaceSidebar>{sidebar}</MarketplaceSidebar>}
+      <main className="flex-1 p-6">{children}</main>
     </div>
   );
-} 
+}

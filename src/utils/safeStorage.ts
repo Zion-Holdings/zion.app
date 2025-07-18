@@ -11,20 +11,23 @@ let isLoggingError = false;
 
 function isLocalStorageAvailable(): boolean {
   const now = Date.now();
-  
+
   // Use cached result if checked recently
-  if (localStorageAvailable !== null && (now - lastAvailabilityCheck) < AVAILABILITY_CHECK_INTERVAL) {
+  if (
+    localStorageAvailable !== null &&
+    now - lastAvailabilityCheck < AVAILABILITY_CHECK_INTERVAL
+  ) {
     return localStorageAvailable;
   }
-  
+
   lastAvailabilityCheck = now;
-  
+
   try {
     if (typeof window === 'undefined') {
       localStorageAvailable = false;
       return false;
     }
-    
+
     const testKey = '__localStorage_test__';
     localStorage.setItem(testKey, 'test');
     localStorage.removeItem(testKey);
@@ -38,11 +41,18 @@ function isLocalStorageAvailable(): boolean {
 
 function safeConsoleError(message: string, error?: unknown) {
   // Prevent infinite recursion in console logging
-  if (isLoggingError || (typeof process !== 'undefined' && process.env.NODE_ENV === 'production')) return;
-  
+  if (
+    isLoggingError ||
+    (typeof process !== 'undefined' && process.env.NODE_ENV === 'production')
+  )
+    return;
+
   isLoggingError = true;
   try {
-    if (typeof process !== 'undefined' && process.env.NODE_ENV === 'development') {
+    if (
+      typeof process !== 'undefined' &&
+      process.env.NODE_ENV === 'development'
+    ) {
       logError(message, error);
     }
   } catch {
@@ -55,43 +65,49 @@ function safeConsoleError(message: string, error?: unknown) {
 export const safeStorage = {
   getItem: (key: string): string | null => {
     if (typeof window === 'undefined') return null;
-    
+
     // Don't log verbose messages for Supabase auth tokens to prevent spam
     const isVerboseKey = key.includes('sb-') || key.includes('supabase');
-    
+
     try {
       return localStorage.getItem(key);
     } catch {
       if (!isVerboseKey) {
-        safeConsoleError(`safeStorage.getItem: Error accessing localStorage for key "${key}". Falling back to in-memory.`);
+        safeConsoleError(
+          `safeStorage.getItem: Error accessing localStorage for key "${key}". Falling back to in-memory.`,
+        );
       }
       return inMemoryStore[key] || null;
     }
   },
   setItem: (key: string, _value: string) => {
     if (typeof window === 'undefined') return;
-    
+
     const isVerboseKey = key.includes('sb-') || key.includes('supabase');
-    
+
     try {
       localStorage.setItem(key, value);
     } catch {
       if (!isVerboseKey) {
-        safeConsoleError(`safeStorage.setItem: Error accessing localStorage for key "${key}". Falling back to in-memory.`);
+        safeConsoleError(
+          `safeStorage.setItem: Error accessing localStorage for key "${key}". Falling back to in-memory.`,
+        );
       }
       inMemoryStore[key] = value;
     }
   },
   _removeItem: (key: string) => {
     if (typeof window === 'undefined') return;
-    
+
     const isVerboseKey = key.includes('sb-') || key.includes('supabase');
-    
+
     try {
       localStorage.removeItem(key);
     } catch {
       if (!isVerboseKey) {
-        safeConsoleError(`safeStorage.removeItem: Error accessing localStorage for key "${key}". Falling back to in-memory.`);
+        safeConsoleError(
+          `safeStorage.removeItem: Error accessing localStorage for key "${key}". Falling back to in-memory.`,
+        );
       }
       delete inMemoryStore[key];
     }
@@ -106,7 +122,9 @@ export const safeStorage = {
     try {
       localStorage.clear();
     } catch {
-      safeConsoleError('safeStorage.clear: Error clearing localStorage. Falling back to in-memory.');
+      safeConsoleError(
+        'safeStorage.clear: Error clearing localStorage. Falling back to in-memory.',
+      );
       for (const key in inMemoryStore) {
         delete inMemoryStore[key];
       }
@@ -114,7 +132,7 @@ export const safeStorage = {
   },
   get isAvailable(): boolean {
     return isLocalStorageAvailable();
-  }
+  },
 };
 
 // Simplified session storage without excessive logging
@@ -170,5 +188,5 @@ export const safeSessionStorage = {
     } catch {
       return false;
     }
-  }
+  },
 };

@@ -1,19 +1,18 @@
-
 import { Quote } from '@/components/ui/icons';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious
-} from "@/components/ui/carousel";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Avatar } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
+  CarouselPrevious,
+} from '@/components/ui/carousel';
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { Avatar } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
 
-import Link from "next/link";
-import Image from "next/image";
-import { CASE_STUDIES } from "@/data/case-studies";
+import Link from 'next/link';
+import Image from 'next/image';
+import { CASE_STUDIES } from '@/data/case-studies';
 
 const testimonials = CASE_STUDIES;
 
@@ -22,16 +21,19 @@ export function TestimonialCarousel() {
     <section className="py-20 bg-zion-blue-dark">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h3 className="text-3xl font-bold text-white mb-3">What Our Users Say</h3>
+          <h3 className="text-3xl font-bold text-white mb-3">
+            What Our Users Say
+          </h3>
           <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
-            Discover how Zion is transforming the tech and AI marketplace ecosystem
+            Discover how Zion is transforming the tech and AI marketplace
+            ecosystem
           </p>
         </div>
-        
+
         <div className="max-w-5xl mx-auto px-8">
           <Carousel
             opts={{
-              align: "start",
+              align: 'start',
               loop: true,
             }}
             className="w-full"
@@ -52,8 +54,12 @@ export function TestimonialCarousel() {
                           />
                         </Avatar>
                         <div className="text-center md:text-left">
-                          <p className="font-bold text-zion-cyan">{testimonial.author}</p>
-                          <p className="text-zion-slate-light text-sm">{testimonial.role}</p>
+                          <p className="font-bold text-zion-cyan">
+                            {testimonial.author}
+                          </p>
+                          <p className="text-zion-slate-light text-sm">
+                            {testimonial.role}
+                          </p>
                         </div>
                       </div>
                       <div className="flex-1">
@@ -66,15 +72,25 @@ export function TestimonialCarousel() {
                             className="h-8 w-auto"
                             loading="lazy"
                           />
-                          <span className="text-white font-semibold">{testimonial.company}</span>
+                          <span className="text-white font-semibold">
+                            {testimonial.company}
+                          </span>
                         </div>
                         <Quote className="h-10 w-10 text-zion-cyan opacity-30 mb-3" />
-                        <p className="text-white text-lg mb-6">"{testimonial.quote}"</p>
+                        <p className="text-white text-lg mb-6">
+                          "{testimonial.quote}"
+                        </p>
                       </div>
                     </CardContent>
                     <CardFooter className="p-6 pt-0">
-                      <Button variant="link" className="text-zion-cyan p-0" asChild>
-                        <Link href={`/case-studies/${testimonial.slug}`}>Read Case Study →</Link>
+                      <Button
+                        variant="link"
+                        className="text-zion-cyan p-0"
+                        asChild
+                      >
+                        <Link href={`/case-studies/${testimonial.slug}`}>
+                          Read Case Study →
+                        </Link>
                       </Button>
                     </CardFooter>
                   </Card>

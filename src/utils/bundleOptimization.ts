@@ -15,7 +15,7 @@ export const preloadCriticalResources = () => {
     '/fonts/inter-medium.woff2',
   ];
 
-  criticalFonts.forEach(font => {
+  criticalFonts.forEach((font) => {
     const link = document.createElement('link');
     link.rel = 'preload';
     link.href = font;
@@ -26,12 +26,9 @@ export const preloadCriticalResources = () => {
   });
 
   // Preload critical API endpoints
-  const criticalEndpoints = [
-    '/api/marketplace/overview',
-    '/api/categories',
-  ];
+  const criticalEndpoints = ['/api/marketplace/overview', '/api/categories'];
 
-  criticalEndpoints.forEach(endpoint => {
+  criticalEndpoints.forEach((endpoint) => {
     const link = document.createElement('link');
     link.rel = 'prefetch';
     link.href = endpoint;
@@ -45,7 +42,7 @@ export const optimizeImageLoading = () => {
 
   // Enable lazy loading for all images
   const images = document.querySelectorAll('img');
-  images.forEach(img => {
+  images.forEach((img) => {
     if (!img.loading) {
       img.loading = 'lazy';
     }
@@ -54,7 +51,7 @@ export const optimizeImageLoading = () => {
   // Add intersection observer for progressive image enhancement
   if ('IntersectionObserver' in window) {
     const imageObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const img = entry.target as HTMLImageElement;
           if (img.dataset.src) {
@@ -67,7 +64,7 @@ export const optimizeImageLoading = () => {
     });
 
     const lazyImages = document.querySelectorAll('img[data-src]');
-    lazyImages.forEach(img => imageObserver.observe(img));
+    lazyImages.forEach((img) => imageObserver.observe(img));
   }
 };
 
@@ -77,17 +74,26 @@ export const monitorBundlePerformance = () => {
 
   // Monitor loading performance
   window.addEventListener('load', () => {
-    const perfData = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    const perfData = performance.getEntriesByType(
+      'navigation',
+    )[0] as PerformanceNavigationTiming;
     const loadTime = perfData.loadEventEnd - perfData.fetchStart;
 
     // Report to analytics if available
-    function hasGtag(obj: unknown): obj is { gtag: (...args: unknown[]) => void } {
-      return typeof obj === 'object' && obj !== null && 'gtag' in obj && typeof (obj as Record<string, unknown>)["gtag"] === 'function';
+    function hasGtag(
+      obj: unknown,
+    ): obj is { gtag: (...args: unknown[]) => void } {
+      return (
+        typeof obj === 'object' &&
+        obj !== null &&
+        'gtag' in obj &&
+        typeof (obj as Record<string, unknown>)['gtag'] === 'function'
+      );
     }
     if (hasGtag(window)) {
       window.gtag('event', 'page_load_time', {
         event_category: 'Performance',
-        value: Math.round(loadTime)
+        value: Math.round(loadTime),
       });
     }
   });
@@ -95,16 +101,18 @@ export const monitorBundlePerformance = () => {
   // Monitor resource loading
   const resourceObserver = new PerformanceObserver((list) => {
     const entries = list.getEntries() as PerformanceResourceTiming[];
-    const largeResources = entries.filter(entry => 
-      entry.transferSize && entry.transferSize > 100000 // Resources > 100KB
+    const largeResources = entries.filter(
+      (entry) => entry.transferSize && entry.transferSize > 100000, // Resources > 100KB
     );
 
     if (largeResources.length > 0) {
-      logWarn('Large resources detected:', { resources: largeResources.map(r => ({
-        name: r.name,
-        size: `${Math.round(r.transferSize / 1024)}KB`,
-        loadTime: `${Math.round(r.duration)}ms`
-      })) });
+      logWarn('Large resources detected:', {
+        resources: largeResources.map((r) => ({
+          name: r.name,
+          size: `${Math.round(r.transferSize / 1024)}KB`,
+          loadTime: `${Math.round(r.duration)}ms`,
+        })),
+      });
     }
   });
 
@@ -114,7 +122,10 @@ export const monitorBundlePerformance = () => {
 };
 
 // Implement virtual scrolling optimization
-export const optimizeListRendering = (container: HTMLElement, _itemHeight: number) => {
+export const optimizeListRendering = (
+  container: HTMLElement,
+  _itemHeight: number,
+) => {
   if (!container) return;
 
   const items = Array.from(container.children);
@@ -150,13 +161,17 @@ export const optimizeMemoryUsage = () => {
   if (typeof window === 'undefined') return;
 
   // Clear unused event listeners
-  let eventListeners: Array<{ element: Element; event: string; handler: EventListener }> = [];
+  let eventListeners: Array<{
+    element: Element;
+    event: string;
+    handler: EventListener;
+  }> = [];
 
   const addOptimizedEventListener = (
-    element: Element, 
-    event: string, 
-    handler: EventListener, 
-    options?: AddEventListenerOptions
+    element: Element,
+    event: string,
+    handler: EventListener,
+    options?: AddEventListenerOptions,
   ) => {
     element.addEventListener(event, handler, options);
     eventListeners.push({ element, event, handler });
@@ -189,7 +204,12 @@ export const optimizeMemoryUsage = () => {
         logWarn('High memory usage detected, triggering cleanup');
         // Force garbage collection if available
         function hasGc(obj: unknown): obj is { gc: () => void } {
-          return typeof obj === 'object' && obj !== null && 'gc' in obj && typeof (obj as Record<string, unknown>)["gc"] === 'function';
+          return (
+            typeof obj === 'object' &&
+            obj !== null &&
+            'gc' in obj &&
+            typeof (obj as Record<string, unknown>)['gc'] === 'function'
+          );
         }
         if (hasGc(window)) {
           window.gc();
@@ -228,5 +248,5 @@ export default {
   monitorBundlePerformance,
   optimizeListRendering,
   optimizeMemoryUsage,
-  initializeBundleOptimizations
+  initializeBundleOptimizations,
 };

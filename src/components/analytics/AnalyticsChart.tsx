@@ -1,8 +1,31 @@
 import React from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Legend } from 'recharts';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+  Legend,
+} from 'recharts';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import { useState } from 'react';
 
 // Define proper chart data interface
 interface ChartDataPoint {
@@ -23,30 +46,42 @@ interface AnalyticsChartProps {
   height?: number;
 }
 
-export default function AnalyticsChart({ 
-  title, 
-  description, 
-  data, 
+export default function AnalyticsChart({
+  title,
+  description,
+  data,
   type = 'line',
-  dataKeys, 
+  dataKeys,
   timeRange = '7d',
   onTimeRangeChange,
-  height = 300
+  height = 300,
 }: AnalyticsChartProps) {
   const [chartType, setChartType] = useState<'line' | 'bar'>(type);
-  
+
   const colors = [
-    '#8884d8', '#82ca9d', '#ffc658', '#ff8042', '#0088fe', 
-    '#00C49F', '#FFBB28', '#FF8042', '#a4de6c', '#d0ed57'
+    '#8884d8',
+    '#82ca9d',
+    '#ffc658',
+    '#ff8042',
+    '#0088fe',
+    '#00C49F',
+    '#FFBB28',
+    '#FF8042',
+    '#a4de6c',
+    '#d0ed57',
   ];
-  
+
   return (
     <Card className="bg-zion-blue-dark border-zion-blue-light overflow-hidden">
       <CardHeader className="pb-2">
         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4">
           <div>
             <CardTitle className="text-white text-lg">{title}</CardTitle>
-            {description && <CardDescription className="text-zion-slate-light">{description}</CardDescription>}
+            {description && (
+              <CardDescription className="text-zion-slate-light">
+                {description}
+              </CardDescription>
+            )}
           </div>
           <div className="flex items-center gap-2">
             {onTimeRangeChange && (
@@ -63,7 +98,10 @@ export default function AnalyticsChart({
                 </SelectContent>
               </Select>
             )}
-            <Select value={chartType} onValueChange={(value: 'line' | 'bar') => setChartType(value)}>
+            <Select
+              value={chartType}
+              onValueChange={(value: 'line' | 'bar') => setChartType(value)}
+            >
               <SelectTrigger className="w-24 h-8 text-xs bg-zion-blue border-zion-blue-light text-zion-slate-light">
                 <SelectValue placeholder="Chart Type" />
               </SelectTrigger>
@@ -79,22 +117,25 @@ export default function AnalyticsChart({
         <div className="h-72 w-full p-4">
           <ResponsiveContainer width="100%" height={height}>
             {chartType === 'line' ? (
-              <LineChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 25 }}>
+              <LineChart
+                data={data}
+                margin={{ top: 5, right: 30, left: 20, bottom: 25 }}
+              >
                 <CartesianGrid strokeDasharray="3 3" stroke="#354151" />
-                <XAxis 
-                  dataKey="name" 
+                <XAxis
+                  dataKey="name"
                   tick={{ fill: '#b1b9c6', fontSize: 12 }}
                   angle={-30}
                   textAnchor="end"
                   height={50}
                 />
                 <YAxis tick={{ fill: '#b1b9c6', fontSize: 12 }} />
-                <Tooltip 
-                  contentStyle={{ 
-                    backgroundColor: '#1a2332', 
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: '#1a2332',
                     borderColor: '#293445',
-                    color: '#fff'
-                  }} 
+                    color: '#fff',
+                  }}
                 />
                 <Legend />
                 {dataKeys.map((key, index) => (
@@ -109,29 +150,32 @@ export default function AnalyticsChart({
                 ))}
               </LineChart>
             ) : (
-              <BarChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 25 }}>
+              <BarChart
+                data={data}
+                margin={{ top: 5, right: 30, left: 20, bottom: 25 }}
+              >
                 <CartesianGrid strokeDasharray="3 3" stroke="#354151" />
-                <XAxis 
-                  dataKey="name" 
-                  tick={{ fill: '#b1b9c6', fontSize: 12 }} 
+                <XAxis
+                  dataKey="name"
+                  tick={{ fill: '#b1b9c6', fontSize: 12 }}
                   angle={-30}
                   textAnchor="end"
                   height={50}
                 />
                 <YAxis tick={{ fill: '#b1b9c6', fontSize: 12 }} />
-                <Tooltip 
-                  contentStyle={{ 
-                    backgroundColor: '#1a2332', 
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: '#1a2332',
                     borderColor: '#293445',
-                    color: '#fff'
-                  }} 
+                    color: '#fff',
+                  }}
                 />
                 <Legend />
                 {dataKeys.map((key, index) => (
-                  <Bar 
+                  <Bar
                     key={key}
-                    dataKey={key} 
-                    fill={colors[index % colors.length]} 
+                    dataKey={key}
+                    fill={colors[index % colors.length]}
                     radius={[4, 4, 0, 0]}
                   />
                 ))}

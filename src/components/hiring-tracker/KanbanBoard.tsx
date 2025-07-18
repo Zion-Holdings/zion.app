@@ -1,15 +1,14 @@
-
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 // Use a lightweight local stub for drag-and-drop to avoid missing dependency
 // errors when the real package isn't installed.
-import { DragDropContext } from "@/lib/dnd-stub";
-import { useJobApplications } from "@/hooks/useJobApplications";
-import type { JobApplication, ApplicationStatus } from "@/types/jobs";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import Skeleton from "@/components/ui/skeleton";
-import { toast } from "@/hooks/use-toast";
-import { KanbanColumn } from "./KanbanColumn";
-import { useIsMobile } from "@/hooks/use-mobile";
+import { DragDropContext } from '@/lib/dnd-stub';
+import { useJobApplications } from '@/hooks/useJobApplications';
+import type { JobApplication, ApplicationStatus } from '@/types/jobs';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import Skeleton from '@/components/ui/skeleton';
+import { toast } from '@/hooks/use-toast';
+import { KanbanColumn } from './KanbanColumn';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface DnDLocation {
   droppableId: string;
@@ -25,29 +24,29 @@ interface DropResult {
 // Define the kanban board columns based on application statuses
 const COLUMNS = [
   {
-    id: "new",
-    title: "Applied",
-    description: "New applications",
+    id: 'new',
+    title: 'Applied',
+    description: 'New applications',
   },
   {
-    id: "shortlisted",
-    title: "Shortlisted",
-    description: "Candidates selected for review",
+    id: 'shortlisted',
+    title: 'Shortlisted',
+    description: 'Candidates selected for review',
   },
   {
-    id: "interview",
-    title: "Interview",
-    description: "Scheduled for interview",
+    id: 'interview',
+    title: 'Interview',
+    description: 'Scheduled for interview',
   },
   {
-    id: "hired",
-    title: "Hired",
-    description: "Successful candidates",
+    id: 'hired',
+    title: 'Hired',
+    description: 'Successful candidates',
   },
   {
-    id: "rejected",
-    title: "Rejected",
-    description: "Not moving forward",
+    id: 'rejected',
+    title: 'Rejected',
+    description: 'Not moving forward',
   },
 ];
 
@@ -56,66 +55,77 @@ interface KanbanBoardProps {
 }
 
 export function KanbanBoard({ jobId }: KanbanBoardProps) {
-  const { applications, isLoading, updateApplicationStatus } = useJobApplications(jobId);
+  const { applications, isLoading, updateApplicationStatus } =
+    useJobApplications(jobId);
   const [columns, setColumns] = useState<Record<string, JobApplication[]>>({});
   const isMobile = useIsMobile();
-  
+
   // Initialize columns with applications based on their status
   useEffect(() => {
     if (applications) {
       // Group applications by status
-      const groupedApplications = COLUMNS.reduce((acc, column) => {
-        acc[column.id] = applications.filter(app => app.status === column.id);
-        return acc;
-      }, {} as Record<string, JobApplication[]>);
-      
+      const groupedApplications = COLUMNS.reduce(
+        (acc, column) => {
+          acc[column.id] = applications.filter(
+            (app) => app.status === column.id,
+          );
+          return acc;
+        },
+        {} as Record<string, JobApplication[]>,
+      );
+
       setColumns(groupedApplications);
     }
   }, [applications]);
-  
+
   // Handle drag end event to update the application status
   const handleDragEnd = async (_result: DropResult) => {
     const { destination, source, draggableId } = result;
-    
+
     // If there's no destination or the item is dropped in the same place, do nothing
-    if (!destination || 
-        (destination.droppableId === source.droppableId && 
-         destination.index === source.index)) {
+    if (
+      !destination ||
+      (destination.droppableId === source.droppableId &&
+        destination.index === source.index)
+    ) {
       return;
     }
-    
+
     // Get the application that was dragged
-    const application = applications.find(app => app.id === draggableId);
+    const application = applications.find((app) => app.id === draggableId);
     if (!application) return;
-    
+
     // Update the application status in the database
     const newStatus = destination.droppableId as ApplicationStatus;
-    
+
     // Optimistically update the UI
     const sourceColumn = [...(columns[source.droppableId] || [])];
     const destColumn = [...(columns[destination.droppableId] || [])];
     const [removed] = sourceColumn.splice(source.index, 1);
-    destColumn.splice(destination.index, 0, { ...removed, status: newStatus } as JobApplication);
-    
+    destColumn.splice(destination.index, 0, {
+      ...removed,
+      status: newStatus,
+    } as JobApplication);
+
     setColumns({
       ...columns,
       [source.droppableId]: sourceColumn,
       [destination.droppableId]: destColumn,
     });
-    
+
     // Update status in the database
     try {
       await updateApplicationStatus(draggableId, newStatus);
       toast({
-        title: "Status updated",
-        description: `Candidate moved to ${COLUMNS.find(col => col.id === newStatus)?.title}`,
+        title: 'Status updated',
+        description: `Candidate moved to ${COLUMNS.find((col) => col.id === newStatus)?.title}`,
       });
     } catch {
       // Revert the UI changes if the database update fails
       toast({
-        title: "Failed to update status",
-        description: "Please try again",
-        variant: "destructive",
+        title: 'Failed to update status',
+        description: 'Please try again',
+        variant: 'destructive',
       });
     }
   };
@@ -126,10 +136,12 @@ export function KanbanBoard({ jobId }: KanbanBoardProps) {
     const [result] = args;
     void handleDragEnd(result as DropResult);
   };
-  
+
   if (isLoading) {
     return (
-      <div className={`grid grid-cols-1 ${!isMobile ? 'md:grid-cols-3 lg:grid-cols-5' : ''} gap-4`}>
+      <div
+        className={`grid grid-cols-1 ${!isMobile ? 'md:grid-cols-3 lg:grid-cols-5' : ''} gap-4`}
+      >
         {Array.from({ length: isMobile ? 1 : 5 }).map((_, i) => (
           <Card key={i} className="h-[500px]">
             <CardHeader>
@@ -143,7 +155,7 @@ export function KanbanBoard({ jobId }: KanbanBoardProps) {
       </div>
     );
   }
-  
+
   if (!applications || applications.length === 0) {
     return (
       <Card className="text-center py-16">
@@ -156,11 +168,13 @@ export function KanbanBoard({ jobId }: KanbanBoardProps) {
       </Card>
     );
   }
-  
+
   return (
     <DragDropContext onDragEnd={handleDragEndSync}>
-      <div className={`grid ${isMobile ? 'grid-cols-1 gap-y-6' : 'grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4'} overflow-x-auto`}>
-        {COLUMNS.map(column => (
+      <div
+        className={`grid ${isMobile ? 'grid-cols-1 gap-y-6' : 'grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4'} overflow-x-auto`}
+      >
+        {COLUMNS.map((column) => (
           <KanbanColumn
             key={column.id}
             id={column.id}

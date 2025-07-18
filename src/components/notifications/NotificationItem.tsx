@@ -3,8 +3,6 @@ import { Check, Trash2, ChevronRight } from '@/components/ui/icons';
 
 // Use the centralized icon wrapper to avoid missing icons
 
-
-
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { formatDistanceToNow } from 'date-fns';

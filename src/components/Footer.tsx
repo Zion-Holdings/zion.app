@@ -1,9 +1,25 @@
 import React from 'react';
-import { Mail, Phone, MapPin, ArrowUp, Heart, Shield, Zap, Users, Globe, Award, Facebook, Twitter, Instagram, Linkedin, Youtube, Github } from '@/components/ui/icons';
+import {
+  Mail,
+  Phone,
+  MapPin,
+  ArrowUp,
+  Heart,
+  Shield,
+  Zap,
+  Users,
+  Globe,
+  Award,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Youtube,
+  Github,
+} from '@/components/ui/icons';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -56,23 +72,23 @@ export function Footer() {
     {
       icon: Shield,
       title: 'Secure & Reliable',
-      description: 'Enterprise-grade security with 99.9% uptime guarantee'
+      description: 'Enterprise-grade security with 99.9% uptime guarantee',
     },
     {
       icon: Zap,
       title: 'Lightning Fast',
-      description: 'Optimized performance for the best user experience'
+      description: 'Optimized performance for the best user experience',
     },
     {
       icon: Users,
       title: 'Community Driven',
-      description: 'Built by developers, for developers worldwide'
+      description: 'Built by developers, for developers worldwide',
     },
     {
       icon: Globe,
       title: 'Global Reach',
-      description: 'Available in multiple languages and regions'
-    }
+      description: 'Available in multiple languages and regions',
+    },
   ];
 
   return (
@@ -83,7 +99,8 @@ export function Footer() {
           <div className="max-w-2xl mx-auto text-center">
             <h3 className="text-2xl font-bold mb-4">Stay Updated</h3>
             <p className="text-muted-foreground mb-6">
-              Get the latest updates, news, and exclusive offers delivered to your inbox.
+              Get the latest updates, news, and exclusive offers delivered to
+              your inbox.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input
@@ -91,9 +108,7 @@ export function Footer() {
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-2 border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary"
               />
-              <Button className="shrink-0">
-                Subscribe
-              </Button>
+              <Button className="shrink-0">Subscribe</Button>
             </div>
           </div>
         </div>
@@ -109,10 +124,10 @@ export function Footer() {
               <span className="text-xl font-bold">Zion Tech</span>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Empowering developers and businesses with innovative technology solutions. 
-              Join our community and build the future together.
+              Empowering developers and businesses with innovative technology
+              solutions. Join our community and build the future together.
             </p>
-            
+
             {/* Contact Info */}
             <div className="space-y-3 mb-6">
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
@@ -223,7 +238,9 @@ export function Footer() {
               <CardContent className="p-6">
                 <feature.icon className="w-8 h-8 text-primary mx-auto mb-3" />
                 <h5 className="font-semibold mb-2">{feature.title}</h5>
-                <p className="text-sm text-muted-foreground">{feature.description}</p>
+                <p className="text-sm text-muted-foreground">
+                  {feature.description}
+                </p>
               </CardContent>
             </Card>
           ))}
@@ -241,7 +258,7 @@ export function Footer() {
               <Heart className="w-4 h-4 text-red-500 hidden sm:inline" />
               <span className="hidden sm:inline">by developers</span>
             </div>
-            
+
             <div className="flex items-center gap-4">
               <Button
                 variant="ghost"

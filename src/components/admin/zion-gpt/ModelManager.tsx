@@ -1,19 +1,32 @@
 import { useState, useEffect } from 'react';
-import { Loader2, RefreshCw, Play, CheckCircle, AlertCircle } from '@/components/ui/icons';
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Badge } from "@/components/ui/badge";
-
-
-
-
-
+import {
+  Loader2,
+  RefreshCw,
+  Play,
+  CheckCircle,
+  AlertCircle,
+} from '@/components/ui/icons';
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
+import { Badge } from '@/components/ui/badge';
 
 import { supabase } from '@/integrations/supabase/client';
 import type { ModelConfig } from '@/utils/zion-gpt';
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 interface ModelVersionData extends ModelConfig {
   trainingStatus: 'queued' | 'running' | 'succeeded' | 'failed';
@@ -23,7 +36,7 @@ interface ModelVersionData extends ModelConfig {
 export function ZionGPTModelManager() {
   const [models, setModels] = useState<ModelVersionData[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [activeJobs, setActiveJobs] = useState<{[key: string]: boolean}>({});
+  const [activeJobs, setActiveJobs] = useState<{ [key: string]: boolean }>({});
 
   // Fetch model data on component mount
   useEffect(() => {
@@ -36,26 +49,35 @@ export function ZionGPTModelManager() {
       if (!supabase) {
         throw new Error('Supabase client not available');
       }
-      
+
       const { data, error } = await supabase
         .from('model_versions')
         .select('*')
         .order('createdAt', { ascending: false });
-      
+
       if (error) throw error;
-      
+
       // Map the data to our component state. Provide a fallback to avoid
       // "map is not a function" errors if the query returns null
-      setModels((data ?? []).map((model: Record<string, unknown>) => ({
-        id: model.id as import('@/utils/zion-gpt').ModelVersion,
-        version: Number(model.version),
-        createdAt: model.created_at as string,
-        baseModel: model.base_model as string,
-        purpose: model.purpose as string,
-        active: model.active as boolean,
-        trainingStatus: (model.training_status as 'queued' | 'running' | 'succeeded' | 'failed'),
-        errorMessage: (model.error_message as string) ?? ''
-      }) as ModelVersionData));
+      setModels(
+        (data ?? []).map(
+          (model: Record<string, unknown>) =>
+            ({
+              id: model.id as import('@/utils/zion-gpt').ModelVersion,
+              version: Number(model.version),
+              createdAt: model.created_at as string,
+              baseModel: model.base_model as string,
+              purpose: model.purpose as string,
+              active: model.active as boolean,
+              trainingStatus: model.training_status as
+                | 'queued'
+                | 'running'
+                | 'succeeded'
+                | 'failed',
+              errorMessage: (model.error_message as string) ?? '',
+            }) as ModelVersionData,
+        ),
+      );
     } catch {
       logErrorToProduction('Error fetching models:', { data: error });
     } finally {
@@ -68,53 +90,82 @@ export function ZionGPTModelManager() {
       if (!supabase) {
         throw new Error('Supabase client not available');
       }
-      
-      setActiveJobs(prev => ({ ...prev, [modelId]: true }));
-      
+
+      setActiveJobs((prev) => ({ ...prev, [modelId]: true }));
+
       // Call an edge function that checks the OpenAI fine-tuning job status
-      const { data, error } = await supabase.functions.invoke('check-training-status', {
-        body: { modelId }
-      });
-      
+      const { data, error } = await supabase.functions.invoke(
+        'check-training-status',
+        {
+          body: { modelId },
+        },
+      );
+
       if (error) throw error;
-      
+
       // Update the local model status
-      setModels(prev => 
-        prev.map(model => 
-          model.id === modelId 
+      setModels((prev) =>
+        prev.map((model) =>
+          model.id === modelId
             ? ({
                 ...model,
-                trainingStatus: (typeof data === 'object' && data && 'status' in data ? (data.status as 'queued' | 'running' | 'succeeded' | 'failed') : 'failed'),
-                errorMessage: typeof data === 'object' && data && 'error' in data ? (data.error as string) : 'Unknown error',
+                trainingStatus:
+                  typeof data === 'object' && data && 'status' in data
+                    ? (data.status as
+                        | 'queued'
+                        | 'running'
+                        | 'succeeded'
+                        | 'failed')
+                    : 'failed',
+                errorMessage:
+                  typeof data === 'object' && data && 'error' in data
+                    ? (data.error as string)
+                    : 'Unknown error',
               } as ModelVersionData)
-            : model
-        )
+            : model,
+        ),
       );
-      
+
       // Also update in the database
       await supabase
         .from('model_versions')
         .update({
-          training_status: typeof data === 'object' && data && 'status' in data ? (data.status as string) : 'failed',
-          error_message: typeof data === 'object' && data && 'error' in data ? (data.error as string) : 'Unknown error',
+          training_status:
+            typeof data === 'object' && data && 'status' in data
+              ? (data.status as string)
+              : 'failed',
+          error_message:
+            typeof data === 'object' && data && 'error' in data
+              ? (data.error as string)
+              : 'Unknown error',
           // If training succeeded, automatically set to active
-          ...((typeof data === 'object' && data && 'status' in data && data.status === 'succeeded') ? { active: true } : {})
+          ...(typeof data === 'object' &&
+          data &&
+          'status' in data &&
+          data.status === 'succeeded'
+            ? { active: true }
+            : {}),
         })
         .eq('id', modelId);
-      
     } catch {
-      logErrorToProduction('Error checking status for model ${modelId}:', { data: error });
+      logErrorToProduction('Error checking status for model ${modelId}:', {
+        data: error,
+      });
     } finally {
-      setActiveJobs(prev => ({ ...prev, [modelId]: false }));
+      setActiveJobs((prev) => ({ ...prev, [modelId]: false }));
     }
   };
 
-  const toggleModelActive = async (modelId: string, currentActive: boolean, _purpose: string) => {
+  const toggleModelActive = async (
+    modelId: string,
+    currentActive: boolean,
+    _purpose: string,
+  ) => {
     try {
       if (!supabase) {
         throw new Error('Supabase client not available');
       }
-      
+
       // If activating, deactivate all other models with the same purpose
       if (!currentActive) {
         await supabase
@@ -122,17 +173,19 @@ export function ZionGPTModelManager() {
           .update({ active: false })
           .eq('purpose', purpose);
       }
-      
+
       // Update this model
       await supabase
         .from('model_versions')
         .update({ active: !currentActive })
         .eq('id', modelId);
-      
+
       // Refresh the model list
       fetchModels();
     } catch {
-      logErrorToProduction('Error toggling model active state:', { data: error });
+      logErrorToProduction('Error toggling model active state:', {
+        data: error,
+      });
     }
   };
 
@@ -184,11 +237,16 @@ export function ZionGPTModelManager() {
                     ) : (
                       <Badge className="bg-yellow-500">Queued</Badge>
                     )}
-                    {model.active && <Badge className="ml-2 bg-purple-500">Active</Badge>}
+                    {model.active && (
+                      <Badge className="ml-2 bg-purple-500">Active</Badge>
+                    )}
                   </TableCell>
-                  <TableCell>{new Date(model.createdAt).toLocaleDateString()}</TableCell>
+                  <TableCell>
+                    {new Date(model.createdAt).toLocaleDateString()}
+                  </TableCell>
                   <TableCell className="text-right">
-                    {model.trainingStatus === 'queued' || model.trainingStatus === 'running' ? (
+                    {model.trainingStatus === 'queued' ||
+                    model.trainingStatus === 'running' ? (
                       <Button
                         variant="ghost"
                         size="sm"
@@ -204,9 +262,15 @@ export function ZionGPTModelManager() {
                       </Button>
                     ) : model.trainingStatus === 'succeeded' ? (
                       <Button
-                        variant={model.active ? "outline" : "default"}
+                        variant={model.active ? 'outline' : 'default'}
                         size="sm"
-                        onClick={() => toggleModelActive(model.id, model.active, model.purpose)}
+                        onClick={() =>
+                          toggleModelActive(
+                            model.id,
+                            model.active,
+                            model.purpose,
+                          )
+                        }
                       >
                         {model.active ? (
                           <>
@@ -223,7 +287,7 @@ export function ZionGPTModelManager() {
                         variant="ghost"
                         size="sm"
                         className="text-red-500"
-                        title={model.errorMessage || "Training failed"}
+                        title={model.errorMessage || 'Training failed'}
                       >
                         <AlertCircle className="h-4 w-4 mr-1" /> Error
                       </Button>

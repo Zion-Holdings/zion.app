@@ -23,7 +23,10 @@ export function CommentsSection({ slug }: CommentsSectionProps) {
   const handleSubmit = (_e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !text.trim()) return;
-    const newComment = addComment(slug, { name: name.trim(), text: text.trim() });
+    const newComment = addComment(slug, {
+      name: name.trim(),
+      text: text.trim(),
+    });
     setComments([...comments, newComment]);
     setName('');
     setText('');
@@ -33,7 +36,9 @@ export function CommentsSection({ slug }: CommentsSectionProps) {
     <div className="mt-12">
       <h2 className="text-xl font-semibold mb-4">Comments</h2>
       {comments.length === 0 ? (
-        <p className="mb-4">No comments yet. Be the first to share your thoughts.</p>
+        <p className="mb-4">
+          No comments yet. Be the first to share your thoughts.
+        </p>
       ) : (
         <ul className="space-y-4 mb-6">
           {comments.map((c) => (
@@ -50,15 +55,20 @@ export function CommentsSection({ slug }: CommentsSectionProps) {
         </ul>
       )}
       <form onSubmit={handleSubmit} className="space-y-3">
-        <Input placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)} />
+        <Input
+          placeholder="Your name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
         <Textarea
           placeholder="Add a comment..."
           value={text}
           onChange={(e) => setText(e.target.value)}
           rows={4}
         />
-        <Button type="submit" disabled={!name.trim() || !text.trim()}
-          >Post Comment</Button>
+        <Button type="submit" disabled={!name.trim() || !text.trim()}>
+          Post Comment
+        </Button>
       </form>
     </div>
   );

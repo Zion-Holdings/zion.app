@@ -14,7 +14,7 @@ export default function Login() {
   const { isAuthenticated, isLoading } = useAuth();
   const router = useRouter(); // Initialized router
   // location is now router
-   
+
   const { _dispatch } = useCart(); // Reserved for future cart handling
   const [authTimedOut, setAuthTimedOut] = useState(false);
 

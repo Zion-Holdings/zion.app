@@ -1,4 +1,3 @@
-
 export type ReferralStatus = 'pending' | 'completed' | 'expired';
 
 export interface ReferralCode {

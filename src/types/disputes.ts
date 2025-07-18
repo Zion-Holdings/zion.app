@@ -1,6 +1,10 @@
-
 export type DisputeStatus = 'open' | 'under_review' | 'resolved' | 'closed';
-export type ResolutionType = 'client_favor' | 'talent_favor' | 'compromise' | 'dismissed' | null;
+export type ResolutionType =
+  | 'client_favor'
+  | 'talent_favor'
+  | 'compromise'
+  | 'dismissed'
+  | null;
 
 export interface Dispute {
   id: string;
@@ -54,7 +58,7 @@ export interface DisputeAttachment {
   url?: string;
 }
 
-export type DisputeReason = 
+export type DisputeReason =
   | 'milestone_quality'
   | 'delayed_delivery'
   | 'scope_change'

@@ -1,14 +1,19 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Download, FileImage, FileText, FileVideo } from '@/components/ui/icons';
-import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import {
+  Download,
+  FileImage,
+  FileText,
+  FileVideo,
+} from '@/components/ui/icons';
+import { Button } from '@/components/ui/button';
 
-
-
-
-
-
-
-import { toast } from "@/hooks/use-toast";
+import { toast } from '@/hooks/use-toast';
 
 interface ResourceItem {
   id: string;
@@ -27,7 +32,7 @@ export function PartnerResources() {
       description: 'Official logos in various formats (PNG, SVG, JPG)',
       type: 'image',
       icon: <FileImage className="h-10 w-10 text-zion-purple" />,
-      url: '#'
+      url: '#',
     },
     {
       id: 'brand-guidelines',
@@ -35,7 +40,7 @@ export function PartnerResources() {
       description: 'How to properly use our brand assets in your content',
       type: 'document',
       icon: <FileText className="h-10 w-10 text-zion-cyan" />,
-      url: '#'
+      url: '#',
     },
     {
       id: 'banner-templates',
@@ -43,7 +48,7 @@ export function PartnerResources() {
       description: 'Pre-designed graphics for your social channels',
       type: 'image',
       icon: <FileImage className="h-10 w-10 text-zion-purple" />,
-      url: '#'
+      url: '#',
     },
     {
       id: 'promotional-video',
@@ -51,7 +56,7 @@ export function PartnerResources() {
       description: 'Short explainer video about Zion AI Marketplace',
       type: 'video',
       icon: <FileVideo className="h-10 w-10 text-red-500" />,
-      url: '#'
+      url: '#',
     },
     {
       id: 'email-templates',
@@ -59,7 +64,7 @@ export function PartnerResources() {
       description: 'Ready-to-use email templates for your audience',
       type: 'document',
       icon: <FileText className="h-10 w-10 text-zion-cyan" />,
-      url: '#'
+      url: '#',
     },
     {
       id: 'talking-points',
@@ -67,16 +72,16 @@ export function PartnerResources() {
       description: 'Key messages and benefits to highlight',
       type: 'document',
       icon: <FileText className="h-10 w-10 text-zion-cyan" />,
-      _url: '#'
-    }
+      _url: '#',
+    },
   ];
 
   const handleDownload = (resource: ResourceItem) => {
     // In a real app, this would download the actual resource
     toast({
-      title: "Download started",
+      title: 'Download started',
       description: `Downloading ${resource.title}`,
-      variant: "default",
+      variant: 'default',
     });
   };
 
@@ -92,14 +97,19 @@ export function PartnerResources() {
         <CardContent>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {resources.map((resource) => (
-              <Card key={resource.id} className="bg-zion-blue border-zion-blue-light overflow-hidden">
+              <Card
+                key={resource.id}
+                className="bg-zion-blue border-zion-blue-light overflow-hidden"
+              >
                 <CardContent className="p-6 flex flex-col items-center text-center">
-                  <div className="mb-4">
-                    {resource.icon}
-                  </div>
-                  <h3 className="font-semibold text-white mb-1">{resource.title}</h3>
-                  <p className="text-xs text-zion-slate-light mb-4">{resource.description}</p>
-                  <Button 
+                  <div className="mb-4">{resource.icon}</div>
+                  <h3 className="font-semibold text-white mb-1">
+                    {resource.title}
+                  </h3>
+                  <p className="text-xs text-zion-slate-light mb-4">
+                    {resource.description}
+                  </p>
+                  <Button
                     onClick={() => handleDownload(resource)}
                     size="sm"
                     variant="outline"
@@ -128,9 +138,17 @@ export function PartnerResources() {
             <ul className="list-disc pl-5 space-y-1 text-zion-slate-light">
               <li>Use our official brand assets from the resources provided</li>
               <li>Share your unique referral link in your content</li>
-              <li>Highlight the benefits of the Zion AI Marketplace for both talent and clients</li>
-              <li>Be transparent that you're a partner and may earn from referrals</li>
-              <li>Focus on how the platform can help your audience solve their AI talent needs</li>
+              <li>
+                Highlight the benefits of the Zion AI Marketplace for both
+                talent and clients
+              </li>
+              <li>
+                Be transparent that you're a partner and may earn from referrals
+              </li>
+              <li>
+                Focus on how the platform can help your audience solve their AI
+                talent needs
+              </li>
             </ul>
           </div>
 
@@ -151,13 +169,15 @@ export function PartnerResources() {
         <CardHeader>
           <CardTitle>Partner Support</CardTitle>
           <CardDescription>
-            Need help with your affiliate marketing? Contact our partner support team.
+            Need help with your affiliate marketing? Contact our partner support
+            team.
           </CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col items-center text-center py-6">
           <p className="text-zion-slate-light mb-4">
-            Our partner success team is available to help you maximize your partnership with Zion AI Marketplace.
-            Feel free to reach out if you have questions about promotions, resources, or payment.
+            Our partner success team is available to help you maximize your
+            partnership with Zion AI Marketplace. Feel free to reach out if you
+            have questions about promotions, resources, or payment.
           </p>
           <Button className="bg-zion-purple hover:bg-zion-purple-dark">
             Contact Partner Support

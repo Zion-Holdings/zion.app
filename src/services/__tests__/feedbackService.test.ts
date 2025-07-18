@@ -4,9 +4,15 @@ describe('feedbackService', () => {
   let store: Record<string, string> = {};
   const mockStorage = {
     getItem: jest.fn((key: string) => store[key] || null),
-    setItem: jest.fn((key: string, _value: string) => { store[key] = value; }),
-    _removeItem: jest.fn((key: string) => { delete store[key]; }),
-    _clear: jest.fn(() => { store = {}; })
+    setItem: jest.fn((key: string, _value: string) => {
+      store[key] = value;
+    }),
+    _removeItem: jest.fn((key: string) => {
+      delete store[key];
+    }),
+    _clear: jest.fn(() => {
+      store = {};
+    }),
   };
 
   beforeAll(() => {
@@ -19,7 +25,12 @@ describe('feedbackService', () => {
   });
 
   it('saves feedback to storage', () => {
-    saveFeedback({ rating: 5, comment: 'Great', url: '/', screenshot: 'data:image/png;base64,xyz' });
+    saveFeedback({
+      rating: 5,
+      comment: 'Great',
+      url: '/',
+      screenshot: 'data:image/png;base64,xyz',
+    });
     const data = JSON.parse(mockStorage.setItem.mock.calls[0][1]) as any[];
     expect(data.length).toBe(1);
     expect(data[0].rating).toBe(5);

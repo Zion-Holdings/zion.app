@@ -11,4 +11,3 @@ export const supabaseStorageAdapter = {
     safeStorage.removeItem(key);
   },
 };
-

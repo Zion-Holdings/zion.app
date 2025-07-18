@@ -1,18 +1,27 @@
-
-import React from "react";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Badge } from "@/components/ui/badge";
-import type { FraudFlag } from "@/types/fraud";
-import { SeverityDisplay } from "./SeverityDisplay";
-import { ActionButtons } from "./ActionButtons";
-import { EmptyFraudState } from "./EmptyFraudState";
+import React from 'react';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
+import { Badge } from '@/components/ui/badge';
+import type { FraudFlag } from '@/types/fraud';
+import { SeverityDisplay } from './SeverityDisplay';
+import { ActionButtons } from './ActionButtons';
+import { EmptyFraudState } from './EmptyFraudState';
 
 interface FraudFlagsTableProps {
   flags: FraudFlag[];
   isLoading: boolean;
   hasFilters: boolean;
   resetFilters: () => void;
-  onAction: (flagId: string, action: 'warning' | 'suspension' | 'ban' | 'ignore') => void;
+  onAction: (
+    flagId: string,
+    action: 'warning' | 'suspension' | 'ban' | 'ignore',
+  ) => void;
 }
 
 export const FraudFlagsTable: React.FC<FraudFlagsTableProps> = ({
@@ -20,7 +29,7 @@ export const FraudFlagsTable: React.FC<FraudFlagsTableProps> = ({
   isLoading,
   hasFilters,
   resetFilters,
-  onAction
+  onAction,
 }) => {
   if (isLoading) {
     return (
@@ -31,7 +40,9 @@ export const FraudFlagsTable: React.FC<FraudFlagsTableProps> = ({
   }
 
   if (flags.length === 0) {
-    return <EmptyFraudState hasFilters={hasFilters} onResetFilters={resetFilters} />;
+    return (
+      <EmptyFraudState hasFilters={hasFilters} onResetFilters={resetFilters} />
+    );
   }
 
   return (
@@ -67,30 +78,35 @@ export const FraudFlagsTable: React.FC<FraudFlagsTableProps> = ({
             <TableCell className="max-w-xs truncate">{flag.reason}</TableCell>
             <TableCell className="max-w-xs truncate">
               {flag.gpt_explanation || (
-                <span className="text-muted-foreground text-xs">Not analyzed</span>
+                <span className="text-muted-foreground text-xs">
+                  Not analyzed
+                </span>
               )}
             </TableCell>
             <TableCell>
-              {new Date(flag.timestamp).toLocaleDateString()} {new Date(flag.timestamp).toLocaleTimeString()}
+              {new Date(flag.timestamp).toLocaleDateString()}{' '}
+              {new Date(flag.timestamp).toLocaleTimeString()}
             </TableCell>
             <TableCell>
-              <Badge variant={
-                flag.status === 'pending'
-                  ? 'secondary'
-                  : flag.status === 'actioned'
-                  ? 'destructive'
-                  : flag.status === 'ignored'
-                  ? 'outline'
-                  : 'default'
-              }>
+              <Badge
+                variant={
+                  flag.status === 'pending'
+                    ? 'secondary'
+                    : flag.status === 'actioned'
+                      ? 'destructive'
+                      : flag.status === 'ignored'
+                        ? 'outline'
+                        : 'default'
+                }
+              >
                 {flag.status}
               </Badge>
             </TableCell>
             <TableCell>
-              <ActionButtons 
-                flagId={flag.id} 
-                status={flag.status} 
-                onAction={onAction} 
+              <ActionButtons
+                flagId={flag.id}
+                status={flag.status}
+                onAction={onAction}
               />
             </TableCell>
           </TableRow>

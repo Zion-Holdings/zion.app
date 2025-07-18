@@ -11,8 +11,8 @@ export function CategorySelection({ onComplete }: CategorySelectionProps) {
   const [selected, setSelected] = useState<string[]>([]);
 
   const toggle = (_id: string) => {
-    setSelected(prev =>
-      prev.includes(id) ? prev.filter(c => c !== id) : [...prev, id]
+    setSelected((prev) =>
+      prev.includes(id) ? prev.filter((c) => c !== id) : [...prev, id],
     );
   };
 
@@ -26,7 +26,10 @@ export function CategorySelection({ onComplete }: CategorySelectionProps) {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {CATEGORIES.map((cat) => (
-          <label key={cat.id} className="flex items-center space-x-2 text-white">
+          <label
+            key={cat.id}
+            className="flex items-center space-x-2 text-white"
+          >
             <Checkbox
               checked={selected.includes(cat.id)}
               onCheckedChange={() => toggle(cat.id)}

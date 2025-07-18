@@ -3,7 +3,6 @@ import { CreditCard } from '@/components/ui/icons';
 import type { Milestone } from '@/hooks/useMilestones';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-
 interface PaymentSummaryProps {
   milestones: Milestone[];
   paymentTerms: string | null;

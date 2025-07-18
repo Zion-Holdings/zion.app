@@ -15,12 +15,12 @@ class EventEmitter {
     if (!this.events[event]) {
       return;
     }
-    this.events[event].forEach(listener => listener(...args));
+    this.events[event].forEach((listener) => listener(...args));
   }
 
   off(event: string, listener: (...args: unknown[]) => void): void {
     if (this.events[event]) {
-      this.events[event] = this.events[event].filter(l => l !== listener);
+      this.events[event] = this.events[event].filter((l) => l !== listener);
     }
   }
 
@@ -37,4 +37,4 @@ class EventEmitter {
 export { EventEmitter };
 
 // Also export as default for compatibility
-export default EventEmitter; 
+export default EventEmitter;

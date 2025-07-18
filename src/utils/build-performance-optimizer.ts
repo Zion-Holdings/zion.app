@@ -23,7 +23,12 @@ interface PerformanceMetrics {
 }
 
 interface OptimizationOpportunity {
-  type: 'code-splitting' | 'tree-shaking' | 'compression' | 'caching' | 'lazy-loading';
+  type:
+    | 'code-splitting'
+    | 'tree-shaking'
+    | 'compression'
+    | 'caching'
+    | 'lazy-loading';
   impact: 'high' | 'medium' | 'low';
   description: string;
   estimatedSaving: number; // in KB
@@ -41,27 +46,27 @@ class BuildPerformanceOptimizer {
       duplicatedModules: [],
       unusedExports: [],
       optimizationOpportunities: [],
-      recommendations: []
+      recommendations: [],
     };
   }
 
-  public async analyzeBuildOutput(buildDir: string = '.next'): Promise<PerformanceMetrics> {
-    
+  public async analyzeBuildOutput(
+    buildDir: string = '.next',
+  ): Promise<PerformanceMetrics> {
     try {
       // Analyze static chunks
       await this.analyzeStaticChunks(buildDir);
-      
+
       // Analyze bundle composition
       await this.analyzeBundleComposition();
-      
+
       // Identify optimization opportunities
       this.identifyOptimizations();
-      
+
       // Generate recommendations
       this.generateRecommendations();
-      
+
       return this._performanceMetrics;
-      
     } catch {
       logErrorToProduction('❌ Error during build analysis:', error);
       throw error;
@@ -71,21 +76,21 @@ class BuildPerformanceOptimizer {
   private async analyzeStaticChunks(buildDir: string): Promise<void> {
     const fs = await import('fs');
     const _path = await import('path');
-    
+
     const staticDir = path.join(buildDir, 'static', 'chunks');
-    
+
     if (!fs.existsSync(staticDir)) {
       logWarn('⚠️ Static chunks directory not found');
       return;
     }
 
     const files = fs.readdirSync(staticDir, { recursive: true }) as string[];
-    
+
     for (const file of files) {
       if (typeof file === 'string' && file.endsWith('.js')) {
         const filePath = path.join(staticDir, file);
         const stats = fs.statSync(filePath);
-        
+
         const analysis: BundleAnalysis = {
           file: file,
           size: stats.size,
@@ -96,7 +101,7 @@ class BuildPerformanceOptimizer {
 
         // Estimate gzipped size (roughly 30% of original)
         analysis.gzippedSize = Math.round(stats.size * 0.3);
-        
+
         this._bundleAnalysis.push(analysis);
         this._performanceMetrics.totalBundleSize += stats.size;
       }
@@ -114,11 +119,11 @@ class BuildPerformanceOptimizer {
       const match = filename.match(/pages\/(.+?)-[a-f0-9]+\.js$/);
       return match ? match[1] : undefined;
     }
-    
+
     if (filename.includes('vendors')) return 'vendor';
     if (filename.includes('common')) return 'common';
     if (filename.includes('runtime')) return 'runtime';
-    
+
     return undefined;
   }
 
@@ -130,57 +135,80 @@ class BuildPerformanceOptimizer {
     const opportunities: OptimizationOpportunity[] = [];
 
     // Check for oversized vendor chunks
-    const largeVendorChunks = this._bundleAnalysis.filter(chunk => 
-      chunk.file.includes('vendor') && chunk.size > 500000 // > 500KB
+    const largeVendorChunks = this._bundleAnalysis.filter(
+      (chunk) => chunk.file.includes('vendor') && chunk.size > 500000, // > 500KB
     );
 
     if (largeVendorChunks.length > 0) {
       opportunities.push({
         type: 'code-splitting',
         impact: 'high',
-        description: 'Large vendor chunks detected. Consider splitting vendor libraries.',
-        estimatedSaving: Math.round(largeVendorChunks.reduce((total, chunk) => total + chunk.size, 0) * 0.3 / 1024),
-        implementation: 'Configure webpack splitChunks to separate large libraries like React, lodash, etc.'
+        description:
+          'Large vendor chunks detected. Consider splitting vendor libraries.',
+        estimatedSaving: Math.round(
+          (largeVendorChunks.reduce((total, chunk) => total + chunk.size, 0) *
+            0.3) /
+            1024,
+        ),
+        implementation:
+          'Configure webpack splitChunks to separate large libraries like React, lodash, etc.',
       });
     }
 
     // Check for oversized page chunks
-    const largePageChunks = this._bundleAnalysis.filter(chunk => 
-      chunk.route && !['vendor', 'common'].includes(chunk.route) && chunk.size > 200000 // > 200KB
+    const largePageChunks = this._bundleAnalysis.filter(
+      (chunk) =>
+        chunk.route &&
+        !['vendor', 'common'].includes(chunk.route) &&
+        chunk.size > 200000, // > 200KB
     );
 
     if (largePageChunks.length > 0) {
       opportunities.push({
         type: 'lazy-loading',
         impact: 'medium',
-        description: 'Large page chunks detected. Consider lazy loading components.',
-        estimatedSaving: Math.round(largePageChunks.reduce((total, chunk) => total + chunk.size, 0) * 0.4 / 1024),
-        implementation: 'Use React.lazy() and dynamic imports for heavy components'
+        description:
+          'Large page chunks detected. Consider lazy loading components.',
+        estimatedSaving: Math.round(
+          (largePageChunks.reduce((total, chunk) => total + chunk.size, 0) *
+            0.4) /
+            1024,
+        ),
+        implementation:
+          'Use React.lazy() and dynamic imports for heavy components',
       });
     }
 
     // Check total bundle size
-    if (this._performanceMetrics.totalBundleSize > 2000000) { // > 2MB
+    if (this._performanceMetrics.totalBundleSize > 2000000) {
+      // > 2MB
       opportunities.push({
         type: 'tree-shaking',
         impact: 'high',
-        description: 'Total bundle size is large. Optimize imports and enable tree shaking.',
-        estimatedSaving: Math.round(this._performanceMetrics.totalBundleSize * 0.2 / 1024),
-        implementation: 'Use named imports, remove unused code, configure webpack for better tree shaking'
+        description:
+          'Total bundle size is large. Optimize imports and enable tree shaking.',
+        estimatedSaving: Math.round(
+          (this._performanceMetrics.totalBundleSize * 0.2) / 1024,
+        ),
+        implementation:
+          'Use named imports, remove unused code, configure webpack for better tree shaking',
       });
     }
 
     // Check for compression opportunities
     const uncompressedSize = this._performanceMetrics.totalBundleSize;
     const estimatedGzippedSize = uncompressedSize * 0.3;
-    
-    if (estimatedGzippedSize > 500000) { // > 500KB gzipped
+
+    if (estimatedGzippedSize > 500000) {
+      // > 500KB gzipped
       opportunities.push({
         type: 'compression',
         impact: 'medium',
-        description: 'Large compressed bundle size. Enable better compression and caching.',
-        estimatedSaving: Math.round(estimatedGzippedSize * 0.2 / 1024),
-        implementation: 'Enable Brotli compression, optimize asset caching, use CDN'
+        description:
+          'Large compressed bundle size. Enable better compression and caching.',
+        estimatedSaving: Math.round((estimatedGzippedSize * 0.2) / 1024),
+        implementation:
+          'Enable Brotli compression, optimize asset caching, use CDN',
       });
     }
 
@@ -195,38 +223,46 @@ class BuildPerformanceOptimizer {
       const largestChunk = this._performanceMetrics.largestChunks[0];
       if (largestChunk) {
         recommendations.push(
-          `🎯 Focus on optimizing ${largestChunk.file} (${this.formatSize(largestChunk.size)}) - your largest chunk`
+          `🎯 Focus on optimizing ${largestChunk.file} (${this.formatSize(largestChunk.size)}) - your largest chunk`,
         );
       }
     }
 
     // Vendor optimization
-    const vendorChunks = this._bundleAnalysis.filter(chunk => chunk.file.includes('vendor'));
+    const vendorChunks = this._bundleAnalysis.filter((chunk) =>
+      chunk.file.includes('vendor'),
+    );
     if (vendorChunks.length > 0) {
-      const vendorSize = vendorChunks.reduce((total, chunk) => total + chunk.size, 0);
+      const vendorSize = vendorChunks.reduce(
+        (total, chunk) => total + chunk.size,
+        0,
+      );
       if (vendorSize > this._performanceMetrics.totalBundleSize * 0.6) {
         recommendations.push(
-          `📦 Vendor chunks are ${Math.round(vendorSize / this._performanceMetrics.totalBundleSize * 100)}% of total bundle. Consider code splitting`
+          `📦 Vendor chunks are ${Math.round((vendorSize / this._performanceMetrics.totalBundleSize) * 100)}% of total bundle. Consider code splitting`,
         );
       }
     }
 
     // Performance budget recommendations
-    const totalSizeMB = this._performanceMetrics.totalBundleSize / (1024 * 1024);
+    const totalSizeMB =
+      this._performanceMetrics.totalBundleSize / (1024 * 1024);
     if (totalSizeMB > 3) {
       recommendations.push(
-        `⚡ Total bundle size (${totalSizeMB.toFixed(2)}MB) exceeds recommended 3MB limit. Implement lazy loading`
+        `⚡ Total bundle size (${totalSizeMB.toFixed(2)}MB) exceeds recommended 3MB limit. Implement lazy loading`,
       );
     }
 
     // Specific optimization recommendations
-    this._performanceMetrics.optimizationOpportunities.forEach(opportunity => {
-      if (opportunity.impact === 'high') {
-        recommendations.push(
-          `🔥 HIGH IMPACT: ${opportunity.description} (Est. saving: ${opportunity.estimatedSaving}KB)`
-        );
-      }
-    });
+    this._performanceMetrics.optimizationOpportunities.forEach(
+      (opportunity) => {
+        if (opportunity.impact === 'high') {
+          recommendations.push(
+            `🔥 HIGH IMPACT: ${opportunity.description} (Est. saving: ${opportunity.estimatedSaving}KB)`,
+          );
+        }
+      },
+    );
 
     // General recommendations
     recommendations.push(
@@ -234,7 +270,7 @@ class BuildPerformanceOptimizer {
       '📱 Implement Progressive Web App features for better caching',
       '🎨 Optimize images with next/image and use WebP format',
       '⚡ Consider using a CDN for static assets',
-      '🔍 Regular bundle analysis with webpack-bundle-analyzer'
+      '🔍 Regular bundle analysis with webpack-bundle-analyzer',
     );
 
     this._performanceMetrics.recommendations = recommendations;
@@ -249,7 +285,8 @@ class BuildPerformanceOptimizer {
   }
 
   public generateReport(): string {
-    const report = [`
+    const report = [
+      `
 🚀 BUILD PERFORMANCE ANALYSIS REPORT
 ====================================
 
@@ -260,22 +297,31 @@ Number of Chunks: ${this._bundleAnalysis.length}
 Estimated Gzipped: ${this.formatSize(this._performanceMetrics.totalBundleSize * 0.3)}
 
 🔍 LARGEST CHUNKS
------------------`];
+-----------------`,
+    ];
 
-    this._performanceMetrics.largestChunks.slice(0, 5).forEach((chunk, index) => {
-      report.push(`${index + 1}. ${chunk.file} - ${this.formatSize(chunk.size)}`);
-    });
+    this._performanceMetrics.largestChunks
+      .slice(0, 5)
+      .forEach((chunk, index) => {
+        report.push(
+          `${index + 1}. ${chunk.file} - ${this.formatSize(chunk.size)}`,
+        );
+      });
 
     report.push(`
 ⚡ OPTIMIZATION OPPORTUNITIES
 ----------------------------`);
 
-    this._performanceMetrics.optimizationOpportunities.forEach((opportunity, index) => {
-      report.push(`${index + 1}. [${opportunity.impact.toUpperCase()}] ${opportunity.description}`);
-      report.push(`   💡 ${opportunity.implementation}`);
-      report.push(`   💰 Estimated saving: ${opportunity.estimatedSaving}KB`);
-      report.push('');
-    });
+    this._performanceMetrics.optimizationOpportunities.forEach(
+      (opportunity, index) => {
+        report.push(
+          `${index + 1}. [${opportunity.impact.toUpperCase()}] ${opportunity.description}`,
+        );
+        report.push(`   💡 ${opportunity.implementation}`);
+        report.push(`   💰 Estimated saving: ${opportunity.estimatedSaving}KB`);
+        report.push('');
+      },
+    );
 
     report.push(`
 🎯 RECOMMENDATIONS
@@ -298,22 +344,26 @@ Estimated Gzipped: ${this.formatSize(this._performanceMetrics.totalBundleSize * 
 
   private calculatePerformanceScore(): number {
     let score = 100;
-    
+
     // Deduct points based on bundle size
     const sizeMB = this._performanceMetrics.totalBundleSize / (1024 * 1024);
     if (sizeMB > 5) score -= 30;
     else if (sizeMB > 3) score -= 20;
     else if (sizeMB > 2) score -= 10;
-    
+
     // Deduct points for large chunks
-    const largeChunks = this._bundleAnalysis.filter(chunk => chunk.size > 500000);
+    const largeChunks = this._bundleAnalysis.filter(
+      (chunk) => chunk.size > 500000,
+    );
     score -= largeChunks.length * 5;
-    
+
     // Deduct points for high-impact optimization opportunities
-    const highImpactOpportunities = this._performanceMetrics.optimizationOpportunities
-      .filter(op => op.impact === 'high');
+    const highImpactOpportunities =
+      this._performanceMetrics.optimizationOpportunities.filter(
+        (op) => op.impact === 'high',
+      );
     score -= highImpactOpportunities.length * 15;
-    
+
     return Math.max(0, Math.min(100, score));
   }
 
@@ -334,15 +384,14 @@ Estimated Gzipped: ${this.formatSize(this._performanceMetrics.totalBundleSize * 
   // Static method to run analysis from command line
   public static async runAnalysis(buildDir?: string): Promise<void> {
     const optimizer = new BuildPerformanceOptimizer();
-    
+
     try {
       await optimizer.analyzeBuildOutput(buildDir);
       optimizer.generateReport();
-      
+
       // Remove all non-error/warn console statements at and after line 340
       // Remove logInfo(report);
       // Remove logInfo(`\n📄 Detailed report saved to: ${reportPath}`);
-      
     } catch {
       logErrorToProduction('❌ Analysis failed:', error);
       process.exit(1);
@@ -351,4 +400,8 @@ Estimated Gzipped: ${this.formatSize(this._performanceMetrics.totalBundleSize * 
 }
 
 export default BuildPerformanceOptimizer;
-export { type BundleAnalysis, type PerformanceMetrics, type OptimizationOpportunity };
+export {
+  type BundleAnalysis,
+  type PerformanceMetrics,
+  type OptimizationOpportunity,
+};

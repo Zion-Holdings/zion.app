@@ -1,16 +1,22 @@
-import { SEO } from "@/components/SEO";
-import { AlertCircle, CheckCircle, Clock, ExternalLink } from '@/components/ui/icons';
-import { useState, useEffect } from "react";
+import { SEO } from '@/components/SEO';
+import {
+  AlertCircle,
+  CheckCircle,
+  Clock,
+  ExternalLink,
+} from '@/components/ui/icons';
+import { useState, useEffect } from 'react';
 
-
-
-
-
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { logWarn } from '@/utils/productionLogger';
-
 
 interface ServiceStatus {
   name: string;
@@ -21,36 +27,38 @@ interface ServiceStatus {
 
 const FALLBACK_SERVICES: ServiceStatus[] = [
   {
-    name: "Marketplace API",
-    status: "operational",
-    description: "Product listings and search functionality",
-    lastChecked: new Date().toISOString()
+    name: 'Marketplace API',
+    status: 'operational',
+    description: 'Product listings and search functionality',
+    lastChecked: new Date().toISOString(),
   },
   {
-    name: "Authentication Service", 
-    status: "operational",
-    description: "User login and registration",
-    lastChecked: new Date().toISOString()
+    name: 'Authentication Service',
+    status: 'operational',
+    description: 'User login and registration',
+    lastChecked: new Date().toISOString(),
   },
   {
-    name: "Payment Processing",
-    status: "operational", 
-    description: "Checkout and payment handling",
-    lastChecked: new Date().toISOString()
+    name: 'Payment Processing',
+    status: 'operational',
+    description: 'Checkout and payment handling',
+    lastChecked: new Date().toISOString(),
   },
   {
-    name: "Talent Directory",
-    status: "operational",
-    description: "AI talent profiles and matching",
-    lastChecked: new Date().toISOString()
-  }
+    name: 'Talent Directory',
+    status: 'operational',
+    description: 'AI talent profiles and matching',
+    lastChecked: new Date().toISOString(),
+  },
 ];
 
 export default function Status() {
   const [externalStatusLoaded, setExternalStatusLoaded] = useState(false);
   const [showFallback, setShowFallback] = useState(false);
   const [uptime, setUptime] = useState<number | null>(null);
-  const statusUrl = process.env.NEXT_PUBLIC_STATUS_PAGE_URL || "_https://status.ziontechgroup.com";
+  const statusUrl =
+    process.env.NEXT_PUBLIC_STATUS_PAGE_URL ||
+    '_https://status.ziontechgroup.com';
 
   useEffect(() => {
     // Try to load external status page, fallback after timeout
@@ -73,7 +81,7 @@ export default function Status() {
           setUptime(data.uptime);
         }
       } catch {
-        logWarn('Failed to fetch uptime', { data:  { data: error } });
+        logWarn('Failed to fetch uptime', { data: { data: error } });
       }
     }
     fetchUptime();
@@ -89,7 +97,7 @@ export default function Status() {
         return <AlertCircle className="h-5 w-5 text-red-500" />;
       case 'maintenance':
         return <Clock className="h-5 w-5 text-blue-500" />;
-      return <AlertCircle className="h-5 w-5 text-gray-500" />;
+        return <AlertCircle className="h-5 w-5 text-gray-500" />;
     }
   };
 
@@ -103,7 +111,7 @@ export default function Status() {
         return 'Service Outage';
       case 'maintenance':
         return 'Scheduled Maintenance';
-      return 'Unknown';
+        return 'Unknown';
     }
   };
 
@@ -117,7 +125,7 @@ export default function Status() {
         return 'text-red-500';
       case 'maintenance':
         return 'text-blue-500';
-      return 'text-gray-500';
+        return 'text-gray-500';
     }
   };
 
@@ -142,12 +150,16 @@ export default function Status() {
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-white mb-4">System Status</h1>
+            <h1 className="text-4xl font-bold text-white mb-4">
+              System Status
+            </h1>
             <p className="text-zion-slate-light text-lg">
               Real-time monitoring of Zion platform services
             </p>
             {uptime !== null && (
-              <p className="text-zion-slate-light text-sm mt-2">Uptime: {formatUptime(uptime)}</p>
+              <p className="text-zion-slate-light text-sm mt-2">
+                Uptime: {formatUptime(uptime)}
+              </p>
             )}
           </div>
 
@@ -191,27 +203,39 @@ export default function Status() {
               <div className="mb-8">
                 <Card className="bg-zion-blue-dark border-zion-blue-light">
                   <CardHeader>
-                    <CardTitle className="text-white">Service Status Overview</CardTitle>
+                    <CardTitle className="text-white">
+                      Service Status Overview
+                    </CardTitle>
                     <CardDescription>
                       Current status of core platform services
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     {FALLBACK_SERVICES.map((service) => (
-                      <div key={service.name} className="flex items-center justify-between p-4 bg-zion-blue rounded-lg">
+                      <div
+                        key={service.name}
+                        className="flex items-center justify-between p-4 bg-zion-blue rounded-lg"
+                      >
                         <div className="flex items-center gap-3">
                           {getStatusIcon(service.status)}
                           <div>
-                            <h3 className="font-medium text-white">{service.name}</h3>
-                            <p className="text-sm text-zion-slate-light">{service.description}</p>
+                            <h3 className="font-medium text-white">
+                              {service.name}
+                            </h3>
+                            <p className="text-sm text-zion-slate-light">
+                              {service.description}
+                            </p>
                           </div>
                         </div>
                         <div className="text-right">
-                          <div className={`font-medium ${getStatusColor(service.status)}`}>
+                          <div
+                            className={`font-medium ${getStatusColor(service.status)}`}
+                          >
                             {getStatusText(service.status)}
                           </div>
                           <div className="text-xs text-zion-slate-light">
-                            Updated: {new Date(service.lastChecked).toLocaleTimeString()}
+                            Updated:{' '}
+                            {new Date(service.lastChecked).toLocaleTimeString()}
                           </div>
                         </div>
                       </div>
@@ -229,9 +253,9 @@ export default function Status() {
                   asChild
                   className="text-zion-cyan border-zion-cyan hover:bg-zion-cyan/10"
                 >
-                  <a 
-                    href={statusUrl} 
-                    target="_blank" 
+                  <a
+                    href={statusUrl}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2"
                   >
@@ -250,7 +274,8 @@ export default function Status() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-zion-slate-light">
-                  If you're experiencing issues not reflected here, please contact our support team.
+                  If you're experiencing issues not reflected here, please
+                  contact our support team.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button
@@ -265,7 +290,11 @@ export default function Status() {
                     asChild
                     className="text-zion-purple border-zion-purple hover:bg-zion-purple/10"
                   >
-                    <a href="https://twitter.com/ZionTechGroup" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://twitter.com/ZionTechGroup"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       @ZionTechGroup
                     </a>
                   </Button>

@@ -7,7 +7,6 @@ import type { NotificationContextType, Notification } from './types';
 import { subscribeToPush } from '@/utils/pushSubscription';
 import { safeStorage } from '@/utils/safeStorage';
 
-
 // Default context used when React type definitions are missing. Providing a
 // fully-typed object here avoids TypeScript errors that occur when an untyped
 // `createContext` call returns `{}` instead of the expected shape.
@@ -27,18 +26,24 @@ const defaultContext: NotificationContextType = {
 
 // Cast the default context value to avoid issues when React types are missing.
 const NotificationContext = createContext(
-  defaultContext as NotificationContextType
+  defaultContext as NotificationContextType,
 );
 
 export const useNotifications = (): NotificationContextType => {
   const context = useContext(NotificationContext) as NotificationContextType;
   if (!context) {
-    throw new Error('useNotifications must be used within a NotificationProvider');
+    throw new Error(
+      'useNotifications must be used within a NotificationProvider',
+    );
   }
   return context;
 };
 
-export const NotificationProvider = ({ children }: { children: ReactNode }): React.JSX.Element => {
+export const NotificationProvider = ({
+  children,
+}: {
+  children: ReactNode;
+}): React.JSX.Element => {
   const { _user } = useAuth();
   const notificationOps = useNotificationOperations(user?.id);
 
@@ -52,12 +57,13 @@ export const NotificationProvider = ({ children }: { children: ReactNode }): Rea
     if (user && supabase) {
       const channel = supabase
         .channel('notifications-changes')
-        .on('postgres_changes', 
+        .on(
+          'postgres_changes',
           {
             event: 'INSERT',
             schema: 'public',
             table: 'notifications',
-            filter: `user_id=eq.${user.id}`
+            filter: `user_id=eq.${user.id}`,
           },
           (payload) => {
             const newNotification = payload.new as Notification;
@@ -69,14 +75,17 @@ export const NotificationProvider = ({ children }: { children: ReactNode }): Rea
               typeof newNotification.user_id === 'string' &&
               typeof newNotification.message === 'string'
             ) {
-              notificationOps.setNotifications(prev => [newNotification, ...prev]);
+              notificationOps.setNotifications((prev) => [
+                newNotification,
+                ...prev,
+              ]);
             } else {
               notificationOps.fetchNotifications();
             }
-          }
+          },
         )
         .subscribe();
-        
+
       return () => {
         if (supabase) {
           supabase.removeChannel(channel);
@@ -98,7 +107,7 @@ export const NotificationProvider = ({ children }: { children: ReactNode }): Rea
         /* noop */
       });
   }, [user, notificationOps]);
-  
+
   return (
     <NotificationContext.Provider value={notificationOps}>
       {children}

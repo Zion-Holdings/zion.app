@@ -16,7 +16,7 @@ export default function GPTLibraryPage() {
       acc[p.category].push(p);
       return acc;
     },
-    { talent: [], client: [], admin: [], partner: [] }
+    { talent: [], client: [], admin: [], partner: [] },
   );
 
   const handleSendCustom = () => {
@@ -27,7 +27,10 @@ export default function GPTLibraryPage() {
 
   return (
     <>
-      <SEO title="ZionGPT Prompt Library" description="Ready-to-use prompts for ZionGPT" />
+      <SEO
+        title="ZionGPT Prompt Library"
+        description="Ready-to-use prompts for ZionGPT"
+      />
       <div className="min-h-screen bg-zion-blue pt-12 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center space-y-4">
@@ -38,7 +41,9 @@ export default function GPTLibraryPage() {
           </div>
           {Object.entries(grouped).map(([key, prompts]) => (
             <section key={key} className="space-y-4">
-              <h2 className="text-2xl font-bold text-white">{CATEGORY_LABELS[key as Prompt['category']]}</h2>
+              <h2 className="text-2xl font-bold text-white">
+                {CATEGORY_LABELS[key as Prompt['category']]}
+              </h2>
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {prompts.map((p) => (
                   <PromptCard key={p.id} prompt={p} />

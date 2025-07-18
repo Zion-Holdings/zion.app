@@ -1,12 +1,10 @@
-
-
 // Define types for the pricing recommendation
-import {logErrorToProduction} from "@/utils/productionLogger";
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 export interface PricingSuggestion {
   minRate: number;
   maxRate: number;
-  confidence: "High" | "Medium" | "Low";
+  confidence: 'High' | 'Medium' | 'Low';
   explanation: string;
 }
 
@@ -26,7 +24,9 @@ export interface TalentRateParams {
 
 // Mock function to generate suggestions
 // In production, this would call an AI service or API
-export async function getClientBudgetSuggestion(params: ClientBudgetParams): Promise<PricingSuggestion> {
+export async function getClientBudgetSuggestion(
+  params: ClientBudgetParams,
+): Promise<PricingSuggestion> {
   try {
     // Replace mock logic with real API call
     const response = await fetch('/api/pricing-suggestion', {
@@ -42,82 +42,112 @@ export async function getClientBudgetSuggestion(params: ClientBudgetParams): Pro
       minRate: 0,
       maxRate: 0,
       confidence: 'Low',
-      explanation: 'Unable to fetch pricing suggestion.'
+      explanation: 'Unable to fetch pricing suggestion.',
     };
   }
 }
 
-export async function getTalentRateSuggestion(params: TalentRateParams): Promise<PricingSuggestion> {
+export async function getTalentRateSuggestion(
+  params: TalentRateParams,
+): Promise<PricingSuggestion> {
   try {
     const { skills, yearsExperience, location } = params;
-    
+
     // Simulate API call delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     // Base rate calculation based on years of experience
-    let baseRate = 25 + (yearsExperience * 5);
-    
+    let baseRate = 25 + yearsExperience * 5;
+
     // Adjust for in-demand skills
-    const inDemandSkills = ['react', 'aws', 'machine learning', 'blockchain', 'ai', 'devops', 'kubernetes'];
-    const hasInDemandSkills = skills.some(skill => 
-      inDemandSkills.some(demandSkill => skill.toLowerCase().includes(demandSkill))
+    const inDemandSkills = [
+      'react',
+      'aws',
+      'machine learning',
+      'blockchain',
+      'ai',
+      'devops',
+      'kubernetes',
+    ];
+    const hasInDemandSkills = skills.some((skill) =>
+      inDemandSkills.some((demandSkill) =>
+        skill.toLowerCase().includes(demandSkill),
+      ),
     );
-    
+
     if (hasInDemandSkills) {
       baseRate += 15;
     }
-    
+
     // Location adjustment
     let locationFactor = 1.0;
     if (location) {
-      const highCostLocations = ['united states', 'usa', 'uk', 'australia', 'canada', 'germany', 'switzerland'];
-      const lowCostLocations = ['india', 'philippines', 'pakistan', 'nigeria', 'ukraine', 'brazil'];
-      
+      const highCostLocations = [
+        'united states',
+        'usa',
+        'uk',
+        'australia',
+        'canada',
+        'germany',
+        'switzerland',
+      ];
+      const lowCostLocations = [
+        'india',
+        'philippines',
+        'pakistan',
+        'nigeria',
+        'ukraine',
+        'brazil',
+      ];
+
       const lowercaseLocation = location.toLowerCase();
-      
-      if (highCostLocations.some(loc => lowercaseLocation.includes(loc))) {
+
+      if (highCostLocations.some((loc) => lowercaseLocation.includes(loc))) {
         locationFactor = 1.2;
-      } else if (lowCostLocations.some(loc => lowercaseLocation.includes(loc))) {
+      } else if (
+        lowCostLocations.some((loc) => lowercaseLocation.includes(loc))
+      ) {
         locationFactor = 0.8;
       }
     }
-    
+
     const minRate = Math.round(baseRate * locationFactor * 0.9);
     const maxRate = Math.round(baseRate * locationFactor * 1.2);
-    
+
     // Determine confidence
-    let confidence: "High" | "Medium" | "Low" = "Medium";
+    let confidence: 'High' | 'Medium' | 'Low' = 'Medium';
     if (yearsExperience > 3 && hasInDemandSkills && location) {
-      confidence = "High";
+      confidence = 'High';
     } else if (!location || yearsExperience < 1) {
-      confidence = "Low";
+      confidence = 'Low';
     }
-    
+
     // Generate explanation
     let explanation = `Based on ${yearsExperience} years of experience`;
     if (hasInDemandSkills) {
       explanation += ` and your in-demand skills (${skills.join(', ')})`;
     }
-    
+
     if (location) {
       explanation += `, considering market rates in ${location}`;
     }
-    
+
     explanation += `, we recommend a rate of $${minRate}-$${maxRate}/hour to remain competitive while maximizing your earning potential.`;
-    
+
     return {
       minRate,
       maxRate,
       confidence,
-      explanation
+      explanation,
     };
   } catch {
     logErrorToProduction('Error generating rate suggestion:', { data: error });
     return {
       minRate: 25,
       maxRate: 50,
-      confidence: "Low",
-      explanation: "We encountered an issue generating a precise rate recommendation. This is a general suggestion based on market averages."
+      confidence: 'Low',
+      explanation:
+        'We encountered an issue generating a precise rate recommendation. This is a general suggestion based on market averages.',
     };
   }
 }
@@ -135,17 +165,15 @@ export async function trackPricingSuggestion(data: {
 }) {
   try {
     if (!supabase) throw new Error('Supabase client not initialized');
-    const { _error } = await supabase
-      .from('pricing_suggestions')
-      .insert({
-        user_id: data.userId,
-        suggestion_type: data.suggestionType,
-        suggested_min: data.suggestedMin,
-        suggested_max: data.suggestedMax,
-        actual_value: data.actualValue,
-        accepted: data.accepted,
-        created_at: new Date().toISOString()
-      });
+    const { _error } = await supabase.from('pricing_suggestions').insert({
+      user_id: data.userId,
+      suggestion_type: data.suggestionType,
+      suggested_min: data.suggestedMin,
+      suggested_max: data.suggestedMax,
+      actual_value: data.actualValue,
+      accepted: data.accepted,
+      created_at: new Date().toISOString(),
+    });
 
     if (error) throw error;
 

@@ -1,4 +1,3 @@
-
 // Content flagging functionality
 import { supabase } from '@/integrations/supabase/client';
 import type { FraudSeverity, FraudFlag } from '@/types/fraud';
@@ -16,7 +15,7 @@ export const flagContent = async (
   contentExcerpt: string,
   severity: FraudSeverity,
   reason: string,
-  ipAddress?: string
+  ipAddress?: string,
 ): Promise<FlagResult> => {
   try {
     logDebug('Flagging content for review:', {
@@ -24,9 +23,9 @@ export const flagContent = async (
       contentType,
       contentId,
       reason,
-      severity
+      severity,
     });
-    
+
     // Add null check for supabase before usage
     if (!supabase) throw new Error('Supabase client not initialized');
 
@@ -40,17 +39,22 @@ export const flagContent = async (
       reason,
       ip_address: ipAddress,
       timestamp: new Date().toISOString(),
-      status: 'pending'
+      status: 'pending',
     });
-    
+
     if (error) throw error;
-    
+
     return { success: true };
   } catch {
-    logErrorToProduction('Error flagging content', error as Error, { userId, contentType, contentId, severity });
-    return { 
-      success: false, 
-      error: error instanceof Error ? error.message : 'Unknown error' 
+    logErrorToProduction('Error flagging content', error as Error, {
+      userId,
+      contentType,
+      contentId,
+      severity,
+    });
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error',
     };
   }
 };

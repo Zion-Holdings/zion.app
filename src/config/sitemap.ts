@@ -1,14 +1,22 @@
-
 // Define the types for our sitemap structure
 export type SitemapItem = {
   path: string;
   label: string;
   description?: string;
   priority?: number;
-  changeFreq?: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
+  changeFreq?:
+    | 'always'
+    | 'hourly'
+    | 'daily'
+    | 'weekly'
+    | 'monthly'
+    | 'yearly'
+    | 'never';
   lastmod?: string;
   requiredAuth?: boolean;
-  requiredRoles?: Array<'creator' | 'jobSeeker' | 'employer' | 'buyer' | 'admin'>;
+  requiredRoles?: Array<
+    'creator' | 'jobSeeker' | 'employer' | 'buyer' | 'admin'
+  >;
   children?: SitemapItem[];
 };
 
@@ -20,7 +28,8 @@ export const publicPages: SitemapItem[] = [
   {
     path: '/',
     label: 'Home',
-    description: 'The world\'s first free marketplace dedicated to high-tech and artificial intelligence',
+    description:
+      "The world's first free marketplace dedicated to high-tech and artificial intelligence",
     priority: 1.0,
     changeFreq: 'weekly',
     lastmod: currentDate,
@@ -28,7 +37,8 @@ export const publicPages: SitemapItem[] = [
   {
     path: '/about',
     label: 'About Us',
-    description: 'Learn about the Zion AI Marketplace mission, team and timeline',
+    description:
+      'Learn about the Zion AI Marketplace mission, team and timeline',
     priority: 0.8,
     changeFreq: 'monthly',
     lastmod: currentDate,
@@ -37,7 +47,7 @@ export const publicPages: SitemapItem[] = [
     path: '/contact',
     label: 'Contact',
     description: 'Get in touch with the Zion team',
-    priority: 0.8, 
+    priority: 0.8,
     changeFreq: 'monthly',
     lastmod: currentDate,
   },
@@ -180,8 +190,8 @@ export const authPages: SitemapItem[] = [
         priority: 0.6,
         changeFreq: 'monthly',
         lastmod: currentDate,
-      }
-    ]
+      },
+    ],
   },
   {
     path: '/forgot-password',
@@ -368,29 +378,34 @@ export const completeSitemap: SitemapItem[] = [
 
 // Helper function to get appropriate routes based on user role
 export const getAccessibleRoutes = (
-  isAuthenticated: boolean, 
-  userType?: 'creator' | 'jobSeeker' | 'employer' | 'buyer' | 'admin' | null
+  isAuthenticated: boolean,
+  userType?: 'creator' | 'jobSeeker' | 'employer' | 'buyer' | 'admin' | null,
 ) => {
   // Public routes accessible to everyone
   let accessibleRoutes = [...publicPages, ...authPages];
-  
+
   // Add authenticated-only routes
   if (isAuthenticated) {
     accessibleRoutes = [...accessibleRoutes, ...sharedRoutes];
-    
+
     // Add role-specific routes
     if (userType === 'creator' || userType === 'jobSeeker') {
       accessibleRoutes = [...accessibleRoutes, ...talentRoutes];
     }
-    
+
     if (userType === 'employer' || userType === 'buyer') {
       accessibleRoutes = [...accessibleRoutes, ...clientRoutes];
     }
-    
+
     if (userType === 'admin') {
-      accessibleRoutes = [...accessibleRoutes, ...talentRoutes, ...clientRoutes, ...adminRoutes];
+      accessibleRoutes = [
+        ...accessibleRoutes,
+        ...talentRoutes,
+        ...clientRoutes,
+        ...adminRoutes,
+      ];
     }
   }
-  
+
   return accessibleRoutes;
 };

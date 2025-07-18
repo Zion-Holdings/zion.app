@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
-import { Zap, Download, Trash2, RefreshCw, Settings, Activity, Monitor } from '@/components/ui/icons';
+import {
+  Zap,
+  Download,
+  Trash2,
+  RefreshCw,
+  Settings,
+  Activity,
+  Monitor,
+} from '@/components/ui/icons';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import {logErrorToProduction} from '@/utils/productionLogger';
-
-
-
-
-
-
-
-
-
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 interface QuickAction {
   id: string;
@@ -28,7 +27,10 @@ interface QuickAction {
 export function QuickActions() {
   const { _user } = useAuth();
   const isAdmin = user?.userType === 'admin' || user?.role === 'admin';
-  const isAllowed = process.env.NODE_ENV !== 'production' || isAdmin || localStorage.getItem('quick-actions') === 'true';
+  const isAllowed =
+    process.env.NODE_ENV !== 'production' ||
+    isAdmin ||
+    localStorage.getItem('quick-actions') === 'true';
 
   const [isVisible, setIsVisible] = useState(false);
   const [isProcessing, setIsProcessing] = useState<string | null>(null);
@@ -42,7 +44,9 @@ export function QuickActions() {
     try {
       await action();
     } catch {
-      logErrorToProduction(`Failed to execute action ${actionId}:`, { data: error });
+      logErrorToProduction(`Failed to execute action ${actionId}:`, {
+        data: error,
+      });
     } finally {
       setIsProcessing(null);
     }
@@ -81,8 +85,8 @@ export function QuickActions() {
       dangerous: true,
       _action: () => {
         if ('caches' in window) {
-          caches.keys().then(names => {
-            names.forEach(name => caches.delete(name));
+          caches.keys().then((names) => {
+            names.forEach((name) => caches.delete(name));
           });
         }
         localStorage.clear();
@@ -100,10 +104,10 @@ export function QuickActions() {
         // Preload critical fonts
         const criticalFonts = [
           '/fonts/inter-var.woff2',
-          '/fonts/cal-sans.woff2'
+          '/fonts/cal-sans.woff2',
         ];
-        
-        criticalFonts.forEach(font => {
+
+        criticalFonts.forEach((font) => {
           const link = document.createElement('link');
           link.rel = 'preload';
           link.as = 'font';
@@ -114,12 +118,9 @@ export function QuickActions() {
         });
 
         // Preload critical images
-        const criticalImages = [
-          '/logos/zion-logo.png',
-          '/images/hero-bg.webp'
-        ];
-        
-        criticalImages.forEach(img => {
+        const criticalImages = ['/logos/zion-logo.png', '/images/hero-bg.webp'];
+
+        criticalImages.forEach((img) => {
           const link = document.createElement('link');
           link.rel = 'preload';
           link.as = 'image';
@@ -139,19 +140,21 @@ export function QuickActions() {
           timestamp: new Date().toISOString(),
           performance: performance.getEntriesByType('navigation')[0],
           resources: performance.getEntriesByType('resource').slice(0, 20),
-          memory: (performance as Performance & { memory?: Record<string, unknown> }).memory || {},
+          memory:
+            (performance as Performance & { memory?: Record<string, unknown> })
+              .memory || {},
           userAgent: navigator.userAgent,
           screen: {
             width: screen.width,
             height: screen.height,
-            colorDepth: screen.colorDepth
-          }
+            colorDepth: screen.colorDepth,
+          },
         };
 
         const blob = new Blob([JSON.stringify(metrics, null, 2)], {
-          type: 'application/json'
+          type: 'application/json',
         });
-        
+
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
@@ -170,7 +173,9 @@ export function QuickActions() {
       category: 'development',
       dangerous: true,
       _action: () => {
-        throw new Error('Test error for Sentry integration - this is intentional!');
+        throw new Error(
+          'Test error for Sentry integration - this is intentional!',
+        );
       },
     },
     {
@@ -186,15 +191,18 @@ export function QuickActions() {
   ];
 
   const categorizedActions = {
-    performance: actions.filter(a => a.category === 'performance'),
-    development: actions.filter(a => a.category === 'development'),
-    maintenance: actions.filter(a => a.category === 'maintenance'),
+    performance: actions.filter((a) => a.category === 'performance'),
+    development: actions.filter((a) => a.category === 'development'),
+    maintenance: actions.filter((a) => a.category === 'maintenance'),
   };
 
   const categoryColors = {
-    performance: 'bg-green-100 dark:bg-green-900/20 text-green-800 dark:text-green-200',
-    development: 'bg-blue-100 dark:bg-blue-900/20 text-blue-800 dark:text-blue-200',
-    maintenance: 'bg-orange-100 dark:bg-orange-900/20 text-orange-800 dark:text-orange-200',
+    performance:
+      'bg-green-100 dark:bg-green-900/20 text-green-800 dark:text-green-200',
+    development:
+      'bg-blue-100 dark:bg-blue-900/20 text-blue-800 dark:text-blue-200',
+    maintenance:
+      'bg-orange-100 dark:bg-orange-900/20 text-orange-800 dark:text-orange-200',
   };
 
   if (!isVisible) {
@@ -233,46 +241,55 @@ export function QuickActions() {
           </div>
         </CardHeader>
         <CardContent className="pt-0 space-y-4">
-          {Object.entries(categorizedActions).map(([category, categoryActions]) => (
-            <div key={category}>
-              <div className="flex items-center gap-2 mb-2">
-                <Badge className={categoryColors[category as keyof typeof categoryColors]} variant="outline">
-                  {category}
-                </Badge>
-              </div>
-              <div className="space-y-2">
-                {categoryActions.map((action) => (
-                  <div key={action.id} className="space-y-1">
-                    <Button
-                      variant={action.dangerous ? "destructive" : "outline"}
-                      size="sm"
-                      onClick={() => executeAction(action.id, action.action)}
-                      disabled={isProcessing === action.id}
-                      className="w-full justify-start h-auto p-3"
-                    >
-                      <div className="flex items-start gap-3 w-full">
-                        <div className="mt-0.5">
-                          {isProcessing === action.id ? (
-                            <RefreshCw className="w-4 h-4 animate-spin" />
-                          ) : (
-                            action.icon
-                          )}
-                        </div>
-                        <div className="flex-1 text-left">
-                          <div className="font-medium text-sm">{action.label}</div>
-                          <div className="text-xs opacity-70 mt-1">
-                            {action.description}
+          {Object.entries(categorizedActions).map(
+            ([category, categoryActions]) => (
+              <div key={category}>
+                <div className="flex items-center gap-2 mb-2">
+                  <Badge
+                    className={
+                      categoryColors[category as keyof typeof categoryColors]
+                    }
+                    variant="outline"
+                  >
+                    {category}
+                  </Badge>
+                </div>
+                <div className="space-y-2">
+                  {categoryActions.map((action) => (
+                    <div key={action.id} className="space-y-1">
+                      <Button
+                        variant={action.dangerous ? 'destructive' : 'outline'}
+                        size="sm"
+                        onClick={() => executeAction(action.id, action.action)}
+                        disabled={isProcessing === action.id}
+                        className="w-full justify-start h-auto p-3"
+                      >
+                        <div className="flex items-start gap-3 w-full">
+                          <div className="mt-0.5">
+                            {isProcessing === action.id ? (
+                              <RefreshCw className="w-4 h-4 animate-spin" />
+                            ) : (
+                              action.icon
+                            )}
+                          </div>
+                          <div className="flex-1 text-left">
+                            <div className="font-medium text-sm">
+                              {action.label}
+                            </div>
+                            <div className="text-xs opacity-70 mt-1">
+                              {action.description}
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </Button>
-                  </div>
-                ))}
+                      </Button>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ),
+          )}
         </CardContent>
       </Card>
     </div>
   );
-} 
+}

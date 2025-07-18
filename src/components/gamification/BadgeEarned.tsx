@@ -1,7 +1,6 @@
-
-import React from "react";
-import { getBadgeMeta } from "./badgeConfig";
-import type { BadgeKey } from "./badgeConfig";
+import React from 'react';
+import { getBadgeMeta } from './badgeConfig';
+import type { BadgeKey } from './badgeConfig';
 
 interface BadgeEarnedProps {
   badge: BadgeKey;
@@ -27,12 +26,12 @@ export const BadgeEarned: React.FC<BadgeEarnedProps> = ({
       <div
         style={{
           background: meta.bg,
-          borderRadius: "9999px",
+          borderRadius: '9999px',
           width: size,
           height: size,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
         className="shadow hover-scale"
         title={meta.name}
@@ -40,17 +39,20 @@ export const BadgeEarned: React.FC<BadgeEarnedProps> = ({
         <Icon color={meta.color} size={size * 0.7} />
       </div>
       {showName && (
-        <span className="text-xs font-semibold mt-1" style={{ color: meta.color }}>
+        <span
+          className="text-xs font-semibold mt-1"
+          style={{ color: meta.color }}
+        >
           {meta.name}
         </span>
       )}
       {earnedDate && (
-        <span className="text-[10px] text-gray-400">
-          {earnedDate}
-        </span>
+        <span className="text-[10px] text-gray-400">{earnedDate}</span>
       )}
       {showDesc && (
-        <span className="text-xs text-zion-slate-light">{meta.description}</span>
+        <span className="text-xs text-zion-slate-light">
+          {meta.description}
+        </span>
       )}
     </div>
   );

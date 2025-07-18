@@ -3,7 +3,7 @@ import type { GetServerSideProps } from 'next';
 import { toast } from '@/hooks/use-toast';
 import Link from 'next/link';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 import {
   ProfileForm,
   type ProfileValues,
@@ -119,7 +119,9 @@ export const getServerSideProps: GetServerSideProps<AccountProps> = async ({
   const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
   const cookieValue = req?.headers.cookie;
-  const cookieString = Array.isArray(cookieValue) ? cookieValue.join('; ') : cookieValue || '';
+  const cookieString = Array.isArray(cookieValue)
+    ? cookieValue.join('; ')
+    : cookieValue || '';
 
   const [userRes, ordersRes] = await Promise.all([
     fetch(`${base}/api/users/me`, {

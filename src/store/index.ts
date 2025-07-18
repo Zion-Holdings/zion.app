@@ -8,7 +8,6 @@ import { safeStorage } from '@/utils/safeStorage';
 import { logWarn } from '@/utils/productionLogger';
 
 export const store = configureStore({
-
   reducer: {
     cart: cartReducer,
     wishlist: wishlistReducer,
@@ -26,22 +25,22 @@ store.subscribe(() => {
     return; // Skip if too soon
   }
   lastStorageUpdate = now;
-  
+
   try {
     const state = store.getState();
-    
+
     // Only update if data has actually changed to prevent infinite loops
     const cartData = JSON.stringify(state.cart.items);
     const wishlistData = JSON.stringify(state.wishlist.items);
-    
+
     if (cartData !== safeStorage.getItem('zion_cart')) {
       safeStorage.setItem('zion_cart', cartData);
     }
-    
+
     if (wishlistData !== safeStorage.getItem('wishlist')) {
       safeStorage.setItem('wishlist', wishlistData);
     }
-    
+
     // Handle auth token storage
     if (state.auth.token) {
       const currentToken = safeStorage.getItem('authToken');
@@ -59,7 +58,7 @@ store.subscribe(() => {
       }
     }
   } catch {
-    logWarn('Store subscription error (throttled):', { data:  { data: error } });
+    logWarn('Store subscription error (throttled):', { data: { data: error } });
   }
 });
 

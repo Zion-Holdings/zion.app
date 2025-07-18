@@ -3,7 +3,10 @@ import type { GetServerSideProps } from 'next';
 import { toast } from '@/hooks/use-toast';
 import Link from 'next/link';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ProfileForm, type ProfileValues } from '@/components/profile/ProfileForm';
+import {
+  ProfileForm,
+  type ProfileValues,
+} from '@/components/profile/ProfileForm';
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import OrdersPage from './Orders';
 import WalletDashboard from './WalletDashboard';
@@ -12,8 +15,7 @@ import { SEO } from '@/components/SEO';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import type { Order } from '@/hooks/useOrders';
 import type { NextApiRequest } from 'next';
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 interface User {
   id: string;
@@ -43,7 +45,12 @@ function Account({ user: initialUser, orders }: AccountProps) {
     } catch {
       logErrorToProduction('Error updating profile:', { data: error });
       let description = 'Failed to update profile. Please try again.';
-      if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+      if (
+        error &&
+        typeof error === 'object' &&
+        'message' in error &&
+        typeof (error as { message?: unknown }).message === 'string'
+      ) {
         description = (error as { message: string }).message;
       }
       toast({
@@ -76,10 +83,15 @@ function Account({ user: initialUser, orders }: AccountProps) {
               <div>
                 <h3 className="font-semibold mb-2">Recent Orders</h3>
                 <ul className="space-y-1">
-                  {orders.map(o => (
+                  {orders.map((o) => (
                     <li key={o.orderId} className="flex justify-between">
                       <span>#{o.orderId}</span>
-                      <Link href={`/orders/${o.orderId}`} className="text-zion-purple underline">View</Link>
+                      <Link
+                        href={`/orders/${o.orderId}`}
+                        className="text-zion-purple underline"
+                      >
+                        View
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -109,14 +121,22 @@ export default function ProtectedAccount(props: AccountProps) {
   );
 }
 
-export const _getServerSideProps: GetServerSideProps<AccountProps> = async ({ req }: { req: NextApiRequest }) => {
+export const _getServerSideProps: GetServerSideProps<AccountProps> = async ({
+  req,
+}: {
+  req: NextApiRequest;
+}) => {
   const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
   // Handle cookie header which can be string or string[]
   const cookieHeader = req?.headers.cookie;
-  const cookieString = Array.isArray(cookieHeader) ? cookieHeader[0] || '' : cookieHeader || '';
+  const cookieString = Array.isArray(cookieHeader)
+    ? cookieHeader[0] || ''
+    : cookieHeader || '';
 
-  const fetchOptions = cookieString ? { headers: { cookie: cookieString } } : {};
+  const fetchOptions = cookieString
+    ? { headers: { cookie: cookieString } }
+    : {};
 
   const [userRes, ordersRes] = await Promise.all([
     fetch(`${base}/api/users/me`, fetchOptions),

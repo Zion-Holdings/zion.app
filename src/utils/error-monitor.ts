@@ -20,7 +20,7 @@ class ErrorMonitor {
 
   constructor() {
     this.isProduction = process.env.NODE_ENV === 'production';
-    
+
     if (typeof window !== 'undefined') {
       this.setupGlobalErrorHandlers();
     }
@@ -46,7 +46,7 @@ class ErrorMonitor {
           page: window.location.pathname,
           url: window.location.href,
           userAgent: navigator.userAgent,
-        }
+        },
       );
     });
   }
@@ -70,7 +70,11 @@ class ErrorMonitor {
     if (this.isProduction) {
       this.reportToService(error, fullContext);
     } else {
-      logErrorToProduction('Error captured:', error, fullContext as unknown as Record<string, unknown>);
+      logErrorToProduction(
+        'Error captured:',
+        error,
+        fullContext as unknown as Record<string, unknown>,
+      );
     }
   }
 

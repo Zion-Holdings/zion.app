@@ -1,8 +1,13 @@
-
-import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import type { UseFormReturn } from "react-hook-form";
-import type { FormValues } from "./useHireRequestForm";
+import {
+  FormField,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormMessage,
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import type { UseFormReturn } from 'react-hook-form';
+import type { FormValues } from './useHireRequestForm';
 
 interface PersonalInfoFieldsProps {
   form: UseFormReturn<FormValues>;
@@ -28,7 +33,7 @@ export function PersonalInfoFields({ form }: PersonalInfoFieldsProps) {
           </FormItem>
         )}
       />
-      
+
       <FormField
         control={form.control}
         name="requesterEmail"

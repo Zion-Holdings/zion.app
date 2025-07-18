@@ -1,48 +1,53 @@
-
-import { useState } from "react";
+import { useState } from 'react';
 import { Wallet } from '@/components/ui/icons';
-import { Button } from "@/components/ui/button";
-import { useAuth } from "@/hooks/useAuth";
-import { useWallet as useAppWallet } from "../../../context/WalletContext.tsx"; // Renamed to avoid conflict if useWallet hook is defined locally
+import { Button } from '@/components/ui/button';
+import { useAuth } from '@/hooks/useAuth';
+import { useWallet as useAppWallet } from '../../../context/WalletContext.tsx'; // Renamed to avoid conflict if useWallet hook is defined locally
 
-
-import { toast } from "sonner";
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { toast } from 'sonner';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 export function Web3Login() {
-
   const { _loginWithWeb3 } = useAuth();
   const { _isWalletSystemAvailable } = useAppWallet();
   const [isLoading, setIsLoading] = useState(false);
 
   const handleWeb3Login = async () => {
     if (!isWalletSystemAvailable) {
-      toast("Web3 login unavailable", {
-        description: "The Web3 login system is currently not available. Please ensure your Reown Project ID is configured.",
+      toast('Web3 login unavailable', {
+        description:
+          'The Web3 login system is currently not available. Please ensure your Reown Project ID is configured.',
       });
       return;
     }
 
     try {
       setIsLoading(true);
-      
+
       // Check if Ethereum provider (e.g., MetaMask) is available
-      const ethereum = typeof window !== 'undefined' && 'ethereum' in window ? (window as typeof window & { ethereum?: unknown }).ethereum : undefined;
+      const ethereum =
+        typeof window !== 'undefined' && 'ethereum' in window
+          ? (window as typeof window & { ethereum?: unknown }).ethereum
+          : undefined;
       if (!ethereum) {
-        toast("Web3 wallet not found", {
-          description: "Please install MetaMask or another compatible wallet.",
+        toast('Web3 wallet not found', {
+          description: 'Please install MetaMask or another compatible wallet.',
         });
         return;
       }
-      
+
       await loginWithWeb3(); // This is from useAuth, assumed to be a separate flow
-      
     } catch (error: unknown) {
-      let message = "Failed to connect wallet. Please try again.";
-      if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+      let message = 'Failed to connect wallet. Please try again.';
+      if (
+        error &&
+        typeof error === 'object' &&
+        'message' in error &&
+        typeof (error as { message?: unknown }).message === 'string'
+      ) {
         message = (error as { message: string }).message;
       }
-      toast("Login failed", {
+      toast('Login failed', {
         description: message,
       });
       logErrorToProduction('Web3 login error:', { data: error });
@@ -53,8 +58,8 @@ export function Web3Login() {
 
   const buttonDisabled = isLoading || !isWalletSystemAvailable;
   const buttonTitle = !isWalletSystemAvailable
-    ? "Web3 login is currently unavailable. Please ensure your Reown Project ID is configured."
-    : "";
+    ? 'Web3 login is currently unavailable. Please ensure your Reown Project ID is configured.'
+    : '';
 
   let buttonContent;
   if (!isWalletSystemAvailable) {
@@ -66,9 +71,25 @@ export function Web3Login() {
   } else if (isLoading) {
     buttonContent = (
       <span className="flex items-center">
-        <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        <svg
+          className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            className="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            strokeWidth="4"
+          ></circle>
+          <path
+            className="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          ></path>
         </svg>
         Connecting...
       </span>

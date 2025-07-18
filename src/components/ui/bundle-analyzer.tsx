@@ -6,11 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 
-
-
-
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 interface BundleInfo {
   totalSize: number;
@@ -59,10 +55,13 @@ export function BundleAnalyzer() {
 
     try {
       // Get performance entries for script resources
-      const resourceEntries = performance.getEntriesByType('resource') as PerformanceResourceTiming[];
-      const scriptEntries = resourceEntries.filter(entry => 
-        entry.name.includes('/_next/static/') && 
-        (entry.name.endsWith('.js') || entry.name.endsWith('.css'))
+      const resourceEntries = performance.getEntriesByType(
+        'resource',
+      ) as PerformanceResourceTiming[];
+      const scriptEntries = resourceEntries.filter(
+        (entry) =>
+          entry.name.includes('/_next/static/') &&
+          (entry.name.endsWith('.js') || entry.name.endsWith('.css')),
       );
 
       // Calculate bundle information
@@ -70,11 +69,11 @@ export function BundleAnalyzer() {
       let totalLoadTime = 0;
       const chunkData: ChunkInfo[] = [];
 
-      scriptEntries.forEach(entry => {
+      scriptEntries.forEach((entry) => {
         const size = entry.transferSize || entry.encodedBodySize || 0;
         const loadTime = entry.responseEnd - entry.requestStart;
         const cached = entry.transferSize === 0;
-        
+
         totalSize += size;
         totalLoadTime += loadTime;
 
@@ -88,7 +87,8 @@ export function BundleAnalyzer() {
 
       // Estimate gzipped size (roughly 70% of original)
       const gzippedSize = totalSize * 0.7;
-      const cacheHitRate = chunkData.filter(chunk => chunk.cached).length / chunkData.length;
+      const cacheHitRate =
+        chunkData.filter((chunk) => chunk.cached).length / chunkData.length;
 
       setBundleInfo({
         totalSize,
@@ -219,19 +219,30 @@ export function BundleAnalyzer() {
                 <div className="text-xs font-medium mb-2">Largest Chunks:</div>
                 <div className="space-y-1">
                   {chunks.map((chunk, index) => (
-                    <div key={chunk.name} className="flex justify-between items-center text-xs">
+                    <div
+                      key={chunk.name}
+                      className="flex justify-between items-center text-xs"
+                    >
                       <div className="flex items-center gap-2 flex-1 min-w-0">
-                        <span className="w-4 text-muted-foreground">{index + 1}.</span>
+                        <span className="w-4 text-muted-foreground">
+                          {index + 1}.
+                        </span>
                         <span className="truncate" title={chunk.name}>
                           {chunk.name}
                         </span>
                         {chunk.cached && (
-                          <Badge variant="outline" className="text-xs px-1 py-0">
+                          <Badge
+                            variant="outline"
+                            className="text-xs px-1 py-0"
+                          >
                             cached
                           </Badge>
                         )}
                       </div>
-                      <Badge className={getSizeColor(chunk.size)} variant="outline">
+                      <Badge
+                        className={getSizeColor(chunk.size)}
+                        variant="outline"
+                      >
                         {formatSize(chunk.size)}
                       </Badge>
                     </div>
@@ -248,11 +259,13 @@ export function BundleAnalyzer() {
             </>
           ) : (
             <div className="text-xs text-muted-foreground">
-              {isCollecting ? 'Analyzing bundle...' : 'Click refresh to analyze'}
+              {isCollecting
+                ? 'Analyzing bundle...'
+                : 'Click refresh to analyze'}
             </div>
           )}
         </CardContent>
       </Card>
     </div>
   );
-} 
+}

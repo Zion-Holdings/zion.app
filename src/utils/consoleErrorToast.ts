@@ -1,6 +1,6 @@
 // src/utils/consoleErrorToast.ts
 import { toast } from '@/hooks/use-toast';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 const originalConsoleError = console.error;
 
@@ -13,9 +13,9 @@ console.error = (..._args: unknown[]) => {
     originalConsoleError(...args);
     return;
   }
-  
+
   isProcessingError = true;
-  
+
   try {
     const first = args[0];
     const message = first instanceof Error ? first.message : String(first);
@@ -29,7 +29,7 @@ console.error = (..._args: unknown[]) => {
       'Script error', // Cross-origin script errors
       'Network request failed', // Network errors
       'AuthProvider DEBUG', // Debug messages
-      'LOGIN TRACE', // Debug messages  
+      'LOGIN TRACE', // Debug messages
       'Background request failed', // Background API failures
       'getUser()', // Supabase auth debug
       'Session expired', // Already handled by auth
@@ -44,8 +44,11 @@ console.error = (..._args: unknown[]) => {
     // Check if this error should be shown to user
     const shouldShowErrorToUser = (message: string): boolean => {
       // Don't show toasts for known background/debug errors
-      if (SILENT_ERROR_PATTERNS.some(pattern => 
-        message.toLowerCase().includes(pattern.toLowerCase()))) {
+      if (
+        SILENT_ERROR_PATTERNS.some((pattern) =>
+          message.toLowerCase().includes(pattern.toLowerCase()),
+        )
+      ) {
         return false;
       }
 
@@ -55,42 +58,58 @@ console.error = (..._args: unknown[]) => {
       }
 
       // Don't show toasts for React development warnings
-      if (process.env.NODE_ENV === 'development' && 
-          (message.includes('Warning:') || message.includes('React'))) {
+      if (
+        process.env.NODE_ENV === 'development' &&
+        (message.includes('Warning:') || message.includes('React'))
+      ) {
         return false;
       }
 
       // Only show critical user-facing errors
-      return message.includes('Uncaught') || 
-             message.includes('TypeError') ||
-             message.includes('ReferenceError') ||
-             message.includes('critical') ||
-             message.includes('failed to load') ||
-             message.includes('initialization');
+      return (
+        message.includes('Uncaught') ||
+        message.includes('TypeError') ||
+        message.includes('ReferenceError') ||
+        message.includes('critical') ||
+        message.includes('failed to load') ||
+        message.includes('initialization')
+      );
     };
 
     try {
-      logErrorToProduction(first instanceof Error ? first.message : message, first instanceof Error ? first : undefined);
+      logErrorToProduction(
+        first instanceof Error ? first.message : message,
+        first instanceof Error ? first : undefined,
+      );
     } catch {
-      originalConsoleError('Error reporting to logger in console.error override:', sentryError);
+      originalConsoleError(
+        'Error reporting to logger in console.error override:',
+        sentryError,
+      );
     }
 
     // Only show toast for critical user-facing errors
     if (shouldShowErrorToUser(message)) {
       try {
         toast({
-          title: "Unexpected Error",
-          description: "Something went wrong. Please refresh the page if the issue persists.",
-          variant: "destructive",
+          title: 'Unexpected Error',
+          description:
+            'Something went wrong. Please refresh the page if the issue persists.',
+          variant: 'destructive',
         });
       } catch (_snackbarError) {
-        originalConsoleError('Error showing toast in console.error override:', snackbarError);
+        originalConsoleError(
+          'Error showing toast in console.error override:',
+          snackbarError,
+        );
       }
     }
-
   } catch (_overallError) {
     // Fallback if determining message or other initial logic failed.
-    originalConsoleError('Critical error in console.error override:', overallError);
+    originalConsoleError(
+      'Critical error in console.error override:',
+      overallError,
+    );
   } finally {
     // Reset recursion flag
     isProcessingError = false;

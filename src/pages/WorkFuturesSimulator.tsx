@@ -2,7 +2,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Header } from '@/components/Header';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { callZionGPT } from '@/utils/zion-gpt';
 import { logErrorToProduction } from '@/utils/productionLogger';
@@ -21,12 +27,7 @@ const ROLES = [
   { value: 'nation', label: 'Nation-builder' },
 ];
 
-const SECTORS = [
-  'Health',
-  'Creative',
-  'Infrastructure',
-  'Tech',
-];
+const SECTORS = ['Health', 'Creative', 'Infrastructure', 'Tech'];
 
 export default function WorkFuturesSimulator() {
   const [scenario, setScenario] = useState('ubi');
@@ -46,8 +47,14 @@ export default function WorkFuturesSimulator() {
       // Reactivate: Mock decentralized work index calculation
       setWorkIndex(Math.floor(Math.random() * 41) + 60); // 60-100
     } catch {
-      logErrorToProduction(err instanceof Error ? error : String(err), err instanceof Error ? err : undefined, { context: 'WorkFuturesSimulator.runSimulation' });
-      const suggestion = await suggestFix(err instanceof Error ? err : new Error(String(err)));
+      logErrorToProduction(
+        err instanceof Error ? error : String(err),
+        err instanceof Error ? err : undefined,
+        { context: 'WorkFuturesSimulator.runSimulation' },
+      );
+      const suggestion = await suggestFix(
+        err instanceof Error ? err : new Error(String(err)),
+      );
       setOutput(suggestion);
       toast({ title: 'Simulation failed', variant: 'destructive' });
     }
@@ -55,12 +62,16 @@ export default function WorkFuturesSimulator() {
 
   useEffect(() => {
     if (!networkCanvas.current) {
-      logErrorToProduction('Canvas ref missing', undefined, { context: 'WorkFuturesSimulator.useEffect' });
+      logErrorToProduction('Canvas ref missing', undefined, {
+        context: 'WorkFuturesSimulator.useEffect',
+      });
       return;
     }
     const ctx = networkCanvas.current.getContext('2d');
     if (!ctx) {
-      logErrorToProduction('2D context unavailable', undefined, { context: 'WorkFuturesSimulator.useEffect' });
+      logErrorToProduction('2D context unavailable', undefined, {
+        context: 'WorkFuturesSimulator.useEffect',
+      });
       return;
     }
     try {
@@ -112,13 +123,19 @@ export default function WorkFuturesSimulator() {
         });
       });
     } catch {
-      logErrorToProduction(err instanceof Error ? error : String(err), err instanceof Error ? err : undefined, { context: 'WorkFuturesSimulator.useEffect' });
+      logErrorToProduction(
+        err instanceof Error ? error : String(err),
+        err instanceof Error ? err : undefined,
+        { context: 'WorkFuturesSimulator.useEffect' },
+      );
     }
   }, [output]);
 
   const exportJSON = () => {
     const data = { scenario, role, sector, output, workIndex };
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const blob = new Blob([JSON.stringify(data, null, 2)], {
+      type: 'application/json',
+    });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
@@ -134,7 +151,8 @@ export default function WorkFuturesSimulator() {
     doc.text(`Scenario: ${scenario}`, 10, 20);
     doc.text(`Role: ${role}`, 10, 30);
     doc.text(`Sector: ${sector}`, 10, 40);
-    if (workIndex !== null) doc.text(`Decentralized Work Index: ${workIndex}`, 10, 50);
+    if (workIndex !== null)
+      doc.text(`Decentralized Work Index: ${workIndex}`, 10, 50);
     doc.text(output, 10, 60);
     doc.save('futures-simulation.pdf');
   };
@@ -158,7 +176,9 @@ export default function WorkFuturesSimulator() {
                   </SelectTrigger>
                   <SelectContent>
                     {SCENARIOS.map((s) => (
-                      <SelectItem key={s.value} value={s.value}>{s.label}</SelectItem>
+                      <SelectItem key={s.value} value={s.value}>
+                        {s.label}
+                      </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
@@ -171,7 +191,9 @@ export default function WorkFuturesSimulator() {
                   </SelectTrigger>
                   <SelectContent>
                     {ROLES.map((r) => (
-                      <SelectItem key={r.value} value={r.value}>{r.label}</SelectItem>
+                      <SelectItem key={r.value} value={r.value}>
+                        {r.label}
+                      </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
@@ -184,7 +206,9 @@ export default function WorkFuturesSimulator() {
                   </SelectTrigger>
                   <SelectContent>
                     {SECTORS.map((s) => (
-                      <SelectItem key={s} value={s}>{s}</SelectItem>
+                      <SelectItem key={s} value={s}>
+                        {s}
+                      </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
@@ -203,7 +227,9 @@ export default function WorkFuturesSimulator() {
                 <CardContent>
                   <p className="whitespace-pre-wrap mb-4">{output}</p>
                   {workIndex !== null && (
-                    <p className="font-semibold">Decentralized Work Index: {workIndex}</p>
+                    <p className="font-semibold">
+                      Decentralized Work Index: {workIndex}
+                    </p>
                   )}
                 </CardContent>
               </Card>

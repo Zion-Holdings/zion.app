@@ -12,7 +12,9 @@ vi.mock('react-i18next', () => ({
 }));
 
 const mockedUseLanguage = useLanguage as vi.MockedFunction<typeof useLanguage>;
-const mockedUseTranslation = useTranslation as vi.MockedFunction<typeof useTranslation>;
+const mockedUseTranslation = useTranslation as vi.MockedFunction<
+  typeof useTranslation
+>;
 
 const supportedLanguages = [
   { code: 'en', name: 'English', flag: '🇺🇸' },
@@ -40,7 +42,7 @@ describe('LanguageSelector', () => {
     const trigger = screen.getByTestId('language-selector');
     fireEvent.click(trigger);
 
-    supportedLanguages.forEach(lang => {
+    supportedLanguages.forEach((lang) => {
       expect(screen.getByText(`language.${lang.code}`)).toBeInTheDocument();
     });
 

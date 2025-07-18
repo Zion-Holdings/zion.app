@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { Edit, MoreHorizontal, ExternalLink, Users, RefreshCcw, PowerOff } from '@/components/ui/icons';
+import {
+  Edit,
+  MoreHorizontal,
+  ExternalLink,
+  Users,
+  RefreshCcw,
+  PowerOff,
+} from '@/components/ui/icons';
 import { supabase } from '@/integrations/supabase/client';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
-import { 
-  Table, 
-  TableBody, 
-  TableCell, 
-  TableHead, 
-  TableHeader, 
-  TableRow 
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
 } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
 import {
@@ -37,12 +44,12 @@ export function TenantsList() {
       if (!supabase) {
         throw new Error('Supabase client not available');
       }
-      
+
       const { data, error } = await supabase
         .from('whitelabel_tenants')
         .select('*')
         .order('created_at', { ascending: false });
-        
+
       if (error) throw error;
       setTenants(data as WhitelabelTenant[]);
     } catch (error: unknown) {
@@ -62,19 +69,23 @@ export function TenantsList() {
       if (!supabase) {
         throw new Error('Supabase client not available');
       }
-      
+
       const { _error } = await supabase
         .from('whitelabel_tenants')
         .update({ is_active: !(tenant as WhitelabelTenant).is_active })
         .eq('id', (tenant as WhitelabelTenant).id);
-        
+
       if (error) throw error;
-      
+
       // Update local state
-      setTenants(tenants.map(t => 
-        (t as WhitelabelTenant).id === (tenant as WhitelabelTenant).id ? { ...t, is_active: !(t as WhitelabelTenant).is_active } : t
-      ));
-      
+      setTenants(
+        tenants.map((t) =>
+          (t as WhitelabelTenant).id === (tenant as WhitelabelTenant).id
+            ? { ...t, is_active: !(t as WhitelabelTenant).is_active }
+            : t,
+        ),
+      );
+
       toast({
         title: `Tenant ${(tenant as WhitelabelTenant).is_active ? 'deactivated' : 'activated'}`,
         description: `${(tenant as WhitelabelTenant).brand_name} has been ${(tenant as WhitelabelTenant).is_active ? 'deactivated' : 'activated'} successfully.`,
@@ -94,21 +105,25 @@ export function TenantsList() {
       if (!supabase) {
         throw new Error('Supabase client not available');
       }
-      
+
       // In a real implementation, this would verify DNS records
       // For now, we'll just mark it as verified
       const { _error } = await supabase
         .from('whitelabel_tenants')
         .update({ dns_verified: true })
         .eq('id', (tenant as WhitelabelTenant).id);
-        
+
       if (error) throw error;
-      
+
       // Update local state
-      setTenants(tenants.map(t => 
-        (t as WhitelabelTenant).id === (tenant as WhitelabelTenant).id ? { ...t, dns_verified: true } : t
-      ));
-      
+      setTenants(
+        tenants.map((t) =>
+          (t as WhitelabelTenant).id === (tenant as WhitelabelTenant).id
+            ? { ...t, dns_verified: true }
+            : t,
+        ),
+      );
+
       toast({
         title: 'DNS verified',
         description: `Custom domain for ${(tenant as WhitelabelTenant).brand_name} has been verified.`,
@@ -153,16 +168,22 @@ export function TenantsList() {
             <TableBody>
               {tenants.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={6} className="text-center py-8 text-muted-foreground">
-                    No tenants found. Create a new white-label instance to get started.
+                  <TableCell
+                    colSpan={6}
+                    className="text-center py-8 text-muted-foreground"
+                  >
+                    No tenants found. Create a new white-label instance to get
+                    started.
                   </TableCell>
                 </TableRow>
               ) : (
                 tenants.map((tenant) => (
                   <TableRow key={tenant.id}>
-                    <TableCell className="font-medium">{tenant.brand_name}</TableCell>
+                    <TableCell className="font-medium">
+                      {tenant.brand_name}
+                    </TableCell>
                     <TableCell>
-                      <a 
+                      <a
                         href={`https://${tenant.subdomain}.ziontechmarketplace.com`}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -184,15 +205,17 @@ export function TenantsList() {
                             {tenant.custom_domain}
                             <ExternalLink className="ml-1 h-3 w-3" />
                           </a>
-                          <Badge 
-                            variant={tenant.dns_verified ? "default" : "outline"} 
+                          <Badge
+                            variant={
+                              tenant.dns_verified ? 'default' : 'outline'
+                            }
                           >
-                            {tenant.dns_verified ? "Verified" : "Pending"}
+                            {tenant.dns_verified ? 'Verified' : 'Pending'}
                           </Badge>
                           {!tenant.dns_verified && (
-                            <Button 
-                              variant="ghost" 
-                              size="sm" 
+                            <Button
+                              variant="ghost"
+                              size="sm"
                               onClick={() => verifyDns(tenant)}
                               className="ml-1 h-6 w-6 p-0"
                             >
@@ -202,15 +225,21 @@ export function TenantsList() {
                           )}
                         </div>
                       ) : (
-                        <span className="text-muted-foreground text-sm">None</span>
+                        <span className="text-muted-foreground text-sm">
+                          None
+                        </span>
                       )}
                     </TableCell>
                     <TableCell>
-                      <Badge variant={tenant.is_active ? "default" : "destructive"}>
-                        {tenant.is_active ? "Active" : "Inactive"}
+                      <Badge
+                        variant={tenant.is_active ? 'default' : 'destructive'}
+                      >
+                        {tenant.is_active ? 'Active' : 'Inactive'}
                       </Badge>
                     </TableCell>
-                    <TableCell>{format(new Date(tenant.created_at), 'MMM d, yyyy')}</TableCell>
+                    <TableCell>
+                      {format(new Date(tenant.created_at), 'MMM d, yyyy')}
+                    </TableCell>
                     <TableCell className="text-right">
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
@@ -228,7 +257,9 @@ export function TenantsList() {
                             <Users className="mr-2 h-4 w-4" />
                             Manage Admins
                           </DropdownMenuItem>
-                          <DropdownMenuItem onClick={() => toggleTenantStatus(tenant)}>
+                          <DropdownMenuItem
+                            onClick={() => toggleTenantStatus(tenant)}
+                          >
                             {tenant.is_active ? (
                               <>
                                 <PowerOff className="mr-2 h-4 w-4" />

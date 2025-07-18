@@ -1,7 +1,6 @@
 import React from 'react';
 import { X } from '@/components/ui/icons';
 
-
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
@@ -25,23 +24,24 @@ export const ActiveFiltersBar: React.FC<ActiveFiltersBarProps> = ({
   filters,
   onFiltersChange,
   onClearAll,
-  className = ''
+  className = '',
 }) => {
-  const activeFilters: Array<{ key: string; label: string; value: string }> = [];
+  const activeFilters: Array<{ key: string; label: string; value: string }> =
+    [];
 
   // Add type filters
-  filters.types.forEach(type => {
+  filters.types.forEach((type) => {
     const labels: Record<string, string> = {
       product: 'Products',
       talent: 'Talent',
       service: 'Services',
       blog: 'Blog Posts',
-      doc: 'Documentation'
+      doc: 'Documentation',
     };
     activeFilters.push({
       key: `type-${type}`,
       label: 'Type',
-      value: labels[type] || type
+      value: labels[type] || type,
     });
   });
 
@@ -50,7 +50,7 @@ export const ActiveFiltersBar: React.FC<ActiveFiltersBarProps> = ({
     activeFilters.push({
       key: 'category',
       label: 'Category',
-      value: filters.category
+      value: filters.category,
     });
   }
 
@@ -59,7 +59,7 @@ export const ActiveFiltersBar: React.FC<ActiveFiltersBarProps> = ({
     activeFilters.push({
       key: 'price',
       label: 'Price',
-      value: `$${filters.minPrice} - $${filters.maxPrice}`
+      value: `$${filters.minPrice} - $${filters.maxPrice}`,
     });
   }
 
@@ -68,7 +68,7 @@ export const ActiveFiltersBar: React.FC<ActiveFiltersBarProps> = ({
     activeFilters.push({
       key: 'rating',
       label: 'Rating',
-      value: `${filters.minRating}+ stars`
+      value: `${filters.minRating}+ stars`,
     });
   }
 
@@ -77,19 +77,19 @@ export const ActiveFiltersBar: React.FC<ActiveFiltersBarProps> = ({
     const sortLabels: Record<string, string> = {
       price_asc: 'Price: Low to High',
       price_desc: 'Price: High to Low',
-      rating: 'Highest Rated'
+      rating: 'Highest Rated',
     };
     activeFilters.push({
       key: 'sort',
       label: 'Sort',
-      value: sortLabels[filters.sort] || filters.sort
+      value: sortLabels[filters.sort] || filters.sort,
     });
   }
 
   const removeFilter = (_filterKey: string) => {
     if (filterKey.startsWith('type-')) {
       const typeToRemove = filterKey.replace('type-', '');
-      const newTypes = filters.types.filter(t => t !== typeToRemove);
+      const newTypes = filters.types.filter((t) => t !== typeToRemove);
       onFiltersChange({ ...filters, types: newTypes });
     } else if (filterKey === 'category') {
       onFiltersChange({ ...filters, category: '' });
@@ -108,12 +108,14 @@ export const ActiveFiltersBar: React.FC<ActiveFiltersBarProps> = ({
 
   return (
     <div className={`flex items-center gap-2 flex-wrap ${className}`}>
-      <span className="text-sm font-medium text-muted-foreground">Active filters:</span>
-      
-      {activeFilters.map(filter => (
-        <Badge 
-          key={filter.key} 
-          variant="secondary" 
+      <span className="text-sm font-medium text-muted-foreground">
+        Active filters:
+      </span>
+
+      {activeFilters.map((filter) => (
+        <Badge
+          key={filter.key}
+          variant="secondary"
           className="flex items-center gap-1 pl-2 pr-1"
         >
           <span className="text-xs">

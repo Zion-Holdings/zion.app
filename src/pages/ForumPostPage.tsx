@@ -1,31 +1,20 @@
-
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import { Calendar, Flag, Edit, Lock, CheckCircle } from '@/components/ui/icons';
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { SEO } from "@/components/SEO";
-import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { SEO } from '@/components/SEO';
+import { Button } from '@/components/ui/button';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent } from '@/components/ui/card';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 
-
-
-
-
-
-
-
-
-
-import { formatDistanceToNow, format } from "date-fns";
-import type { ForumPost, ForumReply } from "@/types/community";
-import { useAuth } from "@/hooks/useAuth";
-import ReplyCard from "@/components/community/ReplyCard";
-import ReplyForm from "@/components/community/ReplyForm";
-import { useToast } from "@/hooks/use-toast";
-
+import { formatDistanceToNow, format } from 'date-fns';
+import type { ForumPost, ForumReply } from '@/types/community';
+import { useAuth } from '@/hooks/useAuth';
+import ReplyCard from '@/components/community/ReplyCard';
+import ReplyForm from '@/components/community/ReplyForm';
+import { useToast } from '@/hooks/use-toast';
 
 export default function ForumPostPage() {
   // Using `useParams` without type arguments avoids issues when TypeScript
@@ -37,7 +26,7 @@ export default function ForumPostPage() {
   const { _toast } = useToast();
   const [post, setPost] = useState<ForumPost | null>(null);
   const [replies, setReplies] = useState<ForumReply[]>([]);
-  
+
   // _Reactivate: Use a mock API integration for forum post and replies
   useEffect(() => {
     // Simulate API call
@@ -45,7 +34,8 @@ export default function ForumPostPage() {
       setPost({
         id: _postId,
         title: 'How to use ZionGPT for project management?',
-        content: 'I am interested in using ZionGPT for managing my project milestones. Any tips or best practices?',
+        content:
+          'I am interested in using ZionGPT for managing my project milestones. Any tips or best practices?',
         authorId: 'user-1',
         authorName: 'Alice',
         createdAt: '2024-07-01T10:00:00.000Z',
@@ -62,7 +52,8 @@ export default function ForumPostPage() {
           postId: _postId,
           authorId: 'user-2',
           authorName: 'Bob',
-          content: 'I recommend breaking your project into clear milestones and using the AI milestone generator.',
+          content:
+            'I recommend breaking your project into clear milestones and using the AI milestone generator.',
           createdAt: '2024-07-01T11:00:00.000Z',
           updatedAt: '2024-07-01T11:00:00.000Z',
           upvotes: 3,
@@ -73,7 +64,8 @@ export default function ForumPostPage() {
           postId: _postId,
           authorId: 'user-3',
           authorName: 'Carol',
-          content: 'Don\'t forget to set due dates and review progress regularly!',
+          content:
+            "Don't forget to set due dates and review progress regularly!",
           createdAt: '2024-07-01T12:00:00.000Z',
           updatedAt: '2024-07-01T12:00:00.000Z',
           upvotes: 2,
@@ -82,13 +74,13 @@ export default function ForumPostPage() {
       ]);
     }, 500);
   }, [_postId]);
-  
+
   // Check if this is the user's own post
   const isAuthor = user?.id === post?.authorId;
-  
+
   // Check if user is admin/mod
   const isAdminOrMod = user?.userType === 'admin' || user?.role === 'admin';
-  
+
   // For this demo, we'll assume the post is found
   if (!post) {
     return (
@@ -104,50 +96,50 @@ export default function ForumPostPage() {
   const handleUpvote = () => {
     if (!user) {
       toast({
-        title: "Authentication required",
-        description: "Please sign in to vote on posts",
+        title: 'Authentication required',
+        description: 'Please sign in to vote on posts',
       });
       const returnTo = encodeURIComponent(router.asPath);
       router.push(`/auth/login?returnTo=${returnTo}`);
       return;
     }
-    
+
     setPost({ ...post, upvotes: post.upvotes + 1 });
     toast({
-      title: "Vote recorded",
-      description: "You upvoted this post",
+      title: 'Vote recorded',
+      description: 'You upvoted this post',
     });
   };
 
   const handleDownvote = () => {
     if (!user) {
       toast({
-        title: "Authentication required",
-        description: "Please sign in to vote on posts",
+        title: 'Authentication required',
+        description: 'Please sign in to vote on posts',
       });
       const returnTo = encodeURIComponent(router.asPath);
       router.push(`/auth/login?returnTo=${returnTo}`);
       return;
     }
-    
+
     setPost({ ...post, downvotes: post.downvotes + 1 });
     toast({
-      title: "Vote recorded",
-      description: "You downvoted this post",
+      title: 'Vote recorded',
+      description: 'You downvoted this post',
     });
   };
 
   const handleSubmitReply = async (_content: string) => {
     if (!user) {
       toast({
-        title: "Authentication required",
-        description: "Please sign in to reply",
+        title: 'Authentication required',
+        description: 'Please sign in to reply',
       });
       const returnTo = encodeURIComponent(router.asPath);
       router.push(`/auth/login?returnTo=${returnTo}`);
       return;
     }
-    
+
     // Create a new reply
     const newReply: ForumReply = {
       id: `reply${Date.now()}`,
@@ -159,15 +151,15 @@ export default function ForumPostPage() {
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
       upvotes: 0,
-      downvotes: 0
+      downvotes: 0,
     };
-    
+
     setReplies([...replies, newReply]);
     setPost({ ...post, replyCount: post.replyCount + 1 });
-    
+
     toast({
-      title: "Reply posted",
-      description: "Your reply has been added to the discussion",
+      title: 'Reply posted',
+      description: 'Your reply has been added to the discussion',
     });
   };
 
@@ -175,70 +167,79 @@ export default function ForumPostPage() {
     // Only post author or admin can mark an answer
     if (!isAuthor && !isAdminOrMod) {
       toast({
-        title: "Permission denied",
-        description: "Only the original poster or moderators can mark answers",
-        variant: "destructive"
+        title: 'Permission denied',
+        description: 'Only the original poster or moderators can mark answers',
+        variant: 'destructive',
       });
       return;
     }
-    
+
     // Update the replies
-    const updatedReplies = replies.map(reply => ({
+    const updatedReplies = replies.map((reply) => ({
       ...reply,
-      isAnswer: reply.id === replyId
+      isAnswer: reply.id === replyId,
     }));
-    
+
     setReplies(updatedReplies);
     setPost({ ...post, isAnswered: true });
-    
+
     toast({
-      title: "Answer marked",
-      description: "The reply has been marked as the accepted answer",
+      title: 'Answer marked',
+      description: 'The reply has been marked as the accepted answer',
     });
   };
 
   const handleReportPost = () => {
     if (!user) {
       toast({
-        title: "Authentication required",
-        description: "Please sign in to report content",
+        title: 'Authentication required',
+        description: 'Please sign in to report content',
       });
       const returnTo = encodeURIComponent(router.asPath);
       router.push(`/auth/login?returnTo=${returnTo}`);
       return;
     }
-    
+
     toast({
-      title: "Report submitted",
-      description: "A moderator will review this content",
+      title: 'Report submitted',
+      description: 'A moderator will review this content',
     });
   };
 
   const handlePinPost = () => {
     if (!isAdminOrMod) return;
-    
+
     setPost({ ...post, isPinned: !post.isPinned });
-    
+
     toast({
-      title: post.isPinned ? "Post unpinned" : "Post pinned",
-      description: post.isPinned ? "The post has been unpinned" : "The post has been pinned to the top",
+      title: post.isPinned ? 'Post unpinned' : 'Post pinned',
+      description: post.isPinned
+        ? 'The post has been unpinned'
+        : 'The post has been pinned to the top',
     });
   };
 
   const handleLockPost = () => {
     if (!isAdminOrMod) return;
-    
+
     setPost({ ...post, isLocked: !post.isLocked });
-    
+
     toast({
-      title: post.isLocked ? "Post unlocked" : "Post locked",
-      description: post.isLocked ? "Comments are now allowed" : "Comments are now disabled",
+      title: post.isLocked ? 'Post unlocked' : 'Post locked',
+      description: post.isLocked
+        ? 'Comments are now allowed'
+        : 'Comments are now disabled',
     });
   };
-  
-  const timeAgo = formatDistanceToNow(new Date(post.createdAt), { addSuffix: true });
-  const formattedDate = format(new Date(post.createdAt), "MMMM d, yyyy 'at' h:mm a");
-  
+
+  const timeAgo = formatDistanceToNow(new Date(post.createdAt), {
+    addSuffix: true,
+  });
+  const formattedDate = format(
+    new Date(post.createdAt),
+    "MMMM d, yyyy 'at' h:mm a",
+  );
+
   return (
     <>
       <SEO
@@ -247,20 +248,31 @@ export default function ForumPostPage() {
         keywords={`community, forum, discussion, ${post.tags.join(', ')}`}
         canonical={`https://app.ziontechgroup.com/community/post/${post.id}`}
       />
-      
+
       <div className="container py-8">
         <div className="flex items-center gap-3 mb-6">
-          <Link href="/community" className="text-sm text-muted-foreground hover:text-foreground">
+          <Link
+            href="/community"
+            className="text-sm text-muted-foreground hover:text-foreground"
+          >
             Forum
           </Link>
           <span className="text-muted-foreground">/</span>
-          <Link href={`/community/category/${post.categoryId}`} className="text-sm text-muted-foreground hover:text-foreground">
-            {post.categoryId.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
+          <Link
+            href={`/community/category/${post.categoryId}`}
+            className="text-sm text-muted-foreground hover:text-foreground"
+          >
+            {post.categoryId
+              .split('-')
+              .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+              .join(' ')}
           </Link>
           <span className="text-muted-foreground">/</span>
-          <span className="text-sm font-medium truncate max-w-[200px]">{post.title}</span>
+          <span className="text-sm font-medium truncate max-w-[200px]">
+            {post.title}
+          </span>
         </div>
-        
+
         <Card>
           <CardContent className="p-6">
             <div className="flex justify-between items-start mb-6">
@@ -278,7 +290,7 @@ export default function ForumPostPage() {
                   )}
                 </div>
               </div>
-              
+
               <div className="flex items-center text-sm text-muted-foreground">
                 <Calendar className="h-4 w-4 mr-1" />
                 <time dateTime={post.createdAt} title={formattedDate}>
@@ -286,23 +298,27 @@ export default function ForumPostPage() {
                 </time>
               </div>
             </div>
-            
+
             <h1 className="text-2xl font-bold mb-2">{post.title}</h1>
-            
+
             <div className="flex flex-wrap gap-2 mb-6">
-              {post.tags?.map(tag => (
-                <Badge key={tag} variant="outline" className="bg-zion-purple/10 hover:bg-zion-purple/20">
+              {post.tags?.map((tag) => (
+                <Badge
+                  key={tag}
+                  variant="outline"
+                  className="bg-zion-purple/10 hover:bg-zion-purple/20"
+                >
                   {tag}
                 </Badge>
               ))}
             </div>
-            
+
             <div className="prose dark:prose-invert max-w-none mb-6">
               {post.content.split('\n\n').map((paragraph, i) => (
                 <p key={i}>{paragraph}</p>
               ))}
             </div>
-            
+
             <div className="flex flex-wrap items-center justify-between gap-4 mt-6">
               <div className="flex items-center gap-4">
                 <Button
@@ -324,7 +340,7 @@ export default function ForumPostPage() {
                   <span>{post.downvotes}</span>
                 </Button>
               </div>
-              
+
               <div className="flex items-center gap-2">
                 {(isAuthor || isAdminOrMod) && (
                   <Button variant="ghost" size="sm" asChild>
@@ -334,33 +350,21 @@ export default function ForumPostPage() {
                     </Link>
                   </Button>
                 )}
-                
+
                 {isAdminOrMod && (
                   <>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={handlePinPost}
-                    >
+                    <Button variant="ghost" size="sm" onClick={handlePinPost}>
                       <Pin className="h-4 w-4 mr-1" />
-                      {post.isPinned ? "Unpin" : "Pin"}
+                      {post.isPinned ? 'Unpin' : 'Pin'}
                     </Button>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={handleLockPost}
-                    >
+                    <Button variant="ghost" size="sm" onClick={handleLockPost}>
                       <Lock className="h-4 w-4 mr-1" />
-                      {post.isLocked ? "Unlock" : "Lock"}
+                      {post.isLocked ? 'Unlock' : 'Lock'}
                     </Button>
                   </>
                 )}
-                
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={handleReportPost}
-                >
+
+                <Button variant="ghost" size="sm" onClick={handleReportPost}>
                   <Flag className="h-4 w-4 mr-1" />
                   Report
                 </Button>
@@ -368,22 +372,30 @@ export default function ForumPostPage() {
             </div>
           </CardContent>
         </Card>
-        
+
         <div className="mt-8">
-          <h2 className="text-xl font-bold mb-6">Responses ({post.replyCount})</h2>
-          
+          <h2 className="text-xl font-bold mb-6">
+            Responses ({post.replyCount})
+          </h2>
+
           {post.isAnswered && (
             <div className="mb-6">
               <h3 className="flex items-center text-green-600 font-medium mb-2">
                 <CheckCircle className="h-4 w-4 mr-2" />
                 Accepted Answer
               </h3>
-              {replies.filter(reply => reply.isAnswer).map(reply => (
-                <ReplyCard key={reply.id} reply={reply} className="border-green-500" />
-              ))}
+              {replies
+                .filter((reply) => reply.isAnswer)
+                .map((reply) => (
+                  <ReplyCard
+                    key={reply.id}
+                    reply={reply}
+                    className="border-green-500"
+                  />
+                ))}
             </div>
           )}
-          
+
           {!post.isLocked && (
             <div className="mb-8">
               <h3 className="text-lg font-medium mb-4">Your Response</h3>
@@ -392,13 +404,20 @@ export default function ForumPostPage() {
               ) : (
                 <Alert>
                   <AlertDescription>
-                    Please <Link href="/auth/login" className="font-medium text-zion-purple hover:underline">sign in</Link> to join the discussion.
+                    Please{' '}
+                    <Link
+                      href="/auth/login"
+                      className="font-medium text-zion-purple hover:underline"
+                    >
+                      sign in
+                    </Link>{' '}
+                    to join the discussion.
                   </AlertDescription>
                 </Alert>
               )}
             </div>
           )}
-          
+
           {post.isLocked && (
             <Alert className="mb-8">
               <AlertDescription className="flex items-center">
@@ -407,11 +426,11 @@ export default function ForumPostPage() {
               </AlertDescription>
             </Alert>
           )}
-          
+
           <div className="space-y-6">
             {replies
-              .filter(reply => !reply.isAnswer)
-              .map(reply => (
+              .filter((reply) => !reply.isAnswer)
+              .map((reply) => (
                 <ReplyCard
                   key={reply.id}
                   reply={reply}

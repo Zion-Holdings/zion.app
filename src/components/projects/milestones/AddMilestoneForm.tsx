@@ -4,7 +4,6 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
-
 import { format } from 'date-fns';
 
 import { Button } from '@/components/ui/button';
@@ -124,14 +123,15 @@ export function AddMilestoneForm({
           <FormField
             control={form.control}
             name="title"
-            render={({ field }: { field: ControllerRenderProps<MilestoneFormValues, 'title'> }) => (
+            render={({
+              field,
+            }: {
+              field: ControllerRenderProps<MilestoneFormValues, 'title'>;
+            }) => (
               <FormItem>
                 <FormLabel>Title</FormLabel>
                 <FormControl>
-                  <Input
-                    placeholder="Milestone title"
-                    {...field}
-                  />
+                  <Input placeholder="Milestone title" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -141,7 +141,11 @@ export function AddMilestoneForm({
           <FormField
             control={form.control}
             name="description"
-            render={({ field }: { field: ControllerRenderProps<MilestoneFormValues, 'description'> }) => (
+            render={({
+              field,
+            }: {
+              field: ControllerRenderProps<MilestoneFormValues, 'description'>;
+            }) => (
               <FormItem>
                 <FormLabel>Description (optional)</FormLabel>
                 <FormControl>
@@ -160,7 +164,11 @@ export function AddMilestoneForm({
             <FormField
               control={form.control}
               name="due_date"
-              render={({ field }: { field: ControllerRenderProps<MilestoneFormValues, 'due_date'> }) => (
+              render={({
+                field,
+              }: {
+                field: ControllerRenderProps<MilestoneFormValues, 'due_date'>;
+              }) => (
                 <FormItem className="flex flex-col">
                   <FormLabel>Due Date (optional)</FormLabel>
                   <Popover>
@@ -200,7 +208,11 @@ export function AddMilestoneForm({
             <FormField
               control={form.control}
               name="amount"
-              render={({ field }: { field: ControllerRenderProps<MilestoneFormValues, 'amount'> }) => (
+              render={({
+                field,
+              }: {
+                field: ControllerRenderProps<MilestoneFormValues, 'amount'>;
+              }) => (
                 <FormItem>
                   <FormLabel>Amount ($)</FormLabel>
                   <FormControl>

@@ -8,7 +8,11 @@ function InnerProvider({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 
-export default function ToastProvider({ children }: { children: React.ReactNode }) {
+export default function ToastProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <SnackbarProvider
       maxSnack={3}

@@ -57,7 +57,8 @@ export default function RegisterForm() {
           toast.error('Email already exists');
           form.setError('root', { message: 'Email already exists' });
         } else {
-          const message = err.response?.data?.message || err.message || 'Registration failed';
+          const message =
+            err.response?.data?.message || err.message || 'Registration failed';
           form.setError('root', { message });
         }
       } else {
@@ -71,7 +72,9 @@ export default function RegisterForm() {
 
   return (
     <div className="mx-auto w-full max-w-sm lg:w-96 p-4">
-      <h2 className="text-3xl font-bold tracking-tight text-white text-center mb-6">Create account</h2>
+      <h2 className="text-3xl font-bold tracking-tight text-white text-center mb-6">
+        Create account
+      </h2>
       <Form {...form}>
         {form.formState.errors.root && (
           <p className="text-red-500 mb-2" data-testid="error-message">
@@ -89,7 +92,11 @@ export default function RegisterForm() {
           <FormField
             control={form.control}
             name="email"
-            render={({ field }: { field: ControllerRenderProps<FormValues, "email"> }) => (
+            render={({
+              field,
+            }: {
+              field: ControllerRenderProps<FormValues, 'email'>;
+            }) => (
               <FormItem>
                 <FormLabel>Email address</FormLabel>
                 <FormControl>
@@ -102,11 +109,19 @@ export default function RegisterForm() {
           <FormField
             control={form.control}
             name="password"
-            render={({ field }: { field: ControllerRenderProps<FormValues, "password"> }) => (
+            render={({
+              field,
+            }: {
+              field: ControllerRenderProps<FormValues, 'password'>;
+            }) => (
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input type="password" autoComplete="new-password" {...field} />
+                  <Input
+                    type="password"
+                    autoComplete="new-password"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -115,11 +130,19 @@ export default function RegisterForm() {
           <FormField
             control={form.control}
             name="confirmPassword"
-            render={({ field }: { field: ControllerRenderProps<FormValues, "confirmPassword"> }) => (
+            render={({
+              field,
+            }: {
+              field: ControllerRenderProps<FormValues, 'confirmPassword'>;
+            }) => (
               <FormItem>
                 <FormLabel>Confirm Password</FormLabel>
                 <FormControl>
-                  <Input type="password" autoComplete="new-password" {...field} />
+                  <Input
+                    type="password"
+                    autoComplete="new-password"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>

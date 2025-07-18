@@ -25,27 +25,32 @@ export interface EnhancedProfile {
 export function useTalentProfileEnhancer() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  
-  const enhanceProfile = async (profileData: TalentProfileData): Promise<EnhancedProfile | null> => {
+
+  const enhanceProfile = async (
+    profileData: TalentProfileData,
+  ): Promise<EnhancedProfile | null> => {
     setIsGenerating(true);
     setError(null);
-    
+
     try {
       if (!supabase) throw new Error('Supabase client not initialized');
       // Call the Supabase Edge Function
-      const { data, error } = await supabase.functions.invoke('talent-profile-enhancer', {
-        body: { talentData: profileData }
-      });
+      const { data, error } = await supabase.functions.invoke(
+        'talent-profile-enhancer',
+        {
+          body: { talentData: profileData },
+        },
+      );
 
       if (error) {
         throw new Error(error.message);
       }
-      
+
       // Check if data exists before casting
       if (!data) {
         throw new Error('No enhanced profile data received');
       }
-      
+
       return data as EnhancedProfile;
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : String(err);
@@ -55,10 +60,10 @@ export function useTalentProfileEnhancer() {
       setIsGenerating(false);
     }
   };
-  
+
   return {
     enhanceProfile,
     isGenerating,
-    error
+    error,
   };
 }

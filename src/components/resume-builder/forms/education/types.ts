@@ -1,4 +1,3 @@
-
 import type { Education } from '@/types/resume';
 import { z } from 'zod';
 

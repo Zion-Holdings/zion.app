@@ -1,5 +1,4 @@
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 interface ErrorReport {
   timestamp: string;
@@ -58,7 +57,7 @@ export class ProductionErrorMonitor {
     window.addEventListener('unhandledrejection', (event) => {
       this.reportError(event.reason, {
         type: 'unhandledRejection',
-        source: 'window.unhandledrejection'
+        source: 'window.unhandledrejection',
       });
     });
 
@@ -69,7 +68,7 @@ export class ProductionErrorMonitor {
         source: 'window.error',
         filename: event.filename,
         lineno: event.lineno,
-        colno: event.colno
+        colno: event.colno,
       });
     });
   }
@@ -79,9 +78,12 @@ export class ProductionErrorMonitor {
     // Sentry.setUser({ id: userId }); // Removed Sentry import, so this line is commented out
   }
 
-  public reportError(error: Error | unknown, context: Record<string, unknown> = {}): void {
+  public reportError(
+    error: Error | unknown,
+    context: Record<string, unknown> = {},
+  ): void {
     const errorReport = this.buildErrorReport(error, context);
-    
+
     // Send to Sentry
     // Sentry.withScope((scope) => { // Removed Sentry import, so this block is commented out
     //   scope.setTag('errorMonitor', 'ProductionErrorMonitor');
@@ -111,12 +113,18 @@ export class ProductionErrorMonitor {
 
     // Log to console in development
     if (process.env.NODE_ENV === 'development') {
-      logErrorToProduction('ProductionErrorMonitor captured error:', { data: errorReport });
+      logErrorToProduction('ProductionErrorMonitor captured error:', {
+        data: errorReport,
+      });
     }
   }
 
-  private buildErrorReport(error: Error | unknown, context: Record<string, unknown>): ErrorReport {
-    const actualError = error instanceof Error ? error : new Error(String(error));
+  private buildErrorReport(
+    error: Error | unknown,
+    context: Record<string, unknown>,
+  ): ErrorReport {
+    const actualError =
+      error instanceof Error ? error : new Error(String(error));
     const perf = this.getPerformanceMetrics();
     const hasLoadTime = typeof perf.loadTime === 'number';
     const hasMemoryUsage = perf.memoryUsage !== undefined;
@@ -129,26 +137,38 @@ export class ProductionErrorMonitor {
       error: {
         message: actualError.message,
         stack: actualError.stack ?? '',
-        name: actualError.name
+        name: actualError.name,
       },
       context: {
         route: typeof window !== 'undefined' ? window.location.pathname : '',
-        component: typeof context.component === 'string' ? context.component : '',
-        browserInfo: typeof window !== 'undefined' ? {
-          cookiesEnabled: navigator.cookieEnabled,
-          onLine: navigator.onLine,
-          language: navigator.language
-        } : { cookiesEnabled: false, onLine: false, language: '' },
-        ...context
-      }
+        component:
+          typeof context.component === 'string' ? context.component : '',
+        browserInfo:
+          typeof window !== 'undefined'
+            ? {
+                cookiesEnabled: navigator.cookieEnabled,
+                onLine: navigator.onLine,
+                language: navigator.language,
+              }
+            : { cookiesEnabled: false, onLine: false, language: '' },
+        ...context,
+      },
     };
     if (hasLoadTime || hasMemoryUsage) {
-      const metrics: { loadTime?: number; memoryUsage?: { used?: number; total?: number; limit?: number } } = {};
+      const metrics: {
+        loadTime?: number;
+        memoryUsage?: { used?: number; total?: number; limit?: number };
+      } = {};
       if (hasLoadTime) metrics.loadTime = perf.loadTime as number;
-      if (hasMemoryUsage) metrics.memoryUsage = perf.memoryUsage as { used?: number; total?: number; limit?: number };
+      if (hasMemoryUsage)
+        metrics.memoryUsage = perf.memoryUsage as {
+          used?: number;
+          total?: number;
+          limit?: number;
+        };
       return {
         ...baseReport,
-        performanceMetrics: metrics
+        performanceMetrics: metrics,
       };
     }
     return baseReport;
@@ -161,20 +181,29 @@ export class ProductionErrorMonitor {
 
     const timing = performance.timing;
     const loadTime = timing.loadEventEnd - timing.navigationStart;
-    const perfWithMemory = performance as Performance & { memory?: { usedJSHeapSize: number; totalJSHeapSize: number; jsHeapSizeLimit: number } };
-    let memoryUsage: { used?: number; total?: number; limit?: number } | undefined = undefined;
+    const perfWithMemory = performance as Performance & {
+      memory?: {
+        usedJSHeapSize: number;
+        totalJSHeapSize: number;
+        jsHeapSizeLimit: number;
+      };
+    };
+    let memoryUsage:
+      | { used?: number; total?: number; limit?: number }
+      | undefined = undefined;
     if (perfWithMemory.memory) {
       memoryUsage = {
         used: perfWithMemory.memory.usedJSHeapSize,
         total: perfWithMemory.memory.totalJSHeapSize,
-        limit: perfWithMemory.memory.jsHeapSizeLimit
+        limit: perfWithMemory.memory.jsHeapSizeLimit,
       };
     } else {
       memoryUsage = undefined;
     }
     return {
-      loadTime: typeof loadTime === 'number' && !isNaN(loadTime) ? loadTime : undefined,
-      memoryUsage
+      loadTime:
+        typeof loadTime === 'number' && !isNaN(loadTime) ? loadTime : undefined,
+      memoryUsage,
     };
   }
 
@@ -192,11 +221,13 @@ export class ProductionErrorMonitor {
           text: `🚨 Production Error Alert: ${errorReport.error.message}`,
           url: errorReport.url,
           sessionId: errorReport.sessionId,
-          timestamp: errorReport.timestamp
-        })
+          timestamp: errorReport.timestamp,
+        }),
       });
     } catch (_webhookError) {
-      logErrorToProduction('Failed to send error to webhook:', { data: webhookError });
+      logErrorToProduction('Failed to send error to webhook:', {
+        data: webhookError,
+      });
     }
   }
 
@@ -209,7 +240,10 @@ export class ProductionErrorMonitor {
 export const errorMonitor = ProductionErrorMonitor.getInstance();
 
 // Convenience functions
-export const reportError = (error: Error | unknown, context?: Record<string, unknown>) => {
+export const reportError = (
+  error: Error | unknown,
+  context?: Record<string, unknown>,
+) => {
   errorMonitor.reportError(error, context);
 };
 
@@ -219,4 +253,4 @@ export const setUserId = (_userId: string) => {
 
 export const captureMessage = () => {
   errorMonitor.captureMessage();
-}; 
+};

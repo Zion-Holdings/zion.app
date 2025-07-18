@@ -21,7 +21,9 @@ export function OrderTimeline({ events }: Props) {
               {new Date(ev.timestamp).toLocaleString()}
             </p>
             {ev.status_details && (
-              <p className="text-sm text-muted-foreground">{ev.status_details}</p>
+              <p className="text-sm text-muted-foreground">
+                {ev.status_details}
+              </p>
             )}
           </div>
         </li>

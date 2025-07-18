@@ -1,9 +1,13 @@
-
-import React from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { HireRequestForm } from "./HireRequestForm";
-import type { TalentProfile } from "@/types/talent";
-import type { UserProfile } from "@/types/auth";
+import React from 'react';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
+import { HireRequestForm } from './HireRequestForm';
+import type { TalentProfile } from '@/types/talent';
+import type { UserProfile } from '@/types/auth';
 
 interface HireRequestModalProps {
   talent: TalentProfile | null;
@@ -12,7 +16,12 @@ interface HireRequestModalProps {
   userDetails?: UserProfile;
 }
 
-export function HireRequestModal({ talent, isOpen, onClose, userDetails }: HireRequestModalProps) {
+export function HireRequestModal({
+  talent,
+  isOpen,
+  onClose,
+  userDetails,
+}: HireRequestModalProps) {
   const handleClose = () => {
     onClose();
   };
@@ -27,11 +36,19 @@ export function HireRequestModal({ talent, isOpen, onClose, userDetails }: HireR
             Hire {talent.full_name}
           </DialogTitle>
         </DialogHeader>
-        
-        <HireRequestForm 
+
+        <HireRequestForm
           talent={talent}
           onClose={handleClose}
-          {...(userDetails ? { userDetails: { name: userDetails.name, email: userDetails.email, id: userDetails.id } } : {})}
+          {...(userDetails
+            ? {
+                userDetails: {
+                  name: userDetails.name,
+                  email: userDetails.email,
+                  id: userDetails.id,
+                },
+              }
+            : {})}
         />
       </DialogContent>
     </Dialog>

@@ -1,21 +1,18 @@
-
-import { useState } from "react";
+import { useState } from 'react';
 import { Mail } from '@/components/ui/icons';
-import { GradientHeading } from "@/components/GradientHeading";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { toast } from "@/components/ui/use-toast";
-import z from "zod";
-
-
+import { GradientHeading } from '@/components/GradientHeading';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { toast } from '@/components/ui/use-toast';
+import z from 'zod';
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -27,7 +24,7 @@ export function ContactSection() {
   }>({});
 
   const handleChange = (
-    _e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    _e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -38,10 +35,10 @@ export function ContactSection() {
     e.preventDefault();
 
     const schema = z.object({
-      name: z.string().min(2, "Name is required"),
-      email: z.string().email("Enter a valid email"),
-      subject: z.string().min(2, "Subject is required"),
-      message: z.string().min(10, "Message must be at least 10 characters"),
+      name: z.string().min(2, 'Name is required'),
+      email: z.string().email('Enter a valid email'),
+      subject: z.string().min(2, 'Subject is required'),
+      message: z.string().min(10, 'Message must be at least 10 characters'),
     });
 
     const result = schema.safeParse(formData);
@@ -54,9 +51,11 @@ export function ContactSection() {
       }
       setErrors(fieldErrors);
       toast({
-        title: "Form Validation Error",
-        description: result.error.issues[0]?.message || "Please check your form and try again",
-        variant: "destructive",
+        title: 'Form Validation Error',
+        description:
+          result.error.issues[0]?.message ||
+          'Please check your form and try again',
+        variant: 'destructive',
       });
       return;
     }
@@ -64,31 +63,32 @@ export function ContactSection() {
     setErrors({});
     setIsSubmitting(true);
 
-    fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
     })
       .then(async (res) => {
         setIsSubmitting(false);
         if (!res.ok) {
           const data = await res.json().catch(() => ({}));
-          throw new Error(data.error || "Failed to send message");
+          throw new Error(data.error || 'Failed to send message');
         }
         toast({
-          title: "Message Sent",
-          description: "We've received your message and will get back to you soon.",
+          title: 'Message Sent',
+          description:
+            "We've received your message and will get back to you soon.",
         });
         setSubmitted(true);
         setTimeout(() => setSubmitted(false), 2000);
-        setFormData({ name: "", email: "", subject: "", message: "" });
+        setFormData({ name: '', email: '', subject: '', message: '' });
       })
       .catch((err) => {
         setIsSubmitting(false);
         toast({
-          title: "Submission Error",
+          title: 'Submission Error',
           description: err.message,
-          variant: "destructive",
+          variant: 'destructive',
         });
       });
   };
@@ -100,7 +100,8 @@ export function ContactSection() {
           <div>
             <GradientHeading>Get In Touch</GradientHeading>
             <p className="mt-4 text-zion-slate-light text-xl mb-8">
-              We have the equipment, the parts, and the maintenance services ready for you — right now. Contact us today.
+              We have the equipment, the parts, and the maintenance services
+              ready for you — right now. Contact us today.
             </p>
             <div className="flex items-center mb-6">
               <div className="mr-4 p-2 bg-zion-purple/20 rounded-full text-zion-cyan">
@@ -108,7 +109,10 @@ export function ContactSection() {
               </div>
               <div>
                 <p className="text-white font-semibold">Email Us</p>
-                <a href="mailto:commercial@ziontechgroup.com" className="text-zion-cyan hover:text-zion-purple transition-colors">
+                <a
+                  href="mailto:commercial@ziontechgroup.com"
+                  className="text-zion-cyan hover:text-zion-purple transition-colors"
+                >
                   commercial@ziontechgroup.com
                 </a>
               </div>
@@ -120,11 +124,16 @@ export function ContactSection() {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 rounded-lg filter blur-3xl opacity-30"></div>
             <div className="relative bg-zion-blue-light border border-zion-purple/20 rounded-lg p-8">
-              <h3 className="text-xl font-bold mb-6 text-white">Send Us a Message</h3>
+              <h3 className="text-xl font-bold mb-6 text-white">
+                Send Us a Message
+              </h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-zion-slate-light mb-1">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-zion-slate-light mb-1"
+                    >
                       Name
                     </label>
                     <Input
@@ -140,7 +149,10 @@ export function ContactSection() {
                     )}
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-zion-slate-light mb-1">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-zion-slate-light mb-1"
+                    >
                       Email
                     </label>
                     <Input
@@ -153,12 +165,17 @@ export function ContactSection() {
                       required
                     />
                     {errors.email && (
-                      <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+                      <p className="mt-1 text-sm text-red-500">
+                        {errors.email}
+                      </p>
                     )}
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-zion-slate-light mb-1">
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-medium text-zion-slate-light mb-1"
+                  >
                     Subject
                   </label>
                   <Input
@@ -170,11 +187,16 @@ export function ContactSection() {
                     required
                   />
                   {errors.subject && (
-                    <p className="mt-1 text-sm text-red-500">{errors.subject}</p>
+                    <p className="mt-1 text-sm text-red-500">
+                      {errors.subject}
+                    </p>
                   )}
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-zion-slate-light mb-1">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-zion-slate-light mb-1"
+                  >
                     Message
                   </label>
                   <Textarea
@@ -187,7 +209,9 @@ export function ContactSection() {
                     required
                   />
                   {errors.message && (
-                    <p className="mt-1 text-sm text-red-500">{errors.message}</p>
+                    <p className="mt-1 text-sm text-red-500">
+                      {errors.message}
+                    </p>
                   )}
                 </div>
                 <div>
@@ -199,7 +223,9 @@ export function ContactSection() {
                     {isSubmitting ? 'Sending...' : 'Send Message'}
                   </Button>
                   {submitted && (
-                    <p className="text-green-500 text-center mt-2">Thank you! We'll be in touch.</p>
+                    <p className="text-green-500 text-center mt-2">
+                      Thank you! We'll be in touch.
+                    </p>
                   )}
                 </div>
               </form>

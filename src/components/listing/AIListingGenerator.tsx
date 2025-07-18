@@ -1,14 +1,13 @@
-import React, { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import React, { useState } from 'react';
+import { useToast } from '@/hooks/use-toast';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Sparkles } from 'lucide-react';
 
-import { supabase } from "@/integrations/supabase/client";
-import { AIListingForm } from "./AIListingForm";
-import { GeneratedContentDisplay } from "./GeneratedContentDisplay";
-import { LoadingContentSkeleton } from "./LoadingContentSkeleton";
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { supabase } from '@/integrations/supabase/client';
+import { AIListingForm } from './AIListingForm';
+import { GeneratedContentDisplay } from './GeneratedContentDisplay';
+import { LoadingContentSkeleton } from './LoadingContentSkeleton';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 interface GeneratedContent {
   description: string;
@@ -30,52 +29,69 @@ interface AIListingGeneratorProps {
   };
 }
 
-export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIListingGeneratorProps) {
+export function AIListingGenerator({
+  onApplyGenerated,
+  initialValues = {},
+}: AIListingGeneratorProps) {
   const { _toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
   const [aiResponse, setAiResponse] = useState<GeneratedContent | null>(null);
 
   const handleGenerate = async (values: Record<string, unknown>) => {
     setIsLoading(true);
-    
+
     try {
       if (!supabase) {
         throw new Error('Supabase client not available');
       }
-      
-      const { data, error } = await supabase.functions.invoke('ai-listing-generator', {
-        body: {
-          title: values.title ?? initialValues.title ?? '',
-          category: values.category ?? initialValues.category ?? '',
-          keyFeatures: values.keyFeatures ?? initialValues.keyFeatures ?? '',
-          targetAudience: values.targetAudience ?? initialValues.targetAudience ?? ''
-        }
-      });
+
+      const { data, error } = await supabase.functions.invoke(
+        'ai-listing-generator',
+        {
+          body: {
+            title: values.title ?? initialValues.title ?? '',
+            category: values.category ?? initialValues.category ?? '',
+            keyFeatures: values.keyFeatures ?? initialValues.keyFeatures ?? '',
+            targetAudience:
+              values.targetAudience ?? initialValues.targetAudience ?? '',
+          },
+        },
+      );
 
       if (error) {
         throw new Error(error.message);
       }
-      
+
       if (data && typeof data === 'object' && 'error' in data) {
         throw new Error((data as { error?: string }).error || 'Unknown error');
       }
 
       // Validate data shape before casting
-      if (data && typeof data === 'object' && 'description' in data && 'tags' in data && 'suggestedPrice' in data && 'keyPoints' in data) {
+      if (
+        data &&
+        typeof data === 'object' &&
+        'description' in data &&
+        'tags' in data &&
+        'suggestedPrice' in data &&
+        'keyPoints' in data
+      ) {
         setAiResponse(data as GeneratedContent);
       } else {
         throw new Error('Invalid AI response format');
       }
       toast({
-        title: "Content Generated",
-        description: "AI has created optimized listing content for you."
+        title: 'Content Generated',
+        description: 'AI has created optimized listing content for you.',
       });
     } catch {
       logErrorToProduction('Error generating content:', { data: error });
       toast({
-        title: "Generation Failed",
-        description: error instanceof Error ? error.message : "Failed to generate content. Please try again.",
-        variant: "destructive"
+        title: 'Generation Failed',
+        description:
+          error instanceof Error
+            ? error.message
+            : 'Failed to generate content. Please try again.',
+        variant: 'destructive',
       });
     } finally {
       setIsLoading(false);
@@ -86,8 +102,8 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
     if (aiResponse && onApplyGenerated) {
       onApplyGenerated(aiResponse);
       toast({
-        title: "Content Applied",
-        description: "The generated content has been applied to your listing."
+        title: 'Content Applied',
+        description: 'The generated content has been applied to your listing.',
       });
     }
   };
@@ -101,13 +117,14 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
             AI Listing Optimizer
           </CardTitle>
           <p className="text-sm text-zion-slate-light">
-            Provide basic information and let AI generate optimized, SEO-friendly content for your listing
+            Provide basic information and let AI generate optimized,
+            SEO-friendly content for your listing
           </p>
         </CardHeader>
         <CardContent>
-          <AIListingForm 
-            onSubmit={handleGenerate} 
-            isLoading={isLoading} 
+          <AIListingForm
+            onSubmit={handleGenerate}
+            isLoading={isLoading}
             initialValues={initialValues}
           />
         </CardContent>

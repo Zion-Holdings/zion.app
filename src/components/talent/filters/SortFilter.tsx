@@ -1,12 +1,11 @@
-
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import type { SortFilterProps } from "@/types/filters";
+} from '@/components/ui/select';
+import type { SortFilterProps } from '@/types/filters';
 
 export function SortFilter({ sortOption, setSortOption }: SortFilterProps) {
   return (

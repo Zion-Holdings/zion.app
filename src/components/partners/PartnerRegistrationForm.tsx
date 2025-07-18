@@ -1,31 +1,61 @@
-import { useState } from "react";
-import { z } from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
-import { toast } from "@/hooks/use-toast";
-import { useAuth } from "@/hooks/useAuth";
-import { supabase } from "@/integrations/supabase/client";
-import {logErrorToProduction} from '@/utils/productionLogger';
-import type { ControllerRenderProps } from "react-hook-form";
-
+import { useState } from 'react';
+import { z } from 'zod';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import { Textarea } from '@/components/ui/textarea';
+import { toast } from '@/hooks/use-toast';
+import { useAuth } from '@/hooks/useAuth';
+import { supabase } from '@/integrations/supabase/client';
+import { logErrorToProduction } from '@/utils/productionLogger';
+import type { ControllerRenderProps } from 'react-hook-form';
 
 const partnerFormSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  website: z.string().url({ message: "Please enter a valid URL." }).optional().or(z.literal("")),
+  name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
+  website: z
+    .string()
+    .url({ message: 'Please enter a valid URL.' })
+    .optional()
+    .or(z.literal('')),
   twitter: z.string().optional(),
   instagram: z.string().optional(),
   youtube: z.string().optional(),
   linkedin: z.string().optional(),
-  niche: z.string().min(2, { message: "Please specify your niche." }),
-  audience_size: z.string().nonempty({ message: "Please select your audience size." }),
-  payout_method: z.string().nonempty({ message: "Please select a payout method." }),
-  bio: z.string().min(10, { message: "Bio must be at least 10 characters." }).max(500),
+  niche: z.string().min(2, { message: 'Please specify your niche.' }),
+  audience_size: z
+    .string()
+    .nonempty({ message: 'Please select your audience size.' }),
+  payout_method: z
+    .string()
+    .nonempty({ message: 'Please select a payout method.' }),
+  bio: z
+    .string()
+    .min(10, { message: 'Bio must be at least 10 characters.' })
+    .max(500),
 });
 
 type PartnerFormValues = z.infer<typeof partnerFormSchema>;
@@ -37,16 +67,16 @@ export function PartnerRegistrationForm() {
   const form = useForm<PartnerFormValues>({
     resolver: zodResolver(partnerFormSchema),
     defaultValues: {
-      name: "",
-      website: "",
-      twitter: "",
-      instagram: "",
-      youtube: "",
-      linkedin: "",
-      niche: "",
-      audience_size: "",
-      payout_method: "paypal",
-      bio: "",
+      name: '',
+      website: '',
+      twitter: '',
+      instagram: '',
+      youtube: '',
+      linkedin: '',
+      niche: '',
+      audience_size: '',
+      payout_method: 'paypal',
+      bio: '',
     },
   });
 
@@ -54,7 +84,7 @@ export function PartnerRegistrationForm() {
     if (!supabase) {
       throw new Error('Supabase client not available');
     }
-    
+
     const { data: existingPartner } = await supabase
       .from('partner_profiles')
       .select('id')
@@ -63,9 +93,9 @@ export function PartnerRegistrationForm() {
 
     if (existingPartner) {
       toast({
-        title: "Already registered",
-        description: "You have already registered as a partner.",
-        variant: "destructive",
+        title: 'Already registered',
+        description: 'You have already registered as a partner.',
+        variant: 'destructive',
       });
       setIsSubmitting(false);
       return true;
@@ -76,18 +106,19 @@ export function PartnerRegistrationForm() {
   async function onSubmit(data: PartnerFormValues) {
     if (!user) {
       toast({
-        title: "Authentication required",
-        description: "You must be logged in to register as a partner.",
-        variant: "destructive",
+        title: 'Authentication required',
+        description: 'You must be logged in to register as a partner.',
+        variant: 'destructive',
       });
       return;
     }
 
     if (!supabase) {
       toast({
-        title: "Database connection error",
-        description: "Unable to connect to the database. Please try again later.",
-        variant: "destructive",
+        title: 'Database connection error',
+        description:
+          'Unable to connect to the database. Please try again later.',
+        variant: 'destructive',
       });
       return;
     }
@@ -117,16 +148,16 @@ export function PartnerRegistrationForm() {
             payout_method: data.payout_method,
             bio: data.bio,
             status: 'pending', // Partners need approval
-          }
+          },
         ])
         .select();
 
       if (error) throw error;
 
       toast({
-        title: "Application submitted!",
-        description: "Your partner application has been submitted for review.",
-        variant: "default",
+        title: 'Application submitted!',
+        description: 'Your partner application has been submitted for review.',
+        variant: 'default',
       });
 
       // Create a referral code if they don't have one already
@@ -139,21 +170,25 @@ export function PartnerRegistrationForm() {
       if (!existingCode) {
         await supabase.rpc('generate_referral_code', { user_id: user.id });
       }
-
     } catch (error: unknown) {
       if (error instanceof Error) {
-        logErrorToProduction('Error submitting partner application:', { data: error });
+        logErrorToProduction('Error submitting partner application:', {
+          data: error,
+        });
         toast({
-          title: "Submission failed",
-          description: error.message || "There was a problem submitting your application.",
-          variant: "destructive",
+          title: 'Submission failed',
+          description:
+            error.message || 'There was a problem submitting your application.',
+          variant: 'destructive',
         });
       } else {
-        logErrorToProduction('Error submitting partner application:', { data: error });
+        logErrorToProduction('Error submitting partner application:', {
+          data: error,
+        });
         toast({
-          title: "Submission failed",
-          description: "There was a problem submitting your application.",
-          variant: "destructive",
+          title: 'Submission failed',
+          description: 'There was a problem submitting your application.',
+          variant: 'destructive',
         });
       }
     } finally {
@@ -165,7 +200,9 @@ export function PartnerRegistrationForm() {
     <Card className="bg-zion-blue-dark border-zion-blue-light">
       <CardHeader>
         <CardTitle>Partner Registration</CardTitle>
-        <CardDescription>Register to become a Zion AI partner and start earning rewards</CardDescription>
+        <CardDescription>
+          Register to become a Zion AI partner and start earning rewards
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
@@ -174,7 +211,11 @@ export function PartnerRegistrationForm() {
               <FormField
                 control={form.control}
                 name="name"
-                render={({ field }: { field: ControllerRenderProps<PartnerFormValues, 'name'> }) => (
+                render={({
+                  field,
+                }: {
+                  field: ControllerRenderProps<PartnerFormValues, 'name'>;
+                }) => (
                   <FormItem>
                     <FormLabel>Name / Brand</FormLabel>
                     <FormControl>
@@ -188,7 +229,11 @@ export function PartnerRegistrationForm() {
               <FormField
                 control={form.control}
                 name="website"
-                render={({ field }: { field: ControllerRenderProps<PartnerFormValues, 'website'> }) => (
+                render={({
+                  field,
+                }: {
+                  field: ControllerRenderProps<PartnerFormValues, 'website'>;
+                }) => (
                   <FormItem>
                     <FormLabel>Website (Optional)</FormLabel>
                     <FormControl>
@@ -203,7 +248,11 @@ export function PartnerRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="twitter"
-                  render={({ field }: { field: ControllerRenderProps<PartnerFormValues, 'twitter'> }) => (
+                  render={({
+                    field,
+                  }: {
+                    field: ControllerRenderProps<PartnerFormValues, 'twitter'>;
+                  }) => (
                     <FormItem>
                       <FormLabel>Twitter (Optional)</FormLabel>
                       <FormControl>
@@ -213,11 +262,18 @@ export function PartnerRegistrationForm() {
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="instagram"
-                  render={({ field }: { field: ControllerRenderProps<PartnerFormValues, 'instagram'> }) => (
+                  render={({
+                    field,
+                  }: {
+                    field: ControllerRenderProps<
+                      PartnerFormValues,
+                      'instagram'
+                    >;
+                  }) => (
                     <FormItem>
                       <FormLabel>Instagram (Optional)</FormLabel>
                       <FormControl>
@@ -233,7 +289,11 @@ export function PartnerRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="youtube"
-                  render={({ field }: { field: ControllerRenderProps<PartnerFormValues, 'youtube'> }) => (
+                  render={({
+                    field,
+                  }: {
+                    field: ControllerRenderProps<PartnerFormValues, 'youtube'>;
+                  }) => (
                     <FormItem>
                       <FormLabel>YouTube (Optional)</FormLabel>
                       <FormControl>
@@ -243,15 +303,22 @@ export function PartnerRegistrationForm() {
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="linkedin"
-                  render={({ field }: { field: ControllerRenderProps<PartnerFormValues, 'linkedin'> }) => (
+                  render={({
+                    field,
+                  }: {
+                    field: ControllerRenderProps<PartnerFormValues, 'linkedin'>;
+                  }) => (
                     <FormItem>
                       <FormLabel>LinkedIn (Optional)</FormLabel>
                       <FormControl>
-                        <Input placeholder="Profile URL or username" {...field} />
+                        <Input
+                          placeholder="Profile URL or username"
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -262,11 +329,18 @@ export function PartnerRegistrationForm() {
               <FormField
                 control={form.control}
                 name="niche"
-                render={({ field }: { field: ControllerRenderProps<PartnerFormValues, 'niche'> }) => (
+                render={({
+                  field,
+                }: {
+                  field: ControllerRenderProps<PartnerFormValues, 'niche'>;
+                }) => (
                   <FormItem>
                     <FormLabel>Your Niche</FormLabel>
                     <FormControl>
-                      <Input placeholder="AI development, machine learning, tech tutorials, etc." {...field} />
+                      <Input
+                        placeholder="AI development, machine learning, tech tutorials, etc."
+                        {...field}
+                      />
                     </FormControl>
                     <FormDescription>
                       What topics do you focus on in your content?
@@ -280,10 +354,20 @@ export function PartnerRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="audience_size"
-                  render={({ field }: { field: ControllerRenderProps<PartnerFormValues, 'audience_size'> }) => (
+                  render={({
+                    field,
+                  }: {
+                    field: ControllerRenderProps<
+                      PartnerFormValues,
+                      'audience_size'
+                    >;
+                  }) => (
                     <FormItem>
                       <FormLabel>Audience Size</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <Select
+                        onValueChange={field.onChange}
+                        defaultValue={field.value}
+                      >
                         <FormControl>
                           <SelectTrigger>
                             <SelectValue placeholder="Select audience size" />
@@ -292,8 +376,12 @@ export function PartnerRegistrationForm() {
                         <SelectContent>
                           <SelectItem value="under1k">Under 1,000</SelectItem>
                           <SelectItem value="1k-10k">1,000 - 10,000</SelectItem>
-                          <SelectItem value="10k-50k">10,000 - 50,000</SelectItem>
-                          <SelectItem value="50k-100k">50,000 - 100,000</SelectItem>
+                          <SelectItem value="10k-50k">
+                            10,000 - 50,000
+                          </SelectItem>
+                          <SelectItem value="50k-100k">
+                            50,000 - 100,000
+                          </SelectItem>
                           <SelectItem value="over100k">Over 100,000</SelectItem>
                         </SelectContent>
                       </Select>
@@ -301,14 +389,24 @@ export function PartnerRegistrationForm() {
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="payout_method"
-                  render={({ field }: { field: ControllerRenderProps<PartnerFormValues, 'payout_method'> }) => (
+                  render={({
+                    field,
+                  }: {
+                    field: ControllerRenderProps<
+                      PartnerFormValues,
+                      'payout_method'
+                    >;
+                  }) => (
                     <FormItem>
                       <FormLabel>Preferred Payout Method</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <Select
+                        onValueChange={field.onChange}
+                        defaultValue={field.value}
+                      >
                         <FormControl>
                           <SelectTrigger>
                             <SelectValue placeholder="Select payout method" />
@@ -318,7 +416,9 @@ export function PartnerRegistrationForm() {
                           <SelectItem value="paypal">PayPal</SelectItem>
                           <SelectItem value="bank">Bank Transfer</SelectItem>
                           <SelectItem value="crypto">Cryptocurrency</SelectItem>
-                          <SelectItem value="platform_credit">Platform Credit</SelectItem>
+                          <SelectItem value="platform_credit">
+                            Platform Credit
+                          </SelectItem>
                         </SelectContent>
                       </Select>
                       <FormMessage />
@@ -330,31 +430,33 @@ export function PartnerRegistrationForm() {
               <FormField
                 control={form.control}
                 name="bio"
-                render={({ field }: { field: ControllerRenderProps<PartnerFormValues, 'bio'> }) => (
+                render={({
+                  field,
+                }: {
+                  field: ControllerRenderProps<PartnerFormValues, 'bio'>;
+                }) => (
                   <FormItem>
                     <FormLabel>Bio</FormLabel>
                     <FormControl>
-                      <Textarea 
+                      <Textarea
                         placeholder="Tell us about yourself and how you plan to promote Zion AI"
-                        rows={4} 
-                        {...field} 
+                        rows={4}
+                        {...field}
                       />
                     </FormControl>
-                    <FormDescription>
-                      Limit: 500 characters
-                    </FormDescription>
+                    <FormDescription>Limit: 500 characters</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
               />
             </div>
 
-            <Button 
-              type="submit" 
+            <Button
+              type="submit"
               className="w-full bg-zion-purple hover:bg-zion-purple-dark"
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Submitting..." : "Submit Application"}
+              {isSubmitting ? 'Submitting...' : 'Submit Application'}
             </Button>
           </form>
         </Form>

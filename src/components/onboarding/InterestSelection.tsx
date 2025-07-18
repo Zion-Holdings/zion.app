@@ -11,10 +11,10 @@ export function InterestSelection({ onComplete }: InterestSelectionProps) {
   const [selected, setSelected] = useState<string[]>([]);
 
   const toggle = (_interest: string) => {
-    setSelected(prev =>
+    setSelected((prev) =>
       prev.includes(interest)
-        ? prev.filter(i => i !== interest)
-        : [...prev, interest]
+        ? prev.filter((i) => i !== interest)
+        : [...prev, interest],
     );
   };
 
@@ -28,7 +28,10 @@ export function InterestSelection({ onComplete }: InterestSelectionProps) {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {INTERESTS.map((interest) => (
-          <label key={interest} className="flex items-center space-x-2 text-white">
+          <label
+            key={interest}
+            className="flex items-center space-x-2 text-white"
+          >
             <Checkbox
               checked={selected.includes(interest)}
               onCheckedChange={() => toggle(interest)}
