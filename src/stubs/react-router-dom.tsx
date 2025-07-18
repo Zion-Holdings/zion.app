@@ -33,13 +33,7 @@ export const Routes = ({ children }: { children: React.ReactNode }) => {
   return <>{children}</>;
 };
 
-export const Route = ({
-  path,
-  element,
-}: {
-  path: string;
-  element: React.ReactNode;
-}) => {
+export const Route = ({ path, element }: { path: string; element: React.ReactNode }) => {
   return <>{element}</>;
 };
 
@@ -47,34 +41,10 @@ export const MemoryRouter = ({ children }: { children: React.ReactNode }) => {
   return <>{children}</>;
 };
 
-export const Link = ({
-  to,
-  children,
-  ...props
-}: {
-  to: string;
-  children: React.ReactNode;
-  [key: string]: any;
-}) => {
-  return (
-    <a href={to} {...props}>
-      {children}
-    </a>
-  );
+export const Link = ({ to, children, ...props }: { to: string; children: React.ReactNode; [key: string]: any }) => {
+  return <a href={to} {...props}>{children}</a>;
 };
 
-export const NavLink = ({
-  to,
-  children,
-  ...props
-}: {
-  to: string;
-  children: React.ReactNode;
-  [key: string]: any;
-}) => {
-  return (
-    <a href={to} {...props}>
-      {children}
-    </a>
-  );
+export const NavLink = ({ to, children, ...props }: { to: string; children: React.ReactNode; [key: string]: any }) => {
+  return <a href={to} {...props}>{children}</a>;
 };
