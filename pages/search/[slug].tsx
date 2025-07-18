@@ -215,7 +215,7 @@ function offlineSearch(
 export default function SearchResultsPage({
   initialResults,
   query,
-  slug,
+  slug: _slug,
   totalCount,
 }: SearchResultsPageProps) {
   const router = useRouter();
