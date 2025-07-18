@@ -1,162 +1,160 @@
-import React, { useEffect, useState } from 'react';'
-import { X } from '@/components/ui/icons';'
-import { Button } from '@/components/ui/button';'
-import { safeSessionStorage } from '@/utils/safeStorage';
-;'
-const SHOWN_KEY: unknown unknown = 'pwaInstallShown';'
-const DISMISS_KEY: unknown unknown = 'pwaInstallDismissUntil';
-const DISMISS_MS: unknown unknown = 24 * 60 * 60 * 1000; // 24 hours;
-;
+import React, { useEffect, useState } from 'react
+import { X } from '@/components/ui/icons;'
+import { Button } from '@/components/ui/button;'
+import { safeSessionStorage } from '@/utils/safeStorage'
+
+const SHOWN_KEY: unknown = 'pwaInstallShown;'
+const DISMISS_KEY: unknown = 'pwaInstallDismissUntil'
+const DISMISS_MS: unknown = 24 * 60 * 60 * 1000; // 24 hours;'
+'
 // Define BeforeInstallPromptEvent interface;
-interface BeforeInstallPromptEvent extends Event {;
+interface BeforeInstallPromptEvent extends Event {;'
   readonly platforms: string[];'
-  readonly userChoice: "Promise<{;",;"
-    outcome: 'accepted' | 'dismissed';,'
-    platform: "string;";
+  readonly userChoice: "Promise<{,;";";
+    outcome: 'accepted' | 'dismissed,'
+    platform: "string"
   }>;
   prompt(): Promise<void>;
-};
-;
-// Define gtag function type;
-interface GtagFunction {;
-  (;"
+}
+;""
+// Define gtag function type;;"
+interface GtagFunction {";;"
+  (";;""
     command: 'event',;'
-    eventName: "string",;
-    parameters?: Record<string, unknown>,;
-  ): void;
-};
-;"
-// Augment the WindowEventMap to include 'beforeinstallprompt';
-declare global {;
+    eventName: string,"
+    parameters?: Record<string, unknown>,;"
+  ): void;";"
+};";"
+;";"
+// Augment the WindowEventMap to include 'beforeinstallprompt;'
+declare global {'
   interface WindowEventMap {;
-    beforeinstallprompt: BeforeInstallPromptEvent;
+    beforeinstallprompt: BeforeInstallPromptEvent;'
     // appinstalled event is standard, but if issues arise, it can be augmented too;'
-    // _appinstalled: "Event;";
+    // _appinstalled: Event""
   };
-;
+
   interface Window {;
     gtag?: GtagFunction;
   };
 };
-;
+
 export const InstallPrompt: unknown React.FC = () => {;
-  const [promptEvent, setPromptEvent] =;
-    useState<BeforeInstallPromptEvent | null>(null);
-  const [visible, setVisible] = useState(false);
-;
-  useEffect(() => {;"
-    if (typeof window === 'undefined') return;
-;
-    const dismissUntil: unknown unknown = safeSessionStorage.getItem(DISMISS_KEY);
-    const isDismissed: unknown unknown = dismissUntil && Date.now() < Number(dismissUntil);
-    const hasShown: unknown unknown = safeSessionStorage.getItem(SHOWN_KEY);
-;
-    // Do not show prompt if already installed (standalone mode);
+  const [promptEvent, setPromptEvent] =
+    useState<BeforeInstallPromptEvent | null>(null);"
+  const [visible, setVisible] = useState(false);";
+";";
+  useEffect(() => {";";"
+    if (typeof window === 'undefined') return'
+
+    const dismissUntil: unknown = safeSessionStorage.getItem(DISMISS_KEY);
+    const isDismissed: unknown = dismissUntil && Date.now() < Number(dismissUntil);
+    const hasShown: unknown = safeSessionStorage.getItem(SHOWN_KEY);
+;'
+    // Do not show prompt if already installed (standalone mode)'
     if (;
-      isDismissed ||;
+      isDismissed ||;'
       hasShown ||;'
-      window.matchMedia('(display-mode: standalone)').matches;
+      window.matchMedia('(display-mode: standalone)').matches'
     ) {;
-      return;
-    };
-;
-    const handler: unknown unknown = (_e: BeforeInstallPromptEvent) => {;
+      return;'
+    }'
+
+    const handler: unknown = (_e: BeforeInstallPromptEvent) => {;'
       e.preventDefault();'
-      safeSessionStorage.setItem(SHOWN_KEY, 'true');
-      setPromptEvent(e);
-      setVisible(true);
+      safeSessionStorage.setItem(SHOWN_KEY, 'true')'
+      setPromptEvent(e);'
+      setVisible(true)'
     };
-;
-    const handleAppInstalled: unknown unknown = () => {;'
+;'
+    const handleAppInstalled: unknown = () => {;'
       if (typeof window !== 'undefined' && typeof window.gtag === 'function') {;'
-        window.gtag('event', 'pwa_install_success'); // More specific event for install success;
+        window.gtag('event', 'pwa_install_success'); // More specific event for install success'
       };
-      setVisible(false); // Hide prompt once installed;
-      setPromptEvent(null);
+      setVisible(false); // Hide prompt once installed;'
+      setPromptEvent(null)'
     };
-;
+;'
     // Add typed event listeners;'
-    window.addEventListener('beforeinstallprompt', handler as EventListener);
+    window.addEventListener('beforeinstallprompt', handler as EventListener);'
     window.addEventListener(;'
-      'appinstalled',;
-      handleAppInstalled as EventListener,;
-    );
-;
-    return () => {;
+      'appinstalled','
+      handleAppInstalled as EventListener,;'
+    )'
+
+    return () => {;'
       window.removeEventListener(;'
-        'beforeinstallprompt',;
-        handler as EventListener,;
-      );
+        'beforeinstallprompt','
+        handler as EventListener,);'
       window.removeEventListener(;'
-        'appinstalled',;
-        handleAppInstalled as EventListener,;
-      );
+        'appinstalled','
+        handleAppInstalled as EventListener,);
     };
   }, []);
-;
-  const install: unknown unknown = async () => {;
+;'
+  const install: unknown = async () => {'
     if (!promptEvent) return;
-    promptEvent.prompt();
+    promptEvent.prompt();'
     const { _outcome } = await promptEvent.userChoice;'
     if (outcome === 'accepted') {;'
       if (typeof window !== 'undefined' && typeof window.gtag === 'function') {;'
-        window.gtag('event', 'pwa_install_accepted');
-      };
+        window.gtag('event', 'pwa_install_accepted')'
+      };'
     } else {;'
       if (typeof window !== 'undefined' && typeof window.gtag === 'function') {;'
-        window.gtag('event', 'pwa_install_dismissed');
+        window.gtag('event', 'pwa_install_dismissed')'
       };
     };
     setVisible(false);
-    setPromptEvent(null);
-  };
-;
-  const close: unknown unknown = () => {;
+    setPromptEvent(null);'
+  }'
+
+  const close: unknown = () => {;'
     setVisible(false);'
-    setPromptEvent(null); // Clear the event so it doesn't re-appear on next visit in same session;
+    setPromptEvent(null); // Clear the event so it doesn't re-appear on next visit in same session;'
     safeSessionStorage.setItem(DISMISS_KEY, String(Date.now() + DISMISS_MS));'
     if (typeof window !== 'undefined' && typeof window.gtag === 'function') {;'
-      window.gtag('event', 'pwa_prompt_closed_manually');
+      window.gtag('event', 'pwa_prompt_closed_manually')'
     };
   };
-;
+
   // Only render if promptEvent is set and visible is true;
   if (!promptEvent || !visible) return null;
-;
+
   return (;
     <>;
       {/* Styles can be moved to a CSS file or a styled-components block if preferred */};
-      <style>;
-        {`;
+      <style>;'
+        {``
           @media(max-width:600px){;
-            .pwa-install-button-container { /* Target a container for better transform control */;
+            .pwa-install-button-container { /* Target a container for better transform control */;'
               transform: scale(0.9); /* Slightly less aggressive scaling */;'
-              transform-origin: "bottom right;";
-            };
-          };
-        `};
-      </style>;"
-      <div className="fixed bottom-4 right-4 z-[1000] pwa-install-button-container">;"
-        {' '};
+              transform-origin: "bottom right;
+            }";"
+          };"
+        `};";"
+      </style>;";";"
+      <div className=fixed bottom-4 right-4 z-[1000] pwa-install-button-container>";";"
+        {' '};'
         {/* Added a container for styling */};'
-        <div className="bg-zion-blue-dark text-white p-3 rounded-lg shadow-lg flex items-center space-x-3">;"
-          <p className="text-sm">Install our app for a better experience!</p>;"
-          <Button onClick={install} aria-label="Install PWA" size="sm">;
-            Install;
-          </Button>;
-          <Button;"
-            variant="ghost";"
-            size="sm";
-            onClick={close};"
-            aria-label="Dismiss install prompt";
-          >;"
-            <X className="h-4 w-4" />;
+        <div className="bg-zion-blue-dark text-white p-3 rounded-lg shadow-lg flex items-center space-x-3>;"";
+          <p className="text-sm">Install our app for a better experience!</p>;";"
+          <Button onClick={install} aria-label=Install PWA" size="sm>;"
+            Install";
+          </Button>;"";
+          <Button;"";;"
+            variant="ghost;"";
+            size="sm";";"
+            onClick={close};";"
+            aria-label=Dismiss install prompt"";;"
+          >";;""
+            <X className=h-4 w-4 />"
           </Button>;
         </div>;
       </div>;
     </>;
-  );
+  )"
 };
-;
-export default InstallPrompt;
-"
+;"";
+export default InstallPrompt;"";
+""""

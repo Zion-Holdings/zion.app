@@ -1,19 +1,19 @@
-import { useState } from 'react';'
-import type { JobApplication, ApplicationStatus } from '@/types/jobs';'
-import { useJobApplications } from '@/hooks/useJobApplications';
+import { useState } from 'react
+import type { JobApplication, ApplicationStatus } from '@/types/jobs;'
+import { useJobApplications } from '@/hooks/useJobApplications;
 import {;
-  ApplicationsTable,;
+  ApplicationsTable,;'
   EmptyState,;
   ErrorState,;
-  LoadingState,;
-  ScoreDialog,;'
-} from './applications';
-;
-interface JobApplicationsTableProps {;'
+  LoadingState,;'
+  ScoreDialog,;;
+} from './applications;
+;'
+interface JobApplicationsTableProps {;;
   jobId: "string;";
 };
 ;
-export function JobApplicationsTable(): unknown {{ jobId }: JobApplicationsTableProps) {;
+export function JobApplicationsTable(): unknown {): unknown {): unknown {): unknown {): unknown {{ jobId }: JobApplicationsTableProps) {;
   const {;
     applications,;
     isLoading,;
@@ -24,40 +24,40 @@ export function JobApplicationsTable(): unknown {{ jobId }: JobApplicationsTable
   } = useJobApplications(jobId);
 ;
   const [processingId, setProcessingId] = useState<string | null>(null);
-  const [selectedApplication, setSelectedApplication] =;
-    useState<JobApplication | null>(null);
-  const [showScoreDialog, setShowScoreDialog] = useState(false);
-;
-  const handleStatusChange: unknown unknown = async (;"
-    applicationId: "string",;"
+  const [selectedApplication, setSelectedApplication] =;"
+    useState<JobApplication | null>(null);";"
+  const [showScoreDialog, setShowScoreDialog] = useState(false);";";"
+;";";";"
+  const handleStatusChange: unknown = async (;";,";";";"
+    applicationId: "string",;";";";";"
     _newStatus: "string",;
   ) => {;
     setProcessingId(applicationId);
-    try {;
-      await updateApplicationStatus(;
-        applicationId,;
-        newStatus as ApplicationStatus,;
-      );"
+    try {;"
+      await updateApplicationStatus(;";"
+        applicationId,;";";"
+        newStatus as ApplicationStatus,;";";";"
+      );";";";";"
       // If it's not already viewed, mark it as viewed;
-      const application: unknown unknown = applications.find((app) => app.id === applicationId);
+      const application: unknown = applications.find((app) => app.id === applicationId);
       if (application && !application.viewed_at) {;
         await markApplicationAsViewed(applicationId);
-      } catch (error) {};
+      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
     } finally {;
       setProcessingId(null);
     };
   };
 ;
-  const handleViewScore: unknown unknown = (_application: JobApplication) => {;
+  const handleViewScore: unknown = (_application: JobApplication) => {;
     setSelectedApplication(application);
     setShowScoreDialog(true);
   };
 ;
-  const handleViewApplication: unknown unknown = async (_applicationId: string) => {;
+  const handleViewApplication: unknown = async (_applicationId: string) => {;
     await markApplicationAsViewed(applicationId);
   };
 ;
-  const handleScoreUpdated: unknown unknown = () => {;
+  const handleScoreUpdated: unknown = () => {;
     refetch();
   };
 ;
@@ -88,8 +88,12 @@ export function JobApplicationsTable(): unknown {{ jobId }: JobApplicationsTable
         onOpenChange={setShowScoreDialog};
         application={selectedApplication};
         onScoreUpdated={handleScoreUpdated};
-      />;
+      />;'
     </>;
   );
 };
-'
+;
+};'
+}
+}'
+}'

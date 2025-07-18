@@ -1,1 +1,1 @@
-export { default } from '@/pages/features/Integrations'; '
+export { default } from '@/pages/features/Integrations'; '''''

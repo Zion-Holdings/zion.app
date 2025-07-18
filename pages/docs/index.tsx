@@ -1,15 +1,19 @@
-import type { GetServerSideProps } from 'next';
-;
-// export const _getServerSideProps: unknown GetServerSideProps = async () => {;
-  return {;'
-    redirect: "{;",;"
-      destination: '/resources/docs',;'
+import type { GetServerSideProps } from 'next';';'
+;';';'
+// export const _getServerSideProps: unknown unknown unknown unknown unknown GetServerSideProps = async () => {;';';';'
+  return {;';';';';'
+    redirect: "{;",;";";";";"
+      destination: '/resources/docs',;';';';';'
       permanent: "false",;
     },;
   };
 };
-;
-export default function DocsRedirect(): unknown {) {;
-  return null;
-};
-"
+;"
+export default function DocsRedirect(): unknown {): unknown {): unknown {): unknown {): unknown {) {;";"
+  return null;";";"
+};";";";"
+";";";"
+}";";"
+}";"
+}"
+}"

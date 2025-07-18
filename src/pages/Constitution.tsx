@@ -1,2 +1,2 @@
-export { default } from './Philosophy';
-'
+export { default } from './Philosophy;
+'''''

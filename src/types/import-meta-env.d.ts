@@ -41,10 +41,10 @@ interface ImportMetaEnv {;
   readonly NEXT_PUBLIC_BASE_URL?: string;
 ;
   // Optional: Allow any other string keys;
-  readonly [key: "string]: string | undefined;";
-};
-;
-interface ImportMeta {;"
-  readonly env: "ImportMetaEnv;";
-};
-"
+  readonly [key: "string]: string | undefined;";";"
+};";";"
+;";";";"
+interface ImportMeta {;";";";";"
+  readonly env: "ImportMetaEnv;";";";"
+};";";";"
+"""""

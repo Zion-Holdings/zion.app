@@ -1,44 +1,44 @@
-import { loadStripe } from '@stripe/stripe-js';'
-import type { Stripe, StripeConstructorOptions } from '@stripe/stripe-js';
+import { loadStripe } from '@stripe/stripe-js;'
+import type { Stripe, StripeConstructorOptions } from '@stripe/stripe-js;'
 import {;
   logInfo,;
-  logWarn,;
-  logErrorToProduction,;'
-} from '@/utils/productionLogger';
-;'
-export const PROD_DOMAIN: unknown unknown = 'app.ziontechgroup.com';
+  logWarn,;'
+  logErrorToProduction,;;
+} from '@/utils/productionLogger;
+;;
+export const PROD_DOMAIN: unknown = 'app.ziontechgroup.com;
 ;
-export function isProdDomain(): unknown {host?: string) {;
-  const context: unknown unknown =;'
-    typeof window === 'undefined';
+export function isProdDomain(): unknown {): unknown {): unknown {): unknown {): unknown {host?: string) {;'
+  const context: unknown =;;
+    typeof window === 'undefined;
       ? process.env.CONTEXT // Netlify build context or other server-side context;
-      : process.env.NEXT_PUBLIC_NETLIFY_CONTEXT; // Client-side Netlify context;
-;'
-  // If context is available and explicitly not 'production', it's not prod.;'
+      : process.env.NEXT_PUBLIC_NETLIFY_CONTEXT; // Client-side Netlify context;'
+;;
+  // If context is available and explicitly not 'production', it's not prod.;;
   if (context && context !== 'production') {;
     return false;
-  };
-;'
-  // If context is 'production', it IS prod.;'
+  };'
+;;
+  // If context is 'production', it IS prod.;;
   if (context === 'production') {;
-    return true;
+    return true;'
   };
 ;
-  // Fallback to hostname check if context is not definitive;
-  let currentHost: string | undefined;'
+  // Fallback to hostname check if context is not definitive;'
+  let currentHost: string | undefined;;
   if (typeof window !== 'undefined') {;
     currentHost = host || window.location.hostname;
-  } else {;
+  } else {;'
     // For server-side, try to infer from VERCEL_URL, URL, or host header if passed;
     currentHost = host || process.env.VERCEL_URL || process.env.URL;
-    if (currentHost) {;
-      try {;'
-        // VERCEL_URL and Netlify's URL might be just the hostname, or include https://;
-        // Ensure we are comparing hostnames.;'
+    if (currentHost) {;'
+      try {;;
+        // VERCEL_URL and Netlify's URL might be just the hostname, or include https://;'
+        // Ensure we are comparing hostnames.;;
         if (currentHost.startsWith('http')) {;
           currentHost = new URL(currentHost).hostname;
-        } catch (error) {};
-      } catch {;'
+        } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};'
+      } catch {;;
         // If URL parsing fails, it's likely not a valid domain string to compare with PROD_DOMAIN;
         return false;
       };
@@ -52,64 +52,72 @@ export function isProdDomain(): unknown {host?: string) {;
 ;
 let stripePromise: Promise<Stripe | null>;
 ;
-export function getStripe(): unknown {) {;
+export function getStripe(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   if (!stripePromise) {;
-    const testPublishableKey: unknown unknown =;
+    const testPublishableKey: unknown =;
       (process.env.NEXT_PUBLIC_STRIPE_TEST_KEY as string | undefined) ||;
       (process.env.NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY as;
         | string;
         | undefined) ||;
       (process.env.NEXT_PUBLIC_STRIPE_PK as string | undefined); // Older fallback;
-;
-    const livePublishableKey: unknown unknown =;
-      (process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string | undefined) ||;
-      (process.env.NEXT_PUBLIC_STRIPE_PK as string | undefined); // Older fallback;
 ;'
-    const forceTestMode: unknown unknown = process.env.NEXT_PUBLIC_STRIPE_TEST_MODE === 'true';
+    const livePublishableKey: unknown =;
+      (process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string | undefined) ||;
+      (process.env.NEXT_PUBLIC_STRIPE_PK as string | undefined); // Older fallback;'
+;;
+    const forceTestMode: unknown = process.env.NEXT_PUBLIC_STRIPE_TEST_MODE === 'true;
 ;
-    let selectedKey: string | undefined;
+    let selectedKey: string | undefined;'
 ;
     if (forceTestMode) {;
-      if (testPublishableKey) {;
-        selectedKey = testPublishableKey;'
+      if (testPublishableKey) {;'
+        selectedKey = testPublishableKey;;
         logInfo('Stripe: Forced test mode. Using test publishable key.');
-      } else {;
-        logErrorToProduction(;'
+      } else {;'
+        logErrorToProduction(;;
           'Stripe: "Forced test mode is active", but no test publishable key (NEXT_PUBLIC_STRIPE_TEST_KEY or NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY) is set. Stripe will not load.',;
-        );
+        );'
       };
     } else if (isProdDomain()) {;
-      if (livePublishableKey) {;
-        selectedKey = livePublishableKey;'
+      if (livePublishableKey) {;'
+        selectedKey = livePublishableKey;;
         logInfo('Stripe: Production domain. Using live publishable key.');
-      } else {;
-        logErrorToProduction(;'
+      } else {;'
+        logErrorToProduction(;;
           'Stripe: "Production domain detected", but NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY is not set. Stripe will not load.',;
         );
-      };
+      };'
     } else {;
       // Non-production domain and not forced test mode (implicitly test);
-      if (testPublishableKey) {;
-        selectedKey = testPublishableKey;'
+      if (testPublishableKey) {;'
+        selectedKey = testPublishableKey;;
         logInfo('Stripe: Non-production domain. Using test publishable key.');
-      } else {;
-        logWarn(;'
+      } else {;'
+        logWarn(;;
           'Stripe: "Non-production domain", but no test publishable key (NEXT_PUBLIC_STRIPE_TEST_KEY or NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY) is set. Stripe may not load.',;
         );
-      };
+      };'
     };
 ;
-    if (!selectedKey) {;
-      logErrorToProduction(;'
-        'Stripe: Publishable key could not be determined. Stripe will not be loaded.',;
+    if (!selectedKey) {;'
+      logErrorToProduction(;;
+        'Stripe: Publishable key could not be determined. Stripe will not be loaded.',;'
       );
       stripePromise = Promise.resolve(null);
-    } else {;
-      stripePromise = loadStripe(selectedKey, {;'
+    } else {;'
+      stripePromise = loadStripe(selectedKey, {;;
         advancedFraudSignals: "false",;
       } as StripeConstructorOptions);
-    };
-  };
-  return stripePromise;
-};
-"
+    };"
+  };";"
+  return stripePromise;";";"
+};";";";"
+";";"
+};";";"
+}";"
+};";"
+}";
+};"
+}"
+}
+}"

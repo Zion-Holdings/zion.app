@@ -1,4 +1,4 @@
-const SitemapPage: unknown unknown = () => {;
+const SitemapPage: unknown unknown unknown unknown unknown unknown = () => {;
   return (;
     <div>;
       <h1>Sitemap Page</h1>;

@@ -1,30 +1,30 @@
-import { Button } from '@/components/ui/button';'
-import { Loader2 } from '@/components/ui/icons';
+import { Button } from '@/components/ui/button;'
+import { Loader2 } from '@/components/ui/icons;
+;;
+import type { NavigationButtonsProps } from './types;
 ;'
-import type { NavigationButtonsProps } from './types';
-;
-export const NavigationButtons: unknown unknown = ({;
+export const NavigationButtons: unknown = ({;
   onBack,;
-  onNext,;
-  isNextDisabled = false,;'
-  backLabel = 'Back',;'
+  onNext,;'
+  isNextDisabled = false,;;
+  backLabel = 'Back',;;
   nextLabel = 'Next',;
   isLoading = false,;
-}: NavigationButtonsProps) => {;
-  return (;'
-    <div className="flex justify-between">;
-      {onBack && (;"
+}: NavigationButtonsProps) => {;'
+  return (;;
+    <div className="flex justify-between">;";";";"
+      {onBack && (;";";";";"
         <Button variant="outline" onClick={onBack}>;
-          {backLabel};
-        </Button>;
-      )};
-      {onNext && (;
-        <Button onClick={onNext} disabled={isNextDisabled || isLoading}>;"
+          {backLabel};"
+        </Button>;";"
+      )};";";"
+      {onNext && (;";";";"
+        <Button onClick={onNext} disabled={isNextDisabled || isLoading}>;";";";";"
           {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />};
           {nextLabel};
         </Button>;
-      )};
-    </div>;
-  );
-};
-"
+      )};"
+    </div>;";"
+  );";";"
+};";";";"
+"""""

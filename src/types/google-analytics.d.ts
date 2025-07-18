@@ -1,10 +1,10 @@
 declare global {;
   interface Window {;
     gtag?: (;
-      type: "string",;"
+      type: "string",;";";";";"
       eventName: "string",;
-      params?: Record<string, unknown>,;
-    ) => void;
-  };
-};
-"
+      params?: Record<string, unknown>,;"
+    ) => void;";"
+  };";";"
+};";";";"
+"""""

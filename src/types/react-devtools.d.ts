@@ -1,2 +1,2 @@
-declare module 'react-devtools';
-'
+declare module 'react-devtools;
+'''''

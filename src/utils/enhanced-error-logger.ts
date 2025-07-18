@@ -1,7 +1,7 @@
 // Enhanced Error Logging System for Production Debugging;
 // Provides structured error collection, context gathering, and intelligent filtering;
 ;
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger;
 ;
 interface ErrorContext {;
   timestamp: number;
@@ -15,48 +15,48 @@ interface ErrorContext {;
   componentStack?: string;
   errorInfo?: unknown;
   performanceMetrics?: {;
-    memory?: number;
+    memory?: number;'
     timing?: number;
     connectionType?: string;
-  };
-  breadcrumbs?: Array<{;'
-    timestamp: "number;",;"
-    category: "string;","
-    message: "string;",;"
-    level: 'info' | 'warn' | 'error';
+  };'
+  breadcrumbs?: Array<{;;
+    timestamp: "number;",;";";";";"
+    category: "string;",";";";";"
+    message: "string;",;";";";";"
+    level: 'info' | 'warn' | 'error;'
   }>;
 };
-;
-interface EnhancedError {;'
-  id: "string;",;
-  message: string;
-  stack?: string;"
-  name: "string;",;"
-  source: 'javascript' | 'promise' | 'network' | 'render' | 'custom';,'
-  severity: 'low' | 'medium' | 'high' | 'critical';,;'
-  context: "ErrorContext;","
-  fingerprint: "string;",;"
-  count: "number;","
-  firstSeen: "number;",;"
-  lastSeen: "number;";
-};
-;
-class EnhancedErrorLogger {;"
-  private errors: "Map<string", EnhancedError> = new Map();"
-  private breadcrumbs: "Array<{;",;"
-    timestamp: "number;","
-    category: "string;",;"
-    message: "string;","
-    level: 'info' | 'warn' | 'error';
+;'
+interface EnhancedError {;;
+  id: "string;",;";";"
+  message: string;";";";"
+  stack?: string;";";";";"
+  name: "string;",;";";";";"
+  source: 'javascript' | 'promise' | 'network' | 'render' | 'custom,;
+  severity: 'low' | 'medium' | 'high' | 'critical,;;
+  context: "ErrorContext;",";";";";"
+  fingerprint: "string;",;";";";";"
+  count: "number;",";";";";"
+  firstSeen: "number;",;";";";";"
+  lastSeen: "number;";";"
+};";";"
+;";";";"
+class EnhancedErrorLogger {;";";";";"
+  private errors: "Map<string", EnhancedError> = new Map();";";";";"
+  private breadcrumbs: "Array<{;",;";";";";"
+    timestamp: "number;",";";";";"
+    category: "string;",;";";";";"
+    message: "string;",";";";";"
+    level: 'info' | 'warn' | 'error;
   }> = [];
   private maxErrors = 100;
   private maxBreadcrumbs = 50;
-  private sessionId: string;
+  private sessionId: string;'
   private isEnabled: boolean;
 ;
-  constructor() {;
-    this.sessionId = this.generateSessionId();'
-    this.isEnabled = typeof window !== 'undefined';
+  constructor() {;'
+    this.sessionId = this.generateSessionId();;
+    this.isEnabled = typeof window !== 'undefined;
 ;
     if (this.isEnabled) {;
       this.initializeErrorHandlers();
@@ -65,279 +65,279 @@ class EnhancedErrorLogger {;"
   };
 ;
   private generateSessionId(): string {;
-    return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+    return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;'
   };
 ;
-  private initializeErrorHandlers(): void {;
-    // Global JavaScript errors;'
-    window.addEventListener('error', (event) => {;
-      this.captureError({;'
-        message: "event.message",;"
-        filename: "event.filename",;"
-        lineno: "event.lineno",;"
-        colno: "event.colno",;"
-        error: "event.error",;"
-        source: 'javascript',;
+  private initializeErrorHandlers(): void {;'
+    // Global JavaScript errors;;
+    window.addEventListener('error', (event) => {;'
+      this.captureError({;;
+        message: "event.message",;";";";";"
+        filename: "event.filename",;";";";";"
+        lineno: "event.lineno",;";";";";"
+        colno: "event.colno",;";";";";"
+        error: "event.error",;";";";";"
+        source: 'javascript',;'
       });
     });
-;
-    // Unhandled promise rejections;'
-    window.addEventListener('unhandledrejection', (event) => {;
-      this.captureError({;'
-        message: "`Unhandled Promise Rejection: ${event.reason"}`,;
-        error:;
-          event.reason instanceof Error;
-            ? event.reason;
-            : new Error(String(event.reason)),;"
+;'
+    // Unhandled promise rejections;;
+    window.addEventListener('unhandledrejection', (event) => {;'
+      this.captureError({;;
+        message: "`Unhandled Promise Rejection: ${event.reason"}`,;"
+        error:;";"
+          event.reason instanceof Error;";";"
+            ? event.reason;";";";"
+            : new Error(String(event.reason)),;";";";";"
         source: 'promise',;
       });
     });
 ;
     // Network errors (fetch failures);
-    const originalFetch: unknown unknown = window.fetch;
-    window.fetch = async (...args) => {;
+    const originalFetch: unknown = window.fetch;
+    window.fetch = async (...args) => {;'
       try {;
-        const response: unknown unknown = await originalFetch(...args);
-        if (!response.ok) {;
-          this.captureError({;'
-            message: "`Network Error: ${response.status"} catch (error) {}${response.statusText}`,;"
-            error: "new Error(`Fetch failed: ${args[0]"}`),;"
-            source: 'network',;'
-            context: "{;",;"
-              url: "args[0]?.toString()",;"
-              status: "response.status",;"
+        const response: unknown = await originalFetch(...args);
+        if (!response.ok) {;'
+          this.captureError({;;
+            message: "`Network Error: ${response.status"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}${response.statusText}`,;";";";";"
+            error: "new Error(`Fetch failed: ${args[0]"}`),;";";";";"
+            source: 'network',;;
+            context: "{;",;";";";";"
+              url: "args[0]?.toString()",;";";";";"
+              status: "response.status",;";";";";"
               statusText: "response.statusText",;
             },;
-          });
-        };
-        return response;
-      } catch {;
-        this.captureError({;"
-          message: "`Network Error: ${error"}`,;"
-          error: "error instanceof Error ? error : new Error(String(error))",;"
-          source: 'network',;'
+          });"
+        };";"
+        return response;";";"
+      } catch {;";";";"
+        this.captureError({;";";";";"
+          message: "`Network Error: ${error"}`,;";";";";"
+          error: "error instanceof Error ? error : new Error(String(error))",;";";";";"
+          source: 'network',;;
           context: "{ url: args[0]?.toString() "},;
         });
         throw error;
       };
     };
-  };
-;
-  private startPerformanceMonitoring(): void {;
-    // Monitor memory usage;
-    interface PerformanceWithMemory extends Performance {;"
-      memory: "{;",;"
-        usedJSHeapSize: "number;","
-        totalJSHeapSize: "number;",;"
-        jsHeapSizeLimit: "number;";
-      };
-    };"
-    if ('memory' in performance) {;
+  };"
+;";"
+  private startPerformanceMonitoring(): void {;";";"
+    // Monitor memory usage;";";";"
+    interface PerformanceWithMemory extends Performance {;";";";";"
+      memory: "{;",;";";";";"
+        usedJSHeapSize: "number;",";";";";"
+        totalJSHeapSize: "number;",;";";";";"
+        jsHeapSizeLimit: "number;";";";"
+      };";";";"
+    };";";";";"
+    if ('memory' in performance) {;'
       setInterval(() => {;
-        const memory: unknown unknown = (performance as PerformanceWithMemory).memory;
-        if (memory.usedJSHeapSize > memory.totalJSHeapSize * 0.9) {;
-          this.addBreadcrumb(;'
-            'performance',;'
-            'High memory usage detected',;'
+        const memory: unknown = (performance as PerformanceWithMemory).memory;
+        if (memory.usedJSHeapSize > memory.totalJSHeapSize * 0.9) {;'
+          this.addBreadcrumb(;;
+            'performance',;;
+            'High memory usage detected',;;
             'warn',;
           );
-        };
+        };'
       }, 30000);
     };
-;
-    // Monitor long tasks;'
+;'
+    // Monitor long tasks;;
     if ('PerformanceObserver' in window) {;
-      try {;
-        const observer: unknown unknown = new PerformanceObserver((list) => {;
+      try {;'
+        const observer: unknown = new PerformanceObserver((list) => {;
           for (const entry of list.getEntries()) {;
-            if (entry.duration > 100) {;
-              this.addBreadcrumb(;'
-                'performance',;'
-                `Long task detected: "${entry.duration"} catch (error) {}ms`,;"
-                'warn',;
+            if (entry.duration > 100) {;'
+              this.addBreadcrumb(;;
+                'performance',;;
+                `Long task detected: "${entry.duration"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}ms`,;";";";";"
+                'warn',;'
               );
             };
-          };
-        });'
+          };'
+        });;
         observer.observe({ entryTypes: ['longtask'] });
       } catch {;
-        // PerformanceObserver not supported;
+        // PerformanceObserver not supported;'
       };
     };
-  };
-;'
-  public captureError(errorData: "{;",;
-    message: string;
-    error?: Error;"
+  };'
+;;
+  public captureError(errorData: "{;",;";";"
+    message: string;";";";"
+    error?: Error;";";";";"
     source: EnhancedError['source'];
     filename?: string;
     lineno?: number;
     colno?: number;
     context?: unknown;
   }): void {;
-    if (!this.isEnabled) return;
+    if (!this.isEnabled) return;'
 ;
     try {;
-      const error: unknown unknown = errorData.error || new Error(errorData.message);
-      const fingerprint: unknown unknown = this.generateFingerprint(error, errorData.source);
+      const error: unknown = errorData.error || new Error(errorData.message);'
+      const fingerprint: unknown "unknown = this.generateFingerprint(error", errorData.source);
 ;
       // Check if this is a known error;
-      const existingError: unknown unknown = this.errors.get(fingerprint);
+      const existingError: unknown = this.errors.get(fingerprint);
       if (existingError) {;
         existingError.count++;
         existingError.lastSeen = Date.now();
         return;
-      } catch (error) {};
+      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
 ;
-      // Filter out noise (common non-critical errors);
-      if (this.shouldIgnoreError(error, errorData)) {;
-        return;
-      };
-;'
-      const enhancedError: unknown "EnhancedError = {;",;"
-        id: "this.generateId()",;"
-        message: "error.message || errorData.message",;"
-        stack: error.stack || '',;'
-        name: error.name || 'Error',;'
-        source: "errorData.source",;"
-        severity: "this.calculateSeverity(error", errorData),;"
-        context: "this.gatherContext(errorData)",;
-        fingerprint,;"
-        count: "1",;"
-        firstSeen: "Date.now()",;"
+      // Filter out noise (common non-critical errors);"
+      if (this.shouldIgnoreError(error, errorData)) {;";"
+        return;";";"
+      };";";";"
+;;
+      const enhancedError: unknown "EnhancedError = {;",;";";";";"
+        id: "this.generateId()",;";";";";"
+        message: "error.message || errorData.message",;";";";";"
+        stack: error.stack || '',;;
+        name: error.name || 'Error',;;
+        source: "errorData.source",;";";";";"
+        severity: "this.calculateSeverity(error", errorData),;";";";";"
+        context: "this.gatherContext(errorData)",;";";";"
+        fingerprint,;";";";";"
+        count: "1",;";";";";"
+        firstSeen: "Date.now()",;";";";";"
         lastSeen: "Date.now()",;
       };
 ;
-      this.errors.set(fingerprint, enhancedError);
-      this.trimErrors();
-;
-      // Log to console in development;
-      if (;"
-        typeof process !== 'undefined' &&;'
-        process.env?.NODE_ENV === 'development';
+      this.errors.set(fingerprint, enhancedError);"
+      this.trimErrors();";"
+;";";"
+      // Log to console in development;";";";"
+      if (;";";";";"
+        typeof process !== 'undefined' &&;;
+        process.env?.NODE_ENV === 'development;
       ) {;
-        // Only keep logErrorToProduction for lint compliance;
+        // Only keep logErrorToProduction for lint compliance;'
         logErrorToProduction(enhancedError.message);
       };
-;
-      // Report critical errors immediately;'
+;'
+      // Report critical errors immediately;;
       if (enhancedError.severity === 'critical') {;
         this.reportError(enhancedError);
-      };
-    } catch (_loggerError) {;'
+      };'
+    } catch (_loggerError) {;;
       logErrorToProduction('Error in enhanced error logger:', loggerError);
     };
-  };
-;'
-  private shouldIgnoreError(error: "Error", errorData: unknown): boolean {;
-    const ignoredMessages: unknown unknown = [;"
-      'ResizeObserver loop limit exceeded',;'
-      'Script error',;'
-      'Non-Error promise rejection captured',;'
-      'Loading chunk',;'
-      'ChunkLoadError',;'
-      'Script loading error',;'
+  };'
+;;
+  private shouldIgnoreError(error: "Error", errorData: unknown): boolean {;";";";"
+    const ignoredMessages: unknown = [;";";";";"
+      'ResizeObserver loop limit exceeded',;;
+      'Script error',;;
+      'Non-Error promise rejection captured',;;
+      'Loading chunk',;;
+      'ChunkLoadError',;;
+      'Script loading error',;;
       'Network request failed',;
     ];
-;
+;'
     let message = error.message;
     if (;
-      !message &&;
-      isErrorDataWithContext(errorData) &&;'
-      typeof errorData.message === 'string';
+      !message &&;'
+      isErrorDataWithContext(errorData) &&;;
+      typeof errorData.message === 'string;
     ) {;
       message = errorData.message;
-    };
+    };'
     return ignoredMessages.some((ignored) => message.includes(ignored));
   };
-;
-  private calculateSeverity(;'
-    error: "Error",;"
-    errorData: "unknown",;"
+;'
+  private calculateSeverity(;;
+    error: "Error",;";";";";"
+    errorData: "unknown",;";";";";"
   ): EnhancedError['severity'] {;
-    // Critical errors;
-    if (;'
-      error.name === 'TypeError' &&;'
-      error.message.includes('Cannot read properties');
-    ) {;'
-      return 'critical';
+    // Critical errors;'
+    if (;;
+      error.name === 'TypeError' &&;;
+      error.message.includes('Cannot read properties');'
+    ) {;;
+      return 'critical;
+    };;
+    if (isErrorDataWithContext(errorData) && errorData.source === 'render') {;;
+      return 'high;
     };'
-    if (isErrorDataWithContext(errorData) && errorData.source === 'render') {;'
-      return 'high';
-    };
-    if (;'
-      error.message.includes('Network Error') &&;
-      isErrorDataWithContext(errorData) &&;'
-      typeof errorData.context === 'object' &&;
-      errorData.context &&;'
+    if (;;
+      error.message.includes('Network Error') &&;'
+      isErrorDataWithContext(errorData) &&;;
+      typeof errorData.context === 'object' &&;'
+      errorData.context &&;;
       'status' in errorData.context &&;
       (errorData.context as { status?: number }).status &&;
-      (errorData.context as { status?: number }).status! >= 500;
-    ) {;'
-      return 'high';
+      (errorData.context as { status?: number }).status! >= 500;'
+    ) {;;
+      return 'high;
     };
-;
-    // Medium severity;'
-    if (isErrorDataWithContext(errorData) && errorData.source === 'promise') {;'
-      return 'medium';
-    };'
-    if (error.message.includes('Network Error')) {;'
-      return 'medium';
-    };
-;
-    // Low severity (default);'
-    return 'low';
-  };
 ;'
-  private generateFingerprint(error: "Error", source: string): string {;"
-    const message: unknown unknown = error.message || 'Unknown error';'
-    const name: unknown unknown = error.name || 'Error';'
-    const stackLine: unknown unknown = error.stack?.split('\n')[1] || '';
-;
-    return `${source}-${name}-${message}-${stackLine}`;'
-      .replace(/[^\w-]/g, '');
+    // Medium severity;;
+    if (isErrorDataWithContext(errorData) && errorData.source === 'promise') {;;
+      return 'medium;
+    };;
+    if (error.message.includes('Network Error')) {;;
+      return 'medium;
+    };
+;'
+    // Low severity (default);;
+    return 'low;
+  };'
+;;
+  private generateFingerprint(error: "Error", source: string): string {;";";";";"
+    const message: unknown = error.message || 'Unknown error;'
+    const name: unknown = error.name || 'Error;'
+    const stackLine: unknown = error.stack?.split('\n')[1] || 
+;'
+    return `${source}-${name}-${message}-${stackLine}`;;
+      .replace(/[^\w-]/g, '');'
       .substring(0, 100);
   };
-;
-  private gatherContext(errorData: unknown): ErrorContext {;'
-    const context: unknown "ErrorContext = {;",;"
-      timestamp: "Date.now()",;"
-      environment: process.env.NODE_ENV || 'unknown',;'
-      sessionId: "this.sessionId",;"
-      breadcrumbs: "[...this.breadcrumbs]",;
-    };
-;"
-    if (typeof window !== 'undefined') {;
+;'
+  private gatherContext(errorData: unknown): ErrorContext {;;
+    const context: unknown "ErrorContext = {;",;";";";";"
+      timestamp: "Date.now()",;";";";";"
+      environment: process.env.NODE_ENV || 'unknown',;;
+      sessionId: "this.sessionId",;";";";";"
+      breadcrumbs: "[...this.breadcrumbs]",;";";"
+    };";";";"
+;";";";";"
+    if (typeof window !== 'undefined') {;'
       context.url = window.location.href;
       context.userAgent = navigator.userAgent;
-;
-      // Performance metrics;'
-      if ('memory' in performance) {;
-        const memory: unknown unknown = (;'
-          performance as Performance & { memory?: { usedJSHeapSize: "number "} };
-        ).memory;
-        if (memory) {;
-          context.performanceMetrics = {;"
-            memory: "memory.usedJSHeapSize",;"
+;'
+      // Performance metrics;;
+      if ('memory' in performance) {;'
+        const memory: unknown = (;;
+          performance as Performance & { memory?: { usedJSHeapSize: "number "} };";"
+        ).memory;";";"
+        if (memory) {;";";";"
+          context.performanceMetrics = {;";";";";"
+            memory: "memory.usedJSHeapSize",;";";";";"
             timing: "performance.now()",;
           };
         };
       };
-      // Connection info;
-      if (hasConnection(navigator)) {;
-        const connection: unknown unknown = navigator.connection;
-        context.performanceMetrics = {;
-          ...context.performanceMetrics,;"
+      // Connection info;"
+      if (hasConnection(navigator)) {;";"
+        const connection: unknown = navigator.connection;";";"
+        context.performanceMetrics = {;";";";"
+          ...context.performanceMetrics,;";";";";"
           connectionType: "connection.effectiveType",;
         };
       };
     };
-;
-    // Add any custom context;
-    if (;
-      isErrorDataWithContext(errorData) &&;
-      errorData.context &&;"
-      typeof errorData.context === 'object';
+;"
+    // Add any custom context;";"
+    if (;";";"
+      isErrorDataWithContext(errorData) &&;";";";"
+      errorData.context &&;";";";";"
+      typeof errorData.context === 'object;
     ) {;
       Object.assign(context, errorData.context);
     };
@@ -345,18 +345,18 @@ class EnhancedErrorLogger {;"
     return context;
   };
 ;
-  private generateId(): string {;
+  private generateId(): string {;'
     return `err_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
   };
-;
-  public addBreadcrumb(;'
-    category: "string",;"
-    message: "string",;"
-    level: 'info' | 'warn' | 'error' = 'info',;
+;'
+  public addBreadcrumb(;;
+    category: "string",;";";";";"
+    message: "string",;";";";";"
+    level: 'info' | 'warn' | 'error' = 'info',;'
   ): void {;
     if (!this.isEnabled) return;
-;
-    this.breadcrumbs.push({;'
+;'
+    this.breadcrumbs.push({;;
       timestamp: "Date.now()",;
       category,;
       message,;
@@ -370,53 +370,53 @@ class EnhancedErrorLogger {;"
 ;
   private trimErrors(): void {;
     if (this.errors.size > this.maxErrors) {;
-      const sortedErrors: unknown unknown = Array.from(this.errors.entries()).sort(;
-        ([, a], [, b]) => a.lastSeen - b.lastSeen,;
-      );
-;
-      const toRemove: unknown unknown = sortedErrors.slice(0, this.errors.size - this.maxErrors);
+      const sortedErrors: unknown = Array.from(this.errors.entries()).sort(;"
+        ([, a], [, b]) => a.lastSeen - b.lastSeen,;";"
+      );";";"
+;";";";"
+      const toRemove: unknown "unknown = sortedErrors.slice(0", this.errors.size - this.maxErrors);
       toRemove.forEach(([fingerprint]) => {;
         this.errors.delete(fingerprint);
       });
-    };
-  };
-;
-  private async reportError(error: EnhancedError): Promise<void> {;
-    try {;"
-      await fetch('/api/error-report', {;'
-        method: 'POST',;'
-        headers: { 'Content-Type': 'application/json' } catch (error) {},;
-        body: JSON.stringify({;
-          error,;'
-          breadcrumbs: "this.breadcrumbs.slice(-10)",;
-        }),;
-      });
-    } catch (_reportError) {;"
+    };"
+  };";"
+;";";"
+  private async reportError(error: EnhancedError): Promise<void> {;";";";"
+    try {;";";";";"
+      await fetch('/api/error-report', {;;
+        method: 'POST',;;
+        headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;
+        body: JSON.stringify({;'
+          error,;;
+          breadcrumbs: "this.breadcrumbs.slice(-10)",;";"
+        }),;";";"
+      });";";";"
+    } catch (_reportError) {;";";";";"
       console.error('Failed to report error:', reportError);
     };
   };
 ;
   // Public API;
-  public getErrors(): EnhancedError[] {;
+  public getErrors(): EnhancedError[] {;'
     return Array.from(this.errors.values());
   };
-;
-  public getErrorStats(): {;'
-    total: "number;",;"
-    bySeverity: "Record<string", number>;"
-    bySource: "Record<string", number>;
-  } {;
-    const errors: unknown unknown = this.getErrors();"
-    const bySeverity: unknown "Record<string", number> = {};"
+;'
+  public getErrorStats(): {;;
+    total: "number;",;";";";";"
+    bySeverity: "Record<string", number>;";";";";"
+    bySource: "Record<string", number>;";";"
+  } {;";";";"
+    const errors: unknown = this.getErrors();";";";";"
+    const bySeverity: unknown "Record<string", number> = {};";";";";"
     const bySource: unknown "Record<string", number> = {};
 ;
     errors.forEach((error) => {;
       bySeverity[error.severity] =;
-        (bySeverity[error.severity] || 0) + error.count;
-      bySource[error.source] = (bySource[error.source] || 0) + error.count;
-    });
-;
-    return {;"
+        (bySeverity[error.severity] || 0) + error.count;"
+      bySource[error.source] = (bySource[error.source] || 0) + error.count;";"
+    });";";"
+;";";";"
+    return {;";";";";"
       total: "errors.reduce((sum", error) => sum + error.count, 0),;
       bySeverity,;
       bySource,;
@@ -425,49 +425,57 @@ class EnhancedErrorLogger {;"
 ;
   public clearErrors(): void {;
     this.errors.clear();
-    this.breadcrumbs = [];
-  };
-;
-  // React Error Boundary integration;
-  public captureReactError(;"
-    error: "Error",;"
-    errorInfo: "unknown",;
-    componentStack?: string,;
-  ): void {;
-    this.captureError({;"
-      message: "`React Error: ${error.message"}`,;
-      error,;"
-      source: 'render',;'
-      context: "{;",;"
+    this.breadcrumbs = [];"
+  };";"
+;";";"
+  // React Error Boundary integration;";";";"
+  public captureReactError(;";";";";"
+    error: "Error",;";";";";"
+    errorInfo: "unknown",;";"
+    componentStack?: string,;";";"
+  ): void {;";";";"
+    this.captureError({;";";";";"
+      message: "`React Error: ${error.message"}`,;";";";"
+      error,;";";";";"
+      source: 'render',;;
+      context: "{;",;";";";";"
         errorBoundary: "true",;
         componentStack,;
         errorInfo,;
       },;
     });
-  };
-};
-;
-// Type guard for errorData;
-function isErrorDataWithContext(): unknown {;"
-  obj: "unknown",;
-): obj is { message?: string; source?: string; context?: unknown } {;
-  return (;"
-    typeof obj === 'object' &&;
-    obj !== null &&;'
+  };"
+};";"
+;";";"
+// Type guard for errorData;";";";"
+function isErrorDataWithContext(): unknown {): unknown {): unknown {): unknown {): unknown {;";";";";"
+  obj: "unknown",;";";"
+): obj is { message?: string; source?: string; context?: unknown } {;";";";"
+  return (;";";";";"
+    typeof obj === 'object' &&;'
+    obj !== null &&;;
     ('message' in obj || 'source' in obj || 'context' in obj);
-  );
+  );'
 };
 ;
-// Type guard for navigator.connection;
-function hasConnection(): unknown {;'
-  obj: "unknown",;"
-): obj is { connection: "{ effectiveType: string "} } {;"
+// Type guard for navigator.connection;'
+function hasConnection(): unknown {): unknown {): unknown {): unknown {): unknown {;;
+  obj: "unknown",;";";";";"
+): obj is { connection: "{ effectiveType: string "} } {;";";";";"
   return typeof obj === 'object' && obj !== null && 'connection' in obj;
 };
 ;
 // Singleton instance;
-const enhancedErrorLogger: unknown unknown = new EnhancedErrorLogger();
+const enhancedErrorLogger: unknown = new EnhancedErrorLogger();'
 ;
 export default enhancedErrorLogger;
 export { EnhancedErrorLogger, type EnhancedError, type ErrorContext };
-'
+;
+};
+};'
+};
+}
+};'
+}'
+}
+}'

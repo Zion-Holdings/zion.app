@@ -1,57 +1,57 @@
-import { useState, useEffect } from 'react';'
-import { WifiOff, Wifi } from '@/components/ui/icons';
-;'
-import { Alert, AlertDescription } from '@/components/ui/alert';
+import { useState, useEffect } from 'react
+import { WifiOff, Wifi } from '@/components/ui/icons;
+;;
+import { Alert, AlertDescription } from '@/components/ui/alert;
 ;
-export const _OfflineIndicator: unknown unknown = () => {;
+export const _OfflineIndicator: unknown = () => {;
   const [isOnline, setIsOnline] = useState(true);
   const [showOfflineAlert, setShowOfflineAlert] = useState(false);
 ;
   useEffect(() => {;
-    const updateOnlineStatus: unknown unknown = () => {;
-      const online: unknown unknown = navigator.onLine;
-      setIsOnline(online);
+    const updateOnlineStatus: unknown = () => {;
+      const online: unknown = navigator.onLine;
+      setIsOnline(online);'
 ;
       if (!online) {;
-        setShowOfflineAlert(true);
-      } else if (showOfflineAlert) {;'
+        setShowOfflineAlert(true);'
+      } else if (showOfflineAlert) {;;
         // Show brief "back online" message then hide;
         setTimeout(() => setShowOfflineAlert(false), 3000);
       };
     };
-;
-    // Set initial status;
-    updateOnlineStatus();
-;
-    // Listen for online/offline events;"
-    window.addEventListener('online', updateOnlineStatus);'
+;"
+    // Set initial status;";"
+    updateOnlineStatus();";";"
+;";";";"
+    // Listen for online/offline events;";";";";"
+    window.addEventListener('online', updateOnlineStatus);;
     window.addEventListener('offline', updateOnlineStatus);
-;
-    return () => {;'
-      window.removeEventListener('online', updateOnlineStatus);'
+;'
+    return () => {;;
+      window.removeEventListener('online', updateOnlineStatus);;
       window.removeEventListener('offline', updateOnlineStatus);
     };
-  }, [showOfflineAlert]);
+  }, [showOfflineAlert]);'
 ;
   if (!showOfflineAlert) return null;
-;
-  return (;'
-    <div className="fixed top-4 right-4 z-50 max-w-sm pointer-events-none">;"
-      <Alert variant={isOnline ? 'default' : 'destructive'}>;'
-        <div className="flex items-center gap-2">;
-          {isOnline ? (;"
-            <Wifi className="h-4 w-4" />;
-          ) : (;"
-            <WifiOff className="h-4 w-4" />;
-          )};
-          <AlertDescription>;
-            {isOnline;"
-              ? 'Connection restored';'
+;'
+  return (;;
+    <div className="fixed top-4 right-4 z-50 max-w-sm pointer-events-none">;";";";";"
+      <Alert variant={isOnline ? 'default' : 'destructive'}>;;
+        <div className="flex items-center gap-2">;";";";"
+          {isOnline ? (;";";";";"
+            <Wifi className="h-4 w-4" />;";";";"
+          ) : (;";";";";"
+            <WifiOff className="h-4 w-4" />;";"
+          )};";";"
+          <AlertDescription>;";";";"
+            {isOnline;";";";";"
+              ? 'Connection restored;'
               : 'You are offline. Some features may not work.'};
           </AlertDescription>;
         </div>;
-      </Alert>;
+      </Alert>;'
     </div>;
   );
-};
-'
+};'
+'''''

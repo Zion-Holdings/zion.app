@@ -1,12 +1,11 @@
-import axios from 'axios';
-import { logErrorToProduction } from '@/utils/productionLogger';
-
+import axios from 'axios''
+import { logErrorToProduction } from '@/utils/productionLogger''
 export const getWallet = async () => {
   try {
-    const res = await axios.get('/api/wallet');
+    const res = await axios.get('/api/wallet')'
     return res.data;
   } catch (err) {
-    logErrorToProduction('Failed to fetch wallet', { data: err.message || 'Error occurred' });
+    logErrorToProduction('Failed to fetch wallet', { data: err.message || 'Error occurred' })'
     throw err;
   }
 };

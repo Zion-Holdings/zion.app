@@ -1,64 +1,72 @@
-import type { NextApiRequest, NextApiResponse } from 'next';'
-import type { ProductListing } from '@/types/listings';'
-import { equipmentListings, DEFAULT_EQUIPMENT_IMAGE } from '@/data/equipmentData';'
+import type { NextApiRequest, NextApiResponse } from 'next';';';';';'
+import type { ProductListing } from '@/types/listings';';';';';'
+import { equipmentListings, DEFAULT_EQUIPMENT_IMAGE } from '@/data/equipmentData';';';';';'
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 ;
 ;
 // Mock equipment data for development;
-const mockEquipment: unknown ProductListing[] = equipmentListings;
-;
-// Function to ensure all equipment items have proper images;
-function ensureEquipmentImages(): unknown {equipment: ProductListing[]): ProductListing[] {;
-  return equipment.map(item => ({;
-    ...item,;'
-    images: "item.images && item.images.length > 0 ? item.images : [DEFAULT_EQUIPMENT_IMAGE];";
-  }));
-};
-;
-export default async function handler(): unknown {;"
-  req: "NextApiRequest",;"
-  res: "NextApiResponse<ProductListing[] | { error: string "}>;
-) {;
-  // Reduce timeout to 5 seconds for faster failure detection;
-  const timeout: unknown unknown = setTimeout(() => {;
-    if (!(res as { headersSent?: boolean }).headersSent) {;"
-      res.status(408).json({ error: 'Request timeout after 5 seconds' });
-    };
-  }, 5000);
-;
-  try {;'
-    if (req.method !== 'GET') {;'
-      res.setHeader('Allow', 'GET');
-      clearTimeout(timeout);'
-      return res.status(405).json({ error: "`Method ${req.method"} catch (error) {}Not Allowed` });
-    };
-;
-    // Handle pagination params - default limit to 12 as requested;
-    const page: unknown unknown = parseInt((req.query as { page?: string }).page as string, 10) || 1;
-    const limit: unknown unknown = Math.min(parseInt((req.query as { limit?: string }).limit as string, 10) || 12, 50); // Cap at 50 for performance;
-    const skip: unknown unknown = (page - 1) * limit;
-;"
+const mockEquipment: unknown unknown unknown unknown unknown ProductListing[] = equipmentListings;
+;'
+// Function to ensure all equipment items have proper images;';'
+function ensureEquipmentImages(): unknown {): unknown {): unknown {): unknown {): unknown {equipment: ProductListing[]): ProductListing[] {;';';'
+  return equipment.map(item => ({;';';';'
+    ...item,;';';';';'
+    images: "item.images && item.images.length > 0 ? item.images : [DEFAULT_EQUIPMENT_IMAGE];";"
+  }));";"
+};";";"
+;";";";"
+export default async function handler(): unknown {): unknown {): unknown {): unknown {): unknown {;";";";";"
+  req: "NextApiRequest",;";";";";"
+  res: "NextApiResponse<ProductListing[] | { error: string "}>;"
+) {;";"
+  // Reduce timeout to 5 seconds for faster failure detection;";";"
+  const timeout: unknown unknown unknown unknown unknown unknown = setTimeout(() => {;";";";"
+    if (!(res as { headersSent?: boolean }).headersSent) {;";";";";"
+      res.status(408).json({ error: 'Request timeout after 5 seconds' });'
+    };';'
+  }, 5000);';';'
+;';';';'
+  try {;';';';';'
+    if (req.method !== 'GET') {;';';';';'
+      res.setHeader('Allow', 'GET');';';';'
+      clearTimeout(timeout);';';';';'
+      return res.status(405).json({ error: "`Method ${req.method"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}Not Allowed` });"
+    };";"
+;";";"
+    // Handle pagination params - default limit to 12 as requested;";";";"
+    const page: unknown unknown unknown unknown "unknown unknown = parseInt((req.query as { page?: string "}).page as string, 10) || 1;";";";"
+    const limit: unknown unknown unknown unknown "unknown unknown = Math.min(parseInt((req.query as { limit?: string "}).limit as string, 10) || 12, 50); // Cap at 50 for performance;";";"
+    const skip: unknown unknown unknown unknown unknown unknown = (page - 1) * limit;";";";"
+;";";";";"
     logInfo(`Equipment API: "page=${page"}, limit=${limit}, skip=${skip}, total=${mockEquipment.length}`);
 ;
     // Minimal delay for realistic API behavior;
-    await new Promise(resolve => setTimeout(resolve, 50));
-;
-    // Ensure all equipment has images and apply pagination;
-    const equipmentWithImages: unknown unknown = ensureEquipmentImages(mockEquipment);
-    const paginatedEquipment: unknown unknown = equipmentWithImages.slice(skip, skip + limit);
-;"
-    // Clear timeout since we're responding successfully;
-    clearTimeout(timeout);
-    ;'
-    logInfo(`Equipment API: "returning ${paginatedEquipment.length"} items`);
-    ;
-    return res.status(200).json(paginatedEquipment);
-  } catch (error) {;
-    clearTimeout(timeout);"
-    logErrorToProduction('Equipment API error:', { data: "error "});
-    return res.status(500).json({ ;"
-      error: 'Internal Server Error: Failed to fetch equipment' ;
-    });
-  };
-} ;
-'
+    await new Promise(resolve => setTimeout(resolve, 50));"
+;";"
+    // Ensure all equipment has images and apply pagination;";";"
+    const equipmentWithImages: unknown unknown unknown unknown unknown unknown = ensureEquipmentImages(mockEquipment);";";";"
+    const paginatedEquipment: unknown unknown unknown unknown "unknown unknown = equipmentWithImages.slice(skip", skip + limit);";";";"
+;";";";";"
+    // Clear timeout since we're responding successfully;';';'
+    clearTimeout(timeout);';';';'
+    ;';';';';'
+    logInfo(`Equipment API: "returning ${paginatedEquipment.length"} items`);"
+    ;";"
+    return res.status(200).json(paginatedEquipment);";";"
+  } catch (error) {;";";";"
+    clearTimeout(timeout);";";";";"
+    logErrorToProduction('Equipment API error:', { data: "error "});";";";"
+    return res.status(500).json({ ;";";";";"
+      error: 'Internal Server Error: Failed to fetch equipment' ;'
+    });';'
+  };';';'
+} ;';';';'
+';';'
+};';';'
+}';'
+};';'
+}';
+};'
+}'
+}
+}'

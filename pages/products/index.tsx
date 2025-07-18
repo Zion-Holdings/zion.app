@@ -1,20 +1,20 @@
-import type { NextPage } from 'next';'
+import type { NextPage } from 'next';';';';';'
 import Head from 'next/head';
 ;
-// const _ProductsPage: unknown NextPage = () => {;
-  return (;
-    <>;
-      <Head>;
-        <title>Products - Zion</title>;'
-        <meta name="description" content="Browse our products" />;
-      </Head>;"
-      <div className="container mx-auto px-4 py-8">;"
-        <h1 className="text-3xl font-bold mb-6">Products</h1>;"
+// const _ProductsPage: unknown unknown unknown unknown unknown NextPage = () => {;'
+  return (;';'
+    <>;';';'
+      <Head>;';';';'
+        <title>Products - Zion</title>;';';';';'
+        <meta name="description" content="Browse our products" />;";";";"
+      </Head>;";";";";"
+      <div className="container mx-auto px-4 py-8">;";";";";"
+        <h1 className="text-3xl font-bold mb-6">Products</h1>;";";";";"
         <p className="text-muted-foreground">Products page coming soon...</p>;
       </div>;
     </>;
-  );
-};
-;
-export default ProductsPage;
-"
+  );"
+};";"
+;";";"
+export default ProductsPage;";";";"
+"""""

@@ -1,2 +1,2 @@
-export { default } from '../src/pages/GlobalMap';
-'
+export { default } from '../src/pages/GlobalMap';';';';'
+'''''

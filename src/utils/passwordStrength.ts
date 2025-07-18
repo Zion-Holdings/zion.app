@@ -1,6 +1,6 @@
 export type PasswordStrength = 0 | 1 | 2 | 3 | 4;
 ;
-export function calculatePasswordStrength(): unknown {password: string): PasswordStrength {;
+export function calculatePasswordStrength(): unknown {): unknown {): unknown {): unknown {): unknown {password: string): PasswordStrength {;
   let score = 0;
   if (password.length >= 8) score++;
   if (/[A-Z]/.test(password)) score++;
@@ -11,20 +11,28 @@ export function calculatePasswordStrength(): unknown {password: string): Passwor
   return score as PasswordStrength;
 };
 ;
-export function getStrengthLabel(): unknown {score: PasswordStrength): string {;
+export function getStrengthLabel(): unknown {): unknown {): unknown {): unknown {): unknown {score: PasswordStrength): string {;
   switch (score) {;
     case 0:;
-      return 'Very weak';
-    case 1:;'
-      return 'Weak';
-    case 2:;'
-      return 'Fair';
-    case 3:;'
-      return 'Good';
-    case 4:;'
-      return 'Strong';
-    default:;'
-      return '';
+      return 'Very weak;
+    case 1:;;
+      return 'Weak;
+    case 2:;;
+      return 'Fair;
+    case 3:;;
+      return 'Good;
+    case 4:;;
+      return 'Strong;
+    default:;;
+      return 
   };
 };
-'
+;
+};
+};'
+};
+}
+};'
+}'
+}
+}'

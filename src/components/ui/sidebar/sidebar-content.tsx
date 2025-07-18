@@ -1,106 +1,106 @@
-import React from 'react';'
-import * as React from 'react';'
-import { Input } from '@/components/ui/input';'
-import { Separator } from '@/components/ui/separator';'
-import { cn } from '@/lib/utils';'
-import type { SafeRef } from '../sidebar.types';
+import React from 'react
+import * as React from 'react
+import { Input } from '@/components/ui/input;'
+import { Separator } from '@/components/ui/separator;'
+import { cn } from '@/lib/utils;'
+import type { SafeRef } from '../sidebar.types;
 ;
-export const SidebarInput: unknown unknown = React.forwardRef<;
+export const SidebarInput: unknown = React.forwardRef<;
   React.ElementRef<typeof Input>,;
-  React.ComponentProps<typeof Input>;
+  React.ComponentProps<typeof Input>;'
 >((props, ref) => {;
   return (;
-    <Input;
-      ref={ref};'
-      data-sidebar="input";
-      className={cn(;"
+    <Input;'
+      ref={ref};;
+      data-sidebar="input";";";";"
+      className={cn(;";";";";"
         'h-8 w-full bg-background shadow-none focus-visible:ring-2 focus-visible:ring-sidebar-ring',;
         props.className,;
-      )};
+      )};'
       {...props};
     />;
-  );
-});'
-SidebarInput.displayName = 'SidebarInput';
+  );'
+});;
+SidebarInput.displayName = 'SidebarInput;
 ;
-export const SidebarHeader: unknown unknown = React.forwardRef<;
-  HTMLDivElement,;'
-  React.ComponentProps<'div'>;
+export const SidebarHeader: unknown = React.forwardRef<;'
+  HTMLDivElement,;;
+  React.ComponentProps<'div'>;'
 >((props, ref) => {;
   return (;
-    <div;
-      ref={ref as SafeRef<HTMLDivElement>};'
-      data-sidebar="header";"
-      className={cn('flex flex-col gap-2 p-2', props.className)};
+    <div;'
+      ref={ref as SafeRef<HTMLDivElement>};;
+      data-sidebar="header";";";";";"
+      className={cn('flex flex-col gap-2 p-2', props.className)};'
       {...props};
     />;
-  );
-});'
-SidebarHeader.displayName = 'SidebarHeader';
+  );'
+});;
+SidebarHeader.displayName = 'SidebarHeader;
 ;
-export const SidebarFooter: unknown unknown = React.forwardRef<;
-  HTMLDivElement,;'
-  React.ComponentProps<'div'>;
+export const SidebarFooter: unknown = React.forwardRef<;'
+  HTMLDivElement,;;
+  React.ComponentProps<'div'>;'
 >((props, ref) => {;
   return (;
-    <div;
-      ref={ref as SafeRef<HTMLDivElement>};'
-      data-sidebar="footer";"
-      className={cn('flex flex-col gap-2 p-2', props.className)};
+    <div;'
+      ref={ref as SafeRef<HTMLDivElement>};;
+      data-sidebar="footer";";";";";"
+      className={cn('flex flex-col gap-2 p-2', props.className)};'
       {...props};
     />;
-  );
-});'
-SidebarFooter.displayName = 'SidebarFooter';
+  );'
+});;
+SidebarFooter.displayName = 'SidebarFooter;
 ;
-export const SidebarSeparator: unknown unknown = React.forwardRef<;
+export const SidebarSeparator: unknown = React.forwardRef<;
   HTMLDivElement,;
-  React.ComponentProps<typeof Separator>;
+  React.ComponentProps<typeof Separator>;'
 >((props, ref) => {;
   return (;
-    <Separator;
-      ref={ref};'
-      data-sidebar="separator";"
-      className={cn('mx-2 w-auto bg-sidebar-border', props.className)};
+    <Separator;'
+      ref={ref};;
+      data-sidebar="separator";";";";";"
+      className={cn('mx-2 w-auto bg-sidebar-border', props.className)};'
       {...props};
     />;
-  );
-});'
-SidebarSeparator.displayName = 'SidebarSeparator';
+  );'
+});;
+SidebarSeparator.displayName = 'SidebarSeparator;
 ;
-export const SidebarContent: unknown unknown = React.forwardRef<;
-  HTMLDivElement,;'
-  React.ComponentProps<'div'>;
+export const SidebarContent: unknown = React.forwardRef<;'
+  HTMLDivElement,;;
+  React.ComponentProps<'div'>;'
 >((props, ref) => {;
   return (;
-    <div;
-      ref={ref};'
-      data-sidebar="content";
-      className={cn(;"
+    <div;'
+      ref={ref};;
+      data-sidebar="content";";";";"
+      className={cn(;";";";";"
         'flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden',;
         props.className,;
-      )};
+      )};'
       {...props};
     />;
-  );
-});'
-SidebarContent.displayName = 'SidebarContent';
+  );'
+});;
+SidebarContent.displayName = 'SidebarContent;
 ;
-export const SidebarBasicGroup: unknown unknown = React.forwardRef<;
-  HTMLDivElement,;'
-  React.ComponentProps<'div'>;
+export const SidebarBasicGroup: unknown = React.forwardRef<;'
+  HTMLDivElement,;;
+  React.ComponentProps<'div'>;'
 >((props, ref) => {;
   return (;
-    <div;
-      ref={ref};'
-      data-sidebar="group";
-      className={cn(;"
+    <div;'
+      ref={ref};;
+      data-sidebar="group";";";";"
+      className={cn(;";";";";"
         'relative flex w-full min-w-0 flex-col p-2',;
         props.className,;
-      )};
+      )};'
       {...props};
     />;
-  );
-});'
-SidebarBasicGroup.displayName = 'SidebarBasicGroup';
-'
+  );'
+});;
+SidebarBasicGroup.displayName = 'SidebarBasicGroup;
+'''''

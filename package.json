@@ -238,7 +238,22 @@
     "continuous:start": "npm run improvement:start",
     "continuous:stop": "npm run improvement:stop",
     "continuous:status": "npm run improvement:status",
-    "continuous:report": "npm run improvement:report"
+    "continuous:report": "npm run improvement:report",
+    "distributed-ai:start": "node scripts/distributed-ai-controller.cjs",
+    "distributed-ai:install": "node scripts/cursor-ai-installer.cjs install-local",
+    "distributed-ai:discover": "node scripts/cursor-ai-installer.cjs discover",
+    "distributed-ai:install-remote": "node scripts/cursor-ai-installer.cjs install-remote",
+    "distributed-ai:verify": "node scripts/cursor-ai-installer.cjs verify",
+    "distributed-ai:report": "node scripts/cursor-ai-installer.cjs report",
+    "ai-coordinator:start": "node scripts/ai-coordinator.cjs",
+    "ai-coordinator:status": "node -e \"const { AICoordinator } = require('./scripts/ai-coordinator.cjs'); const coordinator = new AICoordinator(); coordinator.getSystemStatus().then(console.log);\"",
+    "ai-coordinator:submit-task": "node -e \"const { AICoordinator } = require('./scripts/ai-coordinator.cjs'); const coordinator = new AICoordinator(); coordinator.submitTask(process.argv[1]).then(console.log);\"",
+    "multi-computer:setup": "npm run distributed-ai:install && npm run ai-coordinator:start",
+    "multi-computer:discover": "npm run distributed-ai:discover",
+    "multi-computer:install-all": "npm run distributed-ai:install-remote",
+    "multi-computer:verify": "npm run distributed-ai:verify",
+    "multi-computer:report": "npm run distributed-ai:report",
+    "multi-computer:status": "npm run ai-coordinator:status"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

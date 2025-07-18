@@ -1,1 +1,1 @@
-export { default } from '@/pages/GreenIT';'
+export { default } from '@/pages/GreenIT';'''''

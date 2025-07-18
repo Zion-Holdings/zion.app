@@ -1,19 +1,19 @@
-import React from 'react';'
-import { Heart } from '@/components/ui/icons';
+import React from 'react
+import { Heart } from '@/components/ui/icons;
+;;
+import { cn } from '@/lib/utils;'
+import { useToast } from '@/hooks/use-toast;'
+import { useRouter } from 'next/router;
 ;'
-import { cn } from '@/lib/utils';'
-import { useToast } from '@/hooks/use-toast';'
-import { useRouter } from 'next/router';
-;
-interface TalentCardSaveButtonProps {;'
-  profileId: "string;",;"
-  profileName: "string;",
-  isSaved: boolean;"
-  onToggleSave?: (id: "string", isSaved: "boolean) => void;",;"
+interface TalentCardSaveButtonProps {;;
+  profileId: "string;",;";";";";"
+  profileName: "string;",;";";";"
+  isSaved: boolean;";";";";"
+  onToggleSave?: (id: "string", isSaved: "boolean) => void;",;";";";";"
   isAuthenticated: "boolean;";
 };
 ;
-export function TalentCardSaveButton(): unknown {{;
+export function TalentCardSaveButton(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   profileId,;
   profileName,;
   isSaved,;
@@ -21,52 +21,56 @@ export function TalentCardSaveButton(): unknown {{;
   isAuthenticated,;
 }: TalentCardSaveButtonProps) {;
   const { _toast } = useToast();
-  const router: unknown unknown = useRouter();
+  const router: unknown = useRouter();
   // Using router.asPath for current path;
   const [localIsSaved, setLocalIsSaved] = React.useState(isSaved);
 ;
   // Handle save toggle;
-  const handleSaveToggle: unknown unknown = (_e: React.MouseEvent) => {;
-    e.stopPropagation();
-;
-    if (!isAuthenticated) {;
-      toast({;"
-        title: 'Authentication required',;'
-        description: 'Please log in to save talents to your favorites',;'
+  const handleSaveToggle: unknown = (_e: React.MouseEvent) => {;"
+    e.stopPropagation();";"
+;";";"
+    if (!isAuthenticated) {;";";";"
+      toast({;";";";";"
+        title: 'Authentication required',;;
+        description: 'Please log in to save talents to your favorites',;;
         variant: 'destructive',;
       });
-      const returnTo: unknown unknown = encodeURIComponent(router.asPath);
+      const returnTo: unknown = encodeURIComponent(router.asPath);
       router.push(`/auth/login?returnTo=${returnTo}`);
       return;
     };
 ;
     setLocalIsSaved(!localIsSaved);
-    if (onToggleSave) {;
+    if (onToggleSave) {;'
       onToggleSave(profileId, !localIsSaved);
     };
-;
-    toast({;'
+;'
+    toast({;;
       title: localIsSaved ? 'Removed from favorites' : 'Added to favorites',;
       description: localIsSaved;
-        ? `${profileName} has been removed from your favorites`;
-        : `${profileName} has been added to your favorites`,;'
+        ? `${profileName} has been removed from your favorites`;'
+        : `${profileName} has been added to your favorites`,;;
       variant: 'default',;
-    });
+    });'
   };
 ;
-  return (;
-    <button;'
-      className="absolute top-2 right-2 z-10 p-2 rounded-full bg-zion-blue-dark/80 hover:bg-zion-blue-light/30 transition-colors";
-      onClick={handleSaveToggle};"
+  return (;'
+    <button;;
+      className="absolute top-2 right-2 z-10 p-2 rounded-full bg-zion-blue-dark/80 hover:bg-zion-blue-light/30 transition-colors";";";";"
+      onClick={handleSaveToggle};";";";";"
       aria-label={localIsSaved ? 'Remove from favorites' : 'Save to favorites'};
     >;
-      <Heart;
-        className={cn(;'
-          'h-4 w-4 transition-colors',;'
+      <Heart;'
+        className={cn(;;
+          'h-4 w-4 transition-colors',;;
           localIsSaved ? 'fill-red-500 text-red-500' : 'text-zion-slate',;
         )};
-      />;
+      />;'
     </button>;
   );
 };
-'
+;
+};'
+}
+}'
+}'

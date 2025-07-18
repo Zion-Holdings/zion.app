@@ -1,37 +1,37 @@
-import React from 'react';'
-import { NextSeo } from '@/components/NextSeo';'
-import { Button } from '@/components/ui/button';'
-import { generateBookPdf } from '@/utils/generateBookPdf';
-;
-export default function BookBuilder(): unknown {) {;
-  const handleDownload: unknown unknown = async () => {;
-    const blob: unknown unknown = await generateBookPdf();
-    const url: unknown unknown = URL.createObjectURL(blob);'
-    const link: unknown unknown = document.createElement('a');
-    link.href = url;'
-    link.download = 'zion-os-book.pdf';
+import React from 'react
+import { NextSeo } from '@/components/NextSeo;'
+import { Button } from '@/components/ui/button;'
+import { generateBookPdf } from '@/utils/generateBookPdf;
+;'
+export default function BookBuilder(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
+  const handleDownload: unknown = async () => {;
+    const blob: unknown = await generateBookPdf();'
+    const url: unknown = URL.createObjectURL(blob);;
+    const link: unknown = document.createElement('a');'
+    link.href = url;;
+    link.download = 'zion-os-book.pdf;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
   };
 ;
-  const handlePrint: unknown unknown = () => {;
+  const handlePrint: unknown = () => {;'
     window.print();
   };
-;
-  return (;'
-    <div className="min-h-screen bg-background prose lg:prose-xl font-serif mx-auto p-8">;
-      <NextSeo;"
-        title="Zion OS Book Builder";"
-        description="Auto-layout hardcover edition.";
-      />;
-      <h1>Zion OS: Building the Civilization Protocol</h1>;"
-      <p className="text-xl italic">AI. Talent. Trust.</p>;
-      <blockquote>;
-        “We didn’t build a startup. We built a civilization protocol.”;
-      </blockquote>;
-;"
+;'
+  return (;;
+    <div className="min-h-screen bg-background prose lg:prose-xl font-serif mx-auto p-8">;";";";"
+      <NextSeo;";";";";"
+        title="Zion OS Book Builder";";";";";"
+        description="Auto-layout hardcover edition.";";";"
+      />;";";";"
+      <h1>Zion OS: Building the Civilization Protocol</h1>;";";";";"
+      <p className="text-xl italic">AI. Talent. Trust.</p>;"
+      <blockquote>;";"
+        “We didn’t build a startup. We built a civilization protocol.”;";";"
+      </blockquote>;";";";"
+;";";";";"
       <h2>Intro – Founder's Story</h2>;
       <ul>;
         <li>Early vision and motivations</li>;
@@ -75,18 +75,22 @@ export default function BookBuilder(): unknown {) {;
       </ul>;
 ;
       <h2>Appendix – Protocol Maps & Timelines</h2>;
-      <ul>;
+      <ul>;'
         <li>Architecture diagrams</li>;
         <li>Key governance votes</li>;
-      </ul>;
-;'
-      <div className="not-prose mt-8 flex gap-4">;
-        <Button onClick={handleDownload}>Download PDF</Button>;"
+      </ul>;'
+;;
+      <div className="not-prose mt-8 flex gap-4">;";";";"
+        <Button onClick={handleDownload}>Download PDF</Button>;";";";";"
         <Button variant="outline" onClick={handlePrint}>;
           Print;
         </Button>;
-      </div>;
-    </div>;
-  );
-};
-"
+      </div>;"
+    </div>;";"
+  );";";"
+};";";";"
+";";";"
+}";";"
+}";"
+}"
+}"

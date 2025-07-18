@@ -1,19 +1,19 @@
-import { TalentCard } from '@/components/talent/TalentCard';'
-import { TalentSkeleton } from '@/components/talent/TalentSkeleton';'
-import type { TalentProfile } from '@/types/talent';'
-import { logInfo } from '@/utils/productionLogger';
-;
-export interface TalentGridProps {;'
-  talents: "TalentProfile[];",;"
-  isLoading: "boolean;","
-  onTalentClick: "(id: string) => void;",;
-  isAuthenticated: boolean;
-  viewProfile?: (id: string) => void;
-  clearFilters?: () => void;"
+import { TalentCard } from '@/components/talent/TalentCard;'
+import { TalentSkeleton } from '@/components/talent/TalentSkeleton;'
+import type { TalentProfile } from '@/types/talent;'
+import { logInfo } from '@/utils/productionLogger;
+;'
+export interface TalentGridProps {;;
+  talents: "TalentProfile[];",;";";";";"
+  isLoading: "boolean;",";";";";"
+  onTalentClick: "(id: string) => void;",;";"
+  isAuthenticated: boolean;";";"
+  viewProfile?: (id: string) => void;";";";"
+  clearFilters?: () => void;";";";";"
   handleRequestHire?: (talent: "TalentProfile) => void;";
 };
 ;
-export function TalentGrid(): unknown {{;
+export function TalentGrid(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   talents,;
   isLoading,;
   onTalentClick,;
@@ -22,16 +22,16 @@ export function TalentGrid(): unknown {{;
   clearFilters,;
   handleRequestHire,;
 }: TalentGridProps) {;
-  const handleRequestHireInternal: unknown unknown = (_talent: TalentProfile) => {;
-    if (handleRequestHire) {;
-      handleRequestHire(talent);
-    } else {;
-      // Default implementation;"
+  const handleRequestHireInternal: unknown = (_talent: TalentProfile) => {;"
+    if (handleRequestHire) {;";"
+      handleRequestHire(talent);";";"
+    } else {;";";";"
+      // Default implementation;";";";";"
       logInfo('Request to hire:', { data: "{ data: talent.id "} });
     };
   };
 ;
-  const handleViewProfile: unknown unknown = (_id: string) => {;
+  const handleViewProfile: unknown = (_id: string) => {;
     if (viewProfile) {;
       viewProfile(id);
     } else {;
@@ -40,28 +40,28 @@ export function TalentGrid(): unknown {{;
   };
 ;
   if (isLoading) {;
-    return <TalentSkeleton />;
-  };
-;
-  if (!talents || talents.length === 0) {;
-    return (;"
-      <div className="py-8 text-center bg-zion-blue-dark rounded-lg border border-zion-blue-light p-6">;"
+    return <TalentSkeleton />;"
+  };";"
+;";";"
+  if (!talents || talents.length === 0) {;";";";"
+    return (;";";";";"
+      <div className="py-8 text-center bg-zion-blue-dark rounded-lg border border-zion-blue-light p-6">;";";";";"
         <p className="text-zion-slate-light mb-4">;
-          No talents found matching your criteria;
-        </p>;
-        {clearFilters && (;
-          <button;
-            onClick={clearFilters};"
+          No talents found matching your criteria;"
+        </p>;";"
+        {clearFilters && (;";";"
+          <button;";";";"
+            onClick={clearFilters};";";";";"
             className="px-4 py-2 bg-zion-purple text-white rounded hover:bg-zion-purple-dark transition-colors";
           >;
             Clear Filters;
           </button>;
         )};
-      </div>;
-    );
-  };
-;
-  return (;"
+      </div>;"
+    );";"
+  };";";"
+;";";";"
+  return (;";";";";"
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">;
       {talents.map((talent) => (;
         <TalentCard;
@@ -71,8 +71,12 @@ export function TalentGrid(): unknown {{;
           onRequestHire={() => handleRequestHireInternal(talent)};
           isAuthenticated={isAuthenticated};
         />;
-      ))};
-    </div>;
-  );
-};
-"
+      ))};"
+    </div>;";"
+  );";";"
+};";";";"
+";";";"
+}";";"
+}";"
+}"
+}"

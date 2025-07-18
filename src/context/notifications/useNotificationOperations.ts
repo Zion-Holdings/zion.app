@@ -1,51 +1,51 @@
-import { useState, useCallback, useEffect } from 'react';'
-import { safeStorage } from '@/utils/safeStorage';
+import { useState, useCallback, useEffect } from 'react
+import { safeStorage } from '@/utils/safeStorage;'
 import type {;
   Notification,;
-  FilterType,;
-  NotificationContextType,;'
-} from './types';'
-import createAxiosInstance from '@/lib/axios';'
-import { logErrorToProduction } from '@/utils/productionLogger';
+  FilterType,;'
+  NotificationContextType,;;
+} from './types;'
+import createAxiosInstance from '@/lib/axios;'
+import { logErrorToProduction } from '@/utils/productionLogger;
 ;
-export const _useNotificationOperations: unknown unknown = (;
-  userId?: string,;
+export const _useNotificationOperations: unknown = (;
+  userId?: string,;'
 ): NotificationContextType => {;
   const [notifications, setNotifications] = useState<Notification[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [filter, setFilter] = useState<FilterType>(;'
+  const [loading, setLoading] = useState(false);'
+  const [filter, setFilter] = useState<FilterType>(;;
     () => (safeStorage.getItem('notification_filter') as FilterType) || 'all',;
   );
-;
-  useEffect(() => {;'
+;'
+  useEffect(() => {;;
     safeStorage.setItem('notification_filter', filter);
   }, [filter]);
 ;
-  const fetchNotifications: unknown unknown = useCallback(async () => {;
-    if (!userId) return;
+  const fetchNotifications: unknown = useCallback(async () => {;
+    if (!userId) return;'
 ;
     setLoading(true);
-    try {;
-      const axios: unknown unknown = createAxiosInstance();'
-      const res: unknown unknown = await axios.get(`/api/notifications`, { params: "{ userId "} catch (error) {}});
-      setNotifications(res.data || []);
-    } catch {;"
+    try {;'
+      const axios: unknown = createAxiosInstance();;
+      const res: unknown "unknown = await axios.get(`/api/notifications`", { params: "{ userId "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}});";";"
+      setNotifications(res.data || []);";";";"
+    } catch {;";";";";"
       logErrorToProduction('Error fetching notifications:', { data: "error "});
     } finally {;
       setLoading(false);
     };
   }, [userId]);
 ;
-  const markAsRead: unknown unknown = useCallback(;
-    async (_id: string) => {;
-      if (!userId) return;
-;
-      try {;
-        const axios: unknown unknown = createAxiosInstance();"
-        await axios.patch(`/api/notifications/${id} catch (error) {}`, { read: "true "});
-        await fetchNotifications();
-      } catch {;"
-        logErrorToProduction('Error marking notification as read:', {;'
+  const markAsRead: unknown = useCallback(;
+    async (_id: string) => {;"
+      if (!userId) return;";"
+;";";"
+      try {;";";";"
+        const axios: unknown = createAxiosInstance();";";";";"
+        await axios.patch(`/api/notifications/${id} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`, { read: "true "});";";"
+        await fetchNotifications();";";";"
+      } catch {;";";";";"
+        logErrorToProduction('Error marking notification as read:', {;;
           data: "error",;
         });
       };
@@ -53,59 +53,59 @@ export const _useNotificationOperations: unknown unknown = (;
     [userId, fetchNotifications],;
   );
 ;
-  const markAllAsRead: unknown unknown = useCallback(async () => {;
+  const markAllAsRead: unknown = useCallback(async () => {;
     if (!userId) return;
 ;
     try {;
-      const axios: unknown unknown = createAxiosInstance();
-      await Promise.all(;
-        notifications;
-          .filter((n) => !n.read);
-          .map((n) =>;"
-            axios.patch(`/api/notifications/${n.id} catch (error) {}`, { read: "true "}),;
-          ),;
-      );
-      await fetchNotifications();
-    } catch {;"
-      logErrorToProduction('Error marking all notifications as read:', {;'
+      const axios: unknown = createAxiosInstance();"
+      await Promise.all(;";"
+        notifications;";";"
+          .filter((n) => !n.read);";";";"
+          .map((n) =>;";";";";"
+            axios.patch(`/api/notifications/${n.id} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`, { read: "true "}),;"
+          ),;";"
+      );";";"
+      await fetchNotifications();";";";"
+    } catch {;";";";";"
+      logErrorToProduction('Error marking all notifications as read:', {;;
         data: "error",;
       });
     };
   }, [userId, fetchNotifications, notifications]);
 ;
-  const dismissNotification: unknown unknown = useCallback(;
+  const dismissNotification: unknown = useCallback(;
     async (_id: string) => {;
       if (!userId) return;
 ;
-      try {;
-        const axios: unknown unknown = createAxiosInstance();
-        await axios.delete(`/api/notifications/${id} catch (error) {}`);
-        await fetchNotifications();
-      } catch {;"
+      try {;"
+        const axios: unknown = createAxiosInstance();";"
+        await axios.delete(`/api/notifications/${id} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);";";"
+        await fetchNotifications();";";";"
+      } catch {;";";";";"
         logErrorToProduction('Error dismissing notification:', { data: "error "});
       };
     },;
-    [userId, fetchNotifications],;
-  );
-;
-  const filteredNotifications: unknown unknown = notifications.filter((notification) => {;
-    switch (filter) {;"
-      case 'unread':;
-        return !notification.read;'
-      case 'messages':;'
-        return notification.type === 'message';'
-      case 'onboarding':;'
-        return notification.type === 'onboarding';'
-      case 'system':;'
-        return notification.type === 'system';'
-      case 'orders':;'
-        return notification.type === 'order_status';
+    [userId, fetchNotifications],;"
+  );";"
+;";";"
+  const filteredNotifications: unknown = notifications.filter((notification) => {;";";";"
+    switch (filter) {;";";";";"
+      case 'unread':;'
+        return !notification.read;;
+      case 'messages':;;
+        return notification.type === 'message;'
+      case 'onboarding':;;
+        return notification.type === 'onboarding;'
+      case 'system':;;
+        return notification.type === 'system;'
+      case 'orders':;;
+        return notification.type === 'order_status;
       default:;
         return true;
     };
   });
 ;
-  const unreadCount: unknown unknown = notifications.filter((n) => !n.read).length;
+  const unreadCount: unknown = notifications.filter((n) => !n.read).length;
 ;
   return {;
     notifications,;
@@ -117,8 +117,8 @@ export const _useNotificationOperations: unknown unknown = (;
     markAllAsRead,;
     dismissNotification,;
     setFilter,;
-    fetchNotifications,;
+    fetchNotifications,;'
     setNotifications,;
   };
-};
-'
+};'
+'''''

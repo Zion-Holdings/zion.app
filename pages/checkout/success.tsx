@@ -1,2 +1,2 @@
-export { default } from '@/pages/CheckoutSuccess';
-'
+export { default } from '@/pages/CheckoutSuccess';';';';'
+'''''

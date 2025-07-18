@@ -1,8 +1,8 @@
-export const _INTERESTS: unknown unknown = [;
-  'AI & Machine Learning',;'
-  'Web Development',;'
-  'Cloud Computing',;'
-  'Cybersecurity',;'
+export const _INTERESTS: unknown = [;
+  'AI & Machine Learning',;;
+  'Web Development',;;
+  'Cloud Computing',;;
+  'Cybersecurity',;;
   'Data Science',;
-];
-'
+];'
+'''''

@@ -1,48 +1,48 @@
-import React from 'react';'
-import type { ControllerRenderProps } from 'react-hook-form';'
-import type { Control } from 'react-hook-form';
+import React from 'react
+import type { ControllerRenderProps } from 'react-hook-form;'
+import type { Control } from 'react-hook-form;
 import {;
   FormField,;
-  FormItem,;
+  FormItem,;'
   FormLabel,;
   FormControl,;
-  FormDescription,;
-  FormMessage,;'
-} from '@/components/ui/form';'
-import { Textarea } from '@/components/ui/textarea';'
-import type { JobSchemaType } from './validation';
-;
-interface DescriptionFieldsProps {;'
-  control: "Control<JobSchemaType>;",;"
-  handleEditorChange: "(content: string) => void;",;"
+  FormDescription,;'
+  FormMessage,;;
+} from '@/components/ui/form;'
+import { Textarea } from '@/components/ui/textarea;'
+import type { JobSchemaType } from './validation;
+;'
+interface DescriptionFieldsProps {;;
+  control: "Control<JobSchemaType>;",;";";";";"
+  handleEditorChange: "(content: string) => void;",;";";";";"
   editorContent: "string;";
 };
 ;
-export function DescriptionFields(): unknown {{;
+export function DescriptionFields(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   control,;
   handleEditorChange,;
   editorContent,;
-}: DescriptionFieldsProps) {;
-  return (;
-    <>;
-      <FormField;
-        control={control};"
-        name="description";
-        render={({;
-          field,;
-        }: {;"
+}: DescriptionFieldsProps) {;"
+  return (;";"
+    <>;";";"
+      <FormField;";";";"
+        control={control};";";";";"
+        name="description";";"
+        render={({;";";"
+          field,;";";";"
+        }: {;";";";";"
           field: "ControllerRenderProps<JobSchemaType", 'description'>;
         }) => (;
           <FormItem>;
             <FormLabel>Job Description</FormLabel>;
             <FormControl>;
               <Textarea;
-                value={editorContent};
+                value={editorContent};'
                 onChange={(e) => {;
                   handleEditorChange(e.target.value);
-                  field.onChange(e.target.value);
-                }};'
-                className="min-h-[200px]";"
+                  field.onChange(e.target.value);'
+                }};;
+                className="min-h-[200px]";";";";";"
                 placeholder="Enter a detailed description of the job role";
               />;
             </FormControl>;
@@ -51,22 +51,22 @@ export function DescriptionFields(): unknown {{;
             </FormDescription>;
             <FormMessage />;
           </FormItem>;
-        )};
-      />;
-;
-      <FormField;
-        control={control};"
-        name="responsibilities";
-        render={({;
-          field,;
-        }: {;"
+        )};"
+      />;";"
+;";";"
+      <FormField;";";";"
+        control={control};";";";";"
+        name="responsibilities";";"
+        render={({;";";"
+          field,;";";";"
+        }: {;";";";";"
           field: "ControllerRenderProps<JobSchemaType", 'responsibilities'>;
-        }) => (;
+        }) => (;'
           <FormItem>;
             <FormLabel>Responsibilities (Optional)</FormLabel>;
-            <FormControl>;
-              <Textarea;'
-                placeholder="List the main responsibilities of this job";"
+            <FormControl>;'
+              <Textarea;;
+                placeholder="List the main responsibilities of this job";";";";";"
                 className="resize-none min-h-[100px]";
                 {...field};
               />;
@@ -76,22 +76,22 @@ export function DescriptionFields(): unknown {{;
             </FormDescription>;
             <FormMessage />;
           </FormItem>;
-        )};
-      />;
-;
-      <FormField;
-        control={control};"
-        name="qualifications";
-        render={({;
-          field,;
-        }: {;"
+        )};"
+      />;";"
+;";";"
+      <FormField;";";";"
+        control={control};";";";";"
+        name="qualifications";";"
+        render={({;";";"
+          field,;";";";"
+        }: {;";";";";"
           field: "ControllerRenderProps<JobSchemaType", 'qualifications'>;
-        }) => (;
+        }) => (;'
           <FormItem>;
             <FormLabel>Qualifications (Optional)</FormLabel>;
-            <FormControl>;
-              <Textarea;'
-                placeholder="List the required qualifications for this job";"
+            <FormControl>;'
+              <Textarea;;
+                placeholder="List the required qualifications for this job";";";";";"
                 className="resize-none min-h-[100px]";
                 {...field};
               />;
@@ -101,22 +101,22 @@ export function DescriptionFields(): unknown {{;
             </FormDescription>;
             <FormMessage />;
           </FormItem>;
-        )};
-      />;
-;
-      <FormField;
-        control={control};"
-        name="benefits";
-        render={({;
-          field,;
-        }: {;"
+        )};"
+      />;";"
+;";";"
+      <FormField;";";";"
+        control={control};";";";";"
+        name="benefits";";"
+        render={({;";";"
+          field,;";";";"
+        }: {;";";";";"
           field: "ControllerRenderProps<JobSchemaType", 'benefits'>;
-        }) => (;
+        }) => (;'
           <FormItem>;
             <FormLabel>Benefits (Optional)</FormLabel>;
-            <FormControl>;
-              <Textarea;'
-                placeholder="List the benefits offered for this job";"
+            <FormControl>;'
+              <Textarea;;
+                placeholder="List the benefits offered for this job";";";";";"
                 className="resize-none min-h-[100px]";
                 {...field};
               />;
@@ -126,25 +126,25 @@ export function DescriptionFields(): unknown {{;
             </FormDescription>;
             <FormMessage />;
           </FormItem>;
-        )};
-      />;
-;
-      <FormField;
-        control={control};"
+        )};"
+      />;";"
+;";";"
+      <FormField;";";";"
+        control={control};";";";";"
         name="application_instructions";
-        render={({;
-          field,;
-        }: {;
-          field: ControllerRenderProps<;
-            JobSchemaType,;"
-            'application_instructions';
+        render={({;"
+          field,;";"
+        }: {;";";"
+          field: ControllerRenderProps<;";";";"
+            JobSchemaType,;";";";";"
+            'application_instructions;
           >;
-        }) => (;
+        }) => (;'
           <FormItem>;
             <FormLabel>Application Instructions (Optional)</FormLabel>;
-            <FormControl>;
-              <Textarea;'
-                placeholder="Provide instructions on how to apply for this job";"
+            <FormControl>;'
+              <Textarea;;
+                placeholder="Provide instructions on how to apply for this job";";";";";"
                 className="resize-none min-h-[100px]";
                 {...field};
               />;
@@ -155,8 +155,12 @@ export function DescriptionFields(): unknown {{;
             <FormMessage />;
           </FormItem>;
         )};
-      />;
-    </>;
-  );
-};
-"
+      />;"
+    </>;";"
+  );";";"
+};";";";"
+";";";"
+}";";"
+}";"
+}"
+}"

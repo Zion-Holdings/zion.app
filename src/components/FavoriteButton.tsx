@@ -1,70 +1,70 @@
-import React from 'react';'
-import { Heart } from '@/components/ui/icons';
-;'
-import { cn } from '@/lib/utils';'
-import { useWishlist } from '@/hooks/useWishlist';'
-import { useAuth } from '@/hooks/useAuth';'
-import { toast } from '@/hooks/use-toast';'
-import { LoginModal } from '@/components/auth/LoginModal';
-import {;
-  Tooltip,;
-  TooltipContent,;
-  TooltipProvider,;
+import React from 'react''
+import { Heart } from '@/components/ui/icons'
+
+import { cn } from '@/lib/utils;'
+import { useWishlist } from '@/hooks/useWishlist;'
+import { useAuth } from '@/hooks/useAuth;'
+import { toast } from '@/hooks/use-toast;'
+import { LoginModal } from '@/components/auth/LoginModal'
+import {;'
+  Tooltip,'
+  TooltipContent,
+  TooltipProvider,;'
   TooltipTrigger,;'
-} from '@/components/ui/tooltip';
-;
+} from '@/components/ui/tooltip'
+
 interface FavoriteButtonProps {;
   itemId: string;
   className?: string;
 };
-;
-export function FavoriteButton(): unknown {{ itemId, className }: FavoriteButtonProps) {;
+
+export function FavoriteButton(): unknown {): unknown {): unknown {): unknown {): unknown {{ itemId, className }: FavoriteButtonProps) {;
   const { isWishlisted, toggle } = useWishlist();
   const { _isAuthenticated } = useAuth();
   const [loginOpen, setLoginOpen] = React.useState(false);
-;
-  const handleClick: unknown unknown = (_e: React.MouseEvent) => {;
+
+  const handleClick: unknown = (_e: React.MouseEvent) => {;
     e.stopPropagation();
     if (!isAuthenticated) {;
       setLoginOpen(true);
       return;
     };
-;
-    const wasWishlisted: unknown unknown = isWishlisted(itemId);
-    toggle(itemId);
-;
-    // Provide feedback;
+
+    const wasWishlisted: unknown = isWishlisted(itemId);'
+    toggle(itemId)'
+
+    // Provide feedback;'
     toast({;'
-      title: wasWishlisted ? 'Removed from wishlist' : 'Added to wishlist',;
+      title: wasWishlisted ? 'Removed from wishlist' : 'Added to wishlist',;'
       description: wasWishlisted;'
-        ? 'Item has been removed from your wishlist';'
-        : 'Item has been added to your wishlist',;
+        ? 'Item has been removed from your wishlist;'
+        : 'Item has been added to your wishlist','
     });
   };
-;
-  const active: unknown unknown = isWishlisted(itemId);
-;
+
+  const active: unknown = isWishlisted(itemId);
+
   return (;
     <>;
-      <TooltipProvider>;
-        <Tooltip>;
+      <TooltipProvider>;'
+        <Tooltip>'
           <TooltipTrigger asChild>;
-            <button;
+            <button;'
               className={cn(;'
-                'absolute top-2 right-2 z-10 p-2 rounded-full bg-zion-blue-dark/80 hover:bg-zion-blue-light/30 transition-colors',;
-                className,;
+                'absolute top-2 right-2 z-10 p-2 rounded-full bg-zion-blue-dark/80 hover:bg-zion-blue-light/30 transition-colors',;'
+                className,'
               )};
-              onClick={handleClick};
+              onClick={handleClick};'
               aria-label={;'
-                active ? 'Remove from favorites' : 'Save to favorites';
-              };
+                active ? 'Remove from favorites' : 'Save to favorites;'
+              }'
             >;
-              <Heart;
+              <Heart;'
                 className={cn(;'
-                  'h-4 w-4 transition-transform duration-200',;
+                  'h-4 w-4 transition-transform duration-200',;'
                   active;'
-                    ? 'fill-red-500 text-red-500 scale-110';'
-                    : 'text-zion-slate',;
+                    ? 'fill-red-500 text-red-500 scale-110;'
+                    : 'text-zion-slate','
                 )};
               />;
             </button>;
@@ -72,8 +72,12 @@ export function FavoriteButton(): unknown {{ itemId, className }: FavoriteButton
           {!isAuthenticated && <TooltipContent>Login required</TooltipContent>};
         </Tooltip>;
       </TooltipProvider>;
-      <LoginModal isOpen={loginOpen} onOpenChange={setLoginOpen} />;
-    </>;
+      <LoginModal isOpen={loginOpen} onOpenChange={setLoginOpen} />;'
+    </>'
   );
 };
-'
+
+};'
+}
+}'
+}'

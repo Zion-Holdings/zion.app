@@ -1,81 +1,85 @@
-import React, { useState, useEffect } from 'react';'
-import { useRouter } from 'next/router';'
-import { getTalentBySlug } from '@/api/talent';'
-import Skeleton from '@/components/ui/skeleton';'
-import { Button } from '@/components/ui/button';'
-import { SEO } from '@/components/SEO';'
-import type { TalentProfile } from '@/types/talent';
+import React, { useState, useEffect } from 'react
+import { useRouter } from 'next/router;'
+import { getTalentBySlug } from '@/api/talent;'
+import Skeleton from '@/components/ui/skeleton;'
+import { Button } from '@/components/ui/button;'
+import { SEO } from '@/components/SEO;'
+import type { TalentProfile } from '@/types/talent;
 ;
-export default function TalentDetail(): unknown {) {;
-  const router: unknown unknown = useRouter();'
-  const { slug: "rawSlug "} = router.query;"
-  const slug: unknown unknown = typeof rawSlug === 'string' ? rawSlug : undefined;
+export default function TalentDetail(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'
+  const router: unknown = useRouter();;
+  const { slug: "rawSlug "} = router.query;";";";";"
+  const slug: unknown = typeof rawSlug === 'string' ? rawSlug : undefined;
   const [talent, setTalent] = useState<TalentProfile | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 ;
   useEffect(() => {;
-    const fetchTalent: unknown unknown = async () => {;
+    const fetchTalent: unknown = async () => {;
       if (!slug) return;
       setLoading(true);
       try {;
-        const profile: unknown unknown = await getTalentBySlug(slug);
+        const profile: unknown = await getTalentBySlug(slug);
         setTalent(profile);
-      } catch (error) {} catch {;
+      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;
         setTalent(null);
       } finally {;
         setLoading(false);
       };
     };
 ;
-    fetchTalent();
+    fetchTalent();'
   }, [slug]);
 ;
-  if (loading) {;
-    return (;'
-      <div className="p-4 space-y-2" data-testid="talent-loading">;"
-        <Skeleton className="h-8 w-1/3" />;"
-        <Skeleton className="h-4 w-full" />;"
+  if (loading) {;'
+    return (;;
+      <div className="p-4 space-y-2" data-testid="talent-loading">;";";";";"
+        <Skeleton className="h-8 w-1/3" />;";";";";"
+        <Skeleton className="h-4 w-full" />;";";";";"
         <Skeleton className="h-4 w-2/3" />;
       </div>;
-    );
-  };
-;
-  if (!talent) {;
-    return (;"
+    );"
+  };";"
+;";";"
+  if (!talent) {;";";";"
+    return (;";";";";"
       <div className="p-4" data-testid="talent-not-found">;
         <p>Talent not found</p>;
       </div>;
     );
   };
-;
-  return (;
-    <>;
-      <SEO;
-        title={talent.full_name};"
-        description={talent.bio || 'Talent profile'};'
+;"
+  return (;";"
+    <>;";";"
+      <SEO;";";";"
+        title={talent.full_name};";";";";"
+        description={talent.bio || 'Talent profile'};;
         ogImage={talent.profile_picture_url || ''};
-      />;
-      <main;'
-        className="min-h-screen bg-zion-blue py-8 text-white";"
-        data-testid="talent-details";
-      >;"
-        <div className="container mx-auto px-4 space-y-4">;"
-          <h1 className="text-3xl font-bold" data-testid="talent-name">;
-            {talent.full_name};
-          </h1>;
-          {talent.bio && <p>{talent.bio}</p>};
-          {talent.skills && talent.skills.length > 0 && (;"
+      />;'
+      <main;;
+        className="min-h-screen bg-zion-blue py-8 text-white";";";";";"
+        data-testid="talent-details";";";";"
+      >;";";";";"
+        <div className="container mx-auto px-4 space-y-4">;";";";";"
+          <h1 className="text-3xl font-bold" data-testid="talent-name">;"
+            {talent.full_name};";"
+          </h1>;";";"
+          {talent.bio && <p>{talent.bio}</p>};";";";"
+          {talent.skills && talent.skills.length > 0 && (;";";";";"
             <ul className="list-disc ml-4" data-testid="talent-skills">;
-              {talent.skills.map((skill) => (;
-                <li key={skill}>{skill}</li>;
-              ))};
-            </ul>;
-          )};"
-          {talent.average_rating && <p>Rating: "{talent.average_rating"}</p>};"
+              {talent.skills.map((skill) => (;"
+                <li key={skill}>{skill}</li>;";"
+              ))};";";"
+            </ul>;";";";"
+          )};";";";";"
+          {talent.average_rating && <p>Rating: "{talent.average_rating"}</p>};";";";";"
           <Button className="bg-zion-purple text-white">Contact</Button>;
         </div>;
-      </main>;
-    </>;
-  );
-};
-"
+      </main>;"
+    </>;";"
+  );";";"
+};";";";"
+";";";"
+}";";"
+}";"
+}"
+}"

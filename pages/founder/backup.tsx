@@ -1,2 +1,2 @@
-export { default } from '@/pages/FounderBackupVault';
-'
+export { default } from '@/pages/FounderBackupVault';';';';'
+'''''

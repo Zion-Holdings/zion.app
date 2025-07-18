@@ -1,99 +1,99 @@
-import { useState, useEffect } from 'react';'
-import { MessageSquare, Code, FileText, Search } from '@/components/ui/icons';'
-import Link from 'next/link';'
-import { useRouter } from 'next/router';'
-import { Button } from '@/components/ui/button';'
-import CreatePostButton from '@/components/community/CreatePostButton';'
-import { Input } from '@/components/ui/input';'
-import { SEO } from '@/components/SEO';'
-import PostCard from '@/components/community/PostCard';'
-import type { ForumCategoryInfo } from '@/types/community';'
-import NotFound from './NotFound';'
-import { useAuth } from '@/hooks/useAuth';'
-import { useCommunity } from '@/context';'
-import { useToast } from '@/hooks/use-toast';'
-import { useFollowedCategories } from '@/hooks/useFollowedCategories';'
-import { logInfo } from '@/utils/productionLogger';
-;
-// Mock category data;'
-const categoriesInfo: unknown "Record<string", ForumCategoryInfo> = {;"
-  'getting-hired': {;'
-    id: 'getting-hired',;'
-    name: 'Getting Hired',;
-    description:;'
-      'Tips, strategies, and questions about getting hired on the platform.',;'
-    adminOnly: "false",;"
-    icon: 'Briefcase',;
-  },;'
-  'project-help': {;'
-    id: 'project-help',;'
-    name: 'Project Help',;'
-    description: 'Get help with your ongoing projects and collaboration.',;'
-    adminOnly: "false",;"
-    icon: 'MessageSquare',;
-  },;'
-  'ai-tools': {;'
-    id: 'ai-tools',;'
-    name: 'AI Tools Discussion',;'
-    description: 'Discuss AI tools, frameworks, and best practices.',;'
-    adminOnly: "false",;"
-    icon: 'Code',;
-  },;'
-  feedback: "{;",;"
-    id: 'feedback',;'
-    name: 'Feedback & Feature Requests',;'
-    description: 'Share your feedback and suggest new features.',;'
-    adminOnly: "false",;"
-    icon: 'FileText',;
-  },;'
-  announcements: "{;",;"
-    id: 'announcements',;'
-    name: 'Announcements',;'
-    description: 'Official announcements from the Zion team.',;'
-    adminOnly: "true",;"
-    icon: 'Megaphone',;
+import { useState, useEffect } from 'react
+import { MessageSquare, Code, FileText, Search } from '@/components/ui/icons;'
+import Link from 'next/link;'
+import { useRouter } from 'next/router;'
+import { Button } from '@/components/ui/button;'
+import CreatePostButton from '@/components/community/CreatePostButton;'
+import { Input } from '@/components/ui/input;'
+import { SEO } from '@/components/SEO;'
+import PostCard from '@/components/community/PostCard;'
+import type { ForumCategoryInfo } from '@/types/community;'
+import NotFound from './NotFound;'
+import { useAuth } from '@/hooks/useAuth;'
+import { useCommunity } from '@/context;'
+import { useToast } from '@/hooks/use-toast;'
+import { useFollowedCategories } from '@/hooks/useFollowedCategories;'
+import { logInfo } from '@/utils/productionLogger;
+;'
+// Mock category data;;
+const categoriesInfo: unknown "Record<string", ForumCategoryInfo> = {;";";";";"
+  'getting-hired': {;;
+    id: 'getting-hired',;;
+    name: 'Getting Hired',;'
+    description:;;
+      'Tips, strategies, and questions about getting hired on the platform.',;;
+    adminOnly: "false",;";";";";"
+    icon: 'Briefcase',;'
+  },;;
+  'project-help': {;;
+    id: 'project-help',;;
+    name: 'Project Help',;;
+    description: 'Get help with your ongoing projects and collaboration.',;;
+    adminOnly: "false",;";";";";"
+    icon: 'MessageSquare',;'
+  },;;
+  'ai-tools': {;;
+    id: 'ai-tools',;;
+    name: 'AI Tools Discussion',;;
+    description: 'Discuss AI tools, frameworks, and best practices.',;;
+    adminOnly: "false",;";";";";"
+    icon: 'Code',;'
+  },;;
+  feedback: "{;",;";";";";"
+    id: 'feedback',;;
+    name: 'Feedback & Feature Requests',;;
+    description: 'Share your feedback and suggest new features.',;;
+    adminOnly: "false",;";";";";"
+    icon: 'FileText',;'
+  },;;
+  announcements: "{;",;";";";";"
+    id: 'announcements',;;
+    name: 'Announcements',;;
+    description: 'Official announcements from the Zion team.',;;
+    adminOnly: "true",;";";";";"
+    icon: 'Megaphone',;'
   },;
 };
-;
-const iconMap: unknown unknown = {;'
-  Briefcase: "Briefcase",;"
-  MessageSquare: "MessageSquare",;"
-  Code: "Code",;"
-  FileText: "FileText",;"
+;'
+const iconMap: unknown "unknown = {;",;"
+  Briefcase: "Briefcase",;";";";";"
+  MessageSquare: "MessageSquare",;";";";";"
+  Code: "Code",;";";";";"
+  FileText: "FileText",;";";";";"
   Megaphone: "Megaphone",;
 };
 ;
-function CategoryContent(): unknown {{;
-  categoryId,;
-  category,;
-  IconComponent,;
-  user,;
-}: {;"
-  categoryId: "string;",;"
-  category: "ForumCategoryInfo;","
-  IconComponent: "LucideIcon;",;"
-  user: "unknown;";
-}) {;"
+function CategoryContent(): unknown {): unknown {): unknown {): unknown {): unknown {{;
+  categoryId,;"
+  category,;";"
+  IconComponent,;";";"
+  user,;";";";"
+}: {;";";";";"
+  categoryId: "string;",;";";";";"
+  category: "ForumCategoryInfo;",";";";";"
+  IconComponent: "LucideIcon;",;";";";";"
+  user: "unknown;";";";";"
+}) {;";";";";"
   const [searchQuery, setSearchQuery] = useState('');
   const { featuredPosts, recentPosts } = useCommunity();
 ;
   // Filter posts by category from context data;
-  const categoryPosts: unknown unknown = [;
+  const categoryPosts: unknown = [;
     ...featuredPosts.filter((post) => post.categoryId === categoryId),;
     ...recentPosts.filter((post) => post.categoryId === categoryId),;
   ].filter(;
     (post, index, self) =>;
-      // Remove duplicates by id;
+      // Remove duplicates by id;'
       index === self.findIndex((p) => p.id === post.id),;
   );
-;
-  // Type guard for user;'
-  function isAdminUser(): unknown {u: "unknown): u is { userType?: string; role?: string "} {;"
+;'
+  // Type guard for user;;
+  function isAdminUser(): unknown {): unknown {): unknown {): unknown {): unknown {u: "unknown): u is { userType?: string; role?: string "} {;";";";";"
     return !!u && typeof u === 'object' && ('userType' in u || 'role' in u);
   };
 ;
   // Apply search filter;
-  const filteredPosts: unknown unknown = searchQuery;
+  const filteredPosts: unknown = searchQuery;
     ? categoryPosts.filter(;
         (post) =>;
           post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||;
@@ -103,103 +103,103 @@ function CategoryContent(): unknown {{;
           ),;
       );
     : categoryPosts;
-;
-  const canCreatePost: unknown unknown = Boolean(;
+;'
+  const canCreatePost: unknown = Boolean(;
     user &&;
-      (!category.adminOnly ||;
-        (isAdminUser(user) &&;'
+      (!category.adminOnly ||;'
+        (isAdminUser(user) &&;;
           (user.userType === 'admin' || user.role === 'admin'))),;
   );
   const { isFollowed, follow, unfollow } = useFollowedCategories();
-  const { _toast } = useToast();
+  const { _toast } = useToast();'
 ;
-  const handleFollow: unknown unknown = () => {;
-    if (!user) {;
-      toast({;'
-        title: 'Login required',;'
+  const handleFollow: unknown = () => {;
+    if (!user) {;'
+      toast({;;
+        title: 'Login required',;;
         description: 'Please sign in to follow this category',;
       });
       return;
     };
     if (isFollowed(categoryId)) {;
       unfollow(categoryId);
-    } else {;
+    } else {;'
       follow(categoryId);
     };
-  };
-;'
-  logInfo('CategoryContent - categoryId:', { data: "{ data: categoryId "} });"
-  logInfo('CategoryContent - categoryPosts:', {;'
-    data: "{ data: categoryPosts "},;
-  });"
-  logInfo('CategoryContent - filteredPosts:', {;'
-    data: "{ data: filteredPosts "},;
-  });
-;
-  return (;"
-    <div className="container py-8">;"
-      <div className="flex items-center gap-3 mb-6">;
-        <Link;"
-          href="/community";"
-          className="text-sm text-muted-foreground hover:text-foreground";
-        >;
-          Forum;
-        </Link>;"
-        <span className="text-muted-foreground">/</span>;"
-        <span className="font-medium">{category.name}</span>;
-      </div>;
-;"
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-4">;"
-        <div className="flex items-center gap-4">;"
-          <div className="p-3 bg-zion-purple/10 rounded-full">;"
-            <IconComponent className="h-8 w-8 text-zion-purple" />;
-          </div>;
-          <div>;"
-            <h1 className="text-3xl font-bold">{category.name}</h1>;"
-            <p className="text-muted-foreground mt-1">{category.description}</p>;
-          </div>;
-        </div>;
-;"
-        <div className="flex items-center gap-2">;
-          {canCreatePost && <CreatePostButton categoryId={categoryId} />};
-          <Button;"
+  };'
+;;
+  logInfo('CategoryContent - categoryId:', { data: "{ data: categoryId "} });";";";";"
+  logInfo('CategoryContent - categoryPosts:', {;;
+    data: "{ data: categoryPosts "},;";";";"
+  });";";";";"
+  logInfo('CategoryContent - filteredPosts:', {;;
+    data: "{ data: filteredPosts "},;";"
+  });";";"
+;";";";"
+  return (;";";";";"
+    <div className="container py-8">;";";";";"
+      <div className="flex items-center gap-3 mb-6">;";";";"
+        <Link;";";";";"
+          href="/community";";";";";"
+          className="text-sm text-muted-foreground hover:text-foreground";";"
+        >;";";"
+          Forum;";";";"
+        </Link>;";";";";"
+        <span className="text-muted-foreground">/</span>;";";";";"
+        <span className="font-medium">{category.name}</span>;";";"
+      </div>;";";";"
+;";";";";"
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-4">;";";";";"
+        <div className="flex items-center gap-4">;";";";";"
+          <div className="p-3 bg-zion-purple/10 rounded-full">;";";";";"
+            <IconComponent className="h-8 w-8 text-zion-purple" />;";";"
+          </div>;";";";"
+          <div>;";";";";"
+            <h1 className="text-3xl font-bold">{category.name}</h1>;";";";";"
+            <p className="text-muted-foreground mt-1">{category.description}</p>;";"
+          </div>;";";"
+        </div>;";";";"
+;";";";";"
+        <div className="flex items-center gap-2">;";";"
+          {canCreatePost && <CreatePostButton categoryId={categoryId} />};";";";"
+          <Button;";";";";"
             variant={isFollowed(categoryId) ? 'outline' : 'default'};
-            onClick={handleFollow};
-          >;'
-            {isFollowed(categoryId) ? 'Following' : 'Follow'};
+            onClick={handleFollow};'
+          >;;
+            {isFollowed(categoryId) ? 'Following' : 'Follow'};'
           </Button>;
         </div>;
-      </div>;
-;'
-      <div className="mb-6">;"
-        <div className="relative">;"
-          <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />;
-          <Input;"
-            placeholder="Search posts in this category...";"
+      </div>;'
+;;
+      <div className="mb-6">;";";";";"
+        <div className="relative">;";";";";"
+          <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />;";";";"
+          <Input;";";";";"
+            placeholder="Search posts in this category...";";";";";"
             className="pl-10";
             value={searchQuery};
-            onChange={(e) => setSearchQuery(e.target.value)};
-          />;
-        </div>;
-      </div>;
-;"
-      <div className="space-y-4">;
-        {filteredPosts.length > 0 ? (;
-          filteredPosts.map((post) => <PostCard key={post.id} post={post} />);
-        ) : searchQuery ? (;"
-          <div className="text-center py-12">;"
-            <h3 className="text-lg font-medium mb-2">No posts found</h3>;"
-            <p className="text-muted-foreground mb-4">;
-              Try adjusting your search terms or browse all posts in this;
-              category.;
-            </p>;"
-            <Button variant="outline" onClick={() => setSearchQuery('')}>;
+            onChange={(e) => setSearchQuery(e.target.value)};"
+          />;";"
+        </div>;";";"
+      </div>;";";";"
+;";";";";"
+      <div className="space-y-4">;";"
+        {filteredPosts.length > 0 ? (;";";"
+          filteredPosts.map((post) => <PostCard key={post.id} post={post} />);";";";"
+        ) : searchQuery ? (;";";";";"
+          <div className="text-center py-12">;";";";";"
+            <h3 className="text-lg font-medium mb-2">No posts found</h3>;";";";";"
+            <p className="text-muted-foreground mb-4">;";"
+              Try adjusting your search terms or browse all posts in this;";";"
+              category.;";";";"
+            </p>;";";";";"
+            <Button variant="outline" onClick={() => setSearchQuery('')}>;'
               Clear Search;
             </Button>;
-          </div>;
-        ) : (;'
-          <div className="text-center py-12">;"
-            <h3 className="text-lg font-medium mb-2">No posts yet</h3>;"
+          </div>;'
+        ) : (;;
+          <div className="text-center py-12">;";";";";"
+            <h3 className="text-lg font-medium mb-2">No posts yet</h3>;";";";";"
             <p className="text-muted-foreground mb-4">;
               Be the first to start a conversation in this category.;
             </p>;
@@ -212,48 +212,48 @@ function CategoryContent(): unknown {{;
         )};
       </div>;
     </div>;
-  );
-};
-;
-export default function ForumCategoryPage(): unknown {) {;
-  const router: unknown unknown = useRouter();"
+  );"
+};";"
+;";";"
+export default function ForumCategoryPage(): unknown {): unknown {): unknown {): unknown {): unknown {) {;";";";"
+  const router: unknown = useRouter();";";";";"
   const { _categoryId } = router.query as { categoryId: "string "};
   const { _user } = useAuth();
 ;
   // Check if the category exists and user has access;
-  const category: unknown unknown = categoryId ? categoriesInfo[categoryId] : null;
-  const IconComponent: unknown unknown = category;
+  const category: unknown = categoryId ? categoriesInfo[categoryId] : null;
+  const IconComponent: unknown = category;
     ? iconMap[category.icon as keyof typeof iconMap];
     : null;
-;
-  // Check access for admin-only categories;
-  const hasAccess: unknown unknown =;
-    category &&;
-    (!category.adminOnly ||;"
-      (user && (user.userType === 'admin' || user.role === 'admin')));
+;"
+  // Check access for admin-only categories;";"
+  const hasAccess: unknown =;";";"
+    category &&;";";";"
+    (!category.adminOnly ||;";";";";"
+      (user && (user.userType === 'admin' || user.role === 'admin')));'
 ;
   useEffect(() => {;
-    // Add a small delay to ensure router is ready;
-    if (categoryId && category) {;'
-      logInfo('ForumCategoryPage - categoryId changed:', {;'
+    // Add a small delay to ensure router is ready;'
+    if (categoryId && category) {;;
+      logInfo('ForumCategoryPage - categoryId changed:', {;;
         data: "{ data: categoryId "},;
       });
     };
   }, [categoryId, category]);
 ;
   if (!categoryId || !category) {;
-    return <NotFound />;
-  };
-;
-  if (!hasAccess) {;
-    return (;"
-      <div className="container py-8">;"
-        <div className="text-center py-12">;"
-          <h1 className="text-2xl font-bold mb-4">Access Restricted</h1>;"
-          <p className="text-muted-foreground mb-4">;
-            This category is only accessible to administrators.;
-          </p>;
-          <Button asChild>;"
+    return <NotFound />;"
+  };";"
+;";";"
+  if (!hasAccess) {;";";";"
+    return (;";";";";"
+      <div className="container py-8">;";";";";"
+        <div className="text-center py-12">;";";";";"
+          <h1 className="text-2xl font-bold mb-4">Access Restricted</h1>;";";";";"
+          <p className="text-muted-foreground mb-4">;";"
+            This category is only accessible to administrators.;";";"
+          </p>;";";";"
+          <Button asChild>;";";";";"
             <Link href="/community">Back to Community</Link>;
           </Button>;
         </div>;
@@ -266,11 +266,11 @@ export default function ForumCategoryPage(): unknown {) {;
   };
 ;
   return (;
-    <>;
-      <SEO;
-        title={`${category.name} | Community Forum | Zion AI Marketplace`};
-        description={category.description};
-        keywords={`community, forum, ${category.name.toLowerCase()}, discussion`};"
+    <>;"
+      <SEO;";"
+        title={`${category.name} | Community Forum | Zion AI Marketplace`};";";"
+        description={category.description};";";";"
+        keywords={`community, forum, ${category.name.toLowerCase()}, discussion`};";";";";"
         canonical={`https: "//app.ziontechgroup.com/community/category/${categoryId"}`};
       />;
 ;
@@ -279,8 +279,20 @@ export default function ForumCategoryPage(): unknown {) {;
         category={category};
         IconComponent={IconComponent};
         user={user};
-      />;
-    </>;
-  );
+      />;"
+    </>;";"
+  );";";"
+};";";";"
+";"
+};";"
+};";";"
+}";
+};"
+};";"
+}";
 };
-"
+};"
+}"
+}
+}
+}"

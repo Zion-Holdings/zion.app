@@ -1,65 +1,65 @@
-import { useEffect, useState } from 'react';'
-import { useAuth } from './useAuth';'
-import { safeFetch } from '@/integrations/supabase/client';'
-import { getWishlist, saveWishlist } from '@/lib/db';'
-import { logErrorToProduction } from '@/utils/productionLogger';
-;
-export interface Favorite {;'
+import { useEffect, useState } from 'react
+import { useAuth } from './useAuth;'
+import { safeFetch } from '@/integrations/supabase/client;'
+import { getWishlist, saveWishlist } from '@/lib/db;'
+import { logErrorToProduction } from '@/utils/productionLogger;
+;'
+export interface Favorite {;;
   item_type: "string;",;
   item_id: string;
   created_at?: string;
 };
 ;
-export function useFavorites(): unknown {) {;
+export function useFavorites(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const { _user } = useAuth();
   const [favorites, setFavorites] = useState<Favorite[]>([]);
   const [loading, setLoading] = useState(true);
 ;
-  const fetchFavorites: unknown unknown = async () => {;
+  const fetchFavorites: unknown = async () => {;
     if (!user) {;
       setFavorites([]);
-      setLoading(false);
-      return;
-    };
-    try {;
-      const res: unknown unknown = await safeFetch(`/api/favorites?userId=${user.id} catch (error) {}`);
-      const data: unknown unknown = await res.json();
-      setFavorites(data || []);
-      await saveWishlist(data || []);
-    } catch {;"
+      setLoading(false);"
+      return;";"
+    };";";"
+    try {;";";";"
+      const res: unknown "unknown = await safeFetch(`/api/favorites?userId=${user.id"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);"
+      const data: unknown = await res.json();";"
+      setFavorites(data || []);";";"
+      await saveWishlist(data || []);";";";"
+    } catch {;";";";";"
       logErrorToProduction('Failed to fetch favorites', { data: "error "});
-      const local: unknown unknown = await getWishlist();
+      const local: unknown = await getWishlist();
       setFavorites(local as Favorite[]);
     } finally {;
       setLoading(false);
     };
   };
-;
-  useEffect(() => {;
-    fetchFavorites();
-  }, []);
 ;"
-  const toggleFavorite: unknown unknown = async (item_type: "string", _item_id: string) => {;
+  useEffect(() => {;";"
+    fetchFavorites();";";"
+  }, []);";";";"
+;";";";";"
+  const toggleFavorite: unknown = async (item_type: "string", _item_id: string) => {;
     if (!user) return;
-    const exists: unknown unknown = favorites.some(;
-      (f) => f.item_type === item_type && f.item_id === item_id,;
-    );
-    try {;
-      if (exists) {;"
-        await fetch('/api/favorites', {;'
-          method: 'DELETE',;'
-          headers: { 'Content-Type': 'application/json' } catch (error) {},;'
+    const exists: unknown = favorites.some(;"
+      (f) => f.item_type === item_type && f.item_id === item_id,;";"
+    );";";"
+    try {;";";";"
+      if (exists) {;";";";";"
+        await fetch('/api/favorites', {;;
+          method: 'DELETE',;;
+          headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;;
           body: "JSON.stringify({ user_id: user.id", item_type, item_id }),;
         });
         setFavorites((prev) =>;
-          prev.filter(;
-            (f) => !(f.item_type === item_type && f.item_id === item_id),;
-          ),;
-        );
-      } else {;"
-        await fetch('/api/favorites', {;'
-          method: 'POST',;'
-          headers: { 'Content-Type': 'application/json' },;'
+          prev.filter(;"
+            (f) => !(f.item_type === item_type && f.item_id === item_id),;";"
+          ),;";";"
+        );";";";"
+      } else {;";";";";"
+        await fetch('/api/favorites', {;;
+          method: 'POST',;;
+          headers: { 'Content-Type': 'application/json' },;;
           body: "JSON.stringify({ user_id: user.id", item_type, item_id }),;
         });
         setFavorites((prev) => [...prev, { item_type, item_id }]);
@@ -67,25 +67,29 @@ export function useFavorites(): unknown {) {;
       await saveWishlist(;
         exists;
           ? favorites.filter(;
-              (f) => !(f.item_type === item_type && f.item_id === item_id),;
-            );
-          : [...favorites, { item_type, item_id }],;
-      );
-    } catch {;"
-      logErrorToProduction('Failed to toggle favorite', { data: "error "});
-    };
-  };
-;"
-  const isFavorite: unknown unknown = (item_type: "string", item_id: string) =>;
-    favorites.some((f) => f.item_type === item_type && f.item_id === item_id);
-;
-  return {;
-    favorites,;"
-    count: "favorites.length",;
-    loading,;
-    isFavorite,;
-    toggleFavorite,;"
-    refetch: "fetchFavorites",;
-  };
-};
-"
+              (f) => !(f.item_type === item_type && f.item_id === item_id),;"
+            );";"
+          : [...favorites, { item_type, item_id }],;";";"
+      );";";";"
+    } catch {;";";";";"
+      logErrorToProduction('Failed to toggle favorite', { data: "error "});";"
+    };";";"
+  };";";";"
+;";";";";"
+  const isFavorite: unknown = (item_type: "string", item_id: string) =>;"
+    favorites.some((f) => f.item_type === item_type && f.item_id === item_id);";"
+;";";"
+  return {;";";";"
+    favorites,;";";";";"
+    count: "favorites.length",;";"
+    loading,;";";"
+    isFavorite,;";";";"
+    toggleFavorite,;";";";";"
+    refetch: "fetchFavorites",;";"
+  };";";"
+};";";";"
+";";";"
+}";";"
+}";"
+}"
+}"

@@ -8,9 +8,9 @@ import {;
   logInfo,;
   logWarn,;
   logErrorToProduction,;
-} from '@/utils/productionLogger';'
-import { reportErrorToServices } from '@/utils/logError';'
-import { generateTraceId } from '@/utils/generateTraceId';
+} from '@/utils/productionLogger;'
+import { reportErrorToServices } from '@/utils/logError;'
+import { generateTraceId } from '@/utils/generateTraceId;
 ;
 export interface ErrorContext {;
   userId?: string;
@@ -18,39 +18,39 @@ export interface ErrorContext {;
   route?: string;
   component?: string;
   action?: string;
-  userAgent?: string;
+  userAgent?: string;'
   timestamp?: string;
   buildVersion?: string;
-  feature?: string;
-  experimentId?: string;'
-  [key: "string]: unknown;";
-};
-;
-export interface ErrorDetails {;"
-  id: "string;",;
-  message: string;
-  stack?: string;
-  name?: string;
-  cause?: unknown;"
-  severity: 'low' | 'medium' | 'high' | 'critical';,;
-  category:;'
-    | 'user';'
-    | 'system';'
-    | 'network';'
-    | 'validation';'
-    | 'auth';'
-    | 'payment';'
-    | 'performance';'
-    | 'security';'
-  tags: "string[];",;"
-  context: "ErrorContext;","
-  timestamp: "string;",;
-  traceId: string;
-  fingerprint?: string;
-  reproductionSteps?: string[];
-  resolution?: string;"
-  occurrenceCount: "number;",;"
-  firstSeen: "string;","
+  feature?: string;'
+  experimentId?: string;;
+  [key: "string]: unknown;";";"
+};";";"
+;";";";"
+export interface ErrorDetails {;";";";";"
+  id: "string;",;"
+  message: string;";"
+  stack?: string;";";"
+  name?: string;";";";"
+  cause?: unknown;";";";";"
+  severity: 'low' | 'medium' | 'high' | 'critical,;'
+  category:;;
+    | 'user;'
+    | 'system;'
+    | 'network;'
+    | 'validation;'
+    | 'auth;'
+    | 'payment;'
+    | 'performance;'
+    | 'security;'
+  tags: "string[];",;";";";";"
+  context: "ErrorContext;",";";";";"
+  timestamp: "string;",;"
+  traceId: string;";"
+  fingerprint?: string;";";"
+  reproductionSteps?: string[];";";";"
+  resolution?: string;";";";";"
+  occurrenceCount: "number;",;";";";";"
+  firstSeen: "string;",";";";";"
   lastSeen: "string;";
 };
 ;
@@ -60,27 +60,27 @@ export interface PerformanceContext {;
   networkLatency?: number;
   renderTime?: number;
   bundleSize?: number;
-  cacheHits?: number;
-  cacheMisses?: number;
-};
-;
-export interface SystemHealthMetrics {;"
-  uptime: "number;",;"
-  errorRate: "number;","
-  performanceScore: "number;",;"
-  memoryPressure: "number;","
-  networkStatus: 'online' | 'offline' | 'slow';,;'
-  lastHealthCheck: "string;";
-};
-;
-interface PerformanceWithMemory extends Performance {;
-  memory?: {;"
-    usedJSHeapSize: "number;",;"
-    jsHeapSizeLimit: "number;";
-  };
-};
-;
-class EnhancedErrorCollector {;"
+  cacheHits?: number;"
+  cacheMisses?: number;";"
+};";";"
+;";";";"
+export interface SystemHealthMetrics {;";";";";"
+  uptime: "number;",;";";";";"
+  errorRate: "number;",";";";";"
+  performanceScore: "number;",;";";";";"
+  memoryPressure: "number;",";";";";"
+  networkStatus: 'online' | 'offline' | 'slow,;;
+  lastHealthCheck: "string;";"
+};";"
+;";";"
+interface PerformanceWithMemory extends Performance {;";";";"
+  memory?: {;";";";";"
+    usedJSHeapSize: "number;",;";";";";"
+    jsHeapSizeLimit: "number;";"
+  };";"
+};";";"
+;";";";"
+class EnhancedErrorCollector {;";";";";"
   private errors: "Map<string", ErrorDetails> = new Map();
   private sessionId: string;
   private performanceObserver?: PerformanceObserver;
@@ -94,103 +94,103 @@ class EnhancedErrorCollector {;"
   };
 ;
   private generateSessionId(): string {;
-    return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-  };
-;
-  private initializeHealthMetrics(): SystemHealthMetrics {;
-    return {;"
-      uptime: "Date.now()",;"
-      errorRate: "0",;"
-      performanceScore: "100",;"
-      memoryPressure: "0",;"
-      networkStatus: navigator?.onLine ? 'online' : 'offline',;'
-      lastHealthCheck: "new Date().toISOString()",;
-    };
-  };
-;
-  private initialize(): void {;"
+    return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;"
+  };";"
+;";";"
+  private initializeHealthMetrics(): SystemHealthMetrics {;";";";"
+    return {;";";";";"
+      uptime: "Date.now()",;";";";";"
+      errorRate: "0",;";";";";"
+      performanceScore: "100",;";";";";"
+      memoryPressure: "0",;";";";";"
+      networkStatus: navigator?.onLine ? 'online' : 'offline',;;
+      lastHealthCheck: "new Date().toISOString()",;"
+    };";"
+  };";";"
+;";";";"
+  private initialize(): void {;";";";";"
     if (this.isInitialized || typeof window === 'undefined') return;
 ;
     this.setupPerformanceMonitoring();
-    this.setupNetworkMonitoring();
+    this.setupNetworkMonitoring();'
     this.setupMemoryMonitoring();
     this.startHealthChecks();
-;
-    this.isInitialized = true;'
-    logInfo('Enhanced Error Collector initialized', {;'
-      data: "{ sessionId: this.sessionId "},;
-    });
-  };
-;
-  private setupPerformanceMonitoring(): void {;"
-    if (typeof PerformanceObserver === 'undefined') return;
+;'
+    this.isInitialized = true;;
+    logInfo('Enhanced Error Collector initialized', {;;
+      data: "{ sessionId: this.sessionId "},;"
+    });";"
+  };";";"
+;";";";"
+  private setupPerformanceMonitoring(): void {;";";";";"
+    if (typeof PerformanceObserver === 'undefined') return;'
 ;
     try {;
-      this.performanceObserver = new PerformanceObserver((list) => {;
-        for (const entry of list.getEntries()) {;'
+      this.performanceObserver = new PerformanceObserver((list) => {;'
+        for (const entry of list.getEntries()) {;;
           if (entry.entryType === 'navigation') {;
-            const navEntry: unknown unknown = entry as PerformanceNavigationTiming;
-            if (navEntry.loadEventEnd - navEntry.fetchStart > 5000) {;'
-              this.collectError(new Error('Slow page load detected'), {;'
-                severity: 'medium',;'
-                category: 'performance',;'
-                tags: ['slow-load', 'performance'],;'
-                context: "{;",;"
-                  loadTime: "navEntry.loadEventEnd - navEntry.fetchStart",;"
+            const navEntry: unknown = entry as PerformanceNavigationTiming;'
+            if (navEntry.loadEventEnd - navEntry.fetchStart > 5000) {;;
+              this.collectError(new Error('Slow page load detected'), {;;
+                severity: 'medium',;;
+                category: 'performance',;;
+                tags: ['slow-load', 'performance'],;;
+                context: "{;",;";";";";"
+                  loadTime: "navEntry.loadEventEnd - navEntry.fetchStart",;";";";";"
                   route: "window.location.pathname",;
-                } catch (error) {},;
+                } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;
               });
             };
-          };
-        };
-      });
-;
-      this.performanceObserver.observe({;"
+          };"
+        };";"
+      });";";"
+;";";";"
+      this.performanceObserver.observe({;";";";";"
         entryTypes: ['navigation', 'resource'],;
-      });
-    } catch {;'
-      logWarn('Failed to setup performance monitoring:', {;'
+      });'
+    } catch {;;
+      logWarn('Failed to setup performance monitoring:', {;;
         data: "{ data: error "},;
-      });
-    };
-  };
-;
-  private setupNetworkMonitoring(): void {;"
-    if (typeof window === 'undefined') return;
-;'
-    window.addEventListener('online', () => {;'
-      this.healthMetrics.networkStatus = 'online';'
+      });"
+    };";"
+  };";";"
+;";";";"
+  private setupNetworkMonitoring(): void {;";";";";"
+    if (typeof window === 'undefined') return;'
+;;
+    window.addEventListener('online', () => {;;
+      this.healthMetrics.networkStatus = 'online;'
       logInfo('Network status: online');
-    });
-;'
-    window.addEventListener('offline', () => {;'
-      this.healthMetrics.networkStatus = 'offline';'
-      this.collectError(new Error('Network disconnected'), {;'
-        severity: 'medium',;'
-        category: 'network',;'
-        tags: ['offline', 'connectivity'],;'
+    });'
+;;
+    window.addEventListener('offline', () => {;;
+      this.healthMetrics.networkStatus = 'offline;'
+      this.collectError(new Error('Network disconnected'), {;;
+        severity: 'medium',;;
+        category: 'network',;;
+        tags: ['offline', 'connectivity'],;;
         context: { event: 'network-offline' },;
-      });
+      });'
     });
   };
-;
-  private setupMemoryMonitoring(): void {;'
+;'
+  private setupMemoryMonitoring(): void {;;
     if (typeof window === 'undefined' || !('memory' in performance)) return;
 ;
     setInterval(() => {;
-      const perf: unknown unknown = performance as PerformanceWithMemory;
+      const perf: unknown = performance as PerformanceWithMemory;
       if (perf.memory) {;
-        const memoryPressure: unknown unknown =;
+        const memoryPressure: unknown =;'
           perf.memory.usedJSHeapSize / perf.memory.jsHeapSizeLimit;
         this.healthMetrics.memoryPressure = memoryPressure;
-;
-        if (memoryPressure > 0.9) {;'
-          this.collectError(new Error('High memory usage detected'), {;'
-            severity: 'high',;'
-            category: 'performance',;'
-            tags: ['memory-pressure', 'performance'],;'
-            context: "{;",;"
-              memoryUsage: "perf.memory.usedJSHeapSize",;"
+;'
+        if (memoryPressure > 0.9) {;;
+          this.collectError(new Error('High memory usage detected'), {;;
+            severity: 'high',;;
+            category: 'performance',;;
+            tags: ['memory-pressure', 'performance'],;;
+            context: "{;",;";";";";"
+              memoryUsage: "perf.memory.usedJSHeapSize",;";";";";"
               memoryLimit: "perf.memory.jsHeapSizeLimit",;
               memoryPressure,;
             },;
@@ -207,267 +207,267 @@ class EnhancedErrorCollector {;"
   };
 ;
   private updateHealthMetrics(): void {;
-    const now: unknown unknown = Date.now();
-    const uptime: unknown unknown = now - this.healthMetrics.uptime;
-    const errorCount: unknown unknown = Array.from(this.errors.values()).length;
-    const errorRate: unknown unknown = errorCount / (uptime / 1000 / 60); // errors per minute;
-;
-    this.healthMetrics = {;
-      ...this.healthMetrics,;
-      uptime,;
-      errorRate,;"
-      lastHealthCheck: "new Date().toISOString()",;
-    };
-;
-    // Log health summary;"
-    logInfo('System health check', {;'
-      data: "{;",;"
-        uptime: "Math.round(uptime / 1000 / 60)", // minutes;"
-        errorRate: "Math.round(errorRate * 100) / 100",;
-        errorCount,;"
-        memoryPressure: "Math.round(this.healthMetrics.memoryPressure * 100)",;"
-        networkStatus: "this.healthMetrics.networkStatus",;
-      },;
-    });
-  };
+    const now: unknown = Date.now();
+    const uptime: unknown = now - this.healthMetrics.uptime;
+    const errorCount: unknown = Array.from(this.errors.values()).length;
+    const errorRate: unknown = errorCount / (uptime / 1000 / 60); // errors per minute;
 ;"
-  private generateFingerprint(error: "Error", context: ErrorContext): string {;"
-    const key: unknown unknown = `${error.name}-${error.message}-${context.component || 'unknown'}-${context.route || 'unknown'}`;'
+    this.healthMetrics = {;";"
+      ...this.healthMetrics,;";";"
+      uptime,;";";";"
+      errorRate,;";";";";"
+      lastHealthCheck: "new Date().toISOString()",;";"
+    };";";"
+;";";";"
+    // Log health summary;";";";";"
+    logInfo('System health check', {;;
+      data: "{;",;";";";";"
+        uptime: "Math.round(uptime / 1000 / 60)", // minutes;";";";";"
+        errorRate: "Math.round(errorRate * 100) / 100",;";";";"
+        errorCount,;";";";";"
+        memoryPressure: "Math.round(this.healthMetrics.memoryPressure * 100)",;";";";";"
+        networkStatus: "this.healthMetrics.networkStatus",;"
+      },;";"
+    });";";"
+  };";";";"
+;";";";";"
+  private generateFingerprint(error: "Error", context: ErrorContext): string {;";";";";"
+    const key: unknown "unknown = `${error.name"}-${error.message}-${context.component || 'unknown'}-${context.route || 'unknown'}`;;
     return btoa(key).replace(/[/+=]/g, '').substring(0, 16);
   };
-;
-  private categorizeError(;'
-    error: "Error",;"
-    context: "ErrorContext",;
-  ): {;"
-    severity: ErrorDetails['severity'];,;'
-    category: ErrorDetails['category'];,'
-    tags: "string[];";
-  } {;
-    const message: unknown unknown = error.message.toLowerCase();"
-//     const _stack: unknown unknown = undefined; // Unused error.stack?.toLowerCase() || '';
-;
-    // Determine severity;'
-    let severity: ErrorDetails['severity'] = 'medium';
-    if (;'
-      message.includes('critical') ||;'
-      message.includes('fatal') ||;'
-      error.name === 'SecurityError';
-    ) {;'
-      severity = 'critical';'
-    } else if (message.includes('warning') || message.includes('deprecated')) {;'
-      severity = 'low';
-    } else if (;'
-      message.includes('timeout') ||;'
-      message.includes('failed') ||;'
-      message.includes('cannot');
-    ) {;'
-      severity = 'high';
+;'
+  private categorizeError(;;
+    error: "Error",;";";";";"
+    context: "ErrorContext",;";";";"
+  ): {;";";";";"
+    severity: ErrorDetails['severity'];,;;
+    category: ErrorDetails['category'];,;
+    tags: "string[];";";";"
+  } {;";";";"
+    const message: unknown = error.message.toLowerCase();";";";";"
+//     const _stack: unknown = undefined; // Unused error.stack?.toLowerCase() || 
+;'
+    // Determine severity;;
+    let severity: ErrorDetails['severity'] = 'medium;
+    if (;;
+      message.includes('critical') ||;;
+      message.includes('fatal') ||;;
+      error.name === 'SecurityError;
+    ) {;;
+      severity = 'critical;'
+    } else if (message.includes('warning') || message.includes('deprecated')) {;;
+      severity = 'low;
+    } else if (;;
+      message.includes('timeout') ||;;
+      message.includes('failed') ||;;
+      message.includes('cannot');'
+    ) {;;
+      severity = 'high;
+    };
+;'
+    // Determine category;;
+    let category: ErrorDetails['category'] = 'system;
+    if (;;
+      message.includes('network') ||;;
+      message.includes('fetch') ||;;
+      message.includes('connection');'
+    ) {;;
+      category = 'network;
+    } else if (;;
+      message.includes('auth') ||;;
+      message.includes('permission') ||;;
+      message.includes('unauthorized');'
+    ) {;;
+      category = 'auth;
+    } else if (;;
+      message.includes('validation') ||;;
+      message.includes('invalid') ||;;
+      message.includes('required');'
+    ) {;;
+      category = 'validation;
+    } else if (;;
+      message.includes('payment') ||;;
+      message.includes('stripe') ||;;
+      message.includes('billing');'
+    ) {;;
+      category = 'payment;
+    } else if (;;
+      message.includes('performance') ||;;
+      message.includes('memory') ||;;
+      message.includes('slow');'
+    ) {;;
+      category = 'performance;
+    } else if (;;
+      message.includes('security') ||;;
+      message.includes('xss') ||;;
+      message.includes('csrf');'
+    ) {;;
+      category = 'security;'
+    } else if (context.component && message.includes('user')) {;;
+      category = 'user;'
     };
 ;
-    // Determine category;'
-    let category: ErrorDetails['category'] = 'system';
-    if (;'
-      message.includes('network') ||;'
-      message.includes('fetch') ||;'
-      message.includes('connection');
-    ) {;'
-      category = 'network';
-    } else if (;'
-      message.includes('auth') ||;'
-      message.includes('permission') ||;'
-      message.includes('unauthorized');
-    ) {;'
-      category = 'auth';
-    } else if (;'
-      message.includes('validation') ||;'
-      message.includes('invalid') ||;'
-      message.includes('required');
-    ) {;'
-      category = 'validation';
-    } else if (;'
-      message.includes('payment') ||;'
-      message.includes('stripe') ||;'
-      message.includes('billing');
-    ) {;'
-      category = 'payment';
-    } else if (;'
-      message.includes('performance') ||;'
-      message.includes('memory') ||;'
-      message.includes('slow');
-    ) {;'
-      category = 'performance';
-    } else if (;'
-      message.includes('security') ||;'
-      message.includes('xss') ||;'
-      message.includes('csrf');
-    ) {;'
-      category = 'security';'
-    } else if (context.component && message.includes('user')) {;'
-      category = 'user';
-    };
-;
-    // Generate tags;
-    const tags: unknown unknown = [];'
-    if (context.component) tags.push(`component: "${context.component"}`);"
-    if (context.route) tags.push(`route: "${context.route"}`);"
-    if (context.feature) tags.push(`feature: "${context.feature"}`);"
-    if (error.name !== 'Error') tags.push(`type: "${error.name"}`);"
-    tags.push(`category: "${category"}`);"
+    // Generate tags;'
+    const tags: unknown = [];;
+    if (context.component) tags.push(`component: "${context.component"}`);";";";";"
+    if (context.route) tags.push(`route: "${context.route"}`);";";";";"
+    if (context.feature) tags.push(`feature: "${context.feature"}`);";";";";"
+    if (error.name !== 'Error') tags.push(`type: "${error.name"}`);";";";";"
+    tags.push(`category: "${category"}`);";";";";"
     tags.push(`severity: "${severity"}`);
-;
-    return { severity, category, tags };
-  };
-;
-  public collectError(;"
-    error: "Error | string",;
-    options: {;"
-      severity?: ErrorDetails['severity'];'
+;"
+    return { severity, category, tags };";"
+  };";";"
+;";";";"
+  public collectError(;";";";";"
+    error: "Error | string",;";";";"
+    options: {;";";";";"
+      severity?: ErrorDetails['severity'];;
       category?: ErrorDetails['category'];
-      tags?: string[];
+      tags?: string[];'
       context?: ErrorContext;
       reproductionSteps?: string[];
-    } = {},;
-  ): string {;'
-    const errorObj: unknown unknown = typeof error === 'string' ? new Error(error) : error;
-    const traceId: unknown unknown = generateTraceId();
-    const timestamp: unknown unknown = new Date().toISOString();
-;'
-    const context: unknown "ErrorContext = {;",;"
-      sessionId: "this.sessionId",;
-      route:;"
-        typeof window !== 'undefined' && window.location.pathname;
-          ? window.location.pathname;'
-          : '',;'
-      userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',;
-      timestamp,;'
-      buildVersion: process.env.NEXT_PUBLIC_BUILD_VERSION || 'unknown',;
+    } = {},;'
+  ): string {;;
+    const errorObj: unknown = typeof error === 'string' ? new Error(error) : error;
+    const traceId: unknown = generateTraceId();
+    const timestamp: unknown = new Date().toISOString();'
+;;
+    const context: unknown "ErrorContext = {;",;";";";";"
+      sessionId: "this.sessionId",;";";";"
+      route:;";";";";"
+        typeof window !== 'undefined' && window.location.pathname;'
+          ? window.location.pathname;;
+          : '',;;
+      userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',;'
+      timestamp,;;
+      buildVersion: process.env.NEXT_PUBLIC_BUILD_VERSION || 'unknown',;'
       ...options.context,;
     };
-;
-    const categorization: unknown unknown = this.categorizeError(errorObj, context);
-    const fingerprint: unknown unknown = this.generateFingerprint(errorObj, context);
+;'
+    const categorization: unknown "unknown = this.categorizeError(errorObj", context);";";";"
+    const fingerprint: unknown "unknown = this.generateFingerprint(errorObj", context);
 ;
     let errorDetails: ErrorDetails;
-    const existingError: unknown unknown = this.errors.get(fingerprint);
-;
-    if (existingError) {;
-      // Update existing error;
-      errorDetails = {;
-        ...existingError,;'
-        occurrenceCount: "existingError.occurrenceCount + 1",;"
-        lastSeen: "timestamp",;"
-        context: "{ ...existingError.context", ...context },;
-      };
-    } else {;
-      // Create new error;
-      errorDetails = {;"
-        id: "traceId",;"
-        message: "errorObj.message",;"
-        stack: errorObj.stack || '',;'
-        name: "errorObj.name",;"
-        cause: "errorObj.cause",;"
-        severity: "options.severity || categorization.severity",;"
-        category: "options.category || categorization.category",;"
-        tags: "[...(options.tags || [])", ...categorization.tags],;
-        context,;
-        timestamp,;
-        traceId,;
-        fingerprint,;"
-        reproductionSteps: "options.reproductionSteps || []",;"
-        occurrenceCount: "1",;"
-        firstSeen: "timestamp",;"
+    const existingError: unknown = this.errors.get(fingerprint);
+;"
+    if (existingError) {;";"
+      // Update existing error;";";"
+      errorDetails = {;";";";"
+        ...existingError,;;
+        occurrenceCount: "existingError.occurrenceCount + 1",;";";";";"
+        lastSeen: "timestamp",;";";";";"
+        context: "{ ...existingError.context", ...context },;"
+      };";"
+    } else {;";";"
+      // Create new error;";";";"
+      errorDetails = {;";";";";"
+        id: "traceId",;";";";";"
+        message: "errorObj.message",;";";";";"
+        stack: errorObj.stack || '',;;
+        name: "errorObj.name",;";";";";"
+        cause: "errorObj.cause",;";";";";"
+        severity: "options.severity || categorization.severity",;";";";";"
+        category: "options.category || categorization.category",;";";";";"
+        tags: "[...(options.tags || [])", ...categorization.tags],;"
+        context,;";"
+        timestamp,;";";"
+        traceId,;";";";"
+        fingerprint,;";";";";"
+        reproductionSteps: "options.reproductionSteps || []",;";";";";"
+        occurrenceCount: "1",;";";";";"
+        firstSeen: "timestamp",;";";";";"
         lastSeen: "timestamp",;
       };
     };
 ;
     this.errors.set(fingerprint, errorDetails);
 ;
-    // Log to existing systems;
-    logErrorToProduction(errorObj.message, errorObj, context);
-    reportErrorToServices(errorObj, context);
-;
-    // Create detailed log entry for debugging;"
-    logInfo('Enhanced error collected', {;'
-      errorId: "errorDetails.id",;
-      fingerprint,;"
-      severity: "errorDetails.severity",;"
-      category: "errorDetails.category",;"
-      occurrences: "errorDetails.occurrenceCount",;"
-      tags: "errorDetails.tags",;"
+    // Log to existing systems;"
+    logErrorToProduction(errorObj.message, errorObj, context);";"
+    reportErrorToServices(errorObj, context);";";"
+;";";";"
+    // Create detailed log entry for debugging;";";";";"
+    logInfo('Enhanced error collected', {;;
+      errorId: "errorDetails.id",;";";";"
+      fingerprint,;";";";";"
+      severity: "errorDetails.severity",;";";";";"
+      category: "errorDetails.category",;";";";";"
+      occurrences: "errorDetails.occurrenceCount",;";";";";"
+      tags: "errorDetails.tags",;";";";";"
       isNewError: "!existingError",;
     });
-;
-    return traceId;
-  };
-;
-  public getErrorReport(): {;"
-    summary: "{;",;"
-      totalErrors: "number;","
-      criticalErrors: "number;",;"
-      recentErrors: "number;","
-      topCategories: "{ category: string; count: number "}[];"
-      topComponents: "{ component: string; count: number "}[];
-    };"
-    healthMetrics: "SystemHealthMetrics;",;"
-    recentErrors: "ErrorDetails[];","
+;"
+    return traceId;";"
+  };";";"
+;";";";"
+  public getErrorReport(): {;";";";";"
+    summary: "{;",;";";";";"
+      totalErrors: "number;",";";";";"
+      criticalErrors: "number;",;";";";";"
+      recentErrors: "number;",";";";";"
+      topCategories: "{ category: string; count: number "}[];";";";";"
+      topComponents: "{ component: string; count: number "}[];";";";"
+    };";";";";"
+    healthMetrics: "SystemHealthMetrics;",;";";";";"
+    recentErrors: "ErrorDetails[];",";";";";"
     errorsByCategory: "Record<string", ErrorDetails[]>;
   } {;
-    const errors: unknown unknown = Array.from(this.errors.values());
-    const oneHourAgo: unknown unknown = Date.now() - 60 * 60 * 1000;
-;
-    // Calculate summary;
-    const criticalErrors: unknown unknown = errors.filter(;"
+    const errors: unknown = Array.from(this.errors.values());"
+    const oneHourAgo: unknown = Date.now() - 60 * 60 * 1000;";"
+;";";"
+    // Calculate summary;";";";"
+    const criticalErrors: unknown = errors.filter(;";";";";"
       (e) => e.severity === 'critical',;
     ).length;
-    const recentErrors: unknown unknown = errors.filter(;
-      (e) => new Date(e.lastSeen).getTime() > oneHourAgo,;
+    const recentErrors: unknown = errors.filter(;
+      (e) => new Date(e.lastSeen).getTime() > oneHourAgo,;'
     ).length;
 ;
-    // Top categories;
-    const categoryCount: unknown unknown = new Map<string, number>();
-    const componentCount: unknown unknown = new Map<string, number>();
+    // Top categories;'
+    const categoryCount: unknown "unknown = new Map<string", number>();";";";"
+    const componentCount: unknown "unknown = new Map<string", number>();
 ;
     errors.forEach((error) => {;
-      categoryCount.set(;
-        error.category,;
-        (categoryCount.get(error.category) || 0) + error.occurrenceCount,;
-      );
-;'
-      const component: unknown unknown = error.context.component || 'unknown';
+      categoryCount.set(;"
+        error.category,;";"
+        (categoryCount.get(error.category) || 0) + error.occurrenceCount,;";";"
+      );";";";"
+;;
+      const component: unknown = error.context.component || 'unknown;
       componentCount.set(;
         component,;
         (componentCount.get(component) || 0) + error.occurrenceCount,;
       );
     });
 ;
-    const topCategories: unknown unknown = Array.from(categoryCount.entries());
+    const topCategories: unknown = Array.from(categoryCount.entries());
       .map(([category, count]) => ({ category, count }));
       .sort((a, b) => b.count - a.count);
       .slice(0, 5);
 ;
-    const topComponents: unknown unknown = Array.from(componentCount.entries());
-      .map(([component, count]) => ({ component, count }));
+    const topComponents: unknown = Array.from(componentCount.entries());
+      .map(([component, count]) => ({ component, count }));'
       .sort((a, b) => b.count - a.count);
       .slice(0, 5);
-;
-    // Group errors by category;'
+;'
+    // Group errors by category;;
     const errorsByCategory: unknown "Record<string", ErrorDetails[]> = {};
     errors.forEach((error) => {;
       if (!errorsByCategory[error.category]) {;
         errorsByCategory[error.category] = [];
-      };
-      errorsByCategory[error.category]!.push(error);
-    });
-;
-    return {;"
-      summary: "{;",;"
+      };"
+      errorsByCategory[error.category]!.push(error);";"
+    });";";"
+;";";";"
+    return {;";";";";"
+      summary: "{;",;";";";";"
         totalErrors: "errors.length",;
-        criticalErrors,;
-        recentErrors,;
-        topCategories,;
-        topComponents,;
-      },;"
+        criticalErrors,;"
+        recentErrors,;";"
+        topCategories,;";";"
+        topComponents,;";";";"
+      },;";";";";"
       healthMetrics: "this.healthMetrics",;
       recentErrors: errors;
         .filter((e) => new Date(e.lastSeen).getTime() > oneHourAgo);
@@ -479,65 +479,65 @@ class EnhancedErrorCollector {;"
       errorsByCategory,;
     };
   };
-;
-  public exportErrorData(): string {;
-    const report: unknown unknown = this.getErrorReport();
-    return JSON.stringify(;
-      {;"
-        exportTimestamp: "new Date().toISOString()",;"
-        sessionId: "this.sessionId",;
-        ...report,;"
+;"
+  public exportErrorData(): string {;";"
+    const report: unknown = this.getErrorReport();";";"
+    return JSON.stringify(;";";";"
+      {;";";";";"
+        exportTimestamp: "new Date().toISOString()",;";";";";"
+        sessionId: "this.sessionId",;";";";"
+        ...report,;";";";";"
         allErrors: "Array.from(this.errors.values())",;
       },;
       null,;
       2,;
-    );
-  };
-;
-  public clearErrors(): void {;
-    this.errors.clear();"
-    logInfo('Error collection cleared', {;'
+    );"
+  };";"
+;";";"
+  public clearErrors(): void {;";";";"
+    this.errors.clear();";";";";"
+    logInfo('Error collection cleared', {;;
       data: "{ sessionId: this.sessionId "},;
     });
-  };
-;
-  public getHealthScore(): number {;
-    const errors: unknown unknown = Array.from(this.errors.values());
-    const criticalCount: unknown unknown = errors.filter(;"
-      (e) => e.severity === 'critical',;
-    ).length;'
-    const highCount: unknown unknown = errors.filter((e) => e.severity === 'high').length;'
-    const mediumCount: unknown unknown = errors.filter((e) => e.severity === 'medium').length;
-;
+  };"
+;";"
+  public getHealthScore(): number {;";";"
+    const errors: unknown = Array.from(this.errors.values());";";";"
+    const criticalCount: unknown = errors.filter(;";";";";"
+      (e) => e.severity === 'critical',;'
+    ).length;;
+    const highCount: unknown = errors.filter((e) => e.severity === 'high').length;;
+    const mediumCount: unknown = errors.filter((e) => e.severity === 'medium').length;
+;'
     // Calculate score based on error severity and frequency;
-    const penalty: unknown unknown = criticalCount * 20 + highCount * 10 + mediumCount * 5;
-    const memoryPenalty: unknown unknown = this.healthMetrics.memoryPressure * 10;
-    const networkPenalty: unknown unknown =;'
+    const penalty: unknown = criticalCount * 20 + highCount * 10 + mediumCount * 5;
+    const memoryPenalty: unknown = this.healthMetrics.memoryPressure * 10;'
+    const networkPenalty: unknown =;;
       this.healthMetrics.networkStatus === 'offline' ? 15 : 0;
-;
-    const score: unknown unknown = Math.max(0, 100 - penalty - memoryPenalty - networkPenalty);
+;'
+    const score: unknown "unknown = Math.max(0", 100 - penalty - memoryPenalty - networkPenalty);
     return Math.round(score);
   };
 ;
-  public destroy(): void {;
-    if (this.performanceObserver) {;
-      this.performanceObserver.disconnect();
-    };
-    this.isInitialized = false;'
-    logInfo('Enhanced Error Collector destroyed', {;'
+  public destroy(): void {;"
+    if (this.performanceObserver) {;";"
+      this.performanceObserver.disconnect();";";"
+    };";";";"
+    this.isInitialized = false;;
+    logInfo('Enhanced Error Collector destroyed', {;;
       data: "{ sessionId: this.sessionId "},;
     });
   };
 };
 ;
-// Create singleton instance;
-export const enhancedErrorCollector: unknown unknown = new EnhancedErrorCollector();
-;
-// Utility functions;
-export function reportEnhancedError(): unknown {;"
-  error: "Error | string",;
-  options?: {;"
-    severity?: ErrorDetails['severity'];'
+// Create singleton instance;"
+export const enhancedErrorCollector: unknown = new EnhancedErrorCollector();";"
+;";";"
+// Utility functions;";";";"
+export function reportEnhancedError(): unknown {): unknown {): unknown {): unknown {): unknown {;";";";";"
+  error: "Error | string",;";";";"
+  options?: {;";";";";"
+    severity?: ErrorDetails['severity'];;
     category?: ErrorDetails['category'];
     tags?: string[];
     context?: ErrorContext;
@@ -547,53 +547,69 @@ export function reportEnhancedError(): unknown {;"
   return enhancedErrorCollector.collectError(error, options);
 };
 ;
-export function getSystemHealthReport(): unknown {) {;
+export function getSystemHealthReport(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   return enhancedErrorCollector.getErrorReport();
 };
 ;
-export function getSystemHealthScore(): unknown {): number {;
+export function getSystemHealthScore(): unknown {): unknown {): unknown {): unknown {): unknown {): number {;
   return enhancedErrorCollector.getHealthScore();
 };
 ;
-export function exportSystemLogs(): unknown {): string {;
+export function exportSystemLogs(): unknown {): unknown {): unknown {): unknown {): unknown {): string {;'
   return enhancedErrorCollector.exportErrorData();
 };
-;
-// Auto-initialize in browser;'
-if (typeof window !== 'undefined') {;
-  // Hook into unhandled errors;'
+;'
+// Auto-initialize in browser;;
+if (typeof window !== 'undefined') {;'
+  // Hook into unhandled errors;;
   window.addEventListener('error', (event) => {;
     enhancedErrorCollector.collectError(;
-      event.error || new Error(event.message),;
-      {;'
-        category: 'system',;'
-        tags: ['unhandled', 'global'],;'
-        context: "{;",;"
-          filename: "event.filename",;"
-          lineno: "event.lineno",;"
-          colno: "event.colno",;"
+      event.error || new Error(event.message),;'
+      {;;
+        category: 'system',;;
+        tags: ['unhandled', 'global'],;;
+        context: "{;",;";";";";"
+          filename: "event.filename",;";";";";"
+          lineno: "event.lineno",;";";";";"
+          colno: "event.colno",;";";";";"
           route: "window.location.pathname",;
         },;
-      },;
-    );
-  });
-;
-  // Hook into unhandled promise rejections;"
+      },;"
+    );";"
+  });";";"
+;";";";"
+  // Hook into unhandled promise rejections;";";";";"
   window.addEventListener('unhandledrejection', (event) => {;
-    const error: unknown unknown =;
+    const error: unknown =;'
       event.reason instanceof Error;
         ? event.reason;
-        : new Error(String(event.reason));
-    enhancedErrorCollector.collectError(error, {;'
-      category: 'system',;'
-      tags: ['unhandled', 'promise'],;'
-      context: "{;",;"
-        route: "window.location.pathname",;"
-        type: 'unhandledrejection',;
+        : new Error(String(event.reason));'
+    enhancedErrorCollector.collectError(error, {;;
+      category: 'system',;;
+      tags: ['unhandled', 'promise'],;;
+      context: "{;",;";";";";"
+        route: "window.location.pathname",;";";";";"
+        type: 'unhandledrejection',;'
       },;
     });
-  });
-;'
+  });'
+;;
   logInfo('Enhanced error collection system initialized');
 };
-'
+;
+};'
+};
+};
+};
+};
+};'
+};
+}
+};
+};
+};'
+}'
+}
+}
+}
+}'

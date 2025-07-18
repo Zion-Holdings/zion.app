@@ -1,2 +1,2 @@
-export { default } from '@/pages/privacy-settings';
-'
+export { default } from '@/pages/privacy-settings';';';';'
+'''''
