@@ -1,12 +1,11 @@
-const { MongoMemoryServer } = require('mongodb-memory-server');
+import { MongoMemoryServer } from 'mongodb-memory-server';
 import { createMocks } from 'node-mocks-http';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import handler from '../../temp_essential_pages/api/feedback';
 import mongoose from 'mongoose';
-import { MongoMemoryServer } from 'mongodb-memory-server';
 import Feedback from '../../server/models/Feedback';
 
-let _mongoServer: MongoMemoryServer;
+let mongoServer: MongoMemoryServer;
 
 beforeAll(async () => {
   mongoServer = await MongoMemoryServer.create();

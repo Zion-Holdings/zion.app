@@ -1,5 +1,3 @@
-const { _withSentry } = require('../withSentry.cjs');
-
 const chains = {
   ethereum: 'Ethereum Mainnet',
   polygon: 'Polygon',
@@ -16,7 +14,7 @@ async function handler(req, res) {
     return;
   }
 
-  const { _chain } = req.body || {};
+  const { chain } = req.body || {};
   if (!chain || !chains[chain]) {
     res.statusCode = 400;
     res.json({ error: 'Invalid chain selected' });
@@ -46,4 +44,4 @@ async function handler(req, res) {
   res.json({ metadata });
 }
 
-module.exports = withSentry(handler);
+module.exports = handler;

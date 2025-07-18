@@ -30,7 +30,7 @@ export function useCompanyWorkspace(companySlug?: string) {
           workspaceUrl: `/workspace/${companySlug}`,
         });
         setError(null);
-      } catch {
+      } catch (_err) {
         setCompany(null);
         setError('Company not found or error fetching data');
       } finally {
