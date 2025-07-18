@@ -1,0 +1,18 @@
+{
+  "id": "codeQuality-1752834206142-9yg3sdhse",
+  "type": "codeQuality",
+  "improvement": {
+    "type": "codeQuality",
+    "severity": "medium",
+    "data": {
+      "lintErrors": 5,
+      "coverage": 0,
+      "bundleSizeIncrease": 0,
+      "codeSmells": []
+    }
+  },
+  "timestamp": 1752834206142,
+  "nodeId": "node-1",
+  "status": "completed",
+  "completedAt": 1752834210313
+}
