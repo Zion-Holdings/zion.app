@@ -2,9 +2,9 @@ export default function TalentProfilePage(): unknown {): unknown {): unknown {):
   // ... existing code ...;
 };
 ;
-TalentProfilePage.displayName = 'TalentProfilePage;
+TalentProfilePage.displayName = 'TalentProfilePage;'
 
-};'
+};''
 }
-}'
-}'
+}''
+}''

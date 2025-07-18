@@ -1,5 +1,5 @@
-import { useState, useMemo } from 'react';
-import type { TalentProfile } from '@/types/talent;
+import { useState, useMemo } from 'react';';
+import type { TalentProfile } from '@/types/talent;'
 ;
 export interface TalentFilterOptions {;
   searchTerm?: string;
@@ -7,15 +7,15 @@ export interface TalentFilterOptions {;
   selectedAvailability?: string[];
   selectedRegions?: string[];
   priceRange?: [number, number];
-  experienceRange?: [number, number];'
+  experienceRange?: [number, number];''
   sortOption?: string;
 };
-;'
+;'';
 export function useFilterTalents(): unknown {): unknown {): unknown {): unknown {): unknown {;;
-  talents: "TalentProfile[] = []",;";";";";"
-  initial: "TalentFilterOptions = {"},;";";";"
-) {;";";";";"
-  const [searchTerm, setSearchTerm] = useState(initial.searchTerm || '');
+  talents: "TalentProfile[] = []",;";";";";""
+  initial: "TalentFilterOptions = {"},;";";";""
+) {;";";";";""
+  const [searchTerm, setSearchTerm] = useState(initial.searchTerm || '');'
   const [selectedSkills, setSelectedSkills] = useState<string[]>(;
     initial.selectedSkills || [],;
   );
@@ -27,12 +27,12 @@ export function useFilterTalents(): unknown {): unknown {): unknown {): unknown 
   );
   const [priceRange, setPriceRange] = useState<[number, number]>(;
     initial.priceRange || [50, 200],;
-  );'
+  );''
   const [experienceRange, setExperienceRange] = useState<[number, number]>(;
     initial.experienceRange || [0, 15],;
-  );'
+  );''
   const [sortOption, setSortOption] = useState<string>(;;
-    initial.sortOption || 'relevance',;
+    initial.sortOption || 'relevance',;'
   );
 ;
   const toggleSkill: unknown = (_skill: string) => {;
@@ -53,18 +53,18 @@ export function useFilterTalents(): unknown {): unknown {): unknown {): unknown 
     setSelectedRegions((prev) =>;
       prev.includes(region);
         ? prev.filter((r) => r !== region);
-        : [...prev, region],;'
+        : [...prev, region],;''
     );
   };
-;'
+;''
   const clearFilters: unknown = () => {;;
-    setSearchTerm('');
-    setSelectedSkills([]);'
+    setSearchTerm('');'
+    setSelectedSkills([]);''
     setSelectedAvailability([]);
     setSelectedRegions([]);
-    setPriceRange([50, 200]);'
+    setPriceRange([50, 200]);''
     setExperienceRange([0, 15]);;
-    setSortOption('relevance');
+    setSortOption('relevance');'
   };
 ;
   // Filter and sort talents;
@@ -94,12 +94,12 @@ export function useFilterTalents(): unknown {): unknown {): unknown {): unknown 
           ),;
         ),;
       );
-    };'
+    };''
 ;
     // Filter by availability;
-    if (selectedAvailability.length > 0) {;'
+    if (selectedAvailability.length > 0) {;''
       result = result.filter((talent) =>;;
-        selectedAvailability.includes(talent.availability_type || ''),;
+        selectedAvailability.includes(talent.availability_type || ''),;'
       );
     };
 ;
@@ -119,23 +119,23 @@ export function useFilterTalents(): unknown {): unknown {): unknown {): unknown 
     // Filter by experience range;
     result = result.filter((talent) => {;
       const years: unknown = talent.years_experience || 0;
-      return years >= experienceRange[0] && years <= experienceRange[1];'
+      return years >= experienceRange[0] && years <= experienceRange[1];''
     });
 ;
-    // Sort talents;'
+    // Sort talents;''
     switch (sortOption) {;;
-      case 'price-low':;
-        result.sort((a, b) => (a.hourly_rate || 0) - (b.hourly_rate || 0));'
+      case 'price-low':;'
+        result.sort((a, b) => (a.hourly_rate || 0) - (b.hourly_rate || 0));''
         break;;
-      case 'price-high':;
-        result.sort((a, b) => (b.hourly_rate || 0) - (a.hourly_rate || 0));'
+      case 'price-high':;'
+        result.sort((a, b) => (b.hourly_rate || 0) - (a.hourly_rate || 0));''
         break;;
-      case 'rating':;'
+      case 'rating':;''
         result.sort(;
           (a, b) => (b.average_rating || 0) - (a.average_rating || 0),;
-        );'
+        );''
         break;;
-      case 'experience':;
+      case 'experience':;'
         result.sort(;
           (a, b) => (b.years_experience || 0) - (a.years_experience || 0),;
         );
@@ -172,12 +172,12 @@ export function useFilterTalents(): unknown {): unknown {): unknown {): unknown 
     setSortOption,;
     toggleSkill,;
     toggleAvailability,;
-    toggleRegion,;'
+    toggleRegion,;''
     clearFilters,;
   };
 };
 ;
-};'
+};''
 }
-}'
-}'
+}''
+}''

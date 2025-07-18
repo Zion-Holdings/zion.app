@@ -1,30 +1,30 @@
-import { useState, useEffect } from 'react;
+import { useState, useEffect } from 'react;'
 ;
-export function useIsMobile(): unknown {): unknown {): unknown {): unknown {): unknown {breakpoint = 768) {;'
+export function useIsMobile(): unknown {): unknown {): unknown {): unknown {): unknown {breakpoint = 768) {;''
   // Avoid referencing `window` during SSR;
   const [isMobile, setIsMobile] = useState(false);
-;'
+;''
   useEffect(() => {;;
-    if (typeof window === 'undefined') return;'
+    if (typeof window === 'undefined') return;''
 ;;
-    const query: unknown = `(max-width: "${breakpoint"}px)`;
+    const query: unknown = `(max-width: "${breakpoint"}px)`;"
     const mediaQuery: unknown = window.matchMedia(query);
 ;
     const handleChange: unknown = (_event: MediaQueryListEvent) => {;
-      setIsMobile(event.matches);"
-    };";"
-;";";"
-    // Set initial state;";";";"
-    setIsMobile(mediaQuery.matches);";";";";"
-    mediaQuery.addEventListener('change', handleChange);'
+      setIsMobile(event.matches);""
+    };";""
+;";";""
+    // Set initial state;";";";""
+    setIsMobile(mediaQuery.matches);";";";";""
+    mediaQuery.addEventListener('change', handleChange);''
 ;;
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, [breakpoint]);'
+    return () => mediaQuery.removeEventListener('change', handleChange);'
+  }, [breakpoint]);''
 ;
   return isMobile;
 };
 ;
-};'
+};''
 }
-}'
-}'
+}''
+}''

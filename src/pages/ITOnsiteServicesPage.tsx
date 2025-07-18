@@ -1,41 +1,41 @@
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router;'
-import { ITServicePricingTable } from '@/components/services/ITServicePricingTable;'
-import { GlobalServiceSection } from '@/components/GlobalServiceSection;'
-import { QuoteFormSection } from '@/components/QuoteFormSection;'
-import { TrustedBySection } from '@/components/TrustedBySection;'
-import { onsiteServicePricing } from '@/data/onsiteServicePricing;'
-import type { CountryPricing } from '@/data/onsiteServicePricing;'
-import { toast } from '@/hooks/use-toast;'
-import { OnsiteQuoteModal } from '@/components/services/OnsiteQuoteModal;'
-import { slugify } from '@/lib/slugify;'
-import { PageHero } from '@/components/services/PageSections/PageHero;'
-import { CountryTabs } from '@/components/services/PageSections/CountryTabs;'
-import { ServiceDetailsSection } from '@/components/services/PageSections/ServiceDetailsSection;'
-import { ServiceProcessSteps } from '@/components/services/PageSections/ServiceProcessSteps;'
-import { ServiceIncludes } from '@/components/services/PageSections/ServiceIncludes;'
-import { EnterpriseCallToAction } from '@/components/services/PageSections/EnterpriseCallToAction;
+import { useState, useEffect } from 'react';';
+import { useRouter } from 'next/router;'';
+import { ITServicePricingTable } from '@/components/services/ITServicePricingTable;'';
+import { GlobalServiceSection } from '@/components/GlobalServiceSection;'';
+import { QuoteFormSection } from '@/components/QuoteFormSection;'';
+import { TrustedBySection } from '@/components/TrustedBySection;'';
+import { onsiteServicePricing } from '@/data/onsiteServicePricing;'';
+import type { CountryPricing } from '@/data/onsiteServicePricing;'';
+import { toast } from '@/hooks/use-toast;'';
+import { OnsiteQuoteModal } from '@/components/services/OnsiteQuoteModal;'';
+import { slugify } from '@/lib/slugify;'';
+import { PageHero } from '@/components/services/PageSections/PageHero;'';
+import { CountryTabs } from '@/components/services/PageSections/CountryTabs;'';
+import { ServiceDetailsSection } from '@/components/services/PageSections/ServiceDetailsSection;'';
+import { ServiceProcessSteps } from '@/components/services/PageSections/ServiceProcessSteps;'';
+import { ServiceIncludes } from '@/components/services/PageSections/ServiceIncludes;'';
+import { EnterpriseCallToAction } from '@/components/services/PageSections/EnterpriseCallToAction;'
 ;
-export default function ITOnsiteServicesPage(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'
+export default function ITOnsiteServicesPage(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   const router: unknown = useRouter();;
-  const { country: "countrySlug", success } = router.query as {;
+  const { country: "countrySlug", success } = router.query as {;"
     country?: string;
-    success?: string;"
-  };";"
-  const [selectedCountry, setSelectedCountry] = useState<CountryPricing | null>(;";";"
-    null,;";";";"
-  );";";";";"
-  const [searchQuery, setSearchQuery] = useState('');
-  const [quoteOpen, setQuoteOpen] = useState(false);'
+    success?: string;""
+  };";""
+  const [selectedCountry, setSelectedCountry] = useState<CountryPricing | null>(;";";""
+    null,;";";";""
+  );";";";";""
+  const [searchQuery, setSearchQuery] = useState('');'
+  const [quoteOpen, setQuoteOpen] = useState(false);''
   const [quoteCountry, setQuoteCountry] = useState<CountryPricing | null>(null);
 ;
-  // Show success toast if redirected from successful payment;'
+  // Show success toast if redirected from successful payment;''
   useEffect(() => {;;
-    if (success === 'true') {;'
+    if (success === 'true') {;''
       toast({;;
-        title: 'Payment Successful',;'
+        title: 'Payment Successful',;''
         description:;;
-          'Your IT onsite service request has been received. Our team will contact you shortly.',;
+          'Your IT onsite service request has been received. Our team will contact you shortly.',;'
       });
     };
   }, [success]);
@@ -45,28 +45,28 @@ export default function ITOnsiteServicesPage(): unknown {): unknown {): unknown 
     if (countrySlug) {;
       const match: unknown = onsiteServicePricing.find(;
         (c) => slugify(c.country) === countrySlug,;
-      );'
+      );''
       setSelectedCountry(match || null);
       if (match) {;
-        setTimeout(() => {;'
+        setTimeout(() => {;''
           document;;
-            .getElementById('service-details');;
-            ?.scrollIntoView({ behavior: 'smooth' });
+            .getElementById('service-details');;'
+            ?.scrollIntoView({ behavior: 'smooth' });'
         }, 100);
       };
     } else {;
       setSelectedCountry(null);
-    };'
+    };''
   }, [countrySlug]);
 ;
-  // Popular countries for the featured cards;'
+  // Popular countries for the featured cards;''
   const popularCountries: unknown = [;;
-    'United States',;;
-    'United Kingdom',;;
-    'Canada',;;
-    'Germany',;;
-    'Japan',;;
-    'Singapore',;
+    'United States',;;'
+    'United Kingdom',;;'
+    'Canada',;;'
+    'Germany',;;'
+    'Japan',;;'
+    'Singapore',;'
   ];
 ;
   // Filter countries based on search query;
@@ -94,18 +94,18 @@ export default function ITOnsiteServicesPage(): unknown {): unknown {): unknown 
 ;
   const handleQuote: unknown = (_country: CountryPricing) => {;
     setQuoteCountry(country);
-    setQuoteOpen(true);'
+    setQuoteOpen(true);''
   };
 ;
-  return (;'
+  return (;''
     <>;;
-      <section className="py-16 bg-zion-blue">;";";";";"
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">;"
-          {/* Hero Section with Features */};";"
-          <PageHero />;";";"
-;";";";"
-          {/* Country Selection Tabs */};";";";";"
-          <div className="mb-12">;
+      <section className="py-16 bg-zion-blue">;";";";";""
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">;""
+          {/* Hero Section with Features */};";""
+          <PageHero />;";";""
+;";";";""
+          {/* Country Selection Tabs */};";";";";""
+          <div className="mb-12">;"
             <CountryTabs;
               popularCountries={popularCountries};
               filteredCountries={filteredCountries};
@@ -120,21 +120,21 @@ export default function ITOnsiteServicesPage(): unknown {): unknown {): unknown 
           <ServiceDetailsSection;
             selectedCountry={selectedCountry};
             setSelectedCountry={setSelectedCountry};
-          />;"
-;";"
-          {/* How It Works Section */};";";"
-          <ServiceProcessSteps />;";";";"
-;";";";";"
-          {/* What's Included Section */};
+          />;""
+;";""
+          {/* How It Works Section */};";";""
+          <ServiceProcessSteps />;";";";""
+;";";";";""
+          {/* What's Included Section */};'
           <ServiceIncludes />;
-;'
+;''
           {/* Complete Pricing Table */};;
-          <div id="pricing-table" className="my-16">;";";";";"
-            <div className="text-center mb-8">;";";";";"
-              <h2 className="text-2xl font-bold text-white mb-4">;";";"
-                Full IT Onsite Services Pricing;";";";"
-              </h2>;";";";";"
-              <p className="text-zion-slate-light mb-6">;
+          <div id="pricing-table" className="my-16">;";";";";""
+            <div className="text-center mb-8">;";";";";""
+              <h2 className="text-2xl font-bold text-white mb-4">;";";""
+                Full IT Onsite Services Pricing;";";";""
+              </h2>;";";";";""
+              <p className="text-zion-slate-light mb-6">;"
                 Our per-incident prices include transportation costs and the;
                 first hour of onsite service. Additional hours are billed;
                 separately at standard rates.;
@@ -149,18 +149,18 @@ export default function ITOnsiteServicesPage(): unknown {): unknown {): unknown 
       </section>;
 ;
       <GlobalServiceSection />;
-      <TrustedBySection />;"
-      <QuoteFormSection />;";"
-      <OnsiteQuoteModal;";";"
-        open={quoteOpen};";";";"
-        onOpenChange={setQuoteOpen};";";";";"
-        country={quoteCountry?.country || ''};
-      />;'
+      <TrustedBySection />;""
+      <QuoteFormSection />;";""
+      <OnsiteQuoteModal;";";""
+        open={quoteOpen};";";";""
+        onOpenChange={setQuoteOpen};";";";";""
+        country={quoteCountry?.country || ''};'
+      />;''
     </>;
   );
 };
 ;
-};'
+};''
 }
-}'
-}'
+}''
+}''

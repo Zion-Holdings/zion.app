@@ -1,133 +1,133 @@
-import React from 'react';
-// Common TypeScript interfaces to replace 'any' types throughout the application;'
+import React from 'react';'
+// Common TypeScript interfaces to replace 'any' types throughout the application;''
 ;;
-// Avoid using 'any' for index signatures. Use 'unknown' or a more specific type if possible.;
+// Avoid using 'any' for index signatures. Use 'unknown' or a more specific type if possible.;';
 export interface ApiResponse<T = unknown> {;
-  success: boolean;'
+  success: boolean;''
   data?: T;
   error?: string;
-  message?: string;'
+  message?: string;''
   code?: string | number;;
-  // [key: string]: unknown; // Avoid 'any' for extensibility;
+  // [key: string]: unknown; // Avoid 'any' for extensibility;'
 };
 ;
 export interface ErrorResponse {;
   error: string;
   message?: string;
-  code?: string | number;'
+  code?: string | number;''
   timestamp?: string;
 };
-;'
+;'';
 export interface PaginatedResponse<T> {;;
-  data: "T[];",;";";";";"
-  pagination: "{;",";";";";"
-    page: "number;",;";";";";"
-    limit: "number;",";";";";"
-    total: "number;",;";";";";"
-    totalPages: "number;",";";";";"
-    hasNext: "boolean;",;";";";";"
-    hasPrev: "boolean;";
+  data: "T[];",;";";";";""
+  pagination: "{;",";";";";""
+    page: "number;",;";";";";""
+    limit: "number;",";";";";""
+    total: "number;",;";";";";""
+    totalPages: "number;",";";";";""
+    hasNext: "boolean;",;";";";";""
+    hasPrev: "boolean;";"
   };
 };
-;"
-export interface SearchParams {;";"
-  q?: string;";";"
-  category?: string;";";";"
-  sort?: string;";";";";"
-  order?: 'asc' | 'desc;
+;"";
+export interface SearchParams {;";""
+  q?: string;";";""
+  category?: string;";";";""
+  sort?: string;";";";";""
+  order?: 'asc' | 'desc;'
   page?: number;
   limit?: number;
   filters?: Record<string, unknown>;
 };
 ;
-export interface SearchFilters {;'
+export interface SearchFilters {;''
   query?: string;
   search?: string;
-  category?: string;'
+  category?: string;''
   tags?: string[];;
-  priceRange?: { min: "number; max: number "};";"
-  type?: string | null;";";"
-  skills?: string[] | null;";";";"
-  location?: string | null;";";";";"
-  budget?: { min: "number; max: number "} | null;"
-  availability?: string | null;";"
-};";";"
-;";";";"
-export interface UserProfile {;";";";";"
-  id: "string;",;";"
-  email: string;";";"
-  name?: string;";";";"
-  avatar?: string;";";";";"
-  role?: 'user' | 'admin' | 'moderator;
+  priceRange?: { min: "number; max: number "};";""
+  type?: string | null;";";""
+  skills?: string[] | null;";";";""
+  location?: string | null;";";";";""
+  budget?: { min: "number; max: number "} | null;""
+  availability?: string | null;";""
+};";";""
+;";";";"";
+export interface UserProfile {;";";";";""
+  id: "string;",;";""
+  email: string;";";""
+  name?: string;";";";""
+  avatar?: string;";";";";""
+  role?: 'user' | 'admin' | 'moderator;'
   preferences?: Record<string, unknown>;
-  createdAt?: string;'
+  createdAt?: string;''
   updatedAt?: string;
 };
-;'
+;'';
 export interface FormData {;;
-  [key: "string]: string | number | boolean | File | null | undefined;";";"
-};";";"
-;";";";"
-export interface SelectOption {;";";";";"
-  value: "string | number;",;
+  [key: "string]: string | number | boolean | File | null | undefined;";";""
+};";";""
+;";";";"";
+export interface SelectOption {;";";";";""
+  value: "string | number;",;"
   label: string;
-  disabled?: boolean;"
-  group?: string;";"
-};";";"
-;";";";"
-export interface TableColumn<T = unknown> {;";";";";"
-  key: "keyof T | string;",;";"
-  title: string;";";"
-  sortable?: boolean;";";";"
-  filterable?: boolean;";";";";"
-  render?: (value: "unknown", record: T) => React.ReactNode;"
-  width?: string | number;";"
-};";";"
-;";";";"
-export interface ChartDataPoint {;";";";";"
-  x: "string | number;",;
+  disabled?: boolean;""
+  group?: string;";""
+};";";""
+;";";";"";
+export interface TableColumn<T = unknown> {;";";";";""
+  key: "keyof T | string;",;";""
+  title: string;";";""
+  sortable?: boolean;";";";""
+  filterable?: boolean;";";";";""
+  render?: (value: "unknown", record: T) => React.ReactNode;""
+  width?: string | number;";""
+};";";""
+;";";";"";
+export interface ChartDataPoint {;";";";";""
+  x: "string | number;",;"
   y: string | number;
-  label?: string;"
-  color?: string;";"
-};";";"
-;";";";"
-export interface NotificationData {;";";";";"
-  id: "string;",;";";";";"
-  type: 'success' | 'error' | 'warning' | 'info,;'
+  label?: string;""
+  color?: string;";""
+};";";""
+;";";";"";
+export interface NotificationData {;";";";";""
+  id: "string;",;";";";";""
+  type: 'success' | 'error' | 'warning' | 'info,;''
   title: string;
   message?: string;
-  duration?: number;'
+  duration?: number;''
   actions?: Array<{;;
-    label: "string;",;";";";"
-    action: () => void;";";";";"
-    style?: 'primary' | 'secondary;
+    label: "string;",;";";";""
+    action: () => void;";";";";""
+    style?: 'primary' | 'secondary;'
   }>;
-};'
+};''
 ;
 export interface FileUpload {;
-  file: File;'
+  file: File;''
   progress?: number;;
-  status: 'pending' | 'uploading' | 'success' | 'error;
+  status: 'pending' | 'uploading' | 'success' | 'error;'
   url?: string;
   error?: string;
 };
-;'
+;'';
 export interface ComponentProps {;
   className?: string;
-  children?: React.ReactNode;'
+  children?: React.ReactNode;''
   style?: React.CSSProperties;;
-  'data-testid'?: string;
+  'data-testid'?: string;'
 };
-;'
+;'';
 export interface AsyncState<T = unknown> {;;
-  data: "T | null;",;";";";";"
-  loading: "boolean;",;
-  error: string | null;"
-  lastFetch?: number;";"
-};";";"
-;";";";"
-export interface RouteParams {;";";";";"
-  [key: "string]: string | string[] | undefined;";
+  data: "T | null;",;";";";";""
+  loading: "boolean;",;"
+  error: string | null;""
+  lastFetch?: number;";""
+};";";""
+;";";";"";
+export interface RouteParams {;";";";";""
+  [key: "string]: string | string[] | undefined;";"
 };
 ;
 export interface MetaData {;
@@ -135,38 +135,38 @@ export interface MetaData {;
   description?: string;
   keywords?: string[];
   ogImage?: string;
-  ogType?: string;"
-  twitterCard?: string;";"
-};";";"
-;";";";"
-export interface EnvironmentConfig {;";";";";"
-  isDevelopment: "boolean;",;";";";";"
-  isProduction: "boolean;",";";";";"
-  isTest: "boolean;",;";";";";"
-  apiUrl: "string;",";";";";"
-  appUrl: "string;",;";";";";"
-  version: "string;";";"
-};";";"
-;";";";"
-export interface LogContext {;";";";";"
-  [key: "string]: unknown;";";"
-};";";"
-;";";";"
-export interface EventHandler<T = Event> {;";";";";"
-  (event: "T): void;";";"
-};";";"
-;";";";"
-export interface KeyValuePair<T = unknown> {;";";";";"
-  [key: "string]: T;";";"
-};";";"
-;";";";"
-export interface TimestampedRecord {;";";";";"
-  createdAt: "string;",;";";";";"
-  updatedAt: "string;";";"
-};";";"
-;";";";"
-export interface Identifiable {;";";";";"
-  id: "string | number;";
+  ogType?: string;""
+  twitterCard?: string;";""
+};";";""
+;";";";"";
+export interface EnvironmentConfig {;";";";";""
+  isDevelopment: "boolean;",;";";";";""
+  isProduction: "boolean;",";";";";""
+  isTest: "boolean;",;";";";";""
+  apiUrl: "string;",";";";";""
+  appUrl: "string;",;";";";";""
+  version: "string;";";""
+};";";""
+;";";";"";
+export interface LogContext {;";";";";""
+  [key: "string]: unknown;";";""
+};";";""
+;";";";"";
+export interface EventHandler<T = Event> {;";";";";""
+  (event: "T): void;";";""
+};";";""
+;";";";"";
+export interface KeyValuePair<T = unknown> {;";";";";""
+  [key: "string]: T;";";""
+};";";""
+;";";";"";
+export interface TimestampedRecord {;";";";";""
+  createdAt: "string;",;";";";";""
+  updatedAt: "string;";";""
+};";";""
+;";";";"";
+export interface Identifiable {;";";";";""
+  id: "string | number;";"
 };
 ;
 export interface Sortable {;
@@ -179,25 +179,25 @@ export interface Searchable {;
 ;
 export interface SoftDeletable {;
   deletedAt?: string | null;
-  isDeleted?: boolean;"
-};";"
-;";";"
-// Component-specific interfaces;";";";"
-export interface ModalProps extends ComponentProps {;";";";";"
-  open: "boolean;",;";";"
-  onClose: () => void;";";";"
-  title?: string;";";";";"
-  size?: 'sm' | 'md' | 'lg' | 'xl;'
+  isDeleted?: boolean;""
+};";""
+;";";""
+// Component-specific interfaces;";";";"";
+export interface ModalProps extends ComponentProps {;";";";";""
+  open: "boolean;",;";";""
+  onClose: () => void;";";";""
+  title?: string;";";";";""
+  size?: 'sm' | 'md' | 'lg' | 'xl;''
   closable?: boolean;
 };
-;'
+;'';
 export interface ButtonProps extends ComponentProps {;;
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive;'
-  size?: 'sm' | 'md' | 'lg;
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive;''
+  size?: 'sm' | 'md' | 'lg;'
   disabled?: boolean;
-  loading?: boolean;'
+  loading?: boolean;''
   onClick?: EventHandler<React.MouseEvent<HTMLButtonElement>>;;
-  type?: 'button' | 'submit' | 'reset;
+  type?: 'button' | 'submit' | 'reset;'
 };
 ;
 export interface InputProps extends ComponentProps {;
@@ -216,36 +216,36 @@ export interface FormFieldProps extends ComponentProps {;
   label?: string;
   error?: string;
   required?: boolean;
-  description?: string;'
+  description?: string;''
 };
 ;
-// API-specific interfaces;'
+// API-specific interfaces;'';
 export interface RequestConfig {;;
-  method?: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH;
+  method?: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH;'
   headers?: Record<string, string>;
   body?: unknown;
   params?: Record<string, string | number>;
-  timeout?: number;'
+  timeout?: number;''
   retries?: number;
 };
-;'
+;'';
 export interface WebhookPayload {;;
-  event: "string;",;";";";";"
-  timestamp: "string;",";";";";"
-  data: "Record<string", unknown>;"
-  signature?: string;";"
-};";";"
-;";";";"
-export interface DatabaseConnection {;";";";";"
-  host: "string;",;";";";";"
-  port: "number;",";";";";"
-  database: "string;",;";";";";"
-  username: "string;",;";"
-  password: string;";";"
-  ssl?: boolean;";";";"
-  pool?: {;";";";";"
-    min: "number;",;";";";";"
-    max: "number;";
+  event: "string;",;";";";";""
+  timestamp: "string;",";";";";""
+  data: "Record<string", unknown>;""
+  signature?: string;";""
+};";";""
+;";";";"";
+export interface DatabaseConnection {;";";";";""
+  host: "string;",;";";";";""
+  port: "number;",";";";";""
+  database: "string;",;";";";";""
+  username: "string;",;";""
+  password: string;";";""
+  ssl?: boolean;";";";""
+  pool?: {;";";";";""
+    min: "number;",;";";";";""
+    max: "number;";"
   };
 };
 ;
@@ -261,51 +261,51 @@ export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 export type ValueOf<T> = T[keyof T];
 ;
 export type KeysOfType<T, U> = {;
-  [K in keyof T]: T[K] extends U ? K : never;"
-}[keyof T];";"
-;";";"
-// Event types;";";";"
-export interface CustomEvent<T = unknown> {;";";";";"
-  type: "string;",;";";";";"
-  payload: "T;",;
-  timestamp: number;"
-  source?: string;";"
-};";";"
-;";";";"
-export interface ErrorEvent extends CustomEvent<ErrorResponse> {;";";";";"
-  type: 'error,;;
-  payload: "ErrorResponse;";";"
-};";";"
-;";";";"
-export interface SuccessEvent<T = unknown> extends CustomEvent<T> {;";";";";"
-  type: 'success,;;
-  payload: "T;";"
-};";"
-;";";"
-// Performance monitoring types;";";";"
-export interface PerformanceMetrics {;";";";";"
-  pageLoadTime: "number;",;";";";";"
-  firstContentfulPaint: "number;",";";";";"
-  largestContentfulPaint: "number;",;";";";";"
-  cumulativeLayoutShift: "number;",";";";";"
-  firstInputDelay: "number;",;";";";";"
-  timeToInteractive: "number;";";"
-};";";"
-;";";";"
-export interface BundleAnalysis {;";";";";"
-  totalSize: "number;",;";";";";"
-  chunks: "Array<{;",";";";";"
-    name: "string;",;";";";";"
-    size: "number;",";";";";"
-    assets: "string[];";";";";"
-  }>;";";";";"
-  dependencies: "Array<{;",;";";";";"
-    name: "string;",";";";";"
-    size: "number;",;";";";";"
-    version: "string;";
+  [K in keyof T]: T[K] extends U ? K : never;""
+}[keyof T];";""
+;";";""
+// Event types;";";";"";
+export interface CustomEvent<T = unknown> {;";";";";""
+  type: "string;",;";";";";""
+  payload: "T;",;"
+  timestamp: number;""
+  source?: string;";""
+};";";""
+;";";";"";
+export interface ErrorEvent extends CustomEvent<ErrorResponse> {;";";";";""
+  type: 'error,;;'
+  payload: "ErrorResponse;";";""
+};";";""
+;";";";"";
+export interface SuccessEvent<T = unknown> extends CustomEvent<T> {;";";";";""
+  type: 'success,;;'
+  payload: "T;";""
+};";""
+;";";""
+// Performance monitoring types;";";";"";
+export interface PerformanceMetrics {;";";";";""
+  pageLoadTime: "number;",;";";";";""
+  firstContentfulPaint: "number;",";";";";""
+  largestContentfulPaint: "number;",;";";";";""
+  cumulativeLayoutShift: "number;",";";";";""
+  firstInputDelay: "number;",;";";";";""
+  timeToInteractive: "number;";";""
+};";";""
+;";";";"";
+export interface BundleAnalysis {;";";";";""
+  totalSize: "number;",;";";";";""
+  chunks: "Array<{;",";";";";""
+    name: "string;",;";";";";""
+    size: "number;",";";";";""
+    assets: "string[];";";";";""
+  }>;";";";";""
+  dependencies: "Array<{;",;";";";";""
+    name: "string;",";";";";""
+    size: "number;",;";";";";""
+    version: "string;";"
   }>;
-};"
-;";"
-// Note: TypeScript interfaces cannot be used as values in export default;";";"
-// This file exports types only, no runtime values;";";";"
-"""""
+};""
+;";""
+// Note: TypeScript interfaces cannot be used as values in export default;";";""
+// This file exports types only, no runtime values;";";";""
+""""""

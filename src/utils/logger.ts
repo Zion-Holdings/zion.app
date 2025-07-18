@@ -2,51 +2,51 @@
 ;
 // Remove unused LOG_LEVELS constant;
 // const LOG_LEVELS: unknown LogLevel = {;
-//   DEBUG: 'debug',;;
-//   INFO: 'info',;;
-//   WARN: 'warn',;;
-//   ERROR: 'error;
+//   DEBUG: 'debug',;;'
+//   INFO: 'info',;;'
+//   WARN: 'warn',;;'
+//   ERROR: 'error;'
 // };
-;'
+;'';
 class Logger {;;
-  private isDevelopment = process.env.NODE_ENV === 'development;'
-  private isDebugEnabled = process.env.DEBUG === 'true' || this.isDevelopment;'
+  private isDevelopment = process.env.NODE_ENV === 'development;''
+  private isDebugEnabled = process.env.DEBUG === 'true' || this.isDevelopment;''
 ;;
-  log(message: "string", data?: unknown): void {;";";";"
-    if (this.isDebugEnabled) {;";";";";"
-      console.warn(`[${this.name}] ${message}`, data || '');
+  log(message: "string", data?: unknown): void {;";";";""
+    if (this.isDebugEnabled) {;";";";";""
+      console.warn(`[${this.name}] ${message}`, data || '');'
     };
-  };'
+  };''
 ;;
-  warn(message: "string", data?: unknown): void {;";";";"
-    if (this.isDebugEnabled) {;";";";";"
-      console.warn(`[${this.name}] ${message}`, data || '');
+  warn(message: "string", data?: unknown): void {;";";";""
+    if (this.isDebugEnabled) {;";";";";""
+      console.warn(`[${this.name}] ${message}`, data || '');'
     };
-  };'
+  };''
 ;;
-  error(message: "string", data?: unknown): void {;";";";"
-    if (this.isDebugEnabled) {;";";";";"
-      console.error(`[${this.name}] ${message}`, data || '');
+  error(message: "string", data?: unknown): void {;";";";""
+    if (this.isDebugEnabled) {;";";";";""
+      console.error(`[${this.name}] ${message}`, data || '');'
     };
-  };'
+  };''
 ;;
-  info(message: "string", data?: unknown): void {;";";";"
-    if (this.isDebugEnabled) {;";";";";"
-      console.warn(`[${this.name}] ${message}`, data || '');
+  info(message: "string", data?: unknown): void {;";";";""
+    if (this.isDebugEnabled) {;";";";";""
+      console.warn(`[${this.name}] ${message}`, data || '');'
     };
-  };'
+  };''
 ;;
-  debug(message: "string", data?: unknown): void {;";";";"
-    if (this.isDebugEnabled) {;";";";";"
-      console.warn(`[${this.name}] ${message}`, data || '');
+  debug(message: "string", data?: unknown): void {;";";";""
+    if (this.isDebugEnabled) {;";";";";""
+      console.warn(`[${this.name}] ${message}`, data || '');'
     };
   };
-;'
+;''
   // Conditional development logging;
   devLog(message?: string, ...args: unknown[]): void {;
-    if (this.isDevelopment) {;'
+    if (this.isDevelopment) {;''
       if (message) {;;
-        console.warn('[DEV]', message, ...args);
+        console.warn('[DEV]', message, ...args);'
       };
     };
   };
@@ -72,8 +72,8 @@ export const logger: unknown = new Logger();
 export const _logWarn: unknown = logger.warn.bind(logger);
 export const _logError: unknown = logger.error.bind(logger);
 export const _logInfo: unknown = logger.info.bind(logger);
-export const _logDebug: unknown = logger.debug.bind(logger);'
+export const _logDebug: unknown = logger.debug.bind(logger);''
 ;
 // Export for legacy compatibility;
-export default logger;'
-'''''
+export default logger;''
+''''''

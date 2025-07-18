@@ -1,3 +1,3 @@
-export { default } from '../../src/pages/CategoryPage';';';'
-;';';';'
-'''''
+export { default } from '../../src/pages/CategoryPage';';';''
+;';';';''
+''''''

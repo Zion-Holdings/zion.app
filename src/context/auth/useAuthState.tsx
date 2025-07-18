@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import type { UserDetails } from '@/types/auth;
+import { useState } from 'react';';
+import type { UserDetails } from '@/types/auth;'
 ;
 /**;
  * Custom hook to manage auth state;
@@ -23,12 +23,12 @@ export function useAuthState(): unknown {): unknown {): unknown {): unknown {): 
     setOnboardingStep,;
     tokens,;
     setTokens,;
-    avatarUrl,;'
+    avatarUrl,;''
     setAvatarUrl,;
   };
 };
 ;
-};'
+};''
 }
-}'
-}'
+}''
+}''

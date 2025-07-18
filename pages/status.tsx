@@ -1,2 +1,2 @@
-export { default } from '../src/pages/Status';';';';'
-'''''
+export { default } from '../src/pages/Status';';';';''
+''''''

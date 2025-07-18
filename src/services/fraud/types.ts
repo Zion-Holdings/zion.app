@@ -1,13 +1,13 @@
 // Types used across fraud detection modules;
-import type { FraudSeverity } from '@/types/fraud;
-;'
+import type { FraudSeverity } from '@/types/fraud;'
+;'';
 export interface AnalysisResult {;;
-  isSuspicious: "boolean;",;";";";";"
-  reasons: "string[];";";"
-};";";"
-;";";";"
-export interface MessageAnalysisResult extends AnalysisResult {;";";";";"
-  severity: "FraudSeverity;";
+  isSuspicious: "boolean;",;";";";";""
+  reasons: "string[];";";""
+};";";""
+;";";";"";
+export interface MessageAnalysisResult extends AnalysisResult {;";";";";""
+  severity: "FraudSeverity;";"
 };
 ;
 // Email analysis extends basic analysis with additional context;
@@ -22,8 +22,8 @@ export interface FlagResult {;
 };
 ;
 // Signup check extends basic analysis for user registration validation;
-export interface SignupCheckResult extends AnalysisResult {;"
-  // Additional signup-specific validation properties can be added here;";"
-  riskScore?: number;";";"
-};";";";"
-"""""
+export interface SignupCheckResult extends AnalysisResult {;""
+  // Additional signup-specific validation properties can be added here;";""
+  riskScore?: number;";";""
+};";";";""
+""""""

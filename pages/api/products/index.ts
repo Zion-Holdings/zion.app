@@ -1,19 +1,19 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { applyCorsHeaders } from '@/middleware/cors';
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
-import { MARKETPLACE_LISTINGS as _MARKETPLACE_LISTINGS } from '@/data/listingData';
-
+import type { NextApiRequest, NextApiResponse } from 'next';';
+import { applyCorsHeaders } from '@/middleware/cors';';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';';
+import { MARKETPLACE_LISTINGS as _MARKETPLACE_LISTINGS } from '@/data/listingData';'
+;
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   // Apply CORS headers for API documentation
   applyCorsHeaders(req, res);
 
   // Handle preflight requests
-  if (req.method === 'OPTIONS') {
+  if (req.method === 'OPTIONS') {'
     return res.status(200).end();
   }
 
-  if (req.method !== 'GET') {
-    res.setHeader('Allow', 'GET');
+  if (req.method !== 'GET') {'
+    res.setHeader('Allow', 'GET');'
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
@@ -41,27 +41,27 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
     // Apply sorting before pagination
     switch (sort) {
-      case 'price-low':
+      case 'price-low':'
         products.sort((a, b) => (a.price || 0) - (b.price || 0));
         break;
-      case 'price-high':
+      case 'price-high':'
         products.sort((a, b) => (b.price || 0) - (a.price || 0));
         break;
-      case 'rating':
+      case 'rating':'
         products.sort((a, b) => (b.rating || 0) - (a.rating || 0));
         break;
-      case 'popular':
+      case 'popular':'
         products.sort((a, b) => (b.reviewCount || 0) - (a.reviewCount || 0));
         break;
-      case 'ai-score':
+      case 'ai-score':'
         products.sort((a, b) => (b.aiScore || 0) - (a.aiScore || 0));
         break;
-      case 'newest':
+      case 'newest':'
       default:
         products.sort(
           (a, b) =>
-            new Date(b.createdAt || '').getTime() -
-            new Date(a.createdAt || '').getTime()
+            new Date(b.createdAt || '').getTime() -'
+            new Date(a.createdAt || '').getTime()'
         );
         break;
     }
@@ -89,7 +89,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
     return res.status(200).json(response);
   } catch (error) {
-    logErrorToProduction('[API] Error in /api/products:', { data: error });
+    logErrorToProduction('[API] Error in /api/products:', { data: error });'
     // Return fallback data instead of error to prevent empty marketplace
     return res.status(200).json({
       products: [],

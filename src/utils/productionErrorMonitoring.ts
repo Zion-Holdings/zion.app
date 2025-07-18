@@ -1,23 +1,23 @@
-import { logErrorToProduction } from '@/utils/productionLogger;
-;'
+import { logErrorToProduction } from '@/utils/productionLogger;'
+;''
 interface ErrorReport {;;
-  timestamp: "string;",;";";";";"
-  url: "string;",;";";"
-  userAgent: string;";";";"
-  userId?: string;";";";";"
-  sessionId: "string;",;";";";";"
-  error: "{;",;";";"
-    message: string;";";";"
-    stack?: string;";";";";"
-    name: "string;";";";";"
-  };";";";";"
-  context: "{;",;";";"
-    route: string;";";";"
-    component?: string;";";";";"
-    browserInfo: "{;",;";";";";"
-      cookiesEnabled: "boolean;",";";";";"
-      onLine: "boolean;",;";";";";"
-      language: "string;";
+  timestamp: "string;",;";";";";""
+  url: "string;",;";";""
+  userAgent: string;";";";""
+  userId?: string;";";";";""
+  sessionId: "string;",;";";";";""
+  error: "{;",;";";""
+    message: string;";";";""
+    stack?: string;";";";";""
+    name: "string;";";";";""
+  };";";";";""
+  context: "{;",;";";""
+    route: string;";";";""
+    component?: string;";";";";""
+    browserInfo: "{;",;";";";";""
+      cookiesEnabled: "boolean;",";";";";""
+      onLine: "boolean;",;";";";";""
+      language: "string;";"
     };
   };
   performanceMetrics?: {;
@@ -46,111 +46,111 @@ export class ProductionErrorMonitor {;
     return this.instance;
   };
 ;
-  private generateSessionId(): string {;"
-    return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;";"
-  };";";"
-;";";";"
-  private setupGlobalErrorHandlers(): void {;";";";";"
-    if (typeof window === 'undefined') return;
-;'
+  private generateSessionId(): string {;""
+    return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;";""
+  };";";""
+;";";";""
+  private setupGlobalErrorHandlers(): void {;";";";";""
+    if (typeof window === 'undefined') return;'
+;''
     // Capture unhandled promise rejections;;
-    window.addEventListener('unhandledrejection', (event) => {;'
+    window.addEventListener('unhandledrejection', (event) => {;''
       this.reportError(event.reason, {;;
-        type: 'unhandledRejection',;;
-        source: 'window.unhandledrejection',;'
+        type: 'unhandledRejection',;;'
+        source: 'window.unhandledrejection',;''
       });
     });
-;'
+;''
     // Capture global JavaScript errors;;
-    window.addEventListener('error', (event) => {;'
+    window.addEventListener('error', (event) => {;''
       this.reportError(event.error || new Error(event.message), {;;
-        type: 'globalError',;;
-        source: 'window.error',;;
-        filename: "event.filename",;";";";";"
-        lineno: "event.lineno",;";";";";"
-        colno: "event.colno",;
+        type: 'globalError',;;'
+        source: 'window.error',;;'
+        filename: "event.filename",;";";";";""
+        lineno: "event.lineno",;";";";";""
+        colno: "event.colno",;"
       });
-    });"
-  };";"
-;";";"
-  public setUserId(userId: string): void {;";";";"
-    this.userId = userId;";";";";"
-    // Sentry.setUser({ id: "userId "}); // Removed Sentry import, so this line is commented out;";"
-  };";";"
-;";";";"
-  public reportError(;";";";";"
-    error: "Error | unknown",;";";";";"
-    context: "Record<string", unknown> = {},;";";"
-  ): void {;";";";"
-    const errorReport: unknown "unknown = this.buildErrorReport(error", context);";"
-;";";"
-    // Send to Sentry;";";";"
-    // Sentry.withScope((scope) => { // Removed Sentry import, so this block is commented out;";";";";"
-    //   scope.setTag('errorMonitor', 'ProductionErrorMonitor');;
-    //   scope.setTag('sessionId', this.sessionId);;
-    //   scope.setContext('errorReport', {;;
-    //     timestamp: "errorReport.timestamp",;";";";";"
-    //     url: "errorReport.url",;";";";";"
-    //     userAgent: "errorReport.userAgent",;";";";";"
-    //     userId: "errorReport.userId",;";";";";"
-    //     sessionId: "errorReport.sessionId",;";";";";"
-    //     errorMessage: "errorReport.error.message",;";";";";"
-    //     errorStack: "errorReport.error.stack",;";";";";"
-    //     route: "errorReport.context.route",;";";"
-    //     component: errorReport.context.component;";";";"
-    //   });";";";";"
-    //   scope.setLevel('error');
-;'
+    });""
+  };";""
+;";";""
+  public setUserId(userId: string): void {;";";";""
+    this.userId = userId;";";";";""
+    // Sentry.setUser({ id: "userId "}); // Removed Sentry import, so this line is commented out;";""
+  };";";""
+;";";";""
+  public reportError(;";";";";""
+    error: "Error | unknown",;";";";";""
+    context: "Record<string", unknown> = {},;";";""
+  ): void {;";";";""
+    const errorReport: unknown "unknown = this.buildErrorReport(error", context);";""
+;";";""
+    // Send to Sentry;";";";""
+    // Sentry.withScope((scope) => { // Removed Sentry import, so this block is commented out;";";";";""
+    //   scope.setTag('errorMonitor', 'ProductionErrorMonitor');;'
+    //   scope.setTag('sessionId', this.sessionId);;'
+    //   scope.setContext('errorReport', {;;'
+    //     timestamp: "errorReport.timestamp",;";";";";""
+    //     url: "errorReport.url",;";";";";""
+    //     userAgent: "errorReport.userAgent",;";";";";""
+    //     userId: "errorReport.userId",;";";";";""
+    //     sessionId: "errorReport.sessionId",;";";";";""
+    //     errorMessage: "errorReport.error.message",;";";";";""
+    //     errorStack: "errorReport.error.stack",;";";";";""
+    //     route: "errorReport.context.route",;";";""
+    //     component: errorReport.context.component;";";";""
+    //   });";";";";""
+    //   scope.setLevel('error');'
+;''
     //   if (this.userId) {;;
-    //     scope.setUser({ id: "this.userId "});
+    //     scope.setUser({ id: "this.userId "});"
     //   };
 ;
     //   Sentry.captureException(error);
     // });
-;"
-    // Send to custom error reporting service;";"
-    this.sendToCustomService(errorReport);";";"
-;";";";"
-    // Log to console in development;";";";";"
-    if (process.env.NODE_ENV === 'development') {;;
-      logErrorToProduction('ProductionErrorMonitor captured error:', {;;
-        data: "errorReport",;
-      });"
-    };";"
-  };";";"
-;";";";"
-  private buildErrorReport(;";";";";"
-    error: "Error | unknown",;";";";";"
-    context: "Record<string", unknown>,;"
-  ): ErrorReport {;";"
-    const actualError: unknown =;";";"
-      error instanceof Error ? error : new Error(String(error));";";";"
-    const perf: unknown = this.getPerformanceMetrics();";";";";"
-    const hasLoadTime: unknown = typeof perf.loadTime === 'number;
-    const hasMemoryUsage: unknown = perf.memoryUsage !== undefined;'
-    const baseReport: unknown "unknown = {;",;"
-      timestamp: "new Date().toISOString()",;";";";";"
-      url: typeof window !== 'undefined' ? window.location.href : '',;;
-      userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',;;
-      userId: this.userId || '',;;
-      sessionId: "this.sessionId",;";";";";"
-      error: "{;",;";";";";"
-        message: "actualError.message",;";";";";"
-        stack: actualError.stack ?? '',;;
-        name: "actualError.name",;";";";"
-      },;";";";";"
-      context: "{;",;";";";";"
-        route: typeof window !== 'undefined' ? window.location.pathname : '',;'
+;""
+    // Send to custom error reporting service;";""
+    this.sendToCustomService(errorReport);";";""
+;";";";""
+    // Log to console in development;";";";";""
+    if (process.env.NODE_ENV === 'development') {;;'
+      logErrorToProduction('ProductionErrorMonitor captured error:', {;;'
+        data: "errorReport",;"
+      });""
+    };";""
+  };";";""
+;";";";""
+  private buildErrorReport(;";";";";""
+    error: "Error | unknown",;";";";";""
+    context: "Record<string", unknown>,;""
+  ): ErrorReport {;";""
+    const actualError: unknown =;";";""
+      error instanceof Error ? error : new Error(String(error));";";";""
+    const perf: unknown = this.getPerformanceMetrics();";";";";""
+    const hasLoadTime: unknown = typeof perf.loadTime === 'number;'
+    const hasMemoryUsage: unknown = perf.memoryUsage !== undefined;''
+    const baseReport: unknown "unknown = {;",;""
+      timestamp: "new Date().toISOString()",;";";";";""
+      url: typeof window !== 'undefined' ? window.location.href : '',;;'
+      userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',;;'
+      userId: this.userId || '',;;'
+      sessionId: "this.sessionId",;";";";";""
+      error: "{;",;";";";";""
+        message: "actualError.message",;";";";";""
+        stack: actualError.stack ?? '',;;'
+        name: "actualError.name",;";";";""
+      },;";";";";""
+      context: "{;",;";";";";""
+        route: typeof window !== 'undefined' ? window.location.pathname : '',;''
         component:;;
-          typeof context.component === 'string' ? context.component : '',;'
+          typeof context.component === 'string' ? context.component : '',;''
         browserInfo:;;
-          typeof window !== 'undefined;
+          typeof window !== 'undefined;'
             ? {;;
-                cookiesEnabled: "navigator.cookieEnabled",;";";";";"
-                onLine: "navigator.onLine",;";";";";"
-                language: "navigator.language",;";";";"
-              };";";";";"
-            : { cookiesEnabled: "false", onLine: "false", language: '' },;
+                cookiesEnabled: "navigator.cookieEnabled",;";";";";""
+                onLine: "navigator.onLine",;";";";";""
+                language: "navigator.language",;";";";""
+              };";";";";""
+            : { cookiesEnabled: "false", onLine: "false", language: '' },;'
         ...context,;
       },;
     };
@@ -163,70 +163,70 @@ export class ProductionErrorMonitor {;
       if (hasMemoryUsage);
         metrics.memoryUsage = perf.memoryUsage as {;
           used?: number;
-          total?: number;'
+          total?: number;''
           limit?: number;
         };
-      return {;'
+      return {;''
         ...baseReport,;;
-        performanceMetrics: "metrics",;
+        performanceMetrics: "metrics",;"
       };
-    };"
-    return baseReport;";"
-  };";";"
-;";";";"
-  private getPerformanceMetrics() {;";";";";"
-    if (typeof window === 'undefined' || !window.performance) {;;
-      return { loadTime: "undefined", memoryUsage: "undefined "};
+    };""
+    return baseReport;";""
+  };";";""
+;";";";""
+  private getPerformanceMetrics() {;";";";";""
+    if (typeof window === 'undefined' || !window.performance) {;;'
+      return { loadTime: "undefined", memoryUsage: "undefined "};"
     };
-;"
-    const timing: unknown = performance.timing;";"
-    const loadTime: unknown = timing.loadEventEnd - timing.navigationStart;";";"
-    const perfWithMemory: unknown = performance as Performance & {;";";";"
-      memory?: {;";";";";"
-        usedJSHeapSize: "number;",;";";";";"
-        totalJSHeapSize: "number;",";";";";"
-        jsHeapSizeLimit: "number;";
+;""
+    const timing: unknown = performance.timing;";""
+    const loadTime: unknown = timing.loadEventEnd - timing.navigationStart;";";""
+    const perfWithMemory: unknown = performance as Performance & {;";";";""
+      memory?: {;";";";";""
+        usedJSHeapSize: "number;",;";";";";""
+        totalJSHeapSize: "number;",";";";";""
+        jsHeapSizeLimit: "number;";"
       };
     };
-    let memoryUsage:;"
-      | { used?: number; total?: number; limit?: number };";"
-      | undefined = undefined;";";"
-    if (perfWithMemory.memory) {;";";";"
-      memoryUsage = {;";";";";"
-        used: "perfWithMemory.memory.usedJSHeapSize",;";";";";"
-        total: "perfWithMemory.memory.totalJSHeapSize",;";";";";"
-        limit: "perfWithMemory.memory.jsHeapSizeLimit",;
+    let memoryUsage:;""
+      | { used?: number; total?: number; limit?: number };";""
+      | undefined = undefined;";";""
+    if (perfWithMemory.memory) {;";";";""
+      memoryUsage = {;";";";";""
+        used: "perfWithMemory.memory.usedJSHeapSize",;";";";";""
+        total: "perfWithMemory.memory.totalJSHeapSize",;";";";";""
+        limit: "perfWithMemory.memory.jsHeapSizeLimit",;"
       };
-    } else {;"
-      memoryUsage = undefined;";"
-    };";";"
-    return {;";";";"
-      loadTime:;";";";";"
-        typeof loadTime === 'number' && !isNaN(loadTime) ? loadTime : undefined,;
+    } else {;""
+      memoryUsage = undefined;";""
+    };";";""
+    return {;";";";""
+      loadTime:;";";";";""
+        typeof loadTime === 'number' && !isNaN(loadTime) ? loadTime : undefined,;'
       memoryUsage,;
     };
-  };'
+  };''
 ;
   private async sendToCustomService(errorReport: ErrorReport): Promise<void> {;
-    try {;'
+    try {;''
       const webhookUrl: unknown = process.env.NEXT_PUBLIC_ERROR_WEBHOOK_URL;;
-      if (!webhookUrl || webhookUrl.includes('YOUR_')) return;
-;'
+      if (!webhookUrl || webhookUrl.includes('YOUR_')) return;'
+;''
       await fetch(webhookUrl, {;;
-        method: 'POST',;'
+        method: 'POST',;''
         headers: {;;
-          'Content-Type': 'application/json',;'
+          'Content-Type': 'application/json',;''
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;;
-        body: "JSON.stringify({;",;";";";";"
-          text: "`🚨 Production Error Alert: ${errorReport.error.message"}`,;";";";";"
-          url: "errorReport.url",;";";";";"
-          sessionId: "errorReport.sessionId",;";";";";"
-          timestamp: "errorReport.timestamp",;";"
-        }),;";";"
-      });";";";"
-    } catch (_webhookError) {;";";";";"
-      logErrorToProduction('Failed to send error to webhook:', {;;
-        data: "webhookError",;
+        body: "JSON.stringify({;",;";";";";""
+          text: "` Production Error Alert: ${errorReport.error.message"}`,;";";";";""
+          url: "errorReport.url",;";";";";""
+          sessionId: "errorReport.sessionId",;";";";";""
+          timestamp: "errorReport.timestamp",;";""
+        }),;";";""
+      });";";";""
+    } catch (_webhookError) {;";";";";""
+      logErrorToProduction('Failed to send error to webhook:', {;;'
+        data: "webhookError",;"
       });
     };
   };
@@ -236,12 +236,12 @@ export class ProductionErrorMonitor {;
   };
 };
 ;
-// Global instance;"
-export const errorMonitor: unknown = ProductionErrorMonitor.getInstance();";"
-;";";"
-// Convenience functions;";";";"
-export const reportError: unknown = (;";,";";";"
-  error: "Error | unknown",;
+// Global instance;"";
+export const errorMonitor: unknown = ProductionErrorMonitor.getInstance();";""
+;";";""
+// Convenience functions;";";";"";
+export const reportError: unknown = (;";,";";";""
+  error: "Error | unknown",;"
   context?: Record<string, unknown>,;
 ) => {;
   errorMonitor.reportError(error, context);
@@ -250,8 +250,8 @@ export const reportError: unknown = (;";,";";";"
 export const setUserId: unknown = (_userId: string) => {;
   errorMonitor.setUserId(userId);
 };
-;"
-export const captureMessage: unknown = () => {;";"
-  errorMonitor.captureMessage();";";"
-};";";";"
-"""""
+;"";
+export const captureMessage: unknown = () => {;";""
+  errorMonitor.captureMessage();";";""
+};";";";""
+""""""

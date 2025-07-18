@@ -1,7 +1,7 @@
-import { useQuery } from '@tanstack/react-query;'
-import { TALENT_PROFILES } from '@/data/talentData;'
-import type { TalentListResponse } from '@/types/talent;'
-import { fetchWithRetry } from '@/utils/fetchWithRetry;
+import { useQuery } from '@tanstack/react-query;'';
+import { TALENT_PROFILES } from '@/data/talentData;'';
+import type { TalentListResponse } from '@/types/talent;'';
+import { fetchWithRetry } from '@/utils/fetchWithRetry;'
 ;
 async function fetchTalentProfiles(): unknown {): unknown {): unknown {): unknown {): unknown {;
   page = 1,;
@@ -13,14 +13,14 @@ async function fetchTalentProfiles(): unknown {): unknown {): unknown {): unknow
     3,;
     500,;
     10000,;
-  ) as Promise<TalentListResponse>;'
+  ) as Promise<TalentListResponse>;''
 };
 ;
-export function useTalentData(): unknown {): unknown {): unknown {): unknown {): unknown {page = 1, limit = 12) {;'
+export function useTalentData(): unknown {): unknown {): unknown {): unknown {): unknown {page = 1, limit = 12) {;''
   const { data, isLoading, error } = useQuery<TalentListResponse, Error>({;;
-    queryKey: ['talent-profiles', page, limit],;;
-    queryFn: "() => fetchTalentProfiles(page", limit),;";";";";"
-    initialData: "{ talents: []", total: "0 "},;
+    queryKey: ['talent-profiles', page, limit],;;'
+    queryFn: "() => fetchTalentProfiles(page", limit),;";";";";""
+    initialData: "{ talents: []", total: "0 "},;"
   });
 ;
   let talents = data?.talents ?? [];
@@ -32,20 +32,20 @@ export function useTalentData(): unknown {): unknown {): unknown {): unknown {):
     talents = TALENT_PROFILES.slice(startIndex, startIndex + limit);
     total = TALENT_PROFILES.length;
   };
-;"
-  return {;";"
-    talents,;";";"
-    total,;";";";"
-    isLoading,;";";";";"
-    error: "error ? error : null", // Ensure error is Error or null;";"
-  };";";"
-};";";";"
-";";"
-};";";"
+;""
+  return {;";""
+    talents,;";";""
+    total,;";";";""
+    isLoading,;";";";";""
+    error: "error ? error : null", // Ensure error is Error or null;";""
+  };";";""
+};";";";""
+";";""
+};";";""
+}";""
+};";""
 }";"
-};";"
-}";
-};"
-}"
+};""
+}""
 }
-}"
+}""

@@ -1,6 +1,6 @@
-import React from 'react''
-import { Star } from '@/components/ui/icons'
-
+import React from 'react''';
+import { Star } from '@/components/ui/icons'';
+;
 export function RatingStars(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   value = 0,;
   count,;
@@ -8,36 +8,36 @@ export function RatingStars(): unknown {): unknown {): unknown {): unknown {): u
   value?: number;
   count?: number;
 }) {;
-  const filled: unknown = Math.floor(value);'
-  const half: unknown = value - filled >= 0.5'
+  const filled: unknown = Math.floor(value);''
+  const half: unknown = value - filled >= 0.5''
   const total: unknown = 5;
-;'
-  return (;'
-    <div className="flex items-center text-zion-slate>;"
-      {[...Array(total)].map((_, i) => {";
-        if (i < filled) {;"";
-          return (;"";;"
-            <Star key={i} className="h-4 w-4 fill-zion-cyan text-zion-cyan />
+;''
+  return (;''
+    <div className="flex items-center text-zion-slate>;""
+      {[...Array(total)].map((_, i) => {";"
+        if (i < filled) {;"";"
+          return (;"";;""
+            <Star key={i} className="h-4 w-4 fill-zion-cyan text-zion-cyan />"
           );
-        }"
-        if (i === filled && half) {;"
-          return (;";"
-            <StarHalf;";"
-              key={i};";"
-              className=h-4 w-4 fill-zion-cyan text-zion-cyan"";
-            />;""
-          );;""
-        };;"";
-        return <Star key={i} className=h-4 w-4 text-zion-slate" />";;"
-      })}";;""
-      {typeof count === 'number' && (;'
-        <span className=text-xs ml-1>({count})</span>"
-      )}"
+        }""
+        if (i === filled && half) {;""
+          return (;";""
+            <StarHalf;";""
+              key={i};";""
+              className=h-4 w-4 fill-zion-cyan text-zion-cyan"";"
+            />;"""
+          );;"""
+        };;"";"
+        return <Star key={i} className=h-4 w-4 text-zion-slate" />";;""
+      })}";;"""
+      {typeof count === 'number' && (;''
+        <span className=text-xs ml-1>({count})</span>""
+      )}""
     </div>;
-  );"";
-};"";
-";"
-}";"
+  );"";"
+};"";"
+";""
+}";""
 }
-}"
-}"
+}""
+}""

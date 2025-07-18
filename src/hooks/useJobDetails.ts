@@ -1,8 +1,8 @@
-import type { Job } from '@/types/jobs;
+import type { Job } from '@/types/jobs;'
 ;;
-import { useState, useEffect } from 'react';
-import { supabase } from '@/integrations/supabase/client;'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { useState, useEffect } from 'react';';
+import { supabase } from '@/integrations/supabase/client;'';
+import { logErrorToProduction } from '@/utils/productionLogger;'
 ;
 export function useJobDetails(): unknown {): unknown {): unknown {): unknown {): unknown {jobId: string | undefined) {;
   const [job, setJob] = useState<Job | null>(null);
@@ -12,23 +12,23 @@ export function useJobDetails(): unknown {): unknown {): unknown {): unknown {):
   async function loadJobDetails(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
     if (!jobId) {;
       setIsLoading(false);
-      return;'
+      return;''
     };
 ;
-    try {;'
+    try {;''
       setIsLoading(true);;
-      if (!supabase) throw new Error('Supabase client not initialized');'
+      if (!supabase) throw new Error('Supabase client not initialized');''
       const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;;
-        .from('jobs');;
-        .select('*');;
-        .eq('id', jobId);
+        .from('jobs');;'
+        .select('*');;'
+        .eq('id', jobId);'
         .single();
-;'
+;''
       if (error) throw error;
       setJob(data);
-      setError(null);'
+      setError(null);''
     } catch {;;
-      logErrorToProduction('Error loading job details:', { data: "error "});
+      logErrorToProduction('Error loading job details:', { data: "error "});"
       setError((err as Error).message);
     } finally {;
       setIsLoading(false);
@@ -45,16 +45,16 @@ export function useJobDetails(): unknown {): unknown {): unknown {): unknown {):
     isLoading,;
     error,;
     loadJobDetails,;
-  };"
-};";"
-;";";"
-export default useJobDetails;";";";"
-";";"
-};";";"
+  };""
+};";""
+;";";"";
+export default useJobDetails;";";";""
+";";""
+};";";""
+}";""
+};";""
 }";"
-};";"
-}";
-};"
-}"
+};""
+}""
 }
-}"
+}""

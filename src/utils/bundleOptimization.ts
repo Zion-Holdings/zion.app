@@ -1,99 +1,99 @@
-import { logWarn } from '@/utils/productionLogger;
+import { logWarn } from '@/utils/productionLogger;'
 ;
 /**;
- * Bundle optimization utilities for improved performance;'
+ * Bundle optimization utilities for improved performance;''
  */;
 ;
-// Critical resource preloader;'
+// Critical resource preloader;'';
 export const preloadCriticalResources: unknown = () => {;;
-  if (typeof window === 'undefined') return;
+  if (typeof window === 'undefined') return;'
 ;
-  // Preload critical font files;'
+  // Preload critical font files;''
   const criticalFonts: unknown = [;;
-    '/fonts/inter-var.woff2',;;
-    '/fonts/inter-regular.woff2',;;
-    '/fonts/inter-medium.woff2',;
+    '/fonts/inter-var.woff2',;;'
+    '/fonts/inter-regular.woff2',;;'
+    '/fonts/inter-medium.woff2',;'
   ];
-;'
+;''
   criticalFonts.forEach((font) => {;;
-    const link: unknown = document.createElement('link');;
-    link.rel = 'preload;
+    const link: unknown = document.createElement('link');;'
+    link.rel = 'preload;'
     link.href = font;;
-    link.as = 'font;'
-    link.type = 'font/woff2;'
-    link.crossOrigin = 'anonymous;'
+    link.as = 'font;''
+    link.type = 'font/woff2;''
+    link.crossOrigin = 'anonymous;''
     document.head.appendChild(link);
   });
-;'
+;''
   // Preload critical API endpoints;;
-  const criticalEndpoints: unknown = ['/api/marketplace/overview', '/api/categories'];
-;'
+  const criticalEndpoints: unknown = ['/api/marketplace/overview', '/api/categories'];'
+;''
   criticalEndpoints.forEach((endpoint) => {;;
-    const link: unknown = document.createElement('link');;
-    link.rel = 'prefetch;
+    const link: unknown = document.createElement('link');;'
+    link.rel = 'prefetch;'
     link.href = endpoint;
     document.head.appendChild(link);
-  });'
+  });''
 };
 ;
-// Optimize image loading;'
+// Optimize image loading;'';
 export const optimizeImageLoading: unknown = () => {;;
-  if (typeof window === 'undefined') return;
-;'
+  if (typeof window === 'undefined') return;'
+;''
   // Enable lazy loading for all images;;
-  const images: unknown = document.querySelectorAll('img');
-  images.forEach((img) => {;'
+  const images: unknown = document.querySelectorAll('img');'
+  images.forEach((img) => {;''
     if (!img.loading) {;;
-      img.loading = 'lazy;'
+      img.loading = 'lazy;''
     };
   });
-;'
+;''
   // Add intersection observer for progressive image enhancement;;
-  if ('IntersectionObserver' in window) {;
+  if ('IntersectionObserver' in window) {;'
     const imageObserver: unknown = new IntersectionObserver((entries) => {;
-      entries.forEach((entry) => {;'
+      entries.forEach((entry) => {;''
         if (entry.isIntersecting) {;
           const img: unknown = entry.target as HTMLImageElement;
-          if (img.dataset.src) {;'
+          if (img.dataset.src) {;''
             img.src = img.dataset.src;;
-            img.removeAttribute('data-src');
+            img.removeAttribute('data-src');'
             imageObserver.unobserve(img);
-          };'
+          };''
         };
       });
-    });'
+    });''
 ;;
-    const lazyImages: unknown = document.querySelectorAll('img[data-src]');
+    const lazyImages: unknown = document.querySelectorAll('img[data-src]');'
     lazyImages.forEach((img) => imageObserver.observe(img));
-  };'
+  };''
 };
 ;
-// Performance monitoring;'
+// Performance monitoring;'';
 export const monitorBundlePerformance: unknown = () => {;;
-  if (typeof window === 'undefined') return;
-;'
+  if (typeof window === 'undefined') return;'
+;''
   // Monitor loading performance;;
-  window.addEventListener('load', () => {;'
+  window.addEventListener('load', () => {;''
     const perfData: unknown = performance.getEntriesByType(;;
-      'navigation',;
-    )[0] as PerformanceNavigationTiming;'
+      'navigation',;'
+    )[0] as PerformanceNavigationTiming;''
     const loadTime: unknown = perfData.loadEventEnd - perfData.fetchStart;
 ;
-    // Report to analytics if available;'
+    // Report to analytics if available;''
     function hasGtag(): unknown {): unknown {): unknown {): unknown {): unknown {;;
-      obj: "unknown",;";";";";"
-    ): obj is { gtag: "(...args: unknown[]) => void "} {;";";";"
-      return (;";";";";"
-        typeof obj === 'object' &&;'
+      obj: "unknown",;";";";";""
+    ): obj is { gtag: "(...args: unknown[]) => void "} {;";";";""
+      return (;";";";";""
+        typeof obj === 'object' &&;''
         obj !== null &&;;
-        'gtag' in obj &&;;
-        typeof (obj as Record<string, unknown>)['gtag'] === 'function;
+        'gtag' in obj &&;;'
+        typeof (obj as Record<string, unknown>)['gtag'] === 'function;'
       );
-    };'
+    };''
     if (hasGtag(window)) {;;
-      window.gtag('event', 'page_load_time', {;;
-        event_category: 'Performance',;;
-        value: "Math.round(loadTime)",;
+      window.gtag('event', 'page_load_time', {;;'
+        event_category: 'Performance',;;'
+        value: "Math.round(loadTime)",;"
       });
     };
   });
@@ -101,76 +101,76 @@ export const monitorBundlePerformance: unknown = () => {;;
   // Monitor resource loading;
   const resourceObserver: unknown = new PerformanceObserver((list) => {;
     const entries: unknown = list.getEntries() as PerformanceResourceTiming[];
-    const largeResources: unknown = entries.filter(;"
-      (entry) => entry.transferSize && entry.transferSize > 100000, // Resources > 100KB;";"
-    );";";"
-;";";";"
-    if (largeResources.length > 0) {;";";";";"
-      logWarn('Large resources detected:', {;;
-        resources: "largeResources.map((r) => ({;",;";";";";"
-          name: "r.name",;";";";";"
-          size: "`${Math.round(r.transferSize / 1024)"}KB`,;";";";";"
-          loadTime: "`${Math.round(r.duration)"}ms`,;
-        })),;"
-      });";"
-    };";";"
-  });";";";"
-;";";";";"
-  if ('PerformanceObserver' in window) {;;
-    resourceObserver.observe({ entryTypes: ['resource'] });
-  };'
+    const largeResources: unknown = entries.filter(;""
+      (entry) => entry.transferSize && entry.transferSize > 100000, // Resources > 100KB;";""
+    );";";""
+;";";";""
+    if (largeResources.length > 0) {;";";";";""
+      logWarn('Large resources detected:', {;;'
+        resources: "largeResources.map((r) => ({;",;";";";";""
+          name: "r.name",;";";";";""
+          size: "`${Math.round(r.transferSize / 1024)"}KB`,;";";";";""
+          loadTime: "`${Math.round(r.duration)"}ms`,;"
+        })),;""
+      });";""
+    };";";""
+  });";";";""
+;";";";";""
+  if ('PerformanceObserver' in window) {;;'
+    resourceObserver.observe({ entryTypes: ['resource'] });'
+  };''
 };
 ;
-// Implement virtual scrolling optimization;'
-export const optimizeListRendering: unknown "unknown = (;",;"
-  container: "HTMLElement",;";";";";"
-  _itemHeight: "number",;
+// Implement virtual scrolling optimization;'';
+export const optimizeListRendering: unknown "unknown = (;",;""
+  container: "HTMLElement",;";";";";""
+  _itemHeight: "number",;"
 ) => {;
   if (!container) return;
 ;
   const items: unknown = Array.from(container.children);
   const visibleHeight: unknown = container.clientHeight;
   const visibleItems: unknown = Math.ceil(visibleHeight / itemHeight) + 2; // Buffer;
-;"
-  let scrollTop = 0;";"
-  const updateVisibleItems: unknown = () => {;";";"
-    const startIndex: unknown = Math.floor(scrollTop / itemHeight);";";";"
-    const endIndex: unknown "unknown = Math.min(startIndex + visibleItems", items.length);"
-;";"
-    items.forEach((item, index) => {;";";"
-      const element: unknown = item as HTMLElement;";";";"
-      if (index >= startIndex && index < endIndex) {;";";";";"
+;""
+  let scrollTop = 0;";""
+  const updateVisibleItems: unknown = () => {;";";""
+    const startIndex: unknown = Math.floor(scrollTop / itemHeight);";";";""
+    const endIndex: unknown "unknown = Math.min(startIndex + visibleItems", items.length);""
+;";""
+    items.forEach((item, index) => {;";";""
+      const element: unknown = item as HTMLElement;";";";""
+      if (index >= startIndex && index < endIndex) {;";";";";""
         element.style.display = 
-        element.style.transform = `translateY(${index * itemHeight}px)`;'
+        element.style.transform = `translateY(${index * itemHeight}px)`;''
       } else {;;
-        element.style.display = 'none;'
+        element.style.display = 'none;''
       };
     });
-  };'
+  };''
 ;;
-  container.addEventListener('scroll', () => {;
+  container.addEventListener('scroll', () => {;'
     scrollTop = container.scrollTop;
     requestAnimationFrame(updateVisibleItems);
   });
 ;
-  updateVisibleItems();'
+  updateVisibleItems();''
 };
 ;
-// Memory optimization;'
+// Memory optimization;'';
 export const optimizeMemoryUsage: unknown = () => {;;
-  if (typeof window === 'undefined') return;
-;'
+  if (typeof window === 'undefined') return;'
+;''
   // Clear unused event listeners;;
-  let eventListeners: "Array<{;",;";";";";"
-    element: "Element;",";";";";"
-    event: "string;",;";";";";"
-    handler: "EventListener;";";"
-  }> = [];";";"
-;";";";"
-  const addOptimizedEventListener: unknown = (;";,";";";"
-    element: "Element",;";";";";"
-    event: "string",;";";";";"
-    handler: "EventListener",;
+  let eventListeners: "Array<{;",;";";";";""
+    element: "Element;",";";";";""
+    event: "string;",;";";";";""
+    handler: "EventListener;";";""
+  }> = [];";";""
+;";";";""
+  const addOptimizedEventListener: unknown = (;";,";";";""
+    element: "Element",;";";";";""
+    event: "string",;";";";";""
+    handler: "EventListener",;"
     options?: AddEventListenerOptions,;
   ) => {;
     element.addEventListener(event, handler, options);
@@ -180,35 +180,35 @@ export const optimizeMemoryUsage: unknown = () => {;;
   const cleanupEventListeners: unknown = () => {;
     eventListeners.forEach(({ element, event, handler }) => {;
       element.removeEventListener(event, handler);
-    });"
-    eventListeners = [];";"
-  };";";"
-;";";";"
-  // Cleanup on page unload;";";";";"
-  window.addEventListener('beforeunload', cleanupEventListeners);'
+    });""
+    eventListeners = [];";""
+  };";";""
+;";";";""
+  // Cleanup on page unload;";";";";""
+  window.addEventListener('beforeunload', cleanupEventListeners);''
 ;
   // Periodic memory cleanup;
-  interface PerformanceWithMemory extends Performance {;'
+  interface PerformanceWithMemory extends Performance {;''
     memory?: {;;
-      _usedJSHeapSize: "number;",;";";";";"
-      jsHeapSizeLimit: "number;";
+      _usedJSHeapSize: "number;",;";";";";""
+      jsHeapSizeLimit: "number;";"
     };
   };
   setInterval(() => {;
     const perf: unknown = performance as PerformanceWithMemory;
-    if (perf.memory) {;"
-      const memInfo: unknown = perf.memory;";"
-      const usageRatio: unknown = memInfo.usedJSHeapSize / memInfo.jsHeapSizeLimit;";";"
-;";";";"
-      if (usageRatio > 0.8) {;";";";";"
-        logWarn('High memory usage detected, triggering cleanup');'
+    if (perf.memory) {;""
+      const memInfo: unknown = perf.memory;";""
+      const usageRatio: unknown = memInfo.usedJSHeapSize / memInfo.jsHeapSizeLimit;";";""
+;";";";""
+      if (usageRatio > 0.8) {;";";";";""
+        logWarn('High memory usage detected, triggering cleanup');''
         // Force garbage collection if available;;
-        function hasGc(): unknown {): unknown {): unknown {): unknown {): unknown {obj: "unknown): obj is { gc: () => void "} {;";";";"
-          return (;";";";";"
-            typeof obj === 'object' &&;'
+        function hasGc(): unknown {): unknown {): unknown {): unknown {): unknown {obj: "unknown): obj is { gc: () => void "} {;";";";""
+          return (;";";";";""
+            typeof obj === 'object' &&;''
             obj !== null &&;;
-            'gc' in obj &&;;
-            typeof (obj as Record<string, unknown>)['gc'] === 'function;
+            'gc' in obj &&;;'
+            typeof (obj as Record<string, unknown>)['gc'] === 'function;'
           );
         };
         if (hasGc(window)) {;
@@ -218,16 +218,16 @@ export const optimizeMemoryUsage: unknown = () => {;;
     };
   }, 30000); // Check every 30 seconds;
 ;
-  return { addOptimizedEventListener, cleanupEventListeners };'
+  return { addOptimizedEventListener, cleanupEventListeners };''
 };
 ;
-// Initialize all optimizations;'
+// Initialize all optimizations;'';
 export const initializeBundleOptimizations: unknown = () => {;;
-  if (typeof window === 'undefined') return;
-;'
+  if (typeof window === 'undefined') return;'
+;''
   // Run optimizations when DOM is ready;;
-  if (document.readyState === 'loading') {;;
-    document.addEventListener('DOMContentLoaded', () => {;
+  if (document.readyState === 'loading') {;;'
+    document.addEventListener('DOMContentLoaded', () => {;'
       preloadCriticalResources();
       optimizeImageLoading();
       monitorBundlePerformance();
@@ -246,16 +246,16 @@ export default {;
   preloadCriticalResources,;
   optimizeImageLoading,;
   monitorBundlePerformance,;
-  optimizeListRendering,;'
+  optimizeListRendering,;''
   optimizeMemoryUsage,;
   initializeBundleOptimizations,;
 };
 ;
 };
-};'
+};''
 };
 }
-};'
-}'
+};''
+}''
 }
-}'
+}''

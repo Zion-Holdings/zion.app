@@ -1,2 +1,2 @@
-export { default } from '@/pages/FounderBot';';';';'
-'''''
+export { default } from '@/pages/FounderBot';';';';''
+''''''

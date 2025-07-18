@@ -1,30 +1,30 @@
 // Server-side polyfill to handle client-side globals during SSR and build
-// This prevents "self is not defined" and similar errors during Next.js builds
+// This prevents "self is not defined" and similar errors during Next.js builds"
 
-if (typeof global !== 'undefined' && typeof self === 'undefined') {
+if (typeof global !== 'undefined' && typeof self === 'undefined') {'
   // Define self as global for server-side execution
   (global as unknown as { self: typeof global }).self = global;
 }
 
-if (typeof globalThis !== 'undefined' && typeof self === 'undefined') {
+if (typeof globalThis !== 'undefined' && typeof self === 'undefined') {'
   (globalThis as unknown as { self: typeof globalThis }).self = globalThis;
 }
 
 // Additional client-side globals that might be accessed server-side
-if (typeof window === 'undefined') {
+if (typeof window === 'undefined') {'
   // Mock window object for server-side execution
   (global as unknown as { window: Record<string, unknown> }).window = {
     location: {
-      href: '',
-      origin: '',
-      protocol: 'https:',
-      host: '',
-      pathname: '',
-      search: '',
-      hash: '',
+      href: '','
+      origin: '','
+      protocol: 'https:','
+      host: '','
+      pathname: '','
+      search: '','
+      hash: '','
     },
     navigator: {
-      userAgent: 'Node.js Server',
+      userAgent: 'Node.js Server','
       onLine: true,
     },
     document: {
@@ -60,7 +60,7 @@ if (typeof window === 'undefined') {
     console: console,
     fetch:
       (global as unknown as Record<string, unknown>).fetch ||
-      (() => Promise.reject(new Error('Fetch not available on server'))),
+      (() => Promise.reject(new Error('Fetch not available on server'))),'
     URL:
       (global as unknown as { URL: new (href: string) => URL }).URL ||
       class URL {
@@ -95,7 +95,7 @@ if (typeof window === 'undefined') {
   };
 
   // Also assign to globalThis for broader compatibility
-  if (typeof globalThis !== 'undefined') {
+  if (typeof globalThis !== 'undefined') {'
     (globalThis as unknown as { window: Record<string, unknown> }).window = (
       global as unknown as { window: Record<string, unknown> }
     ).window;
@@ -103,29 +103,29 @@ if (typeof window === 'undefined') {
 }
 
 // Mock document if not available
-if (typeof document === 'undefined') {
+if (typeof document === 'undefined') {'
   (global as unknown as { document: Record<string, unknown> }).document = (
     global as unknown as { window: Record<string, unknown> }
   ).window?.document as Record<string, unknown> || { fallback: true };
 }
 
 // Mock navigator if not available
-if (typeof navigator === 'undefined') {
+if (typeof navigator === 'undefined') {'
   (global as unknown as { navigator: Record<string, unknown> }).navigator = {
-    userAgent: 'Node.js Server',
+    userAgent: 'Node.js Server','
     onLine: true,
-    language: 'en-US',
-    languages: ['en-US'],
-    platform: 'Node.js',
+    language: 'en-US','
+    languages: ['en-US'],'
+    platform: 'Node.js','
     clipboard: {
       writeText: () => Promise.resolve(),
-      readText: () => Promise.resolve(''),
+      readText: () => Promise.resolve(''),'
     },
   };
 }
 
 // Prevent common client-side errors during server-side rendering
-if (typeof performance === 'undefined') {
+if (typeof performance === 'undefined') {'
   (global as unknown as { performance: Record<string, unknown> }).performance = {
     now: () => Date.now(),
     mark: () => {},
@@ -137,10 +137,10 @@ if (typeof performance === 'undefined') {
   };
 }
 
-// Export for explicit imports
+// Export for explicit imports;
 export const initServerPolyfills = () => {
   // The polyfills are already applied when this module is imported
   // Server polyfills initialized
 };
-
+;
 export default initServerPolyfills;

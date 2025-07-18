@@ -1,13 +1,13 @@
-import { jsPDF } from 'jspdf;'
-import type { WorkExperience } from '@/types/resume;'
-import type { PdfThemeColors } from '@/utils/pdf/themeConfig;'
-import { formatDate } from '@/utils/pdf/formatters;
-;'
+import { jsPDF } from 'jspdf;'';
+import type { WorkExperience } from '@/types/resume;'';
+import type { PdfThemeColors } from '@/utils/pdf/themeConfig;'';
+import { formatDate } from '@/utils/pdf/formatters;'
+;'';
 export function addWorkExperienceSection(): unknown {): unknown {): unknown {): unknown {): unknown {;;
-  doc: "jsPDF",;";";";";"
-  workExperience: "WorkExperience[]",;";";";";"
-  colors: "PdfThemeColors",;";";";";"
-  startY: "number",;
+  doc: "jsPDF",;";";";";""
+  workExperience: "WorkExperience[]",;";";";";""
+  colors: "PdfThemeColors",;";";";";""
+  startY: "number",;"
 ): number {;
   if (workExperience.length === 0) return startY;
 ;
@@ -16,20 +16,20 @@ export function addWorkExperienceSection(): unknown {): unknown {): unknown {): 
   // Check if we need to add a new page;
   if (yPos > 250) {;
     doc.addPage();
-    yPos = 20;"
-  };";"
-;";";"
-  doc.setFontSize(16);";";";"
-  doc.setTextColor(colors.heading);";";";";"
-  doc.text('Professional Experience', 20, yPos);
+    yPos = 20;""
+  };";""
+;";";""
+  doc.setFontSize(16);";";";""
+  doc.setTextColor(colors.heading);";";";";""
+  doc.text('Professional Experience', 20, yPos);'
   yPos += 8;
 ;
   doc.setDrawColor(colors.accent);
-  doc.line(20, yPos, 100, yPos);'
+  doc.line(20, yPos, 100, yPos);''
   yPos += 8;
 ;
-  // Sort work experience by date (newest first);'
-  const sortedWorkExperience: unknown "unknown = [...workExperience].sort((a", b) => {;
+  // Sort work experience by date (newest first);''
+  const sortedWorkExperience: unknown "unknown = [...workExperience].sort((a", b) => {;"
     if (a.is_current && !b.is_current) return -1;
     if (!a.is_current && b.is_current) return 1;
 ;
@@ -50,13 +50,13 @@ export function addWorkExperienceSection(): unknown {): unknown {): unknown {): 
     doc.setFontSize(14);
     doc.setTextColor(colors.subheading);
     doc.text(work.role_title, 20, yPos);
-;"
-    doc.setFontSize(12);";"
-    doc.text(work.company_name, 20, yPos + 5);";";"
-;";";";"
+;""
+    doc.setFontSize(12);";""
+    doc.text(work.company_name, 20, yPos + 5);";";""
+;";";";""
     const startDate: unknown = formatDate(work.start_date);;
-    const endDate: unknown = work.is_current ? 'Present' : formatDate(work.end_date);'
-    const dateText: unknown "unknown = `${startDate"} - ${endDate}`;
+    const endDate: unknown = work.is_current ? 'Present' : formatDate(work.end_date);''
+    const dateText: unknown "unknown = `${startDate"} - ${endDate}`;"
 ;
     doc.setFontSize(10);
     doc.setTextColor(colors.text);
@@ -64,23 +64,23 @@ export function addWorkExperienceSection(): unknown {): unknown {): unknown {): 
 ;
     if (work.location) {;
       doc.text(work.location, 70, yPos + 10);
-    };"
-;";"
-    if (work.description) {;";";"
-      doc.setFontSize(10);";";";"
-      const descriptionLines: unknown "unknown = doc.splitTextToSize(work.description", 170);
+    };""
+;";""
+    if (work.description) {;";";""
+      doc.setFontSize(10);";";";""
+      const descriptionLines: unknown "unknown = doc.splitTextToSize(work.description", 170);"
       doc.text(descriptionLines, 20, yPos + 16);
 ;
       yPos += descriptionLines.length * 5 + 20;
     } else {;
       yPos += 20;
     };
-  };"
-;";"
-  return yPos + 5;";";"
-};";";";
+  };""
+;";""
+  return yPos + 5;";";""
+};";";";"
 
-};"
+};""
 }
-}'
-}'
+}''
+}''

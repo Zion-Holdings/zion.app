@@ -1,11 +1,11 @@
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger;'
 ;
-// Define proper interfaces for message service;'
+// Define proper interfaces for message service;''
 interface SendMessageParams {;;
-  productId: "string;",;";";";";"
-  sellerId: "string;",";";";";"
-  subject: "string;",;";";";";"
-  message: "string;";
+  productId: "string;",;";";";";""
+  sellerId: "string;",";";";";""
+  subject: "string;",;";";";";""
+  message: "string;";"
 };
 ;
 interface MessageResponse {;
@@ -16,15 +16,15 @@ interface MessageResponse {;
 ;
 export async function sendMessage(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   productId,;
-  sellerId,;"
-  subject,;";"
-  message,;";";"
-}: SendMessageParams): Promise<MessageResponse> {;";";";"
-  try {;";";";";"
-    const response: unknown = await fetch('/api/messages', {;;
-      method: 'POST',;'
+  sellerId,;""
+  subject,;";""
+  message,;";";""
+}: SendMessageParams): Promise<MessageResponse> {;";";";""
+  try {;";";";";""
+    const response: unknown = await fetch('/api/messages', {;;'
+      method: 'POST',;''
       headers: {;;
-        'Content-Type': 'application/json',;
+        'Content-Type': 'application/json',;'
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;
       body: JSON.stringify({;
         productId,;
@@ -36,20 +36,20 @@ export async function sendMessage(): unknown {): unknown {): unknown {): unknown
 ;
     if (!response.ok) {;
       throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-    };'
+    };''
 ;
     const data: unknown = await response.json();
-    return data;'
+    return data;''
   } catch {;;
-    logErrorToProduction('Failed to send message:', { data: "error "});";";";"
-    return {;";";";";"
-      success: "false",;";";";";"
-      error: "error instanceof Error ? error.message : String(error)",;"
-    };";"
-  };";";"
-};";";";"
-";";";"
-}";";"
-}";"
-}"
-}"
+    logErrorToProduction('Failed to send message:', { data: "error "});";";";""
+    return {;";";";";""
+      success: "false",;";";";";""
+      error: "error instanceof Error ? error.message : String(error)",;""
+    };";""
+  };";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""

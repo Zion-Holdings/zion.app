@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react;
+import { useCallback, useState } from 'react;'
 ;
 /**;
  * Simple boolean toggle hook.;
@@ -16,12 +16,12 @@ export function useToggle(): unknown {): unknown {): unknown {): unknown {): unk
 ;
   const set: unknown = useCallback((_value: boolean) => {;
     setState(value);
-  }, []);'
+  }, []);''
 ;
   return [state, toggle, set];
 };
 ;
-};'
+};''
 }
-}'
-}'
+}''
+}''

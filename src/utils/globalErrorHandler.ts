@@ -7,5 +7,5 @@
 // If logError is not used elsewhere, this file (and its import in _app.tsx or similar);
 // could be removed entirely in a future refactoring.;
 ;
-// logInfo("globalErrorHandler.ts: "Custom global handlers removed", Sentry handles this.");";";";"
-"""""
+// logInfo("globalErrorHandler.ts: "Custom global handlers removed", Sentry handles this.");";";";""
+""""""

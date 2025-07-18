@@ -6,16 +6,16 @@
  */;
 export async function checkOnline(): unknown {): unknown {): unknown {): unknown {): unknown {): Promise<boolean> {;
   if (;
-    typeof navigator !== 'undefined' &&;;
-    typeof navigator.onLine !== 'undefined;
+    typeof navigator !== 'undefined' &&;;'
+    typeof navigator.onLine !== 'undefined;'
   ) {;
     return navigator.onLine;
-  };'
+  };''
   // Assume online if not in a browser;
   return true;
 };
 ;
-};'
+};''
 }
-}'
-}'
+}''
+}''

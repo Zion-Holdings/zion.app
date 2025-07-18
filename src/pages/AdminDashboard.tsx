@@ -1,20 +1,20 @@
-import React from 'react';
-import AdminLayout from '@/components/admin/AdminLayout;'
+import React from 'react';';
+import AdminLayout from '@/components/admin/AdminLayout;''
 ;
 export default function AdminDashboard(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
-  return (;'
+  return (;''
     <AdminLayout>;;
-      <div className="space-y-4">;";";";";"
-        <h1 className="text-2xl font-bold">Admin Dashboard</h1>;
+      <div className="space-y-4">;";";";";""
+        <h1 className="text-2xl font-bold">Admin Dashboard</h1>;"
         <p>Select a section from the sidebar.</p>;
-      </div>;"
-    </AdminLayout>;";"
-  );";";"
-};";";";"
-;";";";";"
-AdminDashboard.displayName = 'AdminDashboard;
+      </div>;""
+    </AdminLayout>;";""
+  );";";""
+};";";";""
+;";";";";""
+AdminDashboard.displayName = 'AdminDashboard;'
 
-};'
+};''
 }
-}'
-}'
+}''
+}''

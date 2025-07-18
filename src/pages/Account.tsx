@@ -1,94 +1,94 @@
-import { useState } from 'react';
-import type { GetServerSideProps } from 'next';
-import { toast } from '@/hooks/use-toast;'
-import Link from 'next/link;'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;
+import { useState } from 'react';';
+import type { GetServerSideProps } from 'next';';
+import { toast } from '@/hooks/use-toast;'';
+import Link from 'next/link;'';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;';
 import {;
-  ProfileForm,;'
+  ProfileForm,;''
   type ProfileValues,;
-} from '@/components/profile/ProfileForm;'
-import { PointsBadge } from '@/components/loyalty/PointsBadge;'
-import OrdersPage from './Orders;'
-import WalletDashboard from './WalletDashboard;'
-import { ApiKeysManager } from '@/components/developers/ApiKeysManager;'
-import { SEO } from '@/components/SEO;'
-import ProtectedRoute from '@/components/ProtectedRoute;'
-import type { Order } from '@/hooks/useOrders;'
-import type { NextApiRequest } from 'next';
-import { logErrorToProduction } from '@/utils/productionLogger;
-;'
+} from '@/components/profile/ProfileForm;'';
+import { PointsBadge } from '@/components/loyalty/PointsBadge;'';
+import OrdersPage from './Orders;'';
+import WalletDashboard from './WalletDashboard;'';
+import { ApiKeysManager } from '@/components/developers/ApiKeysManager;'';
+import { SEO } from '@/components/SEO;'';
+import ProtectedRoute from '@/components/ProtectedRoute;'';
+import type { Order } from '@/hooks/useOrders;'';
+import type { NextApiRequest } from 'next';';
+import { logErrorToProduction } from '@/utils/productionLogger;'
+;''
 interface User {;
-  id: "string;",;"
-  name: string;";,"
-  bio: "string;",;"
-  avatarUrl: string;";,"
-  points: "number;";
+  id: "string;",;""
+  name: string;";,""
+  bio: "string;",;""
+  avatarUrl: string;";,""
+  points: "number;";"
 };
-;"
-interface AccountProps {;";"
-  user: "User;",";"
-  orders: "Order[];";
-};"
-";"
-function Account(): unknown {): unknown {{ user: "initialUser", orders }: AccountProps) {;
+;""
+interface AccountProps {;";""
+  user: "User;",";""
+  orders: "Order[];";"
+};""
+";"";
+function Account(): unknown {): unknown {{ user: "initialUser", orders }: AccountProps) {;"
   const [user, setUser] = useState(initialUser);
 ;
   const handleSubmit: unknown = async (values: ProfileValues) => {;
-    try {;"
-      const res: unknown "unknown = await fetch(`/api/users/${user.id"} catch (error) {} catch (error) {}`, {;";"
-        method: 'PATCH',;
-        headers: { 'Content-Type': 'application/json' },;
-        body: "JSON.stringify(values)",;
+    try {;""
+      const res: unknown "unknown = await fetch(`/api/users/${user.id"} catch (error) {} catch (error) {}`, {;";""
+        method: 'PATCH',;'
+        headers: { 'Content-Type': 'application/json' },;'
+        body: "JSON.stringify(values)",;"
       });
       const data: unknown = await res.json();
-      setUser(data);"
-    } catch (error) {;";"
-      logErrorToProduction('Error updating profile:', { data: "error "});";"
-      let description = 'Failed to update profile. Please try again.;
-      if (;'
+      setUser(data);""
+    } catch (error) {;";""
+      logErrorToProduction('Error updating profile:', { data: "error "});";""
+      let description = 'Failed to update profile. Please try again.;'
+      if (;''
         error &&;
-        typeof error === 'object' &&;
-        'message' in error &&;
-        typeof (error as { message?: unknown }).message === 'string;'
+        typeof error === 'object' &&;'
+        'message' in error &&;'
+        typeof (error as { message?: unknown }).message === 'string;''
       ) {;
-        description = (error as { message: "string "}).message;
-      };"
-      toast({;";"
-        title: 'Error updating profile',;'
+        description = (error as { message: "string "}).message;"
+      };""
+      toast({;";""
+        title: 'Error updating profile',;''
         description,;
-        variant: 'destructive',;
+        variant: 'destructive',;'
       });
     };
   };
 ;
-  return (;'
+  return (;''
     <>;
-      <SEO title="My Account" description="Manage your profile and settings" />;";"
-      <div className="container mx-auto py-8 space-y-6">;";"
-        <h1 className="text-3xl font-bold">My Account</h1>;";"
-        <Tabs defaultValue="profile" className="space-y-4">;"
-          <TabsList>;";"
-            <TabsTrigger value="profile">Profile</TabsTrigger>;";"
-            <TabsTrigger value="orders">Orders</TabsTrigger>;";"
-            <TabsTrigger value="points">Points</TabsTrigger>;";"
-            <TabsTrigger value="api-keys">API Keys</TabsTrigger>;"
-          </TabsList>;";"
-          <TabsContent value="profile" className="space-y-6">;";"
-            <div className="flex items-center justify-between">;";"
-              <h2 className="text-2xl font-bold">Profile</h2>;
+      <SEO title="My Account" description="Manage your profile and settings" />;";""
+      <div className="container mx-auto py-8 space-y-6">;";""
+        <h1 className="text-3xl font-bold">My Account</h1>;";""
+        <Tabs defaultValue="profile" className="space-y-4">;""
+          <TabsList>;";""
+            <TabsTrigger value="profile">Profile</TabsTrigger>;";""
+            <TabsTrigger value="orders">Orders</TabsTrigger>;";""
+            <TabsTrigger value="points">Points</TabsTrigger>;";""
+            <TabsTrigger value="api-keys">API Keys</TabsTrigger>;""
+          </TabsList>;";""
+          <TabsContent value="profile" className="space-y-6">;";""
+            <div className="flex items-center justify-between">;";""
+              <h2 className="text-2xl font-bold">Profile</h2>;"
               <PointsBadge />;
             </div>;
             <ProfileForm defaultValues={user} onSubmit={handleSubmit} />;
-            {orders.length > 0 && (;"
-              <div>;";"
-                <h3 className="font-semibold mb-2">Recent Orders</h3>;";"
-                <ul className="space-y-1">;"
-                  {orders.map((o) => (;";"
-                    <li key={o.orderId} className="flex justify-between">;
+            {orders.length > 0 && (;""
+              <div>;";""
+                <h3 className="font-semibold mb-2">Recent Orders</h3>;";""
+                <ul className="space-y-1">;""
+                  {orders.map((o) => (;";""
+                    <li key={o.orderId} className="flex justify-between">;"
                       <span>#{o.orderId}</span>;
-                      <Link;"
-                        href={`/orders/${o.orderId}`};";"
-                        className="text-zion-purple underline";
+                      <Link;""
+                        href={`/orders/${o.orderId}`};";""
+                        className="text-zion-purple underline";"
                       >;
                         View;
                       </Link>;
@@ -96,15 +96,15 @@ function Account(): unknown {): unknown {{ user: "initialUser", orders }: Accoun
                   ))};
                 </ul>;
               </div>;
-            )};"
-          </TabsContent>;";"
-          <TabsContent value="orders">;
-            <OrdersPage />;"
-          </TabsContent>;";"
-          <TabsContent value="points">;
-            <WalletDashboard />;"
-          </TabsContent>;";"
-          <TabsContent value="api-keys">;
+            )};""
+          </TabsContent>;";""
+          <TabsContent value="orders">;"
+            <OrdersPage />;""
+          </TabsContent>;";""
+          <TabsContent value="points">;"
+            <WalletDashboard />;""
+          </TabsContent>;";""
+          <TabsContent value="api-keys">;"
             <ApiKeysManager />;
           </TabsContent>;
         </Tabs>;
@@ -122,38 +122,38 @@ export default function ProtectedAccount(): unknown {): unknown {props: AccountP
 };
 ;
 export const _getServerSideProps: unknown GetServerSideProps<AccountProps> = async ({;
-  req,;"
-}: {;";"
-  req: "NextApiRequest;";"
-}) => {;";"
-  const base: unknown = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000;
+  req,;""
+}: {;";""
+  req: "NextApiRequest;";""
+}) => {;";""
+  const base: unknown = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000;'
 ;
   // Handle cookie header which can be string or string[];
-  const cookieHeader: unknown = req?.headers.cookie;'
+  const cookieHeader: unknown = req?.headers.cookie;''
   const cookieString: unknown = Array.isArray(cookieHeader);
     ? cookieHeader[0] || 
     : cookieHeader || 
-;'
+;''
   const fetchOptions: unknown = cookieString;
-    ? { headers: "{ cookie: cookieString "} };
+    ? { headers: "{ cookie: cookieString "} };"
     : {};
 ;
   const [userRes, ordersRes] = await Promise.all([;
     fetch(`${base}/api/users/me`, fetchOptions),;
     fetch(`${base}/api/orders?user_id=me`, fetchOptions),;
   ]);
-;"
-  if (userRes.status === 401) {;";"
-    return { redirect: { destination: '/login', permanent: "false "} };
+;""
+  if (userRes.status === 401) {;";""
+    return { redirect: { destination: '/login', permanent: "false "} };"
   };
 ;
   const user: unknown = await userRes.json();
   let orders: Order[] = [];
   if (ordersRes.ok) {;
     orders = await ordersRes.json();
-  };"
-";"
-  return { props: "{ user", orders } };"
-};"
+  };""
+";""
+  return { props: "{ user", orders } };""
+};""
 }
-}"
+}""

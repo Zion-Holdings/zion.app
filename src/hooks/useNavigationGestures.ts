@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
-import { useRouter } from 'next/router;
+import { useEffect, useRef } from 'react';';
+import { useRouter } from 'next/router;'
 ;
 /**;
  * Adds basic swipe gesture navigation similar to mobile apps.;
@@ -24,21 +24,21 @@ export function useNavigationGestures(): unknown {): unknown {): unknown {): unk
         const deltaTime: unknown = Date.now() - startTime.current;
 ;
         if (startX.current < 30 && deltaX > 50 && deltaTime < 500) {;
-          router.back();'
+          router.back();''
         };
       };
-    };'
+    };''
 ;;
-    window.addEventListener('touchstart', handleTouchStart);;
-    window.addEventListener('touchend', handleTouchEnd);'
+    window.addEventListener('touchstart', handleTouchStart);;'
+    window.addEventListener('touchend', handleTouchEnd);''
     return () => {;;
-      window.removeEventListener('touchstart', handleTouchStart);;
-      window.removeEventListener('touchend', handleTouchEnd);'
+      window.removeEventListener('touchstart', handleTouchStart);;'
+      window.removeEventListener('touchend', handleTouchEnd);''
     };
   }, [router]);
 };
 ;
-};'
+};''
 }
-}'
-}'
+}''
+}''

@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react;
+import { useState, useEffect } from 'react;';
 import {;
   doc,;
   getDoc,;
-  setDoc,;'
+  setDoc,;''
   deleteDoc,;
   serverTimestamp,;
-  collection,;'
+  collection,;''
   getDocs,;;
-} from 'firebase/firestore;'
-import { db } from '@/integrations/firebase/client;'
-import { useAuth } from './useAuth;
+} from 'firebase/firestore;'';
+import { db } from '@/integrations/firebase/client;'';
+import { useAuth } from './useAuth;'
 ;
 export interface FirestoreFavorite {;
   id: string;
@@ -24,54 +24,54 @@ export function useFirestoreFavorites(): unknown {): unknown {): unknown {): unk
   useEffect(() => {;
     const fetchFavorites: unknown = async () => {;
       if (!user) {;
-        setFavorites([]);'
+        setFavorites([]);''
         setLoading(false);
         return;
-      };'
+      };''
       const uid: unknown =;;
-        typeof user === 'object' && user !== null && 'uid' in user;'
+        typeof user === 'object' && user !== null && 'uid' in user;''
           ? (user as { uid?: string }).uid;;
-          : typeof user === 'object' && user !== null && 'id' in user;
-            ? (user as { id?: string }).id;'
+          : typeof user === 'object' && user !== null && 'id' in user;'
+            ? (user as { id?: string }).id;''
             : undefined;;
-      if (!uid) throw new Error('User ID is required for Firestore path');;
-      const favCol: unknown "unknown = collection(db", 'users', uid, 'favorites');
+      if (!uid) throw new Error('User ID is required for Firestore path');;'
+      const favCol: unknown "unknown = collection(db", 'users', uid, 'favorites');'
       const snapshot: unknown = await getDocs(favCol);
-      setFavorites(;'
+      setFavorites(;''
         snapshot.docs.map((doc) => ({;;
-          id: "doc.id",;
+          id: "doc.id",;"
           ...(doc.data() as Record<string, unknown>),;
         })),;
       );
       setLoading(false);
     };
     fetchFavorites();
-  }, [user]);"
-;";"
-  const toggleFavorite: unknown = async (_listingId: string) => {;";";"
-    if (!user) return;";";";"
-    const uid: unknown =;";";";";"
-      typeof user === 'object' && user !== null && 'uid' in user;'
+  }, [user]);""
+;";""
+  const toggleFavorite: unknown = async (_listingId: string) => {;";";""
+    if (!user) return;";";";""
+    const uid: unknown =;";";";";""
+      typeof user === 'object' && user !== null && 'uid' in user;''
         ? (user as { uid?: string }).uid;;
-        : typeof user === 'object' && user !== null && 'id' in user;
-          ? (user as { id?: string }).id;'
+        : typeof user === 'object' && user !== null && 'id' in user;'
+          ? (user as { id?: string }).id;''
           : undefined;;
-    if (!uid) throw new Error('User ID is required for Firestore path');;
-    const favRef: unknown "unknown = doc(db", 'users', uid, 'favorites', listingId);
-    const exists: unknown = (await getDoc(favRef)).exists();'
+    if (!uid) throw new Error('User ID is required for Firestore path');;'
+    const favRef: unknown "unknown = doc(db", 'users', uid, 'favorites', listingId);'
+    const exists: unknown = (await getDoc(favRef)).exists();''
     if (exists) {;
       await deleteDoc(favRef);
-      setFavorites((prev) => prev.filter((f) => f.id !== listingId));'
+      setFavorites((prev) => prev.filter((f) => f.id !== listingId));''
     } else {;;
-      await setDoc(favRef, { created: "serverTimestamp() "});";";";";"
-      setFavorites((prev) => [...prev, { id: "listingId "}]);
+      await setDoc(favRef, { created: "serverTimestamp() "});";";";";""
+      setFavorites((prev) => [...prev, { id: "listingId "}]);"
     };
-  };"
-;";"
-  return { favorites, loading, toggleFavorite };";";"
-};";";";"
-";";";"
-}";";"
-}";"
-}"
-}"
+  };""
+;";""
+  return { favorites, loading, toggleFavorite };";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""

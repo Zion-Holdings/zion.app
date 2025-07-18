@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
-import { supabase } from '@/integrations/supabase/client;'
-import { useAuth } from '@/hooks/useAuth;'
-import type { Project, ProjectStatus } from '@/types/projects;'
-import { toast } from 'sonner;'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { useState, useEffect } from 'react';';
+import { supabase } from '@/integrations/supabase/client;'';
+import { useAuth } from '@/hooks/useAuth;'';
+import type { Project, ProjectStatus } from '@/types/projects;'';
+import { toast } from 'sonner;'';
+import { logErrorToProduction } from '@/utils/productionLogger;'
 ;
 export function useProjects(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const { _user } = useAuth();
@@ -11,104 +11,104 @@ export function useProjects(): unknown {): unknown {): unknown {): unknown {): u
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 ;
-  const fetchProjects: unknown = async () => {;'
+  const fetchProjects: unknown = async () => {;''
     if (!user) {;
       setIsLoading(false);
-      return;'
+      return;''
     };;
-    if (!supabase) throw new Error('Supabase client not initialized');
+    if (!supabase) throw new Error('Supabase client not initialized');'
 ;
-    try {;'
+    try {;''
       setIsLoading(true);
 ;
-      // Build the query based on user type;'
+      // Build the query based on user type;''
       // For clients, get projects they created;;
-      // For talents, get projects they're hired for;'
+      // For talents, get projects they're hired for;''
       let query = supabase;;
-        .from('projects');
+        .from('projects');'
         .select(;
-          `;'
+          `;''
           *,;;
-          job: "jobs(title", description),;";";";";"
-          talent_profile: "profiles!talent_id(display_name:display_name", professional_title: "bio", profile_picture_url: "avatar_url)",;";";";";"
-          client_profile: "profiles!client_id(display_name", avatar_url);";";"
-        `,;";";";"
-        );";";";";"
-        .order('created_at', { ascending: "false "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});";";";"
-;";";";";"
-      if (user.userType === 'talent') {;;
-        query = query.eq('talent_id', user.id);;
-      } else if (user.userType === 'client') {;;
-        query = query.eq('client_id', user.id);
-      };'
+          job: "jobs(title", description),;";";";";""
+          talent_profile: "profiles!talent_id(display_name:display_name", professional_title: "bio", profile_picture_url: "avatar_url)",;";";";";""
+          client_profile: "profiles!client_id(display_name", avatar_url);";";""
+        `,;";";";""
+        );";";";";""
+        .order('created_at', { ascending: "false "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});";";";""
+;";";";";""
+      if (user.userType === 'talent') {;;'
+        query = query.eq('talent_id', user.id);;'
+      } else if (user.userType === 'client') {;;'
+        query = query.eq('client_id', user.id);'
+      };''
 ;;
-      const { data, error: "fetchError "} = await query;"
-;";"
-      if (fetchError) throw fetchError;";";"
-;";";";"
-      // Transform the data to match our project types. Default to an empty array;";";";";"
-      // to prevent "map is not a function" errors when `data` is null;
-      const transformedData: unknown = (data ?? []) as Project[];"
-      setProjects(transformedData);";"
-      setError(null);";";"
-    } catch (err: unknown) {;";";";"
-//       const _message: unknown = err instanceof Error ? err.message : String(err);";";";";"
-      logErrorToProduction('Error fetching projects:', { data: "err "});";";";";"
-      setError('Failed to fetch projects: ' + _message);;
-      toast.error('Failed to fetch projects');
+      const { data, error: "fetchError "} = await query;""
+;";""
+      if (fetchError) throw fetchError;";";""
+;";";";""
+      // Transform the data to match our project types. Default to an empty array;";";";";""
+      // to prevent "map is not a function" errors when `data` is null;"
+      const transformedData: unknown = (data ?? []) as Project[];""
+      setProjects(transformedData);";""
+      setError(null);";";""
+    } catch (err: unknown) {;";";";""
+//       const _message: unknown = err instanceof Error ? err.message : String(err);";";";";""
+      logErrorToProduction('Error fetching projects:', { data: "err "});";";";";""
+      setError('Failed to fetch projects: ' + _message);;'
+      toast.error('Failed to fetch projects');'
     } finally {;
-      setIsLoading(false);'
+      setIsLoading(false);''
     };
   };
-;'
+;''
   const getProjectById: unknown = async (projectId: string): Promise<Project | null> => {;;
-    if (!supabase) throw new Error('Supabase client not initialized');
-    try {;'
+    if (!supabase) throw new Error('Supabase client not initialized');'
+    try {;''
       const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;;
-        .from('projects');
+        .from('projects');'
         .select(;
-          `;'
+          `;''
           *,;;
-          job: "jobs(title", description),;";";";";"
-          talent_profile: "profiles!talent_id(display_name:display_name", professional_title: "bio", profile_picture_url: "avatar_url)",;";";";";"
-          client_profile: "profiles!client_id(display_name", avatar_url);";";"
-        `,;";";";"
-        );";";";";"
-        .eq('id', projectId);
+          job: "jobs(title", description),;";";";";""
+          talent_profile: "profiles!talent_id(display_name:display_name", professional_title: "bio", profile_picture_url: "avatar_url)",;";";";";""
+          client_profile: "profiles!client_id(display_name", avatar_url);";";""
+        `,;";";";""
+        );";";";";""
+        .eq('id', projectId);'
         .single();
 ;
       if (error) throw error;
 ;
       // Transform the data to match our project types;
-      const transformedProject: unknown = {;'
+      const transformedProject: unknown = {;''
         ...data,;
         talent_profile: data.talent_profile;
-          ? {;'
+          ? {;''
               ...data.talent_profile,;;
-              full_name: "data.talent_profile.display_name",;
+              full_name: "data.talent_profile.display_name",;"
             };
           : undefined,;
-      };"
-;";"
-      return transformedProject as Project;";";"
-    } catch (err: unknown) {;";";";"
-//       const _message: unknown = err instanceof Error ? err.message : String(err);";";";";"
-      logErrorToProduction('Error fetching project:', { data: "err "});";";";";"
-      toast.error('Failed to fetch project details');
-      return null;'
+      };""
+;";""
+      return transformedProject as Project;";";""
+    } catch (err: unknown) {;";";";""
+//       const _message: unknown = err instanceof Error ? err.message : String(err);";";";";""
+      logErrorToProduction('Error fetching project:', { data: "err "});";";";";""
+      toast.error('Failed to fetch project details');'
+      return null;''
     };
   };
-;'
-  const updateProjectStatus: unknown "unknown = async (;",;"
-    projectId: "string",;";";";";"
-    status: "ProjectStatus",;";";";"
-  ): Promise<boolean> => {;";";";";"
-    if (!supabase) throw new Error('Supabase client not initialized');
-    try {;'
+;''
+  const updateProjectStatus: unknown "unknown = async (;",;""
+    projectId: "string",;";";";";""
+    status: "ProjectStatus",;";";";""
+  ): Promise<boolean> => {;";";";";""
+    if (!supabase) throw new Error('Supabase client not initialized');'
+    try {;''
       const { _error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;;
-        .from('projects');'
+        .from('projects');''
         .update({ status });;
-        .eq('id', projectId);
+        .eq('id', projectId);'
 ;
       if (error) throw error;
 ;
@@ -118,13 +118,13 @@ export function useProjects(): unknown {): unknown {): unknown {): unknown {): u
           project.id === projectId ? { ...project, status } : project,;
         ),;
       );
-;'
+;''
       toast.success(`Project status updated to ${status}`);
       return true;
-    } catch (err: unknown) {;'
+    } catch (err: unknown) {;''
 //       const _message: unknown = err instanceof Error ? err.message : String(err);;
-      logErrorToProduction('Error updating project status:', { data: "err "});";";";";"
-      toast.error('Failed to update project status');
+      logErrorToProduction('Error updating project status:', { data: "err "});";";";";""
+      toast.error('Failed to update project status');'
       return false;
     };
   };
@@ -135,18 +135,18 @@ export function useProjects(): unknown {): unknown {): unknown {): unknown {): u
       fetchProjects();
     };
   }, [user]);
-;'
+;''
   return {;
     projects,;
-    isLoading,;'
+    isLoading,;''
     error,;;
-    refetch: "fetchProjects",;
-    getProjectById,;"
-    updateProjectStatus,;";"
-  };";";"
-};";";";"
-";";";"
-}";";"
-}";"
-}"
-}"
+    refetch: "fetchProjects",;"
+    getProjectById,;""
+    updateProjectStatus,;";""
+  };";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""

@@ -1,4 +1,4 @@
-declare module 'react-router-dom' {;
+declare module 'react-router-dom' {;'
   const ReactRouterDom: unknown;
   export default ReactRouterDom;
   export const BrowserRouter: unknown;
@@ -10,24 +10,24 @@ declare module 'react-router-dom' {;
   export const MemoryRouter: unknown;
   export const Outlet: unknown;
   export function useNavigate(): unknown {): unknown {): unknown {): unknown {): unknown {): unknown;
-  export function useLocation(): unknown {): unknown {): unknown {): unknown {): unknown {): unknown;'
+  export function useLocation(): unknown {): unknown {): unknown {): unknown {): unknown {): unknown;''
   export function useParams(): unknown {): unknown {): unknown {): unknown {): unknown {): unknown;
   export function useSearchParams(): unknown {): unknown {): unknown {): unknown {): unknown {): unknown;
 };
 ;
-};'
+};''
 };
 };
 };
 };
-};'
+};''
 };
 }
 };
 };
-};'
-}'
+};''
+}''
 }
 }
 }
-}'
+}''

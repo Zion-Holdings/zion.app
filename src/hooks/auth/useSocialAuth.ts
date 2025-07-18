@@ -1,112 +1,112 @@
-import { supabase } from '@/integrations/supabase/client;'
-import { toast } from '@/hooks/use-toast;'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;'
+import { supabase } from '@/integrations/supabase/client;'';
+import { toast } from '@/hooks/use-toast;'';
+import { logErrorToProduction } from '@/utils/productionLogger;'
+;'';
 export const _useSocialAuth: unknown = () => {;
   const loginWithGoogle: unknown = async () => {;
-    try {;'
+    try {;''
       const { _error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase!.auth.signInWithOAuth({;;
-        provider: 'google',;'
+        provider: 'google',;''
       });
 ;
-      if (error) {;'
+      if (error) {;''
         toast({;;
-          title: 'Google login failed',;;
-          description: "error.message",;";";";";"
-          variant: 'destructive',;
+          title: 'Google login failed',;;'
+          description: "error.message",;";";";";""
+          variant: 'destructive',;'
         });
-      };'
+      };''
     } catch (error: unknown) {;;
-      logErrorToProduction('Google login error:', { data: "error "});";"
-      const errorMessage: unknown =;";";"
-        error instanceof Error && error.message;";";";"
-          ? error.message;";";";";"
-          : 'An unexpected error occurred;
+      logErrorToProduction('Google login error:', { data: "error "});";""
+      const errorMessage: unknown =;";";""
+        error instanceof Error && error.message;";";";""
+          ? error.message;";";";";""
+          : 'An unexpected error occurred;'
       toast({;;
-        title: 'Google login failed',;;
-        description: "errorMessage",;";";";";"
-        variant: 'destructive',;
+        title: 'Google login failed',;;'
+        description: "errorMessage",;";";";";""
+        variant: 'destructive',;'
       });
     };
-  };'
+  };''
 ;
   const loginWithGitHub: unknown = async () => {;
-    try {;'
+    try {;''
       const { _error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase!.auth.signInWithOAuth({;;
-        provider: 'github',;'
+        provider: 'github',;''
       });
 ;
-      if (error) {;'
+      if (error) {;''
         toast({;;
-          title: 'GitHub login failed',;;
-          description: "error.message",;";";";";"
-          variant: 'destructive',;
+          title: 'GitHub login failed',;;'
+          description: "error.message",;";";";";""
+          variant: 'destructive',;'
         });
-      };'
+      };''
     } catch (error: unknown) {;;
-      logErrorToProduction('GitHub login error:', { data: "error "});";"
-      const errorMessage: unknown =;";";"
-        error instanceof Error && error.message;";";";"
-          ? error.message;";";";";"
-          : 'An unexpected error occurred;
+      logErrorToProduction('GitHub login error:', { data: "error "});";""
+      const errorMessage: unknown =;";";""
+        error instanceof Error && error.message;";";";""
+          ? error.message;";";";";""
+          : 'An unexpected error occurred;'
       toast({;;
-        title: 'GitHub login failed',;;
-        description: "errorMessage",;";";";";"
-        variant: 'destructive',;
+        title: 'GitHub login failed',;;'
+        description: "errorMessage",;";";";";""
+        variant: 'destructive',;'
       });
     };
-  };'
+  };''
 ;
   const loginWithFacebook: unknown = async () => {;
-    try {;'
+    try {;''
       const { _error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase!.auth.signInWithOAuth({;;
-        provider: 'facebook',;'
+        provider: 'facebook',;''
       });
 ;
-      if (error) {;'
+      if (error) {;''
         toast({;;
-          title: 'Facebook login failed',;;
-          description: "error.message",;";";";";"
-          variant: 'destructive',;
+          title: 'Facebook login failed',;;'
+          description: "error.message",;";";";";""
+          variant: 'destructive',;'
         });
-      };'
+      };''
     } catch (error: unknown) {;;
-      logErrorToProduction('Facebook login error:', { data: "error "});";"
-      const errorMessage: unknown =;";";"
-        error instanceof Error && error.message;";";";"
-          ? error.message;";";";";"
-          : 'An unexpected error occurred;
+      logErrorToProduction('Facebook login error:', { data: "error "});";""
+      const errorMessage: unknown =;";";""
+        error instanceof Error && error.message;";";";""
+          ? error.message;";";";";""
+          : 'An unexpected error occurred;'
       toast({;;
-        title: 'Facebook login failed',;;
-        description: "errorMessage",;";";";";"
-        variant: 'destructive',;
+        title: 'Facebook login failed',;;'
+        description: "errorMessage",;";";";";""
+        variant: 'destructive',;'
       });
     };
-  };'
+  };''
 ;
   const loginWithTwitter: unknown = async () => {;
-    try {;'
+    try {;''
       const { _error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase!.auth.signInWithOAuth({;;
-        provider: 'twitter',;'
+        provider: 'twitter',;''
       });
 ;
-      if (error) {;'
+      if (error) {;''
         toast({;;
-          title: 'Twitter login failed',;;
-          description: "error.message",;";";";";"
-          variant: 'destructive',;
+          title: 'Twitter login failed',;;'
+          description: "error.message",;";";";";""
+          variant: 'destructive',;'
         });
-      };'
+      };''
     } catch (error: unknown) {;;
-      logErrorToProduction('Twitter login error:', { data: "error "});";"
-      const errorMessage: unknown =;";";"
-        error instanceof Error && error.message;";";";"
-          ? error.message;";";";";"
-          : 'An unexpected error occurred;
+      logErrorToProduction('Twitter login error:', { data: "error "});";""
+      const errorMessage: unknown =;";";""
+        error instanceof Error && error.message;";";";""
+          ? error.message;";";";";""
+          : 'An unexpected error occurred;'
       toast({;;
-        title: 'Twitter login failed',;;
-        description: "errorMessage",;";";";";"
-        variant: 'destructive',;
+        title: 'Twitter login failed',;;'
+        description: "errorMessage",;";";";";""
+        variant: 'destructive',;'
       });
     };
   };
@@ -114,8 +114,8 @@ export const _useSocialAuth: unknown = () => {;
   return {;
     loginWithGoogle,;
     loginWithGitHub,;
-    loginWithFacebook,;'
+    loginWithFacebook,;''
     loginWithTwitter,;
   };
-};'
-'''''
+};''
+''''''

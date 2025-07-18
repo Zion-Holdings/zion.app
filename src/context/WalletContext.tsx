@@ -1,12 +1,12 @@
-import {
+import {;
   logInfo,
   logWarn,
   logErrorToProduction,
-} from '@/utils/productionLogger
-import { getAppKitProjectId } from '@/config/env
-import { ZION_TOKEN_NETWORK_ID } from '@/config/governanceConfig
-
-import React, {
+} from '@/utils/productionLogger';
+import { getAppKitProjectId } from '@/config/env';
+import { ZION_TOKEN_NETWORK_ID } from '@/config/governanceConfig';
+;
+import React, {;
   createContext,
   useState,
   useContext,
@@ -14,29 +14,29 @@ import React, {
   useEffect,
   useRef,
   useMemo,
-} from 'react';
-import type { ReactNode } from 'react';
-import type { AppKitInstanceInterface } from '@reown/appkit/react
-
-import { createAppKit } from '@reown/appkit/react
-import type {
+} from 'react';';
+import type { ReactNode } from 'react';';
+import type { AppKitInstanceInterface } from '@reown/appkit/react';
+;
+import { createAppKit } from '@reown/appkit/react';
+import type {;
   mainnet as _MainnetType,
   goerli as _GoerliType,
   polygon as _PolygonType,
   optimism as _OptimismType,
   arbitrum as _ArbitrumType,
   base as _BaseType,
-} from '@reown/appkit/networks
-import {
+} from '@reown/appkit/networks';
+import {;
   mainnet,
   goerli,
   polygon,
   optimism,
   arbitrum,
   base,
-} from '@reown/appkit/networks
-import type { ethers as _EthersType } from 'ethers
-import { ethers } from 'ethers
+} from '@reown/appkit/networks';
+import type { ethers as _EthersType } from 'ethers';
+import { ethers } from 'ethers';
 
 // Some injected wallet providers implement the EIP-1193 interface but also
 // expose event methods like `on` and `removeListener`. The `ethers` type for
@@ -51,7 +51,7 @@ interface Eip1193ProviderWithEvents {
   request?: (args: { method: string; params?: unknown[] }) => Promise<unknown>;
 }
 
-// Define the shape of the wallet state and context
+// Define the shape of the wallet state and context;
 export interface WalletState {
   provider: unknown | null; // Updated to BrowserProvider for ethers v6
   signer: unknown | null;
@@ -60,14 +60,14 @@ export interface WalletState {
   isConnected: boolean;
   isWalletSystemAvailable: boolean; // New state for wallet system availability
 }
-
+;
 export interface WalletContextType extends WalletState {
   connectWallet: () => Promise<void>;
   disconnectWallet: () => Promise<void>; // disconnect can be async
   displayAddress: string | null; // Shortened address for display
   appKit: AppKitInstanceInterface | null; // To access modal.open, etc.
 }
-
+;
 const initialWalletState: WalletState = {
   provider: null,
   signer: null,
@@ -76,7 +76,7 @@ const initialWalletState: WalletState = {
   isConnected: false,
   isWalletSystemAvailable: false, // Initialize as false
 };
-
+;
 export const WalletContext = createContext<WalletContextType | undefined>(
   undefined,
 );
@@ -84,7 +84,7 @@ export const WalletContext = createContext<WalletContextType | undefined>(
 // Provide a safe default context to avoid runtime crashes if the provider
 // fails to mount for any reason (e.g. missing environment vars). This helps
 // prevent blank screens by allowing components using `useWallet` to render
-// gracefully with a no-op implementation.
+// gracefully with a no-op implementation.;
 const defaultWalletContext: WalletContextType = {
   ...initialWalletState,
   connectWallet: async () => {},
@@ -93,27 +93,27 @@ const defaultWalletContext: WalletContextType = {
   appKit: null,
 };
 
-// Known default/fallback project IDs that indicate the wallet system should be considered unavailable
+// Known default/fallback project IDs that indicate the wallet system should be considered unavailable;
 const KNOWN_INVALID_PROJECT_IDS = [
-  'YOUR_PROJECT_ID', // Common placeholder
-  'dummy',
-  'fallback',
-  'YOUR_DEFAULT_PROJECT_ID_ENV_MISSING',
-  'YOUR_DEFAULT_PROJECT_ID_FALLBACK',
-  'your_reown_project_id_here', // Added: Common placeholder from environment setup
-  'your_project_id_here', // Added: Another common placeholder
+  'YOUR_PROJECT_ID', // Common placeholder'
+  'dummy','
+  'fallback','
+  'YOUR_DEFAULT_PROJECT_ID_ENV_MISSING','
+  'YOUR_DEFAULT_PROJECT_ID_FALLBACK','
+  'your_reown_project_id_here', // Added: Common placeholder from environment setup'
+  'your_project_id_here', // Added: Another common placeholder'
 ];
-
+;
 export const WalletProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  if (process.env.NODE_ENV === 'development') {
-    logInfo('[WalletProvider] Initializing...');
+  if (process.env.NODE_ENV === 'development') {'
+    logInfo('[WalletProvider] Initializing...');'
   }
 
   const rawProjectId = getAppKitProjectId();
-  if (process.env.NODE_ENV === 'development') {
-    logInfo('WalletContext: Resolved rawProjectId from getAppKitProjectId():', {
+  if (process.env.NODE_ENV === 'development') {'
+    logInfo('WalletContext: Resolved rawProjectId from getAppKitProjectId():', {'
       data: rawProjectId,
     });
   }
@@ -121,25 +121,25 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
   // Check if the project ID is valid
   const isProjectIdValid =
     rawProjectId && !KNOWN_INVALID_PROJECT_IDS.includes(rawProjectId);
-  const projectId = rawProjectId; // The createAppKit call expects 'projectId'
+  const projectId = rawProjectId; // The createAppKit call expects 'projectId''
 
   if (!isProjectIdValid) {
-    if (process.env.NODE_ENV === 'development') {
+    if (process.env.NODE_ENV === 'development') {'
       logWarn(
-        `WalletContext: Invalid or placeholder project ID detected: "${rawProjectId}". Wallet system will be unavailable.`,
+        `WalletContext: Invalid or placeholder project ID detected: "${rawProjectId}". Wallet system will be unavailable.`,"
       );
     }
   }
 
   const PLACEHOLDER_PROJECT_IDS = [
-    'YOUR_DEFAULT_PROJECT_ID_ENV_MISSING',
-    'YOUR_DEFAULT_PROJECT_ID_FALLBACK',
-    'your_project_id_here',
+    'YOUR_DEFAULT_PROJECT_ID_ENV_MISSING','
+    'YOUR_DEFAULT_PROJECT_ID_FALLBACK','
+    'your_project_id_here','
   ];
   if (projectId && PLACEHOLDER_PROJECT_IDS.includes(projectId)) {
     const errorMessage =
-      'WalletContext: Critical Error - Reown AppKit Project ID is not set or is a placeholder. Please set NEXT_PUBLIC_REOWN_PROJECT_ID environment variable.
-    if (process.env.NODE_ENV === 'development') {
+      'WalletContext: Critical Error - Reown AppKit Project ID is not set or is a placeholder. Please set NEXT_PUBLIC_REOWN_PROJECT_ID environment variable.'
+    if (process.env.NODE_ENV === 'development') {'
       logErrorToProduction(errorMessage, {
         data: { resolvedProjectId: projectId },
       });
@@ -148,13 +148,13 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
 
   const metadata = useMemo(
     () => ({
-      name: 'Zion',
-      description: 'Zion Finance Platform',
+      name: 'Zion','
+      description: 'Zion Finance Platform','
       url:
-        typeof window !== 'undefined'
+        typeof window !== 'undefined''
           ? window.location.origin
-          : 'https://example.com',
-      icons: ['https://avatars.githubusercontent.com/u/37784886'],
+          : 'https://example.com','
+      icons: ['https://avatars.githubusercontent.com/u/37784886'],'
     }),
     [],
   );
@@ -178,10 +178,10 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
     if (!isProjectIdValid) {
       logWarn(
         // More of a warning during runtime, error is logged at init.
-        'WalletContext: Project ID is invalid or missing. AppKit initialization skipped. Wallet system unavailable. ID:',
+        'WalletContext: Project ID is invalid or missing. AppKit initialization skipped. Wallet system unavailable. ID:','
         { data: { projectId: rawProjectId } },
       );
-      if (appKitRef.current) appKitRef.current = null; // Ensure it's nulled if it somehow existed
+      if (appKitRef.current) appKitRef.current = null; // Ensure it's nulled if it somehow existed'
       setWallet((_prev) => ({
         ...initialWalletState, // Reset to initial, ensuring all fields are non-connected
         isWalletSystemAvailable: false,
@@ -190,13 +190,13 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
     }
 
     // Priority 2: Check for client-side environment.
-    if (typeof window === 'undefined') {
+    if (typeof window === 'undefined') {'
       logInfo(
-        'WalletContext: SSR environment or non-browser, AppKit not initialized.',
+        'WalletContext: SSR environment or non-browser, AppKit not initialized.','
       );
       // appKitRef.current should be null from initialization.
       // isWalletSystemAvailable was set by useState based on isProjectIdValid.
-      // If isProjectIdValid was true, we now mark isWalletSystemAvailable as false because AppKit can't run.
+      // If isProjectIdValid was true, we now mark isWalletSystemAvailable as false because AppKit can't run.'
       setWallet((_prev) => ({
         ...initialWalletState, // Reset to initial state
         isWalletSystemAvailable: false, // Crucially false for non-browser env
@@ -208,9 +208,9 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
     // Proceed with AppKit initialization only if client-side and project ID is valid
     if (!appKitRef.current) {
       // Check if already initialized
-      if (process.env.NODE_ENV === 'development') {
+      if (process.env.NODE_ENV === 'development') {'
         logInfo(
-          'WalletContext: Client-side, valid project ID. Attempting AppKit init. ID:',
+          'WalletContext: Client-side, valid project ID. Attempting AppKit init. ID:','
           { data: { data: rawProjectId } },
         );
       }
@@ -223,8 +223,8 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
           metadata,
           features: { analytics: false },
         });
-        if (process.env.NODE_ENV === 'development') {
-          logInfo('WalletContext: appKitInstance created successfully:', {
+        if (process.env.NODE_ENV === 'development') {'
+          logInfo('WalletContext: appKitInstance created successfully:', {'
             data: { data: appKitRef.current },
           });
         }
@@ -236,7 +236,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
         }));
       } catch (error) {
         logErrorToProduction(
-          'WalletContext: CRITICAL Error occurred creating appKitInstance with valid Project ID:',
+          'WalletContext: CRITICAL Error occurred creating appKitInstance with valid Project ID:','
           { data: error },
         );
         appKitRef.current = null;
@@ -248,9 +248,9 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
     } else {
       // AppKit already initialized. This block might be hit if dependencies change (e.g. projectId)
       // but AppKit instance was somehow preserved. Ensure state is consistent.
-      if (process.env.NODE_ENV === 'development') {
+      if (process.env.NODE_ENV === 'development') {'
         logInfo(
-          'WalletContext: AppKit already initialized. Ensuring state consistency. ID:',
+          'WalletContext: AppKit already initialized. Ensuring state consistency. ID:','
           { data: rawProjectId },
         );
       }
@@ -297,13 +297,13 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
         try {
           // currentProvider is already the EIP-1193 provider from AppKit
           if (
-            typeof ethers === 'object' &&
+            typeof ethers === 'object' &&'
             ethers !== null &&
-            'BrowserProvider' in ethers &&
-            typeof (ethers as typeof import('ethers')).BrowserProvider ===
-              'function'
+            'BrowserProvider' in ethers &&'
+            typeof (ethers as typeof import('ethers')).BrowserProvider ==='
+              'function''
           ) {
-            const EthersBrowserProvider = (ethers as typeof import('ethers'))
+            const EthersBrowserProvider = (ethers as typeof import('ethers'))'
               .BrowserProvider;
             // Ensure the provider has a required request method for Eip1193Provider
             const safeProvider = Object.assign({}, currentProvider, {
@@ -315,7 +315,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
                       params?: unknown[];
                     }) => Promise<unknown>;
                   }
-                ).request === 'function'
+                ).request === 'function''
                   ? (
                       currentProvider as {
                         request: (args: {
@@ -325,9 +325,9 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
                       }
                     ).request
                   : async (_args: { method: string; params?: unknown[] }) => {
-                      throw new Error('Provider does not implement request');
+                      throw new Error('Provider does not implement request');'
                     },
-            }) as import('ethers').Eip1193Provider;
+            }) as import('ethers').Eip1193Provider;'
             const ethersProvider = new EthersBrowserProvider(safeProvider);
             const ethersSigner = await ethersProvider.getSigner();
             setWallet((_prev) => ({
@@ -348,7 +348,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
           }
         } catch (error) {
           logErrorToProduction(
-            'WalletContext: Error getting signer or updating wallet state:',
+            'WalletContext: Error getting signer or updating wallet state:','
             { data: error },
           );
           // AppKit exists, but failed to get signer or other error
@@ -389,31 +389,31 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
     }
 
     const subscribeProviderSafe =
-      typeof targetAppKit.subscribeProvider === 'function'
+      typeof targetAppKit.subscribeProvider === 'function''
         ? targetAppKit.subscribeProvider.bind(targetAppKit)
         : (callback: (provider?: unknown) => void) => {
             const provider = targetAppKit.getWalletProvider?.();
             callback(provider);
 
-            if (typeof window !== 'undefined') {
+            if (typeof window !== 'undefined') {'
               const ethRaw = (
                 window as Window & { ethereum?: Eip1193ProviderWithEvents }
               ).ethereum;
               if (
-                typeof ethRaw === 'object' &&
+                typeof ethRaw === 'object' &&'
                 ethRaw !== null &&
-                'on' in ethRaw &&
-                typeof ethRaw.on === 'function'
+                'on' in ethRaw &&'
+                typeof ethRaw.on === 'function''
               ) {
                 const handler = () =>
                   callback(targetAppKit.getWalletProvider?.());
-                ethRaw.on('accountsChanged', handler);
+                ethRaw.on('accountsChanged', handler);'
                 return () => {
                   if (
-                    'removeListener' in ethRaw &&
-                    typeof ethRaw.removeListener === 'function'
+                    'removeListener' in ethRaw &&'
+                    typeof ethRaw.removeListener === 'function''
                   ) {
-                    ethRaw.removeListener('accountsChanged', handler);
+                    ethRaw.removeListener('accountsChanged', handler);'
                   }
                 };
               }
@@ -425,7 +425,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
     const unsubscribe = subscribeProviderSafe(updateWalletState);
     return () => {
       try {
-        if (typeof unsubscribe === 'function') unsubscribe();
+        if (typeof unsubscribe === 'function') unsubscribe();'
       } catch (error) {
         /* noop */
       }
@@ -435,7 +435,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
   const connectWallet = useCallback(async () => {
     if (!wallet.isWalletSystemAvailable || !appKitRef.current) {
       logWarn(
-        'WalletContext: connectWallet called but wallet system is not available.',
+        'WalletContext: connectWallet called but wallet system is not available.','
       );
       // Optionally, inform the user via toast or other UI element
       return;
@@ -444,22 +444,22 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
     const modalController = appKitRef.current;
     if (!modalController) {
       // Should be redundant due to isWalletSystemAvailable check
-      // captureException(new Error('AppKit not initialized in connectWallet (modalController is null after availability check)'));
+      // captureException(new Error('AppKit not initialized in connectWallet (modalController is null after availability check)'));'
       return;
     }
 
     // Attempt to automatically open the MetaMask install page if no provider is detected
     if (
-      typeof window !== 'undefined' &&
+      typeof window !== 'undefined' &&'
       !(window as Window & { ethereum?: Eip1193ProviderWithEvents }).ethereum
     ) {
       try {
-        window.open('https://metamask.io/download.html', '_blank');
+        window.open('https://metamask.io/download.html', '_blank');'
         logInfo(
-          'WalletContext: No wallet provider detected. Opening MetaMask install page.',
+          'WalletContext: No wallet provider detected. Opening MetaMask install page.','
         );
       } catch (_installError) {
-        logWarn('WalletContext: Failed to open MetaMask install page.', {
+        logWarn('WalletContext: Failed to open MetaMask install page.', {'
           data: { data: _installError },
         });
       }
@@ -468,7 +468,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
     try {
       await modalController.open();
     } catch (error: unknown) {
-      logErrorToProduction('WalletContext: Error opening wallet modal:', {
+      logErrorToProduction('WalletContext: Error opening wallet modal:', {'
         data: error,
       });
       if (
@@ -476,7 +476,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
         /Coinbase Wallet SDK/i.test(error.message)
       ) {
         logWarn(
-          'Failed to load Coinbase Wallet. Please ensure the SDK is available or try a different wallet provider.',
+          'Failed to load Coinbase Wallet. Please ensure the SDK is available or try a different wallet provider.','
         );
       }
       // Potentially update state to reflect connection attempt failure if needed, though subscriptions should handle it.
@@ -486,7 +486,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
   const disconnectWallet = useCallback(async () => {
     if (!wallet.isWalletSystemAvailable || !appKitRef.current) {
       logWarn(
-        'WalletContext: disconnectWallet called but wallet system is not available.',
+        'WalletContext: disconnectWallet called but wallet system is not available.','
       );
       return;
     }
@@ -498,10 +498,10 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
         await actionKit.disconnect();
         // State update is typically handled by the subscription to provider changes
       } catch (error) {
-        logErrorToProduction('WalletContext: Error during disconnect.', {
-          data: 'Error occurred',
+        logErrorToProduction('WalletContext: Error during disconnect.', {'
+          data: 'Error occurred','
         });
-        logErrorToProduction('WalletContext: Error disconnecting wallet:', {
+        logErrorToProduction('WalletContext: Error disconnecting wallet:', {'
           data: error,
         });
       }
@@ -509,7 +509,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
       // If not connected but called, ensure state is clean.
       // updateWalletState(); // This might be redundant if subscriptions are robust
       logInfo(
-        'WalletContext: disconnectWallet called but already disconnected or appKit not ready.',
+        'WalletContext: disconnectWallet called but already disconnected or appKit not ready.','
       );
     }
   }, [wallet.isWalletSystemAvailable]); // appKitRef is stable
@@ -533,11 +533,11 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
     </WalletContext.Provider>
   );
 };
-
+;
 export const useWallet = (): WalletContextType => {
   const context = useContext(WalletContext);
   if (context === undefined) {
-    console.error('useWallet must be used within a WalletProvider');
+    console.error('useWallet must be used within a WalletProvider');'
     return defaultWalletContext;
   }
   return context;

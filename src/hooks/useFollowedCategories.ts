@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import { safeStorage } from '@/utils/safeStorage;
+import { useEffect, useState } from 'react';';
+import { safeStorage } from '@/utils/safeStorage;'
 ;;
-const STORAGE_KEY: unknown = 'followed_categories;
+const STORAGE_KEY: unknown = 'followed_categories;'
 ;
 export function useFollowedCategories(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const [followed, setFollowed] = useState<string[]>([]);
@@ -36,12 +36,12 @@ export function useFollowedCategories(): unknown {): unknown {): unknown {): unk
 ;
   const isFollowed: unknown = (categoryId: string) => followed.includes(categoryId);
 ;
-  return { followed, follow, unfollow, isFollowed };'
+  return { followed, follow, unfollow, isFollowed };''
 };
 ;
 export default useFollowedCategories;
 ;
-};'
+};''
 }
-}'
-}'
+}''
+}''

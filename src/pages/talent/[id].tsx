@@ -1,37 +1,37 @@
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router // Changed from useParams;;
-import { SEO } from '@/components/SEO;'
-import { ProfileLoadingState } from '@/components/profile/ProfileLoadingState;'
-import { ProfileErrorState } from '@/components/profile/ProfileErrorState;'
-import type { TalentProfile as TalentProfileType } from '@/types/talent;
+import React, { useState, useEffect } from 'react';';
+import { useRouter } from 'next/router // Changed from useParams;;';
+import { SEO } from '@/components/SEO;'';
+import { ProfileLoadingState } from '@/components/profile/ProfileLoadingState;'';
+import { ProfileErrorState } from '@/components/profile/ProfileErrorState;'';
+import type { TalentProfile as TalentProfileType } from '@/types/talent;'
 ;
 interface TalentProfileWithSocial extends TalentProfileType {;
-  social?: Record<string, string>;'
+  social?: Record<string, string>;''
 };
 ;
-export default function TalentProfilePage(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'
+export default function TalentProfilePage(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   const router: unknown = useRouter();;
-  const { id: "rawId "} = router.query;";";";";"
-  const id: unknown = typeof rawId === 'string' ? rawId : undefined;
+  const { id: "rawId "} = router.query;";";";";""
+  const id: unknown = typeof rawId === 'string' ? rawId : undefined;'
   const [profile, setProfile] = useState<TalentProfileWithSocial | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);'
+  const [error, setError] = useState<string | null>(null);''
 ;
   useEffect(() => {;
-    const fetchProfile: unknown = async () => {;'
+    const fetchProfile: unknown = async () => {;''
       if (!id) {;;
-        setError('Profile not found');
+        setError('Profile not found');'
         setLoading(false);
-        return;'
+        return;''
       };
 ;
-      try {;'
-        const res: unknown "unknown = await fetch(`/api/talent/${id"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);;
-        if (!res.ok) throw new Error('Failed to load profile');
+      try {;''
+        const res: unknown "unknown = await fetch(`/api/talent/${id"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);;"
+        if (!res.ok) throw new Error('Failed to load profile');'
         const data: unknown = await res.json();
-        setProfile(data.profile);'
+        setProfile(data.profile);''
       } catch {;;
-        setError('Profile not found');
+        setError('Profile not found');'
       } finally {;
         setLoading(false);
       };
@@ -40,40 +40,40 @@ export default function TalentProfilePage(): unknown {): unknown {): unknown {):
     fetchProfile();
   }, [id]);
 ;
-  if (loading || (!profile && !error)) return <ProfileLoadingState />;'
+  if (loading || (!profile && !error)) return <ProfileLoadingState />;''
   if (error || !profile) return <ProfileErrorState error={error} />;
 ;
-  return (;'
+  return (;''
     <>;;
-      <SEO title={profile.full_name} description={profile.bio || ''} />;;
-      <main className="min-h-screen bg-zion-blue py-8 text-white">;";";";";"
-        <div className="container mx-auto px-4 space-y-4">;";";";";"
-          <h1 className="text-3xl font-bold" data-testid="profile-name">;";"
-            {profile.full_name};";";"
-          </h1>;";";";"
-          {profile.bio && <p>{profile.bio}</p>};";";";";"
-          {profile.hourly_rate && <p>Hourly Rate: "${profile.hourly_rate"}/hr</p>};";";"
-          {profile.skills && (;";";";"
-            <div>;";";";";"
-              <h2 className="font-semibold">Skills</h2>;";";";";"
-              <ul className="list-disc ml-5">;
+      <SEO title={profile.full_name} description={profile.bio || ''} />;;'
+      <main className="min-h-screen bg-zion-blue py-8 text-white">;";";";";""
+        <div className="container mx-auto px-4 space-y-4">;";";";";""
+          <h1 className="text-3xl font-bold" data-testid="profile-name">;";""
+            {profile.full_name};";";""
+          </h1>;";";";""
+          {profile.bio && <p>{profile.bio}</p>};";";";";""
+          {profile.hourly_rate && <p>Hourly Rate: "${profile.hourly_rate"}/hr</p>};";";""
+          {profile.skills && (;";";";""
+            <div>;";";";";""
+              <h2 className="font-semibold">Skills</h2>;";";";";""
+              <ul className="list-disc ml-5">;"
                 {profile.skills.map((skill) => (;
                   <li key={skill}>{skill}</li>;
                 ))};
-              </ul>;"
-            </div>;";"
-          )};";";"
-          {profile.social && (;";";";"
-            <div>;";";";";"
-              <h2 className="font-semibold">Social Links</h2>;";";";";"
-              <ul className="list-disc ml-5">;"
-                {Object.entries(profile.social).map(([platform, url]) => (;";"
-                  <li key={platform}>;";";"
-                    <a;";";";"
-                      href={url};";";";";"
-                      className="text-zion-cyan";";";";";"
-                      target="_blank";";";";";"
-                      rel="noopener noreferrer";
+              </ul>;""
+            </div>;";""
+          )};";";""
+          {profile.social && (;";";";""
+            <div>;";";";";""
+              <h2 className="font-semibold">Social Links</h2>;";";";";""
+              <ul className="list-disc ml-5">;""
+                {Object.entries(profile.social).map(([platform, url]) => (;";""
+                  <li key={platform}>;";";""
+                    <a;";";";""
+                      href={url};";";";";""
+                      className="text-zion-cyan";";";";";""
+                      target="_blank";";";";";""
+                      rel="noopener noreferrer";"
                     >;
                       {platform};
                     </a>;
@@ -83,12 +83,12 @@ export default function TalentProfilePage(): unknown {): unknown {): unknown {):
             </div>;
           )};
         </div>;
-      </main>;"
-    </>;";"
-  );";";"
-};";";";"
-";";";"
-}";";"
-}";"
-}"
-}"
+      </main>;""
+    </>;";""
+  );";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""

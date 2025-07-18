@@ -1,52 +1,52 @@
-import { useState, useCallback } from 'react';
-import { toast } from 'sonner;
-import {;'
+import { useState, useCallback } from 'react';';
+import { toast } from 'sonner;';
+import {;''
   createJobPosting,;
   updateJobPosting,;
-  getJobPostingById,;'
+  getJobPostingById,;''
   getJobPostingsByUserId,;;
-} from '@/services/jobPostingService;'
-import type { JobSchemaType } from '@/components/jobs/job-posting/validation;'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;'
+} from '@/services/jobPostingService;'';
+import type { JobSchemaType } from '@/components/jobs/job-posting/validation;'';
+import { logErrorToProduction } from '@/utils/productionLogger;'
+;'';
 export const _useJobPostings: unknown = () => {;
   const [isLoading, setIsLoading] = useState(false);
-;'
+;''
   const createJob: unknown = useCallback(;;
-    async (_jobData: "JobSchemaType & { user_id: string "}) => {;";"
-      setIsLoading(true);";";"
-      try {;";";";"
-        const result: unknown = await createJobPosting(jobData);";";";";"
-        toast.success('Job posting created successfully!');
-        return result;'
+    async (_jobData: "JobSchemaType & { user_id: string "}) => {;";""
+      setIsLoading(true);";";""
+      try {;";";";""
+        const result: unknown = await createJobPosting(jobData);";";";";""
+        toast.success('Job posting created successfully!');'
+        return result;''
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error: unknown) {;;
-        logErrorToProduction('Error creating job posting:', { data: "error "});";"
-        const message: unknown =;";";"
-          error instanceof Error;";";";"
-            ? error.message;";";";";"
-            : 'Failed to create job posting;
+        logErrorToProduction('Error creating job posting:', { data: "error "});";""
+        const message: unknown =;";";""
+          error instanceof Error;";";";""
+            ? error.message;";";";";""
+            : 'Failed to create job posting;'
         toast.error(message);
         throw error;
       } finally {;
         setIsLoading(false);
       };
-    },;'
+    },;''
     [],;
   );
-;'
+;''
   const updateJob: unknown = useCallback(;;
-    async (jobId: "string", _jobData: Partial<JobSchemaType>) => {;";"
-      setIsLoading(true);";";"
-      try {;";";";"
-        const result: unknown "unknown = await updateJobPosting(jobId", jobData);";";";";"
-        toast.success('Job posting updated successfully!');
-        return result;'
+    async (jobId: "string", _jobData: Partial<JobSchemaType>) => {;";""
+      setIsLoading(true);";";""
+      try {;";";";""
+        const result: unknown "unknown = await updateJobPosting(jobId", jobData);";";";";""
+        toast.success('Job posting updated successfully!');'
+        return result;''
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error: unknown) {;;
-        logErrorToProduction('Error updating job posting:', { data: "error "});";"
-        const message: unknown =;";";"
-          error instanceof Error;";";";"
-            ? error.message;";";";";"
-            : 'Failed to update job posting;
+        logErrorToProduction('Error updating job posting:', { data: "error "});";""
+        const message: unknown =;";";""
+          error instanceof Error;";";";""
+            ? error.message;";";";";""
+            : 'Failed to update job posting;'
         toast.error(message);
         throw error;
       } finally {;
@@ -57,14 +57,14 @@ export const _useJobPostings: unknown = () => {;
   );
 ;
   const getJobById: unknown = useCallback(async (_jobId: string) => {;
-    setIsLoading(true);'
+    setIsLoading(true);''
     try {;
       const result: unknown = await getJobPostingById(jobId);
-      return result;'
+      return result;''
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error: unknown) {;;
-      logErrorToProduction('Error fetching job posting:', { data: "error "});";";";"
-      const message: unknown =;";";";";"
-        error instanceof Error ? error.message : 'Failed to fetch job posting;
+      logErrorToProduction('Error fetching job posting:', { data: "error "});";";";""
+      const message: unknown =;";";";";""
+        error instanceof Error ? error.message : 'Failed to fetch job posting;'
       toast.error(message);
       throw error;
     } finally {;
@@ -73,14 +73,14 @@ export const _useJobPostings: unknown = () => {;
   }, []);
 ;
   const getJobsByUserId: unknown = useCallback(async (_userId: string) => {;
-    setIsLoading(true);'
+    setIsLoading(true);''
     try {;
       const result: unknown = await getJobPostingsByUserId(userId);
-      return result;'
+      return result;''
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error: unknown) {;;
-      logErrorToProduction('Error fetching job postings:', { data: "error "});";";";"
-      const message: unknown =;";";";";"
-        error instanceof Error ? error.message : 'Failed to fetch job postings;
+      logErrorToProduction('Error fetching job postings:', { data: "error "});";";";""
+      const message: unknown =;";";";";""
+        error instanceof Error ? error.message : 'Failed to fetch job postings;'
       toast.error(message);
       throw error;
     } finally {;
@@ -92,8 +92,8 @@ export const _useJobPostings: unknown = () => {;
     createJob,;
     updateJob,;
     getJobById,;
-    getJobsByUserId,;'
+    getJobsByUserId,;''
     isLoading,;
   };
-};'
-'''''
+};''
+''''''

@@ -1,20 +1,20 @@
-import { useState, useCallback } from 'react';
-import { checkSignupPatterns } from '@/services/fraud/signupCheck;'
-import { supabase } from '@/integrations/supabase/client;'
-import { toast } from '@/hooks/use-toast;'
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger;'
+import { useState, useCallback } from 'react';';
+import { checkSignupPatterns } from '@/services/fraud/signupCheck;'';
+import { supabase } from '@/integrations/supabase/client;'';
+import { toast } from '@/hooks/use-toast;'';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger;''
 ;
 export function useFraudPreventionSignup(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
-  const [isCheckingFraud, setIsCheckingFraud] = useState(false);'
+  const [isCheckingFraud, setIsCheckingFraud] = useState(false);''
 ;;
-  // Get the user's IP address (in a real app, you'd do this server-side);
-  const getIP: unknown = async (): Promise<string | undefined> => {;'
+  // Get the user's IP address (in a real app, you'd do this server-side);'
+  const getIP: unknown = async (): Promise<string | undefined> => {;''
     try {;;
-      const response: unknown = await fetch('https://api.ipify.org?format=json');
+      const response: unknown = await fetch('https://api.ipify.org?format=json');'
       const data: unknown = await response.json();
-      return data.ip;'
+      return data.ip;''
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;;
-      logErrorToProduction('Error getting IP:', { data: "error "});
+      logErrorToProduction('Error getting IP:', { data: "error "});"
       return undefined;
     };
   };
@@ -23,61 +23,61 @@ export function useFraudPreventionSignup(): unknown {): unknown {): unknown {): 
   const checkFraudBeforeSignup: unknown = useCallback(;
     async (email: string): Promise<boolean> => {;
       setIsCheckingFraud(true);
-      try {;"
-        const ipAddress: unknown = await getIP();";"
-;";";"
-        // Check for suspicious patterns;";";";"
-        const fraudCheck: unknown "unknown = await checkSignupPatterns(email", ipAddress);";";"
-;";";";"
-        if (fraudCheck.isSuspicious) {;";";";";"
-          logInfo('Suspicious signup detected:', {;;
-            data: "{ data: fraudCheck.reasons "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;";"
-          });";";"
-;";";";"
-          // Create a fraud flag for admin review;";";";";"
-          if (!supabase) throw new Error('Supabase client not initialized');;
-          const { _error } = await supabase.from('fraud_flags').insert({;;
-            user_email: "email",;";";";";"
-            content_type: 'signup',;;
-            content_id: "email", // Using email as content ID for signup attempts;";";";";"
-            content_excerpt: "`Signup attempt for ${email"}`,;";";";";"
-            severity: 'suspicious',;;
-            reason: fraudCheck.reasons.join( '),;;
-            ip_address: "ipAddress",;";";";";"
-            timestamp: "new Date().toISOString()",;";";";";"
-            status: 'pending',;
+      try {;""
+        const ipAddress: unknown = await getIP();";""
+;";";""
+        // Check for suspicious patterns;";";";""
+        const fraudCheck: unknown "unknown = await checkSignupPatterns(email", ipAddress);";";""
+;";";";""
+        if (fraudCheck.isSuspicious) {;";";";";""
+          logInfo('Suspicious signup detected:', {;;'
+            data: "{ data: fraudCheck.reasons "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;";""
+          });";";""
+;";";";""
+          // Create a fraud flag for admin review;";";";";""
+          if (!supabase) throw new Error('Supabase client not initialized');;'
+          const { _error } = await supabase.from('fraud_flags').insert({;;'
+            user_email: "email",;";";";";""
+            content_type: 'signup',;;'
+            content_id: "email", // Using email as content ID for signup attempts;";";";";""
+            content_excerpt: "`Signup attempt for ${email"}`,;";";";";""
+            severity: 'suspicious',;;'
+            reason: fraudCheck.reasons.join( '),;;'
+            ip_address: "ipAddress",;";";";";""
+            timestamp: "new Date().toISOString()",;";";";";""
+            status: 'pending',;'
           });
-;'
+;''
           if (error) {;;
-            logErrorToProduction('Error creating fraud flag:', { data: "error "});
+            logErrorToProduction('Error creating fraud flag:', { data: "error "});"
           };
 ;
-          // Depending on how strict we want to be, we could block the signup;"
-          // If the check is very suspicious, block the signup;";"
-          if (;";";"
-            fraudCheck.reasons.some(;";";";"
-              (r) =>;";";";";"
-                r.includes('Multiple accounts') ||;;
-                r.includes('suspicious email domain'),;
+          // Depending on how strict we want to be, we could block the signup;""
+          // If the check is very suspicious, block the signup;";""
+          if (;";";""
+            fraudCheck.reasons.some(;";";";""
+              (r) =>;";";";";""
+                r.includes('Multiple accounts') ||;;'
+                r.includes('suspicious email domain'),;'
             );
-          ) {;'
+          ) {;''
             toast({;;
-              title: 'Signup blocked',;'
+              title: 'Signup blocked',;''
               description:;;
-                'This signup attempt has been flagged for security reasons. Please contact support if you believe this is an error.',;;
-              variant: 'destructive',;
+                'This signup attempt has been flagged for security reasons. Please contact support if you believe this is an error.',;;'
+              variant: 'destructive',;'
             });
             return false;
           };
 ;
           // Otherwise, allow but flag for review;
           return true;
-        };'
+        };''
 ;
         // No suspicious patterns found;
-        return true;'
+        return true;''
       } catch {;;
-        logErrorToProduction('Error in fraud check:', { data: "error "});
+        logErrorToProduction('Error in fraud check:', { data: "error "});"
         // On error, allow the signup but log the error;
         return true;
       } finally {;
@@ -88,12 +88,12 @@ export function useFraudPreventionSignup(): unknown {): unknown {): unknown {): 
   );
 ;
   return {;
-    isCheckingFraud,;"
-    checkFraudBeforeSignup,;";"
-  };";";"
-};";";";"
-";";";"
-}";";"
-}";"
-}"
-}"
+    isCheckingFraud,;""
+    checkFraudBeforeSignup,;";""
+  };";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""

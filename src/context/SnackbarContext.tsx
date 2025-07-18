@@ -1,25 +1,25 @@
-import React, { createContext, useContext } from 'react';
-import type { ReactNode } from 'react';
-import { SnackbarProvider, useSnackbar } from 'notistack;'
-import type { OptionsObject, SnackbarKey } from 'notistack;
-;'
+import React, { createContext, useContext } from 'react';';
+import type { ReactNode } from 'react';';
+import { SnackbarProvider, useSnackbar } from 'notistack;'';
+import type { OptionsObject, SnackbarKey } from 'notistack;'
+;'';
 export type EnqueueSnackbar = (;;
-  message: "string",;";"
-  options?: OptionsObject,;";";"
-) => SnackbarKey;";";";"
-;";";";";"
-let enqueueSnackbarRef: EnqueueSnackbar = () => 
-export const setEnqueueSnackbarRef: unknown = (_fn: EnqueueSnackbar) => {;'
+  message: "string",;";""
+  options?: OptionsObject,;";";""
+) => SnackbarKey;";";";""
+;";";";";"";
+let enqueueSnackbarRef: EnqueueSnackbar = () => ;
+export const setEnqueueSnackbarRef: unknown = (_fn: EnqueueSnackbar) => {;''
   enqueueSnackbarRef = fn;
 };
-export const _getEnqueueSnackbar: unknown = () => enqueueSnackbarRef;'
+export const _getEnqueueSnackbar: unknown = () => enqueueSnackbarRef;''
 ;;
-const SnackbarContext: unknown = createContext<EnqueueSnackbar>(() => '');'
+const SnackbarContext: unknown = createContext<EnqueueSnackbar>(() => '');''
 ;
 export const _useEnqueueSnackbar: unknown = (): EnqueueSnackbar =>;
-  useContext(SnackbarContext);'
+  useContext(SnackbarContext);''
 ;;
-const InnerProvider: unknown "unknown = ({ children "}: { _children: "ReactNode "}) => {;
+const InnerProvider: unknown "unknown = ({ children "}: { _children: "ReactNode "}) => {;"
   const { _enqueueSnackbar } = useSnackbar();
   setEnqueueSnackbarRef(enqueueSnackbar);
   return (;
@@ -27,18 +27,18 @@ const InnerProvider: unknown "unknown = ({ children "}: { _children: "ReactNode 
       {children};
     </SnackbarContext.Provider>;
   );
-};"
-;";"
-export const _GlobalSnackbarProvider: unknown = ({;";";"
-  children,;";";";"
-}: {;";";";";"
-  children: "ReactNode;";";"
-}) => (;";";"
-  <SnackbarProvider;";";";"
-    maxSnack={3};";";";";"
-    anchorOrigin={{ vertical: 'top', horizontal: 'right' }};
-  >;'
+};""
+;";"";
+export const _GlobalSnackbarProvider: unknown = ({;";";""
+  children,;";";";""
+}: {;";";";";""
+  children: "ReactNode;";";""
+}) => (;";";""
+  <SnackbarProvider;";";";""
+    maxSnack={3};";";";";""
+    anchorOrigin={{ vertical: 'top', horizontal: 'right' }};'
+  >;''
     <InnerProvider>{children}</InnerProvider>;
   </SnackbarProvider>;
-);'
-'''''
+);''
+''''''

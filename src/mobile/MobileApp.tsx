@@ -1,67 +1,67 @@
-import React from 'react';
-import { MobileThemeProvider } from './theme/MobileThemeProvider;'
-import { logErrorToProduction } from '@/utils/productionLogger;'
-import { useCart } from '@/context/CartContext;'
-import { logInfo } from '@/utils/productionLogger;'
+import React from 'react';';
+import { MobileThemeProvider } from './theme/MobileThemeProvider;'';
+import { logErrorToProduction } from '@/utils/productionLogger;'';
+import { useCart } from '@/context/CartContext;'';
+import { logInfo } from '@/utils/productionLogger;''
 ;
 const CartContextTester: unknown = () => {;
-  try {;'
+  try {;''
     const cart: unknown = useCart();;
-    logInfo('CartContextTester: useCart() successful', {;;
-      data: "{ data: cart "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;"
-    });";"
-    return (;";";"
-      <div;";";";"
-        style={{;";";";";"
-          position: 'fixed',;;
-          top: '10px',;;
-          left: '10px',;;
-          backgroundColor: 'lightgreen',;;
-          padding: '5px',;;
-          zIndex: "9999",;
+    logInfo('CartContextTester: useCart() successful', {;;'
+      data: "{ data: cart "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;""
+    });";""
+    return (;";";""
+      <div;";";";""
+        style={{;";";";";""
+          position: 'fixed',;;'
+          top: '10px',;;'
+          left: '10px',;;'
+          backgroundColor: 'lightgreen',;;'
+          padding: '5px',;;'
+          zIndex: "9999",;"
         }};
       >;
         CartContextTester: OK;
       </div>;
-    );"
-  } catch {;";"
-    logErrorToProduction(;";";"
-      error instanceof Error ? error : String(error),;";";";"
-      error instanceof Error ? error : undefined,;";";";";"
-      { message: 'CartContextTester: useCart() FAILED!' },;'
+    );""
+  } catch {;";""
+    logErrorToProduction(;";";""
+      error instanceof Error ? error : String(error),;";";";""
+      error instanceof Error ? error : undefined,;";";";";""
+      { message: 'CartContextTester: useCart() FAILED!' },;''
     );
     return (;
-      <div;'
+      <div;''
         style={{;;
-          position: 'fixed',;;
-          top: '10px',;;
-          left: '10px',;;
-          backgroundColor: 'red',;;
-          color: 'white',;;
-          padding: '5px',;;
-          zIndex: "9999",;";";"
-        }};";";";"
-      >;";";";";"
-        CartContextTester: "FAILED - {(error as Error).message"};
+          position: 'fixed',;;'
+          top: '10px',;;'
+          left: '10px',;;'
+          backgroundColor: 'red',;;'
+          color: 'white',;;'
+          padding: '5px',;;'
+          zIndex: "9999",;";";""
+        }};";";";""
+      >;";";";";""
+        CartContextTester: "FAILED - {(error as Error).message"};"
       </div>;
-    );"
-  };";"
-};";";"
-;";";";"
-interface MobileAppProps {;";";";";"
-  children: "React.ReactNode;";
+    );""
+  };";""
+};";";""
+;";";";""
+interface MobileAppProps {;";";";";""
+  children: "React.ReactNode;";"
 };
 ;
 export function MobileApp(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: MobileAppProps) {;
   return (;
     <MobileThemeProvider>;
       <CartContextTester />;
-      {children};"
-    </MobileThemeProvider>;";"
-  );";";"
-};";";";"
-";";";"
-}";";"
-}";"
-}"
-}"
+      {children};""
+    </MobileThemeProvider>;";""
+  );";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""

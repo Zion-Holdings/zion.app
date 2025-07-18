@@ -1,6 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { withErrorLogging } from '@/utils/withErrorLogging';
-import { logErrorToProduction } from '@/utils/productionLogger';
+import type { NextApiRequest, NextApiResponse } from 'next';';
+import { withErrorLogging } from '@/utils/withErrorLogging';';
+import { logErrorToProduction } from '@/utils/productionLogger';'
 
 interface SystemMetrics {
   cache: {
@@ -338,8 +338,8 @@ interface SystemMetrics {
     fabricationMetrics: string;
   };
 }
-
+;
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   // TODO: Implement actual metrics logic
-  res.status(200).json({ message: 'System metrics endpoint (mock)' });
+  res.status(200).json({ message: 'System metrics endpoint (mock)' });'
 }

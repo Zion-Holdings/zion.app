@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import type { Conversation, Message } from '@/types/messaging;
+import { useState } from 'react';';
+import type { Conversation, Message } from '@/types/messaging;'
 ;
 /**;
  * Hook to manage messaging state;
@@ -25,12 +25,12 @@ export function useConversationState(): unknown {): unknown {): unknown {): unkn
     setUnreadCount,;
     activeConversation,;
     setActiveConversation,;
-    isLoading,;'
+    isLoading,;''
     setIsLoading,;
   };
 };
 ;
-};'
+};''
 }
-}'
-}'
+}''
+}''

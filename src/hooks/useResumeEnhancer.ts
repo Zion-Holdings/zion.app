@@ -1,51 +1,51 @@
-import { useState } from 'react';
-import { supabase } from '@/integrations/supabase/client;'
-import { logErrorToProduction } from '@/utils/productionLogger;
-;'
+import { useState } from 'react';';
+import { supabase } from '@/integrations/supabase/client;'';
+import { logErrorToProduction } from '@/utils/productionLogger;'
+;''
 type EnhancementType =;;
-  | 'summary;'
-  | 'work-description;'
-  | 'skill-categorization;'
-  | 'general;
+  | 'summary;''
+  | 'work-description;''
+  | 'skill-categorization;''
+  | 'general;'
 ;
-export function useResumeEnhancer(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'
+export function useResumeEnhancer(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   const [isEnhancing, setIsEnhancing] = useState(false);
   const [error, setError] = useState<string | null>(null);
-;'
-  const enhanceContent: unknown "unknown = async (;",;"
-    content: "string",;";";";";"
-    type: EnhancementType = 'general',;
-    context?: string,;'
+;''
+  const enhanceContent: unknown "unknown = async (;",;""
+    content: "string",;";";";";""
+    type: EnhancementType = 'general',;'
+    context?: string,;''
   ): Promise<string | null> => {;
     setIsEnhancing(true);
-    setError(null);'
+    setError(null);''
 ;;
-    if (!supabase) throw new Error('Supabase client not initialized');
+    if (!supabase) throw new Error('Supabase client not initialized');'
 ;
-    try {;'
+    try {;''
       const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase.functions.invoke(;;
-        'resume-enhancer',;
+        'resume-enhancer',;'
         {;
-          body: {;'
+          body: {;''
             content,;;
-            enhancementType: "type",;
+            enhancementType: "type",;"
             context,;
           },;
         },;
       );
 ;
-      if (error) {;"
-        throw new Error(error.message);";"
-      };";";"
-;";";";"
-      // Handle mock response with fallback;";";";";"
-      return data && typeof data === 'object' && 'enhancedContent' in data;;
-        ? (data as { enhancedContent: "string "}).enhancedContent;";"
-        : content;";";"
-    } catch (err: unknown) {;";";";"
-      const message: unknown = err instanceof Error ? err.message : String(err);";";";";"
-      setError(message || 'Failed to enhance content');;
-      logErrorToProduction('Enhancement error:', { data: "err "});
+      if (error) {;""
+        throw new Error(error.message);";""
+      };";";""
+;";";";""
+      // Handle mock response with fallback;";";";";""
+      return data && typeof data === 'object' && 'enhancedContent' in data;;'
+        ? (data as { enhancedContent: "string "}).enhancedContent;";""
+        : content;";";""
+    } catch (err: unknown) {;";";";""
+      const message: unknown = err instanceof Error ? err.message : String(err);";";";";""
+      setError(message || 'Failed to enhance content');;'
+      logErrorToProduction('Enhancement error:', { data: "err "});"
       return null;
     } finally {;
       setIsEnhancing(false);
@@ -54,12 +54,12 @@ export function useResumeEnhancer(): unknown {): unknown {): unknown {): unknown
 ;
   return {;
     enhanceContent,;
-    isEnhancing,;"
-    error,;";"
-  };";";"
-};";";";"
-";";";"
-}";";"
-}";"
-}"
-}"
+    isEnhancing,;""
+    error,;";""
+  };";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""

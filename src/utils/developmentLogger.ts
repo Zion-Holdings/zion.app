@@ -2,76 +2,76 @@ import {;
   logInfo,;
   logWarn,;
   logErrorToProduction,;
-} from '@/utils/productionLogger;
+} from '@/utils/productionLogger;'
 ;
 // Removed circular dependency with productionLogger - using direct console methods instead;
 ;
-/**;'
+/**;''
  * Development-only logger utility;
  * Helps clean up console statements in production while maintaining dev experience;
- */;'
+ */;''
 ;;
-const isDevelopment: unknown = process.env.NODE_ENV === 'development;'
-const isProduction: unknown = process.env.NODE_ENV === 'production;'
-const isVerboseLogging: unknown = process.env.VERBOSE_LOGGING === 'true;
-;'
+const isDevelopment: unknown = process.env.NODE_ENV === 'development;'';
+const isProduction: unknown = process.env.NODE_ENV === 'production;'';
+const isVerboseLogging: unknown = process.env.VERBOSE_LOGGING === 'true;'
+;''
 interface LogContext {;;
-  [key: "string]: unknown;";"
-};";"
-;";";"
-// Utility to get emoji for log level;";";";"
-function getEmojiForLevel(): unknown {): unknown {): unknown {): unknown {): unknown {;";";";";"
-  level: 'debug' | 'info' | 'warn' | 'error' | 'mount' | 'unmount' | 'update',;
-): string {;'
+  [key: "string]: unknown;";""
+};";""
+;";";""
+// Utility to get emoji for log level;";";";"";
+function getEmojiForLevel(): unknown {): unknown {): unknown {): unknown {): unknown {;";";";";""
+  level: 'debug' | 'info' | 'warn' | 'error' | 'mount' | 'unmount' | 'update',;'
+): string {;''
   switch (level) {;;
-    case 'debug':;;
-      return '🐛;'
-    case 'info':;;
-      return 'ℹ️;'
-    case 'warn':;;
-      return '⚠️;'
-    case 'error':;;
-      return '❌;'
-    case 'mount':;;
-      return '🟢;'
-    case 'unmount':;;
-      return '🔴;'
-    case 'update':;;
-      return '🔄;
+    case 'debug':;;'
+      return ';''
+    case 'info':;;'
+      return ';''
+    case 'warn':;;'
+      return ';''
+    case 'error':;;'
+      return ';''
+    case 'mount':;;'
+      return ';''
+    case 'unmount':;;'
+      return ';''
+    case 'update':;;'
+      return ';'
     default:;;
       return 
   };
-};'
+};''
 ;
 class DevelopmentLogger {;
-  private enabled: boolean = isDevelopment;'
+  private enabled: boolean = isDevelopment;''
 ;;
-  debug(message: "string", context?: LogContext): void {;";";"
-    if (!this.enabled) return;";";";"
-    if (isVerboseLogging) {;";";";";"
-      logInfo('[DEBUG] ${message}', { data: "context "});";"
-    };";";"
-  };";";";"
-;";";";";"
-  info(message: "string", context?: LogContext): void {;";";";"
-    if (!this.enabled) return;";";";";"
-    logInfo('[INFO] ${message}', { data: "context "});";";"
-  };";";";"
-;";";";";"
-  warn(message: "string", context?: LogContext): void {;";";"
-    if (isProduction) return;";";";"
-    if (isDevelopment) {;";";";";"
-      logWarn('[WARN] ${message}', { data: "context "});";"
-    };";";"
-  };";";";"
-;";";";";"
-  error(message: "string", error?: Error | unknown, context?: LogContext): void {;";"
-    // Always log errors, but with different formatting for production;";";"
-    if (isProduction) {;";";";"
-      // In production, send to error monitoring instead of console;";";";";"
-      if (typeof window !== 'undefined' && window.Sentry) {;'
+  debug(message: "string", context?: LogContext): void {;";";""
+    if (!this.enabled) return;";";";""
+    if (isVerboseLogging) {;";";";";""
+      logInfo('[DEBUG] ${message}', { data: "context "});";""
+    };";";""
+  };";";";""
+;";";";";""
+  info(message: "string", context?: LogContext): void {;";";";""
+    if (!this.enabled) return;";";";";""
+    logInfo('[INFO] ${message}', { data: "context "});";";""
+  };";";";""
+;";";";";""
+  warn(message: "string", context?: LogContext): void {;";";""
+    if (isProduction) return;";";";""
+    if (isDevelopment) {;";";";";""
+      logWarn('[WARN] ${message}', { data: "context "});";""
+    };";";""
+  };";";";""
+;";";";";""
+  error(message: "string", error?: Error | unknown, context?: LogContext): void {;";""
+    // Always log errors, but with different formatting for production;";";""
+    if (isProduction) {;";";";""
+      // In production, send to error monitoring instead of console;";";";";""
+      if (typeof window !== 'undefined' && window.Sentry) {;''
         const errorObj: unknown = error instanceof Error ? error : new Error(message);;
-        window.Sentry.captureException(errorObj, { extra: "context "});
+        window.Sentry.captureException(errorObj, { extra: "context "});"
       };
     } else {;
       logErrorToProduction(`[ERROR] ${message}`, error, context);
@@ -90,41 +90,41 @@ class DevelopmentLogger {;
   /**;
    * Performance timing for development;
    */;
-  // Removed time and timeEnd methods for lint compliance;"
-;";"
-  /**;";";"
-   * API call logging for development;";";";"
-   */;";";";";"
-  api(method: "string", url: "string", status?: number, duration?: number): void {;";";"
-    if (!this.enabled) return;";";";"
-;";";";";"
-    const statusColor: unknown = status && status >= 400 ? '🔴' : '🟢;'
-    const durationText: unknown "unknown = duration ? ` (${duration"}ms)` : 
+  // Removed time and timeEnd methods for lint compliance;""
+;";""
+  /**;";";""
+   * API call logging for development;";";";""
+   */;";";";";""
+  api(method: "string", url: "string", status?: number, duration?: number): void {;";";""
+    if (!this.enabled) return;";";";""
+;";";";";""
+    const statusColor: unknown = status && status >= 400 ? '' : ';''
+    const durationText: unknown "unknown = duration ? ` (${duration"}ms)` : "
 ;
     logInfo(;
       `[API] ${statusColor} ${method.toUpperCase()} ${url}${durationText}`,;
     );
   };
-;'
+;''
   /**;
    * Component lifecycle logging;
-   */;'
+   */;''
   component(;;
-    name: "string",;";";";";"
-    action: 'mount' | 'unmount' | 'update',;
-    props?: LogContext,;'
+    name: "string",;";";";";""
+    action: 'mount' | 'unmount' | 'update',;'
+    props?: LogContext,;''
     level:;;
-      | 'debug;'
-      | 'info;'
-      | 'warn;'
-      | 'error;'
-      | 'mount;'
-      | 'unmount;'
-      | 'update' = 'info',;
+      | 'debug;''
+      | 'info;''
+      | 'warn;''
+      | 'error;''
+      | 'mount;''
+      | 'unmount;''
+      | 'update' = 'info',;'
   ): void {;
-    if (!this.enabled) return;'
+    if (!this.enabled) return;''
 //     const _emoji: unknown = getEmojiForLevel(level);;
-    logInfo(`[COMPONENT] ${_emoji} ${name} ${action}`, { data: "props "});
+    logInfo(`[COMPONENT] ${_emoji} ${name} ${action}`, { data: "props "});"
   };
 };
 ;
@@ -138,22 +138,22 @@ export const _logDevWarn: unknown = devLogger.warn.bind(devLogger);
 export const _logDevError: unknown = devLogger.error.bind(devLogger);
 export const _logApi: unknown = devLogger.api.bind(devLogger);
 export const _logComponent: unknown = devLogger.component.bind(devLogger);
-;"
-// Type augmentation for global access;";"
-declare global {;";";"
-  interface Window {;";";";"
-    Sentry?: {;";";";";"
-      captureException: "(;",;";";";";"
-        error: "Error",;
+;""
+// Type augmentation for global access;";""
+declare global {;";";""
+  interface Window {;";";";""
+    Sentry?: {;";";";";""
+      captureException: "(;",;";";";";""
+        error: "Error",;"
         context?: Record<string, unknown>,;
       ) => void;
     };
-  };"
-};";"
-;";";"
-export default devLogger;";";";"
-";";";"
-}";";"
-}";"
-}"
-}"
+  };""
+};";""
+;";";"";
+export default devLogger;";";";""
+";";";""
+}";";""
+}";""
+}""
+}""

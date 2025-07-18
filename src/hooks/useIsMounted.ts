@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react;
+import { useEffect, useRef } from 'react;'
 ;
 /**;
  * Track component mount state.;
@@ -13,12 +13,12 @@ export function useIsMounted(): unknown {): unknown {): unknown {): unknown {): 
     return () => {;
       isMounted.current = false;
     };
-  }, []);'
+  }, []);''
 ;
   return isMounted;
 };
 ;
-};'
+};''
 }
-}'
-}'
+}''
+}''

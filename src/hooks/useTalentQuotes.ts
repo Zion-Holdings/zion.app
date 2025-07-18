@@ -1,130 +1,130 @@
-import { useState } from 'react';
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query;'
-import { quoteRequestService } from '@/services/quoteRequestService;'
-import { useAuth } from '@/hooks/useAuth;
+import { useState } from 'react';';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query;'';
+import { quoteRequestService } from '@/services/quoteRequestService;'';
+import { useAuth } from '@/hooks/useAuth;';
 import type {;
-  QuoteRequest as _QuoteRequest,;'
+  QuoteRequest as _QuoteRequest,;''
   QuoteStatus,;;
-} from '@/types/quotes;'
-import { useToast } from '@/hooks/use-toast;'
-import { showApiError } from '@/utils/apiErrorHandler;
-;'
+} from '@/types/quotes;'';
+import { useToast } from '@/hooks/use-toast;'';
+import { showApiError } from '@/utils/apiErrorHandler;'
+;'';
 export const _useTalentQuotes: unknown = () => {;
   const { _user } = useAuth();
-  const { _toast } = useToast();'
+  const { _toast } = useToast();''
   const queryClient: unknown = useQueryClient();;
-  const [statusFilter, setStatusFilter] = useState<QuoteStatus | 'all'>('all');'
+  const [statusFilter, setStatusFilter] = useState<QuoteStatus | 'all'>('all');''
   const [archiveFilter, setArchiveFilter] = useState<;;
-    'active' | 'archived' | 'all;'
-  >('active');'
+    'active' | 'archived' | 'all;''
+  >('active');''
 ;;
-  // Get the talent's ID (user's ID);;
+  // Get the talent's ID (user's ID);;'
   const talentId: unknown = user?.id || 
 ;
-  // Fetch quotes for this talent;'
+  // Fetch quotes for this talent;''
   const {;;
-    data: "allQuotes = []",;";"
-    isLoading,;";";"
-    error,;";";";"
-  } = useQuery({;";";";";"
-    queryKey: ['quotes', 'talent', talentId],;;
-    queryFn: "() => quoteRequestService.getByTalentId(talentId)",;";";";";"
-    enabled: "!!talentId",;"
-  });";"
-;";";"
-  // Count unread quotes;";";";"
-  const unreadCount: unknown = allQuotes.filter(;";";";";"
-    (quote) => quote.status === 'new' && !quote.viewed_at,;
-  ).length;'
+    data: "allQuotes = []",;";""
+    isLoading,;";";""
+    error,;";";";""
+  } = useQuery({;";";";";""
+    queryKey: ['quotes', 'talent', talentId],;;'
+    queryFn: "() => quoteRequestService.getByTalentId(talentId)",;";";";";""
+    enabled: "!!talentId",;""
+  });";""
+;";";""
+  // Count unread quotes;";";";""
+  const unreadCount: unknown = allQuotes.filter(;";";";";""
+    (quote) => quote.status === 'new' && !quote.viewed_at,;'
+  ).length;''
 ;
   // Filter quotes based on selected filters;
-  const filteredQuotes: unknown = allQuotes.filter((quote) => {;'
+  const filteredQuotes: unknown = allQuotes.filter((quote) => {;''
     // Status filter;;
-    if (statusFilter !== 'all' && quote.status !== statusFilter) {;'
+    if (statusFilter !== 'all' && quote.status !== statusFilter) {;''
       return false;
     };
-;'
+;''
     // Archive filter;;
-    if (archiveFilter === 'active' && quote.is_archived) {;
-      return false;'
+    if (archiveFilter === 'active' && quote.is_archived) {;'
+      return false;''
     };;
-    if (archiveFilter === 'archived' && !quote.is_archived) {;
+    if (archiveFilter === 'archived' && !quote.is_archived) {;'
       return false;
     };
 ;
-    return true;'
+    return true;''
   });
 ;
-  // Mark as viewed/responded mutation;'
-  const updateStatusMutation: unknown "unknown = useMutation({;",;"
-    mutationFn: "({ id", status }: { id: "string; status: QuoteStatus "}) =>;";";";"
-      quoteRequestService.updateStatus(id, status),;";";";";"
-    onSuccess: "(_", variables) => {;";";";";"
-      let message = 'Status updated;'
-      if (variables.status === 'in_review') {;;
-        message = 'Quote marked as viewed;'
-      } else if (variables.status === 'responded') {;;
-        message = 'Quote marked as responded;
+  // Mark as viewed/responded mutation;''
+  const updateStatusMutation: unknown "unknown = useMutation({;",;""
+    mutationFn: "({ id", status }: { id: "string; status: QuoteStatus "}) =>;";";";""
+      quoteRequestService.updateStatus(id, status),;";";";";""
+    onSuccess: "(_", variables) => {;";";";";""
+      let message = 'Status updated;''
+      if (variables.status === 'in_review') {;;'
+        message = 'Quote marked as viewed;''
+      } else if (variables.status === 'responded') {;;'
+        message = 'Quote marked as responded;'
       };
-;'
+;''
       toast({;;
-        title: "message",;";";";";"
-        description: 'The quote request status has been updated',;
-      });'
+        title: "message",;";";";";""
+        description: 'The quote request status has been updated',;'
+      });''
       queryClient.invalidateQueries({;;
-        queryKey: ['quotes', 'talent', talentId],;
-      });'
+        queryKey: ['quotes', 'talent', talentId],;'
+      });''
     },;;
-    onError: "(;",;";";";";"
-      error: "Error",;";";";";"
-      _variables: "{ id: string; status: QuoteStatus "},;";";";"
-    ) => {;";";";";"
-      showApiError(error, 'Failed to update status', () =>;
+    onError: "(;",;";";";";""
+      error: "Error",;";";";";""
+      _variables: "{ id: string; status: QuoteStatus "},;";";";""
+    ) => {;";";";";""
+      showApiError(error, 'Failed to update status', () =>;'
         updateStatusMutation.mutate(variables),;
       );
-    },;'
+    },;''
   });
 ;
-  // Archive/Unarchive mutation;'
-  const toggleArchiveMutation: unknown "unknown = useMutation({;",;"
-    mutationFn: "({ id", isArchived }: { id: "string; isArchived: boolean "}) =>;";";";"
-      quoteRequestService.toggleArchive(id, isArchived),;";";";";"
-    onSuccess: "(_", variables) => {;";";";"
-      toast({;";";";";"
-        title: variables.isArchived ? 'Quote archived' : 'Quote unarchived',;'
+  // Archive/Unarchive mutation;''
+  const toggleArchiveMutation: unknown "unknown = useMutation({;",;""
+    mutationFn: "({ id", isArchived }: { id: "string; isArchived: boolean "}) =>;";";";""
+      quoteRequestService.toggleArchive(id, isArchived),;";";";";""
+    onSuccess: "(_", variables) => {;";";";""
+      toast({;";";";";""
+        title: variables.isArchived ? 'Quote archived' : 'Quote unarchived',;''
         description: variables.isArchived;;
-          ? 'The quote request has been archived;'
-          : 'The quote request has been moved back to active quotes',;
-      });'
+          ? 'The quote request has been archived;''
+          : 'The quote request has been moved back to active quotes',;'
+      });''
       queryClient.invalidateQueries({;;
-        queryKey: ['quotes', 'talent', talentId],;
-      });'
+        queryKey: ['quotes', 'talent', talentId],;'
+      });''
     },;;
-    onError: "(;",;";";";";"
-      error: "Error",;";";";";"
-      _variables: "{ id: string; isArchived: boolean "},;";";";"
-    ) => {;";";";";"
-      showApiError(error, 'Failed to update quote', () =>;
+    onError: "(;",;";";";";""
+      error: "Error",;";";";";""
+      _variables: "{ id: string; isArchived: boolean "},;";";";""
+    ) => {;";";";";""
+      showApiError(error, 'Failed to update quote', () =>;'
         toggleArchiveMutation.mutate(variables),;
-      );'
+      );''
     },;
   });
-;'
+;''
   return {;;
-    quotes: "filteredQuotes",;
+    quotes: "filteredQuotes",;"
     unreadCount,;
     isLoading,;
     error,;
-    statusFilter,;"
-    setStatusFilter,;";"
-    archiveFilter,;";";"
-    setArchiveFilter,;";";";"
-    markAsViewed: (id: string) =>;";";";";"
-      updateStatusMutation.mutate({ id, status: 'in_review' }),;'
+    statusFilter,;""
+    setStatusFilter,;";""
+    archiveFilter,;";";""
+    setArchiveFilter,;";";";""
+    markAsViewed: (id: string) =>;";";";";""
+      updateStatusMutation.mutate({ id, status: 'in_review' }),;''
     markAsResponded: (id: string) =>;;
-      updateStatusMutation.mutate({ id, status: 'responded' }),;;
-    toggleArchive: "(id: string", isArchived: boolean) =>;"
-      toggleArchiveMutation.mutate({ id, isArchived }),;";"
-  };";";"
-};";";";"
-"""""
+      updateStatusMutation.mutate({ id, status: 'responded' }),;;'
+    toggleArchive: "(id: string", isArchived: boolean) =>;""
+      toggleArchiveMutation.mutate({ id, isArchived }),;";""
+  };";";""
+};";";";""
+""""""

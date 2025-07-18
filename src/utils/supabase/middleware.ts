@@ -1,13 +1,13 @@
-/// <reference types="node" />;";";";";"
-import { createServerClient } from '@supabase/ssr;'
-import { _cookies } from 'next/headers;'
-import { NextRequest, NextResponse } from 'next/server;
-// Import proper logging instead of using console directly;'
+/// <reference types="node" />;";";";";"";
+import { createServerClient } from '@supabase/ssr;'';
+import { _cookies } from 'next/headers;'';
+import { NextRequest, NextResponse } from 'next/server;'
+// Import proper logging instead of using console directly;'';
 import {;
   logErrorToProduction,;
-  _logInfo,;'
+  _logInfo,;''
   logWarn,;;
-} from '@/utils/productionLogger;
+} from '@/utils/productionLogger;'
 ;
 /**;
  * Authentication middleware using Supabase Auth;
@@ -17,12 +17,12 @@ export async function updateSession(): unknown {): unknown {): unknown {): unkno
   const response: unknown = NextResponse.next();
 ;
   // Validate environment variables;
-  const supabaseUrl: unknown = process.env.NEXT_PUBLIC_SUPABASE_URL;'
+  const supabaseUrl: unknown = process.env.NEXT_PUBLIC_SUPABASE_URL;''
   const supabaseAnonKey: unknown = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 ;
-  if (!supabaseUrl || !supabaseAnonKey) {;'
+  if (!supabaseUrl || !supabaseAnonKey) {;''
     logWarn(;;
-      'Supabase environment variables not configured, skipping auth middleware',;
+      'Supabase environment variables not configured, skipping auth middleware',;'
     );
     return response;
   };
@@ -30,125 +30,125 @@ export async function updateSession(): unknown {): unknown {): unknown {): unkno
   let supabase;
   try {;
     supabase = createServerClient(supabaseUrl, supabaseAnonKey, {;
-      cookies: {;'
+      cookies: {;''
         get(name: string) {;
           const cookiesAny: unknown = request.cookies as unknown;
-          if (;'
+          if (;''
             cookiesAny &&;;
-            typeof cookiesAny === 'object' &&;;
-            'get' in cookiesAny &&;;
-            typeof (cookiesAny as { get?: unknown } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}).get === 'function;
-          ) {;'
+            typeof cookiesAny === 'object' &&;;'
+            'get' in cookiesAny &&;;'
+            typeof (cookiesAny as { get?: unknown } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}).get === 'function;'
+          ) {;''
             const cookie: unknown = (;;
-              cookiesAny as { get: "(name: string) => unknown "};";";";"
-            ).get(name);";";";";"
-            return typeof cookie === 'object' &&;'
+              cookiesAny as { get: "(name: string) => unknown "};";";";""
+            ).get(name);";";";";""
+            return typeof cookie === 'object' &&;''
               cookie !== null &&;;
-              'value' in cookie;;
-              ? (cookie as { value: "string "}).value;"
-              : undefined;";"
-          };";";"
-          return undefined;";";";"
-        },;";";";";"
-        set(name: "string", value: "string", options: unknown) {;";"
-          const cookies: unknown = response as unknown;";";"
-          if (;";";";"
-            cookies &&;";";";";"
-            typeof cookies === 'object' &&;;
-            'cookies' in cookies &&;'
+              'value' in cookie;;'
+              ? (cookie as { value: "string "}).value;""
+              : undefined;";""
+          };";";""
+          return undefined;";";";""
+        },;";";";";""
+        set(name: "string", value: "string", options: unknown) {;";""
+          const cookies: unknown = response as unknown;";";""
+          if (;";";";""
+            cookies &&;";";";";""
+            typeof cookies === 'object' &&;;'
+            'cookies' in cookies &&;''
             typeof (cookies as { cookies?: { set?: unknown } }).cookies?.set ===;;
-              'function;
+              'function;'
           ) {;
-            (;'
+            (;''
               cookies as {;;
-                cookies: "{;",;";";";";"
-                  set: "(name: string", value: "string", options: "unknown) => void;";
-                };"
-              };";"
-            ).cookies.set(name, value, options);";";"
-          };";";";"
-        },;";";";";"
-        remove(name: "string", options: unknown) {;";"
-          const cookies: unknown = response as unknown;";";"
-          if (;";";";"
-            cookies &&;";";";";"
-            typeof cookies === 'object' &&;;
-            'cookies' in cookies &&;'
+                cookies: "{;",;";";";";""
+                  set: "(name: string", value: "string", options: "unknown) => void;";"
+                };""
+              };";""
+            ).cookies.set(name, value, options);";";""
+          };";";";""
+        },;";";";";""
+        remove(name: "string", options: unknown) {;";""
+          const cookies: unknown = response as unknown;";";""
+          if (;";";";""
+            cookies &&;";";";";""
+            typeof cookies === 'object' &&;;'
+            'cookies' in cookies &&;''
             typeof (cookies as { cookies?: { set?: unknown } }).cookies?.set ===;;
-              'function;
+              'function;'
           ) {;
-            (;'
+            (;''
               cookies as {;;
-                cookies: "{;",;";";";";"
-                  set: "(name: string", value: "string", options: "unknown) => void;";";";"
-                };";";";"
-              };";";";";"
-            ).cookies.set(name, '', options);
+                cookies: "{;",;";";";";""
+                  set: "(name: string", value: "string", options: "unknown) => void;";";";""
+                };";";";""
+              };";";";";""
+            ).cookies.set(name, '', options);'
           };
-        },;'
+        },;''
       },;
     });
-  } catch (initError: unknown) {;'
+  } catch (initError: unknown) {;''
     logErrorToProduction(;;
-      'Failed to initialize Supabase client in middleware',;
+      'Failed to initialize Supabase client in middleware',;'
       initError,;
-    );'
+    );''
     return response;
   };
-;'
+;''
   const isPublicRoute: unknown = [;;
-    '/',;;
-    '/auth',;;
-    '/auth/login',;;
-    '/auth/register',;;
-    '/auth/verify-email',;;
-    '/auth/error',;;
-    '/api',;;
-    '/api/auth',;;
-    '/about',;;
-    '/contact',;;
-    '/terms',;;
-    '/privacy',;;
-    '/favicon.ico',;;
-    '/_next',;;
-    '/static',;'
+    '/',;;'
+    '/auth',;;'
+    '/auth/login',;;'
+    '/auth/register',;;'
+    '/auth/verify-email',;;'
+    '/auth/error',;;'
+    '/api',;;'
+    '/api/auth',;;'
+    '/about',;;'
+    '/contact',;;'
+    '/terms',;;'
+    '/privacy',;;'
+    '/favicon.ico',;;'
+    '/_next',;;'
+    '/static',;''
   ].some((route) => {;;
-    if (route === '/api' || route === '/_next' || route === '/static') {;'
+    if (route === '/api' || route === '/_next' || route === '/static') {;''
       return request.nextUrl.pathname.startsWith(route);
     };
-    return (;'
+    return (;''
       request.nextUrl.pathname === route ||;;
-      request.nextUrl.pathname.startsWith(route + '/');
+      request.nextUrl.pathname.startsWith(route + '/');'
     );
   });
 ;
   if (isPublicRoute) {;
-    return response;'
+    return response;''
   };
 ;
-  try {;'
+  try {;''
     const {;;
-      data: "{ user "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;"
-      error,;";"
-    } = await supabase.auth.getUser();";";"
-;";";";"
-    if (error || !user) {;";";";";"
-      const redirectUrl: unknown = new URL('/auth/login', request.nextUrl.href);;
-      redirectUrl.searchParams.set('redirectTo', request.nextUrl.pathname);
-      return NextResponse.redirect(redirectUrl);'
+      data: "{ user "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;""
+      error,;";""
+    } = await supabase.auth.getUser();";";""
+;";";";""
+    if (error || !user) {;";";";";""
+      const redirectUrl: unknown = new URL('/auth/login', request.nextUrl.href);;'
+      redirectUrl.searchParams.set('redirectTo', request.nextUrl.pathname);'
+      return NextResponse.redirect(redirectUrl);''
     };
 ;
-    return response;'
+    return response;''
   } catch (authError: unknown) {;;
-    logErrorToProduction('Error during authentication check', authError);'
+    logErrorToProduction('Error during authentication check', authError);''
     // Redirect to login on authentication errors;;
-    const redirectUrl: unknown = new URL('/auth/login', request.nextUrl.href);;
-    redirectUrl.searchParams.set('redirectTo', request.nextUrl.pathname);'
+    const redirectUrl: unknown = new URL('/auth/login', request.nextUrl.href);;'
+    redirectUrl.searchParams.set('redirectTo', request.nextUrl.pathname);''
     return NextResponse.redirect(redirectUrl);
   };
 };
 ;
-};'
+};''
 }
-}'
-}'
+}''
+}''

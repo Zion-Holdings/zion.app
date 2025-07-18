@@ -1,31 +1,31 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
-import { logErrorToProduction } from '@/utils/productionLogger;'
-import { useGlobalLoader } from '@/context/GlobalLoaderContext // Added import;
-;'
+import { useState, useEffect, useCallback, useRef } from 'react';';
+import { logErrorToProduction } from '@/utils/productionLogger;'';
+import { useGlobalLoader } from '@/context/GlobalLoaderContext // Added import;'
+;''
 interface UseInfiniteScrollOptions {;;
-  hasMore: "boolean;",;
+  hasMore: "boolean;",;"
   loading: boolean;
   threshold?: number; // Distance from bottom to trigger load (in pixels);
-  rootMargin?: string; // Root margin for intersection observer;"
-  delayMs?: number; // Delay before loading more items;";"
-};";";"
-;";";";"
-interface UseInfiniteScrollReturn {;";";";";"
-  isFetching: "boolean;",;";";";";"
-  lastElementRef: "(node: HTMLElement | null) => void;",;";";";";"
-  resetScroll: "() => void;",";";";";"
-  scrollToTop: "() => void;";";"
-};";";"
-;";";";"
-export function useInfiniteScroll(): unknown {): unknown {): unknown {): unknown {): unknown {;";";";";"
-  loadMore: "() => Promise<void> | void",;";";";";"
-  options: "UseInfiniteScrollOptions",;"
-): UseInfiniteScrollReturn {;";"
-  const {;";";"
-    hasMore,;";";";"
-    loading,;";";";";"
-    threshold: "_threshold = 100",;";";";";"
-    rootMargin = '0px',;
+  rootMargin?: string; // Root margin for intersection observer;""
+  delayMs?: number; // Delay before loading more items;";""
+};";";""
+;";";";""
+interface UseInfiniteScrollReturn {;";";";";""
+  isFetching: "boolean;",;";";";";""
+  lastElementRef: "(node: HTMLElement | null) => void;",;";";";";""
+  resetScroll: "() => void;",";";";";""
+  scrollToTop: "() => void;";";""
+};";";""
+;";";";"";
+export function useInfiniteScroll(): unknown {): unknown {): unknown {): unknown {): unknown {;";";";";""
+  loadMore: "() => Promise<void> | void",;";";";";""
+  options: "UseInfiniteScrollOptions",;""
+): UseInfiniteScrollReturn {;";""
+  const {;";";""
+    hasMore,;";";";""
+    loading,;";";";";""
+    threshold: "_threshold = 100",;";";";";""
+    rootMargin = '0px',;'
     delayMs = 200,;
   } = options;
 ;
@@ -66,25 +66,25 @@ export function useInfiniteScroll(): unknown {): unknown {): unknown {): unknown
               clearTimeout(timeoutRef.current);
             };
 ;
-            // Add delay to prevent rapid successive calls;'
+            // Add delay to prevent rapid successive calls;''
             timeoutRef.current = setTimeout(async () => {;
               try {;
-                await loadMore();'
+                await loadMore();''
               } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;;
-                logErrorToProduction('Error loading more items:', {;;
-                  data: "error",;
+                logErrorToProduction('Error loading more items:', {;;'
+                  data: "error",;"
                 });
               } finally {;
                 setIsFetching(false);
                 timeoutRef.current = null;
-              };"
-            }, delayMs);";"
-          };";";"
-        },;";";";"
-        {;";";";";"
-          root: "null",;";";";"
-          rootMargin,;";";";";"
-          threshold: "0.1",;
+              };""
+            }, delayMs);";""
+          };";";""
+        },;";";";""
+        {;";";";";""
+          root: "null",;";";";""
+          rootMargin,;";";";";""
+          threshold: "0.1",;"
         },;
       );
 ;
@@ -98,13 +98,13 @@ export function useInfiniteScroll(): unknown {): unknown {): unknown {): unknown
     if (timeoutRef.current) {;
       clearTimeout(timeoutRef.current);
       timeoutRef.current = null;
-    };"
-  }, []);";"
-;";";"
-  const scrollToTop: unknown = useCallback(() => {;";";";"
-    window.scrollTo({;";";";";"
-      top: "0",;";";";";"
-      behavior: 'smooth',;
+    };""
+  }, []);";""
+;";";""
+  const scrollToTop: unknown = useCallback(() => {;";";";""
+    window.scrollTo({;";";";";""
+      top: "0",;";";";";""
+      behavior: 'smooth',;'
     });
   }, []);
 ;
@@ -122,16 +122,16 @@ export function useInfiniteScroll(): unknown {): unknown {): unknown {): unknown
     lastElementRef,;
     resetScroll,;
     scrollToTop,;
-  };'
+  };''
 };
 ;
-// Alternative hook for pagination-based infinite scroll;'
+// Alternative hook for pagination-based infinite scroll;'';
 export function useInfiniteScrollPagination<T>(;;
-  fetchFunction: "(;",;";";";";"
-    page: "number",;";";";";"
-    limit: "number",;";";";";"
-  ) => Promise<{ items: "T[]; hasMore: boolean; total?: number "}>,;";";";";"
-  initialLimit: "number = 20",;
+  fetchFunction: "(;",;";";";";""
+    page: "number",;";";";";""
+    limit: "number",;";";";";""
+  ) => Promise<{ items: "T[]; hasMore: boolean; total?: number "}>,;";";";";""
+  initialLimit: "number = 20",;"
 ) {;
   const [items, setItems] = useState<T[]>([]);
   const [page, setPage] = useState(1);
@@ -157,28 +157,28 @@ export function useInfiniteScrollPagination<T>(;;
   const loadMore: unknown = useCallback(async () => {;
     if (loading || !hasMore || isResetting.current) return;
 ;
-    setLoading(true);"
-    setError(null);";"
-;";";"
-    try {;";";";"
-      const result: unknown "unknown = await fetchFunction(page", initialLimit);
+    setLoading(true);""
+    setError(null);";""
+;";";""
+    try {;";";";""
+      const result: unknown "unknown = await fetchFunction(page", initialLimit);"
 ;
-      if (page === 1) {;"
-        // First page - replace items;";"
-        setItems(result.items);";";"
-      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}else {;";";";"
-        // Subsequent pages - append items;";";";";"
-        setItems((prevItems: "T[]) => [...prevItems", ...result.items]);
+      if (page === 1) {;""
+        // First page - replace items;";""
+        setItems(result.items);";";""
+      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}else {;";";";""
+        // Subsequent pages - append items;";";";";""
+        setItems((prevItems: "T[]) => [...prevItems", ...result.items]);"
       };
 ;
       setHasMore(result.hasMore);
       setPage((prevPage: number) => prevPage + 1);
-;"
-      if (result.total !== undefined) {;";"
-        setTotal(result.total);";";"
-      };";";";"
-    } catch {;";";";";"
-      logErrorToProduction('Error loading items:', { data: "error "});
+;""
+      if (result.total !== undefined) {;";""
+        setTotal(result.total);";";""
+      };";";";""
+    } catch {;";";";";""
+      logErrorToProduction('Error loading items:', { data: "error "});"
       setError(getErrorMessage(err));
     } finally {;
       setLoading(false);
@@ -211,20 +211,20 @@ export function useInfiniteScrollPagination<T>(;;
   const refresh: unknown = useCallback(async () => {;
     reset();
     // Wait for reset to complete;
-    await new Promise((resolve) => setTimeout(resolve, 150));"
-    try {;";"
-      showLoader(); // Show global loader for initial fetch;";";"
-      setLoading(true);";";";"
-      const result: unknown "unknown = await fetchFunction(1", initialLimit);
+    await new Promise((resolve) => setTimeout(resolve, 150));""
+    try {;";""
+      showLoader(); // Show global loader for initial fetch;";";""
+      setLoading(true);";";";""
+      const result: unknown "unknown = await fetchFunction(1", initialLimit);"
       setItems(result.items);
       setHasMore(result.hasMore);
       setPage(2); // Next page will be 2;
-      if (result.total !== undefined) {;"
-        setTotal(result.total);";"
-      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};";";"
-      setIsInitialized(true);";";";"
-    } catch {;";";";";"
-      logErrorToProduction('Error refreshing items:', { data: "error "});
+      if (result.total !== undefined) {;""
+        setTotal(result.total);";""
+      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};";";""
+      setIsInitialized(true);";";";""
+    } catch {;";";";";""
+      logErrorToProduction('Error refreshing items:', { data: "error "});"
       setError(getErrorMessage(err));
     } finally {;
       setLoading(false);
@@ -235,15 +235,15 @@ export function useInfiniteScrollPagination<T>(;;
   // Load initial page only once;
   useEffect(() => {;
     if (!isInitialized && !loading && !isResetting.current) {;
-      refresh();"
-    };";"
-  }, [isInitialized, loading, refresh]);";";"
-;";";";"
-  const infiniteScrollProps: unknown "unknown = useInfiniteScroll(loadMore", {;";";"
-    hasMore,;";";";"
-    loading,;";";";";"
-    threshold: "200",;";";";";"
-    delayMs: "300",;
+      refresh();""
+    };";""
+  }, [isInitialized, loading, refresh]);";";""
+;";";";""
+  const infiniteScrollProps: unknown "unknown = useInfiniteScroll(loadMore", {;";";""
+    hasMore,;";";";""
+    loading,;";";";";""
+    threshold: "200",;";";";";""
+    delayMs: "300",;"
   });
 ;
   return {;
@@ -258,16 +258,16 @@ export function useInfiniteScrollPagination<T>(;;
     ...infiniteScrollProps,;
   };
 };
-;"
-function getErrorMessage(): unknown {): unknown {): unknown {): unknown {): unknown {err: unknown): string {;";"
-  return err instanceof Error ? err.message : String(err);";";"
-};";";";"
-";";"
-};";";"
+;"";
+function getErrorMessage(): unknown {): unknown {): unknown {): unknown {): unknown {err: unknown): string {;";""
+  return err instanceof Error ? err.message : String(err);";";""
+};";";";""
+";";""
+};";";""
+}";""
+};";""
 }";"
-};";"
-}";
-};"
-}"
+};""
+}""
 }
-}"
+}""

@@ -1,1 +1,1 @@
-export { default } from '@/pages/features/TalentMarketplace'; '''''
+export { default } from '@/pages/features/TalentMarketplace'; ''''''

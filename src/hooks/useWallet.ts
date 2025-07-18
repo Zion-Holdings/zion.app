@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-import { useAuth } from '@/hooks/useAuth;'
-import { supabase } from '@/integrations/supabase/client;'
-import type { Wallet, TokenTransaction } from '@/types/tokens;'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { useEffect, useState } from 'react';';
+import { useAuth } from '@/hooks/useAuth;'';
+import { supabase } from '@/integrations/supabase/client;'';
+import type { Wallet, TokenTransaction } from '@/types/tokens;'';
+import { logErrorToProduction } from '@/utils/productionLogger;'
 ;
 export function useWallet(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const { _user } = useAuth();
@@ -15,25 +15,25 @@ export function useWallet(): unknown {): unknown {): unknown {): unknown {): unk
     if (!user?.id) {;
       setWallet(null);
       setLoading(false);
-      return;'
+      return;''
     };
 ;
-    try {;'
+    try {;''
       setLoading(true);;
-      if (!supabase) throw new Error('Supabase client not initialized');'
+      if (!supabase) throw new Error('Supabase client not initialized');''
       const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;;
-        .from('wallets');;
-        .select('*');;
-        .eq('user_id', user.id);
+        .from('wallets');;'
+        .select('*');;'
+        .eq('user_id', user.id);'
         .single();
 ;
       if (error) {;
-        throw error;'
+        throw error;''
       };
 ;
-      setWallet(data);'
+      setWallet(data);''
     } catch (err: unknown) {;;
-      logErrorToProduction('Error fetching wallet:', { data: "err "});
+      logErrorToProduction('Error fetching wallet:', { data: "err "});"
       setError(err instanceof Error ? err.message : String(err));
     } finally {;
       setLoading(false);
@@ -41,56 +41,56 @@ export function useWallet(): unknown {): unknown {): unknown {): unknown {): unk
   };
 ;
   async function fetchTransactions(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
-    if (!user?.id) {;"
-      setTransactions([]);";"
-      return;";";"
-    };";";";"
-    try {;";";";";"
-      if (!supabase) throw new Error('Supabase client not initialized');'
+    if (!user?.id) {;""
+      setTransactions([]);";""
+      return;";";""
+    };";";";""
+    try {;";";";";""
+      if (!supabase) throw new Error('Supabase client not initialized');''
       const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;;
-        .from('token_transactions');;
-        .select('*');;
-        .eq('user_id', user.id);;
-        .order('created_at', { ascending: "false "});"
-;";"
-      if (error) throw error;";";"
-      setTransactions((data || []) as TokenTransaction[]);";";";"
-    } catch (err: unknown) {;";";";";"
-      logErrorToProduction('Error fetching transactions:', { data: "err "});";"
-    };";";"
-  };";";";"
-;";";";";"
-  async function earnTokens(): unknown {): unknown {): unknown {): unknown {): unknown {amount: "number", reason?: string) {;";";"
-    if (!user?.id) return;";";";"
-    setWallet((prev) =>;";";";";"
-      prev ? { ...prev, balance: "prev.balance + amount "} : prev,;";"
-    );";";"
-    setTransactions((prev) => {;";";";"
-      const newTransaction: unknown = {;";,";";";"
-        id: "crypto.randomUUID()",;";";";";"
-        user_id: "user.id",;";";";"
-        amount,;";";";";"
-        transaction_type: 'earn' as const,;;
-        reason: "reason || null",;";";";";"
-        created_at: "new Date().toISOString()",;
-      };"
-      return [newTransaction, ...prev];";"
-    });";";"
-  };";";";"
-;";";";";"
-  async function spendTokens(): unknown {): unknown {): unknown {): unknown {): unknown {amount: "number", reason?: string) {;";";"
-    if (!user?.id) return;";";";"
-    setWallet((prev) =>;";";";";"
-      prev ? { ...prev, balance: "Math.max(0", prev.balance - amount) } : prev,;";"
-    );";";"
-    setTransactions((prev) => {;";";";"
-      const newTransaction: unknown = {;";,";";";"
-        id: "crypto.randomUUID()",;";";";";"
-        user_id: "user.id",;";";";"
-        amount,;";";";";"
-        transaction_type: 'burn' as const,;;
-        reason: "reason || null",;";";";";"
-        created_at: "new Date().toISOString()",;
+        .from('token_transactions');;'
+        .select('*');;'
+        .eq('user_id', user.id);;'
+        .order('created_at', { ascending: "false "});""
+;";""
+      if (error) throw error;";";""
+      setTransactions((data || []) as TokenTransaction[]);";";";""
+    } catch (err: unknown) {;";";";";""
+      logErrorToProduction('Error fetching transactions:', { data: "err "});";""
+    };";";""
+  };";";";""
+;";";";";""
+  async function earnTokens(): unknown {): unknown {): unknown {): unknown {): unknown {amount: "number", reason?: string) {;";";""
+    if (!user?.id) return;";";";""
+    setWallet((prev) =>;";";";";""
+      prev ? { ...prev, balance: "prev.balance + amount "} : prev,;";""
+    );";";""
+    setTransactions((prev) => {;";";";""
+      const newTransaction: unknown = {;";,";";";""
+        id: "crypto.randomUUID()",;";";";";""
+        user_id: "user.id",;";";";""
+        amount,;";";";";""
+        transaction_type: 'earn' as const,;;'
+        reason: "reason || null",;";";";";""
+        created_at: "new Date().toISOString()",;"
+      };""
+      return [newTransaction, ...prev];";""
+    });";";""
+  };";";";""
+;";";";";""
+  async function spendTokens(): unknown {): unknown {): unknown {): unknown {): unknown {amount: "number", reason?: string) {;";";""
+    if (!user?.id) return;";";";""
+    setWallet((prev) =>;";";";";""
+      prev ? { ...prev, balance: "Math.max(0", prev.balance - amount) } : prev,;";""
+    );";";""
+    setTransactions((prev) => {;";";";""
+      const newTransaction: unknown = {;";,";";";""
+        id: "crypto.randomUUID()",;";";";";""
+        user_id: "user.id",;";";";""
+        amount,;";";";";""
+        transaction_type: 'burn' as const,;;'
+        reason: "reason || null",;";";";";""
+        created_at: "new Date().toISOString()",;"
       };
       return [newTransaction, ...prev];
     });
@@ -108,28 +108,28 @@ export function useWallet(): unknown {): unknown {): unknown {): unknown {): unk
     error,;
     fetchWallet,;
     fetchTransactions,;
-    earnTokens,;"
-    spendTokens,;";"
-  };";";"
-};";";";"
-";
+    earnTokens,;""
+    spendTokens,;";""
+  };";";""
+};";";";""
+";"
 };
-};"
-};";"
-};";";"
-}";
-};
-};
-};"
-};";"
-}";
+};""
+};";""
+};";";""
+}";"
 };
 };
+};""
+};";""
+}";"
 };
-};"
-}"
+};
+};
+};""
+}""
 }
 }
 }
 }
-}"
+}""
