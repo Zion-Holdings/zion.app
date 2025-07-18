@@ -448,8 +448,8 @@ class PerformanceMonitor {
       // Also store historical data
       const historyPath = path.join(process.cwd(), 'logs', 'performance-history.jsonl');
       await fs.appendFile(historyPath, JSON.stringify(metrics) + '\n');
-    } catch {
-      console.('Failed to store metrics:', );
+    } catch (err) {
+      console.error('Failed to store metrics:', err);
     }
   }
 
@@ -476,7 +476,7 @@ class PerformanceMonitor {
 
     try {
       await axios.post(this.slackWebhook, payload);
-    } catch (_slackError) {
+    } catch (slackError) {
       console.error('Failed to send error alert to Slack:', slackError);
     }
   }
@@ -496,8 +496,8 @@ class PerformanceMonitor {
       return lines
         .map(line => JSON.parse(line))
         .filter(metric => new Date(metric.timestamp) > cutoff);
-    } catch {
-      console.('Failed to get performance history:', );
+    } catch (err) {
+      console.error('Failed to get performance history:', err);
       return [];
     }
   }
