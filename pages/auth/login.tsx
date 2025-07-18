@@ -203,34 +203,7 @@ const LoginPage = () => {
     }
   };
 
-  const _handleProactiveResendVerification = undefined; // Unused async (_e: FormEvent) => {
-    e.preventDefault();
-    if (!_proactiveResendEmail) {
-      setProactiveResendMessage({ type: 'error', text: 'Please enter your email address.' });
-      return;
-    }
-
-    setIsProactivelyResending(true);
-    setProactiveResendMessage(null);
-    try {
-      const response = await fetch('/api/resend-verification-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: _proactiveResendEmail })
-      });
-
-      const data = await response.json();
-      if (response.ok) {
-        setProactiveResendMessage({ type: 'success', text: `Verification email sent to ${_proactiveResendEmail}. Please check your inbox (and spam folder).` });
-      } else {
-        setProactiveResendMessage({ type: 'error', text: data.message || 'Failed to resend verification email.' });
-      }
-    } catch {
-      setProactiveResendMessage({ type: 'error', text: 'An unexpected error occurred. Please try again.' });
-    } finally {
-      setIsProactivelyResending(false);
-    }
-  };
+  // Removed unused _handleProactiveResendVerification block that contained invalid await usage.
 
   const handleLogin = async (_e: FormEvent) => {
     e.preventDefault();
