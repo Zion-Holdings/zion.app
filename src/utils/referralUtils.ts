@@ -1,7 +1,6 @@
 import { safeStorage } from './safeStorage';
 import { logErrorToProduction } from '@/utils/productionLogger';
 
-
 /**
  * Formats a date for display in the referral system
  * @param date Date or string to format
@@ -17,7 +16,7 @@ export function formatDate(date: Date | string | undefined): string {
       year: 'numeric',
     }).format(d);
   } catch {
-    logErrorToProduction('Error formatting date:', { data:  e });
+    logErrorToProduction('Error formatting date:', { data: e });
     return '-';
   }
 }
@@ -27,10 +26,10 @@ export function formatDate(date: Date | string | undefined): string {
  */
 export function checkUrlForReferralCode(): string | null {
   if (typeof window === 'undefined') return null;
-  
+
   const url = new URL(window.location.href);
   const refCode = url.searchParams.get('ref');
-  
+
   if (refCode) {
     safeStorage.setItem('referral_code', refCode);
     // Remove it from URL to keep it clean
@@ -38,18 +37,21 @@ export function checkUrlForReferralCode(): string | null {
     window.history.replaceState({}, document.title, url.toString());
     return refCode;
   }
-  
+
   return safeStorage.getItem('referral_code');
 }
 
 /**
  * Track referral when a user signs up
  */
-export async function trackReferral(userId: string, email: string): Promise<boolean> {
+export async function trackReferral(
+  userId: string,
+  email: string,
+): Promise<boolean> {
   try {
     const refCode = safeStorage.getItem('referral_code');
     if (!refCode) return false;
-    
+
     // Call API to record the referral
     const response = await fetch('/api/track-referral', {
       method: 'POST',
@@ -63,7 +65,7 @@ export async function trackReferral(userId: string, email: string): Promise<bool
         ipAddress: '', // This will be captured by the server
       }),
     });
-    
+
     if (response.ok) {
       // Clear the stored referral code
       safeStorage.removeItem('referral_code');

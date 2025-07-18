@@ -10,7 +10,7 @@ export class TeamsService {
     const res = await fetch(this.webhookUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text })
+      body: JSON.stringify({ text }),
     });
 
     if (!res.ok) {

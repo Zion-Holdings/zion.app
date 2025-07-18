@@ -27,13 +27,19 @@ function highlight(text: string, term: string) {
           </mark>
         ) : (
           part
-        )
+        ),
       )}
     </>
   );
 }
 
-export function SearchTabs({ products, talent, posts, docs, query }: SearchTabsProps) {
+export function SearchTabs({
+  products,
+  talent,
+  posts,
+  docs,
+  query,
+}: SearchTabsProps) {
   return (
     <Tabs defaultValue="products" className="space-y-4">
       <TabsList className="mb-4">
@@ -44,32 +50,58 @@ export function SearchTabs({ products, talent, posts, docs, query }: SearchTabsP
       </TabsList>
       <TabsContent value="products" className="space-y-4">
         {products.map((p) => (
-          <div key={p.id} className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4">
-            <h3 className="text-lg font-bold text-white">{highlight(p.title, query)}</h3>
-            <p className="text-zion-slate-light">{highlight(p.description, query)}</p>
+          <div
+            key={p.id}
+            className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4"
+          >
+            <h3 className="text-lg font-bold text-white">
+              {highlight(p.title, query)}
+            </h3>
+            <p className="text-zion-slate-light">
+              {highlight(p.description, query)}
+            </p>
           </div>
         ))}
       </TabsContent>
       <TabsContent value="talent" className="space-y-4">
         {talent.map((t) => (
-          <div key={t.id} className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4">
-            <h3 className="text-lg font-bold text-white">{highlight(t.full_name, query)}</h3>
-            <p className="text-zion-slate-light">{highlight(t.professional_title || '', query)}</p>
+          <div
+            key={t.id}
+            className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4"
+          >
+            <h3 className="text-lg font-bold text-white">
+              {highlight(t.full_name, query)}
+            </h3>
+            <p className="text-zion-slate-light">
+              {highlight(t.professional_title || '', query)}
+            </p>
           </div>
         ))}
       </TabsContent>
       <TabsContent value="posts" className="space-y-4">
         {posts.map((post) => (
-          <div key={post.id} className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4">
-            <h3 className="text-lg font-bold text-white">{highlight(post.title, query)}</h3>
-            <p className="text-zion-slate-light">{highlight(post.excerpt, query)}</p>
+          <div
+            key={post.id}
+            className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4"
+          >
+            <h3 className="text-lg font-bold text-white">
+              {highlight(post.title, query)}
+            </h3>
+            <p className="text-zion-slate-light">
+              {highlight(post.excerpt, query)}
+            </p>
           </div>
         ))}
       </TabsContent>
       <TabsContent value="docs" className="space-y-4">
         {docs.map((doc) => (
-          <div key={doc.text} className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4">
-            <h3 className="text-lg font-bold text-white">{highlight(doc.text, query)}</h3>
+          <div
+            key={doc.text}
+            className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4"
+          >
+            <h3 className="text-lg font-bold text-white">
+              {highlight(doc.text, query)}
+            </h3>
             <p className="text-zion-slate-light">{doc.path}</p>
           </div>
         ))}

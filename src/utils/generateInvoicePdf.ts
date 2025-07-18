@@ -20,12 +20,17 @@ export async function generateInvoicePdf(order: OrderDetail): Promise<Blob> {
   doc.text(`Date: ${new Date(order.date).toLocaleDateString()}`, 20, 30);
 
   // Shipping address section
-  const address = `${order.shippingAddress.name}\n${order.shippingAddress.street}\n` +
+  const address =
+    `${order.shippingAddress.name}\n${order.shippingAddress.street}\n` +
     `${order.shippingAddress.city}, ${order.shippingAddress.state} ${order.shippingAddress.zip}`;
   doc.text(address, 20, 40);
 
   // Items table
-  const items = order.items.map(i => [i.name, String(i.quantity), `$${i.price.toFixed(2)}`]);
+  const items = order.items.map((i) => [
+    i.name,
+    String(i.quantity),
+    `$${i.price.toFixed(2)}`,
+  ]);
   doc.autoTable({
     head: [['Item', 'Qty', 'Price']],
     body: items,

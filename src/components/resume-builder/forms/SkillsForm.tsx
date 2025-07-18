@@ -1,4 +1,3 @@
-
 import { SkillsForm as SkillsFormComponent } from './skills';
 import type { SkillsFormProps } from './skills/types';
 

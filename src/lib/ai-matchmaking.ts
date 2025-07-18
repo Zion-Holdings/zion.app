@@ -21,8 +21,8 @@ export interface MatchResult {
 // Function to find matches based on query and type
 export async function findMatches(
   query: string,
-  type: string = "",
-  limit: number = 5
+  type: string = '',
+  limit: number = 5,
 ): Promise<MatchResult[]> {
   try {
     // Replace simulated logic with real API call

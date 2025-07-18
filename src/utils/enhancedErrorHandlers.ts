@@ -1,5 +1,9 @@
-import { enhancedGlobalErrorHandler, ToastType, ToastPriority } from './globalToastManager';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import {
+  enhancedGlobalErrorHandler,
+  ToastType,
+  ToastPriority,
+} from './globalToastManager';
+import { logErrorToProduction } from '@/utils/productionLogger';
 import { isPublicRoute } from '../config/publicRoutes';
 import { logDebug } from '@/utils/productionLogger';
 
@@ -30,11 +34,14 @@ export class EnhancedApiErrorHandler {
   /**
    * Handle API errors with intelligent toast management
    */
-  handleApiError(error: unknown, options?: {
-    retryAction?: () => void;
-    showToast?: boolean;
-    context?: string;
-  }): void {
+  handleApiError(
+    error: unknown,
+    options?: {
+      retryAction?: () => void;
+      showToast?: boolean;
+      context?: string;
+    },
+  ): void {
     const { retryAction, showToast = true, context } = options || {};
 
     let status: number | undefined;
@@ -49,19 +56,29 @@ export class EnhancedApiErrorHandler {
 
     // Skip certain URLs that shouldn't show user-facing errors
     const silentPatterns = [
-      '/health', '/status', '/heartbeat', '/ping',
-      '/analytics', '/metrics', '/telemetry',
-      'supabase.co', 'googleapis.com', 'github.com/api'
+      '/health',
+      '/status',
+      '/heartbeat',
+      '/ping',
+      '/analytics',
+      '/metrics',
+      '/telemetry',
+      'supabase.co',
+      'googleapis.com',
+      'github.com/api',
     ];
 
-    const shouldFailSilently = url && silentPatterns.some(pattern => url.includes(pattern));
+    const shouldFailSilently =
+      url && silentPatterns.some((pattern) => url.includes(pattern));
     if (shouldFailSilently) {
       let data: unknown = undefined;
       if (typeof error === 'object' && error !== null) {
         const apiError = error as ApiError;
         data = apiError.response?.data;
       }
-      logDebug('Silent API error (${status} ${method}): ${url}', { data:  { data } });
+      logDebug('Silent API error (${status} ${method}): ${url}', {
+        data: { data },
+      });
       return;
     }
 
@@ -69,20 +86,26 @@ export class EnhancedApiErrorHandler {
     // log it but don't show a toast.
     if (
       (status === 401 || status === 403) &&
-      typeof window !== 'undefined' && isPublicRoute(window.location.pathname)
+      typeof window !== 'undefined' &&
+      isPublicRoute(window.location.pathname)
     ) {
-      logErrorToProduction(`Auth error (${status}) for API ${url} on public page ${window.location.pathname} suppressed.`, (error as Error) ? (error as Error) : undefined, {
-        context: context || 'apiRequestPublicPageContext',
-        status,
-        method,
-        apiUrl: url,
-        pageUrl: window.location.pathname,
-      });
+      logErrorToProduction(
+        `Auth error (${status}) for API ${url} on public page ${window.location.pathname} suppressed.`,
+        (error as Error) ? (error as Error) : undefined,
+        {
+          context: context || 'apiRequestPublicPageContext',
+          status,
+          method,
+          apiUrl: url,
+          pageUrl: window.location.pathname,
+        },
+      );
       // If showToast was explicitly false, we might still want other logic.
       // However, the primary goal is to suppress the user-facing toast.
       // If options.showToast is explicitly false, this won't show a toast anyway.
       // This check ensures that even if showToast was true or undefined, it's suppressed on public pages.
-      if (showToast !== false) { // Default is true, so if not explicitly false, we suppress and return.
+      if (showToast !== false) {
+        // Default is true, so if not explicitly false, we suppress and return.
         return;
       }
     }
@@ -181,10 +204,13 @@ export class EnhancedApiErrorHandler {
   /**
    * Handle network errors specifically
    */
-  handleNetworkError(error: unknown, options?: {
-    retryAction?: () => void;
-    context?: string;
-  }): void {
+  handleNetworkError(
+    error: unknown,
+    options?: {
+      retryAction?: () => void;
+      context?: string;
+    },
+  ): void {
     this.handleApiError(error, {
       ...options,
       showToast: true,
@@ -228,30 +254,47 @@ export class EnhancedConsoleErrorHandler {
 
         // Patterns that should not trigger user-facing toasts
         const silentPatterns = [
-          'Warning:', 'Failed to fetch', 'Non-Error promise rejection captured',
-          'ResizeObserver loop limit exceeded', 'Script error', 'Network request failed',
-          'AuthProvider DEBUG', 'LOGIN TRACE', 'Background request failed',
-          'getUser()', 'Session expired', 'chunk-', 'Loading chunk', '_next',
-          'hydration', 'act()', 'HMR', 'webpack'
+          'Warning:',
+          'Failed to fetch',
+          'Non-Error promise rejection captured',
+          'ResizeObserver loop limit exceeded',
+          'Script error',
+          'Network request failed',
+          'AuthProvider DEBUG',
+          'LOGIN TRACE',
+          'Background request failed',
+          'getUser()',
+          'Session expired',
+          'chunk-',
+          'Loading chunk',
+          '_next',
+          'hydration',
+          'act()',
+          'HMR',
+          'webpack',
         ];
 
-        const shouldShowErrorToUser = !silentPatterns.some(pattern =>
-          _message.toLowerCase().includes(pattern.toLowerCase())
-        ) && (
-          _message.includes('Uncaught') ||
-          _message.includes('TypeError') ||
-          _message.includes('ReferenceError') ||
-          _message.includes('critical') ||
-          _message.includes('failed to load') ||
-          _message.includes('initialization')
-        );
+        const shouldShowErrorToUser =
+          !silentPatterns.some((pattern) =>
+            _message.toLowerCase().includes(pattern.toLowerCase()),
+          ) &&
+          (_message.includes('Uncaught') ||
+            _message.includes('TypeError') ||
+            _message.includes('ReferenceError') ||
+            _message.includes('critical') ||
+            _message.includes('failed to load') ||
+            _message.includes('initialization'));
 
         // Log error for debugging
         try {
-          logErrorToProduction(first instanceof Error ? first.message : _message, first instanceof Error ? first : undefined, {
-            context: 'consoleError',
-            args: args.slice(1),
-          });
+          logErrorToProduction(
+            first instanceof Error ? first.message : _message,
+            first instanceof Error ? first : undefined,
+            {
+              context: 'consoleError',
+              args: args.slice(1),
+            },
+          );
         } catch {
           this.originalConsoleError('Error reporting to logger:', sentryError);
         }
@@ -272,9 +315,11 @@ export class EnhancedConsoleErrorHandler {
 
         // Always call original console.error
         this.originalConsoleError(...args);
-
       } catch (_overallError) {
-        this.originalConsoleError('Critical error in console.error override:', overallError);
+        this.originalConsoleError(
+          'Critical error in console.error override:',
+          overallError,
+        );
       } finally {
         this.isProcessingError = false;
       }
@@ -311,13 +356,19 @@ export class EnhancedFetchErrorHandler {
   private overrideFetch(): void {
     if (typeof window === 'undefined' || !this.originalFetch) return;
 
-    window.fetch = async (...args: Parameters<typeof fetch>): Promise<Response> => {
+    window.fetch = async (
+      ...args: Parameters<typeof fetch>
+    ): Promise<Response> => {
       try {
         const response = await this.originalFetch(...args);
 
         if (!response.ok) {
-          const url = typeof args[0] === 'string' ? args[0] : 
-                     (args[0] instanceof URL ? args[0].href : args[0].url);
+          const url =
+            typeof args[0] === 'string'
+              ? args[0]
+              : args[0] instanceof URL
+                ? args[0].href
+                : args[0].url;
 
           // Skip Next.js internal requests
           if (url.includes('/_next/')) {
@@ -325,21 +376,29 @@ export class EnhancedFetchErrorHandler {
           }
 
           // Check if we should show this error to the user
-          const shouldShowError = this.shouldShowFetchError(response.status, url);
+          const shouldShowError = this.shouldShowFetchError(
+            response.status,
+            url,
+          );
 
           if (shouldShowError) {
             // Check if the CURRENT PAGE is public before showing auth-related errors for API calls
             if (
               (response.status === 401 || response.status === 403) &&
-              typeof window !== 'undefined' && isPublicRoute(window.location.pathname)
+              typeof window !== 'undefined' &&
+              isPublicRoute(window.location.pathname)
             ) {
               // Log the error for debugging but don't show a toast if on a public page
-              logErrorToProduction(`Auth error (${response.status}) for API ${url} on public page ${window.location.pathname} suppressed.`, undefined, {
-                context: 'fetchRequestPublicPageContext',
-                status: response.status,
-                apiUrl: url,
-                pageUrl: window.location.pathname,
-              });
+              logErrorToProduction(
+                `Auth error (${response.status}) for API ${url} on public page ${window.location.pathname} suppressed.`,
+                undefined,
+                {
+                  context: 'fetchRequestPublicPageContext',
+                  status: response.status,
+                  apiUrl: url,
+                  pageUrl: window.location.pathname,
+                },
+              );
               return response; // Skip toast for auth errors if user is on a public page
             }
 
@@ -352,9 +411,11 @@ export class EnhancedFetchErrorHandler {
               else if (data?.message) errorMessage = String(data.message);
             } catch {
               // Use status-based message
-              if (response.status === 401) errorMessage = 'Authentication required';
+              if (response.status === 401)
+                errorMessage = 'Authentication required';
               else if (response.status === 403) errorMessage = 'Access denied';
-              else if (response.status === 429) errorMessage = 'Too many requests';
+              else if (response.status === 429)
+                errorMessage = 'Too many requests';
               else if (response.status >= 500) errorMessage = 'Server error';
             }
 
@@ -378,8 +439,8 @@ export class EnhancedFetchErrorHandler {
 
         // Only show network errors for user-initiated requests
         if (!this.shouldFailSilently(url)) {
-        const message = 'Network error – please retry';
-          
+          const message = 'Network error – please retry';
+
           enhancedGlobalErrorHandler.reportError(message, {
             type: ToastType.NETWORK_ERROR,
             priority: ToastPriority.HIGH,
@@ -393,7 +454,11 @@ export class EnhancedFetchErrorHandler {
           });
         }
 
-        logErrorToProduction((err as Error)?.message || String(err), (err as Error) ? (err as Error) : undefined, { context: 'fetchInterceptor', url });
+        logErrorToProduction(
+          (err as Error)?.message || String(err),
+          (err as Error) ? (err as Error) : undefined,
+          { context: 'fetchInterceptor', url },
+        );
         throw err;
       }
     };
@@ -409,12 +474,21 @@ export class EnhancedFetchErrorHandler {
 
   private shouldFailSilently(url: string): boolean {
     const silentPatterns = [
-      '/_next/', '/api/auth/session', '/api/health', '/api/status',
-      '/api/heartbeat', '/api/ping', '/analytics', '/metrics',
-      '/telemetry', 'supabase.co', 'googleapis.com', 'github.com/api'
+      '/_next/',
+      '/api/auth/session',
+      '/api/health',
+      '/api/status',
+      '/api/heartbeat',
+      '/api/ping',
+      '/analytics',
+      '/metrics',
+      '/telemetry',
+      'supabase.co',
+      'googleapis.com',
+      'github.com/api',
     ];
 
-    return silentPatterns.some(pattern => url.includes(pattern));
+    return silentPatterns.some((pattern) => url.includes(pattern));
   }
 
   private getToastTypeForStatus(status: number): ToastType {
@@ -424,7 +498,8 @@ export class EnhancedFetchErrorHandler {
   }
 
   private getPriorityForStatus(status: number): ToastPriority {
-    if (status === 401 || status === 403 || status >= 500) return ToastPriority.HIGH;
+    if (status === 401 || status === 403 || status >= 500)
+      return ToastPriority.HIGH;
     return ToastPriority.NORMAL;
   }
 
@@ -447,4 +522,4 @@ if (typeof window !== 'undefined') {
 // Export singleton instances
 export const apiErrorHandler = EnhancedApiErrorHandler.getInstance();
 export const consoleErrorHandler = EnhancedConsoleErrorHandler.getInstance();
-export const fetchErrorHandler = EnhancedFetchErrorHandler.getInstance(); 
+export const fetchErrorHandler = EnhancedFetchErrorHandler.getInstance();

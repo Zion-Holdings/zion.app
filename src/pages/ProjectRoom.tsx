@@ -1,18 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { MessageSquare, FileText, Video, Calendar, Users, Settings, X } from '@/components/ui/icons';
+import {
+  MessageSquare,
+  FileText,
+  Video,
+  Calendar,
+  Users,
+  Settings,
+  X,
+} from '@/components/ui/icons';
 import { useRouter } from 'next/router'; // Changed from useParams
 import { Header } from '@/components/Header';
 import { SEO } from '@/components/SEO';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-
-
-
-
-
-
-
 
 import { VideoCallRoom } from '@/components/video/VideoCallRoom';
 import { toast } from 'sonner';
@@ -23,42 +30,44 @@ export default function ProjectRoom() {
   const projectId = typeof rawProjectId === 'string' ? rawProjectId : ''; // Ensure string, default to empty if not
   const [activeTab, setActiveTab] = useState('chat');
   const [isInCall, setIsInCall] = useState(false);
-  const [callParticipants, setCallParticipants] = useState<Array<{
-    id: string;
-    name: string;
-    avatar?: string;
-    isMuted?: boolean;
-    isVideoEnabled?: boolean;
-    isScreenSharing?: boolean;
-    isHost?: boolean;
-  }>>([
+  const [callParticipants, setCallParticipants] = useState<
+    Array<{
+      id: string;
+      name: string;
+      avatar?: string;
+      isMuted?: boolean;
+      isVideoEnabled?: boolean;
+      isScreenSharing?: boolean;
+      isHost?: boolean;
+    }>
+  >([
     {
       id: 'user-1',
       name: 'You',
       isHost: true,
       isVideoEnabled: true,
-      isMuted: false
-    }
+      isMuted: false,
+    },
   ]);
-  
+
   const startVideoCall = () => {
     setIsInCall(true);
-    toast.success("Video call started", {
-      description: "Others can join with the project room link"
+    toast.success('Video call started', {
+      description: 'Others can join with the project room link',
     });
     // Switch to video tab if not already there
     if (activeTab !== 'video') {
       setActiveTab('video');
     }
   };
-  
+
   const endVideoCall = () => {
     setIsInCall(false);
-    toast.info("Video call ended", {
-      description: "Call duration and participants will be logged"
+    toast.info('Video call ended', {
+      description: 'Call duration and participants will be logged',
     });
   };
-  
+
   // --- Video Call Integration Point ---
   // _Reactivate: Simulate a user joining the call after a delay
   useEffect(() => {
@@ -74,35 +83,39 @@ export default function ProjectRoom() {
             isMuted: false,
           },
         ]);
-        toast.success('Alice joined the call', { description: 'A new participant has joined your project room.' });
+        toast.success('Alice joined the call', {
+          description: 'A new participant has joined your project room.',
+        });
       }, 2000);
       return () => clearTimeout(joinTimeout);
     }
     return undefined; // Explicit return for when isInCall is false
   }, [isInCall]);
 
-  const [chatMessages, setChatMessages] = useState<{user: string, text: string}[]>([]);
+  const [chatMessages, setChatMessages] = useState<
+    { user: string; text: string }[]
+  >([]);
   const [chatInput, setChatInput] = useState('');
   const handleSendMessage = (_e: React.FormEvent) => {
     e.preventDefault();
     if (!chatInput.trim()) return;
-    setChatMessages(msgs => [...msgs, { user: 'You', text: chatInput }]);
+    setChatMessages((msgs) => [...msgs, { user: 'You', text: chatInput }]);
     setChatInput('');
   };
 
   const [files, setFiles] = useState<File[]>([]);
   const handleFileUpload = (_e: React.ChangeEvent<HTMLInputElement>) => {
     const filesArray = e.target.files ? Array.from(e.target.files) : [];
-    setFiles(prev => [...prev, ...filesArray]);
+    setFiles((prev) => [...prev, ...filesArray]);
   };
 
-  const [events, setEvents] = useState<{title: string, date: string}[]>([]);
+  const [events, setEvents] = useState<{ title: string; date: string }[]>([]);
   const [eventTitle, setEventTitle] = useState('');
   const [eventDate, setEventDate] = useState('');
   const handleAddEvent = (_e: React.FormEvent) => {
     e.preventDefault();
     if (!eventTitle.trim() || !eventDate) return;
-    setEvents(evts => [...evts, { title: eventTitle, date: eventDate }]);
+    setEvents((evts) => [...evts, { title: eventTitle, date: eventDate }]);
     setEventTitle('');
     setEventDate('');
   };
@@ -112,7 +125,7 @@ export default function ProjectRoom() {
   const handleAddTeamMember = (_e: React.FormEvent) => {
     e.preventDefault();
     if (!teamInput.trim()) return;
-    setTeam(t => [...t, teamInput]);
+    setTeam((t) => [...t, teamInput]);
     setTeamInput('');
   };
 
@@ -124,10 +137,13 @@ export default function ProjectRoom() {
     setSettingsSaved(true);
     setTimeout(() => setSettingsSaved(false), 2000);
   };
-  
+
   return (
     <>
-      <SEO title={`Project Room - ${projectId}`} description="Collaborate on your project" />
+      <SEO
+        title={`Project Room - ${projectId}`}
+        description="Collaborate on your project"
+      />
       <Header />
       <main className="container mx-auto py-8">
         <div className="flex justify-between items-center mb-6">
@@ -142,8 +158,12 @@ export default function ProjectRoom() {
             <Button variant="outline">Invite Team Member</Button>
           </div>
         </div>
-        
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-4">
+
+        <Tabs
+          value={activeTab}
+          onValueChange={setActiveTab}
+          className="space-y-4"
+        >
           <TabsList className="grid grid-cols-6 md:w-fit">
             <TabsTrigger value="chat" className="flex items-center gap-2">
               <MessageSquare className="h-4 w-4" />
@@ -176,21 +196,27 @@ export default function ProjectRoom() {
               <span className="hidden sm:inline">Settings</span>
             </TabsTrigger>
           </TabsList>
-          
+
           <TabsContent value="chat" className="space-y-4">
             <Card>
               <CardHeader>
                 <CardTitle>Project Chat</CardTitle>
-                <CardDescription>Communicate with your team members</CardDescription>
+                <CardDescription>
+                  Communicate with your team members
+                </CardDescription>
               </CardHeader>
               <CardContent className="h-[400px] flex flex-col">
                 <div className="flex-1 overflow-y-auto mb-2" id="chat-messages">
                   {/* Minimal chat: local state only */}
                   {chatMessages.length === 0 ? (
-                    <div className="flex items-center justify-center h-full text-muted-foreground">No messages yet</div>
+                    <div className="flex items-center justify-center h-full text-muted-foreground">
+                      No messages yet
+                    </div>
                   ) : (
                     chatMessages.map((msg, idx) => (
-                      <div key={idx} className="mb-2"><b>{msg.user}:</b> {msg.text}</div>
+                      <div key={idx} className="mb-2">
+                        <b>{msg.user}:</b> {msg.text}
+                      </div>
                     ))
                   )}
                 </div>
@@ -199,14 +225,16 @@ export default function ProjectRoom() {
                     className="flex-1 border rounded px-2 py-1"
                     placeholder="Type a message..."
                     value={chatInput}
-                    onChange={e => setChatInput(e.target.value)}
+                    onChange={(e) => setChatInput(e.target.value)}
                   />
-                  <Button type="submit" disabled={!chatInput.trim()}>Send</Button>
+                  <Button type="submit" disabled={!chatInput.trim()}>
+                    Send
+                  </Button>
                 </form>
               </CardContent>
             </Card>
           </TabsContent>
-          
+
           <TabsContent value="files" className="space-y-4">
             <Card>
               <CardHeader>
@@ -219,16 +247,14 @@ export default function ProjectRoom() {
                   {files.length === 0 ? (
                     <li className="text-muted-foreground">No files uploaded</li>
                   ) : (
-                    files.map((file, idx) => (
-                      <li key={idx}>{file.name}</li>
-                    ))
+                    files.map((file, idx) => <li key={idx}>{file.name}</li>)
                   )}
                 </ul>
                 <input type="file" onChange={handleFileUpload} />
               </CardContent>
             </Card>
           </TabsContent>
-          
+
           <TabsContent value="video" className="space-y-4">
             <Card>
               <CardHeader>
@@ -238,12 +264,12 @@ export default function ProjectRoom() {
               <CardContent className="min-h-[400px] p-4">
                 {isInCall ? (
                   <div className="space-y-4">
-                    <VideoCallRoom 
+                    <VideoCallRoom
                       roomId={`project-${projectId}`}
                       participants={callParticipants}
                       onLeave={endVideoCall}
                     />
-                    
+
                     {/* This button is just for demo/testing purposes */}
                     {/* <div className="flex justify-center mt-4">
                       <Button variant="outline" onClick={simulateUserJoining} className="text-sm">
@@ -253,9 +279,14 @@ export default function ProjectRoom() {
                   </div>
                 ) : (
                   <div className="flex flex-col items-center justify-center h-[400px] space-y-4">
-                    <p className="text-muted-foreground">Start a video call with your team</p>
+                    <p className="text-muted-foreground">
+                      Start a video call with your team
+                    </p>
                     <div className="flex gap-2">
-                      <Button onClick={startVideoCall} className="bg-zion-blue hover:bg-zion-blue-light gap-2">
+                      <Button
+                        onClick={startVideoCall}
+                        className="bg-zion-blue hover:bg-zion-blue-light gap-2"
+                      >
                         <Video className="h-4 w-4" />
                         Start Video Call
                       </Button>
@@ -269,7 +300,7 @@ export default function ProjectRoom() {
               </CardContent>
             </Card>
           </TabsContent>
-          
+
           <TabsContent value="calendar" className="space-y-4">
             <Card>
               <CardHeader>
@@ -280,10 +311,14 @@ export default function ProjectRoom() {
                 <div className="mb-2">Events:</div>
                 <ul className="flex-1 overflow-y-auto mb-2">
                   {events.length === 0 ? (
-                    <li className="text-muted-foreground">No events scheduled</li>
+                    <li className="text-muted-foreground">
+                      No events scheduled
+                    </li>
                   ) : (
                     events.map((event, idx) => (
-                      <li key={idx}>{event.title} ({event.date})</li>
+                      <li key={idx}>
+                        {event.title} ({event.date})
+                      </li>
                     ))
                   )}
                 </ul>
@@ -292,20 +327,25 @@ export default function ProjectRoom() {
                     className="flex-1 border rounded px-2 py-1"
                     placeholder="Event title"
                     value={eventTitle}
-                    onChange={e => setEventTitle(e.target.value)}
+                    onChange={(e) => setEventTitle(e.target.value)}
                   />
                   <input
                     type="date"
                     className="border rounded px-2 py-1"
                     value={eventDate}
-                    onChange={e => setEventDate(e.target.value)}
+                    onChange={(e) => setEventDate(e.target.value)}
                   />
-                  <Button type="submit" disabled={!eventTitle.trim() || !eventDate}>Add</Button>
+                  <Button
+                    type="submit"
+                    disabled={!eventTitle.trim() || !eventDate}
+                  >
+                    Add
+                  </Button>
                 </form>
               </CardContent>
             </Card>
           </TabsContent>
-          
+
           <TabsContent value="team" className="space-y-4">
             <Card>
               <CardHeader>
@@ -316,11 +356,11 @@ export default function ProjectRoom() {
                 <div className="mb-2">Team:</div>
                 <ul className="flex-1 overflow-y-auto mb-2">
                   {team.length === 0 ? (
-                    <li className="text-muted-foreground">No team members yet</li>
+                    <li className="text-muted-foreground">
+                      No team members yet
+                    </li>
                   ) : (
-                    team.map((member, idx) => (
-                      <li key={idx}>{member}</li>
-                    ))
+                    team.map((member, idx) => <li key={idx}>{member}</li>)
                   )}
                 </ul>
                 <form className="flex gap-2" onSubmit={handleAddTeamMember}>
@@ -328,14 +368,16 @@ export default function ProjectRoom() {
                     className="flex-1 border rounded px-2 py-1"
                     placeholder="Team member name"
                     value={teamInput}
-                    onChange={e => setTeamInput(e.target.value)}
+                    onChange={(e) => setTeamInput(e.target.value)}
                   />
-                  <Button type="submit" disabled={!teamInput.trim()}>Add</Button>
+                  <Button type="submit" disabled={!teamInput.trim()}>
+                    Add
+                  </Button>
                 </form>
               </CardContent>
             </Card>
           </TabsContent>
-          
+
           <TabsContent value="settings" className="space-y-4">
             <Card>
               <CardHeader>
@@ -343,21 +385,30 @@ export default function ProjectRoom() {
                 <CardDescription>Configure project parameters</CardDescription>
               </CardHeader>
               <CardContent className="h-[400px] flex flex-col">
-                <form className="flex flex-col gap-2" onSubmit={handleSaveSettings}>
+                <form
+                  className="flex flex-col gap-2"
+                  onSubmit={handleSaveSettings}
+                >
                   <label className="font-medium">Project Name</label>
                   <input
                     className="border rounded px-2 py-1"
                     value={settingsName}
-                    onChange={e => setSettingsName(e.target.value)}
+                    onChange={(e) => setSettingsName(e.target.value)}
                   />
                   <label className="font-medium">Description</label>
                   <textarea
                     className="border rounded px-2 py-1"
                     value={settingsDesc}
-                    onChange={e => setSettingsDesc(e.target.value)}
+                    onChange={(e) => setSettingsDesc(e.target.value)}
                   />
-                  <Button type="submit" className="mt-2">Save Settings</Button>
-                  {settingsSaved && <div className="text-green-600 text-sm mt-2">Settings saved!</div>}
+                  <Button type="submit" className="mt-2">
+                    Save Settings
+                  </Button>
+                  {settingsSaved && (
+                    <div className="text-green-600 text-sm mt-2">
+                      Settings saved!
+                    </div>
+                  )}
                 </form>
               </CardContent>
             </Card>

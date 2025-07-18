@@ -13,7 +13,10 @@ import { ExportsSection } from '@/components/expo/ExportsSection';
 export default function ExpoPage() {
   return (
     <>
-      <SEO title="Zion Global Expo" description="Virtual summit showcasing multiverse innovation" />
+      <SEO
+        title="Zion Global Expo"
+        description="Virtual summit showcasing multiverse innovation"
+      />
       <Header />
       <main className="bg-background">
         <ExpoHero />

@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { logWarn } from '@/utils/productionLogger';
 
-
 interface RouteChangeHandlerProps {
   onRouteChange?: (url: string) => void;
   resetScrollOnChange?: boolean;
@@ -13,10 +12,10 @@ interface RouteChangeHandlerProps {
  * Component that handles route changes and provides hooks for route-based actions
  * Place this at the root of your app or in specific pages that need route change handling
  */
-export function RouteChangeHandler({ 
-  onRouteChange, 
+export function RouteChangeHandler({
+  onRouteChange,
   resetScrollOnChange = true,
-  forceRerender = false 
+  forceRerender = false,
 }: RouteChangeHandlerProps) {
   const router = useRouter();
 
@@ -45,7 +44,9 @@ export function RouteChangeHandler({
       if (forceRerender) {
         // Trigger a small delay to ensure DOM updates
         setTimeout(() => {
-          const event = new CustomEvent('routeChangeComplete', { detail: { url: router.asPath } });
+          const event = new CustomEvent('routeChangeComplete', {
+            detail: { url: router.asPath },
+          });
           window.dispatchEvent(event);
         }, 0);
       }
@@ -68,7 +69,13 @@ export function RouteChangeHandler({
       };
     }
     return undefined;
-  }, [onRouteChange, resetScrollOnChange, forceRerender, router.asPath, router.events]);
+  }, [
+    onRouteChange,
+    resetScrollOnChange,
+    forceRerender,
+    router.asPath,
+    router.events,
+  ]);
 
   return null;
-} 
+}

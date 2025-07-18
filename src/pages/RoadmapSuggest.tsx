@@ -36,14 +36,20 @@ export default function RoadmapSuggestPage() {
   const handleSubmit = (_e: React.FormEvent) => {
     e.preventDefault();
     if (!user) {
-      toast({ title: 'Login required', description: 'Please sign in to suggest' });
+      toast({
+        title: 'Login required',
+        description: 'Please sign in to suggest',
+      });
       return;
     }
     const suggestion = { id: Date.now().toString(), title, description };
     setSubmitted((prev) => [...prev, suggestion]);
     setTitle('');
     setDescription('');
-    toast({ title: 'Suggestion added', description: 'Thank you for your feedback' });
+    toast({
+      title: 'Suggestion added',
+      description: 'Thank you for your feedback',
+    });
   };
 
   return (

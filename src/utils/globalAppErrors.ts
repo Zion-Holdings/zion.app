@@ -1,7 +1,9 @@
 import { enhancedGlobalErrorHandler } from './globalToastManager';
-import { consoleErrorHandler, fetchErrorHandler } from './enhancedErrorHandlers';
+import {
+  consoleErrorHandler,
+  fetchErrorHandler,
+} from './enhancedErrorHandlers';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
-
 
 /**
  * Initialize global error handlers with enhanced toast management
@@ -15,16 +17,20 @@ export function initializeGlobalErrorHandlers(): void {
   if (typeof window !== 'undefined') {
     // Handle unhandled promise rejections
     window.addEventListener('unhandledrejection', (event) => {
-      logErrorToProduction('Unhandled promise rejection:', { data: event.reason });
-      
+      logErrorToProduction('Unhandled promise rejection:', {
+        data: event.reason,
+      });
+
       // Only show toast for user-facing errors
       if (event.reason && !shouldIgnoreError(event.reason)) {
         enhancedGlobalErrorHandler.reportError(
-          event.reason instanceof Error ? event.reason : new Error(String(event.reason)),
+          event.reason instanceof Error
+            ? event.reason
+            : new Error(String(event.reason)),
           {
             showToast: true,
-            metadata: { context: 'unhandledPromiseRejection' }
-          }
+            metadata: { context: 'unhandledPromiseRejection' },
+          },
         );
       }
     });
@@ -32,17 +38,17 @@ export function initializeGlobalErrorHandlers(): void {
     // Handle global errors
     window.addEventListener('error', (event) => {
       logErrorToProduction('Global error:', { data: event.error });
-      
+
       // Only show toast for critical errors
       if (event.error && !shouldIgnoreError(event.error)) {
         enhancedGlobalErrorHandler.reportError(event.error, {
           showToast: true,
-          metadata: { 
+          metadata: {
             context: 'globalError',
             filename: event.filename,
             lineno: event.lineno,
-            colno: event.colno
-          }
+            colno: event.colno,
+          },
         });
       }
     });
@@ -56,7 +62,7 @@ export function initializeGlobalErrorHandlers(): void {
  */
 function shouldIgnoreError(error: unknown): boolean {
   const message = (error as Error)?.message || String(error);
-  
+
   const ignorePatterns = [
     'Script error',
     'Network request failed',
@@ -66,11 +72,11 @@ function shouldIgnoreError(error: unknown): boolean {
     'Non-Error promise rejection captured',
     '_next',
     'webpack',
-    'HMR'
+    'HMR',
   ];
 
-  return ignorePatterns.some(pattern => 
-    message.toLowerCase().includes(pattern.toLowerCase())
+  return ignorePatterns.some((pattern) =>
+    message.toLowerCase().includes(pattern.toLowerCase()),
   );
 }
 

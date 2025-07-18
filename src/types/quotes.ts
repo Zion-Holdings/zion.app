@@ -1,8 +1,7 @@
-
-export type ServiceType = "service" | "talent" | "equipment" | "";
+export type ServiceType = 'service' | 'talent' | 'equipment' | '';
 export type ServiceCategory = string;
-export type TimelineType = "fixed" | "flexible";
-export type BudgetType = "fixed" | "hourly" | "range";
+export type TimelineType = 'fixed' | 'flexible';
+export type BudgetType = 'fixed' | 'hourly' | 'range';
 
 export interface ListingItem {
   id: string;
@@ -37,7 +36,13 @@ export interface QuoteFormData {
   contactInfo: ContactInfo;
 }
 
-export type QuoteStatus = 'new' | 'in_review' | 'accepted' | 'responded' | 'closed' | 'archived';
+export type QuoteStatus =
+  | 'new'
+  | 'in_review'
+  | 'accepted'
+  | 'responded'
+  | 'closed'
+  | 'archived';
 
 export interface QuoteRequest {
   id: string;

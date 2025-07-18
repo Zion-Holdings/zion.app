@@ -1,9 +1,11 @@
-
 import React, { createContext, useContext, useEffect } from 'react';
 import type { ReactNode } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import type { MessagingContextType } from '@/types/messaging';
-import { useMessagingOperations, useMessagingRealtime } from '@/hooks/messaging';
+import {
+  useMessagingOperations,
+  useMessagingRealtime,
+} from '@/hooks/messaging';
 
 // Default context used when React type definitions are missing
 const defaultContext: MessagingContextType = {
@@ -18,15 +20,13 @@ const defaultContext: MessagingContextType = {
   _markAsRead: async () => {},
   _setActiveConversation: () => {},
   _fetchConversations: async () => {},
-  _loadMessages: async () => {}
+  _loadMessages: async () => {},
 };
 
 // "createContext" may be untyped if React type definitions are missing.
 // To avoid TS2347 when the definitions are unavailable, we cast the default
 // value instead of passing a generic type parameter directly.
-const MessagingContext = createContext(
-  defaultContext as MessagingContextType
-);
+const MessagingContext = createContext(defaultContext as MessagingContextType);
 
 // Hook for using the messaging context
 export function useMessaging(): MessagingContextType {
@@ -41,7 +41,7 @@ export function useMessaging(): MessagingContextType {
 // Provider component
 export function MessagingProvider({ children }: { children: ReactNode }) {
   const { _user } = useAuth();
-  
+
   const {
     messages,
     activeMessages,
@@ -57,16 +57,24 @@ export function MessagingProvider({ children }: { children: ReactNode }) {
     createConversation,
     markAsRead,
     fetchConversations,
-    loadMessages
+    loadMessages,
   } = useMessagingOperations(user);
 
   // Setup real-time subscription
-  useMessagingRealtime(user, activeConversation, setActiveMessages, fetchConversations);
+  useMessagingRealtime(
+    user,
+    activeConversation,
+    setActiveMessages,
+    fetchConversations,
+  );
 
   // Calculate unread count from conversations
   useEffect(() => {
     if (conversations.length > 0) {
-      const count = conversations.reduce((acc, conversation) => acc + conversation.unread_count, 0);
+      const count = conversations.reduce(
+        (acc, conversation) => acc + conversation.unread_count,
+        0,
+      );
       setUnreadCount(count);
     }
   }, [conversations, setUnreadCount]);
@@ -94,7 +102,7 @@ export function MessagingProvider({ children }: { children: ReactNode }) {
     markAsRead,
     setActiveConversation,
     fetchConversations,
-    loadMessages
+    loadMessages,
   };
 
   return (

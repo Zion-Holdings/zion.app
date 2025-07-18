@@ -34,7 +34,7 @@ export default function Fundraising() {
   const [isExporting, setIsExporting] = useState(false);
 
   const handleSectionChange = (
-    _e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    _e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setSections((prev) => ({ ...prev, [name]: value }));
@@ -51,7 +51,12 @@ export default function Fundraising() {
       }));
 
     if (newSlides.length === 0) {
-      newSlides.push({ id: 'overview', title: 'Overview', content: prompt, type: 'generic' });
+      newSlides.push({
+        id: 'overview',
+        title: 'Overview',
+        content: prompt,
+        type: 'generic',
+      });
     }
     setSlides(newSlides);
   };
@@ -64,7 +69,7 @@ export default function Fundraising() {
       for (let i = 0; i < slides.length; i++) {
         const slide = slides[i];
         if (!slide) continue;
-        
+
         const slideElement = document.createElement('div');
         slideElement.style.width = '1024px';
         slideElement.style.height = '576px';
@@ -96,7 +101,11 @@ export default function Fundraising() {
         slideElement.style.left = '-9999px';
         document.body.appendChild(slideElement);
 
-        const canvas = await html2canvas(slideElement, { scale: 2, useCORS: true, logging: false });
+        const canvas = await html2canvas(slideElement, {
+          scale: 2,
+          useCORS: true,
+          logging: false,
+        });
         const imgData = canvas.toDataURL('image/png');
         document.body.removeChild(slideElement);
 
@@ -114,7 +123,14 @@ export default function Fundraising() {
         const yOffset = (pdfHeight - newImgHeight) / 2;
 
         if (i > 0) pdf.addPage();
-        pdf.addImage(imgData, 'PNG', xOffset, yOffset, newImgWidth, newImgHeight);
+        pdf.addImage(
+          imgData,
+          'PNG',
+          xOffset,
+          yOffset,
+          newImgWidth,
+          newImgHeight,
+        );
       }
       pdf.save('fundraising-deck.pdf');
     } finally {
@@ -130,7 +146,9 @@ export default function Fundraising() {
         <h1 className="text-3xl font-bold mb-6">Fundraising Toolkit</h1>
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700">Funding Stage</label>
+            <label className="block text-sm font-medium text-gray-700">
+              Funding Stage
+            </label>
             <select
               value={stage}
               onChange={(e) => setStage(e.target.value)}
@@ -143,15 +161,24 @@ export default function Fundraising() {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">Deck Prompt</label>
-            <Textarea value={prompt} onChange={(e) => setPrompt(e.target.value)} />
+            <label className="block text-sm font-medium text-gray-700">
+              Deck Prompt
+            </label>
+            <Textarea
+              value={prompt}
+              onChange={(e) => setPrompt(e.target.value)}
+            />
           </div>
           {Object.entries(sections).map(([key, value]) => (
             <div key={key}>
               <label className="block text-sm font-medium text-gray-700 capitalize">
                 {key}
               </label>
-              <Textarea name={key} value={value} onChange={handleSectionChange} />
+              <Textarea
+                name={key}
+                value={value}
+                onChange={handleSectionChange}
+              />
             </div>
           ))}
           <Button onClick={handleGenerate}>Generate Deck</Button>
@@ -160,7 +187,11 @@ export default function Fundraising() {
         {slides.length > 0 && (
           <div className="mt-8">
             <SlideEditor initialSlides={slides} onSlidesChange={setSlides} />
-            <Button className="mt-4" onClick={handleExportPDF} disabled={isExporting}>
+            <Button
+              className="mt-4"
+              onClick={handleExportPDF}
+              disabled={isExporting}
+            >
               {isExporting ? 'Exporting...' : 'Export PDF'}
             </Button>
           </div>
@@ -187,7 +218,13 @@ export default function Fundraising() {
               </tr>
             </tbody>
           </table>
-          <Button onClick={() => alert('Round closed and stakeholders notified (placeholder).')}>Close Round</Button>
+          <Button
+            onClick={() =>
+              alert('Round closed and stakeholders notified (placeholder).')
+            }
+          >
+            Close Round
+          </Button>
         </div>
       </main>
     </>

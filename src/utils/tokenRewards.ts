@@ -1,13 +1,15 @@
-
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 export async function rewardOnboarding(userId: string) {
-
   try {
     const res = await fetch('/functions/v1/token-manager/earn', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ userId, amount: 50, reason: 'Completed onboarding' }),
+      body: JSON.stringify({
+        userId,
+        amount: 50,
+        reason: 'Completed onboarding',
+      }),
     });
     if (!res.ok) {
       const text = await res.text().catch(() => '');

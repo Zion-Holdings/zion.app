@@ -29,7 +29,7 @@ export default function ProductsAdminPage() {
   const [products, setProducts] = useState(initialProducts);
 
   const filtered = products.filter((p) =>
-    p.name.toLowerCase().includes(search.toLowerCase())
+    p.name.toLowerCase().includes(search.toLowerCase()),
   );
 
   const toggleApproval = (_id: number) => {
@@ -40,8 +40,8 @@ export default function ProductsAdminPage() {
               ...p,
               status: p.status === 'approved' ? 'rejected' : 'approved',
             }
-          : p
-      )
+          : p,
+      ),
     );
   };
 

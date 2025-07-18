@@ -1,4 +1,3 @@
-
 export interface ProfileSkill {
   name: string;
   level: number; // 1-5

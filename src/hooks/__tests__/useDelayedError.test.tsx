@@ -15,7 +15,7 @@ describe('useDelayedError', () => {
   test('returns error only after the specified delay', () => {
     const { result, rerender } = renderHook(
       ({ err }) => useDelayedError(err, 1000),
-      { initialProps: { err: null } }
+      { initialProps: { err: null } },
     );
 
     expect(result.current).toBeNull();
@@ -39,7 +39,7 @@ describe('useDelayedError', () => {
   test('resets timer if error changes before delay elapses', () => {
     const { result, rerender } = renderHook(
       ({ err }) => useDelayedError(err, 1000),
-      { initialProps: { err: new Error('first') } }
+      { initialProps: { err: new Error('first') } },
     );
 
     act(() => {

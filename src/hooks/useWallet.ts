@@ -1,12 +1,10 @@
-
 import { useEffect, useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
 import type { Wallet, TokenTransaction } from '@/types/tokens';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 export function useWallet() {
-
   const { _user } = useAuth();
   const [wallet, setWallet] = useState<Wallet | null>(null);
   const [transactions, setTransactions] = useState<TokenTransaction[]>([]);
@@ -64,8 +62,10 @@ export function useWallet() {
 
   async function earnTokens(amount: number, reason?: string) {
     if (!user?.id) return;
-    setWallet(prev => prev ? { ...prev, balance: prev.balance + amount } : prev);
-    setTransactions(prev => {
+    setWallet((prev) =>
+      prev ? { ...prev, balance: prev.balance + amount } : prev,
+    );
+    setTransactions((prev) => {
       const newTransaction = {
         id: crypto.randomUUID(),
         user_id: user.id,
@@ -80,10 +80,10 @@ export function useWallet() {
 
   async function spendTokens(amount: number, reason?: string) {
     if (!user?.id) return;
-    setWallet(prev =>
-      prev ? { ...prev, balance: Math.max(0, prev.balance - amount) } : prev
+    setWallet((prev) =>
+      prev ? { ...prev, balance: Math.max(0, prev.balance - amount) } : prev,
     );
-    setTransactions(prev => {
+    setTransactions((prev) => {
       const newTransaction = {
         id: crypto.randomUUID(),
         user_id: user.id,

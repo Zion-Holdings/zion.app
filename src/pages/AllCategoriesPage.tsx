@@ -1,42 +1,37 @@
-import { CategoryCard } from "@/components/CategoryCard";
+import { CategoryCard } from '@/components/CategoryCard';
 import { Users } from '@/components/ui/icons';
-import { GradientHeading } from "@/components/GradientHeading";
-import ErrorBoundary from "@/components/GlobalErrorBoundary"; // Import ErrorBoundary
-
-
-
-
-
+import { GradientHeading } from '@/components/GradientHeading';
+import ErrorBoundary from '@/components/GlobalErrorBoundary'; // Import ErrorBoundary
 
 // Reusing the categories array from CategoriesSection.tsx
 // Ideally, this would come from a shared data source or API
 const categories = [
   {
-    title: "Services",
-    description: "On-demand IT support, consulting, development, and more",
+    title: 'Services',
+    description: 'On-demand IT support, consulting, development, and more',
     icon: <Briefcase className="w-10 h-10" />,
-    link: "/services", // Link for the card itself
+    link: '/services', // Link for the card itself
     color: undefined, // Let CategoryCard use default color
   },
   {
-    title: "Talents",
-    description: "Connect with AI experts, developers, and tech specialists",
+    title: 'Talents',
+    description: 'Connect with AI experts, developers, and tech specialists',
     icon: <Users className="w-10 h-10" />,
-    link: "/talent", // Link for the card itself
+    link: '/talent', // Link for the card itself
     color: undefined, // Let CategoryCard use default color
   },
   {
-    title: "Equipment",
-    description: "Rent or buy specialized hardware, servers, and devices",
+    title: 'Equipment',
+    description: 'Rent or buy specialized hardware, servers, and devices',
     icon: <HardDrive className="w-10 h-10" />,
-    link: "/equipment", // Link for the card itself
+    link: '/equipment', // Link for the card itself
     color: undefined, // Let CategoryCard use default color
   },
   {
-    title: "Innovation",
-    description: "Discover cutting-edge solutions and tech breakthroughs",
+    title: 'Innovation',
+    description: 'Discover cutting-edge solutions and tech breakthroughs',
     icon: <Lightbulb className="w-10 h-10" />,
-    link: "/innovation",
+    link: '/innovation',
     color: undefined, // Let CategoryCard use default color
   },
 ];
@@ -46,12 +41,16 @@ export default function AllCategoriesPage() {
     <div className="min-h-screen bg-zion-blue">
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-12">
-          <GradientHeading level="h1" className="text-4xl md:text-5xl font-bold mb-4">
+          <GradientHeading
+            level="h1"
+            className="text-4xl md:text-5xl font-bold mb-4"
+          >
             All Categories
           </GradientHeading>
           <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">
-            Explore our extensive range of AI services and products.
-            Find exactly what you're looking for to enhance your business or personal projects.
+            Explore our extensive range of AI services and products. Find
+            exactly what you're looking for to enhance your business or personal
+            projects.
           </p>
         </div>
 

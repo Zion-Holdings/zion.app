@@ -7,7 +7,14 @@ import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { LoadingSpinner } from '@/components/ui/enhanced-loading-states';
-import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/ui/form';
+import {
+  Form,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormMessage,
+} from '@/components/ui/form';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -51,7 +58,7 @@ function CheckoutInner() {
   useEffect(() => {
     fireEvent('checkout_start', {
       item_count: items.length,
-      total: items.reduce((sum, i) => sum + i.price * i.quantity, 0)
+      total: items.reduce((sum, i) => sum + i.price * i.quantity, 0),
     });
   }, [items]);
 
@@ -62,8 +69,8 @@ function CheckoutInner() {
       email: user?.email || '',
       address: '',
       city: '',
-      country: ''
-    }
+      country: '',
+    },
   });
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
@@ -82,15 +89,15 @@ function CheckoutInner() {
     }
 
     setIsSubmitting(true);
-    
+
     try {
       logDev('Starting checkout with data:', { ...data, items: items.length });
-      
+
       const response = await fetch('/api/checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          items: items.map(item => ({
+          items: items.map((item) => ({
             id: item.id,
             name: item.name,
             price: item.price,
@@ -104,7 +111,10 @@ function CheckoutInner() {
       logDev('Checkout session created:', responseData);
 
       if (!response.ok) {
-        throw new Error(responseData.error || `HTTP ${response.status}: Failed to create checkout session`);
+        throw new Error(
+          responseData.error ||
+            `HTTP ${response.status}: Failed to create checkout session`,
+        );
       }
 
       if (!responseData.url) {
@@ -115,7 +125,12 @@ function CheckoutInner() {
     } catch {
       logDevError('Checkout erroror:', error);
       let message = 'Failed to process checkout. Please try again.';
-      if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+      if (
+        error &&
+        typeof error === 'object' &&
+        'message' in error &&
+        typeof (error as { message?: unknown }).message === 'string'
+      ) {
         message = (err as { message: string }).message;
       }
       fireEvent('checkout_error', { message });
@@ -134,7 +149,7 @@ function CheckoutInner() {
     return (
       <div className="max-w-2xl mx-auto p-6 text-center">
         <BreadcrumbJsonLd breadcrumbs={breadcrumbs} />
-        <Breadcrumb className="mb-4 text-sm text-muted-foreground" >
+        <Breadcrumb className="mb-4 text-sm text-muted-foreground">
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
@@ -150,7 +165,9 @@ function CheckoutInner() {
           </BreadcrumbList>
         </Breadcrumb>
         <h1 className="text-2xl font-bold mb-4">Your cart is empty</h1>
-        <p className="text-gray-600 mb-6">Add some items to your cart to continue with checkout.</p>
+        <p className="text-gray-600 mb-6">
+          Add some items to your cart to continue with checkout.
+        </p>
         <Button onClick={() => router.push('/marketplace')}>
           Continue Shopping
         </Button>
@@ -177,13 +194,15 @@ function CheckoutInner() {
         </BreadcrumbList>
       </Breadcrumb>
       <h1 className="text-2xl font-bold mb-6">Checkout</h1>
-      
+
       {/* Order Summary */}
       <div className="bg-gray-50 p-4 rounded-md mb-6">
         <h2 className="font-semibold mb-3">Order Summary</h2>
-        {items.map(item => (
+        {items.map((item) => (
           <div key={item.id} className="flex justify-between items-center py-2">
-            <span>{item.name} (x{item.quantity})</span>
+            <span>
+              {item.name} (x{item.quantity})
+            </span>
             <span>${(item.price * item.quantity).toFixed(2)}</span>
           </div>
         ))}
@@ -208,77 +227,121 @@ function CheckoutInner() {
       </div>
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(handleCheckout)} className="space-y-4">
+        <form
+          onSubmit={form.handleSubmit(handleCheckout)}
+          className="space-y-4"
+        >
           <FormField
             control={form.control}
             name="name"
-            render={({ field }: { field: ControllerRenderProps<CheckoutFormData, 'name'> }) => (
+            render={({
+              field,
+            }: {
+              field: ControllerRenderProps<CheckoutFormData, 'name'>;
+            }) => (
               <FormItem>
                 <FormLabel>Full Name *</FormLabel>
                 <FormControl>
-                  <Input {...field} placeholder="Enter your full name" autoComplete="name" />
+                  <Input
+                    {...field}
+                    placeholder="Enter your full name"
+                    autoComplete="name"
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-          
+
           <FormField
             control={form.control}
             name="email"
-            render={({ field }: { field: ControllerRenderProps<CheckoutFormData, 'email'> }) => (
+            render={({
+              field,
+            }: {
+              field: ControllerRenderProps<CheckoutFormData, 'email'>;
+            }) => (
               <FormItem>
                 <FormLabel>Email Address *</FormLabel>
                 <FormControl>
-                  <Input {...field} type="email" placeholder="Enter your email" autoComplete="email" />
+                  <Input
+                    {...field}
+                    type="email"
+                    placeholder="Enter your email"
+                    autoComplete="email"
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-          
+
           <FormField
             control={form.control}
             name="address"
-            render={({ field }: { field: ControllerRenderProps<CheckoutFormData, 'address'> }) => (
+            render={({
+              field,
+            }: {
+              field: ControllerRenderProps<CheckoutFormData, 'address'>;
+            }) => (
               <FormItem>
                 <FormLabel>Address *</FormLabel>
                 <FormControl>
-                  <Input {...field} placeholder="Enter your address" autoComplete="street-address" />
+                  <Input
+                    {...field}
+                    placeholder="Enter your address"
+                    autoComplete="street-address"
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-          
+
           <FormField
             control={form.control}
             name="city"
-            render={({ field }: { field: ControllerRenderProps<CheckoutFormData, 'city'> }) => (
+            render={({
+              field,
+            }: {
+              field: ControllerRenderProps<CheckoutFormData, 'city'>;
+            }) => (
               <FormItem>
                 <FormLabel>City *</FormLabel>
                 <FormControl>
-                  <Input {...field} placeholder="Enter your city" autoComplete="address-level2" />
+                  <Input
+                    {...field}
+                    placeholder="Enter your city"
+                    autoComplete="address-level2"
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-          
+
           <FormField
             control={form.control}
             name="country"
-            render={({ field }: { field: ControllerRenderProps<CheckoutFormData, 'country'> }) => (
+            render={({
+              field,
+            }: {
+              field: ControllerRenderProps<CheckoutFormData, 'country'>;
+            }) => (
               <FormItem>
                 <FormLabel>Country *</FormLabel>
                 <FormControl>
-                  <Input {...field} placeholder="Enter your country" autoComplete="country-name" />
+                  <Input
+                    {...field}
+                    placeholder="Enter your country"
+                    autoComplete="country-name"
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-          
+
           <Button
             type="submit"
             className="w-full mt-6"
@@ -296,9 +359,10 @@ function CheckoutInner() {
           </Button>
         </form>
       </Form>
-      
+
       <p className="text-xs text-gray-500 mt-4 text-center">
-        You will be redirected to a secure payment page to complete your purchase.
+        You will be redirected to a secure payment page to complete your
+        purchase.
       </p>
     </div>
   );

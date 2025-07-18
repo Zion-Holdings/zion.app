@@ -1,5 +1,11 @@
 // React 19 Optimization Features
-import React, { startTransition, useDeferredValue, memo, useCallback, useMemo } from 'react';
+import React, {
+  startTransition,
+  useDeferredValue,
+  memo,
+  useCallback,
+  useMemo,
+} from 'react';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 export const React19Optimizations = {
@@ -15,13 +21,21 @@ export const React19Optimizations = {
   /**
    * Enhanced memoization helpers using React 19 improvements
    */
-  _optimizedMemoComponent: <T extends React.ComponentType<unknown>>(Component: T) => {
-    return memo(Component, (prevProps: Record<string, unknown>, nextProps: Record<string, unknown>) => {
-      // Use React 19's improved shallow comparison
-      return Object.keys(prevProps).every(
-        key => prevProps[key] === nextProps[key]
-      );
-    });
+  _optimizedMemoComponent: <T extends React.ComponentType<unknown>>(
+    Component: T,
+  ) => {
+    return memo(
+      Component,
+      (
+        prevProps: Record<string, unknown>,
+        nextProps: Record<string, unknown>,
+      ) => {
+        // Use React 19's improved shallow comparison
+        return Object.keys(prevProps).every(
+          (key) => prevProps[key] === nextProps[key],
+        );
+      },
+    );
   },
 
   /**
@@ -29,7 +43,7 @@ export const React19Optimizations = {
    */
   createOptimizedCallback: <T extends (...args: unknown[]) => unknown>(
     callback: T,
-    _deps: React.DependencyList
+    _deps: React.DependencyList,
   ) => {
     return useCallback(callback, deps);
   },
@@ -98,8 +112,10 @@ export const React19Optimizations = {
   _isReact19: () => {
     try {
       // Check for React 19 specific features
-      return typeof startTransition === 'function' && 
-             typeof useDeferredValue === 'function';
+      return (
+        typeof startTransition === 'function' &&
+        typeof useDeferredValue === 'function'
+      );
     } catch {
       return false;
     }

@@ -4,7 +4,7 @@ export function AgendaSection() {
     'Panel 1: The Future of Digital Nations',
     'Panel 2: ZionDAO in Action',
     'Demo: ZionGPT Live',
-    'Featured Speaker: Founder'
+    'Featured Speaker: Founder',
   ];
   return (
     <section className="py-12 bg-background text-foreground" id="agenda">
@@ -12,7 +12,9 @@ export function AgendaSection() {
         <h2 className="text-3xl font-bold mb-6 text-center">Agenda</h2>
         <ol className="space-y-3 max-w-xl mx-auto list-decimal list-inside">
           {agenda.map((item) => (
-            <li key={item} className="text-lg">{item}</li>
+            <li key={item} className="text-lg">
+              {item}
+            </li>
           ))}
         </ol>
       </div>

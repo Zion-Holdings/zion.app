@@ -2,8 +2,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router'; // Changed from useLocation, useNavigate
 import { safeStorage } from '@/utils/safeStorage';
 import { toast } from '@/hooks/use-toast'; // _Optional: for user feedback
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 const OAuthCallback = () => {
   const router = useRouter(); // Initialized router
@@ -33,14 +32,23 @@ const OAuthCallback = () => {
       router.replace('/auth/login');
     } else {
       // No token found, something went wrong or accessed directly
-      toast.error('Authentication token not found. Please try logging in again.');
+      toast.error(
+        'Authentication token not found. Please try logging in again.',
+      );
       router.replace('/auth/login');
     }
   }, [router.isReady, router.asPath, router]); // Added router.isReady and router.asPath to dependencies
 
   // Render a loading state or null while processing
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+      }}
+    >
       <p>Processing authentication...</p>
     </div>
   );

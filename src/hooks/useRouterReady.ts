@@ -33,7 +33,7 @@ export function useRouteChange(callback?: () => void) {
 
   useEffect(() => {
     const handleRouteChange = () => {
-      setRouteKey(prev => prev + 1);
+      setRouteKey((prev) => prev + 1);
       callback?.();
     };
 
@@ -59,10 +59,10 @@ export function useRouterQuery<T extends Record<string, string | string[]>>(): {
   router: ReturnType<typeof useRouter>;
 } {
   const router = useRouter();
-  
+
   return {
     query: router.isReady ? (router.query as Partial<T>) : {},
     isReady: router.isReady,
     router,
   };
-} 
+}

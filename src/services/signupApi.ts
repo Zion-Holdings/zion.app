@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import {logErrorToProduction} from "@/utils/productionLogger";
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 export interface SignupPayload {
   email: string;
@@ -27,13 +27,21 @@ export interface SignupApiResponse {
   emailVerificationRequired?: boolean;
 }
 
-export async function signupUser(email: string, password: string, name: string) {
+export async function signupUser(
+  email: string,
+  password: string,
+  name: string,
+) {
   if (!email || !password) {
     throw new Error('Email and password are required');
   }
 
   try {
-    const res = await axios.post('/api/auth/register', { email, password, name });
+    const res = await axios.post('/api/auth/register', {
+      email,
+      password,
+      name,
+    });
     if (res.status === 201) {
       return res.data;
     }
@@ -48,9 +56,15 @@ export async function signupUser(email: string, password: string, name: string) 
         let errorMessage = 'Signup failed';
         const data = err.response.data as unknown;
         if (data && typeof data === 'object') {
-          if ('error' in data && typeof (data as { error?: unknown }).error === 'string') {
+          if (
+            'error' in data &&
+            typeof (data as { error?: unknown }).error === 'string'
+          ) {
             errorMessage = (data as { error: string }).error;
-          } else if ('message' in data && typeof (data as { message?: unknown }).message === 'string') {
+          } else if (
+            'message' in data &&
+            typeof (data as { message?: unknown }).message === 'string'
+          ) {
             errorMessage = (data as { message: string }).message;
           }
         }

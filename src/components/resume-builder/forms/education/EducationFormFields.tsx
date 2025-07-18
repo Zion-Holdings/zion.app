@@ -1,10 +1,8 @@
-
 import { useForm } from 'react-hook-form';
 import { Loader2 } from '@/components/ui/icons';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { format } from 'date-fns';
-
 
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
@@ -38,10 +36,10 @@ const educationSchema = z.object({
 
 type EducationFormValues = z.infer<typeof educationSchema>;
 
-export function EducationFormFields({ 
-  isEditing, 
-  onSubmit, 
-  onCancel 
+export function EducationFormFields({
+  isEditing,
+  onSubmit,
+  onCancel,
 }: EducationFormFieldsProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -84,11 +82,18 @@ export function EducationFormFields({
           <FormField
             control={form.control}
             name="institution"
-            render={({ field }: { field: ControllerRenderProps<EducationFormValues, 'institution'> }) => (
+            render={({
+              field,
+            }: {
+              field: ControllerRenderProps<EducationFormValues, 'institution'>;
+            }) => (
               <FormItem>
                 <FormLabel>Institution</FormLabel>
                 <FormControl>
-                  <Input placeholder="University of California, MIT, etc." {...field} />
+                  <Input
+                    placeholder="University of California, MIT, etc."
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -98,11 +103,18 @@ export function EducationFormFields({
           <FormField
             control={form.control}
             name="degree"
-            render={({ field }: { field: ControllerRenderProps<EducationFormValues, 'degree'> }) => (
+            render={({
+              field,
+            }: {
+              field: ControllerRenderProps<EducationFormValues, 'degree'>;
+            }) => (
               <FormItem>
                 <FormLabel>Degree</FormLabel>
                 <FormControl>
-                  <Input placeholder="Bachelor's, Master's, Ph.D, etc." {...field} />
+                  <Input
+                    placeholder="Bachelor's, Master's, Ph.D, etc."
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -113,11 +125,18 @@ export function EducationFormFields({
         <FormField
           control={form.control}
           name="field_of_study"
-          render={({ field }: { field: ControllerRenderProps<EducationFormValues, 'field_of_study'> }) => (
+          render={({
+            field,
+          }: {
+            field: ControllerRenderProps<EducationFormValues, 'field_of_study'>;
+          }) => (
             <FormItem>
               <FormLabel>Field of Study</FormLabel>
               <FormControl>
-                <Input placeholder="Computer Science, Engineering, etc." {...field} />
+                <Input
+                  placeholder="Computer Science, Engineering, etc."
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -128,15 +147,15 @@ export function EducationFormFields({
           <FormField
             control={form.control}
             name="start_date"
-            render={({ field }: { field: ControllerRenderProps<EducationFormValues, 'start_date'> }) => (
+            render={({
+              field,
+            }: {
+              field: ControllerRenderProps<EducationFormValues, 'start_date'>;
+            }) => (
               <FormItem>
                 <FormLabel>Start Date</FormLabel>
                 <FormControl>
-                  <Input 
-                    type="date" 
-                    {...field}
-                    value={field.value || ''} 
-                  />
+                  <Input type="date" {...field} value={field.value || ''} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -147,7 +166,11 @@ export function EducationFormFields({
             <FormField
               control={form.control}
               name="is_current"
-              render={({ field }: { field: ControllerRenderProps<EducationFormValues, 'is_current'> }) => (
+              render={({
+                field,
+              }: {
+                field: ControllerRenderProps<EducationFormValues, 'is_current'>;
+              }) => (
                 <FormItem className="flex flex-row items-start space-x-3 space-y-0 py-2">
                   <FormControl>
                     <Checkbox
@@ -166,15 +189,15 @@ export function EducationFormFields({
               <FormField
                 control={form.control}
                 name="end_date"
-                render={({ field }: { field: ControllerRenderProps<EducationFormValues, 'end_date'> }) => (
+                render={({
+                  field,
+                }: {
+                  field: ControllerRenderProps<EducationFormValues, 'end_date'>;
+                }) => (
                   <FormItem>
                     <FormLabel>End Date</FormLabel>
                     <FormControl>
-                      <Input 
-                        type="date" 
-                        {...field} 
-                        value={field.value || ''} 
-                      />
+                      <Input type="date" {...field} value={field.value || ''} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -187,7 +210,11 @@ export function EducationFormFields({
         <FormField
           control={form.control}
           name="location"
-          render={({ field }: { field: ControllerRenderProps<EducationFormValues, 'location'> }) => (
+          render={({
+            field,
+          }: {
+            field: ControllerRenderProps<EducationFormValues, 'location'>;
+          }) => (
             <FormItem>
               <FormLabel>Location (Optional)</FormLabel>
               <FormControl>
@@ -201,7 +228,11 @@ export function EducationFormFields({
         <FormField
           control={form.control}
           name="description"
-          render={({ field }: { field: ControllerRenderProps<EducationFormValues, 'description'> }) => (
+          render={({
+            field,
+          }: {
+            field: ControllerRenderProps<EducationFormValues, 'description'>;
+          }) => (
             <FormItem>
               <FormLabel>Description (Optional)</FormLabel>
               <FormControl>
@@ -216,14 +247,14 @@ export function EducationFormFields({
           )}
         />
 
-        {error && <Alert variant="destructive"><AlertDescription>{error}</AlertDescription></Alert>}
+        {error && (
+          <Alert variant="destructive">
+            <AlertDescription>{error}</AlertDescription>
+          </Alert>
+        )}
 
         <div className="flex justify-between pt-2">
-          <Button
-            type="button"
-            variant="outline"
-            onClick={onCancel}
-          >
+          <Button type="button" variant="outline" onClick={onCancel}>
             {isEditing ? 'Cancel' : 'Back'}
           </Button>
 

@@ -3,5 +3,5 @@ export const INTERESTS = [
   'Web Development',
   'Cloud Computing',
   'Cybersecurity',
-  'Data Science'
+  'Data Science',
 ];

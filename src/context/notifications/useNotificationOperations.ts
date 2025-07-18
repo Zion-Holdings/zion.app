@@ -1,11 +1,14 @@
 import { useState, useCallback, useEffect } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
-import type { Notification, FilterType, NotificationContextType } from './types';
+import type {
+  Notification,
+  FilterType,
+  NotificationContextType,
+} from './types';
 import createAxiosInstance from '@/lib/axios';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 export const useNotificationOperations = (
-
   userId?: string,
 ): NotificationContextType => {
   const [notifications, setNotifications] = useState<Notification[]>([]);
@@ -42,7 +45,9 @@ export const useNotificationOperations = (
         await axios.patch(`/api/notifications/${id}`, { read: true });
         await fetchNotifications();
       } catch {
-        logErrorToProduction('Error marking notification as read:', { data: error });
+        logErrorToProduction('Error marking notification as read:', {
+          data: error,
+        });
       }
     },
     [userId, fetchNotifications],
@@ -62,7 +67,9 @@ export const useNotificationOperations = (
       );
       await fetchNotifications();
     } catch {
-      logErrorToProduction('Error marking all notifications as read:', { data: error });
+      logErrorToProduction('Error marking all notifications as read:', {
+        data: error,
+      });
     }
   }, [userId, fetchNotifications, notifications]);
 

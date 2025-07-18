@@ -6,14 +6,20 @@ interface FilterSidebarProps {
   onFilterChange?: (filters: Record<string, unknown>) => void;
 }
 
-export const FilterSidebar: React.FC<FilterSidebarProps> = ({ 
+export const FilterSidebar: React.FC<FilterSidebarProps> = ({
   className = '',
   filters = {},
-  onFilterChange 
+  onFilterChange,
 }) => {
-  const [category, setCategory] = useState<string>(typeof filters.category === 'string' ? filters.category : '');
-  const [minPrice, setMinPrice] = useState<string>(typeof filters.minPrice === 'string' ? filters.minPrice : '');
-  const [maxPrice, setMaxPrice] = useState<string>(typeof filters.maxPrice === 'string' ? filters.maxPrice : '');
+  const [category, setCategory] = useState<string>(
+    typeof filters.category === 'string' ? filters.category : '',
+  );
+  const [minPrice, setMinPrice] = useState<string>(
+    typeof filters.minPrice === 'string' ? filters.minPrice : '',
+  );
+  const [maxPrice, setMaxPrice] = useState<string>(
+    typeof filters.maxPrice === 'string' ? filters.maxPrice : '',
+  );
 
   const handleCategoryChange = (_e: React.ChangeEvent<HTMLSelectElement>) => {
     setCategory(e.target.value);
@@ -34,7 +40,11 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
       <div className="space-y-4">
         <div>
           <label className="block text-sm font-medium mb-1">Category</label>
-          <select className="w-full border rounded px-2 py-1" value={category} onChange={handleCategoryChange}>
+          <select
+            className="w-full border rounded px-2 py-1"
+            value={category}
+            onChange={handleCategoryChange}
+          >
             <option value="">All</option>
             <option value="electronics">Electronics</option>
             <option value="books">Books</option>

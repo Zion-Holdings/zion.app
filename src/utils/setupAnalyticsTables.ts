@@ -1,9 +1,11 @@
-
 import { supabase } from '@/integrations/supabase/client';
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import {
+  logInfo,
+  logWarn,
+  logErrorToProduction,
+} from '@/utils/productionLogger';
 
 export async function ensureAnalyticsTablesExist() {
-
   try {
     if (!supabase) throw new Error('Supabase client not initialized');
     // Check if analytics_events table exists
@@ -11,13 +13,15 @@ export async function ensureAnalyticsTablesExist() {
       .from('analytics_events')
       .select('id')
       .limit(1);
-      
+
     if (error && error.code === 'PGRST204') {
       logInfo('Creating analytics tables...');
       await createAnalyticsTables();
     }
   } catch {
-    logWarn('Error checking if analytics tables exist:', { data:  { data: error } });
+    logWarn('Error checking if analytics tables exist:', {
+      data: { data: error },
+    });
     // No need to create tables here, as this could be a connection error
   }
 }
@@ -83,9 +87,9 @@ async function createAnalyticsTables() {
         FROM conversions c
         LEFT JOIN page_views p ON c.date = p.date
         ORDER BY c.date DESC;
-      `
+      `,
     });
-    
+
     logInfo('Analytics tables created successfully');
   } catch {
     logErrorToProduction('Error creating analytics tables:', { data: error });

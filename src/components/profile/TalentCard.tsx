@@ -1,13 +1,8 @@
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import { Star, MapPin, Clock, ArrowRight } from '@/components/ui/icons';
-import { Card } from "@/components/ui/card";
+import { Card } from '@/components/ui/card';
 
-
-
-
-
-
-import type { TalentProfile } from "@/types/talent";
+import type { TalentProfile } from '@/types/talent';
 import Image from 'next/image'; // Import next/image
 import React, { useState } from 'react'; // Import React and useState
 
@@ -26,7 +21,7 @@ export function TalentCard({
   onRequestHire,
   isSaved,
   onToggleSave,
-  isAuthenticated
+  isAuthenticated,
 }: TalentCardProps) {
   const [avatarError, setAvatarError] = useState(false);
 
@@ -53,17 +48,22 @@ export function TalentCard({
   };
 
   const skills = talent.skills?.slice(0, 5) || [];
-  const talentNameInitial = talent.full_name?.charAt(0) || "T";
+  const talentNameInitial = talent.full_name?.charAt(0) || 'T';
 
   return (
-    <Card className="overflow-hidden transition-all hover:shadow-lg border-zion-blue-light bg-zion-blue cursor-pointer" onClick={handleViewProfile}>
+    <Card
+      className="overflow-hidden transition-all hover:shadow-lg border-zion-blue-light bg-zion-blue cursor-pointer"
+      onClick={handleViewProfile}
+    >
       <div className="p-6">
         <div className="flex items-start">
           <div className="relative mr-4">
-            <div className="w-16 h-16 rounded-full overflow-hidden bg-zion-blue-dark border border-zion-blue-light relative"> {/* Added relative for Image */}
+            <div className="w-16 h-16 rounded-full overflow-hidden bg-zion-blue-dark border border-zion-blue-light relative">
+              {' '}
+              {/* Added relative for Image */}
               {talent.profile_picture_url && !avatarError ? (
                 <Image
-                  src={talent.profile_picture_url} 
+                  src={talent.profile_picture_url}
                   alt={talent.full_name || 'Talent Avatar'}
                   fill={true}
                   style={{ objectFit: 'cover' }}
@@ -83,22 +83,28 @@ export function TalentCard({
               </div>
             )}
           </div>
-          
+
           <div className="flex-1">
             <div className="flex justify-between items-start">
-              <h3 className="text-lg font-bold text-white">{talent.full_name}</h3>
+              <h3 className="text-lg font-bold text-white">
+                {talent.full_name}
+              </h3>
               <Button
                 variant="ghost"
                 size="sm"
                 className="p-1 h-auto text-zion-slate-light hover:text-zion-cyan"
                 onClick={handleToggleSave}
               >
-                <Star className={`h-5 w-5 ${isSaved ? "fill-yellow-400 text-yellow-400" : ""}`} />
-                <span className="sr-only">{isSaved ? "Saved" : "Save"}</span>
+                <Star
+                  className={`h-5 w-5 ${isSaved ? 'fill-yellow-400 text-yellow-400' : ''}`}
+                />
+                <span className="sr-only">{isSaved ? 'Saved' : 'Save'}</span>
               </Button>
             </div>
-            <p className="text-zion-cyan font-medium">{talent.professional_title}</p>
-            
+            <p className="text-zion-cyan font-medium">
+              {talent.professional_title}
+            </p>
+
             <div className="mt-2 flex flex-wrap gap-3 text-sm">
               {talent.location && (
                 <div className="flex items-center text-zion-slate-light">
@@ -115,12 +121,12 @@ export function TalentCard({
             </div>
           </div>
         </div>
-        
+
         {skills.length > 0 && (
           <div className="mt-4">
             <div className="flex flex-wrap gap-2">
               {skills.map((skill, index) => (
-                <span 
+                <span
                   key={index}
                   className="px-2 py-1 text-xs rounded-full bg-zion-blue-light text-zion-slate-light"
                 >
@@ -135,7 +141,7 @@ export function TalentCard({
             </div>
           </div>
         )}
-        
+
         <div className="mt-5 flex items-center justify-between">
           <div>
             {talent.hourly_rate ? (
@@ -147,7 +153,7 @@ export function TalentCard({
               <div className="text-zion-slate-light">Rate not specified</div>
             )}
           </div>
-          
+
           <div className="flex items-center gap-2">
             {isAuthenticated && (
               <Button

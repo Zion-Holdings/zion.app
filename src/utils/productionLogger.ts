@@ -68,7 +68,7 @@ class ProductionLogger {
   private createLogEntry(
     level: LogLevel,
     message: string,
-    context?: LogContext
+    context?: LogContext,
   ): LogEntry {
     return {
       level,
@@ -117,11 +117,31 @@ class ProductionLogger {
 
     try {
       // Send to Sentry or other monitoring service
-      if (typeof window !== 'undefined' && (window as unknown as { Sentry?: { captureException?: (error: unknown, context?: unknown) => void; captureMessage?: (message: string, level?: string) => void } }).Sentry) {
-        const sentry = (window as unknown as { Sentry?: { captureException?: (error: unknown, context?: unknown) => void; captureMessage?: (message: string, level?: string) => void } }).Sentry;
+      if (
+        typeof window !== 'undefined' &&
+        (
+          window as unknown as {
+            Sentry?: {
+              captureException?: (error: unknown, context?: unknown) => void;
+              captureMessage?: (message: string, level?: string) => void;
+            };
+          }
+        ).Sentry
+      ) {
+        const sentry = (
+          window as unknown as {
+            Sentry?: {
+              captureException?: (error: unknown, context?: unknown) => void;
+              captureMessage?: (message: string, level?: string) => void;
+            };
+          }
+        ).Sentry;
         if (sentry) {
-          entries.forEach(entry => {
-            if (entry.level === 'error' && typeof sentry.captureException === 'function') {
+          entries.forEach((entry) => {
+            if (
+              entry.level === 'error' &&
+              typeof sentry.captureException === 'function'
+            ) {
               sentry.captureException(new Error(entry.message), {
                 extra: entry.context,
                 tags: {
@@ -146,11 +166,13 @@ class ProductionLogger {
             },
             body: JSON.stringify({ entries }),
           });
-          
+
           if (!response.ok) {
             // Only log to console if the logging endpoint fails
             // to prevent circular logging
-            internalConsole.warn(`Logging endpoint returned ${response.status}`);
+            internalConsole.warn(
+              `Logging endpoint returned ${response.status}`,
+            );
           }
         } catch {
           // Silent fail for logging endpoint to prevent circular errors
@@ -195,7 +217,10 @@ class ProductionLogger {
   }
 
   private initializePerformanceTracking(): void {
-    if (!this.config.enablePerformanceTracking || typeof window === 'undefined') {
+    if (
+      !this.config.enablePerformanceTracking ||
+      typeof window === 'undefined'
+    ) {
       return;
     }
 
@@ -203,16 +228,22 @@ class ProductionLogger {
     try {
       // First Contentful Paint
       const paintEntries = performance.getEntriesByType('paint');
-      const fcpEntry = paintEntries.find(entry => entry.name === 'first-contentful-paint');
+      const fcpEntry = paintEntries.find(
+        (entry) => entry.name === 'first-contentful-paint',
+      );
       if (fcpEntry) {
         this.performanceMetrics.firstContentfulPaint = fcpEntry.startTime;
       }
 
       // Navigation timing
-      const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+      const navigationEntry = performance.getEntriesByType(
+        'navigation',
+      )[0] as PerformanceNavigationTiming;
       if (navigationEntry) {
-        this.performanceMetrics.pageLoadTime = navigationEntry.loadEventEnd - navigationEntry.fetchStart;
-        this.performanceMetrics.timeToInteractive = navigationEntry.loadEventEnd;
+        this.performanceMetrics.pageLoadTime =
+          navigationEntry.loadEventEnd - navigationEntry.fetchStart;
+        this.performanceMetrics.timeToInteractive =
+          navigationEntry.loadEventEnd;
       }
 
       // Observe LCP and CLS
@@ -222,17 +253,26 @@ class ProductionLogger {
             if (entry.entryType === 'largest-contentful-paint') {
               this.performanceMetrics.largestContentfulPaint = entry.startTime;
             }
-            if (entry.entryType === 'layout-shift' && !(entry as { hadRecentInput?: boolean }).hadRecentInput) {
-              this.performanceMetrics.cumulativeLayoutShift = 
-                (this.performanceMetrics.cumulativeLayoutShift || 0) + ((entry as { value?: number }).value || 0);
+            if (
+              entry.entryType === 'layout-shift' &&
+              !(entry as { hadRecentInput?: boolean }).hadRecentInput
+            ) {
+              this.performanceMetrics.cumulativeLayoutShift =
+                (this.performanceMetrics.cumulativeLayoutShift || 0) +
+                ((entry as { value?: number }).value || 0);
             }
           }
         });
 
-        observer.observe({ entryTypes: ['largest-contentful-paint', 'layout-shift'] });
+        observer.observe({
+          entryTypes: ['largest-contentful-paint', 'layout-shift'],
+        });
       }
     } catch {
-      internalConsole.warn('Performance tracking initialization failed:', error);
+      internalConsole.warn(
+        'Performance tracking initialization failed:',
+        error,
+      );
     }
   }
 
@@ -261,7 +301,11 @@ class ProductionLogger {
     this.bufferLogEntry(entry); // Warnings will still be buffered and sent to /api/logs and Sentry via that route if configured
   }
 
-  error(message: string, errorPayload?: Error | unknown, context?: LogContext): void {
+  error(
+    message: string,
+    errorPayload?: Error | unknown,
+    context?: LogContext,
+  ): void {
     if (!this.shouldLog('error')) return;
 
     // 1. Create a basic log entry for console output
@@ -269,24 +313,34 @@ class ProductionLogger {
     // reportExternalError will handle the raw errorPayload.
     const errorForConsoleContext = {
       ...context,
-      errorDetails: errorPayload instanceof Error ? {
-        name: errorPayload.name,
-        message: errorPayload.message,
-        stack: errorPayload.stack,
-      } : { message: String(errorPayload) },
+      errorDetails:
+        errorPayload instanceof Error
+          ? {
+              name: errorPayload.name,
+              message: errorPayload.message,
+              stack: errorPayload.stack,
+            }
+          : { message: String(errorPayload) },
     };
     const entry = this.createLogEntry('error', message, errorForConsoleContext);
     this.outputToConsole(entry); // Log to console for immediate visibility
 
     // 2. Report to external services using the imported logError (now reportExternalError)
     // If message is meant to be the primary error description when errorPayload isn't an Error instance:
-    const actualErrorToReport = errorPayload instanceof Error ? errorPayload : new Error(`${message}${errorPayload ? `: ${String(errorPayload)}` : ''}`);
+    const actualErrorToReport =
+      errorPayload instanceof Error
+        ? errorPayload
+        : new Error(
+            `${message}${errorPayload ? `: ${String(errorPayload)}` : ''}`,
+          );
     if (!(errorPayload instanceof Error) && errorPayload) {
-        // If the original errorPayload was not an error, but some other data,
-        // attach it to the new error's context if possible, or ensure it's in the main context.
-        if (typeof context === 'object' && context !== null) {
-            ((actualErrorToReport as unknown) as Record<string, unknown>).originalPayload = errorPayload;
-        }
+      // If the original errorPayload was not an error, but some other data,
+      // attach it to the new error's context if possible, or ensure it's in the main context.
+      if (typeof context === 'object' && context !== null) {
+        (
+          actualErrorToReport as unknown as Record<string, unknown>
+        ).originalPayload = errorPayload;
+      }
     }
 
     // The context for reportExternalError can include componentStack and other structured data
@@ -305,7 +359,11 @@ class ProductionLogger {
   }
 
   // Performance logging
-  logPerformanceMetric(name: string, value: number, context?: LogContext): void {
+  logPerformanceMetric(
+    name: string,
+    value: number,
+    context?: LogContext,
+  ): void {
     this.info(`Performance: ${name}`, {
       metric: name,
       value,
@@ -335,12 +393,12 @@ class ProductionLogger {
     try {
       performance.mark(`${label}-end`);
       performance.measure(label, `${label}-start`, `${label}-end`);
-      
+
       const measure = performance.getEntriesByName(label, 'measure')[0];
       const duration = measure?.duration || 0;
 
       this.logPerformanceMetric(label, duration);
-      
+
       // Clean up marks and measures
       performance.clearMarks(`${label}-start`);
       performance.clearMarks(`${label}-end`);
@@ -382,8 +440,10 @@ const productionLogger = new ProductionLogger();
 export const logDebug = productionLogger.debug.bind(productionLogger);
 export const logInfo = productionLogger.info.bind(productionLogger);
 export const logWarn = productionLogger.warn.bind(productionLogger);
-export const logErrorToProduction = productionLogger.error.bind(productionLogger);
-export const logPerformance = productionLogger.logPerformanceMetric.bind(productionLogger);
+export const logErrorToProduction =
+  productionLogger.error.bind(productionLogger);
+export const logPerformance =
+  productionLogger.logPerformanceMetric.bind(productionLogger);
 export const timeStart = productionLogger.time.bind(productionLogger);
 export const timeEnd = productionLogger.timeEnd.bind(productionLogger);
 
@@ -391,4 +451,4 @@ export const timeEnd = productionLogger.timeEnd.bind(productionLogger);
 // Use logErrorToProduction for production logging or import logError from utils/logError.ts for external error reporting
 
 export { ProductionLogger };
-export default productionLogger; 
+export default productionLogger;

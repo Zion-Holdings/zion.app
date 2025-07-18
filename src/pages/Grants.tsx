@@ -64,19 +64,28 @@ export default function GrantsPage() {
 
   return (
     <>
-      <NextSeo title="Zion Grants" description="Apply for funding or track incubated projects." />
+      <NextSeo
+        title="Zion Grants"
+        description="Apply for funding or track incubated projects."
+      />
       <div className="container mx-auto p-4 space-y-8">
         <div>
           <h1 className="text-3xl font-bold mb-4">Grant Application</h1>
           <Form {...form}>
             <form
               className="space-y-4"
-              onSubmit={form.handleSubmit((data) => saveGrant(data, 'Submitted'))}
+              onSubmit={form.handleSubmit((data) =>
+                saveGrant(data, 'Submitted'),
+              )}
             >
               <FormField
                 control={form.control}
                 name="projectName"
-                render={({ field }: { field: ControllerRenderProps<FormValues, 'projectName'> }) => (
+                render={({
+                  field,
+                }: {
+                  field: ControllerRenderProps<FormValues, 'projectName'>;
+                }) => (
                   <FormItem>
                     <FormLabel>Project Name</FormLabel>
                     <FormControl>
@@ -89,7 +98,11 @@ export default function GrantsPage() {
               <FormField
                 control={form.control}
                 name="teamInfo"
-                render={({ field }: { field: ControllerRenderProps<FormValues, 'teamInfo'> }) => (
+                render={({
+                  field,
+                }: {
+                  field: ControllerRenderProps<FormValues, 'teamInfo'>;
+                }) => (
                   <FormItem>
                     <FormLabel>Team Info</FormLabel>
                     <FormControl>
@@ -102,7 +115,11 @@ export default function GrantsPage() {
               <FormField
                 control={form.control}
                 name="summary"
-                render={({ field }: { field: ControllerRenderProps<FormValues, 'summary'> }) => (
+                render={({
+                  field,
+                }: {
+                  field: ControllerRenderProps<FormValues, 'summary'>;
+                }) => (
                   <FormItem>
                     <FormLabel>Proposal Summary</FormLabel>
                     <FormControl>
@@ -115,7 +132,11 @@ export default function GrantsPage() {
               <FormField
                 control={form.control}
                 name="timeline"
-                render={({ field }: { field: ControllerRenderProps<FormValues, 'timeline'> }) => (
+                render={({
+                  field,
+                }: {
+                  field: ControllerRenderProps<FormValues, 'timeline'>;
+                }) => (
                   <FormItem>
                     <FormLabel>Timeline</FormLabel>
                     <FormControl>
@@ -128,7 +149,11 @@ export default function GrantsPage() {
               <FormField
                 control={form.control}
                 name="budget"
-                render={({ field }: { field: ControllerRenderProps<FormValues, 'budget'> }) => (
+                render={({
+                  field,
+                }: {
+                  field: ControllerRenderProps<FormValues, 'budget'>;
+                }) => (
                   <FormItem>
                     <FormLabel>Budget Request (ZION$ or USDC)</FormLabel>
                     <FormControl>
@@ -141,7 +166,11 @@ export default function GrantsPage() {
               <FormField
                 control={form.control}
                 name="links"
-                render={({ field }: { field: ControllerRenderProps<FormValues, 'links'> }) => (
+                render={({
+                  field,
+                }: {
+                  field: ControllerRenderProps<FormValues, 'links'>;
+                }) => (
                   <FormItem>
                     <FormLabel>Supporting Links / Pitch Deck</FormLabel>
                     <FormControl>
@@ -153,33 +182,42 @@ export default function GrantsPage() {
               <FormField
                 control={form.control}
                 name="category"
-                render={({ field }: { field: ControllerRenderProps<FormValues, 'category'> }) => {
-                 const categoryValue = form.watch('category');
-                 return (
-                  <FormItem>
-                    <FormLabel>Category</FormLabel>
-                    <Select value={categoryValue || ''} onValueChange={field.onChange}>
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        {categories.map((cat) => (
-                          <SelectItem key={cat} value={cat}>
-                            {cat}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </FormItem>
-                );
-               }}
+                render={({
+                  field,
+                }: {
+                  field: ControllerRenderProps<FormValues, 'category'>;
+                }) => {
+                  const categoryValue = form.watch('category');
+                  return (
+                    <FormItem>
+                      <FormLabel>Category</FormLabel>
+                      <Select
+                        value={categoryValue || ''}
+                        onValueChange={field.onChange}
+                      >
+                        <FormControl>
+                          <SelectTrigger>
+                            <SelectValue />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          {categories.map((cat) => (
+                            <SelectItem key={cat} value={cat}>
+                              {cat}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </FormItem>
+                  );
+                }}
               />
               <div className="flex gap-2">
                 <Button
                   type="button"
-                  onClick={form.handleSubmit((data) => saveGrant(data, 'Draft'))}
+                  onClick={form.handleSubmit((data) =>
+                    saveGrant(data, 'Draft'),
+                  )}
                 >
                   Save Draft
                 </Button>
@@ -199,7 +237,9 @@ export default function GrantsPage() {
                   <CardHeader className="flex justify-between">
                     <div>
                       <h3 className="font-semibold text-lg">{g.projectName}</h3>
-                      <p className="text-sm text-muted-foreground">{g.category}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {g.category}
+                      </p>
                     </div>
                     <Badge variant="secondary">{g.status}</Badge>
                   </CardHeader>

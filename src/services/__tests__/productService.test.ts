@@ -15,7 +15,7 @@ const mockProduct: ProductDetailsData = {
   averageRating: 4.5,
   reviewCount: 100,
   specifications: ['Spec A', 'Spec B'],
-  priceTiers: [{ tier: 'Standard', price: 99.99 }]
+  priceTiers: [{ tier: 'Standard', price: 99.99 }],
 };
 
 describe('fetchProductById', () => {
@@ -48,7 +48,9 @@ describe('fetchProductById', () => {
     const productId = 'test-product-123';
     const product = await fetchProductById(productId);
 
-    expect(mockFetch).toHaveBeenCalledWith(`/api/marketplace/product/${productId}`);
+    expect(mockFetch).toHaveBeenCalledWith(
+      `/api/marketplace/product/${productId}`,
+    );
     expect(product).toEqual(mockProduct);
   });
 
@@ -62,8 +64,12 @@ describe('fetchProductById', () => {
     const product = await fetchProductById(productId);
 
     expect(product).toBeNull();
-    expect(mockFetch).toHaveBeenCalledWith(`/api/marketplace/product/${productId}`);
-    expect(consoleWarnSpy).toHaveBeenCalledWith(`Product with ID "${productId}" not found.`);
+    expect(mockFetch).toHaveBeenCalledWith(
+      `/api/marketplace/product/${productId}`,
+    );
+    expect(consoleWarnSpy).toHaveBeenCalledWith(
+      `Product with ID "${productId}" not found.`,
+    );
   });
 
   it('should throw an error and log details for other server errors (e.g., 500)', async () => {
@@ -72,15 +78,19 @@ describe('fetchProductById', () => {
       ok: false,
       status: 500,
       statusText: 'Internal Server Error',
-      text: async () => errorResponseText
+      text: async () => errorResponseText,
     } as Response);
 
     const productId = 'error-id';
-    await expect(fetchProductById(productId)).rejects.toThrow('Failed to fetch product data. Status: 500');
-    expect(mockFetch).toHaveBeenCalledWith(`/api/marketplace/product/${productId}`);
+    await expect(fetchProductById(productId)).rejects.toThrow(
+      'Failed to fetch product data. Status: 500',
+    );
+    expect(mockFetch).toHaveBeenCalledWith(
+      `/api/marketplace/product/${productId}`,
+    );
     expect(consoleErrorSpy).toHaveBeenCalledWith(
       `Error fetching product ${productId}: 500 Internal Server Error`,
-      errorResponseText
+      errorResponseText,
     );
   });
 
@@ -90,8 +100,15 @@ describe('fetchProductById', () => {
 
     const productId = 'network-error-id';
     // The implementation re-throws the original error, so we check for that.
-    await expect(fetchProductById(productId)).rejects.toThrow(networkError.message);
-    expect(mockFetch).toHaveBeenCalledWith(`/api/marketplace/product/${productId}`);
-    expect(consoleErrorSpy).toHaveBeenCalledWith('An error occurred in fetchProductById:', networkError);
+    await expect(fetchProductById(productId)).rejects.toThrow(
+      networkError.message,
+    );
+    expect(mockFetch).toHaveBeenCalledWith(
+      `/api/marketplace/product/${productId}`,
+    );
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      'An error occurred in fetchProductById:',
+      networkError,
+    );
   });
 });

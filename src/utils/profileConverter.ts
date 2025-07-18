@@ -1,6 +1,5 @@
-
-import type { ProfileData } from "@/types/profile";
-import type { TalentProfile } from "@/types/talent";
+import type { ProfileData } from '@/types/profile';
+import type { TalentProfile } from '@/types/talent';
 
 function isTalentProfile(profile: unknown): profile is TalentProfile {
   return (
@@ -10,7 +9,9 @@ function isTalentProfile(profile: unknown): profile is TalentProfile {
   );
 }
 
-export function convertProfileToTalentProfile(profile: ProfileData | unknown): TalentProfile {
+export function convertProfileToTalentProfile(
+  profile: ProfileData | unknown,
+): TalentProfile {
   // Handle both ProfileData and existing TalentProfile inputs
   if (isTalentProfile(profile)) {
     return profile;
@@ -27,11 +28,15 @@ export function convertProfileToTalentProfile(profile: ProfileData | unknown): T
     profile_picture_url: p.avatarUrl,
     years_experience: 3, // Default value
     skills: p.skills?.map((skill: { name: string }) => skill.name) || [],
-    availability_type: p.availability?.status === 'available' ? 'full_time' :
-                      p.availability?.status === 'limited' ? 'part_time' : 'unavailable',
+    availability_type:
+      p.availability?.status === 'available'
+        ? 'full_time'
+        : p.availability?.status === 'limited'
+          ? 'part_time'
+          : 'unavailable',
     timezone: 'UTC',
     hourly_rate: p.hourlyRate || 0,
     rating_count: p.reviewCount || 0,
-    average_rating: p.rating || 0
+    average_rating: p.rating || 0,
   };
 }

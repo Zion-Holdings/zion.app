@@ -15,11 +15,10 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage
-} from "@/components/ui/form";
+  FormMessage,
+} from '@/components/ui/form';
 import type { WorkExperience } from '@/types/resume';
 import type { ControllerRenderProps } from 'react-hook-form';
-
 
 import { useResume } from '@/hooks/useResume';
 import { Alert, AlertDescription } from '@/components/ui/alert';
@@ -46,8 +45,18 @@ interface WorkExperienceFormProps {
   onBack: () => void;
 }
 
-export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBack }: WorkExperienceFormProps) {
-  const { addWorkExperience, updateWorkExperience, deleteWorkExperience, isLoading } = useResume();
+export function WorkExperienceForm({
+  resumeId,
+  workExperiences,
+  onComplete,
+  onBack,
+}: WorkExperienceFormProps) {
+  const {
+    addWorkExperience,
+    updateWorkExperience,
+    deleteWorkExperience,
+    isLoading,
+  } = useResume();
   const [editingId, setEditingId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -116,7 +125,10 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
     form.reset({
       ...work,
       start_date: formatDateValue(work.start_date),
-      end_date: work.end_date && !work.is_current ? formatDateValue(work.end_date) : undefined,
+      end_date:
+        work.end_date && !work.is_current
+          ? formatDateValue(work.end_date)
+          : undefined,
     });
   };
 
@@ -148,18 +160,26 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
                 <div className="flex justify-between">
                   <div>
                     <h4 className="font-medium">{work.role_title}</h4>
-                    <p className="text-sm text-muted-foreground">{work.company_name}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {work.company_name}
+                    </p>
                     <p className="text-xs text-muted-foreground mt-1">
-                      {typeof work.start_date === 'string' 
-                        ? work.start_date 
-                        : format(work.start_date, 'MMM yyyy')} - {work.is_current 
-                        ? 'Present' 
-                        : (work.end_date ? (typeof work.end_date === 'string' 
-                          ? work.end_date 
-                          : format(work.end_date, 'MMM yyyy')) : '')}
+                      {typeof work.start_date === 'string'
+                        ? work.start_date
+                        : format(work.start_date, 'MMM yyyy')}{' '}
+                      -{' '}
+                      {work.is_current
+                        ? 'Present'
+                        : work.end_date
+                          ? typeof work.end_date === 'string'
+                            ? work.end_date
+                            : format(work.end_date, 'MMM yyyy')
+                          : ''}
                     </p>
                     {work.location && (
-                      <p className="text-xs text-muted-foreground">{work.location}</p>
+                      <p className="text-xs text-muted-foreground">
+                        {work.location}
+                      </p>
                     )}
                   </div>
                   <div className="flex gap-2">
@@ -182,7 +202,9 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
                   </div>
                 </div>
                 {work.description && (
-                  <p className="text-sm mt-3 line-clamp-2">{work.description}</p>
+                  <p className="text-sm mt-3 line-clamp-2">
+                    {work.description}
+                  </p>
                 )}
               </CardContent>
             </Card>
@@ -196,12 +218,22 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
         </h3>
 
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(handleAddOrUpdate)} className="space-y-4">
+          <form
+            onSubmit={form.handleSubmit(handleAddOrUpdate)}
+            className="space-y-4"
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <FormField
                 control={form.control}
                 name="company_name"
-                render={({ field }: { field: ControllerRenderProps<WorkExperienceFormValues, 'company_name'> }) => (
+                render={({
+                  field,
+                }: {
+                  field: ControllerRenderProps<
+                    WorkExperienceFormValues,
+                    'company_name'
+                  >;
+                }) => (
                   <FormItem>
                     <FormLabel>Company Name</FormLabel>
                     <FormControl>
@@ -215,11 +247,21 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
               <FormField
                 control={form.control}
                 name="role_title"
-                render={({ field }: { field: ControllerRenderProps<WorkExperienceFormValues, 'role_title'> }) => (
+                render={({
+                  field,
+                }: {
+                  field: ControllerRenderProps<
+                    WorkExperienceFormValues,
+                    'role_title'
+                  >;
+                }) => (
                   <FormItem>
                     <FormLabel>Job Title</FormLabel>
                     <FormControl>
-                      <Input placeholder="Software Engineer, Product Manager, etc." {...field} />
+                      <Input
+                        placeholder="Software Engineer, Product Manager, etc."
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -231,15 +273,18 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
               <FormField
                 control={form.control}
                 name="start_date"
-                render={({ field }: { field: ControllerRenderProps<WorkExperienceFormValues, 'start_date'> }) => (
+                render={({
+                  field,
+                }: {
+                  field: ControllerRenderProps<
+                    WorkExperienceFormValues,
+                    'start_date'
+                  >;
+                }) => (
                   <FormItem>
                     <FormLabel>Start Date</FormLabel>
                     <FormControl>
-                      <Input 
-                        type="date" 
-                        {...field} 
-                        value={field.value || ''}
-                      />
+                      <Input type="date" {...field} value={field.value || ''} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -250,7 +295,14 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
                 <FormField
                   control={form.control}
                   name="is_current"
-                  render={({ field }: { field: ControllerRenderProps<WorkExperienceFormValues, 'is_current'> }) => (
+                  render={({
+                    field,
+                  }: {
+                    field: ControllerRenderProps<
+                      WorkExperienceFormValues,
+                      'is_current'
+                    >;
+                  }) => (
                     <FormItem className="flex flex-row items-start space-x-3 space-y-0 py-2">
                       <FormControl>
                         <Checkbox
@@ -269,14 +321,21 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
                   <FormField
                     control={form.control}
                     name="end_date"
-                    render={({ field }: { field: ControllerRenderProps<WorkExperienceFormValues, 'end_date'> }) => (
+                    render={({
+                      field,
+                    }: {
+                      field: ControllerRenderProps<
+                        WorkExperienceFormValues,
+                        'end_date'
+                      >;
+                    }) => (
                       <FormItem>
                         <FormLabel>End Date</FormLabel>
                         <FormControl>
-                          <Input 
-                            type="date" 
-                            {...field} 
-                            value={field.value || ''} 
+                          <Input
+                            type="date"
+                            {...field}
+                            value={field.value || ''}
                           />
                         </FormControl>
                         <FormMessage />
@@ -290,11 +349,21 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
             <FormField
               control={form.control}
               name="location"
-              render={({ field }: { field: ControllerRenderProps<WorkExperienceFormValues, 'location'> }) => (
+              render={({
+                field,
+              }: {
+                field: ControllerRenderProps<
+                  WorkExperienceFormValues,
+                  'location'
+                >;
+              }) => (
                 <FormItem>
                   <FormLabel>Location (Optional)</FormLabel>
                   <FormControl>
-                    <Input placeholder="San Francisco, CA (Remote)" {...field} />
+                    <Input
+                      placeholder="San Francisco, CA (Remote)"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -304,7 +373,14 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
             <FormField
               control={form.control}
               name="description"
-              render={({ field }: { field: ControllerRenderProps<WorkExperienceFormValues, 'description'> }) => (
+              render={({
+                field,
+              }: {
+                field: ControllerRenderProps<
+                  WorkExperienceFormValues,
+                  'description'
+                >;
+              }) => (
                 <FormItem>
                   <FormLabel className="flex justify-between">
                     <span>Job Description</span>
@@ -327,7 +403,11 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
               )}
             />
 
-            {error && <Alert variant="destructive"><AlertDescription>{error}</AlertDescription></Alert>}
+            {error && (
+              <Alert variant="destructive">
+                <AlertDescription>{error}</AlertDescription>
+              </Alert>
+            )}
 
             <div className="flex justify-between pt-2">
               <Button
@@ -354,7 +434,9 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
 
               <div className="flex gap-2">
                 <Button type="submit" disabled={isLoading}>
-                  {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                  {isLoading && (
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  )}
                   {editingId ? 'Update' : 'Add'} Experience
                 </Button>
 

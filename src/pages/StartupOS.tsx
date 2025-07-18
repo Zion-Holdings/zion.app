@@ -10,19 +10,42 @@ const _StartupOSPage: React.FC = () => {
         <nav>
           <ul>
             <li className="mb-3">
-              <a href="#" className="text-gray-600 hover:text-blue-600 font-medium">Dashboard Home</a>
+              <a
+                href="#"
+                className="text-gray-600 hover:text-blue-600 font-medium"
+              >
+                Dashboard Home
+              </a>
             </li>
             <li className="mb-3">
-              <a href="#" className="text-gray-600 hover:text-blue-600 font-medium">My Profile</a>
+              <a
+                href="#"
+                className="text-gray-600 hover:text-blue-600 font-medium"
+              >
+                My Profile
+              </a>
             </li>
             <li className="mb-3">
-              <a href="#" className="text-blue-600 font-semibold">Legal Templates</a> {/* Active link example */}
+              <a href="#" className="text-blue-600 font-semibold">
+                Legal Templates
+              </a>{' '}
+              {/* Active link example */}
             </li>
             <li className="mb-3">
-              <a href="#" className="text-gray-600 hover:text-blue-600 font-medium">Cap Table</a>
+              <a
+                href="#"
+                className="text-gray-600 hover:text-blue-600 font-medium"
+              >
+                Cap Table
+              </a>
             </li>
             <li className="mb-3">
-              <a href="#" className="text-gray-600 hover:text-blue-600 font-medium">Investor Relations</a>
+              <a
+                href="#"
+                className="text-gray-600 hover:text-blue-600 font-medium"
+              >
+                Investor Relations
+              </a>
             </li>
           </ul>
         </nav>
@@ -30,7 +53,9 @@ const _StartupOSPage: React.FC = () => {
 
       {/* Main Content Area */}
       <div className="flex-grow p-8">
-        <h1 className="text-3xl font-bold mb-8 text-gray-800">Founder Dashboard</h1>
+        <h1 className="text-3xl font-bold mb-8 text-gray-800">
+          Founder Dashboard
+        </h1>
         <LegalTemplates /> {/* Render the LegalTemplates component */}
       </div>
     </div>

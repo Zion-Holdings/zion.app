@@ -3,7 +3,6 @@ import { sendEmailWithSendGrid } from '@/lib/email';
 import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 export async function subscribeToNewsletter(email: string): Promise<void> {
-
   if (mailchimpService) {
     await mailchimpService.addSubscriber({
       email,
@@ -25,7 +24,9 @@ export async function subscribeToNewsletter(email: string): Promise<void> {
         dynamicTemplateData: {},
       });
     } catch {
-      logErrorToProduction('Failed to send SendGrid welcome email:', { data: error });
+      logErrorToProduction('Failed to send SendGrid welcome email:', {
+        data: error,
+      });
     }
   }
 }

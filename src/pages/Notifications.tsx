@@ -1,20 +1,22 @@
 import React from 'react';
-import { Bell, Check, Trash2, ChevronRight, CheckCircle, AlertCircle, UserCheck, Settings } from '@/components/ui/icons';
+import {
+  Bell,
+  Check,
+  Trash2,
+  ChevronRight,
+  CheckCircle,
+  AlertCircle,
+  UserCheck,
+  Settings,
+} from '@/components/ui/icons';
 import { useNotifications } from '@/context/notifications/NotificationContext';
 
-import type { NotificationType, NotificationContextType, FilterType } from '@/context/notifications';
+import type {
+  NotificationType,
+  NotificationContextType,
+  FilterType,
+} from '@/context/notifications';
 import { formatDistanceToNow } from 'date-fns';
-
-
-
-
-
-
-
-
-
-
-
 
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';

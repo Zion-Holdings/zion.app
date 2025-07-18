@@ -22,7 +22,11 @@ export default function ListingModeration() {
     if (!error) {
       setLogs(data || []);
     } else {
-      toast({ title: 'Error', description: 'Failed to load moderation logs', variant: 'destructive' });
+      toast({
+        title: 'Error',
+        description: 'Failed to load moderation logs',
+        variant: 'destructive',
+      });
     }
     setIsLoading(false);
   };
@@ -38,7 +42,11 @@ export default function ListingModeration() {
       .update({ status: action, reviewed_at: new Date().toISOString() })
       .eq('id', id);
     if (error) {
-      toast({ title: 'Error', description: 'Failed to update log', variant: 'destructive' });
+      toast({
+        title: 'Error',
+        description: 'Failed to update log',
+        variant: 'destructive',
+      });
     } else {
       toast({ title: 'Updated', description: `Listing ${action}` });
       fetchLogs();
@@ -47,12 +55,19 @@ export default function ListingModeration() {
 
   return (
     <AdminLayout>
-      <SEO title="Listing Moderation" description="Moderate product and service listings" />
+      <SEO
+        title="Listing Moderation"
+        description="Moderate product and service listings"
+      />
       <div className="space-y-4">
         <h1 className="text-2xl font-bold">Listing Moderation</h1>
         <Card>
           <CardContent className="p-0">
-            <FlaggedListingsTable logs={logs} isLoading={isLoading} onAction={handleAction} />
+            <FlaggedListingsTable
+              logs={logs}
+              isLoading={isLoading}
+              onAction={handleAction}
+            />
           </CardContent>
         </Card>
       </div>

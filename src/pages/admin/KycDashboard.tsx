@@ -19,7 +19,9 @@ export default function KycDashboard() {
   const [requests, setRequests] = useState<KycRequest[]>(mockRequests);
 
   const updateStatus = (id: string, _status: 'approved' | 'rejected') => {
-    setRequests(prev => prev.map(r => r.id === id ? { ...r, status } : r));
+    setRequests((prev) =>
+      prev.map((r) => (r.id === id ? { ...r, status } : r)),
+    );
   };
 
   return (
@@ -28,21 +30,37 @@ export default function KycDashboard() {
         <Header />
         <div className="min-h-screen bg-zion-blue px-4 py-8">
           <div className="container mx-auto">
-            <h1 className="text-3xl font-bold text-white mb-6">KYC Dashboard</h1>
+            <h1 className="text-3xl font-bold text-white mb-6">
+              KYC Dashboard
+            </h1>
             <Card>
               <CardHeader>
                 <CardTitle>Verification Queue</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-4">
-                  {requests.map(req => (
-                    <li key={req.id} className="flex items-center justify-between bg-white p-4 rounded-md">
+                  {requests.map((req) => (
+                    <li
+                      key={req.id}
+                      className="flex items-center justify-between bg-white p-4 rounded-md"
+                    >
                       <span>{req.userEmail}</span>
                       <span className="capitalize">{req.status}</span>
                       {req.status === 'pending' && (
                         <div className="space-x-2">
-                          <Button size="sm" onClick={() => updateStatus(req.id, 'approved')}>Approve</Button>
-                          <Button size="sm" variant="destructive" onClick={() => updateStatus(req.id, 'rejected')}>Reject</Button>
+                          <Button
+                            size="sm"
+                            onClick={() => updateStatus(req.id, 'approved')}
+                          >
+                            Approve
+                          </Button>
+                          <Button
+                            size="sm"
+                            variant="destructive"
+                            onClick={() => updateStatus(req.id, 'rejected')}
+                          >
+                            Reject
+                          </Button>
                         </div>
                       )}
                     </li>

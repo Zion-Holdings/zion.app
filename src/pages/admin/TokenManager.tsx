@@ -9,10 +9,9 @@ import type { TokenTransaction } from '@/types/tokens';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 export default function TokenManager() {
-
   const { _user } = useAuth();
   const { _toast } = useToast();
   const [transactions, setTransactions] = useState<TokenTransaction[]>([]);
@@ -40,26 +39,32 @@ export default function TokenManager() {
     if (!userId || amount <= 0 || processing) return;
     setProcessing(true);
     try {
-      const res = await fetch(`/functions/v1/token-manager/${type === 'earn' ? 'earn' : 'burn'}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ userId, amount }),
-      });
+      const res = await fetch(
+        `/functions/v1/token-manager/${type === 'earn' ? 'earn' : 'burn'}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ userId, amount }),
+        },
+      );
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
         throw new Error(data.error || `Error ${res.status}`);
       }
       toast({
         title: 'Success',
-        description: 'Transaction processed'
+        description: 'Transaction processed',
       });
       fetchTransactions();
     } catch (err: unknown) {
       logErrorToProduction('Failed to process transaction:', { data: err });
       toast({
         title: 'Error',
-        description: (typeof err === 'object' && err && 'message' in err ? (err as { message?: string }).message : 'Failed') || 'Unknown error occurred',
-        variant: 'destructive'
+        description:
+          (typeof err === 'object' && err && 'message' in err
+            ? (err as { message?: string }).message
+            : 'Failed') || 'Unknown error occurred',
+        variant: 'destructive',
       });
     } finally {
       setProcessing(false);
@@ -72,19 +77,37 @@ export default function TokenManager() {
         <Header />
         <div className="min-h-screen bg-zion-blue px-4 py-8">
           <div className="container mx-auto">
-            <h1 className="text-3xl font-bold text-white mb-6">Token Manager</h1>
+            <h1 className="text-3xl font-bold text-white mb-6">
+              Token Manager
+            </h1>
             <Card className="mb-6">
               <CardHeader>
                 <CardTitle>Issue or Revoke Tokens</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <Input placeholder="User ID" value={userId} onChange={e => setUserId(e.target.value)} />
-                <Input type="number" placeholder="Amount" value={amount} onChange={e => setAmount(parseInt(e.target.value))} />
+                <Input
+                  placeholder="User ID"
+                  value={userId}
+                  onChange={(e) => setUserId(e.target.value)}
+                />
+                <Input
+                  type="number"
+                  placeholder="Amount"
+                  value={amount}
+                  onChange={(e) => setAmount(parseInt(e.target.value))}
+                />
                 <div className="flex gap-2">
-                  <Button onClick={() => handleIssue('earn')} disabled={processing}>
+                  <Button
+                    onClick={() => handleIssue('earn')}
+                    disabled={processing}
+                  >
                     {processing ? 'Processing...' : 'Issue'}
                   </Button>
-                  <Button variant="destructive" onClick={() => handleIssue('burn')} disabled={processing}>
+                  <Button
+                    variant="destructive"
+                    onClick={() => handleIssue('burn')}
+                    disabled={processing}
+                  >
                     {processing ? 'Processing...' : 'Revoke'}
                   </Button>
                 </div>
@@ -97,10 +120,16 @@ export default function TokenManager() {
               </TabsList>
               <TabsContent value="history">
                 <ul className="space-y-2">
-                  {transactions.map(tx => (
-                    <li key={tx.id} className="flex justify-between border-b py-2 text-white">
+                  {transactions.map((tx) => (
+                    <li
+                      key={tx.id}
+                      className="flex justify-between border-b py-2 text-white"
+                    >
                       <span>{tx.user_id}</span>
-                      <span>{tx.transaction_type === 'earn' ? '+' : '-'}{tx.amount}</span>
+                      <span>
+                        {tx.transaction_type === 'earn' ? '+' : '-'}
+                        {tx.amount}
+                      </span>
                     </li>
                   ))}
                 </ul>

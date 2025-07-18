@@ -1,4 +1,3 @@
-
 // Mock implementation of Slack bot that doesn't require external dependencies
 // This replaces the original implementation which had dependency issues
 import { switchNetlifySite } from 'scripts/switch-netlify-site.js';
@@ -32,7 +31,11 @@ declare const globalThis: {
   };
 };
 
-type CommandHandler = (args: { command?: SlackCommand; ack: SlackAck; respond: SlackRespond }) => Promise<void>;
+type CommandHandler = (args: {
+  command?: SlackCommand;
+  ack: SlackAck;
+  respond: SlackRespond;
+}) => Promise<void>;
 class MockApp {
   private commandHandlers: Record<string, CommandHandler> = {};
 
@@ -43,9 +46,12 @@ class MockApp {
 
   async start(port?: number): Promise<void> {
     // Safely log without direct console reference
-    const safeConsole = typeof globalThis !== 'undefined' ? globalThis.console : undefined;
+    const safeConsole =
+      typeof globalThis !== 'undefined' ? globalThis.console : undefined;
     if (safeConsole) {
-      safeConsole.warn(`⚡️ Mock Zion Slack bot is running on port ${port || 3000}!`);
+      safeConsole.warn(
+        `⚡️ Mock Zion Slack bot is running on port ${port || 3000}!`,
+      );
     }
     return Promise.resolve();
   }
@@ -56,67 +62,97 @@ const app = new MockApp();
 
 async function askZionGPT(prompt: string): Promise<string> {
   // Safely log without direct console reference
-  const safeConsole = typeof globalThis !== 'undefined' ? globalThis.console : undefined;
+  const safeConsole =
+    typeof globalThis !== 'undefined' ? globalThis.console : undefined;
   if (safeConsole) {
     safeConsole.warn(`ZionGPT was asked: ${prompt}`);
   }
   return `AI response to: ${prompt}`;
 }
 
-app.command('/zion', async ({ command, ack, respond }: { command?: SlackCommand, ack: SlackAck, _respond: SlackRespond }) => {
-  await ack();
-  const [action, ...args] = command?.text.split(/\s+/) || [];
+app.command(
+  '/zion',
+  async ({
+    command,
+    ack,
+    respond,
+  }: {
+    command?: SlackCommand;
+    ack: SlackAck;
+    _respond: SlackRespond;
+  }) => {
+    await ack();
+    const [action, ...args] = command?.text.split(/\s+/) || [];
 
-  switch (action) {
-    case 'post-job':
-      await respond('Please provide job details via the web interface.');
-      break;
-    case 'suggest-talent': {
-      const query = args.join(' ');
-      const answer = await askZionGPT(`Suggest talent for ${query}`);
-      await respond(answer);
-      break;
+    switch (action) {
+      case 'post-job':
+        await respond('Please provide job details via the web interface.');
+        break;
+      case 'suggest-talent': {
+        const query = args.join(' ');
+        const answer = await askZionGPT(`Suggest talent for ${query}`);
+        await respond(answer);
+        break;
+      }
+      case 'track-project': {
+        const project = args.join(' ');
+        await respond(`Tracking project **${project}** - feature coming soon.`);
+        break;
+      }
+      case 'help':
+      default:
+        await respond(
+          'Commands:\n' +
+            '`/zion post-job` - post a new job\n' +
+            '`/zion suggest-talent [skills]` - AI talent suggestions\n' +
+            '`/zion track-project [name]` - project status\n' +
+            '`/zion help` - show this list',
+        );
     }
-    case 'track-project': {
-      const project = args.join(' ');
-      await respond(`Tracking project **${project}** - feature coming soon.`);
-      break;
-    }
-    case 'help':
-    default:
-      await respond(
-        'Commands:\n' +
-          '`/zion post-job` - post a new job\n' +
-          '`/zion suggest-talent [skills]` - AI talent suggestions\n' +
-          '`/zion track-project [name]` - project status\n' +
-          '`/zion help` - show this list'
-      );
-  }
-});
+  },
+);
 
-app.command('/zion-rollback', async ({ ack, respond }: { ack: SlackAck, _respond: SlackRespond }) => {
-  await ack();
-  try {
-    await switchNetlifySite();
-    await respond('Rollback complete. DNS switched to the previous site.');
-  } catch (err: unknown) {
-    const message = err instanceof Error ? err.message : String(err);
-    await respond(`Rollback failed: ${message}`);
-  }
-});
+app.command(
+  '/zion-rollback',
+  async ({ ack, respond }: { ack: SlackAck; _respond: SlackRespond }) => {
+    await ack();
+    try {
+      await switchNetlifySite();
+      await respond('Rollback complete. DNS switched to the previous site.');
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      await respond(`Rollback failed: ${message}`);
+    }
+  },
+);
 
 // Mock startup with safer environment access
 (async () => {
   // Get PORT from environment or use default
-  const env = typeof globalThis !== 'undefined' && typeof (globalThis as unknown) === 'object' && globalThis !== null && 'process' in globalThis && typeof (globalThis as { process?: unknown }).process === 'object' && (globalThis as { process?: { env?: unknown } }).process !== null ? (globalThis as { process?: { env?: unknown } }).process!.env! : {};
-  const port = typeof env === 'object' && env !== null && 'PORT' in env && typeof env.PORT === 'string' ? Number(env.PORT) : 3000;
+  const env =
+    typeof globalThis !== 'undefined' &&
+    typeof (globalThis as unknown) === 'object' &&
+    globalThis !== null &&
+    'process' in globalThis &&
+    typeof (globalThis as { process?: unknown }).process === 'object' &&
+    (globalThis as { process?: { env?: unknown } }).process !== null
+      ? (globalThis as { process?: { env?: unknown } }).process!.env!
+      : {};
+  const port =
+    typeof env === 'object' &&
+    env !== null &&
+    'PORT' in env &&
+    typeof env.PORT === 'string'
+      ? Number(env.PORT)
+      : 3000;
   await app.start(port);
 })();
 
 // Add this function either inside MockApp or as an exported function
 async function sendSlackAlert(message: string): Promise<void> {
   // Safely log without direct console reference
-  const safeConsole = typeof globalThis !== 'undefined' ? globalThis.console : undefined;
+  const safeConsole =
+    typeof globalThis !== 'undefined' ? globalThis.console : undefined;
   if (safeConsole) {
     safeConsole.warn(`SLACK_ALERT: ${message}`);
   }

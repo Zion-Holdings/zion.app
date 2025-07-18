@@ -22,7 +22,7 @@ const investors: Investor[] = [
     location: 'Global',
     industries: ['AI', 'Marketplace', 'Web3'],
     stages: ['Pre-seed', 'Seed', 'Series A', 'Token Sale'],
-    notableInvestments: ['OpenAI', 'Dapper Labs']
+    notableInvestments: ['OpenAI', 'Dapper Labs'],
   },
   {
     id: 'inv2',
@@ -31,7 +31,7 @@ const investors: Investor[] = [
     location: 'Global',
     industries: ['AI', 'Marketplace'],
     stages: ['Seed', 'Series A'],
-    notableInvestments: ['Dropbox', 'Stripe']
+    notableInvestments: ['Dropbox', 'Stripe'],
   },
   {
     id: 'inv3',
@@ -40,7 +40,7 @@ const investors: Investor[] = [
     location: 'USA',
     industries: ['Marketplace', 'AI'],
     stages: ['Pre-seed', 'Seed'],
-    notableInvestments: ['Coinbase', 'Instacart']
+    notableInvestments: ['Coinbase', 'Instacart'],
   },
   {
     id: 'inv4',
@@ -49,7 +49,7 @@ const investors: Investor[] = [
     location: 'USA',
     industries: ['AI'],
     stages: ['Pre-seed', 'Seed'],
-    notableInvestments: ['Example Startup']
+    notableInvestments: ['Example Startup'],
   },
   {
     id: 'inv5',
@@ -58,37 +58,45 @@ const investors: Investor[] = [
     location: 'Global',
     industries: ['Web3', 'Marketplace'],
     stages: ['Seed', 'Token Sale'],
-    notableInvestments: ['Uniswap']
-  }
+    notableInvestments: ['Uniswap'],
+  },
 ];
 
 export async function getInvestorMatches(
   industry: string,
   location: string,
   stage: string,
-  limit = 5
+  limit = 5,
 ): Promise<InvestorMatch[]> {
-  await new Promise(resolve => setTimeout(resolve, 500));
+  await new Promise((resolve) => setTimeout(resolve, 500));
 
-  const filtered = investors.filter(inv => {
-    const industryMatch = !industry || inv.industries.some(i =>
-      i.toLowerCase().includes(industry.toLowerCase())
-    );
-    const locationMatch = !location ||
+  const filtered = investors.filter((inv) => {
+    const industryMatch =
+      !industry ||
+      inv.industries.some((i) =>
+        i.toLowerCase().includes(industry.toLowerCase()),
+      );
+    const locationMatch =
+      !location ||
       inv.location.toLowerCase().includes(location.toLowerCase()) ||
       inv.location === 'Global';
-    const stageMatch = !stage ||
-      inv.stages.map(s => s.toLowerCase()).includes(stage.toLowerCase());
+    const stageMatch =
+      !stage ||
+      inv.stages.map((s) => s.toLowerCase()).includes(stage.toLowerCase());
     return industryMatch && locationMatch && stageMatch;
   });
 
-  return filtered.slice(0, limit).map(inv => ({
+  return filtered.slice(0, limit).map((inv) => ({
     investor: inv,
     score: Math.floor(Math.random() * 40) + 60,
-    reason: `Invests in ${inv.industries.join(', ')} at ${inv.stages.join(', ')} stages`
+    reason: `Invests in ${inv.industries.join(', ')} at ${inv.stages.join(', ')} stages`,
   }));
 }
 
-export function generatePitchEmail(startup: string, investorName: string, summary: string): string {
+export function generatePitchEmail(
+  startup: string,
+  investorName: string,
+  summary: string,
+): string {
   return `Hi ${investorName},\n\n${startup} here. ${summary}\n\nI believe our vision aligns with your investment focus. Looking forward to the opportunity to connect.\n\nBest regards,\n${startup} Team`;
 }

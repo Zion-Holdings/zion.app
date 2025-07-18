@@ -22,7 +22,10 @@ export default function ZionBook() {
 
   return (
     <div className="min-h-screen bg-background prose lg:prose-xl font-serif mx-auto p-8">
-      <NextSeo title="Zion OS Book" description="Founder story and platform philosophy." />
+      <NextSeo
+        title="Zion OS Book"
+        description="Founder story and platform philosophy."
+      />
       <h1>Zion OS Book</h1>
       <blockquote>
         “We didn’t build a startup. We built a civilization protocol.”
@@ -67,7 +70,9 @@ export default function ZionBook() {
 
       <div className="not-prose mt-8 flex gap-4">
         <Button onClick={handleDownload}>Download PDF</Button>
-        <Button variant="outline" onClick={handlePrint}>Print</Button>
+        <Button variant="outline" onClick={handlePrint}>
+          Print
+        </Button>
       </div>
     </div>
   );

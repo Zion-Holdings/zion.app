@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { cn } from "@/lib/utils";
-import { TERMS_SECTIONS } from "./termsContent";
+import React, { useEffect, useRef, useState } from 'react';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { cn } from '@/lib/utils';
+import { TERMS_SECTIONS } from './termsContent';
 
 export default function TermsOfService() {
   const [active, setActive] = useState(TERMS_SECTIONS[0].id);
@@ -17,9 +17,9 @@ export default function TermsOfService() {
         });
       },
       {
-        rootMargin: "0px 0px -70% 0px",
+        rootMargin: '0px 0px -70% 0px',
         threshold: 0.1,
-      }
+      },
     );
 
     TERMS_SECTIONS.forEach((section) => {
@@ -41,8 +41,8 @@ export default function TermsOfService() {
                   <a
                     href={`#${section.id}`}
                     className={cn(
-                      "text-zion-slate-light hover:text-zion-cyan text-sm transition-colors",
-                      active === section.id && "text-zion-cyan font-semibold"
+                      'text-zion-slate-light hover:text-zion-cyan text-sm transition-colors',
+                      active === section.id && 'text-zion-cyan font-semibold',
                     )}
                   >
                     {section.title}

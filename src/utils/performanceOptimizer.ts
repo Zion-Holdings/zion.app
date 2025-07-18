@@ -3,8 +3,16 @@
  * Handles code splitting, lazy loading, bundle optimization, and performance monitoring
  */
 
-import type { PerformanceMetrics, BundleAnalysis as _BundleAnalysis } from '@/types/common';
-import { logInfo, logWarn, logErrorToProduction, logPerformance } from './productionLogger';
+import type {
+  PerformanceMetrics,
+  BundleAnalysis as _BundleAnalysis,
+} from '@/types/common';
+import {
+  logInfo,
+  logWarn,
+  logErrorToProduction,
+  logPerformance,
+} from './productionLogger';
 
 interface OptimizationConfig {
   enableCodeSplitting: boolean;
@@ -38,8 +46,8 @@ class PerformanceOptimizer {
       performanceThresholds: {
         fcp: 1800, // 1.8s
         lcp: 2500, // 2.5s
-        fid: 100,  // 100ms
-        cls: 0.1,  // 0.1
+        fid: 100, // 100ms
+        cls: 0.1, // 0.1
       },
       ...config,
     };
@@ -73,19 +81,23 @@ class PerformanceOptimizer {
         'resource',
       ];
 
-      entryTypes.forEach(type => {
+      entryTypes.forEach((type) => {
         try {
           if (this.performanceObserver) {
             this.performanceObserver.observe({ entryTypes: [type] });
           }
         } catch {
-          logWarn('Failed to observe ${type} performance entries', { data:  { data:  { error } } });
+          logWarn('Failed to observe ${type} performance entries', {
+            data: { data: { error } },
+          });
         }
       });
 
       logInfo('Performance monitoring initialized');
     } catch {
-      logErrorToProduction('Failed to initialize performance monitoring', { data: error });
+      logErrorToProduction('Failed to initialize performance monitoring', {
+        data: error,
+      });
     }
   }
 
@@ -120,11 +132,11 @@ class PerformanceOptimizer {
     this.metrics.timeToInteractive = entry.loadEventEnd;
 
     logPerformance('Page Load Time', this.metrics.pageLoadTime);
-    
+
     if (this.metrics.pageLoadTime > 3000) {
-      logWarn('Slow page load detected', { 
+      logWarn('Slow page load detected', {
         loadTime: this.metrics.pageLoadTime,
-        recommendation: 'Consider code splitting and lazy loading'
+        recommendation: 'Consider code splitting and lazy loading',
       });
     }
   }
@@ -137,7 +149,7 @@ class PerformanceOptimizer {
       if (entry.startTime > this.config.performanceThresholds.fcp) {
         logWarn('Slow First Contentful Paint', {
           fcp: entry.startTime,
-          threshold: this.config.performanceThresholds.fcp
+          threshold: this.config.performanceThresholds.fcp,
         });
       }
     }
@@ -150,38 +162,52 @@ class PerformanceOptimizer {
     if (entry.startTime > this.config.performanceThresholds.lcp) {
       logWarn('Slow Largest Contentful Paint', {
         lcp: entry.startTime,
-        threshold: this.config.performanceThresholds.lcp
+        threshold: this.config.performanceThresholds.lcp,
       });
     }
   }
 
   private processFIDEntry(entry: PerformanceEntry): void {
-    if ('processingStart' in entry && typeof (entry as { processingStart: number }).processingStart === 'number') {
+    if (
+      'processingStart' in entry &&
+      typeof (entry as { processingStart: number }).processingStart === 'number'
+    ) {
       const fidEntry = entry as { processingStart: number };
       this.metrics.firstInputDelay = fidEntry.processingStart - entry.startTime;
       logPerformance('First Input Delay', this.metrics.firstInputDelay);
 
-      if (this.metrics.firstInputDelay > this.config.performanceThresholds.fid) {
+      if (
+        this.metrics.firstInputDelay > this.config.performanceThresholds.fid
+      ) {
         logWarn('High First Input Delay', {
           fid: this.metrics.firstInputDelay,
-          threshold: this.config.performanceThresholds.fid
+          threshold: this.config.performanceThresholds.fid,
         });
       }
     }
   }
 
   private processCLSEntry(entry: PerformanceEntry): void {
-    if ('hadRecentInput' in entry && typeof (entry as { hadRecentInput: boolean }).hadRecentInput === 'boolean' &&
-        'value' in entry && typeof (entry as { value: number }).value === 'number') {
+    if (
+      'hadRecentInput' in entry &&
+      typeof (entry as { hadRecentInput: boolean }).hadRecentInput ===
+        'boolean' &&
+      'value' in entry &&
+      typeof (entry as { value: number }).value === 'number'
+    ) {
       const clsEntry = entry as { hadRecentInput: boolean; value: number };
       if (!clsEntry.hadRecentInput) {
-        this.metrics.cumulativeLayoutShift = 
+        this.metrics.cumulativeLayoutShift =
           (this.metrics.cumulativeLayoutShift || 0) + clsEntry.value;
 
-        if (this.metrics.cumulativeLayoutShift && this.metrics.cumulativeLayoutShift > this.config.performanceThresholds.cls) {
+        if (
+          this.metrics.cumulativeLayoutShift &&
+          this.metrics.cumulativeLayoutShift >
+            this.config.performanceThresholds.cls
+        ) {
           logWarn('High Cumulative Layout Shift', {
             cls: this.metrics.cumulativeLayoutShift,
-            threshold: this.config.performanceThresholds.cls
+            threshold: this.config.performanceThresholds.cls,
           });
         }
       }
@@ -193,20 +219,22 @@ class PerformanceOptimizer {
     const duration = entry.responseEnd - entry.requestStart;
 
     // Monitor large resources
-    if (size > 100 * 1024) { // 100KB
+    if (size > 100 * 1024) {
+      // 100KB
       logWarn('Large resource detected', {
         url: entry.name,
         size: `${(size / 1024).toFixed(2)}KB`,
-        duration: `${duration.toFixed(2)}ms`
+        duration: `${duration.toFixed(2)}ms`,
       });
     }
 
     // Monitor slow resources
-    if (duration > 1000) { // 1 second
+    if (duration > 1000) {
+      // 1 second
       logWarn('Slow resource loading', {
         url: entry.name,
         duration: `${duration.toFixed(2)}ms`,
-        size: size ? `${(size / 1024).toFixed(2)}KB` : 'unknown'
+        size: size ? `${(size / 1024).toFixed(2)}KB` : 'unknown',
       });
     }
   }
@@ -243,7 +271,9 @@ class PerformanceOptimizer {
       this.optimizationApplied = true;
       logInfo('Performance optimizations applied successfully');
     } catch {
-      logErrorToProduction('Failed to apply performance optimizations', { data: error });
+      logErrorToProduction('Failed to apply performance optimizations', {
+        data: error,
+      });
     }
   }
 
@@ -255,12 +285,17 @@ class PerformanceOptimizer {
       return;
     }
 
-    navigator.serviceWorker.register('/sw.js')
-      .then(registration => {
-        logInfo('Service Worker registered', { data:  { data:  { scope: registration.scope } } });
+    navigator.serviceWorker
+      .register('/sw.js')
+      .then((registration) => {
+        logInfo('Service Worker registered', {
+          data: { data: { scope: registration.scope } },
+        });
       })
-      .catch(error => {
-        logWarn('Service Worker registration failed', { data:  { data:  { error } } });
+      .catch((error) => {
+        logWarn('Service Worker registration failed', {
+          data: { data: { error } },
+        });
       });
   }
 
@@ -276,11 +311,11 @@ class PerformanceOptimizer {
       '/images/logo.webp',
     ];
 
-    criticalResources.forEach(resource => {
+    criticalResources.forEach((resource) => {
       const link = document.createElement('link');
       link.rel = 'preload';
       link.href = resource;
-      
+
       if (resource.includes('.woff2')) {
         link.as = 'font';
         link.crossOrigin = 'anonymous';
@@ -305,9 +340,9 @@ class PerformanceOptimizer {
 
     // Enable native lazy loading for images
     const images = document.querySelectorAll('img[data-src]');
-    
+
     if ('loading' in HTMLImageElement.prototype) {
-      images.forEach(img => {
+      images.forEach((img) => {
         const imgElement = img as HTMLImageElement;
         imgElement.src = imgElement.dataset.src || '';
         imgElement.loading = 'lazy';
@@ -328,7 +363,7 @@ class PerformanceOptimizer {
     if (!('IntersectionObserver' in window)) return;
 
     const imageObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const img = entry.target as HTMLImageElement;
           img.src = img.dataset.src || '';
@@ -338,7 +373,7 @@ class PerformanceOptimizer {
       });
     });
 
-    document.querySelectorAll('img[data-src]').forEach(img => {
+    document.querySelectorAll('img[data-src]').forEach((img) => {
       imageObserver.observe(img);
     });
   }
@@ -352,10 +387,12 @@ class PerformanceOptimizer {
     // Cache API responses
     if ('caches' in window) {
       const cacheNames = ['api-cache-v1', 'static-cache-v1'];
-      
-      cacheNames.forEach(cacheName => {
-        caches.open(cacheName).catch(error => {
-          logWarn('Failed to open cache: ${cacheName}', { data:  { data:  { error } } });
+
+      cacheNames.forEach((cacheName) => {
+        caches.open(cacheName).catch((error) => {
+          logWarn('Failed to open cache: ${cacheName}', {
+            data: { data: { error } },
+          });
         });
       });
     }
@@ -368,7 +405,9 @@ class PerformanceOptimizer {
       };
       localStorage.setItem('app-cache-info', JSON.stringify(cacheData));
     } catch {
-      logWarn('Failed to set localStorage cache', { data:  { data:  { error } } });
+      logWarn('Failed to set localStorage cache', {
+        data: { data: { error } },
+      });
     }
 
     logInfo('Advanced caching enabled');
@@ -382,15 +421,19 @@ class PerformanceOptimizer {
 
     // Report bundle size if available
     if (typeof window !== 'undefined') {
-      const bundleSize = (window as unknown as { __BUNDLE_SIZE__?: number }).__BUNDLE_SIZE__;
+      const bundleSize = (window as unknown as { __BUNDLE_SIZE__?: number })
+        .__BUNDLE_SIZE__;
       if (typeof bundleSize === 'number') {
         logPerformance('Bundle Size', bundleSize);
         if (bundleSize > this.config.bundleSizeLimit * 1024) {
-          logWarn('Large bundle size detected', { data:  {
-            size: `${(bundleSize / 1024).toFixed(2)}KB`,
-            limit: `${this.config.bundleSizeLimit}KB`,
-            recommendation: 'Consider implementing more aggressive code splitting'
-          }});
+          logWarn('Large bundle size detected', {
+            data: {
+              size: `${(bundleSize / 1024).toFixed(2)}KB`,
+              limit: `${this.config.bundleSizeLimit}KB`,
+              recommendation:
+                'Consider implementing more aggressive code splitting',
+            },
+          });
         }
       }
     }
@@ -407,10 +450,14 @@ class PerformanceOptimizer {
     const hints = [
       { rel: 'dns-prefetch', href: '//fonts.googleapis.com' },
       { rel: 'dns-prefetch', href: '//api.zion.app' },
-      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossOrigin: 'anonymous',
+      },
     ];
 
-    hints.forEach(hint => {
+    hints.forEach((hint) => {
       const link = document.createElement('link');
       link.rel = hint.rel;
       link.href = hint.href;
@@ -485,4 +532,4 @@ if (typeof window !== 'undefined' && process.env.NODE_ENV === 'production') {
 }
 
 export { PerformanceOptimizer };
-export default performanceOptimizer; 
+export default performanceOptimizer;

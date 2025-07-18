@@ -6,7 +6,6 @@ import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 import { logError, logWarn } from '@/utils/logger';
 
 export interface MarketplaceItem {
-
   id: string;
   name: string;
   description: string;
@@ -102,27 +101,35 @@ const createMarketplaceClient = () => {
   // Request interceptor for debugging
   client.interceptors.request.use(
     async (_config: InternalAxiosRequestConfig) => {
-      if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
-        logWarn(`Marketplace API Request: ${config.method?.toUpperCase() || 'UNKNOWN'} ${config.url || 'UNKNOWN_URL'}`);
+      if (
+        process.env.NODE_ENV === 'development' &&
+        process.env.DEBUG_MARKETPLACE
+      ) {
+        logWarn(
+          `Marketplace API Request: ${config.method?.toUpperCase() || 'UNKNOWN'} ${config.url || 'UNKNOWN_URL'}`,
+        );
       }
       return config;
     },
     () => {
       return Promise.reject();
-    }
+    },
   );
 
   // Response interceptor with error logging
   client.interceptors.response.use(
     (_response: AxiosResponse) => {
-      if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
+      if (
+        process.env.NODE_ENV === 'development' &&
+        process.env.DEBUG_MARKETPLACE
+      ) {
         logWarn(`Marketplace API Response: ${response.status}`);
       }
       return response;
     },
     () => {
       return Promise.reject();
-    }
+    },
   );
 
   return client;
@@ -132,8 +139,20 @@ const marketplaceClient = createMarketplaceClient();
 
 // Helper function to get error message for UI display
 export const getMarketplaceErrorMessage = (error: unknown): string => {
-  const status = typeof error === 'object' && error !== null && 'response' in error && error.response && typeof error.response === 'object' && error.response !== null && 'status' in error.response ? (error.response as { status?: number }).status : undefined;
-  const code = typeof error === 'object' && error !== null && 'code' in error ? (error as { code?: string }).code : undefined;
+  const status =
+    typeof error === 'object' &&
+    error !== null &&
+    'response' in error &&
+    error.response &&
+    typeof error.response === 'object' &&
+    error.response !== null &&
+    'status' in error.response
+      ? (error.response as { status?: number }).status
+      : undefined;
+  const code =
+    typeof error === 'object' && error !== null && 'code' in error
+      ? (error as { code?: string }).code
+      : undefined;
   if (status === 404) {
     return 'The requested marketplace data was not found.';
   } else if (status === 500) {
@@ -154,8 +173,13 @@ export { marketplaceClient };
 
 // Add product validation and auto-generation utilities
 export const validateProductData = (product: Product): boolean => {
-  const requiredFields: (keyof Product)[] = ['id', 'title', 'description', 'category'];
-  return requiredFields.every(field => {
+  const requiredFields: (keyof Product)[] = [
+    'id',
+    'title',
+    'description',
+    'category',
+  ];
+  return requiredFields.every((field) => {
     const value = product[field];
     return typeof value === 'string' && value.trim() !== '';
   });
@@ -164,12 +188,15 @@ export const validateProductData = (product: Product): boolean => {
 export const generateProductId = (name: string): string => {
   const timestamp = Date.now();
   const randomSuffix = Math.random().toString(36).substring(2, 8);
-  const slug = name.toLowerCase().replace(/[^a-z0-9]/g, '-').substring(0, 20);
+  const slug = name
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, '-')
+    .substring(0, 20);
   return `${slug}-${timestamp}-${randomSuffix}`;
 };
 
 export const ensureProductIntegrity = (products: Product[]): Product[] => {
-  return products.map(product => ({
+  return products.map((product) => ({
     ...product,
     // Ensure required fields have default values
     id: product.id || `product-${Date.now()}-${Math.random()}`,
@@ -182,31 +209,37 @@ export const ensureProductIntegrity = (products: Product[]): Product[] => {
     tags: Array.isArray(product.tags) ? product.tags : [],
     images: Array.isArray(product.images) ? product.images : [],
     rating: typeof product.rating === 'number' ? product.rating : 0,
-    reviewCount: typeof product.reviewCount === 'number' ? product.reviewCount : 0,
+    reviewCount:
+      typeof product.reviewCount === 'number' ? product.reviewCount : 0,
     created_at: product.created_at || new Date().toISOString(),
     updated_at: product.updated_at || new Date().toISOString(),
   }));
 };
 
 // Enhanced fetch functions with proper typing
-export async function fetchProducts(filters: SearchFilters = {}): Promise<Product[]> {
+export async function fetchProducts(
+  filters: SearchFilters = {},
+): Promise<Product[]> {
   try {
     const searchParams = new URLSearchParams();
-    
+
     if (filters.query) searchParams.append('search', filters.query);
     if (filters.category) searchParams.append('category', filters.category);
-    if (filters.tags?.length) searchParams.append('tags', filters.tags.join(','));
-    if (filters.priceRange?.min) searchParams.append('minPrice', filters.priceRange.min.toString());
-    if (filters.priceRange?.max) searchParams.append('maxPrice', filters.priceRange.max.toString());
+    if (filters.tags?.length)
+      searchParams.append('tags', filters.tags.join(','));
+    if (filters.priceRange?.min)
+      searchParams.append('minPrice', filters.priceRange.min.toString());
+    if (filters.priceRange?.max)
+      searchParams.append('maxPrice', filters.priceRange.max.toString());
 
     const response = await fetch(`/api/marketplace/products?${searchParams}`);
-    
+
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     }
 
     const data: ApiResponse<Product[]> = await response.json();
-    
+
     if (data.error) {
       throw new Error(data.error);
     }
@@ -221,13 +254,13 @@ export async function fetchProducts(filters: SearchFilters = {}): Promise<Produc
 export async function fetchCategories(): Promise<Category[]> {
   try {
     const response = await fetch('/api/marketplace/categories');
-    
+
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     }
 
     const data: ApiResponse<Category[]> = await response.json();
-    
+
     if (data.error) {
       throw new Error(data.error);
     }
@@ -239,22 +272,26 @@ export async function fetchCategories(): Promise<Category[]> {
   }
 }
 
-export async function fetchTalent(filters: SearchFilters = {}): Promise<TalentProfile[]> {
+export async function fetchTalent(
+  filters: SearchFilters = {},
+): Promise<TalentProfile[]> {
   try {
     const searchParams = new URLSearchParams();
-    
+
     if (filters.query) searchParams.append('search', filters.query);
-    if (filters.category) searchParams.append('specialization', filters.category);
-    if (filters.tags?.length) searchParams.append('skills', filters.tags.join(','));
+    if (filters.category)
+      searchParams.append('specialization', filters.category);
+    if (filters.tags?.length)
+      searchParams.append('skills', filters.tags.join(','));
 
     const response = await fetch(`/api/marketplace/talent?${searchParams}`);
-    
+
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     }
 
     const data: ApiResponse<TalentProfile[]> = await response.json();
-    
+
     if (data.error) {
       throw new Error(data.error);
     }
@@ -266,22 +303,25 @@ export async function fetchTalent(filters: SearchFilters = {}): Promise<TalentPr
   }
 }
 
-export async function fetchEquipment(filters: SearchFilters = {}): Promise<Equipment[]> {
+export async function fetchEquipment(
+  filters: SearchFilters = {},
+): Promise<Equipment[]> {
   try {
     const searchParams = new URLSearchParams();
-    
+
     if (filters.query) searchParams.append('search', filters.query);
     if (filters.category) searchParams.append('category', filters.category);
-    if (filters.tags?.length) searchParams.append('tags', filters.tags.join(','));
+    if (filters.tags?.length)
+      searchParams.append('tags', filters.tags.join(','));
 
     const response = await fetch(`/api/marketplace/equipment?${searchParams}`);
-    
+
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     }
 
     const data: ApiResponse<Equipment[]> = await response.json();
-    
+
     if (data.error) {
       throw new Error(data.error);
     }

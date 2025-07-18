@@ -1,6 +1,6 @@
-import { SEO } from "@/components/SEO";
-import { completeSitemap } from "@/config/sitemap";
-import Link from "next/link";
+import { SEO } from '@/components/SEO';
+import { completeSitemap } from '@/config/sitemap';
+import Link from 'next/link';
 
 export default function Sitemap() {
   return (
@@ -15,9 +15,12 @@ export default function Sitemap() {
         <div className="container mx-auto px-4">
           <h1 className="text-3xl font-bold mb-8">Sitemap</h1>
           <ul className="space-y-2">
-            {completeSitemap.map(route => (
+            {completeSitemap.map((route) => (
               <li key={route.path}>
-                <Link href={route.path} className="text-zion-cyan hover:underline">
+                <Link
+                  href={route.path}
+                  className="text-zion-cyan hover:underline"
+                >
                   {route.label}
                 </Link>
               </li>

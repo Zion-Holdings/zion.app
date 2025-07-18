@@ -1,7 +1,6 @@
 import React from 'react';
 import { Loader2 } from '@/components/ui/icons';
 
-
 import { cn } from '@/lib/utils';
 
 export interface SpinnerProps extends React.SVGProps<SVGSVGElement> {
@@ -17,7 +16,7 @@ const Spinner = React.forwardRef<SVGSVGElement, SpinnerProps>(
       width={size}
       height={size}
     />
-  )
+  ),
 );
 Spinner.displayName = 'Spinner';
 export default Spinner;

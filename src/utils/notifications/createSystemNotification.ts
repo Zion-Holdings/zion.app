@@ -1,4 +1,3 @@
-
 import { createNotification } from './createNotification';
 import type { SystemNotificationParams } from './types';
 
@@ -11,7 +10,7 @@ export async function createSystemNotification({
   message,
   actionUrl = null,
   actionText = null,
-  sendEmail = false
+  sendEmail = false,
 }: SystemNotificationParams) {
   return createNotification({
     userId,
@@ -20,6 +19,6 @@ export async function createSystemNotification({
     type: 'system',
     sendEmail,
     actionUrl,
-    actionText
+    actionText,
   });
 }

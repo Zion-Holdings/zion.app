@@ -1,7 +1,6 @@
 import type { ProductListing } from '@/types/listings';
 import { MARKETPLACE_LISTINGS as _MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 interface FetchMarketplaceDataOptions {
   limit?: number;
@@ -15,24 +14,24 @@ interface FetchMarketplaceDataOptions {
  * so the marketplace and payment flows remain testable.
  */
 export async function fetchMarketplaceData(
-  options: FetchMarketplaceDataOptions = {}
+  options: FetchMarketplaceDataOptions = {},
 ): Promise<ProductListing[]> {
   const { limit, category, sortBy } = options;
   try {
     const searchParams = new URLSearchParams();
-    
+
     if (limit) searchParams.append('limit', limit.toString());
     if (category) searchParams.append('category', category);
     if (sortBy) searchParams.append('sortBy', sortBy);
-    
+
     const url = `/api/marketplace/overview${searchParams.toString() ? `?${searchParams.toString()}` : ''}`;
-    
+
     const response = await fetch(url);
-    
+
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     }
-    
+
     const data = await response.json();
 
     // Validate that we received an array
@@ -43,12 +42,12 @@ export async function fetchMarketplaceData(
     return data;
   } catch {
     logErrorToProduction('Error fetching marketplace data:', { data: error });
-    
+
     // Log to Sentry with context
     if (typeof window === 'undefined') {
       // Remove all imports of @sentry/nextjs from this file.
     }
-    
+
     return [];
   }
 }

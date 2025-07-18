@@ -27,7 +27,12 @@ export interface LogAnalysisResult {
 
 export interface AutoHealAction {
   id: string;
-  type: 'restart-service' | 'clear-cache' | 'scale-resource' | 'notify-admin' | 'custom';
+  type:
+    | 'restart-service'
+    | 'clear-cache'
+    | 'scale-resource'
+    | 'notify-admin'
+    | 'custom';
   description: string;
   condition: string;
   enabled: boolean;
@@ -37,9 +42,12 @@ export interface AutoHealAction {
 
 class LogManagement {
   private autoHealActions: AutoHealAction[] = [];
-  private analysisCache: Map<string, { result: LogAnalysisResult; timestamp: number }> = new Map();
+  private analysisCache: Map<
+    string,
+    { result: LogAnalysisResult; timestamp: number }
+  > = new Map();
   private readonly CACHE_TTL = 15 * 60 * 1000; // 15 minutes
-  
+
   constructor() {
     this.initializeDefaultActions();
   }
@@ -50,59 +58,67 @@ class LogManagement {
   async analyzeSystemHealth(): Promise<LogAnalysisResult> {
     const cacheKey = 'system-health';
     const cached = this.analysisCache.get(cacheKey);
-    
+
     if (cached && Date.now() - cached.timestamp < this.CACHE_TTL) {
       return cached.result;
     }
 
     try {
       const logs = advancedLogCollector.getCollectedLogs();
-      const last24Hours = logs.filter((log: unknown) => 
-        new Date((log as { timestamp: string }).timestamp).getTime() > Date.now() - (24 * 60 * 60 * 1000)
+      const last24Hours = logs.filter(
+        (log: unknown) =>
+          new Date((log as { timestamp: string }).timestamp).getTime() >
+          Date.now() - 24 * 60 * 60 * 1000,
       );
 
       // Analyze patterns
       const patterns = this.identifyPatterns(last24Hours);
-      
+
       // Generate insights
       const insights = this.generateInsights(last24Hours);
-      
+
       // Calculate health score
       const healthScore = this.calculateHealthScore(last24Hours, patterns);
-      
+
       // Generate next actions
-      const nextActions = this.generateNextActions(patterns, insights, healthScore);
+      const nextActions = this.generateNextActions(
+        patterns,
+        insights,
+        healthScore,
+      );
 
       const result: LogAnalysisResult = {
         patterns,
         insights,
         healthScore,
-        nextActions
+        nextActions,
       };
 
       // Cache the result
       this.analysisCache.set(cacheKey, { result, timestamp: Date.now() });
-      
-      logInfo('System health analysis completed', { 
+
+      logInfo('System health analysis completed', {
         patternsFound: patterns.length,
         insights: insights.length,
-        healthScore 
+        healthScore,
       });
 
       return result;
     } catch {
       logErrorToProduction('Failed to analyze system health', error);
-      
+
       return {
         patterns: [],
-        insights: [{
-          type: 'anomaly',
-          description: 'Unable to complete system analysis',
-          confidence: 100,
-          actionable: true
-        }],
+        insights: [
+          {
+            type: 'anomaly',
+            description: 'Unable to complete system analysis',
+            confidence: 100,
+            actionable: true,
+          },
+        ],
         healthScore: 0,
-        nextActions: ['Check log management system configuration']
+        nextActions: ['Check log management system configuration'],
       };
     }
   }
@@ -117,7 +133,7 @@ class LogManagement {
       description: 'Detect sudden increase in error rate',
       condition: 'errorRate > previousHour * 2 && errorCount > 10',
       enabled: true,
-      successRate: 95
+      successRate: 95,
     });
 
     // Memory leak detection
@@ -126,7 +142,7 @@ class LogManagement {
       description: 'Detect potential memory leaks',
       condition: 'memoryUsage > 85 && trend === "increasing"',
       enabled: true,
-      successRate: 88
+      successRate: 88,
     });
 
     // Performance degradation
@@ -135,43 +151,51 @@ class LogManagement {
       description: 'Detect performance degradation',
       condition: 'avgResponseTime > 2000 && trend === "increasing"',
       enabled: true,
-      successRate: 92
+      successRate: 92,
     });
 
-    logInfo('Intelligent alerting configured', { data:  { 
-      actionsCount: this.autoHealActions.length 
-    } });
+    logInfo('Intelligent alerting configured', {
+      data: {
+        actionsCount: this.autoHealActions.length,
+      },
+    });
   }
 
   /**
    * Automated problem resolution
    */
-  async performAutoHealing(): Promise<{ actionsExecuted: number; issues: string[] }> {
+  async performAutoHealing(): Promise<{
+    actionsExecuted: number;
+    issues: string[];
+  }> {
     const actionsExecuted: string[] = [];
     const issues: string[] = [];
 
     try {
       const analysis = await this.analyzeSystemHealth();
-      
+
       // Check for critical patterns
-      const criticalPatterns = analysis.patterns.filter(p => p.severity === 'critical');
-      
+      const criticalPatterns = analysis.patterns.filter(
+        (p) => p.severity === 'critical',
+      );
+
       for (const pattern of criticalPatterns) {
-        const applicableActions = this.autoHealActions.filter(action => 
-          action.enabled && this.matchesCondition(pattern, action.condition)
+        const applicableActions = this.autoHealActions.filter(
+          (action) =>
+            action.enabled && this.matchesCondition(pattern, action.condition),
         );
 
         for (const action of applicableActions) {
           try {
             await this.executeAutoHealAction(action, pattern);
             actionsExecuted.push(action.description);
-            
+
             // Update success rate
             action.lastTriggered = new Date().toISOString();
-            
-            logInfo('Auto-heal action executed', { 
+
+            logInfo('Auto-heal action executed', {
               actionId: action.id,
-              pattern: pattern.pattern 
+              pattern: pattern.pattern,
             });
           } catch {
             const issue = `Failed to execute ${action.description}: ${error}`;
@@ -191,12 +215,14 @@ class LogManagement {
   /**
    * Generate predictive insights
    */
-  async generatePredictiveInsights(): Promise<Array<{
-    prediction: string;
-    probability: number;
-    timeframe: string;
-    preventiveActions: string[];
-  }>> {
+  async generatePredictiveInsights(): Promise<
+    Array<{
+      prediction: string;
+      probability: number;
+      timeframe: string;
+      preventiveActions: string[];
+    }>
+  > {
     try {
       const logs = advancedLogCollector.getCollectedLogs();
       const insights: Array<{
@@ -213,12 +239,18 @@ class LogManagement {
 
       // Predict error rate trends
       const errorTrend = this.calculateTrend(
-        [lastWeek, lastDay, lastHour].map(logs => 
-          logs.filter((l: unknown) => (l as { level: string }).level === 'error').length / Math.max(logs.length, 1) * 100
-        )
+        [lastWeek, lastDay, lastHour].map(
+          (logs) =>
+            (logs.filter(
+              (l: unknown) => (l as { level: string }).level === 'error',
+            ).length /
+              Math.max(logs.length, 1)) *
+            100,
+        ),
       );
 
-      if (errorTrend > 0.1) { // Increasing error rate
+      if (errorTrend > 0.1) {
+        // Increasing error rate
         insights.push({
           prediction: 'Error rate likely to increase in next 2-4 hours',
           probability: Math.min(errorTrend * 100, 95),
@@ -226,14 +258,15 @@ class LogManagement {
           preventiveActions: [
             'Monitor top error patterns',
             'Prepare rollback procedures',
-            'Alert on-call engineers'
-          ]
+            'Alert on-call engineers',
+          ],
         });
       }
 
       // Predict memory issues
       const memoryUsage = this.calculateMemoryTrend(logs);
-      if (memoryUsage.trend > 0.05) { // 5% increase per hour
+      if (memoryUsage.trend > 0.05) {
+        // 5% increase per hour
         insights.push({
           prediction: 'Memory usage may exceed safe limits',
           probability: 75,
@@ -241,8 +274,8 @@ class LogManagement {
           preventiveActions: [
             'Review memory-intensive operations',
             'Consider horizontal scaling',
-            'Monitor for memory leaks'
-          ]
+            'Monitor for memory leaks',
+          ],
         });
       }
 
@@ -256,12 +289,14 @@ class LogManagement {
           preventiveActions: [
             'Investigate slow queries',
             'Check external dependencies',
-            'Optimize resource-intensive operations'
-          ]
+            'Optimize resource-intensive operations',
+          ],
         });
       }
 
-      logInfo('Predictive insights generated', { data:  { insightsCount: insights.length } });
+      logInfo('Predictive insights generated', {
+        data: { insightsCount: insights.length },
+      });
       return insights;
     } catch {
       logErrorToProduction('Failed to generate predictive insights', error);
@@ -288,18 +323,18 @@ class LogManagement {
         this.analyzeSystemHealth(),
         this.generatePredictiveInsights(),
         logDashboard.getDashboardMetrics(),
-        logDashboard.getAllAlerts()
+        logDashboard.getAllAlerts(),
       ]);
 
       const recentLogs = await logDashboard.getFilteredLogs(
-        { timeRange: 'last-hour' }, 
-        100
+        { timeRange: 'last-hour' },
+        100,
       );
 
       const recommendations = this.generateSystemRecommendations(
-        analysis, 
-        predictions, 
-        metrics
+        analysis,
+        predictions,
+        metrics,
       );
 
       return {
@@ -310,8 +345,8 @@ class LogManagement {
         raw_data: {
           recent_logs: recentLogs,
           metrics,
-          alerts
-        }
+          alerts,
+        },
       };
     } catch {
       logErrorToProduction('Failed to export system report', error);
@@ -322,10 +357,10 @@ class LogManagement {
   /**
    * Optimize logging performance
    */
-  async optimizeLogging(): Promise<{ 
-    optimizations: string[]; 
-    spaceFreed: number; 
-    performanceGain: number 
+  async optimizeLogging(): Promise<{
+    optimizations: string[];
+    spaceFreed: number;
+    performanceGain: number;
   }> {
     const optimizations: string[] = [];
     let spaceFreed = 0;
@@ -349,10 +384,10 @@ class LogManagement {
       performanceGain += frequencyOptimization.gain;
       optimizations.push(frequencyOptimization.message);
 
-      logInfo('Logging optimization completed', { 
+      logInfo('Logging optimization completed', {
         optimizations: optimizations.length,
         spaceFreed,
-        performanceGain 
+        performanceGain,
       });
 
       return { optimizations, spaceFreed, performanceGain };
@@ -372,32 +407,35 @@ class LogManagement {
         description: 'Alert on high error rate',
         condition: 'errorRate > 10',
         enabled: true,
-        successRate: 100
+        successRate: 100,
       },
       {
         id: 'memory-usage-alert',
-        type: 'notify-admin', 
+        type: 'notify-admin',
         description: 'Alert on high memory usage',
         condition: 'memoryUsage > 90',
         enabled: true,
-        successRate: 100
-      }
+        successRate: 100,
+      },
     ];
   }
 
   private identifyPatterns(logs: unknown[]): LogAnalysisResult['patterns'] {
     const patterns: LogAnalysisResult['patterns'] = [];
-    
+
     // Group logs by message similarity
     const messageGroups = new Map<string, unknown[]>();
-    
+
     logs.forEach((_log: unknown) => {
       // Normalize message for pattern matching
       const normalizedMessage = (log as { message: string }).message
         .replace(/\d+/g, 'NUMBER')
-        .replace(/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}/gi, 'UUID')
+        .replace(
+          /[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}/gi,
+          'UUID',
+        )
         .replace(/\b\w+@\w+\.\w+\b/g, 'EMAIL');
-      
+
       const key = normalizedMessage.substring(0, 100);
       if (!messageGroups.has(key)) {
         messageGroups.set(key, []);
@@ -410,10 +448,13 @@ class LogManagement {
 
     // Identify significant patterns
     messageGroups.forEach((groupLogs, pattern) => {
-      if ((groupLogs as unknown[]).length >= 3) { // Pattern must occur at least 3 times
-        const errorLogs = (groupLogs as unknown[]).filter((l: unknown) => (l as { level: string }).level === 'error');
+      if ((groupLogs as unknown[]).length >= 3) {
+        // Pattern must occur at least 3 times
+        const errorLogs = (groupLogs as unknown[]).filter(
+          (l: unknown) => (l as { level: string }).level === 'error',
+        );
         const frequency = (groupLogs as unknown[]).length;
-        
+
         let severity: 'low' | 'medium' | 'high' | 'critical' = 'low';
         if (errorLogs.length > 10) severity = 'critical';
         else if (errorLogs.length > 5) severity = 'high';
@@ -424,7 +465,10 @@ class LogManagement {
           frequency,
           severity,
           category: errorLogs.length > 0 ? 'error' : 'business',
-          recommendation: this.generatePatternRecommendation(pattern, groupLogs)
+          recommendation: this.generatePatternRecommendation(
+            pattern,
+            groupLogs,
+          ),
         });
       }
     });
@@ -434,7 +478,7 @@ class LogManagement {
 
   private generateInsights(logs: unknown[]): LogAnalysisResult['insights'] {
     const insights: LogAnalysisResult['insights'] = [];
-    
+
     // Time-based analysis
     const hourlyDistribution = this.analyzeHourlyDistribution(logs);
     if (hourlyDistribution.anomaly) {
@@ -442,18 +486,18 @@ class LogManagement {
         type: 'anomaly',
         description: `Unusual activity pattern detected: ${hourlyDistribution.description}`,
         confidence: hourlyDistribution.confidence,
-        actionable: true
+        actionable: true,
       });
     }
 
     // Error correlation analysis
     const correlations = this.findErrorCorrelations(logs);
-    correlations.forEach(correlation => {
+    correlations.forEach((correlation) => {
       insights.push({
         type: 'correlation',
         description: correlation.description,
         confidence: correlation.confidence,
-        actionable: correlation.actionable
+        actionable: correlation.actionable,
       });
     });
 
@@ -462,62 +506,84 @@ class LogManagement {
 
   private calculateHealthScore(logs: unknown[], patterns: unknown[]): number {
     let score = 100;
-    
+
     // Deduct for errors
-    const errorCount = (logs as unknown[]).filter((l: unknown) => (l as { level: string }).level === 'error').length;
+    const errorCount = (logs as unknown[]).filter(
+      (l: unknown) => (l as { level: string }).level === 'error',
+    ).length;
     score -= Math.min(errorCount * 2, 40);
-    
+
     // Deduct for critical patterns
-    const criticalPatterns = (patterns as unknown[]).filter(p => (p as { severity: string }).severity === 'critical').length;
+    const criticalPatterns = (patterns as unknown[]).filter(
+      (p) => (p as { severity: string }).severity === 'critical',
+    ).length;
     score -= criticalPatterns * 15;
-    
+
     // Deduct for high error rate
-    const errorRate = (errorCount / Math.max((logs as unknown[]).length, 1)) * 100;
+    const errorRate =
+      (errorCount / Math.max((logs as unknown[]).length, 1)) * 100;
     if (errorRate > 5) score -= (errorRate - 5) * 2;
-    
+
     return Math.max(score, 0);
   }
 
-  private generateNextActions(patterns: unknown[], insights: unknown[], healthScore: number): string[] {
+  private generateNextActions(
+    patterns: unknown[],
+    insights: unknown[],
+    healthScore: number,
+  ): string[] {
     const actions: string[] = [];
-    
+
     if (healthScore < 70) {
       actions.push('Immediate investigation required - system health is poor');
     }
-    
-    const criticalPatterns = (patterns as unknown[]).filter(p => (p as { severity: string }).severity === 'critical');
+
+    const criticalPatterns = (patterns as unknown[]).filter(
+      (p) => (p as { severity: string }).severity === 'critical',
+    );
     if (criticalPatterns.length > 0) {
-      actions.push(`Address ${criticalPatterns.length} critical error patterns`);
+      actions.push(
+        `Address ${criticalPatterns.length} critical error patterns`,
+      );
     }
-    
-    const actionableInsights = (insights as unknown[]).filter(i => (i as { actionable: boolean }).actionable);
+
+    const actionableInsights = (insights as unknown[]).filter(
+      (i) => (i as { actionable: boolean }).actionable,
+    );
     if (actionableInsights.length > 0) {
-      actions.push(`Follow up on ${actionableInsights.length} actionable insights`);
+      actions.push(
+        `Follow up on ${actionableInsights.length} actionable insights`,
+      );
     }
-    
+
     if (actions.length === 0) {
       actions.push('Continue monitoring - system appears stable');
     }
-    
+
     return actions;
   }
 
   private addAutoHealAction(action: Omit<AutoHealAction, 'id'>): void {
     const newAction: AutoHealAction = {
       id: `action-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-      ...action
+      ...action,
     };
     this.autoHealActions.push(newAction);
   }
 
   private matchesCondition(pattern: unknown, condition: string): boolean {
     // Simple condition matching - in production, use a proper expression evaluator
-    return condition.includes((pattern as { severity: string }).severity) || 
-           condition.includes((pattern as { category: string }).category) ||
-           (pattern as { frequency: number }).frequency > 10;
+    return (
+      condition.includes((pattern as { severity: string }).severity) ||
+      condition.includes((pattern as { category: string }).category) ||
+      (pattern as { frequency: number }).frequency > 10
+    );
   }
 
-  private async executeAutoHealAction(action: AutoHealAction, context: unknown): Promise<void> {
+  private async executeAutoHealAction(
+    action: AutoHealAction,
+    context: unknown,
+  ): Promise<void> {
     switch (action.type) {
       case 'notify-admin':
         await this.notifyAdmin(action, context);
@@ -526,16 +592,21 @@ class LogManagement {
         await this.clearCache();
         break;
       default:
-        logWarn('Unknown auto-heal action type', { data:  { actionType: action.type } });
+        logWarn('Unknown auto-heal action type', {
+          data: { actionType: action.type },
+        });
     }
   }
 
-  private async notifyAdmin(action: AutoHealAction, context: unknown): Promise<void> {
+  private async notifyAdmin(
+    action: AutoHealAction,
+    context: unknown,
+  ): Promise<void> {
     logDashboard.createAlert(
       'error-spike',
       'high',
       `Auto-heal triggered: ${action.description}`,
-      { action: action.id, context }
+      { action: action.id, context },
     );
   }
 
@@ -545,86 +616,126 @@ class LogManagement {
   }
 
   private getLogsInRange(logs: unknown[], hours: number): unknown[] {
-    const cutoff = Date.now() - (hours * 60 * 60 * 1000);
-    return (logs as unknown[]).filter((log: unknown) => new Date((log as { timestamp: string }).timestamp).getTime() >= cutoff);
+    const cutoff = Date.now() - hours * 60 * 60 * 1000;
+    return (logs as unknown[]).filter(
+      (log: unknown) =>
+        new Date((log as { timestamp: string }).timestamp).getTime() >= cutoff,
+    );
   }
 
   private calculateTrend(values: number[]): number {
     if (values.length < 2) return 0;
-    
+
     // Simple linear trend calculation
     const n = values.length;
     const x = Array.from({ length: n }, (_, i) => i);
     const y = values;
-    
+
     const sumX = x.reduce((a, b) => a + b, 0);
     const sumY = y.reduce((a, b) => a + b, 0);
     const sumXY = x.reduce((sum, xi, i) => sum + xi * (y[i] || 0), 0);
     const sumXX = x.reduce((sum, xi) => sum + xi * xi, 0);
-    
+
     return (n * sumXY - sumX * sumY) / (n * sumXX - sumX * sumX);
   }
 
-  private calculateMemoryTrend(_logs: unknown[]): { trend: number; current: number } {
+  private calculateMemoryTrend(_logs: unknown[]): {
+    trend: number;
+    current: number;
+  } {
     // Simplified - in reality would track actual memory metrics
     return { trend: 0.02, current: 65 };
   }
 
-  private calculatePerformanceTrend(logs: unknown[]): { degrading: boolean; confidence: number } {
-    const performanceLogs = (logs as unknown[]).filter((log: unknown) => 
-      (log as { context: { duration: number } }).context?.duration && typeof (log as { context: { duration: number } }).context.duration === 'number'
+  private calculatePerformanceTrend(logs: unknown[]): {
+    degrading: boolean;
+    confidence: number;
+  } {
+    const performanceLogs = (logs as unknown[]).filter(
+      (log: unknown) =>
+        (log as { context: { duration: number } }).context?.duration &&
+        typeof (log as { context: { duration: number } }).context.duration ===
+          'number',
     );
-    
+
     if (performanceLogs.length < 10) {
       return { degrading: false, confidence: 0 };
     }
-    
+
     const recent = performanceLogs.slice(-20);
     const previous = performanceLogs.slice(-40, -20);
-    
-    const recentAvg = recent.reduce((sum: number, log: unknown) => sum + (log as { context: { duration: number } }).context.duration, 0) / recent.length;
-    const previousAvg = previous.reduce((sum: number, log: unknown) => sum + (log as { context: { duration: number } }).context.duration, 0) / previous.length;
-    
+
+    const recentAvg =
+      recent.reduce(
+        (sum: number, log: unknown) =>
+          sum + (log as { context: { duration: number } }).context.duration,
+        0,
+      ) / recent.length;
+    const previousAvg =
+      previous.reduce(
+        (sum: number, log: unknown) =>
+          sum + (log as { context: { duration: number } }).context.duration,
+        0,
+      ) / previous.length;
+
     const degrading = recentAvg > previousAvg * 1.2; // 20% slower
     const confidence = Math.min((recentAvg / previousAvg - 1) * 100, 95);
-    
+
     return { degrading, confidence };
   }
 
-  private generateSystemRecommendations(analysis: unknown, predictions: unknown[], metrics: unknown): string[] {
+  private generateSystemRecommendations(
+    analysis: unknown,
+    predictions: unknown[],
+    metrics: unknown,
+  ): string[] {
     const recommendations: string[] = [];
-    
+
     if ((analysis as LogAnalysisResult).healthScore < 80) {
-      recommendations.push('System health needs attention - investigate error patterns');
+      recommendations.push(
+        'System health needs attention - investigate error patterns',
+      );
     }
-    
-    if ((predictions as Array<{ probability: number }>).some(p => (p as { probability: number }).probability > 70)) {
-      recommendations.push('High-probability issues predicted - take preventive action');
+
+    if (
+      (predictions as Array<{ probability: number }>).some(
+        (p) => (p as { probability: number }).probability > 70,
+      )
+    ) {
+      recommendations.push(
+        'High-probability issues predicted - take preventive action',
+      );
     }
-    
+
     if ((metrics as { errorRate: number }).errorRate > 5) {
       recommendations.push('Error rate is elevated - focus on error reduction');
     }
-    
+
     return recommendations;
   }
 
-  private async compressLogs(): Promise<{ message: string; spaceFreed: number }> {
+  private async compressLogs(): Promise<{
+    message: string;
+    spaceFreed: number;
+  }> {
     // Simplified compression simulation
     return {
       message: 'Log compression completed',
-      spaceFreed: 1024 // KB
+      spaceFreed: 1024, // KB
     };
   }
 
   private optimizeCollectionFrequency(): { message: string; gain: number } {
     return {
       message: 'Collection frequency optimized',
-      gain: 15 // % performance gain
+      gain: 15, // % performance gain
     };
   }
 
-  private generatePatternRecommendation(pattern: string, _logs: unknown): string {
+  private generatePatternRecommendation(
+    pattern: string,
+    _logs: unknown,
+  ): string {
     if (pattern.includes('timeout')) {
       return 'Investigate timeout issues - check network connectivity and service dependencies';
     }
@@ -637,16 +748,22 @@ class LogManagement {
     return 'Monitor this pattern and investigate if frequency increases';
   }
 
-  private analyzeHourlyDistribution(_logs: unknown): { anomaly: boolean; description: string; confidence: number } {
+  private analyzeHourlyDistribution(_logs: unknown): {
+    anomaly: boolean;
+    description: string;
+    confidence: number;
+  } {
     // Simplified hourly analysis
     return {
       anomaly: false,
       description: 'Normal distribution',
-      confidence: 50
+      confidence: 50,
     };
   }
 
-  private findErrorCorrelations(_logs: unknown): Array<{ description: string; confidence: number; actionable: boolean }> {
+  private findErrorCorrelations(
+    _logs: unknown,
+  ): Array<{ description: string; confidence: number; actionable: boolean }> {
     // Simplified correlation analysis
     return [];
   }
@@ -656,4 +773,4 @@ class LogManagement {
 export const logManagement = new LogManagement();
 
 // Initialize intelligent alerting
-logManagement.setupIntelligentAlerting(); 
+logManagement.setupIntelligentAlerting();

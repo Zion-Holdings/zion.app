@@ -16,11 +16,16 @@ interface Props {
 }
 
 export function ProfileForm({ defaultValues, onSubmit }: Props) {
-  const { register, handleSubmit, setValue, watch } = useForm<ProfileValues>({ defaultValues });
+  const { register, handleSubmit, setValue, watch } = useForm<ProfileValues>({
+    defaultValues,
+  });
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-      <AvatarUpload value={watch('avatarUrl')} onChange={(url) => setValue('avatarUrl', url)} />
+      <AvatarUpload
+        value={watch('avatarUrl')}
+        onChange={(url) => setValue('avatarUrl', url)}
+      />
       <div>
         <Label htmlFor="name">Name</Label>
         <Input id="name" {...register('name')} />

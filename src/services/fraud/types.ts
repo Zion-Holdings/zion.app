@@ -21,7 +21,7 @@ export interface FlagResult {
   error?: string;
 }
 
-// Signup check extends basic analysis for user registration validation  
+// Signup check extends basic analysis for user registration validation
 export interface SignupCheckResult extends AnalysisResult {
   // Additional signup-specific validation properties can be added here
   riskScore?: number;

@@ -1,8 +1,7 @@
-
-import { useEffect, useState, useRef } from "react";
-import type { ReactNode } from "react";
-import { cn } from "@/lib/utils";
-import Skeleton from "@/components/ui/skeleton";
+import { useEffect, useState, useRef } from 'react';
+import type { ReactNode } from 'react';
+import { cn } from '@/lib/utils';
+import Skeleton from '@/components/ui/skeleton';
 
 interface LazyLoadProps {
   height?: string | number;
@@ -13,8 +12,8 @@ interface LazyLoadProps {
 }
 
 export function LazyLoad({
-  height = "200px",
-  width = "100%",
+  height = '200px',
+  width = '100%',
   children,
   loadingComponent,
   className,
@@ -34,7 +33,7 @@ export function LazyLoad({
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     observer.observe(container);
@@ -66,9 +65,10 @@ export function LazyLoad({
   return (
     <div
       ref={containerRef}
-      className={cn("transition-opacity duration-500", 
-        isLoaded ? "opacity-100" : "opacity-0",
-        className
+      className={cn(
+        'transition-opacity duration-500',
+        isLoaded ? 'opacity-100' : 'opacity-0',
+        className,
       )}
     >
       {isVisible ? (

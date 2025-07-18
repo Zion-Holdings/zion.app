@@ -27,9 +27,11 @@ const defaultState: GlobalLoaderContextType = {
   _hideLoader: () => {},
 };
 
-const GlobalLoaderContext = createContext<GlobalLoaderContextType>(defaultState);
+const GlobalLoaderContext =
+  createContext<GlobalLoaderContextType>(defaultState);
 
-export const useGlobalLoader = (): GlobalLoaderContextType => useContext(GlobalLoaderContext);
+export const useGlobalLoader = (): GlobalLoaderContextType =>
+  useContext(GlobalLoaderContext);
 
 export function AppLoaderProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(false);
@@ -55,26 +57,50 @@ export function AppLoaderProvider({ children }: { children: ReactNode }) {
     };
 
     // Type guard for axios.interceptors
-    const reqInterceptors = (axios.interceptors as { request: { use: (...args: unknown[]) => unknown; eject: (...args: unknown[]) => unknown } }).request;
-    const resInterceptors = (axios.interceptors as { response: { use: (...args: unknown[]) => unknown; eject: (...args: unknown[]) => unknown } }).response;
+    const reqInterceptors = (
+      axios.interceptors as {
+        request: {
+          use: (...args: unknown[]) => unknown;
+          eject: (...args: unknown[]) => unknown;
+        };
+      }
+    ).request;
+    const resInterceptors = (
+      axios.interceptors as {
+        response: {
+          use: (...args: unknown[]) => unknown;
+          eject: (...args: unknown[]) => unknown;
+        };
+      }
+    ).response;
     const reqInterceptor = reqInterceptors.use(onRequest, onError);
     const resInterceptor = resInterceptors.use(onResponse, onError);
 
     const originalCreate = axios.create;
     axios.create = (..._args: Parameters<typeof originalCreate>) => {
       const instance = originalCreate(...args);
-      if (instance.interceptors && instance.interceptors.request && typeof instance.interceptors.request.use === 'function') {
+      if (
+        instance.interceptors &&
+        instance.interceptors.request &&
+        typeof instance.interceptors.request.use === 'function'
+      ) {
         instance.interceptors.request.use(onRequest, onError);
       }
-      if (instance.interceptors && instance.interceptors.response && typeof instance.interceptors.response.use === 'function') {
+      if (
+        instance.interceptors &&
+        instance.interceptors.response &&
+        typeof instance.interceptors.response.use === 'function'
+      ) {
         instance.interceptors.response.use(onResponse, onError);
       }
       return instance;
     };
 
     return () => {
-      if (typeof reqInterceptors.eject === 'function') reqInterceptors.eject(reqInterceptor);
-      if (typeof resInterceptors.eject === 'function') resInterceptors.eject(resInterceptor);
+      if (typeof reqInterceptors.eject === 'function')
+        reqInterceptors.eject(reqInterceptor);
+      if (typeof resInterceptors.eject === 'function')
+        resInterceptors.eject(resInterceptor);
       axios.create = originalCreate;
     };
   }, []);

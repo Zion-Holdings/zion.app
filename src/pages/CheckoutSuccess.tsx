@@ -1,9 +1,8 @@
-"use client";
+'use client';
 import React, { useEffect, useState } from 'react';
 import * as NextNavigation from 'next/navigation';
 import Link from 'next/link';
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 interface Session {
   id: string;
@@ -26,9 +25,11 @@ export default function CheckoutSuccess() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ sessionId }),
     })
-      .then(res => res.json())
-      .then(data => setSession(data.session as Session))
-      .catch(err => logErrorToProduction('Failed to load session', { data: err }));
+      .then((res) => res.json())
+      .then((data) => setSession(data.session as Session))
+      .catch((err) =>
+        logErrorToProduction('Failed to load session', { data: err }),
+      );
   }, [searchParams]);
 
   if (!session) {
@@ -41,16 +42,22 @@ export default function CheckoutSuccess() {
 
   return (
     <div className="container max-w-2xl py-10 space-y-4">
-      <h1 className="text-3xl font-bold" data-testid="payment-success-message">Thank you for your purchase!</h1>
+      <h1 className="text-3xl font-bold" data-testid="payment-success-message">
+        Thank you for your purchase!
+      </h1>
       <div>
-        <p><strong>Order ID:</strong> {session.id}</p>
+        <p>
+          <strong>Order ID:</strong> {session.id}
+        </p>
         {session.customer_details?.email && (
-          <p><strong>Email:</strong> {session.customer_details.email}</p>
+          <p>
+            <strong>Email:</strong> {session.customer_details.email}
+          </p>
         )}
         {typeof session.amount_total === 'number' && (
           <p>
-            <strong>Total:</strong>{' '}
-            {session.currency?.toUpperCase()} {(session.amount_total / 100).toFixed(2)}
+            <strong>Total:</strong> {session.currency?.toUpperCase()}{' '}
+            {(session.amount_total / 100).toFixed(2)}
           </p>
         )}
       </div>

@@ -5,45 +5,50 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 
-const LoadingSkeleton = () => React.createElement('div',
-  { className: "animate-pulse space-y-4" },
-  React.createElement('div', { className: "h-4 bg-gray-200 rounded w-3/4" }),
-  React.createElement('div', { className: "h-4 bg-gray-200 rounded w-1/2" }),
-  React.createElement('div', { className: "h-32 bg-gray-200 rounded" })
-);
+const LoadingSkeleton = () =>
+  React.createElement(
+    'div',
+    { className: 'animate-pulse space-y-4' },
+    React.createElement('div', { className: 'h-4 bg-gray-200 rounded w-3/4' }),
+    React.createElement('div', { className: 'h-4 bg-gray-200 rounded w-1/2' }),
+    React.createElement('div', { className: 'h-32 bg-gray-200 rounded' }),
+  );
 
 // Chart components (heavy - only load when needed)
 // export const DynamicChart = dynamic(
 //   () => import('../components/charts/Chart'),
-//   { 
+//   {
 //     loading: LoadingSkeleton,
-//     ssr: false 
+//     ssr: false
 //   }
 // );
 
 export const DynamicPieChart = dynamic(
-  () => import('recharts').then(mod => ({ default: mod.PieChart })),
-  { 
+  () => import('recharts').then((mod) => ({ default: mod.PieChart })),
+  {
     loading: LoadingSkeleton,
-    ssr: false 
-  }
+    ssr: false,
+  },
 );
 
 export const DynamicBarChart = dynamic(
-  () => import('recharts').then(mod => ({ default: mod.BarChart })),
+  () => import('recharts').then((mod) => ({ default: mod.BarChart })),
   {
     loading: LoadingSkeleton,
-    ssr: false
-  }
+    ssr: false,
+  },
 );
 
 // Developer tools
 export const DynamicApiLogsChart = dynamic(
-  () => import('../components/developers/ApiLogsChart').then(mod => ({ default: mod.ApiLogsChart })),
+  () =>
+    import('../components/developers/ApiLogsChart').then((mod) => ({
+      default: mod.ApiLogsChart,
+    })),
   {
     loading: LoadingSkeleton,
-    ssr: false
-  }
+    ssr: false,
+  },
 );
 
 // Analytics components
@@ -51,39 +56,38 @@ export const DynamicAnalyticsChart = dynamic(
   () => import('../components/analytics/AnalyticsChart'),
   {
     loading: LoadingSkeleton,
-    ssr: false
-  }
+    ssr: false,
+  },
 );
 
 // PDFGenerator and RichEditor components do not exist, so remove their dynamic imports
 
 // Use ReactPlayer for video player
 export const DynamicVideoPlayer = dynamic(
-  () => import('react-player').then(mod => ({ default: mod.default })),
+  () => import('react-player').then((mod) => ({ default: mod.default })),
   {
     loading: LoadingSkeleton,
-    ssr: false
-  }
+    ssr: false,
+  },
 );
 
 // Use ModelViewer as defined in ProductGallery
 const ModelViewer = React.lazy(async () => {
   await import('@google/model-viewer');
   return {
-    default: (props: Record<string, unknown>) => (
-      React.createElement('model-viewer', props)
-    ),
+    default: (props: Record<string, unknown>) =>
+      React.createElement('model-viewer', props),
   };
 });
 export { ModelViewer as DynamicModelViewer };
 
 // Virtual list for large datasets
 export const DynamicVirtualList = dynamic(
-  () => import('react-window').then(mod => ({ default: mod.FixedSizeList })),
-  { 
+  () => import('react-window').then((mod) => ({ default: mod.FixedSizeList })),
+  {
     loading: LoadingSkeleton,
-    ssr: false 
-  }
+    ssr: false,
+  },
 );
 
 // Usage examples:

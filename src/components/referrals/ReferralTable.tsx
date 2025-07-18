@@ -1,7 +1,14 @@
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import type { Referral, ReferralStatus } from "@/types/referrals";
-import { Badge } from "@/components/ui/badge";
-import { formatDate } from "@/utils/referralUtils";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
+import type { Referral, ReferralStatus } from '@/types/referrals';
+import { Badge } from '@/components/ui/badge';
+import { formatDate } from '@/utils/referralUtils';
 
 interface ReferralTableProps {
   referrals: Referral[];
@@ -12,12 +19,33 @@ export function ReferralTable({ referrals, isLoading }: ReferralTableProps) {
   // Helper function to render status badges
   const renderStatusBadge = (_status: ReferralStatus) => {
     switch (status) {
-      case "pending":
-        return <Badge variant="outline" className="bg-yellow-50 text-yellow-800 border-yellow-200">Pending</Badge>;
-      case "completed":
-        return <Badge variant="outline" className="bg-green-50 text-green-800 border-green-200">Completed</Badge>;
-      case "expired":
-        return <Badge variant="outline" className="bg-gray-50 text-gray-800 border-gray-200">Expired</Badge>;
+      case 'pending':
+        return (
+          <Badge
+            variant="outline"
+            className="bg-yellow-50 text-yellow-800 border-yellow-200"
+          >
+            Pending
+          </Badge>
+        );
+      case 'completed':
+        return (
+          <Badge
+            variant="outline"
+            className="bg-green-50 text-green-800 border-green-200"
+          >
+            Completed
+          </Badge>
+        );
+      case 'expired':
+        return (
+          <Badge
+            variant="outline"
+            className="bg-gray-50 text-gray-800 border-gray-200"
+          >
+            Expired
+          </Badge>
+        );
       default:
         return null;
     }
@@ -36,7 +64,8 @@ export function ReferralTable({ referrals, isLoading }: ReferralTableProps) {
       <div className="flex flex-col items-center justify-center p-8 text-center">
         <p className="text-muted-foreground mb-2">No referrals yet</p>
         <p className="text-sm text-muted-foreground">
-          Share your referral link with friends and colleagues to start earning rewards
+          Share your referral link with friends and colleagues to start earning
+          rewards
         </p>
       </div>
     );
@@ -61,11 +90,14 @@ export function ReferralTable({ referrals, isLoading }: ReferralTableProps) {
             <TableCell>{referral.email || '-'}</TableCell>
             <TableCell>{renderStatusBadge(referral.status)}</TableCell>
             <TableCell>
-              {referral.referred_user_type 
-                ? referral.referred_user_type.charAt(0).toUpperCase() + referral.referred_user_type.slice(1) 
+              {referral.referred_user_type
+                ? referral.referred_user_type.charAt(0).toUpperCase() +
+                  referral.referred_user_type.slice(1)
                 : '-'}
             </TableCell>
-            <TableCell>{referral.completed_at ? formatDate(referral.completed_at) : '-'}</TableCell>
+            <TableCell>
+              {referral.completed_at ? formatDate(referral.completed_at) : '-'}
+            </TableCell>
             <TableCell>
               {referral.reward_issued ? (
                 <Badge className="bg-green-50 text-green-800 border-green-200">

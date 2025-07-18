@@ -3,14 +3,14 @@ export const localeCurrencyMap: Record<string, string> = {
   es: 'EUR',
   fr: 'EUR',
   pt: 'BRL',
-  ar: 'AED'
+  ar: 'AED',
 };
 
 export const exchangeRates: Record<string, number> = {
   USD: 1,
   EUR: 0.93,
   BRL: 5,
-  AED: 3.67
+  AED: 3.67,
 };
 
 export function getCurrencyForLocale(locale: string): string {
@@ -18,7 +18,10 @@ export function getCurrencyForLocale(locale: string): string {
   return localeCurrencyMap[lang] || 'USD';
 }
 
-export function convertUSDToCurrency(amountUSD: number, currency: string): number {
+export function convertUSDToCurrency(
+  amountUSD: number,
+  currency: string,
+): number {
   const rate = exchangeRates[currency];
   return rate ? amountUSD * rate : amountUSD;
 }
@@ -26,5 +29,7 @@ export function convertUSDToCurrency(amountUSD: number, currency: string): numbe
 export function formatPriceByLocale(amountUSD: number, locale: string): string {
   const currency = getCurrencyForLocale(locale);
   const converted = convertUSDToCurrency(amountUSD, currency);
-  return new Intl.NumberFormat(locale, { style: 'currency', currency }).format(converted);
+  return new Intl.NumberFormat(locale, { style: 'currency', currency }).format(
+    converted,
+  );
 }

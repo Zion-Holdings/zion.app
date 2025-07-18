@@ -1,10 +1,8 @@
-
-import * as React from "react";
+import * as React from 'react';
 import { ChevronDown } from '@/components/ui/icons';
 
-
-import { cn } from "@/lib/utils";
-import type { SafeRef } from "@/types/ref-types";
+import { cn } from '@/lib/utils';
+import type { SafeRef } from '@/types/ref-types';
 
 interface SidebarGroupProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string;
@@ -14,13 +12,24 @@ interface SidebarGroupProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const SidebarGroup = React.forwardRef<HTMLDivElement, SidebarGroupProps>(
-  ({ title, icon, defaultExpanded = true, showChevron = true, className, children, ...props }, ref) => {
+  (
+    {
+      title,
+      icon,
+      defaultExpanded = true,
+      showChevron = true,
+      className,
+      children,
+      ...props
+    },
+    ref,
+  ) => {
     const [expanded, setExpanded] = React.useState(defaultExpanded);
 
     return (
       <div
         ref={ref as SafeRef<HTMLDivElement>}
-        className={cn("px-3 py-2", className)}
+        className={cn('px-3 py-2', className)}
         {...props}
       >
         {title && (
@@ -35,16 +44,19 @@ const SidebarGroup = React.forwardRef<HTMLDivElement, SidebarGroupProps>(
             </div>
             {showChevron && (
               <ChevronDown
-                className={cn("h-4 w-4 transition-transform", expanded ? "rotate-0" : "-rotate-90")}
+                className={cn(
+                  'h-4 w-4 transition-transform',
+                  expanded ? 'rotate-0' : '-rotate-90',
+                )}
               />
             )}
           </button>
         )}
-        <div className={cn("mt-1", !expanded && "hidden")}>{children}</div>
+        <div className={cn('mt-1', !expanded && 'hidden')}>{children}</div>
       </div>
     );
-  }
+  },
 );
 
-SidebarGroup.displayName = "SidebarGroup";
+SidebarGroup.displayName = 'SidebarGroup';
 export { SidebarGroup };

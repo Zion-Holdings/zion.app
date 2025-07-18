@@ -48,18 +48,33 @@ export const checkEssentialEnvVars = (): void => {
     }
 
     // Specific checks for NEXT_PUBLIC_REOWN_PROJECT_ID placeholders
-    if (varName === 'NEXT_PUBLIC_REOWN_PROJECT_ID' && INVALID_PROJECT_ID_FALLBACKS.includes(String(value))) {
-      missingOrInvalidVars.push(`${varName} is set to a placeholder value: "${value}".`);
+    if (
+      varName === 'NEXT_PUBLIC_REOWN_PROJECT_ID' &&
+      INVALID_PROJECT_ID_FALLBACKS.includes(String(value))
+    ) {
+      missingOrInvalidVars.push(
+        `${varName} is set to a placeholder value: "${value}".`,
+      );
     }
 
     // Specific checks for NEXT_PUBLIC_SUPABASE_URL placeholders
-    if (varName === 'NEXT_PUBLIC_SUPABASE_URL' && INVALID_SUPABASE_FALLBACKS.includes(String(value))) {
-      missingOrInvalidVars.push(`${varName} is set to a placeholder value: "${value}".`);
+    if (
+      varName === 'NEXT_PUBLIC_SUPABASE_URL' &&
+      INVALID_SUPABASE_FALLBACKS.includes(String(value))
+    ) {
+      missingOrInvalidVars.push(
+        `${varName} is set to a placeholder value: "${value}".`,
+      );
     }
 
     // Specific checks for NEXT_PUBLIC_SUPABASE_ANON_KEY placeholders
-    if (varName === 'NEXT_PUBLIC_SUPABASE_ANON_KEY' && INVALID_SUPABASE_FALLBACKS.includes(String(value))) {
-      missingOrInvalidVars.push(`${varName} is set to a placeholder value: "${value}".`);
+    if (
+      varName === 'NEXT_PUBLIC_SUPABASE_ANON_KEY' &&
+      INVALID_SUPABASE_FALLBACKS.includes(String(value))
+    ) {
+      missingOrInvalidVars.push(
+        `${varName} is set to a placeholder value: "${value}".`,
+      );
     }
   }
 

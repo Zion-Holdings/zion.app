@@ -15,9 +15,6 @@ const transitions: Record<OrderStatus, OrderStatus[]> = {
   cancelled: [],
 };
 
-export function canTransition(
-  current: OrderStatus,
-  next: OrderStatus
-) {
+export function canTransition(current: OrderStatus, next: OrderStatus) {
   return transitions[current]?.includes(next);
 }

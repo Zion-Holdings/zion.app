@@ -18,14 +18,16 @@ interface Options {
  */
 export function safeDynamicImport<T extends React.ComponentType<unknown>>(
   importer: () => Promise<{ default: T }>,
-  options: Options
+  options: Options,
 ) {
   const { name, ssr = false, loading: Loading } = options;
 
   return dynamic(
     () =>
       importer().catch((err) => {
-        logErrorToProduction(`Dynamic import failed for ${name}:`, { data: err });
+        logErrorToProduction(`Dynamic import failed for ${name}:`, {
+          data: err,
+        });
         // Surface the error in the browser console for easier debugging
         if (typeof window !== 'undefined') {
           console.error(`Dynamic import failed for ${name}:`, err);
@@ -41,10 +43,13 @@ export function safeDynamicImport<T extends React.ComponentType<unknown>>(
     {
       ssr,
       loading: () =>
-        Loading ? <Loading /> : <div style={{ display: 'none' }}>Loading {name}...</div>,
-    }
+        Loading ? (
+          <Loading />
+        ) : (
+          <div style={{ display: 'none' }}>Loading {name}...</div>
+        ),
+    },
   );
 }
 
 export default safeDynamicImport;
-

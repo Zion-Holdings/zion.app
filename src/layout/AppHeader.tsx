@@ -7,8 +7,6 @@ import { Logo } from '@/components/header/Logo';
 import { Container } from '@/components/Container';
 import { useTranslation } from 'react-i18next';
 
-
-
 import { MobileMenu } from '@/components/header/MobileMenu';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { MobileBottomNav } from '@/components/header/MobileBottomNav';
@@ -21,7 +19,6 @@ import { cn } from '@/lib/utils'; // Import cn utility
 import { useRouter } from 'next/router';
 
 export function AppHeader() {
-
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
   const isMobile = useIsMobile();
@@ -40,14 +37,14 @@ export function AppHeader() {
     // If a returnToPath is passed, we could potentially use it for other logic here if needed in the future.
     setLoginOpen(true);
   };
-  
+
   return (
     <>
       <header
-        style={{ "--nav-height": "64px" } as React.CSSProperties}
+        style={{ '--nav-height': '64px' } as React.CSSProperties}
         className={cn(
-          "sticky top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-md text-foreground",
-          { "bg-red-500": mobileMenuOpen }
+          'sticky top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-md text-foreground',
+          { 'bg-red-500': mobileMenuOpen },
         )}
       >
         <Container className="flex h-16 items-center">
@@ -62,7 +59,7 @@ export function AppHeader() {
               <ResponsiveNavigation openLoginModal={openLoginModal} />
             </nav>
           </div>
-          
+
           {/* Mobile menu button */}
           <div className="md:hidden ml-auto mr-4">
             <button
@@ -93,7 +90,14 @@ export function AppHeader() {
                   // For the main login link, we might not have a specific returnTo beyond current page,
                   // or we could default to dashboard.
                   // For consistency with how sub-menus now set it:
-                  router.push({ pathname: '/auth/login', query: { returnTo: router.asPath } }, undefined, { shallow: true });
+                  router.push(
+                    {
+                      pathname: '/auth/login',
+                      query: { returnTo: router.asPath },
+                    },
+                    undefined,
+                    { shallow: true },
+                  );
                   openLoginModal(router.asPath);
                 }}
               >
@@ -117,18 +121,18 @@ export function AppHeader() {
           )}
         </Container>
       </header>
-      
+
       {/* Mobile menu - positioned outside of header to prevent overlap issues */}
       {mobileMenuOpen && (
         <div className="md:hidden fixed inset-0 z-60 pt-16">
-          <div 
+          <div
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
           <div className="relative bg-background border-t border-border h-auto max-h-[calc(100vh-4rem)] overflow-y-auto">
-            <MobileMenu 
-              unreadCount={unreadCount} 
+            <MobileMenu
+              unreadCount={unreadCount}
               onClose={() => setMobileMenuOpen(false)}
               openLoginModal={openLoginModal}
             />

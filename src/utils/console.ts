@@ -7,8 +7,12 @@ import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 // Remove all devConsole methods except warn and error
 export const devConsole = {
-  _warn: (...args: unknown[]) => { logWarn('[DEV WARN]', { data: args }); },
-  _error: (...args: unknown[]) => { logErrorToProduction('[DEV ERROR]', { data: args }); },
+  _warn: (...args: unknown[]) => {
+    logWarn('[DEV WARN]', { data: args });
+  },
+  _error: (...args: unknown[]) => {
+    logErrorToProduction('[DEV ERROR]', { data: args });
+  },
 };
 
 // Only keep warnLargeComponent if it uses console.warn

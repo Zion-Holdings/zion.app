@@ -6,12 +6,7 @@ import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import type { Order } from '@/hooks/useOrders';
 import OrdersPage from './Orders';
 import AccountSettings from './AccountSettings';
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from '@/components/ui/tabs';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 interface User {
   id: string;
@@ -26,7 +21,10 @@ interface ProfileProps {
   orders?: Order[];
 }
 
-export default function Profile({ user: initialUser, orders = [] }: ProfileProps) {
+export default function Profile({
+  user: initialUser,
+  orders = [],
+}: ProfileProps) {
   const [user, setUser] = useState(initialUser);
 
   const handleSubmit = async (_values: ProfileValues) => {
@@ -56,11 +54,7 @@ export default function Profile({ user: initialUser, orders = [] }: ProfileProps
           <ProfileForm defaultValues={user} onSubmit={handleSubmit} />
         </TabsContent>
         <TabsContent value="orders">
-          {orders.length > 0 ? (
-            <OrdersPage />
-          ) : (
-            <p>No orders found.</p>
-          )}
+          {orders.length > 0 ? <OrdersPage /> : <p>No orders found.</p>}
         </TabsContent>
         <TabsContent value="settings">
           <AccountSettings />
@@ -70,19 +64,34 @@ export default function Profile({ user: initialUser, orders = [] }: ProfileProps
   );
 }
 
-export const getServerSideProps: GetServerSideProps<ProfileProps> = async ({ params: _params, req }: { params: { [key: string]: string | string[] | undefined }, req: unknown }, _res: unknown, _query: unknown, _resolvedUrl: unknown ) => {
+export const getServerSideProps: GetServerSideProps<ProfileProps> = async (
+  {
+    params: _params,
+    req,
+  }: { params: { [key: string]: string | string[] | undefined }; req: unknown },
+  _res: unknown,
+  _query: unknown,
+  _resolvedUrl: unknown,
+) => {
   const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
-  
+
   const getCookie = (reqObj: unknown): string => {
-    if (typeof reqObj === 'object' && reqObj !== null && 'headers' in reqObj && typeof (reqObj as { headers?: { cookie?: string } }).headers === 'object') {
-      return (reqObj as { headers?: { cookie?: string } }).headers?.cookie || '';
+    if (
+      typeof reqObj === 'object' &&
+      reqObj !== null &&
+      'headers' in reqObj &&
+      typeof (reqObj as { headers?: { cookie?: string } }).headers === 'object'
+    ) {
+      return (
+        (reqObj as { headers?: { cookie?: string } }).headers?.cookie || ''
+      );
     }
     return '';
   };
   const cookie = getCookie(req);
   const [userRes, ordersRes] = await Promise.all([
     fetch(`${base}/api/users/me`, { headers: { cookie } }),
-    fetch(`${base}/api/orders?user_id=me`, { headers: { cookie } })
+    fetch(`${base}/api/orders?user_id=me`, { headers: { cookie } }),
   ]);
 
   if (userRes.status === 401) {

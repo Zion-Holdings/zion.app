@@ -2,15 +2,14 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router'; // Changed from useLocation, useNavigate
 import { useAuth } from '@/hooks/useAuth';
 import { safeStorage } from '@/utils/safeStorage';
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 function decodeToken(token) {
   try {
     const payload = token.split('.')[1];
     return JSON.parse(atob(payload));
   } catch (e) {
-    logErrorToProduction('Failed to decode token', { data:  e });
+    logErrorToProduction('Failed to decode token', { data: e });
     return null;
   }
 }

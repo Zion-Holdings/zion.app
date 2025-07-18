@@ -55,7 +55,10 @@ export default function ResetPasswordPage() {
       router.push('/login'); // Redirect to login page on success, changed to router.push
     } catch (err) {
       // Ensure err.message is a string.
-      const errorMessage = err instanceof Error ? err.message : 'Failed to reset password. Please try again.';
+      const errorMessage =
+        err instanceof Error
+          ? err.message
+          : 'Failed to reset password. Please try again.';
       setError(errorMessage);
       toast.error(errorMessage);
     } finally {
@@ -63,7 +66,8 @@ export default function ResetPasswordPage() {
     }
   };
 
-  if (error && !token) { // If token was invalid from the start
+  if (error && !token) {
+    // If token was invalid from the start
     return (
       <div className="flex min-h-screen items-center justify-center p-4 text-red-500">
         <p>{error}</p>

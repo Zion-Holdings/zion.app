@@ -1,6 +1,5 @@
 import { supabase } from '@/integrations/supabase/client';
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 type NotificationType =
   | 'message'
@@ -245,7 +244,8 @@ export async function createTestNotification(userId: string) {
     'milestone_complete',
     'order_status',
   ];
-  const randomType = types[Math.floor(Math.random() * types.length)] || 'system';
+  const randomType =
+    types[Math.floor(Math.random() * types.length)] || 'system';
 
   const titles = {
     message: 'New Message Received',

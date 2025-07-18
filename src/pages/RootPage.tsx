@@ -1,7 +1,7 @@
-import Dashboard from "./Dashboard";
-import LandingPage from "./LandingPage";
-import { useAuth } from "@/hooks/useAuth";
-import { NextSeo } from "@/components/NextSeo";
+import Dashboard from './Dashboard';
+import LandingPage from './LandingPage';
+import { useAuth } from '@/hooks/useAuth';
+import { NextSeo } from '@/components/NextSeo';
 
 export default function RootPage() {
   const { _user } = useAuth();

@@ -1,17 +1,17 @@
 import { useRouter } from 'next/router';
-import { ArrowUp, Filter, SortAsc, TrendingUp, Star } from '@/components/ui/icons';
+import {
+  ArrowUp,
+  Filter,
+  SortAsc,
+  TrendingUp,
+  Star,
+} from '@/components/ui/icons';
 import { useApiErrorHandling } from '@/hooks/useApiErrorHandling';
 import ProductCard from '@/components/ProductCard';
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AuthModal } from '@/components/auth/AuthModal';
-
-
-
-
-
-
 
 import { SkeletonCard } from '@/components/ui/skeleton';
 import { ErrorState } from '@/components/jobs/applications/ErrorState';
@@ -28,7 +28,6 @@ import { fetchProducts as _fetchProducts } from '@/services/marketplace';
 import { MAX_PRICE, MIN_PRICE } from '@/data/marketplaceData';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 import apiClient from '@/services/apiClient';
-
 
 /**
  * Marketplace component props
@@ -51,19 +50,27 @@ const MarketInsights: React.FC<{ stats: MarketStats }> = ({ stats }) => (
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div className="text-center">
-          <div className="text-2xl font-bold text-blue-400">${Math.round(stats.averagePrice)}</div>
+          <div className="text-2xl font-bold text-blue-400">
+            ${Math.round(stats.averagePrice)}
+          </div>
           <div className="text-sm text-muted-foreground">Avg Price</div>
         </div>
         <div className="text-center">
-          <div className="text-2xl font-bold text-green-400">{stats.averageRating.toFixed(1)}</div>
+          <div className="text-2xl font-bold text-green-400">
+            {stats.averageRating.toFixed(1)}
+          </div>
           <div className="text-sm text-muted-foreground">Avg Rating</div>
         </div>
         <div className="text-center">
-          <div className="text-2xl font-bold text-purple-400">{stats.totalProducts}</div>
+          <div className="text-2xl font-bold text-purple-400">
+            {stats.totalProducts}
+          </div>
           <div className="text-sm text-muted-foreground">Products</div>
         </div>
         <div className="text-center">
-          <div className="text-2xl font-bold text-yellow-400">{stats.categoriesCount}</div>
+          <div className="text-2xl font-bold text-yellow-400">
+            {stats.categoriesCount}
+          </div>
           <div className="text-sm text-muted-foreground">Categories</div>
         </div>
       </div>
@@ -113,10 +120,12 @@ const FilterControls: React.FC<{
   locations,
   showRecommended,
   setShowRecommended,
-  loading
+  loading,
 }) => (
   <div className="flex flex-wrap gap-4 mb-6 p-4 bg-muted/30 rounded-lg relative">
-    {loading && <Spinner className="absolute right-4 top-4 h-4 w-4 text-primary" />}
+    {loading && (
+      <Spinner className="absolute right-4 top-4 h-4 w-4 text-primary" />
+    )}
     <div className="flex items-center gap-2">
       <Filter className="h-4 w-4 text-muted-foreground" />
       <select
@@ -125,12 +134,14 @@ const FilterControls: React.FC<{
         className="bg-background border border-border px-3 py-2 rounded"
       >
         <option value="">All Categories</option>
-        {categories.map(category => (
-          <option key={category} value={category}>{category}</option>
+        {categories.map((category) => (
+          <option key={category} value={category}>
+            {category}
+          </option>
         ))}
       </select>
     </div>
-    
+
     <div className="flex items-center gap-2">
       <SortAsc className="h-4 w-4 text-muted-foreground" />
       <select
@@ -203,8 +214,10 @@ const FilterControls: React.FC<{
         className="bg-background border border-border px-3 py-2 rounded"
       >
         <option value="">Any Availability</option>
-        {availabilityOptions.map(opt => (
-          <option key={opt} value={opt as string}>{opt}</option>
+        {availabilityOptions.map((opt) => (
+          <option key={opt} value={opt as string}>
+            {opt}
+          </option>
         ))}
       </select>
     </div>
@@ -216,20 +229,22 @@ const FilterControls: React.FC<{
         className="bg-background border border-border px-3 py-2 rounded"
       >
         <option value="">All Locations</option>
-        {locations.map(loc => (
-          <option key={loc} value={loc}>{loc}</option>
+        {locations.map((loc) => (
+          <option key={loc} value={loc}>
+            {loc}
+          </option>
         ))}
       </select>
     </div>
 
     <Button
-      variant={showRecommended ? "default" : "outline"}
+      variant={showRecommended ? 'default' : 'outline'}
       size="sm"
       onClick={() => setShowRecommended(!showRecommended)}
       className="flex items-center gap-2"
     >
       <Sparkles className="h-4 w-4" />
-      {showRecommended ? "All Products" : "Recommended"}
+      {showRecommended ? 'All Products' : 'Recommended'}
     </Button>
   </div>
 );
@@ -251,12 +266,16 @@ export default function Marketplace() {
   const [sortBy, setSortBy] = useState('newest');
   const [filterCategory, setFilterCategory] = useState('');
   const [showRecommended, setShowRecommended] = useState(false);
-  const [priceRange, setPriceRange] = useState<[number, number]>([MIN_PRICE, MAX_PRICE]);
+  const [priceRange, setPriceRange] = useState<[number, number]>([
+    MIN_PRICE,
+    MAX_PRICE,
+  ]);
   const [minAiScore, setMinAiScore] = useState(0);
   const [minRating, setMinRating] = useState(0);
   const [filterAvailability, setFilterAvailability] = useState('');
   const [filterLocation, setFilterLocation] = useState('');
-  const { handleApiError: _handleApiError, retryQuery: _retryQuery } = useApiErrorHandling();
+  const { handleApiError: _handleApiError, retryQuery: _retryQuery } =
+    useApiErrorHandling();
 
   // Handle Add Product button with authentication check
   // const _handleAddProduct = useCallback(() => {
@@ -280,54 +299,76 @@ export default function Marketplace() {
   // }, [isAuthenticated, user, router, toast]);
 
   // Fetch function for infinite scroll with AI product generation
-  const _fetchProducts = useCallback(async (page: number, _limit: number) => {
-    try {
-      const params = {
-        page,
-        limit,
-        ...(filterCategory && { category: filterCategory }),
-        sort: sortBy
-      };
-      logInfo('Marketplace.tsx: Fetching products from API with params:', { data:  { data: params } });
-      const response = await (apiClient as typeof apiClient).get('/products', { params });
-      let items: ProductListing[] = response.data?.items || [];
-      const total = response.data?.total ?? items.length;
-      const hasMore = (page * limit) < total;
-      if (showRecommended) {
-        items = items.filter((p) => p.rating != null && p.rating >= 4.3);
-      }
-      items = items.filter((p) => {
-        const price = p.price || 0;
-        const ai = p.aiScore || 0;
-        const rating = p.rating || 0;
-        const location = (p.location || '').toLowerCase();
-        const availability = (p.availability || '').toLowerCase();
-        return (
-          price >= priceRange[0] &&
-          price <= priceRange[1] &&
-          ai >= minAiScore &&
-          rating >= minRating &&
-          (!filterLocation || location.includes(filterLocation.toLowerCase())) &&
-          (!filterAvailability || availability === filterAvailability.toLowerCase())
+  const _fetchProducts = useCallback(
+    async (page: number, _limit: number) => {
+      try {
+        const params = {
+          page,
+          limit,
+          ...(filterCategory && { category: filterCategory }),
+          sort: sortBy,
+        };
+        logInfo('Marketplace.tsx: Fetching products from API with params:', {
+          data: { data: params },
+        });
+        const response = await (apiClient as typeof apiClient).get(
+          '/products',
+          { params },
         );
-      });
-      return { items, hasMore, total };
-    } catch (error) {
-      logErrorToProduction('Marketplace.tsx: Error fetching products from API', { data: error });
-      return { items: [], hasMore: false, total: 0 };
-    }
-  }, [filterCategory, sortBy, showRecommended, priceRange, minAiScore, minRating, filterLocation, filterAvailability]);
+        let items: ProductListing[] = response.data?.items || [];
+        const total = response.data?.total ?? items.length;
+        const hasMore = page * limit < total;
+        if (showRecommended) {
+          items = items.filter((p) => p.rating != null && p.rating >= 4.3);
+        }
+        items = items.filter((p) => {
+          const price = p.price || 0;
+          const ai = p.aiScore || 0;
+          const rating = p.rating || 0;
+          const location = (p.location || '').toLowerCase();
+          const availability = (p.availability || '').toLowerCase();
+          return (
+            price >= priceRange[0] &&
+            price <= priceRange[1] &&
+            ai >= minAiScore &&
+            rating >= minRating &&
+            (!filterLocation ||
+              location.includes(filterLocation.toLowerCase())) &&
+            (!filterAvailability ||
+              availability === filterAvailability.toLowerCase())
+          );
+        });
+        return { items, hasMore, total };
+      } catch (error) {
+        logErrorToProduction(
+          'Marketplace.tsx: Error fetching products from API',
+          { data: error },
+        );
+        return { items: [], hasMore: false, total: 0 };
+      }
+    },
+    [
+      filterCategory,
+      sortBy,
+      showRecommended,
+      priceRange,
+      minAiScore,
+      minRating,
+      filterLocation,
+      filterAvailability,
+    ],
+  );
 
   // useInfiniteScrollPagination hook
   const {
     items: products, // These are the products to render
-    loading,          // True when initially loading or when fetchProducts is running
-    error,            // Contains the error object if fetchProducts throws
-    hasMore,          // True if the API indicates more items are available
-    isFetching,       // True if fetching more items (for infinite scroll)
-    lastElementRef,   // Ref for the last element to trigger loading more
-    refresh,          // Function to reload data from page 1
-    scrollToTop       // Function to scroll to the top of the page
+    loading, // True when initially loading or when fetchProducts is running
+    error, // Contains the error object if fetchProducts throws
+    hasMore, // True if the API indicates more items are available
+    isFetching, // True if fetching more items (for infinite scroll)
+    lastElementRef, // Ref for the last element to trigger loading more
+    refresh, // Function to reload data from page 1
+    scrollToTop, // Function to scroll to the top of the page
   } = useInfiniteScrollPagination(_fetchProducts, 16); // 16 items per page
 
   // Effect to refresh data when filters change
@@ -339,15 +380,37 @@ export default function Marketplace() {
       // unless specifically needed. The new effect below handles re-mounts.
       return;
     }
-    logInfo('Filters changed, initiating refresh. Filters:', { filterCategory, sortBy, showRecommended, priceRange, minAiScore, minRating, filterAvailability, filterLocation });
+    logInfo('Filters changed, initiating refresh. Filters:', {
+      filterCategory,
+      sortBy,
+      showRecommended,
+      priceRange,
+      minAiScore,
+      minRating,
+      filterAvailability,
+      filterLocation,
+    });
     isRefreshingAfterFilterChange.current = true; // Set flag before refresh
     refresh();
     // scrollToTop(); // Removed from here
-  }, [filterCategory, sortBy, showRecommended, priceRange, minAiScore, minRating, filterAvailability, filterLocation, refresh, toast]); // Added all filter dependencies
+  }, [
+    filterCategory,
+    sortBy,
+    showRecommended,
+    priceRange,
+    minAiScore,
+    minRating,
+    filterAvailability,
+    filterLocation,
+    refresh,
+    toast,
+  ]); // Added all filter dependencies
 
   // Effect to explicitly refresh data when the component mounts or re-mounts
   useEffect(() => {
-    logInfo('Marketplace.tsx: Component mounted/re-mounted, calling refresh to ensure fresh data.');
+    logInfo(
+      'Marketplace.tsx: Component mounted/re-mounted, calling refresh to ensure fresh data.',
+    );
     // We call refresh directly to ensure data is re-fetched.
     // The useInfiniteScrollPagination hook's internal logic will manage its state.
     refresh();
@@ -357,7 +420,8 @@ export default function Marketplace() {
 
   // New effect to scroll to top AFTER products have been updated and refresh flag is set
   useEffect(() => {
-    if (isRefreshingAfterFilterChange.current && !loading) { // Check flag and ensure loading is false
+    if (isRefreshingAfterFilterChange.current && !loading) {
+      // Check flag and ensure loading is false
       logInfo('Refresh complete and products updated, scrolling to top.');
       scrollToTop();
       isRefreshingAfterFilterChange.current = false; // Reset flag
@@ -370,10 +434,13 @@ export default function Marketplace() {
   const marketStats = useMemo(() => {
     if (products.length === 0) return null;
     return {
-      averagePrice: products.reduce((sum, p) => sum + (p.price || 0), 0) / products.length,
-      averageRating: products.reduce((sum, p) => sum + (p.rating || 0), 0) / products.length,
+      averagePrice:
+        products.reduce((sum, p) => sum + (p.price || 0), 0) / products.length,
+      averageRating:
+        products.reduce((sum, p) => sum + (p.rating || 0), 0) / products.length,
       totalProducts: products.length,
-      categoriesCount: Array.from(new Set(products.map(p => p.category))).length
+      categoriesCount: Array.from(new Set(products.map((p) => p.category)))
+        .length,
     };
   }, [products]);
 
@@ -385,7 +452,9 @@ export default function Marketplace() {
     return Array.from(new Set(products.map((p) => p.location).filter(Boolean)));
   }, [products]).filter(Boolean) as string[];
   const availabilityOptions = useMemo(() => {
-    return Array.from(new Set(products.map((p) => p.availability).filter(Boolean)));
+    return Array.from(
+      new Set(products.map((p) => p.availability).filter(Boolean)),
+    );
   }, [products]).filter(Boolean) as string[];
 
   // Show scroll to top button
@@ -429,9 +498,7 @@ export default function Marketplace() {
       <main className="container py-8">
         <div className="text-center space-y-4">
           <ErrorState error={error} />
-          <Button onClick={refresh}>
-            Try Again
-          </Button>
+          <Button onClick={refresh}>Try Again</Button>
         </div>
       </main>
     );
@@ -468,7 +535,7 @@ export default function Marketplace() {
         returnUrl={router.asPath} // Pass current path for better UX on return
       />
       {/* Header */}
-      <motion.div 
+      <motion.div
         className="text-center mb-8"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -557,7 +624,7 @@ export default function Marketplace() {
                   created_at: product.createdAt,
                   updated_at: product.createdAt, // Use createdAt for both
                   stock: product.stock,
-                  in_stock: (product.stock || 0) > 0
+                  in_stock: (product.stock || 0) > 0,
                 }}
                 onBuy={async () => {
                   if (!isAuthenticated) {
@@ -567,11 +634,14 @@ export default function Marketplace() {
                   try {
                     await router.push(`/checkout/${product.id}`);
                   } catch {
-                    logErrorToProduction('Failed to navigate to checkout:', { data: error });
+                    logErrorToProduction('Failed to navigate to checkout:', {
+                      data: error,
+                    });
                     toast({
-                      title: "Navigation Error",
-                      description: "Could not navigate to checkout. Please try again.",
-                      variant: "destructive",
+                      title: 'Navigation Error',
+                      description:
+                        'Could not navigate to checkout. Please try again.',
+                      variant: 'destructive',
                     });
                     // Re-throw to allow ProductCard's catch to also run if needed,
                     // though ProductCard will reset its state in .finally() regardless.
@@ -580,7 +650,7 @@ export default function Marketplace() {
                 }}
                 buyDisabled={false} // Still false, ProductCard handles its own disabled state based on auth
               />
-              
+
               {/* AI Score Badge */}
               {product.aiScore && product.aiScore > 90 && (
                 <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-yellow-500 to-orange-500 z-10 text-black">
@@ -588,7 +658,7 @@ export default function Marketplace() {
                   AI {product.aiScore}
                 </Badge>
               )}
-              
+
               {/* Featured Badge */}
               {product.featured && (
                 <Badge className="absolute top-2 left-2 bg-gradient-to-r from-blue-500 to-purple-500 z-10">

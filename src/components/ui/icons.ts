@@ -15,7 +15,7 @@ export {
   Minimize,
   Move,
   RotateCcw,
-  LayoutGrid
+  LayoutGrid,
 } from 'lucide-react';
 
 // Utility Icons
@@ -33,7 +33,7 @@ export {
   Sun,
   Moon,
   Monitor,
-  PowerOff
+  PowerOff,
 } from 'lucide-react';
 
 // Status Icons
@@ -52,7 +52,7 @@ export {
   Ban,
   ShieldAlert,
   HelpCircle,
-  ShieldCheck
+  ShieldCheck,
 } from 'lucide-react';
 
 // Media Icons
@@ -66,7 +66,7 @@ export {
   Camera,
   Mic,
   MicOff,
-  PlayCircle
+  PlayCircle,
 } from 'lucide-react';
 
 // File & Document Icons
@@ -82,7 +82,7 @@ export {
   Save,
   Clipboard,
   PaperclipIcon,
-  Archive
+  Archive,
 } from 'lucide-react';
 
 // Social & User Icons
@@ -100,7 +100,7 @@ export {
   Unlock,
   LockKeyhole,
   Key,
-  UserIcon
+  UserIcon,
 } from 'lucide-react';
 
 // Business & Finance Icons
@@ -127,14 +127,11 @@ export {
   Trophy,
   Handshake,
   ShoppingCart,
-  BadgePlus
+  BadgePlus,
 } from 'lucide-react';
 
 // Data Visualization Icons
-export {
-  BarChart,
-  LineChart
-} from 'lucide-react';
+export { BarChart, LineChart } from 'lucide-react';
 
 // Development & Tech Icons
 export {
@@ -161,7 +158,7 @@ export {
   Recycle,
   Truck,
   Smartphone,
-  Building
+  Building,
 } from 'lucide-react';
 
 // Action Icons
@@ -209,7 +206,7 @@ export {
   Instagram,
   Youtube,
   Github,
-  Slack
+  Slack,
 } from 'lucide-react';
 
 // Navigation & UI Icons
@@ -236,7 +233,7 @@ export {
   Dot,
   GripVertical,
   PanelLeft,
-  ImageIcon
+  ImageIcon,
 } from 'lucide-react';
 
 // Export type for icon component props

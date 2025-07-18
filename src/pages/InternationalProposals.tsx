@@ -22,7 +22,10 @@ const SAMPLE_PROPOSALS: Proposal[] = [
 export default function InternationalProposalsPage() {
   return (
     <div className="min-h-screen bg-background">
-      <NextSeo title="International Proposals" description="Transparency for global outreach" />
+      <NextSeo
+        title="International Proposals"
+        description="Transparency for global outreach"
+      />
       <Header />
       <main className="container mx-auto py-8 space-y-6">
         <h1 className="text-3xl font-bold">International Proposals</h1>

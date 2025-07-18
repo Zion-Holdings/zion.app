@@ -1,10 +1,7 @@
-
 import type { Certification } from '@/types/resume';
 import { Edit, Trash2 } from '@/components/ui/icons';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-
-
 
 import { format } from 'date-fns';
 
@@ -14,7 +11,11 @@ interface CertificationsListProps {
   onDelete: (id: string) => void;
 }
 
-export function CertificationsList({ certifications, onEdit, onDelete }: CertificationsListProps) {
+export function CertificationsList({
+  certifications,
+  onEdit,
+  onDelete,
+}: CertificationsListProps) {
   if (certifications.length === 0) {
     return null;
   }
@@ -28,15 +29,23 @@ export function CertificationsList({ certifications, onEdit, onDelete }: Certifi
             <div className="flex justify-between">
               <div>
                 <h4 className="font-medium">{cert.name}</h4>
-                <p className="text-sm text-muted-foreground">{cert.issuing_organization}</p>
+                <p className="text-sm text-muted-foreground">
+                  {cert.issuing_organization}
+                </p>
                 <p className="text-xs text-muted-foreground mt-1">
-                  Issued: {cert.issue_date ? (typeof cert.issue_date === 'string' 
-                    ? cert.issue_date 
-                    : format(cert.issue_date, 'MMM yyyy')) : 'N/A'}
+                  Issued:{' '}
+                  {cert.issue_date
+                    ? typeof cert.issue_date === 'string'
+                      ? cert.issue_date
+                      : format(cert.issue_date, 'MMM yyyy')
+                    : 'N/A'}
                   {cert.expiration_date && (
-                    <> · Expires: {typeof cert.expiration_date === 'string' 
-                      ? cert.expiration_date 
-                      : format(cert.expiration_date, 'MMM yyyy')}
+                    <>
+                      {' '}
+                      · Expires:{' '}
+                      {typeof cert.expiration_date === 'string'
+                        ? cert.expiration_date
+                        : format(cert.expiration_date, 'MMM yyyy')}
                     </>
                   )}
                 </p>
@@ -62,9 +71,9 @@ export function CertificationsList({ certifications, onEdit, onDelete }: Certifi
             </div>
             {cert.credential_url && (
               <p className="text-xs mt-2">
-                <a 
-                  href={cert.credential_url} 
-                  target="_blank" 
+                <a
+                  href={cert.credential_url}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary hover:underline"
                 >

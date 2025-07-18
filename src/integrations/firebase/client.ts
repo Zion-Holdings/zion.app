@@ -1,8 +1,11 @@
 import { initializeApp } from 'firebase/app';
-import { memoryLocalCache as _memoryLocalCache, Firestore, getFirestore } from 'firebase/firestore';
+import {
+  memoryLocalCache as _memoryLocalCache,
+  Firestore,
+  getFirestore,
+} from 'firebase/firestore';
 import { getPerformance } from 'firebase/performance';
 import { logWarn } from '@/utils/productionLogger';
-
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || '',
@@ -23,7 +26,9 @@ let db: Firestore;
 try {
   db = getFirestore(app);
 } catch {
-  logWarn('Firestore storage unavailable, using memory cache.', { data:  { data:  e } });
+  logWarn('Firestore storage unavailable, using memory cache.', {
+    data: { data: e },
+  });
   db = getFirestore(app);
 }
 
@@ -31,4 +36,3 @@ try {
 const perf = getPerformance(app);
 
 export { db, perf };
-

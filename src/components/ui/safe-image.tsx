@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { ImageIcon } from '@/components/ui/icons';
 
-
 interface SafeImageProps {
   src: string;
   alt: string;
@@ -48,7 +47,7 @@ export function SafeImage({
   // If we have an error and no fallback, show a placeholder
   if (hasError && (!fallbackSrc || currentSrc === fallbackSrc)) {
     return (
-      <div 
+      <div
         className={`flex items-center justify-center bg-gray-100 text-gray-400 ${className}`}
         style={{ width, height }}
         role="img"
@@ -74,4 +73,4 @@ export function SafeImage({
       unoptimized={hasError}
     />
   );
-} 
+}

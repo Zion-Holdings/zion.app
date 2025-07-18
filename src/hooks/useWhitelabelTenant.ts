@@ -39,15 +39,15 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
         if (!supabase) throw new Error('Supabase client not initialized');
         // Get the current hostname, fallback to localhost if not available
         const hostname = window.location.hostname || 'localhost';
-        
+
         // Some dev hosts generate long ephemeral subdomains that our edge function
         // does not recognise. In those cases fall back to localhost.
         const sanitizedHostname = /webcontainer-api\.io$/.test(hostname)
           ? 'localhost'
           : hostname;
-        
+
         const functionName = 'tenant-detector';
-        
+
         // Build the query parameters
         const params = externalSubdomain
           ? `?subdomain=${encodeURIComponent(externalSubdomain)}`
@@ -60,7 +60,7 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
               'Content-Type': 'application/json',
               'x-client-info': 'supabase-js-web',
             },
-          }
+          },
         );
 
         if (functionError) {
@@ -71,7 +71,9 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
             retryCount,
           });
 
-          throw new Error(functionError.message || 'Failed to load tenant configuration');
+          throw new Error(
+            functionError.message || 'Failed to load tenant configuration',
+          );
         }
 
         if (!data) {
@@ -101,10 +103,12 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
         if (retryCount < MAX_RETRIES) {
           const retryDelay = Math.min(Math.pow(2, retryCount) * 1000, 8000);
           setTimeout(() => {
-            setRetryCount(prev => prev + 1);
+            setRetryCount((prev) => prev + 1);
           }, retryDelay);
         } else {
-          setError('Unable to load tenant configuration after multiple attempts. Please check your connection.');
+          setError(
+            'Unable to load tenant configuration after multiple attempts. Please check your connection.',
+          );
         }
       } finally {
         setIsLoading(false);
@@ -132,9 +136,10 @@ export function useTenantAdminStatus(tenantId?: string) {
 
       try {
         if (!supabase) throw new Error('Supabase client not initialized');
-        const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
+        const { data: sessionData, error: sessionError } =
+          await supabase.auth.getSession();
         if (sessionError) {
-          logWarn('Session error:', { data:  { data: sessionError } });
+          logWarn('Session error:', { data: { data: sessionError } });
           setIsAdmin(false);
           return;
         }
@@ -144,7 +149,12 @@ export function useTenantAdminStatus(tenantId?: string) {
           return;
         }
 
-        const userId = typeof sessionData === 'object' && sessionData !== null && 'session' in sessionData && (sessionData as { session?: { user?: { id?: string } } }).session?.user?.id;
+        const userId =
+          typeof sessionData === 'object' &&
+          sessionData !== null &&
+          'session' in sessionData &&
+          (sessionData as { session?: { user?: { id?: string } } }).session
+            ?.user?.id;
         if (!supabase) throw new Error('Supabase client not initialized');
         const { data, error } = await supabase
           .from('tenant_administrators')
@@ -154,12 +164,14 @@ export function useTenantAdminStatus(tenantId?: string) {
           .single();
 
         if (error) {
-          logWarn('Error checking admin status:', { data:  { data: error } });
+          logWarn('Error checking admin status:', { data: { data: error } });
         }
 
         setIsAdmin(!!data && !error);
       } catch {
-        logWarn('Error checking tenant admin status:', { data:  { data: error } });
+        logWarn('Error checking tenant admin status:', {
+          data: { data: error },
+        });
         setIsAdmin(false);
       } finally {
         setIsLoading(false);

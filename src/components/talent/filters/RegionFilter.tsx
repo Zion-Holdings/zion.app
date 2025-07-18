@@ -1,21 +1,23 @@
-
-
-
-import { Checkbox } from "@/components/ui/checkbox";
+import { Checkbox } from '@/components/ui/checkbox';
 import { ChevronDown, ChevronUp } from '@/components/ui/icons';
-import type { RegionFilterProps } from "@/types/filters";
-
+import type { RegionFilterProps } from '@/types/filters';
 
 const REGION_OPTIONS = [
-  { id: "North America", label: "North America" },
-  { id: "Europe", label: "Europe" },
-  { id: "Asia", label: "Asia" },
-  { id: "South America", label: "South America" },
-  { id: "Australia", label: "Australia" },
-  { id: "Africa", label: "Africa" }
+  { id: 'North America', label: 'North America' },
+  { id: 'Europe', label: 'Europe' },
+  { id: 'Asia', label: 'Asia' },
+  { id: 'South America', label: 'South America' },
+  { id: 'Australia', label: 'Australia' },
+  { id: 'Africa', label: 'Africa' },
 ];
 
-export function RegionFilter({ selectedRegions, toggleRegion, expanded, toggleSection, _isMobileFilterOpen }: RegionFilterProps) {
+export function RegionFilter({
+  selectedRegions,
+  toggleRegion,
+  expanded,
+  toggleSection,
+  _isMobileFilterOpen,
+}: RegionFilterProps) {
   return (
     <div className="mb-6 border-b border-zion-blue-light pb-6">
       <button
@@ -29,10 +31,10 @@ export function RegionFilter({ selectedRegions, toggleRegion, expanded, toggleSe
           <ChevronDown className="h-4 w-4 text-zion-slate-light" />
         )}
       </button>
-      
+
       {expanded && (
         <div className="mt-4 space-y-2">
-          {REGION_OPTIONS.map(region => (
+          {REGION_OPTIONS.map((region) => (
             <div key={region.id} className="flex items-center">
               <Checkbox
                 id={`region-${region.id}`}

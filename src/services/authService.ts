@@ -8,7 +8,11 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || '';
 
 export async function loginUser(email: string, password: string) {
   const endpoint = `${API_URL}/api/auth/login`;
-  const res = await axios.post(endpoint, { email, password }, { withCredentials: true });
+  const res = await axios.post(
+    endpoint,
+    { email, password },
+    { withCredentials: true },
+  );
   const token = res.data?.accessToken;
   if (token) {
     safeStorage.setItem('authToken', token);
@@ -18,15 +22,22 @@ export async function loginUser(email: string, password: string) {
   return { res, data: res.data };
 }
 
-export async function registerUser(name: string, email: string, password: string) {
+export async function registerUser(
+  name: string,
+  email: string,
+  password: string,
+) {
   const endpoint = `${API_URL}/auth/register`;
   try {
     const res = await axios.post(endpoint, { name, email, password });
-    logDebug('Register API Response Status:', { data:  { status: res.status } });
-    logDebug('Register API Response Body:', { data:  { body: res.data } });
+    logDebug('Register API Response Status:', { data: { status: res.status } });
+    logDebug('Register API Response Body:', { data: { body: res.data } });
     return { res, data: res.data };
   } catch {
-    logErrorToProduction('Register API erroror', error as Error, { endpoint, email });
+    logErrorToProduction('Register API erroror', error as Error, {
+      endpoint,
+      email,
+    });
     throw err;
   }
 }

@@ -1,5 +1,5 @@
-import { supabase } from "@/integrations/supabase/client";
-import type { JobSchemaType } from "@/components/jobs/job-posting/validation";
+import { supabase } from '@/integrations/supabase/client';
+import type { JobSchemaType } from '@/components/jobs/job-posting/validation';
 
 export interface JobPosting extends JobSchemaType {
   id: string;
@@ -8,9 +8,11 @@ export interface JobPosting extends JobSchemaType {
   updated_at: string;
 }
 
-export async function createJobPosting(jobData: JobSchemaType & { user_id: string }) {
+export async function createJobPosting(
+  jobData: JobSchemaType & { user_id: string },
+) {
   if (!supabase) throw new Error('Supabase client is not initialized');
-  
+
   const { data, error } = await supabase
     .from('job_postings')
     .insert([jobData])
@@ -21,9 +23,12 @@ export async function createJobPosting(jobData: JobSchemaType & { user_id: strin
   return data;
 }
 
-export async function updateJobPosting(jobId: string, jobData: Partial<JobSchemaType>) {
+export async function updateJobPosting(
+  jobId: string,
+  jobData: Partial<JobSchemaType>,
+) {
   if (!supabase) throw new Error('Supabase client is not initialized');
-  
+
   const { data, error } = await supabase
     .from('job_postings')
     .update(jobData)
@@ -37,7 +42,7 @@ export async function updateJobPosting(jobId: string, jobData: Partial<JobSchema
 
 export async function getJobPostingById(jobId: string) {
   if (!supabase) throw new Error('Supabase client is not initialized');
-  
+
   const { data, error } = await supabase
     .from('job_postings')
     .select('*')
@@ -50,7 +55,7 @@ export async function getJobPostingById(jobId: string) {
 
 export async function getJobPostingsByUserId(userId: string) {
   if (!supabase) throw new Error('Supabase client is not initialized');
-  
+
   const { data, error } = await supabase
     .from('job_postings')
     .select('*')
@@ -59,4 +64,4 @@ export async function getJobPostingsByUserId(userId: string) {
 
   if (error) throw error;
   return data;
-} 
+}

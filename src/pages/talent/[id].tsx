@@ -57,7 +57,7 @@ export default function TalentProfilePage() {
             <div>
               <h2 className="font-semibold">Skills</h2>
               <ul className="list-disc ml-5">
-                {profile.skills.map(skill => (
+                {profile.skills.map((skill) => (
                   <li key={skill}>{skill}</li>
                 ))}
               </ul>

@@ -83,15 +83,16 @@ const server = setupServer(
     ];
 
     if (category) {
-      filteredProducts = filteredProducts.filter(p => 
-        p.category.toLowerCase().includes(category.toLowerCase())
+      filteredProducts = filteredProducts.filter((p) =>
+        p.category.toLowerCase().includes(category.toLowerCase()),
       );
     }
 
     if (search) {
-      filteredProducts = filteredProducts.filter(p => 
-        p.title.toLowerCase().includes(search.toLowerCase()) ||
-        p.description.toLowerCase().includes(search.toLowerCase())
+      filteredProducts = filteredProducts.filter(
+        (p) =>
+          p.title.toLowerCase().includes(search.toLowerCase()) ||
+          p.description.toLowerCase().includes(search.toLowerCase()),
       );
     }
 
@@ -104,11 +105,14 @@ const server = setupServer(
 
   // Categories endpoint
   rest.get('*/categories', (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json([
-      { id: 'cat-1', name: 'AI Tools', slug: 'ai-tools', icon: 'Brain' },
-      { id: 'cat-2', name: 'Development', slug: 'development', icon: 'Code' },
-      { id: 'cat-3', name: 'Hardware', slug: 'hardware', icon: 'Cpu' },
-    ]));
+    return res(
+      ctx.status(200),
+      ctx.json([
+        { id: 'cat-1', name: 'AI Tools', slug: 'ai-tools', icon: 'Brain' },
+        { id: 'cat-2', name: 'Development', slug: 'development', icon: 'Code' },
+        { id: 'cat-3', name: 'Hardware', slug: 'hardware', icon: 'Cpu' },
+      ]),
+    );
   }),
 
   // Talent endpoint
@@ -144,15 +148,18 @@ const server = setupServer(
     ];
 
     if (skills.length > 0) {
-      filteredTalent = filteredTalent.filter(t => 
-        skills.some(skill => t.skills.some(ts => ts.toLowerCase().includes(skill.toLowerCase())))
+      filteredTalent = filteredTalent.filter((t) =>
+        skills.some((skill) =>
+          t.skills.some((ts) => ts.toLowerCase().includes(skill.toLowerCase())),
+        ),
       );
     }
 
     if (search) {
-      filteredTalent = filteredTalent.filter(t => 
-        t.name.toLowerCase().includes(search.toLowerCase()) ||
-        t.title.toLowerCase().includes(search.toLowerCase())
+      filteredTalent = filteredTalent.filter(
+        (t) =>
+          t.name.toLowerCase().includes(search.toLowerCase()) ||
+          t.title.toLowerCase().includes(search.toLowerCase()),
       );
     }
 
@@ -196,15 +203,16 @@ const server = setupServer(
     ];
 
     if (category) {
-      filteredEquipment = filteredEquipment.filter(e => 
-        e.category.toLowerCase().includes(category.toLowerCase())
+      filteredEquipment = filteredEquipment.filter((e) =>
+        e.category.toLowerCase().includes(category.toLowerCase()),
       );
     }
 
     if (search) {
-      filteredEquipment = filteredEquipment.filter(e => 
-        e.title.toLowerCase().includes(search.toLowerCase()) ||
-        e.description.toLowerCase().includes(search.toLowerCase())
+      filteredEquipment = filteredEquipment.filter(
+        (e) =>
+          e.title.toLowerCase().includes(search.toLowerCase()) ||
+          e.description.toLowerCase().includes(search.toLowerCase()),
       );
     }
 
@@ -274,7 +282,7 @@ describe('Marketplace Service', () => {
       const products = await fetchProducts({ category: 'Software' });
 
       expect(products).toHaveLength(2);
-      expect(products.every(p => p.category === 'Software')).toBe(true);
+      expect(products.every((p) => p.category === 'Software')).toBe(true);
     });
 
     test('should filter by search term', async () => {
@@ -289,7 +297,7 @@ describe('Marketplace Service', () => {
       server.use(
         rest.get('*/products', (req, res, ctx) => {
           return res(ctx.status(500), ctx.json({ error: 'Server Error' }));
-        })
+        }),
       );
 
       const products = await fetchProducts();
@@ -301,7 +309,7 @@ describe('Marketplace Service', () => {
       server.use(
         rest.get('*/products', (req, res, ctx) => {
           return res(ctx.delay(15000), ctx.status(200), ctx.json([]));
-        })
+        }),
       );
 
       const products = await fetchProducts();
@@ -326,7 +334,7 @@ describe('Marketplace Service', () => {
       server.use(
         rest.get('*/categories', (req, res, ctx) => {
           return res(ctx.status(500), ctx.json({ error: 'Server Error' }));
-        })
+        }),
       );
 
       const categories = await fetchCategories();
@@ -365,7 +373,7 @@ describe('Marketplace Service', () => {
       server.use(
         rest.get('*/talent', (req, res, ctx) => {
           return res(ctx.status(404), ctx.json({ error: 'Not Found' }));
-        })
+        }),
       );
 
       const talent = await fetchTalent();
@@ -391,7 +399,7 @@ describe('Marketplace Service', () => {
       const equipment = await fetchEquipment({ category: 'Hardware' });
 
       expect(equipment).toHaveLength(2);
-      expect(equipment.every(e => e.category === 'Hardware')).toBe(true);
+      expect(equipment.every((e) => e.category === 'Hardware')).toBe(true);
     });
 
     test('should handle search functionality', async () => {
@@ -405,7 +413,7 @@ describe('Marketplace Service', () => {
       server.use(
         rest.get('*/equipment', (req, res, ctx) => {
           return res(ctx.status(500), ctx.json({ error: 'Server Error' }));
-        })
+        }),
       );
 
       const equipment = await fetchEquipment();
@@ -423,7 +431,9 @@ describe('Marketplace Service', () => {
     test('should return appropriate message for 500 error', () => {
       const error = { response: { status: 500 } };
       const message = getMarketplaceErrorMessage(error);
-      expect(message).toBe('Our servers are experiencing issues. Please try again later.');
+      expect(message).toBe(
+        'Our servers are experiencing issues. Please try again later.',
+      );
     });
 
     test('should return appropriate message for 401 error', () => {
@@ -435,13 +445,17 @@ describe('Marketplace Service', () => {
     test('should return appropriate message for timeout error', () => {
       const error = { code: 'ECONNABORTED' };
       const message = getMarketplaceErrorMessage(error);
-      expect(message).toBe('Request timeout. Please check your connection and try again.');
+      expect(message).toBe(
+        'Request timeout. Please check your connection and try again.',
+      );
     });
 
     test('should return generic message for unknown errors', () => {
       const error = { message: 'Unknown error' };
       const message = getMarketplaceErrorMessage(error);
-      expect(message).toBe('Unable to load marketplace data. Please try again.');
+      expect(message).toBe(
+        'Unable to load marketplace data. Please try again.',
+      );
     });
   });
 
@@ -454,55 +468,58 @@ describe('Marketplace Service', () => {
           if (requestCount === 1) {
             return res(ctx.status(401), ctx.json({ error: 'Unauthorized' }));
           }
-          return res(ctx.status(200), ctx.json([
-            {
-              id: 'prod-1',
-              title: 'AI Development Kit',
-              description: 'Complete AI development toolkit',
-              price: 299,
-              currency: 'USD',
-              category: 'Software',
-              subcategory: 'AI Tools',
-              tags: ['AI', 'Development', 'Toolkit'],
-              author: {
-                name: 'Tech Corp',
-                id: 'tech-corp-1',
-                avatarUrl: 'https://example.com/avatar.jpg',
+          return res(
+            ctx.status(200),
+            ctx.json([
+              {
+                id: 'prod-1',
+                title: 'AI Development Kit',
+                description: 'Complete AI development toolkit',
+                price: 299,
+                currency: 'USD',
+                category: 'Software',
+                subcategory: 'AI Tools',
+                tags: ['AI', 'Development', 'Toolkit'],
+                author: {
+                  name: 'Tech Corp',
+                  id: 'tech-corp-1',
+                  avatarUrl: 'https://example.com/avatar.jpg',
+                },
+                images: ['https://example.com/product1.jpg'],
+                createdAt: '2024-01-01T00:00:00Z',
+                rating: 4.5,
+                reviewCount: 25,
+                featured: true,
+                location: 'Global',
+                availability: 'Available',
+                brand: 'TechCorp',
               },
-              images: ['https://example.com/product1.jpg'],
-              createdAt: '2024-01-01T00:00:00Z',
-              rating: 4.5,
-              reviewCount: 25,
-              featured: true,
-              location: 'Global',
-              availability: 'Available',
-              brand: 'TechCorp',
-            },
-            {
-              id: 'prod-2',
-              title: 'Machine Learning Framework',
-              description: 'Advanced ML framework for enterprises',
-              price: 599,
-              currency: 'USD',
-              category: 'Software',
-              subcategory: 'ML Tools',
-              tags: ['ML', 'Framework', 'Enterprise'],
-              author: {
-                name: 'ML Solutions',
-                id: 'ml-solutions-1',
-                avatarUrl: 'https://example.com/avatar2.jpg',
+              {
+                id: 'prod-2',
+                title: 'Machine Learning Framework',
+                description: 'Advanced ML framework for enterprises',
+                price: 599,
+                currency: 'USD',
+                category: 'Software',
+                subcategory: 'ML Tools',
+                tags: ['ML', 'Framework', 'Enterprise'],
+                author: {
+                  name: 'ML Solutions',
+                  id: 'ml-solutions-1',
+                  avatarUrl: 'https://example.com/avatar2.jpg',
+                },
+                images: ['https://example.com/product2.jpg'],
+                createdAt: '2024-01-02T00:00:00Z',
+                rating: 4.8,
+                reviewCount: 42,
+                featured: false,
+                location: 'US',
+                availability: 'Limited',
+                brand: 'MLSolutions',
               },
-              images: ['https://example.com/product2.jpg'],
-              createdAt: '2024-01-02T00:00:00Z',
-              rating: 4.8,
-              reviewCount: 42,
-              featured: false,
-              location: 'US',
-              availability: 'Limited',
-              brand: 'MLSolutions',
-            },
-          ]));
-        })
+            ]),
+          );
+        }),
       );
 
       const products = await fetchProducts();
@@ -521,7 +538,9 @@ describe('Marketplace Service', () => {
 
       const error = {};
       const message = getMarketplaceErrorMessage(error);
-      expect(message).toBe('No internet connection. Please check your network.');
+      expect(message).toBe(
+        'No internet connection. Please check your network.',
+      );
 
       // Restore online status
       Object.defineProperty(navigator, 'onLine', {
@@ -530,4 +549,4 @@ describe('Marketplace Service', () => {
       });
     });
   });
-}); 
+});

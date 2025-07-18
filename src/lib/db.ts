@@ -8,7 +8,7 @@ const WISHLIST_STORE = 'wishlist';
 let indexedDBAvailable = true;
 const memoryStore: Record<string, unknown[]> = {
   [CART_STORE]: [],
-  [WISHLIST_STORE]: []
+  [WISHLIST_STORE]: [],
 };
 
 function openDB(): Promise<IDBDatabase | null> {
@@ -20,7 +20,9 @@ function openDB(): Promise<IDBDatabase | null> {
     try {
       request = indexedDB.open(DB_NAME, DB_VERSION);
     } catch {
-      logWarn('IndexedDB not available. Falling back to in-memory store.', { data:  { data: error } });
+      logWarn('IndexedDB not available. Falling back to in-memory store.', {
+        data: { data: error },
+      });
       indexedDBAvailable = false;
       return resolve(null);
     }
@@ -35,7 +37,9 @@ function openDB(): Promise<IDBDatabase | null> {
     };
     request.onsuccess = () => resolve(request.result);
     request.onerror = () => {
-      logWarn('IndexedDB open error. Falling back to in-memory store.', { data:  { data: request.error } });
+      logWarn('IndexedDB open error. Falling back to in-memory store.', {
+        data: { data: request.error },
+      });
       indexedDBAvailable = false;
       resolve(null);
     };
@@ -47,7 +51,7 @@ async function getList(storeName: string): Promise<unknown[]> {
   if (!db) {
     return memoryStore[storeName] || [];
   }
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     const tx = db.transaction(storeName, 'readonly');
     const store = tx.objectStore(storeName);
     const req = store.get('items');

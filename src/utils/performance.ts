@@ -1,4 +1,8 @@
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import {
+  logInfo,
+  logWarn,
+  logErrorToProduction,
+} from '@/utils/productionLogger';
 
 /**
  * Performance monitoring utilities for Core Web Vitals
@@ -44,7 +48,7 @@ export function observeCLS(callback: (cls: number) => void): void {
       clsValue += (layoutShiftEntry as CLSEntry).value;
       clsEntries.push(entry);
     }
-    
+
     callback(clsValue);
   });
 
@@ -103,7 +107,9 @@ export function observeFID(callback: (fid: number) => void): void {
       // Only report FID for the first input
       // Use type guard for PerformanceEventTiming
       if ('processingStart' in entry) {
-        callback((entry as PerformanceEventTiming).processingStart - entry.startTime);
+        callback(
+          (entry as PerformanceEventTiming).processingStart - entry.startTime,
+        );
       }
       observer.disconnect();
     }
@@ -122,12 +128,14 @@ export function initPerformanceMonitoring(): void {
 
   observeCLS((cls) => {
     metrics.cls = cls;
-    
+
     // Only log in development or when performance monitoring is explicitly enabled
-    if (process.env.NODE_ENV === 'development' || 
-        localStorage.getItem('performance-monitoring') === 'true') {
+    if (
+      process.env.NODE_ENV === 'development' ||
+      localStorage.getItem('performance-monitoring') === 'true'
+    ) {
       logInfo(`CLS: ${cls.toFixed(4)}`);
-      
+
       // Log warning if CLS is high
       if (cls > 0.1) {
         logWarn(`⚠️ High CLS detected: ${cls.toFixed(4)} (target: <0.1)`);
@@ -141,18 +149,22 @@ export function initPerformanceMonitoring(): void {
 
   observeFCP((fcp) => {
     metrics.fcp = fcp;
-    if (process.env.NODE_ENV === 'development' || 
-        localStorage.getItem('performance-monitoring') === 'true') {
+    if (
+      process.env.NODE_ENV === 'development' ||
+      localStorage.getItem('performance-monitoring') === 'true'
+    ) {
       logInfo(`FCP: ${fcp.toFixed(2)}ms`);
     }
   });
 
   observeLCP((lcp) => {
     metrics.lcp = lcp;
-    if (process.env.NODE_ENV === 'development' || 
-        localStorage.getItem('performance-monitoring') === 'true') {
+    if (
+      process.env.NODE_ENV === 'development' ||
+      localStorage.getItem('performance-monitoring') === 'true'
+    ) {
       logInfo(`LCP: ${lcp.toFixed(2)}ms`);
-      
+
       if (lcp > 2500) {
         logWarn(`⚠️ Slow LCP: ${lcp.toFixed(2)}ms (target: <2.5s)`);
       }
@@ -161,10 +173,12 @@ export function initPerformanceMonitoring(): void {
 
   observeFID((fid) => {
     metrics.fid = fid;
-    if (process.env.NODE_ENV === 'development' || 
-        localStorage.getItem('performance-monitoring') === 'true') {
+    if (
+      process.env.NODE_ENV === 'development' ||
+      localStorage.getItem('performance-monitoring') === 'true'
+    ) {
       logInfo(`FID: ${fid.toFixed(2)}ms`);
-      
+
       if (fid > 100) {
         logWarn(`⚠️ Slow FID: ${fid.toFixed(2)}ms (target: <100ms)`);
       }
@@ -176,8 +190,10 @@ export function initPerformanceMonitoring(): void {
     const timing = performance.timing;
     const ttfb = timing.responseStart - timing.requestStart;
     metrics.ttfb = ttfb;
-    if (process.env.NODE_ENV === 'development' || 
-        localStorage.getItem('performance-monitoring') === 'true') {
+    if (
+      process.env.NODE_ENV === 'development' ||
+      localStorage.getItem('performance-monitoring') === 'true'
+    ) {
       logInfo(`TTFB: ${ttfb}ms`);
     }
   }
@@ -185,9 +201,11 @@ export function initPerformanceMonitoring(): void {
   // Report metrics after page load
   window.addEventListener('load', () => {
     setTimeout(() => {
-      if (process.env.NODE_ENV === 'development' || 
-          localStorage.getItem('performance-monitoring') === 'true') {
-        logInfo('📊 Performance Metrics Summary:', { data:  { data: metrics } });
+      if (
+        process.env.NODE_ENV === 'development' ||
+        localStorage.getItem('performance-monitoring') === 'true'
+      ) {
+        logInfo('📊 Performance Metrics Summary:', { data: { data: metrics } });
       }
     }, 5000); // Wait 5 seconds for metrics to stabilize
   });
@@ -196,19 +214,25 @@ export function initPerformanceMonitoring(): void {
 /**
  * Report performance metrics to analytics
  */
-export function reportPerformanceMetrics(metrics: Partial<PerformanceMetrics>): void {
+export function reportPerformanceMetrics(
+  metrics: Partial<PerformanceMetrics>,
+): void {
   // Only report in production
   if (process.env.NODE_ENV !== 'production') return;
 
   // Report to your analytics service
   if (typeof window !== 'undefined' && 'gtag' in window) {
-    (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag?.('event', 'web_vitals', {
-      custom_parameter_cls: metrics.cls,
-      custom_parameter_fcp: metrics.fcp,
-      custom_parameter_lcp: metrics.lcp,
-      custom_parameter_fid: metrics.fid,
-      custom_parameter_ttfb: metrics.ttfb,
-    });
+    (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag?.(
+      'event',
+      'web_vitals',
+      {
+        custom_parameter_cls: metrics.cls,
+        custom_parameter_fcp: metrics.fcp,
+        custom_parameter_lcp: metrics.lcp,
+        custom_parameter_fid: metrics.fid,
+        custom_parameter_ttfb: metrics.ttfb,
+      },
+    );
   }
 }
 
@@ -221,8 +245,10 @@ export function observeFontLoading(): void {
   }
 
   // Only monitor font loading in development or when explicitly enabled
-  if (process.env.NODE_ENV !== 'development' && 
-      localStorage.getItem('performance-monitoring') !== 'true') {
+  if (
+    process.env.NODE_ENV !== 'development' &&
+    localStorage.getItem('performance-monitoring') !== 'true'
+  ) {
     return;
   }
 
@@ -230,7 +256,9 @@ export function observeFontLoading(): void {
   document.fonts.addEventListener('loadingstart', (event) => {
     // Some browsers may not support event.fontface, fallback to (event as any)['fontface']
     const fontface = (event as { fontface?: { family?: string } }).fontface;
-    logInfo(`🔤 Font loading started: ${fontface ? fontface.family : 'unknown'}`);
+    logInfo(
+      `🔤 Font loading started: ${fontface ? fontface.family : 'unknown'}`,
+    );
   });
 
   document.fonts.addEventListener('loadingdone', (event) => {
@@ -240,7 +268,9 @@ export function observeFontLoading(): void {
 
   document.fonts.addEventListener('loadingerror', (event) => {
     const fontface = (event as { fontface?: { family?: string } }).fontface;
-    logErrorToProduction(`❌ Font loading error: ${fontface ? fontface.family : 'unknown'}`);
+    logErrorToProduction(
+      `❌ Font loading error: ${fontface ? fontface.family : 'unknown'}`,
+    );
   });
 
   // Check if fonts are ready
@@ -264,7 +294,7 @@ export function preloadCriticalResources(): void {
     const link = document.createElement('link');
     link.rel = 'preload';
     link.href = url;
-    
+
     // Determine asset type from URL
     if (url.includes('.woff2') || url.includes('.woff')) {
       link.as = 'font';
@@ -277,7 +307,7 @@ export function preloadCriticalResources(): void {
     } else {
       link.as = 'fetch';
     }
-    
+
     document.head.appendChild(link);
   });
 }
@@ -289,8 +319,10 @@ export function initializePerformanceOptimizations(): void {
   if (typeof window === 'undefined') return;
 
   // Only run in development or when explicitly enabled
-  if (process.env.NODE_ENV === 'development' || 
-      localStorage.getItem('performance-monitoring') === 'true') {
+  if (
+    process.env.NODE_ENV === 'development' ||
+    localStorage.getItem('performance-monitoring') === 'true'
+  ) {
     initPerformanceMonitoring();
   }
 
@@ -333,24 +365,31 @@ export class PerformanceMonitor {
   // Report performance metrics
   private reportMetric(name: string, value: number): void {
     this.metrics[name] = value;
-    
+
     // Send to analytics in production
     if (process.env.NODE_ENV === 'production') {
       // Report to analytics service
       this.sendToAnalytics(name, value);
     }
-    
+
     logInfo(`[Performance] ${name}: ${value}`);
   }
 
   private sendToAnalytics(name: string, value: number): void {
     // Send to your analytics service
-    if (typeof window !== 'undefined' && (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
-      (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag!('event', name, {
-        event_category: 'Web Vitals',
-        value: Math.round(value),
-        non_interaction: true,
-      });
+    if (
+      typeof window !== 'undefined' &&
+      (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag
+    ) {
+      (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag!(
+        'event',
+        name,
+        {
+          event_category: 'Web Vitals',
+          value: Math.round(value),
+          non_interaction: true,
+        },
+      );
     }
   }
 
@@ -371,7 +410,8 @@ export class PerformanceMonitor {
 
   // Performance observer for long tasks
   observeLongTasks(): void {
-    if (typeof window === 'undefined' || !('PerformanceObserver' in window)) return;
+    if (typeof window === 'undefined' || !('PerformanceObserver' in window))
+      return;
 
     try {
       const observer = new PerformanceObserver((list) => {
@@ -382,7 +422,7 @@ export class PerformanceMonitor {
           }
         });
       });
-      
+
       observer.observe({ entryTypes: ['longtask'] });
       this.observers.push(observer);
     } catch {
@@ -392,7 +432,7 @@ export class PerformanceMonitor {
 
   // Clean up observers
   disconnect(): void {
-    this.observers.forEach(observer => observer.disconnect());
+    this.observers.forEach((observer) => observer.disconnect());
     this.observers = [];
   }
 }
@@ -400,16 +440,17 @@ export class PerformanceMonitor {
 // Image optimization utilities
 export const imageOptimization = {
   // Generate srcSet for responsive images
-  generateSrcSet(baseUrl: string, sizes: number[] = [400, 800, 1200, 1600]): string {
-    return sizes
-      .map(size => `${baseUrl}?w=${size}&q=75 ${size}w`)
-      .join(', ');
+  generateSrcSet(
+    baseUrl: string,
+    sizes: number[] = [400, 800, 1200, 1600],
+  ): string {
+    return sizes.map((size) => `${baseUrl}?w=${size}&q=75 ${size}w`).join(', ');
   },
 
   // Generate optimized image URL
   optimizeUrl(url: string, width?: number, quality = 75): string {
     if (!url) return '';
-    
+
     // For Unsplash images
     if (url.includes('unsplash.com')) {
       const params = new URLSearchParams();
@@ -417,23 +458,23 @@ export const imageOptimization = {
       params.set('q', quality.toString());
       params.set('auto', 'format');
       params.set('fit', 'crop');
-      
+
       return `${url}&${params.toString()}`;
     }
-    
+
     return url;
   },
 
   // Preload critical images
   preloadImage(src: string, as: 'image' | 'fetch' = 'image'): void {
     if (typeof document === 'undefined') return;
-    
+
     const link = document.createElement('link');
     link.rel = 'preload';
     link.as = as;
     link.href = src;
     document.head.appendChild(link);
-  }
+  },
 };
 
 // Bundle optimization utilities
@@ -451,12 +492,12 @@ export const bundleOptimization = {
   // Preload route
   preloadRoute(route: string): void {
     if (typeof window === 'undefined') return;
-    
+
     const link = document.createElement('link');
     link.rel = 'prefetch';
     link.href = route;
     document.head.appendChild(link);
-  }
+  },
 };
 
 // Memory optimization utilities
@@ -464,7 +505,7 @@ export const memoryOptimization = {
   // Debounce function calls
   debounce<T extends (...args: unknown[]) => unknown>(
     func: T,
-    wait: number
+    wait: number,
   ): (...args: Parameters<T>) => void {
     let _timeout: NodeJS.Timeout;
     return (...args: Parameters<T>) => {
@@ -476,7 +517,7 @@ export const memoryOptimization = {
   // Throttle function calls
   throttle<T extends (...args: unknown[]) => unknown>(
     func: T,
-    limit: number
+    limit: number,
   ): (...args: Parameters<T>) => void {
     let _inThrottle: boolean;
     return (...args: Parameters<T>) => {
@@ -492,7 +533,7 @@ export const memoryOptimization = {
   prefersReducedMotion(): boolean {
     if (typeof window === 'undefined') return false;
     return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  }
+  },
 };
 
 // Resource hint utilities
@@ -500,7 +541,7 @@ export const resourceHints = {
   // Add DNS prefetch
   addDnsPrefetch(domain: string): void {
     if (typeof document === 'undefined') return;
-    
+
     const link = document.createElement('link');
     link.rel = 'dns-prefetch';
     link.href = domain;
@@ -510,34 +551,34 @@ export const resourceHints = {
   // Add preconnect
   addPreconnect(origin: string): void {
     if (typeof document === 'undefined') return;
-    
+
     const link = document.createElement('link');
     link.rel = 'preconnect';
     link.href = origin;
     document.head.appendChild(link);
-  }
+  },
 };
 
 // Initialize performance monitoring
 export const initializePerformance = (): PerformanceMonitor => {
   const monitor = PerformanceMonitor.getInstance();
-  
+
   if (typeof window !== 'undefined') {
     monitor.initializeWebVitals();
     monitor.observeLongTasks();
-    
+
     // Add common resource hints
     resourceHints.addDnsPrefetch('//images.unsplash.com');
     resourceHints.addPreconnect('https://fonts.googleapis.com');
-    
+
     // Cleanup on page unload
     window.addEventListener('beforeunload', () => {
       monitor.disconnect();
     });
   }
-  
+
   return monitor;
 };
 
 // Export default instance
-export default PerformanceMonitor.getInstance(); 
+export default PerformanceMonitor.getInstance();

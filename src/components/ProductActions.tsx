@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ContactPublisherModal } from './ContactPublisherModal'; // Assuming .jsx is handled or use './ContactPublisherModal'
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 interface ProductActionsProps {
   productId: string;
@@ -11,7 +10,12 @@ interface ProductActionsProps {
   sellerId?: string;
 }
 
-export function ProductActions({ productId, addToCart, isDisabled, sellerId }: ProductActionsProps) {
+export function ProductActions({
+  productId,
+  addToCart,
+  isDisabled,
+  sellerId,
+}: ProductActionsProps) {
   const [status, setStatus] = useState('Add to Cart');
   const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false); // New state for modal
@@ -35,7 +39,9 @@ export function ProductActions({ productId, addToCart, isDisabled, sellerId }: P
   };
 
   return (
-    <> {/* Use a fragment to return multiple elements */}
+    <>
+      {' '}
+      {/* Use a fragment to return multiple elements */}
       <Button onClick={handleAdd} disabled={loading || isDisabled}>
         {status}
       </Button>
@@ -48,12 +54,11 @@ export function ProductActions({ productId, addToCart, isDisabled, sellerId }: P
       >
         Contact Publisher
       </Button>
-
       <ContactPublisherModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         productId={productId}
-        sellerId={sellerId || ""}
+        sellerId={sellerId || ''}
       />
     </>
   );

@@ -29,26 +29,52 @@ export const initPostHog = () => {
   if (typeof window === 'undefined') return;
 
   const key = process.env.NEXT_PUBLIC_POSTHOG_KEY;
-  const host = process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://app.posthog.com';
+  const host =
+    process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://app.posthog.com';
 
   // Skip initialization if key is not defined or is a placeholder
-  if (!key || key === 'your_posthog_key_here' || key.includes('placeholder') || key.includes('your_')) {
-    logInfo('PostHog key not configured or is placeholder. PostHog initialization skipped.');
+  if (
+    !key ||
+    key === 'your_posthog_key_here' ||
+    key.includes('placeholder') ||
+    key.includes('your_')
+  ) {
+    logInfo(
+      'PostHog key not configured or is placeholder. PostHog initialization skipped.',
+    );
     return;
   }
 
-  if (typeof window.posthog === 'object' && window.posthog !== null && '__loaded' in window.posthog && (window.posthog as PostHogInstance).__loaded) {
+  if (
+    typeof window.posthog === 'object' &&
+    window.posthog !== null &&
+    '__loaded' in window.posthog &&
+    (window.posthog as PostHogInstance).__loaded
+  ) {
     return;
   }
 
-  (function(c: Document, a: PostHogInstance){
+  (function (c: Document, a: PostHogInstance) {
     (window as { posthog?: PostHogInstance }).posthog = a;
     a._i = [];
-    a.init = function(k: string, opts: { apihost: string }) {
+    a.init = function (k: string, opts: { apihost: string }) {
       function p(method: string) {
-        return function(...args: unknown[]) { a.push([method].concat(args as string[])); };
+        return function (...args: unknown[]) {
+          a.push([method].concat(args as string[]));
+        };
       }
-      const methods = ['capture','identify','alias','people.set','people.set_once','people.unset','people.increment','people.append','people.delete_property','people.remove'];
+      const methods = [
+        'capture',
+        'identify',
+        'alias',
+        'people.set',
+        'people.set_once',
+        'people.unset',
+        'people.increment',
+        'people.append',
+        'people.delete_property',
+        'people.remove',
+      ];
       a.people = a.people || {};
       for (let i = 0; i < methods.length; i++) {
         const method = methods[i]!; // Non-null assertion since we're within array bounds
@@ -61,15 +87,26 @@ export const initPostHog = () => {
       script.src = opts.api_host + '/static/array.js';
       c.head.appendChild(script);
     };
-  })(document, (window as { posthog?: PostHogInstance }).posthog || [] as unknown as PostHogInstance);
+  })(
+    document,
+    (window as { posthog?: PostHogInstance }).posthog ||
+      ([] as unknown as PostHogInstance),
+  );
 
   (window.posthog as unknown as PostHogInstance).init(key, { api_host: host });
 };
 
-export const captureEvent = (name: string, properties?: Record<string, unknown>) => {
+export const captureEvent = (
+  name: string,
+  properties?: Record<string, unknown>,
+) => {
   if (typeof window === 'undefined') return;
   if (!(window.posthog as unknown as PostHogInstance)?.capture) {
-    logErrorToProduction('PostHog not initialized. Call initPostHog() first.', new Error('PostHog not initialized'), { eventName: name });
+    logErrorToProduction(
+      'PostHog not initialized. Call initPostHog() first.',
+      new Error('PostHog not initialized'),
+      { eventName: name },
+    );
     return;
   }
   (window.posthog as unknown as PostHogInstance).capture(name, properties);

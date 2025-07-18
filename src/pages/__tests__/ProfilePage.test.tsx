@@ -10,7 +10,9 @@ describe('ProfilePage', () => {
   it('renders the "User Profile" heading', () => {
     render(<ProfilePage />);
     // Using a matcher function for flexibility with heading levels (h1, h2, etc.)
-    expect(screen.getByRole('heading', { name: /user profile/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: /user profile/i }),
+    ).toBeInTheDocument();
   });
 
   it('renders input field for Name', () => {
@@ -22,12 +24,16 @@ describe('ProfilePage', () => {
   it('renders input field for Email', () => {
     render(<ProfilePage />);
     expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
-    expect(screen.getByPlaceholderText(/enter your email/i)).toBeInTheDocument();
+    expect(
+      screen.getByPlaceholderText(/enter your email/i),
+    ).toBeInTheDocument();
   });
 
   it('renders textarea for Bio', () => {
     render(<ProfilePage />);
     expect(screen.getByLabelText(/bio/i)).toBeInTheDocument();
-    expect(screen.getByPlaceholderText(/tell us a bit about yourself/i)).toBeInTheDocument();
+    expect(
+      screen.getByPlaceholderText(/tell us a bit about yourself/i),
+    ).toBeInTheDocument();
   });
 });

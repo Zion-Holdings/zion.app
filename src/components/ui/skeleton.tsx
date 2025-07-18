@@ -1,33 +1,33 @@
 // src/components/ui/skeleton.tsx
-import * as React from "react";
+import * as React from 'react';
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 
 type SkeletonProps = React.HTMLAttributes<HTMLDivElement>;
 
 const Skeleton = React.forwardRef<HTMLDivElement, SkeletonProps>(
   ({ className, ...props }, ref) => {
     // Base classes for shimmer effect
-    const shimmerBaseClass = "relative overflow-hidden rounded-md";
+    const shimmerBaseClass = 'relative overflow-hidden rounded-md';
     // Shimmer animation classes
     const shimmerAnimationClass =
-      "before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 dark:before:via-black/60 before:to-transparent";
+      'before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 dark:before:via-black/60 before:to-transparent';
 
     return (
       <div
         ref={ref}
         className={cn(
           shimmerBaseClass,
-          "bg-muted", // Base background color
+          'bg-muted', // Base background color
           shimmerAnimationClass,
-          className
+          className,
         )}
         {...props}
       />
     );
   },
 );
-Skeleton.displayName = "Skeleton";
+Skeleton.displayName = 'Skeleton';
 
 export const _SkeletonCard: React.FC = () => {
   return (

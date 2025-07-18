@@ -5,4 +5,4 @@ const apiClient = {
   },
 };
 
-export default apiClient; 
+export default apiClient;

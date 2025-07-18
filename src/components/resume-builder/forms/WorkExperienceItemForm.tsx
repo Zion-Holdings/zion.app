@@ -1,29 +1,39 @@
 import { useState } from 'react';
 import { Loader2 } from '@/components/ui/icons';
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import type { WorkExperience } from "@/types/resume";
-import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Textarea } from "@/components/ui/textarea";
-import { cn } from "@/lib/utils";
-import { Switch } from "@/components/ui/switch";
-import { format } from "date-fns";
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import type { WorkExperience } from '@/types/resume';
+import { Button } from '@/components/ui/button';
+import { Calendar } from '@/components/ui/calendar';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
+import { Textarea } from '@/components/ui/textarea';
+import { cn } from '@/lib/utils';
+import { Switch } from '@/components/ui/switch';
+import { format } from 'date-fns';
 
 import type { ControllerRenderProps } from 'react-hook-form';
 
-
-import { AIEnhancementButton } from "@/components/ai-enhancement/AIEnhancementButton";
-import { AIEnhancementDialog } from "@/components/ai-enhancement/AIEnhancementDialog";
+import { AIEnhancementButton } from '@/components/ai-enhancement/AIEnhancementButton';
+import { AIEnhancementDialog } from '@/components/ai-enhancement/AIEnhancementDialog';
 
 // Define form schema
 const formSchema = z.object({
-  company_name: z.string().min(1, "Company name is required"),
-  role_title: z.string().min(1, "Role title is required"),
+  company_name: z.string().min(1, 'Company name is required'),
+  role_title: z.string().min(1, 'Role title is required'),
   start_date: z.date(),
   end_date: z.date().optional(),
   is_current: z.boolean().optional(), // Make optional, defaultValues will handle initial state
@@ -50,51 +60,62 @@ export function WorkExperienceItemForm({
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      company_name: initialData?.company_name || "",
-      role_title: initialData?.role_title || "",
-      start_date: initialData?.start_date ? new Date(initialData.start_date) : new Date(),
-      end_date: initialData?.end_date ? new Date(initialData.end_date) : undefined,
+      company_name: initialData?.company_name || '',
+      role_title: initialData?.role_title || '',
+      start_date: initialData?.start_date
+        ? new Date(initialData.start_date)
+        : new Date(),
+      end_date: initialData?.end_date
+        ? new Date(initialData.end_date)
+        : undefined,
       is_current: initialData?.is_current || false,
-      description: initialData?.description || "",
-      location: initialData?.location || "",
+      description: initialData?.description || '',
+      location: initialData?.location || '',
     },
   });
-  
+
   const { _isSubmitting } = form.formState;
-  const watchIsCurrent = form.watch("is_current");
-  const watchRoleTitle = form.watch("role_title");
-  const watchCompanyName = form.watch("company_name");
+  const watchIsCurrent = form.watch('is_current');
+  const watchRoleTitle = form.watch('role_title');
+  const watchCompanyName = form.watch('company_name');
 
   const handleFormSubmit = async (_values: FormValues) => {
     // Create a properly typed WorkExperience object with all required fields
     const workExperience: WorkExperience = {
       ...(initialData?.id && { id: initialData.id }),
-      company_name: values.company_name,  // Required
-      role_title: values.role_title,      // Required
-      start_date: values.start_date,      // Required
+      company_name: values.company_name, // Required
+      role_title: values.role_title, // Required
+      start_date: values.start_date, // Required
       ...(values.end_date && { end_date: values.end_date }),
       is_current: values.is_current ?? false,
       ...(values.description && { description: values.description }),
       ...(values.location && { location: values.location }),
     };
-    
+
     await onSubmit(workExperience);
   };
 
   const handleAIEnhancement = (_content: string) => {
-    form.setValue("description", content, { shouldDirty: true });
+    form.setValue('description', content, { shouldDirty: true });
     setIsEnhancementDialogOpen(false);
   };
 
   return (
     <>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(handleFormSubmit)} className="space-y-6">
+        <form
+          onSubmit={form.handleSubmit(handleFormSubmit)}
+          className="space-y-6"
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <FormField
               control={form.control}
               name="company_name"
-              render={({ field }: { field: ControllerRenderProps<FormValues, 'company_name'> }) => (
+              render={({
+                field,
+              }: {
+                field: ControllerRenderProps<FormValues, 'company_name'>;
+              }) => (
                 <FormItem>
                   <FormLabel>Company Name</FormLabel>
                   <FormControl>
@@ -104,11 +125,15 @@ export function WorkExperienceItemForm({
                 </FormItem>
               )}
             />
-            
+
             <FormField
               control={form.control}
               name="role_title"
-              render={({ field }: { field: ControllerRenderProps<FormValues, 'role_title'> }) => (
+              render={({
+                field,
+              }: {
+                field: ControllerRenderProps<FormValues, 'role_title'>;
+              }) => (
                 <FormItem>
                   <FormLabel>Role Title</FormLabel>
                   <FormControl>
@@ -124,21 +149,32 @@ export function WorkExperienceItemForm({
             <FormField
               control={form.control}
               name="location"
-              render={({ field }: { field: ControllerRenderProps<FormValues, 'location'> }) => (
+              render={({
+                field,
+              }: {
+                field: ControllerRenderProps<FormValues, 'location'>;
+              }) => (
                 <FormItem>
                   <FormLabel>Location</FormLabel>
                   <FormControl>
-                    <Input placeholder="e.g. New York, NY (Remote)" {...field} />
+                    <Input
+                      placeholder="e.g. New York, NY (Remote)"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            
+
             <FormField
               control={form.control}
               name="is_current"
-              render={({ field }: { field: ControllerRenderProps<FormValues, 'is_current'> }) => (
+              render={({
+                field,
+              }: {
+                field: ControllerRenderProps<FormValues, 'is_current'>;
+              }) => (
                 <FormItem className="flex flex-col">
                   <FormLabel>Current Position</FormLabel>
                   <div className="flex items-center gap-2 h-10">
@@ -148,7 +184,10 @@ export function WorkExperienceItemForm({
                       onCheckedChange={field.onChange}
                       id="current-position-switch"
                     />
-                    <label htmlFor="current-position" className="text-sm text-muted-foreground">
+                    <label
+                      htmlFor="current-position"
+                      className="text-sm text-muted-foreground"
+                    >
                       I currently work here
                     </label>
                   </div>
@@ -162,25 +201,32 @@ export function WorkExperienceItemForm({
             <FormField
               control={form.control}
               name="start_date"
-              render={({ field }: { field: ControllerRenderProps<FormValues, 'start_date'> }) => (
+              render={({
+                field,
+              }: {
+                field: ControllerRenderProps<FormValues, 'start_date'>;
+              }) => (
                 <FormItem className="flex flex-col">
                   <FormLabel>Start Date</FormLabel>
                   <Popover>
                     <PopoverTrigger asChild>
                       <FormControl>
                         <Button
-                          variant={"outline"}
+                          variant={'outline'}
                           className={cn(
-                            "w-full pl-3 text-left font-normal",
-                            !field.value && "text-muted-foreground"
+                            'w-full pl-3 text-left font-normal',
+                            !field.value && 'text-muted-foreground',
                           )}
                         >
                           {field.value ? (
-                            format(field.value, "MMM yyyy")
+                            format(field.value, 'MMM yyyy')
                           ) : (
                             <span>Select date</span>
                           )}
-                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" aria-hidden="true" />
+                          <CalendarIcon
+                            className="ml-auto h-4 w-4 opacity-50"
+                            aria-hidden="true"
+                          />
                         </Button>
                       </FormControl>
                     </PopoverTrigger>
@@ -200,30 +246,37 @@ export function WorkExperienceItemForm({
                 </FormItem>
               )}
             />
-            
+
             {!watchIsCurrent && (
               <FormField
                 control={form.control}
                 name="end_date"
-                render={({ field }: { field: ControllerRenderProps<FormValues, 'end_date'> }) => (
+                render={({
+                  field,
+                }: {
+                  field: ControllerRenderProps<FormValues, 'end_date'>;
+                }) => (
                   <FormItem className="flex flex-col">
                     <FormLabel>End Date</FormLabel>
                     <Popover>
                       <PopoverTrigger asChild>
                         <FormControl>
                           <Button
-                            variant={"outline"}
+                            variant={'outline'}
                             className={cn(
-                              "w-full pl-3 text-left font-normal",
-                              !field.value && "text-muted-foreground"
+                              'w-full pl-3 text-left font-normal',
+                              !field.value && 'text-muted-foreground',
                             )}
                           >
                             {field.value ? (
-                              format(field.value, "MMM yyyy")
+                              format(field.value, 'MMM yyyy')
                             ) : (
                               <span>Select date</span>
                             )}
-                            <CalendarIcon className="ml-auto h-4 w-4 opacity-50" aria-hidden="true" />
+                            <CalendarIcon
+                              className="ml-auto h-4 w-4 opacity-50"
+                              aria-hidden="true"
+                            />
                           </Button>
                         </FormControl>
                       </PopoverTrigger>
@@ -250,18 +303,26 @@ export function WorkExperienceItemForm({
           <FormField
             control={form.control}
             name="description"
-            render={({ field }: { field: ControllerRenderProps<FormValues, 'description'> }) => (
+            render={({
+              field,
+            }: {
+              field: ControllerRenderProps<FormValues, 'description'>;
+            }) => (
               <FormItem>
                 <div className="flex justify-between items-center">
                   <FormLabel>Description</FormLabel>
                   <div className="flex gap-2">
                     <AIEnhancementButton
                       options={{
-                        enhancementType: "work-description",
-                        content: field.value || "",
-                        context: `${watchRoleTitle} at ${watchCompanyName}`
+                        enhancementType: 'work-description',
+                        content: field.value || '',
+                        context: `${watchRoleTitle} at ${watchCompanyName}`,
                       }}
-                      onEnhanced={(content) => form.setValue("description", content, { shouldDirty: true })}
+                      onEnhanced={(content) =>
+                        form.setValue('description', content, {
+                          shouldDirty: true,
+                        })
+                      }
                       buttonText="Enhance with AI"
                     />
                     <Button
@@ -286,7 +347,7 @@ export function WorkExperienceItemForm({
               </FormItem>
             )}
           />
-          
+
           <div className="flex justify-end gap-2">
             <Button type="button" variant="outline" onClick={onCancel}>
               Cancel
@@ -311,11 +372,11 @@ export function WorkExperienceItemForm({
         onClose={() => setIsEnhancementDialogOpen(false)}
         onApply={handleAIEnhancement}
         defaultOptions={{
-          enhancementType: "work-description",
-          content: form.getValues("description") || "",
+          enhancementType: 'work-description',
+          content: form.getValues('description') || '',
           context: `${watchRoleTitle} at ${watchCompanyName}`,
         }}
-        initialContent={form.getValues("description") || ""}
+        initialContent={form.getValues('description') || ''}
       />
     </>
   );

@@ -1,16 +1,14 @@
-
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import type { ControllerRenderProps } from "react-hook-form";
-import { z } from "zod";
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import type { ControllerRenderProps } from 'react-hook-form';
+import { z } from 'zod';
 import { LockKeyhole } from '@/components/ui/icons';
 
-
-import { supabase } from "@/integrations/supabase/client";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { supabase } from '@/integrations/supabase/client';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import {
   Form,
   FormControl,
@@ -18,9 +16,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { toast } from "@/hooks/use-toast";
-import { cleanupAuthState } from "@/utils/authUtils";
+} from '@/components/ui/form';
+import { toast } from '@/hooks/use-toast';
+import { cleanupAuthState } from '@/utils/authUtils';
 import { logErrorToProduction } from '@/utils/productionLogger';
 
 // Form validation schema
@@ -28,13 +26,13 @@ const updatePasswordSchema = z
   .object({
     password: z
       .string()
-      .min(8, "Password must be at least 8 characters")
-      .max(64, "Password must be less than 64 characters"),
+      .min(8, 'Password must be at least 8 characters')
+      .max(64, 'Password must be less than 64 characters'),
     confirmPassword: z.string(),
   })
   .refine((data) => data.password === data.confirmPassword, {
-    message: "Passwords do not match",
-    path: ["confirmPassword"],
+    message: 'Passwords do not match',
+    path: ['confirmPassword'],
   });
 
 type UpdatePasswordFormValues = z.infer<typeof updatePasswordSchema>;
@@ -50,21 +48,23 @@ export default function UpdatePassword() {
   const form = useForm<UpdatePasswordFormValues>({
     resolver: zodResolver(updatePasswordSchema),
     defaultValues: {
-      password: "",
-      confirmPassword: "",
+      password: '',
+      confirmPassword: '',
     },
   });
 
   useEffect(() => {
     // Extract access token from URL hash on the client
-    const hash = typeof window !== 'undefined' ? window.location.hash : "";
+    const hash = typeof window !== 'undefined' ? window.location.hash : '';
     const hashParams = new URLSearchParams(hash.substring(1));
-    const token = hashParams.get("access_token");
-    
+    const token = hashParams.get('access_token');
+
     if (token) {
       setAccessToken(token);
     } else {
-      setError("No access token found. Please request a new password reset link.");
+      setError(
+        'No access token found. Please request a new password reset link.',
+      );
     }
 
     // Clean up auth state to prevent issues
@@ -74,7 +74,9 @@ export default function UpdatePassword() {
   // Form submission handler
   const onSubmit = async (_data: UpdatePasswordFormValues) => {
     if (!accessToken) {
-      setError("No access token found. Please request a new password reset link.");
+      setError(
+        'No access token found. Please request a new password reset link.',
+      );
       return;
     }
 
@@ -94,9 +96,9 @@ export default function UpdatePassword() {
 
       if (error) {
         toast({
-          title: "Password update failed",
+          title: 'Password update failed',
           description: error.message,
-          variant: "destructive",
+          variant: 'destructive',
         });
         setError(error.message);
         return;
@@ -105,24 +107,29 @@ export default function UpdatePassword() {
       // Show success message and clean up auth state
       setSuccess(true);
       toast({
-        title: "Password updated successfully",
-        description: "You can now log in with your new password.",
+        title: 'Password updated successfully',
+        description: 'You can now log in with your new password.',
       });
 
       // Clean auth state and redirect after a delay
       cleanupAuthState();
       setTimeout(() => {
-        router.push("/login");
+        router.push('/login');
       }, 3000);
     } catch (error: unknown) {
-      const errorMessage = error instanceof Error ? error.message : String(error);
-      logErrorToProduction(errorMessage, error instanceof Error ? error : undefined, { message: 'Password update error' });
+      const errorMessage =
+        error instanceof Error ? error.message : String(error);
+      logErrorToProduction(
+        errorMessage,
+        error instanceof Error ? error : undefined,
+        { message: 'Password update error' },
+      );
       toast({
-        title: "Password update failed",
-        description: errorMessage || "An unexpected error occurred",
-        variant: "destructive",
+        title: 'Password update failed',
+        description: errorMessage || 'An unexpected error occurred',
+        variant: 'destructive',
       });
-      setError(errorMessage || "An unexpected error occurred");
+      setError(errorMessage || 'An unexpected error occurred');
     } finally {
       setIsLoading(false);
     }
@@ -130,7 +137,9 @@ export default function UpdatePassword() {
 
   const onInvalid = (_errors: unknown) => {
     if (typeof errors === 'object' && errors !== null) {
-      const firstError = Object.keys(errors)[0] as keyof UpdatePasswordFormValues;
+      const firstError = Object.keys(
+        errors,
+      )[0] as keyof UpdatePasswordFormValues;
       if (firstError) {
         form.setFocus(firstError);
       }
@@ -155,7 +164,7 @@ export default function UpdatePassword() {
               {error && (
                 <div className="mb-6 p-4 bg-red-500/20 border border-red-500/50 rounded-md text-white">
                   <p className="text-sm">{error}</p>
-                  <Button 
+                  <Button
                     className="mt-3 text-xs"
                     variant="outline"
                     onClick={() => router.push('/forgot-password')}
@@ -170,7 +179,9 @@ export default function UpdatePassword() {
                   <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-zion-purple/20 mb-4">
                     <LockKeyhole className="h-6 w-6 text-zion-purple" />
                   </div>
-                  <h3 className="text-lg font-medium text-white">Password updated</h3>
+                  <h3 className="text-lg font-medium text-white">
+                    Password updated
+                  </h3>
                   <p className="mt-2 text-sm text-zion-slate-light">
                     Your password has been successfully updated.
                   </p>
@@ -180,13 +191,25 @@ export default function UpdatePassword() {
                 </div>
               ) : (
                 <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit, onInvalid)} className="space-y-6">
+                  <form
+                    onSubmit={form.handleSubmit(onSubmit, onInvalid)}
+                    className="space-y-6"
+                  >
                     <FormField
                       control={form.control}
                       name="password"
-                      render={({ field }: { field: ControllerRenderProps<UpdatePasswordFormValues, "password"> }) => (
+                      render={({
+                        field,
+                      }: {
+                        field: ControllerRenderProps<
+                          UpdatePasswordFormValues,
+                          'password'
+                        >;
+                      }) => (
                         <FormItem>
-                          <FormLabel className="text-zion-slate-light">New Password</FormLabel>
+                          <FormLabel className="text-zion-slate-light">
+                            New Password
+                          </FormLabel>
                           <FormControl>
                             <Input
                               type="password"
@@ -206,15 +229,26 @@ export default function UpdatePassword() {
                     <FormField
                       control={form.control}
                       name="confirmPassword"
-                      render={({ field }: { field: ControllerRenderProps<UpdatePasswordFormValues, "confirmPassword"> }) => (
+                      render={({
+                        field,
+                      }: {
+                        field: ControllerRenderProps<
+                          UpdatePasswordFormValues,
+                          'confirmPassword'
+                        >;
+                      }) => (
                         <FormItem>
-                          <FormLabel className="text-zion-slate-light">Confirm Password</FormLabel>
+                          <FormLabel className="text-zion-slate-light">
+                            Confirm Password
+                          </FormLabel>
                           <FormControl>
                             <Input
                               type="password"
                               placeholder="Enter password"
                               aria-label="Confirm password"
-                              aria-invalid={!!form.formState.errors.confirmPassword}
+                              aria-invalid={
+                                !!form.formState.errors.confirmPassword
+                              }
                               className="bg-zion-blue text-white placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple"
                               disabled={isLoading}
                               {...field}
@@ -230,14 +264,14 @@ export default function UpdatePassword() {
                       className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white"
                       disabled={isLoading || !accessToken}
                     >
-                      {isLoading ? "Updating..." : "Update Password"}
+                      {isLoading ? 'Updating...' : 'Update Password'}
                     </Button>
 
                     <div className="text-center">
                       <Button
                         variant="link"
                         className="text-sm font-medium text-zion-cyan hover:text-zion-cyan-light p-0"
-                        onClick={() => router.push("/login")}
+                        onClick={() => router.push('/login')}
                         type="button"
                       >
                         Back to login
@@ -253,9 +287,12 @@ export default function UpdatePassword() {
           <div className="absolute inset-0 h-full w-full object-cover bg-gradient-to-tr from-zion-blue-dark via-zion-purple to-zion-cyan opacity-80">
             <div className="flex flex-col justify-center items-center h-full px-8">
               <div className="max-w-md text-center">
-                <h3 className="text-3xl font-bold text-white mb-4">Password Recovery</h3>
+                <h3 className="text-3xl font-bold text-white mb-4">
+                  Password Recovery
+                </h3>
                 <p className="text-lg text-white/80">
-                  Set a strong password to secure your account and continue your journey in the Zion marketplace.
+                  Set a strong password to secure your account and continue your
+                  journey in the Zion marketplace.
                 </p>
               </div>
             </div>

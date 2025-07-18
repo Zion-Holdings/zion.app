@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 // Extended NextApiRequest with properly typed query and body
 export interface TypedNextApiRequest<
   TQuery = Record<string, string | string[]>,
-  TBody = Record<string, unknown>
+  TBody = Record<string, unknown>,
 > extends Omit<NextApiRequest, 'query' | 'body'> {
   query: TQuery;
   body: TBody;
@@ -13,10 +13,10 @@ export interface TypedNextApiRequest<
 export type ApiHandler<
   TQuery = Record<string, string | string[]>,
   TBody = Record<string, unknown>,
-  TResponse = unknown
+  TResponse = unknown,
 > = (
   req: TypedNextApiRequest<TQuery, TBody>,
-  res: NextApiResponse<TResponse>
+  res: NextApiResponse<TResponse>,
 ) => void | Promise<void>;
 
 // Common response types
@@ -35,7 +35,7 @@ export interface ApiSuccessResponse<T = unknown> {
 // Utility function to safely extract query parameters
 export function getQueryParam<T = string>(
   query: NextApiRequest['query'],
-  key: string
+  key: string,
 ): T | undefined {
   const value = (query as Record<string, unknown>)[key];
   return value as T;
@@ -44,7 +44,7 @@ export function getQueryParam<T = string>(
 // Utility function to safely extract body parameters
 export function getBodyParam<T = unknown>(
   body: NextApiRequest['body'],
-  key: string
+  key: string,
 ): T | undefined {
   const safeBody = body as Record<string, unknown>;
   return safeBody[key] as T;
@@ -103,30 +103,30 @@ export interface RateLimitConfig {
 export const DEFAULT_ERROR_RESPONSES = {
   METHOD_NOT_ALLOWED: {
     error: 'Method not allowed',
-    message: 'This endpoint only accepts specific HTTP methods'
+    message: 'This endpoint only accepts specific HTTP methods',
   },
   INVALID_INPUT: {
     error: 'Invalid input',
-    message: 'Please check your request data and try again'
+    message: 'Please check your request data and try again',
   },
   UNAUTHORIZED: {
     error: 'Unauthorized',
-    message: 'You must be logged in to access this resource'
+    message: 'You must be logged in to access this resource',
   },
   FORBIDDEN: {
     error: 'Forbidden',
-    message: 'You do not have permission to access this resource'
+    message: 'You do not have permission to access this resource',
   },
   NOT_FOUND: {
     error: 'Not found',
-    message: 'The requested resource was not found'
+    message: 'The requested resource was not found',
   },
   RATE_LIMITED: {
     error: 'Too many requests',
-    message: 'Please try again later'
+    message: 'Please try again later',
   },
   INTERNAL_ERROR: {
     error: 'Internal server error',
-    message: 'Something went wrong. Please try again later'
-  }
-} as const; 
+    message: 'Something went wrong. Please try again later',
+  },
+} as const;

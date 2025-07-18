@@ -52,7 +52,7 @@ class EnhancedLogAnalytics {
         condition: 'errorRate > 10',
         threshold: 10,
         enabled: true,
-        actions: ['email', 'slack', 'dashboard']
+        actions: ['email', 'slack', 'dashboard'],
       },
       {
         id: 'memory-leak',
@@ -60,7 +60,7 @@ class EnhancedLogAnalytics {
         condition: 'memoryTrend = increasing AND memoryUsage > 80',
         threshold: 80,
         enabled: true,
-        actions: ['email', 'dashboard']
+        actions: ['email', 'dashboard'],
       },
       {
         id: 'slow-response',
@@ -68,50 +68,57 @@ class EnhancedLogAnalytics {
         condition: 'averageResponseTime > 3000',
         threshold: 3000,
         enabled: true,
-        actions: ['slack', 'dashboard']
-      }
+        actions: ['slack', 'dashboard'],
+      },
     ];
   }
 
   private startPeriodicAnalysis(): void {
     // Run analytics every 5 minutes
-    setInterval(() => {
-      this.analyzeErrorTrends();
-      this.collectHealthMetrics();
-      this.checkAlertRules();
-    }, 5 * 60 * 1000);
+    setInterval(
+      () => {
+        this.analyzeErrorTrends();
+        this.collectHealthMetrics();
+        this.checkAlertRules();
+      },
+      5 * 60 * 1000,
+    );
 
     logInfo('Enhanced log analytics started', {
       alertRules: this.alertRules.length,
-      analysisInterval: '5 minutes'
+      analysisInterval: '5 minutes',
     });
   }
 
   public analyzeErrorTrends(): ErrorTrend {
     const analysis = advancedLogCollector.runAnalysis();
     const now = new Date().toISOString();
-    
+
     const trend: ErrorTrend = {
       timestamp: now,
       errorCount: analysis.criticalIssues.length,
       errorRate: analysis.errorRate,
       topErrors: Array.isArray(analysis.patterns)
-        ? analysis.patterns.slice(0, 5).map(p => p.pattern)
+        ? analysis.patterns.slice(0, 5).map((p) => p.pattern)
         : [],
-      severity: this.calculateTrendSeverity(analysis.errorRate)
+      severity: this.calculateTrendSeverity(analysis.errorRate),
     };
 
     this.errorTrends.push(trend);
-    
+
     // Keep only recent trends
     if (this.errorTrends.length > this.maxHistorySize) {
-      this.errorTrends = this.errorTrends.slice(-Math.floor(this.maxHistorySize * 0.8));
+      this.errorTrends = this.errorTrends.slice(
+        -Math.floor(this.maxHistorySize * 0.8),
+      );
     }
 
     return trend;
   }
 
-  private calculateTrendSeverity(errorRate: number): 'low' | 'medium' | 'high' | 'critical' {
+  private calculateTrendSeverity(
+    errorRate: number,
+  ): 'low' | 'medium' | 'high' | 'critical' {
     if (errorRate > 20) return 'critical';
     if (errorRate > 10) return 'high';
     if (errorRate > 5) return 'medium';
@@ -128,20 +135,26 @@ class EnhancedLogAnalytics {
       responseTime: analysis.performanceInsights.averageResponseTime,
       errorRate: analysis.errorRate,
       activeUsers: this.getActiveUsers(),
-      systemLoad: this.getSystemLoad()
+      systemLoad: this.getSystemLoad(),
     };
 
     this.healthMetrics.push(metrics);
 
     // Keep only recent metrics
     if (this.healthMetrics.length > this.maxHistorySize) {
-      this.healthMetrics = this.healthMetrics.slice(-Math.floor(this.maxHistorySize * 0.8));
+      this.healthMetrics = this.healthMetrics.slice(
+        -Math.floor(this.maxHistorySize * 0.8),
+      );
     }
   }
 
   private getMemoryUsage(): number {
     if (typeof window !== 'undefined' && 'memory' in performance) {
-      const memory = (performance as Performance & { memory?: { usedJSHeapSize: number; totalJSHeapSize: number } }).memory;
+      const memory = (
+        performance as Performance & {
+          memory?: { usedJSHeapSize: number; totalJSHeapSize: number };
+        }
+      ).memory;
       if (memory) {
         return (memory.usedJSHeapSize / memory.totalJSHeapSize) * 100;
       }
@@ -160,17 +173,17 @@ class EnhancedLogAnalytics {
     // For now, return a calculated load based on error rate
     const latestTrend = this.errorTrends[this.errorTrends.length - 1];
     if (!latestTrend) return 0;
-    
+
     return Math.min(latestTrend.errorRate * 2, 100);
   }
 
   private checkAlertRules(): void {
     const latestMetrics = this.healthMetrics[this.healthMetrics.length - 1];
     const latestTrend = this.errorTrends[this.errorTrends.length - 1];
-    
+
     if (!latestMetrics || !latestTrend) return;
 
-    this.alertRules.forEach(rule => {
+    this.alertRules.forEach((rule) => {
       if (!rule.enabled) return;
 
       let shouldTrigger = false;
@@ -193,9 +206,13 @@ class EnhancedLogAnalytics {
     });
   }
 
-  private triggerAlert(rule: AlertRule, metrics: SystemHealthMetrics, trend: ErrorTrend): void {
+  private triggerAlert(
+    rule: AlertRule,
+    metrics: SystemHealthMetrics,
+    trend: ErrorTrend,
+  ): void {
     const now = new Date().toISOString();
-    
+
     // Don't spam alerts - only trigger once per hour
     if (rule.lastTriggered) {
       const lastTriggered = new Date(rule.lastTriggered);
@@ -211,20 +228,23 @@ class EnhancedLogAnalytics {
       metrics: {
         errorRate: trend.errorRate,
         memoryUsage: metrics.memoryUsage,
-        responseTime: metrics.responseTime
+        responseTime: metrics.responseTime,
       },
-      timestamp: now
+      timestamp: now,
     };
 
     logWarn(`Alert triggered: ${rule.name}`, { data: alertData });
 
     // Execute alert actions
-    rule.actions.forEach(action => {
+    rule.actions.forEach((action) => {
       this.executeAlertAction(action, alertData);
     });
   }
 
-  private executeAlertAction(action: string, alertData: Record<string, unknown>): void {
+  private executeAlertAction(
+    action: string,
+    alertData: Record<string, unknown>,
+  ): void {
     switch (action) {
       case 'dashboard':
         // Update dashboard notification
@@ -244,9 +264,14 @@ class EnhancedLogAnalytics {
   private updateDashboardAlert(alertData: Record<string, unknown>): void {
     // Store alert in localStorage for dashboard display
     if (typeof window !== 'undefined') {
-      const alerts = JSON.parse(localStorage.getItem('dashboard-alerts') || '[]');
+      const alerts = JSON.parse(
+        localStorage.getItem('dashboard-alerts') || '[]',
+      );
       alerts.unshift(alertData);
-      localStorage.setItem('dashboard-alerts', JSON.stringify(alerts.slice(0, 50)));
+      localStorage.setItem(
+        'dashboard-alerts',
+        JSON.stringify(alerts.slice(0, 50)),
+      );
     }
   }
 
@@ -255,8 +280,8 @@ class EnhancedLogAnalytics {
     fetch('/api/alerts/email', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(alertData)
-    }).catch(error => {
+      body: JSON.stringify(alertData),
+    }).catch((error) => {
       logErrorToProduction('Failed to send email alert', error);
     });
   }
@@ -266,8 +291,8 @@ class EnhancedLogAnalytics {
     fetch('/api/alerts/slack', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(alertData)
-    }).catch(error => {
+      body: JSON.stringify(alertData),
+    }).catch((error) => {
       logErrorToProduction('Failed to send Slack alert', error);
     });
   }
@@ -280,7 +305,9 @@ class EnhancedLogAnalytics {
     mostCommonErrors: string[];
   } {
     const cutoff = new Date(Date.now() - hours * 60 * 60 * 1000);
-    const recentTrends = this.errorTrends.filter(t => new Date(t.timestamp) > cutoff);
+    const recentTrends = this.errorTrends.filter(
+      (t) => new Date(t.timestamp) > cutoff,
+    );
 
     if (recentTrends.length === 0) {
       return {
@@ -288,35 +315,45 @@ class EnhancedLogAnalytics {
         averageErrorRate: 0,
         peakErrorRate: 0,
         trendDirection: 'stable',
-        mostCommonErrors: []
+        mostCommonErrors: [],
       };
     }
 
     const totalErrors = recentTrends.reduce((sum, t) => sum + t.errorCount, 0);
-    const averageErrorRate = recentTrends.reduce((sum, t) => sum + t.errorRate, 0) / recentTrends.length;
-    const peakErrorRate = Math.max(...recentTrends.map(t => t.errorRate));
+    const averageErrorRate =
+      recentTrends.reduce((sum, t) => sum + t.errorRate, 0) /
+      recentTrends.length;
+    const peakErrorRate = Math.max(...recentTrends.map((t) => t.errorRate));
 
     // Calculate trend direction
-    const firstHalf = recentTrends.slice(0, Math.floor(recentTrends.length / 2));
+    const firstHalf = recentTrends.slice(
+      0,
+      Math.floor(recentTrends.length / 2),
+    );
     const secondHalf = recentTrends.slice(Math.floor(recentTrends.length / 2));
-    
-    const firstHalfAvg = firstHalf.reduce((sum, t) => sum + t.errorRate, 0) / firstHalf.length;
-    const secondHalfAvg = secondHalf.reduce((sum, t) => sum + t.errorRate, 0) / secondHalf.length;
-    
+
+    const firstHalfAvg =
+      firstHalf.reduce((sum, t) => sum + t.errorRate, 0) / firstHalf.length;
+    const secondHalfAvg =
+      secondHalf.reduce((sum, t) => sum + t.errorRate, 0) / secondHalf.length;
+
     let trendDirection: 'improving' | 'stable' | 'degrading' = 'stable';
     const diff = secondHalfAvg - firstHalfAvg;
     if (diff > 2) trendDirection = 'degrading';
     else if (diff < -2) trendDirection = 'improving';
 
     // Get most common errors
-    const allErrors = recentTrends.flatMap(t => t.topErrors);
-    const errorCounts = allErrors.reduce((acc, error) => {
-      acc[error] = (acc[error] || 0) + 1;
-      return acc;
-    }, {} as Record<string, number>);
+    const allErrors = recentTrends.flatMap((t) => t.topErrors);
+    const errorCounts = allErrors.reduce(
+      (acc, error) => {
+        acc[error] = (acc[error] || 0) + 1;
+        return acc;
+      },
+      {} as Record<string, number>,
+    );
 
     const mostCommonErrors = Object.entries(errorCounts)
-      .sort(([,a], [,b]) => b - a)
+      .sort(([, a], [, b]) => b - a)
       .slice(0, 5)
       .map(([error]) => error);
 
@@ -325,7 +362,7 @@ class EnhancedLogAnalytics {
       averageErrorRate,
       peakErrorRate,
       trendDirection,
-      mostCommonErrors
+      mostCommonErrors,
     };
   }
 
@@ -337,9 +374,14 @@ class EnhancedLogAnalytics {
   } {
     const latestMetrics = this.healthMetrics[this.healthMetrics.length - 1];
     const latestTrend = this.errorTrends[this.errorTrends.length - 1];
-    
+
     if (!latestMetrics || !latestTrend) {
-      return { score: 0, grade: 'F', issues: ['No data available'], recommendations: [] };
+      return {
+        score: 0,
+        grade: 'F',
+        issues: ['No data available'],
+        recommendations: [],
+      };
     }
 
     let score = 100;
@@ -415,16 +457,20 @@ class EnhancedLogAnalytics {
   }
 
   public exportAnalytics(): string {
-    return JSON.stringify({
-      exportedAt: new Date().toISOString(),
-      errorTrends: this.errorTrends,
-      healthMetrics: this.healthMetrics,
-      alertRules: this.alertRules,
-      summary: {
-        errorTrendsSummary: this.getErrorTrendsSummary(),
-        systemHealthScore: this.getSystemHealthScore()
-      }
-    }, null, 2);
+    return JSON.stringify(
+      {
+        exportedAt: new Date().toISOString(),
+        errorTrends: this.errorTrends,
+        healthMetrics: this.healthMetrics,
+        alertRules: this.alertRules,
+        summary: {
+          errorTrendsSummary: this.getErrorTrendsSummary(),
+          systemHealthScore: this.getSystemHealthScore(),
+        },
+      },
+      null,
+      2,
+    );
   }
 
   public getRealtimeStatus(): {
@@ -436,26 +482,34 @@ class EnhancedLogAnalytics {
   } {
     const latestMetrics = this.healthMetrics[this.healthMetrics.length - 1];
     const latestTrend = this.errorTrends[this.errorTrends.length - 1];
-    
+
     if (!latestMetrics || !latestTrend) {
       return {
         status: 'critical',
         errorRate: 0,
         memoryUsage: 0,
         responseTime: 0,
-        activeAlerts: 0
+        activeAlerts: 0,
       };
     }
 
     let status: 'healthy' | 'warning' | 'critical' = 'healthy';
-    
-    if (latestTrend.errorRate > 10 || latestMetrics.memoryUsage > 90 || latestMetrics.responseTime > 5000) {
+
+    if (
+      latestTrend.errorRate > 10 ||
+      latestMetrics.memoryUsage > 90 ||
+      latestMetrics.responseTime > 5000
+    ) {
       status = 'critical';
-    } else if (latestTrend.errorRate > 5 || latestMetrics.memoryUsage > 80 || latestMetrics.responseTime > 3000) {
+    } else if (
+      latestTrend.errorRate > 5 ||
+      latestMetrics.memoryUsage > 80 ||
+      latestMetrics.responseTime > 3000
+    ) {
       status = 'warning';
     }
 
-    const activeAlerts = this.alertRules.filter(rule => {
+    const activeAlerts = this.alertRules.filter((rule) => {
       if (!rule.lastTriggered) return false;
       const lastTriggered = new Date(rule.lastTriggered);
       const hourAgo = new Date(Date.now() - 60 * 60 * 1000);
@@ -467,7 +521,7 @@ class EnhancedLogAnalytics {
       errorRate: latestTrend.errorRate,
       memoryUsage: latestMetrics.memoryUsage,
       responseTime: latestMetrics.responseTime,
-      activeAlerts
+      activeAlerts,
     };
   }
 }
@@ -476,4 +530,4 @@ class EnhancedLogAnalytics {
 const enhancedLogAnalytics = new EnhancedLogAnalytics();
 
 export { enhancedLogAnalytics, EnhancedLogAnalytics };
-export type { ErrorTrend, SystemHealthMetrics, AlertRule }; 
+export type { ErrorTrend, SystemHealthMetrics, AlertRule };

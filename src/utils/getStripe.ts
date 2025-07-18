@@ -1,11 +1,14 @@
 import { loadStripe } from '@stripe/stripe-js';
 import type { Stripe, StripeConstructorOptions } from '@stripe/stripe-js';
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import {
+  logInfo,
+  logWarn,
+  logErrorToProduction,
+} from '@/utils/productionLogger';
 
 export const PROD_DOMAIN = 'app.ziontechgroup.com';
 
 export function isProdDomain(host?: string) {
-
   const context =
     typeof window === 'undefined'
       ? process.env.CONTEXT // Netlify build context or other server-side context
@@ -52,13 +55,15 @@ let stripePromise: Promise<Stripe | null>;
 export function getStripe() {
   if (!stripePromise) {
     const testPublishableKey =
-      process.env.NEXT_PUBLIC_STRIPE_TEST_KEY as string | undefined ||
-      process.env.NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY as string | undefined ||
-      process.env.NEXT_PUBLIC_STRIPE_PK as string | undefined; // Older fallback
+      (process.env.NEXT_PUBLIC_STRIPE_TEST_KEY as string | undefined) ||
+      (process.env.NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY as
+        | string
+        | undefined) ||
+      (process.env.NEXT_PUBLIC_STRIPE_PK as string | undefined); // Older fallback
 
     const livePublishableKey =
-      process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string | undefined ||
-      process.env.NEXT_PUBLIC_STRIPE_PK as string | undefined; // Older fallback
+      (process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string | undefined) ||
+      (process.env.NEXT_PUBLIC_STRIPE_PK as string | undefined); // Older fallback
 
     const forceTestMode = process.env.NEXT_PUBLIC_STRIPE_TEST_MODE === 'true';
 
@@ -69,29 +74,40 @@ export function getStripe() {
         selectedKey = testPublishableKey;
         logInfo('Stripe: Forced test mode. Using test publishable key.');
       } else {
-        logErrorToProduction('Stripe: Forced test mode is active, but no test publishable key (NEXT_PUBLIC_STRIPE_TEST_KEY or NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY) is set. Stripe will not load.');
+        logErrorToProduction(
+          'Stripe: Forced test mode is active, but no test publishable key (NEXT_PUBLIC_STRIPE_TEST_KEY or NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY) is set. Stripe will not load.',
+        );
       }
     } else if (isProdDomain()) {
       if (livePublishableKey) {
         selectedKey = livePublishableKey;
         logInfo('Stripe: Production domain. Using live publishable key.');
       } else {
-        logErrorToProduction('Stripe: Production domain detected, but NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY is not set. Stripe will not load.');
+        logErrorToProduction(
+          'Stripe: Production domain detected, but NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY is not set. Stripe will not load.',
+        );
       }
-    } else { // Non-production domain and not forced test mode (implicitly test)
+    } else {
+      // Non-production domain and not forced test mode (implicitly test)
       if (testPublishableKey) {
         selectedKey = testPublishableKey;
         logInfo('Stripe: Non-production domain. Using test publishable key.');
       } else {
-        logWarn('Stripe: Non-production domain, but no test publishable key (NEXT_PUBLIC_STRIPE_TEST_KEY or NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY) is set. Stripe may not load.');
+        logWarn(
+          'Stripe: Non-production domain, but no test publishable key (NEXT_PUBLIC_STRIPE_TEST_KEY or NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY) is set. Stripe may not load.',
+        );
       }
     }
 
     if (!selectedKey) {
-      logErrorToProduction('Stripe: Publishable key could not be determined. Stripe will not be loaded.');
+      logErrorToProduction(
+        'Stripe: Publishable key could not be determined. Stripe will not be loaded.',
+      );
       stripePromise = Promise.resolve(null);
     } else {
-      stripePromise = loadStripe(selectedKey, { advancedFraudSignals: false } as StripeConstructorOptions);
+      stripePromise = loadStripe(selectedKey, {
+        advancedFraudSignals: false,
+      } as StripeConstructorOptions);
     }
   }
   return stripePromise;

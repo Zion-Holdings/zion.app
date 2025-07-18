@@ -6,8 +6,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
 import { signupUser } from '@/services/signupApi';
 import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter';
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 const SignupSchema = Yup.object({
   email: Yup.string().email('Invalid email').required('Email is required'),
@@ -29,10 +28,12 @@ export default function SimpleSignup() {
     onSubmit: async (values, { setSubmitting, setErrors }) => {
       try {
         const data = await signupUser(values.email, values.password, '');
-        
+
         if (data?.emailVerificationRequired) {
           // Email verification required
-          toast.success('Account created! Please check your email to verify your account.');
+          toast.success(
+            'Account created! Please check your email to verify your account.',
+          );
           router.push('/login?message=verify-email');
         } else if (data?.user) {
           // Account created and ready to use
@@ -44,7 +45,10 @@ export default function SimpleSignup() {
           router.push('/login');
         }
       } catch (err: unknown) {
-        const message = typeof err === 'object' && err !== null && 'message' in err ? (err as { message?: string }).message : 'Signup failed';
+        const message =
+          typeof err === 'object' && err !== null && 'message' in err
+            ? (err as { message?: string }).message
+            : 'Signup failed';
         logErrorToProduction('Signup error:', { data: message });
         setErrors({ email: message || 'Signup failed' });
         toast.error(message || 'Signup failed');
@@ -58,7 +62,9 @@ export default function SimpleSignup() {
     if (formik.submitCount > 0 && Object.keys(formik.errors).length > 0) {
       const firstError = Object.keys(formik.errors)[0];
       if (firstError) {
-        const element = document.getElementsByName(firstError)[0] as HTMLElement | undefined;
+        const element = document.getElementsByName(firstError)[0] as
+          | HTMLElement
+          | undefined;
         element?.focus();
       }
     }

@@ -1,9 +1,8 @@
-
-import React from "react";
-import type { TalentProfile } from "@/types/talent";
-import { ActiveFilters } from "@/components/talent/ActiveFilters";
-import { ResultsHeader } from "@/components/talent/ResultsHeader";
-import { TalentGrid } from "@/components/talent/TalentGrid";
+import React from 'react';
+import type { TalentProfile } from '@/types/talent';
+import { ActiveFilters } from '@/components/talent/ActiveFilters';
+import { ResultsHeader } from '@/components/talent/ResultsHeader';
+import { TalentGrid } from '@/components/talent/TalentGrid';
 
 interface TalentResultsProps {
   talents: TalentProfile[];
@@ -24,7 +23,7 @@ interface TalentResultsProps {
     experienceRange: [number, number];
     setExperienceRange: (range: [number, number]) => void;
     clearFilters: () => void;
-  }
+  };
 }
 
 export function TalentResults({
@@ -34,21 +33,18 @@ export function TalentResults({
   viewProfile,
   handleRequestHire,
   isAuthenticated,
-  activeFiltersProps
+  activeFiltersProps,
 }: TalentResultsProps) {
   return (
     <div className="flex-1">
       {/* Active filters */}
       <ActiveFilters {...activeFiltersProps} />
-      
+
       {/* Results count */}
-      <ResultsHeader 
-        isLoading={isLoading}
-        resultCount={totalCount}
-      />
-      
+      <ResultsHeader isLoading={isLoading} resultCount={totalCount} />
+
       {/* Talents grid */}
-      <TalentGrid 
+      <TalentGrid
         talents={talents}
         isLoading={isLoading}
         onTalentClick={viewProfile}

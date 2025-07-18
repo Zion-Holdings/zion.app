@@ -55,7 +55,7 @@ export function OptimizedImage({
       },
       {
         rootMargin: '50px', // Start loading 50px before the image enters viewport
-      }
+      },
     );
 
     if (imgRef.current) {
@@ -68,10 +68,13 @@ export function OptimizedImage({
   // Generate WebP-compatible src
   const getOptimizedSrc = (_originalSrc: string) => {
     // If it's already optimized or external, return as-is
-    if (originalSrc.startsWith('http') || originalSrc.includes('/_next/image')) {
+    if (
+      originalSrc.startsWith('http') ||
+      originalSrc.includes('/_next/image')
+    ) {
       return originalSrc;
     }
-    
+
     // For internal images, Next.js will handle optimization
     return originalSrc;
   };
@@ -100,9 +103,19 @@ export function OptimizedImage({
       </defs>
       <rect width="100%" height="100%" fill="url(#grad)" />
     </svg>`;
-    const base64 = typeof window !== 'undefined'
-      ? btoa(unescape(encodeURIComponent(svg)))
-      : (NodeBuffer as { from: (data: string, _encoding: string) => { toString: (encoding: string) => string } }).from(svg, 'utf-8').toString('base64');
+    const base64 =
+      typeof window !== 'undefined'
+        ? btoa(unescape(encodeURIComponent(svg)))
+        : (
+            NodeBuffer as {
+              from: (
+                data: string,
+                _encoding: string,
+              ) => { toString: (encoding: string) => string };
+            }
+          )
+            .from(svg, 'utf-8')
+            .toString('base64');
     return `data:image/svg+xml;base64,${base64}`;
   };
 
@@ -120,21 +133,30 @@ export function OptimizedImage({
           {...(typeof height !== 'undefined' ? { height } : {})}
           priority={priority}
           quality={quality}
-          sizes={sizes || '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'}
+          sizes={
+            sizes || '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+          }
           placeholder={placeholder}
-          {...(placeholder === 'blur' && generateBlurDataURL() ? { blurDataURL: generateBlurDataURL() } : {})}
+          {...(placeholder === 'blur' && generateBlurDataURL()
+            ? { blurDataURL: generateBlurDataURL() }
+            : {})}
           onLoad={handleLoad}
           onError={handleError}
           className={cn(
             'transition-opacity duration-300',
-            isLoading ? 'opacity-0' : 'opacity-100'
+            isLoading ? 'opacity-0' : 'opacity-100',
           )}
-          {...Object.fromEntries(Object.entries(props).filter(([k]) => k !== 'src' && k !== 'alt' && k !== 'width' && k !== 'height'))}
+          {...Object.fromEntries(
+            Object.entries(props).filter(
+              ([k]) =>
+                k !== 'src' && k !== 'alt' && k !== 'width' && k !== 'height',
+            ),
+          )}
         />
       )}
 
       {/* Loading placeholder */}
-      {(isLoading && isInView) && (
+      {isLoading && isInView && (
         <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 animate-pulse" />
       )}
 
@@ -176,13 +198,11 @@ export function OptimizedImage({
 }
 
 // Higher-order component for easy migration from regular img tags
-export function withImageOptimization<_P extends OptimizedImageProps>(/*Component: React.ComponentType<_P>*/) {
+export function withImageOptimization<
+  _P extends OptimizedImageProps,
+>(/*Component: React.ComponentType<_P>*/) {
   return function OptimizedComponent(props: _P) {
-    return (
-      <OptimizedImage
-        {...props as OptimizedImageProps}
-      />
-    );
+    return <OptimizedImage {...(props as OptimizedImageProps)} />;
   };
 }
 
@@ -197,11 +217,14 @@ export function preloadImage(src: string): Promise<void> {
 }
 
 // Utility to get image dimensions
-export function getImageDimensions(src: string): Promise<{ width: number; height: number }> {
+export function getImageDimensions(
+  src: string,
+): Promise<{ width: number; height: number }> {
   return new Promise((resolve, reject) => {
     const img = new window.Image();
-    img.onload = () => resolve({ width: img.naturalWidth, height: img.naturalHeight });
+    img.onload = () =>
+      resolve({ width: img.naturalWidth, height: img.naturalHeight });
     img.onerror = reject;
     img.src = src;
   });
-} 
+}

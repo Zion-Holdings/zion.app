@@ -4,23 +4,28 @@
 // This version never attempts to load native modules in the browser
 
 // Check if we're in a build environment or browser environment where libp2p might cause issues
-const isBuildEnv = process.env.CI === 'true' || process.env.NODE_ENV === 'production' && typeof window === 'undefined';
+const isBuildEnv =
+  process.env.CI === 'true' ||
+  (process.env.NODE_ENV === 'production' && typeof window === 'undefined');
 const isBrowserEnv = typeof window !== 'undefined';
 
 // Mock implementations for browser environment
-const createOrbitDB = () => Promise.resolve({
-  open: () => Promise.resolve({
-    add: () => Promise.resolve(),
-    iterator: () => [],
-    close: () => Promise.resolve()
-  }),
-  stop: () => Promise.resolve()
-});
+const createOrbitDB = () =>
+  Promise.resolve({
+    open: () =>
+      Promise.resolve({
+        add: () => Promise.resolve(),
+        iterator: () => [],
+        close: () => Promise.resolve(),
+      }),
+    stop: () => Promise.resolve(),
+  });
 
-const createHelia = () => Promise.resolve({
-  stop: () => Promise.resolve(),
-  libp2p: { getConnections: () => [] }
-});
+const createHelia = () =>
+  Promise.resolve({
+    stop: () => Promise.resolve(),
+    libp2p: { getConnections: () => [] },
+  });
 
 // Browser-safe logging
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
@@ -28,19 +33,19 @@ import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 // Browser-safe memory stores
 class _MemoryBlockstore {
   private store = new Map<string, unknown>();
-  
+
   async put(key: unknown, value: unknown) {
     this.store.set(String(key), value);
   }
-  
+
   async get(key: unknown) {
     return this.store.get(String(key));
   }
-  
+
   async has(key: unknown) {
     return this.store.has(String(key));
   }
-  
+
   async delete(key: unknown) {
     this.store.delete(String(key));
   }
@@ -48,19 +53,19 @@ class _MemoryBlockstore {
 
 class _MemoryDatastore {
   private store = new Map<string, unknown>();
-  
+
   async put(key: unknown, value: unknown) {
     this.store.set(String(key), value);
   }
-  
+
   async get(key: unknown) {
     return this.store.get(String(key));
   }
-  
+
   async has(key: unknown) {
     return this.store.has(String(key));
   }
-  
+
   async delete(key: unknown) {
     this.store.delete(String(key));
   }
@@ -114,7 +119,12 @@ export async function initOrbit(_repoPath = './orbitdb-helia') {
     // Do not fallback to mock in production; only initialize in server environment
   } catch {
     let message = 'Unknown error';
-    if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+    if (
+      error &&
+      typeof error === 'object' &&
+      'message' in error &&
+      typeof (error as { message?: unknown }).message === 'string'
+    ) {
       message = (error as { message: string }).message;
     }
     logErrorToProduction('⚠️ Failed to initialize OrbitDB:', { data: message });
@@ -127,7 +137,7 @@ export async function getLog(name: string): Promise<unknown> {
     return {
       add: () => Promise.resolve(),
       iterator: () => [],
-      close: () => Promise.resolve()
+      close: () => Promise.resolve(),
     };
   }
 
@@ -137,11 +147,20 @@ export async function getLog(name: string): Promise<unknown> {
 
   try {
     // Open a log store with the given name
-    const log = await (orbit as { open: (name: string, opts: { type: string }) => Promise<unknown> }).open(name, { type: 'log' });
+    const log = await (
+      orbit as {
+        open: (name: string, opts: { type: string }) => Promise<unknown>;
+      }
+    ).open(name, { type: 'log' });
     return log;
   } catch {
     let message = 'Unknown error';
-    if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+    if (
+      error &&
+      typeof error === 'object' &&
+      'message' in error &&
+      typeof (error as { message?: unknown }).message === 'string'
+    ) {
       message = (error as { message: string }).message;
     }
     logErrorToProduction('⚠️ Failed to open OrbitDB log:', { data: message });
@@ -149,7 +168,7 @@ export async function getLog(name: string): Promise<unknown> {
     return {
       add: () => Promise.resolve(),
       iterator: () => [],
-      close: () => Promise.resolve()
+      close: () => Promise.resolve(),
     };
   }
 }
@@ -174,7 +193,12 @@ export async function stopOrbit(): Promise<void> {
     }
   } catch {
     let message = 'Unknown error';
-    if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+    if (
+      error &&
+      typeof error === 'object' &&
+      'message' in error &&
+      typeof (error as { message?: unknown }).message === 'string'
+    ) {
       message = (error as { message: string }).message;
     }
     logErrorToProduction('⚠️ Failed to stop OrbitDB:', { data: message });

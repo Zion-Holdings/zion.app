@@ -17,12 +17,12 @@ const LIMIT = 20;
 
 export default function SearchResultsPage() {
   const router = useRouter();
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState('');
 
   // Sync query state with the URL once the router is ready
   useEffect(() => {
     if (!router.isReady) return;
-    const urlQuery = (router.query.q as string) || "";
+    const urlQuery = (router.query.q as string) || '';
     setQuery(urlQuery);
   }, [router.isReady, router.query.q]);
 
@@ -30,8 +30,12 @@ export default function SearchResultsPage() {
   const [_totalCount, _setTotalCount] = useState(0);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [typeFilter, setTypeFilter] = useState<'all' | 'product' | 'service' | 'talent'>('all');
-  const [sortBy, setSortBy] = useState<'relevance' | 'titleAsc' | 'titleDesc'>('relevance');
+  const [typeFilter, setTypeFilter] = useState<
+    'all' | 'product' | 'service' | 'talent'
+  >('all');
+  const [sortBy, setSortBy] = useState<'relevance' | 'titleAsc' | 'titleDesc'>(
+    'relevance',
+  );
 
   const fetchResults = useCallback(async (_term: string) => {
     if (!term.trim()) {
@@ -46,7 +50,10 @@ export default function SearchResultsPage() {
         setResults(data.results);
       } else {
         setResults([]);
-        logErrorToProduction('Search API response structure is not as expected:', { data: data });
+        logErrorToProduction(
+          'Search API response structure is not as expected:',
+          { data: data },
+        );
       }
     } catch {
       logErrorToProduction('Search failed:', { data: error });
@@ -69,17 +76,22 @@ export default function SearchResultsPage() {
   return (
     <main className="container mx-auto px-4 py-8">
       <div className="mb-6">
-        <SearchBar value={query} onChange={(val) => {
-          setQuery(val);
-          setPage(1);
-        }} />
+        <SearchBar
+          value={query}
+          onChange={(val) => {
+            setQuery(val);
+            setPage(1);
+          }}
+        />
       </div>
 
       <div className="flex flex-wrap gap-4 mb-4">
         <select
           value={typeFilter}
           onChange={(e) => {
-            setTypeFilter(e.target.value as 'all' | 'product' | 'service' | 'talent');
+            setTypeFilter(
+              e.target.value as 'all' | 'product' | 'service' | 'talent',
+            );
             setPage(1);
           }}
           className="border border-gray-300 rounded px-3 py-1"
@@ -113,7 +125,10 @@ export default function SearchResultsPage() {
             <p className="text-zion-slate-light">Try searching for:</p>
             <ul className="flex flex-wrap justify-center gap-2 mt-2">
               {suggestions.map((s) => (
-                <li key={s.text} className="bg-zion-blue-light px-2 py-1 rounded">
+                <li
+                  key={s.text}
+                  className="bg-zion-blue-light px-2 py-1 rounded"
+                >
                   {s.text}
                 </li>
               ))}
@@ -154,4 +169,3 @@ export default function SearchResultsPage() {
     </main>
   );
 }
-

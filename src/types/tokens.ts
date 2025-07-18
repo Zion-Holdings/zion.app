@@ -1,4 +1,3 @@
-
 export interface Wallet {
   user_id: string;
   balance: number;

@@ -1,48 +1,60 @@
-
-import { supabase } from "@/integrations/supabase/client";
-import { toast } from "@/hooks/use-toast";
-import type { UserDetails } from "@/types/auth";
-import { cleanupAuthState } from "@/utils/authUtils";
-import { safeStorage, safeSessionStorage } from "@/utils/safeStorage";
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from '@/hooks/use-toast';
+import type { UserDetails } from '@/types/auth';
+import { cleanupAuthState } from '@/utils/authUtils';
+import { safeStorage, safeSessionStorage } from '@/utils/safeStorage';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 export const useEmailAuth = (
-
   setUser: (user: UserDetails | null) => void,
-  setIsLoading: (loading: boolean) => void
+  setIsLoading: (loading: boolean) => void,
 ) => {
-  const login = async ({ email, password, rememberMe }: { _email: string; password: string; rememberMe: boolean }) => {
+  const login = async ({
+    email,
+    password,
+    rememberMe,
+  }: {
+    _email: string;
+    password: string;
+    rememberMe: boolean;
+  }) => {
     try {
       setIsLoading(true);
       // Clean up any stale auth state before login
       // cleanupAuthState() removes the stored `zion_token`
       cleanupAuthState();
 
-      const response = await fetch("/auth/login", {
-        method: "POST",
+      const response = await fetch('/auth/login', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({ email, password }),
       });
 
       if (response.status === 401) {
         toast({
-          title: "Login failed",
-          description: "Incorrect email or password",
-          variant: "destructive",
+          title: 'Login failed',
+          description: 'Incorrect email or password',
+          variant: 'destructive',
         });
-        return { error: { message: "Incorrect email or password" } };
+        return { error: { message: 'Incorrect email or password' } };
       }
 
       if (!response.ok) {
-        const errorData = await response.json().catch(() => ({ message: "An unexpected error occurred" }));
+        const errorData = await response
+          .json()
+          .catch(() => ({ message: 'An unexpected error occurred' }));
         toast({
-          title: "Login failed",
-          description: errorData.message || "An unexpected error occurred",
-          variant: "destructive",
+          title: 'Login failed',
+          description: errorData.message || 'An unexpected error occurred',
+          variant: 'destructive',
         });
-        return { error: { message: errorData.message || "An unexpected error occurred" } };
+        return {
+          error: {
+            message: errorData.message || 'An unexpected error occurred',
+          },
+        };
       }
 
       const { token, user } = await response.json();
@@ -67,7 +79,7 @@ export const useEmailAuth = (
       // For now, I will write the logic as if they are available.
       // If this causes an issue, I'll revise to explicitly import them.
 
-      const authTokenKey = "zion_token";
+      const authTokenKey = 'zion_token';
       if (rememberMe) {
         // Persist token in localStorage for long-term sessions
         safeStorage.setItem(authTokenKey, token);
@@ -79,11 +91,14 @@ export const useEmailAuth = (
       return { data: { user, token } };
     } catch (error: unknown) {
       logErrorToProduction('Login error:', { data: error });
-      const errorMessage = (error instanceof Error && error.message) ? error.message : "An unexpected error occurred";
+      const errorMessage =
+        error instanceof Error && error.message
+          ? error.message
+          : 'An unexpected error occurred';
       toast({
-        title: "Login failed",
+        title: 'Login failed',
         description: errorMessage,
-        variant: "destructive",
+        variant: 'destructive',
       });
       return { error: { message: errorMessage } };
     } finally {
@@ -91,20 +106,24 @@ export const useEmailAuth = (
     }
   };
 
-  const signup = async (email: string, password: string, userData?: Partial<UserDetails>) => {
+  const signup = async (
+    email: string,
+    password: string,
+    userData?: Partial<UserDetails>,
+  ) => {
     try {
       setIsLoading(true);
       // Clean up any stale auth state before signup
       cleanupAuthState();
-      
+
       // Attempt to sign out any existing session first to prevent conflicts
       try {
         await supabase!.auth.signOut({ scope: 'global' });
       } catch {
         // Continue even if signout fails
-        logInfo('Sign out before signup failed:', { data:  { data: error } });
+        logInfo('Sign out before signup failed:', { data: { data: error } });
       }
-      
+
       // Create a proper options object
       const { data, error } = await supabase!.auth.signUp({
         email,
@@ -112,34 +131,37 @@ export const useEmailAuth = (
         options: {
           // Only store a simple display name in the profile data
           data: {
-            display_name: userData?.displayName ?? userData?.name ?? ""
+            display_name: userData?.displayName ?? userData?.name ?? '',
           },
         },
       });
 
       if (error) {
         toast({
-          title: "Signup failed",
+          title: 'Signup failed',
           description: error.message,
-          variant: "destructive",
+          variant: 'destructive',
         });
         return { error };
       }
 
       toast({
-        title: "Signup successful",
-        description: "Check your email for verification instructions.",
+        title: 'Signup successful',
+        description: 'Check your email for verification instructions.',
       });
       // Determine if email verification is required based on the presence of user and absence of session
       const emailVerificationRequired = !!(data?.user && !data?.session);
       return { data, emailVerificationRequired };
     } catch (error: unknown) {
       logErrorToProduction('Signup error:', { data: error });
-      const errorMessage = (error instanceof Error && error.message) ? error.message : "An unexpected error occurred";
+      const errorMessage =
+        error instanceof Error && error.message
+          ? error.message
+          : 'An unexpected error occurred';
       toast({
-        title: "Signup failed",
+        title: 'Signup failed',
         description: errorMessage,
-        variant: "destructive",
+        variant: 'destructive',
       });
       return { error: { message: errorMessage } };
     } finally {
@@ -156,25 +178,28 @@ export const useEmailAuth = (
 
       if (error) {
         toast({
-          title: "Password reset failed",
+          title: 'Password reset failed',
           description: error.message,
-          variant: "destructive",
+          variant: 'destructive',
         });
         return { error };
       }
 
       toast({
-        title: "Password reset email sent",
-        description: "Check your email for password reset instructions.",
+        title: 'Password reset email sent',
+        description: 'Check your email for password reset instructions.',
       });
       return {};
     } catch (error: unknown) {
       logErrorToProduction('Password reset error:', { data: error });
-      const errorMessage = (error instanceof Error && error.message) ? error.message : "An unexpected error occurred";
+      const errorMessage =
+        error instanceof Error && error.message
+          ? error.message
+          : 'An unexpected error occurred';
       toast({
-        title: "Password reset failed",
+        title: 'Password reset failed',
         description: errorMessage,
-        variant: "destructive",
+        variant: 'destructive',
       });
       return { error: { message: errorMessage } };
     } finally {

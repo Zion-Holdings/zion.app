@@ -52,7 +52,7 @@ async function fetchWithRetry(
   url: string,
   options: RequestInit,
   retries = 3,
-  backoff = 500
+  backoff = 500,
 ) {
   try {
     const res = await fetch(url, options);
@@ -94,11 +94,12 @@ export default function FounderCoursePage() {
           body: JSON.stringify({ text }),
         },
         3,
-        500
+        500,
       );
       setSummary(data.summary);
     } catch (err: unknown) {
-      const errorMessage = err instanceof Error ? err.message : 'Failed to fetch summary';
+      const errorMessage =
+        err instanceof Error ? err.message : 'Failed to fetch summary';
       setError(errorMessage);
     } finally {
       setLoadingSummary(false);
@@ -117,11 +118,12 @@ export default function FounderCoursePage() {
           body: JSON.stringify({ topic }),
         },
         3,
-        500
+        500,
       );
       setQuiz(data.quiz);
     } catch (err: unknown) {
-      const errorMessage = err instanceof Error ? err.message : 'Failed to fetch quiz';
+      const errorMessage =
+        err instanceof Error ? err.message : 'Failed to fetch quiz';
       setError(errorMessage);
     } finally {
       setLoadingQuiz(false);
@@ -130,9 +132,14 @@ export default function FounderCoursePage() {
 
   return (
     <div className="container mx-auto p-4 space-y-6">
-      <NextSeo title="Zion Founder Course" description="Learn how to launch your own Zion instance." />
+      <NextSeo
+        title="Zion Founder Course"
+        description="Learn how to launch your own Zion instance."
+      />
       <h1 className="text-3xl font-bold">Zion Founder Course</h1>
-      <p>Progress: {progress}/{modules.length}</p>
+      <p>
+        Progress: {progress}/{modules.length}
+      </p>
       {error && <p className="text-red-500">{error}</p>}
       {modules.map((m, idx) => (
         <div key={idx} className="border p-4 rounded space-y-2">
@@ -143,8 +150,17 @@ export default function FounderCoursePage() {
             ))}
           </ul>
           <div className="space-x-2">
-            <Button onClick={() => {completeModule(); callSummary(m.points.join('. '));}}>Summarize This Module</Button>
-            <Button variant="outline" onClick={() => callQuiz(m.title)}>Take Quiz</Button>
+            <Button
+              onClick={() => {
+                completeModule();
+                callSummary(m.points.join('. '));
+              }}
+            >
+              Summarize This Module
+            </Button>
+            <Button variant="outline" onClick={() => callQuiz(m.title)}>
+              Take Quiz
+            </Button>
           </div>
         </div>
       ))}

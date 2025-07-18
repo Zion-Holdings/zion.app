@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { useWhitelabelTenant } from '@/hooks/useWhitelabelTenant';
 import type { WhitelabelTenant } from '@/hooks/useWhitelabelTenant';
 
-import { logInfo } from "@/utils/productionLogger";
+import { logInfo } from '@/utils/productionLogger';
 
 export interface WhitelabelContextType {
   isWhitelabel: boolean;
@@ -56,7 +56,8 @@ export const WhitelabelProvider = ({ children }: WhitelabelProviderProps) => {
   if (process.env.NODE_ENV === 'development') {
     logInfo('[WhitelabelProvider] Initializing...');
   }
-  const [contextValue, setContextValue] = useState<WhitelabelContextType>(defaultContext);
+  const [contextValue, setContextValue] =
+    useState<WhitelabelContextType>(defaultContext);
   const { tenant, isLoading } = useWhitelabelTenant();
 
   useEffect(() => {
@@ -81,4 +82,3 @@ export const WhitelabelProvider = ({ children }: WhitelabelProviderProps) => {
     </WhitelabelContext.Provider>
   );
 };
-

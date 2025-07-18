@@ -2,10 +2,10 @@ import { logWarn } from '@/utils/productionLogger';
 
 /**
  * IMMEDIATE Process Polyfill
- * 
+ *
  * This polyfill runs synchronously at the very top of the bundle
  * to prevent any "process is not defined" errors.
- * 
+ *
  * CRITICAL: This must be imported FIRST in any file that might access process.env
  */
 
@@ -13,8 +13,10 @@ import { logWarn } from '@/utils/productionLogger';
 import './stream-polyfill';
 
 // Only define process in browser environments, not in Node.js
-const _isBrowser = typeof window !== 'undefined' || typeof document !== 'undefined';
-const _isNode = typeof process !== 'undefined' && process.versions && process.versions.node;
+const _isBrowser =
+  typeof window !== 'undefined' || typeof document !== 'undefined';
+const _isNode =
+  typeof process !== 'undefined' && process.versions && process.versions.node;
 
 // Only run polyfill in browser environments
 if (_isBrowser && !_isNode) {
@@ -75,7 +77,9 @@ if (_isBrowser && !_isNode) {
   // dependencies accidentally execute in the browser. These stubs only expose
   // the methods used by common libraries like axios when a Node adapter is
   // bundled by mistake.
-  if (typeof (globalThis as unknown as { http?: unknown }).http === 'undefined') {
+  if (
+    typeof (globalThis as unknown as { http?: unknown }).http === 'undefined'
+  ) {
     (globalThis as unknown as { http: unknown }).http = {
       _request: () => {
         throw new Error('http.request is not available in the browser');
@@ -93,12 +97,16 @@ if (_isBrowser && !_isNode) {
       },
       IncomingMessage: class {
         constructor() {
-          throw new Error('http.IncomingMessage is not available in the browser');
+          throw new Error(
+            'http.IncomingMessage is not available in the browser',
+          );
         }
       },
       ServerResponse: class {
         constructor() {
-          throw new Error('http.ServerResponse is not available in the browser');
+          throw new Error(
+            'http.ServerResponse is not available in the browser',
+          );
         }
       },
       Agent: class {
@@ -112,7 +120,9 @@ if (_isBrowser && !_isNode) {
     };
   }
 
-  if (typeof (globalThis as unknown as { https?: unknown }).https === 'undefined') {
+  if (
+    typeof (globalThis as unknown as { https?: unknown }).https === 'undefined'
+  ) {
     (globalThis as unknown as { https: unknown }).https = {
       _request: () => {
         throw new Error('https.request is not available in the browser');
@@ -141,7 +151,7 @@ if (_isBrowser && !_isNode) {
   if (typeof globalThis !== 'undefined') {
     (globalThis as unknown as { process: unknown }).process = _processObj;
   }
-  
+
   if (typeof window !== 'undefined') {
     (window as unknown as { process: unknown }).process = _processObj;
   }
@@ -150,7 +160,11 @@ if (_isBrowser && !_isNode) {
   if (typeof Buffer === 'undefined') {
     // Simple Buffer polyfill
     class BufferPolyfill extends Uint8Array {
-      constructor(input?: string | ArrayBuffer | ArrayLike<number> | Uint8Array | number, encoding?: string | number, offset?: number) {
+      constructor(
+        input?: string | ArrayBuffer | ArrayLike<number> | Uint8Array | number,
+        encoding?: string | number,
+        offset?: number,
+      ) {
         if (typeof input === 'string') {
           // Convert string to Uint8Array
           const encoder = new TextEncoder();
@@ -167,11 +181,18 @@ if (_isBrowser && !_isNode) {
         }
       }
 
-      static fromPolyfill(input: string | ArrayBuffer | ArrayLike<number> | Uint8Array | number, encoding?: string | number): BufferPolyfill {
+      static fromPolyfill(
+        input: string | ArrayBuffer | ArrayLike<number> | Uint8Array | number,
+        encoding?: string | number,
+      ): BufferPolyfill {
         return new BufferPolyfill(input, encoding);
       }
 
-      static alloc(size: number, fill?: string | number, encoding?: string | number): BufferPolyfill {
+      static alloc(
+        size: number,
+        fill?: string | number,
+        encoding?: string | number,
+      ): BufferPolyfill {
         const buffer = new BufferPolyfill(size);
         if (fill !== undefined) {
           if (typeof fill === 'string') {
@@ -193,7 +214,11 @@ if (_isBrowser && !_isNode) {
         return obj instanceof BufferPolyfill;
       }
 
-      override toString(encoding?: string, start?: number, end?: number): string {
+      override toString(
+        encoding?: string,
+        start?: number,
+        end?: number,
+      ): string {
         const decoder = new TextDecoder(encoding || 'utf8');
         const slice = this.slice(start, end);
         return decoder.decode(slice);
@@ -202,7 +227,7 @@ if (_isBrowser && !_isNode) {
       toJSON(): { type: string; data: number[] } {
         return {
           type: 'Buffer',
-          data: Array.from(this)
+          data: Array.from(this),
         };
       }
     }
@@ -211,25 +236,33 @@ if (_isBrowser && !_isNode) {
     if (typeof globalThis !== 'undefined') {
       (globalThis as unknown as { Buffer: unknown }).Buffer = BufferPolyfill;
     }
-    
+
     if (typeof window !== 'undefined') {
       (window as unknown as { Buffer: unknown }).Buffer = BufferPolyfill;
     }
   }
 
   // Minimal util polyfill for browser environments
-  if (typeof (globalThis as unknown as { util?: unknown }).util === 'undefined') {
+  if (
+    typeof (globalThis as unknown as { util?: unknown }).util === 'undefined'
+  ) {
     const utilPolyfill = {
       TextEncoder: globalThis.TextEncoder,
       TextDecoder: globalThis.TextDecoder,
       promisify:
         (fn: (...args: unknown[]) => void) =>
-          (...args: unknown[]) =>
-            new Promise((resolve, reject) => {
-              fn(...args, (err: unknown, res: unknown) => (err ? reject(err) : resolve(res)));
-            }),
+        (...args: unknown[]) =>
+          new Promise((resolve, reject) => {
+            fn(...args, (err: unknown, res: unknown) =>
+              err ? reject(err) : resolve(res),
+            );
+          }),
       inherits: (ctor: unknown, _superCtor: unknown) => {
-        if (superCtor && typeof ctor === 'function' && typeof superCtor === 'function') {
+        if (
+          superCtor &&
+          typeof ctor === 'function' &&
+          typeof superCtor === 'function'
+        ) {
           Object.setPrototypeOf(ctor.prototype, superCtor.prototype);
           Object.setPrototypeOf(ctor, superCtor);
         }
@@ -243,16 +276,19 @@ if (_isBrowser && !_isNode) {
       (window as unknown as { util: unknown }).util = utilPolyfill;
     }
   }
-
 }
 
 // Export a safe process accessor
-export const safeProcess = typeof process !== 'undefined' ? process : (globalThis as unknown as { process: unknown }).process;
+export const safeProcess =
+  typeof process !== 'undefined'
+    ? process
+    : (globalThis as unknown as { process: unknown }).process;
 
 // Helper to safely access process.env variables with type safety
 function getProcessEnvVar(key: string): string | undefined {
   if (typeof safeProcess === 'object' && safeProcess && 'env' in safeProcess) {
-    const env = (safeProcess as { env?: Record<string, string | undefined> }).env;
+    const env = (safeProcess as { env?: Record<string, string | undefined> })
+      .env;
     if (env && typeof env === 'object') {
       return env[key];
     }
@@ -270,26 +306,39 @@ export const safeEnv = {
   NODE_ENV: getProcessEnvVar('NODE_ENV') || 'production',
   NEXT_PUBLIC_APP_URL: getProcessEnvVar('NEXT_PUBLIC_APP_URL') || '',
   NEXT_PUBLIC_SUPABASE_URL: getProcessEnvVar('NEXT_PUBLIC_SUPABASE_URL') || '',
-  NEXT_PUBLIC_SUPABASE_ANON_KEY: getProcessEnvVar('NEXT_PUBLIC_SUPABASE_ANON_KEY') || '',
+  NEXT_PUBLIC_SUPABASE_ANON_KEY:
+    getProcessEnvVar('NEXT_PUBLIC_SUPABASE_ANON_KEY') || '',
   NEXT_PUBLIC_SENTRY_DSN: getProcessEnvVar('NEXT_PUBLIC_SENTRY_DSN') || '',
-  NEXT_PUBLIC_REOWN_PROJECT_ID: getProcessEnvVar('NEXT_PUBLIC_REOWN_PROJECT_ID') || '',
-  NEXT_PUBLIC_DD_CLIENT_TOKEN: getProcessEnvVar('NEXT_PUBLIC_DD_CLIENT_TOKEN') || '',
+  NEXT_PUBLIC_REOWN_PROJECT_ID:
+    getProcessEnvVar('NEXT_PUBLIC_REOWN_PROJECT_ID') || '',
+  NEXT_PUBLIC_DD_CLIENT_TOKEN:
+    getProcessEnvVar('NEXT_PUBLIC_DD_CLIENT_TOKEN') || '',
   NEXT_PUBLIC_LOGROCKET_ID: getProcessEnvVar('NEXT_PUBLIC_LOGROCKET_ID') || '',
-  NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: getProcessEnvVar('NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY') || '',
-  NEXT_PUBLIC_STRIPE_TEST_MODE: getProcessEnvVar('NEXT_PUBLIC_STRIPE_TEST_MODE') || '',
-  NEXT_PUBLIC_INTERCOM_APP_ID: getProcessEnvVar('NEXT_PUBLIC_INTERCOM_APP_ID') || '',
-  NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: getProcessEnvVar('NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME') || '',
+  NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY:
+    getProcessEnvVar('NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY') || '',
+  NEXT_PUBLIC_STRIPE_TEST_MODE:
+    getProcessEnvVar('NEXT_PUBLIC_STRIPE_TEST_MODE') || '',
+  NEXT_PUBLIC_INTERCOM_APP_ID:
+    getProcessEnvVar('NEXT_PUBLIC_INTERCOM_APP_ID') || '',
+  NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME:
+    getProcessEnvVar('NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME') || '',
   NEXT_PUBLIC_API_URL: getProcessEnvVar('NEXT_PUBLIC_API_URL') || '',
-  NEXT_PUBLIC_STATUS_PAGE_URL: getProcessEnvVar('NEXT_PUBLIC_STATUS_PAGE_URL') || '',
+  NEXT_PUBLIC_STATUS_PAGE_URL:
+    getProcessEnvVar('NEXT_PUBLIC_STATUS_PAGE_URL') || '',
   NEXT_PUBLIC_SITE_URL: getProcessEnvVar('NEXT_PUBLIC_SITE_URL') || '',
   NEXT_PUBLIC_APP_ENV: getProcessEnvVar('NEXT_PUBLIC_APP_ENV') || '',
   NEXT_PUBLIC_APP_VERSION: getProcessEnvVar('NEXT_PUBLIC_APP_VERSION') || '',
   NEXT_PUBLIC_BUILD_TIME: getProcessEnvVar('NEXT_PUBLIC_BUILD_TIME') || '',
-  NEXT_PUBLIC_SOCIAL_TWITTER_URL: getProcessEnvVar('NEXT_PUBLIC_SOCIAL_TWITTER_URL') || '',
-  NEXT_PUBLIC_SOCIAL_LINKEDIN_URL: getProcessEnvVar('NEXT_PUBLIC_SOCIAL_LINKEDIN_URL') || '',
-  NEXT_PUBLIC_SOCIAL_FACEBOOK_URL: getProcessEnvVar('NEXT_PUBLIC_SOCIAL_FACEBOOK_URL') || '',
-  NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL: getProcessEnvVar('NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL') || '',
-  NEXT_PUBLIC_SOCIAL_GITHUB_URL: getProcessEnvVar('NEXT_PUBLIC_SOCIAL_GITHUB_URL') || '',
+  NEXT_PUBLIC_SOCIAL_TWITTER_URL:
+    getProcessEnvVar('NEXT_PUBLIC_SOCIAL_TWITTER_URL') || '',
+  NEXT_PUBLIC_SOCIAL_LINKEDIN_URL:
+    getProcessEnvVar('NEXT_PUBLIC_SOCIAL_LINKEDIN_URL') || '',
+  NEXT_PUBLIC_SOCIAL_FACEBOOK_URL:
+    getProcessEnvVar('NEXT_PUBLIC_SOCIAL_FACEBOOK_URL') || '',
+  NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL:
+    getProcessEnvVar('NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL') || '',
+  NEXT_PUBLIC_SOCIAL_GITHUB_URL:
+    getProcessEnvVar('NEXT_PUBLIC_SOCIAL_GITHUB_URL') || '',
 } as const;
 
 // Safe environment getter function
@@ -302,8 +351,9 @@ export function isProduction(): boolean {
 }
 
 // Export the polyfilled process object
-export const processEnv = (typeof safeProcess === 'object' && safeProcess && 'env' in safeProcess)
-  ? (safeProcess as { env?: Record<string, string | undefined> }).env
-  : undefined;
+export const processEnv =
+  typeof safeProcess === 'object' && safeProcess && 'env' in safeProcess
+    ? (safeProcess as { env?: Record<string, string | undefined> }).env
+    : undefined;
 
-export default safeEnv; 
+export default safeEnv;

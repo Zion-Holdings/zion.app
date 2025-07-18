@@ -46,8 +46,13 @@ export default function AdminPerformancePage() {
     return (
       <AdminLayout>
         <div className="flex flex-col justify-center items-center h-screen text-center">
-          <h1 className="text-2xl font-bold text-red-600 mb-4">Access Denied</h1>
-          <button onClick={() => router.push('/admin')} className="mt-4 bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700">
+          <h1 className="text-2xl font-bold text-red-600 mb-4">
+            Access Denied
+          </h1>
+          <button
+            onClick={() => router.push('/admin')}
+            className="mt-4 bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700"
+          >
             Go to Admin Dashboard
           </button>
         </div>

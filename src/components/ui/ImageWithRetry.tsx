@@ -52,7 +52,10 @@ export function ImageWithRetry({
         <button
           type="button"
           onClick={handleRetry}
-          className={cn('absolute bottom-1 right-1 text-xs underline', retryClassName)}
+          className={cn(
+            'absolute bottom-1 right-1 text-xs underline',
+            retryClassName,
+          )}
         >
           Retry
         </button>

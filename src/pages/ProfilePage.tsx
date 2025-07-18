@@ -53,20 +53,45 @@ const _ProfilePage: React.FC = () => {
 
       <form>
         <div style={formGroupStyle}>
-          <label htmlFor="name" style={labelStyle}>Name</label>
-          <input type="text" id="name" name="name" style={inputStyle} placeholder="Enter your name" autoComplete="name" />
+          <label htmlFor="name" style={labelStyle}>
+            Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            style={inputStyle}
+            placeholder="Enter your name"
+            autoComplete="name"
+          />
         </div>
 
         <div style={formGroupStyle}>
-          <label htmlFor="email" style={labelStyle}>Email</label>
-          <input type="email" id="email" name="email" style={inputStyle} placeholder="Enter your email" autoComplete="email" />
+          <label htmlFor="email" style={labelStyle}>
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            style={inputStyle}
+            placeholder="Enter your email"
+            autoComplete="email"
+          />
         </div>
 
         <div style={formGroupStyle}>
-          <label htmlFor="bio" style={labelStyle}>Bio</label>
-          <textarea id="bio" name="bio" style={textareaStyle} placeholder="Tell us a bit about yourself..."></textarea>
+          <label htmlFor="bio" style={labelStyle}>
+            Bio
+          </label>
+          <textarea
+            id="bio"
+            name="bio"
+            style={textareaStyle}
+            placeholder="Tell us a bit about yourself..."
+          ></textarea>
         </div>
-        
+
         {/*
         A placeholder for a submit button, not functional for now.
         When styling is done via classes, this can be a proper Button component.

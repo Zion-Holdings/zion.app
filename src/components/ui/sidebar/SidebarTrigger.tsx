@@ -1,12 +1,9 @@
-
-import React from "react";
+import React from 'react';
 import { Menu, X } from '@/components/ui/icons';
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 
-
-
-import { useSidebar } from "./sidebar-context";
-import { cn } from "@/lib/utils";
+import { useSidebar } from './sidebar-context';
+import { cn } from '@/lib/utils';
 
 interface SidebarTriggerProps extends React.HTMLAttributes<HTMLButtonElement> {
   className?: string;
@@ -19,7 +16,7 @@ export function SidebarTrigger({ className, ...props }: SidebarTriggerProps) {
     <Button
       variant="ghost"
       size="icon"
-      className={cn("", className)}
+      className={cn('', className)}
       onClick={toggleSidebar}
       {...props}
     >

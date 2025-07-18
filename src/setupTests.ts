@@ -1,21 +1,21 @@
-import { beforeAll, afterEach, afterAll, vi } from 'vitest'
-import { server } from './mocks/server'
-import '@testing-library/jest-dom' // Extends Vitest's expect with jest-dom matchers
+import { beforeAll, afterEach, afterAll, vi } from 'vitest';
+import { server } from './mocks/server';
+import '@testing-library/jest-dom'; // Extends Vitest's expect with jest-dom matchers
 
 // Establish API mocking before all tests.
-beforeAll(() => server.listen({ onUnhandledRequest: 'error' }))
+beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
 
 // Reset any request handlers that we may add during the tests,
 // so they don't affect other tests.
-afterEach(() => server.resetHandlers())
+afterEach(() => server.resetHandlers());
 
 // Clean up after the tests are finished.
-afterAll(() => server.close())
+afterAll(() => server.close());
 
 // Mock matchMedia
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
-  value: vi.fn().mockImplementation(query => ({
+  value: vi.fn().mockImplementation((query) => ({
     matches: false,
     media: query,
     onchange: null,
@@ -53,7 +53,16 @@ Object.defineProperty(window, 'scrollTo', {
 
 // Mock Shoplocket if it's used and causes issues - this is a placeholder
 if (typeof window.Shoplocket === 'undefined') {
-  (window as unknown as { Shoplocket: { open: () => void; close: () => void; on: () => void; off: () => void } }).Shoplocket = {
+  (
+    window as unknown as {
+      Shoplocket: {
+        open: () => void;
+        close: () => void;
+        on: () => void;
+        off: () => void;
+      };
+    }
+  ).Shoplocket = {
     open: vi.fn(),
     close: vi.fn(),
     on: vi.fn(),

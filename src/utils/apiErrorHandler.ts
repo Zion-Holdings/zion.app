@@ -22,9 +22,16 @@ export function parseApiError(error: unknown): ParsedApiError {
   if (!isApiError(error)) {
     return { message: 'An unexpected error occurred.' };
   }
-  const status: number | undefined = typeof error?.response?.status === 'number' ? error.response.status : (typeof error?.status === 'number' ? error.status : undefined);
-  const backendCode = error?.response?.data?.code ?? error?.response?.data?.error ?? error?.code;
-  const code: string | number | undefined = backendCode !== undefined ? backendCode : status;
+  const status: number | undefined =
+    typeof error?.response?.status === 'number'
+      ? error.response.status
+      : typeof error?.status === 'number'
+        ? error.status
+        : undefined;
+  const backendCode =
+    error?.response?.data?.code ?? error?.response?.data?.error ?? error?.code;
+  const code: string | number | undefined =
+    backendCode !== undefined ? backendCode : status;
 
   // Prioritize backend message first
   let msg = error?.response?.data?.message;
@@ -36,36 +43,44 @@ export function parseApiError(error: unknown): ParsedApiError {
     // If no backend message, try status-specific messages
     switch (status) {
       case 400:
-        msg = 'There was a problem with your request. Please check the information you provided and try again.';
+        msg =
+          'There was a problem with your request. Please check the information you provided and try again.';
         break;
       case 401:
         msg = 'Authentication failed. Please log in again.';
         break;
       case 403:
-        msg = "You don't have permission to perform this action or access this resource.";
+        msg =
+          "You don't have permission to perform this action or access this resource.";
         break;
       case 404:
-        msg = 'The requested resource was not found. Please check the URL or try again later.';
+        msg =
+          'The requested resource was not found. Please check the URL or try again later.';
         break;
       case 408: // Request Timeout
       case 504: // Gateway Timeout
-        msg = 'The server is taking too long to respond. Please check your internet connection or try again later.';
+        msg =
+          'The server is taking too long to respond. Please check your internet connection or try again later.';
         break;
       case 500:
-        msg = 'A server error occurred. We are working to fix it. Please try again later.';
+        msg =
+          'A server error occurred. We are working to fix it. Please try again later.';
         break;
       case 502: // Bad Gateway
-        msg = 'The server received an invalid response. Please try again later.';
+        msg =
+          'The server received an invalid response. Please try again later.';
         break;
       case 503:
-        msg = 'The service is temporarily unavailable. Please try again in a few moments.';
+        msg =
+          'The service is temporarily unavailable. Please try again in a few moments.';
         break;
       default:
         // Fallback to client-side error message or a generic one
         if (error?.message && error.message !== 'Network Error') {
           msg = error.message;
         } else if (!status && error?.message === 'Network Error') {
-          msg = 'A network error occurred. Please check your internet connection and try again.';
+          msg =
+            'A network error occurred. Please check your internet connection and try again.';
         } else {
           msg = 'An unexpected error occurred. Please try again later.';
         }
@@ -85,7 +100,7 @@ export function parseApiError(error: unknown): ParsedApiError {
 export function showApiError(
   error: unknown,
   fallback = 'Unexpected error – please try again later.',
-  retryCallback?: () => void
+  retryCallback?: () => void,
 ) {
   const { code, message } = parseApiError(error ?? { message: fallback });
   const text = code ? `${code}: ${message}` : message;

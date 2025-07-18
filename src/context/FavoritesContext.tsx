@@ -1,12 +1,7 @@
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 import { toggleFavorite as toggleFavoriteRequest } from '@/api/favorites';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 import { toast } from '@/hooks/use-toast';
 import { safeStorage } from '@/utils/safeStorage';
 
@@ -16,8 +11,9 @@ export interface FavoritesContextType {
   isFavorite: (id: string | number) => boolean;
 }
 
-const FavoritesContext =
-  createContext<FavoritesContextType | undefined>(undefined);
+const FavoritesContext = createContext<FavoritesContextType | undefined>(
+  undefined,
+);
 
 export function FavoritesProvider({ children }: { children: ReactNode }) {
   const [favorites, setFavorites] = useState<Array<string | number>>([]);
@@ -42,22 +38,24 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
     try {
       const result = await toggleFavoriteRequest(productId);
       if (
-        typeof result === 'object' && result !== null &&
-        'needsAuth' in result && (result as { needsAuth?: unknown }).needsAuth === true
+        typeof result === 'object' &&
+        result !== null &&
+        'needsAuth' in result &&
+        (result as { needsAuth?: unknown }).needsAuth === true
       ) {
         toast.info('Login required to save favorites');
-        setFavorites(prev =>
+        setFavorites((prev) =>
           prev.includes(productId)
-            ? prev.filter(id => id !== productId)
-            : [...prev, productId]
+            ? prev.filter((id) => id !== productId)
+            : [...prev, productId],
         );
         return;
       }
 
-      setFavorites(prev =>
+      setFavorites((prev) =>
         prev.includes(productId)
-          ? prev.filter(id => id !== productId)
-          : [...prev, productId]
+          ? prev.filter((id) => id !== productId)
+          : [...prev, productId],
       );
     } catch {
       logErrorToProduction('Toggle favorite failed', { data: error });
@@ -67,7 +65,9 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
   const isFavorite = (id: string | number) => favorites.includes(id);
 
   return (
-    <FavoritesContext.Provider value={{ favorites, toggleFavorite, isFavorite }}>
+    <FavoritesContext.Provider
+      value={{ favorites, toggleFavorite, isFavorite }}
+    >
       {children}
     </FavoritesContext.Provider>
   );

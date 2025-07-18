@@ -1,4 +1,3 @@
-
 export interface ResumeBasicInfo {
   id?: string;
   title: string;

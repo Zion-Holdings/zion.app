@@ -1,8 +1,6 @@
 import { useState, useCallback } from 'react';
-import {logErrorToProduction} from '@/utils/productionLogger';
-import {
-  getMarketplaceErrorMessage,
-} from '@/services/marketplace';
+import { logErrorToProduction } from '@/utils/productionLogger';
+import { getMarketplaceErrorMessage } from '@/services/marketplace';
 import { useQuery } from '@tanstack/react-query';
 import { logDev } from '@/utils/developmentLogger';
 
@@ -27,8 +25,10 @@ export function useMarketplaceProducts(filters: MarketplaceFilters = {}) {
   return useQuery({
     queryKey: ['marketplace', 'products', filters],
     _queryFn: async () => {
-      logDev('useMarketplaceProducts: Fetching products with filters:', { data: filters });
-      
+      logDev('useMarketplaceProducts: Fetching products with filters:', {
+        data: filters,
+      });
+
       const searchParams = new URLSearchParams();
       Object.entries(filters).forEach(([key, value]) => {
         if (value !== undefined && value !== null && value !== '') {
@@ -40,10 +40,12 @@ export function useMarketplaceProducts(filters: MarketplaceFilters = {}) {
       if (!response.ok) {
         throw new Error(`Failed to fetch products: ${response.status}`);
       }
-      
+
       const data = await response.json();
       if (!data.products || data.products.length === 0) {
-        logDev('useMarketplaceProducts: No products returned, but no error occurred');
+        logDev(
+          'useMarketplaceProducts: No products returned, but no error occurred',
+        );
       }
       return data.products || [];
     },
@@ -58,7 +60,7 @@ export function useMarketplaceCategories() {
     queryKey: ['marketplace', 'categories'],
     _queryFn: async () => {
       logDev('useMarketplaceCategories: Fetching categories');
-      
+
       const response = await fetch('/api/marketplace/categories');
       if (!response.ok) {
         throw new Error(`Failed to fetch categories: ${response.status}`);
@@ -75,8 +77,10 @@ export function useMarketplaceTalent(filters: MarketplaceFilters = {}) {
   return useQuery({
     queryKey: ['marketplace', 'talent', filters],
     _queryFn: async () => {
-      logDev('useMarketplaceTalent: Fetching talent with filters:', { data: filters });
-      
+      logDev('useMarketplaceTalent: Fetching talent with filters:', {
+        data: filters,
+      });
+
       const searchParams = new URLSearchParams();
       Object.entries(filters).forEach(([key, value]) => {
         if (value !== undefined && value !== null && value !== '') {
@@ -104,8 +108,10 @@ export function useMarketplaceEquipment(filters: MarketplaceFilters = {}) {
   return useQuery({
     queryKey: ['marketplace', 'equipment', filters],
     _queryFn: async () => {
-      logDev('useMarketplaceEquipment: Fetching equipment with filters:', { data: filters });
-      
+      logDev('useMarketplaceEquipment: Fetching equipment with filters:', {
+        data: filters,
+      });
+
       const searchParams = new URLSearchParams();
       Object.entries(filters).forEach(([key, value]) => {
         if (value !== undefined && value !== null && value !== '') {
@@ -113,7 +119,9 @@ export function useMarketplaceEquipment(filters: MarketplaceFilters = {}) {
         }
       });
 
-      const response = await fetch(`/api/marketplace/equipment?${searchParams}`);
+      const response = await fetch(
+        `/api/marketplace/equipment?${searchParams}`,
+      );
       if (!response.ok) {
         throw new Error(`Failed to fetch equipment: ${response.status}`);
       }
@@ -131,12 +139,26 @@ export function useMarketplaceOverview() {
   const talent = useMarketplaceTalent({ limit: 6 });
   const equipment = useMarketplaceEquipment({ limit: 6 });
 
-  const loading = products.isLoading || categories.isLoading || talent.isLoading || equipment.isLoading;
-  const hasError = !!(products.error || categories.error || talent.error || equipment.error);
-  
-  const errors = [products.error, categories.error, talent.error, equipment.error]
+  const loading =
+    products.isLoading ||
+    categories.isLoading ||
+    talent.isLoading ||
+    equipment.isLoading;
+  const hasError = !!(
+    products.error ||
+    categories.error ||
+    talent.error ||
+    equipment.error
+  );
+
+  const errors = [
+    products.error,
+    categories.error,
+    talent.error,
+    equipment.error,
+  ]
     .filter(Boolean)
-    .map(err => err instanceof Error ? err.message : String(err));
+    .map((err) => (err instanceof Error ? err.message : String(err)));
 
   const retryAll = () => {
     products.refetch();
@@ -165,7 +187,9 @@ export function useMarketplaceErrorHandler() {
     // Add type guard and handle error appropriately
     const errorMessage = getMarketplaceErrorMessage(error);
     setLastError(errorMessage);
-    logErrorToProduction('Marketplace Error:', { data: { error, message: errorMessage } });
+    logErrorToProduction('Marketplace Error:', {
+      data: { error, message: errorMessage },
+    });
     return errorMessage;
   }, []);
 
@@ -178,4 +202,4 @@ export function useMarketplaceErrorHandler() {
     handleError,
     clearError,
   };
-} 
+}

@@ -1,7 +1,7 @@
 /// <reference types="node" />
-import { createServerClient } from '@supabase/ssr'
-import { type NextApiRequest, type NextApiResponse } from 'next'
-import { type GetServerSidePropsContext } from 'next/types'
+import { createServerClient } from '@supabase/ssr';
+import { type NextApiRequest, type NextApiResponse } from 'next';
+import { type GetServerSidePropsContext } from 'next/types';
 
 // For API routes
 export function createClient(req: NextApiRequest, res: NextApiResponse) {
@@ -15,22 +15,29 @@ export function createClient(req: NextApiRequest, res: NextApiResponse) {
           return Object.keys(cookies as Record<string, string>).map((name) => ({
             name,
             value: (cookies as Record<string, string>)[name] || '',
-          }))
+          }));
         },
-        setAll(cookiesToSet: Array<{ name: string; value: string; options?: Record<string, unknown> }>) {
+        setAll(
+          cookiesToSet: Array<{
+            name: string;
+            value: string;
+            options?: Record<string, unknown>;
+          }>,
+        ) {
           cookiesToSet.forEach(({ name, value, options }) => {
-            let cookieString = `${name}=${value}; Path=/`
-            if (options?.httpOnly) cookieString += '; HttpOnly'
-            if (options?.secure) cookieString += '; Secure'
-            if (options?.sameSite) cookieString += `; SameSite=${options.sameSite}`
-            if (options?.maxAge) cookieString += `; Max-Age=${options.maxAge}`
-            
-            res.setHeader('Set-Cookie', cookieString)
-          })
+            let cookieString = `${name}=${value}; Path=/`;
+            if (options?.httpOnly) cookieString += '; HttpOnly';
+            if (options?.secure) cookieString += '; Secure';
+            if (options?.sameSite)
+              cookieString += `; SameSite=${options.sameSite}`;
+            if (options?.maxAge) cookieString += `; Max-Age=${options.maxAge}`;
+
+            res.setHeader('Set-Cookie', cookieString);
+          });
         },
       },
-    }
-  )
+    },
+  );
 }
 
 // For getServerSideProps
@@ -45,20 +52,27 @@ export function createServerSideClient(context: GetServerSidePropsContext) {
           return Object.keys(cookies as Record<string, string>).map((name) => ({
             name,
             value: (cookies as Record<string, string>)[name] || '',
-          }))
+          }));
         },
-        setAll(cookiesToSet: Array<{ name: string; value: string; options?: Record<string, unknown> }>) {
+        setAll(
+          cookiesToSet: Array<{
+            name: string;
+            value: string;
+            options?: Record<string, unknown>;
+          }>,
+        ) {
           cookiesToSet.forEach(({ name, value, options }) => {
-            let cookieString = `${name}=${value}; Path=/`
-            if (options?.httpOnly) cookieString += '; HttpOnly'
-            if (options?.secure) cookieString += '; Secure'
-            if (options?.sameSite) cookieString += `; SameSite=${options.sameSite}`
-            if (options?.maxAge) cookieString += `; Max-Age=${options.maxAge}`
-            
-            context.res.setHeader('Set-Cookie', cookieString)
-          })
+            let cookieString = `${name}=${value}; Path=/`;
+            if (options?.httpOnly) cookieString += '; HttpOnly';
+            if (options?.secure) cookieString += '; Secure';
+            if (options?.sameSite)
+              cookieString += `; SameSite=${options.sameSite}`;
+            if (options?.maxAge) cookieString += `; Max-Age=${options.maxAge}`;
+
+            context.res.setHeader('Set-Cookie', cookieString);
+          });
         },
       },
-    }
-  )
-} 
+    },
+  );
+}

@@ -1,9 +1,8 @@
-
-import Link from "next/link";
-import { Header } from "@/components/Header";
+import Link from 'next/link';
+import { Header } from '@/components/Header';
 import { ShieldAlert } from '@/components/ui/icons';
 
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 
 export default function Unauthorized() {
   const { t } = useTranslation();
@@ -17,7 +16,9 @@ export default function Unauthorized() {
               <ShieldAlert className="h-12 w-12 text-zion-purple" />
             </div>
           </div>
-          <h1 className="text-3xl font-bold text-white mb-3">{t('errors.access_denied')}</h1>
+          <h1 className="text-3xl font-bold text-white mb-3">
+            {t('errors.access_denied')}
+          </h1>
           <p className="text-zion-slate-light mb-6">
             {t('errors.no_permission')}
           </p>

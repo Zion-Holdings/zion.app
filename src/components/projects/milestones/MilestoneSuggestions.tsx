@@ -8,7 +8,6 @@ import type {
 import { useMilestoneGenerator } from '@/hooks/useMilestoneGenerator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-
 import { Badge } from '@/components/ui/badge';
 import { format, parseISO } from 'date-fns';
 

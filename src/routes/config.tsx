@@ -72,17 +72,17 @@ import CartPage from '@/pages/Cart'; // Import CartPage
 const Signup = React.lazy(() => import('@/pages/Signup'));
 
 import {
- AuthRoutes,
- DashboardRoutes as _DashboardRoutes,
- AdminRoutes,
- MobileAppRoutes,
- ContentRoutes,
- ErrorRoutes,
- EnterpriseRoutes,
- DeveloperRoutes,
- MarketplaceRoutes, // Assuming MarketplaceRoutes is a group of routes
- TalentRoutes,      // Assuming TalentRoutes is a group of routes
- CommunityRoutes,   // Assuming CommunityRoutes is a group of routes
+  AuthRoutes,
+  DashboardRoutes as _DashboardRoutes,
+  AdminRoutes,
+  MobileAppRoutes,
+  ContentRoutes,
+  ErrorRoutes,
+  EnterpriseRoutes,
+  DeveloperRoutes,
+  MarketplaceRoutes, // Assuming MarketplaceRoutes is a group of routes
+  TalentRoutes, // Assuming TalentRoutes is a group of routes
+  CommunityRoutes, // Assuming CommunityRoutes is a group of routes
 } from '.'; // Importing from the same directory (src/routes)
 
 // Utility to wrap routes with ErrorGuard
@@ -107,9 +107,23 @@ export const primaryRoutes: AppRouteObject[] = guardRoutes([
     metaTitle: 'Marketplace - Zion',
     requiresAuth: false,
   },
-  { path: '/categories', element: <Categories />, metaTitle: 'Categories - Zion' },
-  { path: '/blog', element: <Blog />, metaTitle: 'Blog - Zion', requiresAuth: false },
-  { path: '/services', element: <ServicesPage />, metaTitle: 'Services - Zion', requiresAuth: false },
+  {
+    path: '/categories',
+    element: <Categories />,
+    metaTitle: 'Categories - Zion',
+  },
+  {
+    path: '/blog',
+    element: <Blog />,
+    metaTitle: 'Blog - Zion',
+    requiresAuth: false,
+  },
+  {
+    path: '/services',
+    element: <ServicesPage />,
+    metaTitle: 'Services - Zion',
+    requiresAuth: false,
+  },
 ]);
 
 export const allRoutes: AppRouteObject[] = guardRoutes([
@@ -119,7 +133,11 @@ export const allRoutes: AppRouteObject[] = guardRoutes([
   { path: '/register', element: <Signup />, metaTitle: 'Register - Zion' },
   { path: '/signup', element: <Signup />, metaTitle: 'Sign Up - Zion' },
   { path: '/summit', element: <SummitPage />, metaTitle: 'Zion Global Summit' },
-  { path: '/zion-global-2025', element: <SummitPage />, metaTitle: 'Zion Global Summit 2025' },
+  {
+    path: '/zion-global-2025',
+    element: <SummitPage />,
+    metaTitle: 'Zion Global Summit 2025',
+  },
   {
     path: '/dashboard',
     element: <Dashboard />,
@@ -127,17 +145,46 @@ export const allRoutes: AppRouteObject[] = guardRoutes([
     requiresAuth: true,
   },
   { path: '/partners', element: <PartnersPage /> },
-  { path: '/investor-match', element: <InvestorMatchPage />, metaTitle: 'Investor Match - Zion' },
-  { path: '/integrate', element: <PartnerIntegration />, metaTitle: 'Partner API - Zion' },
-  { path: '/investor-match', element: <InvestorMatchPage />, metaTitle: 'Investor Match - Zion' },
+  {
+    path: '/investor-match',
+    element: <InvestorMatchPage />,
+    metaTitle: 'Investor Match - Zion',
+  },
+  {
+    path: '/integrate',
+    element: <PartnerIntegration />,
+    metaTitle: 'Partner API - Zion',
+  },
+  {
+    path: '/investor-match',
+    element: <InvestorMatchPage />,
+    metaTitle: 'Investor Match - Zion',
+  },
   { path: '/grants', element: <GrantsPage />, metaTitle: 'Grants - Zion' },
   { path: '/team', element: <OrgChartPage />, metaTitle: 'Team - Zion' },
-  { path: '/governance/org-chart', element: <OrgChartPage />, metaTitle: 'Org Chart - Zion' },
+  {
+    path: '/governance/org-chart',
+    element: <OrgChartPage />,
+    metaTitle: 'Org Chart - Zion',
+  },
   { path: '/blog/:slug', element: <BlogPost /> },
   { path: '/roadmap', element: <RoadmapPage />, metaTitle: 'Roadmap - Zion' },
-  { path: '/roadmap/suggest', element: <RoadmapSuggestPage />, metaTitle: 'Suggest Feature - Zion' },
-  { path: '/roadmap/:id', element: <RoadmapFeaturePage />, metaTitle: 'Feature - Zion' },
-  { path: '/verify', element: <VerifyIdentity />, metaTitle: 'Verify Identity', requiresAuth: true },
+  {
+    path: '/roadmap/suggest',
+    element: <RoadmapSuggestPage />,
+    metaTitle: 'Suggest Feature - Zion',
+  },
+  {
+    path: '/roadmap/:id',
+    element: <RoadmapFeaturePage />,
+    metaTitle: 'Feature - Zion',
+  },
+  {
+    path: '/verify',
+    element: <VerifyIdentity />,
+    metaTitle: 'Verify Identity',
+    requiresAuth: true,
+  },
   { path: '/cart', element: <CartPage />, metaTitle: 'Cart - Zion' }, // Added cart route
   { path: '/checkout/:id', element: <CheckoutPage />, requiresAuth: true },
   { path: '/oauth', element: <OAuthCallback /> },
@@ -146,7 +193,11 @@ export const allRoutes: AppRouteObject[] = guardRoutes([
   { path: '/talent/*', element: <TalentRoutes /> },
   { path: '/admin/*', element: <AdminRoutes /> },
   { path: '/mobile/*', element: <MobileAppRoutes /> },
-  { path: '/mobile/pwa/*', element: <MobilePwa />, metaTitle: 'Zion Mobile PWA' },
+  {
+    path: '/mobile/pwa/*',
+    element: <MobilePwa />,
+    metaTitle: 'Zion Mobile PWA',
+  },
   // Removed: { path: '/m/*', element: <Navigate to="/mobile/pwa" replace /> }, // This redirect should be handled in next.config.js
   { path: '/content/*', element: <ContentRoutes /> },
   { path: '/enterprise/*', element: <EnterpriseRoutes /> },
@@ -157,14 +208,34 @@ export const allRoutes: AppRouteObject[] = guardRoutes([
         <CommunityRoutes />
       </CommunityProvider>
     ),
-    metaTitle: 'Community - Zion'
+    metaTitle: 'Community - Zion',
   },
-  { path: '/developers/*', element: <DeveloperRoutes />, metaTitle: 'Developers - Zion' },
-  { path: '/governance/privacy', element: <PrivacyVotePage />, metaTitle: 'ZK Vote - Zion' },
-  { path: '/dao/zkvote', element: <PrivacyVotePage />, metaTitle: 'ZK Vote - Zion' },
+  {
+    path: '/developers/*',
+    element: <DeveloperRoutes />,
+    metaTitle: 'Developers - Zion',
+  },
+  {
+    path: '/governance/privacy',
+    element: <PrivacyVotePage />,
+    metaTitle: 'ZK Vote - Zion',
+  },
+  {
+    path: '/dao/zkvote',
+    element: <PrivacyVotePage />,
+    metaTitle: 'ZK Vote - Zion',
+  },
   // Test routes
-  { path: '/test-error-render', element: <ErrorTriggerComponent />, metaTitle: 'Test Error Render - Zion' },
-  { path: '/test-error-mount', element: <ErrorTriggerComponent onMount={true} />, metaTitle: 'Test Error Mount - Zion' },
+  {
+    path: '/test-error-render',
+    element: <ErrorTriggerComponent />,
+    metaTitle: 'Test Error Render - Zion',
+  },
+  {
+    path: '/test-error-mount',
+    element: <ErrorTriggerComponent onMount={true} />,
+    metaTitle: 'Test Error Mount - Zion',
+  },
   // Add the new route for Startup OS
   {
     path: '/startup-os',
@@ -215,7 +286,11 @@ export const allRoutes: AppRouteObject[] = guardRoutes([
     requiresAuth: false,
   },
   // Route for documentation page
-  { path: '/resources/docs', element: <DocsPage />, metaTitle: 'Documentation - Zion' },
+  {
+    path: '/resources/docs',
+    element: <DocsPage />,
+    metaTitle: 'Documentation - Zion',
+  },
   // Wildcard for error handling - ensure this is last
   { path: '*', element: <ErrorRoutes />, metaTitle: 'Not Found - Zion' },
 ]);

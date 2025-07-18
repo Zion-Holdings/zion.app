@@ -2,7 +2,6 @@ import { z } from 'zod';
 import { logError, logWarn } from '@/utils/logger';
 import type { Site } from '@datadog/browser-core';
 
-
 interface EnvironmentConfig {
   supabase: {
     url: string;
@@ -67,7 +66,7 @@ type RawEnv = z.infer<typeof EnvSchema>;
  */
 function isPlaceholderValue(value: string | undefined): boolean {
   if (!value) return true;
-  
+
   const placeholderPatterns = [
     'placeholder',
     'your_',
@@ -87,21 +86,21 @@ function isPlaceholderValue(value: string | undefined): boolean {
     // Generic placeholders
     'dummy',
     'https_dummy',
-    'https_example'
+    'https_example',
   ];
-  
+
   const lowerValue = value.toLowerCase();
-  
+
   // Don't flag real Supabase URLs or JWT tokens as placeholders
   if (value.includes('supabase.co') && value.startsWith('https://')) {
     return false; // Real Supabase URL
   }
-  
+
   if (value.startsWith('eyJ') && value.length > 100) {
     return false; // Real JWT token
   }
-  
-  return placeholderPatterns.some(pattern => lowerValue.includes(pattern));
+
+  return placeholderPatterns.some((pattern) => lowerValue.includes(pattern));
 }
 
 /**
@@ -109,7 +108,7 @@ function isPlaceholderValue(value: string | undefined): boolean {
  */
 export async function initializeServices(): Promise<void> {
   const config = getEnvironmentConfig();
-  
+
   // Initialize Sentry if configured
   if (config.sentry.isConfigured && config.app.isProduction) {
     try {
@@ -121,13 +120,17 @@ export async function initializeServices(): Promise<void> {
       // });
       logWarn('✅ Sentry initialized successfully');
     } catch {
-      logError('Failed to initialize Sentry:', { data:  { data: error } });
+      logError('Failed to initialize Sentry:', { data: { data: error } });
     }
   }
 
   // Initialize Datadog logs in the browser if configured
   const nodeEnv = process.env.NODE_ENV || 'development';
-  if (config.datadog.enabled && typeof window !== 'undefined' && config.datadog.clientToken) {
+  if (
+    config.datadog.enabled &&
+    typeof window !== 'undefined' &&
+    config.datadog.clientToken
+  ) {
     try {
       const { _datadogLogs } = await import('@datadog/browser-logs');
       datadogLogs.init({
@@ -139,7 +142,7 @@ export async function initializeServices(): Promise<void> {
       });
       logWarn('✅ Datadog Logs initialized');
     } catch {
-      logError('Failed to initialize Datadog Logs:', { data:  { data: error } });
+      logError('Failed to initialize Datadog Logs:', { data: { data: error } });
     }
   }
 
@@ -150,7 +153,7 @@ export async function initializeServices(): Promise<void> {
       LogRocket.init(config.logRocket.id!);
       logWarn('✅ LogRocket initialized');
     } catch {
-      logError('Failed to initialize LogRocket:', { data:  { data: error } });
+      logError('Failed to initialize LogRocket:', { data: { data: error } });
     }
   }
 
@@ -172,15 +175,21 @@ export function getEnvironmentConfig(): EnvironmentConfig {
   const env = EnvSchema.parse(process.env) as RawEnv;
 
   // Supabase Configuration with fallback values (from next.config.cjs)
-  const supabaseUrl = env.NEXT_PUBLIC_SUPABASE_URL || 'https://gnwtggeptzkqnduuthto.supabase.co';
-  const supabaseAnonKey = env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdud3RnZ2VwdHprcW5kdXV0aHRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MTQyMjcsImV4cCI6MjA2MDk5MDIyN30.mIyYJWh3S1FLCmjwoJ7FNHz0XLRiUHBd3r9we-E4DIY';
+  const supabaseUrl =
+    env.NEXT_PUBLIC_SUPABASE_URL || 'https://gnwtggeptzkqnduuthto.supabase.co';
+  const supabaseAnonKey =
+    env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdud3RnZ2VwdHprcW5kdXV0aHRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MTQyMjcsImV4cCI6MjA2MDk5MDIyN30.mIyYJWh3S1FLCmjwoJ7FNHz0XLRiUHBd3r9we-E4DIY';
   const supabaseServiceRoleKey = env.SUPABASE_SERVICE_ROLE_KEY;
-  
+
   // Debug logging for Supabase configuration
   const urlIsPlaceholder = isPlaceholderValue(supabaseUrl);
   const anonKeyIsPlaceholder = isPlaceholderValue(supabaseAnonKey);
-  
-  if ((isDevelopment || process.env.DEBUG_ENV_CONFIG) && (urlIsPlaceholder || anonKeyIsPlaceholder)) {
+
+  if (
+    (isDevelopment || process.env.DEBUG_ENV_CONFIG) &&
+    (urlIsPlaceholder || anonKeyIsPlaceholder)
+  ) {
     logWarn('[ENV CONFIG] Supabase configuration check:', {
       url: supabaseUrl ? `${supabaseUrl.substring(0, 30)}...` : 'undefined',
       urlIsPlaceholder,
@@ -189,20 +198,26 @@ export function getEnvironmentConfig(): EnvironmentConfig {
       serviceRoleKeyPresent: !!supabaseServiceRoleKey,
       fallbacksUsed: {
         url: !env.NEXT_PUBLIC_SUPABASE_URL,
-        anonKey: !env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+        anonKey: !env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
       },
-      note: 'Using fallback values for development - this is normal'
+      note: 'Using fallback values for development - this is normal',
     });
   }
-  
+
   // Consider Supabase configured if we have valid values (including fallbacks)
-  const supabaseConfigured = !!supabaseUrl && !!supabaseAnonKey && !urlIsPlaceholder && !anonKeyIsPlaceholder;
+  const supabaseConfigured =
+    !!supabaseUrl &&
+    !!supabaseAnonKey &&
+    !urlIsPlaceholder &&
+    !anonKeyIsPlaceholder;
 
   // Sentry Configuration
   const sentryDsn = env.NEXT_PUBLIC_SENTRY_DSN || env.SENTRY_DSN;
-  const sentryEnvironment = env.NEXT_PUBLIC_SENTRY_ENVIRONMENT || env.SENTRY_ENVIRONMENT || nodeEnv;
-  const sentryRelease = env.NEXT_PUBLIC_SENTRY_RELEASE || env.SENTRY_RELEASE || 'unknown';
-  
+  const sentryEnvironment =
+    env.NEXT_PUBLIC_SENTRY_ENVIRONMENT || env.SENTRY_ENVIRONMENT || nodeEnv;
+  const sentryRelease =
+    env.NEXT_PUBLIC_SENTRY_RELEASE || env.SENTRY_RELEASE || 'unknown';
+
   const sentryConfigured = !isPlaceholderValue(sentryDsn);
 
   // Reown Configuration
@@ -224,35 +239,37 @@ export function getEnvironmentConfig(): EnvironmentConfig {
     supabase: {
       url: supabaseUrl,
       anonKey: supabaseAnonKey,
-      ...(supabaseServiceRoleKey ? { serviceRoleKey: supabaseServiceRoleKey } : {}),
-      isConfigured: supabaseConfigured
+      ...(supabaseServiceRoleKey
+        ? { serviceRoleKey: supabaseServiceRoleKey }
+        : {}),
+      isConfigured: supabaseConfigured,
     },
     sentry: {
       dsn: sentryConfigured ? sentryDsn! : '',
       environment: sentryEnvironment,
       release: sentryRelease,
-      isConfigured: sentryConfigured
+      isConfigured: sentryConfigured,
     },
     reown: {
       projectId: reownConfigured ? reownProjectId! : 'placeholder-project-id',
-      isConfigured: reownConfigured
+      isConfigured: reownConfigured,
     },
     datadog: {
       ...(ddClientToken ? { clientToken: ddClientToken } : {}),
       ...(ddSite ? { site: ddSite } : {}),
       ...(ddService ? { service: ddService } : {}),
       ...(ddEnv ? { env: ddEnv } : {}),
-      enabled: datadogEnabled
+      enabled: datadogEnabled,
     },
     logRocket: {
       ...(logRocketId ? { id: logRocketId } : {}),
-      enabled: logRocketEnabled
+      enabled: logRocketEnabled,
     },
     app: {
       environment: nodeEnv,
       isDevelopment,
-      isProduction
-    }
+      isProduction,
+    },
   };
 }
 
@@ -261,21 +278,23 @@ export function getEnvironmentConfig(): EnvironmentConfig {
  */
 export function validateProductionEnvironment(): void {
   const config = getEnvironmentConfig();
-  
+
   if (!config.app.isProduction) {
     // Only warn in development
     const warnings = [];
-    
+
     if (!config.supabase.isConfigured) {
       warnings.push('Supabase is not configured - using placeholder values');
     }
-    
+
     if (!config.sentry.isConfigured) {
       warnings.push('Sentry is not configured - error monitoring disabled');
     }
-    
+
     if (!config.reown.isConfigured) {
-      warnings.push('Reown wallet is not configured - wallet features disabled');
+      warnings.push(
+        'Reown wallet is not configured - wallet features disabled',
+      );
     }
 
     if (!config.datadog.enabled) {
@@ -285,26 +304,33 @@ export function validateProductionEnvironment(): void {
     if (!config.logRocket.enabled) {
       warnings.push('LogRocket is not configured');
     }
-    
+
     if (warnings.length > 0) {
-      logWarn('⚠️ Development Environment Warnings:\n' + warnings.map(w => `  • ${w}`).join('\n'));
+      logWarn(
+        '⚠️ Development Environment Warnings:\n' +
+          warnings.map((w) => `  • ${w}`).join('\n'),
+      );
     }
-    
+
     return;
   }
 
   // In production, only validate critical services that are required for core functionality
   const errors = [];
   const warnings = [];
-  
+
   // Critical: Supabase is required for authentication and core functionality
   if (!config.supabase.isConfigured) {
-    errors.push('Supabase configuration must be complete in production (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY)');
+    errors.push(
+      'Supabase configuration must be complete in production (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY)',
+    );
   }
 
   // Optional but recommended: Error monitoring
   if (!config.sentry.isConfigured) {
-    warnings.push('NEXT_PUBLIC_SENTRY_DSN not configured - error monitoring disabled');
+    warnings.push(
+      'NEXT_PUBLIC_SENTRY_DSN not configured - error monitoring disabled',
+    );
   }
 
   // Optional: Analytics and monitoring tools
@@ -315,18 +341,23 @@ export function validateProductionEnvironment(): void {
   if (!config.logRocket.enabled) {
     warnings.push('LogRocket not configured - session recording disabled');
   }
-  
+
   // Only throw errors for critical missing configuration
   if (errors.length > 0) {
-    const errorMessage = 'Production Environment Configuration Errors:\n' + errors.map(e => `  • ${e}`).join('\n');
+    const errorMessage =
+      'Production Environment Configuration Errors:\n' +
+      errors.map((e) => `  • ${e}`).join('\n');
     throw new Error(errorMessage);
   }
 
   // Log warnings for optional services
   if (warnings.length > 0) {
-    logWarn('⚠️ Production Environment Warnings:\n' + warnings.map(w => `  • ${w}`).join('\n'));
+    logWarn(
+      '⚠️ Production Environment Warnings:\n' +
+        warnings.map((w) => `  • ${w}`).join('\n'),
+    );
   }
 }
 
 // Export the singleton configuration
-export const ENV_CONFIG = getEnvironmentConfig(); 
+export const ENV_CONFIG = getEnvironmentConfig();

@@ -1,33 +1,33 @@
-import Head from 'next/head'
-import { useRouter } from 'next/router'
-import { getAppConfig } from '@/utils/config'
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { getAppConfig } from '@/utils/config';
 
 interface SEOProps {
-  title?: string
-  description?: string
-  keywords?: string[]
-  image?: string
-  url?: string
-  type?: 'website' | 'article' | 'product' | 'profile'
+  title?: string;
+  description?: string;
+  keywords?: string[];
+  image?: string;
+  url?: string;
+  type?: 'website' | 'article' | 'product' | 'profile';
   article?: {
-    author?: string
-    publishedTime?: string
-    modifiedTime?: string
-    section?: string
-    tags?: string[]
-  }
+    author?: string;
+    publishedTime?: string;
+    modifiedTime?: string;
+    section?: string;
+    tags?: string[];
+  };
   product?: {
-    price?: number
-    currency?: string
-    availability?: 'in_stock' | 'out_of_stock' | 'preorder'
-    condition?: 'new' | 'used' | 'refurbished'
-    brand?: string
-    sku?: string
-  }
-  jsonLd?: Record<string, unknown>
-  noindex?: boolean
-  nofollow?: boolean
-  canonical?: string
+    price?: number;
+    currency?: string;
+    availability?: 'in_stock' | 'out_of_stock' | 'preorder';
+    condition?: 'new' | 'used' | 'refurbished';
+    brand?: string;
+    sku?: string;
+  };
+  jsonLd?: Record<string, unknown>;
+  noindex?: boolean;
+  nofollow?: boolean;
+  canonical?: string;
 }
 
 export default function AdvancedSEO({
@@ -42,20 +42,21 @@ export default function AdvancedSEO({
   jsonLd,
   noindex = false,
   nofollow = false,
-  canonical
+  canonical,
 }: SEOProps) {
-  const router = useRouter()
-  const config = getAppConfig()
+  const router = useRouter();
+  const config = getAppConfig();
 
   // Generate dynamic content
-  const siteTitle = 'Zion Tech Marketplace'
-  const defaultDescription = 'Professional tech marketplace for AI hardware, talent, and enterprise solutions'
-  const defaultImage = `${config.app.url}/images/og-default.jpg`
-  
-  const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle
-  const pageDescription = description || defaultDescription
-  const pageUrl = url || `${config.app.url}${router.asPath}`
-  const pageImage = image || defaultImage
+  const siteTitle = 'Zion Tech Marketplace';
+  const defaultDescription =
+    'Professional tech marketplace for AI hardware, talent, and enterprise solutions';
+  const defaultImage = `${config.app.url}/images/og-default.jpg`;
+
+  const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+  const pageDescription = description || defaultDescription;
+  const pageUrl = url || `${config.app.url}${router.asPath}`;
+  const pageImage = image || defaultImage;
 
   // Generate structured data
   const generateStructuredData = () => {
@@ -68,9 +69,9 @@ export default function AdvancedSEO({
       potentialAction: {
         '@type': 'SearchAction',
         target: `${config.app.url}/search?q={search_term_string}`,
-        'query-input': 'required name=search_term_string'
-      }
-    }
+        'query-input': 'required name=search_term_string',
+      },
+    };
 
     // Article structured data
     if (type === 'article' && article) {
@@ -82,21 +83,21 @@ export default function AdvancedSEO({
         image: pageImage,
         author: {
           '@type': 'Person',
-          name: article.author || 'Zion Team'
+          name: article.author || 'Zion Team',
         },
         publisher: {
           '@type': 'Organization',
           name: siteTitle,
           logo: {
             '@type': 'ImageObject',
-            url: `${config.app.url}/logos/zion-logo.png`
-          }
+            url: `${config.app.url}/logos/zion-logo.png`,
+          },
         },
         datePublished: article.publishedTime,
         dateModified: article.modifiedTime || article.publishedTime,
         articleSection: article.section,
-        keywords: article.tags?.join(', ')
-      }
+        keywords: article.tags?.join(', '),
+      };
     }
 
     // Product structured data
@@ -109,7 +110,7 @@ export default function AdvancedSEO({
         image: pageImage,
         brand: {
           '@type': 'Brand',
-          name: product.brand || 'Zion'
+          name: product.brand || 'Zion',
         },
         sku: product.sku,
         offers: {
@@ -120,10 +121,10 @@ export default function AdvancedSEO({
           itemCondition: `https://schema.org/${product.condition === 'new' ? 'NewCondition' : 'UsedCondition'}`,
           seller: {
             '@type': 'Organization',
-            name: siteTitle
-          }
-        }
-      }
+            name: siteTitle,
+          },
+        },
+      };
     }
 
     // Custom JSON-LD
@@ -131,32 +132,34 @@ export default function AdvancedSEO({
       if (typeof jsonLd === 'object' && jsonLd !== null) {
         return {
           '@context': 'https://schema.org',
-          ...jsonLd
-        }
+          ...jsonLd,
+        };
       }
       // fallback if jsonLd is not an object
       return {
-        '@context': 'https://schema.org'
-      }
+        '@context': 'https://schema.org',
+      };
     }
 
-    return baseData
-  }
+    return baseData;
+  };
 
   // Robots meta
   const robotsContent = [
     noindex ? 'noindex' : 'index',
-    nofollow ? 'nofollow' : 'follow'
-  ].join(', ')
+    nofollow ? 'nofollow' : 'follow',
+  ].join(', ');
 
   return (
     <Head>
       {/* Basic Meta Tags */}
       <title>{pageTitle}</title>
       <meta name="description" content={pageDescription} />
-      {keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+      {keywords.length > 0 && (
+        <meta name="keywords" content={keywords.join(', ')} />
+      )}
       <meta name="robots" content={robotsContent} />
-      
+
       {/* Canonical URL */}
       <link rel="canonical" href={canonical || pageUrl} />
 
@@ -173,8 +176,14 @@ export default function AdvancedSEO({
       {type === 'article' && article && (
         <>
           <meta property="article:author" content={article.author} />
-          <meta property="article:published_time" content={article.publishedTime} />
-          <meta property="article:modified_time" content={article.modifiedTime} />
+          <meta
+            property="article:published_time"
+            content={article.publishedTime}
+          />
+          <meta
+            property="article:modified_time"
+            content={article.modifiedTime}
+          />
           <meta property="article:section" content={article.section} />
           {article.tags?.map((tag, index) => (
             <meta key={index} property="article:tag" content={tag} />
@@ -185,9 +194,18 @@ export default function AdvancedSEO({
       {/* Product specific OG tags */}
       {type === 'product' && product && (
         <>
-          <meta property="product:price:amount" content={product.price?.toString()} />
-          <meta property="product:price:currency" content={product.currency || 'USD'} />
-          <meta property="product:availability" content={product.availability} />
+          <meta
+            property="product:price:amount"
+            content={product.price?.toString()}
+          />
+          <meta
+            property="product:price:currency"
+            content={product.currency || 'USD'}
+          />
+          <meta
+            property="product:availability"
+            content={product.availability}
+          />
           <meta property="product:condition" content={product.condition} />
         </>
       )}
@@ -200,7 +218,10 @@ export default function AdvancedSEO({
       <meta name="twitter:image" content={pageImage} />
 
       {/* Additional Meta Tags */}
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      />
       <meta name="theme-color" content="#2563eb" />
       <meta name="application-name" content={siteTitle} />
       <meta name="apple-mobile-web-app-title" content={siteTitle} />
@@ -212,13 +233,17 @@ export default function AdvancedSEO({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateStructuredData())
+          __html: JSON.stringify(generateStructuredData()),
         }}
       />
 
       {/* Preconnect to external domains */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossOrigin="anonymous"
+      />
       <link rel="preconnect" href="https://gnwtggeptzkqnduuthto.supabase.co" />
 
       {/* DNS Prefetch */}
@@ -227,16 +252,40 @@ export default function AdvancedSEO({
 
       {/* Favicons */}
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/favicon-32x32.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/favicon-16x16.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/apple-touch-icon.png"
+      />
       <link rel="manifest" href="/manifest.json" />
 
       {/* Alternative formats */}
-      <link rel="alternate" type="application/rss+xml" title={`${siteTitle} RSS Feed`} href="/rss.xml" />
-      <link rel="alternate" type="application/atom+xml" title={`${siteTitle} Atom Feed`} href="/atom.xml" />
+      <link
+        rel="alternate"
+        type="application/rss+xml"
+        title={`${siteTitle} RSS Feed`}
+        href="/rss.xml"
+      />
+      <link
+        rel="alternate"
+        type="application/atom+xml"
+        title={`${siteTitle} Atom Feed`}
+        href="/atom.xml"
+      />
     </Head>
-  )
+  );
 }
 
 // Utility function for generating SEO-friendly URLs
@@ -244,51 +293,58 @@ export const generateSEOUrl = (title: string): string => {
   return title
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '')
-}
+    .replace(/(^-|-$)/g, '');
+};
 
 // Utility function for extracting keywords from content
-export const extractKeywords = (content: string, maxKeywords: number = 10): string[] => {
+export const extractKeywords = (
+  content: string,
+  maxKeywords: number = 10,
+): string[] => {
   const words = content
     .toLowerCase()
     .replace(/[^\w\s]/g, ' ')
     .split(/\s+/)
-    .filter(word => word.length > 3)
+    .filter((word) => word.length > 3);
 
   // Count word frequency
-  const wordCount: Record<string, number> = {}
-  words.forEach(word => {
-    wordCount[word] = (wordCount[word] || 0) + 1
-  })
+  const wordCount: Record<string, number> = {};
+  words.forEach((word) => {
+    wordCount[word] = (wordCount[word] || 0) + 1;
+  });
 
   // Sort by frequency and return top keywords
   return Object.entries(wordCount)
     .sort(([, a], [, b]) => b - a)
     .slice(0, maxKeywords)
-    .map(([word]) => word)
-}
+    .map(([word]) => word);
+};
 
 // Hook for dynamic SEO based on page content
 export const useDynamicSEO = (content?: string) => {
-  const router = useRouter()
-  
+  const router = useRouter();
+
   const generateSEO = () => {
-    const _path = router.pathname
-    const segments = path.split('/').filter(Boolean)
-    
+    const _path = router.pathname;
+    const segments = path.split('/').filter(Boolean);
+
     // Generate title based on route
-    let title = 'Zion Tech Marketplace'
+    let title = 'Zion Tech Marketplace';
     if (segments.length > 0) {
       title = segments
-        .map((segment: string) => segment.replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()))
-        .join(' | ')
+        .map((segment: string) =>
+          segment
+            .replace(/-/g, ' ')
+            .replace(/\b\w/g, (l: string) => l.toUpperCase()),
+        )
+        .join(' | ');
     }
 
     // Generate keywords from content
-    const keywords = content ? extractKeywords(content, 8) : []
+    const keywords = content ? extractKeywords(content, 8) : [];
 
-    return { title, keywords }
-  }
+    return { title, keywords };
+  };
 
-  return generateSEO()
-} 
+  return generateSEO();
+};

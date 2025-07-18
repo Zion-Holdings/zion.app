@@ -2,21 +2,25 @@ import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { Search, Filter, List, Loader2 } from '@/components/ui/icons';
 import { useRouter } from 'next/router';
 
-
-
-
-
-
-
-
-
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Slider } from '@/components/ui/slider';
 import { Separator } from '@/components/ui/separator';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
 import { EnhancedSearchInput } from './EnhancedSearchInput';
 import { generateSearchSuggestions } from '@/data/marketplaceData';
 import { logErrorToProduction, logInfo } from '@/utils/productionLogger';
@@ -55,37 +59,39 @@ interface SearchResponse {
 }
 
 // Highlight search terms in text
-const HighlightText: React.FC<{ text: string; searchTerm: string; className?: string }> = ({ 
-  text, 
-  searchTerm, 
-  className = '' 
-}) => {
+const HighlightText: React.FC<{
+  text: string;
+  searchTerm: string;
+  className?: string;
+}> = ({ text, searchTerm, className = '' }) => {
   if (!searchTerm.trim()) {
     return <span className={className}>{text}</span>;
   }
 
-  const parts = text.split(new RegExp(`(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi'));
-  
+  const parts = text.split(
+    new RegExp(`(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi'),
+  );
+
   return (
     <span className={className}>
-      {parts.map((part, index) => 
+      {parts.map((part, index) =>
         part.toLowerCase() === searchTerm.toLowerCase() ? (
           <mark key={index} className="bg-yellow-200 text-black px-1 rounded">
             {part}
           </mark>
         ) : (
           part
-        )
+        ),
       )}
     </span>
   );
 };
 
 // Search Result Card Component
-const SearchResultCard: React.FC<{ 
-  result: SearchResult; 
-  searchTerm: string; 
-  viewMode: 'grid' | 'list' 
+const SearchResultCard: React.FC<{
+  result: SearchResult;
+  searchTerm: string;
+  viewMode: 'grid' | 'list';
 }> = ({ result, searchTerm, viewMode }) => {
   const router = useRouter();
 
@@ -95,22 +101,27 @@ const SearchResultCard: React.FC<{
     }
   };
 
-  const cardClass = viewMode === 'grid' 
-    ? "bg-card border rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer"
-    : "bg-card border rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer flex gap-4";
+  const cardClass =
+    viewMode === 'grid'
+      ? 'bg-card border rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer'
+      : 'bg-card border rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer flex gap-4';
 
   return (
     <div onClick={handleClick} className={cardClass}>
       {result.image && (
-        <div className={viewMode === 'grid' ? "mb-3" : "flex-shrink-0"}>
-          <img 
-            src={result.image} 
+        <div className={viewMode === 'grid' ? 'mb-3' : 'flex-shrink-0'}>
+          <img
+            src={result.image}
             alt={result.title}
-            className={viewMode === 'grid' ? "w-full h-48 object-cover rounded" : "w-20 h-20 object-cover rounded"}
+            className={
+              viewMode === 'grid'
+                ? 'w-full h-48 object-cover rounded'
+                : 'w-20 h-20 object-cover rounded'
+            }
           />
         </div>
       )}
-      
+
       <div className="flex-1">
         <div className="flex items-start justify-between mb-2">
           <div>
@@ -124,9 +135,12 @@ const SearchResultCard: React.FC<{
           {result.price && (
             <div className="text-right">
               <span className="font-bold text-primary">
-                {result.currency === 'USD' ? '$' : ''}{result.price}
+                {result.currency === 'USD' ? '$' : ''}
+                {result.price}
               </span>
-              {result.type === 'talent' && <span className="text-sm text-muted-foreground">/hr</span>}
+              {result.type === 'talent' && (
+                <span className="text-sm text-muted-foreground">/hr</span>
+              )}
             </div>
           )}
         </div>
@@ -148,7 +162,7 @@ const SearchResultCard: React.FC<{
               </Badge>
             ))}
           </div>
-          
+
           {result.rating && (
             <div className="flex items-center gap-1">
               <span className="text-yellow-500">★</span>
@@ -171,22 +185,22 @@ const FilterSidebar: React.FC<{
     { id: 'product', label: 'Products' },
     { id: 'talent', label: 'Talent' },
     { id: 'service', label: 'Services' },
-    { id: 'blog', label: 'Blog Posts' }
+    { id: 'blog', label: 'Blog Posts' },
   ];
 
   const handleTypeChange = (typeId: string, _checked: boolean) => {
-    const newTypes = checked 
+    const newTypes = checked
       ? [...filters.types, typeId]
-      : filters.types.filter(t => t !== typeId);
-    
+      : filters.types.filter((t) => t !== typeId);
+
     onFiltersChange({ ...filters, types: newTypes });
   };
 
   const handlePriceChange = (_values: number[]) => {
-    onFiltersChange({ 
-      ...filters, 
-      minPrice: values[0] ?? 0, 
-      maxPrice: values[1] ?? 10000 
+    onFiltersChange({
+      ...filters,
+      minPrice: values[0] ?? 0,
+      maxPrice: values[1] ?? 10000,
     });
   };
 
@@ -195,12 +209,14 @@ const FilterSidebar: React.FC<{
       <div>
         <h3 className="font-semibold mb-3">Content Type</h3>
         <div className="space-y-2">
-          {typeOptions.map(option => (
+          {typeOptions.map((option) => (
             <div key={option.id} className="flex items-center space-x-2">
               <Checkbox
                 id={option.id}
                 checked={filters.types.includes(option.id)}
-                onCheckedChange={(checked) => handleTypeChange(option.id, !!checked)}
+                onCheckedChange={(checked) =>
+                  handleTypeChange(option.id, !!checked)
+                }
               />
               <label htmlFor={option.id} className="text-sm">
                 {option.label}
@@ -214,15 +230,21 @@ const FilterSidebar: React.FC<{
 
       <div>
         <h3 className="font-semibold mb-3">Category</h3>
-        <Select value={filters.category} onValueChange={(value) => 
-          onFiltersChange({ ...filters, category: value === 'all' ? '' : value })
-        }>
+        <Select
+          value={filters.category}
+          onValueChange={(value) =>
+            onFiltersChange({
+              ...filters,
+              category: value === 'all' ? '' : value,
+            })
+          }
+        >
           <SelectTrigger>
             <SelectValue placeholder="All Categories" />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">All Categories</SelectItem>
-            {availableCategories.map(category => (
+            {availableCategories.map((category) => (
               <SelectItem key={category} value={category}>
                 {category}
               </SelectItem>
@@ -255,9 +277,12 @@ const FilterSidebar: React.FC<{
 
       <div>
         <h3 className="font-semibold mb-3">Minimum Rating</h3>
-        <Select value={filters.minRating.toString()} onValueChange={(value) => 
-          onFiltersChange({ ...filters, minRating: parseFloat(value) })
-        }>
+        <Select
+          value={filters.minRating.toString()}
+          onValueChange={(value) =>
+            onFiltersChange({ ...filters, minRating: parseFloat(value) })
+          }
+        >
           <SelectTrigger>
             <SelectValue />
           </SelectTrigger>
@@ -276,17 +301,17 @@ const FilterSidebar: React.FC<{
 };
 
 // No Results Component
-const NoResultsState: React.FC<{ searchTerm: string; onNewSearch: (term: string) => void }> = ({ 
-  searchTerm, 
-  onNewSearch 
-}) => {
+const NoResultsState: React.FC<{
+  searchTerm: string;
+  onNewSearch: (term: string) => void;
+}> = ({ searchTerm, onNewSearch }) => {
   const suggestions = [
-    "AI & Machine Learning",
-    "Web Development",
-    "Mobile App Development",
-    "Data Analysis",
-    "UI/UX Design",
-    "Blockchain Development"
+    'AI & Machine Learning',
+    'Web Development',
+    'Mobile App Development',
+    'Data Analysis',
+    'UI/UX Design',
+    'Blockchain Development',
   ];
 
   return (
@@ -295,7 +320,8 @@ const NoResultsState: React.FC<{ searchTerm: string; onNewSearch: (term: string)
         <Search className="mx-auto h-16 w-16 text-muted-foreground mb-4" />
         <h2 className="text-2xl font-semibold mb-2">No results found</h2>
         <p className="text-muted-foreground mb-6">
-          We couldn't find anything matching "{searchTerm}". Try adjusting your search or filters.
+          We couldn't find anything matching "{searchTerm}". Try adjusting your
+          search or filters.
         </p>
       </div>
 
@@ -341,14 +367,14 @@ export const AdvancedSearchResults: React.FC = () => {
   const [hasMore, setHasMore] = useState(false);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [showFilters, setShowFilters] = useState(false);
-  
+
   const [filters, setFilters] = useState<SearchFilters>({
     types: [],
     category: '',
     minPrice: 0,
     maxPrice: 10000,
     minRating: 0,
-    sort: 'relevance'
+    sort: 'relevance',
   });
 
   const suggestions = generateSearchSuggestions();
@@ -356,7 +382,7 @@ export const AdvancedSearchResults: React.FC = () => {
   // Extract available categories from results for filter
   const availableCategories = useMemo(() => {
     const categories = new Set<string>();
-    results.forEach(result => {
+    results.forEach((result) => {
       if (result.category) categories.add(result.category);
     });
     return Array.from(categories).sort();
@@ -385,7 +411,9 @@ export const AdvancedSearchResults: React.FC = () => {
         query: searchTerm,
         page: currentPage.toString(),
         itemsPerPage: '20',
-        types: Array.isArray(searchFilters.types) ? searchFilters.types.join(',') : '',
+        types: Array.isArray(searchFilters.types)
+          ? searchFilters.types.join(',')
+          : '',
         category: (searchFilters.category || '').toString(),
         minPrice: (searchFilters.minPrice ?? '').toString(),
         maxPrice: (searchFilters.maxPrice ?? '').toString(),
@@ -418,17 +446,17 @@ export const AdvancedSearchResults: React.FC = () => {
       if (currentPage === 1) {
         setResults(data.results);
       } else {
-        setResults(prev => [...prev, ...data.results]);
+        setResults((prev) => [...prev, ...data.results]);
       }
-      
+
       setTotalCount(data.totalCount);
       setCurrentPage(data.page);
       setHasMore(data.hasMore);
 
-      logInfo('Search completed', { 
-        term: searchTerm, 
-        resultCount: data.results.length, 
-        totalCount: data.totalCount 
+      logInfo('Search completed', {
+        term: searchTerm,
+        resultCount: data.results.length,
+        totalCount: data.totalCount,
       });
     } catch {
       logErrorToProduction('Search failed', { data: error });
@@ -450,7 +478,9 @@ export const AdvancedSearchResults: React.FC = () => {
   // Handle search input
   const handleSearch = (_term: string) => {
     setSearchTerm(term);
-    router.push(`/search?q=${encodeURIComponent(term)}`, undefined, { shallow: true });
+    router.push(`/search?q=${encodeURIComponent(term)}`, undefined, {
+      shallow: true,
+    });
   };
 
   // Handle filter changes
@@ -466,8 +496,9 @@ export const AdvancedSearchResults: React.FC = () => {
   };
 
   // Active filters count
-  const activeFiltersCount = filters.types.length + 
-    (filters.category ? 1 : 0) + 
+  const activeFiltersCount =
+    filters.types.length +
+    (filters.category ? 1 : 0) +
     (filters.minPrice > 0 || filters.maxPrice < 10000 ? 1 : 0) +
     (filters.minRating > 0 ? 1 : 0);
 
@@ -485,7 +516,10 @@ export const AdvancedSearchResults: React.FC = () => {
               placeholder="Search products, talent, services, and more..."
             />
           </div>
-          <Button onClick={() => handleSearch(searchTerm)} disabled={!searchTerm.trim()}>
+          <Button
+            onClick={() => handleSearch(searchTerm)}
+            disabled={!searchTerm.trim()}
+          >
             <Search className="h-4 w-4" />
           </Button>
         </div>
@@ -495,15 +529,20 @@ export const AdvancedSearchResults: React.FC = () => {
             <div>
               <h1 className="text-2xl font-bold">Search Results</h1>
               <p className="text-muted-foreground">
-                {loading ? 'Searching...' : `${totalCount} results for "${searchTerm}"`}
+                {loading
+                  ? 'Searching...'
+                  : `${totalCount} results for "${searchTerm}"`}
               </p>
             </div>
 
             <div className="flex items-center gap-2">
               {/* Sort Options */}
-              <Select value={filters.sort} onValueChange={(value) => 
-                setFilters({ ...filters, sort: value })
-              }>
+              <Select
+                value={filters.sort}
+                onValueChange={(value) =>
+                  setFilters({ ...filters, sort: value })
+                }
+              >
                 <SelectTrigger className="w-40">
                   <SelectValue />
                 </SelectTrigger>
@@ -538,7 +577,8 @@ export const AdvancedSearchResults: React.FC = () => {
                 <SheetTrigger asChild>
                   <Button variant="outline" className="lg:hidden">
                     <Filter className="h-4 w-4 mr-2" />
-                    Filters {activeFiltersCount > 0 && `(${activeFiltersCount})`}
+                    Filters{' '}
+                    {activeFiltersCount > 0 && `(${activeFiltersCount})`}
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="left" className="w-80">
@@ -570,14 +610,16 @@ export const AdvancedSearchResults: React.FC = () => {
                   <Button
                     variant="ghost"
                     size="sm"
-                    onClick={() => setFilters({
-                      types: [],
-                      category: '',
-                      minPrice: 0,
-                      maxPrice: 10000,
-                      minRating: 0,
-                      sort: 'relevance'
-                    })}
+                    onClick={() =>
+                      setFilters({
+                        types: [],
+                        category: '',
+                        minPrice: 0,
+                        maxPrice: 10000,
+                        minRating: 0,
+                        sort: 'relevance',
+                      })
+                    }
                   >
                     Clear All
                   </Button>
@@ -598,17 +640,20 @@ export const AdvancedSearchResults: React.FC = () => {
                 <Loader2 className="h-8 w-8 animate-spin" />
               </div>
             ) : results.length === 0 && searchTerm ? (
-              <NoResultsState 
-                searchTerm={searchTerm} 
+              <NoResultsState
+                searchTerm={searchTerm}
                 onNewSearch={handleSearch}
               />
             ) : (
               <>
                 {/* Results Grid/List */}
-                <div className={viewMode === 'grid' 
-                  ? "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-6"
-                  : "space-y-4 mb-6"
-                }>
+                <div
+                  className={
+                    viewMode === 'grid'
+                      ? 'grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-6'
+                      : 'space-y-4 mb-6'
+                  }
+                >
                   {results.map((result) => (
                     <SearchResultCard
                       key={`${result.type}-${result.id}`}
@@ -622,8 +667,8 @@ export const AdvancedSearchResults: React.FC = () => {
                 {/* Load More Button */}
                 {hasMore && (
                   <div className="text-center">
-                    <Button 
-                      onClick={loadMore} 
+                    <Button
+                      onClick={loadMore}
                       disabled={loading}
                       variant="outline"
                     >
@@ -647,4 +692,4 @@ export const AdvancedSearchResults: React.FC = () => {
   );
 };
 
-export default AdvancedSearchResults; 
+export default AdvancedSearchResults;

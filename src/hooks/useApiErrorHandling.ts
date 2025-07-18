@@ -1,10 +1,9 @@
 import { useQueryClient } from '@tanstack/react-query';
 import { useCallback } from 'react';
 import { toast } from '@/hooks/use-toast';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 // Remove static import
 // import * as Sentry from '@sentry/nextjs';
-
 
 interface ApiErrorHandlingOptions {
   showToast?: boolean;
@@ -17,15 +16,11 @@ export const useApiErrorHandling = () => {
 
   const handleApiError = useCallback(
     (error: Error, _options: ApiErrorHandlingOptions = {}) => {
-      const {
-        showToast = true,
-        logToSentry = true,
-        customMessage,
-      } = options;
+      const { showToast = true, logToSentry = true, customMessage } = options;
 
       // Determine error message
       let errorMessage = customMessage || 'An unexpected error occurred';
-      
+
       if (error.message?.includes('fetch')) {
         errorMessage = 'Network error – please retry';
       } else if (error.message?.includes('timeout')) {
@@ -56,7 +51,7 @@ export const useApiErrorHandling = () => {
 
       logErrorToProduction('API Error:', { data: error });
     },
-    []
+    [],
   );
 
   const retryAllQueries = useCallback(async () => {
@@ -95,17 +90,20 @@ export const useApiErrorHandling = () => {
         });
       }
     },
-    [queryClient]
+    [queryClient],
   );
 
   const isNetworkError = useCallback((_error: Error) => {
-    return error.message?.includes('fetch') ||
-           error.message?.includes('network') ||
-           error.message?.includes('timeout') ||
-           !navigator.onLine;
+    return (
+      error.message?.includes('fetch') ||
+      error.message?.includes('network') ||
+      error.message?.includes('timeout') ||
+      !navigator.onLine
+    );
   }, []);
 
-  const isOffline = typeof navigator !== 'undefined' ? !navigator.onLine : false;
+  const isOffline =
+    typeof navigator !== 'undefined' ? !navigator.onLine : false;
 
   return {
     handleApiError,
@@ -114,4 +112,4 @@ export const useApiErrorHandling = () => {
     isNetworkError,
     isOffline,
   };
-}; 
+};

@@ -55,9 +55,7 @@ interface ValidatedFormFieldProps {
   debounceMs?: number;
 }
 
-function isReactHookForm(
-  form: unknown,
-): form is {
+function isReactHookForm(form: unknown): form is {
   watch: (name: string) => unknown;
   formState: {
     errors: Record<string, unknown>;

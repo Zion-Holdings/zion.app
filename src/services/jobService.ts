@@ -1,6 +1,5 @@
-
-import { supabase } from "@/integrations/supabase/client";
-import type { Job } from "@/types/jobs";
+import { supabase } from '@/integrations/supabase/client';
+import type { Job } from '@/types/jobs';
 
 export async function createJob(jobData: Job) {
   if (!supabase) throw new Error('Supabase client is not initialized');

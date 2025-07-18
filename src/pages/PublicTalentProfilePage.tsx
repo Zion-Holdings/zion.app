@@ -1,23 +1,13 @@
-
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import { MapPin, Clock } from '@/components/ui/icons';
-import { useRouter } from "next/router";
-import { supabase } from "@/integrations/supabase/client";
-import { toast } from "@/components/ui/use-toast";
-import { SEO } from "@/components/SEO";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { HireNowCTA } from "@/components/profile/HireNowCTA";
+import { useRouter } from 'next/router';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from '@/components/ui/use-toast';
+import { SEO } from '@/components/SEO';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Badge } from '@/components/ui/badge';
+import { HireNowCTA } from '@/components/profile/HireNowCTA';
 import { logErrorToProduction } from '@/utils/productionLogger';
-
-
-
-
-
-
-
-
-
 
 export default function ProfilePage() {
   // useParams may be untyped in this environment, so avoid passing a
@@ -35,9 +25,9 @@ export default function ProfilePage() {
       try {
         if (!supabase) throw new Error('Supabase client not initialized');
         const { data, error } = await supabase
-          .from("talent_profiles")
-          .select("*")
-          .eq("id", profileId)
+          .from('talent_profiles')
+          .select('*')
+          .eq('id', profileId)
           .single();
 
         if (error) {
@@ -46,12 +36,16 @@ export default function ProfilePage() {
 
         setProfileData(data);
       } catch {
-        logErrorToProduction(error instanceof Error ? error : String(error), error instanceof Error ? error : undefined, { message: 'Error fetching profile' });
+        logErrorToProduction(
+          error instanceof Error ? error : String(error),
+          error instanceof Error ? error : undefined,
+          { message: 'Error fetching profile' },
+        );
         setIsError(true);
         toast({
-          title: "Error",
-          description: "Failed to load profile. Please try again later.",
-          variant: "destructive",
+          title: 'Error',
+          description: 'Failed to load profile. Please try again later.',
+          variant: 'destructive',
         });
       } finally {
         setIsLoading(false);
@@ -71,7 +65,12 @@ export default function ProfilePage() {
     );
   }
 
-  if (isError || !profileData || typeof profileData !== 'object' || profileData === null) {
+  if (
+    isError ||
+    !profileData ||
+    typeof profileData !== 'object' ||
+    profileData === null
+  ) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <p className="text-red-500">Failed to load profile.</p>
@@ -102,7 +101,7 @@ export default function ProfilePage() {
     <>
       <SEO
         title={`${pd.full_name ?? ''} | Talent Profile`}
-        description={pd.bio || "View the profile of this talented individual."}
+        description={pd.bio || 'View the profile of this talented individual.'}
       />
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-12 gap-6">
@@ -115,7 +114,10 @@ export default function ProfilePage() {
                 <div className="relative mr-4">
                   <Avatar className="w-24 h-24">
                     {pd.profile_picture_url ? (
-                      <AvatarImage src={pd.profile_picture_url} alt={pd.full_name ?? ''} />
+                      <AvatarImage
+                        src={pd.profile_picture_url}
+                        alt={pd.full_name ?? ''}
+                      />
                     ) : (
                       <AvatarFallback>{pd.full_name?.charAt(0)}</AvatarFallback>
                     )}
@@ -131,8 +133,12 @@ export default function ProfilePage() {
                 <div className="flex-1">
                   <div className="flex justify-between items-start">
                     <div>
-                      <h1 className="text-2xl font-bold text-white">{pd.full_name}</h1>
-                      <p className="text-zion-cyan font-medium">{pd.professional_title}</p>
+                      <h1 className="text-2xl font-bold text-white">
+                        {pd.full_name}
+                      </h1>
+                      <p className="text-zion-cyan font-medium">
+                        {pd.professional_title}
+                      </p>
                     </div>
                     {/* Add Save/Unsave Button Here */}
                   </div>
@@ -161,7 +167,9 @@ export default function ProfilePage() {
                   <h4 className="text-lg font-bold text-white mb-2">Skills</h4>
                   <div className="flex flex-wrap gap-2">
                     {pd.skills.map((skill: string, index: number) => (
-                      <Badge key={skill + index} variant="secondary">{skill}</Badge>
+                      <Badge key={skill + index} variant="secondary">
+                        {skill}
+                      </Badge>
                     ))}
                   </div>
                 </div>
@@ -171,7 +179,9 @@ export default function ProfilePage() {
             {/* Bio Section */}
             <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6 mb-6">
               <h2 className="text-xl font-bold text-white mb-3">About Me</h2>
-              <p className="text-zion-slate-light">{pd.bio || "No bio provided."}</p>
+              <p className="text-zion-slate-light">
+                {pd.bio || 'No bio provided.'}
+              </p>
             </div>
 
             {/* Portfolio Section */}
@@ -192,7 +202,9 @@ export default function ProfilePage() {
                     </a>
                   ))
                 ) : (
-                  <p className="text-zion-slate-light">No portfolio links provided.</p>
+                  <p className="text-zion-slate-light">
+                    No portfolio links provided.
+                  </p>
                 )}
               </div>
             </div>
@@ -200,7 +212,9 @@ export default function ProfilePage() {
             {/* Experience Section */}
             <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6 mb-6">
               <h2 className="text-xl font-bold text-white mb-3">Experience</h2>
-              <p className="text-zion-slate-light">{pd.experience || "No experience provided."}</p>
+              <p className="text-zion-slate-light">
+                {pd.experience || 'No experience provided.'}
+              </p>
             </div>
 
             {/* Social Links */}
@@ -254,7 +268,7 @@ export default function ProfilePage() {
                 id: pd.id || '',
                 full_name: pd.full_name || '',
                 professional_title: pd.professional_title || '',
-                hourly_rate: pd.hourly_rate || 0
+                hourly_rate: pd.hourly_rate || 0,
               }}
             />
             {/* Placeholder for other sidebar elements */}

@@ -1,7 +1,6 @@
 import { useFavorites } from '@/hooks/useFavorites';
 import { X } from '@/components/ui/icons';
 
-
 import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
 import { TALENT_PROFILES } from '@/data/talentData';
 import { ProductListingCard } from '@/components/ProductListingCard';
@@ -28,37 +27,43 @@ export default function WishlistPage() {
     }
   }, [user, isAuthLoading, router]);
 
-  if (isAuthLoading || !user) { // Show loading or null while auth check or redirect happens
+  if (isAuthLoading || !user) {
+    // Show loading or null while auth check or redirect happens
     return null; // Or a loading spinner
   }
 
   const addToCart = (_item: ProductListing) => {
-    if (items.some(i => i.id === item.id)) return;
+    if (items.some((i) => i.id === item.id)) return;
     dispatch({
       type: 'ADD_ITEM',
       payload: {
         id: item.id,
         name: item.title || 'Item',
         price: item.price || 0,
-        quantity: 1
-      }
+        quantity: 1,
+      },
     });
     toast.success(`1× ${item.title || 'Item'} added`);
   };
 
-  const productMap = MARKETPLACE_LISTINGS.reduce<Record<string, ProductListing>>((acc, p) => {
+  const productMap = MARKETPLACE_LISTINGS.reduce<
+    Record<string, ProductListing>
+  >((acc, p) => {
     acc[p.id] = p;
     return acc;
   }, {});
-  const talentMap = TALENT_PROFILES.reduce<Record<string, TalentProfile>>((acc, t) => {
-    acc[t.id] = t;
-    return acc;
-  }, {});
+  const talentMap = TALENT_PROFILES.reduce<Record<string, TalentProfile>>(
+    (acc, t) => {
+      acc[t.id] = t;
+      return acc;
+    },
+    {},
+  );
 
   const sortedFavorites = [...favorites].sort(
     (a, b) =>
       new Date(b.created_at || '').getTime() -
-      new Date(a.created_at || '').getTime()
+      new Date(a.created_at || '').getTime(),
   );
 
   return (
@@ -70,7 +75,7 @@ export default function WishlistPage() {
         <p>No items saved.</p>
       ) : (
         <div className="responsive-grid">
-          {sortedFavorites.map(fav => {
+          {sortedFavorites.map((fav) => {
             if (fav.item_type === 'talent') {
               const talent = talentMap[fav.item_id];
               return talent ? (
@@ -111,9 +116,11 @@ export default function WishlistPage() {
                   size="sm"
                   className="absolute bottom-2 right-2"
                   onClick={() => addToCart(item)}
-                  disabled={items.some(i => i.id === item.id)}
+                  disabled={items.some((i) => i.id === item.id)}
                 >
-                  {items.some(i => i.id === item.id) ? 'In Cart' : 'Add to Cart'}
+                  {items.some((i) => i.id === item.id)
+                    ? 'In Cart'
+                    : 'Add to Cart'}
                 </Button>
                 {fav.created_at && (
                   <p className="mt-1 text-xs text-muted-foreground">

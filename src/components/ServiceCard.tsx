@@ -1,7 +1,7 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
-import { useRequestQuoteWizard } from "@/context";
-import { FavoriteButton } from "@/components/FavoriteButton";
+import React from 'react';
+import { Button } from '@/components/ui/button';
+import { useRequestQuoteWizard } from '@/context';
+import { FavoriteButton } from '@/components/FavoriteButton';
 
 interface ServiceCardProps {
   service: { id: string; title: string };
@@ -30,7 +30,11 @@ export default function ServiceCard({ service, onSelect }: ServiceCardProps) {
     >
       <FavoriteButton itemId={service.id} />
       <h3 className="text-white font-medium mb-2">{service.title}</h3>
-      <Button size="sm" onClick={handleRequestQuote} data-testid="request-quote-btn">
+      <Button
+        size="sm"
+        onClick={handleRequestQuote}
+        data-testid="request-quote-btn"
+      >
         Request Quote
       </Button>
     </div>

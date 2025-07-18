@@ -9,7 +9,7 @@ import { memo, useMemo, useCallback } from 'react';
 // Higher-order component for automatic memoization
 export function withMemo<T extends object>(
   Component: React.ComponentType<T>,
-  compare?: (prevProps: T, nextProps: T) => boolean
+  compare?: (prevProps: T, nextProps: T) => boolean,
 ) {
   return memo(Component, compare);
 }
@@ -17,17 +17,19 @@ export function withMemo<T extends object>(
 // Memoization for expensive calculations
 export function useExpensiveMemo<T>(
   factory: () => T,
-  deps: React.DependencyList
+  deps: React.DependencyList,
 ): T {
   return useMemo(() => {
     const start = performance.now();
     const result = factory();
     const end = performance.now();
-    
+
     if (process.env.NODE_ENV === 'development' && end - start > 50) {
-      logWarn(`Expensive calculation took ${(end - start).toFixed(2)}ms`, { deps });
+      logWarn(`Expensive calculation took ${(end - start).toFixed(2)}ms`, {
+        deps,
+      });
     }
-    
+
     return result;
   }, deps);
 }
@@ -35,7 +37,7 @@ export function useExpensiveMemo<T>(
 // Stable callback memoization
 export function useStableCallback<T extends (...args: unknown[]) => unknown>(
   callback: T,
-  deps: React.DependencyList
+  deps: React.DependencyList,
 ): T {
   return useCallback(callback, deps);
 }
@@ -43,7 +45,7 @@ export function useStableCallback<T extends (...args: unknown[]) => unknown>(
 // Memoization for complex objects
 export function useObjectMemo<T extends object>(
   obj: T,
-  deps: React.DependencyList
+  deps: React.DependencyList,
 ): T {
   return useMemo(() => obj, deps);
 }
@@ -55,16 +57,16 @@ export function PerformanceWrapper<T extends object>({
   ..._props
 }: T & { children: React.ReactNode; name?: string }) {
   const renderStart = useMemo(() => performance.now(), []);
-  
+
   useMemo(() => {
     const renderEnd = performance.now();
     const renderTime = renderEnd - renderStart;
-    
+
     if (process.env.NODE_ENV === 'development' && renderTime > 100) {
       logWarn(`Slow render: ${name} took ${renderTime.toFixed(2)}ms`);
     }
   }, [name, renderStart]);
-  
+
   return children as React.ReactElement;
 }
 

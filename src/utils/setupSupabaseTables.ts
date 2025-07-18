@@ -1,7 +1,9 @@
-
-import { supabase } from "@/integrations/supabase/client";
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
-
+import { supabase } from '@/integrations/supabase/client';
+import {
+  logInfo,
+  logWarn,
+  logErrorToProduction,
+} from '@/utils/productionLogger';
 
 /**
  * Checks if the profiles table exists and creates it if it doesn't
@@ -11,19 +13,22 @@ export const ensureProfilesTableExists = async () => {
   if (!supabase) throw new Error('Supabase client not initialized');
   try {
     // Try to execute a simple query to check if the table exists
-    const { _error } = await supabase.rpc('exec', { 
+    const { _error } = await supabase.rpc('exec', {
       sql: `SELECT EXISTS (
         SELECT FROM information_schema.tables 
         WHERE table_schema = 'public' 
         AND table_name = 'profiles'
-      );`
+      );`,
     });
-    
+
     // If there's an error, log it and proceed with table creation
     if (error) {
-      logWarn('Error checking if profiles table exists, attempting to create it:', { data:  { data: error } });
+      logWarn(
+        'Error checking if profiles table exists, attempting to create it:',
+        { data: { data: error } },
+      );
     }
-    
+
     // Attempt to create the table and related objects
     const createTableQuery = `
       CREATE TABLE IF NOT EXISTS public.profiles (
@@ -94,12 +99,16 @@ export const ensureProfilesTableExists = async () => {
       END
       $$;
     `;
-    
+
     // Execute the creation query using RPC to avoid TypeScript errors
-    const { error: createError } = await supabase.rpc('exec', { sql: createTableQuery });
-    
+    const { error: createError } = await supabase.rpc('exec', {
+      sql: createTableQuery,
+    });
+
     if (createError) {
-      logErrorToProduction('Error creating profiles table:', { data: createError });
+      logErrorToProduction('Error creating profiles table:', {
+        data: createError,
+      });
     } else {
       logInfo('Profiles table setup completed');
     }

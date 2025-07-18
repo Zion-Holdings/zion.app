@@ -1,4 +1,3 @@
-
 export { TalentCardAvatar } from './TalentCardAvatar';
 export { TalentCardAvailability } from './TalentCardAvailability';
 export { TalentCardBadges } from './TalentCardBadges';

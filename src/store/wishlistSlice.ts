@@ -30,7 +30,7 @@ const wishlistSlice = createSlice({
       }
     },
     remove: (state, _action: PayloadAction<string>) => {
-      state.items = state.items.filter(id => id !== action.payload);
+      state.items = state.items.filter((id) => id !== action.payload);
     },
     set: (state, _action: PayloadAction<string[]>) => {
       state.items = action.payload;

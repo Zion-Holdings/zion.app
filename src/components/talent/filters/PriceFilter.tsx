@@ -1,12 +1,14 @@
-
-
-
-import { Slider } from "@/components/ui/slider";
+import { Slider } from '@/components/ui/slider';
 import { ChevronDown, ChevronUp } from '@/components/ui/icons';
-import type { PriceFilterProps } from "@/types/filters";
+import type { PriceFilterProps } from '@/types/filters';
 
-
-export function PriceFilter({ priceRange, setPriceRange, expanded, toggleSection, _isMobileFilterOpen }: PriceFilterProps) {
+export function PriceFilter({
+  priceRange,
+  setPriceRange,
+  expanded,
+  toggleSection,
+  _isMobileFilterOpen,
+}: PriceFilterProps) {
   const handleChange = (_values: number[]) => {
     setPriceRange([values[0] || 0, values[1] || 500]);
   };
@@ -24,7 +26,7 @@ export function PriceFilter({ priceRange, setPriceRange, expanded, toggleSection
           <ChevronDown className="h-4 w-4 text-zion-slate-light" />
         )}
       </button>
-      
+
       {expanded && (
         <div className="mt-6">
           <div className="flex justify-between text-sm text-zion-slate-light mb-2">

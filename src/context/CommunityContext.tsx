@@ -114,4 +114,3 @@ export function CommunityProvider({ children }: { children: ReactNode }) {
     </CommunityContext.Provider>
   );
 }
-

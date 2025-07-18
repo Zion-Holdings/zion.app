@@ -12,7 +12,7 @@ const ForgotPassword = () => {
     try {
       await forgotPassword(email);
       setMessage(
-        'Password reset instructions sent to your email if it exists in our system.'
+        'Password reset instructions sent to your email if it exists in our system.',
       );
     } catch (err) {
       setMessage(err.message || 'Failed to send reset instructions.');

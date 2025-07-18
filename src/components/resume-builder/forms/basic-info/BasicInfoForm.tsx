@@ -1,15 +1,14 @@
-
-import React, { useEffect } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "@/components/ui/button";
-import { Form } from "@/components/ui/form";
-import { Card } from "@/components/ui/card";
-import { RateOptimizationSection } from "../RateOptimizationSection";
-import { basicInfoSchema } from "./schema";
-import type { BasicInfoFormData } from "./schema";
-import { PersonalInfoFields } from "./PersonalInfoFields";
-import { ContactFields } from "./ContactFields";
+import React, { useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Button } from '@/components/ui/button';
+import { Form } from '@/components/ui/form';
+import { Card } from '@/components/ui/card';
+import { RateOptimizationSection } from '../RateOptimizationSection';
+import { basicInfoSchema } from './schema';
+import type { BasicInfoFormData } from './schema';
+import { PersonalInfoFields } from './PersonalInfoFields';
+import { ContactFields } from './ContactFields';
 
 export interface BasicInfoFormProps {
   resumeId?: string;
@@ -25,19 +24,19 @@ export function BasicInfoForm({
   onSave,
   skills = [],
   yearsExperience = 0,
-  onComplete
+  onComplete,
 }: BasicInfoFormProps) {
   const form = useForm<BasicInfoFormData>({
     resolver: zodResolver(basicInfoSchema),
     defaultValues: {
-      fullName: "",
-      title: "",
-      email: "",
-      phone: "",
-      location: "",
-      website: "",
-      linkedin: "",
-      github: "",
+      fullName: '',
+      title: '',
+      email: '',
+      phone: '',
+      location: '',
+      website: '',
+      linkedin: '',
+      github: '',
       hourlyRate: 0,
       ...initialData,
     },
@@ -47,7 +46,10 @@ export function BasicInfoForm({
     if (initialData) {
       Object.entries(initialData).forEach(([key, value]) => {
         if (value !== undefined) {
-          form.setValue(key as keyof BasicInfoFormData, value as BasicInfoFormData[keyof BasicInfoFormData]);
+          form.setValue(
+            key as keyof BasicInfoFormData,
+            value as BasicInfoFormData[keyof BasicInfoFormData],
+          );
         }
       });
     }
@@ -74,7 +76,7 @@ export function BasicInfoForm({
               setValue={form.setValue}
               skills={skills}
               yearsExperience={yearsExperience || 0}
-              location={form.getValues("location") || ""}
+              location={form.getValues('location') || ''}
               rateType="hourly"
             />
           </div>

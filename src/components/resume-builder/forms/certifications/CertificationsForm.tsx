@@ -1,11 +1,9 @@
-
 import { useState } from 'react';
 import { Loader2 } from '@/components/ui/icons';
 import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
 import type { Certification } from '@/types/resume';
-
 
 import { useResume } from '@/hooks/useResume';
 import { Alert, AlertDescription } from '@/components/ui/alert';
@@ -24,8 +22,18 @@ interface CertificationsFormProps {
   onBack: () => void;
 }
 
-export function CertificationsForm({ resumeId, certifications, onComplete, onBack }: CertificationsFormProps) {
-  const { addCertification, updateCertification, deleteCertification, isLoading } = useResume();
+export function CertificationsForm({
+  resumeId,
+  certifications,
+  onComplete,
+  onBack,
+}: CertificationsFormProps) {
+  const {
+    addCertification,
+    updateCertification,
+    deleteCertification,
+    isLoading,
+  } = useResume();
   const [editingId, setEditingId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -102,17 +110,20 @@ export function CertificationsForm({ resumeId, certifications, onComplete, onBac
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-xl font-semibold mb-2">Certifications & Licenses</h2>
+        <h2 className="text-xl font-semibold mb-2">
+          Certifications & Licenses
+        </h2>
         <p className="text-muted-foreground">
-          Add any professional certifications, licenses, or credentials you have earned.
+          Add any professional certifications, licenses, or credentials you have
+          earned.
         </p>
       </div>
 
       {certifications.length > 0 && (
-        <CertificationsList 
-          certifications={certifications} 
-          onEdit={handleEdit} 
-          onDelete={handleDelete} 
+        <CertificationsList
+          certifications={certifications}
+          onEdit={handleEdit}
+          onDelete={handleDelete}
         />
       )}
 
@@ -122,10 +133,17 @@ export function CertificationsForm({ resumeId, certifications, onComplete, onBac
         </h3>
 
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(handleAddOrUpdate)} className="space-y-4">
+          <form
+            onSubmit={form.handleSubmit(handleAddOrUpdate)}
+            className="space-y-4"
+          >
             <CertificationFormFields form={form} />
 
-            {error && <Alert variant="destructive"><AlertDescription>{error}</AlertDescription></Alert>}
+            {error && (
+              <Alert variant="destructive">
+                <AlertDescription>{error}</AlertDescription>
+              </Alert>
+            )}
 
             <div className="flex justify-between pt-2">
               <Button
@@ -152,7 +170,9 @@ export function CertificationsForm({ resumeId, certifications, onComplete, onBac
 
               <div className="flex gap-2">
                 <Button type="submit" disabled={isLoading}>
-                  {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                  {isLoading && (
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  )}
                   {editingId ? 'Update' : 'Add'} Certification
                 </Button>
 

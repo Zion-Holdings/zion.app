@@ -1,5 +1,10 @@
 // Remove direct import of sonnerToast, rely on globalToastManager
-import { globalToastManager, showToast, ToastType, ToastPriority } from '@/utils/globalToastManager';
+import {
+  globalToastManager,
+  showToast,
+  ToastType,
+  ToastPriority,
+} from '@/utils/globalToastManager';
 
 // Deduplication settings
 const _DEDUPE_DELAY = 3000; // 3 seconds
@@ -23,8 +28,6 @@ interface ToastProps {
   persistent?: boolean;
 }
 
-
-
 /**
  * Enhanced toast adapter that uses the global toast manager
  */
@@ -36,15 +39,15 @@ const toastAdapter = (_props: ToastProps | string) => {
     });
   }
 
-  const { 
-    title, 
-    description, 
-    variant = 'default', 
-    action, 
-    onRetry, 
+  const {
+    title,
+    description,
+    variant = 'default',
+    action,
+    onRetry,
     duration,
     priority,
-    persistent = false 
+    persistent = false,
   } = props;
 
   // Map variant to toast type
@@ -78,19 +81,31 @@ const toastAdapter = (_props: ToastProps | string) => {
 };
 
 // Convenience methods that use the global toast manager
-toastAdapter.success = (message: string, options?: { id?: string; duration?: number } & Record<string, unknown>) => {
+toastAdapter.success = (
+  message: string,
+  options?: { id?: string; duration?: number } & Record<string, unknown>,
+) => {
   return showToast.success(message, options);
 };
 
-toastAdapter.error = (message: string, options?: { id?: string; duration?: number } & Record<string, unknown>) => {
+toastAdapter.error = (
+  message: string,
+  options?: { id?: string; duration?: number } & Record<string, unknown>,
+) => {
   return showToast.error(message, options);
 };
 
-toastAdapter.info = (message: string, options?: { id?: string; duration?: number } & Record<string, unknown>) => {
+toastAdapter.info = (
+  message: string,
+  options?: { id?: string; duration?: number } & Record<string, unknown>,
+) => {
   return showToast.info(message, options);
 };
 
-toastAdapter.warning = (message: string, options?: { id?: string; duration?: number } & Record<string, unknown>) => {
+toastAdapter.warning = (
+  message: string,
+  options?: { id?: string; duration?: number } & Record<string, unknown>,
+) => {
   return showToast.warning(message, options);
 };
 
@@ -112,13 +127,13 @@ export const useToast = () => ({
       globalToastManager.dismissAll();
     }
   },
-  
+
   // Additional methods from global toast manager
   showToast: globalToastManager.showToast.bind(globalToastManager),
   getActiveToasts: globalToastManager.getActiveToasts.bind(globalToastManager),
   getQueueLength: globalToastManager.getQueueLength.bind(globalToastManager),
   dismissAll: globalToastManager.dismissAll.bind(globalToastManager),
-  
+
   // Convenience methods
   success: showToast.success,
   error: showToast.error,

@@ -22,7 +22,7 @@ export const ROADMAP_ITEMS: RoadmapItem[] = [
     status: 'Planned',
     upvotes: 12,
     followers: 3,
-    description: 'Improve marketplace search relevancy using machine learning.'
+    description: 'Improve marketplace search relevancy using machine learning.',
   },
   {
     id: 'dao-governance',
@@ -32,7 +32,7 @@ export const ROADMAP_ITEMS: RoadmapItem[] = [
     status: 'In Progress',
     upvotes: 20,
     followers: 8,
-    description: 'Enable community proposals and on-chain voting.'
+    description: 'Enable community proposals and on-chain voting.',
   },
   {
     id: 'token-staking',
@@ -42,6 +42,7 @@ export const ROADMAP_ITEMS: RoadmapItem[] = [
     status: 'Completed',
     upvotes: 42,
     followers: 15,
-    description: 'Allow users to stake ZION$ to earn rewards and governance power.'
-  }
+    description:
+      'Allow users to stake ZION$ to earn rewards and governance power.',
+  },
 ];

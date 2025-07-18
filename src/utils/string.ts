@@ -9,7 +9,7 @@ export function slugify(str: string): string {
     .toLowerCase()
     .trim()
     .replace(/[^a-z0-9\s-]/g, '') // Remove non-alphanumeric except spaces and hyphens
-    .replace(/\s+/g, '-')         // Replace spaces with hyphens
-    .replace(/-+/g, '-')           // Collapse multiple hyphens
-    .replace(/^-+|-+$/g, '');      // Trim hyphens from start/end
-} 
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .replace(/-+/g, '-') // Collapse multiple hyphens
+    .replace(/^-+|-+$/g, ''); // Trim hyphens from start/end
+}

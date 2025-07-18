@@ -6,7 +6,6 @@ import { addItem, removeItem, clear, setItems } from '@/store/cartSlice';
 import { safeStorage } from '@/utils/safeStorage'; // Import safeStorage
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
-
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function useCart(): CartContextType {
@@ -33,7 +32,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
             id: (action.payload as CartItem).id,
             title: (action.payload as CartItem).name,
             price: (action.payload as CartItem).price,
-          })
+          }),
         );
         break;
       case 'REMOVE_ITEM':
@@ -63,7 +62,9 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   // Persist cart items to localStorage whenever they change from Redux state
   useEffect(() => {
     if (process.env.NODE_ENV === 'development') {
-      logInfo('[CartProvider] Persisting items to localStorage:', { data:  { data: items } });
+      logInfo('[CartProvider] Persisting items to localStorage:', {
+        data: { data: items },
+      });
     }
     try {
       // Only persist if localStorage is actually available.
@@ -71,7 +72,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       safeStorage.setItem('zion_cart', JSON.stringify(items));
     } catch {
       // Catching potential errors during stringify or setItem, though safeStorage also has try/catch.
-      logErrorToProduction('[CartProvider] Failed to persist cart to localStorage', { data: error });
+      logErrorToProduction(
+        '[CartProvider] Failed to persist cart to localStorage',
+        { data: error },
+      );
     }
   }, [items]); // Dependency array ensures this runs when `items` from Redux changes.
 

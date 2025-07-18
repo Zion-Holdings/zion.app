@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import { Star, Users, MessageSquare, TrendingUp } from '@/components/ui/icons';
 
-
-
-
-
-
-
-
-
 import { useAuth } from '@/hooks/useAuth';
 import { usePoints } from '@/hooks/usePoints';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -24,14 +22,22 @@ export default function PointsPage() {
   const [loginOpen, setLoginOpen] = useState(false);
   const [redeeming, setRedeeming] = useState(false);
 
-  async function handleRedeem(reward: { id: string; cost: number; title: string }) {
+  async function handleRedeem(reward: {
+    id: string;
+    cost: number;
+    title: string;
+  }) {
     if (!user?.id) return;
     setRedeeming(true);
     try {
       await fetch('/api/points/redeem', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ userId: user.id, cost: reward.cost, reward: reward.title })
+        body: JSON.stringify({
+          userId: user.id,
+          cost: reward.cost,
+          reward: reward.title,
+        }),
       });
       await fetchLedger();
     } finally {
@@ -42,40 +48,55 @@ export default function PointsPage() {
   const earningOpportunities = [
     {
       icon: <Users className="h-5 w-5" />,
-      title: "Sign Up & Profile Setup",
-      description: "Complete your profile and verify your email",
-      points: "50 pts",
-      action: isAuthenticated ? "✓ Completed" : "Get Started"
+      title: 'Sign Up & Profile Setup',
+      description: 'Complete your profile and verify your email',
+      points: '50 pts',
+      action: isAuthenticated ? '✓ Completed' : 'Get Started',
     },
     {
       icon: <ShoppingBag className="h-5 w-5" />,
-      title: "First Purchase",
-      description: "Make your first purchase on the marketplace",
-      points: "100 pts",
-      action: "Browse Marketplace"
+      title: 'First Purchase',
+      description: 'Make your first purchase on the marketplace',
+      points: '100 pts',
+      action: 'Browse Marketplace',
     },
     {
       icon: <MessageSquare className="h-5 w-5" />,
-      title: "Community Engagement",
-      description: "Post in the community or comment on discussions",
-      points: "25 pts per post",
-      action: "Join Community"
+      title: 'Community Engagement',
+      description: 'Post in the community or comment on discussions',
+      points: '25 pts per post',
+      action: 'Join Community',
     },
     {
       icon: <Users className="h-5 w-5" />,
-      title: "Refer Friends",
-      description: "Invite friends to join Zion marketplace",
-      points: "200 pts per referral",
-      action: "Share Referral Link"
-    }
+      title: 'Refer Friends',
+      description: 'Invite friends to join Zion marketplace',
+      points: '200 pts per referral',
+      action: 'Share Referral Link',
+    },
   ];
 
   const upcomingRewards = [
     { id: 'coupon5', title: '$5 Off Coupon', cost: 500, category: 'Discount' },
-    { id: 'premium1', title: 'Premium Features (1 month)', cost: 1000, category: 'Subscription' },
-    { id: 'swag', title: 'Zion Swag Pack', cost: 1500, category: 'Merchandise' },
-    { id: 'coupon25', title: '$25 Off Coupon', cost: 2000, category: 'Discount' },
-    { id: 'vip', title: 'VIP Support Access', cost: 3000, category: 'Service' }
+    {
+      id: 'premium1',
+      title: 'Premium Features (1 month)',
+      cost: 1000,
+      category: 'Subscription',
+    },
+    {
+      id: 'swag',
+      title: 'Zion Swag Pack',
+      cost: 1500,
+      category: 'Merchandise',
+    },
+    {
+      id: 'coupon25',
+      title: '$25 Off Coupon',
+      cost: 2000,
+      category: 'Discount',
+    },
+    { id: 'vip', title: 'VIP Support Access', cost: 3000, category: 'Service' },
   ];
 
   if (!isAuthenticated) {
@@ -86,7 +107,8 @@ export default function PointsPage() {
             <Gift className="h-16 w-16 text-primary mx-auto mb-4" />
             <h1 className="text-4xl font-bold mb-4">Zion Rewards Program</h1>
             <p className="text-xl text-muted-foreground mb-6">
-              Earn points for every action you take and redeem them for exclusive rewards!
+              Earn points for every action you take and redeem them for
+              exclusive rewards!
             </p>
             <Button onClick={() => setLoginOpen(true)} size="lg">
               Join Now to Start Earning
@@ -106,11 +128,16 @@ export default function PointsPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 {earningOpportunities.map((opportunity, index) => (
-                  <div key={index} className="flex items-start gap-3 p-3 rounded-lg border">
+                  <div
+                    key={index}
+                    className="flex items-start gap-3 p-3 rounded-lg border"
+                  >
                     <div className="text-primary mt-1">{opportunity.icon}</div>
                     <div className="flex-1">
                       <h4 className="font-medium">{opportunity.title}</h4>
-                      <p className="text-sm text-muted-foreground">{opportunity.description}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {opportunity.description}
+                      </p>
                     </div>
                     <Badge variant="secondary">{opportunity.points}</Badge>
                   </div>
@@ -130,10 +157,15 @@ export default function PointsPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 {upcomingRewards.map((reward, index) => (
-                  <div key={index} className="flex items-center justify-between p-3 rounded-lg border">
+                  <div
+                    key={index}
+                    className="flex items-center justify-between p-3 rounded-lg border"
+                  >
                     <div>
                       <h4 className="font-medium">{reward.title}</h4>
-                      <p className="text-sm text-muted-foreground">{reward.category}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {reward.category}
+                      </p>
                     </div>
                     <Badge variant="outline">{reward.cost}</Badge>
                   </div>
@@ -147,23 +179,27 @@ export default function PointsPage() {
               <Star className="h-12 w-12 text-primary mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-2">Redeem Your Points</h3>
               <p className="text-muted-foreground mb-4">
-                Try out our new rewards system! Earn points and redeem them for exclusive rewards below.
+                Try out our new rewards system! Earn points and redeem them for
+                exclusive rewards below.
               </p>
               <div className="grid md:grid-cols-2 gap-4 mb-4">
                 {upcomingRewards.map((reward, _idx) => (
-                  <Card key={reward.id} className="p-4 flex flex-col items-center">
+                  <Card
+                    key={reward.id}
+                    className="p-4 flex flex-col items-center"
+                  >
                     <div className="font-bold text-lg mb-1">{reward.title}</div>
                     <div className="text-zion-cyan mb-1">{reward.category}</div>
-                    <Badge variant="outline" className="mb-2">{reward.cost} pts</Badge>
+                    <Badge variant="outline" className="mb-2">
+                      {reward.cost} pts
+                    </Badge>
                     <Button size="sm" disabled>
                       Redeem (Login Required)
                     </Button>
                   </Card>
                 ))}
               </div>
-              <Button onClick={() => setLoginOpen(true)}>
-                Create Account
-              </Button>
+              <Button onClick={() => setLoginOpen(true)}>Create Account</Button>
             </CardContent>
           </Card>
         </div>
@@ -178,7 +214,7 @@ export default function PointsPage() {
         <Gift className="h-16 w-16 text-primary mx-auto mb-4" />
         <h1 className="text-4xl font-bold mb-4">Your Rewards</h1>
         <div className="text-6xl font-bold text-primary mb-2">
-          {loading ? "..." : balance}
+          {loading ? '...' : balance}
         </div>
         <p className="text-xl text-muted-foreground">Points Available</p>
         {!loading && balance === 0 && (
@@ -202,15 +238,24 @@ export default function PointsPage() {
           </CardHeader>
           <CardContent className="space-y-4">
             {earningOpportunities.map((opportunity, index) => (
-              <div key={index} className="flex items-start gap-3 p-3 rounded-lg border">
+              <div
+                key={index}
+                className="flex items-start gap-3 p-3 rounded-lg border"
+              >
                 <div className="text-primary mt-1">{opportunity.icon}</div>
                 <div className="flex-1">
                   <h4 className="font-medium">{opportunity.title}</h4>
-                  <p className="text-sm text-muted-foreground">{opportunity.description}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {opportunity.description}
+                  </p>
                 </div>
                 <div className="text-right">
-                  <Badge variant="secondary" className="mb-1">{opportunity.points}</Badge>
-                  <p className="text-xs text-muted-foreground">{opportunity.action}</p>
+                  <Badge variant="secondary" className="mb-1">
+                    {opportunity.points}
+                  </Badge>
+                  <p className="text-xs text-muted-foreground">
+                    {opportunity.action}
+                  </p>
                 </div>
               </div>
             ))}
@@ -229,19 +274,32 @@ export default function PointsPage() {
           </CardHeader>
           <CardContent className="space-y-4">
             {upcomingRewards.map((reward) => (
-              <div key={reward.id} className="flex items-center justify-between p-3 rounded-lg border">
+              <div
+                key={reward.id}
+                className="flex items-center justify-between p-3 rounded-lg border"
+              >
                 <div>
                   <h4 className="font-medium">{reward.title}</h4>
-                  <p className="text-sm text-muted-foreground">{reward.category}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {reward.category}
+                  </p>
                 </div>
                 <div className="text-right space-y-1">
-                  <Badge variant="outline" className="mb-1">{reward.cost} pts</Badge>
+                  <Badge variant="outline" className="mb-1">
+                    {reward.cost} pts
+                  </Badge>
                   {balance >= reward.cost ? (
-                    <Button size="sm" onClick={() => handleRedeem(reward)} disabled={redeeming}>
+                    <Button
+                      size="sm"
+                      onClick={() => handleRedeem(reward)}
+                      disabled={redeeming}
+                    >
                       {redeeming ? 'Processing...' : 'Redeem'}
                     </Button>
                   ) : (
-                    <p className="text-xs text-muted-foreground">Need more points</p>
+                    <p className="text-xs text-muted-foreground">
+                      Need more points
+                    </p>
                   )}
                 </div>
               </div>
@@ -260,21 +318,34 @@ export default function PointsPage() {
         </CardHeader>
         <CardContent>
           {ledger.length === 0 ? (
-            <p className="text-center py-8 text-muted-foreground">No points activity yet.</p>
+            <p className="text-center py-8 text-muted-foreground">
+              No points activity yet.
+            </p>
           ) : (
             <ScrollArea className="h-64">
               <div className="space-y-2 mt-2">
-                {ledger.map(entry => (
-                  <div key={entry.id} className="flex items-center justify-between py-2 border-b">
+                {ledger.map((entry) => (
+                  <div
+                    key={entry.id}
+                    className="flex items-center justify-between py-2 border-b"
+                  >
                     <div>
-                      <p className="font-medium capitalize">{entry.reason || 'adjustment'}</p>
+                      <p className="font-medium capitalize">
+                        {entry.reason || 'adjustment'}
+                      </p>
                       <p className="text-xs text-muted-foreground">
-                        {formatDistanceToNow(new Date(entry.created_at), { addSuffix: true })}
+                        {formatDistanceToNow(new Date(entry.created_at), {
+                          addSuffix: true,
+                        })}
                       </p>
                     </div>
                     <Badge
                       variant="outline"
-                      className={entry.delta >= 0 ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}
+                      className={
+                        entry.delta >= 0
+                          ? 'bg-green-100 text-green-800'
+                          : 'bg-red-100 text-red-800'
+                      }
                     >
                       {entry.delta >= 0 ? '+' : ''}
                       {entry.delta} pts

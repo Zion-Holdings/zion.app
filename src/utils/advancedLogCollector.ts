@@ -88,13 +88,16 @@ class AdvancedLogCollector {
     }
 
     // Set up performance monitoring
-    if (this.config.enablePerformanceTracking && typeof window !== 'undefined') {
+    if (
+      this.config.enablePerformanceTracking &&
+      typeof window !== 'undefined'
+    ) {
       this.initializePerformanceMonitoring();
     }
 
     logInfo('Advanced log collector initialized', {
       config: this.config,
-      bufferSize: this.config.bufferSize
+      bufferSize: this.config.bufferSize,
     });
   }
 
@@ -110,7 +113,11 @@ class AdvancedLogCollector {
       setInterval(() => {
         const perf = performance as PerformanceWithMemory;
         const memory = perf.memory;
-        if (memory && typeof memory.usedJSHeapSize === 'number' && typeof memory.totalJSHeapSize === 'number') {
+        if (
+          memory &&
+          typeof memory.usedJSHeapSize === 'number' &&
+          typeof memory.totalJSHeapSize === 'number'
+        ) {
           this.collectLog({
             id: this.generateLogId(),
             timestamp: new Date().toISOString(),
@@ -119,12 +126,12 @@ class AdvancedLogCollector {
             source: 'client',
             sessionId: this.getSessionId(),
             performanceData: {
-              memory: memory.usedJSHeapSize / memory.totalJSHeapSize * 100
+              memory: (memory.usedJSHeapSize / memory.totalJSHeapSize) * 100,
             },
             tags: ['performance', 'memory'],
             stackTrace: '',
             url: '',
-            userAgent: ''
+            userAgent: '',
           });
         }
       }, 30000);
@@ -133,7 +140,9 @@ class AdvancedLogCollector {
     // Monitor page load performance
     window.addEventListener('load', () => {
       setTimeout(() => {
-        const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+        const navigation = performance.getEntriesByType(
+          'navigation',
+        )[0] as PerformanceNavigationTiming;
         if (navigation) {
           this.collectLog({
             id: this.generateLogId(),
@@ -143,12 +152,12 @@ class AdvancedLogCollector {
             source: 'client',
             sessionId: this.getSessionId(),
             performanceData: {
-              responseTime: navigation.loadEventEnd - navigation.fetchStart
+              responseTime: navigation.loadEventEnd - navigation.fetchStart,
             },
             tags: ['performance', 'pageload'],
             stackTrace: '',
             url: '',
-            userAgent: ''
+            userAgent: '',
           });
         }
       }, 1000);
@@ -161,7 +170,9 @@ class AdvancedLogCollector {
 
     // Prevent buffer overflow
     if (this.logBuffer.length > this.config.bufferSize) {
-      this.logBuffer = this.logBuffer.slice(-Math.floor(this.config.bufferSize * 0.8));
+      this.logBuffer = this.logBuffer.slice(
+        -Math.floor(this.config.bufferSize * 0.8),
+      );
     }
 
     // Real-time critical error detection
@@ -179,8 +190,11 @@ class AdvancedLogCollector {
     // Report to error dashboard
     const error = new Error(log.message);
     error.stack = log.stackTrace || '';
-    
-    errorReportingDashboard.reportError(error, log.level === 'critical' ? 'critical' : 'high');
+
+    errorReportingDashboard.reportError(
+      error,
+      log.level === 'critical' ? 'critical' : 'high',
+    );
 
     // Analyze for known patterns
     if (this.config.enablePatternDetection) {
@@ -190,7 +204,7 @@ class AdvancedLogCollector {
           logId: log.id,
           pattern: analysis.patternId,
           severity: analysis.severity,
-          solution: analysis.solution
+          solution: analysis.solution,
         });
       }
     }
@@ -198,16 +212,19 @@ class AdvancedLogCollector {
     logErrorToProduction('Critical log collected', undefined, {
       logId: log.id,
       source: log.source,
-      context: log.context
+      context: log.context,
     });
   }
 
   private detectPatterns(log: CollectedLog): void {
     // Check for recurring error patterns
     const recentLogs = this.logBuffer.slice(-50);
-    const similarLogs = recentLogs.filter(l => 
-      l.message.includes(log.message.substring(0, 50)) || 
-      (log.context && l.context && this.contextSimilarity(l.context, log.context) > 0.7)
+    const similarLogs = recentLogs.filter(
+      (l) =>
+        l.message.includes(log.message.substring(0, 50)) ||
+        (log.context &&
+          l.context &&
+          this.contextSimilarity(l.context, log.context) > 0.7),
     );
 
     if (similarLogs.length > 3) {
@@ -215,34 +232,44 @@ class AdvancedLogCollector {
       logWarn('Recurring log pattern detected', {
         pattern: log.message.substring(0, 100),
         occurrences: similarLogs.length,
-        timespan: firstLog ? `${Date.now() - new Date(firstLog.timestamp).getTime()}ms` : 'unknown',
-        logLevel: log.level
+        timespan: firstLog
+          ? `${Date.now() - new Date(firstLog.timestamp).getTime()}ms`
+          : 'unknown',
+        logLevel: log.level,
       });
     }
   }
 
-  private contextSimilarity(context1: Record<string, unknown>, context2: Record<string, unknown>): number {
+  private contextSimilarity(
+    context1: Record<string, unknown>,
+    context2: Record<string, unknown>,
+  ): number {
     const keys1 = Object.keys(context1);
     const keys2 = Object.keys(context2);
-    const commonKeys = keys1.filter(key => keys2.includes(key));
-    
+    const commonKeys = keys1.filter((key) => keys2.includes(key));
+
     if (commonKeys.length === 0) return 0;
-    
-    const matchingValues = commonKeys.filter(key => context1[key] === context2[key]);
+
+    const matchingValues = commonKeys.filter(
+      (key) => context1[key] === context2[key],
+    );
     return matchingValues.length / Math.max(keys1.length, keys2.length);
   }
 
   public runAnalysis(): LogAnalysisResult {
     const now = new Date();
-    const oneHourAgo = new Date(now.getTime() - (60 * 60 * 1000));
-    
+    const oneHourAgo = new Date(now.getTime() - 60 * 60 * 1000);
+
     // Filter logs from the last hour
-    const recentLogs = this.logBuffer.filter(log => 
-      new Date(log.timestamp) > oneHourAgo
+    const recentLogs = this.logBuffer.filter(
+      (log) => new Date(log.timestamp) > oneHourAgo,
     );
 
-    const errorLogs = recentLogs.filter(log => log.level === 'error' || log.level === 'critical');
-    const errorRate = recentLogs.length > 0 ? (errorLogs.length / recentLogs.length) * 100 : 0;
+    const errorLogs = recentLogs.filter(
+      (log) => log.level === 'error' || log.level === 'critical',
+    );
+    const errorRate =
+      recentLogs.length > 0 ? (errorLogs.length / recentLogs.length) * 100 : 0;
 
     // Pattern analysis
     const patterns = this.analyzePatterns(recentLogs);
@@ -251,7 +278,11 @@ class AdvancedLogCollector {
     const performanceInsights = this.analyzePerformance(recentLogs);
 
     // Generate recommendations
-    const recommendations = this.generateRecommendations(errorRate, patterns, performanceInsights);
+    const recommendations = this.generateRecommendations(
+      errorRate,
+      patterns,
+      performanceInsights,
+    );
 
     const result: LogAnalysisResult = {
       totalLogs: recentLogs.length,
@@ -259,7 +290,7 @@ class AdvancedLogCollector {
       criticalIssues: errorLogs.slice(0, 10),
       patterns,
       performanceInsights,
-      recommendations
+      recommendations,
     };
 
     this.lastAnalysis = now;
@@ -268,7 +299,7 @@ class AdvancedLogCollector {
       totalLogs: result.totalLogs,
       errorRate: result.errorRate,
       patternsFound: result.patterns.length,
-      recommendations: result.recommendations.length
+      recommendations: result.recommendations.length,
     });
 
     return result;
@@ -277,7 +308,7 @@ class AdvancedLogCollector {
   private analyzePatterns(logs: CollectedLog[]): LogAnalysisResult['patterns'] {
     const patternMap = new Map<string, CollectedLog[]>();
 
-    logs.forEach(log => {
+    logs.forEach((log) => {
       const basePattern = this.extractPattern(log.message);
       if (!patternMap.has(basePattern)) {
         patternMap.set(basePattern, []);
@@ -291,7 +322,7 @@ class AdvancedLogCollector {
         pattern,
         count: logs.length,
         severity: this.calculatePatternSeverity(logs),
-        examples: logs.slice(0, 3)
+        examples: logs.slice(0, 3),
       }))
       .sort((a, b) => b.count - a.count)
       .slice(0, 10);
@@ -301,14 +332,21 @@ class AdvancedLogCollector {
     // Remove specific details to identify patterns
     return message
       .replace(/\d+/g, '{number}')
-      .replace(/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}/gi, '{uuid}')
+      .replace(
+        /[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}/gi,
+        '{uuid}',
+      )
       .replace(/https?:\/\/[^\s]+/g, '{url}')
       .replace(/['"]\w+['"]/g, '{string}')
       .substring(0, 100);
   }
 
-  private calculatePatternSeverity(logs: CollectedLog[]): 'low' | 'medium' | 'high' | 'critical' {
-    const errorCount = logs.filter(l => l.level === 'error' || l.level === 'critical').length;
+  private calculatePatternSeverity(
+    logs: CollectedLog[],
+  ): 'low' | 'medium' | 'high' | 'critical' {
+    const errorCount = logs.filter(
+      (l) => l.level === 'error' || l.level === 'critical',
+    ).length;
     const ratio = errorCount / logs.length;
 
     if (ratio > 0.8) return 'critical';
@@ -317,73 +355,88 @@ class AdvancedLogCollector {
     return 'low';
   }
 
-  private analyzePerformance(logs: CollectedLog[]): LogAnalysisResult['performanceInsights'] {
-    const performanceLogs = logs.filter(log => log.performanceData);
-    
+  private analyzePerformance(
+    logs: CollectedLog[],
+  ): LogAnalysisResult['performanceInsights'] {
+    const performanceLogs = logs.filter((log) => log.performanceData);
+
     const responseTimes = performanceLogs
-      .map(log => log.performanceData?.responseTime)
-      .filter(Boolean) as number[];
-    
-    const memoryUsages = performanceLogs
-      .map(log => log.performanceData?.memory)
+      .map((log) => log.performanceData?.responseTime)
       .filter(Boolean) as number[];
 
-    const averageResponseTime = responseTimes.length > 0 
-      ? responseTimes.reduce((a, b) => a + b, 0) / responseTimes.length 
-      : 0;
+    const memoryUsages = performanceLogs
+      .map((log) => log.performanceData?.memory)
+      .filter(Boolean) as number[];
+
+    const averageResponseTime =
+      responseTimes.length > 0
+        ? responseTimes.reduce((a, b) => a + b, 0) / responseTimes.length
+        : 0;
 
     const memoryTrend = this.calculateMemoryTrend(memoryUsages);
-    
-    const errorFrequency = logs.filter(log => log.level === 'error').length;
+
+    const errorFrequency = logs.filter((log) => log.level === 'error').length;
 
     return {
       averageResponseTime,
       memoryTrend,
-      errorFrequency
+      errorFrequency,
     };
   }
 
-  private calculateMemoryTrend(memoryUsages: number[]): 'increasing' | 'stable' | 'decreasing' {
+  private calculateMemoryTrend(
+    memoryUsages: number[],
+  ): 'increasing' | 'stable' | 'decreasing' {
     if (memoryUsages.length < 2) return 'stable';
-    
+
     const first = memoryUsages.slice(0, Math.floor(memoryUsages.length / 2));
     const second = memoryUsages.slice(Math.floor(memoryUsages.length / 2));
-    
+
     const firstAvg = first.reduce((a, b) => a + b, 0) / first.length;
     const secondAvg = second.reduce((a, b) => a + b, 0) / second.length;
-    
+
     const diff = secondAvg - firstAvg;
-    
+
     if (diff > 5) return 'increasing';
     if (diff < -5) return 'decreasing';
     return 'stable';
   }
 
   private generateRecommendations(
-    errorRate: number, 
+    errorRate: number,
     patterns: LogAnalysisResult['patterns'],
-    performance: LogAnalysisResult['performanceInsights']
+    performance: LogAnalysisResult['performanceInsights'],
   ): string[] {
     const recommendations: string[] = [];
 
     if (errorRate > 5) {
-      recommendations.push(`High error rate detected (${errorRate.toFixed(1)}%). Investigate top error patterns.`);
+      recommendations.push(
+        `High error rate detected (${errorRate.toFixed(1)}%). Investigate top error patterns.`,
+      );
     }
 
     if (performance.memoryTrend === 'increasing') {
-      recommendations.push('Memory usage is increasing. Check for memory leaks.');
+      recommendations.push(
+        'Memory usage is increasing. Check for memory leaks.',
+      );
     }
 
     if (performance.averageResponseTime > 2000) {
-      recommendations.push(`Slow response times detected (${performance.averageResponseTime.toFixed(0)}ms average). Optimize performance.`);
+      recommendations.push(
+        `Slow response times detected (${performance.averageResponseTime.toFixed(0)}ms average). Optimize performance.`,
+      );
     }
 
     if (patterns.length > 5) {
-      recommendations.push('Multiple error patterns detected. Focus on most frequent patterns first.');
+      recommendations.push(
+        'Multiple error patterns detected. Focus on most frequent patterns first.',
+      );
     }
 
     if (performance.errorFrequency > 10) {
-      recommendations.push('High error frequency. Implement better error handling and validation.');
+      recommendations.push(
+        'High error frequency. Implement better error handling and validation.',
+      );
     }
 
     return recommendations;
@@ -400,29 +453,46 @@ class AdvancedLogCollector {
 
   public exportLogs(format: 'json' | 'csv' = 'json'): string {
     if (format === 'csv') {
-      const headers = ['id', 'timestamp', 'level', 'message', 'source', 'url', 'userId'];
-      const rows = this.logBuffer.map(log => [
+      const headers = [
+        'id',
+        'timestamp',
+        'level',
+        'message',
+        'source',
+        'url',
+        'userId',
+      ];
+      const rows = this.logBuffer.map((log) => [
         log.id,
         log.timestamp,
         log.level,
         `"${log.message.replace(/"/g, '""')}"`,
         log.source,
         log.url || '',
-        log.userId || ''
+        log.userId || '',
       ]);
-      
-      return [headers.join(','), ...rows.map(row => row.join(','))].join('\n');
+
+      return [headers.join(','), ...rows.map((row) => row.join(','))].join(
+        '\n',
+      );
     }
 
-    return JSON.stringify({
-      exportedAt: new Date().toISOString(),
-      totalLogs: this.logBuffer.length,
-      config: this.config,
-      logs: this.logBuffer
-    }, null, 2);
+    return JSON.stringify(
+      {
+        exportedAt: new Date().toISOString(),
+        totalLogs: this.logBuffer.length,
+        config: this.config,
+        logs: this.logBuffer,
+      },
+      null,
+      2,
+    );
   }
 
-  public getHealthStatus(): { status: 'healthy' | 'warning' | 'critical'; issues: string[] } {
+  public getHealthStatus(): {
+    status: 'healthy' | 'warning' | 'critical';
+    issues: string[];
+  } {
     const recentAnalysis = this.runAnalysis();
     const issues: string[] = [];
     let status: 'healthy' | 'warning' | 'critical' = 'healthy';
@@ -431,7 +501,9 @@ class AdvancedLogCollector {
       issues.push(`High error rate: ${recentAnalysis.errorRate.toFixed(1)}%`);
       status = 'critical';
     } else if (recentAnalysis.errorRate > 5) {
-      issues.push(`Elevated error rate: ${recentAnalysis.errorRate.toFixed(1)}%`);
+      issues.push(
+        `Elevated error rate: ${recentAnalysis.errorRate.toFixed(1)}%`,
+      );
       status = 'warning';
     }
 
@@ -441,7 +513,9 @@ class AdvancedLogCollector {
     }
 
     if (recentAnalysis.criticalIssues.length > 0) {
-      issues.push(`${recentAnalysis.criticalIssues.length} critical issues detected`);
+      issues.push(
+        `${recentAnalysis.criticalIssues.length} critical issues detected`,
+      );
       status = 'critical';
     }
 
@@ -454,8 +528,8 @@ class AdvancedLogCollector {
 
   public clearOldLogs(cutoffTimestamp: number): number {
     const initialCount = this.logBuffer.length;
-    this.logBuffer = this.logBuffer.filter(log => 
-      new Date(log.timestamp).getTime() > cutoffTimestamp
+    this.logBuffer = this.logBuffer.filter(
+      (log) => new Date(log.timestamp).getTime() > cutoffTimestamp,
     );
     return initialCount - this.logBuffer.length;
   }
@@ -472,52 +546,76 @@ class AdvancedLogCollector {
 // Global instance
 const advancedLogCollector = new AdvancedLogCollector();
 
-export { 
-  advancedLogCollector, 
+export {
+  advancedLogCollector,
   AdvancedLogCollector,
   type CollectedLog,
   type LogAnalysisResult,
-  type LogCollectionConfig
+  type LogCollectionConfig,
 };
 
 // Auto-collect production logger events
 if (typeof window !== 'undefined') {
   // Hook into external error logger from logError module
-  import('./logError').then((logErrorModule) => {
-    const originalLogError = logErrorModule.logError;
-    if (originalLogError) {
-      (window as unknown as { logError?: (...args: unknown[]) => unknown }).logError = (..._args: unknown[]) => {
-        // Type guards for args
-        const message = typeof args[0] === 'string' ? args[0] : 'Unknown error';
-        const error = args[1] instanceof Error ? args[1] : undefined;
-        const context = (args[2] && typeof args[2] === 'object') ? args[2] as Record<string, unknown> : undefined;
-        
-        let contextArg: ({ componentStack?: string } & Record<string, unknown>) | undefined = undefined;
-        if (args[1] && typeof args[1] === 'object' && ('componentStack' in args[1] || Object.keys(args[1]).length > 0)) {
-          contextArg = args[1] as { componentStack?: string } & Record<string, unknown>;
-        }
-        const result = originalLogError(args[0], contextArg);
-        const stackTrace = error?.stack || '';
-        advancedLogCollector.collectLog({
-          id: advancedLogCollector['generateLogId'](),
-          timestamp: new Date().toISOString(),
-          level: 'error',
-          message,
-          source: 'client',
-          sessionId: advancedLogCollector['getSessionId'](),
-          stackTrace,
-          url: typeof window.location.href === 'string' ? window.location.href : '',
-          userAgent: typeof navigator.userAgent === 'string' ? navigator.userAgent : '',
-          ...(context ? { context } : {})
-        });
-        return result;
-      };
-    }
-  }).catch(() => {
-    // Fallback if import fails
-    import('@/utils/productionLogger').then((mod) => {
-      const logWarn: (msg: string, ctx?: Record<string, unknown>) => void = mod.logWarn;
-      logWarn('Could not hook into logError for advanced log collection', {});
+  import('./logError')
+    .then((logErrorModule) => {
+      const originalLogError = logErrorModule.logError;
+      if (originalLogError) {
+        (
+          window as unknown as { logError?: (...args: unknown[]) => unknown }
+        ).logError = (..._args: unknown[]) => {
+          // Type guards for args
+          const message =
+            typeof args[0] === 'string' ? args[0] : 'Unknown error';
+          const error = args[1] instanceof Error ? args[1] : undefined;
+          const context =
+            args[2] && typeof args[2] === 'object'
+              ? (args[2] as Record<string, unknown>)
+              : undefined;
+
+          let contextArg:
+            | ({ componentStack?: string } & Record<string, unknown>)
+            | undefined = undefined;
+          if (
+            args[1] &&
+            typeof args[1] === 'object' &&
+            ('componentStack' in args[1] || Object.keys(args[1]).length > 0)
+          ) {
+            contextArg = args[1] as { componentStack?: string } & Record<
+              string,
+              unknown
+            >;
+          }
+          const result = originalLogError(args[0], contextArg);
+          const stackTrace = error?.stack || '';
+          advancedLogCollector.collectLog({
+            id: advancedLogCollector['generateLogId'](),
+            timestamp: new Date().toISOString(),
+            level: 'error',
+            message,
+            source: 'client',
+            sessionId: advancedLogCollector['getSessionId'](),
+            stackTrace,
+            url:
+              typeof window.location.href === 'string'
+                ? window.location.href
+                : '',
+            userAgent:
+              typeof navigator.userAgent === 'string'
+                ? navigator.userAgent
+                : '',
+            ...(context ? { context } : {}),
+          });
+          return result;
+        };
+      }
+    })
+    .catch(() => {
+      // Fallback if import fails
+      import('@/utils/productionLogger').then((mod) => {
+        const logWarn: (msg: string, ctx?: Record<string, unknown>) => void =
+          mod.logWarn;
+        logWarn('Could not hook into logError for advanced log collection', {});
+      });
     });
-  });
-} 
+}

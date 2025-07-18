@@ -30,7 +30,7 @@ export function getComments(slug: string): CommentEntry[] {
 
 export function addComment(
   slug: string,
-  entry: Omit<CommentEntry, 'id' | 'createdAt'>
+  entry: Omit<CommentEntry, 'id' | 'createdAt'>,
 ): CommentEntry {
   const all = getAll();
   const newEntry: CommentEntry = {

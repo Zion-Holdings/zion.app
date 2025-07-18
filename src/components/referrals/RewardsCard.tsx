@@ -1,10 +1,13 @@
-
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import type { ReferralReward } from "@/types/referrals";
-import { formatDate } from "@/utils/referralUtils";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import type { ReferralReward } from '@/types/referrals';
+import { formatDate } from '@/utils/referralUtils';
 import { BadgeDollarSign, Badge } from '@/components/ui/icons';
-
-
 
 interface RewardsCardProps {
   rewards: ReferralReward[];
@@ -20,7 +23,9 @@ export function RewardsCard({ rewards, isLoading }: RewardsCardProps) {
             <BadgeDollarSign className="h-5 w-5" />
             Your Rewards
           </CardTitle>
-          <CardDescription>Rewards earned from successful referrals</CardDescription>
+          <CardDescription>
+            Rewards earned from successful referrals
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="flex items-center justify-center p-4">
@@ -39,7 +44,9 @@ export function RewardsCard({ rewards, isLoading }: RewardsCardProps) {
             <BadgeDollarSign className="h-5 w-5" />
             Your Rewards
           </CardTitle>
-          <CardDescription>Rewards earned from successful referrals</CardDescription>
+          <CardDescription>
+            Rewards earned from successful referrals
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="flex flex-col items-center justify-center p-4 text-center">
@@ -60,15 +67,17 @@ export function RewardsCard({ rewards, isLoading }: RewardsCardProps) {
           <BadgeDollarSign className="h-5 w-5" />
           Your Rewards
         </CardTitle>
-        <CardDescription>Rewards earned from successful referrals</CardDescription>
+        <CardDescription>
+          Rewards earned from successful referrals
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
           {rewards.map((reward, index) => (
-            <div 
+            <div
               key={reward.id}
               className={`flex justify-between items-start ${
-                index !== rewards.length - 1 ? "border-b pb-3" : ""
+                index !== rewards.length - 1 ? 'border-b pb-3' : ''
               }`}
             >
               <div>

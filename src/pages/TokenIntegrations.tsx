@@ -3,11 +3,19 @@ import { Header } from '@/components/Header';
 import ConnectWalletButton from '@/components/ConnectWalletButton';
 import { useWallet } from '@/context/WalletContext';
 import { Button } from '@/components/ui/button';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { logInfo as _logInfo, logErrorToProduction } from '@/utils/productionLogger';
-
+import {
+  logInfo as _logInfo,
+  logErrorToProduction,
+} from '@/utils/productionLogger';
 
 interface Chain {
   id: string;
@@ -46,8 +54,12 @@ export default function TokenIntegrations() {
 
   // --- LayerZero Bridge Integration Point ---
   // Reactivate: Mock fee estimation logic
-  const estimateFee = async (_sourceChain: string, _destinationChain: string, _tokenAmount: string): Promise<string> => {
-    await new Promise(resolve => setTimeout(resolve, 300));
+  const estimateFee = async (
+    _sourceChain: string,
+    _destinationChain: string,
+    _tokenAmount: string,
+  ): Promise<string> => {
+    await new Promise((resolve) => setTimeout(resolve, 300));
     return (0.001 * parseFloat(_tokenAmount || '1')).toFixed(4) + ' ZION$';
   };
 
@@ -56,9 +68,9 @@ export default function TokenIntegrations() {
     _sourceChain: string,
     _destinationChain: string,
     _tokenAmount: string,
-    _userAddress: string | null
+    _userAddress: string | null,
   ): Promise<{ transactionHash: string; arrivalTimeEstimate: string }> => {
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
     return {
       transactionHash: '0x' + Math.random().toString(16).slice(2, 18),
       arrivalTimeEstimate: '2-3 minutes',
@@ -80,7 +92,10 @@ export default function TokenIntegrations() {
       setFee(estimatedFee);
       setStatus('Fee estimated.');
     } catch (e: unknown) {
-      const message = typeof e === 'object' && e !== null && 'message' in e ? (e as { message?: string }).message : undefined;
+      const message =
+        typeof e === 'object' && e !== null && 'message' in e
+          ? (e as { message?: string }).message
+          : undefined;
       setError(`Fee estimation failed: ${message ?? 'Unknown error'}`);
       setStatus(null);
     }
@@ -96,21 +111,35 @@ export default function TokenIntegrations() {
       return;
     }
     setError(null);
-    setStatus(`Initiating bridge for ${amount} ZION$ from ${fromChain} to ${toChain}...`);
+    setStatus(
+      `Initiating bridge for ${amount} ZION$ from ${fromChain} to ${toChain}...`,
+    );
     setTxHash(null);
 
     try {
       // Optional: Re-estimate fee or use a pre-estimated one if UI supports it
-      const currentFee = fee || await estimateFee(fromChain, toChain, amount);
+      const currentFee = fee || (await estimateFee(fromChain, toChain, amount));
       setFee(currentFee); // Update fee display if it was re-estimated
-      setStatus(`Bridging with fee: ${currentFee}. Please confirm in your wallet.`);
+      setStatus(
+        `Bridging with fee: ${currentFee}. Please confirm in your wallet.`,
+      );
 
-      const result = await sendTokenViaLayerZero(fromChain, toChain, amount, address);
+      const result = await sendTokenViaLayerZero(
+        fromChain,
+        toChain,
+        amount,
+        address,
+      );
       setTxHash(result.transactionHash);
-      setStatus(`Transaction submitted! ZION$ expected on ${toChain} in approx. ${result.arrivalTimeEstimate}. Tx: ${result.transactionHash}`);
+      setStatus(
+        `Transaction submitted! ZION$ expected on ${toChain} in approx. ${result.arrivalTimeEstimate}. Tx: ${result.transactionHash}`,
+      );
     } catch (e: unknown) {
       logErrorToProduction('Bridging error:', { data: e });
-      const message = typeof e === 'object' && e !== null && 'message' in e ? (e as { message?: string }).message : undefined;
+      const message =
+        typeof e === 'object' && e !== null && 'message' in e
+          ? (e as { message?: string }).message
+          : undefined;
       setError(`Bridging failed: ${message ?? 'Unknown error'}`);
       setStatus(null);
     }
@@ -143,10 +172,15 @@ export default function TokenIntegrations() {
                     <SelectValue placeholder="From" />
                   </SelectTrigger>
                   <SelectContent>
-                    {CHAINS.map(c => (
+                    {CHAINS.map((c) => (
                       <SelectItem key={c.id} value={c.id}>
                         <div className="flex items-center gap-2">
-                          <img src={c.logo} alt={c.name} className="h-4" loading="lazy" />
+                          <img
+                            src={c.logo}
+                            alt={c.name}
+                            className="h-4"
+                            loading="lazy"
+                          />
                           {c.name}
                         </div>
                       </SelectItem>
@@ -158,10 +192,15 @@ export default function TokenIntegrations() {
                     <SelectValue placeholder="To" />
                   </SelectTrigger>
                   <SelectContent>
-                    {CHAINS.map(c => (
+                    {CHAINS.map((c) => (
                       <SelectItem key={c.id} value={c.id}>
                         <div className="flex items-center gap-2">
-                          <img src={c.logo} alt={c.name} className="h-4" loading="lazy" />
+                          <img
+                            src={c.logo}
+                            alt={c.name}
+                            className="h-4"
+                            loading="lazy"
+                          />
                           {c.name}
                         </div>
                       </SelectItem>
@@ -177,15 +216,43 @@ export default function TokenIntegrations() {
                 className="text-black"
               />
               <div className="flex gap-4">
-                <Button onClick={handleEstimateFee} variant="outline">Estimate Fee</Button>
-                <Button onClick={handleBridge} disabled={!isConnected || status?.startsWith('Initiating') || status?.startsWith('Bridging')}>
-                  {status?.startsWith('Initiating') || status?.startsWith('Bridging...') ? 'Processing...' : 'Bridge Now'}
+                <Button onClick={handleEstimateFee} variant="outline">
+                  Estimate Fee
+                </Button>
+                <Button
+                  onClick={handleBridge}
+                  disabled={
+                    !isConnected ||
+                    status?.startsWith('Initiating') ||
+                    status?.startsWith('Bridging')
+                  }
+                >
+                  {status?.startsWith('Initiating') ||
+                  status?.startsWith('Bridging...')
+                    ? 'Processing...'
+                    : 'Bridge Now'}
                 </Button>
               </div>
-              {fee && <p className="text-sm text-gray-300">Estimated Fee: {fee}</p>}
+              {fee && (
+                <p className="text-sm text-gray-300">Estimated Fee: {fee}</p>
+              )}
               {status && <p className="text-sm text-gray-200 mt-2">{status}</p>}
-              {txHash && <p className="text-sm text-green-400 mt-1">Tx Hash: <a href={`#${txHash}`} className="underline hover:text-green-300 break-all" target="_blank" rel="noopener noreferrer">{txHash}</a></p>}
-              {error && <p className="text-sm text-red-400 mt-1">Error: {error}</p>}
+              {txHash && (
+                <p className="text-sm text-green-400 mt-1">
+                  Tx Hash:{' '}
+                  <a
+                    href={`#${txHash}`}
+                    className="underline hover:text-green-300 break-all"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {txHash}
+                  </a>
+                </p>
+              )}
+              {error && (
+                <p className="text-sm text-red-400 mt-1">Error: {error}</p>
+              )}
             </CardContent>
           </Card>
 
@@ -194,8 +261,13 @@ export default function TokenIntegrations() {
               <CardTitle>DePIN Rewards</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2 text-white">
-              <p>Connect hardware networks like DIMO, Helium, and Hivemapper.</p>
-              <p>Earn ZION$ for proof-of-compute, completed IoT jobs, and data streaming.</p>
+              <p>
+                Connect hardware networks like DIMO, Helium, and Hivemapper.
+              </p>
+              <p>
+                Earn ZION$ for proof-of-compute, completed IoT jobs, and data
+                streaming.
+              </p>
             </CardContent>
           </Card>
 
@@ -204,11 +276,23 @@ export default function TokenIntegrations() {
               <CardTitle>Operator AI</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <Input placeholder="Region" value={region} onChange={e => setRegion(e.target.value)} />
-              <Input type="number" placeholder="Stake" value={stake} onChange={e => setStake(parseInt(e.target.value))} />
+              <Input
+                placeholder="Region"
+                value={region}
+                onChange={(e) => setRegion(e.target.value)}
+              />
+              <Input
+                type="number"
+                placeholder="Stake"
+                value={stake}
+                onChange={(e) => setStake(parseInt(e.target.value))}
+              />
               <Button onClick={handleSuggest}>Suggest Chain</Button>
               {suggested && (
-                <p className="text-white">Suggested chain: {CHAINS.find(c => c.id === suggested)?.name}</p>
+                <p className="text-white">
+                  Suggested chain:{' '}
+                  {CHAINS.find((c) => c.id === suggested)?.name}
+                </p>
               )}
             </CardContent>
           </Card>

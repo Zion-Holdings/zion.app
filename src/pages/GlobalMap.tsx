@@ -3,9 +3,12 @@ import { Globe, MapPin } from '@/components/ui/icons';
 import { Header } from '@/components/Header';
 import { NextSeo } from '@/components/NextSeo';
 
-
-
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 
 interface Instance {
   id: number;
@@ -71,7 +74,9 @@ export default function GlobalMapPage() {
         'New franchise deployed: Zion Indonesia',
       ];
       const id = Date.now();
-      const text = messages[Math.floor(Math.random() * messages.length)] || 'System update in progress';
+      const text =
+        messages[Math.floor(Math.random() * messages.length)] ||
+        'System update in progress';
       setFeed((f) => [{ id, text }, ...f].slice(0, 5));
     }, 5000);
     return () => clearInterval(interval);
@@ -89,7 +94,10 @@ export default function GlobalMapPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <NextSeo title="Global Zion Map" description="Overview of Zion deployments" />
+      <NextSeo
+        title="Global Zion Map"
+        description="Overview of Zion deployments"
+      />
       <Header />
       <main className="py-10 container mx-auto space-y-8">
         <h1 className="text-3xl font-bold">Global Instances</h1>
@@ -98,7 +106,12 @@ export default function GlobalMapPage() {
             <Globe className="w-full h-full text-secondary" />
             {INSTANCES.map((i) => {
               const { x, y } = project(i.lat, i.lng);
-              const color = i.governance === 'admin' ? 'bg-red-500' : i.governance === 'hybrid' ? 'bg-yellow-500' : 'bg-green-500';
+              const color =
+                i.governance === 'admin'
+                  ? 'bg-red-500'
+                  : i.governance === 'hybrid'
+                    ? 'bg-yellow-500'
+                    : 'bg-green-500';
               return (
                 <TooltipProvider key={i.id}>
                   <Tooltip>
@@ -126,7 +139,9 @@ export default function GlobalMapPage() {
           </div>
           <div className="flex-1 space-y-6">
             <section>
-              <h2 className="text-xl font-semibold mb-2">Top Regions by Talent</h2>
+              <h2 className="text-xl font-semibold mb-2">
+                Top Regions by Talent
+              </h2>
               <ul className="space-y-1">
                 {topRegions.map((r) => (
                   <li key={r.id} className="flex justify-between border-b pb-1">
@@ -140,7 +155,9 @@ export default function GlobalMapPage() {
               <h2 className="text-xl font-semibold mb-2">Live Feed</h2>
               <ul className="space-y-1">
                 {feed.map((f) => (
-                  <li key={f.id} className="text-sm">{f.text}</li>
+                  <li key={f.id} className="text-sm">
+                    {f.text}
+                  </li>
                 ))}
               </ul>
             </section>
@@ -150,4 +167,3 @@ export default function GlobalMapPage() {
     </div>
   );
 }
-

@@ -1,8 +1,19 @@
-
-import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import type { UseFormReturn } from "react-hook-form";
-import type { FormValues } from "./useHireRequestForm";
+import {
+  FormField,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormMessage,
+} from '@/components/ui/form';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import type { UseFormReturn } from 'react-hook-form';
+import type { FormValues } from './useHireRequestForm';
 
 interface TimelineFieldProps {
   form: UseFormReturn<FormValues>;
@@ -10,13 +21,13 @@ interface TimelineFieldProps {
 
 export function TimelineField({ form }: TimelineFieldProps) {
   const timelineOptions = [
-    { value: "Less than 1 week", label: "Less than 1 week" },
-    { value: "1-2 weeks", label: "1-2 weeks" },
-    { value: "2-4 weeks", label: "2-4 weeks" },
-    { value: "1-2 months", label: "1-2 months" },
-    { value: "3-6 months", label: "3-6 months" },
-    { value: "6+ months", label: "6+ months" },
-    { value: "Ongoing", label: "Ongoing" }
+    { value: 'Less than 1 week', label: 'Less than 1 week' },
+    { value: '1-2 weeks', label: '1-2 weeks' },
+    { value: '2-4 weeks', label: '2-4 weeks' },
+    { value: '1-2 months', label: '1-2 months' },
+    { value: '3-6 months', label: '3-6 months' },
+    { value: '6+ months', label: '6+ months' },
+    { value: 'Ongoing', label: 'Ongoing' },
   ];
 
   return (
@@ -27,8 +38,8 @@ export function TimelineField({ form }: TimelineFieldProps) {
         <FormItem>
           <FormLabel className="text-white">Timeline</FormLabel>
           <FormControl>
-            <Select 
-              onValueChange={field.onChange} 
+            <Select
+              onValueChange={field.onChange}
               value={field.value}
               defaultValue={field.value}
             >
@@ -36,11 +47,13 @@ export function TimelineField({ form }: TimelineFieldProps) {
                 <SelectValue placeholder="Select estimated timeline" />
               </SelectTrigger>
               <SelectContent>
-                {timelineOptions.map((option: { value: string; label: string }) => (
-                  <SelectItem key={option.value} value={option.value}>
-                    {option.label}
-                  </SelectItem>
-                ))}
+                {timelineOptions.map(
+                  (option: { value: string; label: string }) => (
+                    <SelectItem key={option.value} value={option.value}>
+                      {option.label}
+                    </SelectItem>
+                  ),
+                )}
               </SelectContent>
             </Select>
           </FormControl>

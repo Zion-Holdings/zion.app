@@ -13,9 +13,11 @@ export function AvatarUpload({ value, onChange }: Props) {
       typeof result === 'object' &&
       result !== null &&
       'info' in result &&
-      typeof (result as { info?: { secure_url?: string } }).info?.secure_url === 'string'
+      typeof (result as { info?: { secure_url?: string } }).info?.secure_url ===
+        'string'
     ) {
-      const secure = (result as { info?: { secure_url?: string } }).info?.secure_url;
+      const secure = (result as { info?: { secure_url?: string } }).info
+        ?.secure_url;
       if (secure) {
         setUrl(secure);
         onChange?.(secure);
@@ -34,13 +36,16 @@ export function AvatarUpload({ value, onChange }: Props) {
         />
       )}
       {process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME &&
-      process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME !== 'YOUR_CLOUDINARY_CLOUD_NAME_HERE' &&
+      process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME !==
+        'YOUR_CLOUDINARY_CLOUD_NAME_HERE' &&
       process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME !== '' ? (
         <CldUploadButton uploadPreset="avatar_preset" onUpload={handleUpload}>
           Upload Avatar
         </CldUploadButton>
       ) : (
-        <p className="text-sm text-gray-500">Image upload feature is currently unavailable.</p>
+        <p className="text-sm text-gray-500">
+          Image upload feature is currently unavailable.
+        </p>
       )}
     </div>
   );

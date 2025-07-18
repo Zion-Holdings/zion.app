@@ -5,9 +5,10 @@ import { logErrorToProduction } from '@/utils/productionLogger';
 import { AuthLayout } from '@/layout';
 import { LoadingSpinner } from '@/components/ui/enhanced-loading-states';
 
-
 const VerifyEmailPage = () => {
-  const [status, setStatus] = useState<'verifying' | 'success' | 'error'>('verifying');
+  const [status, setStatus] = useState<'verifying' | 'success' | 'error'>(
+    'verifying',
+  );
   const [message, setMessage] = useState('Verifying your email...');
   const router = useRouter(); // Changed from navigate
 
@@ -17,12 +18,24 @@ const VerifyEmailPage = () => {
         if (!supabase) throw new Error('Supabase client not initialized');
         // Supabase client automatically handles session from URL fragment or cookie after redirect
         // We need to ensure a session is active, which implies Supabase confirmed the email.
-        const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+        const {
+          data: { session },
+          error: sessionError,
+        } = await supabase.auth.getSession();
 
         if (sessionError) {
-          logErrorToProduction(sessionError instanceof Error ? sessionError.message : String(sessionError), sessionError instanceof Error ? sessionError : undefined, { message: 'Supabase getSession error' });
+          logErrorToProduction(
+            sessionError instanceof Error
+              ? sessionError.message
+              : String(sessionError),
+            sessionError instanceof Error ? sessionError : undefined,
+            { message: 'Supabase getSession error' },
+          );
           setStatus('error');
-          setMessage((sessionError as { message?: string })?.message ?? 'Verification failed: Could not retrieve session.');
+          setMessage(
+            (sessionError as { message?: string })?.message ??
+              'Verification failed: Could not retrieve session.',
+          );
           return;
         }
 
@@ -33,7 +46,9 @@ const VerifyEmailPage = () => {
           // Supabase's onAuthStateChange might be more robust here if direct getSession fails initially.
           // For now, following the provided structure.
           setStatus('error');
-          setMessage('Verification failed: No active session. Please ensure you clicked the link from your email, or try logging in.');
+          setMessage(
+            'Verification failed: No active session. Please ensure you clicked the link from your email, or try logging in.',
+          );
           return;
         }
 
@@ -53,76 +68,127 @@ const VerifyEmailPage = () => {
 
         if (response.ok) {
           setStatus('success');
-          setMessage(responseData.message || 'Email successfully verified! Redirecting to login...');
+          setMessage(
+            responseData.message ||
+              'Email successfully verified! Redirecting to login...',
+          );
           setTimeout(() => router.push('/login'), 3000); // Changed to router.push
         } else {
           setStatus('error');
-          setMessage(responseData.message || 'Failed to finalize email verification in our system. Please try again or contact support.');
+          setMessage(
+            responseData.message ||
+              'Failed to finalize email verification in our system. Please try again or contact support.',
+          );
         }
       } catch (error: unknown) {
-        logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Verification page error' });
+        logErrorToProduction(
+          error instanceof Error ? error.message : String(error),
+          error instanceof Error ? error : undefined,
+          { message: 'Verification page error' },
+        );
         setStatus('error');
         setMessage(
           (typeof error === 'object' && error && 'message' in error
             ? (error as { message?: string }).message
-            : undefined) ?? 'An unexpected error occurred during verification.'
+            : undefined) ?? 'An unexpected error occurred during verification.',
         );
       }
     };
 
     // Handle errors in URL hash from Supabase redirect
-    if (typeof window !== 'undefined' && window.location.hash.includes('error_description')) {
-        const params = new URLSearchParams(window.location.hash.substring(1)); // remove #
-        const errorDescription = params.get('error_description');
-        logErrorToProduction(errorDescription || 'Unknown error from Supabase redirect', undefined, { message: 'Error from Supabase redirect' });
-        setMessage(`Verification failed: ${errorDescription}`);
-        setStatus('error');
-        return undefined;
+    if (
+      typeof window !== 'undefined' &&
+      window.location.hash.includes('error_description')
+    ) {
+      const params = new URLSearchParams(window.location.hash.substring(1)); // remove #
+      const errorDescription = params.get('error_description');
+      logErrorToProduction(
+        errorDescription || 'Unknown error from Supabase redirect',
+        undefined,
+        { message: 'Error from Supabase redirect' },
+      );
+      setMessage(`Verification failed: ${errorDescription}`);
+      setStatus('error');
+      return undefined;
     } else {
-        // Attempt to confirm verification.
-        // A small delay can sometimes help ensure the Supabase client has processed any URL hash tokens.
-        const timer = setTimeout(() => {
-            confirmVerification();
-        }, 500);
-        return () => clearTimeout(timer); // Cleanup timer on unmount
+      // Attempt to confirm verification.
+      // A small delay can sometimes help ensure the Supabase client has processed any URL hash tokens.
+      const timer = setTimeout(() => {
+        confirmVerification();
+      }, 500);
+      return () => clearTimeout(timer); // Cleanup timer on unmount
     }
-
   }, [router]); // Changed navigate to router in dependencies
 
   return (
     <AuthLayout>
-      <div style={{ padding: '20px', textAlign: 'center', fontFamily: 'Arial, sans-serif' }}>
-      <h1>Email Verification Status</h1>
-      <div style={{ margin: '20px auto', padding: '20px', border: '1px solid #eee', borderRadius: '8px', maxWidth: '400px' }}>
-        <p style={{ fontSize: '1.1em' }}>{message}</p>
-        {status === 'verifying' && (
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
-            <LoadingSpinner variant="primary" />
-          </div>
-        )}
-        {status === 'success' && (
-          <p style={{ color: 'green', fontWeight: 'bold', marginTop: '10px' }}>✅ Email Verified!</p>
-        )}
-        {status === 'error' && (
-          <div style={{ marginTop: '20px' }}>
-            <p style={{ color: 'red', fontWeight: 'bold' }}>❌ Verification Failed</p>
-            <button
-              onClick={() => router.push('/login')} // Changed to router.push
-              style={{ marginTop: '10px', padding: '10px 15px', cursor: 'pointer', backgroundColor: '#0070f3', color: 'white', border: 'none', borderRadius: '5px' }}
+      <div
+        style={{
+          padding: '20px',
+          textAlign: 'center',
+          fontFamily: 'Arial, sans-serif',
+        }}
+      >
+        <h1>Email Verification Status</h1>
+        <div
+          style={{
+            margin: '20px auto',
+            padding: '20px',
+            border: '1px solid #eee',
+            borderRadius: '8px',
+            maxWidth: '400px',
+          }}
+        >
+          <p style={{ fontSize: '1.1em' }}>{message}</p>
+          {status === 'verifying' && (
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                marginTop: '20px',
+              }}
             >
-              Go to Login
-            </button>
-          </div>
-        )}
-      </div>
-      {/* Basic CSS for spinner animation */}
-      {/* <style jsx global>{`
+              <LoadingSpinner variant="primary" />
+            </div>
+          )}
+          {status === 'success' && (
+            <p
+              style={{ color: 'green', fontWeight: 'bold', marginTop: '10px' }}
+            >
+              ✅ Email Verified!
+            </p>
+          )}
+          {status === 'error' && (
+            <div style={{ marginTop: '20px' }}>
+              <p style={{ color: 'red', fontWeight: 'bold' }}>
+                ❌ Verification Failed
+              </p>
+              <button
+                onClick={() => router.push('/login')} // Changed to router.push
+                style={{
+                  marginTop: '10px',
+                  padding: '10px 15px',
+                  cursor: 'pointer',
+                  backgroundColor: '#0070f3',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '5px',
+                }}
+              >
+                Go to Login
+              </button>
+            </div>
+          )}
+        </div>
+        {/* Basic CSS for spinner animation */}
+        {/* <style jsx global>{`
         @keyframes spin {
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
         }
       `}</style> */}
-    </div>
+      </div>
     </AuthLayout>
   );
 };

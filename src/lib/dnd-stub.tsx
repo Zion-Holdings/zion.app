@@ -9,18 +9,38 @@ export function DragDropContext({ children }: DragDropContextProps) {
 }
 
 interface DroppableProps {
-  children: (provided: { droppableProps: Record<string, unknown>; innerRef: (el: HTMLElement | null) => void; placeholder: ReactNode; }) => ReactNode;
+  children: (provided: {
+    droppableProps: Record<string, unknown>;
+    innerRef: (el: HTMLElement | null) => void;
+    placeholder: ReactNode;
+  }) => ReactNode;
   droppableId: string;
 }
 export function Droppable({ children }: DroppableProps) {
-  return <>{children({ droppableProps: {}, _innerRef: () => {}, placeholder: null })}</>;
+  return (
+    <>
+      {children({ droppableProps: {}, _innerRef: () => {}, placeholder: null })}
+    </>
+  );
 }
 
 interface DraggableProps {
-  children: (provided: { draggableProps: Record<string, unknown>; dragHandleProps: Record<string, unknown>; innerRef: (el: HTMLElement | null) => void; }) => ReactNode;
+  children: (provided: {
+    draggableProps: Record<string, unknown>;
+    dragHandleProps: Record<string, unknown>;
+    innerRef: (el: HTMLElement | null) => void;
+  }) => ReactNode;
   draggableId: string;
   index: number;
 }
 export function Draggable({ children }: DraggableProps) {
-  return <>{children({ draggableProps: {}, dragHandleProps: {}, _innerRef: () => {} })}</>;
+  return (
+    <>
+      {children({
+        draggableProps: {},
+        dragHandleProps: {},
+        _innerRef: () => {},
+      })}
+    </>
+  );
 }

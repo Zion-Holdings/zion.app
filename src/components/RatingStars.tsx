@@ -1,10 +1,13 @@
 import React from 'react';
 import { Star } from '@/components/ui/icons';
 
-
-
-
-export function RatingStars({ value = 0, count }: { value?: number; count?: number }) {
+export function RatingStars({
+  value = 0,
+  count,
+}: {
+  value?: number;
+  count?: number;
+}) {
   const filled = Math.floor(value);
   const half = value - filled >= 0.5;
   const total = 5;
@@ -14,10 +17,7 @@ export function RatingStars({ value = 0, count }: { value?: number; count?: numb
       {[...Array(total)].map((_, i) => {
         if (i < filled) {
           return (
-            <Star
-              key={i}
-              className="h-4 w-4 fill-zion-cyan text-zion-cyan"
-            />
+            <Star key={i} className="h-4 w-4 fill-zion-cyan text-zion-cyan" />
           );
         }
         if (i === filled && half) {

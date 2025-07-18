@@ -1,4 +1,3 @@
-
 // ZionGPT Utility Functions
 // This file handles interaction with the fine-tuned ZionGPT model
 
@@ -6,7 +5,11 @@ import { supabase } from '@/integrations/supabase/client';
 import { logErrorToProduction } from '@/utils/productionLogger';
 import { logWarn } from '@/utils/productionLogger';
 
-export type ModelVersion = 'zion-job-generator-v1' | 'zion-resume-enhancer-v1' | 'zion-support-v1' | 'gpt-3.5-turbo';
+export type ModelVersion =
+  | 'zion-job-generator-v1'
+  | 'zion-resume-enhancer-v1'
+  | 'zion-support-v1'
+  | 'gpt-3.5-turbo';
 
 export type ZionGPTUsage = {
   modelId: string;
@@ -28,7 +31,9 @@ export interface ModelConfig {
 // if (!supabase) throw new Error('Supabase client is not initialized');
 
 // Get the latest active model ID for a specific purpose
-export async function getActiveModelId(purpose: 'job' | 'resume' | 'support'): Promise<ModelVersion> {
+export async function getActiveModelId(
+  purpose: 'job' | 'resume' | 'support',
+): Promise<ModelVersion> {
   if (!supabase) throw new Error('Supabase client is not initialized');
   try {
     const { data, error } = await supabase
@@ -39,22 +44,36 @@ export async function getActiveModelId(purpose: 'job' | 'resume' | 'support'): P
       .order('version', { ascending: false })
       .limit(1)
       .single();
-    
+
     if (error || !data) {
-      logErrorToProduction(error?.message || 'No model data returned', error || undefined, { context: 'getActiveModelId' });
-      logWarn('Failed to fetch active model, falling back to default', { data:  { data: error } });
+      logErrorToProduction(
+        error?.message || 'No model data returned',
+        error || undefined,
+        { context: 'getActiveModelId' },
+      );
+      logWarn('Failed to fetch active model, falling back to default', {
+        data: { data: error },
+      });
       // Fallback to default models
-      switch(purpose) {
-        case 'job': return 'zion-job-generator-v1';
-        case 'resume': return 'zion-resume-enhancer-v1';
-        case 'support': return 'zion-support-v1';
-        default: return 'gpt-3.5-turbo';
+      switch (purpose) {
+        case 'job':
+          return 'zion-job-generator-v1';
+        case 'resume':
+          return 'zion-resume-enhancer-v1';
+        case 'support':
+          return 'zion-support-v1';
+        default:
+          return 'gpt-3.5-turbo';
       }
     }
-    
+
     return data.id as ModelVersion;
   } catch {
-    logErrorToProduction(error instanceof Error ? error : String(error), error instanceof Error ? error : undefined, { context: 'getActiveModelId' });
+    logErrorToProduction(
+      error instanceof Error ? error : String(error),
+      error instanceof Error ? error : undefined,
+      { context: 'getActiveModelId' },
+    );
     return 'gpt-3.5-turbo'; // Fallback to base model
   }
 }
@@ -64,25 +83,26 @@ export async function logModelUsage(
   modelId: string,
   tokensUsed: number,
   feature: string,
-  userId?: string
+  userId?: string,
 ): Promise<void> {
   if (!supabase) throw new Error('Supabase client is not initialized');
   try {
     const cost = calculateCost(modelId, tokensUsed);
-    
-    await supabase
-      .from('model_usage_logs')
-      .insert({
-        model_id: modelId,
-        tokens_used: tokensUsed,
-        cost: cost,
-        feature: feature,
-        user_id: userId || null,
-        timestamp: new Date().toISOString()
-      });
-      
+
+    await supabase.from('model_usage_logs').insert({
+      model_id: modelId,
+      tokens_used: tokensUsed,
+      cost: cost,
+      feature: feature,
+      user_id: userId || null,
+      timestamp: new Date().toISOString(),
+    });
   } catch {
-    logErrorToProduction(error instanceof Error ? error : String(error), error instanceof Error ? error : undefined, { context: 'logModelUsage' });
+    logErrorToProduction(
+      error instanceof Error ? error : String(error),
+      error instanceof Error ? error : undefined,
+      { context: 'logModelUsage' },
+    );
     // Non-blocking - we don't want to fail the main operation
   }
 }
@@ -96,11 +116,11 @@ function calculateCost(modelId: string, tokens: number): number {
 
 // Function to call ZionGPT models through Supabase Edge Function
 export async function callZionGPT({
-  prompt, 
+  prompt,
   purpose,
   maxTokens = 500,
   temperature = 0.7,
-  userId
+  userId,
 }: {
   prompt: string;
   purpose: 'job' | 'resume' | 'support';
@@ -112,31 +132,37 @@ export async function callZionGPT({
   try {
     // Dynamically get the proper model ID based on purpose
     const modelId = await getActiveModelId(purpose);
-    
+
     // Call the edge function that will use the model
     const { data, error } = await supabase.functions.invoke('zion-gpt', {
       body: {
         prompt,
         modelId,
         maxTokens,
-        temperature
-      }
+        temperature,
+      },
     });
-    
+
     if (error) throw error;
-    
+
     // Log usage for analytics
     if (data && typeof data === 'object' && 'tokensUsed' in data) {
       await logModelUsage(
-        modelId, 
+        modelId,
         (data as { tokensUsed: number }).tokensUsed,
         `${purpose}-generation`,
-        userId
+        userId,
       );
     }
-    return (typeof data === 'object' && data && 'completion' in data) ? (data as { completion: string }).completion : '';
+    return typeof data === 'object' && data && 'completion' in data
+      ? (data as { completion: string }).completion
+      : '';
   } catch {
-    logErrorToProduction(error instanceof Error ? error : String(error), error instanceof Error ? error : undefined, { context: 'callZionGPT' });
+    logErrorToProduction(
+      error instanceof Error ? error : String(error),
+      error instanceof Error ? error : undefined,
+      { context: 'callZionGPT' },
+    );
     throw error;
   }
 }

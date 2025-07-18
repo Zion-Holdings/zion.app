@@ -1,13 +1,10 @@
-
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import { Mail, Send } from '@/components/ui/icons';
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 
-
-
-import { useState } from "react";
-import { toast } from "@/hooks/use-toast";
+import { useState } from 'react';
+import { toast } from '@/hooks/use-toast';
 
 interface ProfileContactProps {
   email?: string;
@@ -15,22 +12,26 @@ interface ProfileContactProps {
   profileType: 'service' | 'talent';
 }
 
-export function ProfileContact({ email, profileName, profileType: _profileType }: ProfileContactProps) {
-  const [message, setMessage] = useState("");
-  const [subject, setSubject] = useState("");
+export function ProfileContact({
+  email,
+  profileName,
+  profileType: _profileType,
+}: ProfileContactProps) {
+  const [message, setMessage] = useState('');
+  const [subject, setSubject] = useState('');
   const [isSending, setIsSending] = useState(false);
-  
+
   const handleSendMessage = (_e: React.FormEvent) => {
     e.preventDefault();
     setIsSending(true);
-    
+
     // Here would be the actual API call to send the message
     setTimeout(() => {
       setIsSending(false);
-      setMessage("");
-      setSubject("");
+      setMessage('');
+      setSubject('');
       toast({
-        title: "Message Sent",
+        title: 'Message Sent',
         description: `Your message has been sent to ${profileName}.`,
       });
     }, 1000);
@@ -42,19 +43,19 @@ export function ProfileContact({ email, profileName, profileType: _profileType }
         <Mail className="mr-2 h-5 w-5 text-zion-cyan" />
         Contact
       </h3>
-      
+
       {email && (
         <div className="mb-4 text-zion-slate-light">
           <span className="block">Email: </span>
-          <a 
-            href={`mailto:${email}`} 
+          <a
+            href={`mailto:${email}`}
             className="text-zion-cyan hover:underline truncate block"
           >
             {email}
           </a>
         </div>
       )}
-      
+
       <form onSubmit={handleSendMessage}>
         <div className="space-y-4">
           <div>
@@ -75,13 +76,13 @@ export function ProfileContact({ email, profileName, profileType: _profileType }
               required
             />
           </div>
-          <Button 
-            type="submit" 
+          <Button
+            type="submit"
             className="w-full bg-zion-cyan hover:bg-zion-cyan/90"
             disabled={isSending}
           >
             <Send className="mr-2 h-4 w-4" />
-            {isSending ? "Sending..." : "Send Message"}
+            {isSending ? 'Sending...' : 'Send Message'}
           </Button>
         </div>
       </form>

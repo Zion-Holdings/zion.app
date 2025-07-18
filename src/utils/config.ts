@@ -38,11 +38,19 @@ export interface AppConfig {
 export function getAppConfig(): AppConfig {
   const isDevelopment = process.env.NODE_ENV === 'development';
   const isProduction = process.env.NODE_ENV === 'production';
-  
+
   // Wallet configuration with proper fallbacks
-  const walletProjectId = process.env.NEXT_PUBLIC_REOWN_PROJECT_ID || 'your_project_id_here';
-  const isWalletConfigured = Boolean(walletProjectId && 
-    !['your_project_id_here', 'YOUR_PROJECT_ID', 'dummy', 'fallback'].includes(walletProjectId));
+  const walletProjectId =
+    process.env.NEXT_PUBLIC_REOWN_PROJECT_ID || 'your_project_id_here';
+  const isWalletConfigured = Boolean(
+    walletProjectId &&
+      ![
+        'your_project_id_here',
+        'YOUR_PROJECT_ID',
+        'dummy',
+        'fallback',
+      ].includes(walletProjectId),
+  );
 
   return {
     app: {
@@ -55,7 +63,10 @@ export function getAppConfig(): AppConfig {
     supabase: {
       url: process.env.NEXT_PUBLIC_SUPABASE_URL,
       anonKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-      isConfigured: !!(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY),
+      isConfigured: !!(
+        process.env.NEXT_PUBLIC_SUPABASE_URL &&
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+      ),
     },
     wallet: {
       projectId: walletProjectId,
@@ -63,12 +74,16 @@ export function getAppConfig(): AppConfig {
     },
     sentry: {
       dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
-      environment: process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT || process.env.NODE_ENV || 'development',
+      environment:
+        process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT ||
+        process.env.NODE_ENV ||
+        'development',
       release: process.env.NEXT_PUBLIC_SENTRY_RELEASE || '1.0.0',
       isConfigured: !!process.env.NEXT_PUBLIC_SENTRY_DSN,
     },
     performance: {
-      monitoringEnabled: process.env.PERFORMANCE_MONITORING === 'true' || isDevelopment,
+      monitoringEnabled:
+        process.env.PERFORMANCE_MONITORING === 'true' || isDevelopment,
     },
   };
 }
@@ -76,7 +91,10 @@ export function getAppConfig(): AppConfig {
 /**
  * Validate required environment variables
  */
-export function validateEnvironment(): { isValid: boolean; missingVars: string[] } {
+export function validateEnvironment(): {
+  isValid: boolean;
+  missingVars: string[];
+} {
   const config = getAppConfig();
   const missingVars: string[] = [];
 
@@ -85,10 +103,11 @@ export function validateEnvironment(): { isValid: boolean; missingVars: string[]
     if (!config.app.url || config.app.url === 'http://localhost:3000') {
       missingVars.push('NEXT_PUBLIC_APP_URL');
     }
-    
+
     if (!config.supabase.isConfigured) {
       if (!config.supabase.url) missingVars.push('NEXT_PUBLIC_SUPABASE_URL');
-      if (!config.supabase.anonKey) missingVars.push('NEXT_PUBLIC_SUPABASE_ANON_KEY');
+      if (!config.supabase.anonKey)
+        missingVars.push('NEXT_PUBLIC_SUPABASE_ANON_KEY');
     }
   }
 
@@ -110,11 +129,19 @@ export function logConfigurationStatus(): void {
   logInfo('🔧 Configuration Status:');
   logInfo(`  Environment: ${config.app.environment}`);
   logInfo(`  App URL: ${config.app.url}`);
-  logInfo(`  Supabase: ${config.supabase.isConfigured ? '✅' : '⚠️'} ${config.supabase.isConfigured ? 'Configured' : 'Using fallbacks'}`);
-  logInfo(`  Wallet: ${config.wallet.isConfigured ? '✅' : '⚠️'} ${config.wallet.isConfigured ? 'Configured' : 'Using placeholder'}`);
-  logInfo(`  Sentry: ${config.sentry.isConfigured ? '✅' : '⚠️'} ${config.sentry.isConfigured ? 'Configured' : 'Disabled'}`);
-  
+  logInfo(
+    `  Supabase: ${config.supabase.isConfigured ? '✅' : '⚠️'} ${config.supabase.isConfigured ? 'Configured' : 'Using fallbacks'}`,
+  );
+  logInfo(
+    `  Wallet: ${config.wallet.isConfigured ? '✅' : '⚠️'} ${config.wallet.isConfigured ? 'Configured' : 'Using placeholder'}`,
+  );
+  logInfo(
+    `  Sentry: ${config.sentry.isConfigured ? '✅' : '⚠️'} ${config.sentry.isConfigured ? 'Configured' : 'Disabled'}`,
+  );
+
   if (!validation.isValid) {
-    logWarn('⚠️ Missing environment variables:', { data:  { data: validation.missingVars } });
+    logWarn('⚠️ Missing environment variables:', {
+      data: { data: validation.missingVars },
+    });
   }
-} 
+}

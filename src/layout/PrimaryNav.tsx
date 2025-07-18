@@ -18,8 +18,6 @@ import { ResponsiveNavigation } from '@/components/navigation/ResponsiveNavigati
 import { MobileMenu } from '@/components/header/MobileMenu';
 import { MobileBottomNav } from '@/components/header/MobileBottomNav';
 
-
-
 import { useTranslation } from 'react-i18next';
 import { CartDrawer } from '@/components/cart/CartDrawer';
 import { LoginModal } from '@/components/auth/LoginModal';
@@ -47,11 +45,16 @@ export function PrimaryNav() {
     e.preventDefault();
     const trimmed = query.trim();
     if (trimmed) {
-      logDebug('PrimaryNav search submit:', { data:  { query: trimmed } });
+      logDebug('PrimaryNav search submit:', { data: { query: trimmed } });
       router
         .push(`/search?q=${encodeURIComponent(trimmed)}`)
         .then(() => setQuery(''))
-        .catch((err) => logErrorToProduction('Search navigation failed', err, { query: trimmed, component: 'PrimaryNav' }));
+        .catch((err) =>
+          logErrorToProduction('Search navigation failed', err, {
+            query: trimmed,
+            component: 'PrimaryNav',
+          }),
+        );
     }
   };
 
@@ -65,26 +68,38 @@ export function PrimaryNav() {
       >
         <div className="container flex items-center justify-between gap-2 min-h-16 px-4 sm:px-6 max-[320px]:flex-wrap">
           <Logo />
-          
+
           {/* Navigation - hidden on mobile and tablets, shown on desktop */}
           <div className="hidden lg:block order-1 flex-shrink-0">
-            <ResponsiveNavigation openLoginModal={(_returnToPath) => setLoginOpen(true)} />
+            <ResponsiveNavigation
+              openLoginModal={(_returnToPath) => setLoginOpen(true)}
+            />
           </div>
-          
+
           {/* Actions container with responsive layout */}
           <div className="hidden lg:flex items-center gap-2 order-2 flex-shrink-0 min-w-0">
             {/* Search form with clamped width */}
-            <form onSubmit={handleSubmit} className="flex-shrink-0" style={{ width: 'clamp(12rem, 20vw, 16rem)' }}>
+            <form
+              onSubmit={handleSubmit}
+              className="flex-shrink-0"
+              style={{ width: 'clamp(12rem, 20vw, 16rem)' }}
+            >
               <EnhancedSearchInput
                 value={query}
                 onChange={setQuery}
                 onSelectSuggestion={(sugg) => {
-                  logDebug('PrimaryNav search suggestion selected:', { data:  { suggestion: sugg } });
+                  logDebug('PrimaryNav search suggestion selected:', {
+                    data: { suggestion: sugg },
+                  });
                   // Handle different suggestion types with proper navigation
                   if (sugg.id) {
                     // Product listings with IDs go to product detail page
                     router.push(`/marketplace/listing/${sugg.id}`);
-                  } else if (sugg.type === 'doc' && sugg.slug && sugg.slug.startsWith('/')) {
+                  } else if (
+                    sugg.type === 'doc' &&
+                    sugg.slug &&
+                    sugg.slug.startsWith('/')
+                  ) {
                     // Documentation suggestions navigate directly to their path
                     router.push(sugg.slug);
                   } else if (sugg.type === 'blog' && sugg.slug) {
@@ -95,32 +110,32 @@ export function PrimaryNav() {
                     router.push(`/search?q=${encodeURIComponent(sugg.text)}`);
                   }
                   setQuery('');
-                  
+
                   // Track analytics event
                   if (typeof window !== 'undefined' && window.gtag) {
                     window.gtag('event', 'search_suggestion_click', {
                       search_term: sugg.text,
                       suggestion_type: sugg.type,
-                      suggestion_id: sugg.id || sugg.slug
+                      suggestion_id: sugg.id || sugg.slug,
                     });
                   }
                 }}
                 searchSuggestions={suggestions}
               />
             </form>
-            
+
             {/* Compact actions group */}
             <div className="flex items-center gap-1">
               <PointsBadge />
               <CartDrawer />
             </div>
-            
+
             {/* Compact controls group */}
             <div className="flex items-center gap-1 border-l border-primary/20 pl-1 ml-1">
               <ModeToggle />
               <LanguageSelector />
             </div>
-            
+
             {/* Auth links - flex wrap for very small screens */}
             <div className="flex items-center gap-1 flex-wrap">
               {!isLoggedIn && (
@@ -147,7 +162,7 @@ export function PrimaryNav() {
               {isLoggedIn && <UserMenu />}
             </div>
           </div>
-          
+
           {/* Tablet view (md to lg) - simplified controls */}
           <div className="hidden _md:flex lg:hidden items-center gap-2 order-2">
             <ModeToggle />
@@ -167,7 +182,7 @@ export function PrimaryNav() {
             )}
             {isLoggedIn && <UserMenu />}
           </div>
-          
+
           {/* Mobile menu button */}
           <button
             className="lg:hidden p-2 rounded focus:outline-none flex-shrink-0"

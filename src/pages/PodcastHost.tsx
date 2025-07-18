@@ -3,10 +3,9 @@ import { Header } from '@/components/Header';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 export default function PodcastHost() {
-
   const [invitee, setInvitee] = useState('');
   const [bio, setBio] = useState('');
   const [topic, setTopic] = useState('');
@@ -20,7 +19,7 @@ export default function PodcastHost() {
       const res = await fetch('/api/podcast/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ invitee, bio, topic })
+        body: JSON.stringify({ invitee, bio, topic }),
       });
       if (!res.ok) throw new Error('Failed to generate');
       const data = await res.json();
@@ -46,19 +45,19 @@ export default function PodcastHost() {
             <Input
               placeholder="Invitee Name"
               value={invitee}
-              onChange={e => setInvitee(e.target.value)}
+              onChange={(e) => setInvitee(e.target.value)}
               className="bg-zion-blue border border-zion-blue-light text-white"
             />
             <Textarea
               placeholder="Invitee Bio"
               value={bio}
-              onChange={e => setBio(e.target.value)}
+              onChange={(e) => setBio(e.target.value)}
               className="bg-zion-blue border border-zion-blue-light text-white"
             />
             <Input
               placeholder="Topic"
               value={topic}
-              onChange={e => setTopic(e.target.value)}
+              onChange={(e) => setTopic(e.target.value)}
               className="bg-zion-blue border border-zion-blue-light text-white"
             />
             <Button

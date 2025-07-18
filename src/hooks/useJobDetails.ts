@@ -2,10 +2,9 @@ import type { Job } from '@/types/jobs';
 
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 export function useJobDetails(jobId: string | undefined) {
-
   const [job, setJob] = useState<Job | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -15,7 +14,7 @@ export function useJobDetails(jobId: string | undefined) {
       setIsLoading(false);
       return;
     }
-    
+
     try {
       setIsLoading(true);
       if (!supabase) throw new Error('Supabase client not initialized');
@@ -24,7 +23,7 @@ export function useJobDetails(jobId: string | undefined) {
         .select('*')
         .eq('id', jobId)
         .single();
-        
+
       if (error) throw error;
       setJob(data);
       setError(null);
@@ -45,7 +44,7 @@ export function useJobDetails(jobId: string | undefined) {
     job,
     isLoading,
     error,
-    loadJobDetails
+    loadJobDetails,
   };
 }
 

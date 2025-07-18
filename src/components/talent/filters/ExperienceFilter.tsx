@@ -1,12 +1,14 @@
-
-
-
-import { Slider } from "@/components/ui/slider";
+import { Slider } from '@/components/ui/slider';
 import { ChevronDown, ChevronUp } from '@/components/ui/icons';
-import type { ExperienceFilterProps } from "@/types/filters";
+import type { ExperienceFilterProps } from '@/types/filters';
 
-
-export function ExperienceFilter({ experienceRange, setExperienceRange, expanded, toggleSection, _isMobileFilterOpen }: ExperienceFilterProps) {
+export function ExperienceFilter({
+  experienceRange,
+  setExperienceRange,
+  expanded,
+  toggleSection,
+  _isMobileFilterOpen,
+}: ExperienceFilterProps) {
   const handleChange = (_values: number[]) => {
     setExperienceRange([values[0] || 0, values[1] || 15]);
   };
@@ -24,7 +26,7 @@ export function ExperienceFilter({ experienceRange, setExperienceRange, expanded
           <ChevronDown className="h-4 w-4 text-zion-slate-light" />
         )}
       </button>
-      
+
       {expanded && (
         <div className="mt-6">
           <div className="flex justify-between text-sm text-zion-slate-light mb-2">

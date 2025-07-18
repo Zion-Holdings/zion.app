@@ -15,12 +15,14 @@ const defaultStatus: AdvancedOnboardingStatus = {
 export function useAdvancedOnboardingStatus() {
   const [status, setStatus] = useLocalStorage<AdvancedOnboardingStatus>(
     'advanced.onboarding',
-    defaultStatus
+    defaultStatus,
   );
 
   const markAiExplored = () => setStatus((s) => ({ ...s, aiExplored: true }));
-  const markSlackConnected = () => setStatus((s) => ({ ...s, slackConnected: true }));
-  const markCommunityVisited = () => setStatus((s) => ({ ...s, communityVisited: true }));
+  const markSlackConnected = () =>
+    setStatus((s) => ({ ...s, slackConnected: true }));
+  const markCommunityVisited = () =>
+    setStatus((s) => ({ ...s, communityVisited: true }));
 
   return { status, markAiExplored, markSlackConnected, markCommunityVisited };
 }

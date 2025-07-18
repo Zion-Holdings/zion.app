@@ -15,7 +15,9 @@ export const holdInEscrow = async (_params: {
     });
     if (error) throw error;
     // Handle mock response with fallback
-    return data ? (data as { paymentIntentId: string }) : { paymentIntentId: 'mock-payment-intent-id' };
+    return data
+      ? (data as { paymentIntentId: string })
+      : { paymentIntentId: 'mock-payment-intent-id' };
   } catch {
     logErrorToProduction('Error in holdInEscrow', { data: error });
     throw err;
@@ -30,7 +32,9 @@ export const releaseEscrow = async (_paymentIntentId: string) => {
     });
     if (error) throw error;
     // Handle mock response with fallback
-    return data ? (data as { message: string }) : { message: 'Escrow released successfully' };
+    return data
+      ? (data as { message: string })
+      : { message: 'Escrow released successfully' };
   } catch {
     logErrorToProduction('Error in releaseEscrow', { data: error });
     throw err;
@@ -45,7 +49,9 @@ export const disputeOrder = async (_orderId: string) => {
     });
     if (error) throw error;
     // Handle mock response with fallback
-    return data ? (data as { message: string }) : { message: 'Dispute initiated successfully' };
+    return data
+      ? (data as { message: string })
+      : { message: 'Dispute initiated successfully' };
   } catch {
     logErrorToProduction('Error in disputeOrder', { data: error });
     throw err;

@@ -10,7 +10,10 @@ import { RegistrationForm } from '@/components/summit/RegistrationForm';
 export default function SummitPage() {
   return (
     <>
-      <SEO title="Zion Global Summit" description="Join us for the Zion Global Launch Summit" />
+      <SEO
+        title="Zion Global Summit"
+        description="Join us for the Zion Global Launch Summit"
+      />
       <Header />
       <main className="bg-background">
         <SummitHero />

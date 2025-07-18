@@ -1,46 +1,53 @@
-import { useState } from 'react'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
-import { toast } from '@/hooks/use-toast'
-import axios from 'axios'
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { useState } from 'react';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { toast } from '@/hooks/use-toast';
+import axios from 'axios';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || ''
+const API_URL = process.env.NEXT_PUBLIC_API_URL || '';
 
 export default function ForgotPassword() {
-  const [email, setEmail] = useState('')
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (_e: React.FormEvent) => {
-    e.preventDefault()
-    setLoading(true)
-    setError(null)
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
     try {
-      const res = await axios.post(`${API_URL}/auth/forgot`, { email })
+      const res = await axios.post(`${API_URL}/auth/forgot`, { email });
       if (res.status === 200) {
-        toast.success('Email sent')
+        toast.success('Email sent');
       } else {
-        throw new Error('Request failed')
+        throw new Error('Request failed');
       }
     } catch (err: unknown) {
       logErrorToProduction('Forgot password error', err);
       let msg = 'Failed to send reset link';
       if (typeof err === 'object' && err !== null) {
         // Check for axios error shape
-        if ('response' in err && typeof (err as { response?: { data?: { message?: string } } }).response?.data?.message === 'string') {
-          msg = (err as { response: { data: { message: string } } }).response.data.message;
-        } else if ('message' in err && typeof (err as { message?: string }).message === 'string') {
+        if (
+          'response' in err &&
+          typeof (err as { response?: { data?: { message?: string } } })
+            .response?.data?.message === 'string'
+        ) {
+          msg = (err as { response: { data: { message: string } } }).response
+            .data.message;
+        } else if (
+          'message' in err &&
+          typeof (err as { message?: string }).message === 'string'
+        ) {
           msg = (err as { message: string }).message;
         }
       }
       setError(msg);
       toast.error(msg);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
     <div className="flex min-h-screen items-center justify-center p-4">
@@ -58,5 +65,5 @@ export default function ForgotPassword() {
         </Button>
       </form>
     </div>
-  )
+  );
 }

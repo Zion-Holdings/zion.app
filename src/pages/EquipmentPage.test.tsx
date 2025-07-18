@@ -12,7 +12,6 @@ vi.mock('@/hooks/use-toast', () => ({
 // MSW endpoint for equipment API
 const EQUIPMENT_API_URL = '/api/v1/services/equipment';
 
-
 describe('fetchEquipment', () => {
   beforeEach(() => {
     vi.clearAllMocks(); // Clear mocks before each test
@@ -34,11 +33,13 @@ describe('fetchEquipment', () => {
           // or the server should return a message in a way Axios picks up.
           // Let's assume Axios generates a message like "Request failed with status code 500"
         });
-      })
+      }),
     );
 
     // Spy on console.error
-    const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const consoleErrorSpy = vi
+      .spyOn(console, 'error')
+      .mockImplementation(() => {});
 
     // Axios error messages are typically "Request failed with status code XXX"
     // Or can be custom if the server sends a 'message' field in the error JSON
@@ -51,7 +52,10 @@ describe('fetchEquipment', () => {
       await fetchEquipment();
     } catch {
       if (error && typeof error === 'object') {
-        const err = error as { message?: string; response?: { data?: unknown; status?: number } };
+        const err = error as {
+          message?: string;
+          response?: { data?: unknown; status?: number };
+        };
         expect(err.message).toBeDefined();
         expect(err.response).toBeDefined();
         if (err.response) {
@@ -67,17 +71,31 @@ describe('fetchEquipment', () => {
       }
     }
 
-
     // Check console logs
     // The error object thrown by MSW + Axios might be complex.
     // We ensure the logging happens with an error object that contains the response.
-    expect(consoleErrorSpy).toHaveBeenCalledWith("Raw error object in fetchEquipment:", expect.objectContaining({
-      response: expect.objectContaining({ data: errorResponseData, status: 500 })
-    }));
-    expect(consoleErrorSpy).toHaveBeenCalledWith("Error response data in fetchEquipment:", errorResponseData);
-    expect(consoleErrorSpy).toHaveBeenCalledWith("Failed to fetch equipment:", expect.objectContaining({
-      response: expect.objectContaining({ data: errorResponseData, status: 500 })
-    }));
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      'Raw error object in fetchEquipment:',
+      expect.objectContaining({
+        response: expect.objectContaining({
+          data: errorResponseData,
+          status: 500,
+        }),
+      }),
+    );
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      'Error response data in fetchEquipment:',
+      errorResponseData,
+    );
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      'Failed to fetch equipment:',
+      expect.objectContaining({
+        response: expect.objectContaining({
+          data: errorResponseData,
+          status: 500,
+        }),
+      }),
+    );
 
     // Restore console.error spy
     consoleErrorSpy.mockRestore();
@@ -90,10 +108,12 @@ describe('fetchEquipment', () => {
       http.get(EQUIPMENT_API_URL, () => {
         // Simulate network error
         return HttpResponse.error();
-      })
+      }),
     );
 
-    const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const consoleErrorSpy = vi
+      .spyOn(console, 'error')
+      .mockImplementation(() => {});
 
     try {
       await fetchEquipment();
@@ -111,9 +131,18 @@ describe('fetchEquipment', () => {
       }
     }
 
-    expect(consoleErrorSpy).toHaveBeenCalledWith("Raw error object in fetchEquipment:", expect.any(Error));
-    expect(consoleErrorSpy).not.toHaveBeenCalledWith("Error response data in fetchEquipment:", expect.anything());
-    expect(consoleErrorSpy).toHaveBeenCalledWith("Failed to fetch equipment:", expect.any(Error));
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      'Raw error object in fetchEquipment:',
+      expect.any(Error),
+    );
+    expect(consoleErrorSpy).not.toHaveBeenCalledWith(
+      'Error response data in fetchEquipment:',
+      expect.anything(),
+    );
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      'Failed to fetch equipment:',
+      expect.any(Error),
+    );
 
     consoleErrorSpy.mockRestore();
   });
@@ -140,8 +169,10 @@ describe('fetchEquipment', () => {
         // This requires a bit of a workaround as MSW expects to return a Response.
         // The actual `apiClient.get` call would need to be mocked to throw such an object.
         // For now, we assume an error object *with* a response but *without* a message.
-         return new HttpResponse(JSON.stringify({detail: "server error"}), { status: 500 });
-      })
+        return new HttpResponse(JSON.stringify({ detail: 'server error' }), {
+          status: 500,
+        });
+      }),
     );
 
     // To ensure error.message is falsy, we'd have to ensure the error object itself has no message.
@@ -152,7 +183,9 @@ describe('fetchEquipment', () => {
     // This scenario is hard to simulate perfectly with MSW alone without also mocking parts of Axios.
     // The existing MSW setup will likely result in "Request failed with status code 500".
 
-    const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const consoleErrorSpy = vi
+      .spyOn(console, 'error')
+      .mockImplementation(() => {});
 
     try {
       await fetchEquipment();
@@ -176,5 +209,4 @@ describe('fetchEquipment', () => {
 
     consoleErrorSpy.mockRestore();
   });
-
 });

@@ -1,11 +1,11 @@
 import { supabase } from '@/integrations/supabase/client';
 import type { ForumPost } from '@/types/community';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 export async function fetchPostsByCategory(
   categoryId: string,
   cursor?: string, // Cursor is now a string (e.g., ISO timestamp)
-  limit = 20 // Default limit
+  limit = 20, // Default limit
 ): Promise<{ posts: ForumPost[]; nextCursor: string | null }> {
   if (!supabase) throw new Error('Supabase client not initialized');
   let query = supabase
@@ -32,7 +32,7 @@ export async function fetchPostsByCategory(
   // If posts array is empty or shorter than limit, it means no more posts.
   const nextCursor =
     posts.length === limit && posts.length > 0
-      ? posts[posts.length - 1]?.createdAt ?? null
+      ? (posts[posts.length - 1]?.createdAt ?? null)
       : null;
 
   return { posts, nextCursor };

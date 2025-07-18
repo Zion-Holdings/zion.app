@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Loader2, AlertTriangle, RefreshCw, Wifi, WifiOff, Clock, Zap } from '@/components/ui/icons';
+import {
+  Loader2,
+  AlertTriangle,
+  RefreshCw,
+  Wifi,
+  WifiOff,
+  Clock,
+  Zap,
+} from '@/components/ui/icons';
 import { motion } from 'framer-motion';
-
-
-
-
-
-
-
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -28,13 +29,13 @@ export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
   variant = 'default',
   className,
   showText = false,
-  text = 'Loading...'
+  text = 'Loading...',
 }) => {
   const sizeClasses = {
     sm: 'h-4 w-4',
     md: 'h-6 w-6',
     lg: 'h-8 w-8',
-    xl: 'h-12 w-12'
+    xl: 'h-12 w-12',
   };
 
   const variantClasses = {
@@ -42,13 +43,21 @@ export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
     primary: 'text-primary',
     success: 'text-green-500',
     warning: 'text-yellow-500',
-    error: 'text-red-500'
+    error: 'text-red-500',
   };
 
   return (
     <div className={cn('flex items-center gap-2', className)}>
-      <Loader2 className={cn('animate-spin', sizeClasses[size], variantClasses[variant])} />
-      {showText && <span className="text-sm text-muted-foreground">{text}</span>}
+      <Loader2
+        className={cn(
+          'animate-spin',
+          sizeClasses[size],
+          variantClasses[variant],
+        )}
+      />
+      {showText && (
+        <span className="text-sm text-muted-foreground">{text}</span>
+      )}
     </div>
   );
 };
@@ -65,7 +74,7 @@ export const ProgressiveLoading: React.FC<ProgressiveLoadingProps> = ({
   steps,
   currentStep = 0,
   showProgress = true,
-  onComplete
+  onComplete,
 }) => {
   const [activeStep, setActiveStep] = useState(0);
   const progress = ((activeStep + 1) / steps.length) * 100;
@@ -94,14 +103,14 @@ export const ProgressiveLoading: React.FC<ProgressiveLoadingProps> = ({
           />
         </div>
       )}
-      
+
       <div className="space-y-2">
         {steps.map((step, index) => (
           <motion.div
             key={step.id}
             className={cn(
               'flex items-center gap-3 p-2 rounded-md',
-              index === activeStep ? 'bg-primary/10' : 'opacity-50'
+              index === activeStep ? 'bg-primary/10' : 'opacity-50',
             )}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: index <= activeStep ? 1 : 0.5, x: 0 }}
@@ -136,21 +145,21 @@ export const Skeleton: React.FC<SkeletonProps> = ({
   className,
   variant = 'rectangular',
   animation = 'pulse',
-  lines = 1
+  lines = 1,
 }) => {
   const baseClasses = 'bg-muted rounded';
-  
+
   const variantClasses = {
     text: 'h-4 w-full',
     circular: 'h-12 w-12 rounded-full',
     rectangular: 'h-6 w-full',
-    card: 'h-48 w-full'
+    card: 'h-48 w-full',
   };
 
   const animationClasses = {
     pulse: 'animate-pulse',
     wave: 'animate-bounce',
-    none: ''
+    none: '',
   };
 
   if (variant === 'text' && lines > 1) {
@@ -164,7 +173,7 @@ export const Skeleton: React.FC<SkeletonProps> = ({
               variantClasses.text,
               animationClasses[animation],
               i === lines - 1 ? 'w-3/4' : 'w-full',
-              className
+              className,
             )}
           />
         ))}
@@ -178,7 +187,7 @@ export const Skeleton: React.FC<SkeletonProps> = ({
         baseClasses,
         variantClasses[variant],
         animationClasses[animation],
-        className
+        className,
       )}
     />
   );
@@ -216,7 +225,7 @@ export const ErrorState: React.FC<ErrorStateProps> = ({
   retryCount = 0,
   maxRetries = 3,
   onRetry,
-  className
+  className,
 }) => {
   const [isOnline, setIsOnline] = useState(true);
 
@@ -234,7 +243,7 @@ export const ErrorState: React.FC<ErrorStateProps> = ({
         window.removeEventListener('offline', handleOffline);
       };
     }
-    
+
     return undefined;
   }, []);
 
@@ -243,33 +252,39 @@ export const ErrorState: React.FC<ErrorStateProps> = ({
       case 'network':
         return {
           icon: isOnline ? Wifi : WifiOff,
-          title: title || (isOnline ? 'Connection Error' : 'No Internet Connection'),
-          description: description || (isOnline 
-            ? 'Unable to connect to our servers. Please check your connection.'
-            : 'You appear to be offline. Please check your internet connection.'
-          ),
-          color: 'text-orange-500'
+          title:
+            title || (isOnline ? 'Connection Error' : 'No Internet Connection'),
+          description:
+            description ||
+            (isOnline
+              ? 'Unable to connect to our servers. Please check your connection.'
+              : 'You appear to be offline. Please check your internet connection.'),
+          color: 'text-orange-500',
         };
       case 'timeout':
         return {
           icon: Clock,
           title: title || 'Request Timeout',
-          description: description || 'The request took too long to complete. Please try again.',
-          color: 'text-yellow-500'
+          description:
+            description ||
+            'The request took too long to complete. Please try again.',
+          color: 'text-yellow-500',
         };
       case 'permission':
         return {
           icon: AlertTriangle,
           title: title || 'Access Denied',
-          description: description || 'You don\'t have permission to access this resource.',
-          color: 'text-red-500'
+          description:
+            description || "You don't have permission to access this resource.",
+          color: 'text-red-500',
         };
       default:
         return {
           icon: AlertTriangle,
           title: title || 'Something went wrong',
-          description: description || 'An unexpected error occurred. Please try again.',
-          color: 'text-red-500'
+          description:
+            description || 'An unexpected error occurred. Please try again.',
+          color: 'text-red-500',
         };
     }
   };
@@ -310,13 +325,16 @@ export const ErrorState: React.FC<ErrorStateProps> = ({
                 Try Again {retryCount > 0 && `(${retryCount}/${maxRetries})`}
               </Button>
             )}
-            
+
             {action && (
-              <Button onClick={action.onClick} variant={canRetry ? "outline" : "default"}>
+              <Button
+                onClick={action.onClick}
+                variant={canRetry ? 'outline' : 'default'}
+              >
                 {action.label}
               </Button>
             )}
-            
+
             {secondaryAction && (
               <Button onClick={secondaryAction.onClick} variant="ghost">
                 {secondaryAction.label}
@@ -348,18 +366,18 @@ export const LoadingGrid: React.FC<LoadingGridProps> = ({
   count = 8,
   columns = 4,
   variant = 'card',
-  className
+  className,
 }) => {
   const gridClasses = {
     card: `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-${columns} gap-6`,
     list: 'space-y-4',
-    table: 'space-y-2'
+    table: 'space-y-2',
   };
 
   const itemClasses = {
     card: 'p-6 space-y-4',
     list: 'p-4 space-y-3',
-    table: 'p-3 space-y-2'
+    table: 'p-3 space-y-2',
   };
 
   return (
@@ -380,7 +398,7 @@ export const LoadingGrid: React.FC<LoadingGridProps> = ({
                 </div>
               </>
             )}
-            
+
             {variant === 'list' && (
               <div className="flex gap-4">
                 <Skeleton variant="circular" />
@@ -390,7 +408,7 @@ export const LoadingGrid: React.FC<LoadingGridProps> = ({
                 </div>
               </div>
             )}
-            
+
             {variant === 'table' && (
               <div className="flex items-center gap-4">
                 <Skeleton variant="text" className="h-4 w-1/4" />
@@ -418,7 +436,7 @@ export const PerformanceIndicator: React.FC<PerformanceIndicatorProps> = ({
   isLoading = false,
   loadTime,
   itemCount,
-  className
+  className,
 }) => {
   const getPerformanceColor = (_time: number) => {
     if (time < 100) return 'text-green-500';
@@ -436,16 +454,19 @@ export const PerformanceIndicator: React.FC<PerformanceIndicatorProps> = ({
   }
 
   return (
-    <div className={cn('flex items-center gap-2 text-xs text-muted-foreground', className)}>
+    <div
+      className={cn(
+        'flex items-center gap-2 text-xs text-muted-foreground',
+        className,
+      )}
+    >
       {loadTime && (
         <Badge variant="outline" className={getPerformanceColor(loadTime)}>
           <Zap className="h-3 w-3 mr-1" />
           {loadTime}ms
         </Badge>
       )}
-      {itemCount && (
-        <span>{itemCount} items loaded</span>
-      )}
+      {itemCount && <span>{itemCount} items loaded</span>}
     </div>
   );
-}; 
+};

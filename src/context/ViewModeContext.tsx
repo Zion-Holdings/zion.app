@@ -12,7 +12,8 @@ const ViewModeContext = createContext<ViewModeContextType>({
   _setViewMode: () => {},
 });
 
-export const useViewMode = (): ViewModeContextType => useContext(ViewModeContext);
+export const useViewMode = (): ViewModeContextType =>
+  useContext(ViewModeContext);
 
 export function ViewModeProvider({ children }: { children: React.ReactNode }) {
   const [viewMode, setViewMode] = useState<ViewMode>('grid');

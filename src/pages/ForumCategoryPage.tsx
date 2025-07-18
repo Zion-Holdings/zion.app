@@ -1,72 +1,66 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import { MessageSquare, Code, FileText, Search } from '@/components/ui/icons';
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { Button } from "@/components/ui/button";
-import CreatePostButton from "@/components/community/CreatePostButton";
-import { Input } from "@/components/ui/input";
-import { SEO } from "@/components/SEO";
-import PostCard from "@/components/community/PostCard";
-import type { ForumCategoryInfo } from "@/types/community";
-import NotFound from "./NotFound";
-import { useAuth } from "@/hooks/useAuth";
-import { useCommunity } from "@/context";
-import { useToast } from "@/hooks/use-toast";
-import { useFollowedCategories } from "@/hooks/useFollowedCategories";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { Button } from '@/components/ui/button';
+import CreatePostButton from '@/components/community/CreatePostButton';
+import { Input } from '@/components/ui/input';
+import { SEO } from '@/components/SEO';
+import PostCard from '@/components/community/PostCard';
+import type { ForumCategoryInfo } from '@/types/community';
+import NotFound from './NotFound';
+import { useAuth } from '@/hooks/useAuth';
+import { useCommunity } from '@/context';
+import { useToast } from '@/hooks/use-toast';
+import { useFollowedCategories } from '@/hooks/useFollowedCategories';
 import { logInfo } from '@/utils/productionLogger';
-
-
-
-
-
-
-
 
 // Mock category data
 const categoriesInfo: Record<string, ForumCategoryInfo> = {
-  "getting-hired": {
-    id: "getting-hired",
-    name: "Getting Hired",
-    description: "Tips, strategies, and questions about getting hired on the platform.",
+  'getting-hired': {
+    id: 'getting-hired',
+    name: 'Getting Hired',
+    description:
+      'Tips, strategies, and questions about getting hired on the platform.',
     adminOnly: false,
-    icon: "Briefcase"
+    icon: 'Briefcase',
   },
-  "project-help": {
-    id: "project-help",
-    name: "Project Help",
-    description: "Get help with your ongoing projects and collaboration.",
+  'project-help': {
+    id: 'project-help',
+    name: 'Project Help',
+    description: 'Get help with your ongoing projects and collaboration.',
     adminOnly: false,
-    icon: "MessageSquare"
+    icon: 'MessageSquare',
   },
-  "ai-tools": {
-    id: "ai-tools",
-    name: "AI Tools Discussion",
-    description: "Discuss AI tools, frameworks, and best practices.",
+  'ai-tools': {
+    id: 'ai-tools',
+    name: 'AI Tools Discussion',
+    description: 'Discuss AI tools, frameworks, and best practices.',
     adminOnly: false,
-    icon: "Code"
+    icon: 'Code',
   },
-  "feedback": {
-    id: "feedback",
-    name: "Feedback & Feature Requests",
-    description: "Share your feedback and suggest new features.",
+  feedback: {
+    id: 'feedback',
+    name: 'Feedback & Feature Requests',
+    description: 'Share your feedback and suggest new features.',
     adminOnly: false,
-    icon: "FileText"
+    icon: 'FileText',
   },
-  "announcements": {
-    id: "announcements",
-    name: "Announcements",
-    description: "Official announcements from the Zion team.",
+  announcements: {
+    id: 'announcements',
+    name: 'Announcements',
+    description: 'Official announcements from the Zion team.',
     adminOnly: true,
-    icon: "Megaphone"
-  }
+    icon: 'Megaphone',
+  },
 };
 
 const iconMap = {
-  "Briefcase": Briefcase,
-  "MessageSquare": MessageSquare,
-  "Code": Code,
-  "FileText": FileText,
-  "Megaphone": Megaphone
+  Briefcase: Briefcase,
+  MessageSquare: MessageSquare,
+  Code: Code,
+  FileText: FileText,
+  Megaphone: Megaphone,
 };
 
 function CategoryContent({
@@ -80,39 +74,51 @@ function CategoryContent({
   IconComponent: LucideIcon;
   user: unknown;
 }) {
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
   const { featuredPosts, recentPosts } = useCommunity();
 
   // Filter posts by category from context data
   const categoryPosts = [
-    ...featuredPosts.filter(post => post.categoryId === categoryId),
-    ...recentPosts.filter(post => post.categoryId === categoryId)
-  ].filter((post, index, self) => 
-    // Remove duplicates by id
-    index === self.findIndex(p => p.id === post.id)
+    ...featuredPosts.filter((post) => post.categoryId === categoryId),
+    ...recentPosts.filter((post) => post.categoryId === categoryId),
+  ].filter(
+    (post, index, self) =>
+      // Remove duplicates by id
+      index === self.findIndex((p) => p.id === post.id),
   );
 
   // Type guard for user
   function isAdminUser(u: unknown): u is { userType?: string; role?: string } {
-    return !!u && (typeof u === 'object') && ('userType' in u || 'role' in u);
+    return !!u && typeof u === 'object' && ('userType' in u || 'role' in u);
   }
 
   // Apply search filter
-  const filteredPosts = searchQuery 
-    ? categoryPosts.filter(post => 
-        post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        post.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        post.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+  const filteredPosts = searchQuery
+    ? categoryPosts.filter(
+        (post) =>
+          post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          post.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          post.tags.some((tag) =>
+            tag.toLowerCase().includes(searchQuery.toLowerCase()),
+          ),
       )
     : categoryPosts;
 
-  const canCreatePost = Boolean(user && (!category.adminOnly || (isAdminUser(user) && (user.userType === 'admin' || user.role === 'admin'))));
+  const canCreatePost = Boolean(
+    user &&
+      (!category.adminOnly ||
+        (isAdminUser(user) &&
+          (user.userType === 'admin' || user.role === 'admin'))),
+  );
   const { isFollowed, follow, unfollow } = useFollowedCategories();
   const { _toast } = useToast();
 
   const handleFollow = () => {
     if (!user) {
-      toast({ title: 'Login required', description: 'Please sign in to follow this category' });
+      toast({
+        title: 'Login required',
+        description: 'Please sign in to follow this category',
+      });
       return;
     }
     if (isFollowed(categoryId)) {
@@ -122,14 +128,21 @@ function CategoryContent({
     }
   };
 
-  logInfo('CategoryContent - categoryId:', { data:  { data: categoryId } });
-  logInfo('CategoryContent - categoryPosts:', { data:  { data: categoryPosts } });
-  logInfo('CategoryContent - filteredPosts:', { data:  { data: filteredPosts } });
+  logInfo('CategoryContent - categoryId:', { data: { data: categoryId } });
+  logInfo('CategoryContent - categoryPosts:', {
+    data: { data: categoryPosts },
+  });
+  logInfo('CategoryContent - filteredPosts:', {
+    data: { data: filteredPosts },
+  });
 
   return (
     <div className="container py-8">
       <div className="flex items-center gap-3 mb-6">
-        <Link href="/community" className="text-sm text-muted-foreground hover:text-foreground">
+        <Link
+          href="/community"
+          className="text-sm text-muted-foreground hover:text-foreground"
+        >
           Forum
         </Link>
         <span className="text-muted-foreground">/</span>
@@ -172,16 +185,15 @@ function CategoryContent({
 
       <div className="space-y-4">
         {filteredPosts.length > 0 ? (
-          filteredPosts.map((post) => (
-            <PostCard key={post.id} post={post} />
-          ))
+          filteredPosts.map((post) => <PostCard key={post.id} post={post} />)
         ) : searchQuery ? (
           <div className="text-center py-12">
             <h3 className="text-lg font-medium mb-2">No posts found</h3>
             <p className="text-muted-foreground mb-4">
-              Try adjusting your search terms or browse all posts in this category.
+              Try adjusting your search terms or browse all posts in this
+              category.
             </p>
-            <Button variant="outline" onClick={() => setSearchQuery("")}>
+            <Button variant="outline" onClick={() => setSearchQuery('')}>
               Clear Search
             </Button>
           </div>
@@ -194,9 +206,7 @@ function CategoryContent({
             {canCreatePost ? (
               <CreatePostButton categoryId={categoryId} />
             ) : (
-              <Button disabled>
-                Create Post
-              </Button>
+              <Button disabled>Create Post</Button>
             )}
           </div>
         )}
@@ -212,18 +222,22 @@ export default function ForumCategoryPage() {
 
   // Check if the category exists and user has access
   const category = categoryId ? categoriesInfo[categoryId] : null;
-  const IconComponent = category ? iconMap[category.icon as keyof typeof iconMap] : null;
+  const IconComponent = category
+    ? iconMap[category.icon as keyof typeof iconMap]
+    : null;
 
   // Check access for admin-only categories
-  const hasAccess = category && (
-    !category.adminOnly || 
-    (user && (user.userType === 'admin' || user.role === 'admin'))
-  );
+  const hasAccess =
+    category &&
+    (!category.adminOnly ||
+      (user && (user.userType === 'admin' || user.role === 'admin')));
 
   useEffect(() => {
     // Add a small delay to ensure router is ready
     if (categoryId && category) {
-      logInfo('ForumCategoryPage - categoryId changed:', { data:  { data: categoryId } });
+      logInfo('ForumCategoryPage - categoryId changed:', {
+        data: { data: categoryId },
+      });
     }
   }, [categoryId, category]);
 
@@ -259,7 +273,7 @@ export default function ForumCategoryPage() {
         keywords={`community, forum, ${category.name.toLowerCase()}, discussion`}
         canonical={`https://app.ziontechgroup.com/community/category/${categoryId}`}
       />
-      
+
       <CategoryContent
         categoryId={categoryId}
         category={category}

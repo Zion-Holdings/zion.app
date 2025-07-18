@@ -9,9 +9,9 @@ import type { RootState, AppDispatch } from '@/store';
 
 import {
   removeItem as removeItemAction,
-  updateQuantity as updateQuantityAction
-} from "@/store/cartSlice";
-import {logErrorToProduction} from '@/utils/productionLogger';
+  updateQuantity as updateQuantityAction,
+} from '@/store/cartSlice';
+import { logErrorToProduction } from '@/utils/productionLogger';
 import GuestCheckoutModal from '@/components/cart/GuestCheckoutModal';
 // CartItemType is already imported via RootState from cartSlice which uses CartItem from @/types/cart
 // import { CartItem as CartItemType } from '@/types/cart';
@@ -20,11 +20,6 @@ import GuestCheckoutModal from '@/components/cart/GuestCheckoutModal';
 import { getStripe } from '@/utils/getStripe';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-
-
-
-
-
 
 import { useWishlist } from '@/hooks/useWishlist';
 import { toast } from '@/hooks/use-toast';
@@ -45,12 +40,12 @@ export default function CartPage() {
   };
 
   const removeItem = (_id: string) => {
-    const item = items.find(i => i.id === id);
+    const item = items.find((i) => i.id === id);
     dispatch(removeItemAction(id));
-    
+
     if (item) {
       toast({
-        title: "Item removed",
+        title: 'Item removed',
         description: `${item.name} has been removed from your cart`,
       });
     }
@@ -67,7 +62,10 @@ export default function CartPage() {
     });
   };
 
-  const handleCheckout = async (details?: { email?: string; address?: string }) => {
+  const handleCheckout = async (details?: {
+    email?: string;
+    address?: string;
+  }) => {
     setLoading(true);
     try {
       const stripe = await getStripe();
@@ -83,18 +81,24 @@ export default function CartPage() {
       if (!sessionId) throw new Error('Session ID missing in response');
 
       const { _error } = await stripe.redirectToCheckout({ sessionId });
-      if (error) logErrorToProduction('Stripe redirect error:', { data: error.message });
+      if (error)
+        logErrorToProduction('Stripe redirect error:', { data: error.message });
     } catch {
       logErrorToProduction('Checkout erroror:', { data: error });
       let message = 'Checkout failed';
-      if (err && typeof err === 'object' && 'message' in err && typeof (err as { message?: unknown }).message === 'string') {
+      if (
+        err &&
+        typeof err === 'object' &&
+        'message' in err &&
+        typeof (err as { message?: unknown }).message === 'string'
+      ) {
         message = (err as { message: string }).message;
       }
       alert(message);
     } finally {
       setLoading(false);
     }
-  }; 
+  };
 
   const startCheckout = () => {
     if (!isAuthenticated) {
@@ -106,10 +110,10 @@ export default function CartPage() {
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
   const tax = subtotal * 0.08; // 8% tax estimate
-  
+
   // Only add shipping for physical items
-  const hasPhysicalItems = items.some(item => 
-    !item.type || item.type === 'physical' // Default to physical if type not specified
+  const hasPhysicalItems = items.some(
+    (item) => !item.type || item.type === 'physical', // Default to physical if type not specified
   );
   const shipping = hasPhysicalItems && subtotal <= 100 ? 15 : 0;
   const total = subtotal + tax + shipping;
@@ -119,41 +123,56 @@ export default function CartPage() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-zion-blue to-zion-blue-dark py-12 px-4">
         <div className="container mx-auto max-w-2xl">
-          <motion.div 
+          <motion.div
             className="text-center py-20"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
             <div className="mb-8">
               <ShoppingCart className="mx-auto h-24 w-24 text-zion-slate-light mb-4" />
-              <h1 className="text-3xl font-bold text-white mb-4">Your Cart is Empty</h1>
+              <h1 className="text-3xl font-bold text-white mb-4">
+                Your Cart is Empty
+              </h1>
               <p className="text-zion-slate-light text-lg">
-                Ready to start shopping? Browse our equipment and add items to your cart.
+                Ready to start shopping? Browse our equipment and add items to
+                your cart.
               </p>
             </div>
-            
+
             <div className="space-y-4">
-              <Button asChild size="lg" className="bg-zion-cyan hover:bg-zion-cyan/90 text-zion-blue">
+              <Button
+                asChild
+                size="lg"
+                className="bg-zion-cyan hover:bg-zion-cyan/90 text-zion-blue"
+              >
                 <Link href="/equipment">
                   <Package className="h-4 w-4 mr-2" />
                   Browse Equipment
                 </Link>
               </Button>
-              
+
               <div className="grid md:grid-cols-2 gap-4 mt-8">
                 <Card className="bg-zion-blue-light/50 border-zion-cyan/20">
                   <CardContent className="p-6 text-center">
                     <Shield className="mx-auto h-8 w-8 text-zion-cyan mb-2" />
-                    <h3 className="text-white font-medium mb-1">Secure Payments</h3>
-                    <p className="text-zion-slate-light text-sm">All transactions are encrypted and secure</p>
+                    <h3 className="text-white font-medium mb-1">
+                      Secure Payments
+                    </h3>
+                    <p className="text-zion-slate-light text-sm">
+                      All transactions are encrypted and secure
+                    </p>
                   </CardContent>
                 </Card>
-                
+
                 <Card className="bg-zion-blue-light/50 border-zion-cyan/20">
                   <CardContent className="p-6 text-center">
                     <Package className="mx-auto h-8 w-8 text-zion-cyan mb-2" />
-                    <h3 className="text-white font-medium mb-1">Fast Shipping</h3>
-                    <p className="text-zion-slate-light text-sm">Free shipping on orders over $100</p>
+                    <h3 className="text-white font-medium mb-1">
+                      Fast Shipping
+                    </h3>
+                    <p className="text-zion-slate-light text-sm">
+                      Free shipping on orders over $100
+                    </p>
                   </CardContent>
                 </Card>
               </div>
@@ -168,20 +187,21 @@ export default function CartPage() {
     <div className="min-h-screen bg-gradient-to-br from-zion-blue to-zion-blue-dark py-8 px-4">
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
-        <motion.div 
+        <motion.div
           className="text-center mb-8"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
           <h1 className="text-4xl font-bold text-white mb-2">Your Cart</h1>
           <p className="text-zion-slate-light">
-            {items.length} {items.length === 1 ? 'item' : 'items'} ready for checkout
+            {items.length} {items.length === 1 ? 'item' : 'items'} ready for
+            checkout
           </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Cart Items */}
-          <motion.div 
+          <motion.div
             className="lg:col-span-2 space-y-4"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -198,31 +218,44 @@ export default function CartPage() {
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between">
                       <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-white mb-1">{item.name}</h3>
-                        <p className="text-zion-cyan font-medium text-xl">${item.price.toFixed(2)}</p>
+                        <h3 className="text-lg font-semibold text-white mb-1">
+                          {item.name}
+                        </h3>
+                        <p className="text-zion-cyan font-medium text-xl">
+                          ${item.price.toFixed(2)}
+                        </p>
                       </div>
-                      
+
                       <div className="flex items-center gap-4">
                         <div className="flex items-center gap-2">
                           <Button
                             variant="outline"
                             size="sm"
-                            onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))}
+                            onClick={() =>
+                              updateQuantity(
+                                item.id,
+                                Math.max(1, item.quantity - 1),
+                              )
+                            }
                             className="h-8 w-8 p-0"
                           >
                             -
                           </Button>
-                          <span className="text-white w-8 text-center font-medium">{item.quantity}</span>
+                          <span className="text-white w-8 text-center font-medium">
+                            {item.quantity}
+                          </span>
                           <Button
                             variant="outline"
                             size="sm"
-                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                            onClick={() =>
+                              updateQuantity(item.id, item.quantity + 1)
+                            }
                             className="h-8 w-8 p-0"
                           >
                             +
                           </Button>
                         </div>
-                        
+
                         <div className="text-right">
                           <p className="text-white font-semibold">
                             ${(item.price * item.quantity).toFixed(2)}
@@ -268,7 +301,7 @@ export default function CartPage() {
                   Order Summary
                 </CardTitle>
               </CardHeader>
-              
+
               <CardContent className="space-y-4">
                 {/* Pricing Breakdown */}
                 <div className="space-y-2">
@@ -276,25 +309,30 @@ export default function CartPage() {
                     <span>Subtotal ({items.length} items)</span>
                     <span>${subtotal.toFixed(2)}</span>
                   </div>
-                  
+
                   <div className="flex justify-between text-zion-slate-light">
                     <span>Estimated Tax</span>
                     <span>${tax.toFixed(2)}</span>
                   </div>
-                  
+
                   <div className="flex justify-between text-zion-slate-light">
                     <span>Shipping</span>
-                    <span>{shipping === 0 ? 'Free' : `$${shipping.toFixed(2)}`}</span>
+                    <span>
+                      {shipping === 0 ? 'Free' : `$${shipping.toFixed(2)}`}
+                    </span>
                   </div>
-                  
+
                   {shipping === 0 && (
                     <div className="text-center">
-                      <Badge variant="secondary" className="bg-green-500/20 text-green-400 border-green-500/30">
+                      <Badge
+                        variant="secondary"
+                        className="bg-green-500/20 text-green-400 border-green-500/30"
+                      >
                         Free Shipping Applied!
                       </Badge>
                     </div>
                   )}
-                  
+
                   <div className="border-t border-zion-cyan/20 pt-2">
                     <div className="flex justify-between text-white font-bold text-lg">
                       <span>Total</span>
@@ -308,13 +346,15 @@ export default function CartPage() {
                   {isAuthenticated && (
                     <div className="flex items-center gap-2 text-green-400 mb-4">
                       <User className="h-4 w-4" />
-                      <span className="text-sm">Signed in as {user?.email}</span>
+                      <span className="text-sm">
+                        Signed in as {user?.email}
+                      </span>
                     </div>
                   )}
-                  
-                  <Button 
-                    className="w-full bg-zion-cyan hover:bg-zion-cyan/90 text-zion-blue" 
-                    onClick={startCheckout} 
+
+                  <Button
+                    className="w-full bg-zion-cyan hover:bg-zion-cyan/90 text-zion-blue"
+                    onClick={startCheckout}
                     disabled={loading}
                     size="lg"
                   >
@@ -327,7 +367,7 @@ export default function CartPage() {
                       </>
                     )}
                   </Button>
-                  
+
                   {/* Login link removed to streamline guest checkout experience */}
                 </div>
 

@@ -1,8 +1,6 @@
-
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { logInfo } from '@/utils/productionLogger';
-
 
 /**
  * Custom hook to track page views for analytics purposes
@@ -14,15 +12,15 @@ export function usePageViewTracking() {
   useEffect(() => {
     const handleRouteChange = () => {
       // Track page view
-      logInfo('Page view:', { data:  { data: window.location.pathname } });
+      logInfo('Page view:', { data: { data: window.location.pathname } });
     };
-    
+
     // Listen for route changes
     window.addEventListener('popstate', handleRouteChange);
-    
+
     // Initial page load
     handleRouteChange();
-    
+
     return () => {
       window.removeEventListener('popstate', handleRouteChange);
     };
@@ -30,6 +28,6 @@ export function usePageViewTracking() {
 
   // Also track when location changes directly via Next Router
   useEffect(() => {
-    logInfo('Page view:', { data:  { data: router.pathname } });
+    logInfo('Page view:', { data: { data: router.pathname } });
   }, [router.pathname]);
 }

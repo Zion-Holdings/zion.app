@@ -6,12 +6,15 @@ import { PrismaClient } from '@prisma/client';
  */
 export async function connectWithTimeout(
   prisma: PrismaClient,
-  timeoutMs = 3000
+  timeoutMs = 3000,
 ): Promise<void> {
   await Promise.race([
     prisma.$connect(),
     new Promise((_, reject) =>
-      setTimeout(() => reject(new Error('Database connection timed out')), timeoutMs)
+      setTimeout(
+        () => reject(new Error('Database connection timed out')),
+        timeoutMs,
+      ),
     ),
   ]);
 }

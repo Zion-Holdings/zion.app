@@ -1,6 +1,11 @@
 import axios from 'axios';
 import { safeStorage } from '@/utils/safeStorage';
-import type { AxiosInstance, AxiosResponse, AxiosError, InternalAxiosRequestConfig } from 'axios';
+import type {
+  AxiosInstance,
+  AxiosResponse,
+  AxiosError,
+  InternalAxiosRequestConfig,
+} from 'axios';
 
 // Create and configure axios instance
 const createAxiosInstance = (): AxiosInstance => {
@@ -26,7 +31,7 @@ const createAxiosInstance = (): AxiosInstance => {
     },
     (_error: unknown) => {
       return Promise.reject(error);
-    }
+    },
   );
 
   // Response interceptor
@@ -41,7 +46,7 @@ const createAxiosInstance = (): AxiosInstance => {
         }
       }
       return Promise.reject(error);
-    }
+    },
   );
 
   return instance;

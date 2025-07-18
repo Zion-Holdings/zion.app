@@ -86,7 +86,7 @@ class ErrorReportingDashboard {
         memoryUsage: 0,
         errorRate: 0,
         criticalErrors: 0,
-        lastUpdated: new Date().toISOString()
+        lastUpdated: new Date().toISOString(),
       },
       errors: {
         summary: {
@@ -94,16 +94,16 @@ class ErrorReportingDashboard {
           high: 0,
           medium: 0,
           low: 0,
-          total: 0
+          total: 0,
         },
         topErrors: [],
         trends: {
           hour: new Array(24).fill(0),
-          day: new Array(7).fill(0)
-        }
+          day: new Array(7).fill(0),
+        },
       },
       recommendations: [],
-      alerts: []
+      alerts: [],
     };
   }
 
@@ -134,7 +134,8 @@ class ErrorReportingDashboard {
       // Memory usage (if available)
       if (typeof window !== 'undefined' && 'memory' in performance) {
         const memory = (performance as PerformanceWithMemory).memory;
-        const memoryUsage = (memory.usedJSHeapSize / memory.totalJSHeapSize) * 100;
+        const memoryUsage =
+          (memory.usedJSHeapSize / memory.totalJSHeapSize) * 100;
         this.memoryReadings.push(memoryUsage);
         if (this.memoryReadings.length > 100) {
           this.memoryReadings = this.memoryReadings.slice(-50);
@@ -178,7 +179,10 @@ class ErrorReportingDashboard {
     else metrics.status = 'critical';
   }
 
-  public reportError(error: Error, severity: 'critical' | 'high' | 'medium' | 'low'): void {
+  public reportError(
+    error: Error,
+    severity: 'critical' | 'high' | 'medium' | 'low',
+  ): void {
     const errorKey = `${error.name}:${error.message}`;
     const existingError = this.errorBuffer.get(errorKey);
 
@@ -191,7 +195,7 @@ class ErrorReportingDashboard {
         count: 1,
         severity,
         lastOccurrence: new Date().toISOString(),
-        pattern: this.detectErrorPattern(error) || ''
+        pattern: this.detectErrorPattern(error) || '',
       });
     }
 
@@ -215,32 +219,40 @@ class ErrorReportingDashboard {
 
   private detectErrorPattern(error: Error): string | undefined {
     const message = error.message.toLowerCase();
-    
-    if (message.includes('network') || message.includes('fetch')) return 'network';
-    if (message.includes('auth') || message.includes('unauthorized')) return 'authentication';
-    if (message.includes('parse') || message.includes('json')) return 'data-parsing';
+
+    if (message.includes('network') || message.includes('fetch'))
+      return 'network';
+    if (message.includes('auth') || message.includes('unauthorized'))
+      return 'authentication';
+    if (message.includes('parse') || message.includes('json'))
+      return 'data-parsing';
     if (message.includes('memory') || message.includes('heap')) return 'memory';
     if (message.includes('timeout')) return 'timeout';
-    if (message.includes('import') || message.includes('module')) return 'module-loading';
-    
+    if (message.includes('import') || message.includes('module'))
+      return 'module-loading';
+
     return undefined;
   }
 
   private updateErrorRate(): void {
     const now = Date.now();
-    const oneHourAgo = now - (60 * 60 * 1000);
+    const oneHourAgo = now - 60 * 60 * 1000;
     const recentErrors = Array.from(this.errorBuffer.values())
-      .filter(error => new Date(error.lastOccurrence).getTime() > oneHourAgo)
+      .filter((error) => new Date(error.lastOccurrence).getTime() > oneHourAgo)
       .reduce((sum, error) => sum + error.count, 0);
 
     // Simulate request count (in production, this would be real metrics)
     const estimatedRequests = 1000; // This should be replaced with actual request metrics
-    this.healthData.metrics.errorRate = (recentErrors / estimatedRequests) * 100;
+    this.healthData.metrics.errorRate =
+      (recentErrors / estimatedRequests) * 100;
   }
 
-  private checkAlerts(severity: 'critical' | 'high' | 'medium' | 'low', error: Error): void {
+  private checkAlerts(
+    severity: 'critical' | 'high' | 'medium' | 'low',
+    error: Error,
+  ): void {
     const alerts = this.healthData.alerts;
-    
+
     if (severity === 'critical') {
       const alert = `🚨 CRITICAL ERROR: ${error.message}`;
       if (!alerts.includes(alert)) {
@@ -253,7 +265,9 @@ class ErrorReportingDashboard {
       const alert = `⚠️ HIGH ERROR RATE: ${this.healthData.metrics.errorRate.toFixed(1)}%`;
       if (!alerts.includes(alert)) {
         alerts.push(alert);
-        logWarn('High error rate detected', { data:  { errorRate: this.healthData.metrics.errorRate } });
+        logWarn('High error rate detected', {
+          data: { errorRate: this.healthData.metrics.errorRate },
+        });
       }
     }
 
@@ -273,7 +287,7 @@ class ErrorReportingDashboard {
         title: 'Address Critical Errors',
         description: `${metrics.criticalErrors} critical errors detected`,
         action: 'Review error logs and implement fixes immediately',
-        automated: false
+        automated: false,
       });
     }
 
@@ -282,8 +296,9 @@ class ErrorReportingDashboard {
         priority: 'high',
         title: 'Reduce Error Rate',
         description: `Error rate is ${metrics.errorRate.toFixed(1)}% (target: <1%)`,
-        action: 'Investigate common error patterns and implement preventive measures',
-        automated: false
+        action:
+          'Investigate common error patterns and implement preventive measures',
+        automated: false,
       });
     }
 
@@ -293,7 +308,7 @@ class ErrorReportingDashboard {
         title: 'Optimize Performance',
         description: `Average response time is ${metrics.responseTime}ms`,
         action: 'Review slow endpoints and optimize database queries',
-        automated: false
+        automated: false,
       });
     }
 
@@ -303,20 +318,22 @@ class ErrorReportingDashboard {
         title: 'Memory Usage Alert',
         description: `Memory usage at ${metrics.memoryUsage.toFixed(1)}%`,
         action: 'Check for memory leaks and optimize resource usage',
-        automated: false
+        automated: false,
       });
     }
 
     // Add automated recommendations
     const topErrors = this.getTopErrors();
-    const networkErrors = topErrors.filter(e => e.pattern === 'network').length;
+    const networkErrors = topErrors.filter(
+      (e) => e.pattern === 'network',
+    ).length;
     if (networkErrors > 5) {
       recommendations.push({
         priority: 'medium',
         title: 'Network Error Pattern Detected',
         description: `${networkErrors} network-related errors detected`,
         action: 'Implement retry logic and better network error handling',
-        automated: true
+        automated: true,
       });
     }
 
@@ -331,12 +348,16 @@ class ErrorReportingDashboard {
 
   private generateHealthReport(): void {
     const uptime = (Date.now() - this.startTime) / 1000;
-    const avgResponseTime = this.performanceMetrics.length > 0 
-      ? this.performanceMetrics.reduce((a, b) => a + b, 0) / this.performanceMetrics.length 
-      : 0;
-    const avgMemoryUsage = this.memoryReadings.length > 0
-      ? this.memoryReadings.reduce((a, b) => a + b, 0) / this.memoryReadings.length
-      : 0;
+    const avgResponseTime =
+      this.performanceMetrics.length > 0
+        ? this.performanceMetrics.reduce((a, b) => a + b, 0) /
+          this.performanceMetrics.length
+        : 0;
+    const avgMemoryUsage =
+      this.memoryReadings.length > 0
+        ? this.memoryReadings.reduce((a, b) => a + b, 0) /
+          this.memoryReadings.length
+        : 0;
 
     this.healthData.metrics.uptime = uptime;
     this.healthData.metrics.responseTime = avgResponseTime;
@@ -351,7 +372,7 @@ class ErrorReportingDashboard {
       score: this.healthData.metrics.score,
       status: this.healthData.metrics.status,
       errorRate: this.healthData.metrics.errorRate,
-      uptime: Math.floor(uptime / 3600) + ' hours'
+      uptime: Math.floor(uptime / 3600) + ' hours',
     });
   }
 
@@ -362,18 +383,22 @@ class ErrorReportingDashboard {
 
   public exportHealthReport(): string {
     const data = this.getHealthData();
-    return JSON.stringify({
-      timestamp: new Date().toISOString(),
-      health: data,
-      summary: {
-        score: data.metrics.score,
-        status: data.metrics.status,
-        totalErrors: data.errors.summary.total,
-        criticalErrors: data.metrics.criticalErrors,
-        uptime: `${Math.floor(data.metrics.uptime / 3600)}h ${Math.floor((data.metrics.uptime % 3600) / 60)}m`,
-        recommendations: data.recommendations.length
-      }
-    }, null, 2);
+    return JSON.stringify(
+      {
+        timestamp: new Date().toISOString(),
+        health: data,
+        summary: {
+          score: data.metrics.score,
+          status: data.metrics.status,
+          totalErrors: data.errors.summary.total,
+          criticalErrors: data.metrics.criticalErrors,
+          uptime: `${Math.floor(data.metrics.uptime / 3600)}h ${Math.floor((data.metrics.uptime % 3600) / 60)}m`,
+          recommendations: data.recommendations.length,
+        },
+      },
+      null,
+      2,
+    );
   }
 
   public clearAlerts(): void {
@@ -393,24 +418,24 @@ class ErrorReportingDashboard {
 // Global dashboard instance
 const errorReportingDashboard = new ErrorReportingDashboard();
 
-export { 
+export {
   errorReportingDashboard,
   ErrorReportingDashboard,
   type HealthData,
   type HealthMetrics,
   type TopError,
-  type SystemRecommendation
+  type SystemRecommendation,
 };
 
 // Enhanced error reporting function
 export function reportSystemError(
-  error: Error, 
+  error: Error,
   severity: 'critical' | 'high' | 'medium' | 'low' = 'medium',
-  context?: Record<string, unknown>
+  context?: Record<string, unknown>,
 ): void {
   // Report to dashboard
   errorReportingDashboard.reportError(error, severity);
-  
+
   // Log with context
   logErrorToProduction(`System error [${severity}]`, error, context);
-} 
+}

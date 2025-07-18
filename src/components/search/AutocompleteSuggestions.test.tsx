@@ -8,10 +8,13 @@ const mockOnSelectSuggestion = jest.fn();
 const mockSuggestions: SearchSuggestion[] = [
   { text: 'Apple iPhone', type: 'product' },
   { text: 'Apple MacBook', type: 'product' },
-  { text: 'A very long suggestion text for testing overflow and stuff', type: 'category' },
+  {
+    text: 'A very long suggestion text for testing overflow and stuff',
+    type: 'category',
+  },
 ];
 
-const mockSearchTerm = "Apple";
+const mockSearchTerm = 'Apple';
 
 describe('AutocompleteSuggestions', () => {
   beforeEach(() => {
@@ -22,7 +25,7 @@ describe('AutocompleteSuggestions', () => {
     visible = true,
     suggestions = mockSuggestions,
     highlightedIndex = -1,
-    searchTerm = mockSearchTerm
+    searchTerm = mockSearchTerm,
   ) => {
     render(
       <AutocompleteSuggestions
@@ -32,7 +35,7 @@ describe('AutocompleteSuggestions', () => {
         visible={visible}
         highlightedIndex={highlightedIndex}
         listId="test-autocomplete-list"
-      />
+      />,
     );
   };
 
@@ -55,7 +58,12 @@ describe('AutocompleteSuggestions', () => {
   });
 
   test('highlights search term in suggestions', () => {
-    renderComponent(true, [{ text: "Test Apple Case", type: "product"}], -1, "Apple");
+    renderComponent(
+      true,
+      [{ text: 'Test Apple Case', type: 'product' }],
+      -1,
+      'Apple',
+    );
     // The component uses spans for highlighting: before, match, after
     // Check for the 'match' part
     // A more robust way is to check for the structure if highlightMatch creates specific elements/classes
@@ -63,11 +71,13 @@ describe('AutocompleteSuggestions', () => {
 
     // Example: Check for the bolded "Apple" part
     const boldElement = screen.getByText((content, element) => {
-        // Check if the element is a span and has the font-bold class (or whatever class is used)
-        // And its direct parent contains the full suggestion text
-        return element?.tagName.toLowerCase() === 'span' &&
-               element?.classList.contains('font-bold') &&
-               element?.textContent === 'Apple';
+      // Check if the element is a span and has the font-bold class (or whatever class is used)
+      // And its direct parent contains the full suggestion text
+      return (
+        element?.tagName.toLowerCase() === 'span' &&
+        element?.classList.contains('font-bold') &&
+        element?.textContent === 'Apple'
+      );
     });
     expect(boldElement).toBeInTheDocument();
     expect(boldElement.previousSibling?.textContent).toBe('Test ');
@@ -124,8 +134,10 @@ describe('AutocompleteSuggestions', () => {
     // A basic check: ensure the highlighted item exists.
     const scrollIndex = 1;
     renderComponent(true, mockSuggestions, scrollIndex);
-    const highlightedOption = screen.getByRole('option', { name: (accessibleName, element) =>
-        element.textContent?.startsWith(mockSuggestions[scrollIndex].text) ?? false
+    const highlightedOption = screen.getByRole('option', {
+      name: (accessibleName, element) =>
+        element.textContent?.startsWith(mockSuggestions[scrollIndex].text) ??
+        false,
     });
     expect(highlightedOption).toHaveAttribute('aria-selected', 'true');
     // We can't directly test scrollIntoView, but we've tested that the correct item is marked as selected.
@@ -134,24 +146,37 @@ describe('AutocompleteSuggestions', () => {
 
   test('displays suggestion type', () => {
     renderComponent();
-    expect(screen.getByText((content, element) => element?.textContent === 'product' && element.tagName.toLowerCase() === 'span')).toBeInTheDocument();
-    expect(screen.getByText((content, element) => element?.textContent === 'category' && element.tagName.toLowerCase() === 'span')).toBeInTheDocument(); // Assuming Banana Phone is in mockSuggestions
+    expect(
+      screen.getByText(
+        (content, element) =>
+          element?.textContent === 'product' &&
+          element.tagName.toLowerCase() === 'span',
+      ),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        (content, element) =>
+          element?.textContent === 'category' &&
+          element.tagName.toLowerCase() === 'span',
+      ),
+    ).toBeInTheDocument(); // Assuming Banana Phone is in mockSuggestions
     // Need to make sure Banana Phone is part of default mockSuggestions for this test or pass custom ones.
     // Let's add it to the default mock for this test case
     const suggestionsWithFruit: SearchSuggestion[] = [
-        ...mockSuggestions,
-        { text: 'Banana Phone', type: 'category' }
+      ...mockSuggestions,
+      { text: 'Banana Phone', type: 'category' },
     ];
-    render( // re-render with new suggestions
-        <AutocompleteSuggestions
-          suggestions={suggestionsWithFruit}
-          searchTerm={mockSearchTerm}
-          onSelectSuggestion={mockOnSelectSuggestion}
-          visible={true}
-          highlightedIndex={-1}
-          listId="test-autocomplete-list"
-        />
-      );
+    render(
+      // re-render with new suggestions
+      <AutocompleteSuggestions
+        suggestions={suggestionsWithFruit}
+        searchTerm={mockSearchTerm}
+        onSelectSuggestion={mockOnSelectSuggestion}
+        visible={true}
+        highlightedIndex={-1}
+        listId="test-autocomplete-list"
+      />,
+    );
     expect(screen.getByText('category')).toBeInTheDocument();
   });
 });

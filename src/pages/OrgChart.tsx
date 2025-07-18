@@ -2,12 +2,23 @@ import { useMemo, useState } from 'react';
 import { Header } from '@/components/Header';
 import { SEO } from '@/components/SEO';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { Switch } from '@/components/ui/switch';
 import { orgMembers } from '@/data/orgMembers';
 import type { OrgMember, RoleType } from '@/types/org';
 
-const sections = ['Founders', 'Core Team', 'Contributors', 'DAO Delegates'] as const;
+const sections = [
+  'Founders',
+  'Core Team',
+  'Contributors',
+  'DAO Delegates',
+] as const;
 
 export default function OrgChart() {
   const [role, setRole] = useState<'ALL' | RoleType>('ALL');
@@ -16,14 +27,24 @@ export default function OrgChart() {
   const [treeView, setTreeView] = useState(false);
   const [showPhotos, setShowPhotos] = useState(true);
 
-  const roles = useMemo(() => Array.from(new Set(orgMembers.map(m => m.roleType))), []);
-  const zones = useMemo(() => Array.from(new Set(orgMembers.map(m => m.location))), []);
-  const teams = useMemo(() => Array.from(new Set(orgMembers.map(m => m.team))), []);
+  const roles = useMemo(
+    () => Array.from(new Set(orgMembers.map((m) => m.roleType))),
+    [],
+  );
+  const zones = useMemo(
+    () => Array.from(new Set(orgMembers.map((m) => m.location))),
+    [],
+  );
+  const teams = useMemo(
+    () => Array.from(new Set(orgMembers.map((m) => m.team))),
+    [],
+  );
 
-  const filtered = orgMembers.filter(m =>
-    (role === 'ALL' || m.roleType === role) &&
-    (zone === 'ALL' || m.location === zone) &&
-    (team === 'ALL' || m.team === team)
+  const filtered = orgMembers.filter(
+    (m) =>
+      (role === 'ALL' || m.roleType === role) &&
+      (zone === 'ALL' || m.location === zone) &&
+      (team === 'ALL' || m.team === team),
   );
 
   const noResults = filtered.length === 0;
@@ -32,7 +53,9 @@ export default function OrgChart() {
     <div key={member.id} className="border rounded-lg p-4 text-center">
       {showPhotos ? (
         <Avatar className="mx-auto mb-2">
-          {member.avatar && <AvatarImage src={member.avatar} alt={member.name} />}
+          {member.avatar && (
+            <AvatarImage src={member.avatar} alt={member.name} />
+          )}
           <AvatarFallback>{member.name.charAt(0)}</AvatarFallback>
         </Avatar>
       ) : (
@@ -49,19 +72,27 @@ export default function OrgChart() {
 
   return (
     <>
-      <SEO title="Zion Org Chart" description="Meet the Zion team and DAO delegates" />
+      <SEO
+        title="Zion Org Chart"
+        description="Meet the Zion team and DAO delegates"
+      />
       <Header />
       <main className="container mx-auto py-8 space-y-6">
         <h1 className="text-3xl font-bold">Organization Chart</h1>
         <div className="flex flex-wrap gap-4 items-center">
-          <Select value={role} onValueChange={v => setRole(v as RoleType | "ALL")}>
+          <Select
+            value={role}
+            onValueChange={(v) => setRole(v as RoleType | 'ALL')}
+          >
             <SelectTrigger className="w-36">
               <SelectValue placeholder="Role" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="ALL">All Roles</SelectItem>
-              {roles.map(r => (
-                <SelectItem key={r} value={r}>{r}</SelectItem>
+              {roles.map((r) => (
+                <SelectItem key={r} value={r}>
+                  {r}
+                </SelectItem>
               ))}
             </SelectContent>
           </Select>
@@ -71,8 +102,10 @@ export default function OrgChart() {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="ALL">All Zones</SelectItem>
-              {zones.map(z => (
-                <SelectItem key={z} value={z}>{z}</SelectItem>
+              {zones.map((z) => (
+                <SelectItem key={z} value={z}>
+                  {z}
+                </SelectItem>
               ))}
             </SelectContent>
           </Select>
@@ -82,27 +115,38 @@ export default function OrgChart() {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="ALL">All Teams</SelectItem>
-              {teams.map(t => (
-                <SelectItem key={t} value={t}>{t}</SelectItem>
+              {teams.map((t) => (
+                <SelectItem key={t} value={t}>
+                  {t}
+                </SelectItem>
               ))}
             </SelectContent>
           </Select>
           <div className="flex items-center gap-2">
-            <Switch checked={treeView} onCheckedChange={setTreeView} id="tree" />
+            <Switch
+              checked={treeView}
+              onCheckedChange={setTreeView}
+              id="tree"
+            />
             <label htmlFor="tree">Tree View</label>
           </div>
           <div className="flex items-center gap-2">
-            <Switch checked={showPhotos} onCheckedChange={setShowPhotos} id="photo" />
+            <Switch
+              checked={showPhotos}
+              onCheckedChange={setShowPhotos}
+              id="photo"
+            />
             <label htmlFor="photo">Photo</label>
           </div>
         </div>
         {noResults && (
           <p className="text-destructive font-semibold">
-            No {team !== 'ALL' ? `${team} ` : ''}{role !== 'ALL' ? `${role} ` : ''}in {zone}
+            No {team !== 'ALL' ? `${team} ` : ''}
+            {role !== 'ALL' ? `${role} ` : ''}in {zone}
           </p>
         )}
-        {sections.map(section => {
-          const members = filtered.filter(m => m.section === section);
+        {sections.map((section) => {
+          const members = filtered.filter((m) => m.section === section);
           if (!members.length) return null;
           return (
             <section key={section} className="space-y-4">

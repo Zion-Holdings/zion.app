@@ -38,7 +38,7 @@ export default function UNBridgePage() {
         `**Type:** ${type}\n\n` +
         `**Region:** ${region}\n\n` +
         `**Budget / Goals:** ${budget}\n\n` +
-        `**Supporting Multiverse:** ${multiverse}`
+        `**Supporting Multiverse:** ${multiverse}`,
     );
   };
 
@@ -54,12 +54,19 @@ export default function UNBridgePage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <NextSeo title="UN Bridge" description="Draft proposals for global institutions" />
+      <NextSeo
+        title="UN Bridge"
+        description="Draft proposals for global institutions"
+      />
       <Header />
       <main className="container mx-auto py-8 space-y-8">
         <h1 className="text-3xl font-bold">Global Outreach Proposal</h1>
         <form onSubmit={generate} className="space-y-4">
-          <Input placeholder="Target institution" value={institution} onChange={(e) => setInstitution(e.target.value)} />
+          <Input
+            placeholder="Target institution"
+            value={institution}
+            onChange={(e) => setInstitution(e.target.value)}
+          />
           <Select value={type} onValueChange={setType}>
             <SelectTrigger>
               <SelectValue placeholder="Proposal type" />
@@ -71,9 +78,21 @@ export default function UNBridgePage() {
               <SelectItem value="Education">Education</SelectItem>
             </SelectContent>
           </Select>
-          <Input placeholder="Regional scope" value={region} onChange={(e) => setRegion(e.target.value)} />
-          <Input placeholder="Budget / Resolution goals" value={budget} onChange={(e) => setBudget(e.target.value)} />
-          <Input placeholder="Supporting multiverse(s)" value={multiverse} onChange={(e) => setMultiverse(e.target.value)} />
+          <Input
+            placeholder="Regional scope"
+            value={region}
+            onChange={(e) => setRegion(e.target.value)}
+          />
+          <Input
+            placeholder="Budget / Resolution goals"
+            value={budget}
+            onChange={(e) => setBudget(e.target.value)}
+          />
+          <Input
+            placeholder="Supporting multiverse(s)"
+            value={multiverse}
+            onChange={(e) => setMultiverse(e.target.value)}
+          />
           <Button type="submit">Generate Proposal</Button>
         </form>
         {markdown && (
@@ -81,8 +100,22 @@ export default function UNBridgePage() {
             <h2 className="text-2xl font-semibold">Proposal Preview</h2>
             <Textarea value={markdown} readOnly className="h-48" />
             <div className="flex space-x-2">
-              <Button variant="outline" onClick={() => download(json, 'proposal.json', 'application/json')}>Download JSON</Button>
-              <Button variant="outline" onClick={() => download(markdown, 'proposal.md', 'text/markdown')}>Download Markdown</Button>
+              <Button
+                variant="outline"
+                onClick={() =>
+                  download(json, 'proposal.json', 'application/json')
+                }
+              >
+                Download JSON
+              </Button>
+              <Button
+                variant="outline"
+                onClick={() =>
+                  download(markdown, 'proposal.md', 'text/markdown')
+                }
+              >
+                Download Markdown
+              </Button>
             </div>
           </div>
         )}

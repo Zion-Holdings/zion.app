@@ -1,4 +1,8 @@
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import {
+  logInfo,
+  logWarn,
+  logErrorToProduction,
+} from '@/utils/productionLogger';
 
 /**
  * Production Optimizations
@@ -64,10 +68,14 @@ export class ProductionOptimizer {
       navigator.serviceWorker
         .register('/service-worker.js')
         .then((registration) => {
-          logInfo('Service Worker registered:', { data:  { data: registration } });
+          logInfo('Service Worker registered:', {
+            data: { data: registration },
+          });
         })
         .catch((error) => {
-          logInfo('Service Worker registration failed:', { data:  { data: error } });
+          logInfo('Service Worker registration failed:', {
+            data: { data: error },
+          });
         });
     }
   }
@@ -98,14 +106,17 @@ export class ProductionOptimizer {
         entries.forEach((entry) => {
           if (entry.entryType === 'largest-contentful-paint') {
             // Track LCP for production monitoring
-            if (entry.startTime > 4000) { // LCP > 4s
+            if (entry.startTime > 4000) {
+              // LCP > 4s
               logWarn(`Poor LCP detected: ${entry.startTime}ms`);
             }
           }
         });
       });
 
-      observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] });
+      observer.observe({
+        entryTypes: ['largest-contentful-paint', 'first-input'],
+      });
     }
   }
 
@@ -127,7 +138,9 @@ export class ProductionOptimizer {
     });
 
     window.addEventListener('unhandledrejection', (event) => {
-      logErrorToProduction('Unhandled Promise Rejection:', { data: event.reason });
+      logErrorToProduction('Unhandled Promise Rejection:', {
+        data: event.reason,
+      });
     });
   }
 
@@ -167,13 +180,17 @@ export class ProductionOptimizer {
       },
       'debug-mode': () => {
         logInfo('🐛 Debug mode enabled');
-        function hasZionDebug(obj: unknown): obj is { __ZION_DEBUG__: boolean } {
-          return typeof obj === 'object' && obj !== null && '__ZION_DEBUG__' in obj;
+        function hasZionDebug(
+          obj: unknown,
+        ): obj is { __ZION_DEBUG__: boolean } {
+          return (
+            typeof obj === 'object' && obj !== null && '__ZION_DEBUG__' in obj
+          );
         }
         if (hasZionDebug(window)) {
           (window as { __ZION_DEBUG__?: boolean }).__ZION_DEBUG__ = true;
         } else {
-          ((window as unknown) as Record<string, unknown>).__ZION_DEBUG__ = true;
+          (window as unknown as Record<string, unknown>).__ZION_DEBUG__ = true;
         }
       },
     };
@@ -208,7 +225,9 @@ export class ProductionOptimizer {
   }
 
   getPerformanceReport(): PerformanceReport {
-    const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    const navigation = performance.getEntriesByType(
+      'navigation',
+    )[0] as PerformanceNavigationTiming;
     const resources = performance.getEntriesByType('resource');
 
     interface PerformanceMemory {
@@ -223,15 +242,19 @@ export class ProductionOptimizer {
     return {
       timestamp: new Date().toISOString(),
       navigation: {
-        domContentLoaded: navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart,
+        domContentLoaded:
+          navigation.domContentLoadedEventEnd -
+          navigation.domContentLoadedEventStart,
         loadComplete: navigation.loadEventEnd - navigation.loadEventStart,
         firstByte: navigation.responseStart - navigation.requestStart,
       },
       resources: {
         total: resources.length,
-        scripts: resources.filter(r => r.name.endsWith('.js')).length,
-        styles: resources.filter(r => r.name.endsWith('.css')).length,
-        images: resources.filter(r => /\.(jpg|jpeg|png|gif|webp|svg)$/i.test(r.name)).length,
+        scripts: resources.filter((r) => r.name.endsWith('.js')).length,
+        styles: resources.filter((r) => r.name.endsWith('.css')).length,
+        images: resources.filter((r) =>
+          /\.(jpg|jpeg|png|gif|webp|svg)$/i.test(r.name),
+        ).length,
       },
       memory: getPerformanceMemory(),
       userAgent: navigator.userAgent,
@@ -275,4 +298,4 @@ if (typeof window !== 'undefined') {
   } else {
     productionOptimizer.init();
   }
-} 
+}

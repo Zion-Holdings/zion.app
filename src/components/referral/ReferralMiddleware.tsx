@@ -2,10 +2,11 @@ import { useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
 import { safeStorage } from '@/utils/safeStorage';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
-
-interface Props { children: React.ReactNode }
+interface Props {
+  children: React.ReactNode;
+}
 
 export function ReferralMiddleware({ children }: Props) {
   const { _user } = useAuth();

@@ -1,4 +1,8 @@
-import { logInfo, logErrorToProduction, logDebug } from '@/utils/productionLogger';
+import {
+  logInfo,
+  logErrorToProduction,
+  logDebug,
+} from '@/utils/productionLogger';
 
 interface ErrorDetails {
   message: string;
@@ -12,16 +16,28 @@ interface ErrorDetails {
   timestamp: string;
   traceId: string;
   logs?: string[];
-  source: 'GlobalErrorBoundary' | 'logError' | 'window.onerror' | 'unhandledrejection' | string; // string for flexibility
+  source:
+    | 'GlobalErrorBoundary'
+    | 'logError'
+    | 'window.onerror'
+    | 'unhandledrejection'
+    | string; // string for flexibility
 }
 
-export async function sendErrorToBackend(errorDetails: ErrorDetails): Promise<void> {
+export async function sendErrorToBackend(
+  errorDetails: ErrorDetails,
+): Promise<void> {
   const webhookUrl = process.env.NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL;
 
   if (!webhookUrl || webhookUrl === '') {
     // Only log once per session to avoid spam
-    if (typeof window !== 'undefined' && !sessionStorage.getItem('webhook-warning-shown')) {
-      logDebug('NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL is not configured. Error reporting to webhook disabled.');
+    if (
+      typeof window !== 'undefined' &&
+      !sessionStorage.getItem('webhook-warning-shown')
+    ) {
+      logDebug(
+        'NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL is not configured. Error reporting to webhook disabled.',
+      );
       sessionStorage.setItem('webhook-warning-shown', 'true');
     }
     return;
@@ -41,21 +57,25 @@ export async function sendErrorToBackend(errorDetails: ErrorDetails): Promise<vo
     } else {
       logErrorToProduction(
         `Failed to send error report from ${errorDetails.source}. Status: ${response.status}`,
-        await response.text()
+        await response.text(),
       );
     }
   } catch {
-    logErrorToProduction('Error sending report from ${errorDetails.source}:', { data: error });
+    logErrorToProduction('Error sending report from ${errorDetails.source}:', {
+      data: error,
+    });
   }
 }
 
 export async function reportError() {
   const webhookUrl = process.env.NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL;
-  
+
   if (!webhookUrl || webhookUrl.trim() === '') {
     // Only log once per session to avoid spam
     if (!sessionStorage.getItem('webhook-warning-shown')) {
-      logDebug('NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL is not configured. Error reporting to webhook disabled.');
+      logDebug(
+        'NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL is not configured. Error reporting to webhook disabled.',
+      );
       sessionStorage.setItem('webhook-warning-shown', 'true');
     }
     return;

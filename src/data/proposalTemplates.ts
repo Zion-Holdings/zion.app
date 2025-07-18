@@ -2,7 +2,11 @@ export interface ProposalTemplate {
   id: string;
   title: string;
   proposal_type: 'FEATURE' | 'BUDGET' | 'COMMUNITY_GRANT' | 'GENERAL';
-  category: 'Governance' | 'Feature Proposals' | 'Treasury' | 'Protocol Upgrades';
+  category:
+    | 'Governance'
+    | 'Feature Proposals'
+    | 'Treasury'
+    | 'Protocol Upgrades';
   summary: string;
   motivation: string;
   specification: string;
@@ -21,7 +25,7 @@ export const PROPOSAL_TEMPLATES: ProposalTemplate[] = [
     motivation: 'Update core rules to reflect current ecosystem needs.',
     specification: 'Outline specific sections to modify and expected impact.',
     codeModule: 'dao/constitution.md',
-    votingOptions: ['YES', 'NO', 'ABSTAIN']
+    votingOptions: ['YES', 'NO', 'ABSTAIN'],
   },
   {
     id: 'ZGP-02',
@@ -32,7 +36,7 @@ export const PROPOSAL_TEMPLATES: ProposalTemplate[] = [
     motivation: 'Maintain healthy economics and incentives.',
     specification: 'Detail token supply changes, vesting or burn mechanics.',
     codeModule: 'contracts/tokenomics.sol',
-    votingOptions: ['FOR', 'AGAINST', 'ABSTAIN']
+    votingOptions: ['FOR', 'AGAINST', 'ABSTAIN'],
   },
   {
     id: 'ZGP-03',
@@ -43,7 +47,7 @@ export const PROPOSAL_TEMPLATES: ProposalTemplate[] = [
     motivation: 'Improve governance participation and fairness.',
     specification: 'Describe new voting parameters and enforcement.',
     codeModule: 'dao/voting.ts',
-    votingOptions: ['APPROVE', 'REJECT', 'ABSTAIN']
+    votingOptions: ['APPROVE', 'REJECT', 'ABSTAIN'],
   },
   {
     id: 'ZGP-04',
@@ -55,7 +59,7 @@ export const PROPOSAL_TEMPLATES: ProposalTemplate[] = [
     specification: 'List deliverables and rollout timeline.',
     codeModule: 'apps/new-vertical/',
     votingOptions: ['YES', 'NO', 'ABSTAIN'],
-    fundingNeeded: 'Specify budget if required.'
+    fundingNeeded: 'Specify budget if required.',
   },
   {
     id: 'ZGP-05',
@@ -66,7 +70,7 @@ export const PROPOSAL_TEMPLATES: ProposalTemplate[] = [
     motivation: 'Scale to new regions or communities.',
     specification: 'Describe infrastructure changes and config.',
     codeModule: 'infra/multiverse/',
-    votingOptions: ['YES', 'NO', 'ABSTAIN']
+    votingOptions: ['YES', 'NO', 'ABSTAIN'],
   },
   {
     id: 'ZGP-06',
@@ -77,7 +81,7 @@ export const PROPOSAL_TEMPLATES: ProposalTemplate[] = [
     motivation: 'Increase payment flexibility for users.',
     specification: 'Detail API integration steps and security checks.',
     codeModule: 'server/payments/',
-    votingOptions: ['FOR', 'AGAINST', 'ABSTAIN']
+    votingOptions: ['FOR', 'AGAINST', 'ABSTAIN'],
   },
   {
     id: 'ZGP-07',
@@ -89,7 +93,7 @@ export const PROPOSAL_TEMPLATES: ProposalTemplate[] = [
     specification: 'Explain milestones and success metrics.',
     codeModule: 'treasury/grants/',
     votingOptions: ['YES', 'NO', 'ABSTAIN'],
-    fundingNeeded: 'Specify grant amount and token.'
+    fundingNeeded: 'Specify grant amount and token.',
   },
   {
     id: 'ZGP-08',
@@ -101,7 +105,7 @@ export const PROPOSAL_TEMPLATES: ProposalTemplate[] = [
     specification: 'Detail recipients and distribution schedule.',
     codeModule: 'treasury/fund.ts',
     votingOptions: ['APPROVE', 'REJECT', 'ABSTAIN'],
-    fundingNeeded: 'Outline total disbursement amount.'
+    fundingNeeded: 'Outline total disbursement amount.',
   },
   {
     id: 'ZGP-09',
@@ -112,7 +116,7 @@ export const PROPOSAL_TEMPLATES: ProposalTemplate[] = [
     motivation: 'Leverage external resources or reach new users.',
     specification: 'Describe partnership terms and obligations.',
     codeModule: 'partnerships/',
-    votingOptions: ['YES', 'NO', 'ABSTAIN']
+    votingOptions: ['YES', 'NO', 'ABSTAIN'],
   },
   {
     id: 'ZGP-10',
@@ -123,7 +127,7 @@ export const PROPOSAL_TEMPLATES: ProposalTemplate[] = [
     motivation: 'Tailor capabilities for new domains.',
     specification: 'Provide training data requirements and hosting.',
     codeModule: 'ml/zion-gpt/',
-    votingOptions: ['FOR', 'AGAINST', 'ABSTAIN']
+    votingOptions: ['FOR', 'AGAINST', 'ABSTAIN'],
   },
   {
     id: 'ZGP-11',
@@ -134,7 +138,7 @@ export const PROPOSAL_TEMPLATES: ProposalTemplate[] = [
     motivation: 'Improve portability and visibility for users.',
     specification: 'Outline bridge contracts and data schema.',
     codeModule: 'contracts/cross-chain/',
-    votingOptions: ['APPROVE', 'REJECT', 'ABSTAIN']
+    votingOptions: ['APPROVE', 'REJECT', 'ABSTAIN'],
   },
   {
     id: 'ZGP-12',
@@ -145,6 +149,6 @@ export const PROPOSAL_TEMPLATES: ProposalTemplate[] = [
     motivation: 'Increase security and modularity.',
     specification: 'Explain migration steps and backward compatibility.',
     codeModule: 'dao/governance-engine/',
-    votingOptions: ['YES', 'NO', 'ABSTAIN']
-  }
+    votingOptions: ['YES', 'NO', 'ABSTAIN'],
+  },
 ];

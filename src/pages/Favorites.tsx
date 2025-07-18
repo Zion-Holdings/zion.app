@@ -12,7 +12,9 @@ export default function FavoritesPage() {
     map[p.id] = p;
   }
 
-  const items = favorites.map(id => map[id]).filter((p): p is ProductListing => Boolean(p));
+  const items = favorites
+    .map((id) => map[id])
+    .filter((p): p is ProductListing => Boolean(p));
 
   // Convert ProductListing to Product type for ProductCard
   const convertToProduct = (listing: ProductListing): Product => ({
@@ -39,7 +41,7 @@ export default function FavoritesPage() {
         <p>No favorites added.</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {items.map(p => (
+          {items.map((p) => (
             <ProductCard key={p.id} product={convertToProduct(p)} />
           ))}
         </div>

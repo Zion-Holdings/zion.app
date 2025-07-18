@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { Copy, Send } from '@/components/ui/icons';
 
-
-
 import { Button } from '@/components/ui/button';
 import type { Prompt } from '@/types/prompts';
 
@@ -28,10 +26,20 @@ export function PromptCard({ prompt }: PromptCardProps) {
     <div className="p-4 border rounded-md bg-background flex flex-col justify-between">
       <p className="mb-4 text-sm">{prompt.text}</p>
       <div className="flex gap-2 mt-auto">
-        <Button variant="outline" size="sm" onClick={handleCopy} aria-label="Copy prompt">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={handleCopy}
+          aria-label="Copy prompt"
+        >
           {copied ? 'Copied' : <Copy className="w-4 h-4" />}
         </Button>
-        <Button variant="secondary" size="sm" onClick={handleSend} aria-label="Send to ZionGPT">
+        <Button
+          variant="secondary"
+          size="sm"
+          onClick={handleSend}
+          aria-label="Send to ZionGPT"
+        >
           <Send className="w-4 h-4" />
         </Button>
       </div>

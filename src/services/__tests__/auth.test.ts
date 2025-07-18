@@ -44,9 +44,9 @@ describe('Auth Service', () => {
         json: async () => mockErrorResponse,
       });
 
-      await expect(resetPassword(mockToken, mockPassword))
-        .rejects
-        .toThrow('Invalid token');
+      await expect(resetPassword(mockToken, mockPassword)).rejects.toThrow(
+        'Invalid token',
+      );
     });
 
     it('should throw a generic error if the response is not ok and no message is present', async () => {
@@ -59,25 +59,27 @@ describe('Auth Service', () => {
         json: async () => ({}), // No message in response
       });
 
-      await expect(resetPassword(mockToken, mockPassword))
-        .rejects
-        .toThrow('Error 500: Failed to reset password');
+      await expect(resetPassword(mockToken, mockPassword)).rejects.toThrow(
+        'Error 500: Failed to reset password',
+      );
     });
 
     it('should handle non-JSON error responses gracefully', async () => {
-        const mockToken = 'test-token';
-        const mockPassword = 'newPassword123';
+      const mockToken = 'test-token';
+      const mockPassword = 'newPassword123';
 
-        (fetch as jest.Mock).mockResolvedValueOnce({
-          ok: false,
-          status: 503,
-          _json: async () => { throw new Error('Network error'); } // Simulate non-JSON response by throwing during .json()
-        });
-
-        await expect(resetPassword(mockToken, mockPassword))
-          .rejects
-          .toThrow('Error 503: Failed to reset password'); // Falls back to generic error
+      (fetch as jest.Mock).mockResolvedValueOnce({
+        ok: false,
+        status: 503,
+        _json: async () => {
+          throw new Error('Network error');
+        }, // Simulate non-JSON response by throwing during .json()
       });
+
+      await expect(resetPassword(mockToken, mockPassword)).rejects.toThrow(
+        'Error 503: Failed to reset password',
+      ); // Falls back to generic error
+    });
   });
 
   // Optional: Add tests for the existing 'register' function if they don't exist

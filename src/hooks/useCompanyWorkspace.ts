@@ -1,6 +1,5 @@
-
-import { useState, useEffect } from "react";
-import type { Company } from "@/components/enterprise/workspace/CompanyDashboard";
+import { useState, useEffect } from 'react';
+import type { Company } from '@/components/enterprise/workspace/CompanyDashboard';
 
 export function useCompanyWorkspace(companySlug?: string) {
   const [company, setCompany] = useState<Company | null>(null);
@@ -18,7 +17,7 @@ export function useCompanyWorkspace(companySlug?: string) {
           setIsLoading(false);
           return;
         }
-        await new Promise(resolve => setTimeout(resolve, 400));
+        await new Promise((resolve) => setTimeout(resolve, 400));
         setCompany({
           id: 'company-1',
           name: 'Zion AI',
