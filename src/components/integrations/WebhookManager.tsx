@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import { Save, PlusCircle } from '@/components/ui/icons';
+import { Save, PlusCircle, Trash2 as Trash } from '@/components/ui/icons';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
