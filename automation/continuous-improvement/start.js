@@ -134,41 +134,54 @@ class ZionContinuousImprovementOrchestrator {
    * Setup event handlers for system coordination
    */
   setupEventHandlers() {
-    // Handle alerts from monitor
-    this.monitor.on('alert', async (alert) => {
-      logger.info(`🚨 Alert received: ${alert.message}`);
-      this.stats.alertsGenerated++;
+    // Since the monitor doesn't have event emitter, we'll use polling instead
+    // Set up periodic checks for alerts and improvements
+    setInterval(() => {
+      this.checkForAlertsAndImprovements();
+    }, 30000); // Check every 30 seconds
+
+    logger.info('Event handlers configured (polling-based)');
+  }
+
+  /**
+   * Check for alerts and process improvements
+   */
+  async checkForAlertsAndImprovements() {
+    try {
+      // Get alerts from monitor
+      const alerts = this.monitor.getAlerts();
       
-      try {
-        // Generate improvement suggestions
-        const suggestions = await this.cursorIntegration.generateSuggestions(alert);
-        this.stats.suggestionsGenerated += suggestions.length;
-        
-        if (suggestions.length > 0) {
-          // Process improvements
-          await this.improver.processImprovements(suggestions);
+      // Process new alerts
+      for (const alert of alerts) {
+        if (!alert.processed) {
+          logger.info(`🚨 Processing alert: ${alert.message}`);
+          this.stats.alertsGenerated++;
           
-          // Update stats
-          const improverStats = this.improver.getStats();
-          this.stats.improvementsApplied += improverStats.applied;
-          this.stats.improvementsFailed += improverStats.failed;
+          try {
+            // Generate improvement suggestions
+            const suggestions = await this.cursorIntegration.generateSuggestions(alert);
+            this.stats.suggestionsGenerated += suggestions.length;
+            
+            if (suggestions.length > 0) {
+              // Process improvements
+              await this.improver.processImprovements(suggestions);
+              
+              // Update stats
+              const improverStats = this.improver.getStats();
+              this.stats.improvementsApplied += improverStats.applied;
+              this.stats.improvementsFailed += improverStats.failed;
+              
+              // Mark alert as processed
+              alert.processed = true;
+            }
+          } catch (error) {
+            logger.error('Error processing alert:', error);
+          }
         }
-      } catch (error) {
-        logger.error('Error processing alert:', error);
       }
-    });
-
-    // Handle successful improvements
-    this.improver.on('improvement-applied', (improvement) => {
-      logger.info(`✅ Improvement applied: ${improvement.description}`);
-      this.stats.improvementsApplied++;
-    });
-
-    // Handle failed improvements
-    this.improver.on('improvement-failed', (improvement, error) => {
-      logger.error(`❌ Improvement failed: ${improvement.description}`, error);
-      this.stats.improvementsFailed++;
-    });
+    } catch (error) {
+      logger.error('Error checking for alerts and improvements:', error);
+    }
   }
 
   /**
