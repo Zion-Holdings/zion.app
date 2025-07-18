@@ -239,7 +239,6 @@
     "continuous:stop": "npm run improvement:stop",
     "continuous:status": "npm run improvement:status",
     "continuous:report": "npm run improvement:report",
-<<<<<<< HEAD
     "ai-improvement:start": "node scripts/ai-continuous-improvement.cjs",
     "ai-improvement:stop": "pkill -f 'ai-continuous-improvement.cjs'",
     "ai-improvement:status": "curl -s http://localhost:3001/api/status | jq",
@@ -261,8 +260,28 @@
     "ai-delegate:logs": "tail -f logs/ai-improvement.log logs/cursor-delegator.log logs/multi-coordinator.log",
     "ai-delegate:setup": "node scripts/setup-ai-delegation.cjs",
     "ai-delegate:test": "node scripts/test-ai-delegation.cjs",
-    "ai-delegate:cleanup": "node scripts/cleanup-ai-delegation.cjs"
-=======
+    "ai-delegate:cleanup": "node scripts/cleanup-ai-delegation.cjs",
+    "auto-improve:start": "node scripts/automated-improvement-pipeline.cjs",
+    "auto-improve:stop": "pkill -f 'automated-improvement-pipeline.cjs'",
+    "auto-improve:status": "curl -s http://localhost:3006/api/status | jq",
+    "auto-improve:monitor": "watch -n 10 'npm run auto-improve:status'",
+    "auto-improve:logs": "tail -f logs/automated-improvement.log",
+    "auto-improve:full": "npm run ai-delegate:master && npm run auto-improve:start",
+    "auto-improve:background": "nohup npm run auto-improve:full > logs/automation.log 2>&1 &",
+    "auto-improve:daemon": "pm2 start scripts/automated-improvement-pipeline.cjs --name 'zion-auto-improve'",
+    "auto-improve:daemon-stop": "pm2 stop zion-auto-improve",
+    "auto-improve:daemon-restart": "pm2 restart zion-auto-improve",
+    "auto-improve:daemon-logs": "pm2 logs zion-auto-improve",
+    "auto-improve:daemon-status": "pm2 status zion-auto-improve",
+    "automation:daemon": "node scripts/continuous-automation-daemon.cjs",
+    "automation:daemon-stop": "pkill -f 'continuous-automation-daemon.cjs'",
+    "automation:daemon-status": "curl -s http://localhost:3007/api/status | jq",
+    "automation:daemon-logs": "tail -f logs/automation-daemon.log",
+    "automation:daemon-metrics": "cat logs/automation-metrics.json | jq",
+    "automation:start": "npm run automation:daemon",
+    "automation:stop": "npm run automation:daemon-stop",
+    "automation:monitor": "watch -n 5 'npm run automation:daemon-status'",
+    "automation:full": "npm run automation:daemon & npm run auto-improve:full",
     "distributed-ai:start": "node scripts/distributed-ai-controller.cjs",
     "distributed-ai:install": "node scripts/cursor-ai-installer.cjs install-local",
     "distributed-ai:discover": "node scripts/cursor-ai-installer.cjs discover",
@@ -277,8 +296,9 @@
     "multi-computer:install-all": "npm run distributed-ai:install-remote",
     "multi-computer:verify": "npm run distributed-ai:verify",
     "multi-computer:report": "npm run distributed-ai:report",
-    "multi-computer:status": "npm run ai-coordinator:status"
->>>>>>> a19b0adf7100f906437eb81887e77bbb28c0f50c
+    "multi-computer:status": "npm run ai-coordinator:status",
+    "build:optimize": "node scripts/replace-console-statements.cjs && npm run lint -- --fix && npm run build",
+    "improve:all": "node scripts/automated-app-improvement.cjs"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
@@ -383,7 +403,7 @@
     "micro": "^10.0.1",
     "mongoose": "^8.16.3",
     "morgan": "^1.10.0",
-    "next": "^15.4.1",
+    "next": "^15.4.2-canary.7",
     "next-auth": "^4.24.11",
     "next-cloudinary": "^6.16.0",
     "node-cache": "^5.1.2",
@@ -421,6 +441,7 @@
     "vaul": "^1.1.2",
     "web-push": "^3.6.7",
     "web-vitals": "^5.0.3",
+    "winston": "^3.17.0",
     "yup": "^1.6.1",
     "zod": "^4.0.5"
   },
@@ -548,4 +569,3 @@
     "postcss": "8.5.6"
   }
 }
-

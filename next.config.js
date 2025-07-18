@@ -4,6 +4,12 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Workaround for Node.js 22 compatibility issue
+process.env.NODE_OPTIONS = process.env.NODE_OPTIONS || '';
+if (!process.env.NODE_OPTIONS.includes('--no-deprecation')) {
+  process.env.NODE_OPTIONS += ' --no-deprecation';
+}
+
 // Configure CDN asset prefix when running in production
 const isProd = process.env.NODE_ENV === 'production';
 const isNetlify = process.env.NETLIFY === 'true';
@@ -212,12 +218,7 @@ const nextConfig = {
 
     return config;
   },
-  // Simplified experimental features for Node.js 22 compatibility
-  experimental: {
-    // Disable problematic features
-    esmExternals: false,
-    serverComponentsExternalPackages: [],
-  },
+  // Remove experimental features for Node.js 22 compatibility
 };
 
 export default nextConfig;
@@ -255,5 +256,15 @@ function convertBigIntsToStrings(obj) {
     return result;
   }
   return obj;
+
+  webpack: (config, { dev, isServer }) => {
+    if (dev && !isServer) {
+      config.watchOptions = {
+        poll: 1000,
+        aggregateTimeout: 300,
+      };
+    }
+    return config;
+  },
 }
 

@@ -1,87 +1,88 @@
-import type { NextApiRequest, NextApiResponse } from 'next';';';';';'
-import { BLOG_POSTS } from '@/data/blog-posts';';';';';'
-import type { BlogPost } from '@/types/blog';';';';';'
-import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';';';';';'
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { BLOG_POSTS } from '@/data/blog-posts';
+import type { BlogPost } from '@/types/blog';
+import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
-;
-;
-// Optimized search function with early returns;
-function searchBlogPosts(): unknown {): unknown {): unknown {): unknown {): unknown {query: string): BlogPost[] {;
+
+// Optimized search function with early returns
+function searchBlogPosts(query: string): BlogPost[] {
   if (!query) return BLOG_POSTS;
-  ;
-  const lowerQuery: unknown unknown unknown unknown unknown unknown = query.toLowerCase();
-  const match: unknown unknown unknown unknown unknown unknown = (text?: string) => text?.toLowerCase().includes(lowerQuery);
-  ;
-  // Use filter with early termination for better performance;
-  return BLOG_POSTS.filter(post => {;
-    // Check title first (most likely match);
-    if (match(post.title)) return true;
-    ;
-    // Check excerpt second;
-    if (match(post.excerpt)) return true;
-    ;
-    // Check content third (most expensive);
-    if (match(post.content)) return true;
-    ;
-    // Check tags last;
-    return post.tags.some(tag => match(tag));'
-  });';'
-};';';'
-;';';';'
-export default async function handler(): unknown {): unknown {): unknown {): unknown {): unknown {;';';';';'
-  req: "NextApiRequest",;";";";";"
-  res: "NextApiResponse<BlogPost[] | { error: string "}>;";";";"
-) {;";";";";"
-  if (req['method'] !== 'GET') {;';';';';'
-    res.setHeader('Allow', 'GET');';';';';'
-    return res.status(405).json({ error: `Method ${req['method']} Not Allowed` });';'
-  };';';'
-;';';';'
-  try {;';';';';'
-    const query: unknown unknown unknown unknown unknown unknown = String((req['query'] as { query?: string } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}).query || '').toLowerCase().trim();
-    ;
-    // Create cache key based on query;
-    const cacheKey: unknown unknown unknown unknown unknown unknown = query ;
-      ? cacheKeys.blog.search(query);
-      : cacheKeys.blog.all;
-;'
-    // Use cache-or-compute pattern;';'
-    const results: unknown unknown unknown unknown unknown unknown = await cacheOrCompute(;';';'
-      cacheKey,;';';';'
-      async () => {;';';';';'
-        logInfo(`Computing blog results for query: "${query}"`);
-        return searchBlogPosts(query);
-      },;
-      query ? CacheCategory.SHORT : CacheCategory.MEDIUM, // Search results cached shorter;
-      query ? 300 : 1800 // 5 min for search, 30 min for all posts;
-    );
-;"
-    // Apply cache headers;";"
-    applyCacheHeaders(res, query ? CacheCategory.SHORT : CacheCategory.MEDIUM);";";"
-    ;";";";"
-    // Add performance headers;";";";";"
-    res.setHeader('X-Response-Time', Date.now().toString());';';';';'
-    res.setHeader('X-Result-Count', results.length.toString());';';';';'
-    res.setHeader('X-Query', query || 'none');'
-;';'
-    return res.status(200).json(results);';';'
-;';';';'
-  } catch (error) {;';';';';'
-    logErrorToProduction('Blog API error:', { data: "error "});";"
-    ;";";"
-    // Return fallback - all posts on error;";";";"
-    applyCacheHeaders(res, CacheCategory.SHORT);";";";";"
-    res.setHeader('X-Data-Source', 'fallback');
-    ;'
-    return res.status(200).json(BLOG_POSTS);';'
-  };';';'
-};';';';'
-';';'
-};';';'
-}';'
-};';'
-}';
-};'
-}'
+
+  const lowerQuery = query.toLowerCase();
+  const searchTerms = lowerQuery.split(' ').filter(term => term.length > 0);
+
+  return BLOG_POSTS.filter(post => {
+    const searchableText = [
+      post.title,
+      post.excerpt,
+      post.content,
+      post.author,
+      ...(post.tags || [])
+    ].join(' ').toLowerCase();
+
+    return searchTerms.every(term => searchableText.includes(term));
+  });
 }
-}'
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<BlogPost[] | { error: string }>
+) {
+  if (req.method !== 'GET') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  try {
+    const { search, category, author, limit = '10', offset = '0' } = req.query;
+
+    // Apply cache headers
+    applyCacheHeaders(res, CacheCategory.BLOG, 300); // 5 minutes
+
+    // Get cached or compute blog posts
+    const posts = await cacheOrCompute(
+      cacheKeys.blogPosts(search, category, author),
+      async () => {
+        let filteredPosts = BLOG_POSTS;
+
+        // Apply search filter
+        if (search && typeof search === 'string') {
+          filteredPosts = searchBlogPosts(search);
+        }
+
+        // Apply category filter
+        if (category && typeof category === 'string') {
+          filteredPosts = filteredPosts.filter(post => 
+            post.category?.toLowerCase() === category.toLowerCase()
+          );
+        }
+
+        // Apply author filter
+        if (author && typeof author === 'string') {
+          filteredPosts = filteredPosts.filter(post => 
+            post.author?.toLowerCase().includes(author.toLowerCase())
+          );
+        }
+
+        return filteredPosts;
+      }
+    );
+
+    // Apply pagination
+    const limitNum = parseInt(limit as string, 10) || 10;
+    const offsetNum = parseInt(offset as string, 10) || 0;
+    const paginatedPosts = posts.slice(offsetNum, offsetNum + limitNum);
+
+    logInfo('Blog posts API called', { 
+      search, 
+      category, 
+      author, 
+      total: posts.length, 
+      returned: paginatedPosts.length 
+    });
+
+    res.status(200).json(paginatedPosts);
+  } catch (error) {
+    logErrorToProduction('Blog posts API error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+}

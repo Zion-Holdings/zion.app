@@ -1,0 +1,27 @@
+{
+  "id": "cursor-node-52ej1iii8",
+  "isMaster": true,
+  "capabilities": [
+    "cursor_installed",
+    "node_js",
+    "npm",
+    "git",
+    "code_analysis",
+    "performance_optimization",
+    "security_audit",
+    "bug_fix",
+    "refactoring"
+  ],
+  "resources": {
+    "cpuCores": 24,
+    "memoryGB": 64,
+    "platform": "darwin",
+    "arch": "x64",
+    "nodeVersion": "v22.16.0",
+    "uptime": 1784330
+  },
+  "status": "running",
+  "lastHeartbeat": 1752811700850,
+  "activeTasks": 0,
+  "completedTasks": 0
+}
