@@ -228,7 +228,7 @@ const nextConfig = {
       tls: false,
     };
 
-    // Fix Watchpack path resolution issues
+    // Fix Watchpack path resolution issues by using polling instead of file watching
     if (dev && !isServer) {
       config.watchOptions = {
         poll: 1000,
@@ -254,6 +254,15 @@ const nextConfig = {
   experimental: {
     optimizeCss: process.env.NODE_ENV === 'production',
     optimizePackageImports: ['@chakra-ui/react', 'lucide-react'],
+  },
+  // Disable file watching in development to avoid Watchpack issues
+  webpackDevMiddleware: (config) => {
+    config.watchOptions = {
+      poll: 1000,
+      aggregateTimeout: 300,
+      ignored: ['**/node_modules/**', '**/.git/**', '**/.next/**'],
+    };
+    return config;
   },
 };
 
