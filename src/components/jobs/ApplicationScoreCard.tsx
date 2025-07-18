@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Loader2, Star } from '@/components/ui/icons';
+import { Loader2, Star, BarChart2, Lightbulb } from '@/components/ui/icons';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";

@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { User } from '@/components/ui/icons';
+import { User, Briefcase } from '@/components/ui/icons';
 import type { JobApplication } from "@/types/jobs";
 import { Avatar as AvatarPrimitive } from "@/components/ui/avatar"; // Renamed
 import { ClickableBadge } from "@/components/ui/clickable-badge";
