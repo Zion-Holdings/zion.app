@@ -1,5 +1,5 @@
 {
-  "id": "cursor-node-df5p9bgti",
+  "id": "cursor-node-cm4bi3srq",
   "isMaster": false,
   "capabilities": [
     "cursor_installed",
@@ -18,10 +18,10 @@
     "platform": "darwin",
     "arch": "x64",
     "nodeVersion": "v22.16.0",
-    "uptime": 1786419
+    "uptime": 1803540
   },
   "status": "running",
-  "lastHeartbeat": 1752830853095,
+  "lastHeartbeat": 1752830850746,
   "activeTasks": 0,
   "completedTasks": 0
 }

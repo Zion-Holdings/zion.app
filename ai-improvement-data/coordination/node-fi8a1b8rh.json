@@ -1,5 +1,5 @@
 {
-  "id": "node-kb3z152dr",
+  "id": "node-fi8a1b8rh",
   "isMaster": false,
   "capabilities": [
     "code_analysis",
@@ -11,8 +11,8 @@
     "MEMORY_GB": 64,
     "DISK_GB": 100
   },
-  "status": "running",
-  "lastHeartbeat": 1752830847055,
+  "status": "initializing",
+  "lastHeartbeat": 1752830832711,
   "tasks": [],
   "improvements": []
 }
