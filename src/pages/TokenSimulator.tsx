@@ -122,7 +122,7 @@ export default function TokenSimulator() {
     return () => {
       if (chart && typeof (chart as { destroy?: () => void }).destroy === 'function') (chart as { destroy: () => void }).destroy();
     };
-  }, [forecast, inputs.activeWallets, months]);
+  }, [forecast, inputs.activeWallets, months, inputs.circulating]);
 
   useEffect(() => {
     // Chart.js is loaded dynamically at runtime, so we must use 'unknown' here for chart instance
