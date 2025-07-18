@@ -417,10 +417,8 @@ const productionLogger = new ProductionLogger();
 export const _logDebug = productionLogger.debug.bind(productionLogger);
 export const _logInfo = productionLogger.info.bind(productionLogger);
 export const _logWarn = productionLogger.warn.bind(productionLogger);
-export const logErrorToProduction: unknown =;
-  productionLogger.error.bind(productionLogger);
-export const logPerformance: unknown =;
-  productionLogger.logPerformanceMetric.bind(productionLogger);
+export const logErrorToProduction = productionLogger.error.bind(productionLogger);
+export const logPerformance = productionLogger.logPerformanceMetric.bind(productionLogger);
 export const _timeStart = productionLogger.time.bind(productionLogger);
 export const _timeEnd = productionLogger.timeEnd.bind(productionLogger);
 // Note: logError is not exported here to avoid conflicts with utils/logError.ts;
@@ -428,4 +426,3 @@ export const _timeEnd = productionLogger.timeEnd.bind(productionLogger);
 ;
 export { ProductionLogger };
 export default productionLogger'
-'''''
