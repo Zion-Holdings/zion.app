@@ -39,8 +39,8 @@ export default async function handler(
           timestamp
         });
     }
-  } catch {
-    logErrorToProduction('Error monitoring API 'Error occurred':', 'Error occurred');
+  } catch (error) {
+    logErrorToProduction('Error monitoring API error:', error);
     
     res.status(500).json({
       success: false,
