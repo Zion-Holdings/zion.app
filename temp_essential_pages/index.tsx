@@ -30,17 +30,17 @@ export const _getStaticProps: GetStaticProps<HomePageProps> = async () => {
       // Revalidate every 5 minutes in production for fresh content
       revalidate: 300
     };
-  } catch {
-    console.('Error in getStaticProps for home page:', );
+  } catch (error) {
+    console.error('Error in getStaticProps for home page:', error);
     
     // Log to Sentry if available, but don't block the page
     if (isSentryActive) {
       try {
         if (typeof window === 'undefined') {
           const Sentry = await import('@sentry/nextjs');
-          Sentry.captureException();
+          Sentry.captureException(error);
         }
-      } catch {
+      } catch (sentryError) {
         console.warn('Failed to log to Sentry:', sentryError);
       }
     }
@@ -51,7 +51,7 @@ export const _getStaticProps: GetStaticProps<HomePageProps> = async () => {
         hasError: false, // Don't show error on home page, show fallback content
         timestamp: Date.now()
       },
-      _revalidate: 60 // Retry more frequently if there was an error
+      revalidate: 60 // Retry more frequently if there was an error
     };
   }
 };
@@ -60,7 +60,7 @@ const ErrorTestButton = () => {
   const handleClick = () => {
     try {
       throw new Error("This is a test error from the homepage button!");
-    } catch {
+    } catch (error) {
       if (isSentryActive) {
         if (typeof window === 'undefined') {
           import('@sentry/nextjs').then((Sentry) => {

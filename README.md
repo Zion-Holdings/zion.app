@@ -278,3 +278,155 @@ For detailed setup instructions see [docs/SELF_MAINTENANCE_AUTOMATION.md](docs/S
 ---
 
 *This README provides a general overview. For more detailed information on specific parts of the system, please refer to the README files within the relevant subdirectories and the `docs/` folder.*
+
+# Zion App - Self-Healing Netlify Build System
+
+## Overview
+
+This project includes a comprehensive self-healing system that automatically detects and fixes common Netlify build issues, ensuring reliable deployments.
+
+## Self-Healing System
+
+### Features
+
+- **Automatic Build Monitoring**: Continuously monitors build processes for failures
+- **Intelligent Error Detection**: Identifies common build issues (memory, timeout, dependencies, etc.)
+- **Automatic Fixes**: Applies appropriate fixes based on detected issues
+- **Health Checks**: Regular system health monitoring
+- **Background Daemon**: Runs continuously to maintain build health
+
+### Components
+
+1. **Netlify Self-Healing** (`scripts/netlify-self-healing.cjs`)
+   - Core self-healing logic
+   - Error pattern recognition
+   - Fix strategy application
+
+2. **Build Monitor** (`scripts/netlify-build-monitor.cjs`)
+   - Monitors build processes
+   - Detects stuck builds
+   - Triggers healing when needed
+
+3. **Auto-Fix Script** (`scripts/netlify-auto-fix.cjs`)
+   - Applies common fixes
+   - Optimizes configurations
+   - Cleans up issues
+
+4. **Healing Daemon** (`scripts/netlify-healing-daemon.cjs`)
+   - Runs system in background
+   - Manages all components
+   - Handles graceful shutdown
+
+### Quick Start
+
+```bash
+# Start the self-healing system
+npm run netlify:heal
+
+# Start build monitoring
+npm run netlify:monitor
+
+# Check system status
+npm run netlify:status
+
+# Stop the system
+npm run netlify:stop
+```
+
+### Manual Commands
+
+```bash
+# Self-healing commands
+npm run self-heal:start          # Start self-healing
+npm run self-heal:stop           # Stop self-healing
+npm run self-heal:status         # Check status
+npm run self-heal:health         # Perform health check
+npm run self-heal:fix <issues>   # Fix specific issues
+
+# Build monitoring commands
+npm run build:monitor:start      # Start build monitor
+npm run build:monitor:stop       # Stop build monitor
+npm run build:monitor:status     # Check monitor status
+npm run build:monitor:watch      # Watch for builds
+
+# Auto-fix commands
+npm run auto-fix:all             # Apply all fixes
+npm run auto-fix:test            # Test build after fixes
+npm run auto-fix:report          # Show fix report
+
+# Daemon commands
+node scripts/netlify-healing-daemon.cjs start    # Start daemon
+node scripts/netlify-healing-daemon.cjs stop     # Stop daemon
+node scripts/netlify-healing-daemon.cjs status   # Check daemon status
+node scripts/netlify-healing-daemon.cjs restart  # Restart daemon
+```
+
+### Supported Fixes
+
+The system can automatically fix the following issues:
+
+- **Memory Issues**: Increase memory allocation, optimize bundles
+- **Timeout Issues**: Increase timeouts, optimize build process
+- **Dependency Issues**: Clean dependencies, fix peer deps
+- **TypeScript Issues**: Fix types, skip type checking
+- **Linting Issues**: Auto-fix lint errors, skip linting
+- **Build Issues**: Clean builds, fix configurations
+- **Network Issues**: Retry builds, use caching
+- **Permission Issues**: Fix file permissions
+- **Disk Issues**: Clean disk space, optimize size
+- **Node Version Issues**: Update Node.js, fix version conflicts
+
+### Configuration
+
+The system is configured through environment variables in `netlify.toml`:
+
+```toml
+[build.environment]
+  ENABLE_SELF_HEALING = "true"
+  AUTO_FIX_BUILD_ISSUES = "true"
+  BUILD_MONITORING = "true"
+```
+
+### Logs
+
+All system activity is logged to:
+
+- `logs/netlify-self-heal.log` - Self-healing system logs
+- `logs/build-monitor.log` - Build monitoring logs
+- `logs/auto-fix.log` - Auto-fix script logs
+- `logs/healing-daemon.log` - Daemon logs
+
+### Monitoring
+
+The system provides real-time monitoring through:
+
+- Health checks every 5 minutes
+- Build process monitoring
+- Resource usage monitoring
+- Automatic issue detection and resolution
+
+### Integration with Netlify
+
+The self-healing system is integrated into the Netlify build process:
+
+1. **Pre-build**: Runs auto-fix to resolve known issues
+2. **During build**: Monitors for failures and applies fixes
+3. **Post-build**: Performs health checks and cleanup
+
+### Troubleshooting
+
+If the self-healing system isn't working:
+
+1. Check logs: `npm run logs:view`
+2. Restart daemon: `node scripts/netlify-healing-daemon.cjs restart`
+3. Manual fix: `npm run auto-fix:all`
+4. Check status: `npm run netlify:status`
+
+### Development
+
+To modify the self-healing system:
+
+1. Edit the appropriate script in `scripts/`
+2. Test changes locally
+3. Update documentation
+4. Deploy to test environment

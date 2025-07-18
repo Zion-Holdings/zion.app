@@ -1,0 +1,130 @@
+name: Self-Healing Lint System
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
+  schedule:
+    # Run every hour
+    - cron: '0 * * * *'
+
+jobs:
+  self-healing-lint:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run initial lint check
+      id: initial-lint
+      run: |
+        echo "Running initial lint check..."
+        npm run lint || echo "::set-output name=has-issues::true"
+        echo "::set-output name=has-issues::false"
+    
+    - name: Start self-healing system
+      if: steps.initial-lint.outputs.has-issues == 'true'
+      run: |
+        echo "Lint issues detected, starting self-healing system..."
+        npm run self-healing:start &
+        SELF_HEALING_PID=$!
+        echo $SELF_HEALING_PID > .self-healing.pid
+        
+        # Wait for healing to complete
+        sleep 30
+        
+        # Check if healing is still running
+        if kill -0 $SELF_HEALING_PID 2>/dev/null; then
+          echo "Self-healing still running, waiting..."
+          wait $SELF_HEALING_PID
+        fi
+    
+    - name: Run post-build healing
+      run: |
+        echo "Running post-build healing..."
+        npm run self-healing:post-build
+    
+    - name: Check for remaining issues
+      id: final-lint
+      run: |
+        echo "Checking for remaining lint issues..."
+        npm run lint || echo "::set-output name=has-issues::true"
+        echo "::set-output name=has-issues::false"
+    
+    - name: Commit and push fixes
+      if: steps.final-lint.outputs.has-issues == 'false'
+      run: |
+        echo "No remaining issues, committing fixes..."
+        git config user.name "Self-Healing Bot"
+        git config user.email "self-healing@zion.app"
+        
+        if [[ -n "$(git status --porcelain)" ]]; then
+          git add .
+          git commit -m "fix: auto-fix lint issues via self-healing system"
+          git push
+        fi
+    
+    - name: Trigger new build
+      if: steps.final-lint.outputs.has-issues == 'false'
+      run: |
+        echo "Triggering new build..."
+        npm run build:with-healing
+    
+    - name: Report status
+      run: |
+        if [[ "${{ steps.final-lint.outputs.has-issues }}" == "true" ]]; then
+          echo "❌ Lint issues remain after self-healing"
+          exit 1
+        else
+          echo "✅ Self-healing completed successfully"
+        fi
+
+  continuous-healing:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run continuous healing
+      run: |
+        echo "Running continuous healing cycle..."
+        npm run self-healing:start
+        
+        # Run for 10 minutes
+        timeout 600 npm run self-healing:start
+    
+    - name: Commit any fixes
+      run: |
+        git config user.name "Self-Healing Bot"
+        git config user.email "self-healing@zion.app"
+        
+        if [[ -n "$(git status --porcelain)" ]]; then
+          git add .
+          git commit -m "fix: continuous healing fixes"
+          git push
+        fi 

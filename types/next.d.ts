@@ -13,9 +13,9 @@ export interface NextApiResponse<T = unknown> {
   end(data?: unknown): void;
 }
 
-export type GetStaticProps<T = unknown> = unknown;
-export type GetStaticPaths<T = unknown> = unknown;
-export type GetServerSideProps<T = unknown> = unknown;
+export type GetStaticProps<_T = unknown> = unknown;
+export type GetStaticPaths<_T = unknown> = unknown;
+export type GetServerSideProps<_T = unknown> = unknown;
 
 type NextPageWithLayout<_T = object> = NextPage<_T> & {
   getLayout?: (page: ReactElement) => ReactNode;
