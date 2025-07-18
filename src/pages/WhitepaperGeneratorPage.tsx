@@ -77,7 +77,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
   useEffect(() => {
     if(error && !isLoading && !isDownloading && !isSharing && !isSubmittingToCounsel) setError(null);
    
-  }, [tokenName, tokenSupply, useCases, rewardsLogic, distributionData, governanceLogic, legalDisclaimers, sections]);
+  }, [tokenName, tokenSupply, useCases, rewardsLogic, distributionData, governanceLogic, legalDisclaimers, sections, error, isLoading, isDownloading, isSharing, isSubmittingToCounsel]);
 
 
   const parseWhitepaperDraft = useCallback((draft: string): WhitepaperSection[] => {
