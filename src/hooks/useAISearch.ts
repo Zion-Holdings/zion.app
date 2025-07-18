@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import { TALENT_PROFILES } from '@/data/talentData;'
 import { JOB_POSTS } from '@/data/jobsData;'
 import { PROJECTS } from '@/data/projectsData;

@@ -4,8 +4,8 @@ import React, {;
   useContext,;
   useEffect,;
   useCallback,;
-} from 'react
-import type { ReactNode } from 'react
+} from 'react';
+import type { ReactNode } from 'react';
 import { useRouter } from 'next/router;'
 import { useAuth } from '@/hooks/useAuth;'
 import { supabase } from '@/integrations/supabase/client;'

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react
+import { useEffect, useState } from 'react';
 import { SEO } from '@/components/SEO;'
 import { Card, CardContent } from '@/components/ui/card;'
 import { supabase } from '@/integrations/supabase/client;'

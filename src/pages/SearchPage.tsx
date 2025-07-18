@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router;'
-import React from 'react
-import { useEffect, useState, useCallback } from 'react
+import React from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { Loader2 } from '@/components/ui/icons;'
 import { useRouterReady, useRouteChange } from '@/hooks/useRouterReady;'
 import { EnhancedSearchInput } from '@/components/search/EnhancedSearchInput;'

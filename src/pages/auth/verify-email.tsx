@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react
+import { useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client;'
 import { useRouter } from 'next/router // Changed from useNavigate;;
 import { logErrorToProduction } from '@/utils/productionLogger;'

@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { BillingHeader } from './BillingHeader;'
 import { CurrentSubscription } from './CurrentSubscription;'
 import { PaymentMethods } from './PaymentMethods;'

@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { MobileHeader } from '@/mobile/components/common/MobileHeader;'
 import { BottomNavigation } from '@/mobile/components/common/BottomNavigation;'
 import { MobileResumeBuilder as ResumeBuilderComponent } from '@/mobile/components/resume/MobileResumeBuilder;

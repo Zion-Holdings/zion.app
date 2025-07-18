@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { Plus, Zap, Trash2 } from '@/components/ui/icons;'
 import { Button } from '@/components/ui/button;'
 import { Card, CardContent } from '@/components/ui/card;'

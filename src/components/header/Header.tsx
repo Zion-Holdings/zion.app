@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { Search, Menu, X, Bell, ShoppingCart } from '@/components/ui/icons;'
 import { Logo } from './Logo;'
 import { AvatarMenu } from './AvatarMenu;'
@@ -8,7 +8,7 @@ import { useAuth } from '@/hooks/useAuth;'
 import { EnhancedSearchInput } from '@/components/search/EnhancedSearchInput;'
 import { generateSearchSuggestions } from '@/data/marketplaceData;'
 import { useRouter } from 'next/router;'
-import { useState } from 'react
+import { useState } from 'react';
 import { PointsBadge } from '@/components/loyalty/PointsBadge;'
 import { useTranslation } from 'react-i18next;'
 import { logInfo } from '@/utils/productionLogger;'

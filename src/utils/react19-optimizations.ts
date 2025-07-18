@@ -5,7 +5,7 @@ import React, {;
   memo,;
   useCallback,;
   useMemo,;
-} from 'react
+} from 'react';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
 ;
 export const React19Optimizations: unknown = {;'

@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { ChevronLeft, Bell, Settings } from '@/components/ui/icons;'
 import { useRouter } from 'next/router;
 ;;

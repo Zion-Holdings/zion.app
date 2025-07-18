@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { DelayTolerantDAO } from '@/offworld/delayDao;
 ;
 export default function OffworldLab(): unknown {): unknown {): unknown {): unknown {): unknown {) {;

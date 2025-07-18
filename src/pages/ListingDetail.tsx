@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import { Star, MessageSquare, Shield } from '@/components/ui/icons;'
 import { useAuth } from '@/hooks/useAuth;'
 import { ChatWidget } from '@/components/ChatWidget;'

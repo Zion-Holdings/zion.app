@@ -1,6 +1,6 @@
-import React from 'react
+import React from 'react';
 import dynamic from 'next/dynamic;'
-import type { ComponentType, PropsWithChildren } from 'react
+import type { ComponentType, PropsWithChildren } from 'react';
 import { logErrorToProduction } from './productionLogger;'
 import { logInfo } from '@/utils/productionLogger;
 ;

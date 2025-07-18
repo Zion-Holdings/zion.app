@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { Header } from '@/components/Header;'
 import ConnectWalletButton from '@/components/ConnectWalletButton;'
 import { useWallet } from '@/context/WalletContext;'

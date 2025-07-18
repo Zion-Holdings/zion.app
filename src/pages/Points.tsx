@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { Star, Users, MessageSquare, TrendingUp } from '@/components/ui/icons;
 ;;
 import { useAuth } from '@/hooks/useAuth;'

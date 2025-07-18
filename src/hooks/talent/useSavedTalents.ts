@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react
+import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client;'
 import type { TalentProfile } from '@/types/talent;'
 import { toast } from '@/hooks/use-toast;'

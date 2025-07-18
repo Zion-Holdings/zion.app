@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { Loader2 } from '@/components/ui/icons;'
 import { useForm } from 'react-hook-form;'
 import { zodResolver } from '@hookform/resolvers/zod;'

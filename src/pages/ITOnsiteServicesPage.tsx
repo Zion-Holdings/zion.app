@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router;'
 import { ITServicePricingTable } from '@/components/services/ITServicePricingTable;'
 import { GlobalServiceSection } from '@/components/GlobalServiceSection;'

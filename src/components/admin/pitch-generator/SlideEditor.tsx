@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react
+import React, { useState, useEffect } from 'react';
 import { logInfo } from '@/utils/productionLogger;
 ;'
 // You might need to install a carousel library, e.g., react-responsive-carousel;;

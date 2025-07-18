@@ -1,4 +1,4 @@
-import { useContext } from 'react
+import { useContext } from 'react';
 import { AuthContext } from '@/context/auth/AuthContext;'
 import type { AuthContextType } from '@/types/auth;'
 import { logWarn } from '@/utils/productionLogger;

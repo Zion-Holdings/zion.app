@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { RefreshCw } from '@/components/ui/icons;
 ;;
 import { usePoints } from '@/hooks/usePoints;'

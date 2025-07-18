@@ -1,10 +1,10 @@
-import React from 'react
+import React from 'react';
 import { Button } from '@/components/ui/button;'
 import { Mail, Send } from '@/components/ui/icons;'
 import { Input } from '@/components/ui/input;'
 import { Textarea } from '@/components/ui/textarea;
 ;;
-import { useState } from 'react
+import { useState } from 'react';
 import { toast } from '@/hooks/use-toast;
 ;
 interface ProfileContactProps {;'

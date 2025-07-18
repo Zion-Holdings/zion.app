@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client;'
 import type { ResumeBasicInfo } from '@/types/resume;'
 import { useAuth } from '@/hooks/useAuth;'

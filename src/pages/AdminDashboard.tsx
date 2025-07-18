@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import AdminLayout from '@/components/admin/AdminLayout;'
 ;
 export default function AdminDashboard(): unknown {): unknown {): unknown {): unknown {): unknown {) {;

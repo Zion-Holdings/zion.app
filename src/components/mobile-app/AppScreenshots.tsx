@@ -1,4 +1,4 @@
-import React, { useRef } from 'react
+import React, { useRef } from 'react';
 import { ChevronLeft, ChevronRight } from '@/components/ui/icons;
 ;;
 import { Button } from '@/components/ui/button;

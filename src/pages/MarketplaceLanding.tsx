@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router // Changed from useNavigate;;
 import { useQuery } from '@tanstack/react-query;'
-import { useEffect } from 'react
+import { useEffect } from 'react';
 import ProductCard from '@/components/ProductCard;'
 import type { Product } from '@/services/marketplace;'
 import { showError } from '@/utils/showToast;

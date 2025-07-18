@@ -1,8 +1,8 @@
-import React from 'react
+import React from 'react';
 import Link from 'next/link;'
 import { Heart, MessageSquare, Wallet } from '@/components/ui/icons;'
 import { useRouter } from 'next/router;'
-import { useState } from 'react
+import { useState } from 'react';
 import { cn } from '@/lib/utils;'
 import { useAuth } from '@/hooks/useAuth;'
 import { useTranslation } from 'react-i18next;'

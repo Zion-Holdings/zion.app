@@ -1,5 +1,5 @@
-import { useState } from 'react
-import type { FormEvent } from 'react
+import { useState } from 'react';
+import type { FormEvent } from 'react';
 import { Input } from '@/components/ui/input;'
 import { Button } from '@/components/ui/button;'
 import { supabase } from '@/utils/supabase/client // Assuming supabase client is configured;;

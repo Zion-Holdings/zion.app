@@ -7,7 +7,7 @@ import {;'
   WifiOff,;'
   RefreshCw,;;
 } from '@/components/ui/icons;'
-import type { ComponentType } from 'react
+import type { ComponentType } from 'react';
 import { motion, AnimatePresence } from 'framer-motion;'
 import { Card, CardContent } from '@/components/ui/card;
 ;;

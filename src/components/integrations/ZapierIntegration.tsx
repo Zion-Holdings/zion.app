@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { Check, Copy, ExternalLink } from '@/components/ui/icons;'
 import { Badge } from '@/components/ui/badge;'
 import { Button } from '@/components/ui/button;

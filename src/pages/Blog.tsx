@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react
+import { useState, useEffect } from 'react';
 import { Search } from '@/components/ui/icons;'
 import Link from 'next/link;'
 import { useRouter } from 'next/router;'

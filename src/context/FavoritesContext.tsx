@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useEffect, useState } from 'react
-import type { ReactNode } from 'react
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
 import { toggleFavorite as toggleFavoriteRequest } from '@/api/favorites;'
 import { logErrorToProduction } from '@/utils/productionLogger;'
 import { toast } from '@/hooks/use-toast;'

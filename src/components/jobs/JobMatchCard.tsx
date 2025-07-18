@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { MapPin, Star } from '@/components/ui/icons;'
 import { Badge } from '@/components/ui/badge;'
 import { Button } from '@/components/ui/button;'

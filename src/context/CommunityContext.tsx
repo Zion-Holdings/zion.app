@@ -1,5 +1,5 @@
-import React, { createContext, useContext } from 'react
-import type { ReactNode } from 'react
+import React, { createContext, useContext } from 'react';
+import type { ReactNode } from 'react';
 import type { ForumPost } from '@/types/community;
 ;'
 interface CommunityContextType {;;

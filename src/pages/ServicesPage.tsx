@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from 'react
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { ArrowUp, Filter, SortAsc, Star } from '@/components/ui/icons;'
 import { motion, AnimatePresence } from 'framer-motion;'
 import { useRouter } from 'next/router;

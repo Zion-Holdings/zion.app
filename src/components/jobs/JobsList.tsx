@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react
+import { useState, useEffect } from 'react';
 import { Loader2, Edit, X, Eye } from '@/components/ui/icons;'
 import { useAuth } from '@/hooks/useAuth;'
 import { supabase } from '@/integrations/supabase/client;'

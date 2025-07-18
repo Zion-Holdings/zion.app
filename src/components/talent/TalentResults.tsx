@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import type { TalentProfile } from '@/types/talent;'
 import { ActiveFilters } from '@/components/talent/ActiveFilters;'
 import { ResultsHeader } from '@/components/talent/ResultsHeader;'

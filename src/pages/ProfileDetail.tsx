@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react
+import { useState, useEffect } from 'react';
 import { MapPin, Clock, Mail, Phone, Globe } from '@/components/ui/icons;'
 import { useRouter } from 'next/router;'
 import { supabase } from '@/integrations/supabase/client;'

@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { Button } from '@/components/ui/button;'
 import { useRouter } from 'next/router // Changed from useNavigate;;
 import { CheckCircle2 } from '@/components/ui/icons;

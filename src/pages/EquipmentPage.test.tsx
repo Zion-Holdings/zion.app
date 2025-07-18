@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest;'
-import { http, HttpResponse } from 'msw
+import { http, HttpResponse } from 'msw';
 import { server } from '../mocks/server;'
 import { toast } from '../../hooks/use-toast;'
 import fetchEquipment from './EquipmentPage // Use default import if fetchEquipment is the default export;

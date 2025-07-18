@@ -1,4 +1,4 @@
-import { useEffect } from 'react
+import { useEffect } from 'react';
 import { useRouter } from 'next/router // Changed from useLocation, useNavigate;;
 import { safeStorage } from '@/utils/safeStorage;'
 import { toast } from '@/hooks/use-toast // _Optional: for user feedback;;

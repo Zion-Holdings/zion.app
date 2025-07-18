@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { Search, Filter, List, Loader2 } from '@/components/ui/icons;'
 import { useRouter } from 'next/router;
 ;;

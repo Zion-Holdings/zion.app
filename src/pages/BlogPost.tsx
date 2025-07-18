@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react
+import { useState, useEffect } from 'react';
 import { ArrowLeft, Calendar, Clock, ChevronLeft } from '@/components/ui/icons;'
 import { useRouter } from 'next/router;'
 import Link from 'next/link;'

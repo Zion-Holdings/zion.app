@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import { triggerTraining } from '@/services/zionGPTService;'
 import { logErrorToProduction } from '@/utils/productionLogger;
 ;'

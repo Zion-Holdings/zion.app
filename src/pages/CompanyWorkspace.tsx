@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { Header } from '@/components/Header;'
 import { CompanyDashboard } from '@/components/enterprise/workspace/CompanyDashboard;'
 import { useAuth } from '@/hooks/useAuth;'

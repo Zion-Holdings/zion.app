@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import * as ResizablePrimitive from 'react-resizable-panels;'
 import { GripVertical } from '@/components/ui/icons;
 ;;

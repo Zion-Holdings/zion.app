@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react
+import { useState, useCallback } from 'react';
 import type { PortfolioProject } from '@/types/resume;'
 import { supabase } from '@/integrations/supabase/client;'
 import { useAuth } from '@/hooks/useAuth;'

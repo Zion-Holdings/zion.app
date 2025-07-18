@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react
+import { useState, useEffect } from 'react';
 import type { Skill } from '@/types/resume;'
 import { SkillCategory } from './SkillCategory;
 ;'

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react
+import { useState, useEffect } from 'react';
 import type { Company } from '@/components/enterprise/workspace/CompanyDashboard;
 ;
 export function useCompanyWorkspace(): unknown {): unknown {): unknown {): unknown {): unknown {companySlug?: string) {;

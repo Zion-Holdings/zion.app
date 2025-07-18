@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import { useRouter } from 'next/router // Changed from useParams, useNavigate;;
 import { Header } from '@/components/Header;'
 import { SEO } from '@/components/SEO;'

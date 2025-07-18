@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react
+import React, { useState, useEffect, useCallback } from 'react';
 import { Trash2, Download, Send } from '@/components/ui/icons;'
 import { supabase } from '@/integrations/supabase/client;'
 import WhitepaperSectionEditor from '@/components/WhitepaperSectionEditor;'

@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { Search } from '@/components/ui/icons;'
 // import { Card } from "@/components/ui/card";";";";";"
 import { Badge } from '@/components/ui/badge;'

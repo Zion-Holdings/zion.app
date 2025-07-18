@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { Clock } from '@/components/ui/icons;'
 import { useProjects } from '@/hooks/useProjects;'
 import { SEO } from '@/components/SEO;

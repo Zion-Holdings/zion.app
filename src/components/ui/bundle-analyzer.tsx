@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react
+import React, { useState, useEffect } from 'react';
 import { AlertTriangle, Zap } from '@/components/ui/icons;'
 import { useAuth } from '@/hooks/useAuth;'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'

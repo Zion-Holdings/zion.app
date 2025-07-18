@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import { Loader2, Link, FileImage } from '@/components/ui/icons;'
 import { useForm } from 'react-hook-form;'
 import { zodResolver } from '@hookform/resolvers/zod;'

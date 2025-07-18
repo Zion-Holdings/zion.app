@@ -14,8 +14,8 @@ import React, {
   useEffect,
   useRef,
   useMemo,
-} from 'react
-import type { ReactNode } from 'react
+} from 'react';
+import type { ReactNode } from 'react';
 import type { AppKitInstanceInterface } from '@reown/appkit/react
 
 import { createAppKit } from '@reown/appkit/react

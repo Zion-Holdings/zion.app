@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { SnackbarProvider, useSnackbar } from 'notistack;'
 import { setEnqueueSnackbarRef } from '@/context/SnackbarContext;
 ;;

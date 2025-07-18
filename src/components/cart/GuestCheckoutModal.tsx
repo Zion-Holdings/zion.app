@@ -1,5 +1,5 @@
-import React from 'react
-import { useState } from 'react
+import React from 'react';
+import { useState } from 'react';
 import { User, Mail, MapPin, CreditCard } from '@/components/ui/icons;'
 import { Button } from '@/components/ui/button;'
 import { Input } from '@/components/ui/input;'

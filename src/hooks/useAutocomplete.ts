@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback, useEffect } from 'react
+import { useState, useMemo, useCallback, useEffect } from 'react';
 import Fuse from 'fuse.js;'
 import debounce from 'lodash.debounce;'
 import type { ProductListing } from '@/types/listings;

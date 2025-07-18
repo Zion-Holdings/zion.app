@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { Calendar, RefreshCw } from '@/components/ui/icons;
 ;;
 import { Card, CardContent } from '@/components/ui/card;'

@@ -1,5 +1,5 @@
-import React from 'react
-import * as React from 'react
+import React from 'react';
+import * as React from 'react';
 import { ChevronLeft, ChevronRight } from '@/components/ui/icons;
 ;;
 import { DayPicker } from 'react-day-picker;

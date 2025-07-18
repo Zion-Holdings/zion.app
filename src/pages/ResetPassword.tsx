@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { useState, useEffect } from 'react // Added useEffect for router.isReady;;
 import { useRouter } from 'next/router // Changed from useParams, useNavigate;;
 import { Input } from '@/components/ui/input;'

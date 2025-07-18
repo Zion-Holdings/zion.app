@@ -1,11 +1,11 @@
-import React from 'react
+import React from 'react';
 function isValidEmail(): unknown {): unknown {): unknown {): unknown {): unknown {email) {'
   const emailRegex: unknown = /^[^s@]+@[^s@]+.[^s@]+$/;
   return emailRegex.test(email);'
 };'
 import { Button } from '@/components/ui/button;'
 import { Input } from '@/components/ui/input;'
-import { useState, useRef } from 'react
+import { useState, useRef } from 'react';
 import { useToast } from '@/hooks/use-toast;'
 import { isValidEmail } from '@/utils/email'
 ;'

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router;'
 import { SEO } from '@/components/SEO;'
 import { Button } from '@/components/ui/button;'

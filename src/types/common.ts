@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 // Common TypeScript interfaces to replace 'any' types throughout the application;'
 ;;
 // Avoid using 'any' for index signatures. Use 'unknown' or a more specific type if possible.;

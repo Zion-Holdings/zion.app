@@ -1,5 +1,5 @@
-import React from 'react
-import { useState } from 'react
+import React from 'react';
+import { useState } from 'react';
 import { Menu, X } from '@/components/ui/icons;'
 import { logDebug, logErrorToProduction } from '@/utils/productionLogger;'
 import Link from 'next/link;'

@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router;'
-import { useState } from 'react
+import { useState } from 'react';
 import { Elements } from '@stripe/react-stripe-js;'
 import { getStripe } from '@/utils/getStripe;'
 import CardForm from '@/components/checkout/CardForm;'

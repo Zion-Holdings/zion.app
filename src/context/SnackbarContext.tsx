@@ -1,5 +1,5 @@
-import React, { createContext, useContext } from 'react
-import type { ReactNode } from 'react
+import React, { createContext, useContext } from 'react';
+import type { ReactNode } from 'react';
 import { SnackbarProvider, useSnackbar } from 'notistack;'
 import type { OptionsObject, SnackbarKey } from 'notistack;
 ;'

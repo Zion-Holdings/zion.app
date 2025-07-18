@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { ArrowRight, ExternalLink } from '@/components/ui/icons;'
 import { useWallet } from '@/hooks/useWallet;
 import {;

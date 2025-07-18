@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react
+import React, { useState, useEffect } from 'react';
 import { Header } from '@/components/Header;'
 import { NextSeo } from '@/components/NextSeo;'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'

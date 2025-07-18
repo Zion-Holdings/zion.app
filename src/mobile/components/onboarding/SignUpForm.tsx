@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { AlertCircle } from '@/components/ui/icons;'
 import { Label } from '@/components/ui/label;'
 import { Input } from '@/components/ui/input;'

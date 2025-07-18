@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react
+import React, { useMemo } from 'react';
 import { User } from '@/components/ui/icons;
 ;;
 import type { Conversation } from '@/types/messaging;'

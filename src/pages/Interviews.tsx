@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react
+import React, { useEffect, useState } from 'react';
 import { Calendar, Clock, Video } from '@/components/ui/icons;'
 import { useInterviews } from '@/hooks/useInterviews;'
 import type { Interview } from '@/types/interview;'

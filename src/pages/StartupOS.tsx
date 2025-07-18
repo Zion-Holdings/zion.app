@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import LegalTemplates from '@/components/dashboard/LegalTemplates // Import the component;
 ;
 // const _StartupOSPage: unknown React.FC = () => {;'

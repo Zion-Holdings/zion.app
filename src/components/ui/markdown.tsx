@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react
+import React, { Suspense } from 'react';
 const ReactMarkdown: unknown = React.lazy(() => import('react-markdown'));;
 import { cn } from '@/lib/utils;
 ;

@@ -1,5 +1,5 @@
-import React from 'react
-import { useState } from 'react
+import React from 'react';
+import { useState } from 'react';
 import { Mail, MessageSquare, MapPin, Phone } from '@/components/ui/icons;'
 import { SEO } from '@/components/SEO;'
 import { GradientHeading } from '@/components/GradientHeading;'

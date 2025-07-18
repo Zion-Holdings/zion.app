@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { BadgeDollarSign } from '@/components/ui/icons;
 ;;
 import { useWallet } from '@/hooks/useWallet;

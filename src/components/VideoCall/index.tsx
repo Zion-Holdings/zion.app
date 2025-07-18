@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 export { VideoCallRoom } from '../video/VideoCallRoom;
 ;'
 // Stub implementation for any LiveKit exports that might be used;;

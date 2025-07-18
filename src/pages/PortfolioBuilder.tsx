@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import { SEO } from '@/components/SEO;'
 import { ProtectedRoute } from '@/components/ProtectedRoute;'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;'

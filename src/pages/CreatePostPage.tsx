@@ -1,4 +1,4 @@
-import { useEffect } from 'react
+import { useEffect } from 'react';
 import { mutate } from 'swr;'
 import { useRouter } from 'next/router;'
 import Link from 'next/link;'

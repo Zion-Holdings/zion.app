@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { Search } from '@/components/ui/icons;'
 import { Input } from '@/components/ui/input;'
 import { Button } from '@/components/ui/button;'

@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { useRouter } from 'next/router;
 import {;
   ArrowUp,;
@@ -8,7 +8,7 @@ import {;
   Star,;'
   MapPin,;;
 } from '@/components/ui/icons;'
-import { useState, useEffect, useCallback, useMemo } from 'react
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion;
 ;;
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll;'

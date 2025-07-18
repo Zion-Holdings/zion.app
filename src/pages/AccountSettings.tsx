@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import { Wallet, Database, Save } from '@/components/ui/icons;'
 import { useLocalStorage } from '@/hooks;'
 import { Header } from '@/components/Header;'

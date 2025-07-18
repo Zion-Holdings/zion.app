@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { NextSeo } from '@/components/NextSeo;'
 import { Button } from '@/components/ui/button;'
 import { generateStorybookPdf } from '@/utils/generateStorybookPdf;'

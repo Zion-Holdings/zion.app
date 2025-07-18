@@ -1,4 +1,4 @@
-import { useEffect } from 'react
+import { useEffect } from 'react';
 import { useAnalytics } from '@/context/AnalyticsContext;
 ;
 /**;

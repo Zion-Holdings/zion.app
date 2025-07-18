@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useEffect } from 'react
-import type { ReactNode } from 'react
+import React, { createContext, useContext, useEffect } from 'react';
+import type { ReactNode } from 'react';
 import { supabase } from '@/integrations/supabase/client;'
 import { useAuth } from '@/hooks/useAuth;'
 import { useNotificationOperations } from './useNotificationOperations;'

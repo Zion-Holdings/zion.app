@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect } from 'react
+import React, { createContext, useContext, useEffect } from 'react';
 import { useRouter } from 'next/router;
 ;;
 // Minimal router context so React Router hooks don't throw errors;;

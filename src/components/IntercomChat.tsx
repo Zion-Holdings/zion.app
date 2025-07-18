@@ -1,4 +1,4 @@
-import { useEffect } from 'react
+import { useEffect } from 'react';
 import { logWarn, logInfo } from '@/utils/productionLogger'
 ;'
 declare global {'

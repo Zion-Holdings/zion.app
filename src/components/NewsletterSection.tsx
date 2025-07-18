@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { GradientHeading } from '@/components/GradientHeading;'
 import { EnhancedNewsletterForm } from '@/components/EnhancedNewsletterForm;'
 import { cn } from '@/lib/utils'

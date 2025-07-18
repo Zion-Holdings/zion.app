@@ -7,7 +7,7 @@ import { logErrorToProduction } from '@/utils/productionLogger;
  * to prevent getInitialProps and other runtime errors.;
  */;'
 ;;
-import React from 'react
+import React from 'react';
 import dynamic from 'next/dynamic;
 ;
 // Error boundary for component loading;'

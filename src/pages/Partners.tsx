@@ -9,7 +9,7 @@ import {;
 } from '@/components/ui/card;'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;
 ;;
-import { useState, useEffect } from 'react
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next;'
 import Link from 'next/link;'
 import { PartnerRegistrationForm as _PartnerRegistrationForm } from '@/components/partners/PartnerRegistrationForm;'

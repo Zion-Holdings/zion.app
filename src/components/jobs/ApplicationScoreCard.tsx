@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import { Loader2, Star, BarChart, Lightbulb } from '@/components/ui/icons;'
 import { Badge } from '@/components/ui/badge;'
 import { Button } from '@/components/ui/button;'

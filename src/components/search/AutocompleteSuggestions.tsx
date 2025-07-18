@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react
+import React, { useEffect, useRef } from 'react';
 import type { SearchSuggestion, SearchHighlight } from '@/types/search;'
 import { logInfo } from '@/utils/productionLogger;
 ;'

@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import { DynamicListingPage } from '@/components/DynamicListingPage;'
 import type { ProductListing } from '@/types/listings;
 ;

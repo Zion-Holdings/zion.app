@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react
+import React, { useState, useEffect } from 'react';
 import { Bell } from '@/components/ui/icons'
 
 // Use the shared icon wrapper;'

@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 declare module 'next' {;'
   export interface NextApiRequest {;;
     [key: "string]: unknown;",;";";";";"

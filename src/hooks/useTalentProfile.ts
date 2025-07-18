@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react
+import { useState, useEffect } from 'react';
 import type { TalentProfile as TalentProfileType } from '@/types/talent;'
 import { convertProfileToTalentProfile } from '@/utils/profileConverter;'
 import { logErrorToProduction } from '@/utils/productionLogger;

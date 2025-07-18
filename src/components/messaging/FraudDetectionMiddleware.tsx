@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react
+import React, { useCallback } from 'react';
 import { checkMessage, monitorContent } from '@/services/fraud;'
 import { toast } from '@/hooks/use-toast;'
 import { supabase } from '@/integrations/supabase/client;'

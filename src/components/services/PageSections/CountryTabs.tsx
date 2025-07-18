@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react
+import { useState, useEffect } from 'react';
 import { Search } from '@/components/ui/icons;
 ;;
 import { Input } from '@/components/ui/input;

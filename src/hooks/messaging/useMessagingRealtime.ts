@@ -1,4 +1,4 @@
-import { useEffect } from 'react
+import { useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client;'
 import type { UserProfile, UserDetails } from '@/types/auth;'
 import type { Message, Conversation } from '@/types/messaging;'

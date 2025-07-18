@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react
+import React, { useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query;'
 import { getWallet } from '@/api/wallet;'
 import { LoadingSpinner } from '@/components/ui/enhanced-loading-states;'

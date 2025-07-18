@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { logWarn } from '@/utils/productionLogger;
 ;'
 /**;

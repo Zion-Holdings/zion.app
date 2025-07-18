@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { Download } from '@/components/ui/icons;'
 import { Card, CardContent } from '@/components/ui/card;'
 import { Badge } from '@/components/ui/badge;'

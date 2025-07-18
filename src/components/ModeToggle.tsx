@@ -13,7 +13,7 @@ import {'
 } from '@/utils/themeToggleMessages'
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger'
 import { useThemePreset } from '@/context/ThemeContext'
-import { useEffect, useState } from 'react
+import { useEffect, useState } from 'react';
 '
 export function ModeToggle(): unknown {): unknown {): unknown {): unknown {) {;
   const {;'

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router;'
 import { zodResolver } from '@hookform/resolvers/zod;'
 import { useForm } from 'react-hook-form;'

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react
+import React, { useState, useEffect } from 'react';
 import { MessageSquare } from '@/components/ui/icons;'
 import { useRouter } from 'next/router;'
 import { TalentProfile } from '@/components/profile/TalentProfile;'

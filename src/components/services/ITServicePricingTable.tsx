@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react
+import { useState, useMemo } from 'react';
 import { Globe, Search } from '@/components/ui/icons;'
 import { onsiteServicePricing } from '@/data/onsiteServicePricing;'
 import type { CountryPricing } from '@/data/onsiteServicePricing;'

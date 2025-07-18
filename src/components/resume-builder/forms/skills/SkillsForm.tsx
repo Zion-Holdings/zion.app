@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import type { Skill } from '@/types/resume;'
 import { Button } from '@/components/ui/button;'
 import { Alert, AlertDescription } from '@/components/ui/alert;'

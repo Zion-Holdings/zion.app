@@ -1,5 +1,5 @@
-import React from 'react
-import { useState } from 'react
+import React from 'react';
+import { useState } from 'react';
 import { Header } from '@/components/Header;'
 import { NextSeo } from '@/components/NextSeo;'
 import { Input } from '@/components/ui/input;'

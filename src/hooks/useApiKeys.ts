@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import { useAuth } from '@/hooks/useAuth;'
 import { logErrorToProduction } from '@/utils/productionLogger;'
 import { supabase } from '@/integrations/supabase/client;'

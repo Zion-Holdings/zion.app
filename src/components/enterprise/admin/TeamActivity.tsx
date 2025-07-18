@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { Search, CalendarIcon } from '@/components/ui/icons;
 ;
 import {;

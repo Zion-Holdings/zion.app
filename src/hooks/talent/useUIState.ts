@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import type { TalentProfile } from '@/types/talent;
 ;
 export function useUIState(): unknown {): unknown {): unknown {): unknown {): unknown {) {;

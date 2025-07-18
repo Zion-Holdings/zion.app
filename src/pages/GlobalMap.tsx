@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react
+import React, { useEffect, useState } from 'react';
 import { Globe, MapPin } from '@/components/ui/icons;'
 import { Header } from '@/components/Header;'
 import { NextSeo } from '@/components/NextSeo;

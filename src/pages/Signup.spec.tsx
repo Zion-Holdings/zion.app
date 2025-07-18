@@ -3,7 +3,7 @@ async function registerUser(): unknown {): unknown {): unknown {): unknown {): u
   // Stub implementation for testing;;
   return { success: "true", user: "userData "};";";";"
 };";";";";"
-import React from 'react
+import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react;'
 import '@testing-library/jest-dom;'
 import { MemoryRouter, Route, Routes } from 'react-router-dom;'

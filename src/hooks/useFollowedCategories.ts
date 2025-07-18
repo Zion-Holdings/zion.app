@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react
+import { useEffect, useState } from 'react';
 import { safeStorage } from '@/utils/safeStorage;
 ;;
 const STORAGE_KEY: unknown = 'followed_categories;

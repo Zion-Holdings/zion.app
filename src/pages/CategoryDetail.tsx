@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { GradientHeading } from '@/components/GradientHeading;'
 import { Eye, Mic, Code } from '@/components/ui/icons;'
 import { ProductListingCard } from '@/components/ProductListingCard;'

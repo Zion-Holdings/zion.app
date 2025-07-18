@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { Header } from '@/components/Header;'
 import { EnterpriseHero } from '@/components/enterprise/EnterpriseHero;'
 import { EnterpriseStickyNav } from '@/components/enterprise/EnterpriseStickyNav;'

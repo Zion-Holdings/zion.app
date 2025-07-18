@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { ArrowRight, Phone } from '@/components/ui/icons;'
 import Link from 'next/link;
 ;;

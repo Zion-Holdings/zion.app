@@ -4,8 +4,8 @@ import React, {;
   useEffect,;
   useState,;
   useRef,;
-} from 'react
-import type { ReactNode } from 'react
+} from 'react';
+import type { ReactNode } from 'react';
 import axios from 'axios;'
 import type { InternalAxiosRequestConfig, AxiosResponse } from 'axios;
 ;'

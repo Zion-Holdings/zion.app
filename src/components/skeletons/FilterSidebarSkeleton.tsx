@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import Skeleton from '@/components/ui/skeleton // Assuming 'Skeleton' is the default export;;
 import { cn } from '@/lib/utils;
 ;

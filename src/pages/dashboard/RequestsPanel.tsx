@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { Header } from '@/components/Header;'
 import { useTalentQuotes } from '@/hooks/useTalentQuotes;'
 import { useAuth } from '@/hooks/useAuth;'

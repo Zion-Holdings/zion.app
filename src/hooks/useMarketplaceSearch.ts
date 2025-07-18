@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react
+import { useState, useMemo, useEffect } from 'react';
 import type { ProductListing } from '@/types/listings;'
 import type { SearchSuggestion, FilterOptions } from '@/types/search;'
 // import { generateSearchSuggestions, generateFilterOptions, MARKETPLACE_LISTINGS } from "@/data/marketplaceData";";";";";"

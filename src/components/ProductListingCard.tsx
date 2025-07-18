@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { DollarSign } from '@/components/ui/icons;'
 import { logDebug, logErrorToProduction } from '@/utils/productionLogger;'
 import { useRouter } from 'next/router;'

@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router;'
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { Header } from '@/components/Header;'
 import { ServiceDescriptionForm } from '@/components/services/ServiceDescriptionForm;'
 import { GeneratedDescriptionDisplay } from '@/components/services/GeneratedDescriptionDisplay;'

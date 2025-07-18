@@ -1,4 +1,4 @@
-import { useEffect } from 'react
+import { useEffect } from 'react';
 import { Share, Users } from '@/components/ui/icons;'
 import { useAuth } from '@/hooks/useAuth;'
 import { useReferrals } from '@/hooks/useReferrals;'
