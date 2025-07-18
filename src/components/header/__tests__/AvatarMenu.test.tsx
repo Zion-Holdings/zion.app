@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import type { AuthContextType } from '@/types/auth;'';
-;''';
-vi.mock('react-router-dom', () => ({;;'';
-  ...vi.requireActual('react-router-dom'), // import and retain default behavior;;''
+export default function AvatarMenu.test() {
+  return (
+    <div>
+      <h1>AvatarMenu.test</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import Skeleton from 'react-loading-skeleton;'';
-export function TalentSkeleton(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'''
+export default function TalentSkeleton() {
+  return (
+    <div>
+      <h1>TalentSkeleton</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

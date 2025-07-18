@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import { Button } from '@/components/ui/button;'';
-import Link from 'next/link;'';
-export function BillingHeader(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'''
+export default function BillingHeader() {
+  return (
+    <div>
+      <h1>BillingHeader</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

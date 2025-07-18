@@ -1,4 +1,2 @@
-// Utility functions for themeUtils;
-export const themeUtils = {;
-  // TODO: Implement utility functions;
-};
+// themeUtils.ts - placeholder
+export const placeholder = 'placeholder';

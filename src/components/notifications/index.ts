@@ -1,7 +1,2 @@
-
-export * from '';
-export * from '';
-export * from '';
-export * from '';
-export * from './NotificationFooter;'';
-'''''''
+// index.ts - placeholder
+export const placeholder = 'placeholder';

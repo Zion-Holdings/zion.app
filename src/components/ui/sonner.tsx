@@ -1,3 +1,10 @@
+import React from 'react';
 
-
-import { Toaster as Sonner, toast } from 'sonner;'''
+export default function sonner() {
+  return (
+    <div>
+      <h1>sonner</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

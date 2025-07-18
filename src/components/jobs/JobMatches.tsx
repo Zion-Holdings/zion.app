@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-  Card,;''';
-  CardDescription,;''';
-} from '';
-
-import Skeleton from '@/components/ui/skeleton;'';
-;'''
+export default function JobMatches() {
+  return (
+    <div>
+      <h1>JobMatches</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

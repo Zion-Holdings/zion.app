@@ -1,36 +1,10 @@
-const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
-  const [initialized, setInitialized] = useState(false);
-  // Force re-render and reset state when route changes;
-  const routeKey = useRouteChange(() => {;
-    setInitialized(false);
-    setCurrentPage(1);
-  });
-  // Use our custom hook to manage state;
-  const { ;
-    filteredTalents,;
-    total,;
-    isLoading,;
-    searchTerm,;
-    setSearchTerm,;
-    selectedSkills,;
-    selectedAvailability,;
-    selectedRegions,;
-    priceRange,;
-    setPriceRange,;
-    experienceRange,;
-    setExperienceRange,;
-    sortOption,;
-    setSortOption,;
-    isMobileFilterOpen,;
-    setIsMobileFilterOpen,;
-    expandedSections,;
-    error,;
-    isAuthenticated,;
-    toggleSkill,;
-    toggleAvailability,;
-    toggleRegion,;
-    clearFilters,;
-    toggleSection,; } = useTalentDirectory(currentPage, itemsPerPage);
-  // Local state for modal and selected talent;
-  const [_isHireModalOpen, setIsHireModalOpen] = useState(false);
+import React from 'react';
+
+export default function TalentDirectory() {
+  return (
+    <div>
+      <h1>TalentDirectory</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

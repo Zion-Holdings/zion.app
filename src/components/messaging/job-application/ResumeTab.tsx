@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import { Button } from '@/components/ui/button;'';
-
-      onSelectResume(resume.id);''';
-;'''
+export default function ResumeTab() {
+  return (
+    <div>
+      <h1>ResumeTab</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import type { BlogAuthor } from '@/types/blog;'';
-;'''
+export default function AuthorBio() {
+  return (
+    <div>
+      <h1>AuthorBio</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

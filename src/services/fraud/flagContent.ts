@@ -1,4 +1,2 @@
-// Service for flagContent;
-export const flagContentService = {;
-  // TODO: Implement service methods;
-};
+// flagContent.ts - placeholder
+export const placeholder = 'placeholder';

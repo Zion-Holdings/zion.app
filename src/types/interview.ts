@@ -1,3 +1,2 @@
-// Type definitions for interview;
-export interface interview {;
-  // TODO: Add proper type definitions;
+// interview.ts - placeholder
+export const placeholder = 'placeholder';

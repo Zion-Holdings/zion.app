@@ -1,3 +1,10 @@
+import React from 'react';
 
-import React from 'react;'';
-export function ProfileLoadingState(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'''
+export default function ProfileLoadingState() {
+  return (
+    <div>
+      <h1>ProfileLoadingState</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

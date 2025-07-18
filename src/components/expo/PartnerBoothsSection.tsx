@@ -1,3 +1,10 @@
+import React from 'react';
 
-export function PartnerBoothsSection(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
-  const booths: unknown = ['Top Universities', 'Major Banks', 'Leading DAOs'];'''
+export default function PartnerBoothsSection() {
+  return (
+    <div>
+      <h1>PartnerBoothsSection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

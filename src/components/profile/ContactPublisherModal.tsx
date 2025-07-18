@@ -1,15 +1,10 @@
+import React from 'react';
 
-
-import FocusLock from 'react-focus-lock;'';
-import {;''';
-  DialogHeader,;''';
-} from '';
-
-  FormField,;''';
-  FormControl,;''';
-} from '';
-
-import * as yup from 'yup;'';
-
-import { LoginModal } from '@/components/auth/LoginModal;'';
-;'''
+export default function ContactPublisherModal() {
+  return (
+    <div>
+      <h1>ContactPublisherModal</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

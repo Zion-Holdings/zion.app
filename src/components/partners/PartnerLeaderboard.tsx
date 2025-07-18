@@ -1,11 +1,10 @@
-import {;
-  Card,;
-  CardContent,;
-  CardDescription,;
-  CardHeader,;
+import React from 'react';
 
-  CardTitle,;
-} from '';
-
-import { Crown, Medal, Trophy } from '@/components/ui/icons;'';
-;'''
+export default function PartnerLeaderboard() {
+  return (
+    <div>
+      <h1>PartnerLeaderboard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

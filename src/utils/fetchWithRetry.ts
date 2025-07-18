@@ -1,4 +1,2 @@
-// Utility functions for fetchWithRetry;
-export const fetchWithRetry = {;
-  // TODO: Implement utility functions;
-};
+// fetchWithRetry.ts - placeholder
+export const placeholder = 'placeholder';

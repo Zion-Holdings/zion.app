@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-import * as AccordionPrimitive from '@radix-ui/react-accordion;'';
-import { cn } from '@/lib/utils;'';
-  ElementRef<typeof AccordionPrimitive.Item>,;''';
-  <AccordionPrimitive.Item;''';
-    className={cn('border-b', className)};'';
-  />;''';
-AccordionItem.displayName = 'AccordionItem;'';
-  ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>;'''
+export default function accordion() {
+  return (
+    <div>
+      <h1>accordion</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

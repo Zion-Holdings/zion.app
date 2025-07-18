@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import { Loader2 } from '@/components/ui/icons;'';
-
-import { NoJobsCard } from './NoJobsCard;'';
-  const { _user } = useAuth();''';
-    isLoading,;'''
+export default function SuggestedJobs() {
+  return (
+    <div>
+      <h1>SuggestedJobs</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

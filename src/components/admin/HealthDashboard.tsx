@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-  CheckCircle,;''';
-  TrendingUp,;''';
-} from '';
-
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;'';
-;''';
-  _status: 'healthy' | 'warning' | 'critical,;;''
+export default function HealthDashboard() {
+  return (
+    <div>
+      <h1>HealthDashboard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

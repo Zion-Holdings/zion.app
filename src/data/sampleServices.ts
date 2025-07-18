@@ -1,4 +1,2 @@
-// Module for sampleServices;
-export const sampleServices = {;
-  // TODO: Implement module functionality;
-};
+// sampleServices.ts - placeholder
+export const placeholder = 'placeholder';

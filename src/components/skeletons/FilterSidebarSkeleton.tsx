@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import { cn } from '@/lib/utils;'';
-  className,;''';
-    <div;''';
-        'bg-zion-blue-dark rounded-lg border border-zion-blue-light p-4',;''';
-    >;'''
+export default function FilterSidebarSkeleton() {
+  return (
+    <div>
+      <h1>FilterSidebarSkeleton</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

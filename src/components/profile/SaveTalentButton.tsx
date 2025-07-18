@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import { Button } from '@/components/ui/button;'';
-;''';
-          : ''
+export default function SaveTalentButton() {
+  return (
+    <div>
+      <h1>SaveTalentButton</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

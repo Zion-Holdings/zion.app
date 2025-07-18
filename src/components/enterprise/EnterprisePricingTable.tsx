@@ -1,67 +1,10 @@
+import React from 'react';
 
-
-import { Button } from '@/components/ui/button;'';
-  TableBody,;''';
-  TableHeader,;''';
-} from '';
-import { Badge } from '@/components/ui/badge;''';
-  const plans: unknown = [;''';
-      name: 'Teams',;;'';
-      price: '$599',;;'';
-      billing: '/month',;;'';
-      description: 'Perfect for small teams',;;'';
-      users: 'Up to 10 users',;;'';
-        { name: 'Private hiring portal'';
-        { name: 'Dedicated talent pool'';
-        { name: 'Standard SLA (24h)'';
-        { name: 'Basic branding'';
-        { name: 'Admin dashboard'';
-        { name: 'Team collaboration'';
-        { name: 'API access'';
-        { name: 'Custom integrations'';
-        { name: 'Dedicated success manager'';
-        { name: 'Private hiring portal'';
-        { name: 'Dedicated talent pool'';
-        { name: 'Enhanced SLA (8h)'';
-        { name: 'Advanced branding'';
-        { name: 'Admin dashboard'';
-        { name: 'Team collaboration'';
-        { name: 'API access'';
-        { name: 'Custom integrations'';
-        { name: 'Dedicated success manager'';
-        { name: 'Private hiring portal'';
-        { name: 'Dedicated talent pool'';
-        { name: 'Premium SLA (1h)'';
-        { name: 'Full white labeling'';
-        { name: 'Admin dashboard'';
-        { name: 'Team collaboration'';
-        { name: 'API access'';
-        { name: 'Custom integrations'';
-        { name: 'Dedicated success manager'';
-        { name: 'Private hiring portal'';
-        { name: 'Dedicated talent pool'';
-        { name: 'Standard SLA (24h)'';
-        { name: 'Basic branding'';
-        { name: 'Admin dashboard'';
-        { name: 'Team collaboration'';
-        { name: 'API access'';
-        { name: 'Custom integrations'';
-        { name: 'Dedicated success manager'';
-        { name: 'Private hiring portal'';
-        { name: 'Dedicated talent pool'';
-        { name: 'Enhanced SLA (8h)'';
-        { name: 'Advanced branding'';
-        { name: 'Admin dashboard'';
-        { name: 'Team collaboration'';
-        { name: 'API access'';
-        { name: 'Custom integrations'';
-        { name: 'Dedicated success manager'';
-        { name: 'Private hiring portal'';
-        { name: 'Dedicated talent pool'';
-        { name: 'Premium SLA (1h)'';
-        { name: 'Full white labeling'';
-        { name: 'Admin dashboard'';
-        { name: 'Team collaboration'';
-        { name: 'API access'';
-        { name: 'Custom integrations'';
-        { name: 'Dedicated success manager''
+export default function EnterprisePricingTable() {
+  return (
+    <div>
+      <h1>EnterprisePricingTable</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

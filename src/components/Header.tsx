@@ -1,17 +1,10 @@
+import React from 'react';
 
-  LogOut,;''';
-  Settings,''';
-  ChevronDown,;''';
-  ShoppingCart,;''';
-} from '';
-
-  DropdownMenu,;''';
-  DropdownMenuContent,''';
-  DropdownMenuSeparator,;''';
-  DropdownMenuTrigger,;''';
-} from '@/components/ui/dropdown-menu''';
-export interface HeaderProps {''';
-  customLogo?: string;''';
-  customTheme?: {;''';
-      logError('Logout failed:'';
-      logError('Logout failed:''
+export default function Header() {
+  return (
+    <div>
+      <h1>Header</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

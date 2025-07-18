@@ -1,4 +1,2 @@
-// Module for sortOptions;
-export const sortOptions = {;
-  // TODO: Implement module functionality;
-};
+// sortOptions.ts - placeholder
+export const placeholder = 'placeholder';

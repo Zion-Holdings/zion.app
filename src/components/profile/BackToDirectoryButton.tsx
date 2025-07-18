@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import Link from 'next/link;'';
-export function BackToDirectoryButton(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'''
+export default function BackToDirectoryButton() {
+  return (
+    <div>
+      <h1>BackToDirectoryButton</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

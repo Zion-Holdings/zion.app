@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import { Card, CardContent } from '@/components/ui/card;'';
-// lucide-react doesn't export PlusIcon, use our icon wrapper;''';
-import { EmptyState } from '@/components/ui/EmptyState;'';
-;'''
+export default function MilestonesList() {
+  return (
+    <div>
+      <h1>MilestonesList</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

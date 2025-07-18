@@ -1,4 +1,2 @@
-// Utility functions for logError;
-export const logError = {;
-  // TODO: Implement utility functions;
-};
+// logError.ts - placeholder
+export const placeholder = 'placeholder';

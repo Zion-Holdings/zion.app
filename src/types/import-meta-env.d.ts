@@ -1,3 +1,2 @@
-// Type definitions for import-meta-env.d;
-export interface import-meta-env.d {;
-  // TODO: Add proper type definitions;
+// import-meta-env.d.ts - placeholder
+export const placeholder = 'placeholder';

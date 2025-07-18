@@ -1,4 +1,2 @@
-// Service for constants;
-export const constantsService = {;
-  // TODO: Implement service methods;
-};
+// constants.ts - placeholder
+export const placeholder = 'placeholder';

@@ -1,14 +1,10 @@
+import React from 'react';
 
-
-import { Button } from '@/components/ui/button;'';
-
-import { logErrorToProduction } from '@/utils/productionLogger;'';
-;''';
-    `Hi, I'';
-    `Hi, I'';
-        fullMessage += `\n\nHere'';
-        fullMessage += `\n\nI'';
-        fullMessage += `\n\nHere'';
-        fullMessage += `\n\nI'';
-      logErrorToProduction('Failed to send application:'';
-      logErrorToProduction('Failed to send application:''
+export default function ApplyForm() {
+  return (
+    <div>
+      <h1>ApplyForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

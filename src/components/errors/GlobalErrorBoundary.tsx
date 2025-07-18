@@ -1,16 +1,10 @@
+import React from 'react';
 
-'use client;'';
-
-  RefreshCw,;''';
-  Send,;''';
-} from '';
-
-import { motion, AnimatePresence } from 'framer-motion;'';
-
-import { logErrorToProduction } from '@/utils/productionLogger;'';
-;''';
-      logErrorToProduction('Error:'';
-      logErrorToProduction('Error Info:'';
-      logErrorToProduction('Enhanced Error:'';
-      logErrorToProduction('Failed to copy erroror details:'';
-      logErrorToProduction('Failed to report erroror:''
+export default function GlobalErrorBoundary() {
+  return (
+    <div>
+      <h1>GlobalErrorBoundary</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,4 +1,2 @@
-// Module for cors;
-export const cors = {;
-  // TODO: Implement module functionality;
-};
+// cors.ts - placeholder
+export const placeholder = 'placeholder';

@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { Button } from '@/components/ui/button;'';
-import type { SkillItemProps } from './types;''
+export default function SkillItem() {
+  return (
+    <div>
+      <h1>SkillItem</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,4 +1,10 @@
+import React from 'react';
 
-  }, [router.asPath]); // Using router.asPath to trigger on any URL change'';
-'';
-}'''
+export default function ScrollToTop() {
+  return (
+    <div>
+      <h1>ScrollToTop</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

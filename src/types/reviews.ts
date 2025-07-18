@@ -1,2 +1,2 @@
-export type ReviewStatus = 'pending' | 'approved' | '';
-('');
+// reviews.ts - placeholder
+export const placeholder = 'placeholder';

@@ -1,3 +1,10 @@
+import React from 'react';
 
-import type { ResumeBasicInfo } from '@/types/resume;'';
-;'''
+export default function ResumeBasicInfo() {
+  return (
+    <div>
+      <h1>ResumeBasicInfo</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,5 +1,2 @@
-// Hook for useFollowedCategories;
-export const useUseFollowedCategories = () => {
-  // TODO: Implement hook logic;
-  return {};
-};
+// useFollowedCategories.ts - placeholder
+export const placeholder = 'placeholder';

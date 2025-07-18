@@ -1,4 +1,2 @@
-// Utility functions for string;
-export const string = {;
-  // TODO: Implement utility functions;
-};
+// string.ts - placeholder
+export const placeholder = 'placeholder';

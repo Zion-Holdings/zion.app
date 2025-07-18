@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import Link from 'next/link;'';
-export function ExpoHero(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'''
+export default function ExpoHero() {
+  return (
+    <div>
+      <h1>ExpoHero</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

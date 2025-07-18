@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import { SORT_OPTIONS } from '@/data/sortOptions;'';
-import {;''';
-  DropdownMenuItem,;''';
-} from '@/components/ui/dropdown-menu;'';
-;'''
+export default function SortDropdown() {
+  return (
+    <div>
+      <h1>SortDropdown</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,3 +1,2 @@
-// Type definitions for wallet.d;
-export interface wallet.d {;
-  // TODO: Add proper type definitions;
+// wallet.d.ts - placeholder
+export const placeholder = 'placeholder';

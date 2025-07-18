@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-export { VideoCallRoom } from '../video/VideoCallRoom;'';
-;'''
+export default function index() {
+  return (
+    <div>
+      <h1>index</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

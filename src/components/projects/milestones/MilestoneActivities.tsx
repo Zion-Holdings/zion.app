@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import { logErrorToProduction } from '@/utils/productionLogger;'';
-;''';
-          .order('created_at'';
-          .order('created_at''
+export default function MilestoneActivities() {
+  return (
+    <div>
+      <h1>MilestoneActivities</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

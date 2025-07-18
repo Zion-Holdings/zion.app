@@ -1,10 +1,10 @@
-import {;
-  Dialog,;
-  DialogContent,;
-  DialogHeader,;
+import React from 'react';
 
-  DialogTitle,;
-} from '';
-
-import type { ForumCategory } from '@/types/community;'';
-;'''
+export default function NewPostDialog() {
+  return (
+    <div>
+      <h1>NewPostDialog</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

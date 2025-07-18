@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { CountryServiceSelector } from '../CountryServiceSelector;'';
-;'''
+export default function ServiceDetailsSection() {
+  return (
+    <div>
+      <h1>ServiceDetailsSection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

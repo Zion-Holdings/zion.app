@@ -1,23 +1,10 @@
+import React from 'react';
 
-
-  Card,;''';
-  CardHeader,;''';
-} from '';
-
-import { formatDistanceToNow } from 'date-fns;'';
-
-      </Card>;''';
-;''';
-    (tx) => tx.transaction_type === 'earn',;'';
-  );''';
-    (tx) => tx.transaction_type === 'burn',;'';
-      </Card>'';
-    )'';
-'';
-  const earnTransactions = transactions.filter('';
-    (tx) => tx.transaction_type === 'earn','';
-  )'';
-  const burnTransactions = transactions.filter('';
-    (tx) => tx.transaction_type === 'burn','';
-      <CardHeader>;''';
-      </CardHeader>;'''
+export default function TransactionHistory() {
+  return (
+    <div>
+      <h1>TransactionHistory</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-function PageFallback(): unknown {): unknown {): unknown {): unknown {): unknown {{ error }: FallbackProps) {;''';
-  return (;'''
+export default function ErrorGuard() {
+  return (
+    <div>
+      <h1>ErrorGuard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

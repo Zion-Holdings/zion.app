@@ -1,12 +1,10 @@
+import React from 'react';
 
-
-  FormItem,;''';
-  FormDescription,;''';
-} from '';
-
-  Select,;''';
-  SelectTrigger,;''';
-} from '';
-
-import type { ContractFormValues } from './ContractForm;'';
-;'''
+export default function PaymentTermsFields() {
+  return (
+    <div>
+      <h1>PaymentTermsFields</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

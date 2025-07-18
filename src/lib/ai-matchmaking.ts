@@ -1,4 +1,2 @@
-// Module for ai-matchmaking;
-export const ai-matchmaking = {;
-  // TODO: Implement module functionality;
-};
+// ai-matchmaking.ts - placeholder
+export const placeholder = 'placeholder';

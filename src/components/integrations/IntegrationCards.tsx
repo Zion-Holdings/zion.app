@@ -1,11 +1,10 @@
+import React from 'react';
 
-
-  Check,;''';
-  Slack,;''';
-} from '';
-
-import {;''';
-  CardFooter,;''';
-} from '';
-import { Badge } from '@/components/ui/badge;'';
-;'''
+export default function IntegrationCards() {
+  return (
+    <div>
+      <h1>IntegrationCards</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

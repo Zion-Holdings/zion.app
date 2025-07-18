@@ -1,4 +1,2 @@
-// Utility functions for middleware;
-export const middleware = {;
-  // TODO: Implement utility functions;
-};
+// middleware.ts - placeholder
+export const placeholder = 'placeholder';

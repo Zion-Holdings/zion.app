@@ -1,4 +1,2 @@
-// Module for index;
-export const index = {;
-  // TODO: Implement module functionality;
-};
+// index.ts - placeholder
+export const placeholder = 'placeholder';

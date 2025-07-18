@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-import {;''';
-  DialogHeader,;''';
-} from '';
-
-import { useToast } from '@/hooks/use-toast;'';
-;'''
+export default function TemplateManager() {
+  return (
+    <div>
+      <h1>TemplateManager</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

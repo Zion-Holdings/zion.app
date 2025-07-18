@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-  Card,;''';
-  CardHeader,;''';
-} from '';
-import { HELP_CATEGORIES } from './help-content;'';
-;'''
+export default function HelpArticleList() {
+  return (
+    <div>
+      <h1>HelpArticleList</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

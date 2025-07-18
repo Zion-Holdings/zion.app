@@ -1,3 +1,10 @@
+import React from 'react';
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'';
-;'''
+export default function SearchResultCard() {
+  return (
+    <div>
+      <h1>SearchResultCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

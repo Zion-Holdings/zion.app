@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-  DialogContent,;''';
-  DialogDescription,;''';
-} from '@/components/ui/dialog;'';
-;'''
+export default function AuthModal() {
+  return (
+    <div>
+      <h1>AuthModal</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

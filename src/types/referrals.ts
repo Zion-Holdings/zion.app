@@ -1,2 +1,2 @@
-export type ReferralStatus = 'pending' | 'completed' | '';
-('');
+// referrals.ts - placeholder
+export const placeholder = 'placeholder';

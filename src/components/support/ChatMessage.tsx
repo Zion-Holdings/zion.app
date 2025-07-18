@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-import { format } from 'date-fns;'';
-// Use the wrapper hook so TypeScript properly infers the return type;''';
-import { useTheme } from '@/hooks/useTheme;'';
-;''';
-    '';
-    '';
-    '';
-    ''
+export default function ChatMessage() {
+  return (
+    <div>
+      <h1>ChatMessage</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

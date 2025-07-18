@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-import { Button } from '@/components/ui/button;'';
-
-import type { Interview } from '@/types/interview;'';
-
-import Link from 'next/link;'';
-
-    fetchInterviews();''';
-  if (isLoading) {;'''
+export default function UpcomingInterviewsCard() {
+  return (
+    <div>
+      <h1>UpcomingInterviewsCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

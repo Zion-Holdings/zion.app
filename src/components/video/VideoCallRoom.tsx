@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-  Mic,;''';
-  Volume2,;''';
-} from '';
-
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;'';
-;'''
+export default function VideoCallRoom() {
+  return (
+    <div>
+      <h1>VideoCallRoom</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

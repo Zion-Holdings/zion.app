@@ -1,2 +1,2 @@
-
-import type { Skill } from '@/types/resume;''
+// types.ts - placeholder
+export const placeholder = 'placeholder';

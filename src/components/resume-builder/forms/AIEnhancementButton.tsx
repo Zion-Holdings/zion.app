@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import { Loader2 } from '@/components/ui/icons;'';
-import { useResumeEnhancer } from '@/hooks/useResumeEnhancer;'';
-;'''
+export default function AIEnhancementButton() {
+  return (
+    <div>
+      <h1>AIEnhancementButton</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

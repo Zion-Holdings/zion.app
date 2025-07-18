@@ -1,17 +1,10 @@
+import React from 'react';
 
-
-  Loader2,;''';
-  StarOff,;''';
-} from '';
-import { Button } from '@/components/ui/button;'';
-
-import {;''';
-  TooltipProvider,;''';
-} from '';
-import { useAuth } from '@/hooks/useAuth;'';
-
-  AlertDialogContent,;''';
-  AlertDialogHeader,;''';
-} from '';
-import { useState } from 'react;'';
-;'''
+export default function TemplateList() {
+  return (
+    <div>
+      <h1>TemplateList</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

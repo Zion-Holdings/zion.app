@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-  PopoverContent,;''';
-  PopoverTrigger,;''';
-} from '';
-
-;''';
-interface TimelineStepProps {;'''
+export default function TimelineStep() {
+  return (
+    <div>
+      <h1>TimelineStep</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

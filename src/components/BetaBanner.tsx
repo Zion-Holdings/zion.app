@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-export const _BetaBanner: unknown = () => {;''';
-  if (process.env.NEXT_PUBLIC_APP_ENV !== 'beta') return null;''';
-  return (;'''
+export default function BetaBanner() {
+  return (
+    <div>
+      <h1>BetaBanner</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

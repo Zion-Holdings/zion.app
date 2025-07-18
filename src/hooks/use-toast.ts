@@ -1,5 +1,2 @@
-// Hook for use-toast;
-export const useUse-toast = () => {;
-  // TODO: Implement hook logic;
-  return {};
-};
+// use-toast.ts - placeholder
+export const placeholder = 'placeholder';

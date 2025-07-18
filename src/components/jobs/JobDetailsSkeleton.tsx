@@ -1,3 +1,10 @@
+import React from 'react';
 
-import Skeleton from '@/components/ui/skeleton;'';
-export const JobDetailsSkeleton: unknown = () => (;'''
+export default function JobDetailsSkeleton() {
+  return (
+    <div>
+      <h1>JobDetailsSkeleton</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

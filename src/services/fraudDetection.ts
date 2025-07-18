@@ -1,4 +1,2 @@
-// Service for fraudDetection;
-export const fraudDetectionService = {;
-  // TODO: Implement service methods;
-};
+// fraudDetection.ts - placeholder
+export const placeholder = 'placeholder';

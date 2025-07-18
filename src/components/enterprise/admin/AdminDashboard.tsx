@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;'';
-export function AdminDashboard(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'''
+export default function AdminDashboard() {
+  return (
+    <div>
+      <h1>AdminDashboard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,3 +1,2 @@
-// Type definitions for PrivacyPolicy.d;
-export interface PrivacyPolicy.d {;
-  // TODO: Add proper type definitions;
+// PrivacyPolicy.d.ts - placeholder
+export const placeholder = 'placeholder';

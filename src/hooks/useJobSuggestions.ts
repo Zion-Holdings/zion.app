@@ -1,5 +1,2 @@
-// Hook for useJobSuggestions;
-export const useUseJobSuggestions = () => {
-  // TODO: Implement hook logic;
-  return {};
-};
+// useJobSuggestions.ts - placeholder
+export const placeholder = 'placeholder';

@@ -1,4 +1,2 @@
-// Utility functions for sentry;
-export const sentry = {;
-  // TODO: Implement utility functions;
-};
+// sentry.ts - placeholder
+export const placeholder = 'placeholder';

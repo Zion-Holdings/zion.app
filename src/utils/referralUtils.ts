@@ -1,4 +1,2 @@
-// Utility functions for referralUtils;
-export const referralUtils = {;
-  // TODO: Implement utility functions;
-};
+// referralUtils.ts - placeholder
+export const placeholder = 'placeholder';

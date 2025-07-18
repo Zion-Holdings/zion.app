@@ -1,12 +1,10 @@
+import React from 'react';
 
-
-import * as ProgressPrimitive from '@radix-ui/react-progress;'';
-import { cn } from '@/lib/utils;'';
-
-  ProgressProps;''';
-    ref={ref};''';
-      'relative h-4 w-full overflow-hidden rounded-full bg-secondary',;'';
-    )};''';
-    <ProgressPrimitive.Indicator;''';
-        'h-full w-full flex-1 bg-primary transition-all',;'';
-        indicatorClassName,;'''
+export default function progress() {
+  return (
+    <div>
+      <h1>progress</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

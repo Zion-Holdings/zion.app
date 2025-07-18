@@ -1,4 +1,2 @@
-// Utility functions for console;
-export const console = {;
-  // TODO: Implement utility functions;
-};
+// console.ts - placeholder
+export const placeholder = 'placeholder';

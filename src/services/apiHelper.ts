@@ -1,4 +1,2 @@
-// Service for apiHelper;
-export const apiHelperService = {;
-  // TODO: Implement service methods;
-};
+// apiHelper.ts - placeholder
+export const placeholder = 'placeholder';

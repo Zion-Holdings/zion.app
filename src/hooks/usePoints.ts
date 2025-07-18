@@ -1,5 +1,2 @@
-// Hook for usePoints;
-export const useUsePoints = () => {
-  // TODO: Implement hook logic;
-  return {};
-};
+// usePoints.ts - placeholder
+export const placeholder = 'placeholder';

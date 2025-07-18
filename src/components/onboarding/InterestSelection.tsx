@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { INTERESTS } from '@/data/interests;'';
-;'''
+export default function InterestSelection() {
+  return (
+    <div>
+      <h1>InterestSelection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

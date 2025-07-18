@@ -1,4 +1,2 @@
-// Utility functions for consoleErrorToast;
-export const consoleErrorToast = {;
-  // TODO: Implement utility functions;
-};
+// consoleErrorToast.ts - placeholder
+export const placeholder = 'placeholder';

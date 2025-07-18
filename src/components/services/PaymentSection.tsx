@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import { toast } from '@/hooks/use-toast;'';
-;''';
-        "You'';
-        You''
+export default function PaymentSection() {
+  return (
+    <div>
+      <h1>PaymentSection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

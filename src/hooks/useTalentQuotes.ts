@@ -1,5 +1,2 @@
-// Hook for useTalentQuotes;
-export const useUseTalentQuotes = () => {
-  // TODO: Implement hook logic;
-  return {};
-};
+// useTalentQuotes.ts - placeholder
+export const placeholder = 'placeholder';

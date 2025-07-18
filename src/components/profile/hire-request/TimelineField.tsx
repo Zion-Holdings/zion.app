@@ -1,14 +1,10 @@
-import {;
-  FormField,;
-  FormItem,;
-  FormLabel,;
-  FormControl,;
+import React from 'react';
 
-  FormMessage,;
-} from '';
-  Select,;''';
-  SelectTrigger,;''';
-} from '';
-
-import type { FormValues } from './useHireRequestForm;'';
-;'''
+export default function TimelineField() {
+  return (
+    <div>
+      <h1>TimelineField</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

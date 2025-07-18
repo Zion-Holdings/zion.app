@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-;''';
-interface ContactPublisherModalProps {;''';
-      logErrorToProduction('Failed to send message:'';
-      logErrorToProduction('Failed to send message:''
+export default function ContactPublisherModal() {
+  return (
+    <div>
+      <h1>ContactPublisherModal</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

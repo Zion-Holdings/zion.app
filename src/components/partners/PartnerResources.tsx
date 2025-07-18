@@ -1,11 +1,10 @@
+import React from 'react';
 
-
-  Card,;''';
-  CardHeader,;''';
-} from '';
-import {;''';
-  FileText,;''';
-} from '';
-import { Button } from '@/components/ui/button;'';
-import { toast } from '@/hooks/use-toast;'';
-;'''
+export default function PartnerResources() {
+  return (
+    <div>
+      <h1>PartnerResources</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

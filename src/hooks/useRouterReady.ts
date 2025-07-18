@@ -1,5 +1,2 @@
-// Hook for useRouterReady;
-export const useUseRouterReady = () => {
-  // TODO: Implement hook logic;
-  return {};
-};
+// useRouterReady.ts - placeholder
+export const placeholder = 'placeholder';

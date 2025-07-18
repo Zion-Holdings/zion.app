@@ -1,1 +1,2 @@
-export type RoleType = 'Admin' | 'Lead' | 'Builder' | '';
+// org.ts - placeholder
+export const placeholder = 'placeholder';

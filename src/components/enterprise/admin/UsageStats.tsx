@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-  CardContent,;''';
-  CardHeader,;''';
-} from '@/components/ui/card;'';
-import { Progress } from '@/components/ui/progress;''';
-  const handleSaveChanges: unknown = () => {;''';
-      title: 'Limits updated',;;'';
-      description: 'The new usage limits have been saved successfully.',;''';
-;'''
+export default function UsageStats() {
+  return (
+    <div>
+      <h1>UsageStats</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

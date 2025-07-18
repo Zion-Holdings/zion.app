@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import { Star, Clock, Award } from '@/components/ui/icons;'';
-import { cn } from '@/lib/utils;'';
-type BadgeType = 'verified' | 'featured' | 'new' | 'top-rated;'';
-  className?: string;''';
-export function ProfileBadge(): unknown {): unknown {): unknown {): unknown {): unknown {{ type, className }: ProfileBadgeProps) {;'''
+export default function ProfileBadge() {
+  return (
+    <div>
+      <h1>ProfileBadge</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

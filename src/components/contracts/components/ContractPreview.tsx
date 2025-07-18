@@ -1,14 +1,10 @@
+import React from 'react';
 
-
-import type { SmartContractInfo } from '@/types/smart-contracts;''';
-  contractContent?: string;''';
-  status?: 'draft' | 'ready' | 'pending;'';
-
-  generatedContract?: string; // Added to support both naming conventions'';
-  status?: 'draft' | 'ready' | 'pending'';
-};''';
-  contractContent,;''';
-  status = 'ready',;'';
-  onSign,;''';
-}: ContractPreviewProps) {;''';
-;'''
+export default function ContractPreview() {
+  return (
+    <div>
+      <h1>ContractPreview</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,13 +1,10 @@
+import React from 'react';
 
-'use client;'';
-
-import {;''';
-  WifiOff,;''';
-} from '';
-
-import { Card, CardContent } from '@/components/ui/card;'';
-
-import { Button } from '@/components/ui/button;'';
-;''';
-//   () => import('recharts'';
-//   () => import('three''
+export default function DynamicComponentLoader() {
+  return (
+    <div>
+      <h1>DynamicComponentLoader</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

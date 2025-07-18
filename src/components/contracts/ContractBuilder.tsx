@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-import {;''';
-  DialogHeader,;''';
-} from '';
-
-import { Button } from '@/components/ui/button;'';
-
-import { SmartContractBuilder } from './SmartContractBuilder;'';
-;'''
+export default function ContractBuilder() {
+  return (
+    <div>
+      <h1>ContractBuilder</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

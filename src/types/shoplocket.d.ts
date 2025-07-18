@@ -1,3 +1,2 @@
-// Type definitions for shoplocket.d;
-export interface shoplocket.d {;
-  // TODO: Add proper type definitions;
+// shoplocket.d.ts - placeholder
+export const placeholder = 'placeholder';

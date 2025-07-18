@@ -1,4 +1,10 @@
+import React from 'react';
 
-import * as AspectRatioPrimitive from '@radix-ui/react-aspect-ratio;'';
-export { AspectRatio };''';
-''''''';
+export default function aspect-ratio() {
+  return (
+    <div>
+      <h1>aspect-ratio</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

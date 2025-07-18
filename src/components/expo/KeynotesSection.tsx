@@ -1,3 +1,10 @@
+import React from 'react';
 
-export function KeynotesSection(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
-  const speakers: unknown = ['Founder Keynote', 'Nations Panel', 'DAO Speakers'];'''
+export default function KeynotesSection() {
+  return (
+    <div>
+      <h1>KeynotesSection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

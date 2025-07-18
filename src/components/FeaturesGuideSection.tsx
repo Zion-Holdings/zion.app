@@ -1,16 +1,10 @@
+import React from 'react';
 
-  ArrowRight,;''';
-  BarChart3,''';
-  Sparkles,;''';
-  HelpCircle,;''';
-} from '';
-
-import { fireEvent } from '@/lib/analytics;''';
-  const features: unknown = [;''';
-    {;''';
-      id: 'ai-matcher',;''';
-      title: 'AI Matcher',;''';
-      description:;''';
-        'Find the perfect match for your project needs with our intelligent AI-powered matching system.',;''';
-        Navigate to 'Create Listing'';
-        Navigate to 'Create Listing''
+export default function FeaturesGuideSection() {
+  return (
+    <div>
+      <h1>FeaturesGuideSection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

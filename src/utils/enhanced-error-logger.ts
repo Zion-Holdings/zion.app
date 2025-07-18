@@ -1,4 +1,2 @@
-// Utility functions for enhanced-error-logger;
-export const enhanced-error-logger = {;
-  // TODO: Implement utility functions;
-};
+// enhanced-error-logger.ts - placeholder
+export const placeholder = 'placeholder';

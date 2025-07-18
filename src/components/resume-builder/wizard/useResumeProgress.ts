@@ -1,11 +1,2 @@
-
-
-import type { Resume } from '@/types/resume;'';
-
-  }, [resume]);''';
-};''';
-''''''';
-  }, [resume])'';
-'';
-}'';
-'''''''
+// useResumeProgress.ts - placeholder
+export const placeholder = 'placeholder';

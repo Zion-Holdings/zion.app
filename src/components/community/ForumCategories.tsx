@@ -1,14 +1,10 @@
+import React from 'react';
 
-
-  MessageSquare,;''';
-  Briefcase,;''';
-} from '';
-  Card,;''';
-  CardTitle,;''';
-} from '';
-import { useAuth } from '@/hooks/useAuth;'';
-import type { ForumCategoryInfo } from '@/types/community;'';
-const categories: unknown ForumCategoryInfo[] = [;''';
-    id: 'getting-hired',;;'';
-    name: 'Getting Hired',;''';
-      'Tips, strategies, and questions about getting hired on the platform.',;;''
+export default function ForumCategories() {
+  return (
+    <div>
+      <h1>ForumCategories</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

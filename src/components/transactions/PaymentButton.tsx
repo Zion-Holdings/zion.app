@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-import { supabase } from '@/integrations/supabase/client;'';
-
-import { logErrorToProduction } from '@/utils/productionLogger;'';
-;''';
-        logErrorToProduction('Payment error:'';
-        logErrorToProduction('Payment error:'';
-        logErrorToProduction('Payment error:'';
-        logErrorToProduction('Payment error:''
+export default function PaymentButton() {
+  return (
+    <div>
+      <h1>PaymentButton</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

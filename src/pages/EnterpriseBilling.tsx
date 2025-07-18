@@ -1,4 +1,10 @@
+import React from 'react';
 
-    return; // Use router.push('/unauthorized'';
-  }'';
-    <ProtectedRoute>''
+export default function EnterpriseBilling() {
+  return (
+    <div>
+      <h1>EnterpriseBilling</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-  getClientBudgetSuggestion,;''';
-} from '';
-  PricingSuggestion,;''';
-} from '';
-
-import { useAuth } from '@/hooks/useAuth;'';
-;'''
+export default function ClientBudgetRecommender() {
+  return (
+    <div>
+      <h1>ClientBudgetRecommender</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

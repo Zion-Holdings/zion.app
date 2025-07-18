@@ -1,4 +1,2 @@
-// Module for interests;
-export const interests = {;
-  // TODO: Implement module functionality;
-};
+// interests.ts - placeholder
+export const placeholder = 'placeholder';

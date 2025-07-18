@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-  Card,;''';
-  CardHeader,;''';
-} from '';
-import { Button } from '@/components/ui/button;'';
-  DialogContent,;''';
-  DialogTitle,;''';
-} from '@/components/ui/dialog;'';
-;'''
+export default function RedeemTokensCard() {
+  return (
+    <div>
+      <h1>RedeemTokensCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

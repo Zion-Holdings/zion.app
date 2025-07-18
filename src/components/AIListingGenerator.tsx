@@ -1,12 +1,10 @@
+import React from 'react';
 
-
-  Card,;''';
-  CardContent,''';
-  CardHeader,;''';
-  CardTitle,;''';
-} from '';
-
-;''';
-interface GeneratedContent {;''';
-      logErrorToProduction('Error generating content:'';
-      logErrorToProduction('Error generating content:''
+export default function AIListingGenerator() {
+  return (
+    <div>
+      <h1>AIListingGenerator</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,5 +1,2 @@
-// Hook for useIsMounted;
-export const useUseIsMounted = () => {
-  // TODO: Implement hook logic;
-  return {};
-};
+// useIsMounted.ts - placeholder
+export const placeholder = 'placeholder';

@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-  Form,;''';
-  FormItem,;''';
-} from '';
-import { Card, CardContent } from '@/components/ui/card;'';
-  onSubmit: (content: string) => Promise<void>;''';
-;'''
+export default function ReplyForm() {
+  return (
+    <div>
+      <h1>ReplyForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

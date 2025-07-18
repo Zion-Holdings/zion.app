@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import { Textarea } from '@/components/ui/textarea;'';
-
-import { toast } from '@/hooks/use-toast;'';
-interface ProfileContactProps {;'''
+export default function ProfileContact() {
+  return (
+    <div>
+      <h1>ProfileContact</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

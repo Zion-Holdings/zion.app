@@ -1,3 +1,10 @@
+import React from 'react';
 
-import type { FallbackProps } from 'react-error-boundary;''';
-  return (;'''
+export default function LoginErrorFallback() {
+  return (
+    <div>
+      <h1>LoginErrorFallback</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

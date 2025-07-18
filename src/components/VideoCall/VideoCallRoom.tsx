@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-export { RealVideoCallRoom as VideoCallRoom };''';
-''''''';
+export default function VideoCallRoom() {
+  return (
+    <div>
+      <h1>VideoCallRoom</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

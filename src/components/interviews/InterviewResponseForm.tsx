@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { format, parseISO } from 'date-fns;'';
-;'''
+export default function InterviewResponseForm() {
+  return (
+    <div>
+      <h1>InterviewResponseForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

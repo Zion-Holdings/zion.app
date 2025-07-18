@@ -1,11 +1,10 @@
+import React from 'react';
 
-
-  TableBody,;''';
-  TableHeader,;''';
-} from '';
-
-import { toast } from '@/hooks/use-toast;'';
-import {;''';
-  TooltipProvider,;''';
-} from '@/components/ui/tooltip;'';
-  const teamMembers: unknown = [;'''
+export default function RoleManagement() {
+  return (
+    <div>
+      <h1>RoleManagement</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

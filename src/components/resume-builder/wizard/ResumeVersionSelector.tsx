@@ -1,13 +1,10 @@
+import React from 'react';
 
-
-import { Save, ChevronDown, Plus, Loader2 } from '@/components/ui/icons;'';
-  DropdownMenu,;''';
-  DropdownMenuSeparator,;''';
-} from '';
-
-  Dialog,;''';
-  DialogHeader,;''';
-} from '@/components/ui/dialog;'';
-
-import { useResume } from '@/hooks/useResume;'';
-;'''
+export default function ResumeVersionSelector() {
+  return (
+    <div>
+      <h1>ResumeVersionSelector</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

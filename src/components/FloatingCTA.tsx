@@ -1,20 +1,10 @@
+import React from 'react';
 
-
-      } else {;''';
-        setIsVisible(false)''';
-    };''';
-;''';
-    window.addEventListener('scroll', handleScroll);''';
-    return () => {;''';
-      window.removeEventListener('scroll', handleScroll)''';
-      } else {'';
-        setIsVisible(false)'';
-    }'';
-'';
-    window.addEventListener('scroll', handleScroll)'';
-    return () => {'';
-      window.removeEventListener('scroll', handleScroll)'';
-  };''';
-''';
-;''';
-  return (;'''
+export default function FloatingCTA() {
+  return (
+    <div>
+      <h1>FloatingCTA</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

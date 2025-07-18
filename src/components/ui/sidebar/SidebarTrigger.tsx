@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import { Button } from '@/components/ui/button;'';
-
-import { cn } from '@/lib/utils;'';
-export function SidebarTrigger(): unknown {): unknown {): unknown {): unknown {): unknown {{ className, ...props }: SidebarTriggerProps) {;''';
-  return (;'''
+export default function SidebarTrigger() {
+  return (
+    <div>
+      <h1>SidebarTrigger</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

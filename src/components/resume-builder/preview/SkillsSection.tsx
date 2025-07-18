@@ -1,3 +1,10 @@
+import React from 'react';
 
-import type { Skill } from '@/types/resume;'';
-;'''
+export default function SkillsSection() {
+  return (
+    <div>
+      <h1>SkillsSection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

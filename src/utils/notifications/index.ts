@@ -1,4 +1,2 @@
-// Utility functions for index;
-export const index = {;
-  // TODO: Implement utility functions;
-};
+// index.ts - placeholder
+export const placeholder = 'placeholder';

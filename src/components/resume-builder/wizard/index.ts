@@ -1,5 +1,2 @@
-
-export { ResumeWizard } from '';
-export * from '';
-export * from './constants;'';
-'''''''
+// index.ts - placeholder
+export const placeholder = 'placeholder';

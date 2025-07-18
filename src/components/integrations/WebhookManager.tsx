@@ -1,18 +1,10 @@
+import React from 'react';
 
-
-  CardContent,;''';
-  CardHeader,;''';
-} from '';
-
-import { ClickableBadge } from '@/components/ui/clickable-badge;'';
-
-  Select,;''';
-  SelectTrigger,;''';
-} from '';
-import { toast } from 'sonner;'';
-
-    deleteWebhook,;''';
-;''';
-    name: '',;;'';
-    url: '',;;'';
-    selectedEvent: '' as WebhookEventType,;;''
+export default function WebhookManager() {
+  return (
+    <div>
+      <h1>WebhookManager</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,22 +1,10 @@
+import React from 'react';
 
-
-import { cn } from '@/lib/utils;'';
-import { badgeVariants } from '@/components/ui/badge-variants;'';
-export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {;''';
-    | 'default;''';
-    | 'secondary;''';
-    | 'destructive;''';
-    | 'outline;''';
-    | 'success;''';
-    | 'warning;''';
-    | 'info;'';
-
-  );''';
-};''';
-}''';
-}''';
-  )'';
-}'';
-}'';
-}'';
-}'''
+export default function badge() {
+  return (
+    <div>
+      <h1>badge</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

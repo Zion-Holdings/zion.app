@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { Button } from '@/components/ui/button;'';
-export function EnterpriseCTA(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'''
+export default function EnterpriseCTA() {
+  return (
+    <div>
+      <h1>EnterpriseCTA</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,3 +1,10 @@
+import React from 'react';
 
-import React from 'react;'';
-const TalentProfileSkeleton: unknown React.FC = () => (;'''
+export default function TalentProfileSkeleton() {
+  return (
+    <div>
+      <h1>TalentProfileSkeleton</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

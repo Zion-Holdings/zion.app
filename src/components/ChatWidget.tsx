@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-;''';
-interface ChatWidgetProps {''';
-  roomId: string;''';
-  /** Recipient user id */;''';
-    socketRef.current?.emit('send-message'';
-    socketRef.current?.emit('send-message''
+export default function ChatWidget() {
+  return (
+    <div>
+      <h1>ChatWidget</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

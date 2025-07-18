@@ -1,12 +1,10 @@
+import React from 'react';
 
-
-import { z } from 'zod;'';
-
-  FormControl,;''';
-  FormLabel,;''';
-} from '';
-
-import Link from 'next/link;'';
-import { Checkbox } from '@/components/ui/checkbox;'';
-        form.setError('root'';
-        form.setError('root''
+export default function LoginForm() {
+  return (
+    <div>
+      <h1>LoginForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import { Button } from '@/components/ui/button;'';
-import { useCompanyWorkspace } from '@/hooks/useCompanyWorkspace;'';
-export function AdminHeader(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''';
-;'''
+export default function AdminHeader() {
+  return (
+    <div>
+      <h1>AdminHeader</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

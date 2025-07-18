@@ -1,10 +1,10 @@
-import {;
-  Card,;
-  CardContent,;
-  CardDescription,;
-  CardHeader,;
+import React from 'react';
 
-  CardTitle,;
-} from '';
-import { DynamicAnalyticsChart as AnalyticsChart } from '@/utils/dynamicComponents;'';
-;'''
+export default function FeatureUsageChart() {
+  return (
+    <div>
+      <h1>FeatureUsageChart</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

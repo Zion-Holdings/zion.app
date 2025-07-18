@@ -1,8 +1,10 @@
+import React from 'react';
 
-// src/components/governance/ProposalCard.tsx;
-;
-  CardHeader,;''';
-  CardContent,;''';
-} from '';
-
-import { Button } from '@/components/ui/button // Adjust path;''
+export default function ProposalCard() {
+  return (
+    <div>
+      <h1>ProposalCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

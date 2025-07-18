@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-import { Button } from '@/components/ui/button;'';
-  customLogo?: string;''';
-      logInfo('Header search submit:'';
-          logInfo('Search navigation failed'';
-                  {t('general.greeting_user'';
-      logInfo('Header search submit:'';
-          logInfo('Search navigation failed'';
-                  {t('general.greeting_user''
+export default function Header() {
+  return (
+    <div>
+      <h1>Header</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

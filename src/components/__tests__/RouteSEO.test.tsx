@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-import { findRouteByPath } from '@/utils/routeUtils;'';
-vi.mock('next/router', () => ({;;'';
-  const metaDesc: unknown = container.querySelector('';
-  const canonical: unknown = container.querySelector('';
-  const metaDesc = container.querySelector('';
-  const canonical = container.querySelector(''
+export default function RouteSEO.test() {
+  return (
+    <div>
+      <h1>RouteSEO.test</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

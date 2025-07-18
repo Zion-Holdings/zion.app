@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-import Skeleton from '@/components/ui/skeleton;'';
-  loadingComponent?: ReactNode;''';
-  height = '200px',;;'';
-  width = '100%',;'';
-
-        if (entry && entry.isIntersecting) {;''';
-        };'''
+export default function lazy-load() {
+  return (
+    <div>
+      <h1>lazy-load</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

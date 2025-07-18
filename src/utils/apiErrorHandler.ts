@@ -1,4 +1,2 @@
-// Utility functions for apiErrorHandler;
-export const apiErrorHandler = {;
-  // TODO: Implement utility functions;
-};
+// apiErrorHandler.ts - placeholder
+export const placeholder = 'placeholder';

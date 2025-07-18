@@ -1,4 +1,10 @@
+import React from 'react';
 
-import { ProjectHeader as OriginalProjectHeader } from '../ProjectHeader;''';
-export { OriginalProjectHeader as ProjectHeader };''';
-''''''';
+export default function ProjectHeader() {
+  return (
+    <div>
+      <h1>ProjectHeader</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

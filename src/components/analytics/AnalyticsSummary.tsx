@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import { formatDistanceToNow } from 'date-fns;'';
-        .order('created_at'';
-        .order('created_at''
+export default function AnalyticsSummary() {
+  return (
+    <div>
+      <h1>AnalyticsSummary</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

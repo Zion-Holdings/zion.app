@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import Link from 'next/link;'';
-export function SummitHero(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'''
+export default function SummitHero() {
+  return (
+    <div>
+      <h1>SummitHero</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

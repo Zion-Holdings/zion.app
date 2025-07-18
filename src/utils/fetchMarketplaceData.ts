@@ -1,4 +1,2 @@
-// Utility functions for fetchMarketplaceData;
-export const fetchMarketplaceData = {;
-  // TODO: Implement utility functions;
-};
+// fetchMarketplaceData.ts - placeholder
+export const placeholder = 'placeholder';

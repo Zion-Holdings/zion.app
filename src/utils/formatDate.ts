@@ -1,4 +1,2 @@
-// Utility functions for formatDate;
-export const formatDate = {;
-  // TODO: Implement utility functions;
-};
+// formatDate.ts - placeholder
+export const placeholder = 'placeholder';

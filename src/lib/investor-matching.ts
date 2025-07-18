@@ -1,20 +1,2 @@
-export interface Investor {;
-  id: "string"";
-  name: string,"";
-  website: "string"";
-  location: string,"";
-  industries: "string[]"";
-  stages: string[],"";
-  notableInvestments: "string[]"";
-}"";
-;"";
-export interface InvestorMatch {"";
-  investor: "Investor"";
-  score: number,"";
-  reason: "string"";
-}";"";
-;"";
-const investors: unknown Investor[] = [;"";
-  {;"";
-  industry: "string"";
-  location: ""
+// investor-matching.ts - placeholder
+export const placeholder = 'placeholder';

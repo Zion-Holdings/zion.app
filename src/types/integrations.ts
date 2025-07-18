@@ -1,3 +1,2 @@
-export type IntegrationType = 'crm' | 'ats' | 'webhook' | '';
-export type IntegrationStatus = 'connected' | 'warning' | '';
-('');
+// integrations.ts - placeholder
+export const placeholder = 'placeholder';

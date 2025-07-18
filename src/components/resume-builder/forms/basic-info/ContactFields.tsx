@@ -1,11 +1,10 @@
-import {;
-  FormField,;
-  FormItem,;
-  FormLabel,;
-  FormControl,;
+import React from 'react';
 
-  FormMessage,;
-} from '';
-
-import type { BasicInfoFormData } from './schema;'';
-;'''
+export default function ContactFields() {
+  return (
+    <div>
+      <h1>ContactFields</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

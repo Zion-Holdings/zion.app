@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { useAuth } from '@/hooks/useAuth;'';
-;'''
+export default function AnalyticsContainer() {
+  return (
+    <div>
+      <h1>AnalyticsContainer</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

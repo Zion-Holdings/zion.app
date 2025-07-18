@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import { useTranslation } from 'react-i18next;'';
-jest.mock('@/hooks/useAuth');;'';
-jest.mock('next/router', () => ({;;'';
-    i18n: { language: 'en'';
-    i18n: { language: 'en''
+export default function ResponsiveNavigation.test() {
+  return (
+    <div>
+      <h1>ResponsiveNavigation.test</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

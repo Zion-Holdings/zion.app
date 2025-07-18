@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-import { Globe } from '@/components/ui/icons;'';
-  Select,;''';
-  SelectTrigger,;''';
-} from '';
-
-import { onsiteServicePricing } from '@/data/onsiteServicePricing;'';
-;'''
+export default function CountrySelector() {
+  return (
+    <div>
+      <h1>CountrySelector</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

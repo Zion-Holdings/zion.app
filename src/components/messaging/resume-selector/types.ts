@@ -1,2 +1,2 @@
-
-import type { Resume } from '@/types/resume;''
+// types.ts - placeholder
+export const placeholder = 'placeholder';

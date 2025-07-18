@@ -1,11 +1,10 @@
+import React from 'react';
 
-
-  TableBody,;''';
-  TableHeader,;''';
-} from '';
-
-import { formatDistanceToNow } from 'date-fns;'';
-import Link from 'next/link;'';
-;''';
-        return '';
-        return ''
+export default function DisputesList() {
+  return (
+    <div>
+      <h1>DisputesList</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

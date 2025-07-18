@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import useEmblaCarousel from 'embla-carousel-react;'';
-
-import type { EmblaPluginType } from 'embla-carousel;'';
-type CarouselApi = ReturnType<typeof useEmblaCarousel>[1];''';
-  axis?: 'x' | 'y;'''
+export default function carousel() {
+  return (
+    <div>
+      <h1>carousel</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

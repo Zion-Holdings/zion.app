@@ -1,5 +1,2 @@
-// Hook for useSessionDuration;
-export const useUseSessionDuration = () => {
-  // TODO: Implement hook logic;
-  return {};
-};
+// useSessionDuration.ts - placeholder
+export const placeholder = 'placeholder';

@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import { Progress } from '@/components/ui/progress;'';
-import { logErrorToProduction } from '@/utils/productionLogger;'';
-;''';
-      logErrorToProduction('Failed to collect bundle info:'';
-      logErrorToProduction('Failed to collect bundle info:''
+export default function bundle-analyzer() {
+  return (
+    <div>
+      <h1>bundle-analyzer</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

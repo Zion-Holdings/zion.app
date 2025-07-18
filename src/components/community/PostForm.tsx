@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-  FormControl,;''';
-  FormLabel,;''';
-} from '';
-
-import type { ForumCategory } from '@/types/community;'';
-;'''
+export default function PostForm() {
+  return (
+    <div>
+      <h1>PostForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

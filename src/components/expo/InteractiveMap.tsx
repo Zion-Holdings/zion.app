@@ -1,10 +1,10 @@
+import React from 'react';
 
-export function InteractiveMap(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
-  const locations: unknown = [;
-    { name: 'New York', subdomain: 'ny.zionapp.com', top: '40%', left: '35%' },;''';
-      name: 'London',;;'';
-      subdomain: 'london.zionapp.com',;;'';
-      top: '30%',;;'';
-      left: '50%',;''';
-    { name: 'Tokyo', subdomain: 'tokyo.zionapp.com', top: '45%', left: '80%' },;'';
-  ];'''
+export default function InteractiveMap() {
+  return (
+    <div>
+      <h1>InteractiveMap</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

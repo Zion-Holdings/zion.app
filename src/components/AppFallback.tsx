@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-interface AppFallbackProps {;''';
-  error?: Error''';
-};''';
-          ''
+export default function AppFallback() {
+  return (
+    <div>
+      <h1>AppFallback</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

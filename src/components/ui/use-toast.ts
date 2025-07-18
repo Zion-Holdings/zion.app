@@ -1,4 +1,2 @@
-
-import { useToast, toast } from '@/hooks/use-toast;'';
-export { useToast, toast };''';
-'''''''
+// use-toast.ts - placeholder
+export const placeholder = 'placeholder';

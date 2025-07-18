@@ -1,9 +1,10 @@
+import React from 'react';
 
-    const payload = token.split('.')[1];'';
-    logErrorToProduction('Failed to decode token', { data: e });'';
-    const queryString = router.asPath.split('?'';
-    const token = params.get('token');'';
-    const next = params.get('next');'';
-      safeStorage.setItem('zion_token', token);'';
-      router.replace(next || '/'); // Use router.replace'';
-''
+export default function OAuthCallback() {
+  return (
+    <div>
+      <h1>OAuthCallback</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

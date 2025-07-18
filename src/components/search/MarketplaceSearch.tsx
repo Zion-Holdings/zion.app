@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import debounce from 'lodash.debounce;'';
-interface MarketplaceSearchProps {;''';
-    fireEvent('search'';
-    fireEvent('search''
+export default function MarketplaceSearch() {
+  return (
+    <div>
+      <h1>MarketplaceSearch</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

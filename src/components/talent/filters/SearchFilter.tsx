@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import { SearchIcon } from '@/components/ui/icons;'';
-import type { SearchFilterProps } from '@/types/filters;'';
-export function SearchFilter(): unknown {): unknown {): unknown {): unknown {): unknown {{ searchTerm, setSearchTerm }: SearchFilterProps) {;'''
+export default function SearchFilter() {
+  return (
+    <div>
+      <h1>SearchFilter</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

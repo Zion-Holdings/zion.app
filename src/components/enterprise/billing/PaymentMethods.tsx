@@ -1,11 +1,10 @@
+import React from 'react';
 
-
-  CardContent,;''';
-  CardHeader,;''';
-} from '';
-import { Button } from '@/components/ui/button;'';
-  const paymentMethods: unknown = [;''';
-      id: 'pm-1',;;'';
-      type: 'credit_card',;;'';
-      brand: 'Visa',;;'';
-      last4: '4242',;;''
+export default function PaymentMethods() {
+  return (
+    <div>
+      <h1>PaymentMethods</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

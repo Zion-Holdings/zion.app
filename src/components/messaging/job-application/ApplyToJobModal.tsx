@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-  Dialog,;''';
-  DialogHeader,;''';
-} from '';
-
-import type { ApplyToJobModalProps } from './types;'';
-  onClose,;''';
-  return (;'''
+export default function ApplyToJobModal() {
+  return (
+    <div>
+      <h1>ApplyToJobModal</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

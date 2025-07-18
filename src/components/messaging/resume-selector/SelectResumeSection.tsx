@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import { FileText } from '@/components/ui/icons;'';
-
-import type { Resume } from '@/types/resume;'';
-;''';
-                  : ''
+export default function SelectResumeSection() {
+  return (
+    <div>
+      <h1>SelectResumeSection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,18 +1,10 @@
+import React from 'react';
 
-
-  Clock,;''';
-  Video,;''';
-} from '';
-  Card,;''';
-  CardHeader,;''';
-} from '';
-
-  AlertDialogDescription,;''';
-  AlertDialogTitle,;''';
-} from '';
-import {;''';
-  DialogHeader,;''';
-} from '@/components/ui/dialog;'';
-
-import { InterviewResponseForm } from './InterviewResponseForm;'';
-;'''
+export default function InterviewCard() {
+  return (
+    <div>
+      <h1>InterviewCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

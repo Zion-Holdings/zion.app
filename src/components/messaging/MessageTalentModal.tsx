@@ -1,11 +1,10 @@
+import React from 'react';
 
-
-  DialogContent,;''';
-  DialogDescription,;''';
-} from '';
-
-import { useRouter } from 'next/router;'';
-      ? `Hi ${talent.full_name}, I'';
-      logErrorToProduction('Failed to send message:'';
-      ? `Hi ${talent.full_name}, I'';
-      logErrorToProduction('Failed to send message:''
+export default function MessageTalentModal() {
+  return (
+    <div>
+      <h1>MessageTalentModal</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

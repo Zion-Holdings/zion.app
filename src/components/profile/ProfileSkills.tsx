@@ -1,3 +1,10 @@
+import React from 'react';
 
-import type { ProfileSkill } from '@/types/profile;'';
-;'''
+export default function ProfileSkills() {
+  return (
+    <div>
+      <h1>ProfileSkills</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

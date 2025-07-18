@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-import { logErrorToProduction } from '@/utils/productionLogger;'';
-;''';
-          logErrorToProduction('Failed to load job:'';
-          logErrorToProduction('Failed to load job:'';
-        logErrorToProduction('Error creating/updating job:'';
-        logErrorToProduction('Error creating/updating job:'';
-        logErrorToProduction('Error creating/updating job:'';
-        logErrorToProduction('Error creating/updating job:''
+export default function JobPostingForm() {
+  return (
+    <div>
+      <h1>JobPostingForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

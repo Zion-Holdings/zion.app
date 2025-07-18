@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-  Card,;''';
-  CardHeader,;''';
-} from '';
-import type { HelpCategory } from './types;'';
-;'''
+export default function HelpCategoryList() {
+  return (
+    <div>
+      <h1>HelpCategoryList</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

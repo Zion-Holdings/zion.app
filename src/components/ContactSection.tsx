@@ -1,14 +1,10 @@
+import React from 'react';
 
-
-export function ContactSection(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''';
-  const [formData, setFormData] = useState({;''';
-    name: '',;''';
-    email: '',;''';
-    subject: '',;''';
-    message: '',''';
-
-    subject?: string;''';
-    message?: string''';
-;''';
-            We'';
-            We''
+export default function ContactSection() {
+  return (
+    <div>
+      <h1>ContactSection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

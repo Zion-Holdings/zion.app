@@ -1,5 +1,2 @@
-// Hook for useCompanyWorkspace;
-export const useUseCompanyWorkspace = () => {
-  // TODO: Implement hook logic;
-  return {};
-};
+// useCompanyWorkspace.ts - placeholder
+export const placeholder = 'placeholder';

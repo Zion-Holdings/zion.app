@@ -1,4 +1,2 @@
-// Module for listingData;
-export const listingData = {;
-  // TODO: Implement module functionality;
-};
+// listingData.ts - placeholder
+export const placeholder = 'placeholder';

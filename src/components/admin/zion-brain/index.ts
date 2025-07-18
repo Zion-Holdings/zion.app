@@ -1,3 +1,2 @@
-
-export * from './ZionBrainDashboard;'';
-'''''''
+// index.ts - placeholder
+export const placeholder = 'placeholder';

@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;'';
-;'''
+export default function ConversationItem() {
+  return (
+    <div>
+      <h1>ConversationItem</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

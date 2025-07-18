@@ -1,17 +1,10 @@
+import React from 'react';
 
-
-  FileText,;''';
-  Eye,;''';
-} from '';
-
-  Card,;''';
-  CardHeader,;''';
-} from '@/components/ui/card;'';
-import { cn } from '@/lib/utils;'';
-;''';
-      skipText: "I'';
-      skipText: "I'';
-      description: "Let clients know when you'';
-      skipText: I'';
-            : "Let'';
-            : Let''
+export default function OnboardingWizard() {
+  return (
+    <div>
+      <h1>OnboardingWizard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

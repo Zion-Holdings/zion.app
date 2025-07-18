@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-import { QrCodeIcon } from '@/components/ui/icons;'';
-
-import { logInfo } from '@/utils/productionLogger;'';
-// export const _DownloadSection: unknown React.FC = () => {;''';
-  const appStoreUrl: unknown = '# // Replace with actual App Store URL when available;;'';
-  const googlePlayUrl: unknown = '# // Replace with actual Google Play URL when available;'';
-;'''
+export default function DownloadSection() {
+  return (
+    <div>
+      <h1>DownloadSection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

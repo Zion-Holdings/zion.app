@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import { X } from '@/components/ui/icons;'';
-
-import { Badge } from '@/components/ui/badge;'';
-;'''
+export default function ActiveFiltersBar() {
+  return (
+    <div>
+      <h1>ActiveFiltersBar</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

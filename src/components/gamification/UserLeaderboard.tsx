@@ -1,9 +1,10 @@
-import {;
-  Card,;
-  CardContent,;
-  CardDescription,;
-  CardHeader,;
+import React from 'react';
 
-  CardTitle,;
-} from '';
-import { Trophy } from '@/components/ui/icons;''
+export default function UserLeaderboard() {
+  return (
+    <div>
+      <h1>UserLeaderboard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,4 +1,2 @@
-export type BlockchainNetwork = 'ethereum' | 'polygon' | '';
-  id: string'';
-  blockNumber?: number'';
-  contractType: 'escrow' | 'milestone' | ''
+// smart-contracts.ts - placeholder
+export const placeholder = 'placeholder';

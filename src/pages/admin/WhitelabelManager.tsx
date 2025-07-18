@@ -1,4 +1,10 @@
+import React from 'react';
 
-    return; // Use router.push('/unauthorized'';
-  }'';
-    <>''
+export default function WhitelabelManager() {
+  return (
+    <div>
+      <h1>WhitelabelManager</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

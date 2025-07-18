@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-import { HELP_CATEGORIES } from './help-content;''';
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);''';
-  const [searchQuery, setSearchQuery] = useState('');'';
-
-    setSelectedArticle(null);''';
-  return (;'''
+export default function HelpCenter() {
+  return (
+    <div>
+      <h1>HelpCenter</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

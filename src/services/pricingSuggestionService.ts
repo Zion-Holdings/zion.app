@@ -1,4 +1,2 @@
-// Service for pricingSuggestionService;
-export const pricingSuggestionServiceService = {;
-  // TODO: Implement service methods;
-};
+// pricingSuggestionService.ts - placeholder
+export const placeholder = 'placeholder';

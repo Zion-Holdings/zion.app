@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-import { CheckCircle, ThumbsUp, ThumbsDown } from '@/components/ui/icons;'';
-import {;''';
-  CardFooter,;''';
-} from '';
-
-import { cn } from '@/lib/utils;'';
-  onMarkAnswer,;''';
-}: ReplyCardProps) => {;'''
+export default function ReplyCard() {
+  return (
+    <div>
+      <h1>ReplyCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

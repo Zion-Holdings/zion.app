@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-import {;''';
-  TooltipProvider,;''';
-} from '';
-import { useToast } from '@/hooks/use-toast;'';
-interface CreatePostButtonProps {;''';
-  className?: string;'''
+export default function CreatePostButton() {
+  return (
+    <div>
+      <h1>CreatePostButton</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

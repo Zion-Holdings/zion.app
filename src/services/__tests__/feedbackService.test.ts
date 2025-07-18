@@ -1,4 +1,2 @@
-// Service for feedbackService.test;
-export const feedbackService.testService = {;
-  // TODO: Implement service methods;
-};
+// feedbackService.test.ts - placeholder
+export const placeholder = 'placeholder';

@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-  TableBody,;''';
-  TableHeader,;''';
-} from '';
-
-import { EmptyFraudState } from './EmptyFraudState;'';
-;'''
+export default function FraudFlagsTable() {
+  return (
+    <div>
+      <h1>FraudFlagsTable</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

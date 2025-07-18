@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-  RefreshCw,;''';
-  Globe,;''';
-} from '';
-
-import { Progress } from '@/components/ui/progress;'';
-import { logErrorToProduction, logInfo } from '@/utils/productionLogger;'';
-;'''
+export default function performance-dashboard() {
+  return (
+    <div>
+      <h1>performance-dashboard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

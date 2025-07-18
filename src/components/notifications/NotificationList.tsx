@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import { EmptyState } from '@/components/ui/empty-state;'';
-;''';
-            description="You'';
-            action={{ text: 'Refresh'';
-            action={{ text: 'Refresh''
+export default function NotificationList() {
+  return (
+    <div>
+      <h1>NotificationList</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

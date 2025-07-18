@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import { CheckCircle, ArrowRight } from '@/components/ui/icons;'';
-
-import Link from 'next/link;''
+export default function OnboardingTracker() {
+  return (
+    <div>
+      <h1>OnboardingTracker</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

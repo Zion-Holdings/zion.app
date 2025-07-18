@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import { Edit, Trash2 } from '@/components/ui/icons;'';
-
-import type { EducationItemProps } from './types;'';
-  education,;''';
-}: EducationItemProps) {;'''
+export default function EducationItem() {
+  return (
+    <div>
+      <h1>EducationItem</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

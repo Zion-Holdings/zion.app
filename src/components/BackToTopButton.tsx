@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-  useEffect(() => {;''';
-    const updateVisibility: unknown = () => {''';
-    };''';
-    updateVisibility();''';
-    window.addEventListener('scroll', updateVisibility);''';
-    return () => window.removeEventListener('scroll', updateVisibility)''';
-;''';
-  const scrollToTop: unknown = () => {;'''
+export default function BackToTopButton() {
+  return (
+    <div>
+      <h1>BackToTopButton</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

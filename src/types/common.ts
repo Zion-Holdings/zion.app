@@ -1,4 +1,2 @@
-
-  // [key: string]: unknown; // Avoid 'any'';
-  code?: string | number'';
-''
+// common.ts - placeholder
+export const placeholder = 'placeholder';

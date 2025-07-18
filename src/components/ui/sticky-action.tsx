@@ -1,14 +1,10 @@
+import React from 'react';
 
-
-import { motion, AnimatePresence } from 'framer-motion;'';
-;''';
-  children: React.ReactNode;''';
-  position?: 'bottom' | 'top;'';
-  children,;''';
-  position = 'bottom',;'';
-
-      } else {;''';
-    };''';
-    window.addEventListener('scroll', handleScroll);''';
-      window.removeEventListener('scroll', handleScroll);''';
-;'''
+export default function sticky-action() {
+  return (
+    <div>
+      <h1>sticky-action</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

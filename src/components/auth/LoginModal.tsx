@@ -1,9 +1,10 @@
-import {;
-  Dialog,;
-  DialogContent,;
-  DialogHeader,;
+import React from 'react';
 
-  DialogTitle,;
-} from '';
-import { LoginCard } from './login;'';
-;'''
+export default function LoginModal() {
+  return (
+    <div>
+      <h1>LoginModal</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

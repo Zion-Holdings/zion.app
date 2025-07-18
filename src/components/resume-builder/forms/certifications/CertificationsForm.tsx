@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-import type { Certification } from '@/types/resume;'';
-
-import { format } from 'date-fns;'';
-
-import type { CertificationFormValues } from './types;'';
-;'''
+export default function CertificationsForm() {
+  return (
+    <div>
+      <h1>CertificationsForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

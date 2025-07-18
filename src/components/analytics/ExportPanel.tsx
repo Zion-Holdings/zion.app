@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-  Card,;''';
-  CardHeader,;''';
-} from '';
-
-import { useToast } from '@/hooks/use-toast;''';
-  const { _toast } = useToast();''';
-  const handleExport: unknown = (_format: 'csv' | 'json') => {;'';
-    // Placeholder for actual export functionality;'''
+export default function ExportPanel() {
+  return (
+    <div>
+      <h1>ExportPanel</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

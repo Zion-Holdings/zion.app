@@ -1,2 +1,10 @@
+import React from 'react';
 
-  const router = useRouter()';''
+export default function TalentProfilePage() {
+  return (
+    <div>
+      <h1>TalentProfilePage</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

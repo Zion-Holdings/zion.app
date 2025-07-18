@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-;''';
-interface CategoryCardProps {;'''
+export default function CategoryCard() {
+  return (
+    <div>
+      <h1>CategoryCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

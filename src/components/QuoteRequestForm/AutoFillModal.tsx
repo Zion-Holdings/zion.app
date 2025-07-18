@@ -1,9 +1,10 @@
+import React from 'react';
 
-  Dialog,;''';
-  DialogContent,''';
-  DialogHeader,;''';
-  DialogTitle,;''';
-} from '';
-
-;''';
-interface AutoFillModalProps {;'''
+export default function AutoFillModal() {
+  return (
+    <div>
+      <h1>AutoFillModal</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

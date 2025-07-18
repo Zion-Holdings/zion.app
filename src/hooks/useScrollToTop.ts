@@ -1,5 +1,2 @@
-// Hook for useScrollToTop;
-export const useUseScrollToTop = () => {
-  // TODO: Implement hook logic;
-  return {};
-};
+// useScrollToTop.ts - placeholder
+export const placeholder = 'placeholder';

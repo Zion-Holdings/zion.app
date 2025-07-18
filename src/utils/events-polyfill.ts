@@ -1,4 +1,2 @@
-// Utility functions for events-polyfill;
-export const events-polyfill = {;
-  // TODO: Implement utility functions;
-};
+// events-polyfill.ts - placeholder
+export const placeholder = 'placeholder';

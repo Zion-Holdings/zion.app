@@ -1,4 +1,10 @@
+import React from 'react';
 
-// src/components/ui/skeleton.tsx;
-import React from 'react;'';
-// const _SkeletonCard: unknown React.FC = () => {;'''
+export default function skeleton-card() {
+  return (
+    <div>
+      <h1>skeleton-card</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

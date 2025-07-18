@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-import { Card, CardContent } from '@/components/ui/card;'';
-;''';
-  _type: 'active' | 'archived;'';
-};''';
-            ? "You haven'';
-            : "You haven'';
-            ? "You haven'';
-            : You haven''
+export default function EmptyStateCard() {
+  return (
+    <div>
+      <h1>EmptyStateCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,12 +1,10 @@
+import React from 'react';
 
-
-import { Calendar, RefreshCw } from '@/components/ui/icons;'';
-
-  Select,;''';
-  SelectTrigger,;''';
-} from '';
-  PopoverContent,;''';
-} from '';
-
-import type { QuoteStatus } from '@/types/quotes;'';
-;'''
+export default function QuotesFilter() {
+  return (
+    <div>
+      <h1>QuotesFilter</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

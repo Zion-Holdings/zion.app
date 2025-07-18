@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import { Button } from '@/components/ui/button;'';
-
-import { toast } from 'sonner;'';
-;'''
+export default function ScreenshotManager() {
+  return (
+    <div>
+      <h1>ScreenshotManager</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

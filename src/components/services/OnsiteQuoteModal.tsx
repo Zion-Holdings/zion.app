@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-  Dialog,;''';
-  DialogTitle,;''';
-} from '';
-
-import { useEnqueueSnackbar } from '@/context;'';
-;'''
+export default function OnsiteQuoteModal() {
+  return (
+    <div>
+      <h1>OnsiteQuoteModal</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

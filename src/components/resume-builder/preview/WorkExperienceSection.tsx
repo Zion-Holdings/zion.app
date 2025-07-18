@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { format } from 'date-fns;'';
-;'''
+export default function WorkExperienceSection() {
+  return (
+    <div>
+      <h1>WorkExperienceSection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

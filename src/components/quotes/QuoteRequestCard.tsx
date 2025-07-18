@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-import { format } from 'date-fns;'';
-  Card,;''';
-  CardTitle,;''';
-} from '';
-
-import { QuoteStatusBadge } from '@/components/quotes/QuoteStatusBadge;'';
-import type { QuoteRequest } from '@/types/quotes;'';
-;'''
+export default function QuoteRequestCard() {
+  return (
+    <div>
+      <h1>QuoteRequestCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,5 +1,2 @@
-
-export const holdInEscrow = async (_params: {;,'';
-    logErrorToProduction('Error in holdInEscrow'';
-    logErrorToProduction('Error in releaseEscrow'';
-    logErrorToProduction('Error in disputeOrder''
+// escrowService.ts - placeholder
+export const placeholder = 'placeholder';

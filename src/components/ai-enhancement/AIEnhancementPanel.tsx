@@ -1,12 +1,10 @@
+import React from 'react';
 
-
-  Card,;''';
-  CardTitle,;''';
-} from '';
-
-import { Input } from '@/components/ui/input;'';
-
-import type { AIEnhancementOptions } from '@/hooks/useAIContentEnhancer;'';
-;''';
-              placeholder="E.g., 'Make it more conversational' or 'Focus on leadership skills'';
-              placeholder="E.g., 'Make it more conversational' or 'Focus on leadership skills''
+export default function AIEnhancementPanel() {
+  return (
+    <div>
+      <h1>AIEnhancementPanel</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-  CardContent,;''';
-  CardHeader,;''';
-} from '';
-
-import { IntegrationsSyncLog } from './IntegrationsSyncLog;'';
-  const [activeTab, setActiveTab] = useState('marketplace');'';
-;'''
+export default function IntegrationsHub() {
+  return (
+    <div>
+      <h1>IntegrationsHub</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

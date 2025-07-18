@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-  Select,;''';
-  SelectTrigger,;''';
-} from '';
-import type { QuoteStatus } from '@/types/quotes;'';
-;'''
+export default function RequestsHeader() {
+  return (
+    <div>
+      <h1>RequestsHeader</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

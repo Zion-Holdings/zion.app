@@ -1,4 +1,2 @@
-// Module for shippo;
-export const shippo = {;
-  // TODO: Implement module functionality;
-};
+// shippo.ts - placeholder
+export const placeholder = 'placeholder';

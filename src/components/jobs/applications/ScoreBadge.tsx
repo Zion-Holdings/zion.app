@@ -1,3 +1,10 @@
+import React from 'react';
 
-import type { JobApplication } from '@/types/jobs;'';
-;'''
+export default function ScoreBadge() {
+  return (
+    <div>
+      <h1>ScoreBadge</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

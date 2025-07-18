@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { FilePlus } from '@/components/ui/icons;'';
-import type { EmptyResumeProps } from './types;''
+export default function EmptyResumeState() {
+  return (
+    <div>
+      <h1>EmptyResumeState</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

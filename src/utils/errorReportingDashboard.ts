@@ -1,4 +1,2 @@
-// Utility functions for errorReportingDashboard;
-export const errorReportingDashboard = {;
-  // TODO: Implement utility functions;
-};
+// errorReportingDashboard.ts - placeholder
+export const placeholder = 'placeholder';

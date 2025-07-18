@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import { cva, type VariantProps } from 'class-variance-authority;'';
-import { cn } from '@/lib/utils;'';
-  'rounded-lg border bg-card text-card-foreground shadow-sm transition-all duration-200',;'''
+export default function card() {
+  return (
+    <div>
+      <h1>card</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

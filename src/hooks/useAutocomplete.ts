@@ -1,2 +1,2 @@
-
-        threshold: 0.3,;''
+// useAutocomplete.ts - placeholder
+export const placeholder = 'placeholder';

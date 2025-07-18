@@ -1,5 +1,2 @@
-// Hook for index;
-export const useIndex = () => {
-  // TODO: Implement hook logic;
-  return {};
-};
+// index.ts - placeholder
+export const placeholder = 'placeholder';

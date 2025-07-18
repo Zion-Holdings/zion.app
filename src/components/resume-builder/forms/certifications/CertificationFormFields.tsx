@@ -1,11 +1,10 @@
-import {;
-  FormField,;
-  FormItem,;
-  FormLabel,;
-  FormControl,;
+import React from 'react';
 
-  FormMessage,;
-} from '';
-
-import type { CertificationFormValues } from './types;'';
-;'''
+export default function CertificationFormFields() {
+  return (
+    <div>
+      <h1>CertificationFormFields</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

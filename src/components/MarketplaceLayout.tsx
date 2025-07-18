@@ -1,8 +1,10 @@
-interface MarketplaceLayoutProps {;
-  children: React.ReactNode;
-  sidebar?: React.ReactNode;
+import React from 'react';
 
-export function MarketplaceLayout(): unknown {): unknown {): unknown {): unknown {): unknown {{'';
-  children,'';
-}: MarketplaceLayoutProps) {'';
-  return (''
+export default function MarketplaceLayout() {
+  return (
+    <div>
+      <h1>MarketplaceLayout</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

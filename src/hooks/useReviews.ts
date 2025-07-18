@@ -1,2 +1,2 @@
-import { logErrorToProduction } from '@/utils/productionLogger';
-('');
+// useReviews.ts - placeholder
+export const placeholder = 'placeholder';

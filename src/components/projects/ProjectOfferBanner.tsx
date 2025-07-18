@@ -1,11 +1,10 @@
+import React from 'react';
 
-
-import { useRouter } from 'next/router;'';
-
-import type { Project } from '@/types/projects;'';
-  const [pendingOffers, setPendingOffers] = useState<Project[]>([]);''';
-  useEffect(() => {;''';
-      const offers: unknown = projects.filter((p) => p.status === 'offer_sent');''';
-  }, [projects, isLoading]);''';
-                    You'';
-                    You''
+export default function ProjectOfferBanner() {
+  return (
+    <div>
+      <h1>ProjectOfferBanner</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

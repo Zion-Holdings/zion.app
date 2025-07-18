@@ -1,15 +1,10 @@
+import React from 'react';
 
-
-import { useToast } from '@/hooks/use-toast;'';
-  const [name, setName] = useState('');;'';
-  const [email, setEmail] = useState('');;'';
-  const [role, setRole] = useState('');;'';
-  const [country, setCountry] = useState('');'';
-  const handleSubmit: unknown = async (_e: React.FormEvent) => {;''';
-    await new Promise((r) => setTimeout(r, 500));''';
-    setName('');;'';
-    setEmail('');;'';
-    setRole('');;'';
-    setCountry('');;'';
-    toast({ title: 'Registered!' });'';
-;'''
+export default function RegistrationForm() {
+  return (
+    <div>
+      <h1>RegistrationForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

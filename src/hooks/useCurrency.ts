@@ -1,5 +1,2 @@
-// Hook for useCurrency;
-export const useUseCurrency = () => {
-  // TODO: Implement hook logic;
-  return {};
-};
+// useCurrency.ts - placeholder
+export const placeholder = 'placeholder';

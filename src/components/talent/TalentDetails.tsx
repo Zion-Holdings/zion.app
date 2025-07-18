@@ -1,3 +1,10 @@
+import React from 'react';
 
-
-import { Button } from '@/components/ui/button;''
+export default function TalentDetails() {
+  return (
+    <div>
+      <h1>TalentDetails</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-  Card,;''';
-  CardHeader,;''';
-} from '';
-
-import { format } from 'date-fns;'';
-
-import { RaiseDisputeButton } from '@/components/disputes/RaiseDisputeButton;'';
-;'''
+export default function MilestoneCard() {
+  return (
+    <div>
+      <h1>MilestoneCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

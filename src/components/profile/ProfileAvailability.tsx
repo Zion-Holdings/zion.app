@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { Badge } from '@/components/ui/badge;'';
-;'''
+export default function ProfileAvailability() {
+  return (
+    <div>
+      <h1>ProfileAvailability</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

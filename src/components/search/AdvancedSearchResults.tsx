@@ -1,18 +1,10 @@
+import React from 'react';
 
-
-import { useRouter } from 'next/router;'';
-
-  Select,;''';
-  SelectTrigger,;''';
-} from '';
-
-  Sheet,;''';
-  SheetTitle,;''';
-} from '';
-
-import { logErrorToProduction, logInfo } from '@/utils/productionLogger;'';
-;''';
-          We couldn'';
-          We couldn'';
-      logErrorToProduction('Search failed'';
-      logErrorToProduction('Search failed''
+export default function AdvancedSearchResults() {
+  return (
+    <div>
+      <h1>AdvancedSearchResults</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

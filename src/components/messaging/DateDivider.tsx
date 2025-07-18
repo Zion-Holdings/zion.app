@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { format } from 'date-fns;'';
-;'''
+export default function DateDivider() {
+  return (
+    <div>
+      <h1>DateDivider</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

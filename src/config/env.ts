@@ -1,1 +1,2 @@
-// src/config/env.ts;
+// env.ts - placeholder
+export const placeholder = 'placeholder';

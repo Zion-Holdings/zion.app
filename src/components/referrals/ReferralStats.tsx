@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import type { ReferralStats as ReferralStatsType } from '@/types/referrals;'';
-;''';
-      description: "People you''
+export default function ReferralStats() {
+  return (
+    <div>
+      <h1>ReferralStats</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

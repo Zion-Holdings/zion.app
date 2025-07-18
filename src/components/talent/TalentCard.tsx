@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import { Card } from '@/components/ui/card;'';
-import { Button } from '@/components/ui/button;'';
-
-import type { TalentProfile } from '@/types/talent;''
+export default function TalentCard() {
+  return (
+    <div>
+      <h1>TalentCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,12 +1,10 @@
+import React from 'react';
 
-// src/components/ConnectWalletButton.tsx;
-;
-    address,;''';
-    provider,''';
-;''';
-  const validProvider: unknown =;''';
-    provider && typeof provider === 'object''';
-    validProvider,);''';
-''';
-    return (;''';
-      <div>;'''
+export default function ConnectWalletButton() {
+  return (
+    <div>
+      <h1>ConnectWalletButton</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

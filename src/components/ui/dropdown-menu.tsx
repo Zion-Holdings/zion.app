@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu;'';
-import { cn } from '@/lib/utils;'';
-  };''';
-    ref={ref};''';
-      'flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent data-[state=open]:bg-accent',;;'';
-      inset && 'pl-8',;'';
-      className,;''';
-  >;'''
+export default function dropdown-menu() {
+  return (
+    <div>
+      <h1>dropdown-menu</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

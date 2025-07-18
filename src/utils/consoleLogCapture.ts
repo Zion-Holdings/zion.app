@@ -1,4 +1,2 @@
-// Utility functions for consoleLogCapture;
-export const consoleLogCapture = {;
-  // TODO: Implement utility functions;
-};
+// consoleLogCapture.ts - placeholder
+export const placeholder = 'placeholder';

@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-  FormField,;''';
-  FormControl,;''';
-} from '';
-
-import type { FormValues } from './useHireRequestForm;'';
-;'''
+export default function ProjectDetailsField() {
+  return (
+    <div>
+      <h1>ProjectDetailsField</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

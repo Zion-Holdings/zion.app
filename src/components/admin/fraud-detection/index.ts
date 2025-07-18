@@ -1,9 +1,2 @@
-
-export * from '';
-export * from '';
-export * from '';
-export * from '';
-export * from '';
-export * from '';
-export * from './SeverityDisplay;'';
-'''''''
+// index.ts - placeholder
+export const placeholder = 'placeholder';

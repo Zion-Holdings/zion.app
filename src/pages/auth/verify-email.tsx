@@ -1,5 +1,10 @@
+import React from 'react';
 
-  const router = useRouter(); // Changed from navigate'';
-    const confirmVerification = async () => {'';
-        if (!supabase) throw new Error('Supabase client not initialized'';
-        // We need to ensure a session is active, which implies Supabase confirmed the email.''
+export default function verify-email() {
+  return (
+    <div>
+      <h1>verify-email</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

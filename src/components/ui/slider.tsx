@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-import * as SliderPrimitive from '@radix-ui/react-slider;'';
-import { cn } from '@/lib/utils;'';
-  React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>;''';
-    ref={ref};''';
-      'relative flex w-full touch-none select-none items-center',;'';
-      className,;''';
-    {...props};'''
+export default function slider() {
+  return (
+    <div>
+      <h1>slider</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

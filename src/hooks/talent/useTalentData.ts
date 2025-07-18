@@ -1,5 +1,2 @@
-// Hook for useTalentData;
-export const useUseTalentData = () => {
-  // TODO: Implement hook logic;
-  return {};
-};
+// useTalentData.ts - placeholder
+export const placeholder = 'placeholder';

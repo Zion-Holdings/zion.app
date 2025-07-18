@@ -1,4 +1,2 @@
-// Service for signupCheck;
-export const signupCheckService = {;
-  // TODO: Implement service methods;
-};
+// signupCheck.ts - placeholder
+export const placeholder = 'placeholder';

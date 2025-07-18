@@ -1,4 +1,2 @@
-// Module for utils;
-export const utils = {;
-  // TODO: Implement module functionality;
-};
+// utils.ts - placeholder
+export const placeholder = 'placeholder';

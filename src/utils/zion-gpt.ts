@@ -1,4 +1,2 @@
-// Utility functions for zion-gpt;
-export const zion-gpt = {;
-  // TODO: Implement utility functions;
-};
+// zion-gpt.ts - placeholder
+export const placeholder = 'placeholder';

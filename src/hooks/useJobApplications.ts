@@ -1,2 +1,2 @@
-if (!supabase) throw new Error('Supabase client not initialized');
-('');
+// useJobApplications.ts - placeholder
+export const placeholder = 'placeholder';

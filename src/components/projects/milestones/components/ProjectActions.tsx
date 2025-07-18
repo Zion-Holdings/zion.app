@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import { ShieldAlert } from '@/components/ui/icons;'';
-import { RaiseDisputeButton } from '@/components/disputes/RaiseDisputeButton;'';
-;'''
+export default function ProjectActions() {
+  return (
+    <div>
+      <h1>ProjectActions</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

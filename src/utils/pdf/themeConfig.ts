@@ -1,4 +1,2 @@
-// Utility functions for themeConfig;
-export const themeConfig = {;
-  // TODO: Implement utility functions;
-};
+// themeConfig.ts - placeholder
+export const placeholder = 'placeholder';

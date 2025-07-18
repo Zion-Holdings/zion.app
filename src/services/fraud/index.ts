@@ -1,4 +1,2 @@
-// Service for index;
-export const indexService = {;
-  // TODO: Implement service methods;
-};
+// index.ts - placeholder
+export const placeholder = 'placeholder';

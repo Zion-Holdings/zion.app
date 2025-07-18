@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import type { RootState } from '@/store;'';
-  const items: unknown = useSelector((s: RootState) => s.cart.items);'''
+export default function MiniCartPreview() {
+  return (
+    <div>
+      <h1>MiniCartPreview</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,4 +1,2 @@
-// Utility functions for globalErrorHandler;
-export const globalErrorHandler = {;
-  // TODO: Implement utility functions;
-};
+// globalErrorHandler.ts - placeholder
+export const placeholder = 'placeholder';

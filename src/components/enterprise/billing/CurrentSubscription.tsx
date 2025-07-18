@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-  CardContent,;''';
-  CardHeader,;''';
-} from '';
-
-import { Badge } from '@/components/ui/badge;''';
-  // Mock subscription data;'''
+export default function CurrentSubscription() {
+  return (
+    <div>
+      <h1>CurrentSubscription</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

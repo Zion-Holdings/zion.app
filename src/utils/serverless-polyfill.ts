@@ -1,4 +1,2 @@
-// Utility functions for serverless-polyfill;
-export const serverless-polyfill = {;
-  // TODO: Implement utility functions;
-};
+// serverless-polyfill.ts - placeholder
+export const placeholder = 'placeholder';

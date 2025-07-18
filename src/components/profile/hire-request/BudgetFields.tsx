@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-  FormField,;''';
-  FormControl,;''';
-} from '';
-
-import type { FormValues } from './useHireRequestForm;'';
-export function BudgetFields(): unknown {): unknown {): unknown {): unknown {): unknown {{ form, _talent }: BudgetFieldsProps) {;''';
-      <FormField;'''
+export default function BudgetFields() {
+  return (
+    <div>
+      <h1>BudgetFields</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

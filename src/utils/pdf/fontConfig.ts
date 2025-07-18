@@ -1,4 +1,2 @@
-// Utility functions for fontConfig;
-export const fontConfig = {;
-  // TODO: Implement utility functions;
-};
+// fontConfig.ts - placeholder
+export const placeholder = 'placeholder';

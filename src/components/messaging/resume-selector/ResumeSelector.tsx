@@ -1,15 +1,10 @@
+import React from 'react';
 
-
-import { Label } from '@/components/ui/label;'';
-
-import { logErrorToProduction } from '@/utils/productionLogger;'';
-export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {): unknown {{ onResumeSelected }: ResumeSelectorProps) {;''';
-    'recent' | 'select' | 'upload;''';
-  >('recent');'';
-
-    const loadResumes: unknown = async () => {;''';
-        await fetchResume();''';
-        logErrorToProduction('Error loading resumes:'';
-        logErrorToProduction('Error loading resumes:'';
-      logErrorToProduction('Error downloading PDF:'';
-      logErrorToProduction('Error downloading PDF:''
+export default function ResumeSelector() {
+  return (
+    <div>
+      <h1>ResumeSelector</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

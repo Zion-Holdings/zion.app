@@ -1,13 +1,10 @@
+import React from 'react';
 
-
-  Lock,;''';
-  ThumbsUp,;''';
-} from '';
-
-import Link from 'next/link;'';
-import {;''';
-  CardFooter,;''';
-} from '';
-
-import { logInfo } from '@/utils/productionLogger;'';
-  post: ForumPost;'''
+export default function PostCard() {
+  return (
+    <div>
+      <h1>PostCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

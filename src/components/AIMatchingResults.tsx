@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-  onSelectMatch,;''';
-  isLoading = false,;''';
-  projectDescription = '',;''';
-  serviceType: _serviceType = '',;''';
-}: AIMatchingResultsProps) {;''';
-  const [activeTab, setActiveTab] = useState('all')''';
-  // Group matches by category;'''
+export default function AIMatchingResults() {
+  return (
+    <div>
+      <h1>AIMatchingResults</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

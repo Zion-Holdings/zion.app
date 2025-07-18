@@ -1,2 +1,2 @@
-export type FraudSeverity = 'safe' | 'suspicious' | '';
-('');
+// fraud.ts - placeholder
+export const placeholder = 'placeholder';

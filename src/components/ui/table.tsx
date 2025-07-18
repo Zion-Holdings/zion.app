@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import * as React from 'react;'';
-import { cn } from '@/lib/utils;'';
-  React.HTMLAttributes<HTMLTableElement>;'''
+export default function table() {
+  return (
+    <div>
+      <h1>table</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

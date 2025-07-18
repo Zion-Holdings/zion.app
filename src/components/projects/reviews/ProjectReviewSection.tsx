@@ -1,11 +1,10 @@
+import React from 'react';
 
-
-import { Star } from '@/components/ui/icons;'';
-import { useState } from 'react;'';
-
-  Card,;''';
-  CardHeader,;''';
-} from '';
-
-import { useAuth } from '@/hooks/useAuth;'';
-;'''
+export default function ProjectReviewSection() {
+  return (
+    <div>
+      <h1>ProjectReviewSection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

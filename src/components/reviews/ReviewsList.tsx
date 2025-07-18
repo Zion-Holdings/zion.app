@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { ReviewCard } from './ReviewCard;'';
-;'''
+export default function ReviewsList() {
+  return (
+    <div>
+      <h1>ReviewsList</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

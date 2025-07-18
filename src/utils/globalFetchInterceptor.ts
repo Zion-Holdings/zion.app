@@ -1,2 +1,2 @@
-
-    'github.com/api', // GitHub API calls;''
+// globalFetchInterceptor.ts - placeholder
+export const placeholder = 'placeholder';

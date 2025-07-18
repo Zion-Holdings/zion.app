@@ -1,22 +1,10 @@
+import React from 'react';
 
-
-  onSend: (message: string) => void;''';
-  disabled?: boolean''';
-export function ChatInput(): unknown {): unknown {): unknown {): unknown {): unknown {{ onSend, disabled = false }: ChatInputProps) {;''';
-  const [message, setMessage] = useState('')''';
-;''';
-  const handleSubmit: unknown = (_e: FormEvent<HTMLFormElement>) => {''';
-    if (message.trim() && !disabled) {;''';
-      onSend(message);''';
-      setMessage('');''';
-    }''';
-;''';
-  const handleKeyPress: unknown = (_e: KeyboardEvent<HTMLTextAreaElement>) => {;''';
-    if (e.key === 'Enter' && !e.shiftKey) {''';
-      if (message.trim() && !disabled) {;''';
-        onSend(message);''';
-        setMessage('')''';
-      };''';
-    }''';
-;''';
-  return (;'''
+export default function ChatInput() {
+  return (
+    <div>
+      <h1>ChatInput</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

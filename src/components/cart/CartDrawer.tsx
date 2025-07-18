@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import { ShoppingCart } from 'lucide-react;'';
-
-import { LoginModal } from '@/components/auth/LoginModal;''';
-  const items: unknown = useSelector((s: RootState) => s.cart.items);'''
+export default function CartDrawer() {
+  return (
+    <div>
+      <h1>CartDrawer</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

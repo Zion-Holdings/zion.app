@@ -1,14 +1,2 @@
-export type PasswordStrength = 0 | 1 | 2 | 3 | 4;
-export function calculatePasswordStrength(): unknown {): unknown {): unknown {): unknown {): unknown {password: string): PasswordStrength {;
-  let score = 0;
-  if (password.length >= 8) score++;
-  if (/[A-Z]/.test(password)) score++;
-  if (/[a-z]/.test(password)) score++;
-  if (/[0-9]/.test(password)) score++;
-  if (/[^A-Za-z0-9]/.test(password)) score++;
-  score = Math.min(score, 4);
-  return score as PasswordStrength;
-};
-export function getStrengthLabel(): unknown {): unknown {): unknown {): unknown {): unknown {score: PasswordStrength): string {;
-  switch (score) {;
-    case 0:;
+// passwordStrength.ts - placeholder
+export const placeholder = 'placeholder';

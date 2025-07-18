@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-import type { AvailabilityFilterProps } from '@/types/filters;'';
-  { id: 'full_time', label: 'Full-time' },;;'';
-  { id: 'part_time', label: 'Part-time' },;;'';
-  { id: 'project', label: 'Project-based' },;'';
-
-  expanded,;''';
-}: AvailabilityFilterProps) {;'''
+export default function AvailabilityFilter() {
+  return (
+    <div>
+      <h1>AvailabilityFilter</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

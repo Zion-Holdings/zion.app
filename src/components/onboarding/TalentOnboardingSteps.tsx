@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-import { useOnboardingStatus } from '@/hooks/useOnboardingStatus;'';
-
-import type { OnboardingStep } from './OnboardingTracker;'';
-export function TalentOnboardingSteps(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''';
-  const steps: unknown OnboardingStep[] = [;''';
-      id: 'profile',;;'';
-      label: 'Complete your profile',;;''
+export default function TalentOnboardingSteps() {
+  return (
+    <div>
+      <h1>TalentOnboardingSteps</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

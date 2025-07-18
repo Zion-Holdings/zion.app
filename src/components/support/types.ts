@@ -1,2 +1,2 @@
-
-import type { ReactNode } from 'react;''
+// types.ts - placeholder
+export const placeholder = 'placeholder';

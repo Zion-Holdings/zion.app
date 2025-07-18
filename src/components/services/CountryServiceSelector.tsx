@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import { ServiceDetails } from './ServiceDetails;'';
-  selectedCountry?: CountryPricing | null;''';
-export function CountryServiceSelector(): unknown {): unknown {): unknown {): unknown {): unknown {{;'''
+export default function CountryServiceSelector() {
+  return (
+    <div>
+      <h1>CountryServiceSelector</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

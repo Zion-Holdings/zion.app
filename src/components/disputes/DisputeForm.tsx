@@ -1,14 +1,10 @@
+import React from 'react';
 
-
-import { logErrorToProduction } from '@/utils/productionLogger;'';
-  FormControl,;''';
-  FormLabel,;''';
-} from '';
-
-  Select,;''';
-  SelectTrigger,;''';
-} from '';
-
-import { toast } from 'sonner;'';
-      logErrorToProduction('Error submitting dispute:'';
-      logErrorToProduction('Error submitting dispute:''
+export default function DisputeForm() {
+  return (
+    <div>
+      <h1>DisputeForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

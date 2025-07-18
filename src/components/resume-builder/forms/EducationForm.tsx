@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import type { EducationFormProps } from './education/types;'';
-};''';
-}''';
-}''';
+export default function EducationForm() {
+  return (
+    <div>
+      <h1>EducationForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

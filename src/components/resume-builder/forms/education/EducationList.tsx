@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { EducationItem } from './EducationItem;'';
-;'''
+export default function EducationList() {
+  return (
+    <div>
+      <h1>EducationList</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

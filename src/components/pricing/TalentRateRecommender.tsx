@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-  getTalentRateSuggestion,;''';
-} from '';
-  PricingSuggestion,;''';
-} from '';
-
-import { useAuth } from '@/hooks/useAuth;'';
-;'''
+export default function TalentRateRecommender() {
+  return (
+    <div>
+      <h1>TalentRateRecommender</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

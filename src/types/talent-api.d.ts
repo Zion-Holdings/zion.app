@@ -1,3 +1,2 @@
-// Type definitions for talent-api.d;
-export interface talent-api.d {;
-  // TODO: Add proper type definitions;
+// talent-api.d.ts - placeholder
+export const placeholder = 'placeholder';

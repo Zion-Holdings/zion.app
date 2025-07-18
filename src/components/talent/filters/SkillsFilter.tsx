@@ -1,22 +1,10 @@
+import React from 'react';
 
-
-import type { SkillsFilterProps } from '@/types/filters;'';
-  'Machine Learning',;;'';
-  'Deep Learning',;;'';
-  'Python',;;'';
-  'TensorFlow',;;'';
-  'PyTorch',;;'';
-  'Computer Vision',;;'';
-  'NLP',;;'';
-  'Data Science',;;'';
-  'AWS',;;'';
-  'Docker',;;'';
-  'Kubernetes',;;'';
-  'React',;;'';
-  'Node.js',;;'';
-  'TypeScript',;;'';
-  'DevOps',;;'';
-  'Security',;'';
-
-  expanded,;''';
-}: SkillsFilterProps) {;'''
+export default function SkillsFilter() {
+  return (
+    <div>
+      <h1>SkillsFilter</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

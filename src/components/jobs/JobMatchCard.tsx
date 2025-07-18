@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;'';
-import { formatDistanceToNow } from 'date-fns;'';
-;'''
+export default function JobMatchCard() {
+  return (
+    <div>
+      <h1>JobMatchCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

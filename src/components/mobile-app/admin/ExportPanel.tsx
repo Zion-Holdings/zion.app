@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-import { Button } from '@/components/ui/button;'';
-
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger;'';
-;''';
-            .map((value) => `"${String(value).replace(/"/g, '""'';
-            .map((value) => `"${String(value).replace(/"/g, ''';
-      logErrorToProduction('Export failed:'';
-      logErrorToProduction('Export failed:''
+export default function ExportPanel() {
+  return (
+    <div>
+      <h1>ExportPanel</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

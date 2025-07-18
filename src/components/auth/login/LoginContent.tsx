@@ -1,3 +1,10 @@
+import React from 'react';
 
-import { LoginCard } from './LoginCard;'';
-export function LoginContent(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'''
+export default function LoginContent() {
+  return (
+    <div>
+      <h1>LoginContent</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

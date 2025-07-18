@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-import { z } from 'zod;'';
-
-  FormControl,;''';
-  FormLabel,;''';
-} from '';
-
-import { Switch } from '@/components/ui/switch;''
+export default function TemplateSaveForm() {
+  return (
+    <div>
+      <h1>TemplateSaveForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

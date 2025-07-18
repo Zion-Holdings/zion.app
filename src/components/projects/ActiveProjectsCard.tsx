@@ -1,15 +1,10 @@
+import React from 'react';
 
-
-import Link from 'next/link;'';
-
-  CardContent,;''';
-  CardHeader,;''';
-} from '';
-
-import type { Project } from '@/types/projects;'';
-  const [activeProjects, setActiveProjects] = useState<Project[]>([]);''';
-    if (projects && !isLoading) {;''';
-        .filter((p) => ['offer_accepted', 'in_progress'].includes(p.status));'';
-
-;''';
-      <Card>;'''
+export default function ActiveProjectsCard() {
+  return (
+    <div>
+      <h1>ActiveProjectsCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

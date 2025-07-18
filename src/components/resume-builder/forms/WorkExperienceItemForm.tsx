@@ -1,15 +1,10 @@
+import React from 'react';
 
-
-  FormControl,;''';
-  FormLabel,;''';
-} from '';
-
-  PopoverContent,;''';
-} from '';
-
-import { format } from 'date-fns;'';
-import type { ControllerRenderProps } from 'react-hook-form;'';
-
-import { AIEnhancementDialog } from '@/components/ai-enhancement/AIEnhancementDialog;'';
-    form.setValue('description'';
-    form.setValue('description''
+export default function WorkExperienceItemForm() {
+  return (
+    <div>
+      <h1>WorkExperienceItemForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

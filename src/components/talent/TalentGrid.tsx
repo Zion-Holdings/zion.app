@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import { logInfo } from '@/utils/productionLogger;'';
-      logInfo('Request to hire:'';
-      logInfo('Request to hire:''
+export default function TalentGrid() {
+  return (
+    <div>
+      <h1>TalentGrid</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

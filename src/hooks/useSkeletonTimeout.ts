@@ -1,5 +1,2 @@
-// Hook for useSkeletonTimeout;
-export const useUseSkeletonTimeout = () => {
-  // TODO: Implement hook logic;
-  return {};
-};
+// useSkeletonTimeout.ts - placeholder
+export const placeholder = 'placeholder';

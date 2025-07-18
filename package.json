@@ -53,7 +53,11 @@
     "automation:submit:task": "curl -X POST http://localhost:3005/api/tasks/submit -H 'Content-Type: application/json' -d",
     "automation:trigger:improvement": "curl -X POST http://localhost:3001/improve -H 'Content-Type: application/json' -d '{\"target\":\"general\",\"priority\":\"normal\"}'",
     "automation:trigger:ai": "curl -X POST http://localhost:3002/improve -H 'Content-Type: application/json' -d '{\"target\":\"general\",\"priority\":\"normal\"}'",
-    "automation:distribute:workload": "curl -X POST http://localhost:3003/api/tasks/submit -H 'Content-Type: application/json' -d '{\"task\":\"Fix all issues\",\"priority\":\"high\"}'"
+    "automation:distribute:workload": "curl -X POST http://localhost:3003/api/tasks/submit -H 'Content-Type: application/json' -d '{\"task\":\"Fix all issues\",\"priority\":\"high\"}'",
+    "dev:node18": "NODE_OPTIONS=\"--no-deprecation --max-old-space-size=4096\" next dev",
+    "dev:compatible": "NODE_OPTIONS=\"--no-deprecation --max-old-space-size=4096\" next dev",
+    "build:compatible": "NODE_OPTIONS=\"--no-deprecation --max-old-space-size=4096\" next build",
+    "start:compatible": "NODE_OPTIONS=\"--no-deprecation --max-old-space-size=4096\" next start"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

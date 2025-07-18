@@ -1,11 +1,10 @@
-import {;
-  Card,;
-  CardContent,;
-  CardDescription,;
-  CardHeader,;
+import React from 'react';
 
-  CardTitle,;
-} from '';
-
-import { BadgeDollarSign, Badge } from '@/components/ui/icons;'';
-;'''
+export default function RewardsCard() {
+  return (
+    <div>
+      <h1>RewardsCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,4 +1,2 @@
-// Utility functions for stream-polyfill;
-export const stream-polyfill = {;
-  // TODO: Implement utility functions;
-};
+// stream-polyfill.ts - placeholder
+export const placeholder = 'placeholder';

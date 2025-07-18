@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-;''';
-interface ErrorContextType {;''';
-    return "You don''
+export default function GlobalErrorHandler() {
+  return (
+    <div>
+      <h1>GlobalErrorHandler</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

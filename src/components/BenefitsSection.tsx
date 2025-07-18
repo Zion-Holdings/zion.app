@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-  style?: React.CSSProperties;''';
-}''';
-const getBenefits: unknown = (t: (key: string) => string) => [;''';
-  {;''';
-    title: t('benefits.ai_matchmaking'),;''';
-    description: t('benefits.ai_matchmaking_desc'),;'''
+export default function BenefitsSection() {
+  return (
+    <div>
+      <h1>BenefitsSection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

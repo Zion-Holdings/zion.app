@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import { logDebug } from '@/utils/productionLogger;'';
-;''';
-    logDebug('Viewing contract:'';
-    logDebug('Viewing contract:''
+export default function ContractBuilderContent() {
+  return (
+    <div>
+      <h1>ContractBuilderContent</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

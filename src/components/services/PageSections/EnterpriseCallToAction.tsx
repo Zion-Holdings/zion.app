@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { Button } from '@/components/ui/button;'';
-export function EnterpriseCallToAction(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'''
+export default function EnterpriseCallToAction() {
+  return (
+    <div>
+      <h1>EnterpriseCallToAction</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

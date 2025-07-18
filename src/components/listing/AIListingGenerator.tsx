@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-import { Sparkles } from 'lucide-react;'';
-
-import { logErrorToProduction } from '@/utils/productionLogger;'';
-;''';
-      logErrorToProduction('Error generating content:'';
-      logErrorToProduction('Error generating content:''
+export default function AIListingGenerator() {
+  return (
+    <div>
+      <h1>AIListingGenerator</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

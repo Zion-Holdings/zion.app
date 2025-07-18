@@ -1,4 +1,2 @@
-// Module for TeamsService;
-export const TeamsService = {;
-  // TODO: Implement module functionality;
-};
+// TeamsService.ts - placeholder
+export const placeholder = 'placeholder';

@@ -1,3 +1,10 @@
+import React from 'react';
 
-import { Card, CardContent } from '@/components/ui/card;'';
-;'''
+export default function ErrorState() {
+  return (
+    <div>
+      <h1>ErrorState</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

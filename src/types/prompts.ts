@@ -1,3 +1,2 @@
-// Type definitions for prompts;
-export interface prompts {;
-  // TODO: Add proper type definitions;
+// prompts.ts - placeholder
+export const placeholder = 'placeholder';

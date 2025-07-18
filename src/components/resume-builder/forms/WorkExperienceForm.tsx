@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-import { format } from 'date-fns;'';
-  FormControl,;''';
-  FormLabel,;''';
-} from '';
-
-import type { ControllerRenderProps } from 'react-hook-form;'';
-
-import { AIEnhancementButton } from '@/components/resume-builder/forms/AIEnhancementButton;''
+export default function WorkExperienceForm() {
+  return (
+    <div>
+      <h1>WorkExperienceForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

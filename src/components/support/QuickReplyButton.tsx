@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { cn } from '@/lib/utils;'';
-;'''
+export default function QuickReplyButton() {
+  return (
+    <div>
+      <h1>QuickReplyButton</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

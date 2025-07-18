@@ -1,3 +1,2 @@
-
-export * from './VideoCallRoom;'';
-'''''''
+// index.ts - placeholder
+export const placeholder = 'placeholder';

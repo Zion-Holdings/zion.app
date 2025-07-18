@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import { Form } from '@/components/ui/form;'';
-
-import { BudgetFields } from './BudgetFields;''
+export default function HireRequestForm() {
+  return (
+    <div>
+      <h1>HireRequestForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

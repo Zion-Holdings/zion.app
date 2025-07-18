@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import { Loader2 } from '@/components/ui/icons;'';
-import { cn } from '@/lib/utils;'';
-export interface SpinnerProps extends React.SVGProps<SVGSVGElement> {;'''
+export default function spinner() {
+  return (
+    <div>
+      <h1>spinner</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

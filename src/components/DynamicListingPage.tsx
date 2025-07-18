@@ -1,14 +1,10 @@
+import React from 'react';
 
-
-  Select,;''';
-  SelectValue,''';
-  SelectContent,;''';
-  SelectItem,;''';
-} from '';
-
-;''';
-interface PriceRange {;''';
-    logErrorToProduction('Listing filter error:'';
-    logErrorToProduction('Listing filter error:'';
-                        logInfo('Rating selected:'';
-                        logInfo('Rating selected:''
+export default function DynamicListingPage() {
+  return (
+    <div>
+      <h1>DynamicListingPage</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

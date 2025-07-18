@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import type { ExperienceFilterProps } from '@/types/filters;'';
-
-  const handleChange: unknown = (_values: number[]) => {;''';
-;'''
+export default function ExperienceFilter() {
+  return (
+    <div>
+      <h1>ExperienceFilter</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

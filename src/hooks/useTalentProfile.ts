@@ -1,5 +1,2 @@
-// Hook for useTalentProfile;
-export const useUseTalentProfile = () => {
-  // TODO: Implement hook logic;
-  return {};
-};
+// useTalentProfile.ts - placeholder
+export const placeholder = 'placeholder';

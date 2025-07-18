@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { Star } from '@/components/ui/icons;'';
-;'''
+export default function ReviewStats() {
+  return (
+    <div>
+      <h1>ReviewStats</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

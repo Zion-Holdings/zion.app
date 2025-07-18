@@ -1,4 +1,2 @@
-// Utility functions for network;
-export const network = {;
-  // TODO: Implement utility functions;
-};
+// network.ts - placeholder
+export const placeholder = 'placeholder';

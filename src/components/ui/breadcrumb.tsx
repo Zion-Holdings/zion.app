@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import { Slot } from '@radix-ui/react-slot;'';
-import { cn } from '@/lib/utils;'';
-const Breadcrumb: unknown = React.forwardRef<;''';
-  React.ComponentPropsWithoutRef<'nav'> & {;'';
-    separator?: React.ReactNode;'''
+export default function breadcrumb() {
+  return (
+    <div>
+      <h1>breadcrumb</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

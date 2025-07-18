@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-import { Copy, Send } from '@/components/ui/icons;'';
-
-import type { Prompt } from '@/types/prompts;'';
-;''';
-          {copied ? 'Copied'';
-          {copied ? 'Copied''
+export default function PromptCard() {
+  return (
+    <div>
+      <h1>PromptCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

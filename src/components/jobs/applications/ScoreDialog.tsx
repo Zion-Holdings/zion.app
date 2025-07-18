@@ -1,10 +1,10 @@
-import {;
-  Dialog,;
-  DialogContent,;
-  DialogHeader,;
+import React from 'react';
 
-  DialogTitle,;
-} from '';
-
-import { ApplicationScoreCard } from '../ApplicationScoreCard;'';
-;'''
+export default function ScoreDialog() {
+  return (
+    <div>
+      <h1>ScoreDialog</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

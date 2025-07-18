@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-import { Textarea } from '@/components/ui/textarea;'';
-  DialogContent,;''';
-  DialogHeader,;''';
-} from '@/components/ui/dialog;'';
-import { isProdDomain } from '@/utils/getStripe;'';
-;'''
+export default function GuestCheckoutModal() {
+  return (
+    <div>
+      <h1>GuestCheckoutModal</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

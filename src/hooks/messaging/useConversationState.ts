@@ -1,5 +1,2 @@
-// Hook for useConversationState;
-export const useUseConversationState = () => {
-  // TODO: Implement hook logic;
-  return {};
-};
+// useConversationState.ts - placeholder
+export const placeholder = 'placeholder';

@@ -1,12 +1,10 @@
+import React from 'react';
 
-
-  MessageSquare,;''';
-  Download,;''';
-} from '';
-
-  Card,;''';
-  CardHeader,;''';
-} from '@/components/ui/card;'';
-
-import { ApplicationProgress } from './ApplicationProgress;'';
-;'''
+export default function ApplicationCard() {
+  return (
+    <div>
+      <h1>ApplicationCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

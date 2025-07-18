@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import { PaperclipIcon } from '@/components/ui/icons;'';
-
-import type { Message } from '@/types/messaging;'';
-;'''
+export default function MessageBubble() {
+  return (
+    <div>
+      <h1>MessageBubble</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

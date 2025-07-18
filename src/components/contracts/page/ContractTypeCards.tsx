@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-  CardContent,;''';
-  CardHeader,;''';
-} from '@/components/ui/card;'';
-;'''
+export default function ContractTypeCards() {
+  return (
+    <div>
+      <h1>ContractTypeCards</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

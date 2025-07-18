@@ -1,21 +1,10 @@
+import React from 'react';
 
-
-import { cn } from '@/lib/utils;'';
-
-  className,;''';
-}: SidebarMenuProps) {;''';
-    <ul className={cn('space-y-1', className)} {...props}>;'';
-      {children};''';
-};''';
-}''';
-}''';
-  className,'';
-  children,'';
-}: SidebarMenuProps) {'';
-  return ('';
-    <ul className={cn('space-y-1', className)} {...props}>'';
-      {children}'';
-    </ul>'';
-}'';
-}'';
-}'''
+export default function SidebarMenu() {
+  return (
+    <div>
+      <h1>SidebarMenu</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

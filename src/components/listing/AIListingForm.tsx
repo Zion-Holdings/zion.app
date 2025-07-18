@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { Sparkles } from 'lucide-react;'';
-;'''
+export default function AIListingForm() {
+  return (
+    <div>
+      <h1>AIListingForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

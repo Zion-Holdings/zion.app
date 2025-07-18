@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { ChevronLeft, ChevronRight } from '@/components/ui/icons;'';
-import { Button } from '@/components/ui/button;''
+export default function AppScreenshots() {
+  return (
+    <div>
+      <h1>AppScreenshots</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

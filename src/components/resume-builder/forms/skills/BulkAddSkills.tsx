@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import { Button } from '@/components/ui/button;'';
-
-import { Textarea } from '@/components/ui/textarea;''
+export default function BulkAddSkills() {
+  return (
+    <div>
+      <h1>BulkAddSkills</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

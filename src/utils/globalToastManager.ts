@@ -1,4 +1,2 @@
-// Utility functions for globalToastManager;
-export const globalToastManager = {;
-  // TODO: Implement utility functions;
-};
+// globalToastManager.ts - placeholder
+export const placeholder = 'placeholder';

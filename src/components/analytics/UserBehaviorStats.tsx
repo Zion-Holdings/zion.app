@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-import { logErrorToProduction } from '@/utils/productionLogger;'';
-type TimeRange = '7d' | '30d' | '90d' | '365d;'';
-interface BehaviorDataItem {;''';
-  [key: string]: unknown; // Avoid 'any', use unknown or a specific type;'';
-  const [timeRange, setTimeRange] = useState<TimeRange>('7d');''';
-        logErrorToProduction('Error fetching behavior data:'';
-        logErrorToProduction('Error fetching behavior data:''
+export default function UserBehaviorStats() {
+  return (
+    <div>
+      <h1>UserBehaviorStats</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,11 +1,10 @@
+import React from 'react';
 
-
-  MilestoneStatus,;''';
-} from '';
-
-import { logErrorToProduction } from '@/utils/productionLogger;'';
-;''';
-      logErrorToProduction('Error approving milestone:'';
-      logErrorToProduction('Error rejecting milestone:'';
-      logErrorToProduction('Error approving milestone:'';
-      logErrorToProduction('Error rejecting milestone:''
+export default function MilestoneManager() {
+  return (
+    <div>
+      <h1>MilestoneManager</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

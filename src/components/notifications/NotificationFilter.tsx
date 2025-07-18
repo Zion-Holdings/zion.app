@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs;'';
-  | 'all;''';
-  | 'unread;''';
-  | 'onboarding;''';
-  | 'messages;''';
-  | 'system;''';
-  | 'orders;'';
-;'''
+export default function NotificationFilter() {
+  return (
+    <div>
+      <h1>NotificationFilter</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

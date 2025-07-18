@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-  TableBody,;''';
-  TableCell,''';
-  TableHeader,;''';
-  TableRow,;''';
-} from './ui/table''';
-export function ComparisonSection(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''';
-  return (;'''
+export default function ComparisonSection() {
+  return (
+    <div>
+      <h1>ComparisonSection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,11 +1,10 @@
+import React from 'react';
 
-
-import { Star } from '@/components/ui/icons;'';
-
-  FormControl,;''';
-  FormLabel,;''';
-} from '';
-
-import type { Review } from '@/types/reviews;'';
-  would_work_again?: boolean;''';
-;'''
+export default function ReviewForm() {
+  return (
+    <div>
+      <h1>ReviewForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

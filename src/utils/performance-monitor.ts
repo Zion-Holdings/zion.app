@@ -1,4 +1,2 @@
-// Utility functions for performance-monitor;
-export const performance-monitor = {;
-  // TODO: Implement utility functions;
-};
+// performance-monitor.ts - placeholder
+export const placeholder = 'placeholder';

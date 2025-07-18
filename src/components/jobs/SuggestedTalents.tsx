@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger;'';
-  jobId: string;''';
-;''';
-    logInfo('View talent profile:'';
-    logInfo('Invite talent:'';
-    logInfo('View talent profile:'';
-    logInfo('Invite talent:''
+export default function SuggestedTalents() {
+  return (
+    <div>
+      <h1>SuggestedTalents</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

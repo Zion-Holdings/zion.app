@@ -1,4 +1,2 @@
-// Utility functions for accessibility;
-export const accessibility = {;
-  // TODO: Implement utility functions;
-};
+// accessibility.ts - placeholder
+export const placeholder = 'placeholder';

@@ -1,3 +1,10 @@
+import React from 'react';
 
-
-import { BadgeCheck } from '@/components/ui/icons;''
+export default function AchievementBadges() {
+  return (
+    <div>
+      <h1>AchievementBadges</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

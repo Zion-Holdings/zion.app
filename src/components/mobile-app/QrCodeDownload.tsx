@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-import { QrCode } from '@/components/ui/icons;'';
-import { AppStoreButtons } from './AppStoreButtons;'';
-;''';
-  const appStoreUrl: unknown = '# // Replace with actual App Store URL;;'';
-  const googlePlayUrl: unknown = '# // Replace with actual Google Play URL;'';
-;'''
+export default function QrCodeDownload() {
+  return (
+    <div>
+      <h1>QrCodeDownload</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

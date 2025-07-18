@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger;'';
-// Props for the middleware component;''';
-          logErrorToProduction('Error analyzing message:'';
-        logErrorToProduction('Error in fraud detection:'';
-          logErrorToProduction('Error analyzing message:'';
-        logErrorToProduction('Error in fraud detection:''
+export default function FraudDetectionMiddleware() {
+  return (
+    <div>
+      <h1>FraudDetectionMiddleware</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

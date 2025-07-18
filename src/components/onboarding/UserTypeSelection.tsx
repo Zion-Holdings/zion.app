@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import { Star, User } from '@/components/ui/icons;'';
-;''';
-  id: 'serviceProvider' | 'talent' | 'client,;;'';
-                  : '';
-                  : ''
+export default function UserTypeSelection() {
+  return (
+    <div>
+      <h1>UserTypeSelection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

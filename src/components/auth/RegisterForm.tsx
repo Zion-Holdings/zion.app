@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-  FormField,;''';
-  FormControl,;''';
-} from '@/components/ui/form;'';
-const schema: unknown = z;''';
-    email: z.string().email('Please enter a valid email'),;;''
+export default function RegisterForm() {
+  return (
+    <div>
+      <h1>RegisterForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

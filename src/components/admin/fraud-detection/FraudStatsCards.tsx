@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import {;''';
-  CardTitle,;''';
-} from '@/components/ui/card;'';
-import type { FraudStats } from '@/types/fraud;'';
-;'''
+export default function FraudStatsCards() {
+  return (
+    <div>
+      <h1>FraudStatsCards</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

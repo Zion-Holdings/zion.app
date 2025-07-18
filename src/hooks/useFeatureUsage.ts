@@ -1,5 +1,2 @@
-// Hook for useFeatureUsage;
-export const useUseFeatureUsage = () => {
-  // TODO: Implement hook logic;
-  return {};
-};
+// useFeatureUsage.ts - placeholder
+export const placeholder = 'placeholder';

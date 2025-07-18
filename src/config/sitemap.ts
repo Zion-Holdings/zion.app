@@ -1,4 +1,2 @@
-// Module for sitemap;
-export const sitemap = {;
-  // TODO: Implement module functionality;
-};
+// sitemap.ts - placeholder
+export const placeholder = 'placeholder';

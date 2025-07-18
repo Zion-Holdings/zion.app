@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-import { Search } from '@/components/ui/icons;'';
-
-  PaginationContent,;''';
-  PaginationNext,;''';
-} from '';
-
-import type { CountryPricing } from '@/data/onsiteServicePricing;'';
-;'''
+export default function CountryTabs() {
+  return (
+    <div>
+      <h1>CountryTabs</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

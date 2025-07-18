@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-import {;''';
-  TooltipTrigger,;''';
-} from '';
-
-import { Badge } from '@/components/ui/badge;'';
-import type { PricingSuggestion } from '@/services/pricingSuggestionService;'';
-;'''
+export default function PricingSuggestionBox() {
+  return (
+    <div>
+      <h1>PricingSuggestionBox</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

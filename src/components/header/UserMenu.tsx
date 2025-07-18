@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import { AvatarMenu } from './AvatarMenu;'';
-  return <AvatarMenu />;''';
-export default UserMenu;''';
-''''''';
+export default function UserMenu() {
+  return (
+    <div>
+      <h1>UserMenu</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

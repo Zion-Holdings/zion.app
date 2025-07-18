@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-  Card,;''';
-  CardHeader,;''';
-} from '';
-import { Progress } from '@/components/ui/progress;'';
-    <Card>;''';
-        <CardDescription>Performance metrics for your team</CardDescription>;'''
+export default function TeamStats() {
+  return (
+    <div>
+      <h1>TeamStats</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

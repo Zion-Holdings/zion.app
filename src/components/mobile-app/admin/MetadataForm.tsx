@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-  FormControl,;''';
-  FormItem,;''';
-} from '';
-import { Badge } from '@/components/ui/badge;'';
-;'''
+export default function MetadataForm() {
+  return (
+    <div>
+      <h1>MetadataForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

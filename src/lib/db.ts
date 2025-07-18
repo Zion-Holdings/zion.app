@@ -1,4 +1,2 @@
-// Module for db;
-export const db = {;
-  // TODO: Implement module functionality;
-};
+// db.ts - placeholder
+export const placeholder = 'placeholder';

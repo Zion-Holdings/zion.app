@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import { User } from '@/components/ui/icons;'';
-
-import type { ListChildComponentProps } from 'react-window;'';
-;'''
+export default function ConversationsList() {
+  return (
+    <div>
+      <h1>ConversationsList</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

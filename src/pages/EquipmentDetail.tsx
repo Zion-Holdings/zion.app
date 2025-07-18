@@ -1,7 +1,10 @@
-const { items, dispatch } = useCart();
-const { _formatPrice } = useCurrency();
-const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-const [quantity, setQuantity] = useState(1);
-const [isAdding, setIsAdding] = useState(false);
-const [loading, setLoading] = useState(true);
-const [error, setError] = useState<string | null>(null);
+import React from 'react';
+
+export default function EquipmentDetail() {
+  return (
+    <div>
+      <h1>EquipmentDetail</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

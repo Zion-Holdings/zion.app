@@ -1,3 +1,2 @@
-// Type definitions for react-dom.d;
-export interface react-dom.d {;
-  // TODO: Add proper type definitions;
+// react-dom.d.ts - placeholder
+export const placeholder = 'placeholder';

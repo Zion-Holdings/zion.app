@@ -1,13 +1,10 @@
+import React from 'react';
 
-
-import { Eye, MoreHorizontal, Trash2, Archive } from '@/components/ui/icons;'';
-  TableBody,;''';
-  TableHeader,;''';
-} from '';
-
-import {;''';
-  DropdownMenuItem,;''';
-} from '';
-
-import { formatDate } from '@/utils/dateUtils;''';
-  quotes: QuoteRequest[];'''
+export default function QuotesTable() {
+  return (
+    <div>
+      <h1>QuotesTable</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

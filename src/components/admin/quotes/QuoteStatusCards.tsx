@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { Badge } from '@/components/ui/badge;'';
-;'''
+export default function QuoteStatusCards() {
+  return (
+    <div>
+      <h1>QuoteStatusCards</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

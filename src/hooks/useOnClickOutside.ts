@@ -1,5 +1,2 @@
-// Hook for useOnClickOutside;
-export const useUseOnClickOutside = () => {
-  // TODO: Implement hook logic;
-  return {};
-};
+// useOnClickOutside.ts - placeholder
+export const placeholder = 'placeholder';

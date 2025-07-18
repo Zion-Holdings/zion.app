@@ -1,8 +1,2 @@
-
-export * from '';
-export * from '';
-export * from '';
-export * from '';
-export * from '';
-export * from './validation;'';
-'''''''
+// index.ts - placeholder
+export const placeholder = 'placeholder';

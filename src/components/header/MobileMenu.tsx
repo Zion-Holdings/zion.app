@@ -1,11 +1,10 @@
+import React from 'react';
 
-
-  MessageSquare,;''';
-  MessageCircle,;''';
-} from '';
-import { useRouter } from 'next/router;'';
-
-import { useTranslation } from 'react-i18next;'';
-export interface MobileMenuProps {;''';
-                  { pathname: '/auth/login'';
-                  { pathname: '/auth/login''
+export default function MobileMenu() {
+  return (
+    <div>
+      <h1>MobileMenu</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

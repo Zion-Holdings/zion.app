@@ -1,4 +1,2 @@
-
-export { SkillsForm } from '';
-export * from './types;'';
-'''''''
+// index.ts - placeholder
+export const placeholder = 'placeholder';

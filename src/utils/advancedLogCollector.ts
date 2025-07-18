@@ -1,4 +1,2 @@
-// Utility functions for advancedLogCollector;
-export const advancedLogCollector = {;
-  // TODO: Implement utility functions;
-};
+// advancedLogCollector.ts - placeholder
+export const placeholder = 'placeholder';

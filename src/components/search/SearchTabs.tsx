@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import type { DocsSearchItem } from '@/data/docsSearchData;'';
-;'''
+export default function SearchTabs() {
+  return (
+    <div>
+      <h1>SearchTabs</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

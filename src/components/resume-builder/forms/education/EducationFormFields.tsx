@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-import { format } from 'date-fns;'';
-
-  FormControl,;''';
-  FormLabel,;''';
-} from '';
-
-import type { EducationFormFieldsProps } from './types;'';
-                    placeholder="Bachelor's, Master''
+export default function EducationFormFields() {
+  return (
+    <div>
+      <h1>EducationFormFields</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

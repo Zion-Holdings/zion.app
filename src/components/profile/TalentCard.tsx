@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import { Card } from '@/components/ui/card;'';
-
-import React, { useState } from 'react // Import React and useState;''
+export default function TalentCard() {
+  return (
+    <div>
+      <h1>TalentCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

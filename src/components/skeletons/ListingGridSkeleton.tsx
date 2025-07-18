@@ -1,3 +1,10 @@
+import React from 'react';
 
-import { SkeletonCard } from '@/components/ui;''';
-  return (;'''
+export default function ListingGridSkeleton() {
+  return (
+    <div>
+      <h1>ListingGridSkeleton</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

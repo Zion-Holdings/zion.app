@@ -14,8 +14,7 @@ function fixCorruptedFiles(directory) {
         let content = fs.readFileSync(fullPath, 'utf8');
         
         // Check for corrupted content
-        if (content.includes(';''') || 
-            content.includes(';''') ||
+        if (content.includes(';') || 
             content.includes('Unexpected token') ||
             content.includes('Unterminated string constant') ||
             content.includes('<<<<<<< HEAD') ||

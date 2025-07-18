@@ -1,18 +1,10 @@
-import {;
-  Card,;
-  CardContent,;
-  CardDescription,;
-  CardFooter,;
-  CardHeader,;
+import React from 'react';
 
-  CardTitle,;
-} from '';
-import { Server, Clock, MapPin } from '@/components/ui/icons;'';
-import Image from 'next/image;'';
-;''';
-        '';
-        '';
-        '';
-      Japan: '';
-        '';
-        ''
+export default function ServiceDetails() {
+  return (
+    <div>
+      <h1>ServiceDetails</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

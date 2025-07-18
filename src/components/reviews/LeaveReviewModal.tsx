@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-  Dialog,;''';
-  DialogHeader,;''';
-} from '';
-
-import { useReviews } from '@/hooks/useReviews;'';
-;'''
+export default function LeaveReviewModal() {
+  return (
+    <div>
+      <h1>LeaveReviewModal</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

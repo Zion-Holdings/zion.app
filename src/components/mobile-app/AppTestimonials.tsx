@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-import { Star } from '@/components/ui/icons;'';
-import { Card, CardContent, CardFooter } from '@/components/ui/card;'';
-const testimonials: unknown = [;''';
-    name: 'Alex Johnson',;;'';
-    role: 'AI Developer',;;'';
-    text: "The Zion app has completely changed how I find work. The AI matching is spot on and I''
+export default function AppTestimonials() {
+  return (
+    <div>
+      <h1>AppTestimonials</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

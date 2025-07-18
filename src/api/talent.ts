@@ -1,5 +1,2 @@
-
-
-/**;''';
- * Fetch a talent profile by slug.''';
-export async function getTalentBySlug(): unknown {): unknown {): unknown {): unknown {): unknown {;'''
+// talent.ts - placeholder
+export const placeholder = 'placeholder';

@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-import { formatDistanceToNow } from 'date-fns;'';
-
-  DialogDescription,;''';
-  DialogTitle,;''';
-} from '';
-import { Textarea } from '@/components/ui/textarea;'';
-;'''
+export default function ReviewCard() {
+  return (
+    <div>
+      <h1>ReviewCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

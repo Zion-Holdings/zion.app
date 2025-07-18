@@ -1,3 +1,10 @@
+import React from 'react';
 
-
-export interface BreadcrumbItem {;'''
+export default function BreadcrumbJsonLd() {
+  return (
+    <div>
+      <h1>BreadcrumbJsonLd</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

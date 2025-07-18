@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import { PanelLeft } from '@/components/ui/icons;'';
-
-import { useSidebar } from './sidebar-context;'';
-  const { _toggleSidebar } = useSidebar();''';
-    <Button;'''
+export default function sidebar-trigger() {
+  return (
+    <div>
+      <h1>sidebar-trigger</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

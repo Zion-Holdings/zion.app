@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'';
-;'''
+export default function PaymentSummary() {
+  return (
+    <div>
+      <h1>PaymentSummary</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,15 +1,10 @@
-import {;
-  Bell,;
-  FileText,;
-  Home,;
-  Mail,;
-  Search,;
-  Settings,;
+import React from 'react';
 
-  Users,;
-} from '@/components/ui/icons;'';
-} from '@/components/ui/icons'';
-  SidebarMenuItem,;''';
-  // SidebarGroupLabel, // Not needed;''';
-} from '@/components/ui/sidebar;'';
-    <Sidebar>;'''
+export default function CreatorSidebar() {
+  return (
+    <div>
+      <h1>CreatorSidebar</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

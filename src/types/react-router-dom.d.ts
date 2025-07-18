@@ -1,2 +1,2 @@
-declare module 'react-router-dom' {;'';
-  export function useNavigate(): unknown {): unknown {): unknown {): unknown {): unknown {): unknown;''
+// react-router-dom.d.ts - placeholder
+export const placeholder = 'placeholder';

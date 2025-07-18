@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { type Company } from './CompanyDashboard;'';
-;'''
+export default function WorkspaceHeader() {
+  return (
+    <div>
+      <h1>WorkspaceHeader</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

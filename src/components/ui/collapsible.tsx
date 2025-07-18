@@ -1,4 +1,10 @@
+import React from 'react';
 
-import * as CollapsiblePrimitive from '@radix-ui/react-collapsible;'';
-export { Collapsible, CollapsibleTrigger, CollapsibleContent };''';
-''''''';
+export default function collapsible() {
+  return (
+    <div>
+      <h1>collapsible</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

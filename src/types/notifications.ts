@@ -1,3 +1,2 @@
-// Type definitions for notifications;
-export interface notifications {;
-  // TODO: Add proper type definitions;
+// notifications.ts - placeholder
+export const placeholder = 'placeholder';

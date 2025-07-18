@@ -1,11 +1,10 @@
+import React from 'react';
 
-
-  Dialog,;''';
-  DialogHeader,;''';
-} from '';
-
-import type { JobApplication } from '@/types/jobs;'';
-          logErrorToProduction('Error updating availability:'';
-      logErrorToProduction('Error hiring candidate:'';
-          logErrorToProduction('Error updating availability:'';
-      logErrorToProduction('Error hiring candidate:''
+export default function HireConfirmationModal() {
+  return (
+    <div>
+      <h1>HireConfirmationModal</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

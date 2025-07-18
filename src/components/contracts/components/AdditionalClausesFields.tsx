@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-  FormField,;''';
-  FormControl,;''';
-} from '';
-
-import type { ContractFormValues } from './ContractForm;'';
-;'''
+export default function AdditionalClausesFields() {
+  return (
+    <div>
+      <h1>AdditionalClausesFields</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-export function HowItWorksVideo(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''';
-  return (;'''
+export default function HowItWorksVideo() {
+  return (
+    <div>
+      <h1>HowItWorksVideo</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

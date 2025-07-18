@@ -1,4 +1,2 @@
-// Module for apiClient;
-export const apiClient = {;
-  // TODO: Implement module functionality;
-};
+// apiClient.ts - placeholder
+export const placeholder = 'placeholder';

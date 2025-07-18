@@ -1,3 +1,10 @@
+import React from 'react';
 
-
-import { Label } from '@/components/ui/label;''
+export default function MessageTab() {
+  return (
+    <div>
+      <h1>MessageTab</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

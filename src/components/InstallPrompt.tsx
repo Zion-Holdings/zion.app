@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-const DISMISS_MS: unknown = 24 * 60 * 60 * 1000; // 24 hours;''';
-''';
-interface BeforeInstallPromptEvent extends Event {;''';
-  readonly platforms: string[];'''
+export default function InstallPrompt() {
+  return (
+    <div>
+      <h1>InstallPrompt</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

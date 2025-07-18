@@ -1,5 +1,2 @@
-// Hook for useTrackUserBehavior;
-export const useUseTrackUserBehavior = () => {
-  // TODO: Implement hook logic;
-  return {};
-};
+// useTrackUserBehavior.ts - placeholder
+export const placeholder = 'placeholder';

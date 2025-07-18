@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-interface AuthButtonsProps {;''';
-  providers?: Provider[]''';
-export function AuthButtons(): unknown {): unknown {): unknown {): unknown {): unknown {{;''';
-  providers = ['google', 'github', 'facebook', 'credentials'],''';
-    setLoadingProvider(provider);''';
-    await signIn(provider)''';
-;'''
+export default function AuthButtons() {
+  return (
+    <div>
+      <h1>AuthButtons</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

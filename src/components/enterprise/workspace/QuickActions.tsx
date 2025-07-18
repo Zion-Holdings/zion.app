@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-  Card,;''';
-  CardHeader,;''';
-} from '';
-import { Button } from '@/components/ui/button;''';
-  const actions: unknown = [;''';
-      id: 'post-job',;;'';
-      label: 'Post New Job',;;''
+export default function QuickActions() {
+  return (
+    <div>
+      <h1>QuickActions</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

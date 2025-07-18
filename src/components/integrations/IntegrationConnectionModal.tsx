@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-  DialogContent,;''';
-  DialogHeader,;''';
-} from '';
-
-import { toast } from 'sonner;'';
-;'''
+export default function IntegrationConnectionModal() {
+  return (
+    <div>
+      <h1>IntegrationConnectionModal</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

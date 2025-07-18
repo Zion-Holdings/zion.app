@@ -1,14 +1,10 @@
+import React from 'react';
 
-
-  Card,;''';
-  CardTitle,;''';
-} from '';
-import { Sparkles } from 'lucide-react;'';
-
-  FormControl,;''';
-  FormLabel,;''';
-} from '';
-
-import { logErrorToProduction } from '@/utils/productionLogger;'';
-      logErrorToProduction('Error generating description:'';
-      logErrorToProduction('Error generating description:''
+export default function ServiceDescriptionForm() {
+  return (
+    <div>
+      <h1>ServiceDescriptionForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

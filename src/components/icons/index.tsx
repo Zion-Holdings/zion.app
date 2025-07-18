@@ -1,11 +1,10 @@
+import React from 'react';
 
-
-  Youtube as LucideYoutube,;''';
-  ZoomIn as LucideZoomIn,;''';
-} from 'lucide-react;'';
-  Youtube as LucideYoutube,'';
-  ZapOff as LucideZapOff,'';
-  ZoomIn as LucideZoomIn,'';
-  ZoomOut as LucideZoomOut,'';
-} from 'lucide-react'';
-  className?: string;'''
+export default function index() {
+  return (
+    <div>
+      <h1>index</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import { logErrorToProduction } from '@/utils/productionLogger;'';
-;''';
-        logErrorToProduction('Error tracking referroral'';
-        logErrorToProduction('Error tracking referroral''
+export default function ReferralMiddleware() {
+  return (
+    <div>
+      <h1>ReferralMiddleware</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

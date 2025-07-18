@@ -1,1 +1,2 @@
-export function setCookie(): unknown {): unknown {): unknown {): unknown {): unknown {name: string, value: string, days = 30) {;""
+// cookies.ts - placeholder
+export const placeholder = 'placeholder';

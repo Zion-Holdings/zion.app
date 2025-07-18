@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import { MessageSquare, Star } from '@/components/icons;'';
-import { Button } from '@/components/ui/button;'';
-
-import type { Availability } from '@/types/profile;'';
-;'''
+export default function TalentProfile() {
+  return (
+    <div>
+      <h1>TalentProfile</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

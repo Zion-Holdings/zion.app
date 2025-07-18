@@ -1,12 +1,10 @@
+import React from 'react';
 
-
-  Card,;''';
-  CardHeader,;''';
-} from '';
-import { Button } from '@/components/ui/button;'';
-import {;''';
-  TooltipProvider,;''';
-} from '';
-
-import { useAuth } from '@/hooks/useAuth;'';
-// Define a minimal EthereumProvider interface;'''
+export default function OnChainExport() {
+  return (
+    <div>
+      <h1>OnChainExport</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

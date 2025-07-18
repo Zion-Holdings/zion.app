@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-  Award,;''';
-  Trophy,;''';
-} from '';
-import {;''';
-  TooltipProvider,;''';
-} from '@/components/ui/tooltip;'';
-;'''
+export default function UserBadges() {
+  return (
+    <div>
+      <h1>UserBadges</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

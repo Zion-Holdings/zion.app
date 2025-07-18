@@ -1,12 +1,10 @@
+import React from 'react';
 
-
-import type { RegionFilterProps } from '@/types/filters;'';
-  { id: 'North America', label: 'North America' },;;'';
-  { id: 'Europe', label: 'Europe' },;;'';
-  { id: 'Asia', label: 'Asia' },;;'';
-  { id: 'South America', label: 'South America' },;;'';
-  { id: 'Australia', label: 'Australia' },;;'';
-  { id: 'Africa', label: 'Africa' },;'';
-
-  expanded,;''';
-}: RegionFilterProps) {;'''
+export default function RegionFilter() {
+  return (
+    <div>
+      <h1>RegionFilter</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

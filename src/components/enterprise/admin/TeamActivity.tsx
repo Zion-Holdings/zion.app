@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-import { Search, CalendarIcon } from '@/components/ui/icons;'';
-  TableBody,;''';
-  TableHeader,;''';
-} from '';
-import { Badge } from '@/components/ui/badge;'';
-
-import { Input } from '@/components/ui/input;'';
-  const activities: unknown = [;'''
+export default function TeamActivity() {
+  return (
+    <div>
+      <h1>TeamActivity</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

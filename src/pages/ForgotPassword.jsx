@@ -1,10 +1,10 @@
-const [email, setEmail] = useState('');
-('');
-const [message, setMessage] = useState('');
-('');
-setMessage('');
-('');
-('Password reset instructions sent to your email if it exists in our system.',
-  '');
-setMessage(err.message || 'Failed to send reset instructions.');
-('');
+import React from 'react';
+
+export default function ForgotPassword() {
+  return (
+    <div>
+      <h1>ForgotPassword</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

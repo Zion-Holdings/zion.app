@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { Card, CardContent, CardHeader } from '@/components/ui/card;'';
-export function LoadingContentSkeleton(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'''
+export default function LoadingContentSkeleton() {
+  return (
+    <div>
+      <h1>LoadingContentSkeleton</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

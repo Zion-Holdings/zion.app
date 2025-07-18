@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-;''';
-interface BudgetStepProps {;'''
+export default function BudgetStep() {
+  return (
+    <div>
+      <h1>BudgetStep</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-import {;''';
-  DialogHeader,;''';
-} from '';
-
-import type { AIEnhancementOptions } from '@/hooks/useAIContentEnhancer;'';
-;'''
+export default function AIEnhancementDialog() {
+  return (
+    <div>
+      <h1>AIEnhancementDialog</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

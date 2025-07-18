@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-import { cn } from '@/lib/utils;'';
-  className?: string;''';
-export function Markdown(): unknown {): unknown {): unknown {): unknown {): unknown {{ content, className }: MarkdownProps) {;''';
-    <div className={cn('prose dark:prose-invert max-w-none', className)}>;'';
-      </Suspense>;''';
-};''';
-}''';
-}''';
+export default function markdown() {
+  return (
+    <div>
+      <h1>markdown</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

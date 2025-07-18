@@ -1,5 +1,2 @@
-
-export { QuoteStatusCards } from '';
-export { QuotesFilter } from '';
-export { QuotesTable } from './QuotesTable;'';
-'''''''
+// index.ts - placeholder
+export const placeholder = 'placeholder';

@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-import { ThumbsUp, ThumbsDown } from '@/components/ui/icons;'';
-
-import { HELP_CATEGORIES } from './help-content;'';
-;''';
-          ? "We'';
-          : "We'';
-          ? "We'';
-          : We''
+export default function HelpArticleView() {
+  return (
+    <div>
+      <h1>HelpArticleView</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

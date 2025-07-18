@@ -1,12 +1,10 @@
-import {;
-  Table,;
-  TableBody,;
-  TableCell,;
-  TableHead,;
-  TableHeader,;
+import React from 'react';
 
-  TableRow,;
-} from '';
-
-import { formatDate } from '@/utils/referralUtils;'';
-;'''
+export default function ReferralTable() {
+  return (
+    <div>
+      <h1>ReferralTable</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

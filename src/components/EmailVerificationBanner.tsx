@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-;''';
-interface EmailVerificationBannerProps {;'''
+export default function EmailVerificationBanner() {
+  return (
+    <div>
+      <h1>EmailVerificationBanner</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

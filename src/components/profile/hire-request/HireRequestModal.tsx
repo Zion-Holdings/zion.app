@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-import {;''';
-  DialogHeader,;''';
-} from '';
-
-import type { UserProfile } from '@/types/auth;'';
-;'''
+export default function HireRequestModal() {
+  return (
+    <div>
+      <h1>HireRequestModal</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

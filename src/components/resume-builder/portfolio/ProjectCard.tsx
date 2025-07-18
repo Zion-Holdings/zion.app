@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-  AlertDialogContent,;''';
-  AlertDialogHeader,;''';
-} from '@/components/ui/alert-dialog;'';
-
-import type { PortfolioProject } from '@/types/resume;'';
-;'''
+export default function ProjectCard() {
+  return (
+    <div>
+      <h1>ProjectCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

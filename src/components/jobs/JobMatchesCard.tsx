@@ -1,17 +1,10 @@
-import {;
-  Card,;
-  CardContent,;
-  CardHeader,;
-  CardTitle,;
-  CardDescription,;
+import React from 'react';
 
-  CardFooter,;
-} from '';
-import {;''';
-  CheckCircle,;''';
-} from '';
-
-import { Button } from '@/components/ui/button;'';
-
-import type { JobMatch } from '@/types/jobs;'';
-;'''
+export default function JobMatchesCard() {
+  return (
+    <div>
+      <h1>JobMatchesCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,3 +1,2 @@
-// Type definitions for jest.d;
-export interface jest.d {;
-  // TODO: Add proper type definitions;
+// jest.d.ts - placeholder
+export const placeholder = 'placeholder';

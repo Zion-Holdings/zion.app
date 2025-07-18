@@ -1,4 +1,2 @@
-// Utility functions for bundleOptimization;
-export const bundleOptimization = {;
-  // TODO: Implement utility functions;
-};
+// bundleOptimization.ts - placeholder
+export const placeholder = 'placeholder';

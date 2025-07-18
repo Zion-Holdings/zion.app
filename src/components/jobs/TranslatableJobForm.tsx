@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;'';
-
-import { logErrorToProduction } from '@/utils/productionLogger;'';
-;''';
-      logErrorToProduction('Error translating ${field}:'';
-      logErrorToProduction('Error translating ${field}:''
+export default function TranslatableJobForm() {
+  return (
+    <div>
+      <h1>TranslatableJobForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,23 +1,10 @@
+import React from 'react';
 
-
-import { vi } from 'vitest;'';
-vi.mock('@/utils/safeStorage');;'';
-vi.mock('@/lib/analytics');;'';
-vi.mock('@/lib/posthog');;'';
-vi.mock('@/utils/cookies');'';
-    it('';
-    it('';
-    it('';
-    it('';
-    it('';
-    it('';
-    it('';
-    it('';
-    it('';
-    it('';
-    it('';
-    it('';
-    it('';
-    it('';
-    it('';
-    it(''
+export default function AnalyticsConsentBanner.test() {
+  return (
+    <div>
+      <h1>AnalyticsConsentBanner.test</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

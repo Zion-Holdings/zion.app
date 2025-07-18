@@ -1,2 +1,10 @@
+import React from 'react';
 
-    url: 'https://app.ziontechgroup.com/features/integrations',;''
+export default function Integrations() {
+  return (
+    <div>
+      <h1>Integrations</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,6 +1,2 @@
-
-export { QuoteRequestCard } from '';
-export { QuoteRequestsList } from '';
-export { RequestsHeader } from '';
-export { EmptyStateCard } from './EmptyStateCard;'';
-'''''''
+// index.ts - placeholder
+export const placeholder = 'placeholder';

@@ -1,11 +1,10 @@
+import React from 'react';
 
-
-import { BadgeDollarSign } from '@/components/ui/icons;'';
-
-  Card,;''';
-  CardHeader,;''';
-} from '';
-
-import Skeleton from '@/components/ui/skeleton;'';
-export function TokenDisplay(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''';
-  return (;'''
+export default function TokenDisplay() {
+  return (
+    <div>
+      <h1>TokenDisplay</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

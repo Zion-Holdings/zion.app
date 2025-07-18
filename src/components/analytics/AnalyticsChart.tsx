@@ -1,22 +1,10 @@
+import React from 'react';
 
-
-  Card,;''';
-  CardHeader,;''';
-} from '';
-
-  Tooltip,;''';
-  Bar,;''';
-} from '';
-  Select,;''';
-  SelectTrigger,;''';
-} from '';
-import { useState } from 'react;'';
-// Define proper chart data interface;''';
-                  tick={{ fill: '#b1b9c6'';
-                <YAxis tick={{ fill: '#b1b9c6'';
-                  tick={{ fill: '#b1b9c6'';
-                <YAxis tick={{ fill: '#b1b9c6'';
-                  tick={{ fill: '#b1b9c6'';
-                <YAxis tick={{ fill: '#b1b9c6'';
-                  tick={{ fill: '#b1b9c6'';
-                <YAxis tick={{ fill: '#b1b9c6''
+export default function AnalyticsChart() {
+  return (
+    <div>
+      <h1>AnalyticsChart</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

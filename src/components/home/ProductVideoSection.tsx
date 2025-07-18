@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import YoutubeEmbed from '@/components/YoutubeEmbed;'';
-  className,;''';
-  return (;''';
-      className={`py-16 bg-zion-blue-dark ${className ?? ''}`};'';
-      style={style};'''
+export default function ProductVideoSection() {
+  return (
+    <div>
+      <h1>ProductVideoSection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

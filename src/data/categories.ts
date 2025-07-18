@@ -1,5 +1,2 @@
-export interface Category {;
-  id: "";
-  slug: "string"";
-}""";
-  {;""
+// categories.ts - placeholder
+export const placeholder = 'placeholder';

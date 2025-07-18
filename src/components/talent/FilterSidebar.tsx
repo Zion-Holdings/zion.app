@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-import { Button } from '@/components/ui/button;'';
-
-import type { FilterSidebarProps } from '@/types/filters;'';
-
-  isMobileFilterOpen,;''';
-    <>;'''
+export default function FilterSidebar() {
+  return (
+    <div>
+      <h1>FilterSidebar</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

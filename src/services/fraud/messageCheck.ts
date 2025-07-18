@@ -1,4 +1,2 @@
-// Service for messageCheck;
-export const messageCheckService = {;
-  // TODO: Implement service methods;
-};
+// messageCheck.ts - placeholder
+export const placeholder = 'placeholder';

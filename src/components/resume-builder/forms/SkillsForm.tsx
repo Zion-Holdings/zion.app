@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import type { SkillsFormProps } from './skills/types;'';
-};''';
-}''';
-}''';
+export default function SkillsForm() {
+  return (
+    <div>
+      <h1>SkillsForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

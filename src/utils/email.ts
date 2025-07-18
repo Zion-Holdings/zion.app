@@ -1,4 +1,2 @@
-// Utility functions for email;
-export const email = {;
-  // TODO: Implement utility functions;
-};
+// email.ts - placeholder
+export const placeholder = 'placeholder';

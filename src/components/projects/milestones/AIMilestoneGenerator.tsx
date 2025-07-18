@@ -1,12 +1,10 @@
+import React from 'react';
 
-
-import { Card, CardContent } from '@/components/ui/card;'';
-import {;''';
-  AccordionItem,;''';
-} from '@/components/ui/accordion;'';
-
-  MilestoneInput,;''';
-} from '';
-
-import { Badge } from '@/components/ui/badge;'';
-;'''
+export default function AIMilestoneGenerator() {
+  return (
+    <div>
+      <h1>AIMilestoneGenerator</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

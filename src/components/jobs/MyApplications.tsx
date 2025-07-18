@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-import { Button } from '@/components/ui/button;'';
-
-import type { ApplicationStatus } from '@/types/jobs;'';
-export function MyApplications(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''';
-  const getStatusBadge: unknown = (_status: ApplicationStatus) => {;''';
-      case 'new':;;''
+export default function MyApplications() {
+  return (
+    <div>
+      <h1>MyApplications</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

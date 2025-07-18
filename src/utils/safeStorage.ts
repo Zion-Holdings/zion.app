@@ -1,4 +1,2 @@
-// Utility functions for safeStorage;
-export const safeStorage = {;
-  // TODO: Implement utility functions;
-};
+// safeStorage.ts - placeholder
+export const placeholder = 'placeholder';

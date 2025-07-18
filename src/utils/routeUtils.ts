@@ -1,4 +1,2 @@
-// Utility functions for routeUtils;
-export const routeUtils = {;
-  // TODO: Implement utility functions;
-};
+// routeUtils.ts - placeholder
+export const placeholder = 'placeholder';

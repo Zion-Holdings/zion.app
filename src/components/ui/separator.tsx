@@ -1,14 +1,10 @@
+import React from 'react';
 
-
-import * as SeparatorPrimitive from '@radix-ui/react-separator;'';
-import { cn } from '@/lib/utils;'';
-const Separator: unknown = React.forwardRef<;''';
->(;''';
-    { className, orientation = 'horizontal', decorative = true, ...props },;'';
-    <SeparatorPrimitive.Root;''';
-      orientation={orientation};''';
-        'shrink-0 bg-border',;;'';
-        orientation === 'horizontal' ? 'h-[1px] w-full' : 'h-full w-[1px]',;'';
-);''';
-export { Separator };''';
-''''''';
+export default function separator() {
+  return (
+    <div>
+      <h1>separator</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

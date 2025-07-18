@@ -1,4 +1,2 @@
-// Service for analyzeEmail;
-export const analyzeEmailService = {;
-  // TODO: Implement service methods;
-};
+// analyzeEmail.ts - placeholder
+export const placeholder = 'placeholder';

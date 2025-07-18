@@ -1,5 +1,10 @@
+import React from 'react';
 
-'use client;'';
-
-import { ImageIcon } from '@/components/ui/icons;'';
-;'''
+export default function safe-image() {
+  return (
+    <div>
+      <h1>safe-image</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

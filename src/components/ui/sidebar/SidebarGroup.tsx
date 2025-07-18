@@ -1,21 +1,10 @@
+import React from 'react';
 
-
-import { cn } from '@/lib/utils;'';
-
-  className,;''';
-}: SidebarGroupProps) {;''';
-    <div className={cn('mb-4', className)} {...props}>;'';
-      {children};''';
-};''';
-}''';
-}''';
-  className,'';
-  children,'';
-}: SidebarGroupProps) {'';
-  return ('';
-    <div className={cn('mb-4', className)} {...props}>'';
-      {children}'';
-    </div>'';
-}'';
-}'';
-}'''
+export default function SidebarGroup() {
+  return (
+    <div>
+      <h1>SidebarGroup</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

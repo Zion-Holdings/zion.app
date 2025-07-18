@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import Link from 'next/link;'';
-;'''
+export default function AdminLayout() {
+  return (
+    <div>
+      <h1>AdminLayout</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

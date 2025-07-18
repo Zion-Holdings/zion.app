@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-;''';
-interface DiscussionPost {;''';
-    body: "Let's spark some ideas! I'';
-    body: "Let's spark some ideas! I''
+export default function CommunityDiscussion() {
+  return (
+    <div>
+      <h1>CommunityDiscussion</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

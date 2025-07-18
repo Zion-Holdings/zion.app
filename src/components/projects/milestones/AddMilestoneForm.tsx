@@ -1,13 +1,10 @@
+import React from 'react';
 
-
-import { z } from 'zod;'';
-import { format } from 'date-fns;'';
-
-  FormControl,;''';
-  FormLabel,;''';
-} from '';
-
-  PopoverContent,;''';
-} from '';
-
-import type { ControllerRenderProps } from 'react-hook-form;''
+export default function AddMilestoneForm() {
+  return (
+    <div>
+      <h1>AddMilestoneForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

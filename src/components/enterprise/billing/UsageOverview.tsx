@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-  Card,;''';
-  CardHeader,;''';
-} from '';
-
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;''';
-  // Mock usage data;'''
+export default function UsageOverview() {
+  return (
+    <div>
+      <h1>UsageOverview</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,3 +1,2 @@
-declare module 'socket.io' {'';
-}'';
-declare module 'socket.io-client' {''
+// socket.io.d.ts - placeholder
+export const placeholder = 'placeholder';

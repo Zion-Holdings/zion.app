@@ -1,6 +1,10 @@
+import React from 'react';
 
-// arguments causes a TypeScript error (TS2347). Instead, we cast the;''';
-// default value so consumers still get some level of type safety.'';
-export const _AuthContext = createContext<AuthContextType | undefined>('';
-  undefined,)'';
-'''''''
+export default function AuthContext() {
+  return (
+    <div>
+      <h1>AuthContext</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

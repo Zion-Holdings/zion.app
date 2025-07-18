@@ -1,4 +1,10 @@
+import React from 'react';
 
-import type { TrackingEvent } from '@/hooks/useOrder;'';
-  if (!events || events.length === 0) {;''';
-;'''
+export default function OrderTimeline() {
+  return (
+    <div>
+      <h1>OrderTimeline</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

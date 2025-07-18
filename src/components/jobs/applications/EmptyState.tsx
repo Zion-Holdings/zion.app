@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import Link from 'next/link;'';
-export function EmptyState(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'''
+export default function EmptyState() {
+  return (
+    <div>
+      <h1>EmptyState</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

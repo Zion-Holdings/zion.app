@@ -1,2 +1,2 @@
-
-import { z } from 'zod;''
+// types.ts - placeholder
+export const placeholder = 'placeholder';

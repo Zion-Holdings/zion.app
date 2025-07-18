@@ -1,4 +1,2 @@
-// Service for analyzeContent;
-export const analyzeContentService = {;
-  // TODO: Implement service methods;
-};
+// analyzeContent.ts - placeholder
+export const placeholder = 'placeholder';

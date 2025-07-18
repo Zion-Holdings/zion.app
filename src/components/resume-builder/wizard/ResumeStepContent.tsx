@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import { logInfo } from '@/utils/productionLogger;'';
-;''';
-            logInfo('Saving basic info:'';
-            logInfo('Saving basic info:''
+export default function ResumeStepContent() {
+  return (
+    <div>
+      <h1>ResumeStepContent</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

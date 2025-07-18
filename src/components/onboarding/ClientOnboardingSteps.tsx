@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-import { useOnboardingStatus } from '@/hooks/useOnboardingStatus;'';
-
-import type { OnboardingStep } from './OnboardingTracker;'';
-export function ClientOnboardingSteps(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''';
-  const steps: unknown OnboardingStep[] = [;''';
-      id: 'post-job',;;'';
-      label: 'Post your first job',;;''
+export default function ClientOnboardingSteps() {
+  return (
+    <div>
+      <h1>ClientOnboardingSteps</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

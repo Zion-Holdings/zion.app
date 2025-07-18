@@ -1,11 +1,10 @@
+import React from 'react';
 
-// Export all components from the sidebar subcomponents;
-export * from '';
-export * from '';
-export * from '';
-export * from '';
-export * from '';
-export * from './sidebar-menu;'';
-;''';
-export type { SafeRef } from '../sidebar.types;'';
-''''''';
+export default function index() {
+  return (
+    <div>
+      <h1>index</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-  TableBody,;''';
-  TableHeader,;''';
-} from '';
-
-import type { ModerationLog } from '@/types/moderation;'';
-;'''
+export default function FlaggedListingsTable() {
+  return (
+    <div>
+      <h1>FlaggedListingsTable</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

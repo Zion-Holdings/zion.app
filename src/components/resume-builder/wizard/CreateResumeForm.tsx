@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-import { Button } from '@/components/ui/button;'';
-import type { CreateResumeFormProps } from './types;'';
-export const CreateResumeForm: unknown = ({;''';
-  isLoading,;''';
-  const [newResumeTitle, setNewResumeTitle] = useState('');'';
-    if (!newResumeTitle.trim()) return;''';
-;''';
-              placeholder="Resume Title (e.g. 'AI Engineer Resume''
+export default function CreateResumeForm() {
+  return (
+    <div>
+      <h1>CreateResumeForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

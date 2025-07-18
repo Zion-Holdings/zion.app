@@ -1,20 +1,10 @@
+import React from 'react';
 
-
-import { cn } from '@/lib/utils;'';
-
-    <div;''';
-        'flex flex-col h-screen bg-background border-r border-border shrink-0 w-64 overflow-y-auto transition-all duration-200',;'';
-      {children};''';
-};''';
-}''';
-}''';
-'';
-export function Sidebar(): unknown {): unknown {): unknown {): unknown {): unknown {{ className, children, ...props }: SidebarProps) {'';
-    <div'';
-      className={cn('';
-        'flex flex-col h-screen bg-background border-r border-border shrink-0 w-64 overflow-y-auto transition-all duration-200','';
-      {children}'';
-    </div>'';
-}'';
-}'';
-}'''
+export default function Sidebar() {
+  return (
+    <div>
+      <h1>Sidebar</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

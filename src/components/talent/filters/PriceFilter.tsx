@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import type { PriceFilterProps } from '@/types/filters;'';
-
-  const handleChange: unknown = (_values: number[]) => {;''';
-;'''
+export default function PriceFilter() {
+  return (
+    <div>
+      <h1>PriceFilter</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

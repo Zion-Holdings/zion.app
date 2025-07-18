@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import Link from 'next/link;'';
-  onUpdateProfile?: () => void;''';
-export function NoJobsCard(): unknown {): unknown {): unknown {): unknown {): unknown {{ onUpdateProfile }: NoJobsCardProps) {;'''
+export default function NoJobsCard() {
+  return (
+    <div>
+      <h1>NoJobsCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

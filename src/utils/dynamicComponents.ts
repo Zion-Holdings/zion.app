@@ -1,4 +1,2 @@
-// Utility functions for dynamicComponents;
-export const dynamicComponents = {;
-  // TODO: Implement utility functions;
-};
+// dynamicComponents.ts - placeholder
+export const placeholder = 'placeholder';

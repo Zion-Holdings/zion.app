@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import { z } from 'zod;'';
-
-  FormControl,;''';
-  FormLabel,;''';
-} from '@/components/ui/form;''
+export default function ProfileSetup() {
+  return (
+    <div>
+      <h1>ProfileSetup</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

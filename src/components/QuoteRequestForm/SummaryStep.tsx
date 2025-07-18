@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-;''';
-interface SummaryStepProps {;''';
-        logErrorToProduction('Error during AI matching:'';
-            "We couldn'';
-        logErrorToProduction('Error during AI matching:'';
-            "We couldn''
+export default function SummaryStep() {
+  return (
+    <div>
+      <h1>SummaryStep</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

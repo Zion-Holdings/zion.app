@@ -1,9 +1,2 @@
-export interface CareerJob {;
-  id: "";
-  location: "string"";
-  department: string"";
-  description: "";
-"";
-export const CAREER_JOBS: unknown "";
-  engineering: [;"";
-    {""
+// careersJobs.ts - placeholder
+export const placeholder = 'placeholder';

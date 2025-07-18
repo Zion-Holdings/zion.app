@@ -1,5 +1,2 @@
-// Hook for useToggle;
-export const useUseToggle = () => {
-  // TODO: Implement hook logic;
-  return {};
-};
+// useToggle.ts - placeholder
+export const placeholder = 'placeholder';

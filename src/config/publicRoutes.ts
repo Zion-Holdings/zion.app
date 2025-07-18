@@ -1,4 +1,2 @@
-// Module for publicRoutes;
-export const publicRoutes = {;
-  // TODO: Implement module functionality;
-};
+// publicRoutes.ts - placeholder
+export const placeholder = 'placeholder';

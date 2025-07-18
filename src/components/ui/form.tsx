@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-  type ControllerProps,;''';
-  FormProvider,;''';
-} from 'react-hook-form;'';
-
-import { Label } from '@/components/ui/label;''';
-;'''
+export default function form() {
+  return (
+    <div>
+      <h1>form</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

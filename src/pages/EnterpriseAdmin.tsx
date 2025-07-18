@@ -1,5 +1,10 @@
+import React from 'react';
 
-    return; // Use router.push('/unauthorized'';
-  }'';
-    <ProtectedRoute>'';
-        description="Manage your team''
+export default function EnterpriseAdmin() {
+  return (
+    <div>
+      <h1>EnterpriseAdmin</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

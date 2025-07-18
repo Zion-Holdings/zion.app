@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-  Shield,;''';
-  Globe,;''';
-} from '@/components/ui/icons;'';
-const features: unknown = [;''';
-    title: 'Private Hiring Portal',;''';
-      'Create a secure, private hiring portal accessible only to your team members.',;;''
+export default function EnterpriseFeatures() {
+  return (
+    <div>
+      <h1>EnterpriseFeatures</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

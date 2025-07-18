@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar;'';
-;'''
+export default function TalentCardAvatar() {
+  return (
+    <div>
+      <h1>TalentCardAvatar</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

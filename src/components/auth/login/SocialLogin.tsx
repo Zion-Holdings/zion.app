@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import { openAuthPopup } from '@/api/authSocial;'';
-export function SocialLogin(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''';
-  const handleGoogle: unknown = () => {;''';
-    window.location.href = '/auth/google;'';
-;'''
+export default function SocialLogin() {
+  return (
+    <div>
+      <h1>SocialLogin</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

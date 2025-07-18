@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-import Link from 'next/link;'';
-
-import {;''';
-  TooltipProvider,;''';
-} from '@/components/ui/tooltip;'';
-;'''
+export default function EmptyState() {
+  return (
+    <div>
+      <h1>EmptyState</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

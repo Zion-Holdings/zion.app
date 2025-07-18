@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-;''';
-interface FeatureCardProps {;'''
+export default function FeatureCard() {
+  return (
+    <div>
+      <h1>FeatureCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,4 +1,2 @@
-// Utility functions for pdfExport;
-export const pdfExport = {;
-  // TODO: Implement utility functions;
-};
+// pdfExport.ts - placeholder
+export const placeholder = 'placeholder';

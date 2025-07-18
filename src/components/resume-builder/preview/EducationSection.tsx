@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { format } from 'date-fns;'';
-;'''
+export default function EducationSection() {
+  return (
+    <div>
+      <h1>EducationSection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

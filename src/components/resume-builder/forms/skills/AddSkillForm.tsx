@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-  Select,;''';
-  SelectTrigger,;''';
-} from '';
-
-import { AIEnhancementButton } from '@/components/resume-builder/forms/AIEnhancementButton;'';
-;'''
+export default function AddSkillForm() {
+  return (
+    <div>
+      <h1>AddSkillForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

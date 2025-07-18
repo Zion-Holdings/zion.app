@@ -1,11 +1,10 @@
+import React from 'react';
 
-
-import { z } from 'zod;'';
-
-import {;''';
-  DialogHeader,;''';
-} from '';
-
-import { logErrorToProduction } from '@/utils/productionLogger;'';
-      logErrorToProduction('Error generating contract:'';
-      logErrorToProduction('Error generating contract:''
+export default function ContractForm() {
+  return (
+    <div>
+      <h1>ContractForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

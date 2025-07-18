@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-import { ChatBotPanel } from './ChatBotPanel;'';
-
-import { useTheme } from '@/hooks/useTheme;'';
-
-    <>;''';
-        <Button;'''
+export default function SupportWidget() {
+  return (
+    <div>
+      <h1>SupportWidget</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

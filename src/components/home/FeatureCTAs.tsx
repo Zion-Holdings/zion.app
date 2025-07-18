@@ -1,15 +1,10 @@
+import React from 'react';
 
-
-  Code,;''';
-  Building,;''';
-} from '';
-  CardContent,;''';
-  CardHeader,;''';
-} from '';
-
-import { useTranslation } from 'react-i18next;'';
-import { cn } from '@/lib/utils;'';
-  const features: unknown = [;''';
-      key: 'ai_talent_matching',;;'';
-      descriptionKey: 'ai_talent_matching_desc',;;'';
-      detailsKey: 'ai_talent_matching_details',;'''
+export default function FeatureCTAs() {
+  return (
+    <div>
+      <h1>FeatureCTAs</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

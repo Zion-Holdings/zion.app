@@ -1,4 +1,2 @@
-// Service for monitorContent;
-export const monitorContentService = {;
-  // TODO: Implement service methods;
-};
+// monitorContent.ts - placeholder
+export const placeholder = 'placeholder';

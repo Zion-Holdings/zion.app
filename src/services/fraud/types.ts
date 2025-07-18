@@ -1,4 +1,2 @@
-// Service for types;
-export const typesService = {;
-  // TODO: Implement service methods;
-};
+// types.ts - placeholder
+export const placeholder = 'placeholder';

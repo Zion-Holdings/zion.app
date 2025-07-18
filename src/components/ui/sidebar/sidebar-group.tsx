@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import { ChevronDown } from '@/components/ui/icons;'';
-
-import type { SafeRef } from '@/types/ref-types;'';
-  defaultExpanded?: boolean;'''
+export default function sidebar-group() {
+  return (
+    <div>
+      <h1>sidebar-group</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,13 +1,10 @@
-import {;
-  Card,;
-  CardContent,;
-  CardFooter,;
+import React from 'react';
 
-  CardHeader,;
-} from '';
-
-import { Badge } from '@/components/ui/badge;'';
-import type { CountryPricing } from '@/data/onsiteServicePricing;'';
-;''';
-              : '';
-              : ''
+export default function CountryServiceCard() {
+  return (
+    <div>
+      <h1>CountryServiceCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

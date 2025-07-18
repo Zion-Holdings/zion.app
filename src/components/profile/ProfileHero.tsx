@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import { Badge } from '@/components/ui/badge;'';
-import { cn } from '@/lib/utils;'';
-;'''
+export default function ProfileHero() {
+  return (
+    <div>
+      <h1>ProfileHero</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

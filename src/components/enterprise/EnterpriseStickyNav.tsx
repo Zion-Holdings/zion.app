@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import { Menu } from '@/components/ui/icons;'';
-import Link from 'next/link;''';
-  const [open, setOpen] = useState(false);''';
-            className={`${open ? 'flex' : 'hidden'';
-            className={`${open ? 'flex' : 'hidden''
+export default function EnterpriseStickyNav() {
+  return (
+    <div>
+      <h1>EnterpriseStickyNav</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

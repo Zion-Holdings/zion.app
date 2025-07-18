@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-import { Trophy } from '@/components/ui/icons;'';
-interface ReputationDisplayProps {;''';
-  size?: 'sm' | 'md' | 'lg;''';
-export const ReputationDisplay: unknown = ({;''';
-  size = 'md',;'';
-  const nextMilestone: unknown = (currentLevel + 1) * 100;''';
-  // Styling based on size;'''
+export default function ReputationDisplay() {
+  return (
+    <div>
+      <h1>ReputationDisplay</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

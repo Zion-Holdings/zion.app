@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { SeverityIndicator } from '@/components/ui/severity-indicator;'';
-;'''
+export default function SeverityDisplay() {
+  return (
+    <div>
+      <h1>SeverityDisplay</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

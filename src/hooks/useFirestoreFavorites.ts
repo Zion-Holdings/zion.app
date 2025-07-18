@@ -1,5 +1,2 @@
-// Hook for useFirestoreFavorites;
-export const useUseFirestoreFavorites = () => {
-  // TODO: Implement hook logic;
-  return {};
-};
+// useFirestoreFavorites.ts - placeholder
+export const placeholder = 'placeholder';

@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { Toaster as SonnerToaster } from 'sonner;'';
-export function Toaster(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'''
+export default function toaster() {
+  return (
+    <div>
+      <h1>toaster</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import { AspectRatio } from '@/components/ui/aspect-ratio;'';
-  import('react-player'';
-  import('react-player''
+export default function ProductGallery() {
+  return (
+    <div>
+      <h1>ProductGallery</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

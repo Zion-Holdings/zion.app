@@ -1,4 +1,2 @@
-// Service for commentService;
-export const commentServiceService = {;
-  // TODO: Implement service methods;
-};
+// commentService.ts - placeholder
+export const placeholder = 'placeholder';

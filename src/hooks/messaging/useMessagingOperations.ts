@@ -1,5 +1,2 @@
-// Hook for useMessagingOperations;
-export const useUseMessagingOperations = () => {
-  // TODO: Implement hook logic;
-  return {};
-};
+// useMessagingOperations.ts - placeholder
+export const placeholder = 'placeholder';

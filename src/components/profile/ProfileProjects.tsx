@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { AspectRatio } from '@/components/ui/aspect-ratio;'';
-;'''
+export default function ProfileProjects() {
+  return (
+    <div>
+      <h1>ProfileProjects</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

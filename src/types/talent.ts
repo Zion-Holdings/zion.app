@@ -1,3 +1,2 @@
-// Type definitions for talent;
-export interface talent {;
-  // TODO: Add proper type definitions;
+// talent.ts - placeholder
+export const placeholder = 'placeholder';

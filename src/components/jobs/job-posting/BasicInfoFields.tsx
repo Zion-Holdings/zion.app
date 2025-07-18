@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-  FormField,;''';
-  FormControl,;''';
-} from '';
-
-import type { JobSchemaType } from './validation;'';
-;'''
+export default function BasicInfoFields() {
+  return (
+    <div>
+      <h1>BasicInfoFields</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,5 +1,10 @@
+import React from 'react';
 
-import { ResumeWizard as WizardComponent } from './wizard;'';
-};''';
-}''';
-}''';
+export default function ResumeWizard() {
+  return (
+    <div>
+      <h1>ResumeWizard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

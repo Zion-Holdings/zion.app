@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-;''';
-interface EnvironmentStatus {;''';
-            <p style={{ fontSize: '0.8rem', color: '#856404'';
-            <p style={{ fontSize: '0.8rem', color: '#856404''
+export default function EnvironmentCheck() {
+  return (
+    <div>
+      <h1>EnvironmentCheck</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

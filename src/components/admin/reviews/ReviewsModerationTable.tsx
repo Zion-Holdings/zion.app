@@ -1,18 +1,10 @@
+import React from 'react';
 
-
-import { useMutation } from '@tanstack/react-query;'';
-
-import type { ReviewStatus } from '@/types/reviews;'';
-  TableBody,;''';
-  TableHeader,;''';
-} from '';
-
-  DialogContent,;''';
-  DialogHeader,;''';
-} from '';
-import {;''';
-  DropdownMenuItem,;''';
-} from '';
-
-import { Button } from '@/components/ui/button;'';
-;'''
+export default function ReviewsModerationTable() {
+  return (
+    <div>
+      <h1>ReviewsModerationTable</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

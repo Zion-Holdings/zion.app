@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import { Textarea } from '@/components/ui/textarea;'';
-import type { AppPlatform } from './MetadataManager;'';
-;''';
-            placeholder="What'';
-            placeholder=What''
+export default function ChangelogManager() {
+  return (
+    <div>
+      <h1>ChangelogManager</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

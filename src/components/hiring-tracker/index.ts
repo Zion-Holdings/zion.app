@@ -1,6 +1,2 @@
-
-export * from '';
-export * from '';
-export * from '';
-export * from './HiringAnalytics;'';
-'''''''
+// index.ts - placeholder
+export const placeholder = 'placeholder';

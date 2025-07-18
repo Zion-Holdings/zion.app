@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-    safeStorage.setItem('smartBannerDismissed', 'true');'';
-    safeStorage.removeItem('smartBannerDismissed');'';
-    safeStorage.setItem('smartBannerDismissed', 'true')'';
-    safeStorage.removeItem('smartBannerDismissed')'';
-    return process.env.NODE_ENV === 'development' ? (''
+export default function SmartAppBanner() {
+  return (
+    <div>
+      <h1>SmartAppBanner</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

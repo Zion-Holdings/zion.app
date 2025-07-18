@@ -1,4 +1,2 @@
-// Utility functions for customErrorReporter;
-export const customErrorReporter = {;
-  // TODO: Implement utility functions;
-};
+// customErrorReporter.ts - placeholder
+export const placeholder = 'placeholder';

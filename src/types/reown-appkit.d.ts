@@ -1,3 +1,2 @@
-declare module '@reown/appkit/react'';
-    metadata?: Record<string, unknown>'';
-''
+// reown-appkit.d.ts - placeholder
+export const placeholder = 'placeholder';

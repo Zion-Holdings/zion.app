@@ -1,4 +1,2 @@
-// Module for types;
-export const types = {;
-  // TODO: Implement module functionality;
-};
+// types.ts - placeholder
+export const placeholder = 'placeholder';

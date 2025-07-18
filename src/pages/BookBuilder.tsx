@@ -1,2 +1,10 @@
+import React from 'react';
 
-    link.download = 'zion-os-book.pdf;''
+export default function BookBuilder() {
+  return (
+    <div>
+      <h1>BookBuilder</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

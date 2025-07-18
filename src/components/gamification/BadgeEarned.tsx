@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import type { BadgeKey } from './badgeConfig;'';
-
-  const meta: unknown = getBadgeMeta(badge);''';
-;'''
+export default function BadgeEarned() {
+  return (
+    <div>
+      <h1>BadgeEarned</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

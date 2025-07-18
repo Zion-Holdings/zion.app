@@ -1,7 +1,10 @@
+import React from 'react';
 
-import { useState, useEffect } from 'react;'';
-
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;'';
-
-  >({});''';
-  useEffect(() => {;'''
+export default function ProfileRatings() {
+  return (
+    <div>
+      <h1>ProfileRatings</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

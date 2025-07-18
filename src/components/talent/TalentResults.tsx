@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { TalentGrid } from '@/components/talent/TalentGrid;'';
-;'''
+export default function TalentResults() {
+  return (
+    <div>
+      <h1>TalentResults</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

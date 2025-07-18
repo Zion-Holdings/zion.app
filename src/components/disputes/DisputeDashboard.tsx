@@ -1,12 +1,10 @@
+import React from 'react';
 
-
-  Card,;''';
-  CardHeader,;''';
-} from '';
-import { Button } from '@/components/ui/button;'';
-;''';
-  }, [refetch]);''';
-  const openDisputes: unknown = disputes.filter((d) => d.status === 'open');''';
-    (d) => d.status === 'under_review',;''';
-  const resolvedDisputes: unknown = disputes.filter((d) => d.status === 'resolved');'';
-;'''
+export default function DisputeDashboard() {
+  return (
+    <div>
+      <h1>DisputeDashboard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

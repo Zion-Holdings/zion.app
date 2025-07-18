@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import type { SafeRef } from '../sidebar.types;'';
-  React.ComponentProps<typeof Input>;''';
-    <Input;'''
+export default function sidebar-content() {
+  return (
+    <div>
+      <h1>sidebar-content</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

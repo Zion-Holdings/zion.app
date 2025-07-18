@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import * as React from 'react;'';
-import { cn } from '@/lib/utils;'';
-export type TextareaProps = React.ComponentProps<'textarea'>;''
+export default function textarea() {
+  return (
+    <div>
+      <h1>textarea</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

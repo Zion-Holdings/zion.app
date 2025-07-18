@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import * as React from 'react;'';
-import { cn } from '@/lib/utils;''
+export default function input() {
+  return (
+    <div>
+      <h1>input</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

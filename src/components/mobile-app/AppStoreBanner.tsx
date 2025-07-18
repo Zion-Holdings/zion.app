@@ -1,14 +1,10 @@
+import React from 'react';
 
-
-import { safeStorage } from '@/utils/safeStorage;'';
-import { useIsMobile } from '@/hooks/use-mobile;'';
-export const _AppStoreBanner: unknown React.FC = () => {;''';
-;''';
-    // Only show banner on mobile devices and if it hasn't been dismissed before;;'';
-    if (isMobile && !safeStorage.getItem('appBannerDismissed')) {;'';
-
-    return undefined;''';
-  const dismissBanner: unknown = () => {;''';
-    safeStorage.setItem('appBannerDismissed', 'true');'';
-;''';
-;'''
+export default function AppStoreBanner() {
+  return (
+    <div>
+      <h1>AppStoreBanner</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

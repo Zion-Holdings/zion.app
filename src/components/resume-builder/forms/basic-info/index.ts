@@ -1,4 +1,2 @@
-
-export * from '';
-export * from './schema;'';
-'''''''
+// index.ts - placeholder
+export const placeholder = 'placeholder';

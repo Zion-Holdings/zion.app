@@ -1,21 +1,10 @@
+import React from 'react';
 
-
-import { fireEvent } from '@/lib/analytics;'';
-  const previouslyFocused: unknown = useRef<HTMLElement | null>(null);''';
-    setIsOpen((o) => {;''';
-      fireEvent('profile_dropdown_toggle', { open });'';
-    });''';
-    logout();''';
-    fireEvent('profile_dropdown_toggle'';
-    fireEvent('profile_dropdown_toggle'';
-        fireEvent('profile_dropdown_toggle'';
-            style={{ listStyle: 'none'';
-                fireEvent('profile_dropdown_toggle'';
-                  fireEvent('profile_dropdown_toggle'';
-                  fireEvent('profile_dropdown_toggle'';
-                  fireEvent('profile_dropdown_toggle'';
-        fireEvent('profile_dropdown_toggle'';
-                fireEvent('profile_dropdown_toggle'';
-                  fireEvent('profile_dropdown_toggle'';
-                  fireEvent('profile_dropdown_toggle'';
-                  fireEvent('profile_dropdown_toggle''
+export default function UserProfileDropdown() {
+  return (
+    <div>
+      <h1>UserProfileDropdown</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

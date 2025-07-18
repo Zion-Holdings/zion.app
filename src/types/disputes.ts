@@ -1,6 +1,2 @@
-export type DisputeStatus = 'open' | 'under_review' | 'resolved' | '';
-  | 'client_favor'';
-  | 'talent_favor'';
-  | 'compromise'';
-  | '';
-''
+// disputes.ts - placeholder
+export const placeholder = 'placeholder';

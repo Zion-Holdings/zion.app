@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import Link from 'next/link;'';
-;'''
+export default function empty-state() {
+  return (
+    <div>
+      <h1>empty-state</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

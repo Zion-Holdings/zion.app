@@ -1,3 +1,2 @@
-
-export { CertificationsForm } from './CertificationsForm;'';
-'''''''
+// index.ts - placeholder
+export const placeholder = 'placeholder';

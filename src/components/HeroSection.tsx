@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import { HowItWorksVideo } from '@/components/HowItWorksVideo;''';
-  const { t } = useTranslation();''';
-  return (;'''
+export default function HeroSection() {
+  return (
+    <div>
+      <h1>HeroSection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

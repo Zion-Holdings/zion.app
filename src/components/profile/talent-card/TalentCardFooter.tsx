@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import { Star, ExternalLink } from '@/components/ui/icons;'';
-import { Button } from '@/components/ui/button;'';
-
-import { useRouter } from 'next/router;'';
-;'''
+export default function TalentCardFooter() {
+  return (
+    <div>
+      <h1>TalentCardFooter</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

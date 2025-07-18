@@ -1,15 +1,10 @@
+import React from 'react';
 
-
-import {;''';
-  DropdownMenuItem,;''';
-} from '';
-  type SupportedLanguage,;''';
-} from '@/context/LanguageContext;'';
-
-    supportedLanguages && supportedLanguages.length > 0;''';
-  const [isOpen, setIsOpen] = useState(false);''';
-  logInfo('LanguageSelector: Rendered with currentLanguage:', {;;'';
-    logInfo('LanguageSelector: Language item clicked:'';
-      fireEvent('language_change'';
-    logInfo('LanguageSelector: Language item clicked:'';
-      fireEvent('language_change''
+export default function LanguageSelector() {
+  return (
+    <div>
+      <h1>LanguageSelector</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

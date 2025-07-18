@@ -1,13 +1,10 @@
+import React from 'react';
 
-
-import { CalendarIcon } from '@/components/ui/icons;'';
-
-  FormItem,;''';
-  FormDescription,;''';
-} from '';
-
-  PopoverContent,;''';
-} from '';
-
-import type { ContractFormValues } from './ContractForm;'';
-;'''
+export default function ProjectDetailsFields() {
+  return (
+    <div>
+      <h1>ProjectDetailsFields</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

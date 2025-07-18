@@ -1,3 +1,2 @@
-// Type definitions for community;
-export interface community {;
-  // TODO: Add proper type definitions;
+// community.ts - placeholder
+export const placeholder = 'placeholder';

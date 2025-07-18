@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import { Button } from '@/components/ui/button;'';
-import { format } from 'date-fns;'';
-;'''
+export default function CertificationsList() {
+  return (
+    <div>
+      <h1>CertificationsList</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

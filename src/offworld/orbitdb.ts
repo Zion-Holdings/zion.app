@@ -1,4 +1,2 @@
-// Module for orbitdb;
-export const orbitdb = {;
-  // TODO: Implement module functionality;
-};
+// orbitdb.ts - placeholder
+export const placeholder = 'placeholder';

@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-};''';
-  constructor(props: Props) {;''';
-    super(props);'''
+export default function ErrorBoundary() {
+  return (
+    <div>
+      <h1>ErrorBoundary</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

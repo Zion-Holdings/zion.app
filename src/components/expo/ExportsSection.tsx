@@ -1,7 +1,10 @@
+import React from 'react';
 
-import { Button } from '@/components/ui/button;'';
-export function ExportsSection(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''';
-    'Auto-email summary to attendees',;;'';
-    'Web3 wallet connect for VIP streams',;;'';
-    'Claimable NFT ticket & proof-of-attendance',;'';
-  ];'''
+export default function ExportsSection() {
+  return (
+    <div>
+      <h1>ExportsSection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

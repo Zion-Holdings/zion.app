@@ -1,21 +1,10 @@
+import React from 'react';
 
-
-  FormItem,;''';
-  FormMessage,;''';
-} from '';
-  CardHeader,;''';
-  CardContent,;''';
-} from '';
-  MapPin,;''';
-  Check,;''';
-} from '';
-
-import { Badge } from '@/components/ui/badge;'';
-        return '';
-        return '';
-        return '';
-        return '';
-            logErrorToProduction('Error enhancing profile:'';
-            logErrorToProduction('Error enhancing profile:'';
-        logErrorToProduction('Error creating profile:'';
-        logErrorToProduction('Error creating profile:''
+export default function TalentRegistrationForm() {
+  return (
+    <div>
+      <h1>TalentRegistrationForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

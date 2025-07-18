@@ -1,2 +1,2 @@
-
-import { z } from 'zod;''
+// validation.ts - placeholder
+export const placeholder = 'placeholder';

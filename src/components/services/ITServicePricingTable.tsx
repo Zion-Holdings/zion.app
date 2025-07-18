@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-  TableBody,;''';
-  TableHeader,;''';
-} from '@/components/ui/table;'';
-import { Button } from '@/components/ui/button;'';
-  const [searchQuery, setSearchQuery] = useState('');'''
+export default function ITServicePricingTable() {
+  return (
+    <div>
+      <h1>ITServicePricingTable</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import { Clock, Award, Zap } from '@/components/ui/icons;'';
-  Card,;''';
-  CardTitle,;''';
-} from '@/components/ui/card;'';
-const features: unknown = [;'''
+export default function AppFeatures() {
+  return (
+    <div>
+      <h1>AppFeatures</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

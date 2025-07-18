@@ -1,4 +1,2 @@
-// Utility functions for suggestFix;
-export const suggestFix = {;
-  // TODO: Implement utility functions;
-};
+// suggestFix.ts - placeholder
+export const placeholder = 'placeholder';

@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { CheckCircle, Users, Star, Mail, Smartphone } from '@/components/ui/icons;''';
-  const features: unknown = [;'''
+export default function MobileFeatureShowcase() {
+  return (
+    <div>
+      <h1>MobileFeatureShowcase</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

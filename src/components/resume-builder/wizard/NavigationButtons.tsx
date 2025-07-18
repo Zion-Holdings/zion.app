@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-import { Loader2 } from '@/components/ui/icons;'';
-import type { NavigationButtonsProps } from './types;'';
-  onNext,;''';
-  backLabel = 'Back',;;'';
-  nextLabel = 'Next',;'';
-}: NavigationButtonsProps) => {;'''
+export default function NavigationButtons() {
+  return (
+    <div>
+      <h1>NavigationButtons</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

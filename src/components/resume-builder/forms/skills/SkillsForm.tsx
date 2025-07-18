@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import { BulkAddSkills } from './BulkAddSkills;'';
-
-;''';
-      setError(null);'''
+export default function SkillsForm() {
+  return (
+    <div>
+      <h1>SkillsForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

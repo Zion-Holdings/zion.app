@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { Button } from '@/components/ui/button;'';
-;'''
+export default function performance-monitor() {
+  return (
+    <div>
+      <h1>performance-monitor</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

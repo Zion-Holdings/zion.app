@@ -1,5 +1,2 @@
-// Hook for useMilestones;
-export const useUseMilestones = () => {
-  // TODO: Implement hook logic;
-  return {};
-};
+// useMilestones.ts - placeholder
+export const placeholder = 'placeholder';

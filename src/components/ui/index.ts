@@ -1,5 +1,2 @@
-
-// src/components/ui/index.ts;
-export { default as Skeleton, SkeletonCard } from '';
-export { LoadingSpinner, ProgressiveLoading } from './enhanced-loading-states;'';
-'''''''
+// index.ts - placeholder
+export const placeholder = 'placeholder';

@@ -1,11 +1,10 @@
-import {;
-  Card,;
-  CardContent,;
-  CardDescription,;
-  CardHeader,;
+import React from 'react';
 
-  CardTitle,;
-} from '';
-
-import { Button } from '@/components/ui/button;''';
-  // Placeholder data - would come from API in real implementation;'''
+export default function PartnerDashboard() {
+  return (
+    <div>
+      <h1>PartnerDashboard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

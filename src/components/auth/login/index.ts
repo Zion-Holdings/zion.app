@@ -1,8 +1,2 @@
-
-export * from '';
-export * from '';
-export * from '';
-export * from '';
-export * from '';
-export { default as LoginErrorFallback } from './LoginErrorFallback;'';
-'''''''
+// index.ts - placeholder
+export const placeholder = 'placeholder';

@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { CldUploadButton } from 'next-cloudinary;'';
-type Props = {;'''
+export default function AvatarUpload() {
+  return (
+    <div>
+      <h1>AvatarUpload</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

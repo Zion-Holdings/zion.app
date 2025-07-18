@@ -1,7 +1,10 @@
+import React from 'react';
 
-import { useEffect, useState } from 'react;'';
-  const eventDate: unknown = new Date('2025-06-20T14:00:00Z').getTime();;'';
-  const [timeLeft, setTimeLeft] = useState('');'';
-
-    }, 1000);''';
-;'''
+export default function LivestreamSection() {
+  return (
+    <div>
+      <h1>LivestreamSection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

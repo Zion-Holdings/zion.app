@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-import { SignUpForm } from '../signup/SignUpForm;'';
-
-  const showSignUpView: unknown = () => setIsSignUpView(true);''';
-;''';
-          {!isSignUpView && ( // Only show "Don'';
-          {!isSignUpView && ( // Only show "Don''
+export default function LoginCard() {
+  return (
+    <div>
+      <h1>LoginCard</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

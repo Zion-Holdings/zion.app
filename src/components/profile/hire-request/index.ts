@@ -1,3 +1,2 @@
-
-export { HireRequestModal } from './HireRequestModal;'';
-'''''''
+// index.ts - placeholder
+export const placeholder = 'placeholder';

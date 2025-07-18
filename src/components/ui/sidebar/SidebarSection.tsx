@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import { cn } from '@/lib/utils;'';
-
-  title,;''';
-}: SidebarSectionProps) {;''';
-    <div className={cn('py-2', className)} {...props}>;'''
+export default function SidebarSection() {
+  return (
+    <div>
+      <h1>SidebarSection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

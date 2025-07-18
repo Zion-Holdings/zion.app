@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import { logInfo } from '@/utils/productionLogger;'';
-;''';
-    return { before: ''';
-    return { before: '''
+export default function AutocompleteSuggestions() {
+  return (
+    <div>
+      <h1>AutocompleteSuggestions</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

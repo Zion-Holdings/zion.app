@@ -1,4 +1,2 @@
-// Utility functions for vaultEncryption;
-export const vaultEncryption = {;
-  // TODO: Implement utility functions;
-};
+// vaultEncryption.ts - placeholder
+export const placeholder = 'placeholder';

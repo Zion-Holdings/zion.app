@@ -1,10 +1,10 @@
-import {;
-  Select,;
-  SelectContent,;
-  SelectItem,;
-  SelectTrigger,;
+import React from 'react';
 
-  SelectValue,;
-} from '';
-import type { SortFilterProps } from '@/types/filters;'';
-export function SortFilter(): unknown {): unknown {): unknown {): unknown {): unknown {{ sortOption, setSortOption }: SortFilterProps) {;'''
+export default function SortFilter() {
+  return (
+    <div>
+      <h1>SortFilter</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

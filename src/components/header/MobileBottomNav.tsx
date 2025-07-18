@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-  Heart,;''';
-  MessageCircle,;''';
-} from '';
-
-import { useCart } from '@/context/CartContext;'';
-  const { _user } = useAuth();'''
+export default function MobileBottomNav() {
+  return (
+    <div>
+      <h1>MobileBottomNav</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

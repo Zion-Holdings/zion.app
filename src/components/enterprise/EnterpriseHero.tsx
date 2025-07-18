@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { GradientHeading } from '@/components/GradientHeading;'';
-export function EnterpriseHero(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'''
+export default function EnterpriseHero() {
+  return (
+    <div>
+      <h1>EnterpriseHero</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

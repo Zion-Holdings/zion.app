@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import type { CommentEntry } from '@/services/commentService;'';
-;'''
+export default function CommentsSection() {
+  return (
+    <div>
+      <h1>CommentsSection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

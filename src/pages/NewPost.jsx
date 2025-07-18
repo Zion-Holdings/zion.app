@@ -1,7 +1,10 @@
+import React from 'react';
 
-  const content = watch('content');'';
-      const res = await fetch('/forum/posts', {'';
-        method: 'POST','';
-        headers: { 'Content-Type': 'application/json' },'';
-        throw new Error(err.message || 'Failed to create post');'';
-      logErrorToProduction('Post creation error:', { data: e });''
+export default function NewPost() {
+  return (
+    <div>
+      <h1>NewPost</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,8 +1,10 @@
+import React from 'react';
 
-export function AgendaTimeline(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
-  const items: unknown = [;
-    'AI Breakthroughs & Tools',;;'';
-    'DAO Governance Updates',;;'';
-    'Talent Showcase & Matchmaking',;;'';
-    'Global Expansion Announcements',;'';
-  ];'''
+export default function AgendaTimeline() {
+  return (
+    <div>
+      <h1>AgendaTimeline</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

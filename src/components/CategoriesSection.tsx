@@ -1,14 +1,10 @@
+import React from 'react';
 
-
-  Users,;''';
-  Briefcase,''';
-  Lightbulb,;''';
-  HelpCircle,;''';
-} from '';
-
-;''';
-
-import { useTranslation } from 'react-i18next;''';
-''';
-// Ideally, this would be in a shared types file.;''';
-interface CategoryType {;'''
+export default function CategoriesSection() {
+  return (
+    <div>
+      <h1>CategoriesSection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

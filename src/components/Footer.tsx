@@ -1,21 +1,10 @@
+import React from 'react';
 
-  Twitter,;''';
-  Instagram,''';
-  Youtube,;''';
-  Github,;''';
-} from '';
-
-;''';
-  const scrollToTop: unknown = () => {;''';
-    { name: 'Facebook', href: '#'';
-    { name: 'Twitter', href: '#'';
-    { name: 'Instagram', href: '#'';
-    { name: 'LinkedIn', href: '#'';
-    { name: 'YouTube', href: '#'';
-    { name: 'GitHub', href: '#'';
-    { name: 'Facebook', href: '#'';
-    { name: 'Twitter', href: '#'';
-    { name: 'Instagram', href: '#'';
-    { name: 'LinkedIn', href: '#'';
-    { name: 'YouTube', href: '#'';
-    { name: 'GitHub', href: '#''
+export default function Footer() {
+  return (
+    <div>
+      <h1>Footer</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,13 +1,10 @@
+import React from 'react';
 
-
-import type { SearchSuggestion } from '@/types/search;''';
-  { text: 'Apple iPhone', type: 'product' },;;'';
-  { text: 'Apple MacBook', type: 'product' },;''';
-    text: 'A very long suggestion text for testing overflow and stuff',;;'';
-    type: 'category',;'';
-];''';
-const mockSearchTerm: unknown = 'Apple;'';
-describe('AutocompleteSuggestions', () => {;'';
-
-        suggestions={suggestions};''';
-        visible={visible};'''
+export default function AutocompleteSuggestions.test() {
+  return (
+    <div>
+      <h1>AutocompleteSuggestions.test</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

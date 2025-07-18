@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-import { cn } from '@/lib/utils;'';
-;''';
-    { href: '/', label: 'Home'';
-    { href: '/partners', label: 'Partner Program'';
-    { href: '/signup', label: 'Register'';
-    { href: '/', label: 'Home'';
-    { href: '/partners', label: 'Partner Program'';
-    { href: '/signup', label: 'Register''
+export default function MainNavigation() {
+  return (
+    <div>
+      <h1>MainNavigation</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

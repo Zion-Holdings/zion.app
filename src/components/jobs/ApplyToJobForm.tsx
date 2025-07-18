@@ -1,12 +1,10 @@
+import React from 'react';
 
-
-  Select,;''';
-  SelectTrigger,;''';
-} from '';
-import { Alert, AlertDescription } from '@/components/ui/alert;'';
-
-import { toast } from 'sonner;'';
-};''';
-  const { _user } = useAuth();''';
-    `I'';
-    `I''
+export default function ApplyToJobForm() {
+  return (
+    <div>
+      <h1>ApplyToJobForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

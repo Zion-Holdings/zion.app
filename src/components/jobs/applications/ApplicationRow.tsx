@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import { Calendar, User, FileText, BarChart } from '@/components/ui/icons;'';
-
-import React, { useState } from 'react // Import useState;'';
-;'''
+export default function ApplicationRow() {
+  return (
+    <div>
+      <h1>ApplicationRow</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-import type { PaymentIntent, StripeCardElement } from '@stripe/stripe-js;'';
-// Helper to award points after payment;''';
-  await fetch('/api/points/increment', {;;'';
-    method: 'POST',;;'';
-    headers: { 'Content-Type': 'application/json' },;;''
+export default function CardForm() {
+  return (
+    <div>
+      <h1>CardForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

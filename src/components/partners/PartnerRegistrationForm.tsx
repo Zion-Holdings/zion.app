@@ -1,16 +1,10 @@
+import React from 'react';
 
-
-  Card,;''';
-  CardHeader,;''';
-} from '';
-
-  FormDescription,;''';
-  FormLabel,;''';
-} from '';
-  Select,;''';
-  SelectTrigger,;''';
-} from '';
-
-import type { ControllerRenderProps } from 'react-hook-form;'';
-        await supabase.rpc('generate_referral_code'';
-        await supabase.rpc('generate_referral_code''
+export default function PartnerRegistrationForm() {
+  return (
+    <div>
+      <h1>PartnerRegistrationForm</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

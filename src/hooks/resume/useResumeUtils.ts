@@ -1,5 +1,2 @@
-// Hook for useResumeUtils;
-export const useUseResumeUtils = () => {
-  // TODO: Implement hook logic;
-  return {};
-};
+// useResumeUtils.ts - placeholder
+export const placeholder = 'placeholder';

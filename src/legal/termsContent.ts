@@ -1,27 +1,2 @@
-export interface TermsSection {;
-  id: "string"";
-  title: string,"";
-  content: "string"";
-}";"";
-;"";
-export const TERMS_SECTIONS: unknown TermsSection[] = [;"";
-  {;"";
-    content: `<p>Welcome to Zion Tech Group. By accessing the marketplace you agree to these Terms of Service which form a binding agreement between you and Zion Tech Group.</p>`,;"";
-  },;"";
-  {;"";
-    content: `<p>When you create an account you must provide accurate information and keep your login credentials confidential. You are responsible for all activity under your account.</p>`,;"";
-  },;"";
-  {;"";
-    content: `<p>Transactions are processed through our payment partners. By making a purchase you authorize us to charge your chosen payment method for any applicable fees.</p>`,;"";
-  },;"";
-  {;"";
-    content: `<p>You may not use the marketplace for any unlawful purpose or to violate the rights of others. We reserve the right to remove content that violates these terms.</p>`,;"";
-  },;"";
-  {;"";
-    content: `<p>We may suspend or terminate your access if you breach these Terms or engage in conduct that harms the platform or other users.</p>`,;"";
-  },;"";
-  {;"";
-    content: `<p>If you have questions about these Terms, please contact us at <a href="mailto:legal@ziontechgroup.com">legal@ziontechgroup.com</a>.</p>`,;"";
-  },;"";
-];"";
-"""""
+// termsContent.ts - placeholder
+export const placeholder = 'placeholder';

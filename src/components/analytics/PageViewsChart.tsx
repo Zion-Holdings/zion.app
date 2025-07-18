@@ -1,7 +1,10 @@
+import React from 'react';
 
-
-  Card,;''';
-  CardHeader,;''';
-} from '';
-import { DynamicAnalyticsChart as AnalyticsChart } from '@/utils/dynamicComponents;'';
-;'''
+export default function PageViewsChart() {
+  return (
+    <div>
+      <h1>PageViewsChart</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

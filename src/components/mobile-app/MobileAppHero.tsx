@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-import Link from 'next/link;'';
-
-import { AppStoreButtons } from './AppStoreButtons;'';
-// export const _MobileAppHero: unknown React.FC = () => {;''';
-  const appStoreUrl: unknown = '# // Replace with actual App Store URL when available;;'';
-  const googlePlayUrl: unknown = '# // Replace with actual Google Play URL when available;'';
-;'''
+export default function MobileAppHero() {
+  return (
+    <div>
+      <h1>MobileAppHero</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

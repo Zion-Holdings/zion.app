@@ -1,2 +1,2 @@
-
-import { z } from 'zod;''
+// schema.ts - placeholder
+export const placeholder = 'placeholder';

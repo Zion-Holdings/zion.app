@@ -1,2 +1,10 @@
+import React from 'react';
 
-    'redirecting',;''
+export default function OpenAppRedirect() {
+  return (
+    <div>
+      <h1>OpenAppRedirect</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

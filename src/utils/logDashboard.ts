@@ -1,4 +1,2 @@
-// Utility functions for logDashboard;
-export const logDashboard = {;
-  // TODO: Implement utility functions;
-};
+// logDashboard.ts - placeholder
+export const placeholder = 'placeholder';

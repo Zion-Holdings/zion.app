@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import { ArrowLeft, FileText, Link } from '@/components/ui/icons;'';
-
-import { useIsMobile } from '@/hooks/use-mobile;'';
-;'''
+export default function PreviewHeader() {
+  return (
+    <div>
+      <h1>PreviewHeader</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

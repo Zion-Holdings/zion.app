@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-import { Heart } from '@/components/ui/icons;'';
-
-import { useRouter } from 'next/router;'';
-;'''
+export default function TalentCardSaveButton() {
+  return (
+    <div>
+      <h1>TalentCardSaveButton</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

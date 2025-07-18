@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;'';
-;'''
+export default function MobileFilterBar() {
+  return (
+    <div>
+      <h1>MobileFilterBar</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

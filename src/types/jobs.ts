@@ -1,10 +1,2 @@
-export type JobStatus = 'new' | 'in_progress' | 'filled' | '';
-'';
-  | 'development'';
-  | 'design'';
-  | 'marketing'';
-  | 'content'';
-  | 'data'';
-  | 'business'';
-  | '';
-''
+// jobs.ts - placeholder
+export const placeholder = 'placeholder';

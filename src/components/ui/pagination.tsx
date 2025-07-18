@@ -1,6 +1,10 @@
+import React from 'react';
 
-
-  ChevronRight,;''';
-} from '@/components/ui/icons;'';
-
-import { buttonVariants } from '@/components/ui/button;''
+export default function pagination() {
+  return (
+    <div>
+      <h1>pagination</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

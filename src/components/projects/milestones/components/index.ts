@@ -1,6 +1,2 @@
-
-export { MilestoneManager } from '';
-export { MilestoneCreator } from '';
-export { ProjectActions } from '';
-export { ProjectHeader } from './ProjectHeader;'';
-'''''''
+// index.ts - placeholder
+export const placeholder = 'placeholder';

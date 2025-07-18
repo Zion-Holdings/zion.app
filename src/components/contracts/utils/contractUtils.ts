@@ -1,3 +1,2 @@
-
-
-import type { ContractFormValues } from '../components/ContractForm;''
+// contractUtils.ts - placeholder
+export const placeholder = 'placeholder';

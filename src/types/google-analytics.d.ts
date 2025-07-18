@@ -1,3 +1,2 @@
-// Type definitions for google-analytics.d;
-export interface google-analytics.d {;
-  // TODO: Add proper type definitions;
+// google-analytics.d.ts - placeholder
+export const placeholder = 'placeholder';

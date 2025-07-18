@@ -1,8 +1,10 @@
+import React from 'react';
 
-
-  Trash2,;''';
-  Activity,;''';
-} from '';
-
-import { logErrorToProduction } from '@/utils/productionLogger;'';
-;'''
+export default function quick-actions() {
+  return (
+    <div>
+      <h1>quick-actions</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,3 +1,2 @@
-// Type definitions for pwa.d;
-export interface pwa.d {;
-  // TODO: Add proper type definitions;
+// pwa.d.ts - placeholder
+export const placeholder = 'placeholder';

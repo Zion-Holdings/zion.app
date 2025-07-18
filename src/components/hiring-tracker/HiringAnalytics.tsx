@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-  BarChart,;''';
-  YAxis,;''';
-} from 'recharts;'';
-interface HiringAnalyticsProps {;''';
-;''';
-        { name: 'Applied'';
-        { name: 'Applied''
+export default function HiringAnalytics() {
+  return (
+    <div>
+      <h1>HiringAnalytics</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

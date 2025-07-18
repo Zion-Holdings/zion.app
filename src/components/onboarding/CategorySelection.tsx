@@ -1,4 +1,10 @@
+import React from 'react';
 
-
-import { CATEGORIES } from '@/data/categories;'';
-;'''
+export default function CategorySelection() {
+  return (
+    <div>
+      <h1>CategorySelection</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

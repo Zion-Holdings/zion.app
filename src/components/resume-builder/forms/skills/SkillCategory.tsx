@@ -1,5 +1,10 @@
+import React from 'react';
 
-
-import { SkillItem } from './SkillItem;'';
-  onDelete,;''';
-;'''
+export default function SkillCategory() {
+  return (
+    <div>
+      <h1>SkillCategory</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

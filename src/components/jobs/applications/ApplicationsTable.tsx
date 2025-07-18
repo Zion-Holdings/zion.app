@@ -1,11 +1,10 @@
+import React from 'react';
 
-
-import { ClickableBadge } from '@/components/ui/clickable-badge;'';
-  TableBody,;''';
-  TableHeader,;''';
-} from '';
-
-import { StatusBadge } from './StatusBadge;'';
-
-import Image from 'next/image // Import next/image;'';
-;'''
+export default function ApplicationsTable() {
+  return (
+    <div>
+      <h1>ApplicationsTable</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}
