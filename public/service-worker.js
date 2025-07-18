@@ -7,7 +7,7 @@ try {
 } catch (_e) {
   try {
     importScripts('https://cdn.jsdelivr.net/npm/workbox-sw@6.1.5/build/workbox-sw.js');
-  } catch (e2) {
+  } catch (_e2) {
     try {
       importScripts('https://unpkg.com/workbox-sw@6.1.5/build/workbox-sw.js');
     } catch (e3) {
