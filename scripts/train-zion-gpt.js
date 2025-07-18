@@ -22,7 +22,7 @@ async function collectData() {
     try {
       const data = await readFile(src, 'utf8');
       combined += `\n\n# Source: ${src}\n` + data;
-    } catch (_err) {
+    } catch {
       // ignore missing files during training data collection
     }
   }

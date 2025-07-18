@@ -106,7 +106,7 @@ class StagingVerifier {
       this.results.passed++;
       return true;
 
-    } catch (_error) {
+    } catch {
       // console.warn(`  ❌ ${route} - FAILED: ${error.message}`); // Removed
       this.results.failed++;
       this.results.errors.push({

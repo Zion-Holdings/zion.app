@@ -44,7 +44,7 @@ export const initPostHog = () => {
   (function(c: Document, a: PostHogInstance){
     (window as { posthog?: PostHogInstance }).posthog = a;
     a._i = [];
-    a.init = function(k: string, opts: { api_host: string }) {
+    a.init = function(k: string, opts: { apihost: string }) {
       function p(method: string) {
         return function(...args: unknown[]) { a.push([method].concat(args as string[])); };
       }

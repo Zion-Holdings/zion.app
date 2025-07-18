@@ -72,7 +72,7 @@ function extractLinksFromJsx(jsxContent, filePath) {
       }
     }
     visit(ast);
-  } catch (_error) {
+  } catch {
     console.warn(chalk.yellow(`Could not parse JSX/TSX file ${filePath}: ${error.message}. Skipping.`));
   }
   return links;
@@ -95,7 +95,7 @@ function extractLinksFromJson(jsonContent, filePath) {
         }
     }
     findUrlsInObject(json);
-  } catch (_error) {
+  } catch {
     console.warn(chalk.yellow(`Could not parse JSON file ${filePath}: ${error.message}. Skipping.`));
   }
   return links;

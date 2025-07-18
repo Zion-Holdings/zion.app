@@ -2,9 +2,9 @@
 // Linter workaround: define unused variables to satisfy no-undef errors
 // These are not referenced anywhere in the code, but the linter incorrectly reports them as undefined.
 const _PERF_ERROR_REGEX = undefined;
-const _perfErrorStreak = undefined;
+const _perfErrorStreak = undefined; // Unused undefined;
 const _SECURITY_PATCH_REGEX = undefined;
-const _securityPatchStreak = undefined;
+const _securityPatchStreak = undefined; // Unused undefined;
 const _HEAL_COMMAND = undefined;
  
 const _reason = undefined;

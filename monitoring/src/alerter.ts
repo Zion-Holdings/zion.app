@@ -112,7 +112,7 @@ export async function triggerAlerts(result: EndpointTestResult): Promise<void> {
       try {
         await restartService(serviceName); // This will now only run for non-nextjs-service
         logger.info(`PM2 Service restart process initiated for ${serviceName} due to high latency on ${result.name}.`);
-      } catch (_restartError) {
+      } catch {
         logger.error(`PM2 Service restart attempt failed for ${serviceName}.`, restartError);
         // Optionally send another webhook if restart fails critically
       }

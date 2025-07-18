@@ -98,7 +98,7 @@ export default function SavedTalentsPage() {
     });
   };
 
-  const _handleToggleSave = async (talentId: string, _isCurrentlySaved: boolean) => {
+  const _handleToggleSave = undefined; // Unused async (talentId: string, _isCurrentlySaved: boolean) => {
     try {
       if (!user) {
         logWarn("User not authenticated.");

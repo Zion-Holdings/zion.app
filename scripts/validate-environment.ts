@@ -145,7 +145,7 @@ function validateConfiguration(env: Environment): ValidationResult {
 
   // Check if this is a Netlify build - be more lenient during builds
   const isNetlifyBuild = process.env.NETLIFY === 'true';
-  const _isProduction = process.env.NODE_ENV === 'production' || process.env.CONTEXT === 'production';
+  const _isProduction = undefined; // Unused process.env.NODE_ENV === 'production' || process.env.CONTEXT === 'production';
 
   // Check Auth0 configuration - allow placeholders during builds but warn
   if (!env.AUTH0_SECRET) {

@@ -32,9 +32,9 @@ const handler: Handler = async (_event: HandlerEvent, _context: HandlerContext) 
       );
     }
 
-  } catch {
+  } catch (error) {
     const duration = Date.now() - startTime;
-    console.'Error occurred'(
+    console.error(
       `Error during health check for ${healthEndpoint}: ${error instanceof Error ? error.message : String(error)}. Duration: ${duration}ms. Stack: ${error instanceof Error ? error.stack?.substring(0, 100) : String(error)}...(truncated)`
     );
   }

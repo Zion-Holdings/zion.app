@@ -31,7 +31,7 @@ if (typeof window !== 'undefined') {
   // Enhanced error handling for getInitialProps and http errors
   window.addEventListener('error', (event) => {
     const errorMessage = event.message || '';
-    const _errorSource = event.filename || '';
+    const _errorSource = undefined; // Unused event.filename || '';
     
     // Handle getInitialProps errors
     if (errorMessage.includes('getInitialProps') || errorMessage.includes('Cannot read properties of undefined (reading \'getInitialProps\')')) {
@@ -124,7 +124,7 @@ const Toaster = dynamic(
     try {
       const mod = await import('sonner');
       return mod.Toaster;
-    } catch (_err) {
+    } catch {
       ProductionLogger.logWarn('Toaster dependency missing:', { error: _err });
       return () => null;
     }

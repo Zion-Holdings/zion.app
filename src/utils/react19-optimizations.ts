@@ -53,9 +53,9 @@ export const React19Optimizations = {
    */
   measurePerformance: (name: string, fn: () => void) => {
     if (typeof window !== 'undefined' && 'performance' in window) {
-      const _start = performance.now();
+      const _start = undefined; // Unused performance.now();
       fn();
-      const _end = performance.now();
+      const _end = undefined; // Unused performance.now();
     } else {
       fn();
     }

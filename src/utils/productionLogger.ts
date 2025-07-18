@@ -347,7 +347,7 @@ class ProductionLogger {
       performance.clearMeasures(label);
 
       return duration;
-    } catch (_error) {
+    } catch {
       this.warn(`Timer measurement failed for ${label}`, { error });
       return undefined;
     }

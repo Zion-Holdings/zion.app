@@ -58,7 +58,7 @@ export const PwaInstallButton: React.FC = () => {
         safeStorage.setItem(DISMISS_KEY, Date.now().toString());
         setPromptEvent(null);
       }
-    } catch (_err) {
+    } catch {
       setIsInstalling(false);
       toast('Installation failed', { description: 'Please try again later.' });
       logErrorToProduction('PWA install error:', { data: err });

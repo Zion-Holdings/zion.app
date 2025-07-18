@@ -126,7 +126,7 @@ const tsHelpers = {
     return c > 3 && r && Object.defineProperty(target, key!, r), r;
   },
   
-  __awaiter: function (thisArg: unknown, _arguments: unknown, P: unknown, generator: unknown) {
+  __awaiter: function (thisArg: unknown, arguments: unknown, P: unknown, generator: unknown) {
     function adopt(value: unknown) { return value instanceof (P as { new (cb: (resolve: (value: unknown) => void) => void): unknown }) ? value : new (P as { new (cb: (resolve: (value: unknown) => void) => void): unknown })(function (resolve: (value: unknown) => void) { resolve(value); }); }
     return new ((P as typeof Promise) || (P = Promise))(function (resolve: (value: unknown) => void, reject: (reason?: unknown) => void) {
       function fulfilled(value: unknown) { try { step((generator as Generator).next(value)); } catch (_e) { reject(e); } }

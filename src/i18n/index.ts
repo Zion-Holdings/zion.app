@@ -118,7 +118,7 @@ i18n.on('missingKey', (lngs, namespace, key) => {
       }).catch(() => {
         // Fail silently to avoid interfering with app flow
       });
-    } catch (_error) {
+    } catch {
       // Fail silently to avoid interfering with app flow
     }
   }

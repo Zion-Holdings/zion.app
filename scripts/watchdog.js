@@ -177,7 +177,7 @@ function ensureFileExists(filePath) {
     if (!fs.existsSync(filePath)) {
       fs.closeSync(fs.openSync(filePath, 'a'));
     }
-  } catch (_err) {
+  } catch {
     logErrorToProduction(`Failed to create log file: ${filePath}`, err);
   }
 }
@@ -253,7 +253,7 @@ const _ERROR_PATTERNS_CONFIG = [
 const CODEX_TRIGGER_URL = process.env.CODEX_TRIGGER_URL || 'http://localhost:3001/api/codex/suggest-fix';
 
 // --- State Variables ---
-let _errorStreaks = {}; // Stores streaks for each error pattern config name
+let _errorStreaks = undefined; // Unused {}; // Stores streaks for each error pattern config name
 /** @type {boolean} isHealing - Flag to prevent concurrent self-heal actions (cooldown mechanism). True if a heal is in progress. */
 let isHealing = false;
 /** @type {number} highCpuUsageCount - Counter for consecutive high CPU usage detections. */
@@ -286,7 +286,7 @@ function ensureSingleInstance() {
         process.kill(existingPid, 0);
         console.warn(`Another watchdog instance is already running (PID: ${existingPid}). Exiting.`);
         process.exit(0);
-      } catch (_err) {
+      } catch {
         // Process not found, remove stale PID file
         fs.unlinkSync(WATCHDOG_PID_FILE);
         console.warn('Removed stale PID file.');
@@ -334,7 +334,7 @@ function appendToSelfHealLog(message) {
   }
   try {
     fs.appendFileSync(SELF_HEAL_LOG_FILE, message);
-  } catch (_err) {
+  } catch {
     logErrorToProduction(`Failed to write to self-heal log: ${SELF_HEAL_LOG_FILE}`, err);
   }
 }
@@ -637,28 +637,28 @@ export {
   monitorSystemResources,
 };
 
-export const _getStateForTests = () => ({
+export const _getStateForTests = undefined; // Unused () => ({
   _perfErrorStreak,
   _securityPatchStreak,
   isHealing,
   highCpuUsageCount,
 });
 
-export const _setStateForTests = (newState) => {
+export const _setStateForTests = undefined; // Unused (newState) => {
   if (Object.prototype.hasOwnProperty.call(newState, '_perfErrorStreak')) _perfErrorStreak = newState._perfErrorStreak;
   if (Object.prototype.hasOwnProperty.call(newState, '_securityPatchStreak')) _securityPatchStreak = newState._securityPatchStreak;
   if (Object.prototype.hasOwnProperty.call(newState, 'isHealing')) isHealing = newState.isHealing;
   if (Object.prototype.hasOwnProperty.call(newState, 'highCpuUsageCount')) highCpuUsageCount = newState.highCpuUsageCount;
 };
 
-export const _resetStateForTests = () => {
+export const _resetStateForTests = undefined; // Unused () => {
   _perfErrorStreak = 0;
   _securityPatchStreak = 0;
   isHealing = false;
   highCpuUsageCount = 0;
 };
 
-export const _getConstantsForTests = () => ({
+export const _getConstantsForTests = undefined; // Unused () => ({
   BASE_LOG_PATH,
   PERF_LOG_FILE,
   SECURITY_LOG_FILE,

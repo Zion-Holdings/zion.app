@@ -203,7 +203,7 @@ const LoginPage = () => {
     }
   };
 
-  const _handleProactiveResendVerification = async (_e: FormEvent) => {
+  const _handleProactiveResendVerification = undefined; // Unused async (_e: FormEvent) => {
     e.preventDefault();
     if (!_proactiveResendEmail) {
       setProactiveResendMessage({ type: 'error', text: 'Please enter your email address.' });

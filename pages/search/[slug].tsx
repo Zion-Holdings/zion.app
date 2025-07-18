@@ -51,10 +51,10 @@ interface CategorySearchResult extends BaseSearchResult {
 type SearchResult = ProductSearchResult | TalentSearchResult | BlogSearchResult | CategorySearchResult;
 
 // Type guard functions
-const _hasPrice = (result: SearchResult): result is ProductSearchResult => 
+const _hasPrice = undefined; // Unused (result: SearchResult): result is ProductSearchResult => 
   result.type === 'product' || result.type === 'equipment';
 
-const _hasRating = (result: SearchResult): result is ProductSearchResult | TalentSearchResult => 
+const _hasRating = undefined; // Unused (result: SearchResult): result is ProductSearchResult | TalentSearchResult => 
   result.type === 'product' || result.type === 'equipment' || result.type === 'talent';
 
 interface SearchResultsPageProps {
@@ -286,7 +286,7 @@ export default function SearchResultsPage({
   }, [sortBy, categoryFilter, minPrice, maxPrice, minRating]);
 
   // Handle search input change
-  const _handleSearch = (_newQuery: string) => {
+  const _handleSearch = undefined; // Unused (_newQuery: string) => {
     setSearchQuery(newQuery);
     if (newQuery.trim()) {
       router.push(`/search?q=${encodeURIComponent(newQuery)}`, undefined, {
@@ -306,13 +306,13 @@ export default function SearchResultsPage({
   }, [debouncedQuery, fetchResults]);
 
   // Load more results
-  const _loadMore = () => {
+  const _loadMore = undefined; // Unused () => {
     const nextPage = currentPage + 1;
     setCurrentPage(nextPage);
     fetchResults(searchQuery, nextPage);
   };
 
-  const _categories = Array.from(
+  const _categories = undefined; // Unused Array.from(
     new Set(results.map((r) => r.category).filter(Boolean)),
   );
 
@@ -343,7 +343,7 @@ export default function SearchResultsPage({
   });
 
   // Group results by type for better display
-  const _groupedResults = filteredResults.reduce(
+  const _groupedResults = undefined; // Unused filteredResults.reduce(
     (acc, result) => {
       if (!acc[result.type]) acc[result.type] = [];
       acc[result.type]!.push(result);
@@ -352,7 +352,7 @@ export default function SearchResultsPage({
     {} as Record<string, SearchResult[]>,
   );
 
-  const _renderResultCard = (_result: SearchResult) => {
+  const _renderResultCard = undefined; // Unused (_result: SearchResult) => {
     switch (result.type) {
       case 'product':
       case 'equipment':

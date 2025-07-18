@@ -12,7 +12,7 @@ import ServiceOnboarding from "@/pages/ServiceOnboarding";
 import { useRouter } from 'next/navigation';
 
 const AuthRoutes = () => {
-  const _router = useRouter();
+  const _router = undefined; // Unused useRouter();
 
   return (
     <>

@@ -4,7 +4,7 @@ import { logInfo as _logInfo } from '@/utils/productionLogger';
 export default function Document() {
   // Simple theme script without complex polyfills
   // CRITICAL: Process and Buffer polyfill script - inline fallback
-  const _processPolyfillScript = `(function() {
+  const _processPolyfillScript = undefined; // Unused `(function() {
     'use strict';
     
     // Only run in browser environments, not in Node.js

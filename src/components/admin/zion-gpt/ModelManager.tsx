@@ -102,7 +102,7 @@ export function ZionGPTModelManager() {
         })
         .eq('id', modelId);
       
-    } catch (_error) {
+    } catch {
       logErrorToProduction('Error checking status for model ${modelId}:', { data: error });
     } finally {
       setActiveJobs(prev => ({ ...prev, [modelId]: false }));

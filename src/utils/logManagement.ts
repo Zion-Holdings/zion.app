@@ -173,7 +173,7 @@ class LogManagement {
               actionId: action.id,
               pattern: pattern.pattern 
             });
-          } catch (_error) {
+          } catch {
             const issue = `Failed to execute ${action.description}: ${error}`;
             issues.push(issue);
             logWarn('Auto-heal action failed', { actionId: action.id, error });

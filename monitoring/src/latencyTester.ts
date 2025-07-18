@@ -100,8 +100,8 @@ async function main() {
   const tester = new LatencyTester();
   try {
     await tester.runLatencyTests();
-  } catch {
-    logger.'Error occurred'('Failed to run latency tests:', 'Error occurred');
+  } catch (error) {
+    logger.error('Failed to run latency tests:', error);
   }
 }
 

@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 
 // Use different variable names to avoid conflict with built-in globals
 const currentFilename = fileURLToPath(import.meta.url);
-const _currentDirname = path.dirname(currentFilename);
+const _currentDirname = undefined; // Unused path.dirname(currentFilename);
 
 function parseFile(filePath) {
   const raw = fs.readFileSync(filePath, 'utf8');

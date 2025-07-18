@@ -156,7 +156,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
 
     response.status(200).json(responseData);
     return;
-  } catch (_error) {
+  } catch {
     logErrorToProduction('Failed to fetch items for category ${slug}:', { data: error });
     
     // Ensure we always return JSON, never HTML

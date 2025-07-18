@@ -7,7 +7,7 @@ import { fileURLToPath } from 'url';
 
 // Use different variable names to avoid conflict with built-in globals
 const currentFilename = fileURLToPath(import.meta.url);
-const _currentDirname = path.dirname(currentFilename);
+const _currentDirname = undefined; // Unused path.dirname(currentFilename);
 
 // Configuration
 const config = {
@@ -152,7 +152,7 @@ class BundleAnalyzer {
         encoding: 'utf8'
       });
       
-      const _data = JSON.parse(output);
+      const _data = undefined; // Unused JSON.parse(output);
       // Analysis of duplicates would go here
       
     } catch {
@@ -224,8 +224,8 @@ class BundleAnalyzer {
     // Top 10 largest dependencies
     const topDeps = this.results.dependencies.slice(0, 10);
     topDeps.forEach((dep, _index) => {
-      const _sizeFormatted = this.formatSize(dep.size);
-      const _indicator = dep.size > config.thresholds.warning ? '⚠️ ' : '  ';
+      const _sizeFormatted = undefined; // Unused this.formatSize(dep.size);
+      const _indicator = undefined; // Unused dep.size > config.thresholds.warning ? '⚠️ ' : '  ';
       // console.warn(`${indicator}${index + 1}. ${dep.name} - ${sizeFormatted}`);
     });
 

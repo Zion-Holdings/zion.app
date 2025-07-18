@@ -61,7 +61,7 @@ async function fetchWithRetry(
       throw new Error(text || `Request failed with status ${res.status}`);
     }
     return res.json();
-  } catch (_err) {
+  } catch {
     if (retries > 0) {
       await new Promise((r) => setTimeout(r, backoff));
       return fetchWithRetry(url, options, retries - 1, backoff * 2);

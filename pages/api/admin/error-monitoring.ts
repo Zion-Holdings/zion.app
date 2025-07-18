@@ -55,7 +55,7 @@ async function handleGet(
   res: NextApiResponse<ErrorMonitoringResponse>,
   action: string
 ) {
-  const _timeRange = (req['query'] as { timeRange?: string }).timeRange || 'day';
+  const _timeRange = undefined; // Unused (req['query'] as { timeRange?: string }).timeRange || 'day';
   const timestamp = new Date().toISOString();
 
   switch (action) {

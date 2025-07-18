@@ -70,7 +70,7 @@ let heliaNode: unknown | null = null;
 
 // Simplified libp2p options for this Helia instance
 // Depending on use case, might share libp2p from orbitdb.ts or have more transports
-const _libp2pOptions = {
+const _libp2pOptions = undefined; // Unused {
   addresses: {
     listen: ['/ip4/0.0.0.0/tcp/0']
   },

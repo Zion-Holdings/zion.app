@@ -385,7 +385,7 @@ export class PerformanceMonitor {
       
       observer.observe({ entryTypes: ['longtask'] });
       this.observers.push(observer);
-    } catch (_error) {
+    } catch {
       logWarn('Long task observer not supported');
     }
   }

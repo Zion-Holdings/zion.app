@@ -165,7 +165,7 @@ router.post('/webhook', express.raw({ type: 'application/json' }), (req, res) =>
         await user.save();
         // process.stdout.write(`User ${user.email} plan status updated to ${subscription.status}.`);
 
-      } catch (_err) {
+      } catch {
         // process.stdout.write(`Error processing ${event.type}: ${err.message}`);
         return res.status(200).json({ received: true, error: `Error processing: ${err.message}` });
       }

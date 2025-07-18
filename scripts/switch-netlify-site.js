@@ -61,7 +61,7 @@ export async function switchNetlifySite() {
     assigned = await assignDomain(newSite);
     await removeDomain(oldSite);
     console.warn('DNS switch complete');
-  } catch (_err) {
+  } catch {
     if (assigned) {
       try {
         await removeDomain(newSite);

@@ -43,7 +43,7 @@ function clearLogs() {
           fs.writeFileSync(logFile, '');
           console.warn(`✅ Cleared ${path.basename(logFile)}`);
         }
-      } catch (_err) {
+      } catch {
         console.warn(`⚠️  Could not clear ${logFile}: ${err.message}`);
       }
     });

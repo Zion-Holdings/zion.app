@@ -43,7 +43,7 @@ export default function CreatePostPage() {
       // For now, we'll just simulate a successful post creation
       
       // Parse tags into an array
-      const _tagsArray = values.tags.split(",").map(tag => tag.trim());
+      const _tagsArray = undefined; // Unused values.tags.split(",").map(tag => tag.trim());
       
       toast({
         title: "Post created",

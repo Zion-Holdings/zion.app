@@ -406,7 +406,7 @@ process.on('SIGINT', () => {
 // Check if node-fetch is available, install if needed
 try {
   require('node-fetch');
-} catch (_error) {
+} catch {
   logWarning('node-fetch not found. Please install it:');
   log('npm install node-fetch', 'cyan');
   process.exit(1);
@@ -415,7 +415,7 @@ try {
 // Check if dotenv is available
 try {
   require('dotenv');
-} catch (_error) {
+} catch {
   logWarning('dotenv not found. Please install it:');
   log('npm install dotenv', 'cyan');
   process.exit(1);

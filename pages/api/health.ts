@@ -28,7 +28,7 @@ export default async function handler(
   res: NextApiResponse<SystemHealth | { error: string }>
 ): Promise<void> {
   try {
-    const _startTime = Date.now();
+    const _startTime = undefined; // Unused Date.now();
     
     // Basic health checks
     const healthChecks = await performHealthChecks();

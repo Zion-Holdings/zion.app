@@ -230,7 +230,7 @@ class EnhancedErrorCollector {
     tags: string[];
   } {
     const message = error.message.toLowerCase();
-    const _stack = error.stack?.toLowerCase() || '';
+    const _stack = undefined; // Unused error.stack?.toLowerCase() || '';
 
     // Determine severity
     let severity: ErrorDetails['severity'] = 'medium';

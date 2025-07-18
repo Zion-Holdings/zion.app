@@ -156,7 +156,7 @@ export function TranslatableJobForm({ onSubmit, isSubmitting = false }: Translat
         title: t('translation.translation_success'),
         description: t('translation.content_translated'),
       });
-    } catch (_error) {
+    } catch {
       logErrorToProduction('Error translating ${field}:', { data: error });
       toast({
         title: t('translation.translation_failed'),

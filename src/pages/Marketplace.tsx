@@ -259,7 +259,7 @@ export default function Marketplace() {
   const { handleApiError: _handleApiError, retryQuery: _retryQuery } = useApiErrorHandling();
 
   // Handle Add Product button with authentication check
-  const _handleAddProduct = useCallback(() => {
+  const _handleAddProduct = undefined; // Unused useCallback(() => {
     if (!isAuthenticated) {
       setIsAuthModalOpen(true); // Use the new auth modal
       return;

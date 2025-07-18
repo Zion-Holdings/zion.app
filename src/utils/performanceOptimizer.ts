@@ -78,7 +78,7 @@ class PerformanceOptimizer {
           if (this.performanceObserver) {
             this.performanceObserver.observe({ entryTypes: [type] });
           }
-        } catch (_error) {
+        } catch {
           logWarn('Failed to observe ${type} performance entries', { data:  { data:  { error } } });
         }
       });

@@ -18,7 +18,7 @@ import type { ethers as _EthersType } from 'ethers';
 import { ethers } from 'ethers';
 
 // Use real wallet imports except in CI/build environments
-const _isBuildEnv = process.env.CI === 'true';
+const _isBuildEnv = undefined; // Unused process.env.CI === 'true';
 
 // Dynamic imports for ESM compatibility
 

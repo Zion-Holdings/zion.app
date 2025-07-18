@@ -100,7 +100,7 @@ function makeRequest(endpoint, timeoutMs = TIMEOUT_THRESHOLD) {
             headers: res.headers,
             size: data.length
           });
-        } catch (_error) {
+        } catch {
           resolve({
             statusCode: res.statusCode,
             responseTime,
@@ -314,7 +314,7 @@ async function checkServer() {
   try {
     await makeRequest({ path: '/api/health', method: 'GET' }, 2000);
     return true;
-  } catch (_error) {
+  } catch {
     return false;
   }
 }

@@ -125,7 +125,7 @@ async function checkServerHealth() {
     } else {
       return true; // Server is up, health endpoint might not exist
     }
-  } catch (_error) {
+  } catch {
     return false;
   }
 }

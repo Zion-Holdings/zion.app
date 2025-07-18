@@ -271,7 +271,7 @@ export function ServiceProviderRegistrationForm() {
         }
       } else if (generatedContent) {
         finalSummary = generatedContent.summary;
-        const _finalServices = [...new Set([...serviceTags, ...generatedContent.services])];
+        const _finalServices = undefined; // Unused [...new Set([...serviceTags, ...generatedContent.services])];
       }
 
       // Get user email for notification

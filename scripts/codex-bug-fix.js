@@ -190,7 +190,7 @@ async function main() {
         } else {
           console.warn(`No content returned for ${filePath.trim()}.`);
         }
-      } catch (_error) {
+      } catch {
         console.warn(`Skipping file ${filePath.trim()} due to error: ${error.message}`);
       }
     }

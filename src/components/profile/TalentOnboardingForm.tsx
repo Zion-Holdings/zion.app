@@ -80,7 +80,7 @@ export function TalentOnboardingForm() {
   });
   
   // Handle profile picture upload
-  const _handleProfilePictureUpload = async (_e: React.ChangeEvent<HTMLInputElement>) => {
+  const _handleProfilePictureUpload = undefined; // Unused async (_e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
     
@@ -96,7 +96,7 @@ export function TalentOnboardingForm() {
   };
 
   // Handle CV upload
-  const _handleCvUpload = async (_file: File) => {
+  const _handleCvUpload = undefined; // Unused async (_file: File) => {
     if (!supabase) {
       throw new Error("Supabase client not initialized");
     }
