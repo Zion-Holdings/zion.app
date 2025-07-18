@@ -1,21 +1,24 @@
-import { useState } from "react";
+import { useState } from 'react';
 import { AlertCircle, FileText, Loader2 } from '@/components/ui/icons';
 import { useRouter } from 'next/router';
-import { useJobApplications } from "@/hooks/useJobApplications";
-import { useResume } from "@/hooks/useResume";
-import { useAuth } from "@/hooks/useAuth";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import { useJobApplications } from '@/hooks/useJobApplications';
+import { useResume } from '@/hooks/useResume';
+import { useAuth } from '@/hooks/useAuth';
+import { Button } from '@/components/ui/button';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 
-
-
-
-import { formatDistanceToNow } from "date-fns";
-import type { Job } from "@/types/jobs";
-import { toast } from "sonner";
+import { formatDistanceToNow } from 'date-fns';
+import type { Job } from '@/types/jobs';
+import { toast } from 'sonner';
 
 interface ApplyToJobFormProps {
   job: Job;
@@ -27,73 +30,81 @@ export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
   const { _applyToJob } = useJobApplications();
   const { resumes, isLoading: isResumesLoading } = useResume();
   const router = useRouter();
-  
-  const [coverLetter, setCoverLetter] = useState(`I'm interested in the "${job.title}" position and would like to apply. My skills and experience align well with this role.`);
-  const [selectedResumeId, setSelectedResumeId] = useState<string>("");
+
+  const [coverLetter, setCoverLetter] = useState(
+    `I'm interested in the "${job.title}" position and would like to apply. My skills and experience align well with this role.`,
+  );
+  const [selectedResumeId, setSelectedResumeId] = useState<string>('');
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  
+
   const handleSubmit = async (_e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!user) {
-      toast.error("You must be logged in to apply");
+      toast.error('You must be logged in to apply');
       router.push(`/login?returnTo=${encodeURIComponent(`/jobs/${job.id}`)}`);
       return;
     }
-    
+
     if (!coverLetter.trim()) {
-      setError("Please provide a cover letter");
+      setError('Please provide a cover letter');
       return;
     }
-    
+
     setIsSubmitting(true);
     setError(null);
-    
+
     try {
       const success = await applyToJob(
         job.id,
         coverLetter,
         selectedResumeId || undefined,
-        resumeFile || undefined
+        resumeFile || undefined,
       );
-      
+
       if (success) {
-        toast.success("Your application has been submitted!");
+        toast.success('Your application has been submitted!');
         if (onSuccess) {
           onSuccess();
         }
       }
     } catch (err: unknown) {
-      if (typeof err === 'object' && err !== null && 'message' in err && typeof (err as { message?: unknown }).message === 'string') {
+      if (
+        typeof err === 'object' &&
+        err !== null &&
+        'message' in err &&
+        typeof (err as { message?: unknown }).message === 'string'
+      ) {
         setError((err as { message: string }).message);
-        toast.error("Failed to submit application");
+        toast.error('Failed to submit application');
       } else {
-        setError("Failed to submit application");
-        toast.error("Failed to submit application");
+        setError('Failed to submit application');
+        toast.error('Failed to submit application');
       }
     } finally {
       setIsSubmitting(false);
     }
   };
-  
+
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div>
         <h3 className="text-lg font-medium mb-1">Apply to: {job.title}</h3>
         <p className="text-sm text-muted-foreground mb-4">
-          Posted {formatDistanceToNow(new Date(job.created_at), { addSuffix: true })}
+          Posted{' '}
+          {formatDistanceToNow(new Date(job.created_at), { addSuffix: true })}
         </p>
       </div>
-      
+
       {error && (
         <Alert variant="destructive">
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>{error}</AlertDescription>
         </Alert>
       )}
-      
+
       <div className="space-y-4">
         <div>
           <Label htmlFor="coverLetter">Cover Letter</Label>
@@ -106,10 +117,11 @@ export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
             className="mt-1"
           />
           <p className="text-xs text-muted-foreground mt-1">
-            Provide a brief introduction and highlight your relevant skills and experience.
+            Provide a brief introduction and highlight your relevant skills and
+            experience.
           </p>
         </div>
-        
+
         <div>
           <Label htmlFor="resume">Select Resume (Optional)</Label>
           {isResumesLoading ? (
@@ -131,7 +143,7 @@ export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
                   if (resume.id) {
                     return (
                       <SelectItem key={resume.id} value={resume.id}>
-                        {resume.title || "Untitled Resume"}
+                        {resume.title || 'Untitled Resume'}
                       </SelectItem>
                     );
                   }
@@ -145,11 +157,11 @@ export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
                 <FileText className="h-5 w-5 text-muted-foreground" />
                 <span>No resumes found</span>
               </div>
-              <Button 
-                variant="outline" 
-                size="sm" 
+              <Button
+                variant="outline"
+                size="sm"
                 type="button"
-                onClick={() => router.push("/dashboard/talent/portfolio")}
+                onClick={() => router.push('/dashboard/talent/portfolio')}
               >
                 Create Resume
               </Button>
@@ -168,7 +180,7 @@ export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
           />
         </div>
       </div>
-      
+
       <div className="flex justify-end gap-2">
         <Button
           type="button"
@@ -187,7 +199,7 @@ export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
               Submitting...
             </>
           ) : (
-            "Submit Application"
+            'Submit Application'
           )}
         </Button>
       </div>

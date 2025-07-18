@@ -21,7 +21,10 @@ interface SlideEditorProps {
   onSlidesChange: (slides: Slide[]) => void;
 }
 
-const SlideEditor: React.FC<SlideEditorProps> = ({ initialSlides, onSlidesChange }) => {
+const SlideEditor: React.FC<SlideEditorProps> = ({
+  initialSlides,
+  onSlidesChange,
+}) => {
   const [slides, setSlides] = useState<Slide[]>(initialSlides);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -30,9 +33,13 @@ const SlideEditor: React.FC<SlideEditorProps> = ({ initialSlides, onSlidesChange
     setCurrentIndex(0); // Reset to first slide when initialSlides change
   }, [initialSlides]);
 
-  const handleSlideChange = (index: number, field: keyof Slide, _value: string) => {
+  const handleSlideChange = (
+    index: number,
+    field: keyof Slide,
+    _value: string,
+  ) => {
     const updatedSlides = slides.map((slide, i) =>
-      i === index ? { ...slide, [field]: value } : slide
+      i === index ? { ...slide, [field]: value } : slide,
     );
     setSlides(updatedSlides);
     onSlidesChange(updatedSlides);
@@ -43,7 +50,9 @@ const SlideEditor: React.FC<SlideEditorProps> = ({ initialSlides, onSlidesChange
     logInfo(`Rephrasing slide ${index + 1}`);
     const currentSlide = slides[index];
     if (!currentSlide) return;
-    const rephrasedContent = currentSlide.content + ` (Rephrased at ${new Date().toLocaleTimeString()})`;
+    const rephrasedContent =
+      currentSlide.content +
+      ` (Rephrased at ${new Date().toLocaleTimeString()})`;
     handleSlideChange(index, 'content', rephrasedContent);
   };
 
@@ -63,13 +72,13 @@ const SlideEditor: React.FC<SlideEditorProps> = ({ initialSlides, onSlidesChange
 
   const handleDeleteSlide = (_index: number) => {
     if (slides.length <= 1) {
-        alert("Cannot delete the last slide.");
-        return;
+      alert('Cannot delete the last slide.');
+      return;
     }
     const updatedSlides = slides.filter((_, i) => i !== index);
     setSlides(updatedSlides);
     onSlidesChange(updatedSlides);
-    setCurrentIndex(prevIndex => Math.max(0, prevIndex -1));
+    setCurrentIndex((prevIndex) => Math.max(0, prevIndex - 1));
   };
 
   const renderChart = (_slide: Slide) => {
@@ -88,42 +97,122 @@ const SlideEditor: React.FC<SlideEditorProps> = ({ initialSlides, onSlidesChange
       { value: 25, name: 'Step 5' },
     ];
     const timelineData = [
-      { name: 'Q1', value: 10 }, { name: 'Q2', value: 30 }, { name: 'Q3', value: 70 }, { name: 'Q4', value: 100 }
+      { name: 'Q1', value: 10 },
+      { name: 'Q2', value: 30 },
+      { name: 'Q3', value: 70 },
+      { name: 'Q4', value: 100 },
     ];
     switch (slide.chartType) {
       case 'bar':
         return (
-          <div style={{ width: '100%', background: '#f9f9f9', padding: 20, borderRadius: 8, marginTop: 10 }}>
+          <div
+            style={{
+              width: '100%',
+              background: '#f9f9f9',
+              padding: 20,
+              borderRadius: 8,
+              marginTop: 10,
+            }}
+          >
             <div className="mb-2 font-bold">Bar Chart</div>
-            <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, height: 120 }}>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'flex-end',
+                gap: 8,
+                height: 120,
+              }}
+            >
               {barData.map((d, i) => (
-                <div key={i} style={{ width: 40, height: d.value / 4, background: '#6366f1', borderRadius: 4, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', color: 'white', fontSize: 12 }}>{d.value}</div>
+                <div
+                  key={i}
+                  style={{
+                    width: 40,
+                    height: d.value / 4,
+                    background: '#6366f1',
+                    borderRadius: 4,
+                    display: 'flex',
+                    alignItems: 'flex-end',
+                    justifyContent: 'center',
+                    color: 'white',
+                    fontSize: 12,
+                  }}
+                >
+                  {d.value}
+                </div>
               ))}
             </div>
             <div className="flex gap-8 mt-2 text-xs text-gray-600">
-              {barData.map((d, i) => <div key={i} style={{ width: 40, textAlign: 'center' }}>{d.name}</div>)}
+              {barData.map((d, i) => (
+                <div key={i} style={{ width: 40, textAlign: 'center' }}>
+                  {d.name}
+                </div>
+              ))}
             </div>
           </div>
         );
       case 'funnel':
         return (
-          <div style={{ width: '100%', background: '#f9f9f9', padding: 20, borderRadius: 8, marginTop: 10 }}>
+          <div
+            style={{
+              width: '100%',
+              background: '#f9f9f9',
+              padding: 20,
+              borderRadius: 8,
+              marginTop: 10,
+            }}
+          >
             <div className="mb-2 font-bold">Funnel Chart</div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: 4,
+              }}
+            >
               {funnelData.map((d, i) => (
-                <div key={i} style={{ width: `${d.value}%`, background: '#a21caf', color: 'white', borderRadius: 4, padding: '4px 0', textAlign: 'center', fontSize: 12 }}>{d.name}: {d.value}</div>
+                <div
+                  key={i}
+                  style={{
+                    width: `${d.value}%`,
+                    background: '#a21caf',
+                    color: 'white',
+                    borderRadius: 4,
+                    padding: '4px 0',
+                    textAlign: 'center',
+                    fontSize: 12,
+                  }}
+                >
+                  {d.name}: {d.value}
+                </div>
               ))}
             </div>
           </div>
         );
       case 'timeline':
         return (
-          <div style={{ width: '100%', background: '#f9f9f9', padding: 20, borderRadius: 8, marginTop: 10 }}>
+          <div
+            style={{
+              width: '100%',
+              background: '#f9f9f9',
+              padding: 20,
+              borderRadius: 8,
+              marginTop: 10,
+            }}
+          >
             <div className="mb-2 font-bold">Timeline Chart</div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
               {timelineData.map((d, i) => (
                 <div key={i} style={{ width: 60, textAlign: 'center' }}>
-                  <div style={{ height: d.value, background: '#059669', borderRadius: 4, marginBottom: 4 }}></div>
+                  <div
+                    style={{
+                      height: d.value,
+                      background: '#059669',
+                      borderRadius: 4,
+                      marginBottom: 4,
+                    }}
+                  ></div>
                   <div className="text-xs text-gray-600">{d.name}</div>
                 </div>
               ))}
@@ -131,12 +220,20 @@ const SlideEditor: React.FC<SlideEditorProps> = ({ initialSlides, onSlidesChange
           </div>
         );
       default:
-        return <p className="text-sm text-gray-500 mt-2">Chart type '{slide.chartType}' not implemented.</p>;
+        return (
+          <p className="text-sm text-gray-500 mt-2">
+            Chart type '{slide.chartType}' not implemented.
+          </p>
+        );
     }
   };
 
   if (!slides || slides.length === 0) {
-    return <p className="text-center text-gray-500 py-8">No slides to display. Generate a deck first.</p>;
+    return (
+      <p className="text-center text-gray-500 py-8">
+        No slides to display. Generate a deck first.
+      </p>
+    );
   }
 
   const currentSlide = slides[currentIndex];
@@ -153,18 +250,22 @@ const SlideEditor: React.FC<SlideEditorProps> = ({ initialSlides, onSlidesChange
           </button>
         </div>
         <div className="text-center">
-            <span className="text-xl font-semibold">Slide {currentIndex + 1} of {slides.length}</span>
+          <span className="text-xl font-semibold">
+            Slide {currentIndex + 1} of {slides.length}
+          </span>
         </div>
         <div>
           <button
-            onClick={() => setCurrentIndex(prev => Math.max(0, prev - 1))}
+            onClick={() => setCurrentIndex((prev) => Math.max(0, prev - 1))}
             disabled={currentIndex === 0}
             className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded mr-2 text-sm disabled:opacity-50"
           >
             Previous
           </button>
           <button
-            onClick={() => setCurrentIndex(prev => Math.min(slides.length - 1, prev + 1))}
+            onClick={() =>
+              setCurrentIndex((prev) => Math.min(slides.length - 1, prev + 1))
+            }
             disabled={currentIndex === slides.length - 1}
             className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded text-sm disabled:opacity-50"
           >
@@ -176,25 +277,35 @@ const SlideEditor: React.FC<SlideEditorProps> = ({ initialSlides, onSlidesChange
       {currentSlide && (
         <div className="slide-content bg-white p-6 rounded-lg shadow">
           <div className="mb-4">
-            <label htmlFor={`slide-title-${currentIndex}`} className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor={`slide-title-${currentIndex}`}
+              className="block text-sm font-medium text-gray-700"
+            >
               Slide Title
             </label>
             <input
               type="text"
               id={`slide-title-${currentIndex}`}
               value={currentSlide.title}
-              onChange={(e) => handleSlideChange(currentIndex, 'title', e.target.value)}
+              onChange={(e) =>
+                handleSlideChange(currentIndex, 'title', e.target.value)
+              }
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2"
             />
           </div>
           <div className="mb-4">
-            <label htmlFor={`slide-content-${currentIndex}`} className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor={`slide-content-${currentIndex}`}
+              className="block text-sm font-medium text-gray-700"
+            >
               Slide Content
             </label>
             <textarea
               id={`slide-content-${currentIndex}`}
               value={currentSlide.content}
-              onChange={(e) => handleSlideChange(currentIndex, 'content', e.target.value)}
+              onChange={(e) =>
+                handleSlideChange(currentIndex, 'content', e.target.value)
+              }
               rows={8}
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2"
             />
@@ -208,11 +319,11 @@ const SlideEditor: React.FC<SlideEditorProps> = ({ initialSlides, onSlidesChange
               Rephrase with AI
             </button>
             <button
-                onClick={() => handleDeleteSlide(currentIndex)}
-                className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded text-sm"
-                disabled={slides.length <= 1}
+              onClick={() => handleDeleteSlide(currentIndex)}
+              className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded text-sm"
+              disabled={slides.length <= 1}
             >
-                Delete Slide
+              Delete Slide
             </button>
           </div>
         </div>

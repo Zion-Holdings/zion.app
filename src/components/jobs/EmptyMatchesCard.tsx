@@ -1,17 +1,16 @@
-
-import { Card } from "@/components/ui/card";
+import { Card } from '@/components/ui/card';
 import { RefreshCcw, Sparkles } from '@/components/ui/icons';
-import { Button } from "@/components/ui/button";
-
-
-
+import { Button } from '@/components/ui/button';
 
 export interface EmptyMatchesCardProps {
   onRefresh: () => void;
   isProcessing: boolean;
 }
 
-export function EmptyMatchesCard({ onRefresh, isProcessing }: EmptyMatchesCardProps) {
+export function EmptyMatchesCard({
+  onRefresh,
+  isProcessing,
+}: EmptyMatchesCardProps) {
   return (
     <Card className="p-6 text-center border-dashed border-2 bg-muted/30">
       <div className="mb-4 flex justify-center">
@@ -21,11 +20,7 @@ export function EmptyMatchesCard({ onRefresh, isProcessing }: EmptyMatchesCardPr
       <p className="text-muted-foreground mb-6">
         Run AI matching to find talents that match this job&apos;s requirements.
       </p>
-      <Button 
-        onClick={onRefresh} 
-        disabled={isProcessing}
-        className="mx-auto"
-      >
+      <Button onClick={onRefresh} disabled={isProcessing} className="mx-auto">
         {isProcessing ? (
           <>
             <RefreshCcw className="mr-2 h-4 w-4 animate-spin" />

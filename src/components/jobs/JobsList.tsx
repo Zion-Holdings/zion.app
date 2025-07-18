@@ -1,16 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import { Loader2, Edit, X, Eye } from '@/components/ui/icons';
-import { useAuth } from "@/hooks/useAuth";
-import { supabase } from "@/integrations/supabase/client";
-import type { Job, JobStatus } from "@/types/jobs";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { useAuth } from '@/hooks/useAuth';
+import { supabase } from '@/integrations/supabase/client';
+import type { Job, JobStatus } from '@/types/jobs';
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
-
-import { format } from "date-fns";
-import Link from "next/link";
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { format } from 'date-fns';
+import Link from 'next/link';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 interface JobsListProps {
   filter?: JobStatus;
@@ -28,18 +34,20 @@ export function JobsList({ filter, onSelectJob }: JobsListProps) {
 
       try {
         if (!supabase) {
-          logErrorToProduction('Supabase client not available for fetching jobs');
+          logErrorToProduction(
+            'Supabase client not available for fetching jobs',
+          );
           return;
         }
-        
+
         let query = supabase
-          .from("jobs")
-          .select("*")
-          .eq("client_id", user.id)
-          .order("created_at", { ascending: false });
+          .from('jobs')
+          .select('*')
+          .eq('client_id', user.id)
+          .order('created_at', { ascending: false });
 
         if (filter) {
-          query = query.eq("status", filter);
+          query = query.eq('status', filter);
         }
 
         const { data, error } = await query;
@@ -68,10 +76,9 @@ export function JobsList({ filter, onSelectJob }: JobsListProps) {
     return (
       <div className="text-center p-8 border rounded-md bg-muted/20">
         <p className="text-lg text-muted-foreground">
-          {filter 
-            ? `No jobs with status "${filter}" found.` 
-            : "You haven't posted any jobs yet."
-          }
+          {filter
+            ? `No jobs with status "${filter}" found.`
+            : "You haven't posted any jobs yet."}
         </p>
         <Button asChild className="mt-4">
           <Link href="/post-job">Post Your First Job</Link>
@@ -82,26 +89,26 @@ export function JobsList({ filter, onSelectJob }: JobsListProps) {
 
   const getStatusColor = (_status: JobStatus) => {
     switch (status) {
-      case "new":
-        return "bg-blue-100 text-blue-800";
-      case "in_progress":
-        return "bg-yellow-100 text-yellow-800";
-      case "filled":
-        return "bg-green-100 text-green-800";
-      case "closed":
-        return "bg-gray-100 text-gray-800";
+      case 'new':
+        return 'bg-blue-100 text-blue-800';
+      case 'in_progress':
+        return 'bg-yellow-100 text-yellow-800';
+      case 'filled':
+        return 'bg-green-100 text-green-800';
+      case 'closed':
+        return 'bg-gray-100 text-gray-800';
       default:
-        return "bg-gray-100 text-gray-800";
+        return 'bg-gray-100 text-gray-800';
     }
   };
 
   return (
     <div className="grid gap-6 md:grid-cols-2">
       {jobs.map((job) => (
-        <Card 
-          key={job.id} 
+        <Card
+          key={job.id}
           className={`overflow-hidden cursor-pointer transition-shadow hover:shadow-md ${
-            onSelectJob ? "cursor-pointer" : ""
+            onSelectJob ? 'cursor-pointer' : ''
           }`}
           onClick={() => onSelectJob?.(job.id, job.title)}
         >
@@ -110,11 +117,11 @@ export function JobsList({ filter, onSelectJob }: JobsListProps) {
               <div>
                 <CardTitle className="text-xl">{job.title}</CardTitle>
                 <CardDescription className="mt-1">
-                  Posted {format(new Date(job.created_at), "PPP")}
+                  Posted {format(new Date(job.created_at), 'PPP')}
                 </CardDescription>
               </div>
               <Badge className={getStatusColor(job.status)}>
-                {job.status.replace("_", " ").toUpperCase()}
+                {job.status.replace('_', ' ').toUpperCase()}
               </Badge>
             </div>
           </CardHeader>
@@ -135,10 +142,12 @@ export function JobsList({ filter, onSelectJob }: JobsListProps) {
               )}
             </div>
             <div className="mt-3 text-sm">
-              <span className="font-medium">Budget:</span> ${job.budget.min} - ${job.budget.max}
+              <span className="font-medium">Budget:</span> ${job.budget.min} - $
+              {job.budget.max}
             </div>
             <div className="mt-1 text-sm">
-              <span className="font-medium">Deadline:</span> {format(new Date(job.deadline), "PPP")}
+              <span className="font-medium">Deadline:</span>{' '}
+              {format(new Date(job.deadline), 'PPP')}
             </div>
           </CardContent>
           <CardFooter className="flex justify-between p-4 pt-0 gap-2">

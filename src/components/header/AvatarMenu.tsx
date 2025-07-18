@@ -10,18 +10,19 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
   DropdownMenuSeparator,
-  DropdownMenuLabel
-} from "@/components/ui/dropdown-menu";
+  DropdownMenuLabel,
+} from '@/components/ui/dropdown-menu';
 
-
- // Assuming lucide-react is used
+// Assuming lucide-react is used
 
 export const _AvatarMenu: React.FC = () => {
   const { user, logout, avatarUrl } = useAuth();
 
   if (!user) return null;
 
-  const initials = (user.displayName || user.name || 'U').charAt(0).toUpperCase();
+  const initials = (user.displayName || user.name || 'U')
+    .charAt(0)
+    .toUpperCase();
 
   return (
     <DropdownMenu>
@@ -32,14 +33,21 @@ export const _AvatarMenu: React.FC = () => {
         >
           <Avatar className="h-8 w-8">
             {avatarUrl ? (
-              <AvatarImage src={avatarUrl} alt={user.displayName || user.name || 'User avatar'} />
+              <AvatarImage
+                src={avatarUrl}
+                alt={user.displayName || user.name || 'User avatar'}
+              />
             ) : (
               <AvatarFallback>{initials}</AvatarFallback>
             )}
           </Avatar>
         </button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56" align="end" data-testid="avatar-menu-content">
+      <DropdownMenuContent
+        className="w-56"
+        align="end"
+        data-testid="avatar-menu-content"
+      >
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
             <p className="text-sm font-medium leading-none">
@@ -66,7 +74,10 @@ export const _AvatarMenu: React.FC = () => {
           </Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={logout} className="flex items-center cursor-pointer">
+        <DropdownMenuItem
+          onClick={logout}
+          className="flex items-center cursor-pointer"
+        >
           <LogOut className="mr-2 h-4 w-4" />
           <span>Logout</span>
         </DropdownMenuItem>

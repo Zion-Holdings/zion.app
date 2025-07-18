@@ -1,9 +1,8 @@
-
-import { ProductListingCard } from "@/components/ProductListingCard";
-import { GradientHeading } from "@/components/GradientHeading";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { ProductListingCard } from '@/components/ProductListingCard';
+import { GradientHeading } from '@/components/GradientHeading';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
 interface FeaturedListingsSectionProps {
   showTitle?: boolean;
@@ -28,7 +27,12 @@ export function FeaturedListingsSection({
       price: 49,
       currency: 'USD',
       tags: ['copywriting', 'ai', 'marketing'],
-      author: { name: 'AI Tools Inc.', id: 'ai-tools', avatarUrl: '/images/ai-copywriter.svg', email: 'info@aitools.com' },
+      author: {
+        name: 'AI Tools Inc.',
+        id: 'ai-tools',
+        avatarUrl: '/images/ai-copywriter.svg',
+        email: 'info@aitools.com',
+      },
       images: ['/images/ai-copywriter.svg'],
       createdAt: '2024-01-01T00:00:00.000Z',
       rating: 4.8,
@@ -51,7 +55,12 @@ export function FeaturedListingsSection({
       price: 99,
       currency: 'USD',
       tags: ['vision', 'api', 'image-recognition'],
-      author: { name: 'Visionary', id: 'visionary', avatarUrl: '/images/vision-api.svg', email: 'contact@visionary.com' },
+      author: {
+        name: 'Visionary',
+        id: 'visionary',
+        avatarUrl: '/images/vision-api.svg',
+        email: 'contact@visionary.com',
+      },
       images: ['/images/vision-api.svg'],
       createdAt: '2024-01-02T00:00:00.000Z',
       rating: 4.7,
@@ -74,7 +83,12 @@ export function FeaturedListingsSection({
       price: 29,
       currency: 'USD',
       tags: ['chatbot', 'ai', 'support'],
-      author: { name: 'Chatbotics', id: 'chatbotics', avatarUrl: '/images/chatbot-pro.svg', email: 'hello@chatbotics.com' },
+      author: {
+        name: 'Chatbotics',
+        id: 'chatbotics',
+        avatarUrl: '/images/chatbot-pro.svg',
+        email: 'hello@chatbotics.com',
+      },
       images: ['/images/chatbot-pro.svg'],
       createdAt: '2024-01-03T00:00:00.000Z',
       rating: 4.6,
@@ -97,7 +111,12 @@ export function FeaturedListingsSection({
       price: 199,
       currency: 'USD',
       tags: ['data', 'analytics', 'insights'],
-      author: { name: 'DataWiz', id: 'datawiz', avatarUrl: '/images/data-insights.svg', email: 'info@datawiz.com' },
+      author: {
+        name: 'DataWiz',
+        id: 'datawiz',
+        avatarUrl: '/images/data-insights.svg',
+        email: 'info@datawiz.com',
+      },
       images: ['/images/data-insights.svg'],
       createdAt: '2024-01-04T00:00:00.000Z',
       rating: 4.9,
@@ -116,7 +135,7 @@ export function FeaturedListingsSection({
   return (
     <section
       id="featured"
-      className={cn("py-12 px-4 bg-background", className)}
+      className={cn('py-12 px-4 bg-background', className)}
       style={style}
     >
       <div className="container mx-auto">
@@ -141,9 +160,9 @@ export function FeaturedListingsSection({
             />
           ))}
         </div>
-        
+
         <div className="mt-10 text-center">
-          <Button 
+          <Button
             className="bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-primary-foreground px-8 py-6"
             asChild
           >
@@ -154,4 +173,3 @@ export function FeaturedListingsSection({
     </section>
   );
 }
-

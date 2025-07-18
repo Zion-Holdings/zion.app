@@ -1,11 +1,13 @@
-
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Badge } from '@/components/ui/badge';
 import { Crown, Medal, Trophy } from '@/components/ui/icons';
-
-
-
 
 interface LeaderboardEntry {
   id: string;
@@ -21,55 +23,55 @@ export function PartnerLeaderboard() {
   // Placeholder data - would come from API in real implementation
   const leaderboard: LeaderboardEntry[] = [
     {
-      id: "1",
+      id: '1',
       rank: 1,
-      name: "AI Tech Guru",
-      avatar: "", // URL would be here
+      name: 'AI Tech Guru',
+      avatar: '', // URL would be here
       referrals: 178,
       earnings: 4500,
-      badges: ["gold", "trending"]
+      badges: ['gold', 'trending'],
     },
     {
-      id: "2",
+      id: '2',
       rank: 2,
-      name: "Machine Learning Hub",
-      avatar: "",
+      name: 'Machine Learning Hub',
+      avatar: '',
       referrals: 145,
       earnings: 3625,
-      badges: ["silver"]
+      badges: ['silver'],
     },
     {
-      id: "3",
+      id: '3',
       rank: 3,
-      name: "Neural Networks Pro",
-      avatar: "",
+      name: 'Neural Networks Pro',
+      avatar: '',
       referrals: 124,
       earnings: 3100,
-      badges: ["bronze"]
+      badges: ['bronze'],
     },
     {
-      id: "4",
+      id: '4',
       rank: 4,
-      name: "AI Career Insights",
-      avatar: "",
+      name: 'AI Career Insights',
+      avatar: '',
       referrals: 98,
       earnings: 2450,
-      badges: []
+      badges: [],
     },
     {
-      id: "5",
+      id: '5',
       rank: 5,
-      name: "Deep Learning Daily",
-      avatar: "",
+      name: 'Deep Learning Daily',
+      avatar: '',
       referrals: 87,
       earnings: 2175,
-      _badges: ["newcomer"]
-    }
+      _badges: ['newcomer'],
+    },
   ];
-  
+
   // Function to render rank badge
   const renderRankBadge = (rank: number) => {
-    switch(rank) {
+    switch (rank) {
       case 1:
         return <Trophy className="h-5 w-5 text-yellow-500" />;
       case 2:
@@ -80,7 +82,7 @@ export function PartnerLeaderboard() {
         return <span className="text-sm font-semibold">{rank}</span>;
     }
   };
-  
+
   return (
     <div className="space-y-6">
       <Card className="bg-zion-blue-dark border-zion-blue-light">
@@ -89,17 +91,22 @@ export function PartnerLeaderboard() {
             <Crown className="h-5 w-5 text-yellow-500" />
             Top Partners
           </CardTitle>
-          <CardDescription>This month's top-performing partners</CardDescription>
+          <CardDescription>
+            This month's top-performing partners
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
             {leaderboard.length > 0 ? (
-              leaderboard.map(entry => (
-                <div 
-                  key={entry.id} 
+              leaderboard.map((entry) => (
+                <div
+                  key={entry.id}
                   className={`flex items-center justify-between p-3 rounded-md ${
-                    entry.rank === 1 ? 'bg-yellow-500/10 border border-yellow-500/30' : 
-                    entry.rank <= 3 ? 'bg-zion-blue-light/20' : 'bg-zion-blue/10'
+                    entry.rank === 1
+                      ? 'bg-yellow-500/10 border border-yellow-500/30'
+                      : entry.rank <= 3
+                        ? 'bg-zion-blue-light/20'
+                        : 'bg-zion-blue/10'
                   }`}
                 >
                   <div className="flex items-center gap-3">
@@ -114,22 +121,34 @@ export function PartnerLeaderboard() {
                     </Avatar>
                     <div>
                       <div className="font-medium text-white">{entry.name}</div>
-                      <div className="text-xs text-zion-slate-light">{entry.referrals} referrals</div>
+                      <div className="text-xs text-zion-slate-light">
+                        {entry.referrals} referrals
+                      </div>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="text-right">
-                      <div className="font-semibold text-white">${entry.earnings}</div>
-                      <div className="text-xs text-zion-slate-light">earned</div>
+                      <div className="font-semibold text-white">
+                        ${entry.earnings}
+                      </div>
+                      <div className="text-xs text-zion-slate-light">
+                        earned
+                      </div>
                     </div>
                     <div className="flex gap-1">
-                      {entry.badges.includes("gold") && (
-                        <Badge variant="outline" className="bg-yellow-500/20 border-yellow-500 text-yellow-400">
+                      {entry.badges.includes('gold') && (
+                        <Badge
+                          variant="outline"
+                          className="bg-yellow-500/20 border-yellow-500 text-yellow-400"
+                        >
                           Elite
                         </Badge>
                       )}
-                      {entry.badges.includes("trending") && (
-                        <Badge variant="outline" className="bg-blue-500/20 border-blue-500 text-blue-400">
+                      {entry.badges.includes('trending') && (
+                        <Badge
+                          variant="outline"
+                          className="bg-blue-500/20 border-blue-500 text-blue-400"
+                        >
                           Trending
                         </Badge>
                       )}
@@ -140,7 +159,9 @@ export function PartnerLeaderboard() {
             ) : (
               <div className="text-center p-12 border border-dashed border-zion-blue-light rounded-lg">
                 <Trophy className="h-16 w-16 mx-auto text-zion-slate-light mb-4" />
-                <p className="text-zion-slate-light mb-2">Leaderboard will appear here</p>
+                <p className="text-zion-slate-light mb-2">
+                  Leaderboard will appear here
+                </p>
                 <p className="text-xs text-zion-slate-light">
                   Start referring to earn your spot on the leaderboard
                 </p>
@@ -149,7 +170,7 @@ export function PartnerLeaderboard() {
           </div>
         </CardContent>
       </Card>
-      
+
       <Card className="bg-zion-blue-dark border-zion-blue-light">
         <CardHeader>
           <CardTitle>Your Ranking</CardTitle>
@@ -160,13 +181,16 @@ export function PartnerLeaderboard() {
             <p className="text-zion-slate-light mb-4">
               Start referring to appear on the leaderboard
             </p>
-            <Badge variant="outline" className="bg-zion-purple/20 border-zion-purple text-zion-purple">
+            <Badge
+              variant="outline"
+              className="bg-zion-purple/20 border-zion-purple text-zion-purple"
+            >
               New Partner
             </Badge>
           </div>
         </CardContent>
       </Card>
-      
+
       <Card className="bg-zion-blue-dark border-zion-blue-light">
         <CardHeader>
           <CardTitle>Rewards Program</CardTitle>
@@ -175,7 +199,10 @@ export function PartnerLeaderboard() {
         <CardContent className="space-y-4">
           <div className="p-4 bg-zion-blue rounded-md">
             <div className="flex items-center gap-2 mb-2">
-              <Badge variant="outline" className="bg-yellow-500/20 border-yellow-500 text-yellow-400">
+              <Badge
+                variant="outline"
+                className="bg-yellow-500/20 border-yellow-500 text-yellow-400"
+              >
                 Elite Partner
               </Badge>
               <span className="text-xs text-zion-slate-light">(Top 3)</span>
@@ -187,10 +214,13 @@ export function PartnerLeaderboard() {
               <li>Monthly strategy call with Zion AI team</li>
             </ul>
           </div>
-          
+
           <div className="p-4 bg-zion-blue rounded-md">
             <div className="flex items-center gap-2 mb-2">
-              <Badge variant="outline" className="bg-gray-400/20 border-gray-400 text-gray-300">
+              <Badge
+                variant="outline"
+                className="bg-gray-400/20 border-gray-400 text-gray-300"
+              >
                 Premier Partner
               </Badge>
               <span className="text-xs text-zion-slate-light">(Top 10)</span>

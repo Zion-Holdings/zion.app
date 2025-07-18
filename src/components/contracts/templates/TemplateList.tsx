@@ -1,18 +1,23 @@
+import type { ContractTemplate } from '@/types/contracts';
+import {
+  Loader2,
+  Edit,
+  Star,
+  StarOff,
+  Trash2 as Trash,
+} from '@/components/ui/icons';
+import { Button } from '@/components/ui/button';
 
-import type { ContractTemplate } from "@/types/contracts";
-import { Loader2, Edit, Star, StarOff, Trash2 as Trash } from '@/components/ui/icons';
-import { Button } from "@/components/ui/button";
-
-
-
-
-
-
-import { useContractTemplates } from "@/hooks/useContractTemplates";
-import { Card, CardContent } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { useAuth } from "@/hooks/useAuth";
+import { useContractTemplates } from '@/hooks/useContractTemplates';
+import { Card, CardContent } from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
+import { useAuth } from '@/hooks/useAuth';
 // useRouter replaces the old useLocation hook from react-router
 import { useRouter } from 'next/router';
 import {
@@ -24,8 +29,8 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
-import { useState } from "react";
+} from '@/components/ui/alert-dialog';
+import { useState } from 'react';
 
 interface TemplateListProps {
   templates: ContractTemplate[];
@@ -38,7 +43,7 @@ export function TemplateList({
   templates,
   isLoading,
   onSelect,
-  onEdit
+  onEdit,
 }: TemplateListProps) {
   const [templateToDelete, setTemplateToDelete] = useState<string | null>(null);
   const { deleteTemplate, setDefaultTemplate } = useContractTemplates();
@@ -77,7 +82,9 @@ export function TemplateList({
     return (
       <div className="text-center py-8">
         <p className="text-muted-foreground">No templates found.</p>
-        <p className="text-sm text-muted-foreground">Save a contract as a template to reuse it later.</p>
+        <p className="text-sm text-muted-foreground">
+          Save a contract as a template to reuse it later.
+        </p>
       </div>
     );
   }
@@ -85,21 +92,27 @@ export function TemplateList({
   return (
     <div className="space-y-3">
       {templates.map((template) => (
-        <Card key={template.id} className={template.is_default ? "border-zion-purple" : ""}>
+        <Card
+          key={template.id}
+          className={template.is_default ? 'border-zion-purple' : ''}
+        >
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
                   <h3 className="font-medium">{template.title}</h3>
                   {template.is_default && (
-                    <span className="bg-zion-purple/10 text-zion-purple text-xs px-2 py-0.5 rounded-full">Default</span>
+                    <span className="bg-zion-purple/10 text-zion-purple text-xs px-2 py-0.5 rounded-full">
+                      Default
+                    </span>
                   )}
                 </div>
                 <p className="text-xs text-muted-foreground">
-                  Last updated: {new Date(template.updated_at).toLocaleDateString()}
+                  Last updated:{' '}
+                  {new Date(template.updated_at).toLocaleDateString()}
                 </p>
               </div>
-              
+
               <div className="flex items-center gap-2">
                 <Button
                   variant="ghost"
@@ -130,7 +143,12 @@ export function TemplateList({
                     </Tooltip>
                   </TooltipProvider>
                 ) : (
-                  <Button variant="ghost" size="icon" disabled aria-label="Default template">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    disabled
+                    aria-label="Default template"
+                  >
                     <StarOff className="h-4 w-4" />
                   </Button>
                 )}
@@ -144,12 +162,12 @@ export function TemplateList({
                 </Button>
               </div>
             </div>
-            
+
             <Separator className="my-3" />
-            
-            <Button 
-              onClick={() => onSelect(template)} 
-              variant="outline" 
+
+            <Button
+              onClick={() => onSelect(template)}
+              variant="outline"
               className="w-full"
             >
               Use This Template
@@ -157,18 +175,22 @@ export function TemplateList({
           </CardContent>
         </Card>
       ))}
-      
-      <AlertDialog open={!!templateToDelete} onOpenChange={() => setTemplateToDelete(null)}>
+
+      <AlertDialog
+        open={!!templateToDelete}
+        onOpenChange={() => setTemplateToDelete(null)}
+      >
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>Delete Template</AlertDialogTitle>
             <AlertDialogDescription>
-              Are you sure you want to delete this template? This action cannot be undone.
+              Are you sure you want to delete this template? This action cannot
+              be undone.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction 
+            <AlertDialogAction
               className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
               onClick={handleDeleteConfirm}
             >

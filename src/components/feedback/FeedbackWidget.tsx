@@ -72,7 +72,12 @@ export function FeedbackWidget() {
       enqueueSnackbar('Thank you for your feedback!', { variant: 'success' });
     } catch (err: unknown) {
       let message = 'An error occurred';
-      if (err && typeof err === 'object' && 'message' in err && typeof (err as { message?: unknown }).message === 'string') {
+      if (
+        err &&
+        typeof err === 'object' &&
+        'message' in err &&
+        typeof (err as { message?: unknown }).message === 'string'
+      ) {
         message = (err as { message: string }).message;
       }
       enqueueSnackbar(message, { variant: 'error' });

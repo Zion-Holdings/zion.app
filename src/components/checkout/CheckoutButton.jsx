@@ -2,13 +2,11 @@ import { useState } from 'react';
 import { Loader2 } from '@/components/ui/icons';
 import { Button } from '@/components/ui/button';
 
-
 import { useAuth } from '@/hooks/useAuth';
 import { getStripe } from '@/utils/getStripe';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 export default function CheckoutButton({ priceId, quantity = 1 }) {
-
   const [loading, setLoading] = useState(false);
   const { user } = useAuth();
 
@@ -33,8 +31,11 @@ export default function CheckoutButton({ priceId, quantity = 1 }) {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed to create session');
 
-      const { error } = await stripe.redirectToCheckout({ sessionId: data.sessionId });
-      if (error) logErrorToProduction('Stripe redirect error:', { data: error });
+      const { error } = await stripe.redirectToCheckout({
+        sessionId: data.sessionId,
+      });
+      if (error)
+        logErrorToProduction('Stripe redirect error:', { data: error });
     } catch (err) {
       logErrorToProduction('Checkout error:', { data: err });
     } finally {

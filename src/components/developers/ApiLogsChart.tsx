@@ -1,5 +1,5 @@
-import { useEffect, useRef } from "react";
-import type { ApiLog } from "@/hooks/useApiKeys";
+import { useEffect, useRef } from 'react';
+import type { ApiLog } from '@/hooks/useApiKeys';
 
 interface ApiLogsChartProps {
   logs: ApiLog[];
@@ -10,17 +10,20 @@ export function ApiLogsChart({ logs }: ApiLogsChartProps) {
 
   useEffect(() => {
     let _chart: unknown;
-    const scriptId = "chartjs-script";
+    const scriptId = 'chartjs-script';
     const win = window as unknown as { Chart?: unknown };
 
     const loadChart = () => {
       if (!canvasRef.current) return;
       if (!win.Chart || typeof win.Chart !== 'function') return;
       // Inline Chart type to avoid import error
-      const Chart = win.Chart as new (ctx: HTMLCanvasElement, config: Record<string, unknown>) => { destroy: () => void };
+      const Chart = win.Chart as new (
+        ctx: HTMLCanvasElement,
+        config: Record<string, unknown>,
+      ) => { destroy: () => void };
       const dateMap: Record<string, number> = {};
       logs.forEach((log) => {
-        const day = new Date(log.created_at).toISOString().split("T")[0];
+        const day = new Date(log.created_at).toISOString().split('T')[0];
         if (day) {
           dateMap[day] = (dateMap[day] || 0) + 1;
         }
@@ -28,14 +31,18 @@ export function ApiLogsChart({ logs }: ApiLogsChartProps) {
       const labels = Object.keys(dateMap).sort();
       const data = labels.map((l) => dateMap[l]);
 
-      if (chart && typeof (chart as { destroy?: () => void }).destroy === 'function') (chart as { destroy: () => void }).destroy();
+      if (
+        chart &&
+        typeof (chart as { destroy?: () => void }).destroy === 'function'
+      )
+        (chart as { destroy: () => void }).destroy();
       chart = new Chart(canvasRef.current!, {
-        type: "bar",
+        type: 'bar',
         data: {
           labels,
           datasets: [
             {
-              label: "Logs per Day",
+              label: 'Logs per Day',
               data,
               borderWidth: 1,
             },
@@ -49,23 +56,29 @@ export function ApiLogsChart({ logs }: ApiLogsChartProps) {
       });
     };
 
-    if (typeof win.Chart !== "undefined") {
+    if (typeof win.Chart !== 'undefined') {
       loadChart();
     } else {
-      let script = document.getElementById(scriptId) as HTMLScriptElement | null;
+      let script = document.getElementById(
+        scriptId,
+      ) as HTMLScriptElement | null;
       if (!script) {
-        script = document.createElement("script");
+        script = document.createElement('script');
         script.id = scriptId;
-        script.src = "https://cdn.jsdelivr.net/npm/chart.js";
+        script.src = 'https://cdn.jsdelivr.net/npm/chart.js';
         script.onload = loadChart;
         document.body.appendChild(script);
       } else {
-        script.addEventListener("load", loadChart);
+        script.addEventListener('load', loadChart);
       }
     }
 
     return () => {
-      if (chart && typeof (chart as { destroy?: () => void }).destroy === 'function') (chart as { destroy: () => void }).destroy();
+      if (
+        chart &&
+        typeof (chart as { destroy?: () => void }).destroy === 'function'
+      )
+        (chart as { destroy: () => void }).destroy();
     };
   }, [logs]);
 

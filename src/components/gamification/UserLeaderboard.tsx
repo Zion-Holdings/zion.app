@@ -1,6 +1,11 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { Trophy } from '@/components/ui/icons';
-
 
 export interface LeaderboardEntry {
   name: string;

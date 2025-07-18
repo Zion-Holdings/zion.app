@@ -1,10 +1,7 @@
-
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import { X } from '@/components/ui/icons';
-import Link from "next/link";
-import { useState, useEffect } from "react";
-
-
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 export function FloatingCTA() {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,9 +19,9 @@ export function FloatingCTA() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [isClosed]);
 
@@ -40,18 +37,20 @@ export function FloatingCTA() {
       <div className="bg-gradient-to-r from-zion-blue-dark to-zion-blue p-4 rounded-lg border border-zion-purple shadow-lg flex items-center justify-between">
         <div className="mr-4">
           <p className="text-white font-medium">Ready to explore Zion?</p>
-          <p className="text-zion-slate-light text-sm">Register today to access all features!</p>
+          <p className="text-zion-slate-light text-sm">
+            Register today to access all features!
+          </p>
         </div>
         <div className="flex items-center gap-2">
-          <Button 
-            variant="default" 
-            size="sm" 
+          <Button
+            variant="default"
+            size="sm"
             className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple whitespace-nowrap"
             asChild
           >
             <Link href="/signup">Register Now</Link>
           </Button>
-          <button 
+          <button
             onClick={handleClose}
             className="text-zion-slate hover:text-white p-1"
             aria-label="Close"

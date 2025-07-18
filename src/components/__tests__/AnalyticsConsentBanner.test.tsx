@@ -28,14 +28,15 @@ const mockCookies = cookies as unknown as {
   setCookie: vi.Mock<[string, string, number?], void>;
 };
 
-
 describe('AnalyticsConsentBanner', () => {
   let _isAvailableSpy: ReturnType<typeof vi.spyOn>;
 
   beforeEach(() => {
     vi.clearAllMocks();
     // Default to localStorage being available
-    isAvailableSpy = vi.spyOn(mockSafeStorage, 'isAvailable', 'get').mockReturnValue(true);
+    isAvailableSpy = vi
+      .spyOn(mockSafeStorage, 'isAvailable', 'get')
+      .mockReturnValue(true);
     mockSafeStorage.getItem.mockReturnValue(null);
     mockSafeStorage.setItem.mockClear(); // Ensure setItem mock is clean
     mockCookies.getCookie.mockReturnValue(null);
@@ -54,13 +55,17 @@ describe('AnalyticsConsentBanner', () => {
 
     it('shows banner if no consent is stored in localStorage', () => {
       render(<AnalyticsConsentBanner />);
-      expect(screen.getByText(/We use analytics cookies to improve the site/)).toBeInTheDocument();
+      expect(
+        screen.getByText(/We use analytics cookies to improve the site/),
+      ).toBeInTheDocument();
     });
 
     it('does not show banner if consent is "granted" in localStorage', () => {
       mockSafeStorage.getItem.mockReturnValue('granted');
       render(<AnalyticsConsentBanner />);
-      expect(screen.queryByText(/We use analytics cookies to improve the site/)).not.toBeInTheDocument();
+      expect(
+        screen.queryByText(/We use analytics cookies to improve the site/),
+      ).not.toBeInTheDocument();
       expect(mockAnalytics.initGA).toHaveBeenCalledTimes(1);
       expect(mockPosthog.initPostHog).toHaveBeenCalledTimes(1);
     });
@@ -68,7 +73,9 @@ describe('AnalyticsConsentBanner', () => {
     it('does not show banner if consent is "denied" in localStorage', () => {
       mockSafeStorage.getItem.mockReturnValue('denied');
       render(<AnalyticsConsentBanner />);
-      expect(screen.queryByText(/We use analytics cookies to improve the site/)).not.toBeInTheDocument();
+      expect(
+        screen.queryByText(/We use analytics cookies to improve the site/),
+      ).not.toBeInTheDocument();
       expect(mockAnalytics.initGA).not.toHaveBeenCalled();
       expect(mockPosthog.initPostHog).not.toHaveBeenCalled();
     });
@@ -76,21 +83,31 @@ describe('AnalyticsConsentBanner', () => {
     it('stores "granted" in localStorage and initializes analytics on Accept', () => {
       render(<AnalyticsConsentBanner />);
       fireEvent.click(screen.getByText('Accept'));
-      expect(mockSafeStorage.setItem).toHaveBeenCalledWith('analyticsConsent', 'granted');
+      expect(mockSafeStorage.setItem).toHaveBeenCalledWith(
+        'analyticsConsent',
+        'granted',
+      );
       expect(mockCookies.setCookie).not.toHaveBeenCalled();
       expect(mockAnalytics.initGA).toHaveBeenCalledTimes(1);
       expect(mockPosthog.initPostHog).toHaveBeenCalledTimes(1);
-      expect(screen.queryByText(/We use analytics cookies to improve the site/)).not.toBeInTheDocument();
+      expect(
+        screen.queryByText(/We use analytics cookies to improve the site/),
+      ).not.toBeInTheDocument();
     });
 
     it('stores "denied" in localStorage on Decline', () => {
       render(<AnalyticsConsentBanner />);
       fireEvent.click(screen.getByText('Decline'));
-      expect(mockSafeStorage.setItem).toHaveBeenCalledWith('analyticsConsent', 'denied');
+      expect(mockSafeStorage.setItem).toHaveBeenCalledWith(
+        'analyticsConsent',
+        'denied',
+      );
       expect(mockCookies.setCookie).not.toHaveBeenCalled();
       expect(mockAnalytics.initGA).not.toHaveBeenCalled();
       expect(mockPosthog.initPostHog).not.toHaveBeenCalled();
-      expect(screen.queryByText(/We use analytics cookies to improve the site/)).not.toBeInTheDocument();
+      expect(
+        screen.queryByText(/We use analytics cookies to improve the site/),
+      ).not.toBeInTheDocument();
     });
   });
 
@@ -102,13 +119,17 @@ describe('AnalyticsConsentBanner', () => {
 
     it('shows banner if no consent cookie exists', () => {
       render(<AnalyticsConsentBanner />);
-      expect(screen.getByText(/We use analytics cookies to improve the site/)).toBeInTheDocument();
+      expect(
+        screen.getByText(/We use analytics cookies to improve the site/),
+      ).toBeInTheDocument();
     });
 
     it('does not show banner if consent cookie is "granted"', () => {
       mockCookies.getCookie.mockReturnValue('granted');
       render(<AnalyticsConsentBanner />);
-      expect(screen.queryByText(/We use analytics cookies to improve the site/)).not.toBeInTheDocument();
+      expect(
+        screen.queryByText(/We use analytics cookies to improve the site/),
+      ).not.toBeInTheDocument();
       expect(mockAnalytics.initGA).toHaveBeenCalledTimes(1);
       expect(mockPosthog.initPostHog).toHaveBeenCalledTimes(1);
     });
@@ -116,7 +137,9 @@ describe('AnalyticsConsentBanner', () => {
     it('does not show banner if consent cookie is "denied"', () => {
       mockCookies.getCookie.mockReturnValue('denied');
       render(<AnalyticsConsentBanner />);
-      expect(screen.queryByText(/We use analytics cookies to improve the site/)).not.toBeInTheDocument();
+      expect(
+        screen.queryByText(/We use analytics cookies to improve the site/),
+      ).not.toBeInTheDocument();
       expect(mockAnalytics.initGA).not.toHaveBeenCalled();
       expect(mockPosthog.initPostHog).not.toHaveBeenCalled();
     });
@@ -124,21 +147,33 @@ describe('AnalyticsConsentBanner', () => {
     it('sets "granted" cookie and initializes analytics on Accept', () => {
       render(<AnalyticsConsentBanner />);
       fireEvent.click(screen.getByText('Accept'));
-      expect(mockCookies.setCookie).toHaveBeenCalledWith('analyticsConsent', 'granted', 365);
+      expect(mockCookies.setCookie).toHaveBeenCalledWith(
+        'analyticsConsent',
+        'granted',
+        365,
+      );
       expect(mockSafeStorage.setItem).not.toHaveBeenCalled();
       expect(mockAnalytics.initGA).toHaveBeenCalledTimes(1);
       expect(mockPosthog.initPostHog).toHaveBeenCalledTimes(1);
-      expect(screen.queryByText(/We use analytics cookies to improve the site/)).not.toBeInTheDocument();
+      expect(
+        screen.queryByText(/We use analytics cookies to improve the site/),
+      ).not.toBeInTheDocument();
     });
 
     it('sets "denied" cookie on Decline', () => {
       render(<AnalyticsConsentBanner />);
       fireEvent.click(screen.getByText('Decline'));
-      expect(mockCookies.setCookie).toHaveBeenCalledWith('analyticsConsent', 'denied', 365);
+      expect(mockCookies.setCookie).toHaveBeenCalledWith(
+        'analyticsConsent',
+        'denied',
+        365,
+      );
       expect(mockSafeStorage.setItem).not.toHaveBeenCalled();
       expect(mockAnalytics.initGA).not.toHaveBeenCalled();
       expect(mockPosthog.initPostHog).not.toHaveBeenCalled();
-      expect(screen.queryByText(/We use analytics cookies to improve the site/)).not.toBeInTheDocument();
+      expect(
+        screen.queryByText(/We use analytics cookies to improve the site/),
+      ).not.toBeInTheDocument();
     });
   });
 });

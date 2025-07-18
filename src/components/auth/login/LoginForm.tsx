@@ -1,20 +1,15 @@
-
-import { useState } from "react";
+import { useState } from 'react';
 import { LogIn, User, Eye, EyeOff } from '@/components/ui/icons';
 import { useRouter } from 'next/router';
-import { useForm } from "react-hook-form";
-import type { ControllerRenderProps } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-
-
-
-
+import { useForm } from 'react-hook-form';
+import type { ControllerRenderProps } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
 
 import { fireEvent } from '@/lib/analytics';
-import { useAuth } from "@/context/auth/AuthProvider";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { useAuth } from '@/context/auth/AuthProvider';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import {
   Form,
   FormControl,
@@ -22,18 +17,20 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import Link from "next/link";
+} from '@/components/ui/form';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import Link from 'next/link';
 
-import { Checkbox } from "@/components/ui/checkbox";
+import { Checkbox } from '@/components/ui/checkbox';
 // Form validation schema
 const loginSchema = z.object({
-  email: z.string().email("Please enter a valid email").min(1, "Email is required"),
-  password: z.string().min(6, "Password must be at least 6 characters"),
+  email: z
+    .string()
+    .email('Please enter a valid email')
+    .min(1, 'Email is required'),
+  password: z.string().min(6, 'Password must be at least 6 characters'),
   rememberMe: z.boolean(),
 });
-
 
 type LoginFormValues = z.infer<typeof loginSchema>;
 
@@ -44,12 +41,12 @@ export function LoginForm() {
   const [isResending, setIsResending] = useState(false);
   const [verificationMessage, setVerificationMessage] = useState('');
   const router = useRouter();
-  
+
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
       rememberMe: false,
     },
   });
@@ -62,20 +59,26 @@ export function LoginForm() {
       // Pass email and password to the login function
       const result = await login(data.email, data.password, data.rememberMe);
       if (result?.error) {
-        let errorMessage = "Login failed. Please try again."; // Default generic error
+        let errorMessage = 'Login failed. Please try again.'; // Default generic error
         if (
           typeof result.error === 'object' &&
           result.error !== null &&
           'message' in result.error &&
           typeof (result.error as { message?: string }).message === 'string'
         ) {
-          if (((result.error as { message?: string }).message ?? '').toLowerCase().includes("email not confirmed")) {
-            errorMessage = "Your email is not confirmed. Please check your inbox for a confirmation link.";
+          if (
+            ((result.error as { message?: string }).message ?? '')
+              .toLowerCase()
+              .includes('email not confirmed')
+          ) {
+            errorMessage =
+              'Your email is not confirmed. Please check your inbox for a confirmation link.';
           } else {
-            errorMessage = (result.error as { message?: string }).message ?? errorMessage;
+            errorMessage =
+              (result.error as { message?: string }).message ?? errorMessage;
           }
         }
-        form.setError("root", { message: errorMessage });
+        form.setError('root', { message: errorMessage });
       } else {
         fireEvent('login', { method: 'email' });
       }
@@ -96,13 +99,17 @@ export function LoginForm() {
       const response = await fetch('/api/auth/resend-verification-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email })
+        body: JSON.stringify({ email }),
       });
       const _data = await response.json();
       if (response.ok) {
-        setVerificationMessage('Verification email sent. Please check your inbox.');
+        setVerificationMessage(
+          'Verification email sent. Please check your inbox.',
+        );
       } else {
-        setVerificationMessage(_data.message || 'Failed to resend verification email.');
+        setVerificationMessage(
+          _data.message || 'Failed to resend verification email.',
+        );
       }
     } catch {
       setVerificationMessage('Failed to resend verification email.');
@@ -124,7 +131,9 @@ export function LoginForm() {
     <Form {...form}>
       {form.formState.errors.root && (
         <Alert variant="destructive" className="mb-4">
-          <AlertDescription>{form.formState.errors.root.message}</AlertDescription>
+          <AlertDescription>
+            {form.formState.errors.root.message}
+          </AlertDescription>
         </Alert>
       )}
       <form
@@ -140,9 +149,15 @@ export function LoginForm() {
         <FormField
           control={form.control}
           name="email"
-          render={({ field }: { field: ControllerRenderProps<LoginFormValues, "email"> }) => (
+          render={({
+            field,
+          }: {
+            field: ControllerRenderProps<LoginFormValues, 'email'>;
+          }) => (
             <FormItem>
-              <FormLabel className="text-zion-slate-light">Email address</FormLabel>
+              <FormLabel className="text-zion-slate-light">
+                Email address
+              </FormLabel>
               <FormControl>
                 <div className="relative">
                   <Input
@@ -163,13 +178,17 @@ export function LoginForm() {
         <FormField
           control={form.control}
           name="password"
-          render={({ field }: { field: ControllerRenderProps<LoginFormValues, "password"> }) => (
+          render={({
+            field,
+          }: {
+            field: ControllerRenderProps<LoginFormValues, 'password'>;
+          }) => (
             <FormItem>
               <FormLabel className="text-zion-slate-light">Password</FormLabel>
               <FormControl>
                 <div className="relative">
                   <Input
-                    type={showPassword ? "text" : "password"}
+                    type={showPassword ? 'text' : 'password'}
                     placeholder="Enter password"
                     aria-label="Password"
                     aria-invalid={!!form.formState.errors.password}
@@ -191,7 +210,7 @@ export function LoginForm() {
                       <Eye className="h-4 w-4" />
                     )}
                     <span className="sr-only">
-                      {showPassword ? "Hide password" : "Show password"}
+                      {showPassword ? 'Hide password' : 'Show password'}
                     </span>
                   </Button>
                 </div>
@@ -203,7 +222,11 @@ export function LoginForm() {
         <FormField
           control={form.control}
           name="rememberMe"
-          render={({ field }: { field: ControllerRenderProps<LoginFormValues, "rememberMe"> }) => (
+          render={({
+            field,
+          }: {
+            field: ControllerRenderProps<LoginFormValues, 'rememberMe'>;
+          }) => (
             <FormItem className="flex flex-row items-start space-x-3 space-y-0">
               <FormControl>
                 <Checkbox
@@ -214,7 +237,9 @@ export function LoginForm() {
                 />
               </FormControl>
               <div className="space-y-1 leading-none">
-                <FormLabel className="text-zion-slate-light">Remember me</FormLabel>
+                <FormLabel className="text-zion-slate-light">
+                  Remember me
+                </FormLabel>
               </div>
             </FormItem>
           )}
@@ -225,7 +250,10 @@ export function LoginForm() {
             {/* If "Remember me" was previously here, it's moved. */}
           </div>
           <div className="text-sm">
-            <Link href="/forgot-password" className="font-medium text-zion-cyan hover:text-zion-cyan-light">
+            <Link
+              href="/forgot-password"
+              className="font-medium text-zion-cyan hover:text-zion-cyan-light"
+            >
               Forgot password?
             </Link>
           </div>
@@ -235,7 +263,7 @@ export function LoginForm() {
           className="w-full inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zion-purple-light visible"
           disabled={isLoading || isSubmitting}
         >
-          {isLoading || isSubmitting ? "Logging in..." : "Login"}
+          {isLoading || isSubmitting ? 'Logging in...' : 'Login'}
         </Button>
         {verificationMessage && (
           <p className="text-sm text-center text-zion-slate-light mt-2">
@@ -262,7 +290,10 @@ export function LoginForm() {
           </Button>
         </div>
         <p className="text-sm text-center mt-4">
-          <Link href="/signup" className="font-medium text-zion-cyan hover:text-zion-cyan-light">
+          <Link
+            href="/signup"
+            className="font-medium text-zion-cyan hover:text-zion-cyan-light"
+          >
             Create account
           </Link>
         </p>

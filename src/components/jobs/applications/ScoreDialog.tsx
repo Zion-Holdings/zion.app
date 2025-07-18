@@ -1,12 +1,11 @@
-
 import {
   Dialog,
   DialogContent,
   DialogHeader,
-  DialogTitle
-} from "@/components/ui/dialog";
-import type { JobApplication } from "@/types/jobs";
-import { ApplicationScoreCard } from "../ApplicationScoreCard";
+  DialogTitle,
+} from '@/components/ui/dialog';
+import type { JobApplication } from '@/types/jobs';
+import { ApplicationScoreCard } from '../ApplicationScoreCard';
 
 interface ScoreDialogProps {
   open: boolean;
@@ -19,7 +18,7 @@ export function ScoreDialog({
   open,
   onOpenChange,
   application,
-  onScoreUpdated
+  onScoreUpdated,
 }: ScoreDialogProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -28,7 +27,7 @@ export function ScoreDialog({
           <DialogTitle>Application Match Score</DialogTitle>
         </DialogHeader>
         {application && (
-          <ApplicationScoreCard 
+          <ApplicationScoreCard
             application={application}
             onScoreUpdated={onScoreUpdated}
           />

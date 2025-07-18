@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 import { RefreshCw } from '@/components/ui/icons';
 
-
-
 import { usePoints } from '@/hooks/usePoints';
 import { useAuth } from '@/hooks/useAuth';
 import Link from 'next/link';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 import { LoginModal } from '@/components/auth/LoginModal';
 import { Button } from '@/components/ui/button';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 export function PointsBadge() {
-
   const { _isAuthenticated } = useAuth();
   const { ledger, balance, loading, fetchLedger } = usePoints();
   const [loginOpen, setLoginOpen] = useState(false);
@@ -27,7 +29,7 @@ export function PointsBadge() {
       if (e.reason === 'referral') acc.referral += e.delta;
       return acc;
     },
-    { purchase: 0, post: 0, referral: 0 }
+    { purchase: 0, post: 0, referral: 0 },
   );
 
   const handleClick = (_e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -41,7 +43,7 @@ export function PointsBadge() {
     e.preventDefault();
     e.stopPropagation();
     if (!isAuthenticated) return;
-    
+
     setIsRefreshing(true);
     try {
       await fetchLedger();
@@ -58,9 +60,11 @@ export function PointsBadge() {
         <Tooltip>
           <TooltipTrigger asChild>
             <Link
-              href={isAuthenticated ? "/points" : "#"}
+              href={isAuthenticated ? '/points' : '#'}
               onClick={handleClick}
-              title={isAuthenticated ? "View points" : "Earn points by participating"}
+              title={
+                isAuthenticated ? 'View points' : 'Earn points by participating'
+              }
               className="flex items-center gap-1 text-xs text-muted-foreground transition-transform active:scale-95"
             >
               <Gift className="h-4 w-4" aria-hidden="true" />
@@ -89,10 +93,12 @@ export function PointsBadge() {
               <>
                 <p className="text-sm font-medium">Zion Rewards Program</p>
                 <p className="text-xs mt-1 text-muted-foreground">
-                  • Sign up: 50 pts<br/>
-                  • First purchase: 100 pts<br/>
-                  • Community posts: 25 pts each<br/>
-                  • Refer friends: 200 pts each
+                  • Sign up: 50 pts
+                  <br />
+                  • First purchase: 100 pts
+                  <br />
+                  • Community posts: 25 pts each
+                  <br />• Refer friends: 200 pts each
                 </p>
                 <p className="text-xs mt-2 text-muted-foreground border-t pt-1">
                   Click to learn more and join!
@@ -101,7 +107,7 @@ export function PointsBadge() {
             )}
           </TooltipContent>
         </Tooltip>
-        
+
         {isAuthenticated && (
           <Tooltip>
             <TooltipTrigger asChild>
@@ -125,7 +131,7 @@ export function PointsBadge() {
           </Tooltip>
         )}
       </div>
-      
+
       {!isAuthenticated && (
         <LoginModal isOpen={loginOpen} onOpenChange={setLoginOpen} />
       )}

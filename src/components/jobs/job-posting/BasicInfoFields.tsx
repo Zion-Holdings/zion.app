@@ -1,27 +1,33 @@
-import React from "react";
-import type { Control, ControllerRenderProps } from "react-hook-form";
+import React from 'react';
+import type { Control, ControllerRenderProps } from 'react-hook-form';
 import {
   FormField,
-  FormItem, 
-  FormLabel, 
-  FormControl, 
-  FormMessage 
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent } from "@/components/ui/card";
-import type { JobSchemaType } from "./validation";
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormMessage,
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Card, CardContent } from '@/components/ui/card';
+import type { JobSchemaType } from './validation';
 
 interface BasicInfoFieldsProps {
   _control: Control<JobSchemaType>;
 }
 
-export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({ control }) => {
+export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({
+  control,
+}) => {
   return (
     <div className="space-y-4">
       <FormField
         control={control}
         name="title"
-        render={({ field }: { field: ControllerRenderProps<JobSchemaType, "title"> }) => (
+        render={({
+          field,
+        }: {
+          field: ControllerRenderProps<JobSchemaType, 'title'>;
+        }) => (
           <FormItem>
             <FormLabel>Job Title</FormLabel>
             <FormControl>
@@ -35,7 +41,11 @@ export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({ control }) => 
       <FormField
         control={control}
         name="company"
-        render={({ field }: { field: ControllerRenderProps<JobSchemaType, "company"> }) => (
+        render={({
+          field,
+        }: {
+          field: ControllerRenderProps<JobSchemaType, 'company'>;
+        }) => (
           <FormItem>
             <FormLabel>Company</FormLabel>
             <FormControl>
@@ -45,11 +55,15 @@ export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({ control }) => 
           </FormItem>
         )}
       />
-      
+
       <FormField
         control={control}
         name="category"
-        render={({ field }: { field: ControllerRenderProps<JobSchemaType, "category"> }) => (
+        render={({
+          field,
+        }: {
+          field: ControllerRenderProps<JobSchemaType, 'category'>;
+        }) => (
           <FormItem>
             <FormLabel>Job Category</FormLabel>
             <FormControl>
@@ -75,7 +89,7 @@ export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({ control }) => 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Budget fields removed: not present in JobSchemaType */}
       </div>
-      
+
       <Card>
         <CardContent className="pt-4">
           {/* ClientBudgetRecommender removed: budget fields not present in schema */}
@@ -85,11 +99,18 @@ export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({ control }) => 
       <FormField
         control={control}
         name="location"
-        render={({ field }: { field: ControllerRenderProps<JobSchemaType, "location"> }) => (
+        render={({
+          field,
+        }: {
+          field: ControllerRenderProps<JobSchemaType, 'location'>;
+        }) => (
           <FormItem>
             <FormLabel>Location</FormLabel>
             <FormControl>
-              <Input placeholder="e.g. Remote, San Francisco, etc." {...field} />
+              <Input
+                placeholder="e.g. Remote, San Francisco, etc."
+                {...field}
+              />
             </FormControl>
             <FormMessage />
           </FormItem>

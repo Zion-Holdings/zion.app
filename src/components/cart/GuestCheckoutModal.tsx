@@ -11,11 +11,8 @@ import {
   DialogDescription,
   DialogFooter,
   DialogHeader,
-  DialogTitle
-} from "@/components/ui/dialog";
-
-
-
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 import { isProdDomain } from '@/utils/getStripe';
 
@@ -36,7 +33,7 @@ export default function GuestCheckoutModal({
 
   const handleSubmit = async (_e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!email || !address) {
       alert('Please fill in all required fields');
       return;
@@ -65,13 +62,17 @@ export default function GuestCheckoutModal({
 
         {!isProdDomain() && (
           <div className="rounded-md bg-amber-500/20 p-2 text-center text-amber-400">
-            Pay with test data – use card 4242 4242 4242 4242 and any future date.
+            Pay with test data – use card 4242 4242 4242 4242 and any future
+            date.
           </div>
         )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="guest-email" className="text-white flex items-center gap-2">
+            <Label
+              htmlFor="guest-email"
+              className="text-white flex items-center gap-2"
+            >
               <Mail className="h-4 w-4 text-zion-cyan" />
               Email Address
             </Label>
@@ -87,7 +88,10 @@ export default function GuestCheckoutModal({
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="guest-address" className="text-white flex items-center gap-2">
+            <Label
+              htmlFor="guest-address"
+              className="text-white flex items-center gap-2"
+            >
               <MapPin className="h-4 w-4 text-zion-cyan" />
               Shipping Address
             </Label>
@@ -103,7 +107,8 @@ export default function GuestCheckoutModal({
 
           <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-3">
             <p className="text-yellow-400 text-sm">
-              💡 Creating an account allows you to track your order and checkout faster next time.
+              💡 Creating an account allows you to track your order and checkout
+              faster next time.
             </p>
           </div>
 

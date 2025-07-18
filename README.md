@@ -74,6 +74,7 @@ Ensure all variables marked as required in `.env.example` or in specific documen
 - **[Netlify Deployment Guide](docs/NETLIFY_DEPLOYMENT_GUIDE.md)** - Step-by-step Netlify deployment with environment variables
 - **[Optional Two-Factor Authentication](TWO_FACTOR_AUTHENTICATION_SUMMARY.md)** - Overview of enabling 2FA in the IPO portal
 - **[Logging Guidelines](docs/LOGGING_GUIDELINES.md)** - Usage instructions for the project logger
+- **[Self-Healing Lint System](docs/SELF_HEALING_LINT_SYSTEM.md)** - Comprehensive guide for the automated lint fixing system
 - **Collect Logs** - `npm run logs:collect` bundles recent logs under `logs/archive/`
 - **Analyze Logs** - `npm run logs:summary` scans collected `.log` and `.txt` files, reports missing translation keys, and flags router context errors like `useNavigate()` without a `<Router>`
 - **Improved Analysis** - The log analyzer now highlights TypeScript compilation issues such as `Cannot find name` errors
@@ -182,7 +183,16 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
 13. **Privacy Policy & Terms (login-gated):**
     - AI-Prompt: "Generate a plain-language summary (≤ 200 words) of a standard tech marketplace privacy policy aimed at U.S. users."
     - AI-Prompt: "Write an FAQ with 5 common questions users ask about Zion's Terms of Service."
-13. **Frequently Asked Questions:** See [docs/FAQ.md](docs/FAQ.md) or the in-app Help Center for quick answers.
+
+14. **Self-Healing Lint System:**
+    - The project includes an automated lint fixing system that runs after builds
+    - **Manual healing**: `npm run lint:heal` or `npm run heal:lint`
+    - **Continuous monitoring**: `npm run heal:continuous`
+    - **Build with healing**: `npm run build:with-healing`
+    - **Start healing system**: `npm run self-healing:start`
+    - See [Self-Healing Lint System Guide](docs/SELF_HEALING_LINT_SYSTEM.md) for complete documentation
+
+15. **Frequently Asked Questions:** See [docs/FAQ.md](docs/FAQ.md) or the in-app Help Center for quick answers.
 
 ## Troubleshooting
 
@@ -208,6 +218,14 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
    - See [docs/BLANK_SCREEN_FIX_GUIDE.md](docs/BLANK_SCREEN_FIX_GUIDE.md) for detailed instructions
 5. **Playwright browsers missing**
    - If end-to-end tests fail with `browserType.launch` errors, run `npx playwright install` to download the required browsers
+
+6. **Lint errors and warnings**
+   - The self-healing lint system automatically fixes most issues after builds
+   - **Manual fix**: Run `npm run lint:heal` to apply fixes immediately
+   - **Continuous monitoring**: Start `npm run heal:continuous` for real-time fixing
+   - **Build with healing**: Use `npm run build:with-healing` to automatically fix issues during build
+   - **Check status**: Run `npm run self-healing:status` to see system health
+   - See [Self-Healing Lint System Guide](docs/SELF_HEALING_LINT_SYSTEM.md) for advanced troubleshooting
 
 For detailed troubleshooting, see the [Supabase Authentication Setup Guide](docs/SUPABASE_AUTHENTICATION_SETUP.md).
 
@@ -248,6 +266,7 @@ The application includes built-in monitoring for:
 - File system integrity
 - Environment configuration validation
 - Error reporting and analytics
+- **Self-healing lint system** - Automated lint error detection and fixing
 
 ### Troubleshooting Blank Screens
 If the application loads with a completely empty page, it usually means

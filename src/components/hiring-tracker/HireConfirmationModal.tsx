@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { toast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
-import type { TalentProfile } from "@/types/talent";
-import { useAuth } from "@/hooks/useAuth";
-import type { JobApplication } from "@/types/jobs";
+} from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { toast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
+import type { TalentProfile } from '@/types/talent';
+import { useAuth } from '@/hooks/useAuth';
+import type { JobApplication } from '@/types/jobs';
 
 export interface HireConfirmationModalProps {
   isOpen: boolean;
@@ -26,13 +26,13 @@ export interface HireConfirmationModalProps {
   isSubmitting?: boolean;
 }
 
-export function HireConfirmationModal({ 
-  isOpen, 
-  onClose, 
-  candidateData, 
+export function HireConfirmationModal({
+  isOpen,
+  onClose,
+  candidateData,
   application,
   onConfirm,
-  isSubmitting = false
+  isSubmitting = false,
 }: HireConfirmationModalProps) {
   const [projectName, setProjectName] = useState('');
   const [projectDescription, setProjectDescription] = useState('');
@@ -41,7 +41,8 @@ export function HireConfirmationModal({
   const { _user } = useAuth();
 
   // Get talent information from either candidateData or application
-  const talentData = candidateData || (application?.talent_profile as TalentProfile);
+  const talentData =
+    candidateData || (application?.talent_profile as TalentProfile);
 
   const handleHireCandidate = async () => {
     if (!projectName || !projectDescription) {
@@ -186,7 +187,8 @@ export function HireConfirmationModal({
         <DialogHeader>
           <DialogTitle>Confirm Hire</DialogTitle>
           <DialogDescription>
-            Confirm that you want to hire {talentData?.full_name || "this candidate"} for a new project.
+            Confirm that you want to hire{' '}
+            {talentData?.full_name || 'this candidate'} for a new project.
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
@@ -232,8 +234,12 @@ export function HireConfirmationModal({
           <Button type="button" variant="secondary" onClick={onClose}>
             Cancel
           </Button>
-          <Button type="button" onClick={handleHireCandidate} disabled={isSubmitting || isLoading}>
-            {isLoading ? "Hiring..." : "Confirm Hire"}
+          <Button
+            type="button"
+            onClick={handleHireCandidate}
+            disabled={isSubmitting || isLoading}
+          >
+            {isLoading ? 'Hiring...' : 'Confirm Hire'}
           </Button>
         </div>
       </DialogContent>

@@ -1,11 +1,16 @@
 import React from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { logInfo } from '@/utils/productionLogger';
 
 export function ZionBrainDashboard() {
-
   const handleOptimize = () => {
     logInfo('Optimize prompts');
   };
@@ -24,11 +29,14 @@ export function ZionBrainDashboard() {
           <Card>
             <CardHeader>
               <CardTitle>Auto-Prompt Router</CardTitle>
-              <CardDescription>Route user prompts to the correct GPT ethereum.</CardDescription>
+              <CardDescription>
+                Route user prompts to the correct GPT ethereum.
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">
-                Detects intent and forwards the request to one of the available chains.
+                Detects intent and forwards the request to one of the available
+                chains.
               </p>
               <ul className="list-disc pl-6 text-sm mt-2">
                 <li>Resume builder</li>
@@ -44,7 +52,9 @@ export function ZionBrainDashboard() {
           <Card>
             <CardHeader>
               <CardTitle>Reflex Engine</CardTitle>
-              <CardDescription>Monitors system activity and responds automatically.</CardDescription>
+              <CardDescription>
+                Monitors system activity and responds automatically.
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="list-disc pl-6 text-sm text-muted-foreground">
@@ -52,7 +62,10 @@ export function ZionBrainDashboard() {
                 <li>Spike in dispute flags</li>
                 <li>Drop in ZION$ velocity</li>
               </ul>
-              <p className="mt-2 text-sm">Automatically launches rewards, escalates support, or notifies admins.</p>
+              <p className="mt-2 text-sm">
+                Automatically launches rewards, escalates support, or notifies
+                admins.
+              </p>
             </CardContent>
           </Card>
         </TabsContent>
@@ -60,10 +73,14 @@ export function ZionBrainDashboard() {
           <Card>
             <CardHeader>
               <CardTitle>Prompt Optimizer</CardTitle>
-              <CardDescription>Improve prompts that are slow or underperforming.</CardDescription>
+              <CardDescription>
+                Improve prompts that are slow or underperforming.
+              </CardDescription>
             </CardHeader>
             <CardContent>
-              <Button size="sm" onClick={handleOptimize}>Run Optimization</Button>
+              <Button size="sm" onClick={handleOptimize}>
+                Run Optimization
+              </Button>
             </CardContent>
           </Card>
         </TabsContent>

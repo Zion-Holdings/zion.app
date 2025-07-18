@@ -1,9 +1,15 @@
-
 import React from 'react';
 import type { ControllerRenderProps } from 'react-hook-form';
 import type { Control } from 'react-hook-form';
-import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from "@/components/ui/form";
-import { Textarea } from "@/components/ui/textarea";
+import {
+  FormField,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormDescription,
+  FormMessage,
+} from '@/components/ui/form';
+import { Textarea } from '@/components/ui/textarea';
 import type { JobSchemaType } from './validation';
 
 interface DescriptionFieldsProps {
@@ -12,17 +18,25 @@ interface DescriptionFieldsProps {
   editorContent: string;
 }
 
-export function DescriptionFields({ control, handleEditorChange, editorContent }: DescriptionFieldsProps) {
+export function DescriptionFields({
+  control,
+  handleEditorChange,
+  editorContent,
+}: DescriptionFieldsProps) {
   return (
     <>
       <FormField
         control={control}
         name="description"
-        render={({ field }: { field: ControllerRenderProps<JobSchemaType, "description"> }) => (
+        render={({
+          field,
+        }: {
+          field: ControllerRenderProps<JobSchemaType, 'description'>;
+        }) => (
           <FormItem>
             <FormLabel>Job Description</FormLabel>
             <FormControl>
-              <Textarea 
+              <Textarea
                 value={editorContent}
                 onChange={(e) => {
                   handleEditorChange(e.target.value);
@@ -43,7 +57,11 @@ export function DescriptionFields({ control, handleEditorChange, editorContent }
       <FormField
         control={control}
         name="responsibilities"
-        render={({ field }: { field: ControllerRenderProps<JobSchemaType, "responsibilities"> }) => (
+        render={({
+          field,
+        }: {
+          field: ControllerRenderProps<JobSchemaType, 'responsibilities'>;
+        }) => (
           <FormItem>
             <FormLabel>Responsibilities (Optional)</FormLabel>
             <FormControl>
@@ -64,7 +82,11 @@ export function DescriptionFields({ control, handleEditorChange, editorContent }
       <FormField
         control={control}
         name="qualifications"
-        render={({ field }: { field: ControllerRenderProps<JobSchemaType, "qualifications"> }) => (
+        render={({
+          field,
+        }: {
+          field: ControllerRenderProps<JobSchemaType, 'qualifications'>;
+        }) => (
           <FormItem>
             <FormLabel>Qualifications (Optional)</FormLabel>
             <FormControl>
@@ -85,7 +107,11 @@ export function DescriptionFields({ control, handleEditorChange, editorContent }
       <FormField
         control={control}
         name="benefits"
-        render={({ field }: { field: ControllerRenderProps<JobSchemaType, "benefits"> }) => (
+        render={({
+          field,
+        }: {
+          field: ControllerRenderProps<JobSchemaType, 'benefits'>;
+        }) => (
           <FormItem>
             <FormLabel>Benefits (Optional)</FormLabel>
             <FormControl>
@@ -106,7 +132,14 @@ export function DescriptionFields({ control, handleEditorChange, editorContent }
       <FormField
         control={control}
         name="application_instructions"
-        render={({ field }: { field: ControllerRenderProps<JobSchemaType, "application_instructions"> }) => (
+        render={({
+          field,
+        }: {
+          field: ControllerRenderProps<
+            JobSchemaType,
+            'application_instructions'
+          >;
+        }) => (
           <FormItem>
             <FormLabel>Application Instructions (Optional)</FormLabel>
             <FormControl>

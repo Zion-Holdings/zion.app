@@ -1,43 +1,48 @@
-
-import React from "react";
-import { Users, Shield, Award, Settings, Globe, Briefcase } from '@/components/ui/icons';
-
-
-
-
-
-
-
+import React from 'react';
+import {
+  Users,
+  Shield,
+  Award,
+  Settings,
+  Globe,
+  Briefcase,
+} from '@/components/ui/icons';
 
 const features = [
   {
-    title: "Private Hiring Portal",
-    description: "Create a secure, private hiring portal accessible only to your team members.",
+    title: 'Private Hiring Portal',
+    description:
+      'Create a secure, private hiring portal accessible only to your team members.',
     icon: Shield,
   },
   {
-    title: "Dedicated Talent Pool",
-    description: "Access to a curated pool of pre-vetted talent matched to your industry and needs.",
+    title: 'Dedicated Talent Pool',
+    description:
+      'Access to a curated pool of pre-vetted talent matched to your industry and needs.',
     icon: Users,
   },
   {
-    title: "Custom SLA",
-    description: "Get guaranteed response times and dedicated support with our custom SLAs.",
+    title: 'Custom SLA',
+    description:
+      'Get guaranteed response times and dedicated support with our custom SLAs.',
     icon: Award,
   },
   {
-    title: "Branded Onboarding",
-    description: "Customize the onboarding experience with your company branding and messaging.",
+    title: 'Branded Onboarding',
+    description:
+      'Customize the onboarding experience with your company branding and messaging.',
     icon: Briefcase,
   },
   {
-    title: "Admin Dashboards",
-    description: "Powerful analytics and management tools for team leaders and administrators.",
+    title: 'Admin Dashboards',
+    description:
+      'Powerful analytics and management tools for team leaders and administrators.',
     icon: Settings,
   },
   {
-    title: "Global Access",
-    description: "Connect with talent across multiple regions with localized interfaces.",
+    title: 'Global Access',
+    description:
+      'Connect with talent across multiple regions with localized interfaces.',
     icon: Globe,
   },
 ];
@@ -51,7 +56,8 @@ export function EnterpriseFeatures() {
             Built for Enterprise Needs
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Our enterprise solutions offer powerful tools designed for large teams and complex hiring needs
+            Our enterprise solutions offer powerful tools designed for large
+            teams and complex hiring needs
           </p>
         </div>
 

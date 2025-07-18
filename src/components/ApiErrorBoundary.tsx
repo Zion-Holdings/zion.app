@@ -5,10 +5,7 @@ import { QueryClient } from '@tanstack/react-query';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
-
-
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 interface ApiErrorBoundaryProps {
   children: ReactNode;
@@ -24,7 +21,10 @@ interface ApiErrorBoundaryState {
   isOnline: boolean;
 }
 
-export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorBoundaryState> {
+export class ApiErrorBoundary extends Component<
+  ApiErrorBoundaryProps,
+  ApiErrorBoundaryState
+> {
   private retryTimeoutId: NodeJS.Timeout | null = null;
 
   constructor(props: ApiErrorBoundaryProps) {
@@ -38,7 +38,9 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
     };
   }
 
-  static getDerivedStateFromError(error: Error): Partial<ApiErrorBoundaryState> {
+  static getDerivedStateFromError(
+    error: Error,
+  ): Partial<ApiErrorBoundaryState> {
     return {
       hasError: true,
       error,
@@ -67,7 +69,11 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
     });
 
     if (typeof errorInfo === 'object' && errorInfo !== null) {
-      logErrorToProduction('ApiErrorBoundary caught an error:', error, errorInfo as Record<string, unknown>);
+      logErrorToProduction(
+        'ApiErrorBoundary caught an error:',
+        error,
+        errorInfo as Record<string, unknown>,
+      );
     } else {
       logErrorToProduction('ApiErrorBoundary caught an error:', error);
     }
@@ -135,10 +141,11 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
   override render() {
     if (this.state.hasError) {
       // Check if it's a network-related error
-      const isNetworkError = this.state.error?.message?.includes('fetch') ||
-                           this.state.error?.message?.includes('network') ||
-                           this.state.error?.message?.includes('timeout') ||
-                           !this.state.isOnline;
+      const isNetworkError =
+        this.state.error?.message?.includes('fetch') ||
+        this.state.error?.message?.includes('network') ||
+        this.state.error?.message?.includes('timeout') ||
+        !this.state.isOnline;
 
       // Use custom fallback if provided
       if (this.props.fallback) {
@@ -156,19 +163,17 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
                   <RefreshCw className="h-4 w-4" />
                 )}
                 <AlertTitle>
-                  {isNetworkError ? 'Connection Problem' : 'Something went wrong'}
+                  {isNetworkError
+                    ? 'Connection Problem'
+                    : 'Something went wrong'}
                 </AlertTitle>
               </div>
               <AlertDescription className="mt-2">
-                {isNetworkError ? (
-                  !this.state.isOnline ? (
-                    'You appear to be offline. Please check your internet connection.'
-                  ) : (
-                    'Unable to connect to our servers. This might be a temporary network issue.'
-                  )
-                ) : (
-                  'An unexpected error occurred while loading the page.'
-                )}
+                {isNetworkError
+                  ? !this.state.isOnline
+                    ? 'You appear to be offline. Please check your internet connection.'
+                    : 'Unable to connect to our servers. This might be a temporary network issue.'
+                  : 'An unexpected error occurred while loading the page.'}
               </AlertDescription>
             </Alert>
 
@@ -214,8 +219,13 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
                 </summary>
                 <pre className="mt-2 whitespace-pre-wrap break-all">
                   {this.state.error.toString()}
-                  {typeof this.state.errorInfo === 'object' && this.state.errorInfo !== null && 'componentStack' in this.state.errorInfo && typeof (this.state.errorInfo as { componentStack?: unknown }).componentStack === 'string'
-                    ? (this.state.errorInfo as { componentStack: string }).componentStack
+                  {typeof this.state.errorInfo === 'object' &&
+                  this.state.errorInfo !== null &&
+                  'componentStack' in this.state.errorInfo &&
+                  typeof (this.state.errorInfo as { componentStack?: unknown })
+                    .componentStack === 'string'
+                    ? (this.state.errorInfo as { componentStack: string })
+                        .componentStack
                     : ''}
                 </pre>
               </details>
@@ -233,7 +243,7 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
 export const useApiErrorHandler = () => {
   const handleApiError = (_error: Error) => {
     if (typeof window === 'undefined') {
-      import('@sentry/nextjs').then(mod => {
+      import('@sentry/nextjs').then((mod) => {
         const Sentry = mod.default;
         Sentry.withScope((scope) => {
           scope.setTag('source', 'useApiErrorHandler');
@@ -245,4 +255,4 @@ export const useApiErrorHandler = () => {
   };
 
   return { handleApiError };
-}; 
+};

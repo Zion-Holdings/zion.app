@@ -1,9 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Send } from '@/components/ui/icons';
 import type { FormEvent, KeyboardEvent } from 'react';
-import { Button } from "@/components/ui/button";
-
-
+import { Button } from '@/components/ui/button';
 
 interface ChatInputProps {
   onSend: (message: string) => void;
@@ -49,8 +47,8 @@ export function ChatInput({ onSend, disabled = false }: ChatInputProps) {
         rows={1}
         disabled={disabled}
       />
-      <Button 
-        type="submit" 
+      <Button
+        type="submit"
         className="bg-zion-purple hover:bg-zion-purple-light text-white rounded-full p-2 h-10 w-10 flex items-center justify-center"
         disabled={!message.trim() || disabled}
       >

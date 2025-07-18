@@ -1,8 +1,5 @@
 import { Loader2 } from '@/components/ui/icons';
 
-
-
-
 export function LoadingState() {
   return (
     <div className="flex justify-center items-center p-8">

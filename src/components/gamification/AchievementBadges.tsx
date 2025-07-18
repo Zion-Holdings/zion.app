@@ -1,5 +1,4 @@
-
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BadgeCheck } from '@/components/ui/icons';
 
 export interface Achievement {
@@ -23,7 +22,7 @@ export function AchievementBadges({ achievements }: AchievementBadgesProps) {
         {achievements.map((a) => (
           <div key={a.id} className="flex items-start gap-3">
             <BadgeCheck
-              className={`h-5 w-5 mt-1 ${a.achieved ? "text-green-600" : "text-muted-foreground"}`}
+              className={`h-5 w-5 mt-1 ${a.achieved ? 'text-green-600' : 'text-muted-foreground'}`}
             />
             <div>
               <p className="font-medium">{a.title}</p>

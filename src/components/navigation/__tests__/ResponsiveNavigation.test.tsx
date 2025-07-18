@@ -15,7 +15,9 @@ jest.mock('react-i18next', () => ({
 
 const mockedUseAuth = useAuth as jest.MockedFunction<typeof useAuth>;
 const mockedUseRouter = useRouter as jest.Mock;
-const mockedUseTranslation = useTranslation as jest.MockedFunction<typeof useTranslation>;
+const mockedUseTranslation = useTranslation as jest.MockedFunction<
+  typeof useTranslation
+>;
 
 beforeEach(() => {
   mockedUseAuth.mockReturnValue({ user: null });

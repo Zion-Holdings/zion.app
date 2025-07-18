@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { Mail, UserPlus, Trash2 as Trash } from '@/components/ui/icons';
 
 import {
@@ -9,7 +8,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from '@/components/ui/table';
 import {
   Dialog,
   DialogContent,
@@ -18,53 +17,51 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Badge } from "@/components/ui/badge";
+} from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Badge } from '@/components/ui/badge';
 
-
-
-import { toast } from "@/hooks/use-toast";
+import { toast } from '@/hooks/use-toast';
 
 export function TeamManagement() {
   const [isAddingMember, setIsAddingMember] = useState(false);
-  const [newMemberEmail, setNewMemberEmail] = useState("");
+  const [newMemberEmail, setNewMemberEmail] = useState('');
 
   // Mock team members data
   const teamMembers = [
     {
       id: 1,
-      name: "Alex Johnson",
-      email: "alex@example.com",
-      role: "Admin",
-      status: "active",
-      lastActive: "2 hours ago",
+      name: 'Alex Johnson',
+      email: 'alex@example.com',
+      role: 'Admin',
+      status: 'active',
+      lastActive: '2 hours ago',
     },
     {
       id: 2,
-      name: "Jamie Smith",
-      email: "jamie@example.com",
-      role: "Recruiter",
-      status: "active",
-      lastActive: "Yesterday",
+      name: 'Jamie Smith',
+      email: 'jamie@example.com',
+      role: 'Recruiter',
+      status: 'active',
+      lastActive: 'Yesterday',
     },
     {
       id: 3,
-      name: "Sam Williams",
-      email: "sam@example.com",
-      role: "Manager",
-      status: "pending",
-      lastActive: "Never",
+      name: 'Sam Williams',
+      email: 'sam@example.com',
+      role: 'Manager',
+      status: 'pending',
+      lastActive: 'Never',
     },
     {
       id: 4,
-      name: "Taylor Brown",
-      email: "taylor@example.com",
-      role: "Viewer",
-      status: "active",
-      lastActive: "3 days ago",
+      name: 'Taylor Brown',
+      email: 'taylor@example.com',
+      role: 'Viewer',
+      status: 'active',
+      lastActive: '3 days ago',
     },
   ];
 
@@ -72,34 +69,34 @@ export function TeamManagement() {
     // In a real app, this would make an API call to add the member
     if (!newMemberEmail) {
       toast({
-        title: "Email required",
-        description: "Please enter an email address for the new team member.",
-        variant: "destructive",
+        title: 'Email required',
+        description: 'Please enter an email address for the new team member.',
+        variant: 'destructive',
       });
       return;
     }
 
     toast({
-      title: "Invitation sent",
+      title: 'Invitation sent',
       description: `An invitation has been sent to ${newMemberEmail}`,
     });
 
-    setNewMemberEmail("");
+    setNewMemberEmail('');
     setIsAddingMember(false);
   };
 
   const handleRemoveMember = (_memberId: number) => {
     // In a real app, this would make an API call to remove the member
     toast({
-      title: "Team member removed",
-      description: "The team member has been removed from your workspace.",
+      title: 'Team member removed',
+      description: 'The team member has been removed from your workspace.',
     });
   };
 
   const handleResendInvite = (_memberEmail: string) => {
     // In a real app, this would make an API call to resend the invitation
     toast({
-      title: "Invitation resent",
+      title: 'Invitation resent',
       description: `A new invitation has been sent to ${memberEmail}`,
     });
   };
@@ -119,7 +116,8 @@ export function TeamManagement() {
             <DialogHeader>
               <DialogTitle>Add Team Member</DialogTitle>
               <DialogDescription>
-                Send an invitation to join your workspace. They'll receive an email with instructions.
+                Send an invitation to join your workspace. They'll receive an
+                email with instructions.
               </DialogDescription>
             </DialogHeader>
             <div className="grid gap-4 py-4">
@@ -152,7 +150,10 @@ export function TeamManagement() {
               </div>
             </div>
             <DialogFooter>
-              <Button variant="outline" onClick={() => setIsAddingMember(false)}>
+              <Button
+                variant="outline"
+                onClick={() => setIsAddingMember(false)}
+              >
                 Cancel
               </Button>
               <Button onClick={handleAddMember}>Send Invitation</Button>
@@ -180,9 +181,9 @@ export function TeamManagement() {
                     <div className="h-8 w-8 rounded-full bg-muted flex items-center justify-center">
                       <span className="text-sm font-medium">
                         {member.name
-                          .split(" ")
+                          .split(' ')
                           .map((n) => n[0])
-                          .join("")}
+                          .join('')}
                       </span>
                     </div>
                     <div>
@@ -196,7 +197,7 @@ export function TeamManagement() {
                 <TableCell>{member.role}</TableCell>
                 <TableCell>
                   <Badge
-                    variant={member.status === "active" ? "default" : "outline"}
+                    variant={member.status === 'active' ? 'default' : 'outline'}
                   >
                     {member.status}
                   </Badge>
@@ -204,7 +205,7 @@ export function TeamManagement() {
                 <TableCell>{member.lastActive}</TableCell>
                 <TableCell className="text-right">
                   <div className="flex justify-end gap-2">
-                    {member.status === "pending" ? (
+                    {member.status === 'pending' ? (
                       <Button
                         variant="ghost"
                         size="sm"

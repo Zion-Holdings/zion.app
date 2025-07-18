@@ -1,17 +1,23 @@
-
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import { FileText, ShieldCheck } from '@/components/ui/icons';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-
-
-
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 
 interface ContractTypeCardsProps {
   onStandardClick: () => void;
   onSmartClick: () => void;
 }
 
-export function ContractTypeCards({ onStandardClick, onSmartClick }: ContractTypeCardsProps) {
+export function ContractTypeCards({
+  onStandardClick,
+  onSmartClick,
+}: ContractTypeCardsProps) {
   return (
     <div className="grid md:grid-cols-2 gap-6 mb-10">
       <Card>
@@ -38,7 +44,7 @@ export function ContractTypeCards({ onStandardClick, onSmartClick }: ContractTyp
           </Button>
         </CardFooter>
       </Card>
-      
+
       <Card>
         <CardHeader className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-t-lg">
           <div className="flex justify-between items-center">
@@ -64,8 +70,8 @@ export function ContractTypeCards({ onStandardClick, onSmartClick }: ContractTyp
           </ul>
         </CardContent>
         <CardFooter>
-          <Button 
-            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600" 
+          <Button
+            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600"
             onClick={onSmartClick}
           >
             Create Smart Contract

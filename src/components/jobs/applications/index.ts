@@ -1,4 +1,3 @@
-
 export { ApplicationsTracker } from './ApplicationsTracker';
 export { ApplicationsTable } from './ApplicationsTable';
 export { EmptyState } from './EmptyState';

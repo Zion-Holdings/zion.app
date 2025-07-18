@@ -1,7 +1,5 @@
-
 import React, { useMemo } from 'react';
 import { User } from '@/components/ui/icons';
-
 
 import type { Conversation } from '@/types/messaging';
 import { ConversationItem } from './ConversationItem';
@@ -19,7 +17,7 @@ export function ConversationsList({
   conversations,
   activeConversation,
   setActiveConversation,
-  markAsRead
+  markAsRead,
 }: ConversationsListProps) {
   const itemSize = 80;
 
@@ -29,11 +27,11 @@ export function ConversationsList({
 
   const Row = ({ index, style }: ListChildComponentProps) => {
     const conversation = conversations[index];
-    
+
     if (!conversation) {
       return <div style={style} />;
     }
-    
+
     return (
       <div style={style}>
         <ConversationItem

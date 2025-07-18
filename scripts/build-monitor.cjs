@@ -1,201 +1,344 @@
 #!/usr/bin/env node
 
 /**
- * Build Monitor Script
- * Advanced monitoring and reporting for build process
+ * Zion App Build Monitor
+ * Monitors build processes and triggers healing on failures
  */
 
 const fs = require('fs');
 const path = require('path');
-const { _spawn } = require('child_process');
-const { spawn } = require('child_process');
+const { spawn, execSync } = require('child_process');
+const chokidar = require('chokidar');
 
-/**
- * Analyze bundle composition
- */
-function analyzeBundleComposition() {
-  
-  const buildDir = path.join(__dirname, '..', '.next');
-  const staticDir = path.join(buildDir, 'static');
-  
-  if (!fs.existsSync(staticDir)) {
-    return null;
+class BuildMonitor {
+  constructor() {
+    this.isMonitoring = false;
+    this.buildLogPath = path.join(process.cwd(), 'logs', 'build.log');
+    this.errorLogPath = path.join(process.cwd(), 'logs', 'build-errors.log');
+    this.buildHistory = [];
+    this.maxHistorySize = 100;
+    
+    // Ensure logs directory exists
+    const logsDir = path.dirname(this.buildLogPath);
+    if (!fs.existsSync(logsDir)) {
+      fs.mkdirSync(logsDir, { recursive: true });
+    }
   }
 
-  try {
-    const analysis = {
-      totalSize: 0,
-      chunks: [],
-      pages: [],
-      css: [],
-      fonts: [],
-      images: []
-    };
+  async startMonitoring() {
+    if (this.isMonitoring) {
+      console.log('Build monitor is already running');
+      return;
+    }
 
-    // Analyze chunks
-    const chunksDir = path.join(staticDir, 'chunks');
-    if (fs.existsSync(chunksDir)) {
-      const chunkFiles = fs.readdirSync(chunksDir);
+    this.isMonitoring = true;
+    console.log('Starting build monitoring...');
+
+    // Watch for build-related files
+    this.watchBuildFiles();
+    
+    // Monitor build logs
+    this.monitorBuildLogs();
+    
+    // Start periodic build health checks
+    this.startPeriodicChecks();
+  }
+
+  watchBuildFiles() {
+    const buildFiles = [
+      'package.json',
+      'next.config.js',
+      'tailwind.config.js',
+      'tsconfig.json',
+      '.env.local',
+      'src/**/*.tsx',
+      'src/**/*.ts',
+      'pages/**/*.tsx',
+      'pages/**/*.ts'
+    ];
+
+    const watcher = chokidar.watch(buildFiles, {
+      ignored: /node_modules|\.git|\.next/,
+      persistent: true
+    });
+
+    watcher.on('change', (filePath) => {
+      console.log(`Build file changed: ${filePath}`);
+      this.onBuildFileChange(filePath);
+    });
+
+    watcher.on('error', (error) => {
+      console.error('Build file watcher error:', error);
+    });
+  }
+
+  async onBuildFileChange(filePath) {
+    console.log(`Build file changed: ${filePath}`);
+    
+    // Wait a bit for the file to be fully written
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    // Check if the change might cause build issues
+    if (this.shouldTriggerBuildCheck(filePath)) {
+      await this.triggerBuildCheck();
+    }
+  }
+
+  shouldTriggerBuildCheck(filePath) {
+    const criticalFiles = [
+      'package.json',
+      'next.config.js',
+      'tsconfig.json',
+      '.env.local'
+    ];
+    
+    return criticalFiles.some(file => filePath.includes(file));
+  }
+
+  async triggerBuildCheck() {
+    console.log('Triggering build check due to file change...');
+    
+    try {
+      // Run a quick build check
+      await this.runBuildCheck();
+    } catch (error) {
+      console.error('Build check failed:', error.message);
+      await this.triggerHealing('build_check_failed', { error: error.message });
+    }
+  }
+
+  async runBuildCheck() {
+    return new Promise((resolve, reject) => {
+      console.log('Running build check...');
       
-      chunkFiles.forEach(file => {
-        const filePath = path.join(chunksDir, file);
-        const stats = fs.statSync(filePath);
-        const size = stats.size;
-        analysis.totalSize += size;
+      const buildProcess = spawn('npm', ['run', 'build'], {
+        stdio: ['pipe', 'pipe', 'pipe'],
+        cwd: process.cwd()
+      });
+
+      let output = '';
+      let errorOutput = '';
+
+      buildProcess.stdout.on('data', (data) => {
+        const chunk = data.toString();
+        output += chunk;
+        this.logBuildOutput(chunk);
+      });
+
+      buildProcess.stderr.on('data', (data) => {
+        const chunk = data.toString();
+        errorOutput += chunk;
+        this.logBuildError(chunk);
+      });
+
+      buildProcess.on('close', (code) => {
+        const buildResult = {
+          timestamp: new Date(),
+          success: code === 0,
+          code,
+          output,
+          errorOutput
+        };
+
+        this.buildHistory.push(buildResult);
         
-        if (file.endsWith('.js')) {
-          analysis.chunks.push({ name: file, size, type: 'javascript' });
+        // Keep history size manageable
+        if (this.buildHistory.length > this.maxHistorySize) {
+          this.buildHistory.shift();
+        }
+
+        if (code === 0) {
+          console.log('Build check completed successfully');
+          resolve(buildResult);
+        } else {
+          console.error(`Build check failed with code ${code}`);
+          this.analyzeBuildFailure(buildResult);
+          reject(new Error(`Build failed with code ${code}`));
         }
       });
+
+      buildProcess.on('error', (error) => {
+        console.error('Build process error:', error);
+        reject(error);
+      });
+    });
+  }
+
+  analyzeBuildFailure(buildResult) {
+    console.log('Analyzing build failure...');
+    
+    const errorPatterns = {
+      'Module not found': 'dependency',
+      'Cannot resolve module': 'import',
+      'TypeScript error': 'typescript',
+      'ESLint error': 'linting',
+      'Tailwind CSS': 'styling',
+      'Wallet connection': 'wallet',
+      'Supabase connection': 'database',
+      'Environment variable': 'env'
+    };
+
+    const errorText = buildResult.errorOutput.toLowerCase();
+    const detectedIssues = [];
+
+    for (const [pattern, issueType] of Object.entries(errorPatterns)) {
+      if (errorText.includes(pattern.toLowerCase())) {
+        detectedIssues.push(issueType);
+      }
     }
 
-    // Analyze CSS
-    const cssDir = path.join(staticDir, 'css');
-    if (fs.existsSync(cssDir)) {
-      const cssFiles = fs.readdirSync(cssDir);
-      
-      cssFiles.forEach(file => {
-        const filePath = path.join(cssDir, file);
-        const stats = fs.statSync(filePath);
-        const size = stats.size;
-        analysis.totalSize += size;
-        analysis.css.push({ name: file, size });
+    if (detectedIssues.length > 0) {
+      console.log(`Detected issues: ${detectedIssues.join(', ')}`);
+      this.triggerHealing('build_failure', { 
+        issues: detectedIssues,
+        buildResult 
+      });
+    } else {
+      console.log('No specific issues detected, triggering generic healing');
+      this.triggerHealing('build_failure', { 
+        issues: ['unknown'],
+        buildResult 
       });
     }
-
-    // Sort chunks by size
-    analysis.chunks.sort((a, b) => b.size - a.size);
-
-    // Report findings
-    return analysis;
-  } catch {
-    return null;
-  }
-}
-
-/**
- * Check for potential optimizations
- */
-function checkOptimizations(bundleAnalysis) {
-  
-  if (!bundleAnalysis) {
-    return;
   }
 
-  const recommendations = [];
-
-  // Check for large chunks
-  const largeChunks = bundleAnalysis.chunks.filter(chunk => chunk.size > 500 * 1024); // > 500KB
-  if (largeChunks.length > 0) {
-    recommendations.push({
-      type: 'warning',
-      message: `${largeChunks.length} chunks are larger than 500KB`,
-      action: 'Consider code splitting or lazy loading'
-    });
-  }
-
-  // Check total bundle size
-  if (bundleAnalysis.totalSize > 2 * 1024 * 1024) { // > 2MB
-    recommendations.push({
-      type: 'warning',
-      message: 'Total bundle size exceeds 2MB',
-      action: 'Consider bundle optimization and tree shaking'
-    });
-  } else {
-    recommendations.push({
-      type: 'success',
-      message: 'Bundle size is within recommended limits',
-      action: 'Continue monitoring growth over time'
-    });
-  }
-
-  // Display recommendations
-  recommendations.forEach(rec => {
-    const _icon = rec.type === 'success' ? '✅' : rec.type === 'warning' ? '⚠️' : '❌';
-  });
-}
-
-/**
- * Performance benchmarking
- */
-async function _runPerformanceBenchmark() {
-  
-  const startTime = Date.now();
-  
-  return new Promise((_resolve) => {
-    // Simulate build time measurement
-    const build = spawn('npm', ['run', 'build'], {
-      stdio: 'pipe',
-      env: { ...process.env, DISABLE_BUILD_OUTPUT: 'true' }
-    });
+  async triggerHealing(issueType, data) {
+    console.log(`Triggering healing for ${issueType}...`);
     
-    let _buildOutput = '';
-    build.stdout.on('data', (data) => {
-      _buildOutput += data.toString();
-    });
-    
-    build.on('close', () => {
-      const buildTime = Date.now() - startTime;
-      const _buildTimeSeconds = (buildTime / 1000).toFixed(1);
+    try {
+      // Run self-healing script
+      execSync('node scripts/self-healing.js', {
+        stdio: 'inherit',
+        cwd: process.cwd()
+      });
       
+      console.log('Healing process completed');
+      
+      // Wait a bit and try building again
+      await new Promise(resolve => setTimeout(resolve, 5000));
+      await this.runBuildCheck();
+      
+    } catch (error) {
+      console.error('Healing process failed:', error.message);
+    }
+  }
+
+  monitorBuildLogs() {
+    // Monitor the build log file for new entries
+    const logWatcher = chokidar.watch(this.buildLogPath, {
+      persistent: true
     });
+
+    logWatcher.on('change', () => {
+      this.analyzeBuildLog();
+    });
+  }
+
+  analyzeBuildLog() {
+    try {
+      if (!fs.existsSync(this.buildLogPath)) {
+        return;
+      }
+
+      const logContent = fs.readFileSync(this.buildLogPath, 'utf8');
+      const lines = logContent.split('\n');
+      
+      // Look for recent errors
+      const recentErrors = lines
+        .slice(-50) // Last 50 lines
+        .filter(line => 
+          line.includes('ERROR') || 
+          line.includes('error') || 
+          line.includes('Error') ||
+          line.includes('failed') ||
+          line.includes('Failed')
+        );
+
+      if (recentErrors.length > 0) {
+        console.log(`Found ${recentErrors.length} recent build errors`);
+        this.analyzeBuildFailure({
+          timestamp: new Date(),
+          success: false,
+          errorOutput: recentErrors.join('\n')
+        });
+      }
+    } catch (error) {
+      console.error('Error analyzing build log:', error.message);
+    }
+  }
+
+  startPeriodicChecks() {
+    // Run periodic build health checks
+    setInterval(async () => {
+      if (this.isMonitoring) {
+        console.log('Running periodic build health check...');
+        try {
+          await this.runBuildCheck();
+        } catch (error) {
+          console.error('Periodic build check failed:', error.message);
+        }
+      }
+    }, 30 * 60 * 1000); // Every 30 minutes
+  }
+
+  logBuildOutput(output) {
+    const timestamp = new Date().toISOString();
+    const logEntry = `[${timestamp}] [BUILD] ${output}`;
+    
+    fs.appendFileSync(this.buildLogPath, logEntry);
+  }
+
+  logBuildError(error) {
+    const timestamp = new Date().toISOString();
+    const logEntry = `[${timestamp}] [BUILD_ERROR] ${error}`;
+    
+    fs.appendFileSync(this.errorLogPath, logEntry);
+  }
+
+  getBuildHistory() {
+    return this.buildHistory;
+  }
+
+  getBuildStats() {
+    const totalBuilds = this.buildHistory.length;
+    const successfulBuilds = this.buildHistory.filter(build => build.success).length;
+    const failedBuilds = totalBuilds - successfulBuilds;
+    
+    return {
+      totalBuilds,
+      successfulBuilds,
+      failedBuilds,
+      successRate: totalBuilds > 0 ? (successfulBuilds / totalBuilds) * 100 : 0,
+      lastBuild: this.buildHistory[this.buildHistory.length - 1] || null
+    };
+  }
+
+  stopMonitoring() {
+    this.isMonitoring = false;
+    console.log('Build monitoring stopped');
+  }
+}
+
+// CLI interface
+if (require.main === module) {
+  const monitor = new BuildMonitor();
+  
+  // Handle process signals
+  process.on('SIGINT', () => {
+    monitor.stopMonitoring();
+    process.exit(0);
+  });
+  
+  process.on('SIGTERM', () => {
+    monitor.stopMonitoring();
+    process.exit(0);
+  });
+  
+  // Start monitoring
+  monitor.startMonitoring().catch(error => {
+    console.error('Failed to start build monitor:', error);
+    process.exit(1);
   });
 }
 
-/**
- * Generate build report
- */
-function generateBuildReport(bundleAnalysis, benchmark) {
-  
-  const report = {
-    timestamp: new Date().toISOString(),
-    build: {
-      successful: benchmark?.exitCode === 0,
-      buildTime: benchmark?.buildTimeSeconds || 'unknown',
-      totalPages: 152, // From recent build
-    },
-    bundle: bundleAnalysis ? {
-      totalSize: (bundleAnalysis.totalSize / 1024 / 1024).toFixed(2) + ' MB',
-      chunks: bundleAnalysis.chunks.length,
-      largestChunk: bundleAnalysis.chunks[0]?.name || 'unknown'
-    } : null,
-    recommendations: bundleAnalysis?.totalSize > 2 * 1024 * 1024 ? [
-      'Consider bundle optimization',
-      'Review large dependencies',
-      'Implement code splitting'
-    ] : ['Bundle size optimized'],
-    nextSteps: [
-      'Monitor bundle growth over time',
-      'Set up automated performance testing',
-      'Configure CDN for static assets',
-      'Enable compression in production'
-    ]
-  };
-  
-  // Save report to file
-  const reportPath = path.join(__dirname, '..', 'build-report.json');
-  fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-  
-}
-
-/**
- * Main monitoring function
- */
-async function runBuildMonitor() {
-  
-  // Step 1: Analyze current build
-  const bundleAnalysis = analyzeBundleComposition();
-  
-  // Step 2: Check optimizations
-  checkOptimizations(bundleAnalysis);
-  
-  // Step 3: Run performance benchmark (optional - comment out for faster analysis)
-  // const benchmark = await runPerformanceBenchmark();
-  
-  // Step 4: Generate report
-  const _report = generateBuildReport(bundleAnalysis, null);
-  
-}
-
-// Run the monitor
-runBuildMonitor().catch(console.error); 
+module.exports = BuildMonitor; 

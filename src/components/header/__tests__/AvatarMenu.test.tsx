@@ -9,10 +9,13 @@ import type { AuthContextType } from '@/types/auth';
 // Mock react-router-dom
 vi.mock('react-router-dom', () => ({
   ...vi.requireActual('react-router-dom'), // import and retain default behavior
-  Link: ({ to, children, ...props }) => <a href={to} {...props}>{children}</a>, // Simple mock for Link
+  Link: ({ to, children, ...props }) => (
+    <a href={to} {...props}>
+      {children}
+    </a>
+  ), // Simple mock for Link
   useNavigate: vi.fn(), // Mock useNavigate if logout uses it
 }));
-
 
 // Mock useAuth hook
 vi.mock('@/hooks/useAuth');
@@ -56,7 +59,6 @@ describe('UserProfileDropdown', () => {
     render(<UserProfileDropdown />);
     expect(screen.getByLabelText('User profile')).toBeInTheDocument(); // It will render its button
   });
-
 
   it('clicking the avatar toggles the dropdown visibility', () => {
     mockedUseAuth.mockReturnValue({
@@ -133,7 +135,7 @@ describe('UserProfileDropdown', () => {
       <div>
         <div data-testid="outside-element">Outside</div>
         <UserProfileDropdown />
-      </div>
+      </div>,
     );
     const avatarButton = screen.getByLabelText('User profile');
     fireEvent.click(avatarButton); // Open dropdown

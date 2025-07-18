@@ -1,17 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import { Search, Filter, ArrowDownAZ, ArrowUpZA } from '@/components/ui/icons';
-import { GradientHeading } from "@/components/GradientHeading";
-import { ListingScoreCard } from "@/components/ListingScoreCard";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Select, SelectTrigger, SelectContent, SelectItem } from "@/components/ui/select";
+import { GradientHeading } from '@/components/GradientHeading';
+import { ListingScoreCard } from '@/components/ListingScoreCard';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import {
+  Select,
+  SelectTrigger,
+  SelectContent,
+  SelectItem,
+} from '@/components/ui/select';
 
-
-
-
-
-import ListingGridSkeleton from "@/components/skeletons/ListingGridSkeleton";
-import { safeStorage } from "@/utils/safeStorage";
+import ListingGridSkeleton from '@/components/skeletons/ListingGridSkeleton';
+import { safeStorage } from '@/utils/safeStorage';
 
 // Example listing type
 export interface Listing {
@@ -39,8 +40,8 @@ interface CategoryListingPageProps {
   filterOptions?: { label: string; value: string }[];
 }
 
-export function CategoryListingPage({ 
-  title, 
+export function CategoryListingPage({
+  title,
   description,
   listings: initialListings,
   sortOptions = [
@@ -55,14 +56,20 @@ export function CategoryListingPage({
     { label: 'All', value: 'all' },
     { label: 'Highly Rated', value: 'high-rating' },
     { label: 'Best AI Match', value: 'best-match' },
-  ]
+  ],
 }: CategoryListingPageProps) {
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
   const [selectedSort, setSelectedSort] = useState(
-    () => safeStorage.getItem('category_selected_sort') || sortOptions[0]?.value || 'newest'
+    () =>
+      safeStorage.getItem('category_selected_sort') ||
+      sortOptions[0]?.value ||
+      'newest',
   );
   const [selectedFilter, setSelectedFilter] = useState(
-    () => safeStorage.getItem('category_selected_filter') || filterOptions[0]?.value || 'all'
+    () =>
+      safeStorage.getItem('category_selected_filter') ||
+      filterOptions[0]?.value ||
+      'all',
   );
   const [isLoading, setIsLoading] = useState(false);
 
@@ -85,32 +92,39 @@ export function CategoryListingPage({
       clearTimeout(timeout);
     };
   }, [searchQuery, selectedSort, selectedFilter]);
-  
+
   // Process listings based on filters and search
   const processedListings = initialListings
-    .filter(listing => {
+    .filter((listing) => {
       // Apply search filter
-      const matchesSearch = 
-        listing.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+      const matchesSearch =
+        listing.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         listing.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        (listing.tags && listing.tags.some(tag => 
-          tag.toLowerCase().includes(searchQuery.toLowerCase())
-        ));
-      
+        (listing.tags &&
+          listing.tags.some((tag) =>
+            tag.toLowerCase().includes(searchQuery.toLowerCase()),
+          ));
+
       // Apply category filters
       if (selectedFilter === 'all') return matchesSearch;
-      if (selectedFilter === 'high-rating') return matchesSearch && (listing.rating || 0) >= 4;
-      if (selectedFilter === 'best-match') return matchesSearch && (listing.aiScore || 0) >= 85;
-      
+      if (selectedFilter === 'high-rating')
+        return matchesSearch && (listing.rating || 0) >= 4;
+      if (selectedFilter === 'best-match')
+        return matchesSearch && (listing.aiScore || 0) >= 85;
+
       return matchesSearch;
     })
     .sort((a, b) => {
       // Apply sorting
       switch (selectedSort) {
         case 'newest':
-          return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+          return (
+            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+          );
         case 'oldest':
-          return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
+          return (
+            new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
+          );
         case 'rating-high':
           return (b.rating || 0) - (a.rating || 0);
         case 'ai-match':
@@ -144,11 +158,13 @@ export function CategoryListingPage({
                   type="text"
                   placeholder="Search listings..."
                   value={searchQuery}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    setSearchQuery(e.target.value)
+                  }
                   className="pl-10 bg-zion-blue border border-zion-blue-light text-white"
                 />
               </div>
-              
+
               <Select value={selectedSort} onValueChange={setSelectedSort}>
                 <SelectTrigger className="bg-zion-blue border border-zion-blue-light text-white">
                   <div className="flex items-center">
@@ -158,13 +174,19 @@ export function CategoryListingPage({
                       <ArrowUpZA className="mr-2 h-4 w-4" />
                     ) : null}
                     <span>
-                      {sortOptions.find(option => option.value === selectedSort)?.label || 'Sort By'}
+                      {sortOptions.find(
+                        (option) => option.value === selectedSort,
+                      )?.label || 'Sort By'}
                     </span>
                   </div>
                 </SelectTrigger>
                 <SelectContent className="bg-zion-blue-dark border border-zion-blue-light">
                   {sortOptions.map((option) => (
-                    <SelectItem key={option.value} value={option.value} className="text-white">
+                    <SelectItem
+                      key={option.value}
+                      value={option.value}
+                      className="text-white"
+                    >
                       {option.label}
                     </SelectItem>
                   ))}
@@ -176,13 +198,19 @@ export function CategoryListingPage({
                   <div className="flex items-center">
                     <Filter className="mr-2 h-4 w-4" />
                     <span>
-                      {filterOptions.find(option => option.value === selectedFilter)?.label || 'Filter'}
+                      {filterOptions.find(
+                        (option) => option.value === selectedFilter,
+                      )?.label || 'Filter'}
                     </span>
                   </div>
                 </SelectTrigger>
                 <SelectContent className="bg-zion-blue-dark border border-zion-blue-light">
                   {filterOptions.map((option) => (
-                    <SelectItem key={option.value} value={option.value} className="text-white">
+                    <SelectItem
+                      key={option.value}
+                      value={option.value}
+                      className="text-white"
+                    >
                       {option.label}
                     </SelectItem>
                   ))}
@@ -223,12 +251,16 @@ export function CategoryListingPage({
               </div>
             ) : (
               <div className="text-center py-20">
-                <h3 className="text-xl font-bold text-white mb-2">No listings found</h3>
-                <p className="text-zion-slate-light mb-6">Try adjusting your filters or search query</p>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  No listings found
+                </h3>
+                <p className="text-zion-slate-light mb-6">
+                  Try adjusting your filters or search query
+                </p>
                 <Button
                   variant="outline"
                   onClick={() => {
-                    setSearchQuery("");
+                    setSearchQuery('');
                     setSelectedFilter(filterOptions[0]?.value || 'all');
                   }}
                   className="border-zion-purple text-zion-purple hover:bg-zion-purple/10"

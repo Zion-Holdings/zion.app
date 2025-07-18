@@ -1,5 +1,11 @@
 import React from 'react';
-import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
+import {
+  render,
+  screen,
+  fireEvent,
+  waitFor,
+  act,
+} from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { vi } from 'vitest';
 import { ChatAssistant, Message } from '../ChatAssistant';
@@ -14,30 +20,63 @@ vi.mock('../../../hooks/useDebounce');
 
 // Mock UI sub-components if they cause issues or to simplify tests
 vi.mock('@/components/ui/avatar', () => ({
-  Avatar: ({ children }: { children: React.ReactNode }) => <div data-testid="avatar">{children}</div>,
-  AvatarImage: ({ src, alt }: { src?: string, alt?: string }) => (
-    <Image src={src || '/default-avatar.png'} alt={alt || 'avatar'} width={40} height={40} data-testid="avatar-image" />
+  Avatar: ({ children }: { children: React.ReactNode }) => (
+    <div data-testid="avatar">{children}</div>
   ),
-  AvatarFallback: ({ children }: { children: React.ReactNode }) => <div data-testid="avatar-fallback">{children}</div>,
+  AvatarImage: ({ src, alt }: { src?: string; alt?: string }) => (
+    <Image
+      src={src || '/default-avatar.png'}
+      alt={alt || 'avatar'}
+      width={40}
+      height={40}
+      data-testid="avatar-image"
+    />
+  ),
+  AvatarFallback: ({ children }: { children: React.ReactNode }) => (
+    <div data-testid="avatar-fallback">{children}</div>
+  ),
 }));
 vi.mock('@/components/ui/button', () => ({
-  Button: ({ children, onClick, variant, size, className }: { children: React.ReactNode, onClick?: () => void, variant?: string, size?: string, className?: string }) => (
-    <button onClick={onClick} data-variant={variant} data-size={size} className={className}>
+  Button: ({
+    children,
+    onClick,
+    variant,
+    size,
+    className,
+  }: {
+    children: React.ReactNode;
+    onClick?: () => void;
+    variant?: string;
+    size?: string;
+    className?: string;
+  }) => (
+    <button
+      onClick={onClick}
+      data-variant={variant}
+      data-size={size}
+      className={className}
+    >
       {children}
     </button>
   ),
 }));
 vi.mock('../ChatMessage', () => ({
-  ChatMessage: ({ role, message }: { role: string, message: string }) => (
+  ChatMessage: ({ role, message }: { role: string; message: string }) => (
     <div data-testid={`chat-message-${role}`}>{message}</div>
   ),
 }));
 vi.mock('../ChatInput', () => ({
   ChatInput: ({ onSend }: { onSend: (message: string) => void }) => (
-    <input type="text" data-testid="chat-input" onChange={(e) => e.target.value} onKeyDown={(e) => { if (e.key === 'Enter') onSend((e.target as HTMLInputElement).value); }} />
+    <input
+      type="text"
+      data-testid="chat-input"
+      onChange={(e) => e.target.value}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter') onSend((e.target as HTMLInputElement).value);
+      }}
+    />
   ),
 }));
-
 
 const mockRecipient = {
   id: 'recipient123',
@@ -49,14 +88,21 @@ const mockRecipient = {
 const mockOnSendMessage = vi.fn();
 
 // Default mock implementations
-const mockUseLocalStorage = UseLocalStorageHook.useLocalStorage as unknown as vi.Mock;
+const mockUseLocalStorage =
+  UseLocalStorageHook.useLocalStorage as unknown as vi.Mock;
 const mockUseDebounce = UseDebounceHook.useDebounce as unknown as vi.Mock;
 
 // Helper to provide context
-const renderWithAuth = (ui: React.ReactElement, { providerProps, ...renderOptions }: { providerProps: any, [_key: string]: any }) => {
+const renderWithAuth = (
+  ui: React.ReactElement,
+  {
+    providerProps,
+    ...renderOptions
+  }: { providerProps: any; [_key: string]: any },
+) => {
   return render(
     <AuthContext.Provider value={providerProps}>{ui}</AuthContext.Provider>,
-    renderOptions
+    renderOptions,
   );
 };
 
@@ -76,7 +122,8 @@ describe('ChatAssistant', () => {
       mockUseDebounce.mockImplementation((value, delay) => {
         const [debouncedValue, setDebouncedValue] = React.useState(null);
         React.useEffect(() => {
-          if (value === null || value === undefined) { // Handle initial null/undefined state if necessary
+          if (value === null || value === undefined) {
+            // Handle initial null/undefined state if necessary
             setDebouncedValue(null);
             return;
           }
@@ -97,7 +144,11 @@ describe('ChatAssistant', () => {
     });
 
     test('onSendMessage is called only once after multiple rapid inputs within debounce window', async () => {
-      const authProviderProps = { isAuthenticated: true, user: { id: 'user1' }, isLoading: false };
+      const authProviderProps = {
+        isAuthenticated: true,
+        user: { id: 'user1' },
+        isLoading: false,
+      };
       renderWithAuth(
         <ChatAssistant
           isOpen={true}
@@ -106,7 +157,7 @@ describe('ChatAssistant', () => {
           onSendMessage={mockOnSendMessage}
           initialMessages={[]}
         />,
-        { providerProps: authProviderProps }
+        { providerProps: authProviderProps },
       );
 
       const chatInput = screen.getByTestId('chat-input') as HTMLInputElement;
@@ -134,42 +185,50 @@ describe('ChatAssistant', () => {
     });
 
     test('onSendMessage is called after the 3-second delay', async () => {
-        const authProviderProps = { isAuthenticated: true, user: { id: 'user1' }, isLoading: false };
-        renderWithAuth(
-          <ChatAssistant
-            isOpen={true}
-            onClose={vi.fn()}
-            recipient={mockRecipient}
-            onSendMessage={mockOnSendMessage}
-            initialMessages={[]}
-          />,
-          { providerProps: authProviderProps }
-        );
+      const authProviderProps = {
+        isAuthenticated: true,
+        user: { id: 'user1' },
+        isLoading: false,
+      };
+      renderWithAuth(
+        <ChatAssistant
+          isOpen={true}
+          onClose={vi.fn()}
+          recipient={mockRecipient}
+          onSendMessage={mockOnSendMessage}
+          initialMessages={[]}
+        />,
+        { providerProps: authProviderProps },
+      );
 
-        const chatInput = screen.getByTestId('chat-input') as HTMLInputElement;
-        fireEvent.change(chatInput, { target: { value: 'Test Message' } });
-        fireEvent.keyDown(chatInput, { key: 'Enter', code: 'Enter' });
+      const chatInput = screen.getByTestId('chat-input') as HTMLInputElement;
+      fireEvent.change(chatInput, { target: { value: 'Test Message' } });
+      fireEvent.keyDown(chatInput, { key: 'Enter', code: 'Enter' });
 
-        expect(mockOnSendMessage).not.toHaveBeenCalled();
+      expect(mockOnSendMessage).not.toHaveBeenCalled();
 
-        act(() => {
-          vi.advanceTimersByTime(2999);
-        });
-        expect(mockOnSendMessage).not.toHaveBeenCalled();
-
-        act(() => {
-          vi.advanceTimersByTime(1);
-        });
-
-        await waitFor(() => {
-          expect(mockOnSendMessage).toHaveBeenCalledTimes(1);
-        });
-        expect(mockOnSendMessage).toHaveBeenCalledWith('Test Message', undefined);
+      act(() => {
+        vi.advanceTimersByTime(2999);
       });
+      expect(mockOnSendMessage).not.toHaveBeenCalled();
+
+      act(() => {
+        vi.advanceTimersByTime(1);
+      });
+
+      await waitFor(() => {
+        expect(mockOnSendMessage).toHaveBeenCalledTimes(1);
+      });
+      expect(mockOnSendMessage).toHaveBeenCalledWith('Test Message', undefined);
+    });
   });
 
   describe('Guest Preview Modal', () => {
-    const guestAuthProviderProps = { isAuthenticated: false, user: null, isLoading: false };
+    const guestAuthProviderProps = {
+      isAuthenticated: false,
+      user: null,
+      isLoading: false,
+    };
 
     test('shows preview modal when guest user tries to send a message', () => {
       renderWithAuth(
@@ -179,7 +238,7 @@ describe('ChatAssistant', () => {
           recipient={mockRecipient}
           onSendMessage={mockOnSendMessage}
         />,
-        { providerProps: guestAuthProviderProps }
+        { providerProps: guestAuthProviderProps },
       );
 
       const chatInput = screen.getByTestId('chat-input') as HTMLInputElement;
@@ -198,7 +257,7 @@ describe('ChatAssistant', () => {
           recipient={mockRecipient}
           onSendMessage={mockOnSendMessage}
         />,
-        { providerProps: guestAuthProviderProps }
+        { providerProps: guestAuthProviderProps },
       );
 
       const chatInput = screen.getByTestId('chat-input') as HTMLInputElement;
@@ -208,7 +267,9 @@ describe('ChatAssistant', () => {
       fireEvent.click(screen.getByText('Send'));
 
       // Debounce logic is still in play
-      act(() => { vi.advanceTimersByTime(3000); });
+      act(() => {
+        vi.advanceTimersByTime(3000);
+      });
 
       await waitFor(() => {
         expect(mockOnSendMessage).toHaveBeenCalledWith('Guest Send', undefined);
@@ -224,7 +285,7 @@ describe('ChatAssistant', () => {
           recipient={mockRecipient}
           onSendMessage={mockOnSendMessage}
         />,
-        { providerProps: guestAuthProviderProps }
+        { providerProps: guestAuthProviderProps },
       );
 
       const chatInput = screen.getByTestId('chat-input') as HTMLInputElement;
@@ -233,7 +294,9 @@ describe('ChatAssistant', () => {
 
       fireEvent.click(screen.getByText('Cancel'));
 
-      act(() => { vi.advanceTimersByTime(3000); }); // Advance timers just in case
+      act(() => {
+        vi.advanceTimersByTime(3000);
+      }); // Advance timers just in case
 
       expect(mockOnSendMessage).not.toHaveBeenCalled();
       expect(screen.queryByText('Confirm Message')).not.toBeInTheDocument();
@@ -241,7 +304,11 @@ describe('ChatAssistant', () => {
   });
 
   describe('Guest Chat History Persistence', () => {
-    const guestAuthProviderProps = { isAuthenticated: false, user: null, _isLoading: false };
+    const guestAuthProviderProps = {
+      isAuthenticated: false,
+      user: null,
+      _isLoading: false,
+    };
     let mockSetStoredValue: vi.Mock;
 
     beforeEach(() => {
@@ -257,9 +324,16 @@ describe('ChatAssistant', () => {
     test('saves message to localStorage when guest sends a message', async () => {
       const initialStoredMessages: Message[] = [];
       mockUseLocalStorage.mockImplementation((key, defaultVal) => {
-        const [val, setVal] = React.useState<Message[]>(defaultVal.length > 0 ? defaultVal : initialStoredMessages);
-        const setAndPersist = (newValue: Message[] | ((v: Message[]) => Message[])) => {
-          const newV = typeof newValue === 'function' ? (newValue as (v: Message[]) => Message[])(val) : newValue;
+        const [val, setVal] = React.useState<Message[]>(
+          defaultVal.length > 0 ? defaultVal : initialStoredMessages,
+        );
+        const setAndPersist = (
+          newValue: Message[] | ((v: Message[]) => Message[]),
+        ) => {
+          const newV =
+            typeof newValue === 'function'
+              ? (newValue as (v: Message[]) => Message[])(val)
+              : newValue;
           setVal(newV);
           mockSetStoredValue(newV); // this mockSetStoredValue is for assertion
         };
@@ -273,7 +347,7 @@ describe('ChatAssistant', () => {
           recipient={mockRecipient}
           onSendMessage={mockOnSendMessage}
         />,
-        { providerProps: guestAuthProviderProps }
+        { providerProps: guestAuthProviderProps },
       );
 
       const chatInput = screen.getByTestId('chat-input') as HTMLInputElement;
@@ -285,19 +359,37 @@ describe('ChatAssistant', () => {
       await waitFor(() => {
         expect(mockSetStoredValue).toHaveBeenCalled();
       });
-      const lastCall = mockSetStoredValue.mock.calls[mockSetStoredValue.mock.calls.length - 1][0];
-      expect(lastCall).toEqual(expect.arrayContaining([
-        expect.objectContaining({ message: 'Persist This', role: 'user' })
-      ]));
+      const lastCall =
+        mockSetStoredValue.mock.calls[
+          mockSetStoredValue.mock.calls.length - 1
+        ][0];
+      expect(lastCall).toEqual(
+        expect.arrayContaining([
+          expect.objectContaining({ message: 'Persist This', role: 'user' }),
+        ]),
+      );
     });
 
     test('displays messages from localStorage when component mounts for a guest', () => {
       const messagesFromStorage: Message[] = [
-        { id: '1', role: 'user', message: 'Old Message 1', timestamp: new Date() },
-        { id: '2', role: 'assistant', message: 'Old Reply 1', timestamp: new Date() },
+        {
+          id: '1',
+          role: 'user',
+          message: 'Old Message 1',
+          timestamp: new Date(),
+        },
+        {
+          id: '2',
+          role: 'assistant',
+          message: 'Old Reply 1',
+          timestamp: new Date(),
+        },
       ];
       // Mock useLocalStorage to return these messages on initial load
-      mockUseLocalStorage.mockReturnValue([messagesFromStorage, mockSetStoredValue]);
+      mockUseLocalStorage.mockReturnValue([
+        messagesFromStorage,
+        mockSetStoredValue,
+      ]);
 
       renderWithAuth(
         <ChatAssistant
@@ -306,7 +398,7 @@ describe('ChatAssistant', () => {
           recipient={mockRecipient}
           onSendMessage={mockOnSendMessage}
         />,
-        { providerProps: guestAuthProviderProps }
+        { providerProps: guestAuthProviderProps },
       );
 
       expect(screen.getByText('Old Message 1')).toBeInTheDocument();
@@ -315,10 +407,20 @@ describe('ChatAssistant', () => {
 
     test('initialMessages prop takes precedence over localStorage for guest user', () => {
       const messagesFromStorage: Message[] = [
-        { id: 'ls1', role: 'user', message: 'From Local Storage', timestamp: new Date() },
+        {
+          id: 'ls1',
+          role: 'user',
+          message: 'From Local Storage',
+          timestamp: new Date(),
+        },
       ];
       const messagesFromProp: Message[] = [
-        { id: 'prop1', role: 'user', message: 'From Prop', timestamp: new Date() },
+        {
+          id: 'prop1',
+          role: 'user',
+          message: 'From Prop',
+          timestamp: new Date(),
+        },
       ];
 
       // Mock useLocalStorage to return messagesFromStorage initially
@@ -328,8 +430,13 @@ describe('ChatAssistant', () => {
         // This mock just needs to provide a value and a setter.
         // The key part is what `storedGuestMessages` is initially.
         const [val, setVal] = React.useState<Message[]>(messagesFromStorage);
-        const setAndPersist = (newValue: Message[] | ((v: Message[]) => Message[])) => {
-          const newV = typeof newValue === 'function' ? (newValue as (v: Message[]) => Message[])(val) : newValue;
+        const setAndPersist = (
+          newValue: Message[] | ((v: Message[]) => Message[]),
+        ) => {
+          const newV =
+            typeof newValue === 'function'
+              ? (newValue as (v: Message[]) => Message[])(val)
+              : newValue;
           setVal(newV);
           mockSetStoredValue(newV);
         };
@@ -344,7 +451,7 @@ describe('ChatAssistant', () => {
           onSendMessage={mockOnSendMessage}
           initialMessages={messagesFromProp} // These should take precedence
         />,
-        { providerProps: guestAuthProviderProps }
+        { providerProps: guestAuthProviderProps },
       );
 
       expect(screen.getByText('From Prop')).toBeInTheDocument();

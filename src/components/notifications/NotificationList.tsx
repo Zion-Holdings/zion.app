@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Bell } from '@/components/ui/icons';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -7,8 +6,6 @@ import { Button } from '@/components/ui/button';
 import { NotificationItem } from './NotificationItem';
 import type { Notification } from '@/context/notifications';
 import { EmptyState } from '@/components/ui/empty-state';
-
-
 
 interface NotificationListProps {
   loading: boolean;
@@ -25,16 +22,16 @@ export const NotificationList: React.FC<NotificationListProps> = ({
   notifications,
   onMarkAsRead,
   onDismiss,
-  onRetry
+  onRetry,
 }) => {
   return (
     <ScrollArea className="flex-1 overflow-y-auto max-h-[350px]">
       {error ? (
         <div className="p-8 text-center text-amber-500">
           <p>{error}</p>
-          <Button 
-            variant="outline" 
-            size="sm" 
+          <Button
+            variant="outline"
+            size="sm"
             className="mt-2"
             onClick={onRetry}
           >

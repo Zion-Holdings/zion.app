@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { InfoIcon } from '@/components/ui/icons';
 import {
   Table,
@@ -7,26 +7,26 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Badge } from "@/components/ui/badge";
-import { Switch } from "@/components/ui/switch";
-import { toast } from "@/hooks/use-toast";
+} from '@/components/ui/table';
+import { Badge } from '@/components/ui/badge';
+import { Switch } from '@/components/ui/switch';
+import { toast } from '@/hooks/use-toast';
 
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from '@/components/ui/tooltip';
 
 export function RoleManagement() {
   // Mock team members data
   const teamMembers = [
     {
       id: 1,
-      name: "Alex Johnson",
-      email: "alex@example.com",
-      role: "Admin",
+      name: 'Alex Johnson',
+      email: 'alex@example.com',
+      role: 'Admin',
       permissions: {
         viewCandidates: true,
         editCandidates: true,
@@ -38,9 +38,9 @@ export function RoleManagement() {
     },
     {
       id: 2,
-      name: "Jamie Smith",
-      email: "jamie@example.com",
-      role: "Recruiter",
+      name: 'Jamie Smith',
+      email: 'jamie@example.com',
+      role: 'Recruiter',
       permissions: {
         viewCandidates: true,
         editCandidates: true,
@@ -52,9 +52,9 @@ export function RoleManagement() {
     },
     {
       id: 3,
-      name: "Sam Williams",
-      email: "sam@example.com",
-      role: "Manager",
+      name: 'Sam Williams',
+      email: 'sam@example.com',
+      role: 'Manager',
       permissions: {
         viewCandidates: true,
         editCandidates: false,
@@ -66,9 +66,9 @@ export function RoleManagement() {
     },
     {
       id: 4,
-      name: "Taylor Brown",
-      email: "taylor@example.com",
-      role: "Viewer",
+      name: 'Taylor Brown',
+      email: 'taylor@example.com',
+      role: 'Viewer',
       permissions: {
         viewCandidates: true,
         editCandidates: false,
@@ -80,19 +80,23 @@ export function RoleManagement() {
     },
   ];
 
-  const handlePermissionChange = (_memberId: number, permission: string, _value: boolean) => {
+  const handlePermissionChange = (
+    _memberId: number,
+    permission: string,
+    _value: boolean,
+  ) => {
     // In a real app, this would make an API call to update permissions
     toast({
-      title: "Permission updated",
-      description: `Permission ${permission} has been ${value ? "granted" : "revoked"}.`,
+      title: 'Permission updated',
+      description: `Permission ${permission} has been ${value ? 'granted' : 'revoked'}.`,
     });
   };
 
   const roleDescriptions: Record<string, string> = {
-    "Admin": "Full access to all features and settings",
-    "Recruiter": "Can manage candidates and job postings",
-    "Manager": "Can view candidates and create jobs",
-    "Viewer": "Read-only access to candidates",
+    Admin: 'Full access to all features and settings',
+    Recruiter: 'Can manage candidates and job postings',
+    Manager: 'Can view candidates and create jobs',
+    Viewer: 'Read-only access to candidates',
   };
 
   return (
@@ -101,9 +105,14 @@ export function RoleManagement() {
         <h3 className="text-xl font-medium mb-4">Role Permissions</h3>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
           {Object.entries(roleDescriptions).map(([role, description]) => (
-            <div key={role} className="bg-card rounded-lg p-4 border border-border">
+            <div
+              key={role}
+              className="bg-card rounded-lg p-4 border border-border"
+            >
               <div className="flex items-center gap-2 mb-2">
-                <Badge variant={role === "Admin" ? "default" : "outline"}>{role}</Badge>
+                <Badge variant={role === 'Admin' ? 'default' : 'outline'}>
+                  {role}
+                </Badge>
               </div>
               <p className="text-sm text-muted-foreground">{description}</p>
             </div>
@@ -204,7 +213,7 @@ export function RoleManagement() {
                   </div>
                 </TableCell>
                 <TableCell>
-                  <select 
+                  <select
                     className="w-full h-9 rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
                     defaultValue={member.role}
                   >
@@ -219,7 +228,11 @@ export function RoleManagement() {
                     aria-label="View candidates"
                     checked={member.permissions.viewCandidates}
                     onCheckedChange={(checked) =>
-                      handlePermissionChange(member.id, "viewCandidates", checked)
+                      handlePermissionChange(
+                        member.id,
+                        'viewCandidates',
+                        checked,
+                      )
                     }
                   />
                 </TableCell>
@@ -228,7 +241,11 @@ export function RoleManagement() {
                     aria-label="Edit candidates"
                     checked={member.permissions.editCandidates}
                     onCheckedChange={(checked) =>
-                      handlePermissionChange(member.id, "editCandidates", checked)
+                      handlePermissionChange(
+                        member.id,
+                        'editCandidates',
+                        checked,
+                      )
                     }
                   />
                 </TableCell>
@@ -237,7 +254,7 @@ export function RoleManagement() {
                     aria-label="Create jobs"
                     checked={member.permissions.createJobs}
                     onCheckedChange={(checked) =>
-                      handlePermissionChange(member.id, "createJobs", checked)
+                      handlePermissionChange(member.id, 'createJobs', checked)
                     }
                   />
                 </TableCell>
@@ -246,7 +263,7 @@ export function RoleManagement() {
                     aria-label="Manage team"
                     checked={member.permissions.manageTeam}
                     onCheckedChange={(checked) =>
-                      handlePermissionChange(member.id, "manageTeam", checked)
+                      handlePermissionChange(member.id, 'manageTeam', checked)
                     }
                   />
                 </TableCell>
@@ -255,7 +272,7 @@ export function RoleManagement() {
                     aria-label="View billing"
                     checked={member.permissions.viewBilling}
                     onCheckedChange={(checked) =>
-                      handlePermissionChange(member.id, "viewBilling", checked)
+                      handlePermissionChange(member.id, 'viewBilling', checked)
                     }
                   />
                 </TableCell>

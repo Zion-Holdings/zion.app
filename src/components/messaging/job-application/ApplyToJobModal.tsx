@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {
   Dialog,
@@ -10,7 +9,12 @@ import {
 import { ApplyForm } from './ApplyForm';
 import type { ApplyToJobModalProps } from './types';
 
-export function ApplyToJobModal({ job, isOpen, onClose, onApplySuccess }: ApplyToJobModalProps) {
+export function ApplyToJobModal({
+  job,
+  isOpen,
+  onClose,
+  onApplySuccess,
+}: ApplyToJobModalProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[600px]">
@@ -20,8 +24,8 @@ export function ApplyToJobModal({ job, isOpen, onClose, onApplySuccess }: ApplyT
             Complete your application for this position
           </DialogDescription>
         </DialogHeader>
-        
-        <ApplyForm 
+
+        <ApplyForm
           job={job}
           onClose={onClose}
           {...(onApplySuccess ? { onApplySuccess } : {})}

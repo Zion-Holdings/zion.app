@@ -6,10 +6,24 @@ import { ZION_TOKEN_CONTRACT_ADDRESS } from '@/config/governanceConfig';
 import { ethers } from 'ethers';
 
 const _ConnectWalletButton: React.FC = () => {
-  const { isConnected, connectWallet, disconnectWallet, displayAddress, address, provider } = useWallet();
+  const {
+    isConnected,
+    connectWallet,
+    disconnectWallet,
+    displayAddress,
+    address,
+    provider,
+  } = useWallet();
 
-  const validProvider = provider && typeof provider === 'object' ? (provider as ethers.Provider) : null;
-  const zionBalance = useTokenBalance(address, ZION_TOKEN_CONTRACT_ADDRESS, validProvider);
+  const validProvider =
+    provider && typeof provider === 'object'
+      ? (provider as ethers.Provider)
+      : null;
+  const zionBalance = useTokenBalance(
+    address,
+    ZION_TOKEN_CONTRACT_ADDRESS,
+    validProvider,
+  );
 
   if (isConnected) {
     return (
@@ -23,11 +37,7 @@ const _ConnectWalletButton: React.FC = () => {
     );
   }
 
-  return (
-    <button onClick={connectWallet}>
-      Connect Wallet
-    </button>
-  );
+  return <button onClick={connectWallet}>Connect Wallet</button>;
 };
 
 export default ConnectWalletButton;

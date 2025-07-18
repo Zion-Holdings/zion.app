@@ -1,9 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  useContext,
-} from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import type { ReactNode } from 'react';
 import { X } from '@/components/ui/icons';
 
@@ -14,7 +9,6 @@ import { ChatMessage } from './ChatMessage';
 import { ChatInput } from './ChatInput';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-
 
 export interface Message {
   id: string;

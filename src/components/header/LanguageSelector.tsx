@@ -12,7 +12,7 @@ import {
 import {
   useLanguage,
   type SupportedLanguage,
-  SUPPORTED_LANGUAGES
+  SUPPORTED_LANGUAGES,
 } from '@/context/LanguageContext';
 
 export function LanguageSelector() {
@@ -25,8 +25,12 @@ export function LanguageSelector() {
       : SUPPORTED_LANGUAGES;
   const [isOpen, setIsOpen] = useState(false);
 
-  logInfo('LanguageSelector: Rendered with currentLanguage:', { data: currentLanguage });
-  logInfo('LanguageSelector: Available languages:', { data: availableLanguages.map(l => l.code) });
+  logInfo('LanguageSelector: Rendered with currentLanguage:', {
+    data: currentLanguage,
+  });
+  logInfo('LanguageSelector: Available languages:', {
+    data: availableLanguages.map((l) => l.code),
+  });
 
   const currentFlag =
     availableLanguages.find((l) => l.code === currentLanguage)?.flag || '🌐';
@@ -38,7 +42,9 @@ export function LanguageSelector() {
       setIsOpen(false);
       fireEvent('language_change', { language: langCode });
     } catch {
-      logErrorToProduction('LanguageSelector: Error changing language:', { data: error });
+      logErrorToProduction('LanguageSelector: Error changing language:', {
+        data: error,
+      });
     }
   };
 
@@ -64,8 +70,8 @@ export function LanguageSelector() {
           </span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent 
-        align="end" 
+      <DropdownMenuContent
+        align="end"
         className="bg-popover border border-border min-w-[140px]" // Use popover background and standard border
         sideOffset={5}
       >
@@ -73,7 +79,7 @@ export function LanguageSelector() {
           <DropdownMenuItem
             key={lang.code}
             className={`cursor-pointer transition-colors ${
-              currentLanguage === lang.code 
+              currentLanguage === lang.code
                 ? 'bg-primary/20 text-primary' // Use primary color for selected
                 : 'text-popover-foreground hover:bg-accent hover:text-accent-foreground' // Use popover text and accent for hover
             }`}

@@ -1,6 +1,5 @@
 import React from 'react';
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 interface Props {
   children: React.ReactNode;
@@ -22,7 +21,9 @@ export class EquipmentErrorBoundary extends React.Component<Props, State> {
   }
 
   override componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    logErrorToProduction('Equipment page error:', error, { componentStack: errorInfo.componentStack });
+    logErrorToProduction('Equipment page error:', error, {
+      componentStack: errorInfo.componentStack,
+    });
   }
 
   override render() {
@@ -30,10 +31,13 @@ export class EquipmentErrorBoundary extends React.Component<Props, State> {
       return (
         <div className="container py-8">
           <h2>Something went wrong.</h2>
-          <p>Please try refreshing the page or contact support if the problem persists.</p>
+          <p>
+            Please try refreshing the page or contact support if the problem
+            persists.
+          </p>
         </div>
       );
     }
     return this.props.children;
   }
-} 
+}

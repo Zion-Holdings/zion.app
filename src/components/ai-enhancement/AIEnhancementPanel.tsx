@@ -1,14 +1,15 @@
-
 import React, { useState } from 'react';
 import { Loader2, Copy, Check, Sparkles } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardFooter,
+} from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-
-
-
-
 
 import { useAIContentEnhancer } from '@/hooks/useAIContentEnhancer';
 import type { AIEnhancementOptions } from '@/hooks/useAIContentEnhancer';
@@ -28,7 +29,7 @@ export function AIEnhancementPanel({
   onApply,
   onClose,
   showInstructions = true,
-  initialContent = ''
+  initialContent = '',
 }: AIEnhancementPanelProps) {
   const [options, setOptions] = useState<AIEnhancementOptions>({
     ...defaultOptions,
@@ -47,7 +48,7 @@ export function AIEnhancementPanel({
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-    _field: keyof AIEnhancementOptions
+    _field: keyof AIEnhancementOptions,
   ) => {
     setOptions({
       ...options,
@@ -100,7 +101,9 @@ export function AIEnhancementPanel({
         {/* Instructions input (optional) */}
         {showInstructions && (
           <div className="space-y-2">
-            <label className="text-sm font-medium">Special instructions (optional)</label>
+            <label className="text-sm font-medium">
+              Special instructions (optional)
+            </label>
             <Input
               placeholder="E.g., 'Make it more conversational' or 'Focus on leadership skills'"
               value={options.instructions}
@@ -110,10 +113,10 @@ export function AIEnhancementPanel({
         )}
 
         {/* Generate button */}
-        <Button 
-          onClick={handleGenerate} 
-          className="w-full" 
-          disabled={isEnhancing || !options.content && !options.context}
+        <Button
+          onClick={handleGenerate}
+          className="w-full"
+          disabled={isEnhancing || (!options.content && !options.context)}
         >
           {isEnhancing ? (
             <>
@@ -133,16 +136,20 @@ export function AIEnhancementPanel({
           <div className="space-y-2 mt-4">
             <div className="flex justify-between items-center">
               <label className="text-sm font-medium">Generated content</label>
-              <Button 
-                variant="ghost" 
-                size="sm" 
+              <Button
+                variant="ghost"
+                size="sm"
                 onClick={handleCopy}
                 className="h-8"
               >
                 {copied ? (
-                  <><Check className="h-4 w-4 mr-1" /> Copied</>
+                  <>
+                    <Check className="h-4 w-4 mr-1" /> Copied
+                  </>
                 ) : (
-                  <><Copy className="h-4 w-4 mr-1" /> Copy</>
+                  <>
+                    <Copy className="h-4 w-4 mr-1" /> Copy
+                  </>
                 )}
               </Button>
             </div>
@@ -156,7 +163,7 @@ export function AIEnhancementPanel({
           </div>
         )}
       </CardContent>
-      
+
       {generatedContent && (
         <CardFooter className="flex justify-between">
           {onClose && (
@@ -164,9 +171,7 @@ export function AIEnhancementPanel({
               Cancel
             </Button>
           )}
-          <Button onClick={handleApply}>
-            Apply to Form
-          </Button>
+          <Button onClick={handleApply}>Apply to Form</Button>
         </CardFooter>
       )}
     </Card>

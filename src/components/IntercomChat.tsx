@@ -1,10 +1,12 @@
 import { useEffect } from 'react';
 import { logWarn, logInfo } from '@/utils/productionLogger';
 
-
 declare global {
   interface Window {
-    Intercom?: ((...args: unknown[]) => void) & { q?: unknown[]; c?: (args: unknown) => void };
+    Intercom?: ((...args: unknown[]) => void) & {
+      q?: unknown[];
+      c?: (args: unknown) => void;
+    };
     intercomSettings?: Record<string, unknown>;
   }
 }
@@ -28,17 +30,22 @@ function isValidIntercomAppId(appId: string | undefined): boolean {
 export default function IntercomChat() {
   useEffect(() => {
     const appId = process.env.NEXT_PUBLIC_INTERCOM_APP_ID;
-    
+
     // Validate App ID before attempting to initialize
     if (!isValidIntercomAppId(appId)) {
       if (process.env.NODE_ENV === 'development') {
-        logWarn('Intercom: Invalid or placeholder App ID detected. Intercom chat disabled.', { data:  { data:  { appId } } });
+        logWarn(
+          'Intercom: Invalid or placeholder App ID detected. Intercom chat disabled.',
+          { data: { data: { appId } } },
+        );
       }
       return;
     }
 
     if (process.env.NODE_ENV === 'development') {
-      logInfo('Intercom: Initializing with App ID', { data: appId?.substring(0, 4) + '****' });
+      logInfo('Intercom: Initializing with App ID', {
+        data: appId?.substring(0, 4) + '****',
+      });
     }
 
     window.intercomSettings = { app_id: appId };
@@ -51,7 +58,10 @@ export default function IntercomChat() {
         (ic as (...args: unknown[]) => void)('update', w.intercomSettings);
       } else {
         const d = document;
-        type IntercomFunc = ((...args: unknown[]) => void) & { q?: unknown[]; c?: (args: unknown) => void };
+        type IntercomFunc = ((...args: unknown[]) => void) & {
+          q?: unknown[];
+          c?: (args: unknown) => void;
+        };
         const i: IntercomFunc = function (...args: unknown[]) {
           (i.q as unknown[]).push(args);
         } as IntercomFunc;
@@ -74,10 +84,25 @@ export default function IntercomChat() {
         };
         if (document.readyState === 'complete') {
           l();
-        } else if (typeof (w as Window & { attachEvent?: ((event: string, handler: () => void) => void) }).attachEvent === 'function') {
-          (w as Window & { attachEvent: (event: string, handler: () => void) => void }).attachEvent('onload', () => {
-            (window.Intercom as (...args: unknown[]) => void)('reattach_activator');
-            (window.Intercom as (...args: unknown[]) => void)('update', window.intercomSettings);
+        } else if (
+          typeof (
+            w as Window & {
+              attachEvent?: (event: string, handler: () => void) => void;
+            }
+          ).attachEvent === 'function'
+        ) {
+          (
+            w as Window & {
+              attachEvent: (event: string, handler: () => void) => void;
+            }
+          ).attachEvent('onload', () => {
+            (window.Intercom as (...args: unknown[]) => void)(
+              'reattach_activator',
+            );
+            (window.Intercom as (...args: unknown[]) => void)(
+              'update',
+              window.intercomSettings,
+            );
           });
         } else {
           w.addEventListener('load', l, false);

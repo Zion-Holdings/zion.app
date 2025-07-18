@@ -1,20 +1,21 @@
-'use client'
+'use client';
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { User, LogOut, LogIn } from '@/components/ui/icons';
-import { supabase } from '@/utils/supabase/client'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
+import { supabase } from '@/utils/supabase/client';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
-
-
-
-import { useRouter } from 'next/navigation'
-import type { User as SupabaseUser, AuthChangeEvent, Session } from '@supabase/supabase-js'
+import { useRouter } from 'next/navigation';
+import type {
+  User as SupabaseUser,
+  AuthChangeEvent,
+  Session,
+} from '@supabase/supabase-js';
 
 interface UserProfileProps {
-  onUserChange?: (user: SupabaseUser | null) => void
+  onUserChange?: (user: SupabaseUser | null) => void;
 }
 
 function getUserEmail(user: SupabaseUser | null): string {
@@ -31,9 +32,9 @@ function getUserCreatedAt(user: SupabaseUser | null): string {
 }
 
 export default function UserProfile({ onUserChange }: UserProfileProps) {
-  const [user, setUser] = useState<SupabaseUser | null>(null)
-  const [loading, setLoading] = useState(true)
-  const router = useRouter()
+  const [user, setUser] = useState<SupabaseUser | null>(null);
+  const [loading, setLoading] = useState(true);
+  const router = useRouter();
 
   useEffect(() => {
     // Get initial session
@@ -42,11 +43,13 @@ export default function UserProfile({ onUserChange }: UserProfileProps) {
         setLoading(false);
         return;
       }
-      const { data: { session } } = await supabase.auth.getSession();
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
       setUser(session?.user ?? null);
       setLoading(false);
       onUserChange?.(session?.user ?? null);
-    }
+    };
 
     getInitialSession();
 
@@ -54,12 +57,14 @@ export default function UserProfile({ onUserChange }: UserProfileProps) {
     if (!supabase) {
       return;
     }
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange(
       (event: AuthChangeEvent, _session: Session | null) => {
         setUser(session?.user ?? null);
         setLoading(false);
         onUserChange?.(session?.user ?? null);
-      }
+      },
     );
 
     return () => subscription.unsubscribe();
@@ -124,8 +129,8 @@ export default function UserProfile({ onUserChange }: UserProfileProps) {
           </div>
           <div className="flex items-center gap-2">
             <span className="text-sm font-medium">Status:</span>
-            <Badge variant={isEmailVerified(user) ? "default" : "secondary"}>
-              {isEmailVerified(user) ? "Verified" : "Unverified"}
+            <Badge variant={isEmailVerified(user) ? 'default' : 'secondary'}>
+              {isEmailVerified(user) ? 'Verified' : 'Unverified'}
             </Badge>
           </div>
           <div className="flex items-center gap-2">
@@ -140,4 +145,4 @@ export default function UserProfile({ onUserChange }: UserProfileProps) {
       </CardContent>
     </Card>
   );
-} 
+}

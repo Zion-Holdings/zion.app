@@ -1,10 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
-import {
-  useLanguage,
-  SUPPORTED_LANGUAGES
-} from '@/context/LanguageContext';
+import { useLanguage, SUPPORTED_LANGUAGES } from '@/context/LanguageContext';
 import type { SupportedLanguage } from '@/context/LanguageContext';
 import { safeStorage } from '@/utils/safeStorage';
 import { setCookie } from '@/utils/cookies';
@@ -30,7 +27,8 @@ export function LanguageSwitcher() {
     await changeLanguage(lang);
     setCookie('i18n_lang', lang);
     safeStorage.setItem('i18n_lang', lang);
-    const langName = availableLanguages.find((l) => l.code === lang)?.name || lang;
+    const langName =
+      availableLanguages.find((l) => l.code === lang)?.name || lang;
     setAnnounce(t('language.language_changed', { language: langName }));
     setOpen(false);
     buttonRef.current?.focus();
@@ -54,7 +52,9 @@ export function LanguageSwitcher() {
 
   useEffect(() => {
     if (open) {
-      const idx = availableLanguages.findIndex((l) => l.code === currentLanguage);
+      const idx = availableLanguages.findIndex(
+        (l) => l.code === currentLanguage,
+      );
       setHighlighted(idx >= 0 ? idx : 0);
     } else {
       setHighlighted(-1);
@@ -74,7 +74,9 @@ export function LanguageSwitcher() {
       setHighlighted((h) => (h + 1) % availableLanguages.length);
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
-      setHighlighted((h) => (h - 1 + availableLanguages.length) % availableLanguages.length);
+      setHighlighted(
+        (h) => (h - 1 + availableLanguages.length) % availableLanguages.length,
+      );
     } else if (e.key === 'Home') {
       e.preventDefault();
       setHighlighted(0);
@@ -130,7 +132,9 @@ export function LanguageSwitcher() {
               className={`cursor-pointer px-3 py-1.5 ${
                 idx === highlighted ? 'bg-zion-purple/20' : ''
               } ${
-                currentLanguage === lang.code ? 'text-zion-cyan' : 'text-white hover:bg-zion-purple/10'
+                currentLanguage === lang.code
+                  ? 'text-zion-cyan'
+                  : 'text-white hover:bg-zion-purple/10'
               }`}
               onMouseEnter={() => setHighlighted(idx)}
               onClick={() => selectLanguage(lang.code)}

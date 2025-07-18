@@ -1,18 +1,16 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
-import { toast } from "sonner";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
-import { Form } from "@/components/ui/form";
+import { toast } from 'sonner';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Button } from '@/components/ui/button';
+import { Form } from '@/components/ui/form';
 import { useJobForm } from './useJobForm';
 import { BasicInfoFields } from './BasicInfoFields';
 import { DateFields } from './DateFields';
 import { DescriptionFields } from './DescriptionFields';
-import { useJobPostings } from "@/hooks/useJobPostings";
+import { useJobPostings } from '@/hooks/useJobPostings';
 import type { JobSchemaType } from './validation';
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 interface JobPostingFormProps {
   jobId: string | undefined;
@@ -23,8 +21,8 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
   // const router = useRouter(); // Available for navigation if needed // Changed from useNavigate
   const { createJob, updateJob, getJobById } = useJobPostings();
   const [isFormLoading, setIsFormLoading] = useState(false);
-  const [editorContent, setEditorContent] = useState("");
-  
+  const [editorContent, setEditorContent] = useState('');
+
   const {
     form,
     isLoading,
@@ -34,7 +32,7 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
     setEndDate,
     isRemote,
     setIsRemote,
-    submitJob
+    submitJob,
   } = useJobForm({ jobId, onSuccess });
 
   const { handleSubmit, setValue, formState } = form;
@@ -60,25 +58,40 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
                 setEditorContent(value as string);
                 setValue('description', value as string);
               } else if (key in currentValues) {
-                setValue(key as keyof JobSchemaType, value as JobSchemaType[keyof JobSchemaType]);
+                setValue(
+                  key as keyof JobSchemaType,
+                  value as JobSchemaType[keyof JobSchemaType],
+                );
               }
             });
           }
         })
         .catch((error) => {
           logErrorToProduction('Failed to load job:', { data: error });
-          toast.error("Failed to load job");
+          toast.error('Failed to load job');
         })
         .finally(() => {
           setIsFormLoading(false);
         });
     }
-  }, [jobId, getJobById, setValue, setStartDate, setEndDate, setIsRemote, setEditorContent, form]);
+  }, [
+    jobId,
+    getJobById,
+    setValue,
+    setStartDate,
+    setEndDate,
+    setIsRemote,
+    setEditorContent,
+    form,
+  ]);
 
-  const handleEditorChange = useCallback((_value: string) => {
-    setEditorContent(value);
-    setValue('description', value);
-  }, [setValue]);
+  const handleEditorChange = useCallback(
+    (_value: string) => {
+      setEditorContent(value);
+      setValue('description', value);
+    },
+    [setValue],
+  );
 
   const onSubmit = async (_values: JobSchemaType) => {
     setIsFormLoading(true);
@@ -86,31 +99,38 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
     try {
       const jobData = await submitJob(values);
       if (!jobData) {
-        toast.error("Failed to process job data");
+        toast.error('Failed to process job data');
         setIsFormLoading(false);
         return;
       }
       if (jobId) {
         // For updates, we only need to pass the form data since the service handles the update
         await updateJob(jobId, jobData);
-        toast.success("Job updated successfully!");
+        toast.success('Job updated successfully!');
       } else {
         await createJob(jobData);
-        toast.success("Job posted successfully!");
+        toast.success('Job posted successfully!');
         form.reset();
-        setEditorContent("");
+        setEditorContent('');
       }
 
       if (onSuccess) {
         onSuccess();
       }
     } catch (error: unknown) {
-      if (typeof error === 'object' && error !== null && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+      if (
+        typeof error === 'object' &&
+        error !== null &&
+        'message' in error &&
+        typeof (error as { message?: unknown }).message === 'string'
+      ) {
         logErrorToProduction('Error creating/updating job:', { data: error });
-        toast.error((error as { message: string }).message || "Failed to post job");
+        toast.error(
+          (error as { message: string }).message || 'Failed to post job',
+        );
       } else {
         logErrorToProduction('Error creating/updating job:', { data: error });
-        toast.error("Failed to post job");
+        toast.error('Failed to post job');
       }
     } finally {
       setIsFormLoading(false);
@@ -118,7 +138,9 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
   };
 
   if (isLoading || isFormLoading) {
-    return <div className="flex items-center justify-center p-8">Loading...</div>;
+    return (
+      <div className="flex items-center justify-center p-8">Loading...</div>
+    );
   }
 
   return (
@@ -132,9 +154,9 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
         </div>
 
         <BasicInfoFields control={form.control} />
-        
-        <DateFields 
-          startDate={startDate} 
+
+        <DateFields
+          startDate={startDate}
           setStartDate={setStartDate}
           endDate={endDate}
           setEndDate={setEndDate}
@@ -153,18 +175,20 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
           </Label>
         </div>
 
-        <DescriptionFields 
-          control={form.control} 
+        <DescriptionFields
+          control={form.control}
           handleEditorChange={handleEditorChange}
           editorContent={editorContent}
         />
 
         <Button type="submit" disabled={isSubmitting || isFormLoading}>
-          {isSubmitting || isFormLoading ? "Submitting..." : jobId ? "Update Job" : "Post Job"}
+          {isSubmitting || isFormLoading
+            ? 'Submitting...'
+            : jobId
+              ? 'Update Job'
+              : 'Post Job'}
         </Button>
       </form>
     </Form>
   );
 }
-
-

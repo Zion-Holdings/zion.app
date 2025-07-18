@@ -1,10 +1,10 @@
 export async function toggleFavorite(
-  productId: string | number
+  productId: string | number,
 ): Promise<unknown | { needsAuth: true }> {
   const res = await fetch('/api/v1/favorites/toggle', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ productId })
+    body: JSON.stringify({ productId }),
   });
 
   if (res.status === 401 || res.status === 403) {
