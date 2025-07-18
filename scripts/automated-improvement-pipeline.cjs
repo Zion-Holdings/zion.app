@@ -91,6 +91,11 @@ class AutomatedImprovementPipeline {
       lastImprovement: null,
       startTime: Date.now()
     };
+    
+    // Initialize auto-fix system
+    this.autoFixSystem = null;
+    this.lastAutoFixTime = 0;
+    this.autoFixInterval = 10 * 60 * 1000; // 10 minutes
   }
 
   /**
@@ -117,6 +122,9 @@ class AutomatedImprovementPipeline {
     if (CONFIG.AUTOMATION.AUTO_DEPLOY_IMPROVEMENTS) {
       this.startAutomatedDeployment();
     }
+    
+    // Start auto-fix system
+    this.startAutoFixSystem();
     
     console.log('✅ Automated Improvement Pipeline initialized successfully');
   }
