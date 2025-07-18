@@ -1,52 +1,21 @@
-import type { NextApiRequest, NextApiResponse } from 'next';';';';';'';
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger';';''
-;';';''
-;';';';''
-interface Category {;';';';';''
-  id: "string;",;";";";";""
-  name: "string;",";";";";""
-  slug: "string;",;"
-  icon: string;""
-  description?: string;";""
-};";";""
-;";";";"";
-const FALLBACK_CATEGORIES: unknown unknown unknown unknown unknown Category[] = [;";";";";""
-  { id: '1', name: 'AI Services', slug: 'ai-services', icon: '', description: 'Advanced AI and machine learning services' },;';';';';''
-  { id: '2', name: 'Machine Learning', slug: 'machine-learning', icon: '', description: 'Custom ML models and algorithms' },;';';';';''
-  { id: '3', name: 'Data Analytics', slug: 'data-analytics', icon: '', description: 'Data analysis and visualization solutions' },;';';';';''
-  { id: '4', name: 'Cloud Computing', slug: 'cloud-computing', icon: '', description: 'Cloud infrastructure and services' },;';';';';''
-  { id: '5', name: 'IoT Solutions', slug: 'iot-solutions', icon: '', description: 'Internet of Things implementations' },;';';';';''
-  { id: '6', name: 'Cybersecurity', slug: 'cybersecurity', icon: '', description: 'Security consulting and solutions' },;';';';';''
-  { id: '7', name: 'Web Development', slug: 'web-development', icon: '', description: 'Full-stack web application development' },;';';';';''
-  { id: '8', name: 'Mobile Development', slug: 'mobile-development', icon: '', description: 'iOS and Android app development' },;';';';';''
-  { id: '9', name: 'DevOps', slug: 'devops', icon: '', description: 'CI/CD and infrastructure automation' },;';';';';''
-  { id: '10', name: 'Blockchain', slug: 'blockchain', icon: '', description: 'Blockchain and cryptocurrency solutions' };';';''
-];';';';''
-;';';';';'';
-export default function handler(): unknown {): unknown {): unknown {): unknown {): unknown {req: "NextApiRequest", res: NextApiResponse) {;";";";";""
-  if (req['method'] !== 'GET') {;';';';';''
-    res.setHeader('Allow', 'GET');';';';';''
-    return res.status(405).json({ error: `Method ${req['method']} not allowed` });';''
-  };';';''
-;';';';''
-  try {;';';';';''
-    logInfo('Marketplace categories API called');';';''
-    ;';';';''
-    // Add CORS headers;';';';';''
-    res.setHeader('Access-Control-Allow-Origin', '*');';';';';''
-    res.setHeader('Access-Control-Allow-Methods', 'GET');';';';';''
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');''
-;';''
-    // Return categories data;';';''
-    return res.status(200).json(FALLBACK_CATEGORIES);';';';''
-  } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;';';';';''
-    logErrorToProduction('Error in marketplace categories API:', { data: "error "});"
-    ;""
-    // Return fallback empty array instead of error;";""
-    return res.status(200).json([]);";";""
-  };";";";""
-} ";";";""
-}";";""
-}";""
-}""
-}""
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const Categories: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Categories - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Categories</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* Categories content will go here */}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Categories;

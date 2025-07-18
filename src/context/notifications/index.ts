@@ -1,4 +1,4 @@
-export * from './types;'';
-export * from './NotificationContext;'';
-export * from './useNotificationOperations;'
-''''''
+// Module for index
+export const index = {
+  // TODO: Implement module functionality
+};

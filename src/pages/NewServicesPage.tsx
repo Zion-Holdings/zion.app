@@ -1,6 +1,10 @@
-import React from 'react;'
-;'';
-const NewServicesPage: unknown = () => <div>New Services Page Placeholder</div>;
-;
-export default NewServicesPage;''
-''''''
+import React from 'react';
+
+export default function NewServicesPage() {
+  return (
+    <div>
+      <h1>NewServicesPage</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

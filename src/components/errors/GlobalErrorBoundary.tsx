@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 'use client;'
 ;;
 import React, { Component } from 'react;';
@@ -460,3 +461,15 @@ export const withErrorBoundary: unknown = <P extends object>(;";,";";";""
 ;
 export default GlobalErrorBoundary;''
 ''''''
+=======
+import React from 'react';
+
+export default function GlobalErrorBoundary() {
+  return (
+    <div>
+      <h1>GlobalErrorBoundary</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

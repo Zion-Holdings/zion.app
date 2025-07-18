@@ -1,47 +1,21 @@
-import type { NextApiRequest, NextApiResponse } from 'next';'
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
 
-interface ServiceStatus {
-  name: string;
-  status: 'operational' | 'degraded' | 'outage' | 'maintenance';'
-  description: string;
-  lastChecked: string;
-}
-;
-const SERVICES: ServiceStatus[] = [
-  {
-    name: 'Marketplace API','
-    status: 'operational','
-    description: 'Product listings and search functionality','
-    lastChecked: new Date().toISOString(),
-  },
-  {
-    name: 'Authentication Service','
-    status: 'operational','
-    description: 'User login and registration','
-    lastChecked: new Date().toISOString(),
-  },
-  {
-    name: 'Payment Processing','
-    status: 'operational','
-    description: 'Checkout and payment handling','
-    lastChecked: new Date().toISOString(),
-  },
-  {
-    name: 'Talent Directory','
-    status: 'operational','
-    description: 'AI talent profiles and matching','
-    lastChecked: new Date().toISOString(),
-  },
-];
-;
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<ServiceStatus[]>
-) {
-  if (req.method !== 'GET') {'
-    res.setHeader('Allow', ['GET']);'
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
-  }
+const Status: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Status - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Status</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* Status content will go here */}
+        </div>
+      </div>
+    </>
+  );
+};
 
-  return res.status(200).json(SERVICES);
-}
+export default Status;

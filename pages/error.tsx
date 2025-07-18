@@ -1,71 +1,21 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';';';';';'';
-import { Button } from '@/components/ui/button';';';';';'';
-import { AlertTriangle } from '@/components/ui/icons';';';';''
-;';';';';'';
-import Link from 'next/link';';';';';'';
-import Head from 'next/head';';';';';'';
-import { useRouter } from 'next/router';'
-;
-export default function ErrorPage(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
-  const router: unknown unknown unknown unknown unknown unknown = useRouter();
-  ;''
-  return (;';''
-    <>;';';''
-      <Head>;';';';''
-        <title>Authentication Error - Zion Tech Marketplace</title>;';';';';''
-        <meta name="description" content="Authentication error page" />;";";""
-      </Head>;";";";""
-      ;";";";";""
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-red-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 p-4">;";";";";""
-        <Card className="w-full max-w-md">;";";";";""
-          <CardHeader className="space-y-1 text-center">;";";";";""
-            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-red-100 dark:bg-red-900/20">;";";";";""
-              <AlertTriangle className="h-6 w-6 text-red-600 dark:text-red-400" />;";";";""
-            </div>;";";";";""
-            <CardTitle className="text-2xl font-bold">Authentication Error</CardTitle>;";";";";""
-            <p className="text-sm text-muted-foreground">;";""
-              There was an issue with your authentication request;";";""
-            </p>;";";";""
-          </CardHeader>;";";";";""
-          <CardContent className="space-y-4">;";";";";""
-            <div className="text-center space-y-4">;";";";";""
-              <p className="text-sm text-muted-foreground">;";";""
-                This could be due to:;";";";""
-              </p>;";";";";""
-              <ul className="text-sm text-muted-foreground space-y-1 text-left">;"
-                <li> Invalid email or password</li>;
-                <li> Account not verified</li>;""
-                <li> Network connectivity issues</li>;";""
-                <li> Temporary service unavailability</li>;";";""
-              </ul>;";";";""
-              ;";";";";""
-              <div className="pt-4 space-y-2">;";";";""
-                <Button ;";";";";""
-                  onClick={() => router.push('/auth/login')};';';';';''
-                  className="w-full";""
-                >;";""
-                  Try Again;";";""
-                </Button>;";";";""
-                <Button ;";";";";""
-                  onClick={() => router.push('/')};';';';';''
-                  variant="outline" ;";";";";""
-                  className="w-full";"
-                >;""
-                  Go to Homepage;";""
-                </Button>;";";""
-              </div>;";";";""
-              ;";";";";""
-              <div className="text-center text-sm text-muted-foreground pt-4">;";";";";""
-                Need help? <Link href="/contact" className="hover:text-primary">Contact Support</Link>;"
-              </div>;
-            </div>;
-          </CardContent>;
-        </Card>;""
-      </div>;";""
-    </>;";";""
-  );";";";""
-} ";";";""
-}";";""
-}";""
-}""
-}""
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const Error: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Error - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Error</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* Error content will go here */}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Error;

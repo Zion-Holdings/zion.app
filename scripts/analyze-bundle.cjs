@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-import fs from 'fs';
-import path from 'path';
-import { execSync } from 'child_process';
-import { fileURLToPath } from 'url';
+const path = require('path');
+const fs = require('fs');
+const { execSync } = require('child_process');
 
 // Use different variable names to avoid conflict with built-in globals
 const _currentFilename = path.basename(__filename);

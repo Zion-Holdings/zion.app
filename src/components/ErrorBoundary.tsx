@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from 'react''';
 import type { ReactNode } from 'react'';
 ;
@@ -53,3 +54,15 @@ export class ErrorBoundary extends Component<Props, State> {;
   };"";"
 };"";"
 """""
+=======
+import React from 'react';
+
+export default function ErrorBoundary() {
+  return (
+    <div>
+      <h1>ErrorBoundary</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

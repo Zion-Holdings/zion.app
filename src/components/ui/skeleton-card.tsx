@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // src/components/ui/skeleton.tsx;
 import React from 'react;'
 ;
@@ -15,3 +16,15 @@ import React from 'react;'
 ;";";"";
 export default SkeletonCard;";";";""
 """"""
+=======
+import React from 'react';
+
+export default function skeleton-card() {
+  return (
+    <div>
+      <h1>skeleton-card</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from 'react';';
 import { Input } from '@/components/ui/input;'';
 import { Textarea } from '@/components/ui/textarea;'';
@@ -158,3 +159,15 @@ export default ApiPlayground;";";";""
 }";""
 }""
 }""
+=======
+import React from 'react';
+
+export default function ApiPlayground() {
+  return (
+    <div>
+      <h1>ApiPlayground</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

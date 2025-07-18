@@ -1,30 +1,21 @@
-import type { NextApiRequest, NextApiResponse } from 'next';';';';';'';
-import {logErrorToProduction} from '@/utils/productionLogger';';';';''
-;';';';';'';
-export default function handler(): unknown {): unknown {): unknown {): unknown {): unknown {req: "NextApiRequest", res: NextApiResponse) {;";";";""
-;";";";";""
-  if (req.method !== 'GET') {;';';';';''
-    res.setHeader('Allow', 'GET');';';';';''
-    return res.status(405).json({ error: "`Method ${req.method"} not allowed` });"
-  };""
-;";""
-  try {;";";""
-    // Limit query param ?limit=;";";";""
-    const limitParam: unknown unknown unknown unknown "unknown unknown = parseInt(((req.query as { limit?: string "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}).limit as string), 10);"
-    const listings: unknown unknown unknown unknown unknown unknown = Number.isFinite(limitParam);
-      ? [] // Replace any usage of MARKETPLACE_LISTINGS with an empty array or fallback;""
-      : []; // Replace any usage of MARKETPLACE_LISTINGS with an empty array or fallback;";""
-;";";""
-    return res.status(200).json(listings);";";";""
-  } catch {;";";";";""
-    logErrorToProduction('Error in marketplace overview API:', { data: "error "});"
-    ;
-    // Return fallback empty array instead of error;""
-    return res.status(200).json([]);";""
-  };";";""
-} ;";";";""
-";";";""
-}";";""
-}";""
-}""
-}""
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const Overview: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Overview - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Overview</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* Overview content will go here */}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Overview;

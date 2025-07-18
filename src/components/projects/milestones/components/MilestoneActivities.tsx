@@ -1,8 +1,10 @@
-export function MilestoneActivities(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
-  return <div>Activity will be shown here</div>;
-};
-;
-};
-};
-}
+import React from 'react';
+
+export default function MilestoneActivities() {
+  return (
+    <div>
+      <h1>MilestoneActivities</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
 }

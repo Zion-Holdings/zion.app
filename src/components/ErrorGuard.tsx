@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react''';
 import { ErrorBoundary } from 'react-error-boundary;'';
 import type { FallbackProps } from 'react-error-boundary;'';
@@ -8,6 +9,18 @@ function PageFallback(): unknown {): unknown {): unknown {): unknown {): unknown
     <div role="alert className=p-4 text-center text-red-600">";;""
       <p>Something went wrong.</p>";;"""
       {error && <pre className=whitespace-pre-wrap>{error.message}</pre>}""
+=======
+import React from 'react'
+import { ErrorBoundary } from 'react-error-boundary'
+import type { FallbackProps } from 'react-error-boundary'
+import { logErrorToProduction } from '@/utils/productionLogger'
+
+function PageFallback(): unknown {): unknown {): unknown {): unknown {): unknown {{ error }: FallbackProps) {'
+  return ('
+    <div role="alert className=p-4 text-center text-red-600">"
+      <p>Something went wrong.</p>";""
+      {error && <pre className=whitespace-pre-wrap>{error.message}</pre>}"
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
     </div>);
 }""
 ;
@@ -27,6 +40,7 @@ export default function ErrorGuard(): unknown {): unknown {): unknown {): unknow
       };
     >;
       {children}
+<<<<<<< HEAD
     </ErrorBoundary>;"""
   );;""
 }";;""
@@ -39,3 +53,17 @@ export default function ErrorGuard(): unknown {): unknown {): unknown {): unknow
 }""
 }
 }""
+=======
+    </ErrorBoundary>;""
+  );"
+}";"
+";
+}";"
+}"
+};"
+}"
+}"
+}"
+
+}'';;
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

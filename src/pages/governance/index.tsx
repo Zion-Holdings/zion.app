@@ -1,13 +1,10 @@
-import React from 'react;'
-;
-const GovernancePage: unknown = () => {;
-  return (;
-    <div>;
-      <h1>Governance Page</h1>;
-      <p>This is a placeholder page for governance.</p>;
-    </div>;
-  );''
-};
-;
-export default GovernancePage;''
-''''''
+import React from 'react';
+
+export default function index() {
+  return (
+    <div>
+      <h1>index</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}

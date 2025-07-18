@@ -1,43 +1,3 @@
-# Auth0 Setup Guide - Fix Critical Signup Issue #1
-
-## 🚨 **Critical Issue: Sign-up Fails**
-
-**Current Symptoms:**
-- Page shows banner "Authentication service is temporarily unavailable"
-- Sign-up attempts result in "Authentication service not configured" error
-- Toast notification: "Signup failed (Trace ID: ...)"
-- New users cannot join the platform
-
-**Root Cause:** Auth0 environment variables are not configured.
-
-## 🛠️ **Quick Fix Instructions**
-
-### Step 1: Create Environment File
-
-Create a `.env.local` file in your project root with the following template:
-
-```bash
-# ==============================================
-# AUTH0 CONFIGURATION (REQUIRED)
-# ==============================================
-
-# Your Auth0 domain (from Auth0 Dashboard)
-AUTH0_ISSUER_BASE_URL=https://your-tenant.us.auth0.com
-
-# Your application's base URL
-AUTH0_BASE_URL=http://localhost:3000
-
-# Your Auth0 Application credentials
-AUTH0_CLIENT_ID=your_auth0_client_id_here
-AUTH0_CLIENT_SECRET=your_auth0_client_secret_here
-
-# Session encryption secret (generate new one)
-AUTH0_SECRET=your_64_character_hex_secret_here
-
-# ==============================================
-# OPTIONAL CONFIGURATION
-# ==============================================
-
 # Sentry error monitoring
 NEXT_PUBLIC_SENTRY_DSN=https://your-sentry-dsn@sentry.io/project-id
 
@@ -287,4 +247,4 @@ If you're still experiencing problems after following this guide:
 
 ---
 
-**🎉 Once configured properly, new users like Kal Catrao will be able to successfully sign up with the provided credentials and complete the full registration flow!** 
+**🎉 Once configured properly, new users like Kal Catrao will be able to successfully sign up with the provided credentials and complete the full registration flow!**

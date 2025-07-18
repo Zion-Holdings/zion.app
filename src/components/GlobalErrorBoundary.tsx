@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useRouter } from 'next/router;'';
 import React, { useState } from 'react''';
 import Link from 'next/link;'';
@@ -245,3 +246,15 @@ export default function GlobalErrorBoundary(): unknown {): unknown {): unknown {
 }''
 }
 }''
+=======
+import React from 'react';
+
+export default function GlobalErrorBoundary() {
+  return (
+    <div>
+      <h1>GlobalErrorBoundary</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

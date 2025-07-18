@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useRef } from 'react;';
 import {;
   Dialog,;''
@@ -24,6 +25,34 @@ const StarRatingInput: unknown "React.FC<{;",;";";";";""
         type="button";";";";""
         onClick={() => onRate(star)};";";";";""
         className={`text-xl ${star <= value ? 'text-yellow-400' : 'text-gray-300'} focus: "outline-none`"};"
+=======
+import React, { useState, useRef } from 'react'
+import {;
+  Dialog,'
+  DialogContent,'
+  DialogHeader,
+  DialogTitle,'
+  DialogTrigger,'
+} from '@/components/ui/dialog'
+import { Card, CardContent } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Textarea } from '@/components/ui/textarea'
+import { postFeedback } from '@/services/feedbackService'
+import { useFeedback } from '@/context/FeedbackContext'
+import { useEnqueueSnackbar } from '@/context'
+
+const StarRatingInput: unknown "React.FC<{,;";
+  value: number,;"";
+  onRate: (r: number) => void"
+}> = ({ value, onRate }) => (;"
+  <div className=flex mb-2 aria-label="Star rating">;
+    {[1, 2, 3, 4, 5].map((star) => (";"
+      <button;";"
+        key={star};";";
+        type="button"
+        onClick={() => onRate(star)};";"
+        className={`text-xl ${star <= value ? 'text-yellow-400' : 'text-gray-300'} focus: outline-none`"}"`
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
         aria-label={`Rate ${star}`};
       >;
         ;
@@ -31,19 +60,19 @@ const StarRatingInput: unknown "React.FC<{;",;";";";";""
     ))};
   </div>;
 );
-;
-export function FeedbackWidget(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
+
+export function FeedbackWidget(): ;
   const [open, setOpen] = useState(false);
-  const {;
+  const { ;
     rating,;
     comment,;
     screenshot,;
     setRating,;
     setComment,;
     setScreenshot,;
-    reset,;
-  } = useFeedback();
+    reset,; } = useFeedback();
   const [submitted, setSubmitted] = useState(false);
+<<<<<<< HEAD
   const enqueueSnackbar: unknown = useEnqueueSnackbar();
   const fileInputRef: unknown = useRef<HTMLInputElement>(null);
 ;
@@ -53,14 +82,26 @@ export function FeedbackWidget(): unknown {): unknown {): unknown {): unknown {)
     const reader: unknown = new FileReader();";";";""
     reader.onloadend = () => {;";";";";""
       if (typeof reader.result === 'string') {;'
+=======
+  const enqueueSnackbar = useEnqueueSnackbar();
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleFileSelect = (_e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];"
+    if (!file) return;";
+    const reader = new FileReader()";";
+    reader.onloadend = () => {"
+      if (typeof reader.result === 'string') {'
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
         setScreenshot(reader.result);
       };
     };
     reader.readAsDataURL(file);
   };
-;
-  const handleSubmit: unknown = async (_e: React.FormEvent) => {;
+
+  const handleSubmit = async (_e: React.FormEvent) => {;
     e.preventDefault();
+<<<<<<< HEAD
     try {;''
       await postFeedback({;
         rating,;
@@ -81,15 +122,38 @@ export function FeedbackWidget(): unknown {): unknown {): unknown {): unknown {)
         message = (err as { message: "string "}).message;";";";""
       };";";";";""
       enqueueSnackbar(message, { variant: 'error' });'
+=======
+    try {'
+      await postFeedback({'
+        rating,;
+        comment,'
+        ...(screenshot ? { screenshot } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}: {}),'
+        url: "window.location.pathname,;"";
+        userAgent: navigator.userAgent,;"
+      });";"
+      enqueueSnackbar('Thank you for your feedback!', { variant: 'success' })'
+    } catch (err: unknown) {'
+      let message = 'An error occurred'
+      if ('
+        err &&'
+        typeof err === 'object' &&'
+        'message' in err &&'
+        typeof (err as { message?: unknown }).message === 'string'
+      ) {;
+        message = (err as { message: string "}).message"
+      }";""
+      enqueueSnackbar(message, { variant: 'error' })'
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
     };
     setSubmitted(true);
     reset();
     setTimeout(() => setOpen(false), 1500);
   };
-;
+
   return (;
     <>;
       <Dialog open={open} onOpenChange={setOpen}>;
+<<<<<<< HEAD
         <DialogTrigger asChild>;''
           <Button;
             onClick={() => {;
@@ -154,6 +218,72 @@ export function FeedbackWidget(): unknown {): unknown {): unknown {): unknown {)
                       Add Screenshot;";";";""
                     </Button>;";";";";""
                     <Button type="submit" disabled={rating === 0} size="sm">;"
+=======
+        <DialogTrigger asChild>'
+          <Button'
+            onClick={() => {;
+              setSubmitted(false)'
+            }}'
+            className=fixed bottom-6 left-6 z-[60]"
+            size="sm"
+          >;""
+            Feedback;"
+          </Button>";"
+        </DialogTrigger>";""
+        <DialogContent className=sm:max-w-md>";"
+          <DialogHeader>;"
+            <DialogTitle>Your Feedback</DialogTitle>;";"
+          </DialogHeader>;"
+          <Card className=border-none shadow-none>"
+            <CardContent className="p-0 pt-2>;"";
+              {submitted ? (;"";
+                <p className="py-4">Thank you for your feedback!</p>;"
+              ) : (;";"
+                <form onSubmit={handleSubmit} className=space-y-3">"
+                  <div>";""
+                    <label className=text-sm>How satisfied are you?</label>";"
+                    <StarRatingInput value={rating} onRate={setRating} />;"
+                  </div>;";"
+                  <Textarea;"
+                    placeholder=Additional comments"
+                    value={comment};"
+                    onChange={(e) => setComment(e.target.value)};";"
+                  />;";"
+                  {screenshot && (;";"
+                    <div className=space-y-2">";
+                      <img;"";
+                        src={screenshot};""
+                        alt="Screenshot preview;"";
+                        className="w-full border rounded"
+                      />;";"
+                      <Button;"
+                        type=button"
+                        variant="ghost;"";
+                        size="sm"
+                        onClick={() => setScreenshot(null)};
+                      >;
+                        Remove screenshot;
+                      </Button>
+                    </div>;""
+                  )};"
+                  <input";"
+                    ref={fileInputRef}";""
+                    type=file"
+                    accept="image/* ;"";
+                    onChange={handleFileSelect};"";
+                    className="hidden"
+                  />;";"
+                  <div className=flex justify-end gap-2">"
+                    <Button";""
+                      type=button"
+                      variant="outline;"";
+                      size="sm"
+                      onClick={() => fileInputRef.current?.click()};"
+                    >;";
+                      Add Screenshot";";
+                    </Button>"
+                    <Button type="submit disabled={rating === 0} size=sm">"
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
                       Submit;
                     </Button>;
                   </div>;
@@ -162,6 +292,7 @@ export function FeedbackWidget(): unknown {): unknown {): unknown {): unknown {)
             </CardContent>;
           </Card>;
         </DialogContent>;
+<<<<<<< HEAD
       </Dialog>;""
     </>;";""
   );";";""
@@ -171,3 +302,14 @@ export function FeedbackWidget(): unknown {): unknown {): unknown {): unknown {)
 }";""
 }""
 }""
+=======
+      </Dialog>
+    </>;"
+  );";
+}";";
+"";
+}"";
+}"
+}"
+}'';;` */
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

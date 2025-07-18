@@ -1,4 +1,21 @@
-import dynamic from 'next/dynamic';';';';''
-;';';';';'';
-export default dynamic(() => import('@/pages/OrderDetail'));';';';''
-''''''
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const [orderId]: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>[orderId] - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">[orderId]</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* [orderId] content will go here */}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default [orderId];

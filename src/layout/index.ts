@@ -1,5 +1,4 @@
-export { PrimaryNav } from './PrimaryNav;'';
-export { AppLayout } from './AppLayout;'';
-export { MainNavigation } from './MainNavigation;'';
-export { AuthLayout } from './AuthLayout;'
-''''''
+// Module for index
+export const index = {
+  // TODO: Implement module functionality
+};

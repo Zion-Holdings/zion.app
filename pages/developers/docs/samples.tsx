@@ -1,38 +1,21 @@
-<<<<<<< HEAD;
-import type { GetServerSideProps } from 'next';'
-<<<<<<< HEAD
-;
-export const getServerSideProps: GetServerSideProps = async () => {
-  return {
-    redirect: {
-      destination: '/docs/sample-code','
-      permanent: false,
-    },
-=======
-;
-// export const _getServerSideProps: unknown GetServerSideProps = async () => {;
-  return {;''
-    redirect: "{;",;""
-      destination: '/docs/sample-code',;''
-=======;
-import type { GetServerSideProps } from 'next';';''
-;';';''
-// export const _getServerSideProps: unknown unknown unknown unknown unknown GetServerSideProps = async () => {;';';';''
-  return {;';';';';''
-    redirect: "{;",;";";";";""
-      destination: '/docs/sample-code',;';';';';''
->>>>>>> a19b0adf7100f906437eb81887e77bbb28c0f50c
-      permanent: "false",;"
-    },;
->>>>>>> 15a42121e14e1d643bfc93127df8e4649e2d7f6a
-  };
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const Samples: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Samples - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Samples</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* Samples content will go here */}
+        </div>
+      </div>
+    </>
+  );
 };
-;"";
-export default function SamplesRedirect(): unknown {): unknown {): unknown {): unknown {): unknown {) {;";""
-  return null;";";""
-};";";";""
-";";";""
-}";";""
-}";""
-}""
-}""
+
+export default Samples;

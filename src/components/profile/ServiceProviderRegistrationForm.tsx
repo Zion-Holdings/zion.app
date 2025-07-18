@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';';
 import { X, Upload, Check, MapPin, Globe } from '@/components/ui/icons;'';
 import { useForm } from 'react-hook-form;'';
@@ -972,3 +973,15 @@ export function ServiceProviderRegistrationForm(): unknown {): unknown {): unkno
 }
 }''
 }''
+=======
+import React from 'react';
+
+export default function ServiceProviderRegistrationForm() {
+  return (
+    <div>
+      <h1>ServiceProviderRegistrationForm</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

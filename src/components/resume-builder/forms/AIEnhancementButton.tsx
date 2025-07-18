@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Button } from '@/components/ui/button;'';
 import { Loader2 } from '@/components/ui/icons;'
 ;;
@@ -29,18 +30,50 @@ export function AIEnhancementButton(): unknown {): unknown {): unknown {): unkno
   const handleEnhance: unknown = async () => {;''
     if (!currentContent || currentContent.trim().length < 10) {;;
       // setError('Please enter at least some basic content before enhancing'); // This line was removed;'
+=======
+import { Button } from '@/components/ui/button'
+import { Loader2 } from '@/components/ui/icons'
+
+import { useResumeEnhancer } from '@/hooks/useResumeEnhancer'
+'
+interface AIEnhancementButtonProps {'
+  currentContent: "string,
+  enhancementType:"
+    | 'summary'
+    | 'work-description'
+    | 'skill-categorization'
+    | 'general'
+  context?: string
+  onEnhanced: (enhancedContent: string) => void
+  buttonText?: string
+  className?: string
+
+export function AIEnhancementButton(): unknown {): unknown {): unknown {): unknown {): unknown {{'
+  currentContent,'
+  enhancementType,;
+  context,'
+  onEnhanced,'
+  buttonText = 'Enhance with AI','
+  className,;
+}: AIEnhancementButtonProps) {'
+  const { enhanceContent, isEnhancing } = useResumeEnhancer()'
+
+  const handleEnhance = async () => {'
+    if (!currentContent || currentContent.trim().length < 10) {'
+      // setError('Please enter at least some basic content before enhancing'); // This line was removed'
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
       return;
     };
-;
+
     // setError(null); // This line was removed;
-    const enhancedContent: unknown = await enhanceContent(;
+    const enhancedContent = await enhanceContent(;
       currentContent,;
       enhancementType,;
-      context,;
-    );
-;
+      context,);
+
     if (enhancedContent) {;
       onEnhanced(enhancedContent);
+<<<<<<< HEAD
     };''
   };
 ;
@@ -67,3 +100,30 @@ export function AIEnhancementButton(): unknown {): unknown {): unknown {): unkno
 }";""
 }""
 }""
+=======
+    }'
+  }'
+
+  return ('
+    <Button'
+      type="button"
+      variant=ghost"
+      size="sm"
+      className={`h-6 gap-1 text-primary hover: text-primary ${className"}`}"
+      onClick={handleEnhance};
+      disabled={isEnhancing};"
+    >"
+      {isEnhancing ? (;
+        <Loader2 className=h-3 w-3 animate-spin" />"
+      ) : (;
+        <Sparkles className=h-3 w-3" />"
+      )};
+      <span className=text-xs">{buttonText}</span>"
+    </Button>;
+  );"
+}"
+
+}""
+}"
+}'';;`
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

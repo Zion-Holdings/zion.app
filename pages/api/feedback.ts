@@ -1,16 +1,21 @@
-import type { NextApiRequest, NextApiResponse } from 'next';';
-import mongoose from 'mongoose';';
-import { z } from 'zod';';
-import { withErrorLogging } from '@/utils/withErrorLogging';';
-import { logErrorToProduction } from '@/utils/productionLogger';';
-import { sendFeedbackEmail } from '@/lib/email';'
-;
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  try {
-    // TODO: Implement feedback logic
-    res.status(200).json({ message: 'Feedback endpoint (mock)' });'
-  } catch (error) {
-    logErrorToProduction(error);
-    res.status(500).json({ error: 'Internal server error' });'
-  }
-}
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const Feedback: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Feedback - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Feedback</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* Feedback content will go here */}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Feedback;

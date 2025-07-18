@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**;
  * Optimized icon exports for better tree shaking and bundle size;
  * This file centralizes all icon imports to reduce bundle size;
@@ -244,3 +245,9 @@ export type IconProps = {;
   'aria-label'?: string;'
 };''
 ''''''
+=======
+// Module for icons
+export const icons = {
+  // TODO: Implement module functionality
+};
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

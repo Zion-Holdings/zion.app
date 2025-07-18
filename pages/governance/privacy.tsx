@@ -1,11 +1,21 @@
-import React from 'react';';';''
-;';';';'';
-const PrivacyVotePage: unknown unknown unknown unknown unknown unknown = () => (;';';';';''
-  <div className="p-4 space-y-4">;";";";";""
-    <h1 className="text-2xl font-bold">ZK Vote Demo</h1>;"
-    <p>Prototype of anonymous DAO voting using zero-knowledge proofs.</p>;
-  </div>;""
-);";""
-;";";"";
-export default PrivacyVotePage;";";";""
-""""""
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const Privacy: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Privacy - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Privacy</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* Privacy content will go here */}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Privacy;

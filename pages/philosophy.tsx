@@ -1,10 +1,21 @@
-const PhilosophyPage: unknown unknown unknown unknown unknown unknown = () => {;
-  return (;
-    <div>;
-      <h1>Philosophy</h1>;
-      <p>Content for the philosophy page.</p>;
-    </div>;
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const Philosophy: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Philosophy - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Philosophy</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* Philosophy content will go here */}
+        </div>
+      </div>
+    </>
   );
 };
-;
-export default PhilosophyPage;
+
+export default Philosophy;

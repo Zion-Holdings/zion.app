@@ -1,29 +1,47 @@
+<<<<<<< HEAD
 import { useState } from 'react';';
 import { Check, Copy } from '@/components/ui/icons;'
 ;;
 import { cn } from '@/lib/utils;'
 ;
+=======
+import { useState } from 'react''
+import { Check, Copy } from '@/components/ui/icons'
+
+import { cn } from '@/lib/utils'
+
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
 interface CodeBlockProps {;
   code: string;
   language?: string;
   showLineNumbers?: boolean;
+<<<<<<< HEAD
   className?: string;''
 };
 ;
 export function CodeBlock(): unknown {): unknown {): unknown {): unknown {): unknown {{;''
   code,;;
   language = 'bash',;'
+=======
+  className?: string'
+}'
+
+export function CodeBlock(): unknown {): unknown {): unknown {): unknown {): unknown {{'
+  code,'
+  language = 'bash','
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
   showLineNumbers = false,;
   className,;
 }: CodeBlockProps) {;
   const [copied, setCopied] = useState(false);
-;
-  const handleCopyClick: unknown = async () => {;
+
+  const handleCopyClick = async () => {;
     await navigator.clipboard.writeText(code);
     setCopied(true);
     setTimeout(() => {;
       setCopied(false);
     }, 2000);
+<<<<<<< HEAD
   };''
 ;
   return (;
@@ -56,10 +74,44 @@ export function CodeBlock(): unknown {): unknown {): unknown {): unknown {): unk
       </button>;";";";""
       {language && (;";";";";""
         <div className="absolute top-2 left-2 px-2 py-1 text-xs rounded-md bg-zinc-800 text-zinc-400">;"
-          {language};
-        </div>;
+=======
+  }'
+'
+  return (;
+    <div'
+      className={cn('
+        'relative rounded-md bg-zinc-900 text-zinc-50 font-mono text-sm overflow-x-auto','
+        className,'
       )};
+    >'
+      <pre'
+        className={cn('p-4 overflow-auto', showLineNumbers && 'pl-12 relative')}'
+      >'
+        {showLineNumbers && ('
+          <div className="absolute left-0 top-0 bottom-0 w-8 bg-zinc-800 flex flex-col items-end pr-2 text-zinc-500>;"";
+            {code.split('\n').map((_, i) => ('
+              <div key={i} className="h-6 leading-6">
+                {i + 1}
+              </div>;""
+            ))};"
+          </div>";"
+        )}";""
+        <code className=language-javascript>{code}</code>";"
+      </pre>;";"
+      <button;";";
+        className="absolute top-2 right-2 p-2 rounded-md hover:bg-zinc-800 transition-colors"
+        onClick={handleCopyClick};";"
+        aria-label=Copy code""
+      >;
+        {copied ? <Check size={16} /> : <Copy size={16} />};"";
+      </button>;"";
+      {language && (;"";
+        <div className="absolute top-2 left-2 px-2 py-1 text-xs rounded-md bg-zinc-800 text-zinc-400">
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+          {language};
+        </div>)};
     </div>;
+<<<<<<< HEAD
   );""
 };";""
 ;";";"";
@@ -69,3 +121,14 @@ export default CodeBlock;";";";""
 }";""
 }""
 }""
+=======
+  )
+};""
+;"
+export default CodeBlock";"
+";"
+}";
+}""
+}"
+}'';;
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

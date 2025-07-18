@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { createContext, useContext, useState, useCallback } from 'react''';
 import type { ReactNode } from 'react''';
 import { toast } from '@/hooks/use-toast;'';
@@ -271,3 +272,15 @@ export function useErrorHandler(): unknown {): unknown {): unknown {): unknown {
 }
 }
 }""
+=======
+import React from 'react';
+
+export default function GlobalErrorHandler() {
+  return (
+    <div>
+      <h1>GlobalErrorHandler</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

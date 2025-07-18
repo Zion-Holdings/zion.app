@@ -9,25 +9,4 @@ declare module 'react-router-dom' {;'
   export const Navigate: unknown;
   export const MemoryRouter: unknown;
   export const Outlet: unknown;
-  export function useNavigate(): unknown {): unknown {): unknown {): unknown {): unknown {): unknown;
-  export function useLocation(): unknown {): unknown {): unknown {): unknown {): unknown {): unknown;''
-  export function useParams(): unknown {): unknown {): unknown {): unknown {): unknown {): unknown;
-  export function useSearchParams(): unknown {): unknown {): unknown {): unknown {): unknown {): unknown;
-};
-;
-};''
-};
-};
-};
-};
-};''
-};
-}
-};
-};
-};''
-}''
-}
-}
-}
-}''
+  export function useNavigate(): unknown {): unknown {): unknown {): unknown {): unknown {): unknown;';;

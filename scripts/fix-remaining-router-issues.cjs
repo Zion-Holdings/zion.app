@@ -24,8 +24,8 @@ const fixes = [
     file: 'src/pages/NotFound.tsx',
     replacements: [
       {
-        from: 'import { useLocation, Link } from "react-router-dom";',
-        to: 'import { useRouter } from "next/router";\nimport Link from "next/link";'
+        from: 'import { useLocation, Link } from 'react-router-dom';,
+        to: 'import { useRouter } from "next/router";\nimport Link from 'next/link';
       },
       {
         from: 'const location = useLocation();',
@@ -58,8 +58,8 @@ const fixes = [
     file: 'src/mobile/components/common/BottomNavigation.tsx',
     replacements: [
       {
-        from: 'import { Link, useLocation } from "react-router-dom";',
-        to: 'import { useRouter } from "next/router";\nimport Link from "next/link";'
+        from: 'import { Link, useLocation } from 'react-router-dom';,
+        to: 'import { useRouter } from "next/router";\nimport Link from 'next/link';
       },
       {
         from: 'const location = useLocation();',
@@ -79,8 +79,8 @@ const fixes = [
     file: 'src/components/header/MobileBottomNav.tsx',
     replacements: [
       {
-        from: 'import { Link, useLocation } from "react-router-dom";',
-        to: 'import { useRouter } from "next/router";\nimport Link from "next/link";'
+        from: 'import { Link, useLocation } from 'react-router-dom';,
+        to: 'import { useRouter } from "next/router";\nimport Link from 'next/link';
       },
       {
         from: 'const location = useLocation();',

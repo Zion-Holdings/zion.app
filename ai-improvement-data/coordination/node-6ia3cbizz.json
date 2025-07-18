@@ -1,0 +1,18 @@
+{
+  "id": "node-6ia3cbizz",
+  "isMaster": true,
+  "capabilities": [
+    "code_analysis",
+    "ai_suggestions",
+    "improvements"
+  ],
+  "resources": {
+    "CPU_CORES": 12,
+    "MEMORY_GB": 32,
+    "DISK_GB": 100
+  },
+  "status": "initializing",
+  "lastHeartbeat": 1752829486463,
+  "tasks": [],
+  "improvements": []
+}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from 'react';';
 import type { FormEvent } from 'react';';
 import { Input } from '@/components/ui/input;'';
@@ -203,3 +204,15 @@ export function SignUpForm(): unknown {): unknown {): unknown {): unknown {): un
 }
 }''
 }''
+=======
+import React from 'react';
+
+export default function SignUpForm() {
+  return (
+    <div>
+      <h1>SignUpForm</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

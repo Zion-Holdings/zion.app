@@ -1,33 +1,21 @@
-<<<<<<< HEAD;
-import React from 'react';'';
-import type { GetServerSideProps } from 'next';'';
-import CommunityPage from '@/pages/CommunityPage';'
-<<<<<<< HEAD
-;
-export const getServerSideProps: GetServerSideProps = async () => {
-  return {
-    props: {}
-=======
-;
-// export const _getServerSideProps: unknown GetServerSideProps = async () => {;
-  return {;''
-=======;
-import React from 'react';';';';';'';
-import type { GetServerSideProps } from 'next';';';';';'';
-import CommunityPage from '@/pages/CommunityPage';';''
-;';';''
-// export const _getServerSideProps: unknown unknown unknown unknown unknown GetServerSideProps = async () => {;';';';''
-  return {;';';';';''
->>>>>>> a19b0adf7100f906437eb81887e77bbb28c0f50c
-    props: "{"};"
->>>>>>> 15a42121e14e1d643bfc93127df8e4649e2d7f6a
-  };
-};""
-;";"";
-export default function CommunityForumPage(): unknown {): unknown {): unknown {): unknown {): unknown {) {;";";""
-  return <CommunityPage />;";";";""
-} ";";";""
-}";";""
-}";""
-}""
-}""
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const Forum: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Forum - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Forum</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* Forum content will go here */}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Forum;

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Local stub implementation used because the original package is unavailable.;
 import { Droppable } from '@/lib/dnd-stub;'';
 import type { JobApplication } from '@/types/jobs;'';
@@ -100,3 +101,15 @@ export function KanbanColumn(): unknown {): unknown {): unknown {): unknown {): 
 }";""
 }""
 }""
+=======
+import React from 'react';
+
+export default function KanbanColumn() {
+  return (
+    <div>
+      <h1>KanbanColumn</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

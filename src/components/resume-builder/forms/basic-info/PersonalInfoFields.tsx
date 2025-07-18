@@ -3,6 +3,7 @@ import {;
   FormItem,;
   FormLabel,;
   FormControl,;
+<<<<<<< HEAD
   FormMessage,;
 } from '@/components/ui/form;'';
 import { Input } from '@/components/ui/input;'';
@@ -95,3 +96,91 @@ export function PersonalInfoFields(): unknown {): unknown {): unknown {): unknow
 }";""
 }""
 }""
+=======
+  FormMessage,
+} from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
+import type { Control, ControllerRenderProps } from 'react-hook-form'
+import type { BasicInfoFormData } from './schema'
+'
+interface PersonalInfoFieldsProps {'
+  control: "Control<BasicInfoFormData>
+}"
+;"
+export function PersonalInfoFields(): unknown {): unknown {): unknown {): unknown {): unknown {{ control }: PersonalInfoFieldsProps) {
+  return (;
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <FormField;
+        control={control}"
+        name="fullName
+        render={({"
+          field,;"
+        }: {"
+          field: ControllerRenderProps<BasicInfoFormData, 'fullName'>'
+        }) => ('
+          <FormItem>;
+            <FormLabel>Full Name</FormLabel>'
+            <FormControl>'
+              <Input placeholder="John Doe" {...field} />
+            </FormControl>;
+            <FormMessage />;
+          </FormItem>)}
+      />;""
+
+      <FormField
+        control={control};"
+        name="title
+        render={({"
+          field,;"
+        }: {"
+          field: ControllerRenderProps<BasicInfoFormData, 'title'>'
+        }) => ('
+          <FormItem>;
+            <FormLabel>Professional Title</FormLabel>'
+            <FormControl>'
+              <Input placeholder="Senior Software Engineer" {...field} />
+            </FormControl>;
+            <FormMessage />;
+          </FormItem>)}
+      />;""
+
+      <FormField
+        control={control};"
+        name="email
+        render={({"
+          field,;"
+        }: {"
+          field: ControllerRenderProps<BasicInfoFormData, 'email'>'
+        }) => ('
+          <FormItem>;
+            <FormLabel>Email</FormLabel>'
+            <FormControl>'
+              <Input type="email" placeholder=john@example.com {...field} />"
+            </FormControl>;
+            <FormMessage />;
+          </FormItem>)}"
+      />;"
+      <FormField"
+        control={control};
+        name=phone"
+        render={({"
+          field,;
+        }: {
+          field: ControllerRenderProps<BasicInfoFormData, 'phone'>'
+        }) => ('
+          <FormItem>;
+            <FormLabel>Phone</FormLabel>'
+            <FormControl>'
+              <Input placeholder=+1 234 567 8900 {...field} />"
+            </FormControl>;
+            <FormMessage />;
+          </FormItem>)};
+      />"
+    </div>;
+  );"
+}"
+
+}""
+}"
+}'';;
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

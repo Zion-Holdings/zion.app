@@ -1,15 +1,21 @@
+<<<<<<< HEAD
 import React from 'react;'
 ;
+=======
+import React from 'react'
+
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
 // This file fixes the ref type issues in sidebar components;
-;
+
 // Export a placeholder to ensure the file is recognized as a module;
-export const SIDEBAR_REF_TYPE_FIX: unknown = true;
-;
+export const SIDEBAR_REF_TYPE_FIX = true;
+
 // Define a type that makes the ref forwards compatible;
 export type ForwardRefComponent<;
   T,;
   P = object,;
 > = React.ForwardRefExoticComponent<;
+<<<<<<< HEAD
   React.PropsWithoutRef<P> & React.RefAttributes<T>;''
 >;
 ;
@@ -17,6 +23,15 @@ export type ForwardRefComponent<;
 export type ElementRef<T extends React.ElementType> =;;
   React.ComponentPropsWithRef<T>['ref'];'
 ;
+=======
+  React.PropsWithoutRef<P> & React.RefAttributes<T>'
+>'
+
+// Helper type for component refs'
+export type ElementRef<T extends React.ElementType> ='
+  React.ComponentPropsWithRef<T>['ref']'
+
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
 // Helper type for wrapping refs that fixes the mismatch errors;
 export type PolymorphicRef<;
   T extends keyof React.JSX.IntrinsicElements | React.ComponentType<unknown>,;
@@ -25,9 +40,10 @@ export type PolymorphicRef<;
   : React.Ref<;
       React.ComponentRef<T extends React.ComponentType<unknown> ? T : never>;
     >;
-;
+
 // Helper for dealing with refs in complex situations;
 export type PolymorphicComponentProp<;
+<<<<<<< HEAD
   T extends React.ElementType,;''
   Props = object,;
 > = React.PropsWithChildren<Props & { as?: T }>;
@@ -49,3 +65,26 @@ export type SidebarContext = {;;
   toggleSidebar: "() => void;";";";""
 };";";";""
 """"""
+=======
+  T extends React.ElementType,'
+  Props = object,'
+> = React.PropsWithChildren<Props & { as?: T }>;
+'
+// Safe ref casting helper type - this is the key to fixing our issues'
+// We need to use a type that is compatible with both Slot's ref and React's ref handling'
+export type SafeRef<T> = React.Ref<T>;
+'
+// Sidebar specific types'
+export type SidebarState = 'expanded' | 'collapsed'
+'
+export type SidebarContext = {'
+  state: SidebarState
+  open: boolean,"
+  setOpen: (open: boolean) => void
+  openMobile: boolean,
+  setOpenMobile: (open: boolean) => void"
+  isMobile: "boolean,
+  toggleSidebar: "() => void"
+};
+"""'';;
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

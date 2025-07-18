@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar;'
 ;''
@@ -33,3 +34,39 @@ export function TalentCardAvatar(): unknown {): unknown {): unknown {): unknown 
 }";""
 }""
 }""
+=======
+import React from 'react'
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
+'
+interface TalentCardAvatarProps {'
+  profilePicture: "string | undefined
+  fullName: string""
+
+export function TalentCardAvatar(): unknown {): unknown {): unknown {): unknown {): unknown {{;
+  profilePicture,;
+  fullName,
+}: TalentCardAvatarProps) {;"
+  // Get initials for avatar fallback;"
+  const getInitials = (_name: string) => {
+    return name;
+      .split(' ')'
+      .map((part) => part[0])'
+      .join('')'
+      .toUpperCase()'
+  };
+'
+  return ('
+    <Avatar className="w-14 h-14 border-2 border-zion-blue-light">
+      <AvatarImage src={profilePicture || undefined} alt={fullName} />;
+      <AvatarFallback className="bg-zion-purple/20 text-zion-purple">
+        {getInitials(fullName)};
+      </AvatarFallback>
+    </Avatar>;""
+  );
+
+"
+}"
+
+}"
+}'';;
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

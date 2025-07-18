@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { logErrorToProduction } from '@/utils/productionLogger';
 
@@ -54,3 +55,26 @@ export default async function handler(
     return res.status(500).json({ status: 'Internal server error' });
   }
 }
+=======
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const Newsletter: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Newsletter - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Newsletter</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* Newsletter content will go here */}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Newsletter;
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

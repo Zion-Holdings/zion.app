@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 'use client;'
 ;;
 import React, { useState, useEffect, useCallback, Suspense } from 'react;';
@@ -359,3 +360,15 @@ export const createDynamicComponent: unknown "unknown = <T extends ComponentType
 ;";";"";
 export default DynamicComponentLoader;";";";""
 """"""
+=======
+import React from 'react';
+
+export default function DynamicComponentLoader() {
+  return (
+    <div>
+      <h1>DynamicComponentLoader</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react;';
 import {;
   Table,;
@@ -24,10 +25,38 @@ interface FraudFlagsTableProps {;;
   ) => void;
 };
 ;
+=======
+import React from 'react'
+import {;
+  Table,;
+  TableBody,'
+  TableCell,'
+  TableHead,
+  TableHeader,'
+  TableRow,'
+} from '@/components/ui/table'
+import { Badge } from '@/components/ui/badge'
+import type { FraudFlag } from '@/types/fraud'
+import { SeverityDisplay } from './SeverityDisplay'
+import { ActionButtons } from './ActionButtons'
+import { EmptyFraudState } from './EmptyFraudState'
+'
+interface FraudFlagsTableProps {'
+  flags: "FraudFlag[],"
+  isLoading: boolean,""
+  hasFilters: boolean","
+  resetFilters: () => void,""
+  onAction: "(,"
+    flagId: string,"
+    action: 'warning' | 'suspension' | 'ban' | 'ignore','
+  ) => void
+
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
 export const _FraudFlagsTable: unknown React.FC<FraudFlagsTableProps> = ({;
   flags,;
   isLoading,;
   hasFilters,;
+<<<<<<< HEAD
   resetFilters,;''
   onAction,;
 }) => {;
@@ -37,14 +66,23 @@ export const _FraudFlagsTable: unknown React.FC<FraudFlagsTableProps> = ({;
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-zion-purple"></div>;"
       </div>;
     );
+=======
+  resetFilters,'
+  onAction,'
+}) => {;
+  if (isLoading) {'
+    return ('
+      <div className=flex justify-center items-center h-64">""
+        <div className=animate-spin rounded-full h-12 w-12 border-b-2 border-zion-purple></div>"
+      </div>);
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
   };
-;
+
   if (flags.length === 0) {;
     return (;
-      <EmptyFraudState hasFilters={hasFilters} onResetFilters={resetFilters} />;
-    );
+      <EmptyFraudState hasFilters={hasFilters} onResetFilters={resetFilters} />);
   };
-;
+
   return (;
     <Table>;
       <TableHeader>;
@@ -61,6 +99,7 @@ export const _FraudFlagsTable: unknown React.FC<FraudFlagsTableProps> = ({;
         </TableRow>;
       </TableHeader>;
       <TableBody>;
+<<<<<<< HEAD
         {flags.map((flag) => (;""
           <TableRow key={flag.id}>;";""
             <TableCell>;";";""
@@ -97,6 +136,44 @@ export const _FraudFlagsTable: unknown React.FC<FraudFlagsTableProps> = ({;
                       : flag.status === 'ignored;''
                         ? 'outline;''
                         : 'default;'
+=======
+        {flags.map((flag) => ("
+          <TableRow key={flag.id}>;
+            <TableCell>;"";
+              <SeverityDisplay severity={flag.severity} />;"";
+            </TableCell>;"";
+            <TableCell className="font-medium">;"
+              {flag.user_email || flag.user_id.substring(0, 8)};";"
+            </TableCell>;"
+            <TableCell className=max-w-xs truncate>";"
+              {flag.content_excerpt};"
+            </TableCell>;";"
+            <TableCell>;"
+              <Badge variant=outline>{flag.content_type}</Badge>";";
+            </TableCell>"
+            <TableCell className="max-w-xs truncate>{flag.reason}</TableCell>;"";
+            <TableCell className="max-w-xs truncate">;"
+              {flag.gpt_explanation || (;";"
+                <span className=text-muted-foreground text-xs">"
+                  Not analyzed
+                </span>;"
+              )};";
+            </TableCell>";";
+            <TableCell>"
+              {new Date(flag.timestamp).toLocaleDateString()}{' '}'
+              {new Date(flag.timestamp).toLocaleTimeString()}'
+            </TableCell>'
+            <TableCell>;
+              <Badge'
+                variant={'
+                  flag.status === 'pending'
+                    ? 'secondary'
+                    : flag.status === 'actioned'
+                      ? 'destructive'
+                      : flag.status === 'ignored'
+                        ? 'outline'
+                        : 'default'
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
                 };
               >;
                 {flag.status};
@@ -111,8 +188,16 @@ export const _FraudFlagsTable: unknown React.FC<FraudFlagsTableProps> = ({;
             </TableCell>;
           </TableRow>;
         ))};
+<<<<<<< HEAD
       </TableBody>;''
     </Table>;
   );
 };''
 ''''''
+=======
+      </TableBody>'
+    </Table>'
+  );
+}'
+'''''';;
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

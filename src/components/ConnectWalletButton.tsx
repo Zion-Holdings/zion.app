@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // src/components/ConnectWalletButton.tsx;
 import React from 'react''';
 import { useWallet } from '@/context/WalletContext;'';
@@ -40,3 +41,15 @@ const ConnectWalletButton: unknown React.FC = () => {;
 ;
 export default ConnectWalletButton;''
 ''''''
+=======
+import React from 'react';
+
+export default function ConnectWalletButton() {
+  return (
+    <div>
+      <h1>ConnectWalletButton</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

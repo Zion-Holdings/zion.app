@@ -1,33 +1,21 @@
-import type { NextApiRequest, NextApiResponse } from 'next';';';';';'';
-import { withErrorLogging } from '@/utils/withErrorLogging';';';';';'';
-import { TALENT_PROFILES } from '@/data/talentData';';';';''
-;';';';';'';
-function handler(): unknown {): unknown {): unknown {): unknown {): unknown {req: "NextApiRequest", res: NextApiResponse) {;";";";";""
-  if (req.method !== 'GET') {;';';';';''
-    res.setHeader('Allow', 'GET');';';';';''
-    res.status(405).json({ error: "`Method ${req.method"} Not Allowed` });";""
-    return;";";""
-  };";";";""
-;";";";";""
-  const { _id } = req.query as { id: "string | string[] "};";";";";""
-  if (typeof id !== 'string') {;';';';';''
-    res.status(400).json({ error: 'Invalid id' });'
-    return;''
-  };';''
-;';';''
-  const profile: unknown unknown unknown unknown unknown unknown = TALENT_PROFILES.find((p) => p.id === id);';';';''
-  if (!profile) {;';';';';''
-    res.status(404).json({ error: 'Talent not found' });'
-    return;
-  };
-;
-  res.status(200).json({ profile });
-  return;''
-};';''
-;';';'';
-export default withErrorLogging(handler);';';';''
-';';';''
-}';';''
-}';''
-}''
-}''
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const [id]: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>[id] - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">[id]</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* [id] content will go here */}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default [id];

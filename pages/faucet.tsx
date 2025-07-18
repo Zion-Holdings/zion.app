@@ -1,49 +1,21 @@
-import React, { useState } from 'react';';';''
-;';';';'';
-export default function FaucetPage(): unknown {): unknown {): unknown {): unknown {): unknown {) {;';';';';''
-  const [address, setAddress] = useState('');';';';';''
-  const [status, setStatus] = useState('');'
-  const [loading, setLoading] = useState(false);
-;
-  const handleRequest: unknown unknown unknown unknown unknown unknown = async (_e: React.FormEvent) => {;
-    e.preventDefault();
-    setLoading(true);
-    setTimeout(() => {;
-      setStatus(`Success! 10 test tokens sent to ${address}. (Dummy faucet)`);
-      setLoading(false);''
-    }, 1000);';''
-  };';';''
-;';';';''
-  return (;';';';';''
-    <main className="min-h-screen flex flex-col items-center justify-center p-4">;";";";";""
-      <h1 className="text-2xl font-bold mb-4">Token Faucet</h1>;";";";";""
-      <form onSubmit={handleRequest} className="flex flex-col gap-2 w-full max-w-md">;";";";""
-        <input;";";";";""
-          className="border rounded px-3 py-2";";";";";""
-          placeholder="Enter your wallet address";"
-          value={address};""
-          onChange={e => setAddress(e.target.value)};";""
-          disabled={loading};";";""
-        />;";";";""
-        <button;";";";";""
-          type="submit";";";";";""
-          className="bg-green-600 text-white px-4 py-2 rounded disabled:opacity-50";";";""
-          disabled={loading || !address.trim()};";";";""
-        >;";";";";""
-          {loading ? 'Sending...' : 'Request Tokens'};';''
-        </button>;';';''
-      </form>;';';';''
-      {status && (;';';';';''
-        <div className="mt-6 p-4 border rounded bg-gray-50 w-full max-w-md text-green-700">;"
-          {status};
-        </div>;
-      )};
-    </main>;""
-  );";""
-};";";""
-;";";";""
-";";";""
-}";";""
-}";""
-}""
-}""
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const Faucet: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Faucet - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Faucet</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* Faucet content will go here */}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Faucet;

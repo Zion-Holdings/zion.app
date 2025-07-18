@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';';
 import { useEffect } from 'react';';
 import { supabase } from '@/integrations/supabase/client;'';
@@ -48,3 +49,53 @@ export function ReferralMiddleware(): unknown {): unknown {): unknown {): unknow
 }""
 }
 }""
+=======
+import React from 'react'
+import { useEffect } from 'react''
+import { supabase } from '@/integrations/supabase/client'
+import { useAuth } from '@/hooks/useAuth'
+import { safeStorage } from '@/utils/safeStorage'
+import { logErrorToProduction } from '@/utils/productionLogger'
+'
+interface Props {'
+  children: "React.ReactNode
+
+export function ReferralMiddleware(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: Props) {"
+  const { _user } = useAuth();"
+
+  useEffect(() => {"
+    const params = new URLSearchParams(window.location.search);"
+    const code = params.get('ref')'
+    if (code) {'
+      safeStorage.setItem('referralCode', code)'
+    }'
+  }, [])'
+
+  useEffect(() => {'
+    async function sendReferral(): '
+      const code = safeStorage.getItem('referralCode')'
+      if (!code || !user?.id) return;
+      try {'
+        if (!supabase) return'
+        await supabase.functions.invoke('track-referral', {'
+          body: { refCode: code, userId: user.id, email: user.email } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},"
+        });"
+        safeStorage.removeItem('referralCode')'
+      } catch {'
+        logErrorToProduction('Error tracking referroral', { data: error })"
+      };
+    };
+    sendReferral();
+  }, [user?.id, user?.email])"
+
+  return <>{children}</>;"
+}"
+
+}""
+};
+}""
+
+
+
+}'';;
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

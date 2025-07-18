@@ -1,14 +1,4 @@
-
-> project@0.0.0 cypress:run
-> cypress run --browser electron --config baseUrl=http://localhost:5176
-
-
-DevTools listening on ws://127.0.0.1:44245/devtools/browser/6c0dc116-8d35-446a-b70f-b4e06a03743b
-Couldn't determine Mocha version
-
-================================================================================
-
-  (Run Starting)
+(Run Starting)
 
   ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
   │ Cypress:        14.4.1                                                                         │

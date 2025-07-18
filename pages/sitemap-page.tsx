@@ -1,10 +1,21 @@
-const SitemapPage: unknown unknown unknown unknown unknown unknown = () => {;
-  return (;
-    <div>;
-      <h1>Sitemap Page</h1>;
-      <p>Content for the sitemap page.</p>;
-    </div>;
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const SitemapPage: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>SitemapPage - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">SitemapPage</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* SitemapPage content will go here */}
+        </div>
+      </div>
+    </>
   );
 };
-;
+
 export default SitemapPage;

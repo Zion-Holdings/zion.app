@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Server-side polyfill to handle client-side globals during SSR and build
 // This prevents "self is not defined" and similar errors during Next.js builds
 
@@ -48,3 +49,9 @@ if (typeof window === 'undefined') {
 
 // Export for module compatibility
 export {};
+=======
+// Utility functions for server-polyfill
+export const server-polyfill = {
+  // TODO: Implement utility functions
+};
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

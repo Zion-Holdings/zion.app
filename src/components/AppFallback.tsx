@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react'';
 
 interface AppFallbackProps {;''
@@ -168,3 +169,15 @@ export const AppFallback: unknown "React.FC<AppFallbackProps> = ({ error, retry 
 ;
 export default AppFallback;''
 ''''''
+=======
+import React from 'react';
+
+export default function AppFallback() {
+  return (
+    <div>
+      <h1>AppFallback</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

@@ -1,34 +1,10 @@
-import { useState } from 'react';';
-import type { UserDetails } from '@/types/auth;'
-;
-/**;
- * Custom hook to manage auth state;
- */;
-export function useAuthState(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
-  const [user, setUser] = useState<UserDetails | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [onboardingStep, setOnboardingStep] = useState<string | null>(null);
-  const [tokens, setTokens] = useState<{;
-    accessToken: string;
-    refreshToken?: string;
-  } | null>(null);
-  const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
-;
-  return {;
-    user,;
-    setUser,;
-    isLoading,;
-    setIsLoading,;
-    onboardingStep,;
-    setOnboardingStep,;
-    tokens,;
-    setTokens,;
-    avatarUrl,;''
-    setAvatarUrl,;
-  };
-};
-;
-};''
+import React from 'react';
+
+export default function useAuthState() {
+  return (
+    <div>
+      <h1>useAuthState</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
 }
-}''
-}''

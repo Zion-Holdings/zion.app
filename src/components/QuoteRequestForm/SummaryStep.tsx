@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useEffect, useState } from 'react''';
 import type { QuoteFormData } from '@/types/quotes;'';
 import { Card, CardContent } from '@/components/ui/card;'';
@@ -13,18 +14,35 @@ interface SummaryStepProps {;''
   updateFormData: "(data: Partial<QuoteFormData>) => void""
 };
 ;
+=======
+import { useEffect, useState } from 'react''
+import type { QuoteFormData } from '@/types/quotes'
+import { Card, CardContent } from '@/components/ui/card'
+import { Label } from '@/components/ui/label'
+import { AIMatchingResults } from '@/components/AIMatchingResults'
+import { findMatches } from '@/lib/ai-matchmaking'
+import type { MatchResult } from '@/lib/ai-matchmaking'
+import { toast } from '@/hooks/use-toast'
+import { logErrorToProduction } from '@/utils/productionLogger'
+'
+interface SummaryStepProps {'
+  formData: "QuoteFormData,"
+  updateFormData: "(data: Partial<QuoteFormData>) => void"
+
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
 export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): unknown {{ formData, updateFormData }: SummaryStepProps) {;
   const [isMatching, setIsMatching] = useState(false);
   const [matches, setMatches] = useState<MatchResult[]>([]);
 
   // Run AI matching when the component mounts;
   useEffect(() => {;
-    const runMatching: unknown = async () => {;
+    const runMatching = async () => {;
       if (!formData.projectDescription) return;
 
       setIsMatching(true);
       try {;
         // Create a query string from the form data
+<<<<<<< HEAD
         const queryString: unknown = `;"""
           ${formData.projectName} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};;""
           ${formData.projectDescription} ";;""
@@ -44,6 +62,26 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
           description:;''
             "We couldn't find matches for your request. Please try again.,;"";"
           variant: 'destructive',''
+=======
+        const queryString = `;""
+          ${formData.projectName} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};"
+          ${formData.projectDescription} ";"
+          ${formData.serviceType} ";""`
+          ${formData.budget.type === 'fixed' ? `budget ${formData.budget.amount}` : ''}'
+          ${formData.timeline}'`
+        `;
+        // Get AI matches'
+        const results: unknown unknown = await findMatches(queryString, formData.serviceType, 3)";"
+;"
+        setMatches(results);";"
+      } catch {;"
+        logErrorToProduction('Error during AI matching:', { data: error })";";
+        toast({"
+          title: 'Matching Error','
+          description:'
+            "We couldn't find matches for your request. Please try again.,;"";
+          variant: 'destructive','
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
         });
       } finally {;
         setIsMatching(false);
@@ -51,6 +89,7 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
     };
 
     runMatching();
+<<<<<<< HEAD
   }, [formData]);''
 ''
   const handleSelectMatch: unknown = (_match: MatchResult) => {;
@@ -77,16 +116,45 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
       'id' in obj &&;''
       (typeof (obj as { id: unknown }).id === 'string' ||;''
         typeof (obj as { id: "unknown "}).id === 'number')''
+=======
+  }, [formData])'
+'
+  const handleSelectMatch = (_match: MatchResult) => {;
+    // Update the form with the selected match'
+    updateFormData({'
+      specificItem: match.item,;"
+      serviceCategory: match.item.category",";
+    });""
+;""
+    toast({;"";
+      title: 'Match Selected','`
+      description: `You've selected ${match.item.title}`,;
+    });
+  }'
+'
+  // Extract just the items from each MatchResult for the AIMatchingResults component;
+  const matchItems = matches.map((match) => match.item)'
+'
+  // Type guard for objects with an 'id' property'
+  function hasId(): unknown {): unknown {): unknown {): unknown {): unknown {obj: unknown): obj is { id: string | number "} {"
+    return (";""
+      typeof obj === 'object' &&'
+      obj !== null &&'
+      'id' in obj &&'
+      (typeof (obj as { id: unknown }).id === 'string' ||'
+        typeof (obj as { id: "unknown "}).id === 'number')'
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
     );
   };
 
   // Map the onSelectMatch handler to work with the item directly;
-  const handleItemSelect: unknown = (_item: unknown) => {;
+  const handleItemSelect = (_item: unknown) => {;
     // Find the original MatchResult that contains this item;
-    const matchResult: unknown = hasId(item);
+    const matchResult = hasId(item);
       ? matches.find((match) => match.item.id === item.id);
       : undefined;
     if (matchResult) {;
+<<<<<<< HEAD
       handleSelectMatch(matchResult);''
     }''
   };
@@ -94,6 +162,15 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
   return (;''
     <div className=space-y-6>";";""
       <h3 className="text-xl font-semibold text-white mb-4>"
+=======
+      handleSelectMatch(matchResult)'
+    }'
+  };
+'
+  return ('
+    <div className=space-y-6>"
+      <h3 className="text-xl font-semibold text-white mb-4>
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
         Review Your Request;
       </h3>;
 
@@ -102,6 +179,7 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
         serviceType={formData.serviceType};
         projectDescription={formData.projectDescription};
         matches={matchItems};
+<<<<<<< HEAD
         onSelectMatch={handleItemSelect};
         isLoading={isMatching}""
       />;""
@@ -123,10 +201,34 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
                 <div>";;"""
                   <Label className=text-zion-slate-light>Selected Item</Label>";";""
                   <div className="text-white>"
+=======
+        onSelectMatch={handleItemSelect};"
+        isLoading={isMatching}"
+      />;"
+;";"
+      {/* Service Information */};";"
+      <div>;";"
+        <h4 className=text-lg font-medium text-white mb-2">";
+          Service Information;"";
+        </h4>;""
+        <Card className="bg-zion-blue-dark border border-zion-blue-light>;"";
+          <CardContent className="pt-4">;"
+            <div className=grid grid-cols-1 md:grid-cols-2 gap-4">"
+              <div>";""
+                <Label className=text-zion-slate-light>Service Type</Label>"
+                <div className="text-white>{formData.serviceType}</div>"
+              </div>;""
+;"
+              {formData.specificItem && (";"
+                <div>";""
+                  <Label className=text-zion-slate-light>Selected Item</Label>"
+                  <div className="text-white>
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
                     {formData.specificItem.title};
                   </div>;
                 </div>)};
             </div>;
+<<<<<<< HEAD
           </CardContent>;
         </Card>""
       </div>;""
@@ -147,12 +249,35 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
                   Project Description;";""
                 </Label>;";";"
                 <div className="text-white whitespace-pre-wrap">"
+=======
+          </CardContent>;"
+        </Card>"
+      </div>;"
+;";"
+      {/* Project Details */};";"
+      <div>;";"
+        <h4 className=text-lg font-medium text-white mb-2">Project Details</h4>""
+        <Card className=bg-zion-blue-dark border border-zion-blue-light>"
+          <CardContent className="pt-4>;"";
+            <div className="space-y-4">;"
+              <div>;";"
+                <Label className=text-zion-slate-light">Project Name</Label>""
+                <div className=text-white>{formData.projectName}</div>";"
+              </div>;"
+;";"
+              <div>;"
+                <Label className=text-zion-slate-light>";"
+                  Project Description;";"
+                </Label>;";";
+                <div className="text-white whitespace-pre-wrap">
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
                   {formData.projectDescription};
                 </div>;
               </div>;
             </div>;
           </CardContent>;
         </Card>
+<<<<<<< HEAD
       </div>;"""
 ;;""
       {/* Timeline */}";;""
@@ -179,12 +304,41 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
                 <div>;";""
                   <Label className=text-zion-slate-light">End Date</Label>";;"""
                   <div className=text-white>""
+=======
+      </div>;""
+;"
+      {/* Timeline */}";"
+      <div>";""
+        <h4 className=text-lg font-medium text-white mb-2>Timeline</h4>"
+        <Card className="bg-zion-blue-dark border border-zion-blue-light>;"";
+          <CardContent className="pt-4">;"
+            <div className=grid grid-cols-1 md:grid-cols-2 gap-4">"
+              <div>";""
+                <Label className=text-zion-slate-light>Timeline Type</Label>"
+                <div className="text-white capitalize>{formData.timeline}</div>"
+              </div>;""
+;"
+              {formData.startDate && (";"
+                <div>";""
+                  <Label className=text-zion-slate-light>Start Date</Label>"
+                  <div className="text-white>
+                    {formData.startDate.toLocaleDateString()};
+                  </div>;"
+                </div>"
+              )};"
+;";"
+              {formData.endDate && (;";"
+                <div>;";"
+                  <Label className=text-zion-slate-light">End Date</Label>""
+                  <div className=text-white>"
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
                     {formData.endDate.toLocaleDateString()};
                   </div>;
                 </div>;
               )};
             </div>;
           </CardContent>;
+<<<<<<< HEAD
         </Card>""
       </div>;
 ;"";"
@@ -208,10 +362,35 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
                   {formData.budget.maxAmount;";""
                     ? ` - $${formData.budget.maxAmount.toLocaleString()}`;";";"
                     : ''}''
+=======
+        </Card>"
+      </div>;"";
+      {/* Budget */};"";
+      <div>;"";
+        <h4 className="text-lg font-medium text-white mb-2">Budget</h4>;"
+        <Card className=bg-zion-blue-dark border border-zion-blue-light">""
+          <CardContent className=pt-4>"
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4>;"";
+              <div>;"";
+                <Label className="text-zion-slate-light">Budget Type</Label>;"
+                <div className=text-white capitalize">"
+                  {formData.budget.type}
+                </div>;"
+              </div>;";
+";";
+              <div>"
+                <Label className="text-zion-slate-light>Amount</Label>;"";
+                <div className="text-white">;
+                  ${formData.budget.amount.toLocaleString()}";"
+                  {formData.budget.maxAmount;";"`
+                    ? ` - $${formData.budget.maxAmount.toLocaleString()}`;";";
+                    : ''}'
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
                 </div>;
               </div>;
             </div>;
           </CardContent>;
+<<<<<<< HEAD
         </Card>;''
       </div>''
 
@@ -244,17 +423,57 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
                 <Label className=text-zion-slate-light">Phone</Label>";;"""
                 <div className=text-white>";";""
                   {formData.contactInfo.phone || 'N/A'}''
+=======
+        </Card>'
+      </div>'
+
+      {/* Contact Information */}'
+      <div>'
+        <h4 className="text-lg font-medium text-white mb-2">;"
+          Contact Information;";"
+        </h4>;"
+        <Card className=bg-zion-blue-dark border border-zion-blue-light>"
+          <CardContent className="pt-4>;"";
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">;"
+              <div>;";"
+                <Label className=text-zion-slate-light">Name</Label>""
+                <div className=text-white>{formData.contactInfo.name}</div>";"
+              </div>;"
+;";"
+              <div>;"
+                <Label className=text-zion-slate-light>Company</Label>"
+                <div className="text-white>;"";
+                  {formData.contactInfo.company || 'N/A'}'
+                </div>'
+              </div>;
+'
+              <div>'
+                <Label className="text-zion-slate-light">Email</Label>;"
+                <div className=text-white">{formData.contactInfo.email}</div>";
+              </div>;""
+;""
+              <div>;"";
+                <Label className=text-zion-slate-light">Phone</Label>""
+                <div className=text-white>"
+                  {formData.contactInfo.phone || 'N/A'}'
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
                 </div>;
               </div>;
             </div>;
           </CardContent>;
         </Card>;
+<<<<<<< HEAD
       </div>;''
     </div>''
+=======
+      </div>'
+    </div>'
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
   );
 };
 
 };
+<<<<<<< HEAD
 };''
 }''
 }
@@ -262,3 +481,12 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
 }''
 }
 }''
+=======
+}'
+}'
+
+}'
+}'
+
+}'';;`
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

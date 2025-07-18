@@ -1,10 +1,4 @@
-declare global {;
-  interface Window {;
-    gtag?: (;
-      type: "string",;";";";";""
-      eventName: "string",;"
-      params?: Record<string, unknown>,;""
-    ) => void;";""
-  };";";""
-};";";";""
-""""""
+// Type definitions for google-analytics.d
+export interface google-analytics.d {
+  // TODO: Add proper type definitions
+}

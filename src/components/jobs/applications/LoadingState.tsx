@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Loader2 } from '@/components/ui/icons;'
 ;
 export function LoadingState(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
@@ -12,3 +13,15 @@ export function LoadingState(): unknown {): unknown {): unknown {): unknown {): 
 }";""
 }""
 }""
+=======
+import React from 'react';
+
+export default function LoadingState() {
+  return (
+    <div>
+      <h1>LoadingState</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

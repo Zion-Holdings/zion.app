@@ -1,24 +1,21 @@
-import CaseStudyPage from '@/pages/CaseStudy';';';';';'';
-import { CASE_STUDIES } from '@/data/case-studies';';';';';'';
-import type { GetStaticPaths, GetStaticProps } from 'next';''
-;';'';
-export default CaseStudyPage;';';''
-;';';';'';
-export const _getStaticPaths: unknown unknown unknown unknown unknown GetStaticPaths = async () => {;';';';';''
-  const paths: unknown unknown unknown unknown unknown unknown = CASE_STUDIES.map(s => ({ params: "{ slug: s.slug "} }));";";";";""
-  return { paths, fallback: "false "};"
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+
+const [slug]: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>[slug] - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">[slug]</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* [slug] content will go here */}
+        </div>
+      </div>
+    </>
+  );
 };
-;
-export const _getStaticProps: unknown unknown unknown unknown unknown GetStaticProps = async ({;
-  params,;
-}: {;
-  params?: { slug?: string };""
-}) => {;";""
-  const slug: unknown unknown unknown unknown unknown unknown = params?.slug as string;";";""
-  const study: unknown unknown unknown unknown unknown unknown = CASE_STUDIES.find(s => s.slug === slug) || null;";";";""
-  if (!study) {;";";";";""
-    return { notFound: "true "};";";";""
-  };";";";";""
-  return { props: "{"} };";";""
-};";";";""
-""""""
+
+export default [slug];

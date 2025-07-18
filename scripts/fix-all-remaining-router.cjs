@@ -66,31 +66,31 @@ const patterns = [
   // Import conversions
   {
     from: /import\s+{\s*Link\s*}\s+from\s+"react-router-dom";?/g,
-    to: 'import Link from "next/link";'
+    to: 'import Link from 'next/link';
   },
   {
     from: /import\s+{\s*useParams\s*}\s+from\s+"react-router-dom";?/g,
-    to: 'import { useRouter } from "next/router";'
+    to: 'import { useRouter } from 'next/router';
   },
   {
     from: /import\s+{\s*Navigate\s*}\s+from\s+"react-router-dom";?/g,
-    to: 'import { useRouter } from "next/router";'
+    to: 'import { useRouter } from 'next/router';
   },
   {
     from: /import\s+{\s*useParams,\s*Link\s*}\s+from\s+"react-router-dom";?/g,
-    to: 'import Link from "next/link";\nimport { useRouter } from "next/router";'
+    to: 'import Link from "next/link";\nimport { useRouter } from 'next/router';
   },
   {
     from: /import\s+{\s*Link,\s*useParams\s*}\s+from\s+"react-router-dom";?/g,
-    to: 'import Link from "next/link";\nimport { useRouter } from "next/router";'
+    to: 'import Link from "next/link";\nimport { useRouter } from 'next/router';
   },
   {
     from: /import\s+{\s*Navigate,\s*useParams\s*}\s+from\s+"react-router-dom";?/g,
-    to: 'import { useRouter } from "next/router";'
+    to: 'import { useRouter } from 'next/router';
   },
   {
     from: /import\s+{\s*useParams,\s*Navigate\s*}\s+from\s+"react-router-dom";?/g,
-    to: 'import { useRouter } from "next/router";'
+    to: 'import { useRouter } from 'next/router';
   },
   {
     from: /import\s+Navigate,\s*{\s*Routes,\s*Route\s*}\s+from\s+"react-router-dom";?/g,

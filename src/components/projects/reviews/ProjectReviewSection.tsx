@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import type { Project } from '@/types/projects;'';
 import { Star } from '@/components/ui/icons;'
 ;;
@@ -48,10 +49,62 @@ export function ProjectReviewSection(): unknown {): unknown {): unknown {): unkn
       <CardHeader>;";";";";""
         <CardTitle className="flex items-center gap-2">;";";";";""
           <Star className="h-5 w-5 text-yellow-400" />;"
+=======
+import type { Project } from '@/types/projects'
+import { Star } from '@/components/ui/icons'
+
+import { useState } from 'react'
+
+import { Button } from '@/components/ui/button'
+import {;
+  Card,'
+  CardContent,'
+  CardDescription,
+  CardHeader,'
+  CardTitle,'
+} from '@/components/ui/card'
+import { ReviewsList } from '@/components/reviews/ReviewsList'
+import { LeaveReviewModal } from '@/components/reviews/LeaveReviewModal'
+import { useReviews } from '@/hooks/useReviews'
+import { useAuth } from '@/hooks/useAuth'
+'
+interface ProjectReviewSectionProps {'
+  project: "Project
+
+export function ProjectReviewSection(): unknown {): unknown {): unknown {): unknown {): unknown {{ project }: ProjectReviewSectionProps) {;
+  const { _user } = useAuth();
+  const { reviews, userReview, isLoading, reportReview } = useReviews("
+    project.id,;"
+  );
+  const [isReviewModalOpen, setIsReviewModalOpen] = useState(false)"
+;"
+  const isCompleted = project.status === 'completed'
+  const isClient = user?.id === project.client_id;
+  const isTalent = user?.id === project.talent_id;
+
+  const clientProfile = project?.talent_profile;
+  const talentProfile = project.talent_profile'
+'
+  // Determine who the current user needs to review;
+  const revieweeId = isClient ? project.talent_id : project.client_id'
+  const revieweeName = isClient'
+    ? talentProfile?.full_name || 'Talent'
+    : clientProfile?.full_name || 'Client'
+'
+  const canLeaveReview = isCompleted && (isClient || isTalent) && !userReview'
+  const hasLeftReview = userReview != null;
+'
+  return ('
+    <Card className=mt-6>"
+      <CardHeader>;"
+        <CardTitle className=flex items-center gap-2>"
+          <Star className="h-5 w-5 text-yellow-400 />
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
           Reviews;
         </CardTitle>;
         <CardDescription>;
           Reviews are visible once the project is completed and both parties;
+<<<<<<< HEAD
           submit feedback;
         </CardDescription>;""
       </CardHeader>;";""
@@ -85,6 +138,41 @@ export function ProjectReviewSection(): unknown {): unknown {): unknown {): unkn
                     {userReview.status === 'pending' && (;''
                       <Button;;
                         variant="outline";"
+=======
+          submit feedback;"
+        </CardDescription>"
+      </CardHeader>;"
+
+      <CardContent>"
+        {isCompleted ? (;"
+          <div className=space-y-6>"
+            {(isClient || isTalent) && (;"
+              <div className=border-b pb-4 mb-4>"
+                {canLeaveReview ? (;"
+                  <div className=bg-muted/20 rounded-lg p-4 text-center>"
+                    <h3 className="font-medium mb-2>Share your experience</h3>"
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Your review will help build a trustworthy community;
+                    </p>;
+                    <Button onClick={() => setIsReviewModalOpen(true)}>
+                      Leave Review;""
+                    </Button>;
+                  </div>
+                ) : hasLeftReview ? (;"
+                  <div className="bg-muted/20 rounded-lg p-4 text-center>"
+                    <h3 className="font-medium mb-2">
+                      Thank you for your review!;
+                    </h3>"
+                    <p className="text-sm text-muted-foreground mb-3>"
+                      Your review is{' '}'
+                      {userReview.status === 'approved'
+                        ? 'published'
+                        : 'pending approval'}'
+                    </p>'
+                    {userReview.status === 'pending' && ('
+                      <Button'
+                        variant="outline"
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
                         onClick={() => setIsReviewModalOpen(true)};
                       >;
                         Edit Review;
@@ -94,9 +182,10 @@ export function ProjectReviewSection(): unknown {): unknown {): unknown {): unkn
                 ) : null};
               </div>;
             )};
-;
+
             <ReviewsList;
               reviews={reviews};
+<<<<<<< HEAD
               isLoading={isLoading};""
               onReportReview={reportReview};";""
             />;";";""
@@ -107,13 +196,24 @@ export function ProjectReviewSection(): unknown {): unknown {): unknown {): unkn
               Reviews will be available once the project is completed;";";";""
             </h3>;";";";";""
             <p className="text-sm text-muted-foreground">;"
+=======
+              isLoading={isLoading}
+              onReportReview={reportReview};""
+            />;
+          </div>
+        ) : (;"
+          <div className="bg-muted/20 rounded-lg p-6 text-center>"
+            <h3 className="font-medium mb-2">
+              Reviews will be available once the project is completed;
+            </h3>"
+            <p className="text-sm text-muted-foreground>
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
               After the project is marked as completed, both parties will be;
               able to leave reviews;
             </p>;
-          </div>;
-        )};
+          </div>)};
       </CardContent>;
-;
+
       {/* Review Modal */};
       {(isClient || isTalent) && (;
         <LeaveReviewModal;
@@ -122,6 +222,7 @@ export function ProjectReviewSection(): unknown {): unknown {): unknown {): unkn
           revieweeName={revieweeName};
           isOpen={isReviewModalOpen};
           onClose={() => setIsReviewModalOpen(false)};
+<<<<<<< HEAD
         />;
       )};""
     </Card>;";""
@@ -132,3 +233,15 @@ export function ProjectReviewSection(): unknown {): unknown {): unknown {): unkn
 }";""
 }""
 }""
+=======
+        />;"
+      )}"
+    </Card>;"
+  );
+}"
+"
+
+}"
+}"
+}'';;
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

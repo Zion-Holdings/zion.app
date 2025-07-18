@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from 'react''';
 import { RefreshCw, WifiOff } from '@/components/ui/icons;'';
 import type { ReactNode } from 'react''';
@@ -256,3 +257,15 @@ export const useApiErrorHandler: unknown = () => {;''
   return { handleApiError };
 };''
 ''''''
+=======
+import React from 'react';
+
+export default function ApiErrorBoundary() {
+  return (
+    <div>
+      <h1>ApiErrorBoundary</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

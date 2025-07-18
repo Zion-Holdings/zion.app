@@ -1,9 +1,9 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';';
-import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';';
-import nextRouterMock from 'next-router-mock';';
-import ResetPasswordPage from '../ResetPassword'; // Adjust path as necessary';
-import * as authService from '@/services/auth'; // To mock resetPassword';
-import { toast } from '@/hooks/use-toast';'
+import { render, screen, fireEvent, waitFor } from '@testing-library/react;
+import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider;
+import nextRouterMock from 'next-router-mock;
+import ResetPasswordPage from '../ResetPassword'; // Adjust path as necessary;
+import * as authService from '@/services/auth'; // To mock resetPassword;
+import { toast } from '@/hooks/use-toast;
 
 // Mock router;
 const mockNavigate = jest.fn();
@@ -21,7 +21,7 @@ jest.mock('@/hooks/use-toast', () => ({'
 jest.mock('@/services/auth', () => ({'
   resetPassword: jest.fn(),
 }));
-;
+
 const TestWrapper = ({
   children,
   initialRoute = '/reset-password/test-token','
@@ -154,7 +154,7 @@ describe('ResetPasswordPage', () => {'
 
   it('displays error if token is missing (simulated by different route)', () => {'
     render(
-      <MemoryRouterProvider url="/reset-password/">"
+      <MemoryRouterProvider url="/reset-password/">'
         <ResetPasswordPage />
       </MemoryRouterProvider>,
     );
@@ -163,3 +163,4 @@ describe('ResetPasswordPage', () => {'
     ).toBeInTheDocument();
   });
 });
+';;

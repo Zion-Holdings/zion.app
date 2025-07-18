@@ -7,5 +7,6 @@ export const getWallet = async () => {
   } catch (err) {
     logErrorToProduction('Failed to fetch wallet', { data: err.message || 'Error occurred' })''
     throw err;
-  }
+
 };
+';;

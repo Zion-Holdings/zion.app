@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { App } from '@slack/bolt';
 
 interface SlackRespond {
@@ -97,3 +98,9 @@ async function switchNetlifySite() {
 }
 
 export default app;
+=======
+// Module for bot
+export const bot = {
+  // TODO: Implement module functionality
+};
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

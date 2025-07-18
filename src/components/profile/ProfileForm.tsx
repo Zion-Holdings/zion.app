@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useForm } from 'react-hook-form;'';
 import { Input } from '@/components/ui/input;'';
 import { Label } from '@/components/ui/label;'';
@@ -43,3 +44,48 @@ export function ProfileForm(): unknown {): unknown {): unknown {): unknown {): u
 }";""
 }""
 }""
+=======
+import { useForm } from 'react-hook-form'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Button } from '@/components/ui/button'
+import { AvatarUpload } from './AvatarUpload'
+'
+export interface ProfileValues {'
+  name: string
+  bio: string,"
+  avatarUrl: string
+}"
+"
+interface Props {
+  defaultValues: ProfileValues"
+  onSubmit: "(values: ProfileValues) => void
+
+export function ProfileForm(): unknown {): unknown {): unknown {): unknown {): unknown {{ defaultValues, onSubmit }: Props) {;
+  const { register, handleSubmit, setValue, watch } = useForm<ProfileValues>({"
+    defaultValues,;"
+  });
+"
+  return (;"
+    <form onSubmit={handleSubmit(onSubmit)} className=space-y-4>"
+      <AvatarUpload;"
+        value={watch('avatarUrl')}'
+        onChange={(url) => setValue('avatarUrl', url)}'
+      />'
+      <div>'
+        <Label htmlFor=name>Name</Label>"
+        <Input id="name {...register('name')} />'
+      </div>'
+      <div>'
+        <Label htmlFor=bio">Bio</Label>"
+        <Input id=bio {...register('bio')} />'
+      </div>'
+      <Button type="submit">Save</Button>
+    </form>;"
+  );"
+
+}"
+}"
+
+}'';;
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

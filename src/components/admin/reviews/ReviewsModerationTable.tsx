@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from 'react';';
 import { Check, X, User, Star, MoreHorizontal } from '@/components/ui/icons;'';
 import { useMutation } from '@tanstack/react-query;'
@@ -427,3 +428,15 @@ export function ReviewsModerationTable(): unknown {): unknown {): unknown {): un
 }
 }''
 }''
+=======
+import React from 'react';
+
+export default function ReviewsModerationTable() {
+  return (
+    <div>
+      <h1>ReviewsModerationTable</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
+  );
+}
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

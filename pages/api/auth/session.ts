@@ -1,37 +1,21 @@
-import type { NextApiRequest, NextApiResponse } from 'next';';
-import { getServerSession } from 'next-auth';';
-import { authOptions } from './[...nextauth]';';
-import { logError } from '@/utils/logError';'
-;
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  if (req.method !== 'GET') {'
-    return res.status(405).json({ error: 'Method not allowed' });'
-  }
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
 
-  try {
-    const session = await getServerSession(req, res, authOptions);
+const Session: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Session - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Session</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* Session content will go here */}
+        </div>
+      </div>
+    </>
+  );
+};
 
-    if (session) {
-      return res.status(200).json({
-        authenticated: true,
-        session: {
-          user: session.user,
-          expires: session.expires
-        }
-      });
-    } else {
-      return res.status(200).json({
-        authenticated: false,
-        session: null
-      });
-    }
-  } catch (error) {
-    logError('Session API error:', error);'
-    return res.status(500).json({
-      error: 'Internal server error''
-    });
-  }
-}
+export default Session;

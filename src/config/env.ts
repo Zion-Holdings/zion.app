@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // src/config/env.ts
 import { logWarn } from '@/utils/productionLogger';
 
@@ -37,4 +38,9 @@ export const _getSupportEmail = (): string => {
     "Warning: NEXT_PUBLIC_SUPPORT_EMAIL is not set or is a placeholder. Using fallback 'support@example.com'."
   );
   return 'support@example.com';
+=======
+// Module for env
+export const env = {
+  // TODO: Implement module functionality
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
 };
