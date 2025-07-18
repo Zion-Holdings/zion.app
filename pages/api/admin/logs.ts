@@ -1,113 +1,92 @@
-import type { NextApiRequest, NextApiResponse } from 'next';';
-import fs from 'fs';';
-import path from 'path';';
-import { logErrorToProduction } from '@/utils/productionLogger';'
+import type { NextApiRequest, NextApiResponse } from 'next';
+import fs from 'fs';
+import path from 'path';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 interface LogEntry {
   id: string;
   timestamp: string;
-  level: 'debug' | 'info' | 'warn' | 'error' | 'critical';'
+  level: 'debug' | 'info' | 'warn' | 'error' | 'critical';
   message: string;
   context?: Record<string, unknown>;
 }
 
-interface LogsApiResponse {
+interface LogsResponse {
   success: boolean;
-  data?: {
-    logs: LogEntry[];
-    total: number;
-    page: number;
-    limit: number;
-  };
+  logs?: LogEntry[];
   error?: string;
   timestamp: string;
 }
-;
+
+function parseLogLine(line: string): LogEntry | null {
+  try {
+    // Basic log parsing - adjust based on your log format
+    const match = line.match(/^\[(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z)\] \[(\w+)\] (.+)$/);
+    if (!match) return null;
+
+    const [, timestamp, level, message] = match;
+    return {
+      id: `${timestamp}-${Math.random().toString(36).substr(2, 9)}`,
+      timestamp,
+      level: level as LogEntry['level'],
+      message: message.trim()
+    };
+  } catch {
+    return null;
+  }
+}
+
+async function readLogFile(filePath: string): Promise<LogEntry[]> {
+  try {
+    if (!fs.existsSync(filePath)) {
+      return [];
+    }
+
+    const content = await fs.promises.readFile(filePath, 'utf-8');
+    const lines = content.split('\n').filter(line => line.trim());
+    
+    return lines
+      .map(parseLogLine)
+      .filter((entry): entry is LogEntry => entry !== null)
+      .slice(-100); // Get last 100 entries
+  } catch (error) {
+    logErrorToProduction('Error reading log file:', error);
+    return [];
+  }
+}
+
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<LogsApiResponse>
+  res: NextApiResponse<LogsResponse>
 ) {
   const timestamp = new Date().toISOString();
 
   try {
     const { method, query } = req;
 
-    if (method !== 'GET') {'
+    if (method !== 'GET') {
       return res.status(405).json({
         success: false,
-        error: 'Method not allowed','
+        error: 'Method not allowed',
         timestamp
       });
     }
 
-    const { page = '1', limit = '50', level } = query as Record<string, string>;'
-    const pageNum = parseInt(page, 10);
-    const limitNum = parseInt(limit, 10);
+    const logType = (query.type as string) || 'app';
+    const logPath = path.join(process.cwd(), 'logs', `${logType}.log`);
 
-    // Read log files (implement based on your logging system)
-    const logs: LogEntry[] = [];
-    
-    // This is a placeholder implementation
-    // In a real system, you would read from your actual log files
-    const logDir = path.join(process.cwd(), 'logs');'
-    
-    if (fs.existsSync(logDir)) {
-      const logFiles = fs.readdirSync(logDir).filter(file => file.endsWith('.log'));'
-      
-      for (const logFile of logFiles.slice(0, 5)) { // Limit to 5 files for performance
-        try {
-          const logPath = path.join(logDir, logFile);
-          const content = fs.readFileSync(logPath, 'utf8');'
-          
-          // Parse log entries (simplified)
-          const lines = content.split('\n').filter(line => line.trim());'
-          
-          for (const line of lines.slice(-100)) { // Last 100 lines
-            if (line.includes(' - ')) {'
-              const [timestamp, ...rest] = line.split(' - ');'
-              const message = rest.join(' - ');'
-              
-              logs.push({
-                id: `${logFile}-${logs.length}`,
-                timestamp: timestamp || new Date().toISOString(),
-                level: 'info','
-                message: message || line,
-                context: { source: logFile }
-              });
-            }
-          }
-        } catch (error) {
-          logErrorToProduction(`Error reading log file ${logFile}:`, error);
-        }
-      }
-    }
-
-    // Filter by level if specified
-    const filteredLogs = level 
-      ? logs.filter(log => log.level === level)
-      : logs;
-
-    // Paginate
-    const startIndex = (pageNum - 1) * limitNum;
-    const endIndex = startIndex + limitNum;
-    const paginatedLogs = filteredLogs.slice(startIndex, endIndex);
+    const logs = await readLogFile(logPath);
 
     res.status(200).json({
       success: true,
-      data: {
-        logs: paginatedLogs,
-        total: filteredLogs.length,
-        page: pageNum,
-        limit: limitNum
-      },
+      logs,
       timestamp
     });
   } catch (error) {
-    logErrorToProduction('Logs API error:', error);'
-
+    logErrorToProduction('Logs API error:', error);
     res.status(500).json({
       success: false,
-      error: 'Internal server error','
+      error: 'Internal server error',
       timestamp
     });
   }
