@@ -75,14 +75,14 @@ export const getServerSideProps = async (context: unknown) => { // Added type fo
   try {
     // Simulate an error occurring during server-side rendering
     throw new Error("Sentry Server-Side Test Error - getServerSideProps from sentry-test.tsx");
-  } catch (error) {
+  } catch {
     // withSentryGetServerSideProps will automatically capture this error.
     // You could re-throw it if you want to ensure Next.js's default error handling also kicks in,
     // or handle it gracefully by returning props for an error display.
     // For testing, we want Sentry to capture it. Re-throwing is a common pattern.
     // However, since this is a test page, we might just log and return empty props
     // or props indicating an error occurred for the page to display.
-    logErrorToProduction('Simulated error in getServerSideProps for sentry-test.tsx:', { data: error });
+    logErrorToProduction('Simulated error in getServerSideProps for sentry-test.tsx:', { data: 'Error occurred' });
     // Sentry.captureException(error); // Removed
 
     // Optionally, set status code on response if available in context

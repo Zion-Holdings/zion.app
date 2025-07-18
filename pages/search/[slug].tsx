@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '@/context/auth/AuthProvider';
 
 import { SEO } from '@/components/SEO';
@@ -249,7 +249,7 @@ export default function SearchResultsPage({
   const [_totalResults, setTotalResults] = useState(totalCount);
 
   // Fetch search results
-  const fetchResults = async (searchTerm: string, page = 1) => {
+  const fetchResults = useCallback(async (searchTerm: string, page = 1) => {
     try {
       setLoading(true);
       logInfo(`Fetching search results for: ${searchTerm}, page: ${page}`);
@@ -299,7 +299,7 @@ export default function SearchResultsPage({
     } finally {
       setLoading(false);
     }
-  };
+  }, [sortBy, categoryFilter, minPrice, maxPrice, minRating]);
 
   // Handle search input change
   const _handleSearch = (newQuery: string) => {
