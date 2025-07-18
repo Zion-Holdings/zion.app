@@ -133,13 +133,7 @@ export {
 // Data Visualization Icons
 export {
   BarChart,
-  BarChart3,
-  LineChart,
-  PieChart,
-  TrendingUp,
-  TrendingDown,
-  Activity,
-  Target
+  LineChart
 } from 'lucide-react';
 
 // Development & Tech Icons

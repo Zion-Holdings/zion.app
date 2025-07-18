@@ -108,21 +108,7 @@ function offlineSearch(
     return result;
   });
 
-  type MappedTalentProfile = {
-    id: string;
-    user_id: string;
-    full_name: string;
-    professional_title: string;
-    profile_picture_url: string;
-    average_rating: number;
-    skills: string[];
-    location: string;
-    bio: string;
-    summary: string;
-    is_verified: boolean;
-    availability_type: string;
-  };
-  const talentResults: MappedTalentProfile[] = TALENT_PROFILES.filter(
+  const talentResults: TalentSearchResult[] = TALENT_PROFILES.filter(
     (t) =>
       match(t.full_name) ||
       match(t.professional_title) ||
@@ -132,17 +118,15 @@ function offlineSearch(
       (t.skills ?? []).some((s) => match(s)),
   ).map((t) => ({
     id: t.id,
-    user_id: t.user_id,
-    full_name: t.full_name,
-    professional_title: t.professional_title,
-    profile_picture_url: String(t.profile_picture_url ?? ''),
-    average_rating: typeof t.average_rating === 'number' ? t.average_rating : 0,
-    skills: t.skills ?? [],
-    location: t.location ?? '',
-    bio: t.bio ?? '',
-    summary: t.summary ?? '',
-    is_verified: false,
-    availability_type: t.availability_type ?? '',
+    title: t.full_name,
+    description: t.professional_title,
+    type: 'talent' as const,
+    slug: t.id,
+    image: t.profile_picture_url,
+    tags: t.skills,
+    category: 'Talent',
+    date: new Date().toISOString(),
+    rating: typeof t.average_rating === 'number' ? t.average_rating : 0,
   }));
 
   const blogResults = BLOG_POSTS.filter(
