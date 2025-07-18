@@ -948,3 +948,5 @@ export default nextConfig;
 // Webpack optimizations added
 // Build caching enabled
 // Security headers added
+// Security headers added
+// Security headers added
