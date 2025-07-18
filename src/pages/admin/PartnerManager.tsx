@@ -74,7 +74,7 @@ export default function PartnerManager() {
         filterPartners(data as PartnerProfile[], activeTab, searchQuery);
       }
     } catch (_error) {
-      logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error fetching partners' });
+      logErrorToProduction(_error instanceof Error ? _error.message : String(_error), _error instanceof Error ? _error : undefined, { message: 'Error fetching partners' });
       toast({
         title: "Error",
         description: "Failed to load partner data",

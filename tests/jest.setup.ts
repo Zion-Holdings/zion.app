@@ -176,7 +176,7 @@ jest.mock('firebase/storage', () => ({
   })),
   uploadBytes: jest.fn((storageRef: unknown, data: unknown, metadata: unknown) => Promise.resolve({
     // Mock UploadResult
-    metadata: { fullPath: (storageRef as { fullPath: string }).fullPath, ...metadata },
+    metadata: { fullPath: (storageRef as { fullPath: string }).fullPath, ...(metadata as Record<string, unknown>) },
     ref: storageRef,
   })),
   getDownloadURL: jest.fn((storageRef: { fullPath: string }) => Promise.resolve(`https://mockstorage.com/${storageRef.fullPath}`)),
