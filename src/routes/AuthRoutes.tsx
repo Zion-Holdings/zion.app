@@ -1,4 +1,4 @@
-import { Fragment as _Fragment } from 'react
+import { Fragment as _Fragment } from 'react';
 import Login from '@/pages/Login;
 // Router components removed - convert to Next.js pages structure;;
 import Signup from '@/pages/Signup;'

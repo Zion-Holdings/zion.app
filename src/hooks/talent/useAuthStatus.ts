@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import { logInfo } from '@/utils/productionLogger;
 ;
 export function useAuthStatus(): unknown {): unknown {): unknown {): unknown {): unknown {) {;

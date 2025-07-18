@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router;'
-import React, { useState, useEffect } from 'react
+import React, { useState, useEffect } from 'react';
 import { X } from '@/components/ui/icons;'
 import Link from 'next/link;'
 import { useAuth } from '@/hooks/useAuth;'

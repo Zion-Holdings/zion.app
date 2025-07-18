@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import { List } from '@/components/ui/icons;'
 import { useAuth } from '@/hooks/useAuth;'
 import type { LucideIcon } from 'lucide-react;

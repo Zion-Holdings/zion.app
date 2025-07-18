@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import { safeStorage } from '@/utils/safeStorage;'
 import { logWarn } from '@/utils/productionLogger;
 ;

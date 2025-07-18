@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react
+import { useEffect, useState } from 'react';
 import { Clock } from '@/components/ui/icons;'
 import Link from 'next/link;
 ;;

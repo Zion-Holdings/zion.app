@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import { LogIn, User, Eye, EyeOff } from '@/components/ui/icons;'
 import { useRouter } from 'next/router;'
 import { useForm } from 'react-hook-form;'

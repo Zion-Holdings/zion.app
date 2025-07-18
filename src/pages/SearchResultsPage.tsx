@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react
+import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/router;'
 import { SearchResultCard } from '@/components/search/SearchResultCard;'
 import { SearchBar } from '@/components/SearchBar;'

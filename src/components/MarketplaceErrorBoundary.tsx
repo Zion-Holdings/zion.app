@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { RefreshCcw, AlertCircle } from '@/components/ui/icons;'
 import { ErrorBoundary } from 'react-error-boundary;'
 import type { FallbackProps } from 'react-error-boundary;'

@@ -1,5 +1,5 @@
-import React from 'react
-import * as React from 'react
+import React from 'react';
+import * as React from 'react';
 import { PanelLeft } from '@/components/ui/icons;
 ;;
 import { Button } from '@/components/ui/button;'

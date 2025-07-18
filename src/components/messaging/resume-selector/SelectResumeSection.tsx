@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { FileText } from '@/components/ui/icons;
 ;;
 import type { ResumeOption } from '../resume-selector/types;'

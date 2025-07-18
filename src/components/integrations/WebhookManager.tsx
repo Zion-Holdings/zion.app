@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react
+import React, { useEffect, useState } from 'react';
 import { Save, PlusCircle, Trash2 as Trash } from '@/components/ui/icons;
 import {;
   Card,;

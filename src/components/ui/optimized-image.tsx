@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react
+import React, { useState, useRef, useEffect } from 'react';
 import { AlertTriangle } from '@/components/ui/icons;'
 import { motion, AnimatePresence } from 'framer-motion;
 ;;

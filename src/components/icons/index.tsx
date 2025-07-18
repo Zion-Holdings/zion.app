@@ -1,5 +1,5 @@
-import React from 'react
-import type { SVGProps } from 'react
+import React from 'react';
+import type { SVGProps } from 'react';
 import { logWarn } from '@/utils/productionLogger;
 import {;
   Home as LucideHome,;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { FileText } from '@/components/ui/icons;'
 import { useForm } from 'react-hook-form;'
 import type { ControllerRenderProps } from 'react-hook-form;'

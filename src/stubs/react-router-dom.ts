@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { useRouter } from 'next/router;
 ;;
 export const BrowserRouter: unknown "unknown = ({ children "}: { children: "React.ReactNode "}) =>;";";";"

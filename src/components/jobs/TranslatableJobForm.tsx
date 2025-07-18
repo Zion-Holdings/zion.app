@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { Loader2, Globe } from '@/components/ui/icons;'
 import { Button } from '@/components/ui/button;'
 import { Input } from '@/components/ui/input;'

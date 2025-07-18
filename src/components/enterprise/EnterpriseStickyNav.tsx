@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import { Menu } from '@/components/ui/icons;
 ;;
 import Link from 'next/link;'

@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { Users, TrendingUp } from '@/components/ui/icons;'
 import { ServiceLandingTemplate } from '@/components/services/ServiceLandingTemplate;'
 ;

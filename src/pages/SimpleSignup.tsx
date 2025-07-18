@@ -1,4 +1,4 @@
-import { useEffect } from 'react
+import { useEffect } from 'react';
 import { useRouter } from 'next/router // Changed from useNavigate;;
 import { useFormik } from 'formik;'
 import * as Yup from 'yup;'

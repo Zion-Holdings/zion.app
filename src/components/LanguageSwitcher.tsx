@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react
+import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next;'
 import { Button } from '@/components/ui/button;'
 import { useLanguage, SUPPORTED_LANGUAGES } from '@/context/LanguageContext;'

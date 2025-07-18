@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router;'
 import { getTalentBySlug } from '@/api/talent;'
 import Skeleton from '@/components/ui/skeleton;'

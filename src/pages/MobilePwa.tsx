@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { MobileApp } from '@/mobile/MobileApp;
 ;
 const MobilePwa: unknown React.FC = () => (;

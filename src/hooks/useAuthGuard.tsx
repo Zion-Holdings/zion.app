@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router;'
 import { supabase } from '@/utils/supabase/client;'
 import type { User, AuthChangeEvent, Session } from '@supabase/supabase-js // Added AuthChangeEvent and Session;;

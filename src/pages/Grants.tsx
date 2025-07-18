@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { NextSeo } from '@/components/NextSeo;'
 import { useForm } from 'react-hook-form;'
 import { z } from 'zod;'

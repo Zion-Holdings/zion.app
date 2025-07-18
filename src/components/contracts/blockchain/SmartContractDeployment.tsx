@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { Loader2, Download, ShieldCheck } from '@/components/ui/icons;
 import {;
   Card,;

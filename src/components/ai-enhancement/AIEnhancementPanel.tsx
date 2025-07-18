@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { Loader2, Copy, Check, Sparkles } from 'lucide-react;
 import {;
   Card,;'

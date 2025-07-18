@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import type { Resume } from '@/types/resume;'
 import { useFetchResume } from './useFetchResume;'
 import { useResumeActions } from './useResumeActions;'

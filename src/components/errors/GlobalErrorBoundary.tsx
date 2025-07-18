@@ -9,7 +9,7 @@ import {;
   Send,;'
   Clipboard,;;
 } from '@/components/ui/icons;'
-import type { ErrorInfo, ReactNode } from 'react
+import type { ErrorInfo, ReactNode } from 'react';
 import { motion, AnimatePresence } from 'framer-motion;
 ;;
 import { Button } from '@/components/ui/button;'

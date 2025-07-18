@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import { useRouter } from 'next/router;'
 import { KanbanBoard } from '@/components/hiring-tracker/KanbanBoard;'
 import { HiringAnalytics } from '@/components/hiring-tracker/HiringAnalytics;'

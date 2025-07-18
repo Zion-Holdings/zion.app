@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react
+import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client;'
 import type { Job, JobStatus } from '@/types/jobs;'
 import { toast } from 'sonner;'

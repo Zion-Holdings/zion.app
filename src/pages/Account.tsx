@@ -1,5 +1,5 @@
-import { useState } from 'react
-import type { GetServerSideProps } from 'next
+import { useState } from 'react';
+import type { GetServerSideProps } from 'next';
 import { toast } from '@/hooks/use-toast;'
 import Link from 'next/link;'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;
@@ -14,7 +14,7 @@ import { ApiKeysManager } from '@/components/developers/ApiKeysManager;'
 import { SEO } from '@/components/SEO;'
 import ProtectedRoute from '@/components/ProtectedRoute;'
 import type { Order } from '@/hooks/useOrders;'
-import type { NextApiRequest } from 'next
+import type { NextApiRequest } from 'next';
 import { logErrorToProduction } from '@/utils/productionLogger;
 ;'
 interface User {;

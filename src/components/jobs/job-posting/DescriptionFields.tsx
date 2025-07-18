@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import type { ControllerRenderProps } from 'react-hook-form;'
 import type { Control } from 'react-hook-form;
 import {;

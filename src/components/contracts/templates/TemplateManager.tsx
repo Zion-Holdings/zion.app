@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import { useContractTemplates } from '@/hooks/useContractTemplates;'
 import type { ContractTemplate } from '@/types/contracts;
 import {;'

@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { useEffect } from 'react;
 ;'
 export function useOnClickOutside(): unknown {): unknown {): unknown {): unknown {): unknown {;;

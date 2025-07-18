@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { useRouter } from 'next/router;'
 import { formatDistanceToNow } from 'date-fns;'
 import { Calendar, DollarSign, Clock, Briefcase } from 'lucide-react;'

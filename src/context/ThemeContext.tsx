@@ -1,5 +1,5 @@
-import { createContext, useContext, useEffect } from 'react
-import type { ReactNode } from 'react
+import { createContext, useContext, useEffect } from 'react';
+import type { ReactNode } from 'react';
 import { useLocalStorage } from '@/hooks;'
 import { getThemeColors, applyThemeColors } from '@/utils/themeUtils;'
 import type { ThemePreset } from '@/utils/themeUtils;

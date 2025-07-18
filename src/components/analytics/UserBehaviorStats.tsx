@@ -1,9 +1,9 @@
-import React from 'react
+import React from 'react';
 import { useQuery } from '@tanstack/react-query;'
 import { supabase } from '@/integrations/supabase/client;'
 import { Card, CardContent } from '@/components/ui/card;'
 import Skeleton from '@/components/ui/skeleton;'
-import { useState } from 'react
+import { useState } from 'react';
 import { DynamicAnalyticsChart as AnalyticsChart } from '@/utils/dynamicComponents;'
 import { logErrorToProduction } from '@/utils/productionLogger;
 ;;

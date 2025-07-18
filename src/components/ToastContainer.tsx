@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react
+import React, { useEffect, useState } from 'react';
 import { Toaster } from 'sonner;'
 import { globalToastManager, ToastType } from '@/utils/globalToastManager;'
 import { cn } from '@/lib/utils;

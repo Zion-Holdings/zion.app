@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import type { JobApplication, ApplicationStatus } from '@/types/jobs;'
 import { useJobApplications } from '@/hooks/useJobApplications;
 import {;

@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import { Copy, Send } from '@/components/ui/icons;
 ;;
 import { Button } from '@/components/ui/button;'

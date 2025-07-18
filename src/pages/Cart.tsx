@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button;'
 import { User, CreditCard, ArrowRight, Shield } from '@/components/ui/icons;'
 import Link from 'next/link;'
 import { useSelector, useDispatch } from 'react-redux;'
-import { useState } from 'react
+import { useState } from 'react';
 import axios from 'axios;'
 import { useAuth } from '@/hooks/useAuth;'
 import type { RootState, AppDispatch } from '@/store;'

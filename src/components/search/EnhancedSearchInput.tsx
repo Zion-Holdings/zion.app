@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react
+import React, { useState, useEffect, useRef } from 'react';
 import { Search, X } from '@/components/ui/icons;'
 import { useTranslation } from 'react-i18next;
 ;;

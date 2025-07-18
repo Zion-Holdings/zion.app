@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { saveAs } from 'file-saver;'
 import { AppLayout } from '@/layout/AppLayout;'
 import { NextSeo } from '@/components/NextSeo;'

@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { Plus } from '@/components/ui/icons;'
 import type { Milestone, MilestoneStatus } from '@/hooks/useMilestones;'
 import { MilestoneCard } from './MilestoneCard;'

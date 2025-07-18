@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { Mail, UserPlus, Trash2 as Trash } from '@/components/ui/icons;
 ;
 import {;

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router // Changed from useNavigate, useLocation;;
 import { useAuth } from '@/hooks/useAuth;'
 import { safeStorage } from '@/utils/safeStorage;'

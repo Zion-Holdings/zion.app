@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { X, Upload, Check, MapPin, Globe } from '@/components/ui/icons;'
 import { useForm } from 'react-hook-form;'
 import { zodResolver } from '@hookform/resolvers/zod;'

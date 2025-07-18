@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react
+import React, { useState, useEffect } from 'react';
 import { ArrowLeft } from '@/components/ui/icons;'
 import { useRouter } from 'next/router // Changed from useParams;;
 import { supabase } from '@/integrations/supabase/client;'

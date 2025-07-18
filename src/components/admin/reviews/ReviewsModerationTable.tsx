@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import { Check, X, User, Star, MoreHorizontal } from '@/components/ui/icons;'
 import { useMutation } from '@tanstack/react-query;
 ;;

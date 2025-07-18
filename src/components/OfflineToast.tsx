@@ -1,4 +1,4 @@
-import { useEffect } from 'react
+import { useEffect } from 'react';
 import { toast } from '@/hooks/use-toast;'
 import { logInfo, logWarn } from '@/utils/productionLogger'
 ;'

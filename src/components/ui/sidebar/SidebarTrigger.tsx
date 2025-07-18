@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { Menu, X } from '@/components/ui/icons;'
 import { Button } from '@/components/ui/button;
 ;;

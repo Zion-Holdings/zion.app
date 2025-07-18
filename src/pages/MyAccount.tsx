@@ -1,5 +1,5 @@
-import { useState } from 'react
-import type { GetServerSideProps } from 'next
+import { useState } from 'react';
+import type { GetServerSideProps } from 'next';
 import { toast } from '@/hooks/use-toast;'
 import Link from 'next/link;'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;'

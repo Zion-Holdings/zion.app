@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react
+import { useMemo, useState } from 'react';
 import { Header } from '@/components/Header;'
 import { SEO } from '@/components/SEO;'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;

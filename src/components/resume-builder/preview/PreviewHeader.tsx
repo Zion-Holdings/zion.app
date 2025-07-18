@@ -3,7 +3,7 @@ import { ArrowLeft, FileText, Link } from '@/components/ui/icons;
 ;;
 import { PdfExportButton } from '../PdfExportButton;'
 import type { Resume } from '@/types/resume;'
-import { useState } from 'react
+import { useState } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile;
 ;'
 interface PreviewHeaderProps {;;

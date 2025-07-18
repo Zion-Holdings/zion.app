@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { MessageSquare, Info, X } from '@/components/ui/icons;'
 import { useRouter } from 'next/router;'
 import { Button } from '@/components/ui/button;'

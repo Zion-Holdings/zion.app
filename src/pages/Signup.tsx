@@ -1,5 +1,5 @@
-import React from 'react
-import { useState, useEffect } from 'react
+import React from 'react';
+import { useState, useEffect } from 'react';
 import { AlertCircle, CheckCircle, Mail } from '@/components/ui/icons;'
 import { useRouter } from 'next/router // Changed from react-router-dom;;
 import { useFormik } from 'formik;'

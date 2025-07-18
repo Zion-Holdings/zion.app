@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react
+import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'
 import { getFeedback, getFeedbackStats } from '@/services/feedbackService;'
 import type { FeedbackEntry } from '@/services/feedbackService;

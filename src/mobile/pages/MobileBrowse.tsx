@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react
+import React, { useState, useEffect } from 'react';
 import { MobileHeader } from '@/mobile/components/common/MobileHeader;'
 import { BottomNavigation } from '@/mobile/components/common/BottomNavigation;'
 import { BrowseFilters } from '@/mobile/components/browse/BrowseFilters;'

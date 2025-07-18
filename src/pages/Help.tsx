@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react
+import { useState, useEffect } from 'react';
 import { Header } from '@/components/Header;'
 import { GradientHeading } from '@/components/GradientHeading;'
 import { Input } from '@/components/ui/input;'

@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react
+import { useRef, useEffect } from 'react';
 import { useAnalytics } from '@/context/AnalyticsContext;
 ;
 export function useTrackUserBehavior(): unknown {): unknown {): unknown {): unknown {): unknown {componentName: string) {;

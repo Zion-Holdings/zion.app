@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from 'react
+import React, { useState, Suspense } from 'react';
 import { OptimizedImage } from '@/components/ui/OptimizedImage;'
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog;'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs;'

@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { XCircle } from '@/components/ui/icons;'
 import { Button } from '@/components/ui/button;'
 import { useRouter } from 'next/router // Changed from useNavigate;

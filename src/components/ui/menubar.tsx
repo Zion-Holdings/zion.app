@@ -1,5 +1,5 @@
-import React from 'react
-import * as React from 'react
+import React from 'react';
+import * as React from 'react';
 import { Check, ChevronRight } from '@/components/ui/icons;'
 import * as MenubarPrimitive from '@radix-ui/react-menubar;
 ;;

@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { AlertTriangle, AlertCircle, CheckCircle } from '@/components/ui/icons;'
 import { cn } from '@/lib/utils;
 ;'

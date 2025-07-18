@@ -1,6 +1,6 @@
 import type { Project } from '@/types/projects;
 ;;
-import React, { useState, useEffect } from 'react
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router;'
 import { useProjects } from '@/hooks/useProjects;'
 import { useMilestones } from '@/hooks/useMilestones;'

@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { ResumeSelector } from '../resume-selector/index;'
 import type { ResumeOption } from '../resume-selector/index;'
 import { Button } from '@/components/ui/button;

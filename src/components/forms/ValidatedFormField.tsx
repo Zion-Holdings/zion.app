@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react
+import React, { useState, useEffect, useCallback } from 'react';
 import { CheckCircle, AlertCircle, Eye, EyeOff } from '@/components/ui/icons;
 import {;
   FormField,;'

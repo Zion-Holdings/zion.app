@@ -1,8 +1,8 @@
 'use client;
 ;;
 import dynamic from 'next/dynamic;'
-import React from 'react
-import type { ReactNode } from 'react
+import React from 'react';
+import type { ReactNode } from 'react';
 ;
 // Dynamically import the WalletProvider with no SSR;
 const WalletProvider: unknown = dynamic(;'

@@ -17,7 +17,7 @@ import {;
   FormLabel,;'
   FormMessage,;;
 } from '@/components/ui/form;'
-import { useState } from 'react
+import { useState } from 'react';
 import type { ControllerRenderProps } from 'react-hook-form;'
 import type { Education } from '@/types/resume;'
 import type { EducationFormFieldsProps } from './types;

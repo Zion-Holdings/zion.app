@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router;'
-import React from 'react
+import React from 'react';
 import type { UserDetails } from '@/types/auth;'
 import { toast } from '@/hooks/use-toast;'
 import type { UserProfile } from '@/types/auth;'

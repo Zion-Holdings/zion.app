@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { Loader2 } from '@/components/ui/icons;'
 import Image from 'next/image;'
 import { GradientHeading } from '@/components/GradientHeading;'

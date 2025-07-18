@@ -1,5 +1,5 @@
-import React from 'react
-import * as React from 'react
+import React from 'react';
+import * as React from 'react';
 import { Input } from '@/components/ui/input;'
 import { Separator } from '@/components/ui/separator;'
 import { cn } from '@/lib/utils;'

@@ -1,5 +1,5 @@
-import React from 'react
-import { useEffect } from 'react
+import React from 'react';
+import { useEffect } from 'react';
 import type { UserDetails } from '@/types/auth;'
 import { mutate } from 'swr;'
 import type { SignupParams } from '@/types/auth;'

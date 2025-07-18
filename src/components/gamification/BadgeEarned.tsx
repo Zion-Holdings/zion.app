@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { getBadgeMeta } from './badgeConfig;'
 import type { BadgeKey } from './badgeConfig;
 ;

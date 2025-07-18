@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react
+import React, { useState, useEffect } from 'react';
 import { Popover, PopoverContent } from '@/components/ui/popover;'
 import { Button } from '@/components/ui/button;'
 import { safeStorage } from '@/utils/safeStorage;

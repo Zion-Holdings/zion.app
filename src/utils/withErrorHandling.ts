@@ -5,7 +5,7 @@ import {;
   GetStaticPropsContext,;
   GetServerSidePropsResult,;
   GetStaticPropsResult,;
-} from 'next
+} from 'next';
 import { ENV_CONFIG } from './environmentConfig;'
 import { logInfo, logWarn, logErrorToProduction } from './productionLogger;
 ;'

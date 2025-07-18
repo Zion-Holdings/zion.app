@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { Loader2 } from '@/components/ui/icons;'
 import { useHireRequestForm } from './useHireRequestForm;'
 import { Button } from '@/components/ui/button;'

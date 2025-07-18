@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router;'
 import CreatePostButton from '@/components/community/CreatePostButton;'
 import { LoginModal } from '@/components/auth/LoginModal;'

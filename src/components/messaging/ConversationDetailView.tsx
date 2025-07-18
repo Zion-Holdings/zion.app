@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react
+import React, { useState, useEffect, useRef } from 'react';
 import { MessageSquare } from '@/components/ui/icons;'
 import { format } from 'date-fns;
 ;;

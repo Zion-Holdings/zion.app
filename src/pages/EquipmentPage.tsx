@@ -8,7 +8,7 @@ import {;
   AlertTriangle,;'
   RefreshCw,;;
 } from '@/components/ui/icons;'
-import { useState, useEffect, useCallback, useMemo } from 'react
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion;
 ;;
 import { toast } from '@/hooks/use-toast;'

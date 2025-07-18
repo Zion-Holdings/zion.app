@@ -1,5 +1,5 @@
-import React from 'react
-import { useState } from 'react
+import React from 'react';
+import { useState } from 'react';
 import { AlertCircle, FileText, Loader2 } from '@/components/ui/icons;'
 import { useRouter } from 'next/router;'
 import { useJobApplications } from '@/hooks/useJobApplications;'

@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { MobileThemeProvider } from './theme/MobileThemeProvider;'
 import { logErrorToProduction } from '@/utils/productionLogger;'
 import { useCart } from '@/context/CartContext;'

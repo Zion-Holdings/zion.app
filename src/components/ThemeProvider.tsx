@@ -1,5 +1,5 @@
-import React from 'react
-import { createContext, useContext, useLayoutEffect, useState } from 'react
+import React from 'react';
+import { createContext, useContext, useLayoutEffect, useState } from 'react';
 import { safeStorage } from '@/utils/safeStorage;
 ;;
 type Theme = 'dark' | 'light' | 'system;

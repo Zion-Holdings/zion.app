@@ -1,5 +1,5 @@
-import React from 'react
-import { useState, useEffect, useCallback } from 'react
+import React from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Check, Flag, Search, Settings, X, Users } from '@/components/ui/icons;'
 import { useAuth } from '@/hooks/useAuth;'
 import { useRouter } from 'next/router;'

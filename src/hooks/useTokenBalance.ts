@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react
+import { useState, useEffect } from 'react';
 import { ethers } from 'ethers;'
 import { logErrorToProduction } from '@/utils/productionLogger;
 ;'

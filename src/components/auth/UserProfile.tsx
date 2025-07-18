@@ -1,6 +1,6 @@
 'use client;
 ;;
-import React, { useEffect, useState } from 'react
+import React, { useEffect, useState } from 'react';
 import { User, LogOut, LogIn } from '@/components/ui/icons;'
 import { supabase } from '@/utils/supabase/client;'
 import { Button } from '@/components/ui/button;'

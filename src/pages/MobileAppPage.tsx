@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { SEO } from '@/components/SEO;'
 import { MobileAppHero } from '@/components/mobile-app/MobileAppHero;'
 import { AppFeatures } from '@/components/mobile-app/AppFeatures;'

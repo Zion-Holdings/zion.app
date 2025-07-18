@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react
+import { useEffect, useState } from 'react';
 import { useAuth } from './useAuth;'
 import { safeFetch } from '@/integrations/supabase/client;'
 import { getWishlist, saveWishlist } from '@/lib/db;'

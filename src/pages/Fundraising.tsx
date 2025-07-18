@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { Header } from '@/components/Header;'
 import { NextSeo } from '@/components/NextSeo;'
 import { Textarea } from '@/components/ui/textarea;'

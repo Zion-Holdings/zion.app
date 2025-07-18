@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import { MobileHeader } from '@/mobile/components/common/MobileHeader;'
 import { BottomNavigation } from '@/mobile/components/common/BottomNavigation;'
 import { MobileProjectView } from '@/mobile/components/projects/MobileProjectView;

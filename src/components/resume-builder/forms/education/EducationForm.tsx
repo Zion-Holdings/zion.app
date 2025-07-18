@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import { Button } from '@/components/ui/button;'
 import type { Education } from '@/types/resume;'
 import { useResume } from '@/hooks/useResume;'

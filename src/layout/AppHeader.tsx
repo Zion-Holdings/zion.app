@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { Menu, X } from '@/components/ui/icons;'
 import { useMessaging } from '@/context/MessagingContext;'
 import Link from 'next/link;'

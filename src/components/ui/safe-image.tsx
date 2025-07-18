@@ -1,7 +1,7 @@
 'use client;
 ;;
 import Image from 'next/image;'
-import { useState } from 'react
+import { useState } from 'react';
 import { ImageIcon } from '@/components/ui/icons;
 ;'
 interface SafeImageProps {;;

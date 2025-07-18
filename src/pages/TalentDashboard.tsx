@@ -1,4 +1,4 @@
-import { useState } from 'react
+import { useState } from 'react';
 import { MessageSquare, Star } from '@/components/ui/icons;'
 import { Button } from '@/components/ui/button;'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;'

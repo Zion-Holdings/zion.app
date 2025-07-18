@@ -2,7 +2,7 @@ import React, { useState } from 'react;
 import type {;
   ReactNode as _ReactNode,;'
   ReactElement as _ReactElement,;;
-} from 'react
+} from 'react';
 import { useRouter } from 'next/router;
 // Assume useAuth hook exists and provides user object with emailVerified status and email;;
 import { useAuth } from '@/hooks/useAuth;'

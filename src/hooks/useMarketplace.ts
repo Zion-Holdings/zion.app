@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react
+import { useState, useCallback } from 'react';
 import { logErrorToProduction } from '@/utils/productionLogger;'
 import { getMarketplaceErrorMessage } from '@/services/marketplace;'
 import { useQuery } from '@tanstack/react-query;'

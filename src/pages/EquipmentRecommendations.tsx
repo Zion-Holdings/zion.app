@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react
+import { useEffect, useState } from 'react';
 import { Loader2 } from '@/components/ui/icons;'
 import { ProductListingCard } from '@/components/ProductListingCard;'
 import { useAuth } from '@/hooks/useAuth;'

@@ -1,5 +1,5 @@
-import React from 'react
-import { useState } from 'react
+import React from 'react';
+import { useState } from 'react';
 import { Input } from '@/components/ui/input;'
 import { Button } from '@/components/ui/button;'
 import { toast } from '@/hooks/use-toast;'

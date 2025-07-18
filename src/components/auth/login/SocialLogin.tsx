@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button;'
 import { Loader2, Facebook, Twitter } from '@/components/ui/icons;'
 import { Web3Login } from './Web3Login;'
-import { useState } from 'react
+import { useState } from 'react';
 import { openAuthPopup } from '@/api/authSocial;
 ;
 export function SocialLogin(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'

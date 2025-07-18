@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react
+import { useState, useEffect } from 'react';
 import { AlertCircle, Loader2 } from '@/components/ui/icons;'
 import { useAuth } from '@/hooks/useAuth;'
 import { useResume } from '@/hooks/useResume;'

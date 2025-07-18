@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react';
 import ApiDocsLayout from '@/components/developers/ApiDocsLayout;'
 import { CodeBlock } from '@/components/developers/CodeBlock;'
 import Link from 'next/link;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react
+import React, { useState } from 'react';
 import { Zap, ChevronLeft, ChevronRight } from '@/components/ui/icons;'
 import { MobileHeader } from '@/mobile/components/common/MobileHeader;'
 import { BottomNavigation } from '@/mobile/components/common/BottomNavigation;'

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router // Changed from useParams;;
 import { SEO } from '@/components/SEO;'
 import { ProfileLoadingState } from '@/components/profile/ProfileLoadingState;'

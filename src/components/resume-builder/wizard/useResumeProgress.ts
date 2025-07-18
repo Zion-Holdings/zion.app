@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react
+import { useState, useEffect } from 'react';
 import type { Resume } from '@/types/resume;
 ;
 export const useResumeProgress: unknown = (_resume: Resume | null) => {;
