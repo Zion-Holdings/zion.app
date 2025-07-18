@@ -135,9 +135,9 @@ export function useTranslationService() {
         initialTranslations[sourceLanguage] = content;
         return { translations: initialTranslations };
       }
-    } catch {
+    } catch (error) {
       setIsTranslating(false);
-      logErrorToProduction('Translation service erroror:', { data: error });
+      logErrorToProduction('Translation service error:', { data: error });
       
       const initialTranslations: Record<SupportedLanguage, string> = {
         en: content,
@@ -150,14 +150,14 @@ export function useTranslationService() {
       
       return { 
         translations: initialTranslations,
-        error: err instanceof Error ? err.message : 'Unknown translation error' 
+        error: error instanceof Error ? error.message : 'Unknown translation error' 
       };
     }
   };
   
-  const getTranslation = (translations: Record<SupportedLanguage, string>, _fallback: string = '') => {
+  const getTranslation = (translations: Record<SupportedLanguage, string>, fallback: string = '') => {
     if (!translations) return fallback;
-    return translations[currentLanguage] || translations.en || fallback;
+    return translations[_currentLanguage] || translations.en || fallback;
   };
   
   return {
