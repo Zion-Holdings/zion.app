@@ -146,7 +146,7 @@
       return new BufferPolyfill(input, _encoding);
     };
 
-    BufferPolyfill.alloc = function(size, fill, encoding) {
+    BufferPolyfill.alloc = function(size, fill, _encoding) {
       var buffer = new BufferPolyfill(size);
       if (fill !== undefined) {
         if (typeof fill === 'string') {
