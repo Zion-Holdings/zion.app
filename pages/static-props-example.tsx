@@ -1,5 +1,5 @@
 import React from 'react';
-import { logInfo, logWarn } from '@/utils/productionLogger';
+import { logWarn } from '@/utils/productionLogger';
 
 
 interface StaticPropsExamplePageProps {
