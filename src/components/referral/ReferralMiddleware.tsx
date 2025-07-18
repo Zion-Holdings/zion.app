@@ -29,7 +29,7 @@ export function ReferralMiddleware({ children }: Props) {
         });
         safeStorage.removeItem('referralCode');
       } catch {
-        logErrorToProduction('Error tracking ref'Error occurred'al', { data: 'Error occurred' });
+        logErrorToProduction('Error tracking referroral', { data: error });
       }
     }
     sendReferral();

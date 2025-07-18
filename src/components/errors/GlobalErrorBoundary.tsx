@@ -210,7 +210,7 @@ export class GlobalErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoun
       await navigator.clipboard.writeText(JSON.stringify(errorDetails, null, 2))
       // Could show a toast notification here
     } catch {
-      logErrorToProduction('Failed to copy 'Error occurred'or details:', { data: 'Error occurred' })
+      logErrorToProduction('Failed to copy erroror details:', { data: error })
     }
   }
 
@@ -242,7 +242,7 @@ export class GlobalErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoun
         // Show success message
       }
     } catch {
-      logErrorToProduction('Failed to report 'Error occurred'or:', { data: 'Error occurred' })
+      logErrorToProduction('Failed to report erroror:', { data: error })
     }
   }
 

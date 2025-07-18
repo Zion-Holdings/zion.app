@@ -67,7 +67,7 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
         ) as BlogPost[];
         setPosts(data);
       } catch {
-        logErrorToProduction('Failed to fetch blog posts', { data: 'Error occurred' });
+        logErrorToProduction('Failed to fetch blog posts', { data: error });
       } finally {
         setIsLoading(false);
       }

@@ -86,7 +86,7 @@ const LaunchToolkitPage = () => {
       saveAs(zipBlob, 'Zion_Launch_Toolkit.zip');
 
     } catch {
-      logErrorToProduction('Error creating ZIP:', { data: 'Error occurred' });
+      logErrorToProduction('Error creating ZIP:', { data: error });
       setZipError(error instanceof Error ? error.message : 'An unknown error occurred while creating ZIP.');
     } finally {
       setIsZipping(false);
@@ -105,7 +105,7 @@ const LaunchToolkitPage = () => {
         const text = await response.text();
         setExplainerCopy(text);
       } catch {
-        logErrorToProduction('Error loading explainer copy:', { data: 'Error occurred' });
+        logErrorToProduction('Error loading explainer copy:', { data: error });
         setExplainerCopy('Could not load explainer copy.');
         setLoadCopyError(error instanceof Error ? error.message : 'An unknown error occurred.');
       } finally {
@@ -130,7 +130,7 @@ const LaunchToolkitPage = () => {
       const text = await response.text();
       setSelectedTemplateContent(text);
     } catch {
-      logErrorToProduction('Error loading template:', { data: 'Error occurred' });
+      logErrorToProduction('Error loading template:', { data: error });
       setSelectedTemplateContent('');
       setLoadError(error instanceof Error ? error.message : 'An unknown error occurred.');
     } finally {

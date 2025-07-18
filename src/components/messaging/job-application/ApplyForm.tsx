@@ -111,7 +111,7 @@ export function ApplyForm({ job, onClose, onApplySuccess }: ApplyFormProps) {
       
       onClose();
     } catch {
-      logErrorToProduction('Failed to send application:', { data: 'Error occurred' });
+      logErrorToProduction('Failed to send application:', { data: error });
       toast({
         title: "Application failed",
         description: "There was an error sending your application. Please try again.",

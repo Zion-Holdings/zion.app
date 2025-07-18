@@ -36,7 +36,7 @@ export default function Partners() {
         const res = await fetch('/api/auth/health');
         setAuthServiceAvailable(res.ok);
       } catch {
-        logErrorToProduction('Partner login auth health check failed', { data: 'Error occurred' });
+        logErrorToProduction('Partner login auth health check failed', { data: error });
         setAuthServiceAvailable(false);
       }
     }

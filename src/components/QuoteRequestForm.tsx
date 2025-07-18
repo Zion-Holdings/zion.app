@@ -130,7 +130,7 @@ export function QuoteRequestForm() {
       // Redirect to confirmation page or homepage
       router.push("/");
     } catch {
-      logErrorToProduction("Submission Failed", 'Error occurred' as Error, { component: 'QuoteRequestForm', projectDescription: formData.projectDescription });
+      logErrorToProduction("Submission Failed", error as Error, { component: 'QuoteRequestForm', projectDescription: formData.projectDescription });
       toast({
         title: "Submission Failed",
         description: "There was an error submitting your request. Please try again.",
@@ -164,7 +164,7 @@ export function QuoteRequestForm() {
       setCurrentStep("summary");
       setAutoFillOpen(false);
     } catch {
-      logErrorToProduction("Auto-fill API 'Error occurred'or", 'Error occurred' as Error, { component: 'QuoteRequestForm', projectDescription: description });
+      logErrorToProduction("Auto-fill API erroror", error as Error, { component: 'QuoteRequestForm', projectDescription: description });
       toast({
         title: "Auto-fill Failed",
         description: "We couldn't process your request. Please try again.",

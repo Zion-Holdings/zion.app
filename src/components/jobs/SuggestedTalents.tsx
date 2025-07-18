@@ -78,7 +78,7 @@ export function SuggestedTalents({ jobId, jobTitle }: SuggestedTalentsProps) {
       if (error) throw error;
       setTalents(data || []);
     } catch {
-      logErrorToProduction('Error fetching suggested talents:', { data: 'Error occurred' });
+      logErrorToProduction('Error fetching suggested talents:', { data: error });
       toast({
         title: "Error",
         description: "Failed to load suggested talents. Please try again later.",

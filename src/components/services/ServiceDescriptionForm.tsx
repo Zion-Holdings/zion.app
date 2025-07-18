@@ -72,7 +72,7 @@ export function ServiceDescriptionForm({ onDescriptionGenerated }: ServiceDescri
         description: "Your professional service description has been created."
       });
     } catch {
-      logErrorToProduction('Error generating description:', { data: 'Error occurred' });
+      logErrorToProduction('Error generating description:', { data: error });
       toast({
         title: "Generation Failed",
         description: error instanceof Error ? error.message : "Failed to generate description. Please try again.",

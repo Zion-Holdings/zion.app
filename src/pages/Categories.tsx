@@ -28,7 +28,7 @@ const fetcher = async (url: string): Promise<CategoryType[]> => {
     const data = await response.json();
     return Array.isArray(data) && data.length > 0 ? data : CATEGORIES as CategoryType[];
   } catch {
-    logErrorToProduction('Categories API fetch failed:', { data: 'Error occurred' });
+    logErrorToProduction('Categories API fetch failed:', { data: error });
     return CATEGORIES as CategoryType[];
   }
 };

@@ -94,7 +94,7 @@ export function InterviewRequestForm({ talent, onClose, userDetails }: Interview
       });
       onClose();
     } catch {
-      logErrorToProduction('Failed to schedule interview:', { data: 'Error occurred' });
+      logErrorToProduction('Failed to schedule interview:', { data: error });
       toast({
         title: "Failed to schedule interview",
         description: "An error occurred while scheduling the interview. Please try again.",

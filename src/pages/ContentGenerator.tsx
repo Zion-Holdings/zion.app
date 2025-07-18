@@ -68,7 +68,7 @@ export default function ContentGenerator() {
       setPreviewContent(_data); // Expecting { generatedContent: "..." }
       toast.success(`Content for "${contentType}" generated successfully!`);
     } catch {
-      logErrorToProduction('Error generating content:', { data: 'Error occurred' });
+      logErrorToProduction('Error generating content:', { data: error });
       toast.error("Failed to generate content. Please try again.");
     } finally {
       setIsGenerating(false);
@@ -102,7 +102,7 @@ export default function ContentGenerator() {
       
       toast.success(`Test newsletter sent to ${testEmail}!`);
     } catch {
-      logErrorToProduction('Error sending test newsletter:', { data: 'Error occurred' });
+      logErrorToProduction('Error sending test newsletter:', { data: error });
       toast.error("Failed to send test newsletter. Please try again.");
     }
   };

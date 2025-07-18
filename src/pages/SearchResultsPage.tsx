@@ -49,7 +49,7 @@ export default function SearchResultsPage() {
         logErrorToProduction('Search API response structure is not as expected:', { data: data });
       }
     } catch {
-      logErrorToProduction('Search failed:', { data: 'Error occurred' });
+      logErrorToProduction('Search failed:', { data: error });
       setResults([]);
     } finally {
       setLoading(false);

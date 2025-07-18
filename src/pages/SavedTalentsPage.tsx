@@ -72,7 +72,7 @@ export default function SavedTalentsPage() {
           setSavedTalents(talentProfiles);
         }
       } catch {
-        logErrorToProduction(error instanceof Error ? 'Error occurred' : String(error), error instanceof Error ? error : undefined, { message: 'Error fetching saved talents' });
+        logErrorToProduction(error instanceof Error ? error : String(error), error instanceof Error ? error : undefined, { message: 'Error fetching saved talents' });
         toast({
           title: "Error",
           description: "Failed to load saved talents. Please try again later.",
@@ -163,7 +163,7 @@ export default function SavedTalentsPage() {
         }
       }
     } catch {
-      logErrorToProduction(error instanceof Error ? 'Error occurred' : String(error), error instanceof Error ? error : undefined, { message: 'Error toggling saved talent' });
+      logErrorToProduction(error instanceof Error ? error : String(error), error instanceof Error ? error : undefined, { message: 'Error toggling saved talent' });
       toast({
         title: "Error",
         description: "Failed to update saved talents. Please try again later.",

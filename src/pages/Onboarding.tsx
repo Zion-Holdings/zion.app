@@ -97,7 +97,7 @@ export default function Onboarding() {
       setCurrentStep(2);
 
     } catch {
-      logErrorToProduction('Error updating profile:', { data: 'Error occurred' });
+      logErrorToProduction('Error updating profile:', { data: error });
       toast({
         title: 'Error',
         description: 'There was a problem updating your profile. Please try again.',
@@ -121,7 +121,7 @@ export default function Onboarding() {
           preferredCategories: list,
         });
       } catch {
-        logErrorToProduction('Error saving onboarding data:', { data: 'Error occurred' });
+        logErrorToProduction('Error saving onboarding data:', { data: error });
       }
     }
     const dashboardRoute = userType === 'client' ? '/client-dashboard' : '/talent-dashboard';

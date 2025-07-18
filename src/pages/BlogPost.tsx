@@ -55,7 +55,7 @@ export default function BlogPost() {
         setIsLoading(false);
         return;
       } catch {
-        logErrorToProduction('Failed to fetch blog post', { data: 'Error occurred' });
+        logErrorToProduction('Failed to fetch blog post', { data: error });
         setError('Failed to load article');
       }
 

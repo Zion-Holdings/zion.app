@@ -78,7 +78,7 @@ export function MessageTalentModal({
       // Navigate to messages inbox
       router.push("/messages");
     } catch {
-      logErrorToProduction('Failed to send message:', { data: 'Error occurred' });
+      logErrorToProduction('Failed to send message:', { data: error });
       toast({
         title: "Message not sent",
         description: "There was an error sending your message. Please try again.",

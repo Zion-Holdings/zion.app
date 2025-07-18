@@ -94,7 +94,7 @@ export function createSafeComponent(
             try {
               return React.createElement(Component, props);
             } catch {
-              logErrorToProduction(`Error rendering component:`, 'Error occurred');
+              logErrorToProduction(`Error rendering component:`, error);
               const Fallback = fallbackComponent || DefaultFallback;
               return React.createElement(Fallback);
             }
@@ -106,8 +106,8 @@ export function createSafeComponent(
               try {
                 return await (Component as unknown as { getInitialProps: (ctx: unknown) => Promise<unknown> }).getInitialProps(ctx);
               } catch {
-                logErrorToProduction(`Error in getInitialProps:`, 'Error occurred');
-                // Return empty props to prevent the 'Error occurred' from crashing the app
+                logErrorToProduction(`Error in getInitialProps:`, error);
+                // Return empty props to prevent the error from crashing the app
                 return {};
               }
             };
@@ -134,7 +134,7 @@ export function createSafeComponent(
                 return await (originalComponent as unknown as { getInitialProps: (ctx: unknown) => Promise<unknown> }).getInitialProps(ctx);
               }
             } catch {
-              logErrorToProduction(`Error in fallback getInitialProps:`, 'Error occurred');
+              logErrorToProduction(`Error in fallback getInitialProps:`, error);
             }
             // Return empty props as final fallback
             return {};

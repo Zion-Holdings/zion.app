@@ -47,7 +47,7 @@ export function JobsList({ filter, onSelectJob }: JobsListProps) {
         if (error) throw error;
         setJobs(data as Job[]);
       } catch {
-        logErrorToProduction('Error fetching jobs:', { data: 'Error occurred' });
+        logErrorToProduction('Error fetching jobs:', { data: error });
       } finally {
         setIsLoading(false);
       }

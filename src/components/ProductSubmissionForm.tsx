@@ -255,7 +255,7 @@ export function ProductSubmissionForm() {
           }
         });
       } catch {
-        logErrorToProduction('Error invoking moderation:', { data: 'Error occurred' });
+        logErrorToProduction('Error invoking moderation:', { data: error });
       }
       
       // Show success message
@@ -269,7 +269,7 @@ export function ProductSubmissionForm() {
     } catch {
       toast({
         title: "Publication Failed",
-        description: error instanceof Error ? 'Error occurred' : "An unknown error occurred",
+        description: error instanceof Error ? error : "An unknown error occurred",
         variant: "destructive",
       });
     } finally {

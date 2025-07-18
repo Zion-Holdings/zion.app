@@ -25,7 +25,7 @@ export function ProductActions({ productId, addToCart, isDisabled, sellerId }: P
       setStatus('Added!');
       setTimeout(() => setStatus('Add to Cart'), 1500); // Reset status after a delay
     } catch {
-      logErrorToProduction('Failed to add to cart:', { data: 'Error occurred' });
+      logErrorToProduction('Failed to add to cart:', { data: error });
       setStatus('Add to Cart'); // Reset status in case of error
     } finally {
       setLoading(false);

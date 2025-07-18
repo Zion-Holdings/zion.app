@@ -26,7 +26,7 @@ export default function PodcastHost() {
       const data = await res.json();
       setScript(data.script || '');
     } catch {
-      logErrorToProduction('Failed to generate podcast script', 'Error occurred');
+      logErrorToProduction('Failed to generate podcast script', error);
       setScript('Error generating script.');
     } finally {
       setLoading(false);

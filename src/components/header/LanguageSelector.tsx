@@ -38,7 +38,7 @@ export function LanguageSelector() {
       setIsOpen(false);
       fireEvent('language_change', { language: langCode });
     } catch {
-      logErrorToProduction('LanguageSelector: Error changing language:', { data: 'Error occurred' });
+      logErrorToProduction('LanguageSelector: Error changing language:', { data: error });
     }
   };
 

@@ -39,7 +39,7 @@ export function createDynamicImport<P = unknown, T extends ComponentType<P> = Co
     try {
       return <DynamicComponent {...props} />;
     } catch {
-      logErrorToProduction('Dynamic import failed:', { data: 'Error occurred' });
+      logErrorToProduction('Dynamic import failed:', { data: error });
       if (options.errorFallback) {
         return <options.errorFallback error={error as Error} />;
       }

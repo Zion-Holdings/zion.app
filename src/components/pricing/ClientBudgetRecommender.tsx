@@ -52,7 +52,7 @@ export const ClientBudgetRecommender: React.FC<ClientBudgetRecommenderProps> = (
       const result = await getClientBudgetSuggestion(params);
       setSuggestion(result);
     } catch {
-      logErrorToProduction('Error generating budget suggestion:', { data: 'Error occurred' });
+      logErrorToProduction('Error generating budget suggestion:', { data: error });
     } finally {
       setIsLoading(false);
     }

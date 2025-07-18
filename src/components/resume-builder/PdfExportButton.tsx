@@ -67,7 +67,7 @@ export function PdfExportButton({ resume }: PdfExportButtonProps) {
         description: "Your resume has been downloaded as a PDF.",
       });
     } catch {
-      logErrorToProduction('Error exporting PDF:', { data: 'Error occurred' });
+      logErrorToProduction('Error exporting PDF:', { data: error });
       toast({
         title: "Export failed",
         description: "There was an error exporting your resume to PDF.",

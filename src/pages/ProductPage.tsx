@@ -38,7 +38,7 @@ export default function ProductPage() {
         }
       } catch {
         // Fail silently and fall back to local data
-        logErrorToProduction('Error fetching product', { data: 'Error occurred' });
+        logErrorToProduction('Error fetching product', { data: error });
       }
     };
 

@@ -57,7 +57,7 @@ export function ZionGPTModelManager() {
         errorMessage: (model.error_message as string) ?? ''
       }) as ModelVersionData));
     } catch {
-      logErrorToProduction('Error fetching models:', { data: 'Error occurred' });
+      logErrorToProduction('Error fetching models:', { data: error });
     } finally {
       setIsLoading(false);
     }
@@ -132,7 +132,7 @@ export function ZionGPTModelManager() {
       // Refresh the model list
       fetchModels();
     } catch {
-      logErrorToProduction('Error toggling model active state:', { data: 'Error occurred' });
+      logErrorToProduction('Error toggling model active state:', { data: error });
     }
   };
 

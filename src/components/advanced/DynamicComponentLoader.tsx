@@ -193,7 +193,7 @@ export const DynamicComponentLoader: React.FC<DynamicLoaderProps> = ({
       }, 300) // Small delay for smoother transition
 
     } catch {
-      logErrorToProduction('Dynamic component loading failed:', { data: _'Error occurred' })
+      logErrorToProduction('Dynamic component loading failed:', { data: _error })
       setLoadingState(prev => ({
         ...prev,
         isLoading: false,

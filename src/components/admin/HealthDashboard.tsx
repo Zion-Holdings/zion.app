@@ -65,7 +65,7 @@ const HealthDashboard: React.FC = () => {
       setHealthData(data);
       setError(null);
     } catch {
-      setError(err instanceof Error ? 'Error occurred' : 'Failed to fetch health data');
+      setError(err instanceof Error ? error : 'Failed to fetch health data');
     } finally {
       setLoading(false);
     }

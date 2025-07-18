@@ -60,7 +60,7 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
           : [...prev, productId]
       );
     } catch {
-      logErrorToProduction('Toggle favorite failed', { data: 'Error occurred' });
+      logErrorToProduction('Toggle favorite failed', { data: error });
     }
   };
 
