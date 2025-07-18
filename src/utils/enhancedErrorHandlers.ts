@@ -252,7 +252,7 @@ export class EnhancedConsoleErrorHandler {
             context: 'consoleError',
             args: args.slice(1),
           });
-        } catch (_sentryError) {
+        } catch {
           this.originalConsoleError('Error reporting to logger:', sentryError);
         }
 

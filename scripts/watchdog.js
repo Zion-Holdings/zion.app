@@ -127,7 +127,7 @@ function determineBaseLogPath() {
       fs.mkdirSync(envPath, { recursive: true });
       fs.accessSync(envPath, fs.constants.W_OK);
       return envPath;
-    } catch (_e) {
+    } catch {
       logErrorToProduction(`Failed to use WATCHDOG_LOG_PATH at ${envPath}. Falling back to local logs directory.`, e);
     }
   }
@@ -137,7 +137,7 @@ function determineBaseLogPath() {
     fs.mkdirSync(cwdPath, { recursive: true });
     fs.accessSync(cwdPath, fs.constants.W_OK);
     return cwdPath;
-  } catch (_e) {
+  } catch {
     logErrorToProduction(`Failed to create cwd log directory at ${cwdPath}`, e);
   }
 
@@ -146,7 +146,7 @@ function determineBaseLogPath() {
     fs.mkdirSync(fallback, { recursive: true });
     fs.accessSync(fallback, fs.constants.W_OK);
     return fallback;
-  } catch (_e) {
+  } catch {
     logErrorToProduction(`Failed to create fallback log directory at ${fallback}`, e);
   }
 
@@ -155,7 +155,7 @@ function determineBaseLogPath() {
     fs.mkdirSync(tmpPath, { recursive: true });
     fs.accessSync(tmpPath, fs.constants.W_OK);
     return tmpPath;
-  } catch (_e) {
+  } catch {
     logErrorToProduction(`Failed to create tmp log directory at ${tmpPath}`, e);
   }
 
@@ -569,7 +569,7 @@ function startMonitoring() {
       });
       perfTail.watch();
       // console.warn(`Watching performance log: ${PERF_LOG_FILE}`);
-    } catch (_e) {
+    } catch {
       logErrorToProduction(`Failed to initialize tail for performance log: ${PERF_LOG_FILE}`, e);
       appendToSelfHealLog(`[${new Date().toISOString()}] Failed to initialize tail for ${PERF_LOG_FILE}: ${e.message}\n`);
     }
@@ -601,7 +601,7 @@ function startMonitoring() {
       });
       securityTail.watch();
       // console.warn(`Watching security log: ${SECURITY_LOG_FILE}`);
-    } catch (_e) {
+    } catch {
       logErrorToProduction(`Failed to initialize tail for security log: ${SECURITY_LOG_FILE}`, e);
       appendToSelfHealLog(`[${new Date().toISOString()}] Failed to initialize tail for ${SECURITY_LOG_FILE}: ${e.message}\n`);
     }

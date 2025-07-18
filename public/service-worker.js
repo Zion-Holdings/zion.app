@@ -80,7 +80,7 @@ try {
       }
     }
   });
-} catch (_e) {
+} catch {
   console.warn('BackgroundSync disabled: storage unavailable', e);
 }
 

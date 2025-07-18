@@ -40,7 +40,7 @@ export const _getStaticProps: GetStaticProps<HomePageProps> = async () => {
           const Sentry = await import('@sentry/nextjs');
           Sentry.captureException();
         }
-      } catch (_sentryError) {
+      } catch {
         console.warn('Failed to log to Sentry:', sentryError);
       }
     }

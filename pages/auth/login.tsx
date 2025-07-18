@@ -77,7 +77,7 @@ const LoginPage = () => {
           logInfo('LoginPage: getSession returned, user:', { data:  { data: session?.user?.id } });
           setUser(session?.user ?? null);
         }
-      } catch (_e) {
+      } catch {
         if (mounted) {
           logErrorToProduction('LoginPage: Exception during getSession:', { data:  e });
           clearTimeout(sessionTimeoutId); // Ensure timeout is cleared on error too

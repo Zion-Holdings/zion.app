@@ -71,7 +71,7 @@ console.error = (..._args: unknown[]) => {
 
     try {
       logErrorToProduction(first instanceof Error ? first.message : message, first instanceof Error ? first : undefined);
-    } catch (_sentryError) {
+    } catch {
       originalConsoleError('Error reporting to logger in console.error override:', sentryError);
     }
 

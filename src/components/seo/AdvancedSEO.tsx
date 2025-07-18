@@ -273,7 +273,7 @@ export const useDynamicSEO = (content?: string) => {
   const router = useRouter()
   
   const generateSEO = () => {
-    const path = router.pathname
+    const _path = router.pathname
     const segments = path.split('/').filter(Boolean)
     
     // Generate title based on route

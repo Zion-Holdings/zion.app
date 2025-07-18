@@ -107,7 +107,7 @@ i18n.on('missingKey', (lngs, namespace, key) => {
     try {
       // Use dynamic imports for Node.js modules in server-side environment
       import('fs').then(async (fs) => {
-        const path = await import('path');
+        const _path = await import('path');
         const logsDir = path.join(process.cwd(), 'logs');
         if (!fs.existsSync(logsDir)) {
           fs.mkdirSync(logsDir, { recursive: true });

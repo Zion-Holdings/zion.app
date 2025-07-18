@@ -53,7 +53,7 @@ async function handler(
     };
 
     return res.status(200).json(result);
-  } catch (_e) {
+  } catch {
     console.error(`Error fetching product ${productId}:`, e);
     // More specific error checking can be done here (e.g., Prisma known errors)
     return res.status(500).json({ error: 'Internal server error while fetching product details.' });

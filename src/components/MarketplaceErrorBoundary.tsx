@@ -94,7 +94,7 @@ export function MarketplaceErrorBoundary({ children }: MarketplaceErrorBoundaryP
           scope.setLevel('error');
           Sentry.captureException(error);
         });
-      } catch (_sentryError) {
+      } catch {
         logErrorToProduction('Failed to report to Sentry:', { data: sentryError });
       }
     }

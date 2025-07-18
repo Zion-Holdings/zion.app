@@ -6,7 +6,7 @@ require('dotenv').config();
 const OptimizationSlackBot = require('./slack/slack-bot');
 const PerformanceMonitor = require('./performance/monitor');
 const express = require('express');
-const path = require('path');
+const _path = require('path');
 
 class OptimizationAutomation {
   constructor() {

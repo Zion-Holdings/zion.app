@@ -47,7 +47,7 @@ export function useMarketplaceSearch() {
           // Optional: log an error
           logErrorToProduction('Search API response structure in useMarketplaceSearch is not as expected:', { data: responseData });
         }
-      } catch (_e) {
+      } catch {
         setError(e as Error);
         logErrorToProduction('Failed to fetch products:', { data:  e });
         setListings([]); // Clear listings on error or set to a default error state

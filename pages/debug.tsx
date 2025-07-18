@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import type { GetStaticProps } from 'next';
 
 interface DebugInfo {
-  _timestamp: number;
+  timestamp: number;
   userAgent: string;
   windowSize: { width: number; height: number };
   environment: {
@@ -29,7 +29,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const _DebugPage: React.FC<{ timestamp: number }> = ({ timestamp: _timestamp }) => {
+const DebugPage: React.FC<{ timestamp: number }> = ({ timestamp: _timestamp }) => {
   const [debugInfo, setDebugInfo] = useState<DebugInfo | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -53,7 +53,7 @@ const _DebugPage: React.FC<{ timestamp: number }> = ({ timestamp: _timestamp }) 
           sessionStorage: typeof sessionStorage !== 'undefined',
           cookies: typeof document !== 'undefined' && typeof document.cookie !== 'undefined',
           serviceWorker: 'serviceWorker' in navigator,
-          _webGL: (() => {
+          webGL: (() => {
             try {
               const canvas = document.createElement('canvas');
               return !!(canvas.getContext('webgl') || canvas.getContext('experimental-webgl'));
@@ -179,7 +179,7 @@ const _DebugPage: React.FC<{ timestamp: number }> = ({ timestamp: _timestamp }) 
             color: 'white',
             border: 'none',
             borderRadius: '4px',
-            _cursor: 'pointer'
+            cursor: 'pointer'
           }}
         >
           Go Home

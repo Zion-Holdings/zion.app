@@ -285,7 +285,7 @@ class GlobalToastManager {
           priority: toast.priority,
           metadata: toast.metadata 
         });
-      } catch (_e) {
+      } catch {
         logErrorToProduction('Failed to log toast error:', { data:  e });
       }
     }

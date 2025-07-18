@@ -156,7 +156,7 @@ describe('fetchEquipment', () => {
 
     try {
       await fetchEquipment();
-    } catch (_e) {
+    } catch {
       if (e && typeof e === 'object') {
         const err = e as { message?: string };
         expect(toast).toHaveBeenCalledWith({

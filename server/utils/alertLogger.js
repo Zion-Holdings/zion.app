@@ -1,5 +1,5 @@
 const fs = require('fs');
-const path = require('path');
+const _path = require('path');
 const sgMail = require('@sendgrid/mail');
 
 const logDir = path.resolve(__dirname, '..', 'logs');

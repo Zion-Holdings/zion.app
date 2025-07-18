@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 
 interface CacheStats {
-  _keys: number;
+  keys: number;
   hits: number;
   misses: number;
 }
@@ -69,7 +69,7 @@ const MetricCard: React.FC<{ title: string; value: string | number; status?: str
   </div>
 );
 
-const _DevelopmentDashboard: React.FC = () => {
+const DevelopmentDashboard: React.FC = () => {
   const [data, setData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -101,14 +101,14 @@ const _DevelopmentDashboard: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const formatBytes = (_bytes: number) => {
+  const formatBytes = (bytes: number) => {
     const sizes = ['Bytes', 'KB', 'MB', 'GB'];
     if (bytes === 0) return '0 Bytes';
     const i = Math.floor(Math.log(bytes) / Math.log(1024));
     return Math.round(bytes / Math.pow(1024, i) * 100) / 100 + ' ' + sizes[i];
   };
 
-  const formatUptime = (_seconds: number) => {
+  const formatUptime = (seconds: number) => {
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
     return `${hours}h ${minutes}m`;

@@ -87,7 +87,7 @@ export default function CategoryPage() {
         if (json.category?.name) {
           document.title = `${json.category.name} | Zion Marketplace`;
         }
-      } catch (_e) {
+      } catch {
         logErrorToProduction('Failed to load category items:', { data:  e });
         // Type guard for error object
         let errorName = '';

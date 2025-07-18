@@ -37,7 +37,7 @@ export default function AccountSettings() {
         setEnableBackup(enableBackup);
         logInfo('Saved settings', { displayWeb3, didHandle, enableBackup });
         toast.success('Account settings updated successfully');
-      } catch (_e) {
+      } catch {
         logErrorToProduction('Failed to save settings', { data:  e });
         toast.error('Failed to save settings');
       } finally {
