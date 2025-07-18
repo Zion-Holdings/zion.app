@@ -446,9 +446,7 @@ jest.mock('@/context', () => {
 });
 
 // Extend Vitest shim with restoreAllMocks for suites that call it
-  // @ts-expect-error vi is added by the vitest mock above - TypeScript doesn't see the mock declaration
 if (global.vi && !global.vi.restoreAllMocks) {
-  // @ts-expect-error global.vi property extension - TypeScript doesn't expect vitest globals in Jest environment
   (global.vi as unknown as Record<string, unknown>).restoreAllMocks = jest.restoreAllMocks;
 }
 
@@ -475,9 +473,10 @@ jest.mock('@/components/talent/FilterSidebar', () => ({ FilterSidebar: () => nul
 // Extend Vitest shim with timer helpers if not present
 const g: Record<string, unknown> = global as Record<string, unknown>;
 if (g.vi) {
-  if (!g.vi.useFakeTimers) g.vi.useFakeTimers = jest.useFakeTimers.bind(jest);
-  if (!g.vi.runAllTimers) g.vi.runAllTimers = jest.runAllTimers.bind(jest);
-  if (!g.vi.advanceTimersByTime) g.vi.advanceTimersByTime = jest.advanceTimersByTime.bind(jest);
+  const vi = g.vi as Record<string, unknown>;
+  if (!vi.useFakeTimers) vi.useFakeTimers = jest.useFakeTimers.bind(jest);
+  if (!vi.runAllTimers) vi.runAllTimers = jest.runAllTimers.bind(jest);
+  if (!vi.advanceTimersByTime) vi.advanceTimersByTime = jest.advanceTimersByTime.bind(jest);
 }
 
 // -----------------------------
@@ -549,10 +548,8 @@ jest.mock('@/context/auth/AuthContext', () => {
 // ---------------------------------------------------------------------------
 // Simple Vitest global shim for suites still using `vi`
 // ---------------------------------------------------------------------------
-// @ts-expect-error Add vi globally for legacy tests
 if (typeof global.vi === 'undefined') {
-  // @ts-expect-error assign
-  global.vi = {
+  (global as any).vi = {
     fn: jest.fn,
     spyOn: jest.spyOn.bind(jest),
     mock: jest.mock.bind(jest),
