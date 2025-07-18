@@ -114,18 +114,17 @@ export default async function handler(
       },
       lastUpdated: new Date().toISOString(),
     });
-  } catch {
+  } catch (error) {
     logErrorToProduction('Error reading logs:', error);
     return res.status(500).json({ 
       message: 'Internal Server Error',
       logs: [],
-      statistics: {
-        errorCount: 0,
-        warningCount: 0,
-        totalCount: 0,
-        filteredCount: 0,
-      },
+      errorCount: 0,
+      warningCount: 0,
+      totalCount: 0,
       lastUpdated: new Date().toISOString(),
+      categories: [],
+      sources: []
     });
   }
 } 

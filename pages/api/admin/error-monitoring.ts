@@ -44,7 +44,7 @@ export default async function handler(
     
     res.status(500).json({
       success: false,
-      message: 'Internal server error',
+      error: 'Internal server error',
       timestamp
     });
   }
@@ -71,7 +71,7 @@ async function handleGet(
           },
           timestamp
         });
-      } catch {
+      } catch (error) {
         logErrorToProduction('Error generating error report:', error);
         res.status(500).json({
           success: false,
@@ -95,7 +95,7 @@ async function handleGet(
           },
           timestamp
         });
-      } catch {
+      } catch (error) {
         logErrorToProduction('Error getting system health:', error);
         res.status(500).json({
           success: false,
@@ -124,7 +124,7 @@ async function handleGet(
           },
           timestamp
         });
-      } catch {
+      } catch (error) {
         // Log and handle dashboard data retrieval errors gracefully
         logErrorToProduction('Error getting dashboard data:', error);
         res.status(500).json({
@@ -167,7 +167,7 @@ async function handleGet(
           },
           timestamp
         });
-      } catch {
+      } catch (error) {
         logErrorToProduction('Error getting comprehensive monitoring data:', error);
         res.status(500).json({
           success: false,
@@ -226,7 +226,7 @@ async function handlePost(
           },
           timestamp
         });
-      } catch {
+      } catch (error) {
         logErrorToProduction('Error creating test error:', error);
         res.status(500).json({
           success: false,
@@ -250,7 +250,7 @@ async function handlePost(
           },
           timestamp
         });
-      } catch {
+      } catch (error) {
         logErrorToProduction('Error triggering health check:', error);
         res.status(500).json({
           success: false,
@@ -276,7 +276,7 @@ async function handlePost(
           },
           timestamp
         });
-      } catch {
+      } catch (error) {
         logErrorToProduction('Error clearing old logs:', error);
         res.status(500).json({
           success: false,
