@@ -1,5 +1,5 @@
-import axios from 'axios''';
-import { logErrorToProduction } from '@/utils/productionLogger''';
+import axios from 'axios';
+import { logErrorToProduction } from '@/utils/productionLogger';
 export const getWallet = async () => {
   try {
     const res = await axios.get('/api/wallet')''

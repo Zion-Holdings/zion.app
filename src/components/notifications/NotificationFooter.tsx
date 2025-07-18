@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Button } from '@/components/ui/button;'';
+import React from 'react';;
+import { Button } from '@/components/ui/button;;
 import { useRouter } from 'next/router;'
 ;''
 interface NotificationFooterProps {;;
   onClose: "() => void;";"
 };
-;
+
 ;""
   const router: unknown = useRouter(); // Changed from useNavigate to useRouter;";""
 ;";";""

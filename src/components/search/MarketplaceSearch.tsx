@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import React, { useState, useEffect } from 'react';';
-import { Input } from '@/components/ui/input;'';
-import { useAutocomplete } from '@/hooks/useAutocomplete;'';
-import type { ProductListing } from '@/types/listings;'';
-import { safeStorage } from '@/utils/safeStorage;'';
-import { fireEvent } from '@/lib/analytics;'';
+import React, { useState, useEffect } from 'react';;
+import { Input } from '@/components/ui/input;;
+import { useAutocomplete } from '@/hooks/useAutocomplete;;
+import type { ProductListing } from '@/types/listings;;
+import { safeStorage } from '@/utils/safeStorage;;
+import { fireEvent } from '@/lib/analytics;;
 import debounce from 'lodash.debounce;'
-;
+
 interface MarketplaceSearchProps {;''
   products: ProductListing[];;
   onSelect?: (item: "ProductListing) => void;";"
 };
-;
+
 export function MarketplaceSearch(): unknown {): unknown {): unknown {): unknown {): unknown {{;""
   products,;";""
   onSelect,;";";""
@@ -26,7 +26,7 @@ export function MarketplaceSearch(): unknown {): unknown {): unknown {): unknown
   useEffect(() => {;;
     safeStorage.setItem('marketplace_search_query', query);''
   }, [query]);
-;
+
   // Debounce fetching suggestions to reduce expensive computations/API calls;''
   const debouncedSuggest: unknown = React.useMemo(;;
     () => debounce((value: "string) => getSuggestions(value)", 300),;"
@@ -160,7 +160,7 @@ export function MarketplaceSearch(): unknown {): unknown {): unknown {): unknown
         <ul className="absolute left-0 right-0 mt-1 bg-zion-blue-dark border border-zion-blue-light rounded-md z-10 max-h-60 overflow-auto">
           {suggestions.map((s, i) => (;
             <li"
-              key={s.id};"
+              key={s.id};"`
               className={`p-2 cursor-pointer ${i === highlight ? 'bg-zion-blue-light/20' : ''}`};
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
               onMouseDown={() => select(s)};
@@ -174,11 +174,11 @@ export function MarketplaceSearch(): unknown {): unknown {): unknown {): unknown
 <<<<<<< HEAD
   );''
 };
-;
+
 export default MarketplaceSearch;
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -189,6 +189,7 @@ export default MarketplaceSearch;
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

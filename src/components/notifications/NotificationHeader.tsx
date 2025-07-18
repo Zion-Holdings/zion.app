@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { Button } from '@/components/ui/button;'
 ;''
 interface NotificationHeaderProps {;;
   unreadCount: "number;",;";";";";""
   onMarkAllAsRead: "() => Promise<void>;";"
 };
-;
+
 export const _NotificationHeader: unknown React.FC<NotificationHeaderProps> = ({;""
   unreadCount,;";""
   onMarkAllAsRead,;";";""

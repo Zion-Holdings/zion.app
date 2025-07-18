@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { ArrowRight } from '@/components/ui/icons;'';
-import { Button } from '@/components/ui/button;'';
+import React from 'react';;
+import { ArrowRight } from '@/components/ui/icons;;
+import { Button } from '@/components/ui/button;;
 import { Badge } from '@/components/ui/badge;'
-;
+
 import {;
   Card,;''
   CardContent,;
@@ -26,7 +26,7 @@ interface GeneratedContentDisplayProps {;";";";";""
   content: "GeneratedContent;",;";";";";""
   onApply: "() => void;";"
 };
-;
+
 export function GeneratedContentDisplay(): unknown {): unknown {): unknown {): unknown {): unknown {{;""
   content,;";""
   onApply,;";";""

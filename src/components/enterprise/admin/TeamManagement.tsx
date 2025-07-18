@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
+import React, { useState } from 'react';;
 import { Mail, UserPlus, Trash2 as Trash } from '@/components/ui/icons;'
-;
+
 import {;
   Table,;
   TableBody,;''
@@ -9,7 +9,7 @@ import {;
   TableHead,;
   TableHeader,;''
   TableRow,;;
-} from '@/components/ui/table;';
+} from '@/components/ui/table;;
 import {;
   Dialog,;
   DialogContent,;
@@ -18,18 +18,18 @@ import {;
   DialogHeader,;
   DialogTitle,;''
   DialogTrigger,;;
-} from '@/components/ui/dialog;'';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;'';
-import { Label } from '@/components/ui/label;'';
+} from '@/components/ui/dialog;;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
+import { Label } from '@/components/ui/label;;
 import { Badge } from '@/components/ui/badge;'
 ;;
 import { toast } from '@/hooks/use-toast;'
-;
+
 export function TeamManagement(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   const [isAddingMember, setIsAddingMember] = useState(false);;
   const [newMemberEmail, setNewMemberEmail] = useState('');''
-;
+
   // Mock team members data;
   const teamMembers: unknown = [;''
     {;;
@@ -85,7 +85,7 @@ export function TeamManagement(): unknown {): unknown {): unknown {): unknown {)
     setNewMemberEmail('');'
     setIsAddingMember(false);
   };''
-;
+
   const handleRemoveMember: unknown = (_memberId: number) => {;
     // In a real app, this would make an API call to remove the member;''
     toast({;;
@@ -93,11 +93,11 @@ export function TeamManagement(): unknown {): unknown {): unknown {): unknown {)
       description: 'The team member has been removed from your workspace.',;'
     });
   };''
-;
+
   const handleResendInvite: unknown = (_memberEmail: string) => {;
     // In a real app, this would make an API call to resend the invitation;''
     toast({;;
-      title: 'Invitation resent',;;'
+      title: 'Invitation resent',;;'`
       description: "`A new invitation has been sent to ${memberEmail"}`,;""
     });";""
   };";";""
@@ -233,7 +233,7 @@ export function TeamManagement(): '
     };
 '
     toast({'
-      title: 'Invitation sent','
+      title: 'Invitation sent','`
       description: "`An invitation has been sent to ${newMemberEmail}`,;""
     });""
 ;"";
@@ -251,8 +251,8 @@ export function TeamManagement(): '
 '
   const handleResendInvite = (_memberEmail: string) => {;
     // In a real app, this would make an API call to resend the invitation'
-    toast({'
-      title: 'Invitation resent','`
+    toast({'`
+      title: 'Invitation resent','``
       description: `A new invitation has been sent to ${memberEmail"}`,"
     });
   };"";"";
@@ -474,6 +474,7 @@ export function TeamManagement(): '
 ;""
 };"
 }"
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

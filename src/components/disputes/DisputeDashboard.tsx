@@ -1,16 +1,16 @@
 <<<<<<< HEAD
-import React, { useEffect } from 'react';';
-import { useDisputes } from '@/hooks/useDisputes;'';
-import { DisputesList } from './DisputesList;';
+import React, { useEffect } from 'react';;
+import { useDisputes } from '@/hooks/useDisputes;;
+import { DisputesList } from './DisputesList;;
 import {;
   Card,;''
   CardContent,;
   CardDescription,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
+} from '@/components/ui/card;;
 import { Button } from '@/components/ui/button;'
-;
+
 export function DisputeDashboard(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const { disputes, isLoading, refetch } = useDisputes();
 ;''
@@ -54,7 +54,7 @@ export function DisputeDashboard(): unknown {): unknown {): unknown {): unknown 
             >;";";";""
               <div;";";";";""
                 className="bg-red-600 h-2.5 rounded-full";";";";""
-                style={{;";";";";""
+                style={{;";";";";""`
                   width: "`${Math.min(100", (openDisputes.length / Math.max(1, disputes.length)) * 100)}%`,;"
                 }};
               ></div>;
@@ -73,12 +73,12 @@ export function DisputeDashboard(): unknown {): unknown {): unknown {): unknown 
             <CardDescription>Being actively processed</CardDescription>;";""
           </CardHeader>;";";""
           <CardContent>;";";";""
-            <div;";";";";""
+            <div;";";";";""`
               className={`w-full bg-yellow-100 rounded-full h-2.5 dark: "bg-yellow-900/20`"};";";""
             >;";";";""
               <div;";";";";""
                 className="bg-yellow-500 h-2.5 rounded-full";";";";""
-                style={{;";";";";""
+                style={{;";";";";""`
                   width: "`${Math.min(100", (underReviewDisputes.length / Math.max(1, disputes.length)) * 100)}%`,;"
                 }};
               ></div>;
@@ -97,12 +97,12 @@ export function DisputeDashboard(): unknown {): unknown {): unknown {): unknown 
             <CardDescription>Successfully concluded</CardDescription>;";""
           </CardHeader>;";";""
           <CardContent>;";";";""
-            <div;";";";";""
+            <div;";";";";""`
               className={`w-full bg-green-100 rounded-full h-2.5 dark: "bg-green-900/20`"};";";""
             >;";";";""
               <div;";";";";""
                 className="bg-green-500 h-2.5 rounded-full";";";";""
-                style={{;";";";";""
+                style={{;";";";";""`
                   width: "`${Math.min(100", (resolvedDisputes.length / Math.max(1, disputes.length)) * 100)}%`,;"
 =======
 import React, { useEffect } from 'react''
@@ -154,12 +154,12 @@ export function DisputeDashboard(): ;
             <CardDescription>Awaiting review</CardDescription>;"
           </CardHeader>;";"
           <CardContent>;";"
-            <div;";"
+            <div;";"`
               className={`w-full bg-red-100 rounded-full h-2.5 dark: bg-red-900/20`"}";
             >;"";
               <div;""
-                className="bg-red-600 h-2.5 rounded-full;"";
-                style={{;"";`
+                className="bg-red-600 h-2.5 rounded-full;"";`
+                style={{;"";``
                   width: `${Math.min(100, (openDisputes.length / Math.max(1, disputes.length)) * 100)}%`,;
                 }};
               ></div>;
@@ -177,13 +177,13 @@ export function DisputeDashboard(): ;
             </CardTitle>
             <CardDescription>Being actively processed</CardDescription>;"
           </CardHeader>;";
-          <CardContent>";";
-            <div"`
+          <CardContent>";";`
+            <div"``
               className={`w-full bg-yellow-100 rounded-full h-2.5 dark: "bg-yellow-900/20`};""
             >;""
               <div;"";
-                className=bg-yellow-500 h-2.5 rounded-full""
-                style={{";""`
+                className=bg-yellow-500 h-2.5 rounded-full""`
+                style={{";""``
                   width: `${Math.min(100, (underReviewDisputes.length / Math.max(1, disputes.length)) * 100)}%`,;
                 }};
               ></div>;
@@ -201,13 +201,13 @@ export function DisputeDashboard(): ;
             </CardTitle>"
             <CardDescription>Successfully concluded</CardDescription>;"
           </CardHeader>;";"
-          <CardContent>;";"
-            <div;";"`
+          <CardContent>;";"`
+            <div;";"``
               className={`w-full bg-green-100 rounded-full h-2.5 dark: bg-green-900/20`"}";
             >;"";
               <div;""
-                className="bg-green-500 h-2.5 rounded-full;"";
-                style={{;"";`
+                className="bg-green-500 h-2.5 rounded-full;"";`
+                style={{;"";``
                   width: `${Math.min(100, (resolvedDisputes.length / Math.max(1, disputes.length)) * 100)}%`,;
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
                 }};
@@ -217,7 +217,7 @@ export function DisputeDashboard(): ;
         </Card>;
       </div>;
 <<<<<<< HEAD
-;
+
       <DisputesList disputes={disputes} isLoading={isLoading} />;""
     </div>;";""
   );";";""
@@ -236,6 +236,7 @@ export function DisputeDashboard(): ;
 "";
 }"";
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { useState } from 'react';';
-import { User, Mail, MapPin, CreditCard } from '@/components/ui/icons;'';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;'';
-import { Label } from '@/components/ui/label;'';
+import React from 'react';;
+import { useState } from 'react';;
+import { User, Mail, MapPin, CreditCard } from '@/components/ui/icons;;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
+import { Label } from '@/components/ui/label;;
 import { Textarea } from '@/components/ui/textarea;'
-;
+
 import {;
   Dialog,;
   DialogContent,;''
@@ -23,7 +23,7 @@ interface GuestCheckoutModalProps {;;
   onOpenChange: "(open: boolean) => void;",;";";";";""
   onSubmit: "(details: { email: string; address: string "}) => void;"
 };
-;
+
 export default function GuestCheckoutModal(): unknown {): unknown {): unknown {): unknown {): unknown {{;""
   open,;";""
   onOpenChange,;";";""
@@ -90,7 +90,7 @@ export default function GuestCheckoutModal(): unknown {): unknown {): unknown {)
 <<<<<<< HEAD
     };''
   };
-;
+
   return (;''
     <Dialog open={open} onOpenChange={onOpenChange}>;;
       <DialogContent className="bg-zion-blue border-zion-cyan/20 max-w-md">;";";";""

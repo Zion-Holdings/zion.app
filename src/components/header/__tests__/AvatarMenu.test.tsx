@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { render, screen, fireEvent } from '@testing-library/react;'';
-import '@testing-library/jest-dom;'';
-import { vi } from 'vitest;'';
-import UserProfileDropdown from '../UserProfileDropdown;'';
-import { useAuth } from '@/hooks/useAuth;'';
+import React from 'react';;
+import { render, screen, fireEvent } from '@testing-library/react;;
+import '@testing-library/jest-dom;;
+import { vi } from 'vitest;;
+import UserProfileDropdown from '../UserProfileDropdown;;
+import { useAuth } from '@/hooks/useAuth;;
 import type { AuthContextType } from '@/types/auth;'
 ;''
 // Mock react-router-dom;;
@@ -19,12 +19,12 @@ vi.mock('react-router-dom', () => ({;;'
 }));";";""
 ;";";";""
 // Mock useAuth hook;";";";";""
-vi.mock('@/hooks/useAuth');';
+vi.mock('@/hooks/useAuth');;
 const mockedUseAuth: unknown = useAuth as vi.MockedFunction<typeof useAuth>;''
 ;;
 describe('UserProfileDropdown', () => {;'
   const mockLogout: unknown = vi.fn();
-;
+
   afterEach(() => {;''
     mockLogout.mockClear();
     // Clear all mocks if necessary, e.g., (useNavigate as vi.Mock).mockClear();
@@ -72,14 +72,14 @@ describe('UserProfileDropdown', () => {;'
 ;''
     // Dropdown should be hidden initially;;
     expect(screen.queryByText('Profile')).not.toBeInTheDocument();'
-;
+
     // Click to open;''
     fireEvent.click(avatarButton);;
     expect(screen.getByText('Profile')).toBeInTheDocument();;'
     expect(screen.getByText('Orders')).toBeInTheDocument();;'
     expect(screen.getByText('Wallet')).toBeInTheDocument();;'
     expect(screen.getByText('Logout')).toBeInTheDocument();'
-;
+
     // Click to close;''
     fireEvent.click(avatarButton);;
     expect(screen.queryByText('Profile')).not.toBeInTheDocument();'
@@ -122,7 +122,7 @@ describe('UserProfileDropdown', () => {;'
 ;;
     const logoutButton: unknown = screen.getByText('Logout');'
     fireEvent.click(logoutButton);''
-;
+
     expect(mockLogout).toHaveBeenCalledTimes(1);
   });''
 ;;
@@ -192,7 +192,7 @@ describe('UserProfileDropdown', () => {'
 '
   it('does not render when user is not logged in (component itself handles this via Header.tsx logic, so this test might be redundant here, but good for direct testing if component had its own user check)', () => {'
     // Note: UserProfileDropdown itself doesn't conditionally render based on user prop directly.'
-    // Its parent component (Header.tsx) does. If testing Header.tsx, that's where this check is more relevant.'
+    // Its parent component (Header.tsx) does. If testing Header.tsx, that's where this check is more relevant.'`
     // For this component, if it were to receive a `user` prop or similar, this test would be different.'
     // Assuming it always renders if included by parent.'
     // To truly test "does not render, we'd need to test its parent or ensure it returns null.'
@@ -294,6 +294,7 @@ describe('UserProfileDropdown', () => {'
     fireEvent.mouseDown(screen.getByTestId('outside-element')); // Click outside'
     expect(screen.queryByText('Profile')).not.toBeInTheDocument()'
   });
-})'
+})'`
 '''''';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

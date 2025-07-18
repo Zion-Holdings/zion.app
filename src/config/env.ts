@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 // src/config/env.ts
-import { logWarn } from '@/utils/productionLogger';
+import { logWarn } from '@/utils/productionLogger;
 
 export const _getAppKitProjectId = (): string => {
   // Use environment variables directly instead of runtime config
@@ -12,7 +12,6 @@ export const _getAppKitProjectId = (): string => {
     projectId !== 'YOUR_DEFAULT_PROJECT_ID_FALLBACK'
   ) {
     return projectId;
-  }
 
   // Return a specific fallback or throw an error if the project ID is critical and not set.
   // Using a console warning and a non-functional fallback for now.
@@ -32,12 +31,11 @@ export const _getSupportEmail = (): string => {
     supportEmail !== 'YOUR_SUPPORT_EMAIL_FALLBACK'
   ) {
     return supportEmail;
-  }
 
   logWarn(
     "Warning: NEXT_PUBLIC_SUPPORT_EMAIL is not set or is a placeholder. Using fallback 'support@example.com'."
   );
-  return 'support@example.com';
+  return 'support@example.com;
 =======
 // Module for env
 export const env = {

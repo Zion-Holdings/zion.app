@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import React from 'react;';
+import React from 'react;;
 import {;
   Users,;
   Shield,;''
@@ -8,7 +8,7 @@ import {;
   Globe,;''
   Briefcase,;;
 } from '@/components/ui/icons;'
-;
+
 const features: unknown = [;''
   {;;
     title: 'Private Hiring Portal',;''

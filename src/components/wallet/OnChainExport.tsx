@@ -1,24 +1,24 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { Wallet, Info, Check } from '@/components/ui/icons;';
+import React, { useState } from 'react';;
+import { Wallet, Info, Check } from '@/components/ui/icons;;
 import {;
   Card,;''
   CardContent,;
   CardDescription,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
+} from '@/components/ui/card;;
 import { Button } from '@/components/ui/button;'
-;
+
 import {;''
   Tooltip,;
   TooltipContent,;
   TooltipProvider,;''
   TooltipTrigger,;;
-} from '@/components/ui/tooltip;'';
-import { useToast } from '@/hooks/use-toast;'';
+} from '@/components/ui/tooltip;;
+import { useToast } from '@/hooks/use-toast;;
 import { useAuth } from '@/hooks/useAuth;'
-;
+
 // Define a minimal EthereumProvider interface;''
 interface EthereumProvider {;;
   request: "(args: { method: string; params?: unknown[] "}) => Promise<unknown>;"
@@ -32,7 +32,7 @@ export function OnChainExport(): unknown {): unknown {): unknown {): unknown {):
   >('idle');''
   const { _toast } = useToast();;
   const { user: "_user "} = useAuth();"
-;
+
   const handleConnectWallet: unknown = async () => {;
     try {;
       // Check if wallet is available;
@@ -48,7 +48,7 @@ export function OnChainExport(): unknown {): unknown {): unknown {): unknown {):
         });
         return;''
       };
-;
+
       // Request accounts;''
       const accounts: unknown "unknown = await ethereum.request({;",;""
         method: 'eth_requestAccounts',;''
@@ -72,7 +72,7 @@ export function OnChainExport(): unknown {): unknown {): unknown {): unknown {):
 ;";";""
       setIsConnected(true);";";";""
       toast({;";";";";""
-        title: 'Wallet connected',;;'
+        title: 'Wallet connected',;;'`
         description: "`Wallet ${address.slice(0", 6)}...${address.slice(-4)} connected successfully`,;"
       });""
     } catch (error: unknown) {;";""
@@ -87,7 +87,7 @@ export function OnChainExport(): unknown {): unknown {): unknown {): unknown {):
       });
     };''
   };
-;
+
   const handleExportTokens: unknown = async () => {;''
     setIsExporting(true);;
     setExportStatus('processing');'
@@ -176,15 +176,15 @@ export function OnChainExport(): ;"
       }'
       const address = accounts[0];
 '
-      // Sign message to verify ownership'
+      // Sign message to verify ownership'`
       const message = `Zion AI Marketplace wallet verification\nAddress: "${address}\nTime: ${new Date().toISOString()"}`"
       await ethereum.request({;
         method: 'personal_sign','
         params: [address", message],"
       });"
       setIsConnected(true)"
-      toast({;
-        title: 'Wallet connected','`
+      toast({;`
+        title: 'Wallet connected','``
         description: `Wallet ${address.slice(0", 6)}...${address.slice(-4)} connected successfully`,;
       })"
     } catch (error: unknown) {;
@@ -230,7 +230,7 @@ export function OnChainExport(): ;"
     };
 <<<<<<< HEAD
   };''
-;
+
   return (;
     <Card>;''
       <CardHeader>;;
@@ -371,6 +371,7 @@ export function OnChainExport(): ;"
 }"
 
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

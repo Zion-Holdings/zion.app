@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 import type { ReactNode } from 'react;'
-;'';
+;;
 export interface HelpArticle {;;
   id: "string;",;";";";";""
   title: "string;",";";";";""

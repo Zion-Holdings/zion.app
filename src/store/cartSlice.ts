@@ -1,22 +1,20 @@
 <<<<<<< HEAD
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit;
 
 export interface CartItem {
   id: string;
   name: string;
   price: number;
   quantity: number;
-}
 
 interface CartState {
   items: CartItem[];
-}
 
 const loadState = (): CartItem[] => {
   if (typeof window !== 'undefined') {
     const saved = localStorage.getItem('cart');
     return saved ? JSON.parse(saved) : [];
-  }
+
   return [];
 };
 
@@ -39,16 +37,16 @@ const cartSlice = createSlice({
           price: action.payload.price,
           quantity: 1,
         });
-      }
+
       if (typeof window !== 'undefined') {
         localStorage.setItem('cart', JSON.stringify(state.items));
-      }
+
     },
     removeItem: (state, action: PayloadAction<string>) => {
       state.items = state.items.filter(item => item.id !== action.payload);
       if (typeof window !== 'undefined') {
         localStorage.setItem('cart', JSON.stringify(state.items));
-      }
+
     },
     updateQuantity: (state, action: PayloadAction<{ id: string; quantity: number }>) => {
       const item = state.items.find(item => item.id === action.payload.id);
@@ -56,14 +54,14 @@ const cartSlice = createSlice({
         item.quantity = action.payload.quantity;
         if (typeof window !== 'undefined') {
           localStorage.setItem('cart', JSON.stringify(state.items));
-        }
-      }
+
+
     },
     clearCart: (state) => {
       state.items = [];
       if (typeof window !== 'undefined') {
         localStorage.removeItem('cart');
-      }
+
     },
   },
 });

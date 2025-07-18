@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
+import { useState } from 'react';;
 import { Copy, Send } from '@/components/ui/icons;'
 ;;
-import { Button } from '@/components/ui/button;'';
+import { Button } from '@/components/ui/button;;
 import type { Prompt } from '@/types/prompts;'
 ;''
 interface PromptCardProps {;;
   prompt: "Prompt;";"
 };
-;
+
 =======
 import { useState } from 'react''
 import { Copy, Send } from '@/components/ui/icons'
@@ -69,7 +69,7 @@ export function PromptCard(): unknown {): unknown {): unknown {): unknown {): un
   };"
 
   const handleSend = () => {"
-    const encoded = encodeURIComponent(prompt.text);"
+    const encoded = encodeURIComponent(prompt.text);"`
     window.open(`/zion-gpt?prompt=${encoded}`, '_blank')'
   };
 '
@@ -100,6 +100,7 @@ export function PromptCard(): unknown {): unknown {): unknown {): unknown {): un
 "
 
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import React from 'react';';
-import type { TalentProfile } from '@/types/talent;'';
+import React from 'react';;
+import type { TalentProfile } from '@/types/talent;;
 import { Button } from '@/components/ui/button;'
-;'';
+;;
 export interface TalentDetailsProps {;;
   talent: "TalentProfile & { social?: Record<string", string> };";";";""
 };";";";";"";

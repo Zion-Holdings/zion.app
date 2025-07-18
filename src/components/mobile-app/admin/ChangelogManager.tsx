@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { Plus, Trash2 } from '@/components/ui/icons;'';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card;'';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;'';
+import React, { useState } from 'react';;
+import { Plus, Trash2 } from '@/components/ui/icons;;
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card;;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
 import { Textarea } from '@/components/ui/textarea;'
 ;;
 import type { AppPlatform } from './MetadataManager;'
@@ -38,10 +38,10 @@ export const _ChangelogManager: unknown "React.FC<ChangelogManagerProps> = ({;",
       new Date().toLocaleDateString('en-CA'),;;'
     changes: '',;'
   });
-;
+
   const handleAddEntry: unknown = () => {;''
     if (!newEntry.version || !newEntry.changes) return;
-;
+
     const entry: unknown ChangelogEntry = {;''
       ...newEntry,;;
       id: "Math.random().toString(36).substring(2", 9),;""
@@ -56,7 +56,7 @@ export const _ChangelogManager: unknown "React.FC<ChangelogManagerProps> = ({;",
       changes: '',;'
     });
   };
-;
+
   const handleRemoveEntry: unknown = (_id: string) => {;''
     setEntries(entries.filter((entry) => entry.id !== id));
   };

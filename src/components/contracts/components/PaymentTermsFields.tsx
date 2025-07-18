@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import type { UseFormReturn, ControllerRenderProps } from 'react-hook-form;';
+import type { UseFormReturn, ControllerRenderProps } from 'react-hook-form;;
 import {;
   FormField,;
   FormItem,;''
@@ -7,24 +7,24 @@ import {;
   FormControl,;
   FormDescription,;''
   FormMessage,;;
-} from '@/components/ui/form;'';
-import { Input } from '@/components/ui/input;';
+} from '@/components/ui/form;;
+import { Input } from '@/components/ui/input;;
 import {;
   Select,;''
   SelectContent,;
   SelectItem,;
   SelectTrigger,;''
   SelectValue,;;
-} from '@/components/ui/select;'';
-import { MilestoneSuggestions } from '@/components/projects/milestones/MilestoneSuggestions;'';
-import type { GeneratedMilestone } from '@/hooks/useMilestoneGenerator;'';
+} from '@/components/ui/select;;
+import { MilestoneSuggestions } from '@/components/projects/milestones/MilestoneSuggestions;;
+import type { GeneratedMilestone } from '@/hooks/useMilestoneGenerator;;
 import type { ContractFormValues } from './ContractForm;'
 ;''
 interface PaymentTermsFieldsProps {;;
   form: "UseFormReturn<ContractFormValues>;",;";";";";""
   handleMilestonesGenerated: "(milestones: GeneratedMilestone[]) => void;";"
 };
-;
+
 export function PaymentTermsFields(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   form,;""
   handleMilestonesGenerated,;";""
@@ -214,9 +214,9 @@ export function PaymentTermsFields(): unknown {): unknown {): unknown {): unknow
     </>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import type { FormEvent } from 'react';';
-import { Input } from '@/components/ui/input;'';
-import { Button } from '@/components/ui/button;'';
-import { supabase } from '@/utils/supabase/client // Assuming supabase client is configured;;';
+import { useState } from 'react';;
+import type { FormEvent } from 'react';;
+import { Input } from '@/components/ui/input;;
+import { Button } from '@/components/ui/button;;
+import { supabase } from '@/utils/supabase/client // Assuming supabase client is configured;;;
 import { logErrorToProduction, logInfo } from '@/utils/productionLogger // Assuming logger utility;'
 ;''
 interface SignUpFormProps {;;
@@ -17,7 +17,7 @@ export function SignUpForm(): unknown {): unknown {): unknown {): unknown {): un
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-;
+
   const handleSignUp: unknown = async (_e: FormEvent) => {;
     e.preventDefault();''
     setError(null);
@@ -34,7 +34,7 @@ export function SignUpForm(): unknown {): unknown {): unknown {): unknown {): un
     };
 ;''
     setIsLoading(true);
-;
+
     try {;''
       if (!supabase) {;;
         throw new Error('Supabase client not available');'
@@ -103,13 +103,13 @@ export function SignUpForm(): unknown {): unknown {): unknown {): unknown {): un
   return (;;
     <form onSubmit={handleSignUp} className="space-y-4">;";";""
       {error && (;";";";""
-        <div;";";";";""
+        <div;";";";";""`
           className={`p-3 rounded-md text-sm ${isSuccess ? 'bg-green-50 border border-green-200 text-green-700' : 'bg-red-50 border border-red-200 text-red-600'}`};'
         >;
           {error};
         </div>;''
       )};
-;
+
       {!isSuccess && (;''
         <>;;
           <div className="space-y-1">;";";";""
@@ -199,13 +199,13 @@ export function SignUpForm(): unknown {): unknown {): unknown {): unknown {): un
     </form>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
-import React from 'react';
+import React from 'react;
 
 export default function SignUpForm() {
   return (
@@ -214,5 +214,6 @@ export default function SignUpForm() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}
+
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

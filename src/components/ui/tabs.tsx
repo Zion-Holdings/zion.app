@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
+import React from 'react';;
+import * as React from 'react';;
 import * as TabsPrimitive from '@radix-ui/react-tabs;'
 ;;
 import { cn } from '@/lib/utils;'
-;
+
 const Tabs: unknown = TabsPrimitive.Root;
-;
+
 const TabsList: unknown = React.forwardRef<;
   React.ElementRef<typeof TabsPrimitive.List>,;
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>;''
@@ -81,7 +81,7 @@ const TabsContent = React.forwardRef<;
   />;
 ));''
 TabsContent.displayName = TabsPrimitive.Content.displayName;
-;
+
 export { Tabs, TabsList, TabsTrigger, TabsContent };''
 ''''''
 =======

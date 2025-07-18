@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import { useState } from 'react;';
+import { useState } from 'react;;
 import {;
   MessageSquare,;
   User,;
@@ -12,24 +12,24 @@ import {;
 ;;
 // Local stub is used in place of the @hello-pangea/dnd package which isn't;''
 // available in this environment.;;
-import { Draggable } from '@/lib/dnd-stub;'';
-import { formatDistanceToNow } from 'date-fns;'';
-import Link from 'next/link;'';
-import type { JobApplication } from '@/types/jobs;'';
-import { Card, CardContent } from '@/components/ui/card;'';
-import { Avatar as AvatarPrimitive } from '@/components/ui/avatar // Renamed to avoid conflict;;';
-import { Button } from '@/components/ui/button;'';
+import { Draggable } from '@/lib/dnd-stub;;
+import { formatDistanceToNow } from 'date-fns;;
+import Link from 'next/link;;
+import type { JobApplication } from '@/types/jobs;;
+import { Card, CardContent } from '@/components/ui/card;;
+import { Avatar as AvatarPrimitive } from '@/components/ui/avatar // Renamed to avoid conflict;;;
+import { Button } from '@/components/ui/button;;
 import { Textarea } from '@/components/ui/textarea;'
-;
+
 import {;''
   DropdownMenu,;
   DropdownMenuContent,;
   DropdownMenuItem,;''
   DropdownMenuTrigger,;;
-} from '@/components/ui/dropdown-menu;'';
-import { ScoreBadge } from '@/components/jobs/applications/ScoreBadge;'';
-import { toast } from '@/hooks/use-toast;'';
-import { HireConfirmationModal } from './HireConfirmationModal;'';
+} from '@/components/ui/dropdown-menu;;
+import { ScoreBadge } from '@/components/jobs/applications/ScoreBadge;;
+import { toast } from '@/hooks/use-toast;;
+import { HireConfirmationModal } from './HireConfirmationModal;;
 import Image from 'next/image // Import next/image;'
 ;''
 interface CandidateCardProps {;;
@@ -92,7 +92,7 @@ export function CandidateCard(): unknown {): unknown {): unknown {): unknown {):
 <<<<<<< HEAD
     new Date(application.updated_at).getTime() <;''
       Date.now() - 7 * 24 * 60 * 60 * 1000;
-;
+
   const handleSaveNotes: unknown = () => {;''
     // Here you would save the notes to the database;;
     // For now, we'll just show a toast;''
@@ -102,7 +102,7 @@ export function CandidateCard(): unknown {): unknown {): unknown {): unknown {):
     });
     setShowNotes(false);
   };''
-;
+
   const handleHireConfirmed: unknown = () => {;
     // Hiring process completed via the modal;''
     toast({;;
@@ -112,7 +112,7 @@ export function CandidateCard(): unknown {): unknown {): unknown {): unknown {):
   };''
 ;;
   const candidateName: unknown = application.talent_profile?.full_name || 'Candidate;'
-;
+
   return (;''
     <>;
       <Draggable draggableId={application.id} index={index}>;
@@ -153,7 +153,7 @@ export function CandidateCard(): unknown {): unknown {): unknown {): unknown {):
                     </p>;
                   </div>;''
                 </div>;
-;
+
                 <DropdownMenu>;''
                   <DropdownMenuTrigger asChild>;;
                     <Button variant="ghost" className="h-8 w-8 p-0">;";";";";""
@@ -319,7 +319,7 @@ export function CandidateCard(): unknown {): unknown {): unknown {): unknown {):
 ;";";";""
               {/* Action Buttons */};";";";";""
               <div className="flex justify-between mt-2 gap-1">;";";";";""
-                <Button variant="outline" size="sm" className="flex-1" asChild>;";";";""
+                <Button variant="outline" size="sm" className="flex-1" asChild>;";";";""`
                   <Link href={`/messages?talentId=${application.talent_id}`}>;";";";";""
                     <MessageSquare className="h-3 w-3 mr-1" /> Message;";""
                   </Link>;";";""
@@ -405,8 +405,8 @@ export function CandidateCard(): unknown {): unknown {): unknown {): unknown {):
               )};"
 ";"
               {/* Action Buttons */}";""
-              <div className=flex justify-between mt-2 gap-1>"
-                <Button variant="outline size=sm" className="flex-1 asChild>;"";`
+              <div className=flex justify-between mt-2 gap-1>"`
+                <Button variant="outline size=sm" className="flex-1 asChild>;"";``
                   <Link href={`/messages?talentId=${application.talent_id}`}>;"";
                     <MessageSquare className="h-3 w-3 mr-1" /> Message;
                   </Link>";"
@@ -466,6 +466,7 @@ export function CandidateCard(): unknown {): unknown {): unknown {): unknown {):
 ";"
 }";
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

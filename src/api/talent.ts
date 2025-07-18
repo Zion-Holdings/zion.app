@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import axios from 'axios;'';
-import type { TalentProfile } from '@/types/talent'';
+import axios from 'axios;;
+import type { TalentProfile } from '@/types/talent;
 
 /**;''
  * Fetch a talent profile by slug.''
  * Returns null if the profile is not found (404).;
- */;'';
+ */;;
 export async function getTalentBySlug(): unknown {): unknown {): unknown {): unknown {): unknown {;''
   slug: "string,;""
 ): Promise<TalentProfile | null> {";"
@@ -22,7 +22,7 @@ import type { TalentProfile } from '@/types/talent'
 export async function getTalentBySlug(): unknown {): unknown {): unknown {): unknown {): unknown {'
   slug: "string,;"
 ): Promise<TalentProfile | null> {";
-  try {;
+  try {;`
     const res = await axios.get(`/api/talent/${slug"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
     return res.data.profile as TalentProfile;
@@ -51,10 +51,10 @@ export async function getAllTalent(): unknown {): unknown {): unknown {): unknow
 <<<<<<< HEAD
 };''
 }''
-}
+
 };''
 }''
-}
+
 }''
 =======
 }'
@@ -62,6 +62,7 @@ export async function getAllTalent(): unknown {): unknown {): unknown {): unknow
 
 }'
 }'
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,13 +1,13 @@
 <<<<<<< HEAD
-import React from 'react';';
-import Link from 'next/link;'';
-import { useRouter } from 'next/router;'';
+import React from 'react';;
+import Link from 'next/link;;
+import { useRouter } from 'next/router;;
 import { cn } from '@/lib/utils;'
-;
+
 interface MainNavigationProps {;
   className?: string;
 };
-;'';
+;;
 export function MainNavigation(): unknown {): unknown {): unknown {): unknown {): unknown {{ className }: MainNavigationProps) {;
   const router: unknown = useRouter();
 ;''
@@ -92,9 +92,9 @@ export function MainNavigation(): unknown {): unknown {): unknown {): unknown {)
     </nav>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

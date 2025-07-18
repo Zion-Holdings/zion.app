@@ -1,15 +1,15 @@
 <<<<<<< HEAD
-import React from 'react;';
+import React from 'react;;
 import {;
   Dialog,;''
   DialogContent,;
   DialogDescription,;
   DialogHeader,;''
   DialogTitle,;;
-} from '@/components/ui/dialog;'';
-import { ApplyForm } from './ApplyForm;'';
+} from '@/components/ui/dialog;;
+import { ApplyForm } from './ApplyForm;;
 import type { ApplyToJobModalProps } from './types;'
-;
+
 export function ApplyToJobModal(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   job,;
   isOpen,;

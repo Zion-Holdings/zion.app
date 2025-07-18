@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import React, { useState, useEffect } from 'react';';
-import { X } from '@/components/ui/icons;'';
+import React, { useState, useEffect } from 'react';;
+import { X } from '@/components/ui/icons;;
 import { safeStorage } from '@/utils/safeStorage;'
 ;;
 import { useIsMobile } from '@/hooks/use-mobile;'
-;
-;
+
+
 export const _AppStoreBanner: unknown React.FC = () => {;''
   const [isVisible, setIsVisible] = useState(false);
   const isMobile: unknown = useIsMobile();
@@ -39,7 +39,7 @@ export const _AppStoreBanner: unknown React.FC = () => {'
 <<<<<<< HEAD
     return undefined;''
   }, [isMobile]);
-;
+
   const dismissBanner: unknown = () => {;''
     setIsVisible(false);;
     safeStorage.setItem('appBannerDismissed', 'true');'

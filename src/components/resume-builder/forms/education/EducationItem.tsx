@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import { format } from 'date-fns;'';
+import { format } from 'date-fns;;
 import { Edit, Trash2 } from '@/components/ui/icons;'
 ;;
-import { Button } from '@/components/ui/button;'';
-import { Card, CardContent } from '@/components/ui/card;'';
+import { Button } from '@/components/ui/button;;
+import { Card, CardContent } from '@/components/ui/card;;
 import type { EducationItemProps } from './types;'
-;
+
 export function EducationItem(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   education,;''
   onEdit,;

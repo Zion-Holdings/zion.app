@@ -47,9 +47,9 @@ export function DeveloperPortal(): ;"
                 key={tab.id};"
                 className={`inline-flex items-center px-4 py-3 border-b-2 text-sm font-medium ${;"
                   activeTab === tab.id;"
-                    ? 'text-white border-zion-purple'
-                    : 'text-zinc-500 border-transparent hover: "text-zinc-400 hover:border-zinc-700;"}`
+                    ? 'text-white border-zion-purple'`
+                    : 'text-zinc-500 border-transparent hover: "text-zinc-400 hover:border-zinc-700;"}``
                 }`};
                 onClick={() => setActiveTab(tab.id)};"
-              >;
-                <Icon size={16} className="mr-2' />;';;`
+              >;`
+                <Icon size={16} className="mr-2' />;';;``

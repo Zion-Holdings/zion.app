@@ -77,5 +77,5 @@ export const getServerSideProps: GetServerSideProps<ProfileProps> = async ({
       return (
         (reqObj as { headers?: { cookie?: string } }).headers?.cookie || ''
       );
-
-    return '';';;`
+`
+    return '';';;``

@@ -1,18 +1,18 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { Loader2, Copy, Check, Sparkles } from 'lucide-react;';
+import React, { useState } from 'react';;
+import { Loader2, Copy, Check, Sparkles } from 'lucide-react;;
 import {;
   Card,;''
   CardContent,;
   CardHeader,;
   CardTitle,;''
   CardFooter,;;
-} from '@/components/ui/card;'';
-import { Textarea } from '@/components/ui/textarea;'';
-import { Button } from '@/components/ui/button;'';
+} from '@/components/ui/card;;
+import { Textarea } from '@/components/ui/textarea;;
+import { Button } from '@/components/ui/button;;
 import { Input } from '@/components/ui/input;'
 ;;
-import { useAIContentEnhancer } from '@/hooks/useAIContentEnhancer;'';
+import { useAIContentEnhancer } from '@/hooks/useAIContentEnhancer;;
 import type { AIEnhancementOptions } from '@/hooks/useAIContentEnhancer;'
 ;''
 interface AIEnhancementPanelProps {;;
@@ -23,7 +23,7 @@ interface AIEnhancementPanelProps {;;
   showInstructions?: boolean;
   initialContent?: string;
 };
-;
+
 export function AIEnhancementPanel(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   title,;""
   defaultOptions,;";""
@@ -147,7 +147,7 @@ export function AIEnhancementPanel(): unknown {): unknown {): unknown {): unknow
             onChange={(e) => handleInputChange(e, 'context')};'
           />;''
         </div>;
-;
+
         {/* Instructions input (optional) */};''
         {showInstructions && (;;
           <div className="space-y-2">;";";";";""
@@ -161,7 +161,7 @@ export function AIEnhancementPanel(): unknown {): unknown {): unknown {): unknow
             />;
           </div>;
         )};''
-;
+
         {/* Generate button */};
         <Button;''
           onClick={handleGenerate};;

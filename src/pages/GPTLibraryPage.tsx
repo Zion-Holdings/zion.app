@@ -57,5 +57,5 @@ export default function GPTLibraryPage(): ;
               <Input;"
                 placeholder="Enter your prompt"
                 value={customPrompt};"
-                onChange={(e) => setCustomPrompt(e.target.value)};"
-                className="flex-1';';;`
+                onChange={(e) => setCustomPrompt(e.target.value)};"`
+                className="flex-1';';;``

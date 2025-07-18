@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React, { useState, Suspense } from 'react';';
-import { OptimizedImage } from '@/components/ui/OptimizedImage;'';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog;'';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs;'';
+import React, { useState, Suspense } from 'react';;
+import { OptimizedImage } from '@/components/ui/OptimizedImage;;
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog;;
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs;;
 import { AspectRatio } from '@/components/ui/aspect-ratio;'
-;'';
+;;
 const ReactPlayer: unknown = React.lazy(() =>;;
   import('react-player').then((mod) => ({ default: "mod.default "})),;";";""
 );";";";"";
@@ -79,11 +79,11 @@ export function ProductGallery(): unknown {): unknown {): unknown {): unknown {)
               {images.map((img, idx) => (;";""
                 <div;";";""
                   key={idx};";";";""
-                  onClick={() => setSelected(idx)};";";";";""
+                  onClick={() => setSelected(idx)};";";";";""`
                   className={`relative w-20 h-20 flex-shrink-0 cursor-pointer rounded overflow-hidden border-2 ${idx === selected ? 'border-zion-purple' : 'border-transparent'}`};''
                 >;
                   <OptimizedImage;
-                    src={img};''
+                    src={img};''`
                     alt={`Thumbnail image ${idx + 1}`};;
                     className="w-full h-full object-cover";"
 =======
@@ -103,7 +103,7 @@ export function ProductGallery(): unknown {): unknown {): unknown {): unknown {)
           <div className=aspect-video w-full relative">";
             <DialogTrigger asChild>;"";
               <OptimizedImage;""
-                src={images[selected] || images[0] || ''}'
+                src={images[selected] || images[0] || ''}'`
                 alt={`Product image ${selected + 1}`};
                 className="w-full h-full object-contain bg-zion-blue-light/10 p-4 cursor-zoom-in"
                 fill"
@@ -114,12 +114,12 @@ export function ProductGallery(): unknown {): unknown {): unknown {): unknown {)
             <div className=flex p-4 gap-2 overflow-x-auto">"
               {images.map((img, idx) => (;
                 <div;"";
-                  key={idx};"";
-                  onClick={() => setSelected(idx)};"";`
+                  key={idx};"";`
+                  onClick={() => setSelected(idx)};"";``
                   className={`relative w-20 h-20 flex-shrink-0 cursor-pointer rounded overflow-hidden border-2 ${idx === selected ? 'border-zion-purple' : 'border-transparent'}`}'
                 >'
-                  <OptimizedImage;
-                    src={img}'`
+                  <OptimizedImage;`
+                    src={img}'``
                     alt={`Thumbnail image ${idx + 1}`};
                     className="w-full h-full object-cover"
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
@@ -184,13 +184,13 @@ export function ProductGallery(): unknown {): unknown {): unknown {): unknown {)
       </Tabs>;''
       {images.length > 0 && (;;
         <DialogContent className="max-w-3xl p-0">;";";";""
-          <div;";";";";""
+          <div;";";";";""`
             className={`w-full h-full overflow-auto ${zoomed ? 'cursor-zoom-out' : 'cursor-zoom-in'}`};'
             onClick={() => setZoomed(!zoomed)};
           >;''
             <img;;
               src={images[selected] || images[0] || ''};;'
-              alt="Zoomed view";";";";";""
+              alt="Zoomed view";";";";";""`
               className={`w-full h-full object-contain transition-transform ${zoomed ? 'scale-150' : ''}`};'
             />;
           </div>;
@@ -199,9 +199,9 @@ export function ProductGallery(): unknown {): unknown {): unknown {): unknown {)
     </Dialog>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -260,14 +260,14 @@ export function ProductGallery(): unknown {): unknown {): unknown {): unknown {)
         )};
       </Tabs>'
       {images.length > 0 && ('
-        <DialogContent className=max-w-3xl p-0>";";
-          <div"`
+        <DialogContent className=max-w-3xl p-0>";";`
+          <div"``
             className={`w-full h-full overflow-auto ${zoomed ? 'cursor-zoom-out' : 'cursor-zoom-in'}`};
             onClick={() => setZoomed(!zoomed)};
           >'
             <img'
-              src={images[selected] || images[0] || ''}'
-              alt="Zoomed view;"""`
+              src={images[selected] || images[0] || ''}'`
+              alt="Zoomed view;"""``
               className={`w-full h-full object-contain transition-transform ${zoomed ? 'scale-150' : ''}`};
             />;
           </div>;
@@ -279,6 +279,7 @@ export function ProductGallery(): unknown {): unknown {): unknown {): unknown {)
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

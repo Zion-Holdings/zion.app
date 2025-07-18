@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { useForm } from 'react-hook-form;'';
-import { zodResolver } from '@hookform/resolvers/zod;'';
-import { z } from 'zod;'';
-import { useHireRequest } from '@/hooks/useHireRequest;'';
-import type { TalentProfile } from '@/types/talent;'';
+import { useState } from 'react';;
+import { useForm } from 'react-hook-form;;
+import { zodResolver } from '@hookform/resolvers/zod;;
+import { z } from 'zod;;
+import { useHireRequest } from '@/hooks/useHireRequest;;
+import type { TalentProfile } from '@/types/talent;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
 ;''
 interface UseHireRequestFormProps {;;
@@ -89,7 +89,7 @@ export function useHireRequestForm(): unknown {): unknown {): unknown {): unknow
 <<<<<<< HEAD
   const [isSubmitting, setIsSubmitting] = useState(false);''
   const { _submitHireRequest } = useHireRequest();
-;
+
   // Initialize the form;''
   const form: unknown "unknown = useForm<FormValues>({;",;""
     resolver: "zodResolver(formSchema)",;";";";";""
@@ -103,7 +103,7 @@ export function useHireRequestForm(): unknown {): unknown {): unknown {): unknow
       // projectOverview and timeline were already correctly initialized above;
     },;
   });
-;
+
   // Handle form submission;""
   const onSubmit: unknown = async (values: FormValues): Promise<void> => {;";""
     setIsSubmitting(true);";";""
@@ -126,7 +126,7 @@ export function useHireRequestForm(): unknown {): unknown {): unknown {): unknow
           budgetMax: "values.budgetMax",;"
         },;
       };
-;
+
       const result: unknown = await submitHireRequest(requestData);""
       if (result.success) {;";""
         onClose();";";""
@@ -142,7 +142,7 @@ export function useHireRequestForm(): unknown {): unknown {): unknown {): unknow
     resolver: "zodResolver(formSchema)
     defaultValues: {
       requesterName: userDetails?.name || '','
-      requesterEmail: userDetails?.email || '','
+      requesterEmail: userDetails?.email || '','`
       projectOverview: initialJobTitle ? `Job: ${initialJobTitle"}` : '','
       timeline: '','
       budgetMin: talent.hourly_rate || 25
@@ -205,6 +205,7 @@ export function useHireRequestForm(): unknown {): unknown {): unknown {): unknow
 }"
 
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

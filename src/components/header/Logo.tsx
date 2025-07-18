@@ -1,13 +1,13 @@
 <<<<<<< HEAD
-import React from 'react';';
-import Link from 'next/link;'';
-import { useWhitelabel } from '@/context/WhitelabelContext;'';
+import React from 'react';;
+import Link from 'next/link;;
+import { useWhitelabel } from '@/context/WhitelabelContext;;
 import { OptimizedImage } from '@/components/ui/OptimizedImage;'
-;
+
 interface LogoProps {;
   customLogo?: string;
 };
-;
+
 =======
 import React from 'react'
 import Link from 'next/link'
@@ -25,7 +25,7 @@ export function Logo(): unknown {): unknown {): unknown {): unknown {): unknown 
   const logoToUse: unknown = customLogo || (isWhitelabel ? logoUrl : null);
   // Use the white-label color if available and no specific _customColor is provided;''
   // const colorToUse: unknown = _customColor || (isWhitelabel ? primaryColor : undefined);
-;
+
   if (logoToUse) {;''
     return (;;
       <Link href="/" className="flex items-center">;";""
@@ -66,7 +66,7 @@ export function Logo(): unknown {): unknown {): unknown {): unknown {): unknown 
     return ('
       <Link href="/ className=flex items-center">";
         <OptimizedImage;""
-          src={logoToUse};""
+          src={logoToUse};""`
           alt={`${brandName} Logo`};"";
           className=h-8""
           width={32};
@@ -91,6 +91,7 @@ export function Logo(): unknown {): unknown {): unknown {): unknown {): unknown 
 ";"
 }";
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

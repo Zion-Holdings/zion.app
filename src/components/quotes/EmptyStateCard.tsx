@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { MessageSquare } from '@/components/ui/icons;'';
+import React from 'react';;
+import { MessageSquare } from '@/components/ui/icons;;
 import { Card, CardContent } from '@/components/ui/card;'
 ;''
 type EmptyStateCardProps = {;;

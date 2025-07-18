@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { useState } from 'react';';
+import React from 'react';;
+import { useState } from 'react';;
 import { BookOpen, Terminal } from '@/components/ui/icons;'
 ;;
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;;
 import {;
   Card,;''
   CardContent,;
   CardDescription,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
-import { Alert, AlertDescription } from '@/components/ui/alert;'';
+} from '@/components/ui/card;;
+import { Alert, AlertDescription } from '@/components/ui/alert;;
 import { Badge } from '@/components/ui/badge;'
 ;;
 import CodeBlock from './CodeBlock;'
@@ -99,8 +99,8 @@ export function ApiDocumentation(): unknown {): unknown {): unknown {): unknown 
               ]};''
               codeExamples={{;;
                 curl: `curl -X GET "https://api.ziontechgroup.com/v1/jobs?limit=10&category=development" \\;";";";";""
-  -H "Authorization: Bearer YOUR_API_KEY" \\;";";";";""
-  -H "Content-Type: application/json"`,;";";";";""
+  -H "Authorization: Bearer YOUR_API_KEY" \\;";";";";""`
+  -H "Content-Type: application/json"`,;";";";";""`
                 javascript: `const response: unknown = await fetch('https://api.ziontechgroup.com/v1/jobs?limit=10&category=development', {;;'
   method: 'GET',;''
   headers: {;;
@@ -108,8 +108,8 @@ export function ApiDocumentation(): unknown {): unknown {): unknown {): unknown 
     'Content-Type': 'application/json;''
   };
 });
-;'';
-const data: unknown "unknown = await response.json();`",;";""
+;;`
+const data: unknown "unknown = await response.json();`",;";""`
                 python: `import requests;";";""
 ;";";";""
 headers = {;;
@@ -122,11 +122,11 @@ response = requests.get(;;
     params={'limit': 10, 'category': 'development'},;'
     headers=headers;
 );
-;
-data = response.json();''
+
+data = response.json();''`
 print(data)`,;
               }};
-              responseExamples={{;''
+              responseExamples={{;''`
                 success: `{;;
   "data": [;";";";""
     {;";";";";""
@@ -150,7 +150,7 @@ print(data)`,;
     "total": 42,;";";";";""
     "page": 1,;";";";";""
     "limit": 10;"
-  };
+  };`
 }`,;""
               }};";""
             />;";";""
@@ -168,11 +168,11 @@ print(data)`,;
                   required: "true",;";""
                 },;";";""
               ]};";";";""
-              codeExamples={{;";";";";""
+              codeExamples={{;";";";";""`
                 curl: `curl -X GET "https://api.ziontechgroup.com/v1/jobs/job_abc123" \\;";";";";""
-  -H "Authorization: Bearer YOUR_API_KEY" \\;";";";";""
-  -H "Content-Type: application/json"`,;";";";";""
-                javascript: `const jobId: unknown = 'job_abc123;'';
+  -H "Authorization: Bearer YOUR_API_KEY" \\;";";";";""`
+  -H "Content-Type: application/json"`,;";";";";""`
+                javascript: `const jobId: unknown = 'job_abc123;;`
 const response: unknown = await fetch(\`https: "//api.ziontechgroup.com/v1/jobs/\${jobId"}\`, {;";";";";""
   method: 'GET',;''
   headers: {;;
@@ -180,8 +180,8 @@ const response: unknown = await fetch(\`https: "//api.ziontechgroup.com/v1/jobs/
     'Content-Type': 'application/json;''
   };
 });
-;'';
-const data: unknown "unknown = await response.json();`",;";""
+;;`
+const data: unknown "unknown = await response.json();`",;";""`
                 python: `import requests;";";""
 ;";";";""
 headers = {;;
@@ -194,11 +194,11 @@ response = requests.get(;;
     f'https: "//api.ziontechgroup.com/v1/jobs/{job_id"}',;'
     headers=headers;
 );
-;
-data = response.json();''
+
+data = response.json();''`
 print(data)`,;
               }};
-              responseExamples={{;''
+              responseExamples={{;''`
                 success: `{;;
   "data": {;";";";";""
     "id": "job_abc123",;";";";";""
@@ -216,7 +216,7 @@ print(data)`,;
     "created_at": "2025-05-15T10:30:00Z",;";";";";""
     "deadline": "2025-06-30T23:59:59Z",;";";";";""
     "application_count": 12;"
-  };
+  };`
 }`,;""
               }};";""
             />;";";""
@@ -272,7 +272,7 @@ print(data)`,;
                   description: 'Job deadline (ISO date string)',;'
                 },;
               ]};''
-              codeExamples={{;;
+              codeExamples={{;;`
                 curl: `curl -X POST "https://api.ziontechgroup.com/v1/jobs" \\;";";";";""
   -H "Authorization: Bearer YOUR_API_KEY" \\;";";";";""
   -H "Content-Type: application/json" \\;";";";";""
@@ -286,8 +286,8 @@ print(data)`,;
       "max": 10000,;";";";";""
       "currency": "USD";";";";""
     },;";";";";""
-    "deadline": "2025-06-30T23:59:59Z";";";";";""
-  }'`,;;'
+    "deadline": "2025-06-30T23:59:59Z";";";";";""`
+  }'`,;;'`
                 javascript: `const response: unknown = await fetch('https://api.ziontechgroup.com/v1/jobs', {;;'
   method: 'POST',;''
   headers: {;;
@@ -307,8 +307,8 @@ print(data)`,;
     deadline: '2025-06-30T23: "59:59Z;"""
   });
 });
-;'';
-const data: unknown "unknown = await response.json();`",;""
+;;`
+const data: unknown "unknown = await response.json();`",;""`
                 python: `import requests;";"";
 import json;";";""
 ;";";";""
@@ -335,11 +335,11 @@ response = requests.post(;;
     headers=headers,;
     data=json.dumps(payload);
 );
-;
-data = response.json();''
+
+data = response.json();''`
 print(data)`,;
               }};
-              responseExamples={{;''
+              responseExamples={{;''`
                 success: `{;;
   "data": {;";";";";""
     "id": "job_def456",;";";";";""
@@ -356,7 +356,7 @@ print(data)`,;
     "client_id": "user_xyz789",;";";";";""
     "created_at": "2025-05-16T14:22:10Z",;";";";";""
     "deadline": "2025-06-30T23:59:59Z";"
-  };
+  };`
 }`,;""
               }};";""
             />;";";""
@@ -391,10 +391,10 @@ print(data)`,;
                   description: 'Filter by availability status',;'
                 },;
               ]};''
-              codeExamples={{;;
+              codeExamples={{;;`
                 curl: `curl -X GET "https: "//api.ziontechgroup.com/v1/talent?skills=react",typescript" \\;";";";";""
-  -H "Authorization: Bearer YOUR_API_KEY" \\;";";";";""
-  -H "Content-Type: application/json"`,;";";";";""
+  -H "Authorization: Bearer YOUR_API_KEY" \\;";";";";""`
+  -H "Content-Type: application/json"`,;";";";";""`
                 javascript: `const response: unknown = await fetch('https: "//api.ziontechgroup.com/v1/talent?skills=react",typescript', {;;'
   method: 'GET',;''
   headers: {;;
@@ -402,8 +402,8 @@ print(data)`,;
     'Content-Type': 'application/json;''
   };
 });
-;'';
-const data: unknown "unknown = await response.json();`",;";""
+;;`
+const data: unknown "unknown = await response.json();`",;";""`
                 python: `import requests;";";""
 ;";";";""
 headers = {;;
@@ -416,11 +416,11 @@ response = requests.get(;;
     params={'skills': 'react,typescript'},;'
     headers=headers;
 );
-;
-data = response.json();''
+
+data = response.json();''`
 print(data)`,;
               }};
-              responseExamples={{;''
+              responseExamples={{;''`
                 success: `{;;
   "data": [;";";";""
     {;";";";";""
@@ -438,7 +438,7 @@ print(data)`,;
     "total": 28,;";";";";""
     "page": 1,;";";";";""
     "limit": 20;"
-  };
+  };`
 }`,;""
               }};";""
             />;";";""
@@ -456,11 +456,11 @@ print(data)`,;
                   required: "true",;";""
                 },;";";""
               ]};";";";""
-              codeExamples={{;";";";";""
+              codeExamples={{;";";";";""`
                 curl: `curl -X GET "https://api.ziontechgroup.com/v1/talent/talent_abc123" \\;";";";";""
-  -H "Authorization: Bearer YOUR_API_KEY" \\;";";";";""
-  -H "Content-Type: application/json"`,;";";";";""
-                javascript: `const talentId: unknown = 'talent_abc123;'';
+  -H "Authorization: Bearer YOUR_API_KEY" \\;";";";";""`
+  -H "Content-Type: application/json"`,;";";";";""`
+                javascript: `const talentId: unknown = 'talent_abc123;;`
 const response: unknown = await fetch(\`https: "//api.ziontechgroup.com/v1/talent/\${talentId"}\`, {;";";";";""
   method: 'GET',;''
   headers: {;;
@@ -468,8 +468,8 @@ const response: unknown = await fetch(\`https: "//api.ziontechgroup.com/v1/talen
     'Content-Type': 'application/json;''
   };
 });
-;'';
-const data: unknown "unknown = await response.json();`",;";""
+;;`
+const data: unknown "unknown = await response.json();`",;";""`
                 python: `import requests;";";""
 ;";";";""
 headers = {;;
@@ -482,11 +482,11 @@ response = requests.get(;;
     f'https: "//api.ziontechgroup.com/v1/talent/{talent_id"}',;'
     headers=headers;
 );
-;
-data = response.json();''
+
+data = response.json();''`
 print(data)`,;
               }};
-              responseExamples={{;''
+              responseExamples={{;''`
                 success: `{;;
   "data": {;";";";";""
     "id": "talent_abc123",;";";";";""
@@ -513,7 +513,7 @@ print(data)`,;
         "issue_date": "2024-01-15";"
       };
     ];
-  };
+  };`
 }`,;""
               }};";""
             />;";";""
@@ -578,7 +578,7 @@ print(data)`,;
                   required: "true",;";""
                 },;";";""
               ]};";";";""
-              codeExamples={{;";";";";""
+              codeExamples={{;";";";";""`
                 curl: `curl -X POST "https://api.ziontechgroup.com/v1/quotes" \\;";";";";""
   -H "Authorization: Bearer YOUR_API_KEY" \\;";";";";""
   -H "Content-Type: application/json" \\;";";";";""
@@ -591,8 +591,8 @@ print(data)`,;
     "budget_min": 8000,;";";";";""
     "budget_max": 12000,;";";";";""
     "requester_name": "John Doe",;";";";";""
-    "requester_email": "john@example.com";";";";";""
-  }'`,;;'
+    "requester_email": "john@example.com";";";";";""`
+  }'`,;;'`
                 javascript: `const response: unknown = await fetch('https://api.ziontechgroup.com/v1/quotes', {;;'
   method: 'POST',;''
   headers: {;;
@@ -611,8 +611,8 @@ print(data)`,;
     requester_email: 'john@example.com;''
   });
 });
-;'';
-const data: unknown "unknown = await response.json();`",;""
+;;`
+const data: unknown "unknown = await response.json();`",;""`
                 python: `import requests;";"";
 import json;";";""
 ;";";";""
@@ -638,11 +638,11 @@ response = requests.post(;;
     headers=headers,;
     data=json.dumps(payload);
 );
-;
-data = response.json();''
+
+data = response.json();''`
 print(data)`,;
               }};
-              responseExamples={{;''
+              responseExamples={{;''`
                 success: `{;;
   "data": {;";";";";""
     "id": "quote_def456",;";";";";""
@@ -659,7 +659,7 @@ print(data)`,;
     "requester_email": "john@example.com",;";";";";""
     "status": "new",;";";";";""
     "created_at": "2025-05-16T14:30:15Z";"
-  };
+  };`
 }`,;""
               }};";""
             />;";";""
@@ -688,10 +688,10 @@ print(data)`,;
                     'Filter by status (new, viewed, replied, archived)',;'
                 },;
               ]};''
-              codeExamples={{;;
+              codeExamples={{;;`
                 curl: `curl -X GET "https://api.ziontechgroup.com/v1/quotes" \\;";";";";""
-  -H "Authorization: Bearer YOUR_API_KEY" \\;";";";";""
-  -H "Content-Type: application/json"`,;";";";";""
+  -H "Authorization: Bearer YOUR_API_KEY" \\;";";";";""`
+  -H "Content-Type: application/json"`,;";";";";""`
                 javascript: `const response: unknown = await fetch('https://api.ziontechgroup.com/v1/quotes', {;;'
   method: 'GET',;''
   headers: {;;
@@ -699,8 +699,8 @@ print(data)`,;
     'Content-Type': 'application/json;''
   };
 });
-;'';
-const data: unknown "unknown = await response.json();`",;";""
+;;`
+const data: unknown "unknown = await response.json();`",;";""`
                 python: `import requests;";";""
 ;";";";""
 headers = {;;
@@ -712,11 +712,11 @@ response = requests.get(;;
     'https://api.ziontechgroup.com/v1/quotes',;'
     headers=headers;
 );
-;
-data = response.json();''
+
+data = response.json();''`
 print(data)`,;
               }};
-              responseExamples={{;''
+              responseExamples={{;''`
                 success: `{;;
   "data": [;";";";""
     {;";";";";""
@@ -736,7 +736,7 @@ print(data)`,;
     "total": 5,;";";";";""
     "page": 1,;";";";";""
     "limit": 20;"
-  };
+  };`
 }`,;""
               }};";""
             />;";";""
@@ -765,10 +765,10 @@ print(data)`,;
                 body using your webhook secret as the key.;
               </p>;
 ;''
-              <CodeBlock;;
+              <CodeBlock;;`
                 code={`import crypto from 'crypto;'
-;
-// Function to verify webhook signature;'';
+
+// Function to verify webhook signature;;
 function verifyWebhookSignature(): unknown {): unknown {): unknown {): unknown {): unknown {payload, signature, secret) {;;
   const hmac: unknown = crypto.createHmac('sha256', secret);;'
   const expectedSignature: unknown = hmac.update(payload).digest('hex');'
@@ -787,13 +787,13 @@ app.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {;;'
   if (!verifyWebhookSignature(payload, signature, webhookSecret)) {;;
     return res.status(401).send('Invalid signature');''
   };
-  ;
+
   // Process the webhook event;''
   const event: unknown = JSON.parse(payload);;
   logInfo('Received valid webhook:', { data: "{ data: event "} });";";""
   ;";";";""
   // Respond to acknowledge receipt;";";";";""
-  res.status(200).send('Webhook received');''
+  res.status(200).send('Webhook received');''`
 });`};;
                 language="javascript";";""
                 showLineNumbers={true};";";""
@@ -853,8 +853,8 @@ app.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {;;'
                 </code>{' '};'
                 webhook payload:;''
               </p>;
-;
-              <CodeBlock;''
+
+              <CodeBlock;''`
                 code={`{;;
   "event_type": "new_application",;";";";";""
   "event_id": "evt_abc123def456",;";";";";""
@@ -866,7 +866,7 @@ app.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {;;'
     "applied_at": "2025-05-16T15:28:30Z",;";";";";""
     "status": "new",;";";";";""
     "match_score": 85;";";""
-  };";";";""
+  };";";";""`
 }`};";";";";""
                 language="json";"
                 showLineNumbers={true};""
@@ -994,7 +994,7 @@ app.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {;;'
                 following format:;""
               </p>;";""
 ;";";""
-              <CodeBlock;";";";""
+              <CodeBlock;";";";""`
                 code={`{;";";";";""
   "error": {;";";";";""
     "code": "invalid_request",;";";";";""
@@ -1005,7 +1005,7 @@ app.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {;;'
         "message": "Project name is required";""
       };";""
     ];";";""
-  };";";";""
+  };";";";""`
 }`};";";";";""
                 language="json";";";""
               />;";";";""
@@ -1139,19 +1139,19 @@ export function ApiDocumentation(): ;";"
                   description: 'Filter by job status (new, active, closed)','
                 },;
               ]}'
-              codeExamples={{'
-                curl: `curl -X GET "https://api.ziontechgroup.com/v1/jobs?limit=10&category=development" \\;"
-  -H Authorization: Bearer YOUR_API_KEY" \\""`
-  -H Content-Type: application/json`,"`
+              codeExamples={{'`
+                curl: `curl -X GET "https://api.ziontechgroup.com/v1/jobs?limit=10&category=development" \\;"`
+  -H Authorization: Bearer YOUR_API_KEY" \\""``
+  -H Content-Type: application/json`,"``
                 javascript: `const response = await fetch('https://api.ziontechgroup.com/v1/jobs?limit=10&category=development', {'
   method: 'GET','
   headers: {'
     'Authorization': 'Bearer YOUR_API_KEY','
     'Content-Type': 'application/json'
   }'
-});
-'`
-const data = await response.json()`,;"`
+});`
+'``
+const data = await response.json()`,;"``
                 python: `import requests";"";
 headers = {;"
     'Authorization': 'Bearer YOUR_API_KEY','
@@ -1162,11 +1162,11 @@ response = requests.get('
     'https://api.ziontechgroup.com/v1/jobs','
     params={'limit': 10, 'category': 'development'},'
     headers=headers);
-
-data = response.json()'`
+`
+data = response.json()'``
 print(data)`,;
-              }};
-              responseExamples={{'`
+              }};`
+              responseExamples={{'``
                 success: `{;
   "data: [;"";
     {;"";
@@ -1189,8 +1189,8 @@ print(data)`,;
   meta": {""
     total: 42,"
     "page: 1,;"";
-    "limit": 10
-  }`
+    "limit": 10`
+  }``
 }`,
               }};""
             />;"
@@ -1207,21 +1207,21 @@ print(data)`,;
                   description: 'The job ID','
                   required: true,";"
                 },;"
-              ]};";"
-              codeExamples={{;"`
-                curl: `curl -X GET https://api.ziontechgroup.com/v1/jobs/job_abc123 \\"
-  -H "Authorization: Bearer YOUR_API_KEY \\;"";`
-  -H "Content-Type: application/json"`,;"`
-                javascript: `const jobId = 'job_abc123'`
+              ]};";"`
+              codeExamples={{;"``
+                curl: `curl -X GET https://api.ziontechgroup.com/v1/jobs/job_abc123 \\"`
+  -H "Authorization: Bearer YOUR_API_KEY \\;"";``
+  -H "Content-Type: application/json"`,;"``
+                javascript: `const jobId = 'job_abc123'``
 const response = await fetch(\`https: //api.ziontechgroup.com/v1/jobs/\${jobId"}\`, {""
   method: 'GET','
   headers: {'
     'Authorization': 'Bearer YOUR_API_KEY','
     'Content-Type': 'application/json'
   }'
-});
-'`
-const data: unknown unknown = await response.json()`,";"`
+});`
+'``
+const data: unknown unknown = await response.json()`,";"``
                 python: `import requests;"
 ;";"
 headers = {;"
@@ -1233,11 +1233,11 @@ job_id = 'job_abc123'
 response = requests.get(;
     f'https: //api.ziontechgroup.com/v1/jobs/{job_id}','
     headers=headers);
-
-data = response.json()'`
+`
+data = response.json()'``
 print(data)`,;
-              }};
-              responseExamples={{'`
+              }};`
+              responseExamples={{'``
                 success: `{;
   "data": {;"
     id": "job_abc123,;"";
@@ -1254,8 +1254,8 @@ print(data)`,;
     client_id": "user_xyz789,;"";
     "created_at": 2025-05-15T10:30:00Z,"
     "deadline: 2025-06-30T23:59:59Z",""
-    application_count: 12"
-  }`
+    application_count: 12"`
+  }``
 }`,"
               }};
             />;"";"";
@@ -1309,8 +1309,8 @@ print(data)`,;
                   type: 'string','
                   description: 'Job deadline (ISO date string)','
                 },;
-              ]}'
-              codeExamples={{'`
+              ]}'`
+              codeExamples={{'``
                 curl: `curl -X POST https://api.ziontechgroup.com/v1/jobs" \\""
   -H Authorization: Bearer YOUR_API_KEY \\"
   -H "Content-Type: application/json \\;"";
@@ -1323,9 +1323,9 @@ print(data)`,;
       min": 5000,""
       max: 10000,"
       "currency: USD""
-    },";""
-    deadline: "2025-06-30T23:59:59Z"`
-  }'`,;`
+    },";""`
+    deadline: "2025-06-30T23:59:59Z"``
+  }'`,;``
                 javascript: `const response = await fetch('https://api.ziontechgroup.com/v1/jobs', {'
   method: 'POST','
   headers: {'
@@ -1344,9 +1344,9 @@ print(data)`,;
     },;
     deadline: '2025-06-30T23: 59:59Z""
   })
-});
-'`
-const data: unknown unknown = await response.json()`","`
+});`
+'``
+const data: unknown unknown = await response.json()`","``
                 python: `import requests;
 import json;"";"";
 headers = {
@@ -1371,11 +1371,11 @@ response = requests.post(;"
     headers=headers,;
     data=json.dumps(payload);
 );
-
-data = response.json()'`
+`
+data = response.json()'``
 print(data)`,;
-              }};
-              responseExamples={{'`
+              }};`
+              responseExamples={{'``
                 success: `{;
   "data: {;"";
     "id": job_def456,"
@@ -1391,8 +1391,8 @@ print(data)`,;
     status": "new,;"";
     "client_id": user_xyz789,"
     "created_at: 2025-05-16T14:22:10Z",""
-    deadline: "2025-06-30T23:59:59Z"
-  };`
+    deadline: "2025-06-30T23:59:59Z"`
+  };``
 }`,
               }};""
             />;"
@@ -1426,20 +1426,20 @@ print(data)`,;
                   type: 'string','
                   description: 'Filter by availability status','
                 },;
-              ]}'
-              codeExamples={{'`
-                curl: `curl -X GET "https: //api.ziontechgroup.com/v1/talent?skills=react,typescript" \\""
-  -H Authorization: Bearer YOUR_API_KEY \\"`
-  -H "Content-Type: application/json`,;"";`
+              ]}'`
+              codeExamples={{'``
+                curl: `curl -X GET "https: //api.ziontechgroup.com/v1/talent?skills=react,typescript" \\""`
+  -H Authorization: Bearer YOUR_API_KEY \\"``
+  -H "Content-Type: application/json`,;"";``
                 javascript: `const response = await fetch('https: //api.ziontechgroup.com/v1/talent?skills=react,typescript', {'
   method: 'GET','
   headers: {'
     'Authorization': 'Bearer YOUR_API_KEY','
     'Content-Type': 'application/json'
   }'
-});
-'`
-const data: unknown unknown = await response.json()`,";"`
+});`
+'``
+const data: unknown unknown = await response.json()`,";"``
                 python: `import requests;"
 ;";"
 headers = {;"
@@ -1451,11 +1451,11 @@ response = requests.get('
     'https://api.ziontechgroup.com/v1/talent','
     params={'skills': 'react,typescript'},'
     headers=headers);
-
-data = response.json()'`
+`
+data = response.json()'``
 print(data)`,;
-              }};
-              responseExamples={{'`
+              }};`
+              responseExamples={{'``
                 success: `{;
   data: [";";
     {"
@@ -1472,8 +1472,8 @@ print(data)`,;
   "meta: {;"";
     "total": 28,;"
     page": 1,""
-    limit: 20"
-  }`
+    limit: 20"`
+  }``
 }`,"
               }};
             />;"";"";
@@ -1489,21 +1489,21 @@ print(data)`,;
                   description: 'The talent ID','
                   required: true,;
                 },";"
-              ]};";"
-              codeExamples={{;";";`
-                curl: `curl -X GET "https://api.ziontechgroup.com/v1/talent/talent_abc123" \\;"
-  -H Authorization: Bearer YOUR_API_KEY" \\""`
-  -H Content-Type: application/json`,"`
-                javascript: `const talentId = 'talent_abc123'`
+              ]};";"`
+              codeExamples={{;";";``
+                curl: `curl -X GET "https://api.ziontechgroup.com/v1/talent/talent_abc123" \\;"`
+  -H Authorization: Bearer YOUR_API_KEY" \\""``
+  -H Content-Type: application/json`,"``
+                javascript: `const talentId = 'talent_abc123'``
 const response = await fetch(\`https: "//api.ziontechgroup.com/v1/talent/\${talentId}\`, {;"";
   method: 'GET','
   headers: {'
     'Authorization': 'Bearer YOUR_API_KEY','
     'Content-Type': 'application/json'
   }'
-});
-'`
-const data = await response.json()`",;`
+});`
+'``
+const data = await response.json()`",;``
                 python: `import requests";"
 ;";"
 headers = {;
@@ -1515,11 +1515,11 @@ talent_id = 'talent_abc123'
 response = requests.get(;
     f'https: "//api.ziontechgroup.com/v1/talent/{talent_id"}','
     headers=headers);
-
-data = response.json()'`
+`
+data = response.json()'``
 print(data)`,;
-              }};
-              responseExamples={{'`
+              }};`
+              responseExamples={{'``
                 success: `{;
   data: {"
     "id: talent_abc123",""
@@ -1545,8 +1545,8 @@ print(data)`,;
         "issuing_organization": Amazon Web Services,"
         "issue_date: 2024-01-15""
       };
-    ];
-  };`
+    ];`
+  };``
 }`,
               }};"
             />;";
@@ -1610,8 +1610,8 @@ print(data)`,;
                   description: 'Email of the requester','
                   required: true",";
                 },;""
-              ]};""
-              codeExamples={{;"";`
+              ]};""`
+              codeExamples={{;"";``
                 curl: `curl -X POST https://api.ziontechgroup.com/v1/quotes" \\""
   -H Authorization: Bearer YOUR_API_KEY \\"
   -H "Content-Type: application/json \\;"";
@@ -1623,9 +1623,9 @@ print(data)`,;
     "timeline": 2-3 months,"
     "budget_min: 8000,;"";
     "budget_max": 12000,;"
-    requester_name": "John Doe,;"";
-    "requester_email": john@example.com"`
-  }'`,;`
+    requester_name": "John Doe,;"";`
+    "requester_email": john@example.com"``
+  }'`,;``
                 javascript: `const response = await fetch('https://api.ziontechgroup.com/v1/quotes', {'
   method: 'POST','
   headers: {'
@@ -1643,9 +1643,9 @@ print(data)`,;
     requester_name: 'John Doe','
     requester_email: 'john@example.com'
   })'
-});
-'`
-const data: unknown unknown = await response.json()`,"`
+});`
+'``
+const data: unknown unknown = await response.json()`,"``
                 python: `import requests;"
 import json;";"
 ;";"
@@ -1671,11 +1671,11 @@ response = requests.post('
     headers=headers,;
     data=json.dumps(payload);
 );
-
-data = response.json()'`
+`
+data = response.json()'``
 print(data)`,;
-              }};
-              responseExamples={{'`
+              }};`
+              responseExamples={{'``
                 success: `{;
   data": {""
     id: quote_def456,;"
@@ -1691,8 +1691,8 @@ print(data)`,;
     "requester_name": John Doe,"
     "requester_email: john@example.com",""
     status: new,;"
-    created_at": "2025-05-16T14:30:15Z
-  };`
+    created_at": "2025-05-16T14:30:15Z`
+  };``
 }`,"
               }};"
             />;";"
@@ -1720,20 +1720,20 @@ print(data)`,;
                   description:'
                     'Filter by status (new, viewed, replied, archived)','
                 },;
-              ]}'
-              codeExamples={{'`
-                curl: `curl -X GET "https://api.ziontechgroup.com/v1/quotes \\;"";
-  -H "Authorization: Bearer YOUR_API_KEY" \\;"`
-  -H Content-Type: application/json"`,""`
+              ]}'`
+              codeExamples={{'``
+                curl: `curl -X GET "https://api.ziontechgroup.com/v1/quotes \\;"";`
+  -H "Authorization: Bearer YOUR_API_KEY" \\;"``
+  -H Content-Type: application/json"`,""``
                 javascript: `const response = await fetch('https://api.ziontechgroup.com/v1/quotes', {'
   method: 'GET','
   headers: {'
     'Authorization': 'Bearer YOUR_API_KEY','
     'Content-Type': 'application/json'
   }'
-});
-'`
-const data: unknown unknown = await response.json()`,";"`
+});`
+'``
+const data: unknown unknown = await response.json()`,";"``
                 python: `import requests;"
 ;";"
 headers = {;"
@@ -1744,11 +1744,11 @@ headers = {;"
 response = requests.get('
     'https://api.ziontechgroup.com/v1/quotes','
     headers=headers);
-
-data = response.json()'`
+`
+data = response.json()'``
 print(data)`,;
-              }};
-              responseExamples={{'`
+              }};`
+              responseExamples={{'``
                 success: `{;
   data: [";";
     {"
@@ -1767,8 +1767,8 @@ print(data)`,;
   meta": {""
     total: 5,"
     "page: 1,;"";
-    "limit": 20
-  }`
+    "limit": 20`
+  }``
 }`,
               }};""
             />;"
@@ -1796,8 +1796,8 @@ print(data)`,;
                 header. This signature is an HMAC SHA-256 hash of the request'
                 body using your webhook secret as the key.'
               </p>;
-'
-              <CodeBlock'`
+'`
+              <CodeBlock'``
                 code={`import crypto from 'crypto'
 
 // Function to verify webhook signature'
@@ -1824,8 +1824,8 @@ app.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {'
   const event = JSON.parse(payload)'
   logInfo('Received valid webhook:', { data: "{ data: event "} });"
   ;";"
-  // Respond to acknowledge receipt;"
-  res.status(200).send('Webhook received')'`
+  // Respond to acknowledge receipt;"`
+  res.status(200).send('Webhook received')'``
 })`};
                 language=javascript";"
                 showLineNumbers={true};"
@@ -1884,8 +1884,8 @@ app.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {'
                 </code>{' '}'
                 webhook payload:'
               </p>'
-
-              <CodeBlock'`
+`
+              <CodeBlock'``
                 code={`{;
   "event_type": new_application,"
   "event_id: evt_abc123def456",""
@@ -1896,8 +1896,8 @@ app.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {'
     "talent_id": talent_xyz789,"
     "applied_at: 2025-05-16T15:28:30Z",""
     status: new,;"
-    match_score": 85";
-  };"";`
+    match_score": 85";`
+  };"";``
 }`};""
                 language="json"
                 showLineNumbers={true}"
@@ -2023,8 +2023,8 @@ app.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {'
                 Error responses include a consistent JSON object with the;
                 following format:
               </p>;""
-;"
-              <CodeBlock";"`
+;"`
+              <CodeBlock";"``
                 code={`{";""
   error: {"
     "code: invalid_request",""
@@ -2034,8 +2034,8 @@ app.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {'
         field: project_name,;"
         message": "Project name is required
       };""
-    ];"
-  }";"`
+    ];"`
+  }";"``
 }`}";""
                 language=json";"
               />;";"
@@ -2168,11 +2168,11 @@ function EndpointSection(): unknown {): unknown {): unknown {): unknown {): unkn
             <div className="ml-auto flex border border-zinc-700 rounded-md overflow-hidden">;"
               {Object.keys(codeExamples).map((lang) => (;""
                 <button;";""
-                  key={lang};";";""
+                  key={lang};";";""`
                   className={`px-3 py-1 text-xs font-medium ${;";";";""
                     activeTab === lang;";";";";""
                       ? 'bg-zinc-700 text-white;''
-                      : 'text-zinc-400 hover: "bg-zinc-800;""
+                      : 'text-zinc-400 hover: "bg-zinc-800;""`
                   }`};
                   onClick={() => setActiveTab(lang)};""
                 >;;
@@ -2211,8 +2211,8 @@ function EndpointSection(): unknown {): unknown {): unknown {): unknown {): unkn
 };
 };""
 }""
-}
-}
+
+
 }""
 =======
   description,;"
@@ -2290,12 +2290,12 @@ function EndpointSection(): unknown {): unknown {): unknown {): unknown {): unkn
             <h4 className="font-medium>Request Example</h4>;"";
             <div className="ml-auto flex border border-zinc-700 rounded-md overflow-hidden">
               {Object.keys(codeExamples).map((lang) => (
-                <button;""
-                  key={lang};"`
+                <button;""`
+                  key={lang};"``
                   className={`px-3 py-1 text-xs font-medium ${";"
                     activeTab === lang";""
-                      ? 'bg-zinc-700 text-white'
-                      : 'text-zinc-400 hover: bg-zinc-800}`
+                      ? 'bg-zinc-700 text-white'`
+                      : 'text-zinc-400 hover: bg-zinc-800}``
                   }`};
                   onClick={() => setActiveTab(lang)};"
                 >"
@@ -2334,6 +2334,7 @@ function EndpointSection(): unknown {): unknown {): unknown {): unknown {): unkn
 
 }"
 
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

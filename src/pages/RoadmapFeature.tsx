@@ -28,5 +28,5 @@ export default function RoadmapFeaturePage(): '
     () => safeStorage.getItem(`feature_follow_${id}`) === 'true',;
   )'
   useEffect(() => {
-    safeStorage.setItem('roadmap_items', JSON.stringify(items))
-  }, [items])';;`
+    safeStorage.setItem('roadmap_items', JSON.stringify(items))`
+  }, [items])';;``

@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { Loader2 } from '@/components/ui/icons;'';
-import Image from 'next/image;'';
-import { GradientHeading } from '@/components/GradientHeading;'';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;'';
-import { Textarea } from '@/components/ui/textarea;'';
-import { useToast } from '@/hooks/use-toast;'';
+import React, { useState } from 'react';;
+import { Loader2 } from '@/components/ui/icons;;
+import Image from 'next/image;;
+import { GradientHeading } from '@/components/GradientHeading;;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
+import { Textarea } from '@/components/ui/textarea;;
+import { useToast } from '@/hooks/use-toast;;
 import axios from 'axios;'
 ;;
-import { useTranslation } from 'react-i18next;'';
+import { useTranslation } from 'react-i18next;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
-;'';
+;;
 export function ITServiceRequestHero(): unknown {): unknown {): unknown {): unknown {): unknown {) {;;
   const [name, setName] = useState('');;'
   const [email, setEmail] = useState('');;'
@@ -22,10 +22,10 @@ export function ITServiceRequestHero(): unknown {): unknown {): unknown {): unkn
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { _toast } = useToast();
   const { t } = useTranslation();
-;
+
   const handleSubmit: unknown = async (_e: React.FormEvent) => {;''
     e.preventDefault();
-;
+
     if (!name || !email || !location) {;''
       toast({;;
         title: 'Missing Information',;;'
@@ -34,7 +34,7 @@ export function ITServiceRequestHero(): unknown {): unknown {): unknown {): unkn
       });
       return;''
     };
-;
+
     setIsSubmitting(true);''
     try {;;
       const res: unknown = await axios.post('/api/onsite-request', {;'
@@ -86,7 +86,7 @@ export function ITServiceRequestHero(): '
 <<<<<<< HEAD
         details,;''
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});
-;
+
       if (res.status === 200) {;''
         toast({;;
           title: 'Request received',;''
@@ -343,9 +343,9 @@ export function ITServiceRequestHero(): '
     </section>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

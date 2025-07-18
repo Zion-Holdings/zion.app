@@ -4,10 +4,10 @@ import {;
   CardFooter,;
 <<<<<<< HEAD
   CardHeader,;
-} from '@/components/ui/card;'';
-import { Clock, MapPin, Check } from '@/components/ui/icons;'';
-import { Button } from '@/components/ui/button;'';
-import Link from 'next/link;'';
+} from '@/components/ui/card;;
+import { Clock, MapPin, Check } from '@/components/ui/icons;;
+import { Button } from '@/components/ui/button;;
+import Link from 'next/link;;
 import { Badge } from '@/components/ui/badge;'
 ;;
 import type { CountryPricing } from '@/data/onsiteServicePricing;'
@@ -18,7 +18,7 @@ interface CountryServiceCardProps {;;
   onQuote?: (country: CountryPricing) => void;
   isPopular?: boolean;
 };
-;
+
 export function CountryServiceCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   country,;
   onSelect,;
@@ -50,7 +50,7 @@ export function CountryServiceCard(): unknown {): unknown {): unknown {): unknow
 ;;
     return emojiMap[countryName] || ';''
   };
-;
+
   // Get response time estimate based on country;''
   const getResponseTime: unknown = (countryName: string | undefined): string => {;;
     if (!countryName) return '8-24 hours;'
@@ -88,7 +88,7 @@ export function CountryServiceCard(): unknown {): unknown {): unknown {): unknow
       className={`h-full transition-all duration-300 hover:shadow-lg ${;''
         isPopular;;
           ? 'bg-gradient-to-br from-zion-blue-dark to-zion-purple/10 border-zion-purple;''
-          : 'bg-zion-blue-dark border-zion-blue-light;'
+          : 'bg-zion-blue-dark border-zion-blue-light;'`
       }`};''
     >;;
       <CardHeader className="pb-2">;";";";";""
@@ -132,11 +132,11 @@ export function CountryServiceCard(): unknown {): unknown {): unknown {): unknow
       </CardContent>;";";";";""
       <CardFooter className="flex flex-col space-y-2">;""
         <Button;";""
-          onClick={() => onSelect(country)};";";""
+          onClick={() => onSelect(country)};";";""`
           className={`w-full ${;";";";""
             isPopular;";";";";""
               ? 'bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple;''
-              : 'bg-zion-blue hover: "bg-zion-blue-light border border-zion-blue-light;""
+              : 'bg-zion-blue hover: "bg-zion-blue-light border border-zion-blue-light;""`
           }`};""
         >;
           Select Service;
@@ -245,11 +245,11 @@ export function CountryServiceCard(): unknown {): unknown {): unknown {): unknow
   };
 '
   return ('
-    <Card;
+    <Card;`
       className={`h-full transition-all duration-300 hover:shadow-lg ${'
         isPopular'
-          ? 'bg-gradient-to-br from-zion-blue-dark to-zion-purple/10 border-zion-purple'
-          : 'bg-zion-blue-dark border-zion-blue-light'}`
+          ? 'bg-gradient-to-br from-zion-blue-dark to-zion-purple/10 border-zion-purple'`
+          : 'bg-zion-blue-dark border-zion-blue-light'}``
       }`}'
     >'
       <CardHeader className="pb-2>"
@@ -292,11 +292,11 @@ export function CountryServiceCard(): unknown {): unknown {): unknown {): unknow
         </div>
       </CardContent>;
       <CardFooter className="flex flex-col space-y-2">
-        <Button;"
-          onClick={() => onSelect(country)};"`
+        <Button;"`
+          onClick={() => onSelect(country)};"``
           className={`w-full ${isPopular;
-              ? 'bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple'
-              : 'bg-zion-blue hover: "bg-zion-blue-light border border-zion-blue-light"}`
+              ? 'bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple'`
+              : 'bg-zion-blue hover: "bg-zion-blue-light border border-zion-blue-light"}``
           }`};
         >
           Select Service;
@@ -322,6 +322,7 @@ export function CountryServiceCard(): unknown {): unknown {): unknown {): unknow
 "
 }"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

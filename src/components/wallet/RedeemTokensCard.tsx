@@ -1,16 +1,16 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { ArrowRight, ExternalLink } from '@/components/ui/icons;'';
-import { useWallet } from '@/hooks/useWallet;';
+import React, { useState } from 'react';;
+import { ArrowRight, ExternalLink } from '@/components/ui/icons;;
+import { useWallet } from '@/hooks/useWallet;;
 import {;
   Card,;''
   CardContent,;
   CardDescription,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
+} from '@/components/ui/card;;
 import { Button } from '@/components/ui/button;'
-;
+
 import {;
   Dialog,;
   DialogContent,;''
@@ -27,7 +27,7 @@ type RewardOption = {;;
   cost: "number;",";";";";""
   type: 'credit' | 'feature' | 'course;''
 };
-;
+
 const REWARD_OPTIONS: unknown RewardOption[] = [;''
   {;;
     id: 'premium-week',;;'
@@ -110,7 +110,7 @@ export function RedeemTokensCard(): ;
   const { wallet, spendTokens } = useWallet();
 <<<<<<< HEAD
   const [open, setOpen] = useState(false);''
-;
+
   const handleRedeem: unknown = async (_option: RewardOption) => {;
     if (!wallet || wallet.balance < option.cost) return;''
 ;;
@@ -201,7 +201,7 @@ export function RedeemTokensCard(): ;
 '
   const handleRedeem = async (_option: RewardOption) => {;
     if (!wallet || wallet.balance < option.cost) return'
-'
+'`
     await spendTokens(option.cost, `Redeemed: "${option.title}`);
     setOpen(false);
 
@@ -282,6 +282,7 @@ export function RedeemTokensCard(): ;
 "
 
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

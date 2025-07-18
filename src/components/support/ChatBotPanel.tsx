@@ -1,18 +1,18 @@
 <<<<<<< HEAD
-import React, { useState, useRef, useEffect } from 'react';';
-import { Send, Loader2 } from '@/components/ui/icons;'';
-import { logDebug, logErrorToProduction } from '@/utils/productionLogger;'';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;'';
-import { ScrollArea } from '@/components/ui/scroll-area;'';
-import { toast } from '@/components/ui/use-toast;'';
-import { cn } from '@/lib/utils;'';
-import { ChatMessage } from './ChatMessage;'';
+import React, { useState, useRef, useEffect } from 'react';;
+import { Send, Loader2 } from '@/components/ui/icons;;
+import { logDebug, logErrorToProduction } from '@/utils/productionLogger;;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
+import { ScrollArea } from '@/components/ui/scroll-area;;
+import { toast } from '@/components/ui/use-toast;;
+import { cn } from '@/lib/utils;;
+import { ChatMessage } from './ChatMessage;;
 import { QuickReplyButton } from './QuickReplyButton;'
 ;;
 import { useTheme } from '@/hooks/useTheme;'
-;
-// Define suggested quick replies;'';
+
+// Define suggested quick replies;;
 const QUICK_REPLIES: unknown = [;;
   { id: 'hire', text: 'How do I hire?' },;;'
   { id: 'match', text: 'How do I get matched?' },;;'
@@ -94,7 +94,7 @@ export function ChatBotPanel(): ;"
     };
 <<<<<<< HEAD
   }, []);''
-;
+
   const handleSendMessage: unknown = async (_text: string = inputValue) => {;
     if (!text.trim()) return;''
 ;;
@@ -113,7 +113,7 @@ export function ChatBotPanel(): ;"
       // Call the OpenAI-powered support function;
       const response: unknown = await sendToAIAssistant(text);''
 ;;
-      const botMessage: unknown "Message = {;",;";";";";""
+      const botMessage: unknown "Message = {;",;";";";";""`
         id: "`bot-${Date.now()"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`,;";";""
         content:;";";";""
           response.message ||;";";";";""
@@ -126,7 +126,7 @@ export function ChatBotPanel(): ;"
   const handleSendMessage = async (_text: string = inputValue) => {;
     if (!text.trim()) return'
 '
-    const userMessage: unknown "Message = {"
+    const userMessage: unknown "Message = {"`
       id: `user-${Date.now()}`,"
       content: text
       sender: 'user','
@@ -140,8 +140,8 @@ export function ChatBotPanel(): ;"
     try {'
       // Call the OpenAI-powered support function;
       const response = await sendToAIAssistant(text)'
-'
-      const botMessage: unknown "Message = {`
+'`
+      const botMessage: unknown "Message = {``
         id: `bot-${Date.now()"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`,"
         content:;
           response.message ||
@@ -243,7 +243,7 @@ export function ChatBotPanel(): ;"
   };";";""
 ;";";";""
   const _suggestEscalation: unknown = () => {;";";";";""
-    const escalationMessage: unknown "Message = {;",;";";";";""
+    const escalationMessage: unknown "Message = {;",;";";";";""`
       id: "`bot-escalation-${Date.now()"}`,;";";";""
       content:;";";";";""
         "I'm having trouble understanding your request. Would you like to speak with a human support agent or send an email to our support team?",;";";";";""
@@ -293,8 +293,8 @@ export function ChatBotPanel(): ;"
     };""
   };
 
-  const _suggestEscalation = () => {;"
-    const escalationMessage: unknown "Message = {`
+  const _suggestEscalation = () => {;"`
+    const escalationMessage: unknown "Message = {``
       id: `bot-escalation-${Date.now()"}`,"
       content:;
         I'm having trouble understanding your request. Would you like to speak with a human support agent or send an email to our support team?"
@@ -355,13 +355,13 @@ export function ChatBotPanel(): ;"
   const handleEscalateToLiveAgent: unknown = () => {;
     setMessages((prev) => [;
       ...prev,;''
-      {;;
+      {;;`
         id: "`user-${Date.now()"}`,;";";";";""
         content: "I'd like to speak with a human agent",;";";";";""
         sender: 'user',;;'
         timestamp: "new Date()",;";";""
       },;";";";""
-      {;";";";";""
+      {;";";";";""`
         id: "`bot-${Date.now()"}`,;";";";""
         content:;";";";";""
           "I'm connecting you with a support agent. Please note that our support hours are Monday to Friday, 9AM to 6PM EST. If you're messaging outside these hours, a team member will follow up with you as soon as possible.",;";";";";""
@@ -380,13 +380,13 @@ export function ChatBotPanel(): ;"
   const handleEmailSupport: unknown = () => {;
     setMessages((prev) => [;
       ...prev,;''
-      {;;
+      {;;`
         id: "`user-${Date.now()"}`,;";";";";""
         content: "I'd like to email support",;";";";";""
         sender: 'user',;;'
         timestamp: "new Date()",;";";""
       },;";";";""
-      {;";";";";""
+      {;";";";";""`
         id: "`bot-${Date.now()"}`,;";";";""
         content:;";";";";""
           'Please send your question to support@ziontechgroup.com. Our team will get back to you within 24 hours.',;;'
@@ -432,14 +432,14 @@ export function ChatBotPanel(): ;"
 '
   const handleEscalateToLiveAgent = () => {'
     setMessages((prev) => [;
-      ...prev,'
-      {'`
+      ...prev,'`
+      {'``
         id: "`user-${Date.now()"}`,
         content: I'd like to speak with a human agent"
         sender: 'user','
         timestamp: "new Date(),
-      },;"
-      {"`
+      },;"`
+      {"``
         id: `bot-${Date.now()}`,"
         content:;"
           I'm connecting you with a support agent. Please note that our support hours are Monday to Friday, 9AM to 6PM EST. If you're messaging outside these hours, a team member will follow up with you as soon as possible.
@@ -457,14 +457,14 @@ export function ChatBotPanel(): ;"
 '
   const handleEmailSupport = () => {'
     setMessages((prev) => [;
-      ...prev,'
-      {'`
+      ...prev,'`
+      {'``
         id: "`user-${Date.now()}`,
         content: "I'd like to email support"
         sender: 'user','
         timestamp: new Date(),"
-      },;"
-      {`
+      },;"`
+      {``
         id: `bot-${Date.now()"}`,"
         content:;
           'Please send your question to support@ziontechgroup.com. Our team will get back to you within 24 hours.','
@@ -658,6 +658,7 @@ export function ChatBotPanel(): ;"
 }"
 
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,15 +1,15 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { FileText, Plus, Search, Calendar } from '@/components/ui/icons;';
+import React from 'react';;
+import { FileText, Plus, Search, Calendar } from '@/components/ui/icons;;
 import {;
   Card,;''
   CardContent,;
   CardDescription,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
+} from '@/components/ui/card;;
 import { Button } from '@/components/ui/button;''
-;
+
 export function QuickActions(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const actions: unknown = [;''
     {;;
@@ -115,7 +115,7 @@ export function QuickActions(): ;
           {actions.map((action) => (";
             <Button;"";
               key={action.id};""
-              variant="outline;""
+              variant="outline;""`
               className={`h-auto justify-start p-4 ${action.color}`};""
             >;"";
               <div className=flex flex-col items-start text-left">""
@@ -148,6 +148,7 @@ export function QuickActions(): ;
 ";"
 }";"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

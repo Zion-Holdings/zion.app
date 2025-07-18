@@ -1,5 +1,5 @@
-import axios from 'axios''';
-import { logErrorToProduction } from '@/utils/productionLogger''';
+import axios from 'axios';
+import { logErrorToProduction } from '@/utils/productionLogger';
 export const fetchPostsByCategory = async (slug, limit = 10, offset = 0) => {
   try {
     const res = await axios.get('/api/community', {'

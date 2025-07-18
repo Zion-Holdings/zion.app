@@ -57,7 +57,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
   const connectWallet = useCallback(async () => {
     console.log('Wallet connection requested');
     // Placeholder for wallet connection logic
-    setWallet(prev => ({
+    setWallet((prev: WalletState) => ({
       ...prev,
       isConnected: false,
       isWalletSystemAvailable: true,
@@ -66,7 +66,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
 
   const disconnectWallet = useCallback(async () => {
     console.log('Wallet disconnection requested');
-    setWallet(prev => ({
+    setWallet((prev: WalletState) => ({
       ...prev,
       isConnected: false,
       address: null,
@@ -102,4 +102,4 @@ export const useWallet = (): WalletContextType => {
     return defaultWalletContext;
 
   return context;
-};;`
+};`

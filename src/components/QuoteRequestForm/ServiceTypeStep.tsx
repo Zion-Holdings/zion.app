@@ -1,18 +1,18 @@
 <<<<<<< HEAD
-import { useEffect, useState } from 'react';';
-import { Search } from '@/components/ui/icons;'';
-import type { QuoteFormData, ListingItem, ServiceType } from '@/types/quotes;'';
-import { Input } from '@/components/ui/input;'';
-import { Card } from '@/components/ui/card'';
-;
-import { ListingScoreCard } from '@/components/ListingScoreCard;'';
-import { captureException } from '@/utils/sentry;'';
-import Skeleton from '@/components/ui/skeleton;'';
-import { useDebounce } from '@/hooks/useDebounce;'';
-import { useIsMounted } from '@/hooks/useIsMounted;'';
-import { z } from 'zod;'';
-import { logErrorToProduction } from '@/utils/productionLogger'';
-;'';
+import { useEffect, useState } from 'react';;
+import { Search } from '@/components/ui/icons;;
+import type { QuoteFormData, ListingItem, ServiceType } from '@/types/quotes;;
+import { Input } from '@/components/ui/input;;
+import { Card } from '@/components/ui/card;
+
+import { ListingScoreCard } from '@/components/ListingScoreCard;;
+import { captureException } from '@/utils/sentry;;
+import Skeleton from '@/components/ui/skeleton;;
+import { useDebounce } from '@/hooks/useDebounce;;
+import { useIsMounted } from '@/hooks/useIsMounted;;
+import { z } from 'zod;;
+import { logErrorToProduction } from '@/utils/productionLogger;
+;;
 const listingSchema: unknown "unknown = z.object({,;"
   id: "z.string()",;";""
   title: z.string()",";;"""
@@ -85,7 +85,7 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
       setLoading(true);
       setError(null);
 <<<<<<< HEAD
-      const url: unknown = `/api/public/services?category=${encodeURIComponent(`
+      const url: unknown = `/api/public/services?category=${encodeURIComponent(``
         formData.serviceType,)}&q=${encodeURIComponent(debouncedQuery)}``
       const maxRetries: unknown = 3
 ;"""
@@ -106,8 +106,8 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
             if (process.env.NODE_ENV === 'development') {;''
               logErrorToProduction('Failed to load services:', { data: error })""
             } else {""
-=======
-      const url = `/api/public/services?category=${encodeURIComponent(`}`
+=======`
+      const url = `/api/public/services?category=${encodeURIComponent(`}``
         formData.serviceType,)}&q=${encodeURIComponent(debouncedQuery)}`;
       const maxRetries = 3
 ;""
@@ -186,11 +186,11 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
           What are you looking for?;";""
         </h3>;";";""
         <div className=grid grid-cols-1 md:grid-cols-3 gap-4>";""
-          <Card;";""
+          <Card;";""`
             className={`p-4 cursor-pointer border-2 transition-colors ${;";";"
               formData.serviceType === 'service;''
                 ? 'bg-zion-purple/20 border-zion-purple;''
-                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50''
+                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50''`
             }`}`
             onClick={() => handleTypeSelect('service')};''
           >;''
@@ -200,11 +200,11 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
             </p>
           </Card>;""
 ;";"
-          <Card";";"
+          <Card";";"`
             className={`p-4 cursor-pointer border-2 transition-colors ${";";""
               formData.serviceType === 'talent;''
                 ? 'bg-zion-purple/20 border-zion-purple;''
-                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50''
+                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50''`
             }`}`
             onClick={() => handleTypeSelect('talent')};''
           >;''
@@ -214,11 +214,11 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
             </p>
           </Card>;"""
 ;;""
-          <Card";;""
+          <Card";;""`
             className={`p-4 cursor-pointer border-2 transition-colors ${";;"""
               formData.serviceType === 'equipment;''
                 ? 'bg-zion-purple/20 border-zion-purple;''
-                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50''
+                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50''`
             }`}`
             onClick={() => handleTypeSelect('equipment')};''
           >;''
@@ -238,7 +238,7 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
 ;";";""
           <div className=relative>";";""
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate-light h-4 w-4 />"
-            <Input;"""
+            <Input;"""`
               placeholder={`Search ${formData.serviceType}...`};;""
               value={searchQuery}";;""
               onChange={(e) => setSearchQuery(e.target.value)}";;"""
@@ -260,11 +260,11 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
               filteredListings.map((item) => (;
                 <div""
                   key={item.id};""
-                  onClick={() => handleItemSelect(item)};";""
+                  onClick={() => handleItemSelect(item)};";""`
                   className={`cursor-pointer transition-all ${;";""
                     formData.specificItem?.id === item.id;";""
                       ? 'ring-2 ring-zion-purple rounded-lg;''
-                      : 
+                      : `
                   }`}`
                 >;
                   <ListingScoreCard;
@@ -315,12 +315,12 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
         <h3 className="text-xl font-semibold text-white mb-4">;"
           What are you looking for?;";"
         </h3>;"
-        <div className=grid grid-cols-1 md:grid-cols-3 gap-4>";"
-          <Card;";"`
+        <div className=grid grid-cols-1 md:grid-cols-3 gap-4>";"`
+          <Card;";"``
             className={`p-4 cursor-pointer border-2 transition-colors ${;";";
               formData.serviceType === 'service'
-                ? 'bg-zion-purple/20 border-zion-purple'
-                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}`
+                ? 'bg-zion-purple/20 border-zion-purple'`
+                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}``
             }`};
             onClick={() => handleTypeSelect('service')}'
           >'
@@ -329,12 +329,12 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
               AI solutions, consulting, development;
             </p>
           </Card>;"
-;";
-          <Card";";`
+;";`
+          <Card";";``
             className={`p-4 cursor-pointer border-2 transition-colors ${"
               formData.serviceType === 'talent'
-                ? 'bg-zion-purple/20 border-zion-purple'
-                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}`
+                ? 'bg-zion-purple/20 border-zion-purple'`
+                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}``
             }`};
             onClick={() => handleTypeSelect('talent')}'
           >'
@@ -343,12 +343,12 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
               AI specialists, developers, consultants;
             </p>
           </Card>;""
-;"
-          <Card";"`
+;"`
+          <Card";"``
             className={`p-4 cursor-pointer border-2 transition-colors ${";""
               formData.serviceType === 'equipment'
-                ? 'bg-zion-purple/20 border-zion-purple'
-                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}`
+                ? 'bg-zion-purple/20 border-zion-purple'`
+                : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}``
             }`};
             onClick={() => handleTypeSelect('equipment')}'
           >'
@@ -367,8 +367,8 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
           </h3>;";"
 ;"
           <div className=relative>"
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate-light h-4 w-4 />"
-            <Input;""`
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate-light h-4 w-4 />"`
+            <Input;""``
               placeholder={`Search ${formData.serviceType}...`};"
               value={searchQuery}";"
               onChange={(e) => setSearchQuery(e.target.value)}";""
@@ -388,12 +388,12 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
               </>) : filteredListings.length > 0 ? (;
               filteredListings.map((item) => (;"
                 <div"
-                  key={item.id};"
-                  onClick={() => handleItemSelect(item)};";"`
+                  key={item.id};"`
+                  onClick={() => handleItemSelect(item)};";"``
                   className={`cursor-pointer transition-all ${;";"
                     formData.specificItem?.id === item.id;";"
-                      ? 'ring-2 ring-zion-purple rounded-lg'
-                      :}`
+                      ? 'ring-2 ring-zion-purple rounded-lg'`
+                      :}``
                   }`};
                 >;
                   <ListingScoreCard;
@@ -431,6 +431,7 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
 ";"
 }";
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

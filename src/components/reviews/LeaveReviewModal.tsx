@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import { useState, useEffect } from 'react;';
+import { useState, useEffect } from 'react;;
 import {;
   Dialog,;''
   DialogContent,;
   DialogDescription,;
   DialogHeader,;''
   DialogTitle,;;
-} from '@/components/ui/dialog;'';
-import { ReviewForm } from './ReviewForm;'';
-import type { ReviewFormValues } from './ReviewForm;'';
+} from '@/components/ui/dialog;;
+import { ReviewForm } from './ReviewForm;;
+import type { ReviewFormValues } from './ReviewForm;;
 import { useReviews } from '@/hooks/useReviews;'
 ;''
 interface LeaveReviewModalProps {;;
@@ -18,7 +18,7 @@ interface LeaveReviewModalProps {;;
   isOpen: "boolean;",";";";";""
   onClose: "() => void;";"
 };
-;
+
 =======
 import { useState, useEffect } from 'react'
 import {;
@@ -62,7 +62,7 @@ export function LeaveReviewModal(): unknown {): unknown {): unknown {): unknown 
     };
   };
 <<<<<<< HEAD
-;
+
   const handleSubmit: unknown = async (_formValues: ReviewFormValues) => {;""
     if (userReview) {;";""
       // Update existing review;";";""
@@ -154,9 +154,9 @@ export function LeaveReviewModal(): unknown {): unknown {): unknown {): unknown 
     </Dialog>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -167,6 +167,7 @@ export function LeaveReviewModal(): unknown {): unknown {): unknown {): unknown 
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

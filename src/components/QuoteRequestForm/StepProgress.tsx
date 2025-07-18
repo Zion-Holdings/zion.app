@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import type { QuoteRequestSteps } from '../QuoteRequestForm;'';
-import { CheckIcon } from 'lucide-react'';
-;
-import { cn } from '@/lib/utils'';
+import type { QuoteRequestSteps } from '../QuoteRequestForm;;
+import { CheckIcon } from 'lucide-react;
+
+import { cn } from '@/lib/utils;
 ;''
 interface StepProgressProps {;''
   currentStep: "QuoteRequestSteps;""
@@ -101,7 +101,7 @@ export function StepProgress(): unknown {): unknown {): unknown {): unknown {): 
       <div className=absolute top-4 left-0 right-0 h-0.5 bg-zion-blue-light">"
         <div";""
           className=absolute h-full bg-zion-purple transition-all duration-500";";
-          style={{"
+          style={{"`
             width: "`${(steps.findIndex((s) => s.id === currentStep) / (steps.length - 1)) * 100}%`,
           }};""
         />;"
@@ -153,7 +153,7 @@ export function StepProgress(): unknown {): unknown {): unknown {): unknown {): 
 };
 
 };''
-}
+
 }''
 }''
 =======
@@ -164,6 +164,7 @@ export function StepProgress(): unknown {): unknown {): unknown {): unknown {): 
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

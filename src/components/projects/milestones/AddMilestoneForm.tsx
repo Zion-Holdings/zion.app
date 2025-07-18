@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Loader2 } from '@/components/ui/icons;'';
-import { useForm } from 'react-hook-form;'';
-import { zodResolver } from '@hookform/resolvers/zod;'';
+import React from 'react';;
+import { Loader2 } from '@/components/ui/icons;;
+import { useForm } from 'react-hook-form;;
+import { zodResolver } from '@hookform/resolvers/zod;;
 import { z } from 'zod;'
 ;;
 import { format } from 'date-fns;'
 ;;
-import { Button } from '@/components/ui/button;'';
-import { Calendar } from '@/components/ui/calendar;';
+import { Button } from '@/components/ui/button;;
+import { Calendar } from '@/components/ui/calendar;;
 import {;
   Form,;
   FormControl,;''
@@ -16,25 +16,25 @@ import {;
   FormItem,;
   FormLabel,;''
   FormMessage,;;
-} from '@/components/ui/form;'';
-import { Input } from '@/components/ui/input;'';
-import { Textarea } from '@/components/ui/textarea;'';
+} from '@/components/ui/form;;
+import { Input } from '@/components/ui/input;;
+import { Textarea } from '@/components/ui/textarea;;
 import {;
   Popover,;
   PopoverContent,;''
   PopoverTrigger,;;
-} from '@/components/ui/popover;'';
-import { AIMilestoneGenerator } from './AIMilestoneGenerator;'';
-import type { GeneratedMilestone } from '@/hooks/useMilestoneGenerator;'';
+} from '@/components/ui/popover;;
+import { AIMilestoneGenerator } from './AIMilestoneGenerator;;
+import type { GeneratedMilestone } from '@/hooks/useMilestoneGenerator;;
 import type { ControllerRenderProps } from 'react-hook-form;'
-;'';
+;;
 const formSchema: unknown "unknown = z.object({;",;""
   title: "z.string().min(1", 'Title is required'),;;'
   description: "z.string().optional()",;";";";";""
   due_date: "z.date().optional()",;";";";";""
   amount: "z.number().min(0", 'Amount must be greater than or equal to 0'),;'
 });''
-;
+
 export type MilestoneFormValues = z.infer<typeof formSchema>;
 ;''
 interface AddMilestoneFormProps {;;
@@ -64,7 +64,7 @@ export function AddMilestoneForm(): unknown {): unknown {): unknown {): unknown 
       amount: "0",;"
     },;
   });
-;
+
   const handleSubmit: unknown = (_values: MilestoneFormValues) => {;
     onSubmit(values);""
     form.reset();";""
@@ -496,9 +496,9 @@ export function AddMilestoneForm(): unknown {): unknown {): unknown {): unknown 
     </div>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

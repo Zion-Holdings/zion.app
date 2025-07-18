@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { LogOut, UserIcon, Package } from '@/components/ui/icons;'';
-import Link from 'next/link;'';
-import { useAuth } from '@/hooks/useAuth;'';
+import React from 'react';;
+import { LogOut, UserIcon, Package } from '@/components/ui/icons;;
+import Link from 'next/link;;
+import { useAuth } from '@/hooks/useAuth;;
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;'
-;
+
 import {;
   DropdownMenu,;
   DropdownMenuContent,;''
@@ -13,18 +13,18 @@ import {;
   DropdownMenuSeparator,;''
   DropdownMenuLabel,;;
 } from '@/components/ui/dropdown-menu;'
-;
+
 // Assuming lucide-react is used;
-;
+
 export const AvatarMenu: unknown React.FC = () => {;''
   const { user, logout, avatarUrl } = useAuth();
-;
+
   if (!user) return null;''
 ;;
   const initials: unknown = (user.displayName || user.name || 'U');'
     .charAt(0);''
     .toUpperCase();
-;
+
   return (;''
     <DropdownMenu>;;
       <DropdownMenuTrigger asChild data-testid="avatar-menu-trigger">;";";";""

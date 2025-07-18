@@ -1,15 +1,23 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+import type { NextApiRequest, NextApiResponse } from 'next;
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
+import { enhancedErrorCollector } from '@/utils/enhancedErrorCollection;
+import { systemHealthMonitor } from '@/utils/systemHealthMonitor;
+import { logDashboard } from '@/utils/logDashboard;
+=======
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 import { enhancedErrorCollector } from '@/utils/enhancedErrorCollection';
 import { systemHealthMonitor } from '@/utils/systemHealthMonitor';
 import { logDashboard } from '@/utils/logDashboard';
+>>>>>>> f10a9a3721b4a88e659d4312a2d38b499e614b6c
 
 interface ErrorMonitoringResponse {
   success: boolean;
   data?: unknown;
   error?: string;
   timestamp: string;
-}
 
 async function handleGet(
   req: NextApiRequest,
@@ -53,7 +61,7 @@ async function handleGet(
           error: 'Invalid action',
           timestamp
         });
-    }
+
   } catch (error) {
     logErrorToProduction('Error in GET error monitoring:', error);
     res.status(500).json({
@@ -61,8 +69,7 @@ async function handleGet(
       error: 'Internal server error',
       timestamp
     });
-  }
-}
+
 
 async function handlePost(
   req: NextApiRequest,
@@ -88,7 +95,7 @@ async function handlePost(
           error: 'Invalid action',
           timestamp
         });
-    }
+
   } catch (error) {
     logErrorToProduction('Error in POST error monitoring:', error);
     res.status(500).json({
@@ -96,8 +103,7 @@ async function handlePost(
       error: 'Internal server error',
       timestamp
     });
-  }
-}
+
 
 export default async function handler(
   req: NextApiRequest,
@@ -126,7 +132,7 @@ export default async function handler(
           error: 'Method not allowed',
           timestamp
         });
-    }
+
   } catch (error) {
     logErrorToProduction('Error monitoring API error:', error);
     res.status(500).json({
@@ -134,5 +140,33 @@ export default async function handler(
       error: 'Internal server error',
       timestamp
     });
+<<<<<<< HEAD
+
+
+=======
+import React from 'react;
+import { NextPage } from 'next;
+import Head from 'next/head;
+
+const ErrorMonitoring: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>ErrorMonitoring - Zion App</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">ErrorMonitoring</h1>
+        <div className="bg-white rounded-lg shadow p-6">
+          {/* ErrorMonitoring content will go here */}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default ErrorMonitoring;
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+=======
   }
 }
+>>>>>>> f10a9a3721b4a88e659d4312a2d38b499e614b6c

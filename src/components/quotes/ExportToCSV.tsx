@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import { Button } from '@/components/ui/button;'';
+import { Button } from '@/components/ui/button;;
 import { Download } from '@/components/ui/icons;'
 ;;
 import type { QuoteRequest } from '@/types/quotes;'
-;
+
 interface ExportToCSVProps {;
   quotes: QuoteRequest[];
   filename?: string;''
 };
-;
+
 export const ExportToCSV: unknown = ({;''
   quotes,;;
   filename = 'quote-requests',;''
@@ -27,7 +27,7 @@ export const ExportToCSV: unknown = ({;''
       'Status',;;'
       'Created Date',;'
     ];''
-;
+
     // Format quote data for CSV;
     const rows: unknown = quotes.map((quote) => [;''
       quote.id,;;
@@ -75,14 +75,14 @@ export const ExportToCSV = ({'
       quote.budget_display ||;''
         (quote.budget_min && quote.budget_max;
           ? `$${quote.budget_min} - $${quote.budget_max}`;
-          : quote.budget_min;''
+          : quote.budget_min;''`
             ? `$${quote.budget_min}`;;
             : 'Not specified'),;'
       quote.timeline,;
       quote.status,;
       new Date(quote.created_at).toLocaleDateString(),;''
     ]);
-;
+
     // Create CSV content;''
     const csvContent: unknown = [;;
       headers.join(','),;''
@@ -91,7 +91,7 @@ export const ExportToCSV = ({'
           .map((cell) =>;''
             // Escape commas and quotes in cell values;;
             typeof cell === 'string' &&;;'
-            (cell.includes(',') || cell.includes('"'));;'
+            (cell.includes(',') || cell.includes('"'));;'`
               ? `"${cell.replace(/"/g, '""')}"`;";";""
               : cell,;";";";""
           );";";";";""
@@ -105,13 +105,13 @@ export const ExportToCSV = ({'
     const link: unknown = document.createElement('a');;'
     link.setAttribute('href', url);''
     link.setAttribute(;;
-      'download',;;'
+      'download',;;'`
       `${filename}-${new Date().toISOString().split('T')[0]}.csv`,;'
 =======
       quote.budget_display ||'
-        (quote.budget_min && quote.budget_max'
-          ? `$${quote.budget_min} - $${quote.budget_max}`;
-          : quote.budget_min'`
+        (quote.budget_min && quote.budget_max'`
+          ? `$${quote.budget_min} - $${quote.budget_max}`;`
+          : quote.budget_min'``
             ? `$${quote.budget_min}`;
             : 'Not specified'),'
       quote.timeline,;
@@ -126,8 +126,8 @@ export const ExportToCSV = ({'
         row;
           .map((cell) =>'
             // Escape commas and quotes in cell values'
-            typeof cell === 'string' &&'
-            (cell.includes(',') || cell.includes('"'))'`
+            typeof cell === 'string' &&'`
+            (cell.includes(',') || cell.includes('"'))'``
               ? `${cell.replace(//g, '""')};
               : cell,;"
           )"
@@ -140,8 +140,8 @@ export const ExportToCSV = ({'
     const url = URL.createObjectURL(blob)'
     const link = document.createElement('a')'
     link.setAttribute('href', url)'
-    link.setAttribute('
-      'download','`
+    link.setAttribute('`
+      'download','``
       `${filename}-${new Date().toISOString().split('T')[0]}.csv`,;
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
     );
@@ -155,7 +155,7 @@ export const ExportToCSV = ({'
 <<<<<<< HEAD
     }, 100);''
   };
-;
+
   return (;''
     <Button;;
       variant="outline";";";";""
@@ -184,6 +184,7 @@ export const ExportToCSV = ({'
       Export CSV"
     </Button>;
   );"
-}"
+}"`
 ""'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import React, { useEffect, useState } from 'react''';
-import Link from 'next/link;'';
-import { safeStorage } from '@/utils/safeStorage;'';
-import { getCookie, setCookie } from '@/utils/cookies;'';
-import { initGA } from '@/lib/analytics;'';
-import { initPostHog } from '@/lib/posthog'';
-;
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link;;
+import { safeStorage } from '@/utils/safeStorage;;
+import { getCookie, setCookie } from '@/utils/cookies;;
+import { initGA } from '@/lib/analytics;;
+import { initPostHog } from '@/lib/posthog;
+
 const AnalyticsConsentBanner: unknown React.FC = () => {;''
   const [showBanner, setShowBanner] = useState(false)''
 

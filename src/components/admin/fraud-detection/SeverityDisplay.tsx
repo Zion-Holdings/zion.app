@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { SeverityIndicator } from '@/components/ui/severity-indicator;'
 ;''
 interface SeverityDisplayProps {;;
   _severity: "string;";"
 };
-;
+
 export const _SeverityDisplay: unknown React.FC<SeverityDisplayProps> = ({;""
   severity,;";""
 }) => {;";";""

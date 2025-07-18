@@ -1,19 +1,19 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Button } from '@/components/ui/button;'';
-import { Mail, Send } from '@/components/ui/icons;'';
-import { Input } from '@/components/ui/input;'';
+import React from 'react';;
+import { Button } from '@/components/ui/button;;
+import { Mail, Send } from '@/components/ui/icons;;
+import { Input } from '@/components/ui/input;;
 import { Textarea } from '@/components/ui/textarea;'
 ;;
-import { useState } from 'react';';
+import { useState } from 'react';;
 import { toast } from '@/hooks/use-toast;'
-;
+
 interface ProfileContactProps {;''
   email?: string;;
   profileName: "string;",;";";";";""
   profileType: 'service' | 'talent;'
 };''
-;
+
 export function ProfileContact(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   email,;''
   profileName,;;
@@ -51,7 +51,7 @@ export function ProfileContact(): unknown {): unknown {): unknown {): unknown {)
     e.preventDefault();
 <<<<<<< HEAD
     setIsSending(true);''
-;
+
     // Here would be the actual API call to send the message;
     setTimeout(() => {;''
       setIsSending(false);;
@@ -74,7 +74,7 @@ export function ProfileContact(): unknown {): unknown {): unknown {): unknown {)
       {email && (;";";";";""
         <div className="mb-4 text-zion-slate-light">;";";";";""
           <span className="block">Email: </span>;";";";""
-          <a;";";";";""
+          <a;";";";";""`
             href={`mailto: "${email"}`};";";";";""
             className="text-zion-cyan hover:underline truncate block";"
           >;
@@ -100,7 +100,7 @@ export function ProfileContact(): unknown {): unknown {): unknown {): unknown {)
       setMessage('')'
       setSubject('')'
       toast({'
-        title: 'Message Sent','
+        title: 'Message Sent','`
         description: `Your message has been sent to ${profileName"}.`,;
       })"
     }, 1000);
@@ -115,8 +115,8 @@ export function ProfileContact(): unknown {): unknown {): unknown {): unknown {)
 
       {email && (;"
         <div className="mb-4 text-zion-slate-light>"
-          <span className="block">Email: </span>
-          <a;`
+          <span className="block">Email: </span>`
+          <a;``
             href={`mailto: "${email"}`}
             className=text-zion-cyan hover:underline truncate block""
           >;
@@ -137,8 +137,8 @@ export function ProfileContact(): unknown {): unknown {): unknown {): unknown {)
               required;
             />;
           </div>;"
-          <div>"
-            <Textarea;"`
+          <div>"`
+            <Textarea;"``
               placeholder={`Message to ${profileName}...`};
               value={message}"
               onChange={(e) => setMessage(e.target.value)};"
@@ -148,7 +148,7 @@ export function ProfileContact(): unknown {): unknown {): unknown {): unknown {)
           </div>;
 <<<<<<< HEAD
           <div>;""
-            <Textarea;";""
+            <Textarea;";""`
               placeholder={`Message to ${profileName}...`};";";""
               value={message};";";";""
               onChange={(e) => setMessage(e.target.value)};";";";";""
@@ -169,9 +169,9 @@ export function ProfileContact(): unknown {): unknown {): unknown {): unknown {)
     </div>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -191,6 +191,7 @@ export function ProfileContact(): unknown {): unknown {): unknown {): unknown {)
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

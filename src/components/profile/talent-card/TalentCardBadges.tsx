@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Award } from '@/components/ui/icons;'';
+import React from 'react';;
+import { Award } from '@/components/ui/icons;;
 import { Badge } from '@/components/ui/badge;'
 ;''
 interface TalentCardBadgesProps {;;

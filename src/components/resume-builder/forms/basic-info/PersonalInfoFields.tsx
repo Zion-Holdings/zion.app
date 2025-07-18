@@ -5,9 +5,9 @@ import {;
   FormControl,;
 <<<<<<< HEAD
   FormMessage,;
-} from '@/components/ui/form;'';
-import { Input } from '@/components/ui/input;'';
-import type { Control, ControllerRenderProps } from 'react-hook-form;'';
+} from '@/components/ui/form;;
+import { Input } from '@/components/ui/input;;
+import type { Control, ControllerRenderProps } from 'react-hook-form;;
 import type { BasicInfoFormData } from './schema;'
 ;''
 interface PersonalInfoFieldsProps {;;

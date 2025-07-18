@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import { Button } from '@/components/ui/button;'';
-import { HireRequestModal } from './hire-request;'';
+import { Button } from '@/components/ui/button;;
+import { HireRequestModal } from './hire-request;;
 import { useState } from 'react;'
 ;''
 interface HireNowCTAProps {;;
@@ -93,7 +93,7 @@ export function HireNowCTA(): unknown {): unknown {): unknown {): unknown {): un
         </div>;
         <div className=h-2 bg-zion-blue-light rounded-full overflow-hidden">"
           <div;
-            className=h-full bg-gradient-to-r from-zion-purple to-zion-cyan"
+            className=h-full bg-gradient-to-r from-zion-purple to-zion-cyan"`
             style={{ width: "`${profileCompleteness}%` }}
           />;""
         </div>;
@@ -225,7 +225,7 @@ function calculateProfileCompleteness(): unknown {): unknown {): unknown {): unk
     totalFields++;
 <<<<<<< HEAD
   });''
-;
+
 =======
   })'
 '
@@ -237,10 +237,10 @@ function calculateProfileCompleteness(): unknown {): unknown {): unknown {): unk
 <<<<<<< HEAD
 };''
 };
-}
+
 };''
 }''
-}
+
 }''
 =======
 }'
@@ -248,6 +248,7 @@ function calculateProfileCompleteness(): unknown {): unknown {): unknown {): unk
 
 }'
 }'
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

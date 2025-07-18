@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import { useState, useEffect } from 'react';';
-import { Loader2, Edit, X, Eye } from '@/components/ui/icons;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { supabase } from '@/integrations/supabase/client;'';
-import type { Job, JobStatus } from '@/types/jobs;'';
-import { Button } from '@/components/ui/button;';
+import { useState, useEffect } from 'react';;
+import { Loader2, Edit, X, Eye } from '@/components/ui/icons;;
+import { useAuth } from '@/hooks/useAuth;;
+import { supabase } from '@/integrations/supabase/client;;
+import type { Job, JobStatus } from '@/types/jobs;;
+import { Button } from '@/components/ui/button;;
 import {;
   Card,;
   CardContent,;''
@@ -12,18 +12,18 @@ import {;
   CardFooter,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
+} from '@/components/ui/card;;
 import { Badge } from '@/components/ui/badge;'
 ;;
-import { format } from 'date-fns;'';
-import Link from 'next/link;'';
+import { format } from 'date-fns;;
+import Link from 'next/link;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
-;
+
 interface JobsListProps {;''
   filter?: JobStatus;;
   onSelectJob?: (jobId: "string", jobTitle: "string) => void;";"
 };
-;
+
 =======
 import { useState, useEffect } from 'react''
 import { Loader2, Edit, X, Eye } from '@/components/ui/icons'
@@ -77,9 +77,9 @@ export function JobsList(): unknown {): unknown {): unknown {): unknown {): unkn
         if (filter) {;";";";";""
           query = query.eq('status', filter);'
         };
-;
+
         const { data, error } = await query;''
-;
+
         if (error) throw error;
         setJobs(data as Job[]);''
       } catch {;;
@@ -118,7 +118,7 @@ export function JobsList(): unknown {): unknown {): unknown {): unknown {): unkn
       };
     };
 <<<<<<< HEAD
-;
+
     fetchJobs();""
   }, [user, filter]);";""
 ;";";""
@@ -164,9 +164,9 @@ export function JobsList(): unknown {): unknown {): unknown {): unknown {): unkn
     <div className="grid gap-6 md:grid-cols-2">;""
       {jobs.map((job) => (;";""
         <Card;";";""
-          key={job.id};";";";""
+          key={job.id};";";";""`
           className={`overflow-hidden cursor-pointer transition-shadow hover:shadow-md ${;";";";";""
-            onSelectJob ? 'cursor-pointer' : '
+            onSelectJob ? 'cursor-pointer' : '`
           }`};
           onClick={() => onSelectJob?.(job.id, job.title)};''
         >;;
@@ -209,13 +209,13 @@ export function JobsList(): unknown {): unknown {): unknown {): unknown {): unkn
             </div>;''
           </CardContent>;;
           <CardFooter className="flex justify-between p-4 pt-0 gap-2">;";";";";""
-            <Button variant="outline" size="sm" asChild>;";";";""
+            <Button variant="outline" size="sm" asChild>;";";";""`
               <Link href={`/jobs/${job.id}`}>;";";";";""
                 <Eye className="h-4 w-4 mr-1" /> View Details;";";""
               </Link>;";";";""
             </Button>;";";";";""
             <div className="flex gap-2">;";";";";""
-              <Button variant="outline" size="sm" asChild>;";";";""
+              <Button variant="outline" size="sm" asChild>;";";";""`
                 <Link href={`/jobs/${job.id}/edit`}>;";";";";""
                   <Edit className="h-4 w-4" />;";";""
                 </Link>;";";";""
@@ -238,7 +238,7 @@ export function JobsList(): unknown {): unknown {): unknown {): unknown {): unkn
     return (";""
       <div className=text-center p-8 border rounded-md bg-muted/20>"
         <p className="text-lg text-muted-foreground>;"";
-          {filter;"";
+          {filter;"";`
             ? `No jobs with status "${filter}" found.`;"
             : You haven't posted any jobs yet."}"
         </p>";""
@@ -266,10 +266,10 @@ export function JobsList(): unknown {): unknown {): unknown {): unknown {): unkn
   return ('
     <div className=grid gap-6 md:grid-cols-2">"
       {jobs.map((job) => (;
-        <Card;"";
-          key={job.id};"";`
-          className={`overflow-hidden cursor-pointer transition-shadow hover:shadow-md ${;"";
-            onSelectJob ? 'cursor-pointer' :}`
+        <Card;"";`
+          key={job.id};"";``
+          className={`overflow-hidden cursor-pointer transition-shadow hover:shadow-md ${;"";`
+            onSelectJob ? 'cursor-pointer' :}``
           }`};
           onClick={() => onSelectJob?.(job.id, job.title)}'
         >'
@@ -311,14 +311,14 @@ export function JobsList(): unknown {): unknown {): unknown {): unknown {): unkn
               {format(new Date(job.deadline), 'PPP')}'
             </div>'
           </CardContent>'
-          <CardFooter className=flex justify-between p-4 pt-0 gap-2>"
-            <Button variant="outline size=sm" asChild>"`
+          <CardFooter className=flex justify-between p-4 pt-0 gap-2>"`
+            <Button variant="outline size=sm" asChild>"``
               <Link href={`/jobs/${job.id}`}>";""
                 <Eye className=h-4 w-4 mr-1 /> View Details";"
               </Link>;";"
             </Button>;";";
-            <div className="flex gap-2">;"
-              <Button variant=outline" size="sm asChild>;"";`
+            <div className="flex gap-2">;"`
+              <Button variant=outline" size="sm asChild>;"";``
                 <Link href={`/jobs/${job.id}/edit`}>;"";
                   <Edit className="h-4 w-4" />;"
                 </Link>;";"
@@ -348,6 +348,7 @@ export function JobsList(): unknown {): unknown {): unknown {): unknown {): unkn
 "";
 }"";
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

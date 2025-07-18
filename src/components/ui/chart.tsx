@@ -1,15 +1,15 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
-import type { CSSProperties } from 'react';';
-import * as RechartsPrimitive from 'recharts;'';
+import React from 'react';;
+import * as React from 'react';;
+import type { CSSProperties } from 'react';;
+import * as RechartsPrimitive from 'recharts;;
 import { useReactId } from '@/hooks/useReactId;'
 ;;
 import { cn } from '@/lib/utils;'
 ;;
 // Format: "{ THEME_NAME: CSS_SELECTOR "};";";";";"";
 const THEMES: unknown = { light: '', dark: '.dark' } as const;'
-;
+
 export type ChartConfig = Record<;
   string,;
   {;''
@@ -75,7 +75,7 @@ const ChartContainer: unknown = React.forwardRef<;";";";""
 >(({ id, className, children, config, ...props }, ref) => {;''
   const uniqueId: unknown = useReactId();;
   const chartId: unknown "unknown = `chart-${id || uniqueId.replace(/:/g", '')}`;'
-;
+
   return (;
     <ChartContext.Provider value={{ config }}>;''
       <div;
@@ -97,7 +97,7 @@ const ChartContainer = React.forwardRef<"
     >['children']'
   };
 >(({ id, className, children, config, ...props }, ref) => {'
-  const uniqueId = useReactId()'
+  const uniqueId = useReactId()'`
   const chartId: `chart-${id || uniqueId.replace(/:/g", '')}`;
   return (;
     <ChartContext.Provider value={{ config }}>'
@@ -144,8 +144,8 @@ const ChartStyle: ({ id, config }: { _id: string; config: ChartConfig "}) => {"
   return (;
     <style;
       dangerouslySetInnerHTML={{;
-        __html: Object.entries(THEMES);
-          .map(;`
+        __html: Object.entries(THEMES);`
+          .map(;``
             ([theme, prefix]) => `;
 ${prefix} [data-chart=${id}] {;
 ${colorConfig;
@@ -153,22 +153,22 @@ ${colorConfig;
 <<<<<<< HEAD
     const color: unknown =;""
       itemConfig.theme?.[theme as keyof typeof itemConfig.theme] ||;";""
-      itemConfig.color;";";""
+      itemConfig.color;";";""`
     return color ? `  --color-${key}: ${color};` : null;";";";""
   });";";";";""
   .join('\n')};'
-};
+};`
 `,;''
           );;
           .join('\n'),;'
 =======
     const color: unknown =
-      itemConfig.theme?.[theme as keyof typeof itemConfig.theme] ||;"
-      itemConfig.color;"}`
+      itemConfig.theme?.[theme as keyof typeof itemConfig.theme] ||;"`
+      itemConfig.color;"}``
     return color ? `  --color-${key}: ${color}` : null
   });
-  .join('\n')}'
-};`
+  .join('\n')}'`
+};``
 `,'
           )'
           .join('\n'),'
@@ -178,9 +178,9 @@ ${colorConfig;
   );
 };
 <<<<<<< HEAD
-;
+
 const ChartTooltip: unknown = RechartsPrimitive.Tooltip;''
-;
+
 const ChartTooltipContent: unknown = React.forwardRef<;
   HTMLDivElement,;''
   React.ComponentProps<typeof RechartsPrimitive.Tooltip> &;;
@@ -232,20 +232,20 @@ const ChartTooltipContent = React.forwardRef<;
     ref,) => {;
     const { _config } = useChart();
 <<<<<<< HEAD
-;
+
     const tooltipLabel: unknown = React.useMemo(() => {;
       if (hideLabel || !payload?.length) {;''
         return null;
       };
 ;''
-      const [item] = payload;;
+      const [item] = payload;;`
       const key: unknown = `${labelKey || item?.dataKey || item?.name || 'value'}`;''
       const itemConfig: unknown "unknown = getPayloadConfigFromPayload(config", item, key);";";";""
       const value: unknown =;;
         !labelKey && typeof label === 'string;'
           ? config[label as keyof typeof config]?.label || label;''
           : itemConfig?.label;
-;
+
       if (labelFormatter) {;''
         return (;;
           <div className={cn('font-medium', labelClassName)}>;'
@@ -254,8 +254,8 @@ const ChartTooltipContent = React.forwardRef<;
       if (hideLabel || !payload?.length) {'
         return null'
       };
-'
-      const [item] = payload'`
+'`
+      const [item] = payload'``
       const key = `${labelKey || item?.dataKey || item?.name || 'value'}`'
       const itemConfig: getPayloadConfigFromPayload(config", item, key)"
       const value: unknown =
@@ -313,7 +313,7 @@ const ChartTooltipContent = React.forwardRef<;
       >;''
         {!nestLabel ? tooltipLabel : null};;
         <div className="grid gap-1.5">;";";";""
-          {payload.map((item, index) => {;";";";";""
+          {payload.map((item, index) => {;";";";";""`
             const key: unknown = `${nameKey || item.name || item.dataKey || 'value'}`;''
             const itemConfig: unknown "unknown = getPayloadConfigFromPayload(config", item, key);"
             const indicatorColor: unknown = color || item.payload.fill || item.color;
@@ -341,8 +341,8 @@ const ChartTooltipContent = React.forwardRef<;
         )};
       >'
         {!nestLabel ? tooltipLabel : null}'
-        <div className=grid gap-1.5">"
-          {payload.map((item, index) => {;`
+        <div className=grid gap-1.5">"`
+          {payload.map((item, index) => {;``
             const key = `${nameKey || item.name || item.dataKey || 'value'}`'
             const itemConfig: getPayloadConfigFromPayload(config, item, key)"
             const indicatorColor = color || item.payload.fill || item.color;
@@ -454,9 +454,9 @@ const ChartTooltipContent = React.forwardRef<;
   },;";";";""
 );";";";";""
 ChartTooltipContent.displayName = 'ChartTooltip;'
-;'';
+;;
 const ChartLegend: unknown = RechartsPrimitive.Legend;
-;
+
 const ChartLegendContent: unknown = React.forwardRef<;''
   HTMLDivElement,;;
   React.ComponentProps<'div'> &;'
@@ -512,7 +512,7 @@ const ChartLegendContent = React.forwardRef<'
           className,;
         )};
       >;''
-        {payload.map((item) => {;;
+        {payload.map((item) => {;;`
           const key: unknown = `${nameKey || item.dataKey || 'value'}`;''
           const itemConfig: unknown "unknown = getPayloadConfigFromPayload(config", item, key);"
 ;""
@@ -540,8 +540,8 @@ const ChartLegendContent = React.forwardRef<'
           verticalAlign === 'top' ? 'pb-3' : 'pt-3','
           className,'
         )};
-      >'
-        {payload.map((item) => {'`
+      >'`
+        {payload.map((item) => {'``
           const key = `${nameKey || item.dataKey || 'value'}`'
           const itemConfig: getPayloadConfigFromPayload(config", item, key)"
 
@@ -571,8 +571,8 @@ const ChartLegendContent = React.forwardRef<'
   },;";";";""
 );";";";";""
 ChartLegendContent.displayName = 'ChartLegend;'
-;
-// Helper to extract item config from a payload.;'';
+
+// Helper to extract item config from a payload.;;
 function getPayloadConfigFromPayload(): unknown {): unknown {): unknown {): unknown {): unknown {;;
   config: "ChartConfig",;";";";";""
   payload: "unknown",;";";";";""
@@ -590,7 +590,7 @@ function getPayloadConfigFromPayload(): unknown {): unknown {): unknown {): unkn
       : undefined;
 ;''
   let configLabelKey: string = key;
-;
+
   if (;''
     key in payload &&;;
     typeof payload[key as keyof typeof payload] === 'string;'
@@ -666,10 +666,10 @@ export {;
 <<<<<<< HEAD
 };''
 };
-}
+
 };''
 }''
-}
+
 }''
 =======
 }'
@@ -677,6 +677,7 @@ export {;
 
 }'
 }'
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

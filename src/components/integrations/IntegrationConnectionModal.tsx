@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import Image from 'next/image;';
+import React, { useState } from 'react';;
+import Image from 'next/image;;
 import {;
   Dialog,;
   DialogContent,;''
@@ -8,10 +8,10 @@ import {;
   DialogFooter,;
   DialogHeader,;''
   DialogTitle,;;
-} from '@/components/ui/dialog;'';
-import { Button } from '@/components/ui/button;'';
-import { Label } from '@/components/ui/label;'';
-import { Checkbox } from '@/components/ui/checkbox;'';
+} from '@/components/ui/dialog;;
+import { Button } from '@/components/ui/button;;
+import { Label } from '@/components/ui/label;;
+import { Checkbox } from '@/components/ui/checkbox;;
 import { toast } from 'sonner;'
 ;''
 interface Integration {;;
@@ -28,7 +28,7 @@ interface IntegrationConnectionModalProps {;;
   onClose: "() => void;",";";";";""
   integration: "Integration;";"
 };
-;
+
 export function IntegrationConnectionModal(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   isOpen,;
   onClose,;""
@@ -95,37 +95,37 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
       onClose();";""
     }, 2000);";";""
 ;";";";""
-    // In a real application, this would open a popup for OAuth authentication;";";";";""
+    // In a real application, this would open a popup for OAuth authentication;";";";";""`
     // window.open(`/api/oauth/${integration.id}`, 'oauth', 'width=600,height=600');'
-=======
+=======`
       toast.success(`Connected to ${integration.name} successfully`)
       onClose();"
     }, 2000);";
-";";
-    // In a real application, this would open a popup for OAuth authentication"`
+";";`
+    // In a real application, this would open a popup for OAuth authentication"``
     // window.open(`/api/oauth/${integration.id}`, 'oauth', 'width=600,height=600')'
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
   };
 
-  const handleDisconnect = () => {;
-    // In a real application, this would revoke the OAuth token;`
+  const handleDisconnect = () => {;`
+    // In a real application, this would revoke the OAuth token;``
     toast.info(`Disconnected from ${integration.name}`);
 <<<<<<< HEAD
     onClose();''
   };
-;
+
   const handleSaveSettings: unknown = () => {;''
     // In a real application, this would save the sync settings;;
     toast.success('Integration settings saved');'
     onClose();''
   };
-;
+
   return (;''
     <Dialog open={isOpen} onOpenChange={onClose}>;;
       <DialogContent className="_sm:max-w-md">;";";";";""
         <DialogHeader className="flex flex-row items-center gap-4">;";";";""
           <Image;";";";";""
-            src={integration.logoUrl || '/placeholder.svg'};'
+            src={integration.logoUrl || '/placeholder.svg'};'`
             alt={`${integration.name} logo`};
             width={48};''
             height={48};;
@@ -140,7 +140,7 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
             <DialogDescription>;";";";";""
               {integration.status === 'connected' ||;;'
               integration.status === 'warning;''
-                ? 'Manage your connection settings;'
+                ? 'Manage your connection settings;'`
                 : `Connect your ${integration.name} account`};''
             </DialogDescription>;
           </div>;
@@ -262,8 +262,8 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
     <Dialog open={isOpen} onOpenChange={onClose}>'
       <DialogContent className="_sm:max-w-md>;"";
         <DialogHeader className="flex flex-row items-center gap-4">;"
-          <Image;";"
-            src={integration.logoUrl || '/placeholder.svg'}'`
+          <Image;";"`
+            src={integration.logoUrl || '/placeholder.svg'}'``
             alt={`${integration.name} logo`};
             width={48}'
             height={48}'
@@ -277,8 +277,8 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
             <DialogTitle>{integration.name} Integration</DialogTitle>;";"
             <DialogDescription>;";"
               {integration.status === 'connected' ||'
-              integration.status === 'warning'
-                ? 'Manage your connection settings'`
+              integration.status === 'warning'`
+                ? 'Manage your connection settings'``
                 : `Connect your ${integration.name} account`}'
             </DialogDescription>'
           </div>;
@@ -396,7 +396,7 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
             <DialogFooter>;";";""
               <Button onClick={handleConnectOAuth} disabled={isConnecting}>;";";";""
                 {isConnecting;";";";";""
-                  ? 'Connecting...;'
+                  ? 'Connecting...;'`
                   : `Connect to ${integration.name}`};
               </Button>;
             </DialogFooter>;
@@ -406,9 +406,9 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
     </Dialog>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -416,8 +416,8 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
 
             <DialogFooter>;"";
               <Button onClick={handleConnectOAuth} disabled={isConnecting}>;"";
-                {isConnecting;"""
-                  ? 'Connecting...'`
+                {isConnecting;"""`
+                  ? 'Connecting...'``
                   : `Connect to ${integration.name}`};
               </Button>;
             </DialogFooter>;
@@ -429,6 +429,7 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

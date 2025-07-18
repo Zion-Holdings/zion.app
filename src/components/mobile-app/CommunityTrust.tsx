@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { Star } from '@/components/ui/icons;''
-;
-;
+
+
   // Stats display with social proof;''
   const stats: unknown = [;;
     { value: '4.8', label: 'App Store Rating' },;;'

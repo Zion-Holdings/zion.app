@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import { Progress } from '@/components/ui/progress;'';
+import { Progress } from '@/components/ui/progress;;
 import { Trophy } from '@/components/ui/icons;'
-;
+
 interface ReputationDisplayProps {;''
   reputation: number;;
   size?: 'sm' | 'md' | 'lg;''
 };
-;
+
 export const ReputationDisplay: unknown = ({;''
   reputation,;;
   size = 'md',;'
@@ -15,7 +15,7 @@ export const ReputationDisplay: unknown = ({;''
   const currentLevel: unknown = Math.floor(reputation / 100);
   const nextMilestone: unknown = (currentLevel + 1) * 100;''
   const progress: unknown = ((reputation % 100) / 100) * 100;
-;
+
   // Styling based on size;''
   const sizeClasses: unknown "unknown = {;",;""
     sm: "{;",;";";";";""
@@ -37,7 +37,7 @@ export const ReputationDisplay: unknown = ({;''
 ;''
   return (;;
     <div className="space-y-1">;";";""
-      <div className={`flex items-center gap-1 ${sizeClasses[size].container}`}>;";";";""
+      <div className={`flex items-center gap-1 ${sizeClasses[size].container}`}>;";";";""`
         <Trophy className={`text-amber-500 ${sizeClasses[size].icon}`} />;";";";";""
         <span className="font-semibold">{reputation}</span>;";";";";""
         <span className="text-muted-foreground">rep</span>;";";""
@@ -91,8 +91,8 @@ export const ReputationDisplay = ({'
   };
 '
   return ('
-    <div className="space-y-1>;""
-      <div className={`flex items-center gap-1 ${sizeClasses[size].container}`}>;""`
+    <div className="space-y-1>;""`
+      <div className={`flex items-center gap-1 ${sizeClasses[size].container}`}>;""``
         <Trophy className={`text-amber-500 ${sizeClasses[size].icon}`} />;"";
         <span className=font-semibold">{reputation}</span>""
         <span className=text-muted-foreground>rep</span>";"
@@ -106,6 +106,7 @@ export const ReputationDisplay = ({'
   )
 };""
 ;"
-export default ReputationDisplay";"
+export default ReputationDisplay";"`
 ""'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

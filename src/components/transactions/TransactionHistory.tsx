@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import React, { useState, useEffect } from 'react;';
+import React, { useState, useEffect } from 'react;;
 import {;
   ArrowLeft,;
   ArrowRight,;''
@@ -7,12 +7,12 @@ import {;
   XCircle,;
   Clock,;''
   AlertCircle,;;
-} from '@/components/ui/icons;'';
-import { useQuery } from '@tanstack/react-query;'';
-import { supabase } from '@/integrations/supabase/client;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { useToast } from '@/hooks/use-toast;'';
-import { Button } from '@/components/ui/button;';
+} from '@/components/ui/icons;;
+import { useQuery } from '@tanstack/react-query;;
+import { supabase } from '@/integrations/supabase/client;;
+import { useAuth } from '@/hooks/useAuth;;
+import { useToast } from '@/hooks/use-toast;;
+import { Button } from '@/components/ui/button;;
 import {;
   Card,;
   CardContent,;''
@@ -20,13 +20,13 @@ import {;
   CardFooter,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
-import { Badge } from '@/components/ui/badge;'';
+} from '@/components/ui/card;;
+import { Badge } from '@/components/ui/badge;;
 import Skeleton from '@/components/ui/skeleton;'
 ;;
-import { formatDistanceToNow } from 'date-fns;'';
-import { safeStorage } from '@/utils/safeStorage;'';
-import { useCurrency } from '@/hooks/useCurrency;'';
+import { formatDistanceToNow } from 'date-fns;;
+import { safeStorage } from '@/utils/safeStorage;;
+import { useCurrency } from '@/hooks/useCurrency;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
 ;''
 interface Transaction {;;
@@ -89,7 +89,7 @@ export function TransactionHistory(): unknown {): unknown {): unknown {): unknow
     _queryFn: async () => {;
       if (!user) return [];''
       if (!supabase) return [];
-;
+
       // Build the query based on filters;''
       let query = supabase;;
         .from('transactions');'
@@ -97,9 +97,9 @@ export function TransactionHistory(): unknown {): unknown {): unknown {): unknow
           `;''
           *,;;
           provider: "profiles!provider_id(display_name)",;"
-          service:services(title);""
+          service:services(title);""`
         `,;";""
-        );";";""
+        );";";""`
         .or(`user_id.eq.${user.id},provider_id.eq.${user.id}`);";";";""
 ;";";";";""
       if (filter === 'pending') {;;'
@@ -111,7 +111,7 @@ export function TransactionHistory(): unknown {): unknown {): unknown {): unknow
       };''
 ;;
       query = query.order('created_at', { ascending: "false "});"
-;
+
       const { data, error } = await query;""
 ;";""
       if (error) throw error;";";""
@@ -148,7 +148,7 @@ export function TransactionHistory(): unknown {): unknown {): unknown {): unknow
           (data as unknown as { message?: string })?.message ||;;
           'Transaction updated successfully',;''
       });
-;
+
       refetch();''
     } catch {;;
       logErrorToProduction('Error managing transaction:', { data: "error "});";";";""
@@ -337,13 +337,13 @@ export function TransactionHistory(): ;
       // Build the query based on filters'
       let query = supabase'
         .from('transactions')'
-        .select(;
+        .select(;`
           `'
           *,'
-          provider: profiles!provider_id(display_name),"
-          service:services(title)"`
-        `,;
-        );"`
+          provider: profiles!provider_id(display_name),"`
+          service:services(title)"``
+        `,;`
+        );"``
         .or(`user_id.eq.${user.id},provider_id.eq.${user.id}`)"
 
       if (filter === 'pending') {'
@@ -492,7 +492,7 @@ export function TransactionHistory(): ;
 
   const { _formatPrice } = useCurrency();
 <<<<<<< HEAD
-;
+
   const formatCurrency: unknown = (_amount: number) => {;
     return formatPrice(amount);""
   };";""
@@ -687,7 +687,7 @@ export function TransactionHistory(): ;
               const counterpartyName: unknown = isClient;;
                 ? transaction.provider?.display_name || 'Service Provider;''
                 : 'Client;''
-;
+
               return (;
                 <Card;''
                   key={transaction.id};;
@@ -780,7 +780,7 @@ export function TransactionHistory(): ;
                         </CardDescription>;
                       </div>;
 <<<<<<< HEAD
-;
+
                       {getStatusBadge(;
                         transaction.status,;""
                         transaction.in_escrow,;";""
@@ -880,7 +880,7 @@ export function TransactionHistory(): ;
               No transactions found;";";";""
             </h3>;";";";";""
             <p className="text-zion-slate-light max-w-md mx-auto">;";";";";""
-              {filter !== 'all;''
+              {filter !== 'all;''`
                 ? `You don't have any ${filter} transactions. Try changing the filter or make a new transaction.`;;'
                 : "You haven't made any transactions yet. Once you make a payment or receive one, it will appear here."};"
             </p>;
@@ -994,8 +994,8 @@ export function TransactionHistory(): ;
             <h3 className="text-xl font-medium text-white mb-2">
               No transactions found;
             </h3>"
-            <p className="text-zion-slate-light max-w-md mx-auto>"
-              {filter !== 'all'`
+            <p className="text-zion-slate-light max-w-md mx-auto>"`
+              {filter !== 'all'``
                 ? `You don't have any ${filter} transactions. Try changing the filter or make a new transaction.`;
                 : "You haven't made any transactions yet. Once you make a payment or receive one, it will appear here."}
             </p>;
@@ -1007,6 +1007,7 @@ export function TransactionHistory(): ;
 "
 }"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

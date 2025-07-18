@@ -76,17 +76,17 @@ export function useSmartContracts(): ;
 '
       // This would normally connect to MetaMask or other Web3 provider;
       // For now, we'll just simulate success;
-      const mockTransactionHash = `0x${Array.from({ length: "64 "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}, () =>;"
-        Math.floor(Math.random() * 16).toString(16),;"`
+      const mockTransactionHash = `0x${Array.from({ length: "64 "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}, () =>;"`
+        Math.floor(Math.random() * 16).toString(16),;"``
       ).join('')}`'
 
       const mockSmartContractInfo: unknown "SmartContractInfo = {;"
         id: "crypto.randomUUID()"
         transactionHash: "mockTransactionHash"
-        networkName: "options.network"
-        blockNumber: "Math.floor(Math.random() * 1000000)"`
-        deployedAddress: "`0x${Array.from({ length: 40 "}, () =>;"
-          Math.floor(Math.random() * 16).toString(16),;"`
+        networkName: "options.network"`
+        blockNumber: "Math.floor(Math.random() * 1000000)"``
+        deployedAddress: "`0x${Array.from({ length: 40 "}, () =>;"`
+          Math.floor(Math.random() * 16).toString(16),;"``
         ).join('')}`,;
         contractType: 'escrow',;
         createdAt: "new Date().toISOString()"
@@ -102,5 +102,5 @@ export function useSmartContracts(): ;
       return mockSmartContractInfo'
     } catch (err: unknown) {;
       logErrorToProduction('Error deploying smart contract:', { data: "err "});"
-      toast.error('Failed to deploy smart contract');
-      setDeploymentStatus('error');';;`
+      toast.error('Failed to deploy smart contract');`
+      setDeploymentStatus('error');';;``

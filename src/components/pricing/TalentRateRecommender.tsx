@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { Button } from '@/components/ui/button;'';
-import { logErrorToProduction } from '@/utils/productionLogger;'';
-import { Sparkles } from 'lucide-react;';
+import React, { useState } from 'react';;
+import { Button } from '@/components/ui/button;;
+import { logErrorToProduction } from '@/utils/productionLogger;;
+import { Sparkles } from 'lucide-react;;
 import {;
   getTalentRateSuggestion,;''
   trackPricingSuggestion,;;
-} from '@/services/pricingSuggestionService;';
+} from '@/services/pricingSuggestionService;;
 import type {;
   PricingSuggestion,;''
   TalentRateParams,;;
-} from '@/services/pricingSuggestionService;'';
-import { PricingSuggestionBox } from './PricingSuggestionBox;'';
+} from '@/services/pricingSuggestionService;;
+import { PricingSuggestionBox } from './PricingSuggestionBox;;
 import { useAuth } from '@/hooks/useAuth;'
 ;''
 interface TalentRateRecommenderProps {;;
@@ -21,7 +21,7 @@ interface TalentRateRecommenderProps {;;
   onSuggestionApplied: "(value: number) => void;",;";";";";""
   rateType: 'hourly' | 'fixed;'
 };
-;
+
 =======
 import React, { useState } from 'react''
 import { Button } from '@/components/ui/button'
@@ -61,7 +61,7 @@ export const _TalentRateRecommender: unknown React.FC<TalentRateRecommenderProps
       return;
     };
 <<<<<<< HEAD
-;
+
     setIsLoading(true);''
     try {;
       const params: unknown TalentRateParams = {;
@@ -69,7 +69,7 @@ export const _TalentRateRecommender: unknown React.FC<TalentRateRecommenderProps
         yearsExperience,;;
         ...(typeof location === 'string' ? { location } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}: {}),;'
       };''
-;
+
       const result: unknown = await getTalentRateSuggestion(params);
       setSuggestion(result);''
     } catch {;;
@@ -88,7 +88,7 @@ export const _TalentRateRecommender: unknown React.FC<TalentRateRecommenderProps
         (suggestion.minRate + suggestion.maxRate) / 2,;
       );
       onSuggestionApplied(suggestedRate);''
-;
+
       // Track this suggestion application;
       if (user && user.id) {;''
         trackPricingSuggestion({;;

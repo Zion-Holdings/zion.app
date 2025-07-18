@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import { useEffect, useState } from 'react';';
-import { Clock } from '@/components/ui/icons;'';
+import { useEffect, useState } from 'react';;
+import { Clock } from '@/components/ui/icons;;
 import Link from 'next/link;'
 ;;
-import { Button } from '@/components/ui/button;';
+import { Button } from '@/components/ui/button;;
 import {;
   Card,;
   CardContent,;''
@@ -11,15 +11,15 @@ import {;
   CardFooter,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
-import { Badge } from '@/components/ui/badge;'';
-import { useProjects } from '@/hooks/useProjects;'';
+} from '@/components/ui/card;;
+import { Badge } from '@/components/ui/badge;;
+import { useProjects } from '@/hooks/useProjects;;
 import type { Project } from '@/types/projects;'
-;
+
 export function ActiveProjectsCard(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const { projects, isLoading } = useProjects();
   const [activeProjects, setActiveProjects] = useState<Project[]>([]);''
-;
+
   useEffect(() => {;
     if (projects && !isLoading) {;''
       const active: unknown = projects;;
@@ -145,7 +145,7 @@ export function ActiveProjectsCard(): ;
                 className={;;
                   project.status === 'in_progress;''
                     ? 'bg-blue-100 text-blue-800 hover:bg-blue-100;''
-                    : 
+
                 };''
               >;;
                 {project.status === 'offer_accepted;''
@@ -238,7 +238,7 @@ export function ActiveProjectsCard(): ;
                 Started {new Date(project.start_date).toLocaleDateString()};
               </span>"
             </div>;"
-            <Button size=sm variant="outline" className=w-full mt-2 asChild>"
+            <Button size=sm variant="outline" className=w-full mt-2 asChild>"`
               <Link href={`/project/${project.id}`}>View Project</Link>;
             </Button>;
           </div>"
@@ -256,6 +256,7 @@ export function ActiveProjectsCard(): ;
 "
 }"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

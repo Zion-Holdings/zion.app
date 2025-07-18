@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import { useState, useMemo } from 'react';';
-import { Globe, Search } from '@/components/ui/icons;'';
-import { onsiteServicePricing } from '@/data/onsiteServicePricing;'';
-import type { CountryPricing } from '@/data/onsiteServicePricing;'';
-import { Input } from '@/components/ui/input;';
+import { useState, useMemo } from 'react';;
+import { Globe, Search } from '@/components/ui/icons;;
+import { onsiteServicePricing } from '@/data/onsiteServicePricing;;
+import type { CountryPricing } from '@/data/onsiteServicePricing;;
+import { Input } from '@/components/ui/input;;
 import {;
   Table,;
   TableBody,;''
@@ -14,7 +14,7 @@ import {;
 } from '@/components/ui/table;'
 ;;
 import { Button } from '@/components/ui/button;'
-;'';
+;;
 export function ITServicePricingTable(): unknown {): unknown {): unknown {): unknown {): unknown {) {;;
   const [searchQuery, setSearchQuery] = useState('');''
   const [sortConfig, setSortConfig] = useState<{;;
@@ -61,7 +61,7 @@ export function ITServicePricingTable(): '
       );
 <<<<<<< HEAD
     };''
-;
+
     // Sort data;
     filteredData.sort((a, b) => {;''
       if (a[sortConfig.key] < b[sortConfig.key]) {;;

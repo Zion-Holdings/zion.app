@@ -1,16 +1,16 @@
 <<<<<<< HEAD
-import React, { useEffect } from 'react';';
-import { useForm } from 'react-hook-form;'';
-import { zodResolver } from '@hookform/resolvers/zod;'';
-import { Button } from '@/components/ui/button;'';
-import { Form } from '@/components/ui/form;'';
-import { Card } from '@/components/ui/card;'';
-import { RateOptimizationSection } from '../RateOptimizationSection;'';
-import { basicInfoSchema } from './schema;'';
-import type { BasicInfoFormData } from './schema;'';
-import { PersonalInfoFields } from './PersonalInfoFields;'';
+import React, { useEffect } from 'react';;
+import { useForm } from 'react-hook-form;;
+import { zodResolver } from '@hookform/resolvers/zod;;
+import { Button } from '@/components/ui/button;;
+import { Form } from '@/components/ui/form;;
+import { Card } from '@/components/ui/card;;
+import { RateOptimizationSection } from '../RateOptimizationSection;;
+import { basicInfoSchema } from './schema;;
+import type { BasicInfoFormData } from './schema;;
+import { PersonalInfoFields } from './PersonalInfoFields;;
 import { ContactFields } from './ContactFields;'
-;
+
 export interface BasicInfoFormProps {;
   resumeId?: string;
   initialData?: Partial<BasicInfoFormData>;
@@ -19,7 +19,7 @@ export interface BasicInfoFormProps {;
   yearsExperience?: number;
   onComplete?: () => void;
 };
-;
+
 export function BasicInfoForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   initialData = {},;
   onSave,;

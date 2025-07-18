@@ -1,20 +1,20 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Search, Menu, X, Bell, ShoppingCart } from '@/components/ui/icons;'';
-import { Logo } from './Logo;'';
-import { AvatarMenu } from './AvatarMenu;'';
-import { LanguageSelector } from './LanguageSelector;'';
-import { MainNavigation } from '@/layout/MainNavigation;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { EnhancedSearchInput } from '@/components/search/EnhancedSearchInput;'';
-import { generateSearchSuggestions } from '@/data/marketplaceData;'';
-import { useRouter } from 'next/router;'';
-import { useState } from 'react';';
-import { PointsBadge } from '@/components/loyalty/PointsBadge;'';
-import { useTranslation } from 'react-i18next;'';
-import { logInfo } from '@/utils/productionLogger;'';
+import React from 'react';;
+import { Search, Menu, X, Bell, ShoppingCart } from '@/components/ui/icons;;
+import { Logo } from './Logo;;
+import { AvatarMenu } from './AvatarMenu;;
+import { LanguageSelector } from './LanguageSelector;;
+import { MainNavigation } from '@/layout/MainNavigation;;
+import { useAuth } from '@/hooks/useAuth;;
+import { EnhancedSearchInput } from '@/components/search/EnhancedSearchInput;;
+import { generateSearchSuggestions } from '@/data/marketplaceData;;
+import { useRouter } from 'next/router;;
+import { useState } from 'react';;
+import { PointsBadge } from '@/components/loyalty/PointsBadge;;
+import { useTranslation } from 'react-i18next;;
+import { logInfo } from '@/utils/productionLogger;;
 import { Button } from '@/components/ui/button;'
-;'';
+;;
 export interface HeaderProps {;
   hideLogin?: boolean;
   customLogo?: string;''
@@ -50,7 +50,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
         );
     };
   };
-;
+
   const toggleMobileMenu: unknown = () => {;""
     setIsMobileMenuOpen(!isMobileMenuOpen);";""
   };";";""
@@ -92,23 +92,23 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
                   if (;;
                     suggestion.type === 'product' &&;;'
                     !suggestion.slug.startsWith('/marketplace/listing/');'
-                  ) {;
+                  ) {;`
                     path = `/marketplace/listing/${suggestion.slug}`;''
                   } else if (;;
                     suggestion.type === 'doc' &&;;'
                     !suggestion.slug.startsWith('/docs');''
                   ) {;
-                    // This case might need refinement based on actual doc slug structure;
+                    // This case might need refinement based on actual doc slug structure;`
                     path = `/docs/${suggestion.slug}`;''
                   } else if (;;
                     suggestion.type === 'blog' &&;;'
                     !suggestion.slug.startsWith('/blog/');'
-                  ) {;
+                  ) {;`
                     path = `/blog/${suggestion.slug}`;
                   };
                   router.push(path);
                 } else {;''
-                  router.push(;
+                  router.push(;`
                     `/search?q=${encodeURIComponent(suggestion.text)}`,;
                   );''
                 };;
@@ -158,7 +158,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
             <ShoppingCart className="h-4 w-4" />;";";";";""
             <span className="absolute -top-1 -right-1 h-2 w-2 bg-primary rounded-full"></span>;"
           </Button>;
-;
+
           {/* Language Selector */};""
           <LanguageSelector />;";""
 ;";";""
@@ -228,7 +228,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
     const trimmed = query.trim()'
     if (trimmed) {'
       logInfo('Header search submit:', { data: "{ data: trimmed } });""
-      router;""
+      router;""`
         .push(`/search?q=${encodeURIComponent(trimmed)}`);"";
         .then(() => setQuery(''))'
         .catch((err) =>'
@@ -277,24 +277,24 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
                   let path = suggestion.slug'
                   if ('
                     suggestion.type === 'product' &&'
-                    !suggestion.slug.startsWith('/marketplace/listing/')'
-                  ) {;`
+                    !suggestion.slug.startsWith('/marketplace/listing/')'`
+                  ) {;``
                     path = `/marketplace/listing/${suggestion.slug}`'
                   } else if ('
                     suggestion.type === 'doc' &&'
                     !suggestion.slug.startsWith('/docs')'
-                  ) {'
-                    // This case might need refinement based on actual doc slug structure;`
+                  ) {'`
+                    // This case might need refinement based on actual doc slug structure;``
                     path = `/docs/${suggestion.slug}`'
                   } else if ('
                     suggestion.type === 'blog' &&'
-                    !suggestion.slug.startsWith('/blog/')'
-                  ) {;`
+                    !suggestion.slug.startsWith('/blog/')'`
+                  ) {;``
                     path = `/blog/${suggestion.slug}`;
                   };
                   router.push(path);
-                } else {'
-                  router.push('`
+                } else {'`
+                  router.push('``
                     `/search?q=${encodeURIComponent(suggestion.text)}`,;
                   )'
                 }'
@@ -417,22 +417,22 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
                     if (;;
                       suggestion.type === 'product' &&;;'
                       !suggestion.slug.startsWith('/marketplace/listing/');'
-                    ) {;
+                    ) {;`
                       path = `/marketplace/listing/${suggestion.slug}`;''
                     } else if (;;
                       suggestion.type === 'doc' &&;;'
                       !suggestion.slug.startsWith('/docs');'
-                    ) {;
+                    ) {;`
                       path = `/docs/${suggestion.slug}`;''
                     } else if (;;
                       suggestion.type === 'blog' &&;;'
                       !suggestion.slug.startsWith('/blog/');'
-                    ) {;
+                    ) {;`
                       path = `/blog/${suggestion.slug}`;
                     };
                     router.push(path);
                   } else {;''
-                    router.push(;
+                    router.push(;`
                       `/search?q=${encodeURIComponent(suggestion.text)}`,;
                     );''
                   };;
@@ -508,23 +508,23 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
                     let path = suggestion.slug'
                     if ('
                       suggestion.type === 'product' &&'
-                      !suggestion.slug.startsWith('/marketplace/listing/')'
-                    ) {;`
+                      !suggestion.slug.startsWith('/marketplace/listing/')'`
+                    ) {;``
                       path = `/marketplace/listing/${suggestion.slug}`'
                     } else if ('
                       suggestion.type === 'doc' &&'
-                      !suggestion.slug.startsWith('/docs')'
-                    ) {;`
+                      !suggestion.slug.startsWith('/docs')'`
+                    ) {;``
                       path = `/docs/${suggestion.slug}`'
                     } else if ('
                       suggestion.type === 'blog' &&'
-                      !suggestion.slug.startsWith('/blog/')'
-                    ) {;`
+                      !suggestion.slug.startsWith('/blog/')'`
+                    ) {;``
                       path = `/blog/${suggestion.slug}`;
                     };
                     router.push(path);
-                  } else {'
-                    router.push('`
+                  } else {'`
+                    router.push('``
                       `/search?q=${encodeURIComponent(suggestion.text)}`,;
                     )'
                   }'
@@ -570,9 +570,9 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
     </header>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -583,6 +583,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

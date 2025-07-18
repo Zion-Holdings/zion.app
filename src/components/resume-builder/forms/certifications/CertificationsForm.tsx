@@ -1,19 +1,19 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { Loader2 } from '@/components/ui/icons;'';
-import { useForm } from 'react-hook-form;'';
-import { Button } from '@/components/ui/button;'';
-import { Form } from '@/components/ui/form;'';
+import { useState } from 'react';;
+import { Loader2 } from '@/components/ui/icons;;
+import { useForm } from 'react-hook-form;;
+import { Button } from '@/components/ui/button;;
+import { Form } from '@/components/ui/form;;
 import type { Certification } from '@/types/resume;'
 ;;
-import { useResume } from '@/hooks/useResume;'';
-import { Alert, AlertDescription } from '@/components/ui/alert;'';
-import { zodResolver } from '@hookform/resolvers/zod;'';
+import { useResume } from '@/hooks/useResume;;
+import { Alert, AlertDescription } from '@/components/ui/alert;;
+import { zodResolver } from '@hookform/resolvers/zod;;
 import { format } from 'date-fns;'
 ;;
-import { CertificationsList } from './CertificationsList;'';
-import { CertificationFormFields } from './CertificationFormFields;'';
-import { certificationSchema } from './types;'';
+import { CertificationsList } from './CertificationsList;;
+import { CertificationFormFields } from './CertificationFormFields;;
+import { certificationSchema } from './types;;
 import type { CertificationFormValues } from './types;'
 ;''
 interface CertificationsFormProps {;;
@@ -22,7 +22,7 @@ interface CertificationsFormProps {;;
   onComplete: "() => void;",;";";";";""
   onBack: "() => void;";"
 };
-;
+
 =======
 import { useState } from 'react''
 import { Loader2 } from '@/components/ui/icons'
@@ -82,7 +82,7 @@ export function CertificationsForm(): unknown {): unknown {): unknown {): unknow
       credential_url: '',;'
     },;
   });
-;
+
   const handleAddOrUpdate: unknown = async (_data: CertificationFormValues) => {;''
     try {;
       setError(null);
@@ -235,7 +235,7 @@ export function CertificationsForm(): unknown {): unknown {): unknown {): unknow
         <h3 className="text-md font-medium mb-4">;";";";";""
           {editingId ? 'Update Certification' : 'Add Certification'};'
         </h3>;''
-;
+
         <Form {...form}>;
           <form;''
             onSubmit={form.handleSubmit(handleAddOrUpdate)};;

@@ -1,13 +1,13 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { useOnboardingStatus } from '@/hooks/useOnboardingStatus;'
 ;;
-import { OnboardingTracker } from './OnboardingTracker;'';
+import { OnboardingTracker } from './OnboardingTracker;;
 import type { OnboardingStep } from './OnboardingTracker;'
-;
+
 export function ClientOnboardingSteps(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   const onboardingStatus: unknown = useOnboardingStatus();
-;
+
   const steps: unknown OnboardingStep[] = [;''
     {;;
       id: 'post-job',;;'

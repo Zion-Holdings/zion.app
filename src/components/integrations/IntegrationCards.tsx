@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import React from 'react;';
+import React from 'react;;
 import {;
   ArrowRight,;
   Check,;''
@@ -7,15 +7,15 @@ import {;
   Users,;
   Slack,;''
   Briefcase,;;
-} from '@/components/ui/icons;'';
-import { logDebug } from '@/utils/productionLogger;'';
-import { Button } from '@/components/ui/button;';
+} from '@/components/ui/icons;;
+import { logDebug } from '@/utils/productionLogger;;
+import { Button } from '@/components/ui/button;;
 import {;''
   Card,;
   CardContent,;
   CardFooter,;''
   CardHeader,;;
-} from '@/components/ui/card;'';
+} from '@/components/ui/card;;
 import { Badge } from '@/components/ui/badge;'
 ;''
 interface IntegrationCardProps {;;
@@ -26,7 +26,7 @@ interface IntegrationCardProps {;;
   href?: string;
   onConnect?: () => void;
 };
-;'';
+;;
 export function IntegrationCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   title,;
   description,;''
@@ -235,10 +235,10 @@ export function IntegrationCards(): ;";"
 <<<<<<< HEAD
 };''
 };
-}
+
 };''
 }''
-}
+
 }''
 =======
 }'

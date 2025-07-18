@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import React from 'react';';
-import type { ControllerRenderProps } from 'react-hook-form;'';
-import type { Control } from 'react-hook-form;';
+import React from 'react';;
+import type { ControllerRenderProps } from 'react-hook-form;;
+import type { Control } from 'react-hook-form;;
 import {;
   FormField,;
   FormItem,;''
@@ -9,8 +9,8 @@ import {;
   FormControl,;
   FormDescription,;''
   FormMessage,;;
-} from '@/components/ui/form;'';
-import { Textarea } from '@/components/ui/textarea;'';
+} from '@/components/ui/form;;
+import { Textarea } from '@/components/ui/textarea;;
 import type { JobSchemaType } from './validation;'
 ;''
 interface DescriptionFieldsProps {;;
@@ -18,7 +18,7 @@ interface DescriptionFieldsProps {;;
   handleEditorChange: "(content: string) => void;",;";";";";""
   editorContent: "string;";"
 };
-;
+
 =======
 import React from 'react'
 import type { ControllerRenderProps } from 'react-hook-form'

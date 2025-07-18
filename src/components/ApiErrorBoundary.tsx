@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import React, { Component } from 'react''';
-import { RefreshCw, WifiOff } from '@/components/ui/icons;'';
-import type { ReactNode } from 'react''';
-import { QueryClient } from '@tanstack/react-query;'';
-import { Button } from '@/components/ui/button;'';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'';
-;
-import { logErrorToProduction } from '@/utils/productionLogger'';
+import React, { Component } from 'react';
+import { RefreshCw, WifiOff } from '@/components/ui/icons;;
+import type { ReactNode } from 'react';
+import { QueryClient } from '@tanstack/react-query;;
+import { Button } from '@/components/ui/button;;
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert;
+
+import { logErrorToProduction } from '@/utils/productionLogger;
 
 interface ApiErrorBoundaryProps {;
   children: ReactNode;
@@ -21,7 +21,7 @@ interface ApiErrorBoundaryState {;''
   isRetrying: boolean,;""
   isOnline: "boolean"
 };
-;
+
 export class ApiErrorBoundary extends Component<;
   ApiErrorBoundaryProps,;
   ApiErrorBoundaryState;
@@ -204,14 +204,14 @@ export class ApiErrorBoundary extends Component<;
                 Reload Page""
               </Button>;
             </div>;
-;
+
             {!this.state.isOnline && (;
               <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">;";""
                 <WifiOff className=h-4 w-4" />""
                 <span>Offline</span>;
               </div>;
             )};
-;
+
             {process.env.NODE_ENV === 'development' && this.state.error && (;''
               <details className="mt-4 rounded border p-2 text-xs">;";""
                 <summary className=cursor-pointer font-medium">";"
@@ -258,7 +258,7 @@ export const useApiErrorHandler: unknown = () => {;''
 };''
 ''''''
 =======
-import React from 'react';
+import React from 'react;
 
 export default function ApiErrorBoundary() {
   return (
@@ -267,5 +267,5 @@ export default function ApiErrorBoundary() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}
+
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

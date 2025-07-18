@@ -1,19 +1,19 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Check, X } from '@/components/ui/icons;';
+import React from 'react';;
+import { Check, X } from '@/components/ui/icons;;
 import {;
   Card,;''
   CardContent,;
   CardFooter,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
-import { Badge } from '@/components/ui/badge;'';
-import { Button } from '@/components/ui/button;'';
+} from '@/components/ui/card;;
+import { Badge } from '@/components/ui/badge;;
+import { Button } from '@/components/ui/button;;
 import { format } from 'date-fns;'
 ;;
-import { useDisputeCheck } from '@/hooks/useDisputeCheck;'';
-import { DisputeStatusBadge } from '@/components/disputes/DisputeStatusBadge;'';
+import { useDisputeCheck } from '@/hooks/useDisputeCheck;;
+import { DisputeStatusBadge } from '@/components/disputes/DisputeStatusBadge;;
 import { RaiseDisputeButton } from '@/components/disputes/RaiseDisputeButton;'
 ;''
 interface MilestoneCardProps {;;
@@ -27,7 +27,7 @@ interface MilestoneCardProps {;;
   onApprove?: (id: string) => Promise<void>;";";";";""
   onReject?: (id: "string) => Promise<void>;";"
 };
-;
+
 =======
 import React from 'react'
 import { Check, X } from '@/components/ui/icons'
@@ -86,7 +86,7 @@ export function MilestoneCard(): unknown {): unknown {): unknown {): unknown {):
         return 'bg-gray-500;'
     };''
   };
-;
+
   return (;''
     <Card>;;
       <CardHeader className="pb-2">;";";";";""
@@ -137,7 +137,7 @@ export function MilestoneCard(): unknown {): unknown {): unknown {): unknown {):
           </div>'
           <div className=flex gap-2">"
             <Badge;
-              variant=outline"
+              variant=outline"`
               className={`capitalize ${getStatusBadgeColor()} text-white`}"
             >;
               {status.replace('_', ' ')}'
@@ -243,7 +243,7 @@ export function MilestoneCard(): unknown {): unknown {): unknown {): unknown {):
 }";"
 };""
 }""
-}
+
 }""
 =======
       </CardFooter>
@@ -257,6 +257,7 @@ export function MilestoneCard(): unknown {): unknown {): unknown {): unknown {):
 
 }"
 }"
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import { useState } from 'react;';
+import { useState } from 'react;;
 import {;
   FileText,;
   MessageSquare,;''
@@ -7,10 +7,10 @@ import {;
   ExternalLink,;
   Download,;''
   HelpCircle,;;
-} from '@/components/ui/icons;'';
-import { formatDistanceToNow } from 'date-fns;'';
-import type { JobApplication } from '@/types/jobs;'';
-import { Button } from '@/components/ui/button;';
+} from '@/components/ui/icons;;
+import { formatDistanceToNow } from 'date-fns;;
+import type { JobApplication } from '@/types/jobs;;
+import { Button } from '@/components/ui/button;;
 import {;
   Card,;''
   CardContent,;
@@ -19,14 +19,14 @@ import {;
   CardTitle,;;
 } from '@/components/ui/card;'
 ;;
-import Link from 'next/link;'';
-import { StatusBadge } from './StatusBadge;'';
+import Link from 'next/link;;
+import { StatusBadge } from './StatusBadge;;
 import { ApplicationProgress } from './ApplicationProgress;'
 ;''
 interface ApplicationCardProps {;;
   application: "JobApplication;";"
 };
-;
+
 export function ApplicationCard(): unknown {): unknown {): unknown {): unknown {): unknown {{ application }: ApplicationCardProps) {;
   const [expanded, setExpanded] = useState(false);
   const [showFeedback, setShowFeedback] = useState(false);
@@ -98,7 +98,7 @@ export function ApplicationCard(): unknown {): unknown {): unknown {): unknown {
 <<<<<<< HEAD
     }, 100);''
   };
-;
+
   const renderActionButtons: unknown = () => {;''
     switch (application.status) {;;
       case 'shortlisted':;''
@@ -225,7 +225,7 @@ export function ApplicationCard(): unknown {): unknown {): unknown {): unknown {
           </div>;";";""
         </div>;";";";""
 ;";";";";""
-        <Button variant="secondary" size="sm" className="w-full" asChild>;";";";""
+        <Button variant="secondary" size="sm" className="w-full" asChild>;";";";""`
           <Link href={`/messages?jobId=${application.job_id}`}>;";";";";""
             <MessageSquare className="h-4 w-4 mr-1" /> Message Client;""
           </Link>;";""
@@ -362,15 +362,15 @@ export function ApplicationCard(): unknown {): unknown {): unknown {): unknown {
           </Button>'
           <div className="flex gap-2">;"
             {renderActionButtons()};";"
-            <Button variant=outline" size="sm asChild>;"";
+            <Button variant=outline" size="sm asChild>;"";`
               <Link href={`/jobs/${application.job_id}`}>;"";
                 <ExternalLink className="h-4 w-4 mr-1" /> View Job
               </Link>
             </Button>;""
           </div>;"
         </div>";"
-";""
-        <Button variant=secondary size="sm" className=w-full asChild>";`
+";""`
+        <Button variant=secondary size="sm" className=w-full asChild>";``
           <Link href={`/messages?jobId=${application.job_id}`}>"
             <MessageSquare className="h-4 w-4 mr-1 /> Message Client"
           </Link>;""
@@ -409,6 +409,7 @@ export function ApplicationCard(): unknown {): unknown {): unknown {): unknown {
 ";"
 }";
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

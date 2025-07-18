@@ -151,5 +151,5 @@ export default function GlobalMapPage(): ;
             <section>;"
               <h2 className="text-xl font-semibold mb-2">Live Feed</h2>;"
               <ul className="space-y-1">;"
-                {feed.map((f) => (;"
-                  <li key={f.id} className="text-sm'>;';;`
+                {feed.map((f) => (;"`
+                  <li key={f.id} className="text-sm'>;';;``

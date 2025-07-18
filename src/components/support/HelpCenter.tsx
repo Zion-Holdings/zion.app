@@ -1,19 +1,19 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { Search } from '@/components/ui/icons;'';
-import { Input } from '@/components/ui/input;'';
-import { Button } from '@/components/ui/button;'';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;'';
-import { HelpCategoryList } from './HelpCategoryList;'';
-import { HelpArticleList } from './HelpArticleList;'';
-import { HelpArticleView } from './HelpArticleView;'';
+import React, { useState } from 'react';;
+import { Search } from '@/components/ui/icons;;
+import { Input } from '@/components/ui/input;;
+import { Button } from '@/components/ui/button;;
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;;
+import { HelpCategoryList } from './HelpCategoryList;;
+import { HelpArticleList } from './HelpArticleList;;
+import { HelpArticleView } from './HelpArticleView;;
 import { HELP_CATEGORIES } from './help-content;''
-;
+
 export default function HelpCenter(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);''
   const [selectedArticle, setSelectedArticle] = useState<string | null>(null);;
   const [searchQuery, setSearchQuery] = useState('');'
-;
+
   const handleCategorySelect: unknown = (_categoryId: string) => {;
 =======
 import React, { useState } from 'react''
@@ -46,11 +46,11 @@ export default function HelpCenter(): ;
     setSelectedArticle(null);
   };
 <<<<<<< HEAD
-;
+
   const handleBackToArticles: unknown = () => {;
     setSelectedArticle(null);''
   };
-;
+
   return (;''
     <>;;
       <div className="container mx-auto px-4 py-8">;";";";";""

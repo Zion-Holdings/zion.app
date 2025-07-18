@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import { Button } from '@/components/ui/button;'';
-import { FileText, ShieldCheck } from '@/components/ui/icons;';
+import { Button } from '@/components/ui/button;;
+import { FileText, ShieldCheck } from '@/components/ui/icons;;
 import {;
   Card,;
   CardContent,;''
@@ -14,7 +14,7 @@ interface ContractTypeCardsProps {;;
   onStandardClick: "() => void;",;";";";";""
   onSmartClick: "() => void;";"
 };
-;
+
 export function ContractTypeCards(): unknown {): unknown {): unknown {): unknown {): unknown {{;""
   onStandardClick,;";""
   onSmartClick,;";";""

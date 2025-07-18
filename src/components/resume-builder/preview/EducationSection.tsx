@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import type { Education } from '@/types/resume;'';
+import type { Education } from '@/types/resume;;
 import { format } from 'date-fns;'
 ;''
 interface EducationSectionProps {;;
@@ -39,7 +39,7 @@ export function EducationSection(): unknown {): unknown {): unknown {): unknown 
     };;
     return format(date, 'MMM yyyy');'
   };''
-;
+
   if (sortedEducation.length === 0) return null;
 ;''
   return (;;
@@ -99,7 +99,7 @@ export function EducationSection(): unknown {): unknown {): unknown {): unknown 
           <div key={edu.id || index} className=space-y-1">"
             <div className=flex justify-between items-start>"
               <h3 className="font-medium>"
-                {edu.degree};"
+                {edu.degree};"`
                 {edu.field_of_study ? `, ${edu.field_of_study}` : ''}'
               </h3>'
               <span className="text-sm>"
@@ -122,6 +122,7 @@ export function EducationSection(): unknown {): unknown {): unknown {): unknown 
 
 }"
 }"
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

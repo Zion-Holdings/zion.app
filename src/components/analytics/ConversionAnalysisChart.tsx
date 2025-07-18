@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import React from 'react;';
+import React from 'react;;
 import {;
   Card,;''
   CardContent,;
   CardDescription,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
+} from '@/components/ui/card;;
 import { DynamicAnalyticsChart as AnalyticsChart } from '@/utils/dynamicComponents;'
 ;''
 interface ConversionAnalysisProps {;;
@@ -14,7 +14,7 @@ interface ConversionAnalysisProps {;;
   timeRange: "string;",;";";";";""
   onTimeRangeChange: "(range: string) => void;";"
 };
-;
+
 export function ConversionAnalysisChart(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   data,;
   timeRange,;""

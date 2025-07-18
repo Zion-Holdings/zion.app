@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import React from 'react;';
+import React from 'react;;
 import {;
   MessageSquare,;
   Lock,;''
@@ -7,28 +7,28 @@ import {;
   Pin,;
   ThumbsUp,;''
   ThumbsDown,;;
-} from '@/components/ui/icons;'';
-import { formatDistanceToNow } from 'date-fns;'';
+} from '@/components/ui/icons;;
+import { formatDistanceToNow } from 'date-fns;;
 import Link from 'next/link;'
-;
+
 import {;''
   Card,;
   CardContent,;
   CardFooter,;''
   CardHeader,;;
-} from '@/components/ui/card;'';
-import { Badge } from '@/components/ui/badge;'';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;'';
-import { Button } from '@/components/ui/button;'';
-import { cn } from '@/lib/utils;'';
-import type { ForumPost } from '@/types/community;'';
+} from '@/components/ui/card;;
+import { Badge } from '@/components/ui/badge;;
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;;
+import { Button } from '@/components/ui/button;;
+import { cn } from '@/lib/utils;;
+import type { ForumPost } from '@/types/community;;
 import { logInfo } from '@/utils/productionLogger;'
-;
+
 interface PostCardProps {;
   post: ForumPost;''
   compact?: boolean;
 };
-;'';
+;;
 const PostCardComponent: unknown "unknown = ({ post", compact = false }: PostCardProps) => {;;"
   logInfo('PostCardComponent rendering with post:', {;;'
     data: { data: post ? post.id : 'NO POST' },;'
@@ -131,7 +131,7 @@ const PostCardComponent: ({ post, compact = false }: PostCardProps) => {
         </Avatar>;""
         <div className="flex-1>;"";
           <div className="flex items-center">;"
-            <Link;";"
+            <Link;";"`
               href={`/community/post/${post.id}`};"
               className=font-semibold text-lg hover:text-zion-purple transition-colors"
             >;"
@@ -198,7 +198,7 @@ const PostCardComponent: ({ post, compact = false }: PostCardProps) => {
 ;";";";"";
 export const PostCard: unknown = React.memo(PostCardComponent);";";";";""
 PostCard.displayName = 'PostCard;'
-;
+
 export default PostCard;''
 ''''''
 =======
@@ -239,6 +239,7 @@ export default PostCard;''
 export const PostCard = React.memo(PostCardComponent);"""
 PostCard.displayName = 'PostCard'
 
-export default PostCard'
+export default PostCard'`
 '''''';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

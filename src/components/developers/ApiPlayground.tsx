@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { Input } from '@/components/ui/input;'';
-import { Textarea } from '@/components/ui/textarea;'';
-import { Button } from '@/components/ui/button;'';
+import { useState } from 'react';;
+import { Input } from '@/components/ui/input;;
+import { Textarea } from '@/components/ui/textarea;;
+import { Button } from '@/components/ui/button;;
 import CodeBlock from './CodeBlock;'
 ;''
 interface Param {;;
@@ -16,7 +16,7 @@ interface ApiPlaygroundProps {;";";";";""
   path: string;
   params?: Param[];
 };
-;
+
 export function ApiPlayground(): unknown {): unknown {): unknown {): unknown {): unknown {{;""
   method,;";""
   path,;";";""
@@ -45,13 +45,13 @@ export function ApiPlayground(): unknown {): unknown {): unknown {): unknown {):
         const val: unknown = paramValues[p.name];
         if (val) searchParams.append(p.name, val);
       });
-      const query: unknown = searchParams.toString();
+      const query: unknown = searchParams.toString();`
       if (query) url += `?${query}`;''
     };
-;
+
     const options: unknown RequestInit = {;''
       method,;;
-      headers: "{;",;";";";";""
+      headers: "{;",;";";";";""`
         Authorization: "`Bearer ${apiKey"}`,;";";";";""
         'Content-Type': 'application/json',;'
       },;''
@@ -66,10 +66,10 @@ export function ApiPlayground(): unknown {): unknown {): unknown {): unknown {):
         options.body = body;
       };
     };
-;
+
     setLoading(true);''
     setResponse(null);
-;
+
     try {;''
       const res: unknown "unknown = await fetch(url", options);;"
       const contentType: unknown = res.headers.get('content-type');'
@@ -85,8 +85,8 @@ export function ApiPlayground(): unknown {): unknown {): unknown {): unknown {):
       } else {;
         responseText = await res.text();''
       };
-;
-      // Format the response with status information;''
+
+      // Format the response with status information;''`
       const statusInfo: unknown "unknown = `HTTP ${res.status"} ${res.statusText}\n\n`;";";""
       setResponse(statusInfo + responseText);";";";""
     } catch (err: unknown) {;;
@@ -115,7 +115,7 @@ export function ApiPlayground(): unknown {): unknown {): unknown {): unknown {):
       ) {;;
         errorMessage = (err as { message: "string "}).message;";";""
       };";";";""
-      setResponse(;";";";";""
+      setResponse(;";";";";""`
         `Error: "${errorMessage"}\n\nAttempted URL: "${url"}\n\nTroubleshooting: "\n- Ensure the API endpoint exists\n- Check CORS configuration\n- Verify API key is valid\n- Check network connectivity`",;"
       );
     } finally {;
@@ -160,7 +160,7 @@ export default ApiPlayground;";";";""
 }""
 }""
 =======
-import React from 'react';
+import React from 'react;
 
 export default function ApiPlayground() {
   return (
@@ -169,5 +169,6 @@ export default function ApiPlayground() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}
+
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

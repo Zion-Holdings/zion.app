@@ -5,15 +5,15 @@ import {;
   FormControl,;
 <<<<<<< HEAD
   FormMessage,;
-} from '@/components/ui/form;'';
-import { Input } from '@/components/ui/input;'';
-import type { UseFormReturn } from 'react-hook-form;'';
+} from '@/components/ui/form;;
+import { Input } from '@/components/ui/input;;
+import type { UseFormReturn } from 'react-hook-form;;
 import type { FormValues } from './useHireRequestForm;'
 ;''
 interface PersonalInfoFieldsProps {;;
   form: "UseFormReturn<FormValues>;";"
 };
-;
+
 export function PersonalInfoFields(): unknown {): unknown {): unknown {): unknown {): unknown {{ form }: PersonalInfoFieldsProps) {;""
   return (;";""
     <>;";";""

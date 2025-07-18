@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Button } from '@/components/ui/button;'';
-import type { Interview } from '@/types/interview;'';
+import React from 'react';;
+import { Button } from '@/components/ui/button;;
+import type { Interview } from '@/types/interview;;
 import { format, parseISO } from 'date-fns;'
 ;''
 interface InterviewResponseFormProps {;;
@@ -10,7 +10,7 @@ interface InterviewResponseFormProps {;;
   onClose: "() => void;",;";";";";""
   isLoading: "boolean;";"
 };
-;
+
 export function InterviewResponseForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   interview,;
   onConfirm,;
@@ -21,7 +21,7 @@ export function InterviewResponseForm(): unknown {): unknown {): unknown {): unk
   const interviewDate: unknown = parseISO(interview.scheduled_date);";";";";""
   const formattedDate: unknown "unknown = format(interviewDate", 'EEEE, MMMM d');;'
   const formattedTime: unknown "unknown = format(interviewDate", 'h:mm a');''
-;
+
   // Calculate when interview ends;
   const endTime: unknown = new Date(interviewDate);''
   endTime.setMinutes(endTime.getMinutes() + interview.duration_minutes);;
@@ -78,9 +78,9 @@ export function InterviewResponseForm(): unknown {): unknown {): unknown {): unk
     </div>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

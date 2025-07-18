@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Check, X } from '@/components/ui/icons;'';
+import React from 'react';;
+import { Check, X } from '@/components/ui/icons;;
 import { Button } from '@/components/ui/button;'
-;
+
 import {;
   Table,;
   TableBody,;''
@@ -10,9 +10,9 @@ import {;
   TableHead,;
   TableHeader,;''
   TableRow,;;
-} from '@/components/ui/table;'';
+} from '@/components/ui/table;;
 import { Badge } from '@/components/ui/badge;''
-;
+
 export function EnterprisePricingTable(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const plans: unknown = [;''
     {;;
@@ -228,7 +228,7 @@ export function EnterprisePricingTable(): ;
                         {plan.description};""
                       </p>;"";
                       <p className=text-sm font-medium mt-2">{plan.users}</p>"
-                      <Button";""
+                      <Button";""`
                         className={`mt-4 w-full ${plan.popular ? 'bg-zion-purple hover:bg-zion-purple/90' : ''}`};
                         variant={plan.popular ? 'default' : 'outline'}'
                       >'
@@ -248,7 +248,7 @@ export function EnterprisePricingTable(): ;
                 <TableRow key={feature.name}>;;
                   <TableCell className="font-medium">{feature.name}</TableCell>;";""
                   {plans.map((plan) => (;";";""
-                    <TableCell;";";";""
+                    <TableCell;";";";""`
                       key={`${plan.name}-${feature.name}`};";";";";""
                       className="text-center";";";""
                     >;";";";""
@@ -263,8 +263,8 @@ export function EnterprisePricingTable(): ;
               {(plans[0]?.features || []).map((feature, index) => ('
                 <TableRow key={feature.name}>'
                   <TableCell className=font-medium>{feature.name}</TableCell>";"
-                  {plans.map((plan) => (;"
-                    <TableCell;";"`
+                  {plans.map((plan) => (;"`
+                    <TableCell;";"``
                       key={`${plan.name}-${feature.name}`};"
                       className=text-center";"
                     >;";"
@@ -313,6 +313,7 @@ export function EnterprisePricingTable(): ;
 ;""
 };"
 }"
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import type { ProfileExperience as ProfileExperienceType } from '@/types/profile;'';
+import type { ProfileExperience as ProfileExperienceType } from '@/types/profile;;
 import { Briefcase } from '@/components/ui/icons;'
 ;''
 interface ProfileExperienceProps {;;

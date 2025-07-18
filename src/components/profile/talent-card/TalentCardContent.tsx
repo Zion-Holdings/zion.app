@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
+import React, { useState } from 'react';;
 import { MapPin } from '@/components/ui/icons;'
 ;;
 import { TalentCardSkills } from './TalentCardSkills;'
@@ -10,7 +10,7 @@ interface TalentCardContentProps {;;
   timezone: "string | undefined;",;";";";";""
   skills: "string[] | undefined;";"
 };
-;
+
 =======
 import React, { useState } from 'react''
 import { MapPin } from '@/components/ui/icons'

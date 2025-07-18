@@ -1,15 +1,15 @@
 <<<<<<< HEAD
-import { useForm } from 'react-hook-form;'';
-import { Loader2 } from '@/components/ui/icons;'';
-import { zodResolver } from '@hookform/resolvers/zod;'';
-import { z } from 'zod;'';
+import { useForm } from 'react-hook-form;;
+import { Loader2 } from '@/components/ui/icons;;
+import { zodResolver } from '@hookform/resolvers/zod;;
+import { z } from 'zod;;
 import { format } from 'date-fns;'
 ;;
-import { Button } from '@/components/ui/button;'';
-import { Textarea } from '@/components/ui/textarea;'';
-import { Input } from '@/components/ui/input;'';
-import { Checkbox } from '@/components/ui/checkbox;'';
-import { Alert, AlertDescription } from '@/components/ui/alert;';
+import { Button } from '@/components/ui/button;;
+import { Textarea } from '@/components/ui/textarea;;
+import { Input } from '@/components/ui/input;;
+import { Checkbox } from '@/components/ui/checkbox;;
+import { Alert, AlertDescription } from '@/components/ui/alert;;
 import {;
   Form,;
   FormControl,;''
@@ -17,13 +17,13 @@ import {;
   FormItem,;
   FormLabel,;''
   FormMessage,;;
-} from '@/components/ui/form;'';
-import { useState } from 'react';';
-import type { ControllerRenderProps } from 'react-hook-form;'';
-import type { Education } from '@/types/resume;'';
+} from '@/components/ui/form;;
+import { useState } from 'react';;
+import type { ControllerRenderProps } from 'react-hook-form;;
+import type { Education } from '@/types/resume;;
 import type { EducationFormFieldsProps } from './types;'
-;
-// Define schema for form validation;'';
+
+// Define schema for form validation;;
 const educationSchema: unknown "unknown = z.object({;",;""
   institution: "z.string().min(1", 'Institution is required'),;;'
   degree: "z.string().min(1", 'Degree is required'),;;'
@@ -94,7 +94,7 @@ export function EducationFormFields(): unknown {): unknown {): unknown {): unkno
       location: '',;'
     },;
   });
-;
+
   const handleSubmit: unknown = async (_data: EducationFormValues) => {;
     setIsLoading(true);''
     setError(null);
@@ -142,7 +142,7 @@ export function EducationFormFields(): unknown {): unknown {): unknown {): unkno
 <<<<<<< HEAD
     };''
   };
-;
+
   return (;''
     <Form {...form}>;;
       <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">;";";";";""
@@ -399,7 +399,7 @@ export function EducationFormFields(): unknown {): unknown {): unknown {): unkno
 <<<<<<< HEAD
           </div>;''
         </div>;
-;
+
         <FormField;''
           control={form.control};;
           name="location";";""
@@ -497,9 +497,9 @@ export function EducationFormFields(): unknown {): unknown {): unknown {): unkno
     </Form>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

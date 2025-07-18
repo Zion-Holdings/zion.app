@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react;
 
 export default function LoaderOverlay() {
   return (
@@ -7,4 +7,3 @@ export default function LoaderOverlay() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}

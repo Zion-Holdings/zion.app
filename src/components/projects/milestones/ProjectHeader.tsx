@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { ArrowLeft } from '@/components/ui/icons;'';
-import { useRouter } from 'next/router;'';
+import React from 'react';;
+import { ArrowLeft } from '@/components/ui/icons;;
+import { useRouter } from 'next/router;;
 import { Button } from '@/components/ui/button;'
 ;''
 interface ProjectHeaderProps {;;

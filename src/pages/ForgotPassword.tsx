@@ -37,5 +37,5 @@ export default function ForgotPassword(): ;
         } else if (;"
           'message' in err &&;
           typeof (err as { message?: string }).message === 'string;
-        ) {;
-          msg = (err as { message: "string '}).message;';;`
+        ) {;`
+          msg = (err as { message: "string '}).message;';;``

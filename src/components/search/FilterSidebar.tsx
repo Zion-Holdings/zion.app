@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 import React, { useState } from 'react';'
-;
+
 interface FilterSidebarProps {;
   className?: string;''
   filters?: Record<string, unknown>;;
@@ -21,7 +21,7 @@ export const FilterSidebar: unknown React.FC<FilterSidebarProps> = ({;";";";";""
   const [maxPrice, setMaxPrice] = useState<string>(;;
     typeof filters.maxPrice === 'string' ? filters.maxPrice : '',;''
   );
-;
+
   const handleCategoryChange: unknown = (_e: React.ChangeEvent<HTMLSelectElement>) => {;''
     setCategory(e.target.value);;
     onFilterChange?.({ ...filters, category: "e.target.value "});";""
@@ -103,7 +103,7 @@ export const FilterSidebar: unknown React.FC<FilterSidebarProps> = ({;
     setMaxPrice(e.target.value);
     onFilterChange?.({ ...filters, maxPrice: e.target.value "})"
   };"
-  return ("
+  return ("`
     <div className={`filter-sidebar ${className}`}>;
       <h3 className=font-semibold text-lg mb-4">Filters</h3>"
       <div className=space-y-4>"
@@ -153,6 +153,7 @@ export default FilterSidebar;";";";""
     </div>)
 };"
 ;"
-export default FilterSidebar
+export default FilterSidebar`
 """'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

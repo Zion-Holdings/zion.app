@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import { TalentCard } from '@/components/talent/TalentCard;'';
-import { TalentSkeleton } from '@/components/talent/TalentSkeleton;'';
-import type { TalentProfile } from '@/types/talent;'';
+import { TalentCard } from '@/components/talent/TalentCard;;
+import { TalentSkeleton } from '@/components/talent/TalentSkeleton;;
+import type { TalentProfile } from '@/types/talent;;
 import { logInfo } from '@/utils/productionLogger;'
-;'';
+;;
 export interface TalentGridProps {;;
   talents: "TalentProfile[];",;";";";";""
   isLoading: "boolean;",";";";";""
@@ -13,7 +13,7 @@ export interface TalentGridProps {;;
   clearFilters?: () => void;";";";";""
   handleRequestHire?: (talent: "TalentProfile) => void;";"
 };
-;
+
 =======
 import { TalentCard } from '@/components/talent/TalentCard'
 import { TalentSkeleton } from '@/components/talent/TalentSkeleton'

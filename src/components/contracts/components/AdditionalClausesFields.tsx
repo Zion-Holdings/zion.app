@@ -1,19 +1,19 @@
 <<<<<<< HEAD
-import type { UseFormReturn, ControllerRenderProps } from 'react-hook-form;';
+import type { UseFormReturn, ControllerRenderProps } from 'react-hook-form;;
 import {;
   FormField,;''
   FormItem,;
   FormLabel,;
   FormControl,;''
   FormDescription,;;
-} from '@/components/ui/form;'';
-import { Checkbox } from '@/components/ui/checkbox;'';
+} from '@/components/ui/form;;
+import { Checkbox } from '@/components/ui/checkbox;;
 import type { ContractFormValues } from './ContractForm;'
 ;''
 interface AdditionalClausesFieldsProps {;;
   form: "UseFormReturn<ContractFormValues>;";"
 };
-;
+
 export function AdditionalClausesFields(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   form,;""
 }: AdditionalClausesFieldsProps) {;";""

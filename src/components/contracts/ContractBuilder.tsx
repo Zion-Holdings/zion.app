@@ -1,20 +1,20 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { Save } from '@/components/ui/icons;';
+import { useState } from 'react';;
+import { Save } from '@/components/ui/icons;;
 import {;''
   Dialog,;
   DialogContent,;
   DialogHeader,;''
   DialogTitle,;;
-} from '@/components/ui/dialog;'';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs;'';
+} from '@/components/ui/dialog;;
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs;;
 import { Button } from '@/components/ui/button;'
 ;;
-import type { TalentProfile } from '@/types/talent;'';
-import { ContractForm } from './components/ContractForm;'';
-import type { ContractFormValues } from './components/ContractForm;'';
-import { ContractPreview } from './components/ContractPreview;'';
-import { TemplateManager } from './templates/TemplateManager;'';
+import type { TalentProfile } from '@/types/talent;;
+import { ContractForm } from './components/ContractForm;;
+import type { ContractFormValues } from './components/ContractForm;;
+import { ContractPreview } from './components/ContractPreview;;
+import { TemplateManager } from './templates/TemplateManager;;
 import { SmartContractBuilder } from './SmartContractBuilder;'
 ;''
 interface ContractBuilderProps {;;
@@ -24,7 +24,7 @@ interface ContractBuilderProps {;;
   clientName: string;";";";";""
   onContractGenerated?: (contractContent: "string) => void;";"
 };
-;
+
 export function ContractBuilder(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   isOpen,;
   onClose,;""
@@ -76,11 +76,11 @@ export function ContractBuilder(): unknown {): unknown {): unknown {): unknown {
   const [showSmartContractBuilder, setShowSmartContractBuilder] =;
     useState(false);
 <<<<<<< HEAD
-;
+
   const handleLoadTemplate: unknown = (_templateData: ContractFormValues) => {;
     setFormValues(templateData);''
   };
-;
+
   const handleContractGenerated: unknown = (_contract: string) => {;''
     setGeneratedContract(contract);;
     setActiveTab('preview');'
@@ -114,7 +114,7 @@ export function ContractBuilder(): unknown {): unknown {): unknown {): unknown {
 <<<<<<< HEAD
     );''
   };
-;
+
   return (;''
     <Dialog open={isOpen} onOpenChange={onClose}>;;
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">;";""
@@ -231,7 +231,7 @@ export function ContractBuilder(): unknown {): unknown {): unknown {): unknown {
                   scopeSummary: '','
                   startDate: new Date()",""
                   paymentTerms: talent.hourly_rate ? 'hourly' : 'fixed','
-                  paymentAmount: talent.hourly_rate'
+                  paymentAmount: talent.hourly_rate'`
                     ? `$${talent.hourly_rate}/hour`;
                     : '','
                   additionalClauses: ['nda', 'ip'],'
@@ -265,7 +265,7 @@ export function ContractBuilder(): unknown {): unknown {): unknown {): unknown {
               scopeSummary: '',;;'
               startDate: "new Date()",;";";";";""
               paymentTerms: talent.hourly_rate ? 'hourly' : 'fixed',;'
-              paymentAmount: talent.hourly_rate;''
+              paymentAmount: talent.hourly_rate;''`
                 ? `$${talent.hourly_rate}/hour`;;
                 : '',;;'
               additionalClauses: ['nda', 'ip'],;'
@@ -276,9 +276,9 @@ export function ContractBuilder(): unknown {): unknown {): unknown {): unknown {
     </Dialog>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -290,8 +290,8 @@ export function ContractBuilder(): unknown {): unknown {): unknown {): unknown {
               projectName: '','
               scopeSummary: '','
               startDate: new Date(),;""
-              paymentTerms: talent.hourly_rate ? 'hourly' : 'fixed','
-              paymentAmount: talent.hourly_rate'`
+              paymentTerms: talent.hourly_rate ? 'hourly' : 'fixed','`
+              paymentAmount: talent.hourly_rate'``
                 ? `$${talent.hourly_rate}/hour`;
                 : '','
               additionalClauses: ['nda', 'ip'],'
@@ -305,6 +305,7 @@ export function ContractBuilder(): unknown {): unknown {): unknown {): unknown {
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Download } from '@/components/ui/icons;'';
-import { Card, CardContent } from '@/components/ui/card;'';
-import { Badge } from '@/components/ui/badge;'';
+import React from 'react';;
+import { Download } from '@/components/ui/icons;;
+import { Card, CardContent } from '@/components/ui/card;;
+import { Badge } from '@/components/ui/badge;;
 import { Button } from '@/components/ui/button;'
 ;;
 import type { Resume } from '@/types/resume;'
@@ -12,7 +12,7 @@ interface ResumePreviewCardProps {;;
   onDownload: "() => void;",";";";";""
   isLoading: "boolean;";"
 };
-;
+
 export function ResumePreviewCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   resume,;""
   onDownload,;";""

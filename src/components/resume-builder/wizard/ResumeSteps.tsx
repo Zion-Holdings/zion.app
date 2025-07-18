@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import type { StepProps } from './types;'';
+import type { StepProps } from './types;;
 import { TabsList, TabsTrigger } from '@/components/ui/tabs;'
 ;''
 interface ResumeStepsProps {;;

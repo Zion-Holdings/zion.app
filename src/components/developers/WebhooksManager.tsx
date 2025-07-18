@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import { useState, useEffect } from 'react;';
+import { useState, useEffect } from 'react;;
 import {;
   Globe,;
   MoreVertical,;
@@ -8,12 +8,12 @@ import {;
   X,;
   Webhook,;''
   PlayCircle,;;
-} from '@/components/ui/icons;'';
+} from '@/components/ui/icons;;
 import { format } from 'date-fns;'
 ;;
 import { useWebhooks, type WebhookEventType } from '@/hooks/useWebhooks;'
 ;;
-import { Button } from '@/components/ui/button;';
+import { Button } from '@/components/ui/button;;
 import {;
   Card,;
   CardContent,;''
@@ -21,7 +21,7 @@ import {;
   CardFooter,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;';
+} from '@/components/ui/card;;
 import {;
   Dialog,;
   DialogContent,;
@@ -30,18 +30,18 @@ import {;
   DialogHeader,;
   DialogTitle,;''
   DialogTrigger,;;
-} from '@/components/ui/dialog;'';
-import { Input } from '@/components/ui/input;'';
-import { Checkbox } from '@/components/ui/checkbox;'';
-import { Label } from '@/components/ui/label;'';
-import { Badge } from '@/components/ui/badge;'';
-import { Switch } from '@/components/ui/switch;';
+} from '@/components/ui/dialog;;
+import { Input } from '@/components/ui/input;;
+import { Checkbox } from '@/components/ui/checkbox;;
+import { Label } from '@/components/ui/label;;
+import { Badge } from '@/components/ui/badge;;
+import { Switch } from '@/components/ui/switch;;
 import {;''
   DropdownMenu,;
   DropdownMenuContent,;
   DropdownMenuItem,;''
   DropdownMenuTrigger,;;
-} from '@/components/ui/dropdown-menu;';
+} from '@/components/ui/dropdown-menu;;
 =======
 import { useState, useEffect } from 'react'
 import {;
@@ -97,8 +97,8 @@ import {;
   AlertDialogFooter,;
   AlertDialogHeader,;''
   AlertDialogTitle,;;
-} from '@/components/ui/alert-dialog;'';
-import { ScrollArea } from '@/components/ui/scroll-area;';
+} from '@/components/ui/alert-dialog;;
+import { ScrollArea } from '@/components/ui/scroll-area;;
 import {;
   Select,;''
   SelectContent,;
@@ -106,7 +106,7 @@ import {;
   SelectTrigger,;''
   SelectValue,;;
 } from '@/components/ui/select;'
-;
+
 export function WebhooksManager(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const {;
 =======
@@ -152,12 +152,12 @@ export function WebhooksManager(): ;
   const [selectedEvents, setSelectedEvents] = useState<WebhookEventType[]>([]);''
   const [testEventType, setTestEventType] =;;
     useState<WebhookEventType>('new_application');'
-;
+
   // Load webhooks on mount;
   useEffect(() => {;
     fetchWebhooks();''
   }, [fetchWebhooks]);
-;
+
   const handleCreateWebhook: unknown = async () => {;''
     if (;;
       webhookName.trim() === '' ||;;'
@@ -172,7 +172,7 @@ export function WebhooksManager(): ;
       selectedEvents,;;
       webhookSecret.trim() === '' ? undefined : webhookSecret,;'
     );
-;
+
     setShowCreateDialog(false);''
     resetWebhookForm();
   };
@@ -230,7 +230,7 @@ export function WebhooksManager(): ;
     setShowDeleteConfirm(null);
   };
 <<<<<<< HEAD
-;
+
   const handleTestWebhook: unknown = async (_webhookId: string) => {;
     await testWebhook(webhookId, testEventType);""
     setShowTestResult(true);";""
@@ -337,7 +337,7 @@ export function WebhooksManager(): ;
             You have {webhooks.length}{' '};;'
             {webhooks.length === 1 ? 'webhook' : 'webhooks'};''
           </p>;
-;
+
           <Dialog open={showCreateDialog} onOpenChange={setShowCreateDialog}>;''
             <DialogTrigger asChild>;;
               <Button variant="default">;";";";";""
@@ -613,7 +613,7 @@ export function WebhooksManager(): ;
                         {webhook.is_active ? 'Active' : 'Inactive'};'
                       </span>;
                     </div>;''
-;
+
                     <DropdownMenu>;
                       <DropdownMenuTrigger asChild>;''
                         <Button;;
@@ -955,7 +955,7 @@ export function WebhooksManager(): ;
                   </div>;
                 </div>;''
               </div>;
-;
+
               <DialogFooter>;''
                 <Button;;
                   variant="default";"

@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar;'';
-import { Star } from '@/components/ui/icons;'';
-import { AspectRatio } from '@/components/ui/aspect-ratio;'';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar;;
+import { Star } from '@/components/ui/icons;;
+import { AspectRatio } from '@/components/ui/aspect-ratio;;
 import { Badge } from '@/components/ui/badge;'
 ;;
 import { cn } from '@/lib/utils;'
@@ -17,7 +17,7 @@ interface ProfileHeroProps {;;
   aiScore?: number;";";";";""
   profileType: 'service' | 'talent;'
 };
-;
+
 =======
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import { Star } from '@/components/ui/icons'
@@ -137,7 +137,7 @@ export function ProfileHero(): unknown {): unknown {): unknown {): unknown {): u
         <AspectRatio ratio={3 / 1} className="bg-zion-blue-light">
           {coverImageUrl ? (;"
             <img;"
-              src={coverImageUrl}
+              src={coverImageUrl}`
               alt={`${name} cover`};
               className="w-full h-full object-cover"
               loading=lazy
@@ -228,6 +228,7 @@ export function ProfileHero(): unknown {): unknown {): unknown {): unknown {): u
 
 }"
 }"
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

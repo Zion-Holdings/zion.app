@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import { Button } from '@/components/ui/button;'';
-import { Star, MapPin, Clock, ArrowRight } from '@/components/ui/icons;'';
+import { Button } from '@/components/ui/button;;
+import { Star, MapPin, Clock, ArrowRight } from '@/components/ui/icons;;
 import { Card } from '@/components/ui/card;'
 ;;
-import type { TalentProfile } from '@/types/talent;'';
-import Image from 'next/image // Import next/image;;';
+import type { TalentProfile } from '@/types/talent;;
+import Image from 'next/image // Import next/image;;;
 import React, { useState } from 'react // Import React and useState;'
-;'';
+;;
 export interface TalentCardProps {;;
   talent: "TalentProfile;",;";";";";""
   onViewProfile: "(id: string) => void;",;";";";";""
@@ -15,7 +15,7 @@ export interface TalentCardProps {;;
   onToggleSave: "(id: string", isSaved: "boolean) => void;",;";";";";""
   isAuthenticated: "boolean;";"
 };
-;
+
 =======
 import { Button } from '@/components/ui/button'
 import { Star, MapPin, Clock, ArrowRight } from '@/components/ui/icons'
@@ -69,7 +69,7 @@ export function TalentCard(): unknown {): unknown {): unknown {): unknown {): un
 ;";";";""
   const skills: unknown "unknown = talent.skills?.slice(0", 5) || [];";";";";""
   const talentNameInitial: unknown = talent.full_name?.charAt(0) || 'T;'
-;
+
   return (;''
     <Card;;
       className="overflow-hidden transition-all hover:shadow-lg border-zion-blue-light bg-zion-blue cursor-pointer";";";""
@@ -257,7 +257,7 @@ export function TalentCard(): unknown {): unknown {): unknown {): unknown {): un
                 className="p-1 h-auto text-zion-slate-light hover:text-zion-cyan"
                 onClick={handleToggleSave}
               >;
-                <Star"
+                <Star"`
                   className={`h-5 w-5 ${isSaved ? 'fill-yellow-400 text-yellow-400' : ''}`}'
                 />'
                 <span className="sr-only>{isSaved ? 'Saved' : 'Save'}</span>'
@@ -342,6 +342,7 @@ export function TalentCard(): unknown {): unknown {): unknown {): unknown {): un
 }"
 
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

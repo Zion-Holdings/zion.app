@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React, { useState, useRef, useEffect } from 'react';';
-import Link from 'next/link;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;'';
+import React, { useState, useRef, useEffect } from 'react';;
+import Link from 'next/link;;
+import { useAuth } from '@/hooks/useAuth;;
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;;
 import { fireEvent } from '@/lib/analytics;'
-;
+
 const UserProfileDropdown: unknown React.FC = () => {;
   const [isOpen, setIsOpen] = useState(false);
   const { logout, user } = useAuth(); // Destructure user as well, if needed for display or checks;
@@ -12,14 +12,14 @@ const UserProfileDropdown: unknown React.FC = () => {;
   const menuRef: unknown = useRef<HTMLUListElement>(null);
   const buttonRef: unknown = useRef<HTMLButtonElement>(null);
   const previouslyFocused: unknown = useRef<HTMLElement | null>(null);''
-;
+
   const toggleDropdown: unknown = () =>;
     setIsOpen((o) => {;''
       const open: unknown = !o;;
       fireEvent('profile_dropdown_toggle', { open });'
       return open;
     });''
-;
+
   const handleLogout: unknown = () => {;
     logout();''
     setIsOpen(false); // Close dropdown after logout;;

@@ -1,16 +1,15 @@
 <<<<<<< HEAD
-import { createClient } from '@supabase/supabase-js';
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { withErrorLogging } from '@/utils/withErrorLogging';
-import { ENV_CONFIG } from '@/utils/environmentConfig';
-import { logInfo as _logInfo, logWarn as _logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import { createClient } from '@supabase/supabase-js;
+import type { NextApiRequest, NextApiResponse } from 'next;
+import { withErrorLogging } from '@/utils/withErrorLogging;
+import { ENV_CONFIG } from '@/utils/environmentConfig;
+import { logInfo as _logInfo, logWarn as _logWarn, logErrorToProduction } from '@/utils/productionLogger;
 
 // 🔐 _SECURITY: Development users from environment variables
 const getDevUsers = () => {
   // Only load development users in development mode
   if (process.env.NODE_ENV !== 'development') {
     return [];
-  }
 
   const devUsers: Array<{ id: string; email: string; password: string; name: string }> = [];
 
@@ -29,7 +28,6 @@ const getDevUsers = () => {
       password: devUser1Password,
       name: 'Development User 1'
     });
-  }
 
   if (devUser2Email && devUser2Password) {
     devUsers.push({
@@ -38,7 +36,6 @@ const getDevUsers = () => {
       password: devUser2Password,
       name: 'Development User 2'
     });
-  }
 
   if (devUser3Email && devUser3Password) {
     devUsers.push({
@@ -47,7 +44,6 @@ const getDevUsers = () => {
       password: devUser3Password,
       name: 'Development User 3'
     });
-  }
 
   // Fallback to basic test users if no env vars are set
   if (devUsers.length === 0) {
@@ -55,7 +51,6 @@ const getDevUsers = () => {
       { id: 'dev-user-1', email: 'dev@example.com', password: 'dev123', name: 'Dev User' },
       { id: 'dev-user-2', email: 'test@example.com', password: 'test123', name: 'Test User' }
     );
-  }
 
   return devUsers;
 };
@@ -66,25 +61,23 @@ async function handler(
   res: NextApiResponse
 ): Promise<void> {
   // 🔧 Enable verbose logging (only in development)
-  const isDevelopment = process.env.NODE_ENV === 'development';
+  const isDevelopment = process.env.NODE_ENV === 'development;
   
   if (req.method !== 'POST') {
     res.status(405).json({ error: 'Method not allowed' });
     return;
-  }
 
   const { email, password } = req.body as { email?: string, password?: string };
 
   if (!email || !password || typeof email !== 'string' || typeof password !== 'string') {
     res.status(400).json({ error: 'Email and password are required and must be strings' });
     return;
-  }
 
   // Check if Supabase is configured
   if (!ENV_CONFIG.supabase.isConfigured) {
     if (isDevelopment) {
       // logInfo('🔧 LOGIN TRACE: Supabase not configured - using development authentication');
-    }
+
     // 🔐 SECURITY: Use environment-based development authentication
     const devUsers = getDevUsers();
     const user = devUsers.find(u => u.email === email && u.password === password);
@@ -92,7 +85,7 @@ async function handler(
     if (user) {
       if (isDevelopment) {
         // logInfo('🔧 LOGIN TRACE: Development user authenticated successfully');
-      }
+
       res.status(200).json({
         user: {
           id: user.id,
@@ -108,11 +101,10 @@ async function handler(
       if (isDevelopment) {
         // logInfo('🔧 LOGIN TRACE: Development authentication failed');
         // logInfo('🔧 LOGIN TRACE: Available dev users:', devUsers.map(u => u.email));
-      }
+
       res.status(401).json({ error: 'Invalid credentials' });
       return;
-    }
-  }
+
 
   try {
     // Use configured Supabase client
@@ -123,8 +115,7 @@ async function handler(
     
     if (isDevelopment) {
       // logInfo('🔧 LOGIN TRACE: Attempting Supabase authentication');
-    }
-    
+
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password,
@@ -133,23 +124,20 @@ async function handler(
     if (error) {
       if (isDevelopment) {
         logErrorToProduction('🔧 LOGIN TRACE: Supabase authentication error:', error);
-      }
+
       res.status(401).json({ error: error.message });
       return;
-    }
-    
+
     if (!data.user) {
       if (isDevelopment) {
         logErrorToProduction('🔧 LOGIN TRACE: No user data returned from Supabase');
-      }
+
       res.status(401).json({ error: 'Authentication failed' });
       return;
-    }
-    
+
     if (isDevelopment) {
       // logInfo('🔧 LOGIN TRACE: Supabase authentication successful');
-    }
-    
+
     res.status(200).json({
       user: data.user,
       session: data.session,
@@ -159,20 +147,19 @@ async function handler(
   } catch (error: unknown) {
     if (isDevelopment) {
       logErrorToProduction('🔧 LOGIN TRACE: Unexpected error during authentication:', error);
-    }
+
     res.status(500).json({
       error: 'Internal server error',
       details: ENV_CONFIG.app.isDevelopment && typeof error === 'object' && error !== null && 'message' in error ? (error as { message?: string }).message : undefined
     });
     return;
-  }
-}
+
 
 export default withErrorLogging(handler);
 =======
-import React from 'react';
-import { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react;
+import { NextPage } from 'next;
+import Head from 'next/head;
 
 const Login: NextPage = () => {
   return (

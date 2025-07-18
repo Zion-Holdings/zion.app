@@ -1,8 +1,8 @@
 <<<<<<< HEAD
 'use client;'
 ;;
-import Image from 'next/image;'';
-import { useState } from 'react';';
+import Image from 'next/image;;
+import { useState } from 'react';;
 import { ImageIcon } from '@/components/ui/icons;'
 ;''
 interface SafeImageProps {;;
@@ -16,7 +16,7 @@ interface SafeImageProps {;;
   sizes?: string;
   quality?: number;
 };
-;
+
 export function SafeImage(): unknown {): unknown {): unknown {): unknown {): unknown {{;""
   src,;";""
   alt,;";";""
@@ -72,7 +72,7 @@ export function SafeImage(): unknown {): unknown {): unknown {): unknown {): unk
       setCurrentSrc(fallbackSrc)'
       setHasError(true)'
     } else if (!hasError && src.startsWith('/')) {'
-      // Try serving the image directly through our custom API route'
+      // Try serving the image directly through our custom API route'`
       const fallbackUrl: `/api/image${src}`;
       setCurrentSrc(fallbackUrl)
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
@@ -86,7 +86,7 @@ export function SafeImage(): unknown {): unknown {): unknown {): unknown {): unk
 <<<<<<< HEAD
   if (hasError && (!fallbackSrc || currentSrc === fallbackSrc)) {;""
     return (;";""
-      <div;";";""
+      <div;";";""`
         className={`flex items-center justify-center bg-gray-100 text-gray-400 ${className}`};";";";""
         style={{ width, height }};;
         role="img";";";""
@@ -97,8 +97,8 @@ export function SafeImage(): unknown {): unknown {): unknown {): unknown {): unk
     );
 =======
   if (hasError && (!fallbackSrc || currentSrc === fallbackSrc)) {
-    return (;""
-      <div;`
+    return (;""`
+      <div;``
         className={`flex items-center justify-center bg-gray-100 text-gray-400 ${className}`}
         style={{ width, height }}"
         role="img
@@ -140,6 +140,7 @@ export function SafeImage(): unknown {): unknown {): unknown {): unknown {): unk
 "
 
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

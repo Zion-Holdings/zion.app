@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next;
 
 interface Job {
   id: string;
@@ -9,19 +9,17 @@ interface Job {
   description: string;
   requirements: string[];
   salary?: string;
-  type: 'full-time' | 'part-time' | 'contract' | 'internship';
+  type: 'full-time' | 'part-time' | 'contract' | 'internship;
   category?: string;
   sort: string;
   limit: number;
   postedAt: string;
-}
 
 interface JobsResponse {
   jobs: Job[];
   totalFiltered: number;
   limit: number;
   offset: number;
-}
 
 export default async function handler(
   req: NextApiRequest,
@@ -29,7 +27,6 @@ export default async function handler(
 ) {
   if (req.method !== 'GET') {
     return res.status(405).json({ error: 'Method not allowed' });
-  }
 
   try {
     const {
@@ -45,11 +42,10 @@ export default async function handler(
     // Validate parameters
     if (limitNum > 100) {
       return res.status(400).json({ error: 'Limit cannot exceed 100' });
-    }
 
     // Mock data - replace with actual data source
     const mockJobs: Job[] = [
-      {
+
         id: '1',
         title: 'Senior Software Engineer',
         company: 'Tech Corp',
@@ -70,7 +66,6 @@ export default async function handler(
     let filteredJobs = mockJobs;
     if (category) {
       filteredJobs = mockJobs.filter(job => job.category === category);
-    }
 
     // Sort jobs
     const sortedJobs = [...filteredJobs].sort((a, b) => {
@@ -81,7 +76,7 @@ export default async function handler(
           return new Date(a.postedAt).getTime() - new Date(b.postedAt).getTime();
         default:
           return 0;
-      }
+
     });
 
     // Paginate results
@@ -105,12 +100,12 @@ export default async function handler(
   } catch (error) {
     console.error('Jobs API error:', error);
     return res.status(500).json({ error: 'Internal server error' });
-  }
-}
+
+
 =======
-import React from 'react';
-import { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react;
+import { NextPage } from 'next;
+import Head from 'next/head;
 
 const Jobs: NextPage = () => {
   return (

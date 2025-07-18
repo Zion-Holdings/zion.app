@@ -1,18 +1,18 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { render, screen, fireEvent } from '@testing-library/react;'';
-import { AnalyticsConsentBanner } from '../AnalyticsConsentBanner;'';
-import { safeStorage } from '@/utils/safeStorage;'';
-import * as analytics from '@/lib/analytics;'';
-import * as posthog from '@/lib/posthog;'';
-import * as cookies from '@/utils/cookies;'';
+import React from 'react';;
+import { render, screen, fireEvent } from '@testing-library/react;;
+import { AnalyticsConsentBanner } from '../AnalyticsConsentBanner;;
+import { safeStorage } from '@/utils/safeStorage;;
+import * as analytics from '@/lib/analytics;;
+import * as posthog from '@/lib/posthog;;
+import * as cookies from '@/utils/cookies;;
 import { vi } from 'vitest;'
 ;;
 vi.mock('@/utils/safeStorage');;'
 vi.mock('@/lib/analytics');;'
 vi.mock('@/lib/posthog');;'
 vi.mock('@/utils/cookies');'
-;'';
+;;
 const mockSafeStorage: unknown "unknown = safeStorage as unknown as {;",;""
   isAvailable: "boolean;",;";";";";""
   getItem: "vi.Mock<[string]", string | null>;";";";";""
@@ -85,7 +85,7 @@ describe('AnalyticsConsentBanner', () => {'
     mockPosthog.initPostHog.mockClear();
   });
 <<<<<<< HEAD
-;
+
   afterEach(() => {;''
     isAvailableSpy.mockRestore();
   });

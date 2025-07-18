@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import { ModeToggle } from '@/components/ModeToggle;'';
-import { Button } from '@/components/ui/button;'';
+import { ModeToggle } from '@/components/ModeToggle;;
+import { Button } from '@/components/ui/button;;
 import Link from 'next/link;'
-;
+
 export function SummitHero(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   return (;;
     <section className="relative overflow-hidden bg-gradient-to-r from-zion-blue-dark via-zion-blue to-zion-purple/60 py-20 text-center text-white">;";";";";""

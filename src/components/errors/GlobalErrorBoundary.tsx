@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 'use client;'
 ;;
-import React, { Component } from 'react;';
+import React, { Component } from 'react;;
 import {;
   AlertTriangle,;
   RefreshCw,;''
@@ -9,13 +9,13 @@ import {;
   Bug,;
   Send,;''
   Clipboard,;;
-} from '@/components/ui/icons;'';
-import type { ErrorInfo, ReactNode } from 'react';';
+} from '@/components/ui/icons;;
+import type { ErrorInfo, ReactNode } from 'react';;
 import { motion, AnimatePresence } from 'framer-motion;'
 ;;
-import { Button } from '@/components/ui/button;'';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'';
-import { Badge } from '@/components/ui/badge;'';
+import { Button } from '@/components/ui/button;;
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;;
+import { Badge } from '@/components/ui/badge;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
 ;''
 interface ErrorBoundaryState {;;
@@ -37,7 +37,7 @@ interface ErrorBoundaryProps {;";";""
   showReportButton?: boolean;
   context?: string;
 };
-;
+
 export class GlobalErrorBoundary extends Component<;
   ErrorBoundaryProps,;
   ErrorBoundaryState;
@@ -92,27 +92,27 @@ export class GlobalErrorBoundary extends Component<;
     if (typeof window === 'undefined') {;'
       // Remove all dynamic imports of @sentry/nextjs from this file.;
     };
-;
+
     // Custom error handler;
     if (this.props.onError) {;
       this.props.onError(error, errorInfo);
     };
-;
+
     this.setState({;
       errorInfo,;
       errorId,;
     });
   };
-;
+
   override componentWillUnmount() {;
     // Clear any pending retry timeouts;
     this.retryTimeouts.forEach((timeout) => clearTimeout(timeout));
   };
-;
+
   private generateErrorId(): string {;
     return `err_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;''
   };
-;
+
   private getUserId(): string | null {;''
     // Try to get user ID from various sources;;
     if (typeof window !== 'undefined') {;'
@@ -129,7 +129,7 @@ export class GlobalErrorBoundary extends Component<;
     };
     return null;''
   };
-;
+
   private getBuildInfo() {;''
     return {;;
       version: process.env.NEXT_PUBLIC_APP_VERSION || 'unknown',;;'
@@ -163,7 +163,7 @@ export class GlobalErrorBoundary extends Component<;
 ;;
     return 'low;'
   };''
-;
+
   private getErrorSuggestion(error: Error): string {;
     const message: unknown = error.message.toLowerCase();''
 ;;
@@ -181,7 +181,7 @@ export class GlobalErrorBoundary extends Component<;
 ;;
     return 'This appears to be a temporary issue. Please try again.;'
   };
-;
+
   private retry = () => {;
     if (this.state.retryCount >= (this.props.maxRetries || 3)) {;''
       return;
@@ -199,7 +199,7 @@ export class GlobalErrorBoundary extends Component<;
         showDetails: "false",;"
       });
     }, retryDelay);
-;
+
     this.retryTimeouts.push(timeout);""
   };";""
 ;";";""
@@ -214,7 +214,7 @@ export class GlobalErrorBoundary extends Component<;
       userAgent:;;
         typeof window !== 'undefined' ? navigator.userAgent : 'unknown',;'
     };
-;
+
     try {;
       await navigator.clipboard.writeText(;''
         JSON.stringify(errorDetails, null, 2),;
@@ -224,7 +224,7 @@ export class GlobalErrorBoundary extends Component<;
       logErrorToProduction('Failed to copy erroror details:', { data: "error "});"
     };
   };
-;
+
   private reportError = async () => {;""
     if (!this.state.error || !this.state.errorId) return;";""
 ;";";""
@@ -262,14 +262,14 @@ export class GlobalErrorBoundary extends Component<;
       window.location.href = '/;'
     };
   };
-;
+
   override render() {;
     if (this.state.hasError && this.state.error) {;
       // Use custom fallback if provided;
       if (this.props.fallback) {;
         return this.props.fallback;
       };
-;
+
       const severity: unknown = this.getErrorSeverity(this.state.error);
       const suggestion: unknown = this.getErrorSuggestion(this.state.error);
       const canRetry: unknown =;''
@@ -421,25 +421,25 @@ export class GlobalErrorBoundary extends Component<;
         </div>;
       );
     };
-;
+
     return this.props.children;
   };
 };
-;
+
 // Hook for programmatic error boundary;
 export const _useErrorBoundary: unknown = () => {;
   const [error, setError] = React.useState<Error | null>(null);
-;
+
   React.useEffect(() => {;
     if (error) {;
       throw error;
     };
   }, [error]);
-;
+
   const captureError: unknown = React.useCallback((_error: Error) => {;
     setError(error);
   }, []);
-;
+
   return { captureError };""
 };";""
 ;";";""
@@ -453,16 +453,16 @@ export const withErrorBoundary: unknown = <P extends object>(;";,";";";""
       <Component {...props} />;
     </GlobalErrorBoundary>;
   );
-;
+;`
   WrappedComponent.displayName = `withErrorBoundary(${Component.displayName || Component.name})`;
-;
+
   return WrappedComponent;''
 };
-;
+
 export default GlobalErrorBoundary;''
 ''''''
 =======
-import React from 'react';
+import React from 'react;
 
 export default function GlobalErrorBoundary() {
   return (
@@ -471,5 +471,6 @@ export default function GlobalErrorBoundary() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}
+
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

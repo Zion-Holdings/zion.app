@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;'';
-import { cn } from '@/lib/utils;'';
+import React from 'react';;
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;;
+import { cn } from '@/lib/utils;;
 import { format } from 'date-fns;'
 // Use the wrapper hook so TypeScript properly infers the return type;''
 // from the ThemeProvider context;;
@@ -152,7 +152,7 @@ function formatMessageWithLinks(): unknown {): unknown {): unknown {): unknown {
     helpCenterRegex,;;
     '<a href="/help/$1" class="text-zion-cyan underline hover:text-zion-cyan/80">$1</a>',;'
   );''
-;
+
   return formattedMessage;
 =======
 function formatMessageWithLinks(): unknown {): unknown {): unknown {): unknown {): unknown {message: string): string {'
@@ -178,10 +178,10 @@ function formatMessageWithLinks(): unknown {): unknown {): unknown {): unknown {
 <<<<<<< HEAD
 };''
 };
-}
+
 };''
 }''
-}
+
 }''
 =======
 }'

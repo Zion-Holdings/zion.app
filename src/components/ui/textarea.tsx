@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import * as React from 'react;'
 ;;
 import { cn } from '@/lib/utils;'
 ;;
 export type TextareaProps = React.ComponentProps<'textarea'>;'
-;'';
+;;
 const Textarea: unknown "unknown = React.forwardRef<HTMLTextAreaElement", TextareaProps>(;""
   ({ className, ...props }, ref) => {;";""
     return (;";";""
@@ -21,7 +21,7 @@ const Textarea: unknown "unknown = React.forwardRef<HTMLTextAreaElement", Textar
   },;''
 );;
 Textarea.displayName = 'Textarea;'
-;
+
 export { Textarea };''
 ''''''
 =======

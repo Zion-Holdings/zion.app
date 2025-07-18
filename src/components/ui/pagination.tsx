@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
+import React from 'react';;
+import * as React from 'react';;
 import {;
   ChevronLeft,;
   ChevronRight,;''
   MoreHorizontal,;;
 } from '@/components/ui/icons;'
 ;;
-import { cn } from '@/lib/utils;'';
-import type { ButtonProps } from '@/components/ui/button;'';
+import { cn } from '@/lib/utils;;
+import type { ButtonProps } from '@/components/ui/button;;
 import { buttonVariants } from '@/components/ui/button;'
 ;;
 const Pagination: unknown "unknown = ({ className", ...props }: React.ComponentProps<'nav'>) => (;''
@@ -20,7 +20,7 @@ const Pagination: unknown "unknown = ({ className", ...props }: React.ComponentP
   />;''
 );;
 Pagination.displayName = 'Pagination;'
-;
+
 const PaginationContent: unknown = React.forwardRef<;''
   HTMLUListElement,;;
   React.ComponentProps<'ul'>;'
@@ -32,7 +32,7 @@ const PaginationContent: unknown = React.forwardRef<;''
   />;''
 ));;
 PaginationContent.displayName = 'PaginationContent;'
-;
+
 const PaginationItem: unknown = React.forwardRef<;''
   HTMLLIElement,;;
   React.ComponentProps<'li'>;''
@@ -40,12 +40,12 @@ const PaginationItem: unknown = React.forwardRef<;''
   <li ref={ref} className={cn('', className)} {...props} />;''
 ));;
 PaginationItem.displayName = 'PaginationItem;'
-;
+
 type PaginationLinkProps = {;''
   isActive?: boolean;;
   size?: ButtonProps['size'];;'
 } & React.ComponentProps<'a'>;'
-;
+
 =======
 import React from 'react'
 import * as React from 'react''
@@ -101,7 +101,7 @@ interface PaginationButtonProps;
   isActive?: boolean;
 <<<<<<< HEAD
 };''
-;
+
 const PaginationLink: unknown = ({;
   className,;''
   isActive,;;
@@ -121,7 +121,7 @@ const PaginationLink: unknown = ({;
   />;''
 );;
 PaginationLink.displayName = 'PaginationLink;'
-;
+
 const PaginationButton: unknown = React.forwardRef<;
   HTMLButtonElement,;''
   PaginationButtonProps;
@@ -142,7 +142,7 @@ const PaginationButton: unknown = React.forwardRef<;
   </button>;''
 ));;
 PaginationButton.displayName = 'PaginationButton;''
-;
+
 const PaginationPrevious: unknown = ({;
   className,;''
   ...props;;
@@ -158,7 +158,7 @@ const PaginationPrevious: unknown = ({;
   </PaginationLink>;";";";""
 );";";";";""
 PaginationPrevious.displayName = 'PaginationPrevious;''
-;
+
 const PaginationNext: unknown = ({;
   className,;''
   ...props;;
@@ -174,7 +174,7 @@ const PaginationNext: unknown = ({;
   </PaginationLink>;";";";""
 );";";";";""
 PaginationNext.displayName = 'PaginationNext;''
-;
+
 const PaginationEllipsis: unknown = ({;
   className,;''
   ...props;;
@@ -189,7 +189,7 @@ const PaginationEllipsis: unknown = ({;
   </span>;";";";""
 );";";";";""
 PaginationEllipsis.displayName = 'PaginationEllipsis;'
-;
+
 =======
 }'
 '
@@ -219,7 +219,7 @@ const PaginationButton = React.forwardRef<;
 >(({ page, isActive, className, ...props }, ref) => (;
   <button'
     ref={ref}'
-    type=button
+    type=button`
     aria-label={`Page ${page}`}"
     aria-current={isActive ? 'page' : undefined}'
     className={cn('
@@ -298,6 +298,7 @@ export {;
   PaginationButton,'
   PaginationNext,'
   PaginationPrevious,;
-}'
+}'`
 '''''';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

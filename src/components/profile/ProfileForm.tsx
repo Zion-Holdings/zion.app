@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import { useForm } from 'react-hook-form;'';
-import { Input } from '@/components/ui/input;'';
-import { Label } from '@/components/ui/label;'';
-import { Button } from '@/components/ui/button;'';
+import { useForm } from 'react-hook-form;;
+import { Input } from '@/components/ui/input;;
+import { Label } from '@/components/ui/label;;
+import { Button } from '@/components/ui/button;;
 import { AvatarUpload } from './AvatarUpload;'
-;'';
+;;
 export interface ProfileValues {;;
   name: "string;",;";";";";""
   bio: "string;",";";";";""
@@ -15,7 +15,7 @@ interface Props {;";";";";""
   defaultValues: "ProfileValues;",;";";";";""
   onSubmit: "(values: ProfileValues) => void;";"
 };
-;
+
 export function ProfileForm(): unknown {): unknown {): unknown {): unknown {): unknown {{ defaultValues, onSubmit }: Props) {;
   const { register, handleSubmit, setValue, watch } = useForm<ProfileValues>({;""
     defaultValues,;";""

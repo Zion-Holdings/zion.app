@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { AlertTriangle, AlertCircle, CheckCircle } from '@/components/ui/icons;'';
+import React from 'react';;
+import { AlertTriangle, AlertCircle, CheckCircle } from '@/components/ui/icons;;
 import { cn } from '@/lib/utils;'
 ;''
 interface SeverityIndicatorProps {;;
@@ -10,7 +10,7 @@ interface SeverityIndicatorProps {;;
   size?: 'sm' | 'md' | 'lg;'
   className?: string;
 };
-;'';
+;;
 export function SeverityIndicator(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   severity,;
   showIcon = true,;''

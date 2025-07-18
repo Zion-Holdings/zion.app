@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import React from 'react;';
+import React from 'react;;
 import {;
   Card,;''
   CardContent,;
   CardDescription,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
+} from '@/components/ui/card;;
 import type { HelpCategory } from './types;'
 ;''
 interface HelpCategoryListProps {;;
@@ -14,7 +14,7 @@ interface HelpCategoryListProps {;;
   onCategorySelect: "(categoryId: string) => void;",;";";";";""
   searchQuery: "string;";"
 };
-;
+
 =======
 import React from 'react'
 import {;

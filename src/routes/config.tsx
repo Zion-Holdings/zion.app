@@ -16,5 +16,5 @@ export interface AppRouteObject {
 // It might need further adjustments based on how it's consumed elsewhere,;
 // but for now, it removes the react-router dependency.;
 '
-/* ;
+/*  ; */
   The original AppRouteObject extended Omit<RouteObject, 'index' | 'children'>.;';; */

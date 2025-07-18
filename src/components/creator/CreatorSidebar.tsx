@@ -8,7 +8,7 @@ import {;
 <<<<<<< HEAD
   Users,;
 } from '@/components/ui/icons;'
-;
+
 =======
   Users,
 } from '@/components/ui/icons'
@@ -25,7 +25,7 @@ import {;
   // SidebarGroupLabel, // Not needed;''
   // SidebarGroupContent, // Not needed;;
 } from '@/components/ui/sidebar;'
-;'';
+;;
 export function AppSidebar(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   return (;
     <Sidebar>;''

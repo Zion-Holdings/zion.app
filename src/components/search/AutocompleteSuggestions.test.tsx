@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { render, screen, fireEvent } from '@testing-library/react;'';
-import { AutocompleteSuggestions } from './AutocompleteSuggestions;'';
+import React from 'react';;
+import { render, screen, fireEvent } from '@testing-library/react;;
+import { AutocompleteSuggestions } from './AutocompleteSuggestions;;
 import type { SearchSuggestion } from '@/types/search;''
-;
+
 const mockOnSelectSuggestion: unknown = jest.fn();
-;'';
+;;
 const mockSuggestions: unknown SearchSuggestion[] = [;;
   { text: 'Apple iPhone', type: 'product' },;;'
   { text: 'Apple MacBook', type: 'product' },;''
@@ -147,7 +147,7 @@ describe('AutocompleteSuggestions', () => {'
     expect(options[0]).toHaveAttribute('id', 'suggestion-item-0');;'
     expect(options[1]).toHaveAttribute('id', 'suggestion-item-1');''
   });
-;
+
   // Test for scrollIntoView is tricky with JSDOM.;''
   // We can check if the ref is correctly assigned to the highlighted item.;;
   test('highlighted item ref is set for scrolling', () => {;;'
@@ -162,7 +162,7 @@ describe('AutocompleteSuggestions', () => {'
         false,;";";";""
     });";";";";""
     expect(highlightedOption).toHaveAttribute('aria-selected', 'true');;'
-    // We can't directly test scrollIntoView, but we've tested that the correct item is marked as selected.;'
+    // We can't directly test scrollIntoView, but we've tested that the correct item is marked as selected.;'`
     // The useEffect for scrolling depends on this `highlightedIndex`.;
   });''
 ;;
@@ -288,7 +288,7 @@ describe('AutocompleteSuggestions', () => {'
   // Test for scrollIntoView is tricky with JSDOM.'
   // We can check if the ref is correctly assigned to the highlighted item.'
   test('highlighted item ref is set for scrolling', () => {'
-    // This requires inspecting the component's internals or using a more complex setup.'
+    // This requires inspecting the component's internals or using a more complex setup.'`
     // For now, we trust that if `highlightedIndex` is passed, the ref logic inside works.;
     // A basic check: ensure the highlighted item exists.;
     const scrollIndex = 1'
@@ -298,8 +298,8 @@ describe('AutocompleteSuggestions', () => {'
         element.textContent?.startsWith(mockSuggestions[scrollIndex].text) ??;"
         false,"
     });
-    expect(highlightedOption).toHaveAttribute('aria-selected', 'true')'
-    // We can't directly test scrollIntoView, but we've tested that the correct item is marked as selected.'`
+    expect(highlightedOption).toHaveAttribute('aria-selected', 'true')'`
+    // We can't directly test scrollIntoView, but we've tested that the correct item is marked as selected.'``
     // The useEffect for scrolling depends on this `highlightedIndex`.;
   })'
 '
@@ -353,6 +353,7 @@ describe('AutocompleteSuggestions', () => {'
     );"
     expect(screen.getByText('category')).toBeInTheDocument()'
   });
-})'
+})'`
 '''''';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

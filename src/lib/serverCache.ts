@@ -20,19 +20,19 @@ export const cacheKeys = {;";,"
   categories: 'api:categories',;
   blog: {
     all: 'api:blog:all',;
-    bySlug: "(slug: string) => `api:blog:${slug"}`,;"`
+    bySlug: "(slug: string) => `api:blog:${slug"}`,;"``
     search: "(query: string) => `api:blog:search:${query"}`,;"
   },;"
-  jobs: {
-    all: 'api:jobs:all',;`
+  jobs: {`
+    all: 'api:jobs:all',;``
     filtered: "(params: string) => `api:jobs:filtered:${params"}`,;"
-  },;"
-  search: {`
-    results: "(query: string) => `api:search:${query"}`,;"`
+  },;"`
+  search: {``
+    results: "(query: string) => `api:search:${query"}`,;"``
     suggestions: "(query: string) => `api:search:suggest:${query"}`,;"
   },;"
-  talent: {
-    all: 'api:talent:all',;`
+  talent: {`
+    all: 'api:talent:all',;``
     filtered: "(params: string) => `api:talent:filtered:${params"}`,;
   },;
 };"
@@ -45,13 +45,13 @@ export function getCacheItem<T>(;"
 ): T | undefined {;"
   try {;";"
     const cache = cacheInstances[category];"
-    const value = cache.get<T>(key);"
-    if (value) {;"`
+    const value = cache.get<T>(key);"`
+    if (value) {;"``
       logDebug(`Cache HIT: "${key"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}(${category})`);"
-      return value;"
-    };"`
+      return value;"`
+    };"``
     logDebug(`Cache MISS: "${key"} (${category})`);"
-    return undefined;"
-  } catch {;"`
-    logErrorToProduction(`Cache GET error for ${key}`, error as Error, {;'
-      cacheKey: key,;';;`
+    return undefined;"`
+  } catch {;"``
+    logErrorToProduction(`Cache GET error for ${key}`, error as Error, {;'`
+      cacheKey: key,;';;``

@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import { Card, CardContent } from '@/components/ui/card;'';
-import { Button } from '@/components/ui/button;'';
+import { Card, CardContent } from '@/components/ui/card;;
+import { Button } from '@/components/ui/button;;
 import Link from 'next/link;'
-;
+
 interface NoJobsCardProps {;
   onUpdateProfile?: () => void;''
 };
-;
+
 export function NoJobsCard(): unknown {): unknown {): unknown {): unknown {): unknown {{ onUpdateProfile }: NoJobsCardProps) {;''
   return (;;
     <Card className="bg-muted/30 border border-dashed">;";";";";""

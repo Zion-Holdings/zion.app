@@ -42,7 +42,7 @@ export function SidebarProvider(): unknown {): unknown {): unknown {): unknown {
 }: SidebarProviderProps) {;
   const [isOpen, setIsOpen] = useState(defaultOpen);
 <<<<<<< HEAD
-;
+
   const toggle: unknown = () => setIsOpen(!isOpen);
   const open: unknown = () => setIsOpen(true);
   const close: unknown = () => setIsOpen(false);""
@@ -57,9 +57,9 @@ export function SidebarProvider(): unknown {): unknown {): unknown {): unknown {
     </SidebarContext.Provider>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -70,7 +70,7 @@ export function SidebarProvider(): unknown {): unknown {): unknown {): unknown {
 
   return (;"
     <SidebarContext.Provider value={{ isOpen, toggle, open, close }}>"
-      <div;"
+      <div;"`
         className={`grid ${isOpen ? 'grid-cols-[auto_1fr]' : 'grid-cols-[auto_1fr]'} min-h-screen w-full`};
       >;
         {children};
@@ -81,6 +81,7 @@ export function SidebarProvider(): unknown {): unknown {): unknown {): unknown {
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

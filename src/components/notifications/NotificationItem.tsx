@@ -1,23 +1,23 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { Check, Trash2, ChevronRight } from '@/components/ui/icons;'
-;
+
 // Use the centralized icon wrapper to avoid missing icons;''
 ;;
-import { Button } from '@/components/ui/button;'';
-import { Badge } from '@/components/ui/badge;'';
-import { formatDistanceToNow } from 'date-fns;'';
-import { cn } from '@/lib/utils;';
+import { Button } from '@/components/ui/button;;
+import { Badge } from '@/components/ui/badge;;
+import { formatDistanceToNow } from 'date-fns;;
+import { cn } from '@/lib/utils;;
 import {;''
   Tooltip,;
   TooltipContent,;
   TooltipProvider,;''
   TooltipTrigger,;;
-} from '@/components/ui/tooltip;'';
-import { useRouter } from 'next/router;'';
-import type { Notification } from '@/context/notifications;'';
+} from '@/components/ui/tooltip;;
+import { useRouter } from 'next/router;;
+import type { Notification } from '@/context/notifications;;
 import type { NotificationType } from '@/context/notifications;'
-;
+
 export const getTypeIcon: unknown = (_type: NotificationType) => {;''
   switch (type) {;;
     case 'message':;;'
@@ -115,7 +115,7 @@ export const _NotificationItem: unknown React.FC<NotificationItemProps> = ({;
       router.push(notification.action_url); // Changed to router.push;
     };
   };''
-;
+
   return (;
     <div;''
       className={cn(;;
@@ -145,7 +145,7 @@ export const _NotificationItem: unknown React.FC<NotificationItemProps> = ({;
                   });";";";";""
                 : 'Just now'};''
             </p>;
-;
+
             {notification.action_url && notification.action_text && (;''
               <Button;;
                 variant="link";";";";";""

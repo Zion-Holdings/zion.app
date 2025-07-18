@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { Check, Copy, ExternalLink } from '@/components/ui/icons;'';
-import { Badge } from '@/components/ui/badge;'';
-import { Button } from '@/components/ui/button;';
+import React, { useState } from 'react';;
+import { Check, Copy, ExternalLink } from '@/components/ui/icons;;
+import { Badge } from '@/components/ui/badge;;
+import { Button } from '@/components/ui/button;;
 import {;''
   Card,;
   CardContent,;
   CardFooter,;''
   CardHeader,;;
-} from '@/components/ui/card;'';
-import { Input } from '@/components/ui/input;'';
+} from '@/components/ui/card;;
+import { Input } from '@/components/ui/input;;
 import { toast } from 'sonner;'
-;
+
 export function ZapierIntegration(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   const [copied, setCopied] = useState(false);;
   const [apiKey] = useState('zap_live_KztCaFieDu4VBnp8eMJZ9x73R');'

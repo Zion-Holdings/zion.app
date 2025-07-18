@@ -1,13 +1,13 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { Button } from '@/components/ui/button;'';
-import { Checkbox } from '@/components/ui/checkbox;'';
+import { useState } from 'react';;
+import { Button } from '@/components/ui/button;;
+import { Checkbox } from '@/components/ui/checkbox;;
 import { CATEGORIES } from '@/data/categories;'
 ;''
 interface CategorySelectionProps {;;
   onComplete: "(categories: string[]) => void;";"
 };
-;
+
 =======
 import { useState } from 'react''
 import { Button } from '@/components/ui/button'

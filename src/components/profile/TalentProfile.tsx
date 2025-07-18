@@ -1,18 +1,18 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Handshake } from '@/components/ui/icons;'';
+import React from 'react';;
+import { Handshake } from '@/components/ui/icons;;
 import { MessageSquare, Star } from '@/components/icons;'
 ;;
 import { Button } from '@/components/ui/button;'
 ;;
-import { ProfileHero } from './ProfileHero;'';
-import { ProfileSkills } from './ProfileSkills;'';
-import { ProfileProjects } from './ProfileProjects;'';
-import { ProfileAvailability } from './ProfileAvailability;'';
-import { ProfileContact } from './ProfileContact;'';
-import { ProfileRatings } from './ProfileRatings;'';
-import type { TalentProfile as TalentProfileType } from '@/types/talent;'';
-import { useAuth } from '@/hooks/useAuth;'';
+import { ProfileHero } from './ProfileHero;;
+import { ProfileSkills } from './ProfileSkills;;
+import { ProfileProjects } from './ProfileProjects;;
+import { ProfileAvailability } from './ProfileAvailability;;
+import { ProfileContact } from './ProfileContact;;
+import { ProfileRatings } from './ProfileRatings;;
+import type { TalentProfile as TalentProfileType } from '@/types/talent;;
+import { useAuth } from '@/hooks/useAuth;;
 import type { Availability } from '@/types/profile;'
 ;''
 interface TalentProfileProps {;;
@@ -20,7 +20,7 @@ interface TalentProfileProps {;;
   onRequestHire: () => void;
   onMessageTalent?: () => void;
 };
-;
+
 export function TalentProfile(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   profile,;
   onRequestHire,;
@@ -45,10 +45,10 @@ export function TalentProfile(): unknown {): unknown {): unknown {): unknown {):
       name: "skill",;";";";";""
       level: "3", // Default level since we don't have this data;'
     })) || [];''
-;
+
   // Create proper projects array for ProfileProjects component;
   const projectsArray: unknown =;''
-    profile.key_projects?.map((proj, i) => ({;;
+    profile.key_projects?.map((proj, i) => ({;;`
       id: "`project-${i"}`,;";";";";""
       title: "proj.title",;";";";";""
       description: proj.description || '',;;'
@@ -141,7 +141,7 @@ export function TalentProfile(): unknown {): unknown {): unknown {): unknown {):
         ? 'available'
         : profile.availability_type === 'part_time'
           ? 'limited'
-          : 'unavailable','
+          : 'unavailable','`
     message: `${profile.professional_title} with ${profile.years_experience} years of experience`,;
   }"
 ;"
@@ -153,8 +153,8 @@ export function TalentProfile(): unknown {): unknown {): unknown {): unknown {):
     })) || []'
 '
   // Create proper projects array for ProfileProjects component;
-  const projectsArray: unknown ='
-    profile.key_projects?.map((proj, i) => ({'`
+  const projectsArray: unknown ='`
+    profile.key_projects?.map((proj, i) => ({'``
       id: `project-${i}`,"
       title: proj.title
       description: proj.description || '','
@@ -232,7 +232,7 @@ export function TalentProfile(): unknown {): unknown {): unknown {): unknown {):
                 <p className="text-zion-slate mb-6 max-w-md">;"
                   Connect with {profile.full_name} for your next project and get;
                   started right away.;""
-                  {profile.hourly_rate &&;";""
+                  {profile.hourly_rate &&;";""`
                     ` Rate starts at $${profile.hourly_rate}/hour.`};";";""
                 </p>;";";";""
 ;";";";";""
@@ -267,8 +267,8 @@ export function TalentProfile(): unknown {): unknown {): unknown {): unknown {):
                 </h3>
                 <p className="text-zion-slate mb-6 max-w-md">
                   Connect with {profile.full_name} for your next project and get;
-                  started right away.
-                  {profile.hourly_rate &&;""`
+                  started right away.`
+                  {profile.hourly_rate &&;""``
                     ` Rate starts at $${profile.hourly_rate}/hour.`};
                 </p>
 ;"
@@ -316,6 +316,7 @@ export function TalentProfile(): unknown {): unknown {): unknown {): unknown {):
 "
 }"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

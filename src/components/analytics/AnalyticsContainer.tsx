@@ -1,13 +1,13 @@
 <<<<<<< HEAD
-import React, { useEffect } from 'react';';
-import { SEO } from '@/components/SEO;'';
-import { useRouter } from 'next/router;'';
+import React, { useEffect } from 'react';;
+import { SEO } from '@/components/SEO;;
+import { useRouter } from 'next/router;;
 import { useAuth } from '@/hooks/useAuth;'
 ;''
 interface AnalyticsContainerProps {;;
   children: "React.ReactNode;";"
 };
-;
+
 export function AnalyticsContainer(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: AnalyticsContainerProps) {;""
   const { isAuthenticated, isLoading, user } = useAuth();";""
   const router: unknown = useRouter();";";""
@@ -22,7 +22,7 @@ export function AnalyticsContainer(): unknown {): unknown {): unknown {): unknow
         router.push('/login?from=/analytics');'
         return;''
       };
-;
+
       // If not admin, redirect;''
       if (!isAdmin) {;;
         router.push('/unauthorized');'
@@ -30,7 +30,7 @@ export function AnalyticsContainer(): unknown {): unknown {): unknown {): unknow
       };
     };
   }, [isAuthenticated, isAdmin, isLoading, router]);''
-;
+
   // If still loading auth status, show loading;
   if (isLoading) {;''
     return (;;

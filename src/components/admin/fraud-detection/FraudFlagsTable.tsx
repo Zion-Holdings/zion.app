@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import React from 'react;';
+import React from 'react;;
 import {;
   Table,;
   TableBody,;''
@@ -7,11 +7,11 @@ import {;
   TableHead,;
   TableHeader,;''
   TableRow,;;
-} from '@/components/ui/table;'';
-import { Badge } from '@/components/ui/badge;'';
-import type { FraudFlag } from '@/types/fraud;'';
-import { SeverityDisplay } from './SeverityDisplay;'';
-import { ActionButtons } from './ActionButtons;'';
+} from '@/components/ui/table;;
+import { Badge } from '@/components/ui/badge;;
+import type { FraudFlag } from '@/types/fraud;;
+import { SeverityDisplay } from './SeverityDisplay;;
+import { ActionButtons } from './ActionButtons;;
 import { EmptyFraudState } from './EmptyFraudState;'
 ;''
 interface FraudFlagsTableProps {;;
@@ -24,7 +24,7 @@ interface FraudFlagsTableProps {;;
     action: 'warning' | 'suspension' | 'ban' | 'ignore',;'
   ) => void;
 };
-;
+
 =======
 import React from 'react'
 import {;

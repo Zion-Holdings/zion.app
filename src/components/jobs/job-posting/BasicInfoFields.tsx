@@ -1,15 +1,15 @@
 <<<<<<< HEAD
-import React from 'react';';
-import type { Control, ControllerRenderProps } from 'react-hook-form;';
+import React from 'react';;
+import type { Control, ControllerRenderProps } from 'react-hook-form;;
 import {;
   FormField,;''
   FormItem,;
   FormLabel,;
   FormControl,;''
   FormMessage,;;
-} from '@/components/ui/form;'';
-import { Input } from '@/components/ui/input;'';
-import { Card, CardContent } from '@/components/ui/card;'';
+} from '@/components/ui/form;;
+import { Input } from '@/components/ui/input;;
+import { Card, CardContent } from '@/components/ui/card;;
 import type { JobSchemaType } from './validation;'
 ;''
 interface BasicInfoFieldsProps {;;

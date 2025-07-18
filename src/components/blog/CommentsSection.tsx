@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import React, { useState, useEffect } from 'react';';
-import { Input } from '@/components/ui/input;'';
-import { Textarea } from '@/components/ui/textarea;'';
-import { Button } from '@/components/ui/button;'';
-import { addComment, getComments } from '@/services/commentService;'';
+import React, { useState, useEffect } from 'react';;
+import { Input } from '@/components/ui/input;;
+import { Textarea } from '@/components/ui/textarea;;
+import { Button } from '@/components/ui/button;;
+import { addComment, getComments } from '@/services/commentService;;
 import type { CommentEntry } from '@/services/commentService;'
 ;''
 interface CommentsSectionProps {;;
@@ -14,7 +14,7 @@ export function CommentsSection(): unknown {): unknown {): unknown {): unknown {
   const [comments, setComments] = useState<CommentEntry[]>([]);";";";";""
   const [name, setName] = useState('');;'
   const [text, setText] = useState('');'
-;
+
 =======
 import React, { useState, useEffect } from 'react''
 import { Input } from '@/components/ui/input'

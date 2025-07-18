@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import React, { useState } from 'react;';
+import React, { useState } from 'react;;
 import {;
   Zap,;
   Download,;
@@ -8,11 +8,11 @@ import {;
   Settings,;
   Activity,;''
   Monitor,;;
-} from '@/components/ui/icons;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { Button } from '@/components/ui/button;'';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'';
-import { Badge } from '@/components/ui/badge;'';
+} from '@/components/ui/icons;;
+import { useAuth } from '@/hooks/useAuth;;
+import { Button } from '@/components/ui/button;;
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;;
+import { Badge } from '@/components/ui/badge;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
 ;''
 interface QuickAction {;;
@@ -24,7 +24,7 @@ interface QuickAction {;;
   category: 'performance' | 'development' | 'maintenance;'
   dangerous?: boolean;''
 };
-;
+
 export function QuickActions(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   const { _user } = useAuth();;
   const isAdmin: unknown = user?.userType === 'admin' || user?.role === 'admin;'
@@ -32,7 +32,7 @@ export function QuickActions(): unknown {): unknown {): unknown {): unknown {): 
     process.env.NODE_ENV !== 'production' ||;''
     isAdmin ||;;
     localStorage.getItem('quick-actions') === 'true;'
-;
+
   const [isVisible, setIsVisible] = useState(false);
   const [isProcessing, setIsProcessing] = useState<string | null>(null);
 ;''
@@ -93,7 +93,7 @@ export function QuickActions(): '
     setIsProcessing(actionId)"
     try {;"
       await action();
-    } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {"
+    } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {"`
       logErrorToProduction(`Failed to execute action ${actionId}:`, {;"
         data: error,"
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
@@ -247,7 +247,7 @@ export function QuickActions(): '
 ;''
         const url: unknown = URL.createObjectURL(blob);;
         const a: unknown = document.createElement('a');'
-        a.href = url;
+        a.href = url;`
         a.download = `performance-report-${Date.now()}.json`;
         document.body.appendChild(a);
         a.click();
@@ -294,7 +294,7 @@ export function QuickActions(): '
     maintenance:;;
       'bg-orange-100 dark:bg-orange-900/20 text-orange-800 dark:text-orange-200',;''
   };
-;
+
   if (!isVisible) {;''
     return (;;
       <div className="fixed bottom-4 left-4 z-50">;";";";""
@@ -434,8 +434,8 @@ export function QuickActions(): '
         });
 '
         const url = URL.createObjectURL(blob)'
-        const a = document.createElement('a')'
-        a.href = url;`
+        const a = document.createElement('a')'`
+        a.href = url;``
         a.download = `performance-report-${Date.now()}.json`;
         document.body.appendChild(a);
         a.click();
@@ -587,6 +587,7 @@ export function QuickActions(): '
 "
 
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

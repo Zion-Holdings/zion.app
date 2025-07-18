@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { MessageSquare } from '@/components/ui/icons;'';
+import React from 'react';;
+import { MessageSquare } from '@/components/ui/icons;;
 import Link from 'next/link;'
 ;;
-import { Button } from '@/components/ui/button;';
+import { Button } from '@/components/ui/button;;
 import {;''
   Tooltip,;
   TooltipContent,;
@@ -18,7 +18,7 @@ interface EmptyStateProps {;;
   href: "string;",";";";";""
   hasSession: "boolean;";"
 };
-;
+
 const EmptyState: unknown React.FC<EmptyStateProps> = ({;
   title,;
   subtitle,;

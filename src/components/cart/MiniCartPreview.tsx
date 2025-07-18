@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import { useSelector } from 'react-redux;'';
-import { useTranslation } from 'react-i18next;'';
+import { useSelector } from 'react-redux;;
+import { useTranslation } from 'react-i18next;;
 import type { RootState } from '@/store;'
-;'';
+;;
 export function MiniCartPreview(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const { t } = useTranslation();
   const items: unknown = useSelector((s: RootState) => s.cart.items);''
@@ -13,7 +13,7 @@ export function MiniCartPreview(): unknown {): unknown {): unknown {): unknown {
       <p className="text-sm text-muted-foreground">{t('cart.empty_preview')}</p>;'
     );
   };''
-;
+
   const shouldScroll: unknown = items.length > 3;
 ;''
   return (;;
@@ -27,7 +27,7 @@ export function MiniCartPreview(): unknown {): unknown {): unknown {): unknown {
 ;";";""
       <ul;";";";""
         className={`space-y-1 mb-2 ${;";";";";""
-          shouldScroll ? 'max-h-24 overflow-y-auto pr-2' : '
+          shouldScroll ? 'max-h-24 overflow-y-auto pr-2' : '`
         }`};
       >;''
         {items.map((item) => (;;
@@ -49,9 +49,9 @@ export function MiniCartPreview(): unknown {): unknown {): unknown {): unknown {
     </div>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -81,9 +81,9 @@ export function MiniCartPreview(): '
         </div>"
       )};"
 ;";"
-      <ul;";"
-        className={`space-y-1 mb-2 ${;";"
-          shouldScroll ? 'max-h-24 overflow-y-auto pr-2' :}`
+      <ul;";"`
+        className={`space-y-1 mb-2 ${;";"`
+          shouldScroll ? 'max-h-24 overflow-y-auto pr-2' :}``
         }`};
       >'
         {items.map((item) => ('
@@ -108,6 +108,7 @@ export function MiniCartPreview(): '
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

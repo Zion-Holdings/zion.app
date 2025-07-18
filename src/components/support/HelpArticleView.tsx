@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { Button } from '@/components/ui/button;'';
-import { Card } from '@/components/ui/card;'';
+import React, { useState } from 'react';;
+import { Button } from '@/components/ui/button;;
+import { Card } from '@/components/ui/card;;
 import { ThumbsUp, ThumbsDown } from '@/components/ui/icons;'
 ;;
-import { toast } from '@/components/ui/use-toast;'';
+import { toast } from '@/components/ui/use-toast;;
 import { HELP_CATEGORIES } from './help-content;'
 ;''
 interface HelpArticleViewProps {;;
@@ -50,7 +50,7 @@ export function HelpArticleView(): unknown {): unknown {): unknown {): unknown {
 ;;
   const handleFeedback: unknown = (_type: 'helpful' | 'not-helpful') => {;''
     setFeedbackGiven(type);
-;
+
     // In a real implementation, this would send feedback to the server;''
     toast({;;
       title: 'Thank you for your feedback!',;''
@@ -240,10 +240,10 @@ function formatDate(): unknown {): unknown {): unknown {): unknown {): unknown {
 <<<<<<< HEAD
 };''
 };
-}
+
 };''
 }''
-}
+
 }''
 =======
 }'

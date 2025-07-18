@@ -6,17 +6,17 @@ import {;
   CardDescription,;
 <<<<<<< HEAD
   CardFooter,;
-} from '@/components/ui/card;';
+} from '@/components/ui/card;;
 import {;''
   DollarSign,;
   Calendar,;
   CheckCircle,;''
   XCircle,;;
-} from '@/components/ui/icons;'';
-import { Badge } from '@/components/ui/badge;'';
+} from '@/components/ui/icons;;
+import { Badge } from '@/components/ui/badge;;
 import { Button } from '@/components/ui/button;'
 ;;
-import { format } from 'date-fns;'';
+import { format } from 'date-fns;;
 import type { JobMatch } from '@/types/jobs;'
 ;''
 interface JobMatchCardProps {;;
@@ -25,7 +25,7 @@ interface JobMatchCardProps {;;
   onDecline: (matchId: string) => void;
   showApplied?: boolean;
 };
-;
+
 =======
   CardFooter,
 } from '@/components/ui/card'

@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import { PaymentButton } from '@/components/transactions/PaymentButton;'';
-import { MapPin } from '@/components/ui/icons;'';
-import type { CountryPricing } from '@/data/onsiteServicePricing;'';
+import { PaymentButton } from '@/components/transactions/PaymentButton;;
+import { MapPin } from '@/components/ui/icons;;
+import type { CountryPricing } from '@/data/onsiteServicePricing;;
 import { toast } from '@/hooks/use-toast;'
 ;''
 interface PaymentSectionProps {;;
@@ -82,7 +82,7 @@ export function PaymentSection(): unknown {): unknown {): unknown {): unknown {)
       <PaymentButton
         amount={selectedCountry.pricePerIncident};
         serviceId="it-onsite-service"
-        providerId=zion-tech-group
+        providerId=zion-tech-group`
         buttonText={`Pay for Service in ${selectedCountry.country}`}"
         className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white w-full py-6"
         redirectUrl=/it-onsite-services?success=true"
@@ -97,6 +97,7 @@ export function PaymentSection(): unknown {): unknown {): unknown {): unknown {)
 
 }"
 }"
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 import type { FallbackProps } from 'react-error-boundary;''
-;
+
 export default function LoginErrorFallback(): unknown {): unknown {): unknown {): unknown {): unknown {{ error }: FallbackProps) {;
   return (;''
     <div;;
@@ -13,9 +13,9 @@ export default function LoginErrorFallback(): unknown {): unknown {): unknown {)
     </div>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

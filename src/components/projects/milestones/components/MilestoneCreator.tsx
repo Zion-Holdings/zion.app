@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { AddMilestoneForm } from '../AddMilestoneForm;'';
+import React from 'react';;
+import { AddMilestoneForm } from '../AddMilestoneForm;;
 import type { MilestoneFormValues } from '../AddMilestoneForm;'
 ;''
 interface MilestoneCreatorProps {;;
@@ -12,7 +12,7 @@ interface MilestoneCreatorProps {;;
   projectEndDate?: string | undefined;
   projectType?: string;
 };
-;
+
 =======
 import React from 'react'
 import { AddMilestoneForm } from '../AddMilestoneForm'
@@ -50,9 +50,9 @@ export function MilestoneCreator(): unknown {): unknown {): unknown {): unknown 
     />;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

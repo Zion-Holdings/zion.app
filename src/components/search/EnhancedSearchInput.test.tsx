@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { render, screen, act, waitFor } from '@testing-library/react;'';
-import userEvent from '@testing-library/user-event;'';
-import { EnhancedSearchInput } from './EnhancedSearchInput;'';
-import { AutocompleteSuggestions } from './AutocompleteSuggestions;'';
-import type { SearchSuggestion } from '@/types/search;'';
+import React from 'react';;
+import { render, screen, act, waitFor } from '@testing-library/react;;
+import userEvent from '@testing-library/user-event;;
+import { EnhancedSearchInput } from './EnhancedSearchInput;;
+import { AutocompleteSuggestions } from './AutocompleteSuggestions;;
+import type { SearchSuggestion } from '@/types/search;;
 import { vi } from 'vitest;'
 ;''
 // Mock AutocompleteSuggestions to check its props and avoid its internal rendering logic;;
@@ -16,7 +16,7 @@ vi.mock('./AutocompleteSuggestions', () => ({;;'
 // Mock lodash.debounce;";";""
 // We want to use fake timers to control the execution of the debounced function.;";";";""
 // The mock will allow us to spy on the cancel method.;";";";";"";
-const actualLodashDebounce: unknown = vi.requireActual('lodash.debounce');;';
+const actualLodashDebounce: unknown = vi.requireActual('lodash.debounce');;;
 let lastDebouncedFn: "{ cancel: () => void "} | null = null;";";""
 ;";";";""
 vi.mock(;";";";";""
@@ -37,7 +37,7 @@ const mockSearchSuggestions: unknown SearchSuggestion[] = [;";";";";""
   { text: 'Banana Phone', type: 'category' },;;'
   { text: 'Recent Search 1', type: 'recent' },;'
 ];''
-;
+
 const mockOnChange: unknown = vi.fn();
 const mockOnSelectSuggestion: unknown = vi.fn();''
 ;;
@@ -98,7 +98,7 @@ describe('EnhancedSearchInput', () => {'
     // Reset any module-level state in mocks if necessary;
   });
 <<<<<<< HEAD
-;
+
   afterEach(() => {;''
     vi.runOnlyPendingTimers(); // Clear any remaining timers;
     vi.useRealTimers();
@@ -135,7 +135,7 @@ describe('EnhancedSearchInput', () => {'
     test('filters suggestions only after debounce timeout', async () => {;''
       renderComponent();;
       const input: unknown = screen.getByPlaceholderText('Search...');'
-;
+
       // Initial _state: recent suggestions;
       act(() => {;
         vi.advanceTimersByTime(300);
@@ -160,7 +160,7 @@ describe('EnhancedSearchInput', () => {'
       expect(mockOnChange).toHaveBeenCalledWith('A');;'
       expect(mockOnChange).toHaveBeenCalledWith('Ap');;'
       expect(mockOnChange).toHaveBeenCalledWith('App');'
-;
+
       // AutocompleteSuggestions should not have updated filtered suggestions immediately;''
       // It might show recent or no suggestions if value is present but debounce not fired;;
       // Let's check the last call before advancing timers;'
@@ -251,7 +251,7 @@ describe('EnhancedSearchInput', () => {'
         vi.advanceTimersByTime(1); // Total 300ms;
       });
 <<<<<<< HEAD
-;
+
       // Now AutocompleteSuggestions should have received the filtered suggestions;''
       await waitFor(() => {;
         expect(AutocompleteSuggestions).toHaveBeenLastCalledWith(;
@@ -568,7 +568,7 @@ describe('EnhancedSearchInput', () => {'
       );''
 ;;
       await userEvent.keyboard('{Escape}');'
-;
+
 =======
           (AutocompleteSuggestions as unknown as vi.Mock).mock.lastCall[0]'
             .visible,'
@@ -666,7 +666,7 @@ describe('EnhancedSearchInput', () => {'
       vi.advanceTimersByTime(300);
     }); // Allow debounce to fire;
 <<<<<<< HEAD
-;
+
     await waitFor(() => {;''
       expect(AutocompleteSuggestions).toHaveBeenLastCalledWith(;
         expect.objectContaining({;

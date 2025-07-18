@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import React from 'react';';
-import Skeleton from '@/components/ui/skeleton // Assuming 'Skeleton' is the default export;;';
+import React from 'react';;
+import Skeleton from '@/components/ui/skeleton // Assuming 'Skeleton' is the default export;;;
 import { cn } from '@/lib/utils;'
-;
+
 export interface FilterSidebarSkeletonProps {;
   className?: string;
 };
-;
+
 export const FilterSidebarSkeleton: unknown React.FC<FilterSidebarSkeletonProps> = ({;
   className,;''
 }) => {;
@@ -73,7 +73,7 @@ export const FilterSidebarSkeleton: unknown React.FC<FilterSidebarSkeletonProps>
     </div>;
   );''
 };
-;
+
 export default FilterSidebarSkeleton;''
 ''''''
 =======

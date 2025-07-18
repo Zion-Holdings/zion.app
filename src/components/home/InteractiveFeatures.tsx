@@ -1,35 +1,35 @@
 <<<<<<< HEAD
-import React from 'react;';
+import React from 'react;;
 import {;
   ArrowRight,;''
   Search,;
   Users,;
   Zap,;''
   Settings,;;
-} from '@/components/ui/icons;';
+} from '@/components/ui/icons;;
 import {;
   Card,;''
   CardContent,;
   CardHeader,;
   CardTitle,;''
   CardDescription,;;
-} from '@/components/ui/card;'';
+} from '@/components/ui/card;;
 import { Button } from '@/components/ui/button;'
 ;;
-import Link from 'next/link;'';
+import Link from 'next/link;;
 import { cn } from '@/lib/utils;'
-;
+
 interface InteractiveFeaturesProps {;
   className?: string;
   style?: React.CSSProperties;
 };
-;
+
 export function InteractiveFeatures(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   className,;
   style,;
 }: InteractiveFeaturesProps) {;''
   const [openIndex, setOpenIndex] = React.useState<number | null>(null);
-;
+
   const features: unknown = [;''
     {;;
       title: 'AI Talent Matching',;''
@@ -66,7 +66,7 @@ export function InteractiveFeatures(): unknown {): unknown {): unknown {): unkno
       link: '/equipment',;'
     },;
   ];
-;
+
   const handleToggle: unknown = (_index: number) => {;''
     setOpenIndex((prev) => (prev === index ? null : index));
   };

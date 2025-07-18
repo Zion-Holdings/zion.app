@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { getBadgeMeta } from './badgeConfig;'';
+import React from 'react';;
+import { getBadgeMeta } from './badgeConfig;;
 import type { BadgeKey } from './badgeConfig;'
-;
+
 interface BadgeEarnedProps {;
   badge: BadgeKey;
   size?: number;
@@ -10,7 +10,7 @@ interface BadgeEarnedProps {;
   showDesc?: boolean;
   earnedDate?: string;
 };
-;
+
 =======
 import React from 'react'
 import { getBadgeMeta } from './badgeConfig'

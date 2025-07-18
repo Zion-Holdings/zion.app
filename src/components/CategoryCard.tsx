@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import React from 'react''';
-import type { ReactNode } from 'react''';
-import { cn } from '@/lib/utils;'';
-import { slugify } from '@/lib/slugify;'';
-import Link from 'next/link'';
+import React from 'react';
+import type { ReactNode } from 'react';
+import { cn } from '@/lib/utils;;
+import { slugify } from '@/lib/slugify;;
+import Link from 'next/link;
 ;''
 interface CategoryCardProps {;''
   title: "string,;";";"
@@ -18,7 +18,7 @@ interface CategoryCardProps {;''
   count?: number;
   className?: string;
 };
-;
+
 =======
 import React from 'react'
 import type { ReactNode } from 'react''
@@ -83,12 +83,12 @@ export function CategoryCard(): unknown {): unknown {): unknown {): unknown {): 
 };
 ";""
 }";""
-}
+
 }""
 }""
 =======
   return (;""
-    <Link;"
+    <Link;"`
       href={`/category/${slug}`}";"
       tabIndex={0}";""
       data-testid=category-card // Added data-testid";";
@@ -119,6 +119,7 @@ export function CategoryCard(): unknown {): unknown {): unknown {): unknown {): 
 ";"
 }";"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

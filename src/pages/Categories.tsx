@@ -97,5 +97,5 @@ export default function Categories(): unknown {): unknown {): unknown {): unknow
                     <CategoryCard;";"
                       key={category.id};"
                       title={category.name};"
-                      description={`Explore ${category.name.toLowerCase()} in our marketplace`};"
-                      icon={<Folder className="w-6 h-6' />};';;`
+                      description={`Explore ${category.name.toLowerCase()} in our marketplace`};"`
+                      icon={<Folder className="w-6 h-6' />};';;``

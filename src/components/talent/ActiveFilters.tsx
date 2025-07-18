@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { X } from '@/components/ui/icons;'';
-import { ClickableBadge } from '@/components/ui/clickable-badge;'';
+import React from 'react';;
+import { X } from '@/components/ui/icons;;
+import { ClickableBadge } from '@/components/ui/clickable-badge;;
 import { Button } from '@/components/ui/button;'
 ;''
 interface ActiveFiltersProps {;;
@@ -17,7 +17,7 @@ interface ActiveFiltersProps {;;
   setExperienceRange: "(range: [number", number]) => void;";";";";""
   clearFilters: "() => void;";"
 };
-;
+
 =======
 import React from 'react'
 import { X } from '@/components/ui/icons'

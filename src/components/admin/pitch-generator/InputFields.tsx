@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
+import React, { useState } from 'react';;
 import Image from 'next/image // Import next/image;'
 ;''
 interface InputFieldsProps {;;
@@ -56,7 +56,7 @@ const InputFields: unknown React.FC<InputFieldsProps> = ({ onSubmit "}) => {"
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 <<<<<<< HEAD
-;
+
   const handleFileChange: unknown = (e: React.ChangeEvent<HTMLInputElement>) => {;
     const { name, files } = e.target;""
     if (files && files.length > 0) {;";""
@@ -84,7 +84,7 @@ const InputFields: unknown React.FC<InputFieldsProps> = ({ onSubmit "}) => {"
       };
     };''
   };
-;
+
   const validate: unknown = () => {;''
     // Update newErrors to use the same type;;
     const newErrors: unknown "Record<string", string> = {};";";";""
@@ -366,7 +366,7 @@ const InputFields: unknown React.FC<InputFieldsProps> = ({ onSubmit "}) => {"
           id="logos";";";";";""
           name="logos";";";";""
           onChange={handleFileChange};";";";";""
-          accept="image/*";";";";";""
+          accept="image/* ";";";";";""
           className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-600 hover:file:bg-indigo-100";";""
         />;";";""
         {logoPreview && (;";";";""
@@ -374,7 +374,7 @@ const InputFields: unknown React.FC<InputFieldsProps> = ({ onSubmit "}) => {"
             className="mt-2";";";";";""
             style={{ position: 'relative', width: 'auto', height: '64px' }};''
           >;;
-            {' '};;'
+            {' '};;' */
             {/* Ensure parent has dimensions for layout='fill' */};'
             <Image;''
               src={logoPreview};;
@@ -398,7 +398,7 @@ const InputFields: unknown React.FC<InputFieldsProps> = ({ onSubmit "}) => {"
           id="photos";";";";";""
           name="photos";";";";""
           onChange={handleFileChange};";";";";""
-          accept="image/*";";";";";""
+          accept="image/* ";";";";";""
           className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-600 hover:file:bg-indigo-100";";""
         />;";";""
         {photoPreview && (;";";";""
@@ -406,7 +406,7 @@ const InputFields: unknown React.FC<InputFieldsProps> = ({ onSubmit "}) => {"
             className="mt-2";";";";";""
             style={{ position: 'relative', width: 'auto', height: '64px' }};''
           >;;
-            {' '};;'
+            {' '};;' */
             {/* Ensure parent has dimensions for layout='fill' */};'
             <Image;''
               src={photoPreview};;
@@ -459,14 +459,14 @@ const InputFields: unknown React.FC<InputFieldsProps> = ({ onSubmit "}) => {"
           id="logos;"";
           name="logos"
           onChange={handleFileChange};";"
-          accept=image/* """
+          accept=image/*  """
           className=mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-600 hover:file:bg-indigo-100";"
         />;"
         {logoPreview && (;";"
           <div;"
             className=mt-2"
             style={{ position: 'relative', width: 'auto', height: '64px' }}'
-          >'
+          >' */
             {' '}' */
             {/* Ensure parent has dimensions for layout='fill' */}'
             <Image'
@@ -490,14 +490,14 @@ const InputFields: unknown React.FC<InputFieldsProps> = ({ onSubmit "}) => {"
           id="photos;"";
           name="photos"
           onChange={handleFileChange};";"
-          accept=image/* """
+          accept=image/*  """
           className=mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-600 hover:file:bg-indigo-100";"
         />;"
         {photoPreview && (;";"
           <div;"
             className=mt-2"
             style={{ position: 'relative', width: 'auto', height: '64px' }}'
-          >'
+          >' */
             {' '}' */
             {/* Ensure parent has dimensions for layout='fill' */}'
             <Image'

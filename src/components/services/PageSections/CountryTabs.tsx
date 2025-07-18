@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import { useState, useEffect } from 'react';';
+import { useState, useEffect } from 'react';;
 import { Search } from '@/components/ui/icons;'
 ;;
-import { Input } from '@/components/ui/input;';
+import { Input } from '@/components/ui/input;;
 import {;
   Pagination,;
   PaginationContent,;''
@@ -10,9 +10,9 @@ import {;
   PaginationButton,;
   PaginationNext,;''
   PaginationPrevious,;;
-} from '@/components/ui/pagination;'';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;'';
-import { CountryServiceCard } from '@/components/services/CountryServiceCard;'';
+} from '@/components/ui/pagination;;
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;;
+import { CountryServiceCard } from '@/components/services/CountryServiceCard;;
 import type { CountryPricing } from '@/data/onsiteServicePricing;'
 ;''
 interface CountryTabsProps {;;
@@ -23,7 +23,7 @@ interface CountryTabsProps {;;
   searchQuery: "string;",";";";";""
   setSearchQuery: "(query: string) => void;";"
 };
-;
+
 =======
 import { useState, useEffect } from 'react''
 import { Search } from '@/components/ui/icons'
@@ -61,11 +61,11 @@ export function CountryTabs(): unknown {): unknown {): unknown {): unknown {): u
   const [currentPage, setCurrentPage] = useState(1);
 <<<<<<< HEAD
   const countriesPerPage: unknown = 50;
-;
+
   useEffect(() => {;
     setCurrentPage(1);
   }, [searchQuery]);
-;
+
   const totalPages: unknown = Math.ceil(filteredCountries.length / countriesPerPage);
   const paginatedCountries: unknown = filteredCountries.slice(;""
     (currentPage - 1) * countriesPerPage,;";""
@@ -245,8 +245,8 @@ export function CountryTabs(): unknown {): unknown {): unknown {): unknown {): u
                     </PaginationItem>;
                   ),;
                 )};
-                <PaginationItem>;
-                  <PaginationNext;`
+                <PaginationItem>;`
+                  <PaginationNext;``
                     href={`?page=${currentPage + 1}`};
                     onClick={(e) => {;
                       e.preventDefault();
@@ -275,6 +275,7 @@ export function CountryTabs(): unknown {): unknown {): unknown {): unknown {): u
 }"
 
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

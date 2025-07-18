@@ -1,22 +1,22 @@
 <<<<<<< HEAD
-import React from 'react''';
-import { useState, useEffect } from 'react''';
-import { Search, Filter, ArrowDownAZ, ArrowUpZA } from '@/components/ui/icons;'';
-import { GradientHeading } from '@/components/GradientHeading;'';
-import { ListingScoreCard } from '@/components/ListingScoreCard;'';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input'';
+import React from 'react';
+import { useState, useEffect } from 'react';
+import { Search, Filter, ArrowDownAZ, ArrowUpZA } from '@/components/ui/icons;;
+import { GradientHeading } from '@/components/GradientHeading;;
+import { ListingScoreCard } from '@/components/ListingScoreCard;;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;
 import {;''
   Select,''
   SelectTrigger,
   SelectContent,;''
   SelectItem,;''
 } from '@/components/ui/select''
-;
-import ListingGridSkeleton from '@/components/skeletons/ListingGridSkeleton;'';
-import { safeStorage } from '@/utils/safeStorage'';
 
-// Example listing type;'';
+import ListingGridSkeleton from '@/components/skeletons/ListingGridSkeleton;;
+import { safeStorage } from '@/utils/safeStorage;
+
+// Example listing type;;
 export interface Listing {;''
   id: "string,;";";"
   title: "string",;"
@@ -41,7 +41,7 @@ interface CategoryListingPageProps {";";""
   sortOptions?: { label: string; value: string "}[]";;"""
   filterOptions?: { label: string; value: string }[]""
 }""
-;
+
 export function CategoryListingPage(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   title,;
   description,;
@@ -423,7 +423,7 @@ export function CategoryListingPage(): unknown {): unknown {): unknown {): unkno
           {/* Results Count */}"
           <div className="mb-6>;"
             <p className="text-zion-slate-light">;"
-              Showing {processedListings.length} results;";"
+              Showing {processedListings.length} results;";"`
               {searchQuery && ` for ${searchQuery}"`};
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
             </p>;
@@ -501,13 +501,14 @@ export function CategoryListingPage(): unknown {): unknown {): unknown {): unkno
 <<<<<<< HEAD
 ";""
 }";""
-}
+
 }""
 }""
 =======
 ";"
 }";"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

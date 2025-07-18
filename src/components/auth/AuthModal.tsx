@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { useRouter } from 'next/router;'';
-import { Button } from '@/components/ui/button;';
+import React from 'react';;
+import { useRouter } from 'next/router;;
+import { Button } from '@/components/ui/button;;
 import {;
   Dialog,;
   DialogContent,;''
@@ -53,12 +53,12 @@ export const _AuthModal: unknown React.FC<AuthModalProps> = ({;";"
     router.push(`/auth/login?returnTo=${encodeURIComponent(returnUrl)}`);
   };
 
-  const handleSignUp = () => {;
-    onClose();`
+  const handleSignUp = () => {;`
+    onClose();``
     router.push(`/auth/register?returnTo=${encodeURIComponent(returnUrl)}`);
   };
 <<<<<<< HEAD
-;
+
   if (!isOpen) {;''
     return null;
   };
@@ -106,6 +106,7 @@ export const _AuthModal: unknown React.FC<AuthModalProps> = ({;";"
       </DialogContent>
     </Dialog>;"
   );";
-}";";
+}";";`
 ""'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

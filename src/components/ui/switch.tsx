@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
+import React from 'react';;
+import * as React from 'react';;
 import * as SwitchPrimitives from '@radix-ui/react-switch;'
 ;;
 import { cn } from '@/lib/utils;'
-;
+
 const Switch: unknown = React.forwardRef<;''
   React.ElementRef<typeof SwitchPrimitives.Root>,;
   React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>;
@@ -14,7 +14,7 @@ const Switch: unknown = React.forwardRef<;''
     if (event.key === 'ArrowRight') onCheckedChange?.(true);'
     onKeyDown?.(event);
   };''
-;
+
   return (;
     <SwitchPrimitives.Root;''
       className={cn(;;
@@ -67,7 +67,7 @@ const Switch = React.forwardRef<'
 <<<<<<< HEAD
 });''
 Switch.displayName = SwitchPrimitives.Root.displayName;
-;
+
 export { Switch };''
 ''''''
 =======

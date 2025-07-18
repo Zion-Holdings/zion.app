@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import { useState, useEffect } from 'react';';
-import { Loader2 } from '@/components/ui/icons;'';
-import { Card, CardContent } from '@/components/ui/card;'';
+import { useState, useEffect } from 'react';;
+import { Loader2 } from '@/components/ui/icons;;
+import { Card, CardContent } from '@/components/ui/card;;
 import { Button } from '@/components/ui/button;'
 ;;
-import { ProjectCard } from './ProjectCard;'';
-import { ProjectForm } from './ProjectForm;'';
-import type { PortfolioProject } from '@/types/resume;'';
+import { ProjectCard } from './ProjectCard;;
+import { ProjectForm } from './ProjectForm;;
+import type { PortfolioProject } from '@/types/resume;;
 import { usePortfolio } from '@/hooks/usePortfolio;'
-;
+
 export function PortfolioBuilder(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
 =======
 import { useState, useEffect } from 'react''
@@ -49,7 +49,7 @@ export function PortfolioBuilder(): ;
 <<<<<<< HEAD
     };''
   };
-;
+
   if (isLoading) {;''
     return (;;
       <div className="flex justify-center items-center h-64">;";";";";""

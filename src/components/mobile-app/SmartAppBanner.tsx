@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import React, { useState, useEffect } from 'react';';
-import { X, ArrowRight } from '@/components/ui/icons';
-import { safeStorage } from '@/utils/safeStorage';
-import Link from 'next/link';
-import { useIsMobile } from '@/hooks/use-mobile';
+import React, { useState, useEffect } from 'react';;
+import { X, ArrowRight } from '@/components/ui/icons;
+import { safeStorage } from '@/utils/safeStorage;
+import Link from 'next/link;
+import { useIsMobile } from '@/hooks/use-mobile;
 
 interface SmartAppBannerProps {
   appName?: string;
@@ -21,8 +21,7 @@ interface SmartAppBannerProps {;
   googlePlayUrl?: string;
   delay?: number; // Delay in milliseconds before showing the banner
 <<<<<<< HEAD
-}
-;
+
 =======
 
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

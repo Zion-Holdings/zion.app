@@ -5,9 +5,9 @@ import {;
   CardHeader,;
 <<<<<<< HEAD
   CardTitle,;
-} from '@/components/ui/card;'';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;'';
-import { Badge } from '@/components/ui/badge;'';
+} from '@/components/ui/card;;
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;;
+import { Badge } from '@/components/ui/badge;;
 import { Crown, Medal, Trophy } from '@/components/ui/icons;'
 ;''
 interface LeaderboardEntry {;;
@@ -107,7 +107,7 @@ export function PartnerLeaderboard(): unknown {): unknown {): unknown {): unknow
                       ? 'bg-yellow-500/10 border border-yellow-500/30;'
                       : entry.rank <= 3;;
                         ? 'bg-zion-blue-light/20;''
-                        : 'bg-zion-blue/10;'
+                        : 'bg-zion-blue/10;'`
                   }`};''
                 >;;
                   <div className="flex items-center gap-3">;";";";";""
@@ -325,13 +325,13 @@ export function PartnerLeaderboard(): ;"
             {leaderboard.length > 0 ? (;"
               leaderboard.map((entry) => ("
                 <div;"
-                  key={entry.id};
+                  key={entry.id};`
                   className={`flex items-center justify-between p-3 rounded-md ${"
                     entry.rank === 1;"
                       ? 'bg-yellow-500/10 border border-yellow-500/30'
                       : entry.rank <= 3;
-                        ? 'bg-zion-blue-light/20'
-                        : 'bg-zion-blue/10'}`
+                        ? 'bg-zion-blue-light/20'`
+                        : 'bg-zion-blue/10'}``
                   }`}'
                 >'
                   <div className=flex items-center gap-3>"
@@ -473,6 +473,7 @@ export function PartnerLeaderboard(): ;"
 }"
 
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

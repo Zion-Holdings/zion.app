@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import React, { useEffect } from 'react;';
+import React, { useEffect } from 'react;;
 =======
 import React, { useEffect } from 'react'
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
@@ -14,10 +14,10 @@ import {;
   Clock,;
   Globe,;''
   Package,;;
-} from '@/components/ui/icons;'';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'';
-import { Badge } from '@/components/ui/badge;'';
-import { Button } from '@/components/ui/button;'';
+} from '@/components/ui/icons;;
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;;
+import { Badge } from '@/components/ui/badge;;
+import { Button } from '@/components/ui/button;;
 import { Progress } from '@/components/ui/progress;'
 ;;
 import { logErrorToProduction, logInfo } from '@/utils/productionLogger;'
@@ -33,7 +33,7 @@ interface PerformanceMetrics {;;
   cls: "number; // Cumulative Layout Shift;",";";";";""
   fid: "number; // First Input Delay;";"
 };
-;
+
 export function PerformanceDashboard(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const [metrics, setMetrics] = React.useState<PerformanceMetrics | null>(null);
 ;""
@@ -314,7 +314,7 @@ export function PerformanceDashboard(): ;
                   First Contentful Paint;";";""
                 </span>;";";";""
               </div>;";";";";""
-              <p className="text-2xl font-bold mt-2">;";";";";""
+              <p className="text-2xl font-bold mt-2">;";";";";""`
                 {metrics.fcp ? `${metrics.fcp.toFixed(0)}ms` : 'N/A'};''
               </p>;;
               <p className="text-xs text-muted-foreground">;"
@@ -331,7 +331,7 @@ export function PerformanceDashboard(): ;
                   Largest Contentful Paint;";";""
                 </span>;";";";""
               </div>;";";";";""
-              <p className="text-2xl font-bold mt-2">;";";";";""
+              <p className="text-2xl font-bold mt-2">;";";";";""`
                 {metrics.lcp ? `${metrics.lcp.toFixed(0)}ms` : 'N/A'};''
               </p>;;
               <p className="text-xs text-muted-foreground">;"
@@ -423,8 +423,8 @@ export function PerformanceDashboard(): ;
                 <span className=text-sm font-medium>";"
                   First Contentful Paint;"
                 </span>;";"
-              </div>;"
-              <p className=text-2xl font-bold mt-2>"`
+              </div>;"`
+              <p className=text-2xl font-bold mt-2>"``
                 {metrics.fcp ? `${metrics.fcp.toFixed(0)}ms` : 'N/A'}'
               </p>'
               <p className="text-xs text-muted-foreground>
@@ -440,8 +440,8 @@ export function PerformanceDashboard(): ;
                 <span className="text-sm font-medium">;
                   Largest Contentful Paint";"
                 </span>;";"
-              </div>;";";
-              <p className="text-2xl font-bold mt-2">;"`
+              </div>;";";`
+              <p className="text-2xl font-bold mt-2">;"``
                 {metrics.lcp ? `${metrics.lcp.toFixed(0)}ms` : 'N/A'}'
               </p>'
               <p className=text-xs text-muted-foreground">"
@@ -463,9 +463,9 @@ export function PerformanceDashboard(): ;
           </CardTitle>;";";""
         </CardHeader>;";";";""
         <CardContent>;";";";";""
-          {/* The original code had a 'chunks' state and rendering, but it's no longer declared.;;'
+          {/*  The original code had a 'chunks' state and rendering, but it's no longer declared.;;'
               Assuming the intent was to remove the 'chunks' state and rendering as it's not used.;''
-              If the user wants to keep it, it needs to be re-added and managed.;;
+              If the user wants to keep it, it needs to be re-added and managed.;; */
               For now, removing it as it's not in the new_code. */};;'
           <p className="text-center py-8 text-muted-foreground">;"
             Bundle chunk data is not currently tracked.;
@@ -529,8 +529,8 @@ export function PerformanceDashboard(): ;
           </CardTitle>;";
         </CardHeader>";";
         <CardContent>"
-          {/*  The original code had a 'chunks' state and rendering, but it's no longer declared.'
-              Assuming the intent was to remove the 'chunks' state and rendering as it's not used.'
+          {/*   The original code had a 'chunks' state and rendering, but it's no longer declared.'
+              Assuming the intent was to remove the 'chunks' state and rendering as it's not used.' */
               If the user wants to keep it, it needs to be re-added and managed.' */
               For now, removing it as it's not in the new_code. */}'
           <p className="text-center py-8 text-muted-foreground>
@@ -608,6 +608,7 @@ export function PerformanceDashboard(): ;
 ";"
 }";"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

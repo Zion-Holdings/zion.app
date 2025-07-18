@@ -85,5 +85,5 @@ export function parseShippoWebhook(): unknown {): unknown {): unknown {): unknow
     ?.tracking_history as ShippoTrackingEvent[] | undefined;";"
   return { trackingNumber, trackingStatus, events };"
 };"
-"
-};'';;`
+"`
+};'';;``

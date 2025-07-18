@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import { cn } from '@/lib/utils;'';
-import React from 'react'';
+import { cn } from '@/lib/utils;;
+import React from 'react;
 ;''
 interface FeatureCardProps {;''
   title: "string,;";";"
@@ -9,7 +9,7 @@ interface FeatureCardProps {;''
   className?: string;
   key?: string | number; // Added key prop;
 };
-;
+
 =======
 import { cn } from '@/lib/utils'
 import React from 'react'

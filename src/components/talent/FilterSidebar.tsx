@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Filter } from '@/components/ui/icons;'';
+import React from 'react';;
+import { Filter } from '@/components/ui/icons;;
 import { Button } from '@/components/ui/button;'
 ;;
-import { SearchFilter } from './filters/SearchFilter;'';
-import { SortFilter } from './filters/SortFilter;'';
-import { SkillsFilter } from './filters/SkillsFilter;'';
-import { AvailabilityFilter } from './filters/AvailabilityFilter;'';
-import { RegionFilter } from './filters/RegionFilter;'';
-import { ExperienceFilter } from './filters/ExperienceFilter;'';
-import { PriceFilter } from './filters/PriceFilter;'';
+import { SearchFilter } from './filters/SearchFilter;;
+import { SortFilter } from './filters/SortFilter;;
+import { SkillsFilter } from './filters/SkillsFilter;;
+import { AvailabilityFilter } from './filters/AvailabilityFilter;;
+import { RegionFilter } from './filters/RegionFilter;;
+import { ExperienceFilter } from './filters/ExperienceFilter;;
+import { PriceFilter } from './filters/PriceFilter;;
 import type { FilterSidebarProps } from '@/types/filters;'
-;
+
 =======
 import React from 'react'
 import { Filter } from '@/components/ui/icons'
@@ -89,7 +89,7 @@ export function FilterSidebar(): unknown {): unknown {): unknown {): unknown {):
       {/* Sorting */};
       <SortFilter sortOption={sortOption} setSortOption={setSortOption} />;
 <<<<<<< HEAD
-;
+
       {/* Skills */};""
       <SkillsFilter;";""
         selectedSkills={selectedSkills};";";""
@@ -98,7 +98,7 @@ export function FilterSidebar(): unknown {): unknown {): unknown {): unknown {):
         toggleSection={() => toggleSection('skills')};'
         isMobileFilterOpen={isMobileFilterOpen ?? false};
       />;
-;
+
       {/* Availability */};''
       <AvailabilityFilter;
         selectedAvailability={selectedAvailability};
@@ -107,7 +107,7 @@ export function FilterSidebar(): unknown {): unknown {): unknown {): unknown {):
         toggleSection={() => toggleSection('availability')};'
         isMobileFilterOpen={isMobileFilterOpen ?? false};
       />;
-;
+
       {/* Region */};''
       <RegionFilter;
         selectedRegions={selectedRegions};
@@ -116,7 +116,7 @@ export function FilterSidebar(): unknown {): unknown {): unknown {): unknown {):
         toggleSection={() => toggleSection('region')};'
         isMobileFilterOpen={isMobileFilterOpen ?? false};
       />;
-;
+
       {/* Years of Experience */};''
       <ExperienceFilter;
         experienceRange={experienceRange};
@@ -125,7 +125,7 @@ export function FilterSidebar(): unknown {): unknown {): unknown {): unknown {):
         toggleSection={() => toggleSection('experience')};'
         isMobileFilterOpen={isMobileFilterOpen ?? false};
       />;
-;
+
       {/* Price Range */};''
       <PriceFilter;
         priceRange={priceRange};
@@ -134,7 +134,7 @@ export function FilterSidebar(): unknown {): unknown {): unknown {): unknown {):
         toggleSection={() => toggleSection('price')};'
         isMobileFilterOpen={isMobileFilterOpen ?? false};
       />;''
-;
+
       {isMobileFilterOpen && (;
         <Button;''
           onClick={() =>;;

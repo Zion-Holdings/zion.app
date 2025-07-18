@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import React from 'react''';
-import { Heart } from '@/components/ui/icons'';
-;
-import { cn } from '@/lib/utils;'';
-import { useWishlist } from '@/hooks/useWishlist;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { toast } from '@/hooks/use-toast;'';
-import { LoginModal } from '@/components/auth/LoginModal'';
+import React from 'react';
+import { Heart } from '@/components/ui/icons;
+
+import { cn } from '@/lib/utils;;
+import { useWishlist } from '@/hooks/useWishlist;;
+import { useAuth } from '@/hooks/useAuth;;
+import { toast } from '@/hooks/use-toast;;
+import { LoginModal } from '@/components/auth/LoginModal;
 import {;''
   Tooltip,''
   TooltipContent,
@@ -18,7 +18,7 @@ interface FavoriteButtonProps {;
   itemId: string;
   className?: string;
 };
-;
+
 =======
 import React from 'react'
 import { Heart } from '@/components/ui/icons'
@@ -135,7 +135,7 @@ export function FavoriteButton(): unknown {): unknown {): unknown {): unknown {)
 };
 
 };''
-}
+
 }''
 }''
 =======

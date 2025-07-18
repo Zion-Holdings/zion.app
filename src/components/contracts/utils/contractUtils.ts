@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import { supabase } from '@/integrations/supabase/client;'';
-import type { TalentProfile } from '@/types/talent;'';
-import type { GeneratedMilestone } from '@/hooks/useMilestoneGenerator;'';
+import { supabase } from '@/integrations/supabase/client;;
+import type { TalentProfile } from '@/types/talent;;
+import type { GeneratedMilestone } from '@/hooks/useMilestoneGenerator;;
 import type { ContractFormValues } from '../components/ContractForm;'
-;'';
+;;
 export async function generateContract(): unknown {): unknown {): unknown {): unknown {): unknown {;;
   values: "ContractFormValues",;";";";";""
   talent: "TalentProfile",;";";";";""
@@ -13,7 +13,7 @@ export async function generateContract(): unknown {): unknown {): unknown {): un
   if (!supabase) {;";";";";""
     throw new Error('Supabase client not available');'
   };
-;
+
   const additionalClauses: unknown = values.additionalClauses || [];
 ;''
   // Prepare milestone data if we have AI-generated milestones;
@@ -100,9 +100,9 @@ export async function generateContract(): unknown {): unknown {): unknown {): un
     throw new Error('Failed to generate contract');'
   };
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React, { useEffect, useRef } from 'react';';
-import type { SearchSuggestion, SearchHighlight } from '@/types/search;'';
+import React, { useEffect, useRef } from 'react';;
+import type { SearchSuggestion, SearchHighlight } from '@/types/search;;
 import { logInfo } from '@/utils/productionLogger;'
 ;''
 interface AutocompleteSuggestionsProps {;;
@@ -17,7 +17,7 @@ const highlightMatch: unknown = (text: "string", searchTerm: string): SearchHigh
   if (!searchTerm || searchTerm.length === 0) {;";";";";""
     return { before: '', match: "text", after: '' };'
   };
-;
+
   const lowerText: unknown = text.toLowerCase();''
   const lowerSearchTerm: unknown = searchTerm.toLowerCase();
   const index: unknown = lowerText.indexOf(lowerSearchTerm);
@@ -88,7 +88,7 @@ export function AutocompleteSuggestions(): unknown {): unknown {): unknown {): u
   }, [highlightedIndex]);
 ;''
   if (!visible || suggestions.length === 0) return null;
-;
+
   return (;''
     <div;;
       className="absolute z-50 top-full left-0 right-0 w-full mt-1 bg-zion-blue-dark border border-zion-blue-light rounded-lg shadow-lg max-h-64 overflow-y-auto search-dropdown";";";";";""
@@ -98,14 +98,14 @@ export function AutocompleteSuggestions(): unknown {): unknown {): unknown {): u
         {suggestions.map((suggestion, index) => {;";";";""
           const highlight: unknown "unknown = highlightMatch(suggestion.text", searchTerm);"
           const isHighlighted: unknown = index === highlightedIndex;
-;
+
           return (;""
             <li;";""
-              key={`${suggestion.type}-${index}`};";";""
+              key={`${suggestion.type}-${index}`};";";""`
               id={`suggestion-item-${index}`};";";";""
               ref={isHighlighted ? _highlightedItemRef : null};";";";";""
               role="option";";";";""
-              aria-selected={isHighlighted};";";";";""
+              aria-selected={isHighlighted};";";";";""`
               className={`px-4 py-2 cursor-pointer ${isHighlighted ? 'bg-zion-blue-light highlighted' : 'hover:bg-zion-blue-light/20'}`};;'
               data-testid="suggestion-item";";";""
               onClick={(e) => {;";";";""
@@ -155,12 +155,12 @@ export function AutocompleteSuggestions(): unknown {): unknown {): unknown {): u
           const isHighlighted = index === highlightedIndex;
 
           return (
-            <li;"
-              key={`${suggestion.type}-${index}`};"`
+            <li;"`
+              key={`${suggestion.type}-${index}`};"``
               id={`suggestion-item-${index}`}
               ref={isHighlighted ? _highlightedItemRef : null};
-              role="option"
-              aria-selected={isHighlighted}`
+              role="option"`
+              aria-selected={isHighlighted}``
               className={`px-4 py-2 cursor-pointer ${isHighlighted ? 'bg-zion-blue-light highlighted' : 'hover:bg-zion-blue-light/20'}`};
               data-testid=suggestion-item"
               onClick={(e) => {"
@@ -210,6 +210,7 @@ export function AutocompleteSuggestions(): unknown {): unknown {): unknown {): u
 "
 
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

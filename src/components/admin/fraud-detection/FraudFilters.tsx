@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Search, Filter } from '@/components/ui/icons;'';
-import { Input } from '@/components/ui/input;'';
-import { Button } from '@/components/ui/button;';
+import React from 'react';;
+import { Search, Filter } from '@/components/ui/icons;;
+import { Input } from '@/components/ui/input;;
+import { Button } from '@/components/ui/button;;
 import {;
   Select,;''
   SelectContent,;
@@ -22,7 +22,7 @@ interface FraudFiltersProps {;;
   setContentTypeFilter: "(value: string | null) => void;",;";";";";""
   resetFilters: "() => void;";"
 };
-;
+
 =======
 import React from 'react'
 import { Search, Filter } from '@/components/ui/icons'

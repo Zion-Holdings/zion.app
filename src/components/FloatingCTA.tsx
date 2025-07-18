@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import { Button } from '@/components/ui/button;'';
-import { X } from '@/components/ui/icons;'';
-import Link from 'next/link;'';
-import { useState, useEffect } from 'react'';
-;
+import { Button } from '@/components/ui/button;;
+import { X } from '@/components/ui/icons;;
+import Link from 'next/link;;
+import { useState, useEffect } from 'react;
+
 export function FloatingCTA(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
 =======
 import { Button } from '@/components/ui/button'
@@ -116,7 +116,7 @@ export function FloatingCTA(): ;
 };"";"
 ";""
 }";""
-}
+
 }""
 }""
 =======

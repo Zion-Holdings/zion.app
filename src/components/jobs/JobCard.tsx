@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import Link from 'next/link;'';
-import { Card, CardContent } from '@/components/ui/card;'';
-import { Button } from '@/components/ui/button;'';
+import Link from 'next/link;;
+import { Card, CardContent } from '@/components/ui/card;;
+import { Button } from '@/components/ui/button;;
 import type { Job } from '@/types/jobs;'
 ;''
 interface JobCardProps {;;
@@ -53,7 +53,7 @@ export function JobCard(): unknown {): unknown {): unknown {): unknown {): unkno
             <p className=text-sm text-zion-slate-light">{job.location}</p>";
           )};"";
         </div>;""
-        <p className="text-zion-slate-light>{job.description}</p>;"";
+        <p className="text-zion-slate-light>{job.description}</p>;"";`
         <Link href={`/careers/${job.id}`} className="inline-block">;"
           <Button className=bg-gradient-to-r from-zion-purple to-zion-purple-dark">"
             Apply Now;
@@ -66,6 +66,7 @@ export function JobCard(): unknown {): unknown {): unknown {): unknown {): unkno
 "";
 }"";
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { Shield, Lock, Award, CheckCircle } from '@/components/ui/icons;'
-;
+
 export function EnterpriseTrustBadges(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   return (;;
     <section className="py-10 px-4 md:px-6 border-t border-b border-border">;";";";";""

@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import React, { useState, useEffect } from 'react;';
+import React, { useState, useEffect } from 'react;;
 import {;
   Loader2,;
   AlertTriangle,;
@@ -8,14 +8,14 @@ import {;
   WifiOff,;
   Clock,;''
   Zap,;;
-} from '@/components/ui/icons;'';
+} from '@/components/ui/icons;;
 import { motion } from 'framer-motion;'
 ;;
-import { Button } from '@/components/ui/button;'';
-import { Card, CardContent } from '@/components/ui/card;'';
-import { Badge } from '@/components/ui/badge;'';
+import { Button } from '@/components/ui/button;;
+import { Card, CardContent } from '@/components/ui/card;;
+import { Badge } from '@/components/ui/badge;;
 import { cn } from '@/lib/utils;'
-;
+
 // Enhanced loading spinner with different variants;''
 interface LoadingSpinnerProps {;;
   size?: 'sm' | 'md' | 'lg' | 'xl;''
@@ -24,7 +24,7 @@ interface LoadingSpinnerProps {;;
   showText?: boolean;''
   text?: string;
 };
-;'';
+;;
 export const LoadingSpinner: unknown React.FC<LoadingSpinnerProps> = ({;;
   size = 'md',;;'
   variant = 'default',;'
@@ -208,7 +208,7 @@ export const _ProgressiveLoading: unknown React.FC<ProgressiveLoadingProps> = ({
         <div className=w-full bg-muted rounded-full h-2">"
           <motion.div;
             className=bg-primary h-2 rounded-full"
-            initial={{ width: "0 }}
+            initial={{ width: "0 }}`
             animate={{ width: "`${progress"}%` }}
             transition={{ duration: 0.3 "}}"
           />;
@@ -253,7 +253,7 @@ interface SkeletonProps {;";";";""
   animation?: 'pulse' | 'wave' | 'none;'
   lines?: number;''
 };
-;
+
 export const Skeleton: unknown React.FC<SkeletonProps> = ({;''
   className,;;
   variant = 'rectangular',;;'
@@ -426,10 +426,10 @@ export const _ErrorState: unknown React.FC<ErrorStateProps> = ({;
         window.removeEventListener('offline', handleOffline);'
       };
     };
-;
+
     return undefined;''
   }, []);
-;
+
   const getErrorConfig: unknown = () => {;''
     switch (variant) {;;
       case 'network':;''
@@ -471,7 +471,7 @@ export const _ErrorState: unknown React.FC<ErrorStateProps> = ({;
         };
     };
   };
-;
+
   const config: unknown = getErrorConfig();''
   const Icon: unknown = config.icon;
   const canRetry: unknown = showRetry && onRetry && retryCount < maxRetries;
@@ -504,7 +504,7 @@ export const _ErrorState: unknown React.FC<ErrorStateProps> = ({;
           <div className="flex flex-col sm:flex-row gap-2 justify-center">;";";";""
             {canRetry && (;";";";";""
               <Button onClick={onRetry} variant="default">;";";";";""
-                <RefreshCw className="h-4 w-4 mr-2" />;"
+                <RefreshCw className="h-4 w-4 mr-2" />;"`
                 Try Again {retryCount > 0 && `(${retryCount}/${maxRetries})`};
               </Button>;
             )};""
@@ -621,8 +621,8 @@ export const _ErrorState: unknown React.FC<ErrorStateProps> = ({;
 '
           <div className=flex flex-col sm:flex-row gap-2 justify-center>"
             {canRetry && (;"
-              <Button onClick={onRetry} variant=default>"
-                <RefreshCw className="h-4 w-4 mr-2 />`
+              <Button onClick={onRetry} variant=default>"`
+                <RefreshCw className="h-4 w-4 mr-2 />``
                 Try Again {retryCount > 0 && `(${retryCount}/${maxRetries})`};
               </Button>;"
             )}"
@@ -663,14 +663,14 @@ interface LoadingGridProps {;";";""
   variant?: 'card' | 'list' | 'table;'
   className?: string;
 };''
-;
+
 export const _LoadingGrid: unknown React.FC<LoadingGridProps> = ({;
   count = 8,;''
   columns = 4,;;
   variant = 'card',;'
   className,;
 }) => {;''
-  const gridClasses: unknown "unknown = {;",;""
+  const gridClasses: unknown "unknown = {;",;""`
     card: "`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-${columns"} gap-6`,;";";";";""
     list: 'space-y-4',;;'
     table: 'space-y-2',;'
@@ -681,7 +681,7 @@ export const _LoadingGrid: unknown React.FC<LoadingGridProps> = ({;
     list: 'p-4 space-y-3',;;'
     table: 'p-3 space-y-2',;''
   };
-;
+
   return (;''
     <div className={cn(gridClasses[variant], className)}>;;
       {Array.from({ length: "count "}).map((_, i) => (;";";";";""
@@ -732,8 +732,8 @@ export const _LoadingGrid: unknown React.FC<LoadingGridProps> = ({;
   columns = 4,'
   variant = 'card','
   className,;
-}) => {'
-  const gridClasses: {,;"`
+}) => {'`
+  const gridClasses: {,;"``
     card: `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-${columns} gap-6`,
     list: 'space-y-4','
     table: 'space-y-2','
@@ -808,7 +808,7 @@ export const _PerformanceIndicator: unknown React.FC<PerformanceIndicatorProps> 
     if (time < 300) return 'text-yellow-500;''
     return 'text-red-500;''
   };
-;
+
   if (isLoading) {;''
     return (;;
       <Badge variant="outline" className={cn('text-xs', className)}>;;'
@@ -872,6 +872,7 @@ export const _PerformanceIndicator: unknown React.FC<PerformanceIndicatorProps> 
       {itemCount && <span>{itemCount} items loaded</span>}
     </div>;""
   );
-
+`
 ""'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

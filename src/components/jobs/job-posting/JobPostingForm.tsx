@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import { useRouter } from 'next/router;'';
-import React, { useState, useEffect, useCallback } from 'react';';
-import { toast } from 'sonner;'';
-import { Input } from '@/components/ui/input;'';
-import { Label } from '@/components/ui/label;'';
-import { Button } from '@/components/ui/button;'';
-import { Form } from '@/components/ui/form;'';
-import { useJobForm } from './useJobForm;'';
-import { BasicInfoFields } from './BasicInfoFields;'';
-import { DateFields } from './DateFields;'';
-import { DescriptionFields } from './DescriptionFields;'';
-import { useJobPostings } from '@/hooks/useJobPostings;'';
-import type { JobSchemaType } from './validation;'';
+import { useRouter } from 'next/router;;
+import React, { useState, useEffect, useCallback } from 'react';;
+import { toast } from 'sonner;;
+import { Input } from '@/components/ui/input;;
+import { Label } from '@/components/ui/label;;
+import { Button } from '@/components/ui/button;;
+import { Form } from '@/components/ui/form;;
+import { useJobForm } from './useJobForm;;
+import { BasicInfoFields } from './BasicInfoFields;;
+import { DateFields } from './DateFields;;
+import { DescriptionFields } from './DescriptionFields;;
+import { useJobPostings } from '@/hooks/useJobPostings;;
+import type { JobSchemaType } from './validation;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
 ;''
 interface JobPostingFormProps {;;
@@ -24,7 +24,7 @@ export function JobPostingForm(): unknown {): unknown {): unknown {): unknown {)
   const { createJob, updateJob, getJobById } = useJobPostings();";";";""
   const [isFormLoading, setIsFormLoading] = useState(false);";";";";""
   const [editorContent, setEditorContent] = useState('');'
-;
+
   const {;
 =======
 import { useRouter } from 'next/router'
@@ -142,7 +142,7 @@ export function JobPostingForm(): unknown {): unknown {): unknown {): unknown {)
     form,;
 <<<<<<< HEAD
   ]);''
-;
+
   const handleEditorChange: unknown = useCallback(;
     (_value: string) => {;''
       setEditorContent(value);;
@@ -150,10 +150,10 @@ export function JobPostingForm(): unknown {): unknown {): unknown {): unknown {)
     },;
     [setValue],;
   );
-;
+
   const onSubmit: unknown = async (_values: JobSchemaType) => {;
     setIsFormLoading(true);''
-;
+
     try {;
       const jobData: unknown = await submitJob(values);''
       if (!jobData) {;;
@@ -171,7 +171,7 @@ export function JobPostingForm(): unknown {): unknown {): unknown {): unknown {)
         form.reset();;
         setEditorContent('');'
       };
-;
+
       if (onSuccess) {;''
         onSuccess();
       };
@@ -194,7 +194,7 @@ export function JobPostingForm(): unknown {): unknown {): unknown {): unknown {)
       setIsFormLoading(false);
     };''
   };
-;
+
   if (isLoading || isFormLoading) {;''
     return (;;
       <div className="flex items-center justify-center p-8">Loading...</div>;"
@@ -334,9 +334,9 @@ export function JobPostingForm(): unknown {): unknown {): unknown {): unknown {)
     </Form>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

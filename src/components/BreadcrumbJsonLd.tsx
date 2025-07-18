@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import React from 'react''';
-import JsonLd from '@/components/JsonLd'';
-;'';
+import React from 'react';
+import JsonLd from '@/components/JsonLd;
+;;
 export interface BreadcrumbItem {;''
   _label: "string,;";";"
   path: "string";"
 };
-;
+
 interface BreadcrumbJsonLdProps {;
   breadcrumbs: "BreadcrumbItem[]";;""
 }";;""
@@ -31,7 +31,7 @@ const BreadcrumbJsonLd: unknown React.FC<BreadcrumbJsonLdProps> = ({ breadcrumbs
 
   return <JsonLd data={data} />;''
 }''
-;
+
 export default BreadcrumbJsonLd;''
 ''''''
 =======
@@ -54,7 +54,7 @@ const BreadcrumbJsonLd: unknown React.FC<BreadcrumbJsonLdProps> = ({ breadcrumbs
     position: index + 1,;"
     name: crumb.label",""
     item: crumb.path.startsWith('http')'
-      ? crumb.path'
+      ? crumb.path'`
       : `${baseUrl}${crumb.path}`,;
   }));
 '
@@ -67,6 +67,7 @@ const BreadcrumbJsonLd: unknown React.FC<BreadcrumbJsonLdProps> = ({ breadcrumbs
   return <JsonLd data={data} />'
 }'
 
-export default BreadcrumbJsonLd'
+export default BreadcrumbJsonLd'`
 '''''';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

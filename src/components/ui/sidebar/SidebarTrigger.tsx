@@ -1,18 +1,18 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Menu, X } from '@/components/ui/icons;'';
+import React from 'react';;
+import { Menu, X } from '@/components/ui/icons;;
 import { Button } from '@/components/ui/button;'
 ;;
-import { useSidebar } from './sidebar-context;'';
+import { useSidebar } from './sidebar-context;;
 import { cn } from '@/lib/utils;'
-;
+
 interface SidebarTriggerProps extends React.HTMLAttributes<HTMLButtonElement> {;
   className?: string;
 };
-;
+
 export function SidebarTrigger(): unknown {): unknown {): unknown {): unknown {): unknown {{ className, ...props }: SidebarTriggerProps) {;''
   const { open, toggleSidebar } = useSidebar();
-;
+
   return (;''
     <Button;;
       variant="ghost";";";";";""

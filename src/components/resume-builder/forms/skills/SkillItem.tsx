@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import { Badge } from '@/components/ui/badge;'';
-import { Trash2 } from '@/components/ui/icons;'';
+import { Badge } from '@/components/ui/badge;;
+import { Trash2 } from '@/components/ui/icons;;
 import { Button } from '@/components/ui/button;'
 ;;
 import type { SkillItemProps } from './types;'
-;'';
+;;
 export const _SkillItem: unknown "unknown = ({ skill", category, onDelete }: SkillItemProps) => {;";""
   return (;";";""
     <Badge;";";";""

@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { Button } from '@/components/ui/button;'';
-import { logErrorToProduction } from '@/utils/productionLogger;'';
-import { Sparkles } from 'lucide-react;';
+import React, { useState } from 'react';;
+import { Button } from '@/components/ui/button;;
+import { logErrorToProduction } from '@/utils/productionLogger;;
+import { Sparkles } from 'lucide-react;;
 import {;
   getClientBudgetSuggestion,;''
   trackPricingSuggestion,;;
-} from '@/services/pricingSuggestionService;';
+} from '@/services/pricingSuggestionService;;
 import type {;
   PricingSuggestion,;''
   ClientBudgetParams,;;
-} from '@/services/pricingSuggestionService;'';
-import { PricingSuggestionBox } from './PricingSuggestionBox;'';
+} from '@/services/pricingSuggestionService;;
+import { PricingSuggestionBox } from './PricingSuggestionBox;;
 import { useAuth } from '@/hooks/useAuth;'
 ;''
 interface ClientBudgetRecommenderProps {;;
@@ -22,7 +22,7 @@ interface ClientBudgetRecommenderProps {;;
   experienceLevel?: string;";";";";""
   onSuggestionApplied: "(minValue: number", maxValue: "number) => void;";"
 };
-;
+
 =======
 import React, { useState } from 'react''
 import { Button } from '@/components/ui/button'

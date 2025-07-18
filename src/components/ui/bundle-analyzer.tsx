@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React, { useState, useEffect } from 'react';';
-import { AlertTriangle, Zap } from '@/components/ui/icons;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'';
-import { Badge } from '@/components/ui/badge;'';
-import { Button } from '@/components/ui/button;'';
+import React, { useState, useEffect } from 'react';;
+import { AlertTriangle, Zap } from '@/components/ui/icons;;
+import { useAuth } from '@/hooks/useAuth;;
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;;
+import { Badge } from '@/components/ui/badge;;
+import { Button } from '@/components/ui/button;;
 import { Progress } from '@/components/ui/progress;'
 ;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
@@ -64,7 +64,7 @@ export function BundleAnalyzer(): "
   const [isCollecting, setIsCollecting] = useState(false);
 <<<<<<< HEAD
   const [shouldShow, setShouldShow] = useState(false);''
-;
+
   useEffect(() => {;
     // Only show in development or when explicitly enabled;''
     const show: unknown =;;
@@ -92,9 +92,9 @@ export function BundleAnalyzer(): "
 ;''
   const collectBundleInfo: unknown = async () => {;;
     if (typeof window === 'undefined') return;'
-;
+
     setIsCollecting(true);''
-;
+
     try {;
       // Get performance entries for script resources;''
       const resourceEntries: unknown = performance.getEntriesByType(;;
@@ -164,7 +164,7 @@ export function BundleAnalyzer(): "
       const cacheHitRate: unknown =;
 <<<<<<< HEAD
         chunkData.filter((chunk) => chunk.cached).length / chunkData.length;''
-;
+
       setBundleInfo({;
         totalSize,;''
         gzippedSize,;;
@@ -245,7 +245,7 @@ export function BundleAnalyzer(): "
 <<<<<<< HEAD
     return null;''
   };
-;
+
   if (!isVisible) {;''
     return (;;
       <div className="fixed bottom-20 right-4 z-50">;";";";""
@@ -497,9 +497,9 @@ export function BundleAnalyzer(): "
     </div>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

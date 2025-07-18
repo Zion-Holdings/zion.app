@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import React from 'react';';
-import Link from 'next/link;'';
-import { useRouter } from 'next/router;';
+import React from 'react';;
+import Link from 'next/link;;
+import { useRouter } from 'next/router;;
 import {;
   NavigationMenu,;
   NavigationMenuList,;''
@@ -9,11 +9,11 @@ import {;
   NavigationMenuContent,;
   NavigationMenuTrigger,;''
   NavigationMenuLink,;;
-} from '@/components/ui/navigation-menu;'';
-import { cn } from '@/lib/utils;'';
-import { useAuth } from '@/hooks/useAuth;'';
+} from '@/components/ui/navigation-menu;;
+import { cn } from '@/lib/utils;;
+import { useAuth } from '@/hooks/useAuth;;
 import { useTranslation } from 'react-i18next;''
-;
+
 interface NavItem {;
   label: string;''
   href?: string;;
@@ -324,10 +324,10 @@ export function ResponsiveNavigation(): unknown {): unknown {): unknown {): unkn
 <<<<<<< HEAD
 };''
 };
-}
+
 };''
 }''
-}
+
 }''
 =======
 }'

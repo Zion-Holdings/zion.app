@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import { useEffect } from 'react';';
-import { logWarn, logInfo } from '@/utils/productionLogger'';
+import { useEffect } from 'react';;
+import { logWarn, logInfo } from '@/utils/productionLogger;
 ;''
 declare global {''
   interface Window {;
@@ -42,7 +42,7 @@ const INVALID_INTERCOM_APP_IDS = [;";"
   'demo','
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
 ];
-;
+
 function isValidIntercomAppId(): unknown {): unknown {): unknown {): unknown {): unknown {appId: string | undefined): boolean {;
   if (!appId) return false;
   if (INVALID_INTERCOM_APP_IDS.includes(appId.toLowerCase())) return false;
@@ -50,7 +50,7 @@ function isValidIntercomAppId(): unknown {): unknown {): unknown {): unknown {):
   return /^[a-zA-Z0-9]{6,}$/.test(appId);
 };
 <<<<<<< HEAD
-;
+
 export default function IntercomChat(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   useEffect(() => {;''
     const appId: unknown = process.env.NEXT_PUBLIC_INTERCOM_APP_ID''
@@ -238,10 +238,10 @@ export default function IntercomChat(): ;
 <<<<<<< HEAD
 };''
 }''
-}
+
 };''
 }''
-}
+
 }''
 =======
 }'

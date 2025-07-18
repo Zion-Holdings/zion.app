@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { CheckCircle, Users, Star, Mail, Smartphone } from '@/components/ui/icons;''
-;
-;
+
+
   const features: unknown = [;''
     {;;
       icon: <Users className="h-8 w-8 text-zion-cyan" />,;";";";";""

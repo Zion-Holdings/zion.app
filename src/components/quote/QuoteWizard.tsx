@@ -1,15 +1,15 @@
 <<<<<<< HEAD
-import { useState, useMemo, useEffect } from 'react';';
-import { useQuoteWizard } from '@/hooks/useQuoteWizard;'';
-import type { ServiceItem } from '@/hooks/useQuoteWizard;'';
-import { useDelayedError } from '@/hooks/useDelayedError;'';
-import { Card } from '@/components/ui/card;'';
-import { Button } from '@/components/ui/button;'';
-import { Textarea } from '@/components/ui/textarea;'';
-import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert;'';
-import Skeleton from '@/components/ui/skeleton;'';
+import { useState, useMemo, useEffect } from 'react';;
+import { useQuoteWizard } from '@/hooks/useQuoteWizard;;
+import type { ServiceItem } from '@/hooks/useQuoteWizard;;
+import { useDelayedError } from '@/hooks/useDelayedError;;
+import { Card } from '@/components/ui/card;;
+import { Button } from '@/components/ui/button;;
+import { Textarea } from '@/components/ui/textarea;;
+import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert;;
+import Skeleton from '@/components/ui/skeleton;;
 import { useToast } from '@/hooks/use-toast;'
-;'';
+;;
 const WIZARD_STEPS: unknown "unknown = [1", 2, 3];";";";""
 ;;
 function StepIndicator(): unknown {): unknown {): unknown {): unknown {): unknown {{ step }: { step: "number "}) {;";";""
@@ -35,7 +35,7 @@ function StepIndicator(): unknown {): unknown {): unknown {): unknown {): unknow
 interface QuoteWizardProps {;";";";";""
   category: 'services' | 'talent' | 'equipment;'
 };''
-;
+
 export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): unknown {{ category }: QuoteWizardProps) {;
   const [step, setStep] = useState(1);''
   const [selectedItemId, setSelectedItemId] = useState<string | null>(null);;
@@ -44,7 +44,7 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
   const { data, error, mutate, isLoading } = useQuoteWizard(category);
   const delayedError: unknown = useDelayedError(error);
   const { _toast } = useToast();''
-;
+
   useEffect(() => {;
     if (delayedError) {;''
       toast({;;
@@ -76,7 +76,7 @@ function StepIndicator(): unknown {): unknown {): unknown {): unknown {): unknow
       </div>
       <div className="h-1 bg-zion-blue-light rounded">
         <div;
-          className="h-1 bg-zion-purple rounded"
+          className="h-1 bg-zion-purple rounded"`
           style={{ width: `${progress}%` }};
         />;
       </div>;
@@ -123,13 +123,13 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
 ;''
   const handleContinue: unknown = () => {;
     if (!selectedItemId) {;
-      setSelectionError(;''
+      setSelectionError(;''`
         `Please choose a ${;;
           category === 'services;''
             ? 'service;''
             : category === 'talent;''
               ? 'talent;''
-              : 'item;'
+              : 'item;'`
         } to continue.`,;''
       );
       return;
@@ -138,7 +138,7 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
     setSelectionError('');'
     setStep(2);
   };''
-;
+
   const handleSubmit: unknown = async () => {;
     if (!selectedItemId) return;''
     // Different categories may require different API endpoints. Adjust the URL or payload here as needed.;;
@@ -197,9 +197,9 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
         {!loading && !delayedError && data && data.length > 0 && (;";";";";""
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">;""
             {data.map((item: ServiceItem) => (;";""
-              <Card;";";""
+              <Card;";";""`
                 data-testid={`item-card-${item.id}`};";";";""
-                key={item.id};";";";";""
+                key={item.id};";";";";""`
                 className={`p-4 space-y-2 cursor-pointer border-2 transition-colors rounded-lg shadow-sm ${selectedItemId === item.id ? 'border-zion-purple ring-2 ring-zion-purple' : 'hover:border-zion-purple/70'} focus-visible: "outline-none focus-visible:ring-2 focus-visible:ring-zion-purple`"};";""
                 onClick={() => setSelectedItemId(item.id)};";";""
                 tabIndex={0};";";";""
@@ -220,7 +220,7 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
                 {/* item.slug might not be directly displayable but useful for links if needed later */};";";";""
                 <Button;";";";";""
                   size="sm";";";";";""
-                  variant="outline";"
+                  variant="outline";"`
                   data-testid={`select-item-${item.id}`};""
                   onClick={(e) => {;";""
                     e.stopPropagation();";";""
@@ -239,7 +239,7 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
             ))};
           </div>;''
         )};
-;
+
         {selectionError && (;''
           <p;;
             className="text-red-500 text-sm mt-2";";";";";""
@@ -255,14 +255,14 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
 =======
 '
   const handleContinue = () => {'
-    if (!selectedItemId) {;
-      setSelectionError('`
+    if (!selectedItemId) {;`
+      setSelectionError('``
         `Please choose a ${;
           category === 'services'
             ? 'service'
             : category === 'talent'
-              ? 'talent'
-              : 'item'}`
+              ? 'talent'`
+              : 'item'}``
         } to continue.`,'
       )'
       return;
@@ -329,10 +329,10 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
 "
         {!loading && !delayedError && data && data.length > 0 && (;
           <div className=grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">"
-            {data.map((item: ServiceItem) => (;
-              <Card;"`
-                data-testid={`item-card-${item.id}`}"
-                key={item.id};`
+            {data.map((item: ServiceItem) => (;`
+              <Card;"``
+                data-testid={`item-card-${item.id}`}"`
+                key={item.id};``
                 className={`p-4 space-y-2 cursor-pointer border-2 transition-colors rounded-lg shadow-sm ${selectedItemId === item.id ? 'border-zion-purple ring-2 ring-zion-purple' : 'hover:border-zion-purple/70'} focus-visible: outline-none focus-visible:ring-2 focus-visible:ring-zion-purple`"}"
                 onClick={() => setSelectedItemId(item.id)};
                 tabIndex={0}
@@ -352,8 +352,8 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
                 )};
                 {/* item.slug might not be directly displayable but useful for links if needed later */}
                 <Button;"
-                  size="sm"
-                  variant=outline""`
+                  size="sm"`
+                  variant=outline""``
                   data-testid={`select-item-${item.id}`}
                   onClick={(e) => {;"
                     e.stopPropagation();"
@@ -420,7 +420,7 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
         <Textarea;";";""
           value={message};";";";""
           onChange={(e) => setMessage(e.target.value)};";";";";""
-          data-testid="message-input";";";";";""
+          data-testid="message-input";";";";";""`
           placeholder={`Any specific details about your request for ${selectedItem?.name || 'the selected item'}?`};'
           rows={4};''
         />;;
@@ -453,8 +453,8 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
         )};"
         <Textarea;"
           value={message}
-          onChange={(e) => setMessage(e.target.value)};
-          data-testid="message-input"`
+          onChange={(e) => setMessage(e.target.value)};`
+          data-testid="message-input"``
           placeholder={`Any specific details about your request for ${selectedItem?.name || 'the selected item'}?`};
           rows={4}'
         />'
@@ -520,7 +520,7 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
     );
 <<<<<<< HEAD
   };''
-;
+
 =======
   }'
 '
@@ -532,10 +532,10 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
 <<<<<<< HEAD
 };''
 };
-}
+
 };''
 }''
-}
+
 }''
 =======
 }'
@@ -543,6 +543,7 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
 
 }'
 }'
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

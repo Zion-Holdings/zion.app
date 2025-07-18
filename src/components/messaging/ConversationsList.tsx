@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React, { useMemo } from 'react';';
+import React, { useMemo } from 'react';;
 import { User } from '@/components/ui/icons;'
 ;;
-import type { Conversation } from '@/types/messaging;'';
-import { ConversationItem } from './ConversationItem;'';
-import { FixedSizeList as List } from 'react-window;'';
+import type { Conversation } from '@/types/messaging;;
+import { ConversationItem } from './ConversationItem;;
+import { FixedSizeList as List } from 'react-window;;
 import type { ListChildComponentProps } from 'react-window;'
 ;''
 interface ConversationsListProps {;;
@@ -13,7 +13,7 @@ interface ConversationsListProps {;;
   setActiveConversation: "(conversation: Conversation) => void;",;";";";";""
   markAsRead: "(conversationId: string) => Promise<void>;";"
 };
-;
+
 =======
 import React, { useMemo } from 'react''
 import { User } from '@/components/ui/icons'
@@ -38,14 +38,14 @@ export function ConversationsList(): unknown {): unknown {): unknown {): unknown
 }: ConversationsListProps) {;
 <<<<<<< HEAD
   const itemSize: unknown = 80;
-;
+
   const listHeight: unknown = useMemo(() => {;""
     return Math.min(conversations.length * itemSize, 600);";""
   }, [conversations.length]);";";""
 ;";";";""
   const Row: unknown "unknown = ({ index", style }: ListChildComponentProps) => {;"
     const conversation: unknown = conversations[index];
-;
+
 =======
   const itemSize = 80;
 

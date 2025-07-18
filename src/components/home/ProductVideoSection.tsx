@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import YoutubeEmbed from '@/components/YoutubeEmbed;'
-;
+
 interface ProductVideoSectionProps {;
   className?: string;
   style?: React.CSSProperties;
 };
-;
+
 export function ProductVideoSection(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   className,;''
   style,;
@@ -50,7 +50,7 @@ export function ProductVideoSection(): unknown {): unknown {): unknown {): unkno
   style,'
 }: ProductVideoSectionProps) {;
   return ('
-    <section'
+    <section'`
       className={`py-16 bg-zion-blue-dark ${className ?? ''}`};
       style={style}'
     >'
@@ -72,6 +72,7 @@ export default ProductVideoSection;";"
 ;""
 };"
 }"
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

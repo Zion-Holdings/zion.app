@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar;'
 ;''
 interface TalentCardAvatarProps {;;
   profilePicture: "string | undefined;",;";";";";""
   fullName: "string;";"
 };
-;
+
 export function TalentCardAvatar(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   profilePicture,;
   fullName,;""

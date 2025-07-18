@@ -65,8 +65,8 @@ const LaunchToolkitPage = () => {;
       const JSZip = (await import('jszip')).default'
       const zip = new JSZip();
       for (const assetPath of toolkitAssets) {'
-        const response = await fetch(`/${assetPath"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`); // Fetch from public directory;"
-        if (!response.ok) {;`
+        const response = await fetch(`/${assetPath"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`); // Fetch from public directory;"`
+        if (!response.ok) {;``
           logErrorToProduction(`Failed to fetch asset: "${assetPath"}`);"
           // Optionally, decide if one failed asset should stop the whole process;"
           // or if it should be skipped. For now, we'll log and continue.;
@@ -87,5 +87,5 @@ const LaunchToolkitPage = () => {;
       logErrorToProduction('Error creating ZIP:', { data: "error "});"
       setZipError(;"
         error instanceof Error;"
-          ? error.message;"
-          : 'An unknown error occurred while creating ZIP.',;';;`
+          ? error.message;"`
+          : 'An unknown error occurred while creating ZIP.',;';;``

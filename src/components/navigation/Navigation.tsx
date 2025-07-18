@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import React from 'react';';
-import Link from 'next/link;'';
-import { useRouter } from 'next/router;'';
-import { useAuth } from '@/hooks/useAuth;'';
+import React from 'react';;
+import Link from 'next/link;;
+import { useRouter } from 'next/router;;
+import { useAuth } from '@/hooks/useAuth;;
 import { cn } from '@/lib/utils;'
-;
+
 interface NavigationProps {;
   className?: string;
 };
-;
+
 export function Navigation(): unknown {): unknown {): unknown {): unknown {): unknown {{ className }: NavigationProps) {;''
   const router: unknown = useRouter();
   const { _isAuthenticated } = useAuth();
@@ -178,9 +178,9 @@ export function Navigation(): unknown {): unknown {): unknown {): unknown {): un
     </nav>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

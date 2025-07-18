@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Eye, Info, AlertTriangle, Ban } from '@/components/ui/icons;'';
+import React from 'react';;
+import { Eye, Info, AlertTriangle, Ban } from '@/components/ui/icons;;
 import { Button } from '@/components/ui/button;'
 ;''
 interface ActionButtonsProps {;;
@@ -11,7 +11,7 @@ interface ActionButtonsProps {;;
     action: 'warning' | 'suspension' | 'ban' | 'ignore',;'
   ) => void;
 };
-;
+
 export const _ActionButtons: unknown React.FC<ActionButtonsProps> = ({;
   flagId,;''
   status,;

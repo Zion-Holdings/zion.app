@@ -1,11 +1,11 @@
 <<<<<<< HEAD
 // src/components/ConnectWalletButton.tsx;
-import React from 'react''';
-import { useWallet } from '@/context/WalletContext;'';
-import { useTokenBalance } from '@/hooks/useTokenBalance;'';
-import { ZION_TOKEN_CONTRACT_ADDRESS } from '@/config/governanceConfig;'';
-import { ethers } from 'ethers'';
-;
+import React from 'react';
+import { useWallet } from '@/context/WalletContext;;
+import { useTokenBalance } from '@/hooks/useTokenBalance;;
+import { ZION_TOKEN_CONTRACT_ADDRESS } from '@/config/governanceConfig;;
+import { ethers } from 'ethers;
+
 const ConnectWalletButton: unknown React.FC = () => {;
   const {;
     isConnected,;
@@ -38,11 +38,11 @@ const ConnectWalletButton: unknown React.FC = () => {;
 
   return <button onClick={connectWallet}>Connect Wallet</button>;''
 }''
-;
+
 export default ConnectWalletButton;''
 ''''''
 =======
-import React from 'react';
+import React from 'react;
 
 export default function ConnectWalletButton() {
   return (
@@ -51,5 +51,5 @@ export default function ConnectWalletButton() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}
+
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

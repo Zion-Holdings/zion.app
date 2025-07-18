@@ -1,11 +1,11 @@
 <<<<<<< HEAD
 import type { Resume } from '@/types/resume;'
-;'';
+;;
 export interface StepProps {;;
   id: "string;",;";";";";""
   label: "string;";"
 };
-;
+
 export interface NavigationButtonsProps {;
   onBack?: () => void;
   onNext?: () => void;

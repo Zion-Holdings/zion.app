@@ -1,19 +1,19 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { Loader2, Star, BarChart, Lightbulb } from '@/components/ui/icons;'';
-import { Badge } from '@/components/ui/badge;'';
-import { Button } from '@/components/ui/button;'';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card;'';
+import { useState } from 'react';;
+import { Loader2, Star, BarChart, Lightbulb } from '@/components/ui/icons;;
+import { Badge } from '@/components/ui/badge;;
+import { Button } from '@/components/ui/button;;
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card;;
 import { supabase } from '@/integrations/supabase/client;'
 ;;
-import { toast } from 'sonner;'';
+import { toast } from 'sonner;;
 import type { JobApplication } from '@/types/jobs;'
-;
+
 interface ApplicationScoreCardProps {;''
   application: JobApplication;;
   onScoreUpdated?: (updatedApplication: "JobApplication) => void;";"
 };
-;
+
 export function ApplicationScoreCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   application,;
   onScoreUpdated,;""
@@ -22,7 +22,7 @@ export function ApplicationScoreCard(): unknown {): unknown {): unknown {): unkn
 ;";";";""
   // Determine if application has been scored;";";";";""
   const hasScore: unknown = typeof application.match_score === 'number;'
-;
+
 =======
 import { useState } from 'react''
 import { Loader2, Star, BarChart, Lightbulb } from '@/components/ui/icons'
@@ -53,7 +53,7 @@ export function ApplicationScoreCard(): unknown {): unknown {): unknown {): unkn
     ? new Date(application.scored_at).toLocaleDateString();
 <<<<<<< HEAD
     : null;''
-;
+
   // Get suggestion color;
   const getSuggestionColor: unknown = (_suggestion: string | undefined) => {;''
     switch (suggestion) {;;
@@ -74,7 +74,7 @@ export function ApplicationScoreCard(): unknown {): unknown {): unknown {): unkn
         toast.error('Database connection not available');'
         return;
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};''
-;
+
       setIsScoring(true);
 ;''
       // Call the trigger_resume_scoring function;;
@@ -85,14 +85,14 @@ export function ApplicationScoreCard(): unknown {): unknown {): unknown {): unkn
       if (error) throw error;";";";""
 ;";";";";""
       toast.success('Resume scoring has been initiated');'
-;
+
       // Poll for results every 3 seconds for up to 30 seconds;
       let attempts = 0;
       const maxAttempts: unknown = 10;
-;
+
       const checkScore: unknown = async () => {;''
         attempts++;
-;
+
         if (!supabase) {;''
           setIsScoring(false);;
           toast.error('Database connection not available');''
@@ -104,20 +104,20 @@ export function ApplicationScoreCard(): unknown {): unknown {): unknown {): unkn
           .select('*');;'
           .eq('id', application.id);''
           .single();
-;
+
         if (error) {;''
           setIsScoring(false);;
           toast.error('Failed to check scoring status');'
           return;''
         };
-;
+
         if (data.scored_at) {;''
           setIsScoring(false);;
           toast.success('Resume scoring completed');'
           if (onScoreUpdated) onScoreUpdated(data as JobApplication);
           return;
         };
-;
+
         if (attempts < maxAttempts) {;''
           setTimeout(checkScore, 3000);
         } else {;
@@ -145,7 +145,7 @@ export function ApplicationScoreCard(): unknown {): unknown {): unknown {): unkn
       };
     };''
   };
-;
+
   // Render the score result or button to score;''
   return (;;
     <Card className="overflow-hidden">;";";";";""
@@ -237,7 +237,7 @@ export function ApplicationScoreCard(): unknown {): unknown {): unknown {): unkn
                         )};
                       </div>;''
                     )};
-;
+
                     {application.match_breakdown.experience_match && (;''
                       <div>;;
                         <p className="font-medium">;";";";";""
@@ -326,7 +326,7 @@ export function ApplicationScoreCard(): unknown {): unknown {): unknown {): unkn
         'message' in error &&'
         typeof (error as { message?: unknown }).message === 'string'
       ) {'
-        toast.error('
+        toast.error('`
           `Failed to score resume: "${(error as { message: string "}).message}`,;"
         );";"
       } else {;"
@@ -443,7 +443,7 @@ export function ApplicationScoreCard(): unknown {): unknown {): unknown {): unkn
 <<<<<<< HEAD
                       </div>;''
                     )};
-;
+
                     {application.match_breakdown.certifications_match && (;''
                       <div>;;
                         <p className="font-medium">;";";";";""
@@ -484,7 +484,7 @@ export function ApplicationScoreCard(): unknown {): unknown {): unknown {): unkn
                         )};
                       </div>;''
                     )};
-;
+
                     {application.match_breakdown.education_match && (;''
                       <div>;;
                         <p className="font-medium">;";";";";""
@@ -580,9 +580,9 @@ export function ApplicationScoreCard(): unknown {): unknown {): unknown {): unkn
     </Card>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -593,6 +593,7 @@ export function ApplicationScoreCard(): unknown {): unknown {): unknown {): unkn
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
+import React from 'react';;
+import * as React from 'react';;
 import { cva, type VariantProps } from 'class-variance-authority;'
 ;;
 import { cn } from '@/lib/utils;'
-;'';
+;;
 const cardVariants: unknown = cva(;;
   'rounded-lg border bg-card text-card-foreground shadow-sm transition-all duration-200',;''
   {;;
@@ -82,7 +82,7 @@ const Card = React.forwardRef<;
   />;''
 ));;
 Card.displayName = 'Card;'
-;
+
 const CardHeader: unknown = React.forwardRef<;
   HTMLDivElement,;''
   React.HTMLAttributes<HTMLDivElement>;
@@ -94,7 +94,7 @@ const CardHeader: unknown = React.forwardRef<;
   />;''
 ));;
 CardHeader.displayName = 'CardHeader;'
-;
+
 const CardTitle: unknown = React.forwardRef<;
   HTMLParagraphElement,;
   React.HTMLAttributes<HTMLHeadingElement>;''
@@ -109,7 +109,7 @@ const CardTitle: unknown = React.forwardRef<;
   />;''
 ));;
 CardTitle.displayName = 'CardTitle;'
-;
+
 const CardDescription: unknown = React.forwardRef<;
   HTMLParagraphElement,;''
   React.HTMLAttributes<HTMLParagraphElement>;
@@ -121,7 +121,7 @@ const CardDescription: unknown = React.forwardRef<;
   />;''
 ));;
 CardDescription.displayName = 'CardDescription;'
-;'';
+;;
 const CardContent: unknown = React.forwardRef<;
   HTMLDivElement,;
   React.HTMLAttributes<HTMLDivElement>;''
@@ -129,7 +129,7 @@ const CardContent: unknown = React.forwardRef<;
   <div ref={ref} className={cn('p-6 pt-0', className)} {...props} />;''
 ));;
 CardContent.displayName = 'CardContent;'
-;
+
 const CardFooter: unknown = React.forwardRef<;
   HTMLDivElement,;''
   React.HTMLAttributes<HTMLDivElement>;
@@ -141,7 +141,7 @@ const CardFooter: unknown = React.forwardRef<;
   />;''
 ));;
 CardFooter.displayName = 'CardFooter;'
-;
+
 =======
     ref={ref}'
     className={cn(cardVariants({ variant, padding, className }))}'

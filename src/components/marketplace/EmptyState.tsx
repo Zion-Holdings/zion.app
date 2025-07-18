@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react;';
+import React from 'react';;
+import * as React from 'react;;
 import {;
   RefreshCw,;
   Wifi,;''
@@ -10,10 +10,10 @@ import {;
   Lightbulb,;;
 } from '@/components/ui/icons;'
 ;;
-import { Button } from '@/components/ui/button;'';
-import Link from 'next/link;'';
+import { Button } from '@/components/ui/button;;
+import Link from 'next/link;;
 import { useTranslation } from 'react-i18next;'
-;
+
 export interface EmptyStateProps {;''
   type:;;
     | 'products;''
@@ -470,13 +470,13 @@ export function ServerErrorState(): unknown {): unknown {): unknown {): unknown 
 <<<<<<< HEAD
 };""
 }""
-}
-}
-}
-}
-}
-}
-}
+
+
+
+
+
+
+
 }""
 =======
 }"

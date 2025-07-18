@@ -6,7 +6,7 @@ import {;
   CardHeader,;
 <<<<<<< HEAD
   CardTitle,;
-} from '@/components/ui/card;'';
+} from '@/components/ui/card;;
 import { Server, Clock, MapPin } from '@/components/ui/icons;'
 ;;
 import Image from 'next/image;'
@@ -36,13 +36,13 @@ export function ServiceDetails(): unknown {): unknown {): unknown {): unknown {)
       // Default for other countries;;
       default: ['Major metropolitan areas'],;''
     };
-;
+
     return (;''
       dataCenters[country] ||;;
       dataCenters['default'] || ['Major metropolitan areas'];'
     );''
   };
-;
+
   // Get region-specific image;''
   const getRegionalImage: unknown = (country: string): string => {;;
     // In a real app, you'd have specific images for each region;;'
@@ -61,14 +61,14 @@ export function ServiceDetails(): unknown {): unknown {): unknown {): unknown {)
       // Default placeholder;;
       default: 'https://source.unsplash.com/featured/900x700/?datacenter',;''
     };
-;
+
     return (;''
       regions[country] ||;;
       regions['default'] ||;;'
       'https://source.unsplash.com/featured/900x700/?datacenter;'
     );
   };''
-;
+
   // Get region-specific instructions;
   const getRegionalInstructions: unknown = (country: string): string => {;''
     // In a real implementation, this would be much more detailed and specific;;
@@ -84,7 +84,7 @@ export function ServiceDetails(): unknown {): unknown {): unknown {): unknown {)
 ;''
     const timezone: unknown =;;
       timeZones[country] || timeZones['default'] || 'Local timezone;'
-;
+
 =======
   CardTitle,
 } from '@/components/ui/card'
@@ -168,14 +168,14 @@ export function ServiceDetails(): unknown {): unknown {): unknown {): unknown {)
 
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
     return (;
-      `Our technicians in ${country} operate during business hours (8AM-6PM ${timezone}). ` +;`
-      `Response times are typically within 4 hours for metropolitan areas. ` +;`
-      `Please have site access permissions and contact details ready for our technicians. ` +;`
+      `Our technicians in ${country} operate during business hours (8AM-6PM ${timezone}). ` +;``
+      `Response times are typically within 4 hours for metropolitan areas. ` +;``
+      `Please have site access permissions and contact details ready for our technicians. ` +;``
       `For remote locations, additional travel fees may apply.`;
     );
 <<<<<<< HEAD
   };''
-;
+
   const datacenters: unknown = getDatacenters(country);
 ;''
   return (;;
@@ -192,7 +192,7 @@ export function ServiceDetails(): unknown {): unknown {): unknown {): unknown {)
       <CardContent className="space-y-4">;";";";";""
         <div className="overflow-hidden rounded-lg mb-4 relative h-48">;""
           <Image;";""
-            src={getRegionalImage(country)};";";""
+            src={getRegionalImage(country)};";";""`
             alt={`Datacenter in ${country}`};";";";""
             fill;";";";";""
             className="object-cover transform transition-transform duration-500 hover:scale-110";";";";";""
@@ -251,8 +251,8 @@ export function ServiceDetails(): unknown {): unknown {): unknown {): unknown {)
       </CardHeader>;"
       <CardContent className="space-y-4>"
         <div className="overflow-hidden rounded-lg mb-4 relative h-48">
-          <Image;"
-            src={getRegionalImage(country)};"`
+          <Image;"`
+            src={getRegionalImage(country)};"``
             alt={`Datacenter in ${country}`}
             fill;
             className="object-cover transform transition-transform duration-500 hover:scale-110"
@@ -335,6 +335,7 @@ export function ServiceDetails(): unknown {): unknown {): unknown {): unknown {)
 "
 }"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

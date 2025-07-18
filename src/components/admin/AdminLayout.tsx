@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import Link from 'next/link;'
 ;''
 interface AdminLayoutProps {;;
@@ -14,7 +14,7 @@ const navItems: unknown = [;";";";";""
   { title: 'Moderation', href: '/admin/moderation' },;;'
   { title: 'Zion Brain', href: '/admin/zion-brain' },;''
 ];
-;
+
 export function AdminLayout(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: AdminLayoutProps) {;''
   return (;;
     <div className="flex min-h-screen">;";";";";""

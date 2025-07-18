@@ -1,20 +1,20 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { Calendar, User, Mail, Clock, DollarSign } from '@/components/ui/icons;'
-;
+
 import {;
   Dialog,;''
   DialogContent,;
   DialogHeader,;
   DialogTitle,;''
   DialogDescription,;;
-} from '@/components/ui/dialog;'';
+} from '@/components/ui/dialog;;
 import { Button } from '@/components/ui/button;'
 ;;
-import { Card, CardContent } from '@/components/ui/card;'';
-import { Separator } from '@/components/ui/separator;'';
-import { QuoteStatusBadge } from './QuoteStatusBadge;'';
-import type { QuoteRequest } from '@/types/quotes;'';
+import { Card, CardContent } from '@/components/ui/card;;
+import { Separator } from '@/components/ui/separator;;
+import { QuoteStatusBadge } from './QuoteStatusBadge;;
+import type { QuoteRequest } from '@/types/quotes;;
 import { format } from 'date-fns;'
 ;''
 interface QuoteDetailsProps {;;
@@ -187,7 +187,7 @@ export const _QuoteDetails: ({ quote, isOpen, onClose }: QuoteDetailsProps) => {
               {quote.budget_display ||;""
                 (quote.budget_min && quote.budget_max;";""
                   ? `$${quote.budget_min} - $${quote.budget_max}`;";";""
-                  : quote.budget_min;";";";""
+                  : quote.budget_min;";";";""`
                     ? `$${quote.budget_min}`;";";";";""
                     : 'Not specified')};''
             </div>;
@@ -224,9 +224,9 @@ export const _QuoteDetails: ({ quote, isOpen, onClose }: QuoteDetailsProps) => {
               <DollarSign className=h-4 w-4 text-gray-500 />"
               <span className="font-medium>Budget: </span>"
               {quote.budget_display ||"
-                (quote.budget_min && quote.budget_max;"
-                  ? `$${quote.budget_min} - $${quote.budget_max}`;
-                  : quote.budget_min"`
+                (quote.budget_min && quote.budget_max;"`
+                  ? `$${quote.budget_min} - $${quote.budget_max}`;`
+                  : quote.budget_min"``
                     ? `$${quote.budget_min}`;"
                     : 'Not specified')}'
             </div>'
@@ -239,6 +239,7 @@ export const _QuoteDetails: ({ quote, isOpen, onClose }: QuoteDetailsProps) => {
       </DialogContent>"
     </Dialog>;
   );"
-}"
+}"`
 ""'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

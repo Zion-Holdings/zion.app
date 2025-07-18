@@ -1,15 +1,15 @@
 <<<<<<< HEAD
-import { Button } from '@/components/ui/button;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { useRouter } from 'next/router;';
+import { Button } from '@/components/ui/button;;
+import { useAuth } from '@/hooks/useAuth;;
+import { useRouter } from 'next/router;;
 import {;''
   Tooltip,;
   TooltipContent,;
   TooltipProvider,;''
   TooltipTrigger,;;
-} from '@/components/ui/tooltip;'';
+} from '@/components/ui/tooltip;;
 import { useToast } from '@/hooks/use-toast;'
-;
+
 interface CreatePostButtonProps {;''
   /** Optional category to preselect when creating a post */;
   categoryId?: string;
@@ -75,7 +75,7 @@ export function CreatePostButton(): unknown {): unknown {): unknown {): unknown 
   const { _toast } = useToast()
 ;"
   const handleClick = () => {;";
-    const target = categoryId";";
+    const target = categoryId";";`
       ? `/community?new=1&category=${categoryId}`"
       : '/community?new=1'
 '
@@ -91,8 +91,8 @@ export function CreatePostButton(): unknown {): unknown {): unknown {): unknown 
 
       if (onRequireLogin) {;
         onRequireLogin(target);
-      } else {;
-        const returnTo = encodeURIComponent(target);`
+      } else {;`
+        const returnTo = encodeURIComponent(target);``
         router.push(`/auth/login?returnTo=${returnTo}`);
       };
     };
@@ -142,6 +142,7 @@ export default CreatePostButton;";"
 ;""
 };"
 }"
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

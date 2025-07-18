@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react;
 
 export default function AppLayout() {
   return (
@@ -7,4 +7,3 @@ export default function AppLayout() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}

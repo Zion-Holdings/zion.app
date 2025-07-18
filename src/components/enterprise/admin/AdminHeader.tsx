@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Download, Settings } from '@/components/ui/icons;'';
+import React from 'react';;
+import { Download, Settings } from '@/components/ui/icons;;
 import { Button } from '@/components/ui/button;'
 ;;
 import { useCompanyWorkspace } from '@/hooks/useCompanyWorkspace;'
-;
+
 export function AdminHeader(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   // const { _user } = useAuth(); // Unused but available;
   const { _company } = useCompanyWorkspace();
@@ -146,9 +146,9 @@ export function AdminHeader(): '
     </div>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

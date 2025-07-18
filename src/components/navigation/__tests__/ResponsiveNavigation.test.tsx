@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { render, screen, fireEvent } from '@testing-library/react;'';
-import { ResponsiveNavigation } from '../ResponsiveNavigation;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { useRouter } from 'next/router;'';
+import React from 'react';;
+import { render, screen, fireEvent } from '@testing-library/react;;
+import { ResponsiveNavigation } from '../ResponsiveNavigation;;
+import { useAuth } from '@/hooks/useAuth;;
+import { useRouter } from 'next/router;;
 import { useTranslation } from 'react-i18next;'
 ;;
 jest.mock('@/hooks/useAuth');;'
@@ -13,7 +13,7 @@ jest.mock('next/router', () => ({;;'
 jest.mock('react-i18next', () => ({;;'
   useTranslation: "jest.fn()",;"
 }));
-;
+
 const mockedUseAuth: unknown = useAuth as jest.MockedFunction<typeof useAuth>;
 const mockedUseRouter: unknown = useRouter as jest.Mock;
 const mockedUseTranslation: unknown = useTranslation as jest.MockedFunction<;""

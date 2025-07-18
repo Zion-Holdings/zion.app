@@ -1,34 +1,34 @@
 <<<<<<< HEAD
-import React from 'react''';
-import { useState, useEffect } from 'react''';
-import { Search, Filter, List, Star, LayoutGrid } from '@/components/ui/icons;'';
-import { useRouter } from 'next/router;'';
-import { GradientHeading } from '@/components/GradientHeading;'';
-import { ProductListingCard } from '@/components/ProductListingCard;'';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;'';
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger'';
-;
+import React from 'react';
+import { useState, useEffect } from 'react';
+import { Search, Filter, List, Star, LayoutGrid } from '@/components/ui/icons;;
+import { useRouter } from 'next/router;;
+import { GradientHeading } from '@/components/GradientHeading;;
+import { ProductListingCard } from '@/components/ProductListingCard;;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
+
 import {;
   Select,;''
   SelectValue,''
   SelectTrigger,
   SelectContent,;''
   SelectItem,;''
-} from '@/components/ui/select;'';
-import { Checkbox } from '@/components/ui/checkbox;'';
-import Skeleton from 'react-loading-skeleton;'';
-import { Slider } from '@/components/ui/slider;'';
-import type { ProductListing, ListingView } from '@/types/listings'';
-;
-import { toast } from '@/hooks/use-toast;'';
-import { captureException } from '@/utils/sentry'';
+} from '@/components/ui/select;;
+import { Checkbox } from '@/components/ui/checkbox;;
+import Skeleton from 'react-loading-skeleton;;
+import { Slider } from '@/components/ui/slider;;
+import type { ProductListing, ListingView } from '@/types/listings;
+
+import { toast } from '@/hooks/use-toast;;
+import { captureException } from '@/utils/sentry;
 ;''
 interface PriceRange {;''
   min: "number,;";";"
   max: "number";"
 };
-;
+
 interface DynamicListingPageProps {;
   title: "string",;;"
   description: string",";";""
@@ -79,7 +79,7 @@ interface DynamicListingPageProps {;
   detailBasePath?: string;
 };
 <<<<<<< HEAD
-;
+
 export function DynamicListingPage(): unknown {): unknown {): unknown {): unknown {): unknown {{;"""
   title,;;""
   description,";;""
@@ -326,7 +326,7 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
       if (listing) {;
         toast({;
 <<<<<<< HEAD
-          title: 'Quote Requested',;''
+          title: 'Quote Requested',;''`
           description: "`Your quote request for ${listing.title"} has been sent.`,"
         });""
 ;";"
@@ -374,13 +374,13 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
                 <div className="space-y-2>;"
                   {categoryFilters.map((filter) => (;
                     <div key={filter.value} className="flex items-center">"
-                      <Checkbox;""
+                      <Checkbox;""`
                         id={`cat-${filter.value}`};";"
                         checked={selectedCategories.includes(filter.value)}";";"
                         onCheckedChange={() => toggleCategory(filter.value)}";";""
                         className="border-zion-slate-light data-[state=checked]:bg-zion-purple data-[state=checked]:border-zion-purple;""
                       />";"
-                      <label;
+                      <label;`
                         htmlFor={`cat-${filter.value}`};;""
                         className="ml-2 text-sm text-zion-slate-light cursor-pointer"
                       >;
@@ -427,8 +427,8 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
                 <Input;";";"
                   type="text";";""
                   placeholder=Search specifications..."""
-=======
-          title: 'Quote Requested','`
+=======`
+          title: 'Quote Requested','``
           description: "`Your quote request for ${listing.title"} has been sent.`,
         });"
 ;";
@@ -475,14 +475,14 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
                 </label>;"
                 <div className="space-y-2>;
                   {categoryFilters.map((filter) => (;"
-                    <div key={filter.value} className="flex items-center">
-                      <Checkbox;"`
+                    <div key={filter.value} className="flex items-center">`
+                      <Checkbox;"``
                         id={`cat-${filter.value}`};";
                         checked={selectedCategories.includes(filter.value)}";";
                         onCheckedChange={() => toggleCategory(filter.value)}"
                         className="border-zion-slate-light data-[state=checked]:bg-zion-purple data-[state=checked]:border-zion-purple;"
-                      />";
-                      <label;`
+                      />";`
+                      <label;``
                         htmlFor={`cat-${filter.value}`};"
                         className="ml-2 text-sm text-zion-slate-light cursor-pointer
                       >;
@@ -644,7 +644,7 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
                 </div>;
               </div>;
 <<<<<<< HEAD
-;
+
               <div className="mb-6">;";""
                 <label className=text-sm font-medium text-zion-slate-light block mb-2">";"
                   Minimum Rating;
@@ -659,11 +659,11 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
                         logInfo('Rating selected:', { data: "{ data: rating } })"
                         setSelectedRating(rating)""
                       }};""
-                      aria-pressed={selectedRating === rating};";""
+                      aria-pressed={selectedRating === rating};";""`
                       className={`{;";""
                         selectedRating === rating;";""
                           ? bg-zion-purple/30 border-zion-purple text-zion-purple;"""
-                          : border-zion-blue-light text-zion-slate-light";";""
+                          : border-zion-blue-light text-zion-slate-light";";""`
                       } focus-visible: "ring-zion-purple`};"""
                     >;;"""
                       {rating === null ? (;;
@@ -762,8 +762,8 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
             <div className="mb-6">;";""
               <p className=text-zion-slate-light">";"
                 Showing {filteredListings.length} results;
-                {selectedCategories.length > 0 &&;;""
-                  ` in ${selectedCategories.join(', ')}`}`'
+                {selectedCategories.length > 0 &&;;""`
+                  ` in ${selectedCategories.join(', ')}`}`'`
                 {searchQuery && ` for "${searchQuery}`}`"
               </p>;
             </div>
@@ -814,12 +814,12 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
                       onClick={() => {"
                         logInfo('Rating selected:', { data: "{ data: rating } })
                         setSelectedRating(rating)"
-                      }};"
-                      aria-pressed={selectedRating === rating};";"`
+                      }};"`
+                      aria-pressed={selectedRating === rating};";"``
                       className={`{;";"
                         selectedRating === rating;";"
-                          ? bg-zion-purple/30 border-zion-purple text-zion-purple;""
-                          : border-zion-blue-light text-zion-slate-light"`
+                          ? bg-zion-purple/30 border-zion-purple text-zion-purple;""`
+                          : border-zion-blue-light text-zion-slate-light"``
                       } focus-visible: "ring-zion-purple`};""
                     >;""
                       {rating === null ? (;
@@ -916,9 +916,9 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
 '
             <div className="mb-6">;"
               <p className=text-zion-slate-light">";
-                Showing {filteredListings.length} results;
-                {selectedCategories.length > 0 &&;"`
-                  ` in ${selectedCategories.join(', ')}`};`
+                Showing {filteredListings.length} results;`
+                {selectedCategories.length > 0 &&;"``
+                  ` in ${selectedCategories.join(', ')}`};``
                 {searchQuery && ` for "${searchQuery}`};
               </p>;
             </div>
@@ -1028,12 +1028,13 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
 }";";"
 
 <<<<<<< HEAD
-}
+
 }""
 }""
 }""
 =======
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

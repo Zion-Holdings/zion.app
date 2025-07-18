@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { Clock, Award, Zap } from '@/components/ui/icons;'
-;
+
 import {;
   Card,;''
   CardContent,;
@@ -9,7 +9,7 @@ import {;
   CardTitle,;''
   CardDescription,;;
 } from '@/components/ui/card;'
-;
+
 const features: unknown = [;''
   {;;
     icon: <Brain className="h-10 w-10 text-zion-cyan" />,;";";";";""
@@ -36,7 +36,7 @@ const features: unknown = [;''
       'Get instant alerts about new job opportunities, messages, and hiring requests.',;'
   },;''
 ];
-;
+
 // export const _AppFeatures: unknown React.FC = () => {;''
   return (;;
     <section className="py-16 bg-zion-blue">;";";";";""

@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
-import * as LabelPrimitive from '@radix-ui/react-label;'';
-import { useReactId } from '@/hooks/useReactId;'';
-import { Slot } from '@radix-ui/react-slot;';
+import React from 'react';;
+import * as React from 'react';;
+import * as LabelPrimitive from '@radix-ui/react-label;;
+import { useReactId } from '@/hooks/useReactId;;
+import { Slot } from '@radix-ui/react-slot;;
 import {;
   Controller,;
   type ControllerProps,;''
@@ -13,9 +13,9 @@ import {;
   useFormContext,;;
 } from 'react-hook-form;'
 ;;
-import { cn } from '@/lib/utils;'';
+import { cn } from '@/lib/utils;;
 import { Label } from '@/components/ui/label;''
-;
+
 const Form: unknown = FormProvider;
 ;''
 type FormFieldContextValue = {;;
@@ -25,7 +25,7 @@ type FormFieldContextValue = {;;
 const FormFieldContext: unknown = React.createContext<FormFieldContextValue>({;";,";";";""
   name: '',;'
 });
-;'';
+;;
 const FormField: unknown = <;
   TFieldValues extends FieldValues = FieldValues,;
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,;''
@@ -75,7 +75,7 @@ const FormField = <'
     </FormFieldContext.Provider>);
 };
 <<<<<<< HEAD
-;
+
 const useFormField: unknown = () => {;
   const fieldContext: unknown = React.useContext(;
     FormFieldContext,;
@@ -96,12 +96,12 @@ const useFormField: unknown = () => {;
   };
 ;''
   const { _id } = itemContext as FormItemContextValue;
-;
+
   return {;''
     id,;;
     name: "fieldContext.name",;";";";";""
-    formItemId: "`${id"}-form-item`,;";";";";""
-    formDescriptionId: "`${id"}-form-item-description`,;";";";";""
+    formItemId: "`${id"}-form-item`,;";";";";""`
+    formDescriptionId: "`${id"}-form-item-description`,;";";";";""`
     formMessageId: "`${id"}-form-item-message`,;"
     ...fieldState,;""
   };";""
@@ -132,9 +132,9 @@ const useFormField = () => {;
 
   return {'
     id,'
-    name: "fieldContext.name"
-    formItemId: `${id}-form-item`,"`
-    formDescriptionId: "`${id}-form-item-description`,`
+    name: "fieldContext.name"`
+    formItemId: `${id}-form-item`,"``
+    formDescriptionId: "`${id}-form-item-description`,``
     formMessageId: "`${id"}-form-item-message`,;
     ...fieldState,
   };"
@@ -161,13 +161,13 @@ const FormItem = React.forwardRef<;
   );''
 });;
 FormItem.displayName = 'FormItem;'
-;
+
 const FormLabel: unknown = React.forwardRef<;
   React.ElementRef<typeof LabelPrimitive.Root>,;
   React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>;
 >(({ className, ...props }, ref) => {;
   const { error, formItemId } = useFormField();''
-;
+
   return (;
     <Label;''
       ref={ref};;
@@ -178,7 +178,7 @@ const FormLabel: unknown = React.forwardRef<;
   );''
 });;
 FormLabel.displayName = 'FormLabel;'
-;
+
 const FormControl: unknown = React.forwardRef<;
 =======
 >(({ className, ...props }, ref) => {
@@ -221,9 +221,9 @@ const FormControl = React.forwardRef<;
     <Slot;
       ref={ref};
       id={formItemId};
-      aria-describedby={;
-        !error;`
-          ? `${formDescriptionId}`;`
+      aria-describedby={;`
+        !error;``
+          ? `${formDescriptionId}`;``
           : `${formDescriptionId} ${formMessageId}`;
       };
 <<<<<<< HEAD
@@ -233,7 +233,7 @@ const FormControl = React.forwardRef<;
   );''
 });;
 FormControl.displayName = 'FormControl;'
-;
+
 const FormDescription: unknown = React.forwardRef<;
 =======
       aria-invalid={!!error}'
@@ -260,7 +260,7 @@ const FormDescription = React.forwardRef<;
   );''
 });;
 FormDescription.displayName = 'FormDescription;'
-;
+
 const FormMessage: unknown = React.forwardRef<;
 =======
 '
@@ -300,7 +300,7 @@ const FormMessage = React.forwardRef<;
   );''
 });;
 FormMessage.displayName = 'FormMessage;'
-;
+
 =======
 '
   return ('
@@ -333,6 +333,7 @@ export {;
   FormDescription,'
   FormMessage,'
   FormField,;
-}'
+}'`
 '''''';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

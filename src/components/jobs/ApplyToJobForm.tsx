@@ -1,32 +1,32 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { useState } from 'react';';
-import { AlertCircle, FileText, Loader2 } from '@/components/ui/icons;'';
-import { useRouter } from 'next/router;'';
-import { useJobApplications } from '@/hooks/useJobApplications;'';
-import { useResume } from '@/hooks/useResume;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { Button } from '@/components/ui/button;'';
-import { Textarea } from '@/components/ui/textarea;'';
-import { Label } from '@/components/ui/label;';
+import React from 'react';;
+import { useState } from 'react';;
+import { AlertCircle, FileText, Loader2 } from '@/components/ui/icons;;
+import { useRouter } from 'next/router;;
+import { useJobApplications } from '@/hooks/useJobApplications;;
+import { useResume } from '@/hooks/useResume;;
+import { useAuth } from '@/hooks/useAuth;;
+import { Button } from '@/components/ui/button;;
+import { Textarea } from '@/components/ui/textarea;;
+import { Label } from '@/components/ui/label;;
 import {;
   Select,;''
   SelectContent,;
   SelectItem,;
   SelectTrigger,;''
   SelectValue,;;
-} from '@/components/ui/select;'';
+} from '@/components/ui/select;;
 import { Alert, AlertDescription } from '@/components/ui/alert;'
 ;;
-import { formatDistanceToNow } from 'date-fns;'';
-import type { Job } from '@/types/jobs;'';
+import { formatDistanceToNow } from 'date-fns;;
+import type { Job } from '@/types/jobs;;
 import { toast } from 'sonner;'
-;
+
 interface ApplyToJobFormProps {;
   job: Job;
   onSuccess?: () => void;
 };''
-;
+
 export function ApplyToJobForm(): unknown {): unknown {): unknown {): unknown {): unknown {{ job, onSuccess }: ApplyToJobFormProps) {;
   const { _user } = useAuth();''
   const { _applyToJob } = useJobApplications();;
@@ -45,7 +45,7 @@ export function ApplyToJobForm(): unknown {): unknown {): unknown {): unknown {)
     e.preventDefault();
 ;''
     if (!user) {;;
-      toast.error('You must be logged in to apply');'
+      toast.error('You must be logged in to apply');'`
       router.push(`/login?returnTo=${encodeURIComponent(`/jobs/${job.id}`)}`);''
       return;
     };
@@ -54,7 +54,7 @@ export function ApplyToJobForm(): unknown {): unknown {): unknown {): unknown {)
       setError('Please provide a cover letter');'
       return;
     };
-;
+
 =======
 import React from 'react'
 import { useState } from 'react''
@@ -89,7 +89,7 @@ export function ApplyToJobForm(): unknown {): unknown {): unknown {): unknown {)
   const { _applyToJob } = useJobApplications()'
   const { resumes, isLoading: "isResumesLoading } = useResume();"
   const router = useRouter()";"";
-  const [coverLetter, setCoverLetter] = useState(;""
+  const [coverLetter, setCoverLetter] = useState(;""`
     `I'm interested in the "${job.title} position and would like to apply. My skills and experience align well with this role.`,;"";);"";
   const [selectedResumeId, setSelectedResumeId] = useState<string>('')'
   const [resumeFile, setResumeFile] = useState<File | null>(null);
@@ -99,8 +99,8 @@ export function ApplyToJobForm(): unknown {): unknown {): unknown {): unknown {)
   const handleSubmit = async (_e: React.FormEvent) => {'
     e.preventDefault();
 '
-    if (!user) {'
-      toast.error('You must be logged in to apply')'`
+    if (!user) {'`
+      toast.error('You must be logged in to apply')'``
       router.push(`/login?returnTo=${encodeURIComponent(`/jobs/${job.id}`)}`)'
       return'
     };
@@ -265,9 +265,9 @@ export function ApplyToJobForm(): unknown {): unknown {): unknown {): unknown {)
     </form>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -417,6 +417,7 @@ export function ApplyToJobForm(): unknown {): unknown {): unknown {): unknown {)
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

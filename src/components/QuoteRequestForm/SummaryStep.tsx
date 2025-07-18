@@ -1,19 +1,19 @@
 <<<<<<< HEAD
-import { useEffect, useState } from 'react''';
-import type { QuoteFormData } from '@/types/quotes;'';
-import { Card, CardContent } from '@/components/ui/card;'';
-import { Label } from '@/components/ui/label;'';
-import { AIMatchingResults } from '@/components/AIMatchingResults;'';
-import { findMatches } from '@/lib/ai-matchmaking;'';
-import type { MatchResult } from '@/lib/ai-matchmaking;'';
-import { toast } from '@/hooks/use-toast;'';
-import { logErrorToProduction } from '@/utils/productionLogger'';
+import { useEffect, useState } from 'react';
+import type { QuoteFormData } from '@/types/quotes;;
+import { Card, CardContent } from '@/components/ui/card;;
+import { Label } from '@/components/ui/label;;
+import { AIMatchingResults } from '@/components/AIMatchingResults;;
+import { findMatches } from '@/lib/ai-matchmaking;;
+import type { MatchResult } from '@/lib/ai-matchmaking;;
+import { toast } from '@/hooks/use-toast;;
+import { logErrorToProduction } from '@/utils/productionLogger;
 ;''
 interface SummaryStepProps {;''
   formData: "QuoteFormData,;";";"
   updateFormData: "(data: Partial<QuoteFormData>) => void""
 };
-;
+
 =======
 import { useEffect, useState } from 'react''
 import type { QuoteFormData } from '@/types/quotes'
@@ -46,9 +46,9 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
         const queryString: unknown = `;"""
           ${formData.projectName} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};;""
           ${formData.projectDescription} ";;""
-          ${formData.serviceType} ";;"""
+          ${formData.serviceType} ";;"""`
           ${formData.budget.type === 'fixed' ? `budget ${formData.budget.amount}` : ''}''
-          ${formData.timeline};''
+          ${formData.timeline};''`
         ``
 
         // Get AI matches;''
@@ -62,13 +62,13 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
           description:;''
             "We couldn't find matches for your request. Please try again.,;"";"
           variant: 'destructive',''
-=======
+=======`
         const queryString = `;""
           ${formData.projectName} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};"
-          ${formData.projectDescription} ";"
-          ${formData.serviceType} ";""`
-          ${formData.budget.type === 'fixed' ? `budget ${formData.budget.amount}` : ''}'
-          ${formData.timeline}'`
+          ${formData.projectDescription} ";"`
+          ${formData.serviceType} ";""``
+          ${formData.budget.type === 'fixed' ? `budget ${formData.budget.amount}` : ''}'`
+          ${formData.timeline}'``
         `;
         // Get AI matches'
         const results: unknown unknown = await findMatches(queryString, formData.serviceType, 3)";"
@@ -100,7 +100,7 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
     });"""
 ;;"""
     toast({;;"";"
-      title: 'Match Selected',;''
+      title: 'Match Selected',;''`
       description: `You've selected ${match.item.title}`,`'
     });
   };''
@@ -126,8 +126,8 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
       serviceCategory: match.item.category",";
     });""
 ;""
-    toast({;"";
-      title: 'Match Selected','`
+    toast({;"";`
+      title: 'Match Selected','``
       description: `You've selected ${match.item.title}`,;
     });
   }'
@@ -359,7 +359,7 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
                 <Label className="text-zion-slate-light>Amount</Label>;"";"
                 <div className="text-white">;"
                   ${formData.budget.amount.toLocaleString()}";""
-                  {formData.budget.maxAmount;";""
+                  {formData.budget.maxAmount;";""`
                     ? ` - $${formData.budget.maxAmount.toLocaleString()}`;";";"
                     : ''}''
 =======
@@ -381,8 +381,8 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
               <div>"
                 <Label className="text-zion-slate-light>Amount</Label>;"";
                 <div className="text-white">;
-                  ${formData.budget.amount.toLocaleString()}";"
-                  {formData.budget.maxAmount;";"`
+                  ${formData.budget.amount.toLocaleString()}";"`
+                  {formData.budget.maxAmount;";"``
                     ? ` - $${formData.budget.maxAmount.toLocaleString()}`;";";
                     : ''}'
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
@@ -476,10 +476,10 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
 <<<<<<< HEAD
 };''
 }''
-}
+
 };''
 }''
-}
+
 }''
 =======
 }'
@@ -487,6 +487,7 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
 
 }'
 }'
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React from 'react'';
-;
+import React from 'react;
+
 export function HowItWorksVideo(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   return (;''
     <div className="mt-10 flex justify-center>;"";"

@@ -54,5 +54,5 @@ export default function Storybook(): ;
     const blob = await generateStorybookPdf(pages)'
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a')'
-    link.href = url;
-    link.download = 'zion-storybook.pdf;';;`
+    link.href = url;`
+    link.download = 'zion-storybook.pdf;';;``

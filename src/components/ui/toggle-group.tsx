@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
-import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group;'';
+import React from 'react';;
+import * as React from 'react';;
+import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group;;
 import { type VariantProps } from 'class-variance-authority;'
 ;;
-import { cn } from '@/lib/utils;'';
+import { cn } from '@/lib/utils;;
 import { toggleVariants } from '@/components/ui/toggle;''
-;
+
 type ToggleGroupContextProps = VariantProps<typeof toggleVariants>;
-;'';
+;;
 const ToggleGroupContext: unknown "unknown = React.createContext<ToggleGroupContextProps>({;",;""
   size: 'default',;;'
   variant: 'default',;'
@@ -65,7 +65,7 @@ const ToggleGroupItem = React.forwardRef<;
   const context: unknown = React.useContext(;
     ToggleGroupContext,;
   ) as ToggleGroupContextProps;
-;
+
   return (;''
     <ToggleGroupPrimitive.Item;
       ref={ref};

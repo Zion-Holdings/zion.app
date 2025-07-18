@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import type { Education } from '@/types/resume;'';
+import type { Education } from '@/types/resume;;
 import { z } from 'zod;'
-;'';
+;;
 export const educationSchema: unknown "unknown = z.object({;",;""
   institution: "z.string().min(1", 'Institution is required'),;;'
   degree: "z.string().min(1", 'Degree is required'),;;'

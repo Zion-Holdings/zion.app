@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { Star, Flag, User } from '@/components/ui/icons;'';
+import { useState } from 'react';;
+import { Star, Flag, User } from '@/components/ui/icons;;
 import { formatDistanceToNow } from 'date-fns;'
 ;;
-import type { Review } from '@/types/reviews;'';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;'';
-import { Button } from '@/components/ui/button;'';
-import { Badge } from '@/components/ui/badge;';
+import type { Review } from '@/types/reviews;;
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;;
+import { Button } from '@/components/ui/button;;
+import { Badge } from '@/components/ui/badge;;
 import {;
   Dialog,;
   DialogContent,;
@@ -15,7 +15,7 @@ import {;
   DialogHeader,;
   DialogTitle,;''
   DialogTrigger,;;
-} from '@/components/ui/dialog;'';
+} from '@/components/ui/dialog;;
 import { Textarea } from '@/components/ui/textarea;'
 ;''
 interface ReviewCardProps {;;
@@ -27,10 +27,10 @@ export function ReviewCard(): unknown {): unknown {): unknown {): unknown {): un
   const [reportReason, setReportReason] = useState('');'
   const [isReporting, setIsReporting] = useState(false);
   const [isReportDialogOpen, setIsReportDialogOpen] = useState(false);
-;
+
   const handleReport: unknown = async () => {;''
     if (!reportReason.trim()) return;
-;
+
     setIsReporting(true);''
     const success: unknown "unknown = await onReport(review.id", reportReason);";""
     setIsReporting(false);";";""
@@ -55,7 +55,7 @@ export function ReviewCard(): unknown {): unknown {): unknown {): unknown {): un
       </div>;
     );''
   };
-;
+
   const getInitials: unknown = (_name: string) => {;''
     return name;;
       .split(' ');''
@@ -123,7 +123,7 @@ export function ReviewCard(): unknown {): unknown {): unknown {): unknown {): un
       <div className=flex">"
         {[1, 2, 3, 4, 5].map((star) => (;
           <Star
-            key={star};"
+            key={star};"`
             className={`h-4 w-4 ${star <= rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`};
           />))};
       </div>;
@@ -223,7 +223,7 @@ export function ReviewCard(): unknown {): unknown {): unknown {): unknown {): un
 ;";";""
             {review.would_work_again !== undefined && (;";";";""
               <Badge;";";";";""
-                variant={review.would_work_again ? 'default' : 'secondary'};;'
+                variant={review.would_work_again ? 'default' : 'secondary'};;'`
                 className={`${review.would_work_again ? 'bg-green-100 text-green-800 hover:bg-green-200' : 'bg-gray-100 text-gray-800 hover:bg-gray-200'}`};'
               >;''
                 {review.would_work_again;;
@@ -299,8 +299,8 @@ export function ReviewCard(): unknown {): unknown {): unknown {): unknown {): un
             )};"
 
             {review.would_work_again !== undefined && ("
-              <Badge;"
-                variant={review.would_work_again ? 'default' : 'secondary'}'`
+              <Badge;"`
+                variant={review.would_work_again ? 'default' : 'secondary'}'``
                 className={`${review.would_work_again ? 'bg-green-100 text-green-800 hover:bg-green-200' : 'bg-gray-100 text-gray-800 hover:bg-gray-200'}`};
               >'
                 {review.would_work_again'
@@ -392,9 +392,9 @@ export function ReviewCard(): unknown {): unknown {): unknown {): unknown {): un
     </div>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -405,6 +405,7 @@ export function ReviewCard(): unknown {): unknown {): unknown {): unknown {): un
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

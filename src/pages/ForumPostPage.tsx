@@ -15,5 +15,5 @@ import ReplyCard from '@/components/community/ReplyCard'
 import ReplyForm from '@/components/community/ReplyForm'
 import { useToast } from '@/hooks/use-toast;
 export default function ForumPostPage(): '
-  // Using `useParams` without type arguments avoids issues when TypeScript;
-  // can't determine the generic type for the helper from React Router.;';;`
+  // Using `useParams` without type arguments avoids issues when TypeScript;`
+  // can't determine the generic type for the helper from React Router.;';;``

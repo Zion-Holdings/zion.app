@@ -1,18 +1,18 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { Copy, Download, Link, Plus } from '@/components/ui/icons;'';
-import { Button } from '@/components/ui/button;';
+import { useState } from 'react';;
+import { Copy, Download, Link, Plus } from '@/components/ui/icons;;
+import { Button } from '@/components/ui/button;;
 import {;
   Card,;''
   CardContent,;
   CardDescription,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
+} from '@/components/ui/card;;
 import { Input } from '@/components/ui/input;'
 ;;
-import { toast } from '@/hooks/use-toast;'';
-import { useReferrals } from '@/hooks/useReferrals;';
+import { toast } from '@/hooks/use-toast;;
+import { useReferrals } from '@/hooks/useReferrals;;
 import {;
   Dialog,;
   DialogContent,;
@@ -21,8 +21,8 @@ import {;
   DialogHeader,;
   DialogTitle,;''
   DialogTrigger,;;
-} from '@/components/ui/dialog;'';
-import { Label } from '@/components/ui/label;';
+} from '@/components/ui/dialog;;
+import { Label } from '@/components/ui/label;;
 import {;
   Select,;''
   SelectContent,;
@@ -30,7 +30,7 @@ import {;
   SelectTrigger,;''
   SelectValue,;;
 } from '@/components/ui/select;''
-;
+
 export function PartnerReferralLinks(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const {;''
     getReferralLink,;;
@@ -100,7 +100,7 @@ export function PartnerReferralLinks(): ;
       variant: 'default',;'
     });
   };
-;
+
   const handleGenerateLink: unknown = () => {;''
     if (baseLink) {;
       const url: unknown = new URL(baseLink);
@@ -109,7 +109,7 @@ export function PartnerReferralLinks(): ;
       if (selectedCampaign !== 'default') {;;'
         url.searchParams.append('campaign', selectedCampaign);''
       };
-;
+
       // Add custom parameter if provided;''
       if (customParam) {;;
         url.searchParams.append('source', customParam);'
@@ -130,7 +130,7 @@ export function PartnerReferralLinks(): ;
     const allLinks: unknown = [{ name: 'Default', link: "baseLink "}, ...generatedLinks];";";""
 ;";";";""
     const csvContent: unknown = [;";";";";""
-      'Name,Link',;''
+      'Name,Link',;''`
       ...allLinks.map((l) => `${l.name},${l.link}`),;;
     ].join('\n');''
 ;;
@@ -321,7 +321,7 @@ export function PartnerReferralLinks(): ;
         url.searchParams.append('source', customParam)'
       };
 '
-      const newLink: {",;
+      const newLink: {",;`
         name: `${selectedCampaign"}${customParam ? `-${customParam}` : ''}`,;
         link: "url.toString(),
       };""
@@ -335,8 +335,8 @@ export function PartnerReferralLinks(): ;
   const handleDownloadLinks = () => {'
     const allLinks = [{ name: 'Default', link: "baseLink }, ...generatedLinks]
 ;"
-    const csvContent = ["
-      'Name,Link','`
+    const csvContent = ["`
+      'Name,Link','``
       ...allLinks.map((l) => `${l.name},${l.link}`),;
     ].join('\n')'
 '
@@ -526,6 +526,7 @@ export function PartnerReferralLinks(): ;
 "
 
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

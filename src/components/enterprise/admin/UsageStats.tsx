@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Badge } from '@/components/ui/badge;'';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;'';
-import { toast } from '@/hooks/use-toast;'';
-import { Sparkles } from 'lucide-react;';
+import React from 'react';;
+import { Badge } from '@/components/ui/badge;;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
+import { toast } from '@/hooks/use-toast;;
+import { Sparkles } from 'lucide-react;;
 import {;
   Card,;
   CardContent,;''
@@ -15,7 +15,7 @@ import {;
 } from '@/components/ui/card;'
 ;;
 import { Progress } from '@/components/ui/progress;''
-;
+
 export function UsageStats(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const handleSaveChanges: unknown = () => {;''
     toast({;;

@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-export * from './BasicInfoForm;'';
+export * from './BasicInfoForm;;
 export * from './schema;'
 ''''''
 =======

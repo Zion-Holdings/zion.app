@@ -19,5 +19,5 @@ export function useAuthEventHandlers(): unknown {): unknown {): unknown {): unkn
   const handleSignedIn = (_mappedUser: UserProfile) => {"
     toast({;"
       title: 'Welcome back!','
-      description: `You're now signed in as ${mappedUser.displayName || mappedUser.email}`,;
-      variant: 'default','';;`
+      description: `You're now signed in as ${mappedUser.displayName || mappedUser.email}`,;`
+      variant: 'default','';;``

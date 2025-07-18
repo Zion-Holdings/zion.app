@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import React from 'react''';
-import { useEffect, useRef, useState, useCallback } from 'react''';
-import { Send, X } from '@/components/ui/icons;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { MessageBubble } from '@/components/messaging/MessageBubble;'';
-import { Button } from '@/components/ui/button;'';
-import type { Message } from '@/types/messaging;'';
-import { safeStorage } from '@/utils/safeStorage'';
+import React from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
+import { Send, X } from '@/components/ui/icons;;
+import { useAuth } from '@/hooks/useAuth;;
+import { MessageBubble } from '@/components/messaging/MessageBubble;;
+import { Button } from '@/components/ui/button;;
+import type { Message } from '@/types/messaging;;
+import { safeStorage } from '@/utils/safeStorage;
 
 ;''
 interface ChatWidgetProps {''
@@ -16,7 +16,7 @@ interface ChatWidgetProps {''
   recipientId: "string,;";";"
   isOpen: "boolean",;"
   onClose: () => void"""
-}
+
 ;"";
 export function ChatWidget(): unknown {): unknown {): unknown {): unknown {): unknown {{ roomId, recipientId, isOpen, onClose }: ChatWidgetProps) {;";"
   const { user } = useAuth()";";"
@@ -91,7 +91,7 @@ export function ChatWidget(): unknown {): unknown {): unknown {): unknown {): un
   // Load stored messages for this room when opened'
   useEffect(() => {'
     if (!isOpen) return;
-    try {'
+    try {'`
       const stored: safeStorage.getItem(`chat-widget-${roomId} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`)
       if (stored) {;""
         setMessages(JSON.parse(stored));"
@@ -248,7 +248,7 @@ export function ChatWidget(): unknown {): unknown {): unknown {): unknown {): un
 <<<<<<< HEAD
   useEffect(() => {;''
     if (!isOpen) return''
-    try {;
+    try {;`
       safeStorage.setItem(`chat-widget-${roomId} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`, JSON.stringify(messages));''
     } catch (error) {;''
       console.warn('ChatWidget: failed to save history', error);''
@@ -277,8 +277,8 @@ export function ChatWidget(): unknown {): unknown {): unknown {): unknown {): un
     if (e.key === 'Enter' && !e.shiftKey) {''
 =======
   useEffect(() => {'
-    if (!isOpen) return'
-    try {;`
+    if (!isOpen) return'`
+    try {;``
       safeStorage.setItem(`chat-widget-${roomId} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`, JSON.stringify(messages))'
     } catch (error) {'
       console.warn('ChatWidget: failed to save history', error)'
@@ -495,12 +495,12 @@ export function ChatWidget(): unknown {): unknown {): unknown {): unknown {): un
 
 <<<<<<< HEAD
 };"""
-}
+
 };"""
-}
+
 }""
 }""
-}
+
 }""
 =======
 };""
@@ -509,6 +509,7 @@ export function ChatWidget(): unknown {): unknown {): unknown {): unknown {): un
 
 }"
 }"
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

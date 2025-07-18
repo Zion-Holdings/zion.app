@@ -1,16 +1,16 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
+import { useState } from 'react';;
 import { Save, ChevronDown, Plus, Loader2 } from '@/components/ui/icons;'
-;
+
 import {;
   DropdownMenu,;''
   DropdownMenuContent,;
   DropdownMenuItem,;
   DropdownMenuSeparator,;''
   DropdownMenuTrigger,;;
-} from '@/components/ui/dropdown-menu;'';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;';
+} from '@/components/ui/dropdown-menu;;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
 import {;
   Dialog,;''
   DialogContent,;
@@ -19,14 +19,14 @@ import {;
   DialogTitle,;;
 } from '@/components/ui/dialog;'
 ;;
-import type { Resume } from '@/types/resume;'';
+import type { Resume } from '@/types/resume;;
 import { useResume } from '@/hooks/useResume;'
 ;''
 interface ResumeVersionSelectorProps {;;
   currentResume: "Resume;",;";";";";""
   onResumeChange: "(resumeId: string) => void;";"
 };
-;
+
 export function ResumeVersionSelector(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   currentResume,;""
   onResumeChange,;";""
@@ -35,7 +35,7 @@ export function ResumeVersionSelector(): unknown {): unknown {): unknown {): unk
   const [saveDialogOpen, setSaveDialogOpen] = useState(false);";";";";""
   const [newResumeTitle, setNewResumeTitle] = useState('');'
   const [isLoading, setIsLoading] = useState(false);''
-;
+
   const handleCreateNewVersion: unknown = async () => {;
     if (newResumeTitle.trim()) {;''
       setIsLoading(true);;

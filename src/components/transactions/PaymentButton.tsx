@@ -1,13 +1,13 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { Loader2 } from '@/components/ui/icons;'';
-import { Button } from '@/components/ui/button;'';
-import { cn } from '@/lib/utils;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { toast } from '@/hooks/use-toast;'';
+import { useState } from 'react';;
+import { Loader2 } from '@/components/ui/icons;;
+import { Button } from '@/components/ui/button;;
+import { cn } from '@/lib/utils;;
+import { useAuth } from '@/hooks/useAuth;;
+import { toast } from '@/hooks/use-toast;;
 import { supabase } from '@/integrations/supabase/client;'
 ;;
-import { useRouter } from 'next/router;'';
+import { useRouter } from 'next/router;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
 ;''
 interface PaymentButtonProps {;;
@@ -34,7 +34,7 @@ export function PaymentButton(): unknown {): unknown {): unknown {): unknown {):
   const router: unknown = useRouter();''
 ;;
   if (!supabase) throw new Error('Supabase client not initialized');''
-;
+
   const handlePaymentClick: unknown = async () => {;
     if (!isAuthenticated) {;''
       toast({;;
@@ -42,7 +42,7 @@ export function PaymentButton(): unknown {): unknown {): unknown {): unknown {):
         description: 'Please sign in to make a purchase.',;'
       });
 ;''
-      const returnTo: unknown "unknown = encodeURIComponent(`/checkout?sku=${serviceId"}`);"
+      const returnTo: unknown "unknown = encodeURIComponent(`/checkout?sku=${serviceId"}`);"`
       router.push(`/auth/login?returnTo=${returnTo}`);
       return;""
     };";""
@@ -94,8 +94,8 @@ export function PaymentButton(): unknown {): unknown {): unknown {): unknown {):
         title: 'Authentication required','
         description: 'Please sign in to make a purchase.','
       });
-'
-      const returnTo: encodeURIComponent(`/checkout?sku=${serviceId"}`);`
+'`
+      const returnTo: encodeURIComponent(`/checkout?sku=${serviceId"}`);``
       router.push(`/auth/login?returnTo=${returnTo}`);
       return"
     };"
@@ -115,7 +115,7 @@ export function PaymentButton(): unknown {): unknown {): unknown {): unknown {):
 <<<<<<< HEAD
         onPaymentInitiated();''
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
-;
+
       // Call the create-checkout edge function;''
       const { data, error } = await supabase.functions.invoke(;;
         'create-checkout',;'
@@ -130,7 +130,7 @@ export function PaymentButton(): unknown {): unknown {): unknown {): unknown {):
           },;
         },;
       );
-;
+
       if (error) {;""
         throw error;";""
       };";";""
@@ -256,6 +256,7 @@ export function PaymentButton(): unknown {): unknown {): unknown {): unknown {):
 }"
 
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

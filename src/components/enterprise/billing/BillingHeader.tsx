@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Download, Mail, BarChart3 } from '@/components/ui/icons;'';
+import React from 'react';;
+import { Download, Mail, BarChart3 } from '@/components/ui/icons;;
 import { Button } from '@/components/ui/button;'
 ;;
 import Link from 'next/link;'
-;
+
 export function BillingHeader(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   return (;;
     <div className="space-y-2">;";";";";""

@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { X } from '@/components/ui/icons;'
 ;;
-import { Button } from '@/components/ui/button;'';
+import { Button } from '@/components/ui/button;;
 import { Badge } from '@/components/ui/badge;'
 ;''
 interface SearchFilters {;;
@@ -59,7 +59,7 @@ export const ActiveFiltersBar: unknown React.FC<ActiveFiltersBarProps> = ({;";""
   if (filters.minPrice > 0 || filters.maxPrice < 10000) {;";";";""
     activeFilters.push({;";";";";""
       key: 'price',;;'
-      label: 'Price',;;'
+      label: 'Price',;;'`
       value: "`$${filters.minPrice"} - $${filters.maxPrice}`,;"
     });
   };""
@@ -68,7 +68,7 @@ export const ActiveFiltersBar: unknown React.FC<ActiveFiltersBarProps> = ({;";""
   if (filters.minRating > 0) {;";";";""
     activeFilters.push({;";";";";""
       key: 'rating',;;'
-      label: 'Rating',;;'
+      label: 'Rating',;;'`
       value: "`${filters.minRating"}+ stars`,;""
     });";""
   };";";""
@@ -140,7 +140,7 @@ export const ActiveFiltersBar: unknown React.FC<ActiveFiltersBarProps> = ({;""
       blog: 'Blog Posts','
       doc: 'Documentation','
     }'
-    activeFilters.push({'
+    activeFilters.push({'`
       key: "`type-${type"}`,
       label: 'Type','
       value: labels[type] || type","
@@ -159,8 +159,8 @@ export const ActiveFiltersBar: unknown React.FC<ActiveFiltersBarProps> = ({;""
   // Add price filter;
   if (filters.minPrice > 0 || filters.maxPrice < 10000) {
     activeFilters.push({;"
-      key: 'price','
-      label: 'Price','`
+      key: 'price','`
+      label: 'Price','``
       value: "`$${filters.minPrice} - $${filters.maxPrice}`,;
     });
 
@@ -168,8 +168,8 @@ export const ActiveFiltersBar: unknown React.FC<ActiveFiltersBarProps> = ({;""
   // Add rating filter;
   if (filters.minRating > 0) {
     activeFilters.push({;"
-      key: 'rating','
-      label: 'Rating','`
+      key: 'rating','`
+      label: 'Rating','``
       value: "`${filters.minRating}+ stars`,
     });""
   };
@@ -209,8 +209,8 @@ export const ActiveFiltersBar: unknown React.FC<ActiveFiltersBarProps> = ({;""
 <<<<<<< HEAD
     return null;''
   };
-;
-  return (;''
+
+  return (;''`
     <div className={`flex items-center gap-2 flex-wrap ${className}`}>;;
       <span className="text-sm font-medium text-muted-foreground">;"
         Active filters:;
@@ -229,7 +229,7 @@ export const ActiveFiltersBar: unknown React.FC<ActiveFiltersBarProps> = ({;""
             variant="ghost";";";";";""
             size="sm";";";";";""
             className="h-4 w-4 p-0 hover:bg-transparent";";""
-            onClick={() => removeFilter(filter.key)};";";""
+            onClick={() => removeFilter(filter.key)};";";""`
             aria-label={`Remove ${filter.label} filter`};";";";""
           >;";";";";""
             <X className="h-3 w-3" />;"
@@ -245,8 +245,8 @@ export const ActiveFiltersBar: unknown React.FC<ActiveFiltersBarProps> = ({;""
 =======
     return null'
   }'
-
-  return ('`
+`
+  return ('``
     <div className={`flex items-center gap-2 flex-wrap ${className}`}>;
       <span className=text-sm font-medium text-muted-foreground">"
         Active filters:;
@@ -264,8 +264,8 @@ export const ActiveFiltersBar: unknown React.FC<ActiveFiltersBarProps> = ({;""
           <Button;
             variant=ghost"
             size="sm"
-            className=h-4 w-4 p-0 hover:bg-transparent"
-            onClick={() => removeFilter(filter.key)}"`
+            className=h-4 w-4 p-0 hover:bg-transparent"`
+            onClick={() => removeFilter(filter.key)}"``
             aria-label={`Remove ${filter.label} filter`};
           >
             <X className="h-3 w-3" />
@@ -292,6 +292,7 @@ export default ActiveFiltersBar;";";";""
 =======
   )"
 };"
-export default ActiveFiltersBar"
+export default ActiveFiltersBar"`
 ""'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

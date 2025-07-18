@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import { format } from 'date-fns;'';
-import { Calendar } from '@/components/ui/calendar;'';
-import { Button } from '@/components/ui/button;'';
-import { Label } from '@/components/ui/label;'';
-import { CalendarIcon } from '@/components/ui/icons'';
-;'';
-import {'';
+import { format } from 'date-fns;;
+import { Calendar } from '@/components/ui/calendar;;
+import { Button } from '@/components/ui/button;;
+import { Label } from '@/components/ui/label;;
+import { CalendarIcon } from '@/components/ui/icons;
+;;
+import {;
   Popover,
   PopoverContent,;''
   PopoverTrigger,;''
-} from '@/components/ui/popover;'';
-import { cn } from '@/lib/utils;'';
-import type { QuoteFormData } from '@/types/quotes'';
+} from '@/components/ui/popover;;
+import { cn } from '@/lib/utils;;
+import type { QuoteFormData } from '@/types/quotes;
 ;''
 interface TimelineStepProps {;''
   formData: "QuoteFormData,;";";"
@@ -32,7 +32,7 @@ export function TimelineStep(): unknown {): unknown {): unknown {): unknown {): 
               className={`flex-1 p-4 rounded-lg border-2 cursor-pointer transition-colors ${;"";;""
                 formData.timeline === 'fixed;''
                   ? 'bg-zion-purple/20 border-zion-purple;''
-                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50''
+                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50''`
               }`}`
               onClick={() => updateFormData({ timeline: 'fixed' })};''
             >;''
@@ -42,11 +42,11 @@ export function TimelineStep(): unknown {): unknown {): unknown {): unknown {): 
               </p>
             </div>;"""
 ;;""
-            <div";;""
+            <div";;""`
               className={`flex-1 p-4 rounded-lg border-2 cursor-pointer transition-colors ${";;"""
                 formData.timeline === 'flexible;''
                   ? 'bg-zion-purple/20 border-zion-purple;''
-                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50''
+                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50''`
               }`}`
               onClick={() => updateFormData({ timeline: 'flexible' })};''
             >;''
@@ -119,11 +119,11 @@ export function TimelineStep(): unknown {): unknown {): unknown {): unknown {): 
 ;";";
         <div className="space-y-4">;"
           <div className=flex items-center space-x-4">";
-            <div;"";
+            <div;"";`
               className={`flex-1 p-4 rounded-lg border-2 cursor-pointer transition-colors ${;""
                 formData.timeline === 'fixed'
-                  ? 'bg-zion-purple/20 border-zion-purple'
-                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}`
+                  ? 'bg-zion-purple/20 border-zion-purple'`
+                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}``
               }`};
               onClick={() => updateFormData({ timeline: 'fixed' })}'
             >'
@@ -132,12 +132,12 @@ export function TimelineStep(): unknown {): unknown {): unknown {): unknown {): 
                 I have specific start and end dates;
               </p>
             </div>;""
-;"
-            <div";"`
+;"`
+            <div";"``
               className={`flex-1 p-4 rounded-lg border-2 cursor-pointer transition-colors ${";""
                 formData.timeline === 'flexible'
-                  ? 'bg-zion-purple/20 border-zion-purple'
-                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}`
+                  ? 'bg-zion-purple/20 border-zion-purple'`
+                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}``
               }`};
               onClick={() => updateFormData({ timeline: 'flexible' })}'
             >'
@@ -280,6 +280,7 @@ export function TimelineStep(): unknown {): unknown {): unknown {): unknown {): 
 "";
 }"";
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

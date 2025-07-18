@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { format } from 'date-fns;'';
+import React from 'react';;
+import { format } from 'date-fns;;
 import { PaperclipIcon } from '@/components/ui/icons;'
 ;;
-import { cn } from '@/lib/utils;'';
+import { cn } from '@/lib/utils;;
 import type { Message } from '@/types/messaging;'
 ;''
 interface MessageBubbleProps {;;
@@ -45,9 +45,9 @@ export function MessageBubble(): unknown {): unknown {): unknown {): unknown {):
     </div>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { Button } from '@/components/ui/button;';
+import React, { useState } from 'react';;
+import { Button } from '@/components/ui/button;;
 import {;
   Card,;
   CardContent,;''
@@ -8,14 +8,14 @@ import {;
   CardFooter,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;'';
-import { IntegrationCards } from './IntegrationCards;'';
-import { ZapierIntegration } from './ZapierIntegration;'';
-import { Badge } from '@/components/ui/badge;'';
-import { WebhookManager } from './WebhookManager;'';
+} from '@/components/ui/card;;
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;;
+import { IntegrationCards } from './IntegrationCards;;
+import { ZapierIntegration } from './ZapierIntegration;;
+import { Badge } from '@/components/ui/badge;;
+import { WebhookManager } from './WebhookManager;;
 import { IntegrationsSyncLog } from './IntegrationsSyncLog;'
-;'';
+;;
 export function IntegrationsHub(): unknown {): unknown {): unknown {): unknown {): unknown {) {;;
   const [activeTab, setActiveTab] = useState('marketplace');'
 ;''

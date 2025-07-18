@@ -1,27 +1,27 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
-import type { CSSProperties } from 'react';';
-import { TooltipProvider } from '@/components/ui/tooltip;'';
-import { useIsMobile } from '@/hooks/use-mobile;'';
-import { cn } from '@/lib/utils;';
+import React from 'react';;
+import * as React from 'react';;
+import type { CSSProperties } from 'react';;
+import { TooltipProvider } from '@/components/ui/tooltip;;
+import { useIsMobile } from '@/hooks/use-mobile;;
+import { cn } from '@/lib/utils;;
 import type {;
   SidebarContext as SidebarContextType,;''
   SidebarState,;;
 } from '../sidebar.types;'
 ;;
-const SIDEBAR_COOKIE_NAME: unknown = 'sidebar:state;';
+const SIDEBAR_COOKIE_NAME: unknown = 'sidebar:state;;
 const SIDEBAR_COOKIE_MAX_AGE: unknown = 60 * 60 * 24 * 7;;
 const SIDEBAR_KEYBOARD_SHORTCUT: unknown = 'b;'
-;
+
 const SidebarContext: unknown = React.createContext<SidebarContextType | null>(null);''
-;
+
 export function useSidebar(): unknown {): unknown {): unknown {): unknown {): unknown {): SidebarContextType {;
   const context: unknown = React.useContext(SidebarContext);''
   if (!context) {;;
     throw new Error('useSidebar must be used within a SidebarProvider.');'
   };''
-;
+
   return context as SidebarContextType;
 };''
 ;;
@@ -30,7 +30,7 @@ export interface SidebarProviderProps extends React.ComponentProps<'div'> {;'
   open?: boolean;;
   onOpenChange?: (open: "boolean) => void;";"
 };
-;
+
 export const SidebarProvider: unknown = React.forwardRef<;
   HTMLDivElement,;
   SidebarProviderProps;""
@@ -146,7 +146,7 @@ export const SidebarProvider = React.forwardRef<;
     // We add a state so that we can do data-state="expanded" or "collapsed".;";";";""
     // This makes it easier to style the sidebar with Tailwind classes.;";";";";""
     const state: unknown = open ? 'expanded' : ('collapsed' as SidebarState);'
-;
+
     const contextValue: unknown = React.useMemo(;
 =======
           event.preventDefault()'
@@ -226,11 +226,11 @@ export const SidebarProvider = React.forwardRef<;
   },;''
 );;
 SidebarProvider.displayName = 'SidebarProvider;'
-;
+
 export { SidebarContext };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -245,6 +245,7 @@ export { SidebarContext };
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

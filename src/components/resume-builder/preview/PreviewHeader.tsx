@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import { Button } from '@/components/ui/button;'';
+import { Button } from '@/components/ui/button;;
 import { ArrowLeft, FileText, Link } from '@/components/ui/icons;'
 ;;
-import { PdfExportButton } from '../PdfExportButton;'';
-import type { Resume } from '@/types/resume;'';
-import { useState } from 'react';';
+import { PdfExportButton } from '../PdfExportButton;;
+import type { Resume } from '@/types/resume;;
+import { useState } from 'react';;
 import { useIsMobile } from '@/hooks/use-mobile;'
 ;''
 interface PreviewHeaderProps {;;
   resume: "Resume;",;";";";";""
   onBack: "() => void;";"
 };
-;
+
 export function PreviewHeader(): unknown {): unknown {): unknown {): unknown {): unknown {{ resume, onBack }: PreviewHeaderProps) {;
   const [isPrinting, setIsPrinting] = useState(false);
   const isMobile: unknown = useIsMobile();
@@ -58,7 +58,7 @@ export function PreviewHeader(): unknown {): unknown {): unknown {): unknown {):
     setIsPrinting(true);"
 
     // Inject print-specific CSS only for the duration of printing;
-    const style = document.createElement('style')'
+    const style = document.createElement('style')'`
     style.innerHTML = `;
       @media print {'
         body * {'
@@ -75,8 +75,8 @@ export function PreviewHeader(): unknown {): unknown {): unknown {): unknown {):
           width: 100%"
         };"
         .no-print {
-          display: none !important""
-        };`
+          display: none !important""`
+        };``
       }`;
     document.head.appendChild(style);
 
@@ -92,7 +92,7 @@ export function PreviewHeader(): unknown {): unknown {): unknown {): unknown {):
   };";""
 ;";";""
   return (;";";";""
-    <div;";";";";""
+    <div;";";";";""`
       className={`flex ${isMobile ? 'flex-col' : 'justify-between'} items-${isMobile ? 'stretch' : 'center'} gap-3`};''
     >;;
       <Button variant="outline" onClick={onBack} className="gap-2 no-print">;";";";";""
@@ -100,7 +100,7 @@ export function PreviewHeader(): unknown {): unknown {): unknown {): unknown {):
         Back;";""
       </Button>;";";""
 ;";";";""
-      <div;";";";";""
+      <div;";";";";""`
         className={`flex ${isMobile ? 'flex-col' : 'flex-row'} space-${isMobile ? 'y-2' : 'x-2'} no-print`};''
       >;
         <PdfExportButton resume={resume} />;
@@ -132,16 +132,16 @@ export function PreviewHeader(): unknown {): unknown {): unknown {): unknown {):
     }, 1000)
   };"
 ;"
-  return (
-    <div;`
+  return (`
+    <div;``
       className={`flex ${isMobile ? 'flex-col' : 'justify-between'} items-${isMobile ? 'stretch' : 'center'} gap-3`}'
     >'
       <Button variant="outline" onClick={onBack} className=gap-2 no-print>"
         <ArrowLeft className="h-4 w-4 />"
         Back;""
       </Button>;
-
-      <div;"`
+`
+      <div;"``
         className={`flex ${isMobile ? 'flex-col' : 'flex-row'} space-${isMobile ? 'y-2' : 'x-2'} no-print`}'
       >'
         <PdfExportButton resume={resume} />;
@@ -166,6 +166,7 @@ export function PreviewHeader(): unknown {): unknown {): unknown {): unknown {):
 
 }"
 }"
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

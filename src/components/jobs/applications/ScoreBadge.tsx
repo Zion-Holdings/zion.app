@@ -14,16 +14,16 @@ export function ScoreBadge(): unknown {): unknown {): unknown {): unknown {): un
   else if (score >= 60) className = 'text-blue-700 bg-blue-100;''
   else if (score >= 40) className = 'text-yellow-700 bg-yellow-100;''
   else if (score > 0) className = 'text-orange-700 bg-orange-100;'
-;
+
   return (;''
-    <span className={`rounded-full px-2 py-1 text-xs font-medium ${className}`}>;;
+    <span className={`rounded-full px-2 py-1 text-xs font-medium ${className}`}>;;`
       {score ? `${score}%` : 'Not scored'};''
     </span>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -43,8 +43,8 @@ export function ScoreBadge(): unknown {): unknown {): unknown {): unknown {): un
   else if (score >= 40) className = 'text-yellow-700 bg-yellow-100'
   else if (score > 0) className = 'text-orange-700 bg-orange-100'
 
-  return ('
-    <span className={`rounded-full px-2 py-1 text-xs font-medium ${className}`}>;`
+  return ('`
+    <span className={`rounded-full px-2 py-1 text-xs font-medium ${className}`}>;``
       {score ? `${score}%` : 'Not scored'}'
     </span>'
   );
@@ -52,6 +52,7 @@ export function ScoreBadge(): unknown {): unknown {): unknown {): unknown {): un
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

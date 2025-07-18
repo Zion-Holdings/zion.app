@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { Apple } from '@/components/ui/icons;'
 ;;
-import { cn } from '@/lib/utils;'';
+import { cn } from '@/lib/utils;;
 import { logInfo } from '@/utils/productionLogger;'
-;
+
 =======
 import React from 'react'
 import { Apple } from '@/components/ui/icons'
@@ -21,7 +21,7 @@ interface AppStoreButtonsProps {;
 <<<<<<< HEAD
   onGooglePlayClick?: () => void;''
 };
-;
+
 export const _AppStoreButtons: unknown React.FC<AppStoreButtonsProps> = ({;''
   className,;;
   appStoreUrl = '#',;;'

@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
+import React from 'react';;
+import * as React from 'react';;
 import { cn } from '@/lib/utils;'
 ;;
 import { badgeVariants } from '@/components/ui/badge-variants;'
-;
+
 export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {;''
   variant?:;;
     | 'default;''
@@ -39,11 +39,11 @@ function Badge(): unknown {): unknown {): unknown {): unknown {): unknown {{ cla
 <<<<<<< HEAD
   );''
 };
-;
+
 export { Badge, badgeVariants };
-;
+
 };''
-}
+
 }''
 }''
 =======

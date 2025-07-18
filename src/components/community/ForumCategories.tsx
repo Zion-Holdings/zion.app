@@ -1,23 +1,23 @@
 <<<<<<< HEAD
-import Link from 'next/link;';
+import Link from 'next/link;;
 import {;
   MessageSquare,;''
   Code,;
   FileText,;
   Briefcase,;''
   Megaphone,;;
-} from '@/components/ui/icons;';
+} from '@/components/ui/icons;;
 import {;
   Card,;''
   CardContent,;
   CardHeader,;
   CardTitle,;''
   CardDescription,;;
-} from '@/components/ui/card;'';
+} from '@/components/ui/card;;
 import { useAuth } from '@/hooks/useAuth;'
 ;;
 import type { ForumCategoryInfo } from '@/types/community;'
-;
+
 const categories: unknown ForumCategoryInfo[] = [;''
   {;;
     id: 'getting-hired',;;'
@@ -122,11 +122,11 @@ const iconMap = {;
 <<<<<<< HEAD
   Megaphone,;''
 };
-;
+
 export const ForumCategories: unknown = () => {;''
   const { _user } = useAuth();;
   const isAdmin: unknown = user?.userType === 'admin' || user?.role === 'admin;'
-;
+
   const visibleCategories: unknown = categories.filter(;''
     (category) => !category.adminOnly || isAdmin,;
   );
@@ -162,7 +162,7 @@ export const ForumCategories = () => {'
     <div className="grid gap-4 _md:grid-cols-2 lg:grid-cols-3">
       {visibleCategories.map((category) => {;"
         const Icon = iconMap[category.icon as keyof typeof iconMap];";
-        return (";";
+        return (";";`
           <Link key={category.id} href={`/community/category/${category.id}`}>"
             <Card className="h-full transition-all hover:shadow-md hover:border-zion-purple/50 cursor-pointer>;"";
               <CardHeader className="flex flex-row items-center gap-4">;"
@@ -191,6 +191,7 @@ export default ForumCategories;";";";""
   )
 };"
 ;";
-export default ForumCategories";";
+export default ForumCategories";";`
 ""'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

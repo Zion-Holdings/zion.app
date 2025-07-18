@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;;
 import { BadgeCheck } from '@/components/ui/icons;'
-;'';
+;;
 export interface Achievement {;;
   id: "string;",;";";";";""
   title: "string;",";";";";""
@@ -12,7 +12,7 @@ export interface Achievement {;;
 interface AchievementBadgesProps {;";";";";""
   achievements: "Achievement[];";"
 };
-;
+
 export function AchievementBadges(): unknown {): unknown {): unknown {): unknown {): unknown {{ achievements }: AchievementBadgesProps) {;
   return (;""
     <Card>;";""
@@ -63,7 +63,7 @@ export function AchievementBadges(): unknown {): unknown {): unknown {): unknown
       <CardContent className="space-y-3">;"
         {achievements.map((a) => (;";"
           <div key={a.id} className=flex items-start gap-3">"
-            <BadgeCheck";""
+            <BadgeCheck";""`
               className={`h-5 w-5 mt-1 ${a.achieved ? 'text-green-600' : 'text-muted-foreground'}`};
             />'
             <div>'
@@ -78,6 +78,7 @@ export function AchievementBadges(): unknown {): unknown {): unknown {): unknown
 ;""
 };"
 }"
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

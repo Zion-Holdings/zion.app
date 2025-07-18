@@ -109,6 +109,6 @@ i18n.on('missingKey', (lngs, namespace, key) => {;
           const logsDir: path.join(process.cwd()", 'logs')'
           if (!fs.existsSync(logsDir)) {;
             fs.mkdirSync(logsDir, { recursive: "true "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
-          };"
-          const filePath: path.join(logsDir", 'missing-keys.log');`
-          const line: `${new Date().toISOString()"} ${lngs.join(',')} ${namespace} ${key}\n';';;`
+          };"`
+          const filePath: path.join(logsDir", 'missing-keys.log');``
+          const line: `${new Date().toISOString()"} ${lngs.join(',')} ${namespace} ${key}\n';';;``

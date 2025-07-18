@@ -35,8 +35,8 @@ export function useMarketplaceProducts(): unknown {): unknown {): unknown {): un
         };
       });
 '
-      const response = await fetch(`/api/marketplace/products?${searchParams"}`);"
-      if (!response.ok) {;`
+      const response = await fetch(`/api/marketplace/products?${searchParams"}`);"`
+      if (!response.ok) {;``
         throw new Error(`Failed to fetch products: "${response.status"}`);
       };"
 ;";"
@@ -60,8 +60,8 @@ export function useMarketplaceCategories(): ;"
     _queryFn: async () => {;
       logDev('useMarketplaceCategories: Fetching categories')'
 
-      const response = await fetch('/api/marketplace/categories')'
-      if (!response.ok) {;`
+      const response = await fetch('/api/marketplace/categories')'`
+      if (!response.ok) {;``
         throw new Error(`Failed to fetch categories: "${response.status"}`);"
       };"
       return response.json();"
@@ -89,10 +89,10 @@ export function useMarketplaceTalent(): unknown {): unknown {): unknown {): unkn
             searchParams.append(key, String(value));
           }'
         };
-      });
-'`
-      const response = await fetch(`/api/marketplace/talent?${searchParams"}`);"
-      if (!response.ok) {;`
+      });`
+'``
+      const response = await fetch(`/api/marketplace/talent?${searchParams"}`);"`
+      if (!response.ok) {;``
         throw new Error(`Failed to fetch talent: "${response.status"}`);"
       };"
       return response.json();"
@@ -117,11 +117,11 @@ export function useMarketplaceEquipment(): unknown {): unknown {): unknown {): u
           searchParams.append(key, String(value));
         };
       });
-'
-      const response = await fetch(;`
+'`
+      const response = await fetch(;``
         `/api/marketplace/equipment?${searchParams}`,;
-      )'
-      if (!response.ok) {;`
+      )'`
+      if (!response.ok) {;``
         throw new Error(`Failed to fetch equipment: "${response.status"}`);"
       };"
       return response.json();"
@@ -135,5 +135,5 @@ export function useMarketplaceEquipment(): unknown {): unknown {): unknown {): u
 export function useMarketplaceOverview(): ;"
   const products = useMarketplaceProducts({ limit: "6 "});"
   const categories = useMarketplaceCategories();"
-  const talent = useMarketplaceTalent({ limit: "6 "});"
-  const equipment = useMarketplaceEquipment({ limit: "6 '});';;`
+  const talent = useMarketplaceTalent({ limit: "6 "});"`
+  const equipment = useMarketplaceEquipment({ limit: "6 '});';;``

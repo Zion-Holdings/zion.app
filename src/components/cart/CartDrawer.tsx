@@ -1,13 +1,13 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { useSelector } from 'react-redux;'';
-import Link from 'next/link;'';
-import type { RootState } from '@/store;'';
+import React from 'react';;
+import { useSelector } from 'react-redux;;
+import Link from 'next/link;;
+import type { RootState } from '@/store;;
 import { ShoppingCart } from 'lucide-react;'
 ;;
-import { useAuth } from '@/hooks/useAuth;'';
+import { useAuth } from '@/hooks/useAuth;;
 import { LoginModal } from '@/components/auth/LoginModal;''
-;
+
 export function CartDrawer(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const items: unknown = useSelector((s: RootState) => s.cart.items);''
   const count: unknown "unknown = items.reduce((sum", i) => sum + i.quantity, 0);"

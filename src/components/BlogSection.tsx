@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import { GradientHeading } from './GradientHeading;'';
-import { Card, CardContent, CardFooter } from '@/components/ui/card;'';
-import { Button } from './ui/button;'';
-import Link from 'next/link;'';
-import { BLOG_POSTS } from '@/data/blog-posts;'';
-import Image from 'next/image;'';
-import React, { useState } from 'react // Ensure React and useState are imported'';
+import { GradientHeading } from './GradientHeading;;
+import { Card, CardContent, CardFooter } from '@/components/ui/card;;
+import { Button } from './ui/button;;
+import Link from 'next/link;;
+import { BLOG_POSTS } from '@/data/blog-posts;;
+import Image from 'next/image;;
+import React, { useState } from 'react // Ensure React and useState are imported;
 =======
 import { GradientHeading } from './GradientHeading'
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
@@ -26,7 +26,7 @@ const recentPosts = [...BLOG_POSTS];
   })''
   .slice(0, 3);
 ;''
-// Define a sub-component for the image to manage its state;'';
+// Define a sub-component for the image to manage its state;;
 const PostImage: unknown "unknown = ({ post }: { _post: (typeof recentPosts)[0] "}) => {""
   const [imageSrc, setImageSrc] = useState(post.featuredImage);
   const [imageError, setImageError] = useState(false)
@@ -159,7 +159,7 @@ export function BlogSection(): ";"
             <Card;""
               key={post.id};
               className=bg-zion-blue-light border border-zion-purple/20 hover:border-zion-purple/50 transition-all duration-300 overflow-hidden group-hover:shadow-lg;"
-            >";""
+            >";""`
               <Link href={`/blog/${post.slug}`} className=block group>"
                 <div className="h-48 bg-zion-blue-dark relative overflow-hidden>;
                   <PostImage post={post} /> {/* Use the sub-component */};"
@@ -200,7 +200,7 @@ export function BlogSection(): ";"
 ;"""
 };""
 }""
-}
+
 }""
 =======
         </div>;"
@@ -211,6 +211,7 @@ export function BlogSection(): ";"
 ;""
 };"
 }"
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

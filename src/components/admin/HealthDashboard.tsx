@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import React, { useState, useEffect } from 'react;';
+import React, { useState, useEffect } from 'react;;
 import {;
   AlertTriangle,;
   CheckCircle,;''
@@ -7,10 +7,10 @@ import {;
   Clock,;
   TrendingUp,;''
   Activity,;;
-} from '@/components/ui/icons;'';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'';
-import { Badge } from '@/components/ui/badge;'';
-import { Button } from '@/components/ui/button;'';
+} from '@/components/ui/icons;;
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;;
+import { Badge } from '@/components/ui/badge;;
+import { Button } from '@/components/ui/button;;
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;'
 ;''
 interface HealthData {;;
@@ -125,7 +125,7 @@ const HealthDashboard: unknown React.FC = () => {;
   const fetchHealthData = async () => {;";"
     try {;";"
       const response = await fetch('/api/admin/health')'
-      if (!response.ok) {;
+      if (!response.ok) {;`
         throw new Error(`HTTP ${response.status} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);
       }'
       const data = await response.json()'
@@ -139,15 +139,15 @@ const HealthDashboard: unknown React.FC = () => {;
     };
   };
 <<<<<<< HEAD
-;
+
   useEffect(() => {;''
     fetchHealthData();
-;
+
     if (autoRefresh) {;''
       const interval: unknown "unknown = setInterval(fetchHealthData", 30000); // Refresh every 30 seconds;"
       return () => clearInterval(interval);
     };
-;
+
     return undefined;""
   }, [autoRefresh]);";""
 ;";";""
@@ -212,13 +212,13 @@ const HealthDashboard: unknown React.FC = () => {;
   };
 
   const formatUptime = (_seconds: number) => {;
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);`
+    const hours = Math.floor(seconds / 3600);`
+    const minutes = Math.floor((seconds % 3600) / 60);``
     return `${hours}h ${minutes}m`;
   };
 <<<<<<< HEAD
-;
-  const formatBytes: unknown = (_bytes: number) => {;
+
+  const formatBytes: unknown = (_bytes: number) => {;`
     return `${bytes.toFixed(1)} MB`;""
   };";""
 ;";";""
@@ -370,8 +370,8 @@ const HealthDashboard: unknown React.FC = () => {;
                     <span className="text-sm text-gray-600">Last Updated:</span>;";";";";""
                     <span className="text-sm">;"
 =======
-
-  const formatBytes = (_bytes: number) => {;`
+`
+  const formatBytes = (_bytes: number) => {;``
     return `${bytes.toFixed(1)} MB;
   };""
 ;"
@@ -656,7 +656,7 @@ const HealthDashboard: unknown React.FC = () => {;
               </CardContent>;
             </Card>;
 <<<<<<< HEAD
-;
+
             <Card>;
               <CardHeader>;""
                 <CardTitle>Top Errors</CardTitle>;";""
@@ -878,6 +878,7 @@ export default HealthDashboard;";";";""
   )"
 };"
 ;";"
-export default HealthDashboard;";"
+export default HealthDashboard;";"`
 ""'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

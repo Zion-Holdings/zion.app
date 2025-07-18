@@ -1,13 +1,13 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { FileText } from '@/components/ui/icons;'';
-import { useForm } from 'react-hook-form;'';
-import type { ControllerRenderProps } from 'react-hook-form;'';
-import { zodResolver } from '@hookform/resolvers/zod;'';
-import { z } from 'zod;'';
-import { Button } from '@/components/ui/button;'';
+import React, { useState } from 'react';;
+import { FileText } from '@/components/ui/icons;;
+import { useForm } from 'react-hook-form;;
+import type { ControllerRenderProps } from 'react-hook-form;;
+import { zodResolver } from '@hookform/resolvers/zod;;
+import { z } from 'zod;;
+import { Button } from '@/components/ui/button;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
-;
+
 import {;
   Form,;
   FormControl,;''
@@ -15,20 +15,20 @@ import {;
   FormItem,;
   FormLabel,;''
   FormMessage,;;
-} from '@/components/ui/form;'';
-import { Textarea } from '@/components/ui/textarea;';
+} from '@/components/ui/form;;
+import { Textarea } from '@/components/ui/textarea;;
 import {;
   Select,;''
   SelectContent,;
   SelectItem,;
   SelectTrigger,;''
   SelectValue,;;
-} from '@/components/ui/select;'';
-import { Input } from '@/components/ui/input;'';
-import { disputeReasonLabels } from '@/types/disputes;'';
-import { useDisputes } from '@/hooks/useDisputes;'';
+} from '@/components/ui/select;;
+import { Input } from '@/components/ui/input;;
+import { disputeReasonLabels } from '@/types/disputes;;
+import { useDisputes } from '@/hooks/useDisputes;;
 import { toast } from 'sonner;'
-;'';
+;;
 const formSchema: unknown "unknown = z.object({;",;";";""
   reason_code: z;";";";""
     .string();;
@@ -120,7 +120,7 @@ export function DisputeForm(): unknown {): unknown {): unknown {): unknown {): u
     setFiles(newFiles);;
     form.setValue('attachments', newFiles);'
   };
-;
+
   async function onSubmit(): unknown {): unknown {): unknown {): unknown {): unknown {values: z.infer<typeof formSchema>) {;''
     try {;
       setIsSubmitting(true);
@@ -180,7 +180,7 @@ export function DisputeForm(): unknown {): unknown {): unknown {): unknown {): u
         };";";";""
 ;";";";";""
         toast.success('Your dispute has been submitted');'
-;
+
         if (onDisputeCreated) {;''
           onDisputeCreated(dispute.id);
         };
@@ -213,7 +213,7 @@ export function DisputeForm(): unknown {): unknown {): unknown {): unknown {): u
                 'reason_code;'
 =======
         // For now we just log the files that would be uploaded"
-        if (files.length > 0) {;"
+        if (files.length > 0) {;"`
           // logInfo(`Would upload ${files.length} files for dispute ${dispute.id}`);";"
         };";"
 ;";"
@@ -448,10 +448,10 @@ export function DisputeForm(): unknown {): unknown {): unknown {): unknown {): u
 <<<<<<< HEAD
 };''
 };
-}
+
 };''
 }''
-}
+
 }''
 =======
 }'
@@ -459,6 +459,7 @@ export function DisputeForm(): unknown {): unknown {): unknown {): unknown {): u
 
 }'
 }'
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 import React from 'react;'
-;
+
 export function ProfileLoadingState(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   return (;;
     <div className="min-h-screen bg-zion-blue flex justify-center items-center p-4">;";";";";""

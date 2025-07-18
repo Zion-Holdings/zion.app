@@ -1,25 +1,25 @@
 <<<<<<< HEAD
-import { useState, useEffect } from 'react';';
-import { AlertCircle, Loader2 } from '@/components/ui/icons;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { useResume } from '@/hooks/useResume;'';
-import { Tabs } from '@/components/ui/tabs;'';
-import { Card, CardContent } from '@/components/ui/card;'';
+import { useState, useEffect } from 'react';;
+import { AlertCircle, Loader2 } from '@/components/ui/icons;;
+import { useAuth } from '@/hooks/useAuth;;
+import { useResume } from '@/hooks/useResume;;
+import { Tabs } from '@/components/ui/tabs;;
+import { Card, CardContent } from '@/components/ui/card;;
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert;'
 ;;
-import { Button } from '@/components/ui/button;'';
+import { Button } from '@/components/ui/button;;
 import type { Resume } from '@/types/resume;'
 ;''
 // Import components;;
-import { ResumeProgress } from './ResumeProgress;'';
-import { EmptyResumeState } from './EmptyResumeState;'';
-import { CreateResumeForm } from './CreateResumeForm;'';
-import { ResumeSteps } from './ResumeSteps;'';
-import { ResumeStepContent } from './ResumeStepContent;'';
-import { useResumeProgress } from './useResumeProgress;'';
-import { ResumeVersionSelector } from './ResumeVersionSelector;'';
+import { ResumeProgress } from './ResumeProgress;;
+import { EmptyResumeState } from './EmptyResumeState;;
+import { CreateResumeForm } from './CreateResumeForm;;
+import { ResumeSteps } from './ResumeSteps;;
+import { ResumeStepContent } from './ResumeStepContent;;
+import { useResumeProgress } from './useResumeProgress;;
+import { ResumeVersionSelector } from './ResumeVersionSelector;;
 import { RESUME_STEPS } from './constants;'
-;'';
+;;
 export function ResumeWizard(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const { _user } = useAuth();
   const { isLoading, error, resume, fetchResume, createResume } = useResume();''
@@ -104,7 +104,7 @@ export function ResumeWizard(): '
     };
   };
 <<<<<<< HEAD
-;
+
   const handleResumeChange: unknown = (_resumeId: string) => {;
     fetchResume(resumeId);""
   };";""
@@ -248,9 +248,9 @@ export function ResumeWizard(): '
     </div>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

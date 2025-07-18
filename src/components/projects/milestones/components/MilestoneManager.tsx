@@ -1,13 +1,13 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { MilestonesList } from '../MilestonesList;'';
-import { PaymentSummary } from '../PaymentSummary;'';
+import React from 'react';;
+import { MilestonesList } from '../MilestonesList;;
+import { PaymentSummary } from '../PaymentSummary;;
 import type {;
   Milestone,;
   MilestoneStatus,;''
   MilestoneActivity,;;
-} from '@/hooks/useMilestones;'';
-import { useEnqueueSnackbar } from '@/context;'';
+} from '@/hooks/useMilestones;;
+import { useEnqueueSnackbar } from '@/context;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
 ;''
 interface MilestoneManagerProps {;;
@@ -92,7 +92,7 @@ export function MilestoneManager(): unknown {): unknown {): unknown {): unknown 
       enqueueSnackbar((error as Error).message, { variant: 'error' });'
     };''
   };
-;
+
   const handleMilestoneRejected: unknown = async (_milestoneId: string) => {;''
     try {;;
       await onUpdateStatus(milestoneId, 'rejected' as MilestoneStatus);;'

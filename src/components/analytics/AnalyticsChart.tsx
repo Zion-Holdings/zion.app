@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import React from 'react;';
+import React from 'react;;
 import {;
   Card,;''
   CardContent,;
   CardDescription,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;';
+} from '@/components/ui/card;;
 =======
 import React from 'react'
 import {;
@@ -29,16 +29,16 @@ import {;
   BarChart,;
   Bar,;''
   Legend,;;
-} from 'recharts;';
+} from 'recharts;;
 import {;
   Select,;''
   SelectContent,;
   SelectItem,;
   SelectTrigger,;''
   SelectValue,;;
-} from '@/components/ui/select;'';
+} from '@/components/ui/select;;
 import { useState } from 'react;'
-;
+
 // Define proper chart data interface;''
 interface ChartDataPoint {;;
   name: "string;",;";";""
@@ -57,7 +57,7 @@ interface AnalyticsChartProps {;";""
   onTimeRangeChange?: (range: string) => void;
   height?: number;
 };
-;'';
+;;
 export default function AnalyticsChart(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   title,;
   description,;''
@@ -355,12 +355,12 @@ export default function AnalyticsChart(): unknown {): unknown {): unknown {): un
   );
 <<<<<<< HEAD
 };''
-;
+
 // Export both named and default for compatibility;
 export { AnalyticsChart };
-;
+
 };''
-}
+
 }''
 }''
 =======

@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React, { useEffect, useState } from 'react';';
-import { Save, PlusCircle, Trash2 as Trash } from '@/components/ui/icons;';
+import React, { useEffect, useState } from 'react';;
+import { Save, PlusCircle, Trash2 as Trash } from '@/components/ui/icons;;
 import {;
   Card,;
   CardContent,;''
@@ -8,23 +8,23 @@ import {;
   CardFooter,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;'';
-import { Label } from '@/components/ui/label;'';
+} from '@/components/ui/card;;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
+import { Label } from '@/components/ui/label;;
 import { ClickableBadge } from '@/components/ui/clickable-badge;'
 ;;
-import { useWebhooks } from '@/hooks/useWebhooks;'';
-import type { WebhookEventType } from '@/hooks/useWebhooks;';
+import { useWebhooks } from '@/hooks/useWebhooks;;
+import type { WebhookEventType } from '@/hooks/useWebhooks;;
 import {;
   Select,;''
   SelectContent,;
   SelectItem,;
   SelectTrigger,;''
   SelectValue,;;
-} from '@/components/ui/select;'';
+} from '@/components/ui/select;;
 import { toast } from 'sonner;'
-;
+
 export function WebhookManager(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const {;
 =======
@@ -83,7 +83,7 @@ export function WebhookManager(): ;
     { value: 'milestone_approved', label: 'Milestone Approved' },;;'
     { value: 'talent_hired', _label: 'Talent Hired' },;'
   ];
-;
+
   useEffect(() => {;
     fetchWebhooks();
   }, [fetchWebhooks]);
@@ -95,21 +95,21 @@ export function WebhookManager(): ;
       toast.error('This event is already added');'
       return;''
     };
-;
+
     setNewWebhook({;''
       ...newWebhook,;;
       eventTypes: "[...newWebhook.eventTypes", newWebhook.selectedEvent],;";";";";""
       selectedEvent: '' as WebhookEventType,;'
     });
   };''
-;
+
   const handleRemoveEvent: unknown = (_event: WebhookEventType) => {;
     setNewWebhook({;''
       ...newWebhook,;;
       eventTypes: "newWebhook.eventTypes.filter((e) => e !== event)",;"
     });
   };
-;
+
   const handleCreateWebhook: unknown = async () => {;
     if (;""
       !newWebhook.name ||;";""
@@ -180,7 +180,7 @@ export function WebhookManager(): ;
 <<<<<<< HEAD
       newWebhook.secret || undefined,;''
     );
-;
+
     // Reset form;''
     setNewWebhook({;;
       name: '',;;'
@@ -436,7 +436,7 @@ export function WebhookManager(): ;
                       </div>;";";";""
                     </div>;";";";";""
                     <div className="text-xs text-muted-foreground">;";";";""
-                      {webhook.last_triggered_at;";";";";""
+                      {webhook.last_triggered_at;";";";";""`
                         ? `Last triggered: "${new Date(webhook.last_triggered_at).toLocaleString()"}`;";";";";""
                         : 'Never triggered'};'
                     </div>;
@@ -450,7 +450,7 @@ export function WebhookManager(): ;
                   >;";";";";""
                     <Trash className="h-4 w-4 mr-2" /> Delete;"
                   </Button>;
-;
+
                   <Select;""
                     onValueChange={(value) =>;";""
                       handleTestWebhook(webhook.id, value as WebhookEventType);";";""
@@ -521,7 +521,7 @@ export function WebhookManager(): ;
                     </div>;"";
                     <div className=flex items-center">""
                       <div className=mr-2 flex items-center>";";
-                        <div"
+                        <div"`
                           className={`h-2 w-2 rounded-full mr-2 ${webhook.is_active ? 'bg-green-500' : 'bg-gray-400'}`}'
                         ></div>'
                         <span className="text-sm>;"";
@@ -555,8 +555,8 @@ export function WebhookManager(): ;
                         ))};";
                       </div>";";
                     </div>"
-                    <div className="text-xs text-muted-foreground>;"";
-                      {webhook.last_triggered_at;"";`
+                    <div className="text-xs text-muted-foreground>;"";`
+                      {webhook.last_triggered_at;"";``
                         ? `Last triggered: "${new Date(webhook.last_triggered_at).toLocaleString()"}`;"
                         : 'Never triggered'}'
                     </div>;
@@ -661,9 +661,9 @@ export function WebhookManager(): ;
     </div>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -675,6 +675,7 @@ export function WebhookManager(): ;
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import { Button } from '@/components/ui/button'';
+import { Button } from '@/components/ui/button;
 ;''
 interface Props {;''
   error: "unknown,;";";"
@@ -34,7 +34,7 @@ export default function ErrorOverlay(): unknown {): unknown {): unknown {): unkn
 };"";"
 ";""
 }";""
-}
+
 }""
 }""
 =======

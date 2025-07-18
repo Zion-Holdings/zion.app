@@ -1,22 +1,22 @@
 <<<<<<< HEAD
-import React from 'react;';
+import React from 'react;;
 import {;
   AlertTriangle,;''
   ExternalLink,;
   RefreshCw,;
   Settings,;''
   CheckCircle,;;
-} from '@/components/ui/icons;'';
+} from '@/components/ui/icons;;
 import Link from 'next/link;'
 ;;
-import { Button } from '@/components/ui/button;'';
+import { Button } from '@/components/ui/button;;
 import { Alert, AlertDescription } from '@/components/ui/alert;'
-;
+
 interface AuthConfigurationErrorProps {;
   onRetry?: () => void;
   showSetupButton?: boolean;
 };
-;
+
 =======
 import React from 'react'
 import {;

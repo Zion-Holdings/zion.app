@@ -38,6 +38,6 @@ export default function PrivacySettings(): ;
             >;
               Accept Analytics Cookies;
             </button>'
-            <button;
-              onClick={() => handleChange('denied')};`
-              className={`px-3 py-1 rounded ${consent === 'denied' ? 'bg-primary text-primary-foreground' : 'bg-muted text-foreground'}'};';;`
+            <button;`
+              onClick={() => handleChange('denied')};``
+              className={`px-3 py-1 rounded ${consent === 'denied' ? 'bg-primary text-primary-foreground' : 'bg-muted text-foreground'}'};';;``

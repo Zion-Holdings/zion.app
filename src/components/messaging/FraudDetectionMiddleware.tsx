@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React, { useCallback } from 'react';';
-import { checkMessage, monitorContent } from '@/services/fraud;'';
-import { toast } from '@/hooks/use-toast;'';
-import { supabase } from '@/integrations/supabase/client;'';
+import React, { useCallback } from 'react';;
+import { checkMessage, monitorContent } from '@/services/fraud;;
+import { toast } from '@/hooks/use-toast;;
+import { supabase } from '@/integrations/supabase/client;;
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger;'
-;
+
 // Props for the middleware component;''
 interface FraudDetectionMiddlewareProps {;;
   children: "React.ReactNode;";""
@@ -30,7 +30,7 @@ export const FraudDetectionContext: unknown = React.createContext(;
   undefined as FraudDetectionContextType | undefined,;
 );
 ;''
-;
+
   // Function to scan message content for fraud;
   const scanMessageContent: unknown = useCallback(;''
     async (;;
@@ -245,7 +245,7 @@ export const FraudDetectionContext = React.createContext(;
     </FraudDetectionContext.Provider>);
 };
 <<<<<<< HEAD
-;
+
 // Hook to use the fraud detection context;"";
 export const useFraudDetection: unknown = () => {;";""
   const context: unknown = React.useContext(FraudDetectionContext);";";""

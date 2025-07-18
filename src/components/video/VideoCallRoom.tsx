@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import React, { useState } from 'react;';
+import React, { useState } from 'react;;
 import {;
   Video,;
   Mic,;''
@@ -7,10 +7,10 @@ import {;
   Phone,;
   Volume2,;''
   VolumeX,;;
-} from '@/components/ui/icons;'';
-import { Button } from '@/components/ui/button;'';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'';
-import { Badge } from '@/components/ui/badge;'';
+} from '@/components/ui/icons;;
+import { Button } from '@/components/ui/button;;
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;;
+import { Badge } from '@/components/ui/badge;;
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;'
 ;''
 interface Participant {;;
@@ -22,7 +22,7 @@ interface Participant {;;
   isScreenSharing?: boolean;
   isHost?: boolean;
 };
-;
+
 interface VideoCallRoomProps {;
   roomId: string;
   participants?: Participant[];
@@ -32,7 +32,7 @@ interface VideoCallRoomProps {;
   onToggleScreenShare?: (isSharing: boolean) => void;
   className?: string;
 };
-;
+
 =======
 import React, { useState } from 'react'
 import {;
@@ -91,7 +91,7 @@ export const _VideoCallRoom: unknown React.FC<VideoCallRoomProps> = ({;
     return () => clearInterval(timer);
   }, []);
 <<<<<<< HEAD
-;
+
   const formatDuration: unknown = (_seconds: number) => {;""
     const hrs: unknown = Math.floor(seconds / 3600);";""
     const mins: unknown = Math.floor((seconds % 3600) / 60);";";""
@@ -104,7 +104,7 @@ export const _VideoCallRoom: unknown React.FC<VideoCallRoomProps> = ({;
     const hrs = Math.floor(seconds / 3600);"
     const mins = Math.floor((seconds % 3600) / 60);
     const secs = seconds % 60"
-;"
+;"`
     return `${hrs > 0 ? `${hrs}:` : ''}${mins < 10 && hrs > 0 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
   };
@@ -117,7 +117,7 @@ export const _VideoCallRoom: unknown React.FC<VideoCallRoomProps> = ({;
     };
   };
 <<<<<<< HEAD
-;
+
   const handleToggleVideo: unknown = () => {;
     const newVideoState: unknown = !isVideoEnabled;
     setIsVideoEnabled(newVideoState);''
@@ -167,7 +167,7 @@ export const _VideoCallRoom: unknown React.FC<VideoCallRoomProps> = ({;
     };
   };
 ;''
-  return (;;
+  return (;;`
     <Card className={`w-full ${className || 'max-w-5xl mx-auto'}`}>;;'
       <CardHeader className="flex flex-row items-center justify-between bg-zion-blue-dark rounded-t-lg p-4">;";";";";""
         <div className="flex items-center space-x-2">;";";";";""
@@ -308,8 +308,8 @@ export const _VideoCallRoom: unknown React.FC<VideoCallRoomProps> = ({;
       onLeave()'
     }'
   };
-'
-  return ('`
+'`
+  return ('``
     <Card className={`w-full ${className || 'max-w-5xl mx-auto'}`}>;
       <CardHeader className=flex flex-row items-center justify-between bg-zion-blue-dark rounded-t-lg p-4>"
         <div className="flex items-center space-x-2>"
@@ -443,6 +443,7 @@ export const _VideoCallRoom: unknown React.FC<VideoCallRoomProps> = ({;
       </CardContent>
     </Card>;""
   );
-
+`
 ""'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

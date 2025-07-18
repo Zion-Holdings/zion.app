@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { ArrowRight, Phone } from '@/components/ui/icons;'';
+import React from 'react';;
+import { ArrowRight, Phone } from '@/components/ui/icons;;
 import Link from 'next/link;'
 ;;
-import { Button } from '@/components/ui/button;'';
+import { Button } from '@/components/ui/button;;
 import { AppStoreButtons } from './AppStoreButtons;'
-;
+
 // export const _MobileAppHero: unknown React.FC = () => {;''
   // These would come from environment variables or a config;;
   const appStoreUrl: unknown = '# // Replace with actual App Store URL when available;;'

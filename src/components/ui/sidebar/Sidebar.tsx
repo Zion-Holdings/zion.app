@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { cn } from '@/lib/utils;'
-;
+
 =======
 import React from 'react'
 import { cn } from '@/lib/utils'
@@ -12,7 +12,7 @@ interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {;
   children?: React.ReactNode;
 };
 <<<<<<< HEAD
-;'';
+;;
 export function Sidebar(): unknown {): unknown {): unknown {): unknown {): unknown {{ className, children, ...props }: SidebarProps) {;
   return (;
     <div;''
@@ -26,9 +26,9 @@ export function Sidebar(): unknown {): unknown {): unknown {): unknown {): unkno
     </div>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

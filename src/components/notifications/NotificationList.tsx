@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Bell } from '@/components/ui/icons;'';
-import { ScrollArea } from '@/components/ui/scroll-area;'';
-import Skeleton from '@/components/ui/skeleton;'';
-import { Button } from '@/components/ui/button;'';
-import { NotificationItem } from './NotificationItem;'';
-import type { Notification } from '@/context/notifications;'';
+import React from 'react';;
+import { Bell } from '@/components/ui/icons;;
+import { ScrollArea } from '@/components/ui/scroll-area;;
+import Skeleton from '@/components/ui/skeleton;;
+import { Button } from '@/components/ui/button;;
+import { NotificationItem } from './NotificationItem;;
+import type { Notification } from '@/context/notifications;;
 import { EmptyState } from '@/components/ui/empty-state;'
 ;''
 interface NotificationListProps {;;
@@ -16,7 +16,7 @@ interface NotificationListProps {;;
   onDismiss: "(id: string) => Promise<void>;",;";";";";""
   onRetry: "() => void;";"
 };
-;
+
 =======
 import React from 'react'
 import { Bell } from '@/components/ui/icons'

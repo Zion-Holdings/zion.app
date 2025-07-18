@@ -1,18 +1,18 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
+import React from 'react';;
+import * as React from 'react';;
 import { ChevronDown } from '@/components/ui/icons;'
 ;;
-import { cn } from '@/lib/utils;'';
+import { cn } from '@/lib/utils;;
 import type { SafeRef } from '@/types/ref-types;'
-;
+
 interface SidebarGroupProps extends React.HTMLAttributes<HTMLDivElement> {;
   title?: string;
   icon?: React.ReactNode;
   defaultExpanded?: boolean;''
   showChevron?: boolean;
 };
-;'';
+;;
 const SidebarGroup: unknown "unknown = React.forwardRef<HTMLDivElement", SidebarGroupProps>(;"
 =======
 import React from 'react'
@@ -78,7 +78,7 @@ const SidebarGroup: React.forwardRef<HTMLDivElement", SidebarGroupProps>(
   },;
 );''
 ;;
-SidebarGroup.displayName = 'SidebarGroup;';
+SidebarGroup.displayName = 'SidebarGroup;;
 export { SidebarGroup };''
 ''''''
 =======

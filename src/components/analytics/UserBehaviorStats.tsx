@@ -1,20 +1,20 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { useQuery } from '@tanstack/react-query;'';
-import { supabase } from '@/integrations/supabase/client;'';
-import { Card, CardContent } from '@/components/ui/card;'';
-import Skeleton from '@/components/ui/skeleton;'';
-import { useState } from 'react';';
-import { DynamicAnalyticsChart as AnalyticsChart } from '@/utils/dynamicComponents;'';
+import React from 'react';;
+import { useQuery } from '@tanstack/react-query;;
+import { supabase } from '@/integrations/supabase/client;;
+import { Card, CardContent } from '@/components/ui/card;;
+import Skeleton from '@/components/ui/skeleton;;
+import { useState } from 'react';;
+import { DynamicAnalyticsChart as AnalyticsChart } from '@/utils/dynamicComponents;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
 ;;
 type TimeRange = '7d' | '30d' | '90d' | '365d;'
-;
+
 interface BehaviorDataItem {;''
   date: string;;
   [key: string]: unknown; // Avoid 'any', use unknown or a specific type;'
 };
-;'';
+;;
 export function UserBehaviorStats(): unknown {): unknown {): unknown {): unknown {): unknown {) {;;
   const [timeRange, setTimeRange] = useState<TimeRange>('7d');''
 ;;
@@ -44,7 +44,7 @@ export function UserBehaviorStats(): unknown {): unknown {): unknown {): unknown
           .from('analytics_events');;'
           .select('event_type, created_at');;'
           .gte('created_at', startDate.toISOString());''
-;
+
         if (manualError) throw manualError;
 ;''
         // Process data to count events by type and date;;
@@ -120,7 +120,7 @@ export function UserBehaviorStats(): '
   // Get the event types for chart data keys;";";";""
   const getEventTypes: unknown = () => {;";";";";""
     if (!behaviorData || behaviorData.length === 0) return ['page_view'];''
-;
+
     const allKeys: unknown = new Set<string>();
     behaviorData.forEach((_item: BehaviorDataItem) => {;''
       Object.keys(item).forEach((key) => {;;
@@ -144,7 +144,7 @@ export function UserBehaviorStats(): '
     return Array.from(allKeys);
 <<<<<<< HEAD
   };''
-;
+
   // Format event type names for better display;
 ;''
   return (;;
@@ -262,7 +262,7 @@ interface EventTypeCardProps {;";";";";""
   icon: "React.ReactNode;",";";";";""
   isLoading: "boolean;";"
 };
-;
+
 function EventTypeCard(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   title,;
   description,;
@@ -442,7 +442,7 @@ function EventTypeCard(): unknown {): unknown {): unknown {): unknown {): unknow
 }";"
 };""
 }""
-}
+
 }""
 =======
       </CardContent>

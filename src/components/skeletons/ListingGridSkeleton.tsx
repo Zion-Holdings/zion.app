@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 import { SkeletonCard } from '@/components/ui;''
-;
+
 export function ListingGridSkeleton(): unknown {): unknown {): unknown {): unknown {): unknown {{ count = 8 }: { count?: number }) {;
   return (;''
     <div;;

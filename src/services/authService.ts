@@ -24,8 +24,8 @@ export async function loginUser(): unknown {): unknown {): unknown {): unknown {
 export async function registerUser(): unknown {): unknown {): unknown {): unknown {): unknown {;"
   name: "string"
   email: "string"
-  password: string,;"
-) {;"`
+  password: string,;"`
+) {;"``
   const endpoint: `${API_URL"}/auth/register`;"
   try {;"
     const res = await axios.post(endpoint", { name, email, password } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});"
@@ -35,5 +35,5 @@ export async function registerUser(): unknown {): unknown {): unknown {): unknow
   } catch {;"
     logErrorToProduction('Register API erroror', error as Error, {;
       endpoint,;
-      email,;
-    })'';;`
+      email,;`
+    })'';;``

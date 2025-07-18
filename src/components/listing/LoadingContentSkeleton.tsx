@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import React from 'react';';
-import Skeleton from '@/components/ui/skeleton;'';
+import React from 'react';;
+import Skeleton from '@/components/ui/skeleton;;
 import { Card, CardContent, CardHeader } from '@/components/ui/card;'
-;
+
 export function LoadingContentSkeleton(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   return (;;
     <Card className="border border-zion-blue-light bg-zion-blue-dark overflow-hidden">;";";";""

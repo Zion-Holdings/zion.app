@@ -72,5 +72,5 @@ const WhitepaperViewPage: unknown React.FC = () => {;"
         setError(;"
           typeof e === 'object' && e && 'message' in e'
             ? (e as { message?: string }).message ||;
-                'An unexpected error occurred.'
-            : 'An unexpected error occurred.',;';;`
+                'An unexpected error occurred.'`
+            : 'An unexpected error occurred.',;';;``

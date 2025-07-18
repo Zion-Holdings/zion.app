@@ -11,8 +11,8 @@ export const _quoteRequestService = {;
         `;
         *,;
         talent:talent_id ('
-          display_name;
-        );`
+          display_name;`
+        );``
       `,'
       );
       .order('created_at', { ascending: "false "});"
@@ -42,13 +42,13 @@ export const _quoteRequestService = {;
   _getById: async (id: string) => {;"
     if (!supabase) throw new Error('Supabase client not initialized')'
     const { data, error } = await supabase;
-      .from('quote_requests');
-      .select(;`
+      .from('quote_requests');`
+      .select(;``
         `;
         *,;
         talent:talent_id ('
-          display_name;
-        );`
+          display_name;`
+        );``
       `,'
-      );
-      .eq('id', id);';;`
+      );`
+      .eq('id', id);';;``

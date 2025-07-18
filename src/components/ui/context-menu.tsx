@@ -1,23 +1,23 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
-import { Check, ChevronRight } from '@/components/ui/icons;'';
+import React from 'react';;
+import * as React from 'react';;
+import { Check, ChevronRight } from '@/components/ui/icons;;
 import * as ContextMenuPrimitive from '@radix-ui/react-context-menu;'
 ;;
 import { cn } from '@/lib/utils;'
-;
+
 const ContextMenu: unknown = ContextMenuPrimitive.Root;
-;
+
 const ContextMenuTrigger: unknown = ContextMenuPrimitive.Trigger;
-;
+
 const ContextMenuGroup: unknown = ContextMenuPrimitive.Group;
-;
+
 const ContextMenuPortal: unknown = ContextMenuPrimitive.Portal;
-;
+
 const ContextMenuSub: unknown = ContextMenuPrimitive.Sub;
-;
+
 const ContextMenuRadioGroup: unknown = ContextMenuPrimitive.RadioGroup;
-;
+
 const ContextMenuSubTrigger: unknown = React.forwardRef<;
   React.ElementRef<typeof ContextMenuPrimitive.SubTrigger>,;
   React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.SubTrigger> & {;
@@ -38,7 +38,7 @@ const ContextMenuSubTrigger: unknown = React.forwardRef<;
   </ContextMenuPrimitive.SubTrigger>;
 ));
 ContextMenuSubTrigger.displayName = ContextMenuPrimitive.SubTrigger.displayName;
-;
+
 const ContextMenuSubContent: unknown = React.forwardRef<;
   React.ElementRef<typeof ContextMenuPrimitive.SubContent>,;
   React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.SubContent>;""
@@ -269,7 +269,7 @@ const ContextMenuLabel = React.forwardRef<;
 ));
 ContextMenuLabel.displayName = ContextMenuPrimitive.Label.displayName;
 <<<<<<< HEAD
-;
+
 const ContextMenuSeparator: unknown = React.forwardRef<;
   React.ElementRef<typeof ContextMenuPrimitive.Separator>,;''
   React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Separator>;
@@ -308,7 +308,7 @@ const ContextMenuShortcut = ({;
   );''
 };;
 ContextMenuShortcut.displayName = 'ContextMenuShortcut;'
-;
+
 =======
   ...props'
 }: React.HTMLAttributes<HTMLSpanElement>) => {'

@@ -1,10 +1,10 @@
 <<<<<<< HEAD
 import type { TrackingEvent } from '@/hooks/useOrder;'
-;
+
 interface Props {;
   events?: TrackingEvent[];
 };
-;
+
 export function OrderTimeline(): unknown {): unknown {): unknown {): unknown {): unknown {{ events }: Props) {;
   if (!events || events.length === 0) {;''
     return <p>No tracking info yet.</p>;
@@ -41,7 +41,7 @@ export function OrderTimeline(): unknown {): unknown {): unknown {): unknown {):
           <span className="absolute -left-2 top-1.5 h-3 w-3 rounded-full bg-primary" />
           <div>;
             <p className="font-medium">{ev.status}</p>
-            <p className=text-sm text-muted-foreground">"
+            <p className=text-sm text-muted-foreground">"`
               {ev.location ? `${ev.location} · ` : ''}'
               {new Date(ev.timestamp).toLocaleString()};
             </p>'
@@ -69,6 +69,7 @@ export function OrderTimeline(): unknown {): unknown {): unknown {): unknown {):
 }"
 
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

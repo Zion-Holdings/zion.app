@@ -1,27 +1,27 @@
 <<<<<<< HEAD
-import { useState, useEffect } from 'react';';
-import { Loader2 } from '@/components/ui/icons;'';
-import { useForm } from 'react-hook-form;'';
-import { zodResolver } from '@hookform/resolvers/zod;'';
+import { useState, useEffect } from 'react';;
+import { Loader2 } from '@/components/ui/icons;;
+import { useForm } from 'react-hook-form;;
+import { zodResolver } from '@hookform/resolvers/zod;;
 import { z } from 'zod;'
 ;;
-import { Button } from '@/components/ui/button;'';
-import { Form } from '@/components/ui/form;';
+import { Button } from '@/components/ui/button;;
+import { Form } from '@/components/ui/form;;
 import {;''
   DialogDescription,;
   DialogFooter,;
   DialogHeader,;''
   DialogTitle,;;
-} from '@/components/ui/dialog;'';
-import { useToast } from '@/hooks/use-toast;'';
-import type { TalentProfile } from '@/types/talent;'';
-import type { GeneratedMilestone } from '@/hooks/useMilestoneGenerator;'';
-import { generateContract } from '../utils/contractUtils;'';
-import { ProjectDetailsFields } from './ProjectDetailsFields;'';
-import { PaymentTermsFields } from './PaymentTermsFields;'';
-import { AdditionalClausesFields } from './AdditionalClausesFields;'';
+} from '@/components/ui/dialog;;
+import { useToast } from '@/hooks/use-toast;;
+import type { TalentProfile } from '@/types/talent;;
+import type { GeneratedMilestone } from '@/hooks/useMilestoneGenerator;;
+import { generateContract } from '../utils/contractUtils;;
+import { ProjectDetailsFields } from './ProjectDetailsFields;;
+import { PaymentTermsFields } from './PaymentTermsFields;;
+import { AdditionalClausesFields } from './AdditionalClausesFields;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
-;'';
+;;
 const formSchema: unknown "unknown = z.object({;",;""
   projectName: "z.string().min(1", 'Project name is required'),;'
   scopeSummary: z;''
@@ -43,7 +43,7 @@ interface ContractFormProps {;";";";";""
   onFormValuesChange?: (values: "ContractFormValues) => void;",;";";";";""
   onContractGenerated: "(contractContent: string) => void;";"
 };
-;
+
 =======
 import { useState, useEffect } from 'react''
 import { Loader2 } from '@/components/ui/icons'
@@ -123,7 +123,7 @@ export function ContractForm(): unknown {): unknown {): unknown {): unknown {): 
       projectName: '','
       scopeSummary: '','
       startDate: "new Date(),;"";
-      paymentTerms: talent.hourly_rate ? 'hourly' : 'fixed','
+      paymentTerms: talent.hourly_rate ? 'hourly' : 'fixed','`
       paymentAmount: "talent.hourly_rate ? `$${talent.hourly_rate"}/hour` : '','
       additionalClauses: ['nda', 'ip'],'
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
@@ -152,7 +152,7 @@ export function ContractForm(): unknown {): unknown {): unknown {): unknown {): 
     return undefined;
 <<<<<<< HEAD
   }, [form, onFormValuesChange]);''
-;
+
   const handleMilestonesGenerated: unknown = (_milestones: GeneratedMilestone[]) => {;
     setGeneratedMilestones(milestones);''
 ;;
@@ -162,7 +162,7 @@ export function ContractForm(): unknown {): unknown {): unknown {): unknown {): 
     };
 ;''
     toast({;;
-      title: 'Milestones Generated',;;'
+      title: 'Milestones Generated',;;'`
       description: "`${milestones.length"} milestones have been generated and will be included in the contract.`,;"
 =======
   }, [form, onFormValuesChange])'
@@ -175,8 +175,8 @@ export function ContractForm(): unknown {): unknown {): unknown {): unknown {): 
       form.setValue('paymentTerms', 'milestone')'
     };
 '
-    toast({'
-      title: 'Milestones Generated','`
+    toast({'`
+      title: 'Milestones Generated','``
       description: `${milestones.length} milestones have been generated and will be included in the contract.`,;
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
     });
@@ -224,7 +224,7 @@ export function ContractForm(): unknown {): unknown {): unknown {): unknown {): 
     };
 <<<<<<< HEAD
   };''
-;
+
   return (;
     <>;''
       <DialogHeader>;;
@@ -333,6 +333,7 @@ export function ContractForm(): unknown {): unknown {): unknown {): unknown {): 
 ";"
 }";"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

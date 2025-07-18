@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import type { WorkExperience } from '@/types/resume;'';
+import type { WorkExperience } from '@/types/resume;;
 import { format } from 'date-fns;'
 ;''
 interface WorkExperienceSectionProps {;;
   workExperience: "WorkExperience[];";"
 };
-;
+
 export function WorkExperienceSection(): unknown {): unknown {): unknown {): unknown {): unknown {{;""
   workExperience,;";""
 }: WorkExperienceSectionProps) {;";";""
@@ -42,7 +42,7 @@ export function WorkExperienceSection(): unknown {): unknown {): unknown {): unk
     };;
     return format(date, 'MMM yyyy');'
   };''
-;
+
   if (sortedWorkExperience.length === 0) return null;
 ;''
   return (;;

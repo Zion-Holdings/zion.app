@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import React from 'react''';
-import { GradientHeading } from './GradientHeading'';
+import React from 'react';
+import { GradientHeading } from './GradientHeading;
 import {;
   Users,;''
   Briefcase,''
   HardDrive,
   Lightbulb,;''
   HelpCircle,;''
-} from '@/components/ui/icons;'';
-import Link from 'next/link'';
+} from '@/components/ui/icons;;
+import Link from 'next/link;
 ;''
-// Added HelpCircle for default icon;'';
-import { cn } from '@/lib/utils;'';
+// Added HelpCircle for default icon;;
+import { cn } from '@/lib/utils;;
 import { useTranslation } from 'react-i18next;''
 ''
 // This is the type definition copied from Categories.tsx for consistency.;
@@ -26,7 +26,7 @@ interface CategoryType {;''
   link?: string;''
 }''
 
-// Default static categories with translation keys;'';
+// Default static categories with translation keys;;
 const getDefaultCategories: unknown = (_t: unknown) => {;''
   const translate: unknown = typeof t === 'function' ? t : (x: string) => x''
   return [;''
@@ -186,7 +186,7 @@ interface CategoriesSectionProps {;
   style?: React.CSSProperties;
   categories?: CategoryType[]; // Accept categories as a prop;
 };
-;'';
+;;
 export function CategoriesSection(): unknown {): unknown {): unknown {): unknown {): unknown {{''
   showTitle = true,;
   className,;''
@@ -273,7 +273,7 @@ export function CategoriesSection(): unknown {): unknown {): unknown {): unknown
               className="group block rounded-lg focus:outline-none focus:ring-2 focus:ring-zion-cyan";";""
             >;";""
               <div className=rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 group-hover:border-zion-purple/50 group-focus:border-zion-purple/50 hover:translate-y-[-5px] group-hover:shadow-lg">";;""
-                <div";;"""
+                <div";;"""`
                   className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover: scale-110 transition-transform duration-300`}";";"
                 >";";""
                   <div className="text-white>{category.icon}</div>;"
@@ -290,7 +290,7 @@ export function CategoriesSection(): unknown {): unknown {): unknown {): unknown
           id: "cat.id,;
           title: cat.name, // Map name to title;"
           description: cat.description || 'No description available.','
-          icon: getIcon(cat.iconName)", // Get icon component""
+          icon: getIcon(cat.iconName)", // Get icon component""`
           link: cat.link || `/category/${cat.id}`, // Construct link if not provided";"
           // Assign a default color or implement logic to assign colors;"
           color:;";"
@@ -344,8 +344,8 @@ export function CategoriesSection(): unknown {): unknown {): unknown {): unknown
               href={category.link || '#'}'
               className="group block rounded-lg focus:outline-none focus:ring-2 focus:ring-zion-cyan"
             >;";"
-              <div className=rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 group-hover:border-zion-purple/50 group-focus:border-zion-purple/50 hover:translate-y-[-5px] group-hover:shadow-lg">"
-                <div";""`
+              <div className=rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 group-hover:border-zion-purple/50 group-focus:border-zion-purple/50 hover:translate-y-[-5px] group-hover:shadow-lg">"`
+                <div";""``
                   className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover: scale-110 transition-transform duration-300`}";";
                 >"
                   <div className="text-white>{category.icon}</div>;
@@ -392,7 +392,7 @@ export function CategoriesSection(): unknown {): unknown {): unknown {): unknown
 };
 
 };''
-}
+
 }''
 }''
 =======
@@ -428,6 +428,7 @@ export function CategoriesSection(): unknown {): unknown {): unknown {): unknown
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

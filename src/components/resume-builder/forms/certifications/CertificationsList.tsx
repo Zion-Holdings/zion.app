@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import type { Certification } from '@/types/resume;'';
-import { Edit, Trash2 } from '@/components/ui/icons;'';
-import { Card, CardContent } from '@/components/ui/card;'';
+import type { Certification } from '@/types/resume;;
+import { Edit, Trash2 } from '@/components/ui/icons;;
+import { Card, CardContent } from '@/components/ui/card;;
 import { Button } from '@/components/ui/button;'
 ;;
 import { format } from 'date-fns;'
@@ -11,7 +11,7 @@ interface CertificationsListProps {;;
   onEdit: "(cert: Certification) => void;",;";";";";""
   onDelete: "(id: string) => void;";"
 };
-;
+
 =======
 import type { Certification } from '@/types/resume'
 import { Edit, Trash2 } from '@/components/ui/icons'

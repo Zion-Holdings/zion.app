@@ -1,15 +1,15 @@
 <<<<<<< HEAD
-import { formatDistanceToNow } from 'date-fns;'';
+import { formatDistanceToNow } from 'date-fns;;
 import { Calendar, User, FileText, BarChart } from '@/components/ui/icons;'
 ;;
-import { Button } from '@/components/ui/button;'';
-import { Avatar as AvatarPrimitive } from '@/components/ui/avatar // Renamed to avoid conflict;;';
-import { TableRow, TableCell } from '@/components/ui/table;'';
-import type { JobApplication, ApplicationStatus } from '@/types/jobs;'';
-import { StatusBadge } from './StatusBadge;'';
-import { ScoreBadge } from './ScoreBadge;'';
-import { ApplicationActions } from './ApplicationActions;'';
-import Image from 'next/image // Import next/image;;';
+import { Button } from '@/components/ui/button;;
+import { Avatar as AvatarPrimitive } from '@/components/ui/avatar // Renamed to avoid conflict;;;
+import { TableRow, TableCell } from '@/components/ui/table;;
+import type { JobApplication, ApplicationStatus } from '@/types/jobs;;
+import { StatusBadge } from './StatusBadge;;
+import { ScoreBadge } from './ScoreBadge;;
+import { ApplicationActions } from './ApplicationActions;;
+import Image from 'next/image // Import next/image;;;
 import React, { useState } from 'react // Import useState;'
 ;''
 interface ApplicationRowProps {;;
@@ -22,7 +22,7 @@ interface ApplicationRowProps {;;
   ) => Promise<void>;";";";";""
   onViewScore: "(application: JobApplication) => void;";"
 };
-;
+
 export function ApplicationRow(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   application,;
   processingId,;
@@ -32,7 +32,7 @@ export function ApplicationRow(): unknown {): unknown {): unknown {): unknown {)
 }: ApplicationRowProps) {;";";";""
   const [avatarError, setAvatarError] = useState(false);";";";";""
   const talentName: unknown = application.talent_profile?.full_name || 'Unknown;''
-;
+
   return (;
     <TableRow key={application.id}>;''
       <TableCell>;;

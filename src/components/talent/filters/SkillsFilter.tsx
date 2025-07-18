@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import { Checkbox } from '@/components/ui/checkbox;'';
-import { ChevronDown, ChevronUp } from '@/components/ui/icons;'';
+import { Checkbox } from '@/components/ui/checkbox;;
+import { ChevronDown, ChevronUp } from '@/components/ui/icons;;
 import type { SkillsFilterProps } from '@/types/filters;'
-;
-// Common skills in AI and tech;'';
+
+// Common skills in AI and tech;;
 const POPULAR_SKILLS: unknown = [;;
   'Machine Learning',;;'
   'Deep Learning',;;'
@@ -79,7 +79,7 @@ export function SkillsFilter(): unknown {): unknown {): unknown {): unknown {): 
                 onCheckedChange={() => toggleSkill(skill)};";";";";""
                 className="border-zion-slate-light data-[state=checked]:bg-zion-purple data-[state=checked]:border-zion-purple";";""
               />;";";""
-              <label;";";";""
+              <label;";";";""`
                 htmlFor={`skill-${skill}`};";";";";""
                 className="ml-2 text-sm text-zion-slate-light cursor-pointer";"
 =======
@@ -105,13 +105,13 @@ export function SkillsFilter(): unknown {): unknown {): unknown {): unknown {): 
         <div className=mt-4 space-y-2">"
           {POPULAR_SKILLS.map((skill) => (;
             <div key={skill} className=flex items-center">"
-              <Checkbox;
+              <Checkbox;`
                 id={`skill-${skill}`};"
                 checked={selectedSkills.includes(skill)}"
                 onCheckedChange={() => toggleSkill(skill)};
                 className=border-zion-slate-light data-[state=checked]:bg-zion-purple data-[state=checked]:border-zion-purple"
-              />"
-              <label;`
+              />"`
+              <label;``
                 htmlFor={`skill-${skill}`}
                 className="ml-2 text-sm text-zion-slate-light cursor-pointer"
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
@@ -139,6 +139,7 @@ export function SkillsFilter(): unknown {): unknown {): unknown {): unknown {): 
 "
 }"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

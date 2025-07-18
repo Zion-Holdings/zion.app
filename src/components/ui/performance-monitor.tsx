@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import React, { useState, useEffect } from 'react';';
-import { useAuth } from '@/hooks/useAuth;'';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'';
-import { Badge } from '@/components/ui/badge;'';
+import React, { useState, useEffect } from 'react';;
+import { useAuth } from '@/hooks/useAuth;;
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;;
+import { Badge } from '@/components/ui/badge;;
 import { Button } from '@/components/ui/button;'
 ;''
 interface PerformanceMetrics {;;
@@ -21,7 +21,7 @@ export function PerformanceMonitor(): unknown {): unknown {): unknown {): unknow
   const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [shouldShow, setShouldShow] = useState(false);''
-;
+
   useEffect(() => {;
     // Only run in development or when explicitly enabled;''
     const show: unknown =;;
@@ -221,7 +221,7 @@ export function PerformanceMonitor():
 <<<<<<< HEAD
     return null;''
   };
-;
+
   if (!isVisible) {;''
     return (;;
       <div className="fixed bottom-4 right-4 z-50">;";";";""

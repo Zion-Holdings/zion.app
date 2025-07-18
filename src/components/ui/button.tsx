@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
-import { Slot } from '@radix-ui/react-slot;'';
+import React from 'react';;
+import * as React from 'react';;
+import { Slot } from '@radix-ui/react-slot;;
 import { cva, type VariantProps } from 'class-variance-authority;'
 ;;
 import { cn } from '@/lib/utils;'
-;'';
+;;
 const buttonVariants: unknown = cva(;;
   'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-70 active:scale-95 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',;''
   {;;
@@ -55,7 +55,7 @@ const buttonVariants: unknown = cva(;;
     },;''
   },;
 );
-;'';
+;;
 export interface ButtonProps;;
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'size'>,;'
     VariantProps<typeof buttonVariants> {;
@@ -64,7 +64,7 @@ export interface ButtonProps;;
   leftIcon?: React.ReactNode;''
   rightIcon?: React.ReactNode;
 };
-;'';
+;;
 const Button: unknown "unknown = React.forwardRef<HTMLButtonElement", ButtonProps>(;"
 =======
 import React from 'react'
@@ -232,7 +232,7 @@ const Button: React.forwardRef<HTMLButtonElement, ButtonProps>(
   },;";";";""
 );";";";";""
 Button.displayName = 'Button;'
-;
+
 export { Button, buttonVariants };''
 ''''''
 =======

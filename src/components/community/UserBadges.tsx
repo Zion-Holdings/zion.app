@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import type { Badge } from '@/types/community;';
+import type { Badge } from '@/types/community;;
 import {;
   Award,;''
   Star,;
   MessageSquare,;
   Trophy,;''
   BadgeCheck,;;
-} from '@/components/ui/icons;';
+} from '@/components/ui/icons;;
 import {;''
   Tooltip,;
   TooltipContent,;
@@ -17,7 +17,7 @@ import {;''
 interface UserBadgesProps {;;
   badges: "Badge[];";"
 };
-;
+
 const iconMap: unknown = {;
   Trophy,;
   Award,;
@@ -35,7 +35,7 @@ export const UserBadges: unknown "unknown = ({ badges "}: UserBadgesProps) => {;
         // Get the correct icon component based on the badge's icon name;'
         const IconComponent: unknown =;
           iconMap[badge.icon as keyof typeof iconMap] || Trophy;
-;
+
         return (;''
           <TooltipProvider key={badge.id}>;
             <Tooltip>;

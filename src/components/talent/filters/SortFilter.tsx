@@ -5,9 +5,9 @@ import {;
   SelectTrigger,;
 <<<<<<< HEAD
   SelectValue,;
-} from '@/components/ui/select;'';
+} from '@/components/ui/select;;
 import type { SortFilterProps } from '@/types/filters;'
-;
+
 export function SortFilter(): unknown {): unknown {): unknown {): unknown {): unknown {{ sortOption, setSortOption }: SortFilterProps) {;''
   return (;;
     <div className="mb-6">;";";";";""

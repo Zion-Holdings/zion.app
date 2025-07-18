@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
+import React from 'react';;
+import * as React from 'react';;
 import { cva, type VariantProps } from 'class-variance-authority;'
 ;;
 import { cn } from '@/lib/utils;'
-;'';
+;;
 const alertVariants: unknown = cva(;;
   'relative w-full rounded-lg border p-4 [&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground',;''
   {;;
@@ -20,7 +20,7 @@ const alertVariants: unknown = cva(;;
     },;
   },;
 );
-;
+
 const Alert: unknown = React.forwardRef<;
   HTMLDivElement,;''
   React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>;
@@ -35,7 +35,7 @@ const Alert: unknown = React.forwardRef<;
   />;";";";""
 ));";";";";""
 Alert.displayName = 'Alert;'
-;
+
 const AlertTitle: unknown = React.forwardRef<;
   HTMLParagraphElement,;''
   React.HTMLAttributes<HTMLHeadingElement>;
@@ -47,7 +47,7 @@ const AlertTitle: unknown = React.forwardRef<;
   />;''
 ));;
 AlertTitle.displayName = 'AlertTitle;'
-;
+
 const AlertDescription: unknown = React.forwardRef<;
   HTMLParagraphElement,;''
   React.HTMLAttributes<HTMLParagraphElement>;
@@ -59,7 +59,7 @@ const AlertDescription: unknown = React.forwardRef<;
   />;''
 ));;
 AlertDescription.displayName = 'AlertDescription;'
-;
+
 export { Alert, AlertTitle, AlertDescription };''
 ''''''
 =======

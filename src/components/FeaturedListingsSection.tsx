@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import React from 'react''';
-import { ProductListingCard } from '@/components/ProductListingCard;'';
-import { GradientHeading } from '@/components/GradientHeading;'';
-import { Button } from '@/components/ui/button;'';
-import Link from 'next/link;'';
-import { cn } from '@/lib/utils'';
+import React from 'react';
+import { ProductListingCard } from '@/components/ProductListingCard;;
+import { GradientHeading } from '@/components/GradientHeading;;
+import { Button } from '@/components/ui/button;;
+import Link from 'next/link;;
+import { cn } from '@/lib/utils;
 
 interface FeaturedListingsSectionProps {;
   showTitle?: boolean;
   className?: string;
   style?: React.CSSProperties;
 };
-;
+
 =======
 import React from 'react'
 import { ProductListingCard } from '@/components/ProductListingCard'
@@ -348,7 +348,7 @@ export function FeaturedListingsSection(): unknown {): unknown {): unknown {): u
 };"";"
 ";""
 }";""
-}
+
 }""
 }""
 =======

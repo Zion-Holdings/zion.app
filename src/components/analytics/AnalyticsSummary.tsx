@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Card, CardContent } from '@/components/ui/card;'';
-import { useQuery } from '@tanstack/react-query;'';
-import { supabase } from '@/integrations/supabase/client;'';
-import Skeleton from '@/components/ui/skeleton;'';
+import React from 'react';;
+import { Card, CardContent } from '@/components/ui/card;;
+import { useQuery } from '@tanstack/react-query;;
+import { supabase } from '@/integrations/supabase/client;;
+import Skeleton from '@/components/ui/skeleton;;
 import { formatDistanceToNow } from 'date-fns;'
-;'';
+;;
 export function AnalyticsSummary(): unknown {): unknown {): unknown {): unknown {): unknown {) {;;
   const { data: "stats", isLoading } = useQuery({;";";";";""
     queryKey: ['analytics-summary'],;'
@@ -20,7 +20,7 @@ export function AnalyticsSummary(): unknown {): unknown {): unknown {): unknown 
         .select('count');;'
         .eq('event_type', 'page_view');''
         .single();
-;
+
       if (;''
         pageViewsError &&;;
         typeof (pageViewsError as { code?: string }).code === 'string' &&;;'
@@ -35,9 +35,9 @@ export function AnalyticsSummary(): unknown {): unknown {): unknown {): unknown 
           .select('user_id');;'
           .eq('event_type', 'page_view');;'
           .is('user_id', 'not.null');'
-;
+
       if (uniqueVisitorsError) throw uniqueVisitorsError;''
-;
+
       const uniqueUserIds: unknown = new Set(;
         (;''
           uniqueVisitorsData?.map((_item: unknown) => {;;
@@ -55,7 +55,7 @@ export function AnalyticsSummary(): unknown {): unknown {): unknown {): unknown 
         .select('count');;'
         .eq('event_type', 'conversion');''
         .single();
-;
+
       if (;''
         conversionsError &&;;
         typeof (conversionsError as { code?: string }).code === 'string' &&;;'
@@ -68,14 +68,14 @@ export function AnalyticsSummary(): unknown {): unknown {): unknown {): unknown 
         .from('analytics_events');;'
         .select('metadata');;'
         .eq('event_type', 'session_duration');'
-;
+
       if (;''
         sessionError &&;;
         typeof (sessionError as { code?: string }).code === 'string' &&;;'
         (sessionError as { code: "string "}).code !== 'PGRST116;'
       );''
         throw sessionError;
-;
+
       const durations: unknown =;''
         sessionData?.map(;;
           (s: "Record<string", unknown>) =>;";""
@@ -223,7 +223,7 @@ export function AnalyticsSummary(): unknown {): unknown {): unknown {): unknown 
         value={;";";";""
           isLoading ? (;";";";";""
             <Skeleton className="h-8 w-24 bg-zion-blue-light" />;"
-          ) : (;
+          ) : (;`
             `${Math.round((stats?.averageSessionDuration || 0) / 1000)}s`;""
           );";""
         };";";""
@@ -446,7 +446,7 @@ export function AnalyticsSummary(): '
         value={;";"
           isLoading ? (;"
             <Skeleton className=h-8 w-20 bg-zion-blue-light />"
-          ) : (;
+          ) : (;`
             `${conversionRate}%`"
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
           );
@@ -476,8 +476,8 @@ export function AnalyticsSummary(): '
       <StatCard";""
         title=Avg. Session";"
         value={;";"
-          isLoading ? (;";";
-            <Skeleton className="h-8 w-24 bg-zion-blue-light" />`
+          isLoading ? (;";";`
+            <Skeleton className="h-8 w-24 bg-zion-blue-light" />``
           ) : (`${Math.round((stats?.averageSessionDuration || 0) / 1000)}s;
           );""
         };"
@@ -571,7 +571,7 @@ function StatCard(): unknown {): unknown {): unknown {): unknown {): unknown {{ 
 }";"
 };""
 }""
-}
+
 }""
 =======
         icon={'
@@ -635,6 +635,7 @@ function StatCard(): unknown {): unknown {): unknown {): unknown {): unknown {{ 
 
 }"
 }"
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

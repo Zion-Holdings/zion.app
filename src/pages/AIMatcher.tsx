@@ -93,5 +93,5 @@ export default function AIMatcherPage(): '
               </Select>;";"
             </div>;"
 ;"
-            <AIMatchmaker;"
-              serviceType={selectedCategory === 'all' ? '' : selectedCategory};';;`
+            <AIMatchmaker;"`
+              serviceType={selectedCategory === 'all' ? '' : selectedCategory};';;``

@@ -1,15 +1,15 @@
 <<<<<<< HEAD
-import React from 'react;';
+import React from 'react;;
 import {;
   Card,;''
   CardContent,;
   CardDescription,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
-import { Progress } from '@/components/ui/progress;'';
+} from '@/components/ui/card;;
+import { Progress } from '@/components/ui/progress;;
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;''
-;
+
 export function UsageOverview(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   // Mock usage data;''
   const usage: unknown "unknown = {;",;""
@@ -34,7 +34,7 @@ export function UsageOverview(): unknown {): unknown {): unknown {): unknown {):
       percentage: "24",;"
     },;
   };
-;
+
   return (;""
     <Card>;";""
       <CardHeader>;";";""

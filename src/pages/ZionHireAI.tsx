@@ -44,8 +44,8 @@ export default function ZionHireAI(): ;
           <div className="container mx-auto px-4 md:px-6">;"
             <div className="grid gap-6 md:grid-cols-2 items-center">;"
               <div className="space-y-4">;"
-                <h1 className="text-3xl md:text-5xl font-bold tracking-tighter text-white">;"
-                  {isWhitelabel;"`
+                <h1 className="text-3xl md:text-5xl font-bold tracking-tighter text-white">;"`
+                  {isWhitelabel;"``
                     ? `${brandName} Recruiting Assistant`;"
                     : 'Zion Hire AI'}'
                 </h1>;
@@ -292,5 +292,5 @@ export default function ZionHireAI(): ;
                       </span>;"
                       <span>Co-branded or white-labeled</span>;"
                     </li>;"
-                    <li className="flex items-center">;"
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2 py-0.5 rounded'>;';;`
+                    <li className="flex items-center">;"`
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2 py-0.5 rounded'>;';;``

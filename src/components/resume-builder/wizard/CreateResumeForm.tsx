@@ -1,18 +1,18 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { Loader2 } from '@/components/ui/icons;'';
-import { Card, CardContent } from '@/components/ui/card;'';
+import { useState } from 'react';;
+import { Loader2 } from '@/components/ui/icons;;
+import { Card, CardContent } from '@/components/ui/card;;
 import { Button } from '@/components/ui/button;'
 ;;
 import type { CreateResumeFormProps } from './types;'
-;
+
 export const CreateResumeForm: unknown = ({;''
   onCreateResume,;
   onCancel,;
   isLoading,;''
 }: CreateResumeFormProps) => {;;
   const [newResumeTitle, setNewResumeTitle] = useState('');'
-;
+
   const handleSubmit: unknown = async () => {;
     if (!newResumeTitle.trim()) return;''
     await onCreateResume(newResumeTitle);

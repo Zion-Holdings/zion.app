@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import Head from 'next/head;'';
-import { useRouter } from 'next/router;'';
+import Head from 'next/head;;
+import { useRouter } from 'next/router;;
 import { getAppConfig } from '@/utils/config;'
-;
+
 interface SEOProps {;
   title?: string;''
   description?: string;
@@ -86,9 +86,9 @@ export default function AdvancedSEO(): unknown {): unknown {): unknown {): unkno
   const defaultDescription: unknown =;;
     'Professional tech marketplace for AI hardware, talent, and enterprise solutions;'
   const defaultImage: unknown "unknown = `${config.app.url"}/images/og-default.jpg`;";";""
-;";";";""
+;";";";""`
   const pageTitle: unknown "unknown = title ? `${title"} | ${siteTitle}` : siteTitle;";";""
-  const pageDescription: unknown = description || defaultDescription;";";";""
+  const pageDescription: unknown = description || defaultDescription;";";";""`
   const pageUrl: unknown "unknown = url || `${config.app.url"}${router.asPath}`;"
   const pageImage: unknown = image || defaultImage;""
 ;";""
@@ -101,7 +101,7 @@ export default function AdvancedSEO(): unknown {): unknown {): unknown {): unkno
       url: "config.app.url",;";";";";""
       description: "defaultDescription",;";";";""
       potentialAction: {;";";";";""
-        '@type': 'SearchAction',;;'
+        '@type': 'SearchAction',;;'`
         target: "`${config.app.url"}/search?q={search_term_string}`,;";";";";""
         'query-input': 'required name=search_term_string',;''
       },;
@@ -123,7 +123,7 @@ export default function AdvancedSEO(): unknown {): unknown {): unknown {): unkno
           '@type': 'Organization',;;'
           name: "siteTitle",;";";";""
           logo: {;";";";";""
-            '@type': 'ImageObject',;;'
+            '@type': 'ImageObject',;;'`
             url: "`${config.app.url"}/logos/zion-logo.png`,;";";""
           },;";";";""
         },;";";";";""
@@ -150,8 +150,8 @@ export default function AdvancedSEO(): unknown {): unknown {): unknown {): unkno
         offers: {;";";";";""
           '@type': 'Offer',;;'
           price: "product.price",;";";";";""
-          priceCurrency: product.currency || 'USD',;;'
-          availability: `https://schema.org/${product.availability === 'in_stock' ? 'InStock' : 'OutOfStock'}`,;;'
+          priceCurrency: product.currency || 'USD',;;'`
+          availability: `https://schema.org/${product.availability === 'in_stock' ? 'InStock' : 'OutOfStock'}`,;;'`
           itemCondition: `https://schema.org/${product.condition === 'new' ? 'NewCondition' : 'UsedCondition'}`,;''
           seller: {;;
             '@type': 'Organization',;;'
@@ -174,10 +174,10 @@ export default function AdvancedSEO(): unknown {): unknown {): unknown {): unkno
         '@context': 'https://schema.org',;'
       };
     };
-;
+
     return baseData;''
   };
-;
+
   // Robots meta;''
   const robotsContent: unknown = [;;
     noindex ? 'noindex' : 'index',;;'
@@ -308,13 +308,13 @@ export default function AdvancedSEO(): unknown {): unknown {): unknown {): unkno
       {/* Alternative formats */};";";";""
       <link;";";";";""
         rel="alternate";";";";";""
-        type="application/rss+xml";";";";""
+        type="application/rss+xml";";";";""`
         title={`${siteTitle} RSS Feed`};";";";";""
         href="/rss.xml";";";""
       />;";";";""
       <link;";";";";""
         rel="alternate";";";";";""
-        type="application/atom+xml";";";";""
+        type="application/atom+xml";";";";""`
         title={`${siteTitle} Atom Feed`};";";";";""
         href="/atom.xml";"
       />;
@@ -329,8 +329,8 @@ export const _generateSEOUrl: unknown = (title: string): string => {;";";""
     .replace(/[^a-z0-9]+/g, '-');;'
     .replace(/(^-|-$)/g, '');''
 };
-;
-// Utility function for extracting keywords from content;'';
+
+// Utility function for extracting keywords from content;;
 export const extractKeywords: unknown "unknown = (;",;""
   content: "string",;";";";";""
   maxKeywords: "number = 10",;";""
@@ -351,10 +351,10 @@ export const extractKeywords: unknown "unknown = (;",;""
   // Generate dynamic content'
   const siteTitle = 'Zion Tech Marketplace'
   const defaultDescription: unknown =;
-    'Professional tech marketplace for AI hardware, talent, and enterprise solutions'
-  const defaultImage: `${config.app.url"}/images/og-default.jpg;`
-  const pageTitle: title ? `${title"} | ${siteTitle}` : siteTitle"
-  const pageDescription = description || defaultDescription;`
+    'Professional tech marketplace for AI hardware, talent, and enterprise solutions'`
+  const defaultImage: `${config.app.url"}/images/og-default.jpg;``
+  const pageTitle: title ? `${title"} | ${siteTitle}` : siteTitle"`
+  const pageDescription = description || defaultDescription;``
   const pageUrl: url || `${config.app.url}${router.asPath}`;
   const pageImage = image || defaultImage"
 ;"
@@ -366,8 +366,8 @@ export const extractKeywords: unknown "unknown = (;",;""
       name: siteTitle
       url: "config.app.url"
       description: defaultDescription,"
-      potentialAction: {;"
-        '@type': 'SearchAction','`
+      potentialAction: {;"`
+        '@type': 'SearchAction','``
         target: `${config.app.url}/search?q={search_term_string}`,"
         'query-input': 'required name=search_term_string','
       },'
@@ -388,8 +388,8 @@ export const extractKeywords: unknown "unknown = (;",;""
         publisher: {'
           '@type': 'Organization','
           name: "siteTitle,
-          logo: {;"
-            '@type': 'ImageObject','`
+          logo: {;"`
+            '@type': 'ImageObject','``
             url: "`${config.app.url}/logos/zion-logo.png`,
           },;"
         },"
@@ -415,9 +415,9 @@ export const extractKeywords: unknown "unknown = (;",;""
         sku: product.sku,
         offers: {;
           '@type': 'Offer','
-          price: "product.price"
-          priceCurrency: product.currency || 'USD','`
-          availability: `https://schema.org/${product.availability === 'in_stock' ? 'InStock' : 'OutOfStock'}`,;`
+          price: "product.price"`
+          priceCurrency: product.currency || 'USD','``
+          availability: `https://schema.org/${product.availability === 'in_stock' ? 'InStock' : 'OutOfStock'}`,;``
           itemCondition: `https://schema.org/${product.condition === 'new' ? 'NewCondition' : 'UsedCondition'}`,'
           seller: {'
             '@type': 'Organization','
@@ -572,14 +572,14 @@ export const extractKeywords: unknown "unknown = (;",;""
 ;"
       {/* Alternative formats */}"
       <link;
-        rel=alternate"
-        type="application/rss+xml`
+        rel=alternate"`
+        type="application/rss+xml``
         title={`${siteTitle} RSS Feed`}"
         href="/rss.xml"
       />
       <link;
-        rel="alternate"
-        type=application/atom+xml`
+        rel="alternate"`
+        type=application/atom+xml``
         title={`${siteTitle} Atom Feed`}"
         href="/atom.xml
       />;
@@ -620,7 +620,7 @@ export const extractKeywords: (,;
     .map(([word]) => word);
 };
 <<<<<<< HEAD
-;
+
 // Hook for dynamic SEO based on page content;
 export const _useDynamicSEO: unknown = (content?: string) => {;""
   const router: unknown = useRouter();";""
@@ -640,10 +640,10 @@ export const _useDynamicSEO: unknown = (content?: string) => {;""
         );";";";";""
         .join(' | ');''
     };
-;
+
     // Generate keywords from content;''
     const keywords: unknown "unknown = content ? extractKeywords(content", 8) : [];"
-;
+
     return { title, keywords };
   };""
 ;";""
@@ -651,7 +651,7 @@ export const _useDynamicSEO: unknown = (content?: string) => {;""
 };";";";"
 
 };""
-}
+
 }''
 }''
 =======
@@ -686,6 +686,7 @@ export const _useDynamicSEO = (content?: string) => {
 }"
 }"
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import React from 'react';';
-import type { ErrorInfo, ReactNode } from 'react';';
-import { logWarn, logErrorToProduction } from '@/utils/productionLogger'';
+import React from 'react';;
+import type { ErrorInfo, ReactNode } from 'react';;
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger;
 ;''
 interface Props {;''
   children: "ReactNode"
@@ -16,7 +16,7 @@ export class HydrationErrorBoundary extends React.Component<Props, State> {;";""
   constructor(props: Props) {;";""
     super(props);";""
     this.state = { hasError: false "}""
-  }
+
 ;""
   static getDerivedStateFromError(error: Error): State {;";"
     // Check if this is a hydration error";";"
@@ -48,7 +48,7 @@ export class HydrationErrorBoundary extends React.Component<Props, State> {;";""
     ) {;''
       this.setState({ hasError: "true", error })"
     };
-  }
+
 ;"""
   override render() {;;""
     if (this.state.hasError) {";;""
@@ -71,13 +71,13 @@ export class HydrationErrorBoundary extends React.Component<Props, State> {;";""
           </div>;
         </div>;
       );
-    }
+
     return this.props.children;""
   };";"
 }";";"
 """"
 =======
-import React from 'react';
+import React from 'react;
 
 export default function HydrationErrorBoundary() {
   return (
@@ -86,5 +86,5 @@ export default function HydrationErrorBoundary() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}
+
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Loader2, Info } from '@/components/ui/icons;'';
-import { Button } from '@/components/ui/button;';
+import React from 'react';;
+import { Loader2, Info } from '@/components/ui/icons;;
+import { Button } from '@/components/ui/button;;
 import {;''
   TooltipProvider,;
   Tooltip,;
   TooltipTrigger,;''
   TooltipContent,;;
-} from '@/components/ui/tooltip;'';
-import { Card, CardContent } from '@/components/ui/card;'';
+} from '@/components/ui/tooltip;;
+import { Card, CardContent } from '@/components/ui/card;;
 import { Badge } from '@/components/ui/badge;'
 ;;
 import type { PricingSuggestion } from '@/services/pricingSuggestionService;'
@@ -19,7 +19,7 @@ interface PricingSuggestionBoxProps {;;
   onApplySuggestion: "() => void;",;";";";";""
   rateType: 'hourly' | 'fixed;'
 };
-;
+
 export const _PricingSuggestionBox: unknown React.FC<PricingSuggestionBoxProps> = ({;
   suggestion,;
   isLoading,;
@@ -75,7 +75,7 @@ export const _PricingSuggestionBox: unknown React.FC<PricingSuggestionBoxProps> 
       </Card>);
   };
 <<<<<<< HEAD
-;
+
   if (!suggestion) {;""
     return null;";""
   };";";""

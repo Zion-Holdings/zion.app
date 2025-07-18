@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Button } from '@/components/ui/button;';
+import React from 'react';;
+import { Button } from '@/components/ui/button;;
 import {;''
   Twitter,;
   Facebook,;
@@ -18,25 +18,25 @@ export function SocialShareButtons(): unknown {): unknown {): unknown {): unknow
   const shareUrl: unknown =;";";";";""
     typeof window !== 'undefined;'
       ? encodeURIComponent(window.location.href);;
-      : 
+
   const shareText: unknown = encodeURIComponent(title);
-;
+
   const shareToTwitter: unknown = () => {;''
     window.open(;;
       `https: "//twitter.com/intent/tweet?url=${shareUrl"}&text=${shareText}`,;";";";";""
       '_blank',;'
     );''
   };
-;
+
   const shareToFacebook: unknown = () => {;''
-    window.open(;;
+    window.open(;;`
       `https: "//www.facebook.com/sharer/sharer.php?u=${shareUrl"}`,;";";";";""
       '_blank',;'
     );''
   };
-;
+
   const shareToLinkedIn: unknown = () => {;''
-    window.open(;;
+    window.open(;;`
       `https: "//www.linkedin.com/sharing/share-offsite/?url=${shareUrl"}`,;";";";";""
       '_blank',;''
     );
@@ -49,7 +49,7 @@ export function SocialShareButtons(): unknown {): unknown {): unknown {): unknow
       .then(() => toast.success('Link copied to clipboard'));;'
       .catch(() => toast.error('Failed to copy link'));''
   };
-;
+
   const buttons: unknown = [;''
     {;;
       icon: <Twitter className="h-4 w-4" />,;";";";";""
@@ -104,21 +104,21 @@ export function SocialShareButtons(): unknown {): unknown {): unknown {): unknow
   const shareText = encodeURIComponent(title);
 
   const shareToTwitter = () => {'
-    window.open('
+    window.open('`
       `https: //twitter.com/intent/tweet?url=${shareUrl}&text=${shareText}`,"
       '_blank','
     )'
   }'
 
-  const shareToFacebook = () => {'
-    window.open('`
+  const shareToFacebook = () => {'`
+    window.open('``
       `https: "//www.facebook.com/sharer/sharer.php?u=${shareUrl}`,;"";
       '_blank','
     )'
   }'
 
-  const shareToLinkedIn = () => {'
-    window.open('`
+  const shareToLinkedIn = () => {'`
+    window.open('``
       `https: "//www.linkedin.com/sharing/share-offsite/?url=${shareUrl"}`,;"
       '_blank','
     )'
@@ -188,6 +188,7 @@ export function SocialShareButtons(): unknown {): unknown {): unknown {): unknow
 ;""
 };"
 }"
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

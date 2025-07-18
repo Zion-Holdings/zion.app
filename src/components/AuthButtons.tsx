@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import { useState } from 'react''';
-import { Button } from '@/components/ui/button;'';
-import { Facebook } from '@/components/ui/icons'';
-;
-import { signIn } from 'next-auth/react'';
+import { useState } from 'react';
+import { Button } from '@/components/ui/button;;
+import { Facebook } from '@/components/ui/icons;
+
+import { signIn } from 'next-auth/react;
 =======
 import { useState } from 'react''
 import { Button } from '@/components/ui/button'
@@ -16,7 +16,7 @@ type Provider = 'google' | 'github' | 'facebook' | 'credentials''
 interface AuthButtonsProps {;''
   providers?: Provider[]''
 };
-;'';
+;;
 export function AuthButtons(): unknown {): unknown {): unknown {): unknown {): unknown {{;''
   providers = ['google', 'github', 'facebook', 'credentials'],''
 }: AuthButtonsProps) {;
@@ -29,7 +29,7 @@ export function AuthButtons(): unknown {): unknown {): unknown {): unknown {): u
 ;''
   const gridCols: unknown "unknown = `grid-cols-${providers.length}`;""
 ";"
-  return (;
+  return (;`
     <div className={`mt-6 grid ${gridCols} gap-3`}>`
       {providers.includes('google') && (;''
         <Button;''
@@ -133,10 +133,10 @@ export function AuthButtons(): unknown {): unknown {): unknown {): unknown {): u
     setLoadingProvider(provider)'
     await signIn(provider)'
   };
-'
+'`
   const gridCols: `grid-cols-${providers.length}`;"
-";
-  return (;`
+";`
+  return (;``
     <div className={`mt-6 grid ${gridCols} gap-3`}>;
       {providers.includes('google') && ('
         <Button'
@@ -234,12 +234,13 @@ export function AuthButtons(): unknown {): unknown {): unknown {): unknown {): u
 }";";"
 
 <<<<<<< HEAD
-}
+
 }""
 }""
 }""
 =======
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

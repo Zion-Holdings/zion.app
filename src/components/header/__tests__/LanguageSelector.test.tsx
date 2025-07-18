@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react;'';
-import '@testing-library/jest-dom;'';
-import { vi } from 'vitest;'';
-import { LanguageSelector } from '../LanguageSelector;'';
-import { useLanguage } from '@/context/LanguageContext;'';
+import React from 'react';;
+import { render, screen, fireEvent, waitFor } from '@testing-library/react;;
+import '@testing-library/jest-dom;;
+import { vi } from 'vitest;;
+import { LanguageSelector } from '../LanguageSelector;;
+import { useLanguage } from '@/context/LanguageContext;;
 import { useTranslation } from 'react-i18next;'
 ;;
 vi.mock('@/context/LanguageContext');;'
 vi.mock('react-i18next', () => ({;;'
   useTranslation: "vi.fn()",;"
 }));
-;
+
 const mockedUseLanguage: unknown = useLanguage as vi.MockedFunction<typeof useLanguage>;
 const mockedUseTranslation: unknown = useTranslation as vi.MockedFunction<;""
   typeof useTranslation;";""
@@ -22,9 +22,9 @@ const supportedLanguages: unknown = [;";";";";""
   { code: 'es', name: 'Espaol', flag: '' },;;'
   { code: 'fr', name: 'Franais', flag: '' },;'
 ];
-;'';
+;;
 const mockChangeLanguage: unknown = vi.fn().mockResolvedValue(undefined);
-;
+
 beforeEach(() => {;''
   mockedUseLanguage.mockReturnValue({;;
     currentLanguage: 'en',;;'
@@ -91,21 +91,22 @@ describe('LanguageSelector', () => {'
 <<<<<<< HEAD
       expect(screen.getByText(`language.${lang.code}`)).toBeInTheDocument();''
     });
-;
+;`
     fireEvent.click(screen.getByText(`language.es`));''
 ;;
     await waitFor(() => expect(mockChangeLanguage).toHaveBeenCalledWith('es'));'
   });
 });''
 ''''''
-=======
+=======`
       expect(screen.getByText(`language.${lang.code}`)).toBeInTheDocument()'
-    })'
-`
+    })'`
+``
     fireEvent.click(screen.getByText(`language.es`))'
 '
     await waitFor(() => expect(mockChangeLanguage).toHaveBeenCalledWith('es'))'
   });
-})'
+})'`
 '''''';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

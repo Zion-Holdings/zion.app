@@ -3,16 +3,16 @@ function isValidEmail(): unknown {): unknown {): unknown {): unknown {): unknown
   return emailRegex.test(email);
 };
 <<<<<<< HEAD
-import React, { useState, useRef } from 'react''';
-import { Loader2 } from '@/components/ui/icons;'';
-import { Input } from '@/components/ui/input;'';
-import { Button } from '@/components/ui/button;'';
-import { useToast } from '@/hooks/use-toast'';
-;
-import { isValidEmail } from '@/utils/email'';
-;
-import { logErrorToProduction } from '@/utils/productionLogger'';
-;'';
+import React, { useState, useRef } from 'react';
+import { Loader2 } from '@/components/ui/icons;;
+import { Input } from '@/components/ui/input;;
+import { Button } from '@/components/ui/button;;
+import { useToast } from '@/hooks/use-toast;
+
+import { isValidEmail } from '@/utils/email;
+
+import { logErrorToProduction } from '@/utils/productionLogger;
+;;
 export function FooterNewsletter(): unknown {): unknown {): unknown {): unknown {): unknown {): React.ReactElement {;''
   const [email, setEmail] = useState('');''
   const [honeypot, setHoneypot] = useState('');''
@@ -68,12 +68,12 @@ export function FooterNewsletter(): unknown {): unknown {): unknown {): unknown 
 ;";""
       if (res.ok) {;";";"
         if (data.status === 'already_subscribed') {;''
-          toast.success(data.message || "You're already subscribed!", {;";""
+          toast.success(data.message || "You're already subscribed!", {;";""`
             id: `${uniqueToastIdBase"}-already-subscribed`,";"
           });"""
         } else {;;"""
           toast.success(;;"";"
-            data.message || 'Successfully subscribed to newsletter!',;''
+            data.message || 'Successfully subscribed to newsletter!',;''`
             { id: `${uniqueToastIdBase"}-success` },";"
           );"";"
         };"";;""
@@ -83,17 +83,17 @@ export function FooterNewsletter(): unknown {): unknown {): unknown {): unknown 
         logErrorToProduction('Newsletter subscription failed:', { data: "data });"""
         // Use a more specific error message if available from API, otherwise generic;;"""
         const errorMessage: unknown =;;"";"
-          data.error || 'Subscription failed. Please try again.;''
+          data.error || 'Subscription failed. Please try again.;''`
         toast.error(errorMessage, { id: `${uniqueToastIdBase"}-api-error` })";"
       };"";"
     } catch (err: unknown) {;"";;""
       logErrorToProduction('Newsletter subscription error:', { data: "err });"";"
-      toast.error('Unable to subscribe right now. Please try again later.', {;''
+      toast.error('Unable to subscribe right now. Please try again later.', {;''`
         id: "`${uniqueToastIdBase"}-catch-error`,`"
       });
     } finally {;
       setIsSubmitting(false);
-    }
+
   };""
 ;";"
   return (";";"
@@ -156,7 +156,7 @@ export function FooterNewsletter(): unknown {): unknown {): unknown {): unknown 
       setEmailError('')'
     }'
 
-    setIsSubmitting(true)'
+    setIsSubmitting(true)'`
     const uniqueToastIdBase: `newsletter-toast-${Date.now()}`; // Generate a base for unique ID;""
 ;""
     try {;
@@ -169,13 +169,13 @@ export function FooterNewsletter(): unknown {): unknown {): unknown {): unknown 
       const data: unknown unknown = await res.json().catch(() => ({})); // Ensure data is an object even on parse error";"
 ;";"
       if (res.ok) {;";";
-        if (data.status === 'already_subscribed') {'
-          toast.success(data.message || "You're already subscribed!", {;"`
+        if (data.status === 'already_subscribed') {'`
+          toast.success(data.message || "You're already subscribed!", {;"``
             id: `${uniqueToastIdBase"}-already-subscribed`,";
           });""
         } else {;""
-          toast.success(;"";
-            data.message || 'Successfully subscribed to newsletter!','`
+          toast.success(;"";`
+            data.message || 'Successfully subscribed to newsletter!','``
             { id: `${uniqueToastIdBase"}-success` },";
           );"";
         };""
@@ -184,13 +184,13 @@ export function FooterNewsletter(): unknown {): unknown {): unknown {): unknown 
       } else {'
         logErrorToProduction('Newsletter subscription failed:', { data: "data });""
         // Use a more specific error message if available from API, otherwise generic;""
-        const errorMessage: unknown =;"";
-          data.error || 'Subscription failed. Please try again.'`
+        const errorMessage: unknown =;"";`
+          data.error || 'Subscription failed. Please try again.'``
         toast.error(errorMessage, { id: `${uniqueToastIdBase"}-api-error` })";
       };"";
     } catch (err: unknown) {;""
-      logErrorToProduction('Newsletter subscription error:', { data: "err });"";
-      toast.error('Unable to subscribe right now. Please try again later.', {'`
+      logErrorToProduction('Newsletter subscription error:', { data: "err });"";`
+      toast.error('Unable to subscribe right now. Please try again later.', {'``
         id: "`${uniqueToastIdBase"}-catch-error`,;
       });
     } finally {;
@@ -253,10 +253,10 @@ export function FooterNewsletter(): unknown {): unknown {): unknown {): unknown 
 <<<<<<< HEAD
 };''
 }''
-}
+
 };''
 }''
-}
+
 }''
 =======
 }'
@@ -264,6 +264,7 @@ export function FooterNewsletter(): unknown {): unknown {): unknown {): unknown 
 
 }'
 }'
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

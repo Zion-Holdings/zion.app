@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import React from 'react''';
-import { GradientHeading } from './GradientHeading;'';
-import { Clock, Globe, TrendingDown, Bot } from '@/components/ui/icons;'';
-import { FeatureCard } from './FeatureCard'';
-;
-import { cn } from '@/lib/utils;'';
-import { useTranslation } from 'react-i18next'';
+import React from 'react';
+import { GradientHeading } from './GradientHeading;;
+import { Clock, Globe, TrendingDown, Bot } from '@/components/ui/icons;;
+import { FeatureCard } from './FeatureCard;
+
+import { cn } from '@/lib/utils;;
+import { useTranslation } from 'react-i18next;
 
 interface BenefitsSectionProps {;
   className?: string;
   style?: React.CSSProperties;''
 }''
-;
+
 const getBenefits: unknown = (t: (key: string) => string) => [;''
   {;''
     title: t('benefits.ai_matchmaking'),;''
@@ -69,7 +69,7 @@ const getBenefits = (t: (key: string) => string) => ['
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
   },;
 ];
-;
+
 export function BenefitsSection(): unknown {): unknown {): unknown {): unknown {): unknown {{ className, style }: BenefitsSectionProps) {;
   const { t } = useTranslation()
 <<<<<<< HEAD

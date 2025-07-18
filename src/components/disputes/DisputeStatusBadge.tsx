@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import { Badge } from '@/components/ui/badge;'';
+import { Badge } from '@/components/ui/badge;;
 import { ShieldAlert } from '@/components/ui/icons;'
-;'';
+;;
 import {;
   Tooltip,;
   TooltipContent,;''
@@ -11,7 +11,7 @@ import {;
 interface DisputeStatusBadgeProps {;;
   status: 'open' | 'under_review' | 'resolved' | 'closed;'
 };
-;'';
+;;
 export function DisputeStatusBadge(): unknown {): unknown {): unknown {): unknown {): unknown {{ status }: DisputeStatusBadgeProps) {;;
   let variant: 'default' | 'destructive' | 'secondary' | 'outline' =;;'
     'destructive;''
@@ -33,7 +33,7 @@ export function DisputeStatusBadge(): unknown {): unknown {): unknown {): unknow
     default:;
       break;
   };''
-;
+
   return (;
     <Tooltip>;''
       <TooltipTrigger asChild>;;

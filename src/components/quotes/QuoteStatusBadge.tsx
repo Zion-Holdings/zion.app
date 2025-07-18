@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import { Badge } from '@/components/ui/badge;'';
+import { Badge } from '@/components/ui/badge;;
 import type { QuoteStatus } from '@/types/quotes;'
 ;;
 const statusConfig: unknown "Record<QuoteStatus", { label: "string; className: string "}> =;";";";""

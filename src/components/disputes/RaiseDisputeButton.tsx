@@ -1,15 +1,15 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { Button } from '@/components/ui/button;'';
-import { ShieldAlert } from '@/components/ui/icons;';
+import React, { useState } from 'react';;
+import { Button } from '@/components/ui/button;;
+import { ShieldAlert } from '@/components/ui/icons;;
 import {;
   Dialog,;''
   DialogContent,;
   DialogHeader,;
   DialogTitle,;''
   DialogDescription,;;
-} from '@/components/ui/dialog;'';
-import { DisputeForm } from './DisputeForm;'';
+} from '@/components/ui/dialog;;
+import { DisputeForm } from './DisputeForm;;
 import { useRouter } from 'next/router;'
 ;''
 interface RaiseDisputeButtonProps {;
@@ -25,7 +25,7 @@ interface RaiseDisputeButtonProps {;
   size?: 'default' | 'sm' | 'lg' | 'icon;'
   className?: string;
 };''
-;
+
 export function RaiseDisputeButton(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   projectId,;''
   milestoneId,;;
@@ -126,9 +126,9 @@ export function RaiseDisputeButton(): unknown {): unknown {): unknown {): unknow
     </>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -139,6 +139,7 @@ export function RaiseDisputeButton(): unknown {): unknown {): unknown {): unknow
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

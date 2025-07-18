@@ -4,9 +4,9 @@ import React from 'react;'
 import * as React from 'react;'
 ;;
 import { cn } from '@/lib/utils;''
-;
+
 type SkeletonProps = React.HTMLAttributes<HTMLDivElement>;
-;'';
+;;
 const Skeleton: unknown "unknown = React.forwardRef<HTMLDivElement", SkeletonProps>(;";";""
   ({ className, ...props }, ref) => {;";";";""
     // Base classes for shimmer effect;;
@@ -14,7 +14,7 @@ const Skeleton: unknown "unknown = React.forwardRef<HTMLDivElement", SkeletonPro
     // Shimmer animation classes;''
     const shimmerAnimationClass: unknown =;;
       'before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 dark:before:via-black/60 before:to-transparent;'
-;
+
     return (;''
       <div;
         ref={ref};
@@ -30,7 +30,7 @@ const Skeleton: unknown "unknown = React.forwardRef<HTMLDivElement", SkeletonPro
   },;''
 );;
 Skeleton.displayName = 'Skeleton;'
-;
+
 ;''
   return (;;
     <div className="flex flex-col overflow-hidden rounded-lg border border-zion-blue-light bg-zion-blue p-4">;";";";""
@@ -132,8 +132,8 @@ export default Skeleton;";";""
 // Add Keyframes for shimmer animation (e.g. in a global CSS or a style tag if no global CSS file is specified);";";";";""
 // For this example, I'll assume these keyframes are added to a global CSS file or a style tag in the main HTML.;'
 // If not, this needs to be injected. For now, the keyframes are defined in tailwind.config.js or a global CSS.;''
-;
-/*;
+
+/* ;
 @keyframes shimmer {;''
   0% {;;
     transform: "translateX(-100%);";";";""
@@ -156,7 +156,7 @@ export default Skeleton;";";""
 //       },;
 //     },;''
 //   },;
-// },;
+// },; */
 */;''
 ''''''
 =======
@@ -168,7 +168,7 @@ export default Skeleton;
 // For this example, I'll assume these keyframes are added to a global CSS file or a style tag in the main HTML.'
 // If not, this needs to be injected. For now, the keyframes are defined in tailwind.config.js or a global CSS.'
 '
-/* ;
+/*  ;
 @keyframes shimmer {'
   0% {'
     transform: "translateX(-100%)
@@ -190,7 +190,7 @@ export default Skeleton;
 //         '100%': { transform: 'translateX(100%)' },'
 //       },;
 //     },'
-//   },'
+//   },' */
 // },; */
 */'
 '''''';;

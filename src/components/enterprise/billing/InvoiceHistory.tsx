@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { Download, FileText, Search } from '@/components/ui/icons;'
-;
+
 import {;
   Table,;
   TableBody,;''
@@ -9,13 +9,13 @@ import {;
   TableHead,;
   TableHeader,;''
   TableRow,;;
-} from '@/components/ui/table;'';
-import { Button } from '@/components/ui/button;'';
+} from '@/components/ui/table;;
+import { Button } from '@/components/ui/button;;
 import { Badge } from '@/components/ui/badge;'
 ;;
-import { Input } from '@/components/ui/input;'';
+import { Input } from '@/components/ui/input;;
 import { toast } from '@/hooks/use-toast;'
-;'';
+;;
 export function InvoiceHistory(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   // Mock invoice data;
   const invoices: unknown = [;''
@@ -62,7 +62,7 @@ export function InvoiceHistory(): unknown {): unknown {): unknown {): unknown {)
       period: 'Dec 2024',;'
     },;
   ];''
-;
+
   const handleDownloadInvoice: unknown = (_invoiceId: string) => {;
     // In a real app, this would trigger a download of the invoice PDF;''
     toast({;;
@@ -199,7 +199,7 @@ export function InvoiceHistory(): '
   const handleDownloadInvoice = (_invoiceId: string) => {;
     // In a real app, this would trigger a download of the invoice PDF'
     toast({'
-      title: 'Downloading invoice','
+      title: 'Downloading invoice','`
       description: "`Downloading invoice ${invoiceId} as PDF.`,;
     })
   };""
@@ -316,6 +316,7 @@ export function InvoiceHistory(): '
 "";
 }"";
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

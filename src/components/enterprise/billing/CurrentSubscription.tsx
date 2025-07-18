@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import React from 'react;';
+import React from 'react;;
 import {;
   Card,;
   CardContent,;''
@@ -7,10 +7,10 @@ import {;
   CardFooter,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
-import { Button } from '@/components/ui/button;'';
+} from '@/components/ui/card;;
+import { Button } from '@/components/ui/button;;
 import { Badge } from '@/components/ui/badge;''
-;
+
 export function CurrentSubscription(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   // Mock subscription data;''
   const subscription: unknown "unknown = {;",;""

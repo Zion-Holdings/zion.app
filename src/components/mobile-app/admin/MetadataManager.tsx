@@ -1,18 +1,18 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { useForm } from 'react-hook-form;'';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;'';
-import { MetadataForm } from './MetadataForm;'';
-import { ScreenshotManager } from './ScreenshotManager;'';
-import { ChangelogManager } from './ChangelogManager;'';
-import { ExportPanel } from './ExportPanel;'';
-import { Button } from '@/components/ui/button;'';
+import React, { useState } from 'react';;
+import { useForm } from 'react-hook-form;;
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;;
+import { MetadataForm } from './MetadataForm;;
+import { ScreenshotManager } from './ScreenshotManager;;
+import { ChangelogManager } from './ChangelogManager;;
+import { ExportPanel } from './ExportPanel;;
+import { Button } from '@/components/ui/button;;
 import { toast } from 'sonner;'
 ;;
 export type AppPlatform = 'ios' | 'android;'
 ;;
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger;'
-;'';
+;;
 export type AppMetadataValues = {;;
   appTitle: "string;",;";";";";""
   shortDescription: "string;",";";";";""
@@ -37,11 +37,11 @@ const defaultValues: unknown "AppMetadataValues = {;",;";";";";""
   version: '1.0.0',;;'
   _platform: 'ios',;'
 };
-;'';
+;;
 export const _MetadataManager: unknown React.FC = () => {;;
   const [currentPlatform, setCurrentPlatform] = useState<AppPlatform>('ios');''
   const [isSaving, setIsSaving] = useState(false);
-;
+
   // Separate form instances for each platform;''
   const iosForm: unknown "unknown = useForm<AppMetadataValues>({;",;""
     defaultValues: "{ ...defaultValues", platform: 'ios' },;'
@@ -51,10 +51,10 @@ export const _MetadataManager: unknown React.FC = () => {;;
   });''
 ;;
   const currentForm: unknown = currentPlatform === 'ios' ? _iosForm : androidForm;'
-;
+
   const handleSaveMetadata: unknown = async (data: AppMetadataValues) => {;''
     setIsSaving(true);
-;
+
     try {;''
       // This would be implemented with actual API calls in production;;
       logInfo('Saving metadata for ${currentPlatform} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}', { data: "{ data "} });"
@@ -148,7 +148,7 @@ export const _MetadataManager: unknown React.FC = () => {'
       // Simulate API call;"
       await new Promise((resolve) => setTimeout(resolve, 1000));"
 
-      toast.success(;
+      toast.success(;`
         `${currentPlatform === 'ios' ? 'iOS' : 'Android'} metadata saved successfully!`,;
       )'
     } catch {'
@@ -261,6 +261,7 @@ export const _MetadataManager: unknown React.FC = () => {'
       </Tabs>"
     </div>;
   );"
-}"
+}"`
 ""'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

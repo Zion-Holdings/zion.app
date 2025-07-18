@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Button } from './button;'';
+import React from 'react';;
+import { Button } from './button;;
 import { RefreshCw } from '@/components/ui/icons;'
-;
+
 interface EmptyStateProps {;
   text?: string;
   description?: string;
@@ -10,7 +10,7 @@ interface EmptyStateProps {;
   showRetry?: boolean;''
   icon?: React.ReactNode;
 };
-;'';
+;;
 export function EmptyState(): unknown {): unknown {): unknown {): unknown {): unknown {{;;
   text = 'No items available',;'
   description,;

@@ -1,21 +1,21 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { useTranslation } from 'react-i18next;'';
-import { Button } from '@/components/ui/button;'';
-import { fireEvent } from '@/lib/analytics;'';
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger;';
+import React, { useState } from 'react';;
+import { useTranslation } from 'react-i18next;;
+import { Button } from '@/components/ui/button;;
+import { fireEvent } from '@/lib/analytics;;
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger;;
 import {;''
   DropdownMenu,;
   DropdownMenuContent,;
   DropdownMenuItem,;''
   DropdownMenuTrigger,;;
-} from '@/components/ui/dropdown-menu;'';
+} from '@/components/ui/dropdown-menu;;
 import {;
   useLanguage,;
   type SupportedLanguage,;''
   SUPPORTED_LANGUAGES,;;
 } from '@/context/LanguageContext;'
-;
+
 export function LanguageSelector(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
 =======
 import React, { useState } from 'react''
@@ -103,13 +103,13 @@ export function LanguageSelector(): ;
             className={`cursor-pointer transition-colors ${;";";";""
               currentLanguage === lang.code;";";";";""
                 ? 'bg-primary/20 text-primary' // Use primary color for selected;;'
-                : 'text-popover-foreground hover:bg-accent hover:text-accent-foreground' // Use popover text and accent for hover;''
+                : 'text-popover-foreground hover:bg-accent hover:text-accent-foreground' // Use popover text and accent for hover;''`
             }`};
             onClick={() => handleLanguageChange(lang.code)};
             onSelect={() => handleLanguageChange(lang.code)};''
           >;;
             <div className="flex items-center gap-2 w-full">;";";";";""
-              <span className="text-lg flex-shrink-0">{lang.flag}</span>;";";";";""
+              <span className="text-lg flex-shrink-0">{lang.flag}</span>;";";";";""`
               <span className="flex-1">{t(`language.${lang.code}`)}</span>;";";";""
               {currentLanguage === lang.code && (;";";";";""
                 <span className="text-primary text-xs"></span> // Use primary color for checkmark;"
@@ -171,17 +171,17 @@ export function LanguageSelector(): ;
       >;
         {availableLanguages.map((lang) => (
           <DropdownMenuItem;""
-            key={lang.code};"
+            key={lang.code};"`
             className={`cursor-pointer transition-colors ${";"
               currentLanguage === lang.code";""
-                ? 'bg-primary/20 text-primary' // Use primary color for selected'
-                : 'text-popover-foreground hover:bg-accent hover:text-accent-foreground' // Use popover text and accent for hover'}`
+                ? 'bg-primary/20 text-primary' // Use primary color for selected'`
+                : 'text-popover-foreground hover:bg-accent hover:text-accent-foreground' // Use popover text and accent for hover'}``
             }`};
             onClick={() => handleLanguageChange(lang.code)};
             onSelect={() => handleLanguageChange(lang.code)}'
           >'
-            <div className=flex items-center gap-2 w-full>"
-              <span className="text-lg flex-shrink-0>{lang.flag}</span>;"";`
+            <div className=flex items-center gap-2 w-full>"`
+              <span className="text-lg flex-shrink-0>{lang.flag}</span>;"";``
               <span className="flex-1">{t(`language.${lang.code}`)}</span>;"
               {currentLanguage === lang.code && (;";"
                 <span className=text-primary text-xs">✓</span> // Use primary color for checkmark"
@@ -208,6 +208,7 @@ export function LanguageSelector(): ;
 "";
 }"";
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

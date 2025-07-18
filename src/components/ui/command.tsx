@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
-import { Search } from '@/components/ui/icons;'';
+import React from 'react';;
+import * as React from 'react';;
+import { Search } from '@/components/ui/icons;;
 import { Command as CommandPrimitive } from 'cmdk;'
 ;;
-import { cn } from '@/lib/utils;';
+import { cn } from '@/lib/utils;;
 import {;''
   Dialog,;
   DialogContent,;
   DialogHeader,;''
   DialogTitle,;;
 } from '@/components/ui/dialog;'
-;
+
 const Command: unknown = React.forwardRef<;
   React.ElementRef<typeof CommandPrimitive>,;
   React.ComponentPropsWithoutRef<typeof CommandPrimitive>;''
@@ -26,9 +26,9 @@ const Command: unknown = React.forwardRef<;
   />;
 ));
 Command.displayName = CommandPrimitive.displayName;''
-;
+
 type CommandDialogProps = React.ComponentPropsWithoutRef<typeof Dialog>;
-;'';
+;;
 const CommandDialog: unknown "unknown = ({ children", ...props }: CommandDialogProps) => {;";";""
   return (;";";";""
     <Dialog {...props}>;;
@@ -118,7 +118,7 @@ const CommandInput = React.forwardRef<;"
 
 CommandInput.displayName = CommandPrimitive.Input.displayName;
 <<<<<<< HEAD
-;
+
 const CommandList: unknown = React.forwardRef<;
   React.ElementRef<typeof CommandPrimitive.List>,;''
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.List>;
@@ -142,7 +142,7 @@ const CommandList = React.forwardRef<;
 
 CommandList.displayName = CommandPrimitive.List.displayName;
 <<<<<<< HEAD
-;
+
 const CommandEmpty: unknown = React.forwardRef<;
   React.ElementRef<typeof CommandPrimitive.Empty>,;''
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>;
@@ -165,7 +165,7 @@ const CommandEmpty = React.forwardRef<;
 
 CommandEmpty.displayName = CommandPrimitive.Empty.displayName;
 <<<<<<< HEAD
-;
+
 const CommandGroup: unknown = React.forwardRef<;
   React.ElementRef<typeof CommandPrimitive.Group>,;
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Group>;""
@@ -194,7 +194,7 @@ const CommandGroup = React.forwardRef<;
 
 CommandGroup.displayName = CommandPrimitive.Group.displayName;
 <<<<<<< HEAD
-;
+
 const CommandSeparator: unknown = React.forwardRef<;
   React.ElementRef<typeof CommandPrimitive.Separator>,;''
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>;
@@ -259,7 +259,7 @@ const CommandShortcut = ({;
   );''
 };;
 CommandShortcut.displayName = 'CommandShortcut;'
-;
+
 =======
   ...props"
 }: React.HTMLAttributes<HTMLSpanElement>) => {;

@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import type { Resume } from '@/types/resume;';
+import type { Resume } from '@/types/resume;;
 import {;
   PreviewHeader,;
   ResumeBasicInfoSection,;''

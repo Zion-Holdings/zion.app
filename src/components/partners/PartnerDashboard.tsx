@@ -5,10 +5,10 @@ import {;
   CardHeader,;
 <<<<<<< HEAD
   CardTitle,;
-} from '@/components/ui/card;'';
-import { TrendingUp, Users, DollarSign } from '@/components/ui/icons;'';
+} from '@/components/ui/card;;
+import { TrendingUp, Users, DollarSign } from '@/components/ui/icons;;
 import { Button } from '@/components/ui/button;''
-;
+
 export function PartnerDashboard(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   // Placeholder data - would come from API in real implementation;''
   const stats: unknown "unknown = {;",;""

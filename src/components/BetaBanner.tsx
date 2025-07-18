@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import { Alert, AlertDescription } from '@/components/ui/alert'';
-;'';
+import { Alert, AlertDescription } from '@/components/ui/alert;
+;;
 export const _BetaBanner: unknown = () => {;''
   if (process.env.NEXT_PUBLIC_APP_ENV !== 'beta') return null;''
   return (;''

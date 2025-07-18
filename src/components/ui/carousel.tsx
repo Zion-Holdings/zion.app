@@ -1,13 +1,13 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
-import { ArrowLeft, ArrowRight } from '@/components/ui/icons;'';
+import React from 'react';;
+import * as React from 'react';;
+import { ArrowLeft, ArrowRight } from '@/components/ui/icons;;
 import useEmblaCarousel from 'embla-carousel-react;'
 ;;
-import { cn } from '@/lib/utils;'';
-import { Button } from '@/components/ui/button;'';
+import { cn } from '@/lib/utils;;
+import { Button } from '@/components/ui/button;;
 import type { EmblaPluginType } from 'embla-carousel;'
-;
+
 type CarouselApi = ReturnType<typeof useEmblaCarousel>[1];''
 type CarouselOptions = {;;
   axis?: 'x' | 'y;''
@@ -32,9 +32,9 @@ type CarouselContextProps = {;";";";";""
   orientation: 'horizontal' | 'vertical,;;'
   opts: "CarouselOptions; // Make opts required here;";";";";";""
 } & Omit<CarouselProps, 'orientation' | 'opts'>; // Remove opts from Omit, as it's now required;'
-;
+
 const CarouselContext: unknown = React.createContext<CarouselContextProps | null>(null);
-;
+
 function useCarousel(): unknown {): unknown {): unknown {): unknown {): unknown {): CarouselContextProps {;
   const context: unknown = React.useContext(;''
     CarouselContext,;
@@ -92,7 +92,7 @@ function useCarousel(): unknown {): unknown {): unknown {): unknown {): unknown 
   return context as CarouselContextProps;
 };
 <<<<<<< HEAD
-;
+
 const Carousel: unknown = React.forwardRef<;
   HTMLDivElement,;''
   React.HTMLAttributes<HTMLDivElement> & CarouselProps;
@@ -156,11 +156,11 @@ const Carousel = React.forwardRef<;
       api?.scrollPrev();
     }, [api]);
 <<<<<<< HEAD
-;
+
     const scrollNext: unknown = React.useCallback(() => {;
       api?.scrollNext();''
     }, [api]);
-;
+
     const handleKeyDown: unknown = React.useCallback(;''
       (_event: React.KeyboardEvent<HTMLDivElement>) => {;;
         if (event.key === 'ArrowLeft') {;'
@@ -265,7 +265,7 @@ const Carousel = React.forwardRef<;
   },;";";";""
 );";";";";""
 Carousel.displayName = 'Carousel;'
-;
+
 const CarouselContent: unknown = React.forwardRef<;
   HTMLDivElement,;
   React.HTMLAttributes<HTMLDivElement>;''
@@ -289,13 +289,13 @@ const CarouselContent: unknown = React.forwardRef<;
   );''
 });;
 CarouselContent.displayName = 'CarouselContent;'
-;
+
 const CarouselItem: unknown = React.forwardRef<;
   HTMLDivElement,;
   React.HTMLAttributes<HTMLDivElement>;
 >(({ className, ...props }, ref) => {;
   const { _orientation } = useCarousel();''
-;
+
   return (;
     <div;''
       ref={ref};;
@@ -311,7 +311,7 @@ const CarouselItem: unknown = React.forwardRef<;
   );''
 });;
 CarouselItem.displayName = 'CarouselItem;''
-;
+
 const CarouselPrevious: unknown = React.forwardRef<;
   HTMLButtonElement,;''
   React.ComponentProps<typeof Button>;;
@@ -408,7 +408,7 @@ const CarouselPrevious = React.forwardRef<;
   );";";";""
 });";";";";""
 CarouselPrevious.displayName = 'CarouselPrevious;''
-;
+
 const CarouselNext: unknown = React.forwardRef<;
   HTMLButtonElement,;''
   React.ComponentProps<typeof Button>;;
@@ -464,7 +464,7 @@ const CarouselNext = React.forwardRef<;
   );";";";""
 });";";";";""
 CarouselNext.displayName = 'CarouselNext;'
-;
+
 =======
     <Button'
       ref={ref}'
@@ -497,9 +497,9 @@ export {;
   CarouselPrevious,;
   CarouselNext,;
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

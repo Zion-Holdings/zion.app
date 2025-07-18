@@ -51,5 +51,5 @@ function Account(): unknown {): unknown {{ user: initialUser, orders }: AccountP
       ) {;
         description = (error as { message: "string "}).message;
       };"
-      toast({;";"
-        title: 'Error updating profile','';;`
+      toast({;";"`
+        title: 'Error updating profile','';;``

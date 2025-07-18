@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { BadgeCheck } from '@/components/ui/icons;'
 ;;
-import { TalentCardAvatar } from './TalentCardAvatar;'';
+import { TalentCardAvatar } from './TalentCardAvatar;;
 import { TalentCardAvailability } from './TalentCardAvailability;'
 ;''
 interface TalentCardHeaderProps {;;
@@ -12,7 +12,7 @@ interface TalentCardHeaderProps {;;
   availabilityType: "string;",;";";";";""
   yearsExperience: "number;";"
 };
-;
+
 export function TalentCardHeader(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   fullName,;
   professionalTitle,;

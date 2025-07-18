@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Drawer } from '@/components/ui/drawer;'';
-import { FilterSidebar } from '@/components/talent/FilterSidebar;'';
+import React from 'react';;
+import { Drawer } from '@/components/ui/drawer;;
+import { FilterSidebar } from '@/components/talent/FilterSidebar;;
 import type { FilterSidebarProps } from '@/types/filters;'
 ;''
 interface MobileFilterDrawerProps {;;
@@ -9,7 +9,7 @@ interface MobileFilterDrawerProps {;;
   setIsMobileFilterOpen: "(isOpen: boolean) => void;",;";";";";""
   filterProps: "FilterSidebarProps;";"
 };
-;
+
 export function MobileFilterDrawer(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   isMobileFilterOpen,;
   setIsMobileFilterOpen,;""

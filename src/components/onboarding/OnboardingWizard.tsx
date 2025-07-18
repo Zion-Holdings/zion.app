@@ -1,16 +1,16 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { useState } from 'react;';
+import React from 'react';;
+import { useState } from 'react;;
 import {;
   FileText,;''
   Users,;
   Calendar,;
   Eye,;''
   MessageSquare,;;
-} from '@/components/ui/icons;'';
-import { useRouter } from 'next/router;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { Button } from '@/components/ui/button;';
+} from '@/components/ui/icons;;
+import { useRouter } from 'next/router;;
+import { useAuth } from '@/hooks/useAuth;;
+import { Button } from '@/components/ui/button;;
 import {;
   Card,;''
   CardContent,;
@@ -121,7 +121,7 @@ export function OnboardingWizard(): unknown {): unknown {): unknown {): unknown 
       },;
     },;''
   ];
-;
+
   const talentSteps: unknown WizardStep[] = [;''
     {;;
       title: 'Complete your profile',;;'
@@ -213,7 +213,7 @@ export function OnboardingWizard(): unknown {): unknown {): unknown {): unknown 
   ];''
 ;;
   const steps: unknown = type === 'client' ? clientSteps : talentSteps;'
-;
+
 =======
     {"
       title: 'Define skills & availability','
@@ -230,7 +230,7 @@ export function OnboardingWizard(): unknown {): unknown {): unknown {): unknown 
       description: 'See how clients will view your profile','
       icon: <Eye className=h-6 w-6 text-zion-purple />,"
       action: {
-        text: 'Preview Profile','
+        text: 'Preview Profile','`
         url: "`/talent/${user?.id}`,
       },;"
       skipText: 'Skip for now','
@@ -274,7 +274,7 @@ export function OnboardingWizard(): unknown {): unknown {): unknown {): unknown 
     };
 <<<<<<< HEAD
   };''
-;
+
   return (;
     <Card;''
       className={cn(;;
@@ -418,6 +418,7 @@ export function OnboardingWizard(): unknown {): unknown {): unknown {): unknown 
 "
 
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

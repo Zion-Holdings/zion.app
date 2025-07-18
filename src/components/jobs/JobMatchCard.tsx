@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { MapPin, Star } from '@/components/ui/icons;'';
-import { Badge } from '@/components/ui/badge;'';
-import { Button } from '@/components/ui/button;'';
-import { Card, CardContent } from '@/components/ui/card;'';
+import React from 'react';;
+import { MapPin, Star } from '@/components/ui/icons;;
+import { Badge } from '@/components/ui/badge;;
+import { Button } from '@/components/ui/button;;
+import { Card, CardContent } from '@/components/ui/card;;
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;'
 ;;
 import { formatDistanceToNow } from 'date-fns;'
@@ -23,7 +23,7 @@ interface JobMatchProps {;;
   onViewDetails?: (matchId: string) => void;";";";";""
   onInvite?: (matchId: "string) => void;";"
 };
-;
+
 =======
 import React from 'react'
 import { MapPin, Star } from '@/components/ui/icons'
@@ -82,7 +82,7 @@ export function JobMatchCard(): unknown {): unknown {): unknown {): unknown {): 
     };
   };
 <<<<<<< HEAD
-;
+
   // Generate a formatted date for display;""
   const postedDate: unknown = new Date();";""
   postedDate.setDate(postedDate.getDate() - Math.floor(Math.random() * 14)); // Random date within last 2 weeks;";";""

@@ -1,17 +1,17 @@
 <<<<<<< HEAD
 import { useState, useEffect } from 'react;'
 ;;
-import { ReviewStats } from '@/components/reviews/ReviewStats;'';
-import { ReviewsList } from '@/components/reviews/ReviewsList;'';
-import { useReviews } from '@/hooks/useReviews;'';
+import { ReviewStats } from '@/components/reviews/ReviewStats;;
+import { ReviewsList } from '@/components/reviews/ReviewsList;;
+import { useReviews } from '@/hooks/useReviews;;
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;'
-;
+
 interface ProfileRatingsProps {;
   userId: string;
   averageRating?: number;
   ratingCount?: number;
 };
-;
+
 =======
 import { useState, useEffect } from 'react'
 
@@ -36,7 +36,7 @@ export function ProfileRatings(): unknown {): unknown {): unknown {): unknown {)
     Record<number, number>;
 <<<<<<< HEAD
   >({});''
-;
+
   // Calculate rating distribution;
   useEffect(() => {;''
     if (reviews.length > 0) {;;

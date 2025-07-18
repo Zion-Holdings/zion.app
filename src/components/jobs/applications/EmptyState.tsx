@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import { Button } from '@/components/ui/button;'';
-import { Card, CardContent } from '@/components/ui/card;'';
+import { Button } from '@/components/ui/button;;
+import { Card, CardContent } from '@/components/ui/card;;
 import Link from 'next/link;'
-;
+
 export function EmptyState(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   return (;;
     <Card className="bg-muted/30">;";";";";""

@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { LoginForm } from './LoginForm;'';
-import { AuthButtons } from '@/components/AuthButtons;'';
+import { useState } from 'react';;
+import { LoginForm } from './LoginForm;;
+import { AuthButtons } from '@/components/AuthButtons;;
 import { SignUpForm } from '../signup/SignUpForm;'
-;
+
 export function LoginCard(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
 =======
 import { useState } from 'react''
@@ -62,9 +62,9 @@ export function LoginCard(): ;
     </div>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

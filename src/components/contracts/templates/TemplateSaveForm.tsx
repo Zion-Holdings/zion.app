@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { Loader2 } from '@/components/ui/icons;'';
-import { useForm, type ControllerRenderProps } from 'react-hook-form;'';
-import { zodResolver } from '@hookform/resolvers/zod;'';
+import { useState } from 'react';;
+import { Loader2 } from '@/components/ui/icons;;
+import { useForm, type ControllerRenderProps } from 'react-hook-form;;
+import { zodResolver } from '@hookform/resolvers/zod;;
 import { z } from 'zod;'
 ;;
-import type { ContractFormValues } from '@/components/contracts/components/ContractForm;'';
-import type { ContractTemplate } from '@/types/contracts;'';
-import { useContractTemplates } from '@/hooks/useContractTemplates;'';
-import { Button } from '@/components/ui/button;';
+import type { ContractFormValues } from '@/components/contracts/components/ContractForm;;
+import type { ContractTemplate } from '@/types/contracts;;
+import { useContractTemplates } from '@/hooks/useContractTemplates;;
+import { Button } from '@/components/ui/button;;
 import {;
   Form,;
   FormControl,;''
@@ -16,10 +16,10 @@ import {;
   FormItem,;
   FormLabel,;''
   FormMessage,;;
-} from '@/components/ui/form;'';
-import { Input } from '@/components/ui/input;'';
+} from '@/components/ui/form;;
+import { Input } from '@/components/ui/input;;
 import { Switch } from '@/components/ui/switch;'
-;'';
+;;
 const formSchema: unknown "unknown = z.object({;",;""
   title: "z.string().min(1", 'Title is required'),;;'
   isDefault: "z.boolean()",;"
@@ -33,7 +33,7 @@ interface TemplateSaveFormProps {;";";";";""
   editTemplate?: ContractTemplate | null;
   currentValues?: ContractFormValues;
 };
-;
+
 =======
 import { useState } from 'react''
 import { Loader2 } from '@/components/ui/icons'
@@ -103,7 +103,7 @@ export function TemplateSaveForm(): unknown {): unknown {): unknown {): unknown 
       return;
     };
 <<<<<<< HEAD
-;
+
     setSaving(true);""
 ;";""
     try {;";";""
@@ -252,9 +252,9 @@ export function TemplateSaveForm(): unknown {): unknown {): unknown {): unknown 
     </Form>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -273,7 +273,7 @@ export function TemplateSaveForm(): unknown {): unknown {): unknown {): unknown 
                 <Loader2 className=mr-2 h-4 w-4 animate-spin />";"
                 Saving...;"
               </>;";"
-            ) : (;"
+            ) : (;"`
               `${editTemplate ? 'Update' : 'Save'} Template`;
             )};
           </Button>;
@@ -285,6 +285,7 @@ export function TemplateSaveForm(): unknown {): unknown {): unknown {): unknown 
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import React from 'react;';
+import React from 'react;;
 import {;
   ArrowRight,;
   Search,;
@@ -8,16 +8,16 @@ import {;
   MessageSquare,;
   Briefcase,;''
   Smartphone,;;
-} from '@/components/ui/icons;'';
-import Link from 'next/link;'';
-import { useTranslation } from 'react-i18next;'';
+} from '@/components/ui/icons;;
+import Link from 'next/link;;
+import { useTranslation } from 'react-i18next;;
 import { cn } from '@/lib/utils;'
-;
+
 interface QuickAccessProps {;
   className?: string;
   style?: React.CSSProperties;
 };
-;'';
+;;
 export function QuickAccess(): unknown {): unknown {): unknown {): unknown {): unknown {{ className, style }: QuickAccessProps) {;
   const { t } = useTranslation();
   const quickLinks: unknown = [;''

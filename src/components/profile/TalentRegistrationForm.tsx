@@ -1,16 +1,16 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { useForm } from 'react-hook-form;'';
-import { zodResolver } from '@hookform/resolvers/zod;'';
-import { z } from 'zod;'';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;'';
-import { Textarea } from '@/components/ui/textarea;'';
-import { Switch } from '@/components/ui/switch;'';
-import { logWarn, logErrorToProduction } from '@/utils/productionLogger;'';
-import { toast } from '@/components/ui/use-toast;'';
-import { supabase } from '@/integrations/supabase/client;'';
-import { useAuth } from '@/hooks/useAuth;';
+import React, { useState } from 'react';;
+import { useForm } from 'react-hook-form;;
+import { zodResolver } from '@hookform/resolvers/zod;;
+import { z } from 'zod;;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
+import { Textarea } from '@/components/ui/textarea;;
+import { Switch } from '@/components/ui/switch;;
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger;;
+import { toast } from '@/components/ui/use-toast;;
+import { supabase } from '@/integrations/supabase/client;;
+import { useAuth } from '@/hooks/useAuth;;
 import {;
   Form,;
   FormField,;
@@ -19,7 +19,7 @@ import {;
   FormControl,;
   FormMessage,;''
   FormDescription,;;
-} from '@/components/ui/form;';
+} from '@/components/ui/form;;
 import {;
   Card,;
   CardHeader,;''
@@ -27,7 +27,7 @@ import {;
   CardDescription,;
   CardContent,;''
   CardFooter,;;
-} from '@/components/ui/card;';
+} from '@/components/ui/card;;
 import {;
   User,;
   Briefcase,;
@@ -36,12 +36,12 @@ import {;
   Sparkles,;
   Check,;''
   X,;;
-} from '@/components/icons;'';
-import { AspectRatio } from '@/components/ui/aspect-ratio;'';
-import { Separator } from '@/components/ui/separator;'';
+} from '@/components/icons;;
+import { AspectRatio } from '@/components/ui/aspect-ratio;;
+import { Separator } from '@/components/ui/separator;;
 import { Badge } from '@/components/ui/badge;'
-;
-// Define form schema;'';
+
+// Define form schema;;
 const talentProfileSchema: unknown "unknown = z.object({;",;""
   name: "z.string().min(2", 'Full Name must be at least 2 characters long'),;;'
   title: "z.string().min(5", 'Professional title is required'),;'
@@ -174,7 +174,7 @@ export function TalentRegistrationForm(): ;"
 <<<<<<< HEAD
     useState<EnhancedProfile | null>(null);''
   const [uploadedAvatar, setUploadedAvatar] = useState<string | null>(null);
-;
+
   // Initialize form with default values;''
   const form: unknown "unknown = useForm<TalentFormValues>({;",;""
     resolver: "zodResolver(talentProfileSchema)",;";";";";""
@@ -230,7 +230,7 @@ export function TalentRegistrationForm(): ;"
   const handleRemoveSkill: unknown = (_skill: string) => {;
     setSkillTags(skillTags.filter((s) => s !== skill));''
   };
-;
+
   // Handle key press in skills input (add on enter);''
   const handleSkillKeyPress: unknown = (_e: React.KeyboardEvent) => {;;
     if (e.key === 'Enter') {;'
@@ -271,7 +271,7 @@ export function TalentRegistrationForm(): ;"
       });
       return;
     };''
-;
+
     const formData: unknown = form.getValues();
     if (!formData.bio || formData.bio.length < 20) {;''
       toast({;;
@@ -281,10 +281,10 @@ export function TalentRegistrationForm(): ;"
       });
       return;
     };
-;
+
     try {;''
       setIsGenerating(true);
-;
+
       // Call the Supabase Edge Function;''
       const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase.functions.invoke(;;
         'talent-profile-enhancer',;''
@@ -300,7 +300,7 @@ export function TalentRegistrationForm(): ;"
           },;
         },;
       );
-;
+
       if (error) {;""
         throw new Error(error.message);";""
       };";";""
@@ -440,12 +440,12 @@ export function TalentRegistrationForm(): ;"
     };
 <<<<<<< HEAD
   };''
-;
+
   // Apply generated content to form;
   const applyGeneratedContent: unknown = () => {;''
     if (generatedContent) {;;
       form.setValue('bio', generatedContent.summary);'
-;
+
 =======
   }'
 '
@@ -459,7 +459,7 @@ export function TalentRegistrationForm(): ;"
       const allCategorizedSkills = generatedContent.categorizedSkills;
       const newSkills: unknown string[] = [];
 <<<<<<< HEAD
-;
+
       // Safely extract and flatten skills from each category;''
       Object.values(allCategorizedSkills).forEach((categorySkills) => {;
         if (Array.isArray(categorySkills)) {;
@@ -490,7 +490,7 @@ export function TalentRegistrationForm(): ;"
     };
 <<<<<<< HEAD
   };''
-;
+
   // Get category color;
   const getCategoryColor: unknown = (_category: CategoryType) => {;''
     switch (category) {;;
@@ -508,7 +508,7 @@ export function TalentRegistrationForm(): ;"
         return 'bg-zion-purple/20 hover: "bg-zion-purple/30 text-zion-purple;""
     };""
   };
-;
+
   // Send notification email;''
   const sendEnhancementNotification: unknown "unknown = async (;",;""
     userId: "string",;";";";";""
@@ -535,7 +535,7 @@ export function TalentRegistrationForm(): ;"
             <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">;";";";";""
               <p style="color: #666; font-size: 12px;"> ${new Date().getFullYear()} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}Zion Marketplace</p>;"
             </div>;
-          </div>;
+          </div>;`
           `,;""
         },;";""
       });";";""
@@ -579,7 +579,7 @@ export function TalentRegistrationForm(): ;"
       await supabase.functions.invoke('send-email', {'
         body: {
           to: "email
-          subject: 'Your Zion Talent Profile Has Been Enhanced','
+          subject: 'Your Zion Talent Profile Has Been Enhanced','`
           html: `;
           <div style=font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto>;
             <h2 style="color: #6D28D9">Profile Enhancement Complete</h2>;
@@ -587,8 +587,8 @@ export function TalentRegistrationForm(): ;"
             <p>We've added a professional summary and categorized your skills to help you stand out.</p>'
             <p>You can review and edit these enhancements in your profile dashboard.</p>'
             <div style=margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee">;"
-              <p style=color: #666; font-size: 12px>© ${new Date().getFullYear()} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}Zion Marketplace</p>"
-            </div>;`
+              <p style=color: #666; font-size: 12px>© ${new Date().getFullYear()} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}Zion Marketplace</p>"`
+            </div>;``
           </div>`,"
         },;
       });"
@@ -613,7 +613,7 @@ export function TalentRegistrationForm(): ;"
       });
       return;''
     };
-;
+
     if (!supabase) {;''
       toast({;;
         title: 'Error',;;'
@@ -622,9 +622,9 @@ export function TalentRegistrationForm(): ;"
       });
       return;
     };
-;
+
     setIsSubmitting(true);''
-;
+
     try {;
       // For actual implementation with Supabase;''
       if (!user?.id) {;;
@@ -634,7 +634,7 @@ export function TalentRegistrationForm(): ;"
       // Enhance profile if not already done;;
       let _finalSummary: string = 
       let _finalSkills: string[] = [];
-;
+
       if (values.enhancedProfile && !generatedContent) {;''
         try {;;
           const { data: "aiData "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase.functions.invoke(;";";";";""
@@ -729,7 +729,7 @@ export function TalentRegistrationForm(): ;"
               };
             });
 <<<<<<< HEAD
-;
+
             // Create a unique set of skills;''
             _finalSkills = [...new Set([...skillTags, ...aiSkills])];
           };
@@ -815,9 +815,9 @@ export function TalentRegistrationForm(): ;"
         setIsSubmitting(false);
 <<<<<<< HEAD
       }, 1500);''
-;
+
       // Here would be the actual code to save the profile to Supabase;
-      /*;''
+      /* ;''
       const { _error } = await supabase;;
         .from('talent_profiles');''
         .insert({;;
@@ -833,7 +833,7 @@ export function TalentRegistrationForm(): ;"
           // Other fields would be handled here;
         });
 ;""
-      if (error) throw error;";""
+      if (error) throw error;";"" */
       */;";";""
     } catch (error: unknown) {;";";";""
       if (error instanceof Error) {;";";";";""
@@ -1003,7 +1003,7 @@ export function TalentRegistrationForm(): ;"
                       <span>Upload Photo</span>;";";";""
                       <input;";";";";""
                         type="file";";";";";""
-                        accept="image/*";";";";";""
+                        accept="image/* ";";";";";""
                         className="hidden";""
                         onChange={handleAvatarUpload};";""
                       />;";";""
@@ -1017,7 +1017,7 @@ export function TalentRegistrationForm(): ;"
               </div>;";";";""
 ;";";";";""
               <Separator className="bg-zion-blue-light/50" />;";";""
-;";";";""
+;";";";"" */
               {/* Bio Section */};";";";";""
               <div className="space-y-4">;";";";";""
                 <h3 className="text-lg font-medium text-white">;""
@@ -1090,7 +1090,7 @@ export function TalentRegistrationForm(): ;"
                     </Button>;
                   </div>;''
                 )};
-;
+
                 {/* Generated Content Display */};''
                 {generatedContent && (;;
                   <div className="bg-zion-blue-light/20 border border-zion-blue-light rounded-md p-4">;";";";";""
@@ -1132,7 +1132,7 @@ export function TalentRegistrationForm(): ;"
                                 key={category};";";";";""
                                 className="flex items-center gap-2";"
                               >;
-                                <Badge;""
+                                <Badge;""`
                                   className={`w-fit ${getCategoryColor(category as CategoryType)}`};";""
                                 >;";";""
                                   {category};";";";""
@@ -1146,7 +1146,7 @@ export function TalentRegistrationForm(): ;"
       }, 1500)'
 '
       // Here would be the actual code to save the profile to Supabase;
-      /* '
+      /*  '
       const { _error } = await supabase'
         .from('talent_profiles')'
         .insert({'
@@ -1161,7 +1161,7 @@ export function TalentRegistrationForm(): ;"
           availability_status: "values.availability,
           // Other fields would be handled here;
         });
-"
+" */
       if (error) throw error;" */
       */;
     } catch (error: unknown) {"
@@ -1331,7 +1331,7 @@ export function TalentRegistrationForm(): ;"
                       <span>Upload Photo</span>;"
                       <input
                         type=file"
-                        accept="image/* "
+                        accept="image/*  "
                         className=hidden"
                         onChange={handleAvatarUpload}";
                       />
@@ -1344,7 +1344,7 @@ export function TalentRegistrationForm(): ;"
                 </div>;"
               </div>"
 
-              <Separator className=bg-zion-blue-light/50" />"
+              <Separator className=bg-zion-blue-light/50" />" */
  */
               {/* Bio Section */}
               <div className="space-y-4">
@@ -1458,8 +1458,8 @@ export function TalentRegistrationForm(): ;"
                               <div"
                                 key={category};
                                 className=flex items-center gap-2""
-                              >;
-                                <Badge`
+                              >;`
+                                <Badge``
                                   className={`w-fit ${getCategoryColor(category as CategoryType)}`};"
                                 >;"
                                   {category}
@@ -1821,9 +1821,9 @@ export function TalentRegistrationForm(): ;"
     </div>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -1834,6 +1834,7 @@ export function TalentRegistrationForm(): ;"
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

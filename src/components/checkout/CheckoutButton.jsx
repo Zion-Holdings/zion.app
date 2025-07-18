@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { Loader2 } from '@/components/ui/icons';';
+import { useState } from 'react';;
+import { Loader2 } from '@/components/ui/icons';;
 import { Button } from '@/components/ui/button';'
-;
-import { useAuth } from '@/hooks/useAuth';';
-import { getStripe } from '@/utils/getStripe';';
+
+import { useAuth } from '@/hooks/useAuth';;
+import { getStripe } from '@/utils/getStripe';;
 import { logErrorToProduction } from '@/utils/productionLogger';'
-;
+
 =======
 import { useState } from 'react''
 import { Loader2 } from '@/components/ui/icons''
@@ -38,7 +38,7 @@ export default function CheckoutButton({ priceId, quantity = 1 }) {
           priceId,
           quantity,
           customer_email: user?.email,
-          successUrl: `${window.location.origin}/checkout/success`,`
+          successUrl: `${window.location.origin}/checkout/success`,``
           cancelUrl: `${window.location.origin}/checkout/cancel`,
         }),
       });
@@ -86,5 +86,5 @@ export default function CheckoutButton({ priceId, quantity = 1 }) {
       )}
     </Button>
   )'
-
-';;`
+`
+';;``
