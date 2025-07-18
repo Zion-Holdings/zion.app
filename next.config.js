@@ -203,11 +203,20 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
   },
   webpack: (config, { isServer, dev }) => {
-    // Fix webpack cache configuration to prevent conflicts
-    if (config.cache) {
-      config.cache = {
-        type: 'memory', // Use memory cache to avoid filesystem issues
-        maxGenerations: dev ? 1 : 10,
+    // Simplified webpack configuration to avoid Watchpack issues
+    if (dev) {
+      // Use polling instead of file watching to avoid path issues
+      config.watchOptions = {
+        poll: 1000,
+        aggregateTimeout: 300,
+        ignored: [
+          '**/node_modules/**',
+          '**/.git/**',
+          '**/logs/**',
+          '**/dist/**',
+          '**/build/**',
+          '**/.next/**',
+        ],
       };
     }
 
@@ -228,49 +237,11 @@ const nextConfig = {
       tls: false,
     };
 
-    // Fix Watchpack path resolution issues by using polling instead of file watching
-    if (dev && !isServer) {
-      config.watchOptions = {
-        poll: 1000,
-        aggregateTimeout: 300,
-        ignored: [
-          '**/node_modules/**',
-          '**/.git/**',
-          '**/logs/**',
-          '**/dist/**',
-          '**/build/**',
-          '**/.next/**',
-        ],
-      };
-      
-      // Fix path resolution issues
-      config.resolve.modules = [
-        'node_modules',
-        path.resolve(__dirname, 'src'),
-        path.resolve(__dirname, 'pages'),
-        path.resolve(__dirname, 'components'),
-      ];
-    }
-
-    // Remove usedExports to prevent conflicts
-    if (config.optimization && config.optimization.usedExports) {
-      delete config.optimization.usedExports;
-    }
-
     return config;
   },
   experimental: {
     optimizeCss: process.env.NODE_ENV === 'production',
     optimizePackageImports: ['@chakra-ui/react', 'lucide-react'],
-  },
-  // Disable file watching in development to avoid Watchpack issues
-  webpackDevMiddleware: (config) => {
-    config.watchOptions = {
-      poll: 1000,
-      aggregateTimeout: 300,
-      ignored: ['**/node_modules/**', '**/.git/**', '**/.next/**'],
-    };
-    return config;
   },
 };
 

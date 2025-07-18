@@ -312,7 +312,7 @@ automation.startContinuousImprovement();
     
     try {
       const packagePath = 'package.json';
-      const package = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
+      const packageJson = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
       
       const newScripts = {
         'auto:fix': 'node scripts/comprehensive-app-automation.cjs',
