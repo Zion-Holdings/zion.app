@@ -28,7 +28,7 @@ export default function TermsOfService() {
     });
 
     return () => observer.disconnect();
-  }, [TERMS_SECTIONS]);
+  }, []);
 
   return (
     <div className="md:flex gap-8">
