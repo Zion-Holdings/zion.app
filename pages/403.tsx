@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 
 export default function Custom403() {
   const { _user } = useAuth();
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const err = new Error('403 - Forbidden');
