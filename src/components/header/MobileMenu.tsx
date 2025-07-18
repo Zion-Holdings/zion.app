@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Home, Search, MessageSquare, User, X } from '@/components/ui/icons';
+import { Home, Search, MessageSquare, User, X, MessageCircle, BriefcaseIcon } from '@/components/ui/icons';
 import { useRouter } from 'next/router';
 
 
