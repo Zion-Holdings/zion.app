@@ -1,19 +1,18 @@
 [build]
-  # Use `npm ci` for deterministic installs
-  # Generate Prisma client before building to ensure models are up to date
-  command = "npm run build:netlify:prepare"
+  # Use self-healing build command
+  command = "npm run netlify:heal && npm run build:netlify:prepare"
   # Netlify UI sets `publish` to `out` which causes the Next.js plugin to fail
   # because no exported directory exists. Explicitly publish the `.next`
   # directory so the plugin can run correctly.
   publish = ".next"
   # Increase build timeout for 176+ pages
-  command_timeout = "30m"
+  command_timeout = "45m"
 
 [build.environment]
-  NODE_OPTIONS = "--no-deprecation --max-old-space-size=6144 --no-warnings"
+  NODE_OPTIONS = "--no-deprecation --max-old-space-size=8192 --no-warnings"
   NPM_FLAGS = "--prefer-offline --legacy-peer-deps"
   NEXT_PUBLIC_APP_ENV = "production"
-  NODE_VERSION = "22"
+  NODE_VERSION = "18"
   NEXT_TELEMETRY_DISABLED = "1"
   CI = "true"
   SKIP_TYPE_CHECK = "true"
@@ -22,18 +21,23 @@
   NEXT_DISABLE_CSS_INLINE = "true"
   NEXT_DISABLE_SOURCE_MAPS = "true"
   GENERATE_SOURCEMAP = "false"
-  NEXT_BUILD_WORKERS = "1"
-  NEXT_PRIVATE_BUILD_CACHE = "false"
-  NEXT_PRIVATE_STATIC_OPTIMIZATION = "false"
+  NEXT_BUILD_WORKERS = "4"
+  NEXT_PRIVATE_BUILD_CACHE = "true"
+  NEXT_PRIVATE_STATIC_OPTIMIZATION = "true"
   
   # CRITICAL FIX: Completely disable build trace collection to prevent hanging
   NEXT_DISABLE_TRACE_COLLECTION = "true"
   NEXT_PRIVATE_OUTPUT_TRACE = "false"
   NEXT_PRIVATE_OUTPUT_FILE_TRACING = "true" # Restore file tracing for correct static asset generation
   # NEXT_PRIVATE_OUTPUT_FILE_TRACING = "false" # Allowing Next.js default / plugin to manage this
-  UV_THREADPOOL_SIZE = "4"
+  UV_THREADPOOL_SIZE = "8"
   NODE_NO_WARNINGS = "1"
   NEXT_PRIVATE_MINIMIZE_BUILD_TIME = "true"
+  
+  # Self-healing system environment variables
+  ENABLE_SELF_HEALING = "true"
+  AUTO_FIX_BUILD_ISSUES = "true"
+  BUILD_MONITORING = "true"
   
   # Configure secrets scanning to omit legitimate public environment variables
   # NEXT_PUBLIC_* variables are meant to be public and embedded in client bundles

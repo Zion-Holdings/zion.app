@@ -198,7 +198,21 @@
     "netlify:heal": "npm run auto-fix:all && npm run self-heal:start",
     "netlify:monitor": "npm run build:monitor:start",
     "netlify:status": "npm run self-heal:status && npm run build:monitor:status",
-    "netlify:stop": "npm run self-heal:stop && npm run build:monitor:stop"
+    "netlify:stop": "npm run self-heal:stop && npm run build:monitor:stop",
+    "self-heal": "node scripts/self-healing.js",
+    "health-monitor": "node scripts/health-monitor.js",
+    "build-monitor": "node scripts/build-monitor.js",
+    "auto-fix": "node scripts/auto-fix-errors.js",
+    "monitor": "concurrently \"npm run health-monitor\" \"npm run build-monitor\"",
+    "postbuild": "npm run self-heal",
+    "self-healing:start": "node scripts/self-healing-lint-system.cjs",
+    "self-healing:build": "node scripts/build-with-self-healing.cjs",
+    "self-healing:post-build": "node scripts/post-build-lint-healing.cjs",
+    "self-healing:continuous": "node scripts/continuous-lint-healing.cjs",
+    "build:with-healing": "npm run build && npm run self-healing:post-build",
+    "lint:heal": "npm run self-healing:post-build",
+    "heal:lint": "npm run self-healing:post-build",
+    "heal:continuous": "npm run self-healing:continuous"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

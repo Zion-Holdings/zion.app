@@ -4,7 +4,7 @@ import * as Sentry from '@sentry/nextjs';
 
 const prisma = new PrismaClient();
 
-interface TalentFilters {
+interface _TalentFilters {
   specialization?: string;
   minRate?: number;
   maxRate?: number;
@@ -12,30 +12,32 @@ interface TalentFilters {
   search?: string;
 }
 
+interface WhereClause {
+  specialization?: string;
+  hourlyRate?: {
+    gte?: number;
+    lte?: number;
+  };
+  skills?: {
+    hasSome: string[];
+  };
+  OR?: Array<{
+    name?: { contains: string; mode: 'insensitive' };
+    headline?: { contains: string; mode: 'insensitive' };
+    bio?: { contains: string; mode: 'insensitive' };
+  }>;
+}
+
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) {
-  if (req.method !== 'GET') {
-    res.setHeader('Allow', 'GET');
-    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
-  }
-
   try {
-    const page = parseInt((req.query.page as string) || '1', 10);
-    const limit = parseInt((req.query.limit as string) || '20', 10);
-    const skip = (page - 1) * limit;
-
-    const filters: TalentFilters = {
-      specialization: String(req.query.specialization || '').toLowerCase().trim() || undefined,
-      minRate: req.query.minRate ? parseFloat(req.query.minRate as string) : undefined,
-      maxRate: req.query.maxRate ? parseFloat(req.query.maxRate as string) : undefined,
-      skills: req.query.skills ? String(req.query.skills).split(',').map(s => s.trim()) : undefined,
-      search: String(req.query.search || '').toLowerCase().trim() || undefined,
-    };
+    const { page = 1, limit = 10, ...filters } = req.query;
+    const skip = (Number(page) - 1) * Number(limit);
 
     // Build where clause
-    const where: any = {};
+    const where: WhereClause = {};
     
     if (filters.specialization) {
       where.specialization = filters.specialization;
