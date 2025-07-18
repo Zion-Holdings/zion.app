@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { FileText, MessageSquare, Calendar, ExternalLink, Download } from '@/components/ui/icons';
+import { FileText, MessageSquare, Calendar, ExternalLink, Download, HelpCircle } from '@/components/ui/icons';
 import { formatDistanceToNow } from "date-fns";
 import type { JobApplication } from "@/types/jobs";
 import { Button } from "@/components/ui/button";
