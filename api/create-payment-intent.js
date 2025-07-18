@@ -46,7 +46,7 @@ async function handler(req, res) {
     // The getStripe() client-side helper (from src/utils/getStripe.ts) and its
     // advancedFraudSignals option are not applicable to this server-side implementation.
     const stripe = new Stripe(useTest ? testKey : liveKey, {
-      apiVersion: '2023-10-16',
+      apiVersion: '2025-06-30.basil',
     });
     const intent = await stripe.paymentIntents.create({
       amount: Math.round(amount * 100),
