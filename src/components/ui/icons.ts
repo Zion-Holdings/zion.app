@@ -202,7 +202,8 @@ export {
   Pin,
   Instagram,
   Youtube,
-  Github
+  Github,
+  Slack
 } from 'lucide-react';
 
 // Navigation & UI Icons
