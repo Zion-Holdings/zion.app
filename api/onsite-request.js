@@ -27,8 +27,8 @@ async function handler(req, res) {
     const data = await response.json().catch(() => ({}));
     res.statusCode = response.status;
     res.json(data);
-  } catch (_err) {
-    console.error('Onsite request API error:', err);
+  } catch {
+    console.error('Onsite request API error');
     res.statusCode = 500;
     res.json({ error: 'Failed to process request' });
   }

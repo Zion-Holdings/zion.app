@@ -193,11 +193,11 @@ export const DynamicComponentLoader: React.FC<DynamicLoaderProps> = ({
       }, 300) // Small delay for smoother transition
 
     } catch (_error) {
-      logErrorToProduction('Dynamic component loading failed:', { data: error })
+      logErrorToProduction('Dynamic component loading failed:', { data: _error })
       setLoadingState(prev => ({
         ...prev,
         isLoading: false,
-        error: error as Error,
+        error: _error as Error,
         retryCount: prev.retryCount + 1,
         isOnline
       }))
@@ -308,13 +308,16 @@ export const createDynamicComponent = <T extends ComponentType<unknown>>(
   importFn: () => Promise<{ default: T }>,
   options?: Omit<DynamicLoaderProps, 'importFn' | 'children'>
 ) => {
-  return (props: React.ComponentProps<T> & { children?: React.ReactNode }) => (
+  const DynamicComponent = (props: React.ComponentProps<T> & { children?: React.ReactNode }) => (
     <DynamicComponentLoader
       importFn={importFn}
       {...(options || {})}
       {...(typeof props === 'object' && props !== null ? props : {})}
     />
-  )
+  );
+  
+  DynamicComponent.displayName = 'DynamicComponent';
+  return DynamicComponent;
 }
 
 // Predefined dynamic loaders for common heavy components
