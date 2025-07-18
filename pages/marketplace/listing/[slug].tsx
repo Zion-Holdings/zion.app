@@ -22,10 +22,9 @@ import {
   BreadcrumbLink,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
-import { useState } from 'react';
 
 interface ListingPageProps {
-  _listing: ProductListing | null;
+  listing: ProductListing | null;
 }
 
 interface ApiProduct {

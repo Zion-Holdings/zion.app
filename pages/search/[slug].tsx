@@ -51,10 +51,10 @@ interface CategorySearchResult extends BaseSearchResult {
 type SearchResult = ProductSearchResult | TalentSearchResult | BlogSearchResult | CategorySearchResult;
 
 // Type guard functions
-const hasPrice = (result: SearchResult): result is ProductSearchResult => 
+const _hasPrice = (result: SearchResult): result is ProductSearchResult => 
   result.type === 'product' || result.type === 'equipment';
 
-const hasRating = (result: SearchResult): result is ProductSearchResult | TalentSearchResult => 
+const _hasRating = (result: SearchResult): result is ProductSearchResult | TalentSearchResult => 
   result.type === 'product' || result.type === 'equipment' || result.type === 'talent';
 
 interface SearchResultsPageProps {
@@ -221,10 +221,8 @@ export default function SearchResultsPage({
   const { _isAuthenticated } = useAuth();
   const [results, setResults] = useState<SearchResult[]>(initialResults);
   const [_loading, setLoading] = useState(false);
-  const [_searchQuery, setSearchQuery] = useState(query);
-  const debouncedQuery = useDebounce(_searchQuery, 300);
+  const debouncedQuery = useDebounce(query, 300);
   const [_viewMode, _setViewMode] = useState<'grid' | 'list'>('grid');
-  const [_currentPage, setCurrentPage] = useState(1);
   const [sortBy, _setSortBy] = useState('relevance');
   const [categoryFilter, _setCategoryFilter] = useState('all');
   const [minPrice, _setMinPrice] = useState('');

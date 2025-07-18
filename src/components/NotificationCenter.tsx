@@ -20,7 +20,7 @@ import {
 } from '@/components/notifications';
 import type { FilterType } from '@/components/notifications/NotificationFilter';
 
-export const _NotificationCenter: React.FC = () => {
+const NotificationCenter: React.FC = () => {
   const {
     filteredNotifications,
     unreadCount,

@@ -36,8 +36,8 @@ const LoginPage = () => {
   // States for the new proactive resend form
   const [_showProactiveResendForm, setShowProactiveResendForm] = useState(false);
   const [_proactiveResendEmail, _setProactiveResendEmail] = useState('');
-  const [_isProactivelyResending, setIsProactivelyResending] = useState(false);
-  const [_proactiveResendMessage, setProactiveResendMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [_isProactivelyResending, _setIsProactivelyResending] = useState(false);
+  const [_proactiveResendMessage, _setProactiveResendMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
   // Using centralized Supabase client (imported at top)
 

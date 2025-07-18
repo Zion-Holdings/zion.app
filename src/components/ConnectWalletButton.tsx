@@ -5,7 +5,7 @@ import { useTokenBalance } from '@/hooks/useTokenBalance';
 import { ZION_TOKEN_CONTRACT_ADDRESS } from '@/config/governanceConfig';
 import { ethers } from 'ethers';
 
-const _ConnectWalletButton: React.FC = () => {
+const ConnectWalletButton: React.FC = () => {
   const {
     isConnected,
     connectWallet,

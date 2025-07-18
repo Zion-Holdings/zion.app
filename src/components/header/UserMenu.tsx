@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import type { RootState } from '@/store';
 import { AvatarMenu } from './AvatarMenu';
 
-export const _UserMenu: React.FC = () => {
+export const UserMenu: React.FC = () => {
   const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
   if (!isLoggedIn) return null;
   return <AvatarMenu />;

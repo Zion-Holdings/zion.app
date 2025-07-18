@@ -19,7 +19,7 @@ function MarketplaceErrorFallback({
       // Re-call SWR mutate('*') to refresh all cached data
       await mutate(() => true, undefined, { revalidate: true });
       resetErrorBoundary();
-    } catch (_retryError) {
+    } catch (retryError) {
       logErrorToProduction('Error during retry:', { data: retryError });
       // Report to Sentry only on the server
       if (typeof window === 'undefined') {
@@ -80,7 +80,7 @@ export function MarketplaceErrorBoundary({
   const handleError = async (error: Error, _errorInfo: React.ErrorInfo) => {
     // Log boundary errors to Sentry
     logErrorToProduction('MarketplaceErrorBoundary caught an error:', error, {
-      componentStack: errorInfo.componentStack,
+      componentStack: _errorInfo.componentStack,
     });
 
     // Report to Sentry only on the server
@@ -90,12 +90,12 @@ export function MarketplaceErrorBoundary({
         Sentry.withScope((scope) => {
           scope.setTag('errorBoundary', 'marketplace');
           scope.setContext('errorInfo', {
-            componentStack: errorInfo.componentStack || undefined,
+            componentStack: _errorInfo.componentStack || undefined,
           });
           scope.setLevel('error');
           Sentry.captureException(error);
         });
-      } catch {
+      } catch (sentryError) {
         logErrorToProduction('Failed to report to Sentry:', {
           data: sentryError,
         });

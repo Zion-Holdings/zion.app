@@ -4,7 +4,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { fireEvent } from '@/lib/analytics';
 
-const _UserProfileDropdown: React.FC = () => {
+const UserProfileDropdown: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { logout, user } = useAuth(); // Destructure user as well, if needed for display or checks
   const dropdownRef = useRef<HTMLDivElement>(null);
