@@ -24,7 +24,7 @@ const mockElements = {
       focus: jest.fn(),
     };
   }),
-  _triggerChange: (event) => {},
+  _triggerChange: (_event) => {},
   submit: jest.fn(() => Promise.resolve({ error: null })),
 };
 
@@ -76,7 +76,7 @@ const resetMocks = () => {
   mockStripe.createPaymentMethod.mockClear().mockResolvedValue({ paymentMethod: { id: 'pm_mock' }, error: null });
   mockStripe.retrievePaymentIntent.mockClear().mockImplementation(clientSecret => Promise.resolve({ paymentIntent: { id: 'pi_mock_retrieved', client_secret: clientSecret, status: 'succeeded' }, error: null }));
 
-  mockElements.getElement.mockClear().mockImplementation(type => ({
+  mockElements.getElement.mockClear().mockImplementation(_type => ({
     mount: jest.fn(),
     destroy: jest.fn(),
     on: jest.fn((_event, handler) => { if (_event === 'change') { mockElements.triggerChange = handler; }}),
