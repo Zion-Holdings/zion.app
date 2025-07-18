@@ -5,7 +5,13 @@ import { useEnqueueSnackbar } from '@/context';
 import { logErrorToProduction } from '@/utils/productionLogger';
 import { isValidEmail } from '@/utils/email';
 
+<<<<<<< HEAD
 export const MobileEmailCapture: React.FC = () => {
+=======
+const _MobileEmailCapture = MobileEmailCapture;
+
+const MobileEmailCapture: React.FC = () => {
+>>>>>>> 85a51cdcdb539afe2abf7ce6f779a11d58548b70
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
