@@ -142,8 +142,8 @@
     }
 
     // Static methods
-    BufferPolyfill.from = function(input, encoding) {
-      return new BufferPolyfill(input, encoding);
+    BufferPolyfill.from = function(input, _encoding) {
+      return new BufferPolyfill(input, _encoding);
     };
 
     BufferPolyfill.alloc = function(size, fill, encoding) {
