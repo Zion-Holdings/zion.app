@@ -1,12 +1,12 @@
 import React from 'react';
-import { ArrowRight } from '@/components/ui/icons';
+import { ArrowRight, Smartphone } from '@/components/ui/icons';
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
 import { AppStoreButtons } from './AppStoreButtons';
 import { Card, CardContent } from '@/components/ui/card';
 
-export const _MobileLaunchHero: React.FC = () => {
+export const MobileLaunchHero: React.FC = () => {
   // App store links - these would come from environment variables in production
   const appStoreUrl = '#'; // Replace with actual App Store URL
   const googlePlayUrl = '#'; // Replace with actual Google Play URL

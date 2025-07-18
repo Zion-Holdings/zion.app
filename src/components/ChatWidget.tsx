@@ -17,7 +17,7 @@ interface ChatWidgetProps {
 }
 
 export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetProps) {
-  const { _user } = useAuth();
+  const { user } = useAuth();
   const [messages, setMessages] = useState<Message[]>([]);
   const [text, setText] = useState('');
   const [isConnecting, setIsConnecting] = useState(false);
@@ -43,12 +43,12 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
       if (stored) {
         setMessages(JSON.parse(stored));
       }
-    } catch {
+    } catch (error) {
       console.warn('ChatWidget: failed to load history', error);
     }
   }, [isOpen, roomId]);
 
-  const triggerNotification = useCallback((title: string, _body: string) => {
+  const triggerNotification = useCallback((title: string, body: string) => {
     if ('Notification' in window && Notification.permission === 'granted') {
       navigator.serviceWorker.getRegistration().then(reg => {
         reg?.showNotification(title, { body });
@@ -95,7 +95,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
           }
         });
         
-        socket.on('receive-message', (_msg: unknown) => {
+        socket.on('receive-message', (msg: unknown) => {
           if (typeof msg === 'object' && msg !== null && 'content' in msg && 'id' in msg) {
             setMessages(prev => [...prev, msg as Message]);
             triggerNotification('New message', (msg as Message).content);
@@ -109,11 +109,11 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
           }
         });
         
-      } catch {
+      } catch (error) {
         if (isMounted) {
           setIsConnecting(false);
           setConnectionError('Failed to initialize chat');
-          console.('ChatWidget setup :', );
+          console.error('ChatWidget setup error:', error);
         }
       }
     }
@@ -133,7 +133,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
     if (!isOpen) return;
     try {
       safeStorage.setItem(`chat-widget-${roomId}`, JSON.stringify(messages));
-    } catch {
+    } catch (error) {
       console.warn('ChatWidget: failed to save history', error);
     }
   }, [messages, roomId, isOpen]);
@@ -156,7 +156,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
     inputRef.current?.focus();
   }, [text, user, recipientId, roomId]);
 
-  const handleKeyDown = useCallback((_e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+  const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSend();

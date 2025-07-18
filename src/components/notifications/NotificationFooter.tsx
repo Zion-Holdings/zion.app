@@ -6,7 +6,7 @@ interface NotificationFooterProps {
   onClose: () => void;
 }
 
-export const _NotificationFooter: React.FC<NotificationFooterProps> = ({
+export const NotificationFooter: React.FC<NotificationFooterProps> = ({
   onClose,
 }) => {
   const router = useRouter(); // Changed from useNavigate to useRouter

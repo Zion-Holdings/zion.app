@@ -33,7 +33,7 @@ interface AccountProps {
 function Account({ user: initialUser, orders }: AccountProps) {
   const [user, setUser] = useState(initialUser);
 
-  const handleSubmit = async (_values: ProfileValues) => {
+  const handleSubmit = async (values: ProfileValues) => {
     try {
       const res = await fetch(`/api/users/${user.id}`, {
         method: 'PATCH',
@@ -42,7 +42,7 @@ function Account({ user: initialUser, orders }: AccountProps) {
       });
       const data = await res.json();
       setUser(data);
-    } catch {
+    } catch (error) {
       logErrorToProduction('Error updating profile:', { data: error });
       let description = 'Failed to update profile. Please try again.';
       if (
@@ -121,7 +121,7 @@ export default function ProtectedAccount(props: AccountProps) {
   );
 }
 
-export const _getServerSideProps: GetServerSideProps<AccountProps> = async ({
+export const getServerSideProps: GetServerSideProps<AccountProps> = async ({
   req,
 }: {
   req: NextApiRequest;

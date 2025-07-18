@@ -1,8 +1,3 @@
-function isValidEmail(email) {
-  const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
-  return emailRegex.test(email);
-}
-
 import React, { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -10,7 +5,7 @@ import { useEnqueueSnackbar } from '@/context';
 import { logErrorToProduction } from '@/utils/productionLogger';
 import { isValidEmail } from '@/utils/email';
 
-export const _MobileEmailCapture: React.FC = () => {
+export const MobileEmailCapture: React.FC = () => {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -18,7 +13,7 @@ export const _MobileEmailCapture: React.FC = () => {
 
   const lastSubmit = useRef(0);
 
-  const handleSubmit = async (_e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || isSubmitting) return;
 

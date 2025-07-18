@@ -1,17 +1,10 @@
 import React, { useState } from 'react';
-import { Calendar, Clock, DollarSign } from '@/components/ui/icons';
+import { Calendar, Clock, DollarSign, Briefcase } from '@/components/ui/icons';
 import { useRouter } from 'next/router'; // Changed from useParams, useNavigate
 import { Header } from '@/components/Header';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-
-
-
-
-
-
-
 import { formatDistanceToNow } from 'date-fns';
 import { toast } from 'sonner';
 import { useAuth } from '@/hooks/useAuth';
@@ -45,7 +38,7 @@ export default function JobDetails() {
   
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
 
-  const formatBudget = (_budget: unknown) => {
+  const formatBudget = (budget: unknown) => {
     if (!budget || typeof budget !== 'object' || budget === null || !('min' in budget) || !('max' in budget)) {
       return "Not specified";
     }
@@ -84,12 +77,6 @@ export default function JobDetails() {
     
     setIsApplyModalOpen(true);
   };
-
-  const _handleApplySuccess = undefined; // Unused async (_appliedJobId: string) => {
-    toast.success("Application submitted successfully!");
-    setIsApplyModalOpen(false);
-  };
-
 
   const isOwnJob = user?.id === job.client_id;
 
@@ -198,19 +185,14 @@ export default function JobDetails() {
         </div>
       </main>
       
-      {/* Job application modal */}
-      {job && (
+      {isApplyModalOpen && (
         <ApplyToJobModal
-          job={{
-            id: job.id,
-            title: job.title,
-            description: job.description || '',
-            company_name: job.company_name ?? "Company",
-            budget: formatBudget(job.budget),
-            client_id: job.client_id,
-          }}
-          isOpen={isApplyModalOpen}
+          jobId={jobId || ''}
           onClose={() => setIsApplyModalOpen(false)}
+          onSuccess={() => {
+            toast.success("Application submitted successfully!");
+            setIsApplyModalOpen(false);
+          }}
         />
       )}
     </>

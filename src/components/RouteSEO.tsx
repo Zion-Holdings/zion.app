@@ -8,7 +8,7 @@ import { getAppConfig } from '@/utils/config';
  * Renders default SEO tags based on the current route's metadata.
  * Individual pages can override these tags by rendering their own SEO component.
  */
-const _RouteSEO: React.FC = () => {
+const RouteSEO: React.FC = () => {
   const router = useRouter();
   const route = findRouteByPath(router.pathname);
   const config = getAppConfig();
