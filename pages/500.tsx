@@ -10,7 +10,7 @@ import { useRouter } from 'next/router';
 
 export default function Custom500() {
   const { _user } = useAuth();
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
   const router = useRouter();
 
   useEffect(() => {

@@ -30,7 +30,7 @@ interface TranslatableJobFormProps {
 }
 
 export function TranslatableJobForm({ onSubmit, isSubmitting = false }: TranslatableJobFormProps) {
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
   const { translateContent, isTranslating } = useTranslationService();
   const { supportedLanguages, currentLanguage } = useLanguage();
   

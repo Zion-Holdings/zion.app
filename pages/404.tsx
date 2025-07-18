@@ -13,7 +13,7 @@ import { logInfo } from '@/utils/productionLogger';
 
 export default function Custom404() {
   const { _user } = useAuth();
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
   const router = useRouter();
 
   useEffect(() => {

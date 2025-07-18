@@ -39,7 +39,7 @@ const getBenefits = (t: (key: string) => string) => [
 ];
 
 export function BenefitsSection({ className, style }: BenefitsSectionProps) {
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
   const benefits = getBenefits(t);
   
   return (

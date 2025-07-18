@@ -76,7 +76,7 @@ export async function switchNetlifySite() {
 
 if (import.meta.url === `file://${_process.argv[1]}`) {
   switchNetlifySite().catch((err) => {
-    console.error(err);
+    console.error(error);
     _process.exit(1);
   });
 }

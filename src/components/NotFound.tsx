@@ -3,7 +3,7 @@ import Link from 'next/link'; // Import Link from next/link
 import { useTranslation } from 'react-i18next';
 
 const _NotFound: React.FC = () => {
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
   return (
     <div className="flex flex-1 items-center justify-center bg-gray-100">
       <div className="text-center p-6">

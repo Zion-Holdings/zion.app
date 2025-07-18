@@ -36,6 +36,6 @@ async function main() {
 }
 
 main().catch((err) => {
-  console.error(err);
+  console.error(error);
   process.exitCode = 1;
 });

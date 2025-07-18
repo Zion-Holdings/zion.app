@@ -25,7 +25,7 @@ export function AppHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
   const isMobile = useIsMobile();
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
   const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
   const router = useRouter();
   const showTagline = router.pathname === '/';

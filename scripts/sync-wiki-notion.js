@@ -21,7 +21,7 @@ async function syncDirs() {
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   syncDirs().catch((err) => {
-    console.error(err);
+    console.error(error);
     process.exit(1);
   });
 }

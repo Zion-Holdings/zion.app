@@ -26,7 +26,7 @@ export interface HeaderProps {
 }
 
 export function Header({ hideLogin = false }: HeaderProps) {
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
   const router = useRouter();
   const { user, isAuthenticated, logout } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

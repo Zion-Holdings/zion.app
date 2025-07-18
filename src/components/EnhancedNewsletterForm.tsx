@@ -1,3 +1,8 @@
+
+function isValidEmail(email) {
+  const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
+  return emailRegex.test(email);
+}
 import { Button } from "@/components/ui/button";
 import { Mail } from '@/components/ui/icons';
 import { Input } from "@/components/ui/input";

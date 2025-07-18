@@ -226,7 +226,7 @@ mongoose.connect(mongoUri, {
 
 // Central error handler to return structured errors
 app.use((err, req, res, next) => {
-  console.error(err);
+  console.error(error);
   logAndAlert(err.stack || err.message);
   if (err.status === 404 || err.status === 403) {
     Sentry.withScope(scope => {

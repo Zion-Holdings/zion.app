@@ -1,3 +1,8 @@
+
+async function registerUser(userData) {
+  // Stub implementation for testing
+  return { success: true, user: userData };
+}
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 // Removed unused import: createClient

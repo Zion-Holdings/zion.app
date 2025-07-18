@@ -41,7 +41,7 @@ export function EnhancedSearchInput({
   const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
 
   const debounced = useDebounce(value, 200);
 

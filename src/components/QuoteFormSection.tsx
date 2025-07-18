@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 export function QuoteFormSection() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
 
   const handleSubmit = (_e: React.FormEvent) => {
     e.preventDefault();

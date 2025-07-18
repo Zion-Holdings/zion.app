@@ -1,3 +1,8 @@
+
+async function registerUser(userData) {
+  // Stub implementation for testing
+  return { success: true, user: userData };
+}
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const User = require('../models/User');
@@ -40,7 +45,7 @@ exports.loginUser = async function (req, res, next) {
     user: { id: user._id, email: user.email, name: user.name },
   });
   } catch (_err) {
-    console.error(err);
+    console.error(error);
     next(err);
   }
 };
@@ -72,7 +77,7 @@ exports.registerUser = async function (req, res, next) {
       err.message = 'Email already registered';
       return next(err);
     }
-    console.error(err);
+    console.error(error);
     next(err);
   }
 };

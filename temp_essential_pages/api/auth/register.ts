@@ -85,7 +85,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       message: errorMessage // Include both for compatibility
     });
   } catch (_err) {
-    console.error(err);
+    console.error(error);
     const errorMessage = 'Network error. Please try again.';
     return res.status(503).json({ 
       error: errorMessage,

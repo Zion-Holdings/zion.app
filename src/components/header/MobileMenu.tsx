@@ -46,7 +46,7 @@ export function MobileMenu({ unreadCount = 0, onClose, openLoginModal }: MobileM
   const router = useRouter();
   const { _user } = useAuth();
   const isAuthenticated = !!user;
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
 
   const baseItems = [
     {

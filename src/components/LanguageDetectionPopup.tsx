@@ -16,7 +16,7 @@ import type { SupportedLanguage, LanguageContextType } from '../context/Language
 
 export function LanguageDetectionPopup() {
   const [open, setOpen] = useState(false);
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
   const { changeLanguage, currentLanguage, supportedLanguages } = useLanguage() as LanguageContextType;
   const [detectedLanguage, setDetectedLanguage] = useState<SupportedLanguage | null>(null);
 

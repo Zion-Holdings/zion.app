@@ -10,7 +10,7 @@ import { safeStorage } from '@/utils/safeStorage';
 import { setCookie } from '@/utils/cookies';
 
 export function LanguageSwitcher() {
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
   const { currentLanguage, changeLanguage, supportedLanguages } = useLanguage();
   const availableLanguages =
     supportedLanguages && supportedLanguages.length > 0

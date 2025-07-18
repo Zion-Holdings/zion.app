@@ -29,7 +29,7 @@ export function Header({ hideLogin = false, customLogo }: HeaderProps) {
   const { _user } = useAuth();
   const firstName =
     (user && typeof user !== 'boolean' ? (user.displayName?.split(' ')[0] || user.name?.split(' ')[0]) : undefined) || '';
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

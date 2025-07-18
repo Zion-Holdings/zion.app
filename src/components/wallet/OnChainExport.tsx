@@ -152,7 +152,7 @@ export function OnChainExport() {
         ) : (
           <div className="space-y-2">
             <p className="text-sm text-muted-foreground mb-3">
-              Connect your web3 wallet to export tokens to the blockchain.
+              Connect your web3 wallet to export tokens to the blockethereum.
             </p>
             <Button onClick={handleConnectWallet} className="w-full">
               Connect Wallet

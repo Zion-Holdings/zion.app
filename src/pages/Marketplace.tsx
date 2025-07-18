@@ -241,7 +241,7 @@ const FilterControls: React.FC<{
  */
 export default function Marketplace() {
   const router = useRouter();
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
   const { _toast } = useToast();
   const { isAuthenticated, user } = useAuth();
   const firstRenderRef = useRef(true);

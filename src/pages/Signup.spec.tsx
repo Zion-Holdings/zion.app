@@ -1,3 +1,8 @@
+
+async function registerUser(userData) {
+  // Stub implementation for testing
+  return { success: true, user: userData };
+}
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';

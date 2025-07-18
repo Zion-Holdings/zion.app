@@ -25,7 +25,7 @@ export default function Partners() {
 
   logInfo('PartnersPage rendering');
   const [activeTab, setActiveTab] = useState("overview");
-  cons_t { t } = useTranslation();
+  const { t } = useTranslation();
   const { user, isAuthenticated } = useAuth();
   const router = useRouter();
   const [authServiceAvailable, setAuthServiceAvailable] = useState(true);
