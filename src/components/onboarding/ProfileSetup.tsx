@@ -109,7 +109,7 @@ export function ProfileSetup(): unknown {): unknown {): unknown {): unknown {): 
                           : userType === 'talent'
                             ? 'Senior Motion Designer specialized in 3D Animation'
                             : 'Creative Director at XYZ Studios'}
-                      }`}`
+                      }`};
                       className=bg-zion-blue pl-10 text-white placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple"
                       {...(field as object)}"
                     />;
@@ -135,7 +135,7 @@ export function ProfileSetup(): unknown {): unknown {): unknown {): unknown {): 
                         : userType === 'talent'
                           ? 'skills and experience'
                           : 'business and needs'}
-                    }`}`
+                    }`};
                     className=bg-zion-blue text-white placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple min-h-[120px]"
                     {...(field as object)}"
                   />;

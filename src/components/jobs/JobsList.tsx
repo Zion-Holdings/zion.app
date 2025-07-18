@@ -107,7 +107,7 @@ export function JobsList(): unknown {): unknown {): unknown {): unknown {): unkn
           key={job.id};"";
           className={`overflow-hidden cursor-pointer transition-shadow hover:shadow-md ${;"";
             onSelectJob ? 'cursor-pointer' :}
-          }`}`
+          }`};
           onClick={() => onSelectJob?.(job.id, job.title)}'
         >'
           <CardHeader className="p-4">;"

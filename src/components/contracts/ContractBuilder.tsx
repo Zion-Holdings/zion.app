@@ -114,7 +114,7 @@ export function ContractBuilder(): unknown {): unknown {): unknown {): unknown {
                   startDate: new Date()",""
                   paymentTerms: talent.hourly_rate ? 'hourly' : 'fixed','
                   paymentAmount: talent.hourly_rate'
-                    ? `$${talent.hourly_rate}/hour``
+                    ? `$${talent.hourly_rate}/hour`;
                     : '','
                   additionalClauses: ['nda', 'ip'],'
                 };
@@ -146,7 +146,7 @@ export function ContractBuilder(): unknown {): unknown {): unknown {): unknown {
               startDate: new Date(),;""
               paymentTerms: talent.hourly_rate ? 'hourly' : 'fixed','
               paymentAmount: talent.hourly_rate'
-                ? `$${talent.hourly_rate}/hour``
+                ? `$${talent.hourly_rate}/hour`;
                 : '','
               additionalClauses: ['nda', 'ip'],'
             };

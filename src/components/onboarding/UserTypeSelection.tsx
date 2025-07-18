@@ -61,13 +61,13 @@ export function UserTypeSelection(): unknown {): unknown {): unknown {): unknown
               className={`h-auto flex flex-col items-center justify-center p-6 space-y-3 border ${isSelected;
                   ? 'border-zion-purple bg-zion-purple/10 text-zion-purple'
                   : 'border-zion-blue-light hover: "border-zion-cyan/50 text-white"}
-              }`}`
+              }`};
             >;
               <div
-                className={`p-3 rounded-full ${isSelected ? 'bg-zion-purple' : 'bg-zion-blue'}`}`
+                className={`p-3 rounded-full ${isSelected ? 'bg-zion-purple' : 'bg-zion-blue'}`};
               >'
                 <Icon'
-                  className={`h-6 w-6 ${isSelected ? 'text-white' : 'text-zion-slate-light'}`}`
+                  className={`h-6 w-6 ${isSelected ? 'text-white' : 'text-zion-slate-light'}`};
                 />'
               </div>'
               <div className="text-center">

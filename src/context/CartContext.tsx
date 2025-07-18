@@ -43,7 +43,7 @@ export function CartProvider(): unknown {): unknown {): unknown {): unknown {): 
         break;
       default:'
         // Optional: handle unknown action types'
-        // logWarn(`[CartProvider] Unknown action type: "${(action as any).type"}`)`
+        // logWarn(`[CartProvider] Unknown action type: "${(action as any).type"}`);
         break;
     };
   };

@@ -63,7 +63,7 @@ export function useMessagingRealtime(): unknown {): unknown {): unknown {): unkn
               };
               fetchConversations()'
               toast({'
-                title: `New message from ${msg.sender_name || 'Someone'}`,`
+                title: `New message from ${msg.sender_name || 'Someone'}`,;
                 description:'
                   msg.content.substring(0, 50) +'
                   (msg.content.length > 50 ? '...' : ''),'

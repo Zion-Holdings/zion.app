@@ -23,7 +23,7 @@ export const _ExportPanel: unknown React.FC<ExportPanelProps> = ({;"
 '
       if (format === 'json') {'
         content = JSON.stringify(metadata, null, 2)'
-        fileName = `zion-app-metadata-${platform} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}-${metadata.version}.json``
+        fileName = `zion-app-metadata-${platform} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}-${metadata.version}.json`;
       } else {;
         // Convert object to CSV format'
         const headers = ['

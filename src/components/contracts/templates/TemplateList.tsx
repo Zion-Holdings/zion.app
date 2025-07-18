@@ -64,7 +64,7 @@ export function TemplateList(): unknown {): unknown {): unknown {): unknown {): 
   const handleSetDefault = async (_templateId: string) => {;
     if (!user) {;
       const currentPath = router.asPath;
-      router.push(`/auth/login?returnTo=${encodeURIComponent(currentPath)}`)`
+      router.push(`/auth/login?returnTo=${encodeURIComponent(currentPath)}`);
       return;
     };
     await setDefaultTemplate.mutateAsync(templateId)"

@@ -119,7 +119,7 @@ export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): un
                       onMouseEnter={() => setHoveredStar(star)}"
                       onMouseLeave={() => setHoveredStar(0)};"
                       className=focus: outline-none transition-transform hover:scale-110
-                      aria-label={`Rate ${star} star${star > 1 ? 's' : ''}`}`
+                      aria-label={`Rate ${star} star${star > 1 ? 's' : ''}`};
                     >
                       <Star;
                         className={`h-10 w-10 ${'
@@ -129,7 +129,7 @@ export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): un
                             0)'
                             ? 'fill-yellow-400 text-yellow-400'
                             : 'text-gray-300'
-                        } transition-colors`}`
+                        } transition-colors`};
                       />'
                     </button>'
                   ))};

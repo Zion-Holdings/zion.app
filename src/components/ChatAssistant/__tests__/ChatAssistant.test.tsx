@@ -424,7 +424,7 @@ describe('ChatAssistant', () => {'
       mockUseLocalStorage.mockImplementation((key, defaultVal) => {'
         // initialMessages prop takes precedence logic is handled inside ChatAssistant's useEffect'
         // This mock just needs to provide a value and a setter.'
-        // The key part is what `storedGuestMessages` is initially.`
+        // The key part is what `storedGuestMessages` is initially.;
         const [val, setVal] = React.useState<Message[]>(messagesFromStorage)'
         const setAndPersist: (",;
           newValue: Message[] | ((v: Message[]) => Message[])",";

@@ -33,7 +33,7 @@ export function VerifiedBadge(): unknown {): unknown {): unknown {): unknown {):
       <Tooltip>'
         <TooltipTrigger asChild>'
           <span className="inline-flex text-blue-500">
-            <CheckCircle className={`${sizeClasses[size]} fill-blue-100`} />`
+            <CheckCircle className={`${sizeClasses[size]} fill-blue-100`} />;
           </span>;
         </TooltipTrigger>;
         <TooltipContent>;

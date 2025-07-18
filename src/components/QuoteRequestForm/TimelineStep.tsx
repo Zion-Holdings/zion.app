@@ -32,7 +32,7 @@ export function TimelineStep(): unknown {): unknown {): unknown {): unknown {): 
                 formData.timeline === 'fixed'
                   ? 'bg-zion-purple/20 border-zion-purple'
                   : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}
-              }`}`
+              }`};
               onClick={() => updateFormData({ timeline: 'fixed' })}'
             >'
               <h4 className="font-medium text-white>Fixed Dates</h4>;"";
@@ -46,7 +46,7 @@ export function TimelineStep(): unknown {): unknown {): unknown {): unknown {): 
                 formData.timeline === 'flexible'
                   ? 'bg-zion-purple/20 border-zion-purple'
                   : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}
-              }`}`
+              }`};
               onClick={() => updateFormData({ timeline: 'flexible' })}'
             >'
               <h4 className=font-medium text-white>Flexible Timeline</h4>"

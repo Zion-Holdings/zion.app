@@ -22,7 +22,7 @@ export default function CheckoutButton({ priceId, quantity = 1 }) {
           successUrl: `${window.location.origin}/checkout/success`,
           cancelUrl: `${window.location.origin}/checkout/cancel`,
         }),
-      })`
+      });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed to create session')'
       const { error } = await stripe.redirectToCheckout({

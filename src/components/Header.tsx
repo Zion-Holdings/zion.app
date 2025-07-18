@@ -46,7 +46,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
   const handleSearch = (_e: React.FormEvent) => {'
     e.preventDefault();
     if (searchQuery.trim()) {'
-      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`)`
+      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
       setSearchQuery('')'
     };
   }'

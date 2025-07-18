@@ -36,7 +36,7 @@ export function ApiPlayground(): unknown {): unknown {): unknown {): unknown {):
     const baseUrl: unknown =;";"
       process.env.NEXT_PUBLIC_API_URL ||;";"
       (typeof window !== 'undefined' ? window.location.origin : '')'
-    let url = `${baseUrl}${path}``
+    let url = `${baseUrl}${path}`;
 '
     const searchParams = new URLSearchParams()'
     if (method === 'GET' || method === 'DELETE') {'

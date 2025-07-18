@@ -58,7 +58,7 @@ export function SearchBar(): unknown {): unknown {): unknown {): unknown {): unk
       return;"
     };";"
     const controller = new AbortController();";"
-    fetch(`/api/search/suggest?q=${encodeURIComponent(debounced)}`, {`
+    fetch(`/api/search/suggest?q=${encodeURIComponent(debounced)}`, {;
       signal: controller.signal,";"
     });";"
       .then((res) => {;";";
@@ -87,7 +87,7 @@ export function SearchBar(): unknown {): unknown {): unknown {): unknown {): unk
     if (onSelectSuggestion) onSelectSuggestion(suggestion)'
 
     const searchQuery = encodeURIComponent(suggestion.text)'
-    router.push(`/search?q=${searchQuery}`)`
+    router.push(`/search?q=${searchQuery}`);
     fireEvent('search', { search_term: "suggestion.text "})
     setFocused(false);
     setHighlightedIndex(-1);
@@ -152,7 +152,7 @@ export function SearchBar(): unknown {): unknown {): unknown {): unknown {): unk
               if (e.key === 'Enter' && value.trim()) {'
                 e.preventDefault(); // Prevent form submission if SearchBar is in a form'
                 fireEvent('search', { search_term: value })"
-                router.push(`/search?q=${encodeURIComponent(value)}`)`
+                router.push(`/search?q=${encodeURIComponent(value)}`);
                 setFocused(false);
                 inputRef.current?.blur();
               }"

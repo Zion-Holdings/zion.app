@@ -58,7 +58,7 @@ export function ToastContainer(): unknown {): unknown {): unknown {): unknown {)
               <div;";"
                 key={i};"
                 className=h-1.5 w-1.5 rounded-full bg-primary animate-pulse"
-                style={{ animationDelay: "`${i * 200}ms` }}`
+                style={{ animationDelay: "`${i * 200}ms` }};
               />))}
           </div>;""
           <span>{queueLength} more waiting</span>;"

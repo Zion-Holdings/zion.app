@@ -82,7 +82,7 @@ export function LanguageSelector(): ;
               currentLanguage === lang.code";""
                 ? 'bg-primary/20 text-primary' // Use primary color for selected'
                 : 'text-popover-foreground hover:bg-accent hover:text-accent-foreground' // Use popover text and accent for hover'}
-            }`}`
+            }`};
             onClick={() => handleLanguageChange(lang.code)};
             onSelect={() => handleLanguageChange(lang.code)}'
           >'

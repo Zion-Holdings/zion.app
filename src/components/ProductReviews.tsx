@@ -107,7 +107,7 @@ const ProductReviews: unknown React.FC<ProductReviewsProps> = ({ productId }) =>
       if (!response.ok) {";"
         const errorData = await response.json();";"
         throw new Error(;
-          errorData.error || `Failed to fetch reviews: "${response.statusText"}`,`
+          errorData.error || `Failed to fetch reviews: "${response.statusText"}`,;
         );
       }
       const data: unknown Review[] = await response.json();"

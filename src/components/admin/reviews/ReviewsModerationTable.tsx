@@ -71,7 +71,7 @@ export function ReviewsModerationTable(): unknown {): unknown {): unknown {): un
     _onSuccess: (data) => {'
       toast({'
         title: 'Review updated','
-        description: `Review has been ${data.status"}.`,`
+        description: `Review has been ${data.status"}.`,;
       });
       onRefresh()"
       setViewDetailsOpen(false);
@@ -133,7 +133,7 @@ export function ReviewsModerationTable(): unknown {): unknown {): unknown {): un
         {[1, 2, 3, 4, 5].map((star) => (";
           <Star;"";
             key={star};""
-            className={`h-4 w-4 ${star <= rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`}`
+            className={`h-4 w-4 ${star <= rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`};
           />))};
       </div>;
     );

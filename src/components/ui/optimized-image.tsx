@@ -117,7 +117,7 @@ export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
               logWarn('Large image detected:', {'
                 src,'
                 size: "`${(fileSize / 1024).toFixed(2)}KB`,
-                loadTime: "`${loadTime.toFixed(2)"}ms`,`
+                loadTime: "`${loadTime.toFixed(2)"}ms`,;
               });
             }
           };"
@@ -154,7 +154,7 @@ export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
       // Retry with a slight delay;
       setTimeout(;
         () => {;
-          setCurrentSrc(src + `?retry=${retries + 1}`)`
+          setCurrentSrc(src + `?retry=${retries + 1}`);
         },;
         1000 * (retries + 1),;
       );
@@ -217,7 +217,7 @@ export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
     aspectRatio:"
       aspectRatio || (width && height ? `${width}/${height}` : undefined),;
     width: width ? `${width"}px` : undefined,"
-    height: height ? `${height}px` : undefined,`
+    height: height ? `${height}px` : undefined,;
   }"
 ;"
   return (;
@@ -277,7 +277,7 @@ export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
             onError={handleError}'
             className={cn('
               'w-full h-full transition-opacity duration-300','
-              `object-${objectFit}`,`
+              `object-${objectFit}`,;
               isLoading ? 'opacity-0' : 'opacity-100','
             )}'
             initial={{ opacity: 0 }}"
@@ -328,7 +328,7 @@ export const _ImageGallery: unknown React.FC<ImageGalleryProps> = ({;
       <div;"
         className={`grid gap-4`}
         style={{;
-          gridTemplateColumns: "`repeat(${columns"}, 1fr)`,`
+          gridTemplateColumns: "`repeat(${columns"}, 1fr)`,;
         }}
       >;"
         {images.map((image, index) => (;"

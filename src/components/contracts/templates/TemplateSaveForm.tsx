@@ -133,7 +133,7 @@ export function TemplateSaveForm(): unknown {): unknown {): unknown {): unknown 
                 Saving...;"
               </>;";"
             ) : (;"
-              `${editTemplate ? 'Update' : 'Save'} Template``
+              `${editTemplate ? 'Update' : 'Save'} Template`;
             )};
           </Button>;
         </div>;

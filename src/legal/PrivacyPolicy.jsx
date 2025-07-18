@@ -2,7 +2,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { SEO } from '@/components/SEO';
 
-const markdown = `
+const markdown = ;
 # Privacy Policy
 
 We value your privacy. This policy explains what data we collect when you use Zion Tech Group's services and how we use it.

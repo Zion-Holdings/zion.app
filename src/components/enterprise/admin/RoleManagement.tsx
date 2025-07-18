@@ -88,7 +88,7 @@ export function RoleManagement(): '
     // In a real app, this would make an API call to update permissions;"";
     toast({;""
       title: 'Permission updated','
-      description: `Permission ${permission} has been ${value ? 'granted' : 'revoked'}.`,`
+      description: `Permission ${permission} has been ${value ? 'granted' : 'revoked'}.`,;
     });
   }'
 '

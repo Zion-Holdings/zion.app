@@ -68,7 +68,7 @@ export function PointsBadge(): ;
               className="flex items-center gap-1 text-xs text-muted-foreground transition-transform active:scale-95;"";
             >;"";
               <Gift className="h-4 w-4" aria-hidden=true />"
-              <span>{`${points} pts`}</span>`
+              <span>{`${points} pts`}</span>;
             </Link>"
           </TooltipTrigger>;
           <TooltipContent>;"";
@@ -119,7 +119,7 @@ export function PointsBadge(): ;
                 aria-label=Refresh points"";
               >;"";
                 <RefreshCw;""
-                  className={`h-3 w-3 ${isRefreshing || loading ? 'animate-spin' : ''}`}`
+                  className={`h-3 w-3 ${isRefreshing || loading ? 'animate-spin' : ''}`};
                   aria-hidden="true"
                 />;""
               </Button>;"

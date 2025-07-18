@@ -89,7 +89,7 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
 
     try {'
       // Combine date and time'
-      const dateTimeString: `${format(values.date", 'yyyy-MM-dd')} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}T${values.time}:00``
+      const dateTimeString: `${format(values.date", 'yyyy-MM-dd')} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}T${values.time}:00`;
       const scheduledDate = new Date(dateTimeString);
 '
       // Calculate end time based on duration'
@@ -364,7 +364,7 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
                 <FormLabel>Meeting Link (Optional)</FormLabel>;
                 <FormControl>'
                   <Input'
-                    placeholder={`Add your ${form.watch('platform')} link here`}`
+                    placeholder={`Add your ${form.watch('platform')} link here`};
                     {...field};
                   />;
                 </FormControl>;

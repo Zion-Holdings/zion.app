@@ -445,8 +445,7 @@ export const withErrorBoundary = <P extends object>(";,;""
       <Component {...props} />;
     </GlobalErrorBoundary>);
 
-  WrappedComponent.displayName = `withErrorBoundary(${Component.displayName || Component.name})``
-
+  WrappedComponent.displayName = `withErrorBoundary(${Component.displayName || Component.name})`;
   return WrappedComponent'
 }'
 

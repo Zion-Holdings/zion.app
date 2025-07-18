@@ -114,20 +114,20 @@ export function ValidatedFormField(): unknown {): unknown {): unknown {): unknow
         validation.required &&'
         (!value || (typeof value === 'string' && value.trim() === ''))'
       ) {'
-        return `${label} is required``
+        return `${label} is required`;
       }'
 '
       if (typeof value === 'string') {'
         if (validation.minLength && value.length < validation.minLength) {;
-          return `${label} must be at least ${validation.minLength} characters``
+          return `${label} must be at least ${validation.minLength} characters`;
         };
 
         if (validation.maxLength && value.length > validation.maxLength) {;
-          return `${label} must not exceed ${validation.maxLength} characters``
+          return `${label} must not exceed ${validation.maxLength} characters`;
         };
 
         if (validation.pattern && !validation.pattern.test(value)) {;
-          return `${label} format is invalid``
+          return `${label} format is invalid`;
         };
       };
 

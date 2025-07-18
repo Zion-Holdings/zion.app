@@ -76,11 +76,11 @@ export function TeamActivity(): '
     const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
 
     if (diffMins < 60) {;
-      return `${diffMins} minutes ago``
+      return `${diffMins} minutes ago`;
     } else if (diffHrs < 24) {;
-      return `${diffHrs} hours ago``
+      return `${diffHrs} hours ago`;
     } else if (diffDays < 7) {;
-      return `${diffDays} days ago``
+      return `${diffDays} days ago`;
     } else {;
       return date.toLocaleDateString();
     };

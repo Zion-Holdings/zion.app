@@ -76,7 +76,7 @@ export function RewardsCard(): unknown {): unknown {): unknown {): unknown {): u
               key={reward.id}"
               className={`flex justify-between items-start ${;
                 index !== rewards.length - 1 ? 'border-b pb-3' :}
-              }`}`
+              }`};
             >'
               <div>'
                 <div className=flex items-center gap-2">"
@@ -87,7 +87,7 @@ export function RewardsCard(): unknown {): unknown {): unknown {): unknown {): u
                   )};"
                   <p className=font-medium>"
                     {reward.reward_type === 'credit'
-                      ? `$${reward.amount?.toFixed(2)} Credit``
+                      ? `$${reward.amount?.toFixed(2)} Credit`;
                       : 'Visibility Boost'}'
                   </p>'
                 </div>'

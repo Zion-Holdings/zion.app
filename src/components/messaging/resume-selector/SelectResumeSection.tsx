@@ -33,7 +33,7 @@ export function SelectResumeSection(): unknown {): unknown {): unknown {): unkno
                 selectedResume?.id === option.id"
                   ? 'bg-zion-purple/20 border border-zion-purple'
                   : 'bg-zion-blue-dark/30 hover: bg-zion-blue-dark/50}
-              }`}`
+              }`};
               onClick={() => handleResumeSelect(option.id)};"
             >"
               <div className=flex items-center>"

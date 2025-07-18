@@ -98,7 +98,7 @@ const ProductListingCardComponent = ({'
       return;
     };
 
-    router.push(`${detailBasePath}/${listing.id}`)`
+    router.push(`${detailBasePath}/${listing.id}`);
   };
 
   const dispatch = useDispatch<AppDispatch>();
@@ -130,7 +130,7 @@ const ProductListingCardComponent = ({'
     if (onRequestQuote) {;
       onRequestQuote(listing.id);
     } else {'
-      router.push(`/request-quote?listing=${listing.id}`)`
+      router.push(`/request-quote?listing=${listing.id}`);
     };
   }'
 '
@@ -163,7 +163,7 @@ const ProductListingCardComponent = ({'
           }'
         }};
       >'
-        <div className={`relative ${imageContainerClasses}`}>`
+        <div className={`relative ${imageContainerClasses}`}>;
           {' '}'
           {/* Ensure this container has dimensions */}'
           <Image'
@@ -196,7 +196,7 @@ const ProductListingCardComponent = ({'
       </div>;"";
       {/* Content */};"";
       <div;"";
-        className={`flex flex-col justify-between ${isGrid ? 'p-4 flex-1' : 'p-4 flex-1'}`}`
+        className={`flex flex-col justify-between ${isGrid ? 'p-4 flex-1' : 'p-4 flex-1'}`};
       >;
         <div>'
           {/* Category & Rating */}'

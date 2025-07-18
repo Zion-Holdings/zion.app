@@ -52,7 +52,7 @@ export const _AppTestimonials: unknown React.FC = () => {'
                   {Array.from({ length: 5 "}).map((_, i) => ("
                     <Star;
                       key={i}
-                      className={`h-5 w-5 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-400'}`}`
+                      className={`h-5 w-5 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-400'}`};
                     />))}'
                 </div>'
                 <p className="text-gray-200 mb-6">{testimonial.text}</p>"

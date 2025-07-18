@@ -112,7 +112,7 @@ export function PerformanceDashboard(): ;
           </p>;
         </div>;
         <Button onClick={collectMetrics}>;
-          <RefreshCw className={`w-4 h-4 mr-2`} />`
+          <RefreshCw className={`w-4 h-4 mr-2`} />;
           Refresh;
         </Button>;"
       </div>"

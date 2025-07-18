@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import type { SearchSuggestion } from '@/types/search'
 import { Search } from '@/components/ui/icons'
 import React, { useState } from 'react'
-// Build-test logs showed a missing `Link` name error when this component used`
+// Build-test logs showed a missing `Link` name error when this component used;
 // the react-router version. Switching to Next.js `Link` resolves the TypeScript'
 // error and ensures proper navigation.'
 import Link from 'next/link'

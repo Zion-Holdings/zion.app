@@ -49,7 +49,7 @@ export function CreatePostButton(): unknown {): unknown {): unknown {): unknown 
         onRequireLogin(target);
       } else {;
         const returnTo = encodeURIComponent(target);
-        router.push(`/auth/login?returnTo=${returnTo}`)`
+        router.push(`/auth/login?returnTo=${returnTo}`);
       };
     };
   };

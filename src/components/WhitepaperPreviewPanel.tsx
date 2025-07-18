@@ -103,14 +103,14 @@ const WhitepaperPreviewPanel: unknown React.FC<WhitepaperPreviewPanelProps> = ({
                       >;
                         {distributionChartData.map((entry, index) => (;
                           <Cell;
-                            key={`cell-preview-${index}`}`
+                            key={`cell-preview-${index}`};
                             fill={COLORS[index % COLORS.length]}"
                           />;
                         ))};"";
                       </Pie>;"";
                       <Tooltip;"";
                         formatter={(value: number, name: string) => [
-                          `${value}%`,`
+                          `${value}%`,;
                           name,;
                         ]};
                       />;

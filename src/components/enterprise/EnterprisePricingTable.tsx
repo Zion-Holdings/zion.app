@@ -109,7 +109,7 @@ export function EnterprisePricingTable(): ;
                       </p>;"";
                       <p className=text-sm font-medium mt-2">{plan.users}</p>"
                       <Button";""
-                        className={`mt-4 w-full ${plan.popular ? 'bg-zion-purple hover:bg-zion-purple/90' : ''}`}`
+                        className={`mt-4 w-full ${plan.popular ? 'bg-zion-purple hover:bg-zion-purple/90' : ''}`};
                         variant={plan.popular ? 'default' : 'outline'}'
                       >'
                         {plan.name === 'Enterprise'

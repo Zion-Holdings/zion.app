@@ -33,7 +33,7 @@ export function ProfileContact(): unknown {): unknown {): unknown {): unknown {)
       setSubject('')'
       toast({'
         title: 'Message Sent','
-        description: `Your message has been sent to ${profileName"}.`,`
+        description: `Your message has been sent to ${profileName"}.`,;
       })"
     }, 1000);
   };"

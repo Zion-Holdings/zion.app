@@ -135,13 +135,13 @@ export function LanguageSwitcher(): ;
                 currentLanguage === lang.code'
                   ? 'text-zion-cyan'
                   : 'text-white hover: "bg-zion-purple/10"}
-              }`}`
+              }`};
               onMouseEnter={() => setHighlighted(idx)};
               onClick={() => selectLanguage(lang.code)}'
             >'
               <div className=flex items-center gap-2">""
                 <span className=text-lg>{lang.flag}</span>"
-                <span>{t(`language.${lang.code}`)}</span>`
+                <span>{t(`language.${lang.code}`)}</span>;
               </div>"
             </li>;
           ))};"";

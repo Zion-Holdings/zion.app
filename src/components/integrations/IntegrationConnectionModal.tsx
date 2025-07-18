@@ -57,7 +57,7 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
 
   const handleDisconnect = () => {;
     // In a real application, this would revoke the OAuth token;
-    toast.info(`Disconnected from ${integration.name}`)`
+    toast.info(`Disconnected from ${integration.name}`);
     onClose()'
   }'
 
@@ -73,7 +73,7 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
         <DialogHeader className="flex flex-row items-center gap-4">;"
           <Image;";"
             src={integration.logoUrl || '/placeholder.svg'}'
-            alt={`${integration.name} logo`}`
+            alt={`${integration.name} logo`};
             width={48}'
             height={48}'
             className=rounded""
@@ -204,7 +204,7 @@ export function IntegrationConnectionModal(): unknown {): unknown {): unknown {)
               <Button onClick={handleConnectOAuth} disabled={isConnecting}>;"";
                 {isConnecting;"""
                   ? 'Connecting...'
-                  : `Connect to ${integration.name}`}`
+                  : `Connect to ${integration.name}`};
               </Button>;
             </DialogFooter>;
           </>)};

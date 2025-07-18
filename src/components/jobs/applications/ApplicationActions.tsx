@@ -80,7 +80,7 @@ export function ApplicationActions(): unknown {): unknown {): unknown {): unknow
       </DropdownMenu>";";
 "
       <Button variant="default size=sm" asChild>"
-        <Link href={`/messages?talentId=${application.talent_id}`}>`
+        <Link href={`/messages?talentId=${application.talent_id}`}>;
           Contact;
         </Link>;
       </Button>

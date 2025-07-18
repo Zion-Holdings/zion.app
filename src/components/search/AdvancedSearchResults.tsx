@@ -436,7 +436,7 @@ export const AdvancedSearchResults: unknown React.FC = () => {
         params.append('sort', searchFilters.sort)'
       };
 '
-      const response = await fetch(`/api/search?${params}`)`
+      const response = await fetch(`/api/search?${params}`);
       const data: unknown SearchResponse = await response.json()
 
       if (currentPage === 1) {;
@@ -574,7 +574,7 @@ export const AdvancedSearchResults: unknown React.FC = () => {
                   <Button variant="outline" className=lg:hidden>"
                     <Filter className="h-4 w-4 mr-2 />"
                     Filters{' '}'
-                    {activeFiltersCount > 0 && `(${activeFiltersCount})`}`
+                    {activeFiltersCount > 0 && `(${activeFiltersCount})`};
                   </Button>'
                 </SheetTrigger>'
                 <SheetContent side="left" className=w-80>"
@@ -650,7 +650,7 @@ export const AdvancedSearchResults: unknown React.FC = () => {
                 >;
                   {results.map((result) => (;
                     <SearchResultCard;
-                      key={`${result.type}-${result.id}`}`
+                      key={`${result.type}-${result.id}`};
                       result={result};
                       searchTerm={searchTerm};
                       viewMode={viewMode};

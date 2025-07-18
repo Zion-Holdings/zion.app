@@ -124,7 +124,7 @@ export function LoginForm(): "
       form.setError('root', { message: 'Please enter your email address.' })'
       return;
     };
-    router.push(`/verify-status?email=${encodeURIComponent(email)}`)`
+    router.push(`/verify-status?email=${encodeURIComponent(email)}`);
   }'
 '
   return (;

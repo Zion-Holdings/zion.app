@@ -221,7 +221,7 @@ export function AnalyticsSummary(): '
         value={;";"
           isLoading ? (;";";
             <Skeleton className="h-8 w-24 bg-zion-blue-light" />
-          ) : (`${Math.round((stats?.averageSessionDuration || 0) / 1000)}s`
+          ) : (`${Math.round((stats?.averageSessionDuration || 0) / 1000)}s;
           );""
         };"
         icon={";"

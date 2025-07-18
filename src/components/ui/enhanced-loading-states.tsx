@@ -320,7 +320,7 @@ export const _ErrorState: unknown React.FC<ErrorStateProps> = ({;
             {canRetry && (;"
               <Button onClick={onRetry} variant=default>"
                 <RefreshCw className="h-4 w-4 mr-2 />
-                Try Again {retryCount > 0 && `(${retryCount}/${maxRetries})`}`
+                Try Again {retryCount > 0 && `(${retryCount}/${maxRetries})`};
               </Button>;"
             )}"
 ;"

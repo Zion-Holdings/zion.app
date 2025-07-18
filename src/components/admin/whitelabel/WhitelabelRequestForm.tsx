@@ -104,7 +104,7 @@ export function WhitelabelRequestForm(): '
 '
       toast({'
         title: 'White-label tenant created!','
-        description: "`${values.brand_name"} has been set up with subdomain ${values.subdomain}`,`
+        description: "`${values.brand_name"} has been set up with subdomain ${values.subdomain}`,;
       })
 ;"
       // Reset form;";

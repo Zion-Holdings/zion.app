@@ -145,7 +145,7 @@ export function ApiKeysManager(): ;
   const getExampleCode = (_key: string) => {'
     return `curl -X GET "_https://api.ziontechgroup.com/v1/jobs" \\;"
   -H Authorization: "Bearer ${key"} \\;"";
-  -H "Content-Type: application/json"`
+  -H "Content-Type: application/json";
   };"
 ;";
   // Reset form when dialog closes";";

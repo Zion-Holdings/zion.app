@@ -133,7 +133,7 @@ export {;
 // Add useToast hook export;
 // export function useToast(): ;
 //   return {;
-//     // Accept a loosely typed props object to allow custom fields like `description``
+//     // Accept a loosely typed props object to allow custom fields like `description`;
 //     _toast: (props: unknown) => {;
 //       // Implementation of toast functionality'
 //     },'

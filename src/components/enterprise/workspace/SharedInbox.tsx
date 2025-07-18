@@ -62,7 +62,7 @@ export function SharedInbox(): '
             >'
               <div className=flex items-center justify-between">"
                 <p";""
-                  className={`font-medium ${message.unread ? 'font-semibold' : ''}`}`
+                  className={`font-medium ${message.unread ? 'font-semibold' : ''}`};
                 >;
                   {message.from}'
                 </p>'

@@ -50,7 +50,7 @@ export function ReferralLeaderboard():
                         : entry.rank === 3;
                           ? 'bg-amber-200 text-amber-800'
                           : 'bg-muted text-muted-foreground'}
-                  }`}`
+                  }`};
                 >;
                   {entry.rank}'
                 </div>'

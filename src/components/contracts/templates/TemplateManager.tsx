@@ -37,7 +37,7 @@ export function TemplateManager(): unknown {): unknown {): unknown {): unknown {
       onClose()'
       toast({'
         title: 'Template loaded','
-        description: `Template ${template.title} has been loaded.`,`
+        description: `Template ${template.title} has been loaded.`,;
       })"
     };"
   };";"

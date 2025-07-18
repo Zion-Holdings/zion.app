@@ -103,12 +103,12 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
                     suggestion.type === 'blog' &&'
                     !suggestion.slug.startsWith('/blog/')'
                   ) {;
-                    path = `/blog/${suggestion.slug}``
+                    path = `/blog/${suggestion.slug}`;
                   };
                   router.push(path);
                 } else {'
                   router.push('
-                    `/search?q=${encodeURIComponent(suggestion.text)}`,`
+                    `/search?q=${encodeURIComponent(suggestion.text)}`,;
                   )'
                 }'
                 setQuery('')'
@@ -237,12 +237,12 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
                       suggestion.type === 'blog' &&'
                       !suggestion.slug.startsWith('/blog/')'
                     ) {;
-                      path = `/blog/${suggestion.slug}``
+                      path = `/blog/${suggestion.slug}`;
                     };
                     router.push(path);
                   } else {'
                     router.push('
-                      `/search?q=${encodeURIComponent(suggestion.text)}`,`
+                      `/search?q=${encodeURIComponent(suggestion.text)}`,;
                     )'
                   }'
                   setQuery('')'

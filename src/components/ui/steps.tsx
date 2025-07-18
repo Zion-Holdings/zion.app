@@ -85,7 +85,7 @@ export function Steps(): unknown {): unknown {): unknown {): unknown {): unknown
           <div;"
             className="h-full bg-zion-purple transition-all
             style={{"
-              width: "`${(currentStep / (childrenArray.length - 1)) * 100"}%`,`
+              width: "`${(currentStep / (childrenArray.length - 1)) * 100"}%`,;
             }};
           />;
         </div>;

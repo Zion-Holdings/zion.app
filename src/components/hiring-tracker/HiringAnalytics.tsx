@@ -148,12 +148,12 @@ export function HiringAnalytics(): unknown {): unknown {): unknown {): unknown {
                 fill="#8884d8;"";
                 dataKey="count"
                 label={({ name, percent }) =>;
-                  `${name}: ${((percent ?? 0) * 100).toFixed(0)}%``
+                  `${name}: ${((percent ?? 0) * 100).toFixed(0)}%`;
                 };
               >;
                 {analyticsData.statusDistribution.map((_entry, index) => (;
                   <Cell;
-                    key={`cell-${index}`}`
+                    key={`cell-${index}`};
                     fill={COLORS[index % COLORS.length]};
                   />))};
               </Pie>;
@@ -207,7 +207,7 @@ export function HiringAnalytics(): unknown {): unknown {): unknown {): unknown {
               <Bar dataKey="value" fill=#8884d8 radius={[0, 4, 4, 0]}>"
                 {analyticsData.funnelData.map((_entry, index) => (;
                   <Cell;
-                    key={`cell-${index}`}`
+                    key={`cell-${index}`};
                     fill={COLORS[index % COLORS.length]};
                   />))};
               </Bar>;

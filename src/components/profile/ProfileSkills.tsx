@@ -24,7 +24,7 @@ export function ProfileSkills(): unknown {): unknown {): unknown {): unknown {):
             <div className=h-2 w-full bg-zion-blue-light rounded-full overflow-hidden>"
               <div;"
                 className=h-full bg-gradient-to-r from-zion-purple to-zion-cyan
-                style={{ width: "`${(skill.level / 5) * 100"}%` }}`
+                style={{ width: "`${(skill.level / 5) * 100"}%` }};
               />;
             </div>;
           </div>;

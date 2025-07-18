@@ -58,7 +58,7 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
       const { data, error } = await supabase'
         .from('suggested_talents')'
         .select(;
-          ``
+          `;
           *,;
           talent_profile:talent_id(;
             id,;
@@ -100,7 +100,7 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
     logInfo('View talent profile:', { data: { data: talentId } })";";
     toast({"
       title: 'View Profile','
-      description: "`Navigating to talent profile: ${talentId}`,`
+      description: "`Navigating to talent profile: ${talentId}`,;
     })
   };""
 ;"
@@ -109,7 +109,7 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
     logInfo('Invite talent:', { data: { data: talentId } })";";
     toast({"
       title: 'Invite Talent','
-      description: "`Inviting talent: ${talentId}`,`
+      description: "`Inviting talent: ${talentId}`,;
     });
   };
 

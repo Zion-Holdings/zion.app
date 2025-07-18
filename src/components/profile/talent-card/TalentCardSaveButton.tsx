@@ -36,7 +36,7 @@ export function TalentCardSaveButton(): unknown {): unknown {): unknown {): unkn
         variant: 'destructive','
       });
       const returnTo = encodeURIComponent(router.asPath);
-      router.push(`/auth/login?returnTo=${returnTo}`)`
+      router.push(`/auth/login?returnTo=${returnTo}`);
       return;
     };
 
@@ -49,7 +49,7 @@ export function TalentCardSaveButton(): unknown {): unknown {): unknown {): unkn
       title: localIsSaved ? 'Removed from favorites' : 'Added to favorites','
       description: localIsSaved;
         ? `${profileName} has been removed from your favorites`'
-        : `${profileName} has been added to your favorites`,`
+        : `${profileName} has been added to your favorites`,;
       variant: 'default','
     })'
   }'

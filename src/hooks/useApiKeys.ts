@@ -70,10 +70,10 @@ export function useApiKeys(): "
         return'
       };
 '
-      const response = await fetch(`${getApiUrl()"}/keys`, {`
+      const response = await fetch(`${getApiUrl()"}/keys`, {;
         method: 'GET','
         headers: {
-          Authorization: `Bearer ${typeof session === 'object' && session !== null && 'access_token' in session ? (session as { access_token: "string }).access_token : ''}`,`
+          Authorization: `Bearer ${typeof session === 'object' && session !== null && 'access_token' in session ? (session as { access_token: "string }).access_token : ''}`,;
           'Content-Type': 'application/json','
         },;
       })'
@@ -119,10 +119,10 @@ export function useApiKeys(): "
         return'
       };
 '
-      const response = await fetch(`${getApiUrl()}/create`, {`
+      const response = await fetch(`${getApiUrl()}/create`, {;
         method: 'POST','
         headers: {
-          Authorization: `Bearer ${typeof session === 'object' && session !== null && 'access_token' in session ? (session as { access_token: "string "}).access_token : ''}`,`
+          Authorization: `Bearer ${typeof session === 'object' && session !== null && 'access_token' in session ? (session as { access_token: "string "}).access_token : ''}`,;
           'Content-Type': 'application/json','
         },'
         body: JSON.stringify({;
@@ -182,10 +182,10 @@ export function useApiKeys(): "
         return'
       };
 '
-      const response = await fetch(`${getApiUrl()"}/regenerate`, {`
+      const response = await fetch(`${getApiUrl()"}/regenerate`, {;
         method: 'POST','
         headers: {
-          Authorization: `Bearer ${typeof session === 'object' && session !== null && 'access_token' in session ? (session as { access_token: string }).access_token : ''}`,`
+          Authorization: `Bearer ${typeof session === 'object' && session !== null && 'access_token' in session ? (session as { access_token: string }).access_token : ''}`,;
           'Content-Type': 'application/json','
         },'
         body: "JSON.stringify({ keyId "}),
@@ -245,10 +245,10 @@ export function useApiKeys(): "
         return'
       };
 '
-      const response = await fetch(`${getApiUrl()}/revoke`, {`
+      const response = await fetch(`${getApiUrl()}/revoke`, {;
         method: 'POST','
         headers: {
-          Authorization: `Bearer ${typeof session === 'object' && session !== null && 'access_token' in session ? (session as { access_token: "string "}).access_token : ''}`,`
+          Authorization: `Bearer ${typeof session === 'object' && session !== null && 'access_token' in session ? (session as { access_token: "string "}).access_token : ''}`,;
           'Content-Type': 'application/json','
         },'
         body: JSON.stringify({ keyId }),"
@@ -307,7 +307,7 @@ export function useApiKeys(): "
         {'
           method: 'GET','
           headers: {
-            Authorization: `Bearer ${typeof session === 'object' && session !== null && 'access_token' in session ? (session as { access_token: "string "}).access_token : ''}`,`
+            Authorization: `Bearer ${typeof session === 'object' && session !== null && 'access_token' in session ? (session as { access_token: "string "}).access_token : ''}`,;
             'Content-Type': 'application/json','
           },;
         },;

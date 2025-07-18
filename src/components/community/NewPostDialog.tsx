@@ -46,7 +46,7 @@ export function NewPostDialog(): unknown {): unknown {): unknown {): unknown {):
         mutate('user')'
       }'
       onOpenChange(false)'
-      router.push(`/community/category/${values.categoryId}`)`
+      router.push(`/community/category/${values.categoryId}`);
     } catch {'
       toast({'
         title: 'Error','

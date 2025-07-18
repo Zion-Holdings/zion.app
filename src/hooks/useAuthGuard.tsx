@@ -88,7 +88,7 @@ export function useAuthGuard(): unknown {): unknown {): unknown {): unknown {): 
                   'Auth guard: Redirecting unauthenticated user to login','
                 )'
                 toast.info('Please sign in to continue')'
-                router.replace(`${redirectTo}?returnTo=${returnTo}`)`
+                router.replace(`${redirectTo}?returnTo=${returnTo}`);
               };
             }, 100);
           };

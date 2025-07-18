@@ -37,7 +37,7 @@ export function RaiseDisputeButton(): unknown {): unknown {): unknown {): unknow
 
   const handleDisputeCreated = (_disputeId: string) => {;
     setIsDialogOpen(false);
-    router.push(`/dashboard/disputes/${disputeId}`)`
+    router.push(`/dashboard/disputes/${disputeId}`);
   };
 
   return (;

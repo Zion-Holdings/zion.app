@@ -7,7 +7,7 @@ export function openAuthPopup(): unknown {): unknown {): unknown {): unknown {):
   return window.open(";
     url,;""
     'oauth','
-    `width=${width},height=${height},left=${left},top=${top}`,`
+    `width=${width},height=${height},left=${left},top=${top}`,;
   );
 };
 

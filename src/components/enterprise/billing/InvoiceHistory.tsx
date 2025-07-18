@@ -66,7 +66,7 @@ export function InvoiceHistory(): '
     // In a real app, this would trigger a download of the invoice PDF'
     toast({'
       title: 'Downloading invoice','
-      description: "`Downloading invoice ${invoiceId} as PDF.`,`
+      description: "`Downloading invoice ${invoiceId} as PDF.`,;
     })
   };""
 ;"

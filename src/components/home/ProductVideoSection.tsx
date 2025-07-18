@@ -12,7 +12,7 @@ export function ProductVideoSection(): unknown {): unknown {): unknown {): unkno
 }: ProductVideoSectionProps) {;
   return ('
     <section'
-      className={`py-16 bg-zion-blue-dark ${className ?? ''}`}`
+      className={`py-16 bg-zion-blue-dark ${className ?? ''}`};
       style={style}'
     >'
       <div className="container mx-auto px-4 text-center>;"";

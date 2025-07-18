@@ -85,7 +85,7 @@ export function MarketplaceSearch(): unknown {): unknown {): unknown {): unknown
           {suggestions.map((s, i) => (;
             <li"
               key={s.id};"
-              className={`p-2 cursor-pointer ${i === highlight ? 'bg-zion-blue-light/20' : ''}`}`
+              className={`p-2 cursor-pointer ${i === highlight ? 'bg-zion-blue-light/20' : ''}`};
               onMouseDown={() => select(s)};
             >;
               {s.title};

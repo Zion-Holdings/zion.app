@@ -74,7 +74,7 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
 
   const getRelativeTime = () => {;
     if (isPast(interviewDate)) {;
-      return `Took place ${formatDistanceToNow(interviewDate)} ago``
+      return `Took place ${formatDistanceToNow(interviewDate)} ago`;
     } else {;
       return `Starts in ${formatDistanceToNow(interviewDate)}`'
     }'
@@ -91,7 +91,7 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
     if (success) {;"";
       toast({;"";
         title: "`Interview ${status"}`,;"
-        description: `You have successfully ${status"} the interview request.`,`
+        description: `You have successfully ${status"} the interview request.`,;
       })"
       setIsResponseDialogOpen(false);
       await onRefresh();"";

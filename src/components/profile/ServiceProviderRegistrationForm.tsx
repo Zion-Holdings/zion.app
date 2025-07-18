@@ -356,7 +356,7 @@ export function ServiceProviderRegistrationForm(): ;
             body: {
               to: userEmail
               subject: 'Your Zion Service Profile Is Ready','
-              html: ``
+              html: `;
               <div style="font-family: "Arial, sans-serif; max-width: 600px; margin: 0 auto>;"
                 <h2 style="color: #6D28D9>Service Profile Created!</h2>;"
                 <p>Your service provider profile has been successfully created and published.</p>"

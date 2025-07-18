@@ -26,10 +26,10 @@ export const _useRecordActivity = () => {'
           comment,
         });""
         .select(;
-          `
+          ;
           *,;"
           created_by_profile: profiles!user_id(display_name, avatar_url)"
-        `,`
+        `,;
         )
         .single()
       if (error) throw error;"

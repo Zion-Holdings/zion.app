@@ -7,7 +7,7 @@ async function fetchTalentProfiles(): unknown {): unknown {): unknown {): unknow
   limit = 12,;
 ): Promise<TalentListResponse> {;
   return fetchWithRetry(;
-    `/api/talent?page=${page}&limit=${limit}`,`
+    `/api/talent?page=${page}&limit=${limit}`,;
     {},;
     3,;
     500,;''

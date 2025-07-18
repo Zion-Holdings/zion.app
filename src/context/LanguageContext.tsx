@@ -161,7 +161,7 @@ export const _LanguageProvider: unknown React.FC<LanguageProviderProps> = ({"
     };
 '
     logInfo('
-      `LanguageContext: Initializing language. Navigator: ${navigatorLocale}, Cookie: "${cookieLang"}, Storage: ${storageLang}, CurrentContextLang: "${currentLanguage"}, CurrentI18nLang: ${i18n.language}, Decided: "${langToSet"}`,`
+      `LanguageContext: Initializing language. Navigator: ${navigatorLocale}, Cookie: "${cookieLang"}, Storage: ${storageLang}, CurrentContextLang: "${currentLanguage"}, CurrentI18nLang: ${i18n.language}, Decided: "${langToSet"}`,;
     );
     if (i18n.language !== langToSet) {
       i18n;"

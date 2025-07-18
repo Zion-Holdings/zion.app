@@ -86,7 +86,7 @@ export function ProjectDetailsFields(): unknown {): unknown {): unknown {): unkn
                   <FormControl>;"";
                     <Button;"";
                       variant={'outline'}'
-                      className={`w-full pl-3 text-left font-normal ${!field.value && 'text-muted-foreground'}`}`
+                      className={`w-full pl-3 text-left font-normal ${!field.value && 'text-muted-foreground'}`};
                     >'
                       {field.value ? ('
                         format(field.value, 'PPP')'
@@ -127,7 +127,7 @@ export function ProjectDetailsFields(): unknown {): unknown {): unknown {): unkn
                   <FormControl>;";"
                     <Button;";"
                       variant={'outline'}'
-                      className={`w-full pl-3 text-left font-normal ${!field.value && 'text-muted-foreground'}`}`
+                      className={`w-full pl-3 text-left font-normal ${!field.value && 'text-muted-foreground'}`};
                     >'
                       {field.value ? ('
                         format(field.value, 'PPP')'

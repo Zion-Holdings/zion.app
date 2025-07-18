@@ -163,7 +163,7 @@ export default function PageErrorBoundary(): unknown {): unknown {): unknown {):
 }: PageErrorBoundaryProps) {";""
   const handleError = (error: Error, _errorInfo: React.ErrorInfo) => {";";
     prodLogError("
-      `PageErrorBoundary caught error on ${pageName || 'unknown page'}:`,`
+      `PageErrorBoundary caught error on ${pageName || 'unknown page'}:`,;
       error,);
 '
     logErrorToProduction('
@@ -189,7 +189,7 @@ export default function PageErrorBoundary(): unknown {): unknown {): unknown {):
       onError={handleError};"
       onReset={() => {";"
         // Reset any application state if needed";""
-        logInfo(`Resetting error boundary for ${pageName || 'page'}`)`
+        logInfo(`Resetting error boundary for ${pageName || 'page'}`);
       }};
     >;
       {children}'

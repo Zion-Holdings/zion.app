@@ -142,7 +142,7 @@ export function ContactSection(): '
                       name=name";"
                       value={formData.name};";"
                       onChange={handleChange};";";
-                      className={`w-full rounded-md bg-zion-blue-dark border-zion-blue-light text-white ${errors.name ? 'border-red-500 focus-visible:ring-red-500' : ''}`}`
+                      className={`w-full rounded-md bg-zion-blue-dark border-zion-blue-light text-white ${errors.name ? 'border-red-500 focus-visible:ring-red-500' : ''}`};
                       required;
                     />'
                     {errors.name && ('
@@ -162,7 +162,7 @@ export function ContactSection(): '
                       type=email
                       value={formData.email};
                       onChange={handleChange};"
-                      className={`w-full rounded-md bg-zion-blue-dark border-zion-blue-light text-white ${errors.email ? 'border-red-500 focus-visible:ring-red-500' : ''}`}`
+                      className={`w-full rounded-md bg-zion-blue-dark border-zion-blue-light text-white ${errors.email ? 'border-red-500 focus-visible:ring-red-500' : ''}`};
                       required;
                     />'
                     {errors.email && ('
@@ -183,7 +183,7 @@ export function ContactSection(): '
                     name=subject";"
                     value={formData.subject};";"
                     onChange={handleChange};";";
-                    className={`w-full rounded-md bg-zion-blue-dark border-zion-blue-light text-white ${errors.subject ? 'border-red-500 focus-visible:ring-red-500' : ''}`}`
+                    className={`w-full rounded-md bg-zion-blue-dark border-zion-blue-light text-white ${errors.subject ? 'border-red-500 focus-visible:ring-red-500' : ''}`};
                     required;
                   />'
                   {errors.subject && ('
@@ -205,7 +205,7 @@ export function ContactSection(): '
                     rows={4}";
                     value={formData.message};
                     onChange={handleChange};"
-                    className={`w-full rounded-md bg-zion-blue-dark border-zion-blue-light text-white ${errors.message ? 'border-red-500 focus-visible:ring-red-500' : ''}`}`
+                    className={`w-full rounded-md bg-zion-blue-dark border-zion-blue-light text-white ${errors.message ? 'border-red-500 focus-visible:ring-red-500' : ''}`};
                     required;
                   />'
                   {errors.message && ('

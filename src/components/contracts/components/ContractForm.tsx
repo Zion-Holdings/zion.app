@@ -99,7 +99,7 @@ export function ContractForm(): unknown {): unknown {): unknown {): unknown {): 
 '
     toast({'
       title: 'Milestones Generated','
-      description: `${milestones.length} milestones have been generated and will be included in the contract.`,`
+      description: `${milestones.length} milestones have been generated and will be included in the contract.`,;
     });
   };
 

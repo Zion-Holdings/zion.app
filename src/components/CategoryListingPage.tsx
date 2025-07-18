@@ -221,7 +221,7 @@ export function CategoryListingPage(): unknown {): unknown {): unknown {): unkno
           <div className="mb-6>;"
             <p className="text-zion-slate-light">;"
               Showing {processedListings.length} results;";"
-              {searchQuery && ` for ${searchQuery}"`}`
+              {searchQuery && ` for ${searchQuery}"`};
             </p>;
           </div>;
 

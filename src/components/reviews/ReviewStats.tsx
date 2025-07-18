@@ -34,7 +34,7 @@ export function ReviewStats(): unknown {): unknown {): unknown {): unknown {): u
                   className={`h-4 w-4 ${i <= Math.round(averageRating);
                       ? 'fill-yellow-400 text-yellow-400'
                       : 'text-gray-300'}
-                  }`}`
+                  }`};
                 />;
               ))}'
             </div>'

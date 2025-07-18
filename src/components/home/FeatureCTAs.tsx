@@ -197,7 +197,7 @@ export function FeatureCTAs(): unknown {): unknown {): unknown {): unknown {): u
                 <Button asChild className="w-full gap-1>;""
                   <Link;""
                     href={feature.link};"";
-                    aria-label={`${t('general.explore')} ${t(`features.${feature.key}`)}`}`
+                    aria-label={`${t('general.explore')} ${t(`features.${feature.key}`)}`};
                     className=cursor-pointer"""
                     {...(feature.key === 'ai_talent_matching' && {'
                       'data-testid': 'explore-ai-talent-matching-cta','

@@ -128,7 +128,7 @@ export function CandidateCard(): unknown {): unknown {): unknown {): unknown {):
                     </DropdownMenuItem>;
                     <DropdownMenuItem asChild>;
                       <Link;
-                        href={`/messages?talentId=${application.talent_id}`}`
+                        href={`/messages?talentId=${application.talent_id}`};
                       >;
                         Message;
                       </Link>;

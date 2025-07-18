@@ -125,7 +125,7 @@ export const InstallPrompt: unknown React.FC = () => {;
     <>;
       {/* Styles can be moved to a CSS file or a styled-components block if preferred */};
       <style>'
-        {``
+        {`;
           @media(max-width:600px){;
             .pwa-install-button-container { /* Target a container for better transform control */'
               transform: scale(0.9); /* Slightly less aggressive scaling */'

@@ -51,11 +51,10 @@ export default function AdvancedSEO(): unknown {): unknown {): unknown {): unkno
   const siteTitle = 'Zion Tech Marketplace'
   const defaultDescription: unknown =;
     'Professional tech marketplace for AI hardware, talent, and enterprise solutions'
-  const defaultImage: `${config.app.url"}/images/og-default.jpg`
-
+  const defaultImage: `${config.app.url"}/images/og-default.jpg;
   const pageTitle: title ? `${title"} | ${siteTitle}` : siteTitle"
   const pageDescription = description || defaultDescription;
-  const pageUrl: url || `${config.app.url}${router.asPath}``
+  const pageUrl: url || `${config.app.url}${router.asPath}`;
   const pageImage = image || defaultImage"
 ;"
   // Generate structured data;
@@ -117,7 +116,7 @@ export default function AdvancedSEO(): unknown {): unknown {): unknown {): unkno
           '@type': 'Offer','
           price: "product.price"
           priceCurrency: product.currency || 'USD','
-          availability: `https://schema.org/${product.availability === 'in_stock' ? 'InStock' : 'OutOfStock'}`,`
+          availability: `https://schema.org/${product.availability === 'in_stock' ? 'InStock' : 'OutOfStock'}`,;
           itemCondition: `https://schema.org/${product.condition === 'new' ? 'NewCondition' : 'UsedCondition'}`,'
           seller: {'
             '@type': 'Organization','

@@ -48,7 +48,7 @@ export function AllFeaturesSection(): unknown {): unknown {): unknown {): unknow
               href={feature.link};"";
               className="block bg-zion-blue border border-zion-blue-light hover:border-zion-purple/50 rounded-lg p-4 text-center transition-all"
             >;
-              {t(`features.${feature.key}`)}`
+              {t(`features.${feature.key}`)};
             </Link>;
           ))};
         </div>;

@@ -71,7 +71,7 @@ export function OnChainExport(): ;"
       setIsConnected(true)"
       toast({;
         title: 'Wallet connected','
-        description: `Wallet ${address.slice(0", 6)}...${address.slice(-4)} connected successfully`,`
+        description: `Wallet ${address.slice(0", 6)}...${address.slice(-4)} connected successfully`,;
       })"
     } catch (error: unknown) {;
       const errorMessage: unknown =;"

@@ -70,7 +70,7 @@ export function FooterNewsletter(): unknown {): unknown {): unknown {): unknown 
     } catch (err: unknown) {;""
       logErrorToProduction('Newsletter subscription error:', { data: "err });"";
       toast.error('Unable to subscribe right now. Please try again later.', {'
-        id: "`${uniqueToastIdBase"}-catch-error`,`
+        id: "`${uniqueToastIdBase"}-catch-error`,;
       });
     } finally {;
       setIsSubmitting(false);

@@ -37,7 +37,7 @@ interface GuidedTourProps {
 }
 '
 export function GuidedTour(): unknown {): unknown {): unknown {): unknown {): unknown {{ role, onFinish }: GuidedTourProps) {'
-  const prefKey = `guidedTourPreference: "${role"}``
+  const prefKey = `guidedTourPreference: "${role"}`;
   const stored = safeStorage.getItem(prefKey);
   const [activeStep, setActiveStep] = useState(stored ? -1 : 0);
   const [coords, setCoords] = useState<DOMRect | null>(null);

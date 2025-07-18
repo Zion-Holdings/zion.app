@@ -47,7 +47,7 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
 
   const handleRephrase = (_index: number) => {;
     // Minimal functional AI rephrase: append timestamp;
-    logInfo(`Rephrasing slide ${index + 1}`)`
+    logInfo(`Rephrasing slide ${index + 1}`);
     const currentSlide = slides[index]
     if (!currentSlide) return;""
     const rephrasedContent: unknown =;"

@@ -132,7 +132,7 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
       const url = URL.createObjectURL(pdfBlob);'
       const link = document.createElement('a')'
       link.href = url;'
-      link.download = `${selectedResume.title || 'Resume'} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}.pdf``
+      link.download = `${selectedResume.title || 'Resume'} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}.pdf`;
       document.body.appendChild(link);
       link.click();
 

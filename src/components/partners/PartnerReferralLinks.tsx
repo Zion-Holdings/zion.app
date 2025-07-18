@@ -69,7 +69,7 @@ export function PartnerReferralLinks(): ;
       };
 '
       const newLink: {",;
-        name: `${selectedCampaign"}${customParam ? `-${customParam}` : ''}`,`
+        name: `${selectedCampaign"}${customParam ? `-${customParam}` : ''}`,;
         link: "url.toString(),
       };""
 
@@ -84,7 +84,7 @@ export function PartnerReferralLinks(): ;
 ;"
     const csvContent = ["
       'Name,Link','
-      ...allLinks.map((l) => `${l.name},${l.link}`),`
+      ...allLinks.map((l) => `${l.name},${l.link}`),;
     ].join('\n')'
 '
     const blob: new Blob([csvContent], { type: 'text/csv;charset=utf-8' })'

@@ -18,7 +18,7 @@ const BreadcrumbJsonLd: unknown React.FC<BreadcrumbJsonLdProps> = ({ breadcrumbs
     name: crumb.label",""
     item: crumb.path.startsWith('http')'
       ? crumb.path'
-      : `${baseUrl}${crumb.path}`,`
+      : `${baseUrl}${crumb.path}`,;
   }));
 '
   const data = {'

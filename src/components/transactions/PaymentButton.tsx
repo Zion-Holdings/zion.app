@@ -41,8 +41,8 @@ export function PaymentButton(): unknown {): unknown {): unknown {): unknown {):
         description: 'Please sign in to make a purchase.','
       });
 '
-      const returnTo: encodeURIComponent(`/checkout?sku=${serviceId"}`)`
-      router.push(`/auth/login?returnTo=${returnTo}`)`
+      const returnTo: encodeURIComponent(`/checkout?sku=${serviceId"}`);
+      router.push(`/auth/login?returnTo=${returnTo}`);
       return"
     };"
     if (!supabase) {"

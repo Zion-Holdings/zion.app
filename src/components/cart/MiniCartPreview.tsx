@@ -27,7 +27,7 @@ export function MiniCartPreview(): '
       <ul;";"
         className={`space-y-1 mb-2 ${;";"
           shouldScroll ? 'max-h-24 overflow-y-auto pr-2' :}
-        }`}`
+        }`};
       >'
         {items.map((item) => ('
           <li key={item.id} className=flex justify-between">""

@@ -169,7 +169,7 @@ export function KanbanBoard(): unknown {): unknown {): unknown {): unknown {): u
   return (;
     <DragDropContext onDragEnd={handleDragEndSync}>'
       <div'
-        className={`grid ${isMobile ? 'grid-cols-1 gap-y-6' : 'grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4'} overflow-x-auto`}`
+        className={`grid ${isMobile ? 'grid-cols-1 gap-y-6' : 'grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4'} overflow-x-auto`};
       >;
         {COLUMNS.map((column) => (;
           <KanbanColumn;

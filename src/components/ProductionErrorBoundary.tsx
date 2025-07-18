@@ -125,7 +125,7 @@ class ProductionErrorBoundary extends Component<Props, State> {;
           title: 'Connection Problem','
           description:;
             retryCount > 0'
-              ? `Retrying connection... (Attempt ${retryCount + 1}/3)``
+              ? `Retrying connection... (Attempt ${retryCount + 1}/3)`;
               : 'Unable to connect to the server.','
           actionText: 'Retry Now','
         }'

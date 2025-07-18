@@ -382,7 +382,7 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
                     <AIEnhancementButton
                       currentContent={field.value || ''}'
                       enhancementType="work-description"
-                      context={`Role: ${form.getValues('role_title')} at ${form.getValues('company_name')}`}`
+                      context={`Role: ${form.getValues('role_title')} at ${form.getValues('company_name')}`};
                       onEnhanced={handleEnhanceDescription}'
                     />'
                   </FormLabel>;

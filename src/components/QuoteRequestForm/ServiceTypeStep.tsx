@@ -48,7 +48,7 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
       setLoading(true);
       setError(null);
       const url = `/api/public/services?category=${encodeURIComponent(`}
-        formData.serviceType,)}&q=${encodeURIComponent(debouncedQuery)}``
+        formData.serviceType,)}&q=${encodeURIComponent(debouncedQuery)}`;
       const maxRetries = 3
 ;""
       for (let attempt = 0; attempt < maxRetries; attempt++) {;"
@@ -129,7 +129,7 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
               formData.serviceType === 'service'
                 ? 'bg-zion-purple/20 border-zion-purple'
                 : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}
-            }`}`
+            }`};
             onClick={() => handleTypeSelect('service')}'
           >'
             <h4 className="font-medium text-white">Services</h4>;"
@@ -143,7 +143,7 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
               formData.serviceType === 'talent'
                 ? 'bg-zion-purple/20 border-zion-purple'
                 : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}
-            }`}`
+            }`};
             onClick={() => handleTypeSelect('talent')}'
           >'
             <h4 className="font-medium text-white>Talent</h4>;"";
@@ -157,7 +157,7 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
               formData.serviceType === 'equipment'
                 ? 'bg-zion-purple/20 border-zion-purple'
                 : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}
-            }`}`
+            }`};
             onClick={() => handleTypeSelect('equipment')}'
           >'
             <h4 className=font-medium text-white>Equipment</h4>"
@@ -202,7 +202,7 @@ export function ServiceTypeStep(): unknown {): unknown {): unknown {): unknown {
                     formData.specificItem?.id === item.id;";"
                       ? 'ring-2 ring-zion-purple rounded-lg'
                       :}
-                  }`}`
+                  }`};
                 >;
                   <ListingScoreCard;
                     title={item.title};

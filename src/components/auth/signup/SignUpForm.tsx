@@ -103,7 +103,7 @@ export function SignUpForm(): unknown {): unknown {): unknown {): unknown {): un
     <form onSubmit={handleSignUp} className=space-y-4>";"
       {error && (;";"
         <div;";";
-          className={`p-3 rounded-md text-sm ${isSuccess ? 'bg-green-50 border border-green-200 text-green-700' : 'bg-red-50 border border-red-200 text-red-600'}`}`
+          className={`p-3 rounded-md text-sm ${isSuccess ? 'bg-green-50 border border-green-200 text-green-700' : 'bg-red-50 border border-red-200 text-red-600'}`};
         >;
           {error};
         </div>'

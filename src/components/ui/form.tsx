@@ -61,7 +61,7 @@ const useFormField = () => {;
     name: "fieldContext.name"
     formItemId: `${id}-form-item`,"
     formDescriptionId: "`${id}-form-item-description`,
-    formMessageId: "`${id"}-form-item-message`,`
+    formMessageId: "`${id"}-form-item-message`,;
     ...fieldState,
   };"
 };"
@@ -116,8 +116,8 @@ const FormControl = React.forwardRef<;
       id={formItemId};
       aria-describedby={;
         !error;
-          ? `${formDescriptionId}``
-          : `${formDescriptionId} ${formMessageId}``
+          ? `${formDescriptionId}`;
+          : `${formDescriptionId} ${formMessageId}`;
       };
       aria-invalid={!!error}'
       {...props}'

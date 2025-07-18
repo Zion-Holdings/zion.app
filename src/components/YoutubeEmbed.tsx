@@ -33,7 +33,7 @@ export default function YoutubeEmbed(): unknown {): unknown {): unknown {): unkn
         </>;"";
       )};"";
       <iframe;"";
-        className={`absolute inset-0 w-full h-full ${loaded ? 'visible' : 'invisible'}`}`
+        className={`absolute inset-0 w-full h-full ${loaded ? 'visible' : 'invisible'}`};
         src={src}'
         title={title}'
         loading="lazy"

@@ -23,7 +23,7 @@ export function AuthButtons(): unknown {): unknown {): unknown {): unknown {): u
   const gridCols: `grid-cols-${providers.length}`;"
 ";
   return (;
-    <div className={`mt-6 grid ${gridCols} gap-3`}>`
+    <div className={`mt-6 grid ${gridCols} gap-3`}>;
       {providers.includes('google') && ('
         <Button'
           type="button"

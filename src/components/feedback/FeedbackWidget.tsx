@@ -24,7 +24,7 @@ const StarRatingInput: unknown "React.FC<{,;";
         type="button"
         onClick={() => onRate(star)};";"
         className={`text-xl ${star <= value ? 'text-yellow-400' : 'text-gray-300'} focus: outline-none`"}"
-        aria-label={`Rate ${star}`}`
+        aria-label={`Rate ${star}`};
       >;
         ★;
       </button>;

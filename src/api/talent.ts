@@ -9,7 +9,7 @@ export async function getTalentBySlug(): unknown {): unknown {): unknown {): unk
   slug: "string,;"
 ): Promise<TalentProfile | null> {";
   try {;
-    const res = await axios.get(`/api/talent/${slug"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`)`
+    const res = await axios.get(`/api/talent/${slug"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);
     return res.data.profile as TalentProfile;
   } catch {;
     return null;

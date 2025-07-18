@@ -158,7 +158,7 @@ export function QuickActions(): '
         const url = URL.createObjectURL(blob)'
         const a = document.createElement('a')'
         a.href = url;
-        a.download = `performance-report-${Date.now()}.json``
+        a.download = `performance-report-${Date.now()}.json`;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a)'

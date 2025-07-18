@@ -120,10 +120,10 @@ response = requests.get('
     headers=headers);
 
 data = response.json()'
-print(data)`,`
+print(data)`,;
               }};
               responseExamples={{'
-                success: `{`
+                success: `{;
   "data: [;"";
     {;"";
       "id": job_abc123,"
@@ -191,10 +191,10 @@ response = requests.get(;
     headers=headers);
 
 data = response.json()'
-print(data)`,`
+print(data)`,;
               }};
               responseExamples={{'
-                success: `{`
+                success: `{;
   "data": {;"
     id": "job_abc123,;"";
     "title": Senior React Developer,"
@@ -281,7 +281,7 @@ print(data)`,`
       "currency: USD""
     },";""
     deadline: "2025-06-30T23:59:59Z"
-  }'`,`
+  }'`,;
                 javascript: `const response = await fetch('https://api.ziontechgroup.com/v1/jobs', {'
   method: 'POST','
   headers: {'
@@ -330,10 +330,10 @@ response = requests.post(;"
 );
 
 data = response.json()'
-print(data)`,`
+print(data)`,;
               }};
               responseExamples={{'
-                success: `{`
+                success: `{;
   "data: {;"";
     "id": job_def456,"
     "title: Senior React Developer",""
@@ -410,10 +410,10 @@ response = requests.get('
     headers=headers);
 
 data = response.json()'
-print(data)`,`
+print(data)`,;
               }};
               responseExamples={{'
-                success: `{`
+                success: `{;
   data: [";";
     {"
       "id: talent_abc123",""
@@ -474,10 +474,10 @@ response = requests.get(;
     headers=headers);
 
 data = response.json()'
-print(data)`,`
+print(data)`,;
               }};
               responseExamples={{'
-                success: `{`
+                success: `{;
   data: {"
     "id: talent_abc123",""
     display_name: Jane Smith,;"
@@ -582,7 +582,7 @@ print(data)`,`
     "budget_max": 12000,;"
     requester_name": "John Doe,;"";
     "requester_email": john@example.com"
-  }'`,`
+  }'`,;
                 javascript: `const response = await fetch('https://api.ziontechgroup.com/v1/quotes', {'
   method: 'POST','
   headers: {'
@@ -630,10 +630,10 @@ response = requests.post('
 );
 
 data = response.json()'
-print(data)`,`
+print(data)`,;
               }};
               responseExamples={{'
-                success: `{`
+                success: `{;
   data": {""
     id: quote_def456,;"
     talent_id": "talent_abc123,;"";
@@ -703,10 +703,10 @@ response = requests.get('
     headers=headers);
 
 data = response.json()'
-print(data)`,`
+print(data)`,;
               }};
               responseExamples={{'
-                success: `{`
+                success: `{;
   data: [";";
     {"
       "id: quote_def456",""
@@ -783,7 +783,7 @@ app.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {'
   ;";"
   // Respond to acknowledge receipt;"
   res.status(200).send('Webhook received')'
-})`};`
+})`};;
                 language=javascript";"
                 showLineNumbers={true};"
               />;";"
@@ -843,7 +843,7 @@ app.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {'
               </p>'
 
               <CodeBlock'
-                code={`{`
+                code={`{;
   "event_type": new_application,"
   "event_id: evt_abc123def456",""
   timestamp: 2025-05-16T15:30:00Z,;"
@@ -1126,7 +1126,7 @@ function EndpointSection(): unknown {): unknown {): unknown {): unknown {): unkn
                     activeTab === lang";""
                       ? 'bg-zinc-700 text-white'
                       : 'text-zinc-400 hover: bg-zinc-800}
-                  }`}`
+                  }`};
                   onClick={() => setActiveTab(lang)};"
                 >"
                   {lang === 'curl'

@@ -120,7 +120,7 @@ export const AuthProvider: ({ children "}: { children: React.ReactNode }) => {"
       if (isLoading) {;
         // Check if still loading;
         logger.warn(;
-          `[AuthProvider] Initial auth state check timed out after ${authInitTimeoutMs}ms. Forcing loading to false.`,`
+          `[AuthProvider] Initial auth state check timed out after ${authInitTimeoutMs}ms. Forcing loading to false.`,;
         );
         setIsLoading(false);
       };

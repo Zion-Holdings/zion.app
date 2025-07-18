@@ -31,8 +31,7 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
           ${formData.serviceType} ";""
           ${formData.budget.type === 'fixed' ? `budget ${formData.budget.amount}` : ''}'
           ${formData.timeline}'
-        ``
-
+        `;
         // Get AI matches'
         const results: unknown unknown = await findMatches(queryString, formData.serviceType, 3)";"
 ;"
@@ -62,7 +61,7 @@ export function SummaryStep(): unknown {): unknown {): unknown {): unknown {): u
 ;""
     toast({;"";
       title: 'Match Selected','
-      description: `You've selected ${match.item.title}`,`
+      description: `You've selected ${match.item.title}`,;
     });
   }'
 '

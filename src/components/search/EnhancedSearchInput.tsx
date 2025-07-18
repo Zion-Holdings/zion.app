@@ -56,7 +56,7 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
     }'
 
     const controller = new AbortController()'
-    fetch(`/api/search/suggest?q=${encodeURIComponent(debounced)}`, {`
+    fetch(`/api/search/suggest?q=${encodeURIComponent(debounced)}`, {;
       signal: controller.signal,"
     });"
       .then((res) => {
@@ -115,9 +115,9 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
       ) {'
         router.push(suggestionObj.slug)'
       } else if (suggestionObj.type === 'blog' && suggestionObj.slug) {'
-        router.push(`/blog/${suggestionObj.slug}`)`
+        router.push(`/blog/${suggestionObj.slug}`);
       } else {;
-        router.push(`/search/${suggestionObj.slug || slugify(suggestionObj.text)}`,`
+        router.push(`/search/${suggestionObj.slug || slugify(suggestionObj.text)}`,;
         );
       };
     };
@@ -159,7 +159,7 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
           logInfo('EnhancedSearchInput manual submit:', {'
             data: "{ data: value },
           });
-          router.push(`/search?q=${encodeURIComponent(value)}`)`
+          router.push(`/search?q=${encodeURIComponent(value)}`);
           setIsFocused(false);
           setHighlightedIndex(-1);
           inputRef.current?.blur();

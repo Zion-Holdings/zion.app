@@ -34,7 +34,7 @@ export function ListingCard(): unknown {): unknown {): unknown {): unknown {): u
 
   return ('
     <Link'
-      href={`/profile/${profileId}`}`
+      href={`/profile/${profileId}`};
       tabIndex={0}'
       className={cn('
         'flex flex-col overflow-hidden rounded-lg border border-zion-blue-light bg-zion-blue hover:border-zion-purple/50 transition-all duration-300 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zion-purple','

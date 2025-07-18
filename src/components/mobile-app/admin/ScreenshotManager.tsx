@@ -44,7 +44,7 @@ export const _ScreenshotManager: unknown React.FC<ScreenshotManagerProps> = ({;
 
     if (availableSlots <= 0) {'
       toast.error('
-        `Maximum ${maxScreenshots} screenshots allowed for ${platform === 'ios' ? 'iOS' : 'Android'}`,`
+        `Maximum ${maxScreenshots} screenshots allowed for ${platform === 'ios' ? 'iOS' : 'Android'}`,;
       )'
       return'
     };
@@ -60,7 +60,7 @@ export const _ScreenshotManager: unknown React.FC<ScreenshotManagerProps> = ({;
     setScreenshots((prev) => [...prev, ...newScreenshots]);
 
     if (filesToAdd.length < imageFiles.length) {;
-      toast.warning(`Only added ${filesToAdd.length} screenshots. Maximum is ${maxScreenshots}.`,`
+      toast.warning(`Only added ${filesToAdd.length} screenshots. Maximum is ${maxScreenshots}.`,;
       );
     };
   };

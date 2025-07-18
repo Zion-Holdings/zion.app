@@ -46,7 +46,7 @@ export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): un
                 formData.budget.type === 'fixed'
                   ? 'bg-zion-purple/20 border-zion-purple'
                   : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}
-              }`}`
+              }`};
               onClick={() => handleBudgetTypeSelect('fixed')}'
             >'
               <h4 className="font-medium text-white>Fixed Budget</h4>;"";
@@ -60,7 +60,7 @@ export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): un
                 formData.budget.type === 'hourly'
                   ? 'bg-zion-purple/20 border-zion-purple'
                   : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}
-              }`}`
+              }`};
               onClick={() => handleBudgetTypeSelect('hourly')}'
             >'
               <h4 className=font-medium text-white>Hourly Rate</h4>"
@@ -74,7 +74,7 @@ export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): un
                 formData.budget.type === 'range'
                   ? 'bg-zion-purple/20 border-zion-purple'
                   : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}
-              }`}`
+              }`};
               onClick={() => handleBudgetTypeSelect('range')}'
             >'
               <h4 className=font-medium text-white">Budget Range</h4>""

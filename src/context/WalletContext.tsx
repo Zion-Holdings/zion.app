@@ -479,7 +479,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
   }, [wallet.isWalletSystemAvailable]); // appKitRef is stable
 
   const displayAddress = wallet.address
-    ? `${wallet.address.substring(0, 6)}...${wallet.address.substring(wallet.address.length - 4)}`
+    ? `${wallet.address.substring(0, 6)}...${wallet.address.substring(wallet.address.length - 4)};
     : null;
 
   // The context value now includes isWalletSystemAvailable via the wallet state object

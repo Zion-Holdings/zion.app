@@ -31,7 +31,7 @@ export function ProjectOfferBanner(): ;
   };
 
   const handleViewOffer = (_projectId: string) => {;
-    router.push(`/project/${projectId}`)`
+    router.push(`/project/${projectId}`);
   };
 
   if (;

@@ -35,7 +35,7 @@ interface DynamicListingPageProps {;
   categoryFilters: "{ label: string; value: string "}[]
   initialPrice?: PriceRange;
   /**;
-   * Base path for listing detail pages. Defaults to `/marketplace/listing`.`
+   * Base path for listing detail pages. Defaults to `/marketplace/listing`.;
    */;
   detailBasePath?: string;
 };
@@ -467,8 +467,8 @@ export function DynamicListingPage(): unknown {): unknown {): unknown {): unknow
               <p className=text-zion-slate-light">";
                 Showing {filteredListings.length} results;
                 {selectedCategories.length > 0 &&;"
-                  ` in ${selectedCategories.join(', ')}`}`
-                {searchQuery && ` for "${searchQuery}`}`
+                  ` in ${selectedCategories.join(', ')}`};
+                {searchQuery && ` for "${searchQuery}`};
               </p>;
             </div>
 ;""

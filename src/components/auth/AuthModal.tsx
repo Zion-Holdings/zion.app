@@ -25,12 +25,12 @@ export const _AuthModal: unknown React.FC<AuthModalProps> = ({;";"
 
   const handleLogin = () => {;
     onClose();
-    router.push(`/auth/login?returnTo=${encodeURIComponent(returnUrl)}`)`
+    router.push(`/auth/login?returnTo=${encodeURIComponent(returnUrl)}`);
   };
 
   const handleSignUp = () => {;
     onClose();
-    router.push(`/auth/register?returnTo=${encodeURIComponent(returnUrl)}`)`
+    router.push(`/auth/register?returnTo=${encodeURIComponent(returnUrl)}`);
   };
 
   if (!isOpen) {'

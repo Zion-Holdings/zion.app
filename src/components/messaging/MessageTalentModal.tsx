@@ -68,7 +68,7 @@ export function MessageTalentModal(): unknown {): unknown {): unknown {): unknow
 '
       toast({'
         title: 'Message sent','
-        description: `Your message has been sent to ${talent.full_name"}.`,`
+        description: `Your message has been sent to ${talent.full_name"}.`,;
       })"
 
       onClose();"";"";

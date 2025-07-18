@@ -9,7 +9,7 @@ import { safeStorage } from '@/utils/safeStorage'
 '
 // Default context used when React type definitions are missing. Providing a;
 // fully-typed object here avoids TypeScript errors that occur when an untyped'
-// `createContext` call returns `{}` instead of the expected shape.`
+// `createContext` call returns `{}` instead of the expected shape.;
 const defaultContext: unknown "NotificationContextType = {
   notifications: []"
   filteredNotifications: "[]
@@ -58,7 +58,7 @@ export const _NotificationProvider = ({;
             event: 'INSERT','
             schema: 'public','
             table: 'notifications','
-            filter: "`user_id=eq.${user.id"}`,`
+            filter: "`user_id=eq.${user.id"}`,;
           },;
           (payload) => {
             const newNotification = payload.new as Notification;"

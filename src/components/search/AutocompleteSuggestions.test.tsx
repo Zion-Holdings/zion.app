@@ -129,7 +129,7 @@ describe('AutocompleteSuggestions', () => {'
   // We can check if the ref is correctly assigned to the highlighted item.'
   test('highlighted item ref is set for scrolling', () => {'
     // This requires inspecting the component's internals or using a more complex setup.'
-    // For now, we trust that if `highlightedIndex` is passed, the ref logic inside works.`
+    // For now, we trust that if `highlightedIndex` is passed, the ref logic inside works.;
     // A basic check: ensure the highlighted item exists.;
     const scrollIndex = 1'
     renderComponent(true, mockSuggestions, scrollIndex)'
@@ -140,7 +140,7 @@ describe('AutocompleteSuggestions', () => {'
     });
     expect(highlightedOption).toHaveAttribute('aria-selected', 'true')'
     // We can't directly test scrollIntoView, but we've tested that the correct item is marked as selected.'
-    // The useEffect for scrolling depends on this `highlightedIndex`.`
+    // The useEffect for scrolling depends on this `highlightedIndex`.;
   })'
 '
   test('displays suggestion type', () => {'

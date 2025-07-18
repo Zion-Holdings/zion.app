@@ -294,7 +294,7 @@ export function TalentRegistrationForm(): ;"
         body: {
           to: "email
           subject: 'Your Zion Talent Profile Has Been Enhanced','
-          html: ``
+          html: `;
           <div style=font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto>;
             <h2 style="color: #6D28D9">Profile Enhancement Complete</h2>;
             <p>Your profile has been enhanced with AI. You're now more discoverable to recruiters and companies!</p>'

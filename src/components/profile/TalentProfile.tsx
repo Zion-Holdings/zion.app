@@ -35,7 +35,7 @@ export function TalentProfile(): unknown {): unknown {): unknown {): unknown {):
         : profile.availability_type === 'part_time'
           ? 'limited'
           : 'unavailable','
-    message: `${profile.professional_title} with ${profile.years_experience} years of experience`,`
+    message: `${profile.professional_title} with ${profile.years_experience} years of experience`,;
   }"
 ;"
   // Create proper skills array for ProfileSkills component;

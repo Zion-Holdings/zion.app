@@ -47,7 +47,7 @@ export const _isPublicRoute = (path: string): boolean => {;
   };
 '
   // Ensure path starts with a slash for consistent matching'
-  const normalizedPath = path.startsWith('/') ? path : `/${path}``
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
 '
   return publicRoutes.some((route) => {'
     if (route instanceof RegExp) {;
@@ -55,7 +55,7 @@ export const _isPublicRoute = (path: string): boolean => {;
     }'
     // For string routes, ensure exact match or match if it's a base path'
     // e.g. '/docs' should match '/docs' and '/docs/'
-    return normalizedPath === route || normalizedPath === `${route}/``
+    return normalizedPath === route || normalizedPath === `${route}/`;
   });
 }'
 '''''

@@ -102,7 +102,7 @@ export function MobileMenu(): unknown {): unknown {): unknown {): unknown {): un
 ;";
   const navItems = baseItems.map((item) => ({";";
     ...item,"
-    name: item.key === 'explore' ? t('general.explore') : t(`nav.${item.key}`),`
+    name: item.key === 'explore' ? t('general.explore') : t(`nav.${item.key}`),;
   }));
 
   // Filter items based on auth status;

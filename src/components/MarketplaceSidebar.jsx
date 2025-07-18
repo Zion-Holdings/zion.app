@@ -29,5 +29,5 @@ export default function MarketplaceSidebar({ children }) {
         </aside>
       </div>
     </GlobalErrorBoundary>
-  )`
+  );
 }

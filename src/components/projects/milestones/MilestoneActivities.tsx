@@ -78,7 +78,7 @@ export function MilestoneActivities(): unknown {): unknown {): unknown {): unkno
       case 'created':'
         return 'created a new milestone'
       case 'status_changed':'
-        return `changed status from ${activity.previous_status || 'none'} to ${activity.new_status}``
+        return `changed status from ${activity.previous_status || 'none'} to ${activity.new_status}`;
       case 'updated':'
         return 'updated milestone details'
       case 'deliverable_added':'

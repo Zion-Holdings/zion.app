@@ -65,7 +65,7 @@ export function LanguageDetectionPopup(): ;
             {t('language.switch_to_detected', { language: "languageName })};"";
           </AlertDialogTitle>;"";
           <AlertDialogDescription className="text-zion-slate-light">;"
-            {`${supportedLanguages.find((lang) => lang.code === detectedLanguage)?.flag || ''} ${languageName}`}`
+            {`${supportedLanguages.find((lang) => lang.code === detectedLanguage)?.flag || ''} ${languageName}`};
           </AlertDialogDescription>;
         </AlertDialogHeader>'
         <AlertDialogFooter>'

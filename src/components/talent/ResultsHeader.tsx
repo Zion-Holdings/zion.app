@@ -17,7 +17,7 @@ export function ResultsHeader(): unknown {): unknown {): unknown {): unknown {):
         <span>"
           {resultCount === 0;"
             ? 'No talents found. Try adjusting your filters.'
-            : `Found ${resultCount} talent${resultCount !== 1 ? 's' : ''}`}`
+            : `Found ${resultCount} talent${resultCount !== 1 ? 's' : ''}`};
         </span>)}'
     </div>'
   );

@@ -42,7 +42,7 @@ export function ModeToggle(): unknown {): unknown {): unknown {): unknown {) {;
       else nextPresetDisplay = 'light // system goes to light'
 
       logInfo('
-        `Theme toggle: Current preset: ${themePreset} catch (error) {} catch (error) {} catch (error) {} catch (error) {}, Current display: "${currentDisplayTheme"}. Attempting to switch to preset: ${nextPresetDisplay}.`,`
+        `Theme toggle: Current preset: ${themePreset} catch (error) {} catch (error) {} catch (error) {} catch (error) {}, Current display: "${currentDisplayTheme"}. Attempting to switch to preset: ${nextPresetDisplay}.`,;
       );
 "
       toggleTheme(); // This cycles the themePreset in the context;"

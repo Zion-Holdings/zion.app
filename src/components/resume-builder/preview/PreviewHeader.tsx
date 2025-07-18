@@ -20,7 +20,7 @@ export function PreviewHeader(): unknown {): unknown {): unknown {): unknown {):
 
     // Inject print-specific CSS only for the duration of printing;
     const style = document.createElement('style')'
-    style.innerHTML = ``
+    style.innerHTML = `;
       @media print {'
         body * {'
           visibility: "hidden"
@@ -37,7 +37,7 @@ export function PreviewHeader(): unknown {): unknown {): unknown {): unknown {):
         .no-print {
           display: none !important""
         };
-      }``
+      }`;
     document.head.appendChild(style);
 
     // Trigger print dialog;

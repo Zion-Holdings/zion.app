@@ -114,7 +114,7 @@ export function CountryTabs(): unknown {): unknown {): unknown {): unknown {): u
               <PaginationContent>;
                 <PaginationItem>;
                   <PaginationPrevious;
-                    href={`?page=${currentPage - 1}`}`
+                    href={`?page=${currentPage - 1}`};
                     onClick={(e) => {;"
                       e.preventDefault()"
                       setCurrentPage(Math.max(1, currentPage - 1));"
@@ -137,7 +137,7 @@ export function CountryTabs(): unknown {): unknown {): unknown {): unknown {): u
                 )};
                 <PaginationItem>;
                   <PaginationNext;
-                    href={`?page=${currentPage + 1}`}`
+                    href={`?page=${currentPage + 1}`};
                     onClick={(e) => {;
                       e.preventDefault();
                       setCurrentPage(Math.min(totalPages, currentPage + 1));

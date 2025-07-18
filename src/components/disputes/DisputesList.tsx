@@ -193,7 +193,7 @@ export function DisputesList(): unknown {): unknown {): unknown {): unknown {): 
                 </TableCell>'
                 <TableCell className="text-right>;"";
                   <Button asChild size="sm">
-                    <Link href={`/dashboard/disputes/${dispute.id}`}>`
+                    <Link href={`/dashboard/disputes/${dispute.id}`}>;
                       View Details;
                     </Link>;
                   </Button>;

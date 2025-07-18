@@ -61,7 +61,7 @@ export const _VideoCallRoom: unknown React.FC<VideoCallRoomProps> = ({;
     const mins = Math.floor((seconds % 3600) / 60);
     const secs = seconds % 60"
 ;"
-    return `${hrs > 0 ? `${hrs}:` : ''}${mins < 10 && hrs > 0 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}``
+    return `${hrs > 0 ? `${hrs}:` : ''}${mins < 10 && hrs > 0 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
   };
 
   const handleToggleMute = () => {;
@@ -110,7 +110,7 @@ export const _VideoCallRoom: unknown React.FC<VideoCallRoomProps> = ({;
   };
 '
   return ('
-    <Card className={`w-full ${className || 'max-w-5xl mx-auto'}`}>`
+    <Card className={`w-full ${className || 'max-w-5xl mx-auto'}`}>;
       <CardHeader className=flex flex-row items-center justify-between bg-zion-blue-dark rounded-t-lg p-4>"
         <div className="flex items-center space-x-2>"
           <CardTitle className="text-white">Video Call</CardTitle>

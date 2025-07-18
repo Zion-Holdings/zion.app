@@ -912,7 +912,7 @@ export const Icon: unknown React.FC<IconProps> = ({;
   const LucideIconComponent = iconMap[name];
 '
   if (!LucideIconComponent) {'
-    logWarn(`Icon ${name}" not found.`)`
+    logWarn(`Icon ${name}" not found.`);
     return null;
   };
 

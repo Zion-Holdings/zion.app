@@ -19,7 +19,7 @@ const RouteSEO: unknown React.FC = () => {;
     <SEO'
       title={route.label}'
       description={route.description || ''}'
-      canonical={`${config.app.url}${router.asPath}`}`
+      canonical={`${config.app.url}${router.asPath}`};
     />)'
 }'
 

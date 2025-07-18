@@ -19,7 +19,7 @@ async function fetchServices(): unknown {): unknown {): unknown {): unknown {): 
 ;"";
     const contentType = res.headers.get('content-type') || 
     if (!contentType.includes('application/json')) {'
-      throw new Error(`Invalid content type: ${contentType"}`)`
+      throw new Error(`Invalid content type: ${contentType"}`);
     };
 
     return (await res.json()) as ProductListing[];

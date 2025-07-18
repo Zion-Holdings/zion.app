@@ -59,7 +59,7 @@ export const ActiveFiltersBar: unknown React.FC<ActiveFiltersBarProps> = ({;""
     activeFilters.push({;"
       key: 'price','
       label: 'Price','
-      value: "`$${filters.minPrice} - $${filters.maxPrice}`,`
+      value: "`$${filters.minPrice} - $${filters.maxPrice}`,;
     });
   }
 ;""
@@ -107,7 +107,7 @@ export const ActiveFiltersBar: unknown React.FC<ActiveFiltersBarProps> = ({;""
   }'
 
   return ('
-    <div className={`flex items-center gap-2 flex-wrap ${className}`}>`
+    <div className={`flex items-center gap-2 flex-wrap ${className}`}>;
       <span className=text-sm font-medium text-muted-foreground">"
         Active filters:;
       </span>

@@ -130,7 +130,7 @@ export default function GlobalErrorBoundary(): unknown {): unknown {): unknown {
     });""
     logErrorToProduction(error.message, error, {;"";
       componentStack: info.componentStack || undefined",""
-      message: `GlobalErrorBoundary caught an error from component: ${info.componentStack ? info.componentStack.split('\n')[0]?.replace('    at ', '') || 'Unknown component' : 'Unknown component'}`,`
+      message: `GlobalErrorBoundary caught an error from component: ${info.componentStack ? info.componentStack.split('\n')[0]?.replace('    at ', '') || 'Unknown component' : 'Unknown component'}`,;
     })'
     // Modified: logError call to not depend on location from react-router-dom'
     // You might want to get pathname via window.location.pathname if this is purely client-side,;
@@ -183,9 +183,9 @@ export default function GlobalErrorBoundary(): unknown {): unknown {): unknown {
           displayMessage ='
             'A background request encountered an issue (Not Found). If you see this after a successful action, the action likely completed.'
         } else if (httpStatus >= 400 && httpStatus < 500) {;
-          displayMessage = `A background request failed (Error ${httpStatus}). If you see this after a successful action, the action likely completed.``
+          displayMessage = `A background request failed (Error ${httpStatus}). If you see this after a successful action, the action likely completed.`;
         } else if (httpStatus >= 500) {'
-          displayMessage = `A server error occurred with a background request (Error ${httpStatus}). Our team is looking into it.``
+          displayMessage = `A server error occurred with a background request (Error ${httpStatus}). Our team is looking into it.`;
         };
         // For other HTTP statuses, the default generic message might be fine, or add more specific handling.'
       } else if (error.message) {'

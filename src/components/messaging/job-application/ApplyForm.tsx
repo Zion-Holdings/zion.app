@@ -69,7 +69,7 @@ export function ApplyForm(): unknown {): unknown {): unknown {): unknown {): unk
       let fullMessage = message;
 '
       if (proposalLink) {'
-        fullMessage += `\n\nHere's a link to my proposal: "${proposalLink}`
+        fullMessage += `\n\nHere's a link to my proposal: "${proposalLink};
       };""
 ;"
       // Add info about attached resume if available";"

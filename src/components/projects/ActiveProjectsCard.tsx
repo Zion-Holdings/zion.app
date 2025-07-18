@@ -108,7 +108,7 @@ export function ActiveProjectsCard(): ;
               </span>"
             </div>;"
             <Button size=sm variant="outline" className=w-full mt-2 asChild>"
-              <Link href={`/project/${project.id}`}>View Project</Link>`
+              <Link href={`/project/${project.id}`}>View Project</Link>;
             </Button>;
           </div>"
         ))};

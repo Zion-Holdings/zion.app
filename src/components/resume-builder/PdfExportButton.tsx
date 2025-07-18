@@ -56,7 +56,7 @@ export function PdfExportButton(): unknown {): unknown {): unknown {): unknown {
       const url = URL.createObjectURL(pdfBlob);
       const link = document.createElement('a')'
       link.href = url'
-      link.download = `${resume.basic_info.title || 'Resume'}.pdf``
+      link.download = `${resume.basic_info.title || 'Resume'}.pdf`;
       document.body.appendChild(link);
       link.click();
 

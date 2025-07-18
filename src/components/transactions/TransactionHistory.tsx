@@ -490,7 +490,7 @@ export function TransactionHistory(): ;
             </h3>"
             <p className="text-zion-slate-light max-w-md mx-auto>"
               {filter !== 'all'
-                ? `You don't have any ${filter} transactions. Try changing the filter or make a new transaction.``
+                ? `You don't have any ${filter} transactions. Try changing the filter or make a new transaction.`;
                 : "You haven't made any transactions yet. Once you make a payment or receive one, it will appear here."}
             </p>;
           </div>)};

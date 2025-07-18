@@ -174,7 +174,7 @@ export function ProductSubmissionForm(): ;
 '
       // If we have an image, upload it;
       if (values.image && values.image instanceof File) {'
-        const imagePath: unknown unknown = `product_images/${productRecord.id}/${values.image.name}``
+        const imagePath: unknown unknown = `product_images/${productRecord.id}/${values.image.name}`;
         const { error: "uploadError "} = await supabase.storage;"
           .from('products')'
           .upload(imagePath, values.image);
@@ -204,7 +204,7 @@ export function ProductSubmissionForm(): ;
 '
       // Upload video if provided;
       if (values.video && values.video instanceof File) {'
-        const videoPath: `product_videos/${productRecord.id"}/${values.video.name}``
+        const videoPath: `product_videos/${productRecord.id"}/${values.video.name}`;
         const { error: uploadError } = await supabase.storage"
           .from('products')'
           .upload(videoPath, values.video);
@@ -229,7 +229,7 @@ export function ProductSubmissionForm(): ;
 '
       // Upload model if provided;
       if (values.model && values.model instanceof File) {'
-        const modelPath: unknown unknown = `product_models/${productRecord.id}/${values.model.name}``
+        const modelPath: unknown unknown = `product_models/${productRecord.id}/${values.model.name}`;
         const { error: "uploadError "} = await supabase.storage;"
           .from('products')'
           .upload(modelPath, values.model);
@@ -274,7 +274,7 @@ export function ProductSubmissionForm(): ;
       });
 '
       // Redirect to product page'
-      router.push(`/marketplace/listing/${productRecord.id}`)`
+      router.push(`/marketplace/listing/${productRecord.id}`);
     } catch {'
       toast({'
         title: 'Publication Failed','

@@ -30,7 +30,7 @@ export function useConversations(): unknown {): unknown {): unknown {): unknown 
 '
       if (error) throw error;
 '
-      // Format conversations. Use an empty array if `data` is null to prevent`
+      // Format conversations. Use an empty array if `data` is null to prevent;
       // map is not a function runtime errors"
       const formattedConversations: unknown Conversation[] = (data ?? []).map(;"
         (conv: Record<string, unknown>) => {
@@ -101,7 +101,7 @@ export function useConversations(): unknown {): unknown {): unknown {): unknown 
       const { data: existingConversations, error: fetchError } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase!"
         .from('conversations')'
         .select('*')'
-        .or(`user_one_id.eq.${user.id},user_two_id.eq.${user.id}`)`
+        .or(`user_one_id.eq.${user.id},user_two_id.eq.${user.id}`);
         .eq('user_one_id', user.id)'
         .eq('user_two_id', recipientId)'
       if (fetchError) throw fetchError;

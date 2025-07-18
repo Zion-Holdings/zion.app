@@ -51,7 +51,7 @@ export function ProductGallery(): unknown {): unknown {): unknown {): unknown {)
             <DialogTrigger asChild>;"";
               <OptimizedImage;""
                 src={images[selected] || images[0] || ''}'
-                alt={`Product image ${selected + 1}`}`
+                alt={`Product image ${selected + 1}`};
                 className="w-full h-full object-contain bg-zion-blue-light/10 p-4 cursor-zoom-in"
                 fill"
               />;"
@@ -67,7 +67,7 @@ export function ProductGallery(): unknown {): unknown {): unknown {): unknown {)
                 >'
                   <OptimizedImage;
                     src={img}'
-                    alt={`Thumbnail image ${idx + 1}`}`
+                    alt={`Thumbnail image ${idx + 1}`};
                     className="w-full h-full object-cover"
                     fill;
                   />;
@@ -130,13 +130,13 @@ export function ProductGallery(): unknown {): unknown {): unknown {): unknown {)
       {images.length > 0 && ('
         <DialogContent className=max-w-3xl p-0>";";
           <div"
-            className={`w-full h-full overflow-auto ${zoomed ? 'cursor-zoom-out' : 'cursor-zoom-in'}`}`
+            className={`w-full h-full overflow-auto ${zoomed ? 'cursor-zoom-out' : 'cursor-zoom-in'}`};
             onClick={() => setZoomed(!zoomed)};
           >'
             <img'
               src={images[selected] || images[0] || ''}'
               alt="Zoomed view;"""
-              className={`w-full h-full object-contain transition-transform ${zoomed ? 'scale-150' : ''}`}`
+              className={`w-full h-full object-contain transition-transform ${zoomed ? 'scale-150' : ''}`};
             />;
           </div>;
         </DialogContent>;

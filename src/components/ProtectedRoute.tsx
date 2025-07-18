@@ -34,7 +34,7 @@ export const ProtectedRoute: unknown React.FC<ProtectedRouteProps> = ({;
       toast.info('Please sign in to continue')'
       const returnTo = encodeURIComponent(router.asPath); // Use router.asPath for the full path with query;
       // Use push instead of replace to ensure navigation triggers page load;
-      router.push(`/auth/login?returnTo=${returnTo}`)`
+      router.push(`/auth/login?returnTo=${returnTo}`);
       return'
     }'
 

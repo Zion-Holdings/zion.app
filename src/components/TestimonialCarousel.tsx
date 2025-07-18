@@ -88,7 +88,7 @@ export function TestimonialCarousel(): '
                         className="text-zion-cyan p-0"
                         asChild;
                       >;
-                        <Link href={`/case-studies/${testimonial.slug}`}>`
+                        <Link href={`/case-studies/${testimonial.slug}`}>;
                           Read Case Study →;
                         </Link>;
                       </Button>;

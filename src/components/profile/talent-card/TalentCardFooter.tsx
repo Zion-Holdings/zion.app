@@ -56,8 +56,7 @@ export function TalentCardFooter(): unknown {): unknown {): unknown {): unknown 
     e.stopPropagation();
 '
     // Navigate to the talent profile page'
-    router.push(`/talent/${profile.id || ''}`)`
-
+    router.push(`/talent/${profile.id || ''}`);
     // Also call the onViewProfile callback if provided'
     if (onViewProfile) {'
       onViewProfile(profile.id || '')'

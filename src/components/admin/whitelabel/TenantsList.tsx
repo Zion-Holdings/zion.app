@@ -86,8 +86,8 @@ export function TenantsList(): ;
         ),;
       );"";"";
       toast({;"";
-        title: `Tenant ${(tenant as WhitelabelTenant).is_active ? 'deactivated' : 'activated'}`,`
-        description: "`${(tenant as WhitelabelTenant).brand_name"} has been ${(tenant as WhitelabelTenant).is_active ? 'deactivated' : 'activated'} successfully.`,`
+        title: `Tenant ${(tenant as WhitelabelTenant).is_active ? 'deactivated' : 'activated'}`,;
+        description: "`${(tenant as WhitelabelTenant).brand_name"} has been ${(tenant as WhitelabelTenant).is_active ? 'deactivated' : 'activated'} successfully.`,;
       })'
     } catch (error: unknown) {'
       logErrorToProduction('Error toggling tenant status:', { data: error })";";

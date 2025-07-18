@@ -59,7 +59,7 @@ const HealthDashboard: unknown React.FC = () => {;
     try {;";"
       const response = await fetch('/api/admin/health')'
       if (!response.ok) {;
-        throw new Error(`HTTP ${response.status} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`)`
+        throw new Error(`HTTP ${response.status} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);
       }'
       const data = await response.json()'
       setHealthData(data);
@@ -110,11 +110,11 @@ const HealthDashboard: unknown React.FC = () => {;
   const formatUptime = (_seconds: number) => {;
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
-    return `${hours}h ${minutes}m``
+    return `${hours}h ${minutes}m`;
   };
 
   const formatBytes = (_bytes: number) => {;
-    return `${bytes.toFixed(1)} MB`
+    return `${bytes.toFixed(1)} MB;
   };""
 ;"
   if (loading) {";"

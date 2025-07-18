@@ -76,7 +76,7 @@ export function LeaveReviewModal(): unknown {): unknown {): unknown {): unknown 
           <DialogTitle>"
             {userReview;"
               ? 'Edit Your Review'
-              : `Rate Your Experience with ${revieweeName}`}`
+              : `Rate Your Experience with ${revieweeName}`};
           </DialogTitle>;
           <DialogDescription>;
             Your feedback helps build a trustworthy community. It will be;

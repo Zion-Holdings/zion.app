@@ -82,7 +82,7 @@ export function useSavedTalents(): ;
         variant: 'destructive','
       });
       const returnTo = encodeURIComponent(router.asPath);
-      router.push(`/auth/login?returnTo=${returnTo}`)`
+      router.push(`/auth/login?returnTo=${returnTo}`);
       return;
     }'
 '

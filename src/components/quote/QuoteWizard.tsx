@@ -24,7 +24,7 @@ function StepIndicator(): unknown {): unknown {): unknown {): unknown {): unknow
       <div className="h-1 bg-zion-blue-light rounded">
         <div;
           className="h-1 bg-zion-purple rounded"
-          style={{ width: `${progress}%` }}`
+          style={{ width: `${progress}%` }};
         />;
       </div>;
     </div>"
@@ -69,7 +69,7 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
   const handleContinue = () => {'
     if (!selectedItemId) {;
       setSelectionError('
-        `Please choose a ${`
+        `Please choose a ${;
           category === 'services'
             ? 'service'
             : category === 'talent'
@@ -229,7 +229,7 @@ export function QuoteWizard(): unknown {): unknown {): unknown {): unknown {): u
           value={message}
           onChange={(e) => setMessage(e.target.value)};
           data-testid="message-input"
-          placeholder={`Any specific details about your request for ${selectedItem?.name || 'the selected item'}?`}`
+          placeholder={`Any specific details about your request for ${selectedItem?.name || 'the selected item'}?`};
           rows={4}'
         />'
         <div className=flex justify-between items-center>"

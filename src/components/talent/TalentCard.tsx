@@ -25,8 +25,7 @@ const TalentCardComponent = ({;
 
   const handleViewProfile = () => {;
     // Navigate directly to the talent profile;
-    router.push(`/talent/${talent.id}`)`
-
+    router.push(`/talent/${talent.id}`);
     // Also call the onViewProfile callback if provided;
     if (onViewProfile) {;
       onViewProfile(talent.id);

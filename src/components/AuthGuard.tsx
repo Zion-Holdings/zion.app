@@ -41,7 +41,7 @@ export function AuthGuard(): unknown {): unknown {): unknown {): unknown {): unk
       };
 
       const returnTo = encodeURIComponent(router.asPath);
-      router.push(`${redirectTo}?returnTo=${returnTo}`)`
+      router.push(`${redirectTo}?returnTo=${returnTo}`);
       return;
     };
 
@@ -56,7 +56,7 @@ export function AuthGuard(): unknown {): unknown {): unknown {): unknown {): unk
         if (showToast) {'
           toast({'
             title: 'Access Denied','
-            description: `This feature requires ${requireRole.join(' or ')} privileges.`,`
+            description: `This feature requires ${requireRole.join(' or ')} privileges.`,;
             variant: 'destructive','
           })'
         }'
@@ -173,7 +173,7 @@ export function useAuthGuard(): ;
         });
       };
 
-      router.push(`${redirectTo}?returnTo=${encodeURIComponent(returnUrl)}`)`
+      router.push(`${redirectTo}?returnTo=${encodeURIComponent(returnUrl)}`);
       return false;
     };
 '
@@ -196,7 +196,7 @@ export function useAuthGuard(): ;
       if (options?.showToast !== false) {;";"
         toast({;";""
           title: 'Access Denied','
-          description: `This feature requires ${roles.join(' or ')} privileges.`,`
+          description: `This feature requires ${roles.join(' or ')} privileges.`,;
           variant: 'destructive','
         });
       }'

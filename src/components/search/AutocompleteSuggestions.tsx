@@ -71,7 +71,7 @@ export function AutocompleteSuggestions(): unknown {): unknown {): unknown {): u
               ref={isHighlighted ? _highlightedItemRef : null};
               role="option"
               aria-selected={isHighlighted}
-              className={`px-4 py-2 cursor-pointer ${isHighlighted ? 'bg-zion-blue-light highlighted' : 'hover:bg-zion-blue-light/20'}`}`
+              className={`px-4 py-2 cursor-pointer ${isHighlighted ? 'bg-zion-blue-light highlighted' : 'hover:bg-zion-blue-light/20'}`};
               data-testid=suggestion-item"
               onClick={(e) => {"
                 e.preventDefault();

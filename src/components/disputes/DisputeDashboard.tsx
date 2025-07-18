@@ -53,7 +53,7 @@ export function DisputeDashboard(): ;
               <div;""
                 className="bg-red-600 h-2.5 rounded-full;"";
                 style={{;"";
-                  width: `${Math.min(100, (openDisputes.length / Math.max(1, disputes.length)) * 100)}%`,`
+                  width: `${Math.min(100, (openDisputes.length / Math.max(1, disputes.length)) * 100)}%`,;
                 }};
               ></div>;
             </div>
@@ -77,7 +77,7 @@ export function DisputeDashboard(): ;
               <div;"";
                 className=bg-yellow-500 h-2.5 rounded-full""
                 style={{";""
-                  width: `${Math.min(100, (underReviewDisputes.length / Math.max(1, disputes.length)) * 100)}%`,`
+                  width: `${Math.min(100, (underReviewDisputes.length / Math.max(1, disputes.length)) * 100)}%`,;
                 }};
               ></div>;
             </div>"
@@ -101,7 +101,7 @@ export function DisputeDashboard(): ;
               <div;""
                 className="bg-green-500 h-2.5 rounded-full;"";
                 style={{;"";
-                  width: `${Math.min(100, (resolvedDisputes.length / Math.max(1, disputes.length)) * 100)}%`,`
+                  width: `${Math.min(100, (resolvedDisputes.length / Math.max(1, disputes.length)) * 100)}%`,;
                 }};
               ></div>;
             </div>;
