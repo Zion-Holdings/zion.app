@@ -159,7 +159,7 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
     if (slug !== 'innovation') return;
     // No-op
     return undefined;
-  }, [slug, toast]);
+  }, [slug]);
 
   if (!slug) {
     router.push('/categories');
