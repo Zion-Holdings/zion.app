@@ -123,18 +123,11 @@ function offlineSearch(
     description: t.professional_title,
     type: 'talent' as const,
     slug: t.id,
-<<<<<<< HEAD
-    image: t.profile_picture_url,
-    tags: t.skills,
+    image: t.profile_picture_url ?? '',
+    tags: t.skills ?? [],
     category: 'Talent',
     date: new Date().toISOString(),
     rating: typeof t.average_rating === 'number' ? t.average_rating : 0,
-=======
-    image: String(t.profile_picture_url ?? ''),
-    rating: typeof t.average_rating === 'number' ? t.average_rating : 0,
-    category: 'Talent',
-    tags: t.skills ?? [],
->>>>>>> f3223bf8e97425737aecc6ef0373b006c412d2f2
   }));
 
   const blogResults = BLOG_POSTS.filter(
