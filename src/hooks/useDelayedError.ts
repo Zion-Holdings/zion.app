@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react;
+import { useState, useEffect } from 'react';
 /**'
  * Returns the provided error only after the specified delay.'
  * If the error changes or becomes null before the delay elapses,;

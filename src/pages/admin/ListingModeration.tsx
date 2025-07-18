@@ -6,7 +6,7 @@ import type { ModerationLog } from '@/types/moderation'
 import { FlaggedListingsTable } from '@/components/admin/moderation/FlaggedListingsTable'
 import AdminLayout from '@/components/admin/AdminLayout'
 import  { toast }  from '@/hooks/use-toast;
-export defaultault function ListingModeration(): ;
+export defaultault function ListingModeration(): ';
   const [logs, setLogs] = useState<ModerationLog[]>([])'
   const [isLoading, setIsLoading] = useState(true);
   const fetchLogs = async () => {'

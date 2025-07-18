@@ -6,8 +6,8 @@ import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 import { useAuth } from '@/hooks/useAuth'
 import { toast } from '@/hooks/use-toast'
-import Link from 'next/link // Changed from react-router-dom;
-import { safeStorage } from '@/utils/safeStorage;
+import Link from 'next/link // Changed from react-router-dom';
+import { safeStorage } from '@/utils/safeStorage';
 '
 interface Suggestion {
   id: "string"

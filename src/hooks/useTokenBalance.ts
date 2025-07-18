@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ethers } from 'ethers'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger';
 '
 const ERC20_ABI = [;
   'function balanceOf(): unknown {): unknown {): unknown {): unknown {): unknown {address owner) view returns (uint256)',;

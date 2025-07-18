@@ -1,3 +1,3 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router'
-import  { useAnalytics }  from '@/context/AnalyticsContext;
+import  { useAnalytics }  from '@/context/AnalyticsContext';

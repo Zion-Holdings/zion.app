@@ -3,9 +3,9 @@ import { ArrowLeft } from '@/components/ui/icons'
 import { useRouter } from 'next/router'
 import { TUTORIALS } from '@/data/tutorials'
 import { SEO } from '@/components/SEO'
-import { Button } from '@/components/ui/button;
+import { Button } from '@/components/ui/button';
 import ReactMarkdown from 'react-markdown'
-import type { Tutorial as TutorialType } from '@/types/tutorial;
+import type { Tutorial as TutorialType } from '@/types/tutorial';
 '
 interface TutorialPageProps {;
   tutorial?: TutorialType;

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
-import { Buffer as NodeBuffer } from 'buffer;
+import { Buffer as NodeBuffer } from 'buffer';
 '
 interface OptimizedImageProps {
   src: string,

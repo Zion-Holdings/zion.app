@@ -1,6 +1,6 @@
 import { Header } from '@/components/Header'
 import { SEO } from '@/components/SEO'
-import { FaqSection } from '@/components/FaqSection;
+import { FaqSection } from '@/components/FaqSection';
 '
 export defaultault function Faq(): ;
   return (;

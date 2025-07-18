@@ -3,10 +3,10 @@ import { Folder } from '@/components/ui/icons'
 import { CategoryCard } from '@/components/CategoryCard'
 import { GradientHeading } from '@/components/GradientHeading'
 import { SkeletonCard } from '@/components/ui'
-import ErrorBoundary from '@/components/GlobalErrorBoundary;
+import ErrorBoundary from '@/components/GlobalErrorBoundary';
 import { CATEGORIES } from '@/data/categories'
 import { NextSeo } from '@/components/NextSeo'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger';
 '
 interface CategoryType {
   id: "string"

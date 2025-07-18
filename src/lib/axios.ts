@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { safeStorage } from '@/utils/safeStorage;
+import { safeStorage } from '@/utils/safeStorage';
 import type {'
   AxiosInstance,;
   AxiosResponse,;

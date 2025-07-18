@@ -1,7 +1,7 @@
 import { supabase } from '@/integrations/supabase/client'
 import type { OrderStatus } from '@/lib/orderStatusMachine'
 import { logErrorToProduction } from '@/utils/productionLogger;
-export const holdInEscrow = async (_params: {;,;"
+export const holdInEscrow = async (_params: {;,';"
   amount: number;"
   currency?: string;"
   providerAccountId: "string;"

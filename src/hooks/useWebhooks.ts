@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { useAuth } from '@/hooks/useAuth'
 import { supabase } from '@/integrations/supabase/client'
-import { toast } from '@/hooks/use-toast;
+import { toast } from '@/hooks/use-toast';
 '
 export type WebhookEventType =;
   | 'new_application'
   | 'quote_received'
   | 'milestone_approved'
   | 'talent_hired;
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger';
 '
 export interface Webhook {
   id: "string"

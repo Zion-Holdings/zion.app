@@ -1,5 +1,5 @@
 import NodeCache from 'node-cache'
-import { logDebug, logErrorToProduction } from '@/utils/productionLogger;
+import { logDebug, logErrorToProduction } from '@/utils/productionLogger';
 // Cache categories with different TTL values'
 export enum CacheCategory {;
   SHORT = 'short', // 5 minutes;

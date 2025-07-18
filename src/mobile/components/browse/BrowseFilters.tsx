@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Slider } from '@/components/ui/slider'
 import { Switch } from '@/components/ui/switch'
 import  { Input }  from '@/components/ui/input;
-import {;
+import {';
   Select,'
   SelectContent,;
   SelectItem,;
@@ -20,7 +20,7 @@ import {;
   SheetTrigger,;
 } from '@/components/ui/sheet'
 import { Badge } from '@/components/ui/badge'
-import { Label } from '@/components/ui/label;
+import { Label } from '@/components/ui/label';
 '
 interface BrowseFiltersProps {
   type: 'jobs' | 'talents

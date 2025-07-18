@@ -6,13 +6,13 @@ import { toast } from '@/hooks/use-toast'
 import { SEO } from '@/components/SEO'
 import { Header } from '@/components/Header'
 import  { Avatar, AvatarFallback, AvatarImage }  from '@/components/ui/avatar;
-import {;
+import {';
   Card,'
   CardContent,;
   CardDescription,;
   CardHeader,'
   CardTitle,;
 } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge;
-import  { HireNowCTA }  from '@/components/profile/HireNowCTA;
-export defaultault function ProfileDetail(): ;
+import { Badge } from '@/components/ui/badge';
+import { HireNowCTA }  from '@/components/profile/HireNowCTA';
+export defaultault function ProfileDetail(): ';

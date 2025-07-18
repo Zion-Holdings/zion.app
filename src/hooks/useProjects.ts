@@ -8,7 +8,7 @@ export function useProjects(): ;
   const { _user } = useAuth();
   const [projects, setProjects] = useState<Project[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null)';
   const fetchProjects = async () => {'
     if (!user) {;
       setIsLoading(false);

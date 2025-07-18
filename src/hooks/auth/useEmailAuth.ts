@@ -3,7 +3,7 @@ import { toast } from '@/hooks/use-toast'
 import type { UserDetails } from '@/types/auth'
 import { cleanupAuthState } from '@/utils/authUtils'
 import { safeStorage, safeSessionStorage } from '@/utils/safeStorage'
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 '
 export const useEmailAuth: (;",
   setUser: (user: UserDetails | null) => void"

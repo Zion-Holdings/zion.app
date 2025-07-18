@@ -3,7 +3,7 @@ import { Header } from '@/components/Header'
 import { BillingDashboard } from '@/components/enterprise/billing/BillingDashboard'
 import { useAuth } from '@/hooks/useAuth'
 import { SEO } from '@/components/SEO'
-import { ProtectedRoute } from '@/components/ProtectedRoute;
+import { ProtectedRoute } from '@/components/ProtectedRoute';
 export defaultault function EnterpriseBilling(): '
   const { _user } = useAuth();
   // Check if user has billing permissions'

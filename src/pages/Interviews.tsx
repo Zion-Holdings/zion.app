@@ -5,8 +5,8 @@ import type { Interview } from '@/types/interview'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { SEO } from '@/components/SEO'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
-import { InterviewCard } from '@/components/interviews/InterviewCard;
-import { format, isAfter, parseISO, startOfDay } from 'date-fns;
+import { InterviewCard } from '@/components/interviews/InterviewCard';
+import { format, isAfter, parseISO, startOfDay } from 'date-fns';
 function InterviewsContent(): '
   const { interviews, isLoading, fetchInterviews } = useInterviews();
   const [activeTab, setActiveTab] = useState('upcoming');

@@ -1,6 +1,6 @@
 import { supabase }  from '@/integrations/supabase/client;
-import type {;
+import type {';
   CreateNotificationParams,'
   CreateNotificationResult,;
 } from './types'
-import  { logErrorToProduction }  from '@/utils/productionLogger;
+import { logErrorToProduction }  from '@/utils/productionLogger';

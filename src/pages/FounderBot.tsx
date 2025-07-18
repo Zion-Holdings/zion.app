@@ -4,7 +4,7 @@ import { SEO } from '@/components/SEO'
 import { Button } from '@/components/ui/button'
 import { ChatAssistant } from '@/components/ChatAssistant'
 import  { logErrorToProduction }  from '@/utils/productionLogger;
-export defaultault function FounderBot(): ;
+export defaultault function FounderBot(): ';
   const [open, setOpen] = useState(false)'
 ;
   const handleSendMessage = async (message: string): Promise<void> => {;

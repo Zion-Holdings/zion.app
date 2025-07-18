@@ -3,15 +3,15 @@ import { Star, AlertTriangle } from '@/components/ui/icons'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 import { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger }  from '@/components/ui/tabs;
-import {;
+import {';
   Card,'
   CardContent,;
   CardDescription,;
   CardHeader,'
   CardTitle,;
 } from '@/components/ui/card;
-import { Button } from '@/components/ui/button;
-import { toast } from '@/components/ui/use-toast;
+import { Button } from '@/components/ui/button';
+import { toast } from '@/components/ui/use-toast';
 '
 function ReviewsModerationContent(): ;
   const [activeTab, setActiveTab] = useState('pending')'

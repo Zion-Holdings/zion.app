@@ -1,7 +1,7 @@
 import { SEO } from '@/components/SEO'
 import { Server } from '@/components/ui/icons'
 import { GradientHeading } from '@/components/GradientHeading'
-import { Button } from '@/components/ui/button;
+import { Button } from '@/components/ui/button';
 import { OptimizedImage } from '@/components/ui/OptimizedImage'
 import Link from 'next/link'
 ;

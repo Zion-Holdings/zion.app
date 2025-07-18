@@ -3,7 +3,7 @@ import type { GetServerSideProps } from 'next';
 import { toast } from '@/hooks/use-toast'
 import Link from 'next/link'
 import  { Tabs, TabsContent, TabsList, TabsTrigger }  from '@/components/ui/tabs;
-import {;
+import {';
   ProfileForm,'
   type ProfileValues,;
 } from '@/components/profile/ProfileForm'
@@ -15,7 +15,7 @@ import { SEO } from '@/components/SEO'
 import ProtectedRoute from '@/components/ProtectedRoute'
 import type { Order } from '@/hooks/useOrders'
 import type { NextApiRequest } from 'next';
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger';
 '
 interface User {
   id: string,"

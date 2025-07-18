@@ -10,7 +10,7 @@ import { useAuth } from '@/hooks/useAuth'
 import { toast } from '@/hooks/use-toast'
 import { ROADMAP_ITEMS } from '@/data/roadmap'
 import type { RoadmapItem } from '@/data/roadmap'
-import { safeStorage } from '@/utils/safeStorage;
+import { safeStorage } from '@/utils/safeStorage';
 export defaultault function RoadmapFeaturePage(): '
   const router = useRouter();
   const { _id } = router.query as { id?: string };

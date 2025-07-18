@@ -5,7 +5,7 @@ import { toast } from 'sonner'
 import type { Milestone } from './types'
 import { useRecordActivity } from './useRecordActivity'
 import  { logErrorToProduction }  from '@/utils/productionLogger;
-export const _useCreateMilestone = (projectId?: string) => {;
+export const _useCreateMilestone = (projectId?: string) => {';
   const { _user } = useAuth()'
   const [isSubmitting, setIsSubmitting] = useState(false)'
   const { _recordMilestoneActivity } = useRecordActivity();

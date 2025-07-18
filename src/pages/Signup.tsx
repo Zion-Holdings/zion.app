@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { AlertCircle, CheckCircle, Mail } from '@/components/ui/icons'
-import { useRouter } from 'next/router // Changed from react-router-dom;
+import { useRouter } from 'next/router // Changed from react-router-dom';
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import axios from 'axios'
@@ -11,10 +11,10 @@ import { Button } from '@/components/ui/button'
 import { LoadingSpinner } from '@/components/ui/enhanced-loading-states'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter'
-import { AuthButtons } from '@/components/AuthButtons;
+import { AuthButtons } from '@/components/AuthButtons';
 import { toast } from '@/hooks/use-toast'
 import { AuthLayout } from '@/layout'
-import { logError, logWarn } from '@/utils/logger;
+import { logError, logWarn } from '@/utils/logger';
 '
 const SignupSchema: Yup.object({;",;"
   name: Yup.string().required('Name is required'),;

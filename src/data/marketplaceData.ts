@@ -2,7 +2,7 @@ import type { ProductListing } from '@/types/listings'
 import type { SearchSuggestion, FilterOptions } from '@/types/search'
 import { docsSearchSuggestions } from './docsSearchData'
 import { BLOG_POSTS } from './blog-posts'
-import { slugify } from '@/lib/slugify;
+import { slugify } from '@/lib/slugify';
 // Remove all mock/sample MARKETPLACE_LISTINGS and any other mock/sample data. Only real data fetching logic or empty export.'
 '
 // Generate search suggestions based on existing listings;

@@ -1,6 +1,6 @@
 import js from "@eslint/js";
 import globals from "globals";
-import tseslint from "typescript-eslint";
+import tseslint from "@typescript-eslint/eslint-plugin";
 import pluginReact from "eslint-plugin-react";
 import pluginReactHooks from "eslint-plugin-react-hooks";
 import pluginJsxA11y from "eslint-plugin-jsx-a11y";
@@ -27,7 +27,15 @@ export default [
   js.configs.recommended,
 
   // TypeScript configuration
-  ...tseslint.configs.recommended,
+  {
+    files: ["**/*.{ts,tsx}"],
+    plugins: {
+      "@typescript-eslint": tseslint,
+    },
+    rules: {
+      ...tseslint.configs.recommended.rules,
+    },
+  },
 
   // Custom rules for all files
   {
@@ -197,38 +205,6 @@ export default [
     rules: {
       "no-console": "off",
       "no-redeclare": "off" // Allow workbox to be redeclared in service worker context
-    }
-  },
-
-  // Jest setup files
-  {
-    files: ["tests/jest.setup.ts", "**/*jest.setup*"],
-    languageOptions: {
-      globals: {
-        ...globals.jest,
-        ...globals.node,
-        jest: "readonly",
-        global: "readonly"
-      }
-    },
-    rules: {
-      "@typescript-eslint/no-require-imports": "off",
-      "@typescript-eslint/no-explicit-any": "off"
-    }
-  },
-
-  // Mock files in scripts directory
-  {
-    files: ["scripts/__mocks__/**/*.js"],
-    languageOptions: {
-      globals: {
-        ...globals.jest,
-        ...globals.node,
-        jest: "readonly"
-      }
-    },
-    rules: {
-      "@typescript-eslint/no-require-imports": "off"
     }
   }
 ];

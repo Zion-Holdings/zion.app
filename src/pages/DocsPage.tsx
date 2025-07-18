@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link'
-import  ReactMarkdown  from 'react-markdown;
+import  ReactMarkdown  from 'react-markdown';
 export interface DocsPageProps {
   /**';
    * Markdown content for the currently viewed document.'

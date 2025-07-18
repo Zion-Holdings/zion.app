@@ -6,7 +6,7 @@ import { toast } from '@/hooks/use-toast'
 import  { logErrorToProduction }  from '@/utils/productionLogger;
 export function usePortfolio(): ;
   const { _user } = useAuth();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false)';
   const [error, setError] = useState<string | null>(null)'
   const [projects, setProjects] = useState<PortfolioProject[]>([]);
   const fetchProjects = useCallback(async () => {'

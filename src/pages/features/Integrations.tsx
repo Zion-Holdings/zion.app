@@ -5,7 +5,7 @@ import { GradientHeading } from '@/components/GradientHeading'
 import { Button } from '@/components/ui/button'
 import { OptimizedImage } from '@/components/ui/OptimizedImage'
 import Link from 'next/link'
-import { useAdvancedOnboardingStatus } from '@/hooks/useAdvancedOnboardingStatus;
+import { useAdvancedOnboardingStatus } from '@/hooks/useAdvancedOnboardingStatus';
 export defaultault function IntegrationsFeature(): '
   const schema = {;
     '@context': 'https://schema.org',;

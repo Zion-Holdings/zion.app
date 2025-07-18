@@ -1,4 +1,4 @@
-import { toast } from 'react-hot-toast;
+import { toast } from 'react-hot-toast';
 export interface ToastError {'
   code?: string | number
   message: "string"

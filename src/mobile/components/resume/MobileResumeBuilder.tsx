@@ -4,14 +4,14 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import  { Textarea }  from '@/components/ui/textarea;
-import {;
+import {';
   Select,'
   SelectContent,;
   SelectItem,;
   SelectTrigger,'
   SelectValue,;
 } from '@/components/ui/select'
-import { Label } from '@/components/ui/label;
+import { Label } from '@/components/ui/label';
 type ResumeStep = 'basics' | 'experience' | 'education' | 'skills;
 '
 export function MobileResumeBuilder(): ;

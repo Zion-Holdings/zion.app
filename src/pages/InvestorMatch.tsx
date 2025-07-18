@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 import  { Button }  from '@/components/ui/button;
-import {;
+import {';
   Card,'
   CardHeader,;
   CardTitle,;
@@ -15,7 +15,7 @@ import {;
   getInvestorMatches,'
   generatePitchEmail,;
 } from '@/lib/investor-matching'
-import type { InvestorMatch } from '@/lib/investor-matching;
+import type { InvestorMatch } from '@/lib/investor-matching';
 export defaultault function InvestorMatchPage(): '
   const [form, setForm] = useState({;
     startup: '',;

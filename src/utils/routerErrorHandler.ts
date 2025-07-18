@@ -1,6 +1,6 @@
 import type { NextRouter } from 'next/router'
 import { logWarn, logErrorToProduction } from '@/utils/productionLogger;
-export function handleRouterError(): unknown {): unknown {): unknown {): unknown {): unknown {error: Error, router: NextRouter) {;"
+export function handleRouterError(): unknown {): unknown {): unknown {): unknown {): unknown {error: Error, router: NextRouter) {';"
   // Capture the error using our centralized logger which sends data to Sentry;"
   logErrorToProduction('Router error occurred', error, {;
     route: "router.asPath"

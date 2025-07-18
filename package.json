@@ -26,8 +26,8 @@
     "build:fast": "NEXT_DISABLE_CSS_INLINE=true SKIP_TYPE_CHECK=true NODE_OPTIONS='--no-deprecation --max-old-space-size=6144' npx next build --no-lint",
     "build:react19": "REACT_19_MODE=true npm run build",
     "build:production": "NODE_ENV=production npm run typecheck && npm run build",
-    "build:analyze": "node scripts/analyze-bundle.js",
-    "bundle:analyze": "node scripts/analyze-bundle.js",
+    "build:analyze": "node scripts/analyze-bundle.cjs",
+    "bundle:analyze": "node scripts/analyze-bundle.cjs",
     "bundle:optimize": "node scripts/bundle-optimizer.cjs",
     "bundle:report": "node scripts/bundle-analysis.cjs",
     "bundle:chunks": "node scripts/large-chunk-analyzer.cjs",
@@ -337,17 +337,30 @@
     "build:optimize": "node scripts/replace-console-statements.cjs && npm run lint -- --fix && npm run build"
   },
   "dependencies": {
-    "@sentry/nextjs": "^9.39.0",
+    "@chakra-ui/react": "^3.22.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@sentry/nextjs": "^9.40.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
+    "framer-motion": "^12.23.6",
+    "i18next": "^25.3.2",
     "next": "^15.0.0-rc.0",
+    "node-fetch": "^3.3.2",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-i18next": "^15.6.0"
   },
   "devDependencies": {
     "@types/node": "20.19.8",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.37.0",
+    "@typescript-eslint/parser": "^8.37.0",
+    "eslint": "^9.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
     "typescript": "^5.0.0"
   }
 }

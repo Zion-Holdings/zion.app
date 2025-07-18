@@ -1,5 +1,5 @@
 import type { ProfileData } from '@/types/profile'
-import type { TalentProfile } from '@/types/talent;
+import type { TalentProfile } from '@/types/talent';
 function isTalentProfile(): unknown {): unknown {): unknown {): unknown {): unknown {profile: unknown): profile is TalentProfile {'
   return (;
     typeof profile === 'object' &&'

@@ -1,6 +1,6 @@
 import React from 'react';
 import HelpCenter from '@/components/support/HelpCenter'
-import { SEO } from '@/components/SEO;
+import { SEO } from '@/components/SEO';
 '
 export defaultault function HelpCenterPage(): ;
   return (;

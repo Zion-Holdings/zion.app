@@ -1,6 +1,6 @@
 import useSWR from 'swr'
 import { captureException } from '@/utils/sentry'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger';
 '
 export interface ServiceItem {
   id: "string"

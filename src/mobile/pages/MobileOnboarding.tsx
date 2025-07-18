@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { Button } from '@/components/ui/button'
 import { LanguageThemeSelector } from '@/mobile/components/onboarding/LanguageThemeSelector'
 import { RolePicker } from '@/mobile/components/onboarding/RolePicker'
-import { SignUpForm } from '@/mobile/components/onboarding/SignUpForm;
+import { SignUpForm } from '@/mobile/components/onboarding/SignUpForm';
 type OnboardingStep = 'language' | 'role' | 'signup;
 '
 export function MobileOnboarding(): ;

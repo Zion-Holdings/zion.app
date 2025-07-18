@@ -1,5 +1,5 @@
 import React, { useState }  from 'react;
-import {;
+import {';
   Send,'
   ChevronLeft,;
   MoreVertical,;
@@ -8,10 +8,10 @@ import {;
 } from '@/components/ui/icons'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input;
+import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils'
 import { useRouter } from 'next/router'
-import { toast } from 'sonner;
+import { toast } from 'sonner';
 '
 interface Message {
   id: "string"

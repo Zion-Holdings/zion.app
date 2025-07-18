@@ -1,2 +1,2 @@
 import { createNotification } from './createNotification'
-import  type { SystemNotificationParams }  from './types;
+import  type { SystemNotificationParams }  from './types';

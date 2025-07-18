@@ -1,5 +1,5 @@
-import axios from 'axios;
-import  { logErrorToProduction }  from '@/utils/productionLogger;
+import axios from 'axios';
+import { logErrorToProduction }  from '@/utils/productionLogger';
 export interface ShippoShipment {
   tracking_number: string
   tracking_status?: string

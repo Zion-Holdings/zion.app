@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { DynamicListingPage } from '@/components/DynamicListingPage'
-import type { ProductListing } from '@/types/listings;
+import type { ProductListing } from '@/types/listings';
 const ADDITIONAL_TALENT_LISTINGS: unknown ProductListing[] = ['
   {;
     id: 'talent-17',;

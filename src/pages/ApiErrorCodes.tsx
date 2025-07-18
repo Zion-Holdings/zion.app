@@ -1,7 +1,7 @@
 import React from 'react';
 import ApiDocsLayout from '@/components/developers/ApiDocsLayout'
 import { CodeBlock } from '@/components/developers/CodeBlock'
-import Link from 'next/link;
+import Link from 'next/link';
 export function ApiErrorCodes(): '
   const errorExample = `{;
   "error": "validation_error"

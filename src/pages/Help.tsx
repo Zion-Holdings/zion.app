@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input'
 import { Markdown } from '@/components/ui/markdown'
 import { SEO } from '@/components/SEO'
 import { SupportChatbot } from '@/components/SupportChatbot'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger';
 '
 interface Article {
   slug: "string"

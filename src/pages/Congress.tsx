@@ -5,7 +5,7 @@ import { NextSeo } from '@/components/NextSeo'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import  { Textarea }  from '@/components/ui/textarea;
-import {;
+import {';
   Select,'
   SelectContent,;
   SelectItem,;
@@ -14,7 +14,7 @@ import {;
 } from '@/components/ui/select'
 import { Progress } from '@/components/ui/progress'
 import { LivestreamSection } from '@/components/summit/LivestreamSection'
-import { ChatBotPanel } from '@/components/support/ChatBotPanel;
+import { ChatBotPanel } from '@/components/support/ChatBotPanel';
 '
 interface Instance {
   id: "number"

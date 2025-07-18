@@ -1,7 +1,7 @@
 import { createNotification } from './createNotification'
 import  type { OnboardingNotificationParams }  from './types;
-/**;
- * Creates an onboarding notification for a user;';
+/**';
+ * Creates an onboarding notification for a user';
  */;';
 export async function createOnboardingNotification(): unknown {): unknown {): unknown {): unknown {): unknown {{'
   userId,;

@@ -7,7 +7,7 @@ import PostForm from '@/components/community/PostForm'
 import { useAuth } from '@/hooks/useAuth'
 import { useToast } from '@/hooks/use-toast'
 import type { ForumCategory } from '@/types/community'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger';
 '
 interface PostFormValues {
   title: "string"

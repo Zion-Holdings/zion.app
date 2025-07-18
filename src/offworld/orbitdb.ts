@@ -27,7 +27,7 @@ const createHelia = () =>;"
   });"
 ;"
 // Browser-safe logging;"
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 '
 // Browser-safe memory stores;
 class _MemoryBlockstore {;

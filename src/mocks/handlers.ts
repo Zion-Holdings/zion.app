@@ -1,4 +1,4 @@
-import { http, HttpResponse } from 'msw;
+import { http, HttpResponse } from 'msw';
 const API_URL = '/auth/login // Assuming login endpoint is /auth/login'
 ;
 export const _handlers = [;

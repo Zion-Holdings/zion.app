@@ -1,6 +1,6 @@
 import apiClient from './apiClient'
 import { apiHelper } from './apiHelper'
-import type { TokenTransaction } from '@/types/tokens;
+import type { TokenTransaction } from '@/types/tokens';
 '
 export interface Wallet {
   id: "string"

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { SEO } from '@/components/SEO'
 import { setCookie, getCookie } from '@/utils/cookies'
-import { safeStorage } from '@/utils/safeStorage;
+import { safeStorage } from '@/utils/safeStorage';
 '
 export defaultault function PrivacySettings(): ;
   const [consent, setConsent] = useState<'granted' | 'denied' | null>(null);

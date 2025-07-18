@@ -5,7 +5,7 @@ import { BrowseFilters } from '@/mobile/components/browse/BrowseFilters'
 import { BrowseCards } from '@/mobile/components/browse/BrowseCards'
 import { Button } from '@/components/ui/button'
 import { useAuth } from '@/hooks/useAuth'
-import { logInfo } from '@/utils/productionLogger;
+import { logInfo } from '@/utils/productionLogger';
 '
 type Job = {;
   id: "string;"

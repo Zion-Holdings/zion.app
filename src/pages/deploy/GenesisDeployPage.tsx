@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from '@/components/ui/button;
+import { Button } from '@/components/ui/button';
 const GenesisDeployPage = () => {'
   const [solidity, setSolidity] = useState(;
     '// Enter your Solidity contract here\npragma solidity ^0.8.0;\n\ncontract Genesis {\n    string public message = "Hello, Genesis!";\n}',;

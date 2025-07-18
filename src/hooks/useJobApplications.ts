@@ -5,7 +5,7 @@ import type { JobApplication, ApplicationStatus } from '@/types/jobs'
 import { toast } from 'sonner'
 import  { logErrorToProduction }  from '@/utils/productionLogger;
 export const _useJobApplications = (jobId?: string) => {;
-  const { _user } = useAuth();
+  const { _user } = useAuth()';
   const [applications, setApplications] = useState<JobApplication[]>([])'
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

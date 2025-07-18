@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect } from 'react''
 import type { ReactNode } from 'react''
 import { useAuth } from '@/hooks/useAuth'
 import  type { MessagingContextType }  from '@/types/messaging;
-import {;
+import {';
   useMessagingOperations,'
   useMessagingRealtime,'
 } from '@/hooks/messaging'

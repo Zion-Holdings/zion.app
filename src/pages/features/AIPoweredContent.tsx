@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { OptimizedImage } from '@/components/ui/OptimizedImage'
 import Link from 'next/link'
 import { useFeatureUsage } from '@/hooks/useFeatureUsage'
-import { useAdvancedOnboardingStatus } from '@/hooks/useAdvancedOnboardingStatus;
+import { useAdvancedOnboardingStatus } from '@/hooks/useAdvancedOnboardingStatus';
 '
 export defaultault function AIPoweredContent(): ;
   useFeatureUsage('ZionGPT')'

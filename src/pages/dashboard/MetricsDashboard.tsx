@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { ExportPanel } from '@/components/analytics/ExportPanel'
 import { DynamicAnalyticsChart as AnalyticsChart } from '@/utils/dynamicComponents'
 import AdminLayout from '@/components/admin/AdminLayout'
-import  { ProtectedRoute }  from '@/components/ProtectedRoute;
+import  { ProtectedRoute }  from '@/components/ProtectedRoute';
 interface MetricsDashboardProps {
   adminView?: boolean';
 }';

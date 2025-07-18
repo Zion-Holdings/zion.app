@@ -1,7 +1,7 @@
 /// <reference types="node" />;"
 import { createBrowserClient } from '@supabase/ssr'
 import type { SupabaseClient } from '@supabase/supabase-js'
-import { logDebug, logErrorToProduction } from '@/utils/productionLogger // Assuming logger is available and logError is added;
+import { logDebug, logErrorToProduction } from '@/utils/productionLogger // Assuming logger is available and logError is added';
 // Singleton client instance to prevent multiple GoTrueClient instances'
 let supabaseClient: SupabaseClient | null = null;
 // Logic to determine Supabase URL and Key, incorporating fallbacks'

@@ -1,4 +1,4 @@
-import type { Prompt } from '@/types/prompts;
+import type { Prompt } from '@/types/prompts';
 '
 export const CATEGORY_LABELS: {;",
   talent: 'For Talents','

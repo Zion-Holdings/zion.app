@@ -6,7 +6,7 @@ import type { Milestone, MilestoneStatus } from './types'
 import { useRecordActivity } from './useRecordActivity'
 import { createNotification } from '@/utils/notifications'
 import  { logErrorToProduction }  from '@/utils/productionLogger;
-export const _useUpdateMilestone = () => {;
+export const _useUpdateMilestone = () => {';
   const { _user } = useAuth()'
   const [isSubmitting, setIsSubmitting] = useState(false)'
   const { _recordMilestoneActivity } = useRecordActivity();

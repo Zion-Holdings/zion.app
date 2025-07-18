@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Notification as BaseNotification } from '@/types/notifications;
+import type { Notification as BaseNotification } from '@/types/notifications';
 '
 export type NotificationType ='
   | 'message'

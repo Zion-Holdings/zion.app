@@ -1,5 +1,5 @@
 import type { ProductDetailsData } from '../types/product'
-import { logWarn, logErrorToProduction } from '@/utils/productionLogger;
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 '
 export async function fetchProductById(): unknown {): unknown {): unknown {): unknown {): unknown {;
   productId: string,;"

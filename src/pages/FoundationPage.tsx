@@ -1,5 +1,5 @@
 import { Header } from '@/components/Header'
-import { SEO } from '@/components/SEO;
+import { SEO } from '@/components/SEO';
 '
 export defaultault function FoundationPage(): ;
   return (;

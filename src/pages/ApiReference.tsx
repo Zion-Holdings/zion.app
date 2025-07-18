@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ApiDocsLayout from '@/components/developers/ApiDocsLayout'
 import { CodeBlock } from '@/components/developers/CodeBlock'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import ApiPlayground from '@/components/developers/ApiPlayground;
+import ApiPlayground from '@/components/developers/ApiPlayground';
 '
 export function ApiReference(): ;
   const [activeEndpoint, setActiveEndpoint] = useState('get-jobs')'

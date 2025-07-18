@@ -7,7 +7,7 @@ import Link from 'next/link'
 export function ApiSampleCode(): ;
   // JavaScript example with Axios'
   const jsAxiosExample = `// Using Axios with JavaScript;
-import axios from 'axios;
+import axios from 'axios';
 // Configure Axios with the base URL and headers'
 const api: axios.create({;",;"
   baseURL: 'https://api.ziontechgroup.com/v1','

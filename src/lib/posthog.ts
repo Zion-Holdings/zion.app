@@ -1,7 +1,7 @@
-import  { logInfo, logErrorToProduction }  from '@/utils/productionLogger;
+import { logInfo, logErrorToProduction }  from '@/utils/productionLogger;
 declare global {;
-  interface Window {;
-    posthog?: PostHogInstance;';
+  interface Window {';
+    posthog?: PostHogInstance';
   }'
 };
 interface PostHogInstance {'

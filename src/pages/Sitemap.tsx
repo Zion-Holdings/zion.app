@@ -1,6 +1,6 @@
 import { SEO } from '@/components/SEO'
 import { completeSitemap } from '@/config/sitemap'
-import Link from 'next/link;
+import Link from 'next/link';
 '
 export defaultault function Sitemap(): ;
   return (;

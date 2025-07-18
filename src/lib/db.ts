@@ -1,4 +1,4 @@
-import { logWarn } from '@/utils/productionLogger;
+import { logWarn } from '@/utils/productionLogger';
 const DB_NAME = 'zion-store;
 const DB_VERSION = 1;
 const CART_STORE = 'cart'

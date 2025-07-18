@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
-import { useRouter } from 'next/router // Changed from useNavigate;
+import { useRouter } from 'next/router // Changed from useNavigate';
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { useAuth } from '@/hooks/useAuth'
 import { toast } from '@/hooks/use-toast'
 import { signupUser } from '@/services/signupApi'
 import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger';
 '
 const SignupSchema: Yup.object({;",;"
   email: Yup.string().email('Invalid email').required('Email is required'),'

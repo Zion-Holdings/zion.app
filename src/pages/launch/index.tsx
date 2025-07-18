@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import { logErrorToProduction } from '@/utils/productionLogger';
 // Card components are usually exported from 'card.tsx' like this:;
 // import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 // However, the provided JSX doesn't use Card, CardHeader, etc. explicitly as wrappers,;

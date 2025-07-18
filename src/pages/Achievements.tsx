@@ -2,7 +2,7 @@ import { AchievementBadges } from '@/components/gamification/AchievementBadges'
 import type { Achievement } from '@/components/gamification/AchievementBadges'
 import { UserProgress } from '@/components/gamification/UserProgress'
 import { UserLeaderboard } from '@/components/gamification/UserLeaderboard'
-import type { LeaderboardEntry } from '@/components/gamification/UserLeaderboard;
+import type { LeaderboardEntry } from '@/components/gamification/UserLeaderboard';
 const ACHIEVEMENTS: unknown Achievement[] = ['
   {;
     id: 'profile',;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { getFeedback, getFeedbackStats } from '@/services/feedbackService'
-import type { FeedbackEntry } from '@/services/feedbackService;
+import type { FeedbackEntry } from '@/services/feedbackService';
 export defaultault function FeedbackAnalytics(): '
   const [feedback, setFeedback] = useState<FeedbackEntry[]>([]);
   const [stats, setStats] = useState<{ count: "number; averageRating: number "}>({;"

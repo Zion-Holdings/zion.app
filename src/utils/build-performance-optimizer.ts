@@ -1,5 +1,5 @@
 import React from 'react';
-import { logWarn, logErrorToProduction } from '@/utils/productionLogger;
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 '
 // Build Performance Optimizer;
 // Analyzes bundle sizes, identifies optimization opportunities, and provides recommendations;

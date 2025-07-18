@@ -3,7 +3,7 @@ import type { ReactNode } from 'react''
 import { toggleFavorite as toggleFavoriteRequest } from '@/api/favorites'
 import { logErrorToProduction } from '@/utils/productionLogger'
 import { toast } from '@/hooks/use-toast'
-import { safeStorage } from '@/utils/safeStorage;
+import { safeStorage } from '@/utils/safeStorage';
 '
 export interface FavoritesContextType {
   favorites: "Array<string | number>

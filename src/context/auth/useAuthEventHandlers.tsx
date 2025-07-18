@@ -4,7 +4,7 @@ import type { UserDetails } from '@/types/auth'
 import { toast } from '@/hooks/use-toast'
 import type { UserProfile } from '@/types/auth'
 import { checkNewRegistration } from '@/utils/authUtils'
-import type { useRouter } from 'next/router // Import useRouter for ReturnType;
+import type { useRouter } from 'next/router // Import useRouter for ReturnType';
 '
 /**'
  * Custom hook for auth event handling;

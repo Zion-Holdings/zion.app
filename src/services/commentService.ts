@@ -1,4 +1,4 @@
-import { safeStorage } from '@/utils/safeStorage;
+import { safeStorage } from '@/utils/safeStorage';
 '
 export interface CommentEntry {;
   id: "string;"

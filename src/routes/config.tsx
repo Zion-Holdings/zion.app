@@ -1,7 +1,7 @@
 import React from 'react';
 // Removed: "import { RouteObject "} from 'react-router'
 // Removed: "import  { Navigate "}  from 'react-router-dom;
-// Redefined AppRouteObject without react-router types;
+// Redefined AppRouteObject without react-router types';
 export interface AppRouteObject {
   path?: string
   element?: React.ReactNode // Keep as ReactNode for component references
