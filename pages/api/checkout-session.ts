@@ -1,258 +1,270 @@
-import type { NextApiRequest, NextApiResponse } from 'next';'
-import Stripe from 'stripe';'
+import type { NextApiRequest, NextApiResponse } from 'next';';';';';'
+import Stripe from 'stripe';';';';';'
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 ;
 ;
-// Note: Stripe instance will be created dynamically with the correct key;
-;
-// Helper to determine if the current environment is production-like;
-function isProductionEnvironment(): unknown {req: NextApiRequest): boolean {;
-  // Check common environment variables that indicate production;'
-  if (process.env['NODE_ENV'] === 'production') return true;'
-  if (process.env['VERCEL_ENV'] === 'production') return true; // Vercel;'
-  if (process.env['CONTEXT'] === 'production') return true; // Netlify;
-;
-  // Fallback: check host if available (less reliable for API routes);'
-  const hostHeader: unknown unknown = req['headers']['host'] || process.env['NEXT_PUBLIC_APP_URL'] || process.env['VERCEL_URL'] || process.env['URL'];
-  if (hostHeader) {;
-    try {;'
-      // Convert to string if it's an array;
-      const host: unknown unknown = Array.isArray(hostHeader) ? hostHeader[0] : hostHeader;
-      if (host) {;'
-        const hostname: unknown unknown = host.startsWith('http') ? new URL(host).hostname : host;
-        // Add your actual production domain here;'
+// Note: Stripe instance will be created dynamically with the correct key;'
+;';'
+// Helper to determine if the current environment is production-like;';';'
+function isProductionEnvironment(): unknown {): unknown {): unknown {): unknown {): unknown {req: NextApiRequest): boolean {;';';';'
+  // Check common environment variables that indicate production;';';';';'
+  if (process.env['NODE_ENV'] === 'production') return true;';';';';'
+  if (process.env['VERCEL_ENV'] === 'production') return true; // Vercel;';';';';'
+  if (process.env['CONTEXT'] === 'production') return true; // Netlify;';';'
+;';';';'
+  // Fallback: check host if available (less reliable for API routes);';';';';'
+  const hostHeader: unknown unknown unknown unknown unknown unknown = req['headers']['host'] || process.env['NEXT_PUBLIC_APP_URL'] || process.env['VERCEL_URL'] || process.env['URL'];';';'
+  if (hostHeader) {;';';';'
+    try {;';';';';'
+      // Convert to string if it's an array;';';'
+      const host: unknown unknown unknown unknown unknown unknown = Array.isArray(hostHeader) ? hostHeader[0] : hostHeader;';';';'
+      if (host) {;';';';';'
+        const hostname: unknown unknown unknown unknown unknown unknown = host.startsWith('http') ? new URL(host).hostname : host;';';';'
+        // Add your actual production domain here;';';';';'
         return hostname === 'app.ziontechgroup.com' || hostname === 'zion.app';
-      } catch (error) {};
+      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
     } catch {;
       // ignore parse errors;
     };
-  };
-  return false;
-};
-;
-function getStripeSecretKey(): unknown {isProdEnv: boolean): string {;'
-  const liveSecretKey: unknown unknown = process.env['STRIPE_SECRET_KEY'];'
-  const testSecretKey: unknown unknown = process.env['STRIPE_TEST_SECRET_KEY'];'
-  const forceTestMode: unknown unknown = process.env['STRIPE_TEST_MODE'] === 'true';
-;
-  // For development/test environments, always use test keys;'
-  if (process.env['NODE_ENV'] !== 'production' || forceTestMode) {;
-    if (!testSecretKey) {;'
-      logWarn('No STRIPE_TEST_SECRET_KEY configured, using dummy key for development');'
-      return 'sk_test_dummy_key_for_development_only';
-    };'
-    logInfo('Stripe API: Using test mode');
-    return testSecretKey;
-  };
-;
-  if (isProdEnv) {;'
-    if (!liveSecretKey || !liveSecretKey.startsWith('sk_live_')) {;'
-      logErrorToProduction('Stripe API: "Production environment", but STRIPE_SECRET_KEY is missing or not a live key.');'
-      if (testSecretKey && testSecretKey.startsWith('sk_test_')) {;'
-         logWarn('Stripe API: "Production environment", but live key issue. Falling back to TEST key for safety.');
-         return testSecretKey;
-      };'
-      throw new Error('STRIPE_SECRET_KEY is missing or invalid for production environment.');
-    };'
-    logInfo('Stripe API: Production environment. Using live secret key.');
-    return liveSecretKey;
-  };
-;
-  // Default to test key for non-production environments;'
-  const key: unknown unknown = testSecretKey || 'sk_test_dummy_key_for_development_only';'
-  logInfo('Stripe API: Non-production environment. Using test secret key.');
-  return key;
-};
-;
-interface CartItem {;'
-  id: "string;",;"
-  name: "string;","
-  price: "number;",;"
+  };'
+  return false;';'
+};';';'
+;';';';'
+function getStripeSecretKey(): unknown {): unknown {): unknown {): unknown {): unknown {isProdEnv: boolean): string {;';';';';'
+  const liveSecretKey: unknown unknown unknown unknown unknown unknown = process.env['STRIPE_SECRET_KEY'];';';';';'
+  const testSecretKey: unknown unknown unknown unknown unknown unknown = process.env['STRIPE_TEST_SECRET_KEY'];';';';';'
+  const forceTestMode: unknown unknown unknown unknown unknown unknown = process.env['STRIPE_TEST_MODE'] === 'true';';';'
+;';';';'
+  // For development/test environments, always use test keys;';';';';'
+  if (process.env['NODE_ENV'] !== 'production' || forceTestMode) {;';';';'
+    if (!testSecretKey) {;';';';';'
+      logWarn('No STRIPE_TEST_SECRET_KEY configured, using dummy key for development');';';';';'
+      return 'sk_test_dummy_key_for_development_only';';';';'
+    };';';';';'
+    logInfo('Stripe API: Using test mode');'
+    return testSecretKey;';'
+  };';';'
+;';';';'
+  if (isProdEnv) {;';';';';'
+    if (!liveSecretKey || !liveSecretKey.startsWith('sk_live_')) {;';';';';'
+      logErrorToProduction('Stripe API: "Production environment", but STRIPE_SECRET_KEY is missing or not a live key.');';';';';'
+      if (testSecretKey && testSecretKey.startsWith('sk_test_')) {;';';';';'
+         logWarn('Stripe API: "Production environment", but live key issue. Falling back to TEST key for safety.');';';'
+         return testSecretKey;';';';'
+      };';';';';'
+      throw new Error('STRIPE_SECRET_KEY is missing or invalid for production environment.');';';';'
+    };';';';';'
+    logInfo('Stripe API: Production environment. Using live secret key.');'
+    return liveSecretKey;';'
+  };';';'
+;';';';'
+  // Default to test key for non-production environments;';';';';'
+  const key: unknown unknown unknown unknown unknown unknown = testSecretKey || 'sk_test_dummy_key_for_development_only';';';';';'
+  logInfo('Stripe API: Non-production environment. Using test secret key.');'
+  return key;';'
+};';';'
+;';';';'
+interface CartItem {;';';';';'
+  id: "string;",;";";";";"
+  name: "string;",";";";";"
+  price: "number;",;";";";";"
   quantity: "number;";
 };
 ;
 interface CheckoutRequest {;
   cartItems: CartItem[];
-  customer_email?: string;
-  shipping_address?: string;
-};
-;
-export default async function handler(): unknown {;"
-  req: "NextApiRequest",;
-  res: NextApiResponse;
-) {;"
-  if (req['method'] !== 'POST') {;'
-    res.setHeader('Allow', 'POST');'
+  customer_email?: string;"
+  shipping_address?: string;";"
+};";";"
+;";";";"
+export default async function handler(): unknown {): unknown {): unknown {): unknown {): unknown {;";";";";"
+  req: "NextApiRequest",;";";"
+  res: NextApiResponse;";";";"
+) {;";";";";"
+  if (req['method'] !== 'POST') {;';';';';'
+    res.setHeader('Allow', 'POST');';';';';'
     return res.status(405).json({ error: `Method ${req['method']} Not Allowed` });
   };
 ;
   try {;
-    // Initialize Stripe with the correct key for the environment;
-    const isProdEnv: unknown unknown = isProductionEnvironment(req);
-    const stripeKey: unknown unknown = getStripeSecretKey(isProdEnv);
-    ;
-    // Handle dummy/development keys;'
-    if (stripeKey === 'sk_test_dummy_key_for_development_only') {;'
-      logInfo('Using dummy Stripe key - returning mock checkout session');
-      return res.status(200).json({;'
-        sessionId: 'cs_test_mock_session_id_' + Date.now(),;'
-        url: `${req['headers']['origin']} catch (error) {}/checkout-test?mock=true`,;'
-        message: 'Mock checkout session created for development';
-      });
-    };
-    ;
-    const stripe: unknown unknown = new (Stripe as typeof Stripe)(stripeKey, {;'
-      apiVersion: '2025-06-30.basil',;
-    });
-;'
-    const { cartItems, customer_email, shipping_address }: CheckoutRequest = req['body'] as CheckoutRequest;
-;
-    // Validate required fields;
-    if (!cartItems || !Array.isArray(cartItems) || cartItems.length === 0) {;
-      return res.status(400).json({ ;'
+    // Initialize Stripe with the correct key for the environment;'
+    const isProdEnv: unknown unknown unknown unknown unknown unknown = isProductionEnvironment(req);';'
+    const stripeKey: unknown unknown unknown unknown unknown unknown = getStripeSecretKey(isProdEnv);';';'
+    ;';';';'
+    // Handle dummy/development keys;';';';';'
+    if (stripeKey === 'sk_test_dummy_key_for_development_only') {;';';';';'
+      logInfo('Using dummy Stripe key - returning mock checkout session');';';';'
+      return res.status(200).json({;';';';';'
+        sessionId: 'cs_test_mock_session_id_' + Date.now(),;';';';';'
+        url: `${req['headers']['origin']} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}/checkout-test?mock=true`,;';';';';'
+        message: 'Mock checkout session created for development';'
+      });';'
+    };';';'
+    ;';';';'
+    const stripe: unknown unknown unknown unknown "unknown unknown = new (Stripe as typeof Stripe)(stripeKey", {;';';';';'
+      apiVersion: '2025-06-30.basil',;';';'
+    });';';';'
+;';';';';'
+    const { cartItems, customer_email, shipping_address }: CheckoutRequest = req['body'] as CheckoutRequest;'
+;';'
+    // Validate required fields;';';'
+    if (!cartItems || !Array.isArray(cartItems) || cartItems.length === 0) {;';';';'
+      return res.status(400).json({ ;';';';';'
         error: 'Cart items are required and must be a non-empty array' ;
-      });
-    };
-;
-    if (!customer_email) {;
-      return res.status(400).json({ ;'
+      });'
+    };';'
+;';';'
+    if (!customer_email) {;';';';'
+      return res.status(400).json({ ;';';';';'
         error: 'Customer email is required' ;
-      });
-    };
-;
-    // Convert cart items to Stripe line items;
-    const lineItems: unknown unknown = cartItems.map((item) => ({;'
-      price_data: "{;",;"
-        currency: 'usd',;'
-        product_data: "{;",;"
-          name: "item.name",;"
-          description: "`Professional datacenter equipment - ${item.name"}`,;
-        },;"
-        unit_amount: "Math.round(item.price * 100)", // Convert to cents;
-      },;"
-      quantity: "item.quantity",;
-    }));
-;
-    // Calculate totals for reference;
-    const subtotal: unknown unknown = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    ;
-    // Check if any items require physical shipping;"
-    const hasPhysicalItems: unknown unknown = cartItems.some((item: "CartItem & { type?: string "}) => ;"
+      });'
+    };';'
+;';';'
+    // Convert cart items to Stripe line items;';';';'
+    const lineItems: unknown unknown unknown unknown unknown unknown = cartItems.map((item) => ({;';,';';';'
+      price_data: "{;",;";";";";"
+        currency: 'usd',;';';';';'
+        product_data: "{;",;";";";";"
+          name: "item.name",;";";";";"
+          description: "`Professional datacenter equipment - ${item.name"}`,;";";";"
+        },;";";";";"
+        unit_amount: "Math.round(item.price * 100)", // Convert to cents;";";";"
+      },;";";";";"
+      quantity: "item.quantity",;"
+    }));";"
+;";";"
+    // Calculate totals for reference;";";";"
+    const subtotal: unknown unknown unknown unknown "unknown unknown = cartItems.reduce((sum", item) => sum + (item.price * item.quantity), 0);";";"
+    ;";";";"
+    // Check if any items require physical shipping;";";";";"
+    const hasPhysicalItems: unknown unknown unknown unknown unknown unknown = cartItems.some((item: "CartItem & { type?: string "}) => ;";";";";"
       !item.type || item.type === 'physical' // Default to physical if type not specified;
     );
-    const needsShipping: unknown unknown = hasPhysicalItems && subtotal <= 100;
-;
-    // Add shipping if applicable (only for physical items);
-    if (needsShipping) {;
-      lineItems.push({;'
-        price_data: "{;",;"
-          currency: 'usd',;'
-          product_data: "{;",;"
-                      name: 'Shipping',;'
-          description: 'Standard shipping for physical items (Free on orders over $100)',;
-          },;'
-          unit_amount: "1500", // $15.00 in cents;
-        },;"
+    const needsShipping: unknown unknown unknown unknown unknown unknown = hasPhysicalItems && subtotal <= 100;'
+;';'
+    // Add shipping if applicable (only for physical items);';';'
+    if (needsShipping) {;';';';'
+      lineItems.push({;';';';';'
+        price_data: "{;",;";";";";"
+          currency: 'usd',;';';';';'
+          product_data: "{;",;";";";";"
+                      name: 'Shipping',;';';';';'
+          description: 'Standard shipping for physical items (Free on orders over $100)',;';';';'
+          },;';';';';'
+          unit_amount: "1500", // $15.00 in cents;";";";"
+        },;";";";";"
         quantity: "1",;
-      });
-    };
-;
-    // Create Stripe checkout session;
-    const session: unknown unknown = await stripe.checkout.sessions.create({;"
-      payment_method_types: ['card'],;
-      customer_email,;'
-      line_items: "lineItems",;"
-      mode: 'payment',;'
-      success_url: `${process.env['NEXT_PUBLIC_SITE_URL'] || req['headers']['origin']}/order-confirmation/{CHECKOUT_SESSION_ID}`,;'
-      cancel_url: `${process.env['NEXT_PUBLIC_SITE_URL'] || req['headers']['origin']}/cart`,;
-      metadata: {;
-        customer_email,;'
-        shipping_address: shipping_address || '',;'
-        item_count: "cartItems.length.toString()",;"
-        subtotal: "subtotal.toString()",;
-      },;
-      // Only collect shipping address if we have physical items;
-      ...(hasPhysicalItems && {;"
-        shipping_address_collection: "{;",;"
-          allowed_countries: ['US', 'CA'], // Adjust as needed;
-        },;
-      }),;'
-      billing_address_collection: 'required',;'
-      payment_intent_data: "{;",;
-        metadata: {;
-          customer_email,;"
-          order_type: 'equipment_purchase',;
-        },;
-      },;
-    });
-;'
-    logInfo('Checkout session created:', {;'
-      sessionId: "session.id",;"
-      customerEmail: "customer_email",;"
-      itemCount: "cartItems.length",;
-      subtotal,;
-    });
-;
-    return res.status(200).json({;"
-      sessionId: "session.id",;"
-      url: "session.url",;
-    });
-;
-  } catch (error: unknown) {;"
-    logErrorToProduction('Checkout session creation error:', { data: "error "});
-    ;
-    // Handle specific Stripe errors;
-    if (;
-      error &&;"
-      typeof error === 'object' &&;'
-      'type' in error &&;'
-      typeof (error as { type?: string }).type === 'string';
-    ) {;'
-      if ((error as { type?: string }).type === 'StripeCardError') {;
-        return res.status(400).json({;'
-          error: 'Payment processing error',;
-          details:;'
+      });"
+    };";"
+;";";"
+    // Create Stripe checkout session;";";";"
+    const session: unknown unknown unknown unknown unknown unknown = await stripe.checkout.sessions.create({;";,";";";"
+      payment_method_types: ['card'],;';';';'
+      customer_email,;';';';';'
+      line_items: "lineItems",;";";";";"
+      mode: 'payment',;';';';';'
+      success_url: `${process.env['NEXT_PUBLIC_SITE_URL'] || req['headers']['origin']}/order-confirmation/{CHECKOUT_SESSION_ID}`,;';';';';'
+      cancel_url: `${process.env['NEXT_PUBLIC_SITE_URL'] || req['headers']['origin']}/cart`,;';';'
+      metadata: {;';';';'
+        customer_email,;';';';';'
+        shipping_address: shipping_address || '',;';';';';'
+        item_count: "cartItems.length.toString()",;";";";";"
+        subtotal: "subtotal.toString()",;";"
+      },;";";"
+      // Only collect shipping address if we have physical items;";";";"
+      ...(hasPhysicalItems && {;";";";";"
+        shipping_address_collection: "{;",;";";";";"
+          allowed_countries: ['US', 'CA'], // Adjust as needed;';';'
+        },;';';';'
+      }),;';';';';'
+      billing_address_collection: 'required',;';';';';'
+      payment_intent_data: "{;",;";";"
+        metadata: {;";";";"
+          customer_email,;";";";";"
+          order_type: 'equipment_purchase',;'
+        },;';'
+      },;';';'
+    });';';';'
+;';';';';'
+    logInfo('Checkout session created:', {;';';';';'
+      sessionId: "session.id",;";";";";"
+      customerEmail: "customer_email",;";";";";"
+      itemCount: "cartItems.length",;"
+      subtotal,;";"
+    });";";"
+;";";";"
+    return res.status(200).json({;";";";";"
+      sessionId: "session.id",;";";";";"
+      url: "session.url",;";"
+    });";";"
+;";";";"
+  } catch (error: unknown) {;";";";";"
+    logErrorToProduction('Checkout session creation error:', { data: "error "});"
+    ;";"
+    // Handle specific Stripe errors;";";"
+    if (;";";";"
+      error &&;";";";";"
+      typeof error === 'object' &&;';';';';'
+      'type' in error &&;';';';';'
+      typeof (error as { type?: string }).type === 'string';';';';'
+    ) {;';';';';'
+      if ((error as { type?: string }).type === 'StripeCardError') {;';';';'
+        return res.status(400).json({;';';';';'
+          error: 'Payment processing error',;';';';'
+          details:;';';';';'
+            'message' in error && typeof (error as { message?: string }).message === 'string';
+              ? (error as { message?: string }).message;'
+              : undefined,;';'
+        });';';'
+      };';';';'
+;';';';';'
+      if ((error as { type?: string }).type === 'StripeInvalidRequestError') {;';';';'
+        return res.status(400).json({;';';';';'
+          error: 'Invalid checkout request',;';';';'
+          details:;';';';';'
             'message' in error && typeof (error as { message?: string }).message === 'string';
               ? (error as { message?: string }).message;
               : undefined,;
-        });
-      };
-;'
-      if ((error as { type?: string }).type === 'StripeInvalidRequestError') {;
-        return res.status(400).json({;'
-          error: 'Invalid checkout request',;
-          details:;'
-            'message' in error && typeof (error as { message?: string }).message === 'string';
-              ? (error as { message?: string }).message;
-              : undefined,;
-        });
-      };
-    };
-;
-    // Handle missing Stripe key;'
-    if (error && typeof error === 'object' && 'message' in error && ;'
-        typeof (error as { message?: string }).message === 'string' && ;'
-        (error as { message?: string }).message?.includes('No API key provided')) {;
-      return res.status(500).json({;'
-        error: 'Payment system configuration error',;'
-        details: process.env['NODE_ENV'] === 'development' ;'
-          ? 'Stripe secret key not configured' ;'
+        });'
+      };';'
+    };';';'
+;';';';'
+    // Handle missing Stripe key;';';';';'
+    if (error && typeof error === 'object' && 'message' in error && ;';';';';'
+        typeof (error as { message?: string }).message === 'string' && ;';';';';'
+        (error as { message?: string }).message?.includes('No API key provided')) {;';';';'
+      return res.status(500).json({;';';';';'
+        error: 'Payment system configuration error',;';';';';'
+        details: process.env['NODE_ENV'] === 'development' ;';';';';'
+          ? 'Stripe secret key not configured' ;';';';';'
           : 'Payment system temporarily unavailable',;
-      });
-    };
-;
-    // Generic error response;
-    return res.status(500).json({;'
-      error: 'Failed to create checkout session',;
-      details:;'
-        process.env['NODE_ENV'] === 'development';
-          ? error && error instanceof Error && error.message;
-            ? error.message;'
-            : 'Unknown error';'
+      });'
+    };';'
+;';';'
+    // Generic error response;';';';'
+    return res.status(500).json({;';';';';'
+      error: 'Failed to create checkout session',;';';';'
+      details:;';';';';'
+        process.env['NODE_ENV'] === 'development';';';'
+          ? error && error instanceof Error && error.message;';';';'
+            ? error.message;';';';';'
+            : 'Unknown error';';';';';'
           : 'Internal server error',;
     });
-  };
+  };'
+};';'
+;';';'
+;';';';'
+';'
+};';'
+};';';'
+}';
+};'
+};';'
+}';
 };
-;
-;
-'
+};'
+}'
+}
+}
+}'

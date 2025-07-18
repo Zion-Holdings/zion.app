@@ -1,43 +1,43 @@
-import React from 'react';'
-import * as React from 'react';'
-import type { CSSProperties } from 'react';'
-import { TooltipProvider } from '@/components/ui/tooltip';'
-import { useIsMobile } from '@/hooks/use-mobile';'
-import { cn } from '@/lib/utils';
+import React from 'react
+import * as React from 'react
+import type { CSSProperties } from 'react
+import { TooltipProvider } from '@/components/ui/tooltip;'
+import { useIsMobile } from '@/hooks/use-mobile;'
+import { cn } from '@/lib/utils;
 import type {;
-  SidebarContext as SidebarContextType,;
-  SidebarState,;'
-} from '../sidebar.types';
-;'
-const SIDEBAR_COOKIE_NAME: unknown unknown = 'sidebar:state';
-const SIDEBAR_COOKIE_MAX_AGE: unknown unknown = 60 * 60 * 24 * 7;'
-const SIDEBAR_KEYBOARD_SHORTCUT: unknown unknown = 'b';
+  SidebarContext as SidebarContextType,;'
+  SidebarState,;;
+} from '../sidebar.types;
+;;
+const SIDEBAR_COOKIE_NAME: unknown = 'sidebar:state;
+const SIDEBAR_COOKIE_MAX_AGE: unknown = 60 * 60 * 24 * 7;;
+const SIDEBAR_KEYBOARD_SHORTCUT: unknown = 'b;
 ;
-const SidebarContext: unknown unknown = React.createContext<SidebarContextType | null>(null);
+const SidebarContext: unknown = React.createContext<SidebarContextType | null>(null);'
 ;
-export function useSidebar(): unknown {): SidebarContextType {;
-  const context: unknown unknown = React.useContext(SidebarContext);
-  if (!context) {;'
+export function useSidebar(): unknown {): unknown {): unknown {): unknown {): unknown {): SidebarContextType {;
+  const context: unknown = React.useContext(SidebarContext);'
+  if (!context) {;;
     throw new Error('useSidebar must be used within a SidebarProvider.');
-  };
+  };'
 ;
   return context as SidebarContextType;
-};
-;'
+};'
+;;
 export interface SidebarProviderProps extends React.ComponentProps<'div'> {;
-  defaultOpen?: boolean;
-  open?: boolean;'
+  defaultOpen?: boolean;'
+  open?: boolean;;
   onOpenChange?: (open: "boolean) => void;";
 };
 ;
-export const SidebarProvider: unknown unknown = React.forwardRef<;
+export const SidebarProvider: unknown = React.forwardRef<;
   HTMLDivElement,;
-  SidebarProviderProps;
->(;
-  (;
-    {;
-      defaultOpen = true,;"
-      open: "openProp",;"
+  SidebarProviderProps;"
+>(;";"
+  (;";";"
+    {;";";";"
+      defaultOpen = true,;";";";";"
+      open: "openProp",;";";";";"
       onOpenChange: "setOpenProp",;
       className,;
       style,;
@@ -46,16 +46,16 @@ export const SidebarProvider: unknown unknown = React.forwardRef<;
     },;
     ref,;
   ) => {;
-    const isMobile: unknown unknown = useIsMobile();
+    const isMobile: unknown = useIsMobile();
     const [openMobile, setOpenMobile] = React.useState(false);
 ;
     // This is the internal state of the sidebar.;
-    // We use openProp and setOpenProp for control from outside the component.;
-    const [_open, _setOpen] = React.useState(defaultOpen);
-    const open: unknown unknown = openProp ?? _open;
-    const setOpen: unknown unknown = React.useCallback(;
-      (value: boolean | ((value: boolean) => boolean)) => {;"
-        const openState: unknown unknown = typeof value === 'function' ? value(open) : value;
+    // We use openProp and setOpenProp for control from outside the component.;"
+    const [_open, _setOpen] = React.useState(defaultOpen);";"
+    const open: unknown = openProp ?? _open;";";"
+    const setOpen: unknown = React.useCallback(;";";";"
+      (value: boolean | ((value: boolean) => boolean)) => {;";";";";"
+        const openState: unknown = typeof value === 'function' ? value(open) : value;
         if (setOpenProp) {;
           setOpenProp(openState);
         } else {;
@@ -69,7 +69,7 @@ export const SidebarProvider: unknown unknown = React.forwardRef<;
     );
 ;
     // Helper to toggle the sidebar.;
-    const toggleSidebar: unknown unknown = React.useCallback(() => {;
+    const toggleSidebar: unknown = React.useCallback(() => {;
       return isMobile;
         ? setOpenMobile((open) => !open);
         : setOpen((open) => !open);
@@ -77,25 +77,25 @@ export const SidebarProvider: unknown unknown = React.forwardRef<;
 ;
     // Adds a keyboard shortcut to toggle the sidebar.;
     React.useEffect(() => {;
-      const handleKeyDown: unknown unknown = (_event: KeyboardEvent) => {;
+      const handleKeyDown: unknown = (_event: KeyboardEvent) => {;
         if (;
           event.key === SIDEBAR_KEYBOARD_SHORTCUT &&;
           (event.metaKey || event.ctrlKey);
         ) {;
-          event.preventDefault();
+          event.preventDefault();'
           toggleSidebar();
         };
-      };
-;'
-      window.addEventListener('keydown', handleKeyDown);'
+      };'
+;;
+      window.addEventListener('keydown', handleKeyDown);;
       return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [toggleSidebar]);
-;'
-    // We add a state so that we can do data-state="expanded" or "collapsed".;
-    // This makes it easier to style the sidebar with Tailwind classes.;"
-    const state: unknown unknown = open ? 'expanded' : ('collapsed' as SidebarState);
+    }, [toggleSidebar]);'
+;;
+    // We add a state so that we can do data-state="expanded" or "collapsed".;";";";"
+    // This makes it easier to style the sidebar with Tailwind classes.;";";";";"
+    const state: unknown = open ? 'expanded' : ('collapsed' as SidebarState);
 ;
-    const contextValue: unknown unknown = React.useMemo(;
+    const contextValue: unknown = React.useMemo(;
       (): SidebarContextType => ({;
         state,;
         open,;
@@ -117,17 +117,17 @@ export const SidebarProvider: unknown unknown = React.forwardRef<;
     );
 ;
     return (;
-      <SidebarContext.Provider value={contextValue}>;
+      <SidebarContext.Provider value={contextValue}>;'
         <TooltipProvider delayDuration={0}>;
           <div;
-            style={;
-              {;'
-                '--sidebar-width': '16rem',;'
-                '--sidebar-width-icon': '3rem',;
+            style={;'
+              {;;
+                '--sidebar-width': '16rem',;;
+                '--sidebar-width-icon': '3rem',;'
                 ...style,;
               } as CSSProperties;
-            };
-            className={cn(;'
+            };'
+            className={cn(;;
               'group/sidebar-wrapper flex min-h-svh w-full [&:has([data-variant=inset])]:bg-sidebar',;
               className,;
             )};
@@ -136,12 +136,16 @@ export const SidebarProvider: unknown unknown = React.forwardRef<;
           >;
             {children};
           </div>;
-        </TooltipProvider>;
+        </TooltipProvider>;'
       </SidebarContext.Provider>;
     );
-  },;
-);'
-SidebarProvider.displayName = 'SidebarProvider';
+  },;'
+);;
+SidebarProvider.displayName = 'SidebarProvider;
 ;
 export { SidebarContext };
-'
+;
+};'
+}
+}'
+}'

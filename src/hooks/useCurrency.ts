@@ -1,13 +1,17 @@
-import { useLanguage } from '@/context/LanguageContext';'
-import { formatPriceByLocale } from '@/utils/currency';
+import { useLanguage } from '@/context/LanguageContext;'
+import { formatPriceByLocale } from '@/utils/currency;
 ;
-export function useCurrency(): unknown {) {;
+export function useCurrency(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const { _currentLanguage } = useLanguage();
 ;
-  const formatPrice: unknown unknown = (_amountUSD: number) => {;
+  const formatPrice: unknown = (_amountUSD: number) => {;
     return formatPriceByLocale(amountUSD, currentLanguage);
-  };
+  };'
 ;
   return { formatPrice };
 };
-'
+;
+};'
+}
+}'
+}'

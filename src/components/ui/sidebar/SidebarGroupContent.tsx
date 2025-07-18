@@ -1,5 +1,5 @@
-import React from 'react';'
-import { cn } from '@/lib/utils';
+import React from 'react
+import { cn } from '@/lib/utils;
 ;
 interface SidebarGroupContentProps;
   extends React.HTMLAttributes<HTMLDivElement> {;
@@ -7,15 +7,19 @@ interface SidebarGroupContentProps;
   children?: React.ReactNode;
 };
 ;
-export function SidebarGroupContent(): unknown {{;
-  className,;
+export function SidebarGroupContent(): unknown {): unknown {): unknown {): unknown {): unknown {{;
+  className,;'
   children,;
   ...props;
-}: SidebarGroupContentProps) {;
-  return (;'
+}: SidebarGroupContentProps) {;'
+  return (;;
     <div className={cn('space-y-1', className)} {...props}>;
-      {children};
+      {children};'
     </div>;
   );
 };
-'
+;
+};'
+}
+}'
+}'

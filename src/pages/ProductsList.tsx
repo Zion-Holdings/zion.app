@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react;
+;'
+const ProductsList: unknown = () => <div>Products List Placeholder</div>;
 ;
-const ProductsList: unknown unknown = () => <div>Products List Placeholder</div>;
-;
-export default ProductsList;
-'
+export default ProductsList;'
+'''''

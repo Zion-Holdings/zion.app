@@ -1,38 +1,38 @@
-import React from 'react';'
-import { render, screen, fireEvent } from '@testing-library/react';'
-import { ResponsiveNavigation } from '../ResponsiveNavigation';'
-import { useAuth } from '@/hooks/useAuth';'
-import { useRouter } from 'next/router';'
-import { useTranslation } from 'react-i18next';
-;'
-jest.mock('@/hooks/useAuth');'
-jest.mock('next/router', () => ({;'
-  useRouter: "jest.fn()",;
-}));"
-jest.mock('react-i18next', () => ({;'
+import React from 'react
+import { render, screen, fireEvent } from '@testing-library/react;'
+import { ResponsiveNavigation } from '../ResponsiveNavigation;'
+import { useAuth } from '@/hooks/useAuth;'
+import { useRouter } from 'next/router;'
+import { useTranslation } from 'react-i18next;
+;;
+jest.mock('@/hooks/useAuth');;
+jest.mock('next/router', () => ({;;
+  useRouter: "jest.fn()",;";";";"
+}));";";";";"
+jest.mock('react-i18next', () => ({;;
   useTranslation: "jest.fn()",;
 }));
 ;
-const mockedUseAuth: unknown unknown = useAuth as jest.MockedFunction<typeof useAuth>;
-const mockedUseRouter: unknown unknown = useRouter as jest.Mock;
-const mockedUseTranslation: unknown unknown = useTranslation as jest.MockedFunction<;
-  typeof useTranslation;
->;
-;
-beforeEach(() => {;"
-  mockedUseAuth.mockReturnValue({ user: "null "});"
-  mockedUseRouter.mockReturnValue({ pathname: '/' });
-  mockedUseTranslation.mockReturnValue({;'
-    t: "(key: string", fallback?: string) => fallback ?? key,;"
-    i18n: { language: 'en', changeLanguage: "jest.fn() "},;
-  } as any);
-});
-;"
-test('opens marketplace submenu when trigger is clicked', () => {;
-  render(<ResponsiveNavigation />);'
-  const trigger: unknown unknown = screen.getByText('Marketplace');
-  fireEvent.click(trigger);'
-  expect(screen.getByText('Overview')).toBeInTheDocument();'
+const mockedUseAuth: unknown = useAuth as jest.MockedFunction<typeof useAuth>;
+const mockedUseRouter: unknown = useRouter as jest.Mock;
+const mockedUseTranslation: unknown = useTranslation as jest.MockedFunction<;"
+  typeof useTranslation;";"
+>;";";"
+;";";";"
+beforeEach(() => {;";";";";"
+  mockedUseAuth.mockReturnValue({ user: "null "});";";";";"
+  mockedUseRouter.mockReturnValue({ pathname: '/' });'
+  mockedUseTranslation.mockReturnValue({;;
+    t: "(key: string", fallback?: string) => fallback ?? key,;";";";";"
+    i18n: { language: 'en', changeLanguage: "jest.fn() "},;";"
+  } as any);";";"
+});";";";"
+;";";";";"
+test('opens marketplace submenu when trigger is clicked', () => {;'
+  render(<ResponsiveNavigation />);;
+  const trigger: unknown = screen.getByText('Marketplace');'
+  fireEvent.click(trigger);;
+  expect(screen.getByText('Overview')).toBeInTheDocument();;
   expect(screen.getByText('Categories')).toBeInTheDocument();
-});
-'
+});'
+'''''

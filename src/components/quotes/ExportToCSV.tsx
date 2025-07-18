@@ -1,74 +1,74 @@
-import { Button } from '@/components/ui/button';'
-import { Download } from '@/components/ui/icons';
-;'
-import type { QuoteRequest } from '@/types/quotes';
+import { Button } from '@/components/ui/button;'
+import { Download } from '@/components/ui/icons;
+;;
+import type { QuoteRequest } from '@/types/quotes;
 ;
 interface ExportToCSVProps {;
   quotes: QuoteRequest[];
-  filename?: string;
+  filename?: string;'
 };
 ;
-export const ExportToCSV: unknown unknown = ({;
-  quotes,;'
-  filename = 'quote-requests',;
+export const ExportToCSV: unknown = ({;'
+  quotes,;;
+  filename = 'quote-requests',;'
 }: ExportToCSVProps) => {;
-  const handleExport: unknown unknown = () => {;
-    // Define CSV Headers;
-    const headers: unknown unknown = [;'
-      'ID',;'
-      'Talent Name',;'
-      'Requester Name',;'
-      'Requester Email',;'
-      'Project Name',;'
-      'Project Summary',;'
-      'Budget',;'
-      'Timeline',;'
-      'Status',;'
+  const handleExport: unknown = () => {;
+    // Define CSV Headers;'
+    const headers: unknown = [;;
+      'ID',;;
+      'Talent Name',;;
+      'Requester Name',;;
+      'Requester Email',;;
+      'Project Name',;;
+      'Project Summary',;;
+      'Budget',;;
+      'Timeline',;;
+      'Status',;;
       'Created Date',;
-    ];
+    ];'
 ;
     // Format quote data for CSV;
-    const rows: unknown unknown = quotes.map((quote) => [;
-      quote.id,;'
+    const rows: unknown = quotes.map((quote) => [;'
+      quote.id,;;
       quote.talent_name || 'Unknown',;
       quote.requester_name,;
       quote.requester_email,;
       quote.project_name,;
       quote.project_summary,;
-      quote.budget_display ||;
+      quote.budget_display ||;'
         (quote.budget_min && quote.budget_max;
           ? `$${quote.budget_min} - $${quote.budget_max}`;
-          : quote.budget_min;
-            ? `$${quote.budget_min}`;'
+          : quote.budget_min;'
+            ? `$${quote.budget_min}`;;
             : 'Not specified'),;
       quote.timeline,;
       quote.status,;
-      new Date(quote.created_at).toLocaleDateString(),;
+      new Date(quote.created_at).toLocaleDateString(),;'
     ]);
 ;
-    // Create CSV content;
-    const csvContent: unknown unknown = [;'
-      headers.join(','),;
+    // Create CSV content;'
+    const csvContent: unknown = [;;
+      headers.join(','),;'
       ...rows.map((row) =>;
         row;
-          .map((cell) =>;
-            // Escape commas and quotes in cell values;'
-            typeof cell === 'string' &&;'
-            (cell.includes(',') || cell.includes('"'));'
-              ? `"${cell.replace(/"/g, '""')}"`;
-              : cell,;
-          );"
-          .join(','),;
-      ),;'
+          .map((cell) =>;'
+            // Escape commas and quotes in cell values;;
+            typeof cell === 'string' &&;;
+            (cell.includes(',') || cell.includes('"'));;
+              ? `"${cell.replace(/"/g, '""')}"`;";";"
+              : cell,;";";";"
+          );";";";";"
+          .join(','),;'
+      ),;;
     ].join('\n');
-;
-    // Create download link;'
-    const blob: unknown unknown = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    const url: unknown unknown = URL.createObjectURL(blob);'
-    const link: unknown unknown = document.createElement('a');'
-    link.setAttribute('href', url);
-    link.setAttribute(;'
-      'download',;'
+;'
+    // Create download link;;
+    const blob: unknown "unknown = new Blob([csvContent]", { type: 'text/csv;charset=utf-8;' });'
+    const url: unknown = URL.createObjectURL(blob);;
+    const link: unknown = document.createElement('a');;
+    link.setAttribute('href', url);'
+    link.setAttribute(;;
+      'download',;;
       `${filename}-${new Date().toISOString().split('T')[0]}.csv`,;
     );
     document.body.appendChild(link);
@@ -78,19 +78,19 @@ export const ExportToCSV: unknown unknown = ({;
     setTimeout(() => {;
       document.body.removeChild(link);
       URL.revokeObjectURL(url);
-    }, 100);
+    }, 100);'
   };
 ;
-  return (;
-    <Button;'
-      variant="outline";
-      onClick={handleExport};"
+  return (;'
+    <Button;;
+      variant="outline";";";";"
+      onClick={handleExport};";";";";"
       className="flex items-center gap-2";
       disabled={quotes.length === 0};
     >;
       <Download size={16} />;
-      Export CSV;
-    </Button>;
-  );
-};
-"
+      Export CSV;"
+    </Button>;";"
+  );";";"
+};";";";"
+"""""

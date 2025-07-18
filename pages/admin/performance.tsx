@@ -1,2 +1,2 @@
-export { default } from '@/pages/AdminPerformancePage';
-'
+export { default } from '@/pages/AdminPerformancePage';';';';'
+'''''

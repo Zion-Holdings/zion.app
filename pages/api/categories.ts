@@ -1,103 +1,107 @@
-import { PrismaClient } from '@prisma/client';'
-import type { NextApiRequest, NextApiResponse } from 'next';'
-import { withErrorLogging } from '@/utils/withErrorLogging';'
-import { CATEGORIES } from '@/data/categories';'
-import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';'
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
-;
-;
-const prisma: unknown unknown = new PrismaClient({;'
-  log: ['error'],;'
-  datasources: "{;",;"
-    db: "{;","
+import { PrismaClient } from '@prisma/client';';';';';'
+import type { NextApiRequest, NextApiResponse } from 'next';';';';';'
+import { withErrorLogging } from '@/utils/withErrorLogging';';';';';'
+import { CATEGORIES } from '@/data/categories';';';';';'
+import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';';';';';'
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';';'
+;';';'
+;';';';'
+const prisma: unknown unknown unknown unknown unknown unknown = new PrismaClient({;';,';';';'
+  log: ['error'],;';';';';'
+  datasources: "{;",;";";";";"
+    db: "{;",";";";";"
       url: process.env['DATABASE_URL'] || '',;
     },;
   },;
-});
-;
-// Add connection timeout and proper error handling;
-async function getCategoriesFromDB(): unknown {) {;
-  const timeoutPromise: unknown unknown = new Promise((_, reject) =>;'
-    setTimeout(() => reject(new Error('Database query timeout')), 3000);
-  );
-;
-  const queryPromise: unknown unknown = prisma.category.findMany({;'
-    where: "{ active: true "},;"
-    select: "{;",;"
-      id: "true",;"
-      name: "true",;"
-      slug: "true",;"
-      icon: "true",;
-    },;"
-    orderBy: { name: 'asc' },;
-  });
-;
-  try {;
-    const result: unknown unknown = await Promise.race([queryPromise, timeoutPromise]);'
-    return result as Array<{ id: "number; name: string; slug: string; icon: string "} catch (error) {}>;
+});'
+;';'
+// Add connection timeout and proper error handling;';';'
+async function getCategoriesFromDB(): unknown {): unknown {): unknown {): unknown {): unknown {) {;';';';'
+  const timeoutPromise: unknown unknown unknown unknown "unknown unknown = new Promise((_", reject) =>;';';';';'
+    setTimeout(() => reject(new Error('Database query timeout')), 3000);';'
+  );';';'
+;';';';'
+  const queryPromise: unknown unknown unknown unknown unknown unknown = prisma.category.findMany({;';,';';';'
+    where: "{ active: true "},;";";";";"
+    select: "{;",;";";";";"
+      id: "true",;";";";";"
+      name: "true",;";";";";"
+      slug: "true",;";";";";"
+      icon: "true",;";";";"
+    },;";";";";"
+    orderBy: { name: 'asc' },;'
+  });';'
+;';';'
+  try {;';';';'
+    const result: unknown unknown unknown unknown "unknown unknown = await Promise.race([queryPromise", timeoutPromise]);';';';';'
+    return result as Array<{ id: "number; name: string; slug: string; icon: string "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}>;
   } finally {;
     // Ensure connection is closed;
-    await prisma.$disconnect().catch(() => {});
-  };
-};
-;
-// Remove custom ApiHandler type and ensure correct handler signature;"
-const handler: unknown unknown = async (req: "NextApiRequest", res: NextApiResponse): Promise<void> => {;"
-  if (req.method !== 'GET') {;'
-    res.setHeader('Allow', 'GET');'
+    await prisma.$disconnect().catch(() => {});"
+  };";"
+};";";"
+;";";";"
+// Remove custom ApiHandler type and ensure correct handler signature;";";";";"
+const handler: unknown unknown unknown unknown unknown unknown = async (req: "NextApiRequest", res: NextApiResponse): Promise<void> => {;";";";";"
+  if (req.method !== 'GET') {;';';';';'
+    res.setHeader('Allow', 'GET');';';';';'
     res.status(405).json({ error: "`Method ${req.method"} Not Allowed` });
     return;
   };
 ;
-  try {;
-    // Use cache-or-compute pattern with 30-minute cache;
-    const categories: unknown unknown = await cacheOrCompute(;
-      cacheKeys.categories,;
-      async () => {;"
+  try {;"
+    // Use cache-or-compute pattern with 30-minute cache;";"
+    const categories: unknown unknown unknown unknown unknown unknown = await cacheOrCompute(;";";"
+      cacheKeys.categories,;";";";"
+      async () => {;";";";";"
         logInfo('Fetching categories from database...');
         try {;
-          const dbCategories: unknown unknown = await getCategoriesFromDB();
-          if (dbCategories && dbCategories.length > 0) {;
-            logInfo(`Successfully fetched ${dbCategories.length} catch (error) {}categories from DB`);
-            return dbCategories;
-          };
-        } catch {;'
+          const dbCategories: unknown unknown unknown unknown unknown unknown = await getCategoriesFromDB();
+          if (dbCategories && dbCategories.length > 0) {;'
+            logInfo(`Successfully fetched ${dbCategories.length} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}categories from DB`);';'
+            return dbCategories;';';'
+          };';';';'
+        } catch {;';';';';'
           logWarn('Database query failed, using fallback:', { data: "{ data: dbError "} });
         };
         // Fallback to static data if DB fails;
-        if (CATEGORIES && CATEGORIES.length > 0) {;
-          logInfo(`Using ${CATEGORIES.length} fallback categories`);
-          return CATEGORIES;
-        };
-        // Return empty array if no data available;"
+        if (CATEGORIES && CATEGORIES.length > 0) {;"
+          logInfo(`Using ${CATEGORIES.length} fallback categories`);";"
+          return CATEGORIES;";";"
+        };";";";"
+        // Return empty array if no data available;";";";";"
         logWarn('No categories data available');
         return [];
       },;
       CacheCategory.MEDIUM, // 30 minutes cache;
-      1800 // 30 minutes TTL;
-    );
-    // Apply appropriate cache headers;
-    applyCacheHeaders(res, CacheCategory.MEDIUM);
-    // Add performance headers;'
-    res.setHeader('X-Response-Time', Date.now().toString());'
-    res.setHeader('X-Data-Source', categories.length > 0 ? 'cached' : 'computed');
-    res.status(200).json(categories);
-    return;
-  } catch (error: unknown) {;'
-    logErrorToProduction('Categories API error:', { data: "error "});
-    // Return fallback data even on error;
-    if (CATEGORIES && CATEGORIES.length > 0) {;
-      applyCacheHeaders(res, CacheCategory.SHORT); // Shorter cache for fallback;"
-      res.setHeader('X-Data-Source', 'fallback');
-      res.status(200).json(CATEGORIES);
-      return;
-    };
-    res.status(500).json({ ;'
+      1800 // 30 minutes TTL;'
+    );';'
+    // Apply appropriate cache headers;';';'
+    applyCacheHeaders(res, CacheCategory.MEDIUM);';';';'
+    // Add performance headers;';';';';'
+    res.setHeader('X-Response-Time', Date.now().toString());';';';';'
+    res.setHeader('X-Data-Source', categories.length > 0 ? 'cached' : 'computed');';'
+    res.status(200).json(categories);';';'
+    return;';';';'
+  } catch (error: unknown) {;';';';';'
+    logErrorToProduction('Categories API error:', { data: "error "});";"
+    // Return fallback data even on error;";";"
+    if (CATEGORIES && CATEGORIES.length > 0) {;";";";"
+      applyCacheHeaders(res, CacheCategory.SHORT); // Shorter cache for fallback;";";";";"
+      res.setHeader('X-Data-Source', 'fallback');'
+      res.status(200).json(CATEGORIES);';'
+      return;';';'
+    };';';';'
+    res.status(500).json({ ;';';';';'
       error: 'Categories temporarily unavailable. Please try again later.' ;
     });
     return;
-  };
-};
-;
-export default withErrorLogging(handler);
-'
+  };'
+};';'
+;';';'
+export default withErrorLogging(handler);';';';'
+';';';'
+}';';'
+}';'
+}'
+}'

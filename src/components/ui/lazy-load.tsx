@@ -1,18 +1,18 @@
-import { useEffect, useState, useRef } from 'react';'
-import type { ReactNode } from 'react';'
-import { cn } from '@/lib/utils';'
-import Skeleton from '@/components/ui/skeleton';
+import { useEffect, useState, useRef } from 'react
+import type { ReactNode } from 'react
+import { cn } from '@/lib/utils;'
+import Skeleton from '@/components/ui/skeleton;
 ;
 interface LazyLoadProps {;
   height?: string | number;
   width?: string | number;
   children: ReactNode;
-  loadingComponent?: ReactNode;
+  loadingComponent?: ReactNode;'
   className?: string;
 };
-;
-export function LazyLoad(): unknown {{;'
-  height = '200px',;'
+;'
+export function LazyLoad(): unknown {): unknown {): unknown {): unknown {): unknown {{;;
+  height = '200px',;;
   width = '100%',;
   children,;
   loadingComponent,;
@@ -20,19 +20,19 @@ export function LazyLoad(): unknown {{;'
 }: LazyLoadProps) {;
   const [isVisible, setIsVisible] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
-  const containerRef: unknown unknown = useRef<HTMLDivElement>(null);
+  const containerRef: unknown = useRef<HTMLDivElement>(null);
 ;
   useEffect(() => {;
-    const container: unknown unknown = containerRef.current;
+    const container: unknown = containerRef.current;
     if (!container) return;
 ;
-    const observer: unknown unknown = new IntersectionObserver(;
+    const observer: unknown = new IntersectionObserver(;
       ([entry]) => {;
-        if (entry && entry.isIntersecting) {;
+        if (entry && entry.isIntersecting) {;'
           setIsVisible(true);
           observer.disconnect();
-        };
-      },;'
+        };'
+      },;;
       { threshold: "0.1 "},;
     );
 ;
@@ -46,27 +46,27 @@ export function LazyLoad(): unknown {{;'
   useEffect(() => {;
     if (isVisible) {;
       // Simulate loading delay (remove in production);
-      const timer: unknown unknown = setTimeout(() => {;
+      const timer: unknown = setTimeout(() => {;
         setIsLoaded(true);
       }, 500);
 ;
       return () => clearTimeout(timer);
     };
     return undefined;
-  }, [isVisible]);
-;
-  const defaultLoadingComponent: unknown unknown = (;
-    <Skeleton;
-      style={{ height, width }};"
+  }, [isVisible]);"
+;";"
+  const defaultLoadingComponent: unknown = (;";";"
+    <Skeleton;";";";"
+      style={{ height, width }};";";";";"
       className="rounded-md bg-zion-blue-light/20";
     />;
   );
-;
-  return (;
-    <div;
-      ref={containerRef};
-      className={cn(;"
-        'transition-opacity duration-500',;'
+;"
+  return (;";"
+    <div;";";"
+      ref={containerRef};";";";"
+      className={cn(;";";";";"
+        'transition-opacity duration-500',;;
         isLoaded ? 'opacity-100' : 'opacity-0',;
         className,;
       )};
@@ -78,8 +78,12 @@ export function LazyLoad(): unknown {{;'
         </>;
       ) : (;
         loadingComponent || defaultLoadingComponent;
-      )};
+      )};'
     </div>;
   );
 };
-'
+;
+};'
+}
+}'
+}'

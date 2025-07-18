@@ -1,10 +1,10 @@
-import { useState } from 'react';'
-import type { Conversation, Message } from '@/types/messaging';
+import { useState } from 'react
+import type { Conversation, Message } from '@/types/messaging;
 ;
 /**;
  * Hook to manage messaging state;
  */;
-export function useConversationState(): unknown {) {;
+export function useConversationState(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const [messages, setMessages] = useState<Message[]>([]);
   const [activeMessages, setActiveMessages] = useState<Message[]>([]);
   const [conversations, setConversations] = useState<Conversation[]>([]);
@@ -25,8 +25,12 @@ export function useConversationState(): unknown {) {;
     setUnreadCount,;
     activeConversation,;
     setActiveConversation,;
-    isLoading,;
+    isLoading,;'
     setIsLoading,;
   };
 };
-'
+;
+};'
+}
+}'
+}'

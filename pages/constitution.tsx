@@ -1,4 +1,4 @@
-const ConstitutionPage: unknown unknown = () => {;
+const ConstitutionPage: unknown unknown unknown unknown unknown unknown = () => {;
   return (;
     <div>;
       <h1>Constitution</h1>;

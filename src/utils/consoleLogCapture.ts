@@ -1,12 +1,12 @@
 export type ConsoleLogEntry = {;
-  level: 'warn' | 'error';,;'
-  message: "string;","
+  level: 'warn' | 'error,;;
+  message: "string;",";";";";"
   timestamp: "string;";
-};
-;
-// Removed unused logBuffer and related functions for lint compliance;
-;
-export function initConsoleLogCapture(): unknown {) {;"
+};"
+;";"
+// Removed unused logBuffer and related functions for lint compliance;";";"
+;";";";"
+export function initConsoleLogCapture(): unknown {): unknown {): unknown {): unknown {): unknown {) {;";";";";"
   if (typeof window === 'undefined') return;
   if (;
     (window as unknown as { __logCaptureInitialized?: boolean });
@@ -18,8 +18,16 @@ export function initConsoleLogCapture(): unknown {) {;"
   ).__logCaptureInitialized = true;
 };
 ;
-export function getCapturedLogs(): unknown {): ConsoleLogEntry[] {;
+export function getCapturedLogs(): unknown {): unknown {): unknown {): unknown {): unknown {): ConsoleLogEntry[] {;'
   // Return empty array since logBuffer was removed for lint compliance;
   return [];
 };
-'
+;
+};
+};'
+};
+}
+};'
+}'
+}
+}'

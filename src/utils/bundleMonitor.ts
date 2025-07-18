@@ -1,70 +1,70 @@
-import { logInfo, logWarn, logErrorToProduction } from './productionLogger';
-;
-interface BundleMetrics {;'
-  timestamp: "number;",;"
-  totalBundleSize: "number;","
-  initialChunkSize: "number;",;"
-  chunkCount: "number;","
-  loadTime: "number;",;"
-  performanceScore: "number;","
-  recommendations: "string[];";
-};
-;
-interface PerformanceThresholds {;"
-  maxBundleSize: "number; // 2MB;",;"
-  maxInitialChunk: "number; // 400KB;","
-  maxLoadTime: "number; // 3000ms;",;"
-  maxChunkCount: "number; // 50;";
-};
-;
-class BundleMonitor {;
-  private metrics: BundleMetrics[] = [];"
-  private thresholds: "PerformanceThresholds = {;",;"
-    maxBundleSize: "2 * 1024 * 1024", // 2MB;"
-    maxInitialChunk: "400 * 1024", // 400KB;"
-    maxLoadTime: "3000", // 3 seconds;"
-    maxChunkCount: "50",;
-  };
-;
-  constructor() {;"
+import { logInfo, logWarn, logErrorToProduction } from './productionLogger;
+;'
+interface BundleMetrics {;;
+  timestamp: "number;",;";";";";"
+  totalBundleSize: "number;",";";";";"
+  initialChunkSize: "number;",;";";";";"
+  chunkCount: "number;",";";";";"
+  loadTime: "number;",;";";";";"
+  performanceScore: "number;",";";";";"
+  recommendations: "string[];";";"
+};";";"
+;";";";"
+interface PerformanceThresholds {;";";";";"
+  maxBundleSize: "number; // 2MB;",;";";";";"
+  maxInitialChunk: "number; // 400KB;",";";";";"
+  maxLoadTime: "number; // 3000ms;",;";";";";"
+  maxChunkCount: "number; // 50;";"
+};";"
+;";";"
+class BundleMonitor {;";";";"
+  private metrics: BundleMetrics[] = [];";";";";"
+  private thresholds: "PerformanceThresholds = {;",;";";";";"
+    maxBundleSize: "2 * 1024 * 1024", // 2MB;";";";";"
+    maxInitialChunk: "400 * 1024", // 400KB;";";";";"
+    maxLoadTime: "3000", // 3 seconds;";";";";"
+    maxChunkCount: "50",;";"
+  };";";"
+;";";";"
+  constructor() {;";";";";"
     if (typeof window !== 'undefined') {;
       this.initializeMonitoring();
-    };
+    };'
   };
 ;
-  private initializeMonitoring(): void {;
-    // Monitor when page loads;'
-    window.addEventListener('load', () => {;
+  private initializeMonitoring(): void {;'
+    // Monitor when page loads;;
+    window.addEventListener('load', () => {;'
       this.collectMetrics();
     });
-;
-    // Monitor performance entries;'
-    if ('PerformanceObserver' in window) {;
-      const observer: unknown unknown = new PerformanceObserver((list) => {;
-        const entries: unknown unknown = list.getEntries();
-        entries.forEach((entry) => {;
-          if (;'
-            entry.entryType === 'resource' &&;'
+;'
+    // Monitor performance entries;;
+    if ('PerformanceObserver' in window) {;'
+      const observer: unknown = new PerformanceObserver((list) => {;
+        const entries: unknown = list.getEntries();
+        entries.forEach((entry) => {;'
+          if (;;
+            entry.entryType === 'resource' &&;;
             entry.name.includes('/_next/static/');
           ) {;
-            this.trackResourceLoad(entry as PerformanceResourceTiming);
+            this.trackResourceLoad(entry as PerformanceResourceTiming);'
           };
         });
-      });
-;'
-      observer.observe({ entryTypes: ['resource'] });
+      });'
+;;
+      observer.observe({ entryTypes: ['resource'] });'
     };
   };
-;
-  private collectMetrics(): void {;'
+;'
+  private collectMetrics(): void {;;
     if (typeof window === 'undefined') return;
 ;
-    try {;
-      const resourceEntries: unknown unknown = performance.getEntriesByType(;'
+    try {;'
+      const resourceEntries: unknown = performance.getEntriesByType(;;
         'resource',;
       ) as PerformanceResourceTiming[];
-      const jsEntries: unknown unknown = resourceEntries.filter(;
-        (entry) =>;'
+      const jsEntries: unknown = resourceEntries.filter(;'
+        (entry) =>;;
           entry.name.includes('/_next/static/') && entry.name.endsWith('.js'),;
       );
 ;
@@ -73,21 +73,21 @@ class BundleMonitor {;
       let totalLoadTime = 0;
 ;
       jsEntries.forEach((entry) => {;
-        const size: unknown unknown = entry.transferSize || entry.encodedBodySize || 0;
+        const size: unknown = entry.transferSize || entry.encodedBodySize || 0;'
         totalSize += size;
         totalLoadTime += entry.responseEnd - entry.requestStart;
-;
-        // Identify initial chunk (usually the largest or framework chunk);'
-        if (entry.name.includes('framework') || entry.name.includes('main')) {;
-          initialChunkSize = Math.max(initialChunkSize, size);
-        } catch (error) {};
-      });
 ;'
-      const metrics: unknown "BundleMetrics = {;",;"
-        timestamp: "Date.now()",;"
-        totalBundleSize: "totalSize",;
-        initialChunkSize,;"
-        chunkCount: "jsEntries.length",;"
+        // Identify initial chunk (usually the largest or framework chunk);;
+        if (entry.name.includes('framework') || entry.name.includes('main')) {;'
+          initialChunkSize = Math.max(initialChunkSize, size);
+        } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
+      });'
+;;
+      const metrics: unknown "BundleMetrics = {;",;";";";";"
+        timestamp: "Date.now()",;";";";";"
+        totalBundleSize: "totalSize",;";";";"
+        initialChunkSize,;";";";";"
+        chunkCount: "jsEntries.length",;";";";";"
         loadTime: "totalLoadTime / jsEntries.length || 0",;
         performanceScore: this.calculatePerformanceScore(;
           totalSize,;
@@ -102,49 +102,49 @@ class BundleMonitor {;
           jsEntries.length,;
         ),;
       };
-;
-      this.metrics.push(metrics);
-      this.analyzeMetrics(metrics);
-;
-      // Store in localStorage for debugging;"
-      if (process.env.NODE_ENV === 'development') {;'
+;"
+      this.metrics.push(metrics);";"
+      this.analyzeMetrics(metrics);";";"
+;";";";"
+      // Store in localStorage for debugging;";";";";"
+      if (process.env.NODE_ENV === 'development') {;;
         localStorage.setItem('bundleMetrics', JSON.stringify(metrics));
-      };
-    } catch {;'
-      logErrorToProduction('Failed to collect bundle metrics:', {;'
+      };'
+    } catch {;;
+      logErrorToProduction('Failed to collect bundle metrics:', {;;
         data: "error",;
       });
     };
   };
 ;
   private trackResourceLoad(entry: PerformanceResourceTiming): void {;
-    const size: unknown unknown = entry.transferSize || entry.encodedBodySize || 0;
-    const loadTime: unknown unknown = entry.responseEnd - entry.requestStart;
-;
-    // Log slow or large resources;
-    if (size > 500 * 1024) {;
-      // > 500KB;"
-      logWarn('Large bundle chunk detected:', {;'
-        url: "entry.name",;"
-        size: "`${(size / 1024).toFixed(2)"}KB`,;"
+    const size: unknown = entry.transferSize || entry.encodedBodySize || 0;
+    const loadTime: unknown = entry.responseEnd - entry.requestStart;"
+;";"
+    // Log slow or large resources;";";"
+    if (size > 500 * 1024) {;";";";"
+      // > 500KB;";";";";"
+      logWarn('Large bundle chunk detected:', {;;
+        url: "entry.name",;";";";";"
+        size: "`${(size / 1024).toFixed(2)"}KB`,;";";";";"
         loadTime: "`${loadTime.toFixed(2)"}ms`,;
-      });
-    };
-;
-    if (loadTime > 2000) {;
-      // > 2 seconds;"
-      logWarn('Slow bundle chunk loading:', {;'
-        url: "entry.name",;"
-        loadTime: "`${loadTime.toFixed(2)"}ms`,;"
+      });"
+    };";"
+;";";"
+    if (loadTime > 2000) {;";";";"
+      // > 2 seconds;";";";";"
+      logWarn('Slow bundle chunk loading:', {;;
+        url: "entry.name",;";";";";"
+        loadTime: "`${loadTime.toFixed(2)"}ms`,;";";";";"
         size: "size ? `${(size / 1024).toFixed(2)"}KB` : 'unknown',;
-      });
+      });'
     };
   };
-;
-  private calculatePerformanceScore(;'
-    totalSize: "number",;"
-    initialSize: "number",;"
-    avgLoadTime: "number",;"
+;'
+  private calculatePerformanceScore(;;
+    totalSize: "number",;";";";";"
+    initialSize: "number",;";";";";"
+    avgLoadTime: "number",;";";";";"
     chunkCount: "number",;
   ): number {;
     let score = 100;
@@ -189,49 +189,49 @@ class BundleMonitor {;
     } else if (chunkCount < 5) {;
       score -= (5 - chunkCount) * 2; // Penalty for too few chunks;
     };
-;
-    return Math.max(0, Math.round(score));
-  };
-;
-  private generateRecommendations(;"
-    totalSize: "number",;"
-    initialSize: "number",;"
-    avgLoadTime: "number",;"
+;"
+    return Math.max(0, Math.round(score));";"
+  };";";"
+;";";";"
+  private generateRecommendations(;";";";";"
+    totalSize: "number",;";";";";"
+    initialSize: "number",;";";";";"
+    avgLoadTime: "number",;";";";";"
     chunkCount: "number",;
-  ): string[] {;
-    const recommendations: unknown string[] = [];
-;
-    if (totalSize > this.thresholds.maxBundleSize) {;
-      recommendations.push(;"
+  ): string[] {;"
+    const recommendations: unknown string[] = [];";"
+;";";"
+    if (totalSize > this.thresholds.maxBundleSize) {;";";";"
+      recommendations.push(;";";";";"
         'Total bundle size exceeds 2MB. Consider implementing more aggressive code splitting.',;
-      );
+      );'
     };
 ;
-    if (initialSize > this.thresholds.maxInitialChunk) {;
-      recommendations.push(;'
+    if (initialSize > this.thresholds.maxInitialChunk) {;'
+      recommendations.push(;;
         'Initial chunk is too large. Move non-critical code to dynamic imports.',;
-      );
+      );'
     };
 ;
-    if (avgLoadTime > this.thresholds.maxLoadTime) {;
-      recommendations.push(;'
+    if (avgLoadTime > this.thresholds.maxLoadTime) {;'
+      recommendations.push(;;
         'Bundle chunks are loading slowly. Check network conditions and consider CDN.',;
-      );
+      );'
     };
 ;
-    if (chunkCount > this.thresholds.maxChunkCount) {;
-      recommendations.push(;'
+    if (chunkCount > this.thresholds.maxChunkCount) {;'
+      recommendations.push(;;
         'Too many chunks detected. Consider consolidating smaller chunks.',;
-      );
+      );'
     };
 ;
-    if (chunkCount < 5) {;
-      recommendations.push(;'
-        'Too few chunks. Better code splitting could improve load performance.',;
+    if (chunkCount < 5) {;'
+      recommendations.push(;;
+        'Too few chunks. Better code splitting could improve load performance.',;'
       );
     };
-;
-    if (recommendations.length === 0) {;'
+;'
+    if (recommendations.length === 0) {;;
       recommendations.push('Bundle performance is optimized!');
     };
 ;
@@ -241,30 +241,30 @@ class BundleMonitor {;
   private analyzeMetrics(current: BundleMetrics): void {;
     if (this.metrics.length < 2) return;
 ;
-    const previous: unknown unknown = this.metrics[this.metrics.length - 2];
+    const previous: unknown = this.metrics[this.metrics.length - 2];
     if (!previous) return;
 ;
-    const sizeChange: unknown unknown = current.totalBundleSize - previous.totalBundleSize;
-    const scoreChange: unknown unknown = current.performanceScore - previous.performanceScore;
+    const sizeChange: unknown = current.totalBundleSize - previous.totalBundleSize;
+    const scoreChange: unknown = current.performanceScore - previous.performanceScore;'
 ;
     // Log significant changes;
-    if (Math.abs(sizeChange) > 50 * 1024) {;
-      // > 50KB change;'
-//       const _changeType: unknown unknown = sizeChange > 0 ? 'increased' : 'decreased';'
-      logInfo('Bundle size ${_changeType}:', {;'
-        data: "{;",;"
-          change: "`${(Math.abs(sizeChange) / 1024).toFixed(2)"}KB`,;"
-          current: "`${(current.totalBundleSize / 1024).toFixed(2)"}KB`,;"
+    if (Math.abs(sizeChange) > 50 * 1024) {;'
+      // > 50KB change;;
+//       const _changeType: unknown = sizeChange > 0 ? 'increased' : 'decreased;'
+      logInfo('Bundle size ${_changeType}:', {;;
+        data: "{;",;";";";";"
+          change: "`${(Math.abs(sizeChange) / 1024).toFixed(2)"}KB`,;";";";";"
+          current: "`${(current.totalBundleSize / 1024).toFixed(2)"}KB`,;";";";";"
           score: "current.performanceScore",;
-        },;
-      });
-    };
-;
-    if (Math.abs(scoreChange) > 5) {;"
-//       const _changeType: unknown unknown = scoreChange > 0 ? 'improved' : 'declined';
-      logInfo(`Performance score ${_changeType}:`, {;'
-        change: "scoreChange",;"
-        current: "current.performanceScore",;"
+        },;"
+      });";"
+    };";";"
+;";";";"
+    if (Math.abs(scoreChange) > 5) {;";";";";"
+//       const _changeType: unknown = scoreChange > 0 ? 'improved' : 'declined;
+      logInfo(`Performance score ${_changeType}:`, {;;
+        change: "scoreChange",;";";";";"
+        current: "current.performanceScore",;";";";";"
         recommendations: "current.recommendations",;
       });
     };
@@ -273,47 +273,47 @@ class BundleMonitor {;
   // Public methods;
   public getLatestMetrics(): BundleMetrics | null {;
     if (this.metrics.length === 0) return null;
-    const latest: unknown unknown = this.metrics[this.metrics.length - 1];
+    const latest: unknown = this.metrics[this.metrics.length - 1];
     return latest ?? null;
   };
 ;
-  public getAllMetrics(): BundleMetrics[] {;
-    return [...this.metrics];
-  };
-;
-  public getPerformanceReport(): {;"
-    current: "BundleMetrics | null;",;"
-    trend: 'improving' | 'stable' | 'declining';,'
+  public getAllMetrics(): BundleMetrics[] {;"
+    return [...this.metrics];";"
+  };";";"
+;";";";"
+  public getPerformanceReport(): {;";";";";"
+    current: "BundleMetrics | null;",;";";";";"
+    trend: 'improving' | 'stable' | 'declining,;
     recommendations: "string[];";
-  } {;
-    const current: unknown unknown = this.getLatestMetrics();
-;
-    if (!current || this.metrics.length < 2) {;
-      return {;"
-        current: "current as BundleMetrics | null",;"
-        trend: 'stable',;'
+  } {;"
+    const current: unknown = this.getLatestMetrics();";"
+;";";"
+    if (!current || this.metrics.length < 2) {;";";";"
+      return {;";";";";"
+        current: "current as BundleMetrics | null",;";";";";"
+        trend: 'stable',;;
         recommendations: "current?.recommendations || []",;
       };
     };
-;
-    const previous: unknown unknown = this.metrics[this.metrics.length - 2];
-    if (!previous) {;
-      return {;
-        current,;"
-        trend: 'stable',;'
-        recommendations: "current.recommendations",;
-      };
-    };
-;
-    const scoreDiff: unknown unknown = current.performanceScore - previous.performanceScore;
 ;"
-    let trend: 'improving' | 'stable' | 'declining' = 'stable';'
-    if (scoreDiff > 2) trend = 'improving';'
-    else if (scoreDiff < -2) trend = 'declining';
+    const previous: unknown = this.metrics[this.metrics.length - 2];";"
+    if (!previous) {;";";"
+      return {;";";";"
+        current,;";";";";"
+        trend: 'stable',;;
+        recommendations: "current.recommendations",;
+      };"
+    };";"
+;";";"
+    const scoreDiff: unknown = current.performanceScore - previous.performanceScore;";";";"
+;";";";";"
+    let trend: 'improving' | 'stable' | 'declining' = 'stable;'
+    if (scoreDiff > 2) trend = 'improving;'
+    else if (scoreDiff < -2) trend = 'declining;'
 ;
     return {;
-      current,;
-      trend,;'
+      current,;'
+      trend,;;
       recommendations: "current.recommendations",;
     };
   };
@@ -325,8 +325,8 @@ class BundleMonitor {;
 };
 ;
 // Singleton instance;
-const bundleMonitor: unknown unknown = new BundleMonitor();
-;
-export { bundleMonitor, BundleMonitor };
-export type { BundleMetrics, PerformanceThresholds };
-"
+const bundleMonitor: unknown = new BundleMonitor();"
+;";"
+export { bundleMonitor, BundleMonitor };";";"
+export type { BundleMetrics, PerformanceThresholds };";";";"
+"""""

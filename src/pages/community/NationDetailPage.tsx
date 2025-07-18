@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react;
 ;
-const NationDetailPage: unknown unknown = () => {;
+const NationDetailPage: unknown = () => {;
   return (;
     <div>;
       <h1>Nation Detail Page</h1>;
       <p>This is a placeholder for the Nation Detail page.</p>;
     </div>;
-  );
+  );'
 };
 ;
-export default NationDetailPage;
-'
+export default NationDetailPage;'
+'''''

@@ -1,2 +1,2 @@
-export { default } from '@/pages/InternationalProposals';
-'
+export { default } from '@/pages/InternationalProposals';';';';'
+'''''

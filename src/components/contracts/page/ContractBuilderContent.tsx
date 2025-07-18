@@ -1,93 +1,97 @@
-import { useState } from 'react';'
-import { SmartContractBuilder } from '@/components/contracts/SmartContractBuilder';'
-import { ContractBuilder } from '@/components/contracts/ContractBuilder';'
-import { ContractHeader } from './ContractHeader';'
-import { ContractTypeCards } from './ContractTypeCards';'
-import { RecentContractsTable } from './RecentContractsTable';'
-import type { TalentProfile } from '@/types/talent';'
-import { useAuth } from '@/hooks/useAuth';'
-import { logDebug } from '@/utils/productionLogger';
-;
-// Mock data for demo purposes;'
-const mockTalent: unknown "TalentProfile = {;",;"
-  id: 'talent-123',;'
-  user_id: 'user-abc-123',;'
-  full_name: 'Alex Chen',;'
-  professional_title: 'Full Stack Developer',;'
-  hourly_rate: "85",;"
-  profile_picture_url: '',;'
+import { useState } from 'react
+import { SmartContractBuilder } from '@/components/contracts/SmartContractBuilder;'
+import { ContractBuilder } from '@/components/contracts/ContractBuilder;'
+import { ContractHeader } from './ContractHeader;'
+import { ContractTypeCards } from './ContractTypeCards;'
+import { RecentContractsTable } from './RecentContractsTable;'
+import type { TalentProfile } from '@/types/talent;'
+import { useAuth } from '@/hooks/useAuth;'
+import { logDebug } from '@/utils/productionLogger;
+;'
+// Mock data for demo purposes;;
+const mockTalent: unknown "TalentProfile = {;",;";";";";"
+  id: 'talent-123',;;
+  user_id: 'user-abc-123',;;
+  full_name: 'Alex Chen',;;
+  professional_title: 'Full Stack Developer',;;
+  hourly_rate: "85",;";";";";"
+  profile_picture_url: '',;;
   skills: ['React', 'Node.js', 'Smart Contracts'],;
-};
+};'
 ;
-export function ContractBuilderContent(): unknown {) {;
-  const { _user } = useAuth();
-  const [showBuilderType, setShowBuilderType] = useState<;'
-    'none' | 'standard' | 'smart';'
+export function ContractBuilderContent(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
+  const { _user } = useAuth();'
+  const [showBuilderType, setShowBuilderType] = useState<;;
+    'none' | 'standard' | 'smart;'
   >('none');
-  const [recentContracts, _setRecentContracts] = useState([;
-    {;'
-      id: 'contract-1',;'
-      title: 'Website Redesign',;'
-      client: 'Acme Corp',;'
-      talent: 'Alex Chen',;'
-      date: '2025-05-15',;'
-      isSmartContract: "true",;
-    },;
-    {;"
-      id: 'contract-2',;'
-      title: 'Mobile App Development',;'
-      client: 'TechStart Inc',;'
-      talent: 'Sarah Williams',;'
-      date: '2025-05-10',;'
-      isSmartContract: "false",;
-    },;
-  ]);
-;
-  const handleContractGenerated: unknown unknown = (_content: string) => {;"
-    logDebug('Contract generated:', {;'
-      preview: "content.substring(0", 100) + '...',;
+  const [recentContracts, _setRecentContracts] = useState([;'
+    {;;
+      id: 'contract-1',;;
+      title: 'Website Redesign',;;
+      client: 'Acme Corp',;;
+      talent: 'Alex Chen',;;
+      date: '2025-05-15',;;
+      isSmartContract: "true",;";";"
+    },;";";";"
+    {;";";";";"
+      id: 'contract-2',;;
+      title: 'Mobile App Development',;;
+      client: 'TechStart Inc',;;
+      talent: 'Sarah Williams',;;
+      date: '2025-05-10',;;
+      isSmartContract: "false",;"
+    },;";"
+  ]);";";"
+;";";";"
+  const handleContractGenerated: unknown = (_content: string) => {;";";";";"
+    logDebug('Contract generated:', {;;
+      preview: "content.substring(0", 100) + '...',;'
     });
   };
-;
-  const handleViewContract: unknown unknown = (_contractId: string) => {;'
-    logDebug('Viewing contract:', { data: "{ contractId "} });"
-    // Future implementation: "View specific contract details;";
-  };
-;
-  return (;
-    <>;"
+;'
+  const handleViewContract: unknown = (_contractId: string) => {;;
+    logDebug('Viewing contract:', { data: "{ contractId "} });";";";";"
+    // Future implementation: "View specific contract details;";"
+  };";"
+;";";"
+  return (;";";";"
+    <>;";";";";"
       <ContractHeader onCreateClick={() => setShowBuilderType('smart')} />;
-;
-      <ContractTypeCards;'
-        onStandardClick={() => setShowBuilderType('standard')};'
+;'
+      <ContractTypeCards;;
+        onStandardClick={() => setShowBuilderType('standard')};;
         onSmartClick={() => setShowBuilderType('smart')};
       />;
 ;
-      <RecentContractsTable;
+      <RecentContractsTable;'
         contracts={recentContracts};
         onViewContract={handleViewContract};
-      />;
-;'
+      />;'
+;;
       {showBuilderType === 'standard' && (;
-        <ContractBuilder;
-          isOpen={true};'
-          onClose={() => setShowBuilderType('none')};
-          talent={mockTalent};'
-          clientName={user?.displayName || 'Client'};
+        <ContractBuilder;'
+          isOpen={true};;
+          onClose={() => setShowBuilderType('none')};'
+          talent={mockTalent};;
+          clientName={user?.displayName || 'Client'};'
           onContractGenerated={handleContractGenerated};
         />;
-      )};
-;'
+      )};'
+;;
       {showBuilderType === 'smart' && (;
-        <SmartContractBuilder;
-          isOpen={true};'
-          onClose={() => setShowBuilderType('none')};
-          talent={mockTalent};'
+        <SmartContractBuilder;'
+          isOpen={true};;
+          onClose={() => setShowBuilderType('none')};'
+          talent={mockTalent};;
           clientName={user?.displayName || 'Client'};
           onContractGenerated={handleContractGenerated};
         />;
-      )};
+      )};'
     </>;
   );
 };
-'
+;
+};'
+}
+}'
+}'

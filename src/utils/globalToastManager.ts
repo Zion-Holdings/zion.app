@@ -2,17 +2,17 @@ import {;
   logInfo,;
   logWarn,;
   logErrorToProduction,;
-} from '@/utils/productionLogger';'
-import { toast as sonnerToast } from 'sonner';
+} from '@/utils/productionLogger;'
+import { toast as sonnerToast } from 'sonner;
 ;
-// Toast configuration constants;
-const TOAST_CONFIG: unknown unknown = {;'
-  MAX_VISIBLE_TOASTS: "3",;"
-  DEFAULT_DURATION: "4000", // 4 seconds;"
-  ERROR_DURATION: "6000", // 6 seconds for errors;"
-  SUCCESS_DURATION: "3000", // 3 seconds for success;"
-  WARNING_DURATION: "5000", // 5 seconds for warnings;"
-  DEDUPE_WINDOW: "3000", // 3 seconds deduplication window;"
+// Toast configuration constants;'
+const TOAST_CONFIG: unknown "unknown = {;",;"
+  MAX_VISIBLE_TOASTS: "3",;";";";";"
+  DEFAULT_DURATION: "4000", // 4 seconds;";";";";"
+  ERROR_DURATION: "6000", // 6 seconds for errors;";";";";"
+  SUCCESS_DURATION: "3000", // 3 seconds for success;";";";";"
+  WARNING_DURATION: "5000", // 5 seconds for warnings;";";";";"
+  DEDUPE_WINDOW: "3000", // 3 seconds deduplication window;";";";";"
   PRIORITY_BOOST_DURATION: "1000", // Extra time for high priority toasts;
 };
 ;
@@ -21,48 +21,48 @@ export enum ToastPriority {;
   LOW = 1,;
   NORMAL = 2,;
   HIGH = 3,;
-  CRITICAL = 4,;
+  CRITICAL = 4,;"
+};";"
+;";";"
+// Toast types with corresponding priorities;";";";"
+export enum ToastType {;";";";";"
+  INFO = 'info',;;
+  SUCCESS = 'success',;;
+  WARNING = 'warning',;;
+  ERROR = 'error',;;
+  NETWORK_ERROR = 'network_error',;;
+  AUTH_ERROR = 'auth_error',;;
+  VALIDATION_ERROR = 'validation_error',;;
+  CRITICAL_ERROR = 'critical_error',;'
 };
 ;
-// Toast types with corresponding priorities;
-export enum ToastType {;"
-  INFO = 'info',;'
-  SUCCESS = 'success',;'
-  WARNING = 'warning',;'
-  ERROR = 'error',;'
-  NETWORK_ERROR = 'network_error',;'
-  AUTH_ERROR = 'auth_error',;'
-  VALIDATION_ERROR = 'validation_error',;'
-  CRITICAL_ERROR = 'critical_error',;
-};
-;
-// Toast interface;
-export interface GlobalToast {;'
-  id: "string;",;
-  message: string;
-  title?: string;"
-  type: "ToastType;",;
-  priority: ToastPriority;
-  duration?: number;
-  persistent?: boolean;
-  action?: {;"
-    label: "string;",;"
+// Toast interface;'
+export interface GlobalToast {;;
+  id: "string;",;";";"
+  message: string;";";";"
+  title?: string;";";";";"
+  type: "ToastType;",;"
+  priority: ToastPriority;";"
+  duration?: number;";";"
+  persistent?: boolean;";";";"
+  action?: {;";";";";"
+    label: "string;",;";";";";"
     onClick: "() => void;";
   };
   onRetry?: () => void;
   metadata?: Record<string, unknown>;
   createdAt: number;
-  expiresAt?: number;
-};
-;
-// Toast queue and tracking;
-class GlobalToastManager {;"
-  private activeToasts: "Map<string", GlobalToast> = new Map();
-  private toastQueue: GlobalToast[] = [];"
-  private dedupeCache: "Map<string", number> = new Map();"
-  private dismissalTimers: "Map<string", NodeJS.Timeout> = new Map();
-;
-  // Priority mappings;"
+  expiresAt?: number;"
+};";"
+;";";"
+// Toast queue and tracking;";";";"
+class GlobalToastManager {;";";";";"
+  private activeToasts: "Map<string", GlobalToast> = new Map();";";";"
+  private toastQueue: GlobalToast[] = [];";";";";"
+  private dedupeCache: "Map<string", number> = new Map();";";";";"
+  private dismissalTimers: "Map<string", NodeJS.Timeout> = new Map();";";"
+;";";";"
+  // Priority mappings;";";";";"
   private readonly priorityMap: "Record<ToastType", ToastPriority> = {;
     [ToastType.INFO]: ToastPriority.LOW,;
     [ToastType.SUCCESS]: ToastPriority.NORMAL,;
@@ -70,11 +70,11 @@ class GlobalToastManager {;"
     [ToastType.ERROR]: ToastPriority.HIGH,;
     [ToastType.NETWORK_ERROR]: ToastPriority.HIGH,;
     [ToastType.AUTH_ERROR]: ToastPriority.HIGH,;
-    [ToastType.VALIDATION_ERROR]: ToastPriority.NORMAL,;
-    [ToastType.CRITICAL_ERROR]: ToastPriority.CRITICAL,;
-  };
-;
-  // Duration mappings;"
+    [ToastType.VALIDATION_ERROR]: ToastPriority.NORMAL,;"
+    [ToastType.CRITICAL_ERROR]: ToastPriority.CRITICAL,;";"
+  };";";"
+;";";";"
+  // Duration mappings;";";";";"
   private readonly durationMap: "Record<ToastType", number> = {;
     [ToastType.INFO]: TOAST_CONFIG.DEFAULT_DURATION,;
     [ToastType.SUCCESS]: TOAST_CONFIG.SUCCESS_DURATION,;
@@ -87,13 +87,13 @@ class GlobalToastManager {;"
       TOAST_CONFIG.ERROR_DURATION + TOAST_CONFIG.PRIORITY_BOOST_DURATION,;
   };
 ;
-  /**;
-   * Generate a unique deduplication key for the toast;
-   */;
-  private generateDedupeKey(toast: Partial<GlobalToast>): string {;
-    const { type, message, title } = toast;"
-    return `${type}-${title || ''}-${message}`;
-      .toLowerCase();'
+  /**;"
+   * Generate a unique deduplication key for the toast;";"
+   */;";";"
+  private generateDedupeKey(toast: Partial<GlobalToast>): string {;";";";"
+    const { type, message, title } = toast;";";";";"
+    return `${type}-${title || ''}-${message}`;'
+      .toLowerCase();;
       .replace(/\s+/g, '-');
   };
 ;
@@ -101,8 +101,8 @@ class GlobalToastManager {;"
    * Check if toast should be shown based on deduplication;
    */;
   private shouldShowToast(dedupeKey: string): boolean {;
-    const now: unknown unknown = Date.now();
-    const lastShown: unknown unknown = this.dedupeCache.get(dedupeKey);
+    const now: unknown = Date.now();
+    const lastShown: unknown = this.dedupeCache.get(dedupeKey);
 ;
     if (lastShown && now - lastShown < TOAST_CONFIG.DEDUPE_WINDOW) {;
       return false;
@@ -116,7 +116,7 @@ class GlobalToastManager {;"
    * Remove expired entries from dedupe cache;
    */;
   private cleanupDedupeCache(): void {;
-    const now: unknown unknown = Date.now();
+    const now: unknown = Date.now();
     for (const [key, timestamp] of this.dedupeCache.entries()) {;
       if (now - timestamp > TOAST_CONFIG.DEDUPE_WINDOW * 2) {;
         this.dedupeCache.delete(key);
@@ -161,8 +161,8 @@ class GlobalToastManager {;"
   private setupAutoDismissal(toast: GlobalToast): void {;
     if (toast.persistent) return;
 ;
-    const duration: unknown unknown = toast.duration || this.durationMap[toast.type];
-    const timer: unknown unknown = setTimeout(() => {;
+    const duration: unknown = toast.duration || this.durationMap[toast.type];
+    const timer: unknown = setTimeout(() => {;
       this.dismissToast(toast.id);
     }, duration);
 ;
@@ -174,7 +174,7 @@ class GlobalToastManager {;"
    * Clear auto-dismissal timer for a toast;
    */;
   private clearAutoDismissal(toastId: string): void {;
-    const timer: unknown unknown = this.dismissalTimers.get(toastId);
+    const timer: unknown = this.dismissalTimers.get(toastId);
     if (timer) {;
       clearTimeout(timer);
       this.dismissalTimers.delete(toastId);
@@ -185,7 +185,7 @@ class GlobalToastManager {;"
    * Dismiss a specific toast;
    */;
   dismissToast(toastId: string): void {;
-    const toast: unknown unknown = this.activeToasts.get(toastId);
+    const toast: unknown = this.activeToasts.get(toastId);
     if (!toast) return;
 ;
     this.clearAutoDismissal(toastId);
@@ -222,7 +222,7 @@ class GlobalToastManager {;"
       this.toastQueue.length > 0 &&;
       this.getVisibleToastCount() < TOAST_CONFIG.MAX_VISIBLE_TOASTS;
     ) {;
-      const toast: unknown unknown = this.toastQueue.shift();
+      const toast: unknown = this.toastQueue.shift();
       if (toast) {;
         this.showToastInternal(toast);
       };
@@ -230,35 +230,35 @@ class GlobalToastManager {;"
   };
 ;
   /**;
-   * Internal method to show a toast using Sonner;
+   * Internal method to show a toast using Sonner;'
    */;
   private showToastInternal(toast: GlobalToast): void {;
-    this.activeToasts.set(toast.id, toast);
-;'
-    const options: unknown "Record<string", unknown> = {;"
+    this.activeToasts.set(toast.id, toast);'
+;;
+    const options: unknown "Record<string", unknown> = {;";";";";"
       id: "toast.id",;
       duration: toast.persistent;
         ? Infinity;
         : toast.duration || this.durationMap[toast.type],;
-    };
-;
-    // Add action button if present;
-    if (toast.action) {;
-      options.action = {;"
-        label: "toast.action.label",;"
-        onClick: "toast.action.onClick",;
-      };
-    } else if (toast.onRetry) {;
-      options.action = {;"
-        label: 'Retry',;'
+    };"
+;";"
+    // Add action button if present;";";"
+    if (toast.action) {;";";";"
+      options.action = {;";";";";"
+        label: "toast.action.label",;";";";";"
+        onClick: "toast.action.onClick",;";"
+      };";";"
+    } else if (toast.onRetry) {;";";";"
+      options.action = {;";";";";"
+        label: 'Retry',;;
         onClick: "toast.onRetry",;
       };
     };
-;
-    // Show toast based on type;
-    const message: unknown unknown = toast.title ? toast.title : toast.message;
-    const description: unknown unknown = toast.title ? toast.message : undefined;
 ;"
+    // Show toast based on type;";"
+    const message: unknown = toast.title ? toast.title : toast.message;";";"
+    const description: unknown = toast.title ? toast.message : undefined;";";";"
+;";";";";"
     if (typeof window !== 'undefined') {;
       switch (toast.type) {;
         case ToastType.SUCCESS:;
@@ -266,11 +266,11 @@ class GlobalToastManager {;"
           break;
         case ToastType.ERROR:;
         case ToastType.NETWORK_ERROR:;
-        case ToastType.AUTH_ERROR:;
+        case ToastType.AUTH_ERROR:;'
         case ToastType.CRITICAL_ERROR:;
           sonnerToast.error(message, {;
-            ...options,;
-            description,;'
+            ...options,;'
+            description,;;
             style: { background: '#7f1d1d', color: '#fff' },;
           });
           break;
@@ -288,35 +288,35 @@ class GlobalToastManager {;"
     } else {;
       // Log to console or a server-side logger if attempting to show toast on server;
       console.warn(;
-        `[SSR Toast Attempt]: ${toast.type} - ${message} (Sonner UI not rendered on server)`,;
+        `[SSR Toast Attempt]: ${toast.type} - ${message} (Sonner UI not rendered on server)`,;'
       );
     };
-;
-    // Log error toasts for debugging;'
+;'
+    // Log error toasts for debugging;;
     if (toast.type.includes('error')) {;
-      try {;
-        logErrorToProduction(toast.message, new Error(toast.message), {;'
-          context: 'globalToastManager',;'
-          toastType: "toast.type",;"
-          priority: "toast.priority",;"
-          metadata: "toast.metadata",;
-        } catch (error) {});
-      } catch {;"
+      try {;'
+        logErrorToProduction(toast.message, new Error(toast.message), {;;
+          context: 'globalToastManager',;;
+          toastType: "toast.type",;";";";";"
+          priority: "toast.priority",;";";";";"
+          metadata: "toast.metadata",;";";"
+        } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});";";";"
+      } catch {;";";";";"
         logErrorToProduction('Failed to log toast error:', { data: "e "});
       };
     };
-  };
-;
-  /**;
-   * Show a toast (public API);
-   */;"
+  };"
+;";"
+  /**;";";"
+   * Show a toast (public API);";";";"
+   */;";";";";"
   showToast(params: "{;",;
     message: string;
-    title?: string;
-    type?: ToastType;
-    priority?: ToastPriority;
-    duration?: number;
-    persistent?: boolean;"
+    title?: string;"
+    type?: ToastType;";"
+    priority?: ToastPriority;";";"
+    duration?: number;";";";"
+    persistent?: boolean;";";";";"
     action?: { label: "string; onClick: () => void "};
     onRetry?: () => void;
     metadata?: Record<string, unknown>;
@@ -334,27 +334,27 @@ class GlobalToastManager {;"
     } = params;
 ;
     // Clean up old dedupe cache entries periodically;
-    if (Math.random() < 0.1) {;
-      this.cleanupDedupeCache();
-    };
-;
-    // Create toast object;"
-    const toast: unknown "GlobalToast = {;",;"
-      id: "`toast-${Date.now()"}-${Math.random().toString(36).substr(2, 9)}`,;
-      message,;"
-      title: title ?? '',;
-      type,;'
-      priority: "priority !== undefined ? priority : this.priorityMap[type]",;"
-      duration: "duration !== undefined ? duration : 0",;
-      persistent,;"
-      action: action ?? { label: '', _onClick: "() => {"} },;"
-      _onRetry: "onRetry ?? (() => {"}),;"
-      metadata: "metadata ?? {"},;"
+    if (Math.random() < 0.1) {;"
+      this.cleanupDedupeCache();";"
+    };";";"
+;";";";"
+    // Create toast object;";";";";"
+    const toast: unknown "GlobalToast = {;",;";";";";"
+      id: "`toast-${Date.now()"}-${Math.random().toString(36).substr(2, 9)}`,;";";";"
+      message,;";";";";"
+      title: title ?? '',;'
+      type,;;
+      priority: "priority !== undefined ? priority : this.priorityMap[type]",;";";";";"
+      duration: "duration !== undefined ? duration : 0",;";";";"
+      persistent,;";";";";"
+      action: action ?? { label: '', _onClick: "() => {"} },;";";";";"
+      _onRetry: "onRetry ?? (() => {"}),;";";";";"
+      metadata: "metadata ?? {"},;";";";";"
       createdAt: "Date.now()",;
     };
 ;
     // Check deduplication;
-    const dedupeKey: unknown unknown = this.generateDedupeKey(toast);
+    const dedupeKey: unknown = this.generateDedupeKey(toast);
     if (!this.shouldShowToast(dedupeKey)) {;
       return toast.id; // Return ID even if not shown for consistency;
     };
@@ -393,100 +393,100 @@ class GlobalToastManager {;"
   };
 };
 ;
-// Create singleton instance;
-export const globalToastManager: unknown unknown = new GlobalToastManager();
-;
-// Convenience functions for different toast types;
-export const showToast: unknown unknown = {;"
-  info: "(;",;"
-    message: "string",;
-    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;
-  ) =>;"
-    globalToastManager.showToast({ message, type: "ToastType.INFO", ...options }),;
-;"
-  success: "(;",;"
-    message: "string",;
-    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;
-  ) =>;
-    globalToastManager.showToast({;
-      message,;"
-      type: "ToastType.SUCCESS",;
-      ...options,;
-    }),;
-;"
-  warning: "(;",;"
-    message: "string",;
-    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;
-  ) =>;
-    globalToastManager.showToast({;
-      message,;"
-      type: "ToastType.WARNING",;
-      ...options,;
-    }),;
-;"
-  error: "(;",;"
-    message: "string",;
-    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;
-  ) =>;
-    globalToastManager.showToast({;
-      message,;"
-      type: "ToastType.ERROR",;
-      ...options,;
-    }),;
-;"
-  networkError: "(;",;"
-    message: "string",;
-    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;
-  ) =>;
-    globalToastManager.showToast({;
-      message,;"
-      type: "ToastType.NETWORK_ERROR",;
-      ...options,;
-    }),;
-;"
-  authError: "(;",;"
-    message: "string",;
-    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;
-  ) =>;
-    globalToastManager.showToast({;
-      message,;"
-      type: "ToastType.AUTH_ERROR",;
-      ...options,;
-    }),;
-;"
-  validationError: "(;",;"
-    message: "string",;
-    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;
-  ) =>;
-    globalToastManager.showToast({;
-      message,;"
-      type: "ToastType.VALIDATION_ERROR",;
-      ...options,;
-    }),;
-;"
-  criticalError: "(;",;"
-    message: "string",;
-    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;
-  ) =>;
-    globalToastManager.showToast({;
-      message,;"
-      type: "ToastType.CRITICAL_ERROR",;
-      ...options,;
-    }),;
-;"
-  dismiss: "(toastId: string) => globalToastManager.dismissToast(toastId)",;"
-  dismissAll: "() => globalToastManager.dismissAll()",;
-};
-;
-// Enhanced error handler that integrates with the toast manager;
-export class EnhancedGlobalErrorHandler {;"
+// Create singleton instance;"
+export const globalToastManager: unknown = new GlobalToastManager();";"
+;";";"
+// Convenience functions for different toast types;";";";"
+export const showToast: unknown = {;";,";";";"
+  info: "(;",;";";";";"
+    message: "string",;";";"
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;";";";"
+  ) =>;";";";";"
+    globalToastManager.showToast({ message, type: "ToastType.INFO", ...options }),;";";";"
+;";";";";"
+  success: "(;",;";";";";"
+    message: "string",;"
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;";"
+  ) =>;";";"
+    globalToastManager.showToast({;";";";"
+      message,;";";";";"
+      type: "ToastType.SUCCESS",;";"
+      ...options,;";";"
+    }),;";";";"
+;";";";";"
+  warning: "(;",;";";";";"
+    message: "string",;"
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;";"
+  ) =>;";";"
+    globalToastManager.showToast({;";";";"
+      message,;";";";";"
+      type: "ToastType.WARNING",;";"
+      ...options,;";";"
+    }),;";";";"
+;";";";";"
+  error: "(;",;";";";";"
+    message: "string",;"
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;";"
+  ) =>;";";"
+    globalToastManager.showToast({;";";";"
+      message,;";";";";"
+      type: "ToastType.ERROR",;";"
+      ...options,;";";"
+    }),;";";";"
+;";";";";"
+  networkError: "(;",;";";";";"
+    message: "string",;"
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;";"
+  ) =>;";";"
+    globalToastManager.showToast({;";";";"
+      message,;";";";";"
+      type: "ToastType.NETWORK_ERROR",;";"
+      ...options,;";";"
+    }),;";";";"
+;";";";";"
+  authError: "(;",;";";";";"
+    message: "string",;"
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;";"
+  ) =>;";";"
+    globalToastManager.showToast({;";";";"
+      message,;";";";";"
+      type: "ToastType.AUTH_ERROR",;";"
+      ...options,;";";"
+    }),;";";";"
+;";";";";"
+  validationError: "(;",;";";";";"
+    message: "string",;"
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;";"
+  ) =>;";";"
+    globalToastManager.showToast({;";";";"
+      message,;";";";";"
+      type: "ToastType.VALIDATION_ERROR",;";"
+      ...options,;";";"
+    }),;";";";"
+;";";";";"
+  criticalError: "(;",;";";";";"
+    message: "string",;"
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;";"
+  ) =>;";";"
+    globalToastManager.showToast({;";";";"
+      message,;";";";";"
+      type: "ToastType.CRITICAL_ERROR",;";"
+      ...options,;";";"
+    }),;";";";"
+;";";";";"
+  dismiss: "(toastId: string) => globalToastManager.dismissToast(toastId)",;";";";";"
+  dismissAll: "() => globalToastManager.dismissAll()",;"
+};";"
+;";";"
+// Enhanced error handler that integrates with the toast manager;";";";"
+export class EnhancedGlobalErrorHandler {;";";";";"
   private retryCount: "Map<string", number> = new Map();
   private maxRetries = 3;
-;
-  /**;
-   * Report an error with appropriate toast notification;
-   */;
-  reportError(;"
+;"
+  /**;";"
+   * Report an error with appropriate toast notification;";";"
+   */;";";";"
+  reportError(;";";";";"
     error: "Error | string",;
     context?: {;
       type?: ToastType;
@@ -496,79 +496,79 @@ export class EnhancedGlobalErrorHandler {;"
       showToast?: boolean;
     },;
   ): string | null {;
-    const {;
-      type = ToastType.ERROR,;
-      priority,;
-      retryAction,;
-      metadata,;"
-      showToast: "actualShowToastFlag = true", // Internal variable;
-    } = context || {};
-;
-    const errorMessage: unknown unknown = error instanceof Error ? error.message : error;
-    const errorKey: unknown unknown = `${type}-${errorMessage}`;
-;"
-    // Suppress specific "Authentication Required / Access denied" toast on public pages for unauthenticated users.;
-    if (;
-      type === ToastType.AUTH_ERROR &&;"
-      errorMessage.toLowerCase().trim() === 'access denied' &&;'
+    const {;"
+      type = ToastType.ERROR,;";"
+      priority,;";";"
+      retryAction,;";";";"
+      metadata,;";";";";"
+      showToast: "actualShowToastFlag = true", // Internal variable;"
+    } = context || {};";"
+;";";"
+    const errorMessage: unknown = error instanceof Error ? error.message : error;";";";"
+    const errorKey: unknown "unknown = `${type"}-${errorMessage}`;";";";"
+;";";";";"
+    // Suppress specific "Authentication Required / Access denied" toast on public pages for unauthenticated users.;";";"
+    if (;";";";"
+      type === ToastType.AUTH_ERROR &&;";";";";"
+      errorMessage.toLowerCase().trim() === 'access denied' &&;;
       this.getErrorTitle(type) === 'Authentication Required' &&;
       actualShowToastFlag;
-    ) {;
-      let isLikelyUnauthenticated = true; // Default assumption for this specific error;'
+    ) {;'
+      let isLikelyUnauthenticated = true; // Default assumption for this specific error;;
       if (typeof window !== 'undefined' && window.localStorage) {;
-        // Check for Supabase auth token in localStorage. This is a heuristic.;
-        const supabaseAuthTokenKey: unknown unknown = Object.keys(window.localStorage).find(;'
+        // Check for Supabase auth token in localStorage. This is a heuristic.;'
+        const supabaseAuthTokenKey: unknown = Object.keys(window.localStorage).find(;;
           (k) => k.startsWith('sb-') && k.endsWith('-auth-token'),;
         );
         if (;
           supabaseAuthTokenKey &&;
           window.localStorage.getItem(supabaseAuthTokenKey);
         ) {;
-          isLikelyUnauthenticated = false; // Found a token, user might be authenticated;
+          isLikelyUnauthenticated = false; // Found a token, user might be authenticated;'
         };
       };
-;
-      if (isLikelyUnauthenticated) {;'
-        // Log suppression for debugging, but don't show the toast.;
-        logWarn(;'
-          `[EnhancedGlobalErrorHandler] Suppressing toast for ${type} with message "${errorMessage}" for assumed unauthenticated user.`,;
-        );
-        return null;
-      } else {;"
-        if (process.env.NODE_ENV === 'development') {;
-          logInfo(;'
+;'
+      if (isLikelyUnauthenticated) {;;
+        // Log suppression for debugging, but don't show the toast.;'
+        logWarn(;;
+          `[EnhancedGlobalErrorHandler] Suppressing toast for ${type} with message "${errorMessage}" for assumed unauthenticated user.`,;";"
+        );";";"
+        return null;";";";"
+      } else {;";";";";"
+        if (process.env.NODE_ENV === 'development') {;'
+          logInfo(;;
             `[EnhancedGlobalErrorHandler] NOT suppressing "${errorMessage}" toast as user appears authenticated or check is inconclusive.`,;
           );
         };
-      };
-    };
-;
-    const currentRetries: unknown unknown = this.retryCount.get(errorKey) || 0;
-;"
-    if (process.env.NODE_ENV === 'development') {;'
+      };"
+    };";"
+;";";"
+    const currentRetries: unknown = this.retryCount.get(errorKey) || 0;";";";"
+;";";";";"
+    if (process.env.NODE_ENV === 'development') {;;
       logErrorToProduction('Enhanced Global Error Handler:', error, context);
     };
-;
-    if (currentRetries >= this.maxRetries) {;'
+;'
+    if (currentRetries >= this.maxRetries) {;;
       logWarn(`Max retries exceeded for error: "${errorMessage"}`);
-      return null;
-    };
-;
-    if (actualShowToastFlag) {;
-      const toastId: unknown unknown = globalToastManager.showToast({;"
-        message: "this.getErrorMessage(errorMessage)",;"
-        title: this.getErrorTitle(type) ?? '',;
-        type,;'
+      return null;"
+    };";"
+;";";"
+    if (actualShowToastFlag) {;";";";"
+      const toastId: unknown = globalToastManager.showToast({;";,";";";"
+        message: "this.getErrorMessage(errorMessage)",;";";";";"
+        title: this.getErrorTitle(type) ?? '',;'
+        type,;;
         priority: "priority !== undefined ? priority : ToastPriority.HIGH",;
         _onRetry: retryAction;
           ? () => {;
               this.retryCount.set(errorKey, currentRetries + 1);
-              retryAction();
-            };
-          : () => {},;
-        metadata: {;
-          ...metadata,;"
-          originalError: "error",;"
+              retryAction();"
+            };";"
+          : () => {},;";";"
+        metadata: {;";";";"
+          ...metadata,;";";";";"
+          originalError: "error",;";";";";"
           retryCount: "currentRetries",;
         },;
       });
@@ -576,28 +576,28 @@ export class EnhancedGlobalErrorHandler {;"
     };
     return null;
   };
-;
-  /**;
-   * Get user-friendly error message;
-   */;
-  private getErrorMessage(error: string): string {;"
-    if (error.includes('network') || error.includes('fetch')) {;'
-      return 'Network error – please retry';
-    };'
-    if (error.includes('timeout')) {;'
-      return 'Request timed out - please try again';
-    };'
-    if (error.includes('unauthorized') || error.includes('401')) {;'
-      return 'Please log in to continue';
-    };'
-    if (error.includes('forbidden') || error.includes('403')) {;'
-      return "You don't have permission for this action";
-    };"
-    if (error.includes('not found') || error.includes('404')) {;'
-      return 'Requested resource not found';
-    };'
-    if (error.includes('server') || error.includes('500')) {;'
-      return 'Server error - please try again later';
+;"
+  /**;";"
+   * Get user-friendly error message;";";"
+   */;";";";"
+  private getErrorMessage(error: string): string {;";";";";"
+    if (error.includes('network') || error.includes('fetch')) {;;
+      return 'Network error – please retry;
+    };;
+    if (error.includes('timeout')) {;;
+      return 'Request timed out - please try again;
+    };;
+    if (error.includes('unauthorized') || error.includes('401')) {;;
+      return 'Please log in to continue;
+    };;
+    if (error.includes('forbidden') || error.includes('403')) {;;
+      return "You don't have permission for this action";";";";"
+    };";";";";"
+    if (error.includes('not found') || error.includes('404')) {;;
+      return 'Requested resource not found;
+    };;
+    if (error.includes('server') || error.includes('500')) {;;
+      return 'Server error - please try again later;
     };
 ;
     // Return sanitized error message;
@@ -605,20 +605,20 @@ export class EnhancedGlobalErrorHandler {;"
   };
 ;
   /**;
-   * Get appropriate title for error type;
+   * Get appropriate title for error type;'
    */;
   private getErrorTitle(type: ToastType): string {;
-    switch (type) {;
-      case ToastType.NETWORK_ERROR:;'
-        return 'Connection Problem';
-      case ToastType.AUTH_ERROR:;'
-        return 'Authentication Required';
-      case ToastType.VALIDATION_ERROR:;'
-        return 'Validation Error';
-      case ToastType.CRITICAL_ERROR:;'
-        return 'Critical Error';
-      default:;'
-        return 'Error';
+    switch (type) {;'
+      case ToastType.NETWORK_ERROR:;;
+        return 'Connection Problem;
+      case ToastType.AUTH_ERROR:;;
+        return 'Authentication Required;
+      case ToastType.VALIDATION_ERROR:;;
+        return 'Validation Error;
+      case ToastType.CRITICAL_ERROR:;;
+        return 'Critical Error;
+      default:;;
+        return 'Error;
     };
   };
 ;
@@ -635,8 +635,8 @@ export class EnhancedGlobalErrorHandler {;"
   clearAllRetryCounts(): void {;
     this.retryCount.clear();
   };
-};
+};'
 ;
 // Create singleton instance;
-export const _enhancedGlobalErrorHandler: unknown unknown = new EnhancedGlobalErrorHandler();
-'
+export const _enhancedGlobalErrorHandler: unknown = new EnhancedGlobalErrorHandler();'
+'''''

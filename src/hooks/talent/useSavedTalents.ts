@@ -1,75 +1,75 @@
-import { useState, useEffect } from 'react';'
-import { supabase } from '@/integrations/supabase/client';'
-import type { TalentProfile } from '@/types/talent';'
-import { toast } from '@/hooks/use-toast';'
-import { showApiError } from '@/utils/apiErrorHandler';'
-import { useAuthStatus } from '@/hooks/talent';'
-import { useRouter } from 'next/router';'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { useState, useEffect } from 'react
+import { supabase } from '@/integrations/supabase/client;'
+import type { TalentProfile } from '@/types/talent;'
+import { toast } from '@/hooks/use-toast;'
+import { showApiError } from '@/utils/apiErrorHandler;'
+import { useAuthStatus } from '@/hooks/talent;'
+import { useRouter } from 'next/router;'
+import { logErrorToProduction } from '@/utils/productionLogger;
 ;
-export function useSavedTalents(): unknown {) {;
+export function useSavedTalents(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const { isAuthenticated, userDetails } = useAuthStatus();
   const [savedTalents, setSavedTalents] = useState<TalentProfile[]>([]);
   const [savedTalentIds, setSavedTalentIds] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const router: unknown unknown = useRouter();
+  const router: unknown = useRouter();
 ;
   // Fetch saved talents;
   useEffect(() => {;
-    const fetchSavedTalents: unknown unknown = async () => {;
+    const fetchSavedTalents: unknown = async () => {;
       if (!isAuthenticated || !userDetails.id) {;
         setIsLoading(false);
         return;
-      };
+      };'
 ;
       setIsLoading(true);
-;
-      try {;'
-        if (!supabase) throw new Error('Supabase client not initialized');
-        // Get saved talent IDs;'
-        const { data: "savedData", error: "savedError "} catch (error) {}= await supabase;"
-          .from('saved_talents');'
-          .select('talent_id');'
+;'
+      try {;;
+        if (!supabase) throw new Error('Supabase client not initialized');'
+        // Get saved talent IDs;;
+        const { data: "savedData", error: "savedError "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;";";";";"
+          .from('saved_talents');;
+          .select('talent_id');;
           .eq('user_id', userDetails.id);
 ;
         if (savedError) throw savedError;
 ;
-        if (savedData) {;
+        if (savedData) {;'
           // Type guard for savedData items;
-          const talentIds: unknown unknown = savedData;
-            .map((_item: unknown) => {;
-              if (;'
-                typeof item === 'object' &&;
-                item !== null &&;'
-                'talent_id' in item &&;'
-                typeof (item as { talent_id: "unknown "}).talent_id === 'string';
-              ) {;'
-                return (item as { talent_id: "string "}).talent_id;
-              };
-              return undefined;
-            });"
+          const talentIds: unknown = savedData;
+            .map((_item: unknown) => {;'
+              if (;;
+                typeof item === 'object' &&;'
+                item !== null &&;;
+                'talent_id' in item &&;;
+                typeof (item as { talent_id: "unknown "}).talent_id === 'string;
+              ) {;;
+                return (item as { talent_id: "string "}).talent_id;";"
+              };";";"
+              return undefined;";";";"
+            });";";";";"
             .filter((id): id is string => typeof id === 'string');
           setSavedTalentIds(talentIds);
-;
-          if (talentIds.length > 0) {;'
-            if (!supabase) throw new Error('Supabase client not initialized');
-            // Fetch full talent profiles for saved talents;'
-            const { data: "talentData", error: "talentError "} = await supabase;"
-              .from('talent_profiles');'
-              .select('*');'
+;'
+          if (talentIds.length > 0) {;;
+            if (!supabase) throw new Error('Supabase client not initialized');'
+            // Fetch full talent profiles for saved talents;;
+            const { data: "talentData", error: "talentError "} = await supabase;";";";";"
+              .from('talent_profiles');;
+              .select('*');;
               .in('id', talentIds);
 ;
             if (talentError) throw talentError;
 ;
             setSavedTalents(talentData || []);
-          } else {;
+          } else {;'
             setSavedTalents([]);
           };
-        };
-      } catch {;'
-        logErrorToProduction('Error fetching saved talents:', { data: "error "});
-        showApiError(;
-          error,;"
+        };'
+      } catch {;;
+        logErrorToProduction('Error fetching saved talents:', { data: "error "});";";"
+        showApiError(;";";";"
+          error,;";";";";"
           'There was a problem loading your saved talents.',;
           fetchSavedTalents, // Pass self as retry callback;
         );
@@ -80,62 +80,62 @@ export function useSavedTalents(): unknown {) {;
 ;
     fetchSavedTalents();
   }, [isAuthenticated, userDetails.id]);
-;
+;'
   // Toggle save talent;
-  const toggleSaveTalent: unknown unknown = async (_talent: TalentProfile) => {;
-    if (!isAuthenticated || !userDetails.id || !talent.id) {;
-      toast({;'
-        title: 'Authentication required',;'
-        description: 'Please log in to save talents to your favorites',;'
+  const toggleSaveTalent: unknown = async (_talent: TalentProfile) => {;
+    if (!isAuthenticated || !userDetails.id || !talent.id) {;'
+      toast({;;
+        title: 'Authentication required',;;
+        description: 'Please log in to save talents to your favorites',;;
         variant: 'destructive',;
       });
-      const returnTo: unknown unknown = encodeURIComponent(router.asPath);
+      const returnTo: unknown = encodeURIComponent(router.asPath);
       router.push(`/auth/login?returnTo=${returnTo}`);
       return;
-    };
+    };'
 ;
-    const isSaved: unknown unknown = savedTalentIds.includes(talent.id);
-;
-    try {;'
+    const isSaved: unknown = savedTalentIds.includes(talent.id);
+;'
+    try {;;
       if (!supabase) throw new Error('Supabase client not initialized');
       if (isSaved) {;
-        // Remove from saved_talents;
-        const { _error } catch (error) {}= await supabase;'
-          .from('saved_talents');
-          .delete();'
-          .eq('user_id', userDetails.id);'
+        // Remove from saved_talents;'
+        const { _error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;;
+          .from('saved_talents');'
+          .delete();;
+          .eq('user_id', userDetails.id);;
           .eq('talent_id', talent.id);
 ;
         if (error) throw error;
-;
+;'
         setSavedTalents((prev) => prev.filter((t) => t.id !== talent.id));
         setSavedTalentIds((prev) => prev.filter((id) => id !== talent.id));
-;
-        toast({;'
-          title: 'Removed from favorites',;'
-          description: "`${talent.full_name"} has been removed from your favorites`,;
-        });
-      } else {;
-        // Add to saved_talents;"
-        const { _error } = await supabase.from('saved_talents').insert({;'
-          user_id: "userDetails.id",;"
+;'
+        toast({;;
+          title: 'Removed from favorites',;;
+          description: "`${talent.full_name"} has been removed from your favorites`,;";"
+        });";";"
+      } else {;";";";"
+        // Add to saved_talents;";";";";"
+        const { _error } = await supabase.from('saved_talents').insert({;;
+          user_id: "userDetails.id",;";";";";"
           talent_id: "talent.id",;
         });
 ;
         if (error) throw error;
-;
-        setSavedTalents((prev) => [...prev, talent]);
-        setSavedTalentIds((prev) => [...prev, talent.id]);
-;
-        toast({;"
-          title: 'Added to favorites',;'
-          description: "`${talent.full_name"} has been added to your favorites`,;
-        });
-      };
-    } catch {;"
-      logErrorToProduction('Error toggling saved talent:', { data: "error "});
-      showApiError(;
-        error,;"
+;"
+        setSavedTalents((prev) => [...prev, talent]);";"
+        setSavedTalentIds((prev) => [...prev, talent.id]);";";"
+;";";";"
+        toast({;";";";";"
+          title: 'Added to favorites',;;
+          description: "`${talent.full_name"} has been added to your favorites`,;";"
+        });";";"
+      };";";";"
+    } catch {;";";";";"
+      logErrorToProduction('Error toggling saved talent:', { data: "error "});";";"
+      showApiError(;";";";"
+        error,;";";";";"
         'There was a problem updating your favorites. Please try again.',;
         () => toggleSaveTalent(talent), // Pass a function that calls toggleSaveTalent with the current talent;
       );
@@ -143,7 +143,7 @@ export function useSavedTalents(): unknown {) {;
   };
 ;
   // Check if talent is saved;
-  const isTalentSaved: unknown unknown = (_talentId: string) => {;
+  const isTalentSaved: unknown = (_talentId: string) => {;
     return savedTalentIds.includes(talentId);
   };
 ;
@@ -151,8 +151,12 @@ export function useSavedTalents(): unknown {) {;
     savedTalents,;
     savedTalentIds,;
     isLoading,;
-    toggleSaveTalent,;
+    toggleSaveTalent,;'
     isTalentSaved,;
   };
 };
-'
+;
+};'
+}
+}'
+}'

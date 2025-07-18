@@ -1,2 +1,2 @@
-export { default } from '../../src/pages/FounderCoursePage';
-'
+export { default } from '../../src/pages/FounderCoursePage';';';';'
+'''''

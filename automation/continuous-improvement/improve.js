@@ -133,8 +133,14 @@ class ZionImprover {
     }
 
     for (const change of suggestion.changes) {
-      if (!change.action || !change.target) {
-        logger.error('Each change must have action and target');
+      if (!change.action) {
+        logger.error('Each change must have action');
+        return false;
+      }
+      
+      // For 'add' action, we don't need target
+      if (change.action !== 'add' && !change.target && !change.file) {
+        logger.error('Each change must have target or file (except for add action)');
         return false;
       }
     }

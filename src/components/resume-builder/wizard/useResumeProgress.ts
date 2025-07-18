@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';'
-import type { Resume } from '@/types/resume';
+import { useState, useEffect } from 'react
+import type { Resume } from '@/types/resume;
 ;
-export const useResumeProgress: unknown unknown = (_resume: Resume | null) => {;
+export const useResumeProgress: unknown = (_resume: Resume | null) => {;
   const [progress, setProgress] = useState(0);
 ;
   useEffect(() => {;
@@ -36,10 +36,10 @@ export const useResumeProgress: unknown unknown = (_resume: Resume | null) => {;
       completed += 1;
     };
 ;
-    const progressPercentage: unknown unknown = (completed / 5) * 100;
+    const progressPercentage: unknown = (completed / 5) * 100;
     setProgress(progressPercentage);
-  }, [resume]);
+  }, [resume]);'
 ;
   return progress;
-};
-'
+};'
+'''''

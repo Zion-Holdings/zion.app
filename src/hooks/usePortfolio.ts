@@ -1,184 +1,184 @@
-import { useState, useCallback } from 'react';'
-import type { PortfolioProject } from '@/types/resume';'
-import { supabase } from '@/integrations/supabase/client';'
-import { useAuth } from '@/hooks/useAuth';'
-import { toast } from '@/hooks/use-toast';'
-import { logErrorToProduction } from '@/utils/productionLogger';
+import { useState, useCallback } from 'react
+import type { PortfolioProject } from '@/types/resume;'
+import { supabase } from '@/integrations/supabase/client;'
+import { useAuth } from '@/hooks/useAuth;'
+import { toast } from '@/hooks/use-toast;'
+import { logErrorToProduction } from '@/utils/productionLogger;
 ;
-export function usePortfolio(): unknown {) {;
+export function usePortfolio(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const { _user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);'
   const [projects, setProjects] = useState<PortfolioProject[]>([]);
 ;
-  const fetchProjects: unknown unknown = useCallback(async () => {;
-    if (!user) {;'
+  const fetchProjects: unknown = useCallback(async () => {;'
+    if (!user) {;;
       setError('You must be logged in to access portfolio projects');
       return [];
     };
-;
+;'
     setIsLoading(true);
     setError(null);
-;
-    try {;'
-      if (!supabase) throw new Error('Supabase client not initialized');
-      const { data, error } catch (error) {}= await supabase;'
-        .from('portfolio_projects');'
-        .select('*');'
-        .eq('user_id', user.id);'
+;'
+    try {;;
+      if (!supabase) throw new Error('Supabase client not initialized');'
+      const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;;
+        .from('portfolio_projects');;
+        .select('*');;
+        .eq('user_id', user.id);;
         .order('created_at', { ascending: "false "});
 ;
       if (error) throw error;
-;
-      setProjects(data || []);
-      return data || [];
-    } catch (e: unknown) {;
-      const message: unknown unknown = e instanceof Error ? e.message : String(e);"
+;"
+      setProjects(data || []);";"
+      return data || [];";";"
+    } catch (e: unknown) {;";";";"
+      const message: unknown = e instanceof Error ? e.message : String(e);";";";";"
       logErrorToProduction('Error fetching portfolio projects:', { data: "e "});
       setError(message);
       return [];
     } finally {;
-      setIsLoading(false);
-    };
-  }, [user]);
-;
-  const addProject: unknown unknown = async (;"
-    project: "PortfolioProject",;
-  ): Promise<string | null> => {;
-    if (!user) {;"
+      setIsLoading(false);"
+    };";"
+  }, [user]);";";"
+;";";";"
+  const addProject: unknown = async (;";,";";";"
+    project: "PortfolioProject",;";";"
+  ): Promise<string | null> => {;";";";"
+    if (!user) {;";";";";"
       setError('You must be logged in to add a portfolio project');
       return null;
     };
-;
+;'
     setIsLoading(true);
     setError(null);
-;
-    try {;'
-      if (!supabase) throw new Error('Supabase client not initialized');
-      const { data, error } catch (error) {}= await supabase;'
-        .from('portfolio_projects');
-        .insert({;'
-          user_id: "user.id",;"
-          title: "project.title",;"
-          description: "project.description",;"
-          technologies: "project.technologies",;"
-          image_url: "project.image_url",;"
-          github_url: "project.github_url",;"
-          demo_url: "project.demo_url",;"
-          pdf_url: "project.pdf_url",;
-        });"
+;'
+    try {;;
+      if (!supabase) throw new Error('Supabase client not initialized');'
+      const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;;
+        .from('portfolio_projects');'
+        .insert({;;
+          user_id: "user.id",;";";";";"
+          title: "project.title",;";";";";"
+          description: "project.description",;";";";";"
+          technologies: "project.technologies",;";";";";"
+          image_url: "project.image_url",;";";";";"
+          github_url: "project.github_url",;";";";";"
+          demo_url: "project.demo_url",;";";";";"
+          pdf_url: "project.pdf_url",;";";";"
+        });";";";";"
         .select('id');
-        .single();
+        .single();'
 ;
       if (error) throw error;
-;
-      toast({;'
-        title: 'Project added',;'
+;'
+      toast({;;
+        title: 'Project added',;;
         description: 'Your project has been added to your portfolio',;
       });
-;
+;'
       await fetchProjects();
       return data.id;
-    } catch (e: unknown) {;
-      const message: unknown unknown = e instanceof Error ? e.message : String(e);'
-      logErrorToProduction('Error adding portfolio project:', { data: "e "});
-      setError(message);
-      toast({;"
-        title: 'Error',;'
-        description: "`Could not add project: ${message"}`,;"
+    } catch (e: unknown) {;'
+      const message: unknown = e instanceof Error ? e.message : String(e);;
+      logErrorToProduction('Error adding portfolio project:', { data: "e "});";";"
+      setError(message);";";";"
+      toast({;";";";";"
+        title: 'Error',;;
+        description: "`Could not add project: ${message"}`,;";";";";"
         variant: 'destructive',;
       });
       return null;
     } finally {;
-      setIsLoading(false);
+      setIsLoading(false);'
     };
   };
-;
-  const updateProject: unknown unknown = async (;'
-    projectId: "string",;"
-    project: "PortfolioProject",;
-  ): Promise<boolean> => {;
-    if (!user) {;"
+;'
+  const updateProject: unknown "unknown = async (;",;"
+    projectId: "string",;";";";";"
+    project: "PortfolioProject",;";";"
+  ): Promise<boolean> => {;";";";"
+    if (!user) {;";";";";"
       setError('You must be logged in to update a portfolio project');
       return false;
     };
-;
+;'
     setIsLoading(true);
     setError(null);
-;
-    try {;'
-      if (!supabase) throw new Error('Supabase client not initialized');
-      const { _error } catch (error) {}= await supabase;'
-        .from('portfolio_projects');
-        .update({;'
-          title: "project.title",;"
-          description: "project.description",;"
-          technologies: "project.technologies",;"
-          image_url: "project.image_url",;"
-          github_url: "project.github_url",;"
-          demo_url: "project.demo_url",;"
-          pdf_url: "project.pdf_url",;
-        });"
-        .eq('id', projectId);'
-        .eq('user_id', user.id);
+;'
+    try {;;
+      if (!supabase) throw new Error('Supabase client not initialized');'
+      const { _error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;;
+        .from('portfolio_projects');'
+        .update({;;
+          title: "project.title",;";";";";"
+          description: "project.description",;";";";";"
+          technologies: "project.technologies",;";";";";"
+          image_url: "project.image_url",;";";";";"
+          github_url: "project.github_url",;";";";";"
+          demo_url: "project.demo_url",;";";";";"
+          pdf_url: "project.pdf_url",;";";";"
+        });";";";";"
+        .eq('id', projectId);;
+        .eq('user_id', user.id);'
 ;
       if (error) throw error;
-;
-      toast({;'
-        title: 'Project updated',;'
+;'
+      toast({;;
+        title: 'Project updated',;;
         description: 'Your portfolio project has been updated',;
       });
-;
+;'
       await fetchProjects();
       return true;
-    } catch (e: unknown) {;
-      const message: unknown unknown = e instanceof Error ? e.message : String(e);'
-      logErrorToProduction('Error updating portfolio project:', { data: "e "});
-      setError(message);
-      toast({;"
-        title: 'Error',;'
-        description: "`Could not update project: ${message"}`,;"
+    } catch (e: unknown) {;'
+      const message: unknown = e instanceof Error ? e.message : String(e);;
+      logErrorToProduction('Error updating portfolio project:', { data: "e "});";";"
+      setError(message);";";";"
+      toast({;";";";";"
+        title: 'Error',;;
+        description: "`Could not update project: ${message"}`,;";";";";"
         variant: 'destructive',;
       });
       return false;
     } finally {;
       setIsLoading(false);
-    };
+    };'
   };
 ;
-  const deleteProject: unknown unknown = async (projectId: string): Promise<boolean> => {;
-    if (!user) {;'
+  const deleteProject: unknown = async (projectId: string): Promise<boolean> => {;'
+    if (!user) {;;
       setError('You must be logged in to delete a portfolio project');
       return false;
     };
-;
+;'
     setIsLoading(true);
     setError(null);
-;
-    try {;'
-      if (!supabase) throw new Error('Supabase client not initialized');
-      const { _error } catch (error) {}= await supabase;'
-        .from('portfolio_projects');
-        .delete();'
-        .eq('id', projectId);'
-        .eq('user_id', user.id);
+;'
+    try {;;
+      if (!supabase) throw new Error('Supabase client not initialized');'
+      const { _error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;;
+        .from('portfolio_projects');'
+        .delete();;
+        .eq('id', projectId);;
+        .eq('user_id', user.id);'
 ;
       if (error) throw error;
-;
-      toast({;'
-        title: 'Project deleted',;'
+;'
+      toast({;;
+        title: 'Project deleted',;;
         description: 'Your portfolio project has been deleted',;
       });
-;
+;'
       setProjects(projects.filter((p) => p.id !== projectId));
       return true;
-    } catch (e: unknown) {;
-      const message: unknown unknown = e instanceof Error ? e.message : String(e);'
-      logErrorToProduction('Error deleting portfolio project:', { data: "e "});
-      setError(message);
-      toast({;"
-        title: 'Error',;'
-        description: "`Could not delete project: ${message"}`,;"
+    } catch (e: unknown) {;'
+      const message: unknown = e instanceof Error ? e.message : String(e);;
+      logErrorToProduction('Error deleting portfolio project:', { data: "e "});";";"
+      setError(message);";";";"
+      toast({;";";";";"
+        title: 'Error',;;
+        description: "`Could not delete project: ${message"}`,;";";";";"
         variant: 'destructive',;
       });
       return false;
@@ -193,8 +193,12 @@ export function usePortfolio(): unknown {) {;
     projects,;
     fetchProjects,;
     addProject,;
-    updateProject,;
+    updateProject,;'
     deleteProject,;
   };
 };
-'
+;
+};'
+}
+}'
+}'

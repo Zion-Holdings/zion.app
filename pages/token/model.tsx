@@ -1,2 +1,2 @@
-export { default } from '@/pages/TokenSimulator';
-'
+export { default } from '@/pages/TokenSimulator';';';';'
+'''''

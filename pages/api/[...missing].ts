@@ -1,6 +1,10 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-;'
-export default function handler(): unknown {req: "NextApiRequest", res: NextApiResponse) {;"
-  res.status(404).json({ error: 'API route not found' });
-};
-'
+import type { NextApiRequest, NextApiResponse } from 'next';';';';'
+;';';';';'
+export default function handler(): unknown {): unknown {): unknown {): unknown {): unknown {req: "NextApiRequest", res: NextApiResponse) {;";";";";"
+  res.status(404).json({ error: 'API route not found' });';';'
+};';';';'
+';';';'
+}';';'
+}';'
+}'
+}'
