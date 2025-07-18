@@ -4,7 +4,7 @@
 require('dotenv').config();
 const axios = require('axios');
 const fs = require('fs').promises;
-const _path = require('path');
+const path = require('path');
 
 class SystemDiagnostic {
   constructor() {

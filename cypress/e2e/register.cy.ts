@@ -1,5 +1,5 @@
 
-async function registerUser(userData) {
+async function _registerUser(userData) {
   // Stub implementation for testing
   return { success: true, user: userData };
 }

@@ -2,7 +2,7 @@
 const { App } = require('@slack/bolt');
 const axios = require('axios');
 const fs = require('fs').promises;
-const _path = require('path');
+const path = require('path');
 const { exec } = require('child_process');
 const { promisify } = require('util');
 
