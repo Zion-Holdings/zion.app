@@ -38,7 +38,7 @@ if (!ISSUE_TITLE) printErrorAndExit('Missing ISSUE_TITLE environment variable');
 let REPO_CONTEXT;
 try {
   REPO_CONTEXT = JSON.parse(REPO_CONTEXT_JSON);
-} catch (_e) {
+} catch {
   printErrorAndExit('Failed to parse REPO_CONTEXT_JSON', { rawValue: REPO_CONTEXT_JSON, error: e.message });
 }
 
@@ -46,7 +46,7 @@ let ISSUE_LABELS = [];
 if (ISSUE_LABELS_JSON) {
   try {
     ISSUE_LABELS = JSON.parse(ISSUE_LABELS_JSON);
-  } catch (_e) {
+  } catch {
     printErrorAndExit('Failed to parse ISSUE_LABELS_JSON', { rawValue: ISSUE_LABELS_JSON, error: e.message });
   }
 }
@@ -141,7 +141,7 @@ async function sendPromptToOpenAI(promptMessage) {
       let apiError = errorText;
       try {
         apiError = JSON.parse(errorText);
-      } catch (_e) { /* ignore */ }
+      } catch { /* ignore */ }
       printErrorAndExit(`OpenAI API error: ${response.status} ${response.statusText}`, { errorDetails: apiError });
     }
     const data = await response.json();

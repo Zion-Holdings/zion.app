@@ -68,7 +68,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         try {
           const fileContent = fs.readFileSync(file, 'utf8');
           ledger = JSON.parse(String(fileContent));
-        } catch (_readError) {
+        } catch {
           // Log the error for debugging but continue with empty ledger
           logErrorToProduction('Failed to read points file:', { data: readError });
         }

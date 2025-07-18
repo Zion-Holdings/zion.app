@@ -2,7 +2,7 @@
 
 const { _execSync } = require('child_process');
 const fs = require('fs');
-const path = require('path');
+const _path = require('path');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const GIT_BRANCH_NAME = 'auto/fix-hourly';

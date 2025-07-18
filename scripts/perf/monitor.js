@@ -1,6 +1,6 @@
 const cron = require('node-cron');
 const fs = require('fs');
-const path = require('path');
+const _path = require('path');
 const { _exec } = require('child_process');
 
 const BASE_URL = process.env.BACKEND_BASE_URL || 'http://localhost:3001';

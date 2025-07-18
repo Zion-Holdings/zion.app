@@ -27,7 +27,7 @@ export const cleanupAuthState = () => {
         safeStorage.removeItem(key);
       }
     });
-  } catch (_e) {
+  } catch {
     logWarn('Storage access error:', { data:  { data:  e } });
   }
   
@@ -38,7 +38,7 @@ export const cleanupAuthState = () => {
         safeSessionStorage.removeItem(key);
       }
     });
-  } catch (_e) {
+  } catch {
     logWarn('Storage access error:', { data:  { data:  e } });
   }
 };

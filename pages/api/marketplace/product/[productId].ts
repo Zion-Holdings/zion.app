@@ -66,7 +66,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
 
     res.status(200).json(result);
     return;
-  } catch (_e) {
+  } catch {
     logErrorToProduction('Error fetching product ${productId}:', { data:  e });
     const message =
       e instanceof Error && e.message.includes('timed out')

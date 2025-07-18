@@ -61,7 +61,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
             logInfo(`Successfully fetched ${dbCategories.length} categories from DB`);
             return dbCategories;
           }
-        } catch (_dbError) {
+        } catch {
           logWarn('Database query failed, using fallback:', { data:  { data: dbError } });
         }
         // Fallback to static data if DB fails

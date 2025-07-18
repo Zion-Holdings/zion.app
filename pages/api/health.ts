@@ -132,7 +132,7 @@ async function performHealthChecks(): Promise<SystemHealth['checks']> {
     // In serverless environments like Netlify, disk checks are limited
     // We'll just check if we can write to tmp directory
     const fs = await import('fs');
-    const path = await import('path');
+    const _path = await import('path');
     
     const tmpDir = process.env['TMPDIR'] || '/tmp';
     const testFile = path.join(tmpDir, 'health-check-test');

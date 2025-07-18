@@ -161,7 +161,7 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
         // Prevent this generic error toast from persisting too long if it's a background issue
         autoHideDuration: 5000,
       });
-    } catch (_e) {
+    } catch {
       logErrorToProduction(e instanceof Error ? e.message : String(e), e instanceof Error ? e : undefined, { context: 'Error in enqueueSnackbar' });
       // noop if snackbar itself fails
     }

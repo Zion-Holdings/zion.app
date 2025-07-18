@@ -101,7 +101,7 @@ serve(async (req) => {
     let enhancedProfile: EnhancedProfile;
     try {
       enhancedProfile = JSON.parse(responseContent);
-    } catch (_e) {
+    } catch {
       console.error("Error parsing OpenAI response:", e);
       throw new Error("Failed to parse the generated content");
     }

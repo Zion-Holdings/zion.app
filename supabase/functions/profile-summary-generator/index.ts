@@ -82,7 +82,7 @@ serve(async (req) => {
       } else {
         throw new Error("Could not extract JSON from response");
       }
-    } catch (_e) {
+    } catch {
       console.error("Error parsing OpenAI response:", e);
       
       // Fallback parsing approach if the standard parsing fails

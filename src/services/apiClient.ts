@@ -150,7 +150,7 @@ apiClient.interceptors.response.use(
       try {
         if (!supabase) throw new Error('Supabase client not initialized');
         await supabase.auth.signOut({ scope: 'global' });
-      } catch (_e) {
+      } catch {
         logErrorToProduction('Failed to logout after 401', { data: e });
       }
       if (typeof window !== 'undefined') {

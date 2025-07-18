@@ -57,7 +57,7 @@ export default async function handler(
             timestamp: Date.now()
           })
         });
-      } catch (_analyticsError) {
+      } catch {
         logError('Failed to send to analytics service:', { data: analyticsError });
         // Don't fail the request if analytics fails
       }

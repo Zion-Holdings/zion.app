@@ -33,8 +33,8 @@ async function handler(req, res) {
 
     res.statusCode = 200;
     res.json({ success: true });
-  } catch {
-    console.error('Quote API error:', _err);
+  } catch (err) {
+    console.error('Quote API error:', err);
     res.statusCode = 500;
     res.json({ error: 'Quote submission failed' });
   }

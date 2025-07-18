@@ -16,7 +16,7 @@ export function formatDate(date: Date | string | undefined): string {
       day: 'numeric',
       year: 'numeric',
     }).format(d);
-  } catch (_e) {
+  } catch {
     logErrorToProduction('Error formatting date:', { data:  e });
     return '-';
   }

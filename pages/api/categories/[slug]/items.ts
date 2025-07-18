@@ -123,7 +123,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
         logInfo('Database returned empty results, using fallback data for better UX');
         usingFallback = true;
       }
-    } catch (_dbError) {
+    } catch {
       logWarn('Database query failed or timed out, using fallback data:', { data:  { data: dbError } });
       usingFallback = true;
     }
@@ -165,7 +165,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
         extra: { slug, path: request['url'] },
         user: (request as { user?: { id: string; email: string } }).user ? { id: (request as { user?: { id: string; email: string } }).user!.id, email: (request as { user?: { id: string; email: string } }).user!.email } : undefined,
       });
-    } catch (_sentryError) {
+    } catch {
       logErrorToProduction('Sentry capture failed:', { data: sentryError });
     }
     
@@ -177,7 +177,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
   } finally {
     try {
       await prisma.$disconnect();
-    } catch (_disconnectError) {
+    } catch {
       logErrorToProduction('Prisma disconnect error:', { data: disconnectError });
     }
   }

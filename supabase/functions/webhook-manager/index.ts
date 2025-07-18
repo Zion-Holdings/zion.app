@@ -54,7 +54,7 @@ serve(async (req) => {
 
     // Parse URL to determine action
     const url = new URL(req.url);
-    const path = url.pathname.split('/').pop();
+    const _path = url.pathname.split('/').pop();
 
     // Handle different actions
     if (req.method === 'POST') {

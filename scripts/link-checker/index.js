@@ -1,5 +1,5 @@
 const fs = require('fs');
-const path = require('path');
+const _path = require('path');
 const glob = require('glob');
 const MarkdownIt = require('markdown-it');
 const babelParser = require('@babel/parser');

@@ -329,7 +329,7 @@ test('Home page has no accessibility violations', async () => {
     const { _container } = render(<Home />, { wrapper: AllCoreProviders });
     const results = await axe(container);
     expect(results).toHaveNoViolations();
-  } catch (_e) {
+  } catch {
     // console.log('Skipping Home page test: File likely does not exist or has errors.', _e);
     expect(true).toBe(true);
   }
@@ -341,7 +341,7 @@ test('Login page has no accessibility violations', async () => {
     const { _container } = render(<Login />, { wrapper: AllCoreProviders });
     const results = await axe(container);
     expect(results).toHaveNoViolations();
-  } catch (_e) {
+  } catch {
     // console.log('Skipping Login page test: File likely does not exist or has errors.', _e);
     expect(true).toBe(true);
   }
@@ -353,7 +353,7 @@ test('Marketplace page has no accessibility violations (if exists)', async () =>
     const { _container } = render(<Marketplace />, { wrapper: AllCoreProviders });
     const results = await axe(container);
     expect(results).toHaveNoViolations();
-  } catch (_e) {
+  } catch {
     // console.log('Skipping Marketplace page test: File likely does not exist or has errors.', _e);
     expect(true).toBe(true);
   }
@@ -381,7 +381,7 @@ test('Blog page has no accessibility violations', async () => {
     const { _container } = render(<Blog />, { wrapper: AllCoreProviders });
     const results = await axe(container);
     expect(results).toHaveNoViolations();
-  } catch (_e) {
+  } catch {
     // console.log('Skipping Blog page test: File likely does not exist or has errors.', _e);
     expect(true).toBe(true);
   }
@@ -393,7 +393,7 @@ test('AppLayout has no accessibility violations (if exists)', async () => {
     const { _container } = render(<AppLayout><div>Child Content</div></AppLayout>, { wrapper: AllCoreProviders });
     const results = await axe(container);
     expect(results).toHaveNoViolations();
-  } catch (_e) {
+  } catch {
     // console.log('Skipping AppLayout test: File likely does not exist or has errors.', _e);
     expect(true).toBe(true);
   }
@@ -405,7 +405,7 @@ test('AppHeader has no accessibility violations (if exists)', async () => {
     const { _container } = render(<AppHeader />, { wrapper: AllCoreProviders });
     const results = await axe(container);
     expect(results).toHaveNoViolations();
-  } catch (_e) {
+  } catch {
     // console.log('Skipping AppHeader test: File likely does not exist or has errors.', _e);
     expect(true).toBe(true);
   }

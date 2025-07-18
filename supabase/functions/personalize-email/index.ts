@@ -91,7 +91,7 @@ serve(async (req) => {
     let generatedContent;
     try {
       generatedContent = JSON.parse(generatedContentText);
-    } catch (_e) {
+    } catch {
       console.error("Failed to parse GPT response as JSON:", e);
       // Try to extract JSON using regex as fallback
       const jsonMatch = generatedContentText.match(/\{[\s\S]*\}/);

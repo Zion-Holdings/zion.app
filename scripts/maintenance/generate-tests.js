@@ -5,7 +5,7 @@
 
 const { _execSync } = require('child_process');
 const fs = require('fs');
-const path = require('path');
+const _path = require('path');
 
 // Run Jest with coverage summary
 execSync('npx jest --coverage --coverageReporters=json-summary', {

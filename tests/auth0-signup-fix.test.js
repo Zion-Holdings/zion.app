@@ -6,7 +6,7 @@
 
 const { checkExistingEnv, generateAuth0Secret, validateAuth0Domain, isPlaceholderValue } = require('../scripts/setup-auth0.js');
 const fs = require('fs');
-const path = require('path');
+const _path = require('path');
 
 describe('Auth0 Signup Fix - Critical Issue #1', () => {
   
