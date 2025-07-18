@@ -727,6 +727,61 @@ class AutomatedImprovementPipeline {
   }
 
   /**
+   * Start auto-fix system for Next.js issues
+   */
+  startAutoFixSystem() {
+    console.log('🔧 Starting auto-fix system...');
+    
+    setInterval(async () => {
+      try {
+        await this.runAutoFix();
+      } catch (error) {
+        console.error('❌ Error in auto-fix system:', error);
+      }
+    }, this.autoFixInterval);
+  }
+
+  /**
+   * Run automated fixes for Next.js issues
+   */
+  async runAutoFix() {
+    const now = Date.now();
+    if (now - this.lastAutoFixTime < this.autoFixInterval) {
+      return; // Too soon to run again
+    }
+    
+    console.log('🔧 Running automated Next.js fixes...');
+    
+    try {
+      // Import and run the auto-fix system
+      const AutoFixNextJSIssues = require('./auto-fix-nextjs-issues.cjs');
+      this.autoFixSystem = new AutoFixNextJSIssues();
+      
+      const result = await this.autoFixSystem.run();
+      
+      if (result.success) {
+        console.log('✅ Auto-fix completed successfully');
+        this.lastAutoFixTime = now;
+        
+        // Queue a restart if fixes were applied
+        if (result.fixes.length > 0) {
+          await this.queueImprovement('system', {
+            type: 'system_restart',
+            priority: 'medium',
+            data: result,
+            reason: 'Next.js fixes applied, restart recommended'
+          });
+        }
+      } else {
+        console.log('⚠️ Auto-fix completed with some issues remaining');
+      }
+      
+    } catch (error) {
+      console.error('❌ Error running auto-fix:', error);
+    }
+  }
+
+  /**
    * Check if deployment is needed
    */
   async shouldDeploy() {
