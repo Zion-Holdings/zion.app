@@ -2,7 +2,10 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { logErrorToProduction } from './productionLogger';
 
 export function withErrorLogging<T = any>(
-  handler: (req: NextApiRequest, res: NextApiResponse<T>) => Promise<void> | void
+  handler: (
+    req: NextApiRequest,
+    res: NextApiResponse<T>,
+  ) => Promise<void> | void,
 ) {
   return async (req: NextApiRequest, res: NextApiResponse<T>) => {
     try {
