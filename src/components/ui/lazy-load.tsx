@@ -1,19 +1,19 @@
-import { useEffect, useState, useRef } from 'react';
-import type { ReactNode } from 'react';
-import { cn } from '@/lib/utils;'
-import Skeleton from '@/components/ui/skeleton;
+import { useEffect, useState, useRef } from 'react';';
+import type { ReactNode } from 'react';';
+import { cn } from '@/lib/utils;'';
+import Skeleton from '@/components/ui/skeleton;'
 ;
 interface LazyLoadProps {;
   height?: string | number;
   width?: string | number;
   children: ReactNode;
-  loadingComponent?: ReactNode;'
+  loadingComponent?: ReactNode;''
   className?: string;
 };
-;'
+;'';
 export function LazyLoad(): unknown {): unknown {): unknown {): unknown {): unknown {{;;
-  height = '200px',;;
-  width = '100%',;
+  height = '200px',;;'
+  width = '100%',;'
   children,;
   loadingComponent,;
   className,;
@@ -28,12 +28,12 @@ export function LazyLoad(): unknown {): unknown {): unknown {): unknown {): unkn
 ;
     const observer: unknown = new IntersectionObserver(;
       ([entry]) => {;
-        if (entry && entry.isIntersecting) {;'
+        if (entry && entry.isIntersecting) {;''
           setIsVisible(true);
           observer.disconnect();
-        };'
+        };''
       },;;
-      { threshold: "0.1 "},;
+      { threshold: "0.1 "},;"
     );
 ;
     observer.observe(container);
@@ -53,21 +53,21 @@ export function LazyLoad(): unknown {): unknown {): unknown {): unknown {): unkn
       return () => clearTimeout(timer);
     };
     return undefined;
-  }, [isVisible]);"
-;";"
-  const defaultLoadingComponent: unknown = (;";";"
-    <Skeleton;";";";"
-      style={{ height, width }};";";";";"
-      className="rounded-md bg-zion-blue-light/20";
+  }, [isVisible]);""
+;";""
+  const defaultLoadingComponent: unknown = (;";";""
+    <Skeleton;";";";""
+      style={{ height, width }};";";";";""
+      className="rounded-md bg-zion-blue-light/20";"
     />;
   );
-;"
-  return (;";"
-    <div;";";"
-      ref={containerRef};";";";"
-      className={cn(;";";";";"
-        'transition-opacity duration-500',;;
-        isLoaded ? 'opacity-100' : 'opacity-0',;
+;""
+  return (;";""
+    <div;";";""
+      ref={containerRef};";";";""
+      className={cn(;";";";";""
+        'transition-opacity duration-500',;;'
+        isLoaded ? 'opacity-100' : 'opacity-0',;'
         className,;
       )};
     >;
@@ -78,12 +78,12 @@ export function LazyLoad(): unknown {): unknown {): unknown {): unknown {): unkn
         </>;
       ) : (;
         loadingComponent || defaultLoadingComponent;
-      )};'
+      )};''
     </div>;
   );
 };
 ;
-};'
+};''
 }
-}'
-}'
+}''
+}''

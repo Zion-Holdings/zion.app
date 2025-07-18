@@ -1,25 +1,25 @@
-const { withSentry } = require('./withSentry.cjs');
+const { withSentry } = require('./withSentry.cjs');'
 
 async function handler(req, res) {
-  if (req.method !== 'POST') {
+  if (req.method !== 'POST') {'
     res.statusCode = 405;
-    res.setHeader('Allow', 'POST');
-    res.end('Method Not Allowed');
+    res.setHeader('Allow', 'POST');'
+    res.end('Method Not Allowed');'
     return;
   }
 
   const { name, email, phone, company, location, details } = req.body || {};
   if (!name || !email || !location) {
     res.statusCode = 400;
-    res.json({ error: 'Missing required fields' });
+    res.json({ error: 'Missing required fields' });'
     return;
   }
 
   try {
-    const response = await fetch('/functions/v1/onsite-service-request', {
-      method: 'POST',
+    const response = await fetch('/functions/v1/onsite-service-request', {'
+      method: 'POST','
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json''
       },
       body: JSON.stringify({ name, email, phone, company, location, details })
     });
@@ -28,9 +28,9 @@ async function handler(req, res) {
     res.statusCode = response.status;
     res.json(data);
   } catch (err) {
-    console.error('Onsite request API error:', err);
+    console.error('Onsite request API error:', err);'
     res.statusCode = 500;
-    res.json({ error: 'Failed to process request' });
+    res.json({ error: 'Failed to process request' });'
   }
 }
 

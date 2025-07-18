@@ -16,7 +16,7 @@ export {;
   Move,;
   RotateCcw,;
   LayoutGrid,;
-} from 'lucide-react;
+} from 'lucide-react;'
 ;
 // Utility Icons;
 export {;
@@ -29,12 +29,12 @@ export {;
   ZoomIn,;
   ZoomOut,;
   Eye,;
-  EyeOff,;'
+  EyeOff,;''
   Sun,;
   Moon,;
-  Monitor,;'
+  Monitor,;''
   PowerOff,;;
-} from 'lucide-react;
+} from 'lucide-react;'
 ;
 // Status Icons;
 export {;
@@ -48,12 +48,12 @@ export {;
   Loader2,;
   Clock,;
   Calendar,;
-  Bell,;'
+  Bell,;''
   Ban,;
   ShieldAlert,;
-  HelpCircle,;'
+  HelpCircle,;''
   ShieldCheck,;;
-} from 'lucide-react;
+} from 'lucide-react;'
 ;
 // Media Icons;
 export {;
@@ -62,12 +62,12 @@ export {;
   Volume2,;
   VolumeX,;
   Image,;
-  Video,;'
+  Video,;''
   Camera,;
   Mic,;
-  MicOff,;'
+  MicOff,;''
   PlayCircle,;;
-} from 'lucide-react;
+} from 'lucide-react;'
 ;
 // File & Document Icons;
 export {;
@@ -78,12 +78,12 @@ export {;
   FileAudio,;
   FilePlus,;
   Folder,;
-  FolderOpen,;'
+  FolderOpen,;''
   Save,;
   Clipboard,;
-  PaperclipIcon,;'
+  PaperclipIcon,;''
   Archive,;;
-} from 'lucide-react;
+} from 'lucide-react;'
 ;
 // Social & User Icons;
 export {;
@@ -96,12 +96,12 @@ export {;
   LogIn,;
   UserCheck,;
   Shield,;
-  Lock,;'
+  Lock,;''
   Unlock,;
   LockKeyhole,;
-  Key,;'
+  Key,;''
   UserIcon,;;
-} from 'lucide-react;
+} from 'lucide-react;'
 ;
 // Business & Finance Icons;
 export {;
@@ -123,15 +123,15 @@ export {;
   Badge,;
   BadgeCheck,;
   Crown,;
-  Medal,;'
+  Medal,;''
   Trophy,;
   Handshake,;
-  ShoppingCart,;'
+  ShoppingCart,;''
   BadgePlus,;;
-} from 'lucide-react;
-;'
+} from 'lucide-react;'
+;''
 // Data Visualization Icons;;
-export { BarChart, LineChart } from 'lucide-react;
+export { BarChart, LineChart } from 'lucide-react;'
 ;
 // Development & Tech Icons;
 export {;
@@ -154,12 +154,12 @@ export {;
   HardDrive,;
   Lightbulb,;
   Webhook,;
-  Network,;'
+  Network,;''
   Recycle,;
   Truck,;
-  Smartphone,;'
+  Smartphone,;''
   Building,;;
-} from 'lucide-react;
+} from 'lucide-react;'
 ;
 // Action Icons;
 export {;
@@ -202,12 +202,12 @@ export {;
   Linkedin,;
   Link as LinkIcon,;
   Megaphone,;
-  Pin,;'
+  Pin,;''
   Instagram,;
   Youtube,;
-  Github,;'
+  Github,;''
   Slack,;;
-} from 'lucide-react;
+} from 'lucide-react;'
 ;
 // Navigation & UI Icons;
 export {;
@@ -229,18 +229,18 @@ export {;
   ArrowDownAZ,;
   ArrowUpZA,;
   Circle,;
-  CircleDot,;'
+  CircleDot,;''
   Dot,;
   GripVertical,;
-  PanelLeft,;'
+  PanelLeft,;''
   ImageIcon,;;
-} from 'lucide-react;
+} from 'lucide-react;'
 ;
-// Export type for icon component props;'
+// Export type for icon component props;'';
 export type IconProps = {;
   size?: number;
-  className?: string;'
+  className?: string;''
   color?: string;;
-  'aria-label'?: string;
-};'
-'''''
+  'aria-label'?: string;'
+};''
+''''''

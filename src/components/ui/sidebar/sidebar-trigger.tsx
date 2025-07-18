@@ -1,34 +1,34 @@
-import React from 'react';
-import * as React from 'react';
-import { PanelLeft } from '@/components/ui/icons;
+import React from 'react';';
+import * as React from 'react';';
+import { PanelLeft } from '@/components/ui/icons;'
 ;;
-import { Button } from '@/components/ui/button;'
-import { cn } from '@/lib/utils;'
-import { useSidebar } from './sidebar-context;
+import { Button } from '@/components/ui/button;'';
+import { cn } from '@/lib/utils;'';
+import { useSidebar } from './sidebar-context;'
 ;
 export const SidebarTrigger: unknown = React.forwardRef<;
   React.ElementRef<typeof Button>,;
   React.ComponentProps<typeof Button>;
 >((props, ref) => {;
-  const { _toggleSidebar } = useSidebar();'
+  const { _toggleSidebar } = useSidebar();''
 ;
   return (;
-    <Button;'
+    <Button;''
       ref={ref};;
-      data-sidebar="trigger";";";";";"
-      variant="ghost";";";";";"
-      size="icon";";";";";"
-      className={cn('h-7 w-7', props.className)};
+      data-sidebar="trigger";";";";";""
+      variant="ghost";";";";";""
+      size="icon";";";";";""
+      className={cn('h-7 w-7', props.className)};'
       onClick={(event) => {;
         props.onClick?.(event);
-        toggleSidebar();'
+        toggleSidebar();''
       }};
       {...props};
-    >;'
+    >;''
       <PanelLeft />;;
-      <span className="sr-only">Toggle Sidebar</span>;";"
-    </Button>;";";"
-  );";";";"
-});";";";";"
-SidebarTrigger.displayName = 'SidebarTrigger;
-'''''
+      <span className="sr-only">Toggle Sidebar</span>;";""
+    </Button>;";";""
+  );";";";""
+});";";";";""
+SidebarTrigger.displayName = 'SidebarTrigger;'
+''''''

@@ -1,70 +1,70 @@
-import React, { useState, useEffect } from 'react;
+import React, { useState, useEffect } from 'react;';
 import {;
   Loader2,;
   AlertTriangle,;
-  RefreshCw,;'
+  RefreshCw,;''
   Wifi,;
   WifiOff,;
-  Clock,;'
+  Clock,;''
   Zap,;;
-} from '@/components/ui/icons;'
-import { motion } from 'framer-motion;
+} from '@/components/ui/icons;'';
+import { motion } from 'framer-motion;'
 ;;
-import { Button } from '@/components/ui/button;'
-import { Card, CardContent } from '@/components/ui/card;'
-import { Badge } from '@/components/ui/badge;'
-import { cn } from '@/lib/utils;
+import { Button } from '@/components/ui/button;'';
+import { Card, CardContent } from '@/components/ui/card;'';
+import { Badge } from '@/components/ui/badge;'';
+import { cn } from '@/lib/utils;'
 ;
-// Enhanced loading spinner with different variants;'
+// Enhanced loading spinner with different variants;''
 interface LoadingSpinnerProps {;;
-  size?: 'sm' | 'md' | 'lg' | 'xl;'
-  variant?: 'default' | 'primary' | 'success' | 'warning' | 'error;
+  size?: 'sm' | 'md' | 'lg' | 'xl;''
+  variant?: 'default' | 'primary' | 'success' | 'warning' | 'error;'
   className?: string;
-  showText?: boolean;'
+  showText?: boolean;''
   text?: string;
 };
-;'
+;'';
 export const LoadingSpinner: unknown React.FC<LoadingSpinnerProps> = ({;;
-  size = 'md',;;
-  variant = 'default',;
-  className,;'
+  size = 'md',;;'
+  variant = 'default',;'
+  className,;''
   showText = false,;;
-  text = 'Loading...',;
-}) => {;'
-  const sizeClasses: unknown "unknown = {;",;"
-    sm: 'h-4 w-4',;;
-    md: 'h-6 w-6',;;
-    lg: 'h-8 w-8',;;
-    xl: 'h-12 w-12',;
+  text = 'Loading...',;'
+}) => {;''
+  const sizeClasses: unknown "unknown = {;",;""
+    sm: 'h-4 w-4',;;'
+    md: 'h-6 w-6',;;'
+    lg: 'h-8 w-8',;;'
+    xl: 'h-12 w-12',;'
   };
-;'
-  const variantClasses: unknown "unknown = {;",;"
-    default: 'text-muted-foreground',;;
-    primary: 'text-primary',;;
-    success: 'text-green-500',;;
-    warning: 'text-yellow-500',;;
-    error: 'text-red-500',;
+;''
+  const variantClasses: unknown "unknown = {;",;""
+    default: 'text-muted-foreground',;;'
+    primary: 'text-primary',;;'
+    success: 'text-green-500',;;'
+    warning: 'text-yellow-500',;;'
+    error: 'text-red-500',;'
   };
-;'
+;''
   return (;;
-    <div className={cn('flex items-center gap-2', className)}>;
-      <Loader2;'
+    <div className={cn('flex items-center gap-2', className)}>;'
+      <Loader2;''
         className={cn(;;
-          'animate-spin',;
-          sizeClasses[size],;'
+          'animate-spin',;'
+          sizeClasses[size],;''
           variantClasses[variant],;
         )};
-      />;'
+      />;''
       {showText && (;;
-        <span className="text-sm text-muted-foreground">{text}</span>;
+        <span className="text-sm text-muted-foreground">{text}</span>;"
       )};
     </div>;
-  );"
-};";"
-;";";"
-// Progressive loading component;";";";"
-interface ProgressiveLoadingProps {;";";";";"
-  steps: "Array<{ id: string; label: string; duration?: number "}>;
+  );""
+};";""
+;";";""
+// Progressive loading component;";";";""
+interface ProgressiveLoadingProps {;";";";";""
+  steps: "Array<{ id: string; label: string; duration?: number "}>;"
   currentStep?: number;
   showProgress?: boolean;
   onComplete?: () => void;
@@ -87,92 +87,92 @@ export const _ProgressiveLoading: unknown React.FC<ProgressiveLoadingProps> = ({
 ;
   useEffect(() => {;
     if (activeStep === steps.length - 1 && onComplete) {;
-      setTimeout(onComplete, 500);"
-    };";"
-  }, [activeStep, steps.length, onComplete]);";";"
-;";";";"
-  return (;";";";";"
-    <div className="space-y-4">;";";";"
-      {showProgress && (;";";";";"
-        <div className="w-full bg-muted rounded-full h-2">;";";";"
-          <motion.div;";";";";"
-            className="bg-primary h-2 rounded-full";";";";";"
-            initial={{ width: "0 "}};";";";";"
-            animate={{ width: "`${progress"}%` }};";";";";"
-            transition={{ duration: "0.3 "}};"
-          />;";"
-        </div>;";";"
-      )};";";";"
-;";";";";"
-      <div className="space-y-2">;"
-        {steps.map((step, index) => (;";"
-          <motion.div;";";"
-            key={step.id};";";";"
-            className={cn(;";";";";"
-              'flex items-center gap-3 p-2 rounded-md',;;
-              index === activeStep ? 'bg-primary/10' : 'opacity-50',;'
+      setTimeout(onComplete, 500);""
+    };";""
+  }, [activeStep, steps.length, onComplete]);";";""
+;";";";""
+  return (;";";";";""
+    <div className="space-y-4">;";";";""
+      {showProgress && (;";";";";""
+        <div className="w-full bg-muted rounded-full h-2">;";";";""
+          <motion.div;";";";";""
+            className="bg-primary h-2 rounded-full";";";";";""
+            initial={{ width: "0 "}};";";";";""
+            animate={{ width: "`${progress"}%` }};";";";";""
+            transition={{ duration: "0.3 "}};""
+          />;";""
+        </div>;";";""
+      )};";";";""
+;";";";";""
+      <div className="space-y-2">;""
+        {steps.map((step, index) => (;";""
+          <motion.div;";";""
+            key={step.id};";";";""
+            className={cn(;";";";";""
+              'flex items-center gap-3 p-2 rounded-md',;;'
+              index === activeStep ? 'bg-primary/10' : 'opacity-50',;''
             )};;
-            initial={{ opacity: "0", x: "-20 "}};";";";";"
-            animate={{ opacity: "index <= activeStep ? 1 : 0.5", x: "0 "}};";";";";"
-            transition={{ delay: "index * 0.1 "}};";";"
-          >;";";";"
-            {index < activeStep ? (;";";";";"
-              <div className="h-4 w-4 rounded-full bg-green-500 flex items-center justify-center">;";";";";"
-                <div className="h-2 w-2 rounded-full bg-white" />;";";"
-              </div>;";";";"
-            ) : index === activeStep ? (;";";";";"
-              <LoadingSpinner size="sm" variant="primary" />;";";";"
-            ) : (;";";";";"
-              <div className="h-4 w-4 rounded-full border-2 border-muted" />;";";";"
-            )};";";";";"
-            <span className="text-sm font-medium">{step.label}</span>;
+            initial={{ opacity: "0", x: "-20 "}};";";";";""
+            animate={{ opacity: "index <= activeStep ? 1 : 0.5", x: "0 "}};";";";";""
+            transition={{ delay: "index * 0.1 "}};";";""
+          >;";";";""
+            {index < activeStep ? (;";";";";""
+              <div className="h-4 w-4 rounded-full bg-green-500 flex items-center justify-center">;";";";";""
+                <div className="h-2 w-2 rounded-full bg-white" />;";";""
+              </div>;";";";""
+            ) : index === activeStep ? (;";";";";""
+              <LoadingSpinner size="sm" variant="primary" />;";";";""
+            ) : (;";";";";""
+              <div className="h-4 w-4 rounded-full border-2 border-muted" />;";";";""
+            )};";";";";""
+            <span className="text-sm font-medium">{step.label}</span>;"
           </motion.div>;
         ))};
       </div>;
     </div>;
   );
-};"
-;";"
-// Enhanced skeleton loader;";";"
-interface SkeletonProps {;";";";"
-  className?: string;";";";";"
-  variant?: 'text' | 'circular' | 'rectangular' | 'card;'
-  animation?: 'pulse' | 'wave' | 'none;
-  lines?: number;'
+};""
+;";""
+// Enhanced skeleton loader;";";""
+interface SkeletonProps {;";";";""
+  className?: string;";";";";""
+  variant?: 'text' | 'circular' | 'rectangular' | 'card;''
+  animation?: 'pulse' | 'wave' | 'none;'
+  lines?: number;''
 };
 ;
-export const Skeleton: unknown React.FC<SkeletonProps> = ({;'
+export const Skeleton: unknown React.FC<SkeletonProps> = ({;''
   className,;;
-  variant = 'rectangular',;;
-  animation = 'pulse',;
-  lines = 1,;'
+  variant = 'rectangular',;;'
+  animation = 'pulse',;'
+  lines = 1,;''
 }) => {;;
-  const baseClasses: unknown = 'bg-muted rounded;
-;'
-  const variantClasses: unknown "unknown = {;",;"
-    text: 'h-4 w-full',;;
-    circular: 'h-12 w-12 rounded-full',;;
-    rectangular: 'h-6 w-full',;;
-    card: 'h-48 w-full',;
+  const baseClasses: unknown = 'bg-muted rounded;'
+;''
+  const variantClasses: unknown "unknown = {;",;""
+    text: 'h-4 w-full',;;'
+    circular: 'h-12 w-12 rounded-full',;;'
+    rectangular: 'h-6 w-full',;;'
+    card: 'h-48 w-full',;'
   };
-;'
-  const animationClasses: unknown "unknown = {;",;"
-    pulse: 'animate-pulse',;;
-    wave: 'animate-bounce',;;
-    none: '',;
-  };'
+;''
+  const animationClasses: unknown "unknown = {;",;""
+    pulse: 'animate-pulse',;;'
+    wave: 'animate-bounce',;;'
+    none: '',;'
+  };''
 ;;
-  if (variant === 'text' && lines > 1) {;'
+  if (variant === 'text' && lines > 1) {;''
     return (;;
-      <div className="space-y-2">;";";";";"
-        {Array.from({ length: "lines "}).map((_, i) => (;
+      <div className="space-y-2">;";";";";""
+        {Array.from({ length: "lines "}).map((_, i) => (;"
           <div;
-            key={i};"
-            className={cn(;";"
-              baseClasses,;";";"
-              variantClasses.text,;";";";"
-              animationClasses[animation],;";";";";"
-              i === lines - 1 ? 'w-3/4' : 'w-full',;
+            key={i};""
+            className={cn(;";""
+              baseClasses,;";";""
+              variantClasses.text,;";";";""
+              animationClasses[animation],;";";";";""
+              i === lines - 1 ? 'w-3/4' : 'w-full',;'
               className,;
             )};
           />;
@@ -194,19 +194,19 @@ export const Skeleton: unknown React.FC<SkeletonProps> = ({;'
 };
 ;
 // Enhanced error state component;
-interface ErrorStateProps {;'
+interface ErrorStateProps {;''
   error?: Error | string | null;
   title?: string;
-  description?: string;'
+  description?: string;''
   action?: {;;
-    label: "string;",;";";";";"
-    onClick: "() => void;";";";"
-  };";";";"
-  secondaryAction?: {;";";";";"
-    label: "string;",;";";";";"
-    onClick: "() => void;";";";";"
-  };";";";";"
-  variant?: 'network' | 'generic' | 'timeout' | 'permission;
+    label: "string;",;";";";";""
+    onClick: "() => void;";";";""
+  };";";";""
+  secondaryAction?: {;";";";";""
+    label: "string;",;";";";";""
+    onClick: "() => void;";";";";""
+  };";";";";""
+  variant?: 'network' | 'generic' | 'timeout' | 'permission;'
   showRetry?: boolean;
   retryCount?: number;
   maxRetries?: number;
@@ -215,12 +215,12 @@ interface ErrorStateProps {;'
 };
 ;
 export const _ErrorState: unknown React.FC<ErrorStateProps> = ({;
-  error,;'
+  error,;''
   title,;
   description,;
-  action,;'
+  action,;''
   secondaryAction,;;
-  variant = 'generic',;
+  variant = 'generic',;'
   showRetry = true,;
   retryCount = 0,;
   maxRetries = 3,;
@@ -228,123 +228,123 @@ export const _ErrorState: unknown React.FC<ErrorStateProps> = ({;
   className,;
 }) => {;
   const [isOnline, setIsOnline] = useState(true);
-;'
+;''
   useEffect(() => {;
     const handleOnline: unknown = () => setIsOnline(true);
-    const handleOffline: unknown = () => setIsOnline(false);'
+    const handleOffline: unknown = () => setIsOnline(false);''
 ;;
-    if (typeof window !== 'undefined') {;'
+    if (typeof window !== 'undefined') {;''
       setIsOnline(navigator.onLine);;
-      window.addEventListener('online', handleOnline);;
-      window.addEventListener('offline', handleOffline);
-;'
+      window.addEventListener('online', handleOnline);;'
+      window.addEventListener('offline', handleOffline);'
+;''
       return () => {;;
-        window.removeEventListener('online', handleOnline);;
-        window.removeEventListener('offline', handleOffline);
+        window.removeEventListener('online', handleOnline);;'
+        window.removeEventListener('offline', handleOffline);'
       };
     };
 ;
-    return undefined;'
+    return undefined;''
   }, []);
 ;
-  const getErrorConfig: unknown = () => {;'
+  const getErrorConfig: unknown = () => {;''
     switch (variant) {;;
-      case 'network':;'
+      case 'network':;''
         return {;;
-          icon: "isOnline ? Wifi : WifiOff",;";";";"
-          title:;";";";";"
-            title || (isOnline ? 'Connection Error' : 'No Internet Connection'),;
+          icon: "isOnline ? Wifi : WifiOff",;";";";""
+          title:;";";";";""
+            title || (isOnline ? 'Connection Error' : 'No Internet Connection'),;'
           description:;
-            description ||;'
+            description ||;''
             (isOnline;;
-              ? 'Unable to connect to our servers. Please check your connection.;'
-              : 'You appear to be offline. Please check your internet connection.'),;;
-          color: 'text-orange-500',;'
+              ? 'Unable to connect to our servers. Please check your connection.;''
+              : 'You appear to be offline. Please check your internet connection.'),;;'
+          color: 'text-orange-500',;''
         };;
-      case 'timeout':;'
+      case 'timeout':;''
         return {;;
-          icon: "Clock",;";";";";"
-          title: title || 'Request Timeout',;
-          description:;'
+          icon: "Clock",;";";";";""
+          title: title || 'Request Timeout',;'
+          description:;''
             description ||;;
-            'The request took too long to complete. Please try again.',;;
-          color: 'text-yellow-500',;'
+            'The request took too long to complete. Please try again.',;;'
+          color: 'text-yellow-500',;''
         };;
-      case 'permission':;'
+      case 'permission':;''
         return {;;
-          icon: "AlertTriangle",;";";";";"
-          title: title || 'Access Denied',;'
+          icon: "AlertTriangle",;";";";";""
+          title: title || 'Access Denied',;''
           description:;;
-            description || "You don't have permission to access this resource.",;";";";";"
-          color: 'text-red-500',;
+            description || "You don't have permission to access this resource.",;";";";";""
+          color: 'text-red-500',;'
         };
-      default:;'
+      default:;''
         return {;;
-          icon: "AlertTriangle",;";";";";"
-          title: title || 'Something went wrong',;'
+          icon: "AlertTriangle",;";";";";""
+          title: title || 'Something went wrong',;''
           description:;;
-            description || 'An unexpected error occurred. Please try again.',;;
-          color: 'text-red-500',;
+            description || 'An unexpected error occurred. Please try again.',;;'
+          color: 'text-red-500',;'
         };
     };
   };
 ;
-  const config: unknown = getErrorConfig();'
+  const config: unknown = getErrorConfig();''
   const Icon: unknown = config.icon;
   const canRetry: unknown = showRetry && onRetry && retryCount < maxRetries;
-;'
+;''
   return (;;
-    <Card className={cn('border-destructive/20', className)}>;;
-      <CardContent className="p-8 text-center">;";";";"
-        <motion.div;";";";";"
-          initial={{ scale: "0.8", opacity: "0 "}};";";";";"
-          animate={{ scale: "1", opacity: "1 "}};";";";";"
-          transition={{ duration: "0.3 "}};";";";"
-        >;";";";";"
-          <Icon className={cn('mx-auto mb-4 h-12 w-12', config.color)} />;;
-          <h3 className="text-lg font-semibold mb-2">{config.title}</h3>;";";";";"
-          <p className="text-muted-foreground mb-6 max-w-md mx-auto">;";"
-            {config.description};";";"
-          </p>;";";";"
-;";";";";"
-          {error && process.env.NODE_ENV === 'development' && (;;
-            <details className="mb-4 text-left">;";";";";"
-              <summary className="text-sm text-muted-foreground cursor-pointer">;";";"
-                Error Details (Development);";";";"
-              </summary>;";";";";"
-              <pre className="mt-2 p-2 bg-muted rounded text-xs overflow-auto">;";";";";"
-                {typeof error === 'string' ? error : error.message};'
+    <Card className={cn('border-destructive/20', className)}>;;'
+      <CardContent className="p-8 text-center">;";";";""
+        <motion.div;";";";";""
+          initial={{ scale: "0.8", opacity: "0 "}};";";";";""
+          animate={{ scale: "1", opacity: "1 "}};";";";";""
+          transition={{ duration: "0.3 "}};";";";""
+        >;";";";";""
+          <Icon className={cn('mx-auto mb-4 h-12 w-12', config.color)} />;;'
+          <h3 className="text-lg font-semibold mb-2">{config.title}</h3>;";";";";""
+          <p className="text-muted-foreground mb-6 max-w-md mx-auto">;";""
+            {config.description};";";""
+          </p>;";";";""
+;";";";";""
+          {error && process.env.NODE_ENV === 'development' && (;;'
+            <details className="mb-4 text-left">;";";";";""
+              <summary className="text-sm text-muted-foreground cursor-pointer">;";";""
+                Error Details (Development);";";";""
+              </summary>;";";";";""
+              <pre className="mt-2 p-2 bg-muted rounded text-xs overflow-auto">;";";";";""
+                {typeof error === 'string' ? error : error.message};''
               </pre>;
             </details>;
-          )};'
+          )};''
 ;;
-          <div className="flex flex-col sm:flex-row gap-2 justify-center">;";";";"
-            {canRetry && (;";";";";"
-              <Button onClick={onRetry} variant="default">;";";";";"
-                <RefreshCw className="h-4 w-4 mr-2" />;
+          <div className="flex flex-col sm:flex-row gap-2 justify-center">;";";";""
+            {canRetry && (;";";";";""
+              <Button onClick={onRetry} variant="default">;";";";";""
+                <RefreshCw className="h-4 w-4 mr-2" />;"
                 Try Again {retryCount > 0 && `(${retryCount}/${maxRetries})`};
               </Button>;
-            )};"
-;";"
-            {action && (;";";"
-              <Button;";";";"
-                onClick={action.onClick};";";";";"
-                variant={canRetry ? 'outline' : 'default'};
+            )};""
+;";""
+            {action && (;";";""
+              <Button;";";";""
+                onClick={action.onClick};";";";";""
+                variant={canRetry ? 'outline' : 'default'};'
               >;
-                {action.label};'
+                {action.label};''
               </Button>;
             )};
-;'
+;''
             {secondaryAction && (;;
-              <Button onClick={secondaryAction.onClick} variant="ghost">;
+              <Button onClick={secondaryAction.onClick} variant="ghost">;"
                 {secondaryAction.label};
-              </Button>;"
-            )};";"
-          </div>;";";"
-;";";";"
-          {!isOnline && (;";";";";"
-            <div className="mt-4 flex items-center justify-center gap-2 text-sm text-muted-foreground">;";";";";"
-              <WifiOff className="h-4 w-4" />;
+              </Button>;""
+            )};";""
+          </div>;";";""
+;";";";""
+          {!isOnline && (;";";";";""
+            <div className="mt-4 flex items-center justify-center gap-2 text-sm text-muted-foreground">;";";";";""
+              <WifiOff className="h-4 w-4" />;"
               <span>Offline</span>;
             </div>;
           )};
@@ -353,68 +353,68 @@ export const _ErrorState: unknown React.FC<ErrorStateProps> = ({;
     </Card>;
   );
 };
-;"
-// Loading state for lists/grids;";"
-interface LoadingGridProps {;";";"
-  count?: number;";";";"
-  columns?: number;";";";";"
-  variant?: 'card' | 'list' | 'table;
+;""
+// Loading state for lists/grids;";""
+interface LoadingGridProps {;";";""
+  count?: number;";";";""
+  columns?: number;";";";";""
+  variant?: 'card' | 'list' | 'table;'
   className?: string;
-};'
+};''
 ;
 export const _LoadingGrid: unknown React.FC<LoadingGridProps> = ({;
-  count = 8,;'
+  count = 8,;''
   columns = 4,;;
-  variant = 'card',;
+  variant = 'card',;'
   className,;
-}) => {;'
-  const gridClasses: unknown "unknown = {;",;"
-    card: "`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-${columns"} gap-6`,;";";";";"
-    list: 'space-y-4',;;
-    table: 'space-y-2',;
+}) => {;''
+  const gridClasses: unknown "unknown = {;",;""
+    card: "`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-${columns"} gap-6`,;";";";";""
+    list: 'space-y-4',;;'
+    table: 'space-y-2',;'
   };
-;'
-  const itemClasses: unknown "unknown = {;",;"
-    card: 'p-6 space-y-4',;;
-    list: 'p-4 space-y-3',;;
-    table: 'p-3 space-y-2',;'
+;''
+  const itemClasses: unknown "unknown = {;",;""
+    card: 'p-6 space-y-4',;;'
+    list: 'p-4 space-y-3',;;'
+    table: 'p-3 space-y-2',;''
   };
 ;
-  return (;'
+  return (;''
     <div className={cn(gridClasses[variant], className)}>;;
-      {Array.from({ length: "count "}).map((_, i) => (;";";";";"
-        <Card key={i} className="animate-pulse">;";";";"
-          <CardContent className={itemClasses[variant]}>;";";";";"
-            {variant === 'card' && (;'
+      {Array.from({ length: "count "}).map((_, i) => (;";";";";""
+        <Card key={i} className="animate-pulse">;";";";""
+          <CardContent className={itemClasses[variant]}>;";";";";""
+            {variant === 'card' && (;''
               <>;;
-                <Skeleton variant="rectangular" className="h-32" />;";";";";"
-                <div className="space-y-2">;";";";";"
-                  <Skeleton variant="text" className="h-6 w-3/4" />;";";";";"
-                  <Skeleton variant="text" lines={2} />;";";";";"
-                  <div className="flex gap-2">;";";";";"
-                    <Skeleton variant="text" className="h-4 w-16" />;";";";";"
-                    <Skeleton variant="text" className="h-4 w-20" />;
-                  </div>;"
-                </div>;";"
-              </>;";";"
-            )};";";";"
-;";";";";"
-            {variant === 'list' && (;;
-              <div className="flex gap-4">;";";";";"
-                <Skeleton variant="circular" />;";";";";"
-                <div className="flex-1 space-y-2">;";";";";"
-                  <Skeleton variant="text" className="h-5 w-1/2" />;";";";";"
-                  <Skeleton variant="text" lines={2} />;"
-                </div>;";"
-              </div>;";";"
-            )};";";";"
-;";";";";"
-            {variant === 'table' && (;;
-              <div className="flex items-center gap-4">;";";";";"
-                <Skeleton variant="text" className="h-4 w-1/4" />;";";";";"
-                <Skeleton variant="text" className="h-4 w-1/3" />;";";";";"
-                <Skeleton variant="text" className="h-4 w-1/6" />;";";";";"
-                <Skeleton variant="text" className="h-4 w-1/4" />;
+                <Skeleton variant="rectangular" className="h-32" />;";";";";""
+                <div className="space-y-2">;";";";";""
+                  <Skeleton variant="text" className="h-6 w-3/4" />;";";";";""
+                  <Skeleton variant="text" lines={2} />;";";";";""
+                  <div className="flex gap-2">;";";";";""
+                    <Skeleton variant="text" className="h-4 w-16" />;";";";";""
+                    <Skeleton variant="text" className="h-4 w-20" />;"
+                  </div>;""
+                </div>;";""
+              </>;";";""
+            )};";";";""
+;";";";";""
+            {variant === 'list' && (;;'
+              <div className="flex gap-4">;";";";";""
+                <Skeleton variant="circular" />;";";";";""
+                <div className="flex-1 space-y-2">;";";";";""
+                  <Skeleton variant="text" className="h-5 w-1/2" />;";";";";""
+                  <Skeleton variant="text" lines={2} />;""
+                </div>;";""
+              </div>;";";""
+            )};";";";""
+;";";";";""
+            {variant === 'table' && (;;'
+              <div className="flex items-center gap-4">;";";";";""
+                <Skeleton variant="text" className="h-4 w-1/4" />;";";";";""
+                <Skeleton variant="text" className="h-4 w-1/3" />;";";";";""
+                <Skeleton variant="text" className="h-4 w-1/6" />;";";";";""
+                <Skeleton variant="text" className="h-4 w-1/4" />;"
               </div>;
             )};
           </CardContent>;
@@ -434,40 +434,40 @@ interface PerformanceIndicatorProps {;
 ;
 export const _PerformanceIndicator: unknown React.FC<PerformanceIndicatorProps> = ({;
   isLoading = false,;
-  loadTime,;"
-  itemCount,;";"
-  className,;";";"
-}) => {;";";";"
-  const getPerformanceColor: unknown = (_time: number) => {;";";";";"
-    if (time < 100) return 'text-green-500;'
-    if (time < 300) return 'text-yellow-500;'
-    return 'text-red-500;'
+  loadTime,;""
+  itemCount,;";""
+  className,;";";""
+}) => {;";";";""
+  const getPerformanceColor: unknown = (_time: number) => {;";";";";""
+    if (time < 100) return 'text-green-500;''
+    if (time < 300) return 'text-yellow-500;''
+    return 'text-red-500;''
   };
 ;
-  if (isLoading) {;'
+  if (isLoading) {;''
     return (;;
-      <Badge variant="outline" className={cn('text-xs', className)}>;;
-        <LoadingSpinner size="sm" />;";";";";"
-        <span className="ml-1">Loading...</span>;
+      <Badge variant="outline" className={cn('text-xs', className)}>;;'
+        <LoadingSpinner size="sm" />;";";";";""
+        <span className="ml-1">Loading...</span>;"
       </Badge>;
     );
-  };"
-;";"
-  return (;";";"
-    <div;";";";"
-      className={cn(;";";";";"
-        'flex items-center gap-2 text-xs text-muted-foreground',;'
+  };""
+;";""
+  return (;";";""
+    <div;";";";""
+      className={cn(;";";";";""
+        'flex items-center gap-2 text-xs text-muted-foreground',;''
         className,;
       )};
-    >;'
+    >;''
       {loadTime && (;;
-        <Badge variant="outline" className={getPerformanceColor(loadTime)}>;";";";";"
-          <Zap className="h-3 w-3 mr-1" />;
+        <Badge variant="outline" className={getPerformanceColor(loadTime)}>;";";";";""
+          <Zap className="h-3 w-3 mr-1" />;"
           {loadTime}ms;
         </Badge>;
       )};
-      {itemCount && <span>{itemCount} items loaded</span>};"
-    </div>;";"
-  );";";"
-};";";";"
-"""""
+      {itemCount && <span>{itemCount} items loaded</span>};""
+    </div>;";""
+  );";";""
+};";";";""
+""""""

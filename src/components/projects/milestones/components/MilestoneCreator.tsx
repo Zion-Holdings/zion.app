@@ -1,10 +1,10 @@
-import React from 'react';
-import { AddMilestoneForm } from '../AddMilestoneForm;'
-import type { MilestoneFormValues } from '../AddMilestoneForm;
-;'
+import React from 'react';';
+import { AddMilestoneForm } from '../AddMilestoneForm;'';
+import type { MilestoneFormValues } from '../AddMilestoneForm;'
+;''
 interface MilestoneCreatorProps {;;
-  onSubmit: "(data: MilestoneFormValues) => Promise<void>;",;";";";";"
-  isSubmitting: "boolean;",;
+  onSubmit: "(data: MilestoneFormValues) => Promise<void>;",;";";";";""
+  isSubmitting: "boolean;",;"
   onCancel: () => void;
   projectScope?: string;
   projectStartDate?: string;
@@ -21,20 +21,20 @@ export function MilestoneCreator(): unknown {): unknown {): unknown {): unknown 
   projectEndDate,;
   projectType,;
 }: MilestoneCreatorProps) {;
-  return (;"
-    <AddMilestoneForm;";"
-      onSubmit={onSubmit};";";"
-      isSubmitting={isSubmitting};";";";"
-      onCancel={onCancel};";";";";"
-      projectScope={projectScope ?? ''};;
-      projectStartDate={projectStartDate ?? ''};;
-      projectEndDate={projectEndDate ?? ''};;
-      projectType={projectType ?? ''};'
+  return (;""
+    <AddMilestoneForm;";""
+      onSubmit={onSubmit};";";""
+      isSubmitting={isSubmitting};";";";""
+      onCancel={onCancel};";";";";""
+      projectScope={projectScope ?? ''};;'
+      projectStartDate={projectStartDate ?? ''};;'
+      projectEndDate={projectEndDate ?? ''};;'
+      projectType={projectType ?? ''};''
     />;
   );
 };
 ;
-};'
+};''
 }
-}'
-}'
+}''
+}''

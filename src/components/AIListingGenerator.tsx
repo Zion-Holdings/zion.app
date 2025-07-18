@@ -1,30 +1,30 @@
-import React, { useState } from 'react''
-import { ArrowRight, Sparkles } from 'lucide-react;'
-import { useToast } from '@/hooks/use-toast;'
-import { Button } from '@/components/ui/button;'
-import { Input } from '@/components/ui/input;'
-import { Textarea } from '@/components/ui/textarea'
+import React, { useState } from 'react''';
+import { ArrowRight, Sparkles } from 'lucide-react;'';
+import { useToast } from '@/hooks/use-toast;'';
+import { Button } from '@/components/ui/button;'';
+import { Input } from '@/components/ui/input;'';
+import { Textarea } from '@/components/ui/textarea'';
 import {;
-  Card,;'
-  CardContent,'
+  Card,;''
+  CardContent,''
   CardFooter,
-  CardHeader,;'
-  CardTitle,;'
-} from '@/components/ui/card;'
-import Skeleton from '@/components/ui/skeleton'
-
-import { supabase } from '@/integrations/supabase/client;'
-import { Badge } from '@/components/ui/badge;'
-import { logErrorToProduction } from '@/utils/productionLogger'
-;'
-interface GeneratedContent {;'
-  description: "string,;";";
-  tags: "string[]",;
-  suggestedPrice: {",;";";"
-    min: number,;"
-    max: "number;";"
-  };";";
-  keyPoints: "string[]"
+  CardHeader,;''
+  CardTitle,;''
+} from '@/components/ui/card;'';
+import Skeleton from '@/components/ui/skeleton'';
+;
+import { supabase } from '@/integrations/supabase/client;'';
+import { Badge } from '@/components/ui/badge;'';
+import { logErrorToProduction } from '@/utils/productionLogger'';
+;''
+interface GeneratedContent {;''
+  description: "string,;";";"
+  tags: "string[]",;"
+  suggestedPrice: {",;";";""
+    min: number,;""
+    max: "number;";""
+  };";";"
+  keyPoints: "string[]""
 };
 
 interface AIListingGeneratorProps {;
@@ -36,66 +36,66 @@ interface AIListingGeneratorProps {;
     targetAudience?: string;
   };
 };
-
+;
 export function AIListingGenerator(): unknown {): unknown {): unknown {): unknown {): unknown {{
-  onApplyGenerated,;""
-  initialValues = {},;;"
-}: AIListingGeneratorProps) {";;"
-  const { _toast } = useToast()";;""
-  const [title, setTitle] = useState(initialValues.title || '');'
-  const [category, setCategory] = useState(initialValues.category || '');'
-  const [keyFeatures, setKeyFeatures] = useState(;'
-    initialValues.keyFeatures || '','
-  );'
-  const [targetAudience, setTargetAudience] = useState(;'
-    initialValues.targetAudience || '','
+  onApplyGenerated,;"""
+  initialValues = {},;;""
+}: AIListingGeneratorProps) {";;""
+  const { _toast } = useToast()";;"""
+  const [title, setTitle] = useState(initialValues.title || '');''
+  const [category, setCategory] = useState(initialValues.category || '');''
+  const [keyFeatures, setKeyFeatures] = useState(;''
+    initialValues.keyFeatures || '',''
+  );''
+  const [targetAudience, setTargetAudience] = useState(;''
+    initialValues.targetAudience || '',''
   );
   const [isLoading, setIsLoading] = useState(false);
-  const [generatedContent, setGeneratedContent] = useState(;'
-    null as GeneratedContent | null,'
+  const [generatedContent, setGeneratedContent] = useState(;''
+    null as GeneratedContent | null,''
   );
-;'
-  const handleInputChange: unknown = (,;"
-    e: "{ target: { value: string } },;
-    _field: "string",;"
-  ) => {;";"
-    switch (field) {;";";"
-      case 'title':'
-        setTitle(e.target.value);'
-        break;'
-      case 'category':'
-        setCategory(e.target.value);'
-        break;'
-      case 'keyFeatures':'
-        setKeyFeatures(e.target.value);'
-        break;'
-      case 'targetAudience':'
+;''
+  const handleInputChange: unknown = (,;""
+    e: "{ target: { value: string } },;"
+    _field: "string",;""
+  ) => {;";""
+    switch (field) {;";";""
+      case 'title':''
+        setTitle(e.target.value);''
+        break;''
+      case 'category':''
+        setCategory(e.target.value);''
+        break;''
+      case 'keyFeatures':''
+        setKeyFeatures(e.target.value);''
+        break;''
+      case 'targetAudience':''
         setTargetAudience(e.target.value);
         break;
     };
-  };'
-'
+  };''
+''
   const handleGenerate: unknown = async () => {;
-    if (!title || !category) {;'
-      toast({;'
-        title: 'Missing required fields',;'
-        description: 'Please provide at least a title and category.',;'
-        variant: 'destructive','
+    if (!title || !category) {;''
+      toast({;''
+        title: 'Missing required fields',;''
+        description: 'Please provide at least a title and category.',;''
+        variant: 'destructive',''
       });
       return;
     };
-;'
-    setIsLoading(true)'
+;''
+    setIsLoading(true)''
 
-    try {;'
-      if (!supabase) {;'
-        throw new Error('Supabase client not available')'
+    try {;''
+      if (!supabase) {;''
+        throw new Error('Supabase client not available')''
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
-;'
-      const { data, error } = await supabase.functions.invoke(;'
-        'ai-listing-generator',;'
-        {;'
-          body: { title, category, keyFeatures, targetAudience },"
+;''
+      const { data, error } = await supabase.functions.invoke(;''
+        'ai-listing-generator',;''
+        {;''
+          body: { title, category, keyFeatures, targetAudience },""
         },);
 
       if (error) {;
@@ -106,216 +106,216 @@ export function AIListingGenerator(): unknown {): unknown {): unknown {): unknow
         throw new Error((data as unknown as { error?: string }).error);
       };
 
-      setGeneratedContent("
+      setGeneratedContent(""
         (data as unknown as { generated?: GeneratedContent })?.generated ||;
           null,;
       );
       toast({;
-        title: 'Content Generated',;'
-        description: 'AI has created optimized listing content for you.','
-      });'
-    } catch {;'
-      logErrorToProduction('Error generating content:', { data: "error "});";"
-      toast({;";"
-        title: 'Generation Failed','
+        title: 'Content Generated',;''
+        description: 'AI has created optimized listing content for you.',''
+      });''
+    } catch {;''
+      logErrorToProduction('Error generating content:', { data: "error "});";""
+      toast({;";""
+        title: 'Generation Failed',''
         description:;
-          error instanceof Error;'
-            ? error.message;'
-            : 'Failed to generate content. Please try again.',;'
-        variant: 'destructive','
+          error instanceof Error;''
+            ? error.message;''
+            : 'Failed to generate content. Please try again.',;''
+        variant: 'destructive',''
       });
     } finally {;
       setIsLoading(false);
     };
   };
-;'
-  const handleApply: unknown = () => {'
+;''
+  const handleApply: unknown = () => {''
     if (generatedContent && onApplyGenerated) {;
-      onApplyGenerated(generatedContent);'
-      toast({;'
-        title: 'Content Applied',;'
-        description: 'The generated content has been applied to your listing.','
-      });'
-    }'
+      onApplyGenerated(generatedContent);''
+      toast({;''
+        title: 'Content Applied',;''
+        description: 'The generated content has been applied to your listing.',''
+      });''
+    }''
   };
-;'
-  return (;'
-    <div className=space-y-6">";;""
-      <Card className=border border-zion-blue-light bg-zion-blue-dark>";";
-        <CardHeader>";";"
-          <CardTitle className="flex items-center text-white>;
-            <Sparkles className="h-5 w-5 mr-2 text-zion-cyan" />;"
-            AI Listing Optimizer;";"
-          </CardTitle>;";";"
-          <p className=text-sm text-zion-slate-light>"
-            Provide basic information and let AI generate optimized,;"
-            SEO-friendly content for your listing;";"
-          </p>;";"
-        </CardHeader>;";"
-        <CardContent className=space-y-4">";;""
-          <div className=space-y-2>";";
-            <label";";"
-              htmlFor="title;
-              className="text-sm font-medium text-zion-slate-light"
-            >;"
-              Title;";
-            </label>";";
-            <Input";";"
-              id="title;
-              value={title};
-              onChange={(e) => handleInputChange(e, 'title')};'
-              placeholder="Enter your product or service title";";"
-              className=bg-zion-blue border border-zion-blue-light text-white
-              disabled={isLoading};""
-            />;;""
-          </div>;;
-          <div className=space-y-2">";;"
-            <label";;""
-              htmlFor=category";";"
-              className="text-sm font-medium text-zion-slate-light
+;''
+  return (;''
+    <div className=space-y-6">";;"""
+      <Card className=border border-zion-blue-light bg-zion-blue-dark>";";"
+        <CardHeader>";";""
+          <CardTitle className="flex items-center text-white>;"
+            <Sparkles className="h-5 w-5 mr-2 text-zion-cyan" />;""
+            AI Listing Optimizer;";""
+          </CardTitle>;";";""
+          <p className=text-sm text-zion-slate-light>""
+            Provide basic information and let AI generate optimized,;""
+            SEO-friendly content for your listing;";""
+          </p>;";""
+        </CardHeader>;";""
+        <CardContent className=space-y-4">";;"""
+          <div className=space-y-2>";";"
+            <label";";""
+              htmlFor="title;"
+              className="text-sm font-medium text-zion-slate-light""
             >;""
-              Category;;"
-            </label>";;"
-            <Input";;""
-              id=category";";
-              value={category}";";"
-              onChange={(e) => handleInputChange(e, 'category')};'
-              placeholder="e.g. AI Tool, Digital Product, Service;
-              className="bg-zion-blue border border-zion-blue-light text-white";
-              disabled={isLoading}";"
-            />;";"
-          </div>;";";
-          <div className="space-y-2">;";"
-            <label;";"
-              htmlFor=keyFeatures;""
-              className=text-sm font-medium text-zion-slate-light"
-            >;"
-              Key Features (Optional);";"
-            </label>;";"
-            <Textarea;";"
-              id=keyFeatures;"
-              value={keyFeatures}";;""
-              onChange={(e) => handleInputChange(e, 'keyFeatures')};'
-              placeholder=Briefly describe the main features or benefits";";"
-              className="bg-zion-blue border border-zion-blue-light text-white min-h-20;"
-              disabled={isLoading}";
-            />;
-          </div>;;"
-          <div className="space-y-2>;
-            <label;
-              htmlFor="targetAudience";";"
+              Title;";"
+            </label>";";"
+            <Input";";""
+              id="title;"
+              value={title};
+              onChange={(e) => handleInputChange(e, 'title')};''
+              placeholder="Enter your product or service title";";""
+              className=bg-zion-blue border border-zion-blue-light text-white
+              disabled={isLoading};"""
+            />;;"""
+          </div>;;
+          <div className=space-y-2">";;""
+            <label";;"""
+              htmlFor=category";";""
+              className="text-sm font-medium text-zion-slate-light"
+            >;"""
+              Category;;""
+            </label>";;""
+            <Input";;"""
+              id=category";";"
+              value={category}";";""
+              onChange={(e) => handleInputChange(e, 'category')};''
+              placeholder="e.g. AI Tool, Digital Product, Service;"
+              className="bg-zion-blue border border-zion-blue-light text-white";"
+              disabled={isLoading}";""
+            />;";""
+          </div>;";";"
+          <div className="space-y-2">;";""
+            <label;";""
+              htmlFor=keyFeatures;"""
               className=text-sm font-medium text-zion-slate-light""
+            >;""
+              Key Features (Optional);";""
+            </label>;";""
+            <Textarea;";""
+              id=keyFeatures;""
+              value={keyFeatures}";;"""
+              onChange={(e) => handleInputChange(e, 'keyFeatures')};''
+              placeholder=Briefly describe the main features or benefits";";""
+              className="bg-zion-blue border border-zion-blue-light text-white min-h-20;""
+              disabled={isLoading}";"
+            />;
+          </div>;;""
+          <div className="space-y-2>;"
+            <label;
+              htmlFor="targetAudience";";""
+              className=text-sm font-medium text-zion-slate-light"""
             >;
               Target Audience (Optional);
             </label>;
             <Input;
-              id="targetAudience";";"
-              value={targetAudience};";"
-              onChange={(e) => handleInputChange(e, 'targetAudience')};'
-              placeholder=e.g. Developers, Marketers, Startups;""
-              className=bg-zion-blue border border-zion-blue-light text-white"
+              id="targetAudience";";""
+              value={targetAudience};";""
+              onChange={(e) => handleInputChange(e, 'targetAudience')};''
+              placeholder=e.g. Developers, Marketers, Startups;"""
+              className=bg-zion-blue border border-zion-blue-light text-white""
               disabled={isLoading};
-            />"
+            />""
           </div>;
           <Button;
             onClick={handleGenerate};
             disabled={isLoading || !title || !category};
-            className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white mt-2"
+            className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white mt-2""
           >
-            {isLoading ? (;""
-              <>Generating Optimized Content...</>;;"
-            ) : (";;"
-              <>";;""
-                <Sparkles className=h-4 w-4 mr-2 />"
+            {isLoading ? (;"""
+              <>Generating Optimized Content...</>;;""
+            ) : (";;""
+              <>";;"""
+                <Sparkles className=h-4 w-4 mr-2 />""
                 Generate Optimized Content;
               </>)};
-          </Button>"
+          </Button>""
         </CardContent>;
       </Card>;
 ;
       {isLoading && (;
-        <Card className="border border-zion-blue-light bg-zion-blue-dark overflow-hidden">;";"
-          <CardHeader>;";"
-            <Skeleton className=h-8 w-3/4 bg-zion-blue-light/20" />";;"
-          </CardHeader>";;""
-          <CardContent className=space-y-4>";";"
-            <Skeleton className="h-32 w-full bg-zion-blue-light/20 />;
-            <div className="flex flex-wrap gap-2">;";"
-              {[...Array(5)].map((_, i) => (;";"
-                <Skeleton key={i} className=h-6 w-16 bg-zion-blue-light/20" />";
+        <Card className="border border-zion-blue-light bg-zion-blue-dark overflow-hidden">;";""
+          <CardHeader>;";""
+            <Skeleton className=h-8 w-3/4 bg-zion-blue-light/20" />";;""
+          </CardHeader>";;"""
+          <CardContent className=space-y-4>";";""
+            <Skeleton className="h-32 w-full bg-zion-blue-light/20 />;"
+            <div className="flex flex-wrap gap-2">;";""
+              {[...Array(5)].map((_, i) => (;";""
+                <Skeleton key={i} className=h-6 w-16 bg-zion-blue-light/20" />";"
               ))};
-            </div>;;"
-            <Skeleton className="h-8 w-1/3 bg-zion-blue-light/20 />;
-            <div className="space-y-2">;
-              {[...Array(3)].map((_, i) => (";"
-                <Skeleton;";"
-                  key={i};";";
-                  className="h-6 w-full bg-zion-blue-light/20"
+            </div>;;""
+            <Skeleton className="h-8 w-1/3 bg-zion-blue-light/20 />;"
+            <div className="space-y-2">;"
+              {[...Array(3)].map((_, i) => (";""
+                <Skeleton;";""
+                  key={i};";";"
+                  className="h-6 w-full bg-zion-blue-light/20""
                 />))};
             </div>;
           </CardContent>
-        </Card>;""
-      )};;"
-";;"
-      {generatedContent && !isLoading && (";;""
-        <Card className=border border-zion-blue-light bg-zion-blue-dark>";";
-          <CardHeader>";";"
-            <CardTitle className="text-white>Generated Content</CardTitle>;
+        </Card>;"""
+      )};;""
+";;""
+      {generatedContent && !isLoading && (";;"""
+        <Card className=border border-zion-blue-light bg-zion-blue-dark>";";"
+          <CardHeader>";";""
+            <CardTitle className="text-white>Generated Content</CardTitle>;"
           </CardHeader>;
-          <CardContent className="space-y-4">;";"
-            <div>;";"
-              <h3 className=text-sm font-medium text-zion-slate-light mb-2">";
+          <CardContent className="space-y-4">;";""
+            <div>;";""
+              <h3 className=text-sm font-medium text-zion-slate-light mb-2">";"
                 Description;
-              </h3>;;"
-              <p className="text-white>{generatedContent.description}</p>;"
-            </div>";
+              </h3>;;""
+              <p className="text-white>{generatedContent.description}</p>;""
+            </div>";"
 ;
-            <div>;;"
-              <h3 className="text-sm font-medium text-zion-slate-light mb-2>;""
-                Tags;;""
+            <div>;;""
+              <h3 className="text-sm font-medium text-zion-slate-light mb-2>;"""
+                Tags;;"""
               </h3>;;
-              <div className=flex flex-wrap gap-2">"
+              <div className=flex flex-wrap gap-2">""
                 {generatedContent.tags?.map((tag, index) => (;
                   <Badge key={index}>{tag}</Badge>))}
-              </div>;"
-            </div>;";
-";";
-            <div>";";"
-              <h3 className="text-sm font-medium text-zion-slate-light mb-2>;""
-                Suggested Price Range;;""
+              </div>;""
+            </div>;";"
+";";"
+            <div>";";""
+              <h3 className="text-sm font-medium text-zion-slate-light mb-2>;"""
+                Suggested Price Range;;"""
               </h3>;;
-              <p className=text-white">"
+              <p className=text-white">""
                 ${generatedContent.suggestedPrice.min.toFixed(2)} - $;
                 {generatedContent.suggestedPrice.max.toFixed(2)}
-              </p>;"
-            </div>;";
-";";
-            <div>";";"
-              <h3 className="text-sm font-medium text-zion-slate-light mb-2>;""
-                Key Selling Points;;""
+              </p>;""
+            </div>;";"
+";";"
+            <div>";";""
+              <h3 className="text-sm font-medium text-zion-slate-light mb-2>;"""
+                Key Selling Points;;"""
               </h3>;;
-              <ul className=list-disc pl-5 text-white space-y-1">"
+              <ul className=list-disc pl-5 text-white space-y-1">""
                 {generatedContent.keyPoints.map((point, index) => (;
                   <li key={index}>{point}</li>))};
               </ul>;
             </div>
-          </CardContent>;"
-          <CardFooter>;";
-            <Button";";
-              onClick={handleApply}";";"
-              className="w-full bg-gradient-to-r from-zion-cyan to-zion-cyan-dark hover:from-zion-cyan-light hover:to-zion-cyan text-white;""
-            >;;""
+          </CardContent>;""
+          <CardFooter>;";"
+            <Button";";"
+              onClick={handleApply}";";""
+              className="w-full bg-gradient-to-r from-zion-cyan to-zion-cyan-dark hover:from-zion-cyan-light hover:to-zion-cyan text-white;"""
+            >;;"""
               Apply to My Listing;;
-              <ArrowRight className=ml-2 h-4 w-4" />"
+              <ArrowRight className=ml-2 h-4 w-4" />""
             </Button>;
           </CardFooter>;
         </Card>;
       )}
-    </div>;"
-  );";
-}";";
+    </div>;""
+  );";"
+}";";"
 
 }
-}"
-}"
-}"
+}""
+}""
+}""

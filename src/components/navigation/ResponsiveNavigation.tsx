@@ -1,38 +1,38 @@
-import React from 'react';
-import Link from 'next/link;'
-import { useRouter } from 'next/router;
+import React from 'react';';
+import Link from 'next/link;'';
+import { useRouter } from 'next/router;';
 import {;
   NavigationMenu,;
-  NavigationMenuList,;'
+  NavigationMenuList,;''
   NavigationMenuItem,;
   NavigationMenuContent,;
-  NavigationMenuTrigger,;'
+  NavigationMenuTrigger,;''
   NavigationMenuLink,;;
-} from '@/components/ui/navigation-menu;'
-import { cn } from '@/lib/utils;'
-import { useAuth } from '@/hooks/useAuth;'
-import { useTranslation } from 'react-i18next;'
+} from '@/components/ui/navigation-menu;'';
+import { cn } from '@/lib/utils;'';
+import { useAuth } from '@/hooks/useAuth;'';
+import { useTranslation } from 'react-i18next;''
 ;
 interface NavItem {;
-  label: string;'
+  label: string;''
   href?: string;;
-  subItems?: { label: "string; href: string "}[];"
-};";"
-;";";"
-interface ResponsiveNavigationProps {;";";";"
-  className?: string;";";";";"
-  openLoginModal: "(returnToPath: string) => void;";
-};"
-;";"
-// Define protected routes - these align with routes not in publicRoutes in middleware.ts;";";"
-// and are the ones that should trigger the login modal if accessed while unauthenticated.;";";";"
-const protectedRoutes: unknown = [;";";";";"
-  '/categories',;;
-  '/talent',;;
-  '/equipment',;;
-  '/partners',;;
-  '/tutorials',;;
-  '/case-studies',;
+  subItems?: { label: "string; href: string "}[];""
+};";""
+;";";""
+interface ResponsiveNavigationProps {;";";";""
+  className?: string;";";";";""
+  openLoginModal: "(returnToPath: string) => void;";"
+};""
+;";""
+// Define protected routes - these align with routes not in publicRoutes in middleware.ts;";";""
+// and are the ones that should trigger the login modal if accessed while unauthenticated.;";";";"";
+const protectedRoutes: unknown = [;";";";";""
+  '/categories',;;'
+  '/talent',;;'
+  '/equipment',;;'
+  '/partners',;;'
+  '/tutorials',;;'
+  '/case-studies',;'
   // Add any specific sub-routes if necessary, though startsWith checks below should cover them.;
 ];
 ;
@@ -45,46 +45,46 @@ export function ResponsiveNavigation(): unknown {): unknown {): unknown {): unkn
   openLoginModal,;
 }: ResponsiveNavigationProps) {;
   const { _user } = useAuth();
-  const isAuthenticated: unknown = !!user;'
+  const isAuthenticated: unknown = !!user;''
   const { t } = useTranslation();
   const router: unknown = useRouter();
-;'
+;''
   const items: unknown NavItem[] = [;;
-    { label: t('nav.home', 'Home'), href: '/' },;'
+    { label: t('nav.home', 'Home'), href: '/' },;''
     {;;
-      label: t('nav.marketplace', 'Marketplace'),;;
-      href: '/marketplace',;
-      subItems: [;'
+      label: t('nav.marketplace', 'Marketplace'),;;'
+      href: '/marketplace',;'
+      subItems: [;''
         {;;
-          label: t('nav.marketplace_overview', 'Overview'),;;
-          href: '/marketplace',;'
+          label: t('nav.marketplace_overview', 'Overview'),;;'
+          href: '/marketplace',;''
         },;;
-        { label: t('nav.categories', 'Categories'), href: '/categories' },;;
-        { label: t('nav.talent', 'Talent'), href: '/talent' },;;
-        { label: t('nav.equipment', 'Equipment'), href: '/equipment' },;
+        { label: t('nav.categories', 'Categories'), href: '/categories' },;;'
+        { label: t('nav.talent', 'Talent'), href: '/talent' },;;'
+        { label: t('nav.equipment', 'Equipment'), href: '/equipment' },;'
       ],;
-    },;'
+    },;''
     {;;
-      label: t('nav.community', 'Community'),;'
+      label: t('nav.community', 'Community'),;''
       subItems: [;;
-        { label: t('nav.community_overview', 'Overview'), href: '/community' },;;
-        { label: t('nav.blog', 'Blog'), href: '/blog' },;;
-        { label: t('nav.partners', 'Partners'), href: '/partners' },;
+        { label: t('nav.community_overview', 'Overview'), href: '/community' },;;'
+        { label: t('nav.blog', 'Blog'), href: '/blog' },;;'
+        { label: t('nav.partners', 'Partners'), href: '/partners' },;'
       ],;
-    },;'
+    },;''
     {;;
-      label: t('nav.resources', 'Resources'),;'
+      label: t('nav.resources', 'Resources'),;''
       subItems: [;;
-        { label: t('nav.docs', 'Docs'), href: '/docs' },;;
-        { label: t('nav.tutorials', 'Tutorials'), href: '/tutorials' },;;
-        { label: t('nav.case_studies', 'Case Studies'), href: '/case-studies' },;
-      ],;'
+        { label: t('nav.docs', 'Docs'), href: '/docs' },;;'
+        { label: t('nav.tutorials', 'Tutorials'), href: '/tutorials' },;;'
+        { label: t('nav.case_studies', 'Case Studies'), href: '/case-studies' },;'
+      ],;''
     },;;
-    { label: t('nav.about', 'About'), href: '/about' },;
+    { label: t('nav.about', 'About'), href: '/about' },;'
   ];
-;'
+;''
   if (isAuthenticated) {;;
-    items.push({ label: t('nav.dashboard', 'Dashboard'), href: '/dashboard' });
+    items.push({ label: t('nav.dashboard', 'Dashboard'), href: '/dashboard' });'
   };
 ;
   const isItemActive: unknown = (_item: NavItem) => {;
@@ -93,51 +93,51 @@ export function ResponsiveNavigation(): unknown {): unknown {): unknown {): unkn
     };
     if (item.subItems) {;
       return item.subItems.some((sub) => router.pathname.startsWith(sub.href));
-    };'
+    };''
     return false;
   };
-;'
+;''
   return (;;
-    <NavigationMenu className={cn('hidden md:flex', className)}>;
+    <NavigationMenu className={cn('hidden md:flex', className)}>;'
       <NavigationMenuList>;
-        {items.map((item) => (;'
+        {items.map((item) => (;''
           <NavigationMenuItem key={item.href || item.label}>;
             {item.subItems ? (;
-              <>;'
+              <>;''
                 <NavigationMenuTrigger;;
-                  className={cn(isItemActive(item) && 'text-primary')};
+                  className={cn(isItemActive(item) && 'text-primary')};'
                   onSelect={(e) => e.preventDefault()};
-                  onClick={(e) => e.preventDefault()};'
+                  onClick={(e) => e.preventDefault()};''
                 >;
                   {item.label};
-                </NavigationMenuTrigger>;'
+                </NavigationMenuTrigger>;''
                 <NavigationMenuContent>;;
-                  <ul className="flex flex-col p-2 min-w-[180px]">;
+                  <ul className="flex flex-col p-2 min-w-[180px]">;"
                     {item.subItems.map((sub) => (;
-                      <li key={sub.href}>;"
-                        <NavigationMenuLink asChild>;";"
-                          <Link legacyBehavior href={sub.href} passHref>;";";"
-                            <a;";";";"
-                              className={cn(;";";";";"
-                                'block rounded-sm px-2 py-1.5 text-sm hover:bg-accent focus:bg-accent focus:outline-none',;'
+                      <li key={sub.href}>;""
+                        <NavigationMenuLink asChild>;";""
+                          <Link legacyBehavior href={sub.href} passHref>;";";""
+                            <a;";";";""
+                              className={cn(;";";";";""
+                                'block rounded-sm px-2 py-1.5 text-sm hover:bg-accent focus:bg-accent focus:outline-none',;''
                                 router.pathname.startsWith(sub.href) &&;;
-                                  'bg-accent text-accent-foreground',;
+                                  'bg-accent text-accent-foreground',;'
                               )};
                               onClick={(e) => {;
                                 if (;
                                   !isAuthenticated &&;
                                   isProtectedRoute(sub.href);
                                 ) {;
-                                  e.preventDefault();'
+                                  e.preventDefault();''
                                   // Update URL to include returnTo, then open modal;
                                   // This makes the returnTo available in router.query for the login page/modal logic;
-                                  router.push(;'
+                                  router.push(;''
                                     {;;
-                                      pathname: '/auth/login',;;
-                                      query: "{ returnTo: sub.href "},;";";"
-                                    },;";";";"
-                                    undefined,;";";";";"
-                                    { shallow: "true "},;
+                                      pathname: '/auth/login',;;'
+                                      query: "{ returnTo: sub.href "},;";";""
+                                    },;";";";""
+                                    undefined,;";";";";""
+                                    { shallow: "true "},;"
                                   );
                                   openLoginModal(sub.href);
                                 };
@@ -151,17 +151,17 @@ export function ResponsiveNavigation(): unknown {): unknown {): unknown {): unkn
                       </li>;
                     ))};
                   </ul>;
-                </NavigationMenuContent>;"
-              </>;";"
-            ) : (;";";"
-              <NavigationMenuLink asChild>;";";";"
-                <Link;";";";";"
-                  href={item.href || '#'};'
+                </NavigationMenuContent>;""
+              </>;";""
+            ) : (;";";""
+              <NavigationMenuLink asChild>;";";";""
+                <Link;";";";";""
+                  href={item.href || '#'};''
                   className={cn(;;
-                    'inline-block px-4 py-2 text-sm font-medium',;
-                    item.href &&;'
+                    'inline-block px-4 py-2 text-sm font-medium',;'
+                    item.href &&;''
                       router.pathname === item.href &&;;
-                      'text-primary',;
+                      'text-primary',;'
                   )};
                 >;
                   {item.label};
@@ -170,16 +170,16 @@ export function ResponsiveNavigation(): unknown {): unknown {): unknown {): unkn
             )};
           </NavigationMenuItem>;
         ))};
-      </NavigationMenuList>;'
+      </NavigationMenuList>;''
     </NavigationMenu>;
   );
 };
 ;
 };
-};'
+};''
 };
 }
-};'
-}'
+};''
+}''
 }
-}'
+}''

@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
-import Link from 'next/link;'
-import { useAuth } from '@/hooks/useAuth;'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;'
-import { fireEvent } from '@/lib/analytics;
+import React, { useState, useRef, useEffect } from 'react';';
+import Link from 'next/link;'';
+import { useAuth } from '@/hooks/useAuth;'';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;'';
+import { fireEvent } from '@/lib/analytics;'
 ;
 const UserProfileDropdown: unknown React.FC = () => {;
   const [isOpen, setIsOpen] = useState(false);
@@ -10,200 +10,200 @@ const UserProfileDropdown: unknown React.FC = () => {;
   const dropdownRef: unknown = useRef<HTMLDivElement>(null);
   const menuRef: unknown = useRef<HTMLUListElement>(null);
   const buttonRef: unknown = useRef<HTMLButtonElement>(null);
-  const previouslyFocused: unknown = useRef<HTMLElement | null>(null);'
+  const previouslyFocused: unknown = useRef<HTMLElement | null>(null);''
 ;
   const toggleDropdown: unknown = () =>;
-    setIsOpen((o) => {;'
+    setIsOpen((o) => {;''
       const open: unknown = !o;;
-      fireEvent('profile_dropdown_toggle', { open });
+      fireEvent('profile_dropdown_toggle', { open });'
       return open;
-    });'
+    });''
 ;
   const handleLogout: unknown = () => {;
-    logout();'
+    logout();''
     setIsOpen(false); // Close dropdown after logout;;
-    fireEvent('profile_dropdown_toggle', { open: "false "});
+    fireEvent('profile_dropdown_toggle', { open: "false "});"
   };
 ;
   // Close dropdown when clicking outside;
   useEffect(() => {;
     const handleClickOutside: unknown = (event: MouseEvent) => {;
-      if (;"
-        dropdownRef.current &&;";"
-        !dropdownRef.current.contains(event.target as Node);";";"
-      ) {;";";";"
-        setIsOpen(false);";";";";"
-        fireEvent('profile_dropdown_toggle', { open: "false "});";"
-      };";";"
-    };";";";"
-;";";";";"
-    document.addEventListener('mousedown', handleClickOutside);'
+      if (;""
+        dropdownRef.current &&;";""
+        !dropdownRef.current.contains(event.target as Node);";";""
+      ) {;";";";""
+        setIsOpen(false);";";";";""
+        fireEvent('profile_dropdown_toggle', { open: "false "});";""
+      };";";""
+    };";";";""
+;";";";";""
+    document.addEventListener('mousedown', handleClickOutside);''
     return () => {;;
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);'
     };
   }, []);
-;'
+;''
   useEffect(() => {;
     if (isOpen) {;
-      previouslyFocused.current = document.activeElement as HTMLElement;'
+      previouslyFocused.current = document.activeElement as HTMLElement;''
       setTimeout(() => {;;
-        menuRef.current?.querySelector<HTMLElement>('a,button')?.focus();
+        menuRef.current?.querySelector<HTMLElement>('a,button')?.focus();'
       }, 0);
     } else {;
-      previouslyFocused.current?.focus();'
+      previouslyFocused.current?.focus();''
     };
   }, [isOpen]);
-;'
+;''
   return (;;
-    <div style={{ _position: 'relative' }} ref={dropdownRef}>;'
+    <div style={{ _position: 'relative' }} ref={dropdownRef}>;''
       <button;
         ref={buttonRef};
-        onClick={toggleDropdown};'
+        onClick={toggleDropdown};''
         onKeyDown={(e) => {;;
-          if (e.key === 'Enter' || e.key === ' ') {;
-            e.preventDefault();'
+          if (e.key === 'Enter' || e.key === ' ') {;'
+            e.preventDefault();''
             toggleDropdown();
             setTimeout(;
-              () =>;'
+              () =>;''
                 menuRef.current;;
-                  ?.querySelector<HTMLElement>('a,button');
-                  ?.focus(),;'
+                  ?.querySelector<HTMLElement>('a,button');'
+                  ?.focus(),;''
               0,;
             );
-          };'
+          };''
         }};;
-        style={{ background: 'none', border: 'none', cursor: 'pointer' }};;
-        aria-haspopup="true";";";";"
-        aria-expanded={isOpen};";";";";"
-        aria-label="User profile";";";";"
-      >;";";";";"
-        <Avatar className="h-8 w-8">;";";";";"
-          {user && typeof user !== 'boolean' && user.avatarUrl ? (;
+        style={{ background: 'none', border: 'none', cursor: 'pointer' }};;'
+        aria-haspopup="true";";";";""
+        aria-expanded={isOpen};";";";";""
+        aria-label="User profile";";";";""
+      >;";";";";""
+        <Avatar className="h-8 w-8">;";";";";""
+          {user && typeof user !== 'boolean' && user.avatarUrl ? (;'
             <AvatarImage;
-              src={user.avatarUrl};'
+              src={user.avatarUrl};''
               alt={;;
-                (user && typeof user !== 'boolean;
+                (user && typeof user !== 'boolean;'
                   ? user.displayName || user.name;;
-                  : '') || 'User;
-              };'
+                  : '') || 'User;'
+              };''
             />;
           ) : (;
-            <AvatarFallback>;'
+            <AvatarFallback>;''
               {(;;
-                (user && typeof user !== 'boolean;
+                (user && typeof user !== 'boolean;'
                   ? user.displayName || user.name;;
-                  : '') || 'U;
+                  : '') || 'U;'
               ).charAt(0)};
             </AvatarFallback>;
           )};
-        </Avatar>;'
+        </Avatar>;''
       </button>;
       {isOpen && (;
-        <div;'
+        <div;''
           style={{;;
-            position: 'absolute',;;
-            top: '100%',;;
-            right: "0",;";";";";"
-            backgroundColor: 'white',;;
-            border: '1px solid #ccc',;;
-            borderRadius: '4px',;;
-            boxShadow: '0 2px 10px rgba(0,0,0,0.1)',;;
-            zIndex: "1000",;";";";";"
-            minWidth: '150px',;'
+            position: 'absolute',;;'
+            top: '100%',;;'
+            right: "0",;";";";";""
+            backgroundColor: 'white',;;'
+            border: '1px solid #ccc',;;'
+            borderRadius: '4px',;;'
+            boxShadow: '0 2px 10px rgba(0,0,0,0.1)',;;'
+            zIndex: "1000",;";";";";""
+            minWidth: '150px',;''
           }};
         >;
-          <ul;'
+          <ul;''
             ref={menuRef};;
-            style={{ listStyle: 'none', margin: "0", _padding: '8px 0' }};;
-            role="menu";";";";";"
-            aria-label="User menu";";";"
-            onKeyDown={(e) => {;";";";"
-              const items: unknown = Array.from(;";";";";"
-                menuRef.current?.querySelectorAll<HTMLElement>('a,button') ||;
-                  [],;'
+            style={{ listStyle: 'none', margin: "0", _padding: '8px 0' }};;'
+            role="menu";";";";";""
+            aria-label="User menu";";";""
+            onKeyDown={(e) => {;";";";""
+              const items: unknown = Array.from(;";";";";""
+                menuRef.current?.querySelectorAll<HTMLElement>('a,button') ||;'
+                  [],;''
               );
               const index: unknown = items.indexOf(;
-                document.activeElement as HTMLElement,;'
+                document.activeElement as HTMLElement,;''
               );;
-              if (e.key === 'Escape') {;'
+              if (e.key === 'Escape') {;''
                 setIsOpen(false);;
-                fireEvent('profile_dropdown_toggle', { open: "false "});";";";"
-                (e.target as HTMLElement).blur();";";";";"
-              } else if (e.key === 'ArrowDown') {;
+                fireEvent('profile_dropdown_toggle', { open: "false "});";";";""
+                (e.target as HTMLElement).blur();";";";";""
+              } else if (e.key === 'ArrowDown') {;'
                 e.preventDefault();
-                const next: unknown = items[(index + 1) % items.length];'
+                const next: unknown = items[(index + 1) % items.length];''
                 next?.focus();;
-              } else if (e.key === 'ArrowUp') {;
+              } else if (e.key === 'ArrowUp') {;'
                 e.preventDefault();
                 const prev: unknown = items[(index - 1 + items.length) % items.length];
-                prev?.focus();'
+                prev?.focus();''
               };
             }};
-          >;'
+          >;''
             <li;;
-              style={{ padding: '8px 16px', _whiteSpace: 'nowrap' }};;
-              role="none";";";"
-            >;";";";"
-              <Link;";";";";"
-                href="/profile";";";"
-                onClick={() => {;";";";"
-                  setIsOpen(false);";";";";"
-                  fireEvent('profile_dropdown_toggle', { open: "false "});";";";"
-                }};";";";";"
-                style={{ textDecoration: 'none', color: 'inherit' }};;
-                role="menuitem";
-              >;"
-                Profile;";"
-              </Link>;";";"
-            </li>;";";";"
-            <li;";";";";"
-              style={{ padding: '8px 16px', _whiteSpace: 'nowrap' }};;
-              role="none";";";"
-            >;";";";"
-              <Link;";";";";"
-                href="/orders";";";"
-                onClick={() => {;";";";"
-                  setIsOpen(false);";";";";"
-                  fireEvent('profile_dropdown_toggle', { open: "false "});";";";"
-                }};";";";";"
-                style={{ textDecoration: 'none', color: 'inherit' }};;
-                role="menuitem";
-              >;"
-                Orders;";"
-              </Link>;";";"
-            </li>;";";";"
-            <li;";";";";"
-              style={{ padding: '8px 16px', _whiteSpace: 'nowrap' }};;
-              role="none";";";"
-            >;";";";"
-              <Link;";";";";"
-                href="/settings";";";"
-                onClick={() => {;";";";"
-                  setIsOpen(false);";";";";"
-                  fireEvent('profile_dropdown_toggle', { open: "false "});";";";"
-                }};";";";";"
-                style={{ textDecoration: 'none', color: 'inherit' }};;
-                role="menuitem";
-              >;"
-                Settings;";"
-              </Link>;";";"
-            </li>;";";";"
-            <li;";";";";"
-              style={{ padding: '8px 0 8px 16px', borderTop: '1px solid #ccc' }};;
-              role="none";"
-            >;";"
-              <button;";";"
-                onClick={handleLogout};";";";"
-                style={{;";";";";"
-                  background: 'none',;;
-                  border: 'none',;;
-                  textAlign: 'left',;;
-                  width: '100%',;;
-                  padding: "0",;";";";";"
-                  cursor: 'pointer',;;
-                  color: 'inherit',;'
+              style={{ padding: '8px 16px', _whiteSpace: 'nowrap' }};;'
+              role="none";";";""
+            >;";";";""
+              <Link;";";";";""
+                href="/profile";";";""
+                onClick={() => {;";";";""
+                  setIsOpen(false);";";";";""
+                  fireEvent('profile_dropdown_toggle', { open: "false "});";";";""
+                }};";";";";""
+                style={{ textDecoration: 'none', color: 'inherit' }};;'
+                role="menuitem";"
+              >;""
+                Profile;";""
+              </Link>;";";""
+            </li>;";";";""
+            <li;";";";";""
+              style={{ padding: '8px 16px', _whiteSpace: 'nowrap' }};;'
+              role="none";";";""
+            >;";";";""
+              <Link;";";";";""
+                href="/orders";";";""
+                onClick={() => {;";";";""
+                  setIsOpen(false);";";";";""
+                  fireEvent('profile_dropdown_toggle', { open: "false "});";";";""
+                }};";";";";""
+                style={{ textDecoration: 'none', color: 'inherit' }};;'
+                role="menuitem";"
+              >;""
+                Orders;";""
+              </Link>;";";""
+            </li>;";";";""
+            <li;";";";";""
+              style={{ padding: '8px 16px', _whiteSpace: 'nowrap' }};;'
+              role="none";";";""
+            >;";";";""
+              <Link;";";";";""
+                href="/settings";";";""
+                onClick={() => {;";";";""
+                  setIsOpen(false);";";";";""
+                  fireEvent('profile_dropdown_toggle', { open: "false "});";";";""
+                }};";";";";""
+                style={{ textDecoration: 'none', color: 'inherit' }};;'
+                role="menuitem";"
+              >;""
+                Settings;";""
+              </Link>;";";""
+            </li>;";";";""
+            <li;";";";";""
+              style={{ padding: '8px 0 8px 16px', borderTop: '1px solid #ccc' }};;'
+              role="none";""
+            >;";""
+              <button;";";""
+                onClick={handleLogout};";";";""
+                style={{;";";";";""
+                  background: 'none',;;'
+                  border: 'none',;;'
+                  textAlign: 'left',;;'
+                  width: '100%',;;'
+                  padding: "0",;";";";";""
+                  cursor: 'pointer',;;'
+                  color: 'inherit',;''
                 }};;
-                role="menuitem";
+                role="menuitem";"
               >;
                 Logout;
               </button>;
@@ -212,8 +212,8 @@ const UserProfileDropdown: unknown React.FC = () => {;
         </div>;
       )};
     </div>;
-  );"
-};";"
-;";";"
-export default UserProfileDropdown;";";";"
-"""""
+  );""
+};";""
+;";";"";
+export default UserProfileDropdown;";";";""
+""""""

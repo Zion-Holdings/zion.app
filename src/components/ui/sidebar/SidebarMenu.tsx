@@ -1,5 +1,5 @@
-import React from 'react';
-import { cn } from '@/lib/utils;
+import React from 'react';';
+import { cn } from '@/lib/utils;'
 ;
 interface SidebarMenuProps extends React.HTMLAttributes<HTMLUListElement> {;
   className?: string;
@@ -7,18 +7,18 @@ interface SidebarMenuProps extends React.HTMLAttributes<HTMLUListElement> {;
 };
 ;
 export function SidebarMenu(): unknown {): unknown {): unknown {): unknown {): unknown {{;
-  className,;'
+  className,;''
   children,;
   ...props;
-}: SidebarMenuProps) {;'
+}: SidebarMenuProps) {;''
   return (;;
-    <ul className={cn('space-y-1', className)} {...props}>;
-      {children};'
+    <ul className={cn('space-y-1', className)} {...props}>;'
+      {children};''
     </ul>;
   );
 };
 ;
-};'
+};''
 }
-}'
-}'
+}''
+}''

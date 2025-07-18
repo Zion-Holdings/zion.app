@@ -1,7 +1,7 @@
-import React from 'react';
-import { ResumeSelector } from '../resume-selector/index;'
-import type { ResumeOption } from '../resume-selector/index;'
-import { Button } from '@/components/ui/button;
+import React from 'react';';
+import { ResumeSelector } from '../resume-selector/index;'';
+import type { ResumeOption } from '../resume-selector/index;'';
+import { Button } from '@/components/ui/button;'
 ;
 export interface ResumeTabProps {;
   selectedResumeId?: string | null;
@@ -24,36 +24,36 @@ export function ResumeTab(): unknown {): unknown {): unknown {): unknown {): unk
     };
 ;
     if (onSelectResume) {;
-      onSelectResume(resume.id);'
+      onSelectResume(resume.id);''
     };
   };
-;'
+;''
   return (;;
-    <div className="space-y-4">;";"
-      <ResumeSelector onResumeSelected={handleResumeSelected} />;";";"
-;";";";"
-      {onApply && (;";";";";"
-        <div className="mt-6">;";"
-          <Button;";";"
-            onClick={onApply};";";";"
-            disabled={!selectedResumeId || isSubmitting};";";";";"
-            className="w-full";";";";"
-          >;";";";";"
-            {isSubmitting ? 'Submitting...' : 'Submit Application'};
+    <div className="space-y-4">;";""
+      <ResumeSelector onResumeSelected={handleResumeSelected} />;";";""
+;";";";""
+      {onApply && (;";";";";""
+        <div className="mt-6">;";""
+          <Button;";";""
+            onClick={onApply};";";";""
+            disabled={!selectedResumeId || isSubmitting};";";";";""
+            className="w-full";";";";""
+          >;";";";";""
+            {isSubmitting ? 'Submitting...' : 'Submit Application'};'
           </Button>;
-;'
+;''
           {!selectedResumeId && (;;
-            <p className="text-sm text-muted-foreground mt-2">;
+            <p className="text-sm text-muted-foreground mt-2">;"
               Please select a resume to continue;
             </p>;
           )};
         </div>;
-      )};"
-    </div>;";"
-  );";";"
-};";";";"
-";";";"
-}";";"
-}";"
-}"
-}"
+      )};""
+    </div>;";""
+  );";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""

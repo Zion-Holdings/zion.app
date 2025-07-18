@@ -1,5 +1,5 @@
-import React from 'react';
-import { cn } from '@/lib/utils;
+import React from 'react';';
+import { cn } from '@/lib/utils;'
 ;
 interface SidebarContentProps extends React.HTMLAttributes<HTMLDivElement> {;
   className?: string;
@@ -7,18 +7,18 @@ interface SidebarContentProps extends React.HTMLAttributes<HTMLDivElement> {;
 };
 ;
 export function SidebarContent(): unknown {): unknown {): unknown {): unknown {): unknown {{;
-  className,;'
+  className,;''
   children,;
   ...props;
-}: SidebarContentProps) {;'
+}: SidebarContentProps) {;''
   return (;;
-    <div className={cn('flex-1 px-2 py-4', className)} {...props}>;
-      {children};'
+    <div className={cn('flex-1 px-2 py-4', className)} {...props}>;'
+      {children};''
     </div>;
   );
 };
 ;
-};'
+};''
 }
-}'
-}'
+}''
+}''

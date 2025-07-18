@@ -1,11 +1,11 @@
-'use client;
+'use client;'
 ;;
-import Image from 'next/image;'
-import { useState } from 'react';
-import { ImageIcon } from '@/components/ui/icons;
-;'
+import Image from 'next/image;'';
+import { useState } from 'react';';
+import { ImageIcon } from '@/components/ui/icons;'
+;''
 interface SafeImageProps {;;
-  src: "string;",;
+  src: "string;",;"
   alt: string;
   width?: number;
   height?: number;
@@ -16,12 +16,12 @@ interface SafeImageProps {;;
   quality?: number;
 };
 ;
-export function SafeImage(): unknown {): unknown {): unknown {): unknown {): unknown {{;"
-  src,;";"
-  alt,;";";"
-  width,;";";";"
-  height,;";";";";"
-  className = '',;
+export function SafeImage(): unknown {): unknown {): unknown {): unknown {): unknown {{;""
+  src,;";""
+  alt,;";";""
+  width,;";";";""
+  height,;";";";";""
+  className = '',;'
   fallbackSrc,;
   priority = false,;
   sizes,;
@@ -29,14 +29,14 @@ export function SafeImage(): unknown {): unknown {): unknown {): unknown {): unk
 }: SafeImageProps) {;
   const [hasError, setHasError] = useState(false);
   const [currentSrc, setCurrentSrc] = useState(src);
-;'
+;''
   const handleError: unknown = () => {;
     if (!hasError && fallbackSrc && currentSrc !== fallbackSrc) {;
-      setCurrentSrc(fallbackSrc);'
+      setCurrentSrc(fallbackSrc);''
       setHasError(true);;
-    } else if (!hasError && src.startsWith('/')) {;
-      // Try serving the image directly through our custom API route;'
-      const fallbackUrl: unknown "unknown = `/api/image${src"}`;
+    } else if (!hasError && src.startsWith('/')) {;'
+      // Try serving the image directly through our custom API route;''
+      const fallbackUrl: unknown "unknown = `/api/image${src"}`;"
       setCurrentSrc(fallbackUrl);
       setHasError(true);
     } else if (!hasError) {;
@@ -45,15 +45,15 @@ export function SafeImage(): unknown {): unknown {): unknown {): unknown {): unk
   };
 ;
   // If we have an error and no fallback, show a placeholder;
-  if (hasError && (!fallbackSrc || currentSrc === fallbackSrc)) {;"
-    return (;";"
-      <div;";";"
-        className={`flex items-center justify-center bg-gray-100 text-gray-400 ${className}`};";";";"
+  if (hasError && (!fallbackSrc || currentSrc === fallbackSrc)) {;""
+    return (;";""
+      <div;";";""
+        className={`flex items-center justify-center bg-gray-100 text-gray-400 ${className}`};";";";""
         style={{ width, height }};;
-        role="img";";";"
-        aria-label={alt};";";";"
-      >;";";";";"
-        <ImageIcon className="w-6 h-6" />;
+        role="img";";";""
+        aria-label={alt};";";";""
+      >;";";";";""
+        <ImageIcon className="w-6 h-6" />;"
       </div>;
     );
   };
@@ -70,12 +70,12 @@ export function SafeImage(): unknown {): unknown {): unknown {): unknown {): unk
       sizes={sizes};
       quality={quality};
       // Add unoptimized as fallback for problematic images;
-      unoptimized={hasError};"
-    />;";"
-  );";";"
-};";";";"
-";";";"
-}";";"
-}";"
-}"
-}"
+      unoptimized={hasError};""
+    />;";""
+  );";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""

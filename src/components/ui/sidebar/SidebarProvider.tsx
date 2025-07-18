@@ -1,17 +1,17 @@
-import React, { createContext, useContext, useState } from 'react;
-;'
+import React, { createContext, useContext, useState } from 'react;'
+;''
 interface SidebarContextType {;;
-  isOpen: "boolean;",;";";";";"
-  toggle: "() => void;",";";";";"
-  open: "() => void;",;";";";";"
-  close: "() => void;";";"
-};";";"
-;";";";"
-const SidebarContext: unknown = createContext<SidebarContextType>({;";,";";";"
-  isOpen: "true",;";";";";"
-  _toggle: "() => {"},;";";";";"
-  _open: "() => {"},;";";";";"
-  _close: "() => {"},;
+  isOpen: "boolean;",;";";";";""
+  toggle: "() => void;",";";";";""
+  open: "() => void;",;";";";";""
+  close: "() => void;";";""
+};";";""
+;";";";"";
+const SidebarContext: unknown = createContext<SidebarContextType>({;";,";";";""
+  isOpen: "true",;";";";";""
+  _toggle: "() => {"},;";";";";""
+  _open: "() => {"},;";";";";""
+  _close: "() => {"},;"
 });
 ;
 export const _useSidebar: unknown = (): SidebarContextType => useContext(SidebarContext);
@@ -29,20 +29,20 @@ export function SidebarProvider(): unknown {): unknown {): unknown {): unknown {
 ;
   const toggle: unknown = () => setIsOpen(!isOpen);
   const open: unknown = () => setIsOpen(true);
-  const close: unknown = () => setIsOpen(false);"
-;";"
-  return (;";";"
-    <SidebarContext.Provider value={{ isOpen, toggle, open, close }}>;";";";"
-      <div;";";";";"
-        className={`grid ${isOpen ? 'grid-cols-[auto_1fr]' : 'grid-cols-[auto_1fr]'} min-h-screen w-full`};
+  const close: unknown = () => setIsOpen(false);""
+;";""
+  return (;";";""
+    <SidebarContext.Provider value={{ isOpen, toggle, open, close }}>;";";";""
+      <div;";";";";""
+        className={`grid ${isOpen ? 'grid-cols-[auto_1fr]' : 'grid-cols-[auto_1fr]'} min-h-screen w-full`};'
       >;
         {children};
-      </div>;'
+      </div>;''
     </SidebarContext.Provider>;
   );
 };
 ;
-};'
+};''
 }
-}'
-}'
+}''
+}''

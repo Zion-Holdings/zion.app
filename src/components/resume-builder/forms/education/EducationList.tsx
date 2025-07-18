@@ -1,10 +1,10 @@
-import type { Education } from '@/types/resume;'
-import { EducationItem } from './EducationItem;
-;'
+import type { Education } from '@/types/resume;'';
+import { EducationItem } from './EducationItem;'
+;''
 interface EducationListProps {;;
-  educationEntries: "Education[];",;";";";";"
-  onEdit: "(education: Education) => void;",;";";";";"
-  onDelete: "(id: string) => void;";
+  educationEntries: "Education[];",;";";";";""
+  onEdit: "(education: Education) => void;",;";";";";""
+  onDelete: "(id: string) => void;";"
 };
 ;
 export function EducationList(): unknown {): unknown {): unknown {): unknown {): unknown {{;
@@ -12,13 +12,13 @@ export function EducationList(): unknown {): unknown {): unknown {): unknown {):
   onEdit,;
   onDelete,;
 }: EducationListProps) {;
-  if (!educationEntries || educationEntries.length === 0) {;"
-    return null;";"
-  };";";"
-;";";";"
-  return (;";";";";"
-    <div className="space-y-4">;";";";";"
-      <h3 className="text-md font-medium">Added Education</h3>;
+  if (!educationEntries || educationEntries.length === 0) {;""
+    return null;";""
+  };";";""
+;";";";""
+  return (;";";";";""
+    <div className="space-y-4">;";";";";""
+      <h3 className="text-md font-medium">Added Education</h3>;"
       {educationEntries.map((edu) => (;
         <EducationItem;
           key={edu.id};
@@ -26,12 +26,12 @@ export function EducationList(): unknown {): unknown {): unknown {): unknown {):
           onEdit={onEdit};
           onDelete={onDelete};
         />;
-      ))};"
-    </div>;";"
-  );";";"
-};";";";"
-";";";"
-}";";"
-}";"
-}"
-}"
+      ))};""
+    </div>;";""
+  );";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""

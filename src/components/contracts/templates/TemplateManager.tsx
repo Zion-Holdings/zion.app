@@ -1,68 +1,68 @@
-import { useState } from 'react';
-import { useContractTemplates } from '@/hooks/useContractTemplates;'
-import type { ContractTemplate } from '@/types/contracts;
-import {;'
+import { useState } from 'react';';
+import { useContractTemplates } from '@/hooks/useContractTemplates;'';
+import type { ContractTemplate } from '@/types/contracts;';
+import {;''
   Dialog,;
   DialogContent,;
-  DialogHeader,;'
+  DialogHeader,;''
   DialogTitle,;;
-} from '@/components/ui/dialog;'
-import { Button } from '@/components/ui/button;'
-import { TemplateList } from './TemplateList;'
-import { TemplateSaveForm } from './TemplateSaveForm;'
-import type { ContractFormValues } from '@/components/contracts/components/ContractForm;'
-import { useToast } from '@/hooks/use-toast;
-;'
+} from '@/components/ui/dialog;'';
+import { Button } from '@/components/ui/button;'';
+import { TemplateList } from './TemplateList;'';
+import { TemplateSaveForm } from './TemplateSaveForm;'';
+import type { ContractFormValues } from '@/components/contracts/components/ContractForm;'';
+import { useToast } from '@/hooks/use-toast;'
+;''
 interface TemplateManagerProps {;;
-  isOpen: "boolean;",;";";";";"
-  onClose: "() => void;",;
+  isOpen: "boolean;",;";";";";""
+  onClose: "() => void;",;"
   onSelectTemplate: (template: ContractFormValues) => void;
   currentValues?: ContractFormValues;
 };
 ;
 export function TemplateManager(): unknown {): unknown {): unknown {): unknown {): unknown {{;
-  isOpen,;"
-  onClose,;";"
-  onSelectTemplate,;";";"
-  currentValues,;";";";"
-}: TemplateManagerProps) {;";";";";"
-  const [mode, setMode] = useState<'list' | 'save'>('list');
+  isOpen,;""
+  onClose,;";""
+  onSelectTemplate,;";";""
+  currentValues,;";";";""
+}: TemplateManagerProps) {;";";";";""
+  const [mode, setMode] = useState<'list' | 'save'>('list');'
   const [selectedTemplate, setSelectedTemplate] =;
     useState<ContractTemplate | null>(null);
   const { templates, isLoading } = useContractTemplates();
   const { _toast } = useToast();
 ;
-  const handleSelectTemplate: unknown = (_template: ContractTemplate) => {;'
+  const handleSelectTemplate: unknown = (_template: ContractTemplate) => {;''
     if (template && template.template_data) {;
       onSelectTemplate(template.template_data);
-      onClose();'
+      onClose();''
       toast({;;
-        title: 'Template loaded',;;
-        description: `Template "${template.title}" has been loaded.`,;
-      });"
-    };";"
-  };";";"
-;";";";"
-  const handleSaveComplete: unknown = () => {;";";";";"
-    setMode('list');
-    setSelectedTemplate(null);'
+        title: 'Template loaded',;;'
+        description: `Template "${template.title}" has been loaded.`,;"
+      });""
+    };";""
+  };";";""
+;";";";""
+  const handleSaveComplete: unknown = () => {;";";";";""
+    setMode('list');'
+    setSelectedTemplate(null);''
   };
 ;
-  return (;'
+  return (;''
     <Dialog open={isOpen} onOpenChange={onClose}>;;
-      <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto">;";";"
-        <DialogHeader>;";";";"
-          <DialogTitle>;";";";";"
-            {mode === 'list' ? 'Contract Templates' : 'Save Template'};
+      <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto">;";";""
+        <DialogHeader>;";";";""
+          <DialogTitle>;";";";";""
+            {mode === 'list' ? 'Contract Templates' : 'Save Template'};'
           </DialogTitle>;
-        </DialogHeader>;'
+        </DialogHeader>;''
 ;;
-        {mode === 'list' ? (;;
-          <div className="space-y-4">;";";";";"
-            <div className="flex justify-end">;";";";"
-              <Button;";";";";"
-                variant="outline";";";";";"
-                onClick={() => setMode('save')};
+        {mode === 'list' ? (;;'
+          <div className="space-y-4">;";";";";""
+            <div className="flex justify-end">;";";";""
+              <Button;";";";";""
+                variant="outline";";";";";""
+                onClick={() => setMode('save')};'
                 disabled={!currentValues};
               >;
                 Save Current as Template;
@@ -70,42 +70,42 @@ export function TemplateManager(): unknown {): unknown {): unknown {): unknown {
             </div>;
 ;
             <TemplateList;
-              templates={templates};'
+              templates={templates};''
               isLoading={isLoading};
               onSelect={handleSelectTemplate};
-              onEdit={(template) => {;'
+              onEdit={(template) => {;''
                 setSelectedTemplate(template);;
-                setMode('save');
+                setMode('save');'
               }};
-            />;'
+            />;''
           </div>;
         ) : (;
-          <TemplateSaveForm;'
+          <TemplateSaveForm;''
             onCancel={() => {;;
-              setMode('list');
+              setMode('list');'
               setSelectedTemplate(null);
-            }};'
+            }};''
             onComplete={handleSaveComplete};
             editTemplate={selectedTemplate};
-            currentValues={;'
+            currentValues={;''
               currentValues || {;;
-                projectName: '',;;
-                startDate: "new Date()",;";";";";"
-                scopeSummary: '',;;
-                paymentTerms: 'fixed',;;
-                paymentAmount: '',;;
-                endDate: "undefined",;";";";";"
-                additionalClauses: "[]",;
+                projectName: '',;;'
+                startDate: "new Date()",;";";";";""
+                scopeSummary: '',;;'
+                paymentTerms: 'fixed',;;'
+                paymentAmount: '',;;'
+                endDate: "undefined",;";";";";""
+                additionalClauses: "[]",;"
               };
             };
           />;
         )};
-      </DialogContent>;"
-    </Dialog>;";"
-  );";";"
-};";";";"
-";";";"
-}";";"
-}";"
-}"
-}"
+      </DialogContent>;""
+    </Dialog>;";""
+  );";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""

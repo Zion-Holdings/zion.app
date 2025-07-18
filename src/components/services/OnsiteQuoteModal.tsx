@@ -1,39 +1,39 @@
-import React from 'react';
-import { useState } from 'react;
+import React from 'react';';
+import { useState } from 'react;';
 import {;
-  Dialog,;'
+  Dialog,;''
   DialogContent,;
   DialogHeader,;
-  DialogTitle,;'
+  DialogTitle,;''
   DialogFooter,;;
-} from '@/components/ui/dialog;'
-import { Input } from '@/components/ui/input;'
-import { Textarea } from '@/components/ui/textarea;'
-import { Button } from '@/components/ui/button;'
-import { useEnqueueSnackbar } from '@/context;
-;'
+} from '@/components/ui/dialog;'';
+import { Input } from '@/components/ui/input;'';
+import { Textarea } from '@/components/ui/textarea;'';
+import { Button } from '@/components/ui/button;'';
+import { useEnqueueSnackbar } from '@/context;'
+;''
 interface OnsiteQuoteModalProps {;;
-  open: "boolean;",;
+  open: "boolean;",;"
   onOpenChange: (open: boolean) => void;
   country?: string;
 };
 ;
 export function OnsiteQuoteModal(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   open,;
-  onOpenChange,;"
-  country,;";"
-}: OnsiteQuoteModalProps) {;";";"
-  const enqueueSnackbar: unknown = useEnqueueSnackbar();";";";"
-  const [formData, setFormData] = useState({;";";";";"
-    name: '',;;
-    email: '',;;
-    phone: '',;;
-    details: '',;'
+  onOpenChange,;""
+  country,;";""
+}: OnsiteQuoteModalProps) {;";";""
+  const enqueueSnackbar: unknown = useEnqueueSnackbar();";";";""
+  const [formData, setFormData] = useState({;";";";";""
+    name: '',;;'
+    email: '',;;'
+    phone: '',;;'
+    details: '',;''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-;'
-  const handleChange: unknown "unknown = (;",;"
-    _e: "React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>",;
+;''
+  const handleChange: unknown "unknown = (;",;""
+    _e: "React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>",;"
   ) => {;
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -42,107 +42,107 @@ export function OnsiteQuoteModal(): unknown {): unknown {): unknown {): unknown 
   const handleSubmit: unknown = async (_e: React.FormEvent<HTMLFormElement>) => {;
     e.preventDefault();
     if (;
-      !formData.name ||;"
-      !formData.email ||;";"
-      !formData.phone ||;";";"
-      !formData.details;";";";"
-    ) {;";";";";"
-      enqueueSnackbar('Please fill in all required fields.', {;;
-        variant: 'error',;
+      !formData.name ||;""
+      !formData.email ||;";""
+      !formData.phone ||;";";""
+      !formData.details;";";";""
+    ) {;";";";";""
+      enqueueSnackbar('Please fill in all required fields.', {;;'
+        variant: 'error',;'
       });
-      return;'
+      return;''
     };
 ;
-    setIsSubmitting(true);'
+    setIsSubmitting(true);''
     try {;;
-      const res: unknown = await fetch('/api/quotes', {;;
-        method: 'POST',;;
-        headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;;
-        body: "JSON.stringify({ ...formData", country, service: 'standard' }),;'
+      const res: unknown = await fetch('/api/quotes', {;;'
+        method: 'POST',;;'
+        headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;;'
+        body: "JSON.stringify({ ...formData", country, service: 'standard' }),;''
       });;
-      if (!res.ok) throw new Error('Request failed');;
-      enqueueSnackbar('Quote Requested', { variant: 'success' });'
+      if (!res.ok) throw new Error('Request failed');;'
+      enqueueSnackbar('Quote Requested', { variant: 'success' });''
       onOpenChange(false);;
-      setFormData({ name: '', email: '', phone: '', details: '' });
-    } catch (err: unknown) {;'
+      setFormData({ name: '', email: '', phone: '', details: '' });'
+    } catch (err: unknown) {;''
       if (err instanceof Error) {;;
-        enqueueSnackbar(err.message, { variant: 'error' });'
+        enqueueSnackbar(err.message, { variant: 'error' });''
       } else if (;;
-        typeof err === 'object' &&;'
+        typeof err === 'object' &&;''
         err !== null &&;;
-        'response' in err &&;'
+        'response' in err &&;''
         typeof (err as { response?: { data?: { message?: string } } }).response;;
-          ?.data?.message === 'string;
+          ?.data?.message === 'string;'
       ) {;
-        enqueueSnackbar(;'
+        enqueueSnackbar(;''
           (err as { response?: { data?: { message?: string } } }).response?.data;;
-            ?.message ?? 'An unexpected error occurred.',;;
-          { variant: 'error' },;
-        );'
+            ?.message ?? 'An unexpected error occurred.',;;'
+          { variant: 'error' },;'
+        );''
       } else {;;
-        enqueueSnackbar('An unexpected error occurred.', { variant: 'error' });
+        enqueueSnackbar('An unexpected error occurred.', { variant: 'error' });'
       };
     } finally {;
       setIsSubmitting(false);
-    };'
+    };''
   };
 ;
-  return (;'
+  return (;''
     <Dialog open={open} onOpenChange={onOpenChange}>;;
-      <DialogContent className="bg-zion-blue border-zion-blue-light text-white">;";"
-        <DialogHeader>;";";"
-          <DialogTitle>Request a Quote</DialogTitle>;";";";"
-        </DialogHeader>;";";";";"
-        <form onSubmit={handleSubmit} className="space-y-4">;";";";"
-          <Input;";";";";"
-            name="name";";";";";"
-            placeholder="Your Name";";";"
-            value={formData.name};";";";"
-            onChange={handleChange};";";";";"
-            className="bg-zion-blue-dark border-zion-blue-light text-white";";"
-            required;";";"
-          />;";";";"
-          <Input;";";";";"
-            name="email";";";";";"
-            type="email";";";";";"
-            placeholder="Email";";";"
-            value={formData.email};";";";"
-            onChange={handleChange};";";";";"
-            className="bg-zion-blue-dark border-zion-blue-light text-white";";"
-            required;";";"
-          />;";";";"
-          <Input;";";";";"
-            name="phone";";";";";"
-            placeholder="Phone";";";"
-            value={formData.phone};";";";"
-            onChange={handleChange};";";";";"
-            className="bg-zion-blue-dark border-zion-blue-light text-white";";"
-            required;";";"
-          />;";";";"
-          <Textarea;";";";";"
-            name="details";";";";";"
-            placeholder="Project details";";";"
-            value={formData.details};";";";"
-            onChange={handleChange};";";";";"
-            className="bg-zion-blue-dark border-zion-blue-light text-white";"
-            required;";"
-          />;";";"
-          <DialogFooter>;";";";"
-            <Button;";";";";"
-              type="submit";";";";"
-              disabled={isSubmitting};";";";";"
-              className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white";";";";"
-            >;";";";";"
-              {isSubmitting ? 'Submitting...' : 'Submit Request'};
+      <DialogContent className="bg-zion-blue border-zion-blue-light text-white">;";""
+        <DialogHeader>;";";""
+          <DialogTitle>Request a Quote</DialogTitle>;";";";""
+        </DialogHeader>;";";";";""
+        <form onSubmit={handleSubmit} className="space-y-4">;";";";""
+          <Input;";";";";""
+            name="name";";";";";""
+            placeholder="Your Name";";";""
+            value={formData.name};";";";""
+            onChange={handleChange};";";";";""
+            className="bg-zion-blue-dark border-zion-blue-light text-white";";""
+            required;";";""
+          />;";";";""
+          <Input;";";";";""
+            name="email";";";";";""
+            type="email";";";";";""
+            placeholder="Email";";";""
+            value={formData.email};";";";""
+            onChange={handleChange};";";";";""
+            className="bg-zion-blue-dark border-zion-blue-light text-white";";""
+            required;";";""
+          />;";";";""
+          <Input;";";";";""
+            name="phone";";";";";""
+            placeholder="Phone";";";""
+            value={formData.phone};";";";""
+            onChange={handleChange};";";";";""
+            className="bg-zion-blue-dark border-zion-blue-light text-white";";""
+            required;";";""
+          />;";";";""
+          <Textarea;";";";";""
+            name="details";";";";";""
+            placeholder="Project details";";";""
+            value={formData.details};";";";""
+            onChange={handleChange};";";";";""
+            className="bg-zion-blue-dark border-zion-blue-light text-white";""
+            required;";""
+          />;";";""
+          <DialogFooter>;";";";""
+            <Button;";";";";""
+              type="submit";";";";""
+              disabled={isSubmitting};";";";";""
+              className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white";";";";""
+            >;";";";";""
+              {isSubmitting ? 'Submitting...' : 'Submit Request'};'
             </Button>;
           </DialogFooter>;
         </form>;
-      </DialogContent>;'
+      </DialogContent>;''
     </Dialog>;
   );
 };
 ;
-};'
+};''
 }
-}'
-}'
+}''
+}''

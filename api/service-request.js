@@ -1,17 +1,17 @@
-const fs = require('fs');
+const fs = require('fs');'
 
 async function handler(req, res) {
-  if (req.method !== 'POST') {
+  if (req.method !== 'POST') {'
     res.statusCode = 405;
-    res.setHeader('Allow', 'POST');
-    res.end('Method Not Allowed');
+    res.setHeader('Allow', 'POST');'
+    res.end('Method Not Allowed');'
     return;
   }
 
   const { name, email, phone, details: _details } = req.body || {};
   if (!name || !email || !phone) {
     res.statusCode = 400;
-    res.json({ error: 'Missing required fields' });
+    res.json({ error: 'Missing required fields' });'
     return;
   }
 
@@ -24,7 +24,7 @@ async function handler(req, res) {
     phone,
     details: _details,
   };
-  fs.appendFileSync('service_requests.log', JSON.stringify(entry) + '\n');
+  fs.appendFileSync('service_requests.log', JSON.stringify(entry) + '\n');'
 
   // Placeholder for future request processing logic
 

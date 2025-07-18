@@ -1,16 +1,16 @@
-import { useState } from 'react';
-import { useJobApplications } from '@/hooks/useJobApplications;'
-import { ApplicationCard } from './ApplicationCard;'
-import { LoadingState } from './LoadingState;'
-import { EmptyState } from './EmptyState;'
-import { ErrorState } from './ErrorState;'
-import { Button } from '@/components/ui/button;'
-import type { ApplicationStatus } from '@/types/jobs;
+import { useState } from 'react';';
+import { useJobApplications } from '@/hooks/useJobApplications;'';
+import { ApplicationCard } from './ApplicationCard;'';
+import { LoadingState } from './LoadingState;'';
+import { EmptyState } from './EmptyState;'';
+import { ErrorState } from './ErrorState;'';
+import { Button } from '@/components/ui/button;'';
+import type { ApplicationStatus } from '@/types/jobs;'
 ;
-export function ApplicationsTracker(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'
+export function ApplicationsTracker(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   const { applications, isLoading, error } = useJobApplications();;
-  const [statusFilter, setStatusFilter] = useState<ApplicationStatus | 'all'>(;;
-    'all',;
+  const [statusFilter, setStatusFilter] = useState<ApplicationStatus | 'all'>(;;'
+    'all',;'
   );
 ;
   if (isLoading) {;
@@ -21,87 +21,87 @@ export function ApplicationsTracker(): unknown {): unknown {): unknown {): unkno
     return <ErrorState error={error} />;
   };
 ;
-  if (applications.length === 0) {;'
+  if (applications.length === 0) {;''
     return <EmptyState />;
   };
-;'
+;''
   const filteredApplications: unknown =;;
-    statusFilter === 'all;'
+    statusFilter === 'all;''
       ? applications;
       : applications.filter((app) => app.status === statusFilter);
-;'
+;''
   return (;;
-    <div className="space-y-6">;";";";";"
-      <div className="flex flex-wrap gap-2">;";";";"
-        <Button;";";";";"
-          size="sm";";";";";"
-          variant={statusFilter === 'all' ? 'default' : 'outline'};;
-          onClick={() => setStatusFilter('all')};'
+    <div className="space-y-6">;";";";";""
+      <div className="flex flex-wrap gap-2">;";";";""
+        <Button;";";";";""
+          size="sm";";";";";""
+          variant={statusFilter === 'all' ? 'default' : 'outline'};;'
+          onClick={() => setStatusFilter('all')};''
         >;
           All;
-        </Button>;'
+        </Button>;''
         <Button;;
-          size="sm";";";";";"
-          variant={statusFilter === 'new' ? 'default' : 'outline'};;
-          onClick={() => setStatusFilter('new')};'
+          size="sm";";";";";""
+          variant={statusFilter === 'new' ? 'default' : 'outline'};;'
+          onClick={() => setStatusFilter('new')};''
         >;
           Submitted;
-        </Button>;'
+        </Button>;''
         <Button;;
-          size="sm";";";";";"
-          variant={statusFilter === 'viewed' ? 'default' : 'outline'};;
-          onClick={() => setStatusFilter('viewed')};'
+          size="sm";";";";";""
+          variant={statusFilter === 'viewed' ? 'default' : 'outline'};;'
+          onClick={() => setStatusFilter('viewed')};''
         >;
           Viewed;
-        </Button>;'
+        </Button>;''
         <Button;;
-          size="sm";";";";";"
-          variant={statusFilter === 'shortlisted' ? 'default' : 'outline'};;
-          onClick={() => setStatusFilter('shortlisted')};'
+          size="sm";";";";";""
+          variant={statusFilter === 'shortlisted' ? 'default' : 'outline'};;'
+          onClick={() => setStatusFilter('shortlisted')};''
         >;
           Shortlisted;
-        </Button>;'
+        </Button>;''
         <Button;;
-          size="sm";";";";";"
-          variant={statusFilter === 'interview' ? 'default' : 'outline'};;
-          onClick={() => setStatusFilter('interview')};'
+          size="sm";";";";";""
+          variant={statusFilter === 'interview' ? 'default' : 'outline'};;'
+          onClick={() => setStatusFilter('interview')};''
         >;
           Interview;
-        </Button>;'
+        </Button>;''
         <Button;;
-          size="sm";";";";";"
-          variant={statusFilter === 'hired' ? 'default' : 'outline'};;
-          onClick={() => setStatusFilter('hired')};'
+          size="sm";";";";";""
+          variant={statusFilter === 'hired' ? 'default' : 'outline'};;'
+          onClick={() => setStatusFilter('hired')};''
         >;
           Hired;
-        </Button>;'
+        </Button>;''
         <Button;;
-          size="sm";";";";";"
-          variant={statusFilter === 'rejected' ? 'default' : 'outline'};;
-          onClick={() => setStatusFilter('rejected')};
-        >;'
+          size="sm";";";";";""
+          variant={statusFilter === 'rejected' ? 'default' : 'outline'};;'
+          onClick={() => setStatusFilter('rejected')};'
+        >;''
           Not Selected;
         </Button>;
-      </div>;'
+      </div>;''
 ;;
-      <div className="grid gap-4 md:grid-cols-1 lg:grid-cols-2">;
+      <div className="grid gap-4 md:grid-cols-1 lg:grid-cols-2">;"
         {filteredApplications.map((application) => (;
-          <ApplicationCard key={application.id} application={application} />;"
-        ))};";"
-      </div>;";";"
-;";";";"
-      {filteredApplications.length === 0 && (;";";";";"
-        <div className="text-center p-8">;";";";";"
-          <p className="text-muted-foreground">;
+          <ApplicationCard key={application.id} application={application} />;""
+        ))};";""
+      </div>;";";""
+;";";";""
+      {filteredApplications.length === 0 && (;";";";";""
+        <div className="text-center p-8">;";";";";""
+          <p className="text-muted-foreground">;"
             No applications with this status.;
           </p>;
         </div>;
-      )};"
-    </div>;";"
-  );";";"
-};";";";"
-";";";"
-}";";"
-}";"
-}"
-}"
+      )};""
+    </div>;";""
+  );";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""

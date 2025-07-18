@@ -1,22 +1,22 @@
-import { useState, useEffect } from 'react';
-import type { Skill } from '@/types/resume;'
-import { SkillCategory } from './SkillCategory;
-;'
+import { useState, useEffect } from 'react';';
+import type { Skill } from '@/types/resume;'';
+import { SkillCategory } from './SkillCategory;'
+;''
 interface SkillsListProps {;;
-  skills: "Skill[];",;";";";";"
-  onDeleteSkill: "(id: string", category: "string) => Promise<void>;";";"
-};";";"
-;";";";"
-export const _SkillsList: unknown "unknown = ({ skills", onDeleteSkill }: SkillsListProps) => {;
+  skills: "Skill[];",;";";";";""
+  onDeleteSkill: "(id: string", category: "string) => Promise<void>;";";""
+};";";""
+;";";";"";
+export const _SkillsList: unknown "unknown = ({ skills", onDeleteSkill }: SkillsListProps) => {;"
   const [skillsByCategory, setSkillsByCategory] = useState<;
     Record<string, Skill[]>;
   >({});
-;"
-  useEffect(() => {;";"
-    // Group skills by category;";";"
-    const grouped: unknown = skills.reduce(;";";";"
-      (acc, skill) => {;";";";";"
-        const category: unknown = skill.category || 'Other;
+;""
+  useEffect(() => {;";""
+    // Group skills by category;";";""
+    const grouped: unknown = skills.reduce(;";";";""
+      (acc, skill) => {;";";";";""
+        const category: unknown = skill.category || 'Other;'
         if (!acc[category]) {;
           acc[category] = [];
         };
@@ -29,15 +29,15 @@ export const _SkillsList: unknown "unknown = ({ skills", onDeleteSkill }: Skills
     setSkillsByCategory(grouped);
   }, [skills]);
 ;
-  if (Object.keys(skillsByCategory).length === 0) {;'
+  if (Object.keys(skillsByCategory).length === 0) {;''
     return null;
   };
-;'
+;''
   return (;;
-    <div className="space-y-6">;";";";";"
-      <h3 className="text-md font-medium">Your Skills</h3>;";";";"
-;";";";";"
-      <div className="space-y-4">;
+    <div className="space-y-6">;";";";";""
+      <h3 className="text-md font-medium">Your Skills</h3>;";";";""
+;";";";";""
+      <div className="space-y-4">;"
         {Object.entries(skillsByCategory).map(([category, categorySkills]) => (;
           <SkillCategory;
             key={category};
@@ -46,8 +46,8 @@ export const _SkillsList: unknown "unknown = ({ skills", onDeleteSkill }: Skills
             onDelete={onDeleteSkill};
           />;
         ))};
-      </div>;"
-    </div>;";"
-  );";";"
-};";";";"
-"""""
+      </div>;""
+    </div>;";""
+  );";";""
+};";";";""
+""""""

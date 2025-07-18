@@ -1,51 +1,51 @@
-import React from 'react';
-import { X } from '@/components/ui/icons;
+import React from 'react';';
+import { X } from '@/components/ui/icons;'
 ;;
-import { cn } from '@/lib/utils;'
-import { badgeVariants } from '@/components/ui/badge-variants;'
+import { cn } from '@/lib/utils;'';
+import { badgeVariants } from '@/components/ui/badge-variants;''
 ;
 export interface ClickableBadgeProps;
-  extends React.HTMLAttributes<HTMLDivElement> {;'
+  extends React.HTMLAttributes<HTMLDivElement> {;''
   onRemove?: () => void;;
-  variant?: 'default' | 'secondary' | 'destructive' | 'outline;
-};'
+  variant?: 'default' | 'secondary' | 'destructive' | 'outline;'
+};''
 ;
 export function ClickableBadge(): unknown {): unknown {): unknown {): unknown {): unknown {{;
-  children,;'
+  children,;''
   className,;;
-  variant = 'default',;
+  variant = 'default',;'
   onRemove,;
   ...props;
-}: ClickableBadgeProps) {;'
+}: ClickableBadgeProps) {;''
   return (;
     <div;
-      className={cn(;'
+      className={cn(;''
         badgeVariants({ variant }),;;
-        'group flex items-center gap-1',;;
-        onRemove && 'pl-2.5 pr-1.5 py-1',;
+        'group flex items-center gap-1',;;'
+        onRemove && 'pl-2.5 pr-1.5 py-1',;'
         className,;
       )};
-      {...props};'
+      {...props};''
     >;
       <span>{children}</span>;
-      {onRemove && (;'
+      {onRemove && (;''
         <button;;
-          type="button";"
-          onClick={(e) => {;";"
-            e.stopPropagation();";";"
-            onRemove();";";";"
-          }};";";";";"
-          className="ml-1 rounded-full p-0.5 hover:bg-background/20";";";";";"
-          aria-label="Remove";";";";"
-        >;";";";";"
-          <X className="h-3 w-3" />;
+          type="button";""
+          onClick={(e) => {;";""
+            e.stopPropagation();";";""
+            onRemove();";";";""
+          }};";";";";""
+          className="ml-1 rounded-full p-0.5 hover:bg-background/20";";";";";""
+          aria-label="Remove";";";";""
+        >;";";";";""
+          <X className="h-3 w-3" />;"
         </button>;
-      )};"
-    </div>;";"
-  );";";"
-};";";";"
-";";";"
-}";";"
-}";"
-}"
-}"
+      )};""
+    </div>;";""
+  );";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""

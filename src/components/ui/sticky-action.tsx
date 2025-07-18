@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { cn } from '@/lib/utils;'
-import { motion, AnimatePresence } from 'framer-motion;
-;'
+import React, { useEffect, useState } from 'react';';
+import { cn } from '@/lib/utils;'';
+import { motion, AnimatePresence } from 'framer-motion;'
+;''
 interface StickyActionProps {;
   className?: string;
-  children: React.ReactNode;'
+  children: React.ReactNode;''
   showAfterScroll?: number;;
-  position?: 'bottom' | 'top;
+  position?: 'bottom' | 'top;'
 };
-;'
+;'';
 export function StickyAction(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   className,;
-  children,;'
+  children,;''
   showAfterScroll = 300,;;
-  position = 'bottom',;
+  position = 'bottom',;'
 }: StickyActionProps) {;
   const [isVisible, setIsVisible] = useState(false);
 ;
@@ -21,46 +21,46 @@ export function StickyAction(): unknown {): unknown {): unknown {): unknown {): 
     const handleScroll: unknown = () => {;
       if (window.scrollY > showAfterScroll) {;
         setIsVisible(true);
-      } else {;'
+      } else {;''
         setIsVisible(false);
       };
-    };'
+    };''
 ;;
-    window.addEventListener('scroll', handleScroll);'
+    window.addEventListener('scroll', handleScroll);''
     return () => {;;
-      window.removeEventListener('scroll', handleScroll);'
+      window.removeEventListener('scroll', handleScroll);''
     };
   }, [showAfterScroll]);
-;'
-  const positionClasses: unknown "unknown = {;",;"
-    bottom: 'bottom-4',;;
-    top: 'top-20',;
+;''
+  const positionClasses: unknown "unknown = {;",;""
+    bottom: 'bottom-4',;;'
+    top: 'top-20',;'
   };
-;'
+;''
   return (;
     <AnimatePresence>;
-      {isVisible && (;'
+      {isVisible && (;''
         <motion.div;;
-          initial={{ opacity: "0", y: position === 'bottom' ? 20 : -20 }};;
-          animate={{ opacity: "1", y: "0 "}};";";";";"
-          exit={{ opacity: "0", y: position === 'bottom' ? 20 : -20 }};;
-          transition={{ duration: "0.2 "}};";";";"
-          className={cn(;";";";";"
-            'fixed left-0 right-0 z-50 mx-auto flex justify-center px-4',;'
+          initial={{ opacity: "0", y: position === 'bottom' ? 20 : -20 }};;'
+          animate={{ opacity: "1", y: "0 "}};";";";";""
+          exit={{ opacity: "0", y: position === 'bottom' ? 20 : -20 }};;'
+          transition={{ duration: "0.2 "}};";";";""
+          className={cn(;";";";";""
+            'fixed left-0 right-0 z-50 mx-auto flex justify-center px-4',;''
             positionClasses[position],;
             className,;
-          )};'
+          )};''
         >;;
-          <div className="rounded-lg bg-zion-blue-dark border border-zion-blue-light shadow-lg shadow-zion-purple/10 flex items-center">;
+          <div className="rounded-lg bg-zion-blue-dark border border-zion-blue-light shadow-lg shadow-zion-purple/10 flex items-center">;"
             {children};
           </div>;
         </motion.div>;
-      )};"
-    </AnimatePresence>;";"
-  );";";"
-};";";";"
-";";";"
-}";";"
-}";"
-}"
-}"
+      )};""
+    </AnimatePresence>;";""
+  );";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""

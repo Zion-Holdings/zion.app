@@ -1,91 +1,91 @@
-import { useEffect, useRef } from 'react';
-import type { ApiLog } from '@/hooks/useApiKeys;
-;'
+import { useEffect, useRef } from 'react';';
+import type { ApiLog } from '@/hooks/useApiKeys;'
+;''
 interface ApiLogsChartProps {;;
-  logs: "ApiLog[];";
+  logs: "ApiLog[];";"
 };
 ;
-export function ApiLogsChart(): unknown {): unknown {): unknown {): unknown {): unknown {{ logs }: ApiLogsChartProps) {;"
-  const canvasRef: unknown = useRef<HTMLCanvasElement | null>(null);";"
-;";";"
-  useEffect(() => {;";";";"
-    let _chart: unknown;";";";";"
-    const scriptId: unknown = 'chartjs-script;
-    const win: unknown "unknown = window as unknown as { Chart?: unknown "};";"
-;";";"
-    const loadChart: unknown = () => {;";";";"
+export function ApiLogsChart(): unknown {): unknown {): unknown {): unknown {): unknown {{ logs }: ApiLogsChartProps) {;""
+  const canvasRef: unknown = useRef<HTMLCanvasElement | null>(null);";""
+;";";""
+  useEffect(() => {;";";";""
+    let _chart: unknown;";";";";""
+    const scriptId: unknown = 'chartjs-script;'
+    const win: unknown "unknown = window as unknown as { Chart?: unknown "};";""
+;";";""
+    const loadChart: unknown = () => {;";";";""
       if (!canvasRef.current) return;;
-      if (!win.Chart || typeof win.Chart !== 'function') return;
-      // Inline Chart type to avoid import error;'
-      const Chart: unknown "unknown = win.Chart as new (;",;"
-        ctx: "HTMLCanvasElement",;";";";";"
-        config: "Record<string", unknown>,;";";";";"
-      ) => { destroy: "() => void "};";";";";"
-      const dateMap: unknown "Record<string", number> = {};";";";"
-      logs.forEach((log) => {;";";";";"
-        const day: unknown = new Date(log.created_at).toISOString().split('T')[0];
+      if (!win.Chart || typeof win.Chart !== 'function') return;'
+      // Inline Chart type to avoid import error;''
+      const Chart: unknown "unknown = win.Chart as new (;",;""
+        ctx: "HTMLCanvasElement",;";";";";""
+        config: "Record<string", unknown>,;";";";";""
+      ) => { destroy: "() => void "};";";";";""
+      const dateMap: unknown "Record<string", number> = {};";";";""
+      logs.forEach((log) => {;";";";";""
+        const day: unknown = new Date(log.created_at).toISOString().split('T')[0];'
         if (day) {;
           dateMap[day] = (dateMap[day] || 0) + 1;
         };
       });
-      const labels: unknown = Object.keys(dateMap).sort();'
+      const labels: unknown = Object.keys(dateMap).sort();''
       const data: unknown = labels.map((l) => dateMap[l]);
 ;
-      if (;'
+      if (;''
         chart &&;;
-        typeof (chart as { destroy?: () => void }).destroy === 'function;
+        typeof (chart as { destroy?: () => void }).destroy === 'function;'
       );;
-        (chart as { destroy: "() => void "}).destroy();";";";"
-      chart = new Chart(canvasRef.current!, {;";";";";"
-        type: 'bar',;'
+        (chart as { destroy: "() => void "}).destroy();";";";""
+      chart = new Chart(canvasRef.current!, {;";";";";""
+        type: 'bar',;''
         data: {;
           labels,;
-          datasets: [;'
+          datasets: [;''
             {;;
-              label: 'Logs per Day',;'
+              label: 'Logs per Day',;''
               data,;;
-              borderWidth: "1",;";"
-            },;";";"
-          ],;";";";"
-        },;";";";";"
-        options: "{;",;";";";";"
-          scales: "{;",";";";";"
-            y: "{ beginAtZero: true "},;
-          },;"
-        },;";"
-      });";";"
-    };";";";"
-;";";";";"
-    if (typeof win.Chart !== 'undefined') {;
+              borderWidth: "1",;";""
+            },;";";""
+          ],;";";";""
+        },;";";";";""
+        options: "{;",;";";";";""
+          scales: "{;",";";";";""
+            y: "{ beginAtZero: true "},;"
+          },;""
+        },;";""
+      });";";""
+    };";";";""
+;";";";";""
+    if (typeof win.Chart !== 'undefined') {;'
       loadChart();
-    } else {;'
+    } else {;''
       let script = document.getElementById(;
         scriptId,;
-      ) as HTMLScriptElement | null;'
+      ) as HTMLScriptElement | null;''
       if (!script) {;;
-        script = document.createElement('script');'
+        script = document.createElement('script');''
         script.id = scriptId;;
-        script.src = 'https://cdn.jsdelivr.net/npm/chart.js;
+        script.src = 'https://cdn.jsdelivr.net/npm/chart.js;'
         script.onload = loadChart;
-        document.body.appendChild(script);'
+        document.body.appendChild(script);''
       } else {;;
-        script.addEventListener('load', loadChart);
+        script.addEventListener('load', loadChart);'
       };
-    };'
+    };''
 ;
     return () => {;
-      if (;'
+      if (;''
         chart &&;;
-        typeof (chart as { destroy?: () => void }).destroy === 'function;
+        typeof (chart as { destroy?: () => void }).destroy === 'function;'
       );;
-        (chart as { destroy: "() => void "}).destroy();
+        (chart as { destroy: "() => void "}).destroy();"
     };
-  }, [logs]);"
-;";"
-  return <canvas ref={canvasRef} width={400} height={150} />;";";"
-};";";";"
-";";";"
-}";";"
-}";"
-}"
-}"
+  }, [logs]);""
+;";""
+  return <canvas ref={canvasRef} width={400} height={150} />;";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""

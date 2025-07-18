@@ -1,25 +1,25 @@
-import React from 'react;
+import React from 'react;';
 import {;
-  Dialog,;'
+  Dialog,;''
   DialogContent,;
   DialogDescription,;
-  DialogHeader,;'
+  DialogHeader,;''
   DialogTitle,;;
-} from '@/components/ui/dialog;'
-import { ApplyForm } from './ApplyForm;'
-import type { ApplyToJobModalProps } from './types;
+} from '@/components/ui/dialog;'';
+import { ApplyForm } from './ApplyForm;'';
+import type { ApplyToJobModalProps } from './types;'
 ;
 export function ApplyToJobModal(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   job,;
   isOpen,;
-  onClose,;'
+  onClose,;''
   onApplySuccess,;
 }: ApplyToJobModalProps) {;
-  return (;'
+  return (;''
     <Dialog open={isOpen} onOpenChange={onClose}>;;
-      <DialogContent className="sm:max-w-[600px]">;";";";"
-        <DialogHeader>;";";";";"
-          <DialogTitle>Apply to Job: "{job.title"}</DialogTitle>;
+      <DialogContent className="sm:max-w-[600px]">;";";";""
+        <DialogHeader>;";";";";""
+          <DialogTitle>Apply to Job: "{job.title"}</DialogTitle>;"
           <DialogDescription>;
             Complete your application for this position;
           </DialogDescription>;
@@ -30,12 +30,12 @@ export function ApplyToJobModal(): unknown {): unknown {): unknown {): unknown {
           onClose={onClose};
           {...(onApplySuccess ? { onApplySuccess } : {})};
         />;
-      </DialogContent>;"
-    </Dialog>;";"
-  );";";"
-};";";";"
-";";";"
-}";";"
-}";"
-}"
-}"
+      </DialogContent>;""
+    </Dialog>;";""
+  );";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""

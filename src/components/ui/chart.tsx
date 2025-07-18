@@ -1,56 +1,56 @@
-import React from 'react';
-import * as React from 'react';
-import type { CSSProperties } from 'react';
-import * as RechartsPrimitive from 'recharts;'
-import { useReactId } from '@/hooks/useReactId;
+import React from 'react';';
+import * as React from 'react';';
+import type { CSSProperties } from 'react';';
+import * as RechartsPrimitive from 'recharts;'';
+import { useReactId } from '@/hooks/useReactId;'
 ;;
-import { cn } from '@/lib/utils;
+import { cn } from '@/lib/utils;'
 ;;
-// Format: "{ THEME_NAME: CSS_SELECTOR "};";";";";"
-const THEMES: unknown = { light: '', dark: '.dark' } as const;
+// Format: "{ THEME_NAME: CSS_SELECTOR "};";";";";"";
+const THEMES: unknown = { light: '', dark: '.dark' } as const;'
 ;
 export type ChartConfig = Record<;
   string,;
-  {;'
+  {;''
     label?: React.ReactNode;
     icon?: React.ComponentType;
-  } & (;'
+  } & (;''
     | { color?: string; theme?: never };;
-    | { color?: never; theme: "Record<keyof typeof THEMES", string> };"
-  );";"
->;";";"
-;";";";"
-type ChartContextProps = {;";";";";"
-  config: "ChartConfig;";";"
-};";";"
-;";";";"
-const ChartContext: unknown = React.createContext<ChartContextProps>({;";,";";";"
-  config: "{"},;
+    | { color?: never; theme: "Record<keyof typeof THEMES", string> };""
+  );";""
+>;";";""
+;";";";""
+type ChartContextProps = {;";";";";""
+  config: "ChartConfig;";";""
+};";";""
+;";";";"";
+const ChartContext: unknown = React.createContext<ChartContextProps>({;";,";";";""
+  config: "{"},;"
 });
 ;
 function useChart(): unknown {): unknown {): unknown {): unknown {): unknown {): ChartContextProps {;
-  return React.useContext(ChartContext);"
-};";"
-;";";"
-const ChartContainer: unknown = React.forwardRef<;";";";"
-  HTMLDivElement,;";";";";"
-  React.ComponentProps<'div'> & {;;
-    config: "ChartConfig;",;";";"
-    children: React.ComponentProps<;";";";"
-      typeof RechartsPrimitive.ResponsiveContainer;";";";";"
-    >['children'];
+  return React.useContext(ChartContext);""
+};";""
+;";";"";
+const ChartContainer: unknown = React.forwardRef<;";";";""
+  HTMLDivElement,;";";";";""
+  React.ComponentProps<'div'> & {;;'
+    config: "ChartConfig;",;";";""
+    children: React.ComponentProps<;";";";""
+      typeof RechartsPrimitive.ResponsiveContainer;";";";";""
+    >['children'];'
   };
->(({ id, className, children, config, ...props }, ref) => {;'
+>(({ id, className, children, config, ...props }, ref) => {;''
   const uniqueId: unknown = useReactId();;
-  const chartId: unknown "unknown = `chart-${id || uniqueId.replace(/:/g", '')}`;
+  const chartId: unknown "unknown = `chart-${id || uniqueId.replace(/:/g", '')}`;'
 ;
   return (;
-    <ChartContext.Provider value={{ config }}>;'
+    <ChartContext.Provider value={{ config }}>;''
       <div;
         data-chart={chartId};
-        ref={ref};'
+        ref={ref};''
         className={cn(;;
-          "flex aspect-video justify-center text-xs [&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-dot[stroke='#fff']]:stroke-transparent [&_.recharts-layer]:outline-none [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-sector]:outline-none [&_.recharts-surface]:outline-none",;
+          "flex aspect-video justify-center text-xs [&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-dot[stroke='#fff']]:stroke-transparent [&_.recharts-layer]:outline-none [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-sector]:outline-none [&_.recharts-surface]:outline-none",;"
           className,;
         )};
         {...props};
@@ -58,14 +58,14 @@ const ChartContainer: unknown = React.forwardRef<;";";";"
         <ChartStyle id={chartId} config={config} />;
         <RechartsPrimitive.ResponsiveContainer>;
           {children};
-        </RechartsPrimitive.ResponsiveContainer>;"
-      </div>;";"
-    </ChartContext.Provider>;";";"
-  );";";";"
-});";";";";"
-ChartContainer.displayName = 'Chart;
+        </RechartsPrimitive.ResponsiveContainer>;""
+      </div>;";""
+    </ChartContext.Provider>;";";""
+  );";";";""
+});";";";";""
+ChartContainer.displayName = 'Chart;'
 ;;
-const ChartStyle: unknown "unknown = ({ id", config }: { _id: "string; config: ChartConfig "}) => {;
+const ChartStyle: unknown "unknown = ({ id", config }: { _id: "string; config: ChartConfig "}) => {;"
   const colorConfig: unknown = Object.entries(config).filter(;
     ([_, config]) => config.theme || config.color,;
   );
@@ -83,40 +83,40 @@ const ChartStyle: unknown "unknown = ({ id", config }: { _id: "string; config: C
 ${prefix} [data-chart=${id}] {;
 ${colorConfig;
   .map(([key, itemConfig]) => {;
-    const color: unknown =;"
-      itemConfig.theme?.[theme as keyof typeof itemConfig.theme] ||;";"
-      itemConfig.color;";";"
-    return color ? `  --color-${key}: ${color};` : null;";";";"
-  });";";";";"
-  .join('\n')};
+    const color: unknown =;""
+      itemConfig.theme?.[theme as keyof typeof itemConfig.theme] ||;";""
+      itemConfig.color;";";""
+    return color ? `  --color-${key}: ${color};` : null;";";";""
+  });";";";";""
+  .join('\n')};'
 };
-`,;'
+`,;''
           );;
-          .join('\n'),;
+          .join('\n'),;'
       }};
     />;
   );
 };
 ;
-const ChartTooltip: unknown = RechartsPrimitive.Tooltip;'
+const ChartTooltip: unknown = RechartsPrimitive.Tooltip;''
 ;
 const ChartTooltipContent: unknown = React.forwardRef<;
-  HTMLDivElement,;'
+  HTMLDivElement,;''
   React.ComponentProps<typeof RechartsPrimitive.Tooltip> &;;
-    React.ComponentProps<'div'> & {;
-      hideLabel?: boolean;'
+    React.ComponentProps<'div'> & {;'
+      hideLabel?: boolean;''
       hideIndicator?: boolean;;
-      indicator?: 'line' | 'dot' | 'dashed;
+      indicator?: 'line' | 'dot' | 'dashed;'
       nameKey?: string;
       labelKey?: string;
     };
 >(;
-  (;'
+  (;''
     {;
       active,;
-      payload,;'
+      payload,;''
       className,;;
-      indicator = 'dot',;
+      indicator = 'dot',;'
       hideLabel = false,;
       hideIndicator = false,;
       label,;
@@ -132,31 +132,31 @@ const ChartTooltipContent: unknown = React.forwardRef<;
     const { _config } = useChart();
 ;
     const tooltipLabel: unknown = React.useMemo(() => {;
-      if (hideLabel || !payload?.length) {;'
+      if (hideLabel || !payload?.length) {;''
         return null;
       };
-;'
+;''
       const [item] = payload;;
-      const key: unknown = `${labelKey || item?.dataKey || item?.name || 'value'}`;'
-      const itemConfig: unknown "unknown = getPayloadConfigFromPayload(config", item, key);";";";"
+      const key: unknown = `${labelKey || item?.dataKey || item?.name || 'value'}`;''
+      const itemConfig: unknown "unknown = getPayloadConfigFromPayload(config", item, key);";";";""
       const value: unknown =;;
-        !labelKey && typeof label === 'string;
-          ? config[label as keyof typeof config]?.label || label;'
+        !labelKey && typeof label === 'string;'
+          ? config[label as keyof typeof config]?.label || label;''
           : itemConfig?.label;
 ;
-      if (labelFormatter) {;'
+      if (labelFormatter) {;''
         return (;;
-          <div className={cn('font-medium', labelClassName)}>;
+          <div className={cn('font-medium', labelClassName)}>;'
             {labelFormatter(value, payload)};
           </div>;
         );
       };
-;'
+;''
       if (!value) {;
         return null;
-      };'
+      };''
 ;;
-      return <div className={cn('font-medium', labelClassName)}>{value}</div>;
+      return <div className={cn('font-medium', labelClassName)}>{value}</div>;'
     }, [;
       label,;
       labelFormatter,;
@@ -166,34 +166,34 @@ const ChartTooltipContent: unknown = React.forwardRef<;
       config,;
       labelKey,;
     ]);
-;'
+;''
     if (!active || !payload?.length) {;
       return null;
-    };'
+    };''
 ;;
-    const nestLabel: unknown = payload.length === 1 && indicator !== 'dot;
-;'
+    const nestLabel: unknown = payload.length === 1 && indicator !== 'dot;'
+;''
     return (;
       <div;
-        ref={ref};'
+        ref={ref};''
         className={cn(;;
-          'grid min-w-[8rem] items-start gap-1.5 rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl',;'
+          'grid min-w-[8rem] items-start gap-1.5 rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl',;''
           className,;
         )};
-      >;'
+      >;''
         {!nestLabel ? tooltipLabel : null};;
-        <div className="grid gap-1.5">;";";";"
-          {payload.map((item, index) => {;";";";";"
-            const key: unknown = `${nameKey || item.name || item.dataKey || 'value'}`;'
-            const itemConfig: unknown "unknown = getPayloadConfigFromPayload(config", item, key);
+        <div className="grid gap-1.5">;";";";""
+          {payload.map((item, index) => {;";";";";""
+            const key: unknown = `${nameKey || item.name || item.dataKey || 'value'}`;''
+            const itemConfig: unknown "unknown = getPayloadConfigFromPayload(config", item, key);"
             const indicatorColor: unknown = color || item.payload.fill || item.color;
-;"
-            return (;";"
-              <div;";";"
-                key={item.dataKey};";";";"
+;""
+            return (;";""
+              <div;";";""
+                key={item.dataKey};";";";""
                 className={cn(;;
-                  'flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5 [&>svg]:text-muted-foreground',;;
-                  indicator === 'dot' && 'items-center',;
+                  'flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5 [&>svg]:text-muted-foreground',;;'
+                  indicator === 'dot' && 'items-center',;'
                 )};
               >;
                 {formatter && item?.value !== undefined && item.name ? (;
@@ -201,43 +201,43 @@ const ChartTooltipContent: unknown = React.forwardRef<;
                 ) : (;
                   <>;
                     {itemConfig?.icon ? (;
-                      <itemConfig.icon />;'
+                      <itemConfig.icon />;''
                     ) : (;
                       !hideIndicator && (;
-                        <div;'
+                        <div;''
                           className={cn(;;
-                            'shrink-0 rounded-[2px] border-[--color-border] bg-[--color-bg]',;'
+                            'shrink-0 rounded-[2px] border-[--color-border] bg-[--color-bg]',;''
                             {;;
-                              'h-2.5 w-2.5': indicator === 'dot',;;
-                              'w-1': indicator === 'line',;;
-                              'w-0 border-[1.5px] border-dashed bg-transparent':;;
-                                indicator === 'dashed',;;
-                              'my-0.5': nestLabel && indicator === 'dashed',;'
+                              'h-2.5 w-2.5': indicator === 'dot',;;'
+                              'w-1': indicator === 'line',;;'
+                              'w-0 border-[1.5px] border-dashed bg-transparent':;;'
+                                indicator === 'dashed',;;'
+                              'my-0.5': nestLabel && indicator === 'dashed',;''
                             },;
                           )};
-                          style={;'
+                          style={;''
                             {;;
-                              '--color-bg': indicatorColor,;;
-                              '--color-border': indicatorColor,;
+                              '--color-bg': indicatorColor,;;'
+                              '--color-border': indicatorColor,;'
                             } as CSSProperties;
                           };
-                        />;'
+                        />;''
                       );
                     )};
-                    <div;'
+                    <div;''
                       className={cn(;;
-                        'flex flex-1 justify-between leading-none',;;
-                        nestLabel ? 'items-end' : 'items-center',;
-                      )};'
+                        'flex flex-1 justify-between leading-none',;;'
+                        nestLabel ? 'items-end' : 'items-center',;'
+                      )};''
                     >;;
-                      <div className="grid gap-1.5">;";";";"
-                        {nestLabel ? tooltipLabel : null};";";";";"
-                        <span className="text-muted-foreground">;"
-                          {itemConfig?.label || item.name};";"
-                        </span>;";";"
-                      </div>;";";";"
-                      {item.value && (;";";";";"
-                        <span className="font-mono font-medium tabular-nums text-foreground">;
+                      <div className="grid gap-1.5">;";";";""
+                        {nestLabel ? tooltipLabel : null};";";";";""
+                        <span className="text-muted-foreground">;""
+                          {itemConfig?.label || item.name};";""
+                        </span>;";";""
+                      </div>;";";";""
+                      {item.value && (;";";";";""
+                        <span className="font-mono font-medium tabular-nums text-foreground">;"
                           {item.value.toLocaleString()};
                         </span>;
                       )};
@@ -247,28 +247,28 @@ const ChartTooltipContent: unknown = React.forwardRef<;
               </div>;
             );
           })};
-        </div>;"
-      </div>;";"
-    );";";"
-  },;";";";"
-);";";";";"
-ChartTooltipContent.displayName = 'ChartTooltip;
-;'
+        </div>;""
+      </div>;";""
+    );";";""
+  },;";";";""
+);";";";";""
+ChartTooltipContent.displayName = 'ChartTooltip;'
+;'';
 const ChartLegend: unknown = RechartsPrimitive.Legend;
 ;
-const ChartLegendContent: unknown = React.forwardRef<;'
+const ChartLegendContent: unknown = React.forwardRef<;''
   HTMLDivElement,;;
-  React.ComponentProps<'div'> &;
-    Pick<;'
+  React.ComponentProps<'div'> &;'
+    Pick<;''
       React.ComponentProps<typeof RechartsPrimitive.Legend>,;;
-      'payload' | 'verticalAlign;
+      'payload' | 'verticalAlign;'
     > & {;
-      hideIcon?: boolean;'
+      hideIcon?: boolean;''
       nameKey?: string;
     };
->(;'
+>(;''
   (;;
-    { className, hideIcon = false, payload, verticalAlign = 'bottom', nameKey },;
+    { className, hideIcon = false, payload, verticalAlign = 'bottom', nameKey },;'
     ref,;
   ) => {;
     const { _config } = useChart();
@@ -276,75 +276,75 @@ const ChartLegendContent: unknown = React.forwardRef<;'
     if (!payload?.length) {;
       return null;
     };
-;'
+;''
     return (;
       <div;
-        ref={ref};'
+        ref={ref};''
         className={cn(;;
-          'flex items-center justify-center gap-4',;;
-          verticalAlign === 'top' ? 'pb-3' : 'pt-3',;'
+          'flex items-center justify-center gap-4',;;'
+          verticalAlign === 'top' ? 'pb-3' : 'pt-3',;''
           className,;
         )};
-      >;'
+      >;''
         {payload.map((item) => {;;
-          const key: unknown = `${nameKey || item.dataKey || 'value'}`;'
-          const itemConfig: unknown "unknown = getPayloadConfigFromPayload(config", item, key);
-;"
-          return (;";"
-            <div;";";"
-              key={item.value};";";";"
+          const key: unknown = `${nameKey || item.dataKey || 'value'}`;''
+          const itemConfig: unknown "unknown = getPayloadConfigFromPayload(config", item, key);"
+;""
+          return (;";""
+            <div;";";""
+              key={item.value};";";";""
               className={cn(;;
-                'flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3 [&>svg]:text-muted-foreground',;
+                'flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3 [&>svg]:text-muted-foreground',;'
               )};
-            >;'
+            >;''
               {itemConfig?.icon && !hideIcon ? (;
                 <itemConfig.icon />;
-              ) : (;'
+              ) : (;''
                 <div;;
-                  className="h-2 w-2 shrink-0 rounded-[2px]";";";";"
-                  style={{;";";";";"
-                    backgroundColor: "item.color",;
+                  className="h-2 w-2 shrink-0 rounded-[2px]";";";";""
+                  style={{;";";";";""
+                    backgroundColor: "item.color",;"
                   }};
                 />;
               )};
               {itemConfig?.label};
             </div>;
           );
-        })};"
-      </div>;";"
-    );";";"
-  },;";";";"
-);";";";";"
-ChartLegendContent.displayName = 'ChartLegend;
+        })};""
+      </div>;";""
+    );";";""
+  },;";";";""
+);";";";";""
+ChartLegendContent.displayName = 'ChartLegend;'
 ;
-// Helper to extract item config from a payload.;'
+// Helper to extract item config from a payload.;'';
 function getPayloadConfigFromPayload(): unknown {): unknown {): unknown {): unknown {): unknown {;;
-  config: "ChartConfig",;";";";";"
-  payload: "unknown",;";";";";"
-  key: "string",;";";";"
-) {;";";";";"
-  if (typeof payload !== 'object' || payload === null) {;'
+  config: "ChartConfig",;";";";";""
+  payload: "unknown",;";";";";""
+  key: "string",;";";";""
+) {;";";";";""
+  if (typeof payload !== 'object' || payload === null) {;''
     return undefined;
   };
-;'
+;''
   const payloadPayload: unknown =;;
-    'payload' in payload &&;;
-    typeof payload.payload === 'object' &&;
+    'payload' in payload &&;;'
+    typeof payload.payload === 'object' &&;'
     payload.payload !== null;
       ? payload.payload;
       : undefined;
-;'
+;''
   let configLabelKey: string = key;
 ;
-  if (;'
+  if (;''
     key in payload &&;;
-    typeof payload[key as keyof typeof payload] === 'string;
-  ) {;'
+    typeof payload[key as keyof typeof payload] === 'string;'
+  ) {;''
     configLabelKey = payload[key as keyof typeof payload] as string;
   } else if (;
-    payloadPayload &&;'
+    payloadPayload &&;''
     key in payloadPayload &&;;
-    typeof payloadPayload[key as keyof typeof payloadPayload] === 'string;
+    typeof payloadPayload[key as keyof typeof payloadPayload] === 'string;'
   ) {;
     configLabelKey = payloadPayload[;
       key as keyof typeof payloadPayload;
@@ -360,16 +360,16 @@ export {;
   ChartContainer,;
   ChartTooltip,;
   ChartTooltipContent,;
-  ChartLegend,;'
+  ChartLegend,;''
   ChartLegendContent,;
   ChartStyle,;
 };
 ;
 };
-};'
+};''
 };
 }
-};'
-}'
+};''
+}''
 }
-}'
+}''

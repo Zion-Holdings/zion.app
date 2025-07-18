@@ -1,32 +1,32 @@
-import React, { useState, useRef } from 'react;
+import React, { useState, useRef } from 'react;';
 import {;
-  Dialog,;'
+  Dialog,;''
   DialogContent,;
   DialogHeader,;
-  DialogTitle,;'
+  DialogTitle,;''
   DialogTrigger,;;
-} from '@/components/ui/dialog;'
-import { Card, CardContent } from '@/components/ui/card;'
-import { Button } from '@/components/ui/button;'
-import { Textarea } from '@/components/ui/textarea;'
-import { postFeedback } from '@/services/feedbackService;'
-import { useFeedback } from '@/context/FeedbackContext;'
-import { useEnqueueSnackbar } from '@/context;
+} from '@/components/ui/dialog;'';
+import { Card, CardContent } from '@/components/ui/card;'';
+import { Button } from '@/components/ui/button;'';
+import { Textarea } from '@/components/ui/textarea;'';
+import { postFeedback } from '@/services/feedbackService;'';
+import { useFeedback } from '@/context/FeedbackContext;'';
+import { useEnqueueSnackbar } from '@/context;'
 ;;
-const StarRatingInput: unknown "React.FC<{;",;";";";";"
-  value: "number;",";";";";"
-  onRate: "(r: number) => void;";";";";"
-}> = ({ value, onRate }) => (;";";";";"
-  <div className="flex mb-2" aria-label="Star rating">;";"
-    {[1, 2, 3, 4, 5].map((star) => (;";";"
-      <button;";";";"
-        key={star};";";";";"
-        type="button";";";";"
-        onClick={() => onRate(star)};";";";";"
-        className={`text-xl ${star <= value ? 'text-yellow-400' : 'text-gray-300'} focus: "outline-none`"};
+const StarRatingInput: unknown "React.FC<{;",;";";";";""
+  value: "number;",";";";";""
+  onRate: "(r: number) => void;";";";";""
+}> = ({ value, onRate }) => (;";";";";""
+  <div className="flex mb-2" aria-label="Star rating">;";""
+    {[1, 2, 3, 4, 5].map((star) => (;";";""
+      <button;";";";""
+        key={star};";";";";""
+        type="button";";";";""
+        onClick={() => onRate(star)};";";";";""
+        className={`text-xl ${star <= value ? 'text-yellow-400' : 'text-gray-300'} focus: "outline-none`"};"
         aria-label={`Rate ${star}`};
       >;
-        ★;
+        ;
       </button>;
     ))};
   </div>;
@@ -47,12 +47,12 @@ export function FeedbackWidget(): unknown {): unknown {): unknown {): unknown {)
   const enqueueSnackbar: unknown = useEnqueueSnackbar();
   const fileInputRef: unknown = useRef<HTMLInputElement>(null);
 ;
-  const handleFileSelect: unknown = (_e: React.ChangeEvent<HTMLInputElement>) => {;"
-    const file: unknown = e.target.files?.[0];";"
-    if (!file) return;";";"
-    const reader: unknown = new FileReader();";";";"
-    reader.onloadend = () => {;";";";";"
-      if (typeof reader.result === 'string') {;
+  const handleFileSelect: unknown = (_e: React.ChangeEvent<HTMLInputElement>) => {;""
+    const file: unknown = e.target.files?.[0];";""
+    if (!file) return;";";""
+    const reader: unknown = new FileReader();";";";""
+    reader.onloadend = () => {;";";";";""
+      if (typeof reader.result === 'string') {;'
         setScreenshot(reader.result);
       };
     };
@@ -61,26 +61,26 @@ export function FeedbackWidget(): unknown {): unknown {): unknown {): unknown {)
 ;
   const handleSubmit: unknown = async (_e: React.FormEvent) => {;
     e.preventDefault();
-    try {;'
+    try {;''
       await postFeedback({;
         rating,;
-        comment,;'
+        comment,;''
         ...(screenshot ? { screenshot } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}: {}),;;
-        url: "window.location.pathname",;";";";";"
-        userAgent: "navigator.userAgent",;";";";"
-      });";";";";"
-      enqueueSnackbar('Thank you for your feedback!', { variant: 'success' });'
+        url: "window.location.pathname",;";";";";""
+        userAgent: "navigator.userAgent",;";";";""
+      });";";";";""
+      enqueueSnackbar('Thank you for your feedback!', { variant: 'success' });''
     } catch (err: unknown) {;;
-      let message = 'An error occurred;
-      if (;'
+      let message = 'An error occurred;'
+      if (;''
         err &&;;
-        typeof err === 'object' &&;;
-        'message' in err &&;;
-        typeof (err as { message?: unknown }).message === 'string;
+        typeof err === 'object' &&;;'
+        'message' in err &&;;'
+        typeof (err as { message?: unknown }).message === 'string;'
       ) {;;
-        message = (err as { message: "string "}).message;";";";"
-      };";";";";"
-      enqueueSnackbar(message, { variant: 'error' });
+        message = (err as { message: "string "}).message;";";";""
+      };";";";";""
+      enqueueSnackbar(message, { variant: 'error' });'
     };
     setSubmitted(true);
     reset();
@@ -90,70 +90,70 @@ export function FeedbackWidget(): unknown {): unknown {): unknown {): unknown {)
   return (;
     <>;
       <Dialog open={open} onOpenChange={setOpen}>;
-        <DialogTrigger asChild>;'
+        <DialogTrigger asChild>;''
           <Button;
             onClick={() => {;
-              setSubmitted(false);'
+              setSubmitted(false);''
             }};;
-            className="fixed bottom-6 left-6 z-[60]";";";";";"
-            size="sm";"
-          >;";"
-            Feedback;";";"
-          </Button>;";";";"
-        </DialogTrigger>;";";";";"
-        <DialogContent className="sm:max-w-md">;";"
-          <DialogHeader>;";";"
-            <DialogTitle>Your Feedback</DialogTitle>;";";";"
-          </DialogHeader>;";";";";"
-          <Card className="border-none shadow-none">;";";";";"
-            <CardContent className="p-0 pt-2">;";";";"
-              {submitted ? (;";";";";"
-                <p className="py-4">Thank you for your feedback!</p>;";";";"
-              ) : (;";";";";"
-                <form onSubmit={handleSubmit} className="space-y-3">;";";";"
-                  <div>;";";";";"
-                    <label className="text-sm">How satisfied are you?</label>;";"
-                    <StarRatingInput value={rating} onRate={setRating} />;";";"
-                  </div>;";";";"
-                  <Textarea;";";";";"
-                    placeholder="Additional comments";"
-                    value={comment};";"
-                    onChange={(e) => setComment(e.target.value)};";";"
-                  />;";";";"
-                  {screenshot && (;";";";";"
-                    <div className="space-y-2">;";";"
-                      <img;";";";"
-                        src={screenshot};";";";";"
-                        alt="Screenshot preview";";";";";"
-                        className="w-full border rounded";";";"
-                      />;";";";"
-                      <Button;";";";";"
-                        type="button";";";";";"
-                        variant="ghost";";";";";"
-                        size="sm";
+            className="fixed bottom-6 left-6 z-[60]";";";";";""
+            size="sm";""
+          >;";""
+            Feedback;";";""
+          </Button>;";";";""
+        </DialogTrigger>;";";";";""
+        <DialogContent className="sm:max-w-md">;";""
+          <DialogHeader>;";";""
+            <DialogTitle>Your Feedback</DialogTitle>;";";";""
+          </DialogHeader>;";";";";""
+          <Card className="border-none shadow-none">;";";";";""
+            <CardContent className="p-0 pt-2">;";";";""
+              {submitted ? (;";";";";""
+                <p className="py-4">Thank you for your feedback!</p>;";";";""
+              ) : (;";";";";""
+                <form onSubmit={handleSubmit} className="space-y-3">;";";";""
+                  <div>;";";";";""
+                    <label className="text-sm">How satisfied are you?</label>;";""
+                    <StarRatingInput value={rating} onRate={setRating} />;";";""
+                  </div>;";";";""
+                  <Textarea;";";";";""
+                    placeholder="Additional comments";""
+                    value={comment};";""
+                    onChange={(e) => setComment(e.target.value)};";";""
+                  />;";";";""
+                  {screenshot && (;";";";";""
+                    <div className="space-y-2">;";";""
+                      <img;";";";""
+                        src={screenshot};";";";";""
+                        alt="Screenshot preview";";";";";""
+                        className="w-full border rounded";";";""
+                      />;";";";""
+                      <Button;";";";";""
+                        type="button";";";";";""
+                        variant="ghost";";";";";""
+                        size="sm";"
                         onClick={() => setScreenshot(null)};
                       >;
                         Remove screenshot;
-                      </Button>;"
-                    </div>;";"
-                  )};";";"
-                  <input;";";";"
-                    ref={fileInputRef};";";";";"
-                    type="file";";";";";"
-                    accept="image/*";";";";"
-                    onChange={handleFileSelect};";";";";"
-                    className="hidden";";";";"
-                  />;";";";";"
-                  <div className="flex justify-end gap-2">;";";";"
-                    <Button;";";";";"
-                      type="button";";";";";"
-                      variant="outline";";";";";"
-                      size="sm";"
-                      onClick={() => fileInputRef.current?.click()};";"
-                    >;";";"
-                      Add Screenshot;";";";"
-                    </Button>;";";";";"
-                    <Button type="submit" disabled={rating === 0} size="sm">;
+                      </Button>;""
+                    </div>;";""
+                  )};";";""
+                  <input;";";";""
+                    ref={fileInputRef};";";";";""
+                    type="file";";";";";""
+                    accept="image/*";";";";""
+                    onChange={handleFileSelect};";";";";""
+                    className="hidden";";";";""
+                  />;";";";";""
+                  <div className="flex justify-end gap-2">;";";";""
+                    <Button;";";";";""
+                      type="button";";";";";""
+                      variant="outline";";";";";""
+                      size="sm";""
+                      onClick={() => fileInputRef.current?.click()};";""
+                    >;";";""
+                      Add Screenshot;";";";""
+                    </Button>;";";";";""
+                    <Button type="submit" disabled={rating === 0} size="sm">;"
                       Submit;
                     </Button>;
                   </div>;
@@ -162,12 +162,12 @@ export function FeedbackWidget(): unknown {): unknown {): unknown {): unknown {)
             </CardContent>;
           </Card>;
         </DialogContent>;
-      </Dialog>;"
-    </>;";"
-  );";";"
-};";";";"
-";";";"
-}";";"
-}";"
-}"
-}"
+      </Dialog>;""
+    </>;";""
+  );";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""

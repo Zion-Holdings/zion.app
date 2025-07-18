@@ -1,25 +1,25 @@
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button;'
-import { logErrorToProduction } from '@/utils/productionLogger;'
-import { Sparkles } from 'lucide-react;
+import React, { useState } from 'react';';
+import { Button } from '@/components/ui/button;'';
+import { logErrorToProduction } from '@/utils/productionLogger;'';
+import { Sparkles } from 'lucide-react;';
 import {;
-  getClientBudgetSuggestion,;'
+  getClientBudgetSuggestion,;''
   trackPricingSuggestion,;;
-} from '@/services/pricingSuggestionService;
+} from '@/services/pricingSuggestionService;';
 import type {;
-  PricingSuggestion,;'
+  PricingSuggestion,;''
   ClientBudgetParams,;;
-} from '@/services/pricingSuggestionService;'
-import { PricingSuggestionBox } from './PricingSuggestionBox;'
-import { useAuth } from '@/hooks/useAuth;
-;'
+} from '@/services/pricingSuggestionService;'';
+import { PricingSuggestionBox } from './PricingSuggestionBox;'';
+import { useAuth } from '@/hooks/useAuth;'
+;''
 interface ClientBudgetRecommenderProps {;;
-  jobTitle: "string;",;"
-  category: string;";"
-  timeline?: string;";";"
-  scope?: string;";";";"
-  experienceLevel?: string;";";";";"
-  onSuggestionApplied: "(minValue: number", maxValue: "number) => void;";
+  jobTitle: "string;",;""
+  category: string;";""
+  timeline?: string;";";""
+  scope?: string;";";";""
+  experienceLevel?: string;";";";";""
+  onSuggestionApplied: "(minValue: number", maxValue: "number) => void;";"
 };
 ;
 export const ClientBudgetRecommender: unknown React.FC<;
@@ -50,13 +50,13 @@ export const ClientBudgetRecommender: unknown React.FC<;
 ;
       if (timeline) params.timeline = timeline;
       if (scope) params.scope = scope;
-      if (experienceLevel) params.experienceLevel = experienceLevel;"
-;";"
-      const result: unknown = await getClientBudgetSuggestion(params);";";"
-      setSuggestion(result);";";";"
-    } catch {;";";";";"
-      logErrorToProduction('Error generating budget suggestion:', {;;
-        data: "error",;
+      if (experienceLevel) params.experienceLevel = experienceLevel;""
+;";""
+      const result: unknown = await getClientBudgetSuggestion(params);";";""
+      setSuggestion(result);";";";""
+    } catch {;";";";";""
+      logErrorToProduction('Error generating budget suggestion:', {;;'
+        data: "error",;"
       });
     } finally {;
       setIsLoading(false);
@@ -65,44 +65,44 @@ export const ClientBudgetRecommender: unknown React.FC<;
 ;
   const handleApplySuggestion: unknown = () => {;
     if (suggestion) {;
-      onSuggestionApplied(suggestion.minRate, suggestion.maxRate);"
-;";"
-      // Track this suggestion application;";";"
-      if (user && user.id) {;";";";"
-        trackPricingSuggestion({;";";";";"
-          userId: "user.id",;";";";";"
-          suggestionType: 'client',;;
-          suggestedMin: "suggestion.minRate",;";";";";"
-          suggestedMax: "suggestion.maxRate",;";";";";"
-          accepted: "true",;
+      onSuggestionApplied(suggestion.minRate, suggestion.maxRate);""
+;";""
+      // Track this suggestion application;";";""
+      if (user && user.id) {;";";";""
+        trackPricingSuggestion({;";";";";""
+          userId: "user.id",;";";";";""
+          suggestionType: 'client',;;'
+          suggestedMin: "suggestion.minRate",;";";";";""
+          suggestedMax: "suggestion.maxRate",;";";";";""
+          accepted: "true",;"
         });
-      };"
-    };";"
-  };";";"
-;";";";"
-  return (;";";";";"
-    <div className="space-y-4">;";"
-      <div>;";";"
-        {!suggestion && !isLoading ? (;";";";"
-          <Button;";";";";"
-            type="button";";";";";"
-            variant="outline";";";"
-            onClick={generateSuggestion};";";";"
-            disabled={!jobTitle || !category};";";";";"
-            className="w-full";";";";"
-          >;";";";";"
-            <Sparkles className="h-4 w-4 mr-2" /> Get Budget Recommendation;
+      };""
+    };";""
+  };";";""
+;";";";""
+  return (;";";";";""
+    <div className="space-y-4">;";""
+      <div>;";";""
+        {!suggestion && !isLoading ? (;";";";""
+          <Button;";";";";""
+            type="button";";";";";""
+            variant="outline";";";""
+            onClick={generateSuggestion};";";";""
+            disabled={!jobTitle || !category};";";";";""
+            className="w-full";";";";""
+          >;";";";";""
+            <Sparkles className="h-4 w-4 mr-2" /> Get Budget Recommendation;"
           </Button>;
-        ) : (;"
-          <PricingSuggestionBox;";"
-            suggestion={suggestion};";";"
-            isLoading={isLoading};";";";"
-            onApplySuggestion={handleApplySuggestion};";";";";"
-            rateType="hourly";
+        ) : (;""
+          <PricingSuggestionBox;";""
+            suggestion={suggestion};";";""
+            isLoading={isLoading};";";";""
+            onApplySuggestion={handleApplySuggestion};";";";";""
+            rateType="hourly";"
           />;
         )};
-      </div>;"
-    </div>;";"
-  );";";"
-};";";";"
-"""""
+      </div>;""
+    </div>;";""
+  );";";""
+};";";";""
+""""""

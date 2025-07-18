@@ -1,58 +1,58 @@
-import Link from 'next/link;
+import Link from 'next/link;';
 import {;
-  MessageSquare,;'
+  MessageSquare,;''
   Code,;
   FileText,;
-  Briefcase,;'
+  Briefcase,;''
   Megaphone,;;
-} from '@/components/ui/icons;
+} from '@/components/ui/icons;';
 import {;
-  Card,;'
+  Card,;''
   CardContent,;
   CardHeader,;
-  CardTitle,;'
+  CardTitle,;''
   CardDescription,;;
-} from '@/components/ui/card;'
-import { useAuth } from '@/hooks/useAuth;
+} from '@/components/ui/card;'';
+import { useAuth } from '@/hooks/useAuth;'
 ;;
-import type { ForumCategoryInfo } from '@/types/community;
+import type { ForumCategoryInfo } from '@/types/community;'
 ;
-const categories: unknown ForumCategoryInfo[] = [;'
+const categories: unknown ForumCategoryInfo[] = [;''
   {;;
-    id: 'getting-hired',;;
-    name: 'Getting Hired',;'
+    id: 'getting-hired',;;'
+    name: 'Getting Hired',;''
     description:;;
-      'Tips, strategies, and questions about getting hired on the platform.',;;
-    adminOnly: "false",;";";";";"
-    icon: 'Briefcase',;
-  },;'
+      'Tips, strategies, and questions about getting hired on the platform.',;;'
+    adminOnly: "false",;";";";";""
+    icon: 'Briefcase',;'
+  },;''
   {;;
-    id: 'project-help',;;
-    name: 'Project Help',;;
-    description: 'Get help with your ongoing projects and collaboration.',;;
-    adminOnly: "false",;";";";";"
-    icon: 'MessageSquare',;
-  },;'
+    id: 'project-help',;;'
+    name: 'Project Help',;;'
+    description: 'Get help with your ongoing projects and collaboration.',;;'
+    adminOnly: "false",;";";";";""
+    icon: 'MessageSquare',;'
+  },;''
   {;;
-    id: 'ai-tools',;;
-    name: 'AI Tools Discussion',;;
-    description: 'Discuss AI tools, frameworks, and best practices.',;;
-    adminOnly: "false",;";";";";"
-    icon: 'Code',;
-  },;'
+    id: 'ai-tools',;;'
+    name: 'AI Tools Discussion',;;'
+    description: 'Discuss AI tools, frameworks, and best practices.',;;'
+    adminOnly: "false",;";";";";""
+    icon: 'Code',;'
+  },;''
   {;;
-    id: 'feedback',;;
-    name: 'Feedback & Feature Requests',;;
-    description: 'Share your feedback and suggest new features.',;;
-    adminOnly: "false",;";";";";"
-    icon: 'FileText',;
-  },;'
+    id: 'feedback',;;'
+    name: 'Feedback & Feature Requests',;;'
+    description: 'Share your feedback and suggest new features.',;;'
+    adminOnly: "false",;";";";";""
+    icon: 'FileText',;'
+  },;''
   {;;
-    id: 'announcements',;;
-    name: 'Announcements',;;
-    description: 'Official announcements from the Zion team.',;;
-    adminOnly: "true",;";";";";"
-    icon: 'Megaphone',;
+    id: 'announcements',;;'
+    name: 'Announcements',;;'
+    description: 'Official announcements from the Zion team.',;;'
+    adminOnly: "true",;";";";";""
+    icon: 'Megaphone',;'
   },;
 ];
 ;
@@ -61,32 +61,32 @@ const iconMap: unknown = {;
   MessageSquare,;
   Code,;
   FileText,;
-  Megaphone,;'
+  Megaphone,;''
 };
 ;
-export const ForumCategories: unknown = () => {;'
+export const ForumCategories: unknown = () => {;''
   const { _user } = useAuth();;
-  const isAdmin: unknown = user?.userType === 'admin' || user?.role === 'admin;
+  const isAdmin: unknown = user?.userType === 'admin' || user?.role === 'admin;'
 ;
-  const visibleCategories: unknown = categories.filter(;'
+  const visibleCategories: unknown = categories.filter(;''
     (category) => !category.adminOnly || isAdmin,;
   );
-;'
+;''
   return (;;
-    <div className="grid gap-4 _md:grid-cols-2 lg:grid-cols-3">;"
-      {visibleCategories.map((category) => {;";"
-        const Icon: unknown = iconMap[category.icon as keyof typeof iconMap];";";"
-        return (;";";";"
-          <Link key={category.id} href={`/community/category/${category.id}`}>;";";";";"
-            <Card className="h-full transition-all hover:shadow-md hover:border-zion-purple/50 cursor-pointer">;";";";";"
-              <CardHeader className="flex flex-row items-center gap-4">;";";";";"
-                <div className="p-2 bg-zion-purple/10 rounded-full">;";";";";"
-                  <Icon className="h-6 w-6 text-zion-purple" />;";";";"
-                </div>;";";";";"
-                <CardTitle className="text-xl">{category.name}</CardTitle>;";";"
-              </CardHeader>;";";";"
-              <CardContent>;";";";";"
-                <CardDescription className="text-base">;
+    <div className="grid gap-4 _md:grid-cols-2 lg:grid-cols-3">;""
+      {visibleCategories.map((category) => {;";""
+        const Icon: unknown = iconMap[category.icon as keyof typeof iconMap];";";""
+        return (;";";";""
+          <Link key={category.id} href={`/community/category/${category.id}`}>;";";";";""
+            <Card className="h-full transition-all hover:shadow-md hover:border-zion-purple/50 cursor-pointer">;";";";";""
+              <CardHeader className="flex flex-row items-center gap-4">;";";";";""
+                <div className="p-2 bg-zion-purple/10 rounded-full">;";";";";""
+                  <Icon className="h-6 w-6 text-zion-purple" />;";";";""
+                </div>;";";";";""
+                <CardTitle className="text-xl">{category.name}</CardTitle>;";";""
+              </CardHeader>;";";";""
+              <CardContent>;";";";";""
+                <CardDescription className="text-base">;"
                   {category.description};
                 </CardDescription>;
               </CardContent>;
@@ -95,8 +95,8 @@ export const ForumCategories: unknown = () => {;'
         );
       })};
     </div>;
-  );"
-};";"
-;";";"
-export default ForumCategories;";";";"
-"""""
+  );""
+};";""
+;";";"";
+export default ForumCategories;";";";""
+""""""

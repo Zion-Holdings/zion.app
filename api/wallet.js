@@ -1,8 +1,8 @@
 async function handler(req, res) {
-  if (req.method !== 'GET') {
+  if (req.method !== 'GET') {'
     res.statusCode = 405;
-    res.setHeader('Allow', 'GET');
-    res.end('Method Not Allowed');
+    res.setHeader('Allow', 'GET');'
+    res.end('Method Not Allowed');'
     return;
   }
 
@@ -11,9 +11,9 @@ async function handler(req, res) {
     res.statusCode = 200;
     res.json({ points: 0, history: [] });
   } catch (error) {
-    console.error('Wallet API error:', error);
+    console.error('Wallet API error:', error);'
     res.statusCode = 500;
-    res.json({ error: error.message || 'Failed to fetch wallet' });
+    res.json({ error: error.message || 'Failed to fetch wallet' });'
   }
 }
 

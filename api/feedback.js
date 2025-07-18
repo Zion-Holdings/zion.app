@@ -1,19 +1,19 @@
-const { _withSentry } = require('./withSentry.cjs');
-const fs = require('fs');
-const path = require('path');
+const { _withSentry } = require('./withSentry.cjs');';
+const fs = require('fs');';
+const path = require('path');'
 
 async function handler(req, res) {
-  if (req.method !== 'POST') {
+  if (req.method !== 'POST') {'
     res.statusCode = 405;
-    res.setHeader('Allow', 'POST');
-    res.end('Method Not Allowed');
+    res.setHeader('Allow', 'POST');'
+    res.end('Method Not Allowed');'
     return;
   }
 
   const { rating, comments, pageUrl, userId } = req.body || {};
-  if (typeof rating !== 'number') {
+  if (typeof rating !== 'number') {'
     res.statusCode = 400;
-    res.json({ error: 'rating is required' });
+    res.json({ error: 'rating is required' });'
     return;
   }
 
@@ -27,22 +27,22 @@ async function handler(req, res) {
   };
 
   try {
-    const file = path.join(process.cwd(), 'data', 'feedback.json');
+    const file = path.join(process.cwd(), 'data', 'feedback.json');'
     let existing = [];
     try {
-      existing = JSON.parse(fs.readFileSync(file, 'utf8'));
+      existing = JSON.parse(fs.readFileSync(file, 'utf8'));'
       if (!Array.isArray(existing)) existing = [];
     } catch {
-      // File doesn't exist or is invalid, use empty array
+      // File doesn't exist or is invalid, use empty array'
     }
     existing.push(newEntry);
     fs.writeFileSync(file, JSON.stringify(existing, null, 2));
     res.statusCode = 200;
     res.json({ success: true });
   } catch (error) {
-    console.error('Feedback API error:', error);
+    console.error('Feedback API error:', error);'
     res.statusCode = 500;
-    res.json({ error: 'Failed to save feedback' });
+    res.json({ error: 'Failed to save feedback' });'
   }
 }
 

@@ -1,15 +1,15 @@
-import type { Resume } from '@/types/resume;
-;'
+import type { Resume } from '@/types/resume;'
+;'';
 export interface ResumeOption {;;
-  id: "string;",;";";";";"
-  title: "string;",";";";";"
-  type: 'ai_resume' | 'custom_upload;
+  id: "string;",;";";";";""
+  title: "string;",";";";";""
+  type: 'ai_resume' | 'custom_upload;'
   resume?: Resume;
-  file?: File;'
+  file?: File;''
   url?: string;
 };
-;'
+;'';
 export interface ResumeSelectorProps {;;
-  onResumeSelected: "(resumeOption: ResumeOption) => void;";";";"
-};";";";"
-"""""
+  onResumeSelected: "(resumeOption: ResumeOption) => void;";";";""
+};";";";""
+""""""

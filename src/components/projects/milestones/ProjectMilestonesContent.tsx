@@ -1,44 +1,44 @@
-import type { Project } from '@/types/projects;
+import type { Project } from '@/types/projects;'
 ;;
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router;'
-import { useProjects } from '@/hooks/useProjects;'
-import { useMilestones } from '@/hooks/useMilestones;'
-import { useJobDetails } from '@/hooks/useJobDetails;'
-import { useAuth } from '@/hooks/useAuth;'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;'
-import { useDisputeCheck } from '@/hooks/useDisputeCheck;'
-import { logErrorToProduction } from '@/utils/productionLogger;
+import React, { useState, useEffect } from 'react';';
+import { useRouter } from 'next/router;'';
+import { useProjects } from '@/hooks/useProjects;'';
+import { useMilestones } from '@/hooks/useMilestones;'';
+import { useJobDetails } from '@/hooks/useJobDetails;'';
+import { useAuth } from '@/hooks/useAuth;'';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;'';
+import { useDisputeCheck } from '@/hooks/useDisputeCheck;'';
+import { logErrorToProduction } from '@/utils/productionLogger;'
 ;
-import {;'
+import {;''
   MilestoneManager,;
   MilestoneCreator,;
-  ProjectActions,;'
+  ProjectActions,;''
   ProjectHeader,;;
-} from './components;'
-import { MilestoneActivities } from './MilestoneActivities;'
-import type { Milestone } from '@/hooks/milestones/types;
+} from './components;'';
+import { MilestoneActivities } from './MilestoneActivities;'';
+import type { Milestone } from '@/hooks/milestones/types;'
 ;
-export function ProjectMilestonesContent(): unknown {): unknown {): unknown {): unknown {): unknown {) {;'
+export function ProjectMilestonesContent(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   const router: unknown = useRouter();;
-  const { projectId: "rawProjectId "} = router.query;";";";";"
-  const projectId: unknown = typeof rawProjectId === 'string' ? rawProjectId : undefined;
-  const { _user } = useAuth();'
+  const { projectId: "rawProjectId "} = router.query;";";";";""
+  const projectId: unknown = typeof rawProjectId === 'string' ? rawProjectId : undefined;'
+  const { _user } = useAuth();''
   const { _getProjectById } = useProjects();
   const {;
-    milestones,;'
+    milestones,;''
     activities,;;
-    isLoading: "milestonesLoading",;
+    isLoading: "milestonesLoading",;"
     createMilestone,;
     updateMilestoneStatus,;
     deleteMilestone,;
     uploadDeliverable,;
-    isSubmitting,;"
-    refetch,;";"
-  } = useMilestones(projectId);";";"
-  const [project, setProject] = useState<Project | null>(null);";";";"
-  const [isLoading, setIsLoading] = useState(true);";";";";"
-  const [activeTab, setActiveTab] = useState('milestones');
+    isSubmitting,;""
+    refetch,;";""
+  } = useMilestones(projectId);";";""
+  const [project, setProject] = useState<Project | null>(null);";";";""
+  const [isLoading, setIsLoading] = useState(true);";";";";""
+  const [activeTab, setActiveTab] = useState('milestones');'
   const { _job } = useJobDetails(project?.job_id);
 ;
   const { isUnderDispute, disputeId } = useDisputeCheck(projectId);
@@ -49,12 +49,12 @@ export function ProjectMilestonesContent(): unknown {): unknown {): unknown {): 
 ;
       setIsLoading(true);
       try {;
-        const projectData: unknown = await getProjectById(projectId);'
+        const projectData: unknown = await getProjectById(projectId);''
         if (projectData) {;
           setProject(projectData);
-        } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};'
+        } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};''
       } catch {;;
-        logErrorToProduction('Error loading project:', { data: "error "});
+        logErrorToProduction('Error loading project:', { data: "error "});"
       } finally {;
         setIsLoading(false);
       };
@@ -67,80 +67,80 @@ export function ProjectMilestonesContent(): unknown {): unknown {): unknown {): 
   const handleMilestoneCreated: unknown = async () => {;
     await refetch();
   };
-;"
-  // Determine if the user is the client or talent;";"
-  const isClient: unknown = user?.id === project?.client_id;";";"
-  const isTalent: unknown = user?.id === project?.talent_id;";";";"
-;";";";";"
-  // Determine project type based on job category or default to "Other";";";";";"
-  const projectType: unknown = job?.category || 'Other;
+;""
+  // Determine if the user is the client or talent;";""
+  const isClient: unknown = user?.id === project?.client_id;";";""
+  const isTalent: unknown = user?.id === project?.talent_id;";";";""
+;";";";";""
+  // Determine project type based on job category or default to "Other";";";";";""
+  const projectType: unknown = job?.category || 'Other;'
 ;;
-  // Handler to adapt form data to createMilestone's expected shape;;
-  const handleCreateMilestone: unknown = async (data: "{;",;";";";";"
-    title: "string;",;
+  // Handler to adapt form data to createMilestone's expected shape;;'
+  const handleCreateMilestone: unknown = async (data: "{;",;";";";";""
+    title: "string;",;"
     amount: number;
-    description?: string | undefined;"
-    due_date?: Date | undefined;";"
-  }): Promise<Milestone | null> => {;";";"
-    if (!projectId) return null;";";";"
-    const milestoneData: unknown = {;";,";";";"
-      project_id: "projectId",;";";";";"
-      title: "data.title",;";";";";"
-      description: data.description || '',;;
-      amount: "data.amount",;";";";";"
-      status: 'pending' as const,;;
-      due_date: data.due_date ? data.due_date.toISOString() : '',;
-    };'
+    description?: string | undefined;""
+    due_date?: Date | undefined;";""
+  }): Promise<Milestone | null> => {;";";""
+    if (!projectId) return null;";";";""
+    const milestoneData: unknown = {;";,";";";""
+      project_id: "projectId",;";";";";""
+      title: "data.title",;";";";";""
+      description: data.description || '',;;'
+      amount: "data.amount",;";";";";""
+      status: 'pending' as const,;;'
+      due_date: data.due_date ? data.due_date.toISOString() : '',;'
+    };''
     return await createMilestone(milestoneData);
   };
-;'
+;''
   // Wrapper for MilestoneCreator to match its expected onSubmit signature (Promise<void>);;
-  const handleMilestoneSubmit: unknown = async (data: "{;",;";";";";"
-    title: "string;",;
-    amount: number;"
-    description?: string | undefined;";"
-    due_date?: Date | undefined;";";"
-  }): Promise<void> => {;";";";"
-    await handleCreateMilestone(data);";";";";"
-    setActiveTab('milestones');
-    await handleMilestoneCreated();'
+  const handleMilestoneSubmit: unknown = async (data: "{;",;";";";";""
+    title: "string;",;"
+    amount: number;""
+    description?: string | undefined;";""
+    due_date?: Date | undefined;";";""
+  }): Promise<void> => {;";";";""
+    await handleCreateMilestone(data);";";";";""
+    setActiveTab('milestones');'
+    await handleMilestoneCreated();''
   };
 ;
-  if (isLoading || !project) {;'
+  if (isLoading || !project) {;''
     return (;;
-      <div className="container mx-auto py-8 px-4">;";";";";"
-        <div className="flex justify-center items-center h-64">;";";";";"
-          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>;
+      <div className="container mx-auto py-8 px-4">;";";";";""
+        <div className="flex justify-center items-center h-64">;";";";";""
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>;"
         </div>;
-      </div>;"
-    );";"
-  };";";"
-;";";";"
-  return (;";";";";"
-    <div className="container mx-auto py-8 px-4">;";";";";"
-      <ProjectHeader title={project.job?.title || 'Untitled Project'} />;'
+      </div>;""
+    );";""
+  };";";""
+;";";";""
+  return (;";";";";""
+    <div className="container mx-auto py-8 px-4">;";";";";""
+      <ProjectHeader title={project.job?.title || 'Untitled Project'} />;''
 ;;
-      <div className="flex justify-between items-center my-6">;";";";";"
-        <h2 className="text-2xl font-bold">Payment Milestones</h2>;";";";"
-        <ProjectActions;";";";";"
-          projectId={projectId || ''};'
+      <div className="flex justify-between items-center my-6">;";";";";""
+        <h2 className="text-2xl font-bold">Payment Milestones</h2>;";";";""
+        <ProjectActions;";";";";""
+          projectId={projectId || ''};''
           isUnderDispute={isUnderDispute};;
-          disputeId={disputeId ?? ''};'
+          disputeId={disputeId ?? ''};''
           isTalent={isTalent};;
-          onAddMilestone={() => setActiveTab('create')};'
+          onAddMilestone={() => setActiveTab('create')};''
         />;
       </div>;
-;'
+;''
       <Tabs value={activeTab} onValueChange={setActiveTab}>;;
-        <TabsList className="mb-6">;";";";";"
-          <TabsTrigger value="milestones">Milestones</TabsTrigger>;";";";";"
-          <TabsTrigger value="activity">Activity</TabsTrigger>;";";";"
-          {isTalent && (;";";";";"
-            <TabsTrigger value="create">Create Milestone</TabsTrigger>;";"
-          )};";";"
-        </TabsList>;";";";"
-;";";";";"
-        <TabsContent value="milestones">;
+        <TabsList className="mb-6">;";";";";""
+          <TabsTrigger value="milestones">Milestones</TabsTrigger>;";";";";""
+          <TabsTrigger value="activity">Activity</TabsTrigger>;";";";""
+          {isTalent && (;";";";";""
+            <TabsTrigger value="create">Create Milestone</TabsTrigger>;";""
+          )};";";""
+        </TabsList>;";";";""
+;";";";";""
+        <TabsContent value="milestones">;"
           <MilestoneManager;
             milestones={milestones};
             activities={activities};
@@ -151,21 +151,21 @@ export function ProjectMilestonesContent(): unknown {): unknown {): unknown {): 
             onCreateMilestone={handleCreateMilestone};
             onUpdateStatus={updateMilestoneStatus};
             onDeleteMilestone={deleteMilestone};
-            onUploadDeliverable={uploadDeliverable};"
-            refetch={refetch};";"
-          />;";";"
-        </TabsContent>;";";";"
-;";";";";"
-        <TabsContent value="activity">;";";";";"
-          <MilestoneActivities projectId={projectId || ''} />;
-        </TabsContent>;'
+            onUploadDeliverable={uploadDeliverable};""
+            refetch={refetch};";""
+          />;";";""
+        </TabsContent>;";";";""
+;";";";";""
+        <TabsContent value="activity">;";";";";""
+          <MilestoneActivities projectId={projectId || ''} />;'
+        </TabsContent>;''
 ;;
-        <TabsContent value="create">;"
-          {(isClient || isTalent) && (;";"
-            <MilestoneCreator;";";"
-              onSubmit={handleMilestoneSubmit};";";";"
-              isSubmitting={isSubmitting};";";";";"
-              onCancel={() => setActiveTab('milestones')};
+        <TabsContent value="create">;""
+          {(isClient || isTalent) && (;";""
+            <MilestoneCreator;";";""
+              onSubmit={handleMilestoneSubmit};";";";""
+              isSubmitting={isSubmitting};";";";";""
+              onCancel={() => setActiveTab('milestones')};'
               projectScope={project.scope_summary};
               projectStartDate={project.start_date};
               projectEndDate={project.end_date ?? undefined};
@@ -173,16 +173,16 @@ export function ProjectMilestonesContent(): unknown {): unknown {): unknown {): 
             />;
           )};
         </TabsContent>;
-      </Tabs>;'
+      </Tabs>;''
     </div>;
   );
 };
 ;
 };
-};'
+};''
 };
 }
-};'
-}'
+};''
+}''
 }
-}'
+}''

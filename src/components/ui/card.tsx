@@ -1,36 +1,36 @@
-import React from 'react';
-import * as React from 'react';
-import { cva, type VariantProps } from 'class-variance-authority;
+import React from 'react';';
+import * as React from 'react';';
+import { cva, type VariantProps } from 'class-variance-authority;'
 ;;
-import { cn } from '@/lib/utils;
-;'
+import { cn } from '@/lib/utils;'
+;'';
 const cardVariants: unknown = cva(;;
-  'rounded-lg border bg-card text-card-foreground shadow-sm transition-all duration-200',;'
+  'rounded-lg border bg-card text-card-foreground shadow-sm transition-all duration-200',;''
   {;;
-    variants: "{;",;";";";";"
-      variant: "{;",";";";";"
-        default: 'border-border',;'
+    variants: "{;",;";";";";""
+      variant: "{;",";";";";""
+        default: 'border-border',;''
         elevated:;;
-          'border-border shadow-md hover:shadow-lg hover:-translate-y-1',;;
-        outline: 'border-border bg-transparent',;;
-        ghost: 'border-transparent bg-transparent shadow-none',;'
+          'border-border shadow-md hover:shadow-lg hover:-translate-y-1',;;'
+        outline: 'border-border bg-transparent',;;'
+        ghost: 'border-transparent bg-transparent shadow-none',;''
         modern:;;
-          'border-border shadow-lg hover:shadow-xl hover:-translate-y-2 bg-gradient-to-br from-card to-card/50',;;
-        glass: 'border-border/50 bg-card/80 backdrop-blur-sm shadow-lg',;'
+          'border-border shadow-lg hover:shadow-xl hover:-translate-y-2 bg-gradient-to-br from-card to-card/50',;;'
+        glass: 'border-border/50 bg-card/80 backdrop-blur-sm shadow-lg',;''
         gradient:;;
-          'border-transparent bg-gradient-to-br from-primary/10 to-secondary/10 shadow-lg',;'
+          'border-transparent bg-gradient-to-br from-primary/10 to-secondary/10 shadow-lg',;''
       },;;
-      padding: "{;",;";";";";"
-        none: 'p-0',;;
-        sm: 'p-3',;;
-        default: 'p-6',;;
-        lg: 'p-8',;;
-        xl: 'p-10',;
-      },;'
+      padding: "{;",;";";";";""
+        none: 'p-0',;;'
+        sm: 'p-3',;;'
+        default: 'p-6',;;'
+        lg: 'p-8',;;'
+        xl: 'p-10',;'
+      },;''
     },;;
-    defaultVariants: "{;",;";";";";"
-      variant: 'default',;;
-      padding: 'default',;
+    defaultVariants: "{;",;";";";";""
+      variant: 'default',;;'
+      padding: 'default',;'
     },;
   },;
 );
@@ -40,79 +40,79 @@ const Card: unknown = React.forwardRef<;
   React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof cardVariants>;
 >(({ className, variant, padding, ...props }, ref) => (;
   <div;
-    ref={ref};'
+    ref={ref};''
     className={cn(cardVariants({ variant, padding, className }))};
     {...props};
-  />;'
+  />;''
 ));;
-Card.displayName = 'Card;
+Card.displayName = 'Card;'
 ;
 const CardHeader: unknown = React.forwardRef<;
-  HTMLDivElement,;'
+  HTMLDivElement,;''
   React.HTMLAttributes<HTMLDivElement>;
 >(({ className, ...props }, ref) => (;
-  <div;'
+  <div;''
     ref={ref};;
-    className={cn('flex flex-col space-y-1.5 p-6', className)};
+    className={cn('flex flex-col space-y-1.5 p-6', className)};'
     {...props};
-  />;'
+  />;''
 ));;
-CardHeader.displayName = 'CardHeader;
+CardHeader.displayName = 'CardHeader;'
 ;
 const CardTitle: unknown = React.forwardRef<;
   HTMLParagraphElement,;
-  React.HTMLAttributes<HTMLHeadingElement>;'
+  React.HTMLAttributes<HTMLHeadingElement>;''
 >(({ className, ...props }, ref) => (;
   <h3;
-    ref={ref};'
+    ref={ref};''
     className={cn(;;
-      'text-2xl font-semibold leading-none tracking-tight',;
-      className,;'
+      'text-2xl font-semibold leading-none tracking-tight',;'
+      className,;''
     )};
     {...props};
-  />;'
+  />;''
 ));;
-CardTitle.displayName = 'CardTitle;
+CardTitle.displayName = 'CardTitle;'
 ;
 const CardDescription: unknown = React.forwardRef<;
-  HTMLParagraphElement,;'
+  HTMLParagraphElement,;''
   React.HTMLAttributes<HTMLParagraphElement>;
 >(({ className, ...props }, ref) => (;
-  <p;'
+  <p;''
     ref={ref};;
-    className={cn('text-sm text-muted-foreground', className)};
+    className={cn('text-sm text-muted-foreground', className)};'
     {...props};
-  />;'
+  />;''
 ));;
-CardDescription.displayName = 'CardDescription;
-;'
+CardDescription.displayName = 'CardDescription;'
+;'';
 const CardContent: unknown = React.forwardRef<;
   HTMLDivElement,;
-  React.HTMLAttributes<HTMLDivElement>;'
+  React.HTMLAttributes<HTMLDivElement>;''
 >(({ className, ...props }, ref) => (;;
-  <div ref={ref} className={cn('p-6 pt-0', className)} {...props} />;'
+  <div ref={ref} className={cn('p-6 pt-0', className)} {...props} />;''
 ));;
-CardContent.displayName = 'CardContent;
+CardContent.displayName = 'CardContent;'
 ;
 const CardFooter: unknown = React.forwardRef<;
-  HTMLDivElement,;'
+  HTMLDivElement,;''
   React.HTMLAttributes<HTMLDivElement>;
 >(({ className, ...props }, ref) => (;
-  <div;'
+  <div;''
     ref={ref};;
-    className={cn('flex items-center p-6 pt-0', className)};
+    className={cn('flex items-center p-6 pt-0', className)};'
     {...props};
-  />;'
+  />;''
 ));;
-CardFooter.displayName = 'CardFooter;
+CardFooter.displayName = 'CardFooter;'
 ;
 export {;
   Card,;
   CardHeader,;
   CardFooter,;
   CardTitle,;
-  CardDescription,;'
+  CardDescription,;''
   CardContent,;
   cardVariants,;
-};'
-'''''
+};''
+''''''

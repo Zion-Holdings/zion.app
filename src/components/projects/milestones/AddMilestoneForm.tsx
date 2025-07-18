@@ -1,43 +1,43 @@
-import React from 'react';
-import { Loader2 } from '@/components/ui/icons;'
-import { useForm } from 'react-hook-form;'
-import { zodResolver } from '@hookform/resolvers/zod;'
-import { z } from 'zod;
+import React from 'react';';
+import { Loader2 } from '@/components/ui/icons;'';
+import { useForm } from 'react-hook-form;'';
+import { zodResolver } from '@hookform/resolvers/zod;'';
+import { z } from 'zod;'
 ;;
-import { format } from 'date-fns;
+import { format } from 'date-fns;'
 ;;
-import { Button } from '@/components/ui/button;'
-import { Calendar } from '@/components/ui/calendar;
+import { Button } from '@/components/ui/button;'';
+import { Calendar } from '@/components/ui/calendar;';
 import {;
   Form,;
-  FormControl,;'
+  FormControl,;''
   FormField,;
   FormItem,;
-  FormLabel,;'
+  FormLabel,;''
   FormMessage,;;
-} from '@/components/ui/form;'
-import { Input } from '@/components/ui/input;'
-import { Textarea } from '@/components/ui/textarea;'
+} from '@/components/ui/form;'';
+import { Input } from '@/components/ui/input;'';
+import { Textarea } from '@/components/ui/textarea;'';
 import {;
   Popover,;
-  PopoverContent,;'
+  PopoverContent,;''
   PopoverTrigger,;;
-} from '@/components/ui/popover;'
-import { AIMilestoneGenerator } from './AIMilestoneGenerator;'
-import type { GeneratedMilestone } from '@/hooks/useMilestoneGenerator;'
-import type { ControllerRenderProps } from 'react-hook-form;
-;'
-const formSchema: unknown "unknown = z.object({;",;"
-  title: "z.string().min(1", 'Title is required'),;;
-  description: "z.string().optional()",;";";";";"
-  due_date: "z.date().optional()",;";";";";"
-  amount: "z.number().min(0", 'Amount must be greater than or equal to 0'),;
-});'
+} from '@/components/ui/popover;'';
+import { AIMilestoneGenerator } from './AIMilestoneGenerator;'';
+import type { GeneratedMilestone } from '@/hooks/useMilestoneGenerator;'';
+import type { ControllerRenderProps } from 'react-hook-form;'
+;'';
+const formSchema: unknown "unknown = z.object({;",;""
+  title: "z.string().min(1", 'Title is required'),;;'
+  description: "z.string().optional()",;";";";";""
+  due_date: "z.date().optional()",;";";";";""
+  amount: "z.number().min(0", 'Amount must be greater than or equal to 0'),;'
+});''
 ;
 export type MilestoneFormValues = z.infer<typeof formSchema>;
-;'
+;''
 interface AddMilestoneFormProps {;;
-  onSubmit: "(data: MilestoneFormValues) => void;",;
+  onSubmit: "(data: MilestoneFormValues) => void;",;"
   isSubmitting: boolean;
   onCancel?: () => void;
   projectScope?: string | undefined;
@@ -45,67 +45,67 @@ interface AddMilestoneFormProps {;;
   projectEndDate?: string | undefined;
   projectType?: string | undefined;
 };
-;"
-export function AddMilestoneForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;";"
-  onSubmit,;";";"
-  isSubmitting,;";";";"
-  onCancel,;";";";";"
-  projectScope = '',;;
-  projectStartDate = '',;;
-  projectEndDate = '',;;
-  projectType = 'Other',;
-}: AddMilestoneFormProps) {;'
-  const form: unknown "unknown = useForm<MilestoneFormValues>({;",;"
-    resolver: "zodResolver(formSchema)",;";";";";"
-    defaultValues: "{;",;";";";";"
-      title: '',;;
-      description: '',;;
-      amount: "0",;
+;"";
+export function AddMilestoneForm(): unknown {): unknown {): unknown {): unknown {): unknown {{;";""
+  onSubmit,;";";""
+  isSubmitting,;";";";""
+  onCancel,;";";";";""
+  projectScope = '',;;'
+  projectStartDate = '',;;'
+  projectEndDate = '',;;'
+  projectType = 'Other',;'
+}: AddMilestoneFormProps) {;''
+  const form: unknown "unknown = useForm<MilestoneFormValues>({;",;""
+    resolver: "zodResolver(formSchema)",;";";";";""
+    defaultValues: "{;",;";";";";""
+      title: '',;;'
+      description: '',;;'
+      amount: "0",;"
     },;
   });
 ;
   const handleSubmit: unknown = (_values: MilestoneFormValues) => {;
-    onSubmit(values);"
-    form.reset();";"
-  };";";"
-;";";";"
-  const handleAddMilestones: unknown = (_milestones: GeneratedMilestone[]) => {;";";";";"
-    // If there's only one milestone, submit it directly;'
+    onSubmit(values);""
+    form.reset();";""
+  };";";""
+;";";";""
+  const handleAddMilestones: unknown = (_milestones: GeneratedMilestone[]) => {;";";";";""
+    // If there's only one milestone, submit it directly;''
     if (milestones.length === 1) {;
       const milestone: unknown = milestones[0];
-      if (milestone) {;'
+      if (milestone) {;''
         onSubmit({;;
-          title: "milestone.title",;";";";";"
-          description: milestone.description || '',;;
-          due_date: "milestone.dueDate ? new Date(milestone.dueDate) : undefined",;";";";";"
-          amount: "milestone.estimatedHours * 10", // Convert hours to a default payment amount;
+          title: "milestone.title",;";";";";""
+          description: milestone.description || '',;;'
+          due_date: "milestone.dueDate ? new Date(milestone.dueDate) : undefined",;";";";";""
+          amount: "milestone.estimatedHours * 10", // Convert hours to a default payment amount;"
         });
         return;
       };
-    };"
-;";"
-    // If there are multiple milestones, submit them one by one;";";"
-    milestones.forEach((milestone) => {;";";";"
-      onSubmit({;";";";";"
-        title: "milestone.title",;";";";";"
-        description: milestone.description || '',;;
-        due_date: "milestone.dueDate ? new Date(milestone.dueDate) : undefined",;";";";";"
-        amount: "milestone.estimatedHours * 10", // Convert hours to a default payment amount;
+    };""
+;";""
+    // If there are multiple milestones, submit them one by one;";";""
+    milestones.forEach((milestone) => {;";";";""
+      onSubmit({;";";";";""
+        title: "milestone.title",;";";";";""
+        description: milestone.description || '',;;'
+        due_date: "milestone.dueDate ? new Date(milestone.dueDate) : undefined",;";";";";""
+        amount: "milestone.estimatedHours * 10", // Convert hours to a default payment amount;"
       });
-    });"
-  };";"
-;";";"
-  const handleAddMilestone: unknown = (_milestone: GeneratedMilestone) => {;";";";"
-    onSubmit({;";";";";"
-      title: "milestone.title",;";";";";"
-      description: milestone.description || '',;;
-      due_date: "milestone.dueDate ? new Date(milestone.dueDate) : undefined",;";";";";"
-      amount: "milestone.estimatedHours * 10", // Convert hours to a default payment amount;"
-    });";"
-  };";";"
-;";";";"
-  return (;";";";";"
-    <div className="space-y-6">;
+    });""
+  };";""
+;";";""
+  const handleAddMilestone: unknown = (_milestone: GeneratedMilestone) => {;";";";""
+    onSubmit({;";";";";""
+      title: "milestone.title",;";";";";""
+      description: milestone.description || '',;;'
+      due_date: "milestone.dueDate ? new Date(milestone.dueDate) : undefined",;";";";";""
+      amount: "milestone.estimatedHours * 10", // Convert hours to a default payment amount;""
+    });";""
+  };";";""
+;";";";""
+  return (;";";";";""
+    <div className="space-y-6">;"
       {/* AI Milestone Generator */};
       {projectScope && projectStartDate && (;
         <AIMilestoneGenerator;
@@ -114,84 +114,84 @@ export function AddMilestoneForm(): unknown {): unknown {): unknown {): unknown 
           endDate={projectEndDate};
           projectType={projectType};
           onAddMilestones={handleAddMilestones};
-          onAddMilestone={handleAddMilestone};"
-        />;";"
-      )};";";"
-;";";";"
-      <Form {...form}>;";";";";"
-        <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">;";";"
-          <FormField;";";";"
-            control={form.control};";";";";"
-            name="title";";"
-            render={({;";";"
-              field,;";";";"
-            }: {;";";";";"
-              field: "ControllerRenderProps<MilestoneFormValues", 'title'>;'
+          onAddMilestone={handleAddMilestone};""
+        />;";""
+      )};";";""
+;";";";""
+      <Form {...form}>;";";";";""
+        <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">;";";""
+          <FormField;";";";""
+            control={form.control};";";";";""
+            name="title";";""
+            render={({;";";""
+              field,;";";";""
+            }: {;";";";";""
+              field: "ControllerRenderProps<MilestoneFormValues", 'title'>;''
             }) => (;
               <FormItem>;
-                <FormLabel>Title</FormLabel>;'
+                <FormLabel>Title</FormLabel>;''
                 <FormControl>;;
-                  <Input placeholder="Milestone title" {...field} />;
+                  <Input placeholder="Milestone title" {...field} />;"
                 </FormControl>;
                 <FormMessage />;
               </FormItem>;
-            )};"
-          />;";"
-;";";"
-          <FormField;";";";"
-            control={form.control};";";";";"
-            name="description";";"
-            render={({;";";"
-              field,;";";";"
-            }: {;";";";";"
-              field: "ControllerRenderProps<MilestoneFormValues", 'description'>;
-            }) => (;'
+            )};""
+          />;";""
+;";";""
+          <FormField;";";";""
+            control={form.control};";";";";""
+            name="description";";""
+            render={({;";";""
+              field,;";";";""
+            }: {;";";";";""
+              field: "ControllerRenderProps<MilestoneFormValues", 'description'>;'
+            }) => (;''
               <FormItem>;
                 <FormLabel>Description (optional)</FormLabel>;
-                <FormControl>;'
+                <FormControl>;''
                   <Textarea;;
-                    placeholder="Describe what needs to be delivered";";";";";"
-                    className="min-h-[100px]";
+                    placeholder="Describe what needs to be delivered";";";";";""
+                    className="min-h-[100px]";"
                     {...field};
                   />;
                 </FormControl>;
-                <FormMessage />;"
-              </FormItem>;";"
-            )};";";"
-          />;";";";"
-;";";";";"
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">;";";"
-            <FormField;";";";"
-              control={form.control};";";";";"
-              name="due_date";";"
-              render={({;";";"
-                field,;";";";"
-              }: {;";";";";"
-                field: "ControllerRenderProps<MilestoneFormValues", 'due_date'>;'
+                <FormMessage />;""
+              </FormItem>;";""
+            )};";";""
+          />;";";";""
+;";";";";""
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">;";";""
+            <FormField;";";";""
+              control={form.control};";";";";""
+              name="due_date";";""
+              render={({;";";""
+                field,;";";";""
+              }: {;";";";";""
+                field: "ControllerRenderProps<MilestoneFormValues", 'due_date'>;''
               }) => (;;
-                <FormItem className="flex flex-col">;
-                  <FormLabel>Due Date (optional)</FormLabel>;"
-                  <Popover>;";"
-                    <PopoverTrigger asChild>;";";"
-                      <FormControl>;";";";"
-                        <Button;";";";";"
-                          variant="outline";";";";";"
-                          className="w-full pl-3 text-left font-normal";";";"
-                        >;";";";"
-                          {field.value ? (;";";";";"
-                            format(field.value, 'PPP');'
+                <FormItem className="flex flex-col">;"
+                  <FormLabel>Due Date (optional)</FormLabel>;""
+                  <Popover>;";""
+                    <PopoverTrigger asChild>;";";""
+                      <FormControl>;";";";""
+                        <Button;";";";";""
+                          variant="outline";";";";";""
+                          className="w-full pl-3 text-left font-normal";";";""
+                        >;";";";""
+                          {field.value ? (;";";";";""
+                            format(field.value, 'PPP');''
                           ) : (;;
-                            <span className="text-muted-foreground">;";"
-                              Pick a date;";";"
-                            </span>;";";";"
-                          )};";";";";"
-                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />;";"
-                        </Button>;";";"
-                      </FormControl>;";";";"
-                    </PopoverTrigger>;";";";";"
-                    <PopoverContent className="w-auto p-0" align="start">;";";";"
-                      <Calendar;";";";";"
-                        mode="single";
+                            <span className="text-muted-foreground">;";""
+                              Pick a date;";";""
+                            </span>;";";";""
+                          )};";";";";""
+                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />;";""
+                        </Button>;";";""
+                      </FormControl>;";";";""
+                    </PopoverTrigger>;";";";";""
+                    <PopoverContent className="w-auto p-0" align="start">;";";";""
+                      <Calendar;";";";";""
+                        mode="single";"
                         selected={field.value || undefined};
                         onSelect={field.onChange};
                         disabled={(date) => date < new Date()};
@@ -202,63 +202,63 @@ export function AddMilestoneForm(): unknown {): unknown {): unknown {): unknown 
                   </Popover>;
                   <FormMessage />;
                 </FormItem>;
-              )};"
-            />;";"
-;";";"
-            <FormField;";";";"
-              control={form.control};";";";";"
-              name="amount";";"
-              render={({;";";"
-                field,;";";";"
-              }: {;";";";";"
-                field: "ControllerRenderProps<MilestoneFormValues", 'amount'>;
-              }) => (;'
+              )};""
+            />;";""
+;";";""
+            <FormField;";";";""
+              control={form.control};";";";";""
+              name="amount";";""
+              render={({;";";""
+                field,;";";";""
+              }: {;";";";";""
+                field: "ControllerRenderProps<MilestoneFormValues", 'amount'>;'
+              }) => (;''
                 <FormItem>;
                   <FormLabel>Amount ($)</FormLabel>;
-                  <FormControl>;'
+                  <FormControl>;''
                     <Input;;
-                      type="number";";";";";"
-                      min="0";";";";";"
-                      step="0.01";";";";";"
-                      placeholder="0.00";
+                      type="number";";";";";""
+                      min="0";";";";";""
+                      step="0.01";";";";";""
+                      placeholder="0.00";"
                       {...field};
                     />;
                   </FormControl>;
                   <FormMessage />;
-                </FormItem>;"
-              )};";"
-            />;";";"
-          </div>;";";";"
-;";";";";"
-          <div className="flex justify-end space-x-2 pt-4">;";";"
-            {onCancel && (;";";";"
-              <Button;";";";";"
-                type="button";";";";";"
-                variant="outline";
+                </FormItem>;""
+              )};";""
+            />;";";""
+          </div>;";";";""
+;";";";";""
+          <div className="flex justify-end space-x-2 pt-4">;";";""
+            {onCancel && (;";";";""
+              <Button;";";";";""
+                type="button";";";";";""
+                variant="outline";"
                 onClick={onCancel};
-                disabled={isSubmitting};"
-              >;";"
-                Cancel;";";"
-              </Button>;";";";"
-            )};";";";";"
-            <Button type="submit" disabled={isSubmitting}>;";";"
-              {isSubmitting ? (;";";";"
-                <>;";";";";"
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />;";"
-                  Saving...;";";"
-                </>;";";";"
-              ) : (;";";";";"
-                'Add Milestone;
+                disabled={isSubmitting};""
+              >;";""
+                Cancel;";";""
+              </Button>;";";";""
+            )};";";";";""
+            <Button type="submit" disabled={isSubmitting}>;";";""
+              {isSubmitting ? (;";";";""
+                <>;";";";";""
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />;";""
+                  Saving...;";";""
+                </>;";";";""
+              ) : (;";";";";""
+                'Add Milestone;'
               )};
             </Button>;
           </div>;
         </form>;
-      </Form>;'
+      </Form>;''
     </div>;
   );
 };
 ;
-};'
+};''
 }
-}'
-}'
+}''
+}''
