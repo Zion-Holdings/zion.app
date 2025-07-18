@@ -58,7 +58,7 @@ export default function PartnerManager() {
     }
 
     fetchPartners();
-  }, [isAuthenticated, router]);
+  }, [isAuthenticated, router, fetchPartners]);
 
   const fetchPartners = async () => {
     try {

@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Loader2 } from '@/components/ui/icons';
+import { Loader2, Sparkles } from 'lucide-react';
 import { logDebug, logErrorToProduction } from '@/utils/productionLogger';
 import { useToast } from "@/hooks/use-toast";
 import { useRouter } from 'next/router';
