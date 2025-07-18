@@ -108,7 +108,10 @@ function offlineSearch(
     return result;
   });
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 893ec18e28256fa94f66e04c72c0fd3dad7f1809
   const talentResults: TalentSearchResult[] = TALENT_PROFILES.filter(
     (t) =>
       match(t.full_name) ||
@@ -123,11 +126,19 @@ function offlineSearch(
     description: t.professional_title,
     type: 'talent' as const,
     slug: t.id,
+<<<<<<< HEAD
+    image: String(t.profile_picture_url ?? ''),
+    rating: typeof t.average_rating === 'number' ? t.average_rating : 0,
+    category: 'Talent',
+    tags: t.skills ?? [],
+    date: new Date().toISOString(),
+=======
     image: t.profile_picture_url ?? '',
     tags: t.skills ?? [],
     category: 'Talent',
     date: new Date().toISOString(),
     rating: typeof t.average_rating === 'number' ? t.average_rating : 0,
+>>>>>>> 893ec18e28256fa94f66e04c72c0fd3dad7f1809
   }));
 
   const blogResults = BLOG_POSTS.filter(
@@ -375,7 +386,11 @@ export default function SearchResultsPage({
                 created_at: new Date().toISOString(),
                 updated_at: new Date().toISOString(),
                 stock: (result as ProductSearchResult).stock ?? 0,
+<<<<<<< HEAD
+                in_stock: ((result as ProductSearchResult).stock || 0) > 0
+=======
                 in_stock: ((result as ProductSearchResult).stock ?? 0) > 0
+>>>>>>> 893ec18e28256fa94f66e04c72c0fd3dad7f1809
               }}
             />
           </div>
