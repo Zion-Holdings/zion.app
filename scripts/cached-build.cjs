@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Simple wrapper to run next build with caching enabled
 
-const { _spawn } = require('child_process');
+const { spawn } = require('child_process');
 
 // Enable filesystem caching for faster rebuilds
 const env = {

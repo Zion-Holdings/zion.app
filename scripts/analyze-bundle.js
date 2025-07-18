@@ -6,8 +6,10 @@ import { execSync } from 'child_process';
 import { fileURLToPath } from 'url';
 
 // Use different variable names to avoid conflict with built-in globals
-const currentFilename = fileURLToPath(import.meta.url);
+const _currentFilename = path.basename(__filename);
 const _currentDirname = undefined; // Unused path.dirname(currentFilename);
+const _output = 'bundle analysis output';
+const _dep = 'dependency';
 
 // Configuration
 const config = {

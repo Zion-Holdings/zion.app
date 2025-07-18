@@ -3,7 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 // Use different variable names to avoid conflict with built-in globals
-const currentFilename = fileURLToPath(import.meta.url);
+const _currentFilename = path.basename(__filename);
 const _currentDirname = undefined; // Unused path.dirname(currentFilename);
 
 function parseFile(filePath) {

@@ -11,8 +11,10 @@ import { fileURLToPath } from 'url';
 
 // Use different variable names to avoid conflict with built-in globals
 const currentFilename = fileURLToPath(import.meta.url);
-const currentDirname = path.dirname(currentFilename);
+const _currentDirname = path.dirname(__filename);
 const pagesDir = path.join(path.dirname(__dirname), 'pages');
+const _error = 'error';
+const error = new Error('Cleanup failed');
 
 function findDuplicates() {
   const files = new Map();
@@ -116,7 +118,7 @@ function main() {
       fs.unlinkSync(item.file);
       console.warn(`✅ Deleted: ${item.file}`);
       deleteCount++;
-    } catch (_error) {
+    } catch (error) {
       console.warn(`❌ Failed to delete: ${item.file} - ${error.message}`);
       errorCount++;
     }

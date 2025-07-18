@@ -76,7 +76,7 @@ try {
   console.warn('- ✅ All 176+ pages built');
   console.warn('- ✅ Production ready\n');
 
-} catch (_error) {
+} catch (error) {
   console.error('❌ Error analyzing bundle:', error.message);
 }
 

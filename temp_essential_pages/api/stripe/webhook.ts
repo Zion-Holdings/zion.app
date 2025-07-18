@@ -17,6 +17,28 @@ const stripe = new Stripe(
 );
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || '';
 
+interface StripeEvent {
+  type: string;
+  data: {
+    object: Stripe.Checkout.Session;
+  };
+}
+
+interface Order {
+  id: string;
+  status: string;
+  [key: string]: unknown;
+}
+
+interface PointsEntry {
+  id: string;
+  user_id: string;
+  delta: number;
+  reason: string;
+  order_id: string | null;
+  created_at: string;
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
@@ -24,29 +46,30 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   const sig = (req.headers as Record<string, string | string[] | undefined>)['stripe-signature'] as string;
-  let event: any;
+  let event: StripeEvent;
   try {
-    const buf = await buffer(req as any);
-    event = stripe.webhooks.constructEvent(buf.toString(), sig, webhookSecret);
-  } catch (err: any) {
+    const buf = await buffer(req as unknown as Request);
+    event = stripe.webhooks.constructEvent(buf.toString(), sig, webhookSecret) as StripeEvent;
+  } catch (err: unknown) {
+    const errorMessage = err instanceof Error ? err.message : 'Unknown error';
     console.error('Webhook signature verification failed.', err);
-    return res.status(400).end(`Webhook Error: ${err.message}`);
+    return res.status(400).end(`Webhook Error: ${errorMessage}`);
   }
 
   if (event.type === 'checkout.session.completed') {
-    const session = event.data.object as any;
+    const session = event.data.object;
     const orderId = session.metadata?.orderId;
     if (orderId) {
       try {
         const file = path.join(process.cwd(), 'data', 'orders.json');
-        const orders = JSON.parse(fs.readFileSync(file, 'utf8')) as any[];
+        const orders = JSON.parse(fs.readFileSync(file, 'utf8')) as Order[];
         const idx = orders.findIndex(o => o.id === orderId);
         if (idx !== -1) {
           orders[idx].status = 'paid';
           fs.writeFileSync(file, JSON.stringify(orders, null, 2));
         }
       } catch {
-        console.or('Failed to update order', );
+        console.error('Failed to update order');
       }
     }
     const userId = session.metadata?.userId;
@@ -54,7 +77,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const points = Math.floor(((session.amount_total || 0) / 10000)) * 10;
       if (points > 0) {
         const file = path.join(process.cwd(), 'data', 'points.json');
-        let ledger: any[] = [];
+        let ledger: PointsEntry[] = [];
         try {
           ledger = JSON.parse(fs.readFileSync(file, 'utf8'));
         } catch {

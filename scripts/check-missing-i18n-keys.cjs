@@ -22,7 +22,7 @@ function flatten(obj, prefix = '') {
 const localeKeys = {};
 const allKeys = new Set();
 
-for (const file of localeFiles) {
+for (const _file of localeFiles) {
   const filePath = path.join(localesDir, file);
   const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
   const keys = Object.keys(flatten(data));

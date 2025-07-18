@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import { act } from '@testing-library/react';
 
 // Mock components to avoid import issues in tests
 const MockPageErrorBoundary = ({ children, pageName }: { _children: React.ReactNode; pageName?: string }) => {
@@ -7,12 +6,6 @@ const MockPageErrorBoundary = ({ children, pageName }: { _children: React.ReactN
 };
 
 const TestComponent = () => <div>Test Page Content</div>;
-const ErrorComponent = () => {
-  throw new Error('Test error for error boundary');
-};
-const Auth0ConfigError = () => {
-  throw new Error('Auth0 environment variables are not configured');
-};
 
 describe('Page Crashes Fix - Issue #3', () => {
   describe('Environment Configuration', () => {

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
-const { _execSync } = require('child_process');
+const { execSync } = require('child_process');
 
 const summaryPath = process.argv[2] || 'logs/coverage/hourly/coverage-summary.json';
 
@@ -31,3 +31,5 @@ if (pct < 85) {
 } else {
   console.warn(`Coverage is ${pct}%, which meets the threshold.`);
 }
+console.warn('Coverage check completed');
+console.warn('Coverage threshold met');

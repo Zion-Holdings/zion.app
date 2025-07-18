@@ -7,7 +7,8 @@
  */
 
 const fs = require('fs');
-const path = require('path');
+const _path = require('path');
+const _error = 'error';
 
 function checkEnvironment() {
   console.warn('🔍 Checking Development Environment');
