@@ -10,15 +10,15 @@ const mockStripe = {
 };
 
 const mockElements = {
-  getElement: jest.fn(type => {
+  getElement: jest.fn(_type => {
     return {
       mount: jest.fn(),
       destroy: jest.fn(),
-      on: jest.fn((event, handler) => {
-        if (event === 'change') {
-          mockElements.triggerChange = handler;
-        }
-      }),
+        on: jest.fn((_event, handler) => {
+    if (_event === 'change') {
+      mockElements.triggerChange = handler;
+    }
+  }),
       update: jest.fn(),
       clear: jest.fn(),
       focus: jest.fn(),
@@ -28,11 +28,44 @@ const mockElements = {
   submit: jest.fn(() => Promise.resolve({ error: null })),
 };
 
-const useStripe = jest.fn(() => mockStripe);
-const useElements = jest.fn(() => mockElements);
+const useStripe = (_stripe, _options) => {
+  return {
+    createToken: jest.fn(() => Promise.resolve({ token: { id: 'tok_test' } })),
+    createPaymentMethod: jest.fn(() => Promise.resolve({ paymentMethod: { id: 'pm_test' } })),
+    confirmPayment: jest.fn(() => Promise.resolve({ paymentIntent: { id: 'pi_test' } })),
+  };
+};
 
-const Elements = ({ children, stripe, options }) => <div data-testid="mock-elements">{children}</div>;
-const CardElement = (props) => <div data-testid="mock-card-element" {...props} />;
+const useElements = () => {
+  return {
+    getElement: jest.fn(() => ({
+      mount: jest.fn(),
+      unmount: jest.fn(),
+      update: jest.fn(),
+    })),
+  };
+};
+
+const loadStripe = (_type) => {
+  return Promise.resolve({
+    elements: jest.fn(() => ({
+      create: jest.fn(() => ({
+        mount: jest.fn(),
+        unmount: jest.fn(),
+        update: jest.fn(),
+      })),
+    })),
+  });
+};
+
+const Elements = ({ children, _type, ...props }) => {
+  return children;
+};
+
+const CardElement = ({ _event, ...props }) => {
+  return <div data-testid="card-element" {...props} />;
+};
+
 const PaymentElement = (props) => <div data-testid="mock-payment-element" {...props} />;
 const IdealBankElement = (props) => <div data-testid="mock-ideal-bank-element" {...props} />;
 const AddressElement = (props) => <div data-testid="mock-address-element" {...props} />;
@@ -46,7 +79,7 @@ const resetMocks = () => {
   mockElements.getElement.mockClear().mockImplementation(type => ({
     mount: jest.fn(),
     destroy: jest.fn(),
-    on: jest.fn((event, handler) => { if (event === 'change') { mockElements.triggerChange = handler; }}),
+    on: jest.fn((_event, handler) => { if (_event === 'change') { mockElements.triggerChange = handler; }}),
     update: jest.fn(),
     clear: jest.fn(),
     focus: jest.fn(),

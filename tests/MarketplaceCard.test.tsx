@@ -2,7 +2,6 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { PaymentButton } from '@/components/transactions/PaymentButton';
 import * as router from 'react-router-dom';
-import { toast } from '@/hooks/use-toast';
 
 jest.mock('@/hooks/useAuth', () => ({
   useAuth: () => ({ isAuthenticated: false })

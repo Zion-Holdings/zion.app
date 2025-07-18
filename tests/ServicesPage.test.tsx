@@ -28,21 +28,6 @@
 //   );
 // }
 
-const sampleData = [
-  {
-    id: 's1',
-    title: 'Test Service',
-    description: 'desc',
-    category: 'dev',
-    price: 1000,
-    currency: '$',
-    tags: [],
-    author: { name: 'A', id: 'a' },
-    images: [],
-    createdAt: '2020-01-01',
-  },
-];
-
 // test('renders services from API', async () => {
 //   server.use(
 //     rest.get('/api/services', (_req, res, ctx) => res(ctx.json(sampleData)))

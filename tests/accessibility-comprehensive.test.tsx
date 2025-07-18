@@ -215,7 +215,6 @@ describe('Accessibility Comprehensive Tests - Issue #17', () => {
       render(<LanguageSwitcher />);
       
       const button = screen.getByRole('button');
-      const styles = window.getComputedStyle(button);
       
       // Basic check that focus styles exist
       expect(button).toHaveClass('focus-visible:ring-2');

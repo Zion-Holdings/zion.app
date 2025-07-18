@@ -1,6 +1,6 @@
  
 import path from 'path';
-import { Pact, Matchers } from '@pact-foundation/pact';
+import { Pact } from '@pact-foundation/pact';
 // Use the global fetch API so this test can run without the optional
 // `node-fetch` dependency.
 const fetch = global.fetch;

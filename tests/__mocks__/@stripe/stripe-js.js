@@ -1,9 +1,9 @@
  
 // tests/__mocks__/@stripe/stripe-js.js
 const mockStripeInstance = {
-  elements: vi.fn(options => {
+  elements: vi.fn(_options => {
     return {
-      create: vi.fn(type => ({
+      create: vi.fn(_type => ({
         mount: vi.fn(),
         destroy: vi.fn(),
         on: vi.fn(),
@@ -16,13 +16,13 @@ const mockStripeInstance = {
   retrievePaymentIntent: vi.fn(clientSecret => Promise.resolve({ paymentIntent: { id: 'pi_mock_retrieved_core', client_secret: clientSecret, status: 'succeeded' }, error: null })),
 };
 
-const loadStripe = vi.fn(publishableKey => {
+const loadStripe = vi.fn(_publishableKey => {
   return Promise.resolve(mockStripeInstance);
 });
 
 const resetMocks = () => {
-  mockStripeInstance.elements.mockClear().mockImplementation(options => ({
-    create: vi.fn(type => ({
+  mockStripeInstance.elements.mockClear().mockImplementation(_options => ({
+    create: vi.fn(_type => ({
       mount: vi.fn(),
       destroy: vi.fn(),
       on: vi.fn(),
@@ -33,7 +33,7 @@ const resetMocks = () => {
   mockStripeInstance.createPaymentMethod.mockClear().mockResolvedValue({ paymentMethod: { id: 'pm_mock_core' }, error: null });
   mockStripeInstance.retrievePaymentIntent.mockClear().mockImplementation(clientSecret => Promise.resolve({ paymentIntent: { id: 'pi_mock_retrieved_core', client_secret: clientSecret, status: 'succeeded' }, error: null }));
 
-  loadStripe.mockClear().mockImplementation(publishableKey => Promise.resolve(mockStripeInstance));
+  loadStripe.mockClear().mockImplementation(_publishableKey => Promise.resolve(mockStripeInstance));
 };
 
 module.exports = {

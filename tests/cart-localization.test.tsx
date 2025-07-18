@@ -4,7 +4,6 @@ import { configureStore } from '@reduxjs/toolkit';
 import { I18nextProvider } from 'react-i18next';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import { vi } from 'vitest';
 
 // Mock Redux store
 const mockStore = configureStore({
@@ -130,7 +129,7 @@ describe('Cart Localization Fixes (Issue #19)', () => {
     
     // Switch to Spanish
     mockI18n.changeLanguage('es');
-    rerender(
+    _rerender(
       <Provider store={mockStore}>
         <I18nextProvider i18n={mockI18n}>
           <MockCartPage />

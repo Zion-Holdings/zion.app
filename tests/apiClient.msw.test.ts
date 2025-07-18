@@ -5,7 +5,6 @@ import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import * as apiError from '@/utils/apiErrorHandler';
 import { supabase } from '@/integrations/supabase/client';
-import axios from 'axios'; // Import axios to inspect its interceptors if needed for debugging
 
 vi.mock('@/utils/apiErrorHandler', () => ({
   showApiError: vi.fn(),

@@ -10,6 +10,9 @@ jest.mock('@/pages/Signup', () => () => (
   </form>
 ));
 
+const TestComponent = () => <div>Test</div>;
+TestComponent.displayName = 'TestComponent';
+
 test('register route shows signup form', async () => {
   render(
     <MemoryRouter initialEntries={['/register']}>

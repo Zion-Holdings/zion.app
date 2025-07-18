@@ -4,9 +4,9 @@
  * Validates that Auth0 configuration resolves signup failures
  */
 
-const { checkExistingEnv, generateAuth0Secret, validateAuth0Domain, isPlaceholderValue } = require('../scripts/setup-auth0.js');
+const { generateAuth0Secret, validateAuth0Domain, isPlaceholderValue } = require('../scripts/setup-auth0.js');
 const fs = require('fs');
-const _path = require('path');
+const path = require('path');
 
 describe('Auth0 Signup Fix - Critical Issue #1', () => {
   
