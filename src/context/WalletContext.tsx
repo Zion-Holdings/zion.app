@@ -386,41 +386,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
       return;
     }
 
-    const subscribeProviderSafe =
-      typeof targetAppKit.subscribeProvider === 'function'
-        ? targetAppKit.subscribeProvider.bind(targetAppKit)
-        : (callback: (provider?: unknown) => void) => {
-            const provider = targetAppKit.getWalletProvider?.();
-            callback(provider);
-
-            if (typeof window !== 'undefined') {
-              const ethRaw = (
-                window as Window & { ethereum?: Eip1193ProviderWithEvents }
-              ).ethereum;
-              if (
-                typeof ethRaw === 'object' &&
-                ethRaw !== null &&
-                'on' in ethRaw &&
-                typeof ethRaw.on === 'function'
-              ) {
-                const handler = () =>
-                  callback(targetAppKit.getWalletProvider?.());
-                ethRaw.on('accountsChanged', handler);
-                return () => {
-                  if (
-                    'removeListener' in ethRaw &&
-                    typeof ethRaw.removeListener === 'function'
-                  ) {
-                    ethRaw.removeListener('accountsChanged', handler);
-                  }
-                };
-              }
-            }
-            return () => {};
-          };
-
-    updateWalletState();
-    const unsubscribe = subscribeProviderSafe(updateWalletState);
+    const unsubscribe = targetAppKit.subscribeProvider(updateWalletState);
     return () => {
       try {
         if (typeof unsubscribe === 'function') unsubscribe();
