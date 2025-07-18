@@ -211,7 +211,16 @@
     "build:with-healing": "npm run build && npm run self-healing:post-build",
     "lint:heal": "npm run self-healing:post-build",
     "heal:lint": "npm run self-healing:post-build",
-    "heal:continuous": "npm run self-healing:continuous"
+    "heal:continuous": "npm run self-healing:continuous",
+    "build-pipeline": "npm run lint:fix && npm run type-check && npm run build && npm run test",
+    "heal-and-build": "npm run auto-fix && npm run build",
+    "monitor-and-heal": "npm run build-monitor",
+    "type-check": "tsc --noEmit",
+    "post-build-heal": "node scripts/post-build-healer.js",
+    "continuous-heal": "node scripts/continuous-healing.js",
+    "heal-and-deploy": "node scripts/heal-and-deploy.js",
+    "auto-heal-pipeline": "npm run auto-fix && npm run build && npm run post-build-heal",
+    "heal-deploy-monitor": "npm run heal-and-deploy && npm run continuous-heal"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
