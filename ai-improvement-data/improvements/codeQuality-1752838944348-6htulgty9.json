@@ -1,5 +1,5 @@
 {
-  "id": "codeQuality-1752838931594-648clo394",
+  "id": "codeQuality-1752838944348-6htulgty9",
   "type": "codeQuality",
   "improvement": {
     "type": "codeQuality",
@@ -11,8 +11,7 @@
       "codeSmells": []
     }
   },
-  "timestamp": 1752838931594,
-  "nodeId": "node-1",
-  "status": "completed",
-  "completedAt": 1752838935409
+  "timestamp": 1752838944348,
+  "nodeId": "zion-master-node",
+  "status": "queued"
 }
