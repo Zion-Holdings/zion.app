@@ -1,424 +1,429 @@
 #!/usr/bin/env node
 
 /**
- * Zion App - Continuous Improvement System Startup
+ * Zion App - Enhanced Continuous Improvement Startup Script
  * 
- * Main entry point that orchestrates the entire continuous improvement system
+ * This script starts the comprehensive AI-powered automation system
+ * that continuously monitors and improves the application using multiple AI tools.
  */
 
-const ContinuousImprovementSystem = require('./index');
-const ZionMonitor = require('./monitor');
-const ZionImprover = require('./improve');
-const CursorIntegration = require('./cursor-integration');
-const winston = require('winston');
+const path = require('path');
+const fs = require('fs');
+const { spawn } = require('child_process');
 
-// Configure logging
-const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.combine(
-    winston.format.timestamp(),
-    winston.format.errors({ stack: true }),
-    winston.format.json()
-  ),
-  defaultMeta: { service: 'zion-continuous-improvement' },
-  transports: [
-    new winston.transports.File({ filename: 'logs/system-error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/system-combined.log' }),
-    new winston.transports.Console({
-      format: winston.format.combine(
-        winston.format.colorize(),
-        winston.format.simple()
-      )
-    })
-  ]
-});
+// Import the enhanced automation system
+const EnhancedAutomation = require('./enhanced-automation');
 
-class ZionContinuousImprovementOrchestrator {
+class AutomationStartup {
   constructor() {
-    this.system = null;
-    this.monitor = null;
-    this.improver = null;
-    this.cursorIntegration = null;
+    this.automation = null;
     this.isRunning = false;
-    this.stats = {
-      startTime: null,
-      improvementsApplied: 0,
-      improvementsFailed: 0,
-      alertsGenerated: 0,
-      suggestionsGenerated: 0
+    this.startTime = null;
+    
+    // Configuration
+    this.config = {
+      port: process.env.AUTOMATION_PORT || 3001,
+      logLevel: process.env.LOG_LEVEL || 'info',
+      enableDashboard: process.env.ENABLE_DASHBOARD === 'true',
+      enableSlack: process.env.ENABLE_SLACK === 'true',
+      enableMonitoring: process.env.ENABLE_MONITORING === 'true'
     };
   }
 
   /**
-   * Initialize the entire continuous improvement system
-   */
-  async initialize() {
-    logger.info('🚀 Initializing Zion App Continuous Improvement System...');
-    
-    try {
-      // Create logs directory
-      this.ensureLogsDirectory();
-      
-      // Initialize components
-      await this.initializeComponents();
-      
-      // Start the system
-      await this.start();
-      
-      logger.info('✅ Continuous Improvement System initialized and started successfully');
-      this.logSystemStatus();
-    } catch (error) {
-      logger.error('❌ Failed to initialize Continuous Improvement System:', error);
-      throw error;
-    }
-  }
-
-  /**
-   * Ensure logs directory exists
-   */
-  ensureLogsDirectory() {
-    const logsDir = 'logs';
-    if (!require('fs').existsSync(logsDir)) {
-      require('fs').mkdirSync(logsDir, { recursive: true });
-    }
-  }
-
-  /**
-   * Initialize all system components
-   */
-  async initializeComponents() {
-    logger.info('🔧 Initializing system components...');
-    
-    // Initialize Cursor integration
-    this.cursorIntegration = new CursorIntegration();
-    logger.info('✅ Cursor integration initialized');
-    
-    // Initialize improvement engine
-    this.improver = new ZionImprover();
-    logger.info('✅ Improvement engine initialized');
-    
-    // Initialize monitoring system
-    this.monitor = new ZionMonitor();
-    logger.info('✅ Monitoring system initialized');
-    
-    // Initialize main system
-    this.system = new ContinuousImprovementSystem();
-    logger.info('✅ Main system initialized');
-  }
-
-  /**
-   * Start the continuous improvement system
+   * Start the automation system
    */
   async start() {
-    logger.info('▶️  Starting Continuous Improvement System...');
-    
-    this.isRunning = true;
-    this.stats.startTime = new Date().toISOString();
-    
-    // Start monitoring
-    this.monitor.start();
-    
-    // Start main system
-    await this.system.initialize();
-    
-    // Set up event handlers
-    this.setupEventHandlers();
-    
-    // Start periodic health checks
-    this.startHealthChecks();
-    
-    logger.info('✅ Continuous Improvement System started successfully');
-  }
-
-  /**
-   * Setup event handlers for system coordination
-   */
-  setupEventHandlers() {
-    // Since the monitor doesn't have event emitter, we'll use polling instead
-    // Set up periodic checks for alerts and improvements
-    setInterval(() => {
-      this.checkForAlertsAndImprovements();
-    }, 30000); // Check every 30 seconds
-
-    logger.info('Event handlers configured (polling-based)');
-  }
-
-  /**
-   * Check for alerts and process improvements
-   */
-  async checkForAlertsAndImprovements() {
-    try {
-      // Get alerts from monitor
-      const alerts = this.monitor.getAlerts();
-      
-      // Process new alerts
-      for (const alert of alerts) {
-        if (!alert.processed) {
-          logger.info(`🚨 Processing alert: ${alert.message}`);
-          this.stats.alertsGenerated++;
-          
-          try {
-            // Generate improvement suggestions
-            const suggestions = await this.cursorIntegration.generateSuggestions(alert);
-            this.stats.suggestionsGenerated += suggestions.length;
-            
-            if (suggestions.length > 0) {
-              // Process improvements
-              await this.improver.processImprovements(suggestions);
-              
-              // Update stats
-              const improverStats = this.improver.getStats();
-              this.stats.improvementsApplied += improverStats.applied;
-              this.stats.improvementsFailed += improverStats.failed;
-              
-              // Mark alert as processed
-              alert.processed = true;
-            }
-          } catch (error) {
-            logger.error('Error processing alert:', error);
-          }
-        }
-      }
-    } catch (error) {
-      logger.error('Error checking for alerts and improvements:', error);
-    }
-  }
-
-  /**
-   * Start periodic health checks
-   */
-  startHealthChecks() {
-    // Health check every 5 minutes
-    setInterval(() => {
-      this.performHealthCheck();
-    }, 5 * 60 * 1000);
-  }
-
-  /**
-   * Perform system health check
-   */
-  async performHealthCheck() {
-    logger.info('🏥 Performing system health check...');
+    console.log('🚀 Starting Zion App Enhanced Automation System...');
+    console.log('=' .repeat(60));
     
     try {
-      const health = {
-        timestamp: new Date().toISOString(),
-        system: {
-          isRunning: this.isRunning,
-          uptime: process.uptime(),
-          memoryUsage: process.memoryUsage(),
-          cpuUsage: process.cpuUsage()
-        },
-        components: {
-          monitor: this.monitor ? 'running' : 'stopped',
-          improver: this.improver ? 'running' : 'stopped',
-          cursorIntegration: this.cursorIntegration ? 'available' : 'unavailable'
-        },
-        stats: this.stats
-      };
-
-      // Log health status
-      logger.info('System health check completed', health);
+      // Validate environment
+      await this.validateEnvironment();
       
-      // Save health report
-      this.saveHealthReport(health);
+      // Initialize automation
+      await this.initializeAutomation();
       
-      // Check for critical issues
-      this.checkForCriticalIssues(health);
-    } catch (error) {
-      logger.error('Error during health check:', error);
-    }
-  }
-
-  /**
-   * Save health report
-   */
-  saveHealthReport(health) {
-    try {
-      const healthFile = 'logs/health-reports.json';
-      let reports = [];
-      
-      if (require('fs').existsSync(healthFile)) {
-        const content = require('fs').readFileSync(healthFile, 'utf8');
-        reports = JSON.parse(content);
+      // Start monitoring
+      if (this.config.enableMonitoring) {
+        await this.startMonitoring();
       }
       
-      reports.push(health);
-      
-      // Keep only last 100 reports
-      if (reports.length > 100) {
-        reports.splice(0, reports.length - 100);
+      // Start dashboard
+      if (this.config.enableDashboard) {
+        await this.startDashboard();
       }
       
-      require('fs').writeFileSync(healthFile, JSON.stringify(reports, null, 2));
+      // Start Slack integration
+      if (this.config.enableSlack) {
+        await this.startSlackIntegration();
+      }
+      
+      // Set up graceful shutdown
+      this.setupGracefulShutdown();
+      
+      this.isRunning = true;
+      this.startTime = new Date();
+      
+      console.log('✅ Enhanced Automation System started successfully!');
+      console.log('📊 Dashboard: http://localhost:' + this.config.port + '/dashboard');
+      console.log('🔗 Health Check: http://localhost:' + this.config.port + '/health');
+      console.log('📈 Monitoring: ' + (this.config.enableMonitoring ? 'Enabled' : 'Disabled'));
+      console.log('🤖 Slack Integration: ' + (this.config.enableSlack ? 'Enabled' : 'Disabled'));
+      console.log('=' .repeat(60));
+      
+      // Log initial status
+      this.logStatus();
+      
+      // Start periodic status updates
+      this.startStatusUpdates();
+      
     } catch (error) {
-      logger.error('Error saving health report:', error);
+      console.error('❌ Failed to start automation system:', error);
+      process.exit(1);
     }
   }
 
   /**
-   * Check for critical issues
+   * Validate environment configuration
    */
-  checkForCriticalIssues(health) {
-    const memUsage = health.system.memoryUsage;
-    const memoryUsagePercent = (memUsage.heapUsed / memUsage.heapTotal) * 100;
+  async validateEnvironment() {
+    console.log('🔍 Validating environment configuration...');
     
-    if (memoryUsagePercent > 90) {
-      logger.error('🚨 CRITICAL: High memory usage detected!', { memoryUsagePercent });
-      this.handleCriticalIssue('high_memory_usage', { memoryUsagePercent });
+    const requiredEnvVars = [
+      'CURSOR_API_KEY',
+      'CURSOR_WORKSPACE_ID'
+    ];
+    
+    const optionalEnvVars = [
+      'OPENAI_API_KEY',
+      'CLAUDE_API_KEY',
+      'LOCAL_AI_ENDPOINT',
+      'SLACK_BOT_TOKEN',
+      'SLACK_SIGNING_SECRET'
+    ];
+    
+    // Check required environment variables
+    const missing = requiredEnvVars.filter(varName => !process.env[varName]);
+    if (missing.length > 0) {
+      console.warn('⚠️ Missing required environment variables:', missing.join(', '));
+      console.warn('Some features may be limited without proper configuration');
     }
     
-    if (health.stats.improvementsFailed > 10) {
-      logger.error('🚨 CRITICAL: High failure rate detected!', { failedImprovements: health.stats.improvementsFailed });
-      this.handleCriticalIssue('high_failure_rate', { failedImprovements: health.stats.improvementsFailed });
+    // Check optional environment variables
+    const available = optionalEnvVars.filter(varName => process.env[varName]);
+    if (available.length > 0) {
+      console.log('✅ Available optional features:', available.join(', '));
     }
+    
+    // Check project structure
+    const requiredFiles = [
+      'package.json',
+      'next.config.js',
+      'tsconfig.json'
+    ];
+    
+    for (const file of requiredFiles) {
+      if (!fs.existsSync(file)) {
+        throw new Error(`Required file not found: ${file}`);
+      }
+    }
+    
+    console.log('✅ Environment validation completed');
   }
 
   /**
-   * Handle critical issues
+   * Initialize the automation system
    */
-  async handleCriticalIssue(type, data) {
-    logger.error(`🚨 Handling critical issue: ${type}`, data);
+  async initializeAutomation() {
+    console.log('🔧 Initializing enhanced automation system...');
     
-    try {
-      // Generate emergency improvement suggestions
-      const suggestions = await this.cursorIntegration.generateSuggestions({
-        type: 'critical_issue',
-        severity: 'critical',
-        data: { issueType: type, ...data }
+    this.automation = new EnhancedAutomation();
+    
+    // Start the automation
+    await this.automation.start();
+    
+    console.log('✅ Automation system initialized');
+  }
+
+  /**
+   * Start monitoring system
+   */
+  async startMonitoring() {
+    console.log('📡 Starting monitoring system...');
+    
+    // Start performance monitoring
+    const monitorProcess = spawn('node', ['automation/performance/monitor.js'], {
+      stdio: 'pipe',
+      detached: false
+    });
+    
+    monitorProcess.stdout.on('data', (data) => {
+      console.log(`📊 Monitor: ${data.toString().trim()}`);
+    });
+    
+    monitorProcess.stderr.on('data', (data) => {
+      console.error(`❌ Monitor Error: ${data.toString().trim()}`);
+    });
+    
+    monitorProcess.on('close', (code) => {
+      console.log(`📡 Monitor process exited with code ${code}`);
+    });
+    
+    console.log('✅ Monitoring system started');
+  }
+
+  /**
+   * Start dashboard
+   */
+  async startDashboard() {
+    console.log('📊 Starting dashboard...');
+    
+    // Create simple dashboard server
+    const express = require('express');
+    const app = express();
+    
+    app.use(express.json());
+    app.use(express.static(path.join(__dirname, 'dashboard')));
+    
+    // Dashboard routes
+    app.get('/dashboard', (req, res) => {
+      res.sendFile(path.join(__dirname, 'dashboard', 'index.html'));
+    });
+    
+    app.get('/api/status', (req, res) => {
+      res.json(this.automation.getStatus());
+    });
+    
+    app.get('/api/performance', (req, res) => {
+      res.json({
+        history: this.automation.performanceHistory.slice(-100),
+        current: this.automation.performanceHistory[this.automation.performanceHistory.length - 1]
       });
+    });
+    
+    app.get('/api/improvements', (req, res) => {
+      res.json(this.automation.improvementHistory.slice(-50));
+    });
+    
+    app.get('/api/errors', (req, res) => {
+      res.json(this.automation.errors.slice(-20));
+    });
+    
+    app.get('/health', (req, res) => {
+      res.json({
+        status: 'healthy',
+        uptime: process.uptime(),
+        automation: this.automation.getStatus(),
+        timestamp: new Date().toISOString()
+      });
+    });
+    
+    // Start dashboard server
+    app.listen(this.config.port, () => {
+      console.log(`📊 Dashboard running on port ${this.config.port}`);
+    });
+    
+    console.log('✅ Dashboard started');
+  }
+
+  /**
+   * Start Slack integration
+   */
+  async startSlackIntegration() {
+    console.log('🤖 Starting Slack integration...');
+    
+    try {
+      const SlackBot = require('../slack/slack-bot');
+      const slackBot = new SlackBot();
       
-      if (suggestions.length > 0) {
-        await this.improver.processImprovements(suggestions);
-      }
+      await slackBot.start();
+      
+      console.log('✅ Slack integration started');
     } catch (error) {
-      logger.error('Error handling critical issue:', error);
+      console.warn('⚠️ Slack integration failed:', error.message);
     }
+  }
+
+  /**
+   * Setup graceful shutdown
+   */
+  setupGracefulShutdown() {
+    const shutdown = async (signal) => {
+      console.log(`\n🛑 Received ${signal}. Shutting down gracefully...`);
+      
+      this.isRunning = false;
+      
+      if (this.automation) {
+        await this.automation.stop();
+      }
+      
+      console.log('✅ Shutdown completed');
+      process.exit(0);
+    };
+    
+    process.on('SIGINT', () => shutdown('SIGINT'));
+    process.on('SIGTERM', () => shutdown('SIGTERM'));
+    process.on('SIGQUIT', () => shutdown('SIGQUIT'));
   }
 
   /**
    * Log system status
    */
-  logSystemStatus() {
-    logger.info('📊 System Status:', {
+  logStatus() {
+    const status = {
       isRunning: this.isRunning,
-      startTime: this.stats.startTime,
-      components: {
-        monitor: 'active',
-        improver: 'active',
-        cursorIntegration: 'active'
-      },
-      configuration: {
-        monitoringIntervals: {
-          codeQuality: '30 minutes',
-          performance: '15 minutes',
-          security: '1 hour',
-          userExperience: '45 minutes',
-          dependencies: '24 hours'
-        }
-      }
-    });
-  }
-
-  /**
-   * Get system statistics
-   */
-  getStats() {
-    return {
-      ...this.stats,
+      startTime: this.startTime?.toISOString(),
       uptime: process.uptime(),
-      memoryUsage: process.memoryUsage(),
-      improverStats: this.improver ? this.improver.getStats() : null,
-      monitorMetrics: this.monitor ? this.monitor.getMetrics() : null
+      automation: this.automation?.getStatus(),
+      config: this.config,
+      timestamp: new Date().toISOString()
     };
+    
+    console.log('📊 Initial Status:', JSON.stringify(status, null, 2));
+    
+    // Save status to file
+    const statusPath = path.join(__dirname, '..', 'logs', 'automation-status.json');
+    fs.writeFileSync(statusPath, JSON.stringify(status, null, 2));
   }
 
   /**
-   * Stop the continuous improvement system
+   * Start periodic status updates
+   */
+  startStatusUpdates() {
+    setInterval(() => {
+      if (this.isRunning) {
+        this.logStatus();
+      }
+    }, 5 * 60 * 1000); // Every 5 minutes
+  }
+
+  /**
+   * Generate comprehensive report
+   */
+  async generateReport() {
+    console.log('📋 Generating comprehensive report...');
+    
+    if (!this.automation) {
+      throw new Error('Automation system not initialized');
+    }
+    
+    const report = this.automation.generateReport();
+    
+    // Save report
+    const reportPath = path.join(__dirname, '..', 'reports', `comprehensive-report-${Date.now()}.json`);
+    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+    
+    console.log(`✅ Report generated: ${reportPath}`);
+    
+    return report;
+  }
+
+  /**
+   * Stop the automation system
    */
   async stop() {
-    logger.info('🛑 Stopping Continuous Improvement System...');
+    console.log('🛑 Stopping automation system...');
     
     this.isRunning = false;
     
-    try {
-      // Stop monitoring
-      if (this.monitor) {
-        this.monitor.stop();
-      }
-      
-      // Stop main system
-      if (this.system) {
-        this.system.stop();
-      }
-      
-      logger.info('✅ Continuous Improvement System stopped successfully');
-    } catch (error) {
-      logger.error('Error stopping system:', error);
+    if (this.automation) {
+      await this.automation.stop();
     }
-  }
-
-  /**
-   * Restart the system
-   */
-  async restart() {
-    logger.info('🔄 Restarting Continuous Improvement System...');
     
-    await this.stop();
-    await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds
-    await this.initialize();
+    console.log('✅ Automation system stopped');
   }
 }
 
-// Create and export the orchestrator
-const orchestrator = new ZionContinuousImprovementOrchestrator();
-
-// Handle graceful shutdown
-process.on('SIGINT', async () => {
-  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
-  await orchestrator.stop();
-  process.exit(0);
-});
-
-process.on('SIGTERM', async () => {
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
-  await orchestrator.stop();
-  process.exit(0);
-});
-
-// Handle uncaught exceptions
-process.on('uncaughtException', async (error) => {
-  logger.error('Uncaught Exception:', error);
-  await orchestrator.stop();
-  process.exit(1);
-});
-
-process.on('unhandledRejection', async (reason, promise) => {
-  logger.error('Unhandled Rejection at:', promise, 'reason:', reason);
-  await orchestrator.stop();
-  process.exit(1);
-});
-
-// Export the orchestrator
-module.exports = orchestrator;
-
-// Start the system if this file is executed directly
+// Main execution
 if (require.main === module) {
-  console.log(`
-🤖 Zion App - Continuous Improvement System
-===========================================
+  const startup = new AutomationStartup();
+  
+  // Handle command line arguments
+  const args = process.argv.slice(2);
+  
+  if (args.includes('--help') || args.includes('-h')) {
+    console.log(`
+Zion App Enhanced Automation System
 
-This system automatically monitors and improves the Zion App by:
-- Monitoring code quality, performance, security, and user experience
-- Generating intelligent improvement suggestions using Cursor AI
-- Automatically applying improvements and committing changes
-- Providing comprehensive logging and health monitoring
+Usage:
+  node start.js [options]
 
-Starting system...
-  `);
+Options:
+  --help, -h          Show this help message
+  --report, -r        Generate a comprehensive report and exit
+  --status, -s        Show current status and exit
+  --stop              Stop the automation system
+  --restart           Restart the automation system
 
-  orchestrator.initialize().catch(error => {
-    console.error('❌ Failed to start Continuous Improvement System:', error);
+Environment Variables:
+  CURSOR_API_KEY              Cursor AI API key (required)
+  CURSOR_WORKSPACE_ID         Cursor workspace ID (required)
+  OPENAI_API_KEY              OpenAI API key (optional)
+  CLAUDE_API_KEY              Claude API key (optional)
+  LOCAL_AI_ENDPOINT           Local AI endpoint (optional)
+  SLACK_BOT_TOKEN             Slack bot token (optional)
+  SLACK_SIGNING_SECRET        Slack signing secret (optional)
+  AUTOMATION_PORT             Dashboard port (default: 3001)
+  LOG_LEVEL                   Log level (default: info)
+  ENABLE_DASHBOARD            Enable dashboard (default: true)
+  ENABLE_SLACK                Enable Slack integration (default: false)
+  ENABLE_MONITORING           Enable monitoring (default: true)
+
+Examples:
+  node start.js                    # Start automation system
+  node start.js --report           # Generate report and exit
+  node start.js --status           # Show status and exit
+  node start.js --stop             # Stop automation system
+    `);
+    process.exit(0);
+  }
+  
+  if (args.includes('--report') || args.includes('-r')) {
+    startup.start().then(() => {
+      return startup.generateReport();
+    }).then((report) => {
+      console.log('📋 Report Summary:');
+      console.log(`- Total Tasks: ${report.summary.totalTasks}`);
+      console.log(`- Successful: ${report.summary.successfulTasks}`);
+      console.log(`- Failed: ${report.summary.failedTasks}`);
+      console.log(`- Improvements: ${report.summary.totalImprovements}`);
+      console.log(`- Errors: ${report.summary.totalErrors}`);
+      process.exit(0);
+    }).catch((error) => {
+      console.error('❌ Error generating report:', error);
+      process.exit(1);
+    });
+  }
+  
+  if (args.includes('--status') || args.includes('-s')) {
+    startup.start().then(() => {
+      const status = startup.automation.getStatus();
+      console.log('📊 Current Status:', JSON.stringify(status, null, 2));
+      process.exit(0);
+    }).catch((error) => {
+      console.error('❌ Error getting status:', error);
+      process.exit(1);
+    });
+  }
+  
+  if (args.includes('--stop')) {
+    // Implementation for stopping would require process management
+    console.log('🛑 Stop command received. Use Ctrl+C to stop the running process.');
+    process.exit(0);
+  }
+  
+  if (args.includes('--restart')) {
+    // Implementation for restarting would require process management
+    console.log('🔄 Restart command received. Please stop and start manually.');
+    process.exit(0);
+  }
+  
+  // Default: start the automation system
+  startup.start().catch((error) => {
+    console.error('❌ Failed to start automation system:', error);
     process.exit(1);
   });
-} 
+}
+
+module.exports = AutomationStartup; 

@@ -5,6 +5,7 @@ require('dotenv').config();
 
 const OptimizationSlackBot = require('./slack/slack-bot');
 const PerformanceMonitor = require('./performance/monitor');
+const EnhancedAutomation = require('./continuous-improvement/enhanced-automation');
 const express = require('express');
 const path = require('path');
 
@@ -12,6 +13,7 @@ class OptimizationAutomation {
   constructor() {
     this.slackBot = new OptimizationSlackBot();
     this.performanceMonitor = new PerformanceMonitor();
+    this.enhancedAutomation = new EnhancedAutomation();
     this.app = express();
     this.port = process.env.PORT || 3001;
     
@@ -34,17 +36,59 @@ class OptimizationAutomation {
     // Request logging
     this.app.use((req, res, next) => {
       const timestamp = new Date().toISOString();
-      // Use structured logging instead of console.log
       process.stdout.write(`[${timestamp}] ${req.method} ${req.path}\n`);
       next();
     });
   }
 
   setupAPIRoutes() {
+    // Enhanced automation endpoints
+    this.app.get('/api/automation/status', async (req, res) => {
+      try {
+        const status = this.enhancedAutomation.getStatus();
+        res.json(status);
+      } catch (error) {
+        process.stderr.write(`[${new Date().toISOString()}] ERROR: Automation status error: ${error.message}\n`);
+        res.status(500).json({ error: error.message });
+      }
+    });
+
+    this.app.post('/api/automation/trigger', async (req, res) => {
+      try {
+        const { taskType, data } = req.body;
+        
+        process.stdout.write(`[${new Date().toISOString()}] 🚀 Manual automation trigger: ${taskType}\n`);
+        
+        this.enhancedAutomation.queueTask(taskType, data);
+        
+        res.json({
+          success: true,
+          taskType,
+          data,
+          timestamp: new Date().toISOString()
+        });
+      } catch (error) {
+        process.stderr.write(`[${new Date().toISOString()}] ERROR: Automation trigger error: ${error.message}\n`);
+        res.status(500).json({
+          success: false,
+          error: error.message
+        });
+      }
+    });
+
+    this.app.get('/api/automation/report', async (req, res) => {
+      try {
+        const report = this.enhancedAutomation.generateReport();
+        res.json(report);
+      } catch (error) {
+        process.stderr.write(`[${new Date().toISOString()}] ERROR: Report generation error: ${error.message}\n`);
+        res.status(500).json({ error: error.message });
+      }
+    });
+
     // Slack webhook endpoints
     this.app.post('/api/slack/events', async (req, res) => {
       try {
-        // Handle Slack events
         const { type, challenge, event } = req.body;
         
         if (type === 'url_verification') {
@@ -57,7 +101,6 @@ class OptimizationAutomation {
         
         res.status(200).send('OK');
       } catch (error) {
-        // Use structured 'Error occurred' logging
         process.stderr.write(`[${new Date().toISOString()}] ERROR: Slack event error: ${error.message}\n`);
         res.status(500).send('Error processing event');
       }
@@ -68,7 +111,6 @@ class OptimizationAutomation {
       try {
         const { target, reason, alert: _alert } = req.body;
         
-        // Use structured logging for optimization triggers
         process.stdout.write(`[${new Date().toISOString()}] 🚀 Manual optimization triggered: ${target} (reason: ${reason})\n`);
         
         const result = await this.slackBot.triggerOptimization(target);
@@ -81,7 +123,6 @@ class OptimizationAutomation {
           timestamp: new Date().toISOString()
         });
       } catch (error) {
-        // Use structured 'Error occurred' logging
         process.stderr.write(`[${new Date().toISOString()}] ERROR: Optimization trigger error: ${error.message}\n`);
         res.status(500).json({
           success: false,
@@ -126,13 +167,14 @@ class OptimizationAutomation {
 
     // Dashboard routes
     this.app.get('/dashboard', (req, res) => {
-      res.sendFile(path.join(__dirname, 'dashboard', 'index.html'));
+      res.sendFile(path.join(__dirname, 'continuous-improvement', 'dashboard', 'index.html'));
     });
 
     this.app.get('/slack-status', (req, res) => {
       res.json({
         slackBot: 'running',
         performanceMonitor: this.performanceMonitor.isMonitoring ? 'running' : 'stopped',
+        enhancedAutomation: this.enhancedAutomation.isRunning ? 'running' : 'stopped',
         uptime: process.uptime(),
         timestamp: new Date().toISOString()
       });
@@ -148,6 +190,7 @@ class OptimizationAutomation {
         components: {
           slackBot: 'running',
           performanceMonitor: this.performanceMonitor.isMonitoring ? 'running' : 'stopped',
+          enhancedAutomation: this.enhancedAutomation.isRunning ? 'running' : 'stopped',
           express: 'running'
         }
       });
@@ -158,7 +201,8 @@ class OptimizationAutomation {
       res.json({
         name: packageJson.name,
         version: packageJson.version,
-        automation: 'v1.0.0'
+        automation: 'v2.0.0',
+        enhanced: true
       });
     });
   }
@@ -171,14 +215,45 @@ class OptimizationAutomation {
       case 'optimization_complete':
         await this.slackBot.app.client.emit('optimization_complete', { event });
         break;
+      case 'automation_trigger':
+        // Handle automation triggers from Slack
+        if (event.text && event.text.includes('/automation')) {
+          const taskType = this.parseSlackAutomationCommand(event.text);
+          if (taskType) {
+            this.enhancedAutomation.queueTask(taskType);
+          }
+        }
+        break;
       default:
         process.stdout.write(`[${new Date().toISOString()}] ⚠️ Unhandled event type: ${event.type}\n`);
     }
   }
 
+  parseSlackAutomationCommand(text) {
+    const commands = {
+      '/automation quick': 'quickScan',
+      '/automation deep': 'deepAnalysis',
+      '/automation full': 'fullAudit',
+      '/automation performance': 'performanceCheck',
+      '/automation security': 'securityScan',
+      '/automation dependencies': 'dependencyCheck'
+    };
+
+    for (const [command, taskType] of Object.entries(commands)) {
+      if (text.includes(command)) {
+        return taskType;
+      }
+    }
+
+    return null;
+  }
+
   async start() {
     try {
-      process.stdout.write(`[${new Date().toISOString()}] 🚀 Starting Optimization Automation System...\n`);
+      process.stdout.write(`[${new Date().toISOString()}] 🚀 Starting Enhanced Optimization Automation System...\n`);
+      
+      // Start enhanced automation
+      await this.enhancedAutomation.start();
       
       // Start performance monitoring
       if (process.env.ENABLE_PERFORMANCE_MONITORING === 'true') {
@@ -192,64 +267,122 @@ class OptimizationAutomation {
       
       // Start Express server for API endpoints
       this.server = this.app.listen(this.port, () => {
-        process.stdout.write(`[${new Date().toISOString()}] ⚡ Optimization API server running on port ${this.port}\n`);
+        process.stdout.write(`[${new Date().toISOString()}] ⚡ Enhanced Optimization API server running on port ${this.port}\n`);
       });
       
       const timestamp = new Date().toISOString();
-      process.stdout.write(`[${timestamp}] ✅ Optimization Automation System started successfully!\n`);
+      process.stdout.write(`[${timestamp}] ✅ Enhanced Optimization Automation System started successfully!\n`);
       process.stdout.write(`[${timestamp}] 📊 Dashboard: http://localhost:${this.port}/dashboard\n`);
-      process.stdout.write(`[${timestamp}] 🔧 API: http://localhost:${this.port}/api\n`);
-      process.stdout.write(`[${timestamp}] 💚 Health: http://localhost:${this.port}/health\n`);
+      process.stdout.write(`[${timestamp}] 🔗 Health Check: http://localhost:${this.port}/health\n`);
+      process.stdout.write(`[${timestamp}] 📈 API Status: http://localhost:${this.port}/api/automation/status\n`);
+      
+      // Set up graceful shutdown
+      this.setupGracefulShutdown();
       
     } catch (error) {
-      process.stderr.write(`[${new Date().toISOString()}] ❌ Failed to start automation system: ${error.message}\n`);
-      process.exit(1);
+      process.stderr.write(`[${new Date().toISOString()}] ❌ Failed to start Enhanced Optimization Automation System: ${error.message}\n`);
+      throw error;
     }
+  }
+
+  setupGracefulShutdown() {
+    const shutdown = async (signal) => {
+      process.stdout.write(`\n[${new Date().toISOString()}] 🛑 Received ${signal}. Shutting down gracefully...\n`);
+      
+      try {
+        // Stop enhanced automation
+        if (this.enhancedAutomation) {
+          await this.enhancedAutomation.stop();
+        }
+        
+        // Stop performance monitor
+        if (this.performanceMonitor) {
+          this.performanceMonitor.stop();
+        }
+        
+        // Stop Slack bot
+        if (this.slackBot) {
+          await this.slackBot.stop();
+        }
+        
+        // Close server
+        if (this.server) {
+          this.server.close();
+        }
+        
+        process.stdout.write(`[${new Date().toISOString()}] ✅ Shutdown completed successfully\n`);
+        process.exit(0);
+      } catch (error) {
+        process.stderr.write(`[${new Date().toISOString()}] ❌ Error during shutdown: ${error.message}\n`);
+        process.exit(1);
+      }
+    };
+    
+    process.on('SIGINT', () => shutdown('SIGINT'));
+    process.on('SIGTERM', () => shutdown('SIGTERM'));
+    process.on('SIGQUIT', () => shutdown('SIGQUIT'));
   }
 
   async stop() {
+    process.stdout.write(`[${new Date().toISOString()}] 🛑 Stopping Enhanced Optimization Automation System...\n`);
+    
     try {
-      process.stdout.write(`[${new Date().toISOString()}] ⏹️ Stopping Optimization Automation System...\n`);
+      // Stop enhanced automation
+      if (this.enhancedAutomation) {
+        await this.enhancedAutomation.stop();
+      }
       
+      // Stop performance monitor
       if (this.performanceMonitor) {
-        await this.performanceMonitor.stop();
+        this.performanceMonitor.stop();
       }
       
+      // Stop Slack bot
+      if (this.slackBot) {
+        await this.slackBot.stop();
+      }
+      
+      // Close server
       if (this.server) {
-        await new Promise((resolve) => {
-          this.server.close(resolve);
-        });
+        this.server.close();
       }
       
-      process.stdout.write(`[${new Date().toISOString()}] ✅ Automation system stopped\n`);
+      process.stdout.write(`[${new Date().toISOString()}] ✅ Enhanced Optimization Automation System stopped successfully\n`);
     } catch (error) {
-      process.stderr.write(`[${new Date().toISOString()}] ❌ Error stopping automation system: ${error.message}\n`);
+      process.stderr.write(`[${new Date().toISOString()}] ❌ Error stopping system: ${error.message}\n`);
+      throw error;
     }
+  }
+
+  getStatus() {
+    return {
+      enhancedAutomation: this.enhancedAutomation.getStatus(),
+      performanceMonitor: {
+        isMonitoring: this.performanceMonitor.isMonitoring,
+        metrics: this.performanceMonitor.getMetrics()
+      },
+      slackBot: {
+        isRunning: this.slackBot.isRunning,
+        status: 'running'
+      },
+      server: {
+        port: this.port,
+        status: 'running'
+      },
+      timestamp: new Date().toISOString()
+    };
   }
 }
 
-// CLI handling
+// Export the automation system
+module.exports = OptimizationAutomation;
+
+// Start the system if this file is executed directly
 if (require.main === module) {
   const automation = new OptimizationAutomation();
   
-  // Handle process signals
-  process.on('SIGINT', async () => {
-    process.stdout.write(`\n[${new Date().toISOString()}] 🛑 Received SIGINT, shutting down gracefully...\n`);
-    await automation.stop();
-    process.exit(0);
-  });
-
-  process.on('SIGTERM', async () => {
-    process.stdout.write(`\n[${new Date().toISOString()}] 🛑 Received SIGTERM, shutting down gracefully...\n`);
-    await automation.stop();
-    process.exit(0);
-  });
-
-  // Start the system
   automation.start().catch(error => {
     process.stderr.write(`[${new Date().toISOString()}] ❌ Failed to start automation: ${error.message}\n`);
     process.exit(1);
   });
 }
-
-module.exports = OptimizationAutomation;

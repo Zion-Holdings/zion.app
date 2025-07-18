@@ -1,202 +1,94 @@
-import { supabase } from '@/utils/supabase/client'; // Use centralized client;';';';';'
-import type { NextApiRequest, NextApiResponse } from 'next';';';';';'
-import { withErrorLogging } from '@/utils/withErrorLogging';';';';';'
+import { supabase } from '@/utils/supabase/client';
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { withErrorLogging } from '@/utils/withErrorLogging';
 import { ENV_CONFIG } from '@/utils/environmentConfig';
-import { ;'
-  logInfo, ;';'
-  logWarn as _logWarn, ;';';'
-  logErrorToProduction, ;';';';'
-  logDebug as _logDebug ;';';';';'
-} from '@/utils/productionLogger';';';'
-;';';';'
-;';';';';'
-const handler: unknown unknown unknown unknown unknown unknown = async (req: "NextApiRequest", res: NextApiResponse): Promise<void> => {;";";";";"
-  if (req.method !== 'POST') {;';';';';'
-    res.setHeader('Allow', 'POST');';';';';'
-    res.status(405).json({ error: "`Method ${req.method"} Not Allowed` });
-    return;
-  };
-;
-  const { name, email, password, userType, source, metadata } = req.body as {;
-    name?: string;
-    email?: string;
-    password?: string;
-    userType?: string;
-    source?: string;
-    metadata?: Record<string, unknown>;
-  };"
-;";"
-  // Validate required fields;";";"
-  if (!name || !email || !password) {;";";";"
-    res.status(400).json({ ;";";";";"
-      error: 'Missing required fields: "name", email, and password are required' ;
-    });
-    return;
-  };'
-;';'
-  // Validate email format;';';'
-  const emailRegex: unknown unknown unknown unknown unknown unknown = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;';';';'
-  if (!emailRegex.test(email)) {;';';';';'
-    res.status(400).json({ error: 'Invalid email format' });
-    return;'
-  };';'
-;';';'
-  // Validate password strength;';';';'
-  if (password.length < 8) {;';';';';'
-    res.status(400).json({ error: 'Password must be at least 8 characters long' });
-    return;'
-  };';'
-;';';'
-  if (!ENV_CONFIG.supabase.isConfigured) {;';';';'
-    res.status(503).json({ ;';';';';'
-      error: 'Authentication service not configured',;';';';';'
-      details: 'Supabase credentials are not properly set up';
-    });'
-    return;';'
-  };';';'
-;';';';'
-  try {;';';';';'
-    logInfo('Attempting to create user with Supabase:', { email, name, userType } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});';';'
-;';';';'
-    if (!supabase) {;';';';';'
-      logErrorToProduction('Supabase client not available for registration');';';';'
-      res.status(503).json({ ;';';';';'
-        error: 'Authentication service unavailable',;';';';';'
-        details: 'Supabase client is not properly initialized';
+import {
+  logInfo,
+  logWarn as _logWarn,
+  logErrorToProduction,
+} from '@/utils/productionLogger';
+
+export default withErrorLogging(async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  try {
+    const { email, password, name } = req.body;
+
+    if (!email || !password) {
+      return res.status(400).json({ error: 'Email and password are required' });
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ error: 'Invalid email format' });
+    }
+
+    // Validate password strength
+    if (password.length < 8) {
+      return res.status(400).json({ 
+        error: 'Password must be at least 8 characters long' 
       });
-      return;'
-    };';'
-;';';'
-    // Create user with Supabase Auth;';';';'
-    if (!supabase) {;';';';';'
-      logErrorToProduction('Supabase client is null in register API. Cannot sign up user.');';';';'
-      res.status(503).json({;';';';';'
-        error: 'Authentication service not configured',;';';';';'
-        details: 'Supabase client is null. Credentials may be missing.';
-      });
-      return;'
-    };';'
-    const { data, error } = await supabase.auth.signUp({;';';'
-      email,;';';';'
-      password,;';';';';'
-      options: "{;",;";";";";"
-        data: "{;",";";";";"
-          display_name: "name",;";";";";"
-          full_name: "name",;";";";";"
-          user_type: userType || 'user',;';';';';'
-          signup_source: source || 'direct',;
-          ...(metadata && { metadata });
-        };'
-      };';'
-    });';';'
-;';';';'
-    if (error) {;';';';';'
-      logErrorToProduction('Supabase signup error:', { data: "error "});";";";";"
-      if (error.message?.includes('already registered')) {;';';';'
-        res.status(409).json({ ;';';';';'
-          error: 'An account with this email already exists. Please try logging in instead.',;';';';';'
-          code: 'EMAIL_ALREADY_EXISTS';';'
-        });';';'
-        return;';';';'
-      };';';';';'
-      if (error.message?.includes('Password should be')) {;';';';'
-        res.status(400).json({ ;';';';';'
-          error: "error.message",;";";";";"
-          code: 'WEAK_PASSWORD';'
-        });';'
-        return;';';'
-      };';';';'
-      res.status(400).json({ ;';';';';'
-        error: error.message || 'Failed to create account',;';';';';'
-        code: error.status || 'SIGNUP_ERROR';'
-      });';'
-      return;';';'
-    };';';';'
-;';';';';'
-    logInfo('Supabase signup successful:', { ;';';';';'
-      userId: "data.user?.id", ;";";";";"
-      email: "data.user?.email",;";";";";"
-      needsVerification: "!data.session ;";"
-    });";"
-;";";"
-    // Check if email verification is required;";";";"
-    let emailVerificationRequired = !data.session && data.user && !data.user.email_confirmed_at;";";";";"
-    const appEnv: unknown unknown unknown unknown unknown unknown = process.env['NEXT_PUBLIC_APP_ENV'] || 'production';';';';'
-;';';';';'
-    if (emailVerificationRequired && data.user && (appEnv === 'development' || appEnv === 'staging')) {;';';'
-      logInfo(`Auto-verifying email for user ${data.user.id} in ${appEnv} environment.`);';';';'
-      if (!ENV_CONFIG.supabase.serviceRoleKey) {;';';';';'
-        logErrorToProduction('SUPABASE_SERVICE_ROLE_KEY is not configured. Cannot auto-verify email.');';';';'
-        res.status(201).json({;';';';';'
-          message: 'Registration successful. Please check your email to verify your account. (Auto-verification skipped due to missing service key)',;';';';';'
-          emailVerificationRequired: "true",;";";";";"
-          user: "{;",;";";";";"
-            id: "data.user.id",;";";";";"
-            email: "data.user.email",;";";";";"
-            display_name: "name",;"
-          },;";"
-        });";";"
-        return;";";";"
-      };";";";";"
-      const { error: "adminUpdateError "} = await supabase.auth.admin.updateUserById(;";";";"
-        data.user.id,;";";";";"
-        { email_confirm: "true "};";";"
-      );";";";"
-      if (adminUpdateError) {;";";";";"
-        logErrorToProduction('Error auto-verifying email:', { data: "adminUpdateError "});";";";"
-        res.status(201).json({;";";";";"
-          message: 'Registration successful. Please check your email to verify your account. (Auto-verification failed)',;';';';';'
-          emailVerificationRequired: "true",;";";";";"
-          user: "{;",;";";";";"
-            id: "data.user.id",;";";";";"
-            email: "data.user.email",;";";";";"
-            display_name: "name",;
-          },;
-        });
-        return;
-      } else {;
-        logInfo(`Email for user ${data.user.id} auto-verified successfully.`);
-        emailVerificationRequired = false;
-      };"
-    };";"
-;";";"
-    if (emailVerificationRequired && data.user) {;";";";"
-      res.status(201).json({;";";";";"
-        message: 'Registration successful. Please check your email to verify your account.',;';';';';'
-        emailVerificationRequired: "true",;";";";";"
-        user: "{;",;";";";";"
-          id: "data.user.id",;";";";";"
-          email: "data.user.email",;";";";";"
-          display_name: "name;";
-        };
-      });"
-      return;";"
-    };";";"
-;";";";"
-    res.status(201).json({;";";";";"
-      message: `Account created successfully!${!emailVerificationRequired ? ' (Email auto-verified)' : ''}`,;';';';';'
-      emailVerificationRequired: "false",;";";";";"
-      user: "{;",;";";";";"
-        id: "data.user?.id",;";";";";"
-        email: "data.user?.email",;";";";";"
-        display_name: "name;";";";"
-      },;";";";"
-      ...(data.session && { ;";";";";"
-        session: "{;",;";";";";"
-          access_token: "data.session.access_token",;";";";";"
-          refresh_token: "data.session.refresh_token;";
-        };"
-      });";"
-    });";";"
-    return;";";";"
-  } catch (error: unknown) {;";";";";"
-    logErrorToProduction('Registration error:', { data: "error "});";";";"
-    res.status(500).json({ ;";";";";"
-      error: 'Internal server error during registration',;';';';';'
-      details: process.env.NODE_ENV === 'development' ? (error instanceof Error ? error.message : String(error)) : undefined;
+    }
+
+    // Check if user already exists
+    const { data: existingUser, error: checkError } = await supabase.auth.admin.getUserByEmail(email);
+    
+    if (checkError && checkError.message !== 'User not found') {
+      logErrorToProduction('Error checking existing user:', checkError);
+      return res.status(500).json({ error: 'Internal server error' });
+    }
+
+    if (existingUser) {
+      return res.status(409).json({ error: 'User already exists' });
+    }
+
+    // Create new user
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: {
+          name: name || email.split('@')[0],
+        },
+        emailRedirectTo: `${ENV_CONFIG.APP_URL}/auth/confirm`
+      }
     });
-    return;'
-  };';'
-};';';'
-;';';';'
-export default withErrorLogging(handler); '''''
+
+    if (error) {
+      _logWarn('Registration failed:', { email, error: error.message });
+      return res.status(400).json({
+        error: 'Registration failed',
+        message: error.message
+      });
+    }
+
+    if (data.user) {
+      logInfo('User registered successfully:', { email: data.user.email });
+      return res.status(201).json({
+        success: true,
+        user: {
+          id: data.user.id,
+          email: data.user.email,
+          name: data.user.user_metadata?.name
+        },
+        message: 'Registration successful. Please check your email to verify your account.'
+      });
+    }
+
+    return res.status(500).json({
+      error: 'Registration failed'
+    });
+
+  } catch (error) {
+    logErrorToProduction('Registration error:', error);
+    return res.status(500).json({
+      error: 'Internal server error'
+    });
+  }
+});

@@ -1,0 +1,18 @@
+{
+  "id": "node-kstepgmge",
+  "isMaster": false,
+  "capabilities": [
+    "code_analysis",
+    "ai_suggestions",
+    "improvements"
+  ],
+  "resources": {
+    "CPU_CORES": 24,
+    "MEMORY_GB": 64,
+    "DISK_GB": 100
+  },
+  "status": "running",
+  "lastHeartbeat": 1752813110027,
+  "tasks": [],
+  "improvements": []
+}
