@@ -1,6 +1,7 @@
 /// <reference types="node" />
-import { createServerClient, type CookieOptions } from '@supabase/ssr';
-import { NextResponse, type NextRequest } from 'next/server';
+import { createServerClient } from '@supabase/ssr';
+import { cookies } from 'next/headers';
+import { NextRequest, NextResponse } from 'next/server';
 // Import proper logging instead of using console directly
 import { logErrorToProduction, logInfo, logWarn } from '@/utils/productionLogger';
 

@@ -1,5 +1,3 @@
-const { withSentry } = require('./withSentry.cjs');
-
 async function handler(req, res) {
   if (req.method !== 'POST') {
     res.statusCode = 405;
