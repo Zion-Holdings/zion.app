@@ -14,6 +14,7 @@ import { TextEncoder, TextDecoder } from 'util';
 
 // Polyfill TextEncoder and TextDecoder for JSDOM environment
 global.TextEncoder = TextEncoder;
+// @ts-expect-error Node's TextDecoder might not perfectly match DOM's, but it's usually sufficient for tests
 global.TextDecoder = TextDecoder;
 
 // Set up a mock for Vite environment variables accessed via import.meta.env
@@ -236,7 +237,7 @@ if (typeof window.scrollTo === 'undefined') {
 
 // Mock axios.create to return axios itself
 import axios from 'axios';
-(axios as Record<string, unknown>).create = jest.fn(() => axios);
+(axios as unknown as Record<string, unknown>).create = jest.fn(() => axios);
 
 // -----------------------------
 // Vitest Compatibility Layer for Jest

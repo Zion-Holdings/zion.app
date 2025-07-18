@@ -1,4 +1,4 @@
-const { _withSentry } = require('./withSentry.cjs');
+const { withSentry } = require('./withSentry.cjs');
 
 async function handler(req, res) {
   if (req.method !== 'POST') {

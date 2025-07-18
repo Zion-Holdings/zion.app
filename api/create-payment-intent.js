@@ -56,11 +56,11 @@ async function handler(req, res) {
     });
     res.statusCode = 200;
     res.json({ clientSecret: intent.client_secret, id: intent.id });
-  } catch (_err) {
-    console.error('Create payment intent error:', err);
+  } catch (error) {
+    console.error('Create payment intent error:', error);
     res.statusCode = 500;
-    res.json({ error: err.message });
+    res.json({ error: error.message });
   }
 }
 
-export default withSentry(handler);
+export default handler;
