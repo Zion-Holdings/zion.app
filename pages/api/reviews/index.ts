@@ -1,94 +1,74 @@
-import type { NextApiRequest, NextApiResponse } from 'next';';';';';'';
-import { supabase } from '@/integrations/supabase/client';';';';';'';
-import { withErrorLogging } from '@/utils/withErrorLogging';';';';';'';
-import {logErrorToProduction} from '@/utils/productionLogger';';';''
-;';';';''
-;';';';';''
-async function handler(): unknown {): unknown {): unknown {): unknown {): unknown {req: "NextApiRequest", res: NextApiResponse): Promise<void> {;";";";""
-  if (!supabase) {;";";";";""
-    res.status(503).json({ error: 'Supabase not configured' });';''
-    return;';';''
-  };';';';''
-;';';';';''
-  if (req.method === 'GET') {;';';';';''
-    const { _productId } = req.query as { productId: "string | string[] "};";";";""
-;";";";";""
-    if (!productId || typeof productId !== 'string') {;';';';';''
-      res.status(400).json({ error: 'productId is required as query parameter' });'
-      return;''
-    };';''
-;';';''
-    try {;';';';''
-      const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;';';';';''
-        .from('product_reviews');';';';';''
-        .select('id, product_id, rating, comment, created_at, user_id');';';';';''
-        .eq('product_id', productId);';';';';''
-        .order('created_at', { ascending: "false "});";";""
-;";";";""
-      if (error) {;";";";";""
-        logErrorToProduction('Error fetching reviews:', { data: "error "});";";";";""
-        res.status(500).json({ error: 'Failed to fetch reviews' });'
-        return;
-      };''
-;';''
-      res.status(200).json(data || []);';';''
-      return;';';';''
-    } catch {;';';';';''
-      logErrorToProduction('Error fetching reviews:', { data: "error "});";";";";""
-      res.status(500).json({ error: 'Failed to fetch reviews' });''
-      return;';''
-    };';';''
-  };';';';''
-;';';';';''
-  if (req.method === 'POST') {;';''
-    try {;';';''
-      const { productId, rating, comment, userId } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= (req.body as { productId?: string; rating?: number; comment?: string; userId?: string }) || {};';';';''
-;';';';';''
-      if (!productId || typeof productId !== 'string') {;';';';';''
-        res.status(400).json({ error: 'productId is required' });'
-        return;''
-      };';''
-;';';''
-      const parsedRating: unknown unknown unknown unknown unknown unknown = Number(rating);';';';''
-      if (!rating || isNaN(parsedRating) || parsedRating < 1 || parsedRating > 5) {;';';';';''
-        res.status(400).json({ error: 'Rating must be a number between 1 and 5' });';''
-        return;';';''
-      };';';';''
-;';';';';''
-      if (!userId || typeof userId !== 'string') {;';';';';''
-        res.status(400).json({ error: 'userId is required' });''
-        return;';''
-      };';';''
-;';';';''
-      const { data, error } = await supabase;';';';';''
-        .from('product_reviews');';';';';''
-        .insert({ product_id: "productId", rating: "parsedRating", comment, user_id: "userId "});""
-        .select();";""
-        .single();";";""
-;";";";""
-      if (error) {;";";";";""
-        logErrorToProduction('Error creating review:', { data: "error "});";";";";""
-        res.status(500).json({ error: 'Failed to create review' });'
-        return;
-      };''
-;';''
-      res.status(201).json(data);';';''
-      return;';';';''
-    } catch {;';';';';''
-      logErrorToProduction('Error creating review:', { data: "error "});";";";";""
-      res.status(500).json({ error: 'Failed to create review' });''
-      return;';''
-    };';';''
-  };';';';''
-;';';';';''
-  res.setHeader('Allow', ['GET', 'POST']);';';';';''
-  res.status(405).json({ error: "`Method ${req.method"} Not Allowed` });"
-  return;""
-};";""
-;";";"";
-export default withErrorLogging(handler);";";";""
-";";";""
-}";";""
-}";""
-}""
-}""
+import type { NextApiRequest, NextApiResponse } from 'next';
+
+interface Review {
+  id: string;
+  productId: string;
+  userId: string;
+  rating: number;
+  comment: string;
+  createdAt: string;
+}
+
+interface ReviewsResponse {
+  reviews: Review[];
+  total: number;
+  averageRating: number;
+}
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<ReviewsResponse | { error: string }>
+) {
+  if (req.method !== 'GET') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  try {
+    const { productId, rating, limit = '10', offset = '0' } = req.query;
+
+    if (!productId) {
+      return res.status(400).json({ error: 'Product ID is required' });
+    }
+
+    const limitNum = parseInt(limit as string, 10);
+    const offsetNum = parseInt(offset as string, 10);
+    const parsedRating = Number(rating);
+
+    // Mock data - replace with actual database query
+    const mockReviews: Review[] = [
+      {
+        id: '1',
+        productId: productId as string,
+        userId: 'user1',
+        rating: 5,
+        comment: 'Great product!',
+        createdAt: '2024-01-15T10:00:00Z'
+      },
+      // Add more mock reviews as needed
+    ];
+
+    // Filter by rating if specified
+    let filteredReviews = mockReviews;
+    if (!isNaN(parsedRating) && parsedRating > 0) {
+      filteredReviews = mockReviews.filter(review => review.rating === parsedRating);
+    }
+
+    // Calculate average rating
+    const totalRating = filteredReviews.reduce((sum, review) => sum + review.rating, 0);
+    const averageRating = filteredReviews.length > 0 ? totalRating / filteredReviews.length : 0;
+
+    // Paginate results
+    const paginatedReviews = filteredReviews.slice(offsetNum, offsetNum + limitNum);
+
+    const response: ReviewsResponse = {
+      reviews: paginatedReviews,
+      total: filteredReviews.length,
+      averageRating: Math.round(averageRating * 10) / 10
+    };
+
+    return res.status(200).json(response);
+  } catch (error) {
+    console.error('Reviews API error:', error);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+}

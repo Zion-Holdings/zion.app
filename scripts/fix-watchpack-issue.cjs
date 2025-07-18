@@ -114,14 +114,14 @@ const nextConfig = {
     
     try {
       const packagePath = 'package.json';
-      const package = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
+      const packageJson = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
       
       // Update dev script with better options
-      package.scripts.dev = "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096 --experimental-loader=@next/swc-darwin-x64' next dev";
-      package.scripts['dev:stable'] = "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096' next dev --turbo";
-      package.scripts['dev:legacy'] = "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096' next dev --no-turbo";
+      packageJson.scripts.dev = "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096 --experimental-loader=@next/swc-darwin-x64' next dev";
+      packageJson.scripts['dev:stable'] = "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096' next dev --turbo";
+      packageJson.scripts['dev:legacy'] = "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096' next dev --no-turbo";
       
-      fs.writeFileSync(packagePath, JSON.stringify(package, null, 2));
+      fs.writeFileSync(packagePath, JSON.stringify(packageJson, null, 2));
       this.fixes.push('Fixed dev script');
     } catch (error) {
       this.log(`❌ Error fixing dev script: ${error.message}`);
