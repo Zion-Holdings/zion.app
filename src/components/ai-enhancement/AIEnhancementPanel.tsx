@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Loader2, Copy, Check, Sparkles } from '@/components/ui/icons';
+import { Loader2, Copy, Check, Sparkles } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';

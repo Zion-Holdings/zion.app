@@ -39,7 +39,7 @@ expect.extend(toHaveNoViolations);
 
 // Ensure global window exists for Node test environments
 if (typeof global.window === 'undefined') {
-  global.window = {} as unknown;
+  global.window = {} as Window & typeof globalThis;
 }
 
 // Mock window.matchMedia for Jest
@@ -251,7 +251,7 @@ if (typeof window.scrollTo === 'undefined') {
 
 // Mock axios.create to return axios itself
 import axios from 'axios';
-(axios as unknown).create = jest.fn(() => axios);
+(axios as any).create = jest.fn(() => axios);
 
 // -----------------------------
 // Vitest Compatibility Layer for Jest
@@ -415,7 +415,7 @@ if (typeof window.IntersectionObserver === 'undefined') {
 // Ensure all code paths use the mock implementation
 // Some services import the global fetch reference before jest-fetch-mock is enabled.
 // Override it explicitly so those modules receive the mocked version.
-(global as unknown).fetch = fetchMock;
+(global as any).fetch = fetchMock;
 
 // Polyfill performance.getEntriesByType for JSDOM (used in productionLogger)
 if (typeof performance.getEntriesByType !== 'function') {

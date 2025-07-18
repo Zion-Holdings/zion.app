@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {logErrorToProduction} from '@/utils/productionLogger';
-import { Sparkles } from '@/components/ui/icons';
+import { Sparkles } from 'lucide-react';
 import {
   getTalentRateSuggestion,
   trackPricingSuggestion
