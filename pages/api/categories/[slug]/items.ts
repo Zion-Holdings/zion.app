@@ -1,23 +1,23 @@
-import { PrismaClient } from '@prisma/client';
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { withErrorLogging } from '@/utils/withErrorLogging';
-import { captureException } from '@/utils/sentry';
-import { TALENT_PROFILES } from '@/data/talentData';
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
-
+import { PrismaClient } from '@prisma/client';';
+import type { NextApiRequest, NextApiResponse } from 'next';';
+import { withErrorLogging } from '@/utils/withErrorLogging';';
+import { captureException } from '@/utils/sentry';';
+import { TALENT_PROFILES } from '@/data/talentData';';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';'
+;
 const prisma = new PrismaClient();
-
+;
 const handler = async (request: NextApiRequest, response: NextApiResponse): Promise<void> => {
-  if (request.method !== 'GET') {
-    response.setHeader('Allow', ['GET']);
+  if (request.method !== 'GET') {'
+    response.setHeader('Allow', ['GET']);'
     response.status(405).json({ message: `Method ${request.method} Not Allowed` });
     return;
   }
 
   const { slug } = request.query as { slug: string | string[] };
 
-  if (typeof slug !== 'string') {
-    response.status(400).json({ message: 'Invalid slug provided.' });
+  if (typeof slug !== 'string') {'
+    response.status(400).json({ message: 'Invalid slug provided.' });'
     return;
   }
 
@@ -27,14 +27,14 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
     let usingFallback = false;
 
     // Special handling for talent directory
-    if (slug === 'talent' || slug === 'talent-directory') {
-      logInfo('Loading talent directory data');
+    if (slug === 'talent' || slug === 'talent-directory') {'
+      logInfo('Loading talent directory data');'
       response.status(200).json({
         category: {
-          id: 'talent',
-          name: 'Talent Directory',
-          slug: 'talent',
-          description: 'Find talented professionals and experts'
+          id: 'talent','
+          name: 'Talent Directory','
+          slug: 'talent','
+          description: 'Find talented professionals and experts''
         },
         items: TALENT_PROFILES,
         total: TALENT_PROFILES.length
@@ -49,7 +49,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
         include: {
           products: {
             where: { active: true },
-            orderBy: { createdAt: 'desc' }
+            orderBy: { createdAt: 'desc' }'
           }
         }
       });
@@ -59,7 +59,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
         logInfo(`Loaded ${products.length} products for category: ${slug}`);
       }
     } catch (dbError) {
-      logWarn('Database query failed, using fallback data:', dbError);
+      logWarn('Database query failed, using fallback data:', dbError);'
       usingFallback = true;
     }
 
@@ -67,7 +67,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
     if (!categoryDetails || products.length === 0) {
       usingFallback = true;
       // You would implement fallback logic here
-      logInfo('Using fallback data for category:', slug);
+      logInfo('Using fallback data for category:', slug);'
     }
 
     response.status(200).json({
@@ -83,13 +83,13 @@ const handler = async (request: NextApiRequest, response: NextApiResponse): Prom
     });
 
   } catch (error) {
-    logErrorToProduction('Category items API error:', error);
+    logErrorToProduction('Category items API error:', error);'
     captureException(error);
     response.status(500).json({ 
-      message: 'Internal server error',
-      error: process.env.NODE_ENV === 'development' ? String(error) : undefined
+      message: 'Internal server error','
+      error: process.env.NODE_ENV === 'development' ? String(error) : undefined'
     });
   }
 };
-
+;
 export default withErrorLogging(handler);

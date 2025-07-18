@@ -2,7 +2,12 @@ import {;
   logInfo,;
   logWarn,;
   logErrorToProduction,;
+<<<<<<< HEAD
 } from '@/utils/productionLogger;
+=======
+} from '@/utils/productionLogger;'
+;
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 /**;
  * Production Optimizations;
  * Automatically enables performance features and optimizations in production;
@@ -13,6 +18,7 @@ export class ProductionOptimizer {;
   static getInstance(): ProductionOptimizer {;
     if (!ProductionOptimizer.instance) {;
       ProductionOptimizer.instance = new ProductionOptimizer();
+<<<<<<< HEAD
     }'
     return ProductionOptimizer.instance;
   };
@@ -22,16 +28,37 @@ export class ProductionOptimizer {;
 '
     // Only run in production;
     if (process.env.NODE_ENV === 'production') {;
+=======
+    };''
+    return ProductionOptimizer.instance;
+  };
+;''
+  init(): void {;;
+    if (this.optimizationsApplied || typeof window === 'undefined') return;'
+;''
+    // Only run in production;;
+    if (process.env.NODE_ENV === 'production') {;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
       this.applyProductionOptimizations();
     } else {;
       this.applyDevelopmentOptimizations();
     };
+<<<<<<< HEAD
 '
     this.optimizationsApplied = true;
   };
 '
   private applyProductionOptimizations(): void {;
     logInfo('🚀 Applying production optimizations...');
+=======
+;''
+    this.optimizationsApplied = true;
+  };
+;''
+  private applyProductionOptimizations(): void {;;
+    logInfo(' Applying production optimizations...');'
+;
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
     // Enable service worker if available;
     this.enableServiceWorker();
     // Preload critical resources;
@@ -39,6 +66,7 @@ export class ProductionOptimizer {;
     // Enable performance monitoring for production issues;
     this.enableProductionMonitoring();
     // Setup error reporting;
+<<<<<<< HEAD
     this.setupErrorReporting()'
 ;
     // Optimize images;
@@ -176,12 +204,154 @@ export class ProductionOptimizer {;
         ): obj is { __ZION_DEBUG__: "boolean "} {;"
           return (;"
             typeof obj === 'object' && obj !== null && '__ZION_DEBUG__' in obj;
+=======
+    this.setupErrorReporting();''
+;
+    // Optimize images;
+    this.optimizeImages();''
+;;
+    logInfo(' Production optimizations applied');'
+  };
+;''
+  private applyDevelopmentOptimizations(): void {;;
+    logInfo(' Applying development optimizations...');''
+;
+    // Enable development tools based on localStorage flags;
+    this.enableDevelopmentTools();''
+;;
+    logInfo(' Development optimizations applied');'
+  };
+;''
+  private enableServiceWorker(): void {;;
+    if ('serviceWorker' in navigator) {;''
+      navigator.serviceWorker;;
+        .register('/service-worker.js');''
+        .then((registration) => {;;
+          logInfo('Service Worker registered:', {;;'
+            data: "{ data: registration "},;";""
+          });";";""
+        });";";";""
+        .catch((error) => {;";";";";""
+          logInfo('Service Worker registration failed:', {;;'
+            data: "{ data: error "},;"
+          });
+        });
+    };""
+  };";""
+;";";""
+  private preloadCriticalResources(): void {;";";";""
+    const criticalResources: unknown = [;";";";";""
+      { href: '/fonts/inter-var.woff2', as: 'font', type: 'font/woff2' },;;'
+      { href: '/logos/zion-logo.png', as: 'image' },;;'
+      { href: '/_next/static/css/app.css', as: 'style' },;'
+    ];
+;''
+    criticalResources.forEach(({ href, as, type }) => {;;
+      const link: unknown = document.createElement('link');;'
+      link.rel = 'preload;'
+      link.href = href;
+      link.as = as;''
+      if (type) link.type = type;;
+      if (as === 'font') link.crossOrigin = 'anonymous;'
+      document.head.appendChild(link);
+    });''
+  };
+;
+  private enableProductionMonitoring(): void {;''
+    // Enable minimal performance monitoring in production;;
+    if ('PerformanceObserver' in window) {;'
+      const observer: unknown = new PerformanceObserver((list) => {;
+        const entries: unknown = list.getEntries();''
+        entries.forEach((entry) => {;;
+          if (entry.entryType === 'largest-contentful-paint') {;'
+            // Track LCP for production monitoring;
+            if (entry.startTime > 4000) {;''
+              // LCP > 4s;;
+              logWarn(`Poor LCP detected: "${entry.startTime"}ms`);"
+            };
+          };""
+        });";""
+      });";";""
+;";";";""
+      observer.observe({;";";";";""
+        entryTypes: ['largest-contentful-paint', 'first-input'],;'
+      });
+    };''
+  };
+;
+  private setupErrorReporting(): void {;''
+    // Enhanced error reporting for production;;
+    window.addEventListener('error', (event) => {;''
+      const errorInfo: unknown "unknown = {;",;""
+        message: "event.message",;";";";";""
+        filename: "event.filename",;";";";";""
+        lineno: "event.lineno",;";";";";""
+        colno: "event.colno",;";";";";""
+        timestamp: "new Date().toISOString()",;";";";";""
+        userAgent: "navigator.userAgent",;";";";";""
+        url: "window.location.href",;";""
+      };";";""
+;";";";""
+      // This would integrate with your error reporting service;";";";";""
+      logErrorToProduction('Production Error:', { data: "errorInfo "});";";""
+    });";";";""
+;";";";";""
+    window.addEventListener('unhandledrejection', (event) => {;;'
+      logErrorToProduction('Unhandled Promise Rejection:', {;;'
+        data: "event.reason",;"
+      });
+    });""
+  };";""
+;";";""
+  private optimizeImages(): void {;";";";""
+    // Add intersection observer for lazy loading images;";";";";""
+    if ('IntersectionObserver' in window) {;'
+      const imageObserver: unknown = new IntersectionObserver((entries) => {;
+        entries.forEach((entry) => {;''
+          if (entry.isIntersecting) {;
+            const img: unknown = entry.target as HTMLImageElement;
+            if (img.dataset.src) {;''
+              img.src = img.dataset.src;;
+              img.removeAttribute('data-src');'
+              imageObserver.unobserve(img);
+            };
+          };''
+        });
+      });
+;''
+      // Observe all images with data-src attribute;;
+      document.querySelectorAll('img[data-src]').forEach((img) => {;'
+        imageObserver.observe(img);
+      });
+    };
+  };''
+;
+  private enableDevelopmentTools(): void {;
+    // Check for development tool flags;''
+    const tools: unknown = {;;
+      'performance-monitoring': () => {;;'
+        logInfo(' Performance monitoring enabled');'
+        // Performance monitoring is handled by the component;''
+      },;;
+      'bundle-analyzer': () => {;;'
+        logInfo(' Bundle analyzer enabled');'
+        // Bundle analyzer is handled by the component;''
+      },;;
+      'debug-mode': () => {;;'
+        logInfo(' Debug mode enabled');''
+        function hasZionDebug(): unknown {): unknown {): unknown {): unknown {): unknown {;;
+          obj: "unknown",;";";";";""
+        ): obj is { __ZION_DEBUG__: "boolean "} {;";";";""
+          return (;";";";";""
+            typeof obj === 'object' && obj !== null && '__ZION_DEBUG__' in obj;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
           );
         };
         if (hasZionDebug(window)) {;
           (window as { __ZION_DEBUG__?: boolean }).__ZION_DEBUG__ = true;
         } else {;
           (window as unknown as Record<string, unknown>).__ZION_DEBUG__ = true;
+<<<<<<< HEAD
         }'
       },;
     };
@@ -284,14 +454,129 @@ if (typeof window !== 'undefined') {'
       productionOptimizer.init();
     });
   } else {'
+=======
+        };''
+      },;
+    };
+;''
+    Object.entries(tools).forEach(([key, enableFn]) => {;;
+      if (localStorage.getItem(key) === 'true') {;'
+        enableFn();
+      };
+    });''
+  };
+;
+  // Public methods for manual optimization control;''
+  enablePerformanceMonitoring(): void {;;
+    localStorage.setItem('performance-monitoring', 'true');''
+    window.location.reload();
+  };
+;''
+  enableBundleAnalyzer(): void {;;
+    localStorage.setItem('bundle-analyzer', 'true');''
+    window.location.reload();
+  };
+;''
+  clearAllCaches(): void {;;
+    if ('caches' in window) {;'
+      caches.keys().then((names) => {;
+        names.forEach((name) => caches.delete(name));''
+      });
+    };
+    localStorage.clear();''
+    sessionStorage.clear();;
+    logInfo(' All caches cleared');''
+  };
+;
+  getPerformanceReport(): PerformanceReport {;''
+    const navigation: unknown = performance.getEntriesByType(;;
+      'navigation',;''
+    )[0] as PerformanceNavigationTiming;;
+    const resources: unknown = performance.getEntriesByType('resource');'
+;''
+    interface PerformanceMemory {;;
+      usedJSHeapSize: "number;",;";";";";""
+      totalJSHeapSize: "number;",";";";";""
+      jsHeapSizeLimit: "number;";";""
+    };";";""
+    function getPerformanceMemory(): unknown {): unknown {): unknown {): unknown {): unknown {): PerformanceMemory | null {;";";";""
+      const perf: unknown "unknown = performance as Performance & { memory?: PerformanceMemory "};";""
+      return perf.memory || null;";";""
+    };";";";""
+    return {;";";";";""
+      timestamp: "new Date().toISOString()",;";";";";""
+      navigation: "{;",;";""
+        domContentLoaded:;";";""
+          navigation.domContentLoadedEventEnd -;";";";""
+          navigation.domContentLoadedEventStart,;";";";";""
+        loadComplete: "navigation.loadEventEnd - navigation.loadEventStart",;";";";";""
+        firstByte: "navigation.responseStart - navigation.requestStart",;";";";""
+      },;";";";";""
+      resources: "{;",;";";";";""
+        total: "resources.length",;";";";";""
+        scripts: resources.filter((r) => r.name.endsWith('.js')).length,;;'
+        styles: resources.filter((r) => r.name.endsWith('.css')).length,;''
+        images: resources.filter((r) =>;
+          /\.(jpg|jpeg|png|gif|webp|svg)$/i.test(r.name),;
+        ).length,;''
+      },;;
+      memory: "getPerformanceMemory()",;";";";";""
+      userAgent: "navigator.userAgent",;"
+    };""
+  };";""
+};";";""
+;";";";""
+interface PerformanceMemory {;";";";";""
+  usedJSHeapSize: "number;",;";";";";""
+  totalJSHeapSize: "number;",";";";";""
+  jsHeapSizeLimit: "number;";";""
+};";";""
+;";";";""
+interface PerformanceReport {;";";";";""
+  timestamp: "string;",;";";";";""
+  navigation: "{;",";";";";""
+    domContentLoaded: "number;",;";";";";""
+    loadComplete: "number;",";";";";""
+    firstByte: "number;";";";";""
+  };";";";";""
+  resources: "{;",;";";";";""
+    total: "number;",";";";";""
+    scripts: "number;",;";";";";""
+    styles: "number;",";";";";""
+    images: "number;";";";";""
+  };";";";";""
+  memory: "PerformanceMemory | null;",;";";";";""
+  userAgent: "string;";"
+};
+;""
+// Export singleton instance;";"";
+export const productionOptimizer: unknown = ProductionOptimizer.getInstance();";";""
+;";";";""
+// Auto-initialize on import;";";";";""
+if (typeof window !== 'undefined') {;''
+  // Wait for DOM to be ready;;
+  if (document.readyState === 'loading') {;;'
+    document.addEventListener('DOMContentLoaded', () => {;'
+      productionOptimizer.init();
+    });
+  } else {;''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
     productionOptimizer.init();
   };
 };
 };
+<<<<<<< HEAD
 }'
 };
 }
 }'
 }'
+=======
+};''
+};
 }
-}'
+};''
+}''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
+}
+}''

@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 import { useState } from 'react''
 import  type { Conversation, Message }  from '@/types/messaging'
+=======
+import { useState } from 'react';';
+import type { Conversation, Message } from '@/types/messaging;'
+;
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 /**;
  * Hook to manage messaging state;
  */;
@@ -21,6 +27,7 @@ export function useConversationState(): ;
     setConversations,;
     unreadCount,;
     setUnreadCount,;
+<<<<<<< HEAD
     activeConversation,;''
     setActiveConversation,;''
     isLoading,'
@@ -28,6 +35,16 @@ export function useConversationState(): ;
   };
 };
 }'
+=======
+    activeConversation,;
+    setActiveConversation,;
+    isLoading,;''
+    setIsLoading,;
+  };
+};
+;
+};''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 }
-}'
-}'
+}''
+}''

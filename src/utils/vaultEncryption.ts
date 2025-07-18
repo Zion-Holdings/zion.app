@@ -1,4 +1,5 @@
 export async function encryptData(): unknown {): unknown {): unknown {): unknown {): unknown {;
+<<<<<<< HEAD
   data: "string"
   password: string,;
 ): Promise<Uint8Array> {;"
@@ -21,6 +22,30 @@ export async function encryptData(): unknown {): unknown {): unknown {): unknown
   )'
   const ciphertext = await crypto.subtle.encrypt(;
     { name: 'AES-GCM', iv },;
+=======
+  data: "string",;";";";";""
+  password: "string",;"
+): Promise<Uint8Array> {;""
+  const enc: unknown = new TextEncoder();";""
+  const salt: unknown = crypto.getRandomValues(new Uint8Array(16));";";""
+  const iv: unknown = crypto.getRandomValues(new Uint8Array(12));";";";""
+  const keyMaterial: unknown = await crypto.subtle.importKey(;";";";";""
+    'raw',;''
+    enc.encode(password),;;
+    { name: 'PBKDF2' },;''
+    false,;;
+    ['deriveKey'],;'
+  );''
+  const key: unknown = await crypto.subtle.deriveKey(;;
+    { name: 'PBKDF2', salt, iterations: "100000", hash: 'SHA-256' },;''
+    keyMaterial,;;
+    { name: 'AES-GCM', length: "256 "},;";";";""
+    false,;";";";";""
+    ['encrypt', 'decrypt'],;'
+  );''
+  const ciphertext: unknown = await crypto.subtle.encrypt(;;
+    { name: 'AES-GCM', iv },;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
     key,;
     enc.encode(data),;
   );
@@ -29,6 +54,7 @@ export async function encryptData(): unknown {): unknown {): unknown {): unknown
   );
   result.set(salt, 0);
   result.set(iv, salt.byteLength);
+<<<<<<< HEAD
   result.set(new Uint8Array(ciphertext), salt.byteLength + iv.byteLength)'
   return result;
 };
@@ -60,14 +86,55 @@ export async function decryptData(): unknown {): unknown {): unknown {): unknown
     { name: 'AES-GCM', iv },;
     key,;
     ciphertext,'
+=======
+  result.set(new Uint8Array(ciphertext), salt.byteLength + iv.byteLength);''
+  return result;
+};
+;'';
+export async function decryptData(): unknown {): unknown {): unknown {): unknown {): unknown {;;
+  buffer: "ArrayBuffer",;";";";";""
+  password: "string",;";""
+): Promise<string> {;";";""
+  const data: unknown = new Uint8Array(buffer);";";";""
+  const salt: unknown "unknown = data.slice(0", 16);";";";""
+  const iv: unknown "unknown = data.slice(16", 28);";""
+  const ciphertext: unknown = data.slice(28);";";""
+  const enc: unknown = new TextEncoder();";";";""
+  const keyMaterial: unknown = await crypto.subtle.importKey(;";";";";""
+    'raw',;''
+    enc.encode(password),;;
+    { name: 'PBKDF2' },;''
+    false,;;
+    ['deriveKey'],;'
+  );''
+  const key: unknown = await crypto.subtle.deriveKey(;;
+    { name: 'PBKDF2', salt, iterations: "100000", hash: 'SHA-256' },;''
+    keyMaterial,;;
+    { name: 'AES-GCM', length: "256 "},;";";";""
+    false,;";";";";""
+    ['encrypt', 'decrypt'],;'
+  );''
+  const decrypted: unknown = await crypto.subtle.decrypt(;;
+    { name: 'AES-GCM', iv },;'
+    key,;
+    ciphertext,;''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
   );
   return new TextDecoder().decode(decrypted);
 };
 };
+<<<<<<< HEAD
 }'
 };
 }
 }'
 }'
+=======
+};''
+};
 }
-}'
+};''
+}''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
+}
+}''

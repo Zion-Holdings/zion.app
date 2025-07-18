@@ -1,24 +1,24 @@
-import NextAuth, { type NextAuthOptions } from "next-auth";
-import GoogleProvider from "next-auth/providers/google";
-import GitHubProvider from "next-auth/providers/github";
-import FacebookProvider from "next-auth/providers/facebook";
-import CredentialsProvider from "next-auth/providers/credentials";
-import { withErrorLogging } from '@/utils/withErrorLogging';
-import { supabase } from '@/utils/supabase/client';
-import { verifyMessage } from 'ethers';
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
-import type { NextApiRequest, NextApiResponse } from 'next';
+import NextAuth, { type NextAuthOptions } from "next-auth";";
+import GoogleProvider from "next-auth/providers/google";";
+import GitHubProvider from "next-auth/providers/github";";
+import FacebookProvider from "next-auth/providers/facebook";";
+import CredentialsProvider from "next-auth/providers/credentials";";
+import { withErrorLogging } from '@/utils/withErrorLogging';';
+import { supabase } from '@/utils/supabase/client';';
+import { verifyMessage } from 'ethers';';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';';
+import type { NextApiRequest, NextApiResponse } from 'next';'
 
-// WalletConnect isn't natively supported by next-auth. We'll mock a basic credentials
-// provider that handles an address signature check. In a real app you'd verify
-// the wallet signature server side.
+// WalletConnect isn't natively supported by next-auth. We'll mock a basic credentials'
+// provider that handles an address signature check. In a real app you'd verify'
+// the wallet signature server side.;
 const WalletConnectProvider = CredentialsProvider({
-  id: "walletconnect",
-  name: "WalletConnect",
+  id: "walletconnect","
+  name: "WalletConnect","
   credentials: {
-    address: { label: "Address", type: "text" },
-    signature: { label: "Signature", type: "text" },
-    message: { label: "Message", type: "text" }
+    address: { label: "Address", type: "text" },"
+    signature: { label: "Signature", type: "text" },"
+    message: { label: "Message", type: "text" }"
   },
   async authorize(credentials) {
     if (!credentials?.address || !credentials?.signature || !credentials?.message) {
@@ -38,13 +38,13 @@ const WalletConnectProvider = CredentialsProvider({
         };
       }
     } catch (error) {
-      logErrorToProduction('Wallet signature verification failed:', error);
+      logErrorToProduction('Wallet signature verification failed:', error);'
     }
 
     return null;
   }
 });
-
+;
 export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
@@ -82,15 +82,15 @@ export const authOptions: NextAuthOptions = {
     },
   },
   pages: {
-    signIn: '/auth/signin',
-    signOut: '/auth/signout',
-    error: '/auth/error',
-    verifyRequest: '/auth/verify-request',
+    signIn: '/auth/signin','
+    signOut: '/auth/signout','
+    error: '/auth/error','
+    verifyRequest: '/auth/verify-request','
   },
   session: {
-    strategy: "jwt",
+    strategy: "jwt","
   },
   secret: process.env.NEXTAUTH_SECRET,
 };
-
+;
 export default withErrorLogging(NextAuth(authOptions));

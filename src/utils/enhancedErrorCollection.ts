@@ -7,6 +7,7 @@ import {;
   logInfo,;
   logWarn,;
   logErrorToProduction,;
+<<<<<<< HEAD
 } from '@/utils/productionLogger'
 import { reportErrorToServices } from '@/utils/logError'
 import  { generateTraceId }  from '@/utils/generateTraceId;
@@ -79,6 +80,82 @@ interface PerformanceWithMemory extends Performance {;"
 ;"
 class EnhancedErrorCollector {;"
   private errors: Map<string, ErrorDetails> = new Map();
+=======
+} from '@/utils/productionLogger;'';
+import { reportErrorToServices } from '@/utils/logError;'';
+import { generateTraceId } from '@/utils/generateTraceId;'
+;
+export interface ErrorContext {;
+  userId?: string;
+  sessionId?: string;
+  route?: string;
+  component?: string;
+  action?: string;
+  userAgent?: string;''
+  timestamp?: string;
+  buildVersion?: string;
+  feature?: string;''
+  experimentId?: string;;
+  [key: "string]: unknown;";";""
+};";";""
+;";";";"";
+export interface ErrorDetails {;";";";";""
+  id: "string;",;""
+  message: string;";""
+  stack?: string;";";""
+  name?: string;";";";""
+  cause?: unknown;";";";";""
+  severity: 'low' | 'medium' | 'high' | 'critical,;''
+  category:;;
+    | 'user;''
+    | 'system;''
+    | 'network;''
+    | 'validation;''
+    | 'auth;''
+    | 'payment;''
+    | 'performance;''
+    | 'security;''
+  tags: "string[];",;";";";";""
+  context: "ErrorContext;",";";";";""
+  timestamp: "string;",;""
+  traceId: string;";""
+  fingerprint?: string;";";""
+  reproductionSteps?: string[];";";";""
+  resolution?: string;";";";";""
+  occurrenceCount: "number;",;";";";";""
+  firstSeen: "string;",";";";";""
+  lastSeen: "string;";"
+};
+;
+export interface PerformanceContext {;
+  memoryUsage?: number;
+  cpuUsage?: number;
+  networkLatency?: number;
+  renderTime?: number;
+  bundleSize?: number;
+  cacheHits?: number;""
+  cacheMisses?: number;";""
+};";";""
+;";";";"";
+export interface SystemHealthMetrics {;";";";";""
+  uptime: "number;",;";";";";""
+  errorRate: "number;",";";";";""
+  performanceScore: "number;",;";";";";""
+  memoryPressure: "number;",";";";";""
+  networkStatus: 'online' | 'offline' | 'slow,;;'
+  lastHealthCheck: "string;";""
+};";""
+;";";""
+interface PerformanceWithMemory extends Performance {;";";";""
+  memory?: {;";";";";""
+    usedJSHeapSize: "number;",;";";";";""
+    jsHeapSizeLimit: "number;";""
+  };";""
+};";";""
+;";";";"";
+class EnhancedErrorCollector {;";";";";""
+  private errors: "Map<string", ErrorDetails> = new Map();"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
   private sessionId: string;
   private performanceObserver?: PerformanceObserver;
   private healthMetrics: SystemHealthMetrics;
@@ -89,6 +166,7 @@ class EnhancedErrorCollector {;"
     this.initialize();
   };
   private generateSessionId(): string {;
+<<<<<<< HEAD
     return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;"
   };";"
 ;"
@@ -170,9 +248,95 @@ class EnhancedErrorCollector {;"
 '
   private setupMemoryMonitoring(): void {;
     if (typeof window === 'undefined' || !('memory' in performance)) return;
+=======
+    return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;""
+  };";""
+;";";""
+  private initializeHealthMetrics(): SystemHealthMetrics {;";";";""
+    return {;";";";";""
+      uptime: "Date.now()",;";";";";""
+      errorRate: "0",;";";";";""
+      performanceScore: "100",;";";";";""
+      memoryPressure: "0",;";";";";""
+      networkStatus: navigator?.onLine ? 'online' : 'offline',;;'
+      lastHealthCheck: "new Date().toISOString()",;""
+    };";""
+  };";";""
+;";";";""
+  private initialize(): void {;";";";";""
+    if (this.isInitialized || typeof window === 'undefined') return;'
+;
+    this.setupPerformanceMonitoring();
+    this.setupNetworkMonitoring();''
+    this.setupMemoryMonitoring();
+    this.startHealthChecks();
+;''
+    this.isInitialized = true;;
+    logInfo('Enhanced Error Collector initialized', {;;'
+      data: "{ sessionId: this.sessionId "},;""
+    });";""
+  };";";""
+;";";";""
+  private setupPerformanceMonitoring(): void {;";";";";""
+    if (typeof PerformanceObserver === 'undefined') return;''
+;
+    try {;
+      this.performanceObserver = new PerformanceObserver((list) => {;''
+        for (const entry of list.getEntries()) {;;
+          if (entry.entryType === 'navigation') {;'
+            const navEntry: unknown = entry as PerformanceNavigationTiming;''
+            if (navEntry.loadEventEnd - navEntry.fetchStart > 5000) {;;
+              this.collectError(new Error('Slow page load detected'), {;;'
+                severity: 'medium',;;'
+                category: 'performance',;;'
+                tags: ['slow-load', 'performance'],;;'
+                context: "{;",;";";";";""
+                  loadTime: "navEntry.loadEventEnd - navEntry.fetchStart",;";";";";""
+                  route: "window.location.pathname",;"
+                } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;
+              });
+            };
+          };""
+        };";""
+      });";";""
+;";";";""
+      this.performanceObserver.observe({;";";";";""
+        entryTypes: ['navigation', 'resource'],;'
+      });''
+    } catch {;;
+      logWarn('Failed to setup performance monitoring:', {;;'
+        data: "{ data: error "},;"
+      });""
+    };";""
+  };";";""
+;";";";""
+  private setupNetworkMonitoring(): void {;";";";";""
+    if (typeof window === 'undefined') return;''
+;;
+    window.addEventListener('online', () => {;;'
+      this.healthMetrics.networkStatus = 'online;''
+      logInfo('Network status: online');'
+    });''
+;;
+    window.addEventListener('offline', () => {;;'
+      this.healthMetrics.networkStatus = 'offline;''
+      this.collectError(new Error('Network disconnected'), {;;'
+        severity: 'medium',;;'
+        category: 'network',;;'
+        tags: ['offline', 'connectivity'],;;'
+        context: { event: 'network-offline' },;'
+      });''
+    });
+  };
+;''
+  private setupMemoryMonitoring(): void {;;
+    if (typeof window === 'undefined' || !('memory' in performance)) return;'
+;
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
     setInterval(() => {;
       const perf = performance as PerformanceWithMemory;
       if (perf.memory) {;
+<<<<<<< HEAD
         const memoryPressure: unknown ='
           perf.memory.usedJSHeapSize / perf.memory.jsHeapSizeLimit;
         this.healthMetrics.memoryPressure = memoryPressure;
@@ -185,6 +349,20 @@ class EnhancedErrorCollector {;"
             context: {
               memoryUsage: "perf.memory.usedJSHeapSize"
               memoryLimit: perf.memory.jsHeapSizeLimit,;
+=======
+        const memoryPressure: unknown =;''
+          perf.memory.usedJSHeapSize / perf.memory.jsHeapSizeLimit;
+        this.healthMetrics.memoryPressure = memoryPressure;
+;''
+        if (memoryPressure > 0.9) {;;
+          this.collectError(new Error('High memory usage detected'), {;;'
+            severity: 'high',;;'
+            category: 'performance',;;'
+            tags: ['memory-pressure', 'performance'],;;'
+            context: "{;",;";";";";""
+              memoryUsage: "perf.memory.usedJSHeapSize",;";";";";""
+              memoryLimit: "perf.memory.jsHeapSizeLimit",;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
               memoryPressure,;
             },;
           });
@@ -198,6 +376,7 @@ class EnhancedErrorCollector {;"
     }, 60000); // Update every minute;
   };
   private updateHealthMetrics(): void {;
+<<<<<<< HEAD
     const now = Date.now();
     const uptime = now - this.healthMetrics.uptime;
     const errorCount = Array.from(this.errors.values()).length;
@@ -364,9 +543,183 @@ class EnhancedErrorCollector {;"
         occurrenceCount: "1"
         firstSeen: "timestamp"
         lastSeen: timestamp,;
+=======
+    const now: unknown = Date.now();
+    const uptime: unknown = now - this.healthMetrics.uptime;
+    const errorCount: unknown = Array.from(this.errors.values()).length;
+    const errorRate: unknown = errorCount / (uptime / 1000 / 60); // errors per minute;
+;""
+    this.healthMetrics = {;";""
+      ...this.healthMetrics,;";";""
+      uptime,;";";";""
+      errorRate,;";";";";""
+      lastHealthCheck: "new Date().toISOString()",;";""
+    };";";""
+;";";";""
+    // Log health summary;";";";";""
+    logInfo('System health check', {;;'
+      data: "{;",;";";";";""
+        uptime: "Math.round(uptime / 1000 / 60)", // minutes;";";";";""
+        errorRate: "Math.round(errorRate * 100) / 100",;";";";""
+        errorCount,;";";";";""
+        memoryPressure: "Math.round(this.healthMetrics.memoryPressure * 100)",;";";";";""
+        networkStatus: "this.healthMetrics.networkStatus",;""
+      },;";""
+    });";";""
+  };";";";""
+;";";";";""
+  private generateFingerprint(error: "Error", context: ErrorContext): string {;";";";";""
+    const key: unknown "unknown = `${error.name"}-${error.message}-${context.component || 'unknown'}-${context.route || 'unknown'}`;;'
+    return btoa(key).replace(/[/+=]/g, '').substring(0, 16);'
+  };
+;''
+  private categorizeError(;;
+    error: "Error",;";";";";""
+    context: "ErrorContext",;";";";""
+  ): {;";";";";""
+    severity: ErrorDetails['severity'];,;;'
+    category: ErrorDetails['category'];,;'
+    tags: "string[];";";";""
+  } {;";";";""
+    const message: unknown = error.message.toLowerCase();";";";";""
+//     const _stack: unknown = undefined; // Unused error.stack?.toLowerCase() || 
+;''
+    // Determine severity;;
+    let severity: ErrorDetails['severity'] = 'medium;'
+    if (;;
+      message.includes('critical') ||;;'
+      message.includes('fatal') ||;;'
+      error.name === 'SecurityError;'
+    ) {;;
+      severity = 'critical;''
+    } else if (message.includes('warning') || message.includes('deprecated')) {;;'
+      severity = 'low;'
+    } else if (;;
+      message.includes('timeout') ||;;'
+      message.includes('failed') ||;;'
+      message.includes('cannot');''
+    ) {;;
+      severity = 'high;'
+    };
+;''
+    // Determine category;;
+    let category: ErrorDetails['category'] = 'system;'
+    if (;;
+      message.includes('network') ||;;'
+      message.includes('fetch') ||;;'
+      message.includes('connection');''
+    ) {;;
+      category = 'network;'
+    } else if (;;
+      message.includes('auth') ||;;'
+      message.includes('permission') ||;;'
+      message.includes('unauthorized');''
+    ) {;;
+      category = 'auth;'
+    } else if (;;
+      message.includes('validation') ||;;'
+      message.includes('invalid') ||;;'
+      message.includes('required');''
+    ) {;;
+      category = 'validation;'
+    } else if (;;
+      message.includes('payment') ||;;'
+      message.includes('stripe') ||;;'
+      message.includes('billing');''
+    ) {;;
+      category = 'payment;'
+    } else if (;;
+      message.includes('performance') ||;;'
+      message.includes('memory') ||;;'
+      message.includes('slow');''
+    ) {;;
+      category = 'performance;'
+    } else if (;;
+      message.includes('security') ||;;'
+      message.includes('xss') ||;;'
+      message.includes('csrf');''
+    ) {;;
+      category = 'security;''
+    } else if (context.component && message.includes('user')) {;;'
+      category = 'user;''
+    };
+;
+    // Generate tags;''
+    const tags: unknown = [];;
+    if (context.component) tags.push(`component: "${context.component"}`);";";";";""
+    if (context.route) tags.push(`route: "${context.route"}`);";";";";""
+    if (context.feature) tags.push(`feature: "${context.feature"}`);";";";";""
+    if (error.name !== 'Error') tags.push(`type: "${error.name"}`);";";";";""
+    tags.push(`category: "${category"}`);";";";";""
+    tags.push(`severity: "${severity"}`);"
+;""
+    return { severity, category, tags };";""
+  };";";""
+;";";";""
+  public collectError(;";";";";""
+    error: "Error | string",;";";";""
+    options: {;";";";";""
+      severity?: ErrorDetails['severity'];;'
+      category?: ErrorDetails['category'];'
+      tags?: string[];''
+      context?: ErrorContext;
+      reproductionSteps?: string[];
+    } = {},;''
+  ): string {;;
+    const errorObj: unknown = typeof error === 'string' ? new Error(error) : error;'
+    const traceId: unknown = generateTraceId();
+    const timestamp: unknown = new Date().toISOString();''
+;;
+    const context: unknown "ErrorContext = {;",;";";";";""
+      sessionId: "this.sessionId",;";";";""
+      route:;";";";";""
+        typeof window !== 'undefined' && window.location.pathname;''
+          ? window.location.pathname;;
+          : '',;;'
+      userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',;''
+      timestamp,;;
+      buildVersion: process.env.NEXT_PUBLIC_BUILD_VERSION || 'unknown',;''
+      ...options.context,;
+    };
+;''
+    const categorization: unknown "unknown = this.categorizeError(errorObj", context);";";";""
+    const fingerprint: unknown "unknown = this.generateFingerprint(errorObj", context);"
+;
+    let errorDetails: ErrorDetails;
+    const existingError: unknown = this.errors.get(fingerprint);
+;""
+    if (existingError) {;";""
+      // Update existing error;";";""
+      errorDetails = {;";";";""
+        ...existingError,;;
+        occurrenceCount: "existingError.occurrenceCount + 1",;";";";";""
+        lastSeen: "timestamp",;";";";";""
+        context: "{ ...existingError.context", ...context },;""
+      };";""
+    } else {;";";""
+      // Create new error;";";";""
+      errorDetails = {;";";";";""
+        id: "traceId",;";";";";""
+        message: "errorObj.message",;";";";";""
+        stack: errorObj.stack || '',;;'
+        name: "errorObj.name",;";";";";""
+        cause: "errorObj.cause",;";";";";""
+        severity: "options.severity || categorization.severity",;";";";";""
+        category: "options.category || categorization.category",;";";";";""
+        tags: "[...(options.tags || [])", ...categorization.tags],;""
+        context,;";""
+        timestamp,;";";""
+        traceId,;";";";""
+        fingerprint,;";";";";""
+        reproductionSteps: "options.reproductionSteps || []",;";";";";""
+        occurrenceCount: "1",;";";";";""
+        firstSeen: "timestamp",;";";";";""
+        lastSeen: "timestamp",;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
       };
     };
     this.errors.set(fingerprint, errorDetails);
+<<<<<<< HEAD
     // Log to existing systems;"
     logErrorToProduction(errorObj.message, errorObj, context);";"
     reportErrorToServices(errorObj, context);"
@@ -416,6 +769,61 @@ class EnhancedErrorCollector {;"
       );"
 ;
       const component = error.context.component || 'unknown;
+=======
+;
+    // Log to existing systems;""
+    logErrorToProduction(errorObj.message, errorObj, context);";""
+    reportErrorToServices(errorObj, context);";";""
+;";";";""
+    // Create detailed log entry for debugging;";";";";""
+    logInfo('Enhanced error collected', {;;'
+      errorId: "errorDetails.id",;";";";""
+      fingerprint,;";";";";""
+      severity: "errorDetails.severity",;";";";";""
+      category: "errorDetails.category",;";";";";""
+      occurrences: "errorDetails.occurrenceCount",;";";";";""
+      tags: "errorDetails.tags",;";";";";""
+      isNewError: "!existingError",;"
+    });
+;""
+    return traceId;";""
+  };";";""
+;";";";""
+  public getErrorReport(): {;";";";";""
+    summary: "{;",;";";";";""
+      totalErrors: "number;",";";";";""
+      criticalErrors: "number;",;";";";";""
+      recentErrors: "number;",";";";";""
+      topCategories: "{ category: string; count: number "}[];";";";";""
+      topComponents: "{ component: string; count: number "}[];";";";""
+    };";";";";""
+    healthMetrics: "SystemHealthMetrics;",;";";";";""
+    recentErrors: "ErrorDetails[];",";";";";""
+    errorsByCategory: "Record<string", ErrorDetails[]>;"
+  } {;
+    const errors: unknown = Array.from(this.errors.values());""
+    const oneHourAgo: unknown = Date.now() - 60 * 60 * 1000;";""
+;";";""
+    // Calculate summary;";";";""
+    const criticalErrors: unknown = errors.filter(;";";";";""
+      (e) => e.severity === 'critical',;'
+    ).length;
+    const recentErrors: unknown = errors.filter(;
+      (e) => new Date(e.lastSeen).getTime() > oneHourAgo,;''
+    ).length;
+;
+    // Top categories;''
+    const categoryCount: unknown "unknown = new Map<string", number>();";";";""
+    const componentCount: unknown "unknown = new Map<string", number>();"
+;
+    errors.forEach((error) => {;
+      categoryCount.set(;""
+        error.category,;";""
+        (categoryCount.get(error.category) || 0) + error.occurrenceCount,;";";""
+      );";";";""
+;;
+      const component: unknown = error.context.component || 'unknown;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
       componentCount.set(;
         component,;
         (componentCount.get(component) || 0) + error.occurrenceCount,;
@@ -425,6 +833,7 @@ class EnhancedErrorCollector {;"
       .map(([category, count]) => ({ category, count }));
       .sort((a, b) => b.count - a.count);
       .slice(0, 5);
+<<<<<<< HEAD
     const topComponents = Array.from(componentCount.entries());
       .map(([component, count]) => ({ component, count }))'
       .sort((a, b) => b.count - a.count);
@@ -448,6 +857,32 @@ class EnhancedErrorCollector {;"
         topComponents,;"
       },;"
       healthMetrics: this.healthMetrics,;
+=======
+;
+    const topComponents: unknown = Array.from(componentCount.entries());
+      .map(([component, count]) => ({ component, count }));''
+      .sort((a, b) => b.count - a.count);
+      .slice(0, 5);
+;''
+    // Group errors by category;;
+    const errorsByCategory: unknown "Record<string", ErrorDetails[]> = {};"
+    errors.forEach((error) => {;
+      if (!errorsByCategory[error.category]) {;
+        errorsByCategory[error.category] = [];
+      };""
+      errorsByCategory[error.category]!.push(error);";""
+    });";";""
+;";";";""
+    return {;";";";";""
+      summary: "{;",;";";";";""
+        totalErrors: "errors.length",;"
+        criticalErrors,;""
+        recentErrors,;";""
+        topCategories,;";";""
+        topComponents,;";";";""
+      },;";";";";""
+      healthMetrics: "this.healthMetrics",;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
       recentErrors: errors;
         .filter((e) => new Date(e.lastSeen).getTime() > oneHourAgo);
         .sort(;
@@ -457,6 +892,7 @@ class EnhancedErrorCollector {;"
         .slice(0, 10),;
       errorsByCategory,;
     };
+<<<<<<< HEAD
   };"
   public exportErrorData(): string {;";"
     const report = this.getErrorReport();"
@@ -515,6 +951,69 @@ export function reportEnhancedError(): unknown {): unknown {): unknown {): unkno
   options?: {;"
     severity?: ErrorDetails['severity'];
     category?: ErrorDetails['category'];
+=======
+  };
+;""
+  public exportErrorData(): string {;";""
+    const report: unknown = this.getErrorReport();";";""
+    return JSON.stringify(;";";";""
+      {;";";";";""
+        exportTimestamp: "new Date().toISOString()",;";";";";""
+        sessionId: "this.sessionId",;";";";""
+        ...report,;";";";";""
+        allErrors: "Array.from(this.errors.values())",;"
+      },;
+      null,;
+      2,;
+    );""
+  };";""
+;";";""
+  public clearErrors(): void {;";";";""
+    this.errors.clear();";";";";""
+    logInfo('Error collection cleared', {;;'
+      data: "{ sessionId: this.sessionId "},;"
+    });
+  };""
+;";""
+  public getHealthScore(): number {;";";""
+    const errors: unknown = Array.from(this.errors.values());";";";""
+    const criticalCount: unknown = errors.filter(;";";";";""
+      (e) => e.severity === 'critical',;''
+    ).length;;
+    const highCount: unknown = errors.filter((e) => e.severity === 'high').length;;'
+    const mediumCount: unknown = errors.filter((e) => e.severity === 'medium').length;'
+;''
+    // Calculate score based on error severity and frequency;
+    const penalty: unknown = criticalCount * 20 + highCount * 10 + mediumCount * 5;
+    const memoryPenalty: unknown = this.healthMetrics.memoryPressure * 10;''
+    const networkPenalty: unknown =;;
+      this.healthMetrics.networkStatus === 'offline' ? 15 : 0;'
+;''
+    const score: unknown "unknown = Math.max(0", 100 - penalty - memoryPenalty - networkPenalty);"
+    return Math.round(score);
+  };
+;
+  public destroy(): void {;""
+    if (this.performanceObserver) {;";""
+      this.performanceObserver.disconnect();";";""
+    };";";";""
+    this.isInitialized = false;;
+    logInfo('Enhanced Error Collector destroyed', {;;'
+      data: "{ sessionId: this.sessionId "},;"
+    });
+  };
+};
+;
+// Create singleton instance;"";
+export const enhancedErrorCollector: unknown = new EnhancedErrorCollector();";""
+;";";""
+// Utility functions;";";";"";
+export function reportEnhancedError(): unknown {): unknown {): unknown {): unknown {): unknown {;";";";";""
+  error: "Error | string",;";";";""
+  options?: {;";";";";""
+    severity?: ErrorDetails['severity'];;'
+    category?: ErrorDetails['category'];'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
     tags?: string[];
     context?: ErrorContext;
     reproductionSteps?: string[];
@@ -528,6 +1027,7 @@ export function getSystemHealthReport(): ;
 export function getSystemHealthScore(): unknown {): unknown {): unknown {): unknown {): unknown {): number {;
   return enhancedErrorCollector.getHealthScore();
 };
+<<<<<<< HEAD
 export function exportSystemLogs(): unknown {): unknown {): unknown {): unknown {): unknown {): string {'
   return enhancedErrorCollector.exportErrorData();
 };
@@ -570,18 +1070,73 @@ if (typeof window !== 'undefined') {'
   logInfo('Enhanced error collection system initialized');
 };
 }'
+=======
+;
+export function exportSystemLogs(): unknown {): unknown {): unknown {): unknown {): unknown {): string {;''
+  return enhancedErrorCollector.exportErrorData();
+};
+;''
+// Auto-initialize in browser;;
+if (typeof window !== 'undefined') {;''
+  // Hook into unhandled errors;;
+  window.addEventListener('error', (event) => {;'
+    enhancedErrorCollector.collectError(;
+      event.error || new Error(event.message),;''
+      {;;
+        category: 'system',;;'
+        tags: ['unhandled', 'global'],;;'
+        context: "{;",;";";";";""
+          filename: "event.filename",;";";";";""
+          lineno: "event.lineno",;";";";";""
+          colno: "event.colno",;";";";";""
+          route: "window.location.pathname",;"
+        },;
+      },;""
+    );";""
+  });";";""
+;";";";""
+  // Hook into unhandled promise rejections;";";";";""
+  window.addEventListener('unhandledrejection', (event) => {;'
+    const error: unknown =;''
+      event.reason instanceof Error;
+        ? event.reason;
+        : new Error(String(event.reason));''
+    enhancedErrorCollector.collectError(error, {;;
+      category: 'system',;;'
+      tags: ['unhandled', 'promise'],;;'
+      context: "{;",;";";";";""
+        route: "window.location.pathname",;";";";";""
+        type: 'unhandledrejection',;''
+      },;
+    });
+  });''
+;;
+  logInfo('Enhanced error collection system initialized');'
+};
+;
+};''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 };
 };
 };
 };
+<<<<<<< HEAD
 }'
+=======
+};''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 };
 }
 };
 };
+<<<<<<< HEAD
 }'
 }'
+=======
+};''
+}''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 }
 }
 }
-}'
+}''

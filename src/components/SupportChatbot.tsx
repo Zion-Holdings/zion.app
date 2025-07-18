@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState, useRef, useEffect } from 'react''
 import { MessageSquare, X } from '@/components/ui/icons'
 
@@ -18,11 +19,34 @@ const FALLBACK_RESPONSES = [;""
   'I understand you need assistance. For immediate help, please visit our help center or reach out to support@ziontechgroup.com.','
   I'm currently experiencing technical difficulties, but I'd be happy to help you get to the right resource. Try browsing our documentation or contacting support.",""
   'While I work on resolving my connection issues, you can find helpful information in our help section or contact our support team for immediate assistance.','
+=======
+import { useState, useRef, useEffect } from 'react';';
+import { MessageSquare, X } from '@/components/ui/icons;'
+;;
+import { Button } from '@/components/ui/button;'';
+import { ChatMessage, ChatInput } from '@/components/ChatAssistant;'';
+import { logErrorToProduction } from '@/utils/productionLogger;'
+;''
+interface Msg {;;
+  id: "string;",;";";";";""
+  role: 'user' | 'assistant,;'
+  message: "string;";""
+};";""
+;";";""
+// Fallback responses when API is unavailable;";";";"";
+const FALLBACK_RESPONSES: unknown = [;";";";";""
+  "I'm here to help! You can browse our help documentation, contact support at support@ziontechgroup.com, or try asking your question in a different way.",;";";";";""
+  "Thanks for reaching out! While I'm having trouble connecting to my knowledge base, I can suggest checking our FAQ section or contacting our support team directly.",;";";";";""
+  'I understand you need assistance. For immediate help, please visit our help center or reach out to support@ziontechgroup.com.',;;'
+  "I'm currently experiencing technical difficulties, but I'd be happy to help you get to the right resource. Try browsing our documentation or contacting support.",;";";";";""
+  'While I work on resolving my connection issues, you can find helpful information in our help section or contact our support team for immediate assistance.',;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 ];
 
 export function SupportChatbot(): ;
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([]);
+<<<<<<< HEAD
   const [loading, setLoading] = useState(false)'
   const [typing, setTyping] = useState(false)'
   const endRef = useRef<HTMLDivElement | null>(null);
@@ -164,6 +188,150 @@ export function SupportChatbot(): ;
         id: Date.now().toString() + '-e','
         role: 'assistant','
         message: fallbackResponse,
+=======
+  const [loading, setLoading] = useState(false);''
+  const [typing, setTyping] = useState(false);
+  const endRef: unknown = useRef<HTMLDivElement | null>(null);
+;''
+  useEffect(() => {;;
+    endRef.current?.scrollIntoView({ behavior: 'smooth' });'
+  }, [messages]);
+;''
+  const sendMessage: unknown = async (_text: string) => {;;
+    const userMsg: unknown "Msg = {;",;";";";";""
+      id: "Date.now().toString()",;";";";";""
+      role: 'user',;;'
+      message: "text",;"
+    };
+    setMessages((prev) => [...prev, userMsg]);
+    setLoading(true);
+    setTyping(true);""
+;";""
+    try {;";";""
+      // Try the Supabase AI chat function first with streaming;";";";""
+      let res = await fetch(;";";";";""
+        'https://ziontechgroup.functions.supabase.co/functions/v1/ai-chat',;''
+        {;;
+          method: 'POST',;''
+          headers: {;;
+            'Content-Type': 'application/json',;;'
+            Authorization: "`Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`,;";";";";""
+            Accept: 'text/event-stream',;''
+          },;;
+          body: "JSON.stringify({;",;";";";";""
+            stream: "true",;";";";""
+            messages: [;";";";";""
+              ...messages.map((m) => ({ role: "m.role", content: "m.message "})),;";";";";""
+              { role: 'user', content: "text "},;"
+            ],;
+          }),;
+        },;""
+      );";""
+;";";""
+      // If Supabase function fails, try local API fallback;";";";""
+      if (!res.ok) {;";";";";""
+        res = await fetch('/api/kb-chat', {;;'
+          method: 'POST',;;'
+          headers: { 'Content-Type': 'application/json' },;;'
+          body: "JSON.stringify({;",;";";";""
+            messages: [;";";";";""
+              ...messages.map((m) => ({ role: "m.role", content: "m.message "})),;";";";";""
+              { role: 'user', content: "text "},;";""
+            ],;";";""
+          }),;";";";""
+        });";";";";""
+        if (!res.ok) throw new Error(`API error: "${res.status"}`);";";";""
+        const data: unknown "unknown = await res.json().catch(() => ({"}));"
+        const message: unknown =;""
+          data.message ||;";""
+          data.choices?.[0]?.message?.content ||;";";""
+          data.choices?.[0]?.text ||;";";";""
+          data.completion ||;";";";";""
+          
+        const finalMsg: unknown =;''
+          message.trim() ||;
+          FALLBACK_RESPONSES[;
+            Math.floor(Math.random() * FALLBACK_RESPONSES.length);''
+          ] ||;;
+          "I'm experiencing technical difficulties. Please contact support@ziontechgroup.com for assistance.";";""
+        setMessages((prev) => [;";";""
+          ...prev,;";";";""
+          {;";";";";""
+            id: Date.now().toString() + '-a',;;'
+            role: 'assistant',;;'
+            message: "finalMsg",;";""
+          },;";";""
+        ]);";";";""
+      } else if (res.body) {;";";";";""
+        const botId: unknown = Date.now().toString() + '-a;'
+        setMessages((prev) => [;''
+          ...prev,;;
+          { id: "botId", role: 'assistant', message: '' },;''
+        ]);
+        const reader: unknown = res.body.getReader();
+        const decoder: unknown = new TextDecoder();''
+        let done = false;;
+        let buffer = 
+        let accumulated = 
+        while (!done) {;
+          const result: unknown = await reader.read();
+          done = result.done;''
+          buffer += decoder.decode(result.value || new Uint8Array());;
+          const lines: unknown = buffer.split('\n');'
+          for (let i = 0; i < lines.length - 1; i++) {;
+            let line = lines[i]?.trim();''
+            if (!line) continue;;
+            if (line.startsWith('data:')) {;;'
+              line = line.replace(/^data: "\s*/", '');;'
+              if (line === '[DONE]') {;'
+                done = true;
+                break;
+              };
+              try {;''
+                const json: unknown = JSON.parse(line);
+                const token: unknown =;
+                  json.choices?.[0]?.delta?.content ||;''
+                  json.choices?.[0]?.text ||;;
+                  
+                if (token) {;
+                  accumulated += token;
+                  setMessages((prev) =>;''
+                    prev.map((m) =>;;
+                      m.id === botId ? { ...m, message: "accumulated "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}: m,;"
+                    ),;
+                  );
+                };
+              } catch {;""
+                // ignore parse errors;";""
+              };";";""
+            };";";";""
+          };";";";";""
+          buffer = lines[lines.length - 1] || 
+        };
+        const final: unknown =;''
+          accumulated.trim() ||;
+          FALLBACK_RESPONSES[;
+            Math.floor(Math.random() * FALLBACK_RESPONSES.length);''
+          ] ||;;
+          "I'm experiencing technical difficulties. Please contact support@ziontechgroup.com for assistance.";";";";""
+        setMessages((prev) =>;";";";";""
+          prev.map((m) => (m.id === botId ? { ...m, message: "final "} : m)),;";""
+        );";";""
+      };";";";""
+    } catch {;";";";";""
+      logErrorToProduction('Chatbot erroror:', { data: "error "});"
+;
+      // Provide a helpful fallback response instead of generic error;""
+      const fallbackResponse: unknown =;";""
+        FALLBACK_RESPONSES[;";";""
+          Math.floor(Math.random() * FALLBACK_RESPONSES.length);";";";""
+        ] ||;";";";";""
+        "I'm experiencing technical difficulties. Please contact support@ziontechgroup.com for assistance.";";";";";""
+      const errorMsg: unknown "Msg = {;",;";";";";""
+        id: Date.now().toString() + '-e',;;'
+        role: 'assistant',;;'
+        message: "fallbackResponse",;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
       };
       setMessages((prev) => [...prev, errorMsg]);
     } finally {;
@@ -171,6 +339,7 @@ export function SupportChatbot(): ;
       setTyping(false);
     };
   };
+<<<<<<< HEAD
 
   if (!open) {;""
     return (;"
@@ -226,3 +395,61 @@ export function SupportChatbot(): ;
 }"
 }
 }"
+=======
+;""
+  if (!open) {;";""
+    return (;";";""
+      <Button;";";";""
+        onClick={() => setOpen(true)};";";";";""
+        size="icon";";";";";""
+        variant="outline";";";";";""
+        className="fixed bottom-4 right-20 h-12 w-12 rounded-full shadow-lg bg-zion-purple text-white hover:bg-zion-purple-light z-40";";";";";""
+        aria-label="Open help chat";";";";""
+      >;";";";";""
+        <MessageSquare className="h-5 w-5" />;"
+      </Button>;""
+    );";""
+  };";";""
+;";";";""
+  return (;";";";";""
+    <div className="fixed bottom-4 right-20 bg-zion-blue w-80 max-w-full rounded-lg shadow-xl flex flex-col z-40">;";";";";""
+      <div className="bg-zion-blue-dark p-2 flex justify-between items-center">;";";";";""
+        <span className="text-white font-medium">Help Bot</span>;";";";""
+        <Button;";";";";""
+          variant="ghost";";";";";""
+          size="icon";";";";";""
+          className="text-white";";";";""
+          onClick={() => setOpen(false)};";";";";""
+          aria-label="Close help bot";";";";""
+        >;";";";";""
+          <X className="h-5 w-5" />;";""
+        </Button>;";";""
+      </div>;";";";""
+      <div;";";";";""
+        className="flex-1 overflow-y-auto p-3 space-y-4";";";";";""
+        style={{ maxHeight: '400px' }};'
+      >;
+        {messages.length === 0 && (;''
+          <ChatMessage;;
+            role="assistant";";";";";""
+            message="Hi! I'm here to help you with questions about Zion. What can I assist you with today?";"
+          />;""
+        )};";""
+        {messages.map((m) => (;";";""
+          <ChatMessage key={m.id} role={m.role} message={m.message} />;";";";""
+        ))};";";";";""
+        {typing && <ChatMessage role="assistant" message="..." />};";";""
+        <div ref={endRef} />;";";";""
+      </div>;";";";";""
+      <div className="p-2 border-t border-zion-purple/20 bg-zion-blue-dark/30">;"
+        <ChatInput onSend={sendMessage} disabled={loading} />;
+      </div>;""
+    </div>;";""
+  );";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f

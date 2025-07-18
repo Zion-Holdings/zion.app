@@ -1,12 +1,12 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import fs from 'fs';
-import path from 'path';
-import { logErrorToProduction } from '@/utils/productionLogger';
+import type { NextApiRequest, NextApiResponse } from 'next';';
+import fs from 'fs';';
+import path from 'path';';
+import { logErrorToProduction } from '@/utils/productionLogger';'
 
 interface LogEntry {
   id: string;
   timestamp: string;
-  level: 'debug' | 'info' | 'warn' | 'error' | 'critical';
+  level: 'debug' | 'info' | 'warn' | 'error' | 'critical';'
   message: string;
   context?: Record<string, unknown>;
 }
@@ -22,7 +22,7 @@ interface LogsApiResponse {
   error?: string;
   timestamp: string;
 }
-
+;
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<LogsApiResponse>
@@ -32,15 +32,15 @@ export default async function handler(
   try {
     const { method, query } = req;
 
-    if (method !== 'GET') {
+    if (method !== 'GET') {'
       return res.status(405).json({
         success: false,
-        error: 'Method not allowed',
+        error: 'Method not allowed','
         timestamp
       });
     }
 
-    const { page = '1', limit = '50', level } = query as Record<string, string>;
+    const { page = '1', limit = '50', level } = query as Record<string, string>;'
     const pageNum = parseInt(page, 10);
     const limitNum = parseInt(limit, 10);
 
@@ -49,28 +49,28 @@ export default async function handler(
     
     // This is a placeholder implementation
     // In a real system, you would read from your actual log files
-    const logDir = path.join(process.cwd(), 'logs');
+    const logDir = path.join(process.cwd(), 'logs');'
     
     if (fs.existsSync(logDir)) {
-      const logFiles = fs.readdirSync(logDir).filter(file => file.endsWith('.log'));
+      const logFiles = fs.readdirSync(logDir).filter(file => file.endsWith('.log'));'
       
       for (const logFile of logFiles.slice(0, 5)) { // Limit to 5 files for performance
         try {
           const logPath = path.join(logDir, logFile);
-          const content = fs.readFileSync(logPath, 'utf8');
+          const content = fs.readFileSync(logPath, 'utf8');'
           
           // Parse log entries (simplified)
-          const lines = content.split('\n').filter(line => line.trim());
+          const lines = content.split('\n').filter(line => line.trim());'
           
           for (const line of lines.slice(-100)) { // Last 100 lines
-            if (line.includes(' - ')) {
-              const [timestamp, ...rest] = line.split(' - ');
-              const message = rest.join(' - ');
+            if (line.includes(' - ')) {'
+              const [timestamp, ...rest] = line.split(' - ');'
+              const message = rest.join(' - ');'
               
               logs.push({
                 id: `${logFile}-${logs.length}`,
                 timestamp: timestamp || new Date().toISOString(),
-                level: 'info',
+                level: 'info','
                 message: message || line,
                 context: { source: logFile }
               });
@@ -103,11 +103,11 @@ export default async function handler(
       timestamp
     });
   } catch (error) {
-    logErrorToProduction('Logs API error:', error);
+    logErrorToProduction('Logs API error:', error);'
 
     res.status(500).json({
       success: false,
-      error: 'Internal server error',
+      error: 'Internal server error','
       timestamp
     });
   }

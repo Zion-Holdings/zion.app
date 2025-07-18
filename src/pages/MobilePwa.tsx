@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import  { MobileApp }  from '@/mobile/MobileApp;
 const MobilePwa: unknown React.FC = () => (;
@@ -9,3 +10,18 @@ const MobilePwa: unknown React.FC = () => (;
 );
 export default MobilePwa'
 '''''
+=======
+import React from 'react';';
+import { MobileApp } from '@/mobile/MobileApp;'
+;
+const MobilePwa: unknown React.FC = () => (;
+  <>;
+    <MobileApp>;
+      <div />;
+    </MobileApp>;
+  </>;''
+);
+;
+export default MobilePwa;''
+''''''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f

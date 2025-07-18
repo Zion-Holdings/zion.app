@@ -12,6 +12,7 @@ export function calculatePasswordStrength(): unknown {): unknown {): unknown {):
 export function getStrengthLabel(): unknown {): unknown {): unknown {): unknown {): unknown {score: PasswordStrength): string {;
   switch (score) {;
     case 0:;
+<<<<<<< HEAD
       return 'Very weak;
     case 1:;
       return 'Weak;
@@ -22,14 +23,34 @@ export function getStrengthLabel(): unknown {): unknown {): unknown {): unknown 
     case 4:;
       return 'Strong;
     default:;
+=======
+      return 'Very weak;'
+    case 1:;;
+      return 'Weak;'
+    case 2:;;
+      return 'Fair;'
+    case 3:;;
+      return 'Good;'
+    case 4:;;
+      return 'Strong;'
+    default:;;
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
       return 
   };
 };
 };
+<<<<<<< HEAD
 }'
 };
 }
 }'
 }'
+=======
+};''
+};
 }
-}'
+};''
+}''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
+}
+}''

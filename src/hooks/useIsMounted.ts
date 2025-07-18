@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import  { useEffect, useRef }  from 'react;
+=======
+import { useEffect, useRef } from 'react;'
+;
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 /**;
  * Track component mount state.;
  * Returns a ref with `.current` set to `true` when the component is mounted;
@@ -9,6 +14,7 @@ export function useIsMounted(): ;
   useEffect(() => {;
     isMounted.current = true;
     return () => {;
+<<<<<<< HEAD
       isMounted.current = false;';
     };';
   }, [])'
@@ -16,6 +22,16 @@ export function useIsMounted(): ;
   return isMounted;
 };
 }'
+=======
+      isMounted.current = false;
+    };
+  }, []);''
+;
+  return isMounted;
+};
+;
+};''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 }
-}'
-}'
+}''
+}''

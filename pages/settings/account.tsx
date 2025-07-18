@@ -1,2 +1,2 @@
-export { default, getServerSideProps } from '@/pages/Account';';';';'
-'''''
+export { default, getServerSideProps } from '@/pages/Account';';';';''
+''''''

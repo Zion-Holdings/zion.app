@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState, useEffect } from 'react';
 import { Header } from '@/components/Header'
 import { GradientHeading } from '@/components/GradientHeading'
@@ -15,6 +16,25 @@ interface Article {
 ;"
 export default function Help(): ;"
   const [query, setQuery] = useState('');
+=======
+import { useState, useEffect } from 'react';';
+import { Header } from '@/components/Header;'';
+import { GradientHeading } from '@/components/GradientHeading;'';
+import { Input } from '@/components/ui/input;'';
+import { Markdown } from '@/components/ui/markdown;'';
+import { SEO } from '@/components/SEO;'';
+import { SupportChatbot } from '@/components/SupportChatbot;'';
+import { logErrorToProduction } from '@/utils/productionLogger;'
+;''
+interface Article {;;
+  slug: "string;",;";";";";""
+  title: "string;",";";";";""
+  content: "string;";";""
+};";";""
+;";";";"";
+export default function Help(): unknown {): unknown {): unknown {): unknown {): unknown {) {;";";";";""
+  const [query, setQuery] = useState('');'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
   const [articles, setArticles] = useState<Article[]>([]);
   const [selected, setSelected] = useState<Article | null>(null);
   const [loading, setLoading] = useState(false);
@@ -24,6 +44,7 @@ export default function Help(): ;"
     const fetchArticles = async () => {;
       setLoading(true);
       setError(null);
+<<<<<<< HEAD
       try {'
         const res = await fetch(;
           `/api/help/articles?q=${encodeURIComponent(query)} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`,;
@@ -40,6 +61,24 @@ export default function Help(): ;"
         if (active) {;"
           setArticles([]);"
           setError('Failed to load articles');
+=======
+      try {;''
+        const res: unknown = await fetch(;
+          `/api/help/articles?q=${encodeURIComponent(query)} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`,;
+        );''
+        if (!res.ok) {;;
+          throw new Error(`Request failed: "${res.status"}`);"
+        };
+        const data: unknown = await res.json().catch(() => []);""
+        if (active) {;";""
+          setArticles(Array.isArray(data) ? data : []);";";""
+        };";";";""
+      } catch {;";";";";""
+        logErrorToProduction('Help article fetch erroror:', { data: "error "});";";""
+        if (active) {;";";";""
+          setArticles([]);";";";";""
+          setError('Failed to load articles');'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
         };
       } finally {;
         if (active) setLoading(false);
@@ -48,6 +87,7 @@ export default function Help(): ;"
     fetchArticles();
     return () => {;
       active = false;
+<<<<<<< HEAD
     }'
   }, [query]);
   return ('
@@ -93,6 +133,54 @@ export default function Help(): ;"
           {selected && (;"
             <div className="max-w-3xl mx-auto mt-8">;"
               <h2 className="text-2xl font-bold text-white mb-4">;
+=======
+    };''
+  }, [query]);
+;
+  return (;''
+    <>;;
+      <SEO title="Help Center" description="Search our knowledge base" />;";";";""
+      <Header />;";";";";""
+      <main className="min-h-screen bg-zion-blue pt-24 pb-20">;";";";";""
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">;";";";";""
+          <div className="text-center mb-8">;";";";""
+            <GradientHeading>Help Center</GradientHeading>;";";";";""
+            <p className="mt-4 text-zion-slate-light text-xl max-w-3xl mx-auto">;";""
+              Find answers to common questions.;";";""
+            </p>;";";";""
+          </div>;";";";";""
+          <div className="max-w-2xl mx-auto mb-8">;";";";""
+            <Input;";";";";""
+              placeholder="Search articles...";";";""
+              value={query};";";";""
+              onChange={(e) => setQuery(e.target.value)};";";";";""
+              className="bg-zion-blue-light text-white";";";""
+            />;";";";""
+          </div>;";";";";""
+          {loading && <p className="text-center text-white my-4">Loading...</p>};";";";""
+          {error && !loading && (;";";";";""
+            <div className="text-center text-red-500 my-4">;";";";";""
+              {error}{' '};;'
+              <button onClick={() => setQuery((q) => q)} className="underline">;""
+                Try Again;";""
+              </button>;";";""
+            </div>;";";";""
+          )};";";";";""
+          <div className="grid gap-4 max-w-3xl mx-auto">;""
+            {articles.map((a) => (;";""
+              <button;";";""
+                key={a.slug};";";";""
+                onClick={() => setSelected(a)};";";";";""
+                className="text-left p-4 border border-zion-blue-light rounded text-white bg-zion-blue-dark hover:bg-zion-blue-light";"
+              >;
+                {a.title};""
+              </button>;";""
+            ))};";";""
+          </div>;";";";""
+          {selected && (;";";";";""
+            <div className="max-w-3xl mx-auto mt-8">;";";";";""
+              <h2 className="text-2xl font-bold text-white mb-4">;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
                 {selected.title};
               </h2>;
               <Markdown content={selected.content} />;
@@ -100,6 +188,7 @@ export default function Help(): ;"
           )};
         </div>;
       </main>;
+<<<<<<< HEAD
       <SupportChatbot />;"
     </>;";"
   );"
@@ -109,3 +198,14 @@ export default function Help(): ;"
 }";"
 }"
 }"
+=======
+      <SupportChatbot />;""
+    </>;";""
+  );";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f

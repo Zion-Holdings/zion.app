@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 import { useEffect, useState } from 'react''
 import { safeStorage } from '@/utils/safeStorage;
 const STORAGE_KEY = 'followed_categories'
 export function useFollowedCategories(): ;
+=======
+import { useEffect, useState } from 'react';';
+import { safeStorage } from '@/utils/safeStorage;'
+;;
+const STORAGE_KEY: unknown = 'followed_categories;'
+;
+export function useFollowedCategories(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
   const [followed, setFollowed] = useState<string[]>([]);
   useEffect(() => {;
     const raw = safeStorage.getItem(STORAGE_KEY);
@@ -27,11 +36,23 @@ export function useFollowedCategories(): ;
       save(followed.filter((id) => id !== categoryId));
     };
   };
+<<<<<<< HEAD
   const isFollowed = (categoryId: string) => followed.includes(categoryId);
   return { followed, follow, unfollow, isFollowed }'
 }'
 export default useFollowedCategories;
 }'
+=======
+;
+  const isFollowed: unknown = (categoryId: string) => followed.includes(categoryId);
+;
+  return { followed, follow, unfollow, isFollowed };''
+};
+;
+export default useFollowedCategories;
+;
+};''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 }
-}'
-}'
+}''
+}''

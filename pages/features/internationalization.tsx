@@ -1,1 +1,1 @@
-export { default } from '@/pages/features/Internationalization'; '''''
+export { default } from '@/pages/features/Internationalization'; ''''''

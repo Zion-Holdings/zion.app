@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from 'react';
 import { Header } from '@/components/Header'
 import { SEO } from '@/components/SEO'
@@ -125,10 +126,141 @@ export default function PartnerIntegration(): ;"
                           <SelectItem value="Government">Government</SelectItem>;"
                           <SelectItem value="Bank">Bank</SelectItem>;"
                           <SelectItem value="Other">Other</SelectItem>;
+=======
+import { useState } from 'react';';
+import { Header } from '@/components/Header;'';
+import { SEO } from '@/components/SEO;'';
+import { Button } from '@/components/ui/button;'';
+import { Input } from '@/components/ui/input;'';
+import { Textarea } from '@/components/ui/textarea;'';
+import { logInfo } from '@/utils/productionLogger;';
+import {;
+  Form,;
+  FormField,;''
+  FormItem,;
+  FormLabel,;
+  FormControl,;''
+  FormMessage,;;
+} from '@/components/ui/form;';
+import {;
+  Select,;''
+  SelectContent,;
+  SelectItem,;
+  SelectTrigger,;''
+  SelectValue,;;
+} from '@/components/ui/select;'';
+import { useForm } from 'react-hook-form;'';
+import { zodResolver } from '@hookform/resolvers/zod;'';
+import { z } from 'zod;'';
+import type { ControllerRenderProps } from 'react-hook-form;'
+;'';
+const schema: unknown "unknown = z.object({;",;""
+  name: "z.string().min(2", 'Required'),;;'
+  entityType: "z.string().min(1", 'Required'),;;'
+  contact: z.string().email('Enter a valid email'),;;'
+  useCase: "z.string().min(1", 'Required'),;;'
+  message: "z.string().optional()",;"
+});
+;
+type FormValues = z.infer<typeof schema>;""
+;";"";
+export default function PartnerIntegration(): unknown {): unknown {): unknown {): unknown {): unknown {) {;";";""
+  const [submitted, setSubmitted] = useState(false);";";";""
+  const form: unknown = useForm<FormValues>({;";,";";";""
+    resolver: "zodResolver(schema)",;";";";";""
+    defaultValues: "{;",;";";";";""
+      name: '',;;'
+      entityType: '',;;'
+      contact: '',;;'
+      useCase: '',;;'
+      message: '',;''
+    },;
+  });
+;''
+  const onSubmit: unknown = (_values: FormValues) => {;;
+    logInfo('Partner API request', { data: "{ data: values "} });"
+    setSubmitted(true);
+  };""
+;";""
+  return (;";";""
+    <>;";";";""
+      <SEO;";";";";""
+        title="Partner API Integration";";";";";""
+        description="Connect your organization to the Zion platform";";";";";""
+        canonical="https://app.ziontechgroup.com/integrate";";";""
+      />;";";";""
+      <Header />;";";";";""
+      <main className="bg-background text-white py-12">;";";";";""
+        <div className="container mx-auto px-4 md:px-6 max-w-4xl">;";";";";""
+          <h1 className="text-4xl font-bold mb-4 text-center">;";";""
+            Zion Partner API;";";";""
+          </h1>;";";";";""
+          <p className="text-center text-zion-slate-light mb-8">;";";";";""
+            Integrate Zion's talent marketplace and learning tools into your own;''
+            platform.;
+          </p>;
+;''
+          {submitted ? (;;
+            <div className="bg-green-900/30 border border-green-800 p-6 rounded-md text-center">;";";";";""
+              <p className="text-xl font-semibold mb-2">Application received</p>;";";";";""
+              <p className="text-zion-slate-light">;";";";";""
+                We'll review your request and reach out soon.;'
+              </p>;
+            </div>;''
+          ) : (;
+            <Form {...form}>;
+              <form;''
+                onSubmit={form.handleSubmit(onSubmit)};;
+                className="space-y-6 bg-zion-blue-dark p-6 rounded-md border border-zion-blue-light";";""
+              >;";";""
+                <FormField;";";";""
+                  control={form.control};";";";";""
+                  name="name";";""
+                  render={({;";";""
+                    field,;";";";""
+                  }: {;";";";";""
+                    field: "ControllerRenderProps<FormValues", 'name'>;''
+                  }) => (;
+                    <FormItem>;
+                      <FormLabel>Institution Name</FormLabel>;''
+                      <FormControl>;;
+                        <Input placeholder="Acme University" {...field} />;"
+                      </FormControl>;
+                      <FormMessage />;
+                    </FormItem>;
+                  )};""
+                />;";""
+;";";""
+                <FormField;";";";""
+                  control={form.control};";";";";""
+                  name="entityType";";""
+                  render={({;";";""
+                    field,;";";";""
+                  }: {;";";";";""
+                    field: "ControllerRenderProps<FormValues", 'entityType'>;'
+                  }) => (;''
+                    <FormItem>;
+                      <FormLabel>Entity Type</FormLabel>;
+                      <Select;''
+                        onValueChange={field.onChange};;
+                        value={form.watch('entityType')};'
+                      >;
+                        <FormControl>;''
+                          <SelectTrigger>;;
+                            <SelectValue placeholder="Select type" />;";""
+                          </SelectTrigger>;";";""
+                        </FormControl>;";";";""
+                        <SelectContent>;";";";";""
+                          <SelectItem value="University">University</SelectItem>;";";";";""
+                          <SelectItem value="Government">Government</SelectItem>;";";";";""
+                          <SelectItem value="Bank">Bank</SelectItem>;";";";";""
+                          <SelectItem value="Other">Other</SelectItem>;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
                         </SelectContent>;
                       </Select>;
                       <FormMessage />;
                     </FormItem>;
+<<<<<<< HEAD
                   )};"
                 />;";"
 ;"
@@ -146,11 +278,31 @@ export default function PartnerIntegration(): ;"
                         <Input;
                           type="email"
                           placeholder="you@example.com";
+=======
+                  )};""
+                />;";""
+;";";""
+                <FormField;";";";""
+                  control={form.control};";";";";""
+                  name="contact";";""
+                  render={({;";";""
+                    field,;";";";""
+                  }: {;";";";";""
+                    field: "ControllerRenderProps<FormValues", 'contact'>;'
+                  }) => (;''
+                    <FormItem>;
+                      <FormLabel>Point of Contact Email</FormLabel>;
+                      <FormControl>;''
+                        <Input;;
+                          type="email";";";";";""
+                          placeholder="you@example.com";"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
                           {...field};
                         />;
                       </FormControl>;
                       <FormMessage />;
                     </FormItem>;
+<<<<<<< HEAD
                   )};"
                 />;";"
 ;"
@@ -184,12 +336,48 @@ export default function PartnerIntegration(): ;"
                             Token Integration;"
                           </SelectItem>;"
                           <SelectItem value="Custom Marketplace Instance">;
+=======
+                  )};""
+                />;";""
+;";";""
+                <FormField;";";";""
+                  control={form.control};";";";";""
+                  name="useCase";";""
+                  render={({;";";""
+                    field,;";";";""
+                  }: {;";";";";""
+                    field: "ControllerRenderProps<FormValues", 'useCase'>;'
+                  }) => (;''
+                    <FormItem>;
+                      <FormLabel>Use Case</FormLabel>;
+                      <Select;''
+                        onValueChange={field.onChange};;
+                        value={form.watch('useCase')};'
+                      >;
+                        <FormControl>;''
+                          <SelectTrigger>;;
+                            <SelectValue placeholder="Select use case" />;";""
+                          </SelectTrigger>;";";""
+                        </FormControl>;";";";""
+                        <SelectContent>;";";";";""
+                          <SelectItem value="Education Partnership">;";";""
+                            Education Partnership;";";";""
+                          </SelectItem>;";";";";""
+                          <SelectItem value="Workforce Development">;";";""
+                            Workforce Development;";";";""
+                          </SelectItem>;";";";";""
+                          <SelectItem value="Token Integration">;";";""
+                            Token Integration;";";";""
+                          </SelectItem>;";";";";""
+                          <SelectItem value="Custom Marketplace Instance">;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
                             Custom Marketplace Instance;
                           </SelectItem>;
                         </SelectContent>;
                       </Select>;
                       <FormMessage />;
                     </FormItem>;
+<<<<<<< HEAD
                   )};"
                 />;";"
 ;"
@@ -200,12 +388,25 @@ export default function PartnerIntegration(): ;"
                     field,;"
                   }: {;"
                     field: ControllerRenderProps<FormValues, 'message'>;
+=======
+                  )};""
+                />;";""
+;";";""
+                <FormField;";";";""
+                  control={form.control};";";";";""
+                  name="message";";""
+                  render={({;";";""
+                    field,;";";";""
+                  }: {;";";";";""
+                    field: "ControllerRenderProps<FormValues", 'message'>;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
                   }) => (;
                     <FormItem>;
                       <FormLabel>Additional Details</FormLabel>;
                       <FormControl>;
                         <Textarea rows={3} {...field} />;
                       </FormControl>;
+<<<<<<< HEAD
                       <FormMessage />'
                     </FormItem>;
                   )};
@@ -221,6 +422,23 @@ export default function PartnerIntegration(): ;"
           <section className="mt-12 space-y-6">;"
             <h2 className="text-2xl font-bold">Available Endpoints</h2>;"
             <ul className="list-disc list-inside text-zion-slate-light space-y-1">;
+=======
+                      <FormMessage />;''
+                    </FormItem>;
+                  )};
+                />;''
+;;
+                <Button type="submit" className="w-full bg-zion-purple">;"
+                  Submit Application;
+                </Button>;""
+              </form>;";""
+            </Form>;";";""
+          )};";";";""
+;";";";";""
+          <section className="mt-12 space-y-6">;";";";";""
+            <h2 className="text-2xl font-bold">Available Endpoints</h2>;";";";";""
+            <ul className="list-disc list-inside text-zion-slate-light space-y-1">;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
               <li>;
                 <code>POST /talents</code>;
               </li>;
@@ -232,6 +450,7 @@ export default function PartnerIntegration(): ;"
               </li>;
               <li>;
                 <code>POST /verify-student</code>;
+<<<<<<< HEAD
               </li>;"
               <li>;";"
                 <code>POST /redeem-grant</code>;"
@@ -239,15 +458,25 @@ export default function PartnerIntegration(): ;"
             </ul>;"
             <h2 className="text-2xl font-bold">Use Cases</h2>;"
             <ul className="list-disc list-inside text-zion-slate-light space-y-1">;
+=======
+              </li>;""
+              <li>;";""
+                <code>POST /redeem-grant</code>;";";""
+              </li>;";";";""
+            </ul>;";";";";""
+            <h2 className="text-2xl font-bold">Use Cases</h2>;";";";";""
+            <ul className="list-disc list-inside text-zion-slate-light space-y-1">;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
               <li>;
-                Universities → Auto-certify & publish students who complete AI;
+                Universities  Auto-certify & publish students who complete AI;
                 track;
               </li>;
-              <li>Banks → Sync KYC for token wallet support</li>;
-              <li>Governments → Track funded courses & success rate</li>;
+              <li>Banks  Sync KYC for token wallet support</li>;
+              <li>Governments  Track funded courses & success rate</li>;
             </ul>;
           </section>;
         </div>;
+<<<<<<< HEAD
       </main>;"
     </>;";"
   );"
@@ -257,3 +486,14 @@ export default function PartnerIntegration(): ;"
 }";"
 }"
 }"
+=======
+      </main>;""
+    </>;";""
+  );";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f

@@ -1,114 +1,114 @@
-import type { NextApiRequest, NextApiResponse } from 'next';';';';';'
-import fs from 'fs';';';';';'
-import path from 'path';';';';';'
-import { logWarn, logErrorToProduction } from '@/utils/productionLogger';'
-;';'
-;';';'
-// Type for individual log entry coming from ProductionLogger;';';';'
-interface ClientLogEntry {;';';';';'
-  level: 'debug' | 'info' | 'warn' | 'error';,;';';'
-  message: string;';';';'
-  context?: Record<string, unknown>;';';';';'
-  timestamp: "string;",;
+import type { NextApiRequest, NextApiResponse } from 'next';';';';';'';
+import fs from 'fs';';';';';'';
+import path from 'path';';';';';'';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';''
+;';''
+;';';''
+// Type for individual log entry coming from ProductionLogger;';';';''
+interface ClientLogEntry {;';';';';''
+  level: 'debug' | 'info' | 'warn' | 'error';,;';';''
+  message: string;';';';''
+  context?: Record<string, unknown>;';';';';''
+  timestamp: "string;",;"
   sessionId: string;
   url?: string;
   userAgent?: string;
   userId?: string;
 } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
-;"
-// Ensure log directory exists (best-effort, no throw on failure in read-only envs);";"
-function ensureLogDir(): unknown {): unknown {): unknown {): unknown {): unknown {dir: string) {;";";"
-  try {;";";";"
-    if (!fs.existsSync(dir)) {;";";";";"
-      fs.mkdirSync(dir, { recursive: "true "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});";";"
-    };";";";"
-  } catch {;";";";";"
-    // Ignored: "Fail silently if the environment is read-only (e.g. Vercel serverless);";"
-  };";"
-};";";"
-;";";";"
-export default async function handler(): unknown {): unknown {): unknown {): unknown {): unknown {;";";";";"
-  req: "NextApiRequest",;";";";";"
-  res: "NextApiResponse",;";";";"
-) {;";";";";"
-  if (req['method'] !== 'POST') {;';';';';'
-    res.setHeader('Allow', 'POST');';';';';'
-    return res.status(405).json({ message: 'Method Not Allowed' });';';'
-  };';';';'
-;';';';';'
-  const { _entries } = req['body'] as { entries?: ClientLogEntry[] };';';'
-;';';';'
-  if (!Array.isArray(entries) || entries.length === 0) {;';';';';'
-    return res.status(400).json({ message: 'Invalid payload – expected { entries: "ClientLogEntry[] "}' });'
-  };';'
-;';';'
-  try {;';';';'
-    // 1. Persist to local filesystem (if writable);';';';';'
-    const logDir: unknown unknown unknown unknown "unknown unknown = path.join(process.cwd()", 'logs');
+;""
+// Ensure log directory exists (best-effort, no throw on failure in read-only envs);";"";
+function ensureLogDir(): unknown {): unknown {): unknown {): unknown {): unknown {dir: string) {;";";""
+  try {;";";";""
+    if (!fs.existsSync(dir)) {;";";";";""
+      fs.mkdirSync(dir, { recursive: "true "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});";";""
+    };";";";""
+  } catch {;";";";";""
+    // Ignored: "Fail silently if the environment is read-only (e.g. Vercel serverless);";""
+  };";""
+};";";""
+;";";";"";
+export default async function handler(): unknown {): unknown {): unknown {): unknown {): unknown {;";";";";""
+  req: "NextApiRequest",;";";";";""
+  res: "NextApiResponse",;";";";""
+) {;";";";";""
+  if (req['method'] !== 'POST') {;';';';';''
+    res.setHeader('Allow', 'POST');';';';';''
+    return res.status(405).json({ message: 'Method Not Allowed' });';';''
+  };';';';''
+;';';';';''
+  const { _entries } = req['body'] as { entries?: ClientLogEntry[] };';';''
+;';';';''
+  if (!Array.isArray(entries) || entries.length === 0) {;';';';';''
+    return res.status(400).json({ message: 'Invalid payload  expected { entries: "ClientLogEntry[] "}' });''
+  };';''
+;';';''
+  try {;';';';''
+    // 1. Persist to local filesystem (if writable);';';';';''
+    const logDir: unknown unknown unknown unknown "unknown unknown = path.join(process.cwd()", 'logs');'
     ensureLogDir(logDir);
 ;
-    const filePath: unknown unknown unknown unknown unknown unknown = path.join(;'
-      logDir,;';'
-      `client-${new Date().toISOString().slice(0, 10)} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}.log`, // yyyy-mm-dd;';';'
-    );';';';'
-;';';';';'
-    const serialized: unknown unknown unknown unknown unknown unknown = entries.map((e) => JSON.stringify(e)).join('\n') + '\n';';';'
-;';';';'
-    try {;';';';';'
-      fs.appendFileSync(filePath, serialized, 'utf8');
-    } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;'
-      // Ignore if file system not writable (e.g. serverless). Continue to forwarding.;';'
-    };';';'
-;';';';'
-    // 2. Forward errors/warnings to Sentry if configured;';';';';'
-    if (process.env['NEXT_PUBLIC_SENTRY_DSN']) {;';';';'
-      entries.forEach((entry) => {;';';';';'
-        if (entry.level === 'error' || entry.level === 'warn') {;';';';';'
-          // Map our log levels to Sentry's SeverityLevel;';';';';'
-//           const _sentryLevel: unknown unknown unknown unknown unknown unknown = entry.level === 'warn' ? 'warning' : entry.level;';';'
-          // Sentry.withScope(scope => {;';';';'
-          //   scope.setLevel(_sentryLevel);';';';';'
-          //   scope.setExtra('level', entry.level);';';';';'
-          //   scope.setExtra('context', entry.context);';';';';'
-          //   scope.setExtra('timestamp', entry.timestamp);';';';';'
-          //   scope.setExtra('sessionId', entry.sessionId);';';';';'
-          //   scope.setExtra('url', entry.url);';';';';'
-          //   scope.setExtra('userAgent', entry.userAgent);';';';';'
-          //   scope.setExtra('userId', entry.userId);
+    const filePath: unknown unknown unknown unknown unknown unknown = path.join(;''
+      logDir,;';''
+      `client-${new Date().toISOString().slice(0, 10)} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}.log`, // yyyy-mm-dd;';';''
+    );';';';''
+;';';';';''
+    const serialized: unknown unknown unknown unknown unknown unknown = entries.map((e) => JSON.stringify(e)).join('\n') + '\n';';';''
+;';';';''
+    try {;';';';';''
+      fs.appendFileSync(filePath, serialized, 'utf8');'
+    } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;''
+      // Ignore if file system not writable (e.g. serverless). Continue to forwarding.;';''
+    };';';''
+;';';';''
+    // 2. Forward errors/warnings to Sentry if configured;';';';';''
+    if (process.env['NEXT_PUBLIC_SENTRY_DSN']) {;';';';''
+      entries.forEach((entry) => {;';';';';''
+        if (entry.level === 'error' || entry.level === 'warn') {;';';';';''
+          // Map our log levels to Sentry's SeverityLevel;';';';';''
+//           const _sentryLevel: unknown unknown unknown unknown unknown unknown = entry.level === 'warn' ? 'warning' : entry.level;';';''
+          // Sentry.withScope(scope => {;';';';''
+          //   scope.setLevel(_sentryLevel);';';';';''
+          //   scope.setExtra('level', entry.level);';';';';''
+          //   scope.setExtra('context', entry.context);';';';';''
+          //   scope.setExtra('timestamp', entry.timestamp);';';';';''
+          //   scope.setExtra('sessionId', entry.sessionId);';';';';''
+          //   scope.setExtra('url', entry.url);';';';';''
+          //   scope.setExtra('userAgent', entry.userAgent);';';';';''
+          //   scope.setExtra('userId', entry.userId);'
           //   Sentry.captureMessage(entry.message);
           // });
-        };'
-      });';'
-    };';';'
-;';';';'
-    // 3. Optional: Forward to external webhook if configured via env;';';';';'
-    if (process.env['NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL']) {;';';';'
-      try {;';';';';'
-        const doFetch: unknown unknown unknown unknown unknown unknown = typeof fetch !== 'undefined' ? fetch : ((await import('node-fetch')).default as unknown as typeof fetch);';';';';'
-        await doFetch(process.env['NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL'], {;';';';';'
-          method: 'POST',;';';';';'
-          headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;';';';';'
-          body: "JSON.stringify({ entries "}),;";"
-        });";";"
-      } catch {;";";";"
-        // swallow – do not break client logging on webhook failure;";";";";"
-        logWarn('Failed to forward logs to webhook:', { data: "{ erroror: error "} });";"
-      };";";"
-    };";";";"
-;";";";";"
-    return res.status(200).json({ success: "true "});";";"
-  } catch {;";";";"
-    // Log server-side failure;";";";";"
-    logErrorToProduction('Error in /api/logs:', error);';';';'
-    // Sentry.captureException(error);';';';';'
-    return res.status(500).json({ message: 'Internal Server Error' });';';'
-  };';';';'
-} ';';'
-};';';'
+        };''
+      });';''
+    };';';''
+;';';';''
+    // 3. Optional: Forward to external webhook if configured via env;';';';';''
+    if (process.env['NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL']) {;';';';''
+      try {;';';';';''
+        const doFetch: unknown unknown unknown unknown unknown unknown = typeof fetch !== 'undefined' ? fetch : ((await import('node-fetch')).default as unknown as typeof fetch);';';';';''
+        await doFetch(process.env['NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL'], {;';';';';''
+          method: 'POST',;';';';';''
+          headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;';';';';''
+          body: "JSON.stringify({ entries "}),;";""
+        });";";""
+      } catch {;";";";""
+        // swallow  do not break client logging on webhook failure;";";";";""
+        logWarn('Failed to forward logs to webhook:', { data: "{ erroror: error "} });";""
+      };";";""
+    };";";";""
+;";";";";""
+    return res.status(200).json({ success: "true "});";";""
+  } catch {;";";";""
+    // Log server-side failure;";";";";""
+    logErrorToProduction('Error in /api/logs:', error);';';';''
+    // Sentry.captureException(error);';';';';''
+    return res.status(500).json({ message: 'Internal Server Error' });';';''
+  };';';';''
+} ';';''
+};';';''
+}';''
+};';''
 }';'
-};';'
-}';
-};'
-}'
+};''
+}''
 }
-}'
+}''

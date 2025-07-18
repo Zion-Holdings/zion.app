@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from 'react';
 import { Header } from '@/components/Header'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -19,10 +20,34 @@ export default function KycDashboard(): ;
   const [requests, setRequests] = useState<KycRequest[]>(mockRequests)'
 ;
   const updateStatus = (id: string, _status: 'approved' | 'rejected') => {;
+=======
+import { useState } from 'react';';
+import { Header } from '@/components/Header;'';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'';
+import { Button } from '@/components/ui/button;'';
+import { ProtectedRoute } from '@/components/ProtectedRoute;'
+;''
+interface KycRequest {;;
+  id: "string;",;";";";";""
+  userEmail: "string;",";";";";""
+  status: 'pending' | 'approved' | 'rejected;'
+};
+;'';
+const mockRequests: unknown KycRequest[] = [;;
+  { id: '1', userEmail: 'alice@example.com', status: 'pending' },;;'
+  { id: '2', userEmail: 'bob@example.com', status: 'pending' },;'
+];''
+;
+export default function KycDashboard(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
+  const [requests, setRequests] = useState<KycRequest[]>(mockRequests);''
+;;
+  const updateStatus: unknown = (id: "string", _status: 'approved' | 'rejected') => {;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
     setRequests((prev) =>;
       prev.map((r) => (r.id === id ? { ...r, status } : r)),;
     );
   };
+<<<<<<< HEAD
 '
   return (;
     <ProtectedRoute adminOnly>;
@@ -58,6 +83,43 @@ export default function KycDashboard(): ;
                             size="sm"
                             variant="destructive"
                             onClick={() => updateStatus(req.id, 'rejected')};
+=======
+;''
+  return (;
+    <ProtectedRoute adminOnly>;
+      <div>;''
+        <Header />;;
+        <div className="min-h-screen bg-zion-blue px-4 py-8">;";";";";""
+          <div className="container mx-auto">;";";";";""
+            <h1 className="text-3xl font-bold text-white mb-6">;"
+              KYC Dashboard;
+            </h1>;
+            <Card>;""
+              <CardHeader>;";""
+                <CardTitle>Verification Queue</CardTitle>;";";""
+              </CardHeader>;";";";""
+              <CardContent>;";";";";""
+                <ul className="space-y-4">;";""
+                  {requests.map((req) => (;";";""
+                    <li;";";";""
+                      key={req.id};";";";";""
+                      className="flex items-center justify-between bg-white p-4 rounded-md";";";""
+                    >;";";";""
+                      <span>{req.userEmail}</span>;";";";";""
+                      <span className="capitalize">{req.status}</span>;";";";";""
+                      {req.status === 'pending' && (;;'
+                        <div className="space-x-2">;";";";""
+                          <Button;";";";";""
+                            size="sm";";";";";""
+                            onClick={() => updateStatus(req.id, 'approved')};''
+                          >;
+                            Approve;
+                          </Button>;''
+                          <Button;;
+                            size="sm";";";";";""
+                            variant="destructive";";";";";""
+                            onClick={() => updateStatus(req.id, 'rejected')};'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
                           >;
                             Reject;
                           </Button>;
@@ -70,11 +132,20 @@ export default function KycDashboard(): ;
             </Card>;
           </div>;
         </div>;
+<<<<<<< HEAD
       </div>'
     </ProtectedRoute>;
   );
 };
 }'
+=======
+      </div>;''
+    </ProtectedRoute>;
+  );
+};
+;
+};''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 }
-}'
-}'
+}''
+}''

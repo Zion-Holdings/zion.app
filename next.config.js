@@ -203,6 +203,23 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
   },
   webpack: (config, { isServer, dev }) => {
+    // Simplified webpack configuration to avoid Watchpack issues
+    if (dev) {
+      // Use polling instead of file watching to avoid path issues
+      config.watchOptions = {
+        poll: 1000,
+        aggregateTimeout: 300,
+        ignored: [
+          '**/node_modules/**',
+          '**/.git/**',
+          '**/logs/**',
+          '**/dist/**',
+          '**/build/**',
+          '**/.next/**',
+        ],
+      };
+    }
+
     // Handle critical dependency warnings
     config.ignoreWarnings = [
       /Critical dependency: the request of a dependency is an expression/,
@@ -220,48 +237,13 @@ const nextConfig = {
       tls: false,
     };
 
-    // Fix Watchpack path resolution issues
-    if (dev && !isServer) {
-      config.watchOptions = {
-        poll: 1000,
-        aggregateTimeout: 300,
-        ignored: [
-          '**/node_modules/**',
-          '**/.git/**',
-          '**/logs/**',
-          '**/dist/**',
-          '**/build/**',
-          '**/.next/**',
-        ],
-      };
-    }
-
-    // Remove usedExports to prevent conflicts with cacheUnaffected
-    if (config.optimization && config.optimization.usedExports) {
-      delete config.optimization.usedExports;
-    }
-
     return config;
   },
   experimental: {
     optimizeCss: process.env.NODE_ENV === 'production',
     optimizePackageImports: ['@chakra-ui/react', 'lucide-react'],
   },
-  // Use turbopack instead of deprecated turbo
-  turbopack: {
-    rules: {
-      '*.svg': {
-        loaders: ['@svgr/webpack'],
-        as: '*.js',
-      },
-    },
-  },
 };
-
-// Remove experimental.esmExternals if it exists to prevent conflicts
-if (nextConfig.experimental && "esmExternals" in nextConfig.experimental) {
-  delete nextConfig.experimental.esmExternals;
-}
 
 export default nextConfig;
 

@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 import type { UserDetails } from '@/types/auth'
 import { useConversationState } from './useConversationState'
 import { useConversations } from './useConversations'
 import  { useMessages }  from './useMessages'
+=======
+import type { UserDetails } from '@/types/auth;'';
+import { useConversationState } from './useConversationState;'';
+import { useConversations } from './useConversations;'';
+import { useMessages } from './useMessages;'
+;
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 /**;
  * Hook that combines all messaging operations;
  */;
@@ -50,6 +58,7 @@ export function useMessagingOperations(): unknown {): unknown {): unknown {): un
     isLoading,;
     // Operations;
     sendMessage,;
+<<<<<<< HEAD
     createConversation,;''
     markAsRead,;''
     fetchConversations,'
@@ -57,6 +66,16 @@ export function useMessagingOperations(): unknown {): unknown {): unknown {): un
   };
 };
 }'
+=======
+    createConversation,;
+    markAsRead,;
+    fetchConversations,;''
+    loadMessages,;
+  };
+};
+;
+};''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 }
-}'
-}'
+}''
+}''

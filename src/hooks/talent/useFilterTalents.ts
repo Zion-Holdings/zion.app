@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState, useMemo } from 'react''
 import  type { TalentProfile }  from '@/types/talent'
 export interface TalentFilterOptions {
@@ -15,6 +16,26 @@ export function useFilterTalents(): unknown {): unknown {): unknown {): unknown 
   initial: TalentFilterOptions = {"},"
 ) {;"
   const [searchTerm, setSearchTerm] = useState(initial.searchTerm || '')'
+=======
+import { useState, useMemo } from 'react';';
+import type { TalentProfile } from '@/types/talent;'
+;
+export interface TalentFilterOptions {;
+  searchTerm?: string;
+  selectedSkills?: string[];
+  selectedAvailability?: string[];
+  selectedRegions?: string[];
+  priceRange?: [number, number];
+  experienceRange?: [number, number];''
+  sortOption?: string;
+};
+;'';
+export function useFilterTalents(): unknown {): unknown {): unknown {): unknown {): unknown {;;
+  talents: "TalentProfile[] = []",;";";";";""
+  initial: "TalentFilterOptions = {"},;";";";""
+) {;";";";";""
+  const [searchTerm, setSearchTerm] = useState(initial.searchTerm || '');'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
   const [selectedSkills, setSelectedSkills] = useState<string[]>(;
     initial.selectedSkills || [],);
   const [selectedAvailability, setSelectedAvailability] = useState<string[]>(;
@@ -22,11 +43,21 @@ export function useFilterTalents(): unknown {): unknown {): unknown {): unknown 
   const [selectedRegions, setSelectedRegions] = useState<string[]>(;
     initial.selectedRegions || [],);
   const [priceRange, setPriceRange] = useState<[number, number]>(;
+<<<<<<< HEAD
     initial.priceRange || [50, 200],)'
   const [experienceRange, setExperienceRange] = useState<[number, number]>('
     initial.experienceRange || [0, 15],)'
   const [sortOption, setSortOption] = useState<string>('
     initial.sortOption || 'relevance','
+=======
+    initial.priceRange || [50, 200],;
+  );''
+  const [experienceRange, setExperienceRange] = useState<[number, number]>(;
+    initial.experienceRange || [0, 15],;
+  );''
+  const [sortOption, setSortOption] = useState<string>(;;
+    initial.sortOption || 'relevance',;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
   );
   const toggleSkill = (_skill: string) => {;
     setSelectedSkills((prev) =>;
@@ -44,6 +75,7 @@ export function useFilterTalents(): unknown {): unknown {): unknown {): unknown 
     setSelectedRegions((prev) =>;
       prev.includes(region);
         ? prev.filter((r) => r !== region);
+<<<<<<< HEAD
         : [...prev, region],'
     )'
   };
@@ -56,6 +88,20 @@ export function useFilterTalents(): unknown {): unknown {): unknown {): unknown 
     setPriceRange([50, 200])'
     setExperienceRange([0, 15])'
     setSortOption('relevance')'
+=======
+        : [...prev, region],;''
+    );
+  };
+;''
+  const clearFilters: unknown = () => {;;
+    setSearchTerm('');'
+    setSelectedSkills([]);''
+    setSelectedAvailability([]);
+    setSelectedRegions([]);
+    setPriceRange([50, 200]);''
+    setExperienceRange([0, 15]);;
+    setSortOption('relevance');'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
   };
   // Filter and sort talents;
   const filteredTalents = useMemo(() => {;
@@ -82,12 +128,21 @@ export function useFilterTalents(): unknown {): unknown {): unknown {): unknown 
           ),;
         ),;
       );
+<<<<<<< HEAD
     }'
 '
     // Filter by availability;
     if (selectedAvailability.length > 0) {'
       result = result.filter((talent) =>'
         selectedAvailability.includes(talent.availability_type || ''),'
+=======
+    };''
+;
+    // Filter by availability;
+    if (selectedAvailability.length > 0) {;''
+      result = result.filter((talent) =>;;
+        selectedAvailability.includes(talent.availability_type || ''),;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
       );
     };
     // Filter by location/region;
@@ -103,6 +158,7 @@ export function useFilterTalents(): unknown {): unknown {): unknown {): unknown 
     });
     // Filter by experience range;
     result = result.filter((talent) => {;
+<<<<<<< HEAD
       const years = talent.years_experience || 0;
       return years >= experienceRange[0] && years <= experienceRange[1]'
     })'
@@ -120,6 +176,26 @@ export function useFilterTalents(): unknown {): unknown {): unknown {): unknown 
         )'
         break'
       case 'experience':'
+=======
+      const years: unknown = talent.years_experience || 0;
+      return years >= experienceRange[0] && years <= experienceRange[1];''
+    });
+;
+    // Sort talents;''
+    switch (sortOption) {;;
+      case 'price-low':;'
+        result.sort((a, b) => (a.hourly_rate || 0) - (b.hourly_rate || 0));''
+        break;;
+      case 'price-high':;'
+        result.sort((a, b) => (b.hourly_rate || 0) - (a.hourly_rate || 0));''
+        break;;
+      case 'rating':;''
+        result.sort(;
+          (a, b) => (b.average_rating || 0) - (a.average_rating || 0),;
+        );''
+        break;;
+      case 'experience':;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
         result.sort(;
           (a, b) => (b.years_experience || 0) - (a.years_experience || 0),;
         );
@@ -154,11 +230,20 @@ export function useFilterTalents(): unknown {): unknown {): unknown {): unknown 
     setSortOption,;
     toggleSkill,;
     toggleAvailability,;
+<<<<<<< HEAD
     toggleRegion,'
     clearFilters,'
   };
 };
 }'
+=======
+    toggleRegion,;''
+    clearFilters,;
+  };
+};
+;
+};''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 }
-}'
-}'
+}''
+}''

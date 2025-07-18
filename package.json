@@ -7,7 +7,7 @@
     "deploy-zion-ipfs": "scripts/deploy-zion-ipfs.js"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096' next dev",
     "dev:quiet": "npm run env:dev && NEXT_PRIVATE_SKIP_SIZE_WARN=1 next dev",
     "dev:verbose": "npm run env:dev && DEBUG=* next dev",
     "dev:monitor": "npm run env:dev && node scripts/performance-monitor.cjs && next dev",
@@ -338,6 +338,7 @@
     "automation:trigger:ai": "curl -X POST http://localhost:3002/improve -H 'Content-Type: application/json' -d '{\"target\":\"general\",\"priority\":\"normal\"}'",
     "automation:distribute:workload": "curl -X POST http://localhost:3003/api/tasks/submit -H 'Content-Type: application/json' -d '{\"task\":\"Fix all issues\",\"priority\":\"high\"}'",
     "build:optimize": "node scripts/replace-console-statements.cjs && npm run lint -- --fix && npm run build",
+<<<<<<< HEAD
     "automation:multi-computer": "node scripts/multi-computer-automation.cjs",
     "automation:cursor": "node scripts/cursor-controller.cjs",
     "automation:improvement": "node scripts/automated-app-improvement.cjs",
@@ -352,6 +353,13 @@
     "improvement:start": "node scripts/automated-app-improvement.cjs",
     "improvement:stop": "pkill -f \"automated-app-improvement.cjs\"",
     "improvement:status": "ps aux | grep automated-app-improvement || echo 'No improvement process found'"
+=======
+    "improve:all": "node scripts/automated-app-improvement.cjs",
+    "dev:fix": "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096 --experimental-loader=@next/swc-darwin-x64' next dev",
+    "auto-commit": "node scripts/auto-commit-improvements.cjs",
+    "auto-deploy": "node scripts/auto-deploy-to-netlify.cjs",
+    "fix-watchpack": "node scripts/fix-watchpack-issue.cjs"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

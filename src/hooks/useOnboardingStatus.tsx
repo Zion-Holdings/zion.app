@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState, useEffect } from 'react';
 import { useAuth } from './useAuth'
 import { supabase } from '@/integrations/supabase/client'
@@ -58,10 +59,74 @@ export function useOnboardingStatus(): ;"
       } catch {;"
         logErrorToProduction('Error in onboarding status hook:', {;
           data: error,;
+=======
+import { useState, useEffect } from 'react';';
+import { useAuth } from './useAuth;'';
+import { supabase } from '@/integrations/supabase/client;'';
+import { logErrorToProduction } from '@/utils/productionLogger;'
+;''
+interface OnboardingStatus {;;
+  profileCompleted: "boolean;",;";";";";""
+  skillsAdded: "boolean;",";";";";""
+  availabilitySet: "boolean;",;";";";";""
+  matchReceived: "boolean;",";";";";""
+  jobPosted: "boolean;",;";";";";""
+  inviteSent: "boolean;",";";";";""
+  responseReceived: "boolean;";"
+};""
+;";"";
+export function useOnboardingStatus(): unknown {): unknown {): unknown {): unknown {): unknown {) {;";";""
+  const { _user } = useAuth();";";";""
+  const [status, setStatus] = useState<OnboardingStatus>({;";";";";""
+    profileCompleted: "false",;";";";";""
+    skillsAdded: "false",;";";";";""
+    availabilitySet: "false",;";";";";""
+    matchReceived: "false",;";";";";""
+    jobPosted: "false",;";";";";""
+    inviteSent: "false",;";";";";""
+    responseReceived: "false",;"
+  });
+;
+  useEffect(() => {;""
+    const fetchOnboardingStatus: unknown = async () => {;";""
+      if (!user) return;";";""
+;";";";""
+      try {;";";";";""
+        if (!supabase) throw new Error('Supabase client not initialized');'
+        // Get user onboarding progress from database;''
+        const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;;
+          .from('user_onboarding');;'
+          .select('*');;'
+          .eq('user_id', user.id);'
+          .single();
+;''
+        if (error) {;;
+          logErrorToProduction('Error fetching onboarding status:', {;;'
+            data: "error",;"
+          });
+          return;""
+        };";""
+;";";""
+        if (data) {;";";";""
+          setStatus({;";";";";""
+            profileCompleted: "data.profile_completed || false",;";";";";""
+            skillsAdded: "data.skills_added || false",;";";";";""
+            availabilitySet: "data.availability_set || false",;";";";";""
+            matchReceived: "data.match_received || false",;";";";";""
+            jobPosted: "data.job_posted || false",;";";";";""
+            inviteSent: "data.talent_invited || false",;";";";";""
+            responseReceived: "data.quote_received || false",;";""
+          });";";""
+        };";";";""
+      } catch {;";";";";""
+        logErrorToProduction('Error in onboarding status hook:', {;;'
+          data: "error",;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
         });
       };
     };
     fetchOnboardingStatus();
+<<<<<<< HEAD
   }, [user]);"
 ;";"
   return status;"
@@ -71,3 +136,14 @@ export function useOnboardingStatus(): ;"
 }";"
 }"
 }"
+=======
+  }, [user]);""
+;";""
+  return status;";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f

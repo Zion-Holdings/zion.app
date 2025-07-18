@@ -1,2 +1,2 @@
-export { default } from '@/pages/OffworldLab';';';';'
-'''''
+export { default } from '@/pages/OffworldLab';';';';''
+''''''

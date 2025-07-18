@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useRouter } from 'next/router'
 import React, { useState, useEffect } from 'react';
 import { X } from '@/components/ui/icons'
@@ -24,6 +25,36 @@ import {;;
 } from '@/components/ui/pagination;
 export default function TalentDirectory(): ;
   const router = useRouterReady(); // Use our custom hook;
+=======
+import { useRouter } from 'next/router;'';
+import React, { useState, useEffect } from 'react';';
+import { X } from '@/components/ui/icons;'';
+import Link from 'next/link;'';
+import { useAuth } from '@/hooks/useAuth;'';
+import { useRouterReady, useRouteChange } from '@/hooks/useRouterReady;'';
+import { FilterSidebar } from '@/components/talent/FilterSidebar;'';
+import { TalentResults } from '@/components/talent/TalentResults;'';
+import { TalentSkeleton } from '@/components/talent/TalentSkeleton;'';
+import { ErrorBanner } from '@/components/talent/ErrorBanner;'';
+import ErrorBoundary from '@/components/GlobalErrorBoundary // Import ErrorBoundary;;';
+import { useTalentDirectory } from '@/hooks/useTalentDirectory;'';
+import { SORT_OPTIONS } from '@/data/sortOptions;'
+;;
+import { Button } from '@/components/ui/button;'';
+import Image from 'next/image;'';
+import type { TalentProfile } from '@/types/talent;';
+import {;
+  Pagination,;
+  PaginationContent,;''
+  PaginationItem,;
+  PaginationButton,;
+  PaginationNext,;''
+  PaginationPrevious,;;
+} from '@/components/ui/pagination;'
+;
+export default function TalentDirectory(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
+  const router: unknown = useRouterReady(); // Use our custom hook;
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
   const [initialized, setInitialized] = useState(false);
@@ -60,6 +91,7 @@ export default function TalentDirectory(): ;
     toggleSection,; } = useTalentDirectory(currentPage, itemsPerPage);
   // Local state for modal and selected talent;
   const [_isHireModalOpen, setIsHireModalOpen] = useState(false);
+<<<<<<< HEAD
   const [_selectedTalent, setSelectedTalent] = useState<TalentProfile | null>('
     null,;
   );
@@ -71,6 +103,22 @@ export default function TalentDirectory(): ;
   }, [filteredTalents, total])
   const totalPages = Math.ceil(total / itemsPerPage);
   const paginatedTalents = filteredTalents;
+=======
+  const [_selectedTalent, setSelectedTalent] = useState<TalentProfile | null>(;''
+    null,;
+  );
+;''
+  const { user } = useAuth();;
+  const isAdmin: unknown = user?.userType === 'admin;'
+;
+  useEffect(() => {;
+    setCurrentPage(1);
+  }, [filteredTalents, total]);
+;
+  const totalPages: unknown = Math.ceil(total / itemsPerPage);
+  const paginatedTalents: unknown = filteredTalents;
+;
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
   // Load filters from query parameters on first load;
   useEffect(() => {;
     if (!router.isReady || initialized) return;
@@ -84,6 +132,7 @@ export default function TalentDirectory(): ;
       expMin,;
       expMax,;
       sort,;
+<<<<<<< HEAD
       page,' } = router.query as Record<string, string>;
     if (page) setCurrentPage(parseInt(page, 10) || 1)'
     if (search) setSearchTerm(search);
@@ -91,6 +140,17 @@ export default function TalentDirectory(): ;
     if (availability);
       availability.split(',').forEach((a) => toggleAvailability(a));
     if (regions) regions.split(',').forEach((r) => toggleRegion(r));
+=======
+      page,;''
+    } = router.query as Record<string, string>;
+;
+    if (page) setCurrentPage(parseInt(page, 10) || 1);''
+    if (search) setSearchTerm(search);;
+    if (skills) skills.split(',').forEach((s) => toggleSkill(s));''
+    if (availability);;
+      availability.split(',').forEach((a) => toggleAvailability(a));;'
+    if (regions) regions.split(',').forEach((r) => toggleRegion(r));'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
     if (priceMin && priceMax);
       setPriceRange([Number(priceMin), Number(priceMax)]);
     if (expMin && expMax) setExperienceRange([Number(expMin), Number(expMax)]);
@@ -108,6 +168,7 @@ export default function TalentDirectory(): ;
     setExperienceRange,;
     setSortOption,;
   ]);
+<<<<<<< HEAD
 '
   // Persist filters to query parameters;
   useEffect(() => {;
@@ -132,6 +193,32 @@ export default function TalentDirectory(): ;
 ;
     router.replace({ pathname: router.pathname, query }, undefined, {;"
       shallow: true,;
+=======
+;''
+  // Persist filters to query parameters;
+  useEffect(() => {;
+    if (!initialized || !router.isReady) return;''
+;;
+    const query: unknown "Record<string", string> = {};";";";""
+    if (searchTerm) query.search = searchTerm;";";";";""
+    if (selectedSkills.length) query.skills = selectedSkills.join(',');''
+    if (selectedAvailability.length);;
+      query.availability = selectedAvailability.join(',');;'
+    if (selectedRegions.length) query.regions = selectedRegions.join(',');'
+    if (priceRange[0] !== 50 || priceRange[1] !== 200) {;
+      query.priceMin = String(priceRange[0]);
+      query.priceMax = String(priceRange[1]);
+    };''
+    if (experienceRange[0] !== 0 || experienceRange[1] !== 15) {;
+      query.expMin = String(experienceRange[0]);
+      query.expMax = String(experienceRange[1]);''
+    };;
+    if (sortOption !== 'relevance') query.sort = sortOption;'
+    if (currentPage > 1) query.page = String(currentPage);''
+;;
+    router.replace({ pathname: "router.pathname", query }, undefined, {;";";";";""
+      shallow: "true",;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
     });
   }, [;
     router.isReady,;
@@ -159,6 +246,7 @@ export default function TalentDirectory(): ;
   };
   const viewProfile = (id: string) => {;
     // Navigate to the talent profile page;
+<<<<<<< HEAD
     router.push(`/talent/${id}`); // Changed to router.push;"
   };";"
 ;"
@@ -168,6 +256,17 @@ export default function TalentDirectory(): ;
   if (isLoading) {;"
     return (;"
       <div key={pageKey} className="container mx-auto px-4 py-8">;
+=======
+    router.push(`/talent/${id}`); // Changed to router.push;""
+  };";""
+;";";""
+  // Add key prop to force re-render when route changes;";";";""
+  const pageKey: unknown "unknown = `talent-directory-${routeKey"}-${router.asPath}`;";""
+;";";""
+  if (isLoading) {;";";";""
+    return (;";";";";""
+      <div key={pageKey} className="container mx-auto px-4 py-8">;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
         <TalentSkeleton />;
       </div>;
     );
@@ -181,6 +280,7 @@ export default function TalentDirectory(): ;
     selectedAvailability.length === 0 &&;
     selectedRegions.length === 0 &&;
     priceRange[0] === 50 &&;
+<<<<<<< HEAD
     priceRange[1] === 200 &&;"
     experienceRange[0] === 0 &&;";"
     experienceRange[1] === 15;"
@@ -203,11 +303,36 @@ export default function TalentDirectory(): ;
           </p>;"
           <Link href="/create-talent-profile">;"
             <Button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white">;
+=======
+    priceRange[1] === 200 &&;""
+    experienceRange[0] === 0 &&;";""
+    experienceRange[1] === 15;";";""
+  ) {;";";";""
+    return (;";";";";""
+      <div key={pageKey} className="container mx-auto px-4 py-8">;";";";";""
+        <div className="text-center py-16">;";";";""
+          <Image;";";";";""
+            src="/images/talent-placeholder.svg";";";";";""
+            alt="No talent";";";""
+            width={200};";";";""
+            height={200};";";";";""
+            className="mx-auto mb-6";";";";""
+          />;";";";";""
+          <h2 className="text-2xl font-bold text-white mb-4">;";";""
+            Talent Directory Currently Empty;";";";""
+          </h2>;";";";";""
+          <p className="text-zion-slate-light max-w-md mx-auto mb-6">;";";""
+            No talent profiles are currently available.;";";";""
+          </p>;";";";";""
+          <Link href="/create-talent-profile">;";";";";""
+            <Button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white">;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
               Be the first to list a talent;
             </Button>;
           </Link>;
         </div>;
       </div>;
+<<<<<<< HEAD
     );"
   };";"
 ;"
@@ -246,6 +371,46 @@ export default function TalentDirectory(): ;
         <div className="flex flex-col lg:flex-row gap-6">;"
           {/* Sidebar - Desktop */};"
           <div className="w-full lg:w-64 shrink-0 hidden lg:block">;
+=======
+    );""
+  };";""
+;";";""
+  if (error) {;";";";""
+    return (;";";";";""
+      <div key={pageKey} className="container mx-auto px-4 py-8">;";";";";""
+        <ErrorBanner msg="Unable to load talent profiles." />;"
+      </div>;""
+    );";""
+  };";";""
+;";";";""
+  return (;";";";";""
+    <div key={pageKey} className="container mx-auto px-4 py-8">;";";";";""
+      <div className="flex flex-col space-y-8">;";";";";""
+        <div className="flex items-start justify-between">;";";";""
+          <div>;";";";";""
+            <h1 className="text-3xl font-bold text-white mb-2">;";";""
+              AI & Tech Talent Directory;";";";""
+            </h1>;";";";";""
+            <p className="text-zion-slate-light">;"
+              Connect with expert AI developers, data scientists, ML engineers,;
+              and tech professionals for your projects.;""
+            </p>;";""
+          </div>;";";""
+          {isAdmin && (;";";";""
+            <Link;";";";";""
+              href="/create-talent-profile";";";";";""
+              className="bg-zion-purple text-white px-4 py-2 rounded hover:bg-zion-purple-dark";"
+            >;
+              Add Talent;
+            </Link>;""
+          )};";""
+        </div>;";";""
+;";";";""
+        {/* Main content */};";";";";""
+        <div className="flex flex-col lg:flex-row gap-6">;";";";""
+          {/* Sidebar - Desktop */};";";";";""
+          <div className="w-full lg:w-64 shrink-0 hidden lg:block">;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
             <FilterSidebar;
               searchTerm={searchTerm};
               setSearchTerm={setSearchTerm};
@@ -263,6 +428,7 @@ export default function TalentDirectory(): ;
               toggleSection={toggleSection};
               sortOption={sortOption};
               setSortOption={setSortOption};
+<<<<<<< HEAD
               clearFilters={clearFilters};"
             />;";"
           </div>;"
@@ -281,6 +447,26 @@ export default function TalentDirectory(): ;
           {/* Results and Pagination Wrapper for ErrorBoundary */};"
           <div className="flex-1">;"
             {' '};
+=======
+              clearFilters={clearFilters};""
+            />;";""
+          </div>;";";""
+;";";";""
+          {/* Mobile filter button */};";";";";""
+          <div className="lg:hidden mb-4">;";";""
+            <Button;";";";""
+              onClick={() => setIsMobileFilterOpen(true)};";";";";""
+              variant="outline";";";";";""
+              className="w-full border-zion-blue-light text-zion-purple hover:bg-zion-blue-light";"
+            >;
+              Filter & Sort;""
+            </Button>;";""
+          </div>;";";""
+;";";";""
+          {/* Results and Pagination Wrapper for ErrorBoundary */};";";";";""
+          <div className="flex-1">;";";";";""
+            {' '};'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
             {/* Added a wrapper div to contain Results and Pagination */};
             <ErrorBoundary>;
               <TalentResults;
@@ -301,6 +487,7 @@ export default function TalentDirectory(): ;
                   setPriceRange,;
                   experienceRange,;
                   setExperienceRange,;
+<<<<<<< HEAD
                   clearFilters,'
                 }};
               />;
@@ -308,17 +495,35 @@ export default function TalentDirectory(): ;
               {totalPages > 1 && (;
                 <div className="mt-6">;"
                   <Pagination className="justify-center">;
+=======
+                  clearFilters,;''
+                }};
+              />;
+;''
+              {totalPages > 1 && (;;
+                <div className="mt-6">;";";";";""
+                  <Pagination className="justify-center">;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
                     <PaginationContent>;
                       <PaginationItem>;
                         <PaginationPrevious;
                           href={`?page=${currentPage - 1}`};
                           onClick={(e) => {;
+<<<<<<< HEAD
                             e.preventDefault();"
                             setCurrentPage(Math.max(1, currentPage - 1));";"
                           }};"
                         />;"
                       </PaginationItem>;"
                       {Array.from({ length: "totalPages "}, (_, i) => i + 1).map(;
+=======
+                            e.preventDefault();""
+                            setCurrentPage(Math.max(1, currentPage - 1));";""
+                          }};";";""
+                        />;";";";""
+                      </PaginationItem>;";";";";""
+                      {Array.from({ length: "totalPages "}, (_, i) => i + 1).map(;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
                         (page) => (;
                           <PaginationItem key={page}>;
                             <PaginationButton;
@@ -347,6 +552,7 @@ export default function TalentDirectory(): ;
                   </Pagination>;
                 </div>;
               )};
+<<<<<<< HEAD
             </ErrorBoundary>;"
           </div>;";"
 ;"
@@ -364,6 +570,25 @@ export default function TalentDirectory(): ;
                   >;"
                     <X className="h-4 w-4" />;"
                     <span className="sr-only">Close</span>;
+=======
+            </ErrorBoundary>;""
+          </div>;";""
+;";";""
+          {/* Mobile filter sidebar */};";";";""
+          {isMobileFilterOpen && (;";";";";""
+            <div className="fixed inset-0 bg-black bg-opacity-50 z-50 lg:hidden flex">;";";";";""
+              <div className="w-80 h-full bg-zion-blue-dark overflow-y-auto p-4 ml-auto">;";";";";""
+                <div className="flex justify-between items-center mb-4">;";";";";""
+                  <h3 className="font-bold text-white">Filter & Sort</h3>;";";";""
+                  <Button;";";";";""
+                    variant="ghost";";";";";""
+                    size="sm";";";";""
+                    onClick={() => setIsMobileFilterOpen(false)};";";";";""
+                    className="text-zion-slate-light h-8 w-8 p-0";";";";""
+                  >;";";";";""
+                    <X className="h-4 w-4" />;";";";";""
+                    <span className="sr-only">Close</span>;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
                   </Button>;
                 </div>;
                 <FilterSidebar;
@@ -390,6 +615,7 @@ export default function TalentDirectory(): ;
             </div>;
           )};
         </div>;
+<<<<<<< HEAD
       </div>;"
     </div>;";"
   );"
@@ -398,6 +624,16 @@ export default function TalentDirectory(): ;
 TalentDirectory.displayName = 'TalentDirectory;
 
 }'
+=======
+      </div>;""
+    </div>;";""
+  );";";""
+};";";";""
+;";";";";""
+TalentDirectory.displayName = 'TalentDirectory;'
+
+};''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 }
-}'
-}'
+}''
+}''

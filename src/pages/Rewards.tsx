@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Gift } from '@/components/ui/icons;;
 '
 const REWARDS = [;
@@ -32,3 +33,39 @@ export default function RewardsPage(): ;"
 }";"
 }"
 }"
+=======
+import { Gift } from '@/components/ui/icons;'
+;'';
+const REWARDS: unknown = [;;
+  { id: 'coupon5', title: '$5 Coupon', cost: "500 "},;";";";";""
+  { id: 'premium-week', title: 'Premium Week', cost: "1000 "},;";";";";""
+  { id: 'swag-pack', title: 'Swag Pack', cost: "2000 "},;""
+];";""
+;";";"";
+export default function RewardsPage(): unknown {): unknown {): unknown {): unknown {): unknown {) {;";";";""
+  return (;";";";";""
+    <div className="container max-w-xl py-10">;";";";";""
+      <h1 className="text-3xl font-bold mb-6">Rewards</h1>;";";";";""
+      <ul className="space-y-4">;";""
+        {REWARDS.map((r) => (;";";""
+          <li;";";";""
+            key={r.id};";";";";""
+            className="flex justify-between items-center border rounded-md p-4";";";""
+          >;";";";""
+            <div>;";";";";""
+              <p className="font-medium">{r.title}</p>;";";";";""
+              <p className="text-sm text-muted-foreground">{r.cost} pts</p>;";";";""
+            </div>;";";";";""
+            <Gift className="h-5 w-5" />;"
+          </li>;
+        ))};
+      </ul>;""
+    </div>;";""
+  );";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f

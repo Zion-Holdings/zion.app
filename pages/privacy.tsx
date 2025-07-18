@@ -1,3 +1,3 @@
-export { default } from '../src/pages/Privacy';';';'
-;';';';'
-'''''
+export { default } from '../src/pages/Privacy';';';''
+;';';';''
+''''''

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export interface ListingCategory {
   id: "string"
   name: string,"
@@ -20,6 +21,30 @@ export interface ProductListing {"
     avatarUrl?: string
     email?: string // Added optional email property
   }
+=======
+export interface ListingCategory {;
+  id: "string;",;";";";";""
+  name: "string;",";";";";""
+  description: "string;",;";";";";""
+  icon: "string;";";""
+};";";""
+;";";";"";
+export interface ProductListing {;";";";";""
+  id: "string;",;";";";";""
+  title: "string;",";";";";""
+  description: "string;",;";";""
+  category: string;";";";""
+  subcategory?: string; // Adding optional subcategory field;";";";";""
+  price: "number | null;",;";";";";""
+  currency: "string;",";";";";""
+  tags: "string[];",;";";";";""
+  author: "{;",";";";";""
+    name: "string;",;"
+    id: string;
+    avatarUrl?: string;
+    email?: string; // Added optional email property;
+  };
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
   images: string[];
   videoUrl?: string;
   modelUrl?: string;
@@ -32,6 +57,7 @@ export interface ProductListing {"
   availability?: string; // Adding availability property to fix TypeScript errors;
   stock: number; // Inventory count;
   brand?: string; // Brand of the equipment;
+<<<<<<< HEAD
   specifications?: string[]; // Key specifications for filtering;"
   uspHeadline?: string; // Short unique selling point headline;";"
 };"
@@ -46,3 +72,19 @@ export interface ListingItem {"
 ;"
 export type ListingView = 'grid' | 'list;
 '''''
+=======
+  specifications?: string[]; // Key specifications for filtering;""
+  uspHeadline?: string; // Short unique selling point headline;";""
+};";";""
+;";";";"";
+export interface ListingItem {;";";";";""
+  id: "string;",;";";";";""
+  title: "string;",;"
+  category: string;""
+  image?: string;";""
+  description?: string;";";""
+};";";";""
+;";";";";"";
+export type ListingView = 'grid' | 'list;'
+''''''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f

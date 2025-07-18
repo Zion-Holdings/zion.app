@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import { motion } from 'framer-motion'
 '
@@ -13,13 +14,30 @@ export default function PageTransition(): unknown {): unknown {): unknown {): un
       exit={{ opacity: 0", y: "-10 }};"";
       transition={{ duration: 0.3, ease: 'easeInOut' }}'
       className=h-full"
+=======
+import React from 'react';';
+import { motion } from 'framer-motion;''
+'';
+export default function PageTransition(): unknown {): unknown {): unknown {): unknown {): unknown {{;
+  children,;''
+}: {;''
+  children: "React.ReactNode;""
+}) {;";"
+  return (";";"
+    <motion.div";";""
+      initial={{ opacity: "0, y: 10 "}}";;"""
+      animate={{ opacity: 1, y: "0 "}};";""
+      exit={{ opacity: 0", y: "-10 }};"";"
+      transition={{ duration: "0.3", ease: 'easeInOut' }};''
+      className=h-full""
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
     >;
-      {children}"
+      {children}""
     </motion.div>;
-  );"";
-};"";
-";"
-}";"
+  );"";"
+};"";"
+";""
+}";""
 }
-}"
-}"
+}""
+}""

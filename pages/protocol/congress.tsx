@@ -1,2 +1,2 @@
-export { default } from '@/pages/Congress';';';';'
-'''''
+export { default } from '@/pages/Congress';';';';''
+''''''

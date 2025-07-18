@@ -1,2 +1,2 @@
-export { default } from '@/pages/Signup';';';';'
-'''''
+export { default } from '@/pages/Signup';';';';''
+''''''

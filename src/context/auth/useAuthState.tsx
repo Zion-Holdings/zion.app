@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 import { useState } from 'react''
 import  type { UserDetails }  from '@/types/auth'
+=======
+import { useState } from 'react';';
+import type { UserDetails } from '@/types/auth;'
+;
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 /**;
  * Custom hook to manage auth state;
  */;
@@ -19,6 +25,7 @@ export function useAuthState(): ;
     setIsLoading,;
     onboardingStep,;
     setOnboardingStep,;
+<<<<<<< HEAD
     tokens,;''
     setTokens,;''
     avatarUrl,'
@@ -26,6 +33,16 @@ export function useAuthState(): ;
   };
 };
 }'
+=======
+    tokens,;
+    setTokens,;
+    avatarUrl,;''
+    setAvatarUrl,;
+  };
+};
+;
+};''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 }
-}'
-}'
+}''
+}''

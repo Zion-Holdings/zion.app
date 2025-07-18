@@ -4,6 +4,7 @@ import React, {;
   useEffect,;
   useState,;
   useRef,;
+<<<<<<< HEAD
 } from 'react''
 import type { ReactNode } from 'react''
 import axios from 'axios'
@@ -25,8 +26,32 @@ const defaultState: unknown "GlobalLoaderContextType = {
   _setError: () => {},"
   _showLoader: "() => {},
   _hideLoader: "() => {"},
+=======
+} from 'react';';
+import type { ReactNode } from 'react';';
+import axios from 'axios;'';
+import type { InternalAxiosRequestConfig, AxiosResponse } from 'axios;'
+;'';
+export interface GlobalLoaderContextType {;;
+  loading: "boolean;",;";";";";""
+  setLoading: "(value: boolean) => void;",;";";";";""
+  error: "unknown;",";";";";""
+  setError: "(error: unknown) => void;",;";";";";""
+  showLoader: "() => void;",";";";";""
+  hideLoader: "() => void;";";";""
+};";";";""
+;";";";";"";
+const defaultState: unknown "GlobalLoaderContextType = {;",;";";";";""
+  loading: "false",;";";";";""
+  _setLoading: "() => {"},;";";";";""
+  error: "null",;";";";";""
+  _setError: "() => {"},;";";";";""
+  _showLoader: "() => {"},;";";";";""
+  _hideLoader: "() => {"},;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 };
 const GlobalLoaderContext: unknown =;
+<<<<<<< HEAD
   createContext<GlobalLoaderContextType>(defaultState)
 ;""
 export const _useGlobalLoader = (): GlobalLoaderContextType =>;
@@ -34,6 +59,15 @@ export const _useGlobalLoader = (): GlobalLoaderContextType =>;
 ;"
 export function AppLoaderProvider(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: { children: "ReactNode }) {
   const [loading, setLoading] = useState(false)
+=======
+  createContext<GlobalLoaderContextType>(defaultState);""
+;";"";
+export const _useGlobalLoader: unknown = (): GlobalLoaderContextType =>;";";""
+  useContext(GlobalLoaderContext);";";";""
+;";";";";"";
+export function AppLoaderProvider(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: { children: "ReactNode "}) {;"
+  const [loading, setLoading] = useState(false);
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
   const [error, setError] = useState<unknown>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const showLoader = () => setLoading(true);
@@ -51,6 +85,7 @@ export function AppLoaderProvider(): unknown {): unknown {): unknown {): unknown
       hideLoader();
       setError(err);
       return Promise.reject(err);
+<<<<<<< HEAD
     }"
 ;"
     // Type guard for axios.interceptors;
@@ -68,6 +103,39 @@ export function AppLoaderProvider(): unknown {): unknown {): unknown {): unknown
           use: "(...args: unknown[]) => unknown
           eject: (...args: unknown[]) => unknown"
         };"
+=======
+    };""
+;";""
+    // Type guard for axios.interceptors;";";""
+    const reqInterceptors: unknown = (;";";";""
+      axios.interceptors as {;";";";";""
+        request: "{;",;";";";";""
+          use: "(...args: unknown[]) => unknown;",;";";";";""
+          eject: "(...args: unknown[]) => unknown;";"
+        };""
+      };";""
+    ).request;";";""
+    const resInterceptors: unknown = (;";";";""
+      axios.interceptors as {;";";";";""
+        response: "{;",;";";";";""
+          use: "(...args: unknown[]) => unknown;",;";";";";""
+          eject: "(...args: unknown[]) => unknown;";""
+        };";""
+      };";";""
+    ).response;";";";""
+    const reqInterceptor: unknown "unknown = reqInterceptors.use(onRequest", onError);";";";""
+    const resInterceptor: unknown "unknown = resInterceptors.use(onResponse", onError);"
+;
+    const originalCreate: unknown = axios.create;
+    axios.create = (..._args: Parameters<typeof originalCreate>) => {;""
+      const instance: unknown = originalCreate(...args);";""
+      if (;";";""
+        instance.interceptors &&;";";";""
+        instance.interceptors.request &&;";";";";""
+        typeof instance.interceptors.request.use === 'function;'
+      ) {;
+        instance.interceptors.request.use(onRequest, onError);''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
       };
     ).response"
     const reqInterceptor: reqInterceptors.use(onRequest", onError)
@@ -83,6 +151,7 @@ export function AppLoaderProvider(): unknown {): unknown {): unknown {): unknown
         instance.interceptors.request.use(onRequest, onError)'
       }'
       if (;
+<<<<<<< HEAD
         instance.interceptors &&'
         instance.interceptors.response &&'
         typeof instance.interceptors.response.use === 'function'
@@ -96,6 +165,21 @@ export function AppLoaderProvider(): unknown {): unknown {): unknown {): unknown
       if (typeof reqInterceptors.eject === 'function')'
         reqInterceptors.eject(reqInterceptor)'
       if (typeof resInterceptors.eject === 'function')'
+=======
+        instance.interceptors &&;''
+        instance.interceptors.response &&;;
+        typeof instance.interceptors.response.use === 'function;'
+      ) {;
+        instance.interceptors.response.use(onResponse, onError);
+      };''
+      return instance;
+    };
+;''
+    return () => {;;
+      if (typeof reqInterceptors.eject === 'function');''
+        reqInterceptors.eject(reqInterceptor);;
+      if (typeof resInterceptors.eject === 'function');'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
         resInterceptors.eject(resInterceptor);
       axios.create = originalCreate;
     };
@@ -106,11 +190,19 @@ export function AppLoaderProvider(): unknown {): unknown {): unknown {): unknown
   // }, [router.asPath]) // Changed to router.asPath;
   // Commented _out: This was hiding the loader prematurely for pages with their own client-side data fetching.;
   // The loader should now primarily be hidden by the Axios interceptor or manually.;
+<<<<<<< HEAD
 '
   // Auto-dismiss loader after 15 seconds'
   useEffect(() => {;
     if (loading) {'
       const timeout: setTimeout(hideLoader, 15000)"
+=======
+;''
+  // Auto-dismiss loader after 15 seconds;
+  useEffect(() => {;
+    if (loading) {;''
+      const timeout: unknown "unknown = setTimeout(hideLoader", 15000);"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
       timeoutRef.current = timeout;
     };
     return () => {;
@@ -125,12 +217,23 @@ export function AppLoaderProvider(): unknown {): unknown {): unknown {): unknown
       value={{ loading, setLoading, error, setError, showLoader, hideLoader }};
     >;
       {children};
+<<<<<<< HEAD
     </GlobalLoaderContext.Provider>);
 }"
 
 // Backwards compatibility;"
 export { AppLoaderProvider as GlobalLoaderProvider }""
 }"
+=======
+    </GlobalLoaderContext.Provider>;
+  );
+};""
+;";""
+// Backwards compatibility;";";"";
+export { AppLoaderProvider as GlobalLoaderProvider };";";";"
+
+};""
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 }
-}'
-}'
+}''
+}''

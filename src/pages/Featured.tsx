@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Header } from '@/components/Header'
 import { FeaturedListingsSection } from '@/components/FeaturedListingsSection'
 import { GradientHeading } from '@/components/GradientHeading;;
@@ -16,6 +17,26 @@ export default function Featured(): ;
               Featured Listings;"
             </GradientHeading>;"
             <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">;
+=======
+import { Header } from '@/components/Header;'';
+import { FeaturedListingsSection } from '@/components/FeaturedListingsSection;'';
+import { GradientHeading } from '@/components/GradientHeading;'
+;'';
+export default function Featured(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
+  return (;
+    <>;''
+      <Header />;;
+      <div className="min-h-screen bg-zion-blue">;";";";";""
+        <div className="container mx-auto px-4 py-12">;";";";";""
+          <div className="text-center mb-12">;";";";""
+            <GradientHeading;";";";";""
+              level="h1";";";";";""
+              className="text-4xl md:text-5xl font-bold mb-4";";""
+            >;";";""
+              Featured Listings;";";";""
+            </GradientHeading>;";";";";""
+            <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
               Discover our handpicked selection of premium AI products and;
               services. These featured listings represent the best that the Zion;
               Marketplace has to offer.;
@@ -24,6 +45,7 @@ export default function Featured(): ;
           {/* Reuse the FeaturedListings component */};
           <FeaturedListingsSection showTitle={false} />;
         </div>;
+<<<<<<< HEAD
       </div>;"
     </>;";"
   );"
@@ -33,3 +55,14 @@ export default function Featured(): ;
 }";"
 }"
 }"
+=======
+      </div>;""
+    </>;";""
+  );";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f

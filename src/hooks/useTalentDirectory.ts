@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useAuthStatus } from './talent/useAuthStatus'
 import { useTalentData } from './talent/useTalentData'
 import { useFilterTalents } from './talent/useFilterTalents'
@@ -8,6 +9,18 @@ export function useTalentDirectory(): unknown {): unknown {): unknown {): unknow
   page = 1,'
   limit = 12,;
   initialFilters: "TalentFilterOptions = {"},;
+=======
+import { useAuthStatus } from './talent/useAuthStatus;'';
+import { useTalentData } from './talent/useTalentData;'';
+import { useFilterTalents } from './talent/useFilterTalents;'';
+import type { TalentFilterOptions } from './talent/useFilterTalents;'';
+import { useUIState } from './talent/useUIState;''
+;
+export function useTalentDirectory(): unknown {): unknown {): unknown {): unknown {): unknown {;
+  page = 1,;''
+  limit = 12,;;
+  initialFilters: "TalentFilterOptions = {"},;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 ) {;
   // Fetch auth status and saved talents;
   const { isAuthenticated, userDetails, savedTalents, handleToggleSave } = ;
@@ -78,6 +91,7 @@ export function useTalentDirectory(): unknown {): unknown {): unknown {): unknow
     toggleAvailability,;
     toggleRegion,;
     clearFilters,;
+<<<<<<< HEAD
     toggleSection,;"
     handleToggleSave,;";"
   };"
@@ -87,3 +101,14 @@ export function useTalentDirectory(): unknown {): unknown {): unknown {): unknow
 }";"
 }"
 }"
+=======
+    toggleSection,;""
+    handleToggleSave,;";""
+  };";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f

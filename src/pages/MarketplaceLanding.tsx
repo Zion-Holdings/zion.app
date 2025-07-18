@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useRouter } from 'next/router // Changed from useNavigate;;
 import { useQuery } from '@tanstack/react-query'
 import { useEffect } from 'react';
@@ -43,6 +44,53 @@ export default function MarketplaceLanding(): ;
     <div className="container py-8">;"
       <h1 className="text-3xl font-bold mb-6">Marketplace</h1>;"
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">;
+=======
+import { useRouter } from 'next/router // Changed from useNavigate;;';
+import { useQuery } from '@tanstack/react-query;'';
+import { useEffect } from 'react';';
+import ProductCard from '@/components/ProductCard;'';
+import type { Product } from '@/services/marketplace;'';
+import { showError } from '@/utils/showToast;'
+;''
+async function fetchProducts(): unknown {): unknown {): unknown {): unknown {): unknown {) {;;
+  const res: unknown = await fetch('/api/products?limit=20');''
+  if (!res.ok) {;;
+    throw new Error('Failed to fetch products');'
+  };
+  return res.json() as Promise<Product[]>;
+};''
+;
+export default function MarketplaceLanding(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
+  const router: unknown = useRouter(); // Changed from navigate;''
+  const {;;
+    data: "products = []",;";""
+    error,;";";""
+    isError,;";";";""
+  } = useQuery({;";";";";""
+    queryKey: ['products'],;;'
+    queryFn: "fetchProducts",;";";";";""
+    retry: "1",;""
+  });";""
+;";";""
+  useEffect(() => {;";";";""
+    if (isError && error) {;";";";";""
+      showError('products', 'Unable to load products');''
+    };
+  }, [isError, error]);
+;''
+  if (!products.length && !isError) {;;
+    return <div className="p-6 text-white">Loading...</div>;";""
+  };";";""
+;";";";""
+  if (isError) {;";";";";""
+    return <div className="p-6 text-white">Error loading products</div>;";""
+  };";";""
+;";";";""
+  return (;";";";";""
+    <div className="container py-8">;";";";";""
+      <h1 className="text-3xl font-bold mb-6">Marketplace</h1>;";";";";""
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
         {products.map((p: Product) => (;
           <ProductCard;
             key={p.id};
@@ -53,6 +101,7 @@ export default function MarketplaceLanding(): ;
             buyDisabled;
           />;
         ))};
+<<<<<<< HEAD
       </div>;"
     </div>;";"
   );"
@@ -66,5 +115,20 @@ MarketplaceLanding.displayName = 'MarketplaceLanding;
 }
 }'
 }'
+=======
+      </div>;""
+    </div>;";""
+  );";";""
+};";";";""
+;";";";";""
+MarketplaceLanding.displayName = 'MarketplaceLanding;'
+
+};
+};''
+};
 }
-}'
+};''
+}''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
+}
+}''

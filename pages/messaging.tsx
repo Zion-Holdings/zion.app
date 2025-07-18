@@ -1,2 +1,2 @@
-export { default } from '@/pages/MessagingInbox';';';';'
-'''''
+export { default } from '@/pages/MessagingInbox';';';';''
+''''''

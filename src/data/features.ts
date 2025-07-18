@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export interface Feature {
   id: "string
   title: string,
@@ -15,3 +16,22 @@ export const ALL_FEATURES: unknown Feature[] = [;"
   { id: 'help-center', title: 'Help & Resources', link: '/help' },'
 ]'
 '''''
+=======
+export interface Feature {;
+  id: "string;",;";";";";""
+  title: "string;",";";";";""
+  link: "string;";";""
+};";";""
+;";";";"";
+export const ALL_FEATURES: unknown Feature[] = [;";";";";""
+  { id: 'ai-matcher', title: 'AI Matcher', link: '/match' },;;'
+  { id: 'talent-directory', title: 'Talent Directory', link: '/talents' },;;'
+  { id: 'services', title: 'Services Marketplace', link: '/services' },;;'
+  { id: 'equipment', title: 'Equipment Catalog', link: '/equipment' },;;'
+  { id: 'analytics', title: 'Marketplace Analytics', link: '/analytics' },;;'
+  { id: 'ai-assistant', title: 'Zion AI Assistant', link: '#' },;;'
+  { id: 'publishing', title: 'List Your Services', link: '/create-profile' },;;'
+  { id: 'help-center', title: 'Help & Resources', link: '/help' },;'
+];''
+''''''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f

@@ -1,13 +1,13 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { errorReportingDashboard, type HealthData } from '@/utils/errorReportingDashboard';
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import type { NextApiRequest, NextApiResponse } from 'next';';
+import { errorReportingDashboard, type HealthData } from '@/utils/errorReportingDashboard';';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';'
 
 interface HealthApiResponse {
   health: HealthData;
   success: boolean;
   timestamp: string;
 }
-
+;
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<HealthApiResponse>
@@ -17,7 +17,7 @@ export default async function handler(
   try {
     const { method } = req;
 
-    if (method !== 'GET') {
+    if (method !== 'GET') {'
       return res.status(405).json({
         health: {} as HealthData,
         success: false,
@@ -25,7 +25,7 @@ export default async function handler(
       });
     }
 
-    logInfo('Health check API called');
+    logInfo('Health check API called');'
 
     const healthData = await errorReportingDashboard.getHealthStatus();
 
@@ -35,7 +35,7 @@ export default async function handler(
       timestamp
     });
   } catch (error) {
-    logErrorToProduction('Health check API error:', error);
+    logErrorToProduction('Health check API error:', error);'
 
     res.status(500).json({
       health: {} as HealthData,

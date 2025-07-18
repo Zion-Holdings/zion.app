@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useEffect, useState } from 'react';
 import { SEO } from '@/components/SEO'
 import { Card, CardContent } from '@/components/ui/card'
@@ -24,10 +25,41 @@ export default function ListingModeration(): ;;
         title: 'Error',;
         description: 'Failed to load moderation logs',;
         variant: 'destructive',;
+=======
+import { useEffect, useState } from 'react';';
+import { SEO } from '@/components/SEO;'';
+import { Card, CardContent } from '@/components/ui/card;'';
+import { supabase } from '@/integrations/supabase/client;'';
+import type { ModerationLog } from '@/types/moderation;'';
+import { FlaggedListingsTable } from '@/components/admin/moderation/FlaggedListingsTable;'';
+import AdminLayout from '@/components/admin/AdminLayout;'';
+import { toast } from '@/hooks/use-toast;'
+;
+export default function ListingModeration(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
+  const [logs, setLogs] = useState<ModerationLog[]>([]);''
+  const [isLoading, setIsLoading] = useState(true);
+;
+  const fetchLogs: unknown = async () => {;''
+    setIsLoading(true);;
+    if (!supabase) throw new Error('Supabase client not initialized');''
+    const { data, error } = await supabase;;
+      .from('moderation_logs');;'
+      .select('*');;'
+      .eq('status', 'pending_review');;'
+      .order('created_at', { ascending: "false "});""
+    if (!error) {;";""
+      setLogs(data || []);";";""
+    } else {;";";";""
+      toast({;";";";";""
+        title: 'Error',;;'
+        description: 'Failed to load moderation logs',;;'
+        variant: 'destructive',;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
       });
     };
     setIsLoading(false);
   };
+<<<<<<< HEAD
 '
   useEffect(() => {;
     fetchLogs();
@@ -61,6 +93,41 @@ export default function ListingModeration(): ;;
         <h1 className="text-2xl font-bold">Listing Moderation</h1>;"
         <Card>;"
           <CardContent className="p-0">;
+=======
+;''
+  useEffect(() => {;
+    fetchLogs();
+  }, []);''
+;;
+  const handleAction: unknown = async (id: "string", _action: 'approved' | 'rejected') => {;;'
+    if (!supabase) throw new Error('Supabase client not initialized');''
+    const { _error } = await supabase;;
+      .from('moderation_logs');;'
+      .update({ status: "action", reviewed_at: "new Date().toISOString() "});";";";";""
+      .eq('id', id);'
+    if (error) {;''
+      toast({;;
+        title: 'Error',;;'
+        description: 'Failed to update log',;;'
+        variant: 'destructive',;'
+      });''
+    } else {;;
+      toast({ title: 'Updated', description: "`Listing ${action"}` });"
+      fetchLogs();
+    };
+  };""
+;";""
+  return (;";";""
+    <AdminLayout>;";";";""
+      <SEO;";";";";""
+        title="Listing Moderation";";";";";""
+        description="Moderate product and service listings";";";";""
+      />;";";";";""
+      <div className="space-y-4">;";";";";""
+        <h1 className="text-2xl font-bold">Listing Moderation</h1>;";";";""
+        <Card>;";";";";""
+          <CardContent className="p-0">;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
             <FlaggedListingsTable;
               logs={logs};
               isLoading={isLoading};
@@ -68,6 +135,7 @@ export default function ListingModeration(): ;;
             />;
           </CardContent>;
         </Card>;
+<<<<<<< HEAD
       </div>;"
     </AdminLayout>;";"
   );"
@@ -77,3 +145,14 @@ export default function ListingModeration(): ;;
 }";"
 }"
 }"
+=======
+      </div>;""
+    </AdminLayout>;";""
+  );";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f

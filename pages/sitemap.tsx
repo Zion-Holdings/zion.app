@@ -1,3 +1,3 @@
-export { default } from '../src/pages/Sitemap';';';'
-;';';';'
-'''''
+export { default } from '../src/pages/Sitemap';';';''
+;';';';''
+''''''

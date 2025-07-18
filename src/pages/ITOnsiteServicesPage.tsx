@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'
 import { ITServicePricingTable } from '@/components/services/ITServicePricingTable'
@@ -34,6 +35,46 @@ export default function ITOnsiteServicesPage(): '
         title: 'Payment Successful','
         description:;
           'Your IT onsite service request has been received. Our team will contact you shortly.',;
+=======
+import { useState, useEffect } from 'react';';
+import { useRouter } from 'next/router;'';
+import { ITServicePricingTable } from '@/components/services/ITServicePricingTable;'';
+import { GlobalServiceSection } from '@/components/GlobalServiceSection;'';
+import { QuoteFormSection } from '@/components/QuoteFormSection;'';
+import { TrustedBySection } from '@/components/TrustedBySection;'';
+import { onsiteServicePricing } from '@/data/onsiteServicePricing;'';
+import type { CountryPricing } from '@/data/onsiteServicePricing;'';
+import { toast } from '@/hooks/use-toast;'';
+import { OnsiteQuoteModal } from '@/components/services/OnsiteQuoteModal;'';
+import { slugify } from '@/lib/slugify;'';
+import { PageHero } from '@/components/services/PageSections/PageHero;'';
+import { CountryTabs } from '@/components/services/PageSections/CountryTabs;'';
+import { ServiceDetailsSection } from '@/components/services/PageSections/ServiceDetailsSection;'';
+import { ServiceProcessSteps } from '@/components/services/PageSections/ServiceProcessSteps;'';
+import { ServiceIncludes } from '@/components/services/PageSections/ServiceIncludes;'';
+import { EnterpriseCallToAction } from '@/components/services/PageSections/EnterpriseCallToAction;'
+;
+export default function ITOnsiteServicesPage(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
+  const router: unknown = useRouter();;
+  const { country: "countrySlug", success } = router.query as {;"
+    country?: string;
+    success?: string;""
+  };";""
+  const [selectedCountry, setSelectedCountry] = useState<CountryPricing | null>(;";";""
+    null,;";";";""
+  );";";";";""
+  const [searchQuery, setSearchQuery] = useState('');'
+  const [quoteOpen, setQuoteOpen] = useState(false);''
+  const [quoteCountry, setQuoteCountry] = useState<CountryPricing | null>(null);
+;
+  // Show success toast if redirected from successful payment;''
+  useEffect(() => {;;
+    if (success === 'true') {;''
+      toast({;;
+        title: 'Payment Successful',;''
+        description:;;
+          'Your IT onsite service request has been received. Our team will contact you shortly.',;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
       });
     };
   }, [success]);
@@ -42,6 +83,7 @@ export default function ITOnsiteServicesPage(): '
     if (countrySlug) {;
       const match = onsiteServicePricing.find(;
         (c) => slugify(c.country) === countrySlug,;
+<<<<<<< HEAD
       )'
       setSelectedCountry(match || null);
       if (match) {;
@@ -49,10 +91,20 @@ export default function ITOnsiteServicesPage(): '
           document;
             .getElementById('service-details');
             ?.scrollIntoView({ behavior: 'smooth' });
+=======
+      );''
+      setSelectedCountry(match || null);
+      if (match) {;
+        setTimeout(() => {;''
+          document;;
+            .getElementById('service-details');;'
+            ?.scrollIntoView({ behavior: 'smooth' });'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
         }, 100);
       };
     } else {;
       setSelectedCountry(null);
+<<<<<<< HEAD
     }'
   }, [countrySlug]);
   // Popular countries for the featured cards'
@@ -63,6 +115,19 @@ export default function ITOnsiteServicesPage(): '
     'Germany',;
     'Japan',;
     'Singapore',;
+=======
+    };''
+  }, [countrySlug]);
+;
+  // Popular countries for the featured cards;''
+  const popularCountries: unknown = [;;
+    'United States',;;'
+    'United Kingdom',;;'
+    'Canada',;;'
+    'Germany',;;'
+    'Japan',;;'
+    'Singapore',;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
   ];
   // Filter countries based on search query;
   const filteredCountries = onsiteServicePricing;
@@ -85,6 +150,7 @@ export default function ITOnsiteServicesPage(): '
   };
   const handleQuote = (_country: CountryPricing) => {;
     setQuoteCountry(country);
+<<<<<<< HEAD
     setQuoteOpen(true)'
   };
   return ('
@@ -96,6 +162,20 @@ export default function ITOnsiteServicesPage(): '
 ;"
           {/* Country Selection Tabs */};"
           <div className="mb-12">;
+=======
+    setQuoteOpen(true);''
+  };
+;
+  return (;''
+    <>;;
+      <section className="py-16 bg-zion-blue">;";";";";""
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">;""
+          {/* Hero Section with Features */};";""
+          <PageHero />;";";""
+;";";";""
+          {/* Country Selection Tabs */};";";";";""
+          <div className="mb-12">;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
             <CountryTabs;
               popularCountries={popularCountries};
               filteredCountries={filteredCountries};
@@ -109,6 +189,7 @@ export default function ITOnsiteServicesPage(): '
           <ServiceDetailsSection;
             selectedCountry={selectedCountry};
             setSelectedCountry={setSelectedCountry};
+<<<<<<< HEAD
           />;"
 ;";"
           {/* How It Works Section */};"
@@ -124,6 +205,23 @@ export default function ITOnsiteServicesPage(): '
                 Full IT Onsite Services Pricing;"
               </h2>;"
               <p className="text-zion-slate-light mb-6">;
+=======
+          />;""
+;";""
+          {/* How It Works Section */};";";""
+          <ServiceProcessSteps />;";";";""
+;";";";";""
+          {/* What's Included Section */};'
+          <ServiceIncludes />;
+;''
+          {/* Complete Pricing Table */};;
+          <div id="pricing-table" className="my-16">;";";";";""
+            <div className="text-center mb-8">;";";";";""
+              <h2 className="text-2xl font-bold text-white mb-4">;";";""
+                Full IT Onsite Services Pricing;";";";""
+              </h2>;";";";";""
+              <p className="text-zion-slate-light mb-6">;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
                 Our per-incident prices include transportation costs and the;
                 first hour of onsite service. Additional hours are billed;
                 separately at standard rates.;
@@ -135,6 +233,7 @@ export default function ITOnsiteServicesPage(): '
         </div>;
       </section>;
       <GlobalServiceSection />;
+<<<<<<< HEAD
       <TrustedBySection />;"
       <QuoteFormSection />;";"
       <OnsiteQuoteModal;"
@@ -146,6 +245,20 @@ export default function ITOnsiteServicesPage(): '
   );
 };
 }'
+=======
+      <TrustedBySection />;""
+      <QuoteFormSection />;";""
+      <OnsiteQuoteModal;";";""
+        open={quoteOpen};";";";""
+        onOpenChange={setQuoteOpen};";";";";""
+        country={quoteCountry?.country || ''};'
+      />;''
+    </>;
+  );
+};
+;
+};''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 }
-}'
-}'
+}''
+}''

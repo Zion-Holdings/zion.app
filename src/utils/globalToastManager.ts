@@ -2,6 +2,7 @@ import {;
   logInfo,;
   logWarn,;
   logErrorToProduction,;
+<<<<<<< HEAD
 } from '@/utils/productionLogger'
 import { toast as sonnerToast } from 'sonner;;
 // Toast configuration constants'
@@ -13,12 +14,27 @@ const TOAST_CONFIG: {;",;"
   WARNING_DURATION: 5000, // 5 seconds for warnings;"
   DEDUPE_WINDOW: 3000, // 3 seconds deduplication window;"
   PRIORITY_BOOST_DURATION: 1000, // Extra time for high priority toasts;
+=======
+} from '@/utils/productionLogger;'';
+import { toast as sonnerToast } from 'sonner;'
+;
+// Toast configuration constants;'';
+const TOAST_CONFIG: unknown "unknown = {;",;""
+  MAX_VISIBLE_TOASTS: "3",;";";";";""
+  DEFAULT_DURATION: "4000", // 4 seconds;";";";";""
+  ERROR_DURATION: "6000", // 6 seconds for errors;";";";";""
+  SUCCESS_DURATION: "3000", // 3 seconds for success;";";";";""
+  WARNING_DURATION: "5000", // 5 seconds for warnings;";";";";""
+  DEDUPE_WINDOW: "3000", // 3 seconds deduplication window;";";";";""
+  PRIORITY_BOOST_DURATION: "1000", // Extra time for high priority toasts;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 };
 // Toast priority levels;
 export enum ToastPriority {;
   LOW = 1,;
   NORMAL = 2,;
   HIGH = 3,;
+<<<<<<< HEAD
   CRITICAL = 4,;"
 };";"
 ;"
@@ -61,18 +77,72 @@ class GlobalToastManager {;"
 ;"
   // Priority mappings;"
   private readonly priorityMap: Record<ToastType, ToastPriority> = {;
+=======
+  CRITICAL = 4,;""
+};";""
+;";";""
+// Toast types with corresponding priorities;";";";"";
+export enum ToastType {;";";";";""
+  INFO = 'info',;;'
+  SUCCESS = 'success',;;'
+  WARNING = 'warning',;;'
+  ERROR = 'error',;;'
+  NETWORK_ERROR = 'network_error',;;'
+  AUTH_ERROR = 'auth_error',;;'
+  VALIDATION_ERROR = 'validation_error',;;'
+  CRITICAL_ERROR = 'critical_error',;''
+};
+;
+// Toast interface;'';
+export interface GlobalToast {;;
+  id: "string;",;";";""
+  message: string;";";";""
+  title?: string;";";";";""
+  type: "ToastType;",;""
+  priority: ToastPriority;";""
+  duration?: number;";";""
+  persistent?: boolean;";";";""
+  action?: {;";";";";""
+    label: "string;",;";";";";""
+    onClick: "() => void;";"
+  };
+  onRetry?: () => void;
+  metadata?: Record<string, unknown>;
+  createdAt: number;
+  expiresAt?: number;""
+};";""
+;";";""
+// Toast queue and tracking;";";";"";
+class GlobalToastManager {;";";";";""
+  private activeToasts: "Map<string", GlobalToast> = new Map();";";";""
+  private toastQueue: GlobalToast[] = [];";";";";""
+  private dedupeCache: "Map<string", number> = new Map();";";";";""
+  private dismissalTimers: "Map<string", NodeJS.Timeout> = new Map();";";""
+;";";";""
+  // Priority mappings;";";";";""
+  private readonly priorityMap: "Record<ToastType", ToastPriority> = {;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
     [ToastType.INFO]: ToastPriority.LOW,;
     [ToastType.SUCCESS]: ToastPriority.NORMAL,;
     [ToastType.WARNING]: ToastPriority.NORMAL,;
     [ToastType.ERROR]: ToastPriority.HIGH,;
     [ToastType.NETWORK_ERROR]: ToastPriority.HIGH,;
     [ToastType.AUTH_ERROR]: ToastPriority.HIGH,;
+<<<<<<< HEAD
     [ToastType.VALIDATION_ERROR]: ToastPriority.NORMAL,;"
     [ToastType.CRITICAL_ERROR]: ToastPriority.CRITICAL,;";"
   };"
 ;"
   // Duration mappings;"
   private readonly durationMap: Record<ToastType, number> = {;
+=======
+    [ToastType.VALIDATION_ERROR]: ToastPriority.NORMAL,;""
+    [ToastType.CRITICAL_ERROR]: ToastPriority.CRITICAL,;";""
+  };";";""
+;";";";""
+  // Duration mappings;";";";";""
+  private readonly durationMap: "Record<ToastType", number> = {;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
     [ToastType.INFO]: TOAST_CONFIG.DEFAULT_DURATION,;
     [ToastType.SUCCESS]: TOAST_CONFIG.SUCCESS_DURATION,;
     [ToastType.WARNING]: TOAST_CONFIG.WARNING_DURATION,;
@@ -83,6 +153,7 @@ class GlobalToastManager {;"
     [ToastType.CRITICAL_ERROR]:;
       TOAST_CONFIG.ERROR_DURATION + TOAST_CONFIG.PRIORITY_BOOST_DURATION,;
   };
+<<<<<<< HEAD
   /**;"
    * Generate a unique deduplication key for the toast;";"
    */;"
@@ -91,6 +162,17 @@ class GlobalToastManager {;"
     return `${type}-${title || ''}-${message}`'
       .toLowerCase();
       .replace(/\s+/g, '-');
+=======
+;
+  /**;""
+   * Generate a unique deduplication key for the toast;";""
+   */;";";""
+  private generateDedupeKey(toast: Partial<GlobalToast>): string {;";";";""
+    const { type, message, title } = toast;";";";";""
+    return `${type}-${title || ''}-${message}`;''
+      .toLowerCase();;
+      .replace(/\s+/g, '-');'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
   };
   /**;
    * Check if toast should be shown based on deduplication;
@@ -206,6 +288,7 @@ class GlobalToastManager {;"
     };
   };
   /**;
+<<<<<<< HEAD
    * Internal method to show a toast using Sonner'
    */;
   private showToastInternal(toast: GlobalToast): void {;
@@ -235,18 +318,59 @@ class GlobalToastManager {;"
     const description = toast.title ? toast.message : undefined;"
 ;"
     if (typeof window !== 'undefined') {;
+=======
+   * Internal method to show a toast using Sonner;''
+   */;
+  private showToastInternal(toast: GlobalToast): void {;
+    this.activeToasts.set(toast.id, toast);''
+;;
+    const options: unknown "Record<string", unknown> = {;";";";";""
+      id: "toast.id",;"
+      duration: toast.persistent;
+        ? Infinity;
+        : toast.duration || this.durationMap[toast.type],;
+    };""
+;";""
+    // Add action button if present;";";""
+    if (toast.action) {;";";";""
+      options.action = {;";";";";""
+        label: "toast.action.label",;";";";";""
+        onClick: "toast.action.onClick",;";""
+      };";";""
+    } else if (toast.onRetry) {;";";";""
+      options.action = {;";";";";""
+        label: 'Retry',;;'
+        onClick: "toast.onRetry",;"
+      };
+    };
+;""
+    // Show toast based on type;";""
+    const message: unknown = toast.title ? toast.title : toast.message;";";""
+    const description: unknown = toast.title ? toast.message : undefined;";";";""
+;";";";";""
+    if (typeof window !== 'undefined') {;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
       switch (toast.type) {;
         case ToastType.SUCCESS:;
           sonnerToast.success(message, { ...options, description });
           break;
         case ToastType.ERROR:;
         case ToastType.NETWORK_ERROR:;
+<<<<<<< HEAD
         case ToastType.AUTH_ERROR:'
         case ToastType.CRITICAL_ERROR:;
           sonnerToast.error(message, {;
             ...options,'
             description,;
             style: { background: '#7f1d1d', color: '#fff' },;
+=======
+        case ToastType.AUTH_ERROR:;''
+        case ToastType.CRITICAL_ERROR:;
+          sonnerToast.error(message, {;
+            ...options,;''
+            description,;;
+            style: { background: '#7f1d1d', color: '#fff' },;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
           });
           break;
         case ToastType.WARNING:;
@@ -262,6 +386,7 @@ class GlobalToastManager {;"
     } else {;
       // Log to console or a server-side logger if attempting to show toast on server;
       console.warn(;
+<<<<<<< HEAD
         `[SSR Toast Attempt]: ${toast.type} - ${message} (Sonner UI not rendered on server)`,'
       );
     };
@@ -292,6 +417,38 @@ class GlobalToastManager {;"
     duration?: number;"
     persistent?: boolean;"
     action?: { label: "string; onClick: () => void "};
+=======
+        `[SSR Toast Attempt]: ${toast.type} - ${message} (Sonner UI not rendered on server)`,;''
+      );
+    };
+;''
+    // Log error toasts for debugging;;
+    if (toast.type.includes('error')) {;'
+      try {;''
+        logErrorToProduction(toast.message, new Error(toast.message), {;;
+          context: 'globalToastManager',;;'
+          toastType: "toast.type",;";";";";""
+          priority: "toast.priority",;";";";";""
+          metadata: "toast.metadata",;";";""
+        } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});";";";""
+      } catch {;";";";";""
+        logErrorToProduction('Failed to log toast error:', { data: "e "});"
+      };
+    };
+  };""
+;";""
+  /**;";";""
+   * Show a toast (public API);";";";""
+   */;";";";";""
+  showToast(params: "{;",;"
+    message: string;
+    title?: string;""
+    type?: ToastType;";""
+    priority?: ToastPriority;";";""
+    duration?: number;";";";""
+    persistent?: boolean;";";";";""
+    action?: { label: "string; onClick: () => void "};"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
     onRetry?: () => void;
     metadata?: Record<string, unknown>;
   }): string {;
@@ -306,6 +463,7 @@ class GlobalToastManager {;"
       onRetry,;
       metadata,; } = params;
     // Clean up old dedupe cache entries periodically;
+<<<<<<< HEAD
     if (Math.random() < 0.1) {;"
       this.cleanupDedupeCache();";"
     };"
@@ -323,6 +481,25 @@ class GlobalToastManager {;"
       _onRetry: "onRetry ?? (() => {"}),;"
       metadata: "metadata ?? {"},;"
       createdAt: Date.now(),;
+=======
+    if (Math.random() < 0.1) {;""
+      this.cleanupDedupeCache();";""
+    };";";""
+;";";";""
+    // Create toast object;";";";";""
+    const toast: unknown "GlobalToast = {;",;";";";";""
+      id: "`toast-${Date.now()"}-${Math.random().toString(36).substr(2, 9)}`,;";";";""
+      message,;";";";";""
+      title: title ?? '',;''
+      type,;;
+      priority: "priority !== undefined ? priority : this.priorityMap[type]",;";";";";""
+      duration: "duration !== undefined ? duration : 0",;";";";""
+      persistent,;";";";";""
+      action: action ?? { label: '', _onClick: "() => {"} },;";";";";""
+      _onRetry: "onRetry ?? (() => {"}),;";";";";""
+      metadata: "metadata ?? {"},;";";";";""
+      createdAt: "Date.now()",;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
     };
     // Check deduplication;
     const dedupeKey = this.generateDedupeKey(toast);
@@ -359,6 +536,7 @@ class GlobalToastManager {;"
     return this.toastQueue.length;
   };
 };
+<<<<<<< HEAD
 // Create singleton instance;"
 export const globalToastManager = new GlobalToastManager();";"
 ;"
@@ -453,6 +631,104 @@ export class EnhancedGlobalErrorHandler {;"
    */;"
   reportError(;"
     error: Error | string,;
+=======
+;
+// Create singleton instance;"";
+export const globalToastManager: unknown = new GlobalToastManager();";""
+;";";""
+// Convenience functions for different toast types;";";";"";
+export const showToast: unknown = {;";,";";";""
+  info: "(;",;";";";";""
+    message: "string",;";";""
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;";";";""
+  ) =>;";";";";""
+    globalToastManager.showToast({ message, type: "ToastType.INFO", ...options }),;";";";""
+;";";";";""
+  success: "(;",;";";";";""
+    message: "string",;""
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;";""
+  ) =>;";";""
+    globalToastManager.showToast({;";";";""
+      message,;";";";";""
+      type: "ToastType.SUCCESS",;";""
+      ...options,;";";""
+    }),;";";";""
+;";";";";""
+  warning: "(;",;";";";";""
+    message: "string",;""
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;";""
+  ) =>;";";""
+    globalToastManager.showToast({;";";";""
+      message,;";";";";""
+      type: "ToastType.WARNING",;";""
+      ...options,;";";""
+    }),;";";";""
+;";";";";""
+  error: "(;",;";";";";""
+    message: "string",;""
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;";""
+  ) =>;";";""
+    globalToastManager.showToast({;";";";""
+      message,;";";";";""
+      type: "ToastType.ERROR",;";""
+      ...options,;";";""
+    }),;";";";""
+;";";";";""
+  networkError: "(;",;";";";";""
+    message: "string",;""
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;";""
+  ) =>;";";""
+    globalToastManager.showToast({;";";";""
+      message,;";";";";""
+      type: "ToastType.NETWORK_ERROR",;";""
+      ...options,;";";""
+    }),;";";";""
+;";";";";""
+  authError: "(;",;";";";";""
+    message: "string",;""
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;";""
+  ) =>;";";""
+    globalToastManager.showToast({;";";";""
+      message,;";";";";""
+      type: "ToastType.AUTH_ERROR",;";""
+      ...options,;";";""
+    }),;";";";""
+;";";";";""
+  validationError: "(;",;";";";";""
+    message: "string",;""
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;";""
+  ) =>;";";""
+    globalToastManager.showToast({;";";";""
+      message,;";";";";""
+      type: "ToastType.VALIDATION_ERROR",;";""
+      ...options,;";";""
+    }),;";";";""
+;";";";";""
+  criticalError: "(;",;";";";";""
+    message: "string",;""
+    options?: Partial<Parameters<typeof globalToastManager.showToast>[0]>,;";""
+  ) =>;";";""
+    globalToastManager.showToast({;";";";""
+      message,;";";";";""
+      type: "ToastType.CRITICAL_ERROR",;";""
+      ...options,;";";""
+    }),;";";";""
+;";";";";""
+  dismiss: "(toastId: string) => globalToastManager.dismissToast(toastId)",;";";";";""
+  dismissAll: "() => globalToastManager.dismissAll()",;""
+};";""
+;";";""
+// Enhanced error handler that integrates with the toast manager;";";";"";
+export class EnhancedGlobalErrorHandler {;";";";";""
+  private retryCount: "Map<string", number> = new Map();"
+  private maxRetries = 3;
+;""
+  /**;";""
+   * Report an error with appropriate toast notification;";";""
+   */;";";";""
+  reportError(;";";";";""
+    error: "Error | string",;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
     context?: {;
       type?: ToastType;
       priority?: ToastPriority;
@@ -461,6 +737,7 @@ export class EnhancedGlobalErrorHandler {;"
       showToast?: boolean;
     },;
   ): string | null {;
+<<<<<<< HEAD
     const {;"
       type = ToastType.ERROR,;";"
       priority,;"
@@ -484,11 +761,37 @@ export class EnhancedGlobalErrorHandler {;"
         // Check for Supabase auth token in localStorage. This is a heuristic.'
         const supabaseAuthTokenKey = Object.keys(window.localStorage).find(;
           (k) => k.startsWith('sb-') && k.endsWith('-auth-token'),;
+=======
+    const {;""
+      type = ToastType.ERROR,;";""
+      priority,;";";""
+      retryAction,;";";";""
+      metadata,;";";";";""
+      showToast: "actualShowToastFlag = true", // Internal variable;""
+    } = context || {};";""
+;";";""
+    const errorMessage: unknown = error instanceof Error ? error.message : error;";";";""
+    const errorKey: unknown "unknown = `${type"}-${errorMessage}`;";";";""
+;";";";";""
+    // Suppress specific "Authentication Required / Access denied" toast on public pages for unauthenticated users.;";";""
+    if (;";";";""
+      type === ToastType.AUTH_ERROR &&;";";";";""
+      errorMessage.toLowerCase().trim() === 'access denied' &&;;'
+      this.getErrorTitle(type) === 'Authentication Required' &&;'
+      actualShowToastFlag;
+    ) {;''
+      let isLikelyUnauthenticated = true; // Default assumption for this specific error;;
+      if (typeof window !== 'undefined' && window.localStorage) {;'
+        // Check for Supabase auth token in localStorage. This is a heuristic.;''
+        const supabaseAuthTokenKey: unknown = Object.keys(window.localStorage).find(;;
+          (k) => k.startsWith('sb-') && k.endsWith('-auth-token'),;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
         );
         if (;
           supabaseAuthTokenKey &&;
           window.localStorage.getItem(supabaseAuthTokenKey);
         ) {;
+<<<<<<< HEAD
           isLikelyUnauthenticated = false; // Found a token, user might be authenticated'
         };
       };
@@ -535,11 +838,60 @@ export class EnhancedGlobalErrorHandler {;"
           ...metadata,;"
           originalError: "error"
           retryCount: currentRetries,;
+=======
+          isLikelyUnauthenticated = false; // Found a token, user might be authenticated;''
+        };
+      };
+;''
+      if (isLikelyUnauthenticated) {;;
+        // Log suppression for debugging, but don't show the toast.;''
+        logWarn(;;
+          `[EnhancedGlobalErrorHandler] Suppressing toast for ${type} with message "${errorMessage}" for assumed unauthenticated user.`,;";""
+        );";";""
+        return null;";";";""
+      } else {;";";";";""
+        if (process.env.NODE_ENV === 'development') {;''
+          logInfo(;;
+            `[EnhancedGlobalErrorHandler] NOT suppressing "${errorMessage}" toast as user appears authenticated or check is inconclusive.`,;"
+          );
+        };
+      };""
+    };";""
+;";";""
+    const currentRetries: unknown = this.retryCount.get(errorKey) || 0;";";";""
+;";";";";""
+    if (process.env.NODE_ENV === 'development') {;;'
+      logErrorToProduction('Enhanced Global Error Handler:', error, context);'
+    };
+;''
+    if (currentRetries >= this.maxRetries) {;;
+      logWarn(`Max retries exceeded for error: "${errorMessage"}`);"
+      return null;""
+    };";""
+;";";""
+    if (actualShowToastFlag) {;";";";""
+      const toastId: unknown = globalToastManager.showToast({;";,";";";""
+        message: "this.getErrorMessage(errorMessage)",;";";";";""
+        title: this.getErrorTitle(type) ?? '',;''
+        type,;;
+        priority: "priority !== undefined ? priority : ToastPriority.HIGH",;"
+        _onRetry: retryAction;
+          ? () => {;
+              this.retryCount.set(errorKey, currentRetries + 1);
+              retryAction();""
+            };";""
+          : () => {},;";";""
+        metadata: {;";";";""
+          ...metadata,;";";";";""
+          originalError: "error",;";";";";""
+          retryCount: "currentRetries",;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
         },;
       });
       return toastId;
     };
     return null;
+<<<<<<< HEAD
   };"
   /**;";"
    * Get user-friendly error message;"
@@ -562,11 +914,37 @@ export class EnhancedGlobalErrorHandler {;"
     };
     if (error.includes('server') || error.includes('500')) {;
       return 'Server error - please try again later;
+=======
+  };
+;""
+  /**;";""
+   * Get user-friendly error message;";";""
+   */;";";";""
+  private getErrorMessage(error: string): string {;";";";";""
+    if (error.includes('network') || error.includes('fetch')) {;;'
+      return 'Network error  please retry;'
+    };;
+    if (error.includes('timeout')) {;;'
+      return 'Request timed out - please try again;'
+    };;
+    if (error.includes('unauthorized') || error.includes('401')) {;;'
+      return 'Please log in to continue;'
+    };;
+    if (error.includes('forbidden') || error.includes('403')) {;;'
+      return "You don't have permission for this action";";";";""
+    };";";";";""
+    if (error.includes('not found') || error.includes('404')) {;;'
+      return 'Requested resource not found;'
+    };;
+    if (error.includes('server') || error.includes('500')) {;;'
+      return 'Server error - please try again later;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
     };
     // Return sanitized error message;
     return error.length > 100 ? `${error.substring(0, 100)}...` : error;
   };
   /**;
+<<<<<<< HEAD
    * Get appropriate title for error type'
    */;
   private getErrorTitle(type: ToastType): string {;
@@ -581,6 +959,22 @@ export class EnhancedGlobalErrorHandler {;"
         return 'Critical Error;
       default:;
         return 'Error;
+=======
+   * Get appropriate title for error type;''
+   */;
+  private getErrorTitle(type: ToastType): string {;
+    switch (type) {;''
+      case ToastType.NETWORK_ERROR:;;
+        return 'Connection Problem;'
+      case ToastType.AUTH_ERROR:;;
+        return 'Authentication Required;'
+      case ToastType.VALIDATION_ERROR:;;
+        return 'Validation Error;'
+      case ToastType.CRITICAL_ERROR:;;
+        return 'Critical Error;'
+      default:;;
+        return 'Error;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
     };
   };
   /**;
@@ -595,8 +989,16 @@ export class EnhancedGlobalErrorHandler {;"
   clearAllRetryCounts(): void {;
     this.retryCount.clear();
   };
+<<<<<<< HEAD
 }'
 ;
 // Create singleton instance;
 export const _enhancedGlobalErrorHandler = new EnhancedGlobalErrorHandler()'
 '''''
+=======
+};''
+;
+// Create singleton instance;
+export const _enhancedGlobalErrorHandler: unknown = new EnhancedGlobalErrorHandler();''
+''''''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f

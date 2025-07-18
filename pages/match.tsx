@@ -1,2 +1,2 @@
-export { default } from '@/pages/AIMatcher';';';';'
-'''''
+export { default } from '@/pages/AIMatcher';';';';''
+''''''

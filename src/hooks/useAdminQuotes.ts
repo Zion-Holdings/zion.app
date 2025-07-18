@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from 'react''
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import  { quoteRequestService }  from '@/services/quoteRequestService;
@@ -42,6 +43,54 @@ export const _useAdminQuotes = () => {;
     if (archiveFilter === 'archived' && !quote.is_archived) {'
       return false;
     };
+=======
+import { useState } from 'react';';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query;'';
+import { quoteRequestService } from '@/services/quoteRequestService;';
+import type {;
+  QuoteRequest as _QuoteRequest,;''
+  QuoteStatus,;;
+} from '@/types/quotes;'';
+import { useToast } from '@/components/ui/use-toast;'';
+import type { DateRange } from 'react-day-picker;''
+;
+export const _useAdminQuotes: unknown = () => {;
+  const { _toast } = useToast();''
+  const queryClient: unknown = useQueryClient();;
+  const [statusFilter, setStatusFilter] = useState<QuoteStatus | 'all'>('all');''
+  const [archiveFilter, setArchiveFilter] = useState<;;
+    'active' | 'archived' | 'all;''
+  >('active');;'
+  const [searchQuery, setSearchQuery] = useState('');''
+  const [dateRange, setDateRange] = useState<DateRange | undefined>(undefined);
+;
+  // Fetch all quote requests;''
+  const {;;
+    data: "allQuotes = []",;";""
+    isLoading,;";";""
+    error,;";";";""
+  } = useQuery({;";";";";""
+    queryKey: ['quotes', 'admin'],;;'
+    queryFn: "() => quoteRequestService.getAll()",;";";";";""
+    enabled: "true",;"
+  });""
+;";""
+  // Filter quotes based on selected filters;";";""
+  const filteredQuotes: unknown = allQuotes.filter((quote) => {;";";";""
+    // Status filter;";";";";""
+    if (statusFilter !== 'all' && quote.status !== statusFilter) {;''
+      return false;
+    };
+;''
+    // Archive filter;;
+    if (archiveFilter === 'active' && quote.is_archived) {;'
+      return false;''
+    };;
+    if (archiveFilter === 'archived' && !quote.is_archived) {;'
+      return false;
+    };
+;
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
     // Search filter;
     if (searchQuery) {;
       const query = searchQuery.toLowerCase();
@@ -69,6 +118,7 @@ export const _useAdminQuotes = () => {;
         return false;
       };
     };
+<<<<<<< HEAD
     return true'
   })'
   // Update quote status mutation'
@@ -120,6 +170,70 @@ export const _useAdminQuotes = () => {;
         description: 'The quote request has been permanently deleted','
       })'
       queryClient.invalidateQueries({ queryKey: ['quotes', 'admin'] })'
+=======
+;
+    return true;''
+  });
+;
+  // Update quote status mutation;''
+  const updateStatusMutation: unknown "unknown = useMutation({;",;""
+    mutationFn: "({ id", status }: { id: "string; status: QuoteStatus "}) =>;";""
+      quoteRequestService.updateStatus(id, status),;";";""
+    _onSuccess: () => {;";";";""
+      toast({;";";";";""
+        title: 'Status updated',;;'
+        description: 'The quote request status has been updated',;''
+      });;
+      queryClient.invalidateQueries({ queryKey: ['quotes', 'admin'] });'
+    },;
+    _onError: (error: Error) => {;''
+      toast({;;
+        title: 'Error',;;'
+        description: 'Failed to update status: ' + error.message,;;'
+        variant: 'destructive',;'
+      });
+    },;''
+  });
+;
+  // Archive/Unarchive mutation;''
+  const toggleArchiveMutation: unknown "unknown = useMutation({;",;""
+    mutationFn: "({ id", isArchived }: { id: "string; isArchived: boolean "}) =>;";";";""
+      quoteRequestService.toggleArchive(id, isArchived),;";";";";""
+    onSuccess: "(_", variables) => {;";";";""
+      toast({;";";";";""
+        title: variables.isArchived ? 'Quote archived' : 'Quote unarchived',;''
+        description: variables.isArchived;;
+          ? 'The quote request has been archived;''
+          : 'The quote request has been moved back to active quotes',;''
+      });;
+      queryClient.invalidateQueries({ queryKey: ['quotes', 'admin'] });'
+    },;
+    _onError: (error: Error) => {;''
+      toast({;;
+        title: 'Error',;;'
+        description: 'Failed to update quote: ' + error.message,;;'
+        variant: 'destructive',;'
+      });
+    },;''
+  });
+;
+  // Delete mutation;''
+  const deleteMutation: unknown "unknown = useMutation({;",;""
+    mutationFn: "(id: string) => quoteRequestService.delete(id)",;";";""
+    _onSuccess: () => {;";";";""
+      toast({;";";";";""
+        title: 'Quote deleted',;;'
+        description: 'The quote request has been permanently deleted',;''
+      });;
+      queryClient.invalidateQueries({ queryKey: ['quotes', 'admin'] });'
+    },;
+    _onError: (error: Error) => {;''
+      toast({;;
+        title: 'Error',;;'
+        description: 'Failed to delete quote: ' + error.message,;;'
+        variant: 'destructive',;'
+      });''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
     },;
     _onError: (error: Error) => {'
       toast({'
@@ -129,14 +243,21 @@ export const _useAdminQuotes = () => {;
       })'
     },'
   });
+<<<<<<< HEAD
 '
   return {'
     quotes: filteredQuotes,;
+=======
+;''
+  return {;;
+    quotes: "filteredQuotes",;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
     isLoading,;
     error,;
     statusFilter,;
     setStatusFilter,;
     archiveFilter,;
+<<<<<<< HEAD
     setArchiveFilter,;
     searchQuery,";"
     setSearchQuery,
@@ -150,3 +271,18 @@ export const _useAdminQuotes = () => {;
   }
 };
 """
+=======
+    setArchiveFilter,;""
+    searchQuery,;";""
+    setSearchQuery,;";";""
+    dateRange,;";";";""
+    setDateRange,;";";";";""
+    updateStatus: "(id: string", status: QuoteStatus) =>;";";";""
+      updateStatusMutation.mutate({ id, status }),;";";";";""
+    toggleArchive: "(id: string", isArchived: boolean) =>;";";";""
+      toggleArchiveMutation.mutate({ id, isArchived }),;";";";";""
+    deleteQuote: "(id: string) => deleteMutation.mutate(id)",;";""
+  };";";""
+};";";";""
+""""""
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f

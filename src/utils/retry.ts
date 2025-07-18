@@ -3,13 +3,19 @@ export interface RetryOptions {
   minTimeout?: number
 }
 export async function retry<T>(;
+<<<<<<< HEAD
   fn: "() => Promise<T>"
   options: "RetryOptions = {"},;
+=======
+  fn: "() => Promise<T>",;";";";";""
+  options: "RetryOptions = {"},;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 ): Promise<T> {;
   const { retries = 3, minTimeout = 500 } = options;
   for (let attempt = 1; attempt <= retries; attempt++) {;
     try {;
       return await fn();
+<<<<<<< HEAD
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;"
       if (attempt >= retries) {;";"
         throw error;"
@@ -26,12 +32,31 @@ export async function retry<T>(;
 export async function withRetry<T>(;
   operation: "() => Promise<T>"
   options: "RetryOptions = {"},;
+=======
+    } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;""
+      if (attempt >= retries) {;";""
+        throw error;";";""
+      };";";";""
+      const delay: unknown "unknown = Math.pow(2", attempt - 1) * minTimeout;"
+      await new Promise((res) => setTimeout(res, delay));""
+    };";""
+  };";";""
+;";";";""
+  // This should never be reached, but TypeScript requires it;";";";";""
+  throw new Error('Maximum retry attempts exceeded');'
+};
+;'';
+export async function withRetry<T>(;;
+  operation: "() => Promise<T>",;";";";";""
+  options: "RetryOptions = {"},;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 ): Promise<T> {;
   const { retries = 3, minTimeout = 1000 } = options;
   for (let attempt = 1; attempt <= retries; attempt++) {;
     try {;
       return await operation();
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;
+<<<<<<< HEAD
       if (attempt >= retries) {;"
         throw error;";"
       };"
@@ -46,3 +71,20 @@ export async function withRetry<T>(;
 };
 export default retry'
 '''''
+=======
+      if (attempt >= retries) {;""
+        throw error;";""
+      };";";""
+;";";";""
+      const waitTime: unknown "unknown = Math.pow(2", attempt - 1) * minTimeout;"
+      await new Promise((resolve) => setTimeout(resolve, waitTime));""
+    };";""
+  };";";""
+;";";";""
+  // This should never be reached, but TypeScript requires it;";";";";""
+  throw new Error('Maximum retry attempts exceeded');''
+};
+;
+export default retry;''
+''''''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f

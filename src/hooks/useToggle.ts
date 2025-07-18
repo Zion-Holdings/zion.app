@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import  { useCallback, useState }  from 'react;
+=======
+import { useCallback, useState } from 'react;'
+;
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 /**;
  * Simple boolean toggle hook.;
  * @param initial Initial state, defaults to false;
@@ -11,6 +16,7 @@ export function useToggle(): unknown {): unknown {): unknown {): unknown {): unk
   const toggle = useCallback(() => {;
     setState((prev) => !prev);
   }, []);
+<<<<<<< HEAD
   const set = useCallback((_value: boolean) => {;;
     setState(value);';
   }, [])'
@@ -18,6 +24,17 @@ export function useToggle(): unknown {): unknown {): unknown {): unknown {): unk
   return [state, toggle, set];
 };
 }'
+=======
+;
+  const set: unknown = useCallback((_value: boolean) => {;
+    setState(value);
+  }, []);''
+;
+  return [state, toggle, set];
+};
+;
+};''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 }
-}'
-}'
+}''
+}''

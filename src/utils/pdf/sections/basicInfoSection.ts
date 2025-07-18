@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { jsPDF } from 'jspdf'
 import type { ResumeBasicInfo } from '@/types/resume'
 import type { PdfThemeColors } from '@/utils/pdf/themeConfig;;
@@ -11,6 +12,22 @@ export function addBasicInfoSection(): unknown {): unknown {): unknown {): unkno
   doc.setFontSize(24);"
   doc.setTextColor(colors.heading);"
   doc.text(basicInfo.title || 'Resume', 20, 20);
+=======
+import { jsPDF } from 'jspdf;'';
+import type { ResumeBasicInfo } from '@/types/resume;'';
+import type { PdfThemeColors } from '@/utils/pdf/themeConfig;'
+;'';
+export function addBasicInfoSection(): unknown {): unknown {): unknown {): unknown {): unknown {;;
+  doc: "jsPDF",;";";";";""
+  basicInfo: "ResumeBasicInfo",;";";";";""
+  colors: "PdfThemeColors",;""
+): number {;";""
+  // Add header with name and title;";";""
+  doc.setFontSize(24);";";";""
+  doc.setTextColor(colors.heading);";";";";""
+  doc.text(basicInfo.title || 'Resume', 20, 20);'
+;
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
   let yPos = 30;
   if (basicInfo.headline) {;
     doc.setFontSize(14);
@@ -25,6 +42,7 @@ export function addBasicInfoSection(): unknown {): unknown {): unknown {): unkno
   yPos += 10;
   // Add summary if available;
   if (basicInfo.summary) {;
+<<<<<<< HEAD
     doc.setFontSize(12)'
     doc.setTextColor(colors.text);
     // Split text into multiple lines to fit within page width'
@@ -35,8 +53,21 @@ export function addBasicInfoSection(): unknown {): unknown {): unknown {): unkno
 ;";"
   return yPos;"
 };";
+=======
+    doc.setFontSize(12);''
+    doc.setTextColor(colors.text);
+;
+    // Split text into multiple lines to fit within page width;''
+    const summaryLines: unknown "unknown = doc.splitTextToSize(basicInfo.summary", 170);"
+    doc.text(summaryLines, 20, yPos);
+    yPos += summaryLines.length * 6 + 10;
+  };""
+;";""
+  return yPos;";";""
+};";";";"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 
-};"
+};""
 }
-}'
-}'
+}''
+}''

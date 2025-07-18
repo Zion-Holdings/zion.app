@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect }  from 'react;;
 import {;;
   AlertTriangle,'
@@ -27,6 +28,40 @@ export default function TranslationManager(): ;;
   const { translateContent, isTranslating } = useTranslationService()';
   const [selectedNamespace, setSelectedNamespace] = useState('translation');
   const [searchQuery, setSearchQuery] = useState('');
+=======
+import React, { useState, useEffect } from 'react;';
+import {;
+  AlertTriangle,;''
+  Check,;
+  Globe,;
+  Search,;''
+  Loader2,;;
+} from '@/components/ui/icons;'';
+import { Header } from '@/components/Header;'';
+import { SEO } from '@/components/SEO;'';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'';
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs;'';
+import { Input } from '@/components/ui/input;'';
+import { Button } from '@/components/ui/button;'';
+import { Textarea } from '@/components/ui/textarea;'';
+import { toast } from '@/components/ui/use-toast;'';
+import { useTranslation } from 'react-i18next;'
+;;
+import { useIsMobile } from '@/hooks/use-mobile;'';
+import { useLanguage } from '@/context/LanguageContext;'';
+import type { SupportedLanguage } from '@/context/LanguageContext;'';
+import { useTranslationService } from '@/hooks/useTranslationService;'';
+import { logErrorToProduction } from '@/utils/productionLogger;'
+;
+export default function TranslationManager(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
+  const { t, i18n } = useTranslation();''
+  const isMobile: unknown = useIsMobile();
+  const { _supportedLanguages } = useLanguage();
+  const { translateContent, isTranslating } = useTranslationService();''
+;;
+  const [selectedNamespace, setSelectedNamespace] = useState('translation');;'
+  const [searchQuery, setSearchQuery] = useState('');'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
   const [translations, setTranslations] = useState<;
     Record<string, Record<string, string>>;
   >({});
@@ -34,6 +69,7 @@ export default function TranslationManager(): ;;
   const [editingKey, setEditingKey] = useState<string | null>(null);
   const [editedTranslations, setEditedTranslations] = useState<;
     Record<string, Record<SupportedLanguage, string>>;
+<<<<<<< HEAD
   >({})'
   const [isSaving, setIsSaving] = useState(false);
   // Simulated translation data - in a real app, this would come from your backend'
@@ -57,6 +93,32 @@ export default function TranslationManager(): ;;
               if (typeof value === 'object' && value !== null) {'
                 Object.assign(acc, flattenObject(value, `${pre}${key}`));
               } else if (typeof value === 'string') {;
+=======
+  >({});''
+  const [isSaving, setIsSaving] = useState(false);
+;
+  // Simulated translation data - in a real app, this would come from your backend;''
+  useEffect(() => {;;
+    // For demo purposes, we're using the loaded translations from i18next;;'
+    const currentTranslations: unknown "Record<string", Record<string, string>> = {};";""
+;";";""
+    supportedLanguages.forEach((lang) => {;";";";""
+      const res: unknown "unknown = i18n.getResourceBundle(lang.code", selectedNamespace);";""
+      if (res) {;";";""
+        // Flatten nested objects for easier management;";";";""
+        const flattenObject: unknown = (;";,";";";""
+          obj: "unknown",;";";";";""
+          prefix = '',;''
+        ): Record<string, string> => {;;
+          if (typeof obj !== 'object' || obj === null) return {};'
+          return Object.keys(obj).reduce(;''
+            (acc, key) => {;;
+              const pre: unknown "unknown = prefix.length ? `${prefix"}.` : ;""
+              const value: unknown "unknown = (obj as Record<string", unknown>)[key];;"
+              if (typeof value === 'object' && value !== null) {;''
+                Object.assign(acc, flattenObject(value, `${pre}${key}`));;
+              } else if (typeof value === 'string') {;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
                 acc[`${pre}${key}`] = value;
               };
               return acc;
@@ -67,24 +129,43 @@ export default function TranslationManager(): ;;
         currentTranslations[lang.code] = flattenObject(res);
       };
     });
+<<<<<<< HEAD
     setTranslations(currentTranslations)'
 ;
     // Get all unique keys across all languages;
     const allKeys = new Set<string>()'
     Object.values(currentTranslations).forEach(;
       (langTranslations: Record<string, string>) => {;
+=======
+;
+    setTranslations(currentTranslations);''
+;
+    // Get all unique keys across all languages;
+    const allKeys: unknown = new Set<string>();''
+    Object.values(currentTranslations).forEach(;;
+      (langTranslations: "Record<string", string>) => {;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
         Object.keys(langTranslations).forEach((key) => allKeys.add(key));
       },;
     );
     setFilteredKeys(Array.from(allKeys));
   }, [selectedNamespace, i18n, supportedLanguages]);
   // Filter keys based on search query;
+<<<<<<< HEAD
   useEffect(() => {;"
     if (!searchQuery.trim()) {;";"
       // Get all unique keys across all languages;"
       const allKeys = new Set<string>();"
       Object.values(translations).forEach((langTranslations) => {;"
         if (typeof langTranslations === 'object' && langTranslations !== null) {;
+=======
+  useEffect(() => {;""
+    if (!searchQuery.trim()) {;";""
+      // Get all unique keys across all languages;";";""
+      const allKeys: unknown = new Set<string>();";";";""
+      Object.values(translations).forEach((langTranslations) => {;";";";";""
+        if (typeof langTranslations === 'object' && langTranslations !== null) {;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
           Object.keys(langTranslations as Record<string, string>).forEach(;
             (key) => allKeys.add(key),;
           );
@@ -93,6 +174,7 @@ export default function TranslationManager(): ;;
       setFilteredKeys(Array.from(allKeys));
       return;
     };
+<<<<<<< HEAD
     const query = searchQuery.toLowerCase().trim()'
     const filtered: unknown string[] = [];
     // Search in keys and values'
@@ -103,6 +185,20 @@ export default function TranslationManager(): ;;
             if ('
               key.toLowerCase().includes(query) ||;
               (typeof value === 'string' && value.toLowerCase().includes(query));
+=======
+;
+    const query: unknown = searchQuery.toLowerCase().trim();''
+    const filtered: unknown string[] = [];
+;
+    // Search in keys and values;''
+    Object.values(translations).forEach((langTranslations) => {;;
+      if (typeof langTranslations === 'object' && langTranslations !== null) {;''
+        Object.entries(langTranslations as Record<string, string>).forEach(;
+          ([key, value]) => {;
+            if (;''
+              key.toLowerCase().includes(query) ||;;
+              (typeof value === 'string' && value.toLowerCase().includes(query));'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
             ) {;
               filtered.push(key);
             };
@@ -112,6 +208,7 @@ export default function TranslationManager(): ;;
     });
     setFilteredKeys([...new Set(filtered)]);
   }, [searchQuery, translations]);
+<<<<<<< HEAD
 '
   const handleEdit = (_key: string) => {;
     setEditingKey(key);
@@ -127,6 +224,23 @@ export default function TranslationManager(): ;;
         (typeof langTranslations === 'object' &&;
           langTranslations !== null &&'
           langTranslations[key]) ||;
+=======
+;''
+  const handleEdit: unknown = (_key: string) => {;
+    setEditingKey(key);
+;''
+    // Initialize edited translations for this key;;
+    const initialEdits: unknown "Record<SupportedLanguage", string> = {} as Record<;"
+      SupportedLanguage,;
+      string;""
+    >;";""
+    supportedLanguages.forEach((lang) => {;";";""
+      const langTranslations: unknown = translations[lang.code];";";";""
+      initialEdits[lang.code] =;";";";";""
+        (typeof langTranslations === 'object' &&;'
+          langTranslations !== null &&;''
+          langTranslations[key]) ||;;
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
         
     });
     setEditedTranslations({;
@@ -136,6 +250,7 @@ export default function TranslationManager(): ;;
   };
   const handleSave = (_key: string) => {;
     setIsSaving(true);
+<<<<<<< HEAD
 '
     // In a real application, you would save these to your backend;
     setTimeout(() => {;
@@ -149,12 +264,29 @@ export default function TranslationManager(): ;;
         if (;"
           editedKey &&;
           typeof editedKey === 'object' &&;
+=======
+;''
+    // In a real application, you would save these to your backend;
+    setTimeout(() => {;
+      // Update translations with edited values;''
+      const updatedTranslations: unknown "unknown = { ...translations "};"
+;
+      supportedLanguages.forEach((lang) => {;
+        if (!updatedTranslations[lang.code]) {;
+          updatedTranslations[lang.code] = {};""
+        };";""
+        const editedKey: unknown = editedTranslations[key];";";""
+        if (;";";";""
+          editedKey &&;;
+          typeof editedKey === 'object' &&;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
           editedKey[lang.code] !== undefined;
         ) {;
           (updatedTranslations[lang.code] as Record<string, string>)[key] =;
             editedKey[lang.code];
         };
       });
+<<<<<<< HEAD
       setTranslations(updatedTranslations)'
       setEditingKey(null);
       setIsSaving(false);
@@ -174,12 +306,36 @@ export default function TranslationManager(): ;;
       const langTranslations = translations[lang]'
       if (;
         typeof langTranslations === 'object' &&;
+=======
+;
+      setTranslations(updatedTranslations);''
+      setEditingKey(null);
+      setIsSaving(false);
+;''
+      toast({;;
+        title: t('translation.saved'),;;'
+        description: t('translation.changes_saved'),;'
+      });
+    }, 1000);''
+  };
+;
+  const handleTranslateKey: unknown = async (_key: string) => {;''
+    // Find first non-empty translation to use as source;;
+    let sourceLanguage: SupportedLanguage = 'en;''
+    let sourceText = 
+;
+    for (const lang of supportedLanguages.map((l) => l.code)) {;
+      const langTranslations: unknown = translations[lang];''
+      if (;;
+        typeof langTranslations === 'object' &&;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
         langTranslations !== null &&;
         langTranslations[key];
       ) {;
         sourceLanguage = lang;
         sourceText = langTranslations[key];
         break;
+<<<<<<< HEAD
       }'
     };
     if (!sourceText) {'
@@ -202,11 +358,38 @@ export default function TranslationManager(): ;;
           title: t('translation.translation_failed'),;
           description: "error"
           variant: 'destructive',;
+=======
+      };''
+    };
+;
+    if (!sourceText) {;''
+      toast({;;
+        title: t('translation.no_content'),;;'
+        description: t('translation.add_content_first'),;;'
+        variant: 'destructive',;'
+      });''
+      return;
+    };
+;''
+    try {;;
+      const { translations: "translatedText", error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await translateContent(;";";";""
+        sourceText,;";";";";""
+        'general',;'
+        sourceLanguage,;''
+      );
+;
+      if (error) {;''
+        toast({;;
+          title: t('translation.translation_failed'),;;'
+          description: "error",;";";";";""
+          variant: 'destructive',;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
         });
         return;
       };
       // Update edited translations with auto-translated content;
       setEditedTranslations({;
+<<<<<<< HEAD
         ...editedTranslations,'
         [key]: translatedText,;
       });
@@ -245,6 +428,47 @@ export default function TranslationManager(): ;;
     lang: "SupportedLanguage"
     key: "string"
     _value: string,;
+=======
+        ...editedTranslations,;''
+        [key]: translatedText,;
+      });
+;''
+      toast({;;
+        title: t('translation.translation_success'),;;'
+        description: t('translation.content_translated'),;'
+      });''
+    } catch (error: unknown) {;;
+      if (typeof error === 'object' && error !== null) {;;'
+        logErrorToProduction(`Error translating key ${key}:`, { data: "error "});";";""
+      } else {;";";";""
+        logErrorToProduction(`Error translating key ${key}:`, {;";";";";""
+          data: "String(error)",;";";""
+        });";";";""
+      };";";";";""
+      let errorMessage = t('translation.unknown_error');;'
+      if (typeof error === 'object' && error !== null && 'message' in error) {;'
+        errorMessage = String(;''
+          (error as Record<string, unknown>).message ??;;
+            t('translation.unknown_error'),;'
+        );
+      };''
+      toast({;;
+        title: t('translation.translation_failed'),;;'
+        description: "errorMessage",;";";";";""
+        variant: 'destructive',;'
+      });
+    };
+  };
+;
+  const handleCancel: unknown = () => {;''
+    setEditingKey(null);
+  };
+;''
+  const handleChange: unknown "unknown = (;",;""
+    lang: "SupportedLanguage",;";";";";""
+    key: "string",;";";";";""
+    _value: "string",;"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
   ) => {;
     setEditedTranslations({;
       ...editedTranslations,;
@@ -255,6 +479,7 @@ export default function TranslationManager(): ;;
       },;
     } as Record<string, Record<SupportedLanguage, string>>);
   };
+<<<<<<< HEAD
   const getMissingLanguages = (key: string): SupportedLanguage[] => {;
     return supportedLanguages;"
       .map((lang) => lang.code);";"
@@ -262,10 +487,21 @@ export default function TranslationManager(): ;;
         const langTranslations = translations[lang];"
         return !(;"
           typeof langTranslations === 'object' &&;
+=======
+;
+  const getMissingLanguages: unknown = (key: string): SupportedLanguage[] => {;
+    return supportedLanguages;""
+      .map((lang) => lang.code);";""
+      .filter((lang) => {;";";""
+        const langTranslations: unknown = translations[lang];";";";""
+        return !(;";";";";""
+          typeof langTranslations === 'object' &&;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
           langTranslations !== null &&;
           langTranslations[key];
         );
       });
+<<<<<<< HEAD
   }'
 ;
   return (;
@@ -350,10 +586,97 @@ export default function TranslationManager(): ;;
                                     <Textarea;
                                       value={'
                                         editedTranslations[key]?.[lang.code] ||;
+=======
+  };''
+;
+  return (;
+    <>;''
+      <SEO;;
+        title={t('translation.manager_title')};;'
+        description={t('translation.manager_description')};'
+      />;''
+      <Header />;;
+      <main className={`container mx-auto px-${isMobile ? '4' : '6'} py-8`}>;'
+        <Card>;''
+          <CardHeader>;;
+            <CardTitle className="text-2xl">;";";";";""
+              {t('translation.manager_title')};'
+            </CardTitle>;
+          </CardHeader>;''
+          <CardContent>;;
+            <div className="space-y-6">;";";";""
+              {/* Search and filter */};";";";";""
+              <div className="flex flex-col sm:flex-row gap-4">;";";";";""
+                <div className="relative flex-1">;";";";";""
+                  <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />;";";";""
+                  <Input;";";";";""
+                    type="search";";";";";""
+                    placeholder={t('translation.search_placeholder')};;'
+                    className="pl-8";"
+                    value={searchQuery};""
+                    onChange={(e) => setSearchQuery(e.target.value)};";""
+                  />;";";""
+                </div>;";";";""
+                <Tabs;";";";";""
+                  defaultValue="translation";";";""
+                  value={selectedNamespace};";";";""
+                  onValueChange={(value) => setSelectedNamespace(value)};";";";";""
+                  className="w-full sm:w-auto";";";""
+                >;";";";""
+                  <TabsList>;";";";";""
+                    <TabsTrigger value="translation">General</TabsTrigger>;";";";";""
+                    <TabsTrigger value="admin">Admin</TabsTrigger>;"
+                  </TabsList>;""
+                </Tabs>;";""
+              </div>;";";""
+;";";";""
+              {/* Translations table */};";";";";""
+              <div className="border rounded-md">;";";";";""
+                <div className="grid grid-cols-[1fr_2fr] sm:grid-cols-[1fr_2fr_auto] border-b">;";";";";""
+                  <div className="p-3 font-medium">{t('translation.key')}</div>;;'
+                  <div className="p-3 font-medium">;";";";";""
+                    {t('translation.translations')};''
+                  </div>;;
+                  <div className="hidden sm:block p-3 font-medium">;";";";";""
+                    {t('translation.actions')};''
+                  </div>;
+                </div>;
+;''
+                {filteredKeys.length === 0 ? (;;
+                  <div className="p-6 text-center text-muted-foreground">;";";";";""
+                    {t('translation.no_results')};'
+                  </div>;''
+                ) : (;;
+                  <div className="divide-y">;";""
+                    {filteredKeys.map((key) => (;";";""
+                      <div;";";";""
+                        key={key};";";";";""
+                        className="grid grid-cols-[1fr_2fr] sm:grid-cols-[1fr_2fr_auto]";";";";""
+                      >;";";";";""
+                        <div className="p-3 break-words">{key}</div>;";";";""
+                        {editingKey === key ? (;";";";";""
+                          <div className="p-3">;";";";";""
+                            <div className="space-y-4">;";";""
+                              {supportedLanguages.map((lang) => (;";";";""
+                                <div key={lang.code}>;";";";";""
+                                  <div className="flex items-center gap-2 mb-1">;"
+                                    <span>{lang.flag}</span>;""
+                                    <span>{lang.name}</span>;";""
+                                  </div>;";";""
+                                  {editedTranslations[key]?.[;";";";""
+                                    lang.code;";";";";""
+                                  ]?.includes('\n') ||;'
+                                  (editedTranslations[key]?.[lang.code];''
+                                    ?.length || 0) > 100 ? (;
+                                    <Textarea;
+                                      value={;''
+                                        editedTranslations[key]?.[lang.code] ||;;
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
                                         
                                       };
                                       onChange={(e) =>;
                                         handleChange(;
+<<<<<<< HEAD
                                           lang.code,'
                                           key,;
                                           e.target.value,;
@@ -366,10 +689,25 @@ export default function TranslationManager(): ;;
                                     <Input;"
                                       value={;"
                                         editedTranslations[key]?.[lang.code] ||;"
+=======
+                                          lang.code,;''
+                                          key,;
+                                          e.target.value,;
+                                        );''
+                                      };;
+                                      dir={lang.code === 'ar' ? 'rtl' : 'ltr'};;'
+                                      className="min-h-20";"
+                                    />;""
+                                  ) : (;";""
+                                    <Input;";";""
+                                      value={;";";";""
+                                        editedTranslations[key]?.[lang.code] ||;";";";";""
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
                                         
                                       };
                                       onChange={(e) =>;
                                         handleChange(;
+<<<<<<< HEAD
                                           lang.code,'
                                           key,;
                                           e.target.value,;
@@ -469,6 +807,107 @@ export default function TranslationManager(): ;;
                               onClick={() => handleEdit(key)};"
                             >;"
                               {t('translation.edit')};
+=======
+                                          lang.code,;''
+                                          key,;
+                                          e.target.value,;
+                                        );''
+                                      };;
+                                      dir={lang.code === 'ar' ? 'rtl' : 'ltr'};'
+                                    />;''
+                                  )};
+                                </div>;
+                              ))};''
+                            </div>;;
+                            <div className="flex gap-2 mt-4">;";";";""
+                              <Button;";";";";""
+                                size="sm";"
+                                onClick={() => handleSave(key)};""
+                                disabled={isSaving};";""
+                              >;";";""
+                                {isSaving ? (;";";";""
+                                  <>;";";";";""
+                                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />;";";";";""
+                                    {t('general.saving')};'
+                                  </>;
+                                ) : (;''
+                                  <>;;
+                                    <Check className="mr-2 h-4 w-4" />;";";";";""
+                                    {t('general.save')};''
+                                  </>;
+                                )};
+                              </Button>;''
+                              <Button;;
+                                size="sm";";";";";""
+                                variant="outline";";";""
+                                onClick={handleCancel};";";";""
+                              >;";";";";""
+                                {t('general.cancel')};'
+                              </Button>;''
+                              <Button;;
+                                size="sm";";";";";""
+                                variant="secondary";""
+                                onClick={() => handleTranslateKey(key)};";""
+                                disabled={isTranslating};";";""
+                              >;";";";""
+                                {isTranslating ? (;";";";";""
+                                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />;";";";""
+                                ) : (;";";";";""
+                                  <Globe className="mr-2 h-4 w-4" />;";";";""
+                                )};";";";";""
+                                {t('translation.auto_translate')};''
+                              </Button>;
+                            </div>;
+                          </div>;''
+                        ) : (;;
+                          <div className="p-3">;";";";";""
+                            <div className="space-y-2">;""
+                              {supportedLanguages.slice(0, 2).map((lang) => {;";""
+                                const langTranslations: unknown =;";";""
+                                  translations[lang.code];";";";""
+                                const hasTranslation: unknown =;";";";";""
+                                  typeof langTranslations === 'object' &&;'
+                                  langTranslations !== null &&;''
+                                  langTranslations[key];
+                                return (;
+                                  <div;''
+                                    key={lang.code};;
+                                    className="flex items-start gap-2";";";";""
+                                  >;";";";";""
+                                    <span className="mt-0.5 flex-shrink-0">;";""
+                                      {lang.flag};";";""
+                                    </span>;";";";""
+                                    <span;";";";";""
+                                      className={`${!hasTranslation ? 'text-zion-purple italic' : ''}`};;'
+                                      dir={lang.code === 'ar' ? 'rtl' : 'ltr'};'
+                                    >;
+                                      {hasTranslation;''
+                                        ? langTranslations[key];;
+                                        : t('translation.missing')};'
+                                    </span>;''
+                                  </div>;
+                                );
+                              })};''
+                              {getMissingLanguages(key).length > 0 && (;;
+                                <div className="flex items-center gap-2 text-sm text-zion-purple">;";";";";""
+                                  <AlertTriangle className="h-4 w-4" />;";";";";""
+                                  {t('translation.missing_languages', {;;'
+                                    count: "getMissingLanguages(key).length",;"
+                                  })};
+                                </div>;""
+                              )};";""
+                            </div>;";";""
+                          </div>;";";";""
+                        )};";";";";""
+                        <div className="p-3 flex items-center justify-end">;";";""
+                          {editingKey === key ? null : (;";";";""
+                            <Button;";";";";""
+                              size="sm";";";";";""
+                              variant="outline";";";""
+                              onClick={() => handleEdit(key)};";";";""
+                            >;";";";";""
+                              {t('translation.edit')};'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
                             </Button>;
                           )};
                         </div>;
@@ -480,11 +919,20 @@ export default function TranslationManager(): ;;
             </div>;
           </CardContent>;
         </Card>;
+<<<<<<< HEAD
       </main>'
     </>;
   );
 };
 }'
+=======
+      </main>;''
+    </>;
+  );
+};
+;
+};''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 }
-}'
-}'
+}''
+}''

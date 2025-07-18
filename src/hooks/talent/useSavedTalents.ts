@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState, useEffect } from 'react''
 import { supabase } from '@/integrations/supabase/client'
 import type { TalentProfile } from '@/types/talent'
@@ -7,6 +8,18 @@ import { useAuthStatus } from '@/hooks/talent'
 import { useRouter } from 'next/router'
 import  { logErrorToProduction }  from '@/utils/productionLogger'
 export function useSavedTalents(): ;
+=======
+import { useState, useEffect } from 'react';';
+import { supabase } from '@/integrations/supabase/client;'';
+import type { TalentProfile } from '@/types/talent;'';
+import { toast } from '@/hooks/use-toast;'';
+import { showApiError } from '@/utils/apiErrorHandler;'';
+import { useAuthStatus } from '@/hooks/talent;'';
+import { useRouter } from 'next/router;'';
+import { logErrorToProduction } from '@/utils/productionLogger;'
+;
+export function useSavedTalents(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
   const { isAuthenticated, userDetails } = useAuthStatus();
   const [savedTalents, setSavedTalents] = useState<TalentProfile[]>([]);
   const [savedTalentIds, setSavedTalentIds] = useState<string[]>([]);
@@ -16,6 +29,7 @@ export function useSavedTalents(): ;
   useEffect(() => {;
     const fetchSavedTalents = async () => {;
       if (!isAuthenticated || !userDetails.id) {;
+<<<<<<< HEAD
         setIsLoading(false);''
         return;''
       }'
@@ -54,8 +68,52 @@ export function useSavedTalents(): ;
               .from('talent_profiles')'
               .select('*')'
               .in('id', talentIds)'
+=======
+        setIsLoading(false);
+        return;
+      };''
+;
+      setIsLoading(true);
+;''
+      try {;;
+        if (!supabase) throw new Error('Supabase client not initialized');''
+        // Get saved talent IDs;;
+        const { data: "savedData", error: "savedError "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;";";";";""
+          .from('saved_talents');;'
+          .select('talent_id');;'
+          .eq('user_id', userDetails.id);'
+;
+        if (savedError) throw savedError;
+;
+        if (savedData) {;''
+          // Type guard for savedData items;
+          const talentIds: unknown = savedData;
+            .map((_item: unknown) => {;''
+              if (;;
+                typeof item === 'object' &&;''
+                item !== null &&;;
+                'talent_id' in item &&;;'
+                typeof (item as { talent_id: "unknown "}).talent_id === 'string;'
+              ) {;;
+                return (item as { talent_id: "string "}).talent_id;";""
+              };";";""
+              return undefined;";";";""
+            });";";";";""
+            .filter((id): id is string => typeof id === 'string');'
+          setSavedTalentIds(talentIds);
+;''
+          if (talentIds.length > 0) {;;
+            if (!supabase) throw new Error('Supabase client not initialized');''
+            // Fetch full talent profiles for saved talents;;
+            const { data: "talentData", error: "talentError "} = await supabase;";";";";""
+              .from('talent_profiles');;'
+              .select('*');;'
+              .in('id', talentIds);'
+;
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
             if (talentError) throw talentError;
             setSavedTalents(talentData || []);
+<<<<<<< HEAD
           } else {'
             setSavedTalents([])'
           };
@@ -66,12 +124,26 @@ export function useSavedTalents(): ;
           error,
           'There was a problem loading your saved talents.','
           fetchSavedTalents, // Pass self as retry callback);
+=======
+          } else {;''
+            setSavedTalents([]);
+          };
+        };''
+      } catch {;;
+        logErrorToProduction('Error fetching saved talents:', { data: "error "});";";""
+        showApiError(;";";";""
+          error,;";";";";""
+          'There was a problem loading your saved talents.',;'
+          fetchSavedTalents, // Pass self as retry callback;
+        );
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
       } finally {;
         setIsLoading(false);
       };
     };
     fetchSavedTalents();
   }, [isAuthenticated, userDetails.id]);
+<<<<<<< HEAD
 '
   // Toggle save talent'
   const toggleSaveTalent = async (_talent: TalentProfile) => {;
@@ -80,10 +152,21 @@ export function useSavedTalents(): ;
         title: 'Authentication required','
         description: 'Please log in to save talents to your favorites','
         variant: 'destructive','
+=======
+;''
+  // Toggle save talent;
+  const toggleSaveTalent: unknown = async (_talent: TalentProfile) => {;
+    if (!isAuthenticated || !userDetails.id || !talent.id) {;''
+      toast({;;
+        title: 'Authentication required',;;'
+        description: 'Please log in to save talents to your favorites',;;'
+        variant: 'destructive',;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
       });
       const returnTo = encodeURIComponent(router.asPath);
       router.push(`/auth/login?returnTo=${returnTo}`);
       return;
+<<<<<<< HEAD
     }'
 '
     const isSaved = savedTalentIds.includes(talent.id);
@@ -126,6 +209,53 @@ export function useSavedTalents(): ;
       showApiError(;"
         error,"
         'There was a problem updating your favorites. Please try again.','
+=======
+    };''
+;
+    const isSaved: unknown = savedTalentIds.includes(talent.id);
+;''
+    try {;;
+      if (!supabase) throw new Error('Supabase client not initialized');'
+      if (isSaved) {;
+        // Remove from saved_talents;''
+        const { _error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;;
+          .from('saved_talents');''
+          .delete();;
+          .eq('user_id', userDetails.id);;'
+          .eq('talent_id', talent.id);'
+;
+        if (error) throw error;
+;''
+        setSavedTalents((prev) => prev.filter((t) => t.id !== talent.id));
+        setSavedTalentIds((prev) => prev.filter((id) => id !== talent.id));
+;''
+        toast({;;
+          title: 'Removed from favorites',;;'
+          description: "`${talent.full_name"} has been removed from your favorites`,;";""
+        });";";""
+      } else {;";";";""
+        // Add to saved_talents;";";";";""
+        const { _error } = await supabase.from('saved_talents').insert({;;'
+          user_id: "userDetails.id",;";";";";""
+          talent_id: "talent.id",;"
+        });
+;
+        if (error) throw error;
+;""
+        setSavedTalents((prev) => [...prev, talent]);";""
+        setSavedTalentIds((prev) => [...prev, talent.id]);";";""
+;";";";""
+        toast({;";";";";""
+          title: 'Added to favorites',;;'
+          description: "`${talent.full_name"} has been added to your favorites`,;";""
+        });";";""
+      };";";";""
+    } catch {;";";";";""
+      logErrorToProduction('Error toggling saved talent:', { data: "error "});";";""
+      showApiError(;";";";""
+        error,;";";";";""
+        'There was a problem updating your favorites. Please try again.',;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
         () => toggleSaveTalent(talent), // Pass a function that calls toggleSaveTalent with the current talent;
       );
     };
@@ -138,11 +268,20 @@ export function useSavedTalents(): ;
     savedTalents,;
     savedTalentIds,;
     isLoading,;
+<<<<<<< HEAD
     toggleSaveTalent,'
     isTalentSaved,'
   };
 };
 }'
+=======
+    toggleSaveTalent,;''
+    isTalentSaved,;
+  };
+};
+;
+};''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 }
-}'
-}'
+}''
+}''

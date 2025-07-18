@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router // Changed from useNavigate, useLocation;;
 import { useAuth } from '@/hooks/useAuth'
@@ -10,9 +11,25 @@ import { useCart } from '@/context/CartContext'
 import { toast } from '@/hooks/use-toast'
 import  { LoadingSpinner }  from '@/components/ui/enhanced-loading-states;
 export default function Login(): ;
+=======
+import { useEffect, useState } from 'react';';
+import { useRouter } from 'next/router // Changed from useNavigate, useLocation;;';
+import { useAuth } from '@/hooks/useAuth;'';
+import { safeStorage } from '@/utils/safeStorage;'';
+import { LoginContent } from '@/components/auth/login;'';
+import { AuthLayout } from '@/layout;'';
+import { ErrorBoundary } from 'react-error-boundary;'';
+import LoginErrorFallback from '@/components/auth/login/LoginErrorFallback;'';
+import { useCart } from '@/context/CartContext;'';
+import { toast } from '@/hooks/use-toast;'';
+import { LoadingSpinner } from '@/components/ui/enhanced-loading-states;'
+;
+export default function Login(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
   const { isAuthenticated, isLoading } = useAuth();
   const router = useRouter(); // Initialized router;
   // location is now router;
+<<<<<<< HEAD
   const { _dispatch } = useCart(); // Reserved for future cart handling;';
   const [authTimedOut, setAuthTimedOut] = useState(false);;
 '
@@ -50,6 +67,46 @@ export default function Login(): ;
   useEffect(() => {;"
     if (!isLoading && isAuthenticated) {;"
       router.replace('/dashboard'); // Use router.replace;
+=======
+;
+  const { _dispatch } = useCart(); // Reserved for future cart handling;
+  const [authTimedOut, setAuthTimedOut] = useState(false);
+;''
+  // If auth status check takes too long, show a fallback message;
+  useEffect(() => {;
+    if (!isLoading) return;''
+    const timer: unknown "unknown = setTimeout(() => setAuthTimedOut(true)", 10000);"
+    return () => clearTimeout(timer);""
+  }, [isLoading]);";""
+;";";""
+  const resendVerificationEmail: unknown = async () => {;";";";""
+    try {;;
+      await fetch('/api/auth/resend-verification-email', { method: 'POST' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});;'
+      toast({ title: 'Verification email sent' });''
+    } catch {;;
+      toast({ title: 'Failed to resend email', variant: 'destructive' });'
+    };
+  };''
+;
+  useEffect(() => {;
+    // This effect handles token processing (e.g., from magic link);''
+    // It runs when component mounts or router.asPath (containing query) changes;;
+    const queryString: unknown = router.asPath.split('?')[1] || ;''
+    const params: unknown = new URLSearchParams(queryString);;
+    const token: unknown = params.get('token');''
+    if (token) {;;
+      safeStorage.setItem('zion_token', token);''
+      // Clear token from URL to prevent re-processing and clean up history;;
+      // The actual authentication state will update via useAuth's listeners,;''
+      // which should trigger the other useEffect.;;
+      router.replace(router.pathname, undefined, { shallow: "true "}); // Use router.replace with shallow routing;"
+    };""
+  }, [router.asPath, router.pathname, router]); // Depend on router.asPath;";""
+;";";""
+  useEffect(() => {;";";";""
+    if (!isLoading && isAuthenticated) {;";";";";""
+      router.replace('/dashboard'); // Use router.replace;'
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
     };
   }, [isAuthenticated, isLoading, router]);
   // Render LoginContent if not authenticated and auth is not loading;
@@ -62,6 +119,7 @@ export default function Login(): ;
       </AuthLayout>;
     );
   };
+<<<<<<< HEAD
 '
   // Show fallback if auth status check timed out;
   if (authTimedOut && isLoading) {;
@@ -76,12 +134,29 @@ export default function Login(): ;
           <button;"
             onClick={resendVerificationEmail};"
             className="underline text-primary";
+=======
+;''
+  // Show fallback if auth status check timed out;
+  if (authTimedOut && isLoading) {;
+    return (;''
+      <AuthLayout>;;
+        <div className="p-4 text-center space-y-4 text-foreground">;"
+          <p>Checking login status</p>;
+          <p>;
+            This is taking longer than expected. If you recently signed up, your;""
+            email may still need verification.;";""
+          </p>;";";""
+          <button;";";";""
+            onClick={resendVerificationEmail};";";";";""
+            className="underline text-primary";"
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
           >;
             Resend verification email;
           </button>;
         </div>;
       </AuthLayout>;
     );
+<<<<<<< HEAD
   };"
 ;";"
   // Optional: Render a loading indicator while isLoading is true;"
@@ -101,3 +176,25 @@ export default function Login(): ;
 }";"
 }"
 }"
+=======
+  };""
+;";""
+  // Optional: Render a loading indicator while isLoading is true;";";""
+  if (isLoading) {;";";";""
+    return (;";";";";""
+      <div className="p-4 text-center text-foreground">;";";";";""
+        <LoadingSpinner variant="primary" />;"
+      </div>;
+    );
+  };
+;
+  // If authenticated and isLoading is false, the useEffect above should have navigated.;""
+  // Return null or a minimal layout if needed, though direct navigation is preferred.;";""
+  return null;";";""
+};";";";""
+";";";""
+}";";""
+}";""
+}""
+}""
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f

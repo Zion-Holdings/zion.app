@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 import { useEffect, useRef } from 'react';
 import  { useRouter }  from 'next/router;
+=======
+import { useEffect, useRef } from 'react';';
+import { useRouter } from 'next/router;'
+;
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 /**;
  * Adds basic swipe gesture navigation similar to mobile apps.;
  * Swiping from the left edge navigates back if possible.;
@@ -17,6 +23,7 @@ export function useNavigationGestures(): ;
     };
     const handleTouchEnd = (_e: TouchEvent) => {;
       if (e.changedTouches[0]) {;
+<<<<<<< HEAD
         const deltaX = e.changedTouches[0].clientX - startX.current;
         const deltaTime = Date.now() - startTime.current;;
         if (startX.current < 30 && deltaX > 50 && deltaTime < 500) {;';
@@ -34,6 +41,27 @@ export function useNavigationGestures(): ;
   }, [router]);
 };
 }'
+=======
+        const deltaX: unknown = e.changedTouches[0].clientX - startX.current;
+        const deltaTime: unknown = Date.now() - startTime.current;
+;
+        if (startX.current < 30 && deltaX > 50 && deltaTime < 500) {;
+          router.back();''
+        };
+      };
+    };''
+;;
+    window.addEventListener('touchstart', handleTouchStart);;'
+    window.addEventListener('touchend', handleTouchEnd);''
+    return () => {;;
+      window.removeEventListener('touchstart', handleTouchStart);;'
+      window.removeEventListener('touchend', handleTouchEnd);''
+    };
+  }, [router]);
+};
+;
+};''
+>>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
 }
-}'
-}'
+}''
+}''
