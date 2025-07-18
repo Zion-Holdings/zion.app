@@ -27,7 +27,7 @@ export default function SearchResultsPage() {
   }, [router.isReady, router.query.q]);
 
   const [results, setResults] = useState<SearchResult[]>([]);
-  const [_setTotalCount, setTotalCount] = useState(0);
+  const [_totalCount, _setTotalCount] = useState(0);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [typeFilter, setTypeFilter] = useState<'all' | 'product' | 'service' | 'talent'>('all');
@@ -62,7 +62,7 @@ export default function SearchResultsPage() {
     }
   }, [query, fetchResults]);
 
-  const totalPages = Math.max(1, Math.ceil(totalCount / LIMIT));
+  const totalPages = Math.max(1, Math.ceil(_totalCount / LIMIT));
 
   const suggestions = generateSearchSuggestions().slice(0, 5);
 
