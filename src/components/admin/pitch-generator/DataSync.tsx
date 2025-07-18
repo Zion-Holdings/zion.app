@@ -7,7 +7,7 @@ interface PerformanceData {;;
   avgResponseTime: "string;",;";";";";""
   conversionRate: "string;";"
 };
-;
+
 =======
 import React from 'react'
 '
@@ -64,7 +64,7 @@ const DataSync: unknown React.FC = () => {;
     })();
   }, []);
 <<<<<<< HEAD
-;
+
   if (loading) return <div>Loading...</div>;''
   if (error) return <div>{error}</div>;
   if (!data) return <div>No data available.</div>;

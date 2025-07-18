@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { render, screen, waitFor } from '@testing-library/react;'';
-import userEvent from '@testing-library/user-event;'';
-import { LoginForm } from '../LoginForm;'';
-import { useAuth } from '@/context/auth/AuthProvider;'';
+import React from 'react';;
+import { render, screen, waitFor } from '@testing-library/react;;
+import userEvent from '@testing-library/user-event;;
+import { LoginForm } from '../LoginForm;;
+import { useAuth } from '@/context/auth/AuthProvider;;
 import { fireEvent as analyticsFireEvent } from '@/lib/analytics;'
 ;''
 // Mock dependencies;;
@@ -43,7 +43,7 @@ describe('LoginForm', () => {;''
     });
 ;''
     render(<LoginForm />);
-;
+
     await userEvent.type(;''
       screen.getByLabelText(/email address/i),;;
       'test@example.com',;''
@@ -64,7 +64,7 @@ describe('LoginForm', () => {;''
     mockLogin.mockResolvedValue({ error: { message: 'Invalid credentials' } });'
 ;''
     render(<LoginForm />);
-;
+
     await userEvent.type(;''
       screen.getByLabelText(/email address/i),;;
       'test@example.com',;''

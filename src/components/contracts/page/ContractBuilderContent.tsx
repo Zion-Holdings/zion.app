@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { SmartContractBuilder } from '@/components/contracts/SmartContractBuilder;'';
-import { ContractBuilder } from '@/components/contracts/ContractBuilder;'';
-import { ContractHeader } from './ContractHeader;'';
-import { ContractTypeCards } from './ContractTypeCards;'';
-import { RecentContractsTable } from './RecentContractsTable;'';
-import type { TalentProfile } from '@/types/talent;'';
-import { useAuth } from '@/hooks/useAuth;'';
+import { useState } from 'react';;
+import { SmartContractBuilder } from '@/components/contracts/SmartContractBuilder;;
+import { ContractBuilder } from '@/components/contracts/ContractBuilder;;
+import { ContractHeader } from './ContractHeader;;
+import { ContractTypeCards } from './ContractTypeCards;;
+import { RecentContractsTable } from './RecentContractsTable;;
+import type { TalentProfile } from '@/types/talent;;
+import { useAuth } from '@/hooks/useAuth;;
 import { logDebug } from '@/utils/productionLogger;'
 ;''
 // Mock data for demo purposes;;
@@ -19,7 +19,7 @@ const mockTalent: unknown "TalentProfile = {;",;";";";";""
   profile_picture_url: '',;;'
   skills: ['React', 'Node.js', 'Smart Contracts'],;'
 };''
-;
+
 export function ContractBuilderContent(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const { _user } = useAuth();''
   const [showBuilderType, setShowBuilderType] = useState<;;
@@ -63,7 +63,7 @@ export function ContractBuilderContent(): unknown {): unknown {): unknown {): un
         onStandardClick={() => setShowBuilderType('standard')};;'
         onSmartClick={() => setShowBuilderType('smart')};'
       />;
-;
+
       <RecentContractsTable;''
         contracts={recentContracts};
         onViewContract={handleViewContract};
@@ -91,9 +91,9 @@ export function ContractBuilderContent(): unknown {): unknown {): unknown {): un
     </>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

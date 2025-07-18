@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import { useEffect, useState, useRef } from 'react';';
-import type { ReactNode } from 'react';';
-import { cn } from '@/lib/utils;'';
+import { useEffect, useState, useRef } from 'react';;
+import type { ReactNode } from 'react';;
+import { cn } from '@/lib/utils;;
 import Skeleton from '@/components/ui/skeleton;'
-;
+
 interface LazyLoadProps {;
   height?: string | number;
   width?: string | number;
@@ -11,7 +11,7 @@ interface LazyLoadProps {;
   loadingComponent?: ReactNode;''
   className?: string;
 };
-;'';
+;;
 export function LazyLoad(): unknown {): unknown {): unknown {): unknown {): unknown {{;;
   height = '200px',;;'
   width = '100%',;'
@@ -129,9 +129,9 @@ export function LazyLoad(): unknown {): unknown {): unknown {): unknown {): unkn
     </div>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

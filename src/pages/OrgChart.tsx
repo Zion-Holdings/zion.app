@@ -141,7 +141,7 @@ export default function OrgChart() {
         </div>
         {noResults && (
           <p className="text-destructive font-semibold">
-            No {team !== 'ALL' ? `${team} ` : ''}`
+            No {team !== 'ALL' ? `${team} ` : ''}``
             {role !== 'ALL' ? `${role} ` : ''}in {zone}
           </p>
         )}
@@ -160,5 +160,5 @@ export default function OrgChart() {
       </main>
     </>
   );
-
-OrgChart.displayName = 'OrgChart';';;`
+`
+OrgChart.displayName = 'OrgChart';';;``

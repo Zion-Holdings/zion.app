@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React, { useState, useRef, useEffect } from 'react';';
-import { AlertTriangle } from '@/components/ui/icons;'';
+import React, { useState, useRef, useEffect } from 'react';;
+import { AlertTriangle } from '@/components/ui/icons;;
 import { motion, AnimatePresence } from 'framer-motion;'
 ;;
-import { cn } from '@/lib/utils;'';
-import { imageOptimization } from '@/utils/performance;'';
+import { cn } from '@/lib/utils;;
+import { imageOptimization } from '@/utils/performance;;
 import { logWarn } from '@/utils/productionLogger;'
 ;''
 interface OptimizedImageProps {;;
@@ -27,7 +27,7 @@ interface OptimizedImageProps {;;
   retryCount?: number;
   showLoadingProgress?: boolean;
 };
-;
+
 export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
   src,;''
   alt,;
@@ -161,20 +161,20 @@ export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
               resourceEntry.transferSize || resourceEntry.encodedBodySize || 0;
             const loadTime: unknown =;''
               resourceEntry.responseEnd - resourceEntry.requestStart;
-;
+
             // Log slow or large images;''
             if (loadTime > 2000) {;;
               logWarn('Slow image loading:', {;''
                 src,;;
-                loadTime: "`${loadTime.toFixed(2)"}ms`,;";";";";""
+                loadTime: "`${loadTime.toFixed(2)"}ms`,;";";";";""`
                 size: "`${(fileSize / 1024).toFixed(2)"}KB`,;""
               });";""
             };";";""
 ;";";";""
             if (fileSize > 500 * 1024) {;";";";";""
               logWarn('Large image detected:', {;''
-                src,;;
-                size: "`${(fileSize / 1024).toFixed(2)"}KB`,;";";";";""
+                src,;;`
+                size: "`${(fileSize / 1024).toFixed(2)"}KB`,;";";";";""`
                 loadTime: "`${loadTime.toFixed(2)"}ms`,;"
               });
             };""
@@ -183,7 +183,7 @@ export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
       });";";";""
 ;";";";";""
       observer.observe({ entryTypes: ['resource'] });'
-;
+
 =======
   useEffect(() => {
     loadStartTime.current = performance.now()"
@@ -205,16 +205,16 @@ export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
             // Log slow or large images'
             if (loadTime > 2000) {'
               logWarn('Slow image loading:', {'
-                src,'
-                loadTime: `${loadTime.toFixed(2)}ms`,"`
+                src,'`
+                loadTime: `${loadTime.toFixed(2)}ms`,"``
                 size: "`${(fileSize / 1024).toFixed(2)}KB`,
               });""
             };
 
             if (fileSize > 500 * 1024) {;"
-              logWarn('Large image detected:', {'
-                src,'`
-                size: "`${(fileSize / 1024).toFixed(2)}KB`,`
+              logWarn('Large image detected:', {'`
+                src,'``
+                size: "`${(fileSize / 1024).toFixed(2)}KB`,``
                 loadTime: "`${loadTime.toFixed(2)"}ms`,;
               });
 
@@ -231,7 +231,7 @@ export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
     return () => {}; // Return empty cleanup function for the else case;
 <<<<<<< HEAD
   }, [src]);''
-;
+
   // Generate optimized URLs;
   const optimizedSrc: unknown = isInView;''
     ? imageOptimization.optimizeUrl(currentSrc, width, quality);;
@@ -261,8 +261,8 @@ export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
     if (retries < retryCount) {;
       setRetries((prev) => prev + 1);
       // Retry with a slight delay;
-      setTimeout(;
-        () => {;`
+      setTimeout(;`
+        () => {;``
           setCurrentSrc(src + `?retry=${retries + 1}`);
         },;
         1000 * (retries + 1),;
@@ -291,10 +291,10 @@ export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
       });
     }, 100);
 <<<<<<< HEAD
-;
+
     return () => clearInterval(interval);''
   }, [isLoading, showLoadingProgress]);
-;
+
   // Generate placeholder based on type;''
   const generatePlaceholder: unknown = () => {;;
     if (placeholder === 'none') return null;'
@@ -325,9 +325,9 @@ export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
 ;";";";""
   // Container styles;";";";";""
   const containerStyle: unknown "React.CSSProperties = {;",;";";""
-    aspectRatio:;";";";""
-      aspectRatio || (width && height ? `${width}/${height}` : undefined),;";";";";""
-    width: "width ? `${width"}px` : undefined,;";";";";""
+    aspectRatio:;";";";""`
+      aspectRatio || (width && height ? `${width}/${height}` : undefined),;";";";";""`
+    width: "width ? `${width"}px` : undefined,;";";";";""`
     height: "height ? `${height"}px` : undefined,;"
   };""
 ;";""
@@ -353,7 +353,7 @@ export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gray-200">;";";";""
                 <motion.div;";";";";""
                   className="h-full bg-blue-500";";";";";""
-                  initial={{ width: "0 "}};";";";";""
+                  initial={{ width: "0 "}};";";";";""`
                   animate={{ width: "`${loadProgress"}%` }};";";";";""
                   transition={{ duration: "0.3 "}};"
 =======
@@ -389,10 +389,10 @@ export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
   };
 "
   // Container styles;"
-  const containerStyle: unknown React.CSSProperties = {,;"
-    aspectRatio:"`
-      aspectRatio || (width && height ? `${width}/${height}` : undefined),;`
-    width: width ? `${width"}px` : undefined,"`
+  const containerStyle: unknown React.CSSProperties = {,;"`
+    aspectRatio:"``
+      aspectRatio || (width && height ? `${width}/${height}` : undefined),;``
+    width: width ? `${width"}px` : undefined,"``
     height: height ? `${height}px` : undefined,;
   }"
 ;"
@@ -417,8 +417,8 @@ export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
             {showLoadingProgress && isLoading && loadProgress > 0 && (;
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gray-200">
                 <motion.div;
-                  className="h-full bg-blue-500"
-                  initial={{ width: 0 }}"`
+                  className="h-full bg-blue-500"`
+                  initial={{ width: 0 }}"``
                   animate={{ width: "`${loadProgress}%` }}
                   transition={{ duration: "0.3 "}}
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
@@ -470,7 +470,7 @@ export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
             onLoad={handleLoad};
             onError={handleError};''
             className={cn(;;
-              'w-full h-full transition-opacity duration-300',;''
+              'w-full h-full transition-opacity duration-300',;''`
               `object-${objectFit}`,;;
               isLoading ? 'opacity-0' : 'opacity-100',;''
             )};;
@@ -487,8 +487,8 @@ export const OptimizedImage: unknown React.FC<OptimizedImageProps> = ({;
             loading={priority ? 'eager' : 'lazy'}'
             onLoad={handleLoad};
             onError={handleError}'
-            className={cn('
-              'w-full h-full transition-opacity duration-300','`
+            className={cn('`
+              'w-full h-full transition-opacity duration-300','``
               `object-${objectFit}`,;
               isLoading ? 'opacity-0' : 'opacity-100','
             )}'
@@ -548,7 +548,7 @@ export const _ImageGallery: unknown React.FC<ImageGalleryProps> = ({;
 }) => {;
   const [loadedCount, setLoadedCount] = useState(0);
 <<<<<<< HEAD
-;
+
   const handleImageLoad: unknown = () => {;''
     setLoadedCount((prev) => prev + 1);
   };
@@ -562,9 +562,9 @@ export const _ImageGallery: unknown React.FC<ImageGalleryProps> = ({;
         </span>;
       </div>;""
 ;";""
-      <div;";";""
+      <div;";";""`
         className={`grid gap-4`};";";";""
-        style={{;";";";";""
+        style={{;";";";";""`
           gridTemplateColumns: "`repeat(${columns"}, 1fr)`,;"
         }};""
       >;";""
@@ -606,10 +606,10 @@ export const _ImageGallery: unknown React.FC<ImageGalleryProps> = ({;
           {loadedCount}/{images.length} loaded;
         </span>;
       </div>
-;"
-      <div;"`
-        className={`grid gap-4`}
-        style={{;`
+;"`
+      <div;"``
+        className={`grid gap-4`}`
+        style={{;``
           gridTemplateColumns: "`repeat(${columns"}, 1fr)`,;
         }}
       >;"
@@ -654,7 +654,7 @@ interface OptimizedAvatarProps {;";";""
   fallback?: string;
   className?: string;
 };''
-;
+
 export const _OptimizedAvatar: unknown React.FC<OptimizedAvatarProps> = ({;
   src,;''
   alt,;;
@@ -668,7 +668,7 @@ export const _OptimizedAvatar: unknown React.FC<OptimizedAvatarProps> = ({;
     lg: 'h-12 w-12',;;'
     xl: 'h-16 w-16',;'
   };''
-;
+
   const initials: unknown =;
     fallback ||;''
     alt;;
@@ -677,7 +677,7 @@ export const _OptimizedAvatar: unknown React.FC<OptimizedAvatarProps> = ({;
       .join('');'
       .toUpperCase();
       .slice(0, 2);''
-;
+
   return (;
     <div;''
       className={cn(;;
@@ -691,7 +691,7 @@ export const _OptimizedAvatar: unknown React.FC<OptimizedAvatarProps> = ({;
           src={src};''
           alt={alt};;
           aspectRatio="1/1";";";";";""
-          objectFit="cover";";";";";""
+          objectFit="cover";";";";";""`
           fallbackSrc={`https: "//ui-avatars.com/api/?name=${encodeURIComponent(initials)"}&background=random`};";";";";""
           placeholder="color";";";";";""
           placeholderColor="#f3f4f6";";";";""
@@ -753,8 +753,8 @@ export const _OptimizedAvatar: unknown React.FC<OptimizedAvatarProps> = ({;
         <OptimizedImage;
           src={src}'
           alt={alt}'
-          aspectRatio="1/1"
-          objectFit=cover`
+          aspectRatio="1/1"`
+          objectFit=cover``
           fallbackSrc={`https: "//ui-avatars.com/api/?name=${encodeURIComponent(initials)"}&background=random`}
           placeholder=color"
           placeholderColor="#f3f4f6
@@ -767,6 +767,7 @@ export const _OptimizedAvatar: unknown React.FC<OptimizedAvatarProps> = ({;
         </div>)}
     </div>;""
   );
-
+`
 ""'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

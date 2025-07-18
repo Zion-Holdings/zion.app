@@ -64,5 +64,5 @@ export const _useUploadDeliverable = () => {;
     } catch (err: unknown) {'
       logErrorToProduction('Error uploading deliverable:', { data: "err "})"
       const errorMessage: unknown =;"
-        err instanceof Error && err.message ? err.message : 'Unknown error'
-      toast.error('Failed to upload deliverable: ' + errorMessage)'';;`
+        err instanceof Error && err.message ? err.message : 'Unknown error'`
+      toast.error('Failed to upload deliverable: ' + errorMessage)'';;``

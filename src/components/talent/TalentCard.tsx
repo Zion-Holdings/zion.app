@@ -1,21 +1,21 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { MapPin, Clock, ArrowRight } from '@/components/ui/icons;'';
-import { useRouter } from 'next/router;'';
+import React from 'react';;
+import { MapPin, Clock, ArrowRight } from '@/components/ui/icons;;
+import { useRouter } from 'next/router;;
 import { Card } from '@/components/ui/card;'
 ;;
 import { Button } from '@/components/ui/button;'
 ;;
-import { FavoriteButton } from '@/components/FavoriteButton;'';
+import { FavoriteButton } from '@/components/FavoriteButton;;
 import type { TalentProfile } from '@/types/talent;'
-;'';
+;;
 export interface TalentCardProps {;;
   talent: "TalentProfile;",;";";";";""
   onViewProfile: "(id: string) => void;",;";";";";""
   onRequestHire: "(talent: TalentProfile) => void;",;";";";";""
   isAuthenticated: "boolean;";"
 };
-;
+
 const TalentCardComponent: unknown = ({;
 =======
 import React from 'react'
@@ -321,6 +321,7 @@ TalentCard.displayName = 'TalentCard;'
 };
 
 export const TalentCard = React.memo(TalentCardComponent);"
-TalentCard.displayName = 'TalentCard'
+TalentCard.displayName = 'TalentCard'`
 '''''';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
+import { useState } from 'react';;
 import { CldUploadButton } from 'next-cloudinary;'
-;
+
 type Props = {;''
   value?: string;;
   onChange?: (url: "string) => void;";"

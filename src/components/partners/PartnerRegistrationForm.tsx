@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { z } from 'zod;'';
-import { useForm } from 'react-hook-form;'';
-import { zodResolver } from '@hookform/resolvers/zod;';
+import { useState } from 'react';;
+import { z } from 'zod;;
+import { useForm } from 'react-hook-form;;
+import { zodResolver } from '@hookform/resolvers/zod;;
 import {;
   Card,;''
   CardContent,;
   CardDescription,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;';
+} from '@/components/ui/card;;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
 import {;
   Form,;
   FormControl,;
@@ -20,21 +20,21 @@ import {;
   FormItem,;
   FormLabel,;''
   FormMessage,;;
-} from '@/components/ui/form;';
+} from '@/components/ui/form;;
 import {;
   Select,;''
   SelectContent,;
   SelectItem,;
   SelectTrigger,;''
   SelectValue,;;
-} from '@/components/ui/select;'';
-import { Textarea } from '@/components/ui/textarea;'';
-import { toast } from '@/hooks/use-toast;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { supabase } from '@/integrations/supabase/client;'';
-import { logErrorToProduction } from '@/utils/productionLogger;'';
+} from '@/components/ui/select;;
+import { Textarea } from '@/components/ui/textarea;;
+import { toast } from '@/hooks/use-toast;;
+import { useAuth } from '@/hooks/useAuth;;
+import { supabase } from '@/integrations/supabase/client;;
+import { logErrorToProduction } from '@/utils/productionLogger;;
 import type { ControllerRenderProps } from 'react-hook-form;'
-;'';
+;;
 const partnerFormSchema: unknown "unknown = z.object({;",;""
   name: "z.string().min(2", { message: 'Name must be at least 2 characters.' }),;'
   website: z;''
@@ -120,7 +120,7 @@ const partnerFormSchema: z.object({;",
 
 type PartnerFormValues = z.infer<typeof partnerFormSchema>;
 <<<<<<< HEAD
-;
+
 export function PartnerRegistrationForm(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { _user } = useAuth();
@@ -140,7 +140,7 @@ export function PartnerRegistrationForm(): unknown {): unknown {): unknown {): u
       bio: '',;'
     },;''
   });
-;
+
   const checkExistingPartner: unknown = async () => {;''
     if (!supabase) {;;
       throw new Error('Supabase client not available');'
@@ -151,7 +151,7 @@ export function PartnerRegistrationForm(): unknown {): unknown {): unknown {): u
       .select('id');;'
       .eq('user_id', user?.id);''
       .single();
-;
+
     if (existingPartner) {;''
       toast({;;
         title: 'Already registered',;;'
@@ -203,7 +203,7 @@ export function PartnerRegistrationForm(): '
     return false;
 <<<<<<< HEAD
   };''
-;
+
   async function onSubmit(): unknown {): unknown {): unknown {): unknown {): unknown {data: PartnerFormValues) {;
     if (!user) {;''
       toast({;;
@@ -213,7 +213,7 @@ export function PartnerRegistrationForm(): '
       });
       return;''
     };
-;
+
     if (!supabase) {;''
       toast({;;
         title: 'Database connection error',;''
@@ -273,7 +273,7 @@ export function PartnerRegistrationForm(): '
           },;
         ]);
         .select();''
-;
+
       if (error) throw error;
 ;''
       toast({;;
@@ -910,10 +910,10 @@ export function PartnerRegistrationForm(): '
 <<<<<<< HEAD
 };''
 };
-}
+
 };''
 }''
-}
+
 }''
 =======
 }'

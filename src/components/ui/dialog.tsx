@@ -1,19 +1,19 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
-import { X } from '@/components/ui/icons;'';
+import React from 'react';;
+import * as React from 'react';;
+import { X } from '@/components/ui/icons;;
 import * as DialogPrimitive from '@radix-ui/react-dialog;'
 ;;
 import { cn } from '@/lib/utils;'
-;
+
 const Dialog: unknown = DialogPrimitive.Root;
-;
+
 const DialogTrigger: unknown = DialogPrimitive.Trigger;
-;
+
 const DialogPortal: unknown = DialogPrimitive.Portal;
-;
+
 const DialogClose: unknown = DialogPrimitive.Close;
-;
+
 const DialogOverlay: unknown = React.forwardRef<;
   React.ElementRef<typeof DialogPrimitive.Overlay>,;
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>;''
@@ -96,7 +96,7 @@ const DialogContent = React.forwardRef<;
 ));
 DialogContent.displayName = DialogPrimitive.Content.displayName;
 <<<<<<< HEAD
-;
+
 const DialogHeader: unknown = ({;
   className,;""
   ...props;";""
@@ -110,7 +110,7 @@ const DialogHeader: unknown = ({;
   />;''
 );;
 DialogHeader.displayName = 'DialogHeader;'
-;
+
 const DialogFooter: unknown = ({;
   className,;''
   ...props;
@@ -124,7 +124,7 @@ const DialogFooter: unknown = ({;
   />;''
 );;
 DialogFooter.displayName = 'DialogFooter;'
-;
+
 const DialogTitle: unknown = React.forwardRef<;
   React.ElementRef<typeof DialogPrimitive.Title>,;
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Title>;''
@@ -180,7 +180,7 @@ const DialogTitle = React.forwardRef<;
 ));
 DialogTitle.displayName = DialogPrimitive.Title.displayName;
 <<<<<<< HEAD
-;
+
 const DialogDescription: unknown = React.forwardRef<;
   React.ElementRef<typeof DialogPrimitive.Description>,;''
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>;

@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import React, { useState, useRef, useEffect } from 'react''';
-import { Send } from '@/components/ui/icons;'';
-import type { FormEvent, KeyboardEvent } from 'react''';
-import { Button } from '@/components/ui/button'';
+import React, { useState, useRef, useEffect } from 'react';
+import { Send } from '@/components/ui/icons;;
+import type { FormEvent, KeyboardEvent } from 'react';
+import { Button } from '@/components/ui/button;
 
 interface ChatInputProps {;
   onSend: (message: string) => void;''
   disabled?: boolean''
 };
-;'';
+;;
 export function ChatInput(): unknown {): unknown {): unknown {): unknown {): unknown {{ onSend, disabled = false }: ChatInputProps) {;''
   const [message, setMessage] = useState('')''
   const inputRef: unknown = useRef<HTMLTextAreaElement>(null);
@@ -107,7 +107,7 @@ export function ChatInput(): unknown {): unknown {): unknown {): unknown {): unk
 ;"""
 };""
 }""
-}
+
 }""
 =======
         type="submit"

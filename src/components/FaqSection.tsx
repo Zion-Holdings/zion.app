@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import { GradientHeading } from './GradientHeading;'';
-import { FileText } from '@/components/ui/icons'';
-;
+import { GradientHeading } from './GradientHeading;;
+import { FileText } from '@/components/ui/icons;
+
 import {;''
   Accordion,''
   AccordionContent,
   AccordionItem,;''
   AccordionTrigger,;''
 } from '@/components/ui/accordion''
-;
+
 const faqs: unknown = [;''
   {;''
     question: 'How do I publish my AI product or service?',;''
@@ -51,7 +51,7 @@ const faqs: unknown = [;''
       'Reach us via the chat widget, email support@ziontechgroup.com or call +1 302 464 0950 anytime.',''
   },;''
 ]''
-;
+
 export function FaqSection(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   return (;''
     <section className=py-20 bg-zion-blue id="faq">;";""
@@ -156,7 +156,7 @@ export function FaqSection(): '
           <Accordion type=single collapsible className="w-full">
             {faqs.map((faq, index) => (;"
               <AccordionItem;";
-                key={index}";";
+                key={index}";";`
                 value={`item-${index}`}"
                 className="border-zion-purple/10;"";
               >;"";
@@ -177,7 +177,7 @@ export function FaqSection(): '
 };"";"
 ";""
 }";""
-}
+
 }""
 }""
 =======
@@ -186,6 +186,7 @@ export function FaqSection(): '
 ";"
 }";"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

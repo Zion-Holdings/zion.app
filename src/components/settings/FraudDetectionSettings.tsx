@@ -1,27 +1,27 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { Info } from '@/components/ui/icons;';
+import React, { useState } from 'react';;
+import { Info } from '@/components/ui/icons;;
 import {;
   Card,;''
   CardContent,;
   CardDescription,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
-import { Switch } from '@/components/ui/switch;'';
-import { Button } from '@/components/ui/button;'';
+} from '@/components/ui/card;;
+import { Switch } from '@/components/ui/switch;;
+import { Button } from '@/components/ui/button;;
 import { Label } from '@/components/ui/label;'
 ;;
-import { logErrorToProduction } from '@/utils/productionLogger;';
+import { logErrorToProduction } from '@/utils/productionLogger;;
 import {;''
   Accordion,;
   AccordionContent,;
   AccordionItem,;''
   AccordionTrigger,;;
-} from '@/components/ui/accordion;'';
-import { toast } from '@/hooks/use-toast;'';
+} from '@/components/ui/accordion;;
+import { toast } from '@/hooks/use-toast;;
 import { useAuth } from '@/hooks/useAuth;'
-;
+
 export function FraudDetectionSettings(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
 =======
 import React, { useState } from 'react''
@@ -56,10 +56,10 @@ export function FraudDetectionSettings(): ;
   const [aiAnalysisEnabled, setAiAnalysisEnabled] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
 <<<<<<< HEAD
-;
+
   const handleSavePreferences: unknown = async () => {;
     if (!user?.id) return;''
-;
+
     setIsSaving(true);
     try {;''
       // In a real implementation, we would save these preferences to the database;;
@@ -303,9 +303,9 @@ export function FraudDetectionSettings(): ;
     </Card>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

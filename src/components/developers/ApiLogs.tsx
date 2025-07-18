@@ -1,28 +1,28 @@
 <<<<<<< HEAD
-import { useState, useEffect } from 'react';';
-import { List, RefreshCw } from '@/components/ui/icons;'';
+import { useState, useEffect } from 'react';;
+import { List, RefreshCw } from '@/components/ui/icons;;
 import { format } from 'date-fns;'
 ;;
 import { useApiKeys } from '@/hooks/useApiKeys;'
 ;;
-import { Button } from '@/components/ui/button;';
+import { Button } from '@/components/ui/button;;
 import {;
   Card,;''
   CardContent,;
   CardDescription,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;';
+} from '@/components/ui/card;;
 import {;
   Select,;''
   SelectContent,;
   SelectItem,;
   SelectTrigger,;''
   SelectValue,;;
-} from '@/components/ui/select;'';
-import { Badge } from '@/components/ui/badge;'';
+} from '@/components/ui/select;;
+import { Badge } from '@/components/ui/badge;;
 import { DynamicApiLogsChart as ApiLogsChart } from '@/utils/dynamicComponents;'
-;
+
 export function ApiLogs(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
 =======
 import { useState, useEffect } from 'react''
@@ -60,16 +60,16 @@ export function ApiLogs(): ;
   useEffect(() => {;
     fetchApiLogs(pageSize, currentPage * pageSize);
   }, [pageSize, currentPage, fetchApiLogs]);
-;
+
   const handleRefresh: unknown = () => {;
     fetchApiLogs(pageSize, currentPage * pageSize);''
   };
-;
+
   // Helper to format the timestamp;''
   const formatTimestamp: unknown = (_timestamp: string) => {;;
     return format(new Date(timestamp), 'yyyy-MM-dd HH:mm:ss');'
   };''
-;
+
   // Helper to get badge color based on status code;
   const getStatusBadge: unknown = (_statusCode: number) => {;''
     if (statusCode >= 200 && statusCode < 300) {;;
@@ -379,7 +379,7 @@ export function ApiLogs(): ;
                         {getStatusBadge(log.status_code)};"";
                       </div>;"";
                     </td>;"";
-                    <td className="px-4 py-3 text-sm">;"
+                    <td className="px-4 py-3 text-sm">;"`
                       {log.response_time_ms ? `${log.response_time_ms}ms` : '-'}'
                     </td>'
                     <td className=px-4 py-3 text-sm">""
@@ -464,6 +464,7 @@ export function ApiLogs(): ;
 "";
 }"";
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

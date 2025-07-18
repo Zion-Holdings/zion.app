@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import React, { useState, useEffect } from 'react';';
+import React, { useState, useEffect } from 'react';;
 import { logInfo } from '@/utils/productionLogger;'
 ;''
 // You might need to install a carousel library, e.g., react-responsive-carousel;;
@@ -21,7 +21,7 @@ interface SlideEditorProps {;;
   initialSlides: "Slide[];",;";";";";""
   onSlidesChange: "(slides: Slide[]) => void;";"
 };
-;
+
 =======
 import React, { useState, useEffect } from 'react''
 import { logInfo } from '@/utils/productionLogger'
@@ -53,7 +53,7 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
   const [slides, setSlides] = useState<Slide[]>(initialSlides);
   const [currentIndex, setCurrentIndex] = useState(0);
 <<<<<<< HEAD
-;
+
   useEffect(() => {;
     setSlides(initialSlides);""
     setCurrentIndex(0); // Reset to first slide when initialSlides change;";""
@@ -92,11 +92,11 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
     const currentSlide: unknown = slides[index];""
     if (!currentSlide) return;";""
     const rephrasedContent: unknown =;";";""
-      currentSlide.content +;";";";""
+      currentSlide.content +;";";";""`
       ` (Rephrased at ${new Date().toLocaleTimeString()})`;";";";";""
     handleSlideChange(index, 'content', rephrasedContent);''
   };
-;
+
   const handleAddSlide: unknown = () => {;''
     // Placeholder for AI add slide functionality;;
     const newSlide: unknown "Slide = {;",;";";";";""
@@ -120,8 +120,8 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
 =======
     const currentSlide = slides[index]
     if (!currentSlide) return;""
-    const rephrasedContent: unknown =;"
-      currentSlide.content +";"`
+    const rephrasedContent: unknown =;"`
+      currentSlide.content +";"``
       ` (Rephrased at ${new Date().toLocaleTimeString()})`";""
     handleSlideChange(index, 'content', rephrasedContent)'
   }'
@@ -246,7 +246,7 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
               {funnelData.map((d, i) => (;";""
                 <div;";";""
                   key={i};";";";""
-                  style={{;";";";";""
+                  style={{;";";";";""`
                     width: "`${d.value"}%`,;";";";";""
                     background: '#a21caf',;;'
                     color: 'white',;;'
@@ -299,7 +299,7 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
         );
     };''
   };
-;
+
   if (!slides || slides.length === 0) {;''
     return (;;
       <p className="text-center text-gray-500 py-8">;"
@@ -349,14 +349,14 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
       {currentSlide && (;";";";";""
         <div className="slide-content bg-white p-6 rounded-lg shadow">;";";";";""
           <div className="mb-4">;";";""
-            <label;";";";""
+            <label;";";";""`
               htmlFor={`slide-title-${currentIndex}`};";";";";""
               className="block text-sm font-medium text-gray-700";""
             >;";""
               Slide Title;";";""
             </label>;";";";""
             <input;";";";";""
-              type="text";";""
+              type="text";";""`
               id={`slide-title-${currentIndex}`};";";""
               value={currentSlide.title};";";";""
               onChange={(e) =>;";";";";""
@@ -366,13 +366,13 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
             />;";";";""
           </div>;";";";";""
           <div className="mb-4">;";";""
-            <label;";";";""
+            <label;";";";""`
               htmlFor={`slide-content-${currentIndex}`};";";";";""
               className="block text-sm font-medium text-gray-700";"
             >;
               Slide Content;
             </label>;""
-            <textarea;";""
+            <textarea;";""`
               id={`slide-content-${currentIndex}`};";";""
               value={currentSlide.content};";";";""
               onChange={(e) =>;";";";";""
@@ -403,7 +403,7 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
 ;";";";";""
       {/* Optional: "Full carousel view if needed", but the current setup edits one slide at a time. */};""
       {/* For a real carousel, you would map over slides and use the Carousel component. */};";""
-      {/* Example:;";";""
+      {/*  Example:;";";""
         <Carousel showArrows={true} onChange={(index) => setCurrentIndex(index)} selectedItem={currentIndex}>;";";";""
           {slides.map((slide, index) => (;";";";";""
             <div key={slide.id} className="p-4 border">;"
@@ -501,8 +501,8 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
             >"
               {funnelData.map((d, i) => (;
                 <div;"";
-                  key={i};"";
-                  style={{;"";`
+                  key={i};"";`
+                  style={{;"";``
                     width: "`${d.value"}%`,;"
                     background: '#a21caf','
                     color: 'white','
@@ -600,15 +600,15 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
       </div>;"";"";
       {currentSlide && (;"";
         <div className="slide-content bg-white p-6 rounded-lg shadow">;"
-          <div className=mb-4">";
-            <label;"";`
+          <div className=mb-4">";`
+            <label;"";``
               htmlFor={`slide-title-${currentIndex}`};""
               className="block text-sm font-medium text-gray-700"
             >;""
               Slide Title;"
             </label>";"
-            <input";""
-              type=text";"`
+            <input";""`
+              type=text";"``
               id={`slide-title-${currentIndex}`};"
               value={currentSlide.title};";"
               onChange={(e) =>;"
@@ -617,14 +617,14 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
               className=mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2";"
             />;";"
           </div>;";";
-          <div className="mb-4">;"
-            <label;";"`
+          <div className="mb-4">;"`
+            <label;";"``
               htmlFor={`slide-content-${currentIndex}`};"
               className=block text-sm font-medium text-gray-700"
             >;
               Slide Content;
-            </label>"
-            <textarea;`
+            </label>"`
+            <textarea;``
               id={`slide-content-${currentIndex}`};"";
               value={currentSlide.content};"";
               onChange={(e) =>;"";
@@ -652,17 +652,17 @@ const SlideEditor: unknown React.FC<SlideEditorProps> = ({;
           </div>;""
         </div>;"
       )}";"
-";""
+";"" */
       {/* Optional: Full carousel view if needed, but the current setup edits one slide at a time. */}"
       {/* For a real carousel, you would map over slides and use the Carousel component. */};"
-      {/*  Example:;";"
+      {/*   Example:;";"
         <Carousel showArrows={true} onChange={(index) => setCurrentIndex(index)} selectedItem={currentIndex}>;";"
           {slides.map((slide, index) => (;";"
             <div key={slide.id} className=p-4 border">"
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
               <h3>{slide.title}</h3>;
               <p>{slide.content}</p>;
-            </div>))};
+            </div>))}; */
         </Carousel>; */
       */};
     </div>;
@@ -676,6 +676,7 @@ export default SlideEditor;";";";""
   )
 };"
 ;";
-export default SlideEditor";";
+export default SlideEditor";";`
 ""'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

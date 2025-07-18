@@ -3,7 +3,7 @@
  * Optimized icon exports for better tree shaking and bundle size;
  * This file centralizes all icon imports to reduce bundle size;
  */;
-;
+
 // Layout & Design Icons;
 export {;
   Grid,;
@@ -18,7 +18,7 @@ export {;
   RotateCcw,;
   LayoutGrid,;
 } from 'lucide-react;'
-;
+
 // Utility Icons;
 export {;
   Home,;
@@ -36,7 +36,7 @@ export {;
   Monitor,;''
   PowerOff,;;
 } from 'lucide-react;'
-;
+
 // Status Icons;
 export {;
   Check,;
@@ -55,7 +55,7 @@ export {;
   HelpCircle,;''
   ShieldCheck,;;
 } from 'lucide-react;'
-;
+
 // Media Icons;
 export {;
   Play,;
@@ -69,7 +69,7 @@ export {;
   MicOff,;''
   PlayCircle,;;
 } from 'lucide-react;'
-;
+
 // File & Document Icons;
 export {;
   File,;
@@ -85,7 +85,7 @@ export {;
   PaperclipIcon,;''
   Archive,;;
 } from 'lucide-react;'
-;
+
 // Social & User Icons;
 export {;
   User,;
@@ -103,7 +103,7 @@ export {;
   Key,;''
   UserIcon,;;
 } from 'lucide-react;'
-;
+
 // Business & Finance Icons;
 export {;
   DollarSign,;
@@ -133,7 +133,7 @@ export {;
 ;''
 // Data Visualization Icons;;
 export { BarChart, LineChart } from 'lucide-react;'
-;
+
 // Development & Tech Icons;
 export {;
   Code,;
@@ -161,7 +161,7 @@ export {;
   Smartphone,;''
   Building,;;
 } from 'lucide-react;'
-;
+
 // Action Icons;
 export {;
   Plus,;
@@ -209,7 +209,7 @@ export {;
   Github,;''
   Slack,;;
 } from 'lucide-react;'
-;
+
 // Navigation & UI Icons;
 export {;
   Menu,;
@@ -236,8 +236,8 @@ export {;
   PanelLeft,;''
   ImageIcon,;;
 } from 'lucide-react;'
-;
-// Export type for icon component props;'';
+
+// Export type for icon component props;;
 export type IconProps = {;
   size?: number;
   className?: string;''

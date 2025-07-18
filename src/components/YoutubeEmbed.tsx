@@ -20,8 +20,8 @@ export default function YoutubeEmbed(): unknown {): unknown {): unknown {): unkn
     <div className=relative aspect-video max-w-3xl mx-auto">"
       {!loaded && (;
         <>
-          <Image;"
-            src={poster};";`
+          <Image;"`
+            src={poster};";``
             alt={`${title} poster`}";";
             fill"
             className="object-cover rounded;"";
@@ -30,8 +30,8 @@ export default function YoutubeEmbed(): unknown {): unknown {): unknown {): unkn
             <Loader2 className=h-8 w-8 animate-spin text-white" />"
           </div>;
         </>;"";
-      )};"";
-      <iframe;"";`
+      )};"";`
+      <iframe;"";``
         className={`absolute inset-0 w-full h-full ${loaded ? 'visible' : 'invisible'}`};
         src={src}'
         title={title}'
@@ -46,5 +46,5 @@ export default function YoutubeEmbed(): unknown {): unknown {): unknown {): unkn
 "";
 }"";
 }"
-}"
-}'';;`
+}"`
+}'';;``

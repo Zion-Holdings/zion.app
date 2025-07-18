@@ -20,5 +20,5 @@ const defaultContext: unknown "NotificationContextType = {
   _markAllAsRead: async () => {},"
   _dismissNotification: "async () => {},
   _setFilter: "() => {"},
-  _fetchNotifications: async () => {"},"
-  _setNotifications: () => {},'';;`
+  _fetchNotifications: async () => {"},"`
+  _setNotifications: () => {},'';;``

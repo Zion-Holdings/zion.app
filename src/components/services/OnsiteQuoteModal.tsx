@@ -1,16 +1,16 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { useState } from 'react;';
+import React from 'react';;
+import { useState } from 'react;;
 import {;
   Dialog,;''
   DialogContent,;
   DialogHeader,;
   DialogTitle,;''
   DialogFooter,;;
-} from '@/components/ui/dialog;'';
-import { Input } from '@/components/ui/input;'';
-import { Textarea } from '@/components/ui/textarea;'';
-import { Button } from '@/components/ui/button;'';
+} from '@/components/ui/dialog;;
+import { Input } from '@/components/ui/input;;
+import { Textarea } from '@/components/ui/textarea;;
+import { Button } from '@/components/ui/button;;
 import { useEnqueueSnackbar } from '@/context;'
 ;''
 interface OnsiteQuoteModalProps {;;
@@ -18,7 +18,7 @@ interface OnsiteQuoteModalProps {;;
   onOpenChange: (open: boolean) => void;
   country?: string;
 };
-;
+
 export function OnsiteQuoteModal(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   open,;
   onOpenChange,;""
@@ -91,7 +91,7 @@ export function OnsiteQuoteModal(): unknown {): unknown {): unknown {): unknown 
       });
       return;''
     };
-;
+
     setIsSubmitting(true);''
     try {;;
       const res: unknown = await fetch('/api/quotes', {;;'
@@ -125,7 +125,7 @@ export function OnsiteQuoteModal(): unknown {): unknown {): unknown {): unknown 
       setIsSubmitting(false);
     };''
   };
-;
+
   return (;''
     <Dialog open={open} onOpenChange={onOpenChange}>;;
       <DialogContent className="bg-zion-blue border-zion-blue-light text-white">;";""
@@ -180,9 +180,9 @@ export function OnsiteQuoteModal(): unknown {): unknown {): unknown {): unknown 
     </Dialog>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

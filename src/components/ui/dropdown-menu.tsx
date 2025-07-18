@@ -1,23 +1,23 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
-import { Check, ChevronRight } from '@/components/ui/icons;'';
+import React from 'react';;
+import * as React from 'react';;
+import { Check, ChevronRight } from '@/components/ui/icons;;
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu;'
 ;;
 import { cn } from '@/lib/utils;'
-;
+
 const DropdownMenu: unknown = DropdownMenuPrimitive.Root;
-;
+
 const DropdownMenuTrigger: unknown = DropdownMenuPrimitive.Trigger;
-;
+
 const DropdownMenuGroup: unknown = DropdownMenuPrimitive.Group;
-;
+
 const DropdownMenuPortal: unknown = DropdownMenuPrimitive.Portal;
-;
+
 const DropdownMenuSub: unknown = DropdownMenuPrimitive.Sub;
-;
+
 const DropdownMenuRadioGroup: unknown = DropdownMenuPrimitive.RadioGroup;
-;
+
 const DropdownMenuSubTrigger: unknown = React.forwardRef<;
   React.ElementRef<typeof DropdownMenuPrimitive.SubTrigger>,;
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.SubTrigger> & {;
@@ -78,7 +78,7 @@ const DropdownMenuSubTrigger = React.forwardRef<;
 DropdownMenuSubTrigger.displayName =;
   DropdownMenuPrimitive.SubTrigger.displayName;
 <<<<<<< HEAD
-;
+
 const DropdownMenuSubContent: unknown = React.forwardRef<;
   React.ElementRef<typeof DropdownMenuPrimitive.SubContent>,;
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.SubContent>;""
@@ -272,7 +272,7 @@ const DropdownMenuLabel = React.forwardRef<;
 ));
 DropdownMenuLabel.displayName = DropdownMenuPrimitive.Label.displayName;
 <<<<<<< HEAD
-;
+
 const DropdownMenuSeparator: unknown = React.forwardRef<;
   React.ElementRef<typeof DropdownMenuPrimitive.Separator>,;''
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Separator>;
@@ -295,7 +295,7 @@ const DropdownMenuSeparator = React.forwardRef<;
 ));
 DropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName;
 <<<<<<< HEAD
-;
+
 const DropdownMenuShortcut: unknown = ({;
   className,;''
   ...props;
@@ -308,7 +308,7 @@ const DropdownMenuShortcut: unknown = ({;
   );''
 };;
 DropdownMenuShortcut.displayName = 'DropdownMenuShortcut;'
-;
+
 =======
 
 const DropdownMenuShortcut = ({;

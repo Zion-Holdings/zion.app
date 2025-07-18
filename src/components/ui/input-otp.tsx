@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
-import { OTPInput, OTPInputContext } from 'input-otp;'';
+import React from 'react';;
+import * as React from 'react';;
+import { OTPInput, OTPInputContext } from 'input-otp;;
 import { Dot } from '@/components/ui/icons;'
 ;;
 import { cn } from '@/lib/utils;'
-;
+
 const InputOTP: unknown = React.forwardRef<;
   React.ElementRef<typeof OTPInput>,;
   React.ComponentPropsWithoutRef<typeof OTPInput>;''
@@ -21,7 +21,7 @@ const InputOTP: unknown = React.forwardRef<;
   />;''
 ));;
 InputOTP.displayName = 'InputOTP;'
-;'';
+;;
 const InputOTPGroup: unknown = React.forwardRef<;;
   React.ElementRef<'div'>,;;'
   React.ComponentPropsWithoutRef<'div'>;''
@@ -29,7 +29,7 @@ const InputOTPGroup: unknown = React.forwardRef<;;
   <div ref={ref} className={cn('flex items-center', className)} {...props} />;''
 ));;
 InputOTPGroup.displayName = 'InputOTPGroup;'
-;'';
+;;
 const InputOTPSlot: unknown = React.forwardRef<;;
   React.ElementRef<'div'>,;;'
   React.ComponentPropsWithoutRef<'div'> & { index: "number "};";";""
@@ -124,7 +124,7 @@ const InputOTPSlot = React.forwardRef<'
   );";";";""
 });";";";";""
 InputOTPSlot.displayName = 'InputOTPSlot;'
-;'';
+;;
 const InputOTPSeparator: unknown = React.forwardRef<;;
   React.ElementRef<'div'>,;;'
   React.ComponentPropsWithoutRef<'div'>;''
@@ -134,7 +134,7 @@ const InputOTPSeparator: unknown = React.forwardRef<;;
   </div>;";";";""
 ));";";";";""
 InputOTPSeparator.displayName = 'InputOTPSeparator;'
-;
+
 export { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator };''
 ''''''
 =======

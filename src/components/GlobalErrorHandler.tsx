@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React, { createContext, useContext, useState, useCallback } from 'react''';
-import type { ReactNode } from 'react''';
-import { toast } from '@/hooks/use-toast;'';
-import type { LogContext } from '@/types/common'';
-;
-import { logErrorToProduction } from '@/utils/productionLogger'';
+import React, { createContext, useContext, useState, useCallback } from 'react';
+import type { ReactNode } from 'react';
+import { toast } from '@/hooks/use-toast;;
+import type { LogContext } from '@/types/common;
+
+import { logErrorToProduction } from '@/utils/productionLogger;
 ;''
 interface ErrorContextType {;''
   reportError: "(error: Error, context?: unknown) => void;"";"
@@ -18,7 +18,7 @@ const ErrorContext: unknown = createContext<ErrorContextType | null>(null);";""
 ;";""
 interface GlobalErrorHandlerProps {;";""
   children: ReactNode"""
-}
+
 ;"";
 export function GlobalErrorHandler(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: GlobalErrorHandlerProps) {;";"
   const [retryCount, setRetryCount] = useState<Record<string, number>>({})";";"
@@ -134,7 +134,7 @@ export function GlobalErrorHandler(): unknown {): unknown {): unknown {): unknow
       {children};
     </ErrorContext.Provider>);
 };
-;'';
+;;
 export function useGlobalErrorHandler(): unknown {): unknown {): unknown {): unknown {): unknown {): ErrorContextType {''
   const context: unknown = useContext(ErrorContext);
   if (!context) {;''
@@ -145,7 +145,7 @@ export function useGlobalErrorHandler(): unknown {): unknown {): unknown {): unk
   return context;
 };
 
-// Helper function to convert technical errors to user-friendly messages;'';
+// Helper function to convert technical errors to user-friendly messages;;
 function getErrorMessage(): unknown {): unknown {): unknown {): unknown {): unknown {error: Error): string {''
   const message: unknown = error.message.toLowerCase();
 ;''
@@ -256,24 +256,24 @@ export function useErrorHandler(): unknown {): unknown {): unknown {): unknown {
   };";"
 }";";"
 """
-}
+
 };""
 };";"
 }"""
 };
-}
+
 };""
 }""
 };
 };
-}
+
 }""
-}
-}
-}
+
+
+
 }""
 =======
-import React from 'react';
+import React from 'react;
 
 export default function GlobalErrorHandler() {
   return (
@@ -282,5 +282,5 @@ export default function GlobalErrorHandler() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}
+
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

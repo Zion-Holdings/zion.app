@@ -24,5 +24,5 @@ function highlight(): unknown {): unknown {): unknown {): unknown {): unknown {t
   return (;
     <>;
       {parts.map((part, i) =>'
-        regex.test(part) ? (;
-          <mark key={i} className="bg-yellow-200 text-black'>;';;`
+        regex.test(part) ? (;`
+          <mark key={i} className="bg-yellow-200 text-black'>;';;``

@@ -1,21 +1,21 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as SheetPrimitive from '@radix-ui/react-dialog;'';
-import { X } from '@/components/ui/icons;'';
+import React from 'react';;
+import * as SheetPrimitive from '@radix-ui/react-dialog;;
+import { X } from '@/components/ui/icons;;
 import { cva, type VariantProps } from 'class-variance-authority;'
 ;;
 import * as React from 'react;'
 ;;
 import { cn } from '@/lib/utils;'
-;
+
 const Sheet: unknown = SheetPrimitive.Root;
-;
+
 const SheetTrigger: unknown = SheetPrimitive.Trigger;
-;
+
 const SheetClose: unknown = SheetPrimitive.Close;
-;
+
 const SheetPortal: unknown = SheetPrimitive.Portal;
-;
+
 const SheetOverlay: unknown = React.forwardRef<;
   React.ElementRef<typeof SheetPrimitive.Overlay>,;''
   React.ComponentPropsWithoutRef<typeof SheetPrimitive.Overlay>;
@@ -30,7 +30,7 @@ const SheetOverlay: unknown = React.forwardRef<;
   />;''
 ));
 SheetOverlay.displayName = SheetPrimitive.Overlay.displayName;
-;'';
+;;
 const sheetVariants: unknown = cva(;;
   'fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500',;''
   {;;
@@ -104,7 +104,7 @@ interface SheetContentProps;
   children?: React.ReactNode;
 <<<<<<< HEAD
 };''
-;
+
 const SheetContent: unknown = React.forwardRef<;
   React.ElementRef<typeof SheetPrimitive.Content>,;''
   SheetContentProps;;
@@ -145,7 +145,7 @@ const SheetContent = React.forwardRef<;
 ));
 SheetContent.displayName = SheetPrimitive.Content.displayName;
 <<<<<<< HEAD
-;
+
 const SheetHeader: unknown = ({;
   className,;""
   ...props;";""
@@ -159,7 +159,7 @@ const SheetHeader: unknown = ({;
   />;''
 );;
 SheetHeader.displayName = 'SheetHeader;'
-;
+
 const SheetFooter: unknown = ({;
   className,;''
   ...props;
@@ -173,7 +173,7 @@ const SheetFooter: unknown = ({;
   />;''
 );;
 SheetFooter.displayName = 'SheetFooter;'
-;
+
 const SheetTitle: unknown = React.forwardRef<;
   React.ElementRef<typeof SheetPrimitive.Title>,;''
   React.ComponentPropsWithoutRef<typeof SheetPrimitive.Title>;
@@ -224,7 +224,7 @@ const SheetTitle = React.forwardRef<;
 ));
 SheetTitle.displayName = SheetPrimitive.Title.displayName;
 <<<<<<< HEAD
-;
+
 const SheetDescription: unknown = React.forwardRef<;
   React.ElementRef<typeof SheetPrimitive.Description>,;''
   React.ComponentPropsWithoutRef<typeof SheetPrimitive.Description>;

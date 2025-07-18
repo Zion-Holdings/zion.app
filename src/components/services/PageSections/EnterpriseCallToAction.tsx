@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import Link from 'next/link;'';
+import Link from 'next/link;;
 import { Button } from '@/components/ui/button;'
-;
+
 export function EnterpriseCallToAction(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   return (;;
     <div className="mt-12 text-center">;";";";";""

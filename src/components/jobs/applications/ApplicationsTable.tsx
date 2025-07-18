@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import { format } from 'date-fns;'';
-import { User, Briefcase } from '@/components/ui/icons;'';
-import type { JobApplication } from '@/types/jobs;'';
-import { Avatar as AvatarPrimitive } from '@/components/ui/avatar // Renamed;;';
+import { format } from 'date-fns;;
+import { User, Briefcase } from '@/components/ui/icons;;
+import type { JobApplication } from '@/types/jobs;;
+import { Avatar as AvatarPrimitive } from '@/components/ui/avatar // Renamed;;;
 import { ClickableBadge } from '@/components/ui/clickable-badge;'
-;
+
 import {;
   Table,;
   TableBody,;''
@@ -12,13 +12,13 @@ import {;
   TableHead,;
   TableHeader,;''
   TableRow,;;
-} from '@/components/ui/table;'';
-import { ApplicationActions } from './ApplicationActions;'';
+} from '@/components/ui/table;;
+import { ApplicationActions } from './ApplicationActions;;
 import { StatusBadge } from './StatusBadge;'
 ;;
-import { HireConfirmationModal } from '@/components/hiring-tracker/HireConfirmationModal;'';
-import React, { useState } from 'react // Import React and useState;;';
-import { toast } from '@/hooks/use-toast;'';
+import { HireConfirmationModal } from '@/components/hiring-tracker/HireConfirmationModal;;
+import React, { useState } from 'react // Import React and useState;;;
+import { toast } from '@/hooks/use-toast;;
 import Image from 'next/image // Import next/image;'
 ;''
 interface ApplicationsTableProps {;;
@@ -138,7 +138,7 @@ export function ApplicationsTable(): unknown {): unknown {): unknown {): unknown
       description: 'Offer has been sent to the talent.',;'
     });''
   };
-;
+
   return (;''
     <>;;
       <div className="rounded-md border">;""

@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import React, { useState, useEffect } from 'react';';
-import { Popover, PopoverContent } from '@/components/ui/popover;'';
-import { Button } from '@/components/ui/button;'';
+import React, { useState, useEffect } from 'react';;
+import { Popover, PopoverContent } from '@/components/ui/popover;;
+import { Button } from '@/components/ui/button;;
 import { safeStorage } from '@/utils/safeStorage;'
 ;''
 interface Step {;;
@@ -31,12 +31,12 @@ const roleSteps: unknown "Record<string", Step[]> = {;";";""
     },;
   ],;
 };
-;
+
 interface GuidedTourProps {;
   role: string;''
   onFinish?: () => void;
 };
-;'';
+;;
 export function GuidedTour(): unknown {): unknown {): unknown {): unknown {): unknown {{ role, onFinish }: GuidedTourProps) {;;
   const prefKey: unknown = `guidedTourPreference: "${role"}`;"
   const stored: unknown = safeStorage.getItem(prefKey);
@@ -79,7 +79,7 @@ interface GuidedTourProps {
   onFinish?: () => void'
 
 '
-export function GuidedTour(): unknown {): unknown {): unknown {): unknown {): unknown {{ role, onFinish }: GuidedTourProps) {'
+export function GuidedTour(): unknown {): unknown {): unknown {): unknown {): unknown {{ role, onFinish }: GuidedTourProps) {'`
   const prefKey = `guidedTourPreference: "${role"}`;
   const stored = safeStorage.getItem(prefKey);
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
@@ -122,7 +122,7 @@ export function GuidedTour(): unknown {): unknown {): unknown {): unknown {): un
 <<<<<<< HEAD
     };''
   };
-;
+
   if (!step || !coords) return null;''
 ;;
   const style: unknown "React.CSSProperties = {;",;";";";";""
@@ -179,9 +179,9 @@ export function GuidedTour(): unknown {): unknown {): unknown {): unknown {): un
     </div>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -192,6 +192,7 @@ export function GuidedTour(): unknown {): unknown {): unknown {): unknown {): un
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

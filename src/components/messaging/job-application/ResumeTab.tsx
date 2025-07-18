@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { ResumeSelector } from '../resume-selector/index;'';
-import type { ResumeOption } from '../resume-selector/index;'';
+import React from 'react';;
+import { ResumeSelector } from '../resume-selector/index;;
+import type { ResumeOption } from '../resume-selector/index;;
 import { Button } from '@/components/ui/button;'
-;
+
 export interface ResumeTabProps {;
   selectedResumeId?: string | null;
   onSelectResume?: (resumeId: string) => void;
@@ -11,7 +11,7 @@ export interface ResumeTabProps {;
   onApply?: () => Promise<void>;
   isSubmitting?: boolean;
 };
-;
+
 =======
 import React from 'react'
 import { ResumeSelector } from '../resume-selector/index'

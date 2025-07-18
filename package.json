@@ -303,24 +303,6 @@
     "multi-computer:verify": "npm run distributed-ai:verify",
     "multi-computer:report": "npm run distributed-ai:report",
     "multi-computer:status": "npm run ai-coordinator:status",
-<<<<<<< HEAD
-    "build:optimize": "node scripts/replace-console-statements.cjs && npm run lint -- --fix && npm run build",
-    "improve:all": "node scripts/automated-app-improvement.cjs",
-    "dev:fix": "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096' next dev",
-    "auto-commit": "node scripts/auto-commit-improvements.cjs",
-    "auto-deploy": "node scripts/auto-deploy-to-netlify.cjs",
-    "fix-watchpack": "node scripts/fix-watchpack-issue.cjs",
-    "auto:fix": "node scripts/comprehensive-app-automation.cjs",
-    "auto:improve": "node scripts/continuous-improvement.cjs",
-    "auto:full": "node scripts/comprehensive-app-automation.cjs --full",
-    "auto:monitor": "node scripts/comprehensive-app-automation.cjs --monitor",
-    "improve:continuous": "npm run auto:improve",
-    "dev:stable": "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096' next dev --turbo",
-    "dev:legacy": "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096' next dev --no-turbo"
-  },
-  "prisma": {
-    "seed": "ts-node prisma/seed.ts"
-=======
     "improve:automated": "node scripts/automated-app-improver.cjs",
     "improve:ai-syntax": "node scripts/ai-syntax-fixer.cjs",
     "improve:orchestrator": "node scripts/app-improvement-orchestrator.cjs",
@@ -352,20 +334,34 @@
     "automation:trigger:improvement": "curl -X POST http://localhost:3001/improve -H 'Content-Type: application/json' -d '{\"target\":\"general\",\"priority\":\"normal\"}'",
     "automation:trigger:ai": "curl -X POST http://localhost:3002/improve -H 'Content-Type: application/json' -d '{\"target\":\"general\",\"priority\":\"normal\"}'",
     "automation:distribute:workload": "curl -X POST http://localhost:3003/api/tasks/submit -H 'Content-Type: application/json' -d '{\"task\":\"Fix all issues\",\"priority\":\"high\"}'",
-    "build:optimize": "node scripts/replace-console-statements.cjs && npm run lint -- --fix && npm run build"
->>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+    "build:optimize": "node scripts/replace-console-statements.cjs && npm run lint -- --fix && npm run build",
+    "improve:all": "node scripts/automated-app-improvement.cjs",
+    "dev:fix": "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096' next dev",
+    "auto-commit": "node scripts/auto-commit-improvements.cjs",
+    "auto-deploy": "node scripts/auto-deploy-to-netlify.cjs",
+    "fix-watchpack": "node scripts/fix-watchpack-issue.cjs",
+    "auto:fix": "node scripts/comprehensive-app-automation.cjs",
+    "auto:improve": "node scripts/continuous-improvement.cjs",
+    "auto:full": "node scripts/comprehensive-app-automation.cjs --full",
+    "auto:monitor": "node scripts/comprehensive-app-automation.cjs --monitor",
+    "improve:continuous": "npm run auto:improve",
+    "dev:stable": "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096' next dev --turbo",
+    "dev:legacy": "NODE_OPTIONS='--no-deprecation --max-old-space-size=4096' next dev --no-turbo"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.22.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
-    "@sentry/nextjs": "^9.40.0",
+    "@sentry/nextjs": "^9.39.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "framer-motion": "^12.23.6",
     "i18next": "^25.3.2",
     "lucide-react": "^0.525.0",
-    "next": "^15.0.0-rc.0",
+    "next": "^15.4.2-canary.7",
     "node-fetch": "^3.3.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

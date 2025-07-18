@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import React from 'react;';
+import React from 'react;;
 import {;
   Card,;''
   CardContent,;
   CardDescription,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
+} from '@/components/ui/card;;
 import { Progress } from '@/components/ui/progress;'
-;
+
 export function TeamStats(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   return (;
     <Card>;''

@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import Image from 'next/image;'';
+import Image from 'next/image;;
 import { Twitter, Linkedin } from '@/components/ui/icons;'
 ;''
 interface Speaker {;;
@@ -19,7 +19,7 @@ const speakers: unknown Speaker[] = [;";";";""
     linkedin: '#',;'
   },;''
 ];
-;
+
 export function SpeakersSection(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   return (;;
     <section className="py-12 bg-zion-blue-dark text-white" id="speakers">;";";";";""

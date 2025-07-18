@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
+import { useState } from 'react';;
 import { Menu } from '@/components/ui/icons;'
 ;;
 import Link from 'next/link;''
-;
+
 export function EnterpriseStickyNav(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const [open, setOpen] = useState(false);''
   return (;;
@@ -69,7 +69,7 @@ export function EnterpriseStickyNav(): ;
           >;"";
             <Menu className=h-6 w-6" />";
           </button>;"";
-          <ul;""
+          <ul;""`
             className={`${open ? 'flex' : 'hidden'} flex-col gap-4 md: "flex md:flex-row md:gap-8 w-full md:w-auto`};"
           >";
             <li>;"";
@@ -125,6 +125,7 @@ export function EnterpriseStickyNav(): ;
 "";
 }"";
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

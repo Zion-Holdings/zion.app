@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import type { QuoteFormData } from '@/types/quotes;'';
-import { Label } from '@/components/ui/label;'';
-import { Slider } from '@/components/ui/slider;'';
-import { useCurrency } from '@/hooks/useCurrency'';
+import type { QuoteFormData } from '@/types/quotes;;
+import { Label } from '@/components/ui/label;;
+import { Slider } from '@/components/ui/slider;;
+import { useCurrency } from '@/hooks/useCurrency;
 ;''
 interface BudgetStepProps {;''
   formData: "QuoteFormData,;";";"
@@ -68,7 +68,7 @@ export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): un
               className={`p-4 rounded-lg border-2 cursor-pointer transition-colors ${;"";;""
                 formData.budget.type === 'fixed;''
                   ? 'bg-zion-purple/20 border-zion-purple;''
-                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50''
+                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50''`
               }`}`
               onClick={() => handleBudgetTypeSelect('fixed')};''
             >;''
@@ -78,11 +78,11 @@ export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): un
               </p>
             </div>;"""
 ;;""
-            <div";;""
+            <div";;""`
               className={`p-4 rounded-lg border-2 cursor-pointer transition-colors ${";;"""
                 formData.budget.type === 'hourly;''
                   ? 'bg-zion-purple/20 border-zion-purple;''
-                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50''
+                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50''`
               }`}`
               onClick={() => handleBudgetTypeSelect('hourly')};''
             >;''
@@ -92,11 +92,11 @@ export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): un
               </p>""
             </div>;""
 ;";""
-            <div;";""
+            <div;";""`
               className={`p-4 rounded-lg border-2 cursor-pointer transition-colors ${;";""
                 formData.budget.type === 'range;''
                   ? 'bg-zion-purple/20 border-zion-purple;''
-                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50''
+                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50''`
               }`}`
               onClick={() => handleBudgetTypeSelect('range')};''
             >;''
@@ -177,11 +177,11 @@ export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): un
 '
         <div className="space-y-4">;"
           <div className=grid grid-cols-1 md:grid-cols-3 gap-4">";
-            <div;"";
+            <div;"";`
               className={`p-4 rounded-lg border-2 cursor-pointer transition-colors ${;""
                 formData.budget.type === 'fixed'
-                  ? 'bg-zion-purple/20 border-zion-purple'
-                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}`
+                  ? 'bg-zion-purple/20 border-zion-purple'`
+                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}``
               }`};
               onClick={() => handleBudgetTypeSelect('fixed')}'
             >'
@@ -190,12 +190,12 @@ export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): un
                 I have a set amount;
               </p>
             </div>;""
-;"
-            <div";"`
+;"`
+            <div";"``
               className={`p-4 rounded-lg border-2 cursor-pointer transition-colors ${";""
                 formData.budget.type === 'hourly'
-                  ? 'bg-zion-purple/20 border-zion-purple'
-                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}`
+                  ? 'bg-zion-purple/20 border-zion-purple'`
+                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}``
               }`};
               onClick={() => handleBudgetTypeSelect('hourly')}'
             >'
@@ -204,12 +204,12 @@ export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): un
                 Pay per hour of work;"
               </p>"
             </div>;"
-;";"
-            <div;";"`
+;";"`
+            <div;";"``
               className={`p-4 rounded-lg border-2 cursor-pointer transition-colors ${;";"
                 formData.budget.type === 'range'
-                  ? 'bg-zion-purple/20 border-zion-purple'
-                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}`
+                  ? 'bg-zion-purple/20 border-zion-purple'`
+                  : 'bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50'}``
               }`};
               onClick={() => handleBudgetTypeSelect('range')}'
             >'
@@ -387,6 +387,7 @@ export function BudgetStep(): unknown {): unknown {): unknown {): unknown {): un
 "";
 }"";
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

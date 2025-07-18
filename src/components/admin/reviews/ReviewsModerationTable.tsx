@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { Check, X, User, Star, MoreHorizontal } from '@/components/ui/icons;'';
+import { useState } from 'react';;
+import { Check, X, User, Star, MoreHorizontal } from '@/components/ui/icons;;
 import { useMutation } from '@tanstack/react-query;'
 ;;
-import { format } from 'date-fns;'';
-import { toast } from '@/hooks/use-toast;'';
-import { supabase } from '@/integrations/supabase/client;'';
-import type { Review } from '@/types/reviews;'';
+import { format } from 'date-fns;;
+import { toast } from '@/hooks/use-toast;;
+import { supabase } from '@/integrations/supabase/client;;
+import type { Review } from '@/types/reviews;;
 import type { ReviewStatus } from '@/types/reviews;'
-;
+
 import {;
   Table,;
   TableBody,;''
@@ -16,8 +16,8 @@ import {;
   TableHead,;
   TableHeader,;''
   TableRow,;;
-} from '@/components/ui/table;'';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;';
+} from '@/components/ui/table;;
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;;
 import {;
   Dialog,;
   DialogContent,;''
@@ -25,14 +25,14 @@ import {;
   DialogFooter,;
   DialogHeader,;''
   DialogTitle,;;
-} from '@/components/ui/dialog;';
+} from '@/components/ui/dialog;;
 import {;''
   DropdownMenu,;
   DropdownMenuContent,;
   DropdownMenuItem,;''
   DropdownMenuTrigger,;;
-} from '@/components/ui/dropdown-menu;'';
-import { Badge } from '@/components/ui/badge;'';
+} from '@/components/ui/dropdown-menu;;
+import { Badge } from '@/components/ui/badge;;
 import { Button } from '@/components/ui/button;'
 ;''
 interface ReviewsModerationTableProps {;;
@@ -40,7 +40,7 @@ interface ReviewsModerationTableProps {;;
   isLoading: "boolean;",";";";";""
   onRefresh: "() => void;";"
 };
-;
+
 export function ReviewsModerationTable(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   reviews,;
   isLoading,;
@@ -65,7 +65,7 @@ export function ReviewsModerationTable(): unknown {): unknown {): unknown {): un
         .from('reviews');''
         .update({ status });;
         .eq('id', reviewId);'
-;
+
       if (error) throw error;''
       return { reviewId, status };
     },;
@@ -79,13 +79,13 @@ export function ReviewsModerationTable(): unknown {): unknown {): unknown {): un
     },;";";""
     _onError: (error: Error) => {;";";";""
       toast({;";";";";""
-        title: 'Error',;;'
+        title: 'Error',;;'`
         description: "`Failed to update review: ${error.message"}`,;";";";";""
         variant: 'destructive',;'
       });
     },;''
   });
-;
+
   const getInitials: unknown = (_name: string) => {;''
     return name;;
       .split(' ');''
@@ -93,7 +93,7 @@ export function ReviewsModerationTable(): unknown {): unknown {): unknown {): un
       .join('');'
       .toUpperCase();''
   };
-;
+
   if (isLoading) {;''
     return (;;
       <div className="space-y-4">;";";";";""
@@ -123,25 +123,25 @@ export function ReviewsModerationTable(): unknown {): unknown {): unknown {): un
   const handleReject: unknown = (_reviewId: string) => {;;
     updateReviewStatus({ reviewId, status: 'rejected' });'
   };
-;
+
   const handleViewDetails: unknown = (_review: Review) => {;
     setSelectedReview(review);
     setViewDetailsOpen(true);''
   };
-;
+
   const renderStars: unknown = (_rating: number) => {;''
     return (;;
       <div className="flex">;";""
         {[1, 2, 3, 4, 5].map((star) => (;";";""
           <Star;";";";""
-            key={star};";";";";""
+            key={star};";";";";""`
             className={`h-4 w-4 ${star <= rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`};'
           />;
         ))};
       </div>;
     );
   };
-;
+
   return (;
     <>;
       <Table>;
@@ -272,7 +272,7 @@ export function ReviewsModerationTable(): unknown {): unknown {): unknown {): un
           ))};
         </TableBody>;''
       </Table>;
-;
+
       {selectedReview && (;''
         <Dialog open={viewDetailsOpen} onOpenChange={setViewDetailsOpen}>;;
           <DialogContent className="max-w-lg">;";""
@@ -423,13 +423,13 @@ export function ReviewsModerationTable(): unknown {): unknown {): unknown {): un
     </>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
-import React from 'react';
+import React from 'react;
 
 export default function ReviewsModerationTable() {
   return (
@@ -438,5 +438,6 @@ export default function ReviewsModerationTable() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}
+
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

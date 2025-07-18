@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import type { Review } from '@/types/reviews;'';
+import type { Review } from '@/types/reviews;;
 import { ReviewCard } from './ReviewCard;'
 ;''
 interface ReviewsListProps {;;
@@ -7,7 +7,7 @@ interface ReviewsListProps {;;
   isLoading: "boolean;",";";";";""
   onReportReview: "(reviewId: string", reason: "string) => Promise<boolean>;";"
 };
-;
+
 export function ReviewsList(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   reviews,;
   isLoading,;""

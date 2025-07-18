@@ -4,7 +4,7 @@ import {;
   DialogHeader,;
 <<<<<<< HEAD
   DialogTitle,;
-} from '@/components/ui/dialog;'';
+} from '@/components/ui/dialog;;
 import { LoginCard } from './login;'
 ;''
 interface LoginModalProps {;;

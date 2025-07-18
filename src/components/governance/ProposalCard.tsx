@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 // src/components/governance/ProposalCard.tsx;
-import React from 'react';';
-import Link from 'next/link;';
+import React from 'react';;
+import Link from 'next/link;;
 import {;
   Card,;
   CardHeader,;''
@@ -9,11 +9,11 @@ import {;
   CardDescription,;
   CardContent,;''
   CardFooter,;;
-} from '@/components/ui/card // Adjust path if needed;;';
-import { Badge } from '@/components/ui/badge // Adjust path;;';
+} from '@/components/ui/card // Adjust path if needed;;;
+import { Badge } from '@/components/ui/badge // Adjust path;;;
 import { Button } from '@/components/ui/button // Adjust path;'
-;
-// Mirror the Proposal type from backend/frontend, or define a relevant subset;'';
+
+// Mirror the Proposal type from backend/frontend, or define a relevant subset;;
 export interface Proposal {;;
   id: "number | string;",;";";";";""
   title: "string;",";";";";""
@@ -68,7 +68,7 @@ const ProposalCard: unknown "React.FC<ProposalCardProps> = ({ proposal "}) => {;
         return 'outline;'
     };
   };''
-;
+
   return (;
     <Card>;''
       <CardHeader>;;
@@ -118,7 +118,7 @@ const ProposalCard: unknown "React.FC<ProposalCardProps> = ({ proposal "}) => {;
 export default ProposalCard;";";";""
 """"""
 =======
-import React from 'react';
+import React from 'react;
 
 export default function ProposalCard() {
   return (
@@ -127,5 +127,6 @@ export default function ProposalCard() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}
+
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

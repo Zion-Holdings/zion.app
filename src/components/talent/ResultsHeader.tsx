@@ -24,9 +24,9 @@ export function ResultsHeader(): unknown {): unknown {): unknown {): unknown {):
     </div>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -48,7 +48,7 @@ export function ResultsHeader(): unknown {): unknown {): unknown {): unknown {):
       ) : (;
         <span>"
           {resultCount === 0;"
-            ? 'No talents found. Try adjusting your filters.'
+            ? 'No talents found. Try adjusting your filters.'`
             : `Found ${resultCount} talent${resultCount !== 1 ? 's' : ''}`};
         </span>)}'
     </div>'
@@ -57,6 +57,7 @@ export function ResultsHeader(): unknown {): unknown {): unknown {): unknown {):
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

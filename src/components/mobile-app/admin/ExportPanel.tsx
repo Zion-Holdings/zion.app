@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Download } from '@/components/ui/icons;'';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card;'';
+import React from 'react';;
+import { Download } from '@/components/ui/icons;;
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card;;
 import { Button } from '@/components/ui/button;'
 ;;
-import type { AppPlatform, AppMetadataValues } from './MetadataManager;'';
-import { toast } from 'sonner;'';
+import type { AppPlatform, AppMetadataValues } from './MetadataManager;;
+import { toast } from 'sonner;;
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger;'
 ;''
 interface ExportPanelProps {;;
@@ -57,7 +57,7 @@ export const _ExportPanel: unknown React.FC<ExportPanelProps> = ({;"
       let fileName: string'
 '
       if (format === 'json') {'
-        content = JSON.stringify(metadata, null, 2)'
+        content = JSON.stringify(metadata, null, 2)'`
         fileName = `zion-app-metadata-${platform} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}-${metadata.version}.json`;
       } else {;
         // Convert object to CSV format'
@@ -81,16 +81,16 @@ export const _ExportPanel: unknown React.FC<ExportPanelProps> = ({;"
         content =;;
           headers.join(',') +;;'
           '\n' +;''
-          values;;
+          values;;`
             .map((value) => `"${String(value).replace(/"/g, '""')}"`);";";";";""
             .join(',');'
 ;''
         // Add keywords as additional rows;;
         content += '\n\nKeywords:\n' + metadata.keywords.join(',');'
-;
+;`
         fileName = `zion-app-metadata-${platform}-${metadata.version}.csv`;''
       };
-;
+
       // Create download link;''
       const blob: unknown "unknown = new Blob([content]", {;;"
         type: format === 'json' ? 'application/json' : 'text/csv',;'
@@ -104,14 +104,14 @@ export const _ExportPanel: unknown React.FC<ExportPanelProps> = ({;"
 '
         content ='
           headers.join(',') +'
-          '\n' +'
-          values'`
+          '\n' +'`
+          values'``
             .map((value) => `"${String(value).replace(/"/g, '')}"`)"
             .join(',')'
 '
         // Add keywords as additional rows'
-        content += '\n\nKeywords:\n' + metadata.keywords.join(',')'
-`
+        content += '\n\nKeywords:\n' + metadata.keywords.join(',')'`
+``
         fileName = `zion-app-metadata-${platform}-${metadata.version}.csv`'
       }'
 
@@ -129,10 +129,10 @@ export const _ExportPanel: unknown React.FC<ExportPanelProps> = ({;"
 <<<<<<< HEAD
       document.body.removeChild(link);''
       URL.revokeObjectURL(url);
-;
+;`
       toast.success(`Exported ${format.toUpperCase()} file successfully`);''
     } catch {;;
-      logErrorToProduction('Export failed:', { data: "error "});"
+      logErrorToProduction('Export failed:', { data: "error "});"`
       toast.error(`Failed to export ${format.toUpperCase()} file`);""
     };";""
   };";";""
@@ -182,11 +182,11 @@ export const _ExportPanel: unknown React.FC<ExportPanelProps> = ({;"
             <Button onClick={trackAnalytics} className="w-full">;"
 =======
       document.body.removeChild(link)'
-      URL.revokeObjectURL(url)'
-`
+      URL.revokeObjectURL(url)'`
+``
       toast.success(`Exported ${format.toUpperCase()} file successfully`)'
-    } catch {'
-      logErrorToProduction('Export failed:', { data: "error "})`
+    } catch {'`
+      logErrorToProduction('Export failed:', { data: "error "})``
       toast.error(`Failed to export ${format.toUpperCase()} file`)
     };""
   };
@@ -249,6 +249,7 @@ export const _ExportPanel: unknown React.FC<ExportPanelProps> = ({;"
       </CardContent>
     </Card>;""
   );
-
+`
 ""'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { Button } from '@/components/ui/button;';
+import React, { useState } from 'react';;
+import { Button } from '@/components/ui/button;;
 import {;
   Form,;
   FormField,;''
@@ -8,35 +8,35 @@ import {;
   FormLabel,;
   FormControl,;''
   FormMessage,;;
-} from '@/components/ui/form;'';
-import { Input } from '@/components/ui/input;'';
-import { Textarea } from '@/components/ui/textarea;';
+} from '@/components/ui/form;;
+import { Input } from '@/components/ui/input;;
+import { Textarea } from '@/components/ui/textarea;;
 import {;
   Select,;''
   SelectTrigger,;
   SelectValue,;
   SelectContent,;''
   SelectItem,;;
-} from '@/components/ui/select;'';
-import { Calendar } from '@/components/ui/calendar;'';
+} from '@/components/ui/select;;
+import { Calendar } from '@/components/ui/calendar;;
 import {;
   Popover,;
   PopoverTrigger,;''
   PopoverContent,;;
-} from '@/components/ui/popover;'';
-import type { TalentProfile } from '@/types/talent;'';
-import type { UserProfile } from '@/types/auth;'';
-import { cn } from '@/lib/utils;'';
-import { zodResolver } from '@hookform/resolvers/zod;'';
-import { useForm } from 'react-hook-form;'';
-import type { ControllerRenderProps } from 'react-hook-form;'';
-import { z } from 'zod;'';
-import { format, addDays } from 'date-fns;'';
+} from '@/components/ui/popover;;
+import type { TalentProfile } from '@/types/talent;;
+import type { UserProfile } from '@/types/auth;;
+import { cn } from '@/lib/utils;;
+import { zodResolver } from '@hookform/resolvers/zod;;
+import { useForm } from 'react-hook-form;;
+import type { ControllerRenderProps } from 'react-hook-form;;
+import { z } from 'zod;;
+import { format, addDays } from 'date-fns;;
 import { CalendarIcon } from '@/components/ui/icons;'
 ;;
-import { toast } from '@/components/ui/use-toast;'';
-import { useInterviews } from '@/hooks/useInterviews;'';
-import { logErrorToProduction } from '@/utils/productionLogger;'';
+import { toast } from '@/components/ui/use-toast;;
+import { useInterviews } from '@/hooks/useInterviews;;
+import { logErrorToProduction } from '@/utils/productionLogger;;
 import type { MeetingPlatform } from '@/types/interview;'
 ;''
 interface InterviewRequestFormProps {;;
@@ -134,7 +134,7 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
       meetingLink: '',;'
     },;
   });''
-;
+
   async function onSubmit(): unknown {): unknown {): unknown {): unknown {): unknown {values: z.infer<typeof formSchema>) {;
     if (!userDetails?.id) {;''
       toast({;;
@@ -146,9 +146,9 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
     };
 ;''
     setIsSubmitting(true);
-;
+
     try {;''
-      // Combine date and time;;
+      // Combine date and time;;`
       const dateTimeString: unknown "unknown = `${format(values.date", 'yyyy-MM-dd')} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}T${values.time}:00`;'
       const scheduledDate: unknown = new Date(dateTimeString);
 ;''
@@ -176,7 +176,7 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
       });";";""
 ;";";";""
       toast({;";";";";""
-        title: 'Interview requested',;;'
+        title: 'Interview requested',;;'`
         description: "`Your interview request with ${talent.full_name"} has been sent.`,;";""
       });";";""
       onClose();";";";""
@@ -218,7 +218,7 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
     '19:30',;;'
     '20:00',;''
   ];
-;
+
   return (;''
     <Form {...form}>;;
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">;";";";";""
@@ -306,7 +306,7 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
 ;";"
   const form = useForm<z.infer<typeof formSchema>>({;,";"
     resolver: zodResolver(formSchema)",""
-    defaultValues: {,;""
+    defaultValues: {,;""`
       title: "`Interview with ${talent.full_name}`,;"";
       duration: '30','
       platform: 'zoom','
@@ -327,8 +327,8 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
 '
     setIsSubmitting(true)'
 
-    try {'
-      // Combine date and time'`
+    try {'`
+      // Combine date and time'``
       const dateTimeString: `${format(values.date", 'yyyy-MM-dd')} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}T${values.time}:00`;
       const scheduledDate = new Date(dateTimeString);
 '
@@ -355,8 +355,8 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
         title: values.title,;
       })";"
 ;";"
-      toast({;";";
-        title: 'Interview requested','`
+      toast({;";";`
+        title: 'Interview requested','``
         description: "`Your interview request with ${talent.full_name"} has been sent.`,;
       })";"
       onClose();";"
@@ -681,7 +681,7 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
               <FormItem>;
                 <FormLabel>Meeting Link (Optional)</FormLabel>;
                 <FormControl>;''
-                  <Input;;
+                  <Input;;`
                     placeholder={`Add your ${form.watch('platform')} link here`};'
 =======
                   onValueChange={field.onChange}'
@@ -719,8 +719,8 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
             }) => ('
               <FormItem>'
                 <FormLabel>Meeting Link (Optional)</FormLabel>;
-                <FormControl>'
-                  <Input'`
+                <FormControl>'`
+                  <Input'``
                     placeholder={`Add your ${form.watch('platform')} link here`};
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
                     {...field};
@@ -732,7 +732,7 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
 <<<<<<< HEAD
           />;''
         )};
-;
+
         <FormField;''
           control={form.control};;
           name="notes";";""
@@ -808,10 +808,10 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
 <<<<<<< HEAD
 };''
 };
-}
+
 };''
 }''
-}
+
 }''
 =======
 }'
@@ -819,6 +819,7 @@ export function InterviewRequestForm(): unknown {): unknown {): unknown {): unkn
 
 }'
 }'
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

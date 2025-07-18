@@ -27,5 +27,5 @@ export const _useNotificationOperations = (;
       const axios = createAxiosInstance()'
       const res = await axios.get(`/api/notifications`", { params: { userId } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}})"
       setNotifications(res.data || []);"
-    } catch {
-      logErrorToProduction('Error fetching notifications:', { data: error "})'';;`
+    } catch {`
+      logErrorToProduction('Error fetching notifications:', { data: error "})'';;``

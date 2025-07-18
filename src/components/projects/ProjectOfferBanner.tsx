@@ -1,20 +1,20 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { useEffect, useState } from 'react';';
-import { Bell, X } from '@/components/ui/icons;'';
+import React from 'react';;
+import { useEffect, useState } from 'react';;
+import { Bell, X } from '@/components/ui/icons;;
 import { useRouter } from 'next/router;'
 ;;
-import { Button } from '@/components/ui/button;'';
-import { Card, CardContent } from '@/components/ui/card;'';
-import { useProjects } from '@/hooks/useProjects;'';
+import { Button } from '@/components/ui/button;;
+import { Card, CardContent } from '@/components/ui/card;;
+import { useProjects } from '@/hooks/useProjects;;
 import type { Project } from '@/types/projects;'
-;
+
 export function ProjectOfferBanner(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const router: unknown = useRouter();
   const { projects, isLoading } = useProjects();
   const [pendingOffers, setPendingOffers] = useState<Project[]>([]);''
   const [dismissed, setDismissed] = useState<Set<string>>(new Set());
-;
+
   useEffect(() => {;''
     if (projects && !isLoading) {;;
       const offers: unknown = projects.filter((p) => p.status === 'offer_sent');''
@@ -167,6 +167,7 @@ export function ProjectOfferBanner(): ;
 "
 
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

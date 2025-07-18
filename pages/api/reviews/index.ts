@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next;
 
 interface Review {
   id: string;
@@ -8,13 +8,11 @@ interface Review {
   rating: number;
   comment: string;
   createdAt: string;
-}
 
 interface ReviewsResponse {
   reviews: Review[];
   total: number;
   averageRating: number;
-}
 
 export default async function handler(
   req: NextApiRequest,
@@ -22,14 +20,12 @@ export default async function handler(
 ) {
   if (req.method !== 'GET') {
     return res.status(405).json({ error: 'Method not allowed' });
-  }
 
   try {
     const { productId, rating, limit = '10', offset = '0' } = req.query;
 
     if (!productId) {
       return res.status(400).json({ error: 'Product ID is required' });
-    }
 
     const limitNum = parseInt(limit as string, 10);
     const offsetNum = parseInt(offset as string, 10);
@@ -37,7 +33,7 @@ export default async function handler(
 
     // Mock data - replace with actual database query
     const mockReviews: Review[] = [
-      {
+
         id: '1',
         productId: productId as string,
         userId: 'user1',
@@ -52,7 +48,6 @@ export default async function handler(
     let filteredReviews = mockReviews;
     if (!isNaN(parsedRating) && parsedRating > 0) {
       filteredReviews = mockReviews.filter(review => review.rating === parsedRating);
-    }
 
     // Calculate average rating
     const totalRating = filteredReviews.reduce((sum, review) => sum + review.rating, 0);
@@ -71,12 +66,12 @@ export default async function handler(
   } catch (error) {
     console.error('Reviews API error:', error);
     return res.status(500).json({ error: 'Internal server error' });
-  }
-}
+
+
 =======
-import React from 'react';
-import { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react;
+import { NextPage } from 'next;
+import Head from 'next/head;
 
 const Index: NextPage = () => {
   return (

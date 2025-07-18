@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react;
 
 export default function Wallet() {
   return (
@@ -7,4 +7,3 @@ export default function Wallet() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}

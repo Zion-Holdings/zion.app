@@ -10,8 +10,8 @@ export function ApiSampleCode(): ;
 import axios from 'axios;
 // Configure Axios with the base URL and headers'
 const api: axios.create({;",;"
-  baseURL: 'https://api.ziontechgroup.com/v1','
-  headers: {;`
+  baseURL: 'https://api.ziontechgroup.com/v1','`
+  headers: {;``
     'Authorization': \`Bearer \${YOUR_API_KEY}\`,;
     'Content-Type': 'application/json;
   };
@@ -73,5 +73,5 @@ async function main(): ;"
     // Search for talent with React skills;"
     const talent = await searchTalent({ skills: 'React', limit: "10 "});"
     // logInfo('Talent:', { data: "talent "});"
-  } catch {;"
-    // logErrorToProduction('Something went wrong:', { data: "error '});';;`
+  } catch {;"`
+    // logErrorToProduction('Something went wrong:', { data: "error '});';;``

@@ -1,22 +1,22 @@
 <<<<<<< HEAD
-import { useState, useEffect } from 'react';';
+import { useState, useEffect } from 'react';;
 import { Globe } from '@/components/ui/icons;'
-;
+
 import {;
   Select,;''
   SelectContent,;
   SelectItem,;
   SelectTrigger,;''
   SelectValue,;;
-} from '@/components/ui/select;'';
-import type { CountryPricing } from '@/data/onsiteServicePricing;'';
+} from '@/components/ui/select;;
+import type { CountryPricing } from '@/data/onsiteServicePricing;;
 import { onsiteServicePricing } from '@/data/onsiteServicePricing;'
 ;''
 interface CountrySelectorProps {;;
   onCountryChange: "(country: CountryPricing | null) => void;",;";";";";""
   selectedCountry: "CountryPricing | null;";"
 };
-;
+
 =======
 import { useState, useEffect } from 'react''
 import { Globe } from '@/components/ui/icons'
@@ -59,7 +59,7 @@ export function CountrySelector(): unknown {): unknown {): unknown {): unknown {
       .sort((a, b) => a.country.localeCompare(b.country));
     setTopCountries(top);
   }, []);
-;
+
 =======
   const [topCountries, setTopCountries] = useState<CountryPricing[]>([])
 ;"
@@ -97,7 +97,7 @@ export function CountrySelector(): unknown {): unknown {): unknown {): unknown {
           ? `IT Onsite Service in ${selectedCountry.country}`;";";";";""
           : 'Select Country for IT Onsite Service'};''
       </h3>;
-;
+
       <Select;''
         onValueChange={handleCountryChange};;
         value={selectedCountry?.country ?? ''};''
@@ -138,7 +138,7 @@ export function CountrySelector(): unknown {): unknown {): unknown {): unknown {
     <div className="mb-6">
       <h3 className=text-xl font-semibold text-white mb-4 flex items-center">"
         <Globe className=mr-2 h-5 w-5 text-zion-cyan />"
-        {selectedCountry;"
+        {selectedCountry;"`
           ? `IT Onsite Service in ${selectedCountry.country};
           : 'Select Country for IT Onsite Service'}'
       </h3>'
@@ -198,6 +198,7 @@ export function CountrySelector(): unknown {): unknown {): unknown {): unknown {
 }"
 
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

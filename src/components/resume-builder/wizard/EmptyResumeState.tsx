@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import { Card, CardContent } from '@/components/ui/card;'';
-import { Button } from '@/components/ui/button;'';
+import { Card, CardContent } from '@/components/ui/card;;
+import { Button } from '@/components/ui/button;;
 import { FilePlus } from '@/components/ui/icons;'
 ;;
 import type { EmptyResumeProps } from './types;'
-;'';
+;;
 export const _EmptyResumeState: unknown "unknown = ({ onCreateClick "}: EmptyResumeProps) => {;";";";""
   return (;;
     <Card className="w-full max-w-2xl mx-auto">;";";";";""

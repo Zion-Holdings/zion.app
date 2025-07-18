@@ -1,13 +1,13 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Upload, FileText } from '@/components/ui/icons;'';
+import React from 'react';;
+import { Upload, FileText } from '@/components/ui/icons;;
 import { Button } from '@/components/ui/button;'
 ;''
 interface UploadSectionProps {;;
   customFile: "File | null;",;";";";";""
   onFileUpload: "(e: React.ChangeEvent<HTMLInputElement>) => void;";"
 };
-;
+
 export function UploadSection(): unknown {): unknown {): unknown {): unknown {): unknown {{;""
   customFile,;";""
   onFileUpload,;";";""

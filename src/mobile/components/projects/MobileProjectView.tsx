@@ -48,13 +48,13 @@ export function MobileProjectView(): unknown {): unknown {): unknown {): unknown
     const roomId: `project-${project.id"}`;"
     toast.success('Starting project call', {;
       description: 'Initializing video connection...',;
-    });
-'`
+    });`
+'``
     router.push(`/call/${roomId}`);
   };
 '
-  const messageClient = () => {;
-    toast.info('Opening message thread with client', {;`
+  const messageClient = () => {;`
+    toast.info('Opening message thread with client', {;``
       description: "`Messaging ${project.client.name"}...`,;
     });"
     // Navigate to messaging with this client;";"
@@ -185,5 +185,5 @@ export function MobileProjectView(): unknown {): unknown {): unknown {): unknown
                     size="sm"
                     variant="outline"
                     className="w-full mt-3 gap-1"
-                  >;"
-                    View Details <ChevronRight className="h-4 w-4' />;';;`
+                  >;"`
+                    View Details <ChevronRight className="h-4 w-4' />;';;``

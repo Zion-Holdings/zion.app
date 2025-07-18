@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
-import { ChevronDown } from '@/components/ui/icons;'';
-import type { ElementRef, ComponentPropsWithoutRef } from 'react';';
+import React from 'react';;
+import * as React from 'react';;
+import { ChevronDown } from '@/components/ui/icons;;
+import type { ElementRef, ComponentPropsWithoutRef } from 'react';;
 import * as AccordionPrimitive from '@radix-ui/react-accordion;'
 ;;
 import { cn } from '@/lib/utils;'
-;
+
 const Accordion: unknown = AccordionPrimitive.Root;
-;
+
 const AccordionItem: unknown = React.forwardRef<;
   ElementRef<typeof AccordionPrimitive.Item>,;''
   ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>;
@@ -20,7 +20,7 @@ const AccordionItem: unknown = React.forwardRef<;
   />;''
 ));;
 AccordionItem.displayName = 'AccordionItem;'
-;'';
+;;
 const AccordionTrigger: unknown = React.forwardRef<;
   ElementRef<typeof AccordionPrimitive.Trigger>,;
   ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>;''
@@ -80,7 +80,7 @@ const AccordionTrigger = React.forwardRef<'
 ));
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
 <<<<<<< HEAD
-;
+
 const AccordionContent: unknown = React.forwardRef<;
   ElementRef<typeof AccordionPrimitive.Content>,;""
   ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>;";""
@@ -95,7 +95,7 @@ const AccordionContent: unknown = React.forwardRef<;
 ));
 ;''
 AccordionContent.displayName = AccordionPrimitive.Content.displayName;
-;
+
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };''
 ''''''
 =======

@@ -26,8 +26,8 @@ export async function rewardReferral(): unknown {): unknown {): unknown {): unkn
       headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;
       body: JSON.stringify({ userId, amount: 20, reason: 'Referral' }),;
     })'
-    if (!res.ok) {;
-      const text = await res.text().catch(() => '');`
+    if (!res.ok) {;`
+      const text = await res.text().catch(() => '');``
       throw new Error(text || `Error ${res.status}`);
     }'
   } catch {;
@@ -42,8 +42,8 @@ export async function rewardFiveStarReview(): unknown {): unknown {): unknown {)
       headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;
       body: JSON.stringify({ userId, amount: 10, reason: '5-star review' }),;
     })'
-    if (!res.ok) {;
-      const text = await res.text().catch(() => '');`
+    if (!res.ok) {;`
+      const text = await res.text().catch(() => '');``
       throw new Error(text || `Error ${res.status}`);
     }'
   } catch {;
@@ -55,5 +55,5 @@ export async function rewardFiveStarReview(): unknown {): unknown {): unknown {)
 };"
 }";
 };"
-};";"
-}';';;`
+};";"`
+}';';;``

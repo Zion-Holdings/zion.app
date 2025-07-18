@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import '@testing-library/jest-dom';
-import { vi } from 'vitest';
+import '@testing-library/jest-dom;
+import { vi } from 'vitest;
 
 // Mock matchMedia
 Object.defineProperty(window, 'matchMedia', {
@@ -48,8 +48,7 @@ declare global {
       close: () => void;
       on: () => void;
     };
-  }
-}
+
 
 (window as any).Shoplocket = {
   open: vi.fn(),
@@ -180,6 +179,7 @@ vi.mock('@/utils/safeStorage', async (importOriginal) => {'
       clear: vi.fn(),;"
     },;";"
   };"
-});"
+});"`
 """"'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

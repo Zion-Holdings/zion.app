@@ -5,7 +5,7 @@ import {;
   CardHeader,;
 <<<<<<< HEAD
   CardTitle,;
-} from '@/components/ui/card;'';
+} from '@/components/ui/card;;
 import { DynamicAnalyticsChart as AnalyticsChart } from '@/utils/dynamicComponents;'
 ;''
 interface FeatureUsageChartProps {;;
@@ -13,7 +13,7 @@ interface FeatureUsageChartProps {;;
   timeRange: "string;",;";";";";""
   onTimeRangeChange: "(range: string) => void;";"
 };
-;
+
 export function FeatureUsageChart(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   data,;
   timeRange,;""

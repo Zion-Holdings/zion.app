@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import type { CountryPricing } from '@/data/onsiteServicePricing;'';
-import { CountrySelector } from './CountrySelector;'';
-import { PaymentSection } from './PaymentSection;'';
+import type { CountryPricing } from '@/data/onsiteServicePricing;;
+import { CountrySelector } from './CountrySelector;;
+import { PaymentSection } from './PaymentSection;;
 import { ServiceDetails } from './ServiceDetails;'
-;
+
 interface CountryServiceSelectorProps {;
   onCountryChange?: (country: CountryPricing | null) => void;
   selectedCountry?: CountryPricing | null;''
 };
-;
+
 export function CountryServiceSelector(): unknown {): unknown {): unknown {): unknown {): unknown {{;''
   onCountryChange,;;
   selectedCountry: "initialCountry",;";";""
@@ -43,7 +43,7 @@ export function CountryServiceSelector(): unknown {): unknown {): unknown {): un
         {initialCountry && <PaymentSection selectedCountry={initialCountry} />};
 <<<<<<< HEAD
       </div>;
-;
+
       {initialCountry && <ServiceDetails country={initialCountry.country} />};""
     </div>;";""
   );";";""

@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import { GradientHeading } from './GradientHeading;'';
-import { Button } from './ui/button;'';
-import { CheckCircle2 } from '@/components/ui/icons'';
-;
+import { GradientHeading } from './GradientHeading;;
+import { Button } from './ui/button;;
+import { CheckCircle2 } from '@/components/ui/icons;
+
 import {;
   Table,;
   TableBody,;''
@@ -11,7 +11,7 @@ import {;
   TableHeader,;''
   TableRow,;''
 } from './ui/table''
-;
+
 export function ComparisonSection(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   return (;''
     <section className="py-20 bg-zion-blue-dark>;"
@@ -23,7 +23,7 @@ export function ComparisonSection(): unknown {): unknown {): unknown {): unknown
             traditional providers;
           </p>;
         </div>;
-;
+
         <div className="max-w-4xl mx-auto">;";""
           <div className=bg-zion-blue-light rounded-lg border border-zion-purple/20 overflow-hidden">";"
             <Table>;
@@ -179,7 +179,7 @@ export function ComparisonSection(): '
             </Table>;
           </div>;
 <<<<<<< HEAD
-;
+
           <div className="mt-8 flex justify-between items-center bg-zion-blue p-6 rounded-lg border border-zion-purple/20">;";""
             <div className=flex items-start">";;"""
               <CheckCircle2 className=mr-2 h-6 w-6 text-green-400 flex-shrink-0 mt-1 />";";""
@@ -224,7 +224,7 @@ export function ComparisonSection(): '
 }";";"
 
 <<<<<<< HEAD
-}
+
 }""
 }""
 }""

@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import React from 'react';';
-import type { BasicInfoFormData } from './basic-info/schema;'';
+import React from 'react';;
+import type { BasicInfoFormData } from './basic-info/schema;;
 import type {;
   Control,;
   UseFormSetValue,;''
   ControllerRenderProps,;;
-} from 'react-hook-form;';
+} from 'react-hook-form;;
 import {;
   FormField,;
   FormItem,;''
@@ -13,9 +13,9 @@ import {;
   FormControl,;
   FormDescription,;''
   FormMessage,;;
-} from '@/components/ui/form;'';
-import { Input } from '@/components/ui/input;'';
-import { TalentRateRecommender } from '@/components/pricing/TalentRateRecommender;'';
+} from '@/components/ui/form;;
+import { Input } from '@/components/ui/input;;
+import { TalentRateRecommender } from '@/components/pricing/TalentRateRecommender;;
 import { Card, CardContent } from '@/components/ui/card;'
 ;''
 interface RateOptimizationSectionProps {;;
@@ -26,7 +26,7 @@ interface RateOptimizationSectionProps {;;
   location?: string;";";";";""
   rateType: 'hourly' | 'fixed;'
 };
-;'';
+;;
 export const RateOptimizationSection: unknown React.FC<;
   RateOptimizationSectionProps;
 > = ({ control, setValue, skills, yearsExperience, location, rateType }) => {;''

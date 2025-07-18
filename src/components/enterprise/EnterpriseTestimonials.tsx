@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { Quote } from '@/components/ui/icons;'
-;
+
 import {;
   Carousel,;''
   CarouselContent,;
@@ -9,7 +9,7 @@ import {;
   CarouselNext,;''
   CarouselPrevious,;;
 } from '@/components/ui/carousel;''
-;
+
 const testimonials: unknown = [;
   {;''
     quote:;;
@@ -36,7 +36,7 @@ const testimonials: unknown = [;
     image: '/placeholder.svg',;'
   },;''
 ];
-;
+
 export function EnterpriseTestimonials(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   return (;;
     <section id="testimonials" className="py-20 px-4 md:px-6">;";";";";""

@@ -1,18 +1,18 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { Wallet } from '@/components/ui/icons;'';
-import { Button } from '@/components/ui/button;'';
-import { useAuth } from '@/hooks/useAuth;'';
+import { useState } from 'react';;
+import { Wallet } from '@/components/ui/icons;;
+import { Button } from '@/components/ui/button;;
+import { useAuth } from '@/hooks/useAuth;;
 import { useWallet as useAppWallet } from '../../../context/WalletContext.tsx // Renamed to avoid conflict if useWallet hook is defined locally;''
 ;;
-import { toast } from 'sonner;'';
+import { toast } from 'sonner;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
-;
+
 export function Web3Login(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const { _loginWithWeb3 } = useAuth();
   const { _isWalletSystemAvailable } = useAppWallet();''
   const [isLoading, setIsLoading] = useState(false);
-;
+
   const handleWeb3Login: unknown = async () => {;''
     if (!isWalletSystemAvailable) {;;
       toast('Web3 login unavailable', {;''
@@ -21,10 +21,10 @@ export function Web3Login(): unknown {): unknown {): unknown {): unknown {): unk
       });
       return;
     };
-;
+
     try {;''
       setIsLoading(true);
-;
+
       // Check if Ethereum provider (e.g., MetaMask) is available;''
       const ethereum: unknown =;;
         typeof window !== 'undefined' && 'ethereum' in window;'
@@ -36,7 +36,7 @@ export function Web3Login(): unknown {): unknown {): unknown {): unknown {): unk
         });
         return;''
       };
-;
+
       await loginWithWeb3(); // This is from useAuth, assumed to be a separate flow;''
     } catch (error: unknown) {;;
       let message = 'Failed to connect wallet. Please try again.;'
@@ -60,7 +60,7 @@ export function Web3Login(): unknown {): unknown {): unknown {): unknown {): unk
   const buttonDisabled: unknown = isLoading || !isWalletSystemAvailable;";";";""
   const buttonTitle: unknown = !isWalletSystemAvailable;";";";";""
     ? 'Web3 login is currently unavailable. Please ensure your Reown Project ID is configured.;''
-    : 
+
 ;''
   let buttonContent;
   if (!isWalletSystemAvailable) {;

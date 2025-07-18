@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
+import React from 'react';;
+import * as React from 'react';;
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog;'
 ;;
-import { cn } from '@/lib/utils;'';
+import { cn } from '@/lib/utils;;
 import { buttonVariants } from '@/components/ui/button;'
-;
+
 const AlertDialog: unknown = AlertDialogPrimitive.Root;
-;
+
 const AlertDialogTrigger: unknown = AlertDialogPrimitive.Trigger;
-;
+
 const AlertDialogPortal: unknown = AlertDialogPrimitive.Portal;
-;
+
 const AlertDialogOverlay: unknown = React.forwardRef<;
   React.ElementRef<typeof AlertDialogPrimitive.Overlay>,;''
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Overlay>;
@@ -78,7 +78,7 @@ const AlertDialogContent = React.forwardRef<;
 ));
 AlertDialogContent.displayName = AlertDialogPrimitive.Content.displayName;
 <<<<<<< HEAD
-;
+
 const AlertDialogHeader: unknown = ({;
   className,;''
   ...props;
@@ -92,7 +92,7 @@ const AlertDialogHeader: unknown = ({;
   />;''
 );;
 AlertDialogHeader.displayName = 'AlertDialogHeader;'
-;
+
 const AlertDialogFooter: unknown = ({;
   className,;''
   ...props;
@@ -106,7 +106,7 @@ const AlertDialogFooter: unknown = ({;
   />;''
 );;
 AlertDialogFooter.displayName = 'AlertDialogFooter;'
-;
+
 const AlertDialogTitle: unknown = React.forwardRef<;
   React.ElementRef<typeof AlertDialogPrimitive.Title>,;''
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Title>;
@@ -157,7 +157,7 @@ const AlertDialogTitle = React.forwardRef<;
 ));
 AlertDialogTitle.displayName = AlertDialogPrimitive.Title.displayName;
 <<<<<<< HEAD
-;
+
 const AlertDialogDescription: unknown = React.forwardRef<;
   React.ElementRef<typeof AlertDialogPrimitive.Description>,;''
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description>;

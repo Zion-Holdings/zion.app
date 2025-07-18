@@ -1,21 +1,21 @@
 <<<<<<< HEAD
-import React, { useState, useEffect } from 'react';';
-import { Check, MessageSquare, Download } from '@/components/ui/icons;'';
-import { useRouter } from 'next/router;'';
-import { useDisputes } from '@/hooks/useDisputes;'';
+import React, { useState, useEffect } from 'react';;
+import { Check, MessageSquare, Download } from '@/components/ui/icons;;
+import { useRouter } from 'next/router;;
+import { useDisputes } from '@/hooks/useDisputes;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
-;
+
 import type {;''
   Dispute,;
   DisputeMessage,;
   DisputeStatus,;''
   ResolutionType,;;
-} from '@/types/disputes;'';
+} from '@/types/disputes;;
 import { disputeReasonLabels } from '@/types/disputes;'
 ;;
-import { Button } from '@/components/ui/button;'';
-import { Textarea } from '@/components/ui/textarea;'';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;';
+import { Button } from '@/components/ui/button;;
+import { Textarea } from '@/components/ui/textarea;;
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;;
 import {;
   Card,;
   CardContent,;''
@@ -23,15 +23,15 @@ import {;
   CardFooter,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
-import { Badge } from '@/components/ui/badge;'';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;'';
-import { format, formatDistanceToNow } from 'date-fns;'';
+} from '@/components/ui/card;;
+import { Badge } from '@/components/ui/badge;;
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;;
+import { format, formatDistanceToNow } from 'date-fns;;
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert;'
 ;;
-import { useAuth } from '@/hooks/useAuth;'';
+import { useAuth } from '@/hooks/useAuth;;
 import { toast } from 'sonner;'
-;
+
 export function DisputeDetail(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const router: unknown = useRouter();
 =======
@@ -81,7 +81,7 @@ export function DisputeDetail(): ;
 <<<<<<< HEAD
     addDisputeMessage,;
   } = useDisputes();''
-;
+
   const [dispute, setDispute] = useState<Dispute | null>(null);
   const [messages, setMessages] = useState<DisputeMessage[]>([]);''
   const [isLoading, setIsLoading] = useState(true);;
@@ -100,10 +100,10 @@ export function DisputeDetail(): ;
 ;''
   // Check if user is admin (placeholder - implement proper admin check);;
   const isAdmin: unknown = user?.userType === 'admin;'
-;
+
   useEffect(() => {;
     if (!disputeId) return;
-;
+
     const loadDisputeData: unknown = async () => {;''
       setIsLoading(true);
       try {;
@@ -114,7 +114,7 @@ export function DisputeDetail(): ;
           return;
         } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
         setDispute(disputeData);''
-;
+
         const messagesData: unknown = await getDisputeMessages(disputeId);
         setMessages(messagesData);''
       } catch {;;
@@ -207,10 +207,10 @@ export function DisputeDetail(): ;
       toast.error('Failed to resolve dispute');'
     };
   };
-;
+
   const handleSendMessage: unknown = async () => {;
     if (!disputeId || !message.trim()) return;''
-;
+
     setIsSending(true);
     try {;''
       const success: unknown "unknown = await addDisputeMessage(disputeId", message, isAdmin);""
@@ -681,11 +681,11 @@ export function DisputeDetail(): ;
                               key={msg.id};";";";";""
                               className={`flex ${isCurrentUser ? 'justify-end' : 'justify-start'}`};''
                             >;
-                              <div;
+                              <div;`
                                 className={`max-w-[80%] ${;''
                                   isCurrentUser;;
                                     ? 'bg-primary text-primary-foreground;''
-                                    : 'bg-muted;'
+                                    : 'bg-muted;'`
                                 } p-4 rounded-lg`};''
                               >;;
                                 <div className="flex items-center gap-2 mb-2">;";";";";""
@@ -763,14 +763,14 @@ export function DisputeDetail(): ;
                           const isCurrentUser = user?.id === msg.user_id;""
                           return (;"
                             <div";"
-                              key={msg.id}";""
+                              key={msg.id}";""`
                               className={`flex ${isCurrentUser ? 'justify-end' : 'justify-start'}`}'
-                            >'
-                              <div;`
+                            >'`
+                              <div;``
                                 className={`max-w-[80%] ${'
                                   isCurrentUser'
-                                    ? 'bg-primary text-primary-foreground'
-                                    : 'bg-muted'}`
+                                    ? 'bg-primary text-primary-foreground'`
+                                    : 'bg-muted'}``
                                 } p-4 rounded-lg`}'
                               >'
                                 <div className=flex items-center gap-2 mb-2>"
@@ -1183,6 +1183,7 @@ export function DisputeDetail(): ;
 ";"
 }";"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

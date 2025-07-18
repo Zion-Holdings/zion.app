@@ -41,7 +41,7 @@ export async function toggleFavorite(): unknown {): unknown {): unknown {): unkn
 };
 
 };''
-}
+
 }''
 }''
 =======

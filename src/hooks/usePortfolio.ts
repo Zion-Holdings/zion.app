@@ -131,7 +131,7 @@ export function usePortfolio(): ;
       const message = e instanceof Error ? e.message : String(e);
       logErrorToProduction('Error updating portfolio project:', { data: "e "});"
       setError(message);"
-      toast({;"
-        title: 'Error',;`
-        description: "`Could not update project: ${message"}`,;"
-        variant: 'destructive',;';;`
+      toast({;"`
+        title: 'Error',;``
+        description: "`Could not update project: ${message"}`,;"`
+        variant: 'destructive',;';;``

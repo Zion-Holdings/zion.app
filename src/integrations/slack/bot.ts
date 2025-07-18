@@ -1,16 +1,14 @@
 <<<<<<< HEAD
-import { App } from '@slack/bolt';
+import { App } from '@slack/bolt;
 
 interface SlackRespond {
   text: string;
-  response_type?: 'in_channel' | 'ephemeral';
-}
+  response_type?: 'in_channel' | 'ephemeral;
 
 interface SafeConsole {
   log: (message: string) => void;
   error: (message: string) => void;
   warn: (message: string) => void;
-}
 
 interface SlackCommand {
   command: string;
@@ -26,21 +24,18 @@ interface SlackCommand {
   channel_name: string;
   user_team: string;
   PORT?: string;
-}
 
 interface SlackAck {
-  response_type?: 'in_channel' | 'ephemeral';
+  response_type?: 'in_channel' | 'ephemeral;
   text?: string;
   blocks?: any[];
-}
 
 class MockApp {
   command: (command: string, handler: (command: SlackCommand, ack: SlackAck) => void) => void;
   
   constructor() {
     this.command = vi.fn();
-  }
-}
+
 
 const safeConsole: SafeConsole = {
   log: console.log,
@@ -78,7 +73,7 @@ app.command(
             response_type: 'ephemeral',
             text: '❌ Deployment failed. Check logs for details.',
           });
-        }
+
         break;
       
       default:
@@ -86,8 +81,8 @@ app.command(
           response_type: 'ephemeral',
           text: 'Available commands: deploy',
         });
-    }
-  }
+
+
 );
 
 async function switchNetlifySite() {
@@ -95,7 +90,6 @@ async function switchNetlifySite() {
   // Implementation for switching Netlify site
   // This would typically involve calling Netlify's API
   safeConsole.log('Switching Netlify site...');
-}
 
 export default app;
 =======

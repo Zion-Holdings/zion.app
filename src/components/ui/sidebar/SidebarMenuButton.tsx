@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import React, { forwardRef } from 'react';';
-import { Slot } from '@radix-ui/react-slot;'';
+import React, { forwardRef } from 'react';;
+import { Slot } from '@radix-ui/react-slot;;
 import { cn } from '@/lib/utils;'
-;
+
 =======
 import React, { forwardRef } from 'react''
 import { Slot } from '@radix-ui/react-slot'
@@ -16,7 +16,7 @@ interface SidebarMenuButtonProps;
   asChild?: boolean;
 };
 <<<<<<< HEAD
-;'';
+;;
 export const SidebarMenuButton: unknown = forwardRef<;
   HTMLButtonElement,;
   SidebarMenuButtonProps;''

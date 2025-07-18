@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React, { useState, useEffect } from 'react';';
-import { supabase } from '@/integrations/supabase/client;'';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;'';
-import { format } from 'date-fns;'';
-import Skeleton from '@/components/ui/skeleton;'';
+import React, { useState, useEffect } from 'react';;
+import { supabase } from '@/integrations/supabase/client;;
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;;
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;;
+import { format } from 'date-fns;;
+import Skeleton from '@/components/ui/skeleton;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
 ;''
 interface MilestoneActivitiesProps {;;
@@ -81,7 +81,7 @@ export function MilestoneActivities(): unknown {): unknown {): unknown {): unkno
             `;''
             *,;;
             milestone: "milestone_id(title)",;";";";";""
-            created_by_profile: "profiles!user_id(display_name", avatar_url);";";""
+            created_by_profile: "profiles!user_id(display_name", avatar_url);";";""`
           `,;";";";""
           );";";";";""
           .eq('project_id', projectId);;'
@@ -109,11 +109,11 @@ export function MilestoneActivities(): unknown {): unknown {): unknown {): unkno
 '
         const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase'
           .from('milestone_activities')'
-          .select(;
+          .select(;`
             `'
             *,'
-            milestone: milestone_id(title)
-            created_by_profile: profiles!user_id(display_name, avatar_url)"`
+            milestone: milestone_id(title)`
+            created_by_profile: profiles!user_id(display_name, avatar_url)"``
           `,;
           )
           .eq('project_id', projectId)'
@@ -142,7 +142,7 @@ export function MilestoneActivities(): unknown {): unknown {): unknown {): unkno
     switch (activity.action) {;";";";";""
       case 'created':;;'
         return 'created a new milestone;''
-      case 'status_changed':;;'
+      case 'status_changed':;;'`
         return `changed status from ${activity.previous_status || 'none'} to ${activity.new_status}`;;'
       case 'updated':;;'
         return 'updated milestone details;''
@@ -152,7 +152,7 @@ export function MilestoneActivities(): unknown {): unknown {): unknown {): unkno
         return activity.action.replace(/_/g, ' ');'
     };''
   };
-;
+
   if (isLoading) {;''
     return (;;
       <div className="space-y-4">;";";""
@@ -171,8 +171,8 @@ export function MilestoneActivities(): unknown {): unknown {): unknown {): unkno
   function getActivityDescription(): unknown {): unknown {): unknown {): unknown {): unknown {activity: Activity): string {"
     switch (activity.action) {;"
       case 'created':'
-        return 'created a new milestone'
-      case 'status_changed':'`
+        return 'created a new milestone'`
+      case 'status_changed':'``
         return `changed status from ${activity.previous_status || 'none'} to ${activity.new_status}`;
       case 'updated':'
         return 'updated milestone details'
@@ -344,8 +344,8 @@ export function MilestoneActivities(): unknown {): unknown {): unknown {): unkno
 };
 };""
 }""
-}
-}
+
+
 }""
 =======
       </Card>"
@@ -363,6 +363,7 @@ export function MilestoneActivities(): unknown {): unknown {): unknown {): unkno
 
 
 
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

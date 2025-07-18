@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 // src/components/ui/skeleton.tsx;
 import React from 'react;'
-;
+
 // const _SkeletonCard: unknown React.FC = () => {;''
   return (;;
     <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4 animate-pulse">;";";";";""
@@ -17,7 +17,7 @@ import React from 'react;'
 export default SkeletonCard;";";";""
 """"""
 =======
-import React from 'react';
+import React from 'react;
 
 export default function skeleton-card() {
   return (
@@ -26,5 +26,5 @@ export default function skeleton-card() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}
+
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

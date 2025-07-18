@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
-import { Check, ChevronDown, ChevronUp } from '@/components/ui/icons;'';
+import React from 'react';;
+import * as React from 'react';;
+import { Check, ChevronDown, ChevronUp } from '@/components/ui/icons;;
 import * as SelectPrimitive from '@radix-ui/react-select;'
 ;;
 import { cn } from '@/lib/utils;'
-;
+
 const Select: unknown = SelectPrimitive.Root;
-;
+
 const SelectGroup: unknown = SelectPrimitive.Group;
-;
+
 const SelectValue: unknown = SelectPrimitive.Value;
-;
+
 const SelectTrigger: unknown = React.forwardRef<;
   React.ElementRef<typeof SelectPrimitive.Trigger>,;
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>;''
@@ -61,7 +61,7 @@ const SelectTrigger = React.forwardRef<;
 ));
 SelectTrigger.displayName = SelectPrimitive.Trigger.displayName;
 <<<<<<< HEAD
-;
+
 const SelectScrollUpButton: unknown = React.forwardRef<;
   React.ElementRef<typeof SelectPrimitive.ScrollUpButton>,;
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollUpButton>;""
@@ -185,7 +185,7 @@ const SelectContent = React.forwardRef<;"
 ));
 SelectContent.displayName = SelectPrimitive.Content.displayName;
 <<<<<<< HEAD
-;
+
 const SelectLabel: unknown = React.forwardRef<;
   React.ElementRef<typeof SelectPrimitive.Label>,;''
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label>;
@@ -247,7 +247,7 @@ const SelectItem = React.forwardRef<;
 ));
 SelectItem.displayName = SelectPrimitive.Item.displayName;
 <<<<<<< HEAD
-;
+
 const SelectSeparator: unknown = React.forwardRef<;
   React.ElementRef<typeof SelectPrimitive.Separator>,;""
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator>;";""

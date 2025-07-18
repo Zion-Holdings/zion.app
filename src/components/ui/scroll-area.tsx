@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
+import React from 'react';;
+import * as React from 'react';;
 import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area;'
 ;;
 import { cn } from '@/lib/utils;'
-;
+
 const ScrollArea: unknown = React.forwardRef<;
   React.ElementRef<typeof ScrollAreaPrimitive.Root>,;''
   React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Root>;

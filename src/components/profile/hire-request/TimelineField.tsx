@@ -5,15 +5,15 @@ import {;
   FormControl,;
 <<<<<<< HEAD
   FormMessage,;
-} from '@/components/ui/form;';
+} from '@/components/ui/form;;
 import {;
   Select,;''
   SelectContent,;
   SelectItem,;
   SelectTrigger,;''
   SelectValue,;;
-} from '@/components/ui/select;'';
-import type { UseFormReturn } from 'react-hook-form;'';
+} from '@/components/ui/select;;
+import type { UseFormReturn } from 'react-hook-form;;
 import type { FormValues } from './useHireRequestForm;'
 ;''
 interface TimelineFieldProps {;;
@@ -30,7 +30,7 @@ export function TimelineField(): unknown {): unknown {): unknown {): unknown {):
     { value: '6+ months', label: '6+ months' },;;'
     { value: 'Ongoing', label: 'Ongoing' },;'
   ];''
-;
+
   return (;
     <FormField;''
       control={form.control};;

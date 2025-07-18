@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import { useEffect, useState } from 'react''';
-import { ArrowUp } from '@/components/ui/icons'';
-;
+import { useEffect, useState } from 'react';
+import { ArrowUp } from '@/components/ui/icons;
+
 export function BackToTopButton(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const [visible, setVisible] = useState(false);
 
@@ -26,7 +26,7 @@ export function BackToTopButton(): unknown {): unknown {): unknown {): unknown {
       aria-label=Back to top
       onClick={scrollToTop};
       className={`fixed bottom-6 right-6 z-[60] rounded-full bg-primary text-primary-foreground p-2 shadow transition-opacity md:bottom-8 md:right-8 ${;;""
-        visible ? 'opacity-100' : 'opacity-0 pointer-events-none''
+        visible ? 'opacity-100' : 'opacity-0 pointer-events-none''`
       }`};''
     >;''
       <ArrowUp className="h-5 w-5 />"
@@ -64,9 +64,9 @@ export function BackToTopButton(): ;
   return ('
     <button'
       aria-label=Back to top
-      onClick={scrollToTop};
-      className={`fixed bottom-6 right-6 z-[60] rounded-full bg-primary text-primary-foreground p-2 shadow transition-opacity md:bottom-8 md:right-8 ${;"
-        visible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`
+      onClick={scrollToTop};`
+      className={`fixed bottom-6 right-6 z-[60] rounded-full bg-primary text-primary-foreground p-2 shadow transition-opacity md:bottom-8 md:right-8 ${;"`
+        visible ? 'opacity-100' : 'opacity-0 pointer-events-none'}``
       }`}'
     >'
       <ArrowUp className="h-5 w-5 />"
@@ -76,6 +76,7 @@ export function BackToTopButton(): ;
 ";"
 }";
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

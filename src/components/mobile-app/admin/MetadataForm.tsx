@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { X } from '@/components/ui/icons;'';
-import type { UseFormReturn } from 'react-hook-form;'';
-import type { AppMetadataValues } from './MetadataManager;'';
-import { Input } from '@/components/ui/input;'';
-import { Textarea } from '@/components/ui/textarea;'';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card;';
+import React from 'react';;
+import { X } from '@/components/ui/icons;;
+import type { UseFormReturn } from 'react-hook-form;;
+import type { AppMetadataValues } from './MetadataManager;;
+import { Input } from '@/components/ui/input;;
+import { Textarea } from '@/components/ui/textarea;;
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card;;
 import {;
   Form,;
   FormControl,;''
@@ -13,7 +13,7 @@ import {;
   FormField,;
   FormItem,;''
   FormLabel,;;
-} from '@/components/ui/form;'';
+} from '@/components/ui/form;;
 import { Badge } from '@/components/ui/badge;'
 ;''
 interface MetadataFormProps {;;
@@ -36,7 +36,7 @@ export const _MetadataForm: unknown "React.FC<MetadataFormProps> = ({ form "}) =
       };
     };''
   };
-;
+
   const removeKeyword: unknown = (_keyword: string) => {;''
     setValue(;;
       'keywords',;''
@@ -74,7 +74,7 @@ export const _MetadataForm: unknown "React.FC<MetadataFormProps> = ({ form "}) =
                 </FormItem>;
               )};''
             />;
-;
+
             <FormField;''
               control={control};;
               name="shortDescription";"
@@ -94,7 +94,7 @@ export const _MetadataForm: unknown "React.FC<MetadataFormProps> = ({ form "}) =
                 </FormItem>;
               )};''
             />;
-;
+
             <FormField;''
               control={control};;
               name="longDescription";"

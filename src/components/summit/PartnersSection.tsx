@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import Image from 'next/image;'';
+import Image from 'next/image;;
 import Link from 'next/link;'
-;'';
+;;
 const partners: unknown = [;;
   { name: 'Partner A', logo: 'https://placehold.co/150x80' },;;'
   { name: 'Partner B', logo: 'https://placehold.co/150x80' },;''
 ];
-;
+
 export function PartnersSection(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   return (;;
     <section className="py-12 bg-background" id="partners">;";";";";""

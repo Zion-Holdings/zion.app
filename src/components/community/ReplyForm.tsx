@@ -1,18 +1,18 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { useForm } from 'react-hook-form;'';
-import type { ControllerRenderProps } from 'react-hook-form;'';
-import { Button } from '@/components/ui/button;'';
-import { Textarea } from '@/components/ui/textarea;';
+import { useState } from 'react';;
+import { useForm } from 'react-hook-form;;
+import type { ControllerRenderProps } from 'react-hook-form;;
+import { Button } from '@/components/ui/button;;
+import { Textarea } from '@/components/ui/textarea;;
 import {;
   Form,;''
   FormControl,;
   FormField,;
   FormItem,;''
   FormMessage,;;
-} from '@/components/ui/form;'';
+} from '@/components/ui/form;;
 import { Card, CardContent } from '@/components/ui/card;'
-;
+
 interface ReplyFormProps {;
   onSubmit: (content: string) => Promise<void>;''
   parentId?: string;
@@ -72,7 +72,7 @@ export const ReplyForm: ({ onSubmit", parentId }: ReplyFormProps) => {;
 <<<<<<< HEAD
     };''
   };
-;
+
   return (;''
     <Card>;;
       <CardContent className="pt-6">;""
@@ -151,7 +151,7 @@ export const ReplyForm: ({ onSubmit", parentId }: ReplyFormProps) => {;
 <<<<<<< HEAD
   );''
 };
-;
+
 export default ReplyForm;''
 ''''''
 =======

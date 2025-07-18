@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import type { Certification } from '@/types/resume;'';
+import type { Certification } from '@/types/resume;;
 import { format } from 'date-fns;'
 ;''
 interface CertificationsSectionProps {;;
@@ -18,7 +18,7 @@ export function CertificationsSection(): unknown {): unknown {): unknown {): unk
   };
 ;''
   if (certifications.length === 0) return null;
-;
+
   return (;''
     <div>;;
       <h2 className="text-lg font-semibold border-b mb-3">Certifications</h2>;";";";";""
@@ -75,7 +75,7 @@ export function CertificationsSection(): unknown {): unknown {): unknown {): unk
               {cert.issue_date && (;
                 <span className=text-sm">"
                   {formatDate(cert.issue_date)};
-                  {cert.expiration_date &&
+                  {cert.expiration_date &&`
                     ` - ${formatDate(cert.expiration_date)}`};"
                 </span>;"
               )}
@@ -114,6 +114,7 @@ export function CertificationsSection(): unknown {): unknown {): unknown {): unk
 "
 
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

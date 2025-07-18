@@ -1,16 +1,16 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Eye, MessageSquare, RefreshCw } from '@/components/ui/icons;'';
+import React from 'react';;
+import { Eye, MessageSquare, RefreshCw } from '@/components/ui/icons;;
 import { format } from 'date-fns;'
-;
+
 import {;
   Card,;''
   CardContent,;
   CardHeader,;
   CardTitle,;''
   CardDescription,;;
-} from '@/components/ui/card;'';
-import { Button } from '@/components/ui/button;'';
+} from '@/components/ui/card;;
+import { Button } from '@/components/ui/button;;
 import { QuoteStatusBadge } from '@/components/quotes/QuoteStatusBadge;'
 ;;
 import type { QuoteRequest } from '@/types/quotes;'
@@ -60,7 +60,7 @@ export const _QuoteRequestCard: unknown React.FC<QuoteRequestCardProps> = ({;
       return dateString;
     };
   };''
-;
+
   return (;
     <Card;''
       key={quote.id};;

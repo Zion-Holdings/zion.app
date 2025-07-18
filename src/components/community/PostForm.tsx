@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { useForm } from 'react-hook-form;'';
-import type { ControllerRenderProps } from 'react-hook-form;'';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;';
+import { useState } from 'react';;
+import { useForm } from 'react-hook-form;;
+import type { ControllerRenderProps } from 'react-hook-form;;
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;;
 import {;
   Form,;
   FormControl,;''
@@ -10,10 +10,10 @@ import {;
   FormItem,;
   FormLabel,;''
   FormMessage,;;
-} from '@/components/ui/form;'';
-import { Input } from '@/components/ui/input;'';
-import { Button } from '@/components/ui/button;'';
-import { Textarea } from '@/components/ui/textarea;'';
+} from '@/components/ui/form;;
+import { Input } from '@/components/ui/input;;
+import { Button } from '@/components/ui/button;;
+import { Textarea } from '@/components/ui/textarea;;
 import type { ForumCategory } from '@/types/community;'
 ;''
 interface PostFormValues {;;
@@ -22,13 +22,13 @@ interface PostFormValues {;;
   categoryId: "ForumCategory;",;";";";";""
   tags: "string;";"
 };
-;
+
 interface PostFormProps {;
   initialValues?: Partial<PostFormValues>;
   onSubmit: (values: PostFormValues) => void;
   isEditing?: boolean;
 };
-;
+
 export const PostForm: unknown = ({;
   initialValues,;""
   onSubmit,;";""
@@ -95,7 +95,7 @@ export const PostForm = ({;
     };
 <<<<<<< HEAD
   };''
-;
+
   return (;
     <Card>;''
       <CardHeader>;;
@@ -326,7 +326,7 @@ export const PostForm = ({;
 <<<<<<< HEAD
   );''
 };
-;
+
 export default PostForm;''
 ''''''
 =======

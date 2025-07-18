@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import { useState, useEffect } from 'react';';
-import { useJobApplications } from '@/hooks/useJobApplications;'';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;';
+import { useState, useEffect } from 'react';;
+import { useJobApplications } from '@/hooks/useJobApplications;;
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;;
 =======
 import { useState, useEffect } from 'react''
 import { useJobApplications } from '@/hooks/useJobApplications'
@@ -19,7 +19,7 @@ import {;
   YAxis,;''
   Tooltip,;;
 } from 'recharts;'
-;
+
 interface HiringAnalyticsProps {;''
   jobId?: string;
 };
@@ -109,7 +109,7 @@ export function HiringAnalytics(): unknown {): unknown {): unknown {): unknown {
         (app) => app.status === 'hired',;'
       );''
       let avgTimeToHire = 0;
-;
+
       if (hiredApplications.length > 0) {;''
         const totalDays: unknown "unknown = hiredApplications.reduce((sum", app) => {;"
           const hireDate: unknown = app.updated_at ? new Date(app.updated_at) : null;
@@ -165,7 +165,7 @@ export function HiringAnalytics(): unknown {): unknown {): unknown {): unknown {
           value: applications.filter((app) => app.status === 'hired').length,;'
         },;''
       ];
-;
+
       setAnalyticsData({;''
         statusDistribution,;;
         timeToHire: "avgTimeToHire",;"
@@ -281,8 +281,8 @@ export function HiringAnalytics(): unknown {): unknown {): unknown {): unknown {
                   `${name}: ${((percent ?? 0) * 100).toFixed(0)}%`;
                 };
               >;
-                {analyticsData.statusDistribution.map((_entry, index) => (;
-                  <Cell;`
+                {analyticsData.statusDistribution.map((_entry, index) => (;`
+                  <Cell;``
                     key={`cell-${index}`};
                     fill={COLORS[index % COLORS.length]};
                   />))};
@@ -293,7 +293,7 @@ export function HiringAnalytics(): unknown {): unknown {): unknown {): unknown {
         </CardContent>;
       </Card>;
 <<<<<<< HEAD
-;
+
       {/* Time to Hire */};""
       <Card>;";""
         <CardHeader>;";";""
@@ -322,7 +322,7 @@ export function HiringAnalytics(): unknown {): unknown {): unknown {): unknown {
         </CardContent>;
       </Card>;
 <<<<<<< HEAD
-;
+
       {/* Conversion Rate */};""
       <Card>;";""
         <CardHeader>;";";""
@@ -380,8 +380,8 @@ export function HiringAnalytics(): unknown {): unknown {): unknown {): unknown {
               <Tooltip />;"";
               <Bar dataKey="value" fill=#8884d8 radius={[0, 4, 4, 0]}>"
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
-                {analyticsData.funnelData.map((_entry, index) => (;
-                  <Cell;`
+                {analyticsData.funnelData.map((_entry, index) => (;`
+                  <Cell;``
                     key={`cell-${index}`};
                     fill={COLORS[index % COLORS.length]};
                   />))};
@@ -407,6 +407,7 @@ export function HiringAnalytics(): unknown {): unknown {): unknown {): unknown {
 ";"
 }";"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

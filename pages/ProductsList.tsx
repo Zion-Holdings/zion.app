@@ -1,5 +1,5 @@
-import React from 'react';
-import Head from 'next/head';
+import React from 'react;
+import Head from 'next/head;
 
 export default function ProductsList() {
   return (
@@ -15,4 +15,3 @@ export default function ProductsList() {
       </div>
     </>
   );
-}

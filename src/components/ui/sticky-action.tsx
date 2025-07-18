@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React, { useEffect, useState } from 'react';';
-import { cn } from '@/lib/utils;'';
+import React, { useEffect, useState } from 'react';;
+import { cn } from '@/lib/utils;;
 import { motion, AnimatePresence } from 'framer-motion;'
 ;''
 interface StickyActionProps {;
@@ -9,7 +9,7 @@ interface StickyActionProps {;
   showAfterScroll?: number;;
   position?: 'bottom' | 'top;'
 };
-;'';
+;;
 export function StickyAction(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   className,;
   children,;''

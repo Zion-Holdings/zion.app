@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import { Progress } from '@/components/ui/progress;'';
+import { Progress } from '@/components/ui/progress;;
 import type { ResumeProgressProps } from './types;'
-;'';
+;;
 export const _ResumeProgress: unknown "unknown = ({ progress "}: ResumeProgressProps) => {;";";";""
   return (;;
     <div className="flex flex-col gap-1 w-full sm:w-auto">;";";";";""

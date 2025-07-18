@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { Copy, Link, Share } from '@/components/ui/icons;'';
-import { Button } from '@/components/ui/button;';
+import { useState } from 'react';;
+import { Copy, Link, Share } from '@/components/ui/icons;;
+import { Button } from '@/components/ui/button;;
 import {;
   Card,;
   CardContent,;''
@@ -9,7 +9,7 @@ import {;
   CardFooter,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
+} from '@/components/ui/card;;
 import { Input } from '@/components/ui/input;'
 ;''
 interface ReferralLinkProps {;;
@@ -17,7 +17,7 @@ interface ReferralLinkProps {;;
   onCopy: "() => void;",";";";";""
   onShare: (platform: 'twitter' | 'facebook' | 'linkedin') => void;'
 };
-;
+
 =======
 import { useState } from 'react''
 import { Copy, Link, Share } from '@/components/ui/icons'

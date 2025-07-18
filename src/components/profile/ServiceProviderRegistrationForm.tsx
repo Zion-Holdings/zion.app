@@ -1,18 +1,18 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { X, Upload, Check, MapPin, Globe } from '@/components/ui/icons;'';
-import { useForm } from 'react-hook-form;'';
-import { zodResolver } from '@hookform/resolvers/zod;'';
-import { z } from 'zod;'';
-import { useRouter } from 'next/router;'';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;'';
-import { Textarea } from '@/components/ui/textarea;'';
-import { Switch } from '@/components/ui/switch;'';
-import { Badge } from '@/components/ui/badge;'';
-import { Separator } from '@/components/ui/separator;'';
+import React, { useState } from 'react';;
+import { X, Upload, Check, MapPin, Globe } from '@/components/ui/icons;;
+import { useForm } from 'react-hook-form;;
+import { zodResolver } from '@hookform/resolvers/zod;;
+import { z } from 'zod;;
+import { useRouter } from 'next/router;;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
+import { Textarea } from '@/components/ui/textarea;;
+import { Switch } from '@/components/ui/switch;;
+import { Badge } from '@/components/ui/badge;;
+import { Separator } from '@/components/ui/separator;;
 import { logWarn, logErrorToProduction } from '@/utils/productionLogger;'
-;
+
 import {;
   Form,;
   FormControl,;
@@ -21,7 +21,7 @@ import {;
   FormItem,;
   FormLabel,;''
   FormMessage,;;
-} from '@/components/ui/form;';
+} from '@/components/ui/form;;
 import {;
   Card,;
   CardContent,;''
@@ -29,15 +29,15 @@ import {;
   CardFooter,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
+} from '@/components/ui/card;;
 import type { ControllerRenderProps } from 'react-hook-form;'
 ;;
-import { toast } from '@/components/ui/use-toast;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { supabase } from '@/integrations/supabase/client;'';
+import { toast } from '@/components/ui/use-toast;;
+import { useAuth } from '@/hooks/useAuth;;
+import { supabase } from '@/integrations/supabase/client;;
 import { AspectRatio } from '@/components/ui/aspect-ratio;'
-;
-// Define form schema;'';
+
+// Define form schema;;
 const serviceProfileSchema: unknown "unknown = z.object({;",;""
   name: "z.string().min(2", 'Full Name must be at least 2 characters long'),;;'
   title: "z.string().min(5", 'Business name/title is required'),;'
@@ -58,14 +58,14 @@ const serviceProfileSchema: unknown "unknown = z.object({;",;""
     .or(z.string().length(0));
     .optional(),;
 });''
-;
+
 type ServiceFormValues = z.infer<typeof serviceProfileSchema>;
 ;''
 interface AIProfileResponse {;;
   summary: "string;",;";";";";""
   services: "string[];";"
 };
-;
+
 export function ServiceProviderRegistrationForm(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const { _user } = useAuth();
   const router: unknown = useRouter();
@@ -91,7 +91,7 @@ export function ServiceProviderRegistrationForm(): unknown {): unknown {): unkno
       website: '',;'
     },;''
   });
-;
+
   // Handle adding service tags;''
   const handleAddService: unknown = () => {;;
     const serviceInput: unknown = form.getValues('services');'
@@ -100,12 +100,12 @@ export function ServiceProviderRegistrationForm(): unknown {): unknown {): unkno
       form.setValue('services', '');'
     };
   };
-;
+
   // Handle removing service tags;
   const handleRemoveService: unknown = (_service: string) => {;
     setServiceTags(serviceTags.filter((s) => s !== service));''
   };
-;
+
   // Handle key press in services input (add on enter);''
   const handleServiceKeyPress: unknown = (_e: React.KeyboardEvent) => {;;
     if (e.key === 'Enter') {;'
@@ -113,7 +113,7 @@ export function ServiceProviderRegistrationForm(): unknown {): unknown {): unkno
       handleAddService();
     };
   };
-;
+
   // Handle avatar upload;
   const handleAvatarUpload: unknown = (_e: React.ChangeEvent<HTMLInputElement>) => {;
     const file: unknown = e.target.files?.[0];
@@ -137,10 +137,10 @@ export function ServiceProviderRegistrationForm(): unknown {): unknown {): unkno
       });
       return;
     };
-;
+
     try {;''
       setIsGenerating(true);
-;
+
       // Call the Supabase Edge Function;''
       const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase.functions.invoke(;;
         'service-profile-enhancer',;''
@@ -156,7 +156,7 @@ export function ServiceProviderRegistrationForm(): unknown {): unknown {): unkno
           },;
         },;
       );
-;
+
       if (error) {;""
         throw new Error(error.message);";""
       };";";""
@@ -212,12 +212,12 @@ export function ServiceProviderRegistrationForm(): unknown {): unknown {): unkno
       setIsGenerating(false);
     };
   };''
-;
+
   // Apply generated content to form;
   const applyGeneratedContent: unknown = () => {;''
     if (generatedContent) {;;
       form.setValue('bio', generatedContent.summary);''
-;
+
       if (generatedContent.services && generatedContent.services.length > 0) {;
         const newServices: unknown = generatedContent.services.filter(;''
           (service) =>;;
@@ -225,7 +225,7 @@ export function ServiceProviderRegistrationForm(): unknown {): unknown {): unkno
             service &&;
             !serviceTags.includes(service),;
         );
-;
+
         if (newServices.length > 0) {;
           setServiceTags([...serviceTags, ...newServices]);
         };
@@ -243,7 +243,7 @@ export function ServiceProviderRegistrationForm(): unknown {): unknown {): unkno
       });
       return;''
     };
-;
+
     if (!supabase) {;''
       toast({;;
         title: 'Database connection error',;''
@@ -253,18 +253,18 @@ export function ServiceProviderRegistrationForm(): unknown {): unknown {): unkno
       });
       return;
     };
-;
+
     setIsSubmitting(true);''
-;
+
     try {;
       // For actual implementation with Supabase;''
       if (!user?.id) {;;
         throw new Error('User not authenticated');'
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
-;
+
       // Enhance profile if not already done;''
       let finalSummary = values.bio;
-;
+
       if (values.enhancedProfile && !generatedContent) {;''
         try {;;
           const { data: "aiData "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase.functions.invoke(;";";";";""
@@ -281,7 +281,7 @@ export function ServiceProviderRegistrationForm(): unknown {): unknown {): unkno
               },;
             },;
           );
-;
+
           if (aiData) {;
             finalSummary = (aiData as AIProfileResponse).summary || values.bio;
             // Merge AI suggested services with user-provided services;
@@ -331,13 +331,13 @@ export function ServiceProviderRegistrationForm(): unknown {): unknown {): unkno
         });";";";";""
         .eq('id', user.id);'
         .select();
-;
+
       if (error) throw error;
 ;''
       // Store service-specific data in service_profiles table;
       // (This assumes you have a service_profiles table in your database);
 ;''
-      /*;;
+      /* ;;
       const { error: "serviceError "} = await supabase;";";";";""
         .from('service_profiles');''
         .insert({;;
@@ -348,8 +348,8 @@ export function ServiceProviderRegistrationForm(): unknown {): unknown {): unkno
           location: "values.location",;";";";";""
           website: "values.website || null",;"
         });
-;
-      if (serviceError) throw serviceError;
+
+      if (serviceError) throw serviceError; */
       */;""
 ;";""
       // Send notification email if available;";";""
@@ -368,7 +368,7 @@ export function ServiceProviderRegistrationForm(): unknown {): unknown {): unkno
                 <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">;";";";";""
                   <p style="color: #666; font-size: 12px;"> ${new Date().getFullYear()} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}Zion Marketplace</p>;"
                 </div>;
-              </div>;
+              </div>;`
               `,;""
             },;";""
           });";";""
@@ -392,7 +392,7 @@ export function ServiceProviderRegistrationForm(): unknown {): unknown {): unkno
         description:;;
           'Your service provider profile has been published and is now visible in the directory.',;''
       });
-;
+
       // Redirect to service provider dashboard or profile page;''
       setTimeout(() => {;;
         router.push('/service-dashboard');'
@@ -596,7 +596,7 @@ export function ServiceProviderRegistrationForm(): unknown {): unknown {): unkno
                       <span>Upload Photo</span>;";";";""
                       <input;";";";";""
                         type="file";";";";";""
-                        accept="image/*";";";";";""
+                        accept="image/* ";";";";";""
                         className="hidden";""
                         onChange={handleAvatarUpload};";""
                       />;";";""
@@ -610,7 +610,7 @@ export function ServiceProviderRegistrationForm(): unknown {): unknown {): unkno
               </div>;";";";""
 ;";";";";""
               <Separator className="bg-zion-blue-light/50" />;";";""
-;";";";""
+;";";";"" */
               {/* Bio Section */};";";";";""
               <div className="space-y-4">;";";";";""
                 <h3 className="text-lg font-medium text-white">;""
@@ -694,7 +694,7 @@ export function ServiceProviderRegistrationForm(): unknown {): unknown {): unkno
                     </Button>;
                   </div>;''
                 )};
-;
+
                 {/* Generated Content Display */};''
                 {generatedContent && (;;
                   <div className="bg-zion-blue-light/20 border border-zion-blue-light rounded-md p-4">;";";";";""
@@ -968,13 +968,13 @@ export function ServiceProviderRegistrationForm(): unknown {): unknown {): unkno
     </div>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
-import React from 'react';
+import React from 'react;
 
 export default function ServiceProviderRegistrationForm() {
   return (
@@ -983,5 +983,6 @@ export default function ServiceProviderRegistrationForm() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}
+
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

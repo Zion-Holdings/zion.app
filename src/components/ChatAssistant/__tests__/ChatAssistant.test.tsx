@@ -1,4 +1,4 @@
-import React from 'react'';
+import React from 'react;
 import {;
 <<<<<<< HEAD
   render,;''
@@ -6,14 +6,14 @@ import {;
   fireEvent,
   waitFor,;''
   act,;''
-} from '@testing-library/react;'';
-import '@testing-library/jest-dom;'';
-import { vi } from 'vitest;'';
-import { ChatAssistant, Message } from '../ChatAssistant;'';
-import { AuthContext } from '../../../context/auth/AuthContext;'';
-import * as UseLocalStorageHook from '../../../hooks/useLocalStorage;'';
-import * as UseDebounceHook from '../../../hooks/useDebounce // Assuming path;'';
-import Image from 'next/image // Import next/image'';
+} from '@testing-library/react;;
+import '@testing-library/jest-dom;;
+import { vi } from 'vitest;;
+import { ChatAssistant, Message } from '../ChatAssistant;;
+import { AuthContext } from '../../../context/auth/AuthContext;;
+import * as UseLocalStorageHook from '../../../hooks/useLocalStorage;;
+import * as UseDebounceHook from '../../../hooks/useDebounce // Assuming path;;
+import Image from 'next/image // Import next/image;
 ;''
 // Mock dependencies;''
 vi.mock('../../../hooks/useLocalStorage');''
@@ -117,22 +117,22 @@ vi.mock('../ChatInput', () => ({;''
     />;''
   ),''
 }));
-;'';
+;;
 const mockRecipient: unknown "unknown = {,;"
   id: 'recipient123',;''
   name: 'Test Recipient',;''
   avatarUrl: 'http://example.com/avatar.png',;''
   role: 'Tester',''
 };
-;
+
 const mockOnSendMessage: unknown = vi.fn();
 
 // Default mock implementations;
 const mockUseLocalStorage: unknown =;
-  UseLocalStorageHook.useLocalStorage as unknown as vi.Mock;'';
+  UseLocalStorageHook.useLocalStorage as unknown as vi.Mock;;
 const mockUseDebounce: unknown = UseDebounceHook.useDebounce as unknown as vi.Mock''
 
-// Helper to provide context;'';
+// Helper to provide context;;
 const renderWithAuth: unknown "unknown = (",;"
   ui: React.ReactElement",";"
   {;"""
@@ -162,7 +162,7 @@ describe('ChatAssistant', () => {''
     </button>),'
 }))'
 vi.mock('../ChatMessage', () => ({'
-  ChatMessage: "({ role, message }: { role: string; message: string "}) => (";
+  ChatMessage: "({ role, message }: { role: string; message: string "}) => (";`
     <div data-testid={`chat-message-${role}`}>{message}</div>;""
   ),;""
 }));
@@ -776,7 +776,7 @@ describe('ChatAssistant', () => {'
       // The component's useEffect for initialMessages should then overwrite this;''
       mockUseLocalStorage.mockImplementation((key, defaultVal) => {;''
         // initialMessages prop takes precedence logic is handled inside ChatAssistant's useEffect;''
-        // This mock just needs to provide a value and a setter.''
+        // This mock just needs to provide a value and a setter.''`
         // The key part is what `storedGuestMessages` is initially.`
         const [val, setVal] = React.useState<Message[]>(messagesFromStorage);''
         const setAndPersist: unknown "unknown = (",;"
@@ -787,8 +787,8 @@ describe('ChatAssistant', () => {'
 =======
       // The component's useEffect for initialMessages should then overwrite this'
       mockUseLocalStorage.mockImplementation((key, defaultVal) => {'
-        // initialMessages prop takes precedence logic is handled inside ChatAssistant's useEffect'
-        // This mock just needs to provide a value and a setter.'`
+        // initialMessages prop takes precedence logic is handled inside ChatAssistant's useEffect'`
+        // This mock just needs to provide a value and a setter.'``
         // The key part is what `storedGuestMessages` is initially.;
         const [val, setVal] = React.useState<Message[]>(messagesFromStorage)'
         const setAndPersist: (",;
@@ -842,6 +842,7 @@ describe('ChatAssistant', () => {'
       expect(mockSetStoredValue).toHaveBeenCalledWith(messagesFromProp)'
     })'
   });
-})'
+})'`
 '''''';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

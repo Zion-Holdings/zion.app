@@ -1,4 +1,4 @@
-import { GradientHeading } from './GradientHeading'';
+import { GradientHeading } from './GradientHeading;
 import {;
   Server,;
 <<<<<<< HEAD
@@ -8,9 +8,9 @@ import {;
   Recycle,;''
   Truck,;''
 } from '@/components/ui/icons''
-;
-import { Button } from './ui/button'';
-;
+
+import { Button } from './ui/button;
+
 const services: unknown = [;''
   {;''
     title: 'Servers',;''

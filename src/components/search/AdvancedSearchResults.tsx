@@ -1,29 +1,29 @@
 <<<<<<< HEAD
-import React, { useState, useEffect, useMemo, useCallback } from 'react';';
-import { Search, Filter, List, Loader2 } from '@/components/ui/icons;'';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';;
+import { Search, Filter, List, Loader2 } from '@/components/ui/icons;;
 import { useRouter } from 'next/router;'
 ;;
-import { Button } from '@/components/ui/button;'';
-import { Badge } from '@/components/ui/badge;';
+import { Button } from '@/components/ui/button;;
+import { Badge } from '@/components/ui/badge;;
 import {;
   Select,;''
   SelectContent,;
   SelectItem,;
   SelectTrigger,;''
   SelectValue,;;
-} from '@/components/ui/select;'';
-import { Checkbox } from '@/components/ui/checkbox;'';
-import { Slider } from '@/components/ui/slider;'';
-import { Separator } from '@/components/ui/separator;';
+} from '@/components/ui/select;;
+import { Checkbox } from '@/components/ui/checkbox;;
+import { Slider } from '@/components/ui/slider;;
+import { Separator } from '@/components/ui/separator;;
 import {;
   Sheet,;''
   SheetContent,;
   SheetHeader,;
   SheetTitle,;''
   SheetTrigger,;;
-} from '@/components/ui/sheet;'';
-import { EnhancedSearchInput } from './EnhancedSearchInput;'';
-import { generateSearchSuggestions } from '@/data/marketplaceData;'';
+} from '@/components/ui/sheet;;
+import { EnhancedSearchInput } from './EnhancedSearchInput;;
+import { generateSearchSuggestions } from '@/data/marketplaceData;;
 import { logErrorToProduction, logInfo } from '@/utils/productionLogger;'
 ;''
 interface SearchResult {;;
@@ -163,7 +163,7 @@ const HighlightText: unknown React.FC<{
     return <span className={className}>{text}</span>'
   };
 '
-  const parts = text.split('
+  const parts = text.split('`
     new RegExp(`(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi'),'
   );
 '
@@ -200,7 +200,7 @@ const SearchResultCard: unknown React.FC<{
     viewMode === 'grid;''
       ? 'bg-card border rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer;''
       : 'bg-card border rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer flex gap-4;''
-;
+
   return (;
     <div onClick={handleClick} className={cardClass}>;''
       {result.image && (;;
@@ -804,10 +804,10 @@ export const AdvancedSearchResults: unknown React.FC = () => {
       if (searchFilters.sort !== 'relevance') {;;'
         params.append('sort', searchFilters.sort);'
       };
-;''
+;''`
       const response: unknown "unknown = await fetch(`/api/search?${params"}`);"
       const data: unknown SearchResponse = await response.json();
-;
+
 =======
     }'
     setLoading(true)'
@@ -844,8 +844,8 @@ export const AdvancedSearchResults: unknown React.FC = () => {
       }'
       if (searchFilters.sort !== 'relevance') {'
         params.append('sort', searchFilters.sort)'
-      };
-'`
+      };`
+'``
       const response = await fetch(`/api/search?${params}`);
       const data: unknown SearchResponse = await response.json()
 
@@ -900,14 +900,14 @@ export const AdvancedSearchResults: unknown React.FC = () => {
 ;""
   // Handle search input;";""
   const handleSearch: unknown = (_term: string) => {;";";""
-    setSearchTerm(term);";";";""
+    setSearchTerm(term);";";";""`
     router.push(`/search?q=${encodeURIComponent(term)}`, undefined, {;";";";";""
       shallow: "true",;"
 =======
 
   // Handle search input;"
-  const handleSearch = (_term: string) => {;"
-    setSearchTerm(term)`
+  const handleSearch = (_term: string) => {;"`
+    setSearchTerm(term)``
     router.push(`/search?q=${encodeURIComponent(term)}`, undefined, {;
       shallow: true,
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
@@ -962,7 +962,7 @@ export const AdvancedSearchResults: unknown React.FC = () => {
               <h1 className="text-2xl font-bold">Search Results</h1>;";";";";""
               <p className="text-muted-foreground">;";";";""
                 {loading;";";";";""
-                  ? 'Searching...;''
+                  ? 'Searching...;''`
                   : `${totalCount} results for "${searchTerm}"`};";""
               </p>;";";""
             </div>;";";";""
@@ -1009,7 +1009,7 @@ export const AdvancedSearchResults: unknown React.FC = () => {
                 <SheetTrigger asChild>;";";";";""
                   <Button variant="outline" className="lg:hidden">;";";";";""
                     <Filter className="h-4 w-4 mr-2" />;";";";";""
-                    Filters{' '};'
+                    Filters{' '};'`
                     {activeFiltersCount > 0 && `(${activeFiltersCount})`};
                   </Button>;''
                 </SheetTrigger>;;
@@ -1050,8 +1050,8 @@ export const AdvancedSearchResults: unknown React.FC = () => {
             <div>;"
               <h1 className="text-2xl font-bold>Search Results</h1>"
               <p className="text-muted-foreground">
-                {loading;
-                  ? 'Searching...'`
+                {loading;`
+                  ? 'Searching...'``
                   : `${totalCount} results for "${searchTerm}"`}
               </p>;
             </div>"
@@ -1097,8 +1097,8 @@ export const AdvancedSearchResults: unknown React.FC = () => {
               <Sheet open={showFilters} onOpenChange={setShowFilters}>
                 <SheetTrigger asChild>;
                   <Button variant="outline" className=lg:hidden>"
-                    <Filter className="h-4 w-4 mr-2 />"
-                    Filters{' '}'`
+                    <Filter className="h-4 w-4 mr-2 />"`
+                    Filters{' '}'``
                     {activeFiltersCount > 0 && `(${activeFiltersCount})`};
                   </Button>'
                 </SheetTrigger>'
@@ -1226,8 +1226,8 @@ export const AdvancedSearchResults: unknown React.FC = () => {
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
                   };
                 >;
-                  {results.map((result) => (;
-                    <SearchResultCard;`
+                  {results.map((result) => (;`
+                    <SearchResultCard;``
                       key={`${result.type}-${result.id}`};
                       result={result};
                       searchTerm={searchTerm};
@@ -1236,7 +1236,7 @@ export const AdvancedSearchResults: unknown React.FC = () => {
                     />;
                   ))};''
                 </div>;
-;
+
                 {/* Load More Button */};''
                 {hasMore && (;;
                   <div className="text-center">;";""
@@ -1285,13 +1285,14 @@ export const AdvancedSearchResults: unknown React.FC = () => {
 <<<<<<< HEAD
   );''
 };
-;
+
 export default AdvancedSearchResults;''
 ''''''
 =======
   )'
 }'
 
-export default AdvancedSearchResults'
+export default AdvancedSearchResults'`
 '''''';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

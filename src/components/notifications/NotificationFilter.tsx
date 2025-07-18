@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs;'
-;'';
+;;
 export type FilterType =;;
   | 'all;''
   | 'unread;''
@@ -14,7 +14,7 @@ interface NotificationFilterProps {;;
   filter: "FilterType;",;";";";";""
   onFilterChange: "(filter: FilterType) => void;";"
 };
-;
+
 export const _NotificationFilter: unknown React.FC<NotificationFilterProps> = ({;""
   filter,;";""
   onFilterChange,;";";""

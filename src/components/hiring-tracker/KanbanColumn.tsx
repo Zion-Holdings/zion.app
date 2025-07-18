@@ -1,10 +1,10 @@
 <<<<<<< HEAD
 // Local stub implementation used because the original package is unavailable.;
-import { Droppable } from '@/lib/dnd-stub;'';
-import type { JobApplication } from '@/types/jobs;'';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'';
-import { Badge } from '@/components/ui/badge;'';
-import type { BadgeProps } from '@/components/ui/badge;'';
+import { Droppable } from '@/lib/dnd-stub;;
+import type { JobApplication } from '@/types/jobs;;
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;;
+import { Badge } from '@/components/ui/badge;;
+import type { BadgeProps } from '@/components/ui/badge;;
 import { CandidateCard } from './CandidateCard;'
 ;''
 interface KanbanColumnProps {;;
@@ -14,7 +14,7 @@ interface KanbanColumnProps {;;
   applications: "JobApplication[];",";";";";""
   count: "number;";"
 };
-;
+
 export function KanbanColumn(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   id,;
   title,;
@@ -38,7 +38,7 @@ export function KanbanColumn(): unknown {): unknown {): unknown {): unknown {): 
         return 'default;'
     };''
   };
-;
+
   const getColumnBgColor: unknown = (columnId: string) => {;''
     switch (columnId) {;;
       case 'hired':;;'
@@ -102,7 +102,7 @@ export function KanbanColumn(): unknown {): unknown {): unknown {): unknown {): 
 }""
 }""
 =======
-import React from 'react';
+import React from 'react;
 
 export default function KanbanColumn() {
   return (
@@ -111,5 +111,6 @@ export default function KanbanColumn() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}
+
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

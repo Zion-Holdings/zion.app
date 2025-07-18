@@ -1,14 +1,14 @@
 <<<<<<< HEAD
 'use client;'
 ;;
-import React, { useEffect, useState } from 'react';';
-import { User, LogOut, LogIn } from '@/components/ui/icons;'';
-import { supabase } from '@/utils/supabase/client;'';
-import { Button } from '@/components/ui/button;'';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'';
+import React, { useEffect, useState } from 'react';;
+import { User, LogOut, LogIn } from '@/components/ui/icons;;
+import { supabase } from '@/utils/supabase/client;;
+import { Button } from '@/components/ui/button;;
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;;
 import { Badge } from '@/components/ui/badge;'
 ;;
-import { useRouter } from 'next/navigation;'';
+import { useRouter } from 'next/navigation;;
 import type {;
   User as SupabaseUser,;
   AuthChangeEvent,;''
@@ -51,7 +51,7 @@ function isEmailVerified(): unknown {): unknown {): unknown {): unknown {): unkn
   // Supabase user has email_confirmed_at as string | null;''
   return Boolean(user?.email_confirmed_at);
 };
-;'';
+;;
 function getUserCreatedAt(): unknown {): unknown {): unknown {): unknown {): unknown {user: SupabaseUser | null): string {;;
 =======
   // Supabase user has email_confirmed_at as string | null'
@@ -95,7 +95,7 @@ export default function UserProfile(): unknown {): unknown {): unknown {): unkno
 
     getInitialSession();
 <<<<<<< HEAD
-;
+
     // Listen for auth changes;""
     if (!supabase) {;";""
       return;";";""
@@ -135,7 +135,7 @@ export default function UserProfile(): unknown {): unknown {): unknown {): unkno
   const handleSignIn: unknown = () => {;";";";";""
     router.push('/auth/login');''
   };
-;
+
   if (loading) {;''
     return (;;
       <Card className="w-full max-w-sm">;";";";";""
@@ -214,9 +214,9 @@ export default function UserProfile(): unknown {): unknown {): unknown {): unkno
 };
 };""
 }""
-}
-}
-}
+
+
+
 }""
 =======
 

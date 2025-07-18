@@ -5,16 +5,16 @@ import {;
   FormControl,;
 <<<<<<< HEAD
   FormMessage,;
-} from '@/components/ui/form;'';
-import { Input } from '@/components/ui/input;'';
-import type { UseFormReturn } from 'react-hook-form;'';
-import type { ControllerRenderProps } from 'react-hook-form;'';
+} from '@/components/ui/form;;
+import { Input } from '@/components/ui/input;;
+import type { UseFormReturn } from 'react-hook-form;;
+import type { ControllerRenderProps } from 'react-hook-form;;
 import type { CertificationFormValues } from './types;'
 ;''
 interface CertificationFormFieldsProps {;;
   form: "UseFormReturn<CertificationFormValues>;";"
 };
-;
+
 export function CertificationFormFields(): unknown {): unknown {): unknown {): unknown {): unknown {{;""
   form,;";""
 }: CertificationFormFieldsProps) {;";";""
@@ -138,7 +138,7 @@ export function CertificationFormFields(): unknown {): unknown {): unknown {): u
             </FormItem>;
           )};''
         />;
-;
+
         <FormField;''
           control={form.control};;
           name="expiration_date";"

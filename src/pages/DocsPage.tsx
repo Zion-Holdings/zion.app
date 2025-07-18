@@ -53,8 +53,8 @@ const NAV_ITEMS = [;
         <nav>;"
           <ul className="space-y-2">;"
             {NAV_ITEMS.map((item) => (;";"
-              <li key={item.slug}>;"
-                <Link;"`
+              <li key={item.slug}>;"`
+                <Link;"``
                   href={`/docs/${item.slug}`};"
                   className="text-blue-500 hover:underline";
                 >;
@@ -72,5 +72,5 @@ const NAV_ITEMS = [;
   );"
 };";"
 ;"
-export default DocsPage;"
-""""'';;`
+export default DocsPage;"`
+""""'';;``

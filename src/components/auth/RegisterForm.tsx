@@ -1,15 +1,15 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { useForm } from 'react-hook-form;'';
-import type { ControllerRenderProps } from 'react-hook-form;'';
-import { zodResolver } from '@hookform/resolvers/zod;'';
-import { z } from 'zod;'';
-import { useRouter } from 'next/router // Changed from react-router-dom;;';
-import Link from 'next/link // Changed from react-router-dom;;';
-import axios from 'axios;'';
-import { toast } from '@/hooks/use-toast;'';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;';
+import { useState } from 'react';;
+import { useForm } from 'react-hook-form;;
+import type { ControllerRenderProps } from 'react-hook-form;;
+import { zodResolver } from '@hookform/resolvers/zod;;
+import { z } from 'zod;;
+import { useRouter } from 'next/router // Changed from react-router-dom;;;
+import Link from 'next/link // Changed from react-router-dom;;;
+import axios from 'axios;;
+import { toast } from '@/hooks/use-toast;;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
 import {;
   Form,;
   FormField,;''
@@ -18,7 +18,7 @@ import {;
   FormControl,;''
   FormMessage,;;
 } from '@/components/ui/form;'
-;
+
 const schema: unknown = z;''
   .object({;;
     email: z.string().email('Please enter a valid email'),;;'
@@ -63,7 +63,7 @@ const schema = z'
 
 type FormValues = z.infer<typeof schema>;
 <<<<<<< HEAD
-;'';
+;;
 export default function RegisterForm(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const router: unknown = useRouter(); // Changed from navigate;
   const [isSubmitting, setIsSubmitting] = useState(false);''

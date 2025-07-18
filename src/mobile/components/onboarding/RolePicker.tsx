@@ -25,8 +25,8 @@ export function RolePicker(): unknown {): unknown {): unknown {): unknown {): un
         <Card;"
           className={`cursor-pointer transition-all ${;"
             selectedRole === 'talent'
-              ? 'border-primary bg-primary/5'
-              : 'border-border hover:border-primary/40;}`
+              ? 'border-primary bg-primary/5'`
+              : 'border-border hover:border-primary/40;}``
           }`};
           onClick={() => handleSelect('talent')}'
         >;
@@ -47,12 +47,12 @@ export function RolePicker(): unknown {): unknown {): unknown {): unknown {): un
             </div>;
           </CardContent>;"
         </Card>;";"
-;"
-        <Card;"`
+;"`
+        <Card;"``
           className={`cursor-pointer transition-all ${;"
             selectedRole === 'client'
-              ? 'border-primary bg-primary/5'
-              : 'border-border hover:border-primary/40;}`
+              ? 'border-primary bg-primary/5'`
+              : 'border-border hover:border-primary/40;}``
           }`};
           onClick={() => handleSelect('client')}'
         >;
@@ -67,5 +67,5 @@ export function RolePicker(): unknown {): unknown {): unknown {): unknown {): un
                   Post jobs and find talented professionals;"
                 </p>;"
               </div>;"
-              {selectedRole === 'client' && (;
-                <Check className="h-5 w-5 text-primary' />;';;`
+              {selectedRole === 'client' && (;`
+                <Check className="h-5 w-5 text-primary' />;';;``

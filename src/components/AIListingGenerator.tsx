@@ -1,22 +1,22 @@
 <<<<<<< HEAD
-import React, { useState } from 'react''';
-import { ArrowRight, Sparkles } from 'lucide-react;'';
-import { useToast } from '@/hooks/use-toast;'';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;'';
-import { Textarea } from '@/components/ui/textarea'';
+import React, { useState } from 'react';
+import { ArrowRight, Sparkles } from 'lucide-react;;
+import { useToast } from '@/hooks/use-toast;;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
+import { Textarea } from '@/components/ui/textarea;
 import {;
   Card,;''
   CardContent,''
   CardFooter,
   CardHeader,;''
   CardTitle,;''
-} from '@/components/ui/card;'';
-import Skeleton from '@/components/ui/skeleton'';
-;
-import { supabase } from '@/integrations/supabase/client;'';
-import { Badge } from '@/components/ui/badge;'';
-import { logErrorToProduction } from '@/utils/productionLogger'';
+} from '@/components/ui/card;;
+import Skeleton from '@/components/ui/skeleton;
+
+import { supabase } from '@/integrations/supabase/client;;
+import { Badge } from '@/components/ui/badge;;
+import { logErrorToProduction } from '@/utils/productionLogger;
 ;''
 interface GeneratedContent {;''
   description: "string,;";";"
@@ -66,7 +66,7 @@ interface AIListingGeneratorProps {
     targetAudience?: string
 
 };
-;
+
 export function AIListingGenerator(): unknown {): unknown {): unknown {): unknown {): unknown {{
 <<<<<<< HEAD
   onApplyGenerated,;"""
@@ -467,7 +467,7 @@ export function AIListingGenerator(): unknown {): unknown {): unknown {): unknow
               </h3>;;""
               <p className="text-white>{generatedContent.description}</p>;""
             </div>";"
-;
+
             <div>;;""
               <h3 className="text-sm font-medium text-zion-slate-light mb-2>;"""
                 Tags;;"""
@@ -587,7 +587,7 @@ export function AIListingGenerator(): unknown {): unknown {): unknown {): unknow
 }";";"
 
 <<<<<<< HEAD
-}
+
 }""
 }""
 }""

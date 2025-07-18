@@ -1,13 +1,13 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { useToast } from '@/hooks/use-toast;'';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'';
+import React, { useState } from 'react';;
+import { useToast } from '@/hooks/use-toast;;
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;;
 import { Sparkles } from 'lucide-react;'
 ;;
-import { supabase } from '@/integrations/supabase/client;'';
-import { AIListingForm } from './AIListingForm;'';
-import { GeneratedContentDisplay } from './GeneratedContentDisplay;'';
-import { LoadingContentSkeleton } from './LoadingContentSkeleton;'';
+import { supabase } from '@/integrations/supabase/client;;
+import { AIListingForm } from './AIListingForm;;
+import { GeneratedContentDisplay } from './GeneratedContentDisplay;;
+import { LoadingContentSkeleton } from './LoadingContentSkeleton;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
 ;''
 interface GeneratedContent {;;
@@ -88,7 +88,7 @@ export function AIListingGenerator(): unknown {): unknown {): unknown {): unknow
       if (data && typeof data === 'object' && 'error' in data) {;;'
         throw new Error((data as { error?: string }).error || 'Unknown error');'
       };''
-;
+
       // Validate data shape before casting;
       if (;''
         data &&;;

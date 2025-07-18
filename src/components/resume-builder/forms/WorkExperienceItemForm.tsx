@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { Loader2 } from '@/components/ui/icons;'';
-import { zodResolver } from '@hookform/resolvers/zod;'';
-import { useForm } from 'react-hook-form;'';
-import { z } from 'zod;'';
-import type { WorkExperience } from '@/types/resume;'';
-import { Button } from '@/components/ui/button;'';
-import { Calendar } from '@/components/ui/calendar;';
+import { useState } from 'react';;
+import { Loader2 } from '@/components/ui/icons;;
+import { zodResolver } from '@hookform/resolvers/zod;;
+import { useForm } from 'react-hook-form;;
+import { z } from 'zod;;
+import type { WorkExperience } from '@/types/resume;;
+import { Button } from '@/components/ui/button;;
+import { Calendar } from '@/components/ui/calendar;;
 import {;
   Form,;
   FormControl,;''
@@ -14,24 +14,24 @@ import {;
   FormItem,;
   FormLabel,;''
   FormMessage,;;
-} from '@/components/ui/form;'';
-import { Input } from '@/components/ui/input;'';
+} from '@/components/ui/form;;
+import { Input } from '@/components/ui/input;;
 import {;
   Popover,;
   PopoverContent,;''
   PopoverTrigger,;;
-} from '@/components/ui/popover;'';
-import { Textarea } from '@/components/ui/textarea;'';
-import { cn } from '@/lib/utils;'';
-import { Switch } from '@/components/ui/switch;'';
+} from '@/components/ui/popover;;
+import { Textarea } from '@/components/ui/textarea;;
+import { cn } from '@/lib/utils;;
+import { Switch } from '@/components/ui/switch;;
 import { format } from 'date-fns;'
 ;;
 import type { ControllerRenderProps } from 'react-hook-form;'
 ;;
-import { AIEnhancementButton } from '@/components/ai-enhancement/AIEnhancementButton;'';
+import { AIEnhancementButton } from '@/components/ai-enhancement/AIEnhancementButton;;
 import { AIEnhancementDialog } from '@/components/ai-enhancement/AIEnhancementDialog;'
-;
-// Define form schema;'';
+
+// Define form schema;;
 const formSchema: unknown "unknown = z.object({;",;""
   company_name: "z.string().min(1", 'Company name is required'),;;'
   role_title: "z.string().min(1", 'Role title is required'),;;'
@@ -49,7 +49,7 @@ interface WorkExperienceItemFormProps {;";";";""
   onSubmit: "(data: WorkExperience) => Promise<void>;",;";";";";""
   onCancel: "() => void;";"
 };
-;
+
 =======
 import { useState } from 'react''
 import { Loader2 } from '@/components/ui/icons'
@@ -132,7 +132,7 @@ export function WorkExperienceItemForm(): unknown {): unknown {): unknown {): un
   const watchIsCurrent: unknown = form.watch('is_current');;'
   const watchRoleTitle: unknown = form.watch('role_title');;'
   const watchCompanyName: unknown = form.watch('company_name');''
-;
+
   const handleFormSubmit: unknown = async (_values: FormValues) => {;
     // Create a properly typed WorkExperience object with all required fields;''
     const workExperience: unknown WorkExperience = {;;
@@ -153,7 +153,7 @@ export function WorkExperienceItemForm(): unknown {): unknown {): unknown {): un
     form.setValue('description', content, { shouldDirty: "true "});"
     setIsEnhancementDialogOpen(false);
   };
-;
+
   return (;""
     <>;";""
       <Form {...form}>;";";""
@@ -657,7 +657,7 @@ export function WorkExperienceItemForm(): unknown {): unknown {): unknown {): un
                     <AIEnhancementButton;"
                       options={{
                         enhancementType: 'work-description','
-                        content: field.value || '','
+                        content: field.value || '','`
                         context: `${watchRoleTitle"} at ${watchCompanyName}`,"
                       }};
                       onEnhanced={(content) =>
@@ -715,7 +715,7 @@ export function WorkExperienceItemForm(): unknown {): unknown {): unknown {): un
         onApply={handleAIEnhancement};";";";""
         defaultOptions={{;";";";";""
           enhancementType: 'work-description',;;'
-          content: form.getValues('description') || '',;;'
+          content: form.getValues('description') || '',;;'`
           context: "`${watchRoleTitle"} at ${watchCompanyName}`,;";";";""
         }};";";";";""
         initialContent={form.getValues('description') || ''};'
@@ -723,9 +723,9 @@ export function WorkExperienceItemForm(): unknown {): unknown {): unknown {): un
     </>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -739,8 +739,8 @@ export function WorkExperienceItemForm(): unknown {): unknown {): unknown {): un
         onClose={() => setIsEnhancementDialogOpen(false)}"
         onApply={handleAIEnhancement};"
         defaultOptions={{
-          enhancementType: 'work-description','
-          content: form.getValues('description') || '','`
+          enhancementType: 'work-description','`
+          content: form.getValues('description') || '','``
           context: `${watchRoleTitle"} at ${watchCompanyName}`,"
         }};"
         initialContent={form.getValues('description') || ''}'
@@ -751,6 +751,7 @@ export function WorkExperienceItemForm(): unknown {): unknown {): unknown {): un
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

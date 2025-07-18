@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import React from 'react';';
-import Link from 'next/link;'';
-import { useTranslation } from 'react-i18next;'';
+import React from 'react';;
+import Link from 'next/link;;
+import { useTranslation } from 'react-i18next;;
 import { cn } from '@/lib/utils;'
-;
+
 interface AllFeaturesSectionProps {;
   className?: string;''
   style?: React.CSSProperties;
 };
-;'';
+;;
 const features: unknown = [;;
   { key: 'ai_talent_matching', link: '/match' },;;'
   { key: 'talent_directory', link: '/talents' },;;'
@@ -124,6 +124,7 @@ export default AllFeaturesSection";"
 ";"
 }";
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

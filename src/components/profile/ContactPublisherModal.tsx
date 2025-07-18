@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Mail } from '@/components/ui/icons;'';
+import React from 'react';;
+import { Mail } from '@/components/ui/icons;;
 import FocusLock from 'react-focus-lock;'
-;
+
 import {;''
   Dialog,;
   DialogContent,;
   DialogHeader,;''
   DialogTitle,;;
-} from '@/components/ui/dialog;'';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;'';
-import { Textarea } from '@/components/ui/textarea;';
+} from '@/components/ui/dialog;;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
+import { Textarea } from '@/components/ui/textarea;;
 import {;
   Form,;
   FormField,;''
@@ -19,14 +19,14 @@ import {;
   FormLabel,;
   FormControl,;''
   FormMessage,;;
-} from '@/components/ui/form;'';
-import { useForm, type Resolver } from 'react-hook-form;'';
-import { yupResolver } from '@hookform/resolvers/yup;'';
+} from '@/components/ui/form;;
+import { useForm, type Resolver } from 'react-hook-form;;
+import { yupResolver } from '@hookform/resolvers/yup;;
 import * as yup from 'yup;'
 ;;
-import api from '@/services/apiClient;'';
-import { toast } from '@/hooks/use-toast;'';
-import { useAuth } from '@/hooks/useAuth;'';
+import api from '@/services/apiClient;;
+import { toast } from '@/hooks/use-toast;;
+import { useAuth } from '@/hooks/useAuth;;
 import { LoginModal } from '@/components/auth/LoginModal;'
 ;''
 interface ContactPublisherModalProps {;;
@@ -193,7 +193,7 @@ export function ContactPublisherModal(): unknown {): unknown {): unknown {): unk
     };
   };
 <<<<<<< HEAD
-;
+
   return (;''
     <>;
       <Dialog open={isOpen} onOpenChange={onClose}>;
@@ -253,7 +253,7 @@ export function ContactPublisherModal(): unknown {): unknown {): unknown {): unk
                     <FormItem>;""
                       <FormLabel>Message</FormLabel>;";""
                       <FormControl>;";";""
-                        <Textarea;";";";""
+                        <Textarea;";";";""`
                           placeholder={`Message to ${publisherName}...`};";";";";""
                           className="bg-zion-blue border-zion-blue-light text-white min-h-[120px]";";";";";""
                           {...(typeof field === 'object' && field !== null;''
@@ -297,7 +297,7 @@ export function ContactPublisherModal(): unknown {): unknown {): unknown {): unk
             {publisherEmail && (;
               <div className="mb-4 text-zion-slate-light">
                 <span className=block">Email:</span>"
-                <a;
+                <a;`
                   href={`mailto: ${publisherEmail"}`}"
                   className=text-zion-cyan hover:underline truncate block"
                 >;
@@ -332,8 +332,8 @@ export function ContactPublisherModal(): unknown {): unknown {): unknown {): unk
                   render={({ field }) => (;
                     <FormItem>"
                       <FormLabel>Message</FormLabel>;
-                      <FormControl>;"
-                        <Textarea"`
+                      <FormControl>;"`
+                        <Textarea"``
                           placeholder={`Message to ${publisherName}...`};
                           className=bg-zion-blue border-zion-blue-light text-white min-h-[120px]"
                           {...(typeof field === 'object' && field !== null'
@@ -364,9 +364,9 @@ export function ContactPublisherModal(): unknown {): unknown {): unknown {): unk
     </>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -377,6 +377,7 @@ export function ContactPublisherModal(): unknown {): unknown {): unknown {): unk
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

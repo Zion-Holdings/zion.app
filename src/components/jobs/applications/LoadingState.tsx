@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 import { Loader2 } from '@/components/ui/icons;'
-;
+
 export function LoadingState(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   return (;;
     <div className="flex justify-center items-center p-8">;";";";";""
@@ -14,7 +14,7 @@ export function LoadingState(): unknown {): unknown {): unknown {): unknown {): 
 }""
 }""
 =======
-import React from 'react';
+import React from 'react;
 
 export default function LoadingState() {
   return (
@@ -23,5 +23,5 @@ export default function LoadingState() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}
+
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

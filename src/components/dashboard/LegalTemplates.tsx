@@ -39,7 +39,7 @@ const mockTemplates: unknown LegalTemplate[] = [;";";";""
       'Standard terms of service agreement for users of your product or service.',;'
   },;''
 ];
-;
+
 // const _LegalTemplates: unknown React.FC = () => {;''
   return (;;
     <div className="bg-white p-6 rounded-lg shadow">;";";";";""

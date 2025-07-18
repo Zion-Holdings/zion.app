@@ -1,18 +1,18 @@
 <<<<<<< HEAD
-import React from 'react;';
+import React from 'react;;
 import {;
   Card,;''
   CardContent,;
   CardDescription,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;';
+} from '@/components/ui/card;;
 import {;''
   Download,;
   FileImage,;
   FileText,;''
   FileVideo,;;
-} from '@/components/ui/icons;'';
+} from '@/components/ui/icons;;
 import { Button } from '@/components/ui/button;'
 ;;
 import { toast } from '@/hooks/use-toast;'
@@ -77,7 +77,7 @@ export function PartnerResources(): unknown {): unknown {): unknown {): unknown 
       _url: '#',;'
     },;
   ];''
-;
+
   const handleDownload: unknown = (resource: ResourceItem) => {;
     // In a real app, this would download the actual resource;''
     toast({;;
@@ -240,7 +240,7 @@ export function PartnerResources(): ;"
   const handleDownload = (resource: ResourceItem) => {;
     // In a real app, this would download the actual resource'
     toast({'
-      title: 'Download started','
+      title: 'Download started','`
       description: "`Downloading ${resource.title}`,
       variant: 'default','
     })'
@@ -386,6 +386,7 @@ export function PartnerResources(): ;"
 }"
 
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

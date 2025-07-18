@@ -1,16 +1,16 @@
 <<<<<<< HEAD
 import { ResumeWizard as WizardComponent } from './wizard;'
-;'';
+;;
 export function ResumeWizard(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   return <WizardComponent />;
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
-import React from 'react';
+import React from 'react;
 
 export default function ResumeWizard() {
   return (
@@ -19,5 +19,5 @@ export default function ResumeWizard() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}
+
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

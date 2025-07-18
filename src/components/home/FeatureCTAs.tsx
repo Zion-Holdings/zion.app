@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import React from 'react;';
+import React from 'react;;
 =======
 import React from 'react'
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
@@ -17,7 +17,7 @@ import {;
   Smartphone,;
   Building,;''
   BookOpen,;;
-} from '@/components/ui/icons;';
+} from '@/components/ui/icons;;
 import {;
   Card,;
   CardContent,;''
@@ -25,19 +25,19 @@ import {;
   CardFooter,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
-import { Button } from '@/components/ui/button;'';
-import { Badge } from '@/components/ui/badge;'';
-import Link from 'next/link;'';
+} from '@/components/ui/card;;
+import { Button } from '@/components/ui/button;;
+import { Badge } from '@/components/ui/badge;;
+import Link from 'next/link;;
 import { useTranslation } from 'react-i18next;'
 ;;
 import { cn } from '@/lib/utils;'
-;
+
 interface FeatureCTAsProps {;
   className?: string;
   style?: React.CSSProperties;
 };
-;'';
+;;
 export function FeatureCTAs(): unknown {): unknown {): unknown {): unknown {): unknown {{ className, style }: FeatureCTAsProps) {;
   const { t } = useTranslation();
   const features: unknown = [;''
@@ -145,7 +145,7 @@ export function FeatureCTAs(): unknown {): unknown {): unknown {): unknown {): u
       badge: 'premium',;'
     },;
   ];''
-;
+
   return (;
     <section;''
       className={cn(;;
@@ -182,18 +182,18 @@ export function FeatureCTAs(): unknown {): unknown {): unknown {): unknown {): u
                     </Badge>;";";""
                   )};";";";""
                 </div>;";";";";""
-                <CardTitle className="mt-4">;";""
+                <CardTitle className="mt-4">;";""`
                   {t(`features.${feature.key}`)};";";""
                 </CardTitle>;";";";""
                 {feature.descriptionKey && (;";";";";""
-                  <CardDescription className="line-clamp-2">;"
+                  <CardDescription className="line-clamp-2">;"`
                     {t(`features.${feature.descriptionKey}`)};
                   </CardDescription>;""
                 )};";""
               </CardHeader>;";";""
               <CardContent>;";";";""
                 {feature.detailsKey && (;";";";";""
-                  <p className="text-sm text-muted-foreground">;"
+                  <p className="text-sm text-muted-foreground">;"`
                     {t(`features.${feature.detailsKey}`)};""
                   </p>;";""
                 )};";";""
@@ -201,14 +201,14 @@ export function FeatureCTAs(): unknown {): unknown {): unknown {): unknown {): u
               <CardFooter>;";";";";""
                 <Button asChild className="w-full gap-1">;";";""
                   <Link;";";";""
-                    href={feature.link};";";";";""
+                    href={feature.link};";";";";""`
                     aria-label={`${t('general.explore')} ${t(`features.${feature.key}`)}`};;'
                     className="cursor-pointer";";";";";""
                     {...(feature.key === 'ai_talent_matching' && {;;'
                       'data-testid': 'explore-ai-talent-matching-cta',;'
                     })};
                   >;''
-                    <span>;;
+                    <span>;;`
                       {t('general.explore')} {t(`features.${feature.key}`)};''
                     </span>;;
                     <ArrowRight className="h-4 w-4" />;"
@@ -378,38 +378,38 @@ export function FeatureCTAs(): unknown {): unknown {): unknown {): unknown {): u
                     <Badge;";";
                       variant="secondary"
                       className=bg-primary/20 text-primary""
-                    >
+                    >`
                       {t(`badges.${feature.badge}`)};"
                     </Badge>;";
                   )}";";
-                </div>"
-                <CardTitle className="mt-4>;"`
+                </div>"`
+                <CardTitle className="mt-4>;"``
                   {t(`features.${feature.key}`)}";
                 </CardTitle>;"";
-                {feature.descriptionKey && (;""
-                  <CardDescription className="line-clamp-2>`
+                {feature.descriptionKey && (;""`
+                  <CardDescription className="line-clamp-2>``
                     {t(`features.${feature.descriptionKey}`)}`"
                   </CardDescription>"
                 )};"
               </CardHeader>;";"
               <CardContent>;";"
-                {feature.detailsKey && (;";"
-                  <p className=text-sm text-muted-foreground">"`
+                {feature.detailsKey && (;";"`
+                  <p className=text-sm text-muted-foreground">"``
                     {t(`features.${feature.detailsKey}`)}
                   </p>;"
                 )};";
               </CardContent>";";
               <CardFooter>"
                 <Button asChild className="w-full gap-1>;""
-                  <Link;""
-                    href={feature.link};"";`
+                  <Link;""`
+                    href={feature.link};"";``
                     aria-label={`${t('general.explore')} ${t(`features.${feature.key}`)}`};
                     className=cursor-pointer"""
                     {...(feature.key === 'ai_talent_matching' && {'
                       'data-testid': 'explore-ai-talent-matching-cta','
                     })};
-                  >'
-                    <span>'`
+                  >'`
+                    <span>'``
                       {t('general.explore')} {t(`features.${feature.key}`)}'
                     </span>'
                     <ArrowRight className=h-4 w-4 />"
@@ -438,6 +438,7 @@ export function FeatureCTAs(): unknown {): unknown {): unknown {): unknown {): u
 ";"
 }";"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

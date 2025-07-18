@@ -1,13 +1,13 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { useJobApplications } from '@/hooks/useJobApplications;'';
-import { ApplicationCard } from './ApplicationCard;'';
-import { LoadingState } from './LoadingState;'';
-import { EmptyState } from './EmptyState;'';
-import { ErrorState } from './ErrorState;'';
-import { Button } from '@/components/ui/button;'';
+import { useState } from 'react';;
+import { useJobApplications } from '@/hooks/useJobApplications;;
+import { ApplicationCard } from './ApplicationCard;;
+import { LoadingState } from './LoadingState;;
+import { EmptyState } from './EmptyState;;
+import { ErrorState } from './ErrorState;;
+import { Button } from '@/components/ui/button;;
 import type { ApplicationStatus } from '@/types/jobs;'
-;
+
 export function ApplicationsTracker(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   const { applications, isLoading, error } = useJobApplications();;
   const [statusFilter, setStatusFilter] = useState<ApplicationStatus | 'all'>(;;'
@@ -36,7 +36,7 @@ export function ApplicationsTracker(): '
     return <ErrorState error={error} />;
   };
 <<<<<<< HEAD
-;
+
   if (applications.length === 0) {;''
     return <EmptyState />;
   };

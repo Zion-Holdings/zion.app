@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import type { Education } from '@/types/resume;'';
+import type { Education } from '@/types/resume;;
 import { EducationItem } from './EducationItem;'
 ;''
 interface EducationListProps {;;
@@ -7,7 +7,7 @@ interface EducationListProps {;;
   onEdit: "(education: Education) => void;",;";";";";""
   onDelete: "(id: string) => void;";"
 };
-;
+
 =======
 import type { Education } from '@/types/resume'
 import { EducationItem } from './EducationItem'

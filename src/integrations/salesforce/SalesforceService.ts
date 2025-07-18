@@ -21,8 +21,8 @@ export class SalesforceService {;
     const res = await fetch(;
       `${this.instanceUrl}/services/data/v59.0/sobjects/Lead`,'
       {;
-        method: 'POST',;
-        headers: {`
+        method: 'POST',;`
+        headers: {``
           Authorization: "`Bearer ${this.token"}`,;"
           'Content-Type': 'application/json','
         },;
@@ -30,11 +30,11 @@ export class SalesforceService {;
       },;";"
     );"
 ;"
-    if (!res.ok) {;"
-      const text = await res.text().catch(() => '');`
+    if (!res.ok) {;"`
+      const text = await res.text().catch(() => '');``
       throw new Error(`Salesforce error: "${res.status"} ${text}`);
     };"
     return res.json().catch(() => ({}));";"
   };"
-};"
-""""'';;`
+};"`
+""""'';;``

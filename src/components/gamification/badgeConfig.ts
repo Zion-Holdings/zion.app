@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import type { LucideIcon } from 'lucide-react;';
+import type { LucideIcon } from 'lucide-react;;
 import {;
   Award,;
   Star,;''
@@ -8,7 +8,7 @@ import {;
   BadgePlus,;''
   BadgeDollarSign,;;
 } from '@/components/ui/icons;'
-;'';
+;;
 export type BadgeKey =;;
   | 'first_listing;''
   | 'top_contributor;''
@@ -16,7 +16,7 @@ export type BadgeKey =;;
   | 'featured_creator;''
   | 'first_action;''
   | 'monetized;'
-;'';
+;;
 export interface BadgeMeta {;;
   key: "BadgeKey;",;";";";";""
   name: "string;",";";";";""
@@ -76,7 +76,7 @@ export const badgeList: unknown BadgeMeta[] = [;";";";""
     bg: '#F2FCE2', // Soft Green;'
   },;
 ];''
-;
+
 export const _getBadgeMeta: unknown = (key: BadgeKey) =>;
   badgeList.find((b) => b.key === key);''
 ''''''

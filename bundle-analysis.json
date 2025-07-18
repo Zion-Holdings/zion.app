@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-07-18T10:05:02.468Z",
+  "timestamp": "2025-07-18T10:18:17.048Z",
   "totalSize": 0,
   "chunks": [],
   "dependencies": [
@@ -59,7 +59,7 @@
     },
     {
       "name": "next",
-      "version": "^15.0.0-rc.0",
+      "version": "^15.4.2-canary.7",
       "size": 15707,
       "type": "production"
     },
@@ -95,7 +95,7 @@
     },
     {
       "name": "@sentry/nextjs",
-      "version": "^9.40.0",
+      "version": "^9.39.0",
       "size": 4251,
       "type": "production"
     },

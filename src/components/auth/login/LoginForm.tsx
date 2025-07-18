@@ -1,16 +1,16 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { LogIn, User, Eye, EyeOff } from '@/components/ui/icons;'';
-import { useRouter } from 'next/router;'';
-import { useForm } from 'react-hook-form;'';
-import type { ControllerRenderProps } from 'react-hook-form;'';
-import { zodResolver } from '@hookform/resolvers/zod;'';
+import { useState } from 'react';;
+import { LogIn, User, Eye, EyeOff } from '@/components/ui/icons;;
+import { useRouter } from 'next/router;;
+import { useForm } from 'react-hook-form;;
+import type { ControllerRenderProps } from 'react-hook-form;;
+import { zodResolver } from '@hookform/resolvers/zod;;
 import { z } from 'zod;'
 ;;
-import { fireEvent } from '@/lib/analytics;'';
-import { useAuth } from '@/context/auth/AuthProvider;'';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;';
+import { fireEvent } from '@/lib/analytics;;
+import { useAuth } from '@/context/auth/AuthProvider;;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
 import {;
   Form,;
   FormControl,;''
@@ -18,12 +18,12 @@ import {;
   FormItem,;
   FormLabel,;''
   FormMessage,;;
-} from '@/components/ui/form;'';
-import { Alert, AlertDescription } from '@/components/ui/alert;'';
+} from '@/components/ui/form;;
+import { Alert, AlertDescription } from '@/components/ui/alert;;
 import Link from 'next/link;'
 ;;
 import { Checkbox } from '@/components/ui/checkbox;'
-// Form validation schema;'';
+// Form validation schema;;
 const loginSchema: unknown "unknown = z.object({;",;";";""
   email: z;";";";""
     .string();;
@@ -69,7 +69,7 @@ const loginSchema: z.object({,;";"
 
 type LoginFormValues = z.infer<typeof loginSchema>;
 <<<<<<< HEAD
-;
+
 export function LoginForm(): unknown {): unknown {): unknown {): unknown {): unknown {) {;""
   const { isLoading, login } = useAuth();";""
   const [showPassword, setShowPassword] = useState(false);";";""
@@ -180,7 +180,7 @@ export function LoginForm(): "
     };
     router.push(`/verify-status?email=${encodeURIComponent(email)}`);
   };''
-;
+
   return (;
     <Form {...form}>;''
       {form.formState.errors.root && (;;
@@ -256,7 +256,7 @@ export function LoginForm(): "
     if (!email) {'
       form.setError('root', { message: 'Please enter your email address.' })'
       return;
-    };
+    };`
     router.push(`/verify-status?email=${encodeURIComponent(email)}`);
   }'
 '
@@ -606,6 +606,7 @@ export function LoginForm(): "
 ";"
 }";
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

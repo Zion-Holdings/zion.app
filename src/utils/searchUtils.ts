@@ -62,5 +62,5 @@ export const matchesSearchTerm: (;",;"
  * Calculate relevance score for search results;"
  */;"
 export const calculateRelevanceScore = (;";,"
-  result: "SearchResult'
-  searchTerm: string,;';;`
+  result: "SearchResult'`
+  searchTerm: string,;';;``

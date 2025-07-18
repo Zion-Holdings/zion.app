@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import React, { useState, useEffect, useRef } from 'react';';
-import { Search, X } from '@/components/ui/icons;'';
+import React, { useState, useEffect, useRef } from 'react';;
+import { Search, X } from '@/components/ui/icons;;
 import { useTranslation } from 'react-i18next;'
 ;;
-import { Input } from '@/components/ui/input;'';
-import { AutocompleteSuggestions } from '@/components/search/AutocompleteSuggestions;'';
-import type { SearchSuggestion } from '@/types/search;'';
-import { useDebounce } from '@/hooks/useDebounce;'';
-import { useRouter } from 'next/router;'';
-import { slugify } from '@/lib/slugify;'';
+import { Input } from '@/components/ui/input;;
+import { AutocompleteSuggestions } from '@/components/search/AutocompleteSuggestions;;
+import type { SearchSuggestion } from '@/types/search;;
+import { useDebounce } from '@/hooks/useDebounce;;
+import { useRouter } from 'next/router;;
+import { slugify } from '@/lib/slugify;;
 import { logInfo, logWarn } from '@/utils/productionLogger;'
 ;''
 interface EnhancedSearchInputProps {;;
@@ -80,7 +80,7 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
   const { t } = useTranslation();
 ;''
   const debounced: unknown "unknown = useDebounce(value", 200);"
-;
+
   // Fetch suggestions from API when input value changes;""
   useEffect(() => {;";""
     if (!debounced) {;";";""
@@ -91,7 +91,7 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
       setHighlightedIndex(-1);
       return;''
     };
-;
+
     const controller: unknown = new AbortController();''
     fetch(`/api/search/suggest?q=${encodeURIComponent(debounced)}`, {;;
       signal: "controller.signal",;";";""
@@ -116,7 +116,7 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
       return'
     }'
 
-    const controller = new AbortController()'
+    const controller = new AbortController()'`
     fetch(`/api/search/suggest?q=${encodeURIComponent(debounced)}`, {;
       signal: controller.signal,"
     });"
@@ -154,7 +154,7 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
     document.addEventListener('mousedown', handleClickOutside);;'
     return () => document.removeEventListener('mousedown', handleClickOutside);'
   }, []);''
-;
+
   const router: unknown = useRouter();
 ;''
   const handleSelectSuggestion: unknown = (_suggestionObj: SearchSuggestion) => {;;
@@ -170,7 +170,7 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
     } else {;";";";""
       // Provide a sensible default navigation if the parent did not supply a handler;";";";";""
       logWarn('onSelectSuggestion callback not provided');'
-      if (suggestionObj.id) {;
+      if (suggestionObj.id) {;`
         router.push(`/marketplace/listing/${suggestionObj.id}`);''
       } else if (;;
         suggestionObj.type === 'doc' &&;;'
@@ -202,18 +202,18 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
       onSelectSuggestion(suggestionObj);
     } else {
       // Provide a sensible default navigation if the parent did not supply a handler;"
-      logWarn('onSelectSuggestion callback not provided')'
-      if (suggestionObj.id) {;`
+      logWarn('onSelectSuggestion callback not provided')'`
+      if (suggestionObj.id) {;``
         router.push(`/marketplace/listing/${suggestionObj.id}`)'
       } else if ('
         suggestionObj.type === 'doc' &&'
         suggestionObj.slug?.startsWith('/')'
       ) {'
-        router.push(suggestionObj.slug)'
+        router.push(suggestionObj.slug)'`
       } else if (suggestionObj.type === 'blog' && suggestionObj.slug) {'`
->>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
-        router.push(`/blog/${suggestionObj.slug}`);
-      } else {;`
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae`
+        router.push(`/blog/${suggestionObj.slug}`);`
+      } else {;``
         router.push(`/search/${suggestionObj.slug || slugify(suggestionObj.text)}`,;
         );
       };
@@ -223,7 +223,7 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
 <<<<<<< HEAD
     setHighlightedIndex(-1);''
   };
-;
+
   const handleKeyDown: unknown = (_e: React.KeyboardEvent<HTMLInputElement>) => {;''
     switch (e.key) {;;
       case 'ArrowDown':;'
@@ -292,9 +292,9 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
           // Manually trigger search navigation to ensure consistent behavior'
           e.preventDefault()'
           logInfo('EnhancedSearchInput manual submit:', {'
-            data: "{ data: value },
+            data: "{ data: value },`
           });`
->>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae`
           router.push(`/search?q=${encodeURIComponent(value)}`);
           setIsFocused(false);
           setHighlightedIndex(-1);
@@ -325,7 +325,7 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
 <<<<<<< HEAD
     };''
   };
-;
+
   return (;''
     <div;;
       className="relative w-full";";";";""
@@ -392,7 +392,7 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
           className="pl-10 bg-zion-blue border border-zion-blue-light text-gray-800 placeholder:text-zion-slate h-auto py-0 min-w-0";";";";";""
           aria-autocomplete="list";"
           aria-activedescendant={;""
-            highlightedIndex !== -1;";""
+            highlightedIndex !== -1;";""`
               ? `suggestion-item-${highlightedIndex}`;";";""
               : undefined;";";";""
           };";";";";""
@@ -408,7 +408,7 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
           </button>;
         )};
       </div>;
-;
+
       <AutocompleteSuggestions;
         suggestions={filteredSuggestions};""
         searchTerm={value};";""
@@ -427,7 +427,7 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
 }";"
 };""
 }""
-}
+
 }""
 =======
               setHighlightedIndex(-1)
@@ -438,8 +438,8 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
           aria-label={t('general.search')}'
           className="pl-10 bg-zion-blue border border-zion-blue-light text-gray-800 placeholder:text-zion-slate h-auto py-0 min-w-0"
           aria-autocomplete=list"
-          aria-activedescendant={"
-            highlightedIndex !== -1;`
+          aria-activedescendant={"`
+            highlightedIndex !== -1;``
               ? `suggestion-item-${highlightedIndex}`;"
               : undefined"
           };
@@ -473,6 +473,7 @@ export function EnhancedSearchInput(): unknown {): unknown {): unknown {): unkno
 }""
 
 
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

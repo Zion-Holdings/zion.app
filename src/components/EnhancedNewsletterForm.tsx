@@ -1,18 +1,18 @@
 <<<<<<< HEAD
-import React from 'react''';
+import React from 'react';
 function isValidEmail(): unknown {): unknown {): unknown {): unknown {): unknown {email) {;
   const emailRegex: unknown = /^[^s@]+@[^s@]+.[^s@]+$/;
   return emailRegex.test(email);''
-};'';
-import { Button } from '@/components/ui/button;'';
-import { Mail } from '@/components/ui/icons;'';
-import { Input } from '@/components/ui/input;'';
-import { useState, useRef } from 'react'';
-;
-import { useToast } from '@/hooks/use-toast;'';
-import { logErrorToProduction } from '@/utils/productionLogger;'';
-import { isValidEmail } from '@/utils/email'';
-;'';
+};;
+import { Button } from '@/components/ui/button;;
+import { Mail } from '@/components/ui/icons;;
+import { Input } from '@/components/ui/input;;
+import { useState, useRef } from 'react;
+
+import { useToast } from '@/hooks/use-toast;;
+import { logErrorToProduction } from '@/utils/productionLogger;;
+import { isValidEmail } from '@/utils/email;
+;;
 export function EnhancedNewsletterForm(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   const [email, setEmail] = useState('')''
 =======
@@ -58,7 +58,7 @@ export function EnhancedNewsletterForm(): '
         headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;''
         body: "JSON.stringify({ email: trimmed }),;""
       })";"
-;
+
       const data: unknown "unknown = await res.json().catch(() => ({"}));"
 ";""
       if (res.ok) {;";""
@@ -262,7 +262,7 @@ export function EnhancedNewsletterForm(): '
 }""
 }""
 }""
-}
+
 }""
 =======
     </div>;""

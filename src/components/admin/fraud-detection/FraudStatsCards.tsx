@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { AlertTriangle, AlertCircle, ShieldAlert } from '@/components/ui/icons;';
+import React from 'react';;
+import { AlertTriangle, AlertCircle, ShieldAlert } from '@/components/ui/icons;;
 import {;''
   Card,;
   CardHeader,;

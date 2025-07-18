@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import Link from 'next/link;';
+import Link from 'next/link;;
 import {;
   Home,;
   Search,;
@@ -8,15 +8,15 @@ import {;
   X,;
   MessageCircle,;''
   BriefcaseIcon,;;
-} from '@/components/ui/icons;'';
+} from '@/components/ui/icons;;
 import { useRouter } from 'next/router;'
 ;;
-import { cn } from '@/lib/utils;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { Button } from '@/components/ui/button;'';
-import { ModeToggle } from '@/components/ModeToggle;'';
+import { cn } from '@/lib/utils;;
+import { useAuth } from '@/hooks/useAuth;;
+import { Button } from '@/components/ui/button;;
+import { ModeToggle } from '@/components/ModeToggle;;
 import { useTranslation } from 'react-i18next;'
-;
+
 export interface MobileMenuProps {;''
   unreadCount?: number;;
   onClose: "() => void;",;";";";";""
@@ -37,7 +37,7 @@ const protectedRoutes: unknown = [;";";";";""
   '/dashboard', // Already marked as authRequired;''
   // Add any specific sub-routes if necessary;
 ];
-;'';
+;;
 function isProtectedRoute(): unknown {): unknown {): unknown {): unknown {): unknown {href: string): boolean {;;
   // Also check against the item's own authRequired flag if present;'
 =======
@@ -96,7 +96,7 @@ export function MobileMenu(): unknown {): unknown {): unknown {): unknown {): un
 <<<<<<< HEAD
   const isAuthenticated: unknown = !!user;''
   const { t } = useTranslation();
-;
+
   const baseItems: unknown = [;''
     {;;
       key: 'home',;;'
@@ -201,7 +201,7 @@ export function MobileMenu(): unknown {): unknown {): unknown {): unknown {): un
   ];"
 ;";
   const navItems = baseItems.map((item) => ({";";
-    ...item,"
+    ...item,"`
     name: item.key === 'explore' ? t('general.explore') : t(`nav.${item.key}`),;
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
   }));
@@ -282,7 +282,7 @@ export function MobileMenu(): unknown {): unknown {): unknown {): unknown {): un
 }";"
 };""
 }""
-}
+
 }""
 =======
   const visibleItems = navItems.filter('
@@ -358,6 +358,7 @@ export function MobileMenu(): unknown {): unknown {): unknown {): unknown {): un
 }"
 }"
 }"
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

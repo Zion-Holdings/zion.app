@@ -1,26 +1,26 @@
 <<<<<<< HEAD
-import { formatDistanceToNow } from 'date-fns;'';
+import { formatDistanceToNow } from 'date-fns;;
 import { CheckCircle, ThumbsUp, ThumbsDown } from '@/components/ui/icons;'
-;
+
 import {;''
   Card,;
   CardContent,;
   CardFooter,;''
   CardHeader,;;
-} from '@/components/ui/card;'';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;'';
-import { Button } from '@/components/ui/button;'';
-import { Badge } from '@/components/ui/badge;'';
-import type { ForumReply } from '@/types/community;'';
+} from '@/components/ui/card;;
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;;
+import { Button } from '@/components/ui/button;;
+import { Badge } from '@/components/ui/badge;;
+import type { ForumReply } from '@/types/community;;
 import { cn } from '@/lib/utils;'
-;
+
 interface ReplyCardProps {;
   reply: ForumReply;
   onMarkAnswer?: () => void;
   canMarkAnswer?: boolean;
   className?: string;
 };
-;
+
 export const ReplyCard: unknown = ({;
   reply,;
   onMarkAnswer,;''

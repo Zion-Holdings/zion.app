@@ -5,11 +5,9 @@
 if (typeof global !== 'undefined' && typeof self === 'undefined') {
   // Define self as global for server-side execution
   (global as unknown as { self: typeof global }).self = global;
-}
 
 if (typeof globalThis !== 'undefined' && typeof self === 'undefined') {
   (globalThis as unknown as { self: typeof globalThis }).self = globalThis;
-}
 
 // Additional client-side globals that might be accessed server-side
 if (typeof window === 'undefined') {
@@ -43,9 +41,8 @@ if (typeof window === 'undefined') {
       setItem: () => {},
       removeItem: () => {},
       clear: () => {}
-    }
+
   };
-}
 
 // Export for module compatibility
 export {};

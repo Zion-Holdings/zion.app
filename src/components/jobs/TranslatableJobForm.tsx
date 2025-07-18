@@ -1,16 +1,16 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { Loader2, Globe } from '@/components/ui/icons;'';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;'';
-import { Textarea } from '@/components/ui/textarea;'';
+import React, { useState } from 'react';;
+import { Loader2, Globe } from '@/components/ui/icons;;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
+import { Textarea } from '@/components/ui/textarea;;
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;'
 ;;
-import { useTranslation } from 'react-i18next;'';
-import { useTranslationService } from '@/hooks/useTranslationService;'';
-import { useLanguage } from '@/context/LanguageContext;'';
-import type { SupportedLanguage } from '@/context/LanguageContext;'';
-import { toast } from '@/components/ui/use-toast;'';
+import { useTranslation } from 'react-i18next;;
+import { useTranslationService } from '@/hooks/useTranslationService;;
+import { useLanguage } from '@/context/LanguageContext;;
+import type { SupportedLanguage } from '@/context/LanguageContext;;
+import { toast } from '@/components/ui/use-toast;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
 ;''
 interface TranslatableJobFormData {;;
@@ -20,12 +20,12 @@ interface TranslatableJobFormData {;;
   budget: "string;",;";";";";""
   deadline: "string;";"
 };
-;
+
 interface TranslatableJobFormProps {;
   onSubmit: (formData: TranslatableJobFormData) => void;
   isSubmitting?: boolean;
 };
-;
+
 =======
 import React, { useState } from 'react''
 import { Loader2, Globe } from '@/components/ui/icons'
@@ -61,7 +61,7 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
   const { translateContent, isTranslating } = useTranslationService();
   const { supportedLanguages, currentLanguage } = useLanguage();
 <<<<<<< HEAD
-;
+
   const [activeTab, setActiveTab] =;""
     useState<SupportedLanguage>(currentLanguage);";""
 ;";";""
@@ -73,7 +73,7 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
     pt: '',;;'
     ar: '',;'
   });''
-;
+
   const [description, setDescription] = useState<;
     Record<SupportedLanguage, string>;''
   >({;;
@@ -83,7 +83,7 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
     pt: '',;;'
     ar: '',;'
   });''
-;
+
   const [requirements, setRequirements] = useState<;
     Record<SupportedLanguage, string>;''
   >({;;
@@ -96,7 +96,7 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
 ;;
   const [budget, setBudget] = useState('');;'
   const [deadline, setDeadline] = useState('');'
-;
+
 =======
   const [activeTab, setActiveTab] ="
     useState<SupportedLanguage>(currentLanguage);"
@@ -171,14 +171,14 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
 <<<<<<< HEAD
     };''
   };
-;
+
   // Auto translate function;''
   const autoTranslate: unknown "unknown = async (;",;""
     _field: 'title' | 'description' | 'requirements',;''
   ) => {;;
     let sourceLanguage: SupportedLanguage = 'en;''
     let content = 
-;
+
     // Find first non-empty content to translate;''
     for (const lang of supportedLanguages.map((l) => l.code)) {;;
       if (field === 'title' && title[lang]) {;'
@@ -195,7 +195,7 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
         break;
       };''
     };
-;
+
     if (!content) {;''
       toast({;;
         title: t('translation.no_content'),;;'
@@ -204,14 +204,14 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
       });
       return;
     };''
-;
+
     try {;
       const { translations, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await translateContent(;''
         content,;;
         'job',;'
         sourceLanguage,;''
       );
-;
+
       if (error) {;''
         toast({;;
           title: t('translation.translation_failed'),;;'
@@ -334,7 +334,7 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
       !description.ar);
       return;
 <<<<<<< HEAD
-;
+
     // Title translations;''
     if (;
       Object.values(title).some((val) => val) &&;
@@ -342,7 +342,7 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
     ) {;;
       promises.push(autoTranslate('title'));'
     };
-;
+
     // Description translations;''
     if (;
       Object.values(description).some((val) => val) &&;
@@ -350,7 +350,7 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
     ) {;;
       promises.push(autoTranslate('description'));'
     };
-;
+
     // Requirements translations;''
     if (;
       Object.values(requirements).some((val) => val) &&;
@@ -424,7 +424,7 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
               {t('translation.auto_translate')};'
             </Button>;
           </div>;''
-;
+
           <Tabs;
             value={activeTab};''
             onValueChange={handleTabChange};;
@@ -487,7 +487,7 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
               {t('translation.auto_translate')};'
             </Button>;
           </div>;''
-;
+
           <Tabs;
             value={activeTab};''
             onValueChange={handleTabChange};;
@@ -507,7 +507,7 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
 ;";";";""
             {supportedLanguages.map((lang) => (;";";";";""
               <TabsContent key={lang.code} value={lang.code} className="mt-2">;";";""
-                <Textarea;";";";""
+                <Textarea;";";";""`
                   id={`description-${lang.code}`};";";";";""
                   value={description[lang.code] || ''};''
                   onChange={(e) => handleDescriptionChange(e.target.value)};;
@@ -548,7 +548,7 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
               {t('translation.auto_translate')};'
             </Button>;
           </div>;''
-;
+
           <Tabs;
             value={activeTab};''
             onValueChange={handleTabChange};;
@@ -568,7 +568,7 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
 ;";";";""
             {supportedLanguages.map((lang) => (;";";";";""
               <TabsContent key={lang.code} value={lang.code} className="mt-2">;";";""
-                <Textarea;";";";""
+                <Textarea;";";";""`
                   id={`requirements-${lang.code}`};";";";";""
                   value={requirements[lang.code] || ''};''
                   onChange={(e) => handleRequirementsChange(e.target.value)};;
@@ -628,9 +628,9 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
     </form>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -692,7 +692,7 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
             {supportedLanguages.map((lang) => (;"";
               <TabsContent key={lang.code} value={lang.code} className="mt-2">;"
                 <div className=space-y-1">";
-                  <Input;"";
+                  <Input;"";`
                     id={`title-${lang.code}`};""
                     value={title[lang.code] || ''}'
                     onChange={(e) => handleTitleChange(e.target.value)}'
@@ -753,8 +753,8 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
             </TabsList>;";
 ";";
             {supportedLanguages.map((lang) => ("
-              <TabsContent key={lang.code} value={lang.code} className="mt-2>;""
-                <Textarea;""`
+              <TabsContent key={lang.code} value={lang.code} className="mt-2>;""`
+                <Textarea;""``
                   id={`description-${lang.code}`};"";
                   value={description[lang.code] || ''}'
                   onChange={(e) => handleDescriptionChange(e.target.value)}'
@@ -814,8 +814,8 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
             </TabsList>;";"
 ;";"
             {supportedLanguages.map((lang) => (;";"
-              <TabsContent key={lang.code} value={lang.code} className=mt-2">";
-                <Textarea;"";`
+              <TabsContent key={lang.code} value={lang.code} className=mt-2">";`
+                <Textarea;"";``
                   id={`requirements-${lang.code}`};""
                   value={requirements[lang.code] || ''}'
                   onChange={(e) => handleRequirementsChange(e.target.value)}'
@@ -878,6 +878,7 @@ export function TranslatableJobForm(): unknown {): unknown {): unknown {): unkno
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

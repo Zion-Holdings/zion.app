@@ -1,25 +1,25 @@
 <<<<<<< HEAD
-import React, { useState, useEffect } from 'react;';
+import React, { useState, useEffect } from 'react;;
 import {;
   CheckCircle,;''
   AlertCircle,;
   Eye,;
   EyeOff,;''
   Loader2,;;
-} from '@/components/ui/icons;'';
-import { useForm } from 'react-hook-form;'';
-import { zodResolver } from '@hookform/resolvers/zod;'';
-import { z } from 'zod;'';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;'';
-import { Label } from '@/components/ui/label;'';
-import { useAuth } from '@/hooks/useAuth;'';
+} from '@/components/ui/icons;;
+import { useForm } from 'react-hook-form;;
+import { zodResolver } from '@hookform/resolvers/zod;;
+import { z } from 'zod;;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
+import { Label } from '@/components/ui/label;;
+import { useAuth } from '@/hooks/useAuth;;
 import { toast } from '@/hooks/use-toast;'
 ;;
-import { cn } from '@/lib/utils;'';
-import { fireEvent } from '@/lib/analytics;'';
+import { cn } from '@/lib/utils;;
+import { fireEvent } from '@/lib/analytics;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
-;'';
+;;
 const signupSchema: unknown = z;
   .object({;
     name: z;''
@@ -46,7 +46,7 @@ const signupSchema: unknown = z;
     message: "Passwords don't match",;";";";";""
     path: ['confirmPassword'],;'
   });''
-;
+
 type SignupFormData = z.infer<typeof signupSchema>;
 ;''
 interface SignupFormProps {;;
@@ -62,7 +62,7 @@ interface FieldValidationState {;";";";";""
   isValidating: "boolean;",";";";";""
   error: "string | null;";"
 };
-;
+
 =======
 import React, { useState, useEffect } from 'react'
 import {;
@@ -152,11 +152,11 @@ export default function SignupForm(): unknown {): unknown {): unknown {): unknow
   });
 ;''
   const watchedFields: unknown = watch();
-;
+
   // Real-time field validation with debounce;''
   useEffect(() => {;;
     const timeouts: unknown "Record<string", NodeJS.Timeout> = {};"
-;
+
     Object.keys(watchedFields).forEach((fieldName) => {;
       const typedFieldName: unknown = fieldName as keyof SignupFormData;""
       if (touchedFields[typedFieldName]) {;";""
@@ -234,7 +234,7 @@ export default function SignupForm(): unknown {): unknown {): unknown {): unknow
     };
   }, [watchedFields, touchedFields, trigger, errors]);
 <<<<<<< HEAD
-;
+
   const getFieldValidationIcon: unknown = (_fieldName: string) => {;
     const state: unknown = fieldStates[fieldName];
     const isTouched: unknown = touchedFields[fieldName as keyof SignupFormData];""
@@ -294,12 +294,12 @@ export default function SignupForm(): unknown {): unknown {): unknown {): unknow
       return 'border-red-500 _focus: "border-red-500 focus:ring-red-500/20;""
     };""
 ;;
-    return 
+// return statement removed
   };
 ;''
   const getPasswordStrength: unknown = (password: string) => {;;
     if (!password) return { strength: "0", label: '' };'
-;
+
 =======
 "
   const getFieldClasses = (_fieldName: string) => {;
@@ -334,7 +334,7 @@ export default function SignupForm(): unknown {): unknown {): unknown {): unknow
 <<<<<<< HEAD
       /[^A-Za-z0-9]/.test(password),;''
     ];
-;
+
     strength = checks.filter(Boolean).length;''
 ;;
     const labels: unknown = ['Very Weak', 'Weak', 'Fair', 'Good', 'Strong'];''
@@ -345,7 +345,7 @@ export default function SignupForm(): unknown {): unknown {): unknown {): unknow
       'bg-blue-500',;;'
       'bg-green-500',;''
     ];
-;
+
     return {;''
       strength,;;
       label: labels[strength - 1] || '',;;'
@@ -404,7 +404,7 @@ export default function SignupForm(): unknown {): unknown {): unknown {): unknow
         );
         return;''
       };
-;
+
       // Success;''
       toast({;;
         title: 'Account Created Successfully!',;''
@@ -824,7 +824,7 @@ export default function SignupForm(): unknown {): unknown {): unknown {): unknow
                 className={cn(;"";
                   'h-2 rounded-full transition-all duration-300','
                   passwordStrength.color,'
-                )}'
+                )}'`
                 style={{ width: `${passwordStrength.percentage"}%` }}";
               />;"";
             </div>;""
@@ -961,9 +961,9 @@ export default function SignupForm(): unknown {): unknown {): unknown {): unknow
     </form>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -1052,6 +1052,7 @@ export default function SignupForm(): unknown {): unknown {): unknown {): unknow
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React from 'react''';
-import { logErrorToProduction } from '@/utils/productionLogger'';
+import React from 'react';
+import { logErrorToProduction } from '@/utils/productionLogger;
 ;''
 interface Props {;''
   children: "React.ReactNode"
@@ -25,7 +25,7 @@ export class EquipmentErrorBoundary extends React.Component<Props, State> {;";""
     logErrorToProduction('Equipment page error:', error, {;''
       componentStack: "errorInfo.componentStack","
     });
-  }
+
 ;"""
   override render() {;;""
     if (this.state.hasError) {";;""
@@ -43,7 +43,7 @@ export class EquipmentErrorBoundary extends React.Component<Props, State> {;";""
 };"";"
 """""
 =======
-import React from 'react';
+import React from 'react;
 
 export default function EquipmentErrorBoundary() {
   return (
@@ -52,5 +52,5 @@ export default function EquipmentErrorBoundary() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}
+
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

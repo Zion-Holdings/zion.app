@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as ResizablePrimitive from 'react-resizable-panels;'';
+import React from 'react';;
+import * as ResizablePrimitive from 'react-resizable-panels;;
 import { GripVertical } from '@/components/ui/icons;'
 ;;
 import { cn } from '@/lib/utils;'
-;
+
 const ResizablePanelGroup: unknown = ({;
   className,;''
   ...props;

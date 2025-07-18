@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import React, { useState, useRef } from 'react';';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;'';
-import { useEnqueueSnackbar } from '@/context;'';
-import { logErrorToProduction } from '@/utils/productionLogger;'';
+import React, { useState, useRef } from 'react';;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
+import { useEnqueueSnackbar } from '@/context;;
+import { logErrorToProduction } from '@/utils/productionLogger;;
 import { isValidEmail } from '@/utils/email;'
 ;''
 ;;
@@ -29,17 +29,17 @@ import { isValidEmail } from '@/utils/email'
     e.preventDefault();
     if (!email || isSubmitting) return;
 <<<<<<< HEAD
-;
+
     const now: unknown = Date.now();
     if (now - lastSubmit.current < 1000) return;''
     lastSubmit.current = now;
-;
+
     const trimmed: unknown = email.trim();''
     if (!isValidEmail(trimmed)) {;;
       enqueueSnackbar('Invalid email', { variant: 'error' });'
       return;
     };''
-;
+
     setIsSubmitting(true);
 ;''
     try {;;
@@ -95,7 +95,7 @@ import { isValidEmail } from '@/utils/email'
             Subscribe to our mobile app updates and be the first to try new;";";";";""
             features before they're released to the public.;''
           </p>;
-;
+
           <form;''
             onSubmit={handleSubmit};;
             className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto";";";""

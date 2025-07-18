@@ -4,8 +4,8 @@ import {;
   DialogHeader,;
 <<<<<<< HEAD
   DialogTitle,;
-} from '@/components/ui/dialog;'';
-import type { JobApplication } from '@/types/jobs;'';
+} from '@/components/ui/dialog;;
+import type { JobApplication } from '@/types/jobs;;
 import { ApplicationScoreCard } from '../ApplicationScoreCard;'
 ;''
 interface ScoreDialogProps {;;
@@ -14,7 +14,7 @@ interface ScoreDialogProps {;;
   application: "JobApplication | null;",";";";";""
   onScoreUpdated: "(updatedApplication: JobApplication) => void;";"
 };
-;
+
 export function ScoreDialog(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   open,;
   onOpenChange,;

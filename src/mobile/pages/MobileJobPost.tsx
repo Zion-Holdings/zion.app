@@ -109,5 +109,5 @@ export function MobileJobPost(): ;
           )};"
 ;"
           <Button className="flex-1 gap-1" onClick={goToNextStep}>;"
-            {currentStep === 'preview' ? 'Publish Job' : 'Continue'};
-            {currentStep !== 'preview' && <ChevronRight className="h-4 w-4' />};';;`
+            {currentStep === 'preview' ? 'Publish Job' : 'Continue'};`
+            {currentStep !== 'preview' && <ChevronRight className="h-4 w-4' />};';;``

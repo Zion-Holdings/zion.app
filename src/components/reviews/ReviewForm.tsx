@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
+import { useState } from 'react';;
 import { Star } from '@/components/ui/icons;'
 ;;
-import { useForm } from 'react-hook-form;'';
-import { Button } from '@/components/ui/button;'';
-import { Textarea } from '@/components/ui/textarea;';
+import { useForm } from 'react-hook-form;;
+import { Button } from '@/components/ui/button;;
+import { Textarea } from '@/components/ui/textarea;;
 import {;
   Form,;
   FormControl,;''
@@ -12,11 +12,11 @@ import {;
   FormItem,;
   FormLabel,;''
   FormMessage,;;
-} from '@/components/ui/form;'';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group;'';
-import { Switch } from '@/components/ui/switch;'';
+} from '@/components/ui/form;;
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group;;
+import { Switch } from '@/components/ui/switch;;
 import type { Review } from '@/types/reviews;'
-;
+
 export interface ReviewFormValues {;
   rating?: number;
   review_text?: string;
@@ -35,7 +35,7 @@ interface ReviewFormProps {;;
   defaultValues?: Review | undefined;";";";";""
   isSubmitting: "boolean;";"
 };
-;
+
 =======
 import { useState } from 'react''
 import { Star } from '@/components/ui/icons'
@@ -123,7 +123,7 @@ export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): un
       project_id: "projectId",;";";";";""
       reviewee_id: "revieweeId",;"
     };
-;
+
     const success: unknown = await onSubmit(formattedData);
     if (success) {;""
       form.reset();";""
@@ -131,7 +131,7 @@ export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): un
   };";";";""
 ;";";";";""
   const watchRating: unknown = form.watch('rating');'
-;
+
   return (;''
     <Form {...form}>;;
       <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-6">;";""
@@ -161,14 +161,14 @@ export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): un
                       className="focus:outline-none transition-transform hover:scale-110";";";";";""
                       aria-label={`Rate ${star} star${star > 1 ? 's' : ''}`};'
                     >;
-                      <Star;
+                      <Star;`
                         className={`h-10 w-10 ${;''
                           star <=;
                           (hoveredStar ||;
                             (field as { value?: number }).value ||;''
                             0);;
                             ? 'fill-yellow-400 text-yellow-400;''
-                            : 'text-gray-300;'
+                            : 'text-gray-300;'`
                         } transition-colors`};
                       />;''
                     </button>;
@@ -254,17 +254,17 @@ export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): un
                       };
                       onMouseEnter={() => setHoveredStar(star)}"
                       onMouseLeave={() => setHoveredStar(0)};"
-                      className=focus: outline-none transition-transform hover:scale-110
+                      className=focus: outline-none transition-transform hover:scale-110`
                       aria-label={`Rate ${star} star${star > 1 ? 's' : ''}`};
-                    >
-                      <Star;`
+                    >`
+                      <Star;``
                         className={`h-10 w-10 ${'
                           star <='
                           (hoveredStar ||;}
                             (field as { value?: number }).value ||'
                             0)'
-                            ? 'fill-yellow-400 text-yellow-400'
-                            : 'text-gray-300'`
+                            ? 'fill-yellow-400 text-yellow-400'`
+                            : 'text-gray-300'``
                         } transition-colors`};
                       />'
                     </button>'
@@ -633,7 +633,7 @@ export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): un
           </div>;
 <<<<<<< HEAD
         )};''
-;
+
         {/* Anonymous Review */};
         <FormField;''
           control={form.control};;
@@ -678,9 +678,9 @@ export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): un
     </Form>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -733,6 +733,7 @@ export function ReviewForm(): unknown {): unknown {): unknown {): unknown {): un
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import React from 'react;';
+import React from 'react;;
 import {;''
   Dialog,;
   DialogContent,;
   DialogHeader,;''
   DialogTitle,;;
-} from '@/components/ui/dialog;'';
-import { AIEnhancementPanel } from './AIEnhancementPanel;'';
+} from '@/components/ui/dialog;;
+import { AIEnhancementPanel } from './AIEnhancementPanel;;
 import type { AIEnhancementOptions } from '@/hooks/useAIContentEnhancer;'
 ;''
 interface AIEnhancementDialogProps {;;
@@ -17,7 +17,7 @@ interface AIEnhancementDialogProps {;;
   defaultOptions: AIEnhancementOptions;
   initialContent?: string;
 };
-;
+
 =======
 import React from 'react'
 import {'
@@ -68,9 +68,9 @@ export function AIEnhancementDialog(): unknown {): unknown {): unknown {): unkno
     </Dialog>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

@@ -1,16 +1,16 @@
 <<<<<<< HEAD
-import React, { useState, useEffect, useRef, useContext } from 'react''';
-import type { ReactNode } from 'react''';
-import { X } from '@/components/ui/icons'';
-;
-import { AuthContext } from '../../context/auth/AuthContext;'';
-import { useDebounce } from '../../hooks/useDebounce;'';
-import { useLocalStorage } from '../../hooks/useLocalStorage;'';
-import { ChatMessage } from './ChatMessage;'';
-import { ChatInput } from './ChatInput;'';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;'';
-import { Button } from '@/components/ui/button'';
-;'';
+import React, { useState, useEffect, useRef, useContext } from 'react';
+import type { ReactNode } from 'react';
+import { X } from '@/components/ui/icons;
+
+import { AuthContext } from '../../context/auth/AuthContext;;
+import { useDebounce } from '../../hooks/useDebounce;;
+import { useLocalStorage } from '../../hooks/useLocalStorage;;
+import { ChatMessage } from './ChatMessage;;
+import { ChatInput } from './ChatInput;;
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;;
+import { Button } from '@/components/ui/button;
+;;
 export interface Message {;''
   id: "string,;";";"
   role: 'user' | 'assistant,''
@@ -69,7 +69,7 @@ export interface ChatAssistantProps {"""
   /** Optional canned questions shown when the chat is empty */;
   starterQuestions?: string[];
 };
-;
+
 export function ChatAssistant(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   isOpen,;
   onClose,;
@@ -94,7 +94,7 @@ export function ChatAssistant(): unknown {): unknown {): unknown {): unknown {):
   const auth = useContext(AuthContext)"
   const isGuest = !auth?.isAuthenticated;"
 ;";"
-  // Hooks called unconditionally at the top;";"
+  // Hooks called unconditionally at the top;";"`
   const localStorageKey = `chatHistory-${recipient.id}`; // Key is always generated";"
   const [storedGuestMessages, setStoredGuestMessages] = useLocalStorage<;"
     Message[];";"
@@ -192,7 +192,7 @@ export function ChatAssistant(): unknown {): unknown {): unknown {): unknown {):
   useEffect(() => {""
     scrollToBottom();
   }, [currentMessages]); // currentMessages will correctly refer to either guest or logged-in state;
-;
+
   const _scrollToBottom: unknown = () => {;
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })''
   };
@@ -238,7 +238,7 @@ export function ChatAssistant(): unknown {): unknown {): unknown {): unknown {):
       setShowGuestModal(true);
     };
 <<<<<<< HEAD
-  }
+
 ;""
   const handleModalSendConfirm: unknown = () => {;";"
     if (!guestMessage) return";";"
@@ -275,7 +275,7 @@ export function ChatAssistant(): unknown {): unknown {): unknown {): unknown {):
     setShowGuestModal(false);
     setGuestMessage(null);
 <<<<<<< HEAD
-  }
+
 ;"""
   useEffect(() => {;;""
     if (!isOpen) return";;""
@@ -524,6 +524,7 @@ export function ChatAssistant(): unknown {): unknown {): unknown {): unknown {):
 ";"
 }";
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

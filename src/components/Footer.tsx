@@ -1,4 +1,4 @@
-import React from 'react'';
+import React from 'react;
 import {;
   Mail,;
   Phone,;
@@ -17,11 +17,11 @@ import {;
   Linkedin,
   Youtube,;''
   Github,;''
-} from '@/components/ui/icons;'';
-import Link from 'next/link;'';
-import { Button } from '@/components/ui/button;'';
-import { Card, CardContent } from '@/components/ui/card'';
-;'';
+} from '@/components/ui/icons;;
+import Link from 'next/link;;
+import { Button } from '@/components/ui/button;;
+import { Card, CardContent } from '@/components/ui/card;
+;;
 export function Footer(): unknown {): unknown {): unknown {): unknown {): unknown {) {''
   const currentYear: unknown = new Date().getFullYear();
 ;''
@@ -520,7 +520,7 @@ export function Footer(): '
 };"";"
 ";""
 }";""
-}
+
 }""
 }""
 =======

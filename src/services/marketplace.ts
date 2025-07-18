@@ -105,4 +105,4 @@ const createMarketplaceClient = () => {;"
         process.env.DEBUG_MARKETPLACE;
       ) {'
         logWarn(;
-          `Marketplace API Request: ${config.method?.toUpperCase() || 'UNKNOWN'} ${config.url || 'UNKNOWN_URL'}',;';;`
+          `Marketplace API Request: ${config.method?.toUpperCase() || 'UNKNOWN'} ${config.url || 'UNKNOWN_URL'}',;';;``

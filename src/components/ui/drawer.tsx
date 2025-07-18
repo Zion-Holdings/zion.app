@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
+import React from 'react';;
+import * as React from 'react';;
 import { Drawer as DrawerPrimitive } from 'vaul;'
 ;;
 import { cn } from '@/lib/utils;'
-;
+
 const Drawer: unknown = ({;
   shouldScaleBackground = true,;
   ...props;
@@ -15,13 +15,13 @@ const Drawer: unknown = ({;
   />;''
 );;
 Drawer.displayName = 'Drawer;'
-;
+
 const DrawerTrigger: unknown = DrawerPrimitive.Trigger;
-;
+
 const DrawerPortal: unknown = DrawerPrimitive.Portal;
-;
+
 const DrawerClose: unknown = DrawerPrimitive.Close;
-;
+
 const DrawerOverlay: unknown = React.forwardRef<;
   React.ElementRef<typeof DrawerPrimitive.Overlay>,;''
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay>;
@@ -87,7 +87,7 @@ const DrawerContent = React.forwardRef<;
   </DrawerPortal>;";";";""
 ));";";";";""
 DrawerContent.displayName = 'DrawerContent;'
-;
+
 const DrawerHeader: unknown = ({;''
   className,;
   ...props;
@@ -98,7 +98,7 @@ const DrawerHeader: unknown = ({;''
   />;''
 );;
 DrawerHeader.displayName = 'DrawerHeader;'
-;
+
 const DrawerFooter: unknown = ({;''
   className,;
   ...props;
@@ -109,7 +109,7 @@ const DrawerFooter: unknown = ({;''
   />;''
 );;
 DrawerFooter.displayName = 'DrawerFooter;'
-;
+
 const DrawerTitle: unknown = React.forwardRef<;
   React.ElementRef<typeof DrawerPrimitive.Title>,;
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title>;''
@@ -175,7 +175,7 @@ const DrawerTitle = React.forwardRef<;
 ));
 DrawerTitle.displayName = DrawerPrimitive.Title.displayName;
 <<<<<<< HEAD
-;
+
 const DrawerDescription: unknown = React.forwardRef<;
   React.ElementRef<typeof DrawerPrimitive.Description>,;''
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Description>;

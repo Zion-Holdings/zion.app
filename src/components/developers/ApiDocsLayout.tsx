@@ -2,17 +2,17 @@
 import { useRouter } from 'next/router;''
 'use client;'
 ;;
-import type { SearchSuggestion } from '@/types/search;'';
-import { Search } from '@/components/ui/icons;'';
+import type { SearchSuggestion } from '@/types/search;;
+import { Search } from '@/components/ui/icons;;
 import React, { useState } from 'react;'
-// Build-test logs showed a missing `Link` name error when this component used;
+// Build-test logs showed a missing `Link` name error when this component used;`
 // the react-router version. Switching to Next.js `Link` resolves the TypeScript;''
 // error and ensures proper navigation.;;
-import Link from 'next/link;'';
+import Link from 'next/link;;
 import { useRouter, usePathname } from 'next/navigation;'
 ;;
-import { EnhancedSearchInput } from '@/components/search/EnhancedSearchInput;'';
-import { cn } from '@/lib/utils;';
+import { EnhancedSearchInput } from '@/components/search/EnhancedSearchInput;;
+import { cn } from '@/lib/utils;;
 import {;
   getDocsSearchPath,;''
   docsSearchSuggestions,;;
@@ -42,7 +42,7 @@ export function ApiDocsLayout(): unknown {): unknown {): unknown {): unknown {):
       setSearchValue('');'
     };
   };
-;
+
   const handleSubmit: unknown = (_e: React.FormEvent) => {;''
     e.preventDefault();
 //     const _path: unknown = getDocsSearchPath(searchValue);
@@ -96,8 +96,8 @@ import { useRouter } from 'next/router'
 
 import type { SearchSuggestion } from '@/types/search'
 import { Search } from '@/components/ui/icons'
-import React, { useState } from 'react'
-// Build-test logs showed a missing `Link` name error when this component used;`
+import React, { useState } from 'react'`
+// Build-test logs showed a missing `Link` name error when this component used;``
 // the react-router version. Switching to Next.js `Link` resolves the TypeScript'
 // error and ensures proper navigation.'
 import Link from 'next/link'
@@ -222,6 +222,7 @@ export default ApiDocsLayout";"
 ";"
 }";
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,13 +1,13 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
+import React, { useState } from 'react';;
 import { Star, ExternalLink } from '@/components/ui/icons;'
 ;;
 import { Button } from '@/components/ui/button;'
 ;;
-import type { TalentProfile } from '@/types/talent;'';
-import { HireRequestModal } from '@/components/profile/hire-request;'';
-import { useAuthStatus } from '@/hooks/talent;'';
-import type { UserProfile } from '@/types/auth;'';
+import type { TalentProfile } from '@/types/talent;;
+import { HireRequestModal } from '@/components/profile/hire-request;;
+import { useAuthStatus } from '@/hooks/talent;;
+import type { UserProfile } from '@/types/auth;;
 import { useRouter } from 'next/router;'
 ;''
 interface TalentCardFooterProps {;;
@@ -15,7 +15,7 @@ interface TalentCardFooterProps {;;
   onViewProfile: (id: string) => void;";";";";""
   onRequestHire?: (profile: "TalentProfile) => void;";"
 };
-;
+
 =======
 import React, { useState } from 'react''
 import { Star, ExternalLink } from '@/components/ui/icons'
@@ -90,20 +90,20 @@ export function TalentCardFooter(): unknown {): unknown {): unknown {): unknown 
     };
   };
 <<<<<<< HEAD
-;
+
   // Handle view profile;''
   const handleViewProfile: unknown = (_e: React.MouseEvent) => {;
     e.stopPropagation();
 ;''
     // Navigate to the talent profile page;;
     router.push(`/talent/${profile.id || ''}`);'
-;
+
     // Also call the onViewProfile callback if provided;''
     if (onViewProfile) {;;
       onViewProfile(profile.id || '');'
     };''
   };
-;
+
   return (;''
     <>;;
       <div className="mt-4 pt-4 border-t border-zion-blue-light flex items-center justify-between">;""
@@ -151,7 +151,7 @@ export function TalentCardFooter(): unknown {): unknown {): unknown {): unknown 
   const handleViewProfile = (_e: React.MouseEvent) => {'
     e.stopPropagation();
 '
-    // Navigate to the talent profile page'
+    // Navigate to the talent profile page'`
     router.push(`/talent/${profile.id || ''}`);
     // Also call the onViewProfile callback if provided'
     if (onViewProfile) {'
@@ -230,6 +230,7 @@ export function TalentCardFooter(): unknown {): unknown {): unknown {): unknown 
 "
 
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

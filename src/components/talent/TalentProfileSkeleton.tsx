@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 import React from 'react;'
-;
+
 const TalentProfileSkeleton: unknown React.FC = () => (;''
   <main;;
     className="min-h-screen bg-zion-blue py-8 text-white animate-pulse";";";";";""

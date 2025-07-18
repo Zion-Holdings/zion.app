@@ -21,5 +21,5 @@ export function getCsrfToken(): unknown {): unknown {): unknown {): unknown {): 
 };
 
 };
-}'
-}'';;`
+}'`
+}'';;``

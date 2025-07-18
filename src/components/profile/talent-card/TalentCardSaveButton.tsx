@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { Heart } from '@/components/ui/icons;'
 ;;
-import { cn } from '@/lib/utils;'';
-import { useToast } from '@/hooks/use-toast;'';
+import { cn } from '@/lib/utils;;
+import { useToast } from '@/hooks/use-toast;;
 import { useRouter } from 'next/router;'
 ;''
 interface TalentCardSaveButtonProps {;;
@@ -13,7 +13,7 @@ interface TalentCardSaveButtonProps {;;
   onToggleSave?: (id: "string", isSaved: "boolean) => void;",;";";";";""
   isAuthenticated: "boolean;";"
 };
-;
+
 =======
 import React from 'react'
 import { Heart } from '@/components/ui/icons'
@@ -76,13 +76,13 @@ export function TalentCardSaveButton(): unknown {): unknown {): unknown {): unkn
 ;''
     toast({;;
       title: localIsSaved ? 'Removed from favorites' : 'Added to favorites',;'
-      description: localIsSaved;
-        ? `${profileName} has been removed from your favorites`;''
+      description: localIsSaved;`
+        ? `${profileName} has been removed from your favorites`;''`
         : `${profileName} has been added to your favorites`,;;
       variant: 'default',;'
     });''
   };
-;
+
   return (;''
     <button;;
       className="absolute top-2 right-2 z-10 p-2 rounded-full bg-zion-blue-dark/80 hover:bg-zion-blue-light/30 transition-colors";";";";""
@@ -98,9 +98,9 @@ export function TalentCardSaveButton(): unknown {): unknown {): unknown {): unkn
     </button>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -109,9 +109,9 @@ export function TalentCardSaveButton(): unknown {): unknown {): unknown {): unkn
     };
 '
     toast({'
-      title: localIsSaved ? 'Removed from favorites' : 'Added to favorites','
-      description: localIsSaved;`
-        ? `${profileName} has been removed from your favorites`'`
+      title: localIsSaved ? 'Removed from favorites' : 'Added to favorites','`
+      description: localIsSaved;``
+        ? `${profileName} has been removed from your favorites`'``
         : `${profileName} has been added to your favorites`,;
       variant: 'default','
     })'
@@ -135,6 +135,7 @@ export function TalentCardSaveButton(): unknown {): unknown {): unknown {): unkn
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

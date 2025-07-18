@@ -64,5 +64,5 @@ export function useInterviews(): ;
         data.id,'
       );
       return data'
-    } catch (err: unknown) {;
-      logErrorToProduction('Error in requestInterview:', { data: "err '});';;`
+    } catch (err: unknown) {;`
+      logErrorToProduction('Error in requestInterview:', { data: "err '});';;``

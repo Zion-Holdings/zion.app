@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import type { JobApplication, ApplicationStatus } from '@/types/jobs;'';
-import { useJobApplications } from '@/hooks/useJobApplications;';
+import { useState } from 'react';;
+import type { JobApplication, ApplicationStatus } from '@/types/jobs;;
+import { useJobApplications } from '@/hooks/useJobApplications;;
 import {;
   ApplicationsTable,;''
   EmptyState,;
@@ -13,7 +13,7 @@ import {;
 interface JobApplicationsTableProps {;;
   jobId: "string;";"
 };
-;
+
 =======
 import { useState } from 'react''
 import type { JobApplication, ApplicationStatus } from '@/types/jobs'
@@ -127,9 +127,9 @@ export function JobApplicationsTable(): unknown {): unknown {): unknown {): unkn
     </>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

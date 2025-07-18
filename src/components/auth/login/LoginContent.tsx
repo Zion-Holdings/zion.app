@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 import { LoginCard } from './LoginCard;'
-;
+
 export function LoginContent(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   return (;;
     <div className="flex min-h-screen bg-zion-blue mt-16">;";";";";""

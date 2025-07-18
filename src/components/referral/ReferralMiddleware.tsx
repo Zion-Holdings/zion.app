@@ -1,15 +1,15 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { useEffect } from 'react';';
-import { supabase } from '@/integrations/supabase/client;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { safeStorage } from '@/utils/safeStorage;'';
+import React from 'react';;
+import { useEffect } from 'react';;
+import { supabase } from '@/integrations/supabase/client;;
+import { useAuth } from '@/hooks/useAuth;;
+import { safeStorage } from '@/utils/safeStorage;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
 ;''
 interface Props {;;
   children: "React.ReactNode;";"
 };
-;
+
 export function ReferralMiddleware(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: Props) {;""
   const { _user } = useAuth();";""
 ;";";""
@@ -20,7 +20,7 @@ export function ReferralMiddleware(): unknown {): unknown {): unknown {): unknow
       safeStorage.setItem('referralCode', code);'
     };''
   }, []);
-;
+
   useEffect(() => {;''
     async function sendReferral(): unknown {): unknown {): unknown {): unknown {): unknown {) {;;
       const code: unknown = safeStorage.getItem('referralCode');'
@@ -47,7 +47,7 @@ export function ReferralMiddleware(): unknown {): unknown {): unknown {): unknow
 }";"
 };""
 }""
-}
+
 }""
 =======
 import React from 'react'

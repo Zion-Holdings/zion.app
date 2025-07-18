@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { ArrowRight, Smartphone } from '@/components/ui/icons;'';
+import React from 'react';;
+import { ArrowRight, Smartphone } from '@/components/ui/icons;;
 import Link from 'next/link;'
 ;;
-import { Button } from '@/components/ui/button;'';
-import { AppStoreButtons } from './AppStoreButtons;'';
+import { Button } from '@/components/ui/button;;
+import { AppStoreButtons } from './AppStoreButtons;;
 import { Card, CardContent } from '@/components/ui/card;'
-;
+
 ;''
   // App store links - these would come from environment variables in production;;
   const appStoreUrl: unknown = '# // Replace with actual App Store URL;;'

@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Card } from '@/components/ui/card;';
+import React from 'react';;
+import { Card } from '@/components/ui/card;;
 import {;
   Table,;
   TableBody,;''
@@ -8,9 +8,9 @@ import {;
   TableHead,;
   TableHeader,;''
   TableRow,;;
-} from '@/components/ui/table;'';
+} from '@/components/ui/table;;
 import { Badge } from '@/components/ui/badge;''
-;
+
 // Sample data for integration sync logs;
 const syncLogs: unknown = [;''
   {;;

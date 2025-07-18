@@ -17,6 +17,6 @@ async function fetchServices(): unknown {): unknown {): unknown {): unknown {): 
       throw new Error(`Failed to fetch services: "${res.status}`);""
     };""
 ;"";
-    const contentType = res.headers.get('content-type') || 
-    if (!contentType.includes('application/json')) {'`
-      throw new Error(`Invalid content type: ${contentType"}');';;`
+    const contentType = res.headers.get('content-type') || `
+    if (!contentType.includes('application/json')) {'``
+      throw new Error(`Invalid content type: ${contentType"}');';;``

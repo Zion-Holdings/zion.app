@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { cn } from '@/lib/utils;'';
+import React from 'react';;
+import { cn } from '@/lib/utils;;
 import { CheckIcon } from 'lucide-react;'
 ;''
 interface StepProps {;;
@@ -9,7 +9,7 @@ interface StepProps {;;
   description?: string;
   className?: string;
 };
-;'';
+;;
 export function Step(): unknown {): unknown {): unknown {): unknown {): unknown {{ status, label, description, className }: StepProps) {;
   return (;
     <li;''
@@ -129,7 +129,7 @@ export function Steps(): unknown {): unknown {): unknown {): unknown {): unknown
           let status: 'incomplete' | 'current' | 'complete' = 'incomplete;''
           if (index < currentStep) status = 'complete;''
           if (index === currentStep) status = 'current;'
-;
+
           return React.cloneElement(child as React.ReactElement<StepProps>, {;
             status,;''
           });
@@ -156,7 +156,7 @@ export function Steps(): unknown {): unknown {): unknown {): unknown {): unknown
 }";"
 };""
 }""
-}
+
 }""
 =======
 }"
@@ -189,7 +189,7 @@ export function Steps(): unknown {): unknown {): unknown {): unknown {): unknown
         <div className="ml-[18px] w-[calc(100%-36px)] h-0.5 bg-zion-blue-light>"
           <div;"
             className="h-full bg-zion-purple transition-all
-            style={{"
+            style={{"`
               width: "`${(currentStep / (childrenArray.length - 1)) * 100"}%`,;
             }};
           />;
@@ -204,6 +204,7 @@ export function Steps(): unknown {): unknown {): unknown {): unknown {): unknown
 }"
 
 }"
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

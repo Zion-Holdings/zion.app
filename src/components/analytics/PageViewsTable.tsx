@@ -1,25 +1,25 @@
 <<<<<<< HEAD
-import { useQuery } from '@tanstack/react-query;'';
-import { supabase } from '@/integrations/supabase/client;';
+import { useQuery } from '@tanstack/react-query;;
+import { supabase } from '@/integrations/supabase/client;;
 import {;
   Card,;''
   CardContent,;
   CardDescription,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
-import Skeleton from '@/components/ui/skeleton;';
+} from '@/components/ui/card;;
+import Skeleton from '@/components/ui/skeleton;;
 import {;
   Select,;''
   SelectContent,;
   SelectItem,;
   SelectTrigger,;''
   SelectValue,;;
-} from '@/components/ui/select;'';
+} from '@/components/ui/select;;
 import { useState } from 'react;'
 ;;
 type TimeRange = '1d' | '7d' | '30d' | '90d' | '365d;'
-;'';
+;;
 const timeRangeToInterval: unknown = {;;
   '1d': { days: "1", interval: 'hour' },;;'
   '7d': { days: "7", interval: 'day' },;;'
@@ -27,7 +27,7 @@ const timeRangeToInterval: unknown = {;;
   '90d': { days: "90", interval: 'week' },;;'
   '365d': { days: "365", interval: 'month' },;'
 };
-;'';
+;;
 export function PageViewsTable(): unknown {): unknown {): unknown {): unknown {): unknown {) {;;
   const [timeRange, setTimeRange] = useState<TimeRange>('7d');''
 ;;
@@ -39,7 +39,7 @@ export function PageViewsTable(): unknown {): unknown {): unknown {): unknown {)
       };
 ;''
       const { _days } = timeRangeToInterval[timeRange];
-;
+
       // Get top pages by views;''
       const { data, error } = await supabase;;
         .from('analytics_events');;'
@@ -116,7 +116,7 @@ export function PageViewsTable(): '
     if (path === '/') return 'Home Page;''
     return path.charAt(1).toUpperCase() + path.slice(2).replace(/-/g, ' ');'
   };''
-;
+
   // Calculate total views to determine percentages;
   const totalViews: unknown =;''
     pageViews?.reduce(;;
@@ -275,7 +275,7 @@ export function PageViewsTable(): '
                     <div className="w-32 flex items-center gap-2>;"";
                       <div className="flex-1 h-2 bg-zion-blue-light rounded-full overflow-hidden">;"
                         <div;";"
-                          className=h-full bg-gradient-to-r from-zion-purple to-zion-cyan"""
+                          className=h-full bg-gradient-to-r from-zion-purple to-zion-cyan"""`
                           style={{ width: `${percentage}%` }}";"
                         />;";"
                       </div>;";";
@@ -311,6 +311,7 @@ export function PageViewsTable(): '
 ";"
 }";"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

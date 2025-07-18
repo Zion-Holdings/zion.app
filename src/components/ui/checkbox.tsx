@@ -2,12 +2,12 @@
 import React from 'react';'
 'use client;'
 ;;
-import * as React from 'react';';
-import { Check } from '@/components/ui/icons;'';
+import * as React from 'react';;
+import { Check } from '@/components/ui/icons;;
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox;'
 ;;
 import { cn } from '@/lib/utils;'
-;
+
 const Checkbox: unknown = React.forwardRef<;
   React.ElementRef<typeof CheckboxPrimitive.Root>,;
   React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>;''

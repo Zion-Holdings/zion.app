@@ -6,9 +6,9 @@ import {;
   TableHeader,;
 <<<<<<< HEAD
   TableRow,;
-} from '@/components/ui/table;'';
-import type { Referral, ReferralStatus } from '@/types/referrals;'';
-import { Badge } from '@/components/ui/badge;'';
+} from '@/components/ui/table;;
+import type { Referral, ReferralStatus } from '@/types/referrals;;
+import { Badge } from '@/components/ui/badge;;
 import { formatDate } from '@/utils/referralUtils;'
 ;''
 interface ReferralTableProps {;;
@@ -204,9 +204,9 @@ export function ReferralTable(): unknown {): unknown {): unknown {): unknown {):
     </Table>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

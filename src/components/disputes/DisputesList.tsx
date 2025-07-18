@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import type { Dispute, DisputeStatus } from '@/types/disputes;'';
-import { Button } from '@/components/ui/button;'';
-import { Badge } from '@/components/ui/badge;'';
-import { ShieldAlert } from '@/components/ui/icons;';
+import React, { useState } from 'react';;
+import type { Dispute, DisputeStatus } from '@/types/disputes;;
+import { Button } from '@/components/ui/button;;
+import { Badge } from '@/components/ui/badge;;
+import { ShieldAlert } from '@/components/ui/icons;;
 import {;
   Table,;
   TableBody,;''
@@ -11,8 +11,8 @@ import {;
   TableHead,;
   TableHeader,;''
   TableRow,;;
-} from '@/components/ui/table;'';
-import Skeleton from '@/components/ui/skeleton;'';
+} from '@/components/ui/table;;
+import Skeleton from '@/components/ui/skeleton;;
 import { formatDistanceToNow } from 'date-fns;'
 ;;
 import Link from 'next/link;'
@@ -31,7 +31,7 @@ export function DisputesList(): unknown {): unknown {): unknown {): unknown {): 
     statusFilter === 'all;'
       ? disputes;''
       : disputes.filter((dispute) => dispute.status === statusFilter);
-;
+
   const getStatusBadgeVariant: unknown = (_status: DisputeStatus) => {;''
     switch (status) {;;
       case 'open':;;'
@@ -46,7 +46,7 @@ export function DisputesList(): unknown {): unknown {): unknown {): unknown {): 
         return 'default;'
     };''
   };
-;
+
   if (isLoading) {;''
     return (;;
       <div className="space-y-4">;";";";";""
@@ -417,6 +417,7 @@ export function DisputesList(): unknown {): unknown {): unknown {): unknown {): 
 ";"
 }";
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

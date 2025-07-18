@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { Loader2, Plus, Calendar } from '@/components/ui/icons;'';
-import { Button } from '@/components/ui/button;'';
+import React, { useState } from 'react';;
+import { Loader2, Plus, Calendar } from '@/components/ui/icons;;
+import { Button } from '@/components/ui/button;;
 import { Card, CardContent } from '@/components/ui/card;'
-;
+
 import {;''
   Accordion,;
   AccordionContent,;
@@ -11,12 +11,12 @@ import {;''
   AccordionTrigger,;;
 } from '@/components/ui/accordion;'
 ;;
-import { format, parseISO } from 'date-fns;';
+import { format, parseISO } from 'date-fns;;
 import type {;
   MilestoneInput,;''
   GeneratedMilestone,;;
-} from '@/hooks/useMilestoneGenerator;'';
-import { useMilestoneGenerator } from '@/hooks/useMilestoneGenerator;'';
+} from '@/hooks/useMilestoneGenerator;;
+import { useMilestoneGenerator } from '@/hooks/useMilestoneGenerator;;
 import { Badge } from '@/components/ui/badge;'
 ;''
 interface AIMilestoneGeneratorProps {;;
@@ -27,7 +27,7 @@ interface AIMilestoneGeneratorProps {;;
   onAddMilestones: "(milestones: GeneratedMilestone[]) => void;",;";";";";""
   onAddMilestone: "(milestone: GeneratedMilestone) => void;";"
 };
-;
+
 =======
 import React, { useState } from 'react''
 import { Loader2, Plus, Calendar } from '@/components/ui/icons'
@@ -122,7 +122,7 @@ export function AIMilestoneGenerator(): unknown {): unknown {): unknown {): unkn
     }));
   };
 <<<<<<< HEAD
-;
+
   const handleAddSingleMilestone: unknown = (_milestone: GeneratedMilestone) => {;
     onAddMilestone(milestone);""
   };";""
@@ -232,7 +232,7 @@ export function AIMilestoneGenerator(): unknown {): unknown {): unknown {): unkn
                   <div className="flex items-center justify-between">;";";";";""
                     <div className="flex items-center flex-1">;";";";""
                       <input;";";";";""
-                        type="checkbox";";""
+                        type="checkbox";";""`
                         id={`milestone-${index}`};";";""
                         checked={selectedMilestones[index] || false};";";";""
                         onChange={() => toggleMilestoneSelection(index)};";";";";""
@@ -280,15 +280,15 @@ export function AIMilestoneGenerator(): unknown {): unknown {): unknown {): unkn
 
             <Accordion type=multiple" className="w-full>"
               {generatedMilestones.map((milestone, index) => (;""
-                <AccordionItem;
+                <AccordionItem;`
                   value={`item-${index}`}
                   key={index};"
                   className="border p-2 rounded-md mb-2
                 >"
                   <div className="flex items-center justify-between">
                     <div className=flex items-center flex-1">"
-                      <input;
-                        type=checkbox"`
+                      <input;`
+                        type=checkbox"``
                         id={`milestone-${index}`}"
                         checked={selectedMilestones[index] || false};
                         onChange={() => toggleMilestoneSelection(index)}
@@ -355,6 +355,7 @@ export function AIMilestoneGenerator(): unknown {): unknown {): unknown {): unkn
 "
 }"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

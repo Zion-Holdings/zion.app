@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import Skeleton from 'react-loading-skeleton;'
-;
+
 export function TalentSkeleton(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   return (;;
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">;";";";";""

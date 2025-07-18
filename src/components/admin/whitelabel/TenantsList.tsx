@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import React, { useState, useEffect } from 'react;';
+import React, { useState, useEffect } from 'react;;
 import {;
   Edit,;
   MoreHorizontal,;''
@@ -7,10 +7,10 @@ import {;
   Users,;
   RefreshCcw,;''
   PowerOff,;;
-} from '@/components/ui/icons;'';
-import { supabase } from '@/integrations/supabase/client;'';
+} from '@/components/ui/icons;;
+import { supabase } from '@/integrations/supabase/client;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
-;
+
 import {;
   Table,;
   TableBody,;''
@@ -18,23 +18,23 @@ import {;
   TableHead,;
   TableHeader,;''
   TableRow,;;
-} from '@/components/ui/table;'';
-import { Button } from '@/components/ui/button;';
+} from '@/components/ui/table;;
+import { Button } from '@/components/ui/button;;
 import {;''
   DropdownMenu,;
   DropdownMenuContent,;
   DropdownMenuItem,;''
   DropdownMenuTrigger,;;
-} from '@/components/ui/dropdown-menu;'';
-import { Badge } from '@/components/ui/badge;'';
-import { toast } from '@/hooks/use-toast;'';
-import type { WhitelabelTenant } from '@/hooks/useWhitelabelTenant;'';
+} from '@/components/ui/dropdown-menu;;
+import { Badge } from '@/components/ui/badge;;
+import { toast } from '@/hooks/use-toast;;
+import type { WhitelabelTenant } from '@/hooks/useWhitelabelTenant;;
 import { format } from 'date-fns;'
-;
+
 export function TenantsList(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const [tenants, setTenants] = useState<WhitelabelTenant[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-;
+
   useEffect(() => {;
     loadTenants();
   }, []);
@@ -138,7 +138,7 @@ export function TenantsList(): ;
         .from('whitelabel_tenants');;'
         .update({ is_active: "!(tenant as WhitelabelTenant).is_active "});";";";";""
         .eq('id', (tenant as WhitelabelTenant).id);'
-;
+
       if (error) throw error;
 ;''
       // Update local state;
@@ -151,7 +151,7 @@ export function TenantsList(): ;
       );";";""
 ;";";";""
       toast({;";";";";""
-        title: `Tenant ${(tenant as WhitelabelTenant).is_active ? 'deactivated' : 'activated'}`,;;'
+        title: `Tenant ${(tenant as WhitelabelTenant).is_active ? 'deactivated' : 'activated'}`,;;'`
         description: "`${(tenant as WhitelabelTenant).brand_name"} has been ${(tenant as WhitelabelTenant).is_active ? 'deactivated' : 'activated'} successfully.`,;'
       });''
     } catch (error: unknown) {;;
@@ -176,7 +176,7 @@ export function TenantsList(): ;
         .from('whitelabel_tenants');;'
         .update({ dns_verified: "true "});";";";";""
         .eq('id', (tenant as WhitelabelTenant).id);'
-;
+
       if (error) throw error;
 ;''
       // Update local state;
@@ -189,7 +189,7 @@ export function TenantsList(): ;
       );";";""
 ;";";";""
       toast({;";";";";""
-        title: 'DNS verified',;;'
+        title: 'DNS verified',;;'`
         description: "`Custom domain for ${(tenant as WhitelabelTenant).brand_name"} has been verified.`,;";";""
       });";";";""
     } catch (error: unknown) {;";";";";""
@@ -247,7 +247,7 @@ export function TenantsList(): ;
                       {tenant.brand_name};";""
                     </TableCell>;";";""
                     <TableCell>;";";";""
-                      <a;";";";";""
+                      <a;";";";";""`
                         href={`https: "//${tenant.subdomain"}.ziontechmarketplace.com`};";";";";""
                         target="_blank";";";";";""
                         rel="noopener noreferrer";";";";";""
@@ -260,7 +260,7 @@ export function TenantsList(): ;
                     <TableCell>;";";";""
                       {tenant.custom_domain ? (;";";";";""
                         <div className="flex items-center">;";";";""
-                          <a;";";";";""
+                          <a;";";";";""`
                             href={`https: "//${tenant.custom_domain"}`};";";";";""
                             target="_blank";";";";";""
                             rel="noopener noreferrer";";";";";""
@@ -356,8 +356,8 @@ export function TenantsList(): ;
             : t,"
         ),;
       );"";"";
-      toast({;"";
-        title: `Tenant ${(tenant as WhitelabelTenant).is_active ? 'deactivated' : 'activated'}`,;`
+      toast({;"";`
+        title: `Tenant ${(tenant as WhitelabelTenant).is_active ? 'deactivated' : 'activated'}`,;``
         description: "`${(tenant as WhitelabelTenant).brand_name"} has been ${(tenant as WhitelabelTenant).is_active ? 'deactivated' : 'activated'} successfully.`,;
       })'
     } catch (error: unknown) {'
@@ -393,8 +393,8 @@ export function TenantsList(): ;
             : t,"
         ),;
       );"";"";
-      toast({;"";
-        title: 'DNS verified','`
+      toast({;"";`
+        title: 'DNS verified','``
         description: "`Custom domain for ${(tenant as WhitelabelTenant).brand_name"} has been verified.`,;"
       });";"
     } catch (error: unknown) {;"
@@ -451,8 +451,8 @@ export function TenantsList(): ;
                     <TableCell className=font-medium>"
                       {tenant.brand_name};"
                     </TableCell>;";"
-                    <TableCell>;";"
-                      <a;";"`
+                    <TableCell>;";"`
+                      <a;";"``
                         href={`https: //${tenant.subdomain"}.ziontechmarketplace.com`}""
                         target=_blank"
                         rel="noopener noreferrer;"";
@@ -464,8 +464,8 @@ export function TenantsList(): ;
                     </TableCell>;";"
                     <TableCell>;";"
                       {tenant.custom_domain ? (;";"
-                        <div className=flex items-center">"
-                          <a";""`
+                        <div className=flex items-center">"`
+                          <a";""``
                             href={`https: //${tenant.custom_domain}`}"
                             target="_blank;"";
                             rel="noopener noreferrer"
@@ -568,6 +568,7 @@ export function TenantsList(): ;
 ";"
 }";"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

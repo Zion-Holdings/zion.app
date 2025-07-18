@@ -1,16 +1,16 @@
 <<<<<<< HEAD
-import { useAuth } from '@/hooks/useAuth;'';
+import { useAuth } from '@/hooks/useAuth;;
 import { Loader2 } from '@/components/ui/icons;'
 ;;
-import { Badge } from '@/components/ui/badge;'';
-import { useJobSuggestions } from '@/hooks/useJobSuggestions;'';
-import { JobMatchesCard } from './JobMatchesCard;'';
+import { Badge } from '@/components/ui/badge;;
+import { useJobSuggestions } from '@/hooks/useJobSuggestions;;
+import { JobMatchesCard } from './JobMatchesCard;;
 import { NoJobsCard } from './NoJobsCard;'
-;
+
 interface SuggestedJobsProps {;
   talentId?: string;
 };
-;
+
 export function SuggestedJobs(): unknown {): unknown {): unknown {): unknown {): unknown {{ talentId }: SuggestedJobsProps) {;
   const { _user } = useAuth();''
   const currentTalentId: unknown = talentId || user?.id;
@@ -28,7 +28,7 @@ export function SuggestedJobs(): unknown {): unknown {): unknown {): unknown {):
   const handleDecline: unknown = (_matchId: string) => {;;
     updateJobMatchStatus(matchId, 'declined');''
   };
-;
+
   if (isLoading) {;''
     return (;;
       <div className="flex items-center justify-center p-6">;";";";";""
@@ -36,7 +36,7 @@ export function SuggestedJobs(): unknown {): unknown {): unknown {): unknown {):
       </div>;
     );
   };
-;
+
   if (;
     newMatches.length === 0 &&;
     viewedMatches.length === 0 &&;

@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { Loader2, RefreshCw, Check, X, Sparkles } from 'lucide-react;'';
+import { useState } from 'react';;
+import { Loader2, RefreshCw, Check, X, Sparkles } from 'lucide-react;;
 import { Button } from '@/components/ui/button;'
 ;;
-import { useAIContentEnhancer } from '@/hooks/useAIContentEnhancer;'';
-import type { AIEnhancementOptions } from '@/hooks/useAIContentEnhancer;'';
+import { useAIContentEnhancer } from '@/hooks/useAIContentEnhancer;;
+import type { AIEnhancementOptions } from '@/hooks/useAIContentEnhancer;;
 import { toast } from '@/hooks/use-toast;'
 ;''
 interface AIEnhancementButtonProps {;;
@@ -22,7 +22,7 @@ interface AIEnhancementButtonProps {;;
   size?: 'default' | 'sm' | 'lg' | 'icon;'
   contentLength?: number;
 };''
-;
+
 export function AIEnhancementButton(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   options,;''
   onEnhanced,;;
@@ -69,7 +69,7 @@ export function AIEnhancementButton(): unknown {): unknown {): unknown {): unkno
   const [showActions, setShowActions] = useState(false);
   const [generatedContent, setGeneratedContent] = useState<string | null>(null);
 <<<<<<< HEAD
-;
+
   const handleEnhance: unknown = async () => {;
     if (;''
       (!options.content || options.content.trim().length < contentLength) &&;
@@ -87,7 +87,7 @@ export function AIEnhancementButton(): unknown {): unknown {): unknown {): unkno
       (!options.context || options.context.trim().length < contentLength);
     ) {'
       toast({'
-        title: 'Not enough content','
+        title: 'Not enough content','`
         description: `Please enter at least ${contentLength} characters before enhancing.`,"
         variant: 'destructive','
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
@@ -103,7 +103,7 @@ export function AIEnhancementButton(): unknown {): unknown {): unknown {): unkno
     };
   };
 <<<<<<< HEAD
-;
+
   const handleAccept: unknown = () => {;
     if (generatedContent) {;''
       onEnhanced(generatedContent);
@@ -136,7 +136,7 @@ export function AIEnhancementButton(): unknown {): unknown {): unknown {): unkno
 <<<<<<< HEAD
     setGeneratedContent(null);''
   };
-;
+
   if (showActions) {;''
     return (;;
       <div className="flex gap-2 items-center">;";";";""
@@ -183,7 +183,7 @@ export function AIEnhancementButton(): unknown {): unknown {): unknown {): unkno
     <Button;";";";";""
       type="button";"
       variant={variant};
-      size={size};
+      size={size};`
       className={`gap-1 ${className}`};""
       onClick={handleEnhance};";""
       disabled={isEnhancing};";";""
@@ -251,8 +251,8 @@ export function AIEnhancementButton(): unknown {): unknown {): unknown {): unkno
   return (;";"
     <Button;";"
       type=button""
-      variant={variant};
-      size={size};`
+      variant={variant};`
+      size={size};``
       className={`gap-1 ${className}`}
       onClick={handleEnhance};"
       disabled={isEnhancing};";
@@ -269,6 +269,7 @@ export function AIEnhancementButton(): unknown {): unknown {): unknown {): unkno
 ";"
 }";"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

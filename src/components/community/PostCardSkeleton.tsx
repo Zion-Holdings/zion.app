@@ -4,9 +4,9 @@ import {;
   CardFooter,;
 <<<<<<< HEAD
   CardHeader,;
-} from '@/components/ui/card;'';
+} from '@/components/ui/card;;
 import Skeleton from 'react-loading-skeleton;'
-;'';
+;;
 export const PostCardSkeleton: unknown = () => (;;
   <Card data-testid="post-card-skeleton">;";";";";""
     <CardHeader className="flex flex-row items-start gap-4 space-y-0">;";";";""

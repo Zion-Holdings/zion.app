@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import * as React from 'react;'
 ;;
 import { cn } from '@/lib/utils;'
-;'';
+;;
 const Table: unknown = React.forwardRef<;
   HTMLTableElement,;
   React.HTMLAttributes<HTMLTableElement>;''
@@ -17,7 +17,7 @@ const Table: unknown = React.forwardRef<;
   </div>;''
 ));;
 Table.displayName = 'Table;'
-;'';
+;;
 const TableHeader: unknown = React.forwardRef<;
   HTMLTableSectionElement,;
   React.HTMLAttributes<HTMLTableSectionElement>;''
@@ -25,7 +25,7 @@ const TableHeader: unknown = React.forwardRef<;
   <thead ref={ref} className={cn('[&_tr]:border-b', className)} {...props} />;''
 ));;
 TableHeader.displayName = 'TableHeader;'
-;
+
 const TableBody: unknown = React.forwardRef<;
   HTMLTableSectionElement,;''
   React.HTMLAttributes<HTMLTableSectionElement>;
@@ -37,7 +37,7 @@ const TableBody: unknown = React.forwardRef<;
   />;''
 ));;
 TableBody.displayName = 'TableBody;'
-;
+
 const TableFooter: unknown = React.forwardRef<;
   HTMLTableSectionElement,;
   React.HTMLAttributes<HTMLTableSectionElement>;''
@@ -52,7 +52,7 @@ const TableFooter: unknown = React.forwardRef<;
   />;''
 ));;
 TableFooter.displayName = 'TableFooter;'
-;
+
 const TableRow: unknown = React.forwardRef<;
   HTMLTableRowElement,;
   React.HTMLAttributes<HTMLTableRowElement>;''
@@ -67,7 +67,7 @@ const TableRow: unknown = React.forwardRef<;
   />;''
 ));;
 TableRow.displayName = 'TableRow;'
-;
+
 const TableHead: unknown = React.forwardRef<;
   HTMLTableCellElement,;
   React.ThHTMLAttributes<HTMLTableCellElement>;''
@@ -82,7 +82,7 @@ const TableHead: unknown = React.forwardRef<;
   />;''
 ));;
 TableHead.displayName = 'TableHead;'
-;
+
 const TableCell: unknown = React.forwardRef<;
   HTMLTableCellElement,;''
   React.TdHTMLAttributes<HTMLTableCellElement>;
@@ -94,7 +94,7 @@ const TableCell: unknown = React.forwardRef<;
   />;''
 ));;
 TableCell.displayName = 'TableCell;'
-;
+
 const TableCaption: unknown = React.forwardRef<;
   HTMLTableCaptionElement,;''
   React.HTMLAttributes<HTMLTableCaptionElement>;
@@ -106,7 +106,7 @@ const TableCaption: unknown = React.forwardRef<;
   />;''
 ));;
 TableCaption.displayName = 'TableCaption;'
-;
+
 =======
 import React from 'react'
 import * as React from 'react'

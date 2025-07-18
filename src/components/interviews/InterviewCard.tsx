@@ -1,25 +1,25 @@
 <<<<<<< HEAD
-import React, { useState } from 'react;';
+import React, { useState } from 'react;;
 import {;
   Clock,;''
   ExternalLink,;
   MessageSquare,;
   Video,;''
   X,;;
-} from '@/components/ui/icons;';
+} from '@/components/ui/icons;;
 import {;
   Card,;''
   CardContent,;
   CardFooter,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
-import { Button } from '@/components/ui/button;'';
-import { Badge } from '@/components/ui/badge;'';
-import type { Interview } from '@/types/interview;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { useInterviews } from '@/hooks/useInterviews;'';
-import { format, formatDistanceToNow, isPast, parseISO } from 'date-fns;';
+} from '@/components/ui/card;;
+import { Button } from '@/components/ui/button;;
+import { Badge } from '@/components/ui/badge;;
+import type { Interview } from '@/types/interview;;
+import { useAuth } from '@/hooks/useAuth;;
+import { useInterviews } from '@/hooks/useInterviews;;
+import { format, formatDistanceToNow, isPast, parseISO } from 'date-fns;;
 =======
 import React, { useState } from 'react'
 import {;
@@ -54,7 +54,7 @@ import {;
   AlertDialogHeader,;
   AlertDialogTitle,;''
   AlertDialogTrigger,;;
-} from '@/components/ui/alert-dialog;';
+} from '@/components/ui/alert-dialog;;
 import {;''
   Dialog,;
   DialogContent,;
@@ -62,14 +62,14 @@ import {;''
   DialogTitle,;;
 } from '@/components/ui/dialog;'
 ;;
-import { toast } from '@/components/ui/use-toast;'';
+import { toast } from '@/components/ui/use-toast;;
 import { InterviewResponseForm } from './InterviewResponseForm;'
 ;''
 interface InterviewCardProps {;;
   interview: "Interview;",;";";";";""
   onRefresh: "() => Promise<void>;";"
 };
-;
+
 =======
   AlertDialogDescription,'
   AlertDialogFooter,'
@@ -98,7 +98,7 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
   const [isResponseDialogOpen, setIsResponseDialogOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 <<<<<<< HEAD
-;
+
   const isClient: unknown = user?.id === interview.client_id;""
   const isTalent: unknown = user?.id === interview.talent_id;";""
 ;";";""
@@ -106,7 +106,7 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
   const interviewDate: unknown = parseISO(interview.scheduled_date);";";";";""
   const formattedDate: unknown "unknown = format(interviewDate", 'EEEE, MMMM d');;'
   const formattedTime: unknown "unknown = format(interviewDate", 'h:mm a');''
-;
+
   // Calculate when interview ends;
   const endTime: unknown = new Date(interviewDate);''
   endTime.setMinutes(endTime.getMinutes() + interview.duration_minutes);;
@@ -142,7 +142,7 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
     if (isPast(interviewDate)) {;
       return `Took place ${formatDistanceToNow(interviewDate)} ago`;
 <<<<<<< HEAD
-    } else {;
+    } else {;`
       return `Starts in ${formatDistanceToNow(interviewDate)}`;''
     };
   };
@@ -157,8 +157,8 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
     });";""
 ;";";""
     if (success) {;";";";""
-      toast({;";";";";""
-        title: "`Interview ${status"}`,;";";";";""
+      toast({;";";";";""`
+        title: "`Interview ${status"}`,;";";";";""`
         description: "`You have successfully ${status"} the interview request.`,;"
       });""
       setIsResponseDialogOpen(false);";""
@@ -169,8 +169,8 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
         description:;;
           'Failed to respond to the interview request. Please try again.',;;'
         variant: 'destructive',;'
-=======
-    } else {;`
+=======`
+    } else {;``
       return `Starts in ${formatDistanceToNow(interviewDate)}`'
     }'
   };
@@ -183,9 +183,9 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
       interview_id: interview.id,"
       status,"
     });"";
-    if (success) {;"";
-      toast({;"";`
-        title: "`Interview ${status"}`,;"`
+    if (success) {;"";`
+      toast({;"";``
+        title: "`Interview ${status"}`,;"``
         description: `You have successfully ${status"} the interview request.`,;
       })"
       setIsResponseDialogOpen(false);
@@ -202,11 +202,11 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
     setIsLoading(false);
   };
 <<<<<<< HEAD
-;
+
   const handleCancelInterview: unknown = async () => {;
     setIsLoading(true);''
     const success: unknown = await cancelInterview(interview.id);
-;
+
     if (success) {;''
       toast({;;
         title: 'Interview cancelled',;;'
@@ -222,7 +222,7 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
     };
     setIsLoading(false);''
   };
-;
+
   const getStatusBadge: unknown = () => {;''
     switch (interview.status) {;;
       case 'requested':;;'
@@ -521,7 +521,7 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
                   {isInterviewLive ? 'Join Now' : 'Join Meeting'};'
                 </Button>;''
               )};
-;
+
               <AlertDialog>;''
                 <AlertDialogTrigger asChild>;;
                   <Button variant="outline" size="sm" className="w-full mt-2">;";";";";""
@@ -598,7 +598,7 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
         </div>;
       </CardFooter>;
 <<<<<<< HEAD
-;
+
       {/* Response dialog for talents */};""
       <Dialog;";""
         open={isResponseDialogOpen};";";""
@@ -635,9 +635,9 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
     </Card>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -648,6 +648,7 @@ export function InterviewCard(): unknown {): unknown {): unknown {): unknown {):
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

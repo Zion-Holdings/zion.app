@@ -1,20 +1,20 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { Loader2 } from '@/components/ui/icons;'';
+import { useState } from 'react';;
+import { Loader2 } from '@/components/ui/icons;;
 import { Button } from '@/components/ui/button;'
 ;;
-import { useResumeEnhancer } from '@/hooks/useResumeEnhancer;'';
-import { useResume } from '@/hooks/useResume;'';
-import type { BulkAddSkillsProps } from './types;'';
-import { Alert, AlertDescription } from '@/components/ui/alert;'';
+import { useResumeEnhancer } from '@/hooks/useResumeEnhancer;;
+import { useResume } from '@/hooks/useResume;;
+import type { BulkAddSkillsProps } from './types;;
+import { Alert, AlertDescription } from '@/components/ui/alert;;
 import { Textarea } from '@/components/ui/textarea;'
-;'';
+;;
 export const _BulkAddSkills: unknown "unknown = ({ resumeId", onSuccess }: BulkAddSkillsProps) => {;;"
   const [bulkSkills, setBulkSkills] = useState('');'
   const [error, setError] = useState<string | null>(null);
   const { enhanceContent, isEnhancing } = useResumeEnhancer();''
   const { _addSkill } = useResume();
-;
+
   const handleCategorizeSkills: unknown = async () => {;''
     if (!bulkSkills || bulkSkills.trim().length === 0) {;;
       setError('Please enter some skills to categorize');'
@@ -80,7 +80,7 @@ export const _BulkAddSkills: ({ resumeId", onSuccess }: BulkAddSkillsProps) => {
 ;";";";""
           // Reset the form and bulk input;";";";";""
           setBulkSkills('');''
-;
+
           // Refresh the skills;
           await onSuccess();''
         } catch {;;

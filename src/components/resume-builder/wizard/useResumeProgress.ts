@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import { useState, useEffect } from 'react';';
+import { useState, useEffect } from 'react';;
 import type { Resume } from '@/types/resume;'
-;
+
 export const useResumeProgress: unknown = (_resume: Resume | null) => {;
 =======
 import { useState, useEffect } from 'react''
@@ -47,7 +47,7 @@ export const useResumeProgress = (_resume: Resume | null) => {;
     setProgress(progressPercentage);
 <<<<<<< HEAD
   }, [resume]);''
-;
+
   return progress;
 };''
 ''''''

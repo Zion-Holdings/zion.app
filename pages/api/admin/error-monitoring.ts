@@ -1,16 +1,15 @@
 <<<<<<< HEAD
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
-import { enhancedErrorCollector } from '@/utils/enhancedErrorCollection';
-import { systemHealthMonitor } from '@/utils/systemHealthMonitor';
-import { logDashboard } from '@/utils/logDashboard';
+import type { NextApiRequest, NextApiResponse } from 'next;
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
+import { enhancedErrorCollector } from '@/utils/enhancedErrorCollection;
+import { systemHealthMonitor } from '@/utils/systemHealthMonitor;
+import { logDashboard } from '@/utils/logDashboard;
 
 interface ErrorMonitoringResponse {
   success: boolean;
   data?: unknown;
   error?: string;
   timestamp: string;
-}
 
 async function handleGet(req: NextApiRequest, res: NextApiResponse, action: string) {
   try {
@@ -37,7 +36,7 @@ async function handleGet(req: NextApiRequest, res: NextApiResponse, action: stri
           error: 'Invalid action',
           timestamp: new Date().toISOString()
         });
-    }
+
   } catch (error) {
     logErrorToProduction('Error in GET error-monitoring:', error);
     res.status(500).json({
@@ -45,8 +44,7 @@ async function handleGet(req: NextApiRequest, res: NextApiResponse, action: stri
       error: 'Internal server error',
       timestamp: new Date().toISOString()
     });
-  }
-}
+
 
 async function handlePost(req: NextApiRequest, res: NextApiResponse, action: string) {
   try {
@@ -65,7 +63,7 @@ async function handlePost(req: NextApiRequest, res: NextApiResponse, action: str
           error: 'Invalid action',
           timestamp: new Date().toISOString()
         });
-    }
+
   } catch (error) {
     logErrorToProduction('Error in POST error-monitoring:', error);
     res.status(500).json({
@@ -73,8 +71,7 @@ async function handlePost(req: NextApiRequest, res: NextApiResponse, action: str
       error: 'Internal server error',
       timestamp: new Date().toISOString()
     });
-  }
-}
+
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<ErrorMonitoringResponse>) {
   try {
@@ -98,7 +95,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
           error: 'Method not allowed',
           timestamp: new Date().toISOString()
         });
-    }
+
   } catch (error) {
     logErrorToProduction('Error monitoring API error:', error);
     res.status(500).json({
@@ -106,12 +103,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       error: 'Internal server error',
       timestamp: new Date().toISOString()
     });
-  }
-}
+
+
 =======
-import React from 'react';
-import { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react;
+import { NextPage } from 'next;
+import Head from 'next/head;
 
 const ErrorMonitoring: NextPage = () => {
   return (

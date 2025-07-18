@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { useTheme } from '@/hooks/useTheme;'';
+import React from 'react';;
+import { useTheme } from '@/hooks/useTheme;;
 import { Toaster as Sonner, toast } from 'sonner;''
-;
+
 type ToasterProps = React.ComponentProps<typeof Sonner>;
-;'';
+;;
 const Toaster: unknown "unknown = ({ ...props "}: ToasterProps) => {;";";""
   const { _theme } = useTheme();";";";""
   const safeTheme: unknown =;;
     theme === 'dark' || theme === 'light' || theme === 'system;'
       ? theme;;
       : 'system;''
-;
+
   return (;
     <Sonner;''
       theme={safeTheme};;
@@ -31,7 +31,7 @@ const Toaster: unknown "unknown = ({ ...props "}: ToasterProps) => {;";";""
     />;
   );''
 };
-;
+
 export { Toaster, toast };''
 ''''''
 =======

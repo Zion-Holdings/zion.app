@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { Eye, MoreHorizontal, Trash2, Archive } from '@/components/ui/icons;'
-;
+
 import {;
   Table,;
   TableBody,;''
@@ -9,18 +9,18 @@ import {;
   TableHead,;
   TableHeader,;''
   TableRow,;;
-} from '@/components/ui/table;'';
-import { Button } from '@/components/ui/button;';
+} from '@/components/ui/table;;
+import { Button } from '@/components/ui/button;;
 import {;''
   DropdownMenu,;
   DropdownMenuContent,;
   DropdownMenuItem,;''
   DropdownMenuTrigger,;;
-} from '@/components/ui/dropdown-menu;'';
-import { QuoteStatusBadge } from '@/components/quotes/QuoteStatusBadge;'';
-import type { QuoteRequest, QuoteStatus } from '@/types/quotes;'';
+} from '@/components/ui/dropdown-menu;;
+import { QuoteStatusBadge } from '@/components/quotes/QuoteStatusBadge;;
+import type { QuoteRequest, QuoteStatus } from '@/types/quotes;;
 import { formatDate } from '@/utils/dateUtils;''
-;
+
 interface QuotesTableProps {;
   quotes: QuoteRequest[];''
   isArchived?: boolean;;
@@ -30,7 +30,7 @@ interface QuotesTableProps {;
   deleteQuote: "(id: string) => void;",;";";";";""
   onViewDetails: "(quote: QuoteRequest) => void;";"
 };
-;
+
 =======
 import React from 'react'
 import { Eye, MoreHorizontal, Trash2, Archive } from '@/components/ui/icons'
@@ -131,7 +131,7 @@ export const _QuotesTable: unknown React.FC<QuotesTableProps> = ({;
                   {quote.budget_display ||;""
                     (quote.budget_min && quote.budget_max;";""
                       ? `$${quote.budget_min} - $${quote.budget_max}`;";";""
-                      : quote.budget_min;";";";""
+                      : quote.budget_min;";";";""`
                         ? `$${quote.budget_min}`;";";";";""
                         : 'Not specified')};''
                 </TableCell>;;
@@ -297,9 +297,9 @@ export const _QuotesTable: unknown React.FC<QuotesTableProps> = ({;
                 </TableCell>;"
                 <TableCell className=text-white>"
                   {quote.budget_display ||"
-                    (quote.budget_min && quote.budget_max;
-                      ? `$${quote.budget_min} - $${quote.budget_max}`;"";
-                      : quote.budget_min;"";`
+                    (quote.budget_min && quote.budget_max;`
+                      ? `$${quote.budget_min} - $${quote.budget_max}`;"";`
+                      : quote.budget_min;"";``
                         ? `$${quote.budget_min}`;"";
                         : 'Not specified')}'
                 </TableCell>'
@@ -427,6 +427,7 @@ export const _QuotesTable: unknown React.FC<QuotesTableProps> = ({;
       </Table>"
     </div>;
   );"";
-};"";
+};"";`
 """'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

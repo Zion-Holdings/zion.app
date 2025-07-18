@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import React from 'react'';
+import React from 'react;
 ;''
 interface EmailVerificationBannerProps {;''
   onResendEmail: "() => void,"
   userEmail: string | null | undefined;
   isResending?: boolean; // Optional prop for loading state;
 };
-;
+
 const EmailVerificationBanner: unknown React.FC<EmailVerificationBannerProps> = ({;
   onResendEmail,;
   userEmail,;
@@ -107,7 +107,7 @@ const EmailVerificationBanner: unknown React.FC<EmailVerificationBannerProps> = 
 <<<<<<< HEAD
   );''
 }''
-;
+
 export default EmailVerificationBanner;''
 ''''''
 =======

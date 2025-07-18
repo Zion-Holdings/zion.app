@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Button } from '@/components/ui/button;'';
+import React from 'react';;
+import { Button } from '@/components/ui/button;;
 import { GradientHeading } from '@/components/GradientHeading;'
-;
+
 export function EnterpriseHero(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   return (;;
     <section className="py-20 px-4 md:px-6 bg-gradient-to-b from-background to-background/80">;";";";";""

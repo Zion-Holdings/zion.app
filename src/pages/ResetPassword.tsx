@@ -78,7 +78,7 @@ export default function ResetPassword(): '
         />;"
         <div className="h-2 bg-zinc-200 rounded">;"
           <div;"
-            className={`h-full rounded ${['bg-red-500', 'bg-yellow-500', 'bg-blue-500', 'bg-green-500'][s]}`};`
+            className={`h-full rounded ${['bg-red-500', 'bg-yellow-500', 'bg-blue-500', 'bg-green-500'][s]}`};``
             style={{ width: "`${(s + 1) * 25"}%` }};"
           />;"
         </div>;"
@@ -97,5 +97,5 @@ export default function ResetPassword(): '
           ) : (;"
             'Reset Password;
           )};
-        </Button>;
-      </form>'';;`
+        </Button>;`
+      </form>'';;``

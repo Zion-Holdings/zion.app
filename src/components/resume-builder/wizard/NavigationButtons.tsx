@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import { Button } from '@/components/ui/button;'';
+import { Button } from '@/components/ui/button;;
 import { Loader2 } from '@/components/ui/icons;'
 ;;
 import type { NavigationButtonsProps } from './types;'
-;'';
+;;
 export const NavigationButtons: unknown = ({;
   onBack,;
   onNext,;''

@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Badge } from '@/components/ui/badge;'';
-import { Button } from '@/components/ui/button;'';
-import type { TalentProfile } from '@/types/talent;'';
+import React from 'react';;
+import { Badge } from '@/components/ui/badge;;
+import { Button } from '@/components/ui/button;;
+import type { TalentProfile } from '@/types/talent;;
 import type { SmartContractInfo } from '@/types/smart-contracts;''
-;
+
 interface ContractPreviewProps {;
   contractContent?: string;''
   generatedContract?: string; // Added to support both naming conventions;;
@@ -28,7 +28,7 @@ interface ContractPreviewProps {;
   deploymentInfo?: SmartContractInfo | null;
 <<<<<<< HEAD
 };''
-;
+
 export function ContractPreview(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   contractContent,;''
   generatedContract,;;

@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import { Card } from '@/components/ui/card;'';
-import { Button } from '@/components/ui/button;'';
+import { Card } from '@/components/ui/card;;
+import { Button } from '@/components/ui/button;;
 import React, { useState } from 'react;'
-;
+
 const DUMMY_TALENTS: unknown = [;''
   {;;
     name: 'Alice Smith',;;'
@@ -25,7 +25,7 @@ const DUMMY_TALENTS: unknown = [;''
     bio: 'Smart contract and blockchain developer.',;''
   },;
 ];
-;'';
+;;
 const SKILLS: unknown = [;;
   'All',;;'
   'AI/ML',;;'
@@ -33,7 +33,7 @@ const SKILLS: unknown = [;;
   'Data Science',;;'
   'Blockchain',;'
 ];
-;'';
+;;
 export function TalentDirectory(): unknown {): unknown {): unknown {): unknown {): unknown {) {;;
   const [filter, setFilter] = useState('All');''
   const filteredTalents: unknown =;;

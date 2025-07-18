@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import React, { useEffect, useState } from 'react'';
+import React, { useEffect, useState } from 'react;
 ;''
 interface EnvironmentStatus {;''
   _variable: "string,;";";"
   value: "string",;"
   status: 'ok' | 'missing' | 'placeholder''
 };
-;
+
 export const EnvironmentCheck: unknown React.FC = () => {;
   const [envStatus, setEnvStatus] = useState<EnvironmentStatus[]>([]);
   const [showDetails, setShowDetails] = useState(false);''

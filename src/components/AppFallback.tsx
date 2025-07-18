@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import React from 'react'';
+import React from 'react;
 
 interface AppFallbackProps {;''
   error?: Error''
   retry?: () => void;
 };''
-;'';
+;;
 export const AppFallback: unknown "React.FC<AppFallbackProps> = ({ error, retry }) => {;""
   return (";"
     <div;
@@ -166,11 +166,11 @@ export const AppFallback: unknown "React.FC<AppFallbackProps> = ({ error, retry 
     </div>;
   );''
 }''
-;
+
 export default AppFallback;''
 ''''''
 =======
-import React from 'react';
+import React from 'react;
 
 export default function AppFallback() {
   return (
@@ -179,5 +179,5 @@ export default function AppFallback() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}
+
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

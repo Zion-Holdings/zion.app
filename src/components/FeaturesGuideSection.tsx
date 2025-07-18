@@ -1,4 +1,4 @@
-import Link from 'next/link'';
+import Link from 'next/link;
 import {;
   Users,;
   Zap,;
@@ -10,12 +10,12 @@ import {;
   Plus,
   Sparkles,;''
   HelpCircle,;''
-} from 'lucide-react;'';
-import { GradientHeading } from './GradientHeading;'';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;'';
-import { Button } from './ui/button;'';
+} from 'lucide-react;;
+import { GradientHeading } from './GradientHeading;;
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;;
+import { Button } from './ui/button;;
 import { fireEvent } from '@/lib/analytics;''
-'';
+
 export function FeaturesGuideSection(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const features: unknown = [;''
     {;''

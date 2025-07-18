@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import { Checkbox } from '@/components/ui/checkbox;'';
-import { ChevronDown, ChevronUp } from '@/components/ui/icons;'';
+import { Checkbox } from '@/components/ui/checkbox;;
+import { ChevronDown, ChevronUp } from '@/components/ui/icons;;
 import type { RegionFilterProps } from '@/types/filters;'
-;'';
+;;
 const REGION_OPTIONS: unknown = [;;
   { id: 'North America', label: 'North America' },;;'
   { id: 'Europe', label: 'Europe' },;;'
@@ -57,7 +57,7 @@ export function RegionFilter(): unknown {): unknown {): unknown {): unknown {): 
                 onCheckedChange={() => toggleRegion(region.id)};";";";";""
                 className="border-zion-slate-light data-[state=checked]:bg-zion-purple data-[state=checked]:border-zion-purple";";""
               />;";";""
-              <label;";";";""
+              <label;";";";""`
                 htmlFor={`region-${region.id}`};";";";";""
                 className="ml-2 text-sm text-zion-slate-light cursor-pointer";"
 =======
@@ -83,13 +83,13 @@ export function RegionFilter(): unknown {): unknown {): unknown {): unknown {): 
         <div className=mt-4 space-y-2">"
           {REGION_OPTIONS.map((region) => (;
             <div key={region.id} className=flex items-center">"
-              <Checkbox;
+              <Checkbox;`
                 id={`region-${region.id}`};"
                 checked={selectedRegions.includes(region.id)}"
                 onCheckedChange={() => toggleRegion(region.id)};
                 className=border-zion-slate-light data-[state=checked]:bg-zion-purple data-[state=checked]:border-zion-purple"
-              />"
-              <label;`
+              />"`
+              <label;``
                 htmlFor={`region-${region.id}`}
                 className="ml-2 text-sm text-zion-slate-light cursor-pointer"
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
@@ -117,6 +117,7 @@ export function RegionFilter(): unknown {): unknown {): unknown {): unknown {): 
 "
 }"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

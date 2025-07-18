@@ -1,23 +1,23 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { logErrorToProduction } from '@/utils/productionLogger;';
+import React, { useState } from 'react';;
+import { logErrorToProduction } from '@/utils/productionLogger;;
 import {;
   Dialog,;''
   DialogContent,;
   DialogDescription,;
   DialogHeader,;''
   DialogTitle,;;
-} from '@/components/ui/dialog;'';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;'';
-import { Label } from '@/components/ui/label;'';
-import { Textarea } from '@/components/ui/textarea;'';
-import { toast } from '@/hooks/use-toast;'';
-import { supabase } from '@/integrations/supabase/client;'';
-import type { TalentProfile } from '@/types/talent;'';
-import { useAuth } from '@/hooks/useAuth;'';
+} from '@/components/ui/dialog;;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
+import { Label } from '@/components/ui/label;;
+import { Textarea } from '@/components/ui/textarea;;
+import { toast } from '@/hooks/use-toast;;
+import { supabase } from '@/integrations/supabase/client;;
+import type { TalentProfile } from '@/types/talent;;
+import { useAuth } from '@/hooks/useAuth;;
 import type { JobApplication } from '@/types/jobs;'
-;'';
+;;
 export interface HireConfirmationModalProps {;;
   isOpen: "boolean;",;"
   onClose: () => void;
@@ -26,7 +26,7 @@ export interface HireConfirmationModalProps {;;
   onConfirm: () => void;
   isSubmitting?: boolean;
 };
-;
+
 export function HireConfirmationModal(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   isOpen,;
   onClose,;
@@ -83,7 +83,7 @@ export function HireConfirmationModal(): unknown {): unknown {): unknown {): unk
   const talentData: unknown =;
 <<<<<<< HEAD
     candidateData || (application?.talent_profile as TalentProfile);''
-;
+
   const handleHireCandidate: unknown = async () => {;
     if (!projectName || !projectDescription) {;''
       toast({;;
@@ -93,7 +93,7 @@ export function HireConfirmationModal(): unknown {): unknown {): unknown {): unk
       });
       return;''
     };
-;
+
     if (!user) {;''
       toast({;;
         title: 'Not authenticated',;;'
@@ -102,7 +102,7 @@ export function HireConfirmationModal(): unknown {): unknown {): unknown {): unk
       });
       return;''
     };
-;
+
     if (!talentData) {;''
       toast({;;
         title: 'Missing talent data',;;'
@@ -111,7 +111,7 @@ export function HireConfirmationModal(): unknown {): unknown {): unknown {): unk
       });
       return;''
     };
-;
+
     if (!supabase) {;''
       toast({;;
         title: 'Database connection error',;;'
@@ -122,7 +122,7 @@ export function HireConfirmationModal(): unknown {): unknown {): unknown {): unk
     };
 ;''
     setIsLoading(true);
-;
+
     // Create a new project;''
     try {;;
       const { data: "projectData", error: "projectError "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase;";";";";""
@@ -140,7 +140,7 @@ export function HireConfirmationModal(): unknown {): unknown {): unknown {): unk
         ]);
         .select();''
         .single();
-;
+
       if (projectError) {;''
         toast({;;
           title: 'Error creating project',;;'
@@ -163,7 +163,7 @@ export function HireConfirmationModal(): unknown {): unknown {): unknown {): unk
             status: 'active',;'
           },;''
         ]);
-;
+
       if (hiringError) {;''
         toast({;;
           title: 'Error creating hiring record',;;'
@@ -173,7 +173,7 @@ export function HireConfirmationModal(): unknown {): unknown {): unknown {): unk
         setIsLoading(false);
         return;
       };''
-;
+
       // Update the availability status;
       if (updateAvailability) {;''
         try {;;
@@ -181,7 +181,7 @@ export function HireConfirmationModal(): unknown {): unknown {): unknown {): unk
             .from('talent_profiles');;'
             .update({ availability_type: 'unavailable' });;'
             .eq('id', talentData.id);'
-;
+
           if (availabilityError) {;''
             toast({;;
               title: 'Error updating availability',;;'
@@ -220,7 +220,7 @@ export function HireConfirmationModal(): unknown {): unknown {): unknown {): unk
       setIsLoading(false);
     };''
   };
-;
+
   return (;''
     <Dialog open={isOpen} onOpenChange={onClose}>;;
       <DialogContent className="sm:max-w-[425px]">;";""
@@ -286,9 +286,9 @@ export function HireConfirmationModal(): unknown {): unknown {): unknown {): unk
     </Dialog>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -414,7 +414,7 @@ export function HireConfirmationModal(): unknown {): unknown {): unknown {): unk
       };
 '
       toast({'
-        title: 'Candidate hired successfully','
+        title: 'Candidate hired successfully','`
         description: "`${talentData.full_name} has been hired for the project.`,
       });""
       onConfirm();"
@@ -499,6 +499,7 @@ export function HireConfirmationModal(): unknown {): unknown {): unknown {): unk
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

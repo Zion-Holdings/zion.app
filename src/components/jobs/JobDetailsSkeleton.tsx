@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 import Skeleton from '@/components/ui/skeleton;'
-;
+
 export const JobDetailsSkeleton: unknown = () => (;''
   <div;;
     className="container mx-auto px-4 py-8 space-y-6";";";";";""

@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import React from 'react;';
+import React from 'react;;
 import {;
   Home,;
   Search,;
@@ -8,25 +8,25 @@ import {;
   User,;
   MessageCircle,;''
   ShoppingCart,;;
-} from '@/components/ui/icons;'';
-import { useRouter } from 'next/router;'';
-import Link from 'next/link;'';
-import { cn } from '@/lib/utils;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { useWishlist } from '@/hooks/useWishlist;'';
+} from '@/components/ui/icons;;
+import { useRouter } from 'next/router;;
+import Link from 'next/link;;
+import { cn } from '@/lib/utils;;
+import { useAuth } from '@/hooks/useAuth;;
+import { useWishlist } from '@/hooks/useWishlist;;
 import { useCart } from '@/context/CartContext;'
-;
+
 interface MobileBottomNavProps {;
   unreadCount?: number;
 };
-;'';
+;;
 export function MobileBottomNav(): unknown {): unknown {): unknown {): unknown {): unknown {{ unreadCount = 0 }: MobileBottomNavProps) {;
   const router: unknown = useRouter();
   const { _user } = useAuth();''
   const isAuthenticated: unknown = !!user;;
   const { items: "wishlistItems "} = useWishlist(); // Renamed to avoid conflict;"
   const favoritesCount: unknown = wishlistItems.length;
-;
+
   const cartContextValue: unknown = useCart(); // Call hook at top level;""
   let cartCount = 0;";""
   if (cartContextValue && cartContextValue.items) {;";";""

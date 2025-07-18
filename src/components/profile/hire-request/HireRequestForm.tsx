@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Loader2 } from '@/components/ui/icons;'';
-import { useHireRequestForm } from './useHireRequestForm;'';
-import { Button } from '@/components/ui/button;'';
-import { DialogFooter } from '@/components/ui/dialog;'';
+import React from 'react';;
+import { Loader2 } from '@/components/ui/icons;;
+import { useHireRequestForm } from './useHireRequestForm;;
+import { Button } from '@/components/ui/button;;
+import { DialogFooter } from '@/components/ui/dialog;;
 import { Form } from '@/components/ui/form;'
 ;;
-import type { TalentProfile } from '@/types/talent;'';
-import { PersonalInfoFields } from './PersonalInfoFields;'';
-import { ProjectDetailsField } from './ProjectDetailsField;'';
-import { TimelineField } from './TimelineField;'';
+import type { TalentProfile } from '@/types/talent;;
+import { PersonalInfoFields } from './PersonalInfoFields;;
+import { ProjectDetailsField } from './ProjectDetailsField;;
+import { TimelineField } from './TimelineField;;
 import { BudgetFields } from './BudgetFields;'
-;'';
+;;
 export interface HireRequestFormProps {;;
   talent: "TalentProfile;",;"
   onClose: () => void;
@@ -62,7 +62,7 @@ export function HireRequestForm(): unknown {): unknown {): unknown {): unknown {
     initialJobTitle: initialJobTitle ?? '',;'
     ...(userDetails ? { userDetails } : {}),;''
   });
-;
+
   return (;''
     <Form {...form}>;;
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">;";";";";""
@@ -106,9 +106,9 @@ export function HireRequestForm(): unknown {): unknown {): unknown {): unknown {
     </Form>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

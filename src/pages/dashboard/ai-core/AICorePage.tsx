@@ -19,5 +19,5 @@ const AICorePage = () => {;
   );"
 };";"
 ;"
-export default AICorePage;"
-""""'';;`
+export default AICorePage;"`
+""""'';;``

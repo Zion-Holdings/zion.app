@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { Loader2, Link, FileImage } from '@/components/ui/icons;'';
-import { useForm } from 'react-hook-form;'';
-import { zodResolver } from '@hookform/resolvers/zod;'';
-import { z } from 'zod;'';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;'';
-import { Textarea } from '@/components/ui/textarea;'';
+import { useState } from 'react';;
+import { Loader2, Link, FileImage } from '@/components/ui/icons;;
+import { useForm } from 'react-hook-form;;
+import { zodResolver } from '@hookform/resolvers/zod;;
+import { z } from 'zod;;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
+import { Textarea } from '@/components/ui/textarea;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
-;
+
 import {;
   Form,;
   FormControl,;''
@@ -18,11 +18,11 @@ import {;
   FormMessage,;;
 } from '@/components/ui/form;'
 ;;
-import type { PortfolioProject } from '@/types/resume;'';
-import { usePortfolio } from '@/hooks/usePortfolio;'';
+import type { PortfolioProject } from '@/types/resume;;
+import { usePortfolio } from '@/hooks/usePortfolio;;
 import { useAuth } from '@/hooks/useAuth;'
-;
-// Define schema for form validation;'';
+
+// Define schema for form validation;;
 const projectSchema: unknown "unknown = z.object({;",;""
   title: "z.string().min(1", 'Project title is required'),;;'
   description: "z.string().optional()",;";";";";""
@@ -44,7 +44,7 @@ interface ProjectFormProps {;";";";""
   onSuccess: "() => void;",;";";";";""
   onCancel: "() => void;";"
 };
-;
+
 =======
 import { useState } from 'react''
 import { Loader2, Link, FileImage } from '@/components/ui/icons'
@@ -117,10 +117,10 @@ export function ProjectForm(): unknown {): unknown {): unknown {): unknown {): u
       pdf_url: project?.pdf_url || '',;'
     },;
   });
-;
+
   const onSubmit: unknown = async (_data: ProjectFormValues) => {;
     if (!user) return;''
-;
+
     setIsLoading(true);
 ;''
     try {;;
@@ -182,7 +182,7 @@ export function ProjectForm(): unknown {): unknown {): unknown {): unknown {): u
         success = !!projectId;
       };
 <<<<<<< HEAD
-;
+
       if (success) {;""
         onSuccess();";""
         form.reset();";";""
@@ -443,9 +443,9 @@ export function ProjectForm(): unknown {): unknown {): unknown {): unknown {): u
     </Form>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

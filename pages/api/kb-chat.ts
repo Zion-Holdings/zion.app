@@ -1,19 +1,16 @@
 <<<<<<< HEAD
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next;
 
 interface ChatMessage {
-  role: 'user' | 'assistant';
+  role: 'user' | 'assistant;
   content: string;
-}
 
 interface ChatRequest {
   messages: ChatMessage[];
-}
 
 interface ChatResponse {
   response: string;
   confidence: number;
-}
 
 function getKnowledgeBaseResponse(userMessage: string): string {
   // Simple knowledge base lookup - replace with actual KB system
@@ -29,11 +26,9 @@ function getKnowledgeBaseResponse(userMessage: string): string {
   for (const [key, value] of Object.entries(knowledgeBase)) {
     if (message.includes(key)) {
       return value;
-    }
-  }
 
-  return 'I\'m sorry, I don\'t have information about that. Please contact support for assistance.';
-}
+
+  return 'I\'m sorry, I don\'t have information about that. Please contact support for assistance.;
 
 export default async function handler(
   req: NextApiRequest,
@@ -41,20 +36,17 @@ export default async function handler(
 ) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
-  }
 
   try {
     const { messages }: ChatRequest = req.body;
 
     if (!messages || !Array.isArray(messages) || messages.length === 0) {
       return res.status(400).json({ error: 'Messages array is required' });
-    }
 
     const lastUserMessage = messages[messages.length - 1];
     
     if (lastUserMessage.role !== 'user') {
       return res.status(400).json({ error: 'Last message must be from user' });
-    }
 
     const responses = getKnowledgeBaseResponse(lastUserMessage.content);
     
@@ -67,12 +59,12 @@ export default async function handler(
   } catch (error) {
     console.error('KB Chat API error:', error);
     return res.status(500).json({ error: 'Internal server error' });
-  }
-}
+
+
 =======
-import React from 'react';
-import { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react;
+import { NextPage } from 'next;
+import Head from 'next/head;
 
 const KbChat: NextPage = () => {
   return (

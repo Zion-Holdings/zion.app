@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { Star } from '@/components/ui/icons;'
 ;;
 import { Card, CardContent, CardFooter } from '@/components/ui/card;'
-;
+
 const testimonials: unknown = [;''
   {;;
     name: 'Alex Johnson',;;'
@@ -27,7 +27,7 @@ const testimonials: unknown = [;''
     _avatar: '/placeholder.svg',;'
   },;''
 ];
-;
+
 export const _AppTestimonials: unknown React.FC = () => {;''
   return (;;
     <section className="py-16 bg-zion-blue">;";";";";""
@@ -128,7 +128,7 @@ export const _AppTestimonials: unknown React.FC = () => {'
                 <div className="flex mb-4">
                   {Array.from({ length: 5 "}).map((_, i) => ("
                     <Star;
-                      key={i}
+                      key={i}`
                       className={`h-5 w-5 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-400'}`};
                     />))}'
                 </div>'
@@ -166,6 +166,7 @@ export const _AppTestimonials: unknown React.FC = () => {'
       </div>"
     </section>;
   );"
-}"
+}"`
 ""'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

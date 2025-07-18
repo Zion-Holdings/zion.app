@@ -1,26 +1,26 @@
 <<<<<<< HEAD
-import type { Project } from '@/types/projects;'';
+import type { Project } from '@/types/projects;;
 import { Star } from '@/components/ui/icons;'
 ;;
 import { useState } from 'react;'
 ;;
-import { Button } from '@/components/ui/button;';
+import { Button } from '@/components/ui/button;;
 import {;
   Card,;''
   CardContent,;
   CardDescription,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
-import { ReviewsList } from '@/components/reviews/ReviewsList;'';
-import { LeaveReviewModal } from '@/components/reviews/LeaveReviewModal;'';
-import { useReviews } from '@/hooks/useReviews;'';
+} from '@/components/ui/card;;
+import { ReviewsList } from '@/components/reviews/ReviewsList;;
+import { LeaveReviewModal } from '@/components/reviews/LeaveReviewModal;;
+import { useReviews } from '@/hooks/useReviews;;
 import { useAuth } from '@/hooks/useAuth;'
 ;''
 interface ProjectReviewSectionProps {;;
   project: "Project;";"
 };
-;
+
 export function ProjectReviewSection(): unknown {): unknown {): unknown {): unknown {): unknown {{ project }: ProjectReviewSectionProps) {;
   const { _user } = useAuth();
   const { reviews, userReview, isLoading, reportReview } = useReviews(;""
@@ -31,10 +31,10 @@ export function ProjectReviewSection(): unknown {): unknown {): unknown {): unkn
   const isCompleted: unknown = project.status === 'completed;'
   const isClient: unknown = user?.id === project.client_id;
   const isTalent: unknown = user?.id === project.talent_id;
-;
+
   const clientProfile: unknown = project?.talent_profile;
   const talentProfile: unknown = project.talent_profile;''
-;
+
   // Determine who the current user needs to review;
   const revieweeId: unknown = isClient ? project.talent_id : project.client_id;''
   const revieweeName: unknown = isClient;;

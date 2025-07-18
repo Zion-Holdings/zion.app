@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import { OnboardingTracker } from './OnboardingTracker;'';
-import type { OnboardingStep } from './OnboardingTracker;'';
+import { OnboardingTracker } from './OnboardingTracker;;
+import type { OnboardingStep } from './OnboardingTracker;;
 import { useAdvancedOnboardingStatus } from '@/hooks/useAdvancedOnboardingStatus;'
-;
+
 export function AdvancedOnboardingSteps(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   const { _status } = useAdvancedOnboardingStatus();
-;
+
   const steps: unknown OnboardingStep[] = [;''
     {;;
       id: 'explore-ai',;;'

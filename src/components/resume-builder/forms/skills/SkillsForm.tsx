@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import type { Skill } from '@/types/resume;'';
-import { Button } from '@/components/ui/button;'';
-import { Alert, AlertDescription } from '@/components/ui/alert;'';
-import { useResume } from '@/hooks/useResume;'';
-import type { SkillsFormProps } from './types;'';
-import { SkillsList } from './SkillsList;'';
-import { AddSkillForm } from './AddSkillForm;'';
+import { useState } from 'react';;
+import type { Skill } from '@/types/resume;;
+import { Button } from '@/components/ui/button;;
+import { Alert, AlertDescription } from '@/components/ui/alert;;
+import { useResume } from '@/hooks/useResume;;
+import type { SkillsFormProps } from './types;;
+import { SkillsList } from './SkillsList;;
+import { AddSkillForm } from './AddSkillForm;;
 import { BulkAddSkills } from './BulkAddSkills;'
-;
+
 =======
 import { useState } from 'react''
 import type { Skill } from '@/types/resume'

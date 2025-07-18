@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import React from 'react''';
-import { useState } from 'react''';
-import { Mail } from '@/components/ui/icons;'';
-import { GradientHeading } from '@/components/GradientHeading;'';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;'';
-import { Textarea } from '@/components/ui/textarea;'';
-import { toast } from '@/components/ui/use-toast;'';
-import z from 'zod'';
-;
+import React from 'react';
+import { useState } from 'react';
+import { Mail } from '@/components/ui/icons;;
+import { GradientHeading } from '@/components/GradientHeading;;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
+import { Textarea } from '@/components/ui/textarea;;
+import { toast } from '@/components/ui/use-toast;;
+import z from 'zod;
+
 export function ContactSection(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   const [formData, setFormData] = useState({;''
     name: '',;''
@@ -190,7 +190,7 @@ export function ContactSection(): '
                       name="email";";""
                       type=email
                       value={formData.email};
-                      onChange={handleChange};;""
+                      onChange={handleChange};;""`
                       className={`w-full rounded-md bg-zion-blue-dark border-zion-blue-light text-white ${errors.email ? 'border-red-500 focus-visible:ring-red-500' : ''}`}`'
                       required;
                     />;''
@@ -211,7 +211,7 @@ export function ContactSection(): '
                     id=subject;"""
                     name=subject";""
                     value={formData.subject};";""
-                    onChange={handleChange};";";"
+                    onChange={handleChange};";";"`
                     className={`w-full rounded-md bg-zion-blue-dark border-zion-blue-light text-white ${errors.subject ? 'border-red-500 focus-visible:ring-red-500' : ''}`}`'
                     required;
                   />;''
@@ -233,7 +233,7 @@ export function ContactSection(): '
                     name="message;""
                     rows={4}";"
                     value={formData.message};
-                    onChange={handleChange};;""
+                    onChange={handleChange};;""`
                     className={`w-full rounded-md bg-zion-blue-dark border-zion-blue-light text-white ${errors.message ? 'border-red-500 focus-visible:ring-red-500' : ''}`}`'
                     required;
                   />;''
@@ -364,7 +364,7 @@ export function ContactSection(): '
                       id=name;""
                       name=name";"
                       value={formData.name};";"
-                      onChange={handleChange};";";
+                      onChange={handleChange};";";`
                       className={`w-full rounded-md bg-zion-blue-dark border-zion-blue-light text-white ${errors.name ? 'border-red-500 focus-visible:ring-red-500' : ''}`};
                       required;
                     />'
@@ -383,8 +383,8 @@ export function ContactSection(): '
                       id="email;"
                       name="email"
                       type=email
-                      value={formData.email};
-                      onChange={handleChange};"`
+                      value={formData.email};`
+                      onChange={handleChange};"``
                       className={`w-full rounded-md bg-zion-blue-dark border-zion-blue-light text-white ${errors.email ? 'border-red-500 focus-visible:ring-red-500' : ''}`};
                       required;
                     />'
@@ -404,8 +404,8 @@ export function ContactSection(): '
                   <Input;";"
                     id=subject;""
                     name=subject";"
-                    value={formData.subject};";"
-                    onChange={handleChange};";";`
+                    value={formData.subject};";"`
+                    onChange={handleChange};";";``
                     className={`w-full rounded-md bg-zion-blue-dark border-zion-blue-light text-white ${errors.subject ? 'border-red-500 focus-visible:ring-red-500' : ''}`};
                     required;
                   />'
@@ -426,8 +426,8 @@ export function ContactSection(): '
                     id=message"
                     name="message;"
                     rows={4}";
-                    value={formData.message};
-                    onChange={handleChange};"`
+                    value={formData.message};`
+                    onChange={handleChange};"``
                     className={`w-full rounded-md bg-zion-blue-dark border-zion-blue-light text-white ${errors.message ? 'border-red-500 focus-visible:ring-red-500' : ''}`};
                     required;
                   />'
@@ -462,7 +462,7 @@ export function ContactSection(): '
 };
 
 };''
-}
+
 }''
 }''
 =======
@@ -473,6 +473,7 @@ export function ContactSection(): '
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { useForm } from 'react-hook-form;'';
-import { zodResolver } from '@hookform/resolvers/zod;'';
-import { z } from 'zod;'';
-import { useAuth } from '@/hooks/useAuth;'';
+import React from 'react';;
+import { useForm } from 'react-hook-form;;
+import { zodResolver } from '@hookform/resolvers/zod;;
+import { z } from 'zod;;
+import { useAuth } from '@/hooks/useAuth;;
 import { supabase } from '@/integrations/supabase/client;'
-;
-// Define the form schema with validation;'';
+
+// Define the form schema with validation;;
 const talentSchema: unknown = z.object({;;
   // Step 1: "Basic Info;",;";";";";""
   basicInfo: "z.object({;",";";";";""
@@ -135,7 +135,7 @@ export function TalentOnboardingForm(): unknown {): unknown {): unknown {): unkn
     },;";";";";""
     mode: 'onChange',;''
   });
-;
+
   // TODO: Implement the form UI and handlers;''
   return (;;
     <div className="p-4">;";";";";""

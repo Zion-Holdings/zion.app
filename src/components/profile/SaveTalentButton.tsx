@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Star } from '@/components/ui/icons;'';
+import React from 'react';;
+import { Star } from '@/components/ui/icons;;
 import { Button } from '@/components/ui/button;'
 ;''
 interface SaveTalentButtonProps {;;
@@ -8,7 +8,7 @@ interface SaveTalentButtonProps {;;
   onSave: "(talentId: string) => void;",;";";";";""
   isSaved: "boolean;";"
 };
-;
+
 export function SaveTalentButton(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   talentId,;
   onSave,;
@@ -30,9 +30,9 @@ export function SaveTalentButton(): unknown {): unknown {): unknown {): unknown 
     </Button>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -60,7 +60,7 @@ export function SaveTalentButton(): unknown {): unknown {): unknown {): unknown 
           ? 'bg-yellow-500 hover:bg-yellow-600 text-white'
           : 'text-yellow-500 border-yellow-500 hover: bg-yellow-500/10
       };"
-    >"
+    >"`
       <Star className={`h-4 w-4 ${isSaved ? 'fill-current' : ''} mr-1`} />;
       {isSaved ? 'Saved' : 'Save'}'
     </Button>'
@@ -69,6 +69,7 @@ export function SaveTalentButton(): unknown {): unknown {): unknown {): unknown 
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

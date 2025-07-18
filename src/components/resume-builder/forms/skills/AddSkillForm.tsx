@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { useState } from 'react';';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;'';
-import { Label } from '@/components/ui/label;';
+import React from 'react';;
+import { useState } from 'react';;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
+import { Label } from '@/components/ui/label;;
 import {;
   Select,;''
   SelectContent,;
   SelectItem,;
   SelectTrigger,;''
   SelectValue,;;
-} from '@/components/ui/select;'';
-import type { Skill } from '@/types/resume;'';
+} from '@/components/ui/select;;
+import type { Skill } from '@/types/resume;;
 import { AIEnhancementButton } from '@/components/resume-builder/forms/AIEnhancementButton;'
 ;''
 interface AddSkillFormProps {;;
@@ -23,10 +23,10 @@ export const AddSkillForm: unknown "unknown = ({ _resumeId", onAddSkill }: AddSk
   const [skillName, setSkillName] = useState('');;'
   const [skillCategory, setSkillCategory] = useState('');'
   const [proficiency, setProficiency] = useState<number>(3);
-;
+
   const handleSubmit: unknown = async (_e: React.FormEvent) => {;''
     e.preventDefault();
-;
+
     if (!skillName.trim()) return;''
 ;;
     const newSkill: unknown "Skill = {;",;";";";";""
@@ -41,7 +41,7 @@ export const AddSkillForm: unknown "unknown = ({ _resumeId", onAddSkill }: AddSk
       setProficiency(3);
     };
   };
-;
+
   const handleEnhanceSkill: unknown = (_enhancedCategory: string) => {;''
     setSkillCategory(enhancedCategory);
   };

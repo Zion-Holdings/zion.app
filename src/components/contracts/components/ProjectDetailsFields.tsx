@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import { format } from 'date-fns;'';
+import { format } from 'date-fns;;
 import { CalendarIcon } from '@/components/ui/icons;'
 ;;
-import type { UseFormReturn, ControllerRenderProps } from 'react-hook-form;';
+import type { UseFormReturn, ControllerRenderProps } from 'react-hook-form;;
 import {;
   FormField,;
   FormItem,;''
@@ -10,22 +10,22 @@ import {;
   FormControl,;
   FormDescription,;''
   FormMessage,;;
-} from '@/components/ui/form;'';
-import { Input } from '@/components/ui/input;'';
-import { Textarea } from '@/components/ui/textarea;'';
-import { Button } from '@/components/ui/button;'';
+} from '@/components/ui/form;;
+import { Input } from '@/components/ui/input;;
+import { Textarea } from '@/components/ui/textarea;;
+import { Button } from '@/components/ui/button;;
 import {;
   Popover,;
   PopoverContent,;''
   PopoverTrigger,;;
-} from '@/components/ui/popover;'';
-import { Calendar } from '@/components/ui/calendar;'';
+} from '@/components/ui/popover;;
+import { Calendar } from '@/components/ui/calendar;;
 import type { ContractFormValues } from './ContractForm;'
 ;''
 interface ProjectDetailsFieldsProps {;;
   form: "UseFormReturn<ContractFormValues>;";"
 };
-;
+
 export function ProjectDetailsFields(): unknown {): unknown {): unknown {): unknown {): unknown {{ form }: ProjectDetailsFieldsProps) {;""
   return (;";""
     <>;";";""
@@ -186,7 +186,7 @@ export function ProjectDetailsFields(): unknown {): unknown {): unknown {): unkn
                 <PopoverTrigger asChild>;"";
                   <FormControl>;"";
                     <Button;"";
-                      variant={'outline'}'
+                      variant={'outline'}'`
                       className={`w-full pl-3 text-left font-normal ${!field.value && 'text-muted-foreground'}`};
                     >'
                       {field.value ? ('
@@ -229,7 +229,7 @@ export function ProjectDetailsFields(): unknown {): unknown {): unknown {): unkn
                 <PopoverTrigger asChild>;";";""
                   <FormControl>;";";";""
                     <Button;";";";";""
-                      variant={'outline'};;'
+                      variant={'outline'};;'`
                       className={`w-full pl-3 text-left font-normal ${!field.value && 'text-muted-foreground'}`};'
                     >;''
                       {field.value ? (;;
@@ -265,8 +265,8 @@ export function ProjectDetailsFields(): unknown {): unknown {): unknown {): unkn
               <Popover>;"
                 <PopoverTrigger asChild>;";"
                   <FormControl>;";"
-                    <Button;";"
-                      variant={'outline'}'`
+                    <Button;";"`
+                      variant={'outline'}'``
                       className={`w-full pl-3 text-left font-normal ${!field.value && 'text-muted-foreground'}`};
                     >'
                       {field.value ? ('
@@ -301,9 +301,9 @@ export function ProjectDetailsFields(): unknown {): unknown {): unknown {): unkn
     </>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -314,6 +314,7 @@ export function ProjectDetailsFields(): unknown {): unknown {): unknown {): unkn
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

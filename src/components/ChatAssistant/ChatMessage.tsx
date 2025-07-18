@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import { cn } from '@/lib/utils;'';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'';
+import { cn } from '@/lib/utils;;
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;
 ;''
 interface ChatMessageProps {;''
   role: 'user' | 'assistant,''
@@ -8,7 +8,7 @@ interface ChatMessageProps {;''
   timestamp?: Date;''
   key?: string | number''
 };
-;'';
+;;
 export function ChatMessage(): unknown {): unknown {): unknown {): unknown {): unknown {{ role, message, timestamp }: ChatMessageProps) {;''
   const isUser: unknown = role === 'user;''
 ''
@@ -64,7 +64,7 @@ export function ChatMessage(): unknown {): unknown {): unknown {): unknown {): u
 };
 
 };''
-}
+
 }''
 }''
 =======

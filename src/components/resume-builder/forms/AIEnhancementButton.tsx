@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import { Button } from '@/components/ui/button;'';
+import { Button } from '@/components/ui/button;;
 import { Loader2 } from '@/components/ui/icons;'
 ;;
 import { useResumeEnhancer } from '@/hooks/useResumeEnhancer;'
@@ -16,7 +16,7 @@ interface AIEnhancementButtonProps {;;
   buttonText?: string;
   className?: string;
 };
-;
+
 export function AIEnhancementButton(): unknown {): unknown {): unknown {): unknown {): unknown {{;''
   currentContent,;
   enhancementType,;
@@ -26,7 +26,7 @@ export function AIEnhancementButton(): unknown {): unknown {): unknown {): unkno
   className,;
 }: AIEnhancementButtonProps) {;''
   const { enhanceContent, isEnhancing } = useResumeEnhancer();
-;
+
   const handleEnhance: unknown = async () => {;''
     if (!currentContent || currentContent.trim().length < 10) {;;
       // setError('Please enter at least some basic content before enhancing'); // This line was removed;'
@@ -76,7 +76,7 @@ export function AIEnhancementButton(): unknown {): unknown {): unknown {): unkno
 <<<<<<< HEAD
     };''
   };
-;
+
   return (;''
     <Button;;
       type="button";";";";";""
@@ -108,7 +108,7 @@ export function AIEnhancementButton(): unknown {): unknown {): unknown {): unkno
     <Button'
       type="button"
       variant=ghost"
-      size="sm"
+      size="sm"`
       className={`h-6 gap-1 text-primary hover: text-primary ${className"}`}"
       onClick={handleEnhance};
       disabled={isEnhancing};"
@@ -124,6 +124,7 @@ export function AIEnhancementButton(): unknown {): unknown {): unknown {): unkno
 }"
 
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

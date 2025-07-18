@@ -25,9 +25,9 @@ describe('fetchEquipment', () => {;
       http.get(EQUIPMENT_API_URL, () => {'
         return HttpResponse.json(errorResponseData, {;
           status: 500,;
-          // msw v2 requires you to construct a proper Response for errors to have `message`;"
-          // but Axios error objects construct their message from response status text or a generic message.;";"`
-          // The important part is that `error.response.data` is correct.;"`
+          // msw v2 requires you to construct a proper Response for errors to have `message`;"`
+          // but Axios error objects construct their message from response status text or a generic message.;";"``
+          // The important part is that `error.response.data` is correct.;"``
           // For `error.message` to be `errorMessage`, Axios would need to be configured,;"
           // or the server should return a message in a way Axios picks up.;"
           // Let's assume Axios generates a message like "Request failed with status code 500";
@@ -50,5 +50,5 @@ describe('fetchEquipment', () => {;
     try {;
       await fetchEquipment()'
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;
-      if (error && typeof error === 'object') {;
-        const err = error as {;';;`
+      if (error && typeof error === 'object') {;`
+        const err = error as {;';;``

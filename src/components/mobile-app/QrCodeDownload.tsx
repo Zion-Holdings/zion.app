@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { QrCode } from '@/components/ui/icons;'
 ;;
 import { AppStoreButtons } from './AppStoreButtons;'
-;
+
 ;''
   // App store links - these would come from environment variables in production;;
   const appStoreUrl: unknown = '# // Replace with actual App Store URL;;'

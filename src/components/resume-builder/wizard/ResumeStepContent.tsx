@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import { TabsContent } from '@/components/ui/tabs;'';
-import type { Resume } from '@/types/resume;'';
-import { BasicInfoForm } from '../forms/basic-info;'';
-import { WorkExperienceForm } from '../forms/WorkExperienceForm;'';
-import { EducationForm } from '../forms/EducationForm;'';
-import { SkillsForm } from '../forms/SkillsForm;'';
-import { CertificationsForm } from '../forms/CertificationsForm;'';
-import { PreviewResume } from '../PreviewResume;'';
+import { TabsContent } from '@/components/ui/tabs;;
+import type { Resume } from '@/types/resume;;
+import { BasicInfoForm } from '../forms/basic-info;;
+import { WorkExperienceForm } from '../forms/WorkExperienceForm;;
+import { EducationForm } from '../forms/EducationForm;;
+import { SkillsForm } from '../forms/SkillsForm;;
+import { CertificationsForm } from '../forms/CertificationsForm;;
+import { PreviewResume } from '../PreviewResume;;
 import { logInfo } from '@/utils/productionLogger;'
 ;''
 interface ResumeStepContentProps {;;
@@ -15,7 +15,7 @@ interface ResumeStepContentProps {;;
   onNextStep: "() => void;",;";";";";""
   onPrevStep: "() => void;";"
 };
-;
+
 export const ResumeStepContent: unknown = ({;
   resume,;
   onNextStep,;""

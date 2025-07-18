@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { Loader2, Download, ShieldCheck } from '@/components/ui/icons;';
+import React, { useState } from 'react';;
+import { Loader2, Download, ShieldCheck } from '@/components/ui/icons;;
 import {;
   Card,;
   CardContent,;''
@@ -8,18 +8,18 @@ import {;
   CardFooter,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
-import { Button } from '@/components/ui/button;'';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group;'';
-import { Label } from '@/components/ui/label;'';
-import { Input } from '@/components/ui/input;'';
-import { Switch } from '@/components/ui/switch;';
+} from '@/components/ui/card;;
+import { Button } from '@/components/ui/button;;
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group;;
+import { Label } from '@/components/ui/label;;
+import { Input } from '@/components/ui/input;;
+import { Switch } from '@/components/ui/switch;;
 import type {;
   BlockchainNetwork,;''
   DeploymentOptions,;;
 } from '@/types/smart-contracts;'
 ;;
-import { toast } from 'sonner;'';
+import { toast } from 'sonner;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
 ;''
 interface SmartContractDeploymentProps {;;
@@ -27,7 +27,7 @@ interface SmartContractDeploymentProps {;;
   onDeploy: "(options: DeploymentOptions) => Promise<void>;",;";";";";""
   isDeploying: "boolean;";"
 };
-;
+
 export function SmartContractDeployment(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   solidityCode,;
   onDeploy,;""
@@ -41,13 +41,13 @@ export function SmartContractDeployment(): unknown {): unknown {): unknown {): u
       walletAddress: '',;'
     },;''
   );
-;
+
   const handleDeployContract: unknown = async () => {;''
     if (deploymentOptions.deployToChain && !deploymentOptions.walletAddress) {;;
       toast.error('Please enter a wallet address for blockchain deployment');'
       return;
     };''
-;
+
     try {;
       await onDeploy(deploymentOptions);''
     } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;;
@@ -196,9 +196,9 @@ export function SmartContractDeployment(): unknown {): unknown {): unknown {): u
     </Card>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

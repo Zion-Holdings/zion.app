@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
+import { useState } from 'react';;
 import { Check, Copy } from '@/components/ui/icons;'
 ;;
 import { cn } from '@/lib/utils;'
-;
+
 =======
 import { useState } from 'react''
 import { Check, Copy } from '@/components/ui/icons'
@@ -18,7 +18,7 @@ interface CodeBlockProps {;
 <<<<<<< HEAD
   className?: string;''
 };
-;
+
 export function CodeBlock(): unknown {): unknown {): unknown {): unknown {): unknown {{;''
   code,;;
   language = 'bash',;'
@@ -43,7 +43,7 @@ export function CodeBlock(): unknown {): unknown {): unknown {): unknown {): unk
     }, 2000);
 <<<<<<< HEAD
   };''
-;
+
   return (;
     <div;''
       className={cn(;;

@@ -1,15 +1,15 @@
 <<<<<<< HEAD
-import type { ApplicationStatus } from '@/types/jobs;'';
-import { Progress } from '@/components/ui/progress;'';
+import type { ApplicationStatus } from '@/types/jobs;;
+import { Progress } from '@/components/ui/progress;;
 import { CheckCircle2, Circle, CircleDot } from '@/components/ui/icons;'
 ;;
 import { cn } from '@/lib/utils;'
-;
+
 interface ApplicationProgressProps {;
   status: ApplicationStatus;
   className?: string;
 };
-;
+
 export function ApplicationProgress(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   status,;
   className,;''
@@ -64,7 +64,7 @@ export function ApplicationProgress(): unknown {): unknown {): unknown {): unkno
     };
 <<<<<<< HEAD
   };''
-;
+
   const progressValue: unknown = getProgressValue();
 ;''
   return (;;
@@ -143,7 +143,7 @@ function StatusIcon(): unknown {): unknown {): unknown {): unknown {): unknown {
     hired: "5",;";";";";""
     rejected: "5",;"
   };
-;
+
   const currentRank: unknown = statusRank[current];""
   const statusRank_: unknown = statusRank[status];";""
 ;";";""
@@ -165,7 +165,7 @@ function StatusIcon(): unknown {): unknown {): unknown {): unknown {): unknown {
 }";"
 };""
 }""
-}
+
 }""
 =======
 };"

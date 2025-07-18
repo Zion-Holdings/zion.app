@@ -1,15 +1,14 @@
 <<<<<<< HEAD
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit;
 
 interface WishlistState {
   items: string[];
-}
 
 const loadState = (): string[] => {
   if (typeof window !== 'undefined') {
     const saved = localStorage.getItem('wishlist');
     return saved ? JSON.parse(saved) : [];
-  }
+
   return [];
 };
 
@@ -26,20 +25,20 @@ const wishlistSlice = createSlice({
         state.items.push(action.payload);
         if (typeof window !== 'undefined') {
           localStorage.setItem('wishlist', JSON.stringify(state.items));
-        }
-      }
+
+
     },
     removeItem: (state, action: PayloadAction<string>) => {
       state.items = state.items.filter(item => item !== action.payload);
       if (typeof window !== 'undefined') {
         localStorage.setItem('wishlist', JSON.stringify(state.items));
-      }
+
     },
     clearWishlist: (state) => {
       state.items = [];
       if (typeof window !== 'undefined') {
         localStorage.removeItem('wishlist');
-      }
+
     },
   },
 });

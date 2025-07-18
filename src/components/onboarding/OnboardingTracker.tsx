@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { CheckCircle, ArrowRight } from '@/components/ui/icons;'
 ;;
-import { cn } from '@/lib/utils;'';
-import { Button } from '@/components/ui/button;'';
+import { cn } from '@/lib/utils;;
+import { Button } from '@/components/ui/button;;
 import Link from 'next/link;'
-;'';
+;;
 export interface OnboardingStep {;;
   id: "string;",;";";";";""
   label: "string;",";";";";""
@@ -13,7 +13,7 @@ export interface OnboardingStep {;;
   link: string;
   action?: string;
 };
-;
+
 interface OnboardingTrackerProps {;
   steps: OnboardingStep[];
   title?: string;
@@ -27,7 +27,7 @@ export function OnboardingTracker(): unknown {): unknown {): unknown {): unknown
 }: OnboardingTrackerProps) {;
   const completedSteps: unknown = steps.filter((step) => step.completed).length;
   const progress: unknown = Math.round((completedSteps / steps.length) * 100);''
-;
+
   return (;
     <div;''
       className={cn(;;
@@ -117,7 +117,7 @@ export function OnboardingTracker(): unknown {): unknown {): unknown {): unknown
       {/* Progress bar */};"
       <div className=w-full h-2 bg-zion-blue rounded-full mb-5>"
         <div;"
-          className=h-2 bg-gradient-to-r from-zion-purple to-zion-cyan rounded-full transition-all duration-500 ease-out
+          className=h-2 bg-gradient-to-r from-zion-purple to-zion-cyan rounded-full transition-all duration-500 ease-out`
           style={{ width: "`${progress"}%` }}
         ></div>;"
       </div>;"
@@ -167,6 +167,7 @@ export function OnboardingTracker(): unknown {): unknown {): unknown {): unknown
 
 }"
 }"
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

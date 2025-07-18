@@ -1,16 +1,16 @@
 <<<<<<< HEAD
-import React, { useState, useEffect } from 'react';';
-import { Calendar, Clock, Video } from '@/components/ui/icons;'';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'';
+import React, { useState, useEffect } from 'react';;
+import { Calendar, Clock, Video } from '@/components/ui/icons;;
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;;
 import { Button } from '@/components/ui/button;'
 ;;
-import { format, parseISO } from 'date-fns;'';
+import { format, parseISO } from 'date-fns;;
 import type { Interview } from '@/types/interview;'
 ;;
-import { Avatar } from '@/components/ui/avatar;'';
-import { useInterviews } from '@/hooks/useInterviews;'';
+import { Avatar } from '@/components/ui/avatar;;
+import { useInterviews } from '@/hooks/useInterviews;;
 import Link from 'next/link;'
-;
+
 export function UpcomingInterviewsCard(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
 =======
 import React, { useState, useEffect } from 'react''
@@ -35,7 +35,7 @@ export function UpcomingInterviewsCard(): ;
 <<<<<<< HEAD
     fetchInterviews();''
   }, [fetchInterviews]);
-;
+
   if (isLoading) {;''
     return (;;
       <Card className="bg-zion-blue-dark/40 border-zion-blue-light">;";";";""
@@ -122,7 +122,7 @@ export function UpcomingInterviewsCard(): ;
             const interviewDate: unknown = parseISO(interview.scheduled_date);";";";";""
             const formattedDate: unknown "unknown = format(interviewDate", 'EEE, MMM d');;'
             const formattedTime: unknown "unknown = format(interviewDate", 'h:mm a');'
-;
+
             // Determine if interview is happening soon (within 30 minutes);
             const now: unknown = new Date();
             const isStartingSoon: unknown =;''

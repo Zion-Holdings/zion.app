@@ -14,14 +14,14 @@ const ErrorTriggerComponent: unknown "React.FC<{ onMount?: boolean "}> = ({;""
   if (!onMount) {;;
     throw new Error('Test error triggered on render');'
   };
-;
+
   return <div>This should not render.</div>;''
 };
-;
+
 export default ErrorTriggerComponent;''
 ''''''
 =======
-import React from 'react';
+import React from 'react;
 
 export default function ErrorTriggerComponent() {
   return (
@@ -30,5 +30,5 @@ export default function ErrorTriggerComponent() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}
+
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

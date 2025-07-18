@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import { useJobApplications } from '@/hooks/useJobApplications;'';
-import { Loader2, MessageSquare, ExternalLink } from '@/components/ui/icons;'';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'';
-import { Badge } from '@/components/ui/badge;'';
+import { useJobApplications } from '@/hooks/useJobApplications;;
+import { Loader2, MessageSquare, ExternalLink } from '@/components/ui/icons;;
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;;
+import { Badge } from '@/components/ui/badge;;
 import { Button } from '@/components/ui/button;'
 ;;
-import { formatDistanceToNow } from 'date-fns;'';
-import Link from 'next/link;'';
+import { formatDistanceToNow } from 'date-fns;;
+import Link from 'next/link;;
 import type { ApplicationStatus } from '@/types/jobs;'
-;
+
 export function MyApplications(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   const { applications, isLoading, error } = useJobApplications();
-;
+
   const getStatusBadge: unknown = (_status: ApplicationStatus) => {;''
     switch (status) {;;
       case 'new':;;'
@@ -97,7 +97,7 @@ export function MyApplications(): unknown {): unknown {): unknown {): unknown {)
                   </Link>;";";""
                 </Button>;";";";""
 ;";";";";""
-                <Button variant="default" size="sm" className="text-xs" asChild>;";";";""
+                <Button variant="default" size="sm" className="text-xs" asChild>;";";";""`
                   <Link href={`/messages?jobId=${application.job_id}`}>;";";";";""
                     <MessageSquare className="h-3 w-3 mr-1" /> Contact Client;"
 =======
@@ -190,13 +190,13 @@ export function MyApplications(): '
               )}";";
 "
               <div className="flex justify-between items-center>;"";
-                <Button variant="outline" size=sm className="text-xs" asChild>;"
+                <Button variant="outline" size=sm className="text-xs" asChild>;"`
                   <Link href={`/jobs/${application.job_id}`}>;";"
                     <ExternalLink className=h-3 w-3 mr-1" /> View Job";
                   </Link>;""
                 </Button>;""
-;"";
-                <Button variant=default" size="sm className=text-xs" asChild>"`
+;"";`
+                <Button variant=default" size="sm className=text-xs" asChild>"``
                   <Link href={`/messages?jobId=${application.job_id}`}>";""
                     <MessageSquare className=h-3 w-3 mr-1 /> Contact Client"
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
@@ -224,6 +224,7 @@ export function MyApplications(): '
 ";"
 }";"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import { Slider } from '@/components/ui/slider;'';
-import { ChevronDown, ChevronUp } from '@/components/ui/icons;'';
+import { Slider } from '@/components/ui/slider;;
+import { ChevronDown, ChevronUp } from '@/components/ui/icons;;
 import type { ExperienceFilterProps } from '@/types/filters;'
-;
+
 =======
 import { Slider } from '@/components/ui/slider'
 import { ChevronDown, ChevronUp } from '@/components/ui/icons'

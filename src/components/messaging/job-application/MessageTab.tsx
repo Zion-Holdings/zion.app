@@ -1,16 +1,16 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Textarea } from '@/components/ui/textarea;'';
-import { Input } from '@/components/ui/input;'';
+import React from 'react';;
+import { Textarea } from '@/components/ui/textarea;;
+import { Input } from '@/components/ui/input;;
 import { Label } from '@/components/ui/label;'
-;'';
+;;
 export interface MessageTabProps {;;
   message: "string;",;";";";";""
   setMessage: "(message: string) => void;",;";";";";""
   proposalLink: "string;",";";";";""
   setProposalLink: "(link: string) => void;";"
 };
-;
+
 export function MessageTab(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   message,;
   setMessage,;""

@@ -113,5 +113,5 @@ export default function WorkFuturesSimulator(): ;
             ctx.lineTo(q.x, q.y);
             ctx.stroke()'
           } else if (!p || !q) {;
-            logErrorToProduction('Invalid connection', undefined, {;
-              context: 'WorkFuturesSimulator.drawEdge',;';;`
+            logErrorToProduction('Invalid connection', undefined, {;`
+              context: 'WorkFuturesSimulator.drawEdge',;';;``

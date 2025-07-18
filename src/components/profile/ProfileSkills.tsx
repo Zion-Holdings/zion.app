@@ -52,7 +52,7 @@ export function ProfileSkills(): unknown {): unknown {): unknown {): unknown {):
 ;"
             <div className=h-2 w-full bg-zion-blue-light rounded-full overflow-hidden>"
               <div;"
-                className=h-full bg-gradient-to-r from-zion-purple to-zion-cyan
+                className=h-full bg-gradient-to-r from-zion-purple to-zion-cyan`
                 style={{ width: "`${(skill.level / 5) * 100"}%` }};
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
               />;
@@ -76,6 +76,7 @@ export function ProfileSkills(): unknown {): unknown {): unknown {): unknown {):
 
 }"
 }"
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

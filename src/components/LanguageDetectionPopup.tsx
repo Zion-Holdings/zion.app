@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import { useState, useEffect } from 'react';';
-import { safeStorage } from '@/utils/safeStorage;'';
-import { useTranslation } from 'react-i18next'';
+import { useState, useEffect } from 'react';;
+import { safeStorage } from '@/utils/safeStorage;;
+import { useTranslation } from 'react-i18next;
 =======
 import { useState, useEffect } from 'react;
 import { safeStorage } from '@/utils/safeStorage'
@@ -17,13 +17,13 @@ import {;
   AlertDialogFooter,
   AlertDialogHeader,;''
   AlertDialogTitle,;''
-} from '../components/ui/alert-dialog;'';
-import { useLanguage } from '../context/LanguageContext'';
+} from '../components/ui/alert-dialog;;
+import { useLanguage } from '../context/LanguageContext;
 import type {;
   SupportedLanguage,;''
   LanguageContextType,;''
 } from '../context/LanguageContext''
-;
+
 export function LanguageDetectionPopup(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
 =======
   AlertDialogContent,'
@@ -124,7 +124,7 @@ export function LanguageDetectionPopup(): ;
 };
 
 };''
-}
+
 }''
 }''
 =======
@@ -133,7 +133,7 @@ export function LanguageDetectionPopup(): ;
           <AlertDialogTitle className=text-white>"
             {t('language.switch_to_detected', { language: "languageName })};"";
           </AlertDialogTitle>;"";
-          <AlertDialogDescription className="text-zion-slate-light">;"
+          <AlertDialogDescription className="text-zion-slate-light">;"`
             {`${supportedLanguages.find((lang) => lang.code === detectedLanguage)?.flag || ''} ${languageName}`};
           </AlertDialogDescription>;
         </AlertDialogHeader>'
@@ -155,6 +155,7 @@ export function LanguageDetectionPopup(): ;
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,21 +1,21 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
-import { Check, ChevronRight } from '@/components/ui/icons;'';
+import React from 'react';;
+import * as React from 'react';;
+import { Check, ChevronRight } from '@/components/ui/icons;;
 import * as MenubarPrimitive from '@radix-ui/react-menubar;'
 ;;
 import { cn } from '@/lib/utils;'
-;
+
 const MenubarMenu: unknown = MenubarPrimitive.Menu;
-;
+
 const MenubarGroup: unknown = MenubarPrimitive.Group;
-;
+
 const MenubarPortal: unknown = MenubarPrimitive.Portal;
-;
+
 const MenubarSub: unknown = MenubarPrimitive.Sub;
-;
+
 const MenubarRadioGroup: unknown = MenubarPrimitive.RadioGroup;
-;
+
 const Menubar: unknown = React.forwardRef<;
   React.ElementRef<typeof MenubarPrimitive.Root>,;
   React.ComponentPropsWithoutRef<typeof MenubarPrimitive.Root>;''
@@ -105,7 +105,7 @@ const MenubarSubTrigger = React.forwardRef<;
   </MenubarPrimitive.SubTrigger>;
 ));
 MenubarSubTrigger.displayName = MenubarPrimitive.SubTrigger.displayName;
-;
+
 const MenubarSubContent: unknown = React.forwardRef<;
   React.ElementRef<typeof MenubarPrimitive.SubContent>,;
   React.ComponentPropsWithoutRef<typeof MenubarPrimitive.SubContent>;""
@@ -149,7 +149,7 @@ const MenubarSubContent = React.forwardRef<;
 ));
 MenubarSubContent.displayName = MenubarPrimitive.SubContent.displayName;
 <<<<<<< HEAD
-;
+
 const MenubarContent: unknown = React.forwardRef<;''
   React.ElementRef<typeof MenubarPrimitive.Content>,;
   React.ComponentPropsWithoutRef<typeof MenubarPrimitive.Content>;
@@ -330,7 +330,7 @@ const MenubarLabel = React.forwardRef<;
 ));
 MenubarLabel.displayName = MenubarPrimitive.Label.displayName;
 <<<<<<< HEAD
-;
+
 const MenubarSeparator: unknown = React.forwardRef<;
   React.ElementRef<typeof MenubarPrimitive.Separator>,;''
   React.ComponentPropsWithoutRef<typeof MenubarPrimitive.Separator>;
@@ -369,7 +369,7 @@ const MenubarShortcut = ({;
   );''
 };;
 MenubarShortcut.displayname = 'MenubarShortcut;'
-;
+
 =======
   ...props'
 }: React.HTMLAttributes<HTMLSpanElement>) => {'

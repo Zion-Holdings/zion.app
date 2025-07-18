@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react;
 
 export default function Notifications() {
   return (
@@ -7,4 +7,3 @@ export default function Notifications() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}

@@ -1,22 +1,22 @@
 <<<<<<< HEAD
-import React from 'react';';
-import type { UseFormReturn } from 'react-hook-form;';
+import React from 'react';;
+import type { UseFormReturn } from 'react-hook-form;;
 import {;
   FormField,;''
   FormItem,;
   FormLabel,;
   FormControl,;''
   FormMessage,;;
-} from '@/components/ui/form;'';
-import { Input } from '@/components/ui/input;'';
-import type { TalentProfile } from '@/types/talent;'';
+} from '@/components/ui/form;;
+import { Input } from '@/components/ui/input;;
+import type { TalentProfile } from '@/types/talent;;
 import type { FormValues } from './useHireRequestForm;'
-;
+
 interface BudgetFieldsProps {;
   form: UseFormReturn<FormValues>;
   _talent?: TalentProfile;
 };
-;
+
 export function BudgetFields(): unknown {): unknown {): unknown {): unknown {): unknown {{ form, _talent }: BudgetFieldsProps) {;''
   return (;
     <>;

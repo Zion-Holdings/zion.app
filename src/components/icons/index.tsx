@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import React from 'react';';
-import type { SVGProps } from 'react';';
-import { logWarn } from '@/utils/productionLogger;';
+import React from 'react';;
+import type { SVGProps } from 'react';;
+import { logWarn } from '@/utils/productionLogger;;
 =======
 import React from 'react'
 import type { SVGProps } from 'react''
@@ -303,7 +303,7 @@ import {;
   ZoomIn as LucideZoomIn,;''
   ZoomOut as LucideZoomOut,;;
 } from 'lucide-react;'
-;
+
 export const Home: unknown = LucideHome;
 export const Bot: unknown = LucideBot;
 export const Sparkles: unknown = LucideSparkles;
@@ -605,7 +605,7 @@ export const ZapOff: unknown = LucideZapOff;
 export const Zap: unknown = LucideZap;
 export const ZoomIn: unknown = LucideZoomIn;
 export const ZoomOut: unknown = LucideZoomOut;
-;
+
 =======
   Youtube as LucideYoutube,'
   ZapOff as LucideZapOff,'
@@ -924,8 +924,8 @@ export type IconProps = SVGProps<SVGSVGElement> & {;
 <<<<<<< HEAD
   className?: string;''
 };
-;
-// Create a map of icon names to component references;'';
+
+// Create a map of icon names to component references;;
 const iconMap: unknown "unknown = {;",;""
   home: "LucideHome",;";";";";""
   'bot-message-square': LucideBot, // Assuming Bot is used for bot-message-square;;'
@@ -1221,7 +1221,7 @@ const iconMap: unknown "unknown = {;",;""
   'zoom-in': LucideZoomIn,;;'
   'zoom-out': LucideZoomOut,;'
 };
-;
+
 =======
   className?: string'
 }'
@@ -1540,7 +1540,7 @@ export const Icon: unknown React.FC<IconProps> = ({;
 }) => {'
   const LucideIconComponent = iconMap[name];
 '
-  if (!LucideIconComponent) {'
+  if (!LucideIconComponent) {'`
     logWarn(`Icon ${name}" not found.`);
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
     return null;
@@ -1558,6 +1558,7 @@ export const _Icons: unknown = iconMap; // Export the map if you need to refer t
 }"
 
 export default Icon; // Default export the Icon component;"";
-export const _Icons = iconMap; // Export the map if you need to refer to available icons;"";
+export const _Icons = iconMap; // Export the map if you need to refer to available icons;"";`
 """'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

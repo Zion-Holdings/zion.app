@@ -1,26 +1,26 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { Save } from '@/components/ui/icons;';
+import { useState } from 'react';;
+import { Save } from '@/components/ui/icons;;
 import {;''
   Dialog,;
   DialogContent,;
   DialogHeader,;''
   DialogTitle,;;
-} from '@/components/ui/dialog;'';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs;'';
+} from '@/components/ui/dialog;;
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs;;
 import { Button } from '@/components/ui/button;'
 ;;
-import type { TalentProfile } from '@/types/talent;'';
-import { ContractForm } from './components/ContractForm;'';
-import type { ContractFormValues } from './components/ContractForm;'';
-import { ContractPreview } from './components/ContractPreview;'';
-import { TemplateManager } from './templates/TemplateManager;';
+import type { TalentProfile } from '@/types/talent;;
+import { ContractForm } from './components/ContractForm;;
+import type { ContractFormValues } from './components/ContractForm;;
+import { ContractPreview } from './components/ContractPreview;;
+import { TemplateManager } from './templates/TemplateManager;;
 import type {;
   DeploymentOptions,;''
   SmartContractInfo,;;
-} from '@/types/smart-contracts;'';
-import { useSmartContracts } from '@/hooks/useSmartContracts;'';
-import { toast } from 'sonner;'';
+} from '@/types/smart-contracts;;
+import { useSmartContracts } from '@/hooks/useSmartContracts;;
+import { toast } from 'sonner;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
 ;''
 interface SmartContractBuilderProps {;;
@@ -30,7 +30,7 @@ interface SmartContractBuilderProps {;;
   clientName: string;";";";";""
   onContractGenerated?: (contractContent: "string) => void;";"
 };
-;
+
 export function SmartContractBuilder(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   isOpen,;
   onClose,;""
@@ -125,7 +125,7 @@ export function SmartContractBuilder(): unknown {): unknown {): unknown {): unkn
         generatedContract,;
         deployOptions,;''
       );
-;
+
       if (contractInfo) {;''
         setDeploymentInfo(contractInfo);;
         setDeployStatus('deployed');;'
@@ -140,7 +140,7 @@ export function SmartContractBuilder(): unknown {): unknown {): unknown {): unkn
       toast.error('Failed to deploy smart contract');'
     };
   };''
-;
+
   // Modified to match the expected interface;
   const handleFormSubmit: unknown = (_contract: string) => {;''
     // This should be a function that takes a string (contract content);;
@@ -151,7 +151,7 @@ export function SmartContractBuilder(): unknown {): unknown {): unknown {): unkn
     setGeneratedContract(contract);;
     setActiveTab('preview');''
   };
-;
+
   return (;''
     <Dialog open={isOpen} onOpenChange={onClose}>;;
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">;";""

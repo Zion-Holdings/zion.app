@@ -1,13 +1,13 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { MessageSquare, Info, X } from '@/components/ui/icons;'';
-import { useRouter } from 'next/router;'';
-import { Button } from '@/components/ui/button;'';
+import React, { useState } from 'react';;
+import { MessageSquare, Info, X } from '@/components/ui/icons;;
+import { useRouter } from 'next/router;;
+import { Button } from '@/components/ui/button;;
 import { ChatBotPanel } from './ChatBotPanel;'
 ;;
-import { cn } from '@/lib/utils;'';
+import { cn } from '@/lib/utils;;
 import { useTheme } from '@/hooks/useTheme;'
-;
+
 export function SupportWidget(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
 =======
 import React, { useState } from 'react''

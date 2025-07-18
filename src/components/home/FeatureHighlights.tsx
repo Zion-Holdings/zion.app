@@ -1,15 +1,15 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Check } from '@/components/ui/icons;'';
+import React from 'react';;
+import { Check } from '@/components/ui/icons;;
 import { Card, CardContent } from '@/components/ui/card;'
 ;;
 import { cn } from '@/lib/utils;'
-;
+
 interface FeatureHighlightsProps {;
   className?: string;
   style?: React.CSSProperties;
 };
-;
+
 export function FeatureHighlights(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   className,;''
   style,;

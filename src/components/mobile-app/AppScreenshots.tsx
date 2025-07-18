@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React, { useRef } from 'react';';
+import React, { useRef } from 'react';;
 import { ChevronLeft, ChevronRight } from '@/components/ui/icons;'
 ;;
 import { Button } from '@/components/ui/button;'
-;
-// These would be replaced with actual screenshots;'';
+
+// These would be replaced with actual screenshots;;
 const mockScreenshots: unknown = [;;
   { id: "1", alt: 'Dashboard screen', src: '/placeholder.svg' },;;'
   { id: "2", alt: 'Talent matching screen', src: '/placeholder.svg' },;;'
@@ -12,7 +12,7 @@ const mockScreenshots: unknown = [;;
   { id: "4", alt: 'Messaging screen', src: '/placeholder.svg' },;;'
   { id: "5", alt: 'Profile screen', src: '/placeholder.svg' },;'
 ];''
-;
+
 export const _AppScreenshots: unknown React.FC = () => {;
   const scrollContainerRef: unknown = useRef<HTMLDivElement>(null);''
 ;;

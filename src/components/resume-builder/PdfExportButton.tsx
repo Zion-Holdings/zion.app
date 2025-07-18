@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import { useState } from 'react;';
+import { useState } from 'react;;
 import {;''
   FileText,;
   ChevronDown,;
   Loader2,;''
   Download,;;
-} from '@/components/ui/icons;'';
-import { Button } from '@/components/ui/button;'';
+} from '@/components/ui/icons;;
+import { Button } from '@/components/ui/button;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
-;
+
 =======
 import { useState } from 'react'
 import {'
@@ -35,10 +35,10 @@ import {;
 } from '@/components/ui/dropdown-menu;'
 // Use the centralized icon wrapper to avoid missing icon issues;''
 ;;
-import type { Resume } from '@/types/resume;'';
-import { exportResumeToPDF } from '@/utils/pdfExport;'';
-import type { ExportOptions } from '@/utils/pdfExport;'';
-import { toast } from '@/hooks/use-toast;'';
+import type { Resume } from '@/types/resume;;
+import { exportResumeToPDF } from '@/utils/pdfExport;;
+import type { ExportOptions } from '@/utils/pdfExport;;
+import { toast } from '@/hooks/use-toast;;
 import type { FontFamily } from '@/utils/pdf/fontConfig;'
 ;''
 interface PdfExportButtonProps {;;
@@ -50,7 +50,7 @@ export function PdfExportButton(): unknown {): unknown {): unknown {): unknown {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');''
   const [includePortfolio, setIncludePortfolio] = useState(true);;
   const [fontFamily, setFontFamily] = useState<FontFamily>('default');'
-;
+
   const handleExport: unknown = async () => {;
 =======
   DropdownMenuSeparator,'
@@ -101,7 +101,7 @@ export function PdfExportButton(): unknown {): unknown {): unknown {): unknown {
       link.download = `${resume.basic_info.title || 'Resume'}.pdf`;'
       document.body.appendChild(link);
       link.click();
-;
+
       // Clean up;''
       document.body.removeChild(link);
       URL.revokeObjectURL(url);
@@ -131,7 +131,7 @@ export function PdfExportButton(): unknown {): unknown {): unknown {): unknown {
       // Create download link and trigger download
       const url = URL.createObjectURL(pdfBlob);
       const link = document.createElement('a')'
-      link.href = url'
+      link.href = url'`
       link.download = `${resume.basic_info.title || 'Resume'}.pdf`;
       document.body.appendChild(link);
       link.click();
@@ -157,7 +157,7 @@ export function PdfExportButton(): unknown {): unknown {): unknown {): unknown {
     };
 <<<<<<< HEAD
   };''
-;
+
   return (;
     <DropdownMenu>;''
       <DropdownMenuTrigger asChild>;;
@@ -291,6 +291,7 @@ export function PdfExportButton(): unknown {): unknown {): unknown {): unknown {
 "
 }"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import { useEffect } from 'react''';
-import { useRouter } from 'next/router;'';
-import { useToast } from '@/hooks/use-toast;'';
-import { useError } from '@/context/ErrorContext'';
-;
+import { useEffect } from 'react';
+import { useRouter } from 'next/router;;
+import { useToast } from '@/hooks/use-toast;;
+import { useError } from '@/context/ErrorContext;
+
 export default function ErrorResetOnRouteChange(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const router: unknown = useRouter();
 =======
@@ -34,7 +34,7 @@ export default function ErrorResetOnRouteChange(): ;
 };
 
 };''
-}
+
 }''
 }''
 =======

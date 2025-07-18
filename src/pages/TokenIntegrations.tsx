@@ -102,5 +102,5 @@ export default function TokenIntegrations(): '
       setError('Please connect your wallet.');
       return;
     }'
-    if (!fromChain || !toChain || !amount || parseFloat(amount) <= 0) {;
-      setError('Please select chains and enter a valid amount to bridge.');';;`
+    if (!fromChain || !toChain || !amount || parseFloat(amount) <= 0) {;`
+      setError('Please select chains and enter a valid amount to bridge.');';;``

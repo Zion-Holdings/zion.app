@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import React, { Component } from 'react''';
-import type { ReactNode } from 'react'';
-;
-import { logErrorToProduction } from '@/utils/productionLogger'';
+import React, { Component } from 'react';
+import type { ReactNode } from 'react;
+
+import { logErrorToProduction } from '@/utils/productionLogger;
 
 interface Props {;
   children: ReactNode;
@@ -13,7 +13,7 @@ interface State {;
   hasError: boolean;
   error?: Error;
 };''
-'';
+
 export class ErrorBoundary extends Component<Props, State> {;
   constructor(props: Props) {;''
     super(props);''
@@ -55,7 +55,7 @@ export class ErrorBoundary extends Component<Props, State> {;
 };"";"
 """""
 =======
-import React from 'react';
+import React from 'react;
 
 export default function ErrorBoundary() {
   return (
@@ -64,5 +64,5 @@ export default function ErrorBoundary() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}
+
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae

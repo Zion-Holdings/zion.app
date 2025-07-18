@@ -1,15 +1,15 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { Loader2, Check } from '@/components/ui/icons;'';
-import { Button } from '@/components/ui/button;';
+import React, { useState } from 'react';;
+import { Loader2, Check } from '@/components/ui/icons;;
+import { Button } from '@/components/ui/button;;
 import type {;
   GeneratedMilestone,;''
   MilestoneInput,;;
-} from '@/hooks/useMilestoneGenerator;'';
-import { useMilestoneGenerator } from '@/hooks/useMilestoneGenerator;'';
+} from '@/hooks/useMilestoneGenerator;;
+import { useMilestoneGenerator } from '@/hooks/useMilestoneGenerator;;
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'
 ;;
-import { Badge } from '@/components/ui/badge;'';
+import { Badge } from '@/components/ui/badge;;
 import { format, parseISO } from 'date-fns;'
 ;''
 interface MilestoneSuggestionsProps {;;
@@ -20,7 +20,7 @@ interface MilestoneSuggestionsProps {;;
   projectType: string;";";";";""
   onMilestonesGenerated?: (milestones: "GeneratedMilestone[]) => void;";"
 };
-;
+
 =======
 import React, { useState } from 'react''
 import { Loader2, Check } from '@/components/ui/icons'
@@ -69,7 +69,7 @@ export function MilestoneSuggestions(): unknown {): unknown {): unknown {): unkn
   const [showSuggestions, setShowSuggestions] = useState(false);
 "
   const handleGenerateMilestones = async () => {;"
-    const input: unknown MilestoneInput = {
+    const input: unknown MilestoneInput = {`
       scope: "`${projectName"}: ${scopeSummary}`,
       startDate: startDate.toISOString()"
       endDate: "endDate ? endDate.toISOString() : null
@@ -87,7 +87,7 @@ export function MilestoneSuggestions(): unknown {): unknown {): unknown {): unkn
 <<<<<<< HEAD
     };''
   };
-;
+
   const formatDate: unknown = (_dateString: string) => {;''
     try {;;
       return format(parseISO(dateString), 'MMM dd, yyyy');'
@@ -246,6 +246,7 @@ export function MilestoneSuggestions(): unknown {): unknown {): unknown {): unkn
 "
 
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { InfoIcon } from '@/components/ui/icons;';
+import React from 'react';;
+import { InfoIcon } from '@/components/ui/icons;;
 import {;
   Table,;
   TableBody,;''
@@ -8,18 +8,18 @@ import {;
   TableHead,;
   TableHeader,;''
   TableRow,;;
-} from '@/components/ui/table;'';
-import { Badge } from '@/components/ui/badge;'';
-import { Switch } from '@/components/ui/switch;'';
+} from '@/components/ui/table;;
+import { Badge } from '@/components/ui/badge;;
+import { Switch } from '@/components/ui/switch;;
 import { toast } from '@/hooks/use-toast;'
-;
+
 import {;''
   Tooltip,;
   TooltipContent,;
   TooltipProvider,;''
   TooltipTrigger,;;
 } from '@/components/ui/tooltip;'
-;'';
+;;
 export function RoleManagement(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   // Mock team members data;
   const teamMembers: unknown = [;''
@@ -284,7 +284,7 @@ export function RoleManagement(): '
   ) => {";
     // In a real app, this would make an API call to update permissions;"";
     toast({;""
-      title: 'Permission updated','
+      title: 'Permission updated','`
       description: `Permission ${permission} has been ${value ? 'granted' : 'revoked'}.`,;
     });
   }'
@@ -556,9 +556,9 @@ export function RoleManagement(): '
     </div>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -569,6 +569,7 @@ export function RoleManagement(): '
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

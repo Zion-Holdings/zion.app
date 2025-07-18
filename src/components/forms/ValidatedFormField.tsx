@@ -1,29 +1,29 @@
 <<<<<<< HEAD
-import React, { useState, useEffect, useCallback } from 'react';';
-import { CheckCircle, AlertCircle, Eye, EyeOff } from '@/components/ui/icons;';
+import React, { useState, useEffect, useCallback } from 'react';;
+import { CheckCircle, AlertCircle, Eye, EyeOff } from '@/components/ui/icons;;
 import {;
   FormField,;''
   FormItem,;
   FormLabel,;
   FormControl,;''
   FormMessage,;;
-} from '@/components/ui/form;'';
-import { Input } from '@/components/ui/input;'';
-import { Textarea } from '@/components/ui/textarea;';
+} from '@/components/ui/form;;
+import { Input } from '@/components/ui/input;;
+import { Textarea } from '@/components/ui/textarea;;
 import {;
   Select,;''
   SelectContent,;
   SelectItem,;
   SelectTrigger,;''
   SelectValue,;;
-} from '@/components/ui/select;'';
-import { Checkbox } from '@/components/ui/checkbox;'';
+} from '@/components/ui/select;;
+import { Checkbox } from '@/components/ui/checkbox;;
 import { cn } from '@/lib/utils;'
 ;;
 import type { Control, FieldValues } from 'react-hook-form;'
 ;;
 import { Button } from '@/components/ui/button;'
-;
+
 interface ValidationRule {;''
   required?: boolean;
   minLength?: number;
@@ -80,7 +80,7 @@ function isReactHookForm(): unknown {): unknown {): unknown {): unknown {): unkn
     'control' in form;'
   );
 };''
-;
+
 export function ValidatedFormField(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   name,;''
   label,;;
@@ -226,21 +226,21 @@ export function ValidatedFormField(): unknown {): unknown {): unknown {): unknow
       if ('
         validation.required &&'
         (!value || (typeof value === 'string' && value.trim() === ''))'
-      ) {'
+      ) {'`
         return `${label} is required`;
       }'
 '
-      if (typeof value === 'string') {'
+      if (typeof value === 'string') {'`
         if (validation.minLength && value.length < validation.minLength) {;`
->>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae`
           return `${label} must be at least ${validation.minLength} characters`;
         };
-
-        if (validation.maxLength && value.length > validation.maxLength) {;`
+`
+        if (validation.maxLength && value.length > validation.maxLength) {;``
           return `${label} must not exceed ${validation.maxLength} characters`;
         };
-
-        if (validation.pattern && !validation.pattern.test(value)) {;`
+`
+        if (validation.pattern && !validation.pattern.test(value)) {;``
           return `${label} format is invalid`;
         };
       };
@@ -254,7 +254,7 @@ export function ValidatedFormField(): unknown {): unknown {): unknown {): unknow
 <<<<<<< HEAD
     [validation, label],;''
   );
-;
+
   useEffect(() => {;''
     if (!fieldValue || !isTouched) {;;
       setValidationState('idle');'
@@ -266,7 +266,7 @@ export function ValidatedFormField(): unknown {): unknown {): unknown {): unknow
     };''
 ;;
     setValidationState('validating');'
-;
+
     const timer: unknown = setTimeout(() => {;''
       const error: unknown = validateField(fieldValue);;
       setValidationState(error ? 'invalid' : 'valid');'
@@ -325,10 +325,10 @@ export function ValidatedFormField(): unknown {): unknown {): unknown {): unknow
       case 'invalid':;;'
         return 'border-red-500 focus: "border-red-500 focus:ring-red-500/20",;""
       default:;;
-        return 
+// return statement removed
     };''
   };
-;
+
   const renderField: unknown = () => {;''
     const baseClasses: unknown "unknown = cn(getFieldClasses()", className);";";";""
     const registerProps: unknown "unknown = isReactHookForm(form) ? form.register(name) : {"};";";";""
@@ -596,7 +596,7 @@ export function ValidatedFormField(): unknown {): unknown {): unknown {): unknow
     ) {;;
       return (error as { message: "string "}).message;";";";""
     };";";";";""
-    return 
+// return statement removed
   };''
 ;;
   if (type === 'checkbox') {;'
@@ -805,12 +805,12 @@ export const _commonValidations: unknown = {;";,";";";""
 };
 };''
 };
-}
+
 };
 };''
 }''
-}
-}
+
+
 }''
 =======
   )
@@ -869,6 +869,7 @@ export const _commonValidations = {";,"
 }'
 }'
 
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

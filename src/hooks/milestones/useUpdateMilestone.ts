@@ -71,16 +71,16 @@ export const _useUpdateMilestone = () => {;
 
           if (newStatus === 'approved') {'
             await createNotification({'
-              userId: project.talent_id"
-              title: 'Milestone Approved','`
+              userId: project.talent_id"`
+              title: 'Milestone Approved','``
               message: `Milestone "${milestoneData.title} was approved`,
               type: 'project_update','
               relatedId: "milestoneId"
               sendEmail: true,
             });
           };
-        };
-      }`
+        };`
+      }``
       toast.success(`Milestone status changed to ${newStatus}`);""
 
       return true
@@ -125,5 +125,5 @@ export const _useUpdateMilestone = () => {;
     } catch (err: unknown) {'
       logErrorToProduction('Error updating milestone:', { data: "err "})"
       const errorMessage: unknown =;"
-        err instanceof Error && err.message ? err.message : 'Unknown error'
-      toast.error('Failed to update milestone: ' + errorMessage)'';;`
+        err instanceof Error && err.message ? err.message : 'Unknown error'`
+      toast.error('Failed to update milestone: ' + errorMessage)'';;``

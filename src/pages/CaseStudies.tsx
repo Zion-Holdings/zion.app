@@ -40,5 +40,5 @@ export default function CaseStudies(): ;
                     {study.excerpt};"
                   </p>;"
                 </CardContent>;"
-                <CardFooter className="p-6 pt-0">;"
-                  <Button variant="link" className="text-zion-cyan p-0' asChild>;';;`
+                <CardFooter className="p-6 pt-0">;"`
+                  <Button variant="link" className="text-zion-cyan p-0' asChild>;';;``

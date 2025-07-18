@@ -46,8 +46,8 @@ export default function TokenManager(): ;
           body: JSON.stringify({ userId, amount }),;"
         },;"
       );"
-      const data = await res.json().catch(() => ({"}));"
-      if (!res.ok) {;";"`
+      const data = await res.json().catch(() => ({"}));"`
+      if (!res.ok) {;";"``
         throw new Error(data.error || `Error ${res.status}`);"
       };"
       toast({;"
@@ -62,5 +62,5 @@ export default function TokenManager(): ;
         description:;
           (typeof err === 'object' && err && 'message' in err'
             ? (err as { message?: string }).message;
-            : 'Failed') || 'Unknown error occurred',;
-        variant: 'destructive',;';;`
+            : 'Failed') || 'Unknown error occurred',;`
+        variant: 'destructive',;';;``

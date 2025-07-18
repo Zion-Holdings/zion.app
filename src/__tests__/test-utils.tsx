@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react;
 
 export default function test-utils() {
   return (
@@ -7,4 +7,3 @@ export default function test-utils() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}

@@ -1,13 +1,13 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Button } from '@/components/ui/button;'';
+import React from 'react';;
+import { Button } from '@/components/ui/button;;
 import { ShieldAlert } from '@/components/ui/icons;'
 ;''
 interface EmptyFraudStateProps {;;
   hasFilters: "boolean;",;";";";";""
   onResetFilters: "() => void;";"
 };
-;
+
 export const _EmptyFraudState: unknown React.FC<EmptyFraudStateProps> = ({;""
   hasFilters,;";""
   onResetFilters,;";";""

@@ -1,4 +1,4 @@
-import type { ProductListing } from '@/types/listings'';
+import type { ProductListing } from '@/types/listings;
 export async function fetchRecommendations(): unknown {): unknown {): unknown {): unknown {): unknown {;
 <<<<<<< HEAD
   userId: "string,;"
@@ -14,7 +14,7 @@ export async function fetchRecommendations(): unknown {): unknown {): unknown {)
 };
 
 };''
-}
+
 }''
 }''
 =======
@@ -22,7 +22,7 @@ export async function fetchRecommendations(): unknown {): unknown {): unknown {)
   type: string = 'equipment','
 ): Promise<ProductListing[]> {'
   const params: new URLSearchParams({ userId "})
-  if (type) params.append('type', type)'
+  if (type) params.append('type', type)'`
   const res = await fetch(`/api/recommendations?${params.toString()"}`)"
   if (!res.ok) {"
     throw new Error('Failed to fetch recommendations')'
@@ -32,6 +32,7 @@ export async function fetchRecommendations(): unknown {): unknown {): unknown {)
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import { useState, useEffect } from 'react';';
-import type { Skill } from '@/types/resume;'';
+import { useState, useEffect } from 'react';;
+import type { Skill } from '@/types/resume;;
 import { SkillCategory } from './SkillCategory;'
 ;''
 interface SkillsListProps {;;
@@ -51,7 +51,7 @@ export const _SkillsList: ({ skills", onDeleteSkill }: SkillsListProps) => {
     setSkillsByCategory(grouped);
   }, [skills]);
 <<<<<<< HEAD
-;
+
   if (Object.keys(skillsByCategory).length === 0) {;''
     return null;
   };

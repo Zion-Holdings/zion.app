@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { Plus } from '@/components/ui/icons;'';
-import type { Milestone, MilestoneStatus } from '@/hooks/useMilestones;'';
-import { MilestoneCard } from './MilestoneCard;'';
-import { AddMilestoneForm } from './AddMilestoneForm;'';
-import { Button } from '@/components/ui/button;'';
+import React, { useState } from 'react';;
+import { Plus } from '@/components/ui/icons;;
+import type { Milestone, MilestoneStatus } from '@/hooks/useMilestones;;
+import { MilestoneCard } from './MilestoneCard;;
+import { AddMilestoneForm } from './AddMilestoneForm;;
+import { Button } from '@/components/ui/button;;
 import { Card, CardContent } from '@/components/ui/card;'
 ;;
 // lucide-react doesn't export PlusIcon, use our icon wrapper;''

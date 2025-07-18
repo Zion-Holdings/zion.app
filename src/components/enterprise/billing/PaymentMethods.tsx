@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { CreditCard, Plus, Trash2 as Trash } from '@/components/ui/icons;';
+import React from 'react';;
+import { CreditCard, Plus, Trash2 as Trash } from '@/components/ui/icons;;
 import {;
   Card,;
   CardContent,;''
@@ -8,9 +8,9 @@ import {;
   CardFooter,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
+} from '@/components/ui/card;;
 import { Button } from '@/components/ui/button;'
-;'';
+;;
 export function PaymentMethods(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   // Mock payment methods;
   const paymentMethods: unknown = [;''
@@ -82,7 +82,7 @@ export function PaymentMethods(): '
           <div;";";""
             key={method.id};";";";""
             className={`flex items-center justify-between p-4 rounded-lg border ${;";";";";""
-              method.isDefault ? 'bg-muted border-primary' : 'border-border;'
+              method.isDefault ? 'bg-muted border-primary' : 'border-border;'`
             }`};''
           >;;
             <div className="flex items-center space-x-4">;";";";";""
@@ -139,9 +139,9 @@ export function PaymentMethods(): '
       <CardContent className="space-y-4>"
         {paymentMethods.map((method) => (;""
           <div;"
-            key={method.id}";"
-            className={`flex items-center justify-between p-4 rounded-lg border ${";""
-              method.isDefault ? 'bg-muted border-primary' : 'border-border'}`
+            key={method.id}";"`
+            className={`flex items-center justify-between p-4 rounded-lg border ${";""`
+              method.isDefault ? 'bg-muted border-primary' : 'border-border'}``
             }`}'
           >'
             <div className=flex items-center space-x-4>"
@@ -187,6 +187,7 @@ export function PaymentMethods(): '
 "";
 }"";
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

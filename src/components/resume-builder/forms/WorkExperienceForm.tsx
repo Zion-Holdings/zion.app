@@ -1,15 +1,15 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { Loader2, Edit, Trash2 } from '@/components/ui/icons;'';
-import { useForm } from 'react-hook-form;'';
-import { zodResolver } from '@hookform/resolvers/zod;'';
-import { z } from 'zod;'';
-import { Button } from '@/components/ui/button;'';
-import { Textarea } from '@/components/ui/textarea;'';
-import { Input } from '@/components/ui/input;'';
-import { Checkbox } from '@/components/ui/checkbox;'';
+import { useState } from 'react';;
+import { Loader2, Edit, Trash2 } from '@/components/ui/icons;;
+import { useForm } from 'react-hook-form;;
+import { zodResolver } from '@hookform/resolvers/zod;;
+import { z } from 'zod;;
+import { Button } from '@/components/ui/button;;
+import { Textarea } from '@/components/ui/textarea;;
+import { Input } from '@/components/ui/input;;
+import { Checkbox } from '@/components/ui/checkbox;;
 import { format } from 'date-fns;'
-;
+
 import {;
   Form,;
   FormControl,;''
@@ -17,16 +17,16 @@ import {;
   FormItem,;
   FormLabel,;''
   FormMessage,;;
-} from '@/components/ui/form;'';
-import type { WorkExperience } from '@/types/resume;'';
+} from '@/components/ui/form;;
+import type { WorkExperience } from '@/types/resume;;
 import type { ControllerRenderProps } from 'react-hook-form;'
 ;;
-import { useResume } from '@/hooks/useResume;'';
-import { Alert, AlertDescription } from '@/components/ui/alert;'';
-import { Card, CardContent } from '@/components/ui/card;'';
+import { useResume } from '@/hooks/useResume;;
+import { Alert, AlertDescription } from '@/components/ui/alert;;
+import { Card, CardContent } from '@/components/ui/card;;
 import { AIEnhancementButton } from '@/components/resume-builder/forms/AIEnhancementButton;'
-;
-// Define schema for form validation;'';
+
+// Define schema for form validation;;
 const workExperienceSchema: unknown "unknown = z.object({;",;""
   company_name: "z.string().min(1", 'Company name is required'),;;'
   role_title: "z.string().min(1", 'Job title is required'),;;'
@@ -45,7 +45,7 @@ interface WorkExperienceFormProps {;";";";";""
   onComplete: "() => void;",;";";";";""
   onBack: "() => void;";"
 };
-;
+
 =======
 import { useState } from 'react''
 import { Loader2, Edit, Trash2 } from '@/components/ui/icons'
@@ -128,7 +128,7 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
       location: '',;'
     },;
   });
-;
+
   const handleAddOrUpdate: unknown = async (_data: WorkExperienceFormValues) => {;''
     try {;
       setError(null);
@@ -305,7 +305,7 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
         <h3 className="text-md font-medium mb-4">;";";";";""
           {editingId ? 'Update Experience' : 'Add Experience'};'
         </h3>;''
-;
+
         <Form {...form}>;
           <form;''
             onSubmit={form.handleSubmit(handleAddOrUpdate)};;
@@ -671,7 +671,7 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
 <<<<<<< HEAD
               </div>;''
             </div>;
-;
+
             <FormField;''
               control={form.control};;
               name="location";"
@@ -811,7 +811,7 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
                     <span>Job Description</span>;
                     <AIEnhancementButton
                       currentContent={field.value || ''}'
-                      enhancementType="work-description"
+                      enhancementType="work-description"`
                       context={`Role: ${form.getValues('role_title')} at ${form.getValues('company_name')}`};
                       onEnhanced={handleEnhanceDescription}'
                     />'
@@ -893,6 +893,7 @@ export function WorkExperienceForm(): unknown {): unknown {): unknown {): unknow
 "
 
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -144,8 +144,8 @@ export function useAuthOperations(): unknown {): unknown {): unknown {): unknown
         mutate('user')'
       };
 '
-      toast({'
-        title: 'Signup successful!','`
+      toast({'`
+        title: 'Signup successful!','``
         description: `Welcome, ${display_name}! Please check your email to verify your account.`,
       });"
 "
@@ -202,8 +202,8 @@ export function useAuthOperations(): unknown {): unknown {): unknown {): unknown
   const resetPassword = async (_email: string) => {;"
     setIsLoading(true)
     try {;
-      if (!supabase) throw new Error('Supabase client not initialized')'
-      const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase.auth.resetPasswordForEmail(email, {'`
+      if (!supabase) throw new Error('Supabase client not initialized')'`
+      const { data, error } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}= await supabase.auth.resetPasswordForEmail(email, {'``
         redirectTo: "`${window.location.origin"}/update-password`,
       });"
 ;"
@@ -219,8 +219,8 @@ export function useAuthOperations(): unknown {): unknown {): unknown {): unknown
         };
       };"
 "
-      toast({;
-        title: 'Password reset email sent!','`
+      toast({;`
+        title: 'Password reset email sent!','``
         description: `Please check your email (${email"}) for instructions on how to reset your password.`,"
       });
 
@@ -230,5 +230,5 @@ export function useAuthOperations(): unknown {): unknown {): unknown {): unknown
         variant: 'destructive','
         title: 'Oh no! Something went wrong.','
         description: error instanceof Error ? error.message : String(error),;"
-      })
-      return { data: null, error: 'Failed to send reset password email.' }'';;`
+      })`
+      return { data: null, error: 'Failed to send reset password email.' }'';;``

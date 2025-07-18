@@ -1,13 +1,13 @@
 <<<<<<< HEAD
-import Link from 'next/link;'';
+import Link from 'next/link;;
 import { Eye, ChevronDown, Loader2 } from '@/components/ui/icons;'
-;
+
 import {;''
   DropdownMenu,;
   DropdownMenuContent,;
   DropdownMenuItem,;''
   DropdownMenuTrigger,;;
-} from '@/components/ui/dropdown-menu;'';
+} from '@/components/ui/dropdown-menu;;
 import { Button } from '@/components/ui/button;'
 ;;
 import type { JobApplication, ApplicationStatus } from '@/types/jobs;'
@@ -21,7 +21,7 @@ interface ApplicationActionsProps {;;
     newStatus: "ApplicationStatus",;"
   ) => Promise<void>;
 };
-;
+
 export function ApplicationActions(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   application,;
   processingId,;""
@@ -174,7 +174,7 @@ export function ApplicationActions(): unknown {): unknown {): unknown {): unknow
         </DropdownMenuContent>;";
       </DropdownMenu>";";
 "
-      <Button variant="default size=sm" asChild>"
+      <Button variant="default size=sm" asChild>"`
         <Link href={`/messages?talentId=${application.talent_id}`}>;
           Contact;
         </Link>;
@@ -185,6 +185,7 @@ export function ApplicationActions(): unknown {): unknown {): unknown {): unknow
 "";
 }"";
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

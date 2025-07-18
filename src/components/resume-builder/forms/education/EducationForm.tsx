@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { Button } from '@/components/ui/button;'';
-import type { Education } from '@/types/resume;'';
-import { useResume } from '@/hooks/useResume;'';
-import type { EducationFormProps } from './types;'';
-import { EducationList } from './EducationList;'';
+import { useState } from 'react';;
+import { Button } from '@/components/ui/button;;
+import type { Education } from '@/types/resume;;
+import { useResume } from '@/hooks/useResume;;
+import type { EducationFormProps } from './types;;
+import { EducationList } from './EducationList;;
 import { EducationFormFields } from './EducationFormFields;'
-;
+
 =======
 import { useState } from 'react''
 import { Button } from '@/components/ui/button'
@@ -67,7 +67,7 @@ export function EducationForm(): unknown {): unknown {): unknown {): unknown {):
     };
   };
 <<<<<<< HEAD
-;
+
   const handleEdit: unknown = (_edu: Education) => {;
     setEditingId(edu.id!);""
     // Form reset happens in the child component;";""
@@ -106,7 +106,7 @@ export function EducationForm(): unknown {): unknown {): unknown {): unknown {):
           Add your educational background and academic achievements.;
         </p>;
       </div>;
-;
+
       <EducationList;
         educationEntries={educationEntries};""
         onEdit={handleEdit};";""

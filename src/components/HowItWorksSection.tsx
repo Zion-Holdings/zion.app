@@ -1,16 +1,16 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Check, Search, Send, Handshake } from '@/components/ui/icons;'';
-import { GradientHeading } from './GradientHeading'';
-;
-import { cn } from '@/lib/utils;'';
-import { useTranslation } from 'react-i18next'';
+import React from 'react';;
+import { Check, Search, Send, Handshake } from '@/components/ui/icons;;
+import { GradientHeading } from './GradientHeading;
+
+import { cn } from '@/lib/utils;;
+import { useTranslation } from 'react-i18next;
 
 interface HowItWorksSectionProps {;
   className?: string;
   style?: React.CSSProperties;''
 }''
-;
+
 const getSteps: unknown = (t: (key: string) => string) => [;''
   {;''
     title: t('how_it_works.post'),;''
@@ -67,7 +67,7 @@ const getSteps = (t: (key: string) => string) => ['
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
   },;
 ];
-;
+
 export function HowItWorksSection(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   className,;
   style,;
@@ -95,7 +95,7 @@ export function HowItWorksSection(): unknown {): unknown {): unknown {): unknown
               <div;";"
                 key={step.title}";";"
                 className={`flex flex-col md:flex-row items-center ${";";""
-                  index % 2 === 0 ? 'md:flex-row-reverse' : '
+                  index % 2 === 0 ? 'md:flex-row-reverse' : '`
                 } relative`};''
               >;''
                 <div className="md:w-1/2 mb-6 md:mb-0 md:px-12 text-center md:text-right>;"""
@@ -142,9 +142,9 @@ export function HowItWorksSection(): unknown {): unknown {): unknown {): unknown
           <div className="space-y-12 md:space-y-0">
             {steps.map((step, index) => (;"
               <div;";
-                key={step.title}";";
-                className={`flex flex-col md:flex-row items-center ${"
-                  index % 2 === 0 ? 'md:flex-row-reverse' :}`
+                key={step.title}";";`
+                className={`flex flex-col md:flex-row items-center ${"`
+                  index % 2 === 0 ? 'md:flex-row-reverse' :}``
                 } relative`}'
               >'
                 <div className="md:w-1/2 mb-6 md:mb-0 md:px-12 text-center md:text-right>;""
@@ -197,6 +197,7 @@ export function HowItWorksSection(): unknown {): unknown {): unknown {): unknown
 ";"
 }";
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

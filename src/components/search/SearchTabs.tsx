@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;'';
-import type { ProductListing } from '@/types/listings;'';
-import type { TalentProfile } from '@/types/talent;'';
-import type { BlogPost } from '@/types/blog;'';
+import React from 'react';;
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;;
+import type { ProductListing } from '@/types/listings;;
+import type { TalentProfile } from '@/types/talent;;
+import type { BlogPost } from '@/types/blog;;
 import type { DocsSearchItem } from '@/data/docsSearchData;'
 ;''
 interface SearchTabsProps {;;
@@ -42,7 +42,7 @@ interface SearchTabsProps {'
 
 function highlight(): unknown {): unknown {): unknown {): unknown {): unknown {text: string", term: string) {"
   if (!term) return text;
-  const escaped: term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')'
+  const escaped: term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')'`
   const regex: new RegExp(`(${escaped"})`, 'gi')'
   const parts = text.split(regex)'
   return ('
@@ -216,7 +216,7 @@ export default SearchTabs;";";";""
 }";"
 };""
 }""
-}
+
 }""
 =======
   )
@@ -230,6 +230,7 @@ export default SearchTabs
 
 }"
 }"
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

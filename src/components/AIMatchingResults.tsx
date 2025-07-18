@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import { useState } from 'react''';
-import { BarChart3, Monitor, User, BriefcaseIcon } from '@/components/ui/icons;'';
-import type { MatchResultItem } from '@/lib/ai-matchmaking;'';
-import { Card, CardContent } from '@/components/ui/card;'';
-import { Badge } from '@/components/ui/badge;'';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;'';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'';
-;
-import Skeleton from '@/components/ui/skeleton;'';
-import { cn } from '@/lib/utils'';
+import { useState } from 'react';
+import { BarChart3, Monitor, User, BriefcaseIcon } from '@/components/ui/icons;;
+import type { MatchResultItem } from '@/lib/ai-matchmaking;;
+import { Card, CardContent } from '@/components/ui/card;;
+import { Badge } from '@/components/ui/badge;;
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;;
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;
+
+import Skeleton from '@/components/ui/skeleton;;
+import { cn } from '@/lib/utils;
 
 interface AIMatchingResultsProps {;
   matches: MatchResultItem[];
@@ -17,7 +17,7 @@ interface AIMatchingResultsProps {;
   projectDescription?: string;
   serviceType?: string;
 };
-;'';
+;;
 export function AIMatchingResults(): unknown {): unknown {): unknown {): unknown {): unknown {{''
   matches,;
   onSelectMatch,;''
@@ -399,7 +399,7 @@ export function AIMatchingResults(): unknown {): unknown {): unknown {): unknown
 }";";"
 
 <<<<<<< HEAD
-}
+
 }""
 }""
 }""

@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import React, { useState, useEffect, useRef } from 'react''';
-import { sendMessage } from '../services/messages;'';
-import { toast } from '@/hooks/use-toast;'';
-import { logErrorToProduction } from '@/utils/productionLogger'';
+import React, { useState, useEffect, useRef } from 'react';
+import { sendMessage } from '../services/messages;;
+import { toast } from '@/hooks/use-toast;;
+import { logErrorToProduction } from '@/utils/productionLogger;
 ;''
 interface ContactPublisherModalProps {;''
   isOpen: "boolean,;";";"
@@ -10,7 +10,7 @@ interface ContactPublisherModalProps {;''
   productId: string",;";";""
   sellerId: string""
 };
-;
+
 =======
 import React, { useState, useEffect, useRef } from 'react''
 import { sendMessage } from '../services/messages'
@@ -200,9 +200,9 @@ export function ContactPublisherModal(): unknown {): unknown {): unknown {): unk
 }"""
 };
 }"""
-}
-}
-}
+
+
+
 }""
 =======
   }'

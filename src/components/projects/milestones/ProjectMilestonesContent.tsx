@@ -1,25 +1,25 @@
 <<<<<<< HEAD
 import type { Project } from '@/types/projects;'
 ;;
-import React, { useState, useEffect } from 'react';';
-import { useRouter } from 'next/router;'';
-import { useProjects } from '@/hooks/useProjects;'';
-import { useMilestones } from '@/hooks/useMilestones;'';
-import { useJobDetails } from '@/hooks/useJobDetails;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;'';
-import { useDisputeCheck } from '@/hooks/useDisputeCheck;'';
+import React, { useState, useEffect } from 'react';;
+import { useRouter } from 'next/router;;
+import { useProjects } from '@/hooks/useProjects;;
+import { useMilestones } from '@/hooks/useMilestones;;
+import { useJobDetails } from '@/hooks/useJobDetails;;
+import { useAuth } from '@/hooks/useAuth;;
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs;;
+import { useDisputeCheck } from '@/hooks/useDisputeCheck;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
-;
+
 import {;''
   MilestoneManager,;
   MilestoneCreator,;
   ProjectActions,;''
   ProjectHeader,;;
-} from './components;'';
-import { MilestoneActivities } from './MilestoneActivities;'';
+} from './components;;
+import { MilestoneActivities } from './MilestoneActivities;;
 import type { Milestone } from '@/hooks/milestones/types;'
-;
+
 export function ProjectMilestonesContent(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   const router: unknown = useRouter();;
   const { projectId: "rawProjectId "} = router.query;";";";";""
@@ -156,7 +156,7 @@ export function ProjectMilestonesContent(): '
     setActiveTab('milestones');'
     await handleMilestoneCreated();''
   };
-;
+
   if (isLoading || !project) {;''
     return (;;
       <div className="container mx-auto py-8 px-4">;";";";";""
@@ -332,10 +332,10 @@ export function ProjectMilestonesContent(): '
 <<<<<<< HEAD
 };''
 };
-}
+
 };''
 }''
-}
+
 }''
 =======
 }'

@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import React, { useState, useEffect, useRef } from 'react';';
-import { MessageSquare } from '@/components/ui/icons;'';
+import React, { useState, useEffect, useRef } from 'react';;
+import { MessageSquare } from '@/components/ui/icons;;
 import { format } from 'date-fns;'
 ;;
-import { useMessaging } from '@/context/MessagingContext;'';
-import { Button } from '@/components/ui/button;'';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;'';
-import { AspectRatio } from '@/components/ui/aspect-ratio;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { MessageBubble } from './MessageBubble;'';
-import { DateDivider } from './DateDivider;'';
+import { useMessaging } from '@/context/MessagingContext;;
+import { Button } from '@/components/ui/button;;
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;;
+import { AspectRatio } from '@/components/ui/aspect-ratio;;
+import { useAuth } from '@/hooks/useAuth;;
+import { MessageBubble } from './MessageBubble;;
+import { DateDivider } from './DateDivider;;
 import type { Message } from '@/types/messaging;'
-;'';
+;;
 export function ConversationDetailView(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const { _user } = useAuth();
   const { activeConversation, activeMessages, sendMessage, loadMessages } =;''
@@ -19,7 +19,7 @@ export function ConversationDetailView(): unknown {): unknown {): unknown {): un
   const [messageText, setMessageText] = useState('');'
   const messagesEndRef: unknown = useRef<HTMLDivElement>(null);
   const inputRef: unknown = useRef<HTMLTextAreaElement | null>(null);
-;
+
 =======
 import React, { useState, useEffect, useRef } from 'react''
 import { MessageSquare } from '@/components/ui/icons'
@@ -50,7 +50,7 @@ export function ConversationDetailView(): '
     inputRef.current?.focus();
   }, [activeConversation, loadMessages]);
 <<<<<<< HEAD
-;
+
   useEffect(() => {;''
     scrollToBottom();
   }, [activeMessages]);
@@ -66,7 +66,7 @@ export function ConversationDetailView(): '
     setMessageText('');'
     inputRef.current?.focus();
   };
-;
+
   const handleSendMessage: unknown = async (_e: React.FormEvent) => {;
     e.preventDefault();''
     await send();
@@ -78,7 +78,7 @@ export function ConversationDetailView(): '
       send();
     };''
   };
-;
+
   if (!activeConversation) {;''
     return (;;
       <div className="flex-1 flex flex-col items-center justify-center p-8">;";";";";""
@@ -207,7 +207,7 @@ export function ConversationDetailView(): '
           </div>;
         </div>;''
       </div>;
-;
+
       {/* Context information (if available) */};''
       {hasContextData && (;;
         <div className="p-4 border-b border-zion-purple/20 bg-zion-blue-dark/10">;";";";";""

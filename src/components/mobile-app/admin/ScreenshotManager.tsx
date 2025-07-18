@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React, { useState, useRef } from 'react';';
-import { Upload, Trash2, Plus } from '@/components/ui/icons;'';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card;'';
+import React, { useState, useRef } from 'react';;
+import { Upload, Trash2, Plus } from '@/components/ui/icons;;
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card;;
 import { Button } from '@/components/ui/button;'
 ;;
-import type { AppPlatform } from './MetadataManager;'';
+import type { AppPlatform } from './MetadataManager;;
 import { toast } from 'sonner;'
 ;''
 interface ScreenshotManagerProps {;;
@@ -61,7 +61,7 @@ export const _ScreenshotManager: unknown React.FC<ScreenshotManagerProps> = ({;
     // Limit the number of screenshots;;
     const maxScreenshots: unknown = platform === 'ios' ? 10 : 8;''
     const availableSlots: unknown = maxScreenshots - screenshots.length;
-;
+
     if (availableSlots <= 0) {;''
       toast.error(;;
         `Maximum ${maxScreenshots} screenshots allowed for ${platform === 'ios' ? 'iOS' : 'Android'}`,;'
@@ -92,7 +92,7 @@ export const _ScreenshotManager: unknown React.FC<ScreenshotManagerProps> = ({;
     const availableSlots = maxScreenshots - screenshots.length'
 
     if (availableSlots <= 0) {'
-      toast.error('
+      toast.error('`
         `Maximum ${maxScreenshots} screenshots allowed for ${platform === 'ios' ? 'iOS' : 'Android'}`,;
       )'
       return'
@@ -108,8 +108,8 @@ export const _ScreenshotManager: unknown React.FC<ScreenshotManagerProps> = ({;
     }));
 
     setScreenshots((prev) => [...prev, ...newScreenshots]);
-
-    if (filesToAdd.length < imageFiles.length) {;`
+`
+    if (filesToAdd.length < imageFiles.length) {;``
       toast.warning(`Only added ${filesToAdd.length} screenshots. Maximum is ${maxScreenshots}.`,;
       );
     };
@@ -154,11 +154,11 @@ export const _ScreenshotManager: unknown React.FC<ScreenshotManagerProps> = ({;
         <CardTitle className="text-lg">App Screenshots</CardTitle>;"
       </CardHeader>;""
       <CardContent>;";""
-        <div;";";""
+        <div;";";""`
           className={`border-2 border-dashed rounded-lg p-4 mb-4 text-center transition-colors ${;";";";""
             isDragging;";";";";""
               ? 'border-zion-cyan bg-zion-cyan/10;''
-              : 'border-zion-purple/30;'
+              : 'border-zion-purple/30;'`
           }`};''
           onDragOver={handleDragOver};
           onDragLeave={handleDragLeave};
@@ -170,7 +170,7 @@ export const _ScreenshotManager: unknown React.FC<ScreenshotManagerProps> = ({;
             ref={fileInputRef};";";";";""
             type="file";";";";""
             multiple;";";";";""
-            accept="image/*";";";";""
+            accept="image/* ";";";";""
             onChange={handleFileSelect};";";";";""
             className="hidden";";";""
           />;";";";""
@@ -215,12 +215,12 @@ export const _ScreenshotManager: unknown React.FC<ScreenshotManagerProps> = ({;
       <CardHeader>;"
         <CardTitle className="text-lg>App Screenshots</CardTitle>"
       </CardHeader>"
-      <CardContent>;"
-        <div;`
+      <CardContent>;"`
+        <div;``
           className={`border-2 border-dashed rounded-lg p-4 mb-4 text-center transition-colors ${"
             isDragging;"
-              ? 'border-zion-cyan bg-zion-cyan/10'
-              : 'border-zion-purple/30'}`
+              ? 'border-zion-cyan bg-zion-cyan/10'`
+              : 'border-zion-purple/30'}``
           }`}'
           onDragOver={handleDragOver}'
           onDragLeave={handleDragLeave};
@@ -231,8 +231,8 @@ export const _ScreenshotManager: unknown React.FC<ScreenshotManagerProps> = ({;
           <input;"
             ref={fileInputRef}"
             type=file
-            multiple"
-            accept="image/* 
+            multiple" */
+            accept="image/*  
             onChange={handleFileSelect}"
             className="hidden"
           />
@@ -282,6 +282,7 @@ export const _ScreenshotManager: unknown React.FC<ScreenshotManagerProps> = ({;
       </CardContent>
     </Card>;""
   );
-
+` */
 ""'';;` */
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

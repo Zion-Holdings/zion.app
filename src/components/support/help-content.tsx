@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { CreditCard, Users, Calendar } from '@/components/ui/icons;'';
+import React from 'react';;
+import { CreditCard, Users, Calendar } from '@/components/ui/icons;;
 import type { HelpCategory } from './types;'
-;
+
 export const HELP_CATEGORIES: unknown HelpCategory[] = [;''
   {;;
     id: 'getting-started',;;'

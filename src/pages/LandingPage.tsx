@@ -106,10 +106,10 @@ export default function LandingPage(): ;
                 </h3>;"
                 <p className="text-zion-slate-light mb-4">;"
                   {feature.description};"
-                </p>;"
-                <div;"`
+                </p>;"`
+                <div;"``
                   className={`flex items-center text-zion-cyan ${isRTL ? 'flex-row-reverse' : ''}`}'
                 >;
-                  <span>{t('general.explore')}</span>'
-                  <ArrowRight;`
-                    className={`${isRTL ? 'ml-0 mr-2 rotate-180' : 'ml-2'} h-4 w-4'};';;`
+                  <span>{t('general.explore')}</span>'`
+                  <ArrowRight;``
+                    className={`${isRTL ? 'ml-0 mr-2 rotate-180' : 'ml-2'} h-4 w-4'};';;``

@@ -4,12 +4,12 @@ import {;
   DialogHeader,;
 <<<<<<< HEAD
   DialogTitle,;
-} from '@/components/ui/dialog;'';
-import PostForm from './PostForm;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { useToast } from '@/hooks/use-toast;'';
-import { useRouter } from 'next/router;'';
-import { mutate } from 'swr;'';
+} from '@/components/ui/dialog;;
+import PostForm from './PostForm;;
+import { useAuth } from '@/hooks/useAuth;;
+import { useToast } from '@/hooks/use-toast;;
+import { useRouter } from 'next/router;;
+import { mutate } from 'swr;;
 import type { ForumCategory } from '@/types/community;'
 ;''
 interface NewPostDialogProps {;;
@@ -17,7 +17,7 @@ interface NewPostDialogProps {;;
   onOpenChange: (open: boolean) => void;
   initialCategory?: ForumCategory | null;
 };
-;
+
 =======
   DialogTitle,
 } from '@/components/ui/dialog'
@@ -77,7 +77,7 @@ export function NewPostDialog(): unknown {): unknown {): unknown {): unknown {):
   const initialValues: unknown "unknown = {;",;""
     categoryId: initialCategory || 'project-help',;''
   };
-;
+
   return (;''
     <Dialog open={open} onOpenChange={onOpenChange}>;;
       <DialogContent className="bg-zion-blue-dark border border-zion-blue-light text-white max-w-2xl">;"
@@ -106,7 +106,7 @@ export function NewPostDialog(): unknown {): unknown {): unknown {): unknown {):
         })'
         mutate('user')'
       }'
-      onOpenChange(false)'
+      onOpenChange(false)'`
       router.push(`/community/category/${values.categoryId}`);
     } catch {'
       toast({'
@@ -148,6 +148,7 @@ export default NewPostDialog;"";
 ";"
 }";"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

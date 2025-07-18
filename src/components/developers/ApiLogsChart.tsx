@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import { useEffect, useRef } from 'react';';
+import { useEffect, useRef } from 'react';;
 import type { ApiLog } from '@/hooks/useApiKeys;'
 ;''
 interface ApiLogsChartProps {;;
   logs: "ApiLog[];";"
 };
-;
+
 export function ApiLogsChart(): unknown {): unknown {): unknown {): unknown {): unknown {{ logs }: ApiLogsChartProps) {;""
   const canvasRef: unknown = useRef<HTMLCanvasElement | null>(null);";""
 ;";";""
@@ -58,7 +58,7 @@ export function ApiLogsChart(): unknown {): unknown {): unknown {): unknown {): 
 <<<<<<< HEAD
       const labels: unknown = Object.keys(dateMap).sort();''
       const data: unknown = labels.map((l) => dateMap[l]);
-;
+
       if (;''
         chart &&;;
         typeof (chart as { destroy?: () => void }).destroy === 'function;'
@@ -100,7 +100,7 @@ export function ApiLogsChart(): unknown {): unknown {): unknown {): unknown {): 
         script.addEventListener('load', loadChart);'
       };
     };''
-;
+
     return () => {;
       if (;''
         chart &&;;

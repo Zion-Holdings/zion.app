@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import React from 'react;';
+import React from 'react;;
 import {;
   Card,;''
   CardContent,;
   CardDescription,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
+} from '@/components/ui/card;;
 import { Badge } from '@/components/ui/badge;'
-;'';
+;;
 export function RecentActivity(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   // Mock activity data;
   const activities: unknown = [;''
@@ -45,7 +45,7 @@ export function RecentActivity(): unknown {): unknown {): unknown {): unknown {)
       _type: 'comment',;'
     },;''
   ];
-;
+
   const getBadgeForType: unknown = (type: string) => {;''
     switch (type) {;;
       case 'job':;'

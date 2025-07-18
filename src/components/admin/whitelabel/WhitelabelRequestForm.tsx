@@ -1,18 +1,18 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { useForm } from 'react-hook-form;'';
-import type { ControllerRenderProps } from 'react-hook-form;'';
-import { z } from 'zod;'';
-import { zodResolver } from '@hookform/resolvers/zod;'';
-import { Input } from '@/components/ui/input;'';
-import { Button } from '@/components/ui/button;';
+import React from 'react';;
+import { useForm } from 'react-hook-form;;
+import type { ControllerRenderProps } from 'react-hook-form;;
+import { z } from 'zod;;
+import { zodResolver } from '@hookform/resolvers/zod;;
+import { Input } from '@/components/ui/input;;
+import { Button } from '@/components/ui/button;;
 import {;
   Select,;''
   SelectContent,;
   SelectItem,;
   SelectTrigger,;''
   SelectValue,;;
-} from '@/components/ui/select;';
+} from '@/components/ui/select;;
 import {;
   Form,;
   FormControl,;''
@@ -20,7 +20,7 @@ import {;
   FormItem,;
   FormLabel,;''
   FormMessage,;;
-} from '@/components/ui/form;';
+} from '@/components/ui/form;;
 import {;
   Card,;
   CardContent,;''
@@ -28,11 +28,11 @@ import {;
   CardFooter,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
-import { toast } from '@/hooks/use-toast;'';
+} from '@/components/ui/card;;
+import { toast } from '@/hooks/use-toast;;
 import { supabase } from '@/integrations/supabase/client;'
-;
-// Form schema;'';
+
+// Form schema;;
 const formSchema: unknown "unknown = z.object({;",;";";""
   brand_name: z;";";";""
     .string();;
@@ -60,7 +60,7 @@ const formSchema: unknown "unknown = z.object({;",;";";""
 });
 ;''
 type FormValues = z.infer<typeof formSchema>;
-;
+
 export function WhitelabelRequestForm(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   const form: unknown "unknown = useForm<FormValues>({;",;""
     resolver: "zodResolver(formSchema)",;";";";";""
@@ -75,7 +75,7 @@ export function WhitelabelRequestForm(): unknown {): unknown {): unknown {): unk
       cta: 'Get Started',;'
     },;
   });''
-;
+
   const onSubmit: unknown = async (_values: FormValues) => {;
     try {;''
       const tenantData: unknown "unknown = {;",;""
@@ -94,14 +94,14 @@ export function WhitelabelRequestForm(): unknown {): unknown {): unknown {): unk
       if (!supabase) {;";";";";""
         throw new Error('Supabase client not available');''
       };
-;
+
       // Submit to Supabase;''
       const { _error } = await supabase;;
         .from('whitelabel_tenants');'
         .insert(tenantData);
         .select();
         .single();''
-;
+
       if (error) throw error;
 ;''
       toast({;;
@@ -237,7 +237,7 @@ export function WhitelabelRequestForm(): '
       if (error) throw error;
 '
       toast({'
-        title: 'White-label tenant created!','
+        title: 'White-label tenant created!','`
         description: "`${values.brand_name"} has been set up with subdomain ${values.subdomain}`,;
       })
 ;"
@@ -670,6 +670,7 @@ export function WhitelabelRequestForm(): '
 ";"
 }";"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

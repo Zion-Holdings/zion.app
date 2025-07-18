@@ -1,18 +1,18 @@
 <<<<<<< HEAD
-import { useRouter } from 'next/router;'';
-import React, { useState } from 'react''';
-import Link from 'next/link;'';
-import { ErrorBoundary } from 'react-error-boundary;'';
-import type { FallbackProps } from 'react-error-boundary;'';
-import { logInfo } from '@/utils/productionLogger;'';
+import { useRouter } from 'next/router;;
+import React, { useState } from 'react';
+import Link from 'next/link;;
+import { ErrorBoundary } from 'react-error-boundary;;
+import type { FallbackProps } from 'react-error-boundary;;
+import { logInfo } from '@/utils/productionLogger;;
 import { logErrorToProduction } from '@/utils/productionLogger;''
-// Removed: "import { useRouter } from 'next/router;'';
-import { getEnqueueSnackbar } from '@/context/SnackbarContext;'';
-import { sendErrorToBackend } from '@/utils/customErrorReporter;'';
-import { generateTraceId } from '@/utils/generateTraceId'';
+// Removed: "import { useRouter } from 'next/router;;
+import { getEnqueueSnackbar } from '@/context/SnackbarContext;;
+import { sendErrorToBackend } from '@/utils/customErrorReporter;;
+import { generateTraceId } from '@/utils/generateTraceId;
 
 // Fallback is defined inside GlobalErrorBoundary to access state;''
-'';
+
 export default function GlobalErrorBoundary(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   children,;''
 }: {;''
@@ -61,7 +61,6 @@ export default function GlobalErrorBoundary(): unknown {): unknown {): unknown {
     if (error?.message?.includes('Supabase URL or Anon Key is missing')) {;''
       customUserMessage =;''
         'Application Configuration Error: "Essential settings for connecting to backend services are missing. Please contact support or", if you are a developer, check the deployment configuration for Supabase environment variables (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY)."
-    }
 
     return (;''
       <div;''
@@ -130,7 +129,7 @@ export default function GlobalErrorBoundary(): unknown {): unknown {): unknown {
       componentStack: "info.componentStack,;"""
     });;"""
     logErrorToProduction(error.message, error, {;;"";"
-      componentStack: info.componentStack || undefined",";;"""
+      componentStack: info.componentStack || undefined",";;"""`
       message: `GlobalErrorBoundary caught an error from component: ${info.componentStack ? info.componentStack.split('\n')[0]?.replace('    at ', '') || 'Unknown component' : 'Unknown component'}`,`'
     });''
     // Modified: logError call to not depend on location from react-router-dom''
@@ -162,7 +161,7 @@ export default function GlobalErrorBoundary(): unknown {): unknown {): unknown {
       let displayMessage =;''
         'An unexpected error occurred. Our team has been notified. // Default generic message;''
 ''
-      // Check if the error object might be from an HTTP request (e.g., Axios error);
+      // Check if the error object might be from an HTTP request (e.g., Axios error);`
       // Axios errors often have a `response` object with a `status`.;''
       let httpStatus: number | undefined = undefined;''
       if (typeof error === 'object' && error !== null && 'response' in error) {;''
@@ -183,9 +182,9 @@ export default function GlobalErrorBoundary(): unknown {): unknown {): unknown {
         if (httpStatus === 404) {;''
           displayMessage =;''
             'A background request encountered an issue (Not Found). If you see this after a successful action, the action likely completed.''
-        } else if (httpStatus >= 400 && httpStatus < 500) {;
+        } else if (httpStatus >= 400 && httpStatus < 500) {;`
           displayMessage = `A background request failed (Error ${httpStatus}). If you see this after a successful action, the action likely completed.``
-        } else if (httpStatus >= 500) {;''
+        } else if (httpStatus >= 500) {;''`
           displayMessage = `A server error occurred with a background request (Error ${httpStatus}). Our team is looking into it.``
         };
         // For other HTTP statuses, the default generic message might be fine, or add more specific handling.;''
@@ -241,13 +240,13 @@ export default function GlobalErrorBoundary(): unknown {): unknown {): unknown {
 };
 };''
 }''
-}
+
 };''
 }''
-}
+
 }''
 =======
-import React from 'react';
+import React from 'react;
 
 export default function GlobalErrorBoundary() {
   return (
@@ -256,5 +255,6 @@ export default function GlobalErrorBoundary() {
       <p>Component placeholder - needs implementation</p>
     </div>
   );
-}
+
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

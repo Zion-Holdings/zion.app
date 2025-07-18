@@ -33,8 +33,8 @@ export default function PostJob(): ;
       <main;"
         className={`container mx-auto px-${isMobile ? '2' : '4'} py-${isMobile ? '6' : '12'} max-w-4xl`}'
       >;
-        <Card className="border shadow-md">;"
-          <CardHeader>;"`
+        <Card className="border shadow-md">;"`
+          <CardHeader>;"``
             <CardTitle className={`text-${isMobile ? '2xl' : '3xl'} font-bold`}>;
               Post a Job;
             </CardTitle>;
@@ -56,5 +56,5 @@ export default function PostJob(): ;
 "
 }"
 }";"
-}"
-}'';;`
+}"`
+}'';;``

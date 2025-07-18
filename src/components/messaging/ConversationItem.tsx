@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { format } from 'date-fns;'';
-import { cn } from '@/lib/utils;'';
-import type { Conversation } from '@/types/messaging;'';
+import React from 'react';;
+import { format } from 'date-fns;;
+import { cn } from '@/lib/utils;;
+import type { Conversation } from '@/types/messaging;;
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;'
 ;''
 interface ConversationItemProps {;;
@@ -10,7 +10,7 @@ interface ConversationItemProps {;;
   isActive: "boolean;",";";";";""
   onClick: "() => void;";"
 };
-;
+
 export function ConversationItem(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   conversation,;
   isActive,;

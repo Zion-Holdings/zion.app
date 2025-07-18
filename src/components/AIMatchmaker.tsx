@@ -1,23 +1,23 @@
 <<<<<<< HEAD
-import React from 'react''';
-import { useState } from 'react''';
-import { Search, Sparkles } from 'lucide-react;'';
-import { toast } from '@/hooks/use-toast;'';
-import { Button } from '@/components/ui/button;'';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'';
-import { AIMatchingResults } from '@/components/AIMatchingResults;'';
-import { findMatches } from '@/lib/ai-matchmaking;'';
-import type { MatchResult } from '@/lib/ai-matchmaking;'';
-import { Textarea } from '@/components/ui/textarea'';
-;
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger'';
+import React from 'react';
+import { useState } from 'react';
+import { Search, Sparkles } from 'lucide-react;;
+import { toast } from '@/hooks/use-toast;;
+import { Button } from '@/components/ui/button;;
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;;
+import { AIMatchingResults } from '@/components/AIMatchingResults;;
+import { findMatches } from '@/lib/ai-matchmaking;;
+import type { MatchResult } from '@/lib/ai-matchmaking;;
+import { Textarea } from '@/components/ui/textarea;
+
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
 
 interface AIMatchmakerProps {;
   serviceType?: string;
   onMatchSelect?: (match: MatchResult) => void;''
   className?: string''
 };
-;'';
+;;
 export function AIMatchmaker(): unknown {): unknown {): unknown {): unknown {): unknown {{;''
   serviceType = '',''
   onMatchSelect,;
@@ -114,7 +114,7 @@ export function AIMatchmaker(): unknown {): unknown {): unknown {): unknown {): 
       setMatches(results);"
 ;";"
       toast({;"
-        title: 'Matches Found','
+        title: 'Matches Found','`
         description: `Found ${results.length} matches based on your description.`,";"
       });";"
     } catch {;";";
@@ -157,7 +157,7 @@ export function AIMatchmaker(): unknown {): unknown {): unknown {): unknown {): 
   const matchItems: unknown = matches.map((match) => match.item)''
 
   return (;''
-    <Card;''
+    <Card;''`
       className={`border border-zion-blue-light bg-zion-blue-dark ${className || ''}`};''
     >;''
       <CardHeader className=pb-2>";";""
@@ -171,8 +171,8 @@ export function AIMatchmaker(): unknown {): unknown {): unknown {): unknown {): 
   // Extract just the items from each MatchResult'
   const matchItems = matches.map((match) => match.item)'
 
-  return ('
-    <Card'`
+  return ('`
+    <Card'``
       className={`border border-zion-blue-light bg-zion-blue-dark ${className || ''}`}'
     >'
       <CardHeader className=pb-2>"
@@ -248,13 +248,14 @@ export function AIMatchmaker(): unknown {): unknown {): unknown {): unknown {): 
 <<<<<<< HEAD
 ";""
 }";""
-}
+
 }""
 }""
 =======
 ";"
 }";"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

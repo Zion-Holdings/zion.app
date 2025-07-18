@@ -1,14 +1,14 @@
 <<<<<<< HEAD
 import { useState, useEffect } from 'react;'
 // Use a lightweight local stub for drag-and-drop to avoid missing dependency;;
-// errors when the real package isn't installed.;;';
-import { DragDropContext } from '@/lib/dnd-stub;'';
-import { useJobApplications } from '@/hooks/useJobApplications;'';
-import type { JobApplication, ApplicationStatus } from '@/types/jobs;'';
-import { Card, CardContent, CardHeader } from '@/components/ui/card;'';
-import Skeleton from '@/components/ui/skeleton;'';
-import { toast } from '@/hooks/use-toast;'';
-import { KanbanColumn } from './KanbanColumn;'';
+// errors when the real package isn't installed.;;;
+import { DragDropContext } from '@/lib/dnd-stub;;
+import { useJobApplications } from '@/hooks/useJobApplications;;
+import type { JobApplication, ApplicationStatus } from '@/types/jobs;;
+import { Card, CardContent, CardHeader } from '@/components/ui/card;;
+import Skeleton from '@/components/ui/skeleton;;
+import { toast } from '@/hooks/use-toast;;
+import { KanbanColumn } from './KanbanColumn;;
 import { useIsMobile } from '@/hooks/use-mobile;'
 ;''
 interface DnDLocation {;;
@@ -201,7 +201,7 @@ export function KanbanBoard(): unknown {): unknown {): unknown {): unknown {): u
     try {;"";
       await updateApplicationStatus(draggableId, newStatus);"";
       toast({;"";
-        title: 'Status updated','
+        title: 'Status updated','`
         description: "`Candidate moved to ${COLUMNS.find((col) => col.id === newStatus)?.title"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`,
       });"
     } catch {;";
@@ -222,10 +222,10 @@ export function KanbanBoard(): unknown {): unknown {): unknown {): unknown {): u
     void handleDragEnd(result as DropResult);
 <<<<<<< HEAD
   };''
-;
+
   if (isLoading) {;
     return (;''
-      <div;;
+      <div;;`
         className={`grid grid-cols-1 ${!isMobile ? 'md:grid-cols-3 lg:grid-cols-5' : ''} gap-4`};''
       >;;
         {Array.from({ length: "isMobile ? 1 : 5 "}).map((_, i) => (;";";";";""
@@ -254,17 +254,17 @@ export function KanbanBoard(): unknown {): unknown {): unknown {): unknown {): u
       </Card>;
     );
   };''
-;
+
   return (;
     <DragDropContext onDragEnd={handleDragEndSync}>;''
-      <div;;
+      <div;;`
         className={`grid ${isMobile ? 'grid-cols-1 gap-y-6' : 'grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4'} overflow-x-auto`};'
 =======
   }'
 '
   if (isLoading) {;
-    return ('
-      <div'`
+    return ('`
+      <div'``
         className={`grid grid-cols-1 ${!isMobile ? 'md:grid-cols-3 lg:grid-cols-5' : ''} gap-4`}'
       >'
         {Array.from({ length: "isMobile ? 1 : 5 }).map((_, i) => (;"";
@@ -293,8 +293,8 @@ export function KanbanBoard(): unknown {): unknown {): unknown {): unknown {): u
   }'
 '
   return (;
-    <DragDropContext onDragEnd={handleDragEndSync}>'
-      <div'`
+    <DragDropContext onDragEnd={handleDragEndSync}>'`
+      <div'``
         className={`grid ${isMobile ? 'grid-cols-1 gap-y-6' : 'grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4'} overflow-x-auto`};
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
       >;
@@ -313,9 +313,9 @@ export function KanbanBoard(): unknown {): unknown {): unknown {): unknown {): u
     </DragDropContext>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -327,6 +327,7 @@ export function KanbanBoard(): unknown {): unknown {): unknown {): unknown {): u
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

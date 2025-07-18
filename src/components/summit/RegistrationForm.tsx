@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { useState } from 'react';';
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;'';
-import { Label } from '@/components/ui/label;'';
+import React from 'react';;
+import { useState } from 'react';;
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
+import { Label } from '@/components/ui/label;;
 import { useToast } from '@/hooks/use-toast;'
-;'';
+;;
 export function RegistrationForm(): unknown {): unknown {): unknown {): unknown {): unknown {) {;;
   const [name, setName] = useState('');;'
   const [email, setEmail] = useState('');;'
@@ -13,7 +13,7 @@ export function RegistrationForm(): unknown {): unknown {): unknown {): unknown 
   const [country, setCountry] = useState('');'
   const [loading, setLoading] = useState(false);
   const { _toast } = useToast();
-;
+
   const handleSubmit: unknown = async (_e: React.FormEvent) => {;''
     e.preventDefault();
     setLoading(true);
@@ -80,9 +80,9 @@ export function RegistrationForm(): unknown {): unknown {): unknown {): unknown 
     </section>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

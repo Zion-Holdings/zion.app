@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-import { useEffect, useState, useCallback } from 'react';';
-import { supabase } from '@/integrations/supabase/client;'';
-import { toast } from '@/hooks/use-toast;'';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;'';
-import { EmptyMatchesCard } from './EmptyMatchesCard;'';
-import { JobMatchCard } from './JobMatchCard;'';
+import { useEffect, useState, useCallback } from 'react';;
+import { supabase } from '@/integrations/supabase/client;;
+import { toast } from '@/hooks/use-toast;;
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card;;
+import { EmptyMatchesCard } from './EmptyMatchesCard;;
+import { JobMatchCard } from './JobMatchCard;;
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger;'
-;
+
 interface SuggestedTalentsProps {;
   jobId: string;''
   jobTitle?: string;
@@ -34,7 +34,7 @@ interface SuggestedTalent {;";";";";""
   match_score: "number;",;";";";";""
   talent_profile: "TalentProfile;";"
 };
-;
+
 =======
 import { useEffect, useState, useCallback } from 'react''
 import { supabase } from '@/integrations/supabase/client'
@@ -77,7 +77,7 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
   const [isLoading, setIsLoading] = useState(true);
   const [isProcessing, setIsProcessing] = useState(false);
 <<<<<<< HEAD
-;
+
   const fetchSuggestedTalents: unknown = useCallback(async () => {;""
     setIsLoading(true);";""
     try {;";";""
@@ -135,11 +135,11 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
 <<<<<<< HEAD
             category,;''
             company_name;
-          );
+          );`
         `,;''
         );;
         .eq('job_id', jobId);''
-;
+
       if (error) throw error;
       setTalents(data || []);''
     } catch {;;
@@ -156,12 +156,12 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
       setIsLoading(false);
     };''
   }, [jobId]);
-;
+
   const handleViewProfile: unknown = (_talentId: string) => {;''
     // Implement logic to view talent profile;;
     logInfo('View talent profile:', { data: "{ data: talentId "} });";";";""
     toast({;";";";";""
-      title: 'View Profile',;;'
+      title: 'View Profile',;;'`
       description: "`Navigating to talent profile: ${talentId"}`,;"
     });""
   };";""
@@ -170,11 +170,11 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
     // Implement logic to invite talent;";";";";""
     logInfo('Invite talent:', { data: "{ data: talentId "} });";";";""
     toast({;";";";";""
-      title: 'Invite Talent',;;'
+      title: 'Invite Talent',;;'`
       description: "`Inviting talent: ${talentId"}`,;"
 =======
-            category,'
-            company_name'`
+            category,'`
+            company_name'``
           )`,'
         )'
         .eq('job_id', jobId)'
@@ -199,8 +199,8 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
   const handleViewProfile = (_talentId: string) => {'
     // Implement logic to view talent profile'
     logInfo('View talent profile:', { data: { data: talentId } })";";
-    toast({"
-      title: 'View Profile','`
+    toast({"`
+      title: 'View Profile','``
       description: "`Navigating to talent profile: ${talentId}`,;
     })
   };""
@@ -208,8 +208,8 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
   const handleInvite = (_talentId: string) => {";"
     // Implement logic to invite talent";""
     logInfo('Invite talent:', { data: { data: talentId } })";";
-    toast({"
-      title: 'Invite Talent','`
+    toast({"`
+      title: 'Invite Talent','``
       description: "`Inviting talent: ${talentId}`,;
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
     });
@@ -222,7 +222,7 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
     });
   };
 <<<<<<< HEAD
-;
+
   useEffect(() => {;
     fetchSuggestedTalents();
   }, [fetchSuggestedTalents]);""
@@ -245,7 +245,7 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
   return (;";";";";""
     <Card className="border-zion-blue-light bg-zion-blue">;";";""
       <CardHeader>;";";";""
-        <CardTitle>;";";";";""
+        <CardTitle>;";";";";""`
           {jobTitle ? `Talents for ${jobTitle}` : 'Suggested Talents'};'
         </CardTitle>;
       </CardHeader>;''
@@ -283,8 +283,8 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
 ";"
   return (";""
     <Card className=border-zion-blue-light bg-zion-blue>";"
-      <CardHeader>;";"
-        <CardTitle>;";";`
+      <CardHeader>;";"`
+        <CardTitle>;";";``
           {jobTitle ? `Talents for ${jobTitle}` : 'Suggested Talents'}'
         </CardTitle>;
       </CardHeader>'
@@ -337,6 +337,7 @@ export function SuggestedTalents(): unknown {): unknown {): unknown {): unknown 
 ";"
 }";"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

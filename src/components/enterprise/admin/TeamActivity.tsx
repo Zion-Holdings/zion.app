@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { Search, CalendarIcon } from '@/components/ui/icons;'
-;
+
 import {;
   Table,;
   TableBody,;''
@@ -9,12 +9,12 @@ import {;
   TableHead,;
   TableHeader,;''
   TableRow,;;
-} from '@/components/ui/table;'';
+} from '@/components/ui/table;;
 import { Badge } from '@/components/ui/badge;'
 ;;
-import { Button } from '@/components/ui/button;'';
+import { Button } from '@/components/ui/button;;
 import { Input } from '@/components/ui/input;'
-;'';
+;;
 export function TeamActivity(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   // Mock activity data;
   const activities: unknown = [;''
@@ -145,17 +145,17 @@ export function TeamActivity(): '
     const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
 
     if (diffMins < 60) {;
-      return `${diffMins} minutes ago`;
-    } else if (diffHrs < 24) {;`
-      return `${diffHrs} hours ago`;
-    } else if (diffDays < 7) {;`
+      return `${diffMins} minutes ago`;`
+    } else if (diffHrs < 24) {;``
+      return `${diffHrs} hours ago`;`
+    } else if (diffDays < 7) {;``
       return `${diffDays} days ago`;
     } else {;
       return date.toLocaleDateString();
     };
 <<<<<<< HEAD
   };''
-;
+
   const getCategoryBadge: unknown = (_category: string) => {;
     const categoryStyles: unknown Record<;''
       string,;;
@@ -322,6 +322,7 @@ export function TeamActivity(): '
 ";"
 }";"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

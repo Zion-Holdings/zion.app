@@ -1,16 +1,16 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { useForm } from 'react-hook-form;'';
-import { zodResolver } from '@hookform/resolvers/zod;'';
-import { toast } from 'sonner;'';
+import { useState } from 'react';;
+import { useForm } from 'react-hook-form;;
+import { zodResolver } from '@hookform/resolvers/zod;;
+import { toast } from 'sonner;;
 import { useRouter } from 'next/router;'
 ;;
-import { jobSchema } from './validation;'';
-import type { JobSchemaType } from './validation;'';
+import { jobSchema } from './validation;;
+import type { JobSchemaType } from './validation;;
 import { useAuth } from '@/hooks/useAuth;'
 ;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
-;'';
+;;
 export interface JobPostingProps {;;
   jobId: "string | undefined;",;";";";";""
   onSuccess: "(() => void) | undefined;";";";""
@@ -19,7 +19,7 @@ export interface JobPostingProps {;;
 export const useJobForm: unknown = ({ jobId: "_jobId", onSuccess }: JobPostingProps) => {;"
   const { _user } = useAuth();
   const router: unknown = useRouter();
-;
+
 =======
 import { useState } from 'react''
 import { useForm } from 'react-hook-form'
@@ -74,7 +74,7 @@ export const useJobForm = ({ jobId: _jobId, onSuccess }: JobPostingProps) => {"
     },;;
     mode: 'onChange',;'
   });''
-;
+
   // Function to create/update jobs that will be implemented by parent component;
   const submitJob: unknown = async (_values: JobSchemaType) => {;''
     if (!user) {;;
@@ -82,13 +82,13 @@ export const useJobForm = ({ jobId: _jobId, onSuccess }: JobPostingProps) => {"
       router.push('/login');'
       return;
     };''
-;
+
     setIsLoading(true);
 ;''
     try {;;
       const publishedDate: unknown = startDate ? startDate.toString() : 
       const expiryDate: unknown = endDate ? endDate.toString() : 
-;
+
       const jobData: unknown = {;''
         ...values,;;
         published_date: "publishedDate",;";";";";""

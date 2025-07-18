@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 import { useEffect, useState } from 'react;'
-;'';
+;;
 export function LivestreamSection(): unknown {): unknown {): unknown {): unknown {): unknown {) {;;
   const eventDate: unknown = new Date('2025-06-20T14:00:00Z').getTime();;'
   const [timeLeft, setTimeLeft] = useState('');'
@@ -82,6 +82,7 @@ export function LivestreamSection(): '
 "
 }"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import React, { useEffect } from 'react''';
-import { Loader2, Shield } from '@/components/ui/icons;'';
-import { useRouter } from 'next/router;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { toast } from '@/hooks/use-toast'';
+import React, { useEffect } from 'react';
+import { Loader2, Shield } from '@/components/ui/icons;;
+import { useRouter } from 'next/router;;
+import { useAuth } from '@/hooks/useAuth;;
+import { toast } from '@/hooks/use-toast;
 
 interface AuthGuardProps {;
   children: React.ReactNode;
@@ -14,7 +14,7 @@ interface AuthGuardProps {;
   showToast?: boolean;
   allowGuest?: boolean;
 };
-;'';
+;;
 export function AuthGuard(): unknown {): unknown {): unknown {): unknown {): unknown {{''
   children,;
   requireAuth = true,;''
@@ -98,7 +98,7 @@ export function AuthGuard(): unknown {): unknown {): unknown {): unknown {): unk
       if (!hasRequiredRole) {;
         if (showToast) {;''
           toast({;''
-            title: 'Access Denied',;''
+            title: 'Access Denied',;''`
             description: `This feature requires ${requireRole.join(' or ')} privileges.`,`'
             variant: 'destructive',''
           });''
@@ -109,8 +109,8 @@ export function AuthGuard(): unknown {): unknown {): unknown {): unknown {): unk
 '
       if (!hasRequiredRole) {;
         if (showToast) {'
-          toast({'
-            title: 'Access Denied','`
+          toast({'`
+            title: 'Access Denied','``
             description: `This feature requires ${requireRole.join(' or ')} privileges.`,;
             variant: 'destructive','
           })'
@@ -240,7 +240,7 @@ export function AuthGuard(): unknown {): unknown {): unknown {): unknown {): unk
   return <>{children}</>;''
 }''
 
-// Higher-order component for easy wrapping;'';
+// Higher-order component for easy wrapping;;
 export function withAuthGuard<P extends object>(;''
   Component: "React.ComponentType<P>,;"
   guardOptions?: Omit<AuthGuardProps, 'children'>,''
@@ -300,8 +300,8 @@ export function useAuthGuard(): ;
           variant: 'destructive','
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
         });
-      };
-`
+      };`
+``
       router.push(`${redirectTo}?returnTo=${encodeURIComponent(returnUrl)}`);
       return false;
     };
@@ -325,7 +325,7 @@ export function useAuthGuard(): ;
     if (!hasRequiredRole) {;";""
       if (options?.showToast !== false) {;";""
         toast({;";"""
-          title: 'Access Denied',;''
+          title: 'Access Denied',;''`
           description: `This feature requires ${roles.join(' or ')} privileges.`,`'
           variant: 'destructive',''
         });
@@ -351,8 +351,8 @@ export function useAuthGuard(): ;
 ;"
     if (!hasRequiredRole) {;";"
       if (options?.showToast !== false) {;";"
-        toast({;";""
-          title: 'Access Denied','`
+        toast({;";""`
+          title: 'Access Denied','``
           description: `This feature requires ${roles.join(' or ')} privileges.`,;
           variant: 'destructive','
         });
@@ -392,12 +392,12 @@ export function useAuthGuard(): ;
 };
 };''
 }''
-}
+
 };
 };''
 }''
-}
-}
+
+
 }''
 =======
     user,'
@@ -415,6 +415,7 @@ export function useAuthGuard(): ;
 }'
 }'
 
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

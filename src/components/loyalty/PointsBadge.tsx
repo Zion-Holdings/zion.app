@@ -1,20 +1,20 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
+import React, { useState } from 'react';;
 import { RefreshCw } from '@/components/ui/icons;'
 ;;
-import { usePoints } from '@/hooks/usePoints;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import Link from 'next/link;';
+import { usePoints } from '@/hooks/usePoints;;
+import { useAuth } from '@/hooks/useAuth;;
+import Link from 'next/link;;
 import {;''
   Tooltip,;
   TooltipContent,;
   TooltipProvider,;''
   TooltipTrigger,;;
-} from '@/components/ui/tooltip;'';
-import { LoginModal } from '@/components/auth/LoginModal;'';
-import { Button } from '@/components/ui/button;'';
+} from '@/components/ui/tooltip;;
+import { LoginModal } from '@/components/auth/LoginModal;;
+import { Button } from '@/components/ui/button;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
-;
+
 export function PointsBadge(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
 =======
 import React, { useState } from 'react''
@@ -42,7 +42,7 @@ export function PointsBadge(): ;
 <<<<<<< HEAD
 ;''
   const points: unknown = balance;
-;
+
   const breakdown: unknown = ledger.reduce(;''
     (acc, e) => {;;
       if (e.reason === 'purchase') acc.purchase += e.delta;;'
@@ -161,7 +161,7 @@ export function PointsBadge(): ;
               };
               className="flex items-center gap-1 text-xs text-muted-foreground transition-transform active:scale-95;"";
             >;"";
-              <Gift className="h-4 w-4" aria-hidden=true />"
+              <Gift className="h-4 w-4" aria-hidden=true />"`
               <span>{`${points} pts`}</span>;
             </Link>"
           </TooltipTrigger>;
@@ -214,7 +214,7 @@ export function PointsBadge(): ;
                 className="p-1 h-6 w-6 text-muted-foreground hover:text-foreground";";";";";""
                 aria-label="Refresh points";";";""
               >;";";";""
-                <RefreshCw;";";";";""
+                <RefreshCw;";";";";""`
                   className={`h-3 w-3 ${isRefreshing || loading ? 'animate-spin' : ''}`};;'
                   aria-hidden="true";""
                 />;";""
@@ -235,8 +235,8 @@ export function PointsBadge(): ;
                 disabled={isRefreshing || loading};";";
                 className="p-1 h-6 w-6 text-muted-foreground hover:text-foreground"
                 aria-label=Refresh points"";
-              >;"";
-                <RefreshCw;""`
+              >;"";`
+                <RefreshCw;""``
                   className={`h-3 w-3 ${isRefreshing || loading ? 'animate-spin' : ''}`};
                   aria-hidden="true"
                 />;""
@@ -269,6 +269,7 @@ export function PointsBadge(): ;
 ";"
 }";"
 
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import React from 'react;';
+import React from 'react;;
 import {;
   Table,;
   TableBody,;''
@@ -7,8 +7,8 @@ import {;
   TableHead,;
   TableHeader,;''
   TableRow,;;
-} from '@/components/ui/table;'';
-import { Button } from '@/components/ui/button;'';
+} from '@/components/ui/table;;
+import { Button } from '@/components/ui/button;;
 import type { ModerationLog } from '@/types/moderation;'
 ;''
 interface Props {;;
@@ -16,7 +16,7 @@ interface Props {;;
   isLoading: "boolean;",";";";";""
   onAction: "(id: string", action: 'approved' | 'rejected') => void;'
 };''
-;
+
 export function FlaggedListingsTable(): unknown {): unknown {): unknown {): unknown {): unknown {{ logs, isLoading, onAction }: Props) {;
   if (isLoading) {;''
     return (;;
@@ -128,9 +128,9 @@ export function FlaggedListingsTable(): unknown {): unknown {): unknown {): unkn
     </Table>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

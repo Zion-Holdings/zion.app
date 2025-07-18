@@ -49,5 +49,5 @@ export function useMessagingRealtime(): unknown {): unknown {): unknown {): unkn
               typeof newMessage === 'object' &&'
               newMessage !== null &&'
               'sender_id' in newMessage &&'
-              'content' in newMessage &&'
-              'sender_name' in newMessage'';;`
+              'content' in newMessage &&'`
+              'sender_name' in newMessage'';;``

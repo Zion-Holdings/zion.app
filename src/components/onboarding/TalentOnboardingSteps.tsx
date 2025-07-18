@@ -1,13 +1,13 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { useOnboardingStatus } from '@/hooks/useOnboardingStatus;'
 ;;
-import { OnboardingTracker } from './OnboardingTracker;'';
+import { OnboardingTracker } from './OnboardingTracker;;
 import type { OnboardingStep } from './OnboardingTracker;'
-;
+
 export function TalentOnboardingSteps(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   const onboardingStatus: unknown = useOnboardingStatus();
-;
+
   const steps: unknown OnboardingStep[] = [;''
     {;;
       id: 'profile',;;'
@@ -38,12 +38,12 @@ export function TalentOnboardingSteps(): unknown {): unknown {): unknown {): unk
       action: 'View Matches',;'
     },;
   ];''
-;
+
   return <OnboardingTracker steps={steps} />;
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

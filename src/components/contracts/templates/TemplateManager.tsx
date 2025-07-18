@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { useContractTemplates } from '@/hooks/useContractTemplates;'';
-import type { ContractTemplate } from '@/types/contracts;';
+import { useState } from 'react';;
+import { useContractTemplates } from '@/hooks/useContractTemplates;;
+import type { ContractTemplate } from '@/types/contracts;;
 import {;''
   Dialog,;
   DialogContent,;
   DialogHeader,;''
   DialogTitle,;;
-} from '@/components/ui/dialog;'';
-import { Button } from '@/components/ui/button;'';
-import { TemplateList } from './TemplateList;'';
-import { TemplateSaveForm } from './TemplateSaveForm;'';
-import type { ContractFormValues } from '@/components/contracts/components/ContractForm;'';
+} from '@/components/ui/dialog;;
+import { Button } from '@/components/ui/button;;
+import { TemplateList } from './TemplateList;;
+import { TemplateSaveForm } from './TemplateSaveForm;;
+import type { ContractFormValues } from '@/components/contracts/components/ContractForm;;
 import { useToast } from '@/hooks/use-toast;'
 ;''
 interface TemplateManagerProps {;;
@@ -20,7 +20,7 @@ interface TemplateManagerProps {;;
   onSelectTemplate: (template: ContractFormValues) => void;
   currentValues?: ContractFormValues;
 };
-;
+
 export function TemplateManager(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   isOpen,;""
   onClose,;";""
@@ -63,7 +63,7 @@ export function TemplateManager(): unknown {): unknown {): unknown {): unknown {
   const { templates, isLoading } = useContractTemplates();
   const { _toast } = useToast();
 <<<<<<< HEAD
-;
+
   const handleSelectTemplate: unknown = (_template: ContractTemplate) => {;''
     if (template && template.template_data) {;
       onSelectTemplate(template.template_data);
@@ -79,7 +79,7 @@ export function TemplateManager(): unknown {): unknown {): unknown {): unknown {
     setMode('list');'
     setSelectedTemplate(null);''
   };
-;
+
   return (;''
     <Dialog open={isOpen} onOpenChange={onClose}>;;
       <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto">;";";""
@@ -101,7 +101,7 @@ export function TemplateManager(): unknown {): unknown {): unknown {): unknown {
       onSelectTemplate(template.template_data);
       onClose()'
       toast({'
-        title: 'Template loaded','
+        title: 'Template loaded','`
         description: `Template ${template.title} has been loaded.`,;
       })"
     };"
@@ -212,6 +212,7 @@ export function TemplateManager(): unknown {): unknown {): unknown {): unknown {
 ";"
 }";
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,13 +1,13 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { useState } from 'react';';
-import { mutate } from 'swr;'';
-import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js;'';
-import { Button } from '@/components/ui/button;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { logInfo } from '@/utils/productionLogger;'';
+import React from 'react';;
+import { useState } from 'react';;
+import { mutate } from 'swr;;
+import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js;;
+import { Button } from '@/components/ui/button;;
+import { useAuth } from '@/hooks/useAuth;;
+import { logInfo } from '@/utils/productionLogger;;
 import type { PaymentIntent, StripeCardElement } from '@stripe/stripe-js;'
-;
+
 // Helper to award points after payment;''
 async function awardPoints(): unknown {): unknown {): unknown {): unknown {): unknown {userId: string) {;;
   await fetch('/api/points/increment', {;;'
@@ -17,7 +17,7 @@ async function awardPoints(): unknown {): unknown {): unknown {): unknown {): un
   });;
   mutate('user');'
 };
-;
+
 interface CreatePaymentIntentResponse {;
   clientSecret: string;''
   error?: string;
@@ -27,7 +27,7 @@ interface Props {;;
   amount: "number;",;";";";";""
   onSuccess: "(intent: PaymentIntent) => void;";"
 };
-;
+
 =======
 import React from 'react'
 import { useState } from 'react''
@@ -66,7 +66,7 @@ export default function CardForm(): unknown {): unknown {): unknown {): unknown 
   const [error, setError] = useState<string | null>(null);
   const [isStripeElementReady, setIsStripeElementReady] = useState(false);
 <<<<<<< HEAD
-;
+
   const handleSubmit: unknown = async (_e: React.FormEvent) => {;
     e.preventDefault();""
     if (!stripe || !elements) return;";""
@@ -83,7 +83,7 @@ export default function CardForm(): unknown {): unknown {): unknown {): unknown 
       });''
       const data: unknown CreatePaymentIntentResponse = await res.json();;
       if (!res.ok) throw new Error(data.error || 'Failed to create payment');''
-;
+
       const result: unknown = await stripe.confirmCardPayment(;
         data.clientSecret,;''
         {;;
@@ -195,7 +195,7 @@ export default function CardForm(): unknown {): unknown {): unknown {): unknown 
     };
   };
 <<<<<<< HEAD
-;
+
   const handleTestPayment: unknown = async () => {;""
     if (!stripe) return;";""
     setError(null);";";""
@@ -215,7 +215,7 @@ export default function CardForm(): unknown {): unknown {): unknown {): unknown 
       const result: unknown "unknown = await stripe.confirmCardPayment(data.clientSecret", {;;"
         payment_method: 'pm_card_visa',;''
       });
-;
+
       if (result.error) throw new Error(result.error.message);''
       const intent: unknown = result.paymentIntent as PaymentIntent | undefined;;
       if (intent?.status === 'succeeded') {;;'
@@ -305,7 +305,7 @@ export default function CardForm(): unknown {): unknown {): unknown {): unknown 
         className="w-full";";""
         aria-busy={loading};";";""
         aria-label={`Pay $${amount.toFixed(2)}`};";";";""
-      >;";";";";""
+      >;";";";";""`
         {loading ? 'Processing...' : `Pay $${amount.toFixed(2)}`};''
       </Button>;;
       {process.env.NODE_ENV === 'development' && (;''
@@ -330,7 +330,7 @@ export default function CardForm(): unknown {): unknown {): unknown {): unknown 
 }";"
 };""
 }""
-}
+
 }""
 =======
   }"
@@ -355,9 +355,9 @@ export default function CardForm(): unknown {): unknown {): unknown {): unknown 
         type="submit;"";
         disabled={!stripe || loading || !isStripeElementReady};"";
         className="w-full";
-        aria-busy={loading}";"
-        aria-label={`Pay $${amount.toFixed(2)}`};";"
-      >;";";`
+        aria-busy={loading}";"`
+        aria-label={`Pay $${amount.toFixed(2)}`};";"`
+      >;";";``
         {loading ? 'Processing...' : `Pay $${amount.toFixed(2)}`}'
       </Button>'
       {process.env.NODE_ENV === 'development' && ('
@@ -381,6 +381,7 @@ export default function CardForm(): unknown {): unknown {): unknown {): unknown 
 }"
 }"
 }"
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

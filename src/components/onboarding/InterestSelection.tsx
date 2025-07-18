@@ -1,13 +1,13 @@
 <<<<<<< HEAD
-import { useState } from 'react';';
-import { Button } from '@/components/ui/button;'';
-import { Checkbox } from '@/components/ui/checkbox;'';
+import { useState } from 'react';;
+import { Button } from '@/components/ui/button;;
+import { Checkbox } from '@/components/ui/checkbox;;
 import { INTERESTS } from '@/data/interests;'
 ;''
 interface InterestSelectionProps {;;
   onComplete: "(interests: string[]) => void;";"
 };
-;
+
 =======
 import { useState } from 'react''
 import { Button } from '@/components/ui/button'

@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import React from 'react;';
+import React from 'react;;
 import {;
   Card,;''
   CardContent,;
   CardDescription,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
+} from '@/components/ui/card;;
 import { Badge } from '@/components/ui/badge;'
-;'';
+;;
 export function SharedInbox(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   // Mock messages;
   const messages: unknown = [;''
@@ -62,7 +62,7 @@ export function SharedInbox(): unknown {): unknown {): unknown {): unknown {): u
               className={`flex flex-col p-4 hover:bg-muted/50 cursor-pointer ${message.unread ? 'bg-blue-50 dark:bg-blue-900/10' : ''}`};''
             >;;
               <div className="flex items-center justify-between">;";";";""
-                <p;";";";";""
+                <p;";";";";""`
                   className={`font-medium ${message.unread ? 'font-semibold' : ''}`};'
                 >;
                   {message.from};''
@@ -159,11 +159,11 @@ export function SharedInbox(): '
         <div className=divide-y divide-border">";
           {messages.map((message) => (;""
             <div;""
-              key={message.id};"";
+              key={message.id};"";`
               className={`flex flex-col p-4 hover:bg-muted/50 cursor-pointer ${message.unread ? 'bg-blue-50 dark:bg-blue-900/10' : ''}`}'
             >'
-              <div className=flex items-center justify-between">"
-                <p";""`
+              <div className=flex items-center justify-between">"`
+                <p";""``
                   className={`font-medium ${message.unread ? 'font-semibold' : ''}`};
                 >;
                   {message.from}'
@@ -197,6 +197,7 @@ export function SharedInbox(): '
 "";
 }"";
 }"
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

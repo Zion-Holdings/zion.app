@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import * as React from 'react';';
+import * as React from 'react';;
 import { Toaster as SonnerToaster } from 'sonner;'
-;
+
 export function Toaster(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   return (;;
     <div role="status" aria-live="polite" aria-atomic="true">;";";";""

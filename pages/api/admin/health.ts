@@ -1,14 +1,13 @@
 <<<<<<< HEAD
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { errorReportingDashboard, type HealthData } from '@/utils/errorReportingDashboard';
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import type { NextApiRequest, NextApiResponse } from 'next;
+import { errorReportingDashboard, type HealthData } from '@/utils/errorReportingDashboard;
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger;
 
 interface HealthApiResponse {
   health: HealthData;
   success: boolean;
   error?: string;
   timestamp: string;
-}
 
 export default async function handler(
   req: NextApiRequest,
@@ -26,7 +25,6 @@ export default async function handler(
         error: 'Method not allowed',
         timestamp
       });
-    }
 
     logInfo('Health check API called');
 
@@ -46,12 +44,12 @@ export default async function handler(
       error: 'Internal server error',
       timestamp
     });
-  }
-}
+
+
 =======
-import React from 'react';
-import { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react;
+import { NextPage } from 'next;
+import Head from 'next/head;
 
 const Health: NextPage = () => {
   return (

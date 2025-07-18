@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { QrCodeIcon } from '@/components/ui/icons;'
 ;;
-import { AppStoreButtons } from './AppStoreButtons;'';
+import { AppStoreButtons } from './AppStoreButtons;;
 import { logInfo } from '@/utils/productionLogger;'
-;
+
 // export const _DownloadSection: unknown React.FC = () => {;''
   // These would typically come from environment variables or a config;;
   const appStoreUrl: unknown = '# // Replace with actual App Store URL when available;;'

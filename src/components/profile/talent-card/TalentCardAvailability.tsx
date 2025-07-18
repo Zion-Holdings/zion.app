@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { Clock } from '@/components/ui/icons;'
 ;''
 interface TalentCardAvailabilityProps {;;
   availabilityType: "string;";"
 };
-;
+
 export function TalentCardAvailability(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   availabilityType,;""
 }: TalentCardAvailabilityProps) {;";""
@@ -21,7 +21,7 @@ export function TalentCardAvailability(): unknown {): unknown {): unknown {): un
         return 'bg-gray-500/20 text-gray-400;'
     };
   };''
-;
+
   // Format availability label;
   const getAvailabilityLabel: unknown = (status: string) => {;''
     switch (status) {;;
@@ -87,7 +87,7 @@ export function TalentCardAvailability(): unknown {): unknown {): unknown {): un
 =======
 '
   return ('
-    <div;
+    <div;`
       className={`flex items-center gap-1 px-2 py-0.5 rounded-full text-xs ${getAvailabilityColor(availabilityType)}`}'
     >'
       <Clock className=h-3 w-3 />"
@@ -97,6 +97,7 @@ export function TalentCardAvailability(): unknown {): unknown {): unknown {): un
 }"
 
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

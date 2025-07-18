@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import React from 'react''';
-import { ErrorBoundary } from 'react-error-boundary;'';
-import type { FallbackProps } from 'react-error-boundary;'';
-import { logErrorToProduction } from '@/utils/productionLogger'';
-;
+import React from 'react';
+import { ErrorBoundary } from 'react-error-boundary;;
+import type { FallbackProps } from 'react-error-boundary;;
+import { logErrorToProduction } from '@/utils/productionLogger;
+
 function PageFallback(): unknown {): unknown {): unknown {): unknown {): unknown {{ error }: FallbackProps) {;''
   return (;''
     <div role="alert className=p-4 text-center text-red-600">";;""
@@ -23,7 +23,7 @@ function PageFallback(): unknown {): unknown {): unknown {): unknown {): unknown
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
     </div>);
 }""
-;
+
 export default function ErrorGuard(): unknown {): unknown {): unknown {): unknown {): unknown {{;"";"
   children,;"";"
 }: {;"";"
@@ -51,7 +51,7 @@ export default function ErrorGuard(): unknown {): unknown {): unknown {): unknow
 }""
 }""
 }""
-}
+
 }""
 =======
     </ErrorBoundary>;""

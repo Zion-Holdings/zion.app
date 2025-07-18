@@ -1,14 +1,14 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
-import { X } from '@/components/ui/icons;'';
-import * as ToastPrimitives from '@radix-ui/react-toast;'';
+import React from 'react';;
+import * as React from 'react';;
+import { X } from '@/components/ui/icons;;
+import * as ToastPrimitives from '@radix-ui/react-toast;;
 import { cva, type VariantProps } from 'class-variance-authority;'
 ;;
 import { cn } from '@/lib/utils;'
-;
+
 const ToastProvider: unknown = ToastPrimitives.Provider;
-;
+
 const ToastViewport: unknown = React.forwardRef<;
   React.ElementRef<typeof ToastPrimitives.Viewport>,;
   React.ComponentPropsWithoutRef<typeof ToastPrimitives.Viewport>;''
@@ -23,7 +23,7 @@ const ToastViewport: unknown = React.forwardRef<;
   />;''
 ));
 ToastViewport.displayName = ToastPrimitives.Viewport.displayName;
-;'';
+;;
 const toastVariants: unknown = cva(;;
   'group pointer-events-auto relative flex w-full items-center justify-between space-x-4 overflow-hidden rounded-md border p-6 pr-8 shadow-lg transition-all data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:transition-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[swipe=end]:animate-out data-[state=closed]:fade-out-80 data-[state=closed]:slide-out-to-right-full data-[state=open]:slide-in-from-top-full data-[state=open]:sm:slide-in-from-bottom-full',;''
   {;;
@@ -146,7 +146,7 @@ const ToastClose = React.forwardRef<;
   </ToastPrimitives.Close>;
 ));
 ToastClose.displayName = ToastPrimitives.Close.displayName;
-;
+
 const ToastTitle: unknown = React.forwardRef<;
   React.ElementRef<typeof ToastPrimitives.Title>,;""
   React.ComponentPropsWithoutRef<typeof ToastPrimitives.Title>;";""
@@ -184,7 +184,7 @@ const ToastTitle = React.forwardRef<;
 ));
 ToastTitle.displayName = ToastPrimitives.Title.displayName;
 <<<<<<< HEAD
-;
+
 const ToastDescription: unknown = React.forwardRef<;
   React.ElementRef<typeof ToastPrimitives.Description>,;''
   React.ComponentPropsWithoutRef<typeof ToastPrimitives.Description>;
@@ -233,9 +233,9 @@ export {;
 //     },;
 //   };
 // };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -246,6 +246,7 @@ export {;
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 import { z } from 'zod;'
-;'';
+;;
 export const jobSchema: unknown "unknown = z.object({;",;""
   title: "z.string().min(3", {;";";";";""
     message: 'Title must be at least 3 characters.',;''
@@ -40,7 +40,7 @@ export const jobSchema: unknown "unknown = z.object({;",;""
     });
     .optional(),;''
 });
-;
+
 export type JobSchemaType = z.infer<typeof jobSchema>;''
 ''''''
 =======

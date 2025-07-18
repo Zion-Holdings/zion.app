@@ -1,16 +1,16 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
+import React from 'react';;
+import * as React from 'react';;
 import * as TooltipPrimitive from '@radix-ui/react-tooltip;'
 ;;
 import { cn } from '@/lib/utils;'
-;
+
 const TooltipProvider: unknown = TooltipPrimitive.Provider;
-;
+
 const Tooltip: unknown = TooltipPrimitive.Root;
-;
+
 const TooltipTrigger: unknown = TooltipPrimitive.Trigger;
-;
+
 const TooltipContent: unknown = React.forwardRef<;
   React.ElementRef<typeof TooltipPrimitive.Content>,;
   React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>;
@@ -26,7 +26,7 @@ const TooltipContent: unknown = React.forwardRef<;
   />;
 ));''
 TooltipContent.displayName = TooltipPrimitive.Content.displayName;
-;
+
 export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider };''
 ''''''
 =======

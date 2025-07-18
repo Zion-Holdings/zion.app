@@ -5,9 +5,9 @@ import {;
   CardHeader,;
 <<<<<<< HEAD
   CardTitle,;
-} from '@/components/ui/card;'';
+} from '@/components/ui/card;;
 import { Trophy } from '@/components/ui/icons;'
-;'';
+;;
 export interface LeaderboardEntry {;;
   name: "string;",;";";";";""
   points: "number;";";""

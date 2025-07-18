@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-import React, { useState, useRef } from 'react;';
+import React, { useState, useRef } from 'react;;
 import {;
   Dialog,;''
   DialogContent,;
   DialogHeader,;
   DialogTitle,;''
   DialogTrigger,;;
-} from '@/components/ui/dialog;'';
-import { Card, CardContent } from '@/components/ui/card;'';
-import { Button } from '@/components/ui/button;'';
-import { Textarea } from '@/components/ui/textarea;'';
-import { postFeedback } from '@/services/feedbackService;'';
-import { useFeedback } from '@/context/FeedbackContext;'';
+} from '@/components/ui/dialog;;
+import { Card, CardContent } from '@/components/ui/card;;
+import { Button } from '@/components/ui/button;;
+import { Textarea } from '@/components/ui/textarea;;
+import { postFeedback } from '@/services/feedbackService;;
+import { useFeedback } from '@/context/FeedbackContext;;
 import { useEnqueueSnackbar } from '@/context;'
 ;;
 const StarRatingInput: unknown "React.FC<{;",;";";";";""
@@ -50,12 +50,12 @@ const StarRatingInput: unknown "React.FC<{,;";
       <button;";"
         key={star};";";
         type="button"
-        onClick={() => onRate(star)};";"
+        onClick={() => onRate(star)};";"`
         className={`text-xl ${star <= value ? 'text-yellow-400' : 'text-gray-300'} focus: outline-none`"}"`
->>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+>>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae`
         aria-label={`Rate ${star}`};
       >;
-        ;
+
       </button>;
     ))};
   </div>;
@@ -75,7 +75,7 @@ export function FeedbackWidget(): ;
 <<<<<<< HEAD
   const enqueueSnackbar: unknown = useEnqueueSnackbar();
   const fileInputRef: unknown = useRef<HTMLInputElement>(null);
-;
+
   const handleFileSelect: unknown = (_e: React.ChangeEvent<HTMLInputElement>) => {;""
     const file: unknown = e.target.files?.[0];";""
     if (!file) return;";";""
@@ -204,7 +204,7 @@ export function FeedbackWidget(): ;
                   <input;";";";""
                     ref={fileInputRef};";";";";""
                     type="file";";";";";""
-                    accept="image/*";";";";""
+                    accept="image/* ";";";";""
                     onChange={handleFileSelect};";";";";""
                     className="hidden";";";";""
                   />;";";";";""
@@ -268,8 +268,8 @@ export function FeedbackWidget(): ;
                   )};"
                   <input";"
                     ref={fileInputRef}";""
-                    type=file"
-                    accept="image/* ;"";
+                    type=file" */
+                    accept="image/*  ;"";
                     onChange={handleFileSelect};"";
                     className="hidden"
                   />;";"
@@ -310,6 +310,7 @@ export function FeedbackWidget(): ;
 "";
 }"";
 }"
-}"
+}"` */
 }'';;` */
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

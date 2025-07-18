@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { render } from '@testing-library/react;'';
-import RouteSEO from '../RouteSEO;'';
-import { useRouter } from 'next/router;'';
-import { vi } from 'vitest;'';
+import React from 'react';;
+import { render } from '@testing-library/react;;
+import RouteSEO from '../RouteSEO;;
+import { useRouter } from 'next/router;;
+import { vi } from 'vitest;;
 import { findRouteByPath } from '@/utils/routeUtils;'
 ;;
 vi.mock('next/router', () => ({;;'
@@ -17,7 +17,7 @@ vi.mock('@/utils/routeUtils', () => ({;;'
 vi.mock('@/utils/config', () => ({;;'
   getAppConfig: () => ({ app: { url: 'https://example.com' } }),;'
 }));''
-;
+
 const mockedUseRouter: unknown = useRouter as unknown as vi.Mock;
 const mockedFindRoute: unknown = findRouteByPath as unknown as vi.Mock;''
 ;;

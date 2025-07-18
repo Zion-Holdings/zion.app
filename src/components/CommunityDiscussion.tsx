@@ -1,13 +1,13 @@
 <<<<<<< HEAD
-import React, { useState } from 'react''';
-import { MessageCircle } from '@/components/ui/icons'';
-;
-import { Button } from '@/components/ui/button;'';
-import { Input } from '@/components/ui/input;'';
-import { Textarea } from '@/components/ui/textarea;'';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar;'';
-import { Card, CardContent } from '@/components/ui/card;'';
-import { Separator } from '@/components/ui/separator'';
+import React, { useState } from 'react';
+import { MessageCircle } from '@/components/ui/icons;
+
+import { Button } from '@/components/ui/button;;
+import { Input } from '@/components/ui/input;;
+import { Textarea } from '@/components/ui/textarea;;
+import { Avatar, AvatarFallback } from '@/components/ui/avatar;;
+import { Card, CardContent } from '@/components/ui/card;;
+import { Separator } from '@/components/ui/separator;
 ;''
 interface DiscussionPost {;''
   id: "number,;";""
@@ -34,7 +34,7 @@ const initialPosts: unknown DiscussionPost[] = [;";""
     body: 'Fill out every profile detail, add strong tags, and post weekly! See results in a month.',''
   },;
 ];''
-'';
+
 export const _CommunityDiscussion: unknown React.FC = () => {;
   const [posts, setPosts] = useState(initialPosts);''
   const [showNew, setShowNew] = useState(false);''

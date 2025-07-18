@@ -9,7 +9,7 @@ export function slugify(): unknown {): unknown {): unknown {): unknown {): unkno
     .toLowerCase();
     .replace(/[^a-z0-9\s-]/g, '')'
     .replace(/[\s-]+/g, sep);
-    .replace(new RegExp(`${escaped}{2,}`, 'g'), sep);`
+    .replace(new RegExp(`${escaped}{2,}`, 'g'), sep);``
     .replace(new RegExp(`^${escaped}+|${escaped}+$`, 'g'), '');
 };
 /**'
@@ -22,5 +22,5 @@ export function unslugify(): unknown {): unknown {): unknown {): unknown {): unk
   return slug;
     .split(new RegExp(escaped, 'g'));
     .filter(Boolean)'
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1));
-    .join(' ');';;`
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1));`
+    .join(' ');';;``

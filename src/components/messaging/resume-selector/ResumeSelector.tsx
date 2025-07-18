@@ -1,19 +1,19 @@
 <<<<<<< HEAD
-import React, { useState, useEffect } from 'react';';
-import { Plus } from '@/components/ui/icons;'';
-import { Button } from '@/components/ui/button;'';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group;'';
+import React, { useState, useEffect } from 'react';;
+import { Plus } from '@/components/ui/icons;;
+import { Button } from '@/components/ui/button;;
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group;;
 import { Label } from '@/components/ui/label;'
 ;;
-import { useResume } from '@/hooks/useResume;'';
-import { exportResumeToPDF } from '@/utils/pdfExport;'';
-import { toast } from '@/components/ui/use-toast;'';
-import { ResumePreviewCard } from './ResumePreviewCard;'';
-import { UploadSection } from './UploadSection;'';
-import { SelectResumeSection } from './SelectResumeSection;'';
-import type { ResumeOption, ResumeSelectorProps } from './types;'';
+import { useResume } from '@/hooks/useResume;;
+import { exportResumeToPDF } from '@/utils/pdfExport;;
+import { toast } from '@/components/ui/use-toast;;
+import { ResumePreviewCard } from './ResumePreviewCard;;
+import { UploadSection } from './UploadSection;;
+import { SelectResumeSection } from './SelectResumeSection;;
+import type { ResumeOption, ResumeSelectorProps } from './types;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
-;
+
 export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {): unknown {{ onResumeSelected }: ResumeSelectorProps) {;''
   const [selectedOption, setSelectedOption] = useState<;;
     'recent' | 'select' | 'upload;''
@@ -71,7 +71,7 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
     loadResumes();
   }, [fetchResume]);
 <<<<<<< HEAD
-;
+
   // Update resume options when resume data changes;""
   useEffect(() => {;";""
     if (resume) {;";";""
@@ -154,7 +154,7 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
     };
   };
 <<<<<<< HEAD
-;
+
   // Handle custom file upload;''
   const handleFileUpload: unknown = (_e: React.ChangeEvent<HTMLInputElement>) => {;
     if (e.target.files && e.target.files[0]) {;
@@ -232,7 +232,7 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
 <<<<<<< HEAD
       setIsLoading(true);''
       const pdfBlob: unknown = await exportResumeToPDF(selectedResume.resume);
-;
+
       // Create download link;''
       const url: unknown = URL.createObjectURL(pdfBlob);;
       const link: unknown = document.createElement('a');''
@@ -240,7 +240,7 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
       link.download = `${selectedResume.title || 'Resume'} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}.pdf`;'
       document.body.appendChild(link);
       link.click();
-;
+
       // Clean up;''
       document.body.removeChild(link);
       URL.revokeObjectURL(url);
@@ -316,7 +316,7 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
       // Create download link'
       const url = URL.createObjectURL(pdfBlob);
       const link = document.createElement('a')'
-      link.href = url;
+      link.href = url;`
       link.download = `${selectedResume.title || 'Resume'} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}.pdf`;
       document.body.appendChild(link);
       link.click();
@@ -452,6 +452,7 @@ export function ResumeSelector(): unknown {): unknown {): unknown {): unknown {)
 ;""
 };"
 }"
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

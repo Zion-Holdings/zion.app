@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
-import { ChevronRight } from '@/components/ui/icons;'';
+import React from 'react';;
+import * as React from 'react';;
+import { ChevronRight } from '@/components/ui/icons;;
 import { Slot } from '@radix-ui/react-slot;'
 ;;
 import { cn } from '@/lib/utils;'
-;
+
 const Breadcrumb: unknown = React.forwardRef<;''
   HTMLElement,;;
   React.ComponentPropsWithoutRef<'nav'> & {;'
@@ -23,7 +23,7 @@ const Breadcrumb: unknown = React.forwardRef<;''
   />;''
 ));;
 Breadcrumb.displayName = 'Breadcrumb;'
-;
+
 const BreadcrumbList: unknown = React.forwardRef<;''
   HTMLOListElement,;;
   React.ComponentPropsWithoutRef<'ol'>;'
@@ -35,7 +35,7 @@ const BreadcrumbList: unknown = React.forwardRef<;''
   />;''
 ));;
 BreadcrumbList.displayName = 'BreadcrumbList;'
-;
+
 const BreadcrumbItem: unknown = React.forwardRef<;''
   HTMLLIElement,;;
   React.ComponentPropsWithoutRef<'li'>;'
@@ -47,7 +47,7 @@ const BreadcrumbItem: unknown = React.forwardRef<;''
   />;''
 ));;
 BreadcrumbItem.displayName = 'BreadcrumbItem;'
-;
+
 const BreadcrumbLink: unknown = React.forwardRef<;''
   HTMLAnchorElement,;;
   React.ComponentPropsWithoutRef<'a'> & {;'
@@ -55,7 +55,7 @@ const BreadcrumbLink: unknown = React.forwardRef<;''
   };''
 >(({ className, asChild = false, ...props }, ref) => {;;
   const Comp: unknown = asChild ? Slot : 'a;''
-;
+
   return (;
     <Comp;''
       ref={ref};;
@@ -65,7 +65,7 @@ const BreadcrumbLink: unknown = React.forwardRef<;''
   );''
 });;
 BreadcrumbLink.displayName = 'BreadcrumbLink;'
-;'';
+;;
 const BreadcrumbSeparator: unknown = ({;
   children,;
   className,;''
@@ -81,7 +81,7 @@ const BreadcrumbSeparator: unknown = ({;
   </li>;";";";""
 );";";";";""
 BreadcrumbSeparator.displayName = 'BreadcrumbSeparator;''
-;
+
 const BreadcrumbEllipsis: unknown = ({;
   className,;''
   ...props;;
@@ -96,7 +96,7 @@ const BreadcrumbEllipsis: unknown = ({;
   </span>;''
 );;
 BreadcrumbEllipsis.displayName = 'BreadcrumbElipssis;'
-;
+
 =======
 import React from 'react'
 import * as React from 'react''

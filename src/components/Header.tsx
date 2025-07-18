@@ -1,4 +1,4 @@
-import React, { useState } from 'react'';
+import React, { useState } from 'react;
 import {;
   Menu,;
   X,;
@@ -11,14 +11,14 @@ import {;
   Globe,
   ChevronDown,;''
   ShoppingCart,;''
-} from '@/components/ui/icons;'';
-import Link from 'next/link;'';
-import { useRouter } from 'next/router;'';
-import { useTranslation } from 'react-i18next;'';
-import { useAuth } from '@/hooks/useAuth;'';
-import { Button } from '@/components/ui/button;'';
-import { logError } from '@/utils/logError'';
-;
+} from '@/components/ui/icons;;
+import Link from 'next/link;;
+import { useRouter } from 'next/router;;
+import { useTranslation } from 'react-i18next;;
+import { useAuth } from '@/hooks/useAuth;;
+import { Button } from '@/components/ui/button;;
+import { logError } from '@/utils/logError;
+
 import {;
   DropdownMenu,;''
   DropdownMenuContent,''
@@ -26,7 +26,7 @@ import {;
   DropdownMenuSeparator,;''
   DropdownMenuTrigger,;''
 } from '@/components/ui/dropdown-menu''
-;'';
+;;
 export interface HeaderProps {''
   hideLogin?: boolean;
   customLogo?: string;''
@@ -67,7 +67,7 @@ export interface HeaderProps {'
 
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
 };
-;
+
 export function Header(): unknown {): unknown {): unknown {): unknown {): unknown {{ hideLogin = false }: HeaderProps) {
 <<<<<<< HEAD
   const { t } = useTranslation();""
@@ -127,7 +127,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
 '
   const handleSearch = (_e: React.FormEvent) => {'
     e.preventDefault();
-    if (searchQuery.trim()) {'
+    if (searchQuery.trim()) {'`
       router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
       setSearchQuery('')'
     };
@@ -551,7 +551,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
 };
 
 };''
-}
+
 }''
 }''
 =======
@@ -562,6 +562,7 @@ export function Header(): unknown {): unknown {): unknown {): unknown {): unknow
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

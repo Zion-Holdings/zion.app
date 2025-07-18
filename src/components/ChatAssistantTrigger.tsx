@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import { useState } from 'react''';
-import { MessageSquare } from '@/components/ui/icons'';
-;
-import { Button } from '@/components/ui/button;'';
-import { ChatAssistant } from '@/components/ChatAssistant;'';
-import { logErrorToProduction } from '@/utils/productionLogger'';
-;
+import { useState } from 'react';
+import { MessageSquare } from '@/components/ui/icons;
+
+import { Button } from '@/components/ui/button;;
+import { ChatAssistant } from '@/components/ChatAssistant;;
+import { logErrorToProduction } from '@/utils/productionLogger;
+
 export function ChatAssistantTrigger(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const [isOpen, setIsOpen] = useState(false);
 ;''
@@ -102,7 +102,7 @@ export function ChatAssistantTrigger(): ;
 };
 
 };''
-}
+
 }''
 }''
 =======

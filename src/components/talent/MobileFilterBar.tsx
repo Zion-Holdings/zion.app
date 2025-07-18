@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Search } from '@/components/ui/icons;'';
+import React from 'react';;
+import { Search } from '@/components/ui/icons;;
 import { Button } from '@/components/ui/button;'
 ;;
 import { Input } from '@/components/ui/input;'
@@ -10,7 +10,7 @@ interface MobileFilterBarProps {;;
   setSearchTerm: "(value: string) => void;",;";";";";""
   setIsMobileFilterOpen: "(isOpen: boolean) => void;";"
 };
-;
+
 export function MobileFilterBar(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   searchTerm,;""
   setSearchTerm,;";""

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'';
+import { useState, useEffect } from 'react;
 import {;
 <<<<<<< HEAD
   Dialog,;''
@@ -6,10 +6,10 @@ import {;
   DialogFooter,
   DialogHeader,;''
   DialogTitle,;''
-} from '@/components/ui/dialog;'';
-import { Textarea } from '@/components/ui/textarea;'';
-import { Button } from '@/components/ui/button;'';
-import { Progress } from '@/components/ui/progress'';
+} from '@/components/ui/dialog;;
+import { Textarea } from '@/components/ui/textarea;;
+import { Button } from '@/components/ui/button;;
+import { Progress } from '@/components/ui/progress;
 ;''
 interface AutoFillModalProps {;''
   open: "boolean,;";";"
@@ -17,7 +17,7 @@ interface AutoFillModalProps {;''
   onSubmit: (description: string) => void",;";";""
   loading: boolean""
 };
-;
+
 =======
   Dialog,'
   DialogContent,'
@@ -104,7 +104,7 @@ export function AutoFillModal(): unknown {): unknown {): unknown {): unknown {):
 };
 
 };''
-}
+
 }''
 }''
 =======

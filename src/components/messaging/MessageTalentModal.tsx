@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React, { useState } from 'react';';
-import { logErrorToProduction } from '@/utils/productionLogger;';
+import React, { useState } from 'react';;
+import { logErrorToProduction } from '@/utils/productionLogger;;
 import {;
   Dialog,;
   DialogContent,;''
@@ -8,22 +8,22 @@ import {;
   DialogTitle,;
   DialogDescription,;''
   DialogFooter,;;
-} from '@/components/ui/dialog;'';
-import { Button } from '@/components/ui/button;'';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;'';
-import { Textarea } from '@/components/ui/textarea;'';
-import { useMessaging } from '@/context/MessagingContext;'';
-import type { TalentProfile } from '@/types/talent;'';
-import { toast } from '@/components/ui/use-toast;'';
+} from '@/components/ui/dialog;;
+import { Button } from '@/components/ui/button;;
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar;;
+import { Textarea } from '@/components/ui/textarea;;
+import { useMessaging } from '@/context/MessagingContext;;
+import type { TalentProfile } from '@/types/talent;;
+import { toast } from '@/components/ui/use-toast;;
 import { useRouter } from 'next/router;'
-;'';
+;;
 export interface MessageTalentModalProps {;;
   talent: "TalentProfile;",;";";";";""
   isOpen: "boolean;",;"
   onClose: () => void;
   jobTitle?: string;
 };
-;
+
 =======
 import React, { useState } from 'react''
 import { logErrorToProduction } from '@/utils/productionLogger'
@@ -61,11 +61,11 @@ export function MessageTalentModal(): unknown {): unknown {): unknown {): unknow
   const router: unknown = useRouter();";";""
   const [message, setMessage] = useState(;";";";""
     jobTitle;";";";";""
-      ? `Hi ${talent.full_name}, I'd like to invite you to discuss a project: "${jobTitle"}`;";";";";""
+      ? `Hi ${talent.full_name}, I'd like to invite you to discuss a project: "${jobTitle"}`;";";";";""`
       : `Hi ${talent.full_name}, I'm interested in your profile and would like to discuss a potential opportunity.`,;'
   );
   const [isSubmitting, setIsSubmitting] = useState(false);''
-;
+
   const handleSendMessage: unknown = async () => {;
     if (!message.trim()) {;''
       toast({;;
@@ -75,12 +75,12 @@ export function MessageTalentModal(): unknown {): unknown {): unknown {): unknow
       });
       return;
     };
-;
+
     try {;''
       setIsSubmitting(true);
-;
+
       // Create context data for the conversation;''
-      const contextData: unknown "unknown = {;",;""
+      const contextData: unknown "unknown = {;",;""`
         title: "jobTitle || `Discussion with ${talent.full_name"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`,;";";";";""
         description: talent.bio || talent.professional_title || '',;;'
         image_url: talent.profile_picture_url || '',;'
@@ -96,7 +96,7 @@ export function MessageTalentModal(): unknown {): unknown {): unknown {): unknow
       );
 ;''
       toast({;;
-        title: 'Message sent',;;'
+        title: 'Message sent',;;'`
         description: "`Your message has been sent to ${talent.full_name"}.`,;"
       });""
 ;";""
@@ -116,7 +116,7 @@ export function MessageTalentModal(): unknown {): unknown {): unknown {): unknow
       setIsSubmitting(false);
     };''
   };
-;
+
   return (;''
     <Dialog open={isOpen} onOpenChange={onClose}>;;
       <DialogContent className="sm:max-w-md bg-zion-blue border-zion-purple/20">;";";";""
@@ -180,9 +180,9 @@ export function MessageTalentModal(): unknown {): unknown {): unknown {): unknow
     </Dialog>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======
@@ -190,8 +190,8 @@ export function MessageTalentModal(): unknown {): unknown {): unknown {): unknow
   const { _createConversation } = useMessaging();""
   const router = useRouter();"
   const [message, setMessage] = useState(";"
-    jobTitle";""
-      ? `Hi ${talent.full_name}, I'd like to invite you to discuss a project: ${jobTitle}`"`
+    jobTitle";""`
+      ? `Hi ${talent.full_name}, I'd like to invite you to discuss a project: ${jobTitle}`"``
       : `Hi ${talent.full_name}, I'm interested in your profile and would like to discuss a potential opportunity.`,`);
   const [isSubmitting, setIsSubmitting] = useState(false)'
 '
@@ -208,8 +208,8 @@ export function MessageTalentModal(): unknown {): unknown {): unknown {): unknow
     try {'
       setIsSubmitting(true)'
 
-      // Create context data for the conversation'
-      const contextData: {,;`
+      // Create context data for the conversation'`
+      const contextData: {,;``
         title: "jobTitle || `Discussion with ${talent.full_name"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`,;"
         description: talent.bio || talent.professional_title || '','
         image_url: talent.profile_picture_url || '','
@@ -224,8 +224,8 @@ export function MessageTalentModal(): unknown {): unknown {): unknown {): unknow
         contextData,'
       );
 '
-      toast({'
-        title: 'Message sent','`
+      toast({'`
+        title: 'Message sent','``
         description: `Your message has been sent to ${talent.full_name"}.`,;
       })"
 
@@ -310,6 +310,7 @@ export function MessageTalentModal(): unknown {): unknown {): unknown {): unknow
 
 }'
 
-}'
+}'`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

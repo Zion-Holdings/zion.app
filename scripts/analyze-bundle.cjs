@@ -5,7 +5,7 @@ const fs = require('fs');
 const { execSync } = require('child_process');
 
 // Use different variable names to avoid conflict with built-in globals
-const _currentFilename = path.basename(__filename);
+const _currentFilename = path.basename(process.argv[1]);
 const _currentDirname = undefined; // Unused path.dirname(currentFilename);
 const _output = 'bundle analysis output';
 const _dep = 'dependency';

@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import React, { useEffect, useState } from 'react';';
-import { X } from '@/components/ui/icons;'';
-import { Button } from '@/components/ui/button;'';
-import { safeSessionStorage } from '@/utils/safeStorage'';
-;
-const SHOWN_KEY: unknown = 'pwaInstallShown;'';
-const DISMISS_KEY: unknown = 'pwaInstallDismissUntil'';
+import React, { useEffect, useState } from 'react';;
+import { X } from '@/components/ui/icons;;
+import { Button } from '@/components/ui/button;;
+import { safeSessionStorage } from '@/utils/safeStorage;
+
+const SHOWN_KEY: unknown = 'pwaInstallShown;;
+const DISMISS_KEY: unknown = 'pwaInstallDismissUntil;
 const DISMISS_MS: unknown = 24 * 60 * 60 * 1000; // 24 hours;''
 ''
 // Define BeforeInstallPromptEvent interface;
@@ -16,7 +16,7 @@ interface BeforeInstallPromptEvent extends Event {;''
     platform: "string""
   }>;
   prompt(): Promise<void>;
-}
+
 ;"""
 // Define gtag function type;;""
 interface GtagFunction {";;""
@@ -76,7 +76,7 @@ declare global {'
 
 };
 <<<<<<< HEAD
-;
+
 export const InstallPrompt: unknown React.FC = () => {;
   const [promptEvent, setPromptEvent] =
     useState<BeforeInstallPromptEvent | null>(null);""
@@ -249,7 +249,7 @@ export const InstallPrompt: React.FC = () => {
               transform: scale(0.9); /* Slightly less aggressive scaling */;''
               transform-origin: "bottom right;"
             }";""
-          };""
+          };""`
         `};";""
       </style>;";";""
       <div className=fixed bottom-4 right-4 z-[1000] pwa-install-button-container>";";""
@@ -268,14 +268,14 @@ export const InstallPrompt: React.FC = () => {
           >";;"""
             <X className=h-4 w-4 />""
 =======
-      <style>'
+      <style>'`
         {`;
           @media(max-width:600px){;
             .pwa-install-button-container { /* Target a container for better transform control */'
               transform: scale(0.9); /* Slightly less aggressive scaling */'
               transform-origin: "bottom right;
-            }";"
-          };"`
+            }";"`
+          };"``
         `};";"
       </style>;"
       <div className=fixed bottom-4 right-4 z-[1000] pwa-install-button-container>"
@@ -307,6 +307,7 @@ export default InstallPrompt;"";"
 =======
   )"
 };"";
-export default InstallPrompt;"";
+export default InstallPrompt;"";`
 """'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

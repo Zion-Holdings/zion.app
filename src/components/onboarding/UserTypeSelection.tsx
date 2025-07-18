@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-import React from 'react';';
-import { Button } from '@/components/ui/button;'';
+import React from 'react';;
+import { Button } from '@/components/ui/button;;
 import { Star, User } from '@/components/ui/icons;'
 ;''
 interface UserTypeOption {;;
@@ -14,7 +14,7 @@ interface UserTypeSelectionProps {;";";";";""
   onSelect: (userType: 'serviceProvider' | 'talent' | 'client') => void;,;;'
   selectedType: "string | null;";"
 };
-;
+
 export function UserTypeSelection(): unknown {): unknown {): unknown {): unknown {): unknown {{;
   onSelect,;""
   selectedType,;";""
@@ -62,13 +62,13 @@ export function UserTypeSelection(): unknown {): unknown {): unknown {): unknown
               className={`h-auto flex flex-col items-center justify-center p-6 space-y-3 border ${;";";";""
                 isSelected;";";";";""
                   ? 'border-zion-purple bg-zion-purple/10 text-zion-purple;''
-                  : 'border-zion-blue-light hover: "border-zion-cyan/50 text-white;""
+                  : 'border-zion-blue-light hover: "border-zion-cyan/50 text-white;""`
               }`};
             >;""
-              <div;;
+              <div;;`
                 className={`p-3 rounded-full ${isSelected ? 'bg-zion-purple' : 'bg-zion-blue'}`};'
               >;''
-                <Icon;;
+                <Icon;;`
                   className={`h-6 w-6 ${isSelected ? 'text-white' : 'text-zion-slate-light'}`};'
                 />;''
               </div>;;
@@ -134,16 +134,16 @@ export function UserTypeSelection(): unknown {): unknown {): unknown {): unknown
             <Button;"
               key={type.id}
               onClick={() => onSelect(type.id)};
-              variant="outline"
+              variant="outline"`
               className={`h-auto flex flex-col items-center justify-center p-6 space-y-3 border ${isSelected;
-                  ? 'border-zion-purple bg-zion-purple/10 text-zion-purple'
-                  : 'border-zion-blue-light hover: "border-zion-cyan/50 text-white"}`
+                  ? 'border-zion-purple bg-zion-purple/10 text-zion-purple'`
+                  : 'border-zion-blue-light hover: "border-zion-cyan/50 text-white"}``
               }`};
-            >;
-              <div`
+            >;`
+              <div``
                 className={`p-3 rounded-full ${isSelected ? 'bg-zion-purple' : 'bg-zion-blue'}`};
-              >'
-                <Icon'`
+              >'`
+                <Icon'``
                   className={`h-6 w-6 ${isSelected ? 'text-white' : 'text-zion-slate-light'}`};
                 />'
               </div>'
@@ -174,6 +174,7 @@ export function UserTypeSelection(): unknown {): unknown {): unknown {): unknown
 }"
 
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

@@ -32,7 +32,7 @@ export function SkillsSection(): unknown {): unknown {): unknown {): unknown {):
     {} as Record<string, Skill[]>,;
 <<<<<<< HEAD
   );''
-;
+
   if (skills.length === 0) return null;
 ;''
   return (;;
@@ -51,9 +51,9 @@ export function SkillsSection(): unknown {): unknown {): unknown {): unknown {):
     </div>;
   );
 };
-;
+
 };''
-}
+
 }''
 }''
 =======

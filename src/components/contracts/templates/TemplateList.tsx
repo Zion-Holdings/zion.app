@@ -1,26 +1,26 @@
 <<<<<<< HEAD
-import type { ContractTemplate } from '@/types/contracts;';
+import type { ContractTemplate } from '@/types/contracts;;
 import {;
   Loader2,;''
   Edit,;
   Star,;
   StarOff,;''
   Trash2 as Trash,;;
-} from '@/components/ui/icons;'';
+} from '@/components/ui/icons;;
 import { Button } from '@/components/ui/button;'
 ;;
-import { useContractTemplates } from '@/hooks/useContractTemplates;'';
-import { Card, CardContent } from '@/components/ui/card;'';
-import { Separator } from '@/components/ui/separator;';
+import { useContractTemplates } from '@/hooks/useContractTemplates;;
+import { Card, CardContent } from '@/components/ui/card;;
+import { Separator } from '@/components/ui/separator;;
 import {;''
   Tooltip,;
   TooltipContent,;
   TooltipProvider,;''
   TooltipTrigger,;;
-} from '@/components/ui/tooltip;'';
+} from '@/components/ui/tooltip;;
 import { useAuth } from '@/hooks/useAuth;'
 // useRouter replaces the old useLocation hook from react-router;;
-import { useRouter } from 'next/router;';
+import { useRouter } from 'next/router;;
 =======
 import type { ContractTemplate } from '@/types/contracts'
 import {;
@@ -55,7 +55,7 @@ import {;
   AlertDialogFooter,;
   AlertDialogHeader,;''
   AlertDialogTitle,;;
-} from '@/components/ui/alert-dialog;'';
+} from '@/components/ui/alert-dialog;;
 import { useState } from 'react;'
 ;''
 interface TemplateListProps {;;
@@ -64,7 +64,7 @@ interface TemplateListProps {;;
   onSelect: "(template: ContractTemplate) => void;",;";";";";""
   onEdit: "(template: ContractTemplate) => void;";"
 };
-;
+
 =======
   AlertDialogContent,'
   AlertDialogDescription,'
@@ -367,6 +367,7 @@ export function TemplateList(): unknown {): unknown {): unknown {): unknown {): 
 ;""
 };"
 }"
-
+`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

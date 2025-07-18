@@ -1,21 +1,21 @@
 <<<<<<< HEAD
-import React from 'react';';
+import React from 'react';;
 import { BadgeDollarSign } from '@/components/ui/icons;'
 ;;
-import { useWallet } from '@/hooks/useWallet;';
+import { useWallet } from '@/hooks/useWallet;;
 import {;
   Card,;''
   CardContent,;
   CardDescription,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;'';
-import { Button } from '@/components/ui/button;'';
+} from '@/components/ui/card;;
+import { Button } from '@/components/ui/button;;
 import Skeleton from '@/components/ui/skeleton;'
-;
+
 export function TokenDisplay(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   const { wallet, loading } = useWallet();
-;
+
   return (;''
     <Card>;;
       <CardHeader className="flex flex-row items-center justify-between pb-2">;";";";""

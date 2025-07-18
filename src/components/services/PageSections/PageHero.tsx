@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-import { GradientHeading } from '@/components/GradientHeading;'';
+import { GradientHeading } from '@/components/GradientHeading;;
 import { Clock, DollarSign } from '@/components/ui/icons;'
-;
+
 export function PageHero(): unknown {): unknown {): unknown {): unknown {): unknown {) {;''
   return (;;
     <div className="text-center mb-12">;";";";";""

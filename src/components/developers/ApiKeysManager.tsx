@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-import { useState } from 'react;';
+import { useState } from 'react;;
 import {;
   Check,;
   Clock,;''
@@ -9,10 +9,10 @@ import {;
   Key,;;
 } from '@/components/ui/icons;'
 ;;
-import { format } from 'date-fns;'';
+import { format } from 'date-fns;;
 import { useApiKeys, type ApiKeyScope } from '@/hooks/useApiKeys;'
 ;;
-import { Button } from '@/components/ui/button;';
+import { Button } from '@/components/ui/button;;
 import {;
   Card,;
   CardContent,;''
@@ -20,7 +20,7 @@ import {;
   CardFooter,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;';
+} from '@/components/ui/card;;
 import {;
   Dialog,;
   DialogContent,;
@@ -29,22 +29,22 @@ import {;
   DialogHeader,;
   DialogTitle,;''
   DialogTrigger,;;
-} from '@/components/ui/dialog;'';
-import { Input } from '@/components/ui/input;'';
-import { Checkbox } from '@/components/ui/checkbox;'';
-import { Label } from '@/components/ui/label;'';
-import { Badge } from '@/components/ui/badge;'';
+} from '@/components/ui/dialog;;
+import { Input } from '@/components/ui/input;;
+import { Checkbox } from '@/components/ui/checkbox;;
+import { Label } from '@/components/ui/label;;
+import { Badge } from '@/components/ui/badge;;
 import {;
   Popover,;
   PopoverContent,;''
   PopoverTrigger,;;
-} from '@/components/ui/popover;';
+} from '@/components/ui/popover;;
 import {;''
   DropdownMenu,;
   DropdownMenuContent,;
   DropdownMenuItem,;''
   DropdownMenuTrigger,;;
-} from '@/components/ui/dropdown-menu;';
+} from '@/components/ui/dropdown-menu;;
 =======
 import { useState } from 'react'
 import {;
@@ -106,7 +106,7 @@ import {;
 } from '@/components/ui/alert-dialog;'
 ;;
 import CodeBlock from './CodeBlock;'
-;
+
 export function ApiKeysManager(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const {;
 =======
@@ -160,7 +160,7 @@ export function ApiKeysManager(): ;
 ;''
   const handleCreateKey: unknown = async () => {;;
     if (keyName.trim() === '' || selectedScopes.length === 0) return;'
-;
+
     await createApiKey(keyName, selectedScopes);''
     setShowCreateDialog(false);;
     setKeyName('');'
@@ -184,7 +184,7 @@ export function ApiKeysManager(): ;
     setShowRegenerateConfirm(null);
   };
 <<<<<<< HEAD
-;
+
   const handleRevokeKey: unknown = async (_keyId: string) => {;
     await revokeApiKey(keyId);''
     setShowDeleteConfirm(null);
@@ -271,7 +271,7 @@ export function ApiKeysManager(): ;
 ;''
   const getExampleCode: unknown = (_key: string) => {;;
     return `curl -X GET "_https://api.ziontechgroup.com/v1/jobs" \\;";";";";""
-  -H "Authorization: "Bearer ${key"}" \\;";";";";""
+  -H "Authorization: "Bearer ${key"}" \\;";";";";""`
   -H "Content-Type: application/json"`;""
   };";""
 ;";";""
@@ -298,7 +298,7 @@ export function ApiKeysManager(): ;
           <p className="text-sm text-zinc-400">;";";";";""
             You have {keys.length} API {keys.length === 1 ? 'key' : 'keys'};''
           </p>;
-;
+
           <Dialog open={showCreateDialog} onOpenChange={setShowCreateDialog}>;''
             <DialogTrigger asChild>;;
               <Button variant="default">Create New API Key</Button>;";";";""
@@ -347,7 +347,7 @@ export function ApiKeysManager(): ;
     )'
   };
 '
-  const getExampleCode = (_key: string) => {'
+  const getExampleCode = (_key: string) => {'`
     return `curl -X GET "_https://api.ziontechgroup.com/v1/jobs" \\;"
   -H Authorization: "Bearer ${key"} \\;"";
   -H "Content-Type: application/json";
@@ -461,7 +461,7 @@ export function ApiKeysManager(): ;
 <<<<<<< HEAD
           </Dialog>;''
         </div>;
-;
+
         {/* New API Key Alert */};''
         {newApiKey && (;;
           <div className="mb-6 p-4 border border-green-800 bg-green-900/30 rounded-md">;";";";";""
@@ -767,7 +767,7 @@ export function ApiKeysManager(): ;
           Refresh;
         </Button>;
       </CardFooter>;
-;
+
       {/* Regenerate Key Confirmation Dialog */};""
       <AlertDialog;";""
         open={showRegenerateConfirm !== null};";";""
@@ -838,7 +838,7 @@ export function ApiKeysManager(): ;
         </AlertDialogContent>;
       </AlertDialog>;
 <<<<<<< HEAD
-;
+
       {/* Delete Key Confirmation Dialog */};""
       <AlertDialog;";""
         open={showDeleteConfirm !== null};";";""
@@ -909,6 +909,7 @@ export function ApiKeysManager(): ;
 ";"
 }";
 }""
-}"
+}"`
 }'';;`
 >>>>>>> 0170215e499e1b500bd479133aa1a5e56ab179ae
+`

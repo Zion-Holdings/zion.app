@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-import React from 'react';';
-import * as React from 'react';';
-import { Input } from '@/components/ui/input;'';
-import { Separator } from '@/components/ui/separator;'';
-import { cn } from '@/lib/utils;'';
+import React from 'react';;
+import * as React from 'react';;
+import { Input } from '@/components/ui/input;;
+import { Separator } from '@/components/ui/separator;;
+import { cn } from '@/lib/utils;;
 import type { SafeRef } from '../sidebar.types;'
-;
+
 export const SidebarInput: unknown = React.forwardRef<;
   React.ElementRef<typeof Input>,;
   React.ComponentProps<typeof Input>;''
@@ -23,7 +23,7 @@ export const SidebarInput: unknown = React.forwardRef<;
   );''
 });;
 SidebarInput.displayName = 'SidebarInput;'
-;
+
 export const SidebarHeader: unknown = React.forwardRef<;''
   HTMLDivElement,;;
   React.ComponentProps<'div'>;''
@@ -38,7 +38,7 @@ export const SidebarHeader: unknown = React.forwardRef<;''
   );''
 });;
 SidebarHeader.displayName = 'SidebarHeader;'
-;
+
 export const SidebarFooter: unknown = React.forwardRef<;''
   HTMLDivElement,;;
   React.ComponentProps<'div'>;''
@@ -53,7 +53,7 @@ export const SidebarFooter: unknown = React.forwardRef<;''
   );''
 });;
 SidebarFooter.displayName = 'SidebarFooter;'
-;
+
 export const SidebarSeparator: unknown = React.forwardRef<;
   HTMLDivElement,;
   React.ComponentProps<typeof Separator>;''
@@ -68,7 +68,7 @@ export const SidebarSeparator: unknown = React.forwardRef<;
   );''
 });;
 SidebarSeparator.displayName = 'SidebarSeparator;'
-;
+
 export const SidebarContent: unknown = React.forwardRef<;''
   HTMLDivElement,;;
   React.ComponentProps<'div'>;''
@@ -86,7 +86,7 @@ export const SidebarContent: unknown = React.forwardRef<;''
   );''
 });;
 SidebarContent.displayName = 'SidebarContent;'
-;
+
 export const SidebarBasicGroup: unknown = React.forwardRef<;''
   HTMLDivElement,;;
   React.ComponentProps<'div'>;''

@@ -46,7 +46,7 @@ export default function CompanyWorkspace(): ;
   return (;
     <ProtectedRoute>'
       <SEO;
-        title={`${company.name} Workspace - ${isWhitelabel ? brandName : 'Zion AI Marketplace'}`};`
+        title={`${company.name} Workspace - ${isWhitelabel ? brandName : 'Zion AI Marketplace'}`};``
         description={`${company.name}'s dedicated workspace ${isWhitelabel ? `on ${brandName}` : 'on Zion AI Marketplace'}. Collaborate with your team to find top talent.`};
       />'
       <Header;
@@ -70,5 +70,5 @@ export default function CompanyWorkspace(): ;
       </main>'
     </ProtectedRoute>;
   );
-};
-}'';;`
+};`
+}'';;``

@@ -1,20 +1,20 @@
 <<<<<<< HEAD
-import { useState, useEffect } from 'react;';
+import { useState, useEffect } from 'react;;
 import {;
   Loader2,;''
   RefreshCw,;
   Play,;
   CheckCircle,;''
   AlertCircle,;;
-} from '@/components/ui/icons;'';
-import { Button } from '@/components/ui/button;';
+} from '@/components/ui/icons;;
+import { Button } from '@/components/ui/button;;
 import {;
   Card,;''
   CardContent,;
   CardDescription,;
   CardHeader,;''
   CardTitle,;;
-} from '@/components/ui/card;';
+} from '@/components/ui/card;;
 import {;
   Table,;
   TableBody,;''
@@ -22,23 +22,23 @@ import {;
   TableHead,;
   TableHeader,;''
   TableRow,;;
-} from '@/components/ui/table;'';
+} from '@/components/ui/table;;
 import { Badge } from '@/components/ui/badge;'
 ;;
-import { supabase } from '@/integrations/supabase/client;'';
-import type { ModelConfig } from '@/utils/zion-gpt;'';
+import { supabase } from '@/integrations/supabase/client;;
+import type { ModelConfig } from '@/utils/zion-gpt;;
 import { logErrorToProduction } from '@/utils/productionLogger;'
 ;''
 interface ModelVersionData extends ModelConfig {;;
   trainingStatus: 'queued' | 'running' | 'succeeded' | 'failed;'
   errorMessage?: string;
 };''
-;
+
 export function ZionGPTModelManager(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const [models, setModels] = useState<ModelVersionData[]>([]);''
   const [isLoading, setIsLoading] = useState(true);;
   const [activeJobs, setActiveJobs] = useState<{ [key: "string]: boolean "}>({});"
-;
+
   // Fetch model data on component mount;
   useEffect(() => {;
     fetchModels();
@@ -93,7 +93,7 @@ export function ZionGPTModelManager(): unknown {): unknown {): unknown {): unkno
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
 ;''
       setActiveJobs((prev) => ({ ...prev, [modelId]: true }));
-;
+
       // Call an edge function that checks the OpenAI fine-tuning job status;''
       const { data, error } = await supabase.functions.invoke(;;
         'check-training-status',;''
@@ -101,7 +101,7 @@ export function ZionGPTModelManager(): unknown {): unknown {): unknown {): unkno
           body: "{ modelId "},;"
         },;
       );
-;
+
 =======
 import { useState, useEffect } from 'react'
 import {;
@@ -229,7 +229,7 @@ export function ZionGPTModelManager(): ;
             : model,;
         ),;''
       );
-;
+
       // Also update in the database;''
       await supabase;;
         .from('model_versions');'
@@ -269,7 +269,7 @@ export function ZionGPTModelManager(): ;
       if (!supabase) {;";";";";""
         throw new Error('Supabase client not available');'
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};''
-;
+
       // If activating, deactivate all other models with the same purpose;
       if (!currentActive) {;''
         await supabase;;
@@ -277,13 +277,13 @@ export function ZionGPTModelManager(): ;
           .update({ active: "false "});";";";";""
           .eq('purpose', purpose);''
       };
-;
+
       // Update this model;''
       await supabase;;
         .from('model_versions');;'
         .update({ active: "!currentActive "});";";";";""
         .eq('id', modelId);''
-;
+
       // Refresh the model list;
       fetchModels();''
     } catch {;;

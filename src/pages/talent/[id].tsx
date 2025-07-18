@@ -27,5 +27,5 @@ export default function TalentProfilePage(): '
         if (!res.ok) throw new Error('Failed to load profile');
         const data = await res.json();
         setProfile(data.profile)'
-      } catch {;
-        setError('Profile not found');';;`
+      } catch {;`
+        setError('Profile not found');';;``

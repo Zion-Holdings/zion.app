@@ -4,8 +4,8 @@ export function useIsMobile(): unknown {): unknown {): unknown {): unknown {): u
   const [isMobile, setIsMobile] = useState(false);
 '
   useEffect(() => {'
-    if (typeof window === 'undefined') return'
-'`
+    if (typeof window === 'undefined') return'`
+'``
     const query = `(max-width: "${breakpoint}px)`;
     const mediaQuery = window.matchMedia(query);
     const handleChange = (_event: MediaQueryListEvent) => {;
@@ -20,5 +20,5 @@ export function useIsMobile(): unknown {): unknown {): unknown {): unknown {): u
   }, [breakpoint])'
 '
   return isMobile;
-};
-}'';;`
+};`
+}'';;``
