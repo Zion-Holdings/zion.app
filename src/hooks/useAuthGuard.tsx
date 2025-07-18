@@ -37,7 +37,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
 
   useEffect(() => {
     let mounted = true
-    const _redirectTimer: NodeJS.Timeout | null = null
+    let redirectTimer: NodeJS.Timeout | null = null
 
     const checkAuth = async () => {
       try {
@@ -98,7 +98,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
           }, 100)
         }
 
-      } catch {
+      } catch (error) {
         if (mounted) {
           logErrorToProduction('Auth guard error:', { data: error })
           setState(prev => ({
@@ -119,10 +119,10 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
     if (!supabase) throw new Error('Supabase client not initialized');
     const auth = supabase.auth;
     const { data: { subscription } } = auth.onAuthStateChange(
-      async (event: AuthChangeEvent, _session: Session | null) => {
+      async (event: AuthChangeEvent, session: Session | null) => {
         if (!mounted) return
 
-        logInfo('Auth guard: Auth state changed:', { data:  { data: event } })
+        logInfo('Auth guard: Auth state changed:', { data: event })
         
         let userState: User | null = null;
         if (session) {

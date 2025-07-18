@@ -49,14 +49,14 @@ async function ask() {
     } else {
       outputElement.textContent = 'No response from background script.';
     }
-  } catch {
+  } catch (error) {
     console.error('Failed to contact background script');
-    if (err.message === 'Request timeout') {
+    if (error.message === 'Request timeout') {
       outputElement.textContent = 'Request timed out. Please try again.';
-    } else if (err.message?.includes('message channel closed') || 
-               err.message?.includes('Could not establish connection') ||
-               err.message?.includes('Receiving end does not exist') ||
-               err.message?.includes('Extension context invalidated')) {
+    } else if (error.message?.includes('message channel closed') || 
+               error.message?.includes('Could not establish connection') ||
+               error.message?.includes('Receiving end does not exist') ||
+               error.message?.includes('Extension context invalidated')) {
       outputElement.textContent = 'Connection lost. Please try again.';
     } else {
       outputElement.textContent = 'Error contacting background script.';
@@ -84,9 +84,9 @@ async function safeMessageSend(message, action) {
       console.error(`${action} failed:`, response.error);
     }
     return response;
-  } catch {
-    console.'Error occurred'or(`${action} message failed:`, err);
-    return { error: err.message };
+  } catch (error) {
+    console.error(`${action} message failed:`, error);
+    return { error: error.message };
   }
 }
 

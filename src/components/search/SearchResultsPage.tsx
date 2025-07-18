@@ -331,7 +331,7 @@ const NoResultsState: React.FC<{ searchTerm: string; onNewSearch: (term: string)
 };
 
 // Main Search Results Page Component
-export const _SearchResultsPage: React.FC = () => {
+export const SearchResultsPage: React.FC = () => {
   const router = useRouter();
   const [searchTerm, setSearchTerm] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);

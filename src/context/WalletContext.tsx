@@ -93,7 +93,7 @@ const KNOWN_INVALID_PROJECT_IDS = [
 // This is to ensure only one well-structured WalletProvider (the one using useRef,
 // originally starting at line 181) remains.
 
-export const _WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
   if (process.env.NODE_ENV === 'development') {
     logInfo('[WalletProvider] Initializing...');
