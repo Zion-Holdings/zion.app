@@ -159,7 +159,7 @@ export function useTenantAdminStatus(tenantId?: string) {
 
         setIsAdmin(!!data && !error);
       } catch {
-        logWarn('Error checking tenant admin status:', { data:  { data: 'Error occurred' } });
+        logWarn('Error checking tenant admin status:', { data:  { data: error } });
         setIsAdmin(false);
       } finally {
         setIsLoading(false);

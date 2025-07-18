@@ -14,7 +14,7 @@ export async function rewardOnboarding(userId: string) {
       throw new Error(text || `Error ${res.status}`);
     }
   } catch {
-    logErrorToProduction('Failed to reward onboarding:', { data: 'Error occurred' });
+    logErrorToProduction('Failed to reward onboarding:', { data: error });
   }
 }
 
@@ -30,7 +30,7 @@ export async function rewardReferral(userId: string) {
       throw new Error(text || `Error ${res.status}`);
     }
   } catch {
-    logErrorToProduction('Failed to reward referral:', { data: 'Error occurred' });
+    logErrorToProduction('Failed to reward referral:', { data: error });
   }
 }
 
@@ -46,6 +46,6 @@ export async function rewardFiveStarReview(userId: string) {
       throw new Error(text || `Error ${res.status}`);
     }
   } catch {
-    logErrorToProduction('Failed to reward review:', { data: 'Error occurred' });
+    logErrorToProduction('Failed to reward review:', { data: error });
   }
 }

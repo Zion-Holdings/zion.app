@@ -136,7 +136,7 @@ class EnhancedErrorCollector {
 
       this.performanceObserver.observe({ entryTypes: ['navigation', 'resource'] });
     } catch {
-      logWarn('Failed to setup performance monitoring:', { data:  { data: 'Error occurred' } });
+      logWarn('Failed to setup performance monitoring:', { data:  { data: error } });
     }
   }
 

@@ -37,7 +37,7 @@ export function useJobMatches(jobId: string) {
       if (error) throw error;
       setMatches(data || []);
     } catch {
-      logErrorToProduction('Error fetching job matches:', { data: 'Error occurred' });
+      logErrorToProduction('Error fetching job matches:', { data: error });
       toast({
         title: "Error",
         description: "Failed to load matched talents. Please try again later.",
@@ -66,7 +66,7 @@ export function useJobMatches(jobId: string) {
       // Refresh the matches list
       await fetchMatches();
     } catch {
-      logErrorToProduction('Error triggering AI matching:', { data: 'Error occurred' });
+      logErrorToProduction('Error triggering AI matching:', { data: error });
       toast({
         title: "Matching Failed",
         description: "Could not process talent matching. Please try again later.",

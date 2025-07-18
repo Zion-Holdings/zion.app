@@ -17,7 +17,7 @@ export async function ensureAnalyticsTablesExist() {
       await createAnalyticsTables();
     }
   } catch {
-    logWarn('Error checking if analytics tables exist:', { data:  { data: 'Error occurred' } });
+    logWarn('Error checking if analytics tables exist:', { data:  { data: error } });
     // No need to create tables here, as this could be a connection error
   }
 }
@@ -88,7 +88,7 @@ async function createAnalyticsTables() {
     
     logInfo('Analytics tables created successfully');
   } catch {
-    logErrorToProduction('Error creating analytics tables:', { data: 'Error occurred' });
+    logErrorToProduction('Error creating analytics tables:', { data: error });
     // Tables creation failed, but we can still continue
   }
 }

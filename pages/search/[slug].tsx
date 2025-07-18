@@ -266,7 +266,7 @@ export default function SearchResultsPage({
         setResults((prev) => [...prev, ...(data.results || [])]);
       }
     } catch {
-      logErrorToProduction('Error fetching search results:', { data: 'Error occurred' });
+      logErrorToProduction('Error fetching search results:', { data: error });
       const offline = offlineSearch(searchTerm, page, 12, {
         sortBy,
         ...(categoryFilter !== 'all' && categoryFilter ? { category: categoryFilter } : {}),

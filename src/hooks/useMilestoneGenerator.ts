@@ -50,7 +50,7 @@ export function useMilestoneGenerator() {
       setGeneratedMilestones(milestonesWithFlag);
       return milestonesWithFlag;
     } catch {
-      logErrorToProduction('Error generating milestones:', { data: 'Error occurred' });
+      logErrorToProduction('Error generating milestones:', { data: error });
       toast.error('Failed to generate milestones');
       return [];
     } finally {

@@ -53,7 +53,7 @@ export function getCacheItem<T>(key: string, category: CacheCategory = CacheCate
     logDebug(`Cache MISS: ${key} (${category})`);
     return undefined;
   } catch {
-    logErrorToProduction(`Cache GET 'Error occurred' for ${key}`, error as Error, { cacheKey: key, category });
+    logErrorToProduction(`Cache GET error for ${key}`, error as Error, { cacheKey: key, category });
     return undefined;
   }
 }
@@ -78,7 +78,7 @@ export function setCacheItem<T>(
       }
     return success;
   } catch {
-    logErrorToProduction(`Cache SET 'Error occurred' for ${key}`, error as Error, { cacheKey: key, category });
+    logErrorToProduction(`Cache SET error for ${key}`, error as Error, { cacheKey: key, category });
     return false;
   }
 }
@@ -95,7 +95,7 @@ export function deleteCacheItem(key: string, category: CacheCategory = CacheCate
       }
     return success;
   } catch {
-    logErrorToProduction(`Cache DELETE 'Error occurred' for ${key}`, error as Error, { cacheKey: key, category });
+    logErrorToProduction(`Cache DELETE error for ${key}`, error as Error, { cacheKey: key, category });
     return false;
   }
 }
@@ -114,7 +114,7 @@ export function clearCache(category?: CacheCategory): void {
       logDebug('Cache CLEARED: all categories');
     }
   } catch {
-    logErrorToProduction('Cache CLEAR 'Error occurred'', 'Error occurred' as Error, { category });
+    logErrorToProduction('Cache CLEAR error', error as Error, { category });
   }
 }
 
@@ -134,7 +134,7 @@ export function getCacheStats(category: CacheCategory) {
       ksize: stats.ksize
     };
   } catch {
-    logErrorToProduction(`Cache STATS 'Error occurred' for ${category}`, error as Error, { category });
+    logErrorToProduction(`Cache STATS error for ${category}`, error as Error, { category });
     return null;
   }
 }
@@ -191,7 +191,7 @@ export async function cacheOrCompute<T>(
     setCacheItem(key, result, category, customTTL);
     return result;
   } catch {
-    logErrorToProduction(`Cache compute 'Error occurred' for ${key}`, error as Error, { cacheKey: key, category });
+    logErrorToProduction(`Cache compute error for ${key}`, error as Error, { cacheKey: key, category });
     throw error;
   }
 }

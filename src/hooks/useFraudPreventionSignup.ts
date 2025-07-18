@@ -16,7 +16,7 @@ export function useFraudPreventionSignup() {
       const data = await response.json();
       return data.ip;
     } catch {
-      logErrorToProduction('Error getting IP:', { data: 'Error occurred' });
+      logErrorToProduction('Error getting IP:', { data: error });
       return undefined;
     }
   };
@@ -72,7 +72,7 @@ export function useFraudPreventionSignup() {
       // No suspicious patterns found
       return true;
     } catch {
-      logErrorToProduction('Error in fraud check:', { data: 'Error occurred' });
+      logErrorToProduction('Error in fraud check:', { data: error });
       // On error, allow the signup but log the error
       return true;
     } finally {

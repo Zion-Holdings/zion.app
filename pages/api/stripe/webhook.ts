@@ -49,7 +49,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           fs.writeFileSync(file, JSON.stringify(orders, null, 2));
         }
       } catch {
-        logErrorToProduction('Failed to update order', { data: 'Error occurred' });
+        logErrorToProduction('Failed to update order', { data: error });
       }
     }
     const userId = metadata.userId;

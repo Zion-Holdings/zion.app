@@ -32,7 +32,7 @@ export function useCompanyWorkspace(companySlug?: string) {
         setError(null);
       } catch {
         setCompany(null);
-        setError('Company not found or 'Error occurred'or fetching data');
+        setError('Company not found or erroror fetching data');
       } finally {
         setIsLoading(false);
       }

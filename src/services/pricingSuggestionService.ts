@@ -112,7 +112,7 @@ export async function getTalentRateSuggestion(params: TalentRateParams): Promise
       explanation
     };
   } catch {
-    logErrorToProduction('Error generating rate suggestion:', { data: 'Error occurred' });
+    logErrorToProduction('Error generating rate suggestion:', { data: error });
     return {
       minRate: 25,
       maxRate: 50,
@@ -151,7 +151,7 @@ export async function trackPricingSuggestion(data: {
 
     return true;
   } catch {
-    logErrorToProduction('Error tracking pricing suggestion:', { data: 'Error occurred' });
+    logErrorToProduction('Error tracking pricing suggestion:', { data: error });
     return false;
   }
 }

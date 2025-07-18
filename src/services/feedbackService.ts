@@ -47,7 +47,7 @@ export async function postFeedback(entry: Omit<FeedbackEntry, 'id' | 'createdAt'
     }
     return data;
   } catch {
-    const message = err instanceof Error ? 'Error occurred' : String(err);
+    const message = err instanceof Error ? error : String(err);
     throw new Error(message || 'Failed to submit feedback');
   }
 }

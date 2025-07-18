@@ -42,7 +42,7 @@ export async function sendMessage({
     const data = await response.json();
     return data;
   } catch {
-    logErrorToProduction('Failed to send message:', { data: 'Error occurred' });
+    logErrorToProduction('Failed to send message:', { data: error });
     return {
       success: false,
       error: error instanceof Error ? error.message : String(error),

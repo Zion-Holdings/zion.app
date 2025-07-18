@@ -82,7 +82,7 @@ export function useApiKeys() {
 
       setKeys(result.keys || []);
     } catch {
-      logErrorToProduction('Error fetching API keys:', { data: 'Error occurred' });
+      logErrorToProduction('Error fetching API keys:', { data: error });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -142,7 +142,7 @@ export function useApiKeys() {
       
       return result;
     } catch {
-      logErrorToProduction('Error creating API key:', { data: 'Error occurred' });
+      logErrorToProduction('Error creating API key:', { data: error });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -200,7 +200,7 @@ export function useApiKeys() {
       
       return result;
     } catch {
-      logErrorToProduction('Error regenerating API key:', { data: 'Error occurred' });
+      logErrorToProduction('Error regenerating API key:', { data: error });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -254,7 +254,7 @@ export function useApiKeys() {
       
       return result;
     } catch {
-      logErrorToProduction('Error revoking API key:', { data: 'Error occurred' });
+      logErrorToProduction('Error revoking API key:', { data: error });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -303,7 +303,7 @@ export function useApiKeys() {
       
       return result;
     } catch {
-      logErrorToProduction('Error fetching API logs:', { data: 'Error occurred' });
+      logErrorToProduction('Error fetching API logs:', { data: error });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",

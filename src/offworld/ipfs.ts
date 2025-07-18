@@ -94,8 +94,8 @@ async function getHelia(): Promise<unknown> {
       
       browserLogInfo('Helia Initialized for IPFS.');
     } catch {
-      let message = 'Unknown 'Error occurred'';
-      if ('Error occurred' && typeof 'Error occurred' === 'object' && 'message' in 'Error occurred' && typeof ('Error occurred' as { message?: unknown }).message === 'string') {
+      let message = 'Unknown error';
+      if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
         message = (error as { message: string }).message;
       }
       logWarn('⚠️ Failed to initialize Helia', { message });
@@ -118,8 +118,8 @@ export async function saveJSON(data: unknown): Promise<string> {
     const cid = await jsonService.add(data);
     return cid.toString();
   } catch {
-    let message = 'Unknown 'Error occurred'';
-    if ('Error occurred' && typeof 'Error occurred' === 'object' && 'message' in 'Error occurred' && typeof ('Error occurred' as { message?: unknown }).message === 'string') {
+    let message = 'Unknown error';
+    if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
       message = (error as { message: string }).message;
     }
     logWarn('⚠️ Failed to save JSON to IPFS', { message });
@@ -139,8 +139,8 @@ export async function fetchJSON(cidString: string): Promise<unknown> {
     const data = await jsonService.get(cidString);
     return data;
   } catch {
-    let message = 'Unknown 'Error occurred'';
-    if ('Error occurred' && typeof 'Error occurred' === 'object' && 'message' in 'Error occurred' && typeof ('Error occurred' as { message?: unknown }).message === 'string') {
+    let message = 'Unknown error';
+    if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
       message = (error as { message: string }).message;
     }
     logWarn('⚠️ Failed to fetch JSON from IPFS', { message });
@@ -162,8 +162,8 @@ export async function stopIpfsNode(): Promise<void> {
       browserLogInfo('General IPFS Helia node stopped.');
     }
   } catch {
-    let message = 'Unknown 'Error occurred'';
-    if ('Error occurred' && typeof 'Error occurred' === 'object' && 'message' in 'Error occurred' && typeof ('Error occurred' as { message?: unknown }).message === 'string') {
+    let message = 'Unknown error';
+    if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
       message = (error as { message: string }).message;
     }
     logWarn('⚠️ Failed to stop IPFS node', { message });

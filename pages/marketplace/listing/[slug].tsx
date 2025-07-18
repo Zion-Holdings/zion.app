@@ -252,7 +252,7 @@ export const _getServerSideProps: GetServerSideProps<ListingPageProps> = async (
   } catch {
     if (typeof window === 'undefined') {
       const Sentry = await import('@sentry/nextjs');
-      Sentry.captureException('Error occurred');
+      Sentry.captureException(error);
     }
     logErrorToProduction('Critical error in getServerSideProps for marketplace listing ${slug}:', { data: error });
     return { notFound: true }; // Ensure 404 for any unhandled errors

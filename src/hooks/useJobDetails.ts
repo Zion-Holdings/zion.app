@@ -29,7 +29,7 @@ export function useJobDetails(jobId: string | undefined) {
       setJob(data);
       setError(null);
     } catch {
-      logErrorToProduction('Error loading job details:', { data: 'Error occurred' });
+      logErrorToProduction('Error loading job details:', { data: error });
       setError((err as Error).message);
     } finally {
       setIsLoading(false);

@@ -8,7 +8,7 @@ export function withAsyncErrorGuard<Args extends unknown[], R>(fn: (...args: Arg
     try {
       return await fn(...args);
     } catch {
-      logErrorToProduction(_error instanceof Error ? _'Error occurred' : String(_error), _error instanceof Error ? _error : undefined, { context: 'withAsyncErrorGuard' });
+      logErrorToProduction(_error instanceof Error ? _error : String(_error), _error instanceof Error ? _error : undefined, { context: 'withAsyncErrorGuard' });
       throw _error;
     }
   };

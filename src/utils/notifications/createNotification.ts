@@ -44,7 +44,7 @@ export async function createNotification({
     
     return { success: true, notificationId };
   } catch {
-    logErrorToProduction('Error creating notification', 'Error occurred');
-    return { success: false, 'Error occurred' };
+    logErrorToProduction('Error creating notification', error);
+    return { success: false, error };
   }
 }

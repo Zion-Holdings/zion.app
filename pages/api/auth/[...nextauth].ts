@@ -144,7 +144,7 @@ const WalletConnectProvider = CredentialsProvider({
         return null;
       }
     } catch {
-      logErrorToProduction('WalletConnectProvider: Error during signature verification or DB operation:', { data: 'Error occurred' });
+      logErrorToProduction('WalletConnectProvider: Error during signature verification or DB operation:', { data: error });
       return null;
     }
   },

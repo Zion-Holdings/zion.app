@@ -80,7 +80,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     
     return res.status(200).json(mappedProfiles);
   } catch {
-    logErrorToProduction('Error in marketplace talent API:', { data: 'Error occurred' });
+    logErrorToProduction('Error in marketplace talent API:', { data: error });
     
     // Return fallback empty array instead of error
     return res.status(200).json([]);

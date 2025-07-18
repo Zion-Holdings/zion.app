@@ -68,7 +68,7 @@ export const useApiErrorHandling = () => {
         description: 'Data has been refreshed successfully',
       });
     } catch {
-      logErrorToProduction('Failed to retry queries:', { data: 'Error occurred' });
+      logErrorToProduction('Failed to retry queries:', { data: error });
       toast({
         title: 'Retry Failed',
         description: 'Failed to refresh data - please try again',
@@ -87,7 +87,7 @@ export const useApiErrorHandling = () => {
           description: 'Data has been refreshed successfully',
         });
       } catch {
-        logErrorToProduction('Failed to retry query:', { data: 'Error occurred' });
+        logErrorToProduction('Failed to retry query:', { data: error });
         toast({
           title: 'Retry Failed',
           description: 'Failed to refresh data - please try again',

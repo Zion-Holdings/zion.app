@@ -110,7 +110,7 @@ export function useAuthOperations(
           if (!supabase) throw new Error('Supabase client not initialized');
           await supabase.rpc('generate_referral_code', { user_id: (data as { user: { id: string } }).user.id });
         } catch {
-          logErrorToProduction('Failed to complete signup rewards', { data: 'Error occurred' });
+          logErrorToProduction('Failed to complete signup rewards', { data: error });
         }
         mutate('user');
       }

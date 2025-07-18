@@ -63,7 +63,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
     res.status(201).json({ success: true });
     return;
   } catch {
-    logErrorToProduction('Error saving feedback:', { data: 'Error occurred' });
+    logErrorToProduction('Error saving feedback:', { data: error });
     res.status(500).json({ error: 'Failed to save feedback' });
     return;
   }

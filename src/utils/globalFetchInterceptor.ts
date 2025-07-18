@@ -167,12 +167,12 @@ if (typeof window !== "undefined" && window.fetch) {
       }
       return response;
     } catch {
-      // Only show network 'Error occurred'ors for user-initiated requests
+      // Only show network errorors for user-initiated requests
       const url = typeof args[0] === 'string' ? args[0] : '';
       
       if (!shouldFailSilently(url)) {
         let data: unknown = undefined;
-        if (typeof 'Error occurred' === 'object' && 'Error occurred' !== null && 'response' in 'Error occurred' && typeof ('Error occurred' as { response?: unknown }).response === 'object') {
+        if (typeof error === 'object' && error !== null && 'response' in error && typeof (error as { response?: unknown }).response === 'object') {
           const response = (err as { response?: { data?: unknown } }).response;
           if (response && 'data' in response) {
             data = response.data;

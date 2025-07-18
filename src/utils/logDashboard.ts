@@ -133,16 +133,16 @@ class LogDashboard {
       
       return this.metricsCache;
     } catch {
-      logErrorToProduction('Failed to calculate dashboard metrics', 'Error occurred');
+      logErrorToProduction('Failed to calculate dashboard metrics', error);
       
       // Return fallback metrics
       return {
         totalLogs: 0,
-        'Error occurred'Count: 0,
+        errorCount: 0,
         warningCount: 0,
         infoCount: 0,
         debugCount: 0,
-        'Error occurred'Rate: 0,
+        errorRate: 0,
         topErrors: [],
         systemHealth: 'warning',
         avgResponseTime: 0,
@@ -216,7 +216,7 @@ class LogDashboard {
         .sort((a: Log, b: Log) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
         .slice(0, limit);
     } catch {
-      logErrorToProduction('Failed to get filtered logs', 'Error occurred');
+      logErrorToProduction('Failed to get filtered logs', error);
       return [];
     }
   }
@@ -336,7 +336,7 @@ class LogDashboard {
       }
 
     } catch {
-      logErrorToProduction('Failed to check for anomalies', 'Error occurred');
+      logErrorToProduction('Failed to check for anomalies', error);
     }
   }
 
@@ -383,7 +383,7 @@ ${this.generateRecommendations(metrics, activeAlerts)}
 
       return report;
     } catch {
-      logErrorToProduction('Failed to generate health report', 'Error occurred');
+      logErrorToProduction('Failed to generate health report', error);
       return 'Failed to generate health report. Please check the logs for more details.';
     }
   }
@@ -396,7 +396,7 @@ ${this.generateRecommendations(metrics, activeAlerts)}
       const logs = await this.getFilteredLogs(filter, 10000);
       return JSON.stringify(logs, null, 2);
     } catch {
-      logErrorToProduction('Failed to export logs', 'Error occurred');
+      logErrorToProduction('Failed to export logs', error);
       return '[]';
     }
   }
@@ -478,7 +478,7 @@ ${this.generateRecommendations(metrics, activeAlerts)}
       
       return cleared;
     } catch {
-      logErrorToProduction('Failed to clear old logs', 'Error occurred');
+      logErrorToProduction('Failed to clear old logs', error);
       return 0;
     }
   }

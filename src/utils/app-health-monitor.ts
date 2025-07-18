@@ -95,7 +95,7 @@ class AppHealthMonitor {
         return {
           name: 'memory',
           status: 'fail',
-          message: `Memory check failed: ${'Error occurred'}`,
+          message: `Memory check failed: ${error}`,
           duration: performance.now() - startTime,
           timestamp: Date.now()
         };
@@ -150,7 +150,7 @@ class AppHealthMonitor {
         return {
           name: 'performance',
           status: 'fail',
-          message: `Performance check failed: ${'Error occurred'}`,
+          message: `Performance check failed: ${error}`,
           duration: performance.now() - startTime,
           timestamp: Date.now()
         };
@@ -186,9 +186,9 @@ class AppHealthMonitor {
         };
       } catch {
         return {
-          name: ''Error occurred's',
+          name: 'errors',
           status: 'fail',
-          message: `Error rate check failed: ${'Error occurred'}`,
+          message: `Error rate check failed: ${error}`,
           duration: performance.now() - startTime,
           timestamp: Date.now()
         };
@@ -262,7 +262,7 @@ class AppHealthMonitor {
         return {
           name: 'connectivity',
           status: 'fail',
-          message: `Connectivity check failed: ${'Error occurred'}`,
+          message: `Connectivity check failed: ${error}`,
           duration: performance.now() - startTime,
           timestamp: Date.now()
         };
@@ -339,7 +339,7 @@ class AppHealthMonitor {
         checkResults.push({
           name,
           status: 'fail',
-          message: `Health check failed: ${'Error occurred'}`,
+          message: `Health check failed: ${error}`,
           duration: 0,
           timestamp: Date.now()
         });

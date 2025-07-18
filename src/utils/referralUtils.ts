@@ -70,7 +70,7 @@ export async function trackReferral(userId: string, email: string): Promise<bool
       return true;
     }
   } catch {
-    logErrorToProduction('Error tracking referral:', { data: 'Error occurred' });
+    logErrorToProduction('Error tracking referral:', { data: error });
   }
   return false;
 }

@@ -27,7 +27,7 @@ export function useFavorites() {
       setFavorites(data || []);
       await saveWishlist(data || []);
     } catch {
-      logErrorToProduction('Failed to fetch favorites', { data: 'Error occurred' });
+      logErrorToProduction('Failed to fetch favorites', { data: error });
       const local = await getWishlist();
       setFavorites(local as Favorite[]);
     } finally {
@@ -69,7 +69,7 @@ export function useFavorites() {
           : [...favorites, { item_type, item_id }]
       );
     } catch {
-      logErrorToProduction('Failed to toggle favorite', { data: 'Error occurred' });
+      logErrorToProduction('Failed to toggle favorite', { data: error });
     }
   };
 

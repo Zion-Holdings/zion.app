@@ -77,7 +77,7 @@ export function useWebhooks() {
 
       setWebhooks(result.webhooks || []);
     } catch {
-      logErrorToProduction('Error fetching webhooks:', { data: 'Error occurred' });
+      logErrorToProduction('Error fetching webhooks:', { data: error });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -138,7 +138,7 @@ export function useWebhooks() {
       
       return result.webhook;
     } catch {
-      logErrorToProduction('Error creating webhook:', { data: 'Error occurred' });
+      logErrorToProduction('Error creating webhook:', { data: error });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -196,7 +196,7 @@ export function useWebhooks() {
       
       return result;
     } catch {
-      logErrorToProduction('Error toggling webhook:', { data: 'Error occurred' });
+      logErrorToProduction('Error toggling webhook:', { data: error });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -252,7 +252,7 @@ export function useWebhooks() {
       
       return result;
     } catch {
-      logErrorToProduction('Error deleting webhook:', { data: 'Error occurred' });
+      logErrorToProduction('Error deleting webhook:', { data: error });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -318,7 +318,7 @@ export function useWebhooks() {
       
       return result;
     } catch {
-      logErrorToProduction('Error testing webhook:', { data: 'Error occurred' });
+      logErrorToProduction('Error testing webhook:', { data: error });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
