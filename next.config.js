@@ -242,6 +242,14 @@ const nextConfig = {
           '**/.next/**',
         ],
       };
+      
+      // Fix path resolution issues
+      config.resolve.modules = [
+        'node_modules',
+        path.resolve(__dirname, 'src'),
+        path.resolve(__dirname, 'pages'),
+        path.resolve(__dirname, 'components'),
+      ];
     }
 
     // Remove usedExports to prevent conflicts
