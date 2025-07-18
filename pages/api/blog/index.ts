@@ -1,8 +1,8 @@
-import type { NextApiRequest, NextApiResponse } from 'next';';
-import { BLOG_POSTS } from '@/data/blog-posts';';
-import type { BlogPost } from '@/types/blog';';
-import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';';
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger';'
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { BLOG_POSTS } from '@/data/blog-posts';
+import type { BlogPost } from '@/types/blog';
+import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 // Optimized search function with early returns;
 function searchBlogPosts(query: string): BlogPost[] {

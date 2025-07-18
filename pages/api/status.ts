@@ -1,8 +1,8 @@
-import type { NextApiRequest, NextApiResponse } from 'next';'
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 interface ServiceStatus {
   name: string;
-  status: 'operational' | 'degraded' | 'outage' | 'maintenance';'
+  status: 'operational' | 'degraded' | 'outage' | 'maintenance';
   description: string;
   lastChecked: string;
 }

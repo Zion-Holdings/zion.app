@@ -1,2 +1,2 @@
-export { default } from '@/pages/UNBridge';';';';''
+export { default } from '@/pages/UNBridge';;';''
 ''''''

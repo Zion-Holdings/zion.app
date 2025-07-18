@@ -1,18 +1,18 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';';';';';'';
-import { Button } from '@/components/ui/button';';';';';'';
-import { AlertTriangle } from '@/components/ui/icons';';';';''
-;';';';';'';
-import Link from 'next/link';';';';';'';
-import Head from 'next/head';';';';';'';
-import { useRouter } from 'next/router';'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';;';'';
+import { Button } from '@/components/ui/button';;';'';
+import { AlertTriangle } from '@/components/ui/icons';;';''
+;';;';'';
+import Link from 'next/link';;';'';
+import Head from 'next/head';;';'';
+import { useRouter } from 'next/router';
 ;
 export default function ErrorPage(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const router: unknown unknown unknown unknown unknown unknown = useRouter();
   ;''
-  return (;';''
-    <>;';';''
-      <Head>;';';';''
-        <title>Authentication Error - Zion Tech Marketplace</title>;';';';';''
+  return (;';'
+    <>;';'
+      <Head>;';;''
+        <title>Authentication Error - Zion Tech Marketplace</title>;';;';''
         <meta name="description" content="Authentication error page" />;";";""
       </Head>;";";";""
       ;";";";";""
@@ -41,13 +41,13 @@ export default function ErrorPage(): unknown {): unknown {): unknown {): unknown
               ;";";";";""
               <div className="pt-4 space-y-2">;";";";""
                 <Button ;";";";";""
-                  onClick={() => router.push('/auth/login')};';';';';''
+                  onClick={() => router.push('/auth/login')};';;';''
                   className="w-full";""
                 >;";""
                   Try Again;";";""
                 </Button>;";";";""
                 <Button ;";";";";""
-                  onClick={() => router.push('/')};';';';';''
+                  onClick={() => router.push('/')};';;';''
                   variant="outline" ;";";";";""
                   className="w-full";"
                 >;""

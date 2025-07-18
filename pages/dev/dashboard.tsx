@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';';';';';'';
-import Head from 'next/head';';';''
-;';';';''
-interface CacheStats {;';';';';''
+import React, { useState, useEffect } from 'react';;';'';
+import Head from 'next/head';;''
+;';;''
+interface CacheStats {;';;';''
   keys: "number;",;";";";";""
   hits: "number;",";";";";""
   misses: "number;";";""
 };";";""
 ;";";";""
 interface DashboardData {;";";";";""
-  status: 'healthy' | 'warning' | 'error';,;';';';';''
+  status: 'healthy' | 'warning' | 'error';,;';;';''
   metrics: "{;",";";";";""
     cache: "{;",;";";";";""
       short: "CacheStats;",";";";";""
@@ -43,18 +43,18 @@ interface DashboardData {;";";";";""
 ;";";";";"";
 const StatusBadge: unknown unknown unknown unknown unknown "React.FC<{ status: string "}> = ({ status }) => {;";";";""
   const colors: unknown unknown unknown unknown unknown unknown = {;";,";";";""
-    healthy: 'bg-green-100 text-green-800',;';';';';''
-    warning: 'bg-yellow-100 text-yellow-800',;';';';';''
+    healthy: 'bg-green-100 text-green-800',;';;';''
+    warning: 'bg-yellow-100 text-yellow-800',;';;';''
     error: 'bg-red-100 text-red-800',;'
   };
   ;
   return (;
     <span className={`px-2 py-1 rounded-full text-xs font-medium ${colors[status as keyof typeof colors] || colors.error}`}>;
       {status.toUpperCase()};''
-    </span>;';''
-  );';';''
-};';';';''
-;';';';';'';
+    </span>;';'
+  );';'
+};';;''
+;';;';'';
 const MetricCard: unknown unknown unknown unknown unknown "React.FC<{ title: string; value: string | number; status?: string "}> = ({ ;""
   title, ;";""
   value, ;";";""
@@ -82,11 +82,11 @@ const DevelopmentDashboard: unknown unknown unknown unknown unknown React.FC = (
         throw new Error(`HTTP ${response.status} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}: ${response.statusText}`);
       };
       const dashboardData: unknown unknown unknown unknown unknown unknown = await response.json();''
-      setData(dashboardData);';''
-      setError(null);';';''
-      setLastUpdated(new Date());';';';''
-    } catch (err: unknown) {;';';';';''
-      const errorMessage: unknown unknown unknown unknown unknown unknown = err instanceof Error ? err.message : 'Unknown error occurred';'
+      setData(dashboardData);';'
+      setError(null);';'
+      setLastUpdated(new Date());';;''
+    } catch (err: unknown) {;';;';''
+      const errorMessage: unknown unknown unknown unknown unknown unknown = err instanceof Error ? err.message : 'Unknown error occurred';
       setError(errorMessage);
     } finally {;
       setLoading(false);
@@ -94,28 +94,28 @@ const DevelopmentDashboard: unknown unknown unknown unknown unknown React.FC = (
   };
 ;
   useEffect(() => {;''
-    fetchDashboardData();';''
-    ;';';''
-    // Auto-refresh every 30 seconds;';';';''
+    fetchDashboardData();';'
+    ;';'
+    // Auto-refresh every 30 seconds;';;''
     const interval: unknown unknown unknown unknown "unknown unknown = setInterval(fetchDashboardData", 30000);""
     return () => clearInterval(interval);";""
   }, []);";";""
-;";";";""
-  const formatBytes: unknown unknown unknown unknown unknown unknown = (bytes: number) => {;';';';';''
-    const sizes: unknown unknown unknown unknown unknown unknown = ['Bytes', 'KB', 'MB', 'GB'];';';';';''
-    if (bytes === 0) return '0 Bytes';';';';''
-    const i: unknown unknown unknown unknown unknown unknown = Math.floor(Math.log(bytes) / Math.log(1024));';';';';''
+;";";";"'
+  const formatBytes: unknown unknown unknown unknown unknown unknown = (bytes: number) => {;';;';''
+    const sizes: unknown unknown unknown unknown unknown unknown = ['Bytes', 'KB', 'MB', 'GB'];';;';''
+    if (bytes === 0) return '0 Bytes';;';''
+    const i: unknown unknown unknown unknown unknown unknown = Math.floor(Math.log(bytes) / Math.log(1024));';;';''
     return Math.round(bytes / Math.pow(1024, i) * 100) / 100 + ' ' + sizes[i];'
   };
 ;
   const formatUptime: unknown unknown unknown unknown unknown unknown = (seconds: number) => {;
     const hours: unknown unknown unknown unknown unknown unknown = Math.floor(seconds / 3600);
     const minutes: unknown unknown unknown unknown unknown unknown = Math.floor((seconds % 3600) / 60);
-    return `${hours}h ${minutes}m`;''
-  };';''
-;';';''
-  if (loading) {;';';';''
-    return (;';';';';''
+    return '${hours}h ${minutes}m';'
+  };';'
+;';'
+  if (loading) {;';;''
+    return (;';;';''
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">;";";";";""
         <div className="text-center">;";";";";""
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>;";";";";""

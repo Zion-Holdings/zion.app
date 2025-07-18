@@ -1,2 +1,2 @@
-export { default } from '@/pages/academy/Storybook';';';';''
+export { default } from '@/pages/academy/Storybook';;';''
 ''''''

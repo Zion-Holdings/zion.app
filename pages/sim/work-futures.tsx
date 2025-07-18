@@ -1,2 +1,2 @@
-export { default } from '@/pages/WorkFuturesSimulator';';';';''
+export { default } from '@/pages/WorkFuturesSimulator';;';''
 ''''''

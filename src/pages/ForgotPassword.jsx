@@ -1,6 +1,6 @@
-import React, { useState } from 'react';';
+import React, { useState } from 'react';
 import Link from 'next/link'; // Changed from react-router-dom';
-import { forgotPassword } from '@/services/auth';'
+import { forgotPassword } from '@/services/auth';
 ;
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');'

@@ -1,2 +1,2 @@
-export { default } from '../governance/zgp-library';';';';''
+export { default } from '../governance/zgp-library';;';''
 ''''''

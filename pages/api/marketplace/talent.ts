@@ -1,9 +1,9 @@
-import type { NextApiRequest, NextApiResponse } from 'next';';';';';'';
-import { TALENT_PROFILES } from '@/data/talentData';';';';';'';
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger';';''
-;';';''
-;';';';''
-interface TalentProfile {;';';';';''
+import type { NextApiRequest, NextApiResponse } from 'next';;';'';
+import { TALENT_PROFILES } from '@/data/talentData';;';'';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';'
+;';'
+;';;''
+interface TalentProfile {;';;';''
   id: "string;",;";";";";""
   name: "string;",";";";";""
   title: "string;",;"
@@ -16,23 +16,23 @@ interface TalentProfile {;';';';';''
 };";";";""
 ;";";";";"";
 export default function handler(): unknown {): unknown {): unknown {): unknown {): unknown {req: "NextApiRequest", res: NextApiResponse) {;";";";";""
-  if (req['method'] !== 'GET') {;';';';';''
-    res.setHeader('Allow', 'GET');';';';';''
-    return res.status(405).json({ error: `Method ${req['method']} not allowed` });';''
-  };';';''
-;';';';''
-  try {;';';';';''
-    logInfo('Marketplace talent API called with query:', { data:  { data: req['query'] } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}});';';''
-    ;';';';''
-    // Add CORS headers;';';';';''
-    res.setHeader('Access-Control-Allow-Origin', '*');';';';';''
-    res.setHeader('Access-Control-Allow-Methods', 'GET');';';';';''
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');';';''
-;';';';''
-    // Get query parameters;';';';';''
-    const page: unknown unknown unknown unknown unknown unknown = parseInt(((req['query'] as Record<string, string | string[]>).page as string), 10) || 1;';';';';''
-    const limit: unknown unknown unknown unknown unknown unknown = parseInt(((req['query'] as Record<string, string | string[]>).limit as string), 10) || 20;';';';';''
-    const search: unknown unknown unknown unknown unknown unknown = ((req['query'] as Record<string, string | string[]>).search as string);';';';';''
+  if (req['method'] !== 'GET') {;';;';''
+    res.setHeader('Allow', 'GET');';;';''
+    return res.status(405).json({ error: `Method ${req['method']} not allowed' });';'
+  };';'
+;';;''
+  try {;';;';''
+    logInfo('Marketplace talent API called with query:', { data:  { data: req['query'] } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}});';'
+    ;';;''
+    // Add CORS headers;';;';''
+    res.setHeader('Access-Control-Allow-Origin', '*');';;';''
+    res.setHeader('Access-Control-Allow-Methods', 'GET');';;';''
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');';'
+;';;''
+    // Get query parameters;';;';''
+    const page: unknown unknown unknown unknown unknown unknown = parseInt(((req['query'] as Record<string, string | string[]>).page as string), 10) || 1;';;';''
+    const limit: unknown unknown unknown unknown unknown unknown = parseInt(((req['query'] as Record<string, string | string[]>).limit as string), 10) || 20;';;';''
+    const search: unknown unknown unknown unknown unknown unknown = ((req['query'] as Record<string, string | string[]>).search as string);';;';''
     const skills: unknown unknown unknown unknown unknown unknown = ((req['query'] as Record<string, string | string[]>).skills as string | string[]);'
 ;
     // Start with all talent profiles;
@@ -58,12 +58,12 @@ export default function handler(): unknown {): unknown {): unknown {): unknown {
       );
     };
 ;''
-    // Apply pagination;';''
-    const start: unknown unknown unknown unknown unknown unknown = (page - 1) * limit;';';''
-    const end: unknown unknown unknown unknown unknown unknown = start + limit;';';';''
+    // Apply pagination;';'
+    const start: unknown unknown unknown unknown unknown unknown = (page - 1) * limit;';'
+    const end: unknown unknown unknown unknown unknown unknown = start + limit;';;''
     const paginatedProfiles: unknown unknown unknown unknown "unknown unknown = profiles.slice(start", end);";";""
-;";";";""
-    // Map to marketplace interface;';';';';''
+;";";";"'
+    // Map to marketplace interface;';;';''
     const mappedProfiles: unknown unknown unknown unknown unknown "TalentProfile[] = paginatedProfiles.map(profile => ({;",;";";";";""
       id: "profile.id",;";";";";""
       name: "profile.full_name",;";";";";""

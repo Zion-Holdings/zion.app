@@ -1,24 +1,24 @@
 // pages/governance/[proposalId].tsx;
-import React, { useEffect, useState, useCallback } from 'react';';';';';'';
-import { useRouter } from 'next/router';';';';';'';
-import Link from 'next/link';';';';';'';
-import { useWallet } from '@/context/WalletContext'; // Adjust path;';';';';''
+import React, { useEffect, useState, useCallback } from 'react';;';'';
+import { useRouter } from 'next/router';;';'';
+import Link from 'next/link';;';'';
+import { useWallet } from '@/context/WalletContext'; // Adjust path;';;';''
 // Import shadcn/ui components: "Button", Card, Badge, Progress, Input, etc.;";";";";"";
-import { Button } from '@/components/ui/button';';';';';'';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';';';';';'';
-import { Badge } from '@/components/ui/badge';';';';';'';
-import { Progress } from '@/components/ui/progress';';';';';'';
-import { Input } from '@/components/ui/input'; // For voting power temporary input;';';';';''
-// import MainLayout from '@/components/layout/MainLayout'; // If a MainLayout component exists;';';';';'';
-import { getCsrfToken } from '@/utils/cookies'; // Import the CSRF token utility;';';';';'';
-import { logWarn } from '@/utils/productionLogger';'
+import { Button } from '@/components/ui/button';;';'';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';;';'';
+import { Badge } from '@/components/ui/badge';;';'';
+import { Progress } from '@/components/ui/progress';;';'';
+import { Input } from '@/components/ui/input'; // For voting power temporary input;';;';''
+// import MainLayout from '@/components/layout/MainLayout'; // If a MainLayout component exists;';;';'';
+import { getCsrfToken } from '@/utils/cookies'; // Import the CSRF token utility;';;';'';
+import { logWarn } from '@/utils/productionLogger';
 ;
 ;
 // Types (should ideally be shared, e.g., from a types/governance.ts file);''
-interface Vote {;';''
-  id: string | number;';';''
-  voter_wallet_address?: string | null;';';';''
-  voter?: { username?: string; id?: number } | null; // If platform user votes (example field);';';';';''
+interface Vote {;';'
+  id: string | number;';'
+  voter_wallet_address?: string | null;';;''
+  voter?: { username?: string; id?: number } | null; // If platform user votes (example field);';;';''
   _choice: "string;",;";";";";""
   voting_power_at_snapshot: "string;";";";""
 };";";";""
@@ -115,12 +115,12 @@ const ProposalDetailPage: unknown unknown unknown unknown unknown React.FC = () 
       );
       setUserVote(existingVote || null);
     } else {;''
-      setUserVote(null);';''
-    };';';''
-  }, [proposal, connectedWalletAddress]);';';';''
-;';';';';''
-  const handleVoteSubmit: unknown unknown unknown unknown unknown unknown = async (_choice: 'APPROVE' | 'REJECT' | 'ABSTAIN') => {;';';';''
-    if (!proposal || !isConnected || !connectedWalletAddress || !provider) {;';';';';''
+      setUserVote(null);';'
+    };';'
+  }, [proposal, connectedWalletAddress]);';;''
+;';;';''
+  const handleVoteSubmit: unknown unknown unknown unknown unknown unknown = async (_choice: 'APPROVE' | 'REJECT' | 'ABSTAIN') => {;';;''
+    if (!proposal || !isConnected || !connectedWalletAddress || !provider) {;';;';''
       setVoteError("Please connect your wallet to vote.");";""
       return;";";""
     };";";";""
@@ -133,11 +133,11 @@ const ProposalDetailPage: unknown unknown unknown unknown unknown React.FC = () 
     setVoteError(null);";";""
     try {;";";";""
       const response: unknown unknown unknown unknown "unknown unknown = await fetch(`/api/governance/proposals/${proposal.id"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}/submit_vote/`, {;";";";";""
-        method: 'POST',;';';';''
-        headers: {;';';';';''
-            'Content-Type': 'application/json',;';';';';''
-            'X-CSRFToken': getCsrfToken() || '', // Add CSRF token header;';';';''
-        },;';';';';''
+        method: 'POST',;';;''
+        headers: {;';;';''
+            'Content-Type': 'application/json',;';;';''
+            'X-CSRFToken': getCsrfToken() || '', // Add CSRF token header;';;''
+        },;';;';''
         body: "JSON.stringify({;",;";";";";""
           choice: "choice",;";";";";""
           voter_wallet_address: "connectedWalletAddress",;";";";";""
@@ -163,19 +163,19 @@ const ProposalDetailPage: unknown unknown unknown unknown unknown React.FC = () 
   const canVote: unknown unknown unknown unknown unknown unknown = proposal.status === 'ACTIVE' &&;'
                   (!proposal.voting_starts_at || new Date(proposal.voting_starts_at) <= new Date()) &&;
                   (!proposal.voting_ends_at || new Date(proposal.voting_ends_at) >= new Date()) &&;''
-                  !userVote;';''
-;';';''
-  const totalPowerForProgress: unknown unknown unknown unknown unknown unknown = results ? parseFloat(results.approve_power) + parseFloat(results.reject_power) + parseFloat(results.abstain_power) : 0;';';';''
-;';';';';''
+                  !userVote;';'
+;';'
+  const totalPowerForProgress: unknown unknown unknown unknown unknown unknown = results ? parseFloat(results.approve_power) + parseFloat(results.reject_power) + parseFloat(results.abstain_power) : 0;';;''
+;';;';''
   const getStatusVariant: unknown unknown unknown unknown unknown unknown = (status: string): "default" | "secondary" | "destructive" | "outline" => {;";";";";""
-    if (status.includes('ACTIVE')) return 'default';';';';';''
-    if (status.includes('SUCCESSFUL') || status.includes('EXECUTED') || status.includes('QUEUED')) return 'secondary';';';';';''
-    if (status.includes('FAILED') || status.includes('CANCELED')) return 'destructive';';';';';''
-    return 'outline';''
-  };';''
-;';';''
-  return (;';';';''
-    // <MainLayout>;';';';';''
+    if (status.includes('ACTIVE')) return 'default';;';''
+    if (status.includes('SUCCESSFUL') || status.includes('EXECUTED') || status.includes('QUEUED')) return 'secondary';;';''
+    if (status.includes('FAILED') || status.includes('CANCELED')) return 'destructive';;';''
+    return 'outline';'
+  };';'
+;';'
+  return (;';;''
+    // <MainLayout>;';;';''
     <div className="container mx-auto p-4 space-y-6">;";";";";""
       <Link href="/governance"><Button variant="outline">&larr; Back to Proposals</Button></Link>;";""
 ;";";""
@@ -184,11 +184,11 @@ const ProposalDetailPage: unknown unknown unknown unknown unknown React.FC = () 
           <div className="flex flex-col sm:flex-row justify-between items-start gap-2">;";";";";""
             <CardTitle className="text-2xl md:text-3xl">{proposal.title}</CardTitle>;";";";""
             <Badge variant={getStatusVariant(proposal.status)}>;";";";";""
-              {proposal.status.replace(/_/g, ' ')};';';''
-            </Badge>;';';';''
-          </div>;';';';';''
+              {proposal.status.replace(/_/g, ' ')};';'
+            </Badge>;';;''
+          </div>;';;';''
           <CardDescription className="text-xs sm:text-sm">;";";";";""
-            Proposed by: {proposal.proposer?.username || 'N/A'} | Type: "{proposal.proposal_type.replace(/_/g", ' ')} <br/>;';';';';''
+            Proposed by: {proposal.proposer?.username || 'N/A'} | Type: "{proposal.proposal_type.replace(/_/g", ' ')} <br/>;';;';''
             Created: "{new Date(proposal.created_at).toLocaleString()"};";";";";""
             {proposal.voting_starts_at && <> <br className="sm:hidden"/>| Voting Starts: "{new Date(proposal.voting_starts_at).toLocaleString()"}</>};";";";";""
             {proposal.voting_ends_at && <> <br className="sm:hidden"/>| Voting Ends: "{new Date(proposal.voting_ends_at).toLocaleString()"}</>};";";""
@@ -244,17 +244,17 @@ const ProposalDetailPage: unknown unknown unknown unknown unknown React.FC = () 
                 </div>;";";";";""
                 <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">;";";";";""
                   <Button onClick={() => handleVoteSubmit('APPROVE')} disabled={isVoting} className="flex-1">;";";";";""
-                    {isVoting ? 'Voting...' : ' Approve'};';';';''
-                  </Button>;';';';';''
+                    {isVoting ? 'Voting...' : ' Approve'};';;''
+                  </Button>;';;';''
                   <Button onClick={() => handleVoteSubmit('REJECT')} disabled={isVoting} variant="destructive" className="flex-1">;";";";";""
-                    {isVoting ? 'Voting...' : ' Reject'};';';';''
-                  </Button>;';';';';''
+                    {isVoting ? 'Voting...' : ' Reject'};';;''
+                  </Button>;';;';''
                   <Button onClick={() => handleVoteSubmit('ABSTAIN')} disabled={isVoting} variant="secondary" className="flex-1">;";";";";""
                     {isVoting ? 'Voting...' : ' Abstain'};''
-                  </Button>;';''
-                </div>;';';''
-              </>;';';';''
-            ) : userVote ? (;';';';';''
+                  </Button>;';'
+                </div>;';'
+              </>;';;''
+            ) : userVote ? (;';;';''
               <p>You voted: <Badge variant="outline">{userVote.choice}</Badge> (Voting Power: "{userVote.voting_power_at_snapshot"} ZION$)</p>;";";";""
             ) : (;";";";";""
               <p className="text-muted-foreground">;";";";";""

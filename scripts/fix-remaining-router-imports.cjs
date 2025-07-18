@@ -25,7 +25,7 @@ function fixReactRouterImports() {
 
       // Replace React Router imports
       if (content.includes('import { Link } from "react-router-dom"')) {
-        content = content.replace('import { Link } from "react-router-dom";', 'import Link from "next/link";');
+        content = content.replace('import { Link } from 'react-router-dom';, 'import Link from 'next/link';);
         hasChanges = true;
       }
 

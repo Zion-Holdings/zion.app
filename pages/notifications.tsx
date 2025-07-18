@@ -1,2 +1,2 @@
-export { default } from '@/pages/Notifications';';';';''
+export { default } from '@/pages/Notifications';;';''
 ''''''

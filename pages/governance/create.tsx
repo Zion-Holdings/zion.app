@@ -1,27 +1,27 @@
 // pages/governance/create.tsx;
-import React, { useState, useEffect } from 'react';';';';';'';
-import { useRouter } from 'next/router';';';';';'';
-import { useForm } from 'react-hook-form';';';';';'';
-import type { ControllerRenderProps } from 'react-hook-form';';';';';'';
-import { zodResolver } from '@hookform/resolvers/zod';';';';';'';
-import * as z from 'zod';';';''
-;';';';''
-// Assuming shadcn/ui components are available and auto-imported or aliased via @/components/ui;';';';';'';
-import { Button } from '@/components/ui/button';';';';';'';
-import { Input } from '@/components/ui/input';';';';';'';
-import { Textarea } from '@/components/ui/textarea';';';';';'';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';';';';';'';
+import React, { useState, useEffect } from 'react';;';'';
+import { useRouter } from 'next/router';;';'';
+import { useForm } from 'react-hook-form';;';'';
+import type { ControllerRenderProps } from 'react-hook-form';;';'';
+import { zodResolver } from '@hookform/resolvers/zod';;';'';
+import * as z from 'zod';;''
+;';;''
+// Assuming shadcn/ui components are available and auto-imported or aliased via @/components/ui;';;';'';
+import { Button } from '@/components/ui/button';;';'';
+import { Input } from '@/components/ui/input';;';'';
+import { Textarea } from '@/components/ui/textarea';;';'';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';;';'';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";";";";";"";
-import { PROPOSAL_TEMPLATES } from '@/data/proposalTemplates';';';';';'';
-import {logErrorToProduction} from '@/utils/productionLogger';';';';''
-;';';';';''
-// import MainLayout from '@/components/layout/MainLayout'; // If exists;';';';';''
-// import { useAuth } from '@/hooks/useAuth'; // If frontend auth is needed for API calls;';';';';''
-// import { useWallet } from '@/context/WalletContext'; // If wallet info is needed;';';';''
-;';';';';'';
-const proposalTypes: unknown unknown unknown unknown unknown unknown = ['FEATURE', 'BUDGET', 'COMMUNITY_GRANT', 'GENERAL'] as const;';';''
-;';';';'';
-const proposalSchema: unknown unknown unknown unknown unknown unknown = z.object({;';,';';';''
+import { PROPOSAL_TEMPLATES } from '@/data/proposalTemplates';;';'';
+import {logErrorToProduction} from '@/utils/productionLogger';;';''
+;';;';''
+// import MainLayout from '@/components/layout/MainLayout'; // If exists;';;';''
+// import { useAuth } from '@/hooks/useAuth'; // If frontend auth is needed for API calls;';;';''
+// import { useWallet } from '@/context/WalletContext'; // If wallet info is needed;';;''
+;';;';'';
+const proposalTypes: unknown unknown unknown unknown unknown unknown = ['FEATURE', 'BUDGET', 'COMMUNITY_GRANT', 'GENERAL'] as const;';'
+;';;'';
+const proposalSchema: unknown unknown unknown unknown unknown unknown = z.object({;';,';;''
   title: "z.string().min(5", { message: "Title must be at least 5 characters." }),;";";";";""
   summary: "z.string().min(20", { message: "Summary must be at least 20 characters." }),;";";";";""
   proposal_type: "z.enum(proposalTypes)",;";";";";""
@@ -46,14 +46,14 @@ const CreateProposalPage: unknown unknown unknown unknown unknown React.FC = () 
   const form: unknown unknown unknown unknown unknown unknown = useForm<ProposalFormData>({;";,";";";""
     resolver: "zodResolver(proposalSchema)",;";";";";""
     defaultValues: "{;",;";";";";""
-      title: '',;';';';';''
-      summary: '',;';';';';''
-      proposal_type: 'GENERAL',;';';';';''
-      voting_starts_at: '',;';';';';''
-      voting_ends_at: '',;';';';';''
+      title: '',;';;';''
+      summary: '',;';;';''
+      proposal_type: 'GENERAL',;';;';''
+      voting_starts_at: '',;';;';''
+      voting_ends_at: '',;';;';''
       quorum_percentage: "undefined", // Explicitly undefined for optional number;";";";";""
       funding_ask_amount: "undefined",;";";";";""
-      funding_ask_token_symbol: '',;';';';';''
+      funding_ask_token_symbol: '',;';;';''
       reference_links_input: '',;'
     },;
   });
@@ -62,18 +62,18 @@ const CreateProposalPage: unknown unknown unknown unknown unknown React.FC = () 
 ;
   useEffect(() => {;
     const templateId: unknown unknown unknown unknown unknown unknown = Array.isArray(query.template) ? query.template[0] : query.template;''
-    if (templateId) {;';''
-      const template: unknown unknown unknown unknown unknown unknown = PROPOSAL_TEMPLATES.find((t) => t.id === templateId);';';''
-      if (template) {;';';';''
-        form.reset({;';';';';''
+    if (templateId) {;';'
+      const template: unknown unknown unknown unknown unknown unknown = PROPOSAL_TEMPLATES.find((t) => t.id === templateId);';'
+      if (template) {;';;''
+        form.reset({;';;';''
           title: "template.title",;";";";";""
           summary: "`${template.summary"}\n\nMotivation: "${template.motivation"}\n\nSpecification / Impact: "${template.specification"}\n\nCode/Module: "${template.codeModule"}`,;";";";";""
           proposal_type: "template.proposal_type",;";";";";""
-          voting_starts_at: '',;';';';';''
-          voting_ends_at: '',;';';';';''
+          voting_starts_at: '',;';;';''
+          voting_ends_at: '',;';;';''
           quorum_percentage: "undefined",;";";";";""
           funding_ask_amount: "undefined",;";";";";""
-          funding_ask_token_symbol: '',;';';';';''
+          funding_ask_token_symbol: '',;';;';''
           reference_links_input: '',;'
         });
       };
@@ -82,17 +82,17 @@ const CreateProposalPage: unknown unknown unknown unknown unknown React.FC = () 
 ;
   const onSubmit: unknown unknown unknown unknown unknown unknown = async (data: ProposalFormData) => {;
     setIsLoading(true);''
-    setApiError(null);';''
-;';';''
-    const { reference_links_input, ...restOfData } = data;';';';''
-    const reference_links: unknown unknown unknown unknown unknown unknown = reference_links_input;';';';';''
+    setApiError(null);';'
+;';'
+    const { reference_links_input, ...restOfData } = data;';;''
+    const reference_links: unknown unknown unknown unknown unknown unknown = reference_links_input;';;';''
         ? reference_links_input.split('\n').map((link: string) => link.trim()).filter((link: string) => link);'
         : [];
 ;''
-    const apiData: unknown unknown unknown unknown unknown unknown = {;';''
-      ...restOfData,;';';''
-      reference_links,;';';';''
-      // Handle empty strings for optional fields if backend expects null or undefined;';';';';''
+    const apiData: unknown unknown unknown unknown unknown unknown = {;';'
+      ...restOfData,;';'
+      reference_links,;';;''
+      // Handle empty strings for optional fields if backend expects null or undefined;';;';''
       voting_starts_at: "data.voting_starts_at || null",;";";";";""
       voting_ends_at: "data.voting_ends_at || null",;";";";";""
       funding_ask_token_symbol: "data.funding_ask_token_symbol || null",;";";";";""
@@ -110,13 +110,13 @@ const CreateProposalPage: unknown unknown unknown unknown unknown React.FC = () 
 ;";";""
 ;";";";""
     try {;";";";";""
-      const response: unknown unknown unknown unknown unknown unknown = await fetch('/api/governance/proposals/', { // Adjust API endpoint as needed;';';';';''
-        method: 'POST',;';';';''
-        headers: {;';';';';''
-          'Content-Type': 'application/json',;';';';';''
-          // 'X-CSRFToken': 'your-csrf-token', // Fetch and include if Django CSRF is enforced;';';';';''
-          // 'Authorization': `Bearer ${token} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`, // If using token auth;';';';''
-        },;';';';';''
+      const response: unknown unknown unknown unknown unknown unknown = await fetch('/api/governance/proposals/', { // Adjust API endpoint as needed;';;';''
+        method: 'POST',;';;''
+        headers: {;';;';''
+          'Content-Type': 'application/json',;';;';''
+          // 'X-CSRFToken': 'your-csrf-token', // Fetch and include if Django CSRF is enforced;';;';''
+          // 'Authorization': `Bearer ${token} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}', // If using token auth;';;''
+        },;';;';''
         body: "JSON.stringify(apiData)",;""
       });";""
 ;";";""
@@ -129,8 +129,8 @@ const CreateProposalPage: unknown unknown unknown unknown unknown React.FC = () 
       const newProposal: unknown unknown unknown unknown unknown unknown = await response.json();";";""
       router.push(`/governance/${newProposal.id}`);";";";""
     } catch (err: unknown) {;";";";";""
-      const errorMessage: unknown unknown unknown unknown unknown unknown = err instanceof Error ? err.message : 'Failed to create proposal.';';';';''
-      setApiError(errorMessage);';';';';''
+      const errorMessage: unknown unknown unknown unknown unknown unknown = err instanceof Error ? err.message : 'Failed to create proposal.';;';''
+      setApiError(errorMessage);';;';''
       logErrorToProduction("Error:", { error: "err "});"
     } finally {;
       setIsLoading(false);
@@ -146,10 +146,10 @@ const CreateProposalPage: unknown unknown unknown unknown unknown React.FC = () 
           <FormField;";";";""
             control={form.control};";";";";""
             name="title";";";";";""
-          render={({ field }: { field: "ControllerRenderProps<ProposalFormData", 'title'> }) => (;';''
-            <FormItem>;';';''
-              <FormLabel>Title</FormLabel>;';';';''
-                <FormControl>;';';';';''
+          render={({ field }: { field: "ControllerRenderProps<ProposalFormData", 'title'> }) => (;';'
+            <FormItem>;';'
+              <FormLabel>Title</FormLabel>;';;''
+                <FormControl>;';;';''
                   <Input placeholder="Proposal Title" {...field} />;"
                 </FormControl>;
                 <FormMessage />;
@@ -160,10 +160,10 @@ const CreateProposalPage: unknown unknown unknown unknown unknown React.FC = () 
           <FormField;";";";""
             control={form.control};";";";";""
             name="summary";";";";";""
-          render={({ field }: { field: "ControllerRenderProps<ProposalFormData", 'summary'> }) => (;';''
-            <FormItem>;';';''
-              <FormLabel>Summary</FormLabel>;';';';''
-                <FormControl>;';';';';''
+          render={({ field }: { field: "ControllerRenderProps<ProposalFormData", 'summary'> }) => (;';'
+            <FormItem>;';'
+              <FormLabel>Summary</FormLabel>;';;''
+                <FormControl>;';;';''
                   <Textarea placeholder="Detailed summary of the proposal..." {...field} rows={5} />;"
                 </FormControl>;
                 <FormMessage />;
@@ -176,10 +176,10 @@ const CreateProposalPage: unknown unknown unknown unknown unknown React.FC = () 
             name="proposal_type";";";";";""
           render={({ field }: { field: "ControllerRenderProps<ProposalFormData", 'proposal_type'> }) => (;'
             <FormItem>;''
-              <FormLabel>Proposal Type</FormLabel>;';''
-                <Select onValueChange={field.onChange} defaultValue={field.value}>;';';''
-                  <FormControl>;';';';''
-                    <SelectTrigger>;';';';';''
+              <FormLabel>Proposal Type</FormLabel>;';'
+                <Select onValueChange={field.onChange} defaultValue={field.value}>;';'
+                  <FormControl>;';;''
+                    <SelectTrigger>;';;';''
                       <SelectValue placeholder="Select a proposal type" />;""
                     </SelectTrigger>;";""
                   </FormControl>;";";""
@@ -192,98 +192,98 @@ const CreateProposalPage: unknown unknown unknown unknown unknown React.FC = () 
                 <FormMessage />;
               </FormItem>;
             )};''
-          />;';''
-;';';''
-          <FormField;';';';''
-            control={form.control};';';';';''
+          />;';'
+;';'
+          <FormField;';;''
+            control={form.control};';;';''
             name="voting_starts_at";";";";";""
-          render={({ field }: { field: "ControllerRenderProps<ProposalFormData", 'voting_starts_at'> }) => (;';''
-            <FormItem>;';';''
-              <FormLabel>Voting Starts At (Optional)</FormLabel>;';';';''
-                <FormControl>;';';';';''
+          render={({ field }: { field: "ControllerRenderProps<ProposalFormData", 'voting_starts_at'> }) => (;';'
+            <FormItem>;';'
+              <FormLabel>Voting Starts At (Optional)</FormLabel>;';;''
+                <FormControl>;';;';''
                   <Input type="datetime-local" {...field} value={field.value || ''} />;'
                 </FormControl>;
                 <FormMessage />;
               </FormItem>;
             )};''
-          />;';''
-;';';''
-          <FormField;';';';''
-            control={form.control};';';';';''
+          />;';'
+;';'
+          <FormField;';;''
+            control={form.control};';;';''
             name="voting_ends_at";";";";";""
-          render={({ field }: { field: "ControllerRenderProps<ProposalFormData", 'voting_ends_at'> }) => (;';''
-            <FormItem>;';';''
-              <FormLabel>Voting Ends At (Optional)</FormLabel>;';';';''
-                <FormControl>;';';';';''
+          render={({ field }: { field: "ControllerRenderProps<ProposalFormData", 'voting_ends_at'> }) => (;';'
+            <FormItem>;';'
+              <FormLabel>Voting Ends At (Optional)</FormLabel>;';;''
+                <FormControl>;';;';''
                   <Input type="datetime-local" {...field} value={field.value || ''} />;'
                 </FormControl>;
                 <FormMessage />;
               </FormItem>;
             )};''
-          />;';''
-;';';''
-          <FormField;';';';''
-            control={form.control};';';';';''
+          />;';'
+;';'
+          <FormField;';;''
+            control={form.control};';;';''
             name="quorum_percentage";";";";";""
-          render={({ field }: { field: "ControllerRenderProps<ProposalFormData", 'quorum_percentage'> }) => (;';''
-            <FormItem>;';';''
-              <FormLabel>Quorum Percentage (e.g., 0.2 for 20%)</FormLabel>;';';';''
-                <FormControl>;';';';';''
+          render={({ field }: { field: "ControllerRenderProps<ProposalFormData", 'quorum_percentage'> }) => (;';'
+            <FormItem>;';'
+              <FormLabel>Quorum Percentage (e.g., 0.2 for 20%)</FormLabel>;';;''
+                <FormControl>;';;';''
                   <Input type="number" step="0.01" min="0" max="1" placeholder="0.20" {...field};";";";";""
-                         onChange={e => field.onChange(e.target.value === '' ? undefined : parseFloat(e.target.value))};';';';';''
+                         onChange={e => field.onChange(e.target.value === '' ? undefined : parseFloat(e.target.value))};';;';''
                          value={field.value === undefined || field.value === null ? '' : field.value} />;'
                 </FormControl>;
                 <FormDescription>Required participation rate (0.0 to 1.0).</FormDescription>;
                 <FormMessage />;
               </FormItem>;
             )};''
-          />;';''
-;';';''
-          <FormField;';';';''
-            control={form.control};';';';';''
+          />;';'
+;';'
+          <FormField;';;''
+            control={form.control};';;';''
             name="funding_ask_amount";";";";";""
-          render={({ field }: { field: "ControllerRenderProps<ProposalFormData", 'funding_ask_amount'> }) => (;';''
-            <FormItem>;';';''
-              <FormLabel>Funding Ask Amount (Optional)</FormLabel>;';';';''
-                <FormControl>;';';';';''
+          render={({ field }: { field: "ControllerRenderProps<ProposalFormData", 'funding_ask_amount'> }) => (;';'
+            <FormItem>;';'
+              <FormLabel>Funding Ask Amount (Optional)</FormLabel>;';;''
+                <FormControl>;';;';''
                   <Input type="number" step="any" placeholder="1000" {...field};";";";";""
-                         onChange={e => field.onChange(e.target.value === '' ? undefined : parseFloat(e.target.value))};';';';';''
+                         onChange={e => field.onChange(e.target.value === '' ? undefined : parseFloat(e.target.value))};';;';''
                          value={field.value === undefined || field.value === null ? '' : field.value} />;'
                 </FormControl>;
                 <FormMessage />;
               </FormItem>;
             )};''
-          />;';''
-;';';''
-          <FormField;';';';''
-            control={form.control};';';';';''
+          />;';'
+;';'
+          <FormField;';;''
+            control={form.control};';;';''
             name="funding_ask_token_symbol";";";";";""
-          render={({ field }: { field: "ControllerRenderProps<ProposalFormData", 'funding_ask_token_symbol'> }) => (;';''
-            <FormItem>;';';''
-              <FormLabel>Funding Token Symbol (Optional)</FormLabel>;';';';''
-                <FormControl>;';';';';''
+          render={({ field }: { field: "ControllerRenderProps<ProposalFormData", 'funding_ask_token_symbol'> }) => (;';'
+            <FormItem>;';'
+              <FormLabel>Funding Token Symbol (Optional)</FormLabel>;';;''
+                <FormControl>;';;';''
                   <Input placeholder="e.g., USD, ZION$" {...field} value={field.value || ''} />;'
                 </FormControl>;
                 <FormMessage />;
               </FormItem>;
             )};''
-          />;';''
-;';';''
-          <FormField;';';';''
-            control={form.control};';';';';''
+          />;';'
+;';'
+          <FormField;';;''
+            control={form.control};';;';''
             name="reference_links_input";";";";";""
-          render={({ field }: { field: "ControllerRenderProps<ProposalFormData", 'reference_links_input'> }) => (;';''
-            <FormItem>;';';''
-              <FormLabel>Reference Links (Optional)</FormLabel>;';';';''
-                <FormControl>;';';';';''
+          render={({ field }: { field: "ControllerRenderProps<ProposalFormData", 'reference_links_input'> }) => (;';'
+            <FormItem>;';'
+              <FormLabel>Reference Links (Optional)</FormLabel>;';;''
+                <FormControl>;';;';''
                   <Textarea placeholder="https://example.com/doc1\nhttps://example.com/discussion" {...field} value={field.value || ''} rows={3}/>;'
                 </FormControl>;
                 <FormDescription>One URL per line.</FormDescription>;
                 <FormMessage />;''
-              </FormItem>;';''
-            )};';';''
-          />;';';';''
-;';';';';''
+              </FormItem>;';'
+            )};';'
+          />;';;''
+;';;';''
           {apiError && <p className="text-sm font-medium text-destructive">{apiError}</p>};";";";""
 ;";";";";""
           <Button type="submit" disabled={isLoading} className="w-full">;";";";";""
@@ -294,7 +294,7 @@ const CreateProposalPage: unknown unknown unknown unknown unknown React.FC = () 
     </div>;
     // </MainLayout>;
   );''
-};';''
-;';';'';
-export default CreateProposalPage;';';';''
+};';'
+;';';
+export default CreateProposalPage;';;''
 ''''''

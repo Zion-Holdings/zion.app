@@ -42,10 +42,10 @@ function fixSyntaxErrors(content) {
   let changes = 0;
   
   // Fix backticks that should be semicolons
-  const backtickPattern = /`\s*$/gm;
+  const backtickPattern = /'\s*$/gm;
   const backtickMatches = fixed.match(backtickPattern);
   if (backtickMatches) {
-    fixed = fixed.replace(backtickPattern, ';');
+    fixed = fixed.replace(backtickPattern, ';);
     changes += backtickMatches.length;
   }
   
@@ -61,7 +61,7 @@ function fixSyntaxErrors(content) {
   const doubleQuoteBacktickPattern = /"([^"]*?)`\s*$/gm;
   const doubleQuoteBacktickMatches = fixed.match(doubleQuoteBacktickPattern);
   if (doubleQuoteBacktickMatches) {
-    fixed = fixed.replace(doubleQuoteBacktickPattern, '"$1";');
+    fixed = fixed.replace(doubleQuoteBacktickPattern, ''$1';);
     changes += doubleQuoteBacktickMatches.length;
   }
   
@@ -69,7 +69,7 @@ function fixSyntaxErrors(content) {
   const templateLiteralPattern = /`([^`]*?)`\s*$/gm;
   const templateLiteralMatches = fixed.match(templateLiteralPattern);
   if (templateLiteralMatches) {
-    fixed = fixed.replace(templateLiteralPattern, '`$1`;');
+    fixed = fixed.replace(templateLiteralPattern, ''$1';);
     changes += templateLiteralMatches.length;
   }
   
@@ -117,7 +117,7 @@ function fixSyntaxErrors(content) {
   const exportBacktickPattern = /export\s+.*?`\s*$/gm;
   const exportBacktickMatches = fixed.match(exportBacktickPattern);
   if (exportBacktickMatches) {
-    fixed = fixed.replace(exportBacktickPattern, (match) => match.replace(/`\s*$/, ';'));
+    fixed = fixed.replace(exportBacktickPattern, (match) => match.replace(/'\s*$/, ';));
     changes += exportBacktickMatches.length;
   }
   
@@ -133,7 +133,7 @@ function fixSyntaxErrors(content) {
   const returnBacktickPattern = /return\s+.*?`\s*$/gm;
   const returnBacktickMatches = fixed.match(returnBacktickPattern);
   if (returnBacktickMatches) {
-    fixed = fixed.replace(returnBacktickPattern, (match) => match.replace(/`\s*$/, ';'));
+    fixed = fixed.replace(returnBacktickPattern, (match) => match.replace(/'\s*$/, ';));
     changes += returnBacktickMatches.length;
   }
   
@@ -141,7 +141,7 @@ function fixSyntaxErrors(content) {
   const throwBacktickPattern = /throw\s+.*?`\s*$/gm;
   const throwBacktickMatches = fixed.match(throwBacktickPattern);
   if (throwBacktickMatches) {
-    fixed = fixed.replace(throwBacktickPattern, (match) => match.replace(/`\s*$/, ';'));
+    fixed = fixed.replace(throwBacktickPattern, (match) => match.replace(/'\s*$/, ';));
     changes += throwBacktickMatches.length;
   }
   

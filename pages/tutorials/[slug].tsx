@@ -1,9 +1,9 @@
-import TutorialPage from '@/pages/Tutorial';';';';';'';
-import { TUTORIALS } from '@/data/tutorials';';';';';'';
-import type { GetStaticPaths, GetStaticProps } from 'next';';';';';'';
-import type { Tutorial } from '@/types/tutorial';';';''
-;';';';''
-interface PageProps {;';';';';''
+import TutorialPage from '@/pages/Tutorial';;';'';
+import { TUTORIALS } from '@/data/tutorials';;';'';
+import type { GetStaticPaths, GetStaticProps } from 'next';;';'';
+import type { Tutorial } from '@/types/tutorial';;''
+;';;''
+interface PageProps {;';;';''
   tutorial: "Tutorial;";"
 };
 ;

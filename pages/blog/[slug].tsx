@@ -1,30 +1,30 @@
-import React from 'react';';';';';'';
-import ReactMarkdown from 'react-markdown';';';';';'';
-import { useRouter } from 'next/router';';';';';'';
-import AdvancedSEO from '@/components/seo/AdvancedSEO';';';';';'';
-import { BLOG_POSTS } from '@/data/blog-posts';';';';';'';
-import { OptimizedImage } from '@/components/ui/OptimizedImage';';';';';'';
-import { AuthorBio } from '@/components/blog/AuthorBio';';';';';'';
-import { SocialShareButtons } from '@/components/blog/SocialShareButtons';';';';';'';
-import { CommentsSection } from '@/components/blog/CommentsSection';';';';';'';
-import type { BlogPost } from '@/types/blog';';';';';'';
-import type { GetStaticPaths, GetStaticProps } from 'next';';';';';'';
-import fs from 'fs';';';';';'';
-import path from 'path';';';';';'';
-import { logWarn } from '@/utils/productionLogger';';';';';'';
-import { logError } from '@/utils/logError';'
+import React from 'react';;';'';
+import ReactMarkdown from 'react-markdown';;';'';
+import { useRouter } from 'next/router';;';'';
+import AdvancedSEO from '@/components/seo/AdvancedSEO';;';'';
+import { BLOG_POSTS } from '@/data/blog-posts';;';'';
+import { OptimizedImage } from '@/components/ui/OptimizedImage';;';'';
+import { AuthorBio } from '@/components/blog/AuthorBio';;';'';
+import { SocialShareButtons } from '@/components/blog/SocialShareButtons';;';'';
+import { CommentsSection } from '@/components/blog/CommentsSection';;';'';
+import type { BlogPost } from '@/types/blog';;';'';
+import type { GetStaticPaths, GetStaticProps } from 'next';;';'';
+import fs from 'fs';;';'';
+import path from 'path';;';'';
+import { logWarn } from '@/utils/productionLogger';;';'';
+import { logError } from '@/utils/logError';
 ;
 ;'';
-function parseMarkdown(): unknown {): unknown {): unknown {): unknown {): unknown {filePath: string): BlogPost | null {;';''
-  if (!fs.existsSync(filePath)) {;';';''
-    return null;';';';''
-  };';';';';''
+function parseMarkdown(): unknown {): unknown {): unknown {): unknown {): unknown {filePath: string): BlogPost | null {;';'
+  if (!fs.existsSync(filePath)) {;';'
+    return null;';;''
+  };';;';''
   const raw: unknown unknown unknown unknown "unknown unknown = fs.readFileSync(filePath", 'utf8') as string;''
-  const match: unknown unknown unknown unknown unknown unknown = raw.match(/---\n([\s\S]+?)\n---\n([\s\S]*)/);';''
-  if (!match || !match[1] || !match[2]) return null;';';''
-  const meta: unknown unknown unknown unknown unknown unknown = JSON.parse(match[1]);';';';''
-  const content: unknown unknown unknown unknown unknown unknown = match[2].trim();';';';';''
-  const slug: unknown unknown unknown unknown "unknown unknown = path.basename(filePath).replace(/\.md$/", '');';';';';''
+  const match: unknown unknown unknown unknown unknown unknown = raw.match(/---\n([\s\S]+?)\n---\n([\s\S]*)/);';'
+  if (!match || !match[1] || !match[2]) return null;';'
+  const meta: unknown unknown unknown unknown unknown unknown = JSON.parse(match[1]);';;''
+  const content: unknown unknown unknown unknown unknown unknown = match[2].trim();';;';''
+  const slug: unknown unknown unknown unknown "unknown unknown = path.basename(filePath).replace(/\.md$/", '');';;';''
   return { ...meta, id: "slug", slug, content } as BlogPost;"
 };
 ;""
@@ -47,8 +47,8 @@ const BlogPostPage: unknown unknown unknown unknown unknown "React.FC<BlogPostPa
       setError(null); // Clear any previous error;";";""
     } else if (slug) {;";";";""
       // This case handles if the slug changes and initialPost is not for the current slug;";";";";""
-      // Or if initialPost was null from getStaticProps (which shouldn't happen if notFound is true);';';';''
-      // For now, we will rely on getStaticProps to provide the correct post or a 404.;';';';';''
+      // Or if initialPost was null from getStaticProps (which shouldn't happen if notFound is true);';;''
+      // For now, we will rely on getStaticProps to provide the correct post or a 404.;';;';''
       // If initialPost is null and getStaticProps didn't return notFound, that's an inconsistent state.;'
       // The previous logic tried a fallback here, but we aim to make getStaticProps authoritative.;
       const directFallback: unknown unknown unknown unknown unknown unknown = BLOG_POSTS.find((p) => p.slug === slug) || null;
@@ -56,10 +56,10 @@ const BlogPostPage: unknown unknown unknown unknown unknown "React.FC<BlogPostPa
         setPost(directFallback);
         setError(null);
       } else {;''
-        // If getStaticProps is working correctly, this path (slug exists, no initialPost, no fallback);';''
-        // should ideally not be hit frequently, as getStaticProps would have returned notFound.;';';''
-        // However, to maintain some robustness for dynamic client-side slug changes not triggering a new getStaticProps:;';';';''
-        setPost(null);';';';';''
+        // If getStaticProps is working correctly, this path (slug exists, no initialPost, no fallback);';'
+        // should ideally not be hit frequently, as getStaticProps would have returned notFound.;';'
+        // However, to maintain some robustness for dynamic client-side slug changes not triggering a new getStaticProps:;';;''
+        setPost(null);';;';''
         setError('Article not found');'
       };
     };
@@ -68,10 +68,10 @@ const BlogPostPage: unknown unknown unknown unknown unknown "React.FC<BlogPostPa
   if (error) {;
     return <div>{error}</div>;
   };''
-  if (!post) {;';''
-    return <div>Article not found</div>;';';''
-  };';';';''
-  const articleLd: unknown unknown unknown unknown unknown unknown = {;';,';';';''
+  if (!post) {;';'
+    return <div>Article not found</div>;';'
+  };';;''
+  const articleLd: unknown unknown unknown unknown unknown unknown = {;';,';;''
     author: "post.author.name",;";";";";""
     publishedTime: "post.publishedDate",;";";";";""
     tags: "post.tags || []",;";";""
@@ -131,19 +131,19 @@ export default BlogPostPage;";""
 ;";";"";
 export const _getStaticPaths: unknown unknown unknown unknown unknown GetStaticPaths = async () => {;";";";""
   try {;";";";";""
-    const dir: unknown unknown unknown unknown "unknown unknown = path.join(process.cwd()", 'content', 'blog');';';';''
-    if (!fs.existsSync(dir)) {;';';';';''
+    const dir: unknown unknown unknown unknown "unknown unknown = path.join(process.cwd()", 'content', 'blog');';;''
+    if (!fs.existsSync(dir)) {;';;';''
       logWarn(`Blog directory not found: "${dir"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`);";";";";""
-      return { paths: "[]", fallback: 'blocking' };';';';''
-    };';';';';''
-    const files: unknown unknown unknown unknown unknown unknown = fs.readdirSync(dir).filter((f) => f.endsWith('.md'));';';';''
-    const paths: unknown unknown unknown unknown unknown unknown = files.map((f) => ({;';,';';';''
-      params: "{ slug: f.replace(/\.md$/", '') },;';';''
-    }));';';';''
-    // Use `blocking` so new posts added after build can be generated on demand;';';';';''
-    return { paths, fallback: 'blocking' };';';';''
-  } catch (error) {;';';';';''
-    logError('Failed to read blog directory:', { data: typeof error === 'object' && error !== null ? error : {} });';';';';''
+      return { paths: "[]", fallback: 'blocking' };';;''
+    };';;';''
+    const files: unknown unknown unknown unknown unknown unknown = fs.readdirSync(dir).filter((f) => f.endsWith('.md'));';;''
+    const paths: unknown unknown unknown unknown unknown unknown = files.map((f) => ({;';,';;''
+      params: "{ slug: f.replace(/\.md$/", '') },;';'
+    }));';;''
+    // Use `blocking' so new posts added after build can be generated on demand;';;';''
+    return { paths, fallback: 'blocking' };';;''
+  } catch (error) {;';;';''
+    logError('Failed to read blog directory:', { data: typeof error === 'object' && error !== null ? error : {} });';;';''
     return { paths: "[]", fallback: 'blocking' };'
   };
 };
@@ -153,20 +153,20 @@ export const _getStaticProps: unknown unknown unknown unknown unknown GetStaticP
 }: {;
   params?: { slug?: string };
 }) => {;''
-  try {;';''
-    const slug: unknown unknown unknown unknown unknown unknown = params?.slug as string;';';''
-    // Validate slug to prevent malformed paths;';';';''
-    if (!/^[a-z0-9-]+$/.test(slug)) {;';';';';''
+  try {;';'
+    const slug: unknown unknown unknown unknown unknown unknown = params?.slug as string;';'
+    // Validate slug to prevent malformed paths;';;''
+    if (!/^[a-z0-9-]+$/.test(slug)) {;';;';''
       return { notFound: "true "} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};";";";""
     };";";";";""
-    const filePath: unknown unknown unknown unknown "unknown unknown = path.join(process.cwd()", 'content', 'blog', `${slug}.md`);';';''
-    const post: unknown unknown unknown unknown unknown unknown = parseMarkdown(filePath);';';';''
-    if (!post) {;';';';';''
+    const filePath: unknown unknown unknown unknown "unknown unknown = path.join(process.cwd()", 'content', 'blog', `${slug}.md');';'
+    const post: unknown unknown unknown unknown unknown unknown = parseMarkdown(filePath);';;''
+    if (!post) {;';;';''
       return { notFound: "true "};";";";""
     };";";";";""
     return { props: "{ initialPost: post "}, revalidate: "60 "};";";";""
   } catch (error) {;";";";";""
-    logError('Failed to read blog post:', { data: typeof error === 'object' && error !== null ? error : {} });';';';';''
+    logError('Failed to read blog post:', { data: typeof error === 'object' && error !== null ? error : {} });';;';''
     return { notFound: "true "};";""
   };";";""
 };";";";""

@@ -1,18 +1,18 @@
-import { Header } from '@/components/Header';';';';';'';
-import { NextSeo } from '@/components/NextSeo';';';';';'';
-import { GradientHeading } from '@/components/GradientHeading';';';';''
-;';';';';'';
+import { Header } from '@/components/Header';;';'';
+import { NextSeo } from '@/components/NextSeo';;';'';
+import { GradientHeading } from '@/components/GradientHeading';;';''
+;';;';'';
 const historicalEvents: unknown unknown unknown unknown unknown "Record<string", string> = {;";";";";""
-  '01-01': 'Genesis block minted (2023)',;';';';';''
+  '01-01': 'Genesis block minted (2023)',;';;';''
   '06-06': 'Zion OS launched first governance portal (2024)',;''
-};';''
-;';';'';
-export default function GovernanceCalendar(): unknown {): unknown {): unknown {): unknown {): unknown {) {;';';';''
+};';'
+;';';
+export default function GovernanceCalendar(): unknown {): unknown {): unknown {): unknown {): unknown {) {;';;''
   const todayKey: unknown unknown unknown unknown "unknown unknown = new Date().toISOString().slice(5", 10);""
   const todaysEvent: unknown unknown unknown unknown unknown unknown = historicalEvents[todayKey];";""
   return (;";";""
-    <>;";";";""
-      <NextSeo;';';';';''
+    <>;";";";"'
+      <NextSeo;';;';''
         title="Zion TimeOS";";";";";""
         description="Decentralized coordination layer for proposals, releases, and anniversaries."/>;";";";""
       <Header />;";";";";""

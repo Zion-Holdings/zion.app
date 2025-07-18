@@ -1,2 +1,2 @@
-export { default } from '@/pages/OrgChart';';';';''
+export { default } from '@/pages/OrgChart';;';''
 ''''''

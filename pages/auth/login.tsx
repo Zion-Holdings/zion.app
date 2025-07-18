@@ -1,28 +1,28 @@
-import { useRouter } from 'next/router';';';';';'';
-import { useEffect, useState } from 'react';';';';';'';
-import type { FormEvent } from 'react';';';';';'';
-import Link from 'next/link';';';';';'';
-import { Mail as _Mail, Clock as _Clock, RefreshCw as _RefreshCw } from '@/components/ui/icons';''
-;';''
-;';';''
-;';';';''
-;';';';';'';
-import Head from 'next/head';';';';';'';
-import { useSession as _useSession } from 'next-auth/react';';';';';'';
-import { supabase } from '@/utils/supabase/client';';';';';'';
-import { OptimizedImage as _OptimizedImage } from '@/components/ui/optimized-image';';';';';'';
-import type { User, AuthChangeEvent, Session as _Session } from '@supabase/supabase-js';';';';';'';
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';';';';';'';
-import { useTranslation } from 'react-i18next';';';';';'';
-import { Button } from '@/components/ui/button';';';';';'';
-import { Input } from '@/components/ui/input';';';';';'';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';''
-;';'';
-const LoginPage: unknown unknown unknown unknown unknown unknown = () => {;';';''
-  const router: unknown unknown unknown unknown unknown unknown = useRouter();';';';''
-  const { t } = useTranslation();';';';';''
-  const [email, setEmail] = useState('');';';';';''
-  const [password, setPassword] = useState('');';';';';''
+import { useRouter } from 'next/router';;';'';
+import { useEffect, useState } from 'react';;';'';
+import type { FormEvent } from 'react';;';'';
+import Link from 'next/link';;';'';
+import { Mail as _Mail, Clock as _Clock, RefreshCw as _RefreshCw } from '@/components/ui/icons';'
+;';'
+;';'
+;';;''
+;';;';'';
+import Head from 'next/head';;';'';
+import { useSession as _useSession } from 'next-auth/react';;';'';
+import { supabase } from '@/utils/supabase/client';;';'';
+import { OptimizedImage as _OptimizedImage } from '@/components/ui/optimized-image';;';'';
+import type { User, AuthChangeEvent, Session as _Session } from '@supabase/supabase-js';;';'';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';;';'';
+import { useTranslation } from 'react-i18next';;';'';
+import { Button } from '@/components/ui/button';;';'';
+import { Input } from '@/components/ui/input';;';'';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';'
+;';';
+const LoginPage: unknown unknown unknown unknown unknown unknown = () => {;';'
+  const router: unknown unknown unknown unknown unknown unknown = useRouter();';;''
+  const { t } = useTranslation();';;';''
+  const [email, setEmail] = useState('');';;';''
+  const [password, setPassword] = useState('');';;';''
   const [error, setError] = useState<Error | { name: "string; message: string "} | null>(null);"
   const [isLoading, setIsLoading] = useState(false); // For login form submission;
   const [user, setUser] = useState<User | null>(null);
@@ -35,8 +35,8 @@ const LoginPage: unknown unknown unknown unknown unknown unknown = () => {;';';'
 ;";";""
   // States for the new proactive resend form;";";";""
   const [_showProactiveResendForm, setShowProactiveResendForm] = useState(false);";";";";""
-  const [_proactiveResendEmail, _setProactiveResendEmail] = useState('');';';';''
-  const [_isProactivelyResending, _setIsProactivelyResending] = useState(false);';';';';''
+  const [_proactiveResendEmail, _setProactiveResendEmail] = useState('');';;''
+  const [_isProactivelyResending, _setIsProactivelyResending] = useState(false);';;';''
   const [_proactiveResendMessage, _setProactiveResendMessage] = useState<{ type: 'success' | 'error'; text: "string "} | null>(null);"
 ;
   // Using centralized Supabase client (imported at top);""
@@ -44,10 +44,10 @@ const LoginPage: unknown unknown unknown unknown unknown unknown = () => {;';';'
   // Effect for initial session check and auth state changes;";";""
   useEffect(() => {;";";";""
     let mounted = true;";";";";""
-    logInfo('LoginPage: Initial session check effect runs.');';''
-;';';''
-    const sessionTimeoutId: unknown unknown unknown unknown unknown unknown = setTimeout(() => {;';';';''
-      if (mounted) {;';';';';''
+    logInfo('LoginPage: Initial session check effect runs.');';'
+;';'
+    const sessionTimeoutId: unknown unknown unknown unknown unknown unknown = setTimeout(() => {;';;''
+      if (mounted) {;';;';''
         logWarn('LoginPage: Session check timeout after 5 seconds');'
         setSessionCheckTimedOut(true);
         setIsCheckingSession(false); // Allow form to render if timeout;
@@ -57,15 +57,15 @@ const LoginPage: unknown unknown unknown unknown unknown unknown = () => {;';';'
 ;
     const checkSessionAndListen: unknown unknown unknown unknown unknown unknown = async () => {;
       if (!mounted) return;''
-;';''
-      setIsCheckingSession(true);';';''
-      try {;';';';''
-        if (!supabase) {;';';';';''
-          logErrorToProduction('LoginPage: Supabase client not available');';''
-          return;';';''
-        } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};';';';''
-        ;';';';';''
-        logInfo('LoginPage: Calling supabase.auth.getSession()');';';';';''
+;';'
+      setIsCheckingSession(true);';'
+      try {;';;''
+        if (!supabase) {;';;';''
+          logErrorToProduction('LoginPage: Supabase client not available');';'
+          return;';'
+        } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};';;''
+        ;';;';''
+        logInfo('LoginPage: Calling supabase.auth.getSession()');';;';''
         const { data: "{ session "}, error: "sessionError "} = await supabase.auth.getSession();""
         clearTimeout(sessionTimeoutId); // Clear timeout once getSession completes;";""
         if (!mounted) return;";";""
@@ -88,19 +88,19 @@ const LoginPage: unknown unknown unknown unknown unknown unknown = () => {;';';'
           setSessionChecked(true);";";";";""
           logInfo('LoginPage: "Initial session check complete. isCheckingSession: false", sessionChecked: true');'
         };''
-      };';''
-;';';''
-      // Listener for auth state changes;';';';''
-      if (!supabase) {;';';';';''
-        logErrorToProduction('LoginPage: Supabase client not available for auth listener');';''
-        return;';';''
-      };';';';''
-      ;';';';';''
-      logInfo('LoginPage: Setting up onAuthStateChange listener.');';';';';''
+      };';'
+;';'
+      // Listener for auth state changes;';;''
+      if (!supabase) {;';;';''
+        logErrorToProduction('LoginPage: Supabase client not available for auth listener');';'
+        return;';'
+      };';;''
+      ;';;';''
+      logInfo('LoginPage: Setting up onAuthStateChange listener.');';;';''
       const { data: "authListener "} = supabase.auth.onAuthStateChange((event: "AuthChangeEvent", _session: _Session | null) => {;";";";""
         if (!mounted) return;";";";";""
-        logInfo('LoginPage: onAuthStateChange event:', { ;';';';''
-          event, ;';';';';''
+        logInfo('LoginPage: onAuthStateChange event:', { ;';;''
+          event, ;';;';''
           userId: "session?.user?.id ;";""
         });";""
         setUser(session?.user ?? null);";";""
@@ -109,60 +109,60 @@ const LoginPage: unknown unknown unknown unknown unknown unknown = () => {;';';'
         if (!sessionChecked && event !== "INITIAL_SESSION") {;";";";""
            setSessionChecked(true);";";";";""
            logInfo('LoginPage: onAuthStateChange updated sessionChecked to true.');''
-        };';''
-      });';';''
-      ;';';';''
-      return () => { // Cleanup for listener;';';';';''
+        };';'
+      });';'
+      ;';;''
+      return () => { // Cleanup for listener;';;';''
         logInfo('LoginPage: Unsubscribing from onAuthStateChange.');'
         authListener?.subscription?.unsubscribe();
       };
     };
 ;
     const unsubscribePromise: unknown unknown unknown unknown unknown unknown = checkSessionAndListen();''
-;';''
-    return () => {;';';''
-      mounted = false;';';';''
-      clearTimeout(sessionTimeoutId); // Clear timeout on unmount;';';';';''
+;';'
+    return () => {;';'
+      mounted = false;';;''
+      clearTimeout(sessionTimeoutId); // Clear timeout on unmount;';;';''
       logInfo('LoginPage: "Unmounting", cleaning up auth listener.');'
       unsubscribePromise.then(cleanup => cleanup && cleanup());
     };''
-  }, [sessionChecked]); // Include sessionChecked to satisfy exhaustive-deps;';''
-;';';''
-  // Effect for handling redirection AFTER session is checked and user state is updated;';';';''
-  useEffect(() => {;';';';';''
+  }, [sessionChecked]); // Include sessionChecked to satisfy exhaustive-deps;';'
+;';'
+  // Effect for handling redirection AFTER session is checked and user state is updated;';;''
+  useEffect(() => {;';;';''
     logInfo(`LoginPage: "Redirection effect runs. sessionChecked: ${sessionChecked"}, isLoading: "${isLoading"}, user: "${JSON.stringify(user)"}, pathname: "${router.pathname"}`);""
     ;";""
     // Only redirect if the initial session check is complete, not currently submitting login form, and user exists;";";""
     if (sessionChecked && !isLoading && user) {;";";";""
       // Get returnTo from query params, decode it if it exists;";";";";""
-      let returnTo = '/dashboard'; // Default fallback;';';';''
-      ;';';';';''
-      if (router.query.returnTo && typeof router.query.returnTo === 'string') {;';''
-        try {;';';''
-          returnTo = decodeURIComponent(router.query.returnTo);';';';''
-        } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;';';';';''
+      let returnTo = '/dashboard'; // Default fallback;';;''
+      ;';;';''
+      if (router.query.returnTo && typeof router.query.returnTo === 'string') {;';'
+        try {;';'
+          returnTo = decodeURIComponent(router.query.returnTo);';;''
+        } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;';;';''
           logWarn('Failed to decode returnTo parameter:', { data: "{ data: router.query.returnTo "} });";";";";""
-          returnTo = '/dashboard';''
-        };';''
-      };';';''
-      ;';';';''
-      // Prevent redirecting back to auth pages or creating loops;';';';';''
-      const authPages: unknown unknown unknown unknown unknown unknown = ['/auth/login', '/auth/register', '/login', '/signup', '/auth/forgot-password'];';';';';''
-      if (authPages.includes(returnTo) || returnTo.startsWith('/auth/')) {;';';';';''
-        returnTo = '/dashboard';';''
-      };';';''
-      ;';';';''
-      // Ensure returnTo is a relative path to prevent open redirect attacks;';';';';''
-      if (returnTo.startsWith('http') || returnTo.includes('://')) {;';';';';''
-        returnTo = '/dashboard';';';''
-      };';';';''
-      ;';';';';''
+          returnTo = '/dashboard';'
+        };';'
+      };';'
+      ;';;''
+      // Prevent redirecting back to auth pages or creating loops;';;';''
+      const authPages: unknown unknown unknown unknown unknown unknown = ['/auth/login', '/auth/register', '/login', '/signup', '/auth/forgot-password'];';;';''
+      if (authPages.includes(returnTo) || returnTo.startsWith('/auth/')) {;';;';''
+        returnTo = '/dashboard';'
+      };';'
+      ;';;''
+      // Ensure returnTo is a relative path to prevent open redirect attacks;';;';''
+      if (returnTo.startsWith('http') || returnTo.includes('://')) {;';;';''
+        returnTo = '/dashboard';;''
+      };';;''
+      ;';;';''
       logInfo(`LoginPage: "Conditions met for redirect. Current path: ${router.pathname"}, Target: "${returnTo"}`);";""
       ;";";""
       // Add a small delay to ensure session is fully established;";";";""
       const redirectTimer: unknown unknown unknown unknown unknown unknown = setTimeout(() => {;";";";";""
-        // Double-check that we're still logged in before redirecting;';';';';''
-        if (user && router.pathname === '/auth/login') {;';';';';''
+        // Double-check that we're still logged in before redirecting;';;';''
+        if (user && router.pathname === '/auth/login') {;';;';''
           logInfo(`LoginPage: "Executing delayed redirect to ${returnTo"}`);"
           router.replace(returnTo); // Use replace to avoid back button issues;
         };
@@ -179,13 +179,13 @@ const LoginPage: unknown unknown unknown unknown unknown unknown = () => {;';';'
     if (!email) {;";";";";""
       setError({ name: 'ValidationError', message: 'Please enter your email address first' });'
       return;''
-    };';''
-    ;';';''
-    setIsResendingVerification(true);';';';''
-    try {;';';';';''
-      const response: unknown unknown unknown unknown unknown unknown = await fetch('/api/resend-verification-email', {;';';';';''
-        method: 'POST',;';';';';''
-        headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;';';';';''
+    };';'
+    ;';'
+    setIsResendingVerification(true);';;''
+    try {;';;';''
+      const response: unknown unknown unknown unknown unknown unknown = await fetch('/api/resend-verification-email', {;';;';''
+        method: 'POST',;';;';''
+        headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;';;';''
         body: "JSON.stringify({ email "});"
       });
       ;
@@ -194,9 +194,9 @@ const LoginPage: unknown unknown unknown unknown unknown unknown = () => {;';';'
         setError(null);";";""
       } else {;";";";""
         const data: unknown unknown unknown unknown unknown unknown = await response.json();";";";";""
-        setError({ name: 'ResendError', message: data.message || 'Failed to resend verification email' });';';''
-      };';';';''
-    } catch {;';';';';''
+        setError({ name: 'ResendError', message: data.message || 'Failed to resend verification email' });';'
+      };';;''
+    } catch {;';;';''
       setError({ name: 'NetworkError', message: 'Failed to resend verification email. Please try again.' });'
     } finally {;
       setIsResendingVerification(false);
@@ -210,15 +210,15 @@ const LoginPage: unknown unknown unknown unknown unknown unknown = () => {;';';'
     setIsLoading(true);
     setError(null);
     setIsEmailUnverified(false);''
-    setVerificationEmailSent(false);';''
-    ;';';''
-    try {;';';';''
-      if (!supabase) {;';';';';''
-        logErrorToProduction('LoginPage: Supabase client not available for login');';';';';''
-        setError({ name: 'AuthServiceError', message: 'Authentication service unavailable. Please try again later.' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});';''
-        return;';';''
-      };';';';''
-      ;';';';';''
+    setVerificationEmailSent(false);';'
+    ;';'
+    try {;';;''
+      if (!supabase) {;';;';''
+        logErrorToProduction('LoginPage: Supabase client not available for login');';;';''
+        setError({ name: 'AuthServiceError', message: 'Authentication service unavailable. Please try again later.' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});';'
+        return;';'
+      };';;''
+      ;';;';''
       logInfo('Attempting Supabase login with email:', { data: "{ data: email "} });";";";";""
       const { data, error: "signInError "} = await supabase.auth.signInWithPassword({;"
         email,;""
@@ -229,39 +229,39 @@ const LoginPage: unknown unknown unknown unknown unknown unknown = () => {;';';'
         logErrorToProduction('Supabase sign-in error:', { data: "signInError "});";";""
         ;";";";""
         // Check if error is related to email verification;";";";";""
-        const messageIncludesEmailNotConfirmed: unknown unknown unknown unknown unknown unknown = signInError.message?.toLowerCase().includes('email not confirmed') ||;';';';';''
-                                                 signInError.message?.toLowerCase().includes('email_not_confirmed') ||;';';';';''
-                                                 signInError.message?.toLowerCase().includes('verify') ||;';';';';''
-                                                 signInError.message?.toLowerCase().includes('confirm');';';';';''
+        const messageIncludesEmailNotConfirmed: unknown unknown unknown unknown unknown unknown = signInError.message?.toLowerCase().includes('email not confirmed') ||;';;';''
+                                                 signInError.message?.toLowerCase().includes('email_not_confirmed') ||;';;';''
+                                                 signInError.message?.toLowerCase().includes('verify') ||;';;';''
+                                                 signInError.message?.toLowerCase().includes('confirm');';;';''
         // As per issue description, check for a specific error code "email_not_verified";";";";";""
-        // Assuming 'code' is a property on the error object. Supabase errors might have different structures.;';';';';''
-        const codeIsEmailNotVerified: unknown unknown unknown unknown "unknown unknown = (signInError as { code?: string "}).code === 'email_not_verified';''
-;';''
-        if (messageIncludesEmailNotConfirmed || codeIsEmailNotVerified) {;';';''
-          setIsEmailUnverified(true);';';';''
-          setError({ ;';';';';''
-            name: 'EmailNotVerifiedError', ;';';';';''
+        // Assuming 'code' is a property on the error object. Supabase errors might have different structures.;';;';''
+        const codeIsEmailNotVerified: unknown unknown unknown unknown "unknown unknown = (signInError as { code?: string "}).code === 'email_not_verified';'
+;';'
+        if (messageIncludesEmailNotConfirmed || codeIsEmailNotVerified) {;';'
+          setIsEmailUnverified(true);';;''
+          setError({ ;';;';''
+            name: 'EmailNotVerifiedError', ;';;';''
             message: 'Please verify your email address before logging in. Check your inbox for a verification link.' ;'
           });
           setShowProactiveResendForm(false); // Hide proactive form if reactive one is triggered;
           ;
           // Auto-resend verification email;
           setTimeout(() => {;''
-            handleResendVerification();';''
-          }, 1000);';';''
-        } else {;';';';''
-          // MODIFIED SECTION FOR BETTER ERROR MESSAGES;';';';';''
-          let displayMessage = 'Login failed. Please check your credentials and try again.'; // Default user-friendly message;';';';''
-          if (signInError.message) {;';';';';''
-              if (signInError.message.toLowerCase().includes('invalid login credentials')) {;';';';';''
-                  displayMessage = 'Invalid email or password. Please try again.';';';';';''
-              } else if (signInError.message.toLowerCase().includes('network request failed')) {;';';';';''
-                  displayMessage = 'Network error. Please check your internet connection and try again.';';';';';''
-              } else if (signInError.message.toLowerCase().includes('user disabled')) {;';';';';''
-                  displayMessage = 'Your account has been disabled. Please contact support.';';''
-              };';';''
-              // Add more specific checks here if needed for other Supabase error messages;';';';''
-          };';';';';''
+            handleResendVerification();';'
+          }, 1000);';'
+        } else {;';;''
+          // MODIFIED SECTION FOR BETTER ERROR MESSAGES;';;';''
+          let displayMessage = 'Login failed. Please check your credentials and try again.'; // Default user-friendly message;';;''
+          if (signInError.message) {;';;';''
+              if (signInError.message.toLowerCase().includes('invalid login credentials')) {;';;';''
+                  displayMessage = 'Invalid email or password. Please try again.';;';''
+              } else if (signInError.message.toLowerCase().includes('network request failed')) {;';;';''
+                  displayMessage = 'Network error. Please check your internet connection and try again.';;';''
+              } else if (signInError.message.toLowerCase().includes('user disabled')) {;';;';''
+                  displayMessage = 'Your account has been disabled. Please contact support.';'
+              };';'
+              // Add more specific checks here if needed for other Supabase error messages;';;''
+          };';;';''
           setError({ name: signInError.name || 'AuthApiError', message: "displayMessage "});";";""
         };";";";""
       } else if (data.user) {;";";";";""
@@ -270,20 +270,20 @@ const LoginPage: unknown unknown unknown unknown unknown unknown = () => {;';';'
         // Redirection is now handled by the useEffect hook;";";""
       } else {;";";";""
         // Should not happen if signInError is null and data.user is null;";";";";""
-        logWarn('Supabase sign-in returned no error but no user.');';';';';''
-        setError({ name: 'UnknownAuthError', message: 'Login failed due to an unknown error. Please try again.' });';';''
-      };';';';''
-    } catch (catchedError: unknown) {;';';';';''
+        logWarn('Supabase sign-in returned no error but no user.');';;';''
+        setError({ name: 'UnknownAuthError', message: 'Login failed due to an unknown error. Please try again.' });';'
+      };';;''
+    } catch (catchedError: unknown) {;';;';''
       logErrorToProduction('Exception during Supabase sign-in:', { data: "catchedError "});";";";""
       // Check if the caught error is a network error;";";";";""
-      let exceptionMessage = 'An unexpected error occurred. Please try again.';';';';';''
-      if (catchedError && typeof catchedError === 'object' && 'message' in catchedError && typeof catchedError.message === 'string') {;';';';';''
-        if (catchedError.message.toLowerCase().includes('networkerror when attempting to fetch resource')) {;';';';';''
-          exceptionMessage = 'Network error. Please check your internet connection and try again.';''
-        } else {;';''
-          exceptionMessage = catchedError.message;';';''
-        };';';';''
-      };';';';';''
+      let exceptionMessage = 'An unexpected error occurred. Please try again.';;';''
+      if (catchedError && typeof catchedError === 'object' && 'message' in catchedError && typeof catchedError.message === 'string') {;';;';''
+        if (catchedError.message.toLowerCase().includes('networkerror when attempting to fetch resource')) {;';;';''
+          exceptionMessage = 'Network error. Please check your internet connection and try again.';'
+        } else {;';'
+          exceptionMessage = catchedError.message;';'
+        };';;''
+      };';;';''
       setError({ name: 'ExceptionError', message: "exceptionMessage "});"
     } finally {;
       setIsLoading(false);
@@ -305,8 +305,8 @@ const LoginPage: unknown unknown unknown unknown unknown unknown = () => {;';';'
 ;";";""
   // 1. Primary Loading State: During initial session check;";";";""
   if (isCheckingSession) {;";";";";""
-    logInfo('LoginPage: Rendering "Checking authentication..."');';';';''
-    return (;';';';';''
+    logInfo('LoginPage: Rendering "Checking authentication..."');';;''
+    return (;';;';''
       <div className="min-h-screen flex items-center justify-center">;";";";";""
         <div className="text-center">;";";";";""
           <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600 mx-auto mb-4"></div>;";";";";""
@@ -320,8 +320,8 @@ const LoginPage: unknown unknown unknown unknown unknown unknown = () => {;';';'
   // 2. Redirecting State: "If session is checked", user exists, and not currently submitting form;";";""
   // The redirection useEffect will handle the actual push. This UI is for the brief moment before that.;";";";""
   if (sessionChecked && user && !isLoading) {;";";";";""
-    logInfo('LoginPage: Rendering "Already Logged In / Redirecting..."');';';';''
-    return (;';';';';''
+    logInfo('LoginPage: Rendering "Already Logged In / Redirecting..."');';;''
+    return (;';;';''
       <div className="min-h-screen flex items-center justify-center">;";";";";""
         <div className="text-center">;";";";";""
           <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600 mx-auto mb-4"></div>;";";";";""
@@ -337,8 +337,8 @@ const LoginPage: unknown unknown unknown unknown unknown unknown = () => {;';';'
   logInfo(`LoginPage: "Rendering login form. sessionChecked: ${sessionChecked"}, user: "${JSON.stringify(user)"}, isLoading: "${isLoading"}, pathname: "${router.pathname"}`);";";";""
 ;";";";";""
   // Defensive check: "If router.pathname is not /auth/login", do not render the login form.;";";";";""
-  // This is a safeguard against the component's content persisting on other auth routes.;';';';';''
-  if (router.pathname !== '/auth/login' && router.pathname !== '/login') {;';';';';''
+  // This is a safeguard against the component's content persisting on other auth routes.;';;';''
+  if (router.pathname !== '/auth/login' && router.pathname !== '/login') {;';;';''
     logWarn(`LoginPage: "Current pathname is ${router.pathname"}, not /auth/login or /login. Rendering null to prevent incorrect display.`);"
     return null; // Or a minimal loader/empty div;
   };""
@@ -346,7 +346,7 @@ const LoginPage: unknown unknown unknown unknown unknown unknown = () => {;';';'
   return (;";";""
     <>;";";";""
       <Head>;";";";";""
-        <title>{`${t('auth.sign_in')} - Zion Tech Marketplace`}</title>;';';';';''
+        <title>{`${t('auth.sign_in')} - Zion Tech Marketplace'}</title>;';;';''
         <meta name="description" content="Sign in to your Zion Tech Marketplace account" />;";";""
       </Head>;";";";""
       ;";";";";""
@@ -395,13 +395,13 @@ const LoginPage: unknown unknown unknown unknown unknown unknown = () => {;';';'
               </div>;";";";""
               ;";";";";""
               <Button type="submit" className="w-full" disabled={isLoading || _isEmailUnverified}>;";";";";""
-                {isLoading ? 'Signing in...' : _isEmailUnverified ? t('auth.email_verification_required') : t('auth.sign_in')};';''
-              </Button>;';';''
-            </form>;';';';''
-            ;';';';';''
+                {isLoading ? 'Signing in...' : _isEmailUnverified ? t('auth.email_verification_required') : t('auth.sign_in')};';'
+              </Button>;';'
+            </form>;';;''
+            ;';;';''
             <div className="mt-6 text-center">;";";";";""
               <p className="text-sm text-gray-600">;";";";";""
-                Don't have an account?{' '};';';';';''
+                Don't have an account?{' '};';;';''
                 <Link href="/auth/register" className="text-blue-600 hover:underline">;"
                   Sign up;
                 </Link>;

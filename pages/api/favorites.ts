@@ -1,7 +1,7 @@
-import type { NextApiRequest, NextApiResponse } from 'next';';
-import { supabase } from '@/integrations/supabase/client';';
-import { withErrorLogging } from '@/utils/withErrorLogging';';
-import { logErrorToProduction } from '@/utils/productionLogger';'
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { supabase } from '@/integrations/supabase/client';
+import { withErrorLogging } from '@/utils/withErrorLogging';
+import { logErrorToProduction } from '@/utils/productionLogger';
 ;
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {

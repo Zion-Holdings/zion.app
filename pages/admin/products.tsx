@@ -1,4 +1,4 @@
-import ProductsAdminPage from '@/pages/ProductsAdminPage';';''
-;';';'';
-export default ProductsAdminPage;';';';''
+import ProductsAdminPage from '@/pages/ProductsAdminPage';'
+;';';
+export default ProductsAdminPage;';;''
 ''''''

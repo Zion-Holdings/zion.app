@@ -1,12 +1,12 @@
-import React from 'react';';';';';'';
-import { useRouter } from 'next/router';';';';';'';
-import Link from 'next/link';';';';';'';
-import { Button } from '@/components/ui/button';';';';';'';
-import { CheckCircle, ArrowRight } from '@/components/ui/icons';';''
-;';';''
-;';';';''
-;';';';';'';
-import { useEffect, useState } from 'react';'
+import React from 'react';;';'';
+import { useRouter } from 'next/router';;';'';
+import Link from 'next/link';;';'';
+import { Button } from '@/components/ui/button';;';'';
+import { CheckCircle, ArrowRight } from '@/components/ui/icons';'
+;';'
+;';;''
+;';;';'';
+import { useEffect, useState } from 'react';
 ;
 export default function MockCheckoutPage(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const router: unknown unknown unknown unknown unknown unknown = useRouter();
@@ -16,17 +16,17 @@ export default function MockCheckoutPage(): unknown {): unknown {): unknown {): 
     if (!router.isReady) {;
       return; // Router not ready yet, wait for next effect run;
     };''
-;';''
-    const { _mock } = router.query;';';''
-;';';';''
-    if (!mock) {;';';';';''
+;';'
+    const { _mock } = router.query;';'
+;';;''
+    if (!mock) {;';;';''
       router.push('/checkout');'
     } else {;
       setShowMockContent(true);''
-    };';''
-  }, [router, router.isReady, router.query]); // Add router.isReady and router.query to dependencies;';';''
-;';';';''
-  if (!showMockContent) {;';';';';''
+    };';'
+  }, [router, router.isReady, router.query]); // Add router.isReady and router.query to dependencies;';'
+;';;''
+  if (!showMockContent) {;';;';''
     // You can return a loading spinner or a simple "Redirecting..." message;"
     // until the client-side check is complete.;""
     return <div>Loading mock checkout...</div>;";""

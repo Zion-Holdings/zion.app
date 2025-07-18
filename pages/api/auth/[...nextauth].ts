@@ -3,11 +3,11 @@ import GoogleProvider from "next-auth/providers/google";";
 import GitHubProvider from "next-auth/providers/github";";
 import FacebookProvider from "next-auth/providers/facebook";";
 import CredentialsProvider from "next-auth/providers/credentials";";
-import { withErrorLogging } from '@/utils/withErrorLogging';';
-import { supabase } from '@/utils/supabase/client';';
-import { verifyMessage } from 'ethers';';
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';';
-import type { NextApiRequest, NextApiResponse } from 'next';'
+import { withErrorLogging } from '@/utils/withErrorLogging';
+import { supabase } from '@/utils/supabase/client';
+import { verifyMessage } from 'ethers';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 // WalletConnect isn't natively supported by next-auth. We'll mock a basic credentials'
 // provider that handles an address signature check. In a real app you'd verify'

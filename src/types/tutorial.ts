@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 export interface Tutorial {
   id: "string"
   title: string,"
@@ -13,19 +12,3 @@ export interface Tutorial {
   readTime?: string;"
 };"
 """""
-=======
-export interface Tutorial {;
-  id: "string;",;";";";";""
-  title: "string;",";";";";""
-  slug: "string;",;";";";";""
-  excerpt: "string;",;""
-  content: string;";""
-  category?: string;";";""
-  tags?: string[];";";";""
-  featuredImage?: string;";";";";""
-  author?: string | { name: "string; title?: string; avatarUrl?: string "};""
-  publishedDate?: string;";""
-  readTime?: string;";";""
-};";";";""
-""""""
->>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f

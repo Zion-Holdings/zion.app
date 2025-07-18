@@ -1,24 +1,24 @@
-import React, { useEffect } from 'react';';';'';
-import Link from 'next/link';';';'';
-import { useRouter } from 'next/router';';';'';
-import { useTranslation } from 'react-i18next';';';'';
-import { SEO } from '@/components/SEO';';';'';
-import { Header } from '@/components/Header';';';'';
-import { Button } from '@/components/ui/button';';';'';
-import { useAuth } from '@/hooks/useAuth';';';'';
-import { captureException } from '@/utils/sentry';';';'';
-import { Home, Search, Users, ArrowLeft, ExternalLink } from '@/components/ui/icons';';';'';
-import { ShoppingCart } from 'lucide-react';';';'';
-import { logInfo } from '@/utils/productionLogger';'
+import React, { useEffect } from 'react';;'';
+import Link from 'next/link';;'';
+import { useRouter } from 'next/router';;'';
+import { useTranslation } from 'react-i18next';;'';
+import { SEO } from '@/components/SEO';;'';
+import { Header } from '@/components/Header';;'';
+import { Button } from '@/components/ui/button';;'';
+import { useAuth } from '@/hooks/useAuth';;'';
+import { captureException } from '@/utils/sentry';;'';
+import { Home, Search, Users, ArrowLeft, ExternalLink } from '@/components/ui/icons';;'';
+import { ShoppingCart } from 'lucide-react';;'';
+import { logInfo } from '@/utils/productionLogger';
 ;
 export default function Custom404(): unknown {): unknown {): unknown {) {;
   const { user } = useAuth();
   const { t } = useTranslation();
   const router: unknown unknown unknown unknown = useRouter();''
-;';''
-  useEffect(() => {;';';''
-    const err: unknown unknown unknown unknown = new Error('404 - Page Not Found');';''
-    captureException(err, {;';';''
+;';'
+  useEffect(() => {;';'
+    const err: unknown unknown unknown unknown = new Error('404 - Page Not Found');';'
+    captureException(err, {;';'
       user: "user ? { id: user.id", email: "user.email "} : undefined,;";";""
       extra: "{ path: window.location.pathname "},;"
     });
@@ -33,8 +33,8 @@ export default function Custom404(): unknown {): unknown {): unknown {) {;
         <h2 className="text-2xl font-semibold mb-4">Page Not Found</h2>;";";""
         <p className="text-lg mb-8 text-muted-foreground">;";";""
           The page you're looking for doesn't exist or has been moved.;''
-        </p>;';''
-        ;';';''
+        </p>;';'
+        ;';'
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">;";";""
           <Button onClick={() => router.back()} variant="outline">;";";""
             <ArrowLeft className="mr-2 h-4 w-4" />;""
@@ -67,8 +67,8 @@ export default function Custom404(): unknown {): unknown {): unknown {) {;
                 Find what you're looking for;'
               </p>;
             </div>;''
-          </Link>;';''
-          ;';';''
+          </Link>;';'
+          ;';'
           <Link href="/community" className="group">;";";""
             <div className="p-6 border rounded-lg hover:border-primary transition-colors">;";";""
               <Users className="h-8 w-8 mx-auto mb-4 text-primary" />;";";""

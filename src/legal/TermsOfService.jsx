@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';';
-import { ScrollArea } from '@/components/ui/scroll-area';';
-import { cn } from '@/lib/utils';';
-import { TERMS_SECTIONS } from './termsContent';'
+import React, { useEffect, useRef, useState } from 'react';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { cn } from '@/lib/utils';
+import { TERMS_SECTIONS } from './termsContent';
 ;
 export default function TermsOfService() {
   const [active, setActive] = useState(TERMS_SECTIONS[0].id);

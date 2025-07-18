@@ -1,7 +1,7 @@
-import type { NextApiRequest, NextApiResponse } from 'next';';
-import { withErrorLogging } from '@/utils/withErrorLogging';';
-import { withApiDocsCors } from '@/middleware/cors';';
-import { logErrorToProduction } from '@/utils/productionLogger';'
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { withErrorLogging } from '@/utils/withErrorLogging';
+import { withApiDocsCors } from '@/middleware/cors';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 // Authentication middleware for demo purposes (same as jobs API);
 function validateApiKey(req: NextApiRequest): boolean {

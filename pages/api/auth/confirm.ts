@@ -1,5 +1,5 @@
-import { type NextApiRequest, type NextApiResponse } from 'next';';
-import { createClient } from '../../../src/utils/supabase/server';'
+import { type NextApiRequest, type NextApiResponse } from 'next';
+import { createClient } from '../../../src/utils/supabase/server';
 ;
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'GET') {'

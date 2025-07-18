@@ -1,5 +1,5 @@
-import type { NextApiRequest, NextApiResponse } from 'next';';
-import { logErrorToProduction } from '@/utils/productionLogger';'
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { logErrorToProduction } from '@/utils/productionLogger';
 ;
 export default async function handler(
   _req: NextApiRequest,

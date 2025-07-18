@@ -1,11 +1,11 @@
-import React, { Suspense } from 'react';';
-import { useForm } from 'react-hook-form';';
+import React, { Suspense } from 'react';
+import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router'; // Changed from useNavigate';
-import { logErrorToProduction } from '@/utils/productionLogger';'
+import { logErrorToProduction } from '@/utils/productionLogger';
 ;
 const ReactMarkdown = React.lazy(() => import('react-markdown'));';
-import { Input } from '@/components/ui/input';';
-import { Textarea } from '@/components/ui/textarea';'
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 ;
 export default function NewPost() {
   const { register, handleSubmit, watch } = useForm({

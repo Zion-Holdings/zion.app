@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useCallback } from 'react';';';';'';
-import { useRouter } from 'next/router';';';';'';
-import SEO from '@/components/seo/SEO';';';';'';
-import { ProductCard } from '@/components/marketplace/ProductCard';';';';'';
-import { TalentCard } from '@/components/talent/TalentCard';';';';'';
-import { CategoryCard } from '@/components/marketplace/CategoryCard';';';';'';
-import { SearchFilters } from '@/components/search/SearchFilters';';';';'';
-import { SearchResults } from '@/components/search/SearchResults';';';';'';
-import { useDebounce } from '@/hooks/useDebounce';';';';'';
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger';';';';'';
-import { useAuth } from '@/context/auth/AuthProvider';';''
-;';';''
-interface BaseSearchResult {;';';';''
+import React, { useState, useEffect, useCallback } from 'react';;';'';
+import { useRouter } from 'next/router';;';'';
+import SEO from '@/components/seo/SEO';;';'';
+import { ProductCard } from '@/components/marketplace/ProductCard';;';'';
+import { TalentCard } from '@/components/talent/TalentCard';;';'';
+import { CategoryCard } from '@/components/marketplace/CategoryCard';;';'';
+import { SearchFilters } from '@/components/search/SearchFilters';;';'';
+import { SearchResults } from '@/components/search/SearchResults';;';'';
+import { useDebounce } from '@/hooks/useDebounce';;';'';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';;';'';
+import { useAuth } from '@/context/auth/AuthProvider';'
+;';'
+interface BaseSearchResult {;';;''
   id: "string;",;"
   title: string;
   description?: string;
@@ -26,28 +26,28 @@ interface BaseSearchResult {;';';';''
 };";""
 ;";";""
 interface ProductSearchResult extends BaseSearchResult {;";";";""
-  type: 'product' | 'equipment';'
+  type: 'product' | 'equipment';
   price?: number;
   rating?: number;
   stock?: number;''
-};';''
-;';';''
-interface TalentSearchResult extends BaseSearchResult {;';';';''
-  type: 'talent';'
+};';'
+;';'
+interface TalentSearchResult extends BaseSearchResult {;';;''
+  type: 'talent';
   rating?: number;''
-};';''
-;';';''
-interface BlogSearchResult extends BaseSearchResult {;';';';''
-  type: 'blog';''
-};';''
-;';';''
-interface CategorySearchResult extends BaseSearchResult {;';';';''
-  type: 'category';'
+};';'
+;';'
+interface BlogSearchResult extends BaseSearchResult {;';;''
+  type: 'blog';'
+};';'
+;';'
+interface CategorySearchResult extends BaseSearchResult {;';;''
+  type: 'category';
 };
 ;''
-type SearchResult = ProductSearchResult | TalentSearchResult | BlogSearchResult | CategorySearchResult;';''
-;';';''
-interface SearchResultsPageProps {;';';';''
+type SearchResult = ProductSearchResult | TalentSearchResult | BlogSearchResult | CategorySearchResult;';'
+;';'
+interface SearchResultsPageProps {;';;''
   initialResults: "SearchResult[];",;";";""
   query: string;";,";";""
   slug: "string;",";";";""
@@ -92,12 +92,12 @@ export default function SearchResultsPage(): unknown {): unknown {): unknown {):
   const [totalResults, setTotalResults] = useState(totalCount);";""
   ;";";""
   // Filter states;";";";""
-  const [sortBy, setSortBy] = useState('relevance');';';';''
-  const [categoryFilter, setCategoryFilter] = useState('all');';';';''
-  const [minPrice, setMinPrice] = useState('');';';';''
-  const [maxPrice, setMaxPrice] = useState('');';';';''
-  const [minRating, setMinRating] = useState('');';';''
-;';';';''
+  const [sortBy, setSortBy] = useState('relevance');';;''
+  const [categoryFilter, setCategoryFilter] = useState('all');';;''
+  const [minPrice, setMinPrice] = useState('');';;''
+  const [maxPrice, setMaxPrice] = useState('');';;''
+  const [minRating, setMinRating] = useState('');';'
+;';;''
   const fetchResults: unknown unknown unknown unknown unknown = useCallback(async (searchTerm: "string", page: number) => {;""
     setLoading(true);";""
     try {;";";""
@@ -105,17 +105,17 @@ export default function SearchResultsPage(): unknown {): unknown {): unknown {):
         q: "searchTerm",;";";";""
         page: "page.toString()",;";";";""
         limit: '12',;''
-        sortBy,;';''
-      } catch (error) {} catch (error) {} catch (error) {} catch (error) {});';';''
-      ;';';';''
-      if (categoryFilter !== 'all') params.append('category', categoryFilter);';';';''
-      if (minPrice) params.append('minPrice', minPrice);';';';''
-      if (maxPrice) params.append('maxPrice', maxPrice);';';';''
-      if (minRating) params.append('minRating', minRating);';''
-;';';''
+        sortBy,;';'
+      } catch (error) {} catch (error) {} catch (error) {} catch (error) {});';'
+      ;';;''
+      if (categoryFilter !== 'all') params.append('category', categoryFilter);';;''
+      if (minPrice) params.append('minPrice', minPrice);';;''
+      if (maxPrice) params.append('maxPrice', maxPrice);';;''
+      if (minRating) params.append('minRating', minRating);';'
+;';'
       const response: unknown unknown unknown "unknown unknown = await fetch(`/api/search?${params.toString()"}`);";""
-;";";""
-      if (!response.ok) {;';';';''
+;";";"'
+      if (!response.ok) {;';;''
         throw new Error(`Search API error: "${response.status"}`);""
       };";""
 ;";";""
@@ -127,9 +127,9 @@ export default function SearchResultsPage(): unknown {): unknown {): unknown {):
       if (page === 1) {;
         setResults(data.results || []);
       } else {;''
-        setResults((prev) => [...prev, ...(data.results || [])]);';''
-      };';';''
-    } catch (error) {;';';';''
+        setResults((prev) => [...prev, ...(data.results || [])]);';'
+      };';'
+    } catch (error) {;';;''
       logErrorToProduction('Error fetching search results:', { data: "error "});";";""
       const offline: unknown unknown unknown "unknown unknown = offlineSearch(searchTerm", page, 12, {;";";""
         sortBy,;";";";""

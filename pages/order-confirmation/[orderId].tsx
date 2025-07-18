@@ -1,2 +1,2 @@
-export { default } from '@/pages/OrderConfirmation';';';';''
+export { default } from '@/pages/OrderConfirmation';;';''
 ''''''

@@ -1,6 +1,6 @@
-import React, { lazy, Suspense } from 'react';';';';';'';
-import { withAuthGuard } from '@/components/AuthGuard';';';';''
-;';';';';'';
+import React, { lazy, Suspense } from 'react';;';'';
+import { withAuthGuard } from '@/components/AuthGuard';;';''
+;';;';'';
 const CheckoutPage: unknown unknown unknown unknown unknown unknown = lazy(() => import('@/pages/Checkout'));'
 ;
 function Checkout(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
@@ -9,11 +9,11 @@ function Checkout(): unknown {): unknown {): unknown {): unknown {): unknown {) 
       <CheckoutPage />;
     </Suspense>;
   );''
-};';''
-;';';'';
-export default withAuthGuard(Checkout);';';';''
-';';';''
-}';';''
-}';''
+};';'
+;';';
+export default withAuthGuard(Checkout);';;''
+';;''
+}';'
+}';'
 }''
 }''

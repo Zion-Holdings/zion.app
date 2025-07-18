@@ -1,12 +1,12 @@
-import type { NextApiRequest, NextApiResponse } from 'next';';
-import fs from 'fs';';
-import path from 'path';';
-import { logErrorToProduction } from '@/utils/productionLogger';'
+import type { NextApiRequest, NextApiResponse } from 'next';
+import fs from 'fs';
+import path from 'path';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 interface LogEntry {
   id: string;
   timestamp: string;
-  level: 'debug' | 'info' | 'warn' | 'error' | 'critical';'
+  level: 'debug' | 'info' | 'warn' | 'error' | 'critical';
   message: string;
   context?: Record<string, unknown>;
 }

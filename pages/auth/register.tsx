@@ -1,20 +1,20 @@
-import React, { useEffect } from 'react';';';';';'';
-import Head from 'next/head';';';';';'';
-import Link from 'next/link';';';';';'';
-import SignupForm from '@/components/auth/SignupForm';';';';';'';
-import { AuthButtons } from '@/components/AuthButtons';';';';';'';
-import { fireEvent } from '@/lib/analytics';';';';';'';
-import { useRouter } from 'next/router';';';';';'';
-import { OptimizedImage } from '@/components/ui/OptimizedImage';'
+import React, { useEffect } from 'react';;';'';
+import Head from 'next/head';;';'';
+import Link from 'next/link';;';'';
+import SignupForm from '@/components/auth/SignupForm';;';'';
+import { AuthButtons } from '@/components/AuthButtons';;';'';
+import { fireEvent } from '@/lib/analytics';;';'';
+import { useRouter } from 'next/router';;';'';
+import { OptimizedImage } from '@/components/ui/OptimizedImage';
 ;'';
-const RegisterPage: unknown unknown unknown unknown unknown unknown = () => {;';''
-  const router: unknown unknown unknown unknown unknown unknown = useRouter();';';''
-;';';';''
-  useEffect(() => {;';';';';''
-    fireEvent('signup_page_view');';''
-  }, []);';';''
-;';';';''
-  const handleSuccess: unknown unknown unknown unknown "unknown unknown = ({ email", emailVerificationRequired }: {;';';';';''
+const RegisterPage: unknown unknown unknown unknown unknown unknown = () => {;';'
+  const router: unknown unknown unknown unknown unknown unknown = useRouter();';'
+;';;''
+  useEffect(() => {;';;';''
+    fireEvent('signup_page_view');';'
+  }, []);';'
+;';;''
+  const handleSuccess: unknown unknown unknown unknown "unknown unknown = ({ email', emailVerificationRequired }: {;';;';''
     _email: "string;",;";";";";""
     emailVerificationRequired: "boolean;";""
   }) => {;";""
@@ -25,10 +25,10 @@ const RegisterPage: unknown unknown unknown unknown unknown unknown = () => {;';
     };
   };
 ;''
-  return (;';''
-    <>;';';''
-      <Head>;';';';''
-        <title>Create Account - Zion Tech Marketplace</title>;';';';';''
+  return (;';'
+    <>;';'
+      <Head>;';;''
+        <title>Create Account - Zion Tech Marketplace</title>;';;';''
         <meta name="description" content="Create your Zion Tech Marketplace account" />;";";""
       </Head>;";";";""
 ;";";";";""
@@ -47,8 +47,8 @@ const RegisterPage: unknown unknown unknown unknown unknown unknown = () => {;';
               Create your account;";";";""
             </h2>;";";";";""
             <p className="mt-2 text-center text-sm text-gray-600">;";";";";""
-              Or{' '};';';';''
-              <Link;';';';';''
+              Or{' '};';;''
+              <Link;';;';''
                 href="/auth/login";";";";";""
                 className="font-medium text-blue-600 hover:text-blue-500 underline";"
               >;
@@ -74,11 +74,11 @@ const RegisterPage: unknown unknown unknown unknown unknown unknown = () => {;';
 ;";";";";""
           <div className="text-center mt-4">;";";";";""
             <p className="text-xs text-gray-500">;";";";";""
-              By creating an account, you agree to our{' '};';';';';''
+              By creating an account, you agree to our{' '};';;';''
               <Link href="/legal/terms" className="text-blue-600 hover:text-blue-500">;";";";""
                 Terms of Service;";";";";""
-              </Link>{' '};';';';';''
-              and{' '};';';';';''
+              </Link>{' '};';;';''
+              and{' '};';;';''
               <Link href="/legal/privacy" className="text-blue-600 hover:text-blue-500">;"
                 Privacy Policy;
               </Link>;

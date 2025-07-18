@@ -68,7 +68,7 @@ class AISyntaxFixer {
       {
         name: 'Fix extra semicolons',
         pattern: /;\s*;+/g,
-        fix: () => ';'
+        fix: () => ';
       },
       // Fix broken template literals
       {

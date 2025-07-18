@@ -1,10 +1,10 @@
-import React from 'react';';';';';'';
-import type { GetServerSideProps } from 'next';';';';';'';
-import { SEO } from '@/components/SEO';';';';';'';
-import YoutubeEmbed from '@/components/YoutubeEmbed';';''
-;';';''
-// export const _getServerSideProps: unknown unknown unknown unknown unknown GetServerSideProps = async () => {;';';';''
-  return {;';';';';''
+import React from 'react';;';'';
+import type { GetServerSideProps } from 'next';;';'';
+import { SEO } from '@/components/SEO';;';'';
+import YoutubeEmbed from '@/components/YoutubeEmbed';'
+;';'
+// export const _getServerSideProps: unknown unknown unknown unknown unknown GetServerSideProps = async () => {;';;''
+  return {;';;';''
     props: "{"};"
   };
 };
@@ -51,8 +51,8 @@ export default function ResourcesDocsPage(): unknown {): unknown {): unknown {):
           <div className="bg-zion-blue-light p-6 rounded-lg border border-zion-blue-light">;";";";";""
             <h3 className="text-xl font-semibold text-white mb-3">Getting Started</h3>;";";";";""
             <p className="text-zion-slate-light mb-4">;";";";";""
-              Learn the basics of using Zion's platform and services.;';';';''
-            </p>;';';';';''
+              Learn the basics of using Zion's platform and services.;';;''
+            </p>;';;';''
             <a href="/docs/getting-started" className="text-blue-400 hover:text-blue-300">;""
               Read more ;";""
             </a>;";";""

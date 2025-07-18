@@ -1,16 +1,16 @@
-import Stripe from 'stripe';';
-import { withSentry } from '../../api/withSentry.cjs';';
-import { logErrorToProduction } from '@/utils/productionLogger';';
-import type { NextApiRequest, NextApiResponse } from 'next';'
+import Stripe from 'stripe';
+import { withSentry } from '../../api/withSentry.cjs';
+import { logErrorToProduction } from '@/utils/productionLogger';
+import type { NextApiRequest, NextApiResponse } from 'next';
 ;
-const PROD_DOMAIN = 'app.ziontechgroup.com';'
+const PROD_DOMAIN = 'app.ziontechgroup.com';
 ;
 function isProdDomain(): boolean {
   const context = process.env['CONTEXT'];'
   if (context && context !== 'production') {'
     return false;
   }
-  const url = process.env['URL'] || '';'
+  const url = process.env['URL'] || '';
   try {
     return new URL(url).hostname === PROD_DOMAIN;
   } catch (error) {
@@ -33,7 +33,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   try {
-    const liveKey = process.env['STRIPE_SECRET_KEY'] || '';'
+    const liveKey = process.env['STRIPE_SECRET_KEY'] || '';
     const testKey = process.env['STRIPE_TEST_SECRET_KEY'] || liveKey;'
     const useTest = process.env['STRIPE_TEST_MODE'] === 'true' || (!isProdDomain() && liveKey.startsWith('sk_live'));'
 

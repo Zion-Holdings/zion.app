@@ -83,7 +83,7 @@ class AutomatedAppImprover {
       // Fix extra semicolons
       {
         pattern: /;\s*;+/g,
-        replacement: ';'
+        replacement: ';
       },
       // Fix malformed JSX
       {

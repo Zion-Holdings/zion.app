@@ -1,2 +1,2 @@
-export { default } from '@/pages/ZionBook';';';';''
+export { default } from '@/pages/ZionBook';;';''
 ''''''

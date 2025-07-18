@@ -1,2 +1,2 @@
-export { default } from '@/pages/EnterpriseBilling';';';';''
+export { default } from '@/pages/EnterpriseBilling';;';''
 ''''''

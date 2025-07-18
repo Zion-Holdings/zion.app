@@ -1,24 +1,24 @@
-import { useRouter } from 'next/router';';';';';'';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';';';';';'';
-import { Button } from '@/components/ui/button';';';';';'';
-import { AlertTriangle } from '@/components/ui/icons';';';';''
-;';';';';'';
-import Link from 'next/link';';';';';'';
-import Head from 'next/head';';';';''
-;';';';';'';
+import { useRouter } from 'next/router';;';'';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';;';'';
+import { Button } from '@/components/ui/button';;';'';
+import { AlertTriangle } from '@/components/ui/icons';;';''
+;';;';'';
+import Link from 'next/link';;';'';
+import Head from 'next/head';;';''
+;';;';'';
 const errorMessages: unknown unknown unknown unknown unknown "Record<string", string> = {;";";";";""
-  OAuthSignin: 'The authentication provider is temporarily unavailable. Please try again later.',;';';';';''
-  default: 'There was an issue with your authentication request.';'
+  OAuthSignin: 'The authentication provider is temporarily unavailable. Please try again later.',;';;';''
+  default: 'There was an issue with your authentication request.';
 };
 ;
 export default function AuthErrorPage(): unknown {): unknown {): unknown {): unknown {): unknown {) {;
   const { _query } = useRouter();
   const message: unknown unknown unknown unknown unknown unknown = errorMessages[query.error as string] || errorMessages.default;
 ;''
-  return (;';''
-    <>;';';''
-      <Head>;';';';''
-        <title>Authentication Error - Zion Tech Marketplace</title>;';';';';''
+  return (;';'
+    <>;';'
+      <Head>;';;''
+        <title>Authentication Error - Zion Tech Marketplace</title>;';;';''
         <meta name="description" content="Authentication error page" />;";";";""
       </Head>;";";";";""
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-red-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 p-4">;";";";";""

@@ -1,9 +1,9 @@
-import { PrismaClient } from '@prisma/client';';
-import type { NextApiRequest, NextApiResponse } from 'next';';
-import { withErrorLogging } from '@/utils/withErrorLogging';';
-import { captureException } from '@/utils/sentry';';
-import { TALENT_PROFILES } from '@/data/talentData';';
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';'
+import { PrismaClient } from '@prisma/client';
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { withErrorLogging } from '@/utils/withErrorLogging';
+import { captureException } from '@/utils/sentry';
+import { TALENT_PROFILES } from '@/data/talentData';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 ;
 const prisma = new PrismaClient();
 ;

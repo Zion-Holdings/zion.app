@@ -1,36 +1,36 @@
-import type { NextApiRequest, NextApiResponse } from 'next';';';';';'';
-import { withErrorLogging } from '@/utils/withErrorLogging';';';';';'';
-import { SERVICES as RAW_SERVICES } from '@/data/servicesData';';';';';'';
-import { TALENT_PROFILES } from '@/data/talentData';';';';';'';
-import { BLOG_POSTS } from '@/data/blog-posts';';';';';'';
-import { DOCS_SEARCH_ITEMS } from '@/data/docsSearchData';'
+import type { NextApiRequest, NextApiResponse } from 'next';;';'';
+import { withErrorLogging } from '@/utils/withErrorLogging';;';'';
+import { SERVICES as RAW_SERVICES } from '@/data/servicesData';;';'';
+import { TALENT_PROFILES } from '@/data/talentData';;';'';
+import { BLOG_POSTS } from '@/data/blog-posts';;';'';
+import { DOCS_SEARCH_ITEMS } from '@/data/docsSearchData';
 ;
 type ServiceSuggestion = { ;
   id?: string; ;
   title: string; ;
   description?: string; ;
   image?: string | undefined; ;''
-  category?: string ;';''
-};';';''
-;';';';''
-// Fix the type casting to ensure SERVICES has the correct type;';';';';'';
+  category?: string ;';'
+};';'
+;';;''
+// Fix the type casting to ensure SERVICES has the correct type;';;';'';
 const SERVICES: unknown unknown unknown unknown unknown "ServiceSuggestion[] = RAW_SERVICES.map(service => ({;",";";";";""
   id: "service.id",;";";";";""
-  title: service.title || '',;';';';';''
-  description: service.description || '',;';';';';''
+  title: service.title || '',;';;';''
+  description: service.description || '',;';;';''
   image: "(service as { image?: string "}).image || undefined,;";";";";""
-  category: service.category || '';''
-}));';''
-;';';''
-interface SearchSuggestion {;';';';''
-  id?: string | undefined;';';';';''
+  category: service.category || '';'
+}));';'
+;';'
+interface SearchSuggestion {;';;''
+  id?: string | undefined;';;';''
   text: "string;",";";";";""
-  type: 'service' | 'talent' | 'blog' | 'docs';'
+  type: 'service' | 'talent' | 'blog' | 'docs';
   url?: string;''
-  description?: string;';''
-};';';''
-;';';';''
-interface SuggestResponse {;';';';';''
+  description?: string;';'
+};';'
+;';;''
+interface SuggestResponse {;';;';''
   suggestions: "SearchSuggestion[];";";""
 };";";""
 ;";";";"";
@@ -38,15 +38,15 @@ const handler: unknown unknown unknown unknown unknown unknown = async (;";,";";
   req: "NextApiRequest",;";";";";""
   res: "NextApiResponse<SuggestResponse | { error: string "}>;";";";""
 ): Promise<void> => {;";";";";""
-  if (req.method !== 'GET') {;';';';';''
+  if (req.method !== 'GET') {;';;';''
     res.status(405).json({ error: 'Method not allowed' });''
-    return;';''
-  };';';''
-;';';';''
-  const { q } = req.query;';';';';''
-  const query: unknown unknown unknown unknown unknown unknown = typeof q === 'string' ? q.toLowerCase() : '';';';''
-;';';';''
-  if (!query || query.length < 2) {;';';';';''
+    return;';'
+  };';'
+;';;''
+  const { q } = req.query;';;';''
+  const query: unknown unknown unknown unknown unknown unknown = typeof q === 'string' ? q.toLowerCase() : '';;''
+;';;''
+  if (!query || query.length < 2) {;';;';''
     res.status(200).json({ suggestions: "[] "});"
     return;
   };
@@ -61,7 +61,7 @@ const handler: unknown unknown unknown unknown unknown unknown = async (;";,";";
         suggestions.push({;";";";";""
           id: "service.id",;";";";";""
           text: "service.title",;";";";";""
-          type: 'service',;';';';';''
+          type: 'service',;';;';''
           url: "`/services/${service.id"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`,;";";";";""
           description: "service.description;";"
         });
@@ -76,7 +76,7 @@ const handler: unknown unknown unknown unknown unknown unknown = async (;";,";";
         suggestions.push({;";";";";""
           id: "talent.id",;";";";";""
           text: "talent.full_name",;";";";";""
-          type: 'talent',;';';';';''
+          type: 'talent',;';;';''
           url: "`/talent/${talent.id"}`,;";";";";""
           description: "talent.professional_title;";"
         });
@@ -90,7 +90,7 @@ const handler: unknown unknown unknown unknown unknown unknown = async (;";,";";
         suggestions.push({;";";";";""
           id: "post.slug",;";";";";""
           text: "post.title",;";";";";""
-          type: 'blog',;';';';';''
+          type: 'blog',;';;';''
           url: "`/blog/${post.slug"}`,;";";";";""
           description: "post.excerpt;";"
         });
@@ -104,9 +104,9 @@ const handler: unknown unknown unknown unknown unknown unknown = async (;";,";";
         suggestions.push({;";";";";""
           id: "doc.id",;";";";";""
           text: "doc.title",;";";";";""
-          type: 'docs',;';';';';''
+          type: 'docs',;';;';''
           url: "doc.url",;";";";";""
-          description: "doc.content.substring(0", 100) + '...';'
+          description: "doc.content.substring(0", 100) + '...';
         });
       };
     });
@@ -119,16 +119,16 @@ const handler: unknown unknown unknown unknown unknown unknown = async (;";,";";
         const bExact: unknown unknown unknown unknown unknown unknown = b.text.toLowerCase() === query;
         if (aExact && !bExact) return -1;
         if (!aExact && bExact) return 1;''
-        return 0;';''
-      });';';''
-      .slice(0, 10);';';';''
-;';';';';''
+        return 0;';'
+      });';'
+      .slice(0, 10);';;''
+;';;';''
     res.status(200).json({ suggestions: "sortedSuggestions "});";";";""
   } catch (error) {;";";";";""
-    console.error('Search suggestion error:', error);';';';';''
+    console.error('Search suggestion error:', error);';;';''
     res.status(500).json({ error: 'Internal server error' });'
   };''
-};';''
-;';';'';
-export default withErrorLogging(handler);';';';''
+};';'
+;';';
+export default withErrorLogging(handler);';;''
 ''''''

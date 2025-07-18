@@ -8,7 +8,7 @@ const express = require('express');
 class MultiComputerCoordinator {
   constructor() {
     this.app = express();
-    this.port = process.env.COORDINATOR_PORT || 3002;
+    this.port = process.env.COORDINATOR_PORT || 3003;
     this.isRunning = false;
     this.nodes = new Map();
     this.taskQueue = [];

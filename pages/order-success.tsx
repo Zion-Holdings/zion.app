@@ -1,9 +1,9 @@
-import type { GetServerSideProps } from 'next';';';';';'';
-import type { NextPageContext } from 'next/types';';';';';'';
-import type {} from 'next';';';';';'';
-import Link from 'next/link';';';';';'';
-import Stripe from 'stripe';';';';';'';
-import {logErrorToProduction} from '@/utils/productionLogger';'
+import type { GetServerSideProps } from 'next';;';'';
+import type { NextPageContext } from 'next/types';;';'';
+import type {} from 'next';;';'';
+import Link from 'next/link';;';'';
+import Stripe from 'stripe';;';'';
+import {logErrorToProduction} from '@/utils/productionLogger';
 ;
 ;
 interface Props {;
@@ -14,14 +14,14 @@ interface Props {;
     customer_details?: { email?: string | null } | null;
   } | null;
 };''
-;';''
-;';';'';
-export const _getServerSideProps: unknown unknown unknown unknown unknown GetServerSideProps<Props> = async (ctx: NextPageContext) => {;';';';''
-  const sessionId: unknown unknown unknown unknown unknown unknown = ctx.query.session_id as string | undefined;';';';';''
+;';'
+;';';
+export const _getServerSideProps: unknown unknown unknown unknown unknown GetServerSideProps<Props> = async (ctx: NextPageContext) => {;';;''
+  const sessionId: unknown unknown unknown unknown unknown unknown = ctx.query.session_id as string | undefined;';;';''
   if (!sessionId) return { props: "{ session: null "} };";";";""
   try {;";";";";""
-    const stripe: unknown unknown unknown unknown unknown unknown = new Stripe(process.env.STRIPE_SECRET_KEY || process.env.STRIPE_TEST_SECRET_KEY || '', { apiVersion: '2025-06-30.basil' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});';';';''
-    const stripeSession: unknown unknown unknown unknown unknown unknown = await stripe.checkout.sessions.retrieve(sessionId);';';';';''
+    const stripe: unknown unknown unknown unknown unknown unknown = new Stripe(process.env.STRIPE_SECRET_KEY || process.env.STRIPE_TEST_SECRET_KEY || '', { apiVersion: '2025-06-30.basil' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {});';;''
+    const stripeSession: unknown unknown unknown unknown unknown unknown = await stripe.checkout.sessions.retrieve(sessionId);';;';''
     return { props: "{ session: { id: stripeSession.id", amount_total: "stripeSession.amount_total", currency: "stripeSession.currency", customer_details: "stripeSession.customer_details "} } };";";";""
   } catch {;";";";";""
     logErrorToProduction('Failed to load session', { data: "error "});";";";";""
@@ -45,13 +45,13 @@ export default function OrderSuccess(): unknown {): unknown {): unknown {): unkn
         {session.customer_details?.email && (;";";";";""
           <p><strong>Email: "</strong> {session.customer_details.email"}</p>;";";";""
         )};";";";";""
-        {typeof session.amount_total === 'number' && (;';';';''
-          <p>;';';';';''
+        {typeof session.amount_total === 'number' && (;';;''
+          <p>;';;';''
             <strong>Total:</strong>{' '};''
-            {session.currency?.toUpperCase()} {(session.amount_total / 100).toFixed(2)};';''
-          </p>;';';''
-        )};';';';''
-      </div>;';';';';''
+            {session.currency?.toUpperCase()} {(session.amount_total / 100).toFixed(2)};';'
+          </p>;';'
+        )};';;''
+      </div>;';;';''
       <Link href="/orders" className="text-zion-purple underline">;"
         View Orders;
       </Link>;""

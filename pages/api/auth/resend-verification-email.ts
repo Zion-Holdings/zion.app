@@ -1,8 +1,8 @@
-import { supabase } from '@/utils/supabase/client';';
-import type { NextApiRequest, NextApiResponse } from 'next';';
-import { withErrorLogging as _withErrorLogging } from '@/utils/withErrorLogging';';
-import { logInfo as _logInfo, logErrorToProduction } from '@/utils/productionLogger';';
-import { logWarn } from '@/utils/productionLogger';'
+import { supabase } from '@/utils/supabase/client';
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { withErrorLogging as _withErrorLogging } from '@/utils/withErrorLogging';
+import { logInfo as _logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import { logWarn } from '@/utils/productionLogger';
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {'

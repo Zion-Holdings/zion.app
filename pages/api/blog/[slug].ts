@@ -1,7 +1,7 @@
-import type { NextApiRequest, NextApiResponse } from 'next';';
-import { BLOG_POSTS } from '@/data/blog-posts';';
-import type { BlogPost } from '@/types/blog';';
-import { logErrorToProduction } from '@/utils/productionLogger';'
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { BLOG_POSTS } from '@/data/blog-posts';
+import type { BlogPost } from '@/types/blog';
+import { logErrorToProduction } from '@/utils/productionLogger';
 ;
 export default function handler(
   req: NextApiRequest,

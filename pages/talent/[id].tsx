@@ -1,15 +1,15 @@
-import React from 'react';';';';';'';
-import { NextSeo } from '@/components/NextSeo';';';';';'';
-import { useRouter } from 'next/router';';';';''
-// Loader2 removed as TalentProfileSkeleton will be used;';';';';'';
-import TalentProfileSkeleton from '@/components/talent/TalentProfileSkeleton';';';';';'';
-import NotFound from '@/components/NotFound';';';';';'';
-import useSWR from 'swr';';';';';'';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';';';';';'';
-import { Badge } from '@/components/ui/badge';';';';';'';
-import { Button } from '@/components/ui/button';';';';';'';
-import type { TalentProfile } from '@/types/talent';';';';''
-;';';';';''
+import React from 'react';;';'';
+import { NextSeo } from '@/components/NextSeo';;';'';
+import { useRouter } from 'next/router';;';''
+// Loader2 removed as TalentProfileSkeleton will be used;';;';'';
+import TalentProfileSkeleton from '@/components/talent/TalentProfileSkeleton';;';'';
+import NotFound from '@/components/NotFound';;';'';
+import useSWR from 'swr';;';'';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';;';'';
+import { Badge } from '@/components/ui/badge';;';'';
+import { Button } from '@/components/ui/button';;';'';
+import type { TalentProfile } from '@/types/talent';;';''
+;';;';''
 // API returns `{ _profile: "TalentProfile "}`; swr will store just the profile;";";";";""
 type TalentProfileResponse = { profile: "TalentProfile | null "};""
 ;";""
@@ -18,10 +18,10 @@ const handleApiResponse: unknown unknown unknown unknown unknown unknown = async
   if (!res.ok) {;";";";";""
     const error: unknown unknown unknown unknown unknown unknown = new Error('An error occurred while fetching the data.');'
     // Read response body once and attempt to parse JSON;''
-    const raw: unknown unknown unknown unknown unknown unknown = await res.text();';''
-    try {;';';''
-      (error as unknown as { info?: unknown } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}).info = JSON.parse(raw);';';';''
-    } catch {;';';';';''
+    const raw: unknown unknown unknown unknown unknown unknown = await res.text();';'
+    try {;';'
+      (error as unknown as { info?: unknown } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}).info = JSON.parse(raw);';;''
+    } catch {;';;';''
       (error as unknown as { info?: unknown }).info = { message: "raw "};"
     };
     (error as unknown as { status?: number }).status = res.status;
@@ -50,11 +50,11 @@ const TalentPage: unknown unknown unknown unknown unknown React.FC = () => {;
   if (error && typeof error === 'object' && error !== null && 'status' in error && (error as { status?: number }).status === 404) {;'
     return <NotFound />;
   };''
-;';''
-  // Other errors (non-404);';';''
-  if (error) {;';';';''
-    const err: unknown unknown unknown unknown "unknown unknown = error as { status?: number; info?: { error?: string; message?: string "}; message?: string };";";";""
-    return (;';';';';''
+;';'
+  // Other errors (non-404);';'
+  if (error) {;';;''
+    const err: unknown unknown unknown unknown "unknown unknown = error as { status?: number; info?: { error?: string; message?: string "}; message?: string };";";";"'
+    return (;';;';''
       <div className="flex flex-col items-center justify-center py-20 text-center">;";";";";""
         <h2 className="text-2xl font-semibold mb-2">Error</h2>;";";";""
         <p>Failed to load talent profile.</p>;";";";";""
@@ -71,16 +71,16 @@ const TalentPage: unknown unknown unknown unknown unknown React.FC = () => {;
   };
 ;
   // If we reach here, talent data is available;''
-  return (;';''
-    <>;';';''
-      <NextSeo;';';';''
-        title={data?.full_name};';';';';''
-        description={data?.bio ?? ''};';';';''
-        openGraph={{;';';';';''
+  return (;';'
+    <>;';'
+      <NextSeo;';;''
+        title={data?.full_name};';;';''
+        description={data?.bio ?? ''};';;''
+        openGraph={{;';;';''
           title: "data?.full_name",;";";";";""
-          description: data?.bio ?? '';';';''
-        }};';';';''
-      />;';';';';''
+          description: data?.bio ?? '';;''
+        }};';;''
+      />;';;';''
       <main className="min-h-screen bg-zion-blue py-8 text-white" data-testid="talent-details">;";";";";""
         <div className="container mx-auto px-4 space-y-6">;";";";";""
           <div className="flex items-center gap-4">;";";";";""

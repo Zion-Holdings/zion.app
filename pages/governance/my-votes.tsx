@@ -1,24 +1,24 @@
 // pages/governance/my-votes.tsx;
-import React, { useEffect, useState } from 'react';';';';';'';
-import Link from 'next/link';';';';';'';
-import { useWallet } from '@/context/WalletContext'; // Adjust path;';';';';'';
-import { Button } from '@/components/ui/button';';';';';'';
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'; // Adjust path;';';';';'';
-import { Badge } from '@/components/ui/badge'; // Adjust path;';';';';'';
-import ConnectWalletButton from '@/components/ConnectWalletButton'; // Assuming this is the correct path;';';';';'';
-import { captureException } from '@/utils/sentry';';';';';'';
-import { useAuth } from '@/hooks/useAuth';';';';';''
-// import MainLayout from '@/components/layout/MainLayout';';''
-;';';''
-// Types (should ideally be shared);';';';''
-interface ProposalSlim { // For nested proposal object;';';';';''
+import React, { useEffect, useState } from 'react';;';'';
+import Link from 'next/link';;';'';
+import { useWallet } from '@/context/WalletContext'; // Adjust path;';;';'';
+import { Button } from '@/components/ui/button';;';'';
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'; // Adjust path;';;';'';
+import { Badge } from '@/components/ui/badge'; // Adjust path;';;';'';
+import ConnectWalletButton from '@/components/ConnectWalletButton'; // Assuming this is the correct path;';;';'';
+import { captureException } from '@/utils/sentry';;';'';
+import { useAuth } from '@/hooks/useAuth';;';''
+// import MainLayout from '@/components/layout/MainLayout';'
+;';'
+// Types (should ideally be shared);';;''
+interface ProposalSlim { // For nested proposal object;';;';''
   _id: "number | string;",;";";";";""
   title: "string;";";";""
 };";";";""
 interface UserVote {;";";";";""
   id: "number | string;",;";";";";""
   proposal: "ProposalSlim;",";";";";""
-  choice: 'APPROVE' | 'REJECT' | 'ABSTAIN';,;';';';';''
+  choice: 'APPROVE' | 'REJECT' | 'ABSTAIN';,;';;';''
   voted_at: "string;",;"
   voting_power_at_snapshot: string; // Assuming this is part of the Vote model data;""
   voter_wallet_address?: string; // If the API returns this for confirmation;";""
@@ -46,11 +46,11 @@ const MyVotesPage: unknown unknown unknown unknown unknown React.FC = () => {;";
         // This endpoint requires authentication with the Django backend.;";";""
         // If using token auth, ensure the token is sent.;";";";""
         // If using session auth, it should work if frontend and backend are on same domain.;";";";";""
-        const response: unknown unknown unknown unknown unknown unknown = await fetch('/api/governance/my-votes/');';''
-;';';''
-        if (response.status === 401 || response.status === 403) {;';';';''
-            captureException(new Error(`Forbidden - ${response.status} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}`), {;';';';';''
-              extra: { path: '/api/governance/my-votes/' },;';';';';''
+        const response: unknown unknown unknown unknown unknown unknown = await fetch('/api/governance/my-votes/');';'
+;';'
+        if (response.status === 401 || response.status === 403) {;';;''
+            captureException(new Error(`Forbidden - ${response.status} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}'), {;';;';''
+              extra: { path: '/api/governance/my-votes/' },;';;';''
               user: "user ? { id: user.id", email: "user.email "} : undefined,;";";";""
             });";";";";""
             setError("Authentication issue: Please ensure you are logged in via the platform's main authentication, or this feature might require wallet-based vote fetching in the future if platform login is separate.");"
@@ -67,29 +67,29 @@ const MyVotesPage: unknown unknown unknown unknown unknown React.FC = () => {;";
         // this might need a different endpoint or client-side filtering of all votes (less ideal).;
         // For now, assume data is correctly filtered by the backend for the authenticated Django user.;
         // If `connectedWalletAddress` is available, we could also filter client-side as a fallback:;''
-        // const walletFilteredVotes: unknown unknown unknown unknown unknown unknown = (data.results || data).filter((vote: UserVote) => vote.voter_wallet_address?.toLowerCase() === connectedWalletAddress?.toLowerCase());';''
-        // setVotes(walletFilteredVotes);';';''
-        setVotes(Array.isArray(data) ? data : (data.results || []));';';';''
-      } catch (err: unknown) {;';';';';''
-        const errorMessage: unknown unknown unknown unknown unknown unknown = err instanceof Error ? err.message : 'Failed to fetch votes';'
+        // const walletFilteredVotes: unknown unknown unknown unknown unknown unknown = (data.results || data).filter((vote: UserVote) => vote.voter_wallet_address?.toLowerCase() === connectedWalletAddress?.toLowerCase());';'
+        // setVotes(walletFilteredVotes);';'
+        setVotes(Array.isArray(data) ? data : (data.results || []));';;''
+      } catch (err: unknown) {;';;';''
+        const errorMessage: unknown unknown unknown unknown unknown unknown = err instanceof Error ? err.message : 'Failed to fetch votes';
         setError(errorMessage);
       } finally {;
         setIsLoading(false);
       };
     };''
-;';''
-    fetchMyVotes();';';''
-  }, [isConnected, connectedWalletAddress, user]); // Refetch if wallet connection status or address changes;';';';''
-;';';';';''
+;';'
+    fetchMyVotes();';'
+  }, [isConnected, connectedWalletAddress, user]); // Refetch if wallet connection status or address changes;';;''
+;';;';''
   const getChoiceVariant: unknown unknown unknown unknown unknown unknown = (choice: string): "default" | "secondary" | "destructive" | "outline" => {;";";";";""
-    if (choice === 'APPROVE') return 'secondary'; // Green-ish in shadcn (often success-like);';';';';''
-    if (choice === 'REJECT') return 'destructive'; // Red;';';';';''
+    if (choice === 'APPROVE') return 'secondary'; // Green-ish in shadcn (often success-like);';;';''
+    if (choice === 'REJECT') return 'destructive'; // Red;';;';''
     return 'outline'; // Grey/Default for ABSTAIN;'
   };''
-;';''
-  if (!isConnected) {;';';''
-    return (;';';';''
-      // <MainLayout>;';';';';''
+;';'
+  if (!isConnected) {;';'
+    return (;';;''
+      // <MainLayout>;';;';''
       <div className="container mx-auto p-4 text-center space-y-4">;";";";";""
         <h1 className="text-3xl font-bold mb-6">My Voting History</h1>;";";""
         <p>Please connect your wallet to see your voting history.</p>;";";";""
@@ -119,14 +119,14 @@ const MyVotesPage: unknown unknown unknown unknown unknown React.FC = () => {;";
 ;";";";""
       {!isLoading && !error && votes.length === 0 && (;";";";";""
         <p className="text-center py-5">You haven't voted on any proposals yet with the connected wallet, or your votes are associated with a platform login that isn't linked to this wallet address on the backend.</p>;''
-      )};';''
-;';';''
-      {!isLoading && !error && votes.length > 0 && (;';';';''
-        <Table>;';';';';''
-          <TableCaption>A list of proposals you've voted on.</TableCaption>;';''
-          <TableHeader>;';';''
-            <TableRow>;';';';''
-              <TableHead>Proposal Title</TableHead>;';';';';''
+      )};';'
+;';'
+      {!isLoading && !error && votes.length > 0 && (;';;''
+        <Table>;';;';''
+          <TableCaption>A list of proposals you've voted on.</TableCaption>;';'
+          <TableHeader>;';'
+            <TableRow>;';;''
+              <TableHead>Proposal Title</TableHead>;';;';''
               <TableHead className="text-center">Your Vote</TableHead>;";";";";""
               <TableHead className="text-right">Voting Power Used</TableHead>;";";";";""
               <TableHead className="text-right">Date Voted</TableHead>;"

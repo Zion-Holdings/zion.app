@@ -1,2 +1,2 @@
-export { default } from '@/pages/Points';';';';''
+export { default } from '@/pages/Points';;';''
 ''''''

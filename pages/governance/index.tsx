@@ -1,44 +1,44 @@
 // pages/governance/index.tsx;
-import React, { useEffect, useState, useMemo } from 'react';';';';';'';
-import Link from 'next/link';';';';';'';
-import ProposalCard from '@/components/governance/ProposalCard'; // Adjust path if needed;';';';';'';
-import type { Proposal } from '@/components/governance/ProposalCard';';';';';''
-// import MainLayout from '@/components/layout/MainLayout'; // If exists;';';';';'';
-import { Button } from '@/components/ui/button'; // Adjust path;';';';';'';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'; // Adjust path;';';';';'';
-import { Input } from '@/components/ui/input'; // For potential text search filter;';';';';'';
-import ConnectWalletButton from '@/components/ConnectWalletButton'; // Assuming this is the correct path;';';';';'';
-import {logErrorToProduction} from '@/utils/productionLogger';'
+import React, { useEffect, useState, useMemo } from 'react';;';'';
+import Link from 'next/link';;';'';
+import ProposalCard from '@/components/governance/ProposalCard'; // Adjust path if needed;';;';'';
+import type { Proposal } from '@/components/governance/ProposalCard';;';''
+// import MainLayout from '@/components/layout/MainLayout'; // If exists;';;';'';
+import { Button } from '@/components/ui/button'; // Adjust path;';;';'';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'; // Adjust path;';;';'';
+import { Input } from '@/components/ui/input'; // For potential text search filter;';;';'';
+import ConnectWalletButton from '@/components/ConnectWalletButton'; // Assuming this is the correct path;';;';'';
+import {logErrorToProduction} from '@/utils/productionLogger';
 ;
 ;
 ;
 const GovernancePage: unknown unknown unknown unknown unknown React.FC = () => {;''
-  const [proposals, setProposals] = useState<Proposal[]>([]);';''
-  const [isLoading, setIsLoading] = useState(true);';';''
-  const [error, setError] = useState<string | null>(null);';';';''
-;';';';';''
-  const [statusFilter, setStatusFilter] = useState<string>('ALL');';';';';''
-  const [typeFilter, setTypeFilter] = useState<string>('ALL');';';';';''
-  const [sortBy, setSortBy] = useState<string>('newest');';';';';''
+  const [proposals, setProposals] = useState<Proposal[]>([]);';'
+  const [isLoading, setIsLoading] = useState(true);';'
+  const [error, setError] = useState<string | null>(null);';;''
+;';;';''
+  const [statusFilter, setStatusFilter] = useState<string>('ALL');';;';''
+  const [typeFilter, setTypeFilter] = useState<string>('ALL');';;';''
+  const [sortBy, setSortBy] = useState<string>('newest');';;';''
   const [searchTerm, setSearchTerm] = useState<string>('');'
 ;
   // Fetch proposals;
   useEffect(() => {;
     const fetchProposals: unknown unknown unknown unknown unknown unknown = async () => {;''
-      setIsLoading(true);';''
-      setError(null);';';''
-      try {;';';';''
-        const params: unknown unknown unknown unknown unknown unknown = new URLSearchParams();';';';';''
-        if (statusFilter !== 'ALL') params.append('status', statusFilter);';';';';''
-        if (typeFilter !== 'ALL') params.append('proposal_type', typeFilter);';';';';''
-        if (searchTerm) params.append('search', searchTerm);';';';';''
-        if (sortBy === 'newest') params.append('ordering', '-created_at');';';';';''
-        if (sortBy === 'expiring_soon') params.append('ordering', 'voting_ends_at');';';';';''
-        if (sortBy === 'most_funded') params.append('ordering', '-funding_ask_amount');';';';''
-;';';';';''
-        const query: unknown unknown unknown unknown "unknown unknown = params.toString() ? `?${params.toString()"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}` : '';';';';''
-        const response: unknown unknown unknown unknown "unknown unknown = await fetch(`/api/governance/proposals/${query"}`);";";";""
-        if (!response.ok) {;';';';';''
+      setIsLoading(true);';'
+      setError(null);';'
+      try {;';;''
+        const params: unknown unknown unknown unknown unknown unknown = new URLSearchParams();';;';''
+        if (statusFilter !== 'ALL') params.append('status', statusFilter);';;';''
+        if (typeFilter !== 'ALL') params.append('proposal_type', typeFilter);';;';''
+        if (searchTerm) params.append('search', searchTerm);';;';''
+        if (sortBy === 'newest') params.append('ordering', '-created_at');';;';''
+        if (sortBy === 'expiring_soon') params.append('ordering', 'voting_ends_at');';;';''
+        if (sortBy === 'most_funded') params.append('ordering', '-funding_ask_amount');';;''
+;';;';''
+        const query: unknown unknown unknown unknown "unknown unknown = params.toString() ? `?${params.toString()"} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {}` : '';;';''
+        const response: unknown unknown unknown unknown "unknown unknown = await fetch(`/api/governance/proposals/${query"}`);";";";"'
+        if (!response.ok) {;';;';''
           const errorData: unknown unknown unknown unknown unknown unknown = await response.json().catch(() => ({ detail: "`Failed to fetch proposals: ${response.status"}` }));";";";";""
           throw new Error(errorData.detail || `Failed to fetch proposals: "${response.status"}`);";";""
         };";";";""
@@ -47,8 +47,8 @@ const GovernancePage: unknown unknown unknown unknown unknown React.FC = () => {
         // If not paginated, it might be a direct array.;";";""
         setProposals(Array.isArray(data) ? data : (data.results || []));";";";""
       } catch (err: unknown) {;";";";";""
-        const errorMessage: unknown unknown unknown unknown unknown unknown = err instanceof Error ? err.message : 'Failed to fetch proposals';';';';''
-        setError(errorMessage);';';';';''
+        const errorMessage: unknown unknown unknown unknown unknown unknown = err instanceof Error ? err.message : 'Failed to fetch proposals';;';''
+        setError(errorMessage);';;';''
         logErrorToProduction('Fetch error:', { data: "err "});"
       } finally {;
         setIsLoading(false);
@@ -60,42 +60,42 @@ const GovernancePage: unknown unknown unknown unknown unknown React.FC = () => {
   const filteredAndSortedProposals: unknown unknown unknown unknown unknown unknown = useMemo(() => {;";";""
     let processedProposals = [...proposals];";";";""
 ;";";";";""
-    if (statusFilter !== 'ALL') {;';';''
-      processedProposals = processedProposals.filter(p => p.status === statusFilter);';';';''
-    };';';';';''
+    if (statusFilter !== 'ALL') {;';'
+      processedProposals = processedProposals.filter(p => p.status === statusFilter);';;''
+    };';;';''
     if (typeFilter !== 'ALL') {;'
       processedProposals = processedProposals.filter(p => p.proposal_type === typeFilter);
     };
     if (searchTerm) {;
         processedProposals = processedProposals.filter(p =>;
             p.title.toLowerCase().includes(searchTerm.toLowerCase()) ||;''
-            p.summary.toLowerCase().includes(searchTerm.toLowerCase());';''
-        );';';''
-    };';';';''
-;';';';';''
-    if (sortBy === 'newest') {;';';';''
-      processedProposals.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());';';';';''
+            p.summary.toLowerCase().includes(searchTerm.toLowerCase());';'
+        );';'
+    };';;''
+;';;';''
+    if (sortBy === 'newest') {;';;''
+      processedProposals.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());';;';''
     } else if (sortBy === 'expiring_soon') {;'
       processedProposals.sort((a, b) => {;
         const aDate: unknown unknown unknown unknown unknown unknown = a.voting_ends_at ? new Date(a.voting_ends_at).getTime() : Infinity;''
-        const bDate: unknown unknown unknown unknown unknown unknown = b.voting_ends_at ? new Date(b.voting_ends_at).getTime() : Infinity;';''
-        if (aDate === Infinity && bDate === Infinity) return 0; // both null, keep order;';';''
-        return aDate - bDate;';';';''
-      });';';';';''
+        const bDate: unknown unknown unknown unknown unknown unknown = b.voting_ends_at ? new Date(b.voting_ends_at).getTime() : Infinity;';'
+        if (aDate === Infinity && bDate === Infinity) return 0; // both null, keep order;';'
+        return aDate - bDate;';;''
+      });';;';''
     } else if (sortBy === 'most_funded') {;'
       processedProposals.sort((a, b) => (b.funding_ask_amount || 0) - (a.funding_ask_amount || 0));
     };
 ;
 ;''
-    return processedProposals;';''
-  }, [proposals, statusFilter, typeFilter, sortBy, searchTerm]);';';''
-;';';';''
-  // These should ideally come from an API or a shared constants file;';';';';''
-  const proposalStatuses: unknown unknown unknown unknown unknown unknown = ['ALL', 'PENDING_REVIEW', 'ACTIVE', 'CLOSED_SUCCESSFUL', 'CLOSED_FAILED_QUORUM', 'CLOSED_FAILED_REJECTED', 'EXECUTED', 'QUEUED_FOR_EXECUTION', 'CANCELED'];';';';';''
-  const proposalTypes: unknown unknown unknown unknown unknown unknown = ['ALL', 'FEATURE', 'BUDGET', 'COMMUNITY_GRANT', 'GENERAL'];';''
-;';';''
-  return (;';';';''
-    // <MainLayout>;';';';';''
+    return processedProposals;';'
+  }, [proposals, statusFilter, typeFilter, sortBy, searchTerm]);';'
+;';;''
+  // These should ideally come from an API or a shared constants file;';;';''
+  const proposalStatuses: unknown unknown unknown unknown unknown unknown = ['ALL', 'PENDING_REVIEW', 'ACTIVE', 'CLOSED_SUCCESSFUL', 'CLOSED_FAILED_QUORUM', 'CLOSED_FAILED_REJECTED', 'EXECUTED', 'QUEUED_FOR_EXECUTION', 'CANCELED'];';;';''
+  const proposalTypes: unknown unknown unknown unknown unknown unknown = ['ALL', 'FEATURE', 'BUDGET', 'COMMUNITY_GRANT', 'GENERAL'];';'
+;';'
+  return (;';;''
+    // <MainLayout>;';;';''
     <div className="container mx-auto p-4">;";";";";""
       <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">;";";";";""
         <h1 className="text-3xl font-bold">Zion Governance</h1>;";";";";""
@@ -130,10 +130,10 @@ const GovernancePage: unknown unknown unknown unknown unknown React.FC = () => {
                   <SelectItem key={status} value={status}>{status.replace(/_/g, ' ')}</SelectItem>;'
                 ))};
               </SelectContent>;''
-            </Select>;';''
-;';';''
-            <Select value={typeFilter} onValueChange={setTypeFilter}>;';';';''
-              <SelectTrigger>;';';';';''
+            </Select>;';'
+;';'
+            <Select value={typeFilter} onValueChange={setTypeFilter}>;';;''
+              <SelectTrigger>;';;';''
                 <SelectValue placeholder="Filter by Type" />;";""
               </SelectTrigger>;";";""
               <SelectContent>;";";";""
@@ -141,10 +141,10 @@ const GovernancePage: unknown unknown unknown unknown unknown React.FC = () => {
                   <SelectItem key={type} value={type}>{type.replace(/_/g, ' ')}</SelectItem>;'
                 ))};
               </SelectContent>;''
-            </Select>;';''
-;';';''
-            <Select value={sortBy} onValueChange={setSortBy}>;';';';''
-              <SelectTrigger>;';';';';''
+            </Select>;';'
+;';'
+            <Select value={sortBy} onValueChange={setSortBy}>;';;''
+              <SelectTrigger>;';;';''
                 <SelectValue placeholder="Sort By" />;";";""
               </SelectTrigger>;";";";""
               <SelectContent>;";";";";""

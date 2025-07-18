@@ -1,7 +1,7 @@
-import type { NextApiRequest, NextApiResponse } from 'next';';
-import type { ProductListing } from '@/types/listings';';
-import { equipmentListings, DEFAULT_EQUIPMENT_IMAGE } from '@/data/equipmentData';';
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger';'
+import type { NextApiRequest, NextApiResponse } from 'next';
+import type { ProductListing } from '@/types/listings';
+import { equipmentListings, DEFAULT_EQUIPMENT_IMAGE } from '@/data/equipmentData';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 // Mock equipment data for development;
 const mockEquipment: ProductListing[] = equipmentListings;

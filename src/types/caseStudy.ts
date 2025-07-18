@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 export interface CaseStudy {
   id: "string"
   title: string,"
@@ -17,23 +16,3 @@ export interface CaseStudy {
   pdf: "string"
 }"
 """""
-=======
-export interface CaseStudy {;
-  id: "string;",;";";";";""
-  title: "string;",";";";";""
-  slug: "string;",;";";";";""
-  excerpt: "string;",";";";";""
-  content: "string;",;";";";";""
-  company: "string;",";";";";""
-  companyLogo: "string;",;";";";";""
-  avatar: "string;",";";";";""
-  quote: "string;",;";";";";""
-  author: "string;",";";";";""
-  role: "string;",;";""
-  featuredImage: string;";";""
-  publishedDate?: string;";";";""
-  /** URL of downloadable case study PDF */;";";";";""
-  pdf: "string;";";";""
-};";";";""
-""""""
->>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f

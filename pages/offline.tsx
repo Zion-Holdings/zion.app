@@ -1,24 +1,24 @@
-import Head from 'next/head';';';';';'';
-import { useRouter } from 'next/router';';';';';'';
-import { motion } from 'framer-motion';';';';';'';
-import { WifiOff, RefreshCw, Home, Clock, Bookmark, Search, ShoppingCart } from '@/components/ui/icons';'
+import Head from 'next/head';;';'';
+import { useRouter } from 'next/router';;';'';
+import { motion } from 'framer-motion';;';'';
+import { WifiOff, RefreshCw, Home, Clock, Bookmark, Search, ShoppingCart } from '@/components/ui/icons';
 ;
 ;
 ;''
-;';''
-;';';''
-;';';';''
-;';';';';'';
-import { Button } from '@/components/ui/button';';';';';'';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';';';';';'';
-import { Badge } from '@/components/ui/badge';';';';';'';
-import { useState, useEffect } from 'react';';';';';'';
-import {logErrorToProduction} from '@/utils/productionLogger';'
+;';'
+;';'
+;';;''
+;';;';'';
+import { Button } from '@/components/ui/button';;';'';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';;';'';
+import { Badge } from '@/components/ui/badge';;';'';
+import { useState, useEffect } from 'react';;';'';
+import {logErrorToProduction} from '@/utils/productionLogger';
 ;'';
-export default function OfflinePage(): unknown {): unknown {): unknown {): unknown {): unknown {) {;';''
-  const router: unknown unknown unknown unknown unknown unknown = useRouter();';';''
-;';';';''
-  const [isOnline, setIsOnline] = useState(false);';';';';''
+export default function OfflinePage(): unknown {): unknown {): unknown {): unknown {): unknown {) {;';'
+  const router: unknown unknown unknown unknown unknown unknown = useRouter();';'
+;';;''
+  const [isOnline, setIsOnline] = useState(false);';;';''
   const [lastUpdate, setLastUpdate] = useState<string>('');'
   const [retryCount, setRetryCount] = useState(0);
 ;
@@ -31,55 +31,55 @@ export default function OfflinePage(): unknown {): unknown {): unknown {): unkno
       };
     };
 ;''
-    // Set initial status;';''
-    updateOnlineStatus();';';''
-;';';';''
-    // Listen for online/offline events;';';';';''
-    window.addEventListener('online', updateOnlineStatus);';';';';''
-    window.addEventListener('offline', updateOnlineStatus);';';''
-;';';';''
-    return () => {;';';';';''
-      window.removeEventListener('online', updateOnlineStatus);';';';';''
+    // Set initial status;';'
+    updateOnlineStatus();';'
+;';;''
+    // Listen for online/offline events;';;';''
+    window.addEventListener('online', updateOnlineStatus);';;';''
+    window.addEventListener('offline', updateOnlineStatus);';'
+;';;''
+    return () => {;';;';''
+      window.removeEventListener('online', updateOnlineStatus);';;';''
       window.removeEventListener('offline', updateOnlineStatus);'
     };
   }, []);
 ;
   const handleRetry: unknown unknown unknown unknown unknown unknown = () => {;''
-    try {;';''
-      setRetryCount(prev => prev + 1);';';''
-      window.location.reload();';';';''
-    } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;';';';';''
+    try {;';'
+      setRetryCount(prev => prev + 1);';'
+      window.location.reload();';;''
+    } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch {;';;';''
       logErrorToProduction('Failed to reload page', error);'
     };''
-  };';''
-;';';''
-  const quickActions: unknown unknown unknown unknown unknown unknown = [;';';';''
-    {;';';';';''
-      title: 'Browse Cached Equipment',;';';';';''
-      description: 'View recently visited equipment listings',;';';';';''
+  };';'
+;';'
+  const quickActions: unknown unknown unknown unknown unknown unknown = [;';;''
+    {;';;';''
+      title: 'Browse Cached Equipment',;';;';''
+      description: 'View recently visited equipment listings',;';;';''
       icon: "Search",;";";";";""
-      href: '/equipment',;';';';';''
+      href: '/equipment',;';;';''
       available: "true;";";";""
     },;";";";""
     {;";";";";""
-      title: 'View Bookmarks',;';';';';''
-      description: 'Access your saved items',;';';';';''
+      title: 'View Bookmarks',;';;';''
+      description: 'Access your saved items',;';;';''
       icon: "Bookmark",;";";";";""
-      href: '/bookmarks',;';';';';''
+      href: '/bookmarks',;';;';''
       available: "true;";";";""
     },;";";";""
     {;";";";";""
-      title: 'Visit Marketplace',;';';';';''
-      description: 'Browse all available services and gear',;';';';';''
+      title: 'Visit Marketplace',;';;';''
+      description: 'Browse all available services and gear',;';;';''
       icon: "ShoppingCart",;";";";";""
-      href: '/marketplace',;';';';';''
+      href: '/marketplace',;';;';''
       available: "true;";";";""
     },;";";";""
     {;";";";";""
-      title: 'Go to Homepage',;';';';';''
-      description: 'Return to the main page',;';';';';''
+      title: 'Go to Homepage',;';;';''
+      description: 'Return to the main page',;';;';''
       icon: "Home",;";";";";""
-      href: '/',;';';';';''
+      href: '/',;';;';''
       available: "true;";"
     };
   ];""
@@ -87,7 +87,7 @@ export default function OfflinePage(): unknown {): unknown {): unknown {): unkno
   return (;";";""
     <>;";";";""
       <Head>;";";";";""
-        <title>You're Offline - Zion Tech Marketplace</title>;';';';';''
+        <title>You're Offline - Zion Tech Marketplace</title>;';;';''
         <meta name="description" content="You're currently offline. Some features may not be available." />;";";";";""
         <meta name="robots" content="noindex, nofollow" />;";";""
       </Head>;";";";""
@@ -107,35 +107,35 @@ export default function OfflinePage(): unknown {): unknown {): unknown {): unkno
                 transition={{ duration: "isOnline ? 0.6 : 2", repeat: "isOnline ? 1 : Infinity "}};";";""
                 className={`mx-auto w-24 h-24 rounded-full flex items-center justify-center mb-4 ${;";";";""
                   isOnline ;";";";";""
-                    ? 'bg-green-100 dark:bg-green-900/20' ;';';';';''
-                    : 'bg-orange-100 dark:bg-orange-900/20';';''
-                }`};';';''
-              >;';';';''
-                <WifiOff className={`w-12 h-12 ${;';';';';''
-                  isOnline ? 'text-green-600' : 'text-orange-600';''
-                }`} />;';''
-              </motion.div>;';';''
-              ;';';';''
-              <Badge ;';';';';''
+                    ? 'bg-green-100 dark:bg-green-900/20' ;';;';''
+                    : 'bg-orange-100 dark:bg-orange-900/20';'
+                }'};';'
+              >;';;''
+                <WifiOff className={'w-12 h-12 ${;';;';''
+                  isOnline ? 'text-green-600' : 'text-orange-600';'
+                }'} />;';'
+              </motion.div>;';'
+              ;';;''
+              <Badge ;';;';''
                 variant={isOnline ? "default" : "secondary"};";";";";""
                 className="text-sm px-3 py-1";";";";""
               >;";";";";""
-                {isOnline ? 'Connection Restored' : 'Offline Mode'};';''
-              </Badge>;';';''
-            </div>;';';';''
-;';';';';''
+                {isOnline ? 'Connection Restored' : 'Offline Mode'};';'
+              </Badge>;';'
+            </div>;';;''
+;';;';''
             <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">;";";";";""
-              {isOnline ? 'You\'re Back Online!' : 'You\'re Offline'};';';''
-            </h1>;';';';''
-            ;';';';';''
+              {isOnline ? 'You\'re Back Online!' : 'You\'re Offline'};';'
+            </h1>;';;''
+            ;';;';''
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">;";";";""
               {isOnline ;";";";";""
-                ? 'Your internet connection has been restored. You can now access all features.';';';';';''
-                : 'No internet connection detected. Don\'t worry - you can still access cached content and use offline features.';''
-              };';''
-            </p>;';';''
-;';';';''
-            {lastUpdate && (;';';';';''
+                ? 'Your internet connection has been restored. You can now access all features.';;';''
+                : 'No internet connection detected. Don\'t worry - you can still access cached content and use offline features.';'
+              };';'
+            </p>;';'
+;';;''
+            {lastUpdate && (;';;';''
               <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">;";";";";""
                 <Clock className="w-4 h-4" />;";";";";""
                 Last updated: "{lastUpdate"};"
@@ -152,11 +152,11 @@ export default function OfflinePage(): unknown {): unknown {): unknown {): unkno
               disabled={isOnline};";";";""
             >;";";";";""
               <RefreshCw className="w-5 h-5" />;";";";";""
-              {retryCount > 0 ? `Retry (${retryCount})` : 'Try Again'};';''
-            </Button>;';';''
-            ;';';';''
-          <Button;';';';';''
-            onClick={() => router.push('/')};';';';';''
+              {retryCount > 0 ? `Retry (${retryCount})` : 'Try Again'};';'
+            </Button>;';'
+            ;';;''
+          <Button;';;';''
+            onClick={() => router.push('/')};';;';''
             variant="outline";";";";";""
             size="lg";";";";";""
             className="flex items-center gap-2";";";";""
@@ -166,7 +166,7 @@ export default function OfflinePage(): unknown {): unknown {): unknown {): unkno
           </Button>;";";""
 ;";";";""
           <Button;";";";";""
-            onClick={() => router.push('/marketplace')};';';';';''
+            onClick={() => router.push('/marketplace')};';;';''
             variant="outline";";";";";""
             size="lg";";";";";""
             className="flex items-center gap-2";";";";""
@@ -194,21 +194,21 @@ export default function OfflinePage(): unknown {): unknown {): unknown {): unkno
                 >;";";""
                   <Card className={`h-full transition-all duration-300 hover:shadow-lg ${;";";";""
                     action.available ;";";";";""
-                      ? 'hover:scale-105 cursor-pointer' ;';';';';''
-                      : 'opacity-60 cursor-not-allowed';';';';''
-                  }`}>;';';';';''
+                      ? 'hover:scale-105 cursor-pointer' ;';;';''
+                      : 'opacity-60 cursor-not-allowed';;';''
+                  }'}>;';;';''
                     <CardHeader className="text-center">;";";""
                       <div className={`mx-auto w-12 h-12 rounded-full flex items-center justify-center mb-3 ${;";";";""
                         action.available ;";";";";""
-                          ? 'bg-blue-100 dark:bg-blue-900/20' ;';';';';''
-                          : 'bg-gray-100 dark:bg-gray-800';';''
-                      }`}>;';';''
-                        <action.icon className={`w-6 h-6 ${;';';';''
-                          action.available ;';';';';''
-                            ? 'text-blue-600 dark:text-blue-400' ;';';';';''
-                            : 'text-gray-400';';';''
-                        }`} />;';';';''
-                      </div>;';';';';''
+                          ? 'bg-blue-100 dark:bg-blue-900/20' ;';;';''
+                          : 'bg-gray-100 dark:bg-gray-800';'
+                      }'}>;';'
+                        <action.icon className={'w-6 h-6 ${;';;''
+                          action.available ;';;';''
+                            ? 'text-blue-600 dark:text-blue-400' ;';;';''
+                            : 'text-gray-400';;''
+                        }'} />;';;''
+                      </div>;';;';''
                       <CardTitle className="text-lg">{action.title}</CardTitle>;";";";""
                     </CardHeader>;";";";";""
                     <CardContent className="text-center">;";";";";""

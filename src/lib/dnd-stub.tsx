@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import type { ReactNode } from 'react;;
 interface DragDropContextProps {'
   children: ReactNode
@@ -51,64 +50,3 @@ export function Draggable(): unknown {): unknown {): unknown {): unknown {): unk
 };"
 };";"
 }";
-=======
-import type { ReactNode } from 'react;'
-;
-interface DragDropContextProps {;''
-  children: ReactNode;;
-  onDragEnd?: (...args: "unknown[]) => void;";"
-};
-export function DragDropContext(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: DragDropContextProps) {;""
-  return <>{children}</>;";""
-};";";""
-;";";";""
-interface DroppableProps {;";";";";""
-  children: "(provided: {;",;";";";";""
-    droppableProps: "Record<string", unknown>;";";";";""
-    innerRef: "(el: HTMLElement | null) => void;",;";";";";""
-    placeholder: "ReactNode;";";";";""
-  }) => ReactNode;";";";";""
-  droppableId: "string;";""
-};";"";
-export function Droppable(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: DroppableProps) {;";";""
-  return (;";";";""
-    <>;";";";";""
-      {children({ droppableProps: "{"}, _innerRef: "() => {"}, placeholder: "null "})};"
-    </>;""
-  );";""
-};";";""
-;";";";""
-interface DraggableProps {;";";";";""
-  children: "(provided: {;",;";";";";""
-    draggableProps: "Record<string", unknown>;";";";";""
-    dragHandleProps: "Record<string", unknown>;";";";";""
-    innerRef: "(el: HTMLElement | null) => void;";";";";""
-  }) => ReactNode;";";";";""
-  draggableId: "string;",;";";";";""
-  index: "number;";"
-};"";
-export function Draggable(): unknown {): unknown {): unknown {): unknown {): unknown {{ children }: DraggableProps) {;";""
-  return (;";";""
-    <>;";";";""
-      {children({;";";";";""
-        draggableProps: "{"},;";";";";""
-        dragHandleProps: "{"},;";";";";""
-        _innerRef: "() => {"},;"
-      })};""
-    </>;";""
-  );";";""
-};";";";""
-";""
-};";""
-};";";""
-}";"
-};""
-};";""
-}";"
->>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f
-};
-};""
-}""
-}
-}
-}""

@@ -1,10 +1,10 @@
-import type { NextApiRequest, NextApiResponse } from 'next';';';';';'';
-import {logErrorToProduction} from '@/utils/productionLogger';';';';''
-;';';';';'';
+import type { NextApiRequest, NextApiResponse } from 'next';;';'';
+import {logErrorToProduction} from '@/utils/productionLogger';;';''
+;';;';'';
 export default function handler(): unknown {): unknown {): unknown {): unknown {): unknown {req: "NextApiRequest", res: NextApiResponse) {;";";";""
 ;";";";";""
-  if (req.method !== 'GET') {;';';';';''
-    res.setHeader('Allow', 'GET');';';';';''
+  if (req.method !== 'GET') {;';;';''
+    res.setHeader('Allow', 'GET');';;';''
     return res.status(405).json({ error: "`Method ${req.method"} not allowed` });"
   };""
 ;";""

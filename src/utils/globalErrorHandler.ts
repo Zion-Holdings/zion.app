@@ -5,11 +5,3 @@
 // use it directly for specific, non-global error logging.;
 // If logError is not used elsewhere, this file (and its import in _app.tsx or similar);
 // could be removed entirely in a future refactoring.;
-<<<<<<< HEAD
-// logInfo("globalErrorHandler.ts: Custom global handlers removed, Sentry handles this.");"
-"""""
-=======
-;
-// logInfo("globalErrorHandler.ts: "Custom global handlers removed", Sentry handles this.");";";";""
-""""""
->>>>>>> 557d0fea3b8bd250341d7770e2c6071a16729d1f

@@ -1,2 +1,2 @@
-export { default } from '@/pages/TokenIntegrations';';';';''
+export { default } from '@/pages/TokenIntegrations';;';''
 ''''''

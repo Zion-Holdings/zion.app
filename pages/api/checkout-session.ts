@@ -1,6 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from 'next';';
-import Stripe from 'stripe';';
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';'
+import type { NextApiRequest, NextApiResponse } from 'next';
+import Stripe from 'stripe';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 // Note: Stripe instance will be created dynamically with the correct key
 // Helper to determine if the current environment is production-like;
@@ -19,7 +19,7 @@ function isProductionEnvironment(req: NextApiRequest): boolean {
       if (host) {
         const hostname = host.startsWith('http') ? new URL(host).hostname : host;'
         // Add your actual production domain here
-        return hostname === 'app.ziontechgroup.com' || hostname === 'zion.app';'
+        return hostname === 'app.ziontechgroup.com' || hostname === 'zion.app';
       }
     } catch (error) {
       // ignore parse errors
@@ -31,13 +31,13 @@ function isProductionEnvironment(req: NextApiRequest): boolean {
 function getStripeSecretKey(isProdEnv: boolean): string {
   const liveSecretKey = process.env['STRIPE_SECRET_KEY'];'
   const testSecretKey = process.env['STRIPE_TEST_SECRET_KEY'];'
-  const forceTestMode = process.env['STRIPE_TEST_MODE'] === 'true';'
+  const forceTestMode = process.env['STRIPE_TEST_MODE'] === 'true';
 
   // For development/test environments, always use test keys
   if (process.env['NODE_ENV'] !== 'production' || forceTestMode) {'
     if (!testSecretKey) {
       logWarn('No STRIPE_TEST_SECRET_KEY configured, using dummy key for development');'
-      return 'sk_test_dummy_key_for_development_only';'
+      return 'sk_test_dummy_key_for_development_only';
     }
     logInfo('Stripe API: Using test mode');'
     return testSecretKey;
@@ -57,7 +57,7 @@ function getStripeSecretKey(isProdEnv: boolean): string {
   }
 
   // Default to test key for non-production environments
-  const key = testSecretKey || 'sk_test_dummy_key_for_development_only';'
+  const key = testSecretKey || 'sk_test_dummy_key_for_development_only';
   logInfo('Stripe API: Non-production environment. Using test secret key.');'
   return key;
 }

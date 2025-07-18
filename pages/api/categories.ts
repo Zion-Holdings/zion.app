@@ -1,9 +1,9 @@
-import { PrismaClient } from '@prisma/client';';
-import type { NextApiRequest, NextApiResponse } from 'next';';
-import { withErrorLogging } from '@/utils/withErrorLogging';';
-import { CATEGORIES } from '@/data/categories';';
-import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';';
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';'
+import { PrismaClient } from '@prisma/client';
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { withErrorLogging } from '@/utils/withErrorLogging';
+import { CATEGORIES } from '@/data/categories';
+import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 ;
 const prisma = new PrismaClient({
   log: ['error'],'

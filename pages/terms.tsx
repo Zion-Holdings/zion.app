@@ -8,8 +8,8 @@ export default function Terms(): unknown {): unknown {): unknown {): unknown {):
   return (;";";""
     <>;";";";""
       <SEO;";";";";""
-        title={t('terms.title')};';';';';''
-        description={t('terms.description')};';';';';''
+        title={t('terms.title')};';;';''
+        description={t('terms.description')};';;';''
         canonical="https://app.ziontechgroup.com/terms";";";";""
       />;";";";";""
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">;";";";";""

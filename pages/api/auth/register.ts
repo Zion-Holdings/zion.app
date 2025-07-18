@@ -1,12 +1,12 @@
-import { supabase } from '@/utils/supabase/client';';
-import type { NextApiRequest, NextApiResponse } from 'next';';
-import { withErrorLogging } from '@/utils/withErrorLogging';';
-import { ENV_CONFIG } from '@/utils/environmentConfig';';
+import { supabase } from '@/utils/supabase/client';
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { withErrorLogging } from '@/utils/withErrorLogging';
+import { ENV_CONFIG } from '@/utils/environmentConfig';
 import {;
   logInfo,
   logWarn as _logWarn,
   logErrorToProduction,
-} from '@/utils/productionLogger';'
+} from '@/utils/productionLogger';
 ;
 export default withErrorLogging(async function handler(
   req: NextApiRequest,

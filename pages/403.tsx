@@ -1,9 +1,9 @@
-import { Center } from '@chakra-ui/react';';
-import { NextSeo } from '@/components/NextSeo';';
-import { useEffect } from 'react';';
-import { useAuth } from '@/hooks/useAuth';';
-import { captureException } from '@/utils/sentry';';
-import { useTranslation } from 'react-i18next';'
+import { Center } from '@chakra-ui/react';
+import { NextSeo } from '@/components/NextSeo';
+import { useEffect } from 'react';
+import { useAuth } from '@/hooks/useAuth';
+import { captureException } from '@/utils/sentry';
+import { useTranslation } from 'react-i18next';
 ;
 export default function Custom403() {
   const { user } = useAuth();

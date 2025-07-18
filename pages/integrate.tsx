@@ -1,2 +1,2 @@
-export { default } from '@/pages/PartnerIntegration';';';';''
+export { default } from '@/pages/PartnerIntegration';;';''
 ''''''

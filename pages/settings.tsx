@@ -1,2 +1,2 @@
-export { default } from '@/pages/AccountSettings';';';';''
+export { default } from '@/pages/AccountSettings';;';''
 ''''''

@@ -1,16 +1,16 @@
-import type { NextApiRequest, NextApiResponse } from 'next';';
-import { applyCorsHeaders } from '@/middleware/cors';';
-import { withErrorLogging } from '@/utils/withErrorLogging';';
-import { TALENT_PROFILES } from '@/data/talentData';';
-import { BLOG_POSTS } from '@/data/blog-posts';';
-import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';';
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger';'
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { applyCorsHeaders } from '@/middleware/cors';
+import { withErrorLogging } from '@/utils/withErrorLogging';
+import { TALENT_PROFILES } from '@/data/talentData';
+import { BLOG_POSTS } from '@/data/blog-posts';
+import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 interface SearchResult {
   id: string;
   title: string;
   description: string;
-  type: 'product' | 'talent' | 'blog' | 'service';'
+  type: 'product' | 'talent' | 'blog' | 'service';
   category?: string;
   url?: string;
   image?: string;
@@ -27,7 +27,7 @@ interface SearchFilters {
   minPrice?: number;
   maxPrice?: number;
   minRating?: number;
-  sort?: 'relevance' | 'price_asc' | 'price_desc' | 'rating';'
+  sort?: 'relevance' | 'price_asc' | 'price_desc' | 'rating';
 }
 
 interface SearchResponse {
@@ -185,7 +185,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
     }
 
     // Create cache key
-    const filterKey = `${(typesParam || []).join(',')}-${category || ''}-${minPrice || ''}-${maxPrice || ''}-${minRating || ''}-${sort || ''}`;'
+    const filterKey = `${(typesParam || []).join(',')}-${category || ''}-${minPrice || ''}-${maxPrice || ''}-${minRating || ''}-${sort || ''}';
     const cacheKey = cacheKeys.search.results(`${q}-${page}-${limit}-${filterKey}`);
 
     // Use cache-or-compute pattern

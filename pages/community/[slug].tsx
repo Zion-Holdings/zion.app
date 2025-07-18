@@ -1,19 +1,19 @@
-import React, { useState, useCallback } from 'react'; // Removed useEffect;';';';';'';
-import { NextSeo } from '@/components/NextSeo';';';';';'';
-import Link from 'next/link';';';';';'';
-import { Button } from '@/components/ui/button';';';';';'';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';';';';';'';
-import EmptyState from '@/components/community/EmptyState';';';';';''
-// import { createClient } from '@supabase/supabase-js'; // No longer directly needed here if fetchPostsByCategory handles its own client;';';';';'';
-import PostCard from '@/components/community/PostCard';';';';';'';
-import type { ForumPost } from '@/types/community';';';';';'';
-import { fetchPostsByCategory } from '@/services/forumPostService';';';';';'';
-import {logErrorToProduction} from '@/utils/productionLogger';'
+import React, { useState, useCallback } from 'react'; // Removed useEffect;';;';'';
+import { NextSeo } from '@/components/NextSeo';;';'';
+import Link from 'next/link';;';'';
+import { Button } from '@/components/ui/button';;';'';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';;';'';
+import EmptyState from '@/components/community/EmptyState';;';''
+// import { createClient } from '@supabase/supabase-js'; // No longer directly needed here if fetchPostsByCategory handles its own client;';;';'';
+import PostCard from '@/components/community/PostCard';;';'';
+import type { ForumPost } from '@/types/community';;';'';
+import { fetchPostsByCategory } from '@/services/forumPostService';;';'';
+import {logErrorToProduction} from '@/utils/productionLogger';
 ;''
-;';'';
-const POSTS_PER_PAGE: unknown unknown unknown unknown unknown unknown = 20; // Or any other limit you prefer;';';''
-;';';';''
-interface CategoryPageProps {;';';';';''
+;';';
+const POSTS_PER_PAGE: unknown unknown unknown unknown unknown unknown = 20; // Or any other limit you prefer;';'
+;';;''
+interface CategoryPageProps {;';;';''
   initialPosts: "ForumPost[];",;";";";";""
   initialNextCursor: "string | null; // Added for cursor pagination;",";";";";""
   hasSession: "boolean;",;";";";";""

@@ -1,27 +1,27 @@
-import { useEffect } from 'react';';';';';'';
-import Head from 'next/head';';''
-;';';''
-declare global {;';';';''
-  interface Window {;';';';';''
+import { useEffect } from 'react';;';'';
+import Head from 'next/head';'
+;';'
+declare global {;';;''
+  interface Window {;';;';''
     SwaggerUIBundle: "(config: { url: string; dom_id: string "}) => void;"
   };""
 };";""
 ;";";"";
 export default function SwaggerDocs(): unknown {): unknown {): unknown {): unknown {): unknown {) {;";";";""
   useEffect(() => {;";";";";""
-    if (typeof window !== 'undefined' && window.SwaggerUIBundle) {;';';';''
-      window.SwaggerUIBundle({;';';';';''
-        url: '/openapi.yaml',;';';';';''
+    if (typeof window !== 'undefined' && window.SwaggerUIBundle) {;';;''
+      window.SwaggerUIBundle({;';;';''
+        url: '/openapi.yaml',;';;';''
         dom_id: '#swagger-ui',;'
       });
     };
   }, []);
 ;
   return (;''
-    <>;';''
-      <Head>;';';''
-        <title>Zion API Docs</title>;';';';''
-        <link;';';';';''
+    <>;';'
+      <Head>;';'
+        <title>Zion API Docs</title>;';;''
+        <link;';;';''
           rel="stylesheet";";";";";""
           href="https://unpkg.com/swagger-ui-dist@4/swagger-ui.css";";";";""
         />;";";";";""

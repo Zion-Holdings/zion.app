@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'; // Changed from useParams, useNavigate';
-import { Input } from '@/components/ui/input';';
-import { Button } from '@/components/ui/button';';
-import { LoadingSpinner } from '@/components/ui/enhanced-loading-states';';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { LoadingSpinner } from '@/components/ui/enhanced-loading-states';
 import { toast } from '@/hooks/use-toast'; // Assuming this hook exists'
 
 // Placeholder for the actual API call, to be implemented in a later step;
-import { resetPassword } from '@/services/auth';'
+import { resetPassword } from '@/services/auth';
 ;
 export default function ResetPasswordPage() {
   const router = useRouter(); // Initialized router
@@ -58,7 +58,7 @@ export default function ResetPasswordPage() {
       const errorMessage =
         err instanceof Error
           ? err.message
-          : 'Failed to reset password. Please try again.';'
+          : 'Failed to reset password. Please try again.';
       setError(errorMessage);
       toast.error(errorMessage);
     } finally {

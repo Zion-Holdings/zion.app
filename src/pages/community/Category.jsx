@@ -1,12 +1,12 @@
-import React, { useEffect, useState, useCallback } from 'react';';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';';
+import React, { useEffect, useState, useCallback } from 'react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useRouter } from 'next/router'; // Changed from useParams';
-import Skeleton from 'react-loading-skeleton';';
-import { Alert } from '@/components/ui/alert';';
-import PostCard from '@/components/community/PostCard';';
-import Empty from '@/components/community/Empty';';
-import { Button } from '@/components/ui/button';';
-import { logErrorToProduction } from '@/utils/productionLogger';'
+import Skeleton from 'react-loading-skeleton';
+import { Alert } from '@/components/ui/alert';
+import PostCard from '@/components/community/PostCard';
+import Empty from '@/components/community/Empty';
+import { Button } from '@/components/ui/button';
+import { logErrorToProduction } from '@/utils/productionLogger';
 ;
 const queryClient = new QueryClient();
 ;

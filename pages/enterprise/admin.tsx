@@ -1,2 +1,2 @@
-export { default } from '@/pages/EnterpriseAdmin';';';';''
+export { default } from '@/pages/EnterpriseAdmin';;';''
 ''''''

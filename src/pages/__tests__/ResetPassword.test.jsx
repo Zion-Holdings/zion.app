@@ -1,9 +1,9 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';';
-import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';';
-import nextRouterMock from 'next-router-mock';';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
+import nextRouterMock from 'next-router-mock';
 import ResetPasswordPage from '../ResetPassword'; // Adjust path as necessary';
 import * as authService from '@/services/auth'; // To mock resetPassword';
-import { toast } from '@/hooks/use-toast';'
+import { toast } from '@/hooks/use-toast';
 
 // Mock router;
 const mockNavigate = jest.fn();

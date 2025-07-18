@@ -63,7 +63,7 @@ function fixParsingErrors(content, filePath) {
   // Fix 4: Fix duplicate semicolons
   const duplicateSemicolons = /;{2,}/g;
   if (duplicateSemicolons.test(fixed)) {
-    fixed = fixed.replace(duplicateSemicolons, ';');
+    fixed = fixed.replace(duplicateSemicolons, ';);
     changes++;
   }
   
@@ -140,7 +140,7 @@ function fixParsingErrors(content, filePath) {
   // Fix 14: Remove malformed semicolon sequences
   const malformedSemicolons = /;{3,}/g;
   if (malformedSemicolons.test(fixed)) {
-    fixed = fixed.replace(malformedSemicolons, ';');
+    fixed = fixed.replace(malformedSemicolons, ';);
     changes++;
   }
   

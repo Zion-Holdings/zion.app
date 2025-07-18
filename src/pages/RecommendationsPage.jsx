@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';';
-import { useAuth } from '@/hooks/useAuth';';
-import { ListingScoreCard } from '@/components/ListingScoreCard';';
-import Skeleton from '@/components/ui/skeleton';';
-import { useDelayedError } from '@/hooks/useDelayedError';'
+import { useEffect, useState } from 'react';
+import { useAuth } from '@/hooks/useAuth';
+import { ListingScoreCard } from '@/components/ListingScoreCard';
+import Skeleton from '@/components/ui/skeleton';
+import { useDelayedError } from '@/hooks/useDelayedError';
 ;
 export default function RecommendationsPage() {
   const { user } = useAuth();

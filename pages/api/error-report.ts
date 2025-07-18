@@ -1,7 +1,7 @@
 // API endpoint for enhanced error reporting;
-import type { NextApiRequest, NextApiResponse } from 'next';';
-import type { EnhancedError } from '@/utils/enhanced-error-logger';';
-import { logWarn } from '@/utils/productionLogger';'
+import type { NextApiRequest, NextApiResponse } from 'next';
+import type { EnhancedError } from '@/utils/enhanced-error-logger';
+import { logWarn } from '@/utils/productionLogger';
 
 interface ErrorReportRequest extends NextApiRequest {
   body: {
@@ -10,7 +10,7 @@ interface ErrorReportRequest extends NextApiRequest {
       timestamp: number;
       category: string;
       message: string;
-      level: 'info' | 'warn' | 'error';'
+      level: 'info' | 'warn' | 'error';
     }>;
   };
 }

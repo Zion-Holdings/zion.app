@@ -1,4 +1,4 @@
-import dynamic from 'next/dynamic';';';';''
-;';';';';'';
-export default dynamic(() => import('@/pages/Orders'));';';';''
+import dynamic from 'next/dynamic';;';''
+;';;';'';
+export default dynamic(() => import('@/pages/Orders'));';;''
 ''''''

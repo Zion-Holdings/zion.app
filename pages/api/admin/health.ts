@@ -1,6 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from 'next';';
-import { errorReportingDashboard, type HealthData } from '@/utils/errorReportingDashboard';';
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger';'
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { errorReportingDashboard, type HealthData } from '@/utils/errorReportingDashboard';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 interface HealthApiResponse {
   health: HealthData;

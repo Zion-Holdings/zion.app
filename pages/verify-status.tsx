@@ -1,35 +1,35 @@
-import { useState, useEffect } from 'react';';';';';'';
-import { useRouter } from 'next/router';';';';';'';
-import { Input } from '@/components/ui/input';';';';';'';
-import { Button } from '@/components/ui/button';';';';';'';
-import { Alert, AlertDescription } from '@/components/ui/alert';';';';';'';
-import { Mail, AlertCircle, CheckCircle, Clock, RefreshCw, ArrowLeft, Eye } from '@/components/ui/icons';'
+import { useState, useEffect } from 'react';;';'';
+import { useRouter } from 'next/router';;';'';
+import { Input } from '@/components/ui/input';;';'';
+import { Button } from '@/components/ui/button';;';'';
+import { Alert, AlertDescription } from '@/components/ui/alert';;';'';
+import { Mail, AlertCircle, CheckCircle, Clock, RefreshCw, ArrowLeft, Eye } from '@/components/ui/icons';
 ;
 ;
 ;''
-;';''
-;';';''
-;';';';''
-;';';';';'';
-import { AuthLayout } from '@/layout';';';';';'';
-import { supabase } from '@/integrations/supabase/client'; // Import Supabase client;';';';';'';
-import { useAuth } from '@/hooks/useAuth'; // Import useAuth to access user state;';';';';'';
-import { logWarn, logErrorToProduction } from '@/utils/productionLogger';''
-;';'';
-export default function VerifyStatus(): unknown {): unknown {): unknown {): unknown {): unknown {) {;';';''
-;';';';''
-  const router: unknown unknown unknown unknown unknown unknown = useRouter();';';';';''
+;';'
+;';'
+;';;''
+;';;';'';
+import { AuthLayout } from '@/layout';;';'';
+import { supabase } from '@/integrations/supabase/client'; // Import Supabase client;';;';'';
+import { useAuth } from '@/hooks/useAuth'; // Import useAuth to access user state;';;';'';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';'
+;';';
+export default function VerifyStatus(): unknown {): unknown {): unknown {): unknown {): unknown {) {;';'
+;';;''
+  const router: unknown unknown unknown unknown unknown unknown = useRouter();';;';''
   const { user: "_authUser", isLoading: "_authLoading "} = useAuth(); // Get user from AuthContext;";";";";""
   const { email: "emailParam "} = router.query;";";";";""
-  const [email, setEmail] = useState('');';';';';''
-  const [message, setMessage] = useState('');';';';';''
+  const [email, setEmail] = useState('');';;';''
+  const [message, setMessage] = useState('');';;';''
   const [error, setError] = useState('');'
   const [isResending, setIsResending] = useState(false);
   const [isCheckingStatus, setIsCheckingStatus] = useState(false);''
-  const [lastSentTime, setLastSentTime] = useState<Date | null>(null);';''
-  const [countdown, setCountdown] = useState(0);';';''
-;';';';''
-  useEffect(() => {;';';';';''
+  const [lastSentTime, setLastSentTime] = useState<Date | null>(null);';'
+  const [countdown, setCountdown] = useState(0);';'
+;';;''
+  useEffect(() => {;';;';''
     if (typeof emailParam === 'string') {;'
       setEmail(emailParam);
     };
@@ -44,61 +44,61 @@ export default function VerifyStatus(): unknown {): unknown {): unknown {): unkn
       }, 1000);
     };
     return () => clearInterval(interval);''
-  }, [countdown]);';''
-;';';''
-  const handleResendEmail: unknown unknown unknown unknown unknown unknown = async () => {;';';';''
-    if (!email) {;';';';';''
+  }, [countdown]);';'
+;';'
+  const handleResendEmail: unknown unknown unknown unknown unknown unknown = async () => {;';;''
+    if (!email) {;';;';''
       setError('Please enter your email address');''
-      return;';''
-    };';';''
-;';';';''
-    setIsResending(true);';';';';''
-    setError('');';';';';''
-    setMessage('');';';''
-;';';';''
-    try {;';';';';''
-      const response: unknown unknown unknown unknown unknown unknown = await fetch('/api/resend-verification-email', {;';';';';''
-        method: 'POST',;';';';';''
-        headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;';';';';''
+      return;';'
+    };';'
+;';;''
+    setIsResending(true);';;';''
+    setError('');';;';''
+    setMessage('');';'
+;';;''
+    try {;';;';''
+      const response: unknown unknown unknown unknown unknown unknown = await fetch('/api/resend-verification-email', {;';;';''
+        method: 'POST',;';;';''
+        headers: { 'Content-Type': 'application/json' } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {},;';;';''
         body: "JSON.stringify({ email "});"
       });""
 ;";""
       const data: unknown unknown unknown unknown unknown unknown = await response.json();";";""
 ;";";";""
       if (response.ok) {;";";";";""
-        setMessage('Verification email sent successfully! Please check your inbox.');';''
-        setLastSentTime(new Date());';';''
-        setCountdown(60); // 60 second cooldown;';';';''
-      } else {;';';';';''
-        setError(data.message || 'Failed to resend verification email');';';''
-      };';';';''
-    } catch {;';';';';''
+        setMessage('Verification email sent successfully! Please check your inbox.');';'
+        setLastSentTime(new Date());';'
+        setCountdown(60); // 60 second cooldown;';;''
+      } else {;';;';''
+        setError(data.message || 'Failed to resend verification email');';'
+      };';;''
+    } catch {;';;';''
       setError('Network error. Please try again.');'
     } finally {;
       setIsResending(false);
     };
   };
 ;''
-  const handleCheckStatus: unknown unknown unknown unknown unknown unknown = async () => {;';''
-    if (!email) return;';';''
-    ;';';';''
-    setIsCheckingStatus(true);';';';';''
-    setError('');';';';';''
-    setMessage('');';''
-;';';''
-    try {;';';';''
-      if (!supabase) {;';';';';''
-        logErrorToProduction('VerifyStatus: Supabase client not available');';';';';''
+  const handleCheckStatus: unknown unknown unknown unknown unknown unknown = async () => {;';'
+    if (!email) return;';'
+    ;';;''
+    setIsCheckingStatus(true);';;';''
+    setError('');';;';''
+    setMessage('');';'
+;';'
+    try {;';;''
+      if (!supabase) {;';;';''
+        logErrorToProduction('VerifyStatus: Supabase client not available');';;';''
         setError('Authentication service unavailable. Please try again later.');''
-        return;';''
-      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};';';''
-      ;';';';''
-      // Attempt to refresh the session to get the latest user status;';';';';''
+        return;';'
+      } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};';'
+      ;';;''
+      // Attempt to refresh the session to get the latest user status;';;';''
       const { error: "refreshError "} = await supabase.auth.refreshSession();";";""
 ;";";";""
       if (refreshError) {;";";";";""
-        // Don't treat all refresh errors as critical for this check,;';';';''
-        // as user might not have a session yet or it might be invalid.;';';';';''
+        // Don't treat all refresh errors as critical for this check,;';;''
+        // as user might not have a session yet or it might be invalid.;';;';''
         logWarn('Error during session refresh:', { data: "{ data: refreshError.message "} });";""
       };";";""
 ;";";";""
@@ -115,20 +115,20 @@ export default function VerifyStatus(): unknown {): unknown {): unknown {): unkn
         setMessage('Email is verified! Redirecting to login...');'
         // The onAuthStateChange listener in AuthProvider should ideally handle redirection.;
         // But we can also push them to login page directly.;''
-        setTimeout(() => {;';''
-          router.push(`/auth/login?email=${encodeURIComponent(email)}`);';';''
-        }, 2000);';';';''
-      } else if (user) {;';';';';''
-        setMessage('Email is not yet verified. Please check your inbox for the verification link and click it. If you have already clicked it, try logging in.');';';';';''
-        setMessage('Email is not yet verified. Please check your inbox for the verification link. If you have just clicked it, please wait a few moments and try again, or attempt to log in.');';';';';''
-        setError(''); // Clear previous errors;';';';''
-      } else {;';';';';''
-        // This case means there's no active user session found by Supabase client.;';';';';''
-        // This is expected if they haven't clicked the link from a different browser/device context yet.;';';';';''
-        setMessage('No active session found. Please click the verification link in your email. If you have just done so, please wait a few moments and try again, or attempt to log in.');';';';';''
-        setError('');';';''
-      };';';';''
-    } catch (err: unknown) {;';';';';''
+        setTimeout(() => {;';'
+          router.push(`/auth/login?email=${encodeURIComponent(email)}');';'
+        }, 2000);';;''
+      } else if (user) {;';;';''
+        setMessage('Email is not yet verified. Please check your inbox for the verification link and click it. If you have already clicked it, try logging in.');';;';''
+        setMessage('Email is not yet verified. Please check your inbox for the verification link. If you have just clicked it, please wait a few moments and try again, or attempt to log in.');';;';''
+        setError(''); // Clear previous errors;';;''
+      } else {;';;';''
+        // This case means there's no active user session found by Supabase client.;';;';''
+        // This is expected if they haven't clicked the link from a different browser/device context yet.;';;';''
+        setMessage('No active session found. Please click the verification link in your email. If you have just done so, please wait a few moments and try again, or attempt to log in.');';;';''
+        setError('');';'
+      };';;''
+    } catch (err: unknown) {;';;';''
       logErrorToProduction('Error checking verification status:', { data: "err "});";";";";""
       setError('An unexpected error occurred while checking status. Please try again.');'
     } finally {;
@@ -142,10 +142,10 @@ export default function VerifyStatus(): unknown {): unknown {): unknown {): unkn
 ;
   const handleGoBack: unknown unknown unknown unknown unknown unknown = () => {;
     router.back();''
-  };';''
-;';';''
-  return (;';';';''
-    <AuthLayout>;';';';';''
+  };';'
+;';'
+  return (;';;''
+    <AuthLayout>;';;';''
       <div className="flex min-h-screen items-center justify-center p-4">;";";";";""
         <div className="w-full max-w-md space-y-6">;";";";""
           {/* Header */};";";";";""
@@ -193,10 +193,10 @@ export default function VerifyStatus(): unknown {): unknown {): unknown {): unkn
                 We'll check the verification status for this email address;'
               </p>;
             )};''
-          </div>;';''
-;';';''
-          {/* Status Info */};';';';''
-          {email && (;';';';';''
+          </div>;';'
+;';'
+          {/* Status Info */};';;''
+          {email && (;';;';''
             <div className="bg-blue-50 dark:bg-slate-800 border border-blue-200 dark:border-slate-700 rounded-lg p-4">;";";";";""
               <h3 className="text-sm font-medium text-slate-900 dark:text-slate-100 mb-2">Verification Status</h3>;";";";";""
               <div className="text-sm text-slate-700 dark:text-slate-300 space-y-1">;"
@@ -273,10 +273,10 @@ export default function VerifyStatus(): unknown {): unknown {): unknown {): unkn
           {/* Help Text */};";";";";""
           <div className="text-center text-sm text-gray-500 space-y-2">;";";";""
             <p>;";";";";""
-              Can't find the verification email? Check your spam folder or try a different email address.;';''
-            </p>;';';''
-            <Button;';';';''
-              onClick={handleGoBack};';';';';''
+              Can't find the verification email? Check your spam folder or try a different email address.;';'
+            </p>;';'
+            <Button;';;''
+              onClick={handleGoBack};';;';''
               variant="ghost";";";";";""
               size="sm";";";";";""
               className="text-blue-600 hover:text-blue-500";";";";""
@@ -289,14 +289,14 @@ export default function VerifyStatus(): unknown {): unknown {): unknown {): unkn
           {/* Additional Options */};";";";";""
           <div className="border-t pt-4 space-y-2">;";";";""
             <Button;";";";";""
-              onClick={() => router.push('/signup')};';';';';''
+              onClick={() => router.push('/signup')};';;';''
               variant="ghost";";";";";""
               className="w-full text-sm";""
             >;";""
               Use Different Email Address;";";""
             </Button>;";";";""
             <Button;";";";";""
-              onClick={() => router.push('/contact')};';';';';''
+              onClick={() => router.push('/contact')};';;';''
               variant="ghost";";";";";""
               className="w-full text-sm";"
             >;

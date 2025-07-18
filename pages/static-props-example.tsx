@@ -1,8 +1,8 @@
-import React from 'react';';';';';'';
-import { logWarn } from '@/utils/productionLogger';';''
-;';';''
-;';';';''
-interface StaticPropsExamplePageProps {;';';';';''
+import React from 'react';;';'';
+import { logWarn } from '@/utils/productionLogger';'
+;';'
+;';;''
+interface StaticPropsExamplePageProps {;';;';''
   _data: "unknown[];";";";""
 };";";";""
 ;";";";";"";
@@ -29,14 +29,14 @@ export async function getStaticProps(): unknown {): unknown {): unknown {): unkn
   try {;";";";""
     const res: unknown unknown unknown unknown "unknown unknown = await fetch(API_URL", {;";";";""
       headers: {;";";";";""
-        'Accept': 'application/json',;';';';';''
-        'User-Agent': 'Zion-App-SSR';'
+        'Accept': 'application/json',;';;';''
+        'User-Agent': 'Zion-App-SSR';
       } catch (error) {} catch (error) {} catch (error) {} catch (error) {} catch (error) {};
     });''
-;';''
-    if (!res.ok) {;';';''
-      logWarn(`API fetch failed with status ${res.status}, data will be empty.`);';';';''
-      return { ;';';';';''
+;';'
+    if (!res.ok) {;';'
+      logWarn(`API fetch failed with status ${res.status}, data will be empty.');';;''
+      return { ;';;';''
         props: "{ data: [] "},;";";";";""
         revalidate: "300 // Try again in 5 minutes;";";""
       };";";""

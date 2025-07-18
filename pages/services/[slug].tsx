@@ -1,10 +1,10 @@
-import React from 'react';';';';';'';
-import { useRouter } from 'next/router';';';';';'';
-import Head from 'next/head';';';';';'';
-import { NextSeo } from '@/components/NextSeo';';';';';'';
-import { SERVICES } from '@/data/servicesData';';';';';'';
-import { slugify } from '@/lib/slugify';';';';';'';
-import Custom404 from '../404';'
+import React from 'react';;';'';
+import { useRouter } from 'next/router';;';'';
+import Head from 'next/head';;';'';
+import { NextSeo } from '@/components/NextSeo';;';'';
+import { SERVICES } from '@/data/servicesData';;';'';
+import { slugify } from '@/lib/slugify';;';'';
+import Custom404 from '../404';
 ;
 const ServicePage: unknown unknown unknown unknown unknown React.FC = () => {;
   const router: unknown unknown unknown unknown unknown unknown = useRouter();
@@ -19,10 +19,10 @@ const ServicePage: unknown unknown unknown unknown unknown React.FC = () => {;
     return <Custom404 />;
   };
   ;''
-  if (!service) {;';''
-    return <Custom404 />;';';''
-  };';';';''
-  const serviceLd: unknown unknown unknown unknown unknown unknown = {;';';';';''
+  if (!service) {;';'
+    return <Custom404 />;';'
+  };';;''
+  const serviceLd: unknown unknown unknown unknown unknown unknown = {;';;';''
     "@context": "https://schema.org",;";";";";""
     "@type": "Service",;";";";";""
     name: "service.title",;";";";";""

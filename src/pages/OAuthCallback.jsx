@@ -1,8 +1,8 @@
-import { useEffect } from 'react';';
+import { useEffect } from 'react';
 import { useRouter } from 'next/router'; // Changed from useLocation, useNavigate';
-import { useAuth } from '@/hooks/useAuth';';
-import { safeStorage } from '@/utils/safeStorage';';
-import { logErrorToProduction } from '@/utils/productionLogger';'
+import { useAuth } from '@/hooks/useAuth';
+import { safeStorage } from '@/utils/safeStorage';
+import { logErrorToProduction } from '@/utils/productionLogger';
 ;
 function decodeToken(token) {
   try {
@@ -22,7 +22,7 @@ export default function OAuthCallback() {
     // Check if router.isReady is true before accessing router.query or router.asPath
     if (!router.isReady) return;
 
-    const queryString = router.asPath.split('?')[1] || '';'
+    const queryString = router.asPath.split('?')[1] || '';
     const params = new URLSearchParams(queryString);
     const token = params.get('token');'
     const next = params.get('next');'

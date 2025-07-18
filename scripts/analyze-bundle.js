@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-import fs from 'fs';
 import path from 'path';
-import { execSync } from 'child_process';
 import { fileURLToPath } from 'url';
+import fs from 'fs';
+import { execSync } from 'child_process';
 
 // Use different variable names to avoid conflict with built-in globals
-const _currentFilename = path.basename(__filename);
+const _currentFilename = path.basename(fileURLToPath(import.meta.url));
 const _currentDirname = undefined; // Unused path.dirname(currentFilename);
 const _output = 'bundle analysis output';
 const _dep = 'dependency';

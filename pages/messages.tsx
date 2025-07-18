@@ -1,4 +1,4 @@
-import dynamic from 'next/dynamic';';';';''
-;';';';';'';
-export default dynamic(() => import('@/pages/MessagingInbox'));';';';''
+import dynamic from 'next/dynamic';;';''
+;';;';'';
+export default dynamic(() => import('@/pages/MessagingInbox'));';;''
 ''''''
