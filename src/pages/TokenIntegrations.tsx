@@ -46,17 +46,17 @@ export default function TokenIntegrations() {
 
   // --- LayerZero Bridge Integration Point ---
   // Reactivate: Mock fee estimation logic
-  const estimateFee = async (sourceChain: string, destinationChain: string, tokenAmount: string): Promise<string> => {
+  const estimateFee = async (_sourceChain: string, _destinationChain: string, _tokenAmount: string): Promise<string> => {
     await new Promise(resolve => setTimeout(resolve, 300));
-    return (0.001 * parseFloat(tokenAmount || '1')).toFixed(4) + ' ZION$';
+    return (0.001 * parseFloat(_tokenAmount || '1')).toFixed(4) + ' ZION$';
   };
 
   // Reactivate: Mock token bridging logic
   const sendTokenViaLayerZero = async (
-    sourceChain: string,
-    destinationChain: string,
-    tokenAmount: string,
-    userAddress: string | null
+    _sourceChain: string,
+    _destinationChain: string,
+    _tokenAmount: string,
+    _userAddress: string | null
   ): Promise<{ transactionHash: string; arrivalTimeEstimate: string }> => {
     await new Promise(resolve => setTimeout(resolve, 1000));
     return {
