@@ -108,7 +108,7 @@ export default function TalentDirectory() {
     if (sort && SORT_OPTIONS.some((o) => o.value === sort))
       setSortOption(sort);
     setInitialized(true);
-  }, [router.isReady, router.query, initialized]); // Fixed dependencies
+  }, [router.isReady, router.query, initialized, setSearchTerm, setSelectedSkills, setSelectedAvailability, setSelectedRegions, setPriceRange, setExperienceRange, setSortOption]);
 
   // Persist filters to query parameters
   useEffect(() => {
@@ -136,6 +136,7 @@ export default function TalentDirectory() {
     });
   }, [
     router.isReady,
+    router,
     searchTerm,
     selectedSkills,
     selectedAvailability,
