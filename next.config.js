@@ -10,6 +10,11 @@ if (!process.env.NODE_OPTIONS.includes('--no-deprecation')) {
   process.env.NODE_OPTIONS += ' --no-deprecation';
 }
 
+// Fix for Watchpack path issue in Node.js 22
+if (process.version.startsWith('v22')) {
+  process.env.NODE_OPTIONS += ' --experimental-watchpack';
+}
+
 // Configure CDN asset prefix when running in production
 const isProd = process.env.NODE_ENV === 'production';
 const isNetlify = process.env.NETLIFY === 'true';
