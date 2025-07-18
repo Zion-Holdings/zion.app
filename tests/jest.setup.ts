@@ -385,14 +385,18 @@ jest.mock('@/hooks/useWishlist', () => {
 // Polyfill IntersectionObserver for components that use it (e.g., embla-carousel)
 if (typeof window.IntersectionObserver === 'undefined') {
   class MockIntersectionObserver {
+    root: Element | null = null;
+    rootMargin: string = '';
+    thresholds: ReadonlyArray<number> = [];
+    
     constructor() {}
     observe() {}
     unobserve() {}
     disconnect() {}
     takeRecords() { return []; }
   }
-  window.IntersectionObserver = MockIntersectionObserver;
-  global.IntersectionObserver = MockIntersectionObserver;
+  window.IntersectionObserver = MockIntersectionObserver as typeof IntersectionObserver;
+  global.IntersectionObserver = MockIntersectionObserver as typeof IntersectionObserver;
 }
 
 // Ensure all code paths use the mock implementation

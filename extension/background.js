@@ -34,12 +34,12 @@ async function askZionGPT(prompt) {
 
     const data = await res.json();
     return { answer: data.choices?.[0]?.message?.content || '' };
-  } catch {
-    if ('Error occurred'.name === 'AbortError') {
-      console.'Error occurred'or('OpenAI request timed out');
+  } catch (error) {
+    if (error.name === 'AbortError') {
+      console.error('OpenAI request timed out');
       return { answer: 'Request timed out. Please try again.' };
     }
-    console.error('OpenAI request error', err);
+    console.error('OpenAI request error', error);
     return { answer: 'Error contacting model' };
   }
 }
@@ -54,8 +54,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     console.error(errorMessage);
     try {
       sendResponse({ error: 'Unauthorized sender' });
-    } catch {
-      console.('Failed to send unauthorized response:', );
+    } catch (error) {
+      console.error('Failed to send unauthorized response:', error);
     }
     return false; // Don't keep the message channel open
   }
@@ -67,8 +67,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       .then(response => {
         try {
           sendResponse(response);
-        } catch {
-          console.('Error sending response:', );
+        } catch (error) {
+          console.error('Error sending response:', error);
           // If sendResponse fails, we can't do much more
         }
       })
@@ -76,7 +76,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         console.error('Ask ZionGPT error:', error);
         try {
           sendResponse({ error: error.message || 'Failed to process request' });
-        } catch (_sendError) {
+        } catch (sendError) {
           console.error('Error sending error response:', sendError);
         }
       });
@@ -87,11 +87,11 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     try {
       chrome.tabs.create({ url: `${BASE_URL}/jobs/new` });
       sendResponse({ ok: true });
-    } catch {
-      console.('Post job :', );
+    } catch (error) {
+      console.error('Post job error:', error);
       try {
-        sendResponse({ : 'Failed to open job posting page' });
-      } catch (_sendError) {
+        sendResponse({ error: 'Failed to open job posting page' });
+      } catch (sendError) {
         console.error('Error sending post-job error response:', sendError);
       }
     }
@@ -102,11 +102,11 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     try {
       chrome.tabs.create({ url: `${BASE_URL}/talent` });
       sendResponse({ ok: true });
-    } catch {
-      console.('Resume search :', );
+    } catch (error) {
+      console.error('Resume search error:', error);
       try {
-        sendResponse({ : 'Failed to open talent page' });
-      } catch (_sendError) {
+        sendResponse({ error: 'Failed to open talent page' });
+      } catch (sendError) {
         console.error('Error sending resume-search error response:', sendError);
       }
     }
@@ -117,11 +117,11 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     try {
       chrome.tabs.create({ url: `${BASE_URL}/notifications` });
       sendResponse({ ok: true });
-    } catch {
-      console.('View notifications :', );
+    } catch (error) {
+      console.error('View notifications error:', error);
       try {
-        sendResponse({ : 'Failed to open notifications page' });
-      } catch (_sendError) {
+        sendResponse({ error: 'Failed to open notifications page' });
+      } catch (sendError) {
         console.error('Error sending view-notifications error response:', sendError);
       }
     }
@@ -131,8 +131,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   // Unknown message type
   try {
     sendResponse({ error: 'Unknown message type' });
-  } catch {
-    console.('Error sending unknown message type response:', );
+  } catch (error) {
+    console.error('Error sending unknown message type response:', error);
   }
   return false; // Don't keep the message channel open
 });
